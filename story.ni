@@ -2,11 +2,40 @@
 
 the story headline is "Yo, Joy"
 
+the release number is 1.
+
+include trivial niceties by Andrew Schultz.
+
+include Basic Screen Effects by Emily Short.
+
+the maximum score is 6.
+
 Fun 'Nuf is a room.
+
+the tile lit is scenery in Fun 'Nuf. "It reads [b]PALINDROMOPOLIS THIS WAY![r]"
 
 El Live Ville is a region.
 
 understand "poop" and "boob" as a mistake ("No swearing, even if it fits in here!")
+
+volume verbs
+
+chapter xyzzying
+
+xyzzying is an action out of world.
+
+understand the command "xyzzy" as something new.
+
+understand "xyzzy" as xyzzying.
+
+carry out xyzzying:
+	say "No, that's not quite a spoonerism and not quite a palindrome." instead;
+
+instead of attacking, say "Attack, cat? Ta!"
+
+instead of waiting, say "GO, dog!"
+
+volume rooms
 
 book Seer Trees
 
@@ -113,4 +142,52 @@ book civic level
 Civic Level is a room.
 
 The radar is in Civic Level.
+
+volume hinting
+
+chapter seer trees hinting
+
+hint-name of Seer Trees is table of seertrees hints.
+
+table of seertrees hints
+hint-rule	hint-text
+--	"You need to clear the start rats."
+need-cake rule	"Some sort of trap would be nice."
+need-cake rule	"Did you find a cake trap yet?"
+cake-unfilled rule	"You need to fill a cake trap with something."
+cake-unfilled rule	"Something disgusting. What might have something disgusting that works with the cake trap?"
+cake-unfilled rule	"The rash womb/rush womb in Rank Bloom."
+cake-unfilled rule	"PUT TRAP IN WOMB."
+rats-there rule	"With the cake, you can DROP THE CAKE here in Seer Trees."
+
+this is the need-cake rule:
+	if cake trap is in hut bowl, the rule succeeds;
+	the rule fails;
+
+this is the cake-unfilled rule:
+	if trap-made is false, the rule succeeds;
+	the rule fails;
+
+this is the rats-there rule:
+	if rats are in seer trees, the rule succeeds;
+	the rule fails;
+
+chapter My Gym hinting
+
+hint-name of My Gym is table of mygym hints.
+
+table of mygym hints
+hint-rule	hint-text
+--	"Dave is tough to get around. You need to find a way to do so."
+--	"You don't need a special item, just the right verb."
+--	"This is a palindrome area. Dave backwards is EVAD..."
+--	"EVADE DAVE lets you evade Dave."
+
+chapter State Tats hinting
+
+hint-name of State Tats is table of statetats.
+
+table of statetats
+hint-rule	hint-text
+--	"You obviously want to get a tattoo."
 
