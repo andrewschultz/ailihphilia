@@ -18,6 +18,8 @@ El Live Ville is a region.
 
 understand "poop" and "boob" as a mistake ("No swearing, even if it fits in here!")
 
+instead of swearing obscenely: say "Dammit, I'm mad!"
+
 volume verbs
 
 chapter xyzzying
@@ -36,6 +38,12 @@ instead of attacking, say "Attack, cat? Ta!"
 instead of waiting, say "GO, dog!"
 
 volume rooms
+
+book Fun 'Nuf
+
+Fun 'Nuf is a room. "A sign of light blocks your view, but not your progress, to the west. Some tile lit is carved to the east."
+
+check taking tile lit: say "It's sort of embedded into the ground. It looks nice there, anyway."
 
 book Seer Trees
 
@@ -144,6 +152,10 @@ Civic Level is a room.
 The radar is in Civic Level.
 
 volume hinting
+
+table of donehere
+hint-loc	fail-rule	hint-text
+Seer Trees	rats-there rule	"You cleared the start rats, so you should be done here."
 
 chapter seer trees hinting
 
