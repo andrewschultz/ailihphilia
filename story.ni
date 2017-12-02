@@ -1,4 +1,4 @@
-"Put it Up" by Andrew Schultz
+n"Put it Up" by Andrew Schultz
 
 the story headline is "Yo, Joy"
 
@@ -19,6 +19,12 @@ El Live Ville is a region.
 understand "poop" and "boob" as a mistake ("No swearing, even if it fits in here!")
 
 instead of swearing obscenely: say "Dammit, I'm mad!"
+
+volume unsorted
+
+the party trap is a thing.
+
+the sage gas is a thing.
 
 volume verbs
 
@@ -56,11 +62,11 @@ the start rats are a plural-named thing in Seer Trees.
 
 check taking start rats: say "There are too many, and they'd probably bite you, anyway."
 
-check dropping cake trap in Seer Trees:
+check dropping party trap in Seer Trees:
 	if trap-made is false, say "You have nothing to bait the trap with. With which to bait the trap." instead;
-	say "The rats all try to enter the cake, and SNAP! SNAP! SNAP! The cake trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The seer trees seem to nod a bit.";
+	say "The rats all try to enter the cake, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The seer trees seem to nod a bit.";
 	now start rats are in lalaland;
-	now cake trap is in lalaland;
+	now party trap is in lalaland;
 	score-inc;
 	the rule succeeds;
 
@@ -164,19 +170,19 @@ hint-name of Seer Trees is table of seertrees hints.
 table of seertrees hints
 hint-rule	hint-text
 --	"You need to clear the start rats."
-need-cake rule	"Some sort of trap would be nice."
-need-cake rule	"Did you find a cake trap yet?"
-cake-unfilled rule	"You need to fill a cake trap with something."
-cake-unfilled rule	"Something disgusting. What might have something disgusting that works with the cake trap?"
-cake-unfilled rule	"The rash womb/rush womb in Rank Bloom."
-cake-unfilled rule	"PUT TRAP IN WOMB."
+need-party rule	"Some sort of trap would be nice."
+need-party rule	"Did you find a party trap yet?"
+party-unfilled rule	"You need to fill a party trap with something."
+party-unfilled rule	"Something disgusting. What might have something disgusting that works with the party trap?"
+party-unfilled rule	"The rash womb/rush womb in Rank Bloom."
+party-unfilled rule	"PUT TRAP IN WOMB."
 rats-there rule	"With the cake, you can DROP THE CAKE here in Seer Trees."
 
-this is the need-cake rule:
-	if cake trap is in hut bowl, the rule succeeds;
+this is the need-party rule: [?? placeholder is wrong]
+	if party trap is in Fun 'Nuf, the rule succeeds;
 	the rule fails;
 
-this is the cake-unfilled rule:
+this is the party-unfilled rule:
 	if trap-made is false, the rule succeeds;
 	the rule fails;
 

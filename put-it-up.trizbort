@@ -54,6 +54,11 @@
 			<dock index="0" id="3" port="ne" />
 			<dock index="1" id="5" port="nw" />
 		</line>
+		<room id="19" name="Dumb Mud" subtitle="" x="-544" y="-320" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="20" name="Moo Room" subtitle="" x="-544" y="-64" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="21" name="Ned's Den" subtitle="" x="-64" y="-320" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects>DENT NED</objects>
+		</room>
 	</map>
 	<settings>
 		<colors>
