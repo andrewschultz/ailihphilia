@@ -16,10 +16,6 @@ the tile lit is scenery in Fun 'Nuf. "It reads [b]PALINDROMOPOLIS THIS WAY![r]"
 
 El Live Ville is a region.
 
-understand "poop" and "boob" as a mistake ("No swearing, even if it fits in here!")
-
-instead of swearing obscenely: say "Dammit, I'm mad!"
-
 volume unsorted
 
 the party trap is a thing.
@@ -27,6 +23,12 @@ the party trap is a thing.
 the sage gas is a thing.
 
 volume verbs
+
+chapter silly swearing
+
+instead of swearing obscenely: say "[one of]Dammit, I'm mad![or]We mew![in random order]"
+
+understand "poop" and "boob" as a mistake ("No swearing, even if it fits in here!")
 
 chapter xyzzying
 
@@ -73,6 +75,8 @@ check dropping party trap in Seer Trees:
 book Yawn Way
 
 Yawn Way is east of Seer Trees. "Not much to do here, but State Tats is to the north, and My Gym is to the east. An alley is to the east."
+
+book Dumb Mud
 
 book State Tats
 
