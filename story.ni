@@ -1,4 +1,4 @@
-n"Put it Up" by Andrew Schultz
+"Put it Up" by Andrew Schultz
 
 the story headline is "Yo, Joy"
 
@@ -21,6 +21,13 @@ volume unsorted
 the party trap is a thing.
 
 the sage gas is a thing.
+
+the resto poster is a thing.
+
+volume parser errors
+
+Rule for printing a parser error when the latest parser error is the i beg your pardon error:
+	say "Noise lesion."
 
 volume verbs
 
