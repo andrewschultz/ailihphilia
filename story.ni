@@ -31,6 +31,18 @@ Rule for printing a parser error when the latest parser error is the i beg your 
 
 volume verbs
 
+chapter procedurality
+
+to decide whether the action is procedural: [aip]
+	if examining, yes;
+	if attacking, yes;
+	if saying yes, yes;
+	if saying no, yes;
+	if dropping, yes;
+	if looking, yes;
+	if listening, yes;
+	no;
+
 chapter silly swearing
 
 instead of swearing obscenely: say "[one of]Dammit, I'm mad![or]We mew![in random order]"
@@ -58,7 +70,7 @@ book Fun 'Nuf
 
 Fun 'Nuf is a room. "A sign of light blocks your view, but not your progress, to the west. Some tile lit is carved to the east."
 
-check taking tile lit: say "It's sort of embedded into the ground. It looks nice there, anyway."
+check taking tile lit: say "It's sort of embedded into the ground. It looks nice there, anyway, and it's useful for information."
 
 book Seer Trees
 
@@ -93,7 +105,15 @@ book my gym
 
 My Gym is north of Yawn Way. "The only way out is south."
 
+chapter dave
+
 Dave is a person in My Gym. initial appearance is "[one of]A fellow walks over to you and booms 'I'M DAVE!' You freeze, and after a few seconds, he whispers, 'Dud.'[or]Dave is here, keeping an eye on you.[stopping]". description is "Dave is big and strong and fast."
+
+instead of doing something with dave:
+	if action is procedural, continue the action;
+	say "Looks like you'll need to do something special with, or to, Dave. Nothing destructive. But psych him out, somehow."
+
+chapter resto poster
 
 a resto poster is a thing in My Gym.
 
