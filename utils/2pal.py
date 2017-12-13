@@ -152,6 +152,19 @@ def one_at_a_time():
     end = time.time()
     print(end-start, 'total seconds', totals, 'total comparisons')
 
+with open("2pal-short.txt") as file:
+	for line in file:
+		if line.startswith(';'):
+			break
+		if line.startswith('#'):
+			continue
+		l = line.strip().lower()
+		l2 = line.split(",")
+		if not os.path.isfile(l2[1]):
+			print("Could not find file", l2[1])
+			exit()
+		file_hash[l2[0]] = l2[1]
+
 parser = argparse.ArgumentParser(description='palindrome looker upper', formatter_class=argparse.RawTextHelpFormatter)
 
 # parser.add_argument("x", type=bool, help="2 letters in hash array or 1")
