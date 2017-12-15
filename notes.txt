@@ -5,3 +5,7 @@ Ball Lab
 Notw Won
 
 Won Snow
+
+--read through first/last and last/first for reverses
+--designate output files for (group of stuff)/group of stuff
+redo names in alphabetical order
