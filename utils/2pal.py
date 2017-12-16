@@ -19,9 +19,6 @@ file_hash = { "f":"c:/writing/dict/firsts.txt",
   "d":"c:/writing/dict/brit-1word.txt"
   }
 
-twiddle_words = False
-twiddle_first = False
-twiddle_last = False
 need_words = False
 
 # all_at_once compares all word pairs. It's slower.
@@ -87,7 +84,7 @@ def all_at_once():
     print(end-start, 'total seconds')
 
 def one_at_a_time():
-    out_file = "pals-out-1-{:s}-2-{:s}".format('-'.join(starting_array), '-'.join(ending_array))
+    out_file = "pals-out-1-{:s}-2-{:s}".format('-'.join(start_files), '-'.join(end_files))
     if custom_file_string != '':
         out_file = out_file + '-cus-' + custom_file_string
     if start_string != '':
@@ -116,11 +113,11 @@ def one_at_a_time():
             return
     head_string = "# Munging " + '/'.join(start_files) + " to " + '/'.join(end_files) + '\n'
     head_string = head_string + "# Extra start string = " + (start_string if start_string else "none") + '\n'
-    head_string = head_string + "# Extra end string = " + (end_string if end_string else "none") + '\n'
+    head_string = head_string + "# Extra middle string = " + (mid_string if mid_string else "none") + '\n'
     fout.write(head_string)
-    fout2.write(head_string)
+    fouta.write(head_string)
     fout.write("# Palindromes (non-anagram) results\n")
-    fout2.write("# Palindromes (anagram) results\n")
+    fouta.write("# Palindromes (anagram) results\n")
     count = 0
     totals = 0
     my_stuff = []
@@ -199,13 +196,13 @@ else:
         print("You need to define start/end array or a file array (-fs&-fe or -f).")
         exit()
 
-starting_array = sorted(args.start_array.split(","))
-ending_array = sorted(args.end_array.split(","))
+start_files = sorted(args.start_array.split(","))
+end_files = sorted(args.end_array.split(","))
 
 bail = False
 file_list = []
 
-all_files = list(set(starting_array) | set(ending_array))
+all_files = list(set(start_files) | set(end_files))
 
 for x in all_files:
     if x not in file_hash.keys():
@@ -253,11 +250,8 @@ for x in ascii_lowercase:
         starts[x+y] = defaultdict(bool)
         twolist.append(x+y)
 
-if not (twiddle_first or twiddle_last or twiddle_words):
-    print("You need to set -w, -l, -f or -lf.")
-
 for f in all_files:
-    get_words(file_hash[f], f in set(starting_array), f in set(ending_array))
+    get_words(file_hash[f], f in set(start_files), f in set(end_files))
 
 words = sorted(word_dict.keys())
 
