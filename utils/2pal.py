@@ -36,6 +36,8 @@ overwrite_file = False
 
 # we show what group of letters we're on by default if brute_force_hashing is FALSE
 suppress_progress = False
+# when showing progress, do we show combinations that have 0 of one starting/ending letter combo? Default is NO
+show_zeros = False
 
 word_dict = defaultdict(bool)
 twolist = []
@@ -132,8 +134,9 @@ def one_at_a_time():
         l2 = l[::-1]
         poss_combos = len(starts[l].keys()) # * len(ends[l2].keys())
         if not suppress_progress:
-            stderr_string = '{:s} ({:>5d}) {:s} ({:>5d}) total = {:>10d}.\n'.format(l, len(starts[l].keys()), l2, len(ends[l2].keys()), poss_combos)
-            sys.stderr.write(stderr_string)
+            if show_zeros or (len(starts[l].keys()) and len(ends[l2].keys())):
+                stderr_string = '{:s} ({:>5d}) {:s} ({:>5d}) total = {:>10d}.\n'.format(l, len(starts[l].keys()), l2, len(ends[l2].keys()), poss_combos)
+                sys.stderr.write(stderr_string)
         totals = totals + poss_combos
         for x in starts[l].keys():
             for y in ends[l2].keys():
@@ -173,7 +176,8 @@ parser.add_argument('-2', action='store_false', dest='twosies')
 parser.add_argument('-f', type=str, help="start and end arrays", dest='file_array')
 parser.add_argument('-fs', type=str, help="start array", dest='start_array')
 parser.add_argument('-fe', type=str, help="end array", dest='end_array')
-parser.add_argument('-sp', action='store_true', dest='suppress_progress')
+parser.add_argument('-sp', action='store_true', help="suppress progress of what anagram is being checked", dest='suppress_progress')
+parser.add_argument('-s0', action='store_true', help="show zeros in progress", dest='show_zeros')
 parser.add_argument('-b', type=str, help="begin string", dest='begin_string')
 parser.add_argument('-m', type=str, help="middle string", dest='mid_string')
 parser.add_argument('-e', type=str, help="end string", dest='end_string')
@@ -241,6 +245,9 @@ if args.twosies:
 
 if args.dumb_test:
     dumb_test = args.dumb_test
+
+if args.show_zeros:
+    show_zeros = True
 
 for x in ascii_lowercase:
     ends[x] = defaultdict(bool)
