@@ -14,6 +14,11 @@ import os.path
 from string import ascii_lowercase
 from collections import defaultdict
 
+file_hash = { "f":"c:/writing/dict/firsts.txt",
+  "l":"c:/writing/dict/firsts.txt",
+  "d":"c:/writing/dict/brit-1word.txt"
+  }
+
 twiddle_words = False
 twiddle_first = False
 twiddle_last = False
@@ -44,13 +49,16 @@ mid_string = ''
 start_string = ''
 custom_file_string = ''
 
-def get_words(a, new_adding_candidates = True):
-    print("Getting words from",a, ['without', 'and'][new_adding_candidates], 'putting them in candidate array.')
+def get_words(a, add_start = True, add_end = True):
+    print("Getting words from", a, ['without', 'with'][add_start], 'starting candidates', ['without', 'with'][add_start], 'ending candidates')
     with open(a) as file:
         for line in file:
             l = line.strip().lower()
             word_dict[l] = True
-            if new_adding_candidates:
+            if add_start:
+                start_words[l] = True
+            if add_end:
+                end_words[l] = True
                 if twosies:
                     ends[l[-2:]][l] = True
                     starts[l[:2]][l] = True
@@ -152,31 +160,19 @@ def one_at_a_time():
     end = time.time()
     print(end-start, 'total seconds', totals, 'total comparisons')
 
-with open("2pal-short.txt") as file:
-	for line in file:
-		if line.startswith(';'):
-			break
-		if line.startswith('#'):
-			continue
-		l = line.strip().lower()
-		l2 = line.split(",")
-		if not os.path.isfile(l2[1]):
-			print("Could not find file", l2[1])
-			exit()
-		file_hash[l2[0]] = l2[1]
-
 parser = argparse.ArgumentParser(description='palindrome looker upper', formatter_class=argparse.RawTextHelpFormatter)
 
 # parser.add_argument("x", type=bool, help="2 letters in hash array or 1")
 # parser.add_argument('b', action='store_true', dest='brute_force', help='!')
 parser.add_argument('-d', action='store_true', dest='dumb_test', help='run dumb test focusing on specific letters')
 parser.add_argument('-2', action='store_false', dest='twosies')
-parser.add_argument('-w', action='store_true', dest='twiddle_words')
-parser.add_argument('-f', action='store_true', dest='twiddle_first')
-parser.add_argument('-l', action='store_true', dest='twiddle_last')
-parser.add_argument('-lf', '-fl', action='store_true', dest='twiddle_first_last')
+parser.add_argument('-f', type=str, help="start and end arrays", dest='file_array')
+parser.add_argument('-fs', type=str, help="start array", dest='start_array')
+parser.add_argument('-fe', type=str, help="end array", dest='end_array')
 parser.add_argument('-sp', action='store_true', dest='suppress_progress')
+parser.add_argument('-b', type=str, help="begin string", dest='begin_string')
 parser.add_argument('-m', type=str, help="middle string", dest='mid_string')
+parser.add_argument('-e', type=str, help="middle string", dest='end_string')
 parser.add_argument('-n', '-nw', type=str, help="need words", dest='need_words')
 parser.add_argument('-s', type=str, help="start string", dest='start_string')
 parser.add_argument('-c', '-cf', type=str, help="custom file string", dest='custom_file_string')
@@ -184,6 +180,36 @@ parser.add_argument('-tf', '-fi', action="store_true", help="to file", dest='to_
 parser.add_argument('-o', '-of', action="store_true", help="overwrite file", dest='overwrite_file')
 
 args = parser.parse_args()
+
+if args.file_array:
+    if args.start_array or args.end_array:
+        print("You can either define a file array or a start/end array, but not both (-fs&-fe or -f).")
+        exit()
+    args.start_array = args.file_array
+    args.end_array = args.file_array
+else:
+    if not args.start_array or not args.end_array:
+        print("You need to define start/end array or a file array (-fs&-fe or -f).")
+        exit()
+
+starting_array = args.start_array.split(",")
+ending_array = args.end_array.split(",")
+
+bail = False
+file_list = []
+
+all_files = list(set(starting_array) | set(ending_array))
+
+for x in all_files:
+    if x not in file_hash.keys():
+        print(x,"is not a key in the file hash.")
+        bail = True
+    else:
+        file_list.append(file_hash[x])
+
+if bail:
+    print("Valid keys in the file hash are", ', '.join([x + "=" + file_hash[x] for x in sorted(file_hash.keys())]))
+    exit()
 
 if args.suppress_progress:
     suppress_progress = True
@@ -236,16 +262,8 @@ for x in ascii_lowercase:
 if not (twiddle_first or twiddle_last or twiddle_words):
     print("You need to set -w, -l, -f or -lf.")
 
-if twiddle_words:
-    get_words("c:\\writing\\dict\\brit-1word.txt", True)
-else:
-    get_words("c:\\writing\\dict\\brit-1word.txt", False)
-
-if twiddle_first:
-    get_words("c:\\writing\\dict\\firsts.txt", True)
-
-if twiddle_last:
-    get_words("c:\\writing\\dict\\lasts.txt", True)
+for f in all_files:
+    get_words(file_hash[f], f in set(starting_array), f in set(ending_array))
 
 words = sorted(word_dict.keys())
 
