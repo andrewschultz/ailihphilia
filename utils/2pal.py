@@ -34,6 +34,9 @@ dumb_test = False
 to_file = False
 overwrite_file = False
 
+PALINDROME = 0
+ANAGRAM = 1
+
 # we show what group of letters we're on by default if brute_force_hashing is FALSE
 suppress_progress = False
 # when showing progress, do we show combinations that have 0 of one starting/ending letter combo? Default is NO
@@ -85,28 +88,44 @@ def all_at_once():
     end = time.time()
     print(end-start, 'total seconds')
 
-def one_at_a_time():
-    out_file = "pals-out-1-{:s}-2-{:s}".format('-'.join(start_files), '-'.join(end_files))
+# note we usually need both files created, anagram and non, so let's make them
+def custom_munge(my_str):
+    temp = my_str
     if custom_file_string != '':
-        out_file = out_file + '-cus-' + custom_file_string
+        temp = temp + '-cus-' + custom_file_string
     if start_string != '':
-        out_file = out_file + '-xs-' + start_string
+        temp = temp + '-xs-' + start_string
     if mid_string != '':
-        out_file = out_file + '-xm-' + mid_string
-    out_anag = out_file + "-ana.txt"
-    out_file = out_file + ".txt"
+        temp = temp + '-xm-' + mid_string
+    t1 = temp
+    t1 = t1 + '-ana'
+    temp = temp + '.txt'
+    t1 = t1 + '.txt'
+    return (temp, t1)
+
+def one_at_a_time():
+    base_file = "pals-out-1-{:s}-2-{:s}".format('-'.join(start_files), '-'.join(end_files))
+    out_files = custom_munge(base_file)
+    die(out_files)
     fout = None
     fouta = None
     if to_file:
-        if os.path.isfile(out_file):
+        if os.path.isfile(out_files[PALINDROME]):
             if overwrite_file:
-                print("Overwriting already-present file", out_file)
+                print("Overwriting already-present palindrome file", out_file[PALINDROME])
             else:
-                print("Need -o or -of to overwrite already-present", out_file)
+                print("Need -o or -of to overwrite already-present palindrome file", out_file[PALINDROME])
                 return
-        print("Writing to", out_file)
-        fout = open(out_file, "w")
-        fouta = open(out_anag, "w")
+        if os.path.isfile(out_files[ANAGRAM]):
+            if overwrite_file:
+                print("Overwriting already-present anagram file", out_file[ANAGRAM])
+            else:
+                print("Need -o or -of to overwrite already-present anagram file", out_file[ANAGRAM])
+                return
+        print("Writing palindromes to", out_file[PALINDROME])
+        print("Writing anagrams to", out_file[ANAGRAM])
+        fout = open(out_file[PALINDROME], "w")
+        fouta = open(out_anag[ANAGRAM], "w")
         if fout is None:
             print("Unable to open", out_file, "for writing.")
             return
@@ -171,6 +190,7 @@ parser = argparse.ArgumentParser(description='palindrome looker upper', formatte
 
 # parser.add_argument("x", type=bool, help="2 letters in hash array or 1")
 # parser.add_argument('b', action='store_true', dest='brute_force', help='!')
+parser.add_argument('-co', action='store_true', dest='concordance', help='run concordance of all possible file combinations')
 parser.add_argument('-d', action='store_true', dest='dumb_test', help='run dumb test focusing on specific letters')
 parser.add_argument('-2', action='store_false', dest='twosies')
 parser.add_argument('-f', type=str, help="start and end arrays", dest='file_array')
@@ -188,6 +208,45 @@ parser.add_argument('-tf', '-fi', action="store_true", help="to file", dest='to_
 parser.add_argument('-o', '-of', action="store_true", help="overwrite file", dest='overwrite_file')
 
 args = parser.parse_args()
+
+if args.mid_string:
+    mid_string = args.mid_string
+
+if args.start_string:
+    start_string = args.start_string
+
+if args.concordance:
+    fh = sorted(file_hash.keys())
+    print("LIST OF COMMANDS TO RUN:")
+    for x in fh:
+        for y in fh:
+            print("2pal.py -fs", x, "-fe", y, "-tf -of")
+    print("LIST OF FILES TO CREATE:")
+    created = 0
+    uncreated = 0
+    cmds_to_run = []
+    for x in fh:
+        for y in fh:
+            run_this = False
+            z = "pals-out-1-{:s}-2-{:s}".format(x, y)
+            temp_ary = custom_munge(z)
+            for t in temp_ary:
+                if os.path.exists(t):
+                    print("EXISTS", t)
+                    created = created + 1
+                else:
+                    print(t, "DOESN'T EXIST")
+                    uncreated = uncreated + 1
+                    run_this = True
+            if run_this:
+                cmds_to_run.append("2pal.py -fs {:s} -fe {:s} -tf -of".format(x, y))
+    print("Created", created, "Uncreated", uncreated)
+    if len(cmds_to_run) > 0:
+        print("Commands to run:")
+        print('\n'.join(cmds_to_run))
+    else:
+        print("No commands needed to run.")
+    exit()
 
 if args.file_array:
     if args.start_array or args.end_array:
@@ -227,12 +286,6 @@ if args.to_file:
 
 if args.overwrite_file:
     overwrite_file = args.overwrite_file
-
-if args.mid_string:
-    mid_string = args.mid_string
-
-if args.start_string:
-    start_string = args.start_string
 
 if args.custom_file_string:
     custom_file_string = args.custom_file_string
