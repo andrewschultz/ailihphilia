@@ -19,8 +19,6 @@ file_hash = { "f":"c:/writing/dict/firsts.txt",
   "d":"c:/writing/dict/brit-1word.txt"
   }
 
-need_words = False
-
 # all_at_once compares all word pairs. It's slower.
 # if it is FALSE, then we only compare words that start with a with words that end with a.
 # that's up to 26x (676x) faster (Cauchy's Inequality says it can't be more than that)
@@ -48,11 +46,29 @@ ends = {}
 starts = {}
 
 mid_string = ''
-start_string = ''
+begin_string = ''
+end_string = ''
+
 custom_file_string = ''
 
 start_words = defaultdict(bool)
 end_words = defaultdict(bool)
+
+def usage():
+    print("This is a list of parameters you can send to 2pal.py.")
+    print("")
+    print("-f = start/end files, -fs = start files, -fe = end files. The file hash is below:")
+    print('   ', ', '.join([x + "=" + file_hash[x] for x in sorted(file_hash.keys())]))
+    print("-co provides a concordance of commands that still need to be run.")
+    print("-b -m -e = begin, middle, end string")
+    print("-sp suppresses progress in stdout, -s0 shows zero-ish e.g. zg/gz will have no possible matches")
+    print("-tf/-fi sends output to file, -o/-of overwrites if it's there.")
+    print("-c/-cf tacks on a custom file string.")
+    print("-co = concordance of all file combinations and commands.")
+    print("-d dumb test")
+    print("-2 quicken things by using hash tables to match only words with same 2 first/last letters")
+    print("-? this usage")
+    exit()
 
 def get_words(a, add_start = True, add_end = True):
     w_wo = ['without', 'with']
@@ -93,10 +109,12 @@ def custom_munge(my_str):
     temp = my_str
     if custom_file_string != '':
         temp = temp + '-cus-' + custom_file_string
-    if start_string != '':
-        temp = temp + '-xs-' + start_string
+    if begin_string != '':
+        temp = temp + '-xs-' + begin_string
     if mid_string != '':
         temp = temp + '-xm-' + mid_string
+    if end_string != '':
+        temp = temp + '-xe-' + end_string
     t1 = temp
     t1 = t1 + '-ana'
     temp = temp + '.txt'
@@ -106,26 +124,25 @@ def custom_munge(my_str):
 def one_at_a_time():
     base_file = "pals-out-1-{:s}-2-{:s}".format('-'.join(start_files), '-'.join(end_files))
     out_files = custom_munge(base_file)
-    die(out_files)
     fout = None
     fouta = None
     if to_file:
         if os.path.isfile(out_files[PALINDROME]):
             if overwrite_file:
-                print("Overwriting already-present palindrome file", out_file[PALINDROME])
+                print("Overwriting already-present palindrome file", out_files[PALINDROME])
             else:
-                print("Need -o or -of to overwrite already-present palindrome file", out_file[PALINDROME])
+                print("Need -o or -of to overwrite already-present palindrome file", out_files[PALINDROME])
                 return
         if os.path.isfile(out_files[ANAGRAM]):
             if overwrite_file:
-                print("Overwriting already-present anagram file", out_file[ANAGRAM])
+                print("Overwriting already-present anagram file", out_files[ANAGRAM])
             else:
-                print("Need -o or -of to overwrite already-present anagram file", out_file[ANAGRAM])
+                print("Need -o or -of to overwrite already-present anagram file", out_files[ANAGRAM])
                 return
-        print("Writing palindromes to", out_file[PALINDROME])
-        print("Writing anagrams to", out_file[ANAGRAM])
-        fout = open(out_file[PALINDROME], "w")
-        fouta = open(out_anag[ANAGRAM], "w")
+        print("Writing palindromes to", out_files[PALINDROME])
+        print("Writing anagrams to", out_files[ANAGRAM])
+        fout = open(out_files[PALINDROME], "w")
+        fouta = open(out_files[ANAGRAM], "w")
         if fout is None:
             print("Unable to open", out_file, "for writing.")
             return
@@ -151,7 +168,7 @@ def one_at_a_time():
     start = time.time()
     for l in my_stuff:
         l2 = l[::-1]
-        poss_combos = len(starts[l].keys()) # * len(ends[l2].keys())
+        poss_combos = len(starts[l].keys()) * len(ends[l2].keys())
         if not suppress_progress:
             if show_zeros or (len(starts[l].keys()) and len(ends[l2].keys())):
                 stderr_string = '{:s} ({:>5d}) {:s} ({:>5d}) total = {:>10d}.\n'.format(l, len(starts[l].keys()), l2, len(ends[l2].keys()), poss_combos)
@@ -193,6 +210,7 @@ parser = argparse.ArgumentParser(description='palindrome looker upper', formatte
 parser.add_argument('-co', action='store_true', dest='concordance', help='run concordance of all possible file combinations')
 parser.add_argument('-d', action='store_true', dest='dumb_test', help='run dumb test focusing on specific letters')
 parser.add_argument('-2', action='store_false', dest='twosies')
+parser.add_argument('-?', action='store_true', dest='usage')
 parser.add_argument('-f', type=str, help="start and end arrays", dest='file_array')
 parser.add_argument('-fs', type=str, help="start array", dest='start_array')
 parser.add_argument('-fe', type=str, help="end array", dest='end_array')
@@ -201,19 +219,23 @@ parser.add_argument('-s0', action='store_true', help="show zeros in progress", d
 parser.add_argument('-b', type=str, help="begin string", dest='begin_string')
 parser.add_argument('-m', type=str, help="middle string", dest='mid_string')
 parser.add_argument('-e', type=str, help="end string", dest='end_string')
-parser.add_argument('-n', '-nw', type=str, help="need words", dest='need_words')
-parser.add_argument('-s', type=str, help="start string", dest='start_string')
 parser.add_argument('-c', '-cf', type=str, help="custom file string", dest='custom_file_string')
 parser.add_argument('-tf', '-fi', action="store_true", help="to file", dest='to_file')
 parser.add_argument('-o', '-of', action="store_true", help="overwrite file", dest='overwrite_file')
 
 args = parser.parse_args()
 
+if args.usage:
+    usage()
+
+if args.begin_string:
+    begin_string = args.begin_string
+
+if args.end_string:
+    end_string = args.end_string
+
 if args.mid_string:
     mid_string = args.mid_string
-
-if args.start_string:
-    start_string = args.start_string
 
 if args.concordance:
     fh = sorted(file_hash.keys())
@@ -289,9 +311,6 @@ if args.overwrite_file:
 
 if args.custom_file_string:
     custom_file_string = args.custom_file_string
-
-if args.need_words:
-    need_words = args.need_words
 
 if args.twosies:
     twosies = args.twosies
