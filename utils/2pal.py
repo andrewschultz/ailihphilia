@@ -15,7 +15,7 @@ from string import ascii_lowercase
 from collections import defaultdict
 
 file_hash = { "f":"c:/writing/dict/firsts.txt",
-  "l":"c:/writing/dict/firsts.txt",
+  "l":"c:/writing/dict/lasts.txt",
   "d":"c:/writing/dict/brit-1word.txt"
   }
 
@@ -49,24 +49,30 @@ mid_string = ''
 start_string = ''
 custom_file_string = ''
 
+start_words = defaultdict(bool)
+end_words = defaultdict(bool)
+
 def get_words(a, add_start = True, add_end = True):
-    print("Getting words from", a, ['without', 'with'][add_start], 'starting candidates', ['without', 'with'][add_start], 'ending candidates')
+    w_wo = ['without', 'with']
+    print("Getting words from", a, w_wo[add_start], 'starting candidates', w_wo[add_start], 'ending candidates')
     with open(a) as file:
         for line in file:
             l = line.strip().lower()
             word_dict[l] = True
             if add_start:
                 start_words[l] = True
+                if twosies:
+                    starts[l[:2]][l] = True
+                else:
+                    v = l[:1]
+                    starts[v][l] = True
             if add_end:
                 end_words[l] = True
                 if twosies:
                     ends[l[-2:]][l] = True
-                    starts[l[:2]][l] = True
-                else:
                     u = l[-1:]
-                    v = l[:1]
+                else:
                     ends[u][l] = True
-                    starts[v][l] = True
     print("Done with", a)
 
 def all_at_once():
@@ -81,19 +87,13 @@ def all_at_once():
     print(end-start, 'total seconds')
 
 def one_at_a_time():
-    out_file = "pals-out-"
+    out_file = "pals-out-1-{:s}-2-{:s}".format('-'.join(starting_array), '-'.join(ending_array))
     if custom_file_string != '':
         out_file = out_file + '-cus-' + custom_file_string
     if start_string != '':
-        out_file = out_file + '-start-' + start_string
+        out_file = out_file + '-xs-' + start_string
     if mid_string != '':
-        out_file = out_file + '-mid-' + mid_string
-    if twiddle_words:
-        out_file = out_file + 'w'
-    if twiddle_first:
-        out_file = out_file + 'f'
-    if twiddle_last:
-        out_file = out_file + 'l'
+        out_file = out_file + '-xm-' + mid_string
     out_anag = out_file + "-ana.txt"
     out_file = out_file + ".txt"
     fout = None
@@ -114,6 +114,13 @@ def one_at_a_time():
         if fouta is None:
             print("Unable to open", out_file, "for writing.")
             return
+    head_string = "# Munging " + '/'.join(start_files) + " to " + '/'.join(end_files) + '\n'
+    head_string = head_string + "# Extra start string = " + (start_string if start_string else "none") + '\n'
+    head_string = head_string + "# Extra end string = " + (end_string if end_string else "none") + '\n'
+    fout.write(head_string)
+    fout2.write(head_string)
+    fout.write("# Palindromes (non-anagram) results\n")
+    fout2.write("# Palindromes (anagram) results\n")
     count = 0
     totals = 0
     my_stuff = []
@@ -172,7 +179,7 @@ parser.add_argument('-fe', type=str, help="end array", dest='end_array')
 parser.add_argument('-sp', action='store_true', dest='suppress_progress')
 parser.add_argument('-b', type=str, help="begin string", dest='begin_string')
 parser.add_argument('-m', type=str, help="middle string", dest='mid_string')
-parser.add_argument('-e', type=str, help="middle string", dest='end_string')
+parser.add_argument('-e', type=str, help="end string", dest='end_string')
 parser.add_argument('-n', '-nw', type=str, help="need words", dest='need_words')
 parser.add_argument('-s', type=str, help="start string", dest='start_string')
 parser.add_argument('-c', '-cf', type=str, help="custom file string", dest='custom_file_string')
@@ -192,8 +199,8 @@ else:
         print("You need to define start/end array or a file array (-fs&-fe or -f).")
         exit()
 
-starting_array = args.start_array.split(",")
-ending_array = args.end_array.split(",")
+starting_array = sorted(args.start_array.split(","))
+ending_array = sorted(args.end_array.split(","))
 
 bail = False
 file_list = []
@@ -228,19 +235,6 @@ if args.start_string:
 
 if args.custom_file_string:
     custom_file_string = args.custom_file_string
-
-if args.twiddle_words:
-    twiddle_words = args.twiddle_words
-
-if args.twiddle_first:
-    twiddle_first = args.twiddle_first
-
-if args.twiddle_last:
-    twiddle_last = args.twiddle_last
-
-if args.twiddle_first_last:
-    twiddle_last = True
-    twiddle_first = True
 
 if args.need_words:
     need_words = args.need_words
