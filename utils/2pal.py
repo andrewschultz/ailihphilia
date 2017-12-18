@@ -40,6 +40,9 @@ suppress_progress = False
 # when showing progress, do we show combinations that have 0 of one starting/ending letter combo? Default is NO
 show_zeros = False
 
+# tracking total words used at start/end
+track_run_total = False
+
 word_dict = defaultdict(bool)
 twolist = []
 ends = {}
@@ -65,6 +68,7 @@ def usage():
     print("-tf/-fi sends output to file, -o/-of overwrites if it's there.")
     print("-c/-cf tacks on a custom file string.")
     print("-co = concordance of all file combinations and commands.")
+    print("-trt = debug flag to track run totals of first/last words checked so far.")
     print("-d dumb test")
     print("-2 quicken things by using hash tables to match only words with same 2 first/last letters")
     print("-? this usage")
@@ -72,7 +76,7 @@ def usage():
 
 def get_words(a, add_start = True, add_end = True):
     w_wo = ['without', 'with']
-    print("Getting words from", a, w_wo[add_start], 'starting candidates', w_wo[add_start], 'ending candidates')
+    print("Getting words from", a, w_wo[add_start], 'starting candidates', w_wo[add_end], 'ending candidates')
     with open(a) as file:
         for line in file:
             l = line.strip().lower()
@@ -150,7 +154,7 @@ def one_at_a_time():
             print("Unable to open", out_file, "for writing.")
             return
     head_string = "# Munging " + '/'.join(start_files) + " to " + '/'.join(end_files) + '\n'
-    head_string = head_string + "# Extra start string = " + (start_string if start_string else "none") + '\n'
+    head_string = head_string + "# Extra start string = " + (begin_string if begin_string else "none") + '\n'
     head_string = head_string + "# Extra middle string = " + (mid_string if mid_string else "none") + '\n'
     fout.write(head_string)
     fouta.write(head_string)
@@ -166,22 +170,27 @@ def one_at_a_time():
     else:
         my_stuff = list(ascii_lowercase)
     start = time.time()
+    run_total = [0, 0]
     for l in my_stuff:
         l2 = l[::-1]
         poss_combos = len(starts[l].keys()) * len(ends[l2].keys())
+        if track_run_total:
+            run_total[0] = run_total[0] + len(starts[l].keys())
+            run_total[1] = run_total[1] + len(ends[l2].keys())
+            print('total', run_total[0], run_total[1])
         if not suppress_progress:
             if show_zeros or (len(starts[l].keys()) and len(ends[l2].keys())):
-                stderr_string = '{:s} ({:>5d}) {:s} ({:>5d}) total = {:>10d}.\n'.format(l, len(starts[l].keys()), l2, len(ends[l2].keys()), poss_combos)
+                stderr_string = '{:s} ({:>5d}) < START END > {:s} ({:>5d}) combos = {:>10d}.\n'.format(l, len(starts[l].keys()), l2, len(ends[l2].keys()), poss_combos)
                 sys.stderr.write(stderr_string)
         totals = totals + poss_combos
         for x in starts[l].keys():
             for y in ends[l2].keys():
-                z = start_string + x + mid_string + y
+                z = begin_string + x + mid_string + y
                 if z == z[::-1]:
                     pal = (x == y[::-1])
                     count = count + 1
                     this_line = '{:>5d} {:s} + {:s} ~ {:s}.'.format(count,
-                    (start_string + ' + ' if start_string != '' else '') + x,
+                    (begin_string + ' + ' if begin_string != '' else '') + x,
                     (mid_string + ' + ' if mid_string != '' else '') + y,
                     (' WORDY' if z in words else '') + (' ANAGRAM' if pal else 'PALINDROME'))
                     if to_file:
@@ -208,6 +217,7 @@ parser = argparse.ArgumentParser(description='palindrome looker upper', formatte
 # parser.add_argument("x", type=bool, help="2 letters in hash array or 1")
 # parser.add_argument('b', action='store_true', dest='brute_force', help='!')
 parser.add_argument('-co', action='store_true', dest='concordance', help='run concordance of all possible file combinations')
+parser.add_argument('-trt', action='store_true', dest='track_run_total', help='tracking the run total of first/last letters so far')
 parser.add_argument('-d', action='store_true', dest='dumb_test', help='run dumb test focusing on specific letters')
 parser.add_argument('-2', action='store_false', dest='twosies')
 parser.add_argument('-?', action='store_true', dest='usage')
@@ -269,6 +279,9 @@ if args.concordance:
     else:
         print("No commands needed to run.")
     exit()
+
+if args.track_run_total:
+    track_run_total = args.track_run_total
 
 if args.file_array:
     if args.start_array or args.end_array:
