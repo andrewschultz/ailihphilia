@@ -13,6 +13,7 @@ import os.path
 
 from string import ascii_lowercase
 from collections import defaultdict
+from shutil import copyfile
 
 file_hash = { "f":"c:/writing/dict/firsts.txt",
   "l":"c:/writing/dict/lasts.txt",
@@ -65,7 +66,7 @@ def usage():
     print("-co provides a concordance of commands that still need to be run.")
     print("-b -m -e = begin, middle, end string")
     print("-sp suppresses progress in stdout, -s0 shows zero-ish e.g. zg/gz will have no possible matches")
-    print("-tf/-fi sends output to file, -o/-of overwrites if it's there.")
+    print("-tf/-fi sends output to file, -o/-of overwrites if it's there, -eo sends to edit file.")
     print("-c/-cf tacks on a custom file string.")
     print("-co = concordance of all file combinations and commands.")
     print("-trt = debug flag to track run totals of first/last words checked so far.")
@@ -125,6 +126,14 @@ def custom_munge(my_str):
     t1 = t1 + '.txt'
     return (temp, t1)
 
+def pal_to_edit(a):
+    x = a.replace("pals-", "edit-")
+    if os.path.isfile(a):
+        copyfile(a, x)
+        print("Copied", a, "to", x)
+    else:
+        print("No", a, "to copy to", x)
+
 def one_at_a_time():
     base_file = "pals-out-1-{:s}-2-{:s}".format('-'.join(start_files), '-'.join(end_files))
     out_files = custom_munge(base_file)
@@ -153,13 +162,13 @@ def one_at_a_time():
         if fouta is None:
             print("Unable to open", out_file, "for writing.")
             return
-    head_string = "# Munging " + '/'.join(start_files) + " to " + '/'.join(end_files) + '\n'
-    head_string = head_string + "# Extra start string = " + (begin_string if begin_string else "none") + '\n'
-    head_string = head_string + "# Extra middle string = " + (mid_string if mid_string else "none") + '\n'
-    fout.write(head_string)
-    fouta.write(head_string)
-    fout.write("# Palindromes (non-anagram) results\n")
-    fouta.write("# Palindromes (anagram) results\n")
+        head_string = "# Munging " + '/'.join(start_files) + " to " + '/'.join(end_files) + '\n'
+        head_string = head_string + "# Extra start string = " + (begin_string if begin_string else "none") + '\n'
+        head_string = head_string + "# Extra middle string = " + (mid_string if mid_string else "none") + '\n'
+        fout.write(head_string)
+        fouta.write(head_string)
+        fout.write("# Palindromes (non-anagram) results\n")
+        fouta.write("# Palindromes (anagram) results\n")
     count = 0
     totals = 0
     my_stuff = []
@@ -210,6 +219,9 @@ def one_at_a_time():
     if fouta:
         fouta.close()
     end = time.time()
+    if edit_files:
+        pal_to_edit(out_files[0])
+        pal_to_edit(out_files[1])
     print(end-start, 'total seconds', totals, 'total comparisons')
 
 parser = argparse.ArgumentParser(description='palindrome looker upper', formatter_class=argparse.RawTextHelpFormatter)
@@ -231,6 +243,7 @@ parser.add_argument('-m', type=str, help="middle string", dest='mid_string')
 parser.add_argument('-e', type=str, help="end string", dest='end_string')
 parser.add_argument('-c', '-cf', type=str, help="custom file string", dest='custom_file_string')
 parser.add_argument('-tf', '-fi', action="store_true", help="to file", dest='to_file')
+parser.add_argument('-eo', action="store_true", help="to edit file(s)", dest='edit_files')
 parser.add_argument('-o', '-of', action="store_true", help="overwrite file", dest='overwrite_file')
 
 args = parser.parse_args()
@@ -333,6 +346,9 @@ if args.dumb_test:
 
 if args.show_zeros:
     show_zeros = True
+
+if args.edit_files:
+    edit_files = args.edit_files
 
 for x in ascii_lowercase:
     ends[x] = defaultdict(bool)
