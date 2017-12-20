@@ -1,11 +1,19 @@
 Cash Sac = buy stuff with it
 Bill Lib
 Ball Lab
+Golf Log
 
-Notw Won
+Nowt Won
 
 Won Snow
 
 --read through first/last and last/first for reverses
 --designate output files for (group of stuff)/group of stuff
 redo names in alphabetical order
+
+Describe what THE DETH
+
+Eh, the...
+
+Da Bad
+Meh, Them

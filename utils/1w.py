@@ -33,13 +33,13 @@ with open("c:/writing/dict/brit-1word.txt") as file:
                 found[st] = found[st] + 1
                 if pal_list[st]:
                     pal_list[st] = pal_list[st] + "\n"
-                pal_list[st] = pal_list[st] + "FIRST {:s} + {:s} = {:s}".format(st, l, x)
+                pal_list[st] = pal_list[st] + "FIRST *{:s}* + {:s} = {:s}".format(st, l, x)
                 # print("Added", st, l)
             y = l + st
             if y == y[::-1]:
                 if pal_list[st]:
                     pal_list[st] = pal_list[st] + "\n"
-                pal_list[st] = pal_list[st] + "LAST {:s} + {:s} = {:s}".format(st, l, y)
+                pal_list[st] = pal_list[st] + "LAST {:s} + *{:s}* = {:s}".format(l, st, y)
                 found[st] = found[st] + 1
                 # print("Added", l, st)
 
