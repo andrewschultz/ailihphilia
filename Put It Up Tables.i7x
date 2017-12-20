@@ -211,7 +211,6 @@ person-name
 "Marcene Cram"
 "Marci Cram"
 "Marco Cram"
-"Marge Pegram"
 "Margene Gram"
 "Margot Ogram"
 "Mari Ram"
