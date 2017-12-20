@@ -27,6 +27,7 @@ caps_hash = { "f": True, "l": True, "d": False }
 brute_force_hashing = False
 
 edit_files = False
+sort_output = False
 
 # this determines whether or not we should go with the first two letters or just the first one, when brute_force_hashing is false
 twosies = True
@@ -204,8 +205,8 @@ def one_at_a_time():
                 stderr_string = '{:s} ({:>5d}) < START END > {:s} ({:>5d}) combos = {:>10d}.\n'.format(l, len(starts[l].keys()), l2, len(ends[l2].keys()), poss_combos)
                 sys.stderr.write(stderr_string)
         totals = totals + poss_combos
-        for x in starts[l].keys():
-            for y in ends[l2].keys():
+        for x in (starts[l].keys() if sort_output is False else sorted(starts[l].keys())):
+            for y in (ends[l2].keys() if sort_output is False else sorted(ends[l2].keys())):
                 z = begin_string + x + mid_string + y
                 if z == z[::-1]:
                     pal = (x == y[::-1])
@@ -213,7 +214,7 @@ def one_at_a_time():
                     this_line = '{:>5d} {:s} + {:s} ~ {:s}.'.format(count,
                     (begin_string + ' + ' if begin_string != '' else '') + optcaps(x),
                     (mid_string + ' + ' if mid_string != '' else '') + optcaps(y),
-                    (' WORDY' if z in words else '') + (' ANAGRAM' if pal else 'PALINDROME'))
+                    ('WORDY ' if z in words else '') + ('ANAGRAM' if pal else 'PALINDROME'))
                     if to_file:
                         if pal:
                             fouta.write(this_line +'\n')
@@ -248,6 +249,8 @@ parser.add_argument('-?', action='store_true', dest='usage')
 parser.add_argument('-f', type=str, help="start and end arrays", dest='file_array')
 parser.add_argument('-fs', type=str, help="start array", dest='start_array')
 parser.add_argument('-fe', type=str, help="end array", dest='end_array')
+parser.add_argument('-sy', action="store_true", dest="sort_output_on")
+parser.add_argument('-sn', action="store_true", dest="sort_output_off")
 parser.add_argument('-sp', action='store_true', help="suppress progress of what anagram is being checked", dest='suppress_progress')
 parser.add_argument('-s0', action='store_true', help="show zeros in progress", dest='show_zeros')
 parser.add_argument('-b', type=str, help="begin string", dest='begin_string')
@@ -272,6 +275,15 @@ if args.notepad_open_string:
     base_file = "edit-out-1-{:s}-2-{:s}.txt".format(ed_ary[0], ed_ary[1])
     print("Opening", base_file)
     os.system(base_file)
+
+if args.sort_output_on or args.sort_output_off:
+    if args.sort_output_on and args.sort_output_off:
+        print("Can't set sort output on AND off.")
+        exit()
+    if args.sort_output_on:
+        sort_output = True
+    elif args.sort_output_on:
+        sort_output = False
 
 if args.begin_string:
     begin_string = args.begin_string
