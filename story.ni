@@ -8,6 +8,8 @@ include trivial niceties by Andrew Schultz.
 
 include Basic Screen Effects by Emily Short.
 
+include Put It Up Tables by Andrew Schultz.
+
 the maximum score is 6.
 
 Fun 'Nuf is a room.
