@@ -19,11 +19,14 @@ file_hash = { "f":"c:/writing/dict/firsts.txt",
   "l":"c:/writing/dict/lasts.txt",
   "d":"c:/writing/dict/brit-1word.txt"
   }
+caps_hash = { "f": True, "l": True, "d": False }
 
 # all_at_once compares all word pairs. It's slower.
 # if it is FALSE, then we only compare words that start with a with words that end with a.
 # that's up to 26x (676x) faster (Cauchy's Inequality says it can't be more than that)
 brute_force_hashing = False
+
+edit_files = False
 
 # this determines whether or not we should go with the first two letters or just the first one, when brute_force_hashing is false
 twosies = True
@@ -45,6 +48,7 @@ show_zeros = False
 track_run_total = False
 
 word_dict = defaultdict(bool)
+caps_dict = defaultdict(bool)
 twolist = []
 ends = {}
 starts = {}
@@ -57,6 +61,12 @@ custom_file_string = ''
 
 start_words = defaultdict(bool)
 end_words = defaultdict(bool)
+
+def optcaps(z):
+    if caps_dict[z] == True:
+        return z[0].upper() + z[1:].lower()
+    else:
+        return z
 
 def usage():
     print("This is a list of parameters you can send to 2pal.py.")
@@ -76,13 +86,14 @@ def usage():
     print("-? this usage")
     exit()
 
-def get_words(a, add_start = True, add_end = True):
+def get_words(a, add_start = True, add_end = True, use_caps = False):
     w_wo = ['without', 'with']
     print("Getting words from", a, w_wo[add_start], 'starting candidates', w_wo[add_end], 'ending candidates')
     with open(a) as file:
         for line in file:
             l = line.strip().lower()
             word_dict[l] = True
+            caps_dict[l] = use_caps
             if add_start:
                 start_words[l] = True
                 if twosies:
@@ -200,8 +211,8 @@ def one_at_a_time():
                     pal = (x == y[::-1])
                     count = count + 1
                     this_line = '{:>5d} {:s} + {:s} ~ {:s}.'.format(count,
-                    (begin_string + ' + ' if begin_string != '' else '') + x,
-                    (mid_string + ' + ' if mid_string != '' else '') + y,
+                    (begin_string + ' + ' if begin_string != '' else '') + optcaps(x),
+                    (mid_string + ' + ' if mid_string != '' else '') + optcaps(y),
                     (' WORDY' if z in words else '') + (' ANAGRAM' if pal else 'PALINDROME'))
                     if to_file:
                         if pal:
@@ -370,7 +381,7 @@ for x in ascii_lowercase:
         twolist.append(x+y)
 
 for f in all_files:
-    get_words(file_hash[f], f in set(start_files), f in set(end_files))
+    get_words(file_hash[f], f in set(start_files), f in set(end_files), caps_hash[f])
 
 words = sorted(word_dict.keys())
 
