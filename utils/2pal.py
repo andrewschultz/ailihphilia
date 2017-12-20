@@ -65,6 +65,7 @@ def usage():
     print('   ', ', '.join([x + "=" + file_hash[x] for x in sorted(file_hash.keys())]))
     print("-co provides a concordance of commands that still need to be run.")
     print("-b -m -e = begin, middle, end string")
+    print("-v = view file in notepad")
     print("-sp suppresses progress in stdout, -s0 shows zero-ish e.g. zg/gz will have no possible matches")
     print("-tf/-fi sends output to file, -o/-of overwrites if it's there, -eo sends to edit file.")
     print("-c/-cf tacks on a custom file string.")
@@ -241,6 +242,7 @@ parser.add_argument('-s0', action='store_true', help="show zeros in progress", d
 parser.add_argument('-b', type=str, help="begin string", dest='begin_string')
 parser.add_argument('-m', type=str, help="middle string", dest='mid_string')
 parser.add_argument('-e', type=str, help="end string", dest='end_string')
+parser.add_argument('-v', type=str, help="view in notepad", dest='notepad_open_string')
 parser.add_argument('-c', '-cf', type=str, help="custom file string", dest='custom_file_string')
 parser.add_argument('-tf', '-fi', action="store_true", help="to file", dest='to_file')
 parser.add_argument('-eo', action="store_true", help="to edit file(s)", dest='edit_files')
@@ -250,6 +252,15 @@ args = parser.parse_args()
 
 if args.usage:
     usage()
+
+if args.notepad_open_string:
+    ed_ary = args.notepad_open_string.split(",")
+    if len(ed_ary) != 2:
+        print("The notepad open string must have one comma.")
+        exit()
+    base_file = "edit-out-1-{:s}-2-{:s}.txt".format(ed_ary[0], ed_ary[1])
+    print("Opening", base_file)
+    os.system(base_file)
 
 if args.begin_string:
     begin_string = args.begin_string
