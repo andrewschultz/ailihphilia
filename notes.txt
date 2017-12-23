@@ -3,6 +3,10 @@ Bill Lib
 Ball Lab
 Golf Log
 
+Star Prats
+
+Top Spot
+
 Nowt Won
 
 Won Snow
@@ -17,3 +21,37 @@ Eh, the...
 
 Da Bad
 Meh, Them
+
+arming margin ...
+
+RANDOM STUFF:
+
+Ammo Momma
+
+animals' lamina
+a cross orca
+acidosis isodica
+airgap agria
+aiders redia
+air aria
+ail, glia
+aide media
+aimed academia
+aimer u/premia
+
+Alleging Nigella
+Align Gila
+  255 amen + enema ~ PALINDROME.
+  256 amoral + aroma ~ PALINDROME.
+  395 analyticity + lana ~ PALINDROME.
+  485 arkoses + okra ~ PALINDROME.
+ate feta/zeta
+avow/ova
+apse spa
+Apollo, Pa
+area era
+Art S(ai)stra
+Bats' Tab
+Back Cab
+
+1w.py : not just STDIN but break things into dictionaries of dictionaries by first letter. See 2pal.py for details.
