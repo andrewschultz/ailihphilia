@@ -11,12 +11,14 @@ only_stdin = False
 pals = []
 
 word_cand = defaultdict(bool)
+end_cand = defaultdict(lambda: defaultdict(bool))
+start_cand = defaultdict(lambda: defaultdict(bool))
 
 def palz(pals):
     for x in pals:
         found[x] = 0
-    for l in word_cand.keys():
-        for st in pals:
+    for st in pals:
+        for l in end_cand[st[0]].keys():
             x = st + l
             if x == x[::-1]:
                 found[st] = found[st] + 1
@@ -24,6 +26,7 @@ def palz(pals):
                     pal_list[st] = pal_list[st] + "\n"
                 pal_list[st] = pal_list[st] + "FIRST *{:s}* + {:s} = {:s}".format(st, l, x)
                 # print("Added", st, l)
+        for l in start_cand[st[-1]].keys():
             y = l + st
             if y == y[::-1]:
                 if pal_list[st]:
@@ -51,7 +54,10 @@ for x in sys.argv[1:]:
 
 with open("c:/writing/dict/brit-1word.txt") as file:
     for line in file:
-        word_cand[line.strip().lower()] = True
+        ll = line.strip().lower()
+        word_cand[ll] = True
+        end_cand[ll[-1]][ll] = True
+        start_cand[ll[0]][ll] = True
 
 if len(pals) == 0 and only_stdin == False:
     print("Need -i or a CSV of words.")
