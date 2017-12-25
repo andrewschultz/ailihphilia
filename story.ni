@@ -45,11 +45,19 @@ to decide whether the action is procedural: [aip]
 	if listening, yes;
 	no;
 
+chapter smelling
+
+instead of smelling: say "Noses, on[one of]! (you don't need to smell anything in this game)[or][stopping]!"
+
+chapter singing
+
+instead of singing: say "Rock! Cor!"
+
 chapter silly swearing
 
 instead of swearing obscenely: say "[one of]Dammit, I'm mad![or]We mew![in random order]"
 
-understand "poop" and "boob" as a mistake ("No swearing, even if it fits in here!")
+understand "poop" and "boob" as a mistake ("No swearing! Not even swearing done right for Palindromopolis.")
 
 chapter xyzzying
 
@@ -187,6 +195,10 @@ Stope Depots is a room.
 book civic level
 
 Civic Level is a room.
+
+book work row
+
+Work Row is south of Civic Level.
 
 The radar is in Civic Level.
 
