@@ -7,9 +7,13 @@ wordy = defaultdict(bool)
 lasty = defaultdict(lambda: defaultdict(bool))
 firsty = defaultdict(lambda: defaultdict(bool))
 
+skip_uneven_palindromes = False
+
 def can_palindrome_mid(a, b):
     c = a + b
-    if c == c[::-1]:
+    if a == b[::-1]:
+        return False
+    if skip_uneven_palindromes and c == c[::-1]:
         d = len(a) - len(b)
         if abs(d) < 2:
             return False
