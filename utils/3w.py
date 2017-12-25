@@ -9,6 +9,8 @@ firsty = defaultdict(lambda: defaultdict(bool))
 
 skip_uneven_palindromes = False
 
+progress_to_stderr = False
+
 def can_palindrome_mid(a, b):
     c = a + b
     if a == b[::-1]:
@@ -48,16 +50,42 @@ print(t2, 'seconds to read dict file')
 
 start_val = 'a'
 
+words_listed_yet = True
+ignored = 0
+overall_word_count = 0
+warning_every_x = 50
+
 if len(sys.argv) > 1:
-    if sys.argv[1].isalpha():
-        start_val = sys.argv[1].tolower()
-    else:
-        print("The parameter must be a word. It says which word the palindrome search starts on, alphabetically.")
-        exit()
+    count = 1
+    while count < len(sys.argv):
+        if sys.argv[count].isalpha():
+            start_val = sys.argv[count].tolower()
+        elif sys.argv[count].lower() == '-s':
+            skip_uneven_palindromes = True
+        elif sys.argv[count].lower() == '-e':
+            progress_to_stderr = True
+        elif sys.argv[count].lower() == '-w':
+            try:
+                warning_every_x = int(sys.argv[count + 1])
+            except:
+                print("No number after -w. Going to default of", warning_every_x)
+            count = count + 2
+            continue
+        else:
+            print("The parameter must be a word. It says which word the palindrome search starts on, alphabetically.")
+            exit()
+        count = count + 1
 
 for a in sk:
     if a < start_val:
+        ignored = ignored + 1
         continue
+    if ignored > 0 and words_listed_yet is False:
+        words_listed_yet = True
+        sys.stderr.write("{:d} words ignored to start. Starting with {:s}.\n".format(ignored, a))
+    if progress_to_stderr and overall_word_count % warning_every_x == 0:
+        overall_word_count = overall_word_count + 1
+        sys.stderr.write("STARTING WORD {:d}+{:d}: {:s}.\n", overall_word_count, ignored, a)
     this_word_count = 0
     if count % 1000 == 0:
         print(a, count);
