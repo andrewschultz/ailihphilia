@@ -1,5 +1,6 @@
 import time
 import sys
+import re
 
 from collections import defaultdict
 
@@ -7,9 +8,33 @@ wordy = defaultdict(bool)
 lasty = defaultdict(lambda: defaultdict(bool))
 firsty = defaultdict(lambda: defaultdict(bool))
 
+# options
+look_for_last = False
 skip_uneven_palindromes = False
-
 progress_to_stderr = False
+
+def get_last_word_tried():
+    fname = "3w.txt"
+    with open(fname, 'rb') as fh:
+        first = next(fh).decode()
+        fh.seek(-1024, 2)
+        x = fh.readlines()
+    for a in range(0, len(x)):
+        a1 = -1 - a
+        # print(a1)
+        last = x[a1].decode()
+        # print(a, last.strip())
+        if '=' in last:
+            ary = last.strip().lower().split(" ")
+            for count in range(0,len(ary)):
+                if ary[count].isalpha():
+                    # print(count, ary[count])
+                    return ary[count]
+    print("Bad last line(s) in", fname, "... modify it manually.")
+    print("Dump of last 1024 chars of file:")
+    for a in range(-1, -len(x), -1):
+        print(a, ':', x[a].decode().strip())
+    exit()
 
 def can_palindrome_mid(a, b):
     c = a + b
@@ -53,7 +78,7 @@ start_val = 'a'
 words_listed_yet = True
 ignored = 0
 overall_word_count = 0
-warning_every_x = 50
+warning_every_x = 10
 
 if len(sys.argv) > 1:
     count = 1
@@ -62,6 +87,8 @@ if len(sys.argv) > 1:
             start_val = sys.argv[count].tolower()
         elif sys.argv[count].lower() == '-s':
             skip_uneven_palindromes = True
+        elif sys.argv[count].lower() == '-l':
+            look_for_last = True
         elif sys.argv[count].lower() == '-e':
             progress_to_stderr = True
         elif sys.argv[count].lower() == '-w':
@@ -75,6 +102,14 @@ if len(sys.argv) > 1:
             print("The parameter must be a word. It says which word the palindrome search starts on, alphabetically.")
             exit()
         count = count + 1
+
+if look_for_last:
+    if start_val:
+        print("Defined start_val and look_for_last, so you gave conflicting options. Bailing.")
+        exit()
+    start_val = get_last_word_tried()
+
+exit()
 
 for a in sk:
     if a < start_val:
