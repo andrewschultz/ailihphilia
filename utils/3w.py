@@ -21,7 +21,7 @@ def usage():
     print("-l = pick up where 3w.txt left off")
     print("-s = skip uneven palindromes e.g. top X spot. Speedup, but may miss a few.")
     print("-e = write progress to STDERR, useful when piping output to a file. (-ne turns it off, default is on)")
-    print("-w = warn every X new words (default = 10).")
+    print("-w = warn every X new words (default = {:d}).".format(warning_every_x))
     print("any word = what word to start with.")
     print("-? = this function.")
     exit()
@@ -51,6 +51,14 @@ def get_last_word_tried():
     for a in range(-1, -len(x), -1):
         print(a, ':', x[a].decode().strip())
     exit()
+
+def can_palindrome_2(a, b):
+    if a == b:
+        return False
+    if len(b) > len(a):
+        return b.startswith(a[::-1])
+    else:
+        return a.startswith(b[::-1])
 
 def can_palindrome_mid(a, b):
     c = a + b
@@ -143,10 +151,21 @@ with open("c:/writing/dict/brit-1word.txt") as file:
 
 sk = sorted(wordy.keys())
 
+t3 = time.time()
+print(t3)
+
 count = 0
 
 t2 = time.time() - t1
-sys.stderr.write('{:d} seconds to read dict file.\n', t2)
+sys.stderr.write('{:4f} seconds to read dict file.\n'.format(t2))
+
+bt = time.time()
+
+last_delt = 0
+time_taken = 0
+
+if progress_to_stderr:
+    sys.stderr.write("Printing progress every {:d} starting words.\n".format(warning_every_x))
 
 for a in sk:
     if a < start_val:
@@ -157,12 +176,14 @@ for a in sk:
         sys.stderr.write("{:d} of {:d} words ignored to start. Starting with {:s}.\n".format(ignored, len(sk), a))
     overall_word_count = overall_word_count + 1
     if progress_to_stderr and overall_word_count % warning_every_x == 0:
-        sys.stderr.write("{:d} starting words considered this run. Currently at {:s}.\n".format(overall_word_count, a));
+        time_taken = time.time() - bt
+        sys.stderr.write("{:d} starting words considered this run. Currently at {:s} after {:3f} seconds, delta = {:3f}.\n".format(overall_word_count, a, time_taken, time_taken - last_delt));
+        last_delt = time_taken
     this_word_count = 0
-    for b in sk:
+    for b in lasty[a[0]]:
         if can_palindrome_mid(a, b):
             # for c in sk: # this appears to be slower than a more targeted list of anagrams
-            for c in (firsty[b[0]] if len(a) > len(b) else lasty[a[-1]]):
+            for c in (lasty[a[len(b)]] if len(a) > len(b) else firsty[b[-len(a)-1]]):
                 d = a + c + b
                 if d == d[::-1]:
                     this_word_count = this_word_count + 1
