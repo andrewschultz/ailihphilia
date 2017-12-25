@@ -9,17 +9,17 @@
 			<objects>Start Rats</objects>
 		</room>
 		<room id="3" name="Yawn Way" subtitle="" x="-224" y="-192" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="4" name="State Tats" subtitle="" x="-64" y="64" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="4" name="State Tats" subtitle="" x="96" y="-64" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects>Marge Pegram</objects>
+		</room>
 		<room id="5" name="Yell Alley" subtitle="" x="256" y="-320" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>Back Cab</objects>
 		</room>
-		<room id="6" name="Bon Snob" subtitle="" x="-224" y="192" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="6" name="Bon Snob" subtitle="" x="256" y="-64" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="7" name="Emo Dome" subtitle="" x="-64" y="-192" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>Xanax</objects>
 		</room>
-		<room id="8" name="Stope Depots" subtitle="" x="96" y="-192" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Marge Pegram</objects>
-		</room>
+		<room id="8" name="Stope Depots" subtitle="" x="96" y="-192" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="9" name="Code Doc" subtitle="" x="-384" y="-320" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="10" name="My Gym" subtitle="" x="-224" y="-320" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects at="n" custom="yes" customRight="-30" customDown="0">DAVE|resto poster</objects>
@@ -64,7 +64,7 @@
 			<dock index="0" id="7" port="s" />
 			<dock index="1" id="22" port="n" />
 		</line>
-		<room id="24" name="Top Spot" subtitle="" x="-224" y="64" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="24" name="Top Spot" subtitle="" x="-224" y="-64" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="25" name="Civic Level" subtitle="" x="-64" y="-320" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>Radar</objects>
 		</room>
@@ -84,19 +84,11 @@
 			<dock index="0" id="3" port="s" />
 			<dock index="1" id="24" port="n" />
 		</line>
-		<line id="29" name="" description="">
-			<dock index="0" id="24" port="e" />
-			<dock index="1" id="4" port="w" />
-		</line>
-		<line id="30" name="" description="">
-			<dock index="0" id="24" port="s" />
-			<dock index="1" id="6" port="n" />
-		</line>
 		<line id="31" name="" description="">
 			<dock index="0" id="19" port="w" />
 			<dock index="1" id="20" port="e" />
 		</line>
-		<line id="32" name="" description="">
+		<line id="32" name="" description="" style="dashed">
 			<dock index="0" id="19" port="n" />
 			<dock index="1" id="2" port="s" />
 		</line>
@@ -108,6 +100,14 @@
 		<line id="34" name="" description="">
 			<dock index="0" id="28" port="n" />
 			<dock index="1" id="5" port="s" />
+		</line>
+		<line id="29" name="" description="">
+			<dock index="0" id="8" port="s" />
+			<dock index="1" id="4" port="n" />
+		</line>
+		<line id="30" name="" description="" style="dashed" startText="in" endText="out">
+			<dock index="0" id="8" port="se" />
+			<dock index="1" id="6" port="nw" />
 		</line>
 	</map>
 	<settings>

@@ -17,8 +17,9 @@ start_cand = defaultdict(lambda: defaultdict(bool))
 def usage():
     print("any word sent in is scoured for palindromes. CSV or space.")
     print("(Capital) V means try all vowels e.g. bVg = big bag bog bug beg byg")
-    print("-i uses stdin")
+    print("-i uses stdin.")
     print("-? shows this usage without telling you you wrote in a bad flag")
+    print("Word candidate lists save time as the program doesn't need to load the master word list.")
     exit()
 
 def palz(pals):

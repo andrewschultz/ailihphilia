@@ -1,20 +1,32 @@
+THE TWO BAD GUYS:
+Ammo Momma
+Obese Bo
+
+RANDOM ITEMS:
+
+TAMP the mat or TAME
+
+Guru Rug
+
 Cash Sac = buy stuff with it
 Bill Lib
 Ball Lab
 Golf Log
 
+Cave-Vac
+
 Taboo Bat
 
+Not a ton
+
 'S Sensuousness
-Reviver
-Reifier
+
 Redder
 
-Obese Bo
+Loot Stool
+
 
 TO IDIOT
-
-Smell: Noses, on!
 
 TIE IT = solution to puzzle
 
@@ -25,8 +37,6 @@ Dub a Bud
 
 Star Prats
 
-Top Spot
-
 Nowt Won
 
 Won Snow
@@ -35,7 +45,10 @@ Won Snow
 --designate output files for (group of stuff)/group of stuff
 redo names in alphabetical order
 
-Describe what THE DETH
+# Describe what THE DETH
+
+H/t! A path!
+Path Tap
 
 Eh, the...
 
@@ -45,8 +58,6 @@ Meh, Them
 arming margin ...
 
 RANDOM STUFF:
-
-Ammo Momma
 
 animals' lamina
 a cross orca
@@ -72,6 +83,7 @@ Apollo, Pa
 area era
 Art S(ai)stra
 Bats' Tab
-Back Cab
+
+Be Reb!
 
 1w.py : not just STDIN but break things into dictionaries of dictionaries by first letter. See 2pal.py for details.
