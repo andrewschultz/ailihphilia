@@ -17,7 +17,8 @@ from shutil import copyfile
 
 file_hash = { "f":"c:/writing/dict/firsts.txt",
   "l":"c:/writing/dict/lasts.txt",
-  "d":"c:/writing/dict/brit-1word.txt"
+  "d":"c:/writing/dict/brit-1word.txt",
+  "a":"c:/writing/dict/name-and-word.txt"
   }
 caps_hash = { "f": True, "l": True, "d": False }
 
@@ -80,11 +81,30 @@ def usage():
     print("-sp suppresses progress in stdout, -s0 shows zero-ish e.g. zg/gz will have no possible matches")
     print("-tf/-fi sends output to file, -o/-of overwrites if it's there, -eo sends to edit file.")
     print("-c/-cf tacks on a custom file string.")
+    print("-ca creates name-and-word.txt from the other files.")
     print("-co = concordance of all file combinations and commands.")
     print("-trt = debug flag to track run totals of first/last words checked so far.")
     print("-d dumb test")
     print("-2 quicken things by using hash tables to match only words with same 2 first/last letters")
     print("-? this usage")
+    exit()
+
+def create_all_file():
+    temp_hash = defaultdict(bool)
+    print("Reading from file hash...")
+    for x in file_hash.keys():
+        if x == 'a':
+            continue
+        print("Reading file", file_hash[x])
+        with open(file_hash[x]) as file:
+            for line in file:
+                temp_hash[line.upper().strip()] = True
+    print("Writing to", file_hash['a'])
+    fout = open(file_hash['a'], "w")
+    for x in sorted(temp_hash.keys(), key=lambda x: (len(x), x)):
+        fout.write("{:s}\n".format(x.upper()))
+    fout.close()
+    print("Finished writing to", file_hash['a'])
     exit()
 
 def get_words(a, add_start = True, add_end = True, use_caps = False):
@@ -258,6 +278,7 @@ parser.add_argument('-m', type=str, help="middle string", dest='mid_string')
 parser.add_argument('-e', type=str, help="end string", dest='end_string')
 parser.add_argument('-v', type=str, help="view in notepad", dest='notepad_open_string')
 parser.add_argument('-c', '-cf', type=str, help="custom file string", dest='custom_file_string')
+parser.add_argument('-ca', action="store_true", dest="rewrite_all_file")
 parser.add_argument('-tf', '-fi', action="store_true", help="to file", dest='to_file')
 parser.add_argument('-eo', action="store_true", help="to edit file(s)", dest='edit_files')
 parser.add_argument('-o', '-of', action="store_true", help="overwrite file", dest='overwrite_file')
@@ -266,6 +287,11 @@ args = parser.parse_args()
 
 if args.usage:
     usage()
+
+if args.rewrite_all_file:
+    print("Ignoring all other flags. Rewriting", file_hash['a'])
+    create_all_file()
+    exit()
 
 if args.notepad_open_string:
     ed_ary = args.notepad_open_string.split(",")
