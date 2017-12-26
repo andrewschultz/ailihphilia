@@ -45,6 +45,11 @@ to decide whether the action is procedural: [aip]
 	if listening, yes;
 	no;
 
+chapter attacking
+
+instead of attacking, say "Harm! Rah!"
+[instead of attacking, say "Attack, cat? Ta!"]
+
 chapter smelling
 
 instead of smelling: say "Noses, on[one of]! (you don't need to smell anything in this game)[or][stopping]!"
@@ -59,6 +64,10 @@ instead of swearing obscenely: say "[one of]Dammit, I'm mad![or]We mew![in rando
 
 understand "poop" and "boob" as a mistake ("No swearing! Not even swearing done right for Palindromopolis.")
 
+chapter waiting
+
+instead of waiting, say "GO, dog!"
+
 chapter xyzzying
 
 xyzzying is an action out of world.
@@ -69,10 +78,6 @@ understand "xyzzy" as xyzzying.
 
 carry out xyzzying:
 	say "No, that's not quite a spoonerism and not quite a palindrome." instead;
-
-instead of attacking, say "Attack, cat? Ta!"
-
-instead of waiting, say "GO, dog!"
 
 volume rooms
 

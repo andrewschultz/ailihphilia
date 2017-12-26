@@ -2,10 +2,10 @@
 <trizbort version="1.6.0.0">
 	<info />
 	<map>
-		<room id="1" name="Fun 'Nuf" subtitle="" x="-544" y="-192" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isStartRoom="yes" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="1" name="Fun 'Nuf" subtitle="" x="-384" y="-192" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isStartRoom="yes" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-30" customDown="0">Tile Lit</objects>
 		</room>
-		<room id="2" name="Seer Trees" subtitle="" x="-384" y="-192" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="2" name="Seer Trees" subtitle="" x="-544" y="-192" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>Start Rats</objects>
 		</room>
 		<room id="3" name="Yawn Way" subtitle="" x="-224" y="-192" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
@@ -20,17 +20,13 @@
 			<objects>Xanax</objects>
 		</room>
 		<room id="8" name="Stope Depots" subtitle="" x="96" y="-192" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="9" name="Code Doc" subtitle="" x="-384" y="-320" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="9" name="Code Doc" subtitle="" x="-544" y="-320" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="10" name="My Gym" subtitle="" x="-224" y="-320" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects at="n" custom="yes" customRight="-30" customDown="0">DAVE|resto poster</objects>
+			<objects at="n" custom="yes" customRight="-30" customDown="0">EVADE DAVE|resto poster</objects>
 		</room>
 		<line id="11" name="" description="">
-			<dock index="0" id="1" port="e" />
-			<dock index="1" id="2" port="w" />
-		</line>
-		<line id="12" name="" description="" style="dashed">
-			<dock index="0" id="2" port="e" />
-			<dock index="1" id="3" port="w" />
+			<dock index="0" id="1" port="w" />
+			<dock index="1" id="2" port="e" />
 		</line>
 		<line id="13" name="" description="">
 			<dock index="0" id="3" port="n" />
@@ -45,13 +41,13 @@
 			<dock index="1" id="7" port="w" />
 		</line>
 		<line id="18" name="" description="">
-			<dock index="0" id="3" port="ne" />
-			<dock index="1" id="8" port="nw" />
+			<dock index="0" id="3" port="ene" />
+			<dock index="1" id="8" port="wnw" />
 		</line>
-		<room id="19" name="Dumb Mud" subtitle="" x="-384" y="-64" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="19" name="Dumb Mud" subtitle="" x="-544" y="-64" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>Calcific Lac</objects>
 		</room>
-		<room id="20" name="Moo Room" subtitle="" x="-544" y="-64" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="20" name="Moo Room" subtitle="" x="-704" y="-64" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>a pup|a pupa</objects>
 		</room>
 		<room id="21" name="Ned's Den" subtitle="" x="96" y="-320" w="96" h="64" region="Palindromopolis" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
@@ -108,6 +104,10 @@
 		<line id="30" name="" description="" style="dashed" startText="in" endText="out">
 			<dock index="0" id="8" port="se" />
 			<dock index="1" id="6" port="nw" />
+		</line>
+		<line id="12" name="" description="">
+			<dock index="0" id="1" port="e" />
+			<dock index="1" id="3" port="w" />
 		</line>
 	</map>
 	<settings>
