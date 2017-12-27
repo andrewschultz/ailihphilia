@@ -30,6 +30,15 @@ the sage gas is a thing.
 
 the resto poster is a thing.
 
+volume the player
+
+the player has the Darer Ad.
+
+description of Darer Ad is "No LOL on? SEE, REFER-EES! Do! Nod!"
+
+check dropping:
+	if noun is not party tray, say "That's not useful to drop." instead;
+
 volume parser errors
 
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
@@ -54,6 +63,17 @@ chapter attacking
 instead of attacking, say "Harm! Rah!"
 [instead of attacking, say "Attack, cat? Ta!"]
 
+chapter going
+
+the new generic going reject rule is listed before the can't go that way rule in the check going rules.
+
+check going (this is the new generic going reject rule):
+	unless noun is viable, say "You can only go [list of viable directions] here." instead;
+
+definition: a direction (called d) is viable:
+	if the room d of location of player is nowhere, no;
+	yes;
+
 chapter smelling
 
 instead of smelling: say "Noses, on[one of]! (you don't need to smell anything in this game)[or][stopping]!"
@@ -68,6 +88,10 @@ instead of swearing obscenely: say "[one of]Dammit, I'm mad![or]We mew![in rando
 
 understand "poop" and "boob" as a mistake ("No swearing! Not even swearing done right for Palindromopolis.")
 
+chapter sleeping
+
+instead of sleeping, say "Panic? I nap!"
+
 chapter waiting
 
 instead of waiting, say "GO, dog!"
@@ -81,7 +105,7 @@ understand the command "xyzzy" as something new.
 understand "xyzzy" as xyzzying.
 
 carry out xyzzying:
-	say "No, that's not quite a spoonerism and not quite a palindrome." instead;
+	say "...[paragraph break]...[paragraph break]X." instead;
 
 volume rooms
 
@@ -134,6 +158,10 @@ Top Spot is west of Seer Trees. It is in Grebeberg.
 book Dumb Mud
 
 Dumb Mud is south of Seer Trees. It is in Grebeberg.
+
+book Apse Spa
+
+Apse Spa is east of Dumb Mud. It is in Grebeberg.
 
 book Moo Room
 
