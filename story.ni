@@ -12,11 +12,15 @@ include Put It Up Tables by Andrew Schultz.
 
 the maximum score is 6.
 
-Fun 'Nuf is a room.
+Grebeberg is a region.
 
-the tile lit is scenery in Fun 'Nuf. "It reads [b]PALINDROMOPOLIS THIS WAY![r]"
+Dim Mid is a region.
 
-El Live Ville is a region.
+Not-Kook-Ton is a region.
+
+[El Live Ville is a region.]
+
+a room has a table name called hint-name.
 
 volume unsorted
 
@@ -29,7 +33,7 @@ the resto poster is a thing.
 volume parser errors
 
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
-	say "Noise lesion."
+	say "[one of]Noise lesion.[or]Spill, lips![in random order]"
 
 volume verbs
 
@@ -81,40 +85,61 @@ carry out xyzzying:
 
 volume rooms
 
+part Mid Dim
+
 book Fun 'Nuf
 
-Fun 'Nuf is a room. "A sign of light blocks your view, but not your progress, to the west. Some tile lit is carved to the east."
+Fun 'Nuf is a room in Mid Dim. "Some tile lit is carved out here."
+
+chapter tile lit
+
+the tile lit is scenery in Fun 'Nuf. "GREBEBERG has an arrow pointing west by it. NOT-DUD-TON has an arrow pointing "
 
 check taking tile lit: say "It's sort of embedded into the ground. It looks nice there, anyway, and it's useful for information."
 
+part Grebeberg
+
 book Seer Trees
 
-Seer Trees is east of Fun 'Nuf.
+Seer Trees is west of Fun 'Nuf. It is in Grebeberg.
 
-check going east in Seer Trees:
-	if start rats are in seer trees, say "The seer trees watch you as if to say, you can't explore further until you got rid of the start rats!" instead;
+check going in Seer Trees:
+	if noun is not east and start rats are in seer trees, say "The seer trees watch you as if to say, you can't explore further until you got rid of the start rats!" instead;
 
 the start rats are a plural-named thing in Seer Trees.
 
 check taking start rats: say "There are too many, and they'd probably bite you, anyway."
 
+trap-made is a truth state that varies.
+
 check dropping party trap in Seer Trees:
 	if trap-made is false, say "You have nothing to bait the trap with. With which to bait the trap." instead;
 	say "The rats all try to enter the cake, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The seer trees seem to nod a bit.";
-	now start rats are in lalaland;
-	now party trap is in lalaland;
+	now start rats are in Zero Rez;
+	now party trap is in Zero Rez;
 	score-inc;
 	the rule succeeds;
 
-book Yawn Way
-
-Yawn Way is east of Seer Trees. "Not much to do here, but State Tats is to the north, and My Gym is to the east. An alley is to the east."
+to score-inc:
+	increment the score;
 
 book Dumb Mud
 
-book State Tats
+Dumb Mud is south of Seer Trees.
 
-State Tats is south of Yawn Way. "The only way out is north."
+book Moo Room
+
+Moo Room is west of Dumb Mud.
+
+part Not-Kook-Ton
+
+book Yawn Way
+
+Yawn Way is east of Fun 'Nuf. "Not much to do here, but State Tats is to the north, and My Gym is to the east. An alley is to the east."
+
+book Top Spot
+
+Top Spot is south of Yawn Way.
 
 book my gym
 
@@ -148,24 +173,38 @@ carry out evadeing:
 	if noun is dave:
 		if dave-evade is true, say "You don't need to evade Dave again.";
 		say "You evade Dave!";
-		now dave is in lalaland;
+		now dave is in Zero Rez;
 		now dave-evade is true;
 		score-inc;
 	the rule succeeds.
 
 understand "evade dave" as a mistake ("Dave's not here, man!") when player is not in My Gym.
 
+book Stope Depots
+
+Stope Depots is a room.
+
+[snuff funs]
+
+book State Tats
+
+State Tats is south of Stope Depots. "The only way out is north."
+
 book Bon Snob
 
-Bon Snob is a room.
+Bon Snob is inside of Stope Depots.
 
 chapter Marge Pegram
 
 Marge Pegram is a person in Bon Snob.
 
+book Evaded Ave
+
+Evaded Ave is east of Stope Depots.
+
 book yell alley
 
-Yell Alley is a east of Yawn Way. "A back cab sits here, taking you where you may need to go if you ENTER it."
+Yell Alley is north of Evaded Ave. "A back cab sits here, taking you where you may need to go if you ENTER it."
 
 The back cab is scenery in Yell Alley.
 
@@ -191,21 +230,25 @@ carry out pulluping:
 	score-inc;
 	the rule succeeds;
 
-book Stope Depots
+book Emo Dome
 
-Stope Depots is a room.
-
-[snuff funs]
+Emo Dome is east of Yawn Way. It is in Not-Kook-Ton.
 
 book civic level
 
-Civic Level is a room.
+Civic Level is north of Emo Dome. It is in Not-Kook-Ton.
 
 book work row
 
-Work Row is south of Civic Level.
+Work Row is south of Emo Dome.
 
 The radar is in Civic Level.
+
+volume metarooms
+
+metarooms is a region.
+
+Zero Rez is a room in metarooms.
 
 volume hinting
 
