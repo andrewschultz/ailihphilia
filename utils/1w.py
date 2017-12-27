@@ -6,6 +6,7 @@ found = defaultdict(int)
 
 pal_list = defaultdict(str)
 
+check_possible = True
 only_stdin = False
 
 pals = []
@@ -38,7 +39,11 @@ def palz(pals):
                 if pal_list[st]:
                     pal_list[st] = pal_list[st] + "\n"
                 pal_list[st] = pal_list[st] + "FIRST *{:s}* + {:s} = {:s}".format(st, l, x)
+                continue
                 # print("Added", st, l)
+            if check_possible:
+                if l.endswith(st[::-1]):
+                    print("Possible:", l)
         for l in loc_start[st]:
             y = l + st
             if y == y[::-1]:
@@ -47,6 +52,10 @@ def palz(pals):
                 pal_list[st] = pal_list[st] + "LAST {:s} + *{:s}* = {:s}".format(l, st, y)
                 found[st] = found[st] + 1
                 # print("Added", l, st)
+                continue
+            if check_possible:
+                if l.startswith(st[::-1]):
+                    print("Possible:", l)
     for x in sorted(found.keys()):
         if found[x]:
             print(x, "================")
@@ -56,11 +65,15 @@ def palz(pals):
 
 for x in sys.argv[1:]:
     xl = x.lower()
+    if x == "-c":
+        check_possible = True
+        continue
     if x == "-i":
         only_stdin = True
-    elif x == "-?" or x == "?":
+        continue
+    if x == "-?" or x == "?":
         usage()
-    elif not x.replace(",", "").isalpha():
+    if not x.replace(",", "").isalpha():
         print("Invalid flag", -x)
         usage()
     for y in x.split(","):
