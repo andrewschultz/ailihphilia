@@ -32,17 +32,26 @@ the resto poster is a thing.
 
 volume the player
 
-the player has the Darer Ad.
+the player carries the Darer Ad.
 
 description of Darer Ad is "No LOL on? SEE, REFER-EES! Do! Nod!"
 
 check dropping:
-	if noun is not party tray, say "That's not useful to drop." instead;
+	if noun is not party trap, say "That's not useful to drop." instead;
 
-volume parser errors and death
+volume parser errors operations and death
+
+part parser errors
 
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
 	say "[one of]Yo! Coy?[or]Noise lesion.[or]Spill, lips![in random order]"
+
+part after command
+
+after reading a command:
+	do nothing;
+
+part dying
 
 to die:
 	end the story saying "Offed? Deffo!"
@@ -270,6 +279,23 @@ carry out pulluping:
 book Emo Dome
 
 Emo Dome is east of Yawn Way. It is in Not-Kook-Ton.
+
+Xanax is a thing in Emo Dome.
+
+instead of doing something in Emo Dome when pulled-up is false:
+	if current action is going:
+		if noun is not west and noun is not east:
+			say "You're scared those places would be even worse.";
+			try going emo-dir instead;
+		say "You run [if noun is emo-dir]away[else if noun is opposite of emo-dir] with extra speed.";
+		continue the action;
+	say "You keep running [emo-dir], instead. It's too whiny in here."
+
+emo-dir is a direction that varies. emo-dir is west.
+
+check going to emo dome:
+	if pulled-up is true:
+		now emo-dir is noun;
 
 book civic level
 
