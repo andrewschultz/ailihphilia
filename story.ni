@@ -39,10 +39,13 @@ description of Darer Ad is "No LOL on? SEE, REFER-EES! Do! Nod!"
 check dropping:
 	if noun is not party tray, say "That's not useful to drop." instead;
 
-volume parser errors
+volume parser errors and death
 
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
-	say "[one of]Noise lesion.[or]Spill, lips![in random order]"
+	say "[one of]Yo! Coy?[or]Noise lesion.[or]Spill, lips![in random order]"
+
+to die:
+	end the story saying "Offed? Deffo!"
 
 volume verbs
 
@@ -151,6 +154,10 @@ book Code Doc
 
 Code Doc is north of Seer Trees. It is in Grebeberg.
 
+book Flu Gulf
+
+Flu Gulf is west of Code Doc. It is in Grebeberg.
+
 book Top Spot
 
 Top Spot is west of Seer Trees. It is in Grebeberg.
@@ -171,7 +178,7 @@ part Not-Kook-Ton
 
 book Yawn Way
 
-Yawn Way is east of Fun 'Nuf. It is in Not-Kook-Ton. "Not much to do here, but State Tats is to the north, and My Gym is to the east. An alley is to the east."
+Yawn Way is east of Fun 'Nuf. It is in Not-Kook-Ton. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but State Tats is to the south, and My Gym is to the north. An alley is to the east."
 
 book My Gym
 
@@ -246,19 +253,17 @@ pulled-up is a truth state that varies.
 
 pulluping is an action applying to nothing.
 
+understand the command "pull up" as something new.
 understand the command "pullup" as something new.
 
+understand "pull up" as pulluping.
 understand "pullup" as pulluping.
 
 carry out pulluping:
 	if pulled-up is true, say "You already did." instead;
-	unless player is in yell alley or player is in yawn way, say "This isn't the place.";
-	if yell alley is unvisited, say "You can't do this yet." instead;
-	say "You run back, but this time, you pull up, and you find a new location.";
-	now civic level is mapped east of yawn way;
-	now yawn way is mapped west of civic level;
-	now civic level is mapped west of yell alley;
-	now yell alley is mapped east of civic level;
+	unless player is in emo dome, say "This isn't the place[if emo dome is visited], but maybe you could do this in the Emo Dome[end if]." instead;
+	say "You manage to stop yourself. The whining isn't too bad. Yeah, you can hack it here.";
+	now pulled-up is true;
 	score-inc;
 	the rule succeeds;
 

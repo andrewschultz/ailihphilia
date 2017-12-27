@@ -4,6 +4,9 @@ THE TWO BAD GUYS:
 Ammo Momma
 Obese Bo
 
+"Hey! Eh?"
+
+Toby Bot
 
 WANT? NAW
 
@@ -64,7 +67,7 @@ Mix 'im!
 Maid, I am!
 Main, I am!
 
-bunk n=-ub
+bunk nub
 TIE IT = solution to puzzle
 
 Nixin'! = undo
@@ -89,6 +92,8 @@ Tenses Net
 TEND NET
 
 Bust sub
+
+Oh! Who?
 
 No Sin is On
 
