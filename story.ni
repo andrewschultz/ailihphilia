@@ -115,35 +115,39 @@ trap-made is a truth state that varies.
 check dropping party trap in Seer Trees:
 	if trap-made is false, say "You have nothing to bait the trap with. With which to bait the trap." instead;
 	say "The rats all try to enter the cake, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The seer trees seem to nod a bit.";
-	now start rats are in Zero Rez;
-	now party trap is in Zero Rez;
+	now start rats are in ZeroRez;
+	now party trap is in ZeroRez;
 	score-inc;
 	the rule succeeds;
 
 to score-inc:
 	increment the score;
 
+book Code Doc
+
+Code Doc is north of Seer Trees. It is in Grebeberg.
+
+book Top Spot
+
+Top Spot is west of Seer Trees. It is in Grebeberg.
+
 book Dumb Mud
 
-Dumb Mud is south of Seer Trees.
+Dumb Mud is south of Seer Trees. It is in Grebeberg.
 
 book Moo Room
 
-Moo Room is west of Dumb Mud.
+Moo Room is west of Dumb Mud. It is in Grebeberg.
 
 part Not-Kook-Ton
 
 book Yawn Way
 
-Yawn Way is east of Fun 'Nuf. "Not much to do here, but State Tats is to the north, and My Gym is to the east. An alley is to the east."
+Yawn Way is east of Fun 'Nuf. It is in Not-Kook-Ton. "Not much to do here, but State Tats is to the north, and My Gym is to the east. An alley is to the east."
 
-book Top Spot
+book My Gym
 
-Top Spot is south of Yawn Way.
-
-book my gym
-
-My Gym is north of Yawn Way. "The only way out is south."
+My Gym is north of Yawn Way. It is in Not-Kook-Ton. "The only way out is south."
 
 chapter dave
 
@@ -172,27 +176,27 @@ dave-evade is a truth state that varies.
 carry out evadeing:
 	if noun is dave:
 		if dave-evade is true, say "You don't need to evade Dave again.";
-		say "You evade Dave!";
-		now dave is in Zero Rez;
+		say "You evade Dave! Deked! Deked!";
+		now dave is in ZeroRez;
 		now dave-evade is true;
 		score-inc;
 	the rule succeeds.
 
 understand "evade dave" as a mistake ("Dave's not here, man!") when player is not in My Gym.
 
+book State Tats
+
+State Tats is south of Yawn Way. It is in Not-Kook-Ton. "The only way out is north."
+
 book Stope Depots
 
-Stope Depots is a room.
+Stope Depots is east of Emo Dome. It is in Not-Kook-Ton.
 
 [snuff funs]
 
-book State Tats
-
-State Tats is south of Stope Depots. "The only way out is north."
-
 book Bon Snob
 
-Bon Snob is inside of Stope Depots.
+Bon Snob is south of Stope Depots. It is in Not-Kook-Ton.
 
 chapter Marge Pegram
 
@@ -200,11 +204,11 @@ Marge Pegram is a person in Bon Snob.
 
 book Evaded Ave
 
-Evaded Ave is east of Stope Depots.
+Evaded Ave is east of Stope Depots. It is in Not-Kook-Ton.
 
 book yell alley
 
-Yell Alley is north of Evaded Ave. "A back cab sits here, taking you where you may need to go if you ENTER it."
+Yell Alley is north of Evaded Ave. It is in Not-Kook-Ton. "A back cab sits here, taking you where you may need to go if you ENTER it."
 
 The back cab is scenery in Yell Alley.
 
@@ -240,7 +244,7 @@ Civic Level is north of Emo Dome. It is in Not-Kook-Ton.
 
 book work row
 
-Work Row is south of Emo Dome.
+Work Row is south of Emo Dome. It is in Not-Kook-Ton.
 
 The radar is in Civic Level.
 
@@ -248,7 +252,7 @@ volume metarooms
 
 metarooms is a region.
 
-Zero Rez is a room in metarooms.
+ZeroRez is a room in metarooms.
 
 volume hinting
 
