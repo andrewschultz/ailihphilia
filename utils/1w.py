@@ -4,11 +4,14 @@ import re
 from collections import defaultdict
 
 found = defaultdict(int)
+last_found = defaultdict(int)
 
 pal_list = defaultdict(str)
 
 check_possible = True
 only_stdin = False
+
+every_cr = 4
 
 pals = []
 
@@ -16,12 +19,19 @@ word_cand = defaultdict(bool)
 end_cand = defaultdict(lambda: defaultdict(bool))
 start_cand = defaultdict(lambda: defaultdict(bool))
 
+hdr = "=" * 30
+
 def usage():
-    print("any word sent in is scoured for palindromes. CSV or space.")
+    print(hdr + "USAGE")
+    print()
+    print("Any word sent in is scoured for palindromes. CSV or space.")
+    print("-c checks possible palindromes for longer sentences. -nc forces it off. Default is", ["off", "on"][check_possible])
     print("(Capital) V means try all vowels e.g. bVg = big bag bog bug beg byg")
     print("-i uses stdin.")
     print("-? shows this usage without telling you you wrote in a bad flag")
-    print("Word candidate lists save time as the program doesn't need to load the master word list.")
+    print()
+    print("PROTIP: sending several words on the command line at once can save time.")
+    print("  That way, the program doesn't need to load the master word list.")
     exit()
 
 def palz(pals):
@@ -30,6 +40,7 @@ def palz(pals):
     start_time = time.time()
     for x in pals:
         found[x] = 0
+        last_found[x] = 0
         possible_starts[x] = ""
         possible_ends[x] = ""
     loc_end = {}
@@ -42,9 +53,13 @@ def palz(pals):
             x = st + l
             if x == x[::-1]:
                 found[st] = found[st] + 1
-                if pal_list[st]:
-                    pal_list[st] = pal_list[st] + "\n"
-                pal_list[st] = pal_list[st] + "FIRST *{:s}* + {:s} = {:s}".format(st, l, x)
+                if found[st] == 1:
+                    pal_list[st] = "FIRST"
+                elif found[st] % every_cr == 1:
+                    pal_list[st] = pal_list[st] + "\n  "
+                else:
+                    pal_list[st] = pal_list[st] + " /"
+                pal_list[st] = pal_list[st] + " *{:s}* + {:s} = {:s}".format(st, l, x)
                 continue
                 # print("Added", st, l)
             if check_possible:
@@ -53,9 +68,16 @@ def palz(pals):
         for l in loc_start[st]:
             y = l + st
             if y == y[::-1]:
-                if pal_list[st]:
-                    pal_list[st] = pal_list[st] + "\n"
-                pal_list[st] = pal_list[st] + "LAST {:s} + *{:s}* = {:s}".format(l, st, y)
+                last_found[st] = last_found[st] + 1
+                if last_found[st] == 1:
+                    if found[st]:
+                        pal_list[st] = pal_list[st] + "\n"
+                    pal_list[st] = pal_list[st] + "LAST"
+                elif last_found[st] % every_cr == 1:
+                    pal_list[st] = pal_list[st] + "\n  "
+                else:
+                    pal_list[st] = pal_list[st] + " /"
+                pal_list[st] = pal_list[st] + " {:s} + *{:s}* = {:s}".format(l, st, y)
                 found[st] = found[st] + 1
                 # print("Added", l, st)
                 continue
@@ -65,22 +87,26 @@ def palz(pals):
     for x in sorted(found.keys()):
         got_something = False
         if found[x] or possible_ends[x] or possible_starts[x]:
-            print(x, "================")
+            got_something = True
+            print(hdr, x, hdr)
             if found[x]:
                 print(pal_list[x])
             if possible_ends[x]:
-                print("Words allowing {:s}x at end of long palindrome:{:s}", possible_ends[x])
+                print("Words allowing {:s} at end of long palindrome:{:s}".format(x, possible_ends[x]))
             if possible_starts[x]:
-                print("Words at end of long palindrome starting with {:s}:{:s}", possible_starts[x])
+                print("Words at end of long palindrome starting with {:s}:{:s}".format(x, possible_starts[x]))
         if not got_something:
             print("Nothing found for", x)
     end_time = time.time()
-    print("Total time taken: {:.4f} seconds.".format(end_time - start_time))
+    print("Total time taken to extract palindromes: {:.4f} seconds.".format(end_time - start_time))
 
 for x in sys.argv[1:]:
     xl = x.lower()
     if x == "-c":
         check_possible = True
+        continue
+    if x == "-nc":
+        check_possible = False
         continue
     if x == "-i":
         only_stdin = True
