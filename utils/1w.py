@@ -1,3 +1,4 @@
+import time
 import sys
 import re
 from collections import defaultdict
@@ -24,8 +25,13 @@ def usage():
     exit()
 
 def palz(pals):
+    possible_starts = {}
+    possible_ends = {}
+    start_time = time.time()
     for x in pals:
         found[x] = 0
+        possible_starts[x] = ""
+        possible_ends[x] = ""
     loc_end = {}
     loc_start = {}
     for st in pals:
@@ -43,7 +49,7 @@ def palz(pals):
                 # print("Added", st, l)
             if check_possible:
                 if l.endswith(st[::-1]):
-                    print("Possible:", l)
+                    possible_starts[st] = possible_starts[st] + " " + l
         for l in loc_start[st]:
             y = l + st
             if y == y[::-1]:
@@ -55,13 +61,21 @@ def palz(pals):
                 continue
             if check_possible:
                 if l.startswith(st[::-1]):
-                    print("Possible:", l)
+                    possible_ends[st] = possible_ends[st] + " " + l
     for x in sorted(found.keys()):
-        if found[x]:
+        got_something = False
+        if found[x] or possible_ends[x] or possible_starts[x]:
             print(x, "================")
-            print(pal_list[x])
-        else:
+            if found[x]:
+                print(pal_list[x])
+            if possible_ends[x]:
+                print("Words allowing {:s}x at end of long palindrome:{:s}", possible_ends[x])
+            if possible_starts[x]:
+                print("Words at end of long palindrome starting with {:s}:{:s}", possible_starts[x])
+        if not got_something:
             print("Nothing found for", x)
+    end_time = time.time()
+    print("Total time taken: {:.4f} seconds.".format(end_time - start_time))
 
 for x in sys.argv[1:]:
     xl = x.lower()
@@ -85,11 +99,14 @@ for x in sys.argv[1:]:
             pals.append(y)
 
 with open("c:/writing/dict/brit-1word.txt") as file:
+    start_time = time.time()
     for line in file:
         ll = line.strip().lower()
         word_cand[ll] = True
         end_cand[ll[-1]][ll] = True
         start_cand[ll[0]][ll] = True
+    end_time = time.time()
+    print(end_time-start_time, "seconds to read in file/define word arrays.")
 
 if len(pals) == 0 and only_stdin == False:
     print("Need -i or a CSV of words.")
@@ -101,4 +118,4 @@ if len(pals) > 0:
 if only_stdin:
     while True:
         finish = input("Palindrome stuff here:")
-        pals(finish.split(" "))
+        palz(pals(finish.split(" ")))
