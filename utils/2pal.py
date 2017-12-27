@@ -27,6 +27,8 @@ caps_hash = { "f": True, "l": True, "d": False }
 # that's up to 26x (676x) faster (Cauchy's Inequality says it can't be more than that)
 brute_force_hashing = False
 
+one_letter_jazz = False
+
 edit_files = False
 sort_output = False
 
@@ -81,6 +83,7 @@ def usage():
     print("-sp suppresses progress in stdout, -s0 shows zero-ish e.g. zg/gz will have no possible matches")
     print("-tf/-fi sends output to file, -o/-of overwrites if it's there, -eo sends to edit file.")
     print("-c/-cf tacks on a custom file string.")
+    print("-ol processes one-letter words in palindromes, start/end/middle. It is a long test.")
     print("-ca creates name-and-word.txt from the other files.")
     print("-co = concordance of all file combinations and commands.")
     print("-trt = debug flag to track run totals of first/last words checked so far.")
@@ -170,6 +173,9 @@ def pal_to_edit(a):
 def one_at_a_time():
     base_file = "pals-out-1-{:s}-2-{:s}".format('-'.join(start_files), '-'.join(end_files))
     out_files = custom_munge(base_file)
+    if one_letter_jazz:
+        print(out_files)
+        return
     fout = None
     fouta = None
     if to_file:
@@ -257,6 +263,16 @@ def one_at_a_time():
         pal_to_edit(out_files[1])
     print(end-start, 'total seconds', totals, 'total comparisons')
 
+def turn_the_crank():
+    if brute_force_hashing:
+        brute_force_hashing()
+    else:
+        one_at_a_time()
+
+# end functions
+
+# start parsing stuff below
+
 parser = argparse.ArgumentParser(description='palindrome looker upper', formatter_class=argparse.RawTextHelpFormatter)
 
 # parser.add_argument("x", type=bool, help="2 letters in hash array or 1")
@@ -270,6 +286,7 @@ parser.add_argument('-f', type=str, help="start and end arrays", dest='file_arra
 parser.add_argument('-fs', type=str, help="start array", dest='start_array')
 parser.add_argument('-fe', type=str, help="end array", dest='end_array')
 parser.add_argument('-sy', action="store_true", dest="sort_output_on")
+parser.add_argument('-ol', action="store_true", dest="one_letter_jazz")
 parser.add_argument('-sn', action="store_true", dest="sort_output_off")
 parser.add_argument('-sp', action='store_true', help="suppress progress of what anagram is being checked", dest='suppress_progress')
 parser.add_argument('-s0', action='store_true', help="show zeros in progress", dest='show_zeros')
@@ -287,6 +304,9 @@ args = parser.parse_args()
 
 if args.usage:
     usage()
+
+if args.one_letter_jazz:
+    one_letter_jazz = True
 
 if args.rewrite_all_file:
     print("Ignoring all other flags. Rewriting", file_hash['a'])
@@ -423,7 +443,20 @@ for f in all_files:
 
 words = sorted(word_dict.keys())
 
-if brute_force_hashing:
-    brute_force_hashing()
+if one_letter_jazz:
+    for x in ascii_lowercase: # yes the below is excruciatingly bad code but it'll do for now
+        begin_string = x
+        mid_string = ''
+        end_string = ''
+        turn_the_crank()
+        begin_string = ''
+        mid_string = ''
+        end_string = x
+        turn_the_crank()
+        begin_string = ''
+        mid_string = x
+        end_string = ''
+        turn_the_crank()
 else:
-    one_at_a_time()
+    turn_the_crank()
+
