@@ -4,7 +4,15 @@ THE TWO BAD GUYS:
 Ammo Momma
 Obese Bo
 
+"A cub, Cuba, is here."
+
+Dual Laud
+
 "Hey! Eh?"
+
+frac-scarf = tinker reknit tinker reknit
+
+Leer Reel = well you don't want to watch it. It's not for good upstanding citizens.
 
 Toby Bot
 

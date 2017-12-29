@@ -70,6 +70,9 @@ to decide whether the action is procedural: [aip]
 	if listening, yes;
 	no;
 
+instead of saying yes, say "Yay!"
+instead of saying no, say "Oo! Noo!"
+
 chapter attacking
 
 instead of attacking, say "Harm! Rah!"
