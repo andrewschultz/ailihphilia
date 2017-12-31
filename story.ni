@@ -166,6 +166,11 @@ book Code Doc
 
 Code Doc is north of Seer Trees. It is in Grebeberg.
 
+check going west in Code Doc:
+	unless player carries puce cup or puce cup is in lalaland:
+		say "You're pushed back by worries of sickness." instead; [??]
+	if player carries puce cup:
+		say "The fumes
 book Flu Gulf
 
 Flu Gulf is west of Code Doc. It is in Grebeberg.
@@ -174,17 +179,21 @@ book Top Spot
 
 Top Spot is west of Seer Trees. It is in Grebeberg.
 
-book Dumb Mud
+book Ooze Zoo
 
-Dumb Mud is south of Seer Trees. It is in Grebeberg.
+Ooze Zoo is south of Seer Trees. It is in Grebeberg.
+
+book Mire Rim
+
+Mire Rim is east of Ooze Zoo.
 
 book Apse Spa
 
-Apse Spa is east of Dumb Mud. It is in Grebeberg.
+Apse Spa is east of Code Doc. It is in Grebeberg.
 
 book Moo Room
 
-Moo Room is west of Dumb Mud. It is in Grebeberg.
+Moo Room is west of Ooze Zoo. It is in Grebeberg.
 
 part Not-Kook-Ton
 
@@ -252,6 +261,8 @@ Marge Pegram is a person in Bon Snob.
 book Evaded Ave
 
 Evaded Ave is east of Stope Depots. It is in Not-Kook-Ton.
+
+The Puce Cup is a thing in Evaded Ave.
 
 book yell alley
 
