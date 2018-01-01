@@ -114,7 +114,7 @@ for x in sys.argv[1:]:
     if x == "-?" or x == "?":
         usage()
     if not x.replace(",", "").isalpha():
-        print("Invalid flag", -x)
+        print("Invalid flag", x)
         usage()
     for y in x.split(","):
         if "V" in y:

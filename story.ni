@@ -12,9 +12,11 @@ include Put It Up Tables by Andrew Schultz.
 
 the maximum score is 6.
 
+a region has a number called max-score.
+
 Grebeberg is a region.
 
-Dim Mid is a region.
+Dim Mid is a region. max-score of Dim Mid is 2.
 
 Not-Kook-Ton is a region.
 
@@ -38,6 +40,27 @@ description of Darer Ad is "No LOL on? SEE, REFER-EES! Do! Nod!"
 
 check dropping:
 	if noun is not party trap, say "That's not useful to drop." instead;
+
+part scoring
+
+to score-inc:
+	increment cur-score of mrlp;
+	increment the score;
+	if debug-state is true and cur-score of mrlp > max-score of mrlp, say "DEBUG WARNING: REGION SCORE TOO HIGH!";
+	if debug-state is true and score > maximum score, say "DEBUG WARNING: OVERALL SCORE TOO HIGH!"
+
+check requesting the score:
+	say "Your overall score so far is [score] of [maximum score].";
+	say "Broken down by regions, you have [regres of dim mid], [regres of grebeberg] and [regres of not-kook-ton].";
+
+to say regres of (r - a region):
+	say "[cur-score of r] of [max-score of r] for [r][if mrlp is r] (current region)[end if]"
+
+part when play begins
+
+when play begins:
+	now right hand status line is "[cur-score of mrlp]/[max-score of mlp] [score]/[maximum score]";
+	now left hand status line is "[location of player] ([mrlp of player])"
 
 volume parser errors operations and death
 
@@ -319,6 +342,9 @@ Stope Depots is east of Emo Dome. It is in Not-Kook-Ton. "You can go all four di
 [snuff funs]
 
 a tame mat is in Stope Depots. "A tame mat reading BON SNOB is in your way to the south."
+
+check going south in Stope Depots when tame mat is in Stope Depots:
+	say "An upper-crust voice emits from the tame mat, which curls up: 'DA CAD!'[paragraph break]Maybe if it were more glued to the ground." instead;
 
 check taking tame mat:
 	say "That would be stealing." instead;
