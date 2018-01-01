@@ -76,9 +76,11 @@ instead of saying yes, say "Yay!"
 
 chapter saying no
 
+no-tab is a number that varies.
+
 instead of saying no:
 	increment no-tab;
-	if no-tab > number of rows in table of noesise:
+	if no-tab > number of rows in table of noesies:
 		now no-tab is 1;
 		say "(cycling) ";
 	choose row no-tab in table of noesies;
@@ -151,7 +153,13 @@ chapter Pact Cap
 
 The Pact Cap is a thing in Fun 'Nuf. "A pact cap sits here. You need to find the right way to accept it to begin your quest."
 
-chapter packing
+cap-pace is a truth state that varies. cap-pace is false.
+
+cap-ever-pace is a truth state that varies. cap-ever-pace is false.
+
+section pack cap
+
+packing is an action applying to nothing.
 
 understand the command "pack cap" as something new.
 
@@ -162,6 +170,25 @@ carry out packing:
 	say "Yes, that's how to get the cap. You are ready to go!";
 	now player has the cap;
 	increment the score;
+	the rule succeeds;
+
+section pace cap
+
+paceing is an action applying to nothing.
+
+understand the command "pace cap" as something new.
+understand the command "pacy cap" as something new.
+
+understand "pace cap" and "pacy cap" as paceing.
+
+carry out paceing:
+	if pact cap is in Fun 'Nuf, say "That'll work later, but you need something a little different to actually TAKE the pact cap." instead;
+	if cap-pace is true, say "It's already a pace cap." instead;
+	if cap-ever-pace is false:
+		increment the score;
+		now cap-ever-pace is true;
+	say "You suddenly feel [if cap-pace is false]swifter[else]slower[end if].";
+	now cap-pace is whether or not cap-pace is true;
 	the rule succeeds;
 
 chapter tile lit
@@ -201,10 +228,11 @@ book Yack Cay
 Yack Cay is north of Seer Trees. It is in Grebeberg.
 
 check going west in Yack Cay:
-	unless player carries puce cup or puce cup is in lalaland:
+	unless player carries puce cup or puce cup is in ZeroRez:
 		say "You're pushed back by worries of sickness." instead; [??]
 	if player carries puce cup:
-		say "The fumes
+		say "The fumes push you back east." instead;
+
 book Flu Gulf
 
 Flu Gulf is west of Yack Cay. It is in Grebeberg.
