@@ -1,0 +1,65 @@
+out=put-it-up-invisiclues.htm
+!Put It Up HTML Clues
+->c:/games/inform/put-it-up Materials/Release
+>Introduction
+?What's this game about?
+Palindromes.
+It's a bit restrictive, since they're a bit rare.
+But I hope you find my riffs on them interesting.
+>Dim Mid
+>>FUN 'NUF
+?Why can't I leave?
+You need to take the pact cap the right way, to show you're serious about things.
+TAKE CAP doesn't work.
+What's a theme of the game?
+Palindromes.
+?How do I take the cap?
+The command ?????? CAP needs to be a palindrome.
+How do you put a cap in inventory? Tuck it away?
+PACK CAP.
+?Why doesn't the cap seem perfectly satisfactory?
+You can do one other thing with the cap.
+PAC? CAP.
+PACE CAP or PACY CAP will help you go faster, later.
+?Which way do I go first?
+Well, one way, there's only one room you can explore.
+Also, there are no permadeaths.
+There's no penalty for guessing wrong.
+You'll want to start by going east.
+>>XYZ
+?Whuddup?
+The sky.
+>Grebeberg
+>>SEER TREES
+?How do I get rid of the Start Rats?
+You need a Trap.
+Well, you may guess a specific sort of trap.
+A Party Trap.
+Once you get it, USE TRAP ON RATS.
+>>YACK CAY
+?How do I go west?
+You'll need something to protect you from the Flu Gulf.
+Some sort of antidote and something to put that antidote in.
+The Puce Cup will carry what you need.
+>Not-Kook-Ton
+>>YAWN WAY
+?Is there anything to do here?
+No, not much, other than go a bunch of different directions.
+>>MY GYM
+?Can I get the resto poster?
+Yes, once Dave's not in the way.
+?How do I get around Dave?
+Well, you need to avoid him. Not quite avoid him.
+????? DAVE.
+EVADE DAVE.
+>>EMO DOME
+?Why am I running past too fast?
+Because you just want to get away.
+You hear "hold up!" "back up!"
+You need to FEEL more up, to DO something more up.
+PULL UP.
+If your cap is "pacy" and not "pact" then you won't be able to slow up in time.
+Also, once you PULL UP, the Emo Dome is safe.
+>>BON SNOB
+?How do I keep people happy here?
+The resto poster from My Gym will work well.
