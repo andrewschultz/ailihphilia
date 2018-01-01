@@ -239,9 +239,13 @@ Flu Gulf is west of Yack Cay. It is in Grebeberg.
 
 Code Doc is a person in Flu Gulf.
 
+book Le Babel
+
+Le Babel is west of Seer Trees. It is in Grebeberg.
+
 book Top Spot
 
-Top Spot is west of Seer Trees. It is in Grebeberg.
+Le Babel is west of Top Spot. It is in Grebeberg.
 
 book Ooze Zoo
 
@@ -310,9 +314,30 @@ State Tats is south of Yawn Way. It is in Not-Kook-Ton. "The only way out is nor
 
 book Stope Depots
 
-Stope Depots is east of Emo Dome. It is in Not-Kook-Ton.
+Stope Depots is east of Emo Dome. It is in Not-Kook-Ton. "You can go all four directions here."
 
 [snuff funs]
+
+a tame mat is in Stope Depots. "A tame mat reading BON SNOB is in your way to the south."
+
+check taking tame mat:
+	say "That would be stealing." instead;
+
+chapter tamping
+
+tamping is an action applying to nothing.
+
+understand the command "tamp mat" as something new.
+
+understand "tamp mat" as tamping when player is in stope depots and tame mat is in stope depots.
+
+carry out tamping:
+	say "Boom! That's the idea. With the mat tamped, you walk across, and there's no more nonsense.";
+	wfak;
+	increment the score;
+	the rule succeeds;
+
+understand "tame mat" as a mistake ("That's not quite what to do. This is a game about palindromes, not homonyms.") when player is in Stope Depots and tame mat is in Stope Depots.
 
 book Bon Snob
 
@@ -328,7 +353,11 @@ Evaded Ave is east of Stope Depots. It is in Not-Kook-Ton.
 
 The Puce Cup is a thing in Evaded Ave.
 
-book yell alley
+book Le Falafel
+
+Le Falafel is south of Evaded Ave.
+
+book Yell Alley
 
 Yell Alley is north of Evaded Ave. It is in Not-Kook-Ton. "A back cab sits here, taking you where you may need to go if you ENTER it."
 
