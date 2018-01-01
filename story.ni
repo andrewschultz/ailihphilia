@@ -70,12 +70,29 @@ to decide whether the action is procedural: [aip]
 	if listening, yes;
 	no;
 
+chapter saying yes
+
 instead of saying yes, say "Yay!"
-instead of saying no, say "Oo! Noo!"
+
+chapter saying no
+
+instead of saying no:
+	increment no-tab;
+	if no-tab > number of rows in table of noesise:
+		now no-tab is 1;
+		say "(cycling) ";
+	choose row no-tab in table of noesies;
+	say "[randtxt entry][line break]";
+
+table of noesies
+randtxt
+"Oo! Noo!"
+"No way? Aw, ON!"
+"Hm. SMH."
 
 chapter attacking
 
-instead of attacking, say "Harm! Rah!"
+instead of attacking, say "Harm! Rah!" [Ye KO Pokey]
 [instead of attacking, say "Attack, cat? Ta!"]
 
 chapter going
@@ -99,7 +116,7 @@ instead of singing: say "Rock! Cor!"
 
 chapter silly swearing
 
-instead of swearing obscenely: say "[one of]Dammit, I'm mad![or]We mew![in random order]"
+instead of swearing obscenely: say "[one of]Dammit, I'm mad![or]We mew![or]Tact, cat![in random order]"
 
 understand "poop" and "boob" as a mistake ("No swearing! Not even swearing done right for Palindromopolis.")
 
@@ -129,6 +146,23 @@ part Mid Dim
 book Fun 'Nuf
 
 Fun 'Nuf is a room in Mid Dim. "Some tile lit is carved out here."
+
+chapter Pact Cap
+
+The Pact Cap is a thing in Fun 'Nuf. "A pact cap sits here. You need to find the right way to accept it to begin your quest."
+
+chapter packing
+
+understand the command "pack cap" as something new.
+
+understand "pack cap" as packing.
+
+carry out packing:
+	if the player has the pact cap, say "You already did.";
+	say "Yes, that's how to get the cap. You are ready to go!";
+	now player has the cap;
+	increment the score;
+	the rule succeeds;
 
 chapter tile lit
 
@@ -162,18 +196,20 @@ check dropping party trap in Seer Trees:
 to score-inc:
 	increment the score;
 
-book Code Doc
+book Yack Cay
 
-Code Doc is north of Seer Trees. It is in Grebeberg.
+Yack Cay is north of Seer Trees. It is in Grebeberg.
 
-check going west in Code Doc:
+check going west in Yack Cay:
 	unless player carries puce cup or puce cup is in lalaland:
 		say "You're pushed back by worries of sickness." instead; [??]
 	if player carries puce cup:
 		say "The fumes
 book Flu Gulf
 
-Flu Gulf is west of Code Doc. It is in Grebeberg.
+Flu Gulf is west of Yack Cay. It is in Grebeberg.
+
+Code Doc is a person in Flu Gulf.
 
 book Top Spot
 
@@ -185,11 +221,11 @@ Ooze Zoo is south of Seer Trees. It is in Grebeberg.
 
 book Mire Rim
 
-Mire Rim is east of Ooze Zoo.
+Mire Rim is east of Ooze Zoo. It is in Grebeberg.
 
 book Apse Spa
 
-Apse Spa is east of Code Doc. It is in Grebeberg.
+Apse Spa is east of Yack Cay. It is in Grebeberg.
 
 book Moo Room
 
