@@ -192,7 +192,7 @@ carry out packing:
 	if the player has the pact cap, say "You already did.";
 	say "Yes, that's how to get the cap. You are ready to go!";
 	now player has the cap;
-	increment the score;
+	score-inc;
 	the rule succeeds;
 
 section pace cap
@@ -208,7 +208,7 @@ carry out paceing:
 	if pact cap is in Fun 'Nuf, say "That'll work later, but you need something a little different to actually TAKE the pact cap." instead;
 	if cap-pace is true, say "It's already a pace cap." instead;
 	if cap-ever-pace is false:
-		increment the score;
+		score-inc;
 		now cap-ever-pace is true;
 	say "You suddenly feel [if cap-pace is false]swifter[else]slower[end if].";
 	now cap-pace is whether or not cap-pace is true;
@@ -360,7 +360,7 @@ understand "tamp mat" as tamping when player is in stope depots and tame mat is 
 carry out tamping:
 	say "Boom! That's the idea. With the mat tamped, you walk across, and there's no more nonsense.";
 	wfak;
-	increment the score;
+	score-inc;
 	the rule succeeds;
 
 understand "tame mat" as a mistake ("That's not quite what to do. This is a game about palindromes, not homonyms.") when player is in Stope Depots and tame mat is in Stope Depots.
@@ -434,11 +434,27 @@ book civic level
 
 Civic Level is north of Emo Dome. It is in Not-Kook-Ton.
 
+The radar is in Civic Level.
+
 book work row
 
 Work Row is south of Emo Dome. It is in Not-Kook-Ton.
 
-The radar is in Civic Level.
+Ian is a person in Work Row.
+
+chapter nailing
+
+nailing is an action applying to nothing.
+
+understand the command "nail ian" as something new.
+
+understand "nail ian" as nailing when player is in Work Row and Ian is in Work Row.
+
+carry out nailing:
+	say "Boom! There goes Ian.";
+	move Ian to Zerorez;
+	score-inc;
+	the rule succeeds;
 
 volume metarooms
 
