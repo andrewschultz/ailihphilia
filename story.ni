@@ -10,10 +10,15 @@ include Basic Screen Effects by Emily Short.
 
 include Put It Up Tables by Andrew Schultz.
 
-the maximum score is 6.
+the maximum score is 7.
 
-a region has a number called max-score.
-a region has a number called cur-score.
+volume unsorted
+
+the sage gas is a thing.
+
+chapter region and room stuff
+
+a region has a number called max-score. a region has a number called cur-score.
 
 Grebeberg is a region. max-score of Grebeberg is 1.
 
@@ -25,14 +30,6 @@ Not-Kook-Ton is a region. max-score of Not-Kook-Ton is 4.
 
 a room has a table name called hint-name.
 
-volume unsorted
-
-the party trap is a thing.
-
-the sage gas is a thing.
-
-the resto poster is a thing.
-
 volume the player
 
 the player carries the Darer Ad.
@@ -40,7 +37,7 @@ the player carries the Darer Ad.
 description of Darer Ad is "No LOL on? SEE, REFER-EES! Do! Nod!"
 
 check dropping:
-	if noun is not party trap, say "That's not useful to drop." instead;
+	say "This game is not Pro-Drop. In other words, you don't need to drop anything. You may wish to USE it instead." instead;
 
 to decide which region is mrlp:
 	decide on map region of location of player;
@@ -151,7 +148,7 @@ instead of singing: say "Rock! Cor!"
 
 chapter silly swearing
 
-instead of swearing obscenely: say "[one of]Dammit, I'm mad![or]We mew![or]Tact, cat![in random order]"
+instead of swearing obscenely: say "[one of]Dammit, I'm mad![or]We mew![or]Tact, cat![or]Not on![in random order]"
 
 understand "poop" and "boob" as a mistake ("Such a word is particularly (in)appropriate for Grebeberg and Not-Kook-Ton.")
 
@@ -282,6 +279,16 @@ book Le Babel
 
 Le Babel is west of Seer Trees. It is in Grebeberg.
 
+Xanax is a thing in Le Babel. "Xanax sits here, on a pill lip."
+
+check eating Xanax:
+	if player is not in Yawn Way, say "There's nothing anxious-making around, yet." instead;
+	say "Gulp!
+
+the pill lip is scenery in Le Babel.
+
+instead of doing something with pill lip, say "The pill lip is just there to prevent the Xanax from getting dirty on the ground."
+
 book Top Spot
 
 Le Babel is west of Top Spot. It is in Grebeberg.
@@ -346,21 +353,65 @@ carry out evadeing:
 
 understand "evade dave" as a mistake ("Dave's not here, man!") when player is not in My Gym.
 
-book Swept Pews
+book Worn Row
 
-Swept Pews is west of My Gym. It is in Not-Kook-Ton.
+Worn Row is west of My Gym. It is in Not-Kook-Ton.
+
+printed name of Worn Row is "[if workrow is true]Work[else]Worn[end if] Row"
+
+understand "work row" and "work" as Worn Row when workrow is true.
+
+Ian is a person in Worn Row.
+
+chapter nailing
+
+nailing is an action applying to nothing.
+
+understand the command "nail ian" as something new.
+
+understand "nail ian" as nailing when player is in Worn Row and Ian is in Worn Row.
+
+carry out nailing:
+	say "Boom! There goes Ian.";
+	move Ian to Zerorez;
+	score-inc;
+	the rule succeeds;
+
+chapter workrowing
+
+workrowing is an action applying to nothing.
+
+understand the command "workrow" as something new.
+
+understand "work row" and "workrow" as workrowing when workrow is false.
+
+workrow is a truth state that varies.
+
+carry out workrowing:
+	now workrow is true;
+	say "All the machines seem a bit shinier now. Yay!";
+	score-inc;
+	the rule succeeds;
+
+understand "worn row" and "wornrow" as a mistake ("No need to revert things.") when player is in Swept Pews and workrow is true.
 
 chapter resto poster
 
-a resto poster is a thing in Swept Pews.
+a resto poster is a thing in Worn Row.
 
 chapter Tract Cart
 
-The tract cart is a thing in Swept Pews.
+The tract cart is a thing in Worn Row.
 
 book State Tats
 
 State Tats is north of Yawn Way. It is in Not-Kook-Ton. "The only way out is north."
+
+the trap art is a thing in State Tats.
+
+the party trap is a thing.
+
+Marge Pegram is a person in State Tats.
 
 book Stope Depots
 
@@ -440,8 +491,6 @@ book Emo Dome
 
 Emo Dome is east of Yawn Way. It is in Not-Kook-Ton.
 
-Xanax is a thing in Emo Dome.
-
 instead of doing something in Emo Dome when pulled-up is false:
 	if current action is going:
 		if noun is not west and noun is not east:
@@ -463,47 +512,11 @@ Civic Level is north of Emo Dome. It is in Not-Kook-Ton.
 
 The radar is in Civic Level.
 
-book Worn Row
+book Swept Pews
 
-Worn Row is south of Emo Dome. It is in Not-Kook-Ton.
+Swept Pews is south of Emo Dome. It is in Not-Kook-Ton.
 
-printed name of Worn Row is "[if workrow is true]Work[else]Worn[end if] Row"
-
-understand "work row" and "work" as worn row when workrow is true.
-
-Ian is a person in Worn Row.
-
-chapter nailing
-
-nailing is an action applying to nothing.
-
-understand the command "nail ian" as something new.
-
-understand "nail ian" as nailing when player is in Worn Row and Ian is in Worn Row.
-
-carry out nailing:
-	say "Boom! There goes Ian.";
-	move Ian to Zerorez;
-	score-inc;
-	the rule succeeds;
-
-chapter workrowing
-
-workrowing is an action applying to nothing.
-
-understand the command "workrow" as something new.
-
-understand "work row" and "workrow" as workrowing when workrow is false.
-
-workrow is a truth state that varies.
-
-carry out workrowing:
-	now workrow is true;
-	say "All the machines seem a bit shinier now. Yay!";
-	score-inc;
-	the rule succeeds;
-
-understand "worn row" and "wornrow" as a mistake ("No need to revert things.") when player is in worn row and workrow is true.
+the resto poster is a thing in Swept Pews.
 
 volume gotoing
 
@@ -513,7 +526,7 @@ Fun 'Nuf is available.
 
 Seer Trees, Yawn Way, State Tats and My Gym are cappy.
 
-Swept Pews is davey.
+Worn Row is davey.
 
 chapter gotoing
 
@@ -599,4 +612,20 @@ hint-name of State Tats is table of statetats.
 table of statetats
 hint-rule	hint-text
 --	"You obviously want to get a tattoo."
+
+volume endgame stuff
+
+volume beta testing - not for release
+
+chapter wining
+
+wining is an action applying to nothing.
+
+understand the command "win" as something new.
+
+understand "win" as wining.
+
+carry out wining:
+	end the story finally;
+	the rule succeeds;
 
