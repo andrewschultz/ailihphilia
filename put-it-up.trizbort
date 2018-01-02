@@ -16,9 +16,7 @@
 			<objects>Back Cab</objects>
 		</room>
 		<room id="6" name="Bon Snob" subtitle="" x="96" y="-64" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="7" name="Emo Dome" subtitle="" x="-64" y="-192" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Xanax</objects>
-		</room>
+		<room id="7" name="Emo Dome" subtitle="" x="-64" y="-192" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="8" name="Stope Depots" subtitle="" x="96" y="-192" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>|Tame Mat</objects>
 		</room>
@@ -42,7 +40,7 @@
 			<dock index="0" id="3" port="e" />
 			<dock index="1" id="7" port="w" />
 		</line>
-		<line id="18" name="" description="">
+		<line id="18" name="" description="" style="dashed">
 			<dock index="0" id="3" port="ene" />
 			<dock index="1" id="8" port="wnw" />
 		</line>
@@ -55,13 +53,9 @@
 		<room id="21" name="Ned's Den" subtitle="" x="96" y="-320" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>DENT NED</objects>
 		</room>
-		<room id="22" name="Work Row" subtitle="" x="-64" y="-64" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="22" name="Word Row" subtitle="" x="-384" y="-64" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="You need to change Word Row to be able to use the machines" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>NAIL IAN|Reviver|Reifier|Rotator</objects>
 		</room>
-		<line id="23" name="" description="">
-			<dock index="0" id="7" port="s" />
-			<dock index="1" id="22" port="n" />
-		</line>
 		<room id="24" name="Top Spot" subtitle="" x="-864" y="-320" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>Bro Orb</objects>
 		</room>
@@ -127,7 +121,9 @@
 			<dock index="0" id="28" port="s" />
 			<dock index="1" id="41" port="n" />
 		</line>
-		<room id="43" name="Le Babel" subtitle="" x="-704" y="-192" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="43" name="Le Babel" subtitle="" x="-704" y="-192" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects custom="yes" customRight="-32" customDown="0">Xanax (Pill Lip)</objects>
+		</room>
 		<line id="45" name="" description="" style="dashed">
 			<dock index="0" id="43" port="e" />
 			<dock index="1" id="2" port="w" />
@@ -145,13 +141,9 @@
 			<dock index="0" id="39" port="s" />
 			<dock index="1" id="44" port="n" />
 		</line>
-		<room id="47" name="Swept Pews" subtitle="" x="-384" y="-64" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="47" name="Swept Pews" subtitle="" x="-64" y="-64" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects at="n">Tract Cart|Resto Poster</objects>
 		</room>
-		<line id="48" name="" description="" style="dashed">
-			<dock index="0" id="47" port="e" />
-			<dock index="1" id="10" port="w" />
-		</line>
 		<room id="49" name="Mire Rim" subtitle="" x="-1024" y="-192" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="50" name="" description="">
 			<dock index="0" id="39" port="w" />
@@ -169,6 +161,15 @@
 			<dock index="0" id="49" port="s" />
 			<dock index="1" id="53" port="n" />
 		</line>
+		<line id="23" name="" description="" style="dashed">
+			<dock index="0" id="10" port="w" />
+			<dock index="1" id="22" port="e" />
+		</line>
+		<line id="48" name="" description="">
+			<dock index="0" id="7" port="s" />
+			<dock index="1" id="47" port="n" />
+		</line>
+		<room id="55" name="Ball Lab" subtitle="" x="-544" y="64" w="96" h="64" region="Not On" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 	</map>
 	<settings>
 		<colors>
@@ -188,6 +189,7 @@
 			<Grebeberg Name="Grebeberg" TextColor="Black">Lime</Grebeberg>
 			<Mid____Dim Name="Mid Dim" TextColor="Black">Yellow</Mid____Dim>
 			<NoRegion Name="NoRegion" TextColor="Black">White</NoRegion>
+			<Not____On Name="Not On" TextColor="Black">Aqua</Not____On>
 			<Not-Kook-Ton Name="Not-Kook-Ton" TextColor="Black">#FF8000</Not-Kook-Ton>
 		</regions>
 		<fonts>
