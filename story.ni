@@ -100,6 +100,19 @@ to decide whether the action is procedural: [aip]
 	if listening, yes;
 	no;
 
+chapter abouting
+
+abouting is an action applying to nothing.
+
+understand the command "about" as something new.
+
+understand "about" as abouting.
+
+carry out abouting:
+	say "Put it Up was originally written for IFComp 2018. Like many of my games, I got the idea from Nord and Bert Couldn't Make Head or Tail of It, at least partially. Another game that gave me ideas was Nick Montfort's [b]I Palindrome I[r], part of the Apollo 18+20 collection Kevin Jackson-Mead organized. I felt there could be more that could be done with palindromes, but I didn't know what.";
+	say "[line break]Originally, Put it Up was part of a spoonerism game--a sort of side area--but eventually I found enough rooms and ideas it could be its own game. Whether or not it's a good game, I guess you have to decide. It doesn't have any deep philosophy, but I hope you enjoy it, and if you write games yourself, I hope it inspires you to go through with anything unusual you weren't sure if you should try. (Spoiler: you should!)";
+	the rule succeeds;
+
 chapter saying yes
 
 instead of saying yes, say "Yay!"
