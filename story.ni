@@ -13,12 +13,13 @@ include Put It Up Tables by Andrew Schultz.
 the maximum score is 6.
 
 a region has a number called max-score.
+a region has a number called cur-score.
 
-Grebeberg is a region.
+Grebeberg is a region. max-score of Grebeberg is 1.
 
 Dim Mid is a region. max-score of Dim Mid is 2.
 
-Not-Kook-Ton is a region.
+Not-Kook-Ton is a region. max-score of Not-Kook-Ton is 3.
 
 [El Live Ville is a region.]
 
@@ -41,33 +42,42 @@ description of Darer Ad is "No LOL on? SEE, REFER-EES! Do! Nod!"
 check dropping:
 	if noun is not party trap, say "That's not useful to drop." instead;
 
+to decide which region is mrlp:
+	decide on map region of location of player;
+
 part scoring
 
 to score-inc:
 	increment cur-score of mrlp;
-	increment the score;
+	increment the score; [this is the only incidence that shouldn't be replaced]
 	if debug-state is true and cur-score of mrlp > max-score of mrlp, say "DEBUG WARNING: REGION SCORE TOO HIGH!";
 	if debug-state is true and score > maximum score, say "DEBUG WARNING: OVERALL SCORE TOO HIGH!"
 
 check requesting the score:
 	say "Your overall score so far is [score] of [maximum score].";
 	say "Broken down by regions, you have [regres of dim mid], [regres of grebeberg] and [regres of not-kook-ton].";
+	the rule succeeds;
 
-to say regres of (r - a region):
-	say "[cur-score of r] of [max-score of r] for [r][if mrlp is r] (current region)[end if]"
+to say regres of (re - a region):
+	say "[cur-score of re] of [max-score of re] for [re][if mrlp is re] (current region)[end if]"
 
 part when play begins
 
 when play begins:
-	now right hand status line is "[cur-score of mrlp]/[max-score of mlp] [score]/[maximum score]";
-	now left hand status line is "[location of player] ([mrlp of player])"
+	if debug-state is true:
+		let reg-sum be 0;
+		repeat with Q running through regions:
+			increase reg-sum by max-score of Q;
+		say "[if reg-sum is not the maximum score]Region sum ([reg-sum]) does not equal maximum score ([maximum score])[else]Region sum maximum scores match overall maximum score[end if].";
+	now right hand status line is "[cur-score of mrlp]/[max-score of mrlp] [score]/[maximum score]";
+	now left hand status line is "[location of player] ([mrlp])"
 
 volume parser errors operations and death
 
 part parser errors
 
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
-	say "[one of]Yo! Coy?[or]Noise lesion.[or]Spill, lips![in random order]"
+	say "[one of]Dud![or]Yo! Coy?[or]Noise lesion.[or]Spill, lips![in random order]"
 
 part after command
 
@@ -192,6 +202,7 @@ carry out packing:
 	if the player has the pact cap, say "You already did.";
 	say "Yes, that's how to get the cap. You are ready to go!";
 	now player has the cap;
+	now all cappy rooms are available;
 	score-inc;
 	the rule succeeds;
 
@@ -243,9 +254,6 @@ check dropping party trap in Seer Trees:
 	score-inc;
 	the rule succeeds;
 
-to score-inc:
-	increment the score;
-
 book Yack Cay
 
 Yack Cay is north of Seer Trees. It is in Grebeberg.
@@ -294,21 +302,17 @@ Yawn Way is east of Fun 'Nuf. It is in Not-Kook-Ton. "Not much to do here, and i
 
 book My Gym
 
-My Gym is north of Yawn Way. It is in Not-Kook-Ton. "The only way out is south."
+My Gym is south of Yawn Way. It is in Not-Kook-Ton. "You can go back out south to Yawn Way. There's also passage west."
 
 chapter dave
 
-Dave is a person in My Gym. initial appearance is "[one of]A fellow walks over to you and booms 'I'M DAVE!' You freeze, and after a few seconds, he whispers, 'Dud.'[or]Dave is here, keeping an eye on you.[stopping]". description is "Dave is big and strong and fast."
+Dave is a person in My Gym. initial appearance is "[one of]A fellow walks over to you and booms 'I'M DAVE!' You freeze, and after a few seconds, he whispers, 'Dud.'[or]Dave is here, keeping an eye on you, guarding the passage west.[stopping]". description is "Dave is big and strong and fast."
 
 instead of doing something with dave:
 	if action is procedural, continue the action;
 	say "Looks like you'll need to do something special with, or to, Dave. Nothing destructive. But psych him out, somehow."
 
-chapter resto poster
-
-a resto poster is a thing in My Gym.
-
-check taking resto poster: say "Dave says, 'I can't let you do that, Hal. Ah!' There must be a succinct, clever way to sneak around him!" instead;
+check going west in My Gym when Dave is in My Gym: say "Dave says, 'I can't let you do that, Hal. Ah!' There must be a succinct, clever way to sneak around him!" instead;
 
 chapter evadeing
 
@@ -327,17 +331,32 @@ carry out evadeing:
 		now dave is in ZeroRez;
 		now dave-evade is true;
 		score-inc;
+		now all davey rooms are available;
+	else:
+		say "There's only one person you need to evade in this game.";
 	the rule succeeds.
 
 understand "evade dave" as a mistake ("Dave's not here, man!") when player is not in My Gym.
 
+book Wept Pew
+
+Wept Pew is west of My Gym. Wept Pew is in Not-Kook-Ton.
+
+chapter resto poster
+
+a resto poster is a thing in Wept Pew.
+
+chapter Tract Cart
+
+The tract cart is a thing in Wept Pew.
+
 book State Tats
 
-State Tats is south of Yawn Way. It is in Not-Kook-Ton. "The only way out is north."
+State Tats is north of Yawn Way. It is in Not-Kook-Ton. "The only way out is north."
 
 book Stope Depots
 
-Stope Depots is east of Emo Dome. It is in Not-Kook-Ton. "You can go all four directions here."
+Stope Depots is east of Emo Dome. It is in Not-Kook-Ton. "This is another intersection in Not-Kook-Toon where you can go all four directions."
 
 [snuff funs]
 
@@ -455,6 +474,43 @@ carry out nailing:
 	move Ian to Zerorez;
 	score-inc;
 	the rule succeeds;
+
+volume gotoing
+
+a room can be notyet, available, cappy, davey, ratsy, pully, tamey, or gatey.
+
+Fun 'Nuf is available.
+
+Seer Trees, Yawn Way, State Tats and My Gym are cappy.
+
+Wept Pew is davey.
+
+chapter gotoing
+
+gotoing is an action applying to one visible thing.
+
+understand the command "gt" as something new.
+understand the command "goto" as something new.
+
+understand "goto [room]" as gotoing.
+understand "gt [room]" as gotoing.
+
+to decide whether goto-available:
+	yes. [obviously we don't want this to be trivial once the game's complete, but we want the code in place.]
+
+carry out gotoing: [?? can't goto Emo Dome before running back/forth]
+	unless goto-available, say "You're at a point in the game where goto isn't available." instead;
+	if noun is not available, say "[noun] isn't available yet, so you can't go there." instead;
+	if noun is available and noun is not visited, say "You can reach [noun], but you haven't visited there, yet. So I'm going to be a stickler and say you have to get there first." instead;
+	move player to noun;
+	the rule succeeds;
+
+section gotocheck - not for release
+
+[this is to make sure that rooms are unfolded]
+
+when play begins:
+	say "[if number of notyet rooms is 0]All rooms have a switch saying you can go there[else]Rooms that are still notyet: [list of notyet rooms][end if]."
 
 volume metarooms
 
