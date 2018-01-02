@@ -76,6 +76,9 @@ part parser errors
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
 	say "[one of]Dud![or]Yo! Coy?[or]Noise lesion.[or]Spill, lips![in random order]"
 
+Rule for printing a parser error when the latest parser error is the didn't understand error: [?? if you are in a guess the verb zone, this should be different]
+	say "I didn't recognize that action. You can type VERB or VERBS to get a list of them.";
+
 part after command
 
 after reading a command:
@@ -110,7 +113,22 @@ understand "about" as abouting.
 
 carry out abouting:
 	say "Put it Up was originally written for IFComp 2018. Like many of my games, I got the idea from Nord and Bert Couldn't Make Head or Tail of It, at least partially. Another game that gave me ideas was Nick Montfort's [b]I Palindrome I[r], part of the Apollo 18+20 collection Kevin Jackson-Mead organized. I felt there could be more that could be done with palindromes, but I didn't know what.";
+	say "[line break]The result is some guess-the-verb, but hopefully with the game's general idea, you'll see what's going on.";
 	say "[line break]Originally, Put it Up was part of a spoonerism game--a sort of side area--but eventually I found enough rooms and ideas it could be its own game. Whether or not it's a good game, I guess you have to decide. It doesn't have any deep philosophy, but I hope you enjoy it, and if you write games yourself, I hope it inspires you to go through with anything unusual you weren't sure if you should try. (Spoiler: you should!)";
+	the rule succeeds;
+
+chapter verbing
+
+verbing is an action applying to nothing.
+
+understand the command "verb" as something new.
+understand the command "verbs" as something new.
+
+understand "verbs" as verbing.
+
+carry out verbing:
+	say "The four basic directions (N, S, E, W) are the main ones, along with USE, in order to get through the game. Also, in some places, specific verbs will be needed. None are terribly long, and---well, there is a pattern to them.";
+	say "[line break]Standard verbs like X (EXAMINE) and LOOK also work.";
 	the rule succeeds;
 
 chapter saying yes
