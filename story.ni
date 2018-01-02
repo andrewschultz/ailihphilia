@@ -154,8 +154,6 @@ understand "poop" and "boob" as a mistake ("Such a word is particularly (in)appr
 
 chapter sleeping
 
-the eels are people in Dumb Mud.
-
 instead of sleeping:
 	if eels are in location of player:
 		say "You manage to calm the eels down. They go away.";
@@ -259,11 +257,11 @@ check dropping party trap in Seer Trees:
 	score-inc;
 	the rule succeeds;
 
-book Yack Cay
+book Cold Loc
 
-Yack Cay is north of Seer Trees. It is in Grebeberg.
+Cold Loc is north of Seer Trees. It is in Grebeberg.
 
-check going west in Yack Cay:
+check going west in Cold Loc:
 	unless player carries puce cup or puce cup is in ZeroRez:
 		say "You're pushed back by worries of sickness." instead; [??]
 	if player carries puce cup:
@@ -271,7 +269,7 @@ check going west in Yack Cay:
 
 book Flu Gulf
 
-Flu Gulf is west of Yack Cay. It is in Grebeberg.
+Flu Gulf is west of Cold Loc. It is in Grebeberg.
 
 Code Doc is a person in Flu Gulf.
 
@@ -283,15 +281,22 @@ Xanax is a thing in Le Babel. "Xanax sits here, on a pill lip."
 
 check eating Xanax:
 	if player is not in Yawn Way, say "There's nothing anxious-making around, yet." instead;
-	say "Gulp!
+	say "Eewee! Well, you feel a bit more relaxed now.";
+	now Xanax is in Zerorez;
 
 the pill lip is scenery in Le Babel.
 
 instead of doing something with pill lip, say "The pill lip is just there to prevent the Xanax from getting dirty on the ground."
 
+book Dumb Mud
+
+Dumb Mud is west of Le Babel.
+
+the eels are people in Dumb Mud.
+
 book Top Spot
 
-Le Babel is west of Top Spot. It is in Grebeberg.
+Top Spot is north of Dumb Mud. It is in Grebeberg.
 
 book Ooze Zoo
 
@@ -299,11 +304,19 @@ Ooze Zoo is south of Seer Trees. It is in Grebeberg.
 
 book Mire Rim
 
-Mire Rim is east of Ooze Zoo. It is in Grebeberg.
+Mire Rim is west of Dumb Mud. It is in Grebeberg.
+
+book Yack Cay
+
+Yack Cay is south of Mire Rim.
+
+book Calcific Lac
+
+Calcific Lac is north of Mire Rim.
 
 book Apse Spa
 
-Apse Spa is east of Yack Cay. It is in Grebeberg.
+Apse Spa is east of Cold Loc. It is in Grebeberg.
 
 book Moo Room
 
@@ -363,6 +376,10 @@ understand "work row" and "work" as Worn Row when workrow is true.
 
 Ian is a person in Worn Row.
 
+chapter party trap
+
+the party trap is a thing.
+
 chapter nailing
 
 nailing is an action applying to nothing.
@@ -395,23 +412,13 @@ carry out workrowing:
 
 understand "worn row" and "wornrow" as a mistake ("No need to revert things.") when player is in Swept Pews and workrow is true.
 
-chapter resto poster
-
-a resto poster is a thing in Worn Row.
-
-chapter Tract Cart
-
-The tract cart is a thing in Worn Row.
-
 book State Tats
 
 State Tats is north of Yawn Way. It is in Not-Kook-Ton. "The only way out is north."
 
-the trap art is a thing in State Tats.
+Marge Pegram is a person in State Tats. "'Hi! I'm Marge Pegram."
 
-the party trap is a thing.
-
-Marge Pegram is a person in State Tats.
+the trap art is a thing in State Tats. "Some trap art sits here. It's free. You might as well take it.". description is "The trap art depicts a bunch of nasty, dirty animals being trapped--it's not a real trap, but maybe it could become one."
 
 book Stope Depots
 
@@ -446,10 +453,6 @@ understand "tame mat" as a mistake ("That's not quite what to do. This is a game
 book Bon Snob
 
 Bon Snob is south of Stope Depots. It is in Not-Kook-Ton.
-
-chapter Marge Pegram
-
-Marge Pegram is a person in Bon Snob.
 
 book Evaded Ave
 
@@ -516,7 +519,13 @@ book Swept Pews
 
 Swept Pews is south of Emo Dome. It is in Not-Kook-Ton.
 
+chapter resto poster
+
 the resto poster is a thing in Swept Pews.
+
+chapter Tract Cart
+
+The tract cart is a thing in Worn Row.
 
 volume gotoing
 
