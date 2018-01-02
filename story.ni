@@ -67,14 +67,35 @@ when play begins:
 			increase reg-sum by max-score of Q;
 		say "[if reg-sum is not the maximum score]Region sum ([reg-sum]) does not equal maximum score ([maximum score])[else]Region sum maximum scores match overall maximum score[end if].";
 	now right hand status line is "[cur-score of mrlp]/[max-score of mrlp] [score]/[maximum score]";
-	now left hand status line is "[location of player] ([mrlp])"
+	now left hand status line is "[location of player] ([mrlp])";
+	sort table of noesies in random order;
+	sort table of waittxt in random order;
+	sort table of nothings in random order;
 
 volume parser errors operations and death
 
 part parser errors
 
+chapter nothing to say
+
+nothing-txt is a number that varies.
+
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
-	say "[one of]Dud![or]Yo! Coy?[or]Noise lesion.[or]Spill, lips![in random order]"
+	increment nothing-txt;
+	if nothing-txt > number of rows in table of nothings:
+		say "(Cycling) ";
+		now nothing-txt is 1;
+	choose row nothing-txt in table of nothings;
+	say "[randtxt entry][line break]";
+
+table of nothings
+randtxt
+"Dud!"
+"Yo! Coy?"
+"Noise lesion."
+"Spill, lips!"
+
+chapter unrecognized verb
 
 Rule for printing a parser error when the latest parser error is the didn't understand error: [?? if you are in a guess the verb zone, this should be different]
 	say "I didn't recognize that action. You can type VERB or VERBS to get a list of them.";
@@ -195,7 +216,21 @@ instead of sleeping:
 
 chapter waiting
 
-instead of waiting, say "[one of]GO, dog![or]Don't nod![or]Panic? I nap![in random order]"
+wait-num is a number that varies.
+
+instead of waiting:
+	increment wait-num;
+	if wait-num > number of rows in table of waittxt:
+		say "(Cycling) ";
+		now wait-num is 1;
+	choose row wait-num in table of waittxt;
+	say "[randtxt entry]";
+
+table of waittxt
+randtxt
+"GO, dog!"
+"Don't nod!"
+"Panic? I nap!"
 
 chapter xyzzying
 
@@ -321,9 +356,13 @@ instead of doing something with pill lip, say "The pill lip is just there to pre
 
 book Dumb Mud
 
-Dumb Mud is west of Le Babel.
+Dumb Mud is west of Le Babel. It is in Grebeberg.
 
 the eels are people in Dumb Mud.
+
+book Mont Nom
+
+Mont Nom is south of Dumb Mud. It is in Grebeberg.
 
 book Top Spot
 
@@ -339,11 +378,11 @@ Mire Rim is west of Dumb Mud. It is in Grebeberg.
 
 book Yack Cay
 
-Yack Cay is south of Mire Rim.
+Yack Cay is south of Mire Rim. It is in Grebeberg.
 
 book Calcific Lac
 
-Calcific Lac is north of Mire Rim.
+Calcific Lac is north of Mire Rim. It is in Grebeberg.
 
 book Apse Spa
 
@@ -493,7 +532,7 @@ The Puce Cup is a thing in Evaded Ave.
 
 book Le Falafel
 
-Le Falafel is south of Evaded Ave.
+Le Falafel is south of Evaded Ave. It is in Not-Kook-Ton.
 
 book Yell Alley
 
@@ -654,6 +693,29 @@ hint-rule	hint-text
 --	"You obviously want to get a tattoo."
 
 volume endgame stuff
+
+Table of Final Question Options (continued)
+final question wording	only if victorious	topic	final response rule	final response activity
+"NO responses"	true	"NO"	no-list rule	loafing
+"WAIT responses"	true	"WAIT"	wait-list rule	loafing
+"EMPTY command responses"	true	"EMPTY"	empty-list rule	loafing
+
+loafing is an activity.
+
+this is the no-list rule:
+	plowit table of noesies;
+
+this is the wait-list rule:
+	plowit table of waittxt;
+
+this is the empty-list rule:
+	plowit table of nothings;
+
+to plowit (t - a table name):
+	let count be 0;
+	repeat through t:
+		increment count;
+		say "[count]. [randtxt entry][line break]";
 
 volume beta testing - not for release
 
