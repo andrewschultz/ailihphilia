@@ -4,7 +4,7 @@ the story headline is "Yo, Joy! Wow!"
 
 the release number is 1.
 
-include trivial niceties by Andrew Schultz.
+include Trivial Niceties Z-Only by Andrew Schultz.
 
 include Basic Screen Effects by Emily Short.
 
@@ -200,6 +200,10 @@ instead of singing: say "Rock! Cor!"
 
 chapter silly swearing
 
+instead of swearing mildly, try swearing obscenely instead;
+
+swearies is a number that varies.
+
 instead of swearing obscenely:
 	increment swearies;
 	if swearies > number of rows in table of swearstuff:
@@ -215,9 +219,19 @@ randtxt
 "Dammit, I'm mad!"
 "We mew!"
 "Tact, cat!"
-""Not on![in random order]"
+"Not on!"
 
-understand "poop" and "boob" as a mistake ("Such a word is particularly (in)appropriate for Grebeberg and Not-Kook-Ton.")
+chapter pooping
+
+pooping is an action applying to nothing.
+
+understand the commands "boob" and "poop" as something new.
+
+understand "boob" and "poop" as pooping.
+
+carry out pooping:
+	say "You feel no oath tao on swearing the 'right' way for this weird land.";
+	the rule succeeds;
 
 chapter sleeping
 
@@ -273,13 +287,15 @@ Evac Ave is scenery in Fun 'Nuf. "Evac Ave leads back to where you were."
 instead of entering Evac Ave:
 	try going south;
 
+elf-warn is a number that varies.
+
 check going south in Fun 'Nuf:
 	if Flee Elf is in ZeroRez, continue the action;
 	if elf-warn < 3, increment elf-warn;
 	say "[if elf-warn is 1]The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go[else if elf-warn is 2]The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap[else]The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else.";
 	if elf-warn < 3, continue the action;
 	say "[line break]Do you still wish to go through Evac Ave and turn your back on adventure?";
-	if the player yes-consents, end the game;
+	if the player yes-consents, end the story;
 
 chapter Pact Cap
 

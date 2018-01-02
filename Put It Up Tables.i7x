@@ -1,5 +1,7 @@
 Version 1/171220 of Put It Up Tables by Andrew Schultz begins here.
 
+volume random names
+
 table of random palindrome names
 person-name
 "Adam Imada"
@@ -433,6 +435,22 @@ person-name
 "Zita Batiz"
 "Zoe Oz"
 "Zula Luz"]
+
+volume random responses
+
+to next-rand (t - a table name):
+	choose row with tabnam of t in table of all randoms;
+	increment tabidx entry;
+	if tabidx entry > number of rows in tabnam entry:
+		say "(Cycling) ";
+		now tabidx entry is 1;
+	let Q be tabidx entry;
+	choose row Q in tabnam entry;
+	say "[randtxt entry][line break]";
+
+table of all randoms
+tabnam	tabidx
+table of swearstuff	0
 
 Put It Up Tables ends here.
 
