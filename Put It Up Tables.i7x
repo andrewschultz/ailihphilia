@@ -438,6 +438,8 @@ person-name
 
 volume random responses
 
+part the code
+
 to next-rand (t - a table name):
 	choose row with tabnam of t in table of all randoms;
 	increment tabidx entry;
@@ -450,7 +452,40 @@ to next-rand (t - a table name):
 
 table of all randoms
 tabnam	tabidx
+table of noesies	0
+table of nothings	0
 table of swearstuff	0
+table of waittxt	0
+
+part the tables
+
+table of noesies
+randtxt
+"Oo! Noo!"
+"No way? Aw, ON!"
+"Hm. SMH."
+
+table of nothings
+randtxt
+"Dud!"
+"Yo! Coy?"
+"Noise lesion."
+"Spill, lips!"
+
+table of swearstuff
+randtxt
+"(R)rude! Dur(r)!"
+"Bad? A dab!"
+"Dammit, I'm mad!"
+"We mew!"
+"Tact, cat!"
+"Not on!"
+
+table of waittxt
+randtxt
+"GO, dog!"
+"Don't nod!"
+"Panic? I nap!"
 
 Put It Up Tables ends here.
 

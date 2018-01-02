@@ -68,9 +68,8 @@ when play begins:
 		say "[if reg-sum is not the maximum score]Region sum ([reg-sum]) does not equal maximum score ([maximum score])[else]Region sum maximum scores match overall maximum score[end if].";
 	now right hand status line is "[cur-score of mrlp]/[max-score of mrlp] [score]/[maximum score]";
 	now left hand status line is "[location of player] ([mrlp])";
-	sort table of noesies in random order;
-	sort table of waittxt in random order;
-	sort table of nothings in random order;
+	repeat through table of all randoms:
+		sort tabnam entry in random order;
 
 volume parser errors operations and death
 
@@ -81,19 +80,7 @@ chapter nothing to say
 nothing-txt is a number that varies.
 
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
-	increment nothing-txt;
-	if nothing-txt > number of rows in table of nothings:
-		say "(Cycling) ";
-		now nothing-txt is 1;
-	choose row nothing-txt in table of nothings;
-	say "[randtxt entry][line break]";
-
-table of nothings
-randtxt
-"Dud!"
-"Yo! Coy?"
-"Noise lesion."
-"Spill, lips!"
+	next-rand table of nothings;
 
 chapter unrecognized verb
 
@@ -160,19 +147,7 @@ chapter saying no
 
 no-tab is a number that varies.
 
-instead of saying no:
-	increment no-tab;
-	if no-tab > number of rows in table of noesies:
-		now no-tab is 1;
-		say "(cycling) ";
-	choose row no-tab in table of noesies;
-	say "[randtxt entry][line break]";
-
-table of noesies
-randtxt
-"Oo! Noo!"
-"No way? Aw, ON!"
-"Hm. SMH."
+instead of saying no, next-rand table of noesies
 
 chapter attacking
 
@@ -204,22 +179,7 @@ instead of swearing mildly, try swearing obscenely instead;
 
 swearies is a number that varies.
 
-instead of swearing obscenely:
-	increment swearies;
-	if swearies > number of rows in table of swearstuff:
-		say "(Cycling) ";
-		now swearies is 1;
-	choose row swearies in table of swearstuff;
-	say "[randtxt entry]"
-
-table of swearstuff
-randtxt
-"(R)rude! Dur(r)!"
-"Bad? A dab!"
-"Dammit, I'm mad!"
-"We mew!"
-"Tact, cat!"
-"Not on!"
+instead of swearing obscenely, next-rand table of swearstuff;
 
 chapter pooping
 
@@ -245,21 +205,7 @@ instead of sleeping:
 
 chapter waiting
 
-wait-num is a number that varies.
-
-instead of waiting:
-	increment wait-num;
-	if wait-num > number of rows in table of waittxt:
-		say "(Cycling) ";
-		now wait-num is 1;
-	choose row wait-num in table of waittxt;
-	say "[randtxt entry]";
-
-table of waittxt
-randtxt
-"GO, dog!"
-"Don't nod!"
-"Panic? I nap!"
+instead of waiting, next-rand table of waittxt;
 
 chapter xyzzying
 
