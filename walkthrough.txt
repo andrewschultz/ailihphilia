@@ -1,4 +1,60 @@
-You're kind of blocked at the Seer Trees.
+Hello, and welcome to the walkthrough for Put it Up, an IFComp 2018 game by Andrew Schultz.
+
+I didn't intend this game to be overly difficult or to have any weird profound meanings, but I had good laughs putting the puzzles together, and I hope you have fun solving them, even if you see what is going on and how there aren't THAT many possibilities to solve them.
+
+There should be no way to die or be locked out of a win in Put it Up.
+
+If you are technically inclined, you can grep -i "^>" walkthrough.txt to plow through. But if you're technically inclined, you likely won't need the walkthrough. Still, if you want the quick way without comments, there it is.
+
+Some particular spoilers, such as the general procedure for puzzles, may be encoded in ROT13. You'll know them, because they look like gibberish. Copy and paste them to Rot13.com to see what happens.
+
+Many point scoring commands will be palindromes. The others are of the form USE X ON Y.
+
+So! Fun 'Nuf is, well, not fun enough to start. And worse yet, you can't leave until you know what to do with the Pact Cap! Well, you can leave through the Tix Exit, but that's no fun.
+
+Takeing it doesn't work. TAKE says maybe if it were a KAT. GET says "Get, e.g. ..."
+
+You need some sort of palindrome ending in CAP, and the simplest is PAC? CAP.
+
+> PACK CAP
+
+lets you take it.
+
+Note if you examine it, you may be unhappy with it. You feel like it can do more. Later, you may need to go faster. You can get another point by calling it a PACE CAP or PACY CAP.
+
+That's all the points you can get for the Dim Mid region, for now. In fact, Fun Nuf is the only room in the Dim Mid.
+
+You're kind of blocked at the Seer Trees to the west, so maybe we can figure out how to get past the Start Rats.
+
+>E
+>N
+
+Marge Pegram says the trap art is a useless design that didn't quite work. Maybe it'll work for you.
+
+>GET TRAP ART
+
+You need to do something with the trap art, somewhere.
+
+>S
+>E
+>S
+
+>NAIL IAN
+
+Now Worn Row isn't suitable for getting anything done, yet. How would you restore it as a place to BE and DO?
+
+>WORK ROW
+
+Now, the trap art goes with one of the machines, but which one?
+
+>USE REIFIER ON TRAP ART
+
+>N
+
+>W
+>W
+>W
+>USE TRAP ON RATS
 
 >W
 
@@ -12,4 +68,8 @@ How do you get past Dave?
 
 There's an area you can't quite get by.
 
+==========================================below is stuff that's not in order
+
 >PULL UP
+
+The Dirge Grid is one of the big challenging places.
