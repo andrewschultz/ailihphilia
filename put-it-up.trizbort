@@ -3,14 +3,14 @@
 	<info />
 	<map>
 		<room id="1" name="Fun 'Nuf" subtitle="" x="-384" y="-192" w="96" h="64" region="Mid Dim" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isStartRoom="yes" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects custom="yes" customRight="-30" customDown="0">Tile Lit|Pact Cap</objects>
+			<objects at="n" custom="yes" customRight="-30" customDown="0">Tile Lit|Pact Cap</objects>
 		</room>
 		<room id="2" name="Seer Trees" subtitle="" x="-544" y="-192" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>Start Rats</objects>
 		</room>
 		<room id="3" name="Yawn Way" subtitle="" x="-224" y="-192" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="4" name="State Tats" subtitle="" x="-224" y="-64" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Marge Pegram</objects>
+		<room id="4" name="State Tats" subtitle="" x="-224" y="-320" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects>Marge Pegram|Trap Art</objects>
 		</room>
 		<room id="5" name="Yell Alley" subtitle="" x="256" y="-320" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>Back Cab</objects>
@@ -19,18 +19,20 @@
 		<room id="7" name="Emo Dome" subtitle="" x="-64" y="-192" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>Xanax</objects>
 		</room>
-		<room id="8" name="Stope Depots" subtitle="" x="96" y="-192" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="9" name="Yack Cay" subtitle="" x="-544" y="-320" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="10" name="My Gym" subtitle="" x="-224" y="-320" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects at="n" custom="yes" customRight="-30" customDown="0">EVADE DAVE|resto poster</objects>
+		<room id="8" name="Stope Depots" subtitle="" x="96" y="-192" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects>|Tame Mat</objects>
 		</room>
-		<line id="11" name="" description="">
+		<room id="9" name="Cold Loc" subtitle="" x="-544" y="-320" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="10" name="My Gym" subtitle="" x="-224" y="-64" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects custom="yes" customRight="-40" customDown="0">EVADE DAVE</objects>
+		</room>
+		<line id="11" name="" description="" style="dashed">
 			<dock index="0" id="1" port="w" />
 			<dock index="1" id="2" port="e" />
 		</line>
 		<line id="13" name="" description="">
-			<dock index="0" id="3" port="n" />
-			<dock index="1" id="10" port="s" />
+			<dock index="0" id="3" port="s" />
+			<dock index="1" id="10" port="n" />
 		</line>
 		<line id="15" name="" description="" style="dashed">
 			<dock index="0" id="2" port="n" />
@@ -45,10 +47,10 @@
 			<dock index="1" id="8" port="wnw" />
 		</line>
 		<room id="19" name="Ooze Zoo" subtitle="" x="-544" y="-64" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Calcific Lac</objects>
+			<objects>Etage Gate</objects>
 		</room>
 		<room id="20" name="Moo Room" subtitle="" x="-704" y="-64" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>a pup|a pupa</objects>
+			<objects>a pup|a pupa|poo coop|Moo Doom</objects>
 		</room>
 		<room id="21" name="Ned's Den" subtitle="" x="96" y="-320" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>DENT NED</objects>
@@ -60,11 +62,11 @@
 			<dock index="0" id="7" port="s" />
 			<dock index="1" id="22" port="n" />
 		</line>
-		<room id="24" name="Top Spot" subtitle="" x="-704" y="-192" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="24" name="Top Spot" subtitle="" x="-864" y="-320" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>Bro Orb</objects>
 		</room>
 		<room id="25" name="Civic Level" subtitle="" x="-64" y="-320" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Radar</objects>
+			<objects at="n">Radar|Gate Tag</objects>
 		</room>
 		<line id="26" name="" description="">
 			<dock index="0" id="25" port="s" />
@@ -78,7 +80,7 @@
 			<dock index="0" id="8" port="n" />
 			<dock index="1" id="21" port="s" />
 		</line>
-		<line id="31" name="" description="">
+		<line id="31" name="" description="" style="dashed">
 			<dock index="0" id="19" port="w" />
 			<dock index="1" id="20" port="e" />
 		</line>
@@ -99,17 +101,13 @@
 			<dock index="0" id="8" port="s" />
 			<dock index="1" id="6" port="n" />
 		</line>
-		<line id="12" name="" description="">
+		<line id="12" name="" description="" style="dashed">
 			<dock index="0" id="1" port="e" />
 			<dock index="1" id="3" port="w" />
 		</line>
-		<line id="14" name="" description="" style="dashed">
-			<dock index="0" id="24" port="e" />
-			<dock index="1" id="2" port="w" />
-		</line>
 		<line id="29" name="" description="">
-			<dock index="0" id="4" port="n" />
-			<dock index="1" id="3" port="s" />
+			<dock index="0" id="4" port="s" />
+			<dock index="1" id="3" port="n" />
 		</line>
 		<room id="35" name="Apse Spa" subtitle="" x="-384" y="-320" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="36" name="" description="">
@@ -117,18 +115,59 @@
 			<dock index="1" id="35" port="w" />
 		</line>
 		<room id="37" name="Flu Gulf" subtitle="" x="-704" y="-320" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects at="n">Code Doc</objects>
+			<objects at="n">Gulf Lug</objects>
 		</room>
 		<line id="38" name="" description="" style="dashed">
 			<dock index="0" id="9" port="w" />
 			<dock index="1" id="37" port="e" />
 		</line>
-		<room id="39" name="Mire Rim" subtitle="" x="-384" y="-64" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Dumb Mud</objects>
+		<room id="39" name="Dumb Mud" subtitle="" x="-864" y="-192" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="41" name="Le Falafel" subtitle="" x="256" y="-64" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<line id="42" name="" description="">
+			<dock index="0" id="28" port="s" />
+			<dock index="1" id="41" port="n" />
+		</line>
+		<room id="43" name="Le Babel" subtitle="" x="-704" y="-192" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<line id="45" name="" description="" style="dashed">
+			<dock index="0" id="43" port="e" />
+			<dock index="1" id="2" port="w" />
+		</line>
+		<line id="14" name="" description="">
+			<dock index="0" id="43" port="w" />
+			<dock index="1" id="39" port="e" />
+		</line>
+		<line id="40" name="" description="" style="dashed">
+			<dock index="0" id="39" port="n" />
+			<dock index="1" id="24" port="s" />
+		</line>
+		<room id="44" name="Mont Nom" subtitle="" x="-864" y="-64" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<line id="46" name="" description="">
+			<dock index="0" id="39" port="s" />
+			<dock index="1" id="44" port="n" />
+		</line>
+		<room id="47" name="Swept Pews" subtitle="" x="-384" y="-64" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects at="n">Tract Cart|Resto Poster</objects>
 		</room>
-		<line id="40" name="" description="">
-			<dock index="0" id="19" port="e" />
-			<dock index="1" id="39" port="w" />
+		<line id="48" name="" description="" style="dashed">
+			<dock index="0" id="47" port="e" />
+			<dock index="1" id="10" port="w" />
+		</line>
+		<room id="49" name="Mire Rim" subtitle="" x="-1024" y="-192" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<line id="50" name="" description="">
+			<dock index="0" id="39" port="w" />
+			<dock index="1" id="49" port="e" />
+		</line>
+		<room id="51" name="Calcific Lac" subtitle="" x="-1024" y="-320" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<line id="52" name="" description="">
+			<dock index="0" id="49" port="n" />
+			<dock index="1" id="51" port="s" />
+		</line>
+		<room id="53" name="Yack Cay" subtitle="" x="-1024" y="-64" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects>Code Doc</objects>
+		</room>
+		<line id="54" name="" description="">
+			<dock index="0" id="49" port="s" />
+			<dock index="1" id="53" port="n" />
 		</line>
 	</map>
 	<settings>
