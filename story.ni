@@ -1,6 +1,6 @@
 "Put it Up" by Andrew Schultz
 
-the story headline is "Yo, Joy"
+the story headline is "Yo, Joy! Wow!"
 
 the release number is 1.
 
@@ -154,7 +154,7 @@ carry out verbing:
 
 chapter saying yes
 
-instead of saying yes, say "Yay!"
+instead of saying yes, say "[one of]Yay![or]Nod on![in random order]"
 
 chapter saying no
 
@@ -200,7 +200,22 @@ instead of singing: say "Rock! Cor!"
 
 chapter silly swearing
 
-instead of swearing obscenely: say "[one of]Dammit, I'm mad![or]We mew![or]Tact, cat![or]Not on![in random order]"
+instead of swearing obscenely:
+	increment swearies;
+	if swearies > number of rows in table of swearstuff:
+		say "(Cycling) ";
+		now swearies is 1;
+	choose row swearies in table of swearstuff;
+	say "[randtxt entry]"
+
+table of swearstuff
+randtxt
+"(R)rude! Dur(r)!"
+"Bad? A dab!"
+"Dammit, I'm mad!"
+"We mew!"
+"Tact, cat!"
+""Not on![in random order]"
 
 understand "poop" and "boob" as a mistake ("Such a word is particularly (in)appropriate for Grebeberg and Not-Kook-Ton.")
 
@@ -249,7 +264,22 @@ part Mid Dim
 
 book Fun 'Nuf
 
-Fun 'Nuf is a room in Mid Dim. "Some tile lit is carved out here."
+Fun 'Nuf is a room in Mid Dim. "Some tile lit is carved out here, describing what is west and east."
+
+The Flee Elf is a person in Fun 'Nuf. "A Flee Elf stands here by Evac Ave to the south."
+
+Evac Ave is scenery in Fun 'Nuf. "Evac Ave leads back to where you were."
+
+instead of entering Evac Ave:
+	try going south;
+
+check going south in Fun 'Nuf:
+	if Flee Elf is in ZeroRez, continue the action;
+	if elf-warn < 3, increment elf-warn;
+	say "[if elf-warn is 1]The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go[else if elf-warn is 2]The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap[else]The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else.";
+	if elf-warn < 3, continue the action;
+	say "[line break]Do you still wish to go through Evac Ave and turn your back on adventure?";
+	if the player yes-consents, end the game;
 
 chapter Pact Cap
 
