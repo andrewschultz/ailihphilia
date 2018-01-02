@@ -19,7 +19,7 @@ Grebeberg is a region. max-score of Grebeberg is 1.
 
 Dim Mid is a region. max-score of Dim Mid is 2.
 
-Not-Kook-Ton is a region. max-score of Not-Kook-Ton is 3.
+Not-Kook-Ton is a region. max-score of Not-Kook-Ton is 4.
 
 [El Live Ville is a region.]
 
@@ -153,15 +153,23 @@ chapter silly swearing
 
 instead of swearing obscenely: say "[one of]Dammit, I'm mad![or]We mew![or]Tact, cat![in random order]"
 
-understand "poop" and "boob" as a mistake ("No swearing! Not even swearing done right for Palindromopolis.")
+understand "poop" and "boob" as a mistake ("Such a word is particularly (in)appropriate for Grebeberg and Not-Kook-Ton.")
 
 chapter sleeping
 
-instead of sleeping, say "Panic? I nap!"
+the eels are people in Dumb Mud.
+
+instead of sleeping:
+	if eels are in location of player:
+		say "You manage to calm the eels down. They go away.";
+		move eels to ZeroRez;
+		score-inc instead;
+	say "Sleeping is equivalent to waiting in this game...well, except for one place...";
+	try waiting instead;
 
 chapter waiting
 
-instead of waiting, say "GO, dog!"
+instead of waiting, say "[one of]GO, dog![or]Don't nod![or]Panic? I nap![in random order]"
 
 chapter xyzzying
 
@@ -338,17 +346,17 @@ carry out evadeing:
 
 understand "evade dave" as a mistake ("Dave's not here, man!") when player is not in My Gym.
 
-book Wept Pew
+book Swept Pews
 
-Wept Pew is west of My Gym. Wept Pew is in Not-Kook-Ton.
+Swept Pews is west of My Gym. It is in Not-Kook-Ton.
 
 chapter resto poster
 
-a resto poster is a thing in Wept Pew.
+a resto poster is a thing in Swept Pews.
 
 chapter Tract Cart
 
-The tract cart is a thing in Wept Pew.
+The tract cart is a thing in Swept Pews.
 
 book State Tats
 
@@ -455,11 +463,15 @@ Civic Level is north of Emo Dome. It is in Not-Kook-Ton.
 
 The radar is in Civic Level.
 
-book work row
+book Worn Row
 
-Work Row is south of Emo Dome. It is in Not-Kook-Ton.
+Worn Row is south of Emo Dome. It is in Not-Kook-Ton.
 
-Ian is a person in Work Row.
+printed name of Worn Row is "[if workrow is true]Work[else]Worn[end if] Row"
+
+understand "work row" and "work" as worn row when workrow is true.
+
+Ian is a person in Worn Row.
 
 chapter nailing
 
@@ -467,13 +479,31 @@ nailing is an action applying to nothing.
 
 understand the command "nail ian" as something new.
 
-understand "nail ian" as nailing when player is in Work Row and Ian is in Work Row.
+understand "nail ian" as nailing when player is in Worn Row and Ian is in Worn Row.
 
 carry out nailing:
 	say "Boom! There goes Ian.";
 	move Ian to Zerorez;
 	score-inc;
 	the rule succeeds;
+
+chapter workrowing
+
+workrowing is an action applying to nothing.
+
+understand the command "workrow" as something new.
+
+understand "work row" and "workrow" as workrowing when workrow is false.
+
+workrow is a truth state that varies.
+
+carry out workrowing:
+	now workrow is true;
+	say "All the machines seem a bit shinier now. Yay!";
+	score-inc;
+	the rule succeeds;
+
+understand "worn row" and "wornrow" as a mistake ("No need to revert things.") when player is in worn row and workrow is true.
 
 volume gotoing
 
@@ -483,7 +513,7 @@ Fun 'Nuf is available.
 
 Seer Trees, Yawn Way, State Tats and My Gym are cappy.
 
-Wept Pew is davey.
+Swept Pews is davey.
 
 chapter gotoing
 
