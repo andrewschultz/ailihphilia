@@ -1,5 +1,13 @@
 It doesn't get much more generic than "put it up."
 
+Nev Even
+
+Neg Gen
+
+Known Wonk
+
+Pun Up!
+
 THE TWO BAD GUYS:
 Ammo Momma
 Obese Bo
@@ -16,9 +24,9 @@ Dual Laud
 
 "Hey! Eh?"
 
-frac-scarf = tinker reknit tinker reknit
+frac-scarf: tinker reknit tinker reknit
 
-Leer Reel = well you don't want to watch it. It's not for good upstanding citizens.
+Leer Reel: well you don't want to watch it. It's not for good upstanding citizens.
 
 Toby Bot
 
@@ -59,8 +67,6 @@ Turf Rut/TURN RUT
 Edits Tide
 
 trapeze part
-
-Darer Ad
 
 Line Nil
 
