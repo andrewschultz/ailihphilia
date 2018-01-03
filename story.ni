@@ -202,8 +202,26 @@ understand the commands "boob" and "poop" as something new.
 
 understand "boob" and "poop" as pooping.
 
+poop-boob-yet is a truth state that varies.
+
 carry out pooping:
-	say "You feel no oath tao on swearing the 'right' way for this weird land.";
+	say "Oath tao!";
+	let Q be a random number from 1 to 9;
+	let Q2 be a random number from 0 to 9;
+	now Q2 is Q2 * 10 + (Q * 101);
+	if poop-boob-yet is false:
+		now poop-boob-yet is true;
+		say "[line break][bracket]Your score has just gone up by 727 points.[close bracket]";
+		wfak;
+		say "No,
+		repeat with Q ranging from 1 to 6:
+			say "[line break][bracket][if Q is 1]Wait, no y[else]Y[end if]our score has just gone down [if Q > 1]again [end if]by 121 points.[close bracket]";
+			wfak;
+		reg-inc Odd Do
+		increment the score;
+		now last score is the current score;
+	else:
+		say "X2?[paragraph break]...X!";
 	the rule succeeds;
 
 chapter sleeping
@@ -641,9 +659,9 @@ when play begins:
 
 volume metarooms
 
-metarooms is a region.
+Odd Do is a region.
 
-ZeroRez is a room in metarooms.
+ZeroRez is a room in Odd Do.
 
 volume hinting
 
