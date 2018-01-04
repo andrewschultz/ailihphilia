@@ -30,8 +30,6 @@ Odd Do is a region. max-score of Odd Do is 2.
 
 [El Live Ville is a region.]
 
-a room has a table name called hint-name.
-
 section because I'm too lazy to remember how to order the when play begins rules
 
 when play begins:
@@ -572,6 +570,8 @@ understand the command "evade" as something new.
 
 understand "evade [something]" as evadeing.
 
+does the player mean evadeing dave: it is very likely.
+
 dave-evade is a truth state that varies.
 
 carry out evadeing:
@@ -753,7 +753,7 @@ the resto poster is a thing in Swept Pews.
 
 chapter Tract Cart
 
-The tract cart is a thing in Worn Row.
+The tract cart is a thing in Swept Pews.
 
 volume gotoing
 
@@ -802,55 +802,25 @@ ZeroRez is a room in Odd Do.
 
 volume hinting
 
-table of donehere
-hint-loc	fail-rule	hint-text
-Seer Trees	rats-there rule	"You cleared the start rats, so you should be done here."
+chapter hinting
 
-chapter seer trees hinting
+hinting is an action applying to nothing.
 
-hint-name of Seer Trees is table of seertrees hints.
+understand the command "hint" as something new.
 
-table of seertrees hints
-hint-rule	hint-text
---	"You need to clear the start rats."
-need-party rule	"Some sort of trap would be nice."
-need-party rule	"Did you find a party trap yet?"
-party-unfilled rule	"You need to fill a party trap with something."
-party-unfilled rule	"Something disgusting. What might have something disgusting that works with the party trap?"
-party-unfilled rule	"The rash womb/rush womb in Rank Bloom."
-party-unfilled rule	"PUT TRAP IN WOMB."
-rats-there rule	"With the cake, you can DROP THE CAKE here in Seer Trees."
+understand "hint" as hinting.
 
-this is the need-party rule: [?? placeholder is wrong]
-	if party trap is in Fun 'Nuf, the rule succeeds;
-	the rule fails;
+check hinting:
+	if done-here, say "You're done here." instead;
+	say "Thinking...";
 
-this is the party-unfilled rule:
-	if trap-made is false, the rule succeeds;
-	the rule fails;
-
-this is the rats-there rule:
-	if rats are in seer trees, the rule succeeds;
-	the rule fails;
-
-chapter My Gym hinting
-
-hint-name of My Gym is table of mygym hints.
-
-table of mygym hints
-hint-rule	hint-text
---	"Dave is tough to get around. You need to find a way to do so."
---	"You don't need a special item, just the right verb."
---	"This is a palindrome area. Dave backwards is EVAD..."
---	"EVADE DAVE lets you evade Dave."
-
-chapter State Tats hinting
-
-hint-name of State Tats is table of statetats.
-
-table of statetats
-hint-rule	hint-text
---	"You obviously want to get a tattoo."
+to decide whether done-here:
+	if player is in yawn way, yes;
+	if player is in fun 'nuf and flee elf is in zerorez, yes;
+	if player is in my gym and dave is in zerorez, yes;
+	if player is in seer trees and start rats are in zerorez, yes;
+	if player is in calcific lac and dork rod is in zerorez, yes;
+	no;
 
 volume endgame stuff
 
@@ -939,6 +909,12 @@ this is the pb-yet rule:
 this is the refer-yet rule:
 	if refer-bonus is true, the rule succeeds;
 	the rule fails;
+
+Motto Bottom is a room in Odd Do.
+Dope Pod is a room in Odd Do.
+Drawl Ward is a room in Odd Do.
+Line Nil is a room in Odd Do.
+Ball Lab is a room in Odd Do.
 
 volume beta testing - not for release
 
