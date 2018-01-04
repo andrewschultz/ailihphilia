@@ -10,7 +10,7 @@ include Basic Screen Effects by Emily Short.
 
 include Put It Up Tables by Andrew Schultz.
 
-the maximum score is 7.
+the maximum score is 8.
 
 volume unsorted
 
@@ -25,6 +25,8 @@ Grebeberg is a region. max-score of Grebeberg is 1.
 Dim Mid is a region. max-score of Dim Mid is 2.
 
 Not-Kook-Ton is a region. max-score of Not-Kook-Ton is 4.
+
+Odd Do is a region. max-score of Odd Doo is 1.
 
 [El Live Ville is a region.]
 
@@ -160,12 +162,17 @@ chapter saying no
 
 no-tab is a number that varies.
 
-instead of saying no, next-rand table of noesies
+instead of saying no, next-rand table of noesies,
 
 chapter attacking
 
-instead of attacking, say "Harm! Rah!" [Ye KO Pokey]
-[instead of attacking, say "Attack, cat? Ta!"]
+instead of attacking, next-rand table of attackings;
+
+table of attackings
+randtxt
+"Pow-op! Pow-op!"
+"Harm! Rah!"
+"Ye KO? Pokey!"
 
 chapter going
 
@@ -717,13 +724,18 @@ hint-rule	hint-text
 
 volume endgame stuff
 
+part final questions
+
 Table of Final Question Options (continued)
 final question wording	only if victorious	topic	final response rule	final response activity
 "NO responses"	true	"NO"	no-list rule	loafing
 "WAIT responses"	true	"WAIT"	wait-list rule	loafing
 "EMPTY command responses"	true	"EMPTY"	empty-list rule	loafing
+"see what you MISSED"	true	"MISSED"	what-missed rule	loafing
 
 loafing is an activity.
+
+chapter random listing rules
 
 this is the no-list rule:
 	plowit table of noesies;
@@ -739,6 +751,23 @@ to plowit (t - a table name):
 	repeat through t:
 		increment count;
 		say "[count]. [randtxt entry][line break]";
+
+part amusing and what you missed
+
+rule for amusing a victorious player:
+	let count be 0;
+	let missed be 0;
+	repeat through table of amusing stuff:
+		if ignore-done is false or there is no dorule entry or dorule entry fails:
+			say "[funstuff entry][line break]";
+			increment count;
+		else:
+			increment missed;
+	if count is 0, say "[line break]You found everything potentially funny! Way to go!";
+	if missed > 0, say "[line break]That's [missed] total missed."
+
+table of amusing stuff
+funstuff	dorule
 
 volume beta testing - not for release
 
