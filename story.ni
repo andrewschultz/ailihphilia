@@ -10,7 +10,7 @@ include Basic Screen Effects by Emily Short.
 
 include Put It Up Tables by Andrew Schultz.
 
-the maximum score is 9.
+the maximum score is 10.
 
 volume unsorted
 
@@ -20,7 +20,7 @@ chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
 
-Grebeberg is a region. max-score of Grebeberg is 1.
+Grebeberg is a region. max-score of Grebeberg is 2.
 
 Dim Mid is a region. max-score of Dim Mid is 2.
 
@@ -286,6 +286,69 @@ understand "xyzzy" as xyzzying.
 carry out xyzzying:
 	say "...[paragraph break]...[paragraph break]X." instead;
 
+chapter useing
+
+understand the command "use" as something new.
+
+understand "use [something] on [something]" as useoning it with.
+understand "use [something] with [something]" as useoning it with.
+
+useoning it with is an action applying to two things.
+
+check useoning it with:
+	repeat through table of cantuse:
+		if noun is use1 entry or second noun is use1 entry, say "[babble entry][line break]" instead;
+	if noun is a person, say "[one of]You're not any good at using other people. In fact, if you tried, they'd wind up using YOU. Plus you don't want to be, really. There's another way. So, no[or]Using people is out[stopping]. Maybe you could use something on a person, though." instead;
+	repeat through table of useons:
+		if there is a use1 entry and noun is use1 entry:
+			if there is a use2 entry and second noun is use2 entry:
+				if there is a preproc entry:
+					consider the preproc entry;
+					if the rule failed, the rule succeeds;
+				if there is a getit entry:
+					now player has getit entry;
+				if d2 entry is true:
+					now use2 entry is in ZeroRez;
+				if d1 entry is true:
+					now use1 entry is in ZeroRez;
+				if sco entry is true:
+					score-inc;
+				say "[babble entry][line break]";
+				if there is a postproc entry:
+					consider the postproc entry;
+				if there is a getit entry and player has getit entry: [try to let "it" be defined]
+					set the pronoun it to getit entry;
+				else if use1 entry is in ZeroRez and use2 entry is not in ZeroRez:
+					set the pronoun it to use2 entry;
+				the rule succeeds;
+			else if there is no use2 entry:
+				say "[babble entry][line break]";
+				if there is a postproc entry:
+					consider the postproc entry;
+				the rule succeeds;
+		if there is a use2 entry and second noun is use2 entry and there is no use1 entry:
+			say "[babble entry][line break]";
+			if there is a postproc entry:
+				consider the postproc entry;
+			the rule succeeds;
+		if there is a use1 entry and second noun is use1 entry:
+			if there is a use2 entry and noun is use2 entry:
+				try useoning second noun with noun;
+				the rule succeeds;
+[	repeat through table of usemaybes:
+		if noun is use1 entry, say "[babble entry][line break]" instead;
+	repeat through table of usemaybes:
+		if second noun is use1 entry, say "[babble entry][line break]" instead;]
+	say "You think of ways to do that productively, but nothing comes up." instead;
+
+table of cantuse
+use1	babble
+Dave	"Dave's not useful, man."
+
+table of useons [xxuse]
+use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	babble
+dork rod	tao boat	(thing)	--	--	true	true	false	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
+
 volume rooms
 
 part Mid Dim
@@ -461,7 +524,11 @@ Yack Cay is south of Mire Rim. It is in Grebeberg.
 
 book Calcific Lac
 
-Calcific Lac is north of Mire Rim. It is in Grebeberg.
+Calcific Lac is north of Mire Rim. It is in Grebeberg. "A Tao Boat rests at the edge of Calcific Lac."
+
+The Tao Boat is scenery in Calcific Lac.
+
+The dork rod is a thing in Calcific Lac.
 
 book Apse Spa
 
@@ -714,6 +781,8 @@ when play begins:
 	say "[if number of notyet rooms is 0]All rooms have a switch saying you can go there[else]Rooms that are still notyet: [list of notyet rooms][end if]."
 
 volume metarooms
+
+[there is a little bit of cute code here. Odd Do's score = weird stuff, but it's also where ZeroRez, the collect-all room for used objects, goes.]
 
 Odd Do is a region.
 
