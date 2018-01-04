@@ -10,7 +10,7 @@ include Basic Screen Effects by Emily Short.
 
 include Put It Up Tables by Andrew Schultz.
 
-the maximum score is 10.
+the maximum score is 11.
 
 volume unsorted
 
@@ -24,7 +24,7 @@ Grebeberg is a region. max-score of Grebeberg is 2.
 
 Dim Mid is a region. max-score of Dim Mid is 2.
 
-Not-Kook-Ton is a region. max-score of Not-Kook-Ton is 4.
+Not-Kook-Ton is a region. max-score of Not-Kook-Ton is 5.
 
 Odd Do is a region. max-score of Odd Do is 2.
 
@@ -299,6 +299,9 @@ check useoning it with:
 	repeat through table of cantuse:
 		if noun is use1 entry or second noun is use1 entry, say "[babble entry][line break]" instead;
 	if noun is a person, say "[one of]You're not any good at using other people. In fact, if you tried, they'd wind up using YOU. Plus you don't want to be, really. There's another way. So, no[or]Using people is out[stopping]. Maybe you could use something on a person, though." instead;
+	if noun is a workable or second noun is a workable:
+		if ian is in worn row, say "You can't operate the machines with Ian around." instead;
+		if workrow is false, say "You need to repair the machines somehow. Maybe you can do so all at once." instead;
 	repeat through table of useons:
 		if there is a use1 entry and noun is use1 entry:
 			if there is a use2 entry and second noun is use2 entry:
@@ -347,6 +350,7 @@ Dave	"Dave's not useful, man."
 
 table of useons [xxuse]
 use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	babble
+trap art	reifier	party trap	--	--	true	true	false	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
 dork rod	tao boat	(thing)	--	--	true	true	false	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
 
 volume rooms
@@ -386,11 +390,11 @@ elf-warn is a number that varies.
 check going south in Fun 'Nuf:
 	if Flee Elf is in ZeroRez, continue the action;
 	if elf-warn < 3, increment elf-warn;
-	say "[if elf-warn is 1]The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go[else if elf-warn is 2]The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap[else]The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else.";
-	if elf-warn < 3, continue the action;
+	say "[if elf-warn is 1]The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go[else if elf-warn is 2]The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap[else]The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else[end if].";
+	if elf-warn < 3, the rule succeeds;
 	say "[line break]Do you still wish to go through Evac Ave and turn your back on adventure?";
 	if the player yes-consents:
-		say "You walk south through the Elim-Mile, which removes all your memories of your brief time adventuring.";
+		say "You walk south past Evac Ave through the Elim-Mile, which removes all your memories of your brief time adventuring.";
 		end the story;
 
 chapter Pact Cap
@@ -411,7 +415,8 @@ understand "pack cap" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did.";
-	say "Yes, that's how to get the cap. You are ready to go!";
+	say "Yes, that's how to get the cap. You are ready to go! The Flee Elf salutes you and becomes, err, the FLED Elf.";
+	move flee elf to ZeroRez;
 	now player has the cap;
 	now all cappy rooms are available;
 	score-inc;
@@ -554,6 +559,7 @@ Dave is a person in My Gym. initial appearance is "[one of]A fellow walks over t
 
 instead of doing something with dave:
 	if action is procedural, continue the action;
+	if current action is evadeing, continue the action;
 	say "Looks like you'll need to do something special with, or to, Dave. Nothing destructive. But psych him out, somehow."
 
 check going west in My Gym when Dave is in My Gym: say "Dave says, 'I can't let you do that, Hal. Ah!' There must be a succinct, clever way to sneak around him!" instead;
@@ -584,7 +590,7 @@ understand "evade dave" as a mistake ("Dave's not here, man!") when player is no
 
 book Worn Row
 
-Worn Row is west of My Gym. It is in Not-Kook-Ton.
+Worn Row is west of My Gym. It is in Not-Kook-Ton. "A reifier, a reviver and a rotator are all here. They look [if workrow is false]in[end if]operable at the moment."
 
 printed name of Worn Row is "[if workrow is true]Work[else]Worn[end if] Row"
 
@@ -592,9 +598,15 @@ understand "work row" and "work" as Worn Row when workrow is true.
 
 Ian is a person in Worn Row.
 
+a workable is a kind of thing.
+
+the reifier is a workable in worn row.
+the reviver is a workable in worn row.
+the rotator is a workable in worn row.
+
 chapter party trap
 
-the party trap is a thing.
+the party trap is a thing. "It could trap more than one thing if you USE it right. That would be cool."
 
 chapter nailing
 
