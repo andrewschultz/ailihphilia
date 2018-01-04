@@ -186,6 +186,7 @@ understand "verbs" as verbing.
 carry out verbing:
 	say "The four basic directions (N, S, E, W) are the main ones, along with USE, in order to get through the game. Also, in some places, specific verbs will be needed. None are terribly long, and---well, there is a pattern to them.";
 	say "[line break]Standard verbs like X (EXAMINE) and LOOK also work.";
+	say "[line break]GT or GO TO lets you go to a room where you've been before.";
 	say "[line break]THINK gives very general hints.";
 	say "[line break]Many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy.";
 	say "[line break]HINT gives you hints for where you are. ABOUT and CREDITS tell about the game.";
@@ -500,28 +501,17 @@ check going west in Cold Loc:
 
 book Flu Gulf
 
-Flu Gulf is west of Cold Loc. It is in Grebeberg.
+Flu Gulf is north of Cold Loc. It is in Grebeberg.
 
 Code Doc is a person in Flu Gulf.
 
-book Le Babel
+book Top Spot
 
-Le Babel is west of Seer Trees. It is in Grebeberg.
-
-Xanax is a thing in Le Babel. "Xanax sits here, on a pill lip."
-
-check eating Xanax:
-	if player is not in Yawn Way, say "There's nothing anxious-making around, yet." instead;
-	say "Eewee! Well, you feel a bit more relaxed now.";
-	now Xanax is in Zerorez;
-
-the pill lip is scenery in Le Babel.
-
-instead of doing something with pill lip, say "The pill lip is just there to prevent the Xanax from getting dirty on the ground."
+Top Spot is west of Flu Gulf. It is in Grebeberg.
 
 book Dumb Mud
 
-Dumb Mud is west of Le Babel. It is in Grebeberg.
+Dumb Mud is west of Seer Trees. It is in Grebeberg.
 
 the gnu dung is in Dumb Mud. "Gnu dung blocks exit south from the dumb mud.". description is "You're not an expert in this sort of biology, but given what you've seen so far, it's probably from a gnu."
 
@@ -531,17 +521,38 @@ instead of doing something with gnu dung:
 
 the eels are people in Dumb Mud. "Some eels are blocking passage west."
 
+chapter Xanax
+
+Xanax is a thing in Dumb Mud. "Xanax sits here, on a pill lip."
+
+check eating Xanax:
+	if player is not in Yawn Way, say "There's nothing anxious-making around, yet." instead;
+	say "Eewee! Well, you feel a bit more relaxed now.";
+	now Xanax is in Zerorez;
+
+the pill lip is scenery in Dumb Mud.
+
+instead of doing something with pill lip, say "The pill lip is just there to prevent the Xanax from getting dirty on the ground."
+
+book Le Babel
+
+Le Babel is north of Dumb Mud. It is in Grebeberg.
+
 book Mont Nom
 
 Mont Nom is south of Dumb Mud. It is in Grebeberg.
 
-book Top Spot
-
-Top Spot is north of Dumb Mud. It is in Grebeberg.
-
 book Ooze Zoo
 
 Ooze Zoo is south of Seer Trees. It is in Grebeberg.
+
+book Dray Yard
+
+Dray Yard is south of Ooze Zoo. It is in Grebeberg.
+
+book Moo Room
+
+Moo Room is east of Dray Yard. It is in Grebeberg.
 
 book Mire Rim
 
@@ -551,9 +562,21 @@ book Yack Cay
 
 Yack Cay is south of Mire Rim. It is in Grebeberg.
 
+book Lair Trial
+
+Lair Trial is south of Yack Cay. It is in Grebeberg.
+
+book Motto Bottom
+
+Motto Bottom is east of Lair Trial. It is in Grebeberg.
+
+book Birch Crib
+
+Birch Crib is north of Mire Rim. It is in Grebeberg.
+
 book Calcific Lac
 
-Calcific Lac is north of Mire Rim. It is in Grebeberg. "A Tao Boat rests at the edge of Calcific Lac."
+Calcific Lac is north of Birch Crib. It is in Grebeberg. "A Tao Boat rests at the edge of Calcific Lac."
 
 The Tao Boat is scenery in Calcific Lac.
 
@@ -562,10 +585,6 @@ The dork rod is a thing in Calcific Lac.
 book Apse Spa
 
 Apse Spa is east of Cold Loc. It is in Grebeberg.
-
-book Moo Room
-
-Moo Room is west of Ooze Zoo. It is in Grebeberg.
 
 part Not-Kook-Ton
 
@@ -733,17 +752,17 @@ Bon Snob is south of Stope Depots. It is in Not-Kook-Ton.
 
 book Evaded Ave
 
-Evaded Ave is east of Stope Depots. It is in Not-Kook-Ton.
+Evaded Ave is north of State Tats. It is in Not-Kook-Ton.
 
 The Puce Cup is a thing in Evaded Ave.
 
-book Le Falafel
+book Trapeze Part
 
-Le Falafel is south of Evaded Ave. It is in Not-Kook-Ton.
+Trapeze Part is west of Evaded Ave. It is in Not-Kook-Ton.
 
 book Yell Alley
 
-Yell Alley is north of Evaded Ave. It is in Not-Kook-Ton. "A back cab sits here, taking you where you may need to go if you ENTER it."
+Yell Alley is east of Evaded Ave. It is in Not-Kook-Ton. "A back cab sits here, taking you where you may need to go if you ENTER it."
 
 The back cab is scenery in Yell Alley.
 
@@ -803,6 +822,22 @@ the resto poster is a thing in Swept Pews.
 chapter Tract Cart
 
 The tract cart is a thing in Swept Pews.
+
+book Drawl Ward
+
+Drawl Ward is south of Swept Pews. It is in Not-Kook-Ton.
+
+book Le Falafel
+
+Le Falafel is east of Drawl Ward. It is in Not-Kook-Ton.
+
+book Dope Pod
+
+Dope Pod is west of Drawl Ward. It is in Not-Kook-Ton.
+
+Line Nil is in Dray Yard.
+
+Ball Lab is north of Ned's Den. It is in Not-Kook-Ton.
 
 volume gotoing
 
@@ -968,12 +1003,6 @@ this is the pb-yet rule:
 this is the refer-yet rule:
 	if refer-bonus is true, the rule succeeds;
 	the rule fails;
-
-Motto Bottom is a room in Odd Do.
-Dope Pod is a room in Odd Do.
-Drawl Ward is a room in Odd Do.
-Line Nil is a room in Odd Do.
-Ball Lab is a room in Odd Do.
 
 volume beta testing - not for release
 
