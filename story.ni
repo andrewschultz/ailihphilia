@@ -113,6 +113,23 @@ to decide whether the action is procedural: [aip]
 	if listening, yes;
 	no;
 
+chapter refering / thinking
+
+refering is an action applying to nothing.
+
+understand the command "refer" as something new.
+
+understand "refer" as refering.
+
+carry out refering:
+	if refer-bonus is false:
+		say "Yes! That's a slightly more appropriate way to think, here.";
+		now refer-bonus is true;
+	try thinking instead;
+
+check thinking:
+	say "[if refer-bonus is false]There might be a more appropriate way to think[else]You think for a bit[end if]."
+
 chapter abouting
 
 abouting is an action applying to nothing.
@@ -151,6 +168,7 @@ understand "verbs" as verbing.
 carry out verbing:
 	say "The four basic directions (N, S, E, W) are the main ones, along with USE, in order to get through the game. Also, in some places, specific verbs will be needed. None are terribly long, and---well, there is a pattern to them.";
 	say "[line break]Standard verbs like X (EXAMINE) and LOOK also work.";
+	say "[line break]THINK gives very general hints.";
 	say "[line break]HINT gives you hints for where you are. ABOUT and CREDITS tell about the game.";
 	the rule succeeds;
 
@@ -224,7 +242,7 @@ carry out pooping:
 		repeat with Q ranging from 1 to 6:
 			say "[line break][bracket][if Q is 1]Wait, no y[else]Y[end if]our score has just gone down [if Q > 1]again [end if]by 121 points.[close bracket]";
 			wfak;
-		reg-inc Odd Do
+		reg-inc Odd Do;
 		increment the score;
 		now last score is the current score;
 	else:
@@ -760,14 +778,36 @@ rule for amusing a victorious player:
 	repeat through table of amusing stuff:
 		if ignore-done is false or there is no dorule entry or dorule entry fails:
 			say "[funstuff entry][line break]";
-			increment count;
-		else:
 			increment missed;
+		else:
+			increment count;
 	if count is 0, say "[line break]You found everything potentially funny! Way to go!";
 	if missed > 0, say "[line break]That's [missed] total missed."
 
 table of amusing stuff
 funstuff	dorule
+
+this is the you-missed rule:
+	repeat through table of potential misses:
+		if there is no dorule entry or dorule entry is false:
+			say "[funstuff entry][line break]";
+			increment missed;
+		else:
+			increment count;
+	if missed is 0, say "You found all the points!"
+
+table of potential misses
+funstuff	dorule
+"BOOB or POOP"	pb-yet rule
+"REFER instead of THINK"	refer-yet rule
+
+this is the pb-yet rule:
+	if poop-boob-yet is true, the rule succeeds;
+	the rule fails;
+
+this is the refer-yet rule:
+	if refer-bonus is true, the rule succeeds;
+	the rule fails;
 
 volume beta testing - not for release
 
