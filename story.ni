@@ -18,6 +18,8 @@ the sage gas is a thing.
 
 the poo coop is a thing.
 
+the bro orb is a thing.
+
 chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
@@ -41,6 +43,8 @@ when play begins:
 volume the player
 
 the player carries the Darer Ad.
+
+description of player is "Flesh. Self."
 
 description of Darer Ad is "No LOL on? SEE, REFER-EES! Do! Nod!"
 
@@ -218,8 +222,12 @@ definition: a direction (called d) is viable:
 
 chapter smelling
 
+rod-smelled is a truth state that varies;
+
 instead of smelling:
-	if player has dork rod, say "You might expect a rod odor, but there isn't one. OR MAYBE IT IS SO INGRAINED IN YOU, YOU NO LONGER SMELL IT." instead;
+	if player has dork rod:
+		now rod-smelled is true;
+		say "You might expect a rod odor, but there isn't one. OR MAYBE IT IS SO INGRAINED IN YOU, YOU NO LONGER SMELL IT." instead;
 	if player is in Top Spot, say "You smell an amoral aroma." instead;
 	say "Noses, on[one of]! (you don't need to smell anything in this game)[or][stopping]!"
 
@@ -369,12 +377,18 @@ chapter Flee Elf
 
 The Flee Elf is a person in Fun 'Nuf. "A Flee Elf stands here by Evac Ave to the south."
 
+understand "flea elf" and "flea" as a mistake("[fe0]The elf scratches for a bit, then looks embarrassed.") when player is in Fun 'Nuf and Flee Elf is in Fun 'Nuf.
+
 understand "flex elf" and "flex" as a mistake("[fe1]The elf looks more flexible than you. It's the cap you want to concentrate on.") when player is in Fun 'Nuf and Flee Elf is in Fun 'Nuf.
 
 understand "fleece elf" and "fleece" as a mistake("[fe2]There is much more fortune and glory in adventure! It's the cap you want to concentrate on.") when player is in Fun 'Nuf and Flee Elf is in Fun 'Nuf.
 
+flea-elf is a truth state that varies.
 flex-elf is a truth state that varies.
 fleece-elf is a truth state that varies.
+
+to say fe0:
+	now flea-elf is true;
 
 to say fe1:
 	now flex-elf is true;
@@ -912,9 +926,14 @@ rule for amusing a victorious player:
 
 table of amusing stuff
 funstuff	dorule
+"FLEA ELF?"	elf-fleaed rule
 "FLEX ELF?"	elf-flexed rule
 "FLEECE ELF?"	elf-fleeced rule
 "SMELLing the dork rod?"	--
+
+this is the elf-fleaed rule:
+	if flea-elf is true, the rule succeeds;
+	the rule fails;
 
 this is the elf-flexed rule:
 	if flex-elf is true, the rule succeeds;
@@ -922,6 +941,10 @@ this is the elf-flexed rule:
 
 this is the elf-fleeced rule:
 	if fleece-elf is true, the rule succeeds;
+	the rule fails;
+
+this is the rod-smell rule:
+	if rod-smelled is true, the rule succeeds;
 	the rule fails;
 
 this is the what-missed rule:

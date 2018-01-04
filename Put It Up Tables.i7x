@@ -467,6 +467,7 @@ part the tables
 table of attackings
 randtxt
 "Ole! Lo!"
+"Pal, SLAP?!"
 "Pow-op! Pow-op!"
 "Harm! Rah!"
 "Ye KO? Pokey!"
@@ -501,6 +502,7 @@ randtxt
 "Bad? A dab!"
 "Dammit, I'm mad!"
 "We mew!"
+"Hot! Oh!"
 "Tact, cat!"
 "Not on!"
 
@@ -509,6 +511,7 @@ randtxt
 "GO, dog!"
 "Don't nod!"
 "Panic? I nap!"
+"Gall! Lag!"
 
 table of yessies
 randtxt
