@@ -1,6 +1,7 @@
 out=put-it-up-invisiclues.htm
 !Put It Up HTML Clues
 ->c:/games/inform/put-it-up Materials/Release
+# remember to run msc.py to check the total points check out
 >Introduction
 ?What's this game about?
 Palindromes.
@@ -26,25 +27,33 @@ Well, one way, there's only one room you can explore.
 Also, there are no permadeaths.
 There's no penalty for guessing wrong.
 You'll want to start by going east.
->>XYZ
-?Whuddup?
-The sky.
 >Grebeberg
 >>SEER TREES
 ?How do I get rid of the Start Rats?
 You need a Trap.
 Well, you may guess a specific sort of trap.
 A Party Trap.
+You can make it in Work Row, in Not-Kook-Ton.
 Once you get it, USE TRAP ON RATS.
 >>YACK CAY
 ?How do I go west?
 You'll need something to protect you from the Flu Gulf.
 Some sort of antidote and something to put that antidote in.
 The Puce Cup will carry what you need.
+>>CALCIFIC LAC
+?What do I do with the Tao Boat?
+It won't let you in unless you have something that shows self-effacement.
+You'll know the item when you see it.
+The Dork Rod.
+USE DORK ROD ON TAO BOAT.
+Now that you're all peaceful, you can explore other places.
 >Not-Kook-Ton
 >>YAWN WAY
 ?Is there anything to do here?
 No, not much, other than go a bunch of different directions.
+>>STATE TATS
+?What do I need to do to get the Art Xtra?
+Nothing. Just take it. It's useful elsewhere.
 >>MY GYM
 ?Can I get the resto poster?
 Yes, once Dave's not in the way.
@@ -52,6 +61,18 @@ Yes, once Dave's not in the way.
 Well, you need to avoid him. Not quite avoid him.
 ????? DAVE.
 EVADE DAVE.
+>WORN ROW
+?How do I get past Ian?
+NAIL IAN.
+?How do I make the machines useable?
+They're worN. But maybe worn row can become...
+...worK row.
+?What do I put in which machine?
+You can use trial and error.
+?What do I do with the reifier?
+You may notice the trap art is a plan for something bigger, to be made real.
+PUT TRAP ART IN REIFIER.
+The party trap is useful elsewhere.
 >>EMO DOME
 ?Why am I running past too fast?
 Because you just want to get away.
@@ -67,9 +88,9 @@ The resto poster from My Gym will work well.
 ?How do I get all the points for Dim Mid?
 There are 2 total points in Dim Mid.
 1 point for PACK CAP.
-1 point for PACE CAP.
+1 point for PACE CAP, which helps you go faster elsewhere.
 ?How do I get all the points for Not-Kook-Ton?
-There are 4 total points in Not-Kook-Ton.
+There are 5 total points in Not-Kook-Ton.
 1 point if you EVADE DAVE.
 1 point if you change Worn Row to WORK ROW.
 1 point if you PULL UP in the Emo Dome.
@@ -77,3 +98,8 @@ There are 4 total points in Not-Kook-Ton.
 ?How do I get all the points for Grebeberg?
 There are 1 total points in Grebeberg.
 1 point if you USE PARTY TRAP ON START RATS.
+1 point if you USE DORK ROD ON TAO BOAT.
+?How do I get all the Odd Do points?
+There are 2 total points in Odd Do.
+1 point for either, but not each, semi-profanity *OO*.
+1 point for saying REFER instead of THINK.
