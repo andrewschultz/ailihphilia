@@ -452,18 +452,35 @@ to next-rand (t - a table name):
 
 table of all randoms
 tabnam	tabidx
+table of attackings	0
+table of burnies	0
 table of noesies	0
 table of nothings	0
 table of swearstuff	0
 table of waittxt	0
+table of yessies	0
 
 part the tables
+
+[arranged alphabetically]
+
+table of attackings
+randtxt
+"Pow-op! Pow-op!"
+"Harm! Rah!"
+"Ye KO? Pokey!"
+
+table of burnies
+randtxt
+"Rah! Char!"
+"Burn! Rub!"
 
 table of noesies
 randtxt
 "Oo! Noo!"
 "No way? Aw, ON!"
 "Hm. SMH."
+"Ye Po['] Nopey."
 
 table of nothings
 randtxt
@@ -486,6 +503,12 @@ randtxt
 "GO, dog!"
 "Don't nod!"
 "Panic? I nap!"
+
+table of yessies
+randtxt
+"Yay!"
+"Nod on!"
+"Plus? Ulp."
 
 Put It Up Tables ends here.
 

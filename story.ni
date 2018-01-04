@@ -10,7 +10,7 @@ include Basic Screen Effects by Emily Short.
 
 include Put It Up Tables by Andrew Schultz.
 
-the maximum score is 8.
+the maximum score is 9.
 
 volume unsorted
 
@@ -26,11 +26,17 @@ Dim Mid is a region. max-score of Dim Mid is 2.
 
 Not-Kook-Ton is a region. max-score of Not-Kook-Ton is 4.
 
-Odd Do is a region. max-score of Odd Doo is 1.
+Odd Do is a region. max-score of Odd Do is 2.
 
 [El Live Ville is a region.]
 
 a room has a table name called hint-name.
+
+section because I'm too lazy to remember how to order the when play begins rules
+
+when play begins:
+	now ignore-wait is true;
+	now debug-state is true;
 
 volume the player
 
@@ -47,18 +53,25 @@ to decide which region is mrlp:
 part scoring
 
 to score-inc:
-	increment cur-score of mrlp;
+	reg-inc mrlp;
+
+check requesting the score:
+	say "Your overall score so far is [score] of [maximum score].";
+	say "Broken down by regions, you have [regres of dim mid], [regres of grebeberg], [regres of not-kook-ton] and [regres of odd do].";
+	the rule succeeds;
+
+to reg-inc (re - a region):
+	increment cur-score of re;
 	increment the score; [this is the only incidence that shouldn't be replaced]
 	if debug-state is true and cur-score of mrlp > max-score of mrlp, say "DEBUG WARNING: REGION SCORE TOO HIGH!";
 	if debug-state is true and score > maximum score, say "DEBUG WARNING: OVERALL SCORE TOO HIGH!"
 
-check requesting the score:
-	say "Your overall score so far is [score] of [maximum score].";
-	say "Broken down by regions, you have [regres of dim mid], [regres of grebeberg] and [regres of not-kook-ton].";
-	the rule succeeds;
-
 to say regres of (re - a region):
-	say "[cur-score of re] of [max-score of re] for [re][if mrlp is re] (current region)[end if]"
+	say "[cur-score of re] of [max-score of re] ";
+	if re is odd do:
+		say "extra points";
+	else:
+		say "for [re][if mrlp is re] (current region)[end if]"
 
 part when play begins
 
@@ -115,6 +128,8 @@ to decide whether the action is procedural: [aip]
 
 chapter refering / thinking
 
+refer-bonus is a truth state that varies.
+
 refering is an action applying to nothing.
 
 understand the command "refer" as something new.
@@ -124,10 +139,11 @@ understand "refer" as refering.
 carry out refering:
 	if refer-bonus is false:
 		say "Yes! That's a slightly more appropriate way to think, here.";
+		reg-inc odd do;
 		now refer-bonus is true;
 	try thinking instead;
 
-check thinking:
+instead of thinking:
 	say "[if refer-bonus is false]There might be a more appropriate way to think[else]You think for a bit[end if]."
 
 chapter abouting
@@ -153,7 +169,7 @@ understand the command "credits" as something new.
 understand "credits" as creditsing.
 
 carry out creditsing:
-	say "(Your name here, tester!);
+	say "(Your name here, tester!)";
 	the rule succeeds;
 
 chapter verbing
@@ -169,28 +185,27 @@ carry out verbing:
 	say "The four basic directions (N, S, E, W) are the main ones, along with USE, in order to get through the game. Also, in some places, specific verbs will be needed. None are terribly long, and---well, there is a pattern to them.";
 	say "[line break]Standard verbs like X (EXAMINE) and LOOK also work.";
 	say "[line break]THINK gives very general hints.";
+	say "[line break]Many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy.";
 	say "[line break]HINT gives you hints for where you are. ABOUT and CREDITS tell about the game.";
 	the rule succeeds;
 
+chapter burning
+
+instead of burning, next-rand table of burnies;
+
 chapter saying yes
 
-instead of saying yes, say "[one of]Yay![or]Nod on![in random order]"
+instead of saying yes, next-rand table of yessies;
 
 chapter saying no
 
 no-tab is a number that varies.
 
-instead of saying no, next-rand table of noesies,
+instead of saying no, next-rand table of noesies;
 
 chapter attacking
 
 instead of attacking, next-rand table of attackings;
-
-table of attackings
-randtxt
-"Pow-op! Pow-op!"
-"Harm! Rah!"
-"Ye KO? Pokey!"
 
 chapter going
 
@@ -231,22 +246,19 @@ poop-boob-yet is a truth state that varies.
 
 carry out pooping:
 	say "Oath tao!";
-	let Q be a random number from 1 to 9;
-	let Q2 be a random number from 0 to 9;
-	now Q2 is Q2 * 10 + (Q * 101);
 	if poop-boob-yet is false:
 		now poop-boob-yet is true;
 		say "[line break][bracket]Your score has just gone up by 727 points.[close bracket]";
 		wfak;
-		say "No,
-		repeat with Q ranging from 1 to 6:
-			say "[line break][bracket][if Q is 1]Wait, no y[else]Y[end if]our score has just gone down [if Q > 1]again [end if]by 121 points.[close bracket]";
+		say "Well, for the moment.[line break]";
+		wfak;
+		repeat with Q running from 1 to 6:
+			say "[line break][bracket][if Q is 1]Wait, no, y[else]Y[end if]our score has just gone down [if Q > 1]again [end if]by 121 points.[close bracket]";
 			wfak;
 		reg-inc Odd Do;
-		increment the score;
-		now last score is the current score;
+		now the last notified score is the score;
 	else:
-		say "X2?[paragraph break]...X!";
+		say "[line break]X2?[paragraph break]...X!";
 	the rule succeeds;
 
 chapter sleeping
@@ -282,7 +294,24 @@ book Fun 'Nuf
 
 Fun 'Nuf is a room in Mid Dim. "Some tile lit is carved out here, describing what is west and east."
 
+chapter Flee Elf
+
 The Flee Elf is a person in Fun 'Nuf. "A Flee Elf stands here by Evac Ave to the south."
+
+understand "flex elf" and "flex" as a mistake("[fe1]The elf looks more flexible than you. It's the cap you want to concentrate on.") when player is in Fun 'Nuf and Flee Elf is in Fun 'Nuf.
+
+understand "fleece elf" and "fleece" as a mistake("[fe2]There is much more fortune and glory in adventure! It's the cap you want to concentrate on.") when player is in Fun 'Nuf and Flee Elf is in Fun 'Nuf.
+
+flex-elf is a truth state that varies.
+fleece-elf is a truth state that varies.
+
+to say fe1:
+	now flex-elf is true;
+
+to say fe2:
+	now fleece-elf is true;
+
+chapter Evac Ave
 
 Evac Ave is scenery in Fun 'Nuf. "Evac Ave leads back to where you were."
 
@@ -297,7 +326,9 @@ check going south in Fun 'Nuf:
 	say "[if elf-warn is 1]The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go[else if elf-warn is 2]The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap[else]The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else.";
 	if elf-warn < 3, continue the action;
 	say "[line break]Do you still wish to go through Evac Ave and turn your back on adventure?";
-	if the player yes-consents, end the story;
+	if the player yes-consents:
+		say "You walk south through the Elim-Mile, which removes all your memories of your brief time adventuring.";
+		end the story;
 
 chapter Pact Cap
 
@@ -336,7 +367,7 @@ carry out paceing:
 	if pact cap is in Fun 'Nuf, say "That'll work later, but you need something a little different to actually TAKE the pact cap." instead;
 	if cap-pace is true, say "It's already a pace cap." instead;
 	if cap-ever-pace is false:
-		score-inc;
+		reg-inc Dim Mid;
 		now cap-ever-pace is true;
 	say "You suddenly feel [if cap-pace is false]swifter[else]slower[end if].";
 	now cap-pace is whether or not cap-pace is true;
@@ -750,10 +781,15 @@ final question wording	only if victorious	topic	final response rule	final respon
 "WAIT responses"	true	"WAIT"	wait-list rule	loafing
 "EMPTY command responses"	true	"EMPTY"	empty-list rule	loafing
 "see what you MISSED"	true	"MISSED"	what-missed rule	loafing
+--	true	"AMT"	amuse-toggle rule	loafing
 
 loafing is an activity.
 
 chapter random listing rules
+
+this is the amuse-toggle rule:
+	now ignore-done is whether or not ignore-done is false;
+	say "Ignoring done amusements is now [on-off of ignore-done].";
 
 this is the no-list rule:
 	plowit table of noesies;
@@ -772,28 +808,42 @@ to plowit (t - a table name):
 
 part amusing and what you missed
 
+ignore-done is a truth state that varies.
+
 rule for amusing a victorious player:
 	let count be 0;
-	let missed be 0;
 	repeat through table of amusing stuff:
-		if ignore-done is false or there is no dorule entry or dorule entry fails:
-			say "[funstuff entry][line break]";
-			increment missed;
-		else:
+		if ignore-done is true:
+			if there is no dorule entry, next;
+			follow the dorule entry;
+			if the rule succeeded, next;
 			increment count;
-	if count is 0, say "[line break]You found everything potentially funny! Way to go!";
-	if missed > 0, say "[line break]That's [missed] total missed."
+		say "[funstuff entry][if ignore-done is false][line break][end if]";
+	if ignore-done is true:
+		say "[if count is 0]You found everything potentially funny! Way to go![else][line break]That's [count] total missed.[end if]";
+	else:
+		say "[line break]Toggle what you already did with AMT.";
 
 table of amusing stuff
 funstuff	dorule
+"FLEX ELF?"	elf-flexed rule
+"FLEECE ELF?"	elf-fleeced rule
 
-this is the you-missed rule:
+this is the elf-flexed rule:
+	if flex-elf is true, the rule succeeds;
+	the rule fails;
+
+this is the elf-fleeced rule:
+	if fleece-elf is true, the rule succeeds;
+	the rule fails;
+
+this is the what-missed rule:
+	let missed be 0;
 	repeat through table of potential misses:
-		if there is no dorule entry or dorule entry is false:
+		follow the dorule entry;
+		if the rule failed:
 			say "[funstuff entry][line break]";
 			increment missed;
-		else:
-			increment count;
 	if missed is 0, say "You found all the points!"
 
 table of potential misses
