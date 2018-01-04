@@ -90,14 +90,18 @@ There are 2 total points in Dim Mid.
 1 point for PACK CAP.
 1 point for PACE CAP, which helps you go faster elsewhere.
 ?How do I get all the points for Not-Kook-Ton?
-There are 5 total points in Not-Kook-Ton.
+There are 7 total points in Not-Kook-Ton.
 1 point if you EVADE DAVE.
+1 point if you NAIL IAN.
 1 point if you change Worn Row to WORK ROW.
+1 point if you put the ART TRAP in the REIFIER.
+1 point if you put the GOLD LOG in the ROTATOR.
 1 point if you PULL UP in the Emo Dome.
 1 point if you TAMP MAT in Stope Depots.
 ?How do I get all the points for Grebeberg?
 There are 1 total points in Grebeberg.
 1 point if you USE PARTY TRAP ON START RATS.
+1 point if you USE POO COOP ON GNU DUNG.
 1 point if you USE DORK ROD ON TAO BOAT.
 ?How do I get all the Odd Do points?
 There are 2 total points in Odd Do.

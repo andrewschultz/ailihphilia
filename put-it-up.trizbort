@@ -57,7 +57,7 @@
 			<objects>NAIL IAN|Reviver|Reifier|Rotator</objects>
 		</room>
 		<room id="24" name="Top Spot" subtitle="" x="-864" y="-320" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Bro Orb</objects>
+			<objects at="n" custom="yes" customRight="-20" customDown="0">Bro Orb</objects>
 		</room>
 		<room id="25" name="Civic Level" subtitle="" x="-64" y="-320" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects at="n">Radar|Gate Tag</objects>
@@ -134,12 +134,12 @@
 			<dock index="0" id="43" port="w" />
 			<dock index="1" id="39" port="e" />
 		</line>
-		<line id="40" name="" description="" style="dashed">
+		<line id="40" name="" description="" style="dashed" midText="Lie Veil">
 			<dock index="0" id="39" port="n" />
 			<dock index="1" id="24" port="s" />
 		</line>
 		<room id="44" name="Mont Nom" subtitle="" x="-864" y="-64" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<line id="46" name="" description="">
+		<line id="46" name="" description="" style="dashed" midText="Eels">
 			<dock index="0" id="39" port="s" />
 			<dock index="1" id="44" port="n" />
 		</line>
@@ -147,11 +147,13 @@
 			<objects at="n">Tract Cart|Resto Poster</objects>
 		</room>
 		<room id="49" name="Mire Rim" subtitle="" x="-1024" y="-192" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<line id="50" name="" description="" style="dashed">
+		<line id="50" name="" description="" style="dashed" midText="Gnu Dung">
 			<dock index="0" id="39" port="w" />
 			<dock index="1" id="49" port="e" />
 		</line>
-		<room id="51" name="Calcific Lac" subtitle="" x="-1024" y="-320" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="51" name="Calcific Lac" subtitle="" x="-1024" y="-320" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects at="n" custom="yes" customRight="-22" customDown="0">Tao Boat</objects>
+		</room>
 		<line id="52" name="" description="">
 			<dock index="0" id="49" port="n" />
 			<dock index="1" id="51" port="s" />
@@ -176,6 +178,9 @@
 		<room id="57" name="Drawl Ward" subtitle="" x="-544" y="192" w="96" h="64" region="Not On" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="58" name="Dope Pod" subtitle="" x="-224" y="192" w="96" h="64" region="Not On" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="59" name="Motto Bottom" subtitle="" x="-704" y="64" w="96" h="64" region="Not On" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="60" name="Trapeze Part" subtitle="" x="-64" y="64" w="96" h="64" region="Not On" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="61" name="Lair Trial" subtitle="" x="-64" y="192" w="96" h="64" region="Not On" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="62" name="Birch Crib" subtitle="" x="-704" y="192" w="96" h="64" region="Not On" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 	</map>
 	<settings>
 		<colors>
