@@ -10,6 +10,8 @@ include Basic Screen Effects by Emily Short.
 
 include Put It Up Tables by Andrew Schultz.
 
+include undo output control by Erik Temple.
+
 volume unsorted
 
 the gold log is a thing.
@@ -115,6 +117,12 @@ to die:
 	end the story saying "Offed? Deffo!"
 
 volume verbs
+
+chapter undoing
+
+report undoing an action:
+	say "[one of]Nixin[']...[or][']S poor. Oops![in random order]";
+	rule succeeds.
 
 chapter procedurality
 

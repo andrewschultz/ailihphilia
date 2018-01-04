@@ -466,58 +466,59 @@ part the tables
 
 table of attackings
 randtxt
+"Harm! Rah!"
 "Ole! Lo!"
 "Pal, SLAP?!"
 "Pow-op! Pow-op!"
-"Harm! Rah!"
 "Ye KO? Pokey!"
 
 table of burnies
 randtxt
-"Rah! Char!"
 "Burn! Rub!"
+"Rah! Char!"
 
 table of noesies
 randtxt
-"Oo! Noo!"
-"No way? Aw, ON!"
-"Hm. SMH."
 "Emo, me."
+"Hm. SMH."
+"No way? Aw, ON!"
+"Oo! Noo!"
 "Ye Po['] Nopey."
 
 table of nothings
 randtxt
+"Dud!"
 "Eh, the..."
 "Hey! Eh?"
-"Ya, no! Nay!"
-"Dud!"
-"Yo! Coy?"
 "No peep on?"
 "Noise lesion."
 "Spill, lips!"
+"Ya, no! Nay!"
+"Yo! Coy?"
 
 table of swearstuff
 randtxt
 "(R)rude! Dur(r)!"
 "Bad? A dab!"
 "Dammit, I'm mad!"
-"We mew!"
 "Hot! Oh!"
-"Tact, cat!"
 "Not on!"
+"Pah, chap!"
+"Tact, cat!"
+"We mew!"
 
 table of waittxt
 randtxt
-"GO, dog!"
 "Don't nod!"
-"Panic? I nap!"
 "Gall! Lag!"
+"GO, dog!"
+"Panic? I nap!"
 
 table of yessies
 randtxt
-"Yay!"
 "Nod on!"
 "Plus? Ulp."
+"Yay!"
 
 Put It Up Tables ends here.
 
