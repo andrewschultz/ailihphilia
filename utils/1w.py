@@ -3,6 +3,12 @@ import sys
 import re
 from collections import defaultdict
 
+wordfile = "c:/writing/dict/brit-1word.txt"
+firstfile = "c:/writing/dict/firsts.txt"
+lastfile = "c:/writing/dict/lasts.txt"
+
+file_array = [ wordfile ]
+
 found = defaultdict(int)
 last_found = defaultdict(int)
 
@@ -20,6 +26,14 @@ end_cand = defaultdict(lambda: defaultdict(bool))
 start_cand = defaultdict(lambda: defaultdict(bool))
 
 hdr = "=" * 30
+
+def read_in(a):
+    with open(a) as file:
+        for line in file:
+            ll = line.strip().lower()
+            word_cand[ll] = True
+            end_cand[ll[-1]][ll] = True
+            start_cand[ll[0]][ll] = True
 
 def usage():
     print(hdr + "USAGE")
@@ -102,6 +116,15 @@ def palz(pals):
 
 for x in sys.argv[1:]:
     xl = x.lower()
+    if x == "-a":
+        file_array = [firstfile, lastfile, wordfile]
+        continue
+    if re.match("^-[wfl]+$", xl):
+        file_array = []
+        if 'f' in xl: file_array.append(firstfile)
+        if 'l' in xl: file_array.append(lastfile)
+        if 'w' in xl: file_array.append(wordfile)
+        continue
     if x == "-c":
         check_possible = True
         continue
@@ -124,15 +147,11 @@ for x in sys.argv[1:]:
         else:
             pals.append(y)
 
-with open("c:/writing/dict/brit-1word.txt") as file:
-    start_time = time.time()
-    for line in file:
-        ll = line.strip().lower()
-        word_cand[ll] = True
-        end_cand[ll[-1]][ll] = True
-        start_cand[ll[0]][ll] = True
-    end_time = time.time()
-    print(end_time-start_time, "seconds to read in file/define word arrays.")
+start_time = time.time()
+for x in file_array:
+    read_in(x)
+end_time = time.time()
+print(end_time-start_time, "seconds to read in file/define word arrays.")
 
 if len(pals) == 0 and only_stdin == False:
     print("Need -i or a CSV of words.")
