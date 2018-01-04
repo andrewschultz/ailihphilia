@@ -466,6 +466,7 @@ part the tables
 
 table of attackings
 randtxt
+"Ole! Lo!"
 "Pow-op! Pow-op!"
 "Harm! Rah!"
 "Ye KO? Pokey!"
@@ -480,12 +481,17 @@ randtxt
 "Oo! Noo!"
 "No way? Aw, ON!"
 "Hm. SMH."
+"Emo, me."
 "Ye Po['] Nopey."
 
 table of nothings
 randtxt
+"Eh, the..."
+"Hey! Eh?"
+"Ya, no! Nay!"
 "Dud!"
 "Yo! Coy?"
+"No peep on?"
 "Noise lesion."
 "Spill, lips!"
 

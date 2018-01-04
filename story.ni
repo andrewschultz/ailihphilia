@@ -10,11 +10,13 @@ include Basic Screen Effects by Emily Short.
 
 include Put It Up Tables by Andrew Schultz.
 
-the maximum score is 11.
-
 volume unsorted
 
+the gold log is a thing.
+
 the sage gas is a thing.
+
+the poo coop is a thing.
 
 chapter region and room stuff
 
@@ -24,7 +26,7 @@ Grebeberg is a region. max-score of Grebeberg is 2.
 
 Dim Mid is a region. max-score of Dim Mid is 2.
 
-Not-Kook-Ton is a region. max-score of Not-Kook-Ton is 5.
+Not-Kook-Ton is a region. max-score of Not-Kook-Ton is 7.
 
 Odd Do is a region. max-score of Odd Do is 2.
 
@@ -74,11 +76,9 @@ to say regres of (re - a region):
 part when play begins
 
 when play begins:
-	if debug-state is true:
-		let reg-sum be 0;
-		repeat with Q running through regions:
-			increase reg-sum by max-score of Q;
-		say "[if reg-sum is not the maximum score]Region sum ([reg-sum]) does not equal maximum score ([maximum score])[else]Region sum maximum scores match overall maximum score[end if].";
+	repeat with Q running through regions:
+		increase maximum score by max-score of Q;
+	if debug-state is true, say "Maximum score is [maximum score].";
 	now right hand status line is "[cur-score of mrlp]/[max-score of mrlp] [score]/[maximum score]";
 	now left hand status line is "[location of player] ([mrlp])";
 	repeat through table of all randoms:
@@ -218,7 +218,10 @@ definition: a direction (called d) is viable:
 
 chapter smelling
 
-instead of smelling: say "Noses, on[one of]! (you don't need to smell anything in this game)[or][stopping]!"
+instead of smelling:
+	if player has dork rod, say "You might expect a rod odor, but there isn't one. OR MAYBE IT IS SO INGRAINED IN YOU, YOU NO LONGER SMELL IT." instead;
+	if player is in Top Spot, say "You smell an amoral aroma." instead;
+	say "Noses, on[one of]! (you don't need to smell anything in this game)[or][stopping]!"
 
 chapter singing
 
@@ -346,10 +349,13 @@ table of cantuse
 use1	babble
 Dave	"Dave's not useful, man."
 
+[getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
 table of useons [xxuse]
 use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	babble
 trap art	reifier	party trap	--	--	true	true	false	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
-dork rod	tao boat	(thing)	--	--	true	true	false	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
+poo coop	gnu dung	--	--	--	true	true	true	"The poo coop hoovers up all the gnu dung steadily."
+gold log	rotator	dork rod	--	--	true	true	false	"The gold log begins spinning until it cracks open--leaving a dork rod!"
+dork rod	tao boat	--	--	--	true	true	false	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
 
 volume rooms
 
@@ -452,7 +458,7 @@ book Seer Trees
 Seer Trees is west of Fun 'Nuf. It is in Grebeberg.
 
 check going in Seer Trees:
-	if noun is not east and start rats are in seer trees, say "The seer trees watch you as if to say, you can't explore further until you got rid of the start rats!" instead;
+	if noun is not east and start rats are in seer trees, say "The start rats block you from going anywhere. At least they are not banging stop pots." instead;
 
 the start rats are a plural-named thing in Seer Trees.
 
@@ -503,7 +509,13 @@ book Dumb Mud
 
 Dumb Mud is west of Le Babel. It is in Grebeberg.
 
-the eels are people in Dumb Mud.
+the gnu dung is in Dumb Mud. "Gnu dung blocks exit south from the dumb mud.". description is "You're not an expert in this sort of biology, but given what you've seen so far, it's probably from a gnu."
+
+instead of doing something with gnu dung:
+	if action is procedural, continue the action;
+	say "Eewee! (You probably want to deal with the gnu dung indirectly.)"
+
+the eels are people in Dumb Mud. "Some eels are blocking passage west."
 
 book Mont Nom
 
@@ -661,6 +673,29 @@ check going south in Stope Depots when tame mat is in Stope Depots:
 
 check taking tame mat:
 	say "That would be stealing." instead;
+
+book ned's den
+
+Ned's Den is north of Stope Depots. It is in Not-Kook-Ton.
+
+Ned is a person in Ned's Den.
+
+chapter denting
+
+denting is an action applying to one thing.
+
+understand the command "dent" as something new.
+
+understand "dent [something]" as denting.
+
+does the player mean denting ned: it is likely.
+
+carry out denting:
+	if noun is ned:
+		say "Bam! Bye bye Ned.";
+		now Ned is in ZeroRez;
+		score-inc;
+	the rule succeeds;
 
 chapter tamping
 
@@ -879,6 +914,7 @@ table of amusing stuff
 funstuff	dorule
 "FLEX ELF?"	elf-flexed rule
 "FLEECE ELF?"	elf-fleeced rule
+"SMELLing the dork rod?"	--
 
 this is the elf-flexed rule:
 	if flex-elf is true, the rule succeeds;
