@@ -26,13 +26,13 @@ chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
 
-Grebeberg is a region. max-score of Grebeberg is 2.
+Grebeberg is a region. max-score of Grebeberg is 3.
 
 Dim Mid is a region. max-score of Dim Mid is 2.
 
 Not-Kook-Ton is a region. max-score of Not-Kook-Ton is 7.
 
-Odd Do is a region. max-score of Odd Do is 2.
+Odd Do is a region. max-score of Odd Do is 3.
 
 [El Live Ville is a region.]
 
@@ -197,7 +197,7 @@ carry out verbing:
 	say "[line break]GT or GO TO lets you go to a room where you've been before.";
 	say "[line break]THINK gives very general hints.";
 	say "[line break]Many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy.";
-	say "[line break]HINT gives you hints for where you are. ABOUT and CREDITS tell about the game.";
+	say "[line break]AID gives you hints for where you are. ABOUT and CREDITS tell about the game.";
 	the rule succeeds;
 
 chapter burning
@@ -651,11 +651,16 @@ understand "work row" and "work" as Worn Row when workrow is true.
 
 Ian is a person in Worn Row.
 
-a workable is a kind of thing.
+a workable is a kind of thing. a workable has a number called useleft. useleft of a workable is usually 3.
 
 the reifier is a workable in worn row.
 the reviver is a workable in worn row.
 the rotator is a workable in worn row.
+
+instead of inserting it into a workable, try useoning noun on second noun instead;
+instead of putting it on a workable, try useoning noun on second noun instead;
+
+instead of switching on a workable, say "You need to USE something with [the noun]."
 
 chapter party trap
 
@@ -892,17 +897,27 @@ Odd Do is a region.
 
 ZeroRez is a room in Odd Do.
 
-volume hinting
+volume aiding
 
-chapter hinting
+chapter aiding
 
-hinting is an action applying to nothing.
+aiding is an action applying to nothing.
 
-understand the command "hint" as something new.
+understand the command "dial aid" as something new.
+understand the command "aid" as something new.
 
-understand "hint" as hinting.
+understand "aid" as aiding.
+understand "dial aid" as aiding.
 
-check hinting:
+dial-yet is a truth state that varies.
+
+check aiding:
+	if dial-yet is false and word number 1 in the player's command is "dial":
+		say "Your 'correct' way of asking for aid nets a last lousy point. Yay![paragraph break]";
+		reg-inc odd do;
+		now dial-yet is true;
+	if dial-yet is false:
+		say ""Aid... aid...[paragraph break]";
 	if done-here, say "You're done here." instead;
 	say "Thinking...";
 
@@ -1003,6 +1018,11 @@ table of potential misses
 funstuff	dorule
 "BOOB or POOP"	pb-yet rule
 "REFER instead of THINK"	refer-yet rule
+"DIAL AID instead of aid"	dial-yet rule
+
+this is the dial-yet rule:
+	if dial-yet is true, the rule succeeds;
+	the rule fails;
 
 this is the pb-yet rule:
 	if poop-boob-yet is true, the rule succeeds;
