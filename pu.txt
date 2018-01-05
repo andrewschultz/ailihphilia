@@ -85,6 +85,9 @@ Also, once you PULL UP, the Emo Dome is safe.
 ?How do I keep people happy here?
 The resto poster from My Gym will work well.
 >META QUESTIONS
+?What are the Odd Do points?
+They're for trying odd stuff you might not have seen otherwise.
+Some commands could be made into palindromes, and there are some (hopefully) amusing alternate palindroms.
 ?How do I get all the points for Dim Mid?
 There are 2 total points in Dim Mid.
 1 point for PACK CAP.
@@ -99,11 +102,12 @@ There are 7 total points in Not-Kook-Ton.
 1 point if you PULL UP in the Emo Dome.
 1 point if you TAMP MAT in Stope Depots.
 ?How do I get all the points for Grebeberg?
-There are 1 total points in Grebeberg.
+There are 3 total points in Grebeberg.
 1 point if you USE PARTY TRAP ON START RATS.
 1 point if you USE POO COOP ON GNU DUNG.
 1 point if you USE DORK ROD ON TAO BOAT.
 ?How do I get all the Odd Do points?
-There are 2 total points in Odd Do.
+There are 3 total points in Odd Do.
 1 point for either, but not each, semi-profanity *OO*.
 1 point for saying REFER instead of THINK.
+1 point for saying DIAL AID instead of AID.

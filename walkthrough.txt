@@ -36,8 +36,11 @@ Marge Pegram says the trap art is a useless design that didn't quite work. Maybe
 You need to do something with the trap art, somewhere.
 
 >S
->E
 >S
+
+>EVADE DAVE
+
+>W
 
 >NAIL IAN
 
@@ -49,24 +52,40 @@ Now, the trap art goes with one of the machines, but which one?
 
 >USE REIFIER ON TRAP ART
 
+>E
 >N
 
 >W
 >W
->W
+
+How to get rid of the rats?
+
 >USE TRAP ON RATS
 
->W
+>N
 
->GET PARTY TRAP
+>GET XANAX
 
-You need to use the Party Trap on the Start Rats.
+>S
+>E
+>E
 
-How do you get past Dave?
+>EAT XANAX
 
->EVADE DAVE
+>E
+>PULL UP
 
-There's an area you can't quite get by.
+You now have access to a few more rooms.
+
+==========================================below is stuff that's near the end
+
+Now the Gold Log is shiny, but it's not particularly useful, and it's not you. It seems to be rattling, as if it holds something inside, but you can't figure out how to open it.
+
+>PUT GOLD LOG IN ROTATOR
+
+How do you feel peaceful enough to not be disrupted by your enemies?
+
+>USE DORK ROD ON TAO BOAT
 
 ==========================================below is stuff that's not in order
 

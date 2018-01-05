@@ -7,9 +7,13 @@ import re
 from collections import defaultdict
 
 pals = defaultdict(int)
+twice = defaultdict(bool)
+
+# options (unimplemented yet)
+twice_okay = False
 
 def pally(s):
-    s = re.sub(":.*", "", s)
+    s = re.sub("[=:].*", "", s)
     # print(s, "!", s.upper(), s.lower())
     if not (s.upper() or s.lower()):
         # print("No letters.")
@@ -24,6 +28,8 @@ def pally(s):
 def check_notes(s):
     pal_count = 0
     line_count = 0
+    dupes = 0
+    xtranote = 0
     notes_file_to_read = "c:/games/inform/{:s}.inform/source/notes.txt".format(s)
     source_file = "c:/games/inform/{:s}.inform/source/story.ni".format(s)
     with open(notes_file_to_read) as file:
@@ -31,11 +37,13 @@ def check_notes(s):
             line_count = line_count + 1
             ll = line.strip()
             if pally(ll):
-                l2 = re.sub("[^a-z \/]", "", line.strip().lower(), 0, re.IGNORECASE)
+                l2 = re.sub("[:=].*", "", line.strip().lower(), 0, re.IGNORECASE)
+                l2 = re.sub("[^a-z \/]", "", l2, 0, re.IGNORECASE)
                 # print("Looking for", l2)
                 for q in l2.split("/"):
                     if q in pals.keys():
-                        print("Duplicate", q)
+                        print("Duplicate", q, line_count, "from", pals[q], "in notes file")
+                        dupes = dupes + 1
                     else:
                         q2 = q.strip()
                         pals[q2] = line_count
@@ -46,7 +54,13 @@ def check_notes(s):
         for line in file:
             count = count + 1
             for q in pals.keys():
-                if q in line.lower():
-                    print(q, "in source line", count, "and notes line", pals[q], ":", line.lower().strip())
+                if q in line.lower() and (q not in twice.keys() or twice_okay):
+                    print(q, "in notes line", pals[q], "and source line", count, ":", line.lower().strip())
+                    twice[q] = True
+                    xtranote = xtranote + 1
+    if xtranote + dupes == 0:
+        print("Notes file has no duplicates/extras.")
+    else:
+        print(xtranote, "extra notes", dupes, "duplicates")
 
 check_notes("put-it-up")
