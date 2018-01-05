@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <trizbort version="1.6.0.0">
-	<info />
+	<info>
+		<title>Put it Up map</title>
+		<author>Andrew Schultz</author>
+		<description>Map of my IFComp 2018 game Put it Up.</description>
+		<history>Conceived October 2017 as part of a spoonerism game.
+Initially sent to source code/repository November 2017.</history>
+	</info>
 	<map>
 		<room id="1" name="Fun 'Nuf" subtitle="" x="-384" y="-192" w="96" h="64" region="Mid Dim" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isStartRoom="yes" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects at="n" custom="yes" customRight="-30" customDown="0">Tile Lit|Pact Cap|(Diktat Kid)</objects>
@@ -55,7 +61,7 @@
 		<room id="21" name="Ned's Den" subtitle="" x="96" y="-320" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>DENT NED</objects>
 		</room>
-		<room id="22" name="Word Row" subtitle="" x="-384" y="-64" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="You need to change Word Row to be able to use the machines" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="22" name="Worn Row" subtitle="" x="-384" y="-64" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="You need to change Word Row to be able to use the machines" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>NAIL IAN|Reviver|Reifier|Rotator</objects>
 		</room>
 		<room id="24" name="Le Babel" subtitle="" x="-704" y="-320" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">

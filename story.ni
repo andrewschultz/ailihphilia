@@ -30,7 +30,7 @@ Grebeberg is a region. max-score of Grebeberg is 3.
 
 Dim Mid is a region. max-score of Dim Mid is 2.
 
-Not-Kook-Ton is a region. max-score of Not-Kook-Ton is 7.
+Yelpley is a region. max-score of Yelpley is 7.
 
 Odd Do is a region. max-score of Odd Do is 3.
 
@@ -63,7 +63,7 @@ to score-inc:
 
 check requesting the score:
 	say "Your overall score so far is [score] of [maximum score].";
-	say "Broken down by regions, you have [regres of dim mid], [regres of grebeberg], [regres of not-kook-ton] and [regres of odd do].";
+	say "Broken down by regions, you have [regres of dim mid], [regres of grebeberg], [regres of Yelpley] and [regres of odd do].";
 	the rule succeeds;
 
 to reg-inc (re - a region):
@@ -588,21 +588,21 @@ Calcific Lac is north of Birch Crib. It is in Grebeberg. "A Tao Boat rests at th
 
 The Tao Boat is scenery in Calcific Lac.
 
-The dork rod is a thing in Calcific Lac.
+The dork rod is a thing in Calcific Lac. description is "It's kind of neat and quirky, but it's not shiny enough to be the famed Dorada Rod."
 
 book Apse Spa
 
 Apse Spa is east of Cold Loc. It is in Grebeberg.
 
-part Not-Kook-Ton
+part Yelpley
 
 book Yawn Way
 
-Yawn Way is east of Fun 'Nuf. It is in Not-Kook-Ton. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but State Tats is to the south, and My Gym is to the north. An alley is to the east."
+Yawn Way is east of Fun 'Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but State Tats is to the south, and My Gym is to the north. An alley is to the east."
 
 book My Gym
 
-My Gym is south of Yawn Way. It is in Not-Kook-Ton. "You can go back out south to Yawn Way. There's also passage west."
+My Gym is south of Yawn Way. It is in Yelpley. "You can go back out south to Yawn Way. There's also passage west."
 
 chapter dave
 
@@ -643,7 +643,7 @@ understand "evade dave" as a mistake ("Dave's not here, man!") when player is no
 
 book Worn Row
 
-Worn Row is west of My Gym. It is in Not-Kook-Ton. "A reifier, a reviver and a rotator are all here. They look [if workrow is false]in[end if]operable at the moment."
+Worn Row is west of My Gym. It is in Yelpley. "A reifier, a reviver and a rotator are all here. They look [if workrow is false]in[end if]operable at the moment."
 
 printed name of Worn Row is "[if workrow is true]Work[else]Worn[end if] Row"
 
@@ -700,7 +700,7 @@ understand "worn row" and "wornrow" as a mistake ("No need to revert things.") w
 
 book State Tats
 
-State Tats is north of Yawn Way. It is in Not-Kook-Ton. "The only way out is north."
+State Tats is north of Yawn Way. It is in Yelpley. "The only way out is north."
 
 Marge Pegram is a person in State Tats. "'Hi! I'm Marge Pegram."
 
@@ -708,7 +708,7 @@ the trap art is a thing in State Tats. "Some trap art sits here. It's free. You 
 
 book Stope Depots
 
-Stope Depots is east of Emo Dome. It is in Not-Kook-Ton. "This is another intersection in Not-Kook-Toon where you can go all four directions."
+Stope Depots is east of Emo Dome. It is in Yelpley. "This is another intersection in Not-Kook-Toon where you can go all four directions."
 
 [snuff funs]
 
@@ -722,7 +722,7 @@ check taking tame mat:
 
 book ned's den
 
-Ned's Den is north of Stope Depots. It is in Not-Kook-Ton.
+Ned's Den is north of Stope Depots. It is in Yelpley.
 
 Ned is a person in Ned's Den.
 
@@ -761,21 +761,21 @@ understand "tame mat" as a mistake ("That's not quite what to do. This is a game
 
 book Bon Snob
 
-Bon Snob is south of Stope Depots. It is in Not-Kook-Ton.
+Bon Snob is south of Stope Depots. It is in Yelpley.
 
 book Evaded Ave
 
-Evaded Ave is north of State Tats. It is in Not-Kook-Ton.
+Evaded Ave is north of State Tats. It is in Yelpley.
 
 The Puce Cup is a thing in Evaded Ave.
 
 book Trapeze Part
 
-Trapeze Part is west of Evaded Ave. It is in Not-Kook-Ton.
+Trapeze Part is west of Evaded Ave. It is in Yelpley.
 
 book Yell Alley
 
-Yell Alley is east of Evaded Ave. It is in Not-Kook-Ton. "A back cab sits here, taking you where you may need to go if you ENTER it."
+Yell Alley is east of Evaded Ave. It is in Yelpley. "A back cab sits here, taking you where you may need to go if you ENTER it."
 
 The back cab is scenery in Yell Alley.
 
@@ -801,7 +801,7 @@ carry out pulluping:
 
 book Emo Dome
 
-Emo Dome is east of Yawn Way. It is in Not-Kook-Ton.
+Emo Dome is east of Yawn Way. It is in Yelpley.
 
 instead of doing something in Emo Dome when pulled-up is false:
 	if current action is going:
@@ -820,13 +820,13 @@ check going to emo dome:
 
 book civic level
 
-Civic Level is north of Emo Dome. It is in Not-Kook-Ton.
+Civic Level is north of Emo Dome. It is in Yelpley.
 
 The radar is in Civic Level.
 
 book Swept Pews
 
-Swept Pews is south of Emo Dome. It is in Not-Kook-Ton.
+Swept Pews is south of Emo Dome. It is in Yelpley.
 
 chapter resto poster
 
@@ -838,19 +838,19 @@ The tract cart is a thing in Swept Pews.
 
 book Drawl Ward
 
-Drawl Ward is south of Swept Pews. It is in Not-Kook-Ton.
+Drawl Ward is south of Swept Pews. It is in Yelpley.
 
 book Le Falafel
 
-Le Falafel is east of Drawl Ward. It is in Not-Kook-Ton.
+Le Falafel is east of Drawl Ward. It is in Yelpley.
 
 book Dope Pod
 
-Dope Pod is west of Drawl Ward. It is in Not-Kook-Ton.
+Dope Pod is west of Drawl Ward. It is in Yelpley.
 
 Line Nil is in Dray Yard.
 
-Ball Lab is north of Ned's Den. It is in Not-Kook-Ton.
+Ball Lab is north of Ned's Den. It is in Yelpley.
 
 volume gotoing
 
