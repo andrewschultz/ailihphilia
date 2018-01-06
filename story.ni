@@ -763,6 +763,23 @@ book Bon Snob
 
 Bon Snob is south of Stope Depots. It is in Yelpley.
 
+Nat's Tan is a thing in Bon Snob. "A container of something called Nat's Tan is here."
+
+chapter standing
+
+standing is an action applying to one thing.
+
+understand the command "stand" as something new.
+
+understand "stand [something]" as standing.
+
+carry out standing:
+	if noun is nat's tan:
+		say "It's tough, but you manage to stand the icky Nat's Tan as you pour it on yourself.";
+		score-inc;
+		now nat's tan is in lalaland.
+	the rule succeeds.
+
 book Evaded Ave
 
 Evaded Ave is north of State Tats. It is in Yelpley.
