@@ -14,6 +14,8 @@ include undo output control by Erik Temple.
 
 volume unsorted
 
+the radar is a thing.
+
 the gold log is a thing.
 
 the sage gas is a thing.
@@ -706,15 +708,15 @@ Marge Pegram is a person in State Tats. "'Hi! I'm Marge Pegram."
 
 the trap art is a thing in State Tats. "Some trap art sits here. It's free. You might as well take it.". description is "The trap art depicts a bunch of nasty, dirty animals being trapped--it's not a real trap, but maybe it could become one."
 
-book Stope Depots
+book Dirge Grid
 
-Stope Depots is east of Emo Dome. It is in Yelpley. "This is another intersection in Not-Kook-Toon where you can go all four directions."
+Dirge Grid is east of Emo Dome. It is in Yelpley. "This is another intersection in Not-Kook-Toon where you can go all four directions."
 
 [snuff funs]
 
-a tame mat is in Stope Depots. "A tame mat reading BON SNOB is in your way to the south."
+a tame mat is in Dirge Grid. "A tame mat reading BON SNOB is in your way to the south."
 
-check going south in Stope Depots when tame mat is in Stope Depots:
+check going south in Dirge Grid when tame mat is in Dirge Grid:
 	say "An upper-crust voice emits from the tame mat, which curls up: 'DA CAD!'[paragraph break]Maybe if it were more glued to the ground." instead;
 
 check taking tame mat:
@@ -722,7 +724,7 @@ check taking tame mat:
 
 book ned's den
 
-Ned's Den is north of Stope Depots. It is in Yelpley.
+Ned's Den is north of Dirge Grid. It is in Yelpley.
 
 Ned is a person in Ned's Den.
 
@@ -749,7 +751,7 @@ tamping is an action applying to nothing.
 
 understand the command "tamp mat" as something new.
 
-understand "tamp mat" as tamping when player is in stope depots and tame mat is in stope depots.
+understand "tamp mat" as tamping when player is in Dirge Grid and tame mat is in Dirge Grid.
 
 carry out tamping:
 	say "Boom! That's the idea. With the mat tamped, you walk across, and there's no more nonsense.";
@@ -757,11 +759,11 @@ carry out tamping:
 	score-inc;
 	the rule succeeds;
 
-understand "tame mat" as a mistake ("That's not quite what to do. This is a game about palindromes, not homonyms.") when player is in Stope Depots and tame mat is in Stope Depots.
+understand "tame mat" as a mistake ("That's not quite what to do. This is a game about palindromes, not homonyms.") when player is in Dirge Grid and tame mat is in Dirge Grid.
 
 book Bon Snob
 
-Bon Snob is south of Stope Depots. It is in Yelpley.
+Bon Snob is south of Dirge Grid. It is in Yelpley.
 
 Nat's Tan is a thing in Bon Snob. "A container of something called Nat's Tan is here."
 

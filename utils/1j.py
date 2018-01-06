@@ -1,3 +1,7 @@
+# 1j.py
+# "1 just"
+# this checks for palindromes just one word long
+
 import re
 
 rem_str = ''
