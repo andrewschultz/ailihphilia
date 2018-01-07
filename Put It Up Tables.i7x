@@ -471,6 +471,7 @@ randtxt
 "Pal, SLAP?!"
 "Pow-op! Pow-op!"
 "Ye KO? Pokey!"
+"Pop!"
 
 table of burnies
 randtxt

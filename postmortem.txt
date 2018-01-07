@@ -1,0 +1,4 @@
+I was able to start early, which was nice. I'd used source control before, but usually only a month before. Github has that handy tracker, and Bitbucket doesn't.
+
+Of course many two-word palindromes are either anagrams or almost anagrams, so I had a bit of a head start for this. Also, the utilities were easier to create. And I had a bona fide notes file to refer to. To which to refer.
+

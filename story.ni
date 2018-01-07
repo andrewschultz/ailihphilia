@@ -424,7 +424,7 @@ check going south in Fun 'Nuf:
 	say "[line break]Do you still wish to go through Evac Ave and turn your back on adventure?";
 	if the player yes-consents:
 		say "You walk south past Evac Ave through the Elim-Mile, which removes all your memories of your brief time adventuring.";
-		end the story;
+		end the story saying "NOWT WON";
 
 chapter Pact Cap
 
