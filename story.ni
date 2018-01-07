@@ -372,7 +372,7 @@ Dave	"Dave's not useful, man."
 table of useons [xxuse]
 use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	babble
 trap art	reifier	party trap	--	--	true	true	false	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
-poo coop	gnu dung	--	--	--	true	true	true	"The poo coop hoovers up all the gnu dung steadily."
+poo coop	gnu dung	--	--	--	true	true	true	"The gnu dung is sucked towards the poo coop. In fact, it forms a disturbing arc (I'll let you guess what type) as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
 gold log	rotator	dork rod	--	--	true	true	false	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 dork rod	tao boat	--	--	--	true	true	false	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
 
@@ -524,6 +524,9 @@ book Dumb Mud
 Dumb Mud is west of Seer Trees. It is in Grebeberg.
 
 the gnu dung is in Dumb Mud. "Gnu dung blocks exit south from the dumb mud.". description is "You're not an expert in this sort of biology, but given what you've seen so far, it's probably from a gnu."
+
+check going south in Dumb Mud:
+	if gnu dung is in dumb mud, say "Not through the dumb mud you aren't." instead;
 
 instead of doing something with gnu dung:
 	if action is procedural, continue the action;
