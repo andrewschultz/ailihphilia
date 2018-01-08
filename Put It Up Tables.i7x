@@ -469,13 +469,15 @@ randtxt
 "Harm! Rah!"
 "Ole! Lo!"
 "Pal, SLAP?!"
+"Pop!"
 "Pow-op! Pow-op!"
 "Ye KO? Pokey!"
-"Pop!"
+"Yob! Boy."
 
 table of burnies
 randtxt
 "Burn! Rub!"
+"Igniting, I!"
 "Rah! Char!"
 
 table of noesies
@@ -491,8 +493,10 @@ randtxt
 "Dud!"
 "Eh, the..."
 "Hey! Eh?"
+"Mum?"
 "No peep on?"
 "Noise lesion."
+"Peep?!"
 "Spill, lips!"
 "Ya, no! Nay!"
 "Yo! Coy?"
@@ -506,10 +510,14 @@ randtxt
 "Not on!"
 "Pah, chap!"
 "Tact, cat!"
+"Tut!"
 "We mew!"
+"Y'booby!"
+"Y'kooky?"
 
 table of waittxt
 randtxt
+"Deed, deed, deed!"
 "Don't nod!"
 "Gall! Lag!"
 "GO, dog!"
@@ -518,6 +526,7 @@ randtxt
 table of yessies
 randtxt
 "Nod on!"
+"Pip, pip!"
 "Plus? Ulp."
 "Yay!"
 

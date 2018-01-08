@@ -80,6 +80,38 @@ Done? Nod: End of Game
 Nif-T-Fin: End of Game
 Deified! Deified!: End of Game
 
+Shahs
+
+B Reverb
+Brewer B
+Challah C
+Dresser D
+D Racecard
+E Garage
+E Vitative
+Fretter F
+Grammar, G!
+G, nipping?!
+Hoodoo H
+H Sash
+Kappa K
+Lulu L
+Locofoco L
+L Appal
+Muumuu M
+Medicide M
+Nappa N
+N Even
+O Bonobo
+Peewee P
+Petite P
+Trekker T
+Voodoo V
+Wanna W
+Weewee W
+
+Redivider
+
 Den, Evened: after Ned gone
 
 Walk! Law!
@@ -174,7 +206,6 @@ Turf Rut/TURN RUT
 Edits Tide
 
 To Pot:death!
-Nowt Won:death!
 
 Da Pad
 Damp Mad
@@ -215,12 +246,49 @@ REFER as a verb
 
 Dud, bub.
 
+BOOK NAMES?
+Minim
+Sagas
+Solos
+
 Ye Fey
 Low AWOL
 
 Dartstrad
 
 Toll Lot
+
+rofl for
+gibe big
+
+Sniffins
+A Toyota
+
+NAMES BELOW=====================
+S. Tibbits
+Treger, T.
+Valela, V.
+Y. Baraby
+Khalilah K.
+Mikki M.
+Rocco R.
+Rikki R.
+Banana B
+Cremer C
+Dellavalle, D.
+E. Revere
+E. Gammage
+Kreger, K
+Kniffin, K
+K. Coppock
+Lippi, L.
+L. Levell
+N. Ellen
+Prekker, P
+Presser, P
+Rocco R
+Rollo R
+R Etter
 
 Tenses Net
 TEND NET
