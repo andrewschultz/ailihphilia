@@ -3,6 +3,8 @@
 #
 # debug notes: check if something has already been used and can be wiped
 
+import i7
+import os
 import re
 from collections import defaultdict
 
@@ -11,6 +13,8 @@ twice = defaultdict(bool)
 
 # options (unimplemented yet)
 twice_okay = False
+launch_after = True
+
 
 def pally(s):
     s = re.sub("[=:].*", "", s)
@@ -26,6 +30,7 @@ def pally(s):
     return True
 
 def check_notes(s):
+    open_line = 0
     pal_count = 0
     line_count = 0
     dupes = 0
@@ -43,6 +48,8 @@ def check_notes(s):
                 for q in l2.split("/"):
                     if q in pals.keys():
                         print("Duplicate", q, line_count, "from", pals[q], "in notes file")
+                        if not open_line:
+                            open_line = pals[q]
                         dupes = dupes + 1
                     else:
                         q2 = q.strip()
@@ -56,11 +63,19 @@ def check_notes(s):
             for q in pals.keys():
                 if q in line.lower() and (q not in twice.keys() or twice_okay):
                     print(q, "in notes line", pals[q], "and source line", count, ":", line.lower().strip())
+                    if not open_line:
+                        open_line = pals[q]
                     twice[q] = True
                     xtranote = xtranote + 1
     if xtranote + dupes == 0:
         print("Notes file has no duplicates/extras.")
     else:
         print(xtranote, "extra notes", dupes, "duplicates")
+    if launch_after and open_line:
+        print("Launching", notes_file_to_read, "at", open_line)
+        cmd = "start \"\" {:s} {:s} -n{:d}".format(i7.np, notes_file_to_read, open_line)
+        print(cmd)
+        os.system(cmd)
 
 check_notes("put-it-up")
+
