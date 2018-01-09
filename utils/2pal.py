@@ -146,7 +146,7 @@ def all_at_once():
     print(end-start, 'total seconds')
 
 # note we usually need both files created, anagram and non, so let's make them
-def custom_munge(my_str):
+def custom_munge(my_str, suffix):
     temp = my_str
     if custom_file_string != '':
         temp = temp + '-cus-' + custom_file_string
@@ -158,8 +158,8 @@ def custom_munge(my_str):
         temp = temp + '-xe-' + end_string
     t1 = temp
     t1 = t1 + '-ana'
-    temp = temp + '.txt'
-    t1 = t1 + '.txt'
+    temp = temp + '.' + suffix
+    t1 = t1 + '.' + suffix
     return (temp, t1)
 
 def pal_to_edit(a):
@@ -172,7 +172,7 @@ def pal_to_edit(a):
 
 def one_at_a_time():
     base_file = "pals-out-1-{:s}-2-{:s}".format('-'.join(start_files), '-'.join(end_files))
-    out_files = custom_munge(base_file)
+    out_files = custom_munge(base_file, 'txt')
     if one_letter_jazz:
         print(out_files)
         return
@@ -293,6 +293,8 @@ parser.add_argument('-s0', action='store_true', help="show zeros in progress", d
 parser.add_argument('-b', type=str, help="begin string", dest='begin_string')
 parser.add_argument('-m', type=str, help="middle string", dest='mid_string')
 parser.add_argument('-e', type=str, help="end string", dest='end_string')
+parser.add_argument('-hc', action="store_true", dest="create_html")
+parser.add_argument('-hl', action="store_true", dest="create_launch_html")
 parser.add_argument('-v', type=str, help="view in notepad", dest='notepad_open_string')
 parser.add_argument('-c', '-cf', type=str, help="custom file string", dest='custom_file_string')
 parser.add_argument('-ca', action="store_true", dest="rewrite_all_file")
@@ -340,6 +342,29 @@ if args.end_string:
 if args.mid_string:
     mid_string = args.mid_string
 
+if args.create_html or args.create_launch_html:
+    print("This only creates the HTML. If you want to run things, remove the -h flag.")
+    out_html = custom_munge('pals-out-1', 'htm')
+    q = [ '-f', '-l', '-d' ]
+    my_htm = open(out_html[0], 'w')
+    my_htm.write("<html>\n<title>" + out_html[0] + "</title>\n<body>\n")
+    my_htm.write("<center><table border=1>\n")
+    for i in q:
+        for j in q:
+            my_htm.write("<tr>")
+            z = "pals-out-1{:s}-2{:s}".format(i, j)
+            temp_ary = custom_munge(z, 'txt')
+            z2 = "pals-out-1{:s}-2{:s}-ana".format(i, j)
+            temp_ary_2 = custom_munge(z2, 'txt')
+            my_htm.write("<td><a href={:s}>{:s}</a></td>\n".format(temp_ary[0], temp_ary[0]))
+            my_htm.write("<td><a href={:s}>{:s}</a></td>\n".format(temp_ary[1], temp_ary[1]))
+    my_htm.write("</table></center></body>\n</html>\n")
+    my_htm.close()
+    print(out_html)
+    if args.create_launch_html:
+        os.system(out_html[0])
+    exit()
+
 if args.concordance:
     fh = sorted(file_hash.keys())
     print("LIST OF COMMANDS TO RUN:")
@@ -354,7 +379,7 @@ if args.concordance:
         for y in fh:
             run_this = False
             z = "pals-out-1-{:s}-2-{:s}".format(x, y)
-            temp_ary = custom_munge(z)
+            temp_ary = custom_munge(z, 'txt')
             for t in temp_ary:
                 if os.path.exists(t):
                     print("EXISTS", t)
