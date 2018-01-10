@@ -24,6 +24,9 @@ the poo coop is a thing.
 
 the bro orb is a thing.
 
+to win-finally:
+	end the story finally saying "Deified! Deified!"
+
 chapter trucking
 
 [this point is unsorted yet]
@@ -435,7 +438,9 @@ instead of entering Evac Ave:
 elf-warn is a number that varies.
 
 check going south in Fun 'Nuf:
-	if Flee Elf is in ZeroRez, continue the action;
+	if back cab is in Evac Ave, enter back cab instead;
+	if Flee Elf is in ZeroRez:
+		say "The Evac Ave is gone. I guess you're stuck questing, here." instead;
 	if elf-warn < 3, increment elf-warn;
 	say "[if elf-warn is 1]The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go[else if elf-warn is 2]The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap[else]The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else[end if].";
 	if elf-warn < 3, the rule succeeds;
@@ -493,6 +498,12 @@ chapter tile lit
 the tile lit is scenery in Fun 'Nuf. "GREBEBERG has an arrow pointing west by it. NOT-DUD-TON has an arrow pointing "
 
 check taking tile lit: say "It's sort of embedded into the ground. It looks nice there, anyway, and it's useful for information."
+
+chapter back cab
+
+The back cab is a thing. description is "It's here and waiting to take you, uh, back.". "A back cab waits here to the south, where the Evac-Ave once was, to take you home."
+
+instead of entering back cab win-finally instead;
 
 part Grebeberg
 
@@ -580,6 +591,8 @@ Ooze Zoo is south of Seer Trees. It is in Grebeberg.
 book Dray Yard
 
 Dray Yard is south of Ooze Zoo. It is in Grebeberg.
+
+Line Nil is in Dray Yard.
 
 book Moo Room
 
@@ -815,9 +828,7 @@ Trapeze Part is west of Evaded Ave. It is in Yelpley.
 
 book Yell Alley
 
-Yell Alley is east of Evaded Ave. It is in Yelpley. "A back cab sits here, taking you where you may need to go if you ENTER it."
-
-The back cab is scenery in Yell Alley.
+Yell Alley is east of Evaded Ave. It is in Yelpley.
 
 chapter pulluping
 
@@ -858,11 +869,13 @@ check going to emo dome:
 	if pulled-up is true:
 		now emo-dir is noun;
 
+check going north in emo dome:
+	say "The Civic Level is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready." instead;
+	if Civic Level is unvisited, say "You step into what may be your final challenge in Yelpley..."
+
 book civic level
 
 Civic Level is north of Emo Dome. It is in Yelpley.
-
-The radar is in Civic Level.
 
 book Swept Pews
 
@@ -884,11 +897,15 @@ book Le Falafel
 
 Le Falafel is east of Drawl Ward. It is in Yelpley.
 
+The gate tag is in Le Falafel.
+
 book Dope Pod
 
 Dope Pod is west of Drawl Ward. It is in Yelpley.
 
-Line Nil is in Dray Yard.
+The radar is in Dope Pod.
+
+book ball lab
 
 Ball Lab is north of Ned's Den. It is in Yelpley.
 
