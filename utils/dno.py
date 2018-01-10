@@ -44,7 +44,11 @@ def check_notes(s):
     dupes = 0
     xtranote = 0
     notes_file_to_read = "c:/games/inform/{:s}.inform/source/notes.txt".format(s)
-    source_file = "c:/games/inform/{:s}.inform/source/story.ni".format(s)
+    source_files = [ "c:/games/inform/{:s}.inform/source/story.ni".format(s),
+      "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/{:s} tables.i7x".format(re.sub("-", " ", s)) ]
+    shorts = {}
+    for x in source_files:
+        shorts[x] = re.sub(".*[\\\/]", "", x)
     with open(notes_file_to_read) as file:
         for line in file:
             line_count = line_count + 1
@@ -64,17 +68,19 @@ def check_notes(s):
                         pals[q2] = line_count
                         pal_count = pal_count + 1
                         # print(count, q2)
-    with open(source_file) as file:
-        count = 0
-        for line in file:
-            count = count + 1
-            for q in pals.keys():
-                if q in line.lower() and (q not in twice.keys() or twice_okay):
-                    print(q, "in notes line", pals[q], "and source line", count, ":", line.lower().strip())
-                    if not open_line:
-                        open_line = pals[q]
-                    twice[q] = True
-                    xtranote = xtranote + 1
+    for s in source_files:
+        with open(s) as file:
+            count = 0
+            for line in file:
+                count = count + 1
+                for q in pals.keys():
+                    if q in line.lower() and (q not in twice.keys() or twice_okay):
+                        if re.search(r'\b{:s}\b'.format(q), line):
+                            print(q, "in notes line", pals[q], "/", shorts[s], "line", count, ":", line.lower().strip())
+                            if not open_line:
+                                open_line = pals[q]
+                            twice[q] = True
+                            xtranote = xtranote + 1
     if xtranote + dupes == 0:
         print("Notes file has no duplicates/extras.")
     else:
