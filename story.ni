@@ -24,6 +24,24 @@ the poo coop is a thing.
 
 the bro orb is a thing.
 
+chapter trucking
+
+[this point is unsorted yet]
+
+Curt is a person.
+
+trucking is an action applying to one thing.
+
+understand the command "truck" as something new.
+
+understand "truck [something]" as trucking.
+
+carry out trucking:
+	if noun is not Curt, say "Wrong thing to truck." instead;
+	move Curt to ZeroRez;
+	score-inc;
+	the rule succeeds.
+
 chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.

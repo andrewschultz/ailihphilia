@@ -466,6 +466,8 @@ part the tables
 
 table of attackings
 randtxt
+"D00d!"
+"Dude! Dud."
 "Harm! Rah!"
 "Ole! Lo!"
 "Pal, SLAP?!"
@@ -507,6 +509,7 @@ randtxt
 "Bad? A dab!"
 "Dammit, I'm mad!"
 "Hot! Oh!"
+"Kook!"
 "Not on!"
 "Pah, chap!"
 "Tact, cat!"
