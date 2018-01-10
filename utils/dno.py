@@ -3,6 +3,7 @@
 #
 # debug notes: check if something has already been used and can be wiped
 
+import sys
 import i7
 import os
 import re
@@ -11,10 +12,17 @@ from collections import defaultdict
 pals = defaultdict(int)
 twice = defaultdict(bool)
 
-# options (unimplemented yet)
+# options
 twice_okay = False
 launch_after = True
 
+def usage():
+    print("-2 = report appearance of notes.txt stirng in story.ni/put it up tables.i7x more than once.")
+    print("    -2n/-n2 = negation. Default = off.")
+    print("-l = launch after.")
+    print("    -ln/-nl = don't. Default = on.")
+    print("-?/-u = this")
+    exit()
 
 def pally(s):
     s = re.sub("[=:].*", "", s)
@@ -76,6 +84,25 @@ def check_notes(s):
         cmd = "start \"\" {:s} {:s} -n{:d}".format(i7.np, notes_file_to_read, open_line)
         print(cmd)
         os.system(cmd)
+
+count = 1
+while count < len(sys.argv):
+    l = sys.argv[count].lower()
+    if l[0] == '-': l = l[1:]
+    if l == '2n' or l == 'n2':
+        twice_okay = False
+    if l == '2' or l == '-2':
+        twice_okay = True
+    elif l == 'l':
+        launch_after = True
+    elif l == 'ln' or l == 'nl':
+        launch_after = False
+    elif l == '?' or l == 'u':
+        usage()
+    else:
+        print("Unknown option", l)
+        usage()
+    count = count + 1
 
 check_notes("put-it-up")
 
