@@ -15,13 +15,17 @@ twice = defaultdict(bool)
 # options
 twice_okay = False
 launch_after = True
+ignore_word_bounds = False
 
 def usage():
+    print("USAGE" + '=' * 40)
     print("-2 = report appearance of notes.txt stirng in story.ni/put it up tables.i7x more than once.")
     print("    -2n/-n2 = negation. Default = off.")
     print("-l = launch after.")
     print("    -ln/-nl = don't. Default = on.")
-    print("-?/-u = this")
+    print("-i = ignore word boundaries. To catch stuff like 'da bad' with 'neda baden'.")
+    print("    -in/-ni = don't. Default = off.")
+    print("-?/-u = this usage statement")
     exit()
 
 def pally(s):
@@ -75,8 +79,10 @@ def check_notes(s):
                 count = count + 1
                 for q in pals.keys():
                     if q in line.lower() and (q not in twice.keys() or twice_okay):
-                        if re.search(r'\b{:s}\b'.format(q), line):
-                            print(q, "in notes line", pals[q], "/", shorts[s], "line", count, ":", line.lower().strip())
+                        if ignore_word_bounds or re.search(r'\b{:s}\b'.format(q), line):
+                            # here "da bad" does not flag "Neda Baden" unless we tell the program to
+                            print("Notes.txt line", pals[q], "~", shorts[s], "line", count, ":", line.lower().strip() +
+                              ('' if not ignore_word_bounds else ' ~ ' + q) )
                             if not open_line:
                                 open_line = pals[q]
                             twice[q] = True
@@ -88,7 +94,6 @@ def check_notes(s):
     if launch_after and open_line:
         print("Launching", notes_file_to_read, "at", open_line)
         cmd = "start \"\" {:s} {:s} -n{:d}".format(i7.np, notes_file_to_read, open_line)
-        print(cmd)
         os.system(cmd)
 
 count = 1
@@ -103,6 +108,10 @@ while count < len(sys.argv):
         launch_after = True
     elif l == 'ln' or l == 'nl':
         launch_after = False
+    elif l == 'i':
+        ignore_word_bounds = True
+    elif l == 'in' or l == 'ni':
+        ignore_word_bounds = False
     elif l == '?' or l == 'u':
         usage()
     else:
