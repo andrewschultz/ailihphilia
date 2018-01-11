@@ -73,6 +73,12 @@ def optcaps(z):
     else:
         return z
 
+def freq_use():
+    print("2pal.py -ht(l) = create the HTML tree and launch it")
+    print("2pal.py -hc -m and = create an HTML sub-tree for 'and' in the middle")
+    print("2pal.pl -fs f -fe l = run through . The f/l/d can be in a 3x3 matrix of separate commands to get everything.
+    print("    If they are in a CSV, then the file name is -f-l-d.")
+
 def usage():
     print("This is a list of parameters you can send to 2pal.py.")
     print("")
@@ -88,11 +94,11 @@ def usage():
     print("-ca creates name-and-word.txt from the other files.")
     print("-co = concordance of all file combinations and commands.")
     print("-trt = debug flag to track run totals of first/last words checked so far.")
-    print("-hc/hl = html create/launch, -ht = html tree create/launch.")
+    print("-hc/hl = html create/launch, -ht/htl = html tree create/launch.")
     print("-d dumb test")
     print("-2 quicken things by using hash tables to match only words with same 2 first/last letters")
     print("-x gives frequent-use examples.")
-    print("-? this usage")
+    print("-? this usage without a message saying you had an unrecognized parameter. -h gives Python's generated help.")
     exit()
 
 def create_all_file():
@@ -296,6 +302,7 @@ parser.add_argument('-s0', action='store_true', help="show zeros in progress", d
 parser.add_argument('-b', type=str, help="begin string", dest='begin_string')
 parser.add_argument('-m', type=str, help="middle string", dest='mid_string')
 parser.add_argument('-e', type=str, help="end string", dest='end_string')
+parser.add_argument('-x', type=str, help="end string", dest='freq_use_examples')
 parser.add_argument('-ht', action="store_true", dest="create_html_tree")
 parser.add_argument('-htl', action="store_true", dest="create_html_tree_launch")
 parser.add_argument('-hc', action="store_true", dest="create_html")
@@ -308,6 +315,9 @@ parser.add_argument('-eo', action="store_true", help="to edit file(s)", dest='ed
 parser.add_argument('-o', '-of', action="store_true", help="overwrite file", dest='overwrite_file')
 
 args = parser.parse_args()
+
+if args.freq_use_examples:
+    freq_use()
 
 if args.usage:
     usage()

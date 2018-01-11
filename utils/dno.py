@@ -7,18 +7,48 @@ import sys
 import i7
 import os
 import re
+import filecmp
 from collections import defaultdict
+from shutil import copy
 
 pals = defaultdict(int)
 twice = defaultdict(bool)
 
 # options
+modify_notes = True
 twice_okay = False
 launch_after = True
 ignore_word_bounds = False
 
+def modify_notes(s):
+    lines_changed = 0
+    notetmp = "c:/games/inform/{:s}.inform/source/notes-temp.txt".format(s)
+    f2 = open(notetmp, "w")
+    notes_file_to_read = "c:/games/inform/{:s}.inform/source/notes.txt".format(s)
+    with open(notes_file_to_read) as file:
+        for line in file:
+            if re.search("^ *[0-9]{2,} +[a-z]", line):
+                # print("Futzing with", line.strip())
+                ll = re.sub("^ *[0-9]+ +", "", line)
+                ll = re.sub(" ~ PALINDROME.", "", ll)
+                ll = re.sub(" \+ ", " ", ll)
+                f2.write(ll)
+                lines_changed = lines_changed + 1
+            else:
+                f2.write(line)
+    f2.close()
+    if filecmp.cmp(notetmp, notes_file_to_read):
+        print("No modification of possible cut/pasted lines for notes file.")
+    else:
+        print(lines_changed, "lines changed scanning", notes_file_to_read)
+        filecpy(notetmp, notes_file_to_read)
+    if modify_only:
+        print("Bailing.")
+        exit()
+
 def usage():
     print("USAGE" + '=' * 40)
+    print("-m = modify notes file before starting, -mo = modify only")
     print("-2 = report appearance of notes.txt stirng in story.ni/put it up tables.i7x more than once.")
     print("    -2n/-n2 = negation. Default = off.")
     print("-l = launch after.")
@@ -97,6 +127,8 @@ def check_notes(s):
         os.system(cmd)
 
 count = 1
+modified_yet = False
+
 while count < len(sys.argv):
     l = sys.argv[count].lower()
     if l[0] == '-': l = l[1:]
@@ -108,6 +140,14 @@ while count < len(sys.argv):
         launch_after = True
     elif l == 'ln' or l == 'nl':
         launch_after = False
+    elif l == 'm' or l == 'mo':
+        modify_only = (l == 'mo')
+        if modified_yet:
+            print("Already modified notes file or tried to.")
+            exit()
+        modified_yet = True
+        modify_notes("put-it-up")
+        exit()
     elif l == 'i':
         ignore_word_bounds = True
     elif l == 'in' or l == 'ni':
