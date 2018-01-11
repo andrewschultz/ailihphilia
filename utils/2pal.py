@@ -14,6 +14,7 @@ import os.path
 from string import ascii_lowercase
 from collections import defaultdict
 from shutil import copyfile
+from glob import glob
 
 file_hash = { "f":"c:/writing/dict/firsts.txt",
   "l":"c:/writing/dict/lasts.txt",
@@ -87,8 +88,10 @@ def usage():
     print("-ca creates name-and-word.txt from the other files.")
     print("-co = concordance of all file combinations and commands.")
     print("-trt = debug flag to track run totals of first/last words checked so far.")
+    print("-hc/hl = html create/launch, -ht = html tree create/launch.")
     print("-d dumb test")
     print("-2 quicken things by using hash tables to match only words with same 2 first/last letters")
+    print("-x gives frequent-use examples.")
     print("-? this usage")
     exit()
 
@@ -293,6 +296,8 @@ parser.add_argument('-s0', action='store_true', help="show zeros in progress", d
 parser.add_argument('-b', type=str, help="begin string", dest='begin_string')
 parser.add_argument('-m', type=str, help="middle string", dest='mid_string')
 parser.add_argument('-e', type=str, help="end string", dest='end_string')
+parser.add_argument('-ht', action="store_true", dest="create_html_tree")
+parser.add_argument('-htl', action="store_true", dest="create_html_tree_launch")
 parser.add_argument('-hc', action="store_true", dest="create_html")
 parser.add_argument('-hl', action="store_true", dest="create_launch_html")
 parser.add_argument('-v', type=str, help="view in notepad", dest='notepad_open_string')
@@ -342,15 +347,35 @@ if args.end_string:
 if args.mid_string:
     mid_string = args.mid_string
 
-def write_file_cell(fout, flink)
+def write_file_cell(fout, flink):
     fout.write("<td>")
-    if os.path.exists(temp):
+    if os.path.exists(flink):
         fout.write("<a href={:s}>{:s}</a></td>\n".format(flink, flink))
     else:
         fout.write("NO {:s}".format(flink.upper()))
 
+if args.create_html_tree:
+    htm_abbrev = defaultdict(str)
+    palout = glob("pals-out-1-*-2-*.txt")
+    for file in palout:
+        f = re.sub("-1-.*-2-[a-z]+", "", file)
+        f = re.sub("-ana.txt", ".txt", f)
+        f = re.sub("txt$", "htm", f)
+        htm_abbrev[f] = htm_abbrev[f] + "\n" + file
+    pm = open("pals-main.htm", "w")
+    pm.write("<html>\n<title>Palindrome Base Reference File</title>\n<body>\n<center>\n<table border=1>")
+    for x in sorted(htm_abbrev.keys()):
+        create_string = re.sub("pals-out(-)?", "", x)
+        create_string = re.sub(".htm", "", create_string)
+        create_string = re.sub("-", " ", create_string)
+        create_string = re.sub(" xm ", " -m ", create_string)
+        pm.write("<tr><td>{:s}</td><td><a href={:s}>{:s}</a></td></tr>\n".format(x, x, "AVAILABLE" if os.path.exists(x) else "CREATE WITH 2pal.py -hc" + create_string))
+    pm.write("</table></center></body><html>")
+    print("Open pals-main.htm.")
+    exit()
+
 if args.create_html or args.create_launch_html:
-    out_html = custom_munge('pals-out-1', 'htm')
+    out_html = custom_munge('pals-out', 'htm')
     q = [ '-f', '-l', '-d' ]
     my_htm = open(out_html[0], 'w')
     my_htm.write("<html>\n<title>" + out_html[0] + "</title>\n<body>\n")
@@ -361,7 +386,7 @@ if args.create_html or args.create_launch_html:
             my_htm.write("<tr>")
             z = "pals-out-1{:s}-2{:s}".format(i, j)
             temp_ary = custom_munge(z, 'txt')
-            z2 = "edit-out-1{:s}-2{:s}-ana".format(i, j)
+            z2 = "edit-out-1{:s}-2{:s}".format(i, j)
             temp_ary_2 = custom_munge(z2, 'txt')
             write_file_cell(my_htm, temp_ary[0])
             write_file_cell(my_htm, temp_ary[1])
