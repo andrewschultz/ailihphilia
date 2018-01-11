@@ -342,27 +342,38 @@ if args.end_string:
 if args.mid_string:
     mid_string = args.mid_string
 
+def write_file_cell(fout, flink)
+    fout.write("<td>")
+    if os.path.exists(temp):
+        fout.write("<a href={:s}>{:s}</a></td>\n".format(flink, flink))
+    else:
+        fout.write("NO {:s}".format(flink.upper()))
+
 if args.create_html or args.create_launch_html:
-    print("This only creates the HTML. If you want to run things, remove the -h flag.")
     out_html = custom_munge('pals-out-1', 'htm')
     q = [ '-f', '-l', '-d' ]
     my_htm = open(out_html[0], 'w')
     my_htm.write("<html>\n<title>" + out_html[0] + "</title>\n<body>\n")
     my_htm.write("<center><table border=1>\n")
+    my_htm.write("<th>PAL</th><th>ANA</th><th>EDIT-PAL</th><th>EDIT-ANA</th>")
     for i in q:
         for j in q:
             my_htm.write("<tr>")
             z = "pals-out-1{:s}-2{:s}".format(i, j)
             temp_ary = custom_munge(z, 'txt')
-            z2 = "pals-out-1{:s}-2{:s}-ana".format(i, j)
+            z2 = "edit-out-1{:s}-2{:s}-ana".format(i, j)
             temp_ary_2 = custom_munge(z2, 'txt')
-            my_htm.write("<td><a href={:s}>{:s}</a></td>\n".format(temp_ary[0], temp_ary[0]))
-            my_htm.write("<td><a href={:s}>{:s}</a></td>\n".format(temp_ary[1], temp_ary[1]))
+            write_file_cell(my_htm, temp_ary[0])
+            write_file_cell(my_htm, temp_ary[1])
+            write_file_cell(my_htm, temp_ary_2[0])
+            write_file_cell(my_htm, temp_ary_2[1])
     my_htm.write("</table></center></body>\n</html>\n")
     my_htm.close()
     print(out_html)
     if args.create_launch_html:
         os.system(out_html[0])
+    else:
+        print("This only creates the HTML. If you want to run things, run the -hl flag and not the -hc flag.")
     exit()
 
 if args.concordance:
