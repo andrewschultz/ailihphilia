@@ -12,6 +12,8 @@ import os
 
 from collections import defaultdict
 
+# variables
+
 wordy = defaultdict(bool)
 lasty = defaultdict(lambda: defaultdict(bool))
 firsty = defaultdict(lambda: defaultdict(bool))
@@ -21,13 +23,30 @@ start_pal = defaultdict(lambda: defaultdict(bool))
 
 def usage():
     print("3 word palindrome searcher.")
-    print("-l = pick up where 3w.txt left off")
+    print("-f = find in 3w2.txt.")
+    print("-q = quick search. Skip begin/end palindromes e.g. ACISODIS/ISODICA.")
+    print("-l = pick up where 3w(2).txt left off")
     print("-m = maximum word length")
     print("-s = skip uneven palindromes e.g. top X spot. Speedup, but may miss a few.")
     print("-e = write progress to STDERR, useful when piping output to a file. (-ne turns it off, default is on)")
     print("-w = warn every X new words (default = {:d}).".format(warning_every_x))
     print("any word = what word to start with.")
     print("-? = this function.")
+    exit()
+
+def search_output(x):
+    output_file = '3w2.txt'
+    count = 0
+    with open(output_file) as file:
+        q = ' ' + x + ' '
+        for line in file:
+            if q in line:
+                print(line.strip())
+                count = count + 1
+    if count == 0:
+        print("Nothing found.")
+    else:
+        print(x, "found", count, "times.")
     exit()
 
 def end_array(x):
@@ -40,7 +59,14 @@ def start_array(x):
         return firsty[x[:2]]
     return firsty[x[:1]]
 
+# return the end-pal or start-pal stuff between the two end words
+# note that if a and b are reverses, I ignore things, because we already have all the palindromes in another file, so that is just duplicate work.
+#
 def pal_conv_hash(a, b):
+    if skip_beginend_palindrome and abs(len(a)-len(b)) < 2:
+        c = a + b
+        if c == c[::-1]:
+            return
     if len(a) > len(b):
         if a.startswith(b[::-1]):
             return end_pal[a[len(b):][::-1]]
@@ -120,6 +146,7 @@ ignored = 0
 overall_word_count = 0
 
 # options
+skip_beginend_palindrome = False
 ignore_2_letter_words = True
 start_val = ''
 look_for_last = False
@@ -127,25 +154,32 @@ skip_uneven_palindromes = False
 progress_to_stderr = True
 warning_every_x = 10
 max_word_length = 13
+find_string = ''
 
 # start initialization stuff
 
 if len(sys.argv) > 1:
     count = 1
     while count < len(sys.argv):
+        ll = sys.argv[count].lower()
         if sys.argv[count].isalpha():
             start_val = sys.argv[count].tolower()
-        elif sys.argv[count].lower() == '-?' or sys.argv[count].lower() == '?':
+        elif ll == '-?' or ll == '?':
             usage()
-        elif sys.argv[count].lower() == '-s':
+        elif ll == '-s':
             skip_uneven_palindromes = True
-        elif sys.argv[count].lower() == '-l':
+        elif ll == '-q':
+            skip_beginend_palindrome = True
+        elif ll == '-l':
             look_for_last = True
-        elif sys.argv[count].lower() == '-e':
+        elif ll == '-f':
+            find_string = sys.argv[count+1].lower()
+            search_output(find_string)
+        elif ll == '-e':
             progress_to_stderr = True
-        elif sys.argv[count].lower() == '-ne':
+        elif ll == '-ne':
             progress_to_stderr = False
-        elif sys.argv[count].lower() == '-m':
+        elif ll == '-m':
             try:
                 temp = int(sys.argv[count+1])
                 if temp < 5:
@@ -154,7 +188,7 @@ if len(sys.argv) > 1:
                     max_word_length = temp
             except:
                 print("No valid number after -m. Going to default of", max_word_length)
-        elif sys.argv[count].lower() == '-w':
+        elif ll == '-w':
             try:
                 temp = int(sys.argv[count + 1])
                 if temp < 1:
@@ -167,7 +201,7 @@ if len(sys.argv) > 1:
             count = count + 2
             continue
         else:
-            if sys.argv[count].lower()[0] == '-':
+            if ll[0] == '-':
                 print("Bad flag.")
                 print()
                 usage()
@@ -254,6 +288,9 @@ time_taken = 0
 if progress_to_stderr:
     sys.stderr.write("Printing progress every {:d} starting words.\n".format(warning_every_x))
 
+last_start = ""
+last_end = ""
+
 for a in sk:
     if a < start_val:
         ignored = ignored + 1
@@ -272,8 +309,11 @@ for a in sk:
         if q:
             # print(a, b, q)
             for c in sorted(q):
+                count = count + 1
                 this_word_count = this_word_count + 1
-                print(this_word_count, count, a, c, b, "=", a + c + b)
+                print(this_word_count, count, a, c, b, "=", a + c + b + ("" if a == last_start and b == last_end else " (*)"))
+                last_start = a
+                last_end = b
 
 t3 = time.time() - bt
 print(t3, "seconds for all 3-word palindromes.")
