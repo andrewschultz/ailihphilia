@@ -37,18 +37,18 @@ part the tables
 
 table of attackings
 randtxt
-"Harm! Rah!"
-"Ole! Lo!"
+"D00d!"
+"Dude! Dud."
 
 table of burnies
 randtxt
 "Burn! Rub!"
-"Rah! Char!"
+"Igniting, I!"
 
 table of noesies
 randtxt
+"Derided! Ired!"
 "Emo, me."
-"Hm. SMH."
 
 table of nothings
 randtxt
@@ -62,13 +62,13 @@ randtxt
 
 table of waittxt
 randtxt
+"Deed, deed, deed!"
 "Don't nod!"
-"Gall! Lag!"
 
 table of yessies
 randtxt
 "Nod on!"
-"Plus? Ulp."
+"Pip, pip!"
 
 Put it Up debug Tables ends here.
 

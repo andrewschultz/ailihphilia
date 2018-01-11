@@ -1,5 +1,7 @@
 "Put it Up" by Andrew Schultz
 
+[blurb = A *GASP* SAGA]
+
 the story headline is "Yo, Joy! Wow!"
 
 the release number is 1.
@@ -393,7 +395,7 @@ Dave	"Dave's not useful, man."
 table of useons [xxuse]
 use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	babble
 trap art	reifier	party trap	--	--	true	true	false	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
-poo coop	gnu dung	--	--	--	true	true	true	"The gnu dung is sucked towards the poo coop. In fact, it forms a disturbing arc (I'll let you guess what type) as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
+poo coop	gnu dung	--	--	--	true	true	true	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
 gold log	rotator	dork rod	--	--	true	true	false	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 dork rod	tao boat	--	--	--	true	true	false	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
 
@@ -586,7 +588,14 @@ Mont Nom is south of Dumb Mud. It is in Grebeberg.
 
 book Ooze Zoo
 
-Ooze Zoo is south of Seer Trees. It is in Grebeberg.
+Ooze Zoo is south of Seer Trees. It is in Grebeberg. "[if etage gate is in ooze zoo]An etage gate blocks the way south--and probably will until you prove yourself worthy to get by. But you can still go back north[else]You can go north to the Seer Trees, or south to [s-dray][end if]."
+
+to say s-dray:
+	say "[if dray yard is visited]Dray Yard[else]a yard[end if]"
+
+chapter etage gate
+
+the Etage Gate is scenery in Ooze Zoo.
 
 book Dray Yard
 
@@ -738,19 +747,17 @@ book State Tats
 
 State Tats is north of Yawn Way. It is in Yelpley. "The only way out is north."
 
-Marge Pegram is a person in State Tats. "'Hi! I'm Marge Pegram."
-
 the trap art is a thing in State Tats. "Some trap art sits here. It's free. You might as well take it.". description is "The trap art depicts a bunch of nasty, dirty animals being trapped--it's not a real trap, but maybe it could become one."
 
-book Dirge Grid
+book Toll Lot
 
-Dirge Grid is east of Emo Dome. It is in Yelpley. "This is another intersection in Not-Kook-Toon where you can go all four directions."
+Toll Lot is east of Emo Dome. It is in Yelpley. "While it's easy enough to go back east, you may have to do something special to go north or south."
 
 [snuff funs]
 
-a tame mat is in Dirge Grid. "A tame mat reading BON SNOB is in your way to the south."
+a tame mat is in Toll Lot. "A tame mat reading BON SNOB is in your way to the south."
 
-check going south in Dirge Grid when tame mat is in Dirge Grid:
+check going south in Toll Lot when tame mat is in Toll Lot:
 	say "An upper-crust voice emits from the tame mat, which curls up: 'DA CAD!'[paragraph break]Maybe if it were more glued to the ground." instead;
 
 check taking tame mat:
@@ -758,7 +765,7 @@ check taking tame mat:
 
 book ned's den
 
-Ned's Den is north of Dirge Grid. It is in Yelpley.
+Ned's Den is north of Toll Lot. It is in Yelpley.
 
 Ned is a person in Ned's Den.
 
@@ -785,7 +792,7 @@ tamping is an action applying to nothing.
 
 understand the command "tamp mat" as something new.
 
-understand "tamp mat" as tamping when player is in Dirge Grid and tame mat is in Dirge Grid.
+understand "tamp mat" as tamping when player is in Toll Lot and tame mat is in Toll Lot.
 
 carry out tamping:
 	say "Boom! That's the idea. With the mat tamped, you walk across, and there's no more nonsense.";
@@ -793,13 +800,15 @@ carry out tamping:
 	score-inc;
 	the rule succeeds;
 
-understand "tame mat" as a mistake ("That's not quite what to do. This is a game about palindromes, not homonyms.") when player is in Dirge Grid and tame mat is in Dirge Grid.
+understand "tame mat" as a mistake ("That's not quite what to do. This is a game about palindromes, not homonyms.") when player is in Toll Lot and tame mat is in Toll Lot.
 
 book Bon Snob
 
-Bon Snob is south of Dirge Grid. It is in Yelpley.
+Bon Snob is south of Toll Lot. It is in Yelpley.
 
 Nat's Tan is a thing in Bon Snob. "A container of something called Nat's Tan is here."
+
+Le Falafel is a proper-named thing in Bon Snob.
 
 chapter standing
 
@@ -893,11 +902,13 @@ book Drawl Ward
 
 Drawl Ward is south of Swept Pews. It is in Yelpley.
 
-book Le Falafel
+Marge Pegram is a person in Drawl Ward. "'Hi! I'm Marge Pegram."
 
-Le Falafel is east of Drawl Ward. It is in Yelpley.
+book Dirge Grid
 
-The gate tag is in Le Falafel.
+Dirge Grid is east of Drawl Ward. It is in Yelpley.
+
+The gate tag is in Dirge Grid.
 
 book Dope Pod
 
