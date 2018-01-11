@@ -484,6 +484,7 @@ randtxt
 
 table of noesies
 randtxt
+"Derided! Ired!"
 "Emo, me."
 "Hm. SMH."
 "No way? Aw, ON!"
@@ -508,6 +509,7 @@ randtxt
 "(R)rude! Dur(r)!"
 "Bad? A dab!"
 "Dammit, I'm mad!"
+"Dark. Rad!"
 "Hot! Oh!"
 "Kook!"
 "Not on!"
@@ -524,6 +526,7 @@ randtxt
 "Don't nod!"
 "Gall! Lag!"
 "GO, dog!"
+"A lag gala!"
 "Panic? I nap!"
 
 table of yessies
