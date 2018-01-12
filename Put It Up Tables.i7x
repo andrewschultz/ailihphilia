@@ -474,6 +474,7 @@ randtxt
 "Pal, SLAP?!"
 "Pop!"
 "Pow-op! Pow-op!"
+"Tiff. Fit."
 "Ye KO? Pokey!"
 "Yob! Boy."
 
@@ -490,6 +491,7 @@ randtxt
 "Hm. SMH."
 "No way? Aw, ON!"
 "Oo! Noo!"
+"Woe meow."
 "Ye Po['] Nopey."
 
 table of nothings
@@ -502,6 +504,7 @@ randtxt
 "Noise lesion."
 "Peep?!"
 "Spill, lips!"
+"Too moot."
 "Ya, no! Nay!"
 "Yo! Coy?"
 
@@ -516,7 +519,9 @@ randtxt
 "Kook!"
 "Not on!"
 "Pah, chap!"
+"Speel? Bleeps."
 "Tact, cat!"
+"Tic? Illicit."
 "Tut!"
 "We mew!"
 "Y'booby!"
@@ -530,12 +535,16 @@ randtxt
 "GO, dog!"
 "A lag gala!"
 "Panic? I nap!"
+"Resume, muser!"
+"Stare? Rats!"
+"Truce, curt."
 
 table of yessies
 randtxt
 "Nod on!"
 "Pip, pip!"
 "Plus? Ulp."
+"Wahoo! Haw!"
 "Yay!"
 
 Put It Up Tables ends here.

@@ -41,7 +41,7 @@ def modify_notes(s):
         print("No modification of possible cut/pasted lines for notes file.")
     else:
         print(lines_changed, "lines changed scanning", notes_file_to_read)
-        filecpy(notetmp, notes_file_to_read)
+        copy(notetmp, notes_file_to_read)
     if modify_only:
         print("Bailing.")
         exit()
