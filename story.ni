@@ -1,6 +1,6 @@
 "Put it Up" by Andrew Schultz
 
-[blurb = A *GASP* SAGA]
+[blurb for comp = A *GASP* SAGA]
 
 the story headline is "Yo, Joy! Wow!"
 
@@ -27,6 +27,7 @@ the poo coop is a thing.
 the bro orb is a thing.
 
 to win-finally:
+	asay "You head off to saner arenas for a while, just to reflect on all you did.";
 	end the story finally saying "Deified! Deified!"
 
 chapter trucking
@@ -61,7 +62,7 @@ Odd Do is a region. max-score of Odd Do is 3.
 
 [El Live Ville is a region.]
 
-section because I'm too lazy to remember how to order the when play begins rules
+section because I'm too lazy to remember how to order the when play begins rules - not for release
 
 when play begins:
 	now ignore-wait is true;
@@ -114,6 +115,10 @@ when play begins:
 	now left hand status line is "[location of player] ([mrlp])";
 	repeat through table of all randoms:
 		sort tabnam entry in random order;
+	say "It just says GAME MAG. That's pretty generic. And not particularly useful. You have a whole backlog of games! But you start to page through.[wfak]";
+	say "EVIL'S LIVE![wfak]";
+	say "LIVE DEVIL!"[wfak]";
+	say "BOSSES! SOB!"[wfak]";
 
 volume parser errors operations and death
 
@@ -139,14 +144,14 @@ after reading a command:
 part dying
 
 to die:
-	end the story saying "Offed? Deffo!"
+	end the story saying "Offed? Deffo! / Story Rots! / Stung! Nuts!"
 
 volume verbs
 
 chapter undoing
 
 report undoing an action:
-	say "[one of]Nixin[']...[or][']S poor. Oops![in random order]";
+	say "[one of]Nixin[']...[or][']S poor. Oops![or]Time: remit[in random order]";
 	rule succeeds.
 
 chapter procedurality
@@ -440,7 +445,7 @@ instead of entering Evac Ave:
 elf-warn is a number that varies.
 
 check going south in Fun 'Nuf:
-	if back cab is in Evac Ave, enter back cab instead;
+	if back cab is in Evaded Ave, try entering back cab instead;
 	if Flee Elf is in ZeroRez:
 		say "The Evac Ave is gone. I guess you're stuck questing, here." instead;
 	if elf-warn < 3, increment elf-warn;
@@ -501,11 +506,15 @@ the tile lit is scenery in Fun 'Nuf. "GREBEBERG has an arrow pointing west by it
 
 check taking tile lit: say "It's sort of embedded into the ground. It looks nice there, anyway, and it's useful for information."
 
+chapter elite tile
+
+the elite tile is scenery in Fun 'Nuf. "The elite tile has replaced the tile lit."
+
 chapter back cab
 
 The back cab is a thing. description is "It's here and waiting to take you, uh, back.". "A back cab waits here to the south, where the Evac-Ave once was, to take you home."
 
-instead of entering back cab win-finally instead;
+instead of entering back cab, win-finally instead;
 
 part Grebeberg
 
@@ -702,8 +711,13 @@ the reifier is a workable in worn row.
 the reviver is a workable in worn row.
 the rotator is a workable in worn row.
 
-instead of inserting it into a workable, try useoning noun on second noun instead;
-instead of putting it on a workable, try useoning noun on second noun instead;
+instead of inserting into:
+	if second noun is a workable, try useoning noun with second noun instead;
+	continue the action;
+
+instead of putting on:
+	if second noun is a workable, try useoning noun with second noun instead;
+	continue the action;
 
 instead of switching on a workable, say "You need to USE something with [the noun]."
 
@@ -822,7 +836,7 @@ carry out standing:
 	if noun is nat's tan:
 		say "It's tough, but you manage to stand the icky Nat's Tan as you pour it on yourself.";
 		score-inc;
-		now nat's tan is in lalaland.
+		now nat's tan is in ZeroRez;
 	the rule succeeds.
 
 book Evaded Ave
@@ -879,7 +893,7 @@ check going to emo dome:
 		now emo-dir is noun;
 
 check going north in emo dome:
-	say "The Civic Level is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready." instead;
+	say "The Civic Level is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by 'Go jog!' and think, hang? Nah." instead;
 	if Civic Level is unvisited, say "You step into what may be your final challenge in Yelpley..."
 
 book civic level
@@ -985,7 +999,7 @@ check aiding:
 		reg-inc odd do;
 		now dial-yet is true;
 	if dial-yet is false:
-		say ""Aid... aid...[paragraph break]";
+		say "Aid... aid...[paragraph break]";
 	if done-here, say "You're done here." instead;
 	say "Thinking...";
 
