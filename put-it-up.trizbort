@@ -16,12 +16,14 @@ Initially sent to source code/repository November 2017.</history>
 		</room>
 		<room id="3" name="Yawn Way" subtitle="" x="-224" y="-192" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="4" name="State Tats" subtitle="Art Xtra" x="-224" y="-320" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Marge Pegram|Trap Art</objects>
+			<objects>Trap Art</objects>
 		</room>
 		<room id="5" name="Yell Alley" subtitle="" x="-64" y="-448" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="6" name="Bon Snob" subtitle="" x="96" y="-64" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="7" name="Emo Dome" subtitle="" x="-64" y="-192" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="8" name="Dirge Grid" subtitle="" x="96" y="-192" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="6" name="Bon Snob" subtitle="" x="96" y="-64" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects>Le Falafel</objects>
+		</room>
+		<room id="7" name="Emo Dome" subtitle="" x="-64" y="-160" w="96" h="32" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="8" name="Toll Lot" subtitle="" x="96" y="-192" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>|Tame Mat</objects>
 		</room>
 		<room id="9" name="Cold Loc" subtitle="" x="-544" y="-320" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
@@ -68,7 +70,7 @@ Initially sent to source code/repository November 2017.</history>
 		<room id="25" name="Civic Level" subtitle="" x="-64" y="-320" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects at="n" custom="yes" customRight="-16" customDown="0">MADAM</objects>
 		</room>
-		<line id="26" name="" description="">
+		<line id="26" name="" description="" style="dashed">
 			<dock index="0" id="25" port="s" />
 			<dock index="1" id="7" port="n" />
 		</line>
@@ -76,7 +78,7 @@ Initially sent to source code/repository November 2017.</history>
 			<dock index="0" id="7" port="e" />
 			<dock index="1" id="8" port="w" />
 		</line>
-		<line id="27" name="" description="">
+		<line id="27" name="" description="" style="dashed">
 			<dock index="0" id="8" port="n" />
 			<dock index="1" id="21" port="s" />
 		</line>
@@ -116,7 +118,7 @@ Initially sent to source code/repository November 2017.</history>
 		<room id="39" name="Dumb Mud" subtitle="" x="-704" y="-192" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>Turf Rut</objects>
 		</room>
-		<room id="41" name="Le Falafel" subtitle="" x="96" y="64" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="41" name="Dirge Grid" subtitle="Scrap Arcs" x="96" y="64" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-20" customDown="0">Gate Tag</objects>
 		</room>
 		<room id="43" name="Top Spot" subtitle="" x="-704" y="-448" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
@@ -163,7 +165,9 @@ Initially sent to source code/repository November 2017.</history>
 		<room id="56" name="Dray Yard" subtitle="" x="-544" y="64" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>Line Nil</objects>
 		</room>
-		<room id="57" name="Drawl Ward" subtitle="" x="-64" y="64" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="57" name="Drawl Ward" subtitle="" x="-64" y="64" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects>Marge Pegram</objects>
+		</room>
 		<room id="58" name="Dope Pod" subtitle="" x="-224" y="64" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-12" customDown="0">Radar</objects>
 		</room>

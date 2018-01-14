@@ -538,6 +538,7 @@ randtxt
 "Resume, muser!"
 "Stare? Rats!"
 "Truce, curt."
+"Won't, Now."
 
 table of yessies
 randtxt

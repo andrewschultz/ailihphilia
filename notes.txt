@@ -7,8 +7,6 @@ MADAM
 
 epic-er recipe
 
-Game Mag: Evil, Alive!
-
 Brags Garb:from Stink Knits
 
 Null Illun: book?
@@ -45,17 +43,16 @@ defy fed
 deity tied
 departee traped
 decide diced
-devils lived
 dessert stressed
 Deport! Roped!
 Demand Named
 delivery reviled
 debuts tubed
-Deli, Tiled
+Deli, Tiled: in description of eating place
 desires immiserised
 deific nancified
 deer greed
-degauss assuaged
+degauss assuaged: another possibility
 detinue united
 desks ed
 decal placed
@@ -76,23 +73,21 @@ Eel Flee
 Eel Glee
 egresses serge
 egoless eloge
-exult luxe
+exult luxe: where to get extra riches
 gazelle zag
 gandered nag
 Gaters Retag
 gemini meg
 
-FRUSH SURF: appears in the border somewhere
+FRUSH SURF: appears in the west border of Grebebergsomewhere
 Gigolo Gig: Book
 
 Girt Rig
 
 goth tog: takes pictures
 
-Gorge Grog: can drink
+Gorge Grog: can drink, name of bar?
 
-Go Jog!: enter Civic Level
-Hang? Nah: enter Civic Level
 harm rah
 
 FOODS=======
@@ -473,7 +468,6 @@ Bony nob!: start of game
 Bilgy, glib.
 blub bulb
 boldened lob!
-BOSSES SOB!!!!!!!: you yell
 Bolt? Lob
 
 hallot ayatollah
@@ -773,7 +767,6 @@ sam mommas
 sam enemas
 sam edemas
 sawdered was
-saner arenas: where to go at the end
 saccule feluccas
 salad alas
 sati vitas
@@ -857,7 +850,8 @@ slate metals
 sleepy peels
 slangish signals
 smarty trams
-Smart Rams:Mark Ram 9261 smooth + tooms ~ PALINDROME.
+Smart Rams:Mark Ram
+smooth tooms
 snooty toons
 sneer greens
 snack cans
@@ -928,7 +922,6 @@ stile lits
 sterol florets
 stave vats
 stress asserts
-Story rots:game end
 Stung! Nuts!
 stride dirts
 stir grits
@@ -943,7 +936,8 @@ sum us:sum emus
 sublevel bus:transports you somewhere
 sugar tragus
 Suede Us:suede deus
-sun gnus:sun on us10387 sullage + gallus ~ PALINDROME.
+sun gnus:sun on us
+10387 sullage + gallus ~ PALINDROME.
 swarm raws
 swardy draws
 sword rows
@@ -987,14 +981,12 @@ tinkers reknit
 tie it
 tiara it
 tilery relit
-timer emit
 tip poppit
 timed emit
 tile lit
 tiki kit
 tix exit
 tides edit
-Time: Remit!
 Tipsy Spit
 tire merit
 tosses sot
@@ -1037,7 +1029,6 @@ welsh slew
 went new
 well lew
 wonks know
-Won't, Now.
 worth trow
 wondered now
 wolf low
@@ -1060,15 +1051,6 @@ yodeled oy
 Yo Boy
 ZAP, spaz!
 zest sez
-
-
-
-
-
-
-
-
-
 
 Pat's Tap = bar
 
