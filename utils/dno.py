@@ -19,6 +19,7 @@ modify_notes = True
 twice_okay = False
 launch_after = True
 ignore_word_bounds = False
+open_first = False
 
 def modify_notes(s):
     lines_changed = 0
@@ -55,6 +56,7 @@ def usage():
     print("    -ln/-nl = don't. Default = on.")
     print("-i = ignore word boundaries. To catch stuff like 'da bad' with 'neda baden'.")
     print("    -in/-ni = don't. Default = off.")
+    print("-f = open first repetition, -fn/-nf = open last.")
     print("-?/-u = this usage statement")
     exit()
 
@@ -95,7 +97,7 @@ def check_notes(s):
                     if q in pals.keys():
                         print("Duplicate", q, line_count, "from", pals[q], "in notes file")
                         if not open_line:
-                            open_line = pals[q]
+                            open_line = pals[q] if open_first else line_count
                         dupes = dupes + 1
                     else:
                         q2 = q.strip()
@@ -148,6 +150,10 @@ while count < len(sys.argv):
         modified_yet = True
         modify_notes("put-it-up")
         exit()
+    elif l == 'f':
+        open_first = True
+    elif l == 'fn' or l == 'nf':
+        open_first = False
     elif l == 'i':
         ignore_word_bounds = True
     elif l == 'in' or l == 'ni':
