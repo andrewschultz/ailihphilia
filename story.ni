@@ -66,11 +66,11 @@ Odd Do is a region. max-score of Odd Do is 3.
 
 [El Live Ville is a region.]
 
-section because I'm too lazy to remember how to order the when play begins rules - not for release
+check going (this is the reject noncardinal directions rule):
+	if noun is diagonal, say "You don't need diagonal directions in this game." instead;
+	if noun is up or noun is down, say "You never need to go up or down in this game." instead;
 
-when play begins:
-	now ignore-wait is true;
-	now debug-state is true;
+the reject noncardinal directions rule is listed first in the check going rulebook.
 
 volume the player
 
@@ -452,6 +452,10 @@ to say fe1:
 
 to say fe2:
 	now fleece-elf is true;
+
+check going in Fun 'Nuf:
+	if Flee Elf is in Fun 'Nuf:
+		if noun is west or noun is east, say "'Keen! Eek!' the Flee Elf stops you. 'You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley.'" instead;
 
 chapter Evac Ave
 
@@ -1194,3 +1198,10 @@ carry out wining:
 	end the story finally;
 	the rule succeeds;
 
+volume internal testing - not for release
+
+the debug tweaks rule is listed first in the when play begins rulebook.
+
+when play begins (this is the debug tweaks rule):
+	now ignore-wait is true;
+	now debug-state is true;
