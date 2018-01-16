@@ -10,7 +10,7 @@ include Trivial Niceties Z-Only by Andrew Schultz.
 
 include Basic Screen Effects by Emily Short.
 
-include Put It Up Tables by Andrew Schultz.
+include Put It Up Debug Tables by Andrew Schultz.
 
 include undo output control by Erik Temple.
 
@@ -27,8 +27,12 @@ the poo coop is a thing.
 the bro orb is a thing.
 
 to win-finally:
-	asay "You head off to saner arenas for a while, just to reflect on all you did.";
+	say "You head off to saner arenas for a while, just to reflect on all you did.";
 	end the story finally saying "Deified! Deified!"
+
+the stink knits are a thing.
+
+the brag garb is a thing.
 
 chapter trucking
 
@@ -56,7 +60,7 @@ Grebeberg is a region. max-score of Grebeberg is 3.
 
 Dim Mid is a region. max-score of Dim Mid is 2.
 
-Yelpley is a region. max-score of Yelpley is 7.
+Yelpley is a region. max-score of Yelpley is 9.
 
 Odd Do is a region. max-score of Odd Do is 3.
 
@@ -115,10 +119,10 @@ when play begins:
 	now left hand status line is "[location of player] ([mrlp])";
 	repeat through table of all randoms:
 		sort tabnam entry in random order;
-	say "It just says GAME MAG. That's pretty generic. And not particularly useful. You have a whole backlog of games! But you start to page through.[wfak]";
-	say "EVIL'S LIVE![wfak]";
-	say "LIVE DEVIL!"[wfak]";
-	say "BOSSES! SOB!"[wfak]";
+	say "It just says GAME MAG. That's pretty generic. And not particularly useful. You have a whole backlog of games! But you start to page through.[wfak-d]";
+	say "EVIL'S LIVE![wfak-d]";
+	say "LIVE DEVIL![wfak-d]";
+	say "BOSSES! SOB![wfak-d]";
 
 volume parser errors operations and death
 
@@ -151,7 +155,7 @@ volume verbs
 chapter undoing
 
 report undoing an action:
-	say "[one of]Nixin[']...[or][']S poor. Oops![or]Time: remit[in random order]";
+	say "[one of]Nixin[']...[or][']S poor. Oops![or]Time: remit.[in random order]";
 	rule succeeds.
 
 chapter procedurality
@@ -403,6 +407,11 @@ trap art	reifier	party trap	--	--	true	true	false	"The trap art crunches inside 
 poo coop	gnu dung	--	--	--	true	true	true	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
 gold log	rotator	dork rod	--	--	true	true	false	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 dork rod	tao boat	--	--	--	true	true	false	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
+stink knits	brag garb	--	--	wear-garb rule	true	true	false	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
+
+this is the wear-garb rule:
+	now player wears the brag garb;
+	the rule succeeds;
 
 volume rooms
 
@@ -458,11 +467,15 @@ check going south in Fun 'Nuf:
 
 chapter Pact Cap
 
-The Pact Cap is a thing in Fun 'Nuf. "A pact cap sits here. You need to find the right way to accept it to begin your quest."
+The Pact Cap is a wearable thing in Fun 'Nuf. "A pact cap sits here. You need to find the right way to accept it to begin your quest."
+
+check taking off the pact cap: say "No, you...uh, made a pact." instead;
 
 cap-pace is a truth state that varies. cap-pace is false.
 
 cap-ever-pace is a truth state that varies. cap-ever-pace is false.
+
+check taking pact cap: say "The Flee Elf shakes its head. 'Too direct. You're not doing it right. Don't [b]TAKE[r] it, precisely.'" instead;
 
 section pack cap
 
@@ -476,7 +489,7 @@ carry out packing:
 	if the player has the pact cap, say "You already did.";
 	say "Yes, that's how to get the cap. You are ready to go! The Flee Elf salutes you and becomes, err, the FLED Elf.";
 	move flee elf to ZeroRez;
-	now player has the cap;
+	now player wears the cap;
 	now all cappy rooms are available;
 	score-inc;
 	the rule succeeds;
@@ -697,11 +710,12 @@ understand "evade dave" as a mistake ("Dave's not here, man!") when player is no
 
 book Worn Row
 
-Worn Row is west of My Gym. It is in Yelpley. "A reifier, a reviver and a rotator are all here. They look [if workrow is false]in[end if]operable at the moment."
+Worn Row is west of My Gym. It is in Yelpley. "[if workrow is true]Three machines are here[else if wordrow is true]A library is here, just full of books[else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if]."
 
-printed name of Worn Row is "[if workrow is true]Work[else]Worn[end if] Row"
+printed name of Worn Row is "[if wordrow is true]Word[else if workrow is true]Work[else]Worn[end if] Row"
 
 understand "work row" and "work" as Worn Row when workrow is true.
+understand "word row" and "word" as Worn Row when wordrow is true.
 
 Ian is a person in Worn Row.
 
@@ -710,6 +724,8 @@ a workable is a kind of thing. a workable has a number called useleft. useleft o
 the reifier is a workable in worn row.
 the reviver is a workable in worn row.
 the rotator is a workable in worn row.
+
+a book is a kind of thing.
 
 instead of inserting into:
 	if second noun is a workable, try useoning noun with second noun instead;
@@ -745,17 +761,56 @@ workrowing is an action applying to nothing.
 
 understand the command "workrow" as something new.
 
-understand "work row" and "workrow" as workrowing when workrow is false.
+understand "work row" and "workrow" as workrowing when player is in worn row.
 
 workrow is a truth state that varies.
 
+ever-workrow is a truth state that varies.
+
 carry out workrowing:
+	if ian is in worn row, say "That'll work when Ian is gone." instead;
+	if workrow is true, say "You're already in Work Row." instead;
 	now workrow is true;
-	say "All the machines seem a bit shinier now. Yay!";
-	score-inc;
+	now wordrow is false;
+	say "Three machines [one of][or]re[stopping]appear[if wordrow is true], replacing the books[end if].";
+	if ever-workrow is false, score-inc;
+	now ever-workrow is true;
+	now all workables are in worn row;
+	now all books in worn row are in TempMet;
 	the rule succeeds;
 
-understand "worn row" and "wornrow" as a mistake ("No need to revert things.") when player is in Swept Pews and workrow is true.
+understand "worn row" and "wornrow" as a mistake ("No need to revert things.") when shouldnt-revert.
+
+to decide whether shouldnt-revert:
+	unless player is in Worn Row, no;
+	if workrow is false and wordrow is false, no;
+	yes;
+
+chapter wordrowing
+
+wordrowing is an action applying to nothing.
+
+understand the command "wordrow" as something new.
+
+understand "word row" and "wordrow" as wordrowing when player is in worn row.
+
+wordrow is a truth state that varies.
+
+ever-wordrow is a truth state that varies.
+
+carry out wordrowing:
+	if ian is in worn row, say "That'll work when Ian is gone." instead;
+	if wordrow is true, say "You're already in Word Row." instead;
+	now wordrow is true;
+	now workrow is false;
+	now all workables are in TempMet;
+	if ever-wordrow is false, score-inc;
+	now ever-wordrow is true;
+	say "A bunch of books appear.";
+	now all books in TempMet are in Worn Row;
+	the rule succeeds;
+
+understand "worn row" and "wornrow" as a mistake ("No need to revert things.") when player is in Swept Pews and workrow is false and wordrow is false.
 
 book State Tats
 
@@ -973,11 +1028,13 @@ when play begins:
 
 volume metarooms
 
-[there is a little bit of cute code here. Odd Do's score = weird stuff, but it's also where ZeroRez, the collect-all room for used objects, goes.]
+[there is a little bit of cute code here. Odd Do's score = weird stuff, but it's also where ZeroRez, the collect-all room for used objects, goes. TempMet is for items that temporarily disappear.]
 
 Odd Do is a region.
 
 ZeroRez is a room in Odd Do.
+
+TempMet is a room in Odd Do.
 
 volume aiding
 
