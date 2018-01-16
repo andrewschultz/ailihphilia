@@ -114,15 +114,18 @@ part when play begins
 when play begins:
 	repeat with Q running through regions:
 		increase maximum score by max-score of Q;
-	if debug-state is true, say "Maximum score is [maximum score].";
+	if debug-state is true, say "DEBUG NOTE: Maximum score is [maximum score].";
 	now right hand status line is "[cur-score of mrlp]/[max-score of mrlp] [score]/[maximum score]";
 	now left hand status line is "[location of player] ([mrlp])";
 	repeat through table of all randoms:
 		sort tabnam entry in random order;
-	say "It just says GAME MAG. That's pretty generic. And not particularly useful. You have a whole backlog of games! But you start to page through.[wfak-d]";
+	say "You check your mail as you go out to the grocery store. A junk magazine! It's been so long since you got one, you're almost intrigued.[wfak-d]";
+	say "It just says GAME MAG. But the cover isn't telling you to actually buy anything, so you look inside. You have a whole backlog of games, but you can just recycle it when you get to the store.[wfak-d]";
+	say "Nothing really catches your mind until you see a DARER AD. It's really all caps, and it has a lot of messages.certainly loud.[wfak-d]";
 	say "EVIL'S LIVE![wfak-d]";
 	say "LIVE DEVIL![wfak-d]";
 	say "BOSSES! SOB![wfak-d]";
+	say "Then you hear a voice say 'Pass, sap!' You look up, and you're no longer on the way to the store. You're somewhere else. With someone else: a Flee Elf, who looks at you and says 'You'll do, I guess. The first thing to do is, figure how to take this cap.'[wfak-d]"
 
 volume parser errors operations and death
 
@@ -138,7 +141,13 @@ Rule for printing a parser error when the latest parser error is the i beg your 
 chapter unrecognized verb
 
 Rule for printing a parser error when the latest parser error is the didn't understand error: [?? if you are in a guess the verb zone, this should be different]
-	say "I didn't recognize that action. You can type VERB or VERBS to get a list of them.";
+	say "[if gtv]You do need a special verb here, but not that one. It may not be a standard one, but given the game's theme, I bet you can figure it out. If youwant standard verbs, y[else]I didn't recognize that action. Y[end if]ou can type VERB or VERBS to get a list of them.";
+
+to decide whether gtv:
+	if ian is in location of player, yes;
+	if dave is in location of player, yes;
+	if curt is in location of player, yes;
+	no;
 
 part after command
 
