@@ -66,12 +66,6 @@ Odd Do is a region. max-score of Odd Do is 3.
 
 [El Live Ville is a region.]
 
-check going (this is the reject noncardinal directions rule):
-	if noun is diagonal, say "You don't need diagonal directions in this game." instead;
-	if noun is up or noun is down, say "You never need to go up or down in this game." instead;
-
-the reject noncardinal directions rule is listed first in the check going rulebook.
-
 volume the player
 
 the player carries the Darer Ad.
@@ -229,10 +223,13 @@ chapter verbing
 
 verbing is an action applying to nothing.
 
+understand the command "v" as something new.
 understand the command "verb" as something new.
 understand the command "verbs" as something new.
 
 understand "verbs" as verbing.
+understand "verb" as verbing.
+understand "v" as verbing.
 
 carry out verbing:
 	say "The four basic directions (N, S, E, W) are the main ones, along with USE, in order to get through the game. Also, in some places, specific verbs will be needed. None are terribly long, and---well, there is a pattern to them.";
@@ -271,6 +268,12 @@ check going (this is the new generic going reject rule):
 definition: a direction (called d) is viable:
 	if the room d of location of player is nowhere, no;
 	yes;
+
+check going (this is the reject noncardinal directions rule):
+	if noun is diagonal, say "You don't need diagonal directions in this game." instead;
+	if noun is up or noun is down, say "You never need to go up or down in this game." instead;
+
+the reject noncardinal directions rule is listed first in the check going rulebook.
 
 chapter smelling
 
@@ -428,7 +431,9 @@ part Mid Dim
 
 book Fun 'Nuf
 
-Fun 'Nuf is a room in Mid Dim. "Some tile lit is carved out here, describing what is west and east."
+Fun 'Nuf is a room in Mid Dim. "[if elite tile is in fun 'nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south[else]Some tile lit is carved out here, describing what is the various directions[end if]."
+
+the north tron is scenery. "It seems to have pushed a passage north here in Fun [']Nuf. Do you have the guts to follow it to your destiny?"
 
 chapter Flee Elf
 
@@ -453,30 +458,27 @@ to say fe1:
 to say fe2:
 	now fleece-elf is true;
 
-check going in Fun 'Nuf:
-	if Flee Elf is in Fun 'Nuf:
-		if noun is west or noun is east, say "'Keen! Eek!' the Flee Elf stops you. 'You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley.'" instead;
-
 chapter Evac Ave
 
 Evac Ave is scenery in Fun 'Nuf. "Evac Ave leads back to where you were."
 
-instead of entering Evac Ave:
-	try going south;
+instead of entering Evac Ave, try going south.
 
 elf-warn is a number that varies.
 
-check going south in Fun 'Nuf:
-	if back cab is in Evaded Ave, try entering back cab instead;
-	if Flee Elf is in ZeroRez:
-		say "The Evac Ave is gone. I guess you're stuck questing, here." instead;
-	if elf-warn < 3, increment elf-warn;
-	say "[if elf-warn is 1]The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go[else if elf-warn is 2]The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap[else]The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else[end if].";
-	if elf-warn < 3, the rule succeeds;
-	say "[line break]Do you still wish to go through Evac Ave and turn your back on adventure?";
-	if the player yes-consents:
-		say "You walk south past Evac Ave through the Elim-Mile, which removes all your memories of your brief time adventuring.";
-		end the story saying "NOWT WON";
+check going in Fun 'Nuf:
+	if noun is south:
+		if Flee Elf is in ZeroRez, say "The Evac Ave is gone. I guess you're stuck questing, here." instead;
+		if elf-warn < 3, increment elf-warn;
+		say "[if elf-warn is 1]The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go[else if elf-warn is 2]The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap[else]The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else[end if].";
+		if elf-warn < 3, the rule succeeds;
+		say "[line break]Do you still wish to go through Evac Ave and turn your back on adventure?";
+		if the player yes-consents:
+			say "You walk south past Evac Ave through the Elim-Mile, which removes all your memories of your brief time adventuring.";
+			end the story saying "NOWT WON";
+	if Flee Elf is in Fun 'Nuf:
+		if noun is west or noun is east, say "'Keen! Eek!' the Flee Elf stops you. 'You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley.'" instead;
+	if noun is north and north tron is not in Fun 'Nuf, say "Not until you built the North-Tron." instead;
 
 chapter Pact Cap
 
@@ -528,13 +530,13 @@ carry out paceing:
 
 chapter tile lit
 
-the tile lit is scenery in Fun 'Nuf. "GREBEBERG has an arrow pointing west by it. NOT-DUD-TON has an arrow pointing "
+the tile lit is scenery in Fun 'Nuf. "It's a rough compass, with GREBEBERG west by it, YELPLEY east, EVAC AVE south and DIRGE GRID north. You can't seem to go [if flee elf is in ZeroRez]south and [end if]north, though."
 
 check taking tile lit: say "It's sort of embedded into the ground. It looks nice there, anyway, and it's useful for information."
 
 chapter elite tile
 
-the elite tile is scenery in Fun 'Nuf. "The elite tile has replaced the tile lit."
+the elite tile is scenery in Fun 'Nuf. "Done? Nod![line break]Nif-T-Fin!"
 
 chapter back cab
 
