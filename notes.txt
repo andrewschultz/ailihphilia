@@ -2,18 +2,14 @@ It doesn't get much more generic than "put it up."
 
 3 bad people:
 DIKTAT KID
-YUGE GUY
+YUGE GUY: "Believe me! Let me believe!"
 MADAM
+
+DNA Band:create DNA Hand
 
 USE SAGE GAS ON TENET
 
-Keen! Eek!
-
 epic-er recipe
-
-Null Illun: book?
-
-Worn Row could become Word Row or Work Row
 
 The Bomb Mob carries TNT. You get it with a Bang-Nab.
 
@@ -82,7 +78,6 @@ Gaters Retag
 gemini meg
 
 FRUSH SURF: appears in the west border of Grebebergsomewhere
-Gigolo Gig: Book
 
 Girt Rig
 
@@ -95,11 +90,10 @@ harm rah
 FOODS=======
 Ufo Tofu
 Gift Fig
+Mayo Yam
 
 Flag Alf
 Flat Alf
-
-Forever Of: book?
 
 Face Decaf
 
@@ -177,8 +171,6 @@ bath tab
 
 Dorm Rod: no, not as cool
 
-Done? Nod: End of Game
-Nif-T-Fin: End of Game
 Deified! Deified!: End of Game
 
 Shahs
@@ -240,8 +232,6 @@ Eh, Cache: if you save the game
 Eh, Tithe
 Elk Cackle
 
-Elite Tile: Tile Lit changes into
-Elate Tale: a sort of book
 El Doodle
 Emir Grime
 
@@ -337,8 +327,6 @@ Loot Stool
 
 Attack, cat? Ta!
 
-TO IDIOT
-
 Hurt! Ruh!
 A Thump, Mutha'!
 Miff 'im!
@@ -356,7 +344,6 @@ REFER as a verb
 
 Dud, bub.
 
-BOOK NAMES?
 Minim
 Sagas
 Solos
@@ -519,7 +506,6 @@ loser cresol
 lo googol
 looters retool
 
-mayo yam
 muy yum
 mark ram
 martini tram: rolls in and provides drink at a bar
@@ -567,7 +553,6 @@ noose soon
 nome lemon
 not a gigaton
 not-a-baton
-north tron: open passage
 noo cocoon
 noveleses elevon
 nongame magnon
@@ -976,7 +961,6 @@ tiara it
 tilery relit
 tip poppit
 timed emit
-tile lit
 tiki kit
 tix exit
 tides edit

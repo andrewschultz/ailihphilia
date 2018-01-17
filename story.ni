@@ -474,7 +474,7 @@ check going in Fun 'Nuf:
 		if elf-warn < 3, the rule succeeds;
 		say "[line break]Do you still wish to go through Evac Ave and turn your back on adventure?";
 		if the player yes-consents:
-			say "You walk south past Evac Ave through the Elim-Mile, which removes all your memories of your brief time adventuring.";
+			say "As the Flee Elf cries 'Fool! Aloof!' you walk south past Evac Ave through the Elim-Mile, which removes all your memories of your brief time adventuring.";
 			end the story saying "NOWT WON";
 	if Flee Elf is in Fun 'Nuf:
 		if noun is west or noun is east, say "'Keen! Eek!' the Flee Elf stops you. 'You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley.'" instead;
@@ -734,13 +734,13 @@ understand "word row" and "word" as Worn Row when wordrow is true.
 
 Ian is a person in Worn Row.
 
+chapter workables
+
 a workable is a kind of thing. a workable has a number called useleft. useleft of a workable is usually 3.
 
 the reifier is a workable in worn row.
 the reviver is a workable in worn row.
 the rotator is a workable in worn row.
-
-a book is a kind of thing.
 
 instead of inserting into:
 	if second noun is a workable, try useoning noun with second noun instead;
@@ -751,6 +751,16 @@ instead of putting on:
 	continue the action;
 
 instead of switching on a workable, say "You need to USE something with [the noun]."
+
+chapter books
+
+a book is a kind of thing.
+
+TO IDIOT is a proper-named book.
+GIGOLO GIG is a proper-named book.
+FOREVER OF is a proper-named book.
+NULL ILLUN is a proper-named book.
+ERA FARE is a proper-named book.
 
 chapter party trap
 
