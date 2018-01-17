@@ -1,3 +1,8 @@
+# 1w.py
+#
+# finds (prospective) palindromes that build on one word
+#
+
 import time
 import sys
 import re
@@ -14,6 +19,7 @@ last_found = defaultdict(int)
 
 pal_list = defaultdict(str)
 
+check_possible_max = 25
 check_possible = True
 only_stdin = False
 
@@ -49,6 +55,7 @@ def usage():
     exit()
 
 def palz(pals):
+    can_increase = False
     possible_starts = {}
     possible_ends = {}
     start_time = time.time()
@@ -63,7 +70,8 @@ def palz(pals):
         loc_end[st] = sorted(end_cand[st[0]].keys())
         loc_start[st] = sorted(start_cand[st[-1]].keys())
     for st in sorted(pals):
-        for l in loc_end[st]:
+        count = 0
+        for l in sorted(loc_end[st], key=lambda x: (len(x), x)):
             x = st + l
             if x == x[::-1]:
                 found[st] = found[st] + 1
@@ -77,9 +85,14 @@ def palz(pals):
                 continue
                 # print("Added", st, l)
             if check_possible:
-                if l.endswith(st[::-1]):
-                    possible_starts[st] = possible_starts[st] + " " + l
-        for l in loc_start[st]:
+                if count <= check_possible_max and l.endswith(st[::-1]):
+                    if count < check_possible_max:
+                        possible_starts[st] = possible_starts[st] + " " + l
+                    else:
+                        can_increase = True
+                    count = count + 1
+        count = 0
+        for l in sorted(loc_start[st], key=lambda x: (len(x), x)):
             y = l + st
             if y == y[::-1]:
                 last_found[st] = last_found[st] + 1
@@ -96,8 +109,12 @@ def palz(pals):
                 # print("Added", l, st)
                 continue
             if check_possible:
-                if l.startswith(st[::-1]):
-                    possible_ends[st] = possible_ends[st] + " " + l
+                if count <= check_possible_max and l.startswith(st[::-1]):
+                    if count < check_possible_max:
+                        possible_ends[st] = possible_ends[st] + " " + l
+                    else:
+                        can_increase = True
+                    count = count + 1
     for x in sorted(found.keys()):
         got_something = False
         if found[x] or possible_ends[x] or possible_starts[x]:
@@ -111,12 +128,16 @@ def palz(pals):
                 print("Words at end of long palindrome starting with {:s}:{:s}".format(x, possible_starts[x]))
         if not got_something:
             print("Nothing found for", x)
+    if can_increase: print("Use -m to increase maximum # of results, currently", check_possible_max)
     end_time = time.time()
     print("Total time taken to extract palindromes: {:.4f} seconds.".format(end_time - start_time))
 
-for x in sys.argv[1:]:
-    xl = x.lower()
-    if x == "-a":
+argcount = 0
+
+while argcount < len(sys.argv) - 1:
+    argcount = argcount + 1
+    xl = sys.argv[argcount].lower()
+    if xl == "-a":
         file_array = [firstfile, lastfile, wordfile]
         continue
     if re.match("^-[wfl]+$", xl):
@@ -125,21 +146,30 @@ for x in sys.argv[1:]:
         if 'l' in xl: file_array.append(lastfile)
         if 'w' in xl: file_array.append(wordfile)
         continue
-    if x == "-c":
+    if xl == "-m":
+        try:
+            check_possible_max = int(sys.argv[argcount+1])
+            argcount = argcount + 1
+        except:
+            print("Tried to change maximum # of listings but didn't give a valid number.")
+        continue
+    if xl == "-c":
         check_possible = True
         continue
-    if x == "-nc":
+    if xl == "-nc":
         check_possible = False
         continue
-    if x == "-i":
+    if xl == "-i":
         only_stdin = True
         continue
-    if x == "-?" or x == "?":
+    if xl == "-?" or xl == "?":
         usage()
-    if not x.replace(",", "").isalpha():
-        print("Invalid flag", x)
+        exit()
+    if not xl.replace(",", "").isalpha():
+        print("Invalid flag", xl)
         usage()
-    for y in x.split(","):
+        exit()
+    for y in xl.split(","):
         if "V" in y:
             for z in ['a','e','i','o','u', 'y']:
                 temp = re.sub("V", z, y)
