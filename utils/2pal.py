@@ -33,6 +33,8 @@ one_letter_jazz = False
 edit_files = False
 sort_output = False
 
+do_reverse = False
+
 # this determines whether or not we should go with the first two letters or just the first one, when brute_force_hashing is false
 twosies = True
 # this is for a quick dumb test
@@ -76,8 +78,9 @@ def optcaps(z):
 def freq_use():
     print("2pal.py -ht(l) = create the HTML tree and launch it")
     print("2pal.py -hc -m and = create an HTML sub-tree for 'and' in the middle")
-    print("2pal.pl -fs f -fe l = run through . The f/l/d can be in a 3x3 matrix of separate commands to get everything.
+    print("2pal.py -fs f -fe l = run through . The f/l/d can be in a 3x3 matrix of separate commands to get everything.")
     print("    If they are in a CSV, then the file name is -f-l-d.")
+    print("2pal.py -fs f,l -fe d -r -fi would send (word) (name) and (name) (word) to separate files.")
 
 def usage():
     print("This is a list of parameters you can send to 2pal.py.")
@@ -98,6 +101,7 @@ def usage():
     print("-d dumb test")
     print("-2 quicken things by using hash tables to match only words with same 2 first/last letters")
     print("-x gives frequent-use examples.")
+    print("-r reverses the main argument.")
     print("-? this usage without a message saying you had an unrecognized parameter. -h gives Python's generated help.")
     exit()
 
@@ -530,4 +534,7 @@ if one_letter_jazz:
         turn_the_crank()
 else:
     turn_the_crank()
+    if do_reverse:
+        (start_files, end_files) = (end_files, start_files)
+        turn_the_crank
 

@@ -263,6 +263,8 @@ chapter going
 the new generic going reject rule is listed before the can't go that way rule in the check going rules.
 
 check going (this is the new generic going reject rule):
+	if noun is out and number of viable directions is 1, try going a random viable direction instead;
+	if noun is inside, say "You don't ever need to use IN in the game. Just the four cardinal directions." instead;
 	unless noun is viable, say "You can only go [list of viable directions] here." instead;
 
 definition: a direction (called d) is viable:
