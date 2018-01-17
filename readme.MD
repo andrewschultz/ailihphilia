@@ -8,6 +8,8 @@ To-do:
 
 * Sort through (f/d/l)/(f/d/l) files.
 * Fix map.
+* Create the beginning, talking about the Diktat Kid, Yuge Guy and Madam.
+* read through 32-redo.txt from 32.py
 
 Utils:
 
