@@ -4,6 +4,7 @@ volume random names
 
 table of random palindrome names
 person-name
+"Abe Keba"
 "Adam Imada"
 "Agnus Unga"
 "Alena Panela"
@@ -471,6 +472,7 @@ randtxt
 "Harm! Rah!"
 "Knock! Conk!"
 "Ole! Lo!"
+"Pah! Whap?"
 "Pal, SLAP?!"
 "Pop!"
 "Pow-op! Pow-op!"

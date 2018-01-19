@@ -1,9 +1,18 @@
+# dno.py checks this against source and cleans this up
+
 It doesn't get much more generic than "put it up."
 
-3 bad people:
-DIKTAT KID
-YUGE GUY: "Believe me! Let me believe!"
-MADAM
+Well, it's still EW.
+
+Spa Maps:Apse Spa, find way through
+
+Ping! Nip.
+
+Go-By Bog: map location, somehow (gobs bog)
+
+Tix Exit: what to go through after the Evac Cave is gone (X-Ite Tix)
+Mask Sam:Mash Sam
+Hank? Nah
 
 DNA Band:create DNA Hand
 
@@ -15,6 +24,7 @@ The Bomb Mob carries TNT. You get it with a Bang-Nab.
 
 Known Wonk
 
+So Memos
 Bolo Lob
 Bosh Sob
 bunk nub
@@ -84,8 +94,8 @@ Girt Rig
 goth tog: takes pictures
 
 Gorge Grog: can drink, name of bar?
+Grog Org: Gorge Grog!
 
-harm rah
 
 FOODS=======
 Ufo Tofu
@@ -98,10 +108,6 @@ Flat Alf
 Face Decaf
 
 Habit, I? Bah
-
-Era Fare
-
-Fool! Aloof!:flee elf
 
 York Roy
 
@@ -133,8 +139,6 @@ Fray! Arf!
 Brace Carb
 
 Eyre Rye
-
-'s Poor. Oops!
 
 Arid Ira
 Zen Inez
@@ -171,8 +175,6 @@ bath tab
 
 Dorm Rod: no, not as cool
 
-Deified! Deified!: End of Game
-
 Shahs
 
 B Reverb
@@ -195,7 +197,7 @@ Muumuu M
 Medicide M
 Nappa N
 N Even
-O Bonobo
+O Bonobo: So Bonobos
 Peewee P
 Petite P
 Trekker T
@@ -353,15 +355,12 @@ Low AWOL
 
 Dartstrad
 
-Toll Lot
-
 rofl for
 gibe big
 
-Sniffins
 A Toyota
 
-NAMES BELOW=====================
+INITIALED NAMES BELOW=====================
 S. Tibbits
 Treger, T.
 Valela, V.
@@ -427,7 +426,6 @@ airgap agria
 aiders redia
 air aria
 ail, glia
-aide media
 aimed academia
 aimer u/premia
 
@@ -476,7 +474,6 @@ late petal
 lava naval
 lasso dossal
 lairage garial
-lair trial
 lamina nonanimal
 la minimal
 lad iridal
@@ -490,7 +487,6 @@ leek eel
 levant navel
 lepers repel
 level eyelevel
-lee peel
 liane renail
 liven evil
 link nil
@@ -544,7 +540,6 @@ nimrods dormin
 nielli villein
 nitro cortin
 nival flavin
-nowt won
 no stetson
 nose meson
 none xenon
@@ -556,7 +551,6 @@ not-a-baton
 noo cocoon
 noveleses elevon
 nongame magnon
-noses on
 nutso stun
 nutsy stun
 oats tao
@@ -573,8 +567,6 @@ orang ignaro
 otter amaretto
 paleae lap
 parses rap
-pah whap
-pah chap
 past sap
 palsy slap
 page gap
@@ -713,7 +705,6 @@ rim emir
 rotary gyrator
 roting ignitor
 roto motor
-rolf lor
 rotative levitator
 roo door
 root stoor
@@ -725,7 +716,7 @@ ruff fur
 ruellia tailleur
 sassy lyssas
 salami malas
-say as
+say as: note that say "As" gets flagged...
 saw twas
 satire veritas
 salle fellas
@@ -844,7 +835,6 @@ Soot Tattoos: new location?
 sorell eros
 sole helos
 sorting nitros
-so memos
 Soho's
 soral claros
 sovran arvos
@@ -901,7 +891,6 @@ stile lits
 sterol florets
 stave vats
 stress asserts
-Stung! Nuts!
 stride dirts
 stir grits
 steer greets
@@ -916,7 +905,7 @@ sublevel bus:transports you somewhere
 sugar tragus
 Suede Us:suede deus
 sun gnus:sun on us
-10387 sullage + gallus ~ PALINDROME.
+sullage gallus
 swarm raws
 swardy draws
 sword rows
@@ -962,7 +951,6 @@ tilery relit
 tip poppit
 timed emit
 tiki kit
-tix exit
 tides edit
 Tipsy Spit
 tire merit
@@ -1030,6 +1018,312 @@ ZAP, spaz!
 zest sez
 
 Pat's Tap = bar
+
+FULL NAMES BELOW=================
+Abe Keba
+adam imada
+adina canida
+agnus unga
+aide media
+ailene lia
+aida madia
+aja raja
+al kukla
+al ayala
+alena canela
+alisa basila
+amy ma
+ami zima
+ana susana
+anne senna
+anya payna
+anitra martina
+annalee lanna
+anibal abina
+ara mara
+ava nava
+azalee laza
+bernie weinreb
+bert streb
+betsey esteb
+blake dekalb
+blake kalb
+bruce curb
+brett erb
+breana erb
+burt strub
+cassie issac
+cara sarac
+cami mac
+daisy siad
+darby brad
+dee reed
+toni minot
+toya bayot
+tressa gassert
+treva ravert
+trena vanert
+traci picart
+tressie weissert
+tracy cart
+tracee cart
+wei liew
+yetta battey
+yevette vey
+zena llanez
+zella callez
+zita batiz
+zora varoz
+zoe oz
+zula luz
+setsuko kustes
+selena caneles
+selina niles
+shawn wahs
+sina janis
+sina mcmanis
+sid edis
+sirena neris
+sol avalos
+su titus
+sue reus
+tama kamat
+terresa serret
+terra jarret
+telma hamlet
+tessa basset
+tia tait
+ron oconor
+rosanna sor
+roman amor
+roni minor
+rona manor
+ruth tur
+sarah dharas
+sal blas
+rheba behr
+rhea baehr
+ria mair
+risa nasir
+roger gregor
+rod amador
+roselle sor
+rosy tysor
+reda mader
+renae beaner
+ressie heisser
+renita tiner
+regine weniger
+rea baer
+reba faber
+renee deener
+rena haner
+reva haver
+rene gener
+reta sater
+renna banner
+ramon omar
+reiko kier
+regina saniger
+reita matier
+rey dyer
+rema kamer
+retta satter
+reina manier
+oren ero
+otis ito
+otto dotto
+ozell lezo
+raina maniar
+raelene lear
+ned oden
+neda vaden
+nigel klegin
+nilda gadlin
+nila palin
+nida jadin
+nilsa caslin
+nina ganin
+nita matin
+nia mcmain
+niki aikin
+noma ramon
+noemi simeon
+norah sharon
+norah charon
+nora aaron
+norma damron
+noe leon
+odette do
+olene lo
+ollie aeillo
+omer gremo
+ona gano
+onita catino
+opal apo
+oralee laro
+mel klem
+meg em
+miyoko yim
+mia baim
+mika hakim
+mika kim
+milo lim
+mina ganim
+ming nim
+mike kim
+nedra varden
+nedra warden
+nell allen
+nevada daven
+nella gallen
+neva daven
+nettie leitten
+nelle mcmellen
+ned rarden
+luann aul
+margo gram
+marta tram
+marcelle cram
+mark cockram
+maybelle byam
+marcy cram
+mamie imam
+margot ogram
+mary byram
+margene gram
+marcene cram
+marco cram
+marty tram
+melba blem
+lee neel
+lenna kannel
+lessie geissel
+leanna el
+leigh giel
+les sissel
+levi kivel
+leona noel
+lesia maisel
+leo joel
+lera karel
+leda fadel
+liza bazil
+lia gail
+lisa basil
+lisa vasil
+liane nail
+lila kalil
+lita patil
+lissa vassil
+liana nail
+liberty trebil
+lory tyrol
+kara barak
+katy tak
+kate tak
+kate betak
+kaye deyak
+keira riek
+keli bilek
+kelle sellek
+kera zarek
+kena vanek
+keely leek
+ken okonek
+kia haik
+kim adamik
+kina panik
+kiana naik
+kyla halyk
+kyra caryk
+lacy cal
+lavette val
+lawanna wal
+launa manual
+lana canal
+leta patel
+leena neel
+lee mcmeel
+ike ueki
+ilene li
+ilona noli
+ila cali
+ilana li
+ileana eli
+illa valli
+ima dami
+ima kawakami
+inga magni
+iona manoi
+iola loi
+irene neri
+ira bari
+irena neri
+isa masi
+iva ravi
+jani kinaj
+hanna vannah
+herb reh
+helene leh
+flora marolf
+florene rolf
+gino honig
+gino konig
+gil lellig
+gia haig
+glenn elg
+harold lorah
+enoch cone
+ena zane
+ena sayasane
+enola valone
+eric scire
+erma hamre
+essie weisse
+estelle tse
+etta matte
+eura larue
+eugene gue
+eva gave
+eve neve
+ewa dawe
+ezra marze
+flo wolf
+elsie isle
+ellis ille
+ela dale
+ela yale
+elli hille
+elana canale
+eliza bazile
+eli hile
+elda wadle
+elida nadile
+elia haile
+emily lime
+emmitt timme
+emory rome
+emma lamme
+emil glime
+emiko kime
+emmett temme
+emogene gome
+eda wade
+ellena janelle
+elias osaile
+elba zable
+elza hazle
+ella valle
+dick cid
+dia said
+dorla walrod
+duane naud
+earl rae
+ed ade
+edna sande
+edna lande
+edie heide
 
 
 1w.py : not just STDIN but break things into dictionaries of dictionaries by first letter. See 2pal.py for details.

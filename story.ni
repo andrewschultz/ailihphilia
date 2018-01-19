@@ -16,6 +16,10 @@ include undo output control by Erik Temple.
 
 volume unsorted
 
+Madam Sniffins is a person.
+Diktat Kid is a proper-named person.
+Yuge Guy is a proper-named person. understand "king/nik" and "king nik" as Yuge Guy.
+
 the radar is a thing.
 
 the gold log is a thing.
