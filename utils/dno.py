@@ -106,24 +106,32 @@ def check_notes(s):
                         pals[q2] = line_count
                         pal_count = pal_count + 1
                         # print(count, q2)
+    found_errs = defaultdict(str)
     for s in source_files:
         if verbose: print("Reading", s)
         with open(s) as file:
+            table_name = ''
             count = 0
             for line in file:
+                if line.startswith('table of'):
+                    table_name = line.lower().strip()
+                elif not line.strip():
+                    table_name = ''
                 count = count + 1
                 ll = re.sub("[\.\",!\?]", "", line.lower())
                 for q in pals.keys():
                     if q in ll and (q not in twice.keys() or twice_okay):
                         if ignore_word_bounds or re.search(r'\b{:s}\b'.format(q), ll):
                             # here "da bad" does not flag "Neda Baden" unless we tell the program to
-                            print("Notes.txt line", pals[q], "~", shorts[s], "line", count, ":", line.lower().strip() +
-                              ('' if not ignore_word_bounds else ' ~ ' + q) )
-                            if not open_line:
+                            found_errs[pals[q]] = found_errs[pals[q]] + "Notes.txt line {:d} ~ {:s} line {:d}{:s}: {:s} {:s}\n".format(pals[q], shorts[s], count, '' if not table_name else ' ({:s})'.format(table_name), line.lower().strip(), ('' if not ignore_word_bounds else ' ~ ' + q))
+                            if not open_line or pals[q] < open_line:
                                 open_line = pals[q]
                             twice[q] = True
                             xtranote = xtranote + 1
             if verbose: print(count, "total lines")
+    if len(found_errs) > 0:
+        for x in sorted(found_errs.keys()):
+            print(found_errs[x].strip())
     if xtranote + dupes == 0:
         print("Notes file has no duplicates/extras.")
     else:
