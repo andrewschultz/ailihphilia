@@ -20,6 +20,7 @@ twice_okay = False
 launch_after = True
 ignore_word_bounds = False
 open_first = False
+verbose = False
 
 def modify_notes(s):
     lines_changed = 0
@@ -49,6 +50,7 @@ def modify_notes(s):
 
 def usage():
     print("USAGE" + '=' * 40)
+    print("-v = verbose")
     print("-m = modify notes file before starting, -mo = modify only")
     print("-2 = report appearance of notes.txt stirng in story.ni/put it up tables.i7x more than once.")
     print("    -2n/-n2 = negation. Default = off.")
@@ -105,13 +107,15 @@ def check_notes(s):
                         pal_count = pal_count + 1
                         # print(count, q2)
     for s in source_files:
+        if verbose: print("Reading", s)
         with open(s) as file:
             count = 0
             for line in file:
                 count = count + 1
+                ll = re.sub("[\.\",!\?]", "", line.lower())
                 for q in pals.keys():
-                    if q in line.lower() and (q not in twice.keys() or twice_okay):
-                        if ignore_word_bounds or re.search(r'\b{:s}\b'.format(q), line):
+                    if q in ll and (q not in twice.keys() or twice_okay):
+                        if ignore_word_bounds or re.search(r'\b{:s}\b'.format(q), ll):
                             # here "da bad" does not flag "Neda Baden" unless we tell the program to
                             print("Notes.txt line", pals[q], "~", shorts[s], "line", count, ":", line.lower().strip() +
                               ('' if not ignore_word_bounds else ' ~ ' + q) )
@@ -119,6 +123,7 @@ def check_notes(s):
                                 open_line = pals[q]
                             twice[q] = True
                             xtranote = xtranote + 1
+            if verbose: print(count, "total lines")
     if xtranote + dupes == 0:
         print("Notes file has no duplicates/extras.")
     else:
@@ -150,6 +155,8 @@ while count < len(sys.argv):
         modified_yet = True
         modify_notes("put-it-up")
         exit()
+    elif l == 'v':
+        verbose = True
     elif l == 'f':
         open_first = True
     elif l == 'fn' or l == 'nf':
