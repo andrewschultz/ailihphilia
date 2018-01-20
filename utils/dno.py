@@ -21,6 +21,7 @@ launch_after = True
 ignore_word_bounds = False
 open_first = False
 verbose = False
+last_lines_first = True
 
 def modify_notes(s):
     lines_changed = 0
@@ -59,6 +60,7 @@ def usage():
     print("-i = ignore word boundaries. To catch stuff like 'da bad' with 'neda baden'.")
     print("    -in/-ni = don't. Default = off.")
     print("-f = open first repetition, -fn/-nf = open last.")
+    print("-o = print first lines first (last lines first lets you follow line numbers for deletion more easily).")
     print("-?/-u = this usage statement")
     exit()
 
@@ -124,13 +126,16 @@ def check_notes(s):
                         if ignore_word_bounds or re.search(r'\b{:s}\b'.format(q), ll):
                             # here "da bad" does not flag "Neda Baden" unless we tell the program to
                             found_errs[pals[q]] = found_errs[pals[q]] + "Notes.txt line {:d} ~ {:s} line {:d}{:s}: {:s} {:s}\n".format(pals[q], shorts[s], count, '' if not table_name else ' ({:s})'.format(table_name), line.lower().strip(), ('' if not ignore_word_bounds else ' ~ ' + q))
-                            if not open_line or pals[q] < open_line:
+                            if last_lines_first:
+                                if not open_line or pals[q] < open_line:
+                                    open_line = pals[q]
+                            elif pals[q] > open_line:
                                 open_line = pals[q]
                             twice[q] = True
                             xtranote = xtranote + 1
             if verbose: print(count, "total lines")
     if len(found_errs) > 0:
-        for x in sorted(found_errs.keys()):
+        for x in sorted(found_errs.keys(), reverse=last_lines_first):
             print(found_errs[x].strip())
     if xtranote + dupes == 0:
         print("Notes file has no duplicates/extras.")
@@ -173,6 +178,8 @@ while count < len(sys.argv):
         ignore_word_bounds = True
     elif l == 'in' or l == 'ni':
         ignore_word_bounds = False
+    elif l == 'o':
+        last_lines_first = False
     elif l == '?' or l == 'u':
         usage()
     else:
