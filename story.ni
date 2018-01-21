@@ -480,7 +480,7 @@ check going in Fun 'Nuf:
 		if elf-warn < 3, the rule succeeds;
 		say "[line break]Do you still wish to go through Evac Ave and turn your back on adventure?";
 		if the player yes-consents:
-			say "As the Flee Elf cries 'Fool! Aloof!' you walk south past Evac Ave through the Elim-Mile, which removes all your memories of your brief time adventuring.";
+			say "The Flee Elf cries 'Fool! Aloof!' as you walk south past Evac Ave through the Elim-Mile, which removes all your memories of your brief time adventuring.";
 			end the story saying "NOWT WON";
 	if Flee Elf is in Fun 'Nuf:
 		if noun is west or noun is east, say "'Keen! Eek!' the Flee Elf stops you. 'You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley.'" instead;
@@ -550,6 +550,8 @@ The back cab is a thing. description is "It's here and waiting to take you, uh, 
 
 instead of entering back cab, win-finally instead;
 
+book Dirge Grid
+
 part Grebeberg
 
 book Seer Trees
@@ -608,18 +610,18 @@ instead of doing something with gnu dung:
 
 the eels are people in Dumb Mud. "Some eels are blocking passage west."
 
-chapter Xanax
+chapter Demo Med
 
-Xanax is a thing in Dumb Mud. "Xanax sits here, on a pill lip."
+a Demo Med is a thing in Dumb Mud. "A demo med sits here, on a pill lip.". description is "You're not sure what it could be. Xanax? Whatever, you feel calmer just looking at it."
 
-check eating Xanax:
+check eating Demo Med:
 	if player is not in Yawn Way, say "There's nothing anxious-making around, yet." instead;
 	say "Eewee! Well, you feel a bit more relaxed now.";
-	now Xanax is in Zerorez;
+	now Demo Med is in Zerorez;
 
 the pill lip is scenery in Dumb Mud.
 
-instead of doing something with pill lip, say "The pill lip is just there to prevent the Xanax from getting dirty on the ground."
+instead of doing something with pill lip, say "The pill lip is just there to prevent the demo med from getting dirty on the ground."
 
 book Le Babel
 
