@@ -16,8 +16,9 @@ include undo output control by Erik Temple.
 
 volume unsorted
 
+the x-ite tix are a plural-named thing. understand "xite" and "xite tix" as x-ite tix.
+
 Madam Sniffins is a person.
-Diktat Kid is a proper-named person.
 Yuge Guy is a proper-named person. understand "king/nik" and "king nik" as Yuge Guy.
 
 the radar is a thing.
@@ -474,7 +475,8 @@ elf-warn is a number that varies.
 
 check going in Fun 'Nuf:
 	if noun is south:
-		if Flee Elf is in ZeroRez, say "The Evac Ave is gone. I guess you're stuck questing, here." instead;
+		if player has X-ITE TIX, try useoning X-ITE TIX on Tix Exit instead;
+		if Tix Exit is in Evac Ave, say "The Tix Exit blocks your way to where Evac Ave was. I guess you're stuck questing, here." instead;
 		if elf-warn < 3, increment elf-warn;
 		say "[if elf-warn is 1]The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go[else if elf-warn is 2]The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap[else]The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else[end if].";
 		if elf-warn < 3, the rule succeeds;
@@ -508,8 +510,9 @@ understand "pack cap" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did.";
-	say "Yes, that's how to get the cap. You are ready to go! The Flee Elf salutes you and becomes, err, the FLED Elf.";
+	say "Yes, that's how to get the cap. You are ready to go! The Flee Elf salutes you and becomes, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.";
 	move flee elf to ZeroRez;
+	now Tix Exit is in ZeroRez;
 	now player wears the cap;
 	now all cappy rooms are available;
 	score-inc;
@@ -551,6 +554,10 @@ The back cab is a thing. description is "It's here and waiting to take you, uh, 
 instead of entering back cab, win-finally instead;
 
 book Dirge Grid
+
+Dirge Grid is a room in Mid Dim. "The only way back is south[if diktat kid is in dirge grid], but you can't really run away from the Diktat Kid[else], and you might as well go that way, now you've vanquished the Diktat Kid[end if]."
+
+Diktat Kid is a proper-named person in Dirge Grid.
 
 part Grebeberg
 
