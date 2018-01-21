@@ -2,6 +2,9 @@
 # dno.py
 #
 # debug notes: check if something has already been used and can be wiped
+#
+# -b can bowdlerize automatically
+# -m modify notes from output file format e.g. with a number before it all
 
 import sys
 import i7
@@ -22,6 +25,8 @@ ignore_word_bounds = False
 open_first = False
 verbose = False
 last_lines_first = True
+bowdlerize_notes = False
+bowdlerize_test = False
 
 def modify_notes(s):
     lines_changed = 0
@@ -61,6 +66,7 @@ def usage():
     print("    -in/-ni = don't. Default = off.")
     print("-f = open first repetition, -fn/-nf = open last.")
     print("-o = print first lines first (last lines first lets you follow line numbers for deletion more easily).")
+    print("-b = bowdlerize duplicates in notes. -bt only copies to notes2.txt, for testing purposes.")
     print("-?/-u = this usage statement")
     exit()
 
@@ -140,7 +146,28 @@ def check_notes(s):
     if xtranote + dupes == 0:
         print("Notes file has no duplicates/extras.")
     else:
-        print(xtranote, "extra notes", dupes, "duplicates")
+        print(xtranote, "extraneous notes in source,", dupes, "duplicate notes")
+    if bowdlerize_notes and len(found_errs) > 0: # automatically delete duplicates
+        count = 0
+        notes_file_backup = "notes-2.txt"
+        f2 = open(notes_file_backup, "w")
+        with open(notes_file_to_read) as file:
+            for line in file:
+                count = count + 1
+                if count in found_errs.keys():
+                    continue
+                f2.write(line)
+        f2.close()
+        if bowdlerize_test:
+            print("Not copying", notes_file_backup, "back to", notes_file_to_read, "-- use -b and not -bt for that.")
+        else:
+            print("Copying", notes_file_backup, "back to", notes_file_to_read)
+            copy(notes_file_backup, notes_file_to_read)
+            print("Copying attempt complete.")
+            os.remove(notes_file_backup)
+            print("Deleted", notes_file_backup)
+    elif bowdlerize_notes:
+        print("Nothing to bowdlerize, so I am not recopying.")
     if launch_after and open_line:
         print("Launching", notes_file_to_read, "at", open_line)
         cmd = "start \"\" {:s} {:s} -n{:d}".format(i7.np, notes_file_to_read, open_line)
@@ -180,6 +207,11 @@ while count < len(sys.argv):
         ignore_word_bounds = False
     elif l == 'o':
         last_lines_first = False
+    elif l == 'b':
+        bowdlerize_notes = True
+    elif l == 'bt':
+        bowdlerize_notes = True
+        bowdlerize_test = True
     elif l == '?' or l == 'u':
         usage()
     else:
