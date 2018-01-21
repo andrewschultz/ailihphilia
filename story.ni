@@ -19,6 +19,7 @@ volume unsorted
 the x-ite tix are a plural-named thing. understand "xite" and "xite tix" as x-ite tix.
 
 Madam Sniffins is a person.
+
 Yuge Guy is a proper-named person. understand "king/nik" and "king nik" as Yuge Guy.
 
 the radar is a thing.
@@ -38,6 +39,16 @@ to win-finally:
 the stink knits are a thing.
 
 the brag garb is a thing.
+
+the UFO Tofu is an edible thing.
+
+the Mayo Yam is an edible thing.
+
+the mush sum is an edible thing.
+
+the gift fig is an edible thing.
+
+check eating an edible thing: say "Food? Oof! (You don't need to eat anything to win. Food may be more useful for other people.)[paragraph break]" instead;
 
 chapter trucking
 
@@ -423,10 +434,17 @@ Dave	"Dave's not useful, man."
 table of useons [xxuse]
 use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	babble
 trap art	reifier	party trap	--	--	true	true	false	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
+party trap	start rats	gift fig	--	--	true	true	true	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The seer trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
 poo coop	gnu dung	--	--	--	true	true	true	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
 gold log	rotator	dork rod	--	--	true	true	false	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 dork rod	tao boat	--	--	--	true	true	false	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
 stink knits	brag garb	--	--	wear-garb rule	true	true	false	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
+UFO Tofu	Mayo Yam	Mush Sum	in-mont-nom rule	--	true	true	true	"The UFO Tofu and mayo yam blend together in a most unholy fashion, but the magic of Mont Nom kicks in, and they become ... a surprisingly nice smelling and looking mush sum."
+
+this is the in-mont-nom rule:
+	if location of player is mont nom, the rule succeeds;
+	say "Eww! Maybe if you were somewhere more magical with food, it would work."
+	the rule fails;
 
 this is the wear-garb rule:
 	now player wears the brag garb;
@@ -570,17 +588,9 @@ check going in Seer Trees:
 
 the start rats are a plural-named thing in Seer Trees.
 
-check taking start rats: say "There are too many, and they'd probably bite you, anyway."
+check taking start rats: say "There are too many, and they'd probably bite you, anyway." instead;
 
-trap-made is a truth state that varies.
-
-check dropping party trap in Seer Trees:
-	if trap-made is false, say "You have nothing to bait the trap with. With which to bait the trap." instead;
-	say "The rats all try to enter the cake, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The seer trees seem to nod a bit.";
-	now start rats are in ZeroRez;
-	now party trap is in ZeroRez;
-	score-inc;
-	the rule succeeds;
+check dropping party trap in Seer Trees: try useoning party trap on start rats instead;
 
 book Cold Loc
 
@@ -1013,11 +1023,11 @@ Drawl Ward is south of Swept Pews. It is in Yelpley.
 
 Marge Pegram is a person in Drawl Ward. "'Hi! I'm Marge Pegram."
 
-book Dirge Grid
+book Scrap Arcs
 
-Dirge Grid is east of Drawl Ward. It is in Yelpley.
+Scrap Arcs is east of Drawl Ward. It is in Yelpley.
 
-The gate tag is in Dirge Grid.
+The gate tag is in Scrap Arcs.
 
 book Dope Pod
 
