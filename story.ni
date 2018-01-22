@@ -260,6 +260,7 @@ carry out verbing:
 	say "[line break]THINK gives very general hints.";
 	say "[line break]Many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy.";
 	say "[line break]AID gives you hints for where you are. ABOUT and CREDITS tell about the game.";
+	if wr-short-note is true and player is in worn row and workrow is true, say "[line break]REV, ROT and REI use an item on the reviver, rotator and reifier, respectively.";
 	the rule succeeds;
 
 chapter burning
@@ -781,9 +782,9 @@ chapter workables
 
 a workable is a kind of thing. a workable has a number called useleft. useleft of a workable is usually 3.
 
-the reifier is a workable in worn row.
-the reviver is a workable in worn row.
-the rotator is a workable in worn row.
+the reifier is a workable.
+the reviver is a workable.
+the rotator is a workable.
 
 instead of inserting into:
 	if second noun is a workable, try useoning noun with second noun instead;
@@ -794,6 +795,42 @@ instead of putting on:
 	continue the action;
 
 instead of switching on a workable, say "You need to USE something with [the noun]."
+
+section reiing
+
+reiing is an action applying to one thing.
+
+understand the command "rei" as something new.
+
+understand "rei [something]" as reiing when player is in work row and reifier is not off-stage.
+
+carry out reiing:
+	if reifier is not in word row, say "You need to bring back Work Row." instead;
+	try useoning noun with reifier instead;
+
+section reving
+
+reving is an action applying to one thing.
+
+understand the command "rev" as something new.
+
+understand "rev [something]" as reving when player is in work row and reviver is not off-stage.
+
+carry out reving:
+	if reviver is not in word row, say "You need to bring back Work Row." instead;
+	try useoning noun with reviver instead;
+
+section roting
+
+roting is an action applying to one thing.
+
+understand the command "rot" as something new.
+
+understand "rot [something]" as roting when player is in work row and rotator is not off-stage.
+
+carry out roting:
+	if reifier is not in word row, say "You need to bring back word row." instead;
+	try useoning noun with rotator instead;
 
 chapter books
 
