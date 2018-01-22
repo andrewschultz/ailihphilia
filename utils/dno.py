@@ -93,6 +93,7 @@ def check_notes(s):
     source_files = [ "c:/games/inform/{:s}.inform/source/story.ni".format(s),
       "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/{:s} tables.i7x".format(re.sub("-", " ", s)) ]
     shorts = {}
+    dupe_dict = defaultdict(bool)
     for x in source_files:
         shorts[x] = re.sub(".*[\\\/]", "", x)
     with open(notes_file_to_read) as file:
@@ -109,6 +110,7 @@ def check_notes(s):
                         if not open_line:
                             open_line = pals[q] if open_first else line_count
                         dupes = dupes + 1
+                        dupe_dict[line_count] = True
                     else:
                         q2 = q.strip()
                         pals[q2] = line_count
@@ -147,14 +149,14 @@ def check_notes(s):
         print("Notes file has no duplicates/extras.")
     else:
         print(xtranote, "extraneous notes in source,", dupes, "duplicate notes")
-    if bowdlerize_notes and len(found_errs) > 0: # automatically delete duplicates
+    if bowdlerize_notes and len(found_errs) + len (dupe_dict) > 0: # automatically delete duplicates
         count = 0
         notes_file_backup = "notes-2.txt"
         f2 = open(notes_file_backup, "w")
         with open(notes_file_to_read) as file:
             for line in file:
                 count = count + 1
-                if count in found_errs.keys():
+                if count in found_errs.keys() or count in dupe_dict.keys():
                     continue
                 f2.write(line)
         f2.close()

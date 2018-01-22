@@ -6,10 +6,9 @@ It's about, well, palindromes.
 
 To-do:
 
-* Sort through (f/d/l)/(f/d/l) files.
-* Fix map.
 * Create the beginning, talking about the Diktat Kid, Yuge Guy and Madam.
-* read through 32-redo.txt from 32.py
+* Create a trizbort file with a (preferred) walkthrough
+* look at f-d and l-d for business names
 
 Utils:
 
@@ -20,4 +19,4 @@ Utils:
 * 32.py = sped up combo checker (30 sec vs 1 hour). It tracks the difference between a starting word and an ending word and puts the possible different words in a hash.
 * dno.py = searches the notes file for names and concepts that are reused in the source. Split by slashes, or anything right of a colon is deleted. Potentially not palindrome specific: we could use ! to start a line to say it's something we want to look a, since spoonerisms aren't as obvious.
 * dnm.py = searches the table file for names that are reused in the source. Not palindrome specific, as it is used for Spell Woken too.
-* msc.py = checks maximum score is in tune with regional scores in the source and walkthrough.
+* sc2.py = does internal code verification of maximum score byregion. Supersedes the weaker msc.py.

@@ -3,6 +3,8 @@
 #
 # checks that maximum score in the source is in tune with other areas
 #
+# replaced by sc2.py which looks in the code to see what the max score should be
+#
 
 from collections import defaultdict
 

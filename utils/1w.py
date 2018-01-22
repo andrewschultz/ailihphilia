@@ -136,7 +136,8 @@ argcount = 0
 
 while argcount < len(sys.argv) - 1:
     argcount = argcount + 1
-    xl = sys.argv[argcount].lower()
+    xr = sys.argv[argcount]
+    xl = xr.lower()
     if xl == "-a":
         file_array = [firstfile, lastfile, wordfile]
         continue
@@ -169,7 +170,7 @@ while argcount < len(sys.argv) - 1:
         print("Invalid flag", xl)
         usage()
         exit()
-    for y in xl.split(","):
+    for y in xr.split(","):
         if "V" in y:
             for z in ['a','e','i','o','u', 'y']:
                 temp = re.sub("V", z, y)
