@@ -90,6 +90,10 @@ description of player is "Flesh. Self."
 
 description of Darer Ad is "No LOL on? SEE, REFER-EES! Do! Nod!"
 
+after examining the Darer Ad for the first time:
+	say "Well, you need something with a bit more concrete advice. Maybe you'll find it quickly enough.";
+	continue the action;
+
 check dropping:
 	say "This game is not Pro-Drop. In other words, you don't need to drop anything. You may wish to USE it instead." instead;
 
@@ -99,6 +103,12 @@ to decide which region is mrlp:
 after looking (this is the make available for goto rule):
 	if location of player is not emo dome, now location of player is available;
 	continue the action;
+
+section set o notes
+
+the set o notes is a thing. description is "There's some general vague advice about making a North Tron to defeat the Diktat Kid, but first you'll have to defeat Madam Sniffins and the Yuge Guy, King Nik. The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that."
+
+after examining set o notes for the first time, say "Maybe you'll get something even more detailed than the Set O Notes later."
 
 part scoring
 
@@ -263,6 +273,8 @@ carry out verbing:
 	if wr-short-note is true and player is in worn row and workrow is true, say "[line break]REV, ROT and REI use an item on the reviver, rotator and reifier, respectively.";
 	the rule succeeds;
 
+wr-short-note is a truth state that varies.
+
 chapter burning
 
 instead of burning, next-rand table of burnies;
@@ -286,7 +298,7 @@ chapter going
 the new generic going reject rule is listed before the can't go that way rule in the check going rules.
 
 check going (this is the new generic going reject rule):
-	if noun is out and number of viable directions is 1, try going a random viable direction instead;
+	if noun is outside and number of viable directions is 1, try going a random viable direction instead;
 	if noun is inside, say "You don't ever need to use IN in the game. Just the four cardinal directions." instead;
 	unless noun is viable, say "You can only go [list of viable directions] here." instead;
 
@@ -389,8 +401,9 @@ check useoning it with:
 		if noun is use1 entry or second noun is use1 entry, say "[babble entry][line break]" instead;
 	if noun is a person, say "[one of]You're not any good at using other people. In fact, if you tried, they'd wind up using YOU. Plus you don't want to be, really. There's another way. So, no[or]Using people is out[stopping]. Maybe you could use something on a person, though." instead;
 	if noun is a workable or second noun is a workable:
-		if ian is in worn row, say "You can't operate the machines with Ian around." instead;
-		if workrow is false, say "You need to repair the machines somehow. Maybe you can do so all at once." instead;
+		if wr-short-note is false:
+			say "(NOTE: You can abbreviate this command with ROT, REI and REV for the respective machines, later.)[paragraph break]";
+			now wr-short-note is true;
 	repeat through table of useons:
 		if there is a use1 entry and noun is use1 entry:
 			if there is a use2 entry and second noun is use2 entry:
@@ -452,7 +465,7 @@ sage gas	tenet	tenet	--	--	true	true	false	"With the sage gas, you're able to se
 
 this is the in-mont-nom rule:
 	if location of player is mont nom, the rule succeeds;
-	say "Eww! Maybe if you were somewhere more magical with food, it would work."
+	say "Eww! Maybe if you were somewhere more magical with food, it would work.";
 	the rule fails;
 
 this is the wear-garb rule:
@@ -500,10 +513,12 @@ instead of entering Evac Ave, try going south.
 
 elf-warn is a number that varies.
 
+the Tix Exit is scenery.
+
 check going in Fun 'Nuf:
 	if noun is south:
-		if player has X-ITE TIX, try useoning X-ITE TIX on Tix Exit instead;
-		if Tix Exit is in Evac Ave, say "The Tix Exit blocks your way to where Evac Ave was. I guess you're stuck questing, here." instead;
+		if player has X-ITE TIX, try useoning X-ITE TIX with Tix Exit instead;
+		if Tix Exit is in Fun 'Nuf, say "The Tix Exit blocks your way to where Evac Ave was. I guess you're stuck questing, here." instead;
 		if elf-warn < 3, increment elf-warn;
 		say "[if elf-warn is 1]The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go[else if elf-warn is 2]The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap[else]The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else[end if].";
 		if elf-warn < 3, the rule succeeds;
@@ -537,9 +552,11 @@ understand "pack cap" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did.";
-	say "Yes, that's how to get the cap. You are ready to go! The Flee Elf salutes you and becomes, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.";
+	say "Yes, that's how to get the cap. You are ready to go![paragraph break]'Good job! Here's a set o['] notes to replace that darer ad,' the Flee Elf says. It salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.";
 	move flee elf to ZeroRez;
 	now Tix Exit is in ZeroRez;
+	now darer ad is in ZeroRez;
+	now player has set o notes;
 	now player wears the cap;
 	now all cappy rooms are available;
 	score-inc;
@@ -599,7 +616,7 @@ the start rats are a plural-named thing in Seer Trees.
 
 check taking start rats: say "There are too many, and they'd probably bite you, anyway." instead;
 
-check dropping party trap in Seer Trees: try useoning party trap on start rats instead;
+check dropping party trap in Seer Trees: try useoning party trap with start rats instead;
 
 book Cold Loc
 
@@ -802,10 +819,10 @@ reiing is an action applying to one thing.
 
 understand the command "rei" as something new.
 
-understand "rei [something]" as reiing when player is in work row and reifier is not off-stage.
+understand "rei [something]" as reiing when player is in worn row and reifier is not off-stage.
 
 carry out reiing:
-	if reifier is not in word row, say "You need to bring back Work Row." instead;
+	if reifier is not in worn row, say "You need to bring back Work Row." instead;
 	try useoning noun with reifier instead;
 
 section reving
@@ -814,10 +831,10 @@ reving is an action applying to one thing.
 
 understand the command "rev" as something new.
 
-understand "rev [something]" as reving when player is in work row and reviver is not off-stage.
+understand "rev [something]" as reving when player is in worn row and reviver is not off-stage.
 
 carry out reving:
-	if reviver is not in word row, say "You need to bring back Work Row." instead;
+	if reviver is not in worn row, say "You need to bring back Work Row." instead;
 	try useoning noun with reviver instead;
 
 section roting
@@ -826,10 +843,10 @@ roting is an action applying to one thing.
 
 understand the command "rot" as something new.
 
-understand "rot [something]" as roting when player is in work row and rotator is not off-stage.
+understand "rot [something]" as roting when player is in worn row and rotator is not off-stage.
 
 carry out roting:
-	if reifier is not in word row, say "You need to bring back word row." instead;
+	if reifier is not in worn row, say "You need to bring back word row." instead;
 	try useoning noun with rotator instead;
 
 chapter books
