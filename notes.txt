@@ -18,15 +18,20 @@ Ping! Nip.
 
 Go-By Bog: map location, somehow (gobs bog)
 
-Tix Exit: what to go through after the Evac Cave is gone (X-Ite Tix)
 Mask Sam:Mash Sam
 Hank? Nah
 
+Rise, Sir!
+
+Verb! Rev!
+
 DNA Band:create DNA Hand
 
-USE SAGE GAS ON TENET
+rep-a-paper
 
-epic-er recipe
+O Furor! UFO!
+
+epic-er recipe: this builds the north tron
 
 The Bomb Mob carries TNT. You get it with a Bang-Nab.
 
@@ -53,7 +58,6 @@ Daft Fad
 deep speed
 def faffed
 
-demo med:(pill lip)
 dev reserved
 defy fed
 deity tied
@@ -95,7 +99,7 @@ gandered nag
 Gaters Retag
 gemini meg
 
-FRUSH SURF: appears in the west border of Grebebergsomewhere
+FRUSH SURF: appears in the west border of Grebeberg somewhere
 
 Girt Rig
 
@@ -104,11 +108,7 @@ goth tog: takes pictures
 Gorge Grog: can drink, name of bar?
 Grog Org: Gorge Grog!
 
-
 FOODS=======
-Ufo Tofu
-Gift Fig
-Mayo Yam
 
 Flag Alf
 Flat Alf
@@ -125,8 +125,6 @@ Palm Lap
 
 Fix If
 
-Food! Oof!
-
 Yard Ray: spreads light where there was none
 Emit Noontime (how to activate yard ray)
 Emacs Came
@@ -135,7 +133,6 @@ enol alone
 epoch cope
 eponymy nope
 Ergot Ogre: defends what?
-Eroded Ore: turns to ORE ZERO
 
 Erupt, Pure!
 
@@ -236,9 +233,6 @@ Hat Ptah
 "A cub, Cuba, is here."
 BUCK CUB
 
-Tenet: from Motto Bottom
-Egad! Adage!
-Eh, Cache: if you save the game
 Eh, Tithe
 Elk Cackle
 
@@ -281,11 +275,9 @@ park rap
 
 Still, it's...
 
-RANDOM ITEMS:
-
 Eels appear ...
 
-Demi-Med is something that helps a lot
+# Demi-Med vs Demo Med
 
 Gulps Plug = somewhere ...
 
@@ -983,7 +975,6 @@ tube debut
 twats tawt
 Two-Nowt
 versus rev
-verb rev
 wasp saw:wasps aw
 wall law
 Wane? Naw.
@@ -1155,7 +1146,6 @@ sirko kris
 siva davis
 sivley elvis
 siller ellis
-sina janis
 sung agnus
 todd dot
 traff art
@@ -1185,7 +1175,6 @@ mote tom
 mikasa kim
 madan adam
 mahar graham
-mad adam
 mail lilliam
 marban abram
 masaya sam
@@ -1213,7 +1202,6 @@ lamax amal
 lavere val
 lanagan al
 lama jamal
-iller elli
 imoto tomi
 issacs cassi
 emore jerome
@@ -1226,8 +1214,6 @@ halima kamilah
 halik akilah
 elleby belle
 ely kyle
-ellena janelle
-earl rae
 earp rae
 eisler elsie
 dornan rod
@@ -1287,7 +1273,6 @@ adelizzi leda
 adam amada
 adle zelda
 adling nilda
-able melba
 
 
 1w.py : not just STDIN but break things into dictionaries of dictionaries by first letter. See 2pal.py for details.

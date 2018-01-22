@@ -96,6 +96,10 @@ check dropping:
 to decide which region is mrlp:
 	decide on map region of location of player;
 
+after looking (this is the make available for goto rule):
+	if location of player is not emo dome, now location of player is available;
+	continue the action;
+
 part scoring
 
 to score-inc:
@@ -139,6 +143,8 @@ when play begins:
 
 volume parser errors operations and death
 
+check saving the game: say "Eh, cache...";
+
 part parser errors
 
 chapter nothing to say
@@ -150,7 +156,7 @@ Rule for printing a parser error when the latest parser error is the i beg your 
 
 chapter unrecognized verb
 
-Rule for printing a parser error when the latest parser error is the didn't understand error: [?? if you are in a guess the verb zone, this should be different]
+Rule for printing a parser error when the latest parser error is the didn't understand error:
 	say "[if gtv]You do need a special verb here, but not that one. It may not be a standard one, but given the game's theme, I bet you can figure it out. If youwant standard verbs, y[else]I didn't recognize that action. Y[end if]ou can type VERB or VERBS to get a list of them.";
 
 to decide whether gtv:
@@ -440,6 +446,8 @@ gold log	rotator	dork rod	--	--	true	true	false	"The gold log begins spinning un
 dork rod	tao boat	--	--	--	true	true	false	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
 stink knits	brag garb	--	--	wear-garb rule	true	true	false	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
 UFO Tofu	Mayo Yam	Mush Sum	in-mont-nom rule	--	true	true	true	"The UFO Tofu and mayo yam blend together in a most unholy fashion, but the magic of Mont Nom kicks in, and they become ... a surprisingly nice smelling and looking mush sum."
+Eroded Ore	reviver	Ore Zero	--	--	true	true	true	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
+sage gas	tenet	tenet	--	--	true	true	false	"With the sage gas, you're able to see a bit deeper into the tenet."
 
 this is the in-mont-nom rule:
 	if location of player is mont nom, the rule succeeds;
@@ -596,9 +604,9 @@ book Cold Loc
 
 Cold Loc is north of Seer Trees. It is in Grebeberg.
 
-check going west in Cold Loc:
+check going north in Cold Loc: [to flu gulf]
 	unless player carries puce cup or puce cup is in ZeroRez:
-		say "You're pushed back by worries of sickness." instead; [??]
+		say "You're pushed back by worries of sickness." instead;
 	if player carries puce cup:
 		say "The fumes push you back east." instead;
 
@@ -673,6 +681,10 @@ book Mire Rim
 
 Mire Rim is west of Dumb Mud. It is in Grebeberg.
 
+The Eroded Ore is in Mire Rim.
+
+The Ore Zero is a thing.
+
 book Yack Cay
 
 Yack Cay is south of Mire Rim. It is in Grebeberg.
@@ -684,6 +696,12 @@ Lair Trial is south of Yack Cay. It is in Grebeberg.
 book Motto Bottom
 
 Motto Bottom is east of Lair Trial. It is in Grebeberg.
+
+chapter tenet
+
+The tenet is a thing in Motto Bottom.
+
+check taking tenet: say "'Egad! Adage!' you think to yourself. The tenet seems too cliche, and you don't have the wisdom to give it any intrinsic value back. Well, not yet." instead;
 
 book Birch Crib
 
@@ -976,6 +994,7 @@ carry out pulluping:
 	say "You manage to stop yourself. The whining isn't too bad. Yeah, you can hack it here.";
 	now pulled-up is true;
 	score-inc;
+	now emo dome is available;
 	the rule succeeds;
 
 book Emo Dome
@@ -1060,9 +1079,10 @@ understand "goto [room]" as gotoing.
 understand "gt [room]" as gotoing.
 
 to decide whether goto-available:
+	if player is in dirge grid and diktat kid is in dirge grid, no;
 	yes. [obviously we don't want this to be trivial once the game's complete, but we want the code in place.]
 
-carry out gotoing: [?? can't goto Emo Dome before running back/forth]
+carry out gotoing:
 	unless goto-available, say "You're at a point in the game where goto isn't available." instead;
 	if noun is not available, say "[noun] isn't available yet, so you can't go there." instead;
 	if noun is available and noun is not visited, say "You can reach [noun], but you haven't visited there, yet. So I'm going to be a stickler and say you have to get there first." instead;
@@ -1080,7 +1100,7 @@ volume metarooms
 
 [there is a little bit of cute code here. Odd Do's score = weird stuff, but it's also where ZeroRez, the collect-all room for used objects, goes. TempMet is for items that temporarily disappear.]
 
-Odd Do is a region.
+part Odd Do
 
 ZeroRez is a room in Odd Do.
 
