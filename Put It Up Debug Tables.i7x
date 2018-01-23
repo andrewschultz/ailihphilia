@@ -58,8 +58,8 @@ randtxt
 
 table of singstuff
 randtxt
-"Tone? Not!"
 "Rock! Cor!"
+"Tone? Not!"
 
 table of swearstuff
 randtxt

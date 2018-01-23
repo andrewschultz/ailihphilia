@@ -24,11 +24,11 @@ chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
 
-Grebeberg is a region. max-score of Grebeberg is 6.
+Grebeberg is a region. max-score of Grebeberg is 7.
 
-Dim Mid is a region. max-score of Dim Mid is 3.
+Dim Mid is a region. max-score of Dim Mid is 4.
 
-Yelpley is a region. max-score of Yelpley is 14.
+Yelpley is a region. max-score of Yelpley is 15.
 
 Odd Do is a region. max-score of Odd Do is 3.
 
@@ -37,6 +37,8 @@ Odd Do is a region. max-score of Odd Do is 3.
 volume unsorted
 
 section stuff to move
+
+the rep popper is a thing.
 
 the x-ite tix are a plural-named thing. understand "xite" and "xite tix" as x-ite tix.
 
@@ -75,6 +77,8 @@ the elan ale is a drinkable thing.
 the yard ray is a thing.
 
 the murk rum is a drinkable thing. [put this in the yard ray]
+
+check drinking a drinkable thing: say "You don't need to drink anything. Any liquid is probably used for much more aggressive purposes." instead;
 
 section ingredients
 
@@ -488,6 +492,9 @@ elan ale	ira bari	gorge grog	--	--	true	false	false	"Ira looks the Elan Ale up a
 UFO Tofu	Mayo Yam	Mush Sum	in-mont-nom rule	--	true	true	true	"The UFO Tofu and mayo yam blend together in a most unholy fashion, but the magic of Mont Nom kicks in, and they become ... a surprisingly nice smelling and looking mush sum."	grebeberg
 Eroded Ore	reviver	Ore Zero	--	--	true	true	true	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"	yelpley
 sage gas	tenet	tenet	--	--	true	true	false	"With the sage gas, you're able to see a bit deeper into the tenet."	grebeberg
+rep popper	Yuge Guy	murk rum	--	--	true	true	true	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."	grebeberg
+Bro Orb	Madam Sniffins	Yard Ray	--	--	true	true	true	"The Bro Orb shines and drives Madam Sniffins to rage. She runs away, sobbing. The Yard Ray is left unguarded. You take it."	yelpley
+murk rum	yard ray	--	--	--	true	true	false	"The yard ray gleams with energy. It seems like it could do some damage now."	dim mid
 
 this is the in-mont-nom rule:
 	if location of player is mont nom, the rule succeeds;
@@ -557,7 +564,11 @@ check going in Fun 'Nuf:
 			end the story saying "NOWT WON";
 	if Flee Elf is in Fun 'Nuf:
 		if noun is west or noun is east, say "'Keen! Eek!' the Flee Elf stops you. 'You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley.'" instead;
-	if noun is north and north tron is not in Fun 'Nuf, say "Not until you built the North-Tron." instead;
+	if noun is north:
+		if diktat kid is in ZeroRez, say "No need to go back."
+		if north tron is not in Fun 'Nuf, say "Not until you built the North-Tron." instead;
+		if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
+		if murk rum is not in ZeroRez, say "You have the yard ray, but it isn't, well, charged." instead;
 
 chapter Pact Cap
 
@@ -631,6 +642,8 @@ book Dirge Grid
 Dirge Grid is a room in Mid Dim. "The only way back is south[if diktat kid is in dirge grid], but you can't really run away from the Diktat Kid[else], and you might as well go that way, now you've vanquished the Diktat Kid[end if]."
 
 Diktat Kid is a proper-named person in Dirge Grid.
+
+check going south in dirge grid: if diktat kid is in dirge grid, say "No. You can't chicken out. You must be close!" instead;
 
 part Grebeberg
 

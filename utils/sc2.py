@@ -66,7 +66,7 @@ with open("c:/games/inform/put-it-up.inform/source/story.ni") as file:
         if 'score-inc' in line and '\t' in line:
             temp_region = detect_region(line, current_region)
             if temp_region == current_region and '[+' in line:
-                print("WARNING temp_region not a change from current_region", current_region, "line", line_count)
+                print("WARNING temp_region not a change from current_region", current_region, "line", line_count, "in story.ni")
             if temp_region == 'ignore':
                 continue
             if verbose:
@@ -104,7 +104,7 @@ with open("c:/games/inform/put-it-up.inform/source/story.ni") as file:
             x = ll.split("\t")
             if len(x) < 6: continue
             if len(x) != 10:
-                print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 9.")
+                print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 10.")
             if x[5] == 'true':
                 temp_region = ""
                 if x[9] and x[9] != '--' and x[9] != 'reg-plus': # a bit hacky, but basically, check for entry 10 in useon table being a proper region
