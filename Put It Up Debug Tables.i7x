@@ -4,8 +4,8 @@ volume random names
 
 table of random palindrome names
 person-name
+"Abe Keba"
 "Adam Imada"
-"Agnus Unga"
 
 volume random responses
 
@@ -27,6 +27,7 @@ table of attackings	0
 table of burnies	0
 table of noesies	0
 table of nothings	0
+table of singstuff	0
 table of swearstuff	0
 table of waittxt	0
 table of yessies	0
@@ -54,6 +55,11 @@ table of nothings
 randtxt
 "Dud!"
 "Eh, the..."
+
+table of singstuff
+randtxt
+"Tone? Not!"
+"Rock! Cor!"
 
 table of swearstuff
 randtxt

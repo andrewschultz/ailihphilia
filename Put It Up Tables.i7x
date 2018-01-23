@@ -457,6 +457,7 @@ table of attackings	0
 table of burnies	0
 table of noesies	0
 table of nothings	0
+table of singstuff	0
 table of swearstuff	0
 table of waittxt	0
 table of yessies	0

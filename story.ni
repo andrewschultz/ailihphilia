@@ -478,7 +478,7 @@ book Fun 'Nuf
 Fun 'Nuf is a room in Mid Dim. "[if elite tile is in fun 'nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what is the various directions[xit-ave][end if]."
 
 to say xit-ave:
-	say ". The [if tix exit is in fun 'nuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]."
+	say ". The [if tix exit is in fun 'nuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]"
 
 the north tron is scenery. "It seems to have pushed a passage north here in Fun [']Nuf. Do you have the guts to follow it to your destiny?"
 
@@ -1243,11 +1243,31 @@ part final questions
 
 Table of Final Question Options (continued)
 final question wording	only if victorious	topic	final response rule	final response activity
-"NO responses"	true	"NO"	no-list rule	loafing
-"WAIT responses"	true	"WAIT"	wait-list rule	loafing
-"EMPTY command responses"	true	"EMPTY"	empty-list rule	loafing
+"see responses to various commands (RAND 0 for list, RAND 1-[number of rows in table of all randoms] for specific table)"	true	"RAND [number]"	--	rling
 "see what you MISSED"	true	"MISSED"	what-missed rule	loafing
 --	true	"AMT"	amuse-toggle rule	loafing
+
+rling is an activity.
+
+rule for rling: try randlisting number understood instead;
+
+randlisting is an action applying to one number.
+
+carry out randlisting:
+	let count be 0;
+	if number understood is 0:
+		repeat through table of all randoms:
+			increment count;
+			say "[count]. [tabnam entry][line break]";
+		the rule succeeds;
+	if number understood < 0 or number understood > number of rows in table of all randoms, say "Need 1-[number of rows in table of all randoms]." instead;
+	choose row number understood in table of all randoms;
+	let mytab be tabnam entry;
+	now count is 0;
+	say "All random text for [mytab]:[line break]";
+	repeat through mytab:
+		increment count;
+		say "[randtxt entry][line break]";
 
 loafing is an activity.
 
@@ -1295,7 +1315,7 @@ funstuff	dorule
 "FLEA ELF?"	elf-fleaed rule
 "FLEX ELF?"	elf-flexed rule
 "FLEECE ELF?"	elf-fleeced rule
-"SMELLing the dork rod?"	--
+"SMELLing the dork rod?"	rod-smell rule
 
 this is the elf-fleaed rule:
 	if flea-elf is true, the rule succeeds;
