@@ -44,11 +44,23 @@ the UFO Tofu is an edible thing.
 
 the Mayo Yam is an edible thing.
 
-the mush sum is an edible thing.
-
 the gift fig is an edible thing.
 
 check eating an edible thing: say "Food? Oof! (You don't need to eat anything to win. Food may be more useful for other people.)[paragraph break]" instead;
+
+section ingredients
+
+an ingredient is a kind of thing.
+
+the x/o box is an ingredient
+
+TNT is an ingredient.
+
+Gorge Grog is an ingredient. description is "Unsurprisingly, it's produced by Grog-Org."
+
+a balsa slab is an ingredient.
+
+the mush sum is an edible ingredient.
 
 chapter region and room stuff
 
@@ -402,7 +414,7 @@ check useoning it with:
 					if there is a reg-plus entry:
 						reg-inc reg-plus entry;
 					else:
-						sco-inc; [+ignore]
+						score-inc; [+ignore]
 				say "[babble entry][line break]";
 				if there is a postproc entry:
 					consider the postproc entry;
@@ -437,7 +449,7 @@ Dave	"Dave's not useful, man."
 
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
 table of useons [xxuse]
-use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	babble	regplus
+use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	babble	reg-plus
 trap art	reifier	party trap	--	--	true	true	false	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."	yelpley
 party trap	start rats	gift fig	--	--	true	true	true	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The seer trees seem to nod a bit. You watch as a gift fig rolls out. You take it."	grebeberg
 poo coop	gnu dung	--	--	--	true	true	true	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."	grebeberg
@@ -467,6 +479,7 @@ Fun 'Nuf is a room in Mid Dim. "[if elite tile is in fun 'nuf]Elite tile has rep
 
 to say xit-ave:
 	say ". The [if tix exit is in fun 'nuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]."
+
 the north tron is scenery. "It seems to have pushed a passage north here in Fun [']Nuf. Do you have the guts to follow it to your destiny?"
 
 chapter Flee Elf
@@ -1011,7 +1024,32 @@ The Puce Cup is a thing in Evaded Ave.
 
 book Trapeze Part
 
-Trapeze Part is west of Evaded Ave. It is in Yelpley.
+Trapeze Part is west of Evaded Ave. It is in Yelpley. "[if epicer recipe is off-stage]There's a tenses net on the floor, here. It could protect you from a long fall. You're convinced there must be something at the far end, but it's probably not safe to use the trapeze to get over until, well, you've done safety checks[else]The tenses net still sits here, and it'd be handy if there was anything else on the other side of it, but there isn't[end if]."
+
+the tenses net is scenery in Trapeze Part. "[if epicer recipe is off-stage]It doesn't quite look sturdy enough. Maybe you could do something to fix it[else]It was sturdy enough to help you get the epicer recipe, and that's enough[end if]."
+
+the epicer recipe is a thing. description is "You've seen recipes before, but this is a big interesting one! It describes how to make a north-tron, which will get you north of Fun [']Nuf.[paragraph break][gots of TNT][gots of x/o box][gots of mush sum][gots of balsa slab][gots of gorge grog]"
+
+to say gots of (t - a thing):
+	say "--[t][if player has t] (got it!)[end if][line break]"
+
+after printing the name of an ingredient while taking inventory: if player has epicer recipe, say " (recipe item)"
+
+chapter tending
+
+tending is an action applying to one thing.
+
+understand the command "tend" as something new.
+
+understand "tend [something]" as tending.
+
+carry out tending:
+	if noun is not tenses net, say "That doesn't need tending." instead;
+	if player has epicer recipe, say "You already did what you needed with the net." instead;
+	say "You adjust the tenses net. You're not sure how to make it work, but with some common sense, you make it. The set o['] notes gives surprising help. You climb and swing from the trapeze to the other side--falling into the tenses net about a hundred or so times--but the hundred and first bam! You notice an epic-er recipe on the other side.[paragraph break]It's a clear step up from the set o['] notes, which you won't be needing any more. Yay!";
+	now set o notes is in ZeroRez;
+	now player has epicer recipe;
+	the rule succeeds.
 
 book Yell Alley
 
@@ -1058,7 +1096,7 @@ check going to emo dome:
 		now emo-dir is noun;
 
 check going north in emo dome:
-	say "The Civic Level is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by 'Go jog!' and think, hang? Nah." instead;
+	say "The Civic Level is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by 'Oh, who? Go jog!' and think, hang? Nah." instead;
 	if Civic Level is unvisited, say "You step into what may be your final challenge in Yelpley..."
 
 book civic level

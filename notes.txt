@@ -31,8 +31,6 @@ rep-a-paper
 
 O Furor! UFO!
 
-epic-er recipe: this builds the north tron
-
 The Bomb Mob carries TNT. You get it with a Bang-Nab.
 
 Known Wonk
@@ -105,7 +103,6 @@ Girt Rig
 
 goth tog: takes pictures
 
-Gorge Grog: can drink, name of bar?
 Grog Org: Gorge Grog!
 
 FOODS=======
@@ -384,11 +381,6 @@ Presser, P
 Rocco R
 Rollo R
 R Etter
-
-Tenses Net
-TEND NET
-
-Oh! Who?
 
 No Sin is On
 
