@@ -4,18 +4,15 @@
 		<title>Put It Up flowchart</title>
 		<author>Andrew Schultz</author>
 		<description>Walkthrough flowchart for Put It Up
-
 May or may not be included in the game's assembly
-
 Rules for checking:
 
-1 search for -inc in source code
+1 search for -inc; in source code
 2 search for table of useons, verify all is there
 
-Color coding: white = work row, blue = useon, grey = guess the verb
-1. search for -inc in the source code
-2. plow through table of useons</description>
-		<history>Started 1/22-23/2018</history>
+Color coding: white = work row, blue = useon, grey = guess the verb</description>
+		<history>Started 1/22-23/2018
+</history>
 	</info>
 	<map>
 		<room id="1" name="PACK CAP" subtitle="" x="-256" y="0" w="96" h="64" region="Start OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isStartRoom="yes" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
@@ -26,9 +23,11 @@ Color coding: white = work row, blue = useon, grey = guess the verb
 			<dock index="0" id="4" port="e" />
 			<dock index="1" id="6" port="w" />
 		</line>
-		<room id="8" name="DEFEAT YUGE GUY" subtitle="GET MURK RUM" x="544" y="-512" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="8" name="USE REP POPPER/ YUGE GUY" subtitle="" x="544" y="-512" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects custom="yes" customRight="-40" customDown="0">GET MURK RUM</objects>
+		</room>
 		<room id="9" name="DEFEAT MADAM SNIFFINS" subtitle="" x="544" y="-384" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Get Yard Ray</objects>
+			<objects custom="yes" customRight="-36" customDown="0">GET YARD RAY</objects>
 		</room>
 		<room id="10" name="CREATE NORTH TRON" subtitle="" x="544" y="-256" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="11" name="YARD RAY WORKS" subtitle="" x="704" y="-448" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
@@ -69,7 +68,7 @@ Color coding: white = work row, blue = useon, grey = guess the verb
 			<dock index="0" id="1" port="n" />
 			<dock index="1" id="4" port="s" />
 		</line>
-		<room id="5" name="TRAP ART+ REIFIER= PARTY TRAP" subtitle="" x="64" y="0" w="96" h="64" region="Start OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="5" name="TRAP ART+ REIFIER= PARTY TRAP" subtitle="" x="64" y="0" w="96" h="64" region="Start OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="24" name="" description="" flow="oneWay">
 			<dock index="0" id="22" port="s" />
 			<dock index="1" id="5" port="n" />
