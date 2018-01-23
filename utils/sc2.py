@@ -47,7 +47,7 @@ def detect_region(a, b):
     temp = re.sub("\].*", "", temp)
     return temp
 
-with open("story.ni") as file:
+with open("c:/games/inform/put-it-up.inform/source/story.ni") as file:
     line_count = 0
     for line in file:
         line_count = line_count + 1

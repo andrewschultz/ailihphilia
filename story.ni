@@ -319,7 +319,7 @@ instead of smelling:
 
 chapter singing
 
-instead of singing: say "Rock! Cor!"
+instead of singing, next-rand table of singstuff;
 
 chapter silly swearing
 

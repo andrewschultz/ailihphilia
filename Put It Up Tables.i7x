@@ -510,6 +510,11 @@ randtxt
 "Ya, no! Nay!"
 "Yo! Coy?"
 
+table of singstuff
+randtxt
+"Tone? Not!"
+"Rock! Cor!"
+
 table of swearstuff
 randtxt
 "(R)rude! Dur(r)!"
