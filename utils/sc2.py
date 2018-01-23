@@ -25,6 +25,7 @@ is_region = defaultdict(bool)
 base_reg_incs = defaultdict(int)
 directed_incs = defaultdict(int)
 totals = defaultdict(int)
+in_source = defaultdict(int)
 
 func_list = ''
 
@@ -56,6 +57,9 @@ with open("story.ni") as file:
             func_list = ''
         if 'is a region. max-score' in line:
             l2 = re.sub(" is a region.*", "", line.lower().strip())
+            sco = re.sub(".*is ", "", line.lower().strip())
+            sco = re.sub("\..*", "", sco)
+            in_source[l2] = int(sco)
             is_region[l2] = True
             if verbose: print("Noting region", l2)
             continue
@@ -67,14 +71,14 @@ with open("story.ni") as file:
                 continue
             if verbose:
                 if temp_region not in is_region.keys():
-                    print("WARNING no region", temp_region, "at line", line_count)
+                    print("ERROR: no region", temp_region, "at line", line_count)
                 else:
                     print ("temp region", temp_region, "for line", line_count)
             if verbose:
                 print(current_region)
                 print(func_list)
             if temp_region == "None":
-                print("Region not defined yet at line", line_count)
+                print("ERROR: region not defined yet at line", line_count)
             if temp_region == current_region:
                 base_reg_incs[temp_region] = base_reg_incs[temp_region] + 1
             else:
@@ -125,6 +129,8 @@ for x in directed_incs.keys():
     totals[x] = totals[x] + directed_incs[x]
 
 for x in totals.keys():
+    if totals[x] != in_source[x]:
+        print("ERROR:", x, "has", totals[x], "but source lists", in_source[x])
     print(x, totals[x])
 
 t2 = sum(totals.values())

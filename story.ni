@@ -54,11 +54,11 @@ chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
 
-Grebeberg is a region. max-score of Grebeberg is 3.
+Grebeberg is a region. max-score of Grebeberg is 6.
 
 Dim Mid is a region. max-score of Dim Mid is 2.
 
-Yelpley is a region. max-score of Yelpley is 9.
+Yelpley is a region. max-score of Yelpley is 13.
 
 Odd Do is a region. max-score of Odd Do is 3.
 
@@ -1134,7 +1134,7 @@ section gotocheck - not for release
 when play begins:
 	say "[if number of notyet rooms is 0]All rooms have a switch saying you can go there[else]Rooms that are still notyet: [list of notyet rooms][end if]."
 
-volume verbs not yet in game flow
+volume unsorted
 
 chapter trucking
 
