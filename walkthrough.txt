@@ -81,6 +81,25 @@ You now have access to a few more rooms.
 
 ==========================================below is stuff that's near the end
 
+Now that you have all the ingredients for the North-Tron, you need to activate them.
+
+>USE MUSH ON BOX
+
+But you still can't go north! You don't have a weapon!
+
+>USE MURK RUM ON YARD RAY
+
+Now you can go to the Dirge Grid.
+
+>N
+
+>USE RAY ON DIKTAT KID
+
+>S
+
+>USE X-ITE TIX ON TIX EXIT
+==========================================below is stuff that's not in order
+
 Now the Gold Log is shiny, but it's not particularly useful, and it's not you. It seems to be rattling, as if it holds something inside, but you can't figure out how to open it.
 
 >PUT GOLD LOG IN ROTATOR
@@ -91,6 +110,3 @@ How do you feel peaceful enough to not be disrupted by your enemies?
 
 >PUT STINK KNITS IN ROTATOR
 
-==========================================below is stuff that's not in order
-
-The Dirge Grid is one of the big challenging places.

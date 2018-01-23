@@ -532,6 +532,7 @@ randtxt
 "Speel? Bleeps."
 "Tact, cat!"
 "Tic? Illicit."
+"Tit!"
 "Tut!"
 "We mew!"
 "Y'booby!"
