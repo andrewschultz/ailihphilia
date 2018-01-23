@@ -14,7 +14,29 @@ include Put It Up Debug Tables by Andrew Schultz.
 
 include undo output control by Erik Temple.
 
+volume definitions
+
+a thing can be drinkable. a thing is usually not drinkable.
+
+an ingredient is a kind of thing.
+
+chapter region and room stuff
+
+a region has a number called max-score. a region has a number called cur-score.
+
+Grebeberg is a region. max-score of Grebeberg is 6.
+
+Dim Mid is a region. max-score of Dim Mid is 3.
+
+Yelpley is a region. max-score of Yelpley is 14.
+
+Odd Do is a region. max-score of Odd Do is 3.
+
+[El Live Ville is a region.]
+
 volume unsorted
+
+section stuff to move
 
 the x-ite tix are a plural-named thing. understand "xite" and "xite tix" as x-ite tix.
 
@@ -56,31 +78,15 @@ the murk rum is a drinkable thing. [put this in the yard ray]
 
 section ingredients
 
-an ingredient is a kind of thing.
-
-the x/o box is an ingredient
+the x/o box is an ingredient.
 
 TNT is an ingredient.
 
 Gorge Grog is an ingredient. description is "Unsurprisingly, it's produced by Grog-Org."
 
-a balsa slab is an ingredient.
+a balsa slab is an ingredient. description is "One of [number of ingredients] ingredients."
 
 the mush sum is an edible ingredient.
-
-chapter region and room stuff
-
-a region has a number called max-score. a region has a number called cur-score.
-
-Grebeberg is a region. max-score of Grebeberg is 6.
-
-Dim Mid is a region. max-score of Dim Mid is 2.
-
-Yelpley is a region. max-score of Yelpley is 14.
-
-Odd Do is a region. max-score of Odd Do is 3.
-
-[El Live Ville is a region.]
 
 volume the player
 
@@ -396,10 +402,26 @@ understand "use [something] with [something]" as useoning it with.
 
 useoning it with is an action applying to two things.
 
+to build-the-tron:
+	move north tron to Fun 'Nuf;
+	now all ingredients are in ZeroRez;
+	say "You build the north tron with the instructions from the epicer recipe. A passage opens north! You must be close now.";
+	score-inc; [+dim mid]
+
 check useoning it with:
+	if noun is second noun, say "It's not productive to use something on itself, even with this game being full of palindromes." instead;
 	repeat through table of cantuse:
 		if noun is use1 entry or second noun is use1 entry, say "[babble entry][line break]" instead;
 	if noun is a person, say "[one of]You're not any good at using other people. In fact, if you tried, they'd wind up using YOU. Plus you don't want to be, really. There's another way. So, no[or]Using people is out[stopping]. Maybe you could use something on a person, though." instead;
+	if noun is an ingredient or noun is epicer recipe:
+		if second noun is an ingredient or noun is epicer recipe:
+			if player does not have epicer recipe, say "Those two things seem to go together, but you don't have detailed instructions." instead;
+			if number of ingredients carried by player < number of ingredients, say "You have the start of something, but not enough to make a north-tron." instead;
+			if player is not in fun 'nuf:
+				say "You might be better served using these things in Fun [']Nuf. Go there?";
+				if the player no-consents, say "OK, but protip: that's where you need to assemble things." instead;
+				move player to fun 'nuf, without printing a room description;
+			build-the-tron instead;
 	if noun is a workable or second noun is a workable:
 		if wr-short-note is false:
 			say "(NOTE: You can abbreviate this command with ROT, REI and REV for the respective machines, later.)[paragraph break]";

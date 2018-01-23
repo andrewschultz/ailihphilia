@@ -1,5 +1,7 @@
 # dno.py checks this against source and cleans this up
 
+# XITE TIX lead to A MORE EXCITING REAL WORLD. Well, given all the palindromes you dealt with, you probably should've expected a circular loop to back where you began. But you did have fun. Probably more than if you'd stood around and leveled up a whole bunch. So that's something.
+
 It doesn't get much more generic than "put it up."
 
 Diss Sid
@@ -9,8 +11,6 @@ miasms aim
 Mad Adam: Yuge Guy?
 Iller Elli: Madam?
 Able Melba: another boss?
-
-Elan Ale can be traded for Gorge Grog
 
 Well, it's still EW.
 
@@ -26,8 +26,6 @@ Mask Sam:Mash Sam
 Hank? Nah
 
 Rise, Sir!
-
-Verb! Rev!
 
 DNA Band:create DNA Hand
 

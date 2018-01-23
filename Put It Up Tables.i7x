@@ -508,6 +508,7 @@ randtxt
 "Peep?!"
 "Spill, lips!"
 "Too moot."
+"Verb! Rev!"
 "Ya, no! Nay!"
 "Yo! Coy?"
 
