@@ -643,7 +643,11 @@ Dirge Grid is a room in Mid Dim. "The only way back is south[if diktat kid is in
 
 Diktat Kid is a proper-named person in Dirge Grid.
 
-check going south in dirge grid: if diktat kid is in dirge grid, say "No. You can't chicken out. You must be close!" instead;
+after looking in dirge grid for the first time:
+	say "The Diktat Kid booms 'Engage le jeu que je le gagne!'";
+	continue the action;
+
+check going south in dirge grid: if diktat kid is in dirge grid, say "'Mom! SOS! SOS! Mom!' the Diktat Kid mocks you.[paragraph break]You can't chicken out. You must be close!" instead;
 
 part Grebeberg
 
@@ -1154,10 +1158,6 @@ Civic Level is north of Emo Dome. It is in Yelpley.
 book Swept Pews
 
 Swept Pews is south of Emo Dome. It is in Yelpley.
-
-chapter resto poster
-
-the resto poster is a thing in Swept Pews.
 
 chapter Tract Cart
 
