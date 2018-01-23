@@ -11,6 +11,7 @@ from collections import defaultdict
 
 # options
 verbose = False
+semi_verbose = False
 
 # variables
 
@@ -23,6 +24,7 @@ current_region = "None"
 is_region = defaultdict(bool)
 base_reg_incs = defaultdict(int)
 directed_incs = defaultdict(int)
+totals = defaultdict(int)
 
 func_list = ''
 
@@ -33,6 +35,8 @@ while argval < len(sys.argv):
         noh = noh[1:]
     if noh == 'v':
         verbose = True
+    if noh == 's':
+        semi_verbose = True
     argval = argval + 1
 
 def detect_region(a, b):
@@ -71,7 +75,10 @@ with open("story.ni") as file:
                 print(func_list)
             if temp_region == "None":
                 print("Region not defined yet at line", line_count)
-            base_reg_incs[temp_region] = base_reg_incs[temp_region] + 1
+            if temp_region == current_region:
+                base_reg_incs[temp_region] = base_reg_incs[temp_region] + 1
+            else:
+                directed_incs[temp_region] = directed_incs[temp_region] + 1
         ll = line.strip().lower()
         if line.startswith('part '):
             for x in is_region.keys():
@@ -92,18 +99,37 @@ with open("story.ni") as file:
         if use_ons:
             x = ll.split("\t")
             if len(x) < 6: continue
+            if len(x) != 9:
+                print("ERROR: Line", line_count, "has the wrong # of tabs for use-table. ", len(x), " should be 9.")
             if x[5] == 'true':
-                undef_use_points = undef_use_points + 1
-
-totals = 0
+                temp_region = detect_region(line, "")
+                if temp_region:
+                    directed_incs[temp_region] = directed_incs[temp_region] + 1
+                else:
+                    if not temp_region:
+                        print("Blank temp region at line", line_count, "in use table.")
+                    elif temp_region not in is_region.keys():
+                        print(temp_region, "at line", line_count, " in use table not a valid region.")
+                    elif verbose:
+                        print(temp_region, "at line", line_count, " in use table given extra point.")
+                    undef_use_points = undef_use_points + 1
 
 for x in base_reg_incs.keys():
-    print('BASE', x, base_reg_incs[x])
-    totals = totals + base_reg_incs[x]
+    if semi_verbose or verbose:
+        print('BASE', x, base_reg_incs[x])
+    totals[x] = totals[x] + base_reg_incs[x]
 
 for x in directed_incs.keys():
-    print('DIRECTED', x, directed_incs[x])
-    totals = totals + directed_incs[x]
+    if semi_verbose or verbose:
+        print('DIRECTED', x, directed_incs[x])
+    totals[x] = totals[x] + directed_incs[x]
 
-print("Use points =", undef_use_points)
-print("Total =", totals + undef_use_points)
+for x in totals.keys():
+    print(x, totals[x])
+
+t2 = sum(totals.values())
+
+if undef_use_points:
+    print("ERROR: undef use points =", undef_use_points)
+
+print("Total =", t2)
