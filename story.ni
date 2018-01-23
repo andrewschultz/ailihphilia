@@ -48,6 +48,12 @@ the gift fig is an edible thing.
 
 check eating an edible thing: say "Food? Oof! (You don't need to eat anything to win. Food may be more useful for other people.)[paragraph break]" instead;
 
+the elan ale is a drinkable thing.
+
+the yard ray is a thing.
+
+the murk rum is a drinkable thing. [put this in the yard ray]
+
 section ingredients
 
 an ingredient is a kind of thing.
@@ -70,7 +76,7 @@ Grebeberg is a region. max-score of Grebeberg is 6.
 
 Dim Mid is a region. max-score of Dim Mid is 2.
 
-Yelpley is a region. max-score of Yelpley is 13.
+Yelpley is a region. max-score of Yelpley is 14.
 
 Odd Do is a region. max-score of Odd Do is 3.
 
@@ -456,6 +462,7 @@ poo coop	gnu dung	--	--	--	true	true	true	"The gnu dung is sucked towards the po
 gold log	rotator	dork rod	--	--	true	true	false	"The gold log begins spinning until it cracks open--leaving a dork rod!"	yelpley
 dork rod	tao boat	--	--	--	true	true	false	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."	grebeberg
 stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"	yelpley
+elan ale	ira bari	gorge grog	--	--	true	false	false	"Ira looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"	yelpley
 UFO Tofu	Mayo Yam	Mush Sum	in-mont-nom rule	--	true	true	true	"The UFO Tofu and mayo yam blend together in a most unholy fashion, but the magic of Mont Nom kicks in, and they become ... a surprisingly nice smelling and looking mush sum."	grebeberg
 Eroded Ore	reviver	Ore Zero	--	--	true	true	true	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"	yelpley
 sage gas	tenet	tenet	--	--	true	true	false	"With the sage gas, you're able to see a bit deeper into the tenet."	grebeberg
@@ -996,6 +1003,12 @@ understand "tame mat" as a mistake ("That's not quite what to do. This is a game
 book Bon Snob
 
 Bon Snob is south of Toll Lot. It is in Yelpley.
+
+Ira Bari is a person in Bon Snob.
+
+The Gorge Grog is a thing in Bon Snob.
+
+check taking Gorge Grog: say "Ira Bari chides you. 'It's worthless to us, but if there's anything tackier than bad alcohol, it's people who want to steal it!'[paragraph break]Maybe you could trade something for it." instead;
 
 Nat's Tan is a thing in Bon Snob. "A container of something called Nat's Tan is here."
 
