@@ -26,7 +26,7 @@ a region has a number called max-score. a region has a number called cur-score.
 
 Grebeberg is a region. max-score of Grebeberg is 7.
 
-Dim Mid is a region. max-score of Dim Mid is 4.
+Dim Mid is a region. max-score of Dim Mid is 5.
 
 Yelpley is a region. max-score of Yelpley is 15.
 
@@ -177,7 +177,7 @@ Rule for printing a parser error when the latest parser error is the i beg your 
 chapter unrecognized verb
 
 Rule for printing a parser error when the latest parser error is the didn't understand error:
-	say "[if gtv]You do need a special verb here, but not that one. It may not be a standard one, but given the game's theme, I bet you can figure it out. If youwant standard verbs, y[else]I didn't recognize that action. Y[end if]ou can type VERB or VERBS to get a list of them.";
+	say "[if gtv]You do need a special verb here, but not that one. It may not be a standard one, but given the game's theme, I bet you can figure it out. If you want standard verbs, y[else]I didn't recognize that action. Y[end if]ou can type VERB or VERBS to get a list of them.";
 
 to decide whether gtv:
 	if ian is in location of player, yes;
@@ -234,6 +234,15 @@ carry out refering:
 
 instead of thinking:
 	say "[if refer-bonus is false]There might be a more appropriate way to think[else]You think for a bit[end if]."
+
+chapter inventory
+
+to say gots of (t - a thing):
+	say "--[t][if player has t] (got it!)[end if][line break]"
+
+after printing the name of an ingredient while taking inventory: if player has epicer recipe, say " (recipe item)";
+
+after printing the name of yard ray while taking inventory: say " ([unless murk rum is in ZeroRez]un[end if]charged)";
 
 chapter abouting
 
@@ -410,6 +419,8 @@ to build-the-tron:
 	move north tron to Fun 'Nuf;
 	now all ingredients are in ZeroRez;
 	say "You build the north tron with the instructions from the epicer recipe. A passage opens north! You must be close now.";
+	now dirge grid is mapped north of fun 'nuf;
+	now fun 'nuf is mapped south of dirge grid;
 	score-inc; [+dim mid]
 
 check useoning it with:
@@ -495,6 +506,7 @@ sage gas	tenet	tenet	--	--	true	true	false	"With the sage gas, you're able to se
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."	grebeberg
 Bro Orb	Madam Sniffins	Yard Ray	--	--	true	true	true	"The Bro Orb shines and drives Madam Sniffins to rage. She runs away, sobbing. The Yard Ray is left unguarded. You take it."	yelpley
 murk rum	yard ray	--	--	--	true	true	false	"The yard ray gleams with energy. It seems like it could do some damage now."	dim mid
+yard ray	diktat kid	x-ite tix	--	--	true	true	true	"The yard ray hums and glows and fires! A direct hit! The Diktat Kid runs away. In the kid's place, there are X-Ite Tix."	dim mid
 
 this is the in-mont-nom rule:
 	if location of player is mont nom, the rule succeeds;
@@ -511,7 +523,7 @@ part Mid Dim
 
 book Fun 'Nuf
 
-Fun 'Nuf is a room in Mid Dim. "[if elite tile is in fun 'nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what is the various directions[xit-ave][end if]."
+Fun 'Nuf is a room in Mid Dim. "[if elite tile is in fun 'nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what is the various directions[xit-ave][end if][if north tron is in fun 'nuf]. Also, the North Tron has carved a passage north[end if]."
 
 to say xit-ave:
 	say ". The [if tix exit is in fun 'nuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]"
@@ -565,7 +577,7 @@ check going in Fun 'Nuf:
 	if Flee Elf is in Fun 'Nuf:
 		if noun is west or noun is east, say "'Keen! Eek!' the Flee Elf stops you. 'You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley.'" instead;
 	if noun is north:
-		if diktat kid is in ZeroRez, say "No need to go back."
+		if diktat kid is in ZeroRez, say "No need to go back." instead;
 		if north tron is not in Fun 'Nuf, say "Not until you built the North-Tron." instead;
 		if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
 		if murk rum is not in ZeroRez, say "You have the yard ray, but it isn't, well, charged." instead;
@@ -1082,11 +1094,6 @@ the tenses net is scenery in Trapeze Part. "[if epicer recipe is off-stage]It do
 
 the epicer recipe is a thing. description is "You've seen recipes before, but this is a big interesting one! It describes how to make a north-tron, which will get you north of Fun [']Nuf.[paragraph break][gots of TNT][gots of x/o box][gots of mush sum][gots of balsa slab][gots of gorge grog]"
 
-to say gots of (t - a thing):
-	say "--[t][if player has t] (got it!)[end if][line break]"
-
-after printing the name of an ingredient while taking inventory: if player has epicer recipe, say " (recipe item)"
-
 chapter tending
 
 tending is an action applying to one thing.
@@ -1409,6 +1416,27 @@ this is the refer-yet rule:
 	the rule fails;
 
 volume beta testing - not for release
+
+chapter endgame
+
+endgameing is an action applying to nothing.
+
+understand the command "endgame" as something new.
+
+understand "endgame" as endgameing.
+
+carry out endgameing:
+	say "Giving you all the cool stuff to defeat the Diktat Kid.";
+	now player carries all ingredients;
+	now player carries murk rum;
+	now player carries yard ray;
+	now player carries epicer recipe;
+	now set o notes is in ZeroRez;
+	now Darer Ad is in ZeroRez;
+	now elf is in ZeroRez;
+	now player has pact cap;
+	now Tix Exit is in Fun 'Nuf;
+	the rule succeeds;
 
 chapter wining
 
