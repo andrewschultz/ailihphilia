@@ -94,7 +94,7 @@ with open("story.ni") as file:
         elif not line:
             use_ons = False
             continue
-        if line.startswith('\t') and "reg-inc" in ll:
+        if line.startswith('\t') and "reg-inc" in ll and "reg-inc reg-plus entry" not in ll:
             l2 = re.sub(".*reg-inc ", "", ll.lower())
             l2 = re.sub(";.*", "", l2)
             if l2 == 'mrlp':
@@ -103,10 +103,12 @@ with open("story.ni") as file:
         if use_ons:
             x = ll.split("\t")
             if len(x) < 6: continue
-            if len(x) != 9:
-                print("ERROR: Line", line_count, "has the wrong # of tabs for use-table. ", len(x), " should be 9.")
+            if len(x) != 10:
+                print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 9.")
             if x[5] == 'true':
-                temp_region = detect_region(line, "")
+                temp_region = ""
+                if x[9] and x[9] != '--' and x[9] != 'reg-plus': # a bit hacky, but basically, check for entry 10 in useon table being a proper region
+                    temp_region = x[9]
                 if temp_region:
                     directed_incs[temp_region] = directed_incs[temp_region] + 1
                 else:
@@ -130,7 +132,7 @@ for x in directed_incs.keys():
 
 for x in totals.keys():
     if totals[x] != in_source[x]:
-        print("ERROR:", x, "has", totals[x], "but source lists", in_source[x])
+        print("ERROR: region", x, "has", totals[x], "but source lists", in_source[x])
     print(x, totals[x])
 
 t2 = sum(totals.values())
