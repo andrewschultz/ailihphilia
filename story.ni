@@ -50,24 +50,6 @@ the gift fig is an edible thing.
 
 check eating an edible thing: say "Food? Oof! (You don't need to eat anything to win. Food may be more useful for other people.)[paragraph break]" instead;
 
-chapter trucking
-
-[this point is unsorted yet]
-
-Curt is a person.
-
-trucking is an action applying to one thing.
-
-understand the command "truck" as something new.
-
-understand "truck [something]" as trucking.
-
-carry out trucking:
-	if noun is not Curt, say "Wrong thing to truck." instead;
-	move Curt to ZeroRez;
-	score-inc;
-	the rule succeeds.
-
 chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
@@ -368,7 +350,7 @@ instead of sleeping:
 	if eels are in location of player:
 		say "You manage to calm the eels down. They go away.";
 		move eels to ZeroRez;
-		score-inc instead;
+		score-inc instead; [+grebeberg]
 	say "Sleeping is equivalent to waiting in this game...well, except for one place...";
 	try waiting instead;
 
@@ -417,7 +399,7 @@ check useoning it with:
 				if d1 entry is true:
 					now use1 entry is in ZeroRez;
 				if sco entry is true:
-					score-inc;
+					score-inc; [+ignore]
 				say "[babble entry][line break]";
 				if there is a postproc entry:
 					consider the postproc entry;
@@ -478,8 +460,10 @@ part Mid Dim
 
 book Fun 'Nuf
 
-Fun 'Nuf is a room in Mid Dim. "[if elite tile is in fun 'nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south[else]Some tile lit is carved out here, describing what is the various directions[end if]."
+Fun 'Nuf is a room in Mid Dim. "[if elite tile is in fun 'nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what is the various directions[xit-ave][end if]."
 
+to say xit-ave:
+	say ". The [if tix exit is in fun 'nuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]."
 the north tron is scenery. "It seems to have pushed a passage north here in Fun [']Nuf. Do you have the guts to follow it to your destiny?"
 
 chapter Flee Elf
@@ -559,7 +543,7 @@ carry out packing:
 	now player has set o notes;
 	now player wears the cap;
 	now all cappy rooms are available;
-	score-inc;
+	score-inc; [+dim mid]
 	the rule succeeds;
 
 section pace cap
@@ -589,7 +573,7 @@ check taking tile lit: say "It's sort of embedded into the ground. It looks nice
 
 chapter elite tile
 
-the elite tile is scenery in Fun 'Nuf. "Done? Nod![line break]Nif-T-Fin!"
+the elite tile is scenery. "Done? Nod![line break]Nif-T-Fin!"
 
 chapter back cab
 
@@ -1149,6 +1133,26 @@ section gotocheck - not for release
 
 when play begins:
 	say "[if number of notyet rooms is 0]All rooms have a switch saying you can go there[else]Rooms that are still notyet: [list of notyet rooms][end if]."
+
+volume verbs not yet in game flow
+
+chapter trucking
+
+[this point is unsorted yet]
+
+Curt is a person.
+
+trucking is an action applying to one thing.
+
+understand the command "truck" as something new.
+
+understand "truck [something]" as trucking.
+
+carry out trucking:
+	if noun is not Curt, say "Wrong thing to truck." instead;
+	move Curt to ZeroRez;
+	score-inc; [+yelpley]
+	the rule succeeds.
 
 volume metarooms
 
