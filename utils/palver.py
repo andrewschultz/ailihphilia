@@ -2,11 +2,46 @@
 import i7
 import re
 
+from collections import defaultdict
+
+start_ignore_dict = defaultdict(bool)
+include_ignore_dict = defaultdict(bool)
+
+def read_ignore_file():
+	ignore_file = "c:/games/inform/put-it-up.inform/source/palver.txt"
+	with open(ignore_file) as file:
+		for line in file:
+			if line.startswith('#'):
+				continue
+			if line.startswith(';'):
+				file.close()
+				return
+			ll = line.strip().lower()
+			if ll.startswith('s:'):
+				q = ll[2:]
+				start_ignore_dict[q] = True
+			if ll.startswith('i:'):
+				q = ll[2:]
+				include_ignore_dict[q] = True
+
+
 def letonly(x):
 	t2 = x.strip().lower()
 	t2 = re.sub(r"^(the|a) ", "", t2, 0, re.IGNORECASE)
 	temp = re.sub("[^a-z]", "", t2)
 	return temp
+
+def start_ignore(ll):
+	for x in start_ignore_dict.keys():
+		if ll.startswith(x):
+			return True
+	return False
+
+def include_ignore(ll):
+	for x in include_ignore_dict.keys():
+		if x in ll:
+			return True
+	return False
 
 def pal_ver(f):
 	in_table = ""
@@ -36,32 +71,9 @@ def pal_ver(f):
 			if ' is ' in line or ' are ' in line:
 				if in_table != "": continue
 				ll = line.lower().strip()
-				if ll.startswith("["): continue
-				if ll.startswith("understand"): continue
-				if ll.startswith("does the player mean"): continue
-				if ll.startswith("description of"): continue
-				if ll.startswith("rule for"): continue
-				if ll.startswith("when play begins"): continue
-				if ll.startswith("definition:"): continue
-				if ll.startswith("to decide"): continue
-				if ll.startswith("civic level"): continue
-				if ll.startswith("a thing can be"): continue
-				if ll.startswith("the release number"): continue
-				if ll.startswith("printed name of"): continue
-				if ll.startswith("the story headline"): continue
 				if re.search("^(madam sniffins|dave|ian|ned|curt) is a person", ll, re.IGNORECASE): continue
-				if ll.startswith("the eels are people"): continue
-				if ll.startswith("check") or ll.startswith("instead") or ll.startswith("before") or ll.startswith("after"): continue
-				if 'rule:' in line: continue
-				if 'is an activity' in line: continue
-				if 'are cappy' in line: continue
-				if 'rule is listed' in line: continue
-				if 'is a kind' in line: continue
-				if 'is a truth state' in line: continue
-				if 'is a direction' in line: continue
-				if 'is a number' in line: continue
-				if 'is an action' in line: continue
-				if 'rule for printing' in line: continue
+				if start_ignore(ll) or include_ignore(ll):
+					continue
 				ll = re.sub(r" (is|are) .*", "", line.strip())
 				ll = letonly(ll)
 				if ll != ll[::-1]:
@@ -73,5 +85,6 @@ def pal_ver(f):
 	else:
 		print("TEST FAILED:", f, ",", err_count)
 
+read_ignore_file()
 for x in i7.i7f["put-it-up"]:
 	pal_ver(x)

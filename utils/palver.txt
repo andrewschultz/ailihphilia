@@ -1,0 +1,29 @@
+s:[
+s:understand
+s:does the player mean
+s:description of
+s:rule for
+s:when play begins
+s:definition:
+s:to decide
+s:civic level
+s:a thing can be
+s:the release number
+s:printed name of
+s:the story headline
+s:the eels are people
+s:check
+s:instead
+s:before
+s:after
+i:rule:
+i:is an activity
+i:are cappy
+i:rule is listed
+i:is a kind
+i:is a truth state
+i:is a direction
+i:is a number
+i:is an action
+i:rule for printing
+;
