@@ -515,6 +515,7 @@ randtxt
 
 table of singstuff
 randtxt
+"Ode? Redo!"
 "Rock! Cor!"
 "Tone? Not!"
 "Tune nut!"

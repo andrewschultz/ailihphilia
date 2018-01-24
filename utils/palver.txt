@@ -1,3 +1,4 @@
+# ignore-starts
 s:[
 s:understand
 s:does the player mean
@@ -16,6 +17,7 @@ s:check
 s:instead
 s:before
 s:after
+# ignore-includes
 i:rule:
 i:is an activity
 i:are cappy
@@ -26,4 +28,6 @@ i:is a direction
 i:is a number
 i:is an action
 i:rule for printing
+# regexes
+r:^(madam sniffins|dave|ian|ned|curt) is a person
 ;

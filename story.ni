@@ -165,6 +165,10 @@ volume parser errors operations and death
 
 check saving the game: say "Eh, cache...";
 
+check quitting the game: say "Aibohphobia?!";
+
+check restarting the game: say "Warp ... raw.";
+
 part parser errors
 
 chapter nothing to say

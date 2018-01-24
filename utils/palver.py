@@ -6,6 +6,7 @@ from collections import defaultdict
 
 start_ignore_dict = defaultdict(bool)
 include_ignore_dict = defaultdict(bool)
+regex_ignore_dict = defaultdict(bool)
 
 def read_ignore_file():
 	ignore_file = "c:/games/inform/put-it-up.inform/source/palver.txt"
@@ -23,6 +24,9 @@ def read_ignore_file():
 			if ll.startswith('i:'):
 				q = ll[2:]
 				include_ignore_dict[q] = True
+			if ll.startswith('r:'):
+				q = ll[2:]
+				regex_ignore_dict[q] = True
 
 
 def letonly(x):
@@ -33,15 +37,18 @@ def letonly(x):
 
 def start_ignore(ll):
 	for x in start_ignore_dict.keys():
-		if ll.startswith(x):
-			return True
+		if ll.startswith(x): return True
 	return False
 
 def include_ignore(ll):
 	for x in include_ignore_dict.keys():
-		if x in ll:
-			return True
+		if x in ll: return True
 	return False
+
+def regex_ignore(ll):
+    for x in regex_ignore_dict.keys():
+        if re.search("{:s}".format(x), ll, re.IGNORECASE): return True
+    return False
 
 def pal_ver(f):
 	in_table = ""
@@ -71,8 +78,7 @@ def pal_ver(f):
 			if ' is ' in line or ' are ' in line:
 				if in_table != "": continue
 				ll = line.lower().strip()
-				if re.search("^(madam sniffins|dave|ian|ned|curt) is a person", ll, re.IGNORECASE): continue
-				if start_ignore(ll) or include_ignore(ll):
+				if start_ignore(ll) or include_ignore(ll) or regex_ignore(ll):
 					continue
 				ll = re.sub(r" (is|are) .*", "", line.strip())
 				ll = letonly(ll)
@@ -86,5 +92,6 @@ def pal_ver(f):
 		print("TEST FAILED:", f, ",", err_count)
 
 read_ignore_file()
+
 for x in i7.i7f["put-it-up"]:
 	pal_ver(x)
