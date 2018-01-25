@@ -171,9 +171,7 @@ def check_notes(s):
     elif bowdlerize_notes:
         print("Nothing to bowdlerize, so I am not recopying.")
     if launch_after and open_line:
-        print("Launching", notes_file_to_read, "at", open_line)
-        cmd = "start \"\" {:s} {:s} -n{:d}".format(i7.np, notes_file_to_read, open_line)
-        os.system(cmd)
+        i7.npo(notes_file_to_read, open_line, True)
 
 count = 1
 modified_yet = False

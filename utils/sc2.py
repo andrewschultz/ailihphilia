@@ -5,6 +5,7 @@
 # replaces msc.py
 #
 
+import i7
 import sys
 import re
 from collections import defaultdict
@@ -15,13 +16,16 @@ semi_verbose = False
 
 # variables
 
+main_source = "c:/games/inform/put-it-up.inform/source/story.ni"
 use_ons = False
+
+line_to_open = 0
 
 undef_use_points = 0
 
 current_region = "None"
 
-is_region = defaultdict(bool)
+region_def_line = defaultdict(int)
 base_reg_incs = defaultdict(int)
 directed_incs = defaultdict(int)
 totals = defaultdict(int)
@@ -47,7 +51,7 @@ def detect_region(a, b):
     temp = re.sub("\].*", "", temp)
     return temp
 
-with open("c:/games/inform/put-it-up.inform/source/story.ni") as file:
+with open(main_source) as file:
     line_count = 0
     for line in file:
         line_count = line_count + 1
@@ -60,7 +64,7 @@ with open("c:/games/inform/put-it-up.inform/source/story.ni") as file:
             sco = re.sub(".*is ", "", line.lower().strip())
             sco = re.sub("\..*", "", sco)
             in_source[l2] = int(sco)
-            is_region[l2] = True
+            region_def_line[l2] = line_count
             if verbose: print("Noting region", l2)
             continue
         if 'score-inc' in line and '\t' in line:
@@ -70,7 +74,7 @@ with open("c:/games/inform/put-it-up.inform/source/story.ni") as file:
             if temp_region == 'ignore':
                 continue
             if verbose:
-                if temp_region not in is_region.keys():
+                if temp_region not in region_def_line.keys():
                     print("ERROR: no region", temp_region, "at line", line_count)
                 else:
                     print ("temp region", temp_region, "for line", line_count)
@@ -85,7 +89,7 @@ with open("c:/games/inform/put-it-up.inform/source/story.ni") as file:
                 directed_incs[temp_region] = directed_incs[temp_region] + 1
         ll = line.strip().lower()
         if line.startswith('part '):
-            for x in is_region.keys():
+            for x in region_def_line.keys():
                 if x in ll:
                     current_region = x
         if line.startswith("table of useons"):
@@ -114,7 +118,7 @@ with open("c:/games/inform/put-it-up.inform/source/story.ni") as file:
                 else:
                     if not temp_region:
                         print("Blank temp region at line", line_count, "in use table.")
-                    elif temp_region not in is_region.keys():
+                    elif temp_region not in region_def_line.keys():
                         print(temp_region, "at line", line_count, " in use table not a valid region.")
                     elif verbose:
                         print(temp_region, "at line", line_count, " in use table given extra point.")
@@ -133,11 +137,15 @@ for x in directed_incs.keys():
 for x in totals.keys():
     if totals[x] != in_source[x]:
         print("ERROR: region", x, "has", totals[x], "but source lists", in_source[x])
+        line_to_open = region_def_line[x]
     print(x, totals[x])
 
 t2 = sum(totals.values())
 
 if undef_use_points:
     print("ERROR: undef use points =", undef_use_points)
+
+if line_to_open:
+    i7.npo("story.ni", line_to_open, True)
 
 print("Total =", t2)
