@@ -24,7 +24,7 @@ chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
 
-Grebeberg is a region. max-score of Grebeberg is 7.
+Grebeberg is a region. max-score of Grebeberg is 9.
 
 Dim Mid is a region. max-score of Dim Mid is 5.
 
@@ -38,23 +38,11 @@ volume unsorted
 
 section stuff to move
 
-the rep popper is a thing.
-
 the x-ite tix are a plural-named thing. understand "xite" and "xite tix" as x-ite tix.
-
-Madam Sniffins is a person.
-
-Yuge Guy is a proper-named person. understand "king/nik" and "king nik" as Yuge Guy.
 
 the radar is a thing.
 
 the gold log is a thing.
-
-the sage gas is a thing.
-
-the poo coop is a thing.
-
-the bro orb is a thing.
 
 to win-finally:
 	say "You head off to saner arenas for a while, just to reflect on all you did.";
@@ -197,7 +185,7 @@ after reading a command:
 part dying
 
 to die:
-	end the story saying "Offed? Deffo! / Story Rots! / Stung! Nuts!"
+	end the story saying "Offed? Deffo! / Story Rots! / Stung! Nuts! / To Pot!"
 
 volume verbs
 
@@ -506,6 +494,7 @@ stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	"The stink knits
 elan ale	ira bari	gorge grog	--	--	true	false	false	"Ira looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"	yelpley
 UFO Tofu	Mayo Yam	Mush Sum	in-mont-nom rule	--	true	true	true	"The UFO Tofu and mayo yam blend together in a most unholy fashion, but the magic of Mont Nom kicks in, and they become ... a surprisingly nice smelling and looking mush sum."	grebeberg
 Eroded Ore	reviver	Ore Zero	--	--	true	true	true	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"	yelpley
+spa maps	Code Doc	--	--	maps-explain rule	true	false	false	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."	grebeberg
 sage gas	tenet	tenet	--	--	true	true	false	"With the sage gas, you're able to see a bit deeper into the tenet."	grebeberg
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."	grebeberg
 Bro Orb	Madam Sniffins	Yard Ray	--	--	true	true	true	"The Bro Orb shines and drives Madam Sniffins to rage. She runs away, sobbing. The Yard Ray is left unguarded. You take it."	yelpley
@@ -519,6 +508,16 @@ this is the in-mont-nom rule:
 
 this is the wear-garb rule:
 	now player wears the brag garb;
+	the rule succeeds;
+
+this is the maps-explained-yet rule:
+	if maps-explained is true:
+		say "You already got the Code Doc to decipher the spa maps.";
+		the rule fails;
+	the rule succeeds;
+
+this is the maps-explain rule:
+	now maps-explained is true;
 	the rule succeeds;
 
 volume rooms
@@ -536,7 +535,7 @@ the north tron is scenery. "It seems to have pushed a passage north here in Fun 
 
 chapter Flee Elf
 
-The Flee Elf is a person in Fun 'Nuf. "A Flee Elf stands here by Evac Ave to the south."
+The Flee Elf is a person in Fun 'Nuf. "A Flee Elf stands here by Evac Ave to the south.". description is "You'd expect to see the Flee Elf wearing a gateman nametag, but maybe that's in some other, even more insanely brilliant, adventure."
 
 understand "flea elf" and "flea" as a mistake("[fe0]The elf scratches for a bit, then looks embarrassed.") when player is in Fun 'Nuf and Flee Elf is in Fun 'Nuf.
 
@@ -694,11 +693,13 @@ book Flu Gulf
 
 Flu Gulf is north of Cold Loc. It is in Grebeberg.
 
-Code Doc is a person in Flu Gulf.
+Gulf Lug is a person in Flu Gulf.
 
 book Top Spot
 
-Top Spot is west of Flu Gulf. It is in Grebeberg.
+Top Spot is west of Flu Gulf. It is in Grebeberg. "This place has obviously not gone to pot."
+
+Yuge Guy is a proper-named person in Top Spot. understand "king/nik" and "king nik" as Yuge Guy.
 
 book Dumb Mud
 
@@ -731,6 +732,14 @@ instead of doing something with pill lip, say "The pill lip is just there to pre
 book Le Babel
 
 Le Babel is north of Dumb Mud. It is in Grebeberg.
+
+chapter bro orb
+
+the bro orb is a thing in Le Babel.
+
+check taking bro orb: if player does not have tenet, say "You aren't sure you can handle the potentially corrupting power of the Bro Orb. [if player has sage gas]The sage gas helps you to understand how things could go wrong, but still, you're a bit worried[end if]. Maybe if you had some more balance to your thinking." instead;
+
+[?? if you tried to take the bro orb or rep popper before, put up a warning saying, ok, you can do this now, if you have the right items.]
 
 book Mont Nom
 
@@ -769,6 +778,8 @@ book Yack Cay
 
 Yack Cay is south of Mire Rim. It is in Grebeberg.
 
+Code Doc is a person in Yack Cay.
+
 book Lair Trial
 
 Lair Trial is south of Yack Cay. It is in Grebeberg.
@@ -782,6 +793,8 @@ chapter tenet
 The tenet is a thing in Motto Bottom.
 
 check taking tenet: say "'Egad! Adage!' you think to yourself. The tenet seems too cliche, and you don't have the wisdom to give it any intrinsic value back. Well, not yet." instead;
+
+[take tenet/take bro orb = use sage gas on tenet/use tenet on bro orb]
 
 book Birch Crib
 
@@ -799,11 +812,24 @@ book Apse Spa
 
 Apse Spa is east of Cold Loc. It is in Grebeberg.
 
+chapter sage gas
+
+the sage gas is a thing. [It's found in Apse Spa, but it is not in Apse Spa.]
+
+the spa maps are a thing. "[if sage gas is not off-stage]The maps seem old hat now you've gotten the sage gas[else if maps-explained is false]You can't quite make sense out of them. There's Gobs-Bog and Go-By Bog, and one is a lot safer than the other, but you're not sure which[else]The spa maps clearly demark Go-By Bog and Gobs Bog[end if]." [?? move them to where you can find them earlier]
+
+check examining spa maps:
+	if sage gas is off-stage and player is in Apse Spa:
+		score-inc;
+		say "Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find a bottle of sage gas." instead;
+
+maps-explained is a truth state that varies.
+
 part Yelpley
 
 book Yawn Way
 
-Yawn Way is east of Fun 'Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but State Tats is to the south, and My Gym is to the north. An alley is to the east."
+Yawn Way is east of Fun 'Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but State Tats is to the north, and My Gym is to the south. An alley is to the east."
 
 book My Gym
 
@@ -1024,6 +1050,10 @@ Ned's Den is north of Toll Lot. It is in Yelpley.
 
 Ned is a person in Ned's Den.
 
+The Puce Cup is a thing in Evaded Ave.
+
+check taking puce cup: if ned is in ned's den, say "Not with Ned around, you won't." instead;
+
 chapter denting
 
 denting is an action applying to one thing.
@@ -1090,7 +1120,7 @@ book Evaded Ave
 
 Evaded Ave is north of State Tats. It is in Yelpley.
 
-The Puce Cup is a thing in Evaded Ave.
+the poo coop is in Evaded Ave. "A poo coop sits here. Thankfully, it looks empty.". description is "Looking at it, it's 1) empty and 2) somehow bigger on the inside than the outside. Maybe it can clean up a dirty area."
 
 book Trapeze Part
 
@@ -1173,6 +1203,8 @@ check going north in emo dome:
 book civic level
 
 Civic Level is north of Emo Dome. It is in Yelpley.
+
+Madam Sniffins is a person in Civic Level.
 
 book Swept Pews
 
