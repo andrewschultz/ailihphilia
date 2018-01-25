@@ -66,18 +66,60 @@ How to get rid of the rats?
 
 >N
 
->GET XANAX
+>GET DEMO MED
 
 >S
 >E
 >E
 
->EAT XANAX
+>EAT DEMO MED
 
 >E
 >PULL UP
 
 You now have access to a few more rooms.
+
+==========================================below is the Yuge Guy quest
+
+>USE DORK ROD ON TAO BOAT
+
+Now that you've been in the Tao Boat, you feel confident enough to pick up the Rep Popper.
+
+>S.S.E.E.E.E.N.N.GET POPPER
+
+And now you can take out the Yuge Guy.
+
+>W.S.S.W.W.N.N.W.USE POPPER ON GUY
+
+==========================================below is the Madam Sniffins quest
+
+>GIVE SPA MAPS TO CODE DOC
+
+>N.E.E.E.S.W
+
+>PUT STINK KNITS IN ROTATOR
+
+Yay! Brag garb!
+
+The Kayo Yak seems to be kind of violent but won't attack you. Still, it comes up to sniff you. Maybe it could help you?
+
+>USE TROLL ORT ON STINK KNITS
+
+>N.N.W.W.S.S
+
+Bye bye, Ergot Ogre!
+
+>E
+
+>USE SAGE GAS ON TENET
+
+>N.N.E.N
+
+>GET BRO ORB
+
+>S.E.E.E.E.N
+
+>USE BRO ORB ON MADAM SNIFFINS
 
 ==========================================below is stuff that's near the end
 
@@ -105,8 +147,3 @@ Now the Gold Log is shiny, but it's not particularly useful, and it's not you. I
 >PUT GOLD LOG IN ROTATOR
 
 How do you feel peaceful enough to not be disrupted by your enemies?
-
->USE DORK ROD ON TAO BOAT
-
->PUT STINK KNITS IN ROTATOR
-

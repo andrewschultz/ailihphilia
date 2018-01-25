@@ -48,7 +48,7 @@ to win-finally:
 	say "You head off to saner arenas for a while, just to reflect on all you did.";
 	end the story finally saying "Deified! Deified!"
 
-the stink knits are a thing.
+the stink knits are a thing. "They don't smell very good. In a failed attempt at irony, they are lettered DAFT FAD."
 
 the brag garb is a thing.
 
@@ -662,7 +662,7 @@ after looking in dirge grid for the first time:
 	say "The Diktat Kid booms 'Engage le jeu que je le gagne!'";
 	continue the action;
 
-check going south in dirge grid: if diktat kid is in dirge grid, say "'Mom! SOS! SOS! Mom!' the Diktat Kid mocks you.[paragraph break]You can't chicken out. You must be close!" instead;
+check going south in dirge grid: if diktat kid is in dirge grid, say "'Mom! SOS! LOL! SOS! Mom!' the Diktat Kid mocks you.[paragraph break]You can't chicken out. You must be close!" instead;
 
 part Grebeberg
 
@@ -807,6 +807,8 @@ Calcific Lac is north of Birch Crib. It is in Grebeberg. "A Tao Boat rests at th
 The Tao Boat is scenery in Calcific Lac.
 
 The dork rod is a thing in Calcific Lac. description is "It's kind of neat and quirky, but it's not shiny enough to be the famed Dorada Rod."
+
+understand "dorm rod" and "dorm" as a mistake ("The dork rod is what it is.") when player has dork rod or player is in location of dork rod.
 
 book Apse Spa
 
@@ -1046,7 +1048,9 @@ check taking tame mat:
 
 book ned's den
 
-Ned's Den is north of Toll Lot. It is in Yelpley.
+Ned's Den is north of Toll Lot. It is in Yelpley. printed name of ned's den is "[if ned is in ned's den]Ned's Den[else]Den, Evened[end if]"
+
+understand "evened" and "den evened" as ned's den when ned is in ZeroRez
 
 Ned is a person in Ned's Den.
 
@@ -1089,11 +1093,11 @@ understand "tame mat" as a mistake ("That's not quite what to do. This is a game
 
 book Bon Snob
 
-Bon Snob is south of Toll Lot. It is in Yelpley.
+Bon Snob is south of Toll Lot. It is in Yelpley. "A deli, tiled."
 
 Ira Bari is a person in Bon Snob.
 
-The Gorge Grog is a thing in Bon Snob.
+The Gorge Grog is a thing in Bon Snob. "Unsurprisingly, it is a product of Grog-Org."
 
 check taking Gorge Grog: say "Ira Bari chides you. 'It's worthless to us, but if there's anything tackier than bad alcohol, it's people who want to steal it!'[paragraph break]Maybe you could trade something for it." instead;
 
@@ -1154,7 +1158,7 @@ the rep popper is a thing in Yell Alley.
 
 check taking rep popper:
 	if player has dork rod, say "With the dork rod, you aren't THAT worried about your rep, but you're still worried enough not to take it. Maybe you can do a bit better..." instead;
-	if dork rod is not in lalaland, say "No way! You're not sure how much rep you have, but taking that rep popper would drop it a notch or more." instead;
+	if dork rod is not in ZeroRez, say "No way! You're not sure how much rep you have, but taking that rep popper would drop it a notch or more." instead;
 
 chapter pulluping
 
