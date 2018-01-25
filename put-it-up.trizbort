@@ -19,7 +19,7 @@ Initially sent to source code/repository November 2017.</history>
 			<objects>Trap Art</objects>
 		</room>
 		<room id="5" name="Yell Alley" subtitle="" x="-64" y="-448" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects custom="yes" customRight="-24" customDown="0">Troll Ort</objects>
+			<objects custom="yes" customRight="-24" customDown="0">Rep Popper</objects>
 		</room>
 		<room id="6" name="Bon Snob" subtitle="" x="96" y="-64" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>Le Falafel</objects>
@@ -136,7 +136,7 @@ Initially sent to source code/repository November 2017.</history>
 			<dock index="1" id="44" port="n" />
 		</line>
 		<room id="47" name="Swept Pews" subtitle="" x="-64" y="-64" w="96" h="64" region="Not-Kook-Ton" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects at="n">Tract Cart|Resto Poster</objects>
+			<objects at="n">Tract Cart|Troll Ort</objects>
 		</room>
 		<room id="49" name="Mire Rim" subtitle="" x="-864" y="-192" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="50" name="" description="" style="dashed" midText="Gnu Dung">

@@ -79,7 +79,7 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 		</line>
 		<room id="26" name="POO COOP ON GNU DUNG" subtitle="" x="384" y="-384" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="27" name="GOLD LOG ON ROTATOR" subtitle="" x="224" y="-384" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="28" name="DORK ROD ON TAO BOAT" subtitle="" x="224" y="-128" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="28" name="DORK ROD ON TAO BOAT" subtitle="" x="224" y="-640" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="29" name="STINK KNITS ON ROTATOR" subtitle="" x="224" y="-256" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="30" name="ELAN ALE ON IRA BARI" subtitle="" x="384" y="-128" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="31" name="ERODED ORE ON REVIVER" subtitle="" x="384" y="0" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
@@ -115,6 +115,15 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 			<dock index="1" id="9" port="w" />
 		</line>
 		<room id="48" name="TRUCK CURT" subtitle="" x="-96" y="-512" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="49" name="Get Rep Popper" subtitle="" x="384" y="-640" w="96" h="64" region="No Points" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<line id="50" name="" description="">
+			<dock index="0" id="28" port="e" />
+			<dock index="1" id="49" port="w" />
+		</line>
+		<line id="51" name="" description="" flow="oneWay">
+			<dock index="0" id="49" port="se" />
+			<dock index="1" id="8" port="nw" />
+		</line>
 	</map>
 	<settings>
 		<colors>
@@ -133,6 +142,7 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 		<regions>
 			<End____OK Name="End OK" TextColor="Black">Red</End____OK>
 			<Misc____Points Name="Misc Points" TextColor="MidnightBlue">Yellow</Misc____Points>
+			<No____Points Name="No Points" TextColor="Black">#8080FF</No____Points>
 			<NoRegion Name="NoRegion" TextColor="Black">White</NoRegion>
 			<Start____OK Name="Start OK" TextColor="Black">Lime</Start____OK>
 			<Unlinked Name="Unlinked" TextColor="Black">#FF8000</Unlinked>

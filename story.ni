@@ -1002,6 +1002,8 @@ State Tats is north of Yawn Way. It is in Yelpley. "The only way out is north."
 
 the trap art is a thing in State Tats. "Some trap art sits here. It's free. You might as well take it.". description is "The trap art depicts a bunch of nasty, dirty animals being trapped--it's not a real trap, but maybe it could become one."
 
+the troll ort is a thing in Swept Pews.
+
 book Toll Lot
 
 Toll Lot is east of Emo Dome. It is in Yelpley. "While it's easy enough to go back east, you may have to do something special to go north or south."
@@ -1117,6 +1119,12 @@ carry out tending:
 book Yell Alley
 
 Yell Alley is east of Evaded Ave. It is in Yelpley.
+
+the rep popper is a thing in Yell Alley.
+
+check taking rep popper:
+	if player has dork rod, say "With the dork rod, you aren't THAT worried about your rep, but you're still worried enough not to take it. Maybe you can do a bit better..." instead;
+	if dork rod is not in lalaland, say "No way! You're not sure how much rep you have, but taking that rep popper would drop it a notch or more." instead;
 
 chapter pulluping
 
