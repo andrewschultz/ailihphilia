@@ -125,7 +125,7 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 			<dock index="1" id="8" port="nw" />
 		</line>
 		<room id="52" name="SPA MAPS ON CODE DOC" subtitle="" x="-96" y="-384" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="53" name="X SAGE GAS IN APSE SPA" subtitle="" x="64" y="-384" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="53" name="X SPA MAPS IN APSE SPA" subtitle="" x="64" y="-384" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="54" name="" description="" flow="oneWay">
 			<dock index="0" id="52" port="e" />
 			<dock index="1" id="53" port="w" />
@@ -142,6 +142,11 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 		<line id="58" name="" description="" flow="oneWay">
 			<dock index="0" id="56" port="e" />
 			<dock index="1" id="9" port="w" />
+		</line>
+		<room id="59" name="EL DOODLE ON EDITS TIDE" subtitle="" x="-256" y="-384" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<line id="60" name="" description="">
+			<dock index="0" id="59" port="e" />
+			<dock index="1" id="52" port="w" />
 		</line>
 	</map>
 	<settings>
