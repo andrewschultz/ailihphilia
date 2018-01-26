@@ -24,7 +24,7 @@ chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
 
-Grebeberg is a region. max-score of Grebeberg is 9.
+Grebeberg is a region. max-score of Grebeberg is 10.
 
 Dim Mid is a region. max-score of Dim Mid is 5.
 
@@ -187,7 +187,7 @@ part dying
 to die:
 	end the story saying "Offed? Deffo! / Story Rots! / Stung! Nuts! / To Pot!"
 
-volume verbs
+volume verbs (standard or semi-standard to Inform)
 
 chapter undoing
 
@@ -489,6 +489,7 @@ trap art	reifier	party trap	--	--	true	true	false	"The trap art crunches inside 
 party trap	start rats	gift fig	--	--	true	true	true	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The seer trees seem to nod a bit. You watch as a gift fig rolls out. You take it."	grebeberg
 poo coop	gnu dung	--	--	--	true	true	true	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."	grebeberg
 gold log	rotator	dork rod	--	--	true	true	false	"The gold log begins spinning until it cracks open--leaving a dork rod!"	yelpley
+el doodle	edits tide	spa maps	--	--	true	true	false	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"	grebeberg
 dork rod	tao boat	--	--	--	true	true	false	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."	grebeberg
 stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"	yelpley
 elan ale	ira bari	gorge grog	--	--	true	false	false	"Ira looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"	yelpley
@@ -528,7 +529,7 @@ yard ray	diktat kid	x-ite tix	--	--	true	true	true	"The yard ray bounces harmles
 
 volume rooms
 
-part Mid Dim
+part Dim Mid region
 
 book Fun 'Nuf
 
@@ -620,7 +621,7 @@ carry out packing:
 	now player has set o notes;
 	now player wears the cap;
 	now all cappy rooms are available;
-	score-inc; [+dim mid]
+	score-inc;
 	the rule succeeds;
 
 section pace cap
@@ -636,7 +637,7 @@ carry out paceing:
 	if pact cap is in Fun 'Nuf, say "That'll work later, but you need something a little different to actually TAKE the pact cap." instead;
 	if cap-pace is true, say "It's already a pace cap." instead;
 	if cap-ever-pace is false:
-		reg-inc Dim Mid;
+		score-inc;
 		now cap-ever-pace is true;
 	say "You suddenly feel [if cap-pace is false]swifter[else]slower[end if].";
 	now cap-pace is whether or not cap-pace is true;
@@ -696,7 +697,7 @@ carry out emiting:
 	say "No, that's not quite what to emit.";
 	the rule succeeds;
 
-part Grebeberg
+part Grebeberg region
 
 book Seer Trees
 
@@ -806,15 +807,15 @@ The Eroded Ore is in Mire Rim.
 
 The Ore Zero is a thing.
 
-book Yack Cay
+book Birch Crib
 
-Yack Cay is south of Mire Rim. It is in Grebeberg.
+Birch Crib is south of Mire Rim. It is in Grebeberg.
 
-Code Doc is a person in Yack Cay.
+Code Doc is a person in Birch Crib.
 
 book Lair Trial
 
-Lair Trial is south of Yack Cay. It is in Grebeberg.
+Lair Trial is south of Birch Crib. It is in Grebeberg.
 
 book Motto Bottom
 
@@ -828,13 +829,15 @@ check taking tenet: say "'Egad! Adage!' you think to yourself. The tenet seems t
 
 [take tenet/take bro orb = use sage gas on tenet/use tenet on bro orb]
 
-book Birch Crib
+book Yack Cay
 
-Birch Crib is north of Mire Rim. It is in Grebeberg.
+Yack Cay is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west. You can go north or south here."
+
+The Edits Tide is scenery in Yack Cay. "A voice from the edits tide seems to say [if spa maps are off-stage]that you could use its proofreading skills[else]it has labored enough for you[end if]
 
 book Calcific Lac
 
-Calcific Lac is north of Birch Crib. It is in Grebeberg. "A Tao Boat rests at the edge of Calcific Lac."
+Calcific Lac is north of Yack Cay. It is in Grebeberg. "A Tao Boat rests at the edge of Calcific Lac."
 
 The Tao Boat is scenery in Calcific Lac.
 
@@ -859,11 +862,11 @@ check examining spa maps:
 
 maps-explained is a truth state that varies.
 
-part Yelpley
+part Yelpley region
 
 book Yawn Way
 
-Yawn Way is east of Fun 'Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but State Tats is to the north, and My Gym is to the south. An alley is to the east."
+Yawn Way is east of Fun 'Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but Art Xtra is to the north, and My Gym is to the south. An alley is to the east."
 
 book My Gym
 
@@ -910,7 +913,7 @@ book Worn Row
 
 Worn Row is west of My Gym. It is in Yelpley. "[if workrow is true]Three machines are here[else if wordrow is true]A library is here, just full of books[else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if]."
 
-undertsand "worm row" as a mistake ("Ugh! You don't need to make this place worse.") when player is in worn row
+understand "worm row" as a mistake ("Ugh! You don't need to make this place worse.") when player is in worn row
 
 printed name of Worn Row is "[if wordrow is true]Word[else if workrow is true]Work[else]Worn[end if] Row"
 
@@ -1058,11 +1061,13 @@ carry out wordrowing:
 
 understand "worn row" and "wornrow" as a mistake ("No need to revert things.") when player is in Swept Pews and workrow is false and wordrow is false.
 
-book State Tats
+book Art Xtra
 
-State Tats is north of Yawn Way. It is in Yelpley. "The only way out is north."
+Art Xtra is north of Yawn Way. It is in Yelpley. "The only way out is north."
 
-the trap art is a thing in State Tats. "Some trap art sits here. It's free. You might as well take it.". description is "The trap art depicts a bunch of nasty, dirty animals being trapped--it's not a real trap, but maybe it could become one."
+the trap art is a thing in Art Xtra. "Some trap art sits here. It's free. You might as well take it.". description is "The trap art depicts a bunch of nasty, dirty animals being trapped--it's not a real trap, but maybe it could become one."
+
+El Doodle is a thing. "It looks like it could be a map--or something--but it sure could use some paring down."
 
 the troll ort is a thing in Swept Pews.
 
@@ -1156,7 +1161,7 @@ carry out standing:
 
 book Evaded Ave
 
-Evaded Ave is north of State Tats. It is in Yelpley.
+Evaded Ave is north of Art Xtra. It is in Yelpley.
 
 the poo coop is in Evaded Ave. "A poo coop sits here. Thankfully, it looks empty.". description is "Looking at it, it's 1) empty and 2) somehow bigger on the inside than the outside. Maybe it can clean up a dirty area."
 
@@ -1280,7 +1285,7 @@ a room can be notyet, available, cappy, davey, ratsy, pully, tamey, or gatey.
 
 Fun 'Nuf is available.
 
-Seer Trees, Yawn Way, State Tats and My Gym are cappy.
+Seer Trees, Yawn Way, Art Xtra and My Gym are cappy.
 
 Worn Row is davey.
 
@@ -1336,13 +1341,13 @@ volume metarooms
 
 [there is a little bit of cute code here. Odd Do's score = weird stuff, but it's also where ZeroRez, the collect-all room for used objects, goes. TempMet is for items that temporarily disappear.]
 
-part Odd Do
+part Odd Do region
 
 ZeroRez is a room in Odd Do.
 
 TempMet is a room in Odd Do.
 
-volume aiding
+volume bonus points and odd verbs
 
 chapter aiding
 

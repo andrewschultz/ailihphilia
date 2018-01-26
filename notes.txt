@@ -2,6 +2,8 @@
 
 # XITE TIX lead to A MORE EXCITING REAL WORLD. Well, given all the palindromes you dealt with, you probably should've expected a circular loop to back where you began. But you did have fun. Probably more than if you'd stood around and leveled up a whole bunch. So that's something.
 
+State Tats
+
 check going up in some places: go south/north instead
 
 liar grail: rotated to become a Tru-Yurt.
@@ -13,8 +15,6 @@ Deport! Roped!: what yuge guy says if you try to ...
 Beefy?! Feeb!: start of game
 Bony nob!: start of game
 Diary Raid: start of game
-
-Edits Tide: put El Doodle in ... and get Spa Maps
 
 PSA Hasp
 BOOK: Drawn Inward?
@@ -285,7 +285,6 @@ BUCK CUB
 Eh, Tithe
 Elk Cackle
 
-El Doodle
 Emir Grime
 
 Rob Ybor
@@ -337,8 +336,6 @@ OMG Mo
 More rom
 Guru Rug
 
-Art Xtra
-
 Spur Ups: used in the Trapeze Part
 
 Cash Sac = buy stuff with it
@@ -383,7 +380,7 @@ Main, I am!: diktat kid says
 TIE IT: solution to puzzle
 
 Misdeeds? I'm ... : Yuge Guy
-
+pu
 Dub a Bud
 
 Dud, bub.
