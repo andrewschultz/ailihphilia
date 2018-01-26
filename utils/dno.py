@@ -133,7 +133,8 @@ def check_notes(s):
                     if q in ll and (q not in twice.keys() or twice_okay):
                         if ignore_word_bounds or re.search(r'\b{:s}\b'.format(q), ll):
                             # here "da bad" does not flag "Neda Baden" unless we tell the program to
-                            found_errs[pals[q]] = found_errs[pals[q]] + "Notes.txt line {:d} ~ {:s} line {:d}{:s}: {:s} {:s}\n".format(pals[q], shorts[s], count, '' if not table_name else ' ({:s})'.format(table_name), line.lower().strip(), ('' if not ignore_word_bounds else ' ~ ' + q))
+                            line_short = re.sub(":.*", "", q)
+                            found_errs[pals[q]] = found_errs[pals[q]] + "Notes.txt line {:d} ({:s}) ~ {:s} line {:d}{:s}: {:s} {:s}\n".format(pals[q], line_short, shorts[s], count, '' if not table_name else ' ({:s})'.format(table_name), line.lower().strip(), ('' if not ignore_word_bounds else ' ~ ' + q))
                             if last_lines_first:
                                 if not open_line or pals[q] < open_line:
                                     open_line = pals[q]

@@ -20,6 +20,7 @@ main_source = "c:/games/inform/put-it-up.inform/source/story.ni"
 use_ons = False
 
 line_to_open = 0
+warning_line = 0
 
 undef_use_points = 0
 
@@ -55,10 +56,13 @@ with open(main_source) as file:
     line_count = 0
     for line in file:
         line_count = line_count + 1
-        if line.strip():
+        ll = line.strip().lower()
+        if ll:
             func_list = func_list + line
         else:
             func_list = ''
+        if ll.startswith("volume"):
+            current_region = "None"
         if 'is a region. max-score' in line:
             l2 = re.sub(" is a region.*", "", line.lower().strip())
             sco = re.sub(".*is ", "", line.lower().strip())
@@ -71,6 +75,7 @@ with open(main_source) as file:
             temp_region = detect_region(line, current_region)
             if temp_region == current_region and '[+' in line:
                 print("WARNING temp_region not a change from current_region", current_region, "line", line_count, "in story.ni")
+                warning_line = line_count
             if temp_region == 'ignore':
                 continue
             if verbose:
@@ -87,13 +92,13 @@ with open(main_source) as file:
                 base_reg_incs[temp_region] = base_reg_incs[temp_region] + 1
             else:
                 directed_incs[temp_region] = directed_incs[temp_region] + 1
-        ll = line.strip().lower()
-        if line.startswith('part '):
-            for x in region_def_line.keys():
-                if x in ll:
-                    current_region = x
+        if ll.startswith('part ') and 'region' in ll:
+            myreg = re.sub("^part ", "", ll)
+            myreg = re.sub(" *?region.*", "", myreg)
+            current_region = myreg
+            if myreg not in region_def_line.keys():
+                print("WARNING", ll, "defines start of invalid region.")
         if line.startswith("table of useons") and 'continued' not in line:
-            print(line_count, line)
             use_ons = True
             continue
         elif use_ons and not line.strip():
@@ -148,5 +153,7 @@ if undef_use_points:
 
 if line_to_open:
     i7.npo("story.ni", line_to_open, True)
+elif warning_line:
+    i7.npo("story.ni", warning_line, True)
 
 print("Total =", t2)
