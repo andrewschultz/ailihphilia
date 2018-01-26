@@ -117,8 +117,8 @@ with open(main_source) as file:
                 print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 10.")
             if x[5] == 'true':
                 temp_region = ""
-                if x[9] and x[9] != '--' and x[9] != 'reg-plus': # a bit hacky, but basically, check for entry 10 in useon table being a proper region
-                    temp_region = x[9]
+                if x[8] and x[8] != '--' and x[8] != 'reg-plus': # a bit hacky, but basically, check for entry 10 in useon table being a proper region
+                    temp_region = x[8]
                 if temp_region:
                     directed_incs[temp_region] = directed_incs[temp_region] + 1
                 else:

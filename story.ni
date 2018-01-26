@@ -232,9 +232,11 @@ chapter inventory
 to say gots of (t - a thing):
 	say "--[t][if player has t] (got it!)[end if][line break]"
 
-after printing the name of an ingredient while taking inventory: if player has epicer recipe, say " (recipe item)";
+after printing the name of an ingredient while taking inventory: if player has epicer recipe, say " (recipe item)".
 
-after printing the name of yard ray while taking inventory: say " ([unless murk rum is in ZeroRez]un[end if]charged)";
+after printing the name of yard ray while taking inventory: say " ([unless murk rum is in ZeroRez]un[end if]charged)".
+
+after printing the name of spa maps while taking inventory: say "([if maps-explained is true]deciphered[else]indecipherable[end if])".
 
 chapter abouting
 
@@ -484,22 +486,22 @@ Dave	"Dave's not useful, man."
 
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
 table of useons [xxuse]
-use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	babble	reg-plus
-trap art	reifier	party trap	--	--	true	true	false	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."	yelpley
-party trap	start rats	gift fig	--	--	true	true	true	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The seer trees seem to nod a bit. You watch as a gift fig rolls out. You take it."	grebeberg
-poo coop	gnu dung	--	--	--	true	true	true	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."	grebeberg
-gold log	rotator	dork rod	--	--	true	true	false	"The gold log begins spinning until it cracks open--leaving a dork rod!"	yelpley
-el doodle	edits tide	spa maps	--	--	true	true	false	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"	grebeberg
-dork rod	tao boat	--	--	--	true	true	false	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."	grebeberg
-stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"	yelpley
-elan ale	ira bari	gorge grog	--	--	true	false	false	"Ira looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"	yelpley
-UFO Tofu	Mayo Yam	Mush Sum	in-mont-nom rule	--	true	true	true	"The UFO Tofu and mayo yam blend together in a most unholy fashion, but the magic of Mont Nom kicks in, and they become ... a surprisingly nice smelling and looking mush sum."	grebeberg
-Eroded Ore	reviver	Ore Zero	--	--	true	true	true	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"	yelpley
-spa maps	Code Doc	--	--	maps-explain rule	true	false	false	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."	grebeberg
-sage gas	tenet	tenet	--	--	true	true	false	"With the sage gas, you're able to see a bit deeper into the tenet."	grebeberg
-rep popper	Yuge Guy	murk rum	--	--	true	true	true	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."	grebeberg
-Bro Orb	Madam Sniffins	Yard Ray	--	--	true	true	true	"The Bro Orb shines and drives Madam Sniffins to rage. She runs away, sobbing. The Yard Ray is left unguarded. You take it."	yelpley
-murk rum	yard ray	--	--	--	true	true	false	"The yard ray gleams with energy. It seems like it could do some damage now."	dim mid
+use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
+trap art	reifier	party trap	--	--	true	true	false	yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
+party trap	start rats	gift fig	--	--	true	true	true	grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The seer trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
+poo coop	gnu dung	--	--	--	true	true	true	grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
+gold log	rotator	dork rod	--	--	true	true	false	yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
+dork rod	tao boat	--	--	--	true	true	false	grebeberg	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
+stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
+elan ale	ira bari	gorge grog	--	--	true	false	false	yelpley	"Ira looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"
+UFO Tofu	Mayo Yam	Mush Sum	in-mont-nom rule	--	true	true	true	grebeberg	"The UFO Tofu and mayo yam blend together in a most unholy fashion, but the magic of Mont Nom kicks in, and they become ... a surprisingly nice smelling and looking mush sum."
+Eroded Ore	reviver	Ore Zero	--	--	true	true	true	yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
+el doodle	edits tide	spa maps	--	--	true	true	false	grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
+spa maps	Code Doc	--	--	maps-explain rule	true	false	false	grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
+sage gas	tenet	tenet	--	--	true	true	false	grebeberg	"With the sage gas, you're able to see a bit deeper into the tenet. As you pick the tenet up, the gas bubbles away. Well, it will be there for the next person to learn."
+rep popper	Yuge Guy	murk rum	--	--	true	true	true	grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
+Bro Orb	Madam Sniffins	Yard Ray	--	--	true	true	true	yelpley	"The Bro Orb shines and drives Madam Sniffins to rage. She runs away, sobbing. The Yard Ray is left unguarded. You take it."
+murk rum	yard ray	--	--	--	true	true	false	dim mid	"The yard ray gleams with energy. It seems like it could do some damage now."
 
 this is the in-mont-nom rule:
 	if location of player is mont nom, the rule succeeds;
@@ -523,9 +525,9 @@ this is the maps-explain rule:
 chapter failed useons
 
 table of useons (continued)
-use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	babble	reg-plus
-yard ray	Tru Hurt	x-ite tix	--	--	true	true	true	"The yard ray bounces harmlessly off the Tru Hurt. Maybe it needs to be used nonviolently."
-yard ray	diktat kid	x-ite tix	--	--	true	true	true	"The yard ray bounces harmlessly off the Diktat Kid. Maybe it needs to be used nonviolently."
+use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
+yard ray	Tru Hurt	x-ite tix	--	--	true	true	true	--	"The yard ray bounces harmlessly off the Tru Hurt. Maybe it needs to be used nonviolently."
+yard ray	diktat kid	x-ite tix	--	--	true	true	true	--	"The yard ray bounces harmlessly off the Diktat Kid. Maybe it needs to be used nonviolently."
 
 volume rooms
 
@@ -679,7 +681,7 @@ instead of doing something with the tru hurt, say "You need to take care of the 
 
 chapter emiting
 
-emiting is an action applying to text.
+emiting is an action applying to one topic.
 
 understand the command "emit" as something new.
 
@@ -688,7 +690,7 @@ understand "emit [text]" as emiting when player has yard ray.
 carry out emiting:
 	if murk rum is not in ZeroRez, say "The Yard Ray isn't charged enough to emit anything." instead;
 	if player is in location of Yuge Guy, say "No...the Yuge Guy needs to be defeated by other means." instead;
-	if diktat kid is in lalaland, say "You already got rid of the Diktat Kid." instead;
+	if diktat kid is in ZeroRez, say "You already got rid of the Diktat Kid." instead;
 	if the topic understood matches "noontime":
 		say "BOOM! The yard ray emits too much light for the Diktat Kid to bear. The Kid runs off, but not before dropping some X-Ite Tix, which you take.";
 		now player has X-Ite Tix;
@@ -770,7 +772,10 @@ chapter bro orb
 
 the bro orb is a thing in Le Babel.
 
-check taking bro orb: if player does not have tenet, say "You aren't sure you can handle the potentially corrupting power of the Bro Orb. [if player has sage gas]The sage gas helps you to understand how things could go wrong, but still, you're a bit worried[end if]. Maybe if you had some more balance to your thinking." instead;
+check taking bro orb:
+	if player has bro orb, say "You already have it." instead;
+	if player does not have tenet, say "You aren't sure you can handle the potentially corrupting power of the Bro Orb. [if player has sage gas]The sage gas helps you to understand how things could go wrong, but still, you're a bit worried[end if]. Maybe if you had some more balance to your thinking." instead;
+	say "With the tenet, you feel balanced enough to take the bro orb and accept the responsibility for doing so."
 
 [?? if you tried to take the bro orb or rep popper before, put up a warning saying, ok, you can do this now, if you have the right items.]
 
@@ -825,7 +830,7 @@ chapter tenet
 
 The tenet is a thing in Motto Bottom.
 
-check taking tenet: say "'Egad! Adage!' you think to yourself. The tenet seems too cliche, and you don't have the wisdom to give it any intrinsic value back. Well, not yet." instead;
+check taking tenet: if player does not have tenet, say "'Egad! Adage!' you think to yourself. The tenet seems too cliche, and you don't have the wisdom to give it any intrinsic value back. Well, not yet." instead; [?? new message if already have it]
 
 [take tenet/take bro orb = use sage gas on tenet/use tenet on bro orb]
 
@@ -833,7 +838,7 @@ book Yack Cay
 
 Yack Cay is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west. You can go north or south here."
 
-The Edits Tide is scenery in Yack Cay. "A voice from the edits tide seems to say [if spa maps are off-stage]that you could use its proofreading skills[else]it has labored enough for you[end if]
+The Edits Tide is scenery in Yack Cay. "A voice from the edits tide seems to say [if spa maps are off-stage]that you could use its proofreading skills[else]it has labored enough for you[end if]."
 
 book Calcific Lac
 
@@ -853,12 +858,13 @@ chapter sage gas
 
 the sage gas is a thing. [It's found in Apse Spa, but it is not in Apse Spa.]
 
-the spa maps are a thing. "[if sage gas is not off-stage]The maps seem old hat now you've gotten the sage gas[else if maps-explained is false]You can't quite make sense out of them. There's Gobs-Bog and Go-By Bog, and one is a lot safer than the other, but you're not sure which[else]The spa maps clearly demark Go-By Bog and Gobs Bog[end if]." [?? move them to where you can find them earlier]
+Spa Maps are a plural-named proper-named thing. description is "[if sage gas is not off-stage]The maps seem old hat now you've gotten the sage gas[else if maps-explained is false]You can't quite make sense out of them. There's Gobs-Bog and Go-By Bog, and one is a lot safer than the other, but you're not sure which[else]The spa maps clearly demark Go-By Bog and Gobs Bog and even Goblin-Nil Bog, which probably contains a troll or two[end if]." [?? move them to where you can find them earlier]
 
 check examining spa maps:
 	if sage gas is off-stage and player is in Apse Spa:
 		score-inc;
-		say "Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find a bottle of sage gas." instead;
+		now player has sage gas;
+		say "Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there." instead;
 
 maps-explained is a truth state that varies.
 
@@ -1069,8 +1075,6 @@ the trap art is a thing in Art Xtra. "Some trap art sits here. It's free. You mi
 
 El Doodle is a thing. "It looks like it could be a map--or something--but it sure could use some paring down."
 
-the troll ort is a thing in Swept Pews.
-
 book Toll Lot
 
 Toll Lot is east of Emo Dome. It is in Yelpley. "While it's easy enough to go back east, you may have to do something special to go north or south."
@@ -1093,7 +1097,7 @@ understand "evened" and "den evened" as ned's den when ned is in ZeroRez
 
 Ned is a person in Ned's Den.
 
-The Puce Cup is a thing in Evaded Ave.
+The Puce Cup is a thing in Ned's Den.
 
 check taking puce cup: if ned is in ned's den, say "Not with Ned around, you won't." instead;
 
@@ -1252,6 +1256,10 @@ Madam Sniffins is a person in Civic Level.
 book Swept Pews
 
 Swept Pews is south of Emo Dome. It is in Yelpley.
+
+chapter troll ort
+
+the troll ort is a thing in Swept Pews.
 
 chapter Tract Cart
 
