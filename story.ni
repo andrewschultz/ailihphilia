@@ -459,6 +459,8 @@ check useoning it with:
 					set the pronoun it to getit entry;
 				else if use1 entry is in ZeroRez and use2 entry is not in ZeroRez:
 					set the pronoun it to use2 entry;
+				if second noun is a workable:
+					wear-down second noun;
 				the rule succeeds;
 			else if there is no use2 entry:
 				say "[babble entry][line break]";
@@ -930,11 +932,16 @@ Ian is a person in Worn Row.
 
 chapter workables
 
-a workable is a kind of thing. a workable has a number called useleft. useleft of a workable is usually 3.
+a workable is a kind of thing. a workable has a number called useleft.
 
-the reifier is a workable.
-the reviver is a workable.
-the rotator is a workable.
+the reifier is a workable. useleft is 1.
+the reviver is a workable. useleft is 1.
+the rotator is a workable. useleft is 2.
+
+to wear-down (w - a workable):
+	decrement use-left of w;
+	if use-left of w is 0, say "You watch as [the w] sputters and dies. Well, you got a lot of good use out of it, and hopefully you won't need any more.";
+	if use-left of w is 1, say "[the w] wheezes emphatically. Hopefully, you won't need to use it too much more.";
 
 instead of inserting into:
 	if second noun is a workable, try useoning noun with second noun instead;

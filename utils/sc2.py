@@ -31,6 +31,9 @@ base_reg_incs = defaultdict(int)
 directed_incs = defaultdict(int)
 totals = defaultdict(int)
 in_source = defaultdict(int)
+machine_uses = defaultdict(int)
+machine_uses_in_source = defaultdict(int)
+machine_actions = defaultdict(str)
 
 func_list = ''
 
@@ -41,6 +44,7 @@ while argval < len(sys.argv):
         noh = noh[1:]
     if noh == 'v':
         verbose = True
+        semi_verbose = True
     if noh == 's':
         semi_verbose = True
     argval = argval + 1
@@ -61,6 +65,12 @@ with open(main_source) as file:
             func_list = func_list + line
         else:
             func_list = ''
+        if 'workable. useleft' in ll:
+            mname = re.sub(" is a workable.*", "", ll)
+            mname = re.sub("^the ", "", mname)
+            muses = re.sub(".* is ", "", ll)
+            muses = re.sub("\..*", "", muses)
+            machine_uses_in_source[mname] = int(muses)
         if ll.startswith("volume"):
             current_region = "None"
         if 'is a region. max-score' in line:
@@ -69,7 +79,7 @@ with open(main_source) as file:
             sco = re.sub("\..*", "", sco)
             in_source[l2] = int(sco)
             region_def_line[l2] = line_count
-            if verbose: print("Noting region", l2)
+            if semi_verbose: print("Noting region", l2)
             continue
         if 'score-inc' in line and '\t' in line:
             temp_region = detect_region(line, current_region)
@@ -113,6 +123,9 @@ with open(main_source) as file:
         if use_ons:
             x = ll.split("\t")
             if len(x) < 6: continue
+            if x[1] == 'reifier' or x[1] == 'reviver' or x[1] == 'rotator':
+                machine_uses[x[1]] = machine_uses[x[1]] + 1
+                machine_actions[x[1]] = machine_actions[x[1]] + "    {:s} -> {:s}\n".format(x[0], x[2])
             if len(x) != 10:
                 print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 10.")
             if x[5] == 'true':
@@ -145,6 +158,15 @@ for x in totals.keys():
         print("ERROR: region", x, "has", totals[x], "but source lists", in_source[x])
         line_to_open = region_def_line[x]
     print(x, totals[x])
+
+for x in sorted(machine_uses.keys()):
+    if machine_uses[x] != machine_uses_in_source[x]:
+        print("Machine", x, "has", machine_uses[x], "uses in table but", machine_uses_in_source[x], "uses listed in the source.")
+
+if semi_verbose:
+    for x in sorted(machine_uses.keys()):
+        print("Machine", x, "used to score", machine_uses[x], "points. Flips below:")
+        print(machine_actions[x], end="")
 
 t2 = sum(totals.values())
 
