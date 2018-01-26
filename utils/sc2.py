@@ -92,10 +92,11 @@ with open(main_source) as file:
             for x in region_def_line.keys():
                 if x in ll:
                     current_region = x
-        if line.startswith("table of useons"):
+        if line.startswith("table of useons") and 'continued' not in line:
+            print(line_count, line)
             use_ons = True
             continue
-        elif not line:
+        elif use_ons and not line.strip():
             use_ons = False
             continue
         if line.startswith('\t') and "reg-inc" in ll and "reg-inc reg-plus entry" not in ll:

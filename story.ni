@@ -62,7 +62,7 @@ check eating an edible thing: say "Food? Oof! (You don't need to eat anything to
 
 the elan ale is a drinkable thing.
 
-the yard ray is a thing.
+the yard ray is a thing. description is "It looks pretty lethal. It also has instructions: EMIT ********.[paragraph break]It's currently [if murk rum is in ZeroRez]loaded with energy from the Murk Rum[else]empty of fuel[end if]."
 
 the murk rum is a drinkable thing. [put this in the yard ray]
 
@@ -499,7 +499,6 @@ sage gas	tenet	tenet	--	--	true	true	false	"With the sage gas, you're able to se
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."	grebeberg
 Bro Orb	Madam Sniffins	Yard Ray	--	--	true	true	true	"The Bro Orb shines and drives Madam Sniffins to rage. She runs away, sobbing. The Yard Ray is left unguarded. You take it."	yelpley
 murk rum	yard ray	--	--	--	true	true	false	"The yard ray gleams with energy. It seems like it could do some damage now."	dim mid
-yard ray	diktat kid	x-ite tix	--	--	true	true	true	"The yard ray hums and glows and fires! A direct hit! The Diktat Kid runs away. In the kid's place, there are X-Ite Tix."	dim mid
 
 this is the in-mont-nom rule:
 	if location of player is mont nom, the rule succeeds;
@@ -519,6 +518,13 @@ this is the maps-explained-yet rule:
 this is the maps-explain rule:
 	now maps-explained is true;
 	the rule succeeds;
+
+chapter failed useons
+
+table of useons (continued)
+use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	babble	reg-plus
+yard ray	Tru Hurt	x-ite tix	--	--	true	true	true	"The yard ray bounces harmlessly off the Tru Hurt. Maybe it needs to be used nonviolently."
+yard ray	diktat kid	x-ite tix	--	--	true	true	true	"The yard ray bounces harmlessly off the Diktat Kid. Maybe it needs to be used nonviolently."
 
 volume rooms
 
@@ -663,6 +669,32 @@ after looking in dirge grid for the first time:
 	continue the action;
 
 check going south in dirge grid: if diktat kid is in dirge grid, say "'Mom! SOS! LOL! SOS! Mom!' the Diktat Kid mocks you.[paragraph break]You can't chicken out. You must be close!" instead;
+
+chapter tru hurt
+
+the tru hurt is a thing in Dirge Grid. "The Tru Hurt is here, and it's aimed at you!"
+
+instead of doing something with the tru hurt, say "You need to take care of the Diktat Kid. With the Yard Ray."
+
+chapter emiting
+
+emiting is an action applying to text.
+
+understand the command "emit" as something new.
+
+understand "emit [text]" as emiting when player has yard ray.
+
+carry out emiting:
+	if murk rum is not in ZeroRez, say "The Yard Ray isn't charged enough to emit anything." instead;
+	if player is in location of Yuge Guy, say "No...the Yuge Guy needs to be defeated by other means." instead;
+	if diktat kid is in lalaland, say "You already got rid of the Diktat Kid." instead;
+	if the topic understood matches "noontime":
+		say "BOOM! The yard ray emits too much light for the Diktat Kid to bear. The Kid runs off, but not before dropping some X-Ite Tix, which you take.";
+		now player has X-Ite Tix;
+		score-inc;
+		the rule succeeds;
+	say "No, that's not quite what to emit.";
+	the rule succeeds;
 
 part Grebeberg
 
@@ -878,6 +910,8 @@ book Worn Row
 
 Worn Row is west of My Gym. It is in Yelpley. "[if workrow is true]Three machines are here[else if wordrow is true]A library is here, just full of books[else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if]."
 
+undertsand "worm row" as a mistake ("Ugh! You don't need to make this place worse.") when player is in worn row
+
 printed name of Worn Row is "[if wordrow is true]Word[else if workrow is true]Work[else]Worn[end if] Row"
 
 understand "work row" and "work" as Worn Row when workrow is true.
@@ -951,7 +985,7 @@ ERA FARE is a proper-named book.
 
 chapter party trap
 
-the party trap is a thing. "It could trap more than one thing if you USE it right. That would be cool."
+the party trap is a thing. "It looks really complex, like it could trap more than one thing if you USE it right. That would be cool. I mean, if you used it on things that deserved it."
 
 chapter nailing
 
