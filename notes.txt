@@ -2,16 +2,34 @@
 
 # XITE TIX lead to A MORE EXCITING REAL WORLD. Well, given all the palindromes you dealt with, you probably should've expected a circular loop to back where you began. But you did have fun. Probably more than if you'd stood around and leveled up a whole bunch. So that's something.
 
-State Tats
+USE DOSE SOD ON MARGE PEGRAM
 
-Use Stamp Mats on Gate Tag: becomes YE KEY
+pooch coop: how is this cut down to poo coop?
+
+past sap: old stuff that can grow a rift fir again
+
+debt bed: to stock cots with reviver
+stock cots: use on sleep eels
+sleep eels: use stock cots on sleep eels
+
+scorn rocs block your way...
+
+State Tats: let you fake like you belong in the Civic Level
+
+To Jot! To jot!
+
+Gate Tag
+
+Use Stamp Mats on slate metals: becomes YE KEY
 
 Put DOSE SOD in PUCE CUP
-Give DOSE SOD/PUCE CUP to GULF LUG and he gives you the CASH SAC
+Give DOSE SOD/PUCE CUP to MARGE PEGRAM and you get the GORGE GROG
 
 check going up in some places: go south/north instead
 
-liar grail: rotated to become a Tru-Yurt.
+Known Wonk: found in Tips Pit, which is not an actual location but
+
+liar grail: rotated to become a Tru-Yurt. Used on Lie Veil.
 
 Deport! Roped!: what yuge guy says if you try to ...
 
@@ -105,7 +123,7 @@ rep-a-paper
 
 O Furor! UFO!
 
-The Bomb Mob carries TNT. You get it with a Bang-Nab.
+The Bomb Mob carries TNT. You get it with a Bang-Nab. When you do, they become a poor troop.
 
 Known Wonk: gets PSA Hasp?
 
@@ -492,7 +510,7 @@ boldened lob!
 Bolt? Lob
 
 hallot ayatollah
-hardened rah
+hardened rah: after getting something good like Spur Ups
 hoops pooh
 hoot ooh
 hosannas oh
@@ -543,7 +561,7 @@ mate tam
 max exam
 meets esteem
 met system
-met item
+met item: random found
 metic item
 misdeed sim: a program?
 miss sim
@@ -567,7 +585,7 @@ nagor brogan
 newt wen
 nets ten
 never even
-nigh gin
+nigh gin: bar crab smells of
 nimrods dormin
 nielli villein
 nitro cortin
@@ -599,7 +617,6 @@ orang ignaro
 otter amaretto
 paleae lap
 parses rap
-past sap
 palsy slap
 page gap
 parch crap
@@ -623,9 +640,8 @@ pity tip
 pink nip
 pint nip
 plugs gulp
-porch crop
+porch crop: moved to somewhere else?
 possesses sop
-poor troop
 poor droop
 posts op
 po bop
@@ -638,7 +654,6 @@ poorer oop
 pool gloop
 pool sloop
 port strop
-pooch coop
 prahu harp
 prawn warp
 prodded dorp
@@ -695,11 +710,11 @@ redo coder
 remanded namer
 releve beveler
 retarded rater
-resoldered loser
+resoldered loser: name you are called
 remand namer
 regress serger
 remate tamer
-revolt lover
+revolt lover: someone who is just bad ...
 repots toper
 rev over
 retract carter
@@ -723,7 +738,7 @@ redraw awarder
 Draw Award
 redd adder
 rednesses sender
-rift fir
+rift fir: scenery?
 rife fir
 riza nazir
 riza wazir
@@ -753,7 +768,6 @@ salle fellas
 sage degas
 sage vegas
 sameness enemas
-salt atlas
 sarge degras
 sarode fedoras
 sageness senegas
@@ -774,7 +788,6 @@ saccule feluccas
 salad alas
 sati vitas
 scape pacs
-scorn rocs
 scroll orcs
 scorch crocs
 secalose solaces
@@ -845,10 +858,8 @@ skeer creeks
 sliver evils
 slart sinistrals
 slade pedals
-sleep eels
 sleep speels
 slate petals
-slate metals
 sleepy peels
 slangish signals
 smarty trams
@@ -904,7 +915,6 @@ star brats:star frats
 Stella Ballets
 stops eyespots
 strip spirts
-stock cots
 Stand Nat's
 stewy wets
 stellify fillets

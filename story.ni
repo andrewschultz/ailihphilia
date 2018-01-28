@@ -24,7 +24,7 @@ chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
 
-Grebeberg is a region. max-score of Grebeberg is 11.
+Grebeberg is a region. max-score of Grebeberg is 12.
 
 Dim Mid is a region. max-score of Dim Mid is 5.
 
@@ -493,6 +493,7 @@ use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
 trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
 party trap	start rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
 demo med	gulf lug	cash sac	--	--	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' he looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
+TO IDIOT	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins to read and starts chucking. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Known Wonk runs away."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes to look for ... well, something else."
 poo coop	gnu dung	--	--	--	true	true	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
@@ -723,12 +724,6 @@ book Cold Loc
 
 Cold Loc is north of Seer Trees. It is in Grebeberg.
 
-check going north in Cold Loc: [to Flu Gulf]
-	unless player carries puce cup or puce cup is in ZeroRez:
-		say "You're pushed back by worries of sickness." instead;
-	if player carries puce cup:
-		say "The fumes push you back east." instead;
-
 book Flu Gulf
 
 Flu Gulf is north of Cold Loc. It is in Grebeberg.
@@ -812,6 +807,19 @@ Birch Crib is south of Mire Rim. It is in Grebeberg.
 
 Code Doc is a person in Birch Crib.
 
+chapter Spa Maps
+
+Spa Maps are a plural-named proper-named thing. description is "[if sage gas is not off-stage]The maps seem old hat now you've gotten the sage gas[else if maps-explained is false]You can't quite make sense out of them. There's Gobs-Bog and Go-By Bog, and one is a lot safer than the other, but you're not sure which[else]The spa maps clearly demark Go-By Bog and Gobs Bog and even Goblin-Nil Bog, which probably contains a troll or two. And no hospitality[end if]."
+
+check examining spa maps:
+	if sage gas is off-stage and player is in Apse Spa:
+		score-inc;
+		now player has sage gas;
+		now spa maps are in ZeroRez;
+		say "Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away." instead;
+
+maps-explained is a truth state that varies.
+
 book Lair Trial
 
 Lair Trial is south of Birch Crib. It is in Grebeberg.
@@ -832,6 +840,10 @@ book Yack Cay
 
 Yack Cay is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west. You can go north or south here."
 
+The Known Wonk is a person in Yack Cay. "The Known Wonk [one of]figures you'll have to do, even though you're not as interesting as a book[or]paces around, waiting for intellectual conversation[stopping]."
+
+check going north in Yack Cay when Known Wonk is in Yack Cay: say "The Known Wonk pushes you back. 'You don't know how weird it is to the north. But I know a thing or two about adventuring theory.'" instead;
+
 The Edits Tide is scenery in Yack Cay. "A voice from the edits tide seems to say [if spa maps are off-stage]that you could use its proofreading skills[else]it has labored enough for you[end if]."
 
 book Calcific Lac
@@ -851,16 +863,6 @@ Apse Spa is east of Cold Loc. It is in Grebeberg.
 chapter sage gas
 
 the sage gas is a thing. [It's found in Apse Spa, but it is not in Apse Spa.]
-
-Spa Maps are a plural-named proper-named thing. description is "[if sage gas is not off-stage]The maps seem old hat now you've gotten the sage gas[else if maps-explained is false]You can't quite make sense out of them. There's Gobs-Bog and Go-By Bog, and one is a lot safer than the other, but you're not sure which[else]The spa maps clearly demark Go-By Bog and Gobs Bog and even Goblin-Nil Bog, which probably contains a troll or two[end if]." [?? move them to where you can find them earlier]
-
-check examining spa maps:
-	if sage gas is off-stage and player is in Apse Spa:
-		score-inc;
-		now player has sage gas;
-		say "Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there." instead;
-
-maps-explained is a truth state that varies.
 
 part Yelpley region
 
@@ -983,13 +985,26 @@ carry out roting:
 
 chapter books
 
-a book is a kind of thing.
+a book is a kind of thing. description of a book is "It [if player carries the item described]is[else]looks[end if] really heavy and incomprehensible to you."
 
 TO IDIOT is a proper-named book.
 GIGOLO GIG is a proper-named book.
 FOREVER OF is a proper-named book.
 NULL ILLUN is a proper-named book.
 ERA FARE is a proper-named book.
+
+check taking a book:
+	if books-carried-yet is false:
+		say "Oof! That's a heavy book. Looks like you'll only be able to carry one at a time.";
+		now books-carried-yet is true;
+	else:
+		if number of books carried by player is 1:
+			let myb be random book carried by player;
+			say "Oof! You need to put [myb] back to take [noun].";
+			now myb is in Worn Row;
+		else:
+			say "It's a bit unwieldy, but you manage to pick up [noun].";
+	now player has noun instead;
 
 chapter party trap
 
