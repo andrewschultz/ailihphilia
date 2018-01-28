@@ -21,3 +21,4 @@ Utils:
 * dnm.py = searches the table file for names that are reused in the source. Not palindrome specific, as it is used for Spell Woken too.
 * palver.py = trivial palindrome verifier for source (palver.txt has list of stuff to ignore)
 * sc2.py = does internal code verification of maximum score byregion. Supersedes the weaker msc.py.
+* zr.py = trivial utility that fixes capitalization for certain room names (should eventually be spun off somewhere more general)

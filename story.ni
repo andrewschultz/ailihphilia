@@ -753,19 +753,6 @@ instead of doing something with gnu dung:
 
 the eels are people in Dumb Mud. "Some eels are blocking passage west."
 
-chapter Demo Med
-
-a Demo Med is a thing in Dumb Mud. "A demo med sits here, on a pill lip.". description is "You're not sure what it could be. Xanax? Whatever, you feel calmer just looking at it."
-
-check eating Demo Med:
-	if player is not in Yawn Way, say "There's nothing anxious-making around, yet." instead;
-	say "Eewee! Well, you feel a bit more relaxed now.";
-	now Demo Med is in Zerorez;
-
-the pill lip is scenery in Dumb Mud.
-
-instead of doing something with pill lip, say "The pill lip is just there to prevent the demo med from getting dirty on the ground."
-
 book Le Babel
 
 Le Babel is north of Dumb Mud. It is in Grebeberg.
@@ -1212,6 +1199,8 @@ check taking rep popper:
 
 chapter pulluping
 
+understand "puff up" as a mistake ("You try to have self confidence, but you don't have the confidence you can do it right.") when player is in emo dome and pulled-up is false.
+
 pulled-up is a truth state that varies.
 
 pulluping is an action applying to nothing.
@@ -1263,6 +1252,20 @@ Madam Sniffins is a person in Civic Level.
 book Swept Pews
 
 Swept Pews is south of Emo Dome. It is in Yelpley.
+
+chapter Demo Med
+
+a Demo Med is an edible thing in Swept Pews. "A demo med sits here, on a pill lip.". description is "You're not sure what it could be. Xanax? Whatever, you feel calmer just looking at it."
+
+instead of eating Demo Med, say "You're not sick enough to risk it."
+
+the pill lip is scenery in Swept Pews. "A Demo Med rests on the Pill Lip."
+
+instead of doing something with pill lip, say "The pill lip is just there to prevent the demo med from getting dirty on the ground."
+
+report taking demo med:
+	say "The pill lip retracts as you take the demo med.";
+	move pill lip to ZeroRez.
 
 chapter troll ort
 
@@ -1388,10 +1391,10 @@ check aiding:
 
 to decide whether done-here:
 	if player is in yawn way, yes;
-	if player is in fun 'nuf and flee elf is in zerorez, yes;
-	if player is in my gym and dave is in zerorez, yes;
-	if player is in seer trees and start rats are in zerorez, yes;
-	if player is in calcific lac and dork rod is in zerorez, yes;
+	if player is in fun 'nuf and flee elf is in ZeroRez, yes;
+	if player is in my gym and dave is in ZeroRez, yes;
+	if player is in seer trees and start rats are in ZeroRez, yes;
+	if player is in calcific lac and dork rod is in ZeroRez, yes;
 	no;
 
 volume endgame stuff
