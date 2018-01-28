@@ -8,6 +8,8 @@ pooch coop: how is this cut down to poo coop?
 
 past sap: old stuff that can grow a rift fir again
 
+balm lab
+
 debt bed: to stock cots with reviver
 stock cots: use on sleep eels
 sleep eels: use stock cots on sleep eels
@@ -18,7 +20,7 @@ State Tats: let you fake like you belong in the Civic Level
 
 To Jot! To jot!
 
-Gate Tag
+# what to do with Gate Tag
 
 Use Stamp Mats on slate metals: becomes YE KEY
 
@@ -26,8 +28,6 @@ Put DOSE SOD in PUCE CUP
 Give DOSE SOD/PUCE CUP to MARGE PEGRAM and you get the GORGE GROG
 
 check going up in some places: go south/north instead
-
-Known Wonk: found in Tips Pit, which is not an actual location but
 
 liar grail: rotated to become a Tru-Yurt. Used on Lie Veil.
 
@@ -124,8 +124,6 @@ rep-a-paper
 O Furor! UFO!
 
 The Bomb Mob carries TNT. You get it with a Bang-Nab. When you do, they become a poor troop.
-
-Known Wonk: gets PSA Hasp?
 
 So Memos
 Bolo Lob
@@ -501,7 +499,6 @@ Be Reb!
 balk lab
 bane nab
 barge, grab
-balm lab
 bank nab
 bar grab
 Bilgy, glib.

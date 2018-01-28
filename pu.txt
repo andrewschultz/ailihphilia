@@ -1,6 +1,10 @@
+# coordinate this with the source for the points list
+# 1 use table of useons
+# 2 redefine sc2.py so that [region/command] is after sco-inc or reg-inc so we can match up with what is below. Commands in upper case in walkthrough.
 out=put-it-up-invisiclues.htm
 !Put It Up HTML Clues
 ->c:/games/inform/put-it-up Materials/Release
+==endheader
 # remember to run msc.py to check the total points check out
 >Introduction
 ?What's this game about?
@@ -35,11 +39,64 @@ Well, you may guess a specific sort of trap.
 A Party Trap.
 You can make it in Work Row, in Not-Kook-Ton.
 Once you get it, USE TRAP ON RATS.
+>>COLD LOC
+?Is there anything to do here?
+Not yet, no. ??
+>>APSE SPA
+?Is there anything beyond the apse spa?
+Yes, but it'd be tricky without a map or something.
+You need to get the spa maps.
+Not only do you need them, you need someone who can make sense out of them.
+Once you get them, you can just examine them, and you will find something cool.
+>>FLU GULF
+?How to I help out the Gulf Lug?
+He needs something to cure him.
+If you haven't figured the Emo Dome yet, you won't have seen it.
+The Swept Pews have what you need.
+The Demo Med.
+USE DEMO MED ON GULF LUG.
+?Why can't I go west?
+You need a protection against the Yuge Guy's orange-ish radiation.
+Did you get the Nat's Tan in Bon Snob?
+It's icky to put on.
+You need to STAND NAT'S.
+>>OOZE ZOO
+?What can I do here?
+Not much.
+>>DRAY YARD
+?What do I do with the yak?
+It's a bit complicated.
+>MOO ROOM
+?What do I do here?
+Get the Poo Coop.
+>>TOP SPOT
+?How o
+>>DUMB MUD
+?How do I get rid of the gnu dung?
+You need something that can hold dung, or something like it.
+The poo coop.
+USE COOP ON DUNG.
+>>MIRE RIM
+?What is the made dam for?
+It looks pretty hashed together, bumpy. Something could be in there.
+USE RADAR ON MADE DAM. You can locate something.
+>>BIRCH CRIB
+?What does the Code Doc have to say?
+The code doc could help you decipher something.
+Do you have a document that almost, but doesn't quite, make sense?
+The spa maps, once you get them.
+GIVE MAPS TO CODE DOC.
+>>LAIR TRIAL
+?What to do here?
+Not much.
+>>MOTTO BOTTOM
+?What to do here?
+Fill in later.
 >>YACK CAY
-?How do I go west?
-You'll need something to protect you from the Flu Gulf.
-Some sort of antidote and something to put that antidote in.
-The Puce Cup will carry what you need.
+?How do I get past the Known Wonk?
+USE TO IDIOT ON KNOWN WONK.
+What is the Edits Tide good for?
+USE DOODLE ON TIDE.
 >>CALCIFIC LAC
 ?What do I do with the Tao Boat?
 It won't let you in unless you have something that shows self-effacement.
@@ -51,9 +108,20 @@ Now that you're all peaceful, you can explore other places.
 >>YAWN WAY
 ?Is there anything to do here?
 No, not much, other than go a bunch of different directions.
->>STATE TATS
+?How do I go east?
+You need the Spur Ups from the Cold Loc.
+>>STRAY ARTS
 ?What do I need to do to get the Art Xtra?
 Nothing. Just take it. It's useful elsewhere.
+>>EVADED AVE
+?What to do here?
+Fill in later.
+>>YELL ALLEY
+?What to do here?
+Fill in later.
+>>TRAPEZE PART
+?What to do here?
+Fill in later.
 >>MY GYM
 ?Can I get the resto poster?
 Yes, once Dave's not in the way.
@@ -81,6 +149,27 @@ You need to FEEL more up, to DO something more up.
 PULL UP.
 If your cap is "pacy" and not "pact" then you won't be able to slow up in time.
 Also, once you PULL UP, the Emo Dome is safe.
+>>SWEPT PEWS
+?What to do here?
+Fill in later.
+>>DRAWL WARD
+?What to do here?
+Fill in later.
+>>DOPE POD
+?What to do here?
+Fill in later.
+>>SCRAP ARCS
+?What to do here?
+Fill in later.
+>>TOLL LOT
+?What to do here?
+Fill in later.
+>>NED'S DEN
+?What to do here?
+Fill in later.
+>>BALL LAB
+?What to do here?
+Fill in later.
 >>BON SNOB
 ?How do I keep people happy here?
 The resto poster from My Gym will work well.
@@ -111,3 +200,8 @@ There are 3 total points in Odd Do.
 1 point for either, but not each, semi-profanity *OO*.
 1 point for saying REFER instead of THINK.
 1 point for saying DIAL AID instead of AID.
+;
+?How do I go west?
+You'll need something to protect you from the Flu Gulf.
+Some sort of antidote and something to put that antidote in.
+The Puce Cup will carry what you need.
