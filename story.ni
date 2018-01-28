@@ -413,8 +413,8 @@ to build-the-tron:
 	move north tron to Fun 'Nuf;
 	now all ingredients are in ZeroRez;
 	say "You build the north tron with the instructions from the epicer recipe. A passage opens north! You must be close now.";
-	now dirge grid is mapped north of fun 'nuf;
-	now fun 'nuf is mapped south of dirge grid;
+	now Dirge Grid is mapped north of Fun 'Nuf;
+	now Fun 'Nuf is mapped south of Dirge Grid;
 	score-inc; [+dim mid]
 
 check useoning it with:
@@ -426,10 +426,10 @@ check useoning it with:
 		if second noun is an ingredient or noun is epicer recipe:
 			if player does not have epicer recipe, say "Those two things seem to go together, but you don't have detailed instructions." instead;
 			if number of ingredients carried by player < number of ingredients, say "You have the start of something, but not enough to make a north-tron." instead;
-			if player is not in fun 'nuf:
+			if player is not in Fun 'Nuf:
 				say "You might be better served using these things in Fun [']Nuf. Go there?";
 				if the player no-consents, say "OK, but protip: that's where you need to assemble things." instead;
-				move player to fun 'nuf, without printing a room description;
+				move player to Fun 'Nuf, without printing a room description;
 			build-the-tron instead;
 	if noun is a workable or second noun is a workable:
 		if wr-short-note is false:
@@ -529,7 +529,7 @@ chapter failed useons
 table of useons (continued)
 use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
 yard ray	Tru Hurt	x-ite tix	--	--	true	true	true	--	"The yard ray bounces harmlessly off the Tru Hurt. Maybe it needs to be used nonviolently."
-yard ray	diktat kid	x-ite tix	--	--	true	true	true	--	"The yard ray bounces harmlessly off the Diktat Kid. Maybe it needs to be used nonviolently."
+yard ray	Diktat Kid	x-ite tix	--	--	true	true	true	--	"The yard ray bounces harmlessly off the Diktat Kid. Maybe it needs to be used nonviolently."
 
 volume rooms
 
@@ -537,10 +537,10 @@ part Dim Mid region
 
 book Fun 'Nuf
 
-Fun 'Nuf is a room in Mid Dim. "[if elite tile is in fun 'nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what is the various directions[xit-ave][end if][if north tron is in fun 'nuf]. Also, the North Tron has carved a passage north[end if]."
+Fun 'Nuf is a room in Mid Dim. "[if elite tile is in Fun 'Nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what is the various directions[xit-ave][end if][if north tron is in Fun 'Nuf]. Also, the North Tron has carved a passage north[end if]."
 
 to say xit-ave:
-	say ". The [if tix exit is in fun 'nuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]"
+	say ". The [if tix exit is in Fun 'Nuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]"
 
 the north tron is scenery. "It seems to have pushed a passage north here in Fun [']Nuf. Do you have the guts to follow it to your destiny?"
 
@@ -591,7 +591,7 @@ check going in Fun 'Nuf:
 	if Flee Elf is in Fun 'Nuf:
 		if noun is west or noun is east, say "'Keen! Eek!' the Flee Elf stops you. 'You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley.'" instead;
 	if noun is north:
-		if diktat kid is in ZeroRez, say "No need to go back." instead;
+		if Diktat Kid is in ZeroRez, say "No need to go back." instead;
 		if north tron is not in Fun 'Nuf, say "Not until you built the North-Tron." instead;
 		if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
 		if murk rum is not in ZeroRez, say "You have the yard ray, but it isn't, well, charged." instead;
@@ -649,7 +649,7 @@ carry out paceing:
 
 chapter tile lit
 
-the tile lit is scenery in Fun 'Nuf. "It's a rough compass, with GREBEBERG west by it, YELPLEY east, EVAC AVE south and DIRGE GRID north. You can't seem to go [if flee elf is in ZeroRez]south and [end if]north, though."
+the tile lit is scenery in Fun 'Nuf. "It's a rough compass, with GREBEBERG west by it, YELPLEY east, Evac Ave south and Dirge Grid north. You can't seem to go [if flee elf is in ZeroRez]south and [end if]north, though."
 
 check taking tile lit: say "It's sort of embedded into the ground. It looks nice there, anyway, and it's useful for information."
 
@@ -665,15 +665,15 @@ instead of entering back cab, win-finally instead;
 
 book Dirge Grid
 
-Dirge Grid is a room in Mid Dim. "The only way back is south[if diktat kid is in dirge grid], but you can't really run away from the Diktat Kid[else], and you might as well go that way, now you've vanquished the Diktat Kid[end if]."
+Dirge Grid is a room in Mid Dim. "The only way back is south[if Diktat Kid is in Dirge Grid], but you can't really run away from the Diktat Kid[else], and you might as well go that way, now you've vanquished the Diktat Kid[end if]."
 
 Diktat Kid is a proper-named person in Dirge Grid.
 
-after looking in dirge grid for the first time:
+after looking in Dirge Grid for the first time:
 	say "The Diktat Kid booms 'Engage le jeu que je le gagne!'";
 	continue the action;
 
-check going south in dirge grid: if diktat kid is in dirge grid, say "'Mom! SOS! LOL! SOS! Mom!' the Diktat Kid mocks you.[paragraph break]You can't chicken out. You must be close!" instead;
+check going south in Dirge Grid: if Diktat Kid is in Dirge Grid, say "'Mom! SOS! LOL! SOS! Mom!' the Diktat Kid mocks you.[paragraph break]You can't chicken out. You must be close!" instead;
 
 chapter tru hurt
 
@@ -692,7 +692,7 @@ understand "emit [text]" as emiting when player has yard ray.
 carry out emiting:
 	if murk rum is not in ZeroRez, say "The Yard Ray isn't charged enough to emit anything." instead;
 	if player is in location of Yuge Guy, say "No...the Yuge Guy needs to be defeated by other means." instead;
-	if diktat kid is in ZeroRez, say "You already got rid of the Diktat Kid." instead;
+	if Diktat Kid is in ZeroRez, say "You already got rid of the Diktat Kid." instead;
 	if the topic understood matches "noontime":
 		say "BOOM! The yard ray emits too much light for the Diktat Kid to bear. The Kid runs off, but not before dropping some X-Ite Tix, which you take.";
 		now player has X-Ite Tix;
@@ -1000,7 +1000,7 @@ understand "nail ian" as nailing when player is in Worn Row and Ian is in Worn R
 
 carry out nailing:
 	say "Boom! There goes Ian.";
-	move Ian to Zerorez;
+	move Ian to ZeroRez;
 	score-inc;
 	the rule succeeds;
 
@@ -1318,7 +1318,7 @@ understand "goto [room]" as gotoing.
 understand "gt [room]" as gotoing.
 
 to decide whether goto-available:
-	if player is in dirge grid and diktat kid is in dirge grid, no;
+	if player is in Dirge Grid and Diktat Kid is in Dirge Grid, no;
 	yes. [obviously we don't want this to be trivial once the game's complete, but we want the code in place.]
 
 carry out gotoing:
@@ -1391,7 +1391,7 @@ check aiding:
 
 to decide whether done-here:
 	if player is in yawn way, yes;
-	if player is in fun 'nuf and flee elf is in ZeroRez, yes;
+	if player is in Fun 'Nuf and flee elf is in ZeroRez, yes;
 	if player is in my gym and dave is in ZeroRez, yes;
 	if player is in seer trees and start rats are in ZeroRez, yes;
 	if player is in calcific lac and dork rod is in ZeroRez, yes;
