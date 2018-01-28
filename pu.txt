@@ -1,6 +1,5 @@
 # coordinate this with the source for the points list
-# 1 use table of useons
-# 2 redefine sc2.py so that [region/command] is after sco-inc or reg-inc so we can match up with what is below. Commands in upper case in walkthrough.
+# todo: redefine sc2.py so that [region/command] is after sco-inc or reg-inc so we can match up with what is below. Commands in upper case in walkthrough.
 out=put-it-up-invisiclues.htm
 !Put It Up HTML Clues
 ->c:/games/inform/put-it-up Materials/Release
@@ -200,6 +199,22 @@ There are 3 total points in Odd Do.
 1 point for either, but not each, semi-profanity *OO*.
 1 point for saying REFER instead of THINK.
 1 point for saying DIAL AID instead of AID.
+?What is unsorted?
+1 point if you USE DEMO MED ON GULF LUG
+1 point if you USE SPA MAPS ON CODE DOC
+1 point if you USE MURK RUM ON YARD RAY
+1 point if you USE GOLD LOG ON ROTATOR
+1 point if you USE REP POPPER ON YUGE GUY
+1 point if you USE CASH SAC ON CROSS ORC
+1 point if you USE EL DOODLE ON EDITS TIDE
+1 point if you USE STINK KNITS ON ROTATOR
+1 point if you USE TO IDIOT ON KNOWN WONK
+1 point if you USE TRAP ART ON REIFIER
+1 point if you USE SAGE GAS ON TENET
+1 point if you USE UFO TOFU ON MAYO YAM
+1 point if you USE ELAN ALE ON IRA BARI
+1 point if you USE ERODED ORE ON REVIVER
+1 point if you USE BRO ORB ON MADAM SNIFFINS
 ;
 ?How do I go west?
 You'll need something to protect you from the Flu Gulf.

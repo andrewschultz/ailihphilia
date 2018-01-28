@@ -35,6 +35,9 @@ machine_uses = defaultdict(int)
 machine_uses_in_source = defaultdict(int)
 machine_actions = defaultdict(str)
 
+use_in_source = defaultdict(int)
+use_in_invisiclues = defaultdict(int)
+
 func_list = ''
 
 argval = 1
@@ -55,6 +58,21 @@ def detect_region(a, b):
     temp = re.sub(".*\[\+", "", a.strip())
     temp = re.sub("\].*", "", temp)
     return temp.lower()
+
+def source_vs_invisiclues():
+    with open("c:/writing/scripts/invis/pu.txt") as file:
+        for line in file:
+            if line.startswith("1 point if you USE"):
+                ll = re.sub(".* USE", "USE", line.strip())
+                ll = re.sub("\..*", "", ll)
+                use_in_invisiclues[ll] = True
+    for x in list(set(use_in_invisiclues.keys()) | set(use_in_source.keys())):
+        if x not in use_in_invisiclues.keys():
+            print("Need this line in invisiclues:", x)
+        elif x not in use_in_source.keys():
+            print("Need this line in table of useons:", x)
+        elif verbose:
+            print("Synced:", x)
 
 with open(main_source) as file:
     line_count = 0
@@ -129,6 +147,8 @@ with open(main_source) as file:
             if len(x) != 10:
                 print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 10.")
             if x[5] == 'true':
+                cmd = "USE {:s} ON {:s}".format(x[0].upper(), x[1].upper())
+                use_in_source[cmd] = line_count
                 temp_region = ""
                 if x[8] and x[8] != '--' and x[8] != 'reg-plus': # a bit hacky, but basically, check for entry 10 in useon table being a proper region
                     temp_region = x[8].lower()
@@ -142,6 +162,8 @@ with open(main_source) as file:
                     elif verbose:
                         print(temp_region, "at line", line_count, " in use table given extra point.")
                     undef_use_points = undef_use_points + 1
+
+source_vs_invisiclues()
 
 for x in base_reg_incs.keys():
     if semi_verbose or verbose:
