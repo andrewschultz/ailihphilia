@@ -13,6 +13,13 @@ from filecmp import cmp
 import os
 import re
 
+if not os.path.exists("story.ni"):
+    try:
+        os.chdir("c:/games/inform/put-it-up.inform/source")
+    except:
+        print("No story.ni and no default directory path.")
+        exit()
+
 fout = open("story.ni2", "w", newline='\n') # STORY.NI files have unix line endings
 difs = 0
 line_count = 0
