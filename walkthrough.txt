@@ -93,15 +93,27 @@ And now you can take out the Yuge Guy.
 
 ==========================================below is the Madam Sniffins quest
 
->GIVE SPA MAPS TO CODE DOC
+>GIVE ?? BOOK TO (PERSON IN ART XTRA)
+
+>S.W.W.W.W.N
+
+>USE EL DOODLE ON EDITS TIDE
+
+>S
+
+>S
+
+>USE SPA MAPS ON CODE DOC
 
 >N.E.E.E.S.W
 
->PUT STINK KNITS IN ROTATOR
+>USE STINK KNITS ON ROTATOR
 
 Yay! Brag garb!
 
 The Kayo Yak seems to be kind of violent but won't attack you. Still, it comes up to sniff you. Maybe it could help you?
+
+?? puzzle below not implemented yet
 
 >USE TROLL ORT ON STINK KNITS
 

@@ -4,6 +4,11 @@
 
 State Tats
 
+Use Stamp Mats on Gate Tag: becomes YE KEY
+
+Put DOSE SOD in PUCE CUP
+Give DOSE SOD/PUCE CUP to GULF LUG and he gives you the CASH SAC
+
 check going up in some places: go south/north instead
 
 liar grail: rotated to become a Tru-Yurt.
@@ -24,6 +29,8 @@ rep me temper
 Ailihphilia: It is what you think, you. What, is it?
 
 Class Alc
+
+"Believe Me. Adore Me. Believe!"
 
 "Is it crazy how saying sentences backwards makes backwards sentences saying how crazy it is?"
 Lid off a daffodil.
@@ -181,7 +188,6 @@ Palm Lap
 
 Fix If
 
-Emit Noontime: (how to activate yard ray)
 Emacs Came
 enol cyclone
 enol alone
@@ -201,7 +207,6 @@ Eyre Rye
 
 Arid Ira
 Zen Inez
-Cross Orc
 
 T-Rex, Exert!
 
@@ -337,8 +342,6 @@ More rom
 Guru Rug
 
 Spur Ups: used in the Trapeze Part
-
-Cash Sac = buy stuff with it
 
 Bill Lib
 
@@ -644,7 +647,6 @@ psi wisp
 purist sirup
 puck cup
 pupil slipup
-puff up
 puteli letup
 racy car
 rangy gnar
@@ -1014,7 +1016,7 @@ warm raw
 wakiki kaw
 war draw
 wart raw
-waster fretsaw
+waster fretsaw: one of many items at the end
 welsh slew
 went new
 well lew
