@@ -28,7 +28,7 @@ Grebeberg is a region. max-score of Grebeberg is 10.
 
 Dim Mid is a region. max-score of Dim Mid is 5.
 
-Yelpley is a region. max-score of Yelpley is 15.
+Yelpley is a region. max-score of Yelpley is 16.
 
 Odd Do is a region. max-score of Odd Do is 3.
 
@@ -99,7 +99,7 @@ to decide which region is mrlp:
 	decide on map region of location of player;
 
 after looking (this is the make available for goto rule):
-	if location of player is not emo dome, now location of player is available;
+	if location of player is not Emo Dome, now location of player is available;
 	continue the action;
 
 section set o notes
@@ -115,7 +115,7 @@ to score-inc:
 
 check requesting the score:
 	say "Your overall score so far is [score] of [maximum score].";
-	say "Broken down by regions, you have [regres of dim mid], [regres of grebeberg], [regres of Yelpley] and [regres of odd do].";
+	say "Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do].";
 	the rule succeeds;
 
 to reg-inc (re - a region):
@@ -126,7 +126,7 @@ to reg-inc (re - a region):
 
 to say regres of (re - a region):
 	say "[cur-score of re] of [max-score of re] ";
-	if re is odd do:
+	if re is Odd Do:
 		say "extra points";
 	else:
 		say "for [re][if mrlp is re] (current region)[end if]"
@@ -173,7 +173,7 @@ Rule for printing a parser error when the latest parser error is the didn't unde
 
 to decide whether gtv:
 	if ian is in location of player, yes;
-	if dave is in location of player, yes;
+	if Dave is in location of player, yes;
 	if curt is in location of player, yes;
 	no;
 
@@ -220,7 +220,7 @@ understand "refer" as refering.
 carry out refering:
 	if refer-bonus is false:
 		say "Yes! That's a slightly more appropriate way to think, here.";
-		reg-inc odd do;
+		reg-inc Odd Do;
 		now refer-bonus is true;
 	try thinking instead;
 
@@ -283,7 +283,7 @@ carry out verbing:
 	say "[line break]THINK gives very general hints.";
 	say "[line break]Many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy.";
 	say "[line break]AID gives you hints for where you are. ABOUT and CREDITS tell about the game.";
-	if wr-short-note is true and player is in worn row and workrow is true, say "[line break]REV, ROT and REI use an item on the reviver, rotator and reifier, respectively.";
+	if wr-short-note is true and player is in Worn Row and workrow is true, say "[line break]REV, ROT and REI use an item on the reviver, rotator and reifier, respectively.";
 	the rule succeeds;
 
 wr-short-note is a truth state that varies.
@@ -333,6 +333,7 @@ instead of smelling:
 	if player has dork rod:
 		now rod-smelled is true;
 		say "You might expect a rod odor, but there isn't one. OR MAYBE IT IS SO INGRAINED IN YOU, YOU NO LONGER SMELL IT." instead;
+	if player is in Bon Snob, say "Ham?! Ah!" instead;
 	if player is in Top Spot, say "You smell an amoral aroma." instead;
 	say "Noses, on[one of]! (you don't need to smell anything in this game)[or][stopping]!"
 
@@ -381,7 +382,7 @@ instead of sleeping:
 	if eels are in location of player:
 		say "You manage to calm the eels down. They go away.";
 		move eels to ZeroRez;
-		score-inc instead; [+grebeberg]
+		score-inc instead; [+Grebeberg]
 	say "Sleeping is equivalent to waiting in this game...well, except for one place...";
 	try waiting instead;
 
@@ -415,7 +416,7 @@ to build-the-tron:
 	say "You build the north tron with the instructions from the epicer recipe. A passage opens north! You must be close now.";
 	now Dirge Grid is mapped north of Fun 'Nuf;
 	now Fun 'Nuf is mapped south of Dirge Grid;
-	score-inc; [+dim mid]
+	score-inc; [+Dim Mid]
 
 check useoning it with:
 	if noun is second noun, say "It's not productive to use something on itself, even with this game being full of palindromes." instead;
@@ -489,24 +490,25 @@ Dave	"Dave's not useful, man."
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
 table of useons [xxuse]
 use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
-trap art	reifier	party trap	--	--	true	true	false	yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
-party trap	start rats	gift fig	--	--	true	true	true	grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The seer trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
-poo coop	gnu dung	--	--	--	true	true	true	grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
-gold log	rotator	dork rod	--	--	true	true	false	yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
-dork rod	tao boat	--	--	--	true	true	false	grebeberg	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
-stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
-elan ale	ira bari	gorge grog	--	--	true	false	false	yelpley	"Ira looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"
-UFO Tofu	Mayo Yam	Mush Sum	in-mont-nom rule	--	true	true	true	grebeberg	"The UFO Tofu and mayo yam blend together in a most unholy fashion, but the magic of Mont Nom kicks in, and they become ... a surprisingly nice smelling and looking mush sum."
-Eroded Ore	reviver	Ore Zero	--	--	true	true	true	yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
-el doodle	edits tide	spa maps	--	--	true	true	false	grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
-spa maps	Code Doc	--	--	maps-explain rule	true	false	false	grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
-sage gas	tenet	tenet	--	--	true	true	false	grebeberg	"With the sage gas, you're able to see a bit deeper into the tenet. As you pick the tenet up, the gas bubbles away. Well, it will be there for the next person to learn."
-rep popper	Yuge Guy	murk rum	--	--	true	true	true	grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
-Bro Orb	Madam Sniffins	Yard Ray	--	--	true	true	true	yelpley	"The Bro Orb shines and drives Madam Sniffins to rage. She runs away, sobbing. The Yard Ray is left unguarded. You take it."
-murk rum	yard ray	--	--	--	true	true	false	dim mid	"The yard ray gleams with energy. It seems like it could do some damage now."
+trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
+party trap	start rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
+cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes to look for ... well, something else."
+poo coop	gnu dung	--	--	--	true	true	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
+gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
+dork rod	tao boat	--	--	--	true	true	false	Grebeberg	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
+stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
+elan ale	Ira Bari	Gorge Grog	--	--	true	false	false	Yelpley	"Ira looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"
+UFO Tofu	Mayo Yam	Mush Sum	in-mont-nom rule	--	true	true	true	Grebeberg	"The UFO Tofu and mayo yam blend together in a most unholy fashion, but the magic of Mont Nom kicks in, and they become ... a surprisingly nice smelling and looking mush sum."
+Eroded Ore	reviver	Ore Zero	--	--	true	true	true	Yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
+el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
+spa maps	Code Doc	--	--	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
+sage gas	tenet	tenet	--	--	true	true	false	Grebeberg	"With the sage gas, you're able to see a bit deeper into the tenet. As you pick the tenet up, the gas bubbles away. Well, it will be there for the next person to learn."
+rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
+Bro Orb	Madam Sniffins	Yard Ray	--	--	true	true	true	Yelpley	"The Bro Orb shines and drives Madam Sniffins to rage. She runs away, sobbing. The Yard Ray is left unguarded. You take it."
+murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
 
 this is the in-mont-nom rule:
-	if location of player is mont nom, the rule succeeds;
+	if location of player is Mont Nom, the rule succeeds;
 	say "Eww! Maybe if you were somewhere more magical with food, it would work.";
 	the rule fails;
 
@@ -649,7 +651,7 @@ carry out paceing:
 
 chapter tile lit
 
-the tile lit is scenery in Fun 'Nuf. "It's a rough compass, with GREBEBERG west by it, YELPLEY east, Evac Ave south and Dirge Grid north. You can't seem to go [if flee elf is in ZeroRez]south and [end if]north, though."
+the tile lit is scenery in Fun 'Nuf. "It's a rough compass, with GREBEBERG west by it, YELPLEY east, Evac Ave south and Dirge Grid north. You can't seem to go [if flee elf is in ZeroRez]south and [end if]north, though." [ic]
 
 check taking tile lit: say "It's sort of embedded into the ground. It looks nice there, anyway, and it's useful for information."
 
@@ -708,7 +710,7 @@ book Seer Trees
 Seer Trees is west of Fun 'Nuf. It is in Grebeberg.
 
 check going in Seer Trees:
-	if noun is not east and start rats are in seer trees, say "The start rats block you from going anywhere. At least they are not banging stop pots." instead;
+	if noun is not east and start rats are in Seer Trees, say "The start rats block you from going anywhere. At least they are not banging stop pots." instead;
 
 the start rats are a plural-named thing in Seer Trees.
 
@@ -720,7 +722,7 @@ book Cold Loc
 
 Cold Loc is north of Seer Trees. It is in Grebeberg.
 
-check going north in Cold Loc: [to flu gulf]
+check going north in Cold Loc: [to Flu Gulf]
 	unless player carries puce cup or puce cup is in ZeroRez:
 		say "You're pushed back by worries of sickness." instead;
 	if player carries puce cup:
@@ -732,6 +734,8 @@ Flu Gulf is north of Cold Loc. It is in Grebeberg.
 
 Gulf Lug is a person in Flu Gulf.
 
+the cash sac is a thing in Flu Gulf.
+
 book Top Spot
 
 Top Spot is west of Flu Gulf. It is in Grebeberg. "This place has obviously not gone to pot."
@@ -742,10 +746,10 @@ book Dumb Mud
 
 Dumb Mud is west of Seer Trees. It is in Grebeberg.
 
-the gnu dung is in Dumb Mud. "Gnu dung blocks exit south from the dumb mud.". description is "You're not an expert in this sort of biology, but given what you've seen so far, it's probably from a gnu."
+the gnu dung is in Dumb Mud. "Gnu dung blocks exit south from the Dumb Mud.". description is "You're not an expert in this sort of biology, but given what you've seen so far, it's probably from a gnu."
 
 check going south in Dumb Mud:
-	if gnu dung is in dumb mud, say "Not through the dumb mud you aren't." instead;
+	if gnu dung is in Dumb Mud, say "Not through the Dumb Mud you aren't." instead;
 
 instead of doing something with gnu dung:
 	if action is procedural, continue the action;
@@ -774,10 +778,10 @@ Mont Nom is south of Dumb Mud. It is in Grebeberg.
 
 book Ooze Zoo
 
-Ooze Zoo is south of Seer Trees. It is in Grebeberg. "[if etage gate is in ooze zoo]An etage gate blocks the way south--and probably will until you prove yourself worthy to get by. But you can still go back north[else]You can go north to the Seer Trees, or south to [s-dray][end if]."
+Ooze Zoo is south of Seer Trees. It is in Grebeberg. "[if etage gate is in Ooze Zoo]An etage gate blocks the way south--and probably will until you prove yourself worthy to get by. But you can still go back north[else]You can go north to the Seer Trees, or south to [s-dray][end if]."
 
 to say s-dray:
-	say "[if dray yard is visited]Dray Yard[else]a yard[end if]"
+	say "[if Dray Yard is visited]Dray Yard[else]a yard[end if]"
 
 chapter etage gate
 
@@ -867,11 +871,11 @@ book My Gym
 
 My Gym is south of Yawn Way. It is in Yelpley. "You can go back out south to Yawn Way. There's also passage west."
 
-chapter dave
+chapter Dave
 
-Dave is a person in My Gym. initial appearance is "[one of]A fellow walks over to you and booms 'I'M DAVE!' You freeze, and after a few seconds, he whispers, 'Dud.'[or]Dave is here, keeping an eye on you, guarding the passage west.[stopping]". description is "Dave is big and strong and fast."
+Dave is a person in My Gym. initial appearance is "[one of]A fellow walks over to you and booms 'I'M Dave!' You freeze, and after a few seconds, he whispers, 'Dud.'[or]Dave is here, keeping an eye on you, guarding the passage west.[stopping]". description is "Dave is big and strong and fast."
 
-instead of doing something with dave:
+instead of doing something with Dave:
 	if action is procedural, continue the action;
 	if current action is evadeing, continue the action;
 	say "Looks like you'll need to do something special with, or to, Dave. Nothing destructive. But psych him out, somehow."
@@ -886,15 +890,15 @@ understand the command "evade" as something new.
 
 understand "evade [something]" as evadeing.
 
-does the player mean evadeing dave: it is very likely.
+does the player mean evadeing Dave: it is very likely.
 
 dave-evade is a truth state that varies.
 
 carry out evadeing:
-	if noun is dave:
+	if noun is Dave:
 		if dave-evade is true, say "You don't need to evade Dave again.";
 		say "You evade Dave! Deked! Deked!";
-		now dave is in ZeroRez;
+		now Dave is in ZeroRez;
 		now dave-evade is true;
 		score-inc;
 		now all davey rooms are available;
@@ -908,7 +912,7 @@ book Worn Row
 
 Worn Row is west of My Gym. It is in Yelpley. "[if workrow is true]Three machines are here[else if wordrow is true]A library is here, just full of books[else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if]."
 
-understand "worm row" as a mistake ("Ugh! You don't need to make this place worse.") when player is in worn row
+understand "worm row" as a mistake ("Ugh! You don't need to make this place worse.") when player is in Worn Row
 
 printed name of Worn Row is "[if wordrow is true]Word[else if workrow is true]Work[else]Worn[end if] Row"
 
@@ -946,10 +950,10 @@ reiing is an action applying to one thing.
 
 understand the command "rei" as something new.
 
-understand "rei [something]" as reiing when player is in worn row and reifier is not off-stage.
+understand "rei [something]" as reiing when player is in Worn Row and reifier is not off-stage.
 
 carry out reiing:
-	if reifier is not in worn row, say "You need to bring back Work Row." instead;
+	if reifier is not in Worn Row, say "You need to bring back Work Row." instead;
 	try useoning noun with reifier instead;
 
 section reving
@@ -958,10 +962,10 @@ reving is an action applying to one thing.
 
 understand the command "rev" as something new.
 
-understand "rev [something]" as reving when player is in worn row and reviver is not off-stage.
+understand "rev [something]" as reving when player is in Worn Row and reviver is not off-stage.
 
 carry out reving:
-	if reviver is not in worn row, say "You need to bring back Work Row." instead;
+	if reviver is not in Worn Row, say "You need to bring back Work Row." instead;
 	try useoning noun with reviver instead;
 
 section roting
@@ -970,10 +974,10 @@ roting is an action applying to one thing.
 
 understand the command "rot" as something new.
 
-understand "rot [something]" as roting when player is in worn row and rotator is not off-stage.
+understand "rot [something]" as roting when player is in Worn Row and rotator is not off-stage.
 
 carry out roting:
-	if reifier is not in worn row, say "You need to bring back word row." instead;
+	if reifier is not in Worn Row, say "You need to bring back word row." instead;
 	try useoning noun with rotator instead;
 
 chapter books
@@ -1010,25 +1014,25 @@ workrowing is an action applying to nothing.
 
 understand the command "workrow" as something new.
 
-understand "work row" and "workrow" as workrowing when player is in worn row.
+understand "work row" and "workrow" as workrowing when player is in Worn Row.
 
 workrow is a truth state that varies.
 
 ever-workrow is a truth state that varies.
 
 carry out workrowing:
-	if ian is in worn row, say "That'll work when Ian is gone." instead;
+	if ian is in Worn Row, say "That'll work when Ian is gone." instead;
 	if workrow is true, say "You're already in Work Row." instead;
 	now workrow is true;
 	now wordrow is false;
 	say "Three machines [one of][or]re[stopping]appear[if wordrow is true], replacing the books[end if].";
 	if ever-workrow is false, score-inc;
 	now ever-workrow is true;
-	now all workables are in worn row;
-	now all books in worn row are in TempMet;
+	now all workables are in Worn Row;
+	now all books in Worn Row are in TempMet;
 	the rule succeeds;
 
-understand "worn row" and "wornrow" as a mistake ("No need to revert things.") when shouldnt-revert.
+understand "worn row" and "wornrow" as a mistake ("No need to revert things.") when shouldnt-revert. [ic]
 
 to decide whether shouldnt-revert:
 	unless player is in Worn Row, no;
@@ -1041,14 +1045,14 @@ wordrowing is an action applying to nothing.
 
 understand the command "wordrow" as something new.
 
-understand "word row" and "wordrow" as wordrowing when player is in worn row.
+understand "word row" and "wordrow" as wordrowing when player is in Worn Row.
 
 wordrow is a truth state that varies.
 
 ever-wordrow is a truth state that varies.
 
 carry out wordrowing:
-	if ian is in worn row, say "That'll work when Ian is gone." instead;
+	if ian is in Worn Row, say "That'll work when Ian is gone." instead;
 	if wordrow is true, say "You're already in Word Row." instead;
 	now wordrow is true;
 	now workrow is false;
@@ -1059,7 +1063,7 @@ carry out wordrowing:
 	now all books in TempMet are in Worn Row;
 	the rule succeeds;
 
-understand "worn row" and "wornrow" as a mistake ("No need to revert things.") when player is in Swept Pews and workrow is false and wordrow is false.
+understand "worn row" and "wornrow" as a mistake ("No need to revert things.") when player is in Swept Pews and workrow is false and wordrow is false. [ic]
 
 book Art Xtra
 
@@ -1073,27 +1077,28 @@ book Toll Lot
 
 Toll Lot is east of Emo Dome. It is in Yelpley. "While it's easy enough to go back east, you may have to do something special to go north or south."
 
+The cross orc is a person in Toll Lot.
+
 [snuff funs]
 
-a tame mat is in Toll Lot. "A tame mat reading BON SNOB is in your way to the south."
+check going in Toll Lot:
+	if cross orc is in Toll Lot:
+		if noun is north or noun is south, say "The cross orc stops you from going [noun]. 'GIVE VIG!' it booms." instead;
 
 check going south in Toll Lot when tame mat is in Toll Lot:
 	say "An upper-crust voice emits from the tame mat, which curls up: 'DA CAD!'[paragraph break]Maybe if it were more glued to the ground." instead;
 
-check taking tame mat:
-	say "That would be stealing." instead;
+book Ned's Den
 
-book ned's den
+Ned's Den is north of Toll Lot. It is in Yelpley. printed name of Ned's Den is "[if ned is in Ned's Den]Ned's Den[else]Den, Evened[end if]"
 
-Ned's Den is north of Toll Lot. It is in Yelpley. printed name of ned's den is "[if ned is in ned's den]Ned's Den[else]Den, Evened[end if]"
-
-understand "evened" and "den evened" as ned's den when ned is in ZeroRez
+understand "evened" and "den evened" as Ned's Den when ned is in ZeroRez
 
 Ned is a person in Ned's Den.
 
 The Puce Cup is a thing in Ned's Den.
 
-check taking puce cup: if ned is in ned's den, say "Not with Ned around, you won't." instead;
+check taking puce cup: if ned is in Ned's Den, say "Not with Ned around, you won't." instead;
 
 chapter denting
 
@@ -1142,6 +1147,11 @@ Nat's Tan is a thing in Bon Snob. "A container of something called Nat's Tan is 
 
 Le Falafel is a proper-named thing in Bon Snob.
 
+a tame mat is in Bon Snob. "A tame mat reading Bon Snob here."
+
+check taking tame mat:
+	say "That would be stealing." instead;
+
 chapter standing
 
 standing is an action applying to one thing.
@@ -1169,7 +1179,7 @@ Trapeze Part is west of Evaded Ave. It is in Yelpley. "[if epicer recipe is off-
 
 the tenses net is scenery in Trapeze Part. "[if epicer recipe is off-stage]It doesn't quite look sturdy enough. Maybe you could do something to fix it[else]It was sturdy enough to help you get the epicer recipe, and that's enough[end if]."
 
-the epicer recipe is a thing. description is "You've seen recipes before, but this is a big interesting one! It describes how to make a north-tron, which will get you north of Fun [']Nuf.[paragraph break][gots of TNT][gots of x/o box][gots of mush sum][gots of balsa slab][gots of gorge grog]"
+the epicer recipe is a thing. description is "You've seen recipes before, but this is a big interesting one! It describes how to make a north-tron, which will get you north of Fun [']Nuf.[paragraph break][gots of TNT][gots of x/o box][gots of mush sum][gots of balsa slab][gots of Gorge Grog]"
 
 chapter tending
 
@@ -1199,7 +1209,7 @@ check taking rep popper:
 
 chapter pulluping
 
-understand "puff up" as a mistake ("You try to have self confidence, but you don't have the confidence you can do it right.") when player is in emo dome and pulled-up is false.
+understand "puff up" as a mistake ("You try to have self confidence, but you don't have the confidence you can do it right.") when player is in Emo Dome and pulled-up is false.
 
 pulled-up is a truth state that varies.
 
@@ -1213,11 +1223,11 @@ understand "pullup" as pulluping.
 
 carry out pulluping:
 	if pulled-up is true, say "You already did." instead;
-	unless player is in emo dome, say "This isn't the place[if emo dome is visited], but maybe you could do this in the Emo Dome[end if]." instead;
+	unless player is in Emo Dome, say "This isn't the place[if Emo Dome is visited], but maybe you could do this in the Emo Dome[end if]." instead;
 	say "You manage to stop yourself. The whining isn't too bad. Yeah, you can hack it here.";
 	now pulled-up is true;
 	score-inc;
-	now emo dome is available;
+	now Emo Dome is available;
 	the rule succeeds;
 
 book Emo Dome
@@ -1235,15 +1245,15 @@ instead of doing something in Emo Dome when pulled-up is false:
 
 emo-dir is a direction that varies. emo-dir is west.
 
-check going to emo dome:
+check going to Emo Dome:
 	if pulled-up is true:
 		now emo-dir is noun;
 
-check going north in emo dome:
+check going north in Emo Dome:
 	say "The Civic Level is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by 'Oh, who? Go jog!' and think, hang? Nah." instead;
 	if Civic Level is unvisited, say "You step into what may be your final challenge in Yelpley..."
 
-book civic level
+book Civic Level
 
 Civic Level is north of Emo Dome. It is in Yelpley.
 
@@ -1293,7 +1303,7 @@ Dope Pod is west of Drawl Ward. It is in Yelpley.
 
 The radar is in Dope Pod.
 
-book ball lab
+book Ball Lab
 
 Ball Lab is north of Ned's Den. It is in Yelpley.
 
@@ -1352,7 +1362,7 @@ understand "truck [something]" as trucking.
 carry out trucking:
 	if noun is not Curt, say "Wrong thing to truck." instead;
 	move Curt to ZeroRez;
-	score-inc; [+yelpley]
+	score-inc; [+Yelpley]
 	the rule succeeds.
 
 volume metarooms
@@ -1382,7 +1392,7 @@ dial-yet is a truth state that varies.
 check aiding:
 	if dial-yet is false and word number 1 in the player's command is "dial":
 		say "Your 'correct' way of asking for aid nets a last lousy point. Yay![paragraph break]";
-		reg-inc odd do;
+		reg-inc Odd Do;
 		now dial-yet is true;
 	if dial-yet is false:
 		say "Aid... aid...[paragraph break]";
@@ -1390,11 +1400,11 @@ check aiding:
 	say "Thinking...";
 
 to decide whether done-here:
-	if player is in yawn way, yes;
+	if player is in Yawn Way, yes;
 	if player is in Fun 'Nuf and flee elf is in ZeroRez, yes;
-	if player is in my gym and dave is in ZeroRez, yes;
-	if player is in seer trees and start rats are in ZeroRez, yes;
-	if player is in calcific lac and dork rod is in ZeroRez, yes;
+	if player is in My Gym and Dave is in ZeroRez, yes;
+	if player is in Seer Trees and start rats are in ZeroRez, yes;
+	if player is in Calcific Lac and dork rod is in ZeroRez, yes;
 	no;
 
 volume endgame stuff

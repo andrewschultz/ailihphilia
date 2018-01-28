@@ -54,7 +54,7 @@ def detect_region(a, b):
         return b
     temp = re.sub(".*\[\+", "", a.strip())
     temp = re.sub("\].*", "", temp)
-    return temp
+    return temp.lower()
 
 with open(main_source) as file:
     line_count = 0
@@ -105,7 +105,7 @@ with open(main_source) as file:
         if ll.startswith('part ') and 'region' in ll:
             myreg = re.sub("^part ", "", ll)
             myreg = re.sub(" *?region.*", "", myreg)
-            current_region = myreg
+            current_region = myreg.lower()
             if myreg not in region_def_line.keys():
                 print("WARNING", ll, "defines start of invalid region.")
         if line.startswith("table of useons") and 'continued' not in line:
@@ -131,7 +131,7 @@ with open(main_source) as file:
             if x[5] == 'true':
                 temp_region = ""
                 if x[8] and x[8] != '--' and x[8] != 'reg-plus': # a bit hacky, but basically, check for entry 10 in useon table being a proper region
-                    temp_region = x[8]
+                    temp_region = x[8].lower()
                 if temp_region:
                     directed_incs[temp_region] = directed_incs[temp_region] + 1
                 else:

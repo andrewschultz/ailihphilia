@@ -13,7 +13,7 @@ from filecmp import cmp
 import os
 import re
 
-fout = open("story.ni2", "w")
+fout = open("story.ni2", "w", newline='\n') # STORY.NI files have unix line endings
 difs = 0
 line_count = 0
 cap_search = defaultdict(bool)
@@ -30,12 +30,13 @@ with open("story.ni") as file:
     for line in file:
         line_count = line_count + 1
         ll = line
-        for x in cs:
-            if x.lower() in line.lower():
-                ll = re.sub(x, x, ll, 0, re.IGNORECASE)
-                if ll != line:
-                    difs = difs + 1
-                    print("Line", line_count, "is different:", line.strip())
+        if '[ic]' not in ll:
+            for x in cs:
+                if x.lower() in line.lower():
+                    ll = re.sub(r'\b{:s}\b'.format(x), x, ll, 0, re.IGNORECASE)
+                    if ll != line:
+                        difs = difs + 1
+                        print("Line", line_count, "is different:", line.strip())
         fout.write(ll)
 
 fout.close()
