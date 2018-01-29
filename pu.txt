@@ -32,6 +32,15 @@ Well, one way, there's only one room you can explore.
 Also, there are no permadeaths.
 There's no penalty for guessing wrong.
 You'll want to start by going east.
+?Hey! Look! There's a way back south!
+The Tix Exit appears pretty soon, but it doesn't let you through.
+Unsurprisingly, you need tix of your own.
+You don't get them until the end.
+Once you defeat the Diktat Kid, you get X-ITE TIX. Wow!
+Which claim to lead you to a bigger adventure.
+Use the tix on the exit.
+Or, well, you can just go south.
+And you win the game!
 >Grebeberg
 >>SEER TREES
 ?How do I get rid of the Start Rats?
@@ -182,6 +191,7 @@ Some commands could be made into palindromes, and there are some (hopefully) amu
 There are 2 total points in Dim Mid.
 1 point for PACK CAP.
 1 point for PACE CAP, which helps you go faster elsewhere.
+1 point if you USE X-ITE TIX ON TIX EXIT
 ?How do I get all the points for Not-Kook-Ton?
 There are 7 total points in Not-Kook-Ton.
 1 point if you EVADE DAVE.
@@ -196,6 +206,7 @@ There are 3 total points in Grebeberg.
 1 point if you USE PARTY TRAP ON START RATS.
 1 point if you USE POO COOP ON GNU DUNG.
 1 point if you USE DORK ROD ON TAO BOAT.
+1 point if you USE TROLL ORT ON BRAG GARB. (note: this can be done outside of Grebeberg, but it's part of a Grebeberg puzzle.)
 ?How do I get all the Odd Do points?
 There are 3 total points in Odd Do.
 1 point for either, but not each, semi-profanity *OO*.

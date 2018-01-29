@@ -63,7 +63,7 @@ def source_vs_invisiclues():
     any_err = 0
     with open("c:/writing/scripts/invis/pu.txt") as file:
         for line in file:
-            if line.startswith("1 point if you USE"):
+            if line.startswith("1 point if you USE") or line.startswith("1 point for USE"): # obviously this needs to be cleaned up for custom commands
                 ll = re.sub(".* USE", "USE", line.strip())
                 ll = re.sub("\..*", "", ll)
                 use_in_invisiclues[ll] = True
