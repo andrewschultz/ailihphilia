@@ -8,7 +8,7 @@ If you are technically inclined, you can grep -i "^>" walkthrough.txt to plow th
 
 Some particular spoilers, such as the general procedure for puzzles, may be encoded in ROT13. You'll know them, because they look like gibberish. Copy and paste them to Rot13.com to see what happens.
 
-Many point scoring commands will be palindromes. The others are of the form USE X ON Y.
+Many point scoring commands will be palindromes. The others are of the form USE X ON Y. You can shorten them by just using one word. In other words,
 
 So! Fun 'Nuf is, well, not fun enough to start. And worse yet, you can't leave until you know what to do with the Pact Cap! Well, you can leave through the Tix Exit, but that's no fun.
 
@@ -52,7 +52,7 @@ Now Worn Row isn't suitable for getting anything done, yet. How would you restor
 
 Now, the trap art goes with one of the machines, but which one?
 
->USE REIFIER ON TRAP ART
+>USE TRAP ART ON REIFIER
 
 >E
 >N
@@ -62,17 +62,17 @@ Now, the trap art goes with one of the machines, but which one?
 
 How to get rid of the rats?
 
->USE TRAP ON RATS
+>USE PARTY TRAP ON START RATS
 
 >N
 
->GET DEMO MED
+>GET SPUR UPS
 
 >S
 >E
 >E
 
->EAT DEMO MED
+Now, you can go east.
 
 >E
 >PULL UP
@@ -137,7 +137,7 @@ Bye bye, Ergot Ogre!
 
 ==========================================below is stuff that's near the end
 
-Now that you have all the ingredients for the North-Tron, you need to activate them.
+Now that you have all the ingredients for the North-Tron, you need to activate them. You don't have to use a lot of commands to build it. Any ingredient on another will work. Thus,
 
 >USE MUSH SUM ON X/O BOX
 
@@ -149,7 +149,9 @@ Now you can go to the Dirge Grid.
 
 >N
 
->USE YARD RAY ON DIKTAT KID
+Now, using the yard ray on the Diktat Kid doesn't work. It has "Emit ********" on the side, and that suggests
+
+>EMIT NOONTIME
 
 >S
 

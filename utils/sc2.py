@@ -13,6 +13,7 @@ from collections import defaultdict
 # options
 verbose = False
 semi_verbose = False
+show_hash = False
 
 # variables
 
@@ -43,17 +44,11 @@ use_in_walkthrough = defaultdict(int)
 
 func_list = ''
 
-argval = 1
-while argval < len(sys.argv):
-    noh = sys.argv[argval].lower()
-    if noh[0] == '-':
-        noh = noh[1:]
-    if noh == 'v':
-        verbose = True
-        semi_verbose = True
-    if noh == 's':
-        semi_verbose = True
-    argval = argval + 1
+def usage():
+    print("-v for verbose")
+    print("-s for semi verbose")
+    print("-h to show hash values")
+    exit()
 
 def detect_region(a, b):
     if '[+' not in a:
@@ -89,10 +84,18 @@ def source_vs_invisiclues():
 
 def source_vs_walkthrough():
     any_err = 0
+    xo = False
     with open(main_thru) as file:
         for line in file:
             if re.search("^> *USE", line):
-                ll = re.sub(".* USE", "USE", line.strip())
+                if 'X/O BOX' in line:
+                    if xo:
+                        print("Oops! Double-ignore happened.")
+                    else:
+                        print("Ignoring X/O BOX example line.")
+                        xo = True
+                    continue
+                ll = re.sub(".*USE", "USE", line.strip())
                 ll = re.sub("\..*", "", ll)
                 use_in_walkthrough[ll] = True
     for x in list(set(use_in_walkthrough.keys()) | set(use_in_source.keys())):
@@ -108,6 +111,24 @@ def source_vs_walkthrough():
         print(any_err, "total walkthrough sync errors")
     else:
         print("Walkthrough sync test passed.")
+
+argval = 1
+while argval < len(sys.argv):
+    noh = sys.argv[argval].lower()
+    if noh[0] == '-':
+        noh = noh[1:]
+    if noh == 'v':
+        verbose = True
+        semi_verbose = True
+    elif noh == 's':
+        semi_verbose = True
+    elif noh == 'h':
+        show_hash = True
+    else:
+        print(sys.argv[argval].lower(), "not recognized.")
+        print()
+        usage()
+    argval = argval + 1
 
 with open(main_source) as file:
     line_count = 0
@@ -231,6 +252,17 @@ t2 = sum(totals.values())
 
 if undef_use_points:
     print("ERROR: undef use points =", undef_use_points)
+
+if show_hash:
+    print("Source hash")
+    for x in sorted(use_in_source.keys()):
+        print(x, use_in_source[x])
+    print("Wthru hash")
+    for x in sorted(use_in_walkthrough.keys()):
+        print(x, use_in_walkthrough[x])
+    print("Source hash")
+    for x in sorted(use_in_invisiclues.keys()):
+        print(x, use_in_invisiclues[x])
 
 if line_to_open:
     i7.npo("story.ni", line_to_open, True)

@@ -26,7 +26,7 @@ a region has a number called max-score. a region has a number called cur-score.
 
 Grebeberg is a region. max-score of Grebeberg is 12.
 
-Dim Mid is a region. max-score of Dim Mid is 5.
+Dim Mid is a region. max-score of Dim Mid is 6.
 
 Yelpley is a region. max-score of Yelpley is 16.
 
@@ -508,6 +508,7 @@ sage gas	tenet	tenet	--	--	true	true	false	Grebeberg	"With the sage gas, you're 
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
 Bro Orb	Madam Sniffins	Yard Ray	--	--	true	true	true	Yelpley	"The Bro Orb shines and drives Madam Sniffins to rage. She runs away, sobbing. The Yard Ray is left unguarded. You take it."
 murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
+X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 
 this is the in-mont-nom rule:
 	if location of player is Mont Nom, the rule succeeds;
@@ -527,6 +528,8 @@ this is the maps-explained-yet rule:
 this is the maps-explain rule:
 	now maps-explained is true;
 	the rule succeeds;
+
+this is the you-win rule:
 
 chapter failed useons
 
@@ -660,12 +663,6 @@ check taking tile lit: say "It's sort of embedded into the ground. It looks nice
 chapter elite tile
 
 the elite tile is scenery. "Done? Nod![line break]Nif-T-Fin!"
-
-chapter back cab
-
-The back cab is a thing. description is "It's here and waiting to take you, uh, back.". "A back cab waits here to the south, where the Evac-Ave once was, to take you home."
-
-instead of entering back cab, win-finally instead;
 
 book Dirge Grid
 
@@ -1222,6 +1219,12 @@ the rep popper is a thing in Yell Alley.
 check taking rep popper:
 	if player has dork rod, say "With the dork rod, you aren't THAT worried about your rep, but you're still worried enough not to take it. Maybe you can do a bit better..." instead;
 	if dork rod is not in ZeroRez, say "No way! You're not sure how much rep you have, but taking that rep popper would drop it a notch or more." instead;
+
+chapter back cab
+
+The back cab is a thing in Yell Alley. description is "It's here but doesn't look like you can actually ride it.". "A run-down back cab waits here."
+
+instead of entering back cab, say "Too dumpy."
 
 chapter pulluping
 
