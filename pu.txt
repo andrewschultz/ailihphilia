@@ -1,5 +1,7 @@
 # coordinate this with the source for the points list
-# todo: redefine sc2.py so that [region/command] is after sco-inc or reg-inc so we can match up with what is below. Commands in upper case in walkthrough.
+#
+# todo: redefine sc2.py so that [region/command] is after sco-inc or reg-inc so we can match up with what is below.
+# also todo: make sure commands are in upper case in walkthrough.
 out=put-it-up-invisiclues.htm
 !Put It Up HTML Clues
 ->c:/games/inform/put-it-up Materials/Release

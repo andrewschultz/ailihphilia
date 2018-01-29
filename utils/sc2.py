@@ -16,7 +16,9 @@ semi_verbose = False
 
 # variables
 
-main_source = "c:/games/inform/put-it-up.inform/source/story.ni"
+main_dir = "c:/games/inform/put-it-up.inform/source"
+main_source = main_dir + "/story.ni"
+main_thru = main_dir + "/walkthrough.txt"
 use_ons = False
 
 line_to_open = 0
@@ -37,6 +39,7 @@ machine_actions = defaultdict(str)
 
 use_in_source = defaultdict(int)
 use_in_invisiclues = defaultdict(int)
+use_in_walkthrough = defaultdict(int)
 
 func_list = ''
 
@@ -59,7 +62,10 @@ def detect_region(a, b):
     temp = re.sub("\].*", "", temp)
     return temp.lower()
 
+# these two could be lumped together, but it was quicker to C&P for the moment
+
 def source_vs_invisiclues():
+    any_err = 0
     with open("c:/writing/scripts/invis/pu.txt") as file:
         for line in file:
             if line.startswith("1 point if you USE"):
@@ -69,10 +75,39 @@ def source_vs_invisiclues():
     for x in list(set(use_in_invisiclues.keys()) | set(use_in_source.keys())):
         if x not in use_in_invisiclues.keys():
             print("Need this line in invisiclues:", x)
+            any_err = any_err + 1
         elif x not in use_in_source.keys():
             print("Need this line in table of useons:", x)
+            any_err = any_err + 1
         elif verbose:
             print("Synced:", x)
+    if any_err:
+        print(any_err, "total invisiclues sync errors")
+    else:
+        print("InvisiClues sync test passed.")
+
+
+def source_vs_walkthrough():
+    any_err = 0
+    with open(main_thru) as file:
+        for line in file:
+            if re.search("^> *USE", line):
+                ll = re.sub(".* USE", "USE", line.strip())
+                ll = re.sub("\..*", "", ll)
+                use_in_walkthrough[ll] = True
+    for x in list(set(use_in_walkthrough.keys()) | set(use_in_source.keys())):
+        if x not in use_in_walkthrough.keys():
+            print("Need this line in walkthrough:", x)
+            any_err = any_err + 1
+        elif x not in use_in_source.keys():
+            print("Need this line in table of useons:", x)
+            any_err = any_err + 1
+        elif verbose:
+            print("Synced:", x)
+    if any_err:
+        print(any_err, "total walkthrough sync errors")
+    else:
+        print("Walkthrough sync test passed.")
 
 with open(main_source) as file:
     line_count = 0
@@ -164,6 +199,7 @@ with open(main_source) as file:
                     undef_use_points = undef_use_points + 1
 
 source_vs_invisiclues()
+source_vs_walkthrough()
 
 for x in base_reg_incs.keys():
     if semi_verbose or verbose:
@@ -175,6 +211,7 @@ for x in directed_incs.keys():
         print('DIRECTED', x, directed_incs[x])
     totals[x] = totals[x] + directed_incs[x]
 
+print("List of points by region:")
 for x in totals.keys():
     if totals[x] != in_source[x]:
         print("ERROR: region", x, "has", totals[x], "but source lists", in_source[x])

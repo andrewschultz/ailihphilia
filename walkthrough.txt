@@ -93,6 +93,8 @@ And now you can take out the Yuge Guy.
 
 ==========================================below is the Madam Sniffins quest
 
+Okay, let's go deal with Madam Sniffins.
+
 >GIVE ?? BOOK TO (PERSON IN ART XTRA)
 
 >S.W.W.W.W.N
@@ -137,7 +139,7 @@ Bye bye, Ergot Ogre!
 
 Now that you have all the ingredients for the North-Tron, you need to activate them.
 
->USE MUSH ON BOX
+>USE MUSH SUM ON X/O BOX
 
 But you still can't go north! You don't have a weapon!
 
@@ -147,7 +149,7 @@ Now you can go to the Dirge Grid.
 
 >N
 
->USE RAY ON DIKTAT KID
+>USE YARD RAY ON DIKTAT KID
 
 >S
 
@@ -159,3 +161,24 @@ Now the Gold Log is shiny, but it's not particularly useful, and it's not you. I
 >PUT GOLD LOG IN ROTATOR
 
 How do you feel peaceful enough to not be disrupted by your enemies?
+
+==========================================below is totally unsorted uncommented stuff
+
+> USE STINK KNITS ON ROTATOR
+> USE SAGE GAS ON TENET
+> USE EL DOODLE ON EDITS TIDE
+> USE SPA MAPS ON CODE DOC
+> USE TRAP ART ON REIFIER
+> USE DORK ROD ON TAO BOAT
+> USE PARTY TRAP ON START RATS
+> USE CASH SAC ON CROSS ORC
+> USE BRO ORB ON MADAM SNIFFINS
+> USE UFO TOFU ON MAYO YAM
+> USE DEMO MED ON GULF LUG
+> USE REP POPPER ON YUGE GUY
+> USE ELAN ALE ON IRA BARI
+> USE TO IDIOT ON KNOWN WONK
+> USE ERODED ORE ON REVIVER
+> USE GOLD LOG ON ROTATOR
+> USE MURK RUM ON YARD RAY
+> USE POO COOP ON GNU DUNG

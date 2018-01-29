@@ -532,8 +532,8 @@ chapter failed useons
 
 table of useons (continued)
 use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
-yard ray	Tru Hurt	x-ite tix	--	--	true	true	true	--	"The yard ray bounces harmlessly off the Tru Hurt. Maybe it needs to be used nonviolently."
-yard ray	Diktat Kid	x-ite tix	--	--	true	true	true	--	"The yard ray bounces harmlessly off the Diktat Kid. Maybe it needs to be used nonviolently."
+yard ray	Tru Hurt	--	--	--	true	true	true	--	"The yard ray bounces harmlessly off the Tru Hurt. Maybe it needs to be used nonviolently."
+yard ray	Diktat Kid	--	--	--	true	true	true	--	"The yard ray bounces harmlessly off the Diktat Kid. Maybe it needs to be used nonviolently."
 
 volume rooms
 
