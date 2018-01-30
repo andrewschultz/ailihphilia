@@ -78,8 +78,12 @@ You have to do something to another item. But once you get it...
 USE PARTY TRAP ON START RATS.
 >>COLD LOC
 ?Is there anything to do here?
-Not yet, no. ??
+You pretty much just need the Spur Ups from here.
 >>APSE SPA
+?Can I peel off the dose sod?
+Yes, but you'll need a container.
+The Puce Cup in Ned's Den works well.
+USE PUCE CUP ON DOSE SOD.
 ?Is there anything beyond the apse spa?
 Yes, but it'd be tricky without a map or something.
 You need to get the spa maps.
@@ -103,6 +107,10 @@ Not much.
 >>DRAY YARD
 ?What do I do with the yak?
 It's a bit complicated.
+USE TROLL ORT ON BRAG GARB.
+Now the yak runs after you.
+You need to run N.N.W.W.S.S. to the Ergot Ogre.
+The yak knocks the ogre over, allowing you passage east from the Lair Trial.
 >MOO ROOM
 ?What do I do here?
 Get the Poo Coop.
@@ -264,7 +272,7 @@ There are 6 total points in Dim Mid.
 1 point if you USE MURK RUM ON YARD RAY.
 1 point if you EMIT NOONTIME.
 ?How do I get all the points for Yelpley?
-There are 16 total points in Yelpley.
+There are 17 total points in Yelpley.
 1 point if you EVADE DAVE.
 1 point if you NAIL IAN.
 1 point if you DENT NED.
@@ -272,11 +280,13 @@ There are 16 total points in Yelpley.
 1 point for WORD ROW.
 1 point if you USE TRAP ART ON REIFIER.
 1 point if you USE GOLD LOG ON ROTATOR.
+1 point if you USE PUCE CUP ON MARGE PEGRAM.
 1 point if you PULL UP in the Emo Dome.
 1 point if you TAMP MAT in Stope Depots.
 1 point if you STAND NAT'S.
 ?How do I get all the points for Grebeberg?
-There are 13 total points in Grebeberg.
+There are 14 total points in Grebeberg.
+1 point if you USE PUCE CUP ON DOSE SOD.
 1 point if you USE PARTY TRAP ON START RATS.
 1 point if you USE POO COOP ON GNU DUNG.
 1 point if you TRUCK CURT.

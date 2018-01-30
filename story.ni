@@ -24,11 +24,11 @@ chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
 
-Grebeberg is a region. max-score of Grebeberg is 13.
+Grebeberg is a region. max-score of Grebeberg is 14.
 
 Dim Mid is a region. max-score of Dim Mid is 6.
 
-Yelpley is a region. max-score of Yelpley is 16.
+Yelpley is a region. max-score of Yelpley is 17.
 
 Odd Do is a region. max-score of Odd Do is 3.
 
@@ -505,6 +505,8 @@ elan ale	Ira Bari	Gorge Grog	--	--	true	false	false	Yelpley	"Ira looks the Elan 
 UFO Tofu	Mayo Yam	Mush Sum	in-mont-nom rule	--	true	true	true	Grebeberg	"The UFO Tofu and mayo yam blend together in a most unholy fashion, but the magic of Mont Nom kicks in, and they become ... a surprisingly nice smelling and looking mush sum."
 Eroded Ore	reviver	Ore Zero	--	--	true	true	true	Yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
+puce cup	dose sod	--	--	--	true	false	true	Grebeberg	"You funnel the dose sod into the puce cup, which you close. That way, the dose sod will stay fresh."
+puce cup	marge pegram	gate tag	sod-in-cup rule	--	true	true	true	Yelpley	"You give marge the puce cup. She drinks the dose sod and immediately feels better. 'Well... I have a lot of catching up to do. Can't hang around. Here's a gate tag for you.'"
 spa maps	Code Doc	--	--	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
@@ -823,6 +825,10 @@ book Lair Trial
 
 Lair Trial is south of Birch Crib. It is in Grebeberg.
 
+the ergot ogre is a person in Lair Trial. "An ergot ogre blocks the way east.".
+
+check going east in Lair Trial: if ergot ogre is in Lair Trial, say "Not with the ergot ogre guarding the way." instead;
+
 book Motto Bottom
 
 Motto Bottom is east of Lair Trial. It is in Grebeberg.
@@ -861,7 +867,9 @@ understand "dorm rod" and "dorm" as a mistake ("The dork rod is what it is.") wh
 
 book Apse Spa
 
-Apse Spa is east of Cold Loc. It is in Grebeberg.
+Apse Spa is east of Cold Loc. It is in Grebeberg. "The Apse Spa is covered with dose sod, which you can't take--you're not sick--but it looks beautiful. Also, Go-By Bog expands every way except back west[if sage gas is off-stage]. You could traverse it, if you knew what you were doing[else]You already went through it, though[end if]."
+
+the dose sod is scenery in Apse Spa.
 
 chapter sage gas
 
