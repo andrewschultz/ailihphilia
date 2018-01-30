@@ -12,6 +12,8 @@ from shutil import copy
 from filecmp import cmp
 import os
 import re
+import sys
+import i7
 
 if not os.path.exists("story.ni"):
     try:
@@ -24,6 +26,31 @@ fout = open("story.ni2", "w", newline='\n') # STORY.NI files have unix line endi
 difs = 0
 line_count = 0
 cap_search = defaultdict(bool)
+
+count = 1
+
+def usage():
+    print("Currently you can specify the project to change to, with a shortcut or full name.")
+
+while count < len(sys.argv):
+    myarg = sys.argv[count].lower()
+    if (myarg[0] == '-'):
+        myarg = myarg[1:]
+    if myarg in i7.i7x.keys():
+        newdir = "c:/games/inform/{:s}.inform/source".format(i7.i7x[sys.argv[count]])
+        os.chdir(newdir)
+        print("Changing to", newdir)
+    elif os.path.exists("c:/games/inform/{:s}.inform/source".format(myarg)):
+        newdir = "c:/games/inform/{:s}.inform/source".format(myarg)
+        os.chdir(newdir)
+        print("Changing to", newdir)
+    else:
+        print("Bad argument", sys.argv[count])
+        usage()
+    count = count + 1
+
+if not os.path.exists("zr.txt"):
+    print("You need a zr.txt in ", os.getcwd())
 
 with open("zr.txt") as file:
     for line in file:
