@@ -220,7 +220,14 @@ Also, once you PULL UP, the Emo Dome is safe.
 ?What to do here?
 Fill in later.
 >>DRAWL WARD
-?What to do here?
+?Can I help Marge Pegram?
+Yes. She needs some sort of medicine.
+The Demo Med doesn't work.
+However, something more potent will.
+You could use the Dose Sod from the Apse Spa...
+...but you can't carry it on its own.
+Use the Puce Cup to get it.
+USE PUCE CUP ON MARGE PEGRAM.
 Fill in later.
 >>DOPE POD
 ?What to do here?

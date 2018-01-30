@@ -23,7 +23,8 @@ main_source = main_dir + "/story.ni"
 main_thru = main_dir + "/walkthrough.txt"
 
 line_to_open = 0
-warning_line = 0
+warning_story_line = 0
+warning_walkthrough_line = 0
 
 undef_use_points = 0
 
@@ -147,6 +148,7 @@ def source_vs_walkthrough():
     xo = False
     line_count = 0
     plus_one = 0
+    global warning_walkthrough_line
     xxx = { 'N': True, 'S': True, 'E': True, 'W': True, 'GET': True }
     with open(main_thru) as file:
         for line in file:
@@ -162,7 +164,10 @@ def source_vs_walkthrough():
                     else:
                         print("WARNING: may need +1 at line", line_count, "of walkthrough:", ll)
                         plus_one = plus_one + 1
-                if ll2 in use_in_walkthrough.keys(): print("WARNING line", line_count, "has duplicate command:", ll)
+                        warning_walkthrough_line = line_count
+                if ll2 in use_in_walkthrough.keys():
+                    print("WARNING line", line_count, "has duplicate command:", ll)
+                    warning_walkthrough_line = line_count
                 use_in_walkthrough[ll2] = True
     for x in list(set(use_in_walkthrough.keys()) | set(use_in_source.keys())):
         if x not in use_in_walkthrough.keys():
@@ -235,7 +240,7 @@ def get_stuff_from_source():
                     if verbose: print("Tacking on", this_cmd)
                 if temp_region == current_region and '[' in line:
                     if semi_verbose: print("WARNING temp_region not a change from current_region", current_region, "line", line_count, "in story.ni")
-                    warning_line = line_count
+                    warning_story_line = line_count
                 if verbose:
                     if temp_region not in region_def_line.keys():
                         print("ERROR: no region", temp_region, "at line", line_count)
@@ -345,7 +350,9 @@ if show_hash:
 
 if line_to_open:
     i7.npo("story.ni", line_to_open, True)
-elif warning_line:
-    i7.npo("story.ni", warning_line, True)
+elif warning_story_line:
+    i7.npo("story.ni", warning_story_line, True)
+if warning_walkthrough_line:
+    i7.npo("walkthrough.txt", warning_walkthrough_line, True)
 
 print("Total =", t2)

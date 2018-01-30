@@ -78,6 +78,8 @@ Gorge Grog is an ingredient. description is "Unsurprisingly, it's produced by Gr
 
 a balsa slab is an ingredient. description is "One of [number of ingredients] ingredients."
 
+The Ore Zero is an ingredient.
+
 the mush sum is an edible ingredient.
 
 volume the player
@@ -798,9 +800,7 @@ book Mire Rim
 
 Mire Rim is west of Dumb Mud. It is in Grebeberg.
 
-The Eroded Ore is in Mire Rim.
-
-The Ore Zero is a thing.
+The Eroded Ore is a thing.
 
 book Birch Crib
 
