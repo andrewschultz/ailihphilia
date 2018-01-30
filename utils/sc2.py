@@ -39,7 +39,8 @@ machine_uses_in_source = defaultdict(int)
 machine_actions = defaultdict(str)
 
 use_in_source = defaultdict(int)
-use_in_invisiclues = defaultdict(int)
+use_in_invisiclues_main = defaultdict(int)
+use_in_invisiclues_summary = defaultdict(int)
 use_in_walkthrough = defaultdict(int)
 
 def usage():
@@ -53,7 +54,7 @@ def detect_region(a, b):
         return b
     temp = re.sub(".*\[", "", a.strip())
     temp = re.sub("\].*", "", temp)
-    print("DEBUG:", temp)
+    if semi_verbose: print("DEBUG:", temp)
     ary = temp.split("/")
     if len(ary) == 1:
         return (ary[0].lower(), None)
@@ -65,24 +66,53 @@ def detect_region(a, b):
 # these two could be lumped together, but it was quicker to C&P for the moment
 
 def source_vs_invisiclues():
-    any_err = 0
+    main_err = 0
+    summary_err = 0
+    in_summary = False
     with open("c:/writing/scripts/invis/pu.txt") as file:
         for line in file:
-            if line.startswith("1 point if you USE") or line.startswith("1 point for USE"): # obviously this needs to be cleaned up for custom commands
-                ll = re.sub(".* USE", "USE", line.strip())
-                ll = re.sub("\..*", "", ll)
-                use_in_invisiclues[ll] = True
-    for x in list(set(use_in_invisiclues.keys()) | set(use_in_source.keys())):
-        if x not in use_in_invisiclues.keys():
-            print("Need this line in invisiclues:", x)
-            any_err = any_err + 1
+            if line.strip() == '#summary below':
+                in_summary = True
+                continue
+            if in_summary:
+                if line.startswith("1 point if you USE") or line.startswith("1 point for USE"): # obviously this needs to be cleaned up for custom commands
+                    ll = re.sub(".* USE", "USE", line.strip())
+                    ll = re.sub("\..*", "", ll)
+                    use_in_invisiclues_summary[ll] = True
+            else:
+                if line == line.upper() and not line.startswith('?') and not line.startswith('#') and not line.startswith('>'):
+                    ll = re.sub("\..*", "", line.strip())
+                    # print("Found in invisiclues main:", ll)
+                    use_in_invisiclues_main[ll] = True
+    for x in list(set(use_in_invisiclues_main.keys()) | set(use_in_source.keys())):
+        if x not in use_in_invisiclues_main.keys():
+            if not main_err: print("=" * 40)
+            print("Need this source line in invisiclues main:", x)
+            main_err = main_err + 1
         elif x not in use_in_source.keys():
-            print("Need this line in table of useons:", x)
-            any_err = any_err + 1
+            if not main_err: print("=" * 40)
+            print("Need this invisiclues main line in source(table of useons or [region/command]:", x)
+            main_err = main_err + 1
         elif verbose:
-            print("Synced:", x)
-    if any_err:
-        print(any_err, "total invisiclues sync errors")
+            print("Synced to main:", x)
+    if in_summary:
+        if main_err: print("=" * 40)
+        for x in list(set(use_in_invisiclues_summary.keys()) | set(use_in_source.keys())):
+            if x not in use_in_invisiclues_summary.keys():
+                if not main_err and not summary_err: print ("=" * 40)
+                print("Need this source line in invisiclues summary:", x)
+                summary_err = summary_err + 1
+            elif x not in use_in_source.keys():
+                if not main_err and not summary_err: print ("=" * 40)
+                print("Need this invisiclues summary line in source(table of useons or [region/command]:", x)
+                summary_err = summary_err + 1
+            elif verbose:
+                print("Synced to summary:", x)
+    else:
+        print('Uh oh, we need a line like #summary below in order to indicate we are in the ')
+    if summary_err + main_err :
+        print(main_err, "total invisiclues main sync errors")
+        print(summary_err, "total invisiclues summary sync errors")
     else:
         print("InvisiClues sync test passed.")
 
@@ -178,7 +208,7 @@ def get_stuff_from_source():
                     use_in_source[this_cmd] = line_count
                     if verbose: print("Tacking on", this_cmd)
                 if temp_region == current_region and '[' in line:
-                    print("WARNING temp_region not a change from current_region", current_region, "line", line_count, "in story.ni")
+                    if semi_verbose: print("WARNING temp_region not a change from current_region", current_region, "line", line_count, "in story.ni")
                     warning_line = line_count
                 if verbose:
                     if temp_region not in region_def_line.keys():
