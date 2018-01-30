@@ -383,7 +383,7 @@ instead of sleeping:
 	if eels are in location of player:
 		say "You manage to calm the eels down. They go away.";
 		move eels to ZeroRez;
-		score-inc instead; [+Grebeberg]
+		score-inc instead; [Grebeberg/sleep]
 	say "Sleeping is equivalent to waiting in this game...well, except for one place...";
 	try waiting instead;
 
@@ -417,7 +417,7 @@ to build-the-tron:
 	say "You build the north tron with the instructions from the epicer recipe. A passage opens north! You must be close now.";
 	now Dirge Grid is mapped north of Fun 'Nuf;
 	now Fun 'Nuf is mapped south of Dirge Grid;
-	score-inc; [+Dim Mid]
+	score-inc; [Dim Mid/USE TNT ON MUSH SUM]
 
 check useoning it with:
 	if noun is second noun, say "It's not productive to use something on itself, even with this game being full of palindromes." instead;
@@ -453,7 +453,7 @@ check useoning it with:
 					if there is a reg-plus entry:
 						reg-inc reg-plus entry;
 					else:
-						score-inc; [+ignore]
+						score-inc; [ignore]
 				say "[babble entry][line break]";
 				if there is a postproc entry:
 					consider the postproc entry;
@@ -634,7 +634,7 @@ carry out packing:
 	now player has set o notes;
 	now player wears the cap;
 	now all cappy rooms are available;
-	score-inc;
+	score-inc; [Dim Mid/pack cap]
 	the rule succeeds;
 
 section pace cap
@@ -650,7 +650,7 @@ carry out paceing:
 	if pact cap is in Fun 'Nuf, say "That'll work later, but you need something a little different to actually TAKE the pact cap." instead;
 	if cap-pace is true, say "It's already a pace cap." instead;
 	if cap-ever-pace is false:
-		score-inc;
+		score-inc; [Dim Mid/pace cap]
 		now cap-ever-pace is true;
 	say "You suddenly feel [if cap-pace is false]swifter[else]slower[end if].";
 	now cap-pace is whether or not cap-pace is true;
@@ -699,7 +699,7 @@ carry out emiting:
 	if the topic understood matches "noontime":
 		say "BOOM! The yard ray emits too much light for the Diktat Kid to bear. The Kid runs off, but not before dropping some X-Ite Tix, which you take.";
 		now player has X-Ite Tix;
-		score-inc;
+		score-inc; [Dim Mid/emit noontime]
 		the rule succeeds;
 	say "No, that's not quite what to emit.";
 	the rule succeeds;
@@ -812,7 +812,7 @@ Spa Maps are a plural-named proper-named thing. description is "[if sage gas is 
 
 check examining spa maps:
 	if sage gas is off-stage and player is in Apse Spa:
-		score-inc;
+		score-inc; [Grebeberg/x spa maps]
 		now player has sage gas;
 		now spa maps are in ZeroRez;
 		say "Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away." instead;
@@ -902,7 +902,7 @@ carry out evadeing:
 		say "You evade Dave! Deked! Deked!";
 		now Dave is in ZeroRez;
 		now dave-evade is true;
-		score-inc;
+		score-inc; [Yelpley/evade dave]
 		now all davey rooms are available;
 	else:
 		say "There's only one person you need to evade in this game.";
@@ -1020,7 +1020,7 @@ understand "nail ian" as nailing when player is in Worn Row and Ian is in Worn R
 carry out nailing:
 	say "Boom! There goes Ian.";
 	move Ian to ZeroRez;
-	score-inc;
+	score-inc; [Yelpley/nail ian]
 	the rule succeeds;
 
 chapter workrowing
@@ -1041,7 +1041,7 @@ carry out workrowing:
 	now workrow is true;
 	now wordrow is false;
 	say "Three machines [one of][or]re[stopping]appear[if wordrow is true], replacing the books[end if].";
-	if ever-workrow is false, score-inc;
+	if ever-workrow is false, score-inc; [Yelpley/work row]
 	now ever-workrow is true;
 	now all workables are in Worn Row;
 	now all books in Worn Row are in TempMet;
@@ -1072,7 +1072,7 @@ carry out wordrowing:
 	now wordrow is true;
 	now workrow is false;
 	now all workables are in TempMet;
-	if ever-wordrow is false, score-inc;
+	if ever-wordrow is false, score-inc; [Yelpley/word row]
 	now ever-wordrow is true;
 	say "A bunch of books appear.";
 	now all books in TempMet are in Worn Row;
@@ -1129,7 +1129,7 @@ carry out denting:
 	if noun is ned:
 		say "Bam! Bye bye Ned.";
 		now Ned is in ZeroRez;
-		score-inc;
+		score-inc; [Yelpley/dent ned]
 	the rule succeeds;
 
 chapter tamping
@@ -1143,7 +1143,7 @@ understand "tamp mat" as tamping when player is in Toll Lot and tame mat is in T
 carry out tamping:
 	say "Boom! That's the idea. With the mat tamped, you walk across, and there's no more nonsense.";
 	wfak;
-	score-inc;
+	score-inc; [Yelpley/tamp mat]
 	the rule succeeds;
 
 understand "tame mat" as a mistake ("That's not quite what to do. This is a game about palindromes, not homonyms.") when player is in Toll Lot and tame mat is in Toll Lot.
@@ -1178,7 +1178,7 @@ understand "stand [something]" as standing.
 carry out standing:
 	if noun is nat's tan:
 		say "It's tough, but you manage to stand the icky Nat's Tan as you pour it on yourself.";
-		score-inc;
+		score-inc; [Yelpley/stand nat's]
 		now nat's tan is in ZeroRez;
 	the rule succeeds.
 
@@ -1247,7 +1247,7 @@ carry out pulluping:
 	unless player is in Emo Dome, say "This isn't the place[if Emo Dome is visited], but maybe you could do this in the Emo Dome[end if]." instead;
 	say "You manage to stop yourself. The whining isn't too bad. Yeah, you can hack it here.";
 	now pulled-up is true;
-	score-inc;
+	score-inc; [Yelpley/pull up]
 	now Emo Dome is available;
 	the rule succeeds;
 
@@ -1383,7 +1383,7 @@ understand "truck [something]" as trucking.
 carry out trucking:
 	if noun is not Curt, say "Wrong thing to truck." instead;
 	move Curt to ZeroRez;
-	score-inc; [+Yelpley]
+	score-inc; [Yelpley/truck curt]
 	the rule succeeds.
 
 volume metarooms

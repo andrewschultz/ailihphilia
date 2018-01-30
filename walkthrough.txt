@@ -4,7 +4,7 @@ I didn't intend this game to be overly difficult or to have any weird profound m
 
 There should be no way to die or be locked out of a win in Put it Up.
 
-If you are technically inclined, you can grep -i "^>" walkthrough.txt to plow through. But if you're technically inclined, you likely won't need the walkthrough. Still, if you want the quick way without comments, there it is.
+If you are technically inclined, you can grep -i "^>" walkthrough.txt | sed "s/ \(.*//" to plow through. But if you're technically inclined, you likely won't need the walkthrough. Still, if you want the quick way without comments, there it is.
 
 Some particular spoilers, such as the general procedure for puzzles, may be encoded in ROT13. You'll know them, because they look like gibberish. Copy and paste them to Rot13.com to see what happens.
 
@@ -16,7 +16,7 @@ Takeing it doesn't work. TAKE says maybe if it were a KAT. GET says "Get, e.g. .
 
 You need some sort of palindrome ending in CAP, and the simplest is PAC? CAP.
 
-> PACK CAP
+> PACK CAP (+1)
 
 lets you take it.
 
@@ -40,19 +40,23 @@ You need to do something with the trap art, somewhere.
 >S
 >S
 
->EVADE DAVE
+>EVADE DAVE (+1)
 
 >W
 
->NAIL IAN
+>NAIL IAN(+1)
 
 Now Worn Row isn't suitable for getting anything done, yet. How would you restore it as a place to BE and DO?
 
->WORK ROW
+>WORK ROW (+1)
 
 Now, the trap art goes with one of the machines, but which one?
 
->USE TRAP ART ON REIFIER
+>USE TRAP ART ON REIFIER (+1)
+
+You can also tinker with it in other ways.
+
+>WORD ROW (+1)
 
 >E
 >N
@@ -62,7 +66,7 @@ Now, the trap art goes with one of the machines, but which one?
 
 How to get rid of the rats?
 
->USE PARTY TRAP ON START RATS
+>USE PARTY TRAP ON START RATS (+1)
 
 >N
 
@@ -75,13 +79,13 @@ How to get rid of the rats?
 Now, you can go east.
 
 >E
->PULL UP
+>PULL UP (+1)
 
 You now have access to a few more rooms.
 
 ==========================================below is the Yuge Guy quest
 
->USE DORK ROD ON TAO BOAT
+>USE DORK ROD ON TAO BOAT (+1)
 
 Now that you've been in the Tao Boat, you feel confident enough to pick up the Rep Popper.
 
@@ -89,7 +93,9 @@ Now that you've been in the Tao Boat, you feel confident enough to pick up the R
 
 And now you can take out the Yuge Guy.
 
->W.S.S.W.W.N.N.W.USE POPPER ON GUY
+>W.S.S.W.W.N.N.W
+
+>USE REP POPPER ON YUGE GUY (+1)
 
 ==========================================below is the Madam Sniffins quest
 
@@ -99,17 +105,17 @@ Okay, let's go deal with Madam Sniffins.
 
 >S.W.W.W.W.N
 
->USE EL DOODLE ON EDITS TIDE
+>USE EL DOODLE ON EDITS TIDE (+1)
 
 >S
 
 >S
 
->USE SPA MAPS ON CODE DOC
+>USE SPA MAPS ON CODE DOC (+1)
 
 >N.E.E.E.S.W
 
->USE STINK KNITS ON ROTATOR
+>USE STINK KNITS ON ROTATOR (+1)
 
 Yay! Brag garb!
 
@@ -117,7 +123,7 @@ The Kayo Yak seems to be kind of violent but won't attack you. Still, it comes u
 
 ?? puzzle below not implemented yet
 
->USE TROLL ORT ON BRAG GARB
+>USE TROLL ORT ON BRAG GARB (+1)
 
 >N.N.W.W.S.S
 
@@ -125,7 +131,7 @@ Bye bye, Ergot Ogre!
 
 >E
 
->USE SAGE GAS ON TENET
+>USE SAGE GAS ON TENET (+1)
 
 >N.N.E.N
 
@@ -133,17 +139,17 @@ Bye bye, Ergot Ogre!
 
 >S.E.E.E.E.N
 
->USE BRO ORB ON MADAM SNIFFINS
+>USE BRO ORB ON MADAM SNIFFINS (+1)
 
 ==========================================below is stuff that's near the end
 
 Now that you have all the ingredients for the North-Tron, you need to activate them. You don't have to use a lot of commands to build it. Any ingredient on another will work. Thus,
 
->USE MUSH SUM ON X/O BOX
+>USE TNT ON MUSH SUM (+1)
 
 But you still can't go north! You don't have a weapon!
 
->USE MURK RUM ON YARD RAY
+>USE MURK RUM ON YARD RAY (+1)
 
 Now you can go to the Dirge Grid.
 
@@ -151,11 +157,12 @@ Now you can go to the Dirge Grid.
 
 Now, using the yard ray on the Diktat Kid doesn't work. It has "Emit ********" on the side, and that suggests
 
->EMIT NOONTIME
+>EMIT NOONTIME (+1)
 
 >S
 
->USE X-ITE TIX ON TIX EXIT
+>USE X-ITE TIX ON TIX EXIT (+1)
+
 ==========================================below is stuff that's not in order
 
 Now the Gold Log is shiny, but it's not particularly useful, and it's not you. It seems to be rattling, as if it holds something inside, but you can't figure out how to open it.
@@ -166,21 +173,29 @@ How do you feel peaceful enough to not be disrupted by your enemies?
 
 ==========================================below is totally unsorted uncommented stuff
 
-> USE STINK KNITS ON ROTATOR
-> USE SAGE GAS ON TENET
-> USE EL DOODLE ON EDITS TIDE
-> USE SPA MAPS ON CODE DOC
-> USE TRAP ART ON REIFIER
-> USE DORK ROD ON TAO BOAT
-> USE PARTY TRAP ON START RATS
-> USE CASH SAC ON CROSS ORC
-> USE BRO ORB ON MADAM SNIFFINS
-> USE UFO TOFU ON MAYO YAM
-> USE DEMO MED ON GULF LUG
-> USE REP POPPER ON YUGE GUY
-> USE ELAN ALE ON IRA BARI
-> USE TO IDIOT ON KNOWN WONK
-> USE ERODED ORE ON REVIVER
-> USE GOLD LOG ON ROTATOR
-> USE MURK RUM ON YARD RAY
-> USE POO COOP ON GNU DUNG
+> PACE CAP (+1)
+> USE STINK KNITS ON ROTATOR (+1)
+> USE SAGE GAS ON TENET (+1)
+> USE EL DOODLE ON EDITS TIDE (+1)
+> USE SPA MAPS ON CODE DOC (+1)
+> USE TRAP ART ON REIFIER (+1)
+> USE DORK ROD ON TAO BOAT (+1)
+> USE PARTY TRAP ON START RATS (+1)
+> USE CASH SAC ON CROSS ORC (+1)
+> USE BRO ORB ON MADAM SNIFFINS (+1)
+> USE UFO TOFU ON MAYO YAM (+1)
+> USE DEMO MED ON GULF LUG (+1)
+> USE REP POPPER ON YUGE GUY (+1)
+> USE ELAN ALE ON IRA BARI (+1)
+> USE TO IDIOT ON KNOWN WONK (+1)
+> USE ERODED ORE ON REVIVER (+1)
+> USE GOLD LOG ON ROTATOR (+1)
+> USE MURK RUM ON YARD RAY (+1)
+> USE POO COOP ON GNU DUNG (+1)
+
+> TRUCK CURT (+1)
+> STAND NAT'S (+1)
+> TAMP MAT (+1)
+> DENT NED (+1)
+> SLEEP (+1)
+> X SPA MAPS (+1)
