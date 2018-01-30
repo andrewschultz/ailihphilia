@@ -502,6 +502,7 @@ poo coop	gnu dung	--	--	--	true	true	true	Grebeberg	"The gnu dung is sucked towa
 radar	made dam	eroded ore	--	--	true	true	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow."
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 dork rod	tao boat	--	--	--	true	true	false	Grebeberg	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
+spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
 troll ort	brag garb	--	--	--	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. It's now an entirely different smell from the Stink Knits, but a much more edible one. You guess."
 elan ale	Ira Bari	Gorge Grog	--	--	true	false	false	Yelpley	"Ira looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"
@@ -529,6 +530,12 @@ this is the wear-garb rule:
 this is the maps-explained-yet rule:
 	if maps-explained is true:
 		say "You already got the Code Doc to decipher the spa maps.";
+		the rule fails;
+	the rule succeeds;
+
+this is the maps-readable rule:
+	if maps-explained is false:
+		say "Hmm. Maybe if the maps were a bit clearer to you, that would work. But not now.";
 		the rule fails;
 	the rule succeeds;
 
@@ -816,11 +823,8 @@ chapter Spa Maps
 Spa Maps are a plural-named proper-named thing. description is "[if sage gas is not off-stage]The maps seem old hat now you've gotten the sage gas[else if maps-explained is false]You can't quite make sense out of them. There's Gobs-Bog and Go-By Bog, and one is a lot safer than the other, but you're not sure which[else]The spa maps clearly demark Go-By Bog and Gobs Bog and even Goblin-Nil Bog, which probably contains a troll or two. And no hospitality[end if]."
 
 check examining spa maps:
-	if sage gas is off-stage and player is in Apse Spa:
-		score-inc; [Grebeberg/x spa maps]
-		now player has sage gas;
-		now spa maps are in ZeroRez;
-		say "Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away." instead;
+	if player is not in Apse Spa, say "It doesn't look like the maps are useful here." instead;
+	try useoning spa maps on go-by bog instead;
 
 maps-explained is a truth state that varies.
 
@@ -873,6 +877,8 @@ book Apse Spa
 Apse Spa is east of Cold Loc. It is in Grebeberg. "The Apse Spa is covered with dose sod, which you can't take--you're not sick--but it looks beautiful. Also, Go-By Bog expands every way except back west[if sage gas is off-stage]. You could traverse it, if you knew what you were doing[else]You already went through it, though[end if]."
 
 the dose sod is scenery in Apse Spa.
+
+Go-By Bog is scenery in Apse Spa.
 
 chapter sage gas
 

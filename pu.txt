@@ -84,11 +84,13 @@ You pretty much just need the Spur Ups from here.
 Yes, but you'll need a container.
 The Puce Cup in Ned's Den works well.
 USE PUCE CUP ON DOSE SOD.
-?Is there anything beyond the apse spa?
+?Is there anything beyond the Apse Spa, in Go-By Bog?
 Yes, but it'd be tricky without a map or something.
 You need to get the spa maps.
 Not only do you need them, you need someone who can make sense out of them.
-Once you get them, you can just examine them, and you will find something cool.
+Once you get them, you will find something cool if you
+USE SPA MAPS ON GO-BY BOG.
+Or you can just examine the maps in Apse Spa.
 >>FLU GULF
 ?How to I help out the Gulf Lug?
 He needs something to cure him.
@@ -298,7 +300,7 @@ There are 15 total points in Grebeberg.
 1 point if you USE POO COOP ON GNU DUNG.
 1 point if you USE RADAR ON MADE DAM.
 1 point if you TRUCK CURT.
-1 point if you X SPA MAPS.
+1 point if you USE SPA MAPS ON GO-BY BOG.
 1 point if you USE DORK ROD ON TAO BOAT.
 1 point if you USE TROLL ORT ON BRAG GARB. (note: this can be done outside of Grebeberg, but it's part of a Grebeberg puzzle.)
 1 point if you SLEEP around the eels.

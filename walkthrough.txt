@@ -192,4 +192,4 @@ How do you feel peaceful enough to not be disrupted by your enemies?
 > TAMP MAT (+1)
 > DENT NED (+1)
 > SLEEP (+1)
-> X SPA MAPS (+1)
+> USE SPA MAPS ON GO-BY BOG (+1)

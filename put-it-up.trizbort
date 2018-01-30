@@ -22,7 +22,7 @@ Initially sent to source code/repository November 2017.</history>
 			<objects custom="yes" customRight="-24" customDown="0">Rep Popper</objects>
 		</room>
 		<room id="6" name="Bon Snob" subtitle="" x="96" y="-64" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Le Falafel|Tame Mat|Nat's Tan</objects>
+			<objects>Le Falafel|Nat's Tan</objects>
 		</room>
 		<room id="7" name="Emo Dome" subtitle="" x="-64" y="-160" w="96" h="32" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="8" name="Toll Lot" subtitle="" x="96" y="-192" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
@@ -123,7 +123,7 @@ Initially sent to source code/repository November 2017.</history>
 			<objects>Turf Rut</objects>
 		</room>
 		<room id="41" name="Scrap Arcs" subtitle="" x="96" y="64" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects custom="yes" customRight="-20" customDown="0">YE KEY|Gate Tag</objects>
+			<objects custom="yes" customRight="-20" customDown="0">Slate Metals|Gate Tag</objects>
 		</room>
 		<room id="43" name="Top Spot" subtitle="" x="-704" y="-448" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects at="n" custom="yes" customRight="-32" customDown="0">YUGE GUY</objects>
@@ -172,7 +172,7 @@ Initially sent to source code/repository November 2017.</history>
 			<objects>KAYO YAK|Line Nil</objects>
 		</room>
 		<room id="57" name="Drawl Ward" subtitle="" x="-64" y="64" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Marge Pegram</objects>
+			<objects custom="yes" customRight="-40" customDown="0">Marge Pegram</objects>
 		</room>
 		<room id="58" name="Dope Pod" subtitle="" x="-224" y="64" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-12" customDown="0">Radar</objects>
@@ -221,7 +221,7 @@ Initially sent to source code/repository November 2017.</history>
 			<dock index="0" id="21" port="n" />
 			<dock index="1" id="55" port="s" />
 		</line>
-		<line id="65" name="" description="">
+		<line id="65" name="" description="" style="dashed">
 			<dock index="0" id="47" port="s" />
 			<dock index="1" id="57" port="n" />
 		</line>
