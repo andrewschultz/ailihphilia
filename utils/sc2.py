@@ -4,6 +4,7 @@
 #
 # replaces msc.py
 #
+# todo: if I forgot a +1, fill it in
 
 import i7
 import sys
@@ -20,7 +21,6 @@ show_hash = False
 main_dir = "c:/games/inform/put-it-up.inform/source"
 main_source = main_dir + "/story.ni"
 main_thru = main_dir + "/walkthrough.txt"
-use_ons = False
 
 line_to_open = 0
 warning_line = 0
@@ -42,8 +42,6 @@ use_in_source = defaultdict(int)
 use_in_invisiclues = defaultdict(int)
 use_in_walkthrough = defaultdict(int)
 
-func_list = ''
-
 def usage():
     print("-v for verbose")
     print("-s for semi verbose")
@@ -51,11 +49,18 @@ def usage():
     exit()
 
 def detect_region(a, b):
-    if '[+' not in a:
+    if '[' not in a:
         return b
-    temp = re.sub(".*\[\+", "", a.strip())
+    temp = re.sub(".*\[", "", a.strip())
     temp = re.sub("\].*", "", temp)
-    return temp.lower()
+    print("DEBUG:", temp)
+    ary = temp.split("/")
+    if len(ary) == 1:
+        return (ary[0].lower(), None)
+    elif len(ary) > 2:
+        print("TOO MANY SLASHES:", a)
+        exit()
+    return (ary[0].lower(), ary[1].upper())
 
 # these two could be lumped together, but it was quicker to C&P for the moment
 
@@ -85,19 +90,24 @@ def source_vs_invisiclues():
 def source_vs_walkthrough():
     any_err = 0
     xo = False
+    line_count = 0
+    plus_one = 0
+    xxx = { 'N': True, 'S': True, 'E': True, 'W': True, 'GET': True }
     with open(main_thru) as file:
         for line in file:
-            if re.search("^> *USE", line):
-                if 'X/O BOX' in line:
-                    if xo:
-                        print("Oops! Double-ignore happened.")
+            line_count = line_count + 1
+            if not line.startswith('>'): continue
+            ll = re.sub("^> *", "", line.strip())
+            ll2 = re.sub(" *\(\+1\).*", "", ll)
+            cmd_ary = ll2.split(".")
+            if cmd_ary[0] not in xxx.keys():
+                if ll == ll2 and use_in_source[ll]:
+                    if ll2 in use_in_walkthrough.keys():
+                        print(ll2, "duplicate non-points command, may not be error.")
                     else:
-                        print("Ignoring X/O BOX example line.")
-                        xo = True
-                    continue
-                ll = re.sub(".*USE", "USE", line.strip())
-                ll = re.sub("\..*", "", ll)
-                use_in_walkthrough[ll] = True
+                        print("WARNING: may need +1 at line", line_count, "of walkthrough:", ll)
+                        plus_one = plus_one + 1
+                use_in_walkthrough[ll2] = True
     for x in list(set(use_in_walkthrough.keys()) | set(use_in_source.keys())):
         if x not in use_in_walkthrough.keys():
             print("Need this line in walkthrough:", x)
@@ -107,7 +117,8 @@ def source_vs_walkthrough():
             any_err = any_err + 1
         elif verbose:
             print("Synced:", x)
-    if any_err:
+    if plus_one or any_err:
+        print(plus_one, "walkthrough +1's needed")
         print(any_err, "total walkthrough sync errors")
     else:
         print("Walkthrough sync test passed.")
@@ -130,94 +141,103 @@ while argval < len(sys.argv):
         usage()
     argval = argval + 1
 
-with open(main_source) as file:
-    line_count = 0
-    for line in file:
-        line_count = line_count + 1
-        ll = line.strip().lower()
-        if ll:
-            func_list = func_list + line
-        else:
-            func_list = ''
-        if 'workable. useleft' in ll:
-            mname = re.sub(" is a workable.*", "", ll)
-            mname = re.sub("^the ", "", mname)
-            muses = re.sub(".* is ", "", ll)
-            muses = re.sub("\..*", "", muses)
-            machine_uses_in_source[mname] = int(muses)
-        if ll.startswith("volume"):
-            current_region = "None"
-        if 'is a region. max-score' in line:
-            l2 = re.sub(" is a region.*", "", line.lower().strip())
-            sco = re.sub(".*is ", "", line.lower().strip())
-            sco = re.sub("\..*", "", sco)
-            in_source[l2] = int(sco)
-            region_def_line[l2] = line_count
-            if semi_verbose: print("Noting region", l2)
-            continue
-        if 'score-inc' in line and '\t' in line:
-            temp_region = detect_region(line, current_region)
-            if temp_region == current_region and '[+' in line:
-                print("WARNING temp_region not a change from current_region", current_region, "line", line_count, "in story.ni")
-                warning_line = line_count
-            if temp_region == 'ignore':
-                continue
-            if verbose:
-                if temp_region not in region_def_line.keys():
-                    print("ERROR: no region", temp_region, "at line", line_count)
-                else:
-                    print ("temp region", temp_region, "for line", line_count)
-            if verbose:
-                print(current_region)
-                print(func_list)
-            if temp_region == "None":
-                print("ERROR: region not defined yet at line", line_count)
-            if temp_region == current_region:
-                base_reg_incs[temp_region] = base_reg_incs[temp_region] + 1
+
+def get_stuff_from_source():
+    use_ons = False
+    func_list = ''
+    with open(main_source) as file:
+        line_count = 0
+        for line in file:
+            line_count = line_count + 1
+            ll = line.strip().lower()
+            if ll:
+                func_list = func_list + line
             else:
-                directed_incs[temp_region] = directed_incs[temp_region] + 1
-        if ll.startswith('part ') and 'region' in ll:
-            myreg = re.sub("^part ", "", ll)
-            myreg = re.sub(" *?region.*", "", myreg)
-            current_region = myreg.lower()
-            if myreg not in region_def_line.keys():
-                print("WARNING", ll, "defines start of invalid region.")
-        if line.startswith("table of useons") and 'continued' not in line:
-            use_ons = True
-            continue
-        elif use_ons and not line.strip():
-            use_ons = False
-            continue
-        if line.startswith('\t') and "reg-inc" in ll and "reg-inc reg-plus entry" not in ll:
-            l2 = re.sub(".*reg-inc ", "", ll.lower())
-            l2 = re.sub(";.*", "", l2)
-            if l2 == 'mrlp':
+                func_list = ''
+            if 'workable. useleft' in ll:
+                mname = re.sub(" is a workable.*", "", ll)
+                mname = re.sub("^the ", "", mname)
+                muses = re.sub(".* is ", "", ll)
+                muses = re.sub("\..*", "", muses)
+                machine_uses_in_source[mname] = int(muses)
+            if ll.startswith("volume"):
+                current_region = "None"
+            if 'is a region. max-score' in line:
+                l2 = re.sub(" is a region.*", "", line.lower().strip())
+                sco = re.sub(".*is ", "", line.lower().strip())
+                sco = re.sub("\..*", "", sco)
+                in_source[l2] = int(sco)
+                region_def_line[l2] = line_count
+                if semi_verbose: print("Noting region", l2)
                 continue
-            directed_incs[l2] = directed_incs[l2] + 1
-        if use_ons:
-            x = ll.split("\t")
-            if len(x) < 6: continue
-            if x[1] == 'reifier' or x[1] == 'reviver' or x[1] == 'rotator':
-                machine_uses[x[1]] = machine_uses[x[1]] + 1
-                machine_actions[x[1]] = machine_actions[x[1]] + "    {:s} -> {:s}\n".format(x[0], x[2])
-            if len(x) != 10:
-                print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 10.")
-            if x[5] == 'true':
-                cmd = "USE {:s} ON {:s}".format(x[0].upper(), x[1].upper())
-                use_in_source[cmd] = line_count
-                temp_region = ""
-                if x[8] and x[8] != '--' and x[8] != 'reg-plus': # a bit hacky, but basically, check for entry 10 in useon table being a proper region
-                    temp_region = x[8].lower()
-                if temp_region:
-                    directed_incs[temp_region] = directed_incs[temp_region] + 1
+            if 'score-inc' in line and '\t' in line:
+                (temp_region, this_cmd) = detect_region(line, current_region)
+                if temp_region == 'ignore':
+                    continue
+                if this_cmd:
+                    use_in_source[this_cmd] = line_count
+                    if verbose: print("Tacking on", this_cmd)
+                if temp_region == current_region and '[' in line:
+                    print("WARNING temp_region not a change from current_region", current_region, "line", line_count, "in story.ni")
+                    warning_line = line_count
+                if verbose:
+                    if temp_region not in region_def_line.keys():
+                        print("ERROR: no region", temp_region, "at line", line_count)
+                    else:
+                        print ("temp region", temp_region, "for line", line_count)
+                if verbose:
+                    print(current_region)
+                    print(func_list)
+                if temp_region == "None":
+                    print("ERROR: region not defined yet at line", line_count)
+                if temp_region == current_region:
+                    base_reg_incs[temp_region] = base_reg_incs[temp_region] + 1
                 else:
-                    if not temp_region:
-                        print("Blank temp region at line", line_count, "in use table.")
-                    elif temp_region not in region_def_line.keys():
-                        print(temp_region, "at line", line_count, " in use table not a valid region.")
-                    elif verbose:
-                        print(temp_region, "at line", line_count, " in use table given extra point.")
-                    undef_use_points = undef_use_points + 1
+                    directed_incs[temp_region] = directed_incs[temp_region] + 1
+            if ll.startswith('part ') and 'region' in ll:
+                myreg = re.sub("^part ", "", ll)
+                myreg = re.sub(" *?region.*", "", myreg)
+                current_region = myreg.lower()
+                if myreg not in region_def_line.keys():
+                    print("WARNING", ll, "defines start of invalid region.")
+            if line.startswith("table of useons") and 'continued' not in line:
+                use_ons = True
+                continue
+            elif use_ons and not line.strip():
+                use_ons = False
+                continue
+            if line.startswith('\t') and "reg-inc" in ll and "reg-inc reg-plus entry" not in ll:
+                l2 = re.sub(".*reg-inc ", "", ll.lower())
+                l2 = re.sub(";.*", "", l2)
+                if l2 == 'mrlp':
+                    continue
+                directed_incs[l2] = directed_incs[l2] + 1
+            if use_ons:
+                x = ll.split("\t")
+                if len(x) < 6: continue
+                if x[1] == 'reifier' or x[1] == 'reviver' or x[1] == 'rotator':
+                    machine_uses[x[1]] = machine_uses[x[1]] + 1
+                    machine_actions[x[1]] = machine_actions[x[1]] + "    {:s} -> {:s}\n".format(x[0], x[2])
+                if len(x) != 10:
+                    print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 10.")
+                if x[5] == 'true':
+                    cmd = "USE {:s} ON {:s}".format(x[0].upper(), x[1].upper())
+                    use_in_source[cmd] = line_count
+                    temp_region = ""
+                    if x[8] and x[8] != '--' and x[8] != 'reg-plus': # a bit hacky, but basically, check for entry 10 in useon table being a proper region
+                        temp_region = x[8].lower()
+                    if temp_region:
+                        directed_incs[temp_region] = directed_incs[temp_region] + 1
+                    else:
+                        if not temp_region:
+                            print("Blank temp region at line", line_count, "in use table.")
+                        elif temp_region not in region_def_line.keys():
+                            print(temp_region, "at line", line_count, " in use table not a valid region.")
+                        elif verbose:
+                            print(temp_region, "at line", line_count, " in use table given extra point.")
+                        undef_use_points = undef_use_points + 1
+
+get_stuff_from_source()
 
 source_vs_invisiclues()
 source_vs_walkthrough()
