@@ -506,7 +506,7 @@ UFO Tofu	Mayo Yam	Mush Sum	in-mont-nom rule	--	true	true	true	Grebeberg	"The UFO
 Eroded Ore	reviver	Ore Zero	--	--	true	true	true	Yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
 spa maps	Code Doc	--	--	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
-sage gas	tenet	tenet	--	--	true	true	false	Grebeberg	"With the sage gas, you're able to see a bit deeper into the tenet. As you pick the tenet up, the gas bubbles away. Well, it will be there for the next person to learn."
+sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
 Bro Orb	Madam Sniffins	Yard Ray	--	--	true	true	true	Yelpley	"The Bro Orb shines and drives Madam Sniffins to rage. She runs away, sobbing. The Yard Ray is left unguarded. You take it."
 murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
@@ -827,13 +827,17 @@ book Motto Bottom
 
 Motto Bottom is east of Lair Trial. It is in Grebeberg.
 
+chapter guru rug
+
+The guru rug is a thing in Motto Bottom. "A guru rug lies here. It looks like it's about to float away, but at the same time, it looks like something you're not good enough to touch."
+
+check taking guru rug: say "'Egad! Adage!' you think to yourself. You're not up to any great philosophy. Maybe something less heavy than the guru rug." instead;
+
 chapter tenet
 
-The tenet is a thing in Motto Bottom.
+The tenet is a thing. description is "It seems a bit too cliche."
 
-check taking tenet: if player does not have tenet, say "'Egad! Adage!' you think to yourself. The tenet seems too cliche, and you don't have the wisdom to give it any intrinsic value back. Well, not yet." instead; [?? new message if already have it]
-
-[take tenet/take bro orb = use sage gas on tenet/use tenet on bro orb]
+[?? take tenet/take bro orb = use sage gas on tenet/use tenet on bro orb]
 
 book Yack Cay
 

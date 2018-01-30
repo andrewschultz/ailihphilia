@@ -162,6 +162,7 @@ def source_vs_walkthrough():
                     else:
                         print("WARNING: may need +1 at line", line_count, "of walkthrough:", ll)
                         plus_one = plus_one + 1
+                if ll2 in use_in_walkthrough.keys(): print("WARNING line", line_count, "has duplicate command:", ll)
                 use_in_walkthrough[ll2] = True
     for x in list(set(use_in_walkthrough.keys()) | set(use_in_source.keys())):
         if x not in use_in_walkthrough.keys():

@@ -24,9 +24,10 @@ The command ?????? CAP needs to be a palindrome.
 How do you put a cap in inventory? Tuck it away?
 PACK CAP.
 ?Why doesn't the cap seem perfectly satisfactory?
-You can do one other thing with the cap.
+You can do one other thing with the cap, to make yourself go faster.
 It must be some command like PAC? CAP.
-PACE CAP or PACY CAP will help you go faster, later.
+PACE CAP.
+Also, PACY CAP is accepted, too.
 ?Which way do I go first?
 Well, one way, there's only one room you can explore.
 Also, there are no permadeaths.
@@ -115,6 +116,11 @@ USE REP POPPER ON YUGE GUY.
 You need something that can hold dung, or something like it.
 The poo coop.
 USE POO COOP ON GNU DUNG.
+>>MONT NOM
+?Can I make any sort of special food here?
+Yes, from two other foods.
+They'll combine too grossly elsewhere, but not here.
+USE UFO TOFU ON MAYO YAM.
 >>MIRE RIM
 ?What is the made dam for?
 It looks pretty hashed together, bumpy. Something could be in there.
@@ -130,13 +136,18 @@ USE SPA MAPS ON CODE DOC.
 ?What to do here?
 Not much.
 >>MOTTO BOTTOM
-?What to do here?
-Fill in later.
+?What is the guru rug for?
+It hides an even greater secret.
+It seems like it could almost float.
+But you don't feel like you can touch it.
+What could help the guru rug float away?
+The sage gas.
+USE SAGE GAS ON GURU RUG.
 >>YACK CAY
 ?How do I get past the Known Wonk?
 USE TO IDIOT ON KNOWN WONK.
 What is the Edits Tide good for?
-USE EL DOODLE ON TIDE.
+USE EL DOODLE ON EDITS TIDE.
 >>CALCIFIC LAC
 ?What do I do with the Tao Boat?
 It won't let you in unless you have something that shows self-effacement.
@@ -179,10 +190,16 @@ You can also change it to something else.
 WORD ROW.
 ?What do I put in which machine?
 You can use trial and error.
+Or you can just use the spoilers below.
 ?What do I do with the reifier?
 You may notice the trap art is a plan for something bigger, to be made real.
 USE TRAP ART ON REIFIER.
 The party trap is useful elsewhere.
+?What do I do with the rotator?
+USE STINK KNITS ON ROTATOR.
+USE GOLD LOG ON ROTATOR.
+?What do I do with the reviver?
+USE ERODED ORE ON REVIVER.
 >>EMO DOME
 ?Why am I running past too fast?
 Because you just want to get away.
@@ -204,7 +221,12 @@ Fill in later.
 ?What to do here?
 Fill in later.
 >>TOLL LOT
-?What to do here?
+?How do I get rid of the cross orc?
+It wants money.
+Someone else will give you money for helping them.
+The Gulf Lug in Flu Gulf.
+Help the Gulf Lug first to get the cash sac.
+USE CASH SAC ON CROSS ORC.
 Fill in later.
 >>NED'S DEN
 ?How do I get rid of Ned?
@@ -218,8 +240,16 @@ USE YE KEY ON ETAGE GATE.
 ?What to do here?
 Fill in later.
 >>BON SNOB
-?How do I keep people happy here?
-The resto poster from My Gym will work well.
+?What does Ira Bari want?
+He finds the Gorge Grog tacky.
+You need to find Class Alc.
+Have you found the Elan Ale?
+USE ELAN ALE ON IRA BARI.
+>>CIVIC LEVEL
+?How do I defeat Madam Sniffins?
+You can't get in if you don't have what you need.
+Something that's the opposite of her.
+USE BRO ORB ON MADAM SNIFFINS.
 #summary below
 >META QUESTIONS
 ?What are the Odd Do points?
@@ -267,7 +297,7 @@ There are 3 total points in Odd Do.
 1 point if you USE EL DOODLE ON EDITS TIDE
 1 point if you USE STINK KNITS ON ROTATOR
 1 point if you USE TO IDIOT ON KNOWN WONK
-1 point if you USE SAGE GAS ON TENET
+1 point if you USE SAGE GAS ON GURU RUG
 1 point if you USE UFO TOFU ON MAYO YAM
 1 point if you USE ELAN ALE ON IRA BARI
 1 point if you USE ERODED ORE ON REVIVER

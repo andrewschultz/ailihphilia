@@ -131,7 +131,7 @@ Bye bye, Ergot Ogre!
 
 >E
 
->USE SAGE GAS ON TENET (+1)
+>USE SAGE GAS ON GURU RUG (+1)
 
 >N.N.E.N
 
@@ -174,13 +174,6 @@ How do you feel peaceful enough to not be disrupted by your enemies?
 ==========================================below is totally unsorted uncommented stuff
 
 > PACE CAP (+1)
-> USE STINK KNITS ON ROTATOR (+1)
-> USE SAGE GAS ON TENET (+1)
-> USE EL DOODLE ON EDITS TIDE (+1)
-> USE SPA MAPS ON CODE DOC (+1)
-> USE TRAP ART ON REIFIER (+1)
-> USE DORK ROD ON TAO BOAT (+1)
-> USE PARTY TRAP ON START RATS (+1)
 > USE CASH SAC ON CROSS ORC (+1)
 > USE BRO ORB ON MADAM SNIFFINS (+1)
 > USE UFO TOFU ON MAYO YAM (+1)
