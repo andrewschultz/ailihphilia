@@ -217,8 +217,8 @@ PULL UP.
 If your cap is "pacy" and not "pact" then you won't be able to slow up in time.
 Also, once you PULL UP, the Emo Dome is safe.
 >>SWEPT PEWS
-?What to do here?
-Fill in later.
+?How do I deal with the mat?
+TAMP MAT.
 >>DRAWL WARD
 ?Can I help Marge Pegram?
 Yes. She needs some sort of medicine.
@@ -289,13 +289,14 @@ There are 17 total points in Yelpley.
 1 point if you USE GOLD LOG ON ROTATOR.
 1 point if you USE PUCE CUP ON MARGE PEGRAM.
 1 point if you PULL UP in the Emo Dome.
-1 point if you TAMP MAT in Stope Depots.
+1 point if you TAMP MAT in Swept Pews.
 1 point if you STAND NAT'S.
 ?How do I get all the points for Grebeberg?
-There are 14 total points in Grebeberg.
+There are 15 total points in Grebeberg.
 1 point if you USE PUCE CUP ON DOSE SOD.
 1 point if you USE PARTY TRAP ON START RATS.
 1 point if you USE POO COOP ON GNU DUNG.
+1 point if you USE RADAR ON MADE DAM.
 1 point if you TRUCK CURT.
 1 point if you X SPA MAPS.
 1 point if you USE DORK ROD ON TAO BOAT.

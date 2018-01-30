@@ -61,7 +61,7 @@ Initially sent to source code/repository November 2017.</history>
 			<objects>a pup|a pupa|poo coop|Moo Doom</objects>
 		</room>
 		<room id="21" name="Ned's Den" subtitle="" x="96" y="-320" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>DENT NED</objects>
+			<objects>DENT NED|Puce Cup</objects>
 		</room>
 		<room id="22" name="Worn Row" subtitle="" x="-384" y="-64" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Can be changed to WORK or WORD row." roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>NAIL IAN|Reviver|Reifier|Rotator</objects>
@@ -70,7 +70,7 @@ Initially sent to source code/repository November 2017.</history>
 			<objects at="n" custom="yes" customRight="-20" customDown="0">Bro Orb</objects>
 		</room>
 		<room id="25" name="Civic Level" subtitle="Gross Org" x="-64" y="-320" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects at="n" custom="yes" customRight="-16" customDown="0">MADAM</objects>
+			<objects at="n" custom="yes" customRight="-40" customDown="0">MADAM SNIFFINS</objects>
 		</room>
 		<line id="26" name="" description="" style="dashed">
 			<dock index="0" id="25" port="s" />
@@ -105,7 +105,9 @@ Initially sent to source code/repository November 2017.</history>
 			<dock index="0" id="4" port="s" />
 			<dock index="1" id="3" port="n" />
 		</line>
-		<room id="35" name="Apse Spa" subtitle="" x="-384" y="-320" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="35" name="Apse Spa" subtitle="" x="-384" y="-320" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects at="n" custom="yes" customRight="-24" customDown="0">Dose Sod</objects>
+		</room>
 		<line id="36" name="" description="">
 			<dock index="0" id="9" port="e" />
 			<dock index="1" id="35" port="w" />
@@ -184,7 +186,9 @@ Initially sent to source code/repository November 2017.</history>
 		<room id="61" name="Lair Trial" subtitle="" x="-864" y="64" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-20" customDown="0">Ergot Ogre</objects>
 		</room>
-		<room id="62" name="Yack Cay" subtitle="" x="-864" y="-320" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="62" name="Yack Cay" subtitle="" x="-864" y="-320" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects>Known Wonk</objects>
+		</room>
 		<line id="31" name="" description="">
 			<dock index="0" id="20" port="w" />
 			<dock index="1" id="56" port="e" />

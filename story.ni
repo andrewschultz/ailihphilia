@@ -24,7 +24,7 @@ chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
 
-Grebeberg is a region. max-score of Grebeberg is 14.
+Grebeberg is a region. max-score of Grebeberg is 15.
 
 Dim Mid is a region. max-score of Dim Mid is 6.
 
@@ -499,6 +499,7 @@ demo med	gulf lug	cash sac	--	--	true	true	true	Grebeberg	"The Gulf Lug takes th
 TO IDIOT	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins to read and starts chucking. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Known Wonk runs away."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes to look for ... well, something else."
 poo coop	gnu dung	--	--	--	true	true	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
+radar	made dam	eroded ore	--	--	true	true	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow."
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 dork rod	tao boat	--	--	--	true	true	false	Grebeberg	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
 stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
@@ -798,7 +799,9 @@ Moo Room is east of Dray Yard. It is in Grebeberg.
 
 book Mire Rim
 
-Mire Rim is west of Dumb Mud. It is in Grebeberg.
+Mire Rim is west of Dumb Mud. It is in Grebeberg. "A made dam blocks your way west. You can go north, south and east here."
+
+the made dam is scenery in Mire Rim.
 
 The Eroded Ore is a thing.
 
@@ -1112,9 +1115,6 @@ check going in Toll Lot:
 	if cross orc is in Toll Lot:
 		if noun is north or noun is south, say "The cross orc stops you from going [noun]. 'GIVE VIG!' it booms." instead;
 
-check going south in Toll Lot when tame mat is in Toll Lot:
-	say "An upper-crust voice emits from the tame mat, which curls up: 'DA CAD!'[paragraph break]Maybe if it were more glued to the ground." instead;
-
 book Ned's Den
 
 Ned's Den is north of Toll Lot. It is in Yelpley. printed name of Ned's Den is "[if ned is in Ned's Den]Ned's Den[else]Den, Evened[end if]"
@@ -1150,11 +1150,13 @@ tamping is an action applying to nothing.
 
 understand the command "tamp mat" as something new.
 
-understand "tamp mat" as tamping when player is in Toll Lot and tame mat is in Toll Lot.
+understand "tamp mat" as tamping when player is in Swept Pews and TA Mat is in Swept Pews.
 
 carry out tamping:
 	say "Boom! That's the idea. With the mat tamped, you walk across, and there's no more nonsense.";
 	wfak;
+	now TA Mat is in ZeroRez;
+	now tame mat is in Swept Pews;
 	score-inc; [Yelpley/tamp mat]
 	the rule succeeds;
 
@@ -1298,6 +1300,15 @@ Madam Sniffins is a person in Civic Level.
 book Swept Pews
 
 Swept Pews is south of Emo Dome. It is in Yelpley.
+
+The TA Mat is a thing in Swept Pews.
+
+check going south when TA Mat is in Swept Pews: say "As you try to step south over the mat, a voice booms 'DA CAD!'[paragraph break]You'll have to do something to push the mat down." instead;
+
+The tame mat is a thing.
+
+check taking TA Mat: say "It doesn't let you close." instead;
+check taking tame mat: say "You realize you have no use for such a thing." instead;
 
 chapter Demo Med
 
