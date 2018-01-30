@@ -25,7 +25,7 @@ How do you put a cap in inventory? Tuck it away?
 PACK CAP.
 ?Why doesn't the cap seem perfectly satisfactory?
 You can do one other thing with the cap.
-PAC? CAP.
+It must be some command like PAC? CAP.
 PACE CAP or PACY CAP will help you go faster, later.
 ?Which way do I go first?
 Well, one way, there's only one room you can explore.
@@ -45,14 +45,36 @@ And you win the game!
 It'll take a long time.
 Once you have all the ingredients, you'll know.
 USE TNT ON MUSH SUM.
+Well, it can be any ingredient on any ingredient.
+?I built the North-Tron. Why can't I go north?
+You need a weapon.
+There is a Yard Ray located elsewhere.
+Also, you'll need to load the Yard Ray.
+With something suitably weird and energetic.
+USE MURK RUM ON YARD RAY.
+?Now I defeated the Diktat Kid, how do I get out?
+This one should be pretty simple.
+You got a new item in the Dirge Grid.
+It's similar to the Tix Exit.
+USE X-ITE TIX ON TIX EXIT.
+You win!
+>>DIRGE GRID
+?How do I defeat the Diktat Kid?
+You can't quite just use the yard ray. You need a special command.
+The yard ray has EMIT ********.
+The Dirge Grid is kind of dark.
+You need one final palindrome command.
+EMIT NOONTIME.
+Now you will get a new item, and you can go back south and win the game.
 >Grebeberg
 >>SEER TREES
 ?How do I get rid of the Start Rats?
 You need a Trap.
 Well, you may guess a specific sort of trap.
 A Party Trap.
-You can make it in Work Row, in Not-Kook-Ton.
-Once you get it, USE TRAP ON RATS.
+You can make it in Work Row, in Yelpley.
+You have to do something to another item. But once you get it...
+USE PARTY TRAP ON START RATS.
 >>COLD LOC
 ?Is there anything to do here?
 Not yet, no. ??
@@ -84,16 +106,20 @@ It's a bit complicated.
 ?What do I do here?
 Get the Poo Coop.
 >>TOP SPOT
-?How o
+?How do I kill off the Yuge Guy?
+You'll need something to dent his pride.
+Something you yourself may have had trouble taking, because you were too proud at first.
+USE REP POPPER ON YUGE GUY.
 >>DUMB MUD
 ?How do I get rid of the gnu dung?
 You need something that can hold dung, or something like it.
 The poo coop.
-USE COOP ON DUNG.
+USE POO COOP ON GNU DUNG.
 >>MIRE RIM
 ?What is the made dam for?
 It looks pretty hashed together, bumpy. Something could be in there.
-USE RADAR ON MADE DAM. You can locate something.
+USE RADAR ON MADE DAM.
+This helps you locate something.
 >>BIRCH CRIB
 ?What does the Code Doc have to say?
 The code doc could help you decipher something.
@@ -110,7 +136,7 @@ Fill in later.
 ?How do I get past the Known Wonk?
 USE TO IDIOT ON KNOWN WONK.
 What is the Edits Tide good for?
-USE DOODLE ON TIDE.
+USE EL DOODLE ON TIDE.
 >>CALCIFIC LAC
 ?What do I do with the Tao Boat?
 It won't let you in unless you have something that shows self-effacement.
@@ -118,7 +144,7 @@ You'll know the item when you see it.
 The Dork Rod.
 USE DORK ROD ON TAO BOAT.
 Now that you're all peaceful, you can explore other places.
->Not-Kook-Ton
+>Yelpley
 >>YAWN WAY
 ?Is there anything to do here?
 No, not much, other than go a bunch of different directions.
@@ -181,8 +207,13 @@ Fill in later.
 ?What to do here?
 Fill in later.
 >>NED'S DEN
-?What to do here?
-Fill in later.
+?How do I get rid of Ned?
+You need to do something to him.
+The logic is ***(+) NED.
+DENT NED.
+?How do I get past the gate?
+It's not too bad.
+USE YE KEY ON ETAGE GATE.
 >>BALL LAB
 ?What to do here?
 Fill in later.
@@ -195,41 +226,47 @@ The resto poster from My Gym will work well.
 They're for trying odd stuff you might not have seen otherwise.
 Some commands could be made into palindromes, and there are some (hopefully) amusing alternate palindroms.
 ?How do I get all the points for Dim Mid?
-There are 2 total points in Dim Mid.
+There are 6 total points in Dim Mid.
 1 point for PACK CAP.
 1 point for PACE CAP.
 1 point if you USE X-ITE TIX ON TIX EXIT
-?How do I get all the points for Not-Kook-Ton?
-There are 7 total points in Not-Kook-Ton.
+1 point if you USE TNT ON MUSH SUM or any pair of ingredients to create the North-Tron.
+1 point if you USE MURK RUM ON YARD RAY.
+1 point if you EMIT NOONTIME.
+?How do I get all the points for Yelpley?
+There are 16 total points in Yelpley.
 1 point if you EVADE DAVE.
 1 point if you NAIL IAN.
-1 point if you change Worn Row to WORK ROW.
-1 point if you put the ART TRAP in the REIFIER.
-1 point if you put the GOLD LOG in the ROTATOR.
+1 point if you DENT NED.
+1 point for WORK ROW.
+1 point for WORD ROW.
+1 point if you USE TRAP ART ON REIFIER.
+1 point if you USE GOLD LOG ON ROTATOR.
 1 point if you PULL UP in the Emo Dome.
 1 point if you TAMP MAT in Stope Depots.
+1 point if you STAND NAT'S.
 ?How do I get all the points for Grebeberg?
-There are 3 total points in Grebeberg.
+There are 13 total points in Grebeberg.
 1 point if you USE PARTY TRAP ON START RATS.
 1 point if you USE POO COOP ON GNU DUNG.
+1 point if you TRUCK CURT.
+1 point if you X SPA MAPS.
 1 point if you USE DORK ROD ON TAO BOAT.
 1 point if you USE TROLL ORT ON BRAG GARB. (note: this can be done outside of Grebeberg, but it's part of a Grebeberg puzzle.)
+1 point if you SLEEP around the eels.
 ?How do I get all the Odd Do points?
 There are 3 total points in Odd Do.
-1 point for either, but not each, semi-profanity *OO*.
-1 point for saying REFER instead of THINK.
-1 point for saying DIAL AID instead of AID.
+1 point if you say POOP. Or BOOB.
+1 point if you REFER instead of THINK.
+1 point if you DIAL AID instead of AID.
 ?What is unsorted?
 1 point if you USE DEMO MED ON GULF LUG
 1 point if you USE SPA MAPS ON CODE DOC
-1 point if you USE MURK RUM ON YARD RAY
-1 point if you USE GOLD LOG ON ROTATOR
 1 point if you USE REP POPPER ON YUGE GUY
 1 point if you USE CASH SAC ON CROSS ORC
 1 point if you USE EL DOODLE ON EDITS TIDE
 1 point if you USE STINK KNITS ON ROTATOR
 1 point if you USE TO IDIOT ON KNOWN WONK
-1 point if you USE TRAP ART ON REIFIER
 1 point if you USE SAGE GAS ON TENET
 1 point if you USE UFO TOFU ON MAYO YAM
 1 point if you USE ELAN ALE ON IRA BARI

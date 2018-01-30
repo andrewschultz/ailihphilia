@@ -1222,6 +1222,9 @@ check taking rep popper:
 	if player has dork rod, say "With the dork rod, you aren't THAT worried about your rep, but you're still worried enough not to take it. Maybe you can do a bit better..." instead;
 	if dork rod is not in ZeroRez, say "No way! You're not sure how much rep you have, but taking that rep popper would drop it a notch or more." instead;
 
+report taking rep popper:
+	say "Your experiences in the Tao Boat leave you feeling the rep popper cannot really harm you. Taken.";
+
 chapter back cab
 
 The back cab is a thing in Yell Alley. description is "It's here but doesn't look like you can actually ride it.". "A run-down back cab waits here."

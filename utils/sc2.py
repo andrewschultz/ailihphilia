@@ -42,6 +42,7 @@ use_in_source = defaultdict(int)
 use_in_invisiclues_main = defaultdict(int)
 use_in_invisiclues_summary = defaultdict(int)
 use_in_walkthrough = defaultdict(int)
+invis_points = defaultdict(int)
 
 def usage():
     print("-v for verbose")
@@ -69,29 +70,53 @@ def source_vs_invisiclues():
     main_err = 0
     summary_err = 0
     in_summary = False
+    in_odd = False
+    this_line = 0
     with open("c:/writing/scripts/invis/pu.txt") as file:
         for line in file:
+            this_line = this_line + 1
+            if 'total points in' in line:
+                ll = re.sub(".*total points in *", "", line.strip().lower())
+                ll = re.sub("\..*", "", ll)
+                pts = re.sub(" *total points.*", "", line.strip())
+                pts = re.sub(".* ", "", pts)
+                print(ll, "has", pts, "points in InvisiClues.")
+                try:
+                    invis_points[ll] = int(pts)
+                except:
+                    print("Non integer points", pts, "getting region points from line", this_line, ":", line.strip())
+                    exit()
             if line.strip() == '#summary below':
                 in_summary = True
                 continue
             if in_summary:
-                if line.startswith("1 point if you USE") or line.startswith("1 point for USE"): # obviously this needs to be cleaned up for custom commands
-                    ll = re.sub(".* USE", "USE", line.strip())
+                if 'all the Odd Do' in line:
+                    in_odd = True
+                    continue
+                if in_odd:
+                    if line.startswith('?'):
+                        in_odd = False
+                    continue
+                if line.startswith("1 point if you ") or line.startswith("1 point for "): # obviously this needs to be cleaned up for custom commands
+                    ll = re.sub("^1 point (for|if you) ", "", line.strip())
                     ll = re.sub("\..*", "", ll)
+                    ll = re.sub(" [a-z].*", "", ll)
+                    if ll in use_in_invisiclues_summary.keys(): print("WARNING line", this_line,"has duplicate command:", ll)
                     use_in_invisiclues_summary[ll] = True
             else:
                 if line == line.upper() and not line.startswith('?') and not line.startswith('#') and not line.startswith('>'):
                     ll = re.sub("\..*", "", line.strip())
                     # print("Found in invisiclues main:", ll)
+                    if ll in use_in_invisiclues_main.keys(): print("WARNING line", this_line,"has duplicate command:", ll)
                     use_in_invisiclues_main[ll] = True
     for x in list(set(use_in_invisiclues_main.keys()) | set(use_in_source.keys())):
         if x not in use_in_invisiclues_main.keys():
             if not main_err: print("=" * 40)
-            print("Need this source line in invisiclues main:", x)
+            print("ERROR: Need this source line in invisiclues main:", x)
             main_err = main_err + 1
         elif x not in use_in_source.keys():
             if not main_err: print("=" * 40)
-            print("Need this invisiclues main line in source(table of useons or [region/command]:", x)
+            print("ERROR: Need this invisiclues main line in source(table of useons or [region/command]:", x)
             main_err = main_err + 1
         elif verbose:
             print("Synced to main:", x)
@@ -100,11 +125,11 @@ def source_vs_invisiclues():
         for x in list(set(use_in_invisiclues_summary.keys()) | set(use_in_source.keys())):
             if x not in use_in_invisiclues_summary.keys():
                 if not main_err and not summary_err: print ("=" * 40)
-                print("Need this source line in invisiclues summary:", x)
+                print("ERROR: Need this source line in invisiclues summary:", x)
                 summary_err = summary_err + 1
             elif x not in use_in_source.keys():
                 if not main_err and not summary_err: print ("=" * 40)
-                print("Need this invisiclues summary line in source(table of useons or [region/command]:", x)
+                print("ERROR: Need this invisiclues summary line in source(table of useons or [region/command]:", x)
                 summary_err = summary_err + 1
             elif verbose:
                 print("Synced to summary:", x)
@@ -140,10 +165,10 @@ def source_vs_walkthrough():
                 use_in_walkthrough[ll2] = True
     for x in list(set(use_in_walkthrough.keys()) | set(use_in_source.keys())):
         if x not in use_in_walkthrough.keys():
-            print("Need this line in walkthrough:", x)
+            print("ERROR: Need this line in walkthrough:", x)
             any_err = any_err + 1
         elif x not in use_in_source.keys():
-            print("Need this line in table of useons:", x)
+            print("ERROR: Need this line in table of useons:", x)
             any_err = any_err + 1
         elif verbose:
             print("Synced:", x)
@@ -287,6 +312,9 @@ for x in totals.keys():
     if totals[x] != in_source[x]:
         print("ERROR: region", x, "has", totals[x], "but source lists", in_source[x])
         line_to_open = region_def_line[x]
+    if in_source[x] != invis_points[x]:
+        print("ERROR: region", x, "has", in_source[x], "in source, but invisiclues list", invis_points[x])
+
     print(x, totals[x])
 
 for x in sorted(machine_uses.keys()):
