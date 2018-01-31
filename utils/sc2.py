@@ -179,22 +179,21 @@ def source_vs_walkthrough():
     with open(main_thru) as file:
         for line in file:
             line_count = line_count + 1
-            if not line.startswith('>'): continue
-            ll = re.sub("^> *", "", line.strip())
-            ll2 = re.sub(" *\(\+1\).*", "", ll)
-            cmd_ary = ll2.split(".")
+            if not line.startswith('>') and not line.startswith("(+1)"): continue
+            ll = re.sub(".*> *", "", line.strip())
+            cmd_ary = ll.split(".")
             if cmd_ary[0] not in xxx.keys():
-                if ll == ll2 and use_in_source[ll]:
-                    if ll2 in use_in_walkthrough.keys():
-                        print(ll2, "duplicate non-points command, may not be error.")
-                    else:
+                if use_in_source[ll]:
+                    if ll in use_in_walkthrough.keys():
+                        print(ll, "duplicate non-points command, may not be error.")
+                    if "(+1)" not in line:
                         print("WARNING: may need +1 at line", line_count, "of walkthrough:", ll)
                         plus_one = plus_one + 1
                         warning_walkthrough_line = line_count
-                if ll2 in use_in_walkthrough.keys():
+                if ll in use_in_walkthrough.keys():
                     print("WARNING line", line_count, "has duplicate command:", ll)
                     warning_walkthrough_line = line_count
-                use_in_walkthrough[ll2] = True
+                use_in_walkthrough[ll] = True
     for x in list(set(use_in_walkthrough.keys()) | set(use_in_source.keys())):
         if x not in use_in_walkthrough.keys():
             print("ERROR: Need this line in walkthrough:", x)
