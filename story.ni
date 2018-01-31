@@ -28,7 +28,7 @@ Grebeberg is a region. max-score of Grebeberg is 15.
 
 Dim Mid is a region. max-score of Dim Mid is 6.
 
-Yelpley is a region. max-score of Yelpley is 17.
+Yelpley is a region. max-score of Yelpley is 19.
 
 Odd Do is a region. max-score of Odd Do is 3.
 
@@ -38,7 +38,7 @@ volume unsorted
 
 section stuff to move
 
-the x-ite tix are a plural-named thing. understand "xite" and "xite tix" as x-ite tix.
+Ye Key is a thing.
 
 the radar is a thing.
 
@@ -319,7 +319,9 @@ check going (this is the new generic going reject rule):
 	unless noun is viable, say "You can only go [list of viable directions] here." instead;
 
 definition: a direction (called d) is viable:
+	let lp be location of player;
 	if the room d of location of player is nowhere, no;
+	if d is north and lp is Ned's Den and etage gate is in Ned's Den, no;
 	yes;
 
 check going (this is the reject noncardinal directions rule):
@@ -513,10 +515,17 @@ puce cup	dose sod	--	--	--	true	false	true	Grebeberg	"You funnel the dose sod in
 puce cup	marge pegram	gate tag	sod-in-cup rule	--	true	true	true	Yelpley	"You give marge the puce cup. She drinks the dose sod and immediately feels better. 'Well... I have a lot of catching up to do. Can't hang around. Here's a gate tag for you.'"
 spa maps	Code Doc	--	--	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
+Ye Key	etage gate	--	ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again."
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
 Bro Orb	Madam Sniffins	Yard Ray	--	--	true	true	true	Yelpley	"The Bro Orb shines and drives Madam Sniffins to rage. She runs away, sobbing. The Yard Ray is left unguarded. You take it."
 murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
+
+this is the ned-gone rule:
+	if ned is in Ned's Den:
+		say "Good idea, but not with Ned around.";
+		the rule fails;
+	the rule succeeds;
 
 this is the in-mont-nom rule:
 	if location of player is Mont Nom, the rule succeeds;
@@ -689,6 +698,10 @@ after looking in Dirge Grid for the first time:
 	continue the action;
 
 check going south in Dirge Grid: if Diktat Kid is in Dirge Grid, say "'Mom! SOS! LOL! SOS! Mom!' the Diktat Kid mocks you.[paragraph break]You can't chicken out. You must be close!" instead;
+
+chapter x-ite tix
+
+the x-ite tix are a plural-named thing. understand "xite" and "xite tix" as x-ite tix.
 
 chapter tru hurt
 
@@ -1123,7 +1136,17 @@ check going in Toll Lot:
 
 book Ned's Den
 
-Ned's Den is north of Toll Lot. It is in Yelpley. printed name of Ned's Den is "[if ned is in Ned's Den]Ned's Den[else]Den, Evened[end if]"
+Ned's Den is north of Toll Lot. It is in Yelpley. printed name of Ned's Den is "[if ned is in Ned's Den]Ned's Den[else]Den, Evened[end if]". description is "[if etage gate is in Ned's Den]An etage gate blocks your way north. You can go back south[else]With the etage gate gone, you can go north or south[end if]."
+
+the etage gate is scenery in Ned's Den. "It is locked and too strong to move."
+
+instead of opening etage gate, try going north;
+
+instead of unlocking etage gate:
+	if player has Ye Key, try useoning Ye Key on etage gate;
+	try going north;
+
+check going north in Ned's Den: if etage gate is in Ned's Den, say "The etage gate blocks you."
 
 understand "evened" and "den evened" as Ned's Den when ned is in ZeroRez
 
@@ -1230,6 +1253,7 @@ carry out tending:
 	say "You adjust the tenses net. You're not sure how to make it work, but with some common sense, you make it. The set o['] notes gives surprising help. You climb and swing from the trapeze to the other side--falling into the tenses net about a hundred or so times--but the hundred and first bam! You notice an epic-er recipe on the other side.[paragraph break]It's a clear step up from the set o['] notes, which you won't be needing any more. Yay!";
 	now set o notes is in ZeroRez;
 	now player has epicer recipe;
+	score-inc; [Yelpley/TEND NET]
 	the rule succeeds.
 
 book Yell Alley

@@ -35,10 +35,16 @@ Marge Pegram says the trap art is a useless design that didn't quite work. Maybe
 
 >GET TRAP ART
 
-You need to do something with the trap art, somewhere.
+You need to do something with the trap art, somewhere. But first, let's look behind Art Xtra.
 
->S
->S
+>N
+>W
+
+>TEND NET (+1)
+
+>E.S.S.S
+
+Oh no! Dave's here, man! How to get around Dave?
 
 >EVADE DAVE (+1)
 
@@ -186,6 +192,8 @@ How do you feel peaceful enough to not be disrupted by your enemies?
 > USE GOLD LOG ON ROTATOR (+1)
 > USE POO COOP ON GNU DUNG (+1)
 > USE RADAR ON MADE DAM (+1)
+
+> USE YE KEY ON ETAGE GATE (+1)
 
 > TRUCK CURT (+1)
 > STAND NAT'S (+1)
