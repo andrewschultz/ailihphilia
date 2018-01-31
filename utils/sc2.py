@@ -21,6 +21,7 @@ show_hash = False
 main_dir = "c:/games/inform/put-it-up.inform/source"
 main_source = main_dir + "/story.ni"
 main_thru = main_dir + "/walkthrough.txt"
+triz_flow = "c:/games/inform/triz/mine/put-it-up-flow.trizbort"
 
 line_to_open = 0
 warning_story_line = 0
@@ -43,6 +44,7 @@ use_in_source = defaultdict(int)
 use_in_invisiclues_main = defaultdict(int)
 use_in_invisiclues_summary = defaultdict(int)
 use_in_walkthrough = defaultdict(int)
+use_in_trizflow = defaultdict(int)
 invis_points = defaultdict(int)
 
 def usage():
@@ -143,9 +145,33 @@ def source_vs_invisiclues():
         print("InvisiClues sync test passed.")
 
 
+def source_vs_trizbort_flow():
+    summary_err = 0
+    line_count = 0
+    plus_one = 0
+    with open(triz_flow) as file:
+        for line in file:
+            line_count = line_count + 1
+            if not "room id=" in line: continue
+            if "No Points" in line: continue
+            if "Misc Points" in line: continue # we may wish to turn this spigot back on later if there's an easy way to integrate this check. But right now, there isn't.
+            rn = re.sub(r".* name=\"([^\"]*)\".*", r'\1', line.strip())
+            use_in_trizflow[rn] = line_count
+            # print("Adding", rn)
+    for x in list(set(use_in_trizflow.keys()) | set(use_in_source.keys())):
+        if x not in sorted(use_in_trizflow.keys()):
+            print("ERROR: source not flow", x, "in source but not in trizbort flow file", triz_flow)
+            summary_err = summary_err + 1
+    for x in list(set(use_in_trizflow.keys()) | set(use_in_source.keys())):
+        if x not in sorted(use_in_source.keys()):
+            if "USE " + x in use_in_source.keys():
+                print("TIP: Need USE before", x)
+            print("ERROR: flow not source", x, "in trizbort flow file", triz_flow, "but not source")
+            summary_err = summary_err + 1
+    print(summary_err, "trizbort flow/source sync violations.")
+
 def source_vs_walkthrough():
     any_err = 0
-    xo = False
     line_count = 0
     plus_one = 0
     global warning_walkthrough_line
@@ -300,6 +326,7 @@ def get_stuff_from_source():
 
 get_stuff_from_source()
 
+source_vs_trizbort_flow()
 source_vs_invisiclues()
 source_vs_walkthrough()
 
