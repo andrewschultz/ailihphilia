@@ -322,11 +322,13 @@ definition: a direction (called d) is viable:
 	let lp be location of player;
 	if the room d of location of player is nowhere, no;
 	if d is north and lp is Ned's Den and etage gate is in Ned's Den, no;
+	if d is up or d is down, no; [you may be able to go that way, but we'll hide that from the reader.]
 	yes;
 
 check going (this is the reject noncardinal directions rule):
 	if noun is diagonal, say "You don't need diagonal directions in this game." instead;
-	if noun is up or noun is down, say "You never need to go up or down in this game." instead;
+	if noun is up or noun is down:
+		if the room noun of location of player is nowhere, say "You never need to go up or down in this game." instead;
 
 the reject noncardinal directions rule is listed first in the check going rulebook.
 
@@ -760,6 +762,12 @@ book Top Spot
 
 Top Spot is west of Flu Gulf. It is in Grebeberg. "This place has obviously not gone to pot."
 
+Top Spot is above Flu Gulf.
+
+after looking in Top Spot for the first time:
+	say "The Yuge Guy calls 'BOO! NOOB!' just to reinforce his contempt.";
+	continue the action;
+
 Yuge Guy is a proper-named person in Top Spot. understand "king/nik" and "king nik" as Yuge Guy.
 
 book Dumb Mud
@@ -795,6 +803,8 @@ check taking bro orb:
 book Mont Nom
 
 Mont Nom is south of Dumb Mud. It is in Grebeberg.
+
+Mont Nom is below Dumb Mud.
 
 book Ooze Zoo
 
@@ -1325,6 +1335,8 @@ book Civic Level
 
 Civic Level is north of Emo Dome. It is in Yelpley.
 
+Civic Level is above Emo Dome.
+
 Madam Sniffins is a person in Civic Level.
 
 book Swept Pews
@@ -1383,6 +1395,8 @@ The radar is in Dope Pod.
 book Ball Lab
 
 Ball Lab is north of Ned's Den. It is in Yelpley.
+
+Ball Lab is above Ned's Den.
 
 volume gotoing
 

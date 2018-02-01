@@ -131,6 +131,8 @@ def check_notes(s):
                 ll = re.sub("[\.\",!\?]", "", line.lower())
                 for q in pals.keys():
                     if q in ll and (q not in twice.keys() or twice_okay):
+                        if q == 'say as' and 'say "as' in line.lower():
+                            continue
                         if ignore_word_bounds or re.search(r'\b{:s}\b'.format(q), ll):
                             # here "da bad" does not flag "Neda Baden" unless we tell the program to
                             line_short = re.sub(":.*", "", q)
