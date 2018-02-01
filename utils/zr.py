@@ -68,10 +68,11 @@ with open("story.ni") as file:
         if '[ic]' not in ll:
             for x in cs:
                 if x.lower() in line.lower():
+                    ll_old = ll
                     ll = re.sub(r'\b{:s}\b'.format(x), x, ll, 0, re.IGNORECASE)
-                    if ll != line:
+                    if ll != ll_old:
                         difs = difs + 1
-                        print("Line", line_count, "is different:", line.strip())
+                        print("Line", line_count, "miscapitalized", x + ":", line.strip())
         fout.write(ll)
 
 fout.close()

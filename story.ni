@@ -20,6 +20,8 @@ a thing can be drinkable. a thing is usually not drinkable.
 
 an ingredient is a kind of thing.
 
+the description of a room is usually "[if number of viable directions is 1]An exit leads[else]Exits lead[end if] [list of viable directions]. NOTE: I need to change this generic text."
+
 chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
@@ -784,11 +786,15 @@ Cold Loc is north of Seer Trees. It is in Grebeberg.
 
 book Flu Gulf
 
-Flu Gulf is north of Cold Loc. It is in Grebeberg.
+Flu Gulf is north of Cold Loc. It is in Grebeberg. "North and east, it's, oh, too H2O. The passage is clear back south, but [if scorn rocs are in Flu Gulf]scorn rocs['] gaze blocks you going west[else]west past the scorn rocs seems a bit treacherous[end if]."
 
-Gulf Lug is a person in Flu Gulf.
+the Gulf Lug is a proper-named person in Flu Gulf. "The Gulf Lug stands here, holding his stomach.". description is "He looks slightly ill. Maybe you could help him."
 
-the cash sac is a thing in Flu Gulf.
+the cash sac is a thing.
+
+chapter scorn rocs
+
+The scorn rocs are scenery in Flu Gulf. "While they're motionless, their stare drives you back. They're fiercely proud and blazingly colored."
 
 book Top Spot
 
@@ -921,9 +927,17 @@ book Calcific Lac
 
 Calcific Lac is north of Swamp Maws. It is in Grebeberg. "A Tao Boat rests at the edge of Calcific Lac."
 
+chapter kayak
+
+The kayak is scenery in Calcific Lac.
+
+chapter tao boat
+
 The Tao Boat is scenery in Calcific Lac.
 
-The dork rod is a thing in Calcific Lac. description is "It's kind of neat and quirky, but it's not shiny enough to be the famed Dorada Rod."
+chapter dork rod
+
+The dork rod is a thing. description is "It's kind of neat and quirky, but it's not shiny enough to be the famed Dorada Rod."
 
 understand "dorm rod" and "dorm" as a mistake ("The dork rod is what it is.") when player has dork rod or player is in location of dork rod.
 
@@ -1264,9 +1278,9 @@ understand "stand [something]" as standing.
 
 carry out standing:
 	if noun is nat's tan:
-		say "It's tough, but you manage to stand the icky Nat's Tan as you pour it on yourself.";
+		say "It's tough, but you manage to stand the icky Nat's Tan enough to pick it up--it's for the good of youor adventure. Maybe you can dump it on someone or something who finds it even ickier than you do.";
 		score-inc; [Yelpley/stand nat's]
-		now nat's tan is in ZeroRez;
+		now player has nat's tan;
 	the rule succeeds.
 
 book Evaded Ave
@@ -1364,7 +1378,7 @@ check going to Emo Dome:
 		now emo-dir is noun;
 
 check going north in Emo Dome:
-	unless player does has state tats, say "The Civic Level is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a voice: 'DIFF-ID?'[paragraph break]You don't have anything identifying yourself. 'Oh, who? Go jog!' the voice continues. You think, hang? Nah." instead;
+	unless player has state tats, say "The Civic Level is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a voice: 'DIFF-ID?'[paragraph break]You don't have anything identifying yourself. 'Oh, who? Go jog!' the voice continues. You think, hang? Nah." instead;
 	if Civic Level is unvisited, say "You step into what may be your final challenge in Yelpley..."
 
 book Civic Level
