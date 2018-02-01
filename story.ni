@@ -405,12 +405,12 @@ carry out pooping:
 
 chapter sleeping
 
+ever-slept is a truth state that varies.
+
 instead of sleeping:
-	if eels are in location of player:
-		say "You manage to calm the eels down. They go away.";
-		move eels to ZeroRez;
-		score-inc instead; [Grebeberg/sleep]
-	say "Sleeping is equivalent to waiting in this game...well, except for one place...";
+	if sleep eels are in location of player, say "You won't out-sleep the eels." instead;
+	if ever-slept is false, say "You don't need to sleep anywhere in the game, so, waiting instead. Which you also don't need to do.";
+	now ever-slept is true;
 	try waiting instead;
 
 chapter waiting
@@ -527,6 +527,7 @@ radar	made dam	eroded ore	--	--	true	true	false	Grebeberg	"You place the radar a
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 dork rod	tao boat	--	--	--	true	true	false	Grebeberg	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
 debt bed	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching and slurping, the debt bed is changed to a bunch of much smaller, but more comfortable looking, stock cots."
+stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!"
 spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
 troll ort	brag garb	--	--	--	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. It's now an entirely different smell from the Stink Knits, but a much more edible one. You guess."
@@ -804,8 +805,6 @@ instead of doing something with gnu dung:
 	if action is procedural, continue the action;
 	say "Eewee! (You probably want to deal with the gnu dung indirectly.)"
 
-the eels are people in Dumb Mud. "Some eels are blocking passage west."
-
 book Le Babel
 
 Le Babel is north of Dumb Mud. It is in Grebeberg.
@@ -829,14 +828,12 @@ Mont Nom is below Dumb Mud.
 
 book Ooze Zoo
 
-Ooze Zoo is south of Seer Trees. It is in Grebeberg. "[if etage gate is in Ooze Zoo]An etage gate blocks the way south--and probably will until you prove yourself worthy to get by. But you can still go back north[else]You can go north to the Seer Trees, or south to [s-dray][end if]."
+Ooze Zoo is south of Seer Trees. It is in Grebeberg. "[if sleep eels are in Ooze Zoo]Sleep eels block passage south, but you can still go back north[else]With the sleep eels gone, you can go north, or south to [s-dray][end if]."
+
+the sleep eels are plural-named people in Ooze Zoo. "Some eels are blocking passage west."
 
 to say s-dray:
 	say "[if Dray Yard is visited]Dray Yard[else]a yard[end if]"
-
-chapter etage gate
-
-the Etage Gate is scenery in Ooze Zoo.
 
 book Dray Yard
 
