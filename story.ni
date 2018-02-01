@@ -38,6 +38,14 @@ volume unsorted
 
 section stuff to move
 
+the state tats are a thing. description is "They say OMG MO[']."
+
+instead of doing something with state tats:
+	if action is procedural, continue the action;
+	say "You don't need to do anything to or with the state tats, now that you're wearing them.";
+
+stamp mats are a thing.
+
 Ye Key is a thing.
 
 the stink knits are a thing. "They don't smell very good. In a failed attempt at irony, they are lettered DAFT FAD."
@@ -843,6 +851,8 @@ Dray Yard is south of Ooze Zoo. It is in Grebeberg.
 
 Line Nil is in Dray Yard.
 
+slate metals are scenery in Dray Yard.
+
 book Moo Room
 
 Moo Room is east of Dray Yard. It is in Grebeberg.
@@ -897,19 +907,19 @@ The tenet is a thing. description is "It seems a bit too cliche."
 
 [?? take tenet/take bro orb = use sage gas on tenet/use tenet on bro orb]
 
-book Yack Cay
+book Swamp Maws
 
-Yack Cay is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west. You can go north or south here."
+Swamp Maws is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west. You can go north or south here."
 
-The Known Wonk is a person in Yack Cay. "The Known Wonk [one of]figures you'll have to do, even though you're not as interesting as a book[or]paces around, waiting for intellectual conversation[stopping]."
+The Known Wonk is a person in Swamp Maws. "The Known Wonk [one of]figures you'll have to do, even though you're not as interesting as a book[or]paces around, waiting for intellectual conversation[stopping]."
 
-check going north in Yack Cay when Known Wonk is in Yack Cay: say "The Known Wonk pushes you back. 'You don't know how weird it is to the north. But I know a thing or two about adventuring theory.'" instead;
+check going north in Swamp Maws when Known Wonk is in Swamp Maws: say "The Known Wonk pushes you back. 'You don't know how weird it is to the north. But I know a thing or two about adventuring theory.'" instead;
 
-The Edits Tide is scenery in Yack Cay. "A voice from the edits tide seems to say [if spa maps are off-stage]that you could use its proofreading skills[else]it has labored enough for you[end if]."
+The Edits Tide is scenery in Swamp Maws. "A voice from the edits tide seems to say [if spa maps are off-stage]that you could use its proofreading skills[else]it has labored enough for you[end if]."
 
 book Calcific Lac
 
-Calcific Lac is north of Yack Cay. It is in Grebeberg. "A Tao Boat rests at the edge of Calcific Lac."
+Calcific Lac is north of Swamp Maws. It is in Grebeberg. "A Tao Boat rests at the edge of Calcific Lac."
 
 The Tao Boat is scenery in Calcific Lac.
 
@@ -1354,7 +1364,7 @@ check going to Emo Dome:
 		now emo-dir is noun;
 
 check going north in Emo Dome:
-	say "The Civic Level is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by 'Oh, who? Go jog!' and think, hang? Nah." instead;
+	unless player does has state tats, say "The Civic Level is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a voice: 'DIFF-ID?'[paragraph break]You don't have anything identifying yourself. 'Oh, who? Go jog!' the voice continues. You think, hang? Nah." instead;
 	if Civic Level is unvisited, say "You step into what may be your final challenge in Yelpley..."
 
 book Civic Level
