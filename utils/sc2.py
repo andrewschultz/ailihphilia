@@ -234,8 +234,11 @@ while argval < len(sys.argv):
 
 
 def get_stuff_from_source():
+    in_use_table = False
     use_ons = False
     func_list = ''
+    need_true_score = False
+    truth_array = [ 'false', 'true' ]
     with open(main_source) as file:
         line_count = 0
         for line in file:
@@ -292,11 +295,16 @@ def get_stuff_from_source():
                 current_region = myreg.lower()
                 if myreg not in region_def_line.keys():
                     print("WARNING", ll, "defines start of invalid region.")
-            if line.startswith("table of useons") and 'continued' not in line:
-                use_ons = True
+            if line.startswith("table of useons"):
+                in_use_table = True
+                if 'continued' not in line:
+                    need_true_score = True
+                    use_ons = True
                 continue
-            elif use_ons and not line.strip():
+            elif in_use_table and not line.strip():
+                in_use_table = False
                 use_ons = False
+                need_true_score = False
                 continue
             if line.startswith('\t') and "reg-inc" in ll and "reg-inc reg-plus entry" not in ll:
                 l2 = re.sub(".*reg-inc ", "", ll.lower())
@@ -304,30 +312,34 @@ def get_stuff_from_source():
                 if l2 == 'mrlp':
                     continue
                 directed_incs[l2] = directed_incs[l2] + 1
-            if use_ons:
+            if in_use_table:
                 x = ll.split("\t")
-                if len(x) < 6: continue
-                if x[1] == 'reifier' or x[1] == 'reviver' or x[1] == 'rotator':
-                    machine_uses[x[1]] = machine_uses[x[1]] + 1
-                    machine_actions[x[1]] = machine_actions[x[1]] + "    {:s} -> {:s}\n".format(x[0], x[2])
-                if len(x) != 10:
-                    print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 10.")
-                if x[5] == 'true':
-                    cmd = "USE {:s} ON {:s}".format(x[0].upper(), x[1].upper())
-                    use_in_source[cmd] = line_count
-                    temp_region = ""
-                    if x[8] and x[8] != '--' and x[8] != 'reg-plus': # a bit hacky, but basically, check for entry 10 in useon table being a proper region
-                        temp_region = x[8].lower()
-                    if temp_region:
-                        directed_incs[temp_region] = directed_incs[temp_region] + 1
-                    else:
-                        if not temp_region:
-                            print("Blank temp region at line", line_count, "in use table.")
-                        elif temp_region not in region_def_line.keys():
-                            print(temp_region, "at line", line_count, " in use table not a valid region.")
-                        elif verbose:
-                            print(temp_region, "at line", line_count, " in use table given extra point.")
-                        undef_use_points = undef_use_points + 1
+                if x[5] != truth_array[need_true_score] and x[5] != "sco":
+                    print("WARNING: Line", line_count, "has wrong true/false for score. It is", x[5], "and should be", str(need_true_score).lower() + ".")
+                    warning_story_line = line_count
+                if use_ons:
+                    if len(x) < 6: continue
+                    if x[1] == 'reifier' or x[1] == 'reviver' or x[1] == 'rotator':
+                        machine_uses[x[1]] = machine_uses[x[1]] + 1
+                        machine_actions[x[1]] = machine_actions[x[1]] + "    {:s} -> {:s}\n".format(x[0], x[2])
+                    if len(x) != 10:
+                        print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 10.")
+                    if x[5] == 'true':
+                        cmd = "USE {:s} ON {:s}".format(x[0].upper(), x[1].upper())
+                        use_in_source[cmd] = line_count
+                        temp_region = ""
+                        if x[8] and x[8] != '--' and x[8] != 'reg-plus': # a bit hacky, but basically, check for entry 10 in useon table being a proper region
+                            temp_region = x[8].lower()
+                        if temp_region:
+                            directed_incs[temp_region] = directed_incs[temp_region] + 1
+                        else:
+                            if not temp_region:
+                                print("Blank temp region at line", line_count, "in use table.")
+                            elif temp_region not in region_def_line.keys():
+                                print(temp_region, "at line", line_count, " in use table not a valid region.")
+                            elif verbose:
+                                print(temp_region, "at line", line_count, " in use table given extra point.")
+                            undef_use_points = undef_use_points + 1
 
 get_stuff_from_source()
 
