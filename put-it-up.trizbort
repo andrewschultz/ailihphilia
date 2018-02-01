@@ -55,13 +55,13 @@ Initially sent to source code/repository November 2017.</history>
 			<dock index="1" id="8" port="wnw" />
 		</line>
 		<room id="19" name="Ooze Zoo" subtitle="" x="-544" y="-64" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Etage Gate</objects>
+			<objects>Sleep Eels</objects>
 		</room>
 		<room id="20" name="Moo Room" subtitle="" x="-384" y="64" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>a pup|a pupa|poo coop|Moo Doom</objects>
 		</room>
 		<room id="21" name="Ned's Den" subtitle="" x="96" y="-320" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>DENT NED|Puce Cup</objects>
+			<objects>DENT NED|Puce Cup|Etage Gate</objects>
 		</room>
 		<room id="22" name="Worn Row" subtitle="" x="-384" y="-64" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Can be changed to WORK or WORD row." roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>NAIL IAN|Reviver|Reifier|Rotator</objects>
@@ -88,7 +88,9 @@ Initially sent to source code/repository November 2017.</history>
 			<dock index="0" id="19" port="n" />
 			<dock index="1" id="2" port="s" />
 		</line>
-		<room id="28" name="Evaded Ave" subtitle="" x="-224" y="-448" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="28" name="Evaded Ave" subtitle="" x="-224" y="-448" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects>debt bed</objects>
+		</room>
 		<line id="34" name="" description="">
 			<dock index="0" id="28" port="e" />
 			<dock index="1" id="5" port="w" />
@@ -193,7 +195,7 @@ Initially sent to source code/repository November 2017.</history>
 			<dock index="0" id="20" port="w" />
 			<dock index="1" id="56" port="e" />
 		</line>
-		<line id="63" name="" description="">
+		<line id="63" name="" description="" style="dashed">
 			<dock index="0" id="56" port="n" />
 			<dock index="1" id="19" port="s" />
 		</line>
