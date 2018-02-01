@@ -38,19 +38,7 @@ volume unsorted
 
 section stuff to move
 
-the debt bed is a thing.
-
-the stock cots are a plural-named thing.
-
 Ye Key is a thing.
-
-the radar is a thing.
-
-the gold log is a thing.
-
-to win-finally:
-	say "You head off to saner arenas for a while, just to reflect on all you did.";
-	end the story finally saying "Deified! Deified!"
 
 the stink knits are a thing. "They don't smell very good. In a failed attempt at irony, they are lettered DAFT FAD."
 
@@ -324,12 +312,12 @@ check going (this is the new generic going reject rule):
 
 to say up-down-check:
 	let xud be 0;
-	unless the room above location of player is nowhere, increment xud;
-	unless the room below location of player is nowhere, increment xud;
+	unless the room up from location of player is nowhere, increment xud;
+	unless the room down from location of player is nowhere, increment xud;
 	say "(";
-	unless the room above the location of player is nowhere, say "up=[othdir of up]";
-	if xud is 2, say ", "
-	unless the room below the location of player is nowhere, say "up=[othdir of down]";
+	unless the room up from the location of player is nowhere, say "up=[othdir of up]";
+	if xud is 2, say ", ";
+	unless the room down from the location of player is nowhere, say "up=[othdir of down]";
 	say ")"
 
 to decide which direction is othdir of (d - a direction):
@@ -537,7 +525,7 @@ Eroded Ore	reviver	Ore Zero	--	--	true	true	true	Yelpley	"The reviver whirs as y
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
 puce cup	dose sod	--	--	--	true	false	true	Grebeberg	"You funnel the dose sod into the puce cup, which you close. That way, the dose sod will stay fresh."
 puce cup	marge pegram	gate tag	sod-in-cup rule	--	true	true	true	Yelpley	"You give marge the puce cup. She drinks the dose sod and immediately feels better. 'Well... I have a lot of catching up to do. Can't hang around. Here's a gate tag for you.'"
-spa maps	Code Doc	--	--	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
+spa maps	Code Doc	--	maps-explained-yet rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 Ye Key	etage gate	--	ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again."
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
@@ -545,20 +533,14 @@ Bro Orb	Madam Sniffins	Yard Ray	--	--	true	true	true	Yelpley	"The Bro Orb shines
 murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 
-this is the ned-gone rule:
-	if ned is in Ned's Den:
-		say "Good idea, but not with Ned around.";
-		the rule fails;
-	the rule succeeds;
+section pre-use rules
+
+[please add alphabetically]
 
 this is the in-mont-nom rule:
 	if location of player is Mont Nom, the rule succeeds;
 	say "Eww! Maybe if you were somewhere more magical with food, it would work.";
 	the rule fails;
-
-this is the wear-garb rule:
-	now player wears the brag garb;
-	the rule succeeds;
 
 this is the maps-explained-yet rule:
 	if maps-explained is true:
@@ -572,18 +554,38 @@ this is the maps-readable rule:
 		the rule fails;
 	the rule succeeds;
 
+this is the ned-gone rule:
+	if ned is in Ned's Den:
+		say "Good idea, but not with Ned around.";
+		the rule fails;
+	the rule succeeds;
+
+this is the sod-in-cup rule:
+	if dose sod is in ZeroRez, the rule succeeds;
+	the rule fails;
+
+section post-use rules
+
+[please add alphabetically]
+
 this is the maps-explain rule:
 	now maps-explained is true;
 	the rule succeeds;
 
+this is the wear-garb rule:
+	now player wears the brag garb;
+	the rule succeeds;
+
 this is the you-win rule:
+	say "You head off to saner arenas for a while, just to reflect on all you did.";
+	the rule succeeds;
 
 chapter failed useons
 
 table of useons (continued)
 use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
-yard ray	Tru Hurt	--	--	--	true	true	true	--	"The yard ray bounces harmlessly off the Tru Hurt. Maybe it needs to be used nonviolently."
-yard ray	Diktat Kid	--	--	--	true	true	true	--	"The yard ray bounces harmlessly off the Diktat Kid. Maybe it needs to be used nonviolently."
+yard ray	Tru Hurt	--	--	--	false	true	true	--	"The yard ray bounces harmlessly off the Tru Hurt. Maybe it needs to be used nonviolently."
+yard ray	Diktat Kid	--	--	--	false	true	true	--	"The yard ray bounces harmlessly off the Diktat Kid. Maybe it needs to be used nonviolently."
 
 volume rooms
 
@@ -845,6 +847,8 @@ book Moo Room
 
 Moo Room is east of Dray Yard. It is in Grebeberg.
 
+the poo coop is in Moo Room. "A poo coop sits here. Thankfully, it looks empty.". description is "While it's 1/4 too small to be a pooch coop, it's 1) empty and 2) somehow bigger on the inside than the outside. Maybe it can clean up a dirty area. Well, a less dirty area than the Moo Room where you found it."
+
 book Mire Rim
 
 Mire Rim is west of Dumb Mud. It is in Grebeberg. "A made dam blocks your way west. You can go north, south and east here."
@@ -865,7 +869,7 @@ Spa Maps are a plural-named proper-named thing. description is "[if sage gas is 
 
 check examining spa maps:
 	if player is not in Apse Spa, say "It doesn't look like the maps are useful here." instead;
-	try useoning spa maps on go-by bog instead;
+	try useoning spa maps with go-by bog instead;
 
 maps-explained is a truth state that varies.
 
@@ -994,9 +998,9 @@ the reviver is a workable. useleft is 2.
 the rotator is a workable. useleft is 2.
 
 to wear-down (w - a workable):
-	decrement use-left of w;
-	if use-left of w is 0, say "You watch as [the w] sputters and dies. Well, you got a lot of good use out of it, and hopefully you won't need any more.";
-	if use-left of w is 1, say "[the w] wheezes emphatically. Hopefully, you won't need to use it too much more.";
+	decrement useleft of w;
+	if useleft of w is 0, say "You watch as [the w] sputters and dies. Well, you got a lot of good use out of it, and hopefully you won't need any more.";
+	if useleft of w is 1, say "[the w] wheezes emphatically. Hopefully, you won't need to use it too much more.";
 
 instead of inserting into:
 	if second noun is a workable, try useoning noun with second noun instead;
@@ -1053,6 +1057,8 @@ GIGOLO GIG is a proper-named book.
 FOREVER OF is a proper-named book.
 NULL ILLUN is a proper-named book.
 ERA FARE is a proper-named book.
+
+books-carried-yet is a truth state that varies.
 
 check taking a book:
 	if books-carried-yet is false:
@@ -1170,9 +1176,9 @@ the etage gate is scenery in Ned's Den. "It is locked and too strong to move."
 
 instead of opening etage gate, try going north;
 
-instead of unlocking etage gate:
+[instead of unlocking etage gate:
 	if player has Ye Key, try useoning Ye Key on etage gate;
-	try going north;
+	try going north;]
 
 check going north in Ned's Den: if etage gate is in Ned's Den, say "The etage gate blocks you."
 
@@ -1257,7 +1263,9 @@ book Evaded Ave
 
 Evaded Ave is north of Art Xtra. It is in Yelpley.
 
-the poo coop is in Evaded Ave. "A poo coop sits here. Thankfully, it looks empty.". description is "Looking at it, it's 1) empty and 2) somehow bigger on the inside than the outside. Maybe it can clean up a dirty area."
+the debt bed is a thing in Evaded Ave.
+
+the stock cots are a plural-named thing.
 
 book Trapeze Part
 
@@ -1396,7 +1404,7 @@ book Drawl Ward
 
 Drawl Ward is south of Swept Pews. It is in Yelpley.
 
-Marge Pegram is a person in Drawl Ward. "'Hi! I'm Marge Pegram."
+Marge Pegram is a person in Drawl Ward. "[one of]'Hi! I'm Marge Pegram. I ain't feeling so good, but I wondered if maybe I could get some medicine.'[or]Marge Pegram continues to moan colloquially about how sick she is.[stopping]"
 
 book Scrap Arcs
 
@@ -1408,13 +1416,23 @@ book Dope Pod
 
 Dope Pod is west of Drawl Ward. It is in Yelpley.
 
-The radar is in Dope Pod.
+the radar is a thing in Dope Pod.
 
-book Ball Lab
+book Pro Corp
 
-Ball Lab is north of Ned's Den. It is in Yelpley.
+Pro Corp is north of Ned's Den. It is in Yelpley.
 
-Ball Lab is above Ned's Den.
+Pro Corp is above Ned's Den.
+
+chapter gold log
+
+the gold log is a thing in Pro Corp.
+
+chapter dna band and hand
+
+The DNA band is a thing in Pro Corp.
+
+The DNA hand is a thing.
 
 volume gotoing
 
