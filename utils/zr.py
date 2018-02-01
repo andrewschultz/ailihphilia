@@ -22,7 +22,6 @@ if not os.path.exists("story.ni"):
         print("No story.ni and no default directory path.")
         exit()
 
-fout = open("story.ni2", "w", newline='\n') # STORY.NI files have unix line endings
 difs = 0
 line_count = 0
 cap_search = defaultdict(bool)
@@ -50,7 +49,9 @@ while count < len(sys.argv):
     count = count + 1
 
 if not os.path.exists("zr.txt"):
-    print("You need a zr.txt in ", os.getcwd())
+    print("You need a zr.txt in ", os.getcwd(), "or you need to change the project.")
+
+fout = open("story.ni2", "w", newline='\n') # STORY.NI files have unix line endings
 
 with open("zr.txt") as file:
     for line in file:

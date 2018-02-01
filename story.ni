@@ -28,7 +28,7 @@ Grebeberg is a region. max-score of Grebeberg is 15.
 
 Dim Mid is a region. max-score of Dim Mid is 6.
 
-Yelpley is a region. max-score of Yelpley is 19.
+Yelpley is a region. max-score of Yelpley is 20.
 
 Odd Do is a region. max-score of Odd Do is 3.
 
@@ -316,7 +316,23 @@ the new generic going reject rule is listed before the can't go that way rule in
 check going (this is the new generic going reject rule):
 	if noun is outside and number of viable directions is 1, try going a random viable direction instead;
 	if noun is inside, say "You don't ever need to use IN in the game. Just the four cardinal directions." instead;
-	unless noun is viable, say "You can only go [list of viable directions] here." instead;
+	if the room noun of location of player is nowhere, say "You can only go [list of viable directions] here[up-down-check]." instead;
+
+to say up-down-check:
+	let xud be 0;
+	unless the room above location of player is nowhere, increment xud;
+	unless the room below location of player is nowhere, increment xud;
+	say "(";
+	unless the room above the location of player is nowhere, say "up=[othdir of up]";
+	if xud is 2, say ", "
+	unless the room below the location of player is nowhere, say "up=[othdir of down]";
+	say ")"
+
+to decide which direction is othdir of (d - a direction):
+	repeat with Q running through { north, west, south, east }:
+		if the room Q of location of player is the room D of location of player, decide on Q;
+	say "(bug)";
+	decide on D;
 
 definition: a direction (called d) is viable:
 	let lp be location of player;
@@ -506,6 +522,7 @@ poo coop	gnu dung	--	--	--	true	true	true	Grebeberg	"The gnu dung is sucked towa
 radar	made dam	eroded ore	--	--	true	true	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow."
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 dork rod	tao boat	--	--	--	true	true	false	Grebeberg	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
+debt bed	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching and slurping, the debt bed is changed to a bunch of much smaller, but more comfortable looking, stock cots."
 spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
 troll ort	brag garb	--	--	--	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. It's now an entirely different smell from the Stink Knits, but a much more edible one. You guess."
@@ -972,7 +989,7 @@ chapter workables
 a workable is a kind of thing. a workable has a number called useleft.
 
 the reifier is a workable. useleft is 1.
-the reviver is a workable. useleft is 1.
+the reviver is a workable. useleft is 2.
 the rotator is a workable. useleft is 2.
 
 to wear-down (w - a workable):

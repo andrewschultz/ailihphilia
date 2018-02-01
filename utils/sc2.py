@@ -22,10 +22,12 @@ main_dir = "c:/games/inform/put-it-up.inform/source"
 main_source = main_dir + "/story.ni"
 main_thru = main_dir + "/walkthrough.txt"
 triz_flow = "c:/games/inform/triz/mine/put-it-up-flow.trizbort"
+invis_raw = "c:/writing/scripts/invis/pu.txt"
 
-line_to_open = 0
+source_line_to_open = 0
 warning_story_line = 0
 warning_walkthrough_line = 0
+invis_line_to_open = 0
 
 undef_use_points = 0
 
@@ -38,6 +40,7 @@ totals = defaultdict(int)
 in_source = defaultdict(int)
 machine_uses = defaultdict(int)
 machine_uses_in_source = defaultdict(int)
+machine_def = defaultdict(int)
 machine_actions = defaultdict(str)
 
 use_in_source = defaultdict(int)
@@ -75,7 +78,7 @@ def source_vs_invisiclues():
     in_summary = False
     in_odd = False
     this_line = 0
-    with open("c:/writing/scripts/invis/pu.txt") as file:
+    with open(invis_raw) as file:
         for line in file:
             this_line = this_line + 1
             if 'total points in' in line:
@@ -246,6 +249,7 @@ def get_stuff_from_source():
                 muses = re.sub(".* is ", "", ll)
                 muses = re.sub("\..*", "", muses)
                 machine_uses_in_source[mname] = int(muses)
+                machine_def[mname] = line_count
             if ll.startswith("volume"):
                 current_region = "None"
             if 'is a region. max-score' in line:
@@ -343,15 +347,19 @@ print("List of points by region:")
 for x in totals.keys():
     if totals[x] != in_source[x]:
         print("ERROR: region", x, "has", totals[x], "but source lists", in_source[x])
-        line_to_open = region_def_line[x]
+        source_line_to_open = region_def_line[x]
+        if source_line_to_open:
+            print("NOTE: this supersedes opening line", source_line_to_open)
     if in_source[x] != invis_points[x]:
         print("ERROR: region", x, "has", in_source[x], "in source, but invisiclues list", invis_points[x])
-
     print(x, totals[x])
 
 for x in sorted(machine_uses.keys()):
     if machine_uses[x] != machine_uses_in_source[x]:
         print("Machine", x, "has", machine_uses[x], "uses in table but", machine_uses_in_source[x], "uses listed in the source.")
+        if source_line_to_open:
+            print("NOTE: this supersedes opening line", source_line_to_open)
+        source_line_to_open = machine_def[x]
 
 if semi_verbose:
     for x in sorted(machine_uses.keys()):
@@ -374,11 +382,14 @@ if show_hash:
     for x in sorted(use_in_invisiclues.keys()):
         print(x, use_in_invisiclues[x])
 
-if line_to_open:
-    i7.npo("story.ni", line_to_open, True)
+if source_line_to_open:
+    i7.npo(main_source, source_line_to_open, True)
 elif warning_story_line:
-    i7.npo("story.ni", warning_story_line, True)
+    i7.npo(main_source, warning_story_line, True)
+
+if invisiclues_line_open:
+    i7.npo(invis_raw)
 if warning_walkthrough_line:
-    i7.npo("walkthrough.txt", warning_walkthrough_line, True)
+    i7.npo(main_thru, warning_walkthrough_line, True)
 
 print("Total =", t2)
