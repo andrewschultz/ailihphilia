@@ -49,6 +49,7 @@ use_in_invisiclues_summary = defaultdict(int)
 use_in_walkthrough = defaultdict(int)
 use_in_trizflow = defaultdict(int)
 invis_points = defaultdict(int)
+invis_region_points = defaultdict(int)
 
 def usage():
     print("-v for verbose")
@@ -92,6 +93,7 @@ def source_vs_invisiclues():
                 except:
                     print("Non integer points", pts, "getting region points from line", this_line, ":", line.strip())
                     exit()
+                invis_region_points[ll] = this_line
             if line.strip() == '#summary below':
                 in_summary = True
                 continue
@@ -352,6 +354,9 @@ for x in totals.keys():
             print("NOTE: this supersedes opening line", source_line_to_open)
     if in_source[x] != invis_points[x]:
         print("ERROR: region", x, "has", in_source[x], "in source, but invisiclues list", invis_points[x])
+        if invis_line_to_open:
+            print("NOTE: this supersedes opening line", invis_line_to_open)
+        invis_line_to_open = invis_region_points[x]
     print(x, totals[x])
 
 for x in sorted(machine_uses.keys()):
@@ -387,9 +392,9 @@ if source_line_to_open:
 elif warning_story_line:
     i7.npo(main_source, warning_story_line, True)
 
-if invisiclues_line_open:
-    i7.npo(invis_raw)
+print("Total =", t2)
+
+if invis_line_to_open:
+    i7.npo(invis_raw, invis_line_to_open, True)
 if warning_walkthrough_line:
     i7.npo(main_thru, warning_walkthrough_line, True)
-
-print("Total =", t2)

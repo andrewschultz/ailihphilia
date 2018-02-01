@@ -38,6 +38,10 @@ volume unsorted
 
 section stuff to move
 
+the debt bed is a thing.
+
+the stock cots are a plural-named thing.
+
 Ye Key is a thing.
 
 the radar is a thing.
