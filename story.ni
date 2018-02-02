@@ -452,6 +452,12 @@ to build-the-tron:
 
 check useoning it with:
 	if noun is second noun, say "It's not productive to use something on itself, even with this game being full of palindromes." instead;
+	if noun is a workable and second noun is a workable, say "The machines are fixed in place. You can't use one on the other." instead;
+	if noun is a workable, try useoning second noun with noun instead;
+	if noun is a workable or second noun is a workable:
+		if wr-short-note is false:
+			say "(NOTE: You can abbreviate this command with ROT, REI and REV for the respective machines, later.)[paragraph break]";
+			now wr-short-note is true;
 	repeat through table of cantuse:
 		if noun is use1 entry or second noun is use1 entry, say "[babble entry][line break]" instead;
 	if noun is a person, say "[one of]You're not any good at using other people. In fact, if you tried, they'd wind up using YOU. Plus you don't want to be, really. There's another way. So, no[or]Using people is out[stopping]. Maybe you could use something on a person, though." instead;
@@ -464,10 +470,6 @@ check useoning it with:
 				if the player no-consents, say "OK, but protip: that's where you need to assemble things." instead;
 				move player to Fun 'Nuf, without printing a room description;
 			build-the-tron instead;
-	if noun is a workable or second noun is a workable:
-		if wr-short-note is false:
-			say "(NOTE: You can abbreviate this command with ROT, REI and REV for the respective machines, later.)[paragraph break]";
-			now wr-short-note is true;
 	repeat through table of useons:
 		if there is a use1 entry and noun is use1 entry:
 			if there is a use2 entry and second noun is use2 entry:
@@ -513,11 +515,24 @@ check useoning it with:
 		if noun is use1 entry, say "[babble entry][line break]" instead;
 	repeat through table of usemaybes:
 		if second noun is use1 entry, say "[babble entry][line break]" instead;]
+	if second noun is a workable, abide by the machine message rules for the noun;
+	repeat through table of cantuse:
+		if noun is use1 entry, say "[babble entry]" instead;
 	say "You think of ways to do that productively, but nothing comes up." instead;
+
+The machine message rules are an object-based rulebook.
+
+a machine message rule for a thing (called t):
+	repeat through table of useons:
+		if t is use1 entry and use2 entry is a workable, say "Nothing happens, but you feel you must be close, here." instead;
+	say "Nothing happens at all. Maybe [the t] needs to be used more actively." instead;
 
 table of cantuse
 use1	babble
 Dave	"Dave's not useful, man."
+Ian	"Ian's worse than useless. You need to use your wit on him."
+Curt	"Curt's not going to be obliging. You have to get rid of him, somehow."
+Pact Cap	"Your pact cap is fine where it is, on your head."
 
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
 table of useons [xxuse]
@@ -547,7 +562,7 @@ spa maps	Code Doc	--	maps-explained-yet rule	maps-explain rule	true	false	false	
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 Ye Key	etage gate	--	ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again."
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
-Exam Axe	Lie Veil	--	--	--	true	true	rue	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, both swirl together to form a glowing vapor that quickly vanishes."
+Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, both swirl together to form a glowing vapor that quickly vanishes."
 Bro Orb	Madam Sniffins	Yard Ray	--	--	true	true	true	Yelpley	"The Bro Orb shines and drives Madam Sniffins to rage. She runs away, sobbing. The Yard Ray is left unguarded. You take it."
 murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
@@ -808,9 +823,9 @@ The scorn rocs are scenery in Flu Gulf. "While they're motionless, their stare d
 book Top Spot
 
 every turn when player is in Top Spot:
-	if a random chance of 1 in 3 occurs, say "The Yuge Guy mumbles 'Soros! Soros!'";
+	if a random chance of 1 in 3 succeeds, say "The Yuge Guy mumbles 'Soros! Soros!'";
 
-Top Spot is west of Flu Gulf. It is in Grebeberg. "This place has obviously not gone to pot."
+Top Spot is west of Flu Gulf. It is in Grebeberg. "Despite the impressive view, this place still feels like it's gone to pot."
 
 Top Spot is above Flu Gulf.
 
@@ -823,6 +838,8 @@ Yuge Guy is a proper-named person in Top Spot. understand "king/nik" and "king n
 book Dumb Mud
 
 Dumb Mud is west of Seer Trees. It is in Grebeberg.
+
+The lie veil is scenery in Dumb Mud. "It looks untrustworthy."
 
 the gnu dung is in Dumb Mud. "Gnu dung blocks exit south from the Dumb Mud.". description is "You're not an expert in this sort of biology, but given what you've seen so far, it's probably from a gnu."
 
@@ -1426,7 +1443,7 @@ book Swept Pews
 
 Swept Pews is south of Emo Dome. It is in Yelpley.
 
-The Liar Grail is a thing in Swept Pews. description is "It's carved with 'LIAR TRAIL? NOT ON!' You don't know if this means
+The Liar Grail is a thing in Swept Pews. description is "It's carved with 'LIAR TRAIL? NOT ON!' You don't know if this means there is a liar trail and you can't get there, or there isn't one. Either way, it annoys you enough to want to get rid of the liar grail."
 
 check taking liar grail: say "A small voice cries 'Da cad! Da cad!' You probably don't want the liar grail corrupting you." instead;
 
@@ -1753,3 +1770,7 @@ the debug tweaks rule is listed first in the when play begins rulebook.
 when play begins (this is the debug tweaks rule):
 	now ignore-wait is true;
 	now debug-state is true;
+
+[comment out if/when memory is tight]
+
+include Put It Up Tests by Andrew Schultz.
