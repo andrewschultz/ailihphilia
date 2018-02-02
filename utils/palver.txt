@@ -1,3 +1,7 @@
+# palver.txt
+#
+# data file for palver.py
+#
 # ignore-starts
 s:[
 s:understand
@@ -17,6 +21,7 @@ s:check
 s:instead
 s:before
 s:after
+s:the description of a room is usually
 # ignore-includes
 i:rule:
 i:is an activity

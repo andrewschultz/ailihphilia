@@ -91,6 +91,10 @@ You now have access to a few more rooms.
 
 ==========================================below is the Yuge Guy quest
 
+The Known Wonk won't let me pass. What to do?
+
+(+1) > USE NULL ILLUN ON KNOWN WONK
+
 (+1) >USE DORK ROD ON TAO BOAT
 
 Now that you've been in the Tao Boat, you feel confident enough to pick up the Rep Popper.
@@ -147,6 +151,14 @@ Bye bye, Ergot Ogre!
 
 (+1) >USE BRO ORB ON MADAM SNIFFINS
 
+==========================================
+
+How to get past the eels?
+
+(+1) >USE DEBT BED ON REVIVER
+>E.N.W.W.S
+(+1) >USE STOCK COTS ON SLEEP EELS
+
 ==========================================below is stuff that's near the end
 
 Now that you have all the ingredients for the North-Tron, you need to activate them. You don't have to use a lot of commands to build it. Any ingredient on another will work. Thus,
@@ -194,6 +206,8 @@ How do you feel peaceful enough to not be disrupted by your enemies?
 (+1) > USE RADAR ON MADE DAM
 
 (+1) > USE YE KEY ON ETAGE GATE
+
+(+1) > USE TO IDIOT ON REVOLT LOVER
 
 (+1) > TRUCK CURT
 (+1) > STAND NAT'S

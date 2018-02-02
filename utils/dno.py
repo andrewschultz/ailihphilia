@@ -27,6 +27,10 @@ verbose = False
 last_lines_first = True
 bowdlerize_notes = False
 bowdlerize_test = False
+read_colons = False
+colons_max = 0
+
+colon_string = ""
 
 def modify_notes(s):
     lines_changed = 0
@@ -67,6 +71,7 @@ def usage():
     print("-f = open first repetition, -fn/-nf = open last.")
     print("-o = print first lines first (last lines first lets you follow line numbers for deletion more easily).")
     print("-b = bowdlerize duplicates in notes. -bt only copies to notes2.txt, for testing purposes.")
+    print("-c = show lines with colons in them, which are likely to be good ideas to work on. On which to work. (-co)")
     print("-?/-u = this usage statement")
     exit()
 
@@ -84,11 +89,13 @@ def pally(s):
     return True
 
 def check_notes(s):
+    global colon_string
     open_line = 0
     pal_count = 0
     line_count = 0
     dupes = 0
     xtranote = 0
+    colons = 0
     notes_file_to_read = "c:/games/inform/{:s}.inform/source/notes.txt".format(s)
     source_files = [ "c:/games/inform/{:s}.inform/source/story.ni".format(s),
       "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/{:s} tables.i7x".format(re.sub("-", " ", s)) ]
@@ -100,6 +107,13 @@ def check_notes(s):
         for line in file:
             line_count = line_count + 1
             ll = line.strip()
+            if ":" in ll and read_colons:
+                colons = colons + 1
+                if read_colons:
+                    if colons_max == 0 or colons <= colons_max:
+                        colon_string = colon_string + str(colons) + ": " + line
+                    elif colons_max and colons == colons_max + 1:
+                        colon_string = colon_string + "(increase colons_max to see more...)"
             if pally(ll):
                 l2 = re.sub("[:=].*", "", line.strip().lower(), 0, re.IGNORECASE)
                 l2 = re.sub("[^a-z \/]", "", l2, 0, re.IGNORECASE)
@@ -215,6 +229,10 @@ while count < len(sys.argv):
     elif l == 'bt':
         bowdlerize_notes = True
         bowdlerize_test = True
+    elif re.search("^(c|co)[0-9]*$", l):
+        read_colons = True
+        if re.search("[0-9]", l):
+            colons_max = int(re.sub("^(co|c)", "", l))
     elif l == '?' or l == 'u':
         usage()
     else:
@@ -224,3 +242,5 @@ while count < len(sys.argv):
 
 check_notes("put-it-up")
 
+if colon_string:
+    print(colon_string)
