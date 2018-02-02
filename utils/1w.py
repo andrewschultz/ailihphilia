@@ -47,11 +47,14 @@ def usage():
     print("Any word sent in is scoured for palindromes. CSV or space.")
     print("-c checks possible palindromes for longer sentences. -nc forces it off. Default is", ["off", "on"][check_possible])
     print("(Capital) V means try all vowels e.g. bVg = big bag bog bug beg byg")
+    print("(Capital) C means try all consonants e.g. bVg = big bag bog bug beg byg")
     print("-i uses stdin.")
+    print("-m adjusts the maximum possible palindromes we check for.")
     print("-? shows this usage without telling you you wrote in a bad flag")
     print()
     print("PROTIP: sending several words on the command line at once can save time.")
     print("  That way, the program doesn't need to load the master word list.")
+    print("SAMPLE USAGE: 1w.py breC -nc / 1w.py fVt -m 40")
     exit()
 
 def palz(pals):
@@ -174,6 +177,10 @@ while argcount < len(sys.argv) - 1:
         if "V" in y:
             for z in ['a','e','i','o','u', 'y']:
                 temp = re.sub("V", z, y)
+                pals.append(temp)
+        elif 'C' in y:
+            for z in ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']:
+                temp = re.sub("C", z, y)
                 pals.append(temp)
         else:
             pals.append(y)
