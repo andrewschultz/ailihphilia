@@ -1,7 +1,6 @@
 # coordinate this with the source for the points list
 #
-# todo: redefine sc2.py so that [region/command] is after sco-inc or reg-inc so we can match up with what is below.
-# also todo: make sure commands are in upper case in walkthrough.
+# todo: track # of +1 points in the summary vs # listed for sc2.py
 out=put-it-up-invisiclues.htm
 !Put It Up HTML Clues
 ->c:/games/inform/put-it-up Materials/Release
@@ -101,11 +100,18 @@ USE DEMO MED ON GULF LUG.
 ?Why can't I go west?
 You need a protection against the Yuge Guy's orange-ish radiation.
 Did you get the Nat's Tan in Bon Snob?
-It's icky to put on.
-You need to STAND NAT'S.
+It's icky to even handle, without using.
+You need to feel mentally prepared to take it.
+STAND NAT'S.
 >>OOZE ZOO
-?What can I do here?
-Not much.
+?How do I get rid of the sleep eels?
+They are blocking you but don't seem comfortable.
+Maybe you can find a nicer place for them to sleep.
+Or something nicer to sleep on.
+The Debt Bed doesn't quite work.
+But you can turn it into something nicer.
+USE DEBT BED ON REVIVER.
+USE STOCK COTS ON SLEEP EELS.
 >>DRAY YARD
 ?What do I do with the yak?
 It's a bit complicated.
@@ -155,7 +161,9 @@ The sage gas.
 USE SAGE GAS ON GURU RUG.
 >>YACK CAY
 ?How do I get past the Known Wonk?
-USE TO IDIOT ON KNOWN WONK.
+The Known Wonk seems to know a lot, but that doesn't contribute to happiness.
+Maybe a book could help.
+USE NULL ILLUN ON KNOWN WONK.
 What is the Edits Tide good for?
 USE EL DOODLE ON EDITS TIDE.
 >>CALCIFIC LAC
@@ -175,7 +183,11 @@ You need the Spur Ups from the Cold Loc.
 ?What do I need to do to get the Art Xtra?
 Nothing. Just take it. It's useful elsewhere.
 >>EVADED AVE
-?What to do here?
+?Why won't the revolt lover let me go west or east?
+The revolt lover is a bit of a jerk.
+Maybe if you gave them a gift, they'd be happy.
+A revolting book, maybe?
+USE TO IDIOT ON REVOLT LOVER.
 Fill in later.
 >>YELL ALLEY
 ?What to do here?
@@ -292,40 +304,42 @@ There are 20 total points in Yelpley.
 1 point for WORD ROW.
 1 point if you USE TRAP ART ON REIFIER.
 1 point if you USE GOLD LOG ON ROTATOR.
+1 point if you USE DEBT BED ON REVIVER.
 1 point if you USE PUCE CUP ON MARGE PEGRAM.
 1 point if you USE YE KEY ON ETAGE GATE.
+1 point if you USE TO IDIOT ON REVOLT LOVER.
 1 point if you PULL UP in the Emo Dome.
 1 point if you TAMP MAT in Swept Pews.
 1 point if you STAND NAT'S.
 ?How do I get all the points for Grebeberg?
-There are 15 total points in Grebeberg.
+There are 16 total points in Grebeberg.
 1 point if you USE PUCE CUP ON DOSE SOD.
 1 point if you USE PARTY TRAP ON START RATS.
 1 point if you USE POO COOP ON GNU DUNG.
 1 point if you USE RADAR ON MADE DAM.
 1 point if you TRUCK CURT.
 1 point if you USE SPA MAPS ON GO-BY BOG.
+1 point if you USE NULL ILLUN ON KNOWN WONK.
 1 point if you USE DORK ROD ON TAO BOAT.
 1 point if you USE TROLL ORT ON BRAG GARB. (note: this can be done outside of Grebeberg, but it's part of a Grebeberg puzzle.)
-1 point if you SLEEP around the eels.
+1 point if you USE STOCK COTS ON SLEEP EELS.
+1 point if you USE REP POPPER ON YUGE GUY.
 ?How do I get all the Odd Do points?
 There are 3 total points in Odd Do.
 1 point if you say POOP. Or BOOB.
 1 point if you REFER instead of THINK.
 1 point if you DIAL AID instead of AID.
 ?What is unsorted?
-1 point if you USE DEMO MED ON GULF LUG
-1 point if you USE SPA MAPS ON CODE DOC
-1 point if you USE REP POPPER ON YUGE GUY
-1 point if you USE CASH SAC ON CROSS ORC
-1 point if you USE EL DOODLE ON EDITS TIDE
-1 point if you USE STINK KNITS ON ROTATOR
-1 point if you USE TO IDIOT ON KNOWN WONK
-1 point if you USE SAGE GAS ON GURU RUG
-1 point if you USE UFO TOFU ON MAYO YAM
-1 point if you USE ELAN ALE ON IRA BARI
-1 point if you USE ERODED ORE ON REVIVER
-1 point if you USE BRO ORB ON MADAM SNIFFINS
+1 point if you USE DEMO MED ON GULF LUG.
+1 point if you USE SPA MAPS ON CODE DOC.
+1 point if you USE CASH SAC ON CROSS ORC.
+1 point if you USE EL DOODLE ON EDITS TIDE.
+1 point if you USE STINK KNITS ON ROTATOR.
+1 point if you USE SAGE GAS ON GURU RUG.
+1 point if you USE UFO TOFU ON MAYO YAM.
+1 point if you USE ELAN ALE ON IRA BARI.
+1 point if you USE ERODED ORE ON REVIVER.
+1 point if you USE BRO ORB ON MADAM SNIFFINS.
 ;
 ?How do I go west?
 You'll need something to protect you from the Flu Gulf.

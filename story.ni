@@ -26,7 +26,7 @@ chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
 
-Grebeberg is a region. max-score of Grebeberg is 15.
+Grebeberg is a region. max-score of Grebeberg is 16.
 
 Dim Mid is a region. max-score of Dim Mid is 6.
 
@@ -518,7 +518,8 @@ use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
 trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
 party trap	start rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
 demo med	gulf lug	cash sac	--	--	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' he looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
-TO IDIOT	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins to read and starts chucking. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Known Wonk runs away."
+TO IDIOT	Revolt Lover	--	--	--	true	true	true	Grebeberg	"The Revolt Lover begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Known Wonk runs away."
+NULL ILLUN	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me.' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. And if it's simple, well, I need to know when simple stuff works.' The Known Wonk apologizes--it's back to a Tru Yurt for a thought session."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes to look for ... well, something else."
 poo coop	gnu dung	--	--	--	true	true	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
 radar	made dam	eroded ore	--	--	true	true	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow."
@@ -534,7 +535,7 @@ UFO Tofu	Mayo Yam	Mush Sum	in-mont-nom rule	--	true	true	true	Grebeberg	"The UFO
 Eroded Ore	reviver	Ore Zero	--	--	true	true	true	Yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
 puce cup	dose sod	--	--	--	true	false	true	Grebeberg	"You funnel the dose sod into the puce cup, which you close. That way, the dose sod will stay fresh."
-puce cup	marge pegram	gate tag	sod-in-cup rule	--	true	true	true	Yelpley	"You give marge the puce cup. She drinks the dose sod and immediately feels better. 'Well... I have a lot of catching up to do. Can't hang around. Here's a gate tag for you.'"
+puce cup	marge pegram	Elan Ale	sod-in-cup rule	--	true	true	true	Yelpley	"You give marge the puce cup. She drinks the dose sod and immediately feels better. 'Well... I have a lot of catching up to do. Can't hang around. Here's some Elan Ale for you, to celebrate how cool you are for helping.'"
 spa maps	Code Doc	--	maps-explained-yet rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 Ye Key	etage gate	--	ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again."
@@ -758,7 +759,7 @@ carry out emiting:
 	if player is in location of Yuge Guy, say "No...the Yuge Guy needs to be defeated by other means." instead;
 	if Diktat Kid is in ZeroRez, say "You already got rid of the Diktat Kid." instead;
 	if the topic understood matches "noontime":
-		say "BOOM! The yard ray emits too much light for the Diktat Kid to bear. The Kid runs off, but not before dropping some X-Ite Tix, which you take.";
+		say "BOOM! The yard ray emits too much light for the Diktat Kid to bear. 'Liven evil!' the Kid booms, but it's not enough. The Kid runs off, but not before dropping some X-Ite Tix, which you take.";
 		now player has X-Ite Tix;
 		score-inc; [Dim Mid/emit noontime]
 		the rule succeeds;
@@ -1287,9 +1288,15 @@ book Evaded Ave
 
 Evaded Ave is north of Art Xtra. It is in Yelpley.
 
+the Revolt Lover is a person in Evaded Ave.
+
 the debt bed is a thing in Evaded Ave.
 
 the stock cots are a plural-named thing.
+
+check going in Evaded Ave:
+	if Revolt Lover is in Evaded Ave:
+		if noun is west or noun is east, say "The Revolt Lover blocks you. Maybe if you gave them a gift, they'd be more generous." instead;
 
 book Trapeze Part
 
@@ -1310,11 +1317,15 @@ understand "tend [something]" as tending.
 carry out tending:
 	if noun is not tenses net, say "That doesn't need tending." instead;
 	if player has epicer recipe, say "You already did what you needed with the net." instead;
-	say "You adjust the tenses net. You're not sure how to make it work, but with some common sense, you make it. The set o['] notes gives surprising help. You climb and swing from the trapeze to the other side--falling into the tenses net about a hundred or so times--but the hundred and first bam! You notice an epic-er recipe on the other side.[paragraph break]It's a clear step up from the set o['] notes, which you won't be needing any more. Yay!";
+	say "You adjust the tenses net. You're not sure how to make it work, but with some common sense, you make it. The set o['] notes gives surprising help. You climb and swing from the trapeze to the other side--falling into the tenses net about a hundred or so times--but the hundred and first bam! You notice an epic-er recipe on the other side.[paragraph break]It's a clear step up from the set o['] notes, which you won't be needing any more. Yay! There's also something labeled an elope pole, which you suspect may help you get away if and when you need to.";
 	now set o notes is in ZeroRez;
 	now player has epicer recipe;
 	score-inc; [Yelpley/TEND NET]
 	the rule succeeds.
+
+chapter elope pole
+
+The elope pole is a thing. description is "It looks foldable, maybe even separable. You wonder where it could help you get."
 
 book Yell Alley
 

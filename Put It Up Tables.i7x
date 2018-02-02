@@ -527,6 +527,7 @@ randtxt
 "Dammit, I'm mad!"
 "Dark. Rad!"
 "Guff! Ug!"
+"Hoot! Ooh!"
 "Hot! Oh!"
 "Kook!"
 "Not on!"
