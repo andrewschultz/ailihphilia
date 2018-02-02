@@ -38,6 +38,8 @@ Odd Do is a region. max-score of Odd Do is 3.
 
 volume unsorted
 
+The TA Mat is a thing.
+
 section stuff to move
 
 the state tats are a thing. description is "They say OMG MO[']."
@@ -62,7 +64,7 @@ the gift fig is an edible thing.
 
 check eating an edible thing: say "Food? Oof! (You don't need to eat anything to win. Food may be more useful for other people.)[paragraph break]" instead;
 
-the elan ale is a drinkable thing.
+the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, unsurprisingly."
 
 the yard ray is a thing. description is "It looks pretty lethal. It also has instructions: EMIT ********.[paragraph break]It's currently [if murk rum is in ZeroRez]loaded with energy from the Murk Rum[else]empty of fuel[end if]."
 
@@ -146,6 +148,7 @@ when play begins:
 	now left hand status line is "[location of player] ([mrlp])";
 	repeat through table of all randoms:
 		sort tabnam entry in random order;
+	say "It's not the first dream you had about how awful high school was, but it's the worst in a while. A few 'favorite' classmates chanting 'Diary raid!' and passing it around as they mock 'Beefy? Feeb! Bony nob!'[wfak-d]";
 	say "You check your mail as you go out to the grocery store. A junk magazine! It's been so long since you got one, you're almost intrigued.[wfak-d]";
 	say "It just says GAME MAG. But the cover isn't telling you to actually buy anything, so you look inside. You have a whole backlog of games, but you can just recycle it when you get to the store.[wfak-d]";
 	say "Nothing really catches your mind until you see a DARER AD. It's really all caps, and it has a lot of messages.certainly loud.[wfak-d]";
@@ -530,7 +533,7 @@ stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem int
 spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
 troll ort	brag garb	--	--	--	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. It's now an entirely different smell from the Stink Knits, but a much more edible one. You guess."
-elan ale	Ira Bari	Gorge Grog	--	--	true	false	false	Yelpley	"Ira looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"
+Elan Ale	Ira Bari	Gorge Grog	--	--	true	false	false	Yelpley	"Ira looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"
 UFO Tofu	Mayo Yam	Mush Sum	in-mont-nom rule	--	true	true	true	Grebeberg	"The UFO Tofu and mayo yam blend together in a most unholy fashion, but the magic of Mont Nom kicks in, and they become ... a surprisingly nice smelling and looking mush sum."
 Eroded Ore	reviver	Ore Zero	--	--	true	true	true	Yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
@@ -1077,11 +1080,19 @@ chapter books
 
 a book is a kind of thing. description of a book is "It [if player carries the item described]is[else]looks[end if] really heavy and incomprehensible to you."
 
-TO IDIOT is a proper-named book.
+section books with purpose so far
+
+TO IDIOT is a proper-named book. [Revolt Lover]
+NULL ILLUN is a proper-named book. [Known Wonk]
+
+section books without purpose so far
+
 GIGOLO GIG is a proper-named book.
 FOREVER OF is a proper-named book.
-NULL ILLUN is a proper-named book.
 ERA FARE is a proper-named book.
+EMOTE TOME is a proper-named book.
+
+section book verbs
 
 books-carried-yet is a truth state that varies.
 
@@ -1248,7 +1259,7 @@ carry out tamping:
 	score-inc; [Yelpley/tamp mat]
 	the rule succeeds;
 
-understand "tame mat" as a mistake ("That's not quite what to do. This is a game about palindromes, not homonyms.") when player is in Toll Lot and tame mat is in Toll Lot.
+[understand "tame mat" as a mistake ("That's not quite what to do. This is a game about palindromes, not homonyms.") when player is in Toll Lot and tame mat is in Toll Lot. ?? ]
 
 book Bon Snob
 
@@ -1404,14 +1415,11 @@ book Swept Pews
 
 Swept Pews is south of Emo Dome. It is in Yelpley.
 
-The TA Mat is a thing in Swept Pews.
+The Liar Grail is a thing in Swept Pews. description is "It's carved with 'LIAR TRAIL? NOT ON!' You don't know if this means
 
-check going south when TA Mat is in Swept Pews: say "As you try to step south over the mat, a voice booms 'DA CAD!'[paragraph break]You'll have to do something to push the mat down." instead;
+check taking liar grail: say "A small voice cries 'Da cad! Da cad!' You probably don't want the liar grail corrupting you." instead;
 
-The tame mat is a thing.
-
-check taking TA Mat: say "It doesn't let you close." instead;
-check taking tame mat: say "You realize you have no use for such a thing." instead;
+check going south when Liar Grail in Swept Pews: say "Maybe there's a path where you could get rid of the grail, but not yet."
 
 chapter Demo Med
 
