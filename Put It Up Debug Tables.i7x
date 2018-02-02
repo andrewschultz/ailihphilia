@@ -1,11 +1,22 @@
 Version 1/171220 of Put it Up debug Tables by Andrew Schultz begins here.
 
-volume random names
+volume random names of people and places
+
+[use dbh.py to generate debug table version of this file]
+
+chapter random names
 
 table of random palindrome names
 person-name
 "Abe Keba"
 "Adam Imada"
+
+chapter random businesses
+
+table of businesses
+biz-name
+"Derby Bred"
+"Skooby Books"
 
 volume random responses
 

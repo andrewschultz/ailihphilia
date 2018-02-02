@@ -1,6 +1,10 @@
 Version 1/171220 of Put It Up Tables by Andrew Schultz begins here.
 
-volume random names
+volume random names of people and places
+
+[use dbh.py to generate debug table version of this file]
+
+chapter random names
 
 table of random palindrome names
 person-name
@@ -436,6 +440,16 @@ person-name
 "Zita Batiz"
 "Zoe Oz"
 "Zula Luz"]
+
+chapter random businesses
+
+table of businesses
+biz-name
+"Derby Bred"
+"Skooby Books"
+"Rife Kefir"
+"Dairy Myriad"
+"Looks Skool"
 
 volume random responses
 
