@@ -114,7 +114,7 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 			<dock index="1" id="10" port="s" />
 		</line>
 		<room id="44" name="TAMP MAT" subtitle="" x="-96" y="128" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="45" name="STAND NAT'S" subtitle="" x="384" y="-512" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="45" name="STAND NAT'S" subtitle="" x="704" y="-640" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="46" name="PULL UP" subtitle="" x="384" y="-256" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="47" name="" description="" flow="oneWay">
 			<dock index="0" id="46" port="ne" />
@@ -209,8 +209,8 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 			<dock index="1" id="32" port="n" />
 		</line>
 		<line id="82" name="" description="" flow="oneWay">
-			<dock index="0" id="45" port="e" />
-			<dock index="1" id="8" port="w" />
+			<dock index="0" id="45" port="sw" />
+			<dock index="1" id="8" port="ne" />
 		</line>
 		<line id="83" name="" description="" flow="oneWay">
 			<dock index="0" id="62" port="w" />
@@ -221,6 +221,11 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 			<dock index="1" id="28" port="w" />
 		</line>
 		<room id="85" name="USE TO IDIOT ON REVOLT LOVER" subtitle="" x="384" y="-640" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="86" name="USE EXAM AXE ON LIE VEIL" subtitle="" x="384" y="-512" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<line id="87" name="" description="" flow="oneWay">
+			<dock index="0" id="86" port="s" />
+			<dock index="1" id="56" port="n" />
+		</line>
 	</map>
 	<settings>
 		<colors>

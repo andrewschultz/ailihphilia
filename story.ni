@@ -26,7 +26,7 @@ chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
 
-Grebeberg is a region. max-score of Grebeberg is 16.
+Grebeberg is a region. max-score of Grebeberg is 17.
 
 Dim Mid is a region. max-score of Dim Mid is 6.
 
@@ -38,7 +38,11 @@ Odd Do is a region. max-score of Odd Do is 3.
 
 volume unsorted
 
+section no precise function yet
+
 The TA Mat is a thing.
+
+The Exam Axe is a thing. description is "Just looking at the exam axe, you feel as though you've been right about stuff. Maybe not right or morally superior, but you're able to see through obvious nonsense."
 
 section stuff to move
 
@@ -543,6 +547,7 @@ spa maps	Code Doc	--	maps-explained-yet rule	maps-explain rule	true	false	false	
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 Ye Key	etage gate	--	ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again."
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
+Exam Axe	Lie Veil	--	--	--	true	true	rue	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, both swirl together to form a glowing vapor that quickly vanishes."
 Bro Orb	Madam Sniffins	Yard Ray	--	--	true	true	true	Yelpley	"The Bro Orb shines and drives Madam Sniffins to rage. She runs away, sobbing. The Yard Ray is left unguarded. You take it."
 murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
@@ -802,6 +807,9 @@ The scorn rocs are scenery in Flu Gulf. "While they're motionless, their stare d
 
 book Top Spot
 
+every turn when player is in Top Spot:
+	if a random chance of 1 in 3 occurs, say "The Yuge Guy mumbles 'Soros! Soros!'";
+
 Top Spot is west of Flu Gulf. It is in Grebeberg. "This place has obviously not gone to pot."
 
 Top Spot is above Flu Gulf.
@@ -821,6 +829,9 @@ the gnu dung is in Dumb Mud. "Gnu dung blocks exit south from the Dumb Mud.". de
 check going south in Dumb Mud:
 	if gnu dung is in Dumb Mud, say "Not through the Dumb Mud you aren't." instead;
 
+check going north in Dumb Mud:
+	if lie veil is in Dumb Mud, say "As you touch the lie veil, you shake your head. No. You don't really want or need to explore north. Surely there's some better place to be? Perhaps you're not 100% prepared for the lie veil's thought provoking paradoxes, and it's doing you a favor pushing you back? You try to walk further north, but somehow you wind up walking back south." instead;
+
 instead of doing something with gnu dung:
 	if action is procedural, continue the action;
 	say "Eewee! (You probably want to deal with the gnu dung indirectly.)"
@@ -829,16 +840,16 @@ book Le Babel
 
 Le Babel is north of Dumb Mud. It is in Grebeberg.
 
-chapter bro orb
+chapter Bro Orb
 
-the bro orb is a thing in Le Babel.
+the Bro Orb is a thing in Le Babel.
 
-check taking bro orb:
-	if player has bro orb, say "You already have it." instead;
+check taking Bro Orb:
+	if player has Bro Orb, say "You already have it." instead;
 	if player does not have tenet, say "You aren't sure you can handle the potentially corrupting power of the Bro Orb. [if player has sage gas]The sage gas helps you to understand how things could go wrong, but still, you're a bit worried[end if]. Maybe if you had some more balance to your thinking." instead;
-	say "With the tenet, you feel balanced enough to take the bro orb and accept the responsibility for doing so."
+	say "With the tenet, you feel balanced enough to take the Bro Orb and accept the responsibility for doing so."
 
-[?? if you tried to take the bro orb or rep popper before, put up a warning saying, ok, you can do this now, if you have the right items.]
+[?? if you tried to take the Bro Orb or rep popper before, put up a warning saying, ok, you can do this now, if you have the right items.]
 
 book Mont Nom
 
@@ -913,9 +924,9 @@ check taking guru rug: say "'Egad! Adage!' you think to yourself. You're not up 
 
 chapter tenet
 
-The tenet is a thing. description is "It seems a bit too cliche."
+The tenet is a thing. description is "It seems a bit too cliche, but you have the wisdom to get the encouragement you need from it."
 
-[?? take tenet/take bro orb = use sage gas on tenet/use tenet on bro orb]
+[?? take tenet/take Bro Orb = use sage gas on tenet/use tenet on Bro Orb]
 
 book Swamp Maws
 

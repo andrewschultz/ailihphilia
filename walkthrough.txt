@@ -143,7 +143,11 @@ Bye bye, Ergot Ogre!
 
 (+1) >USE SAGE GAS ON GURU RUG
 
->N.N.E.N
+>N.N.E
+
+Now to get rid of the Lie Veil. You could've done this earlier, but this is in the flow.
+
+(+1) >USE EXAM AXE ON LIE VEIL
 
 >GET BRO ORB
 

@@ -127,11 +127,16 @@ Get the Poo Coop.
 You'll need something to dent his pride.
 Something you yourself may have had trouble taking, because you were too proud at first.
 USE REP POPPER ON YUGE GUY.
->>DUMB MUD
+>>DUMP MUD
 ?How do I get rid of the gnu dung?
 You need something that can hold dung, or something like it.
 The poo coop.
 USE POO COOP ON GNU DUNG.
+?Can I dispose of the Lie Veil?
+Yes, but not til much later.
+You need something true, or something that shows you've been true.
+If you get rid of all the books, you'll get a neat item.
+USE EXAM AXE ON LIE VEIL.
 >>MONT NOM
 ?Can I make any sort of special food here?
 Yes, from two other foods.
@@ -312,7 +317,7 @@ There are 20 total points in Yelpley.
 1 point if you TAMP MAT in Swept Pews.
 1 point if you STAND NAT'S.
 ?How do I get all the points for Grebeberg?
-There are 16 total points in Grebeberg.
+There are 17 total points in Grebeberg.
 1 point if you USE PUCE CUP ON DOSE SOD.
 1 point if you USE PARTY TRAP ON START RATS.
 1 point if you USE POO COOP ON GNU DUNG.
@@ -323,6 +328,7 @@ There are 16 total points in Grebeberg.
 1 point if you USE DORK ROD ON TAO BOAT.
 1 point if you USE TROLL ORT ON BRAG GARB. (note: this can be done outside of Grebeberg, but it's part of a Grebeberg puzzle.)
 1 point if you USE STOCK COTS ON SLEEP EELS.
+1 point if you USE EXAM AXE ON LIE VEIL.
 1 point if you USE REP POPPER ON YUGE GUY.
 ?How do I get all the Odd Do points?
 There are 3 total points in Odd Do.
