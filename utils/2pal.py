@@ -221,7 +221,8 @@ def one_at_a_time():
         fouta.write(head_string)
         fout.write("# Palindromes (non-anagram) results\n")
         fouta.write("# Palindromes (anagram) results\n")
-    count = 0
+    pal_count = 0
+    ana_count = 0
     totals = 0
     my_stuff = []
     if dumb_test:
@@ -248,24 +249,30 @@ def one_at_a_time():
             for y in (ends[l2].keys() if sort_output is False else sorted(ends[l2].keys())):
                 z = begin_string + x + mid_string + y
                 if z == z[::-1]:
-                    pal = (x == y[::-1])
-                    count = count + 1
-                    this_line = '{:>5d} {:s} + {:s} ~ {:s}.'.format(count,
+                    ana = (x == y[::-1])
+                    this_line = '{:>5d} {:s} + {:s} ~ {:s}.'.format(ana_count if ana else pal_count,
                     (begin_string + ' + ' if begin_string != '' else '') + optcaps(x),
                     (mid_string + ' + ' if mid_string != '' else '') + optcaps(y),
-                    ('WORDY ' if z in words else '') + ('ANAGRAM' if pal else 'PALINDROME'))
+                    ('WORDY ' if z in words else '') + ('ANAGRAM' if ana else 'PALINDROME'))
                     if to_file:
-                        if pal:
-                            fouta.write(this_line +'\n')
+                        if ana:
+                            fouta.write(this_line + '\n')
+                            ana_count = ana_count + 1
                         else:
-                            fout.write(this_line + '\n')
+                            fout.write(this_line +'\n')
+                            pal_count = pal_count + 1
                     else:
                         print(this_line)
-    poss_found = str(count) + ' possible palindromes found.'
+    poss_found_1 = str(pal_count) + ' possible palindromes found.'
+    poss_found_2 = str(ana_count) + ' possible palindromes found.'
     if fout:
-        fout.write(poss_found + '\n')
+        fout.write(poss_found_1 + '\n')
     else:
-        print(poss_found)
+        print(poss_found_1)
+    if fouta:
+        fouta.write(poss_found_2 + '\n')
+    else:
+        print(poss_found_2)
     if fout:
         fout.close()
     if fouta:
@@ -306,7 +313,7 @@ parser.add_argument('-s0', action='store_true', help="show zeros in progress", d
 parser.add_argument('-b', type=str, help="begin string", dest='begin_string')
 parser.add_argument('-m', type=str, help="middle string", dest='mid_string')
 parser.add_argument('-e', type=str, help="end string", dest='end_string')
-parser.add_argument('-x', type=str, help="end string", dest='freq_use_examples')
+parser.add_argument('-x', action="store_true", dest='freq_use_examples')
 parser.add_argument('-ht', action="store_true", dest="create_html_tree")
 parser.add_argument('-htl', action="store_true", dest="create_html_tree_launch")
 parser.add_argument('-hc', action="store_true", dest="create_html")

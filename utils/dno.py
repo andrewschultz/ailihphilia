@@ -112,8 +112,6 @@ def check_notes(s):
                 if read_colons:
                     if colons_max == 0 or colons <= colons_max:
                         colon_string = colon_string + str(colons) + ": " + line
-                    elif colons_max and colons == colons_max + 1:
-                        colon_string = colon_string + "(increase colons_max to see more...)"
             if pally(ll):
                 l2 = re.sub("[:=].*", "", line.strip().lower(), 0, re.IGNORECASE)
                 l2 = re.sub("[^a-z \/]", "", l2, 0, re.IGNORECASE)
@@ -130,6 +128,8 @@ def check_notes(s):
                         pals[q2] = line_count
                         pal_count = pal_count + 1
                         # print(count, q2)
+    if colons_max and colons > colons_max:
+        colon_string = colon_string + "(saw {:d} of {:d}, increase or remove colons_max to see more...)".format(colons_max, colons)
     found_errs = defaultdict(str)
     for s in source_files:
         if verbose: print("Reading", s)
@@ -243,4 +243,4 @@ while count < len(sys.argv):
 check_notes("put-it-up")
 
 if colon_string:
-    print(colon_string)
+    print(colon_string.strip())
