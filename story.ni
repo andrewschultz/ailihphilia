@@ -304,7 +304,7 @@ drink-warning is a truth state that varies.
 
 check drinking:
 	say "[if noun is drinkable]Pish! Sip?![else][']S not wet. Ew--TONS.[end if]";
-	if drink-warning is false, say "(You don't need to drink anything. Any liquid is probably used for much more aggressive purposes.)[end if]";
+	if drink-warning is false, say "(You don't need to drink anything. Any liquid is probably used for much more aggressive purposes.)[paragraph break]";
 	now drink-warning is true instead;
 
 chapter eating
@@ -599,12 +599,12 @@ this is the maps-explained-yet rule:
 	the rule fails;
 
 this is the maps-readable rule:
-	if maps-explained is true, the rule succeeds:
+	if maps-explained is true, the rule succeeds;
 	say "Hmm. Maybe if the maps were a bit clearer to you, that would work. But not now.";
 	the rule fails;
 
 this is the Ned-gone rule:
-	if Ned is in Ned's Den, the rule succeeds:
+	if Ned is in Ned's Den, the rule succeeds;
 	say "Good idea, but not with Ned around.";
 	the rule fails;
 
@@ -807,6 +807,8 @@ check dropping party trap in Seer Trees: try useoning party trap with start rats
 book Cold Loc
 
 Cold Loc is north of Seer Trees. It is in Grebeberg.
+
+the Spur Ups are a plural-named thing in Cold Loc.
 
 book Flu Gulf
 
@@ -1238,7 +1240,7 @@ El Doodle is a thing. "It looks like it could be a map--or something--but it sur
 
 book Toll Lot
 
-Toll Lot is east of Emo Dome. It is in Yelpley. "[if cross orc is in Toll Lot]While it's easy enough to go back west to the Emo Dome, that cross orc doesn't seem to want to let you go north or south[else]You can go north or south with the cross orc gone or, well, back west, too[end if]. A crag arc rises to the east[if UFO tofu is not in lalaland]--maybe it is hiding something[end if]."
+Toll Lot is east of Emo Dome. It is in Yelpley. "[if cross orc is in Toll Lot]While it's easy enough to go back west to the Emo Dome, that cross orc doesn't seem to want to let you go north or south[else]You can go north or south with the cross orc gone or, well, back west, too[end if]. A crag arc rises to the east[if UFO tofu is not in ZeroRez]--maybe it is hiding something[end if]."
 
 [??snuff funs]
 
@@ -1418,7 +1420,7 @@ understand "puffup" as puffuping.
 understand "puff up" as puffuping.
 
 carry out puffuping:
-	if spur ups are in lalaland, say "You already did." instead;
+	if spur ups are in ZeroRez, say "You already did." instead;
 	if player does not have spur ups, say "You don't possess anything that would help you feel more up." instead;
 	say "As you hold the Spur-Ups, you thik about how great you are and can and will be. Surprisingly, it works! It works so well, you figure you don't even need the spur-ups for a boost in the future. You feel more confident, more able to deal with sadness now.";
 	now Spur Ups are in ZeroRez;
@@ -1467,16 +1469,16 @@ check going to Emo Dome:
 		now emo-dir is noun;
 
 check going north in Emo Dome:
-	unless player has state tats, say "The Civic Level is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a voice: 'DIFF-ID?'[paragraph break]You don't have anything identifying yourself. 'Oh, who? Go jog!' the voice continues. You think, hang? Nah." instead;
-	if Civic Level is unvisited, say "You step into what may be your final challenge in Yelpley..."
+	unless player has state tats, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a voice: 'DIFF-ID?'[paragraph break]You don't have anything identifying yourself. 'Oh, who? Go jog!' the voice continues. You think, hang? Nah." instead;
+	if Red Roses Order is unvisited, say "You step into what may be your final challenge in Yelpley..."
 
-book Civic Level
+book Red Roses Order
 
-Civic Level is north of Emo Dome. It is in Yelpley.
+Red Roses Order is north of Emo Dome. It is in Yelpley.
 
-Civic Level is above Emo Dome.
+Red Roses Order is above Emo Dome.
 
-Madam Sniffins is a person in Civic Level.
+Madam Sniffins is a person in Red Roses Order.
 
 book Swept Pews
 

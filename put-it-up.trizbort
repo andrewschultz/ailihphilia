@@ -69,8 +69,8 @@ Initially sent to source code/repository November 2017.</history>
 		<room id="24" name="Le Babel" subtitle="" x="-704" y="-320" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects at="n" custom="yes" customRight="-20" customDown="0">Bro Orb</objects>
 		</room>
-		<room id="25" name="Civic Level" subtitle="Gross Org" x="-64" y="-320" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects at="n" custom="yes" customRight="-40" customDown="0">MADAM SNIFFINS</objects>
+		<room id="25" name="Red Roses Order" subtitle="Gross Org" x="-64" y="-320" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects at="n" custom="yes" customRight="-40" customDown="0">LA GAL/MADAM</objects>
 		</room>
 		<line id="26" name="" description="" style="dashed">
 			<dock index="0" id="25" port="s" />

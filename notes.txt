@@ -4,6 +4,11 @@
 
 if you can't quite do something but figured it out, this should be printed.
 
+Nag Ol Slogan
+
+Otto: needs book
+Sniffins: needs book
+
 Dartstrad
 
 Reviled, Deliver
