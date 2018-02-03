@@ -32,7 +32,7 @@ Grebeberg is a region. max-score of Grebeberg is 17.
 
 Dim Mid is a region. max-score of Dim Mid is 6.
 
-Yelpley is a region. max-score of Yelpley is 21.
+Yelpley is a region. max-score of Yelpley is 22.
 
 Odd Do is a region. max-score of Odd Do is 3.
 
@@ -1379,9 +1379,27 @@ The back cab is a thing in Yell Alley. description is "It's here but doesn't loo
 
 instead of entering back cab, say "Too dumpy."
 
-chapter pulluping
+chapter puffuping
 
-understand "puff up" as a mistake ("You try to have self confidence, but you don't have the confidence you can do it right.") when player is in Emo Dome and pulled-up is false.
+chapter puffuping
+
+puffuping is an action applying to nothing.
+
+understand the command "puffup" as something new.
+understand the command "puff up" as something new.
+
+understand "puffup" as puffuping.
+understand "puff up" as puffuping.
+
+carry out puffuping:
+	if spur ups are in lalaland, say "You already did." instead;
+	if player does not have spur ups, say "You don't possess anything that would help you feel more up." instead;
+	say "As you hold the Spur-Ups, you thik about how great you are and can and will be. Surprisingly, it works! It works so well, you figure you don't even need the spur-ups for a boost in the future. You feel more confident, more able to deal with sadness now.";
+	now Spur Ups are in ZeroRez;
+	score-inc; [Yelpley/puff up]
+	the rule succeeds;
+
+chapter pulluping
 
 pulled-up is a truth state that varies.
 
@@ -1395,12 +1413,13 @@ understand "pullup" as pulluping.
 
 carry out pulluping:
 	if pulled-up is true, say "You already did." instead;
-	unless player is in Emo Dome, say "This isn't the place[if Emo Dome is visited], but maybe you could do this in the Emo Dome[end if]." instead;
-	say "You manage to stop yourself. The whining isn't too bad. Yeah, you can hack it here.";
-	now pulled-up is true;
-	score-inc; [Yelpley/pull up]
-	now Emo Dome is available;
-	the rule succeeds;
+	if player has Spur Ups, say "Maybe you can be or do that sort of up, later.";
+	if player is in Emo Dome:
+		say "You manage to stop yourself. The whining isn't too bad. Yeah, you can hack it here.";
+		now pulled-up is true;
+		score-inc; [Yelpley/pull up]
+		now Emo Dome is available instead;
+	say "This isn't the place[if Emo Dome is visited], but maybe you could do this in the Emo Dome[end if]." instead;
 
 book Emo Dome
 

@@ -184,6 +184,9 @@ Now that you're all peaceful, you can explore other places.
 No, not much, other than go a bunch of different directions.
 ?How do I go east?
 You need the Spur Ups from the Cold Loc.
+But having them isn't enough.
+You need them to do something up.
+PUFF UP.
 >>STRAY ARTS
 ?What do I need to do to get the Art Xtra?
 Nothing. Just take it. It's useful elsewhere.
@@ -304,7 +307,7 @@ There are 6 total points in Dim Mid.
 1 point if you USE MURK RUM ON YARD RAY.
 1 point if you EMIT NOONTIME.
 ?How do I get all the points for Yelpley?
-There are 21 total points in Yelpley.
+There are 22 total points in Yelpley.
 1 point if you EVADE DAVE.
 1 point if you NAIL IAN.
 1 point if you DENT NED.
@@ -317,6 +320,7 @@ There are 21 total points in Yelpley.
 1 point if you USE PUCE CUP ON MARGE PEGRAM.
 1 point if you USE YE KEY ON ETAGE GATE.
 1 point if you USE TO IDIOT ON REVOLT LOVER.
+1 point if you PUFF UP with the Spur Ups.
 1 point if you PULL UP in the Emo Dome.
 1 point if you TAMP MAT in Swept Pews.
 1 point if you STAND NAT'S.

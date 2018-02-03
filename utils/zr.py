@@ -33,6 +33,7 @@ count = 1
 
 def usage():
     print("Currently you can specify the project to change to, with a shortcut or full name.")
+    print("c edits the source, though you can just type np zr.py instead.")
     print("e edits the text, though you can just type zr.txt instead.")
     print("t only tests things. It doesn't copy back over.")
 

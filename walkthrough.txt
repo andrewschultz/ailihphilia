@@ -82,9 +82,14 @@ How to get rid of the rats?
 >E
 >E
 
-Now, you can go east.
+You feel you could almost go east, but you need to do something "up."
+
+(+1) >PUFF UP
 
 >E
+
+There you go! But you still run through the Emo Dome too fast. How to stop yourself?
+
 (+1) >PULL UP
 
 You now have access to a few more rooms.

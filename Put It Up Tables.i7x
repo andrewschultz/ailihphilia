@@ -546,6 +546,7 @@ randtxt
 "Kook!"
 "Not on!"
 "Pah, chap!"
+"Redder... redder..."
 "Rep me, temper!"
 "Speel? Bleeps."
 "Tact, cat!"
