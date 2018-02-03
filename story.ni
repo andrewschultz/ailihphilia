@@ -12,6 +12,8 @@ include Basic Screen Effects by Emily Short.
 
 include Put It Up Debug Tables by Andrew Schultz.
 
+include Put It Up Mistakes by Andrew Schultz.
+
 include undo output control by Erik Temple.
 
 volume definitions
@@ -655,25 +657,6 @@ chapter Flee Elf
 
 The Flee Elf is a person in Fun 'Nuf. "A Flee Elf stands here by Evac Ave to the south.". description is "You'd expect to see the Flee Elf wearing a gateman nametag, but maybe that's in some other, even more insanely brilliant, adventure."
 
-understand "flea elf" and "flea" as a mistake("[fe0]The elf scratches for a bit, then looks embarrassed.") when player is in Fun 'Nuf and Flee Elf is in Fun 'Nuf.
-
-understand "flex elf" and "flex" as a mistake("[fe1]The elf looks more flexible than you. It's the cap you want to concentrate on.") when player is in Fun 'Nuf and Flee Elf is in Fun 'Nuf.
-
-understand "fleece elf" and "fleece" as a mistake("[fe2]There is much more fortune and glory in adventure! It's the cap you want to concentrate on.") when player is in Fun 'Nuf and Flee Elf is in Fun 'Nuf.
-
-flea-elf is a truth state that varies.
-flex-elf is a truth state that varies.
-fleece-elf is a truth state that varies.
-
-to say fe0:
-	now flea-elf is true;
-
-to say fe1:
-	now flex-elf is true;
-
-to say fe2:
-	now fleece-elf is true;
-
 chapter Evac Ave
 
 Evac Ave is scenery in Fun 'Nuf. "Evac Ave leads back to where you were."
@@ -988,8 +971,6 @@ chapter dork rod
 
 The dork rod is a thing. description is "It's kind of neat and quirky, but it's not shiny enough to be the famed Dorada Rod."
 
-understand "dorm rod" and "dorm" as a mistake ("The dork rod is what it is.") when player has dork rod or player is in location of dork rod.
-
 book Apse Spa
 
 Apse Spa is east of Cold Loc. It is in Grebeberg. "The Apse Spa is covered with dose sod, which you can't take--you're not sick--but it looks beautiful. Also, Go-By Bog expands every way except back west[if sage gas is off-stage]. You could traverse it, if you knew what you were doing[else]You already went through it, though[end if]."
@@ -1047,13 +1028,9 @@ carry out evadeing:
 		say "There's only one person you need to evade in this game.";
 	the rule succeeds.
 
-understand "evade dave" as a mistake ("Dave's not here, man!") when player is not in My Gym.
-
 book Worn Row
 
 Worn Row is west of My Gym. It is in Yelpley. "[if workrow is true]Three machines are here[else if wordrow is true]A library is here, just full of books[else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if]."
-
-understand "worm row" as a mistake ("Ugh! You don't need to make this place worse.") when player is in Worn Row.
 
 printed name of Worn Row is "[if wordrow is true]Word[else if workrow is true]Work[else]Worn[end if] Row"
 
@@ -1196,8 +1173,6 @@ carry out workrowing:
 	now all books in Worn Row are in TempMet;
 	the rule succeeds;
 
-understand "worn row" and "wornrow" as a mistake ("No need to revert things.") when shouldnt-revert. [ic]
-
 to decide whether shouldnt-revert:
 	unless player is in Worn Row, no;
 	if workrow is false and wordrow is false, no;
@@ -1226,8 +1201,6 @@ carry out wordrowing:
 	say "A bunch of books appear.";
 	now all books in TempMet are in Worn Row;
 	the rule succeeds;
-
-understand "worn row" and "wornrow" as a mistake ("No need to revert things.") when player is in Swept Pews and workrow is false and wordrow is false. [ic]
 
 book Art Xtra
 
@@ -1309,8 +1282,6 @@ carry out tamping:
 	now tame mat is in Swept Pews;
 	score-inc; [Yelpley/tamp mat]
 	the rule succeeds;
-
-[understand "tame mat" as a mistake ("That's not quite what to do. This is a game about palindromes, not homonyms.") when player is in Toll Lot and tame mat is in Toll Lot. ?? ]
 
 book Bon Snob
 
