@@ -30,7 +30,7 @@ Grebeberg is a region. max-score of Grebeberg is 17.
 
 Dim Mid is a region. max-score of Dim Mid is 6.
 
-Yelpley is a region. max-score of Yelpley is 20.
+Yelpley is a region. max-score of Yelpley is 21.
 
 Odd Do is a region. max-score of Odd Do is 3.
 
@@ -60,14 +60,11 @@ the stink knits are a thing. "They don't smell very good. In a failed attempt at
 
 the brag garb is a thing.
 
-the UFO Tofu is an edible thing.
+the UFO tofu is an edible thing.
 
 the Mayo Yam is an edible thing.
 
 the gift fig is an edible thing.
-
-check eating an edible thing:
-	eat-warn instead;
 
 the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, unsurprisingly."
 
@@ -183,9 +180,9 @@ Rule for printing a parser error when the latest parser error is the didn't unde
 	say "[if gtv]You do need a special verb here, but not that one. It may not be a standard one, but given the game's theme, I bet you can figure it out. If you want standard verbs, y[else]I didn't recognize that action. Y[end if]ou can type VERB or VERBS to get a list of them.";
 
 to decide whether gtv:
-	if ian is in location of player, yes;
+	if Ian is in location of player, yes;
 	if Dave is in location of player, yes;
-	if curt is in location of player, yes;
+	if Curt is in location of player, yes;
 	no;
 
 part after command
@@ -301,21 +298,21 @@ wr-short-note is a truth state that varies.
 
 chapter drinking
 
+drink-warning is a truth state that varies.
+
 check drinking:
 	say "[if noun is drinkable]Pish! Sip?![else][']S not wet. Ew--TONS.[end if]";
 	if drink-warning is false, say "(You don't need to drink anything. Any liquid is probably used for much more aggressive purposes.)[end if]";
 	now drink-warning is true instead;
 
-drink-warning is a truth state that varies.
-
 chapter eating
 
-check eating:
-	say "[if noun is edible]Food? Oof![else]You contemplate a wan gnaw, but no voice says 'Naw. G'wan!'[end if]";
-	if eat-warning is false, say "(You don't need to eat anything to win. Food may be more useful for other people.)[paragraph break]";
-	now eat-warning is true instead
-
 eat-warning is a truth state that varies.
+
+check eating:
+	say "[if noun is Demo Med]You're not sick enough to risk it. Maybe someone in much worse shape than you...[else if noun is edible]Food? Oof![else]You contemplate a wan gnaw, but no voice says 'Naw. G'wan!'[end if]";
+	if eat-warning is false, say "(You don't need to eat anything to win. Food may be more useful for other people.)[paragraph break]";
+	now eat-warning is true instead;
 
 chapter burning
 
@@ -560,6 +557,7 @@ demo med	gulf lug	cash sac	--	--	true	true	true	Grebeberg	"The Gulf Lug takes th
 TO IDIOT	Revolt Lover	--	--	--	true	true	true	Grebeberg	"The Revolt Lover begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Known Wonk runs away."
 NULL ILLUN	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me.' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. And if it's simple, well, I need to know when simple stuff works.' The Known Wonk apologizes--it's back to a Tru Yurt for a thought session."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes to look for ... well, something else."
+radar	crag arc	UFO tofu	orc-gone rule	--	true	true	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO as it flies off. It bounces off you. 'O Furor! UFO!' you cry. You look at it and--it's unharmed, and still in a cubic shape. Looks like you got yourself some UFO tofu."
 poo coop	gnu dung	--	--	--	true	true	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
 radar	made dam	eroded ore	--	--	true	true	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow."
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
@@ -570,14 +568,14 @@ spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Eve
 stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
 troll ort	brag garb	--	--	--	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. It's now an entirely different smell from the Stink Knits, but a much more edible one. You guess."
 Elan Ale	Ira Bari	Gorge Grog	--	--	true	false	false	Yelpley	"Ira looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"
-UFO Tofu	Mayo Yam	Mush Sum	in-mont-nom rule	--	true	true	true	Grebeberg	"The UFO Tofu and mayo yam blend together in a most unholy fashion, but the magic of Mont Nom kicks in, and they become ... a surprisingly nice smelling and looking mush sum."
+UFO tofu	Mayo Yam	Mush Sum	in-mont-nom rule	--	true	true	true	Grebeberg	"The UFO tofu and mayo yam blend together in a most unholy fashion, but the magic of Mont Nom kicks in, and they become ... a surprisingly nice smelling and looking mush sum."
 Eroded Ore	reviver	Ore Zero	--	--	true	true	true	Yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
 puce cup	dose sod	--	--	--	true	false	true	Grebeberg	"You funnel the dose sod into the puce cup, which you close. That way, the dose sod will stay fresh."
 puce cup	marge pegram	Elan Ale	sod-in-cup rule	--	true	true	true	Yelpley	"You give marge the puce cup. She drinks the dose sod and immediately feels better. 'Well... I have a lot of catching up to do. Can't hang around. Here's some Elan Ale for you, to celebrate how cool you are for helping.'"
 spa maps	Code Doc	--	maps-explained-yet rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
-Ye Key	etage gate	--	ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again."
+Ye Key	etage gate	--	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again."
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
 Bro Orb	Madam Sniffins	Yard Ray	--	--	true	true	true	Yelpley	"The Bro Orb shines and drives Madam Sniffins to rage. 'Live not on evil, madam, live not on evil!' you boom, as the ray does its work. She runs away, sobbing. The Yard Ray is left unguarded. You take it."
@@ -594,22 +592,24 @@ this is the in-mont-nom rule:
 	the rule fails;
 
 this is the maps-explained-yet rule:
-	if maps-explained is true:
-		say "You already got the Code Doc to decipher the spa maps.";
-		the rule fails;
-	the rule succeeds;
+	if maps-explained is true, the rule succeeds;
+	say "You already got the Code Doc to decipher the spa maps.";
+	the rule fails;
 
 this is the maps-readable rule:
-	if maps-explained is false:
-		say "Hmm. Maybe if the maps were a bit clearer to you, that would work. But not now.";
-		the rule fails;
-	the rule succeeds;
+	if maps-explained is true, the rule succeeds:
+	say "Hmm. Maybe if the maps were a bit clearer to you, that would work. But not now.";
+	the rule fails;
 
-this is the ned-gone rule:
-	if ned is in Ned's Den:
-		say "Good idea, but not with Ned around.";
-		the rule fails;
-	the rule succeeds;
+this is the Ned-gone rule:
+	if Ned is in Ned's Den, the rule succeeds:
+	say "Good idea, but not with Ned around.";
+	the rule fails;
+
+this is the orc-gone rule:
+	if orc is not in Toll Lot, the rule succeeds;
+	say "The cross orc prevents you from trying anything possibly constructive. Maybe with the orc gone, you should try it again.";
+	the rule fails;
 
 this is the sod-in-cup rule:
 	if dose sod is in ZeroRez, the rule succeeds;
@@ -1033,14 +1033,14 @@ understand "evade [something]" as evadeing.
 
 does the player mean evadeing Dave: it is very likely.
 
-dave-evade is a truth state that varies.
+Dave-evade is a truth state that varies.
 
 carry out evadeing:
 	if noun is Dave:
-		if dave-evade is true, say "You don't need to evade Dave again.";
+		if Dave-evade is true, say "You don't need to evade Dave again.";
 		say "You evade Dave! Deked! Deked!";
 		now Dave is in ZeroRez;
-		now dave-evade is true;
+		now Dave-evade is true;
 		score-inc; [Yelpley/evade dave]
 		now all davey rooms are available;
 	else:
@@ -1053,7 +1053,7 @@ book Worn Row
 
 Worn Row is west of My Gym. It is in Yelpley. "[if workrow is true]Three machines are here[else if wordrow is true]A library is here, just full of books[else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if]."
 
-understand "worm row" as a mistake ("Ugh! You don't need to make this place worse.") when player is in Worn Row
+understand "worm row" as a mistake ("Ugh! You don't need to make this place worse.") when player is in Worn Row.
 
 printed name of Worn Row is "[if wordrow is true]Word[else if workrow is true]Work[else]Worn[end if] Row"
 
@@ -1185,7 +1185,7 @@ workrow is a truth state that varies.
 ever-workrow is a truth state that varies.
 
 carry out workrowing:
-	if ian is in Worn Row, say "That'll work when Ian is gone." instead;
+	if Ian is in Worn Row, say "That'll work when Ian is gone." instead;
 	if workrow is true, say "You're already in Work Row." instead;
 	now workrow is true;
 	now wordrow is false;
@@ -1216,7 +1216,7 @@ wordrow is a truth state that varies.
 ever-wordrow is a truth state that varies.
 
 carry out wordrowing:
-	if ian is in Worn Row, say "That'll work when Ian is gone." instead;
+	if Ian is in Worn Row, say "That'll work when Ian is gone." instead;
 	if wordrow is true, say "You're already in Word Row." instead;
 	now wordrow is true;
 	now workrow is false;
@@ -1239,19 +1239,25 @@ El Doodle is a thing. "It looks like it could be a map--or something--but it sur
 
 book Toll Lot
 
-Toll Lot is east of Emo Dome. It is in Yelpley. "While it's easy enough to go back east, you may have to do something special to go north or south."
+Toll Lot is east of Emo Dome. It is in Yelpley. "[if cross orc is in Toll Lot]While it's easy enough to go back west to the Emo Dome, that cross orc doesn't seem to want to let you go north or south[else]You can go north or south with the cross orc gone or, well, back west, too[end if]. A crag arc rises to the east[if UFO tofu is not in lalaland]--maybe it is hiding something[end if]."
 
-The cross orc is a person in Toll Lot.
-
-[snuff funs]
+[??snuff funs]
 
 check going in Toll Lot:
 	if cross orc is in Toll Lot:
 		if noun is north or noun is south, say "The cross orc stops you from going [noun]. 'GIVE VIG!' it booms." instead;
 
+chapter cross orc
+
+The cross orc is a person in Toll Lot.
+
+chapter crag arc
+
+the crag arc is scenery in Toll Lot. "It soars high and is too dangerous to climb[if UFO tofu is off-stage]. It's so intricate, maybe it is hiding something you can find[end if]."
+
 book Ned's Den
 
-Ned's Den is north of Toll Lot. It is in Yelpley. printed name of Ned's Den is "[if ned is in Ned's Den]Ned's Den[else]Den, Evened[end if]". description is "[if etage gate is in Ned's Den]An etage gate blocks your way north. You can go back south[else]With the etage gate gone, you can go north or south[end if]."
+Ned's Den is north of Toll Lot. It is in Yelpley. printed name of Ned's Den is "[if Ned is in Ned's Den]Ned's Den[else]Den, Evened[end if]". description is "[if etage gate is in Ned's Den]An etage gate blocks your way north. You can go back south[else]With the etage gate gone, you can go north or south[end if]."
 
 the etage gate is scenery in Ned's Den. "It is locked and too strong to move."
 
@@ -1263,13 +1269,13 @@ instead of opening etage gate, try going north;
 
 check going north in Ned's Den: if etage gate is in Ned's Den, say "The etage gate blocks you."
 
-understand "evened" and "den evened" as Ned's Den when ned is in ZeroRez
+understand "evened" and "den evened" as Ned's Den when Ned is in ZeroRez
 
 Ned is a person in Ned's Den.
 
 The Puce Cup is a thing in Ned's Den.
 
-check taking puce cup: if ned is in Ned's Den, say "Not with Ned around, you won't." instead;
+check taking puce cup: if Ned is in Ned's Den, say "Not with Ned around, you won't." instead;
 
 chapter denting
 
@@ -1279,10 +1285,10 @@ understand the command "dent" as something new.
 
 understand "dent [something]" as denting.
 
-does the player mean denting ned: it is likely.
+does the player mean denting Ned: it is likely.
 
 carry out denting:
-	if noun is ned:
+	if noun is Ned:
 		say "Bam! Bye bye Ned.";
 		now Ned is in ZeroRez;
 		score-inc; [Yelpley/dent ned]
@@ -1470,8 +1476,6 @@ chapter Demo Med
 
 a Demo Med is an edible thing in Swept Pews. "A demo med sits here, on a pill lip.". description is "You're not sure what it could be. Xanax? Whatever, you feel calmer just looking at it."
 
-instead of eating Demo Med, say "You're not sick enough to risk it. Maybe someone in much worse shape than you..."
-
 the pill lip is scenery in Swept Pews. "A Demo Med rests on the Pill Lip."
 
 instead of doing something with pill lip, say "The pill lip is just there to prevent the demo med from getting dirty on the ground."
@@ -1561,6 +1565,8 @@ when play begins:
 	say "[if number of notyet rooms is 0]All rooms have a switch saying you can go there[else]Rooms that are still notyet: [list of notyet rooms][end if]."
 
 volume unsorted
+
+chapter crap arc
 
 chapter trucking
 

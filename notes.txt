@@ -6,7 +6,7 @@ Reviled, Deliver
 
 Trot a Tort
 
-Crag Arc: crab arc? Cram arc?
+#Crag Arc: crab arc? Cram arc?
 
 Yack Cay is far away, but not quite Nevah-Haven. You have a cool discussion about all sorts of things
 
@@ -114,8 +114,6 @@ Hank? Nah
 Rise, Sir!
 
 rep-a-paper
-
-O Furor! UFO!
 
 The Bomb Mob carries TNT. You get it with a Bang-Nab. When you do, they become a poor troop.
 

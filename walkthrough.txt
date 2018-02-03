@@ -200,6 +200,7 @@ How do you feel peaceful enough to not be disrupted by your enemies?
 
 (+1) > PACE CAP
 (+1) > USE CASH SAC ON CROSS ORC
+(+1) > USE RADAR ON CRAG ARC
 (+1) > USE UFO TOFU ON MAYO YAM
 (+1) > USE DEMO MED ON GULF LUG
 (+1) > USE ELAN ALE ON IRA BARI

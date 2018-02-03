@@ -25,6 +25,7 @@ if not os.path.exists("story.ni"):
 difs = 0
 line_count = 0
 cap_search = defaultdict(bool)
+regex_detail = defaultdict(str)
 
 count = 1
 
@@ -57,7 +58,10 @@ with open("zr.txt") as file:
     for line in file:
         if line.startswith('#'): continue
         if line.startswith(';'): break
-        cap_search[line.strip()] = True
+        line_ary = line.strip().split("\t")
+        cap_search[line_ary[0]] = True
+        if len(line_ary) > 1:
+            regex_detail[line_ary[0]] = line_ary[1]
 
 cs = cap_search.keys()
 
@@ -69,7 +73,7 @@ with open("story.ni") as file:
             for x in cs:
                 if x.lower() in line.lower():
                     ll_old = ll
-                    ll = re.sub(r'\b{:s}\b'.format(x), x, ll, 0, re.IGNORECASE)
+                    ll = re.sub(r'\b{:s}\b'.format(regex_detail[x] if x in regex_detail.keys() else x), x, ll, 0, re.IGNORECASE)
                     if ll != ll_old:
                         difs = difs + 1
                         print("Line", line_count, "miscapitalized", x + ":", line.strip())

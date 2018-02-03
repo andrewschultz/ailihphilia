@@ -263,7 +263,11 @@ Someone else will give you money for helping them.
 The Gulf Lug in Flu Gulf.
 Help the Gulf Lug first to get the cash sac.
 USE CASH SAC ON CROSS ORC.
-Fill in later.
+?Is the crag arc hiding anything?
+Yes, but you can't find it until you've gotten rid of the cross orc.
+Once you do, you need an item that will detect things from a distance.
+That item is the radar.
+USE RADAR ON CRAG ARC.
 >>NED'S DEN
 ?How do I get rid of Ned?
 You need to do something to him.
@@ -300,7 +304,7 @@ There are 6 total points in Dim Mid.
 1 point if you USE MURK RUM ON YARD RAY.
 1 point if you EMIT NOONTIME.
 ?How do I get all the points for Yelpley?
-There are 20 total points in Yelpley.
+There are 21 total points in Yelpley.
 1 point if you EVADE DAVE.
 1 point if you NAIL IAN.
 1 point if you DENT NED.
@@ -316,6 +320,7 @@ There are 20 total points in Yelpley.
 1 point if you PULL UP in the Emo Dome.
 1 point if you TAMP MAT in Swept Pews.
 1 point if you STAND NAT'S.
+1 point if you USE RADAR ON CRAG ARC.
 ?How do I get all the points for Grebeberg?
 There are 17 total points in Grebeberg.
 1 point if you USE PUCE CUP ON DOSE SOD.
