@@ -37,7 +37,7 @@ Trade Dart: Traded Art
 
 Use Stamp Mats on slate metals: becomes YE KEY / not Leet Steel
 
-Tru-Yurt
+# Tru-Yurt
 
 Deport! Roped!: what yuge guy says if you try to ...
 
@@ -45,8 +45,6 @@ Deport! Roped!: what yuge guy says if you try to ...
 
 PSA Hasp
 BOOK: Drawn Inward?
-
-rep me temper
 
 Ailihphilia: It is what you think, you. What, is it?
 
@@ -311,9 +309,12 @@ day dyad
 
 Redo-Coder
 
+dry fyrd
+
+militia
+
 RAM OMAR
 
-wan gnaw
 gang nag
 slam mammals
 
@@ -686,7 +687,6 @@ refilm lifer
 report roper
 revile deliver
 retags gater
-redo coder
 remanded namer
 releve beveler
 retarded rater

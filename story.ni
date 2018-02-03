@@ -66,15 +66,14 @@ the Mayo Yam is an edible thing.
 
 the gift fig is an edible thing.
 
-check eating an edible thing: say "Food? Oof! (You don't need to eat anything to win. Food may be more useful for other people.)[paragraph break]" instead;
+check eating an edible thing:
+	eat-warn instead;
 
 the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, unsurprisingly."
 
 the yard ray is a thing. description is "It looks pretty lethal. It also has instructions: EMIT ********.[paragraph break]It's currently [if murk rum is in ZeroRez]loaded with energy from the Murk Rum[else]empty of fuel[end if]."
 
 the murk rum is a drinkable thing. [put this in the yard ray]
-
-check drinking a drinkable thing: say "You don't need to drink anything. Any liquid is probably used for much more aggressive purposes." instead;
 
 section ingredients
 
@@ -204,7 +203,7 @@ volume verbs (standard or semi-standard to Inform)
 chapter undoing
 
 report undoing an action:
-	say "[one of]Nixin[']...[or][']S poor. Oops![or]Time: remit.[in random order]";
+	say "[one of]Nixin[']...[or][']S poor. Oops![or]Time: remit.[or]'Redo-coder! Redo-coder!'[in random order]";
 	rule succeeds.
 
 chapter procedurality
@@ -299,6 +298,24 @@ carry out verbing:
 	the rule succeeds;
 
 wr-short-note is a truth state that varies.
+
+chapter drinking
+
+check drinking:
+	say "[if noun is drinkable]Pish! Sip?![else][']S not wet. Ew--TONS.[end if]";
+	if drink-warning is false, say "(You don't need to drink anything. Any liquid is probably used for much more aggressive purposes.)[end if]";
+	now drink-warning is true instead;
+
+drink-warning is a truth state that varies.
+
+chapter eating
+
+check eating:
+	say "[if noun is edible]Food? Oof![else]You contemplate a wan gnaw, but no voice says 'Naw. G'wan!'[end if]";
+	if eat-warning is false, say "(You don't need to eat anything to win. Food may be more useful for other people.)[paragraph break]";
+	now eat-warning is true instead
+
+eat-warning is a truth state that varies.
 
 chapter burning
 
@@ -445,7 +462,7 @@ useoning it with is an action applying to two things.
 to build-the-tron:
 	move north tron to Fun 'Nuf;
 	now all ingredients are in ZeroRez;
-	say "You build the north tron with the instructions from the epicer recipe. A passage opens north! You must be close now.";
+	say "You build the north tron with the instructions from the epicer recipe. It points north and blasts a hole with a huge tron snort before collapsing into uselessness. You must be close now!";
 	now Dirge Grid is mapped north of Fun 'Nuf;
 	now Fun 'Nuf is mapped south of Dirge Grid;
 	score-inc; [Dim Mid/USE TNT ON MUSH SUM]
@@ -562,7 +579,7 @@ spa maps	Code Doc	--	maps-explained-yet rule	maps-explain rule	true	false	false	
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 Ye Key	etage gate	--	ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again."
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
-Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, both swirl together to form a glowing vapor that quickly vanishes."
+Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
 Bro Orb	Madam Sniffins	Yard Ray	--	--	true	true	true	Yelpley	"The Bro Orb shines and drives Madam Sniffins to rage. 'Live not on evil, madam, live not on evil!' you boom, as the ray does its work. She runs away, sobbing. The Yard Ray is left unguarded. You take it."
 murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
@@ -1453,7 +1470,7 @@ chapter Demo Med
 
 a Demo Med is an edible thing in Swept Pews. "A demo med sits here, on a pill lip.". description is "You're not sure what it could be. Xanax? Whatever, you feel calmer just looking at it."
 
-instead of eating Demo Med, say "You're not sick enough to risk it."
+instead of eating Demo Med, say "You're not sick enough to risk it. Maybe someone in much worse shape than you..."
 
 the pill lip is scenery in Swept Pews. "A Demo Med rests on the Pill Lip."
 

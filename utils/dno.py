@@ -112,6 +112,7 @@ def check_notes(s):
         for line in file:
             line_count = line_count + 1
             ll = line.strip()
+            if ll.startswith('#'): continue
             if ":" in ll:
                 if read_last:
                     colon_ary.append(ll)
@@ -123,8 +124,10 @@ def check_notes(s):
                         seen = seen + 1
             if pally(ll):
                 l2 = re.sub("[:=].*", "", line.strip().lower(), 0, re.IGNORECASE)
-                l2 = re.sub("[^a-z \/]", "", l2, 0, re.IGNORECASE)
+                l2 = re.sub("-", " ", l2, 0, re.IGNORECASE)
+                l2 = re.sub("[^a-z \-/]", "", l2, 0, re.IGNORECASE)
                 # print("Looking for", l2)
+                if 'goblin' in ll.lower(): print(l2)
                 for q in l2.split("/"):
                     if q in pals.keys():
                         print("Duplicate", q, line_count, "from", pals[q], "in notes file")
@@ -134,6 +137,7 @@ def check_notes(s):
                         dupe_dict[line_count] = True
                     else:
                         q2 = q.strip()
+                        q2 = re.sub("-", " ", q2, 0, re.IGNORECASE)
                         pals[q2] = line_count
                         pal_count = pal_count + 1
                         # print(count, q2)
