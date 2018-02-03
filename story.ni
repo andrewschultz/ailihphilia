@@ -563,7 +563,7 @@ sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles ou
 Ye Key	etage gate	--	ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again."
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, both swirl together to form a glowing vapor that quickly vanishes."
-Bro Orb	Madam Sniffins	Yard Ray	--	--	true	true	true	Yelpley	"The Bro Orb shines and drives Madam Sniffins to rage. She runs away, sobbing. The Yard Ray is left unguarded. You take it."
+Bro Orb	Madam Sniffins	Yard Ray	--	--	true	true	true	Yelpley	"The Bro Orb shines and drives Madam Sniffins to rage. 'Live not on evil, madam, live not on evil!' you boom, as the ray does its work. She runs away, sobbing. The Yard Ray is left unguarded. You take it."
 murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 
@@ -823,7 +823,7 @@ The scorn rocs are scenery in Flu Gulf. "While they're motionless, their stare d
 book Top Spot
 
 every turn when player is in Top Spot:
-	if a random chance of 1 in 3 succeeds, say "The Yuge Guy mumbles 'Soros! Soros!'";
+	if a random chance of 1 in 2 succeeds, say "The Yuge Guy mumbles '[one of]Soros! Soros![or]Huge! Guh![in random order]'";
 
 Top Spot is west of Flu Gulf. It is in Grebeberg. "Despite the impressive view, this place still feels like it's gone to pot."
 

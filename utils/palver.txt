@@ -35,6 +35,7 @@ i:is a number
 i:is an action
 i:rule for printing
 i:are an object-based rulebook
+i:the description of a room is usually
 # regexes
 r:^(madam sniffins|dave|ian|ned|curt) is a person
 ;

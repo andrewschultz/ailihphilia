@@ -13,6 +13,7 @@ rl = len(rem_str)
 tack_start_on_end = True
 tack_end_on_start = True
 print_standard_palindrome = True
+strict_reverse = True
 
 def one_pal(a):
     count = 0
@@ -22,9 +23,14 @@ def one_pal(a):
     end_to_start = defaultdict(str)
     temp_words = defaultdict(bool)
     with open("c:/writing/dict/{:s}.txt".format(a)) as file:
+        src = 0
         for line in file:
             ll = line.lower().strip()
+            if strict_reverse and temp_words[ll[::-1]] == True:
+                src = src + 1
+                print(src, ll, "<==>", ll[::-1])
             temp_words[ll] = True
+        if strict_reverse: return
         for ll in sorted(temp_words.keys(), key=lambda x:(len(x), x)):
             if rem_str:
                 if ll.startswith(rem_str):

@@ -30,6 +30,7 @@ bowdlerize_test = False
 read_colons = False
 colons_max = 0
 colons_start = 0
+read_last = 0
 
 colon_string = ""
 
@@ -104,15 +105,19 @@ def check_notes(s):
       "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/{:s} tables.i7x".format(re.sub("-", " ", s)) ]
     shorts = {}
     dupe_dict = defaultdict(bool)
+    colon_ary = []
     for x in source_files:
         shorts[x] = re.sub(".*[\\\/]", "", x)
     with open(notes_file_to_read) as file:
         for line in file:
             line_count = line_count + 1
             ll = line.strip()
-            if ":" in ll and read_colons:
-                colons = colons + 1
+            if ":" in ll:
+                if read_last:
+                    colon_ary.append(ll)
+                    continue
                 if read_colons:
+                    colons = colons + 1
                     if (colons_max == 0 and colons_start == 0) or (colons_max == 0 and colons >= colons_start) or (colons >= colons_start and colons <= colons_max + colons_start):
                         colon_string = colon_string + str(colons) + ": " + line
                         seen = seen + 1
@@ -132,6 +137,8 @@ def check_notes(s):
                         pals[q2] = line_count
                         pal_count = pal_count + 1
                         # print(count, q2)
+    if read_last:
+        print('\n'.join("{:d}: {:s}".format(rl, colon_ary[rl]) for rl in range(len(colon_ary)-read_last, len(colon_ary))))
     if seen < colons:
         colon_string = colon_string + "(saw {:d} of {:d}, increase or remove colons_max/colons_start to see more...)".format(seen, colons)
     found_errs = defaultdict(str)
@@ -251,6 +258,8 @@ while count < len(sys.argv):
         if len(my_ary) > 1:
             colons_max = my_ary[1]
         colons_start = my_ary[0]
+    elif l == 'l':
+        read_last = 10
     elif l == '?' or l == 'u':
         usage()
     else:
