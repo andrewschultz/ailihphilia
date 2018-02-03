@@ -84,8 +84,8 @@ randtxt
 
 table of yessies
 randtxt
+"Hosannas, Oh!"
 "Nod on!"
-"Pip, pip!"
 
 Put it Up debug Tables ends here.
 

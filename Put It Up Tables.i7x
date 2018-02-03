@@ -567,11 +567,13 @@ randtxt
 "Panic? I nap!"
 "Resume, muser!"
 "Stare? Rats!"
+"Stir! It's..."
 "Truce, curt."
 "Won't, Now."
 
 table of yessies
 randtxt
+"Hosannas, Oh!"
 "Nod on!"
 "Pip, pip!"
 "Plus? Ulp."

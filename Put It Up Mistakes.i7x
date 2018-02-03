@@ -39,6 +39,12 @@ book Toll Lot
 
 understand "crop orc" as a mistake ("That attack would boomerang, and not just because this is a palindrome-y game. The orc is lots, lots bigger than you.") when player is in Toll Lot and cross orc is in Toll Lot.
 
+book Dumb Mud
+
+understand "gnu bung" as a mistake ("Yes, that's where it came from.") when player is in Dumb Mud and gnu dung is in Dumb Mud.
+
+understand "gnu lung" as a mistake ("The gnu dung smells bad enough without dropping more internal organs into the mix.") when player is in Dumb Mud and gnu dung is in Dumb Mud.
+
 part things
 
 book dork rod

@@ -29,7 +29,7 @@ Initially sent to source code/repository November 2017.</history>
 			<objects at="e">Cross Orc|  (give Cash Sac)</objects>
 		</room>
 		<room id="9" name="Cold Loc" subtitle="" x="-544" y="-320" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Spur Ups</objects>
+			<objects>King Nik</objects>
 		</room>
 		<room id="10" name="My Gym" subtitle="" x="-224" y="-64" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-40" customDown="0">EVADE DAVE|NAT'S TAN</objects>

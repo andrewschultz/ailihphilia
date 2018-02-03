@@ -76,8 +76,13 @@ You can make it in Work Row, in Yelpley.
 You have to do something to another item. But once you get it...
 USE PARTY TRAP ON START RATS.
 >>COLD LOC
-?Is there anything to do here?
-You pretty much just need the Spur Ups from here.
+?What do I do with King Nik?
+He needs a book.
+So you need to have Word Row open.
+Which is most about history and stuff?
+Era Fare.
+USE ERA FARE ON KING NIK.
+The Spur Ups are handy back in Yelpley, to motivate you.
 >>APSE SPA
 ?Can I peel off the dose sod?
 Yes, but you'll need a container.
@@ -119,7 +124,8 @@ USE TROLL ORT ON BRAG GARB.
 Now the yak runs after you.
 You need to run N.N.W.W.S.S. to the Ergot Ogre.
 The yak knocks the ogre over with a special command, allowing you passage east from the Lair Trial.
-This command is YAK OKAY.
+This command starts with yak...
+YAK OKAY.
 >MOO ROOM
 ?What do I do here?
 Get the Poo Coop.
@@ -290,10 +296,10 @@ You need to find Class Alc.
 Have you found the Elan Ale?
 USE ELAN ALE ON IRA BARI.
 >>CIVIC LEVEL
-?How do I defeat Madam Sniffins?
+?How do I defeat Madam?
 You can't get in if you don't have what you need.
 Something that's the opposite of her.
-USE BRO ORB ON MADAM SNIFFINS.
+USE BRO ORB ON MADAM.
 #summary below
 >META QUESTIONS
 ?What are the Odd Do points?
@@ -327,7 +333,8 @@ There are 22 total points in Yelpley.
 1 point if you STAND NAT'S.
 1 point if you USE RADAR ON CRAG ARC.
 ?How do I get all the points for Grebeberg?
-There are 18 total points in Grebeberg.
+There are 19 total points in Grebeberg.
+1 point if you USE ERA FARE ON KING NIK.
 1 point if you USE PUCE CUP ON DOSE SOD.
 1 point if you USE PARTY TRAP ON START RATS.
 1 point if you USE POO COOP ON GNU DUNG.
@@ -356,9 +363,21 @@ There are 3 total points in Odd Do.
 1 point if you USE UFO TOFU ON MAYO YAM.
 1 point if you USE ELAN ALE ON IRA BARI.
 1 point if you USE ERODED ORE ON REVIVER.
-1 point if you USE BRO ORB ON MADAM SNIFFINS.
+1 point if you USE BRO ORB ON MADAM.
 ;
-?How do I go west?
-You'll need something to protect you from the Flu Gulf.
-Some sort of antidote and something to put that antidote in.
-The Puce Cup will carry what you need.
+>>GROSS ORG
+?What can I do about the glam-amalg?
+Note that using anything on it gives a decisive reject.
+This is another verb you need to guess.
+Everyone says oh. So, ohs.
+And you need to do so too. But not say.
+Listen more carefully, and you'll recognize a few SHAM AHS.
+You'll definitely want to SHUN UHS. Or Shut them. But you want something more active.
+Of course, you can't SHED EHS meaningfully, either.
+SHOW OHS.
+?What does Wolf Low want?
+Nothing.
+Because Wolf Low does not exist.
+Neither does Gross Org.
+You shouldn't develop clues you don't know the answers to yet!
+Go, dog!

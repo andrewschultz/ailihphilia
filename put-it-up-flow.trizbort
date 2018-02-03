@@ -26,7 +26,7 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 		<room id="8" name="USE REP POPPER ON YUGE GUY" subtitle="" x="544" y="-512" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-40" customDown="0">GET MURK RUM</objects>
 		</room>
-		<room id="9" name="USE BRO ORB ON MADAM SNIFFINS" subtitle="" x="544" y="-384" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="9" name="USE BRO ORB ON MADAM" subtitle="" x="544" y="-384" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-36" customDown="0">GET YARD RAY</objects>
 		</room>
 		<room id="10" name="USE TNT ON MUSH SUM" subtitle="" x="704" y="-128" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
@@ -255,6 +255,11 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 		<line id="95" name="" description="" flow="oneWay">
 			<dock index="0" id="67" port="e" />
 			<dock index="1" id="31" port="w" />
+		</line>
+		<room id="96" name="USE ERA FARE ON KING NIK" subtitle="" x="384" y="-896" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<line id="97" name="" description="" flow="oneWay">
+			<dock index="0" id="96" port="s" />
+			<dock index="1" id="91" port="n" />
 		</line>
 	</map>
 	<settings>

@@ -28,7 +28,7 @@ chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
 
-Grebeberg is a region. max-score of Grebeberg is 18.
+Grebeberg is a region. max-score of Grebeberg is 19.
 
 Dim Mid is a region. max-score of Dim Mid is 6.
 
@@ -43,6 +43,12 @@ volume unsorted
 section no precise function yet
 
 The TA Mat is a thing.
+
+section part of a puzzle but still floating
+
+Sniffins is a person.
+
+Otto is a person.
 
 The Exam Axe is a thing. description is "Just looking at the exam axe, you feel as though you've been right about stuff. Maybe not right or morally superior, but you're able to see through obvious nonsense."
 
@@ -112,7 +118,7 @@ after looking (this is the make available for goto rule):
 
 section set o notes
 
-the set o notes is a thing. description is "There's some general vague advice about making a North Tron to defeat the Diktat Kid, but first you'll have to defeat Madam Sniffins and the Yuge Guy, King Nik. The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that."
+the set o notes is a thing. description is "There's some general vague advice about making a North Tron to defeat the Diktat Kid, but first you'll have to defeat Madam and the Yuge Guy, Evil Clive. The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that."
 
 after examining set o notes for the first time, say "Maybe you'll get something even more detailed than the Set O Notes later."
 
@@ -426,13 +432,7 @@ carry out pooping:
 
 chapter sleeping
 
-ever-slept is a truth state that varies.
-
-instead of sleeping:
-	if sleep eels are in location of player, say "You won't out-sleep the eels." instead;
-	if ever-slept is false, say "You don't need to sleep anywhere in the game, so, waiting instead. Which you also don't need to do.";
-	now ever-slept is true;
-	try waiting instead;
+instead of sleeping, try waiting instead;
 
 chapter waiting
 
@@ -564,6 +564,7 @@ poo coop	gnu dung	--	--	--	true	true	true	Grebeberg	"The gnu dung is sucked towa
 radar	made dam	eroded ore	--	--	true	true	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow."
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 dork rod	tao boat	--	--	--	true	true	false	Grebeberg	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
+ERA FARE	King Nik	Spur Ups	--	--	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'This will help me when I get back to South Ihtuos. Thank you!'"
 debt bed	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching and slurping, the debt bed is changed to a bunch of much smaller, but more comfortable looking, stock cots."
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!"
 spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
@@ -580,7 +581,7 @@ sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles ou
 Ye Key	etage gate	--	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again."
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
-Bro Orb	Madam Sniffins	Yard Ray	--	--	true	true	true	Yelpley	"The Bro Orb shines and drives Madam Sniffins to rage. 'Live not on evil, madam, live not on evil!' you boom, as the ray does its work. She runs away, sobbing. The Yard Ray is left unguarded. You take it."
+Bro Orb	Madam	Yard Ray	--	--	true	true	true	Yelpley	"The Bro Orb shines and drives Madam to rage. 'Live not on evil, madam, live not on evil!' you boom, as the ray does its work. She runs away, sobbing. The Yard Ray is left unguarded. You take it."
 murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 
@@ -808,7 +809,13 @@ book Cold Loc
 
 Cold Loc is north of Seer Trees. It is in Grebeberg.
 
-the Spur Ups are a plural-named thing in Cold Loc.
+chapter King Nik
+
+King Nik is a person in Cold Loc.
+
+chapter Spur Ups
+
+the Spur Ups are a plural-named thing.
 
 book Flu Gulf
 
@@ -838,7 +845,7 @@ after looking in Top Spot for the first time:
 	say "The Yuge Guy calls 'BOO! NOOB!' just to reinforce his contempt.";
 	continue the action;
 
-Yuge Guy is a proper-named person in Top Spot. understand "king/nik" and "king nik" as Yuge Guy.
+Yuge Guy is a proper-named person in Top Spot. understand "evil/clive" and "evil clive" as Yuge Guy.
 
 book Dumb Mud
 
@@ -1134,13 +1141,20 @@ section books with purpose so far
 
 TO IDIOT is a proper-named book. [Revolt Lover]
 NULL ILLUN is a proper-named book. [Known Wonk]
+ERA FARE is a proper-named book. [King Nik]
+EMOTE TOME is a proper-named book. [Sniffins]
 
 section books without purpose so far
 
 GIGOLO GIG is a proper-named book.
 FOREVER OF is a proper-named book.
-ERA FARE is a proper-named book.
-EMOTE TOME is a proper-named book.
+
+gap-yet is a truth state that varies.
+
+after examining a book:
+	if gap-yet is false, say "You look for a page gap, and you're surprised there isn't one.";
+	now gap-yet is true;
+	continue the action;
 
 section book verbs
 
@@ -1478,7 +1492,9 @@ Red Roses Order is north of Emo Dome. It is in Yelpley.
 
 Red Roses Order is above Emo Dome.
 
-Madam Sniffins is a person in Red Roses Order.
+Madam is a person in Red Roses Order.
+
+understand "la gal" and "la/gal" as Madam.
 
 book Swept Pews
 

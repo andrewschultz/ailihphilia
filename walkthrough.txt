@@ -64,6 +64,8 @@ You can also tinker with it in other ways.
 
 (+1) >WORD ROW
 
+>GET ERA FARE
+
 >E
 >N
 
@@ -76,7 +78,7 @@ How to get rid of the rats?
 
 >N
 
->GET SPUR UPS
+(+1) >USE ERA FARE ON KING NIK
 
 >S
 >E
@@ -160,7 +162,7 @@ Now to get rid of the Lie Veil. You could've done this earlier, but this is in t
 
 >S.E.E.E.E.N
 
-(+1) >USE BRO ORB ON MADAM SNIFFINS
+(+1) >USE BRO ORB ON MADAM
 
 ==========================================
 
