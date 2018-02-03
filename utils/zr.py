@@ -22,6 +22,8 @@ if not os.path.exists("story.ni"):
         print("No story.ni and no default directory path.")
         exit()
 
+only_test = False
+
 difs = 0
 line_count = 0
 cap_search = defaultdict(bool)
@@ -31,12 +33,21 @@ count = 1
 
 def usage():
     print("Currently you can specify the project to change to, with a shortcut or full name.")
+    print("e edits the text, though you can just type zr.txt instead.")
+    print("t only tests things. It doesn't copy back over.")
 
 while count < len(sys.argv):
     myarg = sys.argv[count].lower()
     if (myarg[0] == '-'):
         myarg = myarg[1:]
-    if myarg in i7.i7x.keys():
+    if myarg == 'e':
+        os.system("zr.txt")
+        exit()
+    elif myarg == 'c':
+        i7.open_source()
+    elif myarg == 't':
+        only_test = True
+    elif myarg in i7.i7x.keys():
         newdir = "c:/games/inform/{:s}.inform/source".format(i7.i7x[sys.argv[count]])
         os.chdir(newdir)
         print("Changing to", newdir)
@@ -86,6 +97,10 @@ if not cmp("story.ni", "story.ni2"):
         print("There are no flagged differences, but story.ni is not story2.ni. This should not happen. Bailing.")
         exit()
     print(difs, "differences, copying back over")
+    if only_test:
+        print("Testing differences, so, not copying back over.")
+        system("wm story.ni story.ni2")
+        exit()
     try:
         copy("story.ni2", "story.ni")
     except:
@@ -100,4 +115,4 @@ else:
     if difs:
         print("Oops! I should be copying back over, but I'm not.")
     else:
-        print("No differences, no copying back over.")
+        print("No differences, no copying back over" + (", so not running diff" if only_test else "") + ".")
