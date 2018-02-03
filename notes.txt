@@ -4,6 +4,8 @@
 
 if you can't quite do something but figured it out, this should be printed.
 
+Dartstrad
+
 Reviled, Deliver
 
 Trot a Tort
@@ -33,8 +35,6 @@ To Jot! To jot!
 
 # what to do with Gate Tag
 
-Yak! Okay!
-
 Trade Dart: Traded Art
 
 Use Stamp Mats on slate metals: becomes YE KEY / not Leet Steel
@@ -62,7 +62,7 @@ Tropiciport: what yelpley becomes once you solve the whole place
 
 A six is a six is a...
 
-KAYO YAK: when wearing the brag garb, you use the troll ort on it. That makes the yak chase you. It's definitely not a tao goat! (follow it to the tao boat) then have it follow you to the Ergot Ogre. They get in a fight. Both are disappeared.
+# KAYO YAK: when wearing the brag garb, you use the troll ort on it. That makes the yak chase you. It's definitely not a tao goat! (follow it to the tao boat) then have it follow you to the Ergot Ogre. They get in a fight. Both are disappeared.
 
 Yo Banana Boy
 
@@ -392,12 +392,6 @@ Sagas
 Solos
 
 Ye Fey
-Low AWOL
-
-Dartstrad
-
-rofl for
-gibe big
 
 A Toyota
 

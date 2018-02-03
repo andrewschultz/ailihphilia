@@ -118,7 +118,8 @@ It's a bit complicated.
 USE TROLL ORT ON BRAG GARB.
 Now the yak runs after you.
 You need to run N.N.W.W.S.S. to the Ergot Ogre.
-The yak knocks the ogre over, allowing you passage east from the Lair Trial.
+The yak knocks the ogre over with a special command, allowing you passage east from the Lair Trial.
+This command is YAK OKAY.
 >MOO ROOM
 ?What do I do here?
 Get the Poo Coop.
@@ -326,7 +327,7 @@ There are 22 total points in Yelpley.
 1 point if you STAND NAT'S.
 1 point if you USE RADAR ON CRAG ARC.
 ?How do I get all the points for Grebeberg?
-There are 17 total points in Grebeberg.
+There are 18 total points in Grebeberg.
 1 point if you USE PUCE CUP ON DOSE SOD.
 1 point if you USE PARTY TRAP ON START RATS.
 1 point if you USE POO COOP ON GNU DUNG.
@@ -339,6 +340,7 @@ There are 17 total points in Grebeberg.
 1 point if you USE STOCK COTS ON SLEEP EELS.
 1 point if you USE EXAM AXE ON LIE VEIL.
 1 point if you USE REP POPPER ON YUGE GUY.
+1 point for YAK OKAY around the Ergot Ogre.
 ?How do I get all the Odd Do points?
 There are 3 total points in Odd Do.
 1 point if you say POOP. Or BOOB.

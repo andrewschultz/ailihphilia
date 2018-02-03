@@ -136,11 +136,13 @@ Yay! Brag garb!
 
 The Kayo Yak seems to be kind of violent but won't attack you. Still, it comes up to sniff you. Maybe it could help you?
 
-?? puzzle below not implemented yet
-
 (+1) >USE TROLL ORT ON BRAG GARB
 
 >N.N.W.W.S.S
+
+The yak still needs a command.
+
+(+1) >YAK OKAY
 
 Bye bye, Ergot Ogre!
 

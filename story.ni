@@ -28,7 +28,7 @@ chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
 
-Grebeberg is a region. max-score of Grebeberg is 17.
+Grebeberg is a region. max-score of Grebeberg is 18.
 
 Dim Mid is a region. max-score of Dim Mid is 6.
 
@@ -823,7 +823,10 @@ The scorn rocs are scenery in Flu Gulf. "While they're motionless, their stare d
 book Top Spot
 
 every turn when player is in Top Spot:
-	if a random chance of 1 in 2 succeeds, say "The Yuge Guy mumbles '[one of]Soros! Soros![or]Huge! Guh![in random order]'";
+	if a random chance of 1 in 2 succeeds, say "The Yuge Guy mumbles '[one of]Soros! Soros![or]Huge! Guh![or]Rofl! For...[or]Gibe! Big![in random order]'";
+
+check going east in Top Spot:
+	if Yuge Guy is in Top Spot, say "'LOW AWOL!' the Yuge Guy booms, as you run away."
 
 Top Spot is west of Flu Gulf. It is in Grebeberg. "Despite the impressive view, this place still feels like it's gone to pot."
 
@@ -889,7 +892,30 @@ Dray Yard is south of Ooze Zoo. It is in Grebeberg.
 
 Line Nil is in Dray Yard.
 
-slate metals are scenery in Dray Yard.
+slate metals are scenery in Dray Yard. "They aren't leet steel. You could probably carve something out of them, with the right implement(s)."
+
+The Kayo Yak is a person in Dray Yard.
+
+chapter yakokaying
+
+yakokaying is an action applying to nothing.
+
+understand the command "yakokay" as something new.
+understand the command "yak okay" as something new.
+
+understand "yak okay" as yakokaying.
+
+carry out yakokaying:
+	if ergot ogre is in ZeroRez, say "[if yak is in location of player]The yak has served you well. It deserves a rest.[else]You relive past glories. Why not?[end if]" instead;
+	if yak is in location of player and ergot ogre is in location of player:
+		say "The kayo yak surges at the ergot ogre and knocks it over! The ergot won't spread to the yak's horns, so that's good. The ogre dusts itself off and walks away, embarrassed. The yak, for its part, heads back to the Dray Yard.";
+		score-inc; [Grebeberg/YAK OKAY]
+		now yak is in Dray Yard;
+		now ergot ogre is in ZeroRez;
+		the rule succeeds;
+	if yak is in location of player, say "The yak sees nothing to attack." instead;
+	say "There's no yak to say okay to." instead;
+	the rule succeeds;
 
 book Moo Room
 

@@ -35,6 +35,10 @@ understand "worm row" as a mistake ("Ugh! You don't need to make this place wors
 
 understand "worn row" and "wornrow" as a mistake ("No need to revert things.") when shouldnt-revert. [ic]
 
+book Toll Lot
+
+understand "crop orc" as a mistake ("That attack would boomerang, and not just because this is a palindrome-y game. The orc is lots, lots bigger than you.") when player is in Toll Lot and cross orc is in Toll Lot.
+
 part things
 
 book dork rod
