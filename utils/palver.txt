@@ -21,7 +21,8 @@ s:check
 s:instead
 s:before
 s:after
-s:the description of a room is usually
+s:the machine message rules
+s:every turn
 # ignore-includes
 i:rule:
 i:is an activity
@@ -33,6 +34,7 @@ i:is a direction
 i:is a number
 i:is an action
 i:rule for printing
+i:are an object-based rulebook
 # regexes
 r:^(madam sniffins|dave|ian|ned|curt) is a person
 ;

@@ -29,6 +29,7 @@ bowdlerize_notes = False
 bowdlerize_test = False
 read_colons = False
 colons_max = 0
+colons_start = 0
 
 colon_string = ""
 
@@ -72,6 +73,7 @@ def usage():
     print("-o = print first lines first (last lines first lets you follow line numbers for deletion more easily).")
     print("-b = bowdlerize duplicates in notes. -bt only copies to notes2.txt, for testing purposes.")
     print("-c = show lines with colons in them, which are likely to be good ideas to work on. On which to work. (-co)")
+    print("  You can also specify a number, but not as a separate argument. (Also, -q = -c10)")
     print("-?/-u = this usage statement")
     exit()
 
@@ -96,6 +98,7 @@ def check_notes(s):
     dupes = 0
     xtranote = 0
     colons = 0
+    seen = 0
     notes_file_to_read = "c:/games/inform/{:s}.inform/source/notes.txt".format(s)
     source_files = [ "c:/games/inform/{:s}.inform/source/story.ni".format(s),
       "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/{:s} tables.i7x".format(re.sub("-", " ", s)) ]
@@ -110,8 +113,9 @@ def check_notes(s):
             if ":" in ll and read_colons:
                 colons = colons + 1
                 if read_colons:
-                    if colons_max == 0 or colons <= colons_max:
+                    if (colons_max == 0 and colons_start == 0) or (colons_max == 0 and colons >= colons_start) or (colons >= colons_start and colons <= colons_max + colons_start):
                         colon_string = colon_string + str(colons) + ": " + line
+                        seen = seen + 1
             if pally(ll):
                 l2 = re.sub("[:=].*", "", line.strip().lower(), 0, re.IGNORECASE)
                 l2 = re.sub("[^a-z \/]", "", l2, 0, re.IGNORECASE)
@@ -128,8 +132,8 @@ def check_notes(s):
                         pals[q2] = line_count
                         pal_count = pal_count + 1
                         # print(count, q2)
-    if colons_max and colons > colons_max:
-        colon_string = colon_string + "(saw {:d} of {:d}, increase or remove colons_max to see more...)".format(colons_max, colons)
+    if seen < colons:
+        colon_string = colon_string + "(saw {:d} of {:d}, increase or remove colons_max/colons_start to see more...)".format(seen, colons)
     found_errs = defaultdict(str)
     for s in source_files:
         if verbose: print("Reading", s)
@@ -216,6 +220,9 @@ while count < len(sys.argv):
         verbose = True
     elif l == 'f':
         open_first = True
+    elif l == 'q':
+        read_colons = True
+        colons_max = 10
     elif l == 'fn' or l == 'nf':
         open_first = False
     elif l == 'i':
@@ -229,10 +236,21 @@ while count < len(sys.argv):
     elif l == 'bt':
         bowdlerize_notes = True
         bowdlerize_test = True
-    elif re.search("^(c|co)[0-9]*$", l):
+    elif re.search("^(c|co)[0-9,]*$", l):
         read_colons = True
         if re.search("[0-9]", l):
-            colons_max = int(re.sub("^(co|c)", "", l))
+            my_ary = [int(i) for i in re.sub("^(co|c)", "", l).split(",")]
+            if len(my_ary) > 1:
+                colons_max = my_ary[1]
+                colons_start = my_ary[0]
+            else:
+                colons_max = my_ary[0]
+    elif re.search("^s[0-9,]+$", l):
+        read_colons = True
+        my_ary = [int(i) for i in re.sub("^s", "", l).split(",")]
+        if len(my_ary) > 1:
+            colons_max = my_ary[1]
+        colons_start = my_ary[0]
     elif l == '?' or l == 'u':
         usage()
     else:

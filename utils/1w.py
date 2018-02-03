@@ -129,7 +129,9 @@ def palz(pals):
                 print("Words allowing {:s} at end of long palindrome:{:s}".format(x, possible_ends[x]))
             if possible_starts[x]:
                 print("Words at end of long palindrome starting with {:s}:{:s}".format(x, possible_starts[x]))
-        if not got_something:
+        if not found[x]:
+            print("No direct palindromes for", x)
+        elif not got_something:
             print("Nothing found for", x)
     if can_increase: print("Use -m to increase maximum # of results, currently", check_possible_max)
     end_time = time.time()
