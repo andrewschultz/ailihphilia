@@ -102,6 +102,14 @@ The Known Wonk won't let me pass. What to do?
 
 (+1) > USE NULL ILLUN ON KNOWN WONK
 
+>N
+
+How to get to Elided Ile? Probably one of the kayak and Tao Boat. But the kayak has a means of propulsion in your inventory...
+
+(+1) >USE ELOPE POLE ON KAYAK
+
+The Tao Boat can transport you, too. Just spiritually and not physically.
+
 (+1) >USE DORK ROD ON TAO BOAT
 
 Now that you've been in the Tao Boat, you feel confident enough to pick up the Rep Popper.

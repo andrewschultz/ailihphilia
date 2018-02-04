@@ -28,7 +28,7 @@ chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
 
-Grebeberg is a region. max-score of Grebeberg is 19.
+Grebeberg is a region. max-score of Grebeberg is 20.
 
 Dim Mid is a region. max-score of Dim Mid is 6.
 
@@ -130,6 +130,9 @@ to score-inc:
 check requesting the score:
 	say "Your overall score so far is [score] of [maximum score].";
 	say "Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do].";
+	if player has set o notes and north tron is off-stage:
+		let ni be number of ingredients carried by the player;
+			say "You also have [ni] of [number of ingredients] piece[if ni is not 1]s[end if] of the North Tron, according to the set-o-notes.";
 	the rule succeeds;
 
 to reg-inc (re - a region):
@@ -577,6 +580,7 @@ el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide wa
 puce cup	dose sod	--	--	--	true	false	true	Grebeberg	"You funnel the dose sod into the puce cup, which you close. That way, the dose sod will stay fresh."
 puce cup	marge pegram	Elan Ale	sod-in-cup rule	--	true	true	true	Yelpley	"You give marge the puce cup. She drinks the dose sod and immediately feels better. 'Well... I have a lot of catching up to do. Can't hang around. Here's some Elan Ale for you, to celebrate how cool you are for helping.'"
 spa maps	Code Doc	--	maps-explained-yet rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
+elope pole	kayak	x/o box	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you an x/o box as a reward: it's about not only friendship but also planning out the details of things. You're worried it doesn't make any sense, but they assure you it will, in time."
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 Ye Key	etage gate	--	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again."
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
@@ -992,7 +996,17 @@ The Edits Tide is scenery in Swamp Maws. "A voice from the edits tide seems to s
 
 book Calcific Lac
 
-Calcific Lac is north of Swamp Maws. It is in Grebeberg. "A Tao Boat rests at the edge of Calcific Lac."
+Calcific Lac is north of Swamp Maws. It is in Grebeberg. "A Tao Boat rests at the edge of Calcific Lac. [elile].[paragraph break][if dork rod is in lalaland]The Tao Boat that helped you get at peace with things is here[else]A Tao Boat rests on the shore, here[end if]."
+
+to say eli-ile:
+	if elope pole is in lalaland:
+		say "That kayak you took to Elided Ile is here, too"
+	else:
+		say "There's a kayak, too. "
+		if null illun is in lalaland:
+			say "[one of]And wait! If you look into the distance, you see something! Elided Ile! Just as the Known Wonk said it had to be somewhere! The Wonk's calculations and predictions were all right[or]You see Elided Ile in the distance. Maybe some day, you will get there[stopping]"
+		else:
+			say "You scan in the distance for anywhere the kayak might take you, but you can't find anywhere, yet"
 
 chapter kayak
 
@@ -1393,6 +1407,7 @@ carry out tending:
 	if noun is not tenses net, say "That doesn't need tending." instead;
 	if player has epicer recipe, say "You already did what you needed with the net." instead;
 	say "You adjust the tenses net. You're not sure how to make it work, but with some common sense, you make it. The set o['] notes gives surprising help. You climb and swing from the trapeze to the other side--falling into the tenses net about a hundred or so times--but the hundred and first bam! You notice an epic-er recipe on the other side.[paragraph break]It's a clear step up from the set o['] notes, which you won't be needing any more. Yay! There's also something labeled an elope pole, which you suspect may help you get away if and when you need to.";
+	now player has elope pole;
 	now set o notes is in ZeroRez;
 	now player has epicer recipe;
 	score-inc; [Yelpley/TEND NET]

@@ -189,6 +189,11 @@ You'll know the item when you see it.
 The Dork Rod.
 USE DORK ROD ON TAO BOAT.
 Now that you're all peaceful, you can explore other places.
+?Can the kayak take me anywhere?
+Yes, but you need something to propel you.
+An oar, or a pole, or something.
+The elope pole you got from the net in the Trapeze Part should work.
+USE ELOPE POLE ON KAYAK.
 >Yelpley
 >>YAWN WAY
 ?Is there anything to do here?
@@ -343,9 +348,10 @@ There are 22 total points in Yelpley.
 1 point if you USE ERODED ORE ON REVIVER.
 1 point if you USE BRO ORB ON MADAM.
 ?How do I get all the points for Grebeberg?
-There are 19 total points in Grebeberg.
+There are 20 total points in Grebeberg.
 1 point if you USE ERA FARE ON KING NIK.
 1 point if you USE PUCE CUP ON DOSE SOD.
+1 point if you USE ELOPE POLE ON KAYAK.
 1 point if you USE PARTY TRAP ON START RATS.
 1 point if you USE POO COOP ON GNU DUNG.
 1 point if you USE RADAR ON MADE DAM.
