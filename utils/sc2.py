@@ -50,6 +50,7 @@ use_in_walkthrough = defaultdict(int)
 use_in_trizflow = defaultdict(int)
 invis_points = defaultdict(int)
 invis_region_points = defaultdict(int)
+source_region = defaultdict(str)
 
 def usage():
     print("-v for verbose")
@@ -59,10 +60,12 @@ def usage():
 
 def detect_region(a, b):
     if '[' not in a:
-        return b
+        return ('ignore', b)
     temp = re.sub(".*\[", "", a.strip())
     temp = re.sub("\].*", "", temp)
     if semi_verbose: print("DEBUG:", temp)
+    if 'odd do' in a.lower():
+        return('odd do', temp)
     ary = temp.split("/")
     if len(ary) == 1:
         return (ary[0].lower(), None)
@@ -77,7 +80,6 @@ def source_vs_invisiclues():
     main_err = 0
     summary_err = 0
     in_summary = False
-    in_odd = False
     this_line = 0
     with open(invis_raw) as file:
         for line in file:
@@ -98,12 +100,11 @@ def source_vs_invisiclues():
                 in_summary = True
                 continue
             if in_summary:
-                if 'all the Odd Do' in line:
-                    in_odd = True
+                if line.startswith('How do I get all the'):
+                    summary_region = re.sub(".*points for ", "", line.lower().split())
                     continue
-                if in_odd:
-                    if line.startswith('?'):
-                        in_odd = False
+                elif line.strip() == ';' or line.startswith('What is unsorted'):
+                    summary_region = ''
                     continue
                 if line.startswith("1 point if you ") or line.startswith("1 point for "): # obviously this needs to be cleaned up for custom commands
                     ll = re.sub("^1 point (for|if you) ", "", line.strip())
@@ -119,10 +120,12 @@ def source_vs_invisiclues():
                     use_in_invisiclues_main[ll] = True
     for x in list(set(use_in_invisiclues_main.keys()) | set(use_in_source.keys())):
         if x not in use_in_invisiclues_main.keys():
+            if source_region[x] == 'odd do': continue
             if not main_err: print("=" * 40)
             print("ERROR: Need this source line in invisiclues main:", x)
             main_err = main_err + 1
         elif x not in use_in_source.keys():
+            if source_region[x] == 'odd do': continue
             if not main_err: print("=" * 40)
             print("ERROR: Need this invisiclues main line in source(table of useons or [region/command]:", x)
             main_err = main_err + 1
@@ -159,7 +162,7 @@ def source_vs_trizbort_flow():
             line_count = line_count + 1
             if not "room id=" in line: continue
             if "No Points" in line: continue
-            if "Misc Points" in line: continue # we may wish to turn this spigot back on later if there's an easy way to integrate this check. But right now, there isn't.
+            # if "Misc Points" in line: continue # we may wish to turn this spigot back on later if there's an easy way to integrate this check. But right now, there isn't.
             rn = re.sub(r".* name=\"([^\"]*)\".*", r'\1', line.strip())
             use_in_trizflow[rn] = line_count
             # print("Adding", rn)
@@ -200,7 +203,7 @@ def source_vs_walkthrough():
                     warning_walkthrough_line = line_count
                 use_in_walkthrough[ll] = True
     for x in list(set(use_in_walkthrough.keys()) | set(use_in_source.keys())):
-        if x not in use_in_walkthrough.keys():
+        if x not in use_in_walkthrough.keys() and source_region[x] != 'odd do':
             print("ERROR: Need this line in walkthrough:", x)
             any_err = any_err + 1
         elif x not in use_in_source.keys():
@@ -265,11 +268,12 @@ def get_stuff_from_source():
                 region_def_line[l2] = line_count
                 if semi_verbose: print("Noting region", l2)
                 continue
-            if 'score-inc' in line and '\t' in line:
+            if ('score-inc' in line or 'reg-inc odd do' in line.lower()) and '\t' in line:
                 (temp_region, this_cmd) = detect_region(line, current_region)
                 if temp_region == 'ignore':
                     continue
                 if this_cmd:
+                    source_region[this_cmd] = temp_region
                     use_in_source[this_cmd] = line_count
                     if verbose: print("Tacking on", this_cmd)
                 if temp_region == current_region and '[' in line:
@@ -306,12 +310,6 @@ def get_stuff_from_source():
                 use_ons = False
                 need_true_score = False
                 continue
-            if line.startswith('\t') and "reg-inc" in ll and "reg-inc reg-plus entry" not in ll:
-                l2 = re.sub(".*reg-inc ", "", ll.lower())
-                l2 = re.sub(";.*", "", l2)
-                if l2 == 'mrlp':
-                    continue
-                directed_incs[l2] = directed_incs[l2] + 1
             if in_use_table:
                 x = ll.split("\t")
                 if x[5] != truth_array[need_true_score] and x[5] != "sco":
