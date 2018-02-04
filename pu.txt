@@ -145,6 +145,8 @@ You need something true, or something that shows you've been true.
 If you get rid of all the books, you'll get a neat item.
 USE EXAM AXE ON LIE VEIL.
 >>MONT NOM
+?What is Curt doing? How do I get rid of him?
+TRUCK CURT.
 ?Can I make any sort of special food here?
 Yes, from two other foods.
 They'll combine too grossly elsewhere, but not here.
@@ -338,11 +340,14 @@ There are 22 total points in Yelpley.
 1 point if you USE GOLD LOG ON ROTATOR.
 1 point if you USE DEBT BED ON REVIVER.
 1 point if you USE PUCE CUP ON MARGE PEGRAM.
+1 point if you USE ELAN ALE ON IRA BARI.
+1 point if you USE STINK KNITS ON ROTATOR.
 1 point if you USE YE KEY ON ETAGE GATE.
 1 point if you USE TO IDIOT ON REVOLT LOVER.
 1 point if you PUFF UP with the Spur Ups.
 1 point if you PULL UP in the Emo Dome.
 1 point if you TAMP MAT in Swept Pews.
+1 point if you USE CASH SAC ON CROSS ORC.
 1 point if you STAND NAT'S.
 1 point if you USE RADAR ON CRAG ARC.
 1 point if you USE ERODED ORE ON REVIVER.
@@ -350,12 +355,16 @@ There are 22 total points in Yelpley.
 ?How do I get all the points for Grebeberg?
 There are 20 total points in Grebeberg.
 1 point if you USE ERA FARE ON KING NIK.
+1 point if you USE DEMO MED ON GULF LUG.
+1 point if you USE SPA MAPS ON CODE DOC.
 1 point if you USE PUCE CUP ON DOSE SOD.
 1 point if you USE ELOPE POLE ON KAYAK.
+1 point if you USE EL DOODLE ON EDITS TIDE.
 1 point if you USE PARTY TRAP ON START RATS.
 1 point if you USE POO COOP ON GNU DUNG.
 1 point if you USE RADAR ON MADE DAM.
 1 point if you TRUCK CURT.
+1 point if you USE UFO TOFU ON MAYO YAM.
 1 point if you USE SPA MAPS ON GO-BY BOG.
 1 point if you USE NULL ILLUN ON KNOWN WONK.
 1 point if you USE DORK ROD ON TAO BOAT.
@@ -365,19 +374,13 @@ There are 20 total points in Grebeberg.
 1 point for YAK OKAY around the Ergot Ogre.
 1 point if you USE SAGE GAS ON GURU RUG.
 1 point if you USE REP POPPER ON YUGE GUY.
-?How do I get all the Odd Do points?
-There are 3 total points in Odd Do.
-1 point if you say POOP. Or BOOB.
+?How do I get all the points for Odd Do?
+There are 4 total points in Odd Do.
+1 point for POOP. Or BOOB.
 1 point if you REFER instead of THINK.
 1 point if you DIAL AID instead of AID.
+1 point if you SLAM MAMMALS around the eels.
 ?What is unsorted?
-1 point if you USE DEMO MED ON GULF LUG.
-1 point if you USE SPA MAPS ON CODE DOC.
-1 point if you USE CASH SAC ON CROSS ORC.
-1 point if you USE EL DOODLE ON EDITS TIDE.
-1 point if you USE STINK KNITS ON ROTATOR.
-1 point if you USE UFO TOFU ON MAYO YAM.
-1 point if you USE ELAN ALE ON IRA BARI.
 ;
 >>GROSS ORG
 ?What can I do about the glam-amalg?

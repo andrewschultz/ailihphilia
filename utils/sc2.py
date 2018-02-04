@@ -81,6 +81,7 @@ def source_vs_invisiclues():
     summary_err = 0
     in_summary = False
     this_line = 0
+    summary_region = ''
     with open(invis_raw) as file:
         for line in file:
             this_line = this_line + 1
@@ -100,16 +101,21 @@ def source_vs_invisiclues():
                 in_summary = True
                 continue
             if in_summary:
-                if line.startswith('How do I get all the'):
-                    summary_region = re.sub(".*points for ", "", line.lower().split())
+                if line.startswith('?How do I get all the'):
+                    summary_region = re.sub(".*points for ", "", line.lower().strip())
+                    summary_region = re.sub("\?", "", summary_region)
+                    # print("Starting region", summary_region)
                     continue
-                elif line.strip() == ';' or line.startswith('What is unsorted'):
+                elif line.strip() == ';' or line.startswith('?What is unsorted'):
                     summary_region = ''
                     continue
                 if line.startswith("1 point if you ") or line.startswith("1 point for "): # obviously this needs to be cleaned up for custom commands
                     ll = re.sub("^1 point (for|if you) ", "", line.strip())
                     ll = re.sub("\..*", "", ll)
                     ll = re.sub(" [a-z].*", "", ll)
+                    if source_region[ll] != summary_region:
+                        summary_err = summary_err + 1
+                        print("Command", ll, "has conflicting source and summary regions. Source={:s}, Summary={:s}.".format(source_region[ll], summary_region))
                     if ll in use_in_invisiclues_summary.keys(): print("WARNING line", this_line,"has duplicate command:", ll)
                     use_in_invisiclues_summary[ll] = True
             else:
@@ -330,6 +336,7 @@ def get_stuff_from_source():
                             temp_region = x[8].lower()
                         if temp_region:
                             directed_incs[temp_region] = directed_incs[temp_region] + 1
+                            source_region[cmd] = temp_region
                         else:
                             if not temp_region:
                                 print("Blank temp region at line", line_count, "in use table.")

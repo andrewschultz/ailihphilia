@@ -559,7 +559,7 @@ use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
 trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
 party trap	start rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
 demo med	gulf lug	cash sac	--	--	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' he looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
-TO IDIOT	Revolt Lover	--	--	--	true	true	true	Grebeberg	"The Revolt Lover begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Known Wonk runs away."
+TO IDIOT	Revolt Lover	--	--	--	true	true	true	Yelpley	"The Revolt Lover begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Known Wonk runs away."
 NULL ILLUN	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me.' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. And if it's simple, well, I need to know when simple stuff works.' The Known Wonk apologizes--it's back to a Tru Yurt for a thought session."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes to look for ... well, something else."
 radar	crag arc	UFO tofu	orc-gone rule	--	true	true	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO as it flies off. It bounces off you. 'O Furor! UFO!' you cry. You look at it and--it's unharmed, and still in a cubic shape. Looks like you got yourself some UFO tofu."
@@ -594,8 +594,11 @@ section pre-use rules
 [please add alphabetically]
 
 this is the in-mont-nom rule:
-	if location of player is Mont Nom, the rule succeeds;
-	say "Eww! Maybe if you were somewhere more magical with food, it would work.";
+	if location of player is not Mont Nom:
+		say "Eww! Maybe if you were somewhere more magical with food, it would work.";
+		the rule succeeds;
+	if Curt is not in Mont Nom, the rule succeeds;
+	say "Curt is distracting you. Maybe you can get rid of him, first.";
 	the rule fails;
 
 this is the maps-explained-yet rule:
@@ -888,7 +891,23 @@ book Mont Nom
 
 Mont Nom is south of Dumb Mud. It is in Grebeberg.
 
-Mont Nom is below Dumb Mud.
+Mont Nom is above Dumb Mud.
+
+chapter trucking
+
+Curt is a person in Mont Nom.
+
+trucking is an action applying to one thing.
+
+understand the command "truck" as something new.
+
+understand "truck [something]" as trucking.
+
+carry out trucking:
+	if noun is not Curt, say "Wrong thing to truck." instead;
+	move Curt to ZeroRez;
+	score-inc; [Grebeberg/truck curt]
+	the rule succeeds.
 
 book Ooze Zoo
 
@@ -1616,24 +1635,6 @@ when play begins:
 volume unsorted
 
 chapter crap arc
-
-chapter trucking
-
-[this point is unsorted yet]
-
-Curt is a person.
-
-trucking is an action applying to one thing.
-
-understand the command "truck" as something new.
-
-understand "truck [something]" as trucking.
-
-carry out trucking:
-	if noun is not Curt, say "Wrong thing to truck." instead;
-	move Curt to ZeroRez;
-	score-inc; [Yelpley/truck curt]
-	the rule succeeds.
 
 volume metarooms
 
