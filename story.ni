@@ -34,7 +34,7 @@ Dim Mid is a region. max-score of Dim Mid is 6.
 
 Yelpley is a region. max-score of Yelpley is 22.
 
-Odd Do is a region. max-score of Odd Do is 3.
+Odd Do is a region. max-score of Odd Do is 4.
 
 [El Live Ville is a region.]
 
@@ -239,7 +239,7 @@ understand "refer" as refering.
 carry out refering:
 	if refer-bonus is false:
 		say "Yes! That's a slightly more appropriate way to think, here.";
-		reg-inc Odd Do;
+		reg-inc Odd Do; [REFER]
 		now refer-bonus is true;
 	try thinking instead;
 
@@ -427,7 +427,7 @@ carry out pooping:
 		repeat with Q running from 1 to 6:
 			say "[line break][bracket][if Q is 1]Wait, no, y[else]Y[end if]our score has just gone down [if Q > 1]again [end if]by 121 points.[close bracket]";
 			wfak;
-		reg-inc Odd Do;
+		reg-inc Odd Do; [POOP]
 		now the last notified score is the score;
 	else:
 		say "[line break]X2?[paragraph break]...X!";
@@ -1662,7 +1662,7 @@ dial-yet is a truth state that varies.
 check aiding:
 	if dial-yet is false and word number 1 in the player's command is "dial":
 		say "Your 'correct' way of asking for aid nets a last lousy point. Yay![paragraph break]";
-		reg-inc Odd Do;
+		reg-inc Odd Do; [DIAL AID]
 		now dial-yet is true;
 	if dial-yet is false:
 		say "Aid... aid...[paragraph break]";
@@ -1676,6 +1676,22 @@ to decide whether done-here:
 	if player is in Seer Trees and start rats are in ZeroRez, yes;
 	if player is in Calcific Lac and dork rod is in ZeroRez, yes;
 	no;
+
+chapter slammammalsing
+
+slammammalsing is an action applying to nothing.
+
+understand the command "slam mammals" as something new.
+
+understand "slam mammals" as slammammalsing.
+
+carry out slammammalsing:
+	if slam-mam is true, say "You already did. Don't overdo it.";
+	if sleep eels are in lalaland, say "Too late for that." instead;
+	unless player is in Ooze Zoo and sleep eels are in Ooze Zoo, say "You have no sympathetic audience." instead;
+	say "The sleep eels wake from their slumber briefly to squirm. They telephathically project their pleasure before going back to sleep. You've ... done something, I guess?";
+	reg-inc Odd Do; [SLAM MAMMALS]
+	the rule succeeds;
 
 volume endgame stuff
 
