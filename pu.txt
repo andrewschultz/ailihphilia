@@ -126,7 +126,7 @@ You need to run N.N.W.W.S.S. to the Ergot Ogre.
 The yak knocks the ogre over with a special command, allowing you passage east from the Lair Trial.
 This command starts with yak...
 YAK OKAY.
->MOO ROOM
+>>MOO ROOM
 ?What do I do here?
 Get the Poo Coop.
 >>TOP SPOT
@@ -149,6 +149,10 @@ USE EXAM AXE ON LIE VEIL.
 Yes, from two other foods.
 They'll combine too grossly elsewhere, but not here.
 USE UFO TOFU ON MAYO YAM.
+>>LE BABEL
+?Why can't I take the bro orb?
+You're not at peace with yourself.
+You need to have spent time in the Tao Boat for that to happen.
 >>MIRE RIM
 ?What is the made dam for?
 It looks pretty hashed together, bumpy. Something could be in there.
@@ -171,7 +175,7 @@ But you don't feel like you can touch it.
 What could help the guru rug float away?
 The sage gas.
 USE SAGE GAS ON GURU RUG.
->>YACK CAY
+>>SWAMP MAWS
 ?How do I get past the Known Wonk?
 The Known Wonk seems to know a lot, but that doesn't contribute to happiness.
 Maybe a book could help.
@@ -194,9 +198,13 @@ You need the Spur Ups from the Cold Loc.
 But having them isn't enough.
 You need them to do something up.
 PUFF UP.
->>STRAY ARTS
-?What do I need to do to get the Art Xtra?
+>>ART XTRA
+?What do I need to do to get the Trap Art?
 Nothing. Just take it. It's useful elsewhere.
+?What do I need to do to get El Doodle?
+Nothing. Just take it. It's useful elsewhere.
+?What are the stray arts for?
+General scenery and stuff.
 >>EVADED AVE
 ?Why won't the revolt lover let me go west or east?
 The revolt lover is a bit of a jerk.
@@ -219,7 +227,7 @@ Yes, once Dave's not in the way.
 Well, you need to avoid him. Not quite avoid him.
 But do something to him. ????? DAVE.
 EVADE DAVE.
->WORN ROW
+>>WORN ROW
 ?How do I get past Ian?
 NAIL IAN.
 ?It's empty here. How do I fill things out a bit?
@@ -286,7 +294,7 @@ DENT NED.
 ?How do I get past the gate?
 It's not too bad.
 USE YE KEY ON ETAGE GATE.
->>BALL LAB
+>>PRO CORP
 ?What to do here?
 Fill in later.
 >>BON SNOB
@@ -295,7 +303,7 @@ He finds the Gorge Grog tacky.
 You need to find Class Alc.
 Have you found the Elan Ale?
 USE ELAN ALE ON IRA BARI.
->>CIVIC LEVEL
+>>RED ROSES ORDER
 ?How do I defeat Madam?
 You can't get in if you don't have what you need.
 Something that's the opposite of her.
@@ -332,6 +340,8 @@ There are 22 total points in Yelpley.
 1 point if you TAMP MAT in Swept Pews.
 1 point if you STAND NAT'S.
 1 point if you USE RADAR ON CRAG ARC.
+1 point if you USE ERODED ORE ON REVIVER.
+1 point if you USE BRO ORB ON MADAM.
 ?How do I get all the points for Grebeberg?
 There are 19 total points in Grebeberg.
 1 point if you USE ERA FARE ON KING NIK.
@@ -346,8 +356,9 @@ There are 19 total points in Grebeberg.
 1 point if you USE TROLL ORT ON BRAG GARB. (note: this can be done outside of Grebeberg, but it's part of a Grebeberg puzzle.)
 1 point if you USE STOCK COTS ON SLEEP EELS.
 1 point if you USE EXAM AXE ON LIE VEIL.
-1 point if you USE REP POPPER ON YUGE GUY.
 1 point for YAK OKAY around the Ergot Ogre.
+1 point if you USE SAGE GAS ON GURU RUG.
+1 point if you USE REP POPPER ON YUGE GUY.
 ?How do I get all the Odd Do points?
 There are 3 total points in Odd Do.
 1 point if you say POOP. Or BOOB.
@@ -359,11 +370,8 @@ There are 3 total points in Odd Do.
 1 point if you USE CASH SAC ON CROSS ORC.
 1 point if you USE EL DOODLE ON EDITS TIDE.
 1 point if you USE STINK KNITS ON ROTATOR.
-1 point if you USE SAGE GAS ON GURU RUG.
 1 point if you USE UFO TOFU ON MAYO YAM.
 1 point if you USE ELAN ALE ON IRA BARI.
-1 point if you USE ERODED ORE ON REVIVER.
-1 point if you USE BRO ORB ON MADAM.
 ;
 >>GROSS ORG
 ?What can I do about the glam-amalg?
