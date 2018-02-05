@@ -50,11 +50,7 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 			<dock index="0" id="11" port="s" />
 			<dock index="1" id="14" port="n" />
 		</line>
-		<room id="17" name="USE X-ITE TIX ON TIX EXIT" subtitle="" x="864" y="-384" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isEndRoom="yes" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<line id="18" name="" description="" flow="oneWay">
-			<dock index="0" id="14" port="ne" />
-			<dock index="1" id="17" port="sw" />
-		</line>
+		<room id="17" name="USE X-ITE TIX ON TIX EXIT" subtitle="" x="864" y="-512" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isEndRoom="yes" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="19" name="USE UFO TOFU ON MAYO YAM" subtitle="" x="544" y="0" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>Mush Sum</objects>
 		</room>
@@ -276,6 +272,20 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 		<line id="102" name="" description="" flow="oneWay">
 			<dock index="0" id="48" port="e" />
 			<dock index="1" id="19" port="w" />
+		</line>
+		<room id="103" name="USE YARD RAY ON TEST SET" subtitle="" x="864" y="-256" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<line id="104" name="" description="" flow="oneWay">
+			<dock index="0" id="14" port="e" />
+			<dock index="1" id="103" port="w" />
+		</line>
+		<room id="18" name="USE YARD RAY ON DIKTAT KID" subtitle="" x="864" y="-384" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<line id="106" name="" description="" flow="oneWay">
+			<dock index="0" id="103" port="n" />
+			<dock index="1" id="18" port="s" />
+		</line>
+		<line id="107" name="" description="" flow="oneWay">
+			<dock index="0" id="18" port="n" />
+			<dock index="1" id="17" port="s" />
 		</line>
 	</map>
 	<settings>

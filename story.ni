@@ -728,7 +728,7 @@ understand "pack cap" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did.";
-	say "Yes, that's how to get the cap. You are ready to go![paragraph break]'Good job! Here's a set o['] notes to replace that darer ad,' the Flee Elf says. It salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.";
+	say "Yes, that's how to get the cap. You are ready to go![paragraph break]'Good job! Here's a set o['] notes to replace that darer ad,' the Flee Elf says. It salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
 	move flee elf to ZeroRez;
 	now Tix Exit is in ZeroRez;
 	now darer ad is in ZeroRez;
@@ -1201,6 +1201,8 @@ carry out roting:
 
 chapter books
 
+the tract cart is scenery. "It carries [number of books in Worn Row] books: [list of books in Worn Row]."
+
 a book is a kind of thing. description of a book is "It [if player carries the item described]is[else]looks[end if] really heavy and incomprehensible to you."
 
 section books with purpose so far
@@ -1228,12 +1230,12 @@ books-carried-yet is a truth state that varies.
 
 check taking a book:
 	if books-carried-yet is false:
-		say "Oof! That's a heavy book. Looks like you'll only be able to carry one at a time.";
+		say "Oof! That's a heavy book. Looks like you'll only be able to take one at a time from the tract cart.";
 		now books-carried-yet is true;
 	else:
 		if number of books carried by player is 1:
 			let myb be random book carried by player;
-			say "Oof! You need to put [myb] back to take [noun].";
+			say "Oof! You need to put [myb] back in the tract cart to take [noun]. So you do.";
 			now myb is in Worn Row;
 		else:
 			say "It's a bit unwieldy, but you manage to pick up [noun].";
@@ -1279,6 +1281,7 @@ carry out workrowing:
 	now ever-workrow is true;
 	now all workables are in Worn Row;
 	now all books in Worn Row are in TempMet;
+	now tract cart is in TempMet;
 	the rule succeeds;
 
 to decide whether shouldnt-revert:
@@ -1441,9 +1444,9 @@ check going in Evaded Ave:
 
 book Trapeze Part
 
-Trapeze Part is west of Evaded Ave. It is in Yelpley. "[if epicer recipe is off-stage]There's a tenses net on the floor, here. It could protect you from a long fall. You're convinced there must be something at the far end, but it's probably not safe to use the trapeze to get over until, well, you've done safety checks[else]The tenses net still sits here, and it'd be handy if there was anything else on the other side of it, but there isn't[end if]."
+Trapeze Part is west of Evaded Ave. It is in Yelpley. "[if epicer recipe is off-stage]There's a ten level net on the floor, here. It could protect you from a long fall. You're convinced there must be something at the far end, but it's probably not safe to use the trapeze to get over until, well, you've done safety checks[else]The ten level net still sits here, and it'd be handy if there was anything else on the other side of it, but there isn't[end if]."
 
-the tenses net is scenery in Trapeze Part. "[if epicer recipe is off-stage]It doesn't quite look sturdy enough. Maybe you could do something to fix it[else]It was sturdy enough to help you get the epicer recipe, and that's enough[end if]."
+the ten level net is scenery in Trapeze Part. "[if epicer recipe is off-stage]It doesn't quite look sturdy enough. Maybe you could do something to fix it[else]It was sturdy enough to help you get the epicer recipe, and that's enough[end if]."
 
 the epicer recipe is a thing. description is "You've seen recipes before, but this is a big interesting one! It describes how to make a north-tron, which will get you north of Fun [']Nuf.[paragraph break][gots of TNT][gots of x/o box][gots of mush sum][gots of balsa slab][gots of Gorge Grog]"
 
@@ -1456,9 +1459,9 @@ understand the command "tend" as something new.
 understand "tend [something]" as tending.
 
 carry out tending:
-	if noun is not tenses net, say "That doesn't need tending." instead;
+	if noun is not ten level net, say "That doesn't need tending." instead;
 	if player has epicer recipe, say "You already did what you needed with the net." instead;
-	say "You adjust the tenses net. You're not sure how to make it work, but with some common sense, you make it. The set o['] notes gives surprising help. You climb and swing from the trapeze to the other side--falling into the tenses net about a hundred or so times--but the hundred and first bam! You notice an epic-er recipe on the other side.[paragraph break]It's a clear step up from the set o['] notes, which you won't be needing any more. Yay! There's also something labeled an elope pole, which you suspect may help you get away if and when you need to.";
+	say "You adjust the ten level net. You're not sure how to make it work, but with some common sense, you make it. The set o['] notes gives surprising help. You climb and swing from the trapeze to the other side--falling into the ten level net about a hundred or so times--but the hundred and first bam! You notice an epic-er recipe on the other side.[paragraph break]It's a clear step up from the set o['] notes, which you won't be needing any more. Yay! There's also something labeled an elope pole, which you suspect may help you get away if and when you need to.";
 	now player has elope pole;
 	now set o notes is in ZeroRez;
 	now player has epicer recipe;

@@ -127,7 +127,6 @@ def check_notes(s):
                 l2 = re.sub("-", " ", l2, 0, re.IGNORECASE)
                 l2 = re.sub("[^a-z \-/]", "", l2, 0, re.IGNORECASE)
                 # print("Looking for", l2)
-                if 'goblin' in ll.lower(): print(l2)
                 for q in l2.split("/"):
                     if q in pals.keys():
                         print("Duplicate", q, line_count, "from", pals[q], "in notes file")
@@ -158,6 +157,7 @@ def check_notes(s):
                     table_name = ''
                 count = count + 1
                 ll = re.sub("[\.\",!\?]", "", line.lower())
+                ll = re.sub("-", " ", line.lower())
                 for q in pals.keys():
                     if q in ll and (q not in twice.keys() or twice_okay):
                         if q == 'say as' and 'say "as' in line.lower():
