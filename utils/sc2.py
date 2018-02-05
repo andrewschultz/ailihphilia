@@ -58,6 +58,20 @@ def usage():
     print("-h to show hash values")
     exit()
 
+def bonus_mistake_check():
+    count = 0
+    line_count = 0
+    with open(main_source) as file:
+        for line in file:
+            line_count = line_count + 1
+            if re.search("understand.*as a mistake", line, re.IGNORECASE):
+                print("ERROR: line", line_count, "should be relocated to mistakes.i7x:", line.strip())
+                count = count + 1
+    if line_count:
+        print(count, "total error" + ("s" if count > 1 else ""))
+    else:
+        print("No 'mistake' positioning errors.")
+
 def detect_region(a, b):
     if '[' not in a:
         return ('ignore', b)
@@ -167,6 +181,9 @@ def source_vs_trizbort_flow():
         for line in file:
             line_count = line_count + 1
             if not "room id=" in line: continue
+            if 'secondFill="#80FFFF"' in line:
+                print("WARNING line", line_count, "has the wrong color blue. Yeah, trivial, but...")
+                print(line)
             if "No Points" in line: continue
             # if "Misc Points" in line: continue # we may wish to turn this spigot back on later if there's an easy way to integrate this check. But right now, there isn't.
             rn = re.sub(r".* name=\"([^\"]*)\".*", r'\1', line.strip())
@@ -410,6 +427,8 @@ elif warning_story_line:
     i7.npo(main_source, warning_story_line, True)
 
 print("Total =", t2)
+
+bonus_mistake_check()
 
 if invis_line_to_open:
     i7.npo(invis_raw, invis_line_to_open, True)

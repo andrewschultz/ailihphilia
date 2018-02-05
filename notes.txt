@@ -2,6 +2,10 @@
 
 # XITE TIX lead to A MORE EXCITING REAL WORLD. Well, given all the palindromes you dealt with, you probably should've expected a circular loop to back where you began. But you did have fun. Probably more than if you'd stood around and leveled up a whole bunch. So that's something.
 
+Now! On!
+
+# Test Set: used to make sure the yard ray works
+
 if you can't quite do something but figured it out, this should be printed.
 
 Rah! Thar!
@@ -36,8 +40,6 @@ liar frail: more like liar FRAIL, amirite? (past sap)
 
 grub burg
 It will be as prodded-dorp!
-
-test set
 
 past sap: old stuff that can grow a rift fir again
 

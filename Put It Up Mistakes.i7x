@@ -6,6 +6,8 @@ part locations
 
 book Fun 'Nuf
 
+chapter flee elf abuse
+
 understand "flea elf" and "flea" as a mistake("[fe0]The elf scratches for a bit, then looks embarrassed.") when player is in Fun 'Nuf and Flee Elf is in Fun 'Nuf.
 
 understand "flex elf" and "flex" as a mistake("[fe1]The elf looks more flexible than you. It's the cap you want to concentrate on.") when player is in Fun 'Nuf and Flee Elf is in Fun 'Nuf.
@@ -24,6 +26,12 @@ to say fe1:
 
 to say fe2:
 	now fleece-elf is true;
+
+chapter yard ray misuse
+
+understand "yarn ray" as a mistake ("If you want more story, then sorry, this one's nearly at an end.") when player has yard ray.
+
+understand "yarg ray" and "yarr ray" as a mistake ("Becoming a pirate at the end? A clever heel turn!") when player has yard ray.
 
 book My Gym
 
@@ -44,6 +52,12 @@ book Dumb Mud
 understand "gnu bung" as a mistake ("Yes, that's where it came from.") when player is in Dumb Mud and gnu dung is in Dumb Mud.
 
 understand "gnu lung" as a mistake ("The gnu dung smells bad enough without dropping more internal organs into the mix.") when player is in Dumb Mud and gnu dung is in Dumb Mud.
+
+book Mont Nom
+
+understand "truce curt" as a mistake ("You'll need something more violent, here." when player is in Mont Nom and Curt is in Mont Nom.
+
+understand "truco curt" as a mistake ("You don't have a deck of cards, and Curt wouldn't want to play." when player is in Mont Nom and Curt is in Mont Nom.
 
 part things
 

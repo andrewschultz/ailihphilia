@@ -477,6 +477,7 @@ check useoning it with:
 		if wr-short-note is false:
 			say "(NOTE: You can abbreviate this command with ROT, REI and REV for the respective machines, later.)[paragraph break]";
 			now wr-short-note is true;
+	if second noun is a workable and useleft of second noun is 0, say "No point. The [second noun] is broken." instead;
 	repeat through table of cantuse:
 		if noun is use1 entry or second noun is use1 entry, say "[babble entry][line break]" instead;
 	if noun is a person, say "[one of]You're not any good at using other people. In fact, if you tried, they'd wind up using YOU. Plus you don't want to be, really. There's another way. So, no[or]Using people is out[stopping]. Maybe you could use something on a person, though." instead;
@@ -515,6 +516,7 @@ check useoning it with:
 					set the pronoun it to use2 entry;
 				if second noun is a workable:
 					wear-down second noun;
+					check-test-set;
 				the rule succeeds;
 			else if there is no use2 entry:
 				say "[babble entry][line break]";
@@ -889,9 +891,11 @@ check taking Bro Orb:
 
 book Mont Nom
 
-Mont Nom is south of Dumb Mud. It is in Grebeberg.
+Mont Nom is south of Dumb Mud. It is in Grebeberg. "An ark of okra blocks passage every way except back north here."
 
 Mont Nom is above Dumb Mud.
+
+The ark of okra is scenery in Mont Nom. "You always found okra, or the idea, icky, but the ark is beautiful enough, you sort of wonder how it'd taste."
 
 chapter trucking
 
@@ -1105,6 +1109,12 @@ printed name of Worn Row is "[if wordrow is true]Word[else if workrow is true]Wo
 understand "work row" and "work" as Worn Row when workrow is true.
 understand "word row" and "word" as Worn Row when wordrow is true.
 
+chapter test set
+
+The test set is a thing.
+
+chapter Ian
+
 Ian is a person in Worn Row.
 
 chapter workables
@@ -1119,6 +1129,15 @@ to wear-down (w - a workable):
 	decrement useleft of w;
 	if useleft of w is 0, say "You watch as [the w] sputters and dies. Well, you got a lot of good use out of it, and hopefully you won't need any more.";
 	if useleft of w is 1, say "[the w] wheezes emphatically. Hopefully, you won't need to use it too much more.";
+	if machuses is 0:
+		say "[line break]With [list of workables] all destroyed, Work Row shakes a bit more. You search through the rubble of the machines and find ... a test set.";
+		now player has test set;
+
+to decide which number is machuses:
+	let retval be 0;
+	repeat with Q running through workables:
+		increase retval but useleft of Q;
+	decide retval;
 
 instead of inserting into:
 	if second noun is a workable, try useoning noun with second noun instead;
