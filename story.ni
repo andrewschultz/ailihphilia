@@ -30,7 +30,7 @@ a region has a number called max-score. a region has a number called cur-score.
 
 Grebeberg is a region. max-score of Grebeberg is 20.
 
-Dim Mid is a region. max-score of Dim Mid is 6.
+Dim Mid is a region. max-score of Dim Mid is 8.
 
 Yelpley is a region. max-score of Yelpley is 22.
 
@@ -589,11 +589,21 @@ rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper defl
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
 Bro Orb	Madam	Yard Ray	--	--	true	true	true	Yelpley	"The Bro Orb shines and drives Madam to rage. 'Live not on evil, madam, live not on evil!' you boom, as the ray does its work. She runs away, sobbing. The Yard Ray is left unguarded. You take it."
 murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
+Yard Ray	test set	--	ready-to-test rule	--	true	false	true	Dim Mid	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle."
+Yard Ray	Diktat Kid	X-ITE TIX	--	--	true	true	true	Dim Mid	"Fzzt! Zap! The yard ray zaps the Diktat Kid. Both explode."
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 
 section pre-use rules
 
 [please add alphabetically]
+
+this is the ready-to-test rule:
+	if location of player is Fun 'Nuf, the rule succeeds;
+	if emitted is false:
+		say "You aren't sure how the Yard Ray works, or what it needs to zap people with. Maybe you should review it to figure things out.";
+		the rule fails;
+	say "That seems right, but you should probably go where there aren't many people. Like back to Fun [']Nuf."
+	the rule fails;
 
 this is the in-mont-nom rule:
 	if location of player is not Mont Nom:
@@ -897,6 +907,8 @@ Mont Nom is above Dumb Mud.
 
 The ark of okra is scenery in Mont Nom. "You always found okra, or the idea, icky, but the ark is beautiful enough, you sort of wonder how it'd taste."
 
+instead of eating ark of okra: say "You don't know how long it's been out here. It's probably, like, the vegetable version of wax fruit."
+
 chapter trucking
 
 Curt is a person in Mont Nom.
@@ -1112,6 +1124,8 @@ understand "word row" and "word" as Worn Row when wordrow is true.
 chapter test set
 
 The test set is a thing.
+
+check taking the test set: say "It's too unwieldy. Maybe you can find a way to clean it up." instead;
 
 chapter Ian
 

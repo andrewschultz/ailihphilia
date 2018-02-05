@@ -174,7 +174,7 @@ Now to get rid of the Lie Veil. You could've done this earlier, but this is in t
 
 ==========================================
 
-How to get past the eels?
+How to get past the eels? They are sleeping but look a bit uncomfortable.
 
 (+1) >USE DEBT BED ON REVIVER
 >E.N.W.W.S
@@ -190,13 +190,21 @@ But you still can't go north! You don't have a weapon!
 
 (+1) >USE MURK RUM ON YARD RAY
 
-Now you can go to the Dirge Grid.
-
->N
-
-Now, using the yard ray on the Diktat Kid doesn't work. It has "Emit ********" on the side, and that suggests
+Now you can go to the Dirge Grid. But ... it'd be nice to know what to do before you stumble in there. Maybe you have something harmless to shoot.
 
 (+1) >EMIT NOONTIME
+
+Now, what can you shoot that you won't miss, but it's sturdy enough you can make sure the Yard Ray works?
+
+>E.S.W
+
+(+1) >USE YARD RAY ON TEST SET
+
+Okay! You're ready now!
+
+>E.N.W.N
+
+(+1) >USE YARD RAY ON DIKTAT KID
 
 >S
 

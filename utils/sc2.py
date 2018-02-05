@@ -67,10 +67,10 @@ def bonus_mistake_check():
             if re.search("understand.*as a mistake", line, re.IGNORECASE):
                 print("ERROR: line", line_count, "should be relocated to mistakes.i7x:", line.strip())
                 count = count + 1
-    if line_count:
-        print(count, "total error" + ("s" if count > 1 else ""))
+    if count:
+        print(count, "total error" + ("" if count == 1 else "s"))
     else:
-        print("No 'mistake' positioning errors.")
+        print("No 'understand/mistake' positioning errors.")
 
 def detect_region(a, b):
     if '[' not in a:

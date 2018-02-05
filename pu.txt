@@ -52,6 +52,17 @@ There is a Yard Ray located elsewhere.
 Also, you'll need to load the Yard Ray.
 With something suitably weird and energetic.
 USE MURK RUM ON YARD RAY.
+?My weapon has juice. Why can't I go north?
+You need to know how to operate it.
+You need one final palindrome command.
+The ray says EMIT ********.
+What could those eight letters mean?
+You can guess the last four.
+And there are omly so many possibilities for the middle.
+EMIT NOONTIME.
+?I don't have confidence I can use the yard ray right! What can I do?
+Is there any item that can be destroyed, but it'd put up useful resistance?
+The test set in Work Row.
 ?Now I defeated the Diktat Kid, how do I get out?
 This one should be pretty simple.
 You got a new item in the Dirge Grid.
@@ -60,11 +71,7 @@ USE X-ITE TIX ON TIX EXIT.
 You win!
 >>DIRGE GRID
 ?How do I defeat the Diktat Kid?
-You can't quite just use the yard ray. You need a special command.
-The yard ray has EMIT ********.
-The Dirge Grid is kind of dark.
-You need one final palindrome command.
-EMIT NOONTIME.
+USE YARD RAY ON DIKTAT KID.
 Now you will get a new item, and you can go back south and win the game.
 >Grebeberg
 >>SEER TREES
@@ -254,6 +261,13 @@ USE STINK KNITS ON ROTATOR.
 USE GOLD LOG ON ROTATOR.
 ?What do I do with the reviver?
 USE ERODED ORE ON REVIVER.
+?Help! A machine broke!
+That just clues you don't need to use it any more.
+?Help! All the machines broke!
+They leave behind something more useful later.
+Near the end, you'll need target practice.
+Once you get the Yard Ray...
+USE YARD RAY ON TEST SET.
 >>EMO DOME
 ?Why am I running past too fast?
 Because you just want to get away.
@@ -321,13 +335,15 @@ USE BRO ORB ON MADAM.
 They're for trying odd stuff you might not have seen otherwise.
 Some commands could be made into palindromes, and there are some (hopefully) amusing alternate palindroms.
 ?How do I get all the points for Dim Mid?
-There are 6 total points in Dim Mid.
+There are 8 total points in Dim Mid.
 1 point for PACK CAP.
 1 point for PACE CAP.
-1 point if you USE X-ITE TIX ON TIX EXIT
 1 point if you USE TNT ON MUSH SUM or any pair of ingredients to create the North-Tron.
 1 point if you USE MURK RUM ON YARD RAY.
+1 point if you USE YARD RAY ON TEST SET.
 1 point if you EMIT NOONTIME.
+1 point if you USE YARD RAY ON DIKTAT KID.
+1 point if you USE X-ITE TIX ON TIX EXIT
 ?How do I get all the points for Yelpley?
 There are 22 total points in Yelpley.
 1 point if you EVADE DAVE.
