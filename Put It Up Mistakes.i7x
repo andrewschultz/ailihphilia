@@ -55,9 +55,9 @@ understand "gnu lung" as a mistake ("The gnu dung smells bad enough without drop
 
 book Mont Nom
 
-understand "truce curt" as a mistake ("You'll need something more violent, here." when player is in Mont Nom and Curt is in Mont Nom.
+understand "truce curt" as a mistake ("You'll need something more violent, here.") when player is in Mont Nom and Curt is in Mont Nom.
 
-understand "truco curt" as a mistake ("You don't have a deck of cards, and Curt wouldn't want to play." when player is in Mont Nom and Curt is in Mont Nom.
+understand "truco curt" as a mistake ("You don't have a deck of cards, and Curt wouldn't want to play.") when player is in Mont Nom and Curt is in Mont Nom.
 
 part things
 

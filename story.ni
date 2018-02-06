@@ -34,7 +34,7 @@ Dim Mid is a region. max-score of Dim Mid is 8.
 
 Yelpley is a region. max-score of Yelpley is 22.
 
-Odd Do is a region. max-score of Odd Do is 4.
+Odd Do is a region. max-score of Odd Do is 5.
 
 [El Live Ville is a region.]
 
@@ -132,7 +132,7 @@ check requesting the score:
 	say "Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do].";
 	if player has set o notes and north tron is off-stage:
 		let ni be number of ingredients carried by the player;
-			say "You also have [ni] of [number of ingredients] piece[if ni is not 1]s[end if] of the North Tron, according to the set-o-notes.";
+		say "You also have [ni] of [number of ingredients] piece[if ni is not 1]s[end if] of the North Tron, according to the set-o-notes.";
 	the rule succeeds;
 
 to reg-inc (re - a region):
@@ -405,33 +405,6 @@ instead of swearing mildly, try swearing obscenely instead;
 swearies is a number that varies.
 
 instead of swearing obscenely, next-rand table of swearstuff;
-
-chapter pooping
-
-pooping is an action applying to nothing.
-
-understand the commands "boob" and "poop" as something new.
-
-understand "boob" and "poop" as pooping.
-
-poop-boob-yet is a truth state that varies.
-
-carry out pooping:
-	say "Oath tao!";
-	if poop-boob-yet is false:
-		now poop-boob-yet is true;
-		say "[line break][bracket]Your score has just gone up by 727 points.[close bracket]";
-		wfak;
-		say "Well, for the moment.[line break]";
-		wfak;
-		repeat with Q running from 1 to 6:
-			say "[line break][bracket][if Q is 1]Wait, no, y[else]Y[end if]our score has just gone down [if Q > 1]again [end if]by 121 points.[close bracket]";
-			wfak;
-		reg-inc Odd Do; [POOP]
-		now the last notified score is the score;
-	else:
-		say "[line break]X2?[paragraph break]...X!";
-	the rule succeeds;
 
 chapter sleeping
 
@@ -1718,6 +1691,51 @@ to decide whether done-here:
 	if player is in Seer Trees and stark rats are in ZeroRez, yes;
 	if player is in Calcific Lac and dork rod is in ZeroRez, yes;
 	no;
+
+chapter peeping
+
+peeped-yet is a truth state that varies.
+
+peeping is an action applying to nothing.
+
+understand the command "peep" as something new.
+
+understand "peep" as peeping.
+
+carry out peeping:
+	try looking;
+	if peeped-yet is false:
+		now peeped-yet is true;
+		say "You feel more in tune with the world, now that you've looked a little differently.";
+		reg-inc Odd Do; [PEEP]
+	the rule succeeds;
+
+chapter pooping
+
+pooping is an action applying to nothing.
+
+understand the commands "boob" and "poop" as something new.
+
+understand "boob" and "poop" as pooping.
+
+poop-boob-yet is a truth state that varies.
+
+carry out pooping:
+	say "Oath tao!";
+	if poop-boob-yet is false:
+		now poop-boob-yet is true;
+		say "[line break][bracket]Your score has just gone up by 727 points.[close bracket]";
+		wfak;
+		say "Well, for the moment.[line break]";
+		wfak;
+		repeat with Q running from 1 to 6:
+			say "[line break][bracket][if Q is 1]Wait, no, y[else]Y[end if]our score has just gone down [if Q > 1]again [end if]by 121 points.[close bracket]";
+			wfak;
+		reg-inc Odd Do; [POOP]
+		now the last notified score is the score;
+	else:
+		say "[line break]X2?[paragraph break]...X!";
+	the rule succeeds;
 
 chapter slammammalsing
 
