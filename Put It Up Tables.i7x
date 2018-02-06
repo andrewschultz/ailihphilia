@@ -467,6 +467,7 @@ to next-rand (t - a table name):
 
 table of all randoms
 tabnam	tabidx
+table of altbooks	0
 table of attackings	0
 table of burnies	0
 table of noesies	0
@@ -479,6 +480,15 @@ table of yessies	0
 part the tables
 
 [arranged alphabetically]
+
+table of altbooks
+randtxt
+"Some Memos."
+"Sore Zeros."
+"Solo Gigolos."
+"Gigolo Gig."
+"Some Demos."
+"Sore Heros."
 
 table of attackings
 randtxt
@@ -507,6 +517,7 @@ randtxt
 "Emo, me."
 "Hm. SMH."
 "No way? Aw, ON!"
+"One no."
 "Oo! Noo!"
 "Woe meow."
 "Ye Po['] Nopey."
@@ -564,11 +575,13 @@ randtxt
 "Gall! Lag!"
 "GO, dog!"
 "A lag gala!"
+"Now? On!"
 "Panic? I nap!"
 "Resume, muser!"
 "Stare? Rats!"
 "Stir! It's..."
 "Truce, curt."
+"Wandered? Naw."
 "Won't, Now."
 
 table of yessies

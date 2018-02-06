@@ -34,6 +34,7 @@ to next-rand (t - a table name):
 
 table of all randoms
 tabnam	tabidx
+table of altbooks	0
 table of attackings	0
 table of burnies	0
 table of noesies	0
@@ -46,6 +47,11 @@ table of yessies	0
 part the tables
 
 [arranged alphabetically]
+
+table of altbooks
+randtxt
+"Some Memos."
+"Sore Zeros."
 
 table of attackings
 randtxt
