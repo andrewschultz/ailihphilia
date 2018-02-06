@@ -28,11 +28,11 @@ chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
 
-Grebeberg is a region. max-score of Grebeberg is 20.
+Grebeberg is a region. max-score of Grebeberg is 21.
 
 Dim Mid is a region. max-score of Dim Mid is 8.
 
-Yelpley is a region. max-score of Yelpley is 22.
+Yelpley is a region. max-score of Yelpley is 23.
 
 Odd Do is a region. max-score of Odd Do is 5.
 
@@ -545,6 +545,8 @@ dork rod	tao boat	--	--	--	true	true	false	Grebeberg	"The dork rod melds into th
 ERA FARE	King Nik	Spur Ups	--	--	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'This will help me when I get back to South Ihtuos. Thank you!'"
 debt bed	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching and slurping, the debt bed is changed to a bunch of much smaller, but more comfortable looking, stock cots."
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!"
+puce cup	past sap	--	--	sap-to-cup rule	true	false	false	Grebeberg	"You pour some sap into the cup."
+puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"The past sap pours into the liar grail and exposes how bad the grail has been over the years. As it cracks to allow passage south, you snicker to yourself. Liar grail? More like Liar FRAIL!"
 spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
 troll ort	brag garb	--	--	--	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. It's now an entirely different smell from the Stink Knits, but a much more edible one. You guess."
@@ -552,7 +554,7 @@ Elan Ale	Ira Bari	Gorge Grog	--	--	true	false	false	Yelpley	"Ira looks the Elan 
 UFO tofu	Mayo Yam	Mush Sum	in-mont-nom rule	--	true	true	true	Grebeberg	"The UFO tofu and mayo yam blend together in a most unholy fashion, but the magic of Mont Nom kicks in, and they become ... a surprisingly nice smelling and looking mush sum."
 Eroded Ore	reviver	Ore Zero	--	--	true	true	true	Yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
-puce cup	dose sod	--	--	--	true	false	true	Grebeberg	"You funnel the dose sod into the puce cup, which you close. That way, the dose sod will stay fresh."
+puce cup	dose sod	--	--	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
 puce cup	marge pegram	Elan Ale	sod-in-cup rule	--	true	true	true	Yelpley	"You give marge the puce cup. She drinks the dose sod and immediately feels better. 'Well... I have a lot of catching up to do. Can't hang around. Here's some Elan Ale for you, to celebrate how cool you are for helping.'"
 spa maps	Code Doc	--	maps-explained-yet rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
 elope pole	kayak	x/o box	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you an x/o box as a reward: it's about not only friendship but also planning out the details of things. You're worried it doesn't make any sense, but they assure you it will, in time."
@@ -607,7 +609,13 @@ this is the orc-gone rule:
 	the rule fails;
 
 this is the sod-in-cup rule:
-	if dose sod is in ZeroRez, the rule succeeds;
+	if puce cup is soddy, the rule succeeds;
+	say "[if puce cup is sappy]Marge Pegram makes a face at the sap in the cup. Maybe something less unpalatable would help her[else]The puce cup is empty. It wouldn't help Marge Pegram[end if].";
+	the rule fails;
+
+this is the sap-in-cup rule:
+	if puce cup is sappy, the rule succeeds;
+	say "[if puce cup is soddy]The sod doesn't seem to belong in the Liar Grail, but maybe something else does[else]The puce cup is empty[end if]."
 	the rule fails;
 
 section post-use rules
@@ -616,6 +624,20 @@ section post-use rules
 
 this is the maps-explain rule:
 	now maps-explained is true;
+	the rule succeeds;
+
+this is the sap-to-cup rule:
+	repeat through table of useons:
+		if use1 entry is puce cup and use2 entry is past sap:
+			now sco entry is false;
+			the rule succeeds;
+	the rule succeeds;
+
+this is the sod-to-cup rule:
+	repeat through table of useons:
+		if use1 entry is puce cup and use2 entry is dose sod:
+			now sco entry is false;
+			the rule succeeds;
 	the rule succeeds;
 
 this is the wear-garb rule:
@@ -799,7 +821,19 @@ check dropping party trap in Seer Trees: try useoning party trap with stark rats
 
 book Cold Loc
 
-Cold Loc is north of Seer Trees. It is in Grebeberg.
+Cold Loc is north of Seer Trees. It is in Grebeberg. "Past sap drips from a rift fir that blocks a steep drop west."
+
+A rift fir is scenery in Cold Loc. "It's a rife fir. You're not getting past it, but you don't need to."
+
+the past sap is scenery in Cold Loc.
+
+check going west in Cold Loc: say "The rift fir blocks the way to much more dangerous places." instead;
+
+check taking past sap: say "[if liar grail is in lalaland]You probably don't need any more past sap, now that you used it to dispose of the Liar Grail.[else]It's too sticky to carry around by itself. Maybe have a container carrying it?[end if]"
+
+instead of doing something with past sap:
+	if action is procedural, continue the action;
+	say "[if liar grail is in lalaland]With the liar grail gone, you don't want to have to deal with the past sap again[else]The past sap might be useful, but you need a way to take it, first[end if]."
 
 chapter King Nik
 
@@ -1336,6 +1370,8 @@ understand "evened" and "den evened" as Ned's Den when Ned is in ZeroRez
 Ned is a person in Ned's Den.
 
 The Puce Cup is a thing in Ned's Den.
+
+the puce cup can be empty, sappy or soddy. the puce cup is empty.
 
 check taking puce cup: if Ned is in Ned's Den, say "Not with Ned around, you won't." instead;
 

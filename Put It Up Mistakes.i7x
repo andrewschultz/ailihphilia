@@ -53,6 +53,10 @@ understand "gnu bung" as a mistake ("Yes, that's where it came from.") when play
 
 understand "gnu lung" as a mistake ("The gnu dung smells bad enough without dropping more internal organs into the mix.") when player is in Dumb Mud and gnu dung is in Dumb Mud.
 
+book Cold Loc
+
+understand "rife fir" as a mistake ("It's already big enough.") when player is in Cold Loc.
+
 book Mont Nom
 
 understand "truce curt" as a mistake ("You'll need something more violent, here.") when player is in Mont Nom and Curt is in Mont Nom.

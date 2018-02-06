@@ -489,6 +489,8 @@ randtxt
 "Gigolo Gig."
 "Some Demos."
 "Sore Heros."
+"Rise Aesir."
+"Risk Sir."
 
 table of attackings
 randtxt
@@ -519,6 +521,7 @@ randtxt
 "No way? Aw, ON!"
 "One no."
 "Oo! Noo!"
+"Poor droop."
 "Woe meow."
 "Ye Po['] Nopey."
 
