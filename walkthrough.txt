@@ -136,6 +136,8 @@ Okay, let's go deal with Madam Sniffins.
 
 >S
 
+(+1) >USE TENT NET ON CODE DOC
+
 (+1) >USE SPA MAPS ON CODE DOC
 
 >N.E.E.E.S.W
@@ -236,6 +238,12 @@ How do you feel peaceful enough to not be disrupted by your enemies?
 (+1) > USE RADAR ON MADE DAM
 
 (+1) > USE YE KEY ON ETAGE GATE
+
+(+1) > USE PUCE CUP ON PAST SAP
+
+>S.E.E.S
+
+(+1) > USE PUCE CUP ON LIAR GRAIL
 
 (+1) > USE TO IDIOT ON REVOLT LOVER
 
