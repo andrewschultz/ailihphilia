@@ -20,8 +20,6 @@ volume definitions
 
 a thing can be drinkable. a thing is usually not drinkable.
 
-a tronpart is a kind of thing.
-
 an ingredient is a kind of thing. an ingredient is usually edible. an ingredient can be solid or liquid.
 
 the description of a room is usually "[if number of viable directions is 1]An exit leads[else]Exits lead[end if] [list of viable directions]. NOTE: I need to change this generic text."
@@ -43,6 +41,10 @@ Odd Do is a region. max-score of Odd Do is 5.
 volume unsorted
 
 section no precise function yet
+
+The DNA Band is a thing.
+
+The DNA Hand is a thing.
 
 The TA Mat is a thing.
 
@@ -88,17 +90,17 @@ the murk rum is a drinkable thing. [put this in the yard ray]
 
 section tronparts
 
-the x/o box is a tronpart.
+a tronpart is a kind of thing.
+
+description a tronpart is usually "The [item described] is one of [number of tronparts] parts needed for the North-Tron."
+
+the martini tram is a tronpart.
 
 TNT is a tronpart.
 
 Gorge Grog is a tronpart. description is "Unsurprisingly, it's produced by Grog-Org."
 
-a balsa slab is a tronpart. description is "One of [number of tronparts] tronparts."
-
 The Ore Zero is a tronpart.
-
-the mush sum is an edible tronpart.
 
 volume the player
 
@@ -254,9 +256,6 @@ instead of thinking:
 
 chapter inventory
 
-to say gots of (t - a thing):
-	say "--[t][if player has t] (got it!)[end if][line break]"
-
 after printing the name of a tronpart while taking inventory: if player has epicer recipe, say " (recipe item)".
 
 after printing the name of yard ray while taking inventory: say " ([unless murk rum is in ZeroRez]un[end if]charged)".
@@ -397,7 +396,7 @@ instead of smelling:
 		now rod-smelled is true;
 		say "You might expect a rod odor, but there isn't one. OR MAYBE IT IS SO INGRAINED IN YOU, YOU NO LONGER SMELL IT." instead;
 	if player is in Bon Snob, say "Ham?! Ah!" instead;
-	if player is in Top Spot, say "You smell an amoral aroma." instead;
+	if player is in Sneer Greens, say "You smell an amoral aroma." instead;
 	say "Noses, on[one of]! (you don't need to smell anything in this game)[or][stopping]!"
 
 chapter singing
@@ -446,7 +445,7 @@ to build-the-tron:
 	say "You build the north tron with the instructions from the epicer recipe. It points north and blasts a hole with a huge tron snort before collapsing into uselessness. You must be close now!";
 	now Dirge Grid is mapped north of Fun 'Nuf;
 	now Fun 'Nuf is mapped south of Dirge Grid;
-	score-inc; [Dim Mid/USE TNT ON MUSH SUM]
+	score-inc; [Dim Mid/USE TNT ON ORE ZERO]
 
 chef-yet is a truth state that varies.
 
@@ -585,7 +584,7 @@ puce cup	dose sod	--	--	sod-to-cup rule	true	false	false	Grebeberg	"You funnel t
 puce cup	marge pegram	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley	"You give marge the puce cup. She drinks the dose sod and immediately feels better. 'Well... I have a lot of catching up to do. Can't hang around. Here's some Elan Ale for you, to celebrate how cool you are for helping.'"
 tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Say! Thanks! I appreciate that. Let me know if I can share some knowledge in return."
 spa maps	Code Doc	--	maps-explained-yet rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
-elope pole	kayak	x/o box	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you an x/o box as a reward: it's about not only friendship but also planning out the details of things. You're worried it doesn't make any sense, but they assure you it will, in time."
+elope pole	kayak	martini tram	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you an martini tram as a reward: it's about not only friendship but also planning out the details of things. You're worried it doesn't make any sense, but they assure you it will, in time."
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 Ye Key	etage gate	--	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again."
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
@@ -799,6 +798,8 @@ book Dirge Grid
 
 Dirge Grid is a room in Mid Dim. "The only way back is south[if Diktat Kid is in Dirge Grid], but you can't really run away from the Diktat Kid[else], and you might as well go that way, now you've vanquished the Diktat Kid[end if]."
 
+printed name of Dirge Grid is "[if Yuge Guy is in ZeroRez]Top Spot[else]Dirge Grid[end if]"
+
 Diktat Kid is a proper-named person in Dirge Grid.
 
 after looking in Dirge Grid for the first time:
@@ -891,23 +892,23 @@ chapter scorn rocs
 
 The scorn rocs are scenery in Flu Gulf. "While they're motionless, their stare drives you back. They're fiercely proud and blazingly colored."
 
-book Top Spot
+book Sneer Greens
 
-every turn when player is in Top Spot:
+every turn when player is in Sneer Greens:
 	if a random chance of 1 in 2 succeeds, say "The Yuge Guy mumbles '[one of]Soros! Soros![or]Huge! Guh![or]Rofl! For...[or]Gibe! Big![in random order]'";
 
-check going east in Top Spot:
-	if Yuge Guy is in Top Spot, say "'LOW AWOL!' the Yuge Guy booms, as you run away."
+check going east in Sneer Greens:
+	if Yuge Guy is in Sneer Greens, say "'LOW AWOL!' the Yuge Guy booms, as you run away."
 
-Top Spot is west of Flu Gulf. It is in Grebeberg. "Despite the impressive view, this place still feels like it's gone to pot."
+Sneer Greens is west of Flu Gulf. It is in Grebeberg. "Despite the impressive view, this place still feels like it's gone to pot."
 
-Top Spot is above Flu Gulf.
+Sneer Greens is above Flu Gulf.
 
-after looking in Top Spot for the first time:
+after looking in Sneer Greens for the first time:
 	say "The Yuge Guy calls 'BOO! NOOB!' just to reinforce his contempt.";
 	continue the action;
 
-Yuge Guy is a proper-named person in Top Spot. understand "evil/clive" and "evil clive" as Yuge Guy.
+Yuge Guy is a proper-named person in Sneer Greens. understand "evil/clive" and "evil clive" as Yuge Guy.
 
 book Dumb Mud
 
@@ -1498,7 +1499,11 @@ Trapeze Part is west of Evaded Ave. It is in Yelpley. "[if epicer recipe is off-
 
 the ten level net is scenery in Trapeze Part. "[if epicer recipe is off-stage]It doesn't quite look sturdy enough. Maybe you could do something to fix it[else]It was sturdy enough to help you get the epicer recipe, and that's enough[end if]."
 
-the epicer recipe is a thing. description is "You've seen recipes before, but this is a big interesting one! It describes how to make a north-tron, which will get you north of Fun [']Nuf.[paragraph break][gots of TNT][gots of x/o box][gots of mush sum][gots of balsa slab][gots of Gorge Grog]"
+the epicer recipe is a thing. description is "You've seen recipes before, but this is a big interesting one! It describes how to make a north-tron, which will get you north of Fun [']Nuf.[paragraph break][tronpartlist]"
+
+to say tronpartlist:
+	repeat with Q running through tronparts:
+		say "--[t][if player has t] (got it!)[end if][line break]"
 
 chapter tending
 
@@ -1696,7 +1701,9 @@ gotoing is an action applying to one visible thing.
 
 understand the command "gt" as something new.
 understand the command "goto" as something new.
+understand the command "go to" as something new.
 
+understand "go to [room]" as gotoing.
 understand "goto [room]" as gotoing.
 understand "gt [room]" as gotoing.
 
@@ -1705,9 +1712,11 @@ to decide whether goto-available:
 	yes. [obviously we don't want this to be trivial once the game's complete, but we want the code in place.]
 
 carry out gotoing:
+	if noun is location of player, say "Already there!";
 	unless goto-available, say "You're at a point in the game where goto isn't available." instead;
 	if noun is not available, say "[noun] isn't available yet, so you can't go there." instead;
 	if noun is available and noun is not visited, say "You can reach [noun], but you haven't visited there, yet. So I'm going to be a stickler and say you have to get there first." instead;
+	if noun is Dirge Grid, say "You already beat the Diktat Kid. You don't need to go back." instead;
 	move player to noun;
 	the rule succeeds;
 

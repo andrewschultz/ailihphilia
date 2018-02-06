@@ -29,7 +29,7 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 		<room id="9" name="USE BRO ORB ON MADAM" subtitle="" x="544" y="-384" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-36" customDown="0">GET YARD RAY</objects>
 		</room>
-		<room id="10" name="USE TNT ON MUSH SUM" subtitle="" x="704" y="-128" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="10" name="USE TNT ON ORE ZERO" subtitle="" x="704" y="-128" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>North Tron</objects>
 		</room>
 		<room id="11" name="USE MURK RUM ON YARD RAY" subtitle="" x="704" y="-384" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
@@ -50,10 +50,8 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 			<dock index="0" id="11" port="s" />
 			<dock index="1" id="14" port="n" />
 		</line>
-		<room id="17" name="USE X-ITE TIX ON TIX EXIT" subtitle="" x="864" y="-512" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isEndRoom="yes" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="19" name="USE UFO TOFU ON MAYO YAM" subtitle="" x="544" y="0" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Mush Sum</objects>
-		</room>
+		<room id="17" name="USE X-ITE TIX ON TIX EXIT" subtitle="" x="1024" y="-768" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isEndRoom="yes" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="19" name="USE SNACK CANS ON UFO TOFU" subtitle="" x="544" y="128" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="20" name="WORD ROW" subtitle="" x="-96" y="-768" w="96" h="64" region="Start OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="21" name="" description="" flow="oneWay">
 			<dock index="0" id="6" port="s" />
@@ -95,16 +93,8 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 			<dock index="0" id="1" port="w" />
 			<dock index="1" id="37" port="e" />
 		</line>
-		<room id="39" name="DENT NED" subtitle="" x="704" y="256" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="40" name="TEND NET" subtitle="" x="864" y="-128" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<line id="41" name="" description="" flow="oneWay">
-			<dock index="0" id="40" port="w" />
-			<dock index="1" id="10" port="e" />
-		</line>
-		<line id="42" name="" description="" flow="oneWay">
-			<dock index="0" id="19" port="ne" />
-			<dock index="1" id="10" port="sw" />
-		</line>
+		<room id="39" name="DENT NED" subtitle="" x="704" y="384" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="40" name="TEND NET" subtitle="" x="1504" y="-384" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="43" name="" description="" flow="oneWay">
 			<dock index="0" id="30" port="n" />
 			<dock index="1" id="10" port="s" />
@@ -116,7 +106,7 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 			<dock index="0" id="46" port="se" />
 			<dock index="1" id="9" port="nw" />
 		</line>
-		<room id="48" name="TRUCK CURT" subtitle="" x="384" y="0" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="48" name="TRUCK CURT" subtitle="" x="384" y="128" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="49" name="Get Rep Popper" subtitle="" x="544" y="-640" w="96" h="64" region="No Points" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="50" name="" description="" flow="oneWay">
 			<dock index="0" id="28" port="s" />
@@ -156,8 +146,8 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 			<dock index="0" id="61" port="n" />
 			<dock index="1" id="62" port="s" />
 		</line>
-		<room id="64" name="USE DEMO MED ON GULF LUG" subtitle="" x="384" y="256" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="65" name="USE CASH SAC ON CROSS ORC" subtitle="" x="544" y="256" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="64" name="USE DEMO MED ON GULF LUG" subtitle="" x="384" y="384" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="65" name="USE CASH SAC ON CROSS ORC" subtitle="" x="544" y="384" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="66" name="" description="" flow="oneWay">
 			<dock index="0" id="65" port="e" />
 			<dock index="1" id="39" port="w" />
@@ -165,7 +155,7 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 		<room id="67" name="USE RADAR ON MADE DAM" subtitle="" x="384" y="-128" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="68" name="USE NULL ILLUN ON KNOWN WONK" subtitle="" x="544" y="-896" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="69" name="USE TROLL ORT ON BRAG GARB" subtitle="" x="64" y="-128" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="70" name="USE YE KEY ON ETAGE GATE" subtitle="" x="864" y="256" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="70" name="USE YE KEY ON ETAGE GATE" subtitle="" x="864" y="384" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="71" name="" description="" flow="oneWay">
 			<dock index="0" id="39" port="e" />
 			<dock index="1" id="70" port="w" />
@@ -224,7 +214,7 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 			<dock index="0" id="86" port="s" />
 			<dock index="1" id="56" port="n" />
 		</line>
-		<room id="88" name="USE RADAR ON CRAG ARC" subtitle="" x="544" y="128" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="88" name="USE RADAR ON CRAG ARC" subtitle="" x="544" y="256" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>UFO tofu</objects>
 		</room>
 		<line id="89" name="" description="" flow="oneWay">
@@ -257,28 +247,24 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 			<dock index="0" id="96" port="s" />
 			<dock index="1" id="91" port="n" />
 		</line>
-		<room id="98" name="USE ELOPE POLE ON KAYAK" subtitle="" x="1024" y="-128" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="98" name="USE ELOPE POLE ON KAYAK" subtitle="" x="1344" y="-384" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>X/O Box</objects>
 		</room>
 		<line id="99" name="" description="" flow="oneWay">
-			<dock index="0" id="40" port="e" />
-			<dock index="1" id="98" port="w" />
-		</line>
-		<line id="100" name="" description="" flow="oneWay">
-			<dock index="0" id="98" port="sw" />
-			<dock index="1" id="10" port="se" />
+			<dock index="0" id="40" port="w" />
+			<dock index="1" id="98" port="e" />
 		</line>
 		<room id="101" name="SLAM MAMMALS" subtitle="" x="-256" y="-512" w="96" h="64" region="Misc Points" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="102" name="" description="" flow="oneWay">
 			<dock index="0" id="48" port="e" />
 			<dock index="1" id="19" port="w" />
 		</line>
-		<room id="103" name="USE YARD RAY ON TEST SET" subtitle="" x="864" y="-256" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="103" name="USE YARD RAY ON TEST SET" subtitle="" x="1024" y="-384" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="104" name="" description="" flow="oneWay">
-			<dock index="0" id="14" port="e" />
-			<dock index="1" id="103" port="w" />
+			<dock index="0" id="14" port="ne" />
+			<dock index="1" id="103" port="sw" />
 		</line>
-		<room id="18" name="USE YARD RAY ON DIKTAT KID" subtitle="" x="864" y="-384" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="18" name="USE YARD RAY ON DIKTAT KID" subtitle="" x="1024" y="-640" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="106" name="" description="" flow="oneWay">
 			<dock index="0" id="103" port="n" />
 			<dock index="1" id="18" port="s" />
@@ -298,6 +284,58 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 		<line id="112" name="" description="" flow="oneWay">
 			<dock index="0" id="110" port="e" />
 			<dock index="1" id="111" port="w" />
+		</line>
+		<room id="42" name="USE GIFT FIG ON MAYO YAM" subtitle="" x="384" y="0" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="113" name="USE REIFIER ON MARTINI TRAM" subtitle="" x="544" y="0" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<line id="114" name="" description="" flow="oneWay">
+			<dock index="0" id="42" port="e" />
+			<dock index="1" id="113" port="w" />
+		</line>
+		<line id="115" name="" description="" flow="oneWay">
+			<dock index="0" id="19" port="n" />
+			<dock index="1" id="113" port="s" />
+		</line>
+		<line id="116" name="" description="" flow="oneWay">
+			<dock index="0" id="113" port="ne" />
+			<dock index="1" id="10" port="sw" />
+		</line>
+		<room id="117" name="USE REIFIER ON DNA BAND" subtitle="" x="1184" y="-256" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="118" name="USE ROTO MOTOR ON DNA HAND" subtitle="" x="1024" y="-256" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="120" name="USE BANG NAB ON TNT" subtitle="" x="864" y="-256" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<line id="119" name="" description="" flow="oneWay">
+			<dock index="0" id="117" port="w" />
+			<dock index="1" id="118" port="e" />
+		</line>
+		<line id="121" name="" description="" flow="oneWay">
+			<dock index="0" id="118" port="w" />
+			<dock index="1" id="120" port="e" />
+		</line>
+		<line id="122" name="" description="" flow="oneWay">
+			<dock index="0" id="120" port="sw" />
+			<dock index="1" id="10" port="ne" />
+		</line>
+		<room id="41" name="USE YOU BUOY ON ROTATOR" subtitle="" x="1184" y="-384" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<line id="100" name="" description="" flow="oneWay">
+			<dock index="0" id="98" port="w" />
+			<dock index="1" id="41" port="e" />
+		</line>
+		<room id="123" name="USE ME GEM ON KNIFE FINK" subtitle="" x="1184" y="-512" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<line id="124" name="" description="" flow="oneWay">
+			<dock index="0" id="123" port="nw" />
+			<dock index="1" id="18" port="se" />
+		</line>
+		<line id="125" name="" description="" flow="oneWay">
+			<dock index="0" id="41" port="n" />
+			<dock index="1" id="123" port="s" />
+		</line>
+		<line id="126" name="" description="" flow="oneWay">
+			<dock index="0" id="103" port="ne" />
+			<dock index="1" id="123" port="sw" />
+		</line>
+		<room id="127" name="USE TABOO BAT ON VERSES REV" subtitle="" x="864" y="-512" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<line id="128" name="" description="" flow="oneWay">
+			<dock index="0" id="103" port="nw" />
+			<dock index="1" id="127" port="se" />
 		</line>
 	</map>
 	<settings>
