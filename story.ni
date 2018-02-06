@@ -489,7 +489,6 @@ check useoning it with:
 					set the pronoun it to use2 entry;
 				if second noun is a workable:
 					wear-down second noun;
-					check-test-set;
 				the rule succeeds;
 			else if there is no use2 entry:
 				say "[babble entry][line break]";
@@ -555,7 +554,7 @@ UFO tofu	Mayo Yam	Mush Sum	in-mont-nom rule	--	true	true	true	Grebeberg	"The UFO
 Eroded Ore	reviver	Ore Zero	--	--	true	true	true	Yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
 puce cup	dose sod	--	--	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
-puce cup	marge pegram	Elan Ale	sod-in-cup rule	--	true	true	true	Yelpley	"You give marge the puce cup. She drinks the dose sod and immediately feels better. 'Well... I have a lot of catching up to do. Can't hang around. Here's some Elan Ale for you, to celebrate how cool you are for helping.'"
+puce cup	marge pegram	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley	"You give marge the puce cup. She drinks the dose sod and immediately feels better. 'Well... I have a lot of catching up to do. Can't hang around. Here's some Elan Ale for you, to celebrate how cool you are for helping.'"
 spa maps	Code Doc	--	maps-explained-yet rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
 elope pole	kayak	x/o box	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you an x/o box as a reward: it's about not only friendship but also planning out the details of things. You're worried it doesn't make any sense, but they assure you it will, in time."
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
@@ -577,7 +576,7 @@ this is the ready-to-test rule:
 	if emitted is false:
 		say "You aren't sure how the Yard Ray works, or what it needs to zap people with. Maybe you should review it to figure things out.";
 		the rule fails;
-	say "That seems right, but you should probably go where there aren't many people. Like back to Fun [']Nuf."
+	say "That seems right, but you should probably go where there aren't many people. Like back to Fun [']Nuf.";
 	the rule fails;
 
 this is the in-mont-nom rule:
@@ -615,12 +614,17 @@ this is the sod-in-cup rule:
 
 this is the sap-in-cup rule:
 	if puce cup is sappy, the rule succeeds;
-	say "[if puce cup is soddy]The sod doesn't seem to belong in the Liar Grail, but maybe something else does[else]The puce cup is empty[end if]."
+	say "[if puce cup is soddy]The sod doesn't seem to belong in the Liar Grail, but maybe something else does[else]The puce cup is empty[end if].";
 	the rule fails;
 
 section post-use rules
 
 [please add alphabetically]
+
+this is the empty-cup rule:
+	now puce cup is empty;
+	if marge pegram is in ZeroRez and liar grail is in ZeroRez, say "You probably don't need the puce cup any more.";
+	the rule succeeds;
 
 this is the maps-explain rule:
 	now maps-explained is true;
@@ -786,6 +790,8 @@ instead of doing something with the tru hurt, say "You need to take care of the 
 
 chapter emiting
 
+emitted is a truth state that varies.
+
 emiting is an action applying to one topic.
 
 understand the command "emit" as something new.
@@ -799,6 +805,7 @@ carry out emiting:
 	if the topic understood matches "noontime":
 		say "BOOM! The yard ray emits too much light for the Diktat Kid to bear. 'Liven evil!' the Kid booms, but it's not enough. The Kid runs off, but not before dropping some X-Ite Tix, which you take.";
 		now player has X-Ite Tix;
+		now emitted is true;
 		score-inc; [Dim Mid/emit noontime]
 		the rule succeeds;
 	say "No, that's not quite what to emit.";
@@ -829,11 +836,11 @@ the past sap is scenery in Cold Loc.
 
 check going west in Cold Loc: say "The rift fir blocks the way to much more dangerous places." instead;
 
-check taking past sap: say "[if liar grail is in lalaland]You probably don't need any more past sap, now that you used it to dispose of the Liar Grail.[else]It's too sticky to carry around by itself. Maybe have a container carrying it?[end if]"
+check taking past sap: say "[if liar grail is in ZeroRez]You probably don't need any more past sap, now that you used it to dispose of the Liar Grail.[else]It's too sticky to carry around by itself. Maybe have a container carrying it?[end if]"
 
 instead of doing something with past sap:
 	if action is procedural, continue the action;
-	say "[if liar grail is in lalaland]With the liar grail gone, you don't want to have to deal with the past sap again[else]The past sap might be useful, but you need a way to take it, first[end if]."
+	say "[if liar grail is in ZeroRez]With the liar grail gone, you don't want to have to deal with the past sap again[else]The past sap might be useful, but you need a way to take it, first[end if]."
 
 chapter King Nik
 
@@ -1038,17 +1045,17 @@ The Edits Tide is scenery in Swamp Maws. "A voice from the edits tide seems to s
 
 book Calcific Lac
 
-Calcific Lac is north of Swamp Maws. It is in Grebeberg. "A Tao Boat rests at the edge of Calcific Lac. [elile].[paragraph break][if dork rod is in lalaland]The Tao Boat that helped you get at peace with things is here[else]A Tao Boat rests on the shore, here[end if]."
+Calcific Lac is north of Swamp Maws. It is in Grebeberg. "A Tao Boat rests at the edge of Calcific Lac. [eli-ile].[paragraph break][if dork rod is in ZeroRez]The Tao Boat that helped you get at peace with things is here[else]A Tao Boat rests on the shore, here[end if]."
 
 to say eli-ile:
-	if elope pole is in lalaland:
-		say "That kayak you took to Elided Ile is here, too"
+	if elope pole is in ZeroRez:
+		say "That kayak you took to Elided Ile is here, too";
 	else:
-		say "There's a kayak, too. "
-		if null illun is in lalaland:
-			say "[one of]And wait! If you look into the distance, you see something! Elided Ile! Just as the Known Wonk said it had to be somewhere! The Wonk's calculations and predictions were all right[or]You see Elided Ile in the distance. Maybe some day, you will get there[stopping]"
+		say "There's a kayak, too. ";
+		if null illun is in ZeroRez:
+			say "[one of]And wait! If you look into the distance, you see something! Elided Ile! Just as the Known Wonk said it had to be somewhere! The Wonk's calculations and predictions were all right[or]You see Elided Ile in the distance. Maybe some day, you will get there[stopping]";
 		else:
-			say "You scan in the distance for anywhere the kayak might take you, but you can't find anywhere, yet"
+			say "You scan in the distance for anywhere the kayak might take you, but you can't find anywhere, yet";
 
 chapter kayak
 
@@ -1132,7 +1139,7 @@ chapter test set
 
 The test set is a thing.
 
-check taking the test set: say "It's too unwieldy. Maybe you can find a way to clean it up." instead;
+check taking the test set: say "It's too unwieldy. But it has to be useful for something." instead;
 
 chapter Ian
 
@@ -1151,14 +1158,13 @@ to wear-down (w - a workable):
 	if useleft of w is 0, say "You watch as [the w] sputters and dies. Well, you got a lot of good use out of it, and hopefully you won't need any more.";
 	if useleft of w is 1, say "[the w] wheezes emphatically. Hopefully, you won't need to use it too much more.";
 	if machuses is 0:
-		say "[line break]With [list of workables] all destroyed, Work Row shakes a bit more. You search through the rubble of the machines and find ... a test set.";
-		now player has test set;
+		say "[line break]With [list of workables] all destroyed, Work Row shakes a bit more. The machines fall out from a wall, revealing something behind ... a test set. It's big and huge and you can't move it, but who knows what it'll be useful for later?";
 
 to decide which number is machuses:
 	let retval be 0;
 	repeat with Q running through workables:
-		increase retval but useleft of Q;
-	decide retval;
+		increase retval by useleft of Q;
+	decide on retval;
 
 instead of inserting into:
 	if second noun is a workable, try useoning noun with second noun instead;
@@ -1213,7 +1219,8 @@ the tract cart is scenery. "It carries [number of books in Worn Row] books: [lis
 check examining tract cart:
 	if number of books in Worn Row is 0:
 		say "It's empty now. Maybe some day, someone will write a book like ";
-		next-rand table of altbooks
+		next-rand table of altbooks;
+		say ". Maybe it could be you! But you don't have the time to read right now, really." instead;
 
 a book is a kind of thing. description of a book is "It [if player carries the item described]is[else]looks[end if] really heavy and incomprehensible to you."
 
@@ -1473,7 +1480,7 @@ understand the command "tend" as something new.
 understand "tend [something]" as tending.
 
 carry out tending:
-	if noun is not ten level net, say "That doesn't need tending." instead;
+	if noun is not level net, say "That doesn't need tending." instead;
 	if player has epicer recipe, say "You already did what you needed with the net." instead;
 	say "You adjust the ten level net. You're not sure how to make it work, but with some common sense, you make it. The set o['] notes gives surprising help. You climb and swing from the trapeze to the other side--falling into the ten level net about a hundred or so times--but the hundred and first bam! You notice an epic-er recipe on the other side.[paragraph break]It's a clear step up from the set o['] notes, which you won't be needing any more. Yay! There's also something labeled an elope pole, which you suspect may help you get away if and when you need to.";
 	now player has elope pole;
@@ -1775,6 +1782,8 @@ carry out pooping:
 
 chapter slammammalsing
 
+slam-mam is a truth state that varies.
+
 slammammalsing is an action applying to nothing.
 
 understand the command "slam mammals" as something new.
@@ -1783,7 +1792,7 @@ understand "slam mammals" as slammammalsing.
 
 carry out slammammalsing:
 	if slam-mam is true, say "You already did. Don't overdo it.";
-	if sleep eels are in lalaland, say "Too late for that." instead;
+	if sleep eels are in ZeroRez, say "Too late for that." instead;
 	unless player is in Ooze Zoo and sleep eels are in Ooze Zoo, say "You have no sympathetic audience." instead;
 	say "The sleep eels wake from their slumber briefly to squirm. They telephathically project their pleasure before going back to sleep. You've ... done something, I guess?";
 	reg-inc Odd Do; [SLAM MAMMALS]
