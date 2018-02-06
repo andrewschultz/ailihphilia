@@ -295,9 +295,13 @@ def get_stuff_from_source():
                 (temp_region, this_cmd) = detect_region(line, current_region)
                 if temp_region == 'ignore':
                     continue
+                increment = 1
                 if this_cmd:
-                    source_region[this_cmd] = temp_region
-                    use_in_source[this_cmd] = line_count
+                    this_cmd_ary = this_cmd.split("&")
+                    increment = length(this_cmd_ary)
+                    for t in this_cmd_ary:
+                        source_region[t] = temp_region
+                        use_in_source[t] = line_count
                     if verbose: print("Tacking on", this_cmd)
                 if temp_region == current_region and '[' in line:
                     if semi_verbose: print("WARNING temp_region not a change from current_region", current_region, "line", line_count, "in story.ni")
@@ -313,9 +317,9 @@ def get_stuff_from_source():
                 if temp_region == "None":
                     print("ERROR: region not defined yet at line", line_count)
                 if temp_region == current_region:
-                    base_reg_incs[temp_region] = base_reg_incs[temp_region] + 1
+                    base_reg_incs[temp_region] = base_reg_incs[temp_region] + increment
                 else:
-                    directed_incs[temp_region] = directed_incs[temp_region] + 1
+                    directed_incs[temp_region] = directed_incs[temp_region] + increment
             if ll.startswith('part ') and 'region' in ll:
                 myreg = re.sub("^part ", "", ll)
                 myreg = re.sub(" *?region.*", "", myreg)

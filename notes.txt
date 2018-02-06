@@ -2,6 +2,10 @@
 
 # XITE TIX lead to A MORE EXCITING REAL WORLD. Well, given all the palindromes you dealt with, you probably should've expected a circular loop to back where you began. But you did have fun. Probably more than if you'd stood around and leveled up a whole bunch. So that's something.
 
+Turn Rut:Turf Rut/Turd Rut
+Raft Far: to get away from the Elided Ile
+Sneer Greens: Where Yuge Guy really is
+
 Yahoo Hay: Straw Arts / Some Demos
 Soot Tattoos: trade Straw Arts for the Soot Tattoos to get into the Red Rose Order
 
@@ -38,7 +42,7 @@ Gasp! Sag!
 grub burg
 It will be as prodded-dorp!
 
-balm lab
+Balm Lab: secret location you can only visit if lucky?
 
 To Jot! To jot!
 
@@ -834,7 +838,6 @@ Smart Rams:Mark Ram
 smooth tooms
 snooty toons
 sneer greens
-snack cans
 snorting ignitrons
 sored eros
 soppy gyppos
@@ -967,7 +970,6 @@ trawl wart
 trape depart
 troffer effort
 trugo yogurt
-Turn Rut:Turf Rut/Turd Rut
 Turbo Brut
 tube debut
 twats tawt

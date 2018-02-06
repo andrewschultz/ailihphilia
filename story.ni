@@ -20,7 +20,9 @@ volume definitions
 
 a thing can be drinkable. a thing is usually not drinkable.
 
-an ingredient is a kind of thing.
+a tronpart is a kind of thing.
+
+an ingredient is a kind of thing. an ingredient is usually edible. an ingredient can be solid or liquid.
 
 the description of a room is usually "[if number of viable directions is 1]An exit leads[else]Exits lead[end if] [list of viable directions]. NOTE: I need to change this generic text."
 
@@ -28,7 +30,7 @@ chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
 
-Grebeberg is a region. max-score of Grebeberg is 22.
+Grebeberg is a region. max-score of Grebeberg is 23.
 
 Dim Mid is a region. max-score of Dim Mid is 8.
 
@@ -68,11 +70,15 @@ the stink knits are a thing. "They don't smell very good. In a failed attempt at
 
 the brag garb is a thing.
 
-the UFO tofu is an edible thing.
+section ingredients
 
-the Mayo Yam is an edible thing.
+the Mayo Yam is a liquid ingredient.
 
-the gift fig is an edible thing.
+the UFO tofu is a liquid ingredient.
+
+the gift fig is a solid ingredient.
+
+the snack cans are a solid ingredient.
 
 the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, unsurprisingly."
 
@@ -80,19 +86,19 @@ the yard ray is a thing. description is "It looks pretty lethal. It also has ins
 
 the murk rum is a drinkable thing. [put this in the yard ray]
 
-section ingredients
+section tronparts
 
-the x/o box is an ingredient.
+the x/o box is a tronpart.
 
-TNT is an ingredient.
+TNT is a tronpart.
 
-Gorge Grog is an ingredient. description is "Unsurprisingly, it's produced by Grog-Org."
+Gorge Grog is a tronpart. description is "Unsurprisingly, it's produced by Grog-Org."
 
-a balsa slab is an ingredient. description is "One of [number of ingredients] ingredients."
+a balsa slab is a tronpart. description is "One of [number of tronparts] tronparts."
 
-The Ore Zero is an ingredient.
+The Ore Zero is a tronpart.
 
-the mush sum is an edible ingredient.
+the mush sum is an edible tronpart.
 
 volume the player
 
@@ -131,8 +137,8 @@ check requesting the score:
 	say "Your overall score so far is [score] of [maximum score][one of]. But don't worry, points pile up pretty quickly once you get going[or][stopping].";
 	say "Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do].";
 	if player has set o notes and north tron is off-stage:
-		let ni be number of ingredients carried by the player;
-		say "You also have [ni] of [number of ingredients] piece[if ni is not 1]s[end if] of the North Tron, according to the set-o-notes.";
+		let ni be number of tronparts carried by the player;
+		say "You also have [ni] of [number of tronparts] piece[if ni is not 1]s[end if] of the North Tron, according to the set-o-notes.";
 	the rule succeeds;
 
 to reg-inc (re - a region):
@@ -251,7 +257,7 @@ chapter inventory
 to say gots of (t - a thing):
 	say "--[t][if player has t] (got it!)[end if][line break]"
 
-after printing the name of an ingredient while taking inventory: if player has epicer recipe, say " (recipe item)".
+after printing the name of a tronpart while taking inventory: if player has epicer recipe, say " (recipe item)".
 
 after printing the name of yard ray while taking inventory: say " ([unless murk rum is in ZeroRez]un[end if]charged)".
 
@@ -436,11 +442,32 @@ useoning it with is an action applying to two things.
 
 to build-the-tron:
 	move north tron to Fun 'Nuf;
-	now all ingredients are in ZeroRez;
+	now all tronparts are in ZeroRez;
 	say "You build the north tron with the instructions from the epicer recipe. It points north and blasts a hole with a huge tron snort before collapsing into uselessness. You must be close now!";
 	now Dirge Grid is mapped north of Fun 'Nuf;
 	now Fun 'Nuf is mapped south of Dirge Grid;
 	score-inc; [Dim Mid/USE TNT ON MUSH SUM]
+
+chef-yet is a truth state that varies.
+
+to chef (i1 - an ingredient) and (i2 - an ingredient):
+	if player is not in Mont Nom:
+		say "You're not in the right place to mix food together.";
+		continue the action;
+	if i1 is liquid and i2 is liquid:
+		say "Those are both too liquid.";
+	else if i1 is solid and i2 is solid:
+		say "Those are both too solid to go together.";
+	else:
+		say "You mix [the i1] with [the i2] in front of the Ark of Okra. You hear a distant rumble. The balsa slab by the Ark of Okra shakes.[paragraph break]";
+		now i1 is in ZeroRez;
+		now i2 is in ZeroRez;
+		score-inc; [Grebeberg/USE MAYO YAM ON GIFT FIG&USE SNACK CANS ON UFO tofu]
+		if chef-yet:
+			say "The balsa slab falls from the Ark of Okra. It's light enough to pick up, so you do.";
+		else:
+			say "The balsa slab stays in place. Maybe you can find another combination.";
+			now chef-yet is true;
 
 check useoning it with:
 	if noun is second noun, say "It's not productive to use something on itself, even with this game being full of palindromes." instead;
@@ -451,13 +478,15 @@ check useoning it with:
 			say "(NOTE: You can abbreviate this command with ROT, REI and REV for the respective machines, later.)[paragraph break]";
 			now wr-short-note is true;
 	if second noun is a workable and useleft of second noun is 0, say "No point. The [second noun] is broken." instead;
+	if noun is an ingredient and second noun is an ingredient:
+		chef noun and second noun;
 	repeat through table of cantuse:
 		if noun is use1 entry or second noun is use1 entry, say "[babble entry][line break]" instead;
 	if noun is a person, say "[one of]You're not any good at using other people. In fact, if you tried, they'd wind up using YOU. Plus you don't want to be, really. There's another way. So, no[or]Using people is out[stopping]. Maybe you could use something on a person, though." instead;
-	if noun is an ingredient or noun is epicer recipe:
-		if second noun is an ingredient or noun is epicer recipe:
+	if noun is a tronpart or noun is epicer recipe:
+		if second noun is a tronpart or noun is epicer recipe:
 			if player does not have epicer recipe, say "Those two things seem to go together, but you don't have detailed instructions." instead;
-			if number of ingredients carried by player < number of ingredients, say "You have the start of something, but not enough to make a north-tron." instead;
+			if number of tronparts carried by player < number of tronparts, say "You have the start of something, but not enough to make a north-tron." instead;
 			if player is not in Fun 'Nuf:
 				say "You might be better served using these things in Fun [']Nuf. Go there?";
 				if the player no-consents, say "OK, but protip: that's where you need to assemble things." instead;
@@ -550,7 +579,6 @@ spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Eve
 stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
 troll ort	brag garb	--	--	--	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. It's now an entirely different smell from the Stink Knits, but a much more edible one. You guess."
 Elan Ale	Ira Bari	Gorge Grog	--	--	true	false	false	Yelpley	"Ira looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"
-UFO tofu	Mayo Yam	Mush Sum	in-mont-nom rule	--	true	true	true	Grebeberg	"The UFO tofu and mayo yam blend together in a most unholy fashion, but the magic of Mont Nom kicks in, and they become ... a surprisingly nice smelling and looking mush sum."
 Eroded Ore	reviver	Ore Zero	--	--	true	true	true	Yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
 puce cup	dose sod	--	--	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
@@ -1934,7 +1962,7 @@ understand "endgame" as endgameing.
 
 carry out endgameing:
 	say "Giving you all the cool stuff to defeat the Diktat Kid.";
-	now player carries all ingredients;
+	now player carries all tronparts;
 	now player carries murk rum;
 	now player carries yard ray;
 	now player carries epicer recipe;

@@ -155,9 +155,11 @@ USE EXAM AXE ON LIE VEIL.
 ?What is Curt doing? How do I get rid of him?
 TRUCK CURT.
 ?Can I make any sort of special food here?
-Yes, from two other foods.
-They'll combine too grossly elsewhere, but not here.
-USE UFO TOFU ON MAYO YAM.
+Yes, and there are several possibilities.
+There are four foods you can't eat. Two are solid, two are liquid.
+It doesn't matter which solid you use with which liquid.
+USE GIFT FIG ON MAYO YAM.
+USE SNACK CANS ON UFO TOFU.
 >>LE BABEL
 ?Why can't I take the bro orb?
 You're not at peace with yourself.
@@ -370,7 +372,7 @@ There are 23 total points in Yelpley.
 1 point if you USE ERODED ORE ON REVIVER.
 1 point if you USE BRO ORB ON MADAM.
 ?How do I get all the points for Grebeberg?
-There are 22 total points in Grebeberg.
+There are 23 total points in Grebeberg.
 1 point if you USE ERA FARE ON KING NIK.
 1 point if you USE DEMO MED ON GULF LUG.
 1 point if you USE TENT NET ON CODE DOC.
@@ -383,7 +385,8 @@ There are 22 total points in Grebeberg.
 1 point if you USE PUCE CUP ON PAST SAP. [?? use it on the fir too]
 1 point if you USE RADAR ON MADE DAM.
 1 point if you TRUCK CURT.
-1 point if you USE UFO TOFU ON MAYO YAM.
+1 point if you USE MAYO YAM ON GIFT FIG.
+1 point if you USE SNACK CANS ON UFO TOFU.
 1 point if you USE SPA MAPS ON GO-BY BOG.
 1 point if you USE NULL ILLUN ON KNOWN WONK.
 1 point if you USE DORK ROD ON TAO BOAT.
