@@ -4,16 +4,49 @@
 
 from collections import defaultdict
 from string import ascii_lowercase
+import sys
 import re
+
+def usage():
+    print("-se = tack letter on to end to see if it's a palindrome (a-z)")
+    print("-es = tack letter on to start to see if it's a palindrome (a-z)")
+    print("-sr = strict reverse eg EVADE DAVE won't work.")
+    print("-p/-np = print standard palindrome (or don't) e.g. OTTO or PIP will print.")
+    exit()
 
 rem_str = ''
 
 rl = len(rem_str)
 
-tack_start_on_end = True
-tack_end_on_start = True
+tack_start_on_end = False
+tack_end_on_start = False
 print_standard_palindrome = True
 strict_reverse = False
+
+count = 1
+
+while count < len(sys.argv):
+    arg = sys.argv[count].lower()
+    if arg[0] == '-':
+        arg = arg[1:]
+    if arg == 'se':
+        tack_start_on_end = True
+    elif arg == 'es':
+        tack_end_on_start = True
+    elif arg == 'ta':
+        tack_start_on_end = True
+        tack_end_on_start = True
+    elif arg == 'p':
+        print_standard_palindrome = True
+    elif arg == 'np':
+        print_standard_palindrome = False
+    elif arg == 'sr' or arg == 'rs':
+        strict_reverse = True
+    elif arg == 'nsr' or arg == 'nrs':
+        strict_reverse = False
+    else:
+        usage()
+    count = count + 1
 
 def one_pal(a):
     count = 0
@@ -26,11 +59,11 @@ def one_pal(a):
         src = 0
         for line in file:
             ll = line.lower().strip()
-            if strict_reverse and temp_words[ll[::-1]] == True:
+            temp_words[ll] = True
+            if strict_reverse and temp_words[ll[::-1]] == True and ll != ll[::-1]:
                 src = src + 1
                 print(src, ll, "<==>", ll[::-1])
-            temp_words[ll] = True
-        if strict_reverse: return
+                continue
         for ll in sorted(temp_words.keys(), key=lambda x:(len(x), x)):
             if rem_str:
                 if ll.startswith(rem_str):
