@@ -30,19 +30,19 @@ to next-rand (t - a table name):
 		now tabidx entry is 1;
 	let Q be tabidx entry;
 	choose row Q in tabnam entry;
-	say "[randtxt entry][line break]";
+	say "[randtxt entry][if lbrk entry is true][line break][end if]";
 
 table of all randoms
-tabnam	tabidx
-table of altbooks	0
-table of attackings	0
-table of burnies	0
-table of noesies	0
-table of nothings	0
-table of singstuff	0
-table of swearstuff	0
-table of waittxt	0
-table of yessies	0
+tabnam	tabidx	lbrk
+table of altbooks	0	false
+table of attackings	0	true
+table of burnies	0	true
+table of noesies	0	true
+table of nothings	0	true
+table of singstuff	0	true
+table of swearstuff	0	true
+table of waittxt	0	true
+table of yessies	0	true
 
 part the tables
 
@@ -50,8 +50,8 @@ part the tables
 
 table of altbooks
 randtxt
-"Some Memos."
-"Sore Zeros."
+"Gigolo Gig"
+"Rise Aesir"
 
 table of attackings
 randtxt
