@@ -559,7 +559,7 @@ Pact Cap	"Your pact cap is fine where it is, on your head."
 table of useons [xxuse]
 use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
 trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
-party trap	start rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
+party trap	stark rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
 demo med	gulf lug	cash sac	--	--	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' he looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
 TO IDIOT	Revolt Lover	--	--	--	true	true	true	Yelpley	"The Revolt Lover begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Known Wonk runs away."
 NULL ILLUN	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me.' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. And if it's simple, well, I need to know when simple stuff works.' The Known Wonk apologizes--it's back to a Tru Yurt for a thought session."
@@ -816,13 +816,13 @@ book Seer Trees
 Seer Trees is west of Fun 'Nuf. It is in Grebeberg.
 
 check going in Seer Trees:
-	if noun is not east and start rats are in Seer Trees, say "The start rats block you from going anywhere. At least they are not banging stop pots." instead;
+	if noun is not east and stark rats are in Seer Trees, say "The stark rats block you from going anywhere. At least they are not banging stop pots." instead;
 
-the start rats are a plural-named thing in Seer Trees.
+the stark rats are a plural-named thing in Seer Trees.
 
-check taking start rats: say "There are too many, and they'd probably bite you, anyway." instead;
+check taking stark rats: say "There are too many, and they'd probably bite you, anyway." instead;
 
-check dropping party trap in Seer Trees: try useoning party trap with start rats instead;
+check dropping party trap in Seer Trees: try useoning party trap with stark rats instead;
 
 book Cold Loc
 
@@ -1203,6 +1203,11 @@ chapter books
 
 the tract cart is scenery. "It carries [number of books in Worn Row] books: [list of books in Worn Row]."
 
+check examining tract cart:
+	if number of books in Worn Row is 0:
+		say "It's empty now. Maybe some day, someone will write a book like ";
+		next-rand table of altbooks
+
 a book is a kind of thing. description of a book is "It [if player carries the item described]is[else]looks[end if] really heavy and incomprehensible to you."
 
 section books with purpose so far
@@ -1214,8 +1219,8 @@ EMOTE TOME is a proper-named book. [Sniffins]
 
 section books without purpose so far
 
-GIGOLO GIG is a proper-named book.
-FOREVER OF is a proper-named book.
+SOME DEMOS is a proper-named book.
+WONDERED NOW is a proper-named book.
 
 gap-yet is a truth state that varies.
 
@@ -1710,7 +1715,7 @@ to decide whether done-here:
 	if player is in Yawn Way, yes;
 	if player is in Fun 'Nuf and flee elf is in ZeroRez, yes;
 	if player is in My Gym and Dave is in ZeroRez, yes;
-	if player is in Seer Trees and start rats are in ZeroRez, yes;
+	if player is in Seer Trees and stark rats are in ZeroRez, yes;
 	if player is in Calcific Lac and dork rod is in ZeroRez, yes;
 	no;
 

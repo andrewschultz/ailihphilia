@@ -75,13 +75,13 @@ USE YARD RAY ON DIKTAT KID.
 Now you will get a new item, and you can go back south and win the game.
 >Grebeberg
 >>SEER TREES
-?How do I get rid of the Start Rats?
+?How do I get rid of the Stark Rats?
 You need a Trap.
 Well, you may guess a specific sort of trap.
 A Party Trap.
 You can make it in Work Row, in Yelpley.
 You have to do something to another item. But once you get it...
-USE PARTY TRAP ON START RATS.
+USE PARTY TRAP ON STARK RATS.
 >>COLD LOC
 ?What do I do with King Nik?
 He needs a book.
@@ -376,7 +376,7 @@ There are 20 total points in Grebeberg.
 1 point if you USE PUCE CUP ON DOSE SOD.
 1 point if you USE ELOPE POLE ON KAYAK.
 1 point if you USE EL DOODLE ON EDITS TIDE.
-1 point if you USE PARTY TRAP ON START RATS.
+1 point if you USE PARTY TRAP ON STARK RATS.
 1 point if you USE POO COOP ON GNU DUNG.
 1 point if you USE RADAR ON MADE DAM.
 1 point if you TRUCK CURT.

@@ -2,10 +2,13 @@
 
 # XITE TIX lead to A MORE EXCITING REAL WORLD. Well, given all the palindromes you dealt with, you probably should've expected a circular loop to back where you began. But you did have fun. Probably more than if you'd stood around and leveled up a whole bunch. So that's something.
 
-Falses-Laf
-Now! On!
+Yahoo Hay: Straw Arts
 
-# Test Set: used to make sure the yard ray works
+Tent Net = help somneone have a place to live?
+
+Two-Nowt: said when you ...
+
+Falses-Laf
 
 if you can't quite do something but figured it out, this should be printed.
 
@@ -854,13 +857,8 @@ Soho's
 soral claros
 sovran arvos
 solo bolos
-solo gigolos
 sook cuckoos
 sol peplos
-some memos
-some demos
-sore zeros
-sore heros
 sob mambos
 spacers recaps
 space caps
@@ -945,7 +943,7 @@ tamara mat
 tarakihi karat
 tasers resat
 terebene beret
-Tended Net:tend net / tenses net / tendered net
+Tendered Net:the net?
 terfs fret
 terces nonsecret
 tenners rennet
@@ -984,7 +982,6 @@ Turn Rut:Turf Rut/Turd Rut
 Turbo Brut
 tube debut
 twats tawt
-Two-Nowt
 versus rev
 wasp saw:wasps aw
 wall law
@@ -993,7 +990,6 @@ wardered raw
 wash saw
 walnut unlaw
 warded raw
-wandered naw
 warm raw
 wakiki kaw
 war draw
@@ -1004,7 +1000,6 @@ went new
 well lew
 wonks know
 worth trow
-wondered now
 wolf low
 worral arrow
 worses row
@@ -1013,9 +1008,8 @@ womb mow
 Ya May
 Yah Shay
 Yar Gray:Yar Pray
-yahoo hay
 yawl way
-yarded ray
+# yarded ray
 yank nay
 yes mimsey
 yoga goy

@@ -13,7 +13,7 @@ rl = len(rem_str)
 tack_start_on_end = True
 tack_end_on_start = True
 print_standard_palindrome = True
-strict_reverse = True
+strict_reverse = False
 
 def one_pal(a):
     count = 0

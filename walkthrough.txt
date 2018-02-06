@@ -26,7 +26,7 @@ You also get a set-o-notes to replace the darer ad. They're still a bit vague, s
 
 That's all the points you can get for the Dim Mid region, for now. In fact, Fun Nuf is the only room in the Dim Mid...until the end.
 
-Now you're kind of blocked at the Seer Trees in Grebeberg to the west, so maybe we can figure out how to get past the Start Rats.
+Now you're kind of blocked at the Seer Trees in Grebeberg to the west, so maybe we can figure out how to get past the STARK RATS.
 
 >E
 >N
@@ -74,7 +74,7 @@ You can also tinker with it in other ways.
 
 How to get rid of the rats?
 
-(+1) >USE PARTY TRAP ON START RATS
+(+1) >USE PARTY TRAP ON STARK RATS
 
 >N
 
