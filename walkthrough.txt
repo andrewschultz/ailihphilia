@@ -251,5 +251,4 @@ How do you feel peaceful enough to not be disrupted by your enemies?
 (+1) > STAND NAT'S
 (+1) > TAMP MAT
 (+1) > DENT NED
-(+1) > SLEEP
 (+1) > USE SPA MAPS ON GO-BY BOG

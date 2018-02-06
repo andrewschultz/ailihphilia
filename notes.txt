@@ -2,9 +2,18 @@
 
 # XITE TIX lead to A MORE EXCITING REAL WORLD. Well, given all the palindromes you dealt with, you probably should've expected a circular loop to back where you began. But you did have fun. Probably more than if you'd stood around and leveled up a whole bunch. So that's something.
 
+Points: the reifier 1 + DNA Hand + balsa slab=3, reviver 2, rotator 2 + Buoy=3
+
+Knife Fink: 1 of 2 Diktat Kid bodyguards
+Verses Rev: 1 of 2 Diktat Kid bodyguards (use Taboo Bat on him)
+
 Turn Rut:Turf Rut/Turd Rut
 Raft Far: to get away from the Elided Ile
-Sneer Greens: Where Yuge Guy really is
+Balm Lab: secret location you can only visit if lucky?
+
+you buoy: float back from elided ile
+rotator on you buoy gives you the me gem, which you throw at the knife fink. That gets rid of him.
+Taboo Bat: What you use on the Verses Rev
 
 Yahoo Hay: Straw Arts / Some Demos
 Soot Tattoos: trade Straw Arts for the Soot Tattoos to get into the Red Rose Order
@@ -41,8 +50,6 @@ Gasp! Sag!
 
 grub burg
 It will be as prodded-dorp!
-
-Balm Lab: secret location you can only visit if lucky?
 
 To Jot! To jot!
 
@@ -244,7 +251,7 @@ Neg Gen
 
 Pun Up!
 
-TWO OTHER BAD GUYS: Ammo Momma, Obese Bo
+# TWO OTHER BAD GUYS: Ammo Momma, Obese Bo
 
 glass alg
 
@@ -362,8 +369,6 @@ Bill Lib
 
 Trope Port: location for where you have lots of, well, things
 
-Knife Fink: guards something, but can be suckered
-
 Golf Log
 Track Cart
 
@@ -373,8 +378,6 @@ Damp Mad
 drawn ward
 
 USE Dirt-Rid ON Cave-Vac so it can really clean stuff up!
-
-Taboo Bat
 
 Not a ton
 
@@ -535,7 +538,6 @@ looters retool
 
 muy yum
 mark ram
-martini tram: rolls in and provides drink at a bar
 martyry tram
 mate tam
 max exam
@@ -837,7 +839,6 @@ smarty trams
 Smart Rams:Mark Ram
 smooth tooms
 snooty toons
-sneer greens
 snorting ignitrons
 sored eros
 soppy gyppos
@@ -973,7 +974,6 @@ trugo yogurt
 Turbo Brut
 tube debut
 twats tawt
-versus rev
 wasp saw:wasps aw
 wall law
 Wane? Naw.
@@ -989,7 +989,7 @@ waster fretsaw: one of many items at the end
 welsh slew
 went new
 well lew
-wonks know
+#wonks know
 worth trow
 wolf low
 worral arrow
@@ -1004,7 +1004,6 @@ yawl way
 yank nay
 yes mimsey
 yoga goy
-you buoy
 yob attaboy
 yodeled oy
 Yo Boy

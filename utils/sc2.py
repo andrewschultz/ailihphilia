@@ -187,6 +187,8 @@ def source_vs_trizbort_flow():
             if "No Points" in line: continue
             # if "Misc Points" in line: continue # we may wish to turn this spigot back on later if there's an easy way to integrate this check. But right now, there isn't.
             rn = re.sub(r".* name=\"([^\"]*)\".*", r'\1', line.strip())
+            if re.search(r"^USE (REIFIER|ROTATOR|REVIVER)", rn):
+                print("ERROR: swap 1st/2nd nouns in", rn)
             use_in_trizflow[rn] = line_count
             # print("Adding", rn)
     for x in list(set(use_in_trizflow.keys()) | set(use_in_source.keys())):
@@ -214,7 +216,7 @@ def source_vs_walkthrough():
             ll = re.sub(".*> *", "", line.strip())
             cmd_ary = ll.split(".")
             if cmd_ary[0] not in xxx.keys():
-                if use_in_source[ll]:
+                if ll in use_in_source.keys():
                     if ll in use_in_walkthrough.keys():
                         print(ll, "duplicate non-points command, may not be error.")
                     if "(+1)" not in line:
@@ -224,13 +226,13 @@ def source_vs_walkthrough():
                 if ll in use_in_walkthrough.keys():
                     print("WARNING line", line_count, "has duplicate command:", ll)
                     warning_walkthrough_line = line_count
-                use_in_walkthrough[ll] = True
+                use_in_walkthrough[ll] = line_count
     for x in list(set(use_in_walkthrough.keys()) | set(use_in_source.keys())):
         if x not in use_in_walkthrough.keys() and source_region[x] != 'odd do':
             print("ERROR: Need this line in walkthrough:", x)
             any_err = any_err + 1
         elif x not in use_in_source.keys():
-            print("ERROR: Need this line in table of useons:", x)
+            print("ERROR: (from walkthrough) Need this line in table of useons:", x)
             any_err = any_err + 1
         elif verbose:
             print("Synced:", x)
@@ -298,7 +300,7 @@ def get_stuff_from_source():
                 increment = 1
                 if this_cmd:
                     this_cmd_ary = this_cmd.split("&")
-                    increment = length(this_cmd_ary)
+                    increment = len(this_cmd_ary)
                     for t in this_cmd_ary:
                         source_region[t] = temp_region
                         use_in_source[t] = line_count
