@@ -31,6 +31,7 @@ read_colons = False
 colons_max = 0
 colons_start = 0
 read_last = 0
+comments_too = False
 
 colon_string = ""
 
@@ -75,6 +76,7 @@ def usage():
     print("-b = bowdlerize duplicates in notes. -bt only copies to notes2.txt, for testing purposes.")
     print("-c = show lines with colons in them, which are likely to be good ideas to work on. On which to work. (-co)")
     print("  You can also specify a number, but not as a separate argument. (Also, -q = -c10)")
+    print("-a = count all lines with colons, even commented")
     print("-?/-u = this usage statement")
     exit()
 
@@ -113,7 +115,9 @@ def check_notes(s):
         for line in file:
             line_count = line_count + 1
             ll = line.strip()
-            if ll.startswith('#'): continue
+            if ll.startswith('#'):
+                if not comments_too: continue
+                ll = re.sub("^#+", "", ll)
             if ":" in ll:
                 if read_last:
                     colon_ary.append(ll)

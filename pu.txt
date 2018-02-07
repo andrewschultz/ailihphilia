@@ -282,7 +282,13 @@ USE TO IDIOT ON REVOLT LOVER.
 Fill in later.
 >>YELL ALLEY
 ?What to do here?
-Fill in later.
+?How do I get the TNT from the bomb mob?
+You need an agent to do it for you.
+Do you have the DNA band or DNA hand?
+With the band, put it in the right machine.
+You need to mobilize the hand to get the TNT. It's small enough, the mob won't spot it.
+USE ROTO MOTOR ON DNA HAND.
+USE BANG NAB ON TNT.
 >>TRAPEZE PART
 ?How do I get across the trapeze?
 The net isn't quite stable yet.
@@ -413,7 +419,7 @@ There are 10 total points in Dim Mid.
 1 point if you USE YARD RAY ON DIKTAT KID.
 1 point if you USE X-ITE TIX ON TIX EXIT
 ?How do I get all the points for Yelpley?
-There are 27 total points in Yelpley.
+There are 29 total points in Yelpley.
 1 point if you EVADE DAVE.
 1 point if you NAIL IAN.
 1 point if you DENT NED.
@@ -426,6 +432,8 @@ There are 27 total points in Yelpley.
 1 point if you USE DEBT BED ON REVIVER.
 1 point if you USE PUCE CUP ON MARGE PEGRAM.
 1 point if you USE DNA BAND ON REIFIER.
+1 point if you USE ROTO MOTOR ON DNA HAND.
+1 point if you USE BANG NAB ON TNT.
 1 point if you USE ELAN ALE ON IRA BARI.
 1 point if you USE STINK KNITS ON ROTATOR.
 1 point if you USE YE KEY ON ETAGE GATE.

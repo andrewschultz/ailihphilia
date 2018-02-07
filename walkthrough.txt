@@ -289,7 +289,10 @@ How do you feel peaceful enough to not be disrupted by your enemies?
 
 (+1) >USE STRAW ARTS ON MIKE KIM
 
-(+1) > USE DNA BAND ON REIFIER
+(+1) >USE DNA BAND ON REIFIER
+(+1) >USE ROTO MOTOR ON DNA HAND
+(+1) >USE BANG NAB ON TNT
+
 (+1) > USE DORK ROD ON REIFIER
 
 >S.E.E.S

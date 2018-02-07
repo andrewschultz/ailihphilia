@@ -354,7 +354,8 @@ def get_stuff_from_source():
                         machine_uses[x[1]] = machine_uses[x[1]] + 1
                         machine_actions[x[1]] = machine_actions[x[1]] + "    {:s} -> {:s}\n".format(x[0], x[2])
                     if len(x) != 10:
-                        print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 10.")
+                        print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 10. Ignoring data in this line.")
+                        continue
                     if x[5] == 'true':
                         cmd = "USE {:s} ON {:s}".format(x[0].upper(), x[1].upper())
                         use_in_source[cmd] = line_count

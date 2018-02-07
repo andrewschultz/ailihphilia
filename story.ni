@@ -40,7 +40,7 @@ Grebeberg is a region. max-score of Grebeberg is 26.
 
 Dim Mid is a region. max-score of Dim Mid is 10.
 
-Yelpley is a region. max-score of Yelpley is 27.
+Yelpley is a region. max-score of Yelpley is 29.
 
 Odd Do is a region. max-score of Odd Do is 5.
 
@@ -596,6 +596,8 @@ spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Eve
 stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
 troll ort	brag garb	--	--	--	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. It's now an entirely different smell from the Stink Knits, but a much more edible one. You guess."
 DNA band	reifier	DNA hand	--	--	true	true	false	Yelpley	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand!"
+roto motor	DNA hand	bang nab	--	--	true	true	true	Yelpley	"The roto motor fits right in. The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on it, now: BANG NAB. I guess that's what to call it, now. It probably has the dexterity to deal with volatile stuff."
+bang nab	TNT	TNT	--	--	true	true	false	Yelpley	"The Bang Nab walks on its index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. It grinds to halt once it's out of view of the mob. You leave it there as you pick up the TNT."
 Elan Ale	Ira Bari	Gorge Grog	--	--	true	false	false	Yelpley	"Ira looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"
 Eroded Ore	reviver	Ore Zero	--	--	true	true	true	Yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
