@@ -44,11 +44,13 @@ section part of a puzzle but not fully linked yet
 
 section no precise function yet
 
+The Balsa Slab is a thing.
+
 The DNA Band is a thing.
 
 The DNA Hand is a thing.
 
-[?? tame mat would be sort of funny]
+[?? tame mat would be sort of funny. Where does it go?]
 
 section part of a puzzle but still floating
 
@@ -460,14 +462,14 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 	else if i1 is solid and i2 is solid:
 		say "Those are both too solid to go together.";
 	else:
-		say "You mix [the i1] with [the i2] in front of the Ark of Okra. You hear a distant rumble. The balsa slab by the Ark of Okra shakes.[paragraph break]";
+		say "You mix [the i1] with [the i2] in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.[paragraph break]";
 		now i1 is in ZeroRez;
 		now i2 is in ZeroRez;
 		score-inc; [Grebeberg/USE GIFT FIG ON MAYO YAM&USE SNACK CANS ON UFO tofu]
 		if chef-yet:
-			say "The balsa slab falls from the Ark of Okra. It's light enough to pick up, so you do.";
+			say "A martini tram pops out from behind the Ark of Okra. Now that you've made so much food, you need drinks! Except, well, the tram doesn't have any drinks. You notice, though, that it's on your epicer recipe, so you push it back to Fun [']Nuf.";
 		else:
-			say "The balsa slab stays in place. Maybe you can find another combination.";
+			say "You suspect something is behind there! Maybe you can find another combination, you'll see what.";
 			now chef-yet is true;
 
 check useoning it with:
@@ -579,6 +581,7 @@ puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"T
 spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
 troll ort	brag garb	--	--	--	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. It's now an entirely different smell from the Stink Knits, but a much more edible one. You guess."
+DNA band	reifier	DNA hand	--	--	--	true	true	false	Yelpley	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand!"
 Elan Ale	Ira Bari	Gorge Grog	--	--	true	false	false	Yelpley	"Ira looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"
 Eroded Ore	reviver	Ore Zero	--	--	true	true	true	Yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
@@ -586,7 +589,7 @@ puce cup	dose sod	--	--	sod-to-cup rule	true	false	false	Grebeberg	"You funnel t
 puce cup	marge pegram	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley	"You give marge the puce cup. She drinks the dose sod and immediately feels better. 'Well... I have a lot of catching up to do. Can't hang around. Here's some Elan Ale for you, to celebrate how cool you are for helping.'"
 tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Say! Thanks! I appreciate that. Let me know if I can share some knowledge in return."
 spa maps	Code Doc	--	maps-explained-yet rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
-elope pole	kayak	martini tram	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you an martini tram as a reward: it's about not only friendship but also planning out the details of things. You're worried it doesn't make any sense, but they assure you it will, in time."
+elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest."
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again. A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it."
 gate tag	soot tattoos	state tats	--	--	true	true	true	Yelpley	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
@@ -957,6 +960,8 @@ Mont Nom is above Dumb Mud.
 
 The ark of okra is scenery in Mont Nom. "You always found okra, or the idea, icky, but the ark is beautiful enough, you sort of wonder how it'd taste."
 
+the martini tram is a thing in Mont Nom.
+
 instead of eating ark of okra: say "You don't know how long it's been out here. It's probably, like, the vegetable version of wax fruit."
 
 chapter trucking
@@ -1105,6 +1110,10 @@ chapter dork rod
 
 The dork rod is a thing. description is "It's kind of neat and quirky, but it's not shiny enough to be the famed Dorada Rod."
 
+chapter you buoy
+
+the you buoy is a thing.
+
 book Apse Spa
 
 Apse Spa is east of Cold Loc. It is in Grebeberg. "The Apse Spa is covered with dose sod, which you can't take--you're not sick--but it looks beautiful. Also, Go-By Bog expands every way except back west[if sage gas is off-stage]. You could traverse it, if you knew what you were doing[else]You already went through it, though[end if]."
@@ -1185,7 +1194,7 @@ chapter workables
 
 a workable is a kind of thing. a workable has a number called useleft.
 
-the reifier is a workable. useleft is 1.
+the reifier is a workable. useleft is 2.
 the reviver is a workable. useleft is 2.
 the rotator is a workable. useleft is 2.
 
