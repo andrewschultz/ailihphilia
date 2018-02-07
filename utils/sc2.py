@@ -127,7 +127,10 @@ def source_vs_invisiclues():
                     ll = re.sub("^1 point (for|if you) ", "", line.strip())
                     ll = re.sub("\..*", "", ll)
                     ll = re.sub(" [a-z].*", "", ll)
-                    if source_region[ll] != summary_region:
+                    if ll not in source_region:
+                        summary_err = summary_err + 1
+                        print("Command", ll, "is in summary but not source. Summary region={:s}.".format(summary_region))
+                    elif source_region[ll] != summary_region:
                         summary_err = summary_err + 1
                         print("Command", ll, "has conflicting source and summary regions. Source={:s}, Summary={:s}.".format(source_region[ll], summary_region))
                     if ll in use_in_invisiclues_summary.keys(): print("WARNING line", this_line,"has duplicate command:", ll)
@@ -188,7 +191,7 @@ def source_vs_trizbort_flow():
             # if "Misc Points" in line: continue # we may wish to turn this spigot back on later if there's an easy way to integrate this check. But right now, there isn't.
             rn = re.sub(r".* name=\"([^\"]*)\".*", r'\1', line.strip())
             if re.search(r"^USE (REIFIER|ROTATOR|REVIVER)", rn):
-                print("ERROR: swap 1st/2nd nouns in", rn)
+                print("ERROR: swap 1st/2nd nouns in trizbort flow element", rn)
             use_in_trizflow[rn] = line_count
             # print("Adding", rn)
     for x in list(set(use_in_trizflow.keys()) | set(use_in_source.keys())):
@@ -215,7 +218,8 @@ def source_vs_walkthrough():
             if not line.startswith('>') and not line.startswith("(+1)"): continue
             ll = re.sub(".*> *", "", line.strip())
             cmd_ary = ll.split(".")
-            if cmd_ary[0] not in xxx.keys():
+            verb1 = re.sub(" .*", "", cmd_ary[0])
+            if verb1 not in xxx.keys():
                 if ll in use_in_source.keys():
                     if ll in use_in_walkthrough.keys():
                         print(ll, "duplicate non-points command, may not be error.")

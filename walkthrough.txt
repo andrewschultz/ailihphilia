@@ -126,8 +126,6 @@ And now you can take out the Yuge Guy.
 
 Okay, let's go deal with Madam Sniffins.
 
->GIVE ?? BOOK TO (PERSON IN ART XTRA)
-
 >S.W.W.W.W.N
 
 (+1) >USE EL DOODLE ON EDITS TIDE
@@ -184,9 +182,12 @@ How to get past the eels? They are sleeping but look a bit uncomfortable.
 
 ==========================================below is stuff that's near the end
 
+(+1) > USE SNACK CANS ON UFO TOFU
+(+1) > USE GIFT FIG ON MAYO YAM
+
 Now that you have all the ingredients for the North-Tron, you need to activate them. You don't have to use a lot of commands to build it. Any ingredient on another will work. Thus,
 
-(+1) >USE TNT ON MUSH SUM
+(+1) >USE TNT ON ORE ZERO
 
 But you still can't go north! You don't have a weapon!
 
@@ -216,7 +217,7 @@ Okay! You're ready now!
 
 Now the Gold Log is shiny, but it's not particularly useful, and it's not you. It seems to be rattling, as if it holds something inside, but you can't figure out how to open it.
 
->PUT GOLD LOG IN ROTATOR
+(+1) >USE GOLD LOG ON ROTATOR
 
 How do you feel peaceful enough to not be disrupted by your enemies?
 
@@ -228,12 +229,9 @@ How do you feel peaceful enough to not be disrupted by your enemies?
 (+1) > PACE CAP
 (+1) > USE CASH SAC ON CROSS ORC
 (+1) > USE RADAR ON CRAG ARC
-(+1) > USE UFO TOFU ON MAYO YAM
 (+1) > USE DEMO MED ON GULF LUG
 (+1) > USE ELAN ALE ON IRA BARI
-(+1) > USE TO IDIOT ON KNOWN WONK
 (+1) > USE ERODED ORE ON REVIVER
-(+1) > USE GOLD LOG ON ROTATOR
 (+1) > USE POO COOP ON GNU DUNG
 (+1) > USE RADAR ON MADE DAM
 
@@ -249,6 +247,5 @@ How do you feel peaceful enough to not be disrupted by your enemies?
 
 (+1) > TRUCK CURT
 (+1) > STAND NAT'S
-(+1) > TAMP MAT
 (+1) > DENT NED
 (+1) > USE SPA MAPS ON GO-BY BOG

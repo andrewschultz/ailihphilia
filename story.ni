@@ -32,7 +32,7 @@ Grebeberg is a region. max-score of Grebeberg is 23.
 
 Dim Mid is a region. max-score of Dim Mid is 8.
 
-Yelpley is a region. max-score of Yelpley is 23.
+Yelpley is a region. max-score of Yelpley is 22.
 
 Odd Do is a region. max-score of Odd Do is 5.
 
@@ -40,13 +40,15 @@ Odd Do is a region. max-score of Odd Do is 5.
 
 volume unsorted
 
+section part of a puzzle but not fully linked yet
+
 section no precise function yet
 
 The DNA Band is a thing.
 
 The DNA Hand is a thing.
 
-The TA Mat is a thing.
+[?? tame mat would be sort of funny]
 
 section part of a puzzle but still floating
 
@@ -461,7 +463,7 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 		say "You mix [the i1] with [the i2] in front of the Ark of Okra. You hear a distant rumble. The balsa slab by the Ark of Okra shakes.[paragraph break]";
 		now i1 is in ZeroRez;
 		now i2 is in ZeroRez;
-		score-inc; [Grebeberg/USE MAYO YAM ON GIFT FIG&USE SNACK CANS ON UFO tofu]
+		score-inc; [Grebeberg/USE GIFT FIG ON MAYO YAM&USE SNACK CANS ON UFO tofu]
 		if chef-yet:
 			say "The balsa slab falls from the Ark of Okra. It's light enough to pick up, so you do.";
 		else:
@@ -586,7 +588,7 @@ tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Say! Thanks! I appreciate 
 spa maps	Code Doc	--	maps-explained-yet rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
 elope pole	kayak	martini tram	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you an martini tram as a reward: it's about not only friendship but also planning out the details of things. You're worried it doesn't make any sense, but they assure you it will, in time."
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
-Ye Key	etage gate	--	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again."
+Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again. A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it."
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
 Bro Orb	Madam	Yard Ray	--	--	true	true	true	Yelpley	"The Bro Orb shines and drives Madam to rage. 'Live not on evil, madam, live not on evil!' you boom, as the ray does its work. She runs away, sobbing. The Yard Ray is left unguarded. You take it."
@@ -1370,6 +1372,10 @@ the trap art is a thing in Art Xtra. "Some trap art sits here. It's free. You mi
 
 El Doodle is a thing. "It looks like it could be a map--or something--but it sure could use some paring down."
 
+chapter Mike Kim
+
+Mike Kim is a person in Art Xtra.
+
 book Toll Lot
 
 Toll Lot is east of Emo Dome. It is in Yelpley. "[if cross orc is in Toll Lot]While it's easy enough to go back west to the Emo Dome, that cross orc doesn't seem to want to let you go north or south[else]You can go north or south with the cross orc gone or, well, back west, too[end if]. A crag arc rises to the east[if UFO tofu is not in ZeroRez]--maybe it is hiding something[end if]."
@@ -1412,6 +1418,10 @@ the puce cup can be empty, sappy or soddy. the puce cup is empty.
 
 check taking puce cup: if Ned is in Ned's Den, say "Not with Ned around, you won't." instead;
 
+chapter Gate Tag
+
+the Gate Tag is a thing. "It has an emblem a lot like what you saw north of the Emo Dome."
+
 chapter denting
 
 denting is an action applying to one thing.
@@ -1427,22 +1437,6 @@ carry out denting:
 		say "Bam! Bye bye Ned.";
 		now Ned is in ZeroRez;
 		score-inc; [Yelpley/dent ned]
-	the rule succeeds;
-
-chapter tamping
-
-tamping is an action applying to nothing.
-
-understand the command "tamp mat" as something new.
-
-understand "tamp mat" as tamping when player is in Swept Pews and TA Mat is in Swept Pews.
-
-carry out tamping:
-	say "Boom! That's the idea. With the mat tamped, you walk across, and there's no more nonsense.";
-	wfak;
-	now TA Mat is in ZeroRez;
-	now tame mat is in Swept Pews;
-	score-inc; [Yelpley/tamp mat]
 	the rule succeeds;
 
 book Bon Snob

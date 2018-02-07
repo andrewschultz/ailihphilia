@@ -44,7 +44,7 @@ And you win the game!
 ?How do I build the North-Tron?
 It'll take a long time.
 Once you have all the ingredients, you'll know.
-USE TNT ON MUSH SUM.
+USE TNT ON ORE ZERO.
 Well, it can be any ingredient on any ingredient.
 ?I built the North-Tron. Why can't I go north?
 You need a weapon.
@@ -83,6 +83,10 @@ You can make it in Work Row, in Yelpley.
 You have to do something to another item. But once you get it...
 USE PARTY TRAP ON STARK RATS.
 >>COLD LOC
+?What do I do with the rift fir?
+It's more the past sap you need.
+You need a container for it.
+USE PUCE CUP ON PAST SAP.
 ?What do I do with King Nik?
 He needs a book.
 So you need to have Word Row open.
@@ -170,6 +174,12 @@ It looks pretty hashed together, bumpy. Something could be in there.
 USE RADAR ON MADE DAM.
 This helps you locate something.
 >>BIRCH CRIB
+?Why won't the Code Doc help me?
+Help the Code Doc make a full house.
+If something went over the birch crib, it'd provide some protection.
+Maybe you have found a covering elsewhere?
+Like, in the Trapeze Part?
+USE TENT NET ON CODE DOC.
 ?What does the Code Doc have to say?
 The code doc could help you decipher something.
 Do you have a document that almost, but doesn't quite, make sense?
@@ -279,8 +289,8 @@ PULL UP.
 If your cap is "pacy" and not "pact" then you won't be able to slow up in time.
 Also, once you PULL UP, the Emo Dome is safe.
 >>SWEPT PEWS
-?How do I deal with the mat?
-TAMP MAT.
+?How do I deal with the liar grail?
+USE PUCE CUP ON LIAR GRAIL.
 >>DRAWL WARD
 ?Can I help Marge Pegram?
 Yes. She needs some sort of medicine.
@@ -340,14 +350,14 @@ Some commands could be made into palindromes, and there are some (hopefully) amu
 There are 8 total points in Dim Mid.
 1 point for PACK CAP.
 1 point for PACE CAP.
-1 point if you USE TNT ON MUSH SUM or any pair of ingredients to create the North-Tron.
+1 point if you USE TNT ON ORE ZERO or any pair of ingredients to create the North-Tron.
 1 point if you USE MURK RUM ON YARD RAY.
 1 point if you USE YARD RAY ON TEST SET.
 1 point if you EMIT NOONTIME.
 1 point if you USE YARD RAY ON DIKTAT KID.
 1 point if you USE X-ITE TIX ON TIX EXIT
 ?How do I get all the points for Yelpley?
-There are 23 total points in Yelpley.
+There are 22 total points in Yelpley.
 1 point if you EVADE DAVE.
 1 point if you NAIL IAN.
 1 point if you DENT NED.
@@ -364,7 +374,6 @@ There are 23 total points in Yelpley.
 1 point if you USE TO IDIOT ON REVOLT LOVER.
 1 point if you PUFF UP with the Spur Ups.
 1 point if you PULL UP in the Emo Dome.
-1 point if you TAMP MAT in Swept Pews.
 1 point if you USE PUCE CUP ON LIAR GRAIL.
 1 point if you USE CASH SAC ON CROSS ORC.
 1 point if you STAND NAT'S.
@@ -385,7 +394,7 @@ There are 23 total points in Grebeberg.
 1 point if you USE PUCE CUP ON PAST SAP. [?? use it on the fir too]
 1 point if you USE RADAR ON MADE DAM.
 1 point if you TRUCK CURT.
-1 point if you USE MAYO YAM ON GIFT FIG.
+1 point if you USE GIFT FIG ON MAYO YAM.
 1 point if you USE SNACK CANS ON UFO TOFU.
 1 point if you USE SPA MAPS ON GO-BY BOG.
 1 point if you USE NULL ILLUN ON KNOWN WONK.
