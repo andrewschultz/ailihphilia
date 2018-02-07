@@ -70,6 +70,20 @@ It's similar to the Tix Exit.
 USE X-ITE TIX ON TIX EXIT.
 You win!
 >>DIRGE GRID
+?Help! Two henchmen are in the way!
+If you don't have the items to kill them, don't worry. The game kicks you to back where you were.
+You need one item to dispose of each of them.
+?Do I have to pick off one henchman first?
+No. Either way is okay.
+?What is the Knife Fink's weakness?
+The Knife Fink is a mercenary.
+Do you have anything shiny or valuable?
+There's no currency, but there is a jewel.
+USE ME GEM ON KNIFE FINK
+?What is the Verses Rev's weakness?
+The Verses Rev sure is holier than thou!
+Maybe you can offend the Verses Rev.
+USE TABOO BAT ON VERSES REV.
 ?How do I defeat the Diktat Kid?
 USE YARD RAY ON DIKTAT KID.
 Now you will get a new item, and you can go back south and win the game.
@@ -387,13 +401,15 @@ USE BRO ORB ON MADAM.
 They're for trying odd stuff you might not have seen otherwise.
 Some commands could be made into palindromes, and there are some (hopefully) amusing alternate palindroms.
 ?How do I get all the points for Dim Mid?
-There are 8 total points in Dim Mid.
+There are 10 total points in Dim Mid.
 1 point for PACK CAP.
 1 point for PACE CAP.
 1 point if you USE TNT ON ORE ZERO or any pair of ingredients to create the North-Tron.
 1 point if you USE MURK RUM ON YARD RAY.
 1 point if you USE YARD RAY ON TEST SET.
 1 point if you EMIT NOONTIME.
+1 point if you USE ME GEM ON KNIFE FINK.
+1 point if you USE TABOO BAT ON VERSES REV.
 1 point if you USE YARD RAY ON DIKTAT KID.
 1 point if you USE X-ITE TIX ON TIX EXIT
 ?How do I get all the points for Yelpley?

@@ -38,7 +38,7 @@ a region has a number called max-score. a region has a number called cur-score.
 
 Grebeberg is a region. max-score of Grebeberg is 26.
 
-Dim Mid is a region. max-score of Dim Mid is 8.
+Dim Mid is a region. max-score of Dim Mid is 10.
 
 Yelpley is a region. max-score of Yelpley is 27.
 
@@ -616,6 +616,8 @@ Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	"The Exam Axe cuts through t
 Bro Orb	Madam	Yard Ray	--	--	true	true	true	Yelpley	"The Bro Orb shines and drives Madam to rage. 'Live not on evil, madam, live not on evil!' you boom, as the ray does its work. She runs away, sobbing. The Yard Ray is left unguarded. You take it."
 murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
 Yard Ray	test set	--	ready-to-test rule	--	true	false	true	Dim Mid	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle."
+ME gem	Knife Fink	--	--	--	true	true	true	Dim Mid	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, successfully bribed."
+taboo bat	Verses Rev	--	--	--	true	true	true	Dim Mid	"You raise the Taboo Bat, and suddenly the Verses Rev knows what he's up against. It's not that it's particularly violent or lethal, but the Verses Rev sees several ways culture has gone to seed (and several it's gotten better, but he's too set in his ways.) More importantly, he sees himself in that. He turns and runs."
 Yard Ray	Diktat Kid	X-ITE TIX	--	--	true	true	true	Dim Mid	"Fzzt! Zap! The yard ray zaps the Diktat Kid. Both explode."
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse]

@@ -2,18 +2,11 @@
 
 # XITE TIX lead to A MORE EXCITING REAL WORLD. Well, given all the palindromes you dealt with, you probably should've expected a circular loop to back where you began. But you did have fun. Probably more than if you'd stood around and leveled up a whole bunch. So that's something.
 
-Points: the reifier 2 + balsa slab=3, reviver 2 + dork rod, rotator 3
+Points: the reifier 2 + radar (broken 1st time?)=3, reviver 2 + dork rod, rotator 3
 
-Knife Fink: 1 of 2 Diktat Kid bodyguards (use ME GEM on Knife Fink)
-Verses Rev: 1 of 2 Diktat Kid bodyguards (use Taboo Bat on him)
-
-Turn Rut:Turf Rut/Turd Rut
+Stray Arts, or something close
 Raft Far: to get away from the Elided Ile
 Balm Lab: secret location you can only visit if lucky?
-
-rotator on you buoy gives you the me gem, which you throw at the knife fink. That gets rid of him.
-
-Yahoo Hay: Straw Arts / Some Demos
 
 Two-Nowt: said when you ...
 
@@ -40,8 +33,6 @@ Reviled, Deliver
 Trot a Tort
 
 #Crag Arc: crab arc? Cram arc?
-
-roto motor: this is what you use when you give the elope pole and the DNA Hand for the Bang-Nab
 
 Gasp! Sag!
 
@@ -252,7 +243,7 @@ Pun Up!
 
 glass alg
 
-Ruby Bur
+#Ruby Bur
 Bush Sub
 
 
@@ -898,7 +889,6 @@ stress asserts
 stride dirts
 stir grits
 steer greets
-straw arts:stray arts, strap arts
 step puppets
 stiff fits
 subdewed bus
