@@ -28,7 +28,7 @@ chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
 
-Grebeberg is a region. max-score of Grebeberg is 24.
+Grebeberg is a region. max-score of Grebeberg is 25.
 
 Dim Mid is a region. max-score of Dim Mid is 8.
 
@@ -46,9 +46,9 @@ section no precise function yet
 
 The Balsa Slab is a thing.
 
-The DNA Band is a thing.
+The DNA band is a thing.
 
-The DNA Hand is a thing.
+The DNA hand is a thing.
 
 [?? tame mat would be sort of funny. Where does it go?]
 
@@ -573,7 +573,7 @@ poo coop	gnu dung	--	--	--	true	true	true	Grebeberg	"The gnu dung is sucked towa
 radar	made dam	eroded ore	--	--	true	true	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow."
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 dork rod	tao boat	--	--	--	true	false	false	Grebeberg	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
-dork rod	reviver	taboo bat	--	--	true	true	false	Yelpley	"The reviver coughs and spits out something even more counter culture than the dork rod: a taboo bat! You will be able to smite a bad-faith pearl-clutcher for sure with one of these."
+dork rod	reifier	taboo bat	--	--	true	true	false	Yelpley	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You will be able to smite a bad-faith pearl-clutcher for sure with one of these."
 ERA FARE	King Nik	Spur Ups	--	--	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'This will help me when I get back to South Ihtuos. Thank you!'"
 debt bed	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching and slurping, the debt bed is changed to a bunch of much smaller, but more comfortable looking, stock cots."
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!"
@@ -594,6 +594,7 @@ elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope 
 you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. It's so tempting and beautiful, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again. A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it."
+SOME DEMOS	yahoo hay	straw arts	--	--	true	false	true	Grebeberg	"With the help of SOME DEMOS, you manage to rejig the hay into something more aesthetically pleasing: straw arts!"
 gate tag	soot tattoos	state tats	--	--	true	true	true	Yelpley	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
 nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
@@ -1095,7 +1096,7 @@ to say eli-ile:
 		say "That kayak you took to Elided Ile is here, too";
 	else:
 		say "There's a kayak, too. ";
-		if null illun is in ZeroRez:
+		if NULL ILLUN is in ZeroRez:
 			say "[one of]And wait! If you look into the distance, you see something! Elided Ile! Just as the Known Wonk said it had to be somewhere! The Wonk's calculations and predictions were all right[or]You see Elided Ile in the distance. Maybe some day, you will get there[stopping]";
 		else:
 			say "You scan in the distance for anywhere the kayak might take you, but you can't find anywhere, yet";
@@ -1200,8 +1201,8 @@ chapter workables
 
 a workable is a kind of thing. a workable has a number called useleft.
 
-the reifier is a workable. useleft is 2.
-the reviver is a workable. useleft is 3.
+the reifier is a workable. useleft is 3.
+the reviver is a workable. useleft is 2.
 the rotator is a workable. useleft is 3.
 
 to wear-down (w - a workable):
@@ -1299,6 +1300,10 @@ section book verbs
 books-carried-yet is a truth state that varies.
 
 check taking a book:
+	if number of books in Worn Row is 1:
+		say "As you pick up [noun], something else falls out. It's a smaller pamphlet, called SOME DEMOS. You pick it up.";
+		now player has SOME DEMOS;
+		continue the action;
 	if books-carried-yet is false:
 		say "Oof! That's a heavy book. Looks like you'll only be able to take one at a time from the tract cart.";
 		now books-carried-yet is true;
@@ -1696,7 +1701,7 @@ chapter gold log
 
 the gold log is a thing in Pro Corp.
 
-chapter dna band and hand
+chapter DNA band and hand
 
 The DNA band is a thing in Pro Corp.
 

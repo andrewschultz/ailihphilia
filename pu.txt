@@ -142,6 +142,12 @@ YAK OKAY.
 >>MOO ROOM
 ?What do I do here?
 Get the Poo Coop.
+You can deal with the hay much later.
+?What can I do with the yahoo hay?
+You can make it into something artier.
+But you need help.
+Once you've read all the books in Word Row, a new one pops out.
+USE SOME DEMOS ON YAHOO HAY.
 >>SNEER GREENS
 ?How do I kill off the Yuge Guy?
 You'll need something to dent his pride.
@@ -212,6 +218,10 @@ You'll know the item when you see it.
 The Dork Rod.
 USE DORK ROD ON TAO BOAT.
 Now that you're all peaceful, you can explore other places.
+?The Tao Boat caused one of my items to be diminished! What else do I need to do?
+The dork rod no longer seems as cool as it used to.
+You need to make it more subversive.
+USE DORK ROD ON REIFIER.
 ?Can the kayak take me anywhere?
 Yes, but you need something to propel you.
 An oar, or a pole, or something.
@@ -344,7 +354,11 @@ It's not too bad.
 USE YE KEY ON ETAGE GATE.
 >>PRO CORP
 ?What to do here?
-Fill in later.
+All sorts of cool stuff! Take everything you want!
+?What do I do with the DNA band?
+It's not quite something living.
+It can become a body, or part of one.
+USE DNA BAND ON REIFIER.
 >>BON SNOB
 ?What does Ira Bari want?
 He finds the Gorge Grog tacky.
@@ -381,7 +395,7 @@ There are 26 total points in Yelpley.
 1 point for WORD ROW.
 1 point if you USE TRAP ART ON REIFIER.
 1 point if you USE GOLD LOG ON ROTATOR.
-1 point if you USE DORK ROD ON REVIVER.
+1 point if you USE DORK ROD ON REIFIER.
 1 point if you USE DEBT BED ON REVIVER.
 1 point if you USE PUCE CUP ON MARGE PEGRAM.
 1 point if you USE DNA BAND ON REIFIER.
@@ -400,7 +414,7 @@ There are 26 total points in Yelpley.
 1 point if you USE YOU BUOY ON ROTATOR.
 1 point if you USE BRO ORB ON MADAM.
 ?How do I get all the points for Grebeberg?
-There are 24 total points in Grebeberg.
+There are 25 total points in Grebeberg.
 1 point if you USE ERA FARE ON KING NIK.
 1 point if you USE DEMO MED ON GULF LUG.
 1 point if you USE TENT NET ON CODE DOC.
@@ -421,6 +435,7 @@ There are 24 total points in Grebeberg.
 1 point if you USE TROLL ORT ON BRAG GARB. (note: this can be done outside of Grebeberg, but it's part of a Grebeberg puzzle.)
 1 point if you USE STOCK COTS ON SLEEP EELS.
 1 point if you USE EXAM AXE ON LIE VEIL.
+1 point if you USE SOME DEMOS ON YAHOO HAY.
 1 point for YAK OKAY around the Ergot Ogre.
 1 point if you USE SAGE GAS ON GURU RUG.
 1 point if you USE NAT'S TAN ON SCORN ROCS.

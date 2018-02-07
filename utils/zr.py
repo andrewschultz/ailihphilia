@@ -83,6 +83,9 @@ with open("story.ni") as file:
         ll = line
         if '[ic]' not in ll:
             for x in cs:
+                if 'lalaland' in x.lower():
+                    print("WARNING replacing lalaland with ZeroRez at line", line_count)
+                    ll = re.sub("lalaland", "ZeroRez", ll)
                 if x.lower() in line.lower():
                     ll_old = ll
                     ll = re.sub(r'\b{:s}\b'.format(regex_detail[x] if x in regex_detail.keys() else x), x, ll, 0, re.IGNORECASE)
