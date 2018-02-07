@@ -248,6 +248,11 @@ Nothing. Just take it. It's useful elsewhere.
 Nothing. Just take it. It's useful elsewhere.
 ?What are the stray arts for?
 General scenery and stuff.
+?How do I give Mike Kim something he wants?
+You need to find something elsewhere, late in the game.
+The book SOME DEMOS gives advice on making art...
+...and the Yahoo Hay in the Moo Room gives some art and building materials.
+USE STRAW ARTS ON MIKE KIM.
 >>EVADED AVE
 ?Why won't the revolt lover let me go west or east?
 The revolt lover is a bit of a jerk.
@@ -386,7 +391,7 @@ There are 8 total points in Dim Mid.
 1 point if you USE YARD RAY ON DIKTAT KID.
 1 point if you USE X-ITE TIX ON TIX EXIT
 ?How do I get all the points for Yelpley?
-There are 26 total points in Yelpley.
+There are 27 total points in Yelpley.
 1 point if you EVADE DAVE.
 1 point if you NAIL IAN.
 1 point if you DENT NED.
@@ -439,6 +444,7 @@ There are 25 total points in Grebeberg.
 1 point for YAK OKAY around the Ergot Ogre.
 1 point if you USE SAGE GAS ON GURU RUG.
 1 point if you USE NAT'S TAN ON SCORN ROCS.
+1 point if you USE STRAW ARTS ON MIKE KIM.
 1 point if you USE REP POPPER ON YUGE GUY.
 ?How do I get all the points for Odd Do?
 There are 5 total points in Odd Do.

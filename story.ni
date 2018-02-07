@@ -2,6 +2,14 @@
 
 [blurb for comp = A *GASP* SAGA]
 
+[there are things you can search for to make the source more navigable.
+
+First, Put It Up tables.i7x contains all the random responses.
+Second, Put It Up tables.i7x contains responses to mistakes e.g. palindrome verbs/phrases that don't advance the game but are good tries.
+Put XX before each of these to find the beginning of a table, ZZ for the end:
+USE for the Table of Useons (USE X ON Y gives a point)
+]
+
 the story headline is "Yo, Joy! Wow!"
 
 the release number is 1.
@@ -32,7 +40,7 @@ Grebeberg is a region. max-score of Grebeberg is 25.
 
 Dim Mid is a region. max-score of Dim Mid is 8.
 
-Yelpley is a region. max-score of Yelpley is 26.
+Yelpley is a region. max-score of Yelpley is 27.
 
 Odd Do is a region. max-score of Odd Do is 5.
 
@@ -49,6 +57,10 @@ The Balsa Slab is a thing.
 The DNA band is a thing.
 
 The DNA hand is a thing.
+
+The bang nab is a thing.
+
+The roto motor is a thing.
 
 [?? tame mat would be sort of funny. Where does it go?]
 
@@ -595,6 +607,7 @@ you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as th
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again. A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it."
 SOME DEMOS	yahoo hay	straw arts	--	--	true	false	true	Grebeberg	"With the help of SOME DEMOS, you manage to rejig the hay into something more aesthetically pleasing: straw arts!"
+straw arts	Mike Kim	soot tattoos	--	--	true	true	false	Yelpley	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
 gate tag	soot tattoos	state tats	--	--	true	true	true	Yelpley	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
 nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
@@ -604,6 +617,8 @@ murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with ene
 Yard Ray	test set	--	ready-to-test rule	--	true	false	true	Dim Mid	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle."
 Yard Ray	Diktat Kid	X-ITE TIX	--	--	true	true	true	Dim Mid	"Fzzt! Zap! The yard ray zaps the Diktat Kid. Both explode."
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
+
+[zzuse]
 
 section pre-use rules
 
@@ -811,6 +826,10 @@ Dirge Grid is a room in Mid Dim. "The only way back is south[if Diktat Kid is in
 printed name of Dirge Grid is "[if Yuge Guy is in ZeroRez]Top Spot[else]Dirge Grid[end if]"
 
 Diktat Kid is a proper-named person in Dirge Grid.
+
+the Knife Fink is a person in Dirge Grid.
+
+the Verses Rev is a person in Dirge Grid.
 
 after looking in Dirge Grid for the first time:
 	say "The Diktat Kid booms 'Engage le jeu que je le gagne!'";

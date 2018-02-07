@@ -68,6 +68,9 @@ def pal_ver(f):
 				in_table = line.lower().strip()
 				table_header = True
 				continue
+            if in_table and line.startswith('['):
+                in_table = "" # allow for comments at the end of a table, e.g. [xxuse] [zzuse] define start and end of table
+                continue
 			if line.startswith("\"") and '\t' not in line:
 				q = letonly(line)
 				if 'by Andrew Schultz' in line: continue
