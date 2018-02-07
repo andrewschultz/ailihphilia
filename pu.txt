@@ -288,6 +288,14 @@ You need to FEEL more up, to DO something more up.
 PULL UP.
 If your cap is "pacy" and not "pact" then you won't be able to slow up in time.
 Also, once you PULL UP, the Emo Dome is safe.
+?Why can't I go north?
+This is a near end of game thing.
+You'll need a way to get in.
+The eye level eye looks for identification on your skin.
+Art Xtra has those soot tattoos.
+You need to combine them with the gate tag that falls when you open the Etage GAte.
+USE GATE TAG ON SOOT TATTOOS.
+This can be done right away after you have both items.
 >>SWEPT PEWS
 ?How do I deal with the liar grail?
 USE PUCE CUP ON LIAR GRAIL.
@@ -357,7 +365,7 @@ There are 8 total points in Dim Mid.
 1 point if you USE YARD RAY ON DIKTAT KID.
 1 point if you USE X-ITE TIX ON TIX EXIT
 ?How do I get all the points for Yelpley?
-There are 22 total points in Yelpley.
+There are 23 total points in Yelpley.
 1 point if you EVADE DAVE.
 1 point if you NAIL IAN.
 1 point if you DENT NED.
@@ -379,6 +387,7 @@ There are 22 total points in Yelpley.
 1 point if you STAND NAT'S.
 1 point if you USE RADAR ON CRAG ARC.
 1 point if you USE ERODED ORE ON REVIVER.
+1 point if you USE GATE TAG ON SOOT TATTOOS.
 1 point if you USE BRO ORB ON MADAM.
 ?How do I get all the points for Grebeberg?
 There are 23 total points in Grebeberg.

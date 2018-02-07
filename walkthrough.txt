@@ -166,6 +166,10 @@ Now to get rid of the Lie Veil. You could've done this earlier, but this is in t
 
 (+1) >USE EXAM AXE ON LIE VEIL
 
+And you may want a way to get into the Red Roses Order.
+
+(+1) >USE GATE TAG ON SOOT TATTOOS
+
 >GET BRO ORB
 
 >S.E.E.E.E.N

@@ -32,7 +32,7 @@ Grebeberg is a region. max-score of Grebeberg is 23.
 
 Dim Mid is a region. max-score of Dim Mid is 8.
 
-Yelpley is a region. max-score of Yelpley is 22.
+Yelpley is a region. max-score of Yelpley is 23.
 
 Odd Do is a region. max-score of Odd Do is 5.
 
@@ -589,6 +589,7 @@ spa maps	Code Doc	--	maps-explained-yet rule	maps-explain rule	true	false	false	
 elope pole	kayak	martini tram	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you an martini tram as a reward: it's about not only friendship but also planning out the details of things. You're worried it doesn't make any sense, but they assure you it will, in time."
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again. A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it."
+gate tag	soot tattoos	state tats	--	--	true	true	true	Yelpley	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
 Bro Orb	Madam	Yard Ray	--	--	true	true	true	Yelpley	"The Bro Orb shines and drives Madam to rage. 'Live not on evil, madam, live not on evil!' you boom, as the ray does its work. She runs away, sobbing. The Yard Ray is left unguarded. You take it."
@@ -1375,6 +1376,10 @@ El Doodle is a thing. "It looks like it could be a map--or something--but it sur
 chapter Mike Kim
 
 Mike Kim is a person in Art Xtra.
+
+chapter soot tattoos
+
+the soot tattoos are a plural-named thing. description is "They're blank now, but maybe if they were the right shape, they could help your image, somehow."
 
 book Toll Lot
 
