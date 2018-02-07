@@ -36,7 +36,7 @@ chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
 
-Grebeberg is a region. max-score of Grebeberg is 25.
+Grebeberg is a region. max-score of Grebeberg is 26.
 
 Dim Mid is a region. max-score of Dim Mid is 8.
 
@@ -581,7 +581,8 @@ TO IDIOT	Revolt Lover	--	--	--	true	true	true	Yelpley	"The Revolt Lover begins t
 NULL ILLUN	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me.' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. And if it's simple, well, I need to know when simple stuff works.' The Known Wonk apologizes--it's back to a Tru Yurt for a thought session."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes to look for ... well, something else."
 radar	crag arc	UFO tofu	orc-gone rule	--	true	true	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO as it flies off. It bounces off you. 'O Furor! UFO!' you cry. You look at it and--it's unharmed, and still in a cubic shape. Looks like you got yourself some UFO tofu."
-poo coop	gnu dung	--	--	--	true	true	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
+poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
+poo coop	turf rut	--	coop-full rule	--	true	true	true	Grebeberg	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture. The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
 radar	made dam	eroded ore	--	--	true	true	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow."
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 dork rod	tao boat	--	--	--	true	false	false	Grebeberg	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
@@ -617,7 +618,6 @@ murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with ene
 Yard Ray	test set	--	ready-to-test rule	--	true	false	true	Dim Mid	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle."
 Yard Ray	Diktat Kid	X-ITE TIX	--	--	true	true	true	Dim Mid	"Fzzt! Zap! The yard ray zaps the Diktat Kid. Both explode."
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
-
 [zzuse]
 
 section pre-use rules
@@ -943,14 +943,18 @@ Yuge Guy is a proper-named person in Sneer Greens. understand "evil/clive" and "
 
 book Dumb Mud
 
-Dumb Mud is west of Seer Trees. It is in Grebeberg.
+Dumb Mud is west of Seer Trees. It is in Grebeberg. "A turf rut to the south is [if poo coop is in ZeroRez]too deep[else]filled in enough[end if] to cross. [if lie veil is in Dumb Mud]A lie veil blocks your way[else]With the lie veil removed, you can go[end if] north."
 
 The lie veil is scenery in Dumb Mud. "It looks untrustworthy."
 
-the gnu dung is in Dumb Mud. "Gnu dung blocks exit south from the Dumb Mud.". description is "You're not an expert in this sort of biology, but given what you've seen so far, it's probably from a gnu."
+the gnu dung is in Dumb Mud. "Gnu dung blocks exit west from the Dumb Mud.". description is "You're not an expert in this sort of biology, but given what you've seen so far, it's probably from a gnu."
+
+check going west in Dumb Mud:
+	if gnu dung is in Dumb Mud, say "Not through the gnu dung you aren't." instead;
 
 check going south in Dumb Mud:
-	if gnu dung is in Dumb Mud, say "Not through the Dumb Mud you aren't." instead;
+	if poo coop is not in ZeroRez, say "The turf rut is too deep. You need a way to fill it in." instead;
+	if Mont Nom is unvisited, say "With the turf rut filled in, the way across remains stable, and it even smells okay! Bonus! You climb up to...";
 
 check going north in Dumb Mud:
 	if lie veil is in Dumb Mud, say "As you touch the lie veil, you shake your head. No. You don't really want or need to explore north. Surely there's some better place to be? Perhaps you're not 100% prepared for the lie veil's thought provoking paradoxes, and it's doing you a favor pushing you back? You try to walk further north, but somehow you wind up walking back south." instead;
@@ -958,6 +962,12 @@ check going north in Dumb Mud:
 instead of doing something with gnu dung:
 	if action is procedural, continue the action;
 	say "Eewee! (You probably want to deal with the gnu dung indirectly.)"
+
+chapter turf rut
+
+The turf rut is scenery in Dumb Mud. "[if poo coop is in ZeroRez]Since you filled it in, you can walk across it to the south[else]It's deep enough to prevent you going south[end if]."
+
+understand "turd rut" as turf rut when poo coop is in ZeroRez.
 
 book Le Babel
 

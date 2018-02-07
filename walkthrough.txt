@@ -37,7 +37,10 @@ Marge Pegram says the trap art is a useless design that didn't quite work. Maybe
 
 You need to do something with the trap art, somewhere. But first, let's look behind Art Xtra.
 
->N
+>N.GET DEBT BED
+
+Useful for later.
+
 >W
 
 (+1) >TEND NET
@@ -60,7 +63,11 @@ Now, the trap art goes with one of the machines, but which one?
 
 (+1) >USE TRAP ART ON REIFIER
 
-You can also tinker with it in other ways.
+Also, the debt bet can be improved, too.
+
+(+1) >USE DEBT BED ON REVIVER
+
+You can also tinker with it in other ways, which we'll get to later.
 
 (+1) >WORD ROW
 
@@ -75,6 +82,25 @@ You can also tinker with it in other ways.
 How to get rid of the rats?
 
 (+1) >USE PARTY TRAP ON STARK RATS
+
+>S
+
+How to get past the eels? They are sleeping but look a bit uncomfortable.
+
+(+1) >USE STOCK COTS ON SLEEP EELS
+
+>S
+
+The kayo yak is/was harmless.
+
+>E.GET POO COOP.W.N.N.W
+
+Now we need to make passage west and south. Fortunately one way is removing something, and the other requires filling something in. We'll worry about the lie veil later.
+
+(+1) > USE POO COOP ON GNU DUNG
+(+1) > USE POO COOP ON TURF RUT
+
+
 
 >N
 
@@ -194,12 +220,6 @@ And you may want a way to get into the Red Roses Order.
 
 ==========================================
 
-How to get past the eels? They are sleeping but look a bit uncomfortable.
-
-(+1) >USE DEBT BED ON REVIVER
->E.N.W.W.S
-(+1) >USE STOCK COTS ON SLEEP EELS
-
 ==========================================below is stuff that's near the end
 
 (+1) > USE SNACK CANS ON UFO TOFU
@@ -252,7 +272,7 @@ How do you feel peaceful enough to not be disrupted by your enemies?
 (+1) > USE DEMO MED ON GULF LUG
 (+1) > USE ELAN ALE ON IRA BARI
 (+1) > USE ERODED ORE ON REVIVER
-(+1) > USE POO COOP ON GNU DUNG
+
 (+1) > USE RADAR ON MADE DAM
 
 (+1) > USE YE KEY ON ETAGE GATE

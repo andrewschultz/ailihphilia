@@ -154,10 +154,16 @@ You'll need something to dent his pride.
 Something you yourself may have had trouble taking, because you were too proud at first.
 USE REP POPPER ON YUGE GUY.
 >>DUMB MUD
-?How do I get rid of the gnu dung?
+?How do I get rid of the gnu dung blocking the way west?
 You need something that can hold dung, or something like it.
 The poo coop.
 USE POO COOP ON GNU DUNG.
+?How do I get rid of the turf rut blocking the way south?
+Well, you need to fill it in somehow.
+Maybe you've just gotten something that you can use to fill it in.
+See the clue above!
+The poo coop is full.
+USE POO COOP ON TURF RUT.
 ?Can I dispose of the Lie Veil?
 Yes, but not til much later.
 You need something true, or something that shows you've been true.
@@ -416,10 +422,11 @@ There are 27 total points in Yelpley.
 1 point if you USE RADAR ON CRAG ARC.
 1 point if you USE ERODED ORE ON REVIVER.
 1 point if you USE GATE TAG ON SOOT TATTOOS.
+1 point if you USE STRAW ARTS ON MIKE KIM.
 1 point if you USE YOU BUOY ON ROTATOR.
 1 point if you USE BRO ORB ON MADAM.
 ?How do I get all the points for Grebeberg?
-There are 25 total points in Grebeberg.
+There are 26 total points in Grebeberg.
 1 point if you USE ERA FARE ON KING NIK.
 1 point if you USE DEMO MED ON GULF LUG.
 1 point if you USE TENT NET ON CODE DOC.
@@ -429,6 +436,7 @@ There are 25 total points in Grebeberg.
 1 point if you USE EL DOODLE ON EDITS TIDE.
 1 point if you USE PARTY TRAP ON STARK RATS.
 1 point if you USE POO COOP ON GNU DUNG.
+1 point if you USE POO COOP ON TURF RUT.
 1 point if you USE PUCE CUP ON PAST SAP. [?? use it on the fir too]
 1 point if you USE RADAR ON MADE DAM.
 1 point if you TRUCK CURT.
@@ -444,7 +452,6 @@ There are 25 total points in Grebeberg.
 1 point for YAK OKAY around the Ergot Ogre.
 1 point if you USE SAGE GAS ON GURU RUG.
 1 point if you USE NAT'S TAN ON SCORN ROCS.
-1 point if you USE STRAW ARTS ON MIKE KIM.
 1 point if you USE REP POPPER ON YUGE GUY.
 ?How do I get all the points for Odd Do?
 There are 5 total points in Odd Do.

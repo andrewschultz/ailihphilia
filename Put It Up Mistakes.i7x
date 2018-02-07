@@ -53,6 +53,10 @@ understand "gnu bung" as a mistake ("Yes, that's where it came from.") when play
 
 understand "gnu lung" as a mistake ("The gnu dung smells bad enough without dropping more internal organs into the mix.") when player is in Dumb Mud and gnu dung is in Dumb Mud.
 
+understand "turd rut" as a mistake ("Hmm! Maybe you could fill the rut up with ... something ... to cross it.") when player is in dumb mud and poo coop is not in ZeroRez.
+
+understand "turn rut" as a mistake ("It's too large to redirect[if poo coop is in ZeroRez], and besides, you already have a way across[end if].")
+
 book Cold Loc
 
 understand "rife fir" as a mistake ("It's already big enough.") when player is in Cold Loc.
