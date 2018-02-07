@@ -23,6 +23,7 @@ s:before
 s:after
 s:the machine message rules
 s:every turn
+s:description
 s:the puce cup can be
 # ignore-includes
 i:rule:

@@ -112,9 +112,15 @@ The Tao Boat can transport you, too. Just spiritually and not physically.
 
 (+1) >USE DORK ROD ON TAO BOAT
 
-Now that you've been in the Tao Boat, you feel confident enough to pick up the Rep Popper.
+Now that you've been in the Tao Boat, you feel confident enough to pick up the Rep Popper. But let's take a detour to make the You Buoy into something more useful.
 
->S.S.E.E.E.E.N.N.GET POPPER
+>S.S.E.E.E.E
+
+>S.W
+
+(+1) >USE YOU BUOY ON ROTATOR
+
+>N.N.GET POPPER
 
 And now you can take out the Yuge Guy.
 

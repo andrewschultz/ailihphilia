@@ -217,6 +217,11 @@ Yes, but you need something to propel you.
 An oar, or a pole, or something.
 The elope pole you got from the net in the Trapeze Part should work.
 USE ELOPE POLE ON KAYAK.
+?Cool! I got something with the kayak trip. What do I do with it?
+It rattles a bit. Something's inside.
+How would you open the buoy if you can't do so manually?
+Use a machine.
+USE YOU BUOY ON ROTATOR.
 >Yelpley
 >>YAWN WAY
 ?Is there anything to do here?
@@ -367,7 +372,7 @@ There are 8 total points in Dim Mid.
 1 point if you USE YARD RAY ON DIKTAT KID.
 1 point if you USE X-ITE TIX ON TIX EXIT
 ?How do I get all the points for Yelpley?
-There are 23 total points in Yelpley.
+There are 24 total points in Yelpley.
 1 point if you EVADE DAVE.
 1 point if you NAIL IAN.
 1 point if you DENT NED.
@@ -390,6 +395,7 @@ There are 23 total points in Yelpley.
 1 point if you USE RADAR ON CRAG ARC.
 1 point if you USE ERODED ORE ON REVIVER.
 1 point if you USE GATE TAG ON SOOT TATTOOS.
+1 point if you USE YOU BUOY ON ROTATOR.
 1 point if you USE BRO ORB ON MADAM.
 ?How do I get all the points for Grebeberg?
 There are 24 total points in Grebeberg.

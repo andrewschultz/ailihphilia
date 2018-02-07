@@ -32,7 +32,7 @@ Grebeberg is a region. max-score of Grebeberg is 24.
 
 Dim Mid is a region. max-score of Dim Mid is 8.
 
-Yelpley is a region. max-score of Yelpley is 23.
+Yelpley is a region. max-score of Yelpley is 24.
 
 Odd Do is a region. max-score of Odd Do is 5.
 
@@ -96,9 +96,9 @@ section tronparts
 
 a tronpart is a kind of thing.
 
-description a tronpart is usually "The [item described] is one of [number of tronparts] parts needed for the North-Tron."
+description of a tronpart is usually "The [item described] is one of [number of tronparts] parts needed for the North-Tron."
 
-the martini tram is a tronpart.
+the martini tram is a tronpart. [?? if we don't have the epicer recipe we don't know what the tram is for. Can we get the tram before the recipe?]
 
 TNT is a tronpart.
 
@@ -590,6 +590,7 @@ puce cup	marge pegram	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yel
 tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Say! Thanks! I appreciate that. Let me know if I can share some knowledge in return."
 spa maps	Code Doc	--	maps-explained-yet rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest."
+you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. It's so tempting and beautiful, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again. A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it."
 gate tag	soot tattoos	state tats	--	--	true	true	true	Yelpley	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
@@ -1196,7 +1197,7 @@ a workable is a kind of thing. a workable has a number called useleft.
 
 the reifier is a workable. useleft is 2.
 the reviver is a workable. useleft is 2.
-the rotator is a workable. useleft is 2.
+the rotator is a workable. useleft is 3.
 
 to wear-down (w - a workable):
 	decrement useleft of w;
