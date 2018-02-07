@@ -102,6 +102,7 @@ def check_notes(s):
     seen = 0
     notes_file_to_read = "c:/games/inform/{:s}.inform/source/notes.txt".format(s)
     source_files = [ "c:/games/inform/{:s}.inform/source/story.ni".format(s),
+      "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/{:s} mistakes.i7x".format(re.sub("-", " ", s)),
       "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/{:s} tables.i7x".format(re.sub("-", " ", s)) ]
     shorts = {}
     dupe_dict = defaultdict(bool)
@@ -153,7 +154,7 @@ def check_notes(s):
             for line in file:
                 if line.startswith('table of'):
                     table_name = line.lower().strip()
-                elif not line.strip():
+                elif not line.strip() or line.startswith('['):
                     table_name = ''
                 count = count + 1
                 ll = re.sub("[\.\",!\?]", "", line.lower())

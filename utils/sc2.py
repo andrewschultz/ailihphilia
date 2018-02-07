@@ -338,7 +338,7 @@ def get_stuff_from_source():
                     need_true_score = True
                     use_ons = True
                 continue
-            elif in_use_table and not line.strip():
+            elif in_use_table and (not line.strip() or line.startswith('[')):
                 in_use_table = False
                 use_ons = False
                 need_true_score = False
