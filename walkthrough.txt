@@ -118,7 +118,17 @@ Now that you've been in the Tao Boat, you feel confident enough to pick up the R
 
 And now you can take out the Yuge Guy.
 
->W.S.S.W.W.N.N.W
+>W.S.S.W.W.N.N
+
+The scorn rocs are annoyingly in the way.
+
+?? take Nat's first
+
+(+1) > STAND NAT'S
+
+(+1) > USE NAT'S TAN ON SCORN ROCS
+
+>W
 
 (+1) >USE REP POPPER ON YUGE GUY
 
@@ -250,6 +260,5 @@ How do you feel peaceful enough to not be disrupted by your enemies?
 (+1) > USE TO IDIOT ON REVOLT LOVER
 
 (+1) > TRUCK CURT
-(+1) > STAND NAT'S
 (+1) > DENT NED
 (+1) > USE SPA MAPS ON GO-BY BOG

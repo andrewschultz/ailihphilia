@@ -192,10 +192,6 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 			<dock index="0" id="75" port="ne" />
 			<dock index="1" id="32" port="sw" />
 		</line>
-		<line id="82" name="" description="" flow="oneWay">
-			<dock index="0" id="45" port="sw" />
-			<dock index="1" id="8" port="ne" />
-		</line>
 		<line id="83" name="" description="" flow="oneWay">
 			<dock index="0" id="62" port="w" />
 			<dock index="1" id="30" port="e" />
@@ -334,6 +330,15 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 			<dock index="1" id="127" port="se" />
 		</line>
 		<room id="129" name="USE GATE TAG ON SOOT TATTOOS" subtitle="" x="1184" y="-128" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="44" name="USE NAT'S TAN ON SCORN ROCS" subtitle="" x="704" y="-512" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<line id="130" name="" description="" flow="oneWay">
+			<dock index="0" id="45" port="s" />
+			<dock index="1" id="44" port="n" />
+		</line>
+		<line id="131" name="" description="" flow="oneWay">
+			<dock index="0" id="44" port="w" />
+			<dock index="1" id="8" port="e" />
+		</line>
 	</map>
 	<settings>
 		<colors>
