@@ -409,6 +409,8 @@ for x in sorted(machine_uses.keys()):
         if source_line_to_open:
             print("NOTE: this supersedes opening line", source_line_to_open)
         source_line_to_open = machine_def[x]
+    elif verbose:
+        print("Machine", x, "uses = in-source", machine_uses[x], machine_uses_in_source[x])
 
 if semi_verbose:
     for x in sorted(machine_uses.keys()):

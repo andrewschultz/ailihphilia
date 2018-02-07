@@ -32,7 +32,7 @@ Grebeberg is a region. max-score of Grebeberg is 24.
 
 Dim Mid is a region. max-score of Dim Mid is 8.
 
-Yelpley is a region. max-score of Yelpley is 24.
+Yelpley is a region. max-score of Yelpley is 26.
 
 Odd Do is a region. max-score of Odd Do is 5.
 
@@ -572,7 +572,8 @@ radar	crag arc	UFO tofu	orc-gone rule	--	true	true	false	Yelpley	"Beeeep... beee
 poo coop	gnu dung	--	--	--	true	true	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
 radar	made dam	eroded ore	--	--	true	true	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow."
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
-dork rod	tao boat	--	--	--	true	true	false	Grebeberg	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
+dork rod	tao boat	--	--	--	true	false	false	Grebeberg	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
+dork rod	reviver	taboo bat	--	--	true	true	false	Yelpley	"The reviver coughs and spits out something even more counter culture than the dork rod: a taboo bat! You will be able to smite a bad-faith pearl-clutcher for sure with one of these."
 ERA FARE	King Nik	Spur Ups	--	--	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'This will help me when I get back to South Ihtuos. Thank you!'"
 debt bed	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching and slurping, the debt bed is changed to a bunch of much smaller, but more comfortable looking, stock cots."
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!"
@@ -581,7 +582,7 @@ puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"T
 spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
 troll ort	brag garb	--	--	--	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. It's now an entirely different smell from the Stink Knits, but a much more edible one. You guess."
-DNA band	reifier	DNA hand	--	--	--	true	true	false	Yelpley	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand!"
+DNA band	reifier	DNA hand	--	--	true	true	false	Yelpley	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand!"
 Elan Ale	Ira Bari	Gorge Grog	--	--	true	false	false	Yelpley	"Ira looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"
 Eroded Ore	reviver	Ore Zero	--	--	true	true	true	Yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
@@ -1111,6 +1112,10 @@ chapter dork rod
 
 The dork rod is a thing. description is "It's kind of neat and quirky, but it's not shiny enough to be the famed Dorada Rod."
 
+chapter taboo bat
+
+The taboo bat is a thing.
+
 chapter you buoy
 
 the you buoy is a thing.
@@ -1196,7 +1201,7 @@ chapter workables
 a workable is a kind of thing. a workable has a number called useleft.
 
 the reifier is a workable. useleft is 2.
-the reviver is a workable. useleft is 2.
+the reviver is a workable. useleft is 3.
 the rotator is a workable. useleft is 3.
 
 to wear-down (w - a workable):

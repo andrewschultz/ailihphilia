@@ -372,7 +372,7 @@ There are 8 total points in Dim Mid.
 1 point if you USE YARD RAY ON DIKTAT KID.
 1 point if you USE X-ITE TIX ON TIX EXIT
 ?How do I get all the points for Yelpley?
-There are 24 total points in Yelpley.
+There are 26 total points in Yelpley.
 1 point if you EVADE DAVE.
 1 point if you NAIL IAN.
 1 point if you DENT NED.
@@ -381,8 +381,10 @@ There are 24 total points in Yelpley.
 1 point for WORD ROW.
 1 point if you USE TRAP ART ON REIFIER.
 1 point if you USE GOLD LOG ON ROTATOR.
+1 point if you USE DORK ROD ON REVIVER.
 1 point if you USE DEBT BED ON REVIVER.
 1 point if you USE PUCE CUP ON MARGE PEGRAM.
+1 point if you USE DNA BAND ON REIFIER.
 1 point if you USE ELAN ALE ON IRA BARI.
 1 point if you USE STINK KNITS ON ROTATOR.
 1 point if you USE YE KEY ON ETAGE GATE.
