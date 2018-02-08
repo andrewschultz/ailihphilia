@@ -40,7 +40,7 @@ Grebeberg is a region. max-score of Grebeberg is 26.
 
 Dim Mid is a region. max-score of Dim Mid is 10.
 
-Yelpley is a region. max-score of Yelpley is 29.
+Yelpley is a region. max-score of Yelpley is 30.
 
 Odd Do is a region. max-score of Odd Do is 5.
 
@@ -70,7 +70,7 @@ Sniffins is a person.
 
 Otto is a person.
 
-The Exam Axe is a thing. description is "Just looking at the exam axe, you feel as though you've been right about stuff. Maybe not right or morally superior, but you're able to see through obvious nonsense."
+The Exam Axe is a thing. description is "Just looking at the exam axe, you feel as though you've been right about stuff. Maybe not right or morally superior, but you're able to see through obvious nonsense. You know it will help you with some max-exam, somewhere."
 
 section stuff to move
 
@@ -84,8 +84,6 @@ stamp mats are a thing.
 
 Ye Key is a thing.
 
-the stink knits are a thing. "They don't smell very good. In a failed attempt at irony, they are lettered DAFT FAD."
-
 the brag garb is a thing.
 
 section ingredients
@@ -93,8 +91,6 @@ section ingredients
 the Mayo Yam is a liquid ingredient.
 
 the UFO tofu is a liquid ingredient.
-
-the gift fig is a solid ingredient.
 
 the snack cans are a solid ingredient.
 
@@ -392,7 +388,7 @@ to decide which direction is othdir of (d - a direction):
 definition: a direction (called d) is viable:
 	let lp be location of player;
 	if the room d of location of player is nowhere, no;
-	if d is north and lp is Ned's Den and etage gate is in Ned's Den, no;
+	if d is north and lp is Gross Org and etage gate is in Gross Org, no;
 	if d is up or d is down, no; [you may be able to go that way, but we'll hide that from the reader.]
 	yes;
 
@@ -574,15 +570,16 @@ Pact Cap	"Your pact cap is fine where it is, on your head."
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
 table of useons [xxuse]
 use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
-trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
+trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever." [b4:PACK CAP/PACE CAP/TEND NET/EVADE DAVE/NAIL IAN/WORK ROW/WORD ROW]
 party trap	stark rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
 demo med	gulf lug	cash sac	--	--	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' he looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
 TO IDIOT	Revolt Lover	--	--	--	true	true	true	Yelpley	"The Revolt Lover begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Known Wonk runs away."
+YOB ATTABOY	Sniffins	Dirt Rid	--	--	true	true	false	Yelpley	"Sniffins accepts your gift. His sniffs slowly change from sadness to something more snooty. He thanks you for helping him be too good for you before handing you a Dirt Rid and kicking you out."
 NULL ILLUN	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me.' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. And if it's simple, well, I need to know when simple stuff works.' The Known Wonk apologizes--it's back to a Tru Yurt for a thought session."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes to look for ... well, something else."
 radar	crag arc	UFO tofu	orc-gone rule	--	true	true	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO as it flies off. It bounces off you. 'O Furor! UFO!' you cry. You look at it and--it's unharmed, and still in a cubic shape. Looks like you got yourself some UFO tofu."
 poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
-poo coop	turf rut	--	coop-full rule	--	true	true	true	Grebeberg	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture. The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
+poo coop	turf rut	--	coop-full rule	--	true	true	true	Grebeberg	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture. The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG." [af:truck curt/puff up/pull up]
 radar	made dam	eroded ore	--	--	true	true	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow."
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 dork rod	tao boat	--	--	--	true	false	false	Grebeberg	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
@@ -594,11 +591,11 @@ puce cup	past sap	--	--	sap-to-cup rule	true	false	false	Grebeberg	"You pour som
 puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"The past sap pours into the liar grail and exposes how bad the grail has been over the years. As it cracks to allow passage south, you snicker to yourself. Liar grail? More like Liar FRAIL!"
 spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
-troll ort	brag garb	--	--	--	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. It's now an entirely different smell from the Stink Knits, but a much more edible one. You guess."
+troll ort	brag garb	--	--	--	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. It's now an entirely different smell from the Stink Knits, but a much more edible one. You guess." [af:yak okay]
 DNA band	reifier	DNA hand	--	--	true	true	false	Yelpley	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand!"
 roto motor	DNA hand	bang nab	--	--	true	true	true	Yelpley	"The roto motor fits right in. The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on it, now: BANG NAB. I guess that's what to call it, now. It probably has the dexterity to deal with volatile stuff."
 bang nab	TNT	TNT	--	--	true	true	false	Yelpley	"The Bang Nab walks on its index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. It grinds to halt once it's out of view of the mob. You leave it there as you pick up the TNT."
-Elan Ale	Ira Bari	Gorge Grog	--	--	true	false	false	Yelpley	"Ira looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"
+Elan Ale	Sniffins	Gorge Grog	--	--	true	false	false	Yelpley	"Ira looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"
 Eroded Ore	reviver	Ore Zero	--	--	true	true	true	Yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
 puce cup	dose sod	--	--	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
@@ -608,15 +605,15 @@ spa maps	Code Doc	--	maps-explained-yet rule	maps-explain rule	true	false	false	
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest."
 you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. It's so tempting and beautiful, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
-Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again. A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it."
+Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again. A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it." [b4:dent ned]
 SOME DEMOS	yahoo hay	straw arts	--	--	true	false	true	Grebeberg	"With the help of SOME DEMOS, you manage to rejig the hay into something more aesthetically pleasing: straw arts!"
 straw arts	Mike Kim	soot tattoos	--	--	true	true	false	Yelpley	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
 gate tag	soot tattoos	state tats	--	--	true	true	true	Yelpley	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
-nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
+nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west." [b4:stand nat's]
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
 Bro Orb	Madam	Yard Ray	--	--	true	true	true	Yelpley	"The Bro Orb shines and drives Madam to rage. 'Live not on evil, madam, live not on evil!' you boom, as the ray does its work. She runs away, sobbing. The Yard Ray is left unguarded. You take it."
-murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
+murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now." [b4:use snack cans on UFO tofu/use gift fig on mayo yam/use tnt on ore zero] [af:emit noontime]
 Yard Ray	test set	--	ready-to-test rule	--	true	false	true	Dim Mid	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle."
 ME gem	Knife Fink	--	--	--	true	true	true	Dim Mid	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, successfully bribed."
 taboo bat	Verses Rev	--	--	--	true	true	true	Dim Mid	"You raise the Taboo Bat, and suddenly the Verses Rev knows what he's up against. It's not that it's particularly violent or lethal, but the Verses Rev sees several ways culture has gone to seed (and several it's gotten better, but he's too set in his ways.) More importantly, he sees himself in that. He turns and runs."
@@ -655,7 +652,7 @@ this is the maps-readable rule:
 	the rule fails;
 
 this is the Ned-gone rule:
-	if Ned is in Ned's Den, the rule succeeds;
+	if Ned is in Gross Org, the rule succeeds;
 	say "Good idea, but not with Ned around.";
 	the rule fails;
 
@@ -1306,6 +1303,7 @@ check examining tract cart:
 		say "It's empty now. Maybe some day, someone will write a book like ";
 		next-rand table of altbooks;
 		say ". Maybe it could be you! But you don't have the time to read right now, really." instead;
+[?? Trace cart]
 
 a book is a kind of thing. description of a book is "It [if player carries the item described]is[else]looks[end if] really heavy and incomprehensible to you."
 
@@ -1314,11 +1312,12 @@ section books with purpose so far
 TO IDIOT is a proper-named book. [Revolt Lover]
 NULL ILLUN is a proper-named book. [Known Wonk]
 ERA FARE is a proper-named book. [King Nik]
-EMOTE TOME is a proper-named book. [Sniffins]
+YOB ATTABOY is a proper-named book. [Sniffins]
 
 section books without purpose so far
 
 SOME DEMOS is a proper-named book.
+EMOTE TO ME is a proper-named book.
 WONDERED NOW is a proper-named book.
 
 gap-yet is a truth state that varies.
@@ -1455,29 +1454,38 @@ chapter crag arc
 
 the crag arc is scenery in Toll Lot. "It soars high and is too dangerous to climb[if UFO tofu is off-stage]. It's so intricate, maybe it is hiding something you can find[end if]."
 
-book Ned's Den
+book Gross Org
 
-Ned's Den is north of Toll Lot. It is in Yelpley. printed name of Ned's Den is "[if Ned is in Ned's Den]Ned's Den[else]Den, Evened[end if]". description is "[if etage gate is in Ned's Den]An etage gate blocks your way north. You can go back south[else]With the etage gate gone, you can go north or south[end if]."
+[?? den, evened]
 
-the etage gate is scenery in Ned's Den. "It is locked and too strong to move."
+Gross Org is north of Toll Lot. It is in Yelpley. description is "[if etage gate is in Gross Org]An etage gate blocks your way north. You can go back south[else]With the etage gate gone, you can go north or south[end if]."
 
-instead of opening etage gate, try going north;
+chapter stink knits
+
+the stink knits are a thing in Gross Org. description is "They don't smell very good. In a failed attempt at irony, they are lettered DAFT FAD."
+
+check taking when player is in Gross Org and Ned is in Gross Org: say "Not with Ned around, you won't." instead;
+
+the etage gate is scenery in Gross Org. "It is locked and too strong to move."
+
+instead of opening etage gate:
+	if player has Ye Key, try useoning Ye Key on etage gate instead;
+	try going north;
 
 [instead of unlocking etage gate:
-	if player has Ye Key, try useoning Ye Key on etage gate;
 	try going north;]
 
-check going north in Ned's Den: if etage gate is in Ned's Den, say "The etage gate blocks you."
+check going north in Gross Org: if etage gate is in Gross Org, say "The etage gate blocks you."
 
-understand "evened" and "den evened" as Ned's Den when Ned is in ZeroRez
+understand "evened" and "den evened" as Gross Org when Ned is in ZeroRez
 
-Ned is a person in Ned's Den.
+Ned is a person in Gross Org. "'Ned's Den!' someone booms. You're guessing their name must be Ned."
 
-The Puce Cup is a thing in Ned's Den.
+The Puce Cup is a thing in Gross Org.
 
 the puce cup can be empty, sappy or soddy. the puce cup is empty.
 
-check taking puce cup: if Ned is in Ned's Den, say "Not with Ned around, you won't." instead;
+check taking puce cup: if Ned is in Gross Org, say "Not with Ned around, you won't." instead;
 
 chapter Gate Tag
 
@@ -1504,11 +1512,20 @@ book Bon Snob
 
 Bon Snob is south of Toll Lot. It is in Yelpley. "A deli, tiled."
 
-Ira Bari is a person in Bon Snob.
+the gift fig is a solid ingredient.
+
+the dirt rid is a thing.
+
+after looking in Bon Snob for the first time:
+	say "Sniffins carelessly throws a small fruit at you. 'A gift fig. For first time visitiors. Enjoy, I guess.';
+	now player has the gift fig;
+	continue the action;
+
+Sniffins is a person in Bon Snob.
 
 The Gorge Grog is a thing in Bon Snob. "Unsurprisingly, it is a product of Grog-Org."
 
-check taking Gorge Grog: say "Ira Bari chides you. 'It's worthless to us, but if there's anything tackier than bad alcohol, it's people who want to steal it!'[paragraph break]Maybe you could trade something for it." instead;
+check taking Gorge Grog: say "Sniffins chides you. 'It's worthless to us, but if there's anything tackier than bad alcohol, it's people who want to steal it!'[paragraph break]Maybe you could trade something for it." instead;
 
 Nat's Tan is a thing in Bon Snob. "A container of something called Nat's Tan is here."
 
@@ -1586,15 +1603,17 @@ book Yell Alley
 
 Yell Alley is east of Evaded Ave. It is in Yelpley.
 
+the mayo yam is a thing in Yell Alley. "A gross looking -- something -- is here. It's a mayo yam! It's a bit on the slimy side, and it's probably worse inside."
+
 the rep popper is a thing in Yell Alley.
 
 check taking rep popper:
-	if player has dork rod, say "With the dork rod, you aren't THAT worried about your rep, but you're still worried enough not to take it. Maybe you can do a bit better..." instead;
-	if dork rod is not in ZeroRez, say "No way! You're not sure how much rep you have, but taking that rep popper would drop it a notch or more." instead;
-
-report taking rep popper:
-	say "Your experiences in the Tao Boat leave you feeling the rep popper cannot really harm you. Taken.";
-
+	if player has taboo bat:
+		now player has rep popper;
+		say "With the taboo bat in your possession, you just don't care about stuff like rep, so you have no problem taking the rep popper." instead;
+	if player has dork rod, say "With the dork rod, you aren't THAT worried about your rep, but you're still worried enough not to take the popper. Maybe you can do a bit better..." instead;
+	if dork rod is not in ZeroRez, say "No way! You're not sure how much rep you have, but taking that rep popper would drop it a notch or more, and the prospect seems too horrible." instead;
+[??yuge guy rep popper used what's wrong with yopu? I make boring people feel less boring vs you describing how you figured things out and only 26 possibilities really and also some trial and error]
 chapter back cab
 
 The back cab is a thing in Yell Alley. description is "It's here but doesn't look like you can actually ride it.". "A run-down back cab waits here."
@@ -1726,9 +1745,9 @@ the radar is a thing in Dope Pod.
 
 book Pro Corp
 
-Pro Corp is north of Ned's Den. It is in Yelpley.
+Pro Corp is north of Gross Org. It is in Yelpley.
 
-Pro Corp is above Ned's Den.
+Pro Corp is above Gross Org.
 
 chapter gold log
 
