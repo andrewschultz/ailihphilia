@@ -274,7 +274,8 @@ How do you feel peaceful enough to not be disrupted by your enemies?
 (+1) > USE CASH SAC ON CROSS ORC
 (+1) > USE RADAR ON CRAG ARC
 (+1) > USE DEMO MED ON GULF LUG
-(+1) > USE ELAN ALE ON IRA BARI
+(+1) > USE YOB ATTABOY ON SNIFFINS
+(+1) > USE ELAN ALE ON SNIFFINS
 (+1) > USE ERODED ORE ON REVIVER
 
 (+1) > USE RADAR ON MADE DAM

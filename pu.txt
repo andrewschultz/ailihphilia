@@ -390,12 +390,17 @@ All sorts of cool stuff! Take everything you want!
 It's not quite something living.
 It can become a body, or part of one.
 USE DNA BAND ON REIFIER.
->>BON SNOB
-?What does Ira Bari want?
+>>DELI, TILED
+?What does Sniffins want?
+He is obviously upset.
+He needs a confidence boost.
+Maybe a book will help.
+USE YOB ATTABOY ON SNIFFINS.
+?What does Sniffins want now?
 He finds the Gorge Grog tacky.
 You need to find Class Alc.
 Have you found the Elan Ale?
-USE ELAN ALE ON IRA BARI.
+USE ELAN ALE ON SNIFFINS.
 >>RED ROSES ORDER
 ?How do I defeat Madam?
 You can't get in if you don't have what you need.
@@ -419,13 +424,14 @@ There are 10 total points in Dim Mid.
 1 point if you USE YARD RAY ON DIKTAT KID.
 1 point if you USE X-ITE TIX ON TIX EXIT
 ?How do I get all the points for Yelpley?
-There are 29 total points in Yelpley.
+There are 30 total points in Yelpley.
 1 point if you EVADE DAVE.
 1 point if you NAIL IAN.
 1 point if you DENT NED.
 1 point if you TEND NET.
 1 point for WORK ROW.
 1 point for WORD ROW.
+1 point if you USE YOB ATTABOY ON SNIFFINS.
 1 point if you USE TRAP ART ON REIFIER.
 1 point if you USE GOLD LOG ON ROTATOR.
 1 point if you USE DORK ROD ON REIFIER.
@@ -434,7 +440,7 @@ There are 29 total points in Yelpley.
 1 point if you USE DNA BAND ON REIFIER.
 1 point if you USE ROTO MOTOR ON DNA HAND.
 1 point if you USE BANG NAB ON TNT.
-1 point if you USE ELAN ALE ON IRA BARI.
+1 point if you USE ELAN ALE ON SNIFFINS.
 1 point if you USE STINK KNITS ON ROTATOR.
 1 point if you USE YE KEY ON ETAGE GATE.
 1 point if you USE TO IDIOT ON REVOLT LOVER.

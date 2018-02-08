@@ -4,6 +4,15 @@
 
 Points: the reifier 2 + radar (broken 1st time?)=3, reviver 2 + dork rod, rotator 3
 
+Tiled Deli becomes Bon Snob.
+
+1. use dirt rid on reviver = CAVE VAC. Now that's powerful!
+2. use CAVE VAC on (???) to get a Gift Fig. (Yow!)
+
+3. Ira Bari becomes Sniffins.
+
+psi wisp: chases player from Pro Corp
+
 Stray Arts, or something close
 Raft Far: to get away from the Elided Ile
 Balm Lab: secret location you can only visit if lucky?
@@ -468,18 +477,18 @@ Alleging Nigella
 Align Gila
 amen enema
 analyticity lana
-arkoses okra
+#arkoses okra
 ate feta/zeta
 avow/ova
 Apollo, Pa
 area era
 Art S(ai)stra
-Bats' Tab
+#Bats' Tab
 
 Be Reb!
 
 balk lab
-bane nab
+#bane nab
 barge, grab
 bank nab
 bar grab
@@ -530,7 +539,6 @@ muy yum
 mark ram
 martyry tram
 mate tam
-max exam
 meets esteem
 met system
 met item: random found
@@ -628,7 +636,6 @@ prahu harp
 prawn warp
 prodded dorp
 prats tarp
-psi wisp
 purist sirup
 puck cup
 pupil slipup
@@ -686,7 +693,6 @@ remate tamer
 repots toper
 rev over
 retract carter
-redness ender
 redness sender
 reimage gamier
 regina niger
@@ -870,7 +876,6 @@ star brats:star frats
 Stella Ballets
 stops eyespots
 strip spirts
-Stand Nat's
 stewy wets
 stellify fillets
 still lits
@@ -993,7 +998,6 @@ yawl way
 yank nay
 yes mimsey
 yoga goy
-yob attaboy
 yodeled oy
 Yo Boy
 ZAP, spaz!
