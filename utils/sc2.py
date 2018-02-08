@@ -52,6 +52,9 @@ invis_points = defaultdict(int)
 invis_region_points = defaultdict(int)
 source_region = defaultdict(str)
 
+walkthrough_order = defaultdict(int)
+source_cmd_order = defaultdict(int)
+
 def usage():
     print("-v for verbose")
     print("-s for semi verbose")
@@ -210,6 +213,7 @@ def source_vs_walkthrough():
     any_err = 0
     line_count = 0
     plus_one = 0
+    walkthrough_count = 0
     global warning_walkthrough_line
     xxx = { 'N': True, 'S': True, 'E': True, 'W': True, 'GET': True }
     with open(main_thru) as file:
@@ -231,6 +235,8 @@ def source_vs_walkthrough():
                     print("WARNING line", line_count, "has duplicate command:", ll)
                     warning_walkthrough_line = line_count
                 use_in_walkthrough[ll] = line_count
+                walkthrough_count = walkthrough_count + 1
+                walkthrough_order[ll] = walkthrough_count
     for x in list(set(use_in_walkthrough.keys()) | set(use_in_source.keys())):
         if x not in use_in_walkthrough.keys() and source_region[x] != 'odd do':
             print("ERROR: Need this line in walkthrough:", x)
@@ -240,6 +246,19 @@ def source_vs_walkthrough():
             any_err = any_err + 1
         elif verbose:
             print("Synced:", x)
+    last_source_got = 0
+    for x in sorted(walkthrough_order.keys(), key=walkthrough_order.get):
+        # print(x, walkthrough_order[x])
+        wtc = walkthrough_order[x] # probably just increments but let's make sure
+        if x not in source_cmd_order.keys():
+            if x.startswith("USE"):
+                print("Need use-line for", x)
+            else:
+                print ("Need to add command in comments:", x)
+        else:
+            if source_cmd_order[x] < last_source_got:
+                print("Source commands/table of useons out of order with command", x, "walkthrough command", wtc, "last source index", last_source_got, "order in source", source_cmd_order[x])
+            last_source_got = source_cmd_order[x]
     if plus_one or any_err:
         print(plus_one, "walkthrough +1's needed")
         print(any_err, "total walkthrough sync errors")
@@ -271,6 +290,7 @@ def get_stuff_from_source():
     func_list = ''
     need_true_score = False
     truth_array = [ 'false', 'true' ]
+    source_cmd_count = 0
     with open(main_source) as file:
         line_count = 0
         for line in file:
@@ -358,6 +378,8 @@ def get_stuff_from_source():
                         continue
                     if x[5] == 'true':
                         cmd = "USE {:s} ON {:s}".format(x[0].upper(), x[1].upper())
+                        source_cmd_count = source_cmd_count + 1
+                        source_cmd_order[cmd] = source_cmd_count
                         use_in_source[cmd] = line_count
                         temp_region = ""
                         if x[8] and x[8] != '--' and x[8] != 'reg-plus': # a bit hacky, but basically, check for entry 10 in useon table being a proper region
