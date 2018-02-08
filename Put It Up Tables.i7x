@@ -522,6 +522,7 @@ randtxt
 "One no."
 "Oo! Noo!"
 "Poor droop."
+"Stone NOTs."
 "Woe meow."
 "Ye Po['] Nopey."
 

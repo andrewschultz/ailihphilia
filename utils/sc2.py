@@ -247,6 +247,7 @@ def source_vs_walkthrough():
         elif verbose:
             print("Synced:", x)
     last_source_got = 0
+    ooo = 0
     for x in sorted(walkthrough_order.keys(), key=walkthrough_order.get):
         # print(x, walkthrough_order[x])
         wtc = walkthrough_order[x] # probably just increments but let's make sure
@@ -258,12 +259,14 @@ def source_vs_walkthrough():
         else:
             if source_cmd_order[x] < last_source_got:
                 print("Source commands/table of useons out of order with command", x, "walkthrough command", wtc, "last source index", last_source_got, "order in source", source_cmd_order[x])
+                ooo = ooo + 1
             last_source_got = source_cmd_order[x]
+    if ooo > 0: print(ooo, "walkthrough <=> table of useons order sync errors")
     if plus_one or any_err:
         print(plus_one, "walkthrough +1's needed")
-        print(any_err, "total walkthrough sync errors")
+        print(any_err, "total walkthrough ~ errors (non order)")
     else:
-        print("Walkthrough sync test passed.")
+        print("Walkthrough sync test (non order) passed.")
 
 argval = 1
 while argval < len(sys.argv):
@@ -378,8 +381,20 @@ def get_stuff_from_source():
                         continue
                     if x[5] == 'true':
                         cmd = "USE {:s} ON {:s}".format(x[0].upper(), x[1].upper())
+                        if '[b4:' in line:
+                            cmd_comment = re.sub(".*\[b4:", "", line.strip())
+                            cmd_comment = re.sub("\].*", "", cmd_comment.upper())
+                            for temp_cmd in cmd_comment.split("/"):
+                                source_cmd_count = source_cmd_count + 1
+                                source_cmd_order[temp_cmd] = source_cmd_count
                         source_cmd_count = source_cmd_count + 1
                         source_cmd_order[cmd] = source_cmd_count
+                        if '[af:' in line:
+                            cmd_comment = re.sub(".*\[af:", "", line.strip())
+                            cmd_comment = re.sub("\].*", "", cmd_comment.upper())
+                            for temp_cmd in cmd_comment.split("/"):
+                                source_cmd_count = source_cmd_count + 1
+                                source_cmd_order[temp_cmd] = source_cmd_count
                         use_in_source[cmd] = line_count
                         temp_region = ""
                         if x[8] and x[8] != '--' and x[8] != 'reg-plus': # a bit hacky, but basically, check for entry 10 in useon table being a proper region

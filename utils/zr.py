@@ -26,6 +26,7 @@ only_test = False
 
 difs = 0
 line_count = 0
+always_adj = defaultdict(bool)
 cap_search = defaultdict(bool)
 regex_detail = defaultdict(str)
 
@@ -70,8 +71,14 @@ with open("zr.txt") as file:
     for line in file:
         if line.startswith('#'): continue
         if line.startswith(';'): break
+        always = False
+        if line.startswith('a:'):
+            line = re.sub('a:', '', line)
+            always = True
         line_ary = line.strip().split("\t")
         cap_search[line_ary[0]] = True
+        if always:
+            always_adj[line_ary[0]] = True
         if len(line_ary) > 1:
             regex_detail[line_ary[0]] = line_ary[1]
 
@@ -88,11 +95,12 @@ with open("story.ni") as file:
         if '[ic]' not in ll:
             for x in cs:
                 if x.lower() in line.lower():
-                    ll_old = ll
-                    ll = re.sub(r'\b{:s}\b'.format(regex_detail[x] if x in regex_detail.keys() else x), x, ll, 0, re.IGNORECASE)
-                    if ll != ll_old:
-                        difs = difs + 1
-                        print("Line", line_count, "miscapitalized", x + ":", line.strip())
+                    if always_adj[x] or (x.upper() not in line.upper()):
+                        ll_old = ll
+                        ll = re.sub(r'\b{:s}\b'.format(regex_detail[x] if x in regex_detail.keys() else x), x, ll, 0, re.IGNORECASE)
+                        if ll != ll_old:
+                            difs = difs + 1
+                            print("Line", line_count, "miscapitalized", x + ":", line.strip())
         fout.write(ll)
 
 fout.close()
