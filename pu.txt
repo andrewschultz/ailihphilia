@@ -231,6 +231,10 @@ Maybe a book could help.
 USE NULL ILLUN ON KNOWN WONK.
 What is the Edits Tide good for?
 USE EL DOODLE ON EDITS TIDE.
+?Can I clean the Tru Yurt?
+The Dirt Rid doesn't quite do the trick. Not energetic enough.
+USE DIRT RID ON REVIVER.
+USE CAVE VAC ON TRU YURT.
 >>CALCIFIC LAC
 ?What do I do with the Tao Boat?
 It won't let you in unless you have something that shows self-effacement.
@@ -457,8 +461,9 @@ There are 31 total points in Yelpley.
 1 point if you USE YOU BUOY ON ROTATOR.
 1 point if you USE BRO ORB ON MADAM.
 ?How do I get all the points for Grebeberg?
-There are 26 total points in Grebeberg.
+There are 27 total points in Grebeberg.
 1 point if you NAIL IAN.
+1 point if you USE CAVE VAC ON TRU YURT.
 1 point if you USE ERA FARE ON KING NIK.
 1 point if you USE DEMO MED ON GULF LUG.
 1 point if you USE TENT NET ON CODE DOC.

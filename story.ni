@@ -38,7 +38,7 @@ chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
 
-Grebeberg is a region. max-score of Grebeberg is 26.
+Grebeberg is a region. max-score of Grebeberg is 27.
 
 Dim Mid is a region. max-score of Dim Mid is 10.
 
@@ -582,6 +582,7 @@ demo med	gulf lug	cash sac	--	--	true	true	true	Grebeberg	"The Gulf Lug takes th
 TO IDIOT	Revolt Lover	--	--	--	true	true	true	Yelpley	"The Revolt Lover begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Known Wonk runs away."
 YOB ATTABOY	Sniffins	Dirt Rid	--	--	true	true	false	Yelpley	"Sniffins accepts your gift. His sniffs slowly change from sadness to something more snooty. He thanks you for helping him be too good for you before handing you a Dirt Rid and kicking you out."
 Dirt Rid	reviver	Cave Vac	--	--	true	true	false	Yelpley	"You watch as the Dirt Rid swirls and becomes shinier and much more powerful. A Cave Vac! It will be capable of cleaning...well, somewhere."
+Cave Vac	Tru Yurt	Exam Axe	--	--	true	true	false	Grebeberg	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. You get a special gift: the Wonk is not one for violence, but perhaps this Exam Axe is an ample reward for helping the Wonk pass an important life test!"
 NULL ILLUN	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me.' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. And if it's simple, well, I need to know when simple stuff works.' The Known Wonk apologizes--it's back to a Tru Yurt for a thought session."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes to look for ... well, something else."
 radar	crag arc	UFO tofu	orc-gone rule	--	true	true	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO as it flies off. It bounces off you. 'O Furor! UFO!' you cry. You look at it and--it's unharmed, and still in a cubic shape. Looks like you got yourself some UFO tofu."
@@ -1120,11 +1121,17 @@ The tenet is a thing. description is "It seems a bit too cliche, but you have th
 
 book Swamp Maws
 
-Swamp Maws is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west. You can go north or south here."
+Swamp Maws is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west. You can go north or south here. [if known wonk is in ZeroRez]The Known Wonk's Tru-Yurt is here. It looks really messy[end if]."
 
-The Known Wonk is a person in Swamp Maws. "The Known Wonk [one of]figures you'll have to do, even though you're not as interesting as a book[or]paces around, waiting for intellectual conversation[stopping]."
+The Known Wonk is a person in Swamp Maws. "The Known Wonk stands by a Tru Yurt, [one of]figuring you'll have to do, even though you're not as interesting as a book[or]waiting for intellectual conversation[stopping]."
 
 check going north in Swamp Maws when Known Wonk is in Swamp Maws: say "The Known Wonk pushes you back. 'You don't know how weird it is to the north. But I know a thing or two about adventuring theory.'" instead;
+
+chapter Tru Yurt
+
+The Tru Yurt is scenery in Swamp Maws. "It looks really messy. THe Known Wonk said it needed a good cleaning."
+
+chapter Edits Tide
 
 The Edits Tide is scenery in Swamp Maws. "A voice from the edits tide seems to say [if spa maps are off-stage]that you could use its proofreading skills[else]it has labored enough for you[end if]."
 

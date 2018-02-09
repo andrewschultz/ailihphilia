@@ -202,7 +202,10 @@ Bye bye, Ergot Ogre!
 
 >N.N.E
 
-Now to get rid of the Lie Veil. You could've done this earlier, but this is in the flow.
+Now to get rid of the Lie Veil. You could've done this earlier, but this is in the flow. (Bad directions)
+
+(+1) > USE DIRT RID ON REVIVER
+(+1) > USE CAVE VAC ON TRU YURT
 
 (+1) >USE EXAM AXE ON LIE VEIL
 
