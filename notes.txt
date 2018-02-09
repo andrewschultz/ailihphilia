@@ -2,14 +2,17 @@
 
 # XITE TIX lead to A MORE EXCITING REAL WORLD. Well, given all the palindromes you dealt with, you probably should've expected a circular loop to back where you began. But you did have fun. Probably more than if you'd stood around and leveled up a whole bunch. So that's something.
 
-Points: the reifier 2 + radar (broken 1st time?)=3, reviver 2 + dork rod, rotator 3
+# Points: the reifier 3, reviver 3, rotator 3
 
+What to do with
 Beating up the villains:
 replace TRUCK CURT with BORE ROB. Rob now guards Worn Row.
-NAIL IAN: he now guards Mont Nom. Walks away in shame as his nose picking is exposed.
-DENT NED needs to be DENY NED
+NAIL IAN: add detail that he walks away in shame as his nose picking is exposed.
+DENY NED: he wants to get in an argument or fight, so you get in an argument over whether it's really necessary, and then you say, that wasn't so great, see? He slinks off.
 Rob, Ian, Ned, Dave are minor henchmen.
 2 major henchmen.
+
+SOME MEMOS: what you start with?
 
 SCORE ROCS
 ROCS COR

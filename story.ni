@@ -26,6 +26,8 @@ include undo output control by Erik Temple.
 
 volume definitions
 
+a person can be grunty. a person is usually not grunty.
+
 a thing can be drinkable. a thing is usually not drinkable.
 
 an ingredient is a kind of thing. an ingredient is usually edible. an ingredient can be solid or liquid.
@@ -40,7 +42,7 @@ Grebeberg is a region. max-score of Grebeberg is 26.
 
 Dim Mid is a region. max-score of Dim Mid is 10.
 
-Yelpley is a region. max-score of Yelpley is 30.
+Yelpley is a region. max-score of Yelpley is 31.
 
 Odd Do is a region. max-score of Odd Do is 5.
 
@@ -150,6 +152,10 @@ to score-inc:
 check requesting the score:
 	say "Your overall score so far is [score] of [maximum score][one of]. But don't worry, points pile up pretty quickly once you get going[or][stopping].";
 	say "Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do].";
+	if my gym is visited or evaded ave is visited:
+		if number of grunty people is not number of grunty people in ZeroRez, say "You currently disposed of [number of grunty people in ZeroRez] grunts blocking your way: [list of grunts in ZeroRez].";
+	if yuge guy is in ZeroRez, say "You've gotten rid of the Yuge Guy, Evil Clive.";
+	if Madam is in ZeroRez, say "You've gotten rid of the La Gal/Madam.";
 	if player has set o notes and north tron is off-stage:
 		let ni be number of tronparts carried by the player;
 		say "You also have [ni] of [number of tronparts] piece[if ni is not 1]s[end if] of the North Tron, according to the set-o-notes.";
@@ -575,6 +581,7 @@ party trap	stark rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try 
 demo med	gulf lug	cash sac	--	--	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' he looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
 TO IDIOT	Revolt Lover	--	--	--	true	true	true	Yelpley	"The Revolt Lover begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Known Wonk runs away."
 YOB ATTABOY	Sniffins	Dirt Rid	--	--	true	true	false	Yelpley	"Sniffins accepts your gift. His sniffs slowly change from sadness to something more snooty. He thanks you for helping him be too good for you before handing you a Dirt Rid and kicking you out."
+Dirt Rid	reviver	Cave Vac	--	--	true	true	false	Yelpley	"You watch as the Dirt Rid swirls and becomes shinier and much more powerful. A Cave Vac! It will be capable of cleaning...well, somewhere."
 NULL ILLUN	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me.' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. And if it's simple, well, I need to know when simple stuff works.' The Known Wonk apologizes--it's back to a Tru Yurt for a thought session."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes to look for ... well, something else."
 radar	crag arc	UFO tofu	orc-gone rule	--	true	true	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO as it flies off. It bounces off you. 'O Furor! UFO!' you cry. You look at it and--it's unharmed, and still in a cubic shape. Looks like you got yourself some UFO tofu."
@@ -1253,7 +1260,7 @@ chapter workables
 a workable is a kind of thing. a workable has a number called useleft.
 
 the reifier is a workable. useleft is 3.
-the reviver is a workable. useleft is 2.
+the reviver is a workable. useleft is 3.
 the rotator is a workable. useleft is 3.
 
 to wear-down (w - a workable):
@@ -1525,10 +1532,7 @@ the gift fig is a solid ingredient.
 
 the dirt rid is a thing.
 
-after looking in Bon Snob for the first time:
-	say "Sniffins carelessly throws a small fruit at you. 'A gift fig. For first time visitiors. Enjoy, I guess.';
-	now player has the gift fig;
-	continue the action;
+the cave vac is a thing.
 
 Sniffins is a person in Bon Snob.
 
