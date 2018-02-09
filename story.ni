@@ -570,7 +570,7 @@ Pact Cap	"Your pact cap is fine where it is, on your head."
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
 table of useons [xxuse]
 use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
-trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever." [b4:PACK CAP/PACE CAP/TEND NET/EVADE DAVE/NAIL IAN/WORK ROW/WORD ROW]
+trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever." [b4:PACK CAP/PACE CAP/TEND NET/EVADE DAVE/BORE ROB/WORK ROW/WORD ROW]
 party trap	stark rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
 demo med	gulf lug	cash sac	--	--	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' he looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
 TO IDIOT	Revolt Lover	--	--	--	true	true	true	Yelpley	"The Revolt Lover begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Known Wonk runs away."
@@ -579,7 +579,7 @@ NULL ILLUN	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins t
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes to look for ... well, something else."
 radar	crag arc	UFO tofu	orc-gone rule	--	true	true	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO as it flies off. It bounces off you. 'O Furor! UFO!' you cry. You look at it and--it's unharmed, and still in a cubic shape. Looks like you got yourself some UFO tofu."
 poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
-poo coop	turf rut	--	coop-full rule	--	true	true	true	Grebeberg	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture. The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG." [af:truck curt/puff up/pull up]
+poo coop	turf rut	--	coop-full rule	--	true	true	true	Grebeberg	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture. The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG." [af:nail ian/puff up/pull up]
 radar	made dam	eroded ore	--	--	true	true	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow."
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 dork rod	tao boat	--	--	--	true	false	false	Grebeberg	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
@@ -605,7 +605,7 @@ spa maps	Code Doc	--	maps-explained-yet rule	maps-explain rule	true	false	false	
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest."
 you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. It's so tempting and beautiful, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
-Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again. A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it." [b4:dent ned]
+Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again. A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it." [b4:deny ned]
 SOME DEMOS	yahoo hay	straw arts	--	--	true	false	true	Grebeberg	"With the help of SOME DEMOS, you manage to rejig the hay into something more aesthetically pleasing: straw arts!"
 straw arts	Mike Kim	soot tattoos	--	--	true	true	false	Yelpley	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
 gate tag	soot tattoos	state tats	--	--	true	true	true	Yelpley	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
@@ -997,21 +997,25 @@ the martini tram is a thing in Mont Nom.
 
 instead of eating ark of okra: say "You don't know how long it's been out here. It's probably, like, the vegetable version of wax fruit."
 
-chapter trucking
+chapter Ian
 
-Curt is a person in Mont Nom.
+Ian is a person in Mont Nom.
 
-trucking is an action applying to one thing.
+chapter nailing
 
-understand the command "truck" as something new.
+nailing is an action applying to one thing.
 
-understand "truck [something]" as trucking.
+understand the command "nail" as something new.
 
-carry out trucking:
-	if noun is not Curt, say "Wrong thing to truck." instead;
-	move Curt to ZeroRez;
-	score-inc; [Grebeberg/truck curt]
-	the rule succeeds.
+understand "nail [something]" as nailing when player is in Worn Row and Ian is in Worn Row.
+
+carry out nailing:
+	if Ian is in ZeroRez, say "There's nobody named Elian to nail later in the game, so this isn't an action you need to take any more." instead;
+	if noun is not Ian, say "You'll know what or whom to nail, and that's not it." instead;
+	say "Boom! There goes Ian.";
+	move Ian to ZeroRez;
+	score-inc; [Grebeberg/nail ian]
+	the rule succeeds;
 
 book Ooze Zoo
 
@@ -1210,12 +1214,18 @@ carry out evadeing:
 
 book Worn Row
 
-Worn Row is west of My Gym. It is in Yelpley. "[if workrow is true]Three machines are here[else if wordrow is true]A library is here, just full of books[else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if]."
+Worn Row is west of My Gym. It is in Yelpley. "[if workrow is true]Three machines are here[else if wordrow is true]A library is here, just full of books[else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if][if redness ender is in Worn Row]. There's also a redness ender here, but it looks dangerous to get too close to[end if]."
 
 printed name of Worn Row is "[if wordrow is true]Word[else if workrow is true]Work[else]Worn[end if] Row"
 
 understand "work row" and "work" as Worn Row when workrow is true.
 understand "word row" and "word" as Worn Row when wordrow is true.
+
+the redness ender is a thing in Worn Row. "It also seems to double as a redness SENDER, as when you get close to look at it, an ominous red dot appears on you. You back off."
+
+chapter Rob
+
+Rob is a person in Worn Row.
 
 chapter test set
 
@@ -1223,9 +1233,20 @@ The test set is a thing.
 
 check taking the test set: say "It's too unwieldy. But it has to be useful for something." instead;
 
-chapter Ian
+chapter boreing
 
-Ian is a person in Worn Row.
+boreing is an action applying to one thing.
+
+understand the command "bore" as something new.
+
+understand "bore [something]" as boreing.
+
+carry out boreing:
+	if noun is not a person, say "You should try to bore people, not things." instead;
+	if noun is not Rob, say "Wrong thing or person to bore." instead;
+	move Rob to ZeroRez;
+	score-inc; [Yelpley/bore rob]
+	the rule succeeds.
 
 chapter workables
 
@@ -1257,6 +1278,8 @@ instead of putting on:
 	continue the action;
 
 instead of switching on a workable, say "You need to USE something with [the noun]."
+
+instead of taking a workable, say "Too heavy. But you can USE something on it.";
 
 section reiing
 
@@ -1351,20 +1374,6 @@ check taking a book:
 chapter party trap
 
 the party trap is a thing. "It looks really complex, like it could trap more than one thing if you USE it right. That would be cool. I mean, if you used it on things that deserved it."
-
-chapter nailing
-
-nailing is an action applying to nothing.
-
-understand the command "nail ian" as something new.
-
-understand "nail ian" as nailing when player is in Worn Row and Ian is in Worn Row.
-
-carry out nailing:
-	say "Boom! There goes Ian.";
-	move Ian to ZeroRez;
-	score-inc; [Yelpley/nail ian]
-	the rule succeeds;
 
 chapter workrowing
 
@@ -1505,7 +1514,7 @@ carry out denting:
 	if noun is Ned:
 		say "Bam! Bye bye Ned.";
 		now Ned is in ZeroRez;
-		score-inc; [Yelpley/dent ned]
+		score-inc; [Yelpley/deny ned]
 	the rule succeeds;
 
 book Bon Snob

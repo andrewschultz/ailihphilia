@@ -53,9 +53,11 @@ Oh no! Dave's here, man! How to get around Dave?
 
 >W
 
-(+1) >NAIL IAN
+(+1) >BORE ROB
 
-Now Worn Row isn't suitable for getting anything done, yet. How would you restore it as a place to BE and DO?
+??TRACE CART
+
+Now Worn Row isn't suitable for getting anything done, yet. It has that redness ender, but that looks kind of dangerous. How would you restore it as a place to BE and DO something constructive?
 
 (+1) >WORK ROW
 
@@ -63,21 +65,19 @@ Now, the trap art goes with one of the machines, but which one?
 
 (+1) >USE TRAP ART ON REIFIER
 
-Also, the debt bet can be improved, too.
+Also, the debt bed can be improved, too.
 
 (+1) >USE DEBT BED ON REVIVER
 
-You can also tinker with it in other ways, which we'll get to later.
+You can also tinker with it in other ways. Let's see about that.
 
 (+1) >WORD ROW
 
 >GET ERA FARE
 
->E
->N
+You can only pick up one book at a time, and I think this is the best to start with to open up more of the map.
 
->W
->W
+>E.N.W.W
 
 How to get rid of the rats?
 
@@ -91,7 +91,7 @@ How to get past the eels? They are sleeping but look a bit uncomfortable.
 
 >S
 
-The kayo yak is/was harmless.
+The kayo yak is/was harmless, but it'll help you later.
 
 >E.GET POO COOP.W.N.N.W
 
@@ -100,15 +100,13 @@ Now we need to make passage west and south. Fortunately one way is removing some
 (+1) > USE POO COOP ON GNU DUNG
 (+1) > USE POO COOP ON TURF RUT
 
-
-
->N
+>E.N
 
 (+1) >USE ERA FARE ON KING NIK
 
->S
->E
->E
+The Spur Ups make you feel more with-it.
+
+>S.E.E
 
 You feel you could almost go east, but you need to do something "up."
 
@@ -222,6 +220,10 @@ And you may want a way to get into the Red Roses Order.
 
 ==========================================below is stuff that's near the end
 
+Finally, you can head to Mount Nom.
+
+(+1) > NAIL IAN
+
 (+1) > USE SNACK CANS ON UFO TOFU
 (+1) > USE GIFT FIG ON MAYO YAM
 
@@ -268,7 +270,7 @@ How do you feel peaceful enough to not be disrupted by your enemies?
 (+1) >USE PUCE CUP ON DOSE SOD
 (+1) >USE PUCE CUP ON MARGE PEGRAM
 
-==========================================below is totally unsorted uncommented stuff
+==========================================below is totally unsorted uncommented stuff, lumped together by the quests they're with
 
 (+1) > PACE CAP
 (+1) > USE CASH SAC ON CROSS ORC
@@ -283,11 +285,11 @@ How do you feel peaceful enough to not be disrupted by your enemies?
 (+1) > USE YE KEY ON ETAGE GATE
 
 (+1) > USE PUCE CUP ON PAST SAP
+>S.E.E.E.S
+(+1) > USE PUCE CUP ON LIAR GRAIL
 
 (+1) >USE SOME DEMOS ON YAHOO HAY
-
 >W.N.N.E.E.N
-
 (+1) >USE STRAW ARTS ON MIKE KIM
 
 (+1) >USE DNA BAND ON REIFIER
@@ -295,13 +297,8 @@ How do you feel peaceful enough to not be disrupted by your enemies?
 (+1) >USE BANG NAB ON TNT
 
 (+1) > USE DORK ROD ON REIFIER
-
->S.E.E.S
-
-(+1) > USE PUCE CUP ON LIAR GRAIL
-
+>E.N.N.N
 (+1) > USE TO IDIOT ON REVOLT LOVER
 
-(+1) > TRUCK CURT
-(+1) > DENT NED
+(+1) > DENY NED
 (+1) > USE SPA MAPS ON GO-BY BOG

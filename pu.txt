@@ -184,8 +184,8 @@ You need something true, or something that shows you've been true.
 If you get rid of all the books, you'll get a neat item.
 USE EXAM AXE ON LIE VEIL.
 >>MONT NOM
-?What is Curt doing? How do I get rid of him?
-TRUCK CURT.
+?What is Rob doing? How do I get rid of him?
+BORE ROB.
 ?Can I make any sort of special food here?
 Yes, and there are several possibilities.
 There are four foods you can't eat. Two are solid, two are liquid.
@@ -379,7 +379,7 @@ USE RADAR ON CRAG ARC.
 ?How do I get rid of Ned?
 You need to do something to him.
 The logic is ***(+) NED.
-DENT NED.
+DENY NED.
 ?How do I get past the gate?
 It's not too bad.
 USE YE KEY ON ETAGE GATE.
@@ -426,8 +426,8 @@ There are 10 total points in Dim Mid.
 ?How do I get all the points for Yelpley?
 There are 30 total points in Yelpley.
 1 point if you EVADE DAVE.
-1 point if you NAIL IAN.
-1 point if you DENT NED.
+1 point if you DENY NED.
+1 point if you BORE ROB.
 1 point if you TEND NET.
 1 point for WORK ROW.
 1 point for WORD ROW.
@@ -457,6 +457,7 @@ There are 30 total points in Yelpley.
 1 point if you USE BRO ORB ON MADAM.
 ?How do I get all the points for Grebeberg?
 There are 26 total points in Grebeberg.
+1 point if you NAIL IAN.
 1 point if you USE ERA FARE ON KING NIK.
 1 point if you USE DEMO MED ON GULF LUG.
 1 point if you USE TENT NET ON CODE DOC.
@@ -469,7 +470,6 @@ There are 26 total points in Grebeberg.
 1 point if you USE POO COOP ON TURF RUT.
 1 point if you USE PUCE CUP ON PAST SAP. [?? use it on the fir too]
 1 point if you USE RADAR ON MADE DAM.
-1 point if you TRUCK CURT.
 1 point if you USE GIFT FIG ON MAYO YAM.
 1 point if you USE SNACK CANS ON UFO TOFU.
 1 point if you USE SPA MAPS ON GO-BY BOG.
