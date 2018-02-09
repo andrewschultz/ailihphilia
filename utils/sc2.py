@@ -183,6 +183,7 @@ def source_vs_trizbort_flow():
     summary_err = 0
     line_count = 0
     plus_one = 0
+    asterisked = defaultdict(int)
     with open(triz_flow) as file:
         for line in file:
             line_count = line_count + 1
@@ -195,8 +196,15 @@ def source_vs_trizbort_flow():
             rn = re.sub(r".* name=\"([^\"]*)\".*", r'\1', line.strip())
             if re.search(r"^USE (REIFIER|ROTATOR|REVIVER)", rn):
                 print("ERROR: swap 1st/2nd nouns in trizbort flow element", rn)
-            use_in_trizflow[rn] = line_count
+            if rn.endswith('*'):
+                rn2 = re.sub("\*$", "", rn)
+                asterisked[rn2] = line_count
+            else:
+                use_in_trizflow[rn] = line_count
             # print("Adding", rn)
+    for x in asterisked.keys():
+        if x not in use_in_trizflow.keys():
+            print(x, "has an asterisked flowchart entry but not a non-asterisked.")
     for x in list(set(use_in_trizflow.keys()) | set(use_in_source.keys())):
         if x not in sorted(use_in_trizflow.keys()):
             print("ERROR: source not flow", x, "in source but not in trizbort flow file", triz_flow)
@@ -255,7 +263,7 @@ def source_vs_walkthrough():
             if x.startswith("USE"):
                 print("Need use-line for", x)
             else:
-                print ("Need to add command in comments:", x)
+                print ("Need to add command in comments after useon entry:", x)
         else:
             if source_cmd_order[x] < last_source_got:
                 print("Source commands/table of useons out of order with command", x, "walkthrough command", wtc, "last source index", last_source_got, "order in source", source_cmd_order[x])
@@ -267,25 +275,6 @@ def source_vs_walkthrough():
         print(any_err, "total walkthrough ~ errors (non order)")
     else:
         print("Walkthrough sync test (non order) passed.")
-
-argval = 1
-while argval < len(sys.argv):
-    noh = sys.argv[argval].lower()
-    if noh[0] == '-':
-        noh = noh[1:]
-    if noh == 'v':
-        verbose = True
-        semi_verbose = True
-    elif noh == 's':
-        semi_verbose = True
-    elif noh == 'h':
-        show_hash = True
-    else:
-        print(sys.argv[argval].lower(), "not recognized.")
-        print()
-        usage()
-    argval = argval + 1
-
 
 def get_stuff_from_source():
     in_use_table = False
@@ -386,6 +375,7 @@ def get_stuff_from_source():
                             cmd_comment = re.sub("\].*", "", cmd_comment.upper())
                             for temp_cmd in cmd_comment.split("/"):
                                 source_cmd_count = source_cmd_count + 1
+                                if temp_cmd in source_cmd_order.keys(): print("WARNING", temp_cmd, "is a duplicate in table of useons")
                                 source_cmd_order[temp_cmd] = source_cmd_count
                         source_cmd_count = source_cmd_count + 1
                         source_cmd_order[cmd] = source_cmd_count
@@ -394,6 +384,7 @@ def get_stuff_from_source():
                             cmd_comment = re.sub("\].*", "", cmd_comment.upper())
                             for temp_cmd in cmd_comment.split("/"):
                                 source_cmd_count = source_cmd_count + 1
+                                if temp_cmd in source_cmd_order.keys(): print("WARNING", temp_cmd, "is a duplicate in table of useons")
                                 source_cmd_order[temp_cmd] = source_cmd_count
                         use_in_source[cmd] = line_count
                         temp_region = ""
@@ -410,6 +401,24 @@ def get_stuff_from_source():
                             elif verbose:
                                 print(temp_region, "at line", line_count, " in use table given extra point.")
                             undef_use_points = undef_use_points + 1
+
+argval = 1
+while argval < len(sys.argv):
+    noh = sys.argv[argval].lower()
+    if noh[0] == '-':
+        noh = noh[1:]
+    if noh == 'v':
+        verbose = True
+        semi_verbose = True
+    elif noh == 's':
+        semi_verbose = True
+    elif noh == 'h':
+        show_hash = True
+    else:
+        print(sys.argv[argval].lower(), "not recognized.")
+        print()
+        usage()
+    argval = argval + 1
 
 get_stuff_from_source()
 
