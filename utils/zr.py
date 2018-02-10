@@ -75,6 +75,7 @@ with open("zr.txt") as file:
         if line.startswith('a:'):
             line = re.sub('a:', '', line)
             always = True
+        if not line.strip(): continue
         line_ary = line.strip().split("\t")
         cap_search[line_ary[0]] = True
         if always:
@@ -95,7 +96,7 @@ with open("story.ni") as file:
         if '[ic]' not in ll:
             for x in cs:
                 if x.lower() in line.lower():
-                    if always_adj[x] or (x.upper() not in line.upper()):
+                    if always_adj[x] or (x.upper() not in line):
                         ll_old = ll
                         ll = re.sub(r'\b{:s}\b'.format(regex_detail[x] if x in regex_detail.keys() else x), x, ll, 0, re.IGNORECASE)
                         if ll != ll_old:

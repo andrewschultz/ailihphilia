@@ -261,7 +261,7 @@ def source_vs_walkthrough():
         wtc = walkthrough_order[x] # probably just increments but let's make sure
         if x not in source_cmd_order.keys():
             if x.startswith("USE"):
-                print("Need use-line for", x)
+                print("Need use-line or af/b4 reference for command", x)
             else:
                 print ("Need to add command in comments after useon entry:", x)
         else:
@@ -275,6 +275,12 @@ def source_vs_walkthrough():
         print(any_err, "total walkthrough ~ errors (non order)")
     else:
         print("Walkthrough sync test (non order) passed.")
+
+def find_comment_cmds(pattern, line):
+    if '[{:s}'.format(pattern) not in line: return []
+    temp = re.sub(".*{:s}:".format(pattern), "", line.strip())
+    temp = re.sub("\].*", "", temp.upper())
+    return temp.split("/")
 
 def get_stuff_from_source():
     in_use_table = False
@@ -370,23 +376,14 @@ def get_stuff_from_source():
                         continue
                     if x[5] == 'true':
                         cmd = "USE {:s} ON {:s}".format(x[0].upper(), x[1].upper())
-                        if '[b4:' in line:
-                            cmd_comment = re.sub(".*\[b4:", "", line.strip())
-                            cmd_comment = re.sub("\].*", "", cmd_comment.upper())
-                            for temp_cmd in cmd_comment.split("/"):
-                                source_cmd_count = source_cmd_count + 1
-                                if temp_cmd in source_cmd_order.keys(): print("WARNING", temp_cmd, "is a duplicate in table of useons")
-                                source_cmd_order[temp_cmd] = source_cmd_count
-                        source_cmd_count = source_cmd_count + 1
-                        source_cmd_order[cmd] = source_cmd_count
-                        if '[af:' in line:
-                            cmd_comment = re.sub(".*\[af:", "", line.strip())
-                            cmd_comment = re.sub("\].*", "", cmd_comment.upper())
-                            for temp_cmd in cmd_comment.split("/"):
-                                source_cmd_count = source_cmd_count + 1
-                                if temp_cmd in source_cmd_order.keys(): print("WARNING", temp_cmd, "is a duplicate in table of useons")
-                                source_cmd_order[temp_cmd] = source_cmd_count
-                        use_in_source[cmd] = line_count
+                        new_cmd_ary = find_comment_cmds('b4', line)
+                        new_cmd_ary.append(cmd)
+                        new_cmd_ary = new_cmd_ary + find_comment_cmds('af', line)
+                        for temp_cmd in new_cmd_ary:
+                            source_cmd_count = source_cmd_count + 1
+                            if temp_cmd in source_cmd_order.keys(): print("WARNING", temp_cmd, "is a duplicate in table of useons")
+                            source_cmd_order[temp_cmd] = source_cmd_count
+                        use_in_source[cmd] = line_count # we only track line count for "use" commands and not unusual point gainers
                         temp_region = ""
                         if x[8] and x[8] != '--' and x[8] != 'reg-plus': # a bit hacky, but basically, check for entry 10 in useon table being a proper region
                             temp_region = x[8].lower()
