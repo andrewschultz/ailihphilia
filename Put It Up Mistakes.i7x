@@ -41,8 +41,6 @@ book Worn Row
 
 understand "worm row" as a mistake ("Ugh! You don't need to make this place worse.") when player is in Worn Row.
 
-understand "worn row" and "wornrow" as a mistake ("No need to revert things.") when shouldnt-revert. [ic]
-
 book Emo Dome
 
 understand "Emo Home" as a mistake ("It's too wide open a space.") when player is in Emo Dome.

@@ -28,6 +28,8 @@ volume definitions
 
 a person can be normal, grunty, ruling, chasey or henchy. a person is usually normal.
 
+a chaser is a kind of person. a chaser has a room called chase-room.
+
 a thing can be drinkable. a thing is usually not drinkable.
 
 an ingredient is a kind of thing. an ingredient is usually edible. an ingredient can be solid or liquid.
@@ -45,8 +47,6 @@ Dim Mid is a region. max-score of Dim Mid is 10.
 Yelpley is a region. max-score of Yelpley is 31.
 
 Odd Do is a region. max-score of Odd Do is 5.
-
-[El Live Ville is a region.]
 
 index map with Dirge Grid mapped east of Toll Lot.
 
@@ -1053,7 +1053,7 @@ Line Nil is in Frush Surf.
 
 slate metals are scenery in Frush Surf. "They aren't leet steel. You could probably carve something out of them, with the right implement(s)."
 
-The Kayo Yak is a person in Frush Surf.
+The Kayo Yak is a chaser in Frush Surf.
 
 chapter yakokaying
 
@@ -1278,9 +1278,12 @@ understand the command "bore" as something new.
 
 understand "bore [something]" as boreing.
 
+does the player mean boreing Rob: it is very likely.
+
 carry out boreing:
 	if noun is not a person, say "You should try to bore people, not things." instead;
 	if noun is not Rob, say "Wrong thing or person to bore." instead;
+	say "You bore Rob successfully. He wanders off.";
 	move Rob to ZeroRez;
 	score-inc; [Yelpley/bore rob]
 	the rule succeeds.
@@ -1464,6 +1467,25 @@ carry out wordrowing:
 	now ever-wordrow is true;
 	say "A bunch of books appear.";
 	now all books in TempMet are in Worn Row;
+	the rule succeeds;
+
+chapter wornrowing
+
+wornrowing is an action applying to nothing.
+
+understand the command "wornrow" as something new.
+understand the command "Worn Row" as something new.
+
+understand "wornrow" as wornrowing when player is in Worn Row.
+understand "Worn Row" as wornrowing when player is in Worn Row.
+
+carry out wornrowing:
+	if psi wisp is in ZeroRez, say "You already used the redness ender for something." instead;
+	if psi wisp is not in Worn Row, say "You don't want to face the redness ender alone." instead;
+	say "Worn Row rematerializes, along with the redness ender. Zap! Zot! It locks on the Psi Wisp, which explodes in a shower of rage.";
+	move psi wisp to ZeroRez;
+	now being-chased is false;
+	score-inc; [Yelpley/WORN ROW]
 	the rule succeeds;
 
 book Art Xtra
@@ -1847,6 +1869,54 @@ section gotocheck - not for release
 
 when play begins:
 	say "[if number of notyet rooms is 0]All rooms have a switch saying you can go there[else]Rooms that are still notyet: [list of notyet rooms][end if]."
+
+volume chases
+
+being-chased is a truth state that varies.
+init-turn is a truth state that varies.
+
+chase-person is a person that varies.
+
+last-chase-direction is a direction that varies.
+
+to start-chase (guy - a person):
+	now chase-person is guy;
+	now last-chase-direction is southwest;
+	now being-chased is true;
+	now init-turn is false;
+
+every turn when being-chased is true:
+	if init-turn is false:
+		say "You'd better get a move on. The [chase-person] looks pretty agitated.";
+		now init-turn is true;
+		continue the action;
+	if chase-person is in location of player:
+		say "You've been caught! Aigh!";
+		if mrlp is Grebeberg, move player to Seer Trees;
+		if mrlp is Yelpley, move player to Yawn Way;
+	else:
+		say "The [chase-person] follows you.";
+		move chase-person to location of player;
+
+after going when being-chased is true:
+	now last-chase-direction is noun;
+	continue the action;
+
+check going when being-chased is true:
+	if last-chase-direction is opposite of noun, say "The [chase-person] is blocking you." instead;
+
+check going to Fun 'Nuf when being-chased is true: say "You feel yourself running up against an invisible barrier. Apparently, running away that way from the [chase-person] won't help."
+
+the Psi Wisp is a chaser. chase-room of Psi Wisp is Pro Corp.
+
+after looking when being-chased is false:
+	if player is in pro corp and psi wisp is not in ZeroRez:
+		start-chase Psi Wisp;
+		say "The Psi Wisp begins to chase after you!";
+	if troll ort is in ZeroRez and player is in frush surf and kayo yak is in frush surf:
+		start-chase Kayo Yak;
+		say "The Kayo Yak bounds after you!";
+	continue the action;
 
 volume unsorted
 
