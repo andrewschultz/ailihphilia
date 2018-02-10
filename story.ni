@@ -116,7 +116,7 @@ the martini tram is a tronpart. [?? if we don't have the epicer recipe we don't 
 
 TNT is a tronpart.
 
-Gorge Grog is a tronpart. description is "Unsurprisingly, it's produced by Grog-Org."
+Gorge Grog is a tronpart.
 
 The Ore Zero is a tronpart.
 
@@ -536,6 +536,7 @@ check useoning it with:
 						score-inc; [ignore]
 				say "[babble entry][line break]";
 				if there is a postproc entry:
+					[if debug-state is true, say "(considering [postproc entry])[line break]";]
 					consider the postproc entry;
 				if there is a getit entry and player has getit entry: [try to let "it" be defined]
 					set the pronoun it to getit entry;
@@ -612,7 +613,7 @@ troll ort	brag garb	--	--	--	true	true	false	Grebeberg	"You rub the troll ort on
 DNA band	reifier	DNA hand	--	--	true	true	false	Yelpley	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand!"
 roto motor	DNA hand	bang nab	--	--	true	true	true	Yelpley	"The roto motor fits right in. The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on it, now: BANG NAB. I guess that's what to call it, now. It probably has the dexterity to deal with volatile stuff."
 bang nab	TNT	TNT	--	--	true	true	false	Yelpley	"The Bang Nab walks on its index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. It grinds to halt once it's out of view of the mob. You leave it there as you pick up the TNT."
-Elan Ale	Sniffins	Gorge Grog	--	--	true	false	false	Yelpley	"Ira looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"
+Elan Ale	Sniffins	Gorge Grog	--	--	true	false	false	Yelpley	"Sniffins looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"
 Eroded Ore	reviver	Ore Zero	--	--	true	true	true	Yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
 puce cup	dose sod	--	--	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
@@ -707,19 +708,19 @@ this is the maps-explain rule:
 	the rule succeeds;
 
 this is the sap-to-cup rule:
+	now puce cup is sappy;
 	repeat through table of useons:
 		if use1 entry is puce cup and use2 entry is past sap:
 			now sco entry is false;
 			the rule succeeds;
-	now puce cup is sappy;
 	the rule succeeds;
 
 this is the sod-to-cup rule:
+	now puce cup is soddy;
 	repeat through table of useons:
 		if use1 entry is puce cup and use2 entry is dose sod:
 			now sco entry is false;
 			the rule succeeds;
-	now puce cup is soddy;
 	the rule succeeds;
 
 this is the wear-garb rule:
@@ -832,7 +833,7 @@ carry out paceing:
 		score-inc; [Dim Mid/pace cap]
 		now cap-ever-pace is true;
 		say "[if mrlp is not Grebeberg]You realize it can sort of be a pace cap, too, but there isn't enough open space to run around productively for too long.[else]You suddenly feel [pace-of]![end if]";
-		if mrlp is Grebeberg, now cap-pace is whether or not cap-pace is true.
+		if mrlp is Grebeberg, now cap-pace is whether or not cap-pace is true;
 	else:
 		say "You suddenly feel [pace-of].";
 		now cap-pace is whether or not cap-pace is true;
@@ -1056,7 +1057,7 @@ book Ooze Zoo
 
 Ooze Zoo is south of Seer Trees. It is in Grebeberg. "[if sleep eels are in Ooze Zoo]Sleep eels block passage south, but you can still go back north[else]With the sleep eels gone, you can go north, or south to [s-dray][end if]."
 
-the sleep eels are plural-named people in Ooze Zoo. "Some eels are blocking passage west."
+the sleep eels are plural-named people in Ooze Zoo. "Some eels are blocking passage south."
 
 to say s-dray:
 	say "[if Frush Surf is visited]the Frush Surf[else]a coastal place[end if]"
@@ -1539,6 +1540,12 @@ the trap art is a thing in Art Xtra. "Some trap art sits here. It's free. You mi
 
 El Doodle is a thing. "It looks like it could be a map--or something--but it sure could use some paring down."
 
+after going to Art Xtra when El Doodle is off-stage:
+	if stark rats are in ZeroRez:
+		say "You tell Mike Kim about how you got rid of the stark rats. He's impressed. He mentions he has something else for you he can't decipher, but maybe you can. 'Someone left it for me. They called it El Doodle. Maybe you can make sense of it.'";
+		now player has El Doodle;
+	continue the action;
+
 chapter Mike Kim
 
 Mike Kim is a person in Art Xtra.
@@ -1573,7 +1580,7 @@ Gross Org is north of Toll Lot. It is in Yelpley. description is "[if etage gate
 
 chapter stink knits
 
-the stink knits are a thing in Gross Org. description is "They don't smell very good. In a failed attempt at irony, they are lettered DAFT FAD."
+the stink knits are a plural-named thing in Gross Org. description is "They don't smell very good. In a failed attempt at irony, they are lettered DAFT FAD."
 
 check taking when player is in Gross Org and Ned is in Gross Org: say "Not with Ned around, you won't." instead;
 
@@ -1586,7 +1593,7 @@ instead of opening etage gate:
 [instead of unlocking etage gate:
 	try going north;]
 
-check going north in Gross Org: if etage gate is in Gross Org, say "The etage gate blocks you."
+check going north in Gross Org: if etage gate is in Gross Org, say "The etage gate blocks you." instead;
 
 understand "evened" and "den evened" as Gross Org when Ned is in ZeroRez
 
@@ -1596,23 +1603,21 @@ The Puce Cup is a thing in Emo Dome.
 
 the puce cup can be empty, sappy or soddy. the puce cup is empty.
 
-check taking puce cup: if Ned is in Gross Org, say "Not with Ned around, you won't." instead;
-
 chapter Gate Tag
 
-the Gate Tag is a thing. "It has an emblem a lot like what you saw north of the Emo Dome."
+the Gate Tag is a thing. description is "It has an emblem a lot like what you saw north of the Emo Dome."
 
-chapter denting
+chapter denying
 
-denting is an action applying to one thing.
+denying is an action applying to one thing.
 
-understand the command "dent" as something new.
+understand the command "deny" as something new.
 
-understand "dent [something]" as denting.
+understand "deny [something]" as denying.
 
-does the player mean denting Ned: it is likely.
+does the player mean denying Ned: it is likely.
 
-carry out denting:
+carry out denying:
 	if noun is Ned:
 		say "Bam! Bye bye Ned.";
 		now Ned is in ZeroRez;
@@ -1631,7 +1636,7 @@ the cave vac is a thing.
 
 Sniffins is a person in Deli Tiled.
 
-The Gorge Grog is a thing in Deli Tiled. "Unsurprisingly, it is a product of Grog-Org."
+The Gorge Grog is in Deli Tiled. "Some Gorge Grog is here. It looks out of place in the Bon Snob, but Sniffins probably won't give it to you for free.". description is "Unsurprisingly, it is a product of Grog-Org."
 
 check taking Gorge Grog: say "Sniffins chides you. 'It's worthless to us, but if there's anything tackier than bad alcohol, it's people who want to steal it!'[paragraph break]Maybe you could trade something for it." instead;
 
@@ -1845,11 +1850,13 @@ Drawl Ward is south of Swept Pews. It is in Yelpley.
 
 Marge Pegram is a person in Drawl Ward. "[one of]'Hi! I'm Marge Pegram. I ain't feeling so good, but I wondered if maybe I could get some medicine.'[or]Marge Pegram continues to moan colloquially about how sick she is.[stopping]"
 
+check going in Drawl Ward:
+	if marge pegram is in Drawl Ward:
+		if noun is west or noun is east, say "You hear Marge Pegram groaning and think it wouldn't be heroic to pass her by. Maybe you should find a way to help her feel less sick." instead;
+
 book Scrap Arcs
 
 Scrap Arcs is east of Drawl Ward. It is in Yelpley.
-
-The gate tag is in Scrap Arcs.
 
 book Dope Pod
 
@@ -1901,7 +1908,7 @@ to decide whether goto-available:
 
 carry out gotoing:
 	if being-chased is true, say "Sorry, but since you're being chased by the [chase-person], you need to be specific about directions, here." instead;
-	if cap-pace is true and mrlp of noun is not Grebeberg:
+	if cap-pace is true and map region of location of noun is not Grebeberg:
 		now cap-pace is false;
 		say "Your pace cap slows down as you [if noun is Fun 'Nuf]enter[else]cross[end if] Fun [']Nuf..." instead;
 	if noun is location of player, say "Already there!";
