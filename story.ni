@@ -26,7 +26,7 @@ include undo output control by Erik Temple.
 
 volume definitions
 
-a person can be grunty. a person is usually not grunty.
+a person can be normal, grunty, ruling, chasey or henchy. a person is usually normal.
 
 a thing can be drinkable. a thing is usually not drinkable.
 
@@ -153,7 +153,7 @@ check requesting the score:
 	say "Your overall score so far is [score] of [maximum score][one of]. But don't worry, points pile up pretty quickly once you get going[or][stopping].";
 	say "Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do].";
 	if My Gym is visited or Evaded Ave is visited:
-		if number of grunty people is not number of grunty people in ZeroRez, say "You currently disposed of [number of grunty people in ZeroRez] grunts blocking your way: [list of grunts in ZeroRez].";
+		if number of grunty people is not number of grunty people in ZeroRez, say "You currently disposed of [number of grunty people in ZeroRez] grunts blocking your way: [list of grunty people in ZeroRez].";
 	if Yuge Guy is in ZeroRez, say "You've gotten rid of the Yuge Guy, Evil Clive.";
 	if Madam is in ZeroRez, say "You've gotten rid of the La Gal/Madam.";
 	if player has set o notes and north tron is off-stage:
@@ -219,7 +219,8 @@ Rule for printing a parser error when the latest parser error is the didn't unde
 to decide whether gtv:
 	if Ian is in location of player, yes;
 	if Dave is in location of player, yes;
-	if Curt is in location of player, yes;
+	if Rob is in location of player, yes;
+	if Ned is in location of player, yes;
 	no;
 
 part after command
@@ -480,7 +481,7 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 		now i1 is in ZeroRez;
 		now i2 is in ZeroRez;
 		score-inc; [Grebeberg/USE GIFT FIG ON MAYO YAM&USE SNACK CANS ON UFO tofu]
-		if chef-yet:
+		if chef-yet is true:
 			say "A martini tram pops out from behind the Ark of Okra. Now that you've made so much food, you need drinks! Except, well, the tram doesn't have any drinks. You notice, though, that it's on your epicer recipe, so you push it back to Fun [']Nuf.";
 		else:
 			say "You suspect something is behind there! Maybe you can find another combination, you'll see what.";
@@ -570,7 +571,8 @@ table of cantuse
 use1	babble
 Dave	"Dave's not useful, man."
 Ian	"Ian's worse than useless. You need to use your wit on him."
-Curt	"Curt's not going to be obliging. You have to get rid of him, somehow."
+Rob	"Rob's not going to be obliging. You have to get rid of him, somehow."
+Ned	"Ned wants a fight, and you need some other way around him."
 Pact Cap	"Your pact cap is fine where it is, on your head."
 
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
@@ -633,20 +635,17 @@ section pre-use rules
 
 [please add alphabetically]
 
-this is the ready-to-test rule:
-	if location of player is Fun 'Nuf, the rule succeeds;
-	if emitted is false:
-		say "You aren't sure how the Yard Ray works, or what it needs to zap people with. Maybe you should review it to figure things out.";
-		the rule fails;
-	say "That seems right, but you should probably go where there aren't many people. Like back to Fun [']Nuf.";
+this is the coop-full rule:
+	if gnu dung is in ZeroRez, the rule succeeds;
+	say "The poo coop is empty, but if it wasn't, that could work.";
 	the rule fails;
 
 this is the in-mont-nom rule:
 	if location of player is not Mont Nom:
 		say "Eww! Maybe if you were somewhere more magical with food, it would work.";
 		the rule succeeds;
-	if Curt is not in Mont Nom, the rule succeeds;
-	say "Curt is distracting you. Maybe you can get rid of him, first.";
+	if Ian is not in Mont Nom, the rule succeeds;
+	say "Ian is distracting you. Maybe you can get rid of him, first.";
 	the rule fails;
 
 this is the maps-explained-yet rule:
@@ -667,6 +666,14 @@ this is the Ned-gone rule:
 this is the orc-gone rule:
 	if orc is not in Toll Lot, the rule succeeds;
 	say "The cross orc prevents you from trying anything possibly constructive. Maybe with the orc gone, you should try it again.";
+	the rule fails;
+
+this is the ready-to-test rule:
+	if location of player is Fun 'Nuf, the rule succeeds;
+	if emitted is false:
+		say "You aren't sure how the Yard Ray works, or what it needs to zap people with. Maybe you should review it to figure things out.";
+		the rule fails;
+	say "That seems right, but you should probably go where there aren't many people. Like back to Fun [']Nuf.";
 	the rule fails;
 
 this is the sod-in-cup rule:
@@ -1071,6 +1078,14 @@ Moo Room is east of Dray Yard. It is in Grebeberg.
 
 the poo coop is in Moo Room. "A poo coop sits here. Thankfully, it looks empty.". description is "While it's 1/4 too small to be a pooch coop, it's 1) empty and 2) somehow bigger on the inside than the outside. Maybe it can clean up a dirty area. Well, a less dirty area than the Moo Room where you found it."
 
+chapter yahoo hay
+
+the yahoo hay is scenery in Moo Room.
+
+chapter straw arts
+
+the straw arts are a plural-named thing.
+
 book Mire Rim
 
 Mire Rim is west of Dumb Mud. It is in Grebeberg. "A made dam blocks your way west. You can go north, south and east here."
@@ -1168,6 +1183,10 @@ The taboo bat is a thing.
 chapter you buoy
 
 the you buoy is a thing.
+
+chapter ME gem
+
+the ME gem is a thing.
 
 book Apse Spa
 
@@ -1492,7 +1511,7 @@ check taking when player is in Gross Org and Ned is in Gross Org: say "Not with 
 the etage gate is scenery in Gross Org. "It is locked and too strong to move."
 
 instead of opening etage gate:
-	if player has Ye Key, try useoning Ye Key on etage gate instead;
+	if player has Ye Key, try useoning Ye Key with etage gate instead;
 	try going north;
 
 [instead of unlocking etage gate:
@@ -1591,11 +1610,13 @@ Trapeze Part is west of Evaded Ave. It is in Yelpley. "[if epicer recipe is off-
 
 the ten level net is scenery in Trapeze Part. "[if epicer recipe is off-stage]It doesn't quite look sturdy enough. Maybe you could do something to fix it[else]It was sturdy enough to help you get the epicer recipe, and that's enough[end if]."
 
+the tent net is a thing.
+
 the epicer recipe is a thing. description is "You've seen recipes before, but this is a big interesting one! It describes how to make a north-tron, which will get you north of Fun [']Nuf.[paragraph break][tronpartlist]"
 
 to say tronpartlist:
-	repeat with Q running through tronparts:
-		say "--[t][if player has t] (got it!)[end if][line break]"
+	repeat with tp running through tronparts:
+		say "--[tp][if player has tp] (got it!)[end if][line break]"
 
 chapter tending
 
@@ -1633,7 +1654,9 @@ check taking rep popper:
 		say "With the taboo bat in your possession, you just don't care about stuff like rep, so you have no problem taking the rep popper." instead;
 	if player has dork rod, say "With the dork rod, you aren't THAT worried about your rep, but you're still worried enough not to take the popper. Maybe you can do a bit better..." instead;
 	if dork rod is not in ZeroRez, say "No way! You're not sure how much rep you have, but taking that rep popper would drop it a notch or more, and the prospect seems too horrible." instead;
+
 [??Yuge Guy rep popper used what's wrong with yopu? I make boring people feel less boring vs you describing how you figured things out and only 26 possibilities really and also some trial and error]
+
 chapter back cab
 
 The back cab is a thing in Yell Alley. description is "It's here but doesn't look like you can actually ride it.". "A run-down back cab waits here."

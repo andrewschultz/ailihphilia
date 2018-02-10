@@ -67,9 +67,11 @@ understand "rife fir" as a mistake ("It's already big enough.") when player is i
 
 book Mont Nom
 
-understand "truce curt" as a mistake ("You'll need something more violent, here.") when player is in Mont Nom and Curt is in Mont Nom.
+understand "bork rob" as a mistake ("Something more nonviolent.") when player is in Mont Nom and Rob is in Mont Nom.
 
-understand "truco curt" as a mistake ("You don't have a deck of cards, and Curt wouldn't want to play.") when player is in Mont Nom and Curt is in Mont Nom.
+[understand "truce curt" as a mistake ("You'll need something more violent, here.") when player is in Mont Nom and Curt is in Mont Nom.
+
+understand "truco curt" as a mistake ("You don't have a deck of cards, and Curt wouldn't want to play.") when player is in Mont Nom and Curt is in Mont Nom.]
 
 part things
 
