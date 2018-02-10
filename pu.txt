@@ -379,7 +379,7 @@ Yes, but you can't find it until you've gotten rid of the cross orc.
 Once you do, you need an item that will detect things from a distance.
 That item is the radar.
 USE RADAR ON CRAG ARC.
->>NED'S DEN
+>>GROSS ORG
 ?How do I get rid of Ned?
 You need to do something to him.
 The logic is ***(+) NED.

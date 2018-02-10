@@ -21,7 +21,7 @@ Initially sent to source code/repository November 2017.</history>
 		<room id="5" name="Yell Alley" subtitle="" x="-64" y="-448" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-24" customDown="0">Rep Popper</objects>
 		</room>
-		<room id="6" name="Deli, Tiled / Bon Snob" subtitle="" x="96" y="-64" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="6" name="Deli, Tiled" subtitle="Bon Snob" x="96" y="-64" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>Le Falafel|Nat's Tan</objects>
 		</room>
 		<room id="7" name="Emo Dome" subtitle="" x="-64" y="-160" w="96" h="32" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
@@ -61,7 +61,7 @@ Initially sent to source code/repository November 2017.</history>
 			<objects>Yahoo Hay (a pup, a pupa...)|poo coop|Moo Doom</objects>
 		</room>
 		<room id="21" name="Gross Org" subtitle="" x="96" y="-320" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>DENY NED|Puce Cup|Etage Gate</objects>
+			<objects>DENY NED|Gold Log|Etage Gate</objects>
 		</room>
 		<room id="22" name="Worn Row" subtitle="" x="-384" y="-64" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Can be changed to WORK or WORD row." roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-36" customDown="0">BORE ROB|Reviver/Reifier/Rotator|Tract Cart|Redness Ender</objects>
@@ -69,7 +69,7 @@ Initially sent to source code/repository November 2017.</history>
 		<room id="24" name="Le Babel" subtitle="" x="-704" y="-320" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects at="n" custom="yes" customRight="-20" customDown="0">Bro Orb</objects>
 		</room>
-		<room id="25" name="Red Roses Order" subtitle="Gross Org" x="-64" y="-320" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="25" name="Red Roses Order" subtitle="" x="-64" y="-320" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects at="n" custom="yes" customRight="-40" customDown="0">La Gal/Madam</objects>
 		</room>
 		<line id="26" name="" description="" style="dashed">
@@ -167,8 +167,8 @@ Initially sent to source code/repository November 2017.</history>
 			<dock index="0" id="7" port="s" />
 			<dock index="1" id="47" port="n" />
 		</line>
-		<room id="55" name="Pro Corp" subtitle="" x="96" y="-448" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Golf Log/Gelded Leg/Gold Log|Butene Tub</objects>
+		<room id="55" name="Pro Corp" subtitle="Bald Lab" x="96" y="-448" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects>DNA Band|Butene Tub</objects>
 		</room>
 		<room id="56" name="Frush Surf" subtitle="" x="-544" y="64" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-24" customDown="0">KAYO YAK</objects>

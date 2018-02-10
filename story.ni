@@ -1900,6 +1900,10 @@ to decide whether goto-available:
 	yes. [obviously we don't want this to be trivial once the game's complete, but we want the code in place.]
 
 carry out gotoing:
+	if being-chased is true, say "Sorry, but since you're being chased by the [chase-person], you need to be specific about directions, here." instead;
+	if cap-pace is true and mrlp of noun is not Grebeberg:
+		now cap-pace is false;
+		say "Your pace cap slows down as you [if noun is Fun 'Nuf]enter[else]cross[end if] Fun [']Nuf..." instead;
 	if noun is location of player, say "Already there!";
 	unless goto-available, say "You're at a point in the game where goto isn't available." instead;
 	if noun is not available, say "[noun] isn't available yet, so you can't go there." instead;
