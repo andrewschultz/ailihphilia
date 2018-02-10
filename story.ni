@@ -152,9 +152,9 @@ to score-inc:
 check requesting the score:
 	say "Your overall score so far is [score] of [maximum score][one of]. But don't worry, points pile up pretty quickly once you get going[or][stopping].";
 	say "Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do].";
-	if my gym is visited or evaded ave is visited:
+	if My Gym is visited or Evaded Ave is visited:
 		if number of grunty people is not number of grunty people in ZeroRez, say "You currently disposed of [number of grunty people in ZeroRez] grunts blocking your way: [list of grunts in ZeroRez].";
-	if yuge guy is in ZeroRez, say "You've gotten rid of the Yuge Guy, Evil Clive.";
+	if Yuge Guy is in ZeroRez, say "You've gotten rid of the Yuge Guy, Evil Clive.";
 	if Madam is in ZeroRez, say "You've gotten rid of the La Gal/Madam.";
 	if player has set o notes and north tron is off-stage:
 		let ni be number of tronparts carried by the player;
@@ -413,7 +413,7 @@ instead of smelling:
 	if player has dork rod:
 		now rod-smelled is true;
 		say "You might expect a rod odor, but there isn't one. OR MAYBE IT IS SO INGRAINED IN YOU, YOU NO LONGER SMELL IT." instead;
-	if player is in Bon Snob, say "Ham?! Ah!" instead;
+	if player is in Deli Tiled, say "Ham?! Ah!" instead;
 	if player is in Sneer Greens, say "You smell an amoral aroma." instead;
 	say "Noses, on[one of]! (you don't need to smell anything in this game)[or][stopping]!"
 
@@ -613,7 +613,7 @@ spa maps	Code Doc	--	maps-explained-yet rule	maps-explain rule	true	false	false	
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest."
 you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. It's so tempting and beautiful, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
-Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again. A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it." [b4:deny ned]
+Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again. A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it." [b4:deny Ned]
 SOME DEMOS	yahoo hay	straw arts	--	--	true	false	true	Grebeberg	"With the help of SOME DEMOS, you manage to rejig the hay into something more aesthetically pleasing: straw arts!"
 straw arts	Mike Kim	soot tattoos	--	--	true	true	false	Yelpley	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
 gate tag	soot tattoos	state tats	--	--	true	true	true	Yelpley	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
@@ -1121,7 +1121,7 @@ The tenet is a thing. description is "It seems a bit too cliche, but you have th
 
 book Swamp Maws
 
-Swamp Maws is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west. You can go north or south here. [if known wonk is in ZeroRez]The Known Wonk's Tru-Yurt is here. It looks really messy[end if]."
+Swamp Maws is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west. You can go north or south here. [if Known Wonk is in ZeroRez]The Known Wonk's Tru-Yurt is here. It looks really messy[end if]."
 
 The Known Wonk is a person in Swamp Maws. "The Known Wonk stands by a Tru Yurt, [one of]figuring you'll have to do, even though you're not as interesting as a book[or]waiting for intellectual conversation[stopping]."
 
@@ -1528,12 +1528,12 @@ carry out denting:
 	if noun is Ned:
 		say "Bam! Bye bye Ned.";
 		now Ned is in ZeroRez;
-		score-inc; [Yelpley/deny ned]
+		score-inc; [Yelpley/deny Ned]
 	the rule succeeds;
 
-book Bon Snob
+book Deli Tiled
 
-Bon Snob is south of Toll Lot. It is in Yelpley. "A deli, tiled."
+Deli Tiled is south of Toll Lot. It is in Yelpley. printed name is "[if yob attaboy is in ZeroRez]Bon Snob[else]Deli, Tiled[end if]".
 
 the gift fig is a solid ingredient.
 
@@ -1541,17 +1541,17 @@ the dirt rid is a thing.
 
 the cave vac is a thing.
 
-Sniffins is a person in Bon Snob.
+Sniffins is a person in Deli Tiled.
 
-The Gorge Grog is a thing in Bon Snob. "Unsurprisingly, it is a product of Grog-Org."
+The Gorge Grog is a thing in Deli Tiled. "Unsurprisingly, it is a product of Grog-Org."
 
 check taking Gorge Grog: say "Sniffins chides you. 'It's worthless to us, but if there's anything tackier than bad alcohol, it's people who want to steal it!'[paragraph break]Maybe you could trade something for it." instead;
 
-Nat's Tan is a thing in Bon Snob. "A container of something called Nat's Tan is here."
+Nat's Tan is a thing in Deli Tiled. "A container of something called Nat's Tan is here."
 
-Le Falafel is a proper-named thing in Bon Snob.
+Le Falafel is a proper-named thing in Deli Tiled.
 
-a tame mat is in Bon Snob. "A tame mat reading Bon Snob here."
+a tame mat is in Deli Tiled. "A tame mat reading Deli Tiled here."
 
 check taking tame mat:
 	say "That would be stealing." instead;
@@ -1633,7 +1633,7 @@ check taking rep popper:
 		say "With the taboo bat in your possession, you just don't care about stuff like rep, so you have no problem taking the rep popper." instead;
 	if player has dork rod, say "With the dork rod, you aren't THAT worried about your rep, but you're still worried enough not to take the popper. Maybe you can do a bit better..." instead;
 	if dork rod is not in ZeroRez, say "No way! You're not sure how much rep you have, but taking that rep popper would drop it a notch or more, and the prospect seems too horrible." instead;
-[??yuge guy rep popper used what's wrong with yopu? I make boring people feel less boring vs you describing how you figured things out and only 26 possibilities really and also some trial and error]
+[??Yuge Guy rep popper used what's wrong with yopu? I make boring people feel less boring vs you describing how you figured things out and only 26 possibilities really and also some trial and error]
 chapter back cab
 
 The back cab is a thing in Yell Alley. description is "It's here but doesn't look like you can actually ride it.". "A run-down back cab waits here."
