@@ -18,6 +18,8 @@ include Trivial Niceties Z-Only by Andrew Schultz.
 
 include Basic Screen Effects by Emily Short.
 
+[this may be toggled for debug depending on how much space is left--or if I want to force unit tests to make sure that, say, waiting text cycles after only 2 entries. If I add a random wait response, for instance, that would be one more bit of text to account for. For which to account.]
+[include Put It Up Tables by Andrew Schultz.]
 include Put It Up Debug Tables by Andrew Schultz.
 
 include Put It Up Mistakes by Andrew Schultz.
@@ -384,6 +386,7 @@ to say up-down-check:
 	let xud be 0;
 	unless the room up from location of player is nowhere, increment xud;
 	unless the room down from location of player is nowhere, increment xud;
+	if xud is 0, continue the action;
 	say "(";
 	unless the room up from the location of player is nowhere, say "up=[othdir of up]";
 	if xud is 2, say ", ";
@@ -598,7 +601,7 @@ radar	made dam	eroded ore	--	--	true	true	false	Grebeberg	"You place the radar a
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 dork rod	tao boat	--	--	--	true	false	false	Grebeberg	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
 dork rod	reifier	taboo bat	--	--	true	true	false	Yelpley	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You will be able to smite a bad-faith pearl-clutcher for sure with one of these."
-ERA FARE	King Nik	Spur Ups	--	--	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'This will help me when I get back to South Ihtuos. Thank you!'"
+ERA FARE	King Nik	Spur Ups	--	--	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'This will help me when I get back to South Ihtuos. Thank you!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me.'"
 debt bed	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching and slurping, the debt bed is changed to a bunch of much smaller, but more comfortable looking, stock cots."
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!"
 puce cup	past sap	--	--	sap-to-cup rule	true	false	false	Grebeberg	"You pour some sap into the cup."
@@ -708,6 +711,7 @@ this is the sap-to-cup rule:
 		if use1 entry is puce cup and use2 entry is past sap:
 			now sco entry is false;
 			the rule succeeds;
+	now puce cup is sappy;
 	the rule succeeds;
 
 this is the sod-to-cup rule:
@@ -715,6 +719,7 @@ this is the sod-to-cup rule:
 		if use1 entry is puce cup and use2 entry is dose sod:
 			now sco entry is false;
 			the rule succeeds;
+	now puce cup is soddy;
 	the rule succeeds;
 
 this is the wear-garb rule:
@@ -1576,7 +1581,7 @@ understand "evened" and "den evened" as Gross Org when Ned is in ZeroRez
 
 Ned is a person in Gross Org. "'Ned's Den!' someone booms. You're guessing their name must be Ned."
 
-The Puce Cup is a thing in Gross Org.
+The Puce Cup is a thing in Emo Dome.
 
 the puce cup can be empty, sappy or soddy. the puce cup is empty.
 
@@ -1766,13 +1771,15 @@ book Emo Dome
 Emo Dome is east of Yawn Way. It is in Yelpley.
 
 instead of doing something in Emo Dome when pulled-up is false:
+	if current action is pulluping, continue the action;
 	if current action is going:
 		if noun is not west and noun is not east:
 			say "You're scared those places would be even worse.";
 			try going emo-dir instead;
 		say "You run [if noun is emo-dir]away[else if noun is opposite of emo-dir] with extra speed.";
 		continue the action;
-	say "You keep running [emo-dir], instead. It's too whiny in here."
+	say "You keep running [emo-dir], instead. It's too whiny in here.";
+	try going emo-dir instead;
 
 emo-dir is a direction that varies. emo-dir is west.
 

@@ -462,8 +462,9 @@ to next-rand (t - a table name):
 		say "(Cycling) ";
 		now tabidx entry is 1;
 	let Q be tabidx entry;
+	let lb be lbrk entry;
 	choose row Q in tabnam entry;
-	say "[randtxt entry][if lbrk entry is true][line break][end if]";
+	say "[randtxt entry][if lb is true][line break][end if]";
 
 table of all randoms
 tabnam	tabidx	lbrk
