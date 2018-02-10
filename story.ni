@@ -44,7 +44,7 @@ Grebeberg is a region. max-score of Grebeberg is 27.
 
 Dim Mid is a region. max-score of Dim Mid is 10.
 
-Yelpley is a region. max-score of Yelpley is 31.
+Yelpley is a region. max-score of Yelpley is 32.
 
 Odd Do is a region. max-score of Odd Do is 5.
 
@@ -780,7 +780,7 @@ check going in Fun 'Nuf:
 
 chapter Pact Cap
 
-The Pact Cap is a wearable thing in Fun 'Nuf. "A pact cap sits here. You need to find the right way to accept it to begin your quest."
+The Pact Cap is a wearable thing in Fun 'Nuf. "A pact cap sits here. You need to find the right way to accept it to begin your quest.". description is "It's no stetson, but it [if player has pact cap]feels[else]looks[end if] serviceable enough."
 
 check taking off the pact cap: say "No, you...uh, made a pact." instead;
 
@@ -963,7 +963,7 @@ Yuge Guy is a proper-named person in Sneer Greens. understand "evil/clive" and "
 
 book Dumb Mud
 
-Dumb Mud is west of Seer Trees. It is in Grebeberg. "A turf rut to the south is [if poo coop is in ZeroRez]too deep[else]filled in enough[end if] to cross. [if lie veil is in Dumb Mud]A lie veil blocks your way[else]With the lie veil removed, you can go[end if] north."
+Dumb Mud is west of Seer Trees. It is in Grebeberg. "A turf rut to the south is [if poo coop is in ZeroRez]filled in enough[else]too deep[end if] to cross. The way west is [if gnu dung is in ZeroRez]blocked by gnu dung[else]free[end if]. [if lie veil is in Dumb Mud]A lie veil blocks your way[else]With the lie veil removed, you can go[end if] north."
 
 The lie veil is scenery in Dumb Mud. "It looks untrustworthy."
 
@@ -1251,18 +1251,36 @@ carry out evadeing:
 
 book Worn Row
 
-Worn Row is west of My Gym. It is in Yelpley. "[if workrow is true]Three machines are here[else if wordrow is true]A library is here, just full of books[else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if][if redness ender is in Worn Row]. There's also a redness ender here, but it looks dangerous to get too close to[end if]."
+Worn Row is west of My Gym. It is in Yelpley. "[if workrow is true]Three machines are here[else if wordrow is true]A tract cart is here, [tract-status][else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if][if redness ender is in Worn Row]. There's also a redness ender here, but it looks dangerous to get too close to[end if]."
 
 printed name of Worn Row is "[if wordrow is true]Word[else if workrow is true]Work[else]Worn[end if] Row"
 
 understand "work row" and "work" as Worn Row when workrow is true.
 understand "word row" and "word" as Worn Row when wordrow is true.
 
+chapter redness ender
+
 the redness ender is a thing in Worn Row. "It also seems to double as a redness SENDER, as when you get close to look at it, an ominous red dot appears on you. You back off."
 
 instead of doing something with redness ender:
 	if action is procedural, continue the action;
 	say "You don't want to do anything crazy with it."
+
+chapter tract cart
+
+the tract cart is scenery in Worn Row.
+
+tract-trace is a truth state that varies.
+
+to say tract-status:
+	if tract-trace is false:
+		say "but it's closed";
+	else:
+		say "[if number of books in Worn Row is 1]almost empty[else]holding a few books[end if]"
+
+for printing a locale paragraph about a book:
+	say "The tract cart contains [list of books in Worn Row].";
+	now all books are mentioned;
 
 chapter Rob
 
@@ -1383,9 +1401,9 @@ YOB ATTABOY is a proper-named book. [Sniffins]
 
 section books without purpose so far
 
-SOME DEMOS is a proper-named book.
-EMOTE TO ME is a proper-named book.
-WONDERED NOW is a proper-named book.
+there is a book called SOME DEMOS. It is proper-named.
+[EMOTE TO ME is a proper-named book.
+WONDERED NOW is a proper-named book.]
 
 gap-yet is a truth state that varies.
 
@@ -1639,6 +1657,9 @@ check going in Evaded Ave:
 	if Revolt Lover is in Evaded Ave:
 		if noun is west or noun is east, say "The Revolt Lover blocks you. Maybe if you gave them a gift, they'd be more generous." instead;
 
+check taking debt bed:
+	if Revolt Lover is in Evaded Ave, say "The Revolt Lover won't let you." instead;
+
 book Trapeze Part
 
 Trapeze Part is west of Evaded Ave. It is in Yelpley. "[if epicer recipe is off-stage]There's a ten level net on the floor, here. It could protect you from a long fall. You're convinced there must be something at the far end, but it's probably not safe to use the trapeze to get over until, well, you've done safety checks[else]The ten level net still sits here, and it'd be handy if there was anything else on the other side of it, but there isn't[end if]."
@@ -1782,7 +1803,7 @@ The Liar Grail is a thing in Swept Pews. description is "It's carved with 'LIAR 
 check taking liar grail: say "A small voice cries 'Da cad! Da cad!' You probably don't want the liar grail corrupting you." instead;
 
 check going south in Swept Pews:
-	if Liar Grail in Swept Pews: say "Maybe there's a path where you could get rid of the grail, but not yet." instead;
+	if Liar Grail in Swept Pews, say "Maybe there's a path where you could get rid of the grail, but not yet." instead;
 
 chapter Demo Med
 
@@ -1799,10 +1820,6 @@ report taking demo med:
 chapter troll ort
 
 the troll ort is a thing in Swept Pews.
-
-chapter Tract Cart
-
-The tract cart is a thing in Swept Pews.
 
 book Drawl Ward
 
@@ -2182,6 +2199,31 @@ carry out endgameing:
 	now player has pact cap;
 	now Tix Exit is in Fun 'Nuf;
 	the rule succeeds;
+
+chapter rring
+
+rring is an action applying to one thing.
+
+understand the command "rr" as something new.
+
+understand "rr [something]" as rring.
+
+carry out rring:
+	repeat through table of useons: [It would be simpler to use an if statement but things could get shuffled in the table of useons. This assures that we try all possible machines before an item vanishes permanently.]
+		if use2 entry is reviver and use1 entry is noun:
+			try useoning use1 entry with reifier;
+			try useoning use1 entry with rotator;
+			try useoning use1 entry with reviver;
+			break;
+		if use2 entry is reifier and use1 entry is noun:
+			try useoning use1 entry with rotator;
+			try useoning use1 entry with reviver;
+			try useoning use1 entry with reifier;
+			break;
+	try useoning noun with reviver;
+	try useoning noun with reifier;
+	try useoning noun with rotator;
+	the rule succeeds.
 
 chapter wining
 

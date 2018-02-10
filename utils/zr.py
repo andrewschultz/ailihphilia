@@ -89,6 +89,14 @@ with open("story.ni") as file:
     for line in file:
         line_count = line_count + 1
         ll = line
+        if 'use1 entry on' in ll.lower():
+            print("WARNING replacing use1 entry on with use1 entry with at line", line_count)
+            ll = re.sub("use1 entry on", "use1 entry with", ll)
+            difs = difs + 1
+        if 'useoning noun on' in ll.lower():
+            print("WARNING replacing use1 entry on with use1 entry with at line", line_count)
+            ll = re.sub("useoning noun on", "useoning noun with", ll)
+            difs = difs + 1
         if 'lalaland' in ll.lower():
             print("WARNING replacing lalaland with ZeroRez at line", line_count)
             ll = re.sub("lalaland", "ZeroRez", ll)
