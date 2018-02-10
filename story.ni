@@ -48,6 +48,8 @@ Odd Do is a region. max-score of Odd Do is 5.
 
 [El Live Ville is a region.]
 
+index map with Dirge Grid mapped east of Toll Lot.
+
 volume unsorted
 
 section part of a puzzle but not fully linked yet
@@ -365,7 +367,9 @@ instead of saying no, next-rand table of noesies;
 
 chapter attacking
 
-instead of attacking, next-rand table of attackings;
+instead of attacking:
+	if noun is player, say "PvP!" instead;
+	next-rand table of attackings;
 
 chapter going
 
@@ -839,7 +843,7 @@ book Dirge Grid
 
 Dirge Grid is a room in Mid Dim. "The only way back is south[if Diktat Kid is in Dirge Grid], but you can't really run away from the Diktat Kid[else], and you might as well go that way, now you've vanquished the Diktat Kid[end if]."
 
-printed name of Dirge Grid is "[if Yuge Guy is in ZeroRez]Top Spot[else]Dirge Grid[end if]"
+printed name of Dirge Grid is "[if Diktat Kid is in ZeroRez]Top Spot[else]Dirge Grid[end if]"
 
 Diktat Kid is a proper-named person in Dirge Grid.
 
@@ -1039,17 +1043,17 @@ Ooze Zoo is south of Seer Trees. It is in Grebeberg. "[if sleep eels are in Ooze
 the sleep eels are plural-named people in Ooze Zoo. "Some eels are blocking passage west."
 
 to say s-dray:
-	say "[if Dray Yard is visited]Dray Yard[else]a yard[end if]"
+	say "[if Frush Surf is visited]the Frush Surf[else]a coastal place[end if]"
 
-book Dray Yard
+book Frush Surf
 
-Dray Yard is south of Ooze Zoo. It is in Grebeberg.
+Frush Surf is south of Ooze Zoo. It is in Grebeberg.
 
-Line Nil is in Dray Yard.
+Line Nil is in Frush Surf.
 
-slate metals are scenery in Dray Yard. "They aren't leet steel. You could probably carve something out of them, with the right implement(s)."
+slate metals are scenery in Frush Surf. "They aren't leet steel. You could probably carve something out of them, with the right implement(s)."
 
-The Kayo Yak is a person in Dray Yard.
+The Kayo Yak is a person in Frush Surf.
 
 chapter yakokaying
 
@@ -1063,9 +1067,9 @@ understand "yak okay" as yakokaying.
 carry out yakokaying:
 	if ergot ogre is in ZeroRez, say "[if yak is in location of player]The yak has served you well. It deserves a rest.[else]You relive past glories. Why not?[end if]" instead;
 	if yak is in location of player and ergot ogre is in location of player:
-		say "The kayo yak surges at the ergot ogre and knocks it over! The ergot won't spread to the yak's horns, so that's good. The ogre dusts itself off and walks away, embarrassed. The yak, for its part, heads back to the Dray Yard.";
+		say "The kayo yak surges at the ergot ogre and knocks it over! The ergot won't spread to the yak's horns, so that's good. The ogre dusts itself off and walks away, embarrassed. The yak, for its part, heads back to the Frush Surf.";
 		score-inc; [Grebeberg/YAK OKAY]
-		now yak is in Dray Yard;
+		now yak is in ZeroRez;
 		now ergot ogre is in ZeroRez;
 		the rule succeeds;
 	if yak is in location of player, say "The yak sees nothing to attack." instead;
@@ -1074,7 +1078,7 @@ carry out yakokaying:
 
 book Moo Room
 
-Moo Room is east of Dray Yard. It is in Grebeberg.
+Moo Room is east of Frush Surf. It is in Grebeberg.
 
 the poo coop is in Moo Room. "A poo coop sits here. Thankfully, it looks empty.". description is "While it's 1/4 too small to be a pooch coop, it's 1) empty and 2) somehow bigger on the inside than the outside. Maybe it can clean up a dirty area. Well, a less dirty area than the Moo Room where you found it."
 
