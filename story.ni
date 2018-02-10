@@ -1260,6 +1260,10 @@ understand "word row" and "word" as Worn Row when wordrow is true.
 
 the redness ender is a thing in Worn Row. "It also seems to double as a redness SENDER, as when you get close to look at it, an ominous red dot appears on you. You back off."
 
+instead of doing something with redness ender:
+	if action is procedural, continue the action;
+	say "You don't want to do anything crazy with it."
+
 chapter Rob
 
 Rob is a person in Worn Row.
@@ -1372,7 +1376,7 @@ a book is a kind of thing. description of a book is "It [if player carries the i
 
 section books with purpose so far
 
-TO IDIOT is a proper-named book. [Revolt Lover]
+TO IDIOT is a proper-named book. [Revolt Lover] [?? at start of command "to" messes things up for give]
 NULL ILLUN is a proper-named book. [Known Wonk]
 ERA FARE is a proper-named book. [King Nik]
 YOB ATTABOY is a proper-named book. [Sniffins]
@@ -1437,6 +1441,7 @@ carry out workrowing:
 	now ever-workrow is true;
 	now all workables are in Worn Row;
 	now all books in Worn Row are in TempMet;
+	if redness ender is in Worn Row, now redness ender is in TempMet;
 	now tract cart is in TempMet;
 	the rule succeeds;
 
@@ -1463,6 +1468,9 @@ carry out wordrowing:
 	now wordrow is true;
 	now workrow is false;
 	now all workables are in TempMet;
+	now all books not in ZeroRez are in Worn Row; [?? what if you are carrying it]
+	if redness ender is in Worn Row, now redness ender is in TempMet;
+	move tract cart to Worn Row;
 	if ever-wordrow is false, score-inc; [Yelpley/word row]
 	now ever-wordrow is true;
 	say "A bunch of books appear.";
@@ -1482,9 +1490,10 @@ understand "Worn Row" as wornrowing when player is in Worn Row.
 carry out wornrowing:
 	if psi wisp is in ZeroRez, say "You already used the redness ender for something." instead;
 	if psi wisp is not in Worn Row, say "You don't want to face the redness ender alone." instead;
-	say "Worn Row rematerializes, along with the redness ender. Zap! Zot! It locks on the Psi Wisp, which explodes in a shower of rage.";
+	say "Worn Row rematerializes, along with the redness ender. Zap! Zot! It locks on the Psi Wisp, which explodes in a shower of rage. But somehow, the Psi Wisp connects enough to zap the redness ender back. Whew.";
 	move psi wisp to ZeroRez;
 	now being-chased is false;
+	now redness ender is in ZeroRez;
 	score-inc; [Yelpley/WORN ROW]
 	the rule succeeds;
 
@@ -1772,7 +1781,8 @@ The Liar Grail is a thing in Swept Pews. description is "It's carved with 'LIAR 
 
 check taking liar grail: say "A small voice cries 'Da cad! Da cad!' You probably don't want the liar grail corrupting you." instead;
 
-check going south when Liar Grail in Swept Pews: say "Maybe there's a path where you could get rid of the grail, but not yet."
+check going south in Swept Pews:
+	if Liar Grail in Swept Pews: say "Maybe there's a path where you could get rid of the grail, but not yet." instead;
 
 chapter Demo Med
 
