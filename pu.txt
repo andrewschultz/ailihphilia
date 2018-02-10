@@ -388,6 +388,15 @@ DENY NED.
 It's not too bad.
 USE YE KEY ON ETAGE GATE.
 >>PRO CORP
+?Help! The Psi Wisp is vicious!
+It chases you wherever you go.
+Maybe you can find some place to defeat it.
+It's sort of hidden.
+Remember when Word/Work Row was something else?
+There was a redness ender there.
+The Psi Wisp is very red.
+Backtrack to Word/Work Row.
+WORN ROW.
 ?What to do here?
 All sorts of cool stuff! Take everything you want!
 ?What do I do with the DNA band?
@@ -428,13 +437,14 @@ There are 10 total points in Dim Mid.
 1 point if you USE YARD RAY ON DIKTAT KID.
 1 point if you USE X-ITE TIX ON TIX EXIT
 ?How do I get all the points for Yelpley?
-There are 31 total points in Yelpley.
+There are 32 total points in Yelpley.
 1 point if you EVADE DAVE.
 1 point if you DENY NED.
 1 point if you BORE ROB.
 1 point if you TEND NET.
 1 point for WORK ROW.
 1 point for WORD ROW.
+1 point for WORN ROW once the Psi Wisp is nearby.
 1 point if you USE YOB ATTABOY ON SNIFFINS.
 1 point if you USE STINK KNITS ON ROTATOR.
 1 point if you USE GOLD LOG ON ROTATOR.

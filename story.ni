@@ -825,14 +825,25 @@ understand the command "pacy cap" as something new.
 understand "pace cap" and "pacy cap" as paceing.
 
 carry out paceing:
+	if kayo yak is in ZeroRez, say "You had enough high-speed fun for one game." instead;
 	if pact cap is in Fun 'Nuf, say "That'll work later, but you need something a little different to actually TAKE the pact cap." instead;
 	if cap-pace is true, say "It's already a pace cap." instead;
 	if cap-ever-pace is false:
 		score-inc; [Dim Mid/pace cap]
 		now cap-ever-pace is true;
-	say "You suddenly feel [if cap-pace is false]swifter[else]slower[end if].";
-	now cap-pace is whether or not cap-pace is true;
+		say "[if mrlp is not Grebeberg]You realize it can sort of be a pace cap, too, but there isn't enough open space to run around productively for too long.[else]You suddenly feel [pace-of]![end if]";
+		if mrlp is Grebeberg, now cap-pace is whether or not cap-pace is true.
+	else:
+		say "You suddenly feel [pace-of].";
+		now cap-pace is whether or not cap-pace is true;
 	the rule succeeds;
+
+to say pace-of:
+	say "[if cap-pace is true]swifter[else]slower[end if]"
+
+check going to Fun 'Nuf:
+	if cap-pace is true, say "You feel like you can slow down a bit. You adjust the pace cap back to a pact cap.";
+	now cap-pace is false;
 
 chapter tile lit
 
@@ -1939,7 +1950,7 @@ after going when being-chased is true:
 check going when being-chased is true:
 	if last-chase-direction is opposite of noun, say "The [chase-person] is blocking you." instead;
 
-check going to Fun 'Nuf when being-chased is true: say "You feel yourself running up against an invisible barrier. Apparently, running away that way from the [chase-person] won't help."
+check going to Fun 'Nuf when being-chased is true: say "You feel yourself running up against an invisible barrier. Apparently, running away that way from the [chase-person] won't help." instead;
 
 the Psi Wisp is a chaser. chase-room of Psi Wisp is Pro Corp.
 
