@@ -78,11 +78,23 @@ book Cold Loc
 
 understand "rife fir" as a mistake ("It's already big enough.") when player is in Cold Loc.
 
+book Ooze Zoo
+
+understand "eel flee" as a mistake ("Well, you could maybe get one eel to leave, but there are a lot.") when speel eels are quicknear.
+
+understand "eel glee" as a mistake ("The eels squirm a bit. I bet they're having fun dreams! Too bad I can't describe them.") when speel eels are quicknear.
+
+understand "sleet eels" as a mistake ("They are alive. Turning them to metal would be cruel.") when speel eels are quicknear.
+
 book Mont Nom
 
 [understand "truce curt" as a mistake ("You'll need something more violent, here.") when player is in Mont Nom and Curt is in Mont Nom.
 
 understand "truco curt" as a mistake ("You don't have a deck of cards, and Curt wouldn't want to play.") when player is in Mont Nom and Curt is in Mont Nom.]
+
+book Pro Corp
+
+understand "dna land" as a mistake ("Biochemistry has its own nuances with symmetry, but we're sticking with something a lot dumber, here.") when dna band is quicknear or dna hand is quicknear.
 
 part things
 

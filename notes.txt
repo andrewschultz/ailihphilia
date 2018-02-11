@@ -11,8 +11,6 @@ Voodoo V = fake clue
 
 randomize male/female of some characters
 
-Pro Corp: I guess it's a bald lab, now you've looted it.
-
 Flat Alf
 
 For the tope depot! Sniffins, uh, sniffs at you.
@@ -787,12 +785,12 @@ saccule feluccas
 salad alas
 sati vitas
 scape pacs
-scroll orcs
+scroll orcs: separate from cross orc
 scorch crocs
 secalose solaces
 senile pipelines
 senile felines
-senile lines
+senile lines: Book
 sera wares
 setulose solutes
 senora rones

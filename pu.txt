@@ -285,7 +285,12 @@ A revolting book, maybe?
 USE TO IDIOT ON REVOLT LOVER.
 Fill in later.
 >>YELL ALLEY
-?What to do here?
+?What is the navy van for?
+It has a small gig you can put something in.
+What sheets of paper could go in the navy van?
+Most you find are just for you.
+But one has a free something or other. Just, you can't redeem it by yourself.
+PUT PITY TIP IN NAVY VAN.
 ?How do I get the TNT from the bomb mob?
 You need an agent to do it for you.
 Do you have the DNA band or DNA hand?
@@ -444,6 +449,7 @@ There are 10 total points in Dim Mid.
 ?How do I get all the points for Yelpley?
 There are 34 total points in Yelpley.
 1 point if you USE STAMP MATS ON SLATE METALS.
+1 point if you USE PITY TIP ON NAVY VAN.
 1 point if you EVADE DAVE.
 1 point if you DENY NED.
 1 point if you BORE ROB.

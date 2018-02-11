@@ -990,6 +990,10 @@ Sneer Greens is west of Flu Gulf. It is in Grebeberg. "Despite the impressive vi
 
 Sneer Greens is above Flu Gulf.
 
+printed name of Sneer Greens is "[if Yuge Guy is in sneer greens]Sneer Greens[else]Et Tu Butte[end if]"
+
+understand "et tu butte" and "et/tu/butte" and "et tu" and "et/tu butte" as Sneer Greens when Yuge Guy is is Sneer Greens.
+
 after looking in Sneer Greens for the first time:
 	say "The Yuge Guy calls 'BOO! NOOB!' just to reinforce his contempt.";
 	continue the action;
@@ -1067,7 +1071,7 @@ understand "nail [something]" as nailing when player is in Mont Nom and Ian is i
 carry out nailing:
 	if Ian is in ZeroRez, say "There's nobody named Elian to nail later in the game, so this isn't an action you need to take any more." instead;
 	if noun is not Ian, say "You'll know what or whom to nail, and that's not it." instead;
-	say "Boom! There goes Ian.";
+	say "You wait and hide. After a while, you catch Ian picking his nose absent-mindedly. You call him on it! In the presence of food, no less! Ian hurries away in shame across the Turf Rut. He takes one look at the, um, bridge and realizes that if he hadn't DONE anything gross, he wouldn't have to CROSS anything gross.";
 	move Ian to ZeroRez;
 	score-inc; [Grebeberg/nail ian]
 	the rule succeeds;
@@ -1901,9 +1905,26 @@ report taking demo med:
 
 book Pro Corp
 
-Pro Corp is north of Gross Org. It is in Yelpley.
+Pro Corp is north of Gross Org. It is in Yelpley. description is "A butene tub rests here. You probably don't want to mess with it, [if bald-lab is true]since you've yoinked enough[else]but there's other useful stuff here[end if]. The only way out is back south."
 
 Pro Corp is above Gross Org.
+
+report taking when player is in pro corp:
+	if number of things in pro corp is 0:
+		say "Pro Corp is now a bald lab.";
+		now bald-lab is true;
+		now printed name of Pro Corp is "Bald Lab"
+	else:
+		continue the action;
+
+bald-lab is a truth state that varies.
+
+understand "bald/lab" and "bald lab" as Pro Corp when bald-lab is true.
+
+the butene tub is scenery in Pro Corp.
+
+instead of doing something with butene tub:
+	say "You don't need to tinker with the butene tub. It's empty, and that's probably a good thing. Just, a secret lab hideout needs something mysterious and weird."
 
 chapter gold log
 
@@ -1917,9 +1938,11 @@ The DNA hand is a thing.
 
 chapter roto motor
 
-The roto motor is a thing in Pro Corp.
+The roto motor is a thing in Pro Corp. [?? the radar breaks and reveals a roto motor instead]
 
 volume gotoing
+
+[?? rules for GT'ing a room]
 
 a room can be notyet, available, cappy, davey, ratsy, pully, tamey, or gatey.
 

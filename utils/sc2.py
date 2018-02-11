@@ -5,6 +5,10 @@
 # replaces msc.py
 #
 # todo: if I forgot a +1, fill it in
+#
+# todo: invisiclues order vs walkthrough order
+#
+# this is a bit tricky because of regions -- however, it is worthwhile
 
 import i7
 import sys
