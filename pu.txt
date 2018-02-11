@@ -365,8 +365,12 @@ Fill in later.
 ?What to do here?
 Fill in later.
 >>SCRAP ARCS
-?What to do here?
-Fill in later.
+?What to do with the slate metals?
+They could get a pattern carved in them.
+Anything that could carve a pattern?
+The stamp mats in Frush Surf.
+USE STAMP MATS ON SLATE METALS.
+The key would be useful to open something locked.
 >>TOLL LOT
 ?How do I get rid of the cross orc?
 It wants money.
@@ -386,6 +390,7 @@ The logic is ***(+) NED.
 DENY NED.
 ?How do I get past the gate?
 It's not too bad.
+Did you make Ye Key in Scrap Arcs?
 USE YE KEY ON ETAGE GATE.
 >>PRO CORP
 ?Help! The Psi Wisp is vicious!
@@ -437,7 +442,8 @@ There are 10 total points in Dim Mid.
 1 point if you USE YARD RAY ON DIKTAT KID.
 1 point if you USE X-ITE TIX ON TIX EXIT
 ?How do I get all the points for Yelpley?
-There are 32 total points in Yelpley.
+There are 33 total points in Yelpley.
+1 point if you USE STAMP MATS ON SLATE METALS.
 1 point if you EVADE DAVE.
 1 point if you DENY NED.
 1 point if you BORE ROB.

@@ -285,6 +285,10 @@ How do you feel peaceful enough to not be disrupted by your enemies?
 
 (+1) > USE RADAR ON MADE DAM
 
+(+1) > USE STAMP MATS ON SLATE METALS
+
+>W.N.N.E.N
+
 (+1) > USE YE KEY ON ETAGE GATE
 >N
 

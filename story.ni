@@ -46,7 +46,7 @@ Grebeberg is a region. max-score of Grebeberg is 27.
 
 Dim Mid is a region. max-score of Dim Mid is 10.
 
-Yelpley is a region. max-score of Yelpley is 32.
+Yelpley is a region. max-score of Yelpley is 33.
 
 Odd Do is a region. max-score of Odd Do is 5.
 
@@ -85,8 +85,6 @@ the state tats are a thing. description is "They say OMG MO[']."
 instead of doing something with state tats:
 	if action is procedural, continue the action;
 	say "You don't need to do anything to or with the state tats, now that you're wearing them.";
-
-stamp mats are a thing.
 
 Ye Key is a thing.
 
@@ -623,6 +621,7 @@ spa maps	Code Doc	--	maps-explained-yet rule	maps-explain rule	true	false	false	
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest."
 you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. It's so tempting and beautiful, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
+stamp mats	slate metals	ye key	--	--	true	false	false	Yelpley	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY."
 Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again. A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it." [b4:deny Ned]
 SOME DEMOS	yahoo hay	straw arts	--	--	true	false	true	Grebeberg	"With the help of SOME DEMOS, you manage to rejig the hay into something more aesthetically pleasing: straw arts!"
 straw arts	Mike Kim	soot tattoos	--	--	true	true	false	Yelpley	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
@@ -1057,18 +1056,18 @@ book Ooze Zoo
 
 Ooze Zoo is south of Seer Trees. It is in Grebeberg. "[if sleep eels are in Ooze Zoo]Sleep eels block passage south, but you can still go back north[else]With the sleep eels gone, you can go north, or south to [s-dray][end if]."
 
-the sleep eels are plural-named people in Ooze Zoo. "Some eels are blocking passage south."
+the sleep eels are plural-named people in Ooze Zoo. "The sleep eels squirm. Maybe there's a humane way to move them out."
 
 to say s-dray:
 	say "[if Frush Surf is visited]the Frush Surf[else]a coastal place[end if]"
 
 book Frush Surf
 
-Frush Surf is south of Ooze Zoo. It is in Grebeberg.
+Frush Surf is south of Ooze Zoo. "Slate metals are here by the shore. They're too heavy to move unless you managed to cut a piece off of them.". It is in Grebeberg.
 
-Line Nil is in Frush Surf.
+[Line Nil is scenery in Frush Surf.]
 
-slate metals are scenery in Frush Surf. "They aren't leet steel. You could probably carve something out of them, with the right implement(s)."
+stamp mats are a thing in Frush Surf.
 
 The Kayo Yak is a chaser in Frush Surf.
 
@@ -1642,6 +1641,8 @@ check taking Gorge Grog: say "Sniffins chides you. 'It's worthless to us, but if
 
 Nat's Tan is a thing in Deli Tiled. "A container of something called Nat's Tan is here."
 
+check taking nat's: say "Ugh! It feels too gross to take. Maybe you need to build yourself up to figure how to take it." instead;
+
 Le Falafel is a proper-named thing in Deli Tiled.
 
 a tame mat is in Deli Tiled. "A tame mat reading Deli Tiled here."
@@ -1828,18 +1829,6 @@ check taking liar grail: say "A small voice cries 'Da cad! Da cad!' You probably
 check going south in Swept Pews:
 	if Liar Grail in Swept Pews, say "Maybe there's a path where you could get rid of the grail, but not yet." instead;
 
-chapter Demo Med
-
-a Demo Med is an edible thing in Swept Pews. "A demo med sits here, on a pill lip.". description is "You're not sure what it could be. Xanax? Whatever, you feel calmer just looking at it."
-
-the pill lip is scenery in Swept Pews. "A Demo Med rests on the Pill Lip."
-
-instead of doing something with pill lip, say "The pill lip is just there to prevent the demo med from getting dirty on the ground."
-
-report taking demo med:
-	say "The pill lip retracts as you take the demo med.";
-	move pill lip to ZeroRez.
-
 chapter troll ort
 
 the troll ort is a thing in Swept Pews.
@@ -1858,11 +1847,29 @@ book Scrap Arcs
 
 Scrap Arcs is east of Drawl Ward. It is in Yelpley.
 
+chapter slate metals
+
+slate metals are scenery in Scrap Arcs. "They aren't leet steel. You could probably carve something out of them, with the right implement(s)."
+
 book Dope Pod
 
 Dope Pod is west of Drawl Ward. It is in Yelpley.
 
+chapter radar
+
 the radar is a thing in Dope Pod.
+
+chapter Demo Med
+
+a Demo Med is an edible thing in Dope Pod. "A demo med sits here, on a pill lip.". description is "You're not sure what it could be. Xanax? Whatever, you feel calmer just looking at it."
+
+the pill lip is scenery in Dope Pod. "A Demo Med rests on the Pill Lip."
+
+instead of doing something with pill lip, say "The pill lip is just there to prevent the demo med from getting dirty on the ground."
+
+report taking demo med:
+	say "The pill lip retracts as you take the demo med.";
+	move pill lip to ZeroRez.
 
 book Pro Corp
 
