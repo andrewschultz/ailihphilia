@@ -144,7 +144,7 @@ The Debt Bed doesn't quite work.
 But you can turn it into something nicer.
 USE DEBT BED ON REVIVER.
 USE STOCK COTS ON SLEEP EELS.
->>DRAY YARD
+>>FRUSH SURF
 ?What do I do with the yak?
 It's a bit complicated.
 USE TROLL ORT ON BRAG GARB.

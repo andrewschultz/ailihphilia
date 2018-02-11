@@ -485,7 +485,7 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 		say "You mix [the i1] with [the i2] in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.[paragraph break]";
 		now i1 is in ZeroRez;
 		now i2 is in ZeroRez;
-		score-inc; [Grebeberg/USE GIFT FIG ON MAYO YAM&USE SNACK CANS ON UFO tofu]
+		score-inc; [Grebeberg/USE GIFT FIG ON MAYO YAM&USE SNACK CANS ON UFO TOFU]
 		if chef-yet is true:
 			say "A martini tram pops out from behind the Ark of Okra. Now that you've made so much food, you need drinks! Except, well, the tram doesn't have any drinks. You notice, though, that it's on your epicer recipe, so you push it back to Fun [']Nuf.";
 		else:
@@ -666,7 +666,7 @@ this is the maps-readable rule:
 	the rule fails;
 
 this is the Ned-gone rule:
-	if Ned is in Gross Org, the rule succeeds;
+	if Ned is in ZeroRez, the rule succeeds;
 	say "Good idea, but not with Ned around.";
 	the rule fails;
 

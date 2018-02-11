@@ -55,10 +55,47 @@ source_region = defaultdict(str)
 walkthrough_order = defaultdict(int)
 source_cmd_order = defaultdict(int)
 
+# constants
+ignore_cmd_array = { 'N': True, 'S': True, 'E': True, 'W': True, 'GET': True }
+
 def usage():
     print("-v for verbose")
     print("-s for semi verbose")
     print("-h to show hash values")
+    exit()
+
+def walkthru_vs_test_file():
+    dupes = { "work row": True, "word row": True }
+    test_ary = []
+    in_test = defaultdict(bool)
+    test_order = defaultdict(int)
+    test_file = "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/Put it Up Tests.i7x"
+    test_file_short = re.sub(".*[\\\/]", "", test_file)
+    test_file_errs = 0
+    count = 0
+    with open(test_file) as file:
+        for line in file:
+            if not re.search(r"^\[?test", line): continue
+            qary = line.strip().split('"')
+            cmd_ary = re.sub("\/$", "", qary[1]).split("/")
+            for x in cmd_ary:
+                w1 = re.sub(" .*", "", x)
+                if w1.upper() in ignore_cmd_array.keys(): continue
+                if x in in_test.keys() and x not in dupes.keys():
+                    print("WARNING", x, "duplicated in", qary[0])
+                    continue
+                in_test[x] = True
+                count = count + 1
+                test_order[x.upper()] = count
+    for x in sorted(source_cmd_order, key=source_cmd_order.get):
+        if x not in test_order.keys():
+            print("Need test_order entry for", x)
+            test_file_errs = test_file_errs + 1
+    for x in sorted(test_order.keys()):
+        if x not in source_cmd_order.keys():
+            print("Oops! Test command", x, "does not appear in the source commands.")
+            test_file_errs = test_file_errs + 1
+    print("Total test file errors:", test_file_errs)
     exit()
 
 def bonus_mistake_check():
@@ -178,7 +215,6 @@ def source_vs_invisiclues():
     else:
         print("InvisiClues sync test passed.")
 
-
 def source_vs_trizbort_flow():
     summary_err = 0
     line_count = 0
@@ -223,7 +259,6 @@ def source_vs_walkthrough():
     plus_one = 0
     walkthrough_count = 0
     global warning_walkthrough_line
-    xxx = { 'N': True, 'S': True, 'E': True, 'W': True, 'GET': True }
     with open(main_thru) as file:
         for line in file:
             line_count = line_count + 1
@@ -231,7 +266,7 @@ def source_vs_walkthrough():
             ll = re.sub(".*> *", "", line.strip())
             cmd_ary = ll.split(".")
             verb1 = re.sub(" .*", "", cmd_ary[0])
-            if verb1 not in xxx.keys():
+            if verb1 not in ignore_cmd_array.keys():
                 if ll in use_in_source.keys():
                     if ll in use_in_walkthrough.keys():
                         print(ll, "duplicate non-points command, may not be error.")
@@ -326,6 +361,9 @@ def get_stuff_from_source():
                     for t in this_cmd_ary:
                         source_region[t] = temp_region
                         use_in_source[t] = line_count
+                        if 'odd do' not in line.lower():
+                            source_cmd_count = source_cmd_count + 1
+                            source_cmd_order[t] = source_cmd_count
                     if verbose: print("Tacking on", this_cmd)
                 if temp_region == current_region and '[' in line:
                     if semi_verbose: print("WARNING temp_region not a change from current_region", current_region, "line", line_count, "in story.ni")
@@ -381,7 +419,7 @@ def get_stuff_from_source():
                         new_cmd_ary = new_cmd_ary + find_comment_cmds('af', line)
                         for temp_cmd in new_cmd_ary:
                             source_cmd_count = source_cmd_count + 1
-                            if temp_cmd in source_cmd_order.keys(): print("WARNING", temp_cmd, "is a duplicate in table of useons")
+                            if temp_cmd in source_cmd_order.keys() and not temp_cmd.startswith("USE"): print("WARNING", temp_cmd, "is a duplicate in table of useons, line", line_count)
                             source_cmd_order[temp_cmd] = source_cmd_count
                         use_in_source[cmd] = line_count # we only track line count for "use" commands and not unusual point gainers
                         temp_region = ""
@@ -398,6 +436,13 @@ def get_stuff_from_source():
                             elif verbose:
                                 print(temp_region, "at line", line_count, " in use table given extra point.")
                             undef_use_points = undef_use_points + 1
+
+# start main
+
+get_stuff_from_source()
+walkthru_vs_test_file()
+
+exit()
 
 argval = 1
 while argval < len(sys.argv):
