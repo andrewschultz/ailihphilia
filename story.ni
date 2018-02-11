@@ -876,6 +876,8 @@ book Dirge Grid
 
 Dirge Grid is a room in Mid Dim. "The only way back is south[if Diktat Kid is in Dirge Grid], but you can't really run away from the Diktat Kid[else], and you might as well go that way, now you've vanquished the Diktat Kid[end if]."
 
+check going to Dirge Grid: if test set is not in ZeroRez, say "[if player does not have yard ray]You don't have an adequate weapon[else]You need to get some practice with the Yard Ray before going north[end if]." instead;
+
 printed name of Dirge Grid is "[if Diktat Kid is in ZeroRez]Top Spot[else]Dirge Grid[end if]"
 
 Diktat Kid is a proper-named person in Dirge Grid.
@@ -2219,17 +2221,19 @@ this is the rod-smell rule:
 this is the what-missed rule:
 	let missed be 0;
 	repeat through table of potential misses:
-		follow the dorule entry;
+		consider the dorule entry;
 		if the rule failed:
-			say "[funstuff entry][line break]";
+			say "[funstuff entry]";
 			increment missed;
 	if missed is 0, say "You found all the points!"
 
 table of potential misses
 funstuff	dorule
-"BOOB or POOP"	pb-yet rule
+"BOOB or POOP to swear 'right"	pb-yet rule
 "REFER instead of THINK"	refer-yet rule
-"DIAL AID instead of aid"	dial-yet rule
+"DIAL AID instead of AID"	dial-yet rule
+"SLAM MAMMALS around the eels"	slam-yet rule
+"PEEP instead of looking"	peep-yet rule
 
 this is the dial-yet rule:
 	if dial-yet is true, the rule succeeds;
@@ -2241,6 +2245,14 @@ this is the pb-yet rule:
 
 this is the refer-yet rule:
 	if refer-bonus is true, the rule succeeds;
+	the rule fails;
+
+this is the slam-yet rule:
+	if slam-mam is true, the rule succeeds;
+	the rule fails;
+
+this is the peep-yet rule:
+	if peeped-yet is true, the rule succeeds;
 	the rule fails;
 
 volume beta testing - not for release

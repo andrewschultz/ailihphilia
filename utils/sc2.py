@@ -65,7 +65,7 @@ def usage():
     exit()
 
 def walkthru_vs_test_file():
-    dupes = { "work row": True, "word row": True }
+    dupes = { "work row": True, "word row": True, "pace cap": True }
     test_ary = []
     in_test = defaultdict(bool)
     test_order = defaultdict(int)
@@ -81,11 +81,13 @@ def walkthru_vs_test_file():
             for x in cmd_ary:
                 w1 = re.sub(" .*", "", x)
                 if w1.upper() in ignore_cmd_array.keys(): continue
-                if x in in_test.keys() and x not in dupes.keys():
+                if x in dupes.keys() and x in in_test.keys(): continue
+                if x in in_test.keys():
                     print("WARNING", x, "duplicated in", qary[0])
                     continue
                 in_test[x] = True
                 count = count + 1
+                print(x.upper(), count)
                 test_order[x.upper()] = count
     for x in sorted(source_cmd_order, key=source_cmd_order.get):
         if x not in test_order.keys():
@@ -95,6 +97,27 @@ def walkthru_vs_test_file():
         if x not in source_cmd_order.keys():
             print("Oops! Test command", x, "does not appear in the source commands.")
             test_file_errs = test_file_errs + 1
+    cmdval = 0
+    look_again = True
+    for x in sorted(test_order.keys(), key=test_order.get):
+        print(x, test_order[x])
+    print()
+    for x in sorted(source_cmd_order.keys(), key=source_cmd_order.get):
+        print(x, source_cmd_order[x])
+    while look_again:
+        look_again = False
+        cmdval = cmdval + 1
+        str1 = 'N/A'
+        str2 = 'N/A'
+        for x in test_order.keys():
+            if test_order[x] == cmdval:
+                look_again = True
+                str1 = x
+        for x in source_cmd_order.keys():
+            if source_cmd_order[x] == cmdval:
+                look_again = True
+                str2 = x
+        if look_again: print(cmdval, "test", str1, "str", str2)
     print("Total test file errors:", test_file_errs)
     exit()
 

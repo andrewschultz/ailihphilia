@@ -25,7 +25,7 @@ test part9 with "n/use exam axe on lie veil/n/get bro orb/s/e/e/e/s/w/use dork r
 test rollup with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9"
 [test rollup with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9/"]
 
-test part-last with "w/use rep popper on yuge guy/e/s/s/e/e/e/n/use bro orb on madam/s/w/s/w/emit noontime/use murk rum on yard ray/use yard ray on test set/e/n/w/use tnt on ore zero/n/use me gem on knife fink/use taboo bat on verses rev/use yard ray on diktat kid/s/use x-ite tix on tix exit"
+test part-last with "w/use rep popper on yuge guy/e/s/s/e/e/e/n/use bro orb on madam/s/w/s/w/use murk rum on yard ray/emit noontime/use yard ray on test set/e/n/w/use tnt on ore zero/n/use me gem on knife fink/use taboo bat on verses rev/use yard ray on diktat kid/s/use x-ite tix on tix exit"
 
 Put It Up Tests ends here.
 

@@ -90,6 +90,10 @@ book dork rod
 
 understand "dorm rod" and "dorm" as a mistake ("You reveal no frat. Arf!") when dork rod is quicknear.
 
+book eroded ore
+
+understand "eros ore" as a mistake ("I don't even want to know what you're trying to do, there.") when eroded ore is quicknear.
+
 volume prospective
 
 [understand "tame mat" as a mistake ("That's not quite what to do. This is a game about palindromes, not homonyms.") when player is in Toll Lot and tame mat is in Toll Lot. ?? ]
