@@ -26,28 +26,17 @@ You also get a set-o-notes to replace the darer ad. They're still a bit vague, s
 
 That's all the points you can get for the Dim Mid region, for now. In fact, Fun Nuf is the only room in the Dim Mid...until the end.
 
-Now you're kind of blocked at the Seer Trees in Grebeberg to the west, so maybe we can figure out how to get past the STARK RATS.
+Now you're kind of blocked at the Seer Trees in Grebeberg to the west, so maybe we can figure out how to get past the STARK RATS. We can explore a bit, too, first.
 
->E
->N
+>E.N
 
-Marge Pegram says the trap art is a useless design that didn't quite work. Maybe it'll work for you.
+Mike Kim says the trap art is a useless design that didn't quite work. Maybe it'll work for you.
 
 >GET TRAP ART
 
-You need to do something with the trap art, somewhere. But first, let's look behind Art Xtra.
+Now let's open up the part of Yelpley that lets you fiddle with the items you've got.
 
->N.GET DEBT BED
-
-Useful for later.
-
->W
-
-(+1) >TEND NET
-
->E.S.S.S
-
-Oh no! Dave's here, man! How to get around Dave?
+>S.S
 
 (+1) >EVADE DAVE
 
@@ -55,9 +44,37 @@ Oh no! Dave's here, man! How to get around Dave?
 
 (+1) >BORE ROB
 
-??TRACE CART
-
 Now Worn Row isn't suitable for getting anything done, yet. It has that redness ender, but that looks kind of dangerous. How would you restore it as a place to BE and DO something constructive?
+
+(+1) >WORD ROW
+
+>GET TO IDIOT
+
+>E.N.N.N
+
+(+1) >USE TO IDIOT ON REVOLT LOVER
+
+>GET DEBT BED
+
+>E
+
+>GET ALL
+
+Note you can't get EVERYTHING. But the pity tip also gives a small clue...
+
+(+1) >USE PITY TIP ON NAVY VAN
+
+We'll deal with the snack cans (much) later.
+
+>W.W
+
+What to do with the ten-level net? It looks a bit shaky.
+
+(+1) >TEND NET
+
+>E.S.S.S.W
+
+We can do something else with Worn Row!
 
 (+1) >WORK ROW
 
@@ -65,13 +82,11 @@ Now, the trap art goes with one of the machines, but which one?
 
 (+1) >USE TRAP ART ON REIFIER
 
-Also, the debt bed can be improved, too.
-
 (+1) >USE DEBT BED ON REVIVER
 
-You can also tinker with it in other ways. Let's see about that.
+Now let's get another book.
 
-(+1) >WORD ROW
+>WORD ROW
 
 >GET ERA FARE
 
@@ -79,11 +94,15 @@ You can only pick up one book at a time, and I think this is the best to start w
 
 >E.N.W.W
 
-How to get rid of the rats?
-
 (+1) >USE PARTY TRAP ON STARK RATS
 
->S
+>N
+
+(+1) >USE ERA FARE ON KING NIK
+
+Spur-ups! Ooh! We'll get to those in a bit.
+
+>S.S
 
 How to get past the eels? They are sleeping but look a bit uncomfortable.
 
@@ -91,9 +110,35 @@ How to get past the eels? They are sleeping but look a bit uncomfortable.
 
 >S
 
-The kayo yak is/was harmless, but it'll help you later.
+The kayo yak is/was harmless, but it'll help you later. Where you'll have to make it a bit harmful.
 
->E.GET POO COOP.W.N.N.W
+>GET STAMP MATS.E.GET POO COOP
+
+>W.N.N.E.E.S.W.GET YOB ATTABOY
+
+>E.N
+
+Now the Emo Dome pushes us back because it makes us feel ... down.
+
+(+1) >PUFF UP
+
+>E
+
+There you go! But you still run through the Emo Dome too fast. How to stop yourself?
+
+(+1) >PULL UP
+
+You now have access to a few more rooms. But let's go cover a few we've seen, sort of, first.
+
+>GET PUCE CUP
+
+>W.W.W.N
+
+(+1) >USE PUCE CUP ON PAST SAP
+
+>S.E.E.S.GET DEMO MED.GET TROLL ORT
+
+(+1) > USE PUCE CUP ON LIAR GRAIL
 
 Now we need to make passage west and south. Fortunately one way is removing something, and the other requires filling something in. We'll worry about the lie veil later.
 
@@ -109,16 +154,6 @@ The Spur Ups make you feel more with-it.
 >S.E.E
 
 You feel you could almost go east, but you need to do something "up."
-
-(+1) >PUFF UP
-
->E
-
-There you go! But you still run through the Emo Dome too fast. How to stop yourself?
-
-(+1) >PULL UP
-
-You now have access to a few more rooms.
 
 ==========================================below is the Yuge Guy quest
 
@@ -295,12 +330,6 @@ How do you feel peaceful enough to not be disrupted by your enemies?
 How to get rid of the Psi Wisp?
 
 >S.S.W.W.S.W
-
-(+1) > WORN ROW
-
-(+1) > USE PUCE CUP ON PAST SAP
->S.E.E.E.S
-(+1) > USE PUCE CUP ON LIAR GRAIL
 
 (+1) >USE SOME DEMOS ON YAHOO HAY
 >W.N.N.E.E.N

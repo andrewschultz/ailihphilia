@@ -23,6 +23,7 @@ main_source = main_dir + "/story.ni"
 main_thru = main_dir + "/walkthrough.txt"
 triz_flow = "c:/games/inform/triz/mine/put-it-up-flow.trizbort"
 invis_raw = "c:/writing/scripts/invis/pu.txt"
+test_file = "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/Put it Up Tests.i7x"
 
 source_line_to_open = 0
 warning_story_line = 0
@@ -64,12 +65,44 @@ def usage():
     print("-h to show hash values")
     exit()
 
-def walkthru_vs_test_file():
+def walkthrough_vs_test_file():
+    test_ary = []
+    wthru_ary = []
+    count = 0
+    with open(test_file) as file:
+        for line in file:
+            if not re.search(r"^\[?test part", line): continue
+            qary = line.strip().upper().split('"')
+            cmd_ary = re.sub("\/$", "", qary[1]).split("/")
+            for x in cmd_ary:
+                test_ary.append(x)
+    with open(main_thru) as file:
+        for line in file:
+            if '>' not in line: continue
+            if 'grep -i' in line: continue
+            ll = re.sub(".*> ?", "", line.strip())
+            cmd_ary = ll.split(".")
+            for x in cmd_ary:
+                wthru_ary.append(x)
+    up_to = min(len(test_ary), len(wthru_ary))
+    if len(test_ary) != len(wthru_ary):
+        print("WARNING test/walkthrough are different sizes:", len(test_ary), "<test wthru>", len(wthru_ary))
+    max_dif = 50
+    cur_dif = 0
+    for i in range(0, up_to):
+        if test_ary[i] != wthru_ary[i]:
+            cur_dif = cur_dif + 1
+            print(i, cur_dif, test_ary[i], "< test ary, wthru ary >", wthru_ary[i])
+            if cur_dif == max_dif:
+                break
+    exit()
+
+
+def source_table_vs_test_file():
     dupes = { "work row": True, "word row": True, "pace cap": True }
     test_ary = []
     in_test = defaultdict(bool)
     test_order = defaultdict(int)
-    test_file = "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/Put it Up Tests.i7x"
     test_file_short = re.sub(".*[\\\/]", "", test_file)
     test_file_errs = 0
     count = 0
@@ -87,7 +120,6 @@ def walkthru_vs_test_file():
                     continue
                 in_test[x] = True
                 count = count + 1
-                print(x.upper(), count)
                 test_order[x.upper()] = count
     for x in sorted(source_cmd_order, key=source_cmd_order.get):
         if x not in test_order.keys():
@@ -98,12 +130,8 @@ def walkthru_vs_test_file():
             print("Oops! Test command", x, "does not appear in the source commands.")
             test_file_errs = test_file_errs + 1
     cmdval = 0
+    oops = 0
     look_again = True
-    for x in sorted(test_order.keys(), key=test_order.get):
-        print(x, test_order[x])
-    print()
-    for x in sorted(source_cmd_order.keys(), key=source_cmd_order.get):
-        print(x, source_cmd_order[x])
     while look_again:
         look_again = False
         cmdval = cmdval + 1
@@ -117,9 +145,10 @@ def walkthru_vs_test_file():
             if source_cmd_order[x] == cmdval:
                 look_again = True
                 str2 = x
-        if look_again: print(cmdval, "test", str1, "str", str2)
-    print("Total test file errors:", test_file_errs)
-    exit()
+        if str1 != str2:
+            oops = oops + 1
+            print(cmdval, oops, str1, source_cmd_order[str1], "< test source >", str2)
+    print("Total source table vs. test file errors:", test_file_errs)
 
 def bonus_mistake_check():
     count = 0
@@ -384,9 +413,6 @@ def get_stuff_from_source():
                     for t in this_cmd_ary:
                         source_region[t] = temp_region
                         use_in_source[t] = line_count
-                        if 'odd do' not in line.lower():
-                            source_cmd_count = source_cmd_count + 1
-                            source_cmd_order[t] = source_cmd_count
                     if verbose: print("Tacking on", this_cmd)
                 if temp_region == current_region and '[' in line:
                     if semi_verbose: print("WARNING temp_region not a change from current_region", current_region, "line", line_count, "in story.ni")
@@ -463,7 +489,8 @@ def get_stuff_from_source():
 # start main
 
 get_stuff_from_source()
-walkthru_vs_test_file()
+source_table_vs_test_file()
+walkthrough_vs_test_file()
 
 exit()
 
