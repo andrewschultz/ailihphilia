@@ -1,5 +1,7 @@
 "Put it Up" by Andrew Schultz
 
+[?? track all could-work-laters]
+
 [blurb for comp = A *GASP* SAGA]
 
 [there are things you can search for to make the source more navigable.
@@ -66,8 +68,6 @@ The DNA hand is a thing.
 
 The bang nab is a thing.
 
-The roto motor is a thing.
-
 [?? tame mat would be sort of funny. Where does it go?]
 
 section part of a puzzle but still floating
@@ -80,7 +80,7 @@ The Exam Axe is a thing. description is "Just looking at the exam axe, you feel 
 
 section stuff to move
 
-the state tats are a thing. description is "They say OMG MO[']."
+the state tats are a plural-named thing. description is "They say OMG MO[']."
 
 instead of doing something with state tats:
 	if action is procedural, continue the action;
@@ -94,7 +94,7 @@ section ingredients
 
 the Mayo Yam is a liquid ingredient.
 
-the UFO tofu is a liquid ingredient.
+some UFO tofu is a liquid ingredient.
 
 the snack cans are a solid ingredient.
 
@@ -152,7 +152,7 @@ to score-inc:
 	reg-inc mrlp;
 
 check requesting the score:
-	say "Your overall score so far is [score] of [maximum score][one of]. But don't worry, points pile up pretty quickly once you get going[or][stopping].";
+	say "Your overall score so far is [score] of [maximum score][if score < 4]. But don't worry, points pile up pretty quickly once you get going[end if].";
 	say "Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do].";
 	if My Gym is visited or Evaded Ave is visited:
 		if number of grunty people is not number of grunty people in ZeroRez, say "You currently disposed of [number of grunty people in ZeroRez] grunts blocking your way: [list of grunty people in ZeroRez].";
@@ -585,12 +585,13 @@ Pact Cap	"Your pact cap is fine where it is, on your head."
 table of useons [xxuse]
 use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
 trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever." [b4:PACK CAP/PACE CAP/TEND NET/EVADE DAVE/BORE ROB/WORK ROW/WORD ROW]
+pity tip	navy van	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	"The van takes the pity tip and whooshes off. It spits out some snack cans, which roll on the ground. You take them. The navy van then leaves for good. It was apparently obstructing a whole bomb mob!"
 party trap	stark rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
 demo med	gulf lug	cash sac	--	--	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' he looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
-TO IDIOT	Revolt Lover	--	--	--	true	true	true	Yelpley	"The Revolt Lover begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Known Wonk runs away."
+TO IDIOT	Revolt Lover	--	--	--	true	true	true	Yelpley	"The Revolt Lover begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Revolt Lover runs away."
 YOB ATTABOY	Sniffins	Dirt Rid	--	--	true	true	false	Yelpley	"Sniffins accepts your gift. His sniffs slowly change from sadness to something more snooty. He thanks you for helping him be too good for you before handing you a Dirt Rid and kicking you out."
 Dirt Rid	reviver	Cave Vac	--	--	true	true	false	Yelpley	"You watch as the Dirt Rid swirls and becomes shinier and much more powerful. A Cave Vac! It will be capable of cleaning...well, somewhere."
-Cave Vac	Tru Yurt	Exam Axe	--	--	true	true	false	Grebeberg	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. You get a special gift: the Wonk is not one for violence, but perhaps this Exam Axe is an ample reward for helping the Wonk pass an important life test!"
+Cave Vac	Tru Yurt	snack cans	--	--	true	true	false	Grebeberg	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe!"
 NULL ILLUN	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me.' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. And if it's simple, well, I need to know when simple stuff works.' The Known Wonk apologizes--it's back to a Tru Yurt for a thought session."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes to look for ... well, something else."
 radar	crag arc	UFO tofu	orc-gone rule	--	true	true	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO as it flies off. It bounces off you. 'O Furor! UFO!' you cry. You look at it and--it's unharmed, and still in a cubic shape. Looks like you got yourself some UFO tofu."
@@ -610,14 +611,14 @@ stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The sti
 troll ort	brag garb	--	--	--	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. It's now an entirely different smell from the Stink Knits, but a much more edible one. You guess." [af:yak okay]
 DNA band	reifier	DNA hand	--	--	true	true	false	Yelpley	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand!"
 roto motor	DNA hand	bang nab	--	--	true	true	true	Yelpley	"The roto motor fits right in. The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on it, now: BANG NAB. I guess that's what to call it, now. It probably has the dexterity to deal with volatile stuff."
-bang nab	TNT	TNT	--	--	true	true	false	Yelpley	"The Bang Nab walks on its index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. It grinds to halt once it's out of view of the mob. You leave it there as you pick up the TNT."
-Elan Ale	Sniffins	Gorge Grog	--	--	true	false	false	Yelpley	"Sniffins looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"
+bang nab	TNT	TNT	--	--	true	true	false	Yelpley	"The Bang Nab walks on its index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course."
+Elan Ale	Sniffins	Gorge Grog	--	--	true	true	false	Yelpley	"Sniffins looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"
 Eroded Ore	reviver	Ore Zero	--	--	true	true	true	Yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
 puce cup	dose sod	--	--	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
 puce cup	marge pegram	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley	"You give marge the puce cup. She drinks the dose sod and immediately feels better. 'Well... I have a lot of catching up to do. Can't hang around. Here's some Elan Ale for you, to celebrate how cool you are for helping.'"
 tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Say! Thanks! I appreciate that. Let me know if I can share some knowledge in return."
-spa maps	Code Doc	--	maps-explained-yet rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
+spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest."
 you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. It's so tempting and beautiful, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
@@ -655,10 +656,14 @@ this is the in-mont-nom rule:
 	say "Ian is distracting you. Maybe you can get rid of him, first.";
 	the rule fails;
 
-this is the maps-explained-yet rule:
-	if maps-explained is true, the rule succeeds;
-	say "[if tent net is not in ZeroRez]'I might, but I need some help here first, to make my home here properly homey.'[else]You already got the Code Doc to decipher the spa maps.[end if]";
-	the rule fails;
+this is the maps-still-confusing rule:
+	if maps-explained is true:
+		say "You already got the Code Doc to decipher the spa maps.";
+		the rule fails;
+	if tent net is not in ZeroRez:
+		say "'I might, but I need some help here first, to make my home here properly homey.'";
+		the rule fails;
+	the rule succeeds;
 
 this is the maps-readable rule:
 	if maps-explained is true, the rule succeeds;
@@ -704,6 +709,11 @@ this is the empty-cup rule:
 
 this is the maps-explain rule:
 	now maps-explained is true;
+	the rule succeeds;
+
+this is the mob-to-alley rule:
+	now bomb mob is in Yell Alley;
+	now tnt is in Yell Alley;
 	the rule succeeds;
 
 this is the sap-to-cup rule:
@@ -768,6 +778,7 @@ check going in Fun 'Nuf:
 	if noun is south:
 		if player has X-ITE TIX, try useoning X-ITE TIX with Tix Exit instead;
 		if Tix Exit is in Fun 'Nuf, say "The Tix Exit blocks your way to where Evac Ave was. I guess you're stuck questing, here." instead;
+		if flee elf is in ZeroRez, say "You have no way back now that you accepted the Pact Cap." instead;
 		if elf-warn < 3, increment elf-warn;
 		say "[if elf-warn is 1]The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go[else if elf-warn is 2]The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap[else]The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else[end if].";
 		if elf-warn < 3, the rule succeeds;
@@ -997,6 +1008,7 @@ check going north in Dumb Mud:
 
 instead of doing something with gnu dung:
 	if action is procedural, continue the action;
+	if current action is useoning, continue the action;
 	say "Eewee! (You probably want to deal with the gnu dung indirectly.)"
 
 chapter turf rut
@@ -1087,6 +1099,7 @@ carry out yakokaying:
 		score-inc; [Grebeberg/YAK OKAY]
 		now yak is in ZeroRez;
 		now ergot ogre is in ZeroRez;
+		now being-chased is false;
 		the rule succeeds;
 	if yak is in location of player, say "The yak sees nothing to attack." instead;
 	say "There's no yak to say okay to." instead;
@@ -1408,6 +1421,10 @@ check examining tract cart:
 
 a book is a kind of thing. description of a book is "It [if player carries the item described]is[else]looks[end if] really heavy and incomprehensible to you."
 
+section pity tip
+
+the pity tip is a thing. description of pity tip is "It's not THAT hard to figure what to do to the cart. There are only 26 choices, really.[paragraph break]NOTE: this document is good for free snack cans, not redeemable if purchaser is able to eat them."
+
 section books with purpose so far
 
 TO IDIOT is a proper-named book. [Revolt Lover] [?? at start of command "to" messes things up for give]
@@ -1433,6 +1450,7 @@ section book verbs
 books-carried-yet is a truth state that varies.
 
 check taking a book:
+	if player has noun, continue the action;
 	if number of books in Worn Row is 1:
 		say "As you pick up [noun], something else falls out. It's a smaller pamphlet, called SOME DEMOS. You pick it up.";
 		now player has SOME DEMOS;
@@ -1507,8 +1525,9 @@ carry out wordrowing:
 	move tract cart to Worn Row;
 	if ever-wordrow is false, score-inc; [Yelpley/word row]
 	now ever-wordrow is true;
-	say "A bunch of books appear.";
+	say "A tract cart [one of]appears, with a pity tip fluttering down. You take the tip[or]re-appears[stopping].";
 	now all books in TempMet are in Worn Row;
+	if pity tip is off-stage, now player has pity tip;
 	the rule succeeds;
 
 chapter wornrowing
@@ -1707,8 +1726,9 @@ understand "tend [something]" as tending.
 carry out tending:
 	if noun is not level net, say "That doesn't need tending." instead;
 	if player has epicer recipe, say "You already did what you needed with the net." instead;
-	say "You adjust the ten level net. You're not sure how to make it work, but with some common sense, you make it. The set o['] notes gives surprising help. You climb and swing from the trapeze to the other side--falling into the ten level net about a hundred or so times--but the hundred and first bam! You notice an epic-er recipe on the other side.[paragraph break]It's a clear step up from the set o['] notes, which you won't be needing any more. Yay! There's also something labeled an elope pole, which you suspect may help you get away if and when you need to.";
+	say "You adjust the ten level net. You're not sure how to make it work, but with some common sense, you make it. The set o['] notes gives surprising help. You climb and swing from the trapeze to the other side--falling into the ten level net about a hundred or so times--but the hundred and first bam! You notice an epic-er recipe on the other side.[paragraph break]It's a clear step up from the set o['] notes, which you won't be needing any more. Yay! There's also something labeled an elope pole, which you suspect may help you get away if and when you need to. Part of the net falls off, too. It'd make a nice tent: a tent net.";
 	now player has elope pole;
+	now player has tent net;
 	now set o notes is in ZeroRez;
 	now player has epicer recipe;
 	score-inc; [Yelpley/TEND NET]
@@ -1720,7 +1740,11 @@ The elope pole is a thing. description is "It looks foldable, maybe even separab
 
 book Yell Alley
 
-Yell Alley is east of Evaded Ave. It is in Yelpley.
+Yell Alley is east of Evaded Ave. It is in Yelpley. "The only way back is west. The way east is blocked by a [if navy van is in Yell Alley]navy van[else]bomb mob[end if]."
+
+the navy van is scenery in Yell Alley. "There seems to be no way to enter it. It has a small gig where you could maybe put something in."
+
+understand "gig" as navy van.
 
 the mayo yam is a thing in Yell Alley. "A gross looking -- something -- is here. It's a mayo yam! It's a bit on the slimy side, and it's probably worse inside."
 
@@ -1735,13 +1759,7 @@ check taking rep popper:
 
 [??Yuge Guy rep popper used what's wrong with yopu? I make boring people feel less boring vs you describing how you figured things out and only 26 possibilities really and also some trial and error]
 
-chapter back cab
-
-The back cab is a thing in Yell Alley. description is "It's here but doesn't look like you can actually ride it.". "A run-down back cab waits here."
-
-instead of entering back cab, say "Too dumpy."
-
-chapter puffuping
+the bomb mob are plural-named people. description is "They're ignoring you, and that's probably for the best."
 
 chapter puffuping
 
@@ -1831,7 +1849,7 @@ check going south in Swept Pews:
 
 chapter troll ort
 
-the troll ort is a thing in Swept Pews.
+the troll ort is an edible thing in Swept Pews.
 
 book Drawl Ward
 
@@ -1886,6 +1904,10 @@ chapter DNA band and hand
 The DNA band is a thing in Pro Corp.
 
 The DNA hand is a thing.
+
+chapter roto motor
+
+The roto motor is a thing in Pro Corp.
 
 volume gotoing
 
@@ -1957,6 +1979,7 @@ every turn when being-chased is true:
 		say "You've been caught! Aigh!";
 		if mrlp is Grebeberg, move player to Seer Trees;
 		if mrlp is Yelpley, move player to Yawn Way;
+		move chase-person to chase-room of chase-person;
 	else:
 		say "The [chase-person] follows you.";
 		move chase-person to location of player;
