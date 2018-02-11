@@ -136,212 +136,231 @@ You now have access to a few more rooms. But let's go cover a few we've seen, so
 
 (+1) >USE PUCE CUP ON PAST SAP
 
->S.E.E.S.GET DEMO MED.GET TROLL ORT
+>S.E.E.E.S.GET DEMO MED.GET TROLL ORT
 
 (+1) > USE PUCE CUP ON LIAR GRAIL
 
-Now we need to make passage west and south. Fortunately one way is removing something, and the other requires filling something in. We'll worry about the lie veil later.
+>N.W.W.W.N.E
 
-(+1) > USE POO COOP ON GNU DUNG
-(+1) > USE POO COOP ON TURF RUT
+(+1) > USE PUCE CUP ON DOSE SOD
 
->E.N
+>W.S.E.E.E.S.S
 
-(+1) >USE ERA FARE ON KING NIK
+(+1) > USE PUCE CUP ON MARGE PEGRAM
 
-The Spur Ups make you feel more with-it.
+Let's loot what's behind Marge, now.
 
->S.E.E
+>W.GET ALL.E.E.GET RADAR
 
-You feel you could almost go east, but you need to do something "up."
+(+1) > USE STAMP MATS ON SLATE METALS
 
-==========================================below is the Yuge Guy quest
+Ooh, a key! Not just any key, but YE KEY!
 
-The Known Wonk won't let me pass. What to do?
+And maybe we can help the Gulf Lug now.
 
-(+1) > USE NULL ILLUN ON KNOWN WONK
+>W.N.N.W.W.W.N.N
 
->N
+(+1) > USE DEMO MED ON GULF LUG
 
-How to get to Elided Ile? Probably one of the kayak and Tao Boat. But the kayak has a means of propulsion in your inventory...
-
-(+1) >USE ELOPE POLE ON KAYAK
-
-The Tao Boat can transport you, too. Just spiritually and not physically.
-
-(+1) >USE DORK ROD ON TAO BOAT
-
-Now that you've been in the Tao Boat, you feel confident enough to pick up the Rep Popper. But let's take a detour to make the You Buoy into something more useful.
+A reward! We don't have much to buy, so...
 
 >S.S.E.E.E.E
 
->S.W
+(+1) > USE CASH SAC ON CROSS ORC
 
-(+1) >USE YOU BUOY ON ROTATOR
+(+1) >USE RADAR ON CRAG ARC
 
->N.N.GET POPPER
+>S
 
-And now you can take out the Yuge Guy.
+We can do a bit of the work in Deli, Tiled. Even change it.
 
->W.S.S.W.W.N.N
+(+1) > USE YOB ATTABOY ON SNIFFINS
 
-The scorn rocs are annoyingly in the way.
-
-?? take Nat's first
+(+1) > USE ELAN ALE ON SNIFFINS
 
 (+1) > STAND NAT'S
 
-(+1) > USE NAT'S TAN ON SCORN ROCS
+>N.N
 
->W
+(+1) >DENY NED
 
-(+1) >USE REP POPPER ON YUGE GUY
+>GET ALL
 
-==========================================below is the Madam Sniffins quest
+(+1) > USE YE KEY ON ETAGE GATE
 
-Okay, let's go deal with Madam Sniffins.
+>N
 
->S.W.W.W.W.N
+Now begins a chase! How to get rid of the Psi Wisp? It's reddish--do you remember anything else sort of red?
 
-(+1) >USE EL DOODLE ON EDITS TIDE
+>S.S.W.W.S.W
 
->S
+(+1) >WORN ROW
 
->S
+Bam! There goes the Psi Wisp. Back to work. We have some stuff to convert, now, before going back to Pro Corp.
 
-(+1) >USE TENT NET ON CODE DOC
+>WORK ROW
 
-(+1) >USE SPA MAPS ON CODE DOC
+(+1) > USE STINK KNITS ON ROTATOR
 
->N.E.E.E.S.W
+>WORD ROW
 
-(+1) >USE STINK KNITS ON ROTATOR
+>GET SOME DEMOS
 
-Yay! Brag garb!
+>E.N.E.E.N.N
 
-The Kayo Yak seems to be kind of violent but won't attack you. Still, it comes up to sniff you. Maybe it could help you?
+>GET ALL
 
-(+1) >USE TROLL ORT ON BRAG GARB
+>S.S.W.W.W.W.S.S.E
 
->N.N.W.W.S.S
+(+1) >USE SOME DEMOS ON YAHOO HAY
 
-The yak still needs a command.
+>W.N.N.E.E.N
 
-(+1) >YAK OKAY
-
-Bye bye, Ergot Ogre!
-
->E
-
-(+1) >USE SAGE GAS ON GURU RUG
-
->N.N.E
-
-Now to get rid of the Lie Veil. You could've done this earlier, but this is in the flow. (Bad directions)
-
-(+1) > USE DIRT RID ON REVIVER
-(+1) > USE CAVE VAC ON TRU YURT
-
-(+1) >USE EXAM AXE ON LIE VEIL
-
-And you may want a way to get into the Red Roses Order.
+(+1) >USE STRAW ARTS ON MIKE KIM
 
 (+1) >USE GATE TAG ON SOOT TATTOOS
 
->GET BRO ORB
-
->S.E.E.E.E.N
-
-(+1) >USE BRO ORB ON MADAM
-
-==========================================
-
-==========================================below is stuff that's near the end
-
-Finally, you can head to Mount Nom.
-
-(+1) > NAIL IAN
-
-(+1) > USE SNACK CANS ON UFO TOFU
-(+1) > USE GIFT FIG ON MAYO YAM
-
-Now that you have all the ingredients for the North-Tron, you need to activate them. You don't have to use a lot of commands to build it. Any ingredient on another will work. Thus,
-
-(+1) >USE TNT ON ORE ZERO
-
-But you still can't go north! You don't have a weapon!
-
-(+1) >USE MURK RUM ON YARD RAY
-
-Now you can go to the Dirge Grid. But ... it'd be nice to know what to do before you stumble in there. Maybe you have something harmless to shoot.
-
-(+1) >EMIT NOONTIME
-
-Now, what can you shoot that you won't miss, but it's sturdy enough you can make sure the Yard Ray works?
-
->E.S.W
-
-(+1) >USE YARD RAY ON TEST SET
-
-Okay! You're ready now!
-
->E.N.W.N
-
-Uh oh. Two henchmen.
-
-(+1) >USE ME GEM ON KNIFE FINK
-(+1) >USE TABOO BAT ON VERSES REV
-(+1) >USE YARD RAY ON DIKTAT KID
-
->S
-
-(+1) >USE X-ITE TIX ON TIX EXIT
-
-==========================================below is stuff that's not in order
+>S.S.W.GET NULL ILLUN.WORK ROW
 
 Now the Gold Log is shiny, but it's not particularly useful, and it's not you. It seems to be rattling, as if it holds something inside, but you can't figure out how to open it.
 
 (+1) >USE GOLD LOG ON ROTATOR
 
-How do you feel peaceful enough to not be disrupted by your enemies?
+(+1) >USE DIRT RID ON REVIVER
 
-(+1) >USE PUCE CUP ON DOSE SOD
-(+1) >USE PUCE CUP ON MARGE PEGRAM
+>E.N.W.W.W
 
-==========================================below is totally unsorted uncommented stuff, lumped together by the quests they're with
+We can stop here to make passage to not one, but two, new places.
 
-(+1) > PACE CAP
-(+1) > USE CASH SAC ON CROSS ORC
-(+1) > USE RADAR ON CRAG ARC
-(+1) > USE DEMO MED ON GULF LUG
-(+1) > USE YOB ATTABOY ON SNIFFINS
-(+1) > USE ELAN ALE ON SNIFFINS
-(+1) > USE ERODED ORE ON REVIVER
+(+1) > USE POO COOP ON GNU DUNG
+(+1) > USE POO COOP ON TURF RUT
 
-(+1) > USE RADAR ON MADE DAM
+>W
 
-(+1) > USE STAMP MATS ON SLATE METALS
+(+1) >USE RADAR ON MADE DAM
 
->W.N.N.E.N
-
-(+1) > USE YE KEY ON ETAGE GATE
 >N
 
-How to get rid of the Psi Wisp?
+We can help the Known Wonk out doubly, now, and even help ourselves a bit.
 
->S.S.W.W.S.W
+(+1) >USE NULL ILLUN ON KNOWN WONK
+(+1) >USE CAVE VAC ON TRU YURT
+(+1) >USE EL DOODLE ON EDITS TIDE
 
-(+1) >USE SOME DEMOS ON YAHOO HAY
->W.N.N.E.E.N
-(+1) >USE STRAW ARTS ON MIKE KIM
+>N
 
+And we can do a lot on the Calcific Lac.
+
+(+1) >USE ELOPE POLE ON KAYAK
+
+How do you feel peaceful enough to not be disrupted by your enemies?
+
+(+1) >USE DORK ROD ON TAO BOAT
+
+>S.S.S
+
+And now we can do a bit of double duty with the Code Doc.
+
+(+1) >USE TENT NET ON CODE DOC
+(+1) >USE SPA MAPS ON CODE DOC
+
+The spa maps probably belong with ... the Apse Spa.
+
+>N.E.E.N.E
+
+(+1) >USE SPA MAPS ON GO-BY BOG
+
+Now to get by the Ergot Ogre to the south of the Code Doc. You won't have seen the ogre if you just blindly followed this walkthrough, but trust me, it's there!
+
+>W.S
+
+(+1) >PACE CAP
+(+1) >USE TROLL ORT ON BRAG GARB
+
+Now, run for your life!
+
+>S.S.N.N.W.W.S.S
+
+How to get the yak to charge?
+
+(+1) >YAK OKAY
+
+>E
+
+(+1) >USE SAGE GAS ON GURU RUG
+
+>W.N.N.E.S
+
+What do we do about Ian? Once we do something, we can mix foods.
+
+(+1) >NAIL IAN
+(+1) >USE SNACK CANS ON UFO TOFU
+(+1) >USE GIFT FIG ON MAYO YAM
+
+Now you have all the ingredients for the North-Tron, and you need to activate them. But it's a bit more efficient to do other things first.
+
+>N
+
+We could've done this before going up Mont Nom, but this is good enough.
+
+(+1) >USE EXAM AXE ON LIE VEIL
+
+>N.GET BRO ORB.S.E.E.E.S.W
+
+Now with all the junk we have, we can make non-junk.
+
+(+1) >USE DORK ROD ON REIFIER
 (+1) >USE DNA BAND ON REIFIER
 (+1) >USE ROTO MOTOR ON DNA HAND
+(+1) >USE ERODED ORE ON REVIVER
+(+1) >USE YOU BUOY ON ROTATOR
+
+>E.N.N.N.E
+
 (+1) >USE BANG NAB ON TNT
 
-(+1) > USE DORK ROD ON REIFIER
->E.N.N.N
-(+1) > USE TO IDIOT ON REVOLT LOVER
+>GET REP POPPER
 
-(+1) > DENY NED
-(+1) > USE SPA MAPS ON GO-BY BOG
+>W.S.S.W.W.N.N
+
+(+1) >USE NAT'S TAN ON SCORN ROCS
+
+>W
+
+(+1) >USE REP POPPER ON YUGE GUY
+
+>E.S.S.E.E.E.N
+
+(+1) >USE BRO ORB ON MADAM
+
+>S.W.S.W
+
+Now you have a weapon to take out the Diktat Kid! But it's not loaded.
+
+(+1) >USE MURK RUM ON YARD RAY
+
+How do you turn it on?
+
+(+1) >EMIT NOONTIME
+
+Let's practise our aim.
+
+(+1) >USE YARD RAY ON TEST SET
+
+>E.N.W
+
+(+1) >USE TNT ON ORE ZERO
+
+>N
+
+Now, carnage! And points! And so on.
+
+(+1) >USE ME GEM ON KNIFE FINK
+(+1) >USE TABOO BAT ON VERSES REV
+(+1) >USE YARD RAY ON DIKTAT KID
+>S
+
+One last thing to do. It's not too tricky, I hope.
+
+(+1) >USE X-ITE TIX ON TIX EXIT
+

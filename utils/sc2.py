@@ -58,6 +58,7 @@ source_cmd_order = defaultdict(int)
 
 # constants
 ignore_cmd_array = { 'N': True, 'S': True, 'E': True, 'W': True, 'GET': True }
+dupes = { "WORK ROW": True, "WORD ROW": True, "PACE CAP": True }
 
 def usage():
     print("-v for verbose")
@@ -89,17 +90,30 @@ def walkthrough_vs_test_file():
         print("WARNING test/walkthrough are different sizes:", len(test_ary), "<test wthru>", len(wthru_ary))
     max_dif = 50
     cur_dif = 0
+    dif_ary = []
     for i in range(0, up_to):
         if test_ary[i] != wthru_ary[i]:
             cur_dif = cur_dif + 1
             print(i, cur_dif, test_ary[i], "< test ary, wthru ary >", wthru_ary[i])
+            dif_ary.append(test_ary[i])
             if cur_dif == max_dif:
                 break
-    exit()
-
+    out_dif_string = ""
+    cr = 0
+    for i in range(0, len(dif_ary)):
+        if dif_ary[i].startswith("USE"):
+            out_dif_string = out_dif_string + "\n(+1) >";
+            cr = 0
+        elif cr % 5 == 0:
+            out_dif_string = out_dif_string + "\n>"
+            cr = cr + 1
+        else:
+            out_dif_string = out_dif_string + "."
+            cr = cr + 1
+        out_dif_string = out_dif_string + dif_ary[i]
+    if out_dif_string: print(out_dif_string)
 
 def source_table_vs_test_file():
-    dupes = { "work row": True, "word row": True, "pace cap": True }
     test_ary = []
     in_test = defaultdict(bool)
     test_order = defaultdict(int)
@@ -114,7 +128,7 @@ def source_table_vs_test_file():
             for x in cmd_ary:
                 w1 = re.sub(" .*", "", x)
                 if w1.upper() in ignore_cmd_array.keys(): continue
-                if x in dupes.keys() and x in in_test.keys(): continue
+                if x.upper() in dupes.keys() and x in in_test.keys(): continue
                 if x in in_test.keys():
                     print("WARNING", x, "duplicated in", qary[0])
                     continue
@@ -320,18 +334,19 @@ def source_vs_walkthrough():
             verb1 = re.sub(" .*", "", cmd_ary[0])
             if verb1 not in ignore_cmd_array.keys():
                 if ll in use_in_source.keys():
-                    if ll in use_in_walkthrough.keys():
+                    if ll in use_in_walkthrough.keys() and ll.upper() not in dupes.keys():
                         print(ll, "duplicate non-points command, may not be error.")
-                    if "(+1)" not in line:
+                    if ll.upper() not in dupes.keys() and "(+1)" not in line:
                         print("WARNING: may need +1 at line", line_count, "of walkthrough:", ll)
                         plus_one = plus_one + 1
                         warning_walkthrough_line = line_count
-                if ll in use_in_walkthrough.keys():
+                if ll in use_in_walkthrough.keys() and ll.upper() not in dupes.keys():
                     print("WARNING line", line_count, "has duplicate command:", ll)
                     warning_walkthrough_line = line_count
-                use_in_walkthrough[ll] = line_count
-                walkthrough_count = walkthrough_count + 1
-                walkthrough_order[ll] = walkthrough_count
+                if ll not in use_in_walkthrough.keys():
+                    use_in_walkthrough[ll] = line_count
+                    walkthrough_count = walkthrough_count + 1
+                    walkthrough_order[ll] = walkthrough_count
     for x in list(set(use_in_walkthrough.keys()) | set(use_in_source.keys())):
         if x not in use_in_walkthrough.keys() and source_region[x] != 'odd do':
             print("ERROR: Need this line in walkthrough:", x)
@@ -488,12 +503,6 @@ def get_stuff_from_source():
 
 # start main
 
-get_stuff_from_source()
-source_table_vs_test_file()
-walkthrough_vs_test_file()
-
-exit()
-
 argval = 1
 while argval < len(sys.argv):
     noh = sys.argv[argval].lower()
@@ -580,6 +589,9 @@ elif warning_story_line:
 print("Total =", t2)
 
 bonus_mistake_check()
+
+source_table_vs_test_file()
+walkthrough_vs_test_file()
 
 if invis_line_to_open:
     i7.npo(invis_raw, invis_line_to_open, True)
