@@ -75,7 +75,7 @@ def walkthru_vs_test_file():
     count = 0
     with open(test_file) as file:
         for line in file:
-            if not re.search(r"^\[?test", line): continue
+            if not re.search(r"^\[?test part", line): continue
             qary = line.strip().split('"')
             cmd_ary = re.sub("\/$", "", qary[1]).split("/")
             for x in cmd_ary:

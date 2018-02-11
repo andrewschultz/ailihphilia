@@ -96,7 +96,7 @@ the Mayo Yam is a liquid ingredient.
 
 some UFO tofu is a liquid ingredient.
 
-the snack cans are a solid ingredient.
+the snack cans are a plural-named solid ingredient.
 
 the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, unsurprisingly."
 
@@ -463,6 +463,8 @@ understand "use [something] with [something]" as useoning it with.
 
 useoning it with is an action applying to two things.
 
+does the player mean useoning the noun with the noun: it is very unlikely.
+
 to build-the-tron:
 	move north tron to Fun 'Nuf;
 	now all tronparts are in ZeroRez;
@@ -476,6 +478,9 @@ chef-yet is a truth state that varies.
 to chef (i1 - an ingredient) and (i2 - an ingredient):
 	if player is not in Mont Nom:
 		say "You're not in the right place to mix food together.";
+		continue the action;
+	if Ian is in Mont Nom:
+		say "Not with Ian around.";
 		continue the action;
 	if i1 is liquid and i2 is liquid:
 		say "Those are both too liquid.";
@@ -509,7 +514,7 @@ check useoning it with:
 	if noun is a tronpart or noun is epicer recipe:
 		if second noun is a tronpart or noun is epicer recipe:
 			if player does not have epicer recipe, say "Those two things seem to go together, but you don't have detailed instructions." instead;
-			if number of tronparts carried by player < number of tronparts, say "You have the start of something, but not enough to make a north-tron." instead;
+			if number of off-stage tronparts > 0, say "You have the start of something, but not enough to make a north-tron." instead;
 			if player is not in Fun 'Nuf:
 				say "You might be better served using these things in Fun [']Nuf. Go there?";
 				if the player no-consents, say "OK, but protip: that's where you need to assemble things." instead;
@@ -591,13 +596,13 @@ demo med	gulf lug	cash sac	--	--	true	true	true	Grebeberg	"The Gulf Lug takes th
 TO IDIOT	Revolt Lover	--	--	--	true	true	true	Yelpley	"The Revolt Lover begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Revolt Lover runs away."
 YOB ATTABOY	Sniffins	Dirt Rid	--	--	true	true	false	Yelpley	"Sniffins accepts your gift. His sniffs slowly change from sadness to something more snooty. He thanks you for helping him be too good for you before handing you a Dirt Rid and kicking you out."
 Dirt Rid	reviver	Cave Vac	--	--	true	true	false	Yelpley	"You watch as the Dirt Rid swirls and becomes shinier and much more powerful. A Cave Vac! It will be capable of cleaning...well, somewhere."
-Cave Vac	Tru Yurt	snack cans	--	--	true	true	false	Grebeberg	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe!"
+Cave Vac	Tru Yurt	Exam Axe	--	--	true	true	false	Grebeberg	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe!"
 NULL ILLUN	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me.' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. And if it's simple, well, I need to know when simple stuff works.' The Known Wonk apologizes--it's back to a Tru Yurt for a thought session."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes to look for ... well, something else."
-radar	crag arc	UFO tofu	orc-gone rule	--	true	true	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO as it flies off. It bounces off you. 'O Furor! UFO!' you cry. You look at it and--it's unharmed, and still in a cubic shape. Looks like you got yourself some UFO tofu."
+radar	crag arc	UFO tofu	orc-gone rule	--	true	false	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO as it flies off. It bounces off you. 'O Furor! UFO!' you cry. You look at it and--it's unharmed, and still in a cubic shape. Looks like you got yourself some UFO tofu."
 poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
 poo coop	turf rut	--	coop-full rule	--	true	true	true	Grebeberg	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture. The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG." [af:nail ian/puff up/pull up]
-radar	made dam	eroded ore	--	--	true	true	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow."
+radar	made dam	eroded ore	--	--	true	false	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow."
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 dork rod	tao boat	--	--	--	true	false	false	Grebeberg	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
 dork rod	reifier	taboo bat	--	--	true	true	false	Yelpley	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You will be able to smite a bad-faith pearl-clutcher for sure with one of these."
@@ -613,7 +618,7 @@ DNA band	reifier	DNA hand	--	--	true	true	false	Yelpley	"After considerable goop
 roto motor	DNA hand	bang nab	--	--	true	true	true	Yelpley	"The roto motor fits right in. The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on it, now: BANG NAB. I guess that's what to call it, now. It probably has the dexterity to deal with volatile stuff."
 bang nab	TNT	TNT	--	--	true	true	false	Yelpley	"The Bang Nab walks on its index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course."
 Elan Ale	Sniffins	Gorge Grog	--	--	true	true	false	Yelpley	"Sniffins looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'"
-Eroded Ore	reviver	Ore Zero	--	--	true	true	true	Yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
+Eroded Ore	reviver	Ore Zero	--	--	true	true	false	Yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
 puce cup	dose sod	--	--	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
 puce cup	marge pegram	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley	"You give marge the puce cup. She drinks the dose sod and immediately feels better. 'Well... I have a lot of catching up to do. Can't hang around. Here's some Elan Ale for you, to celebrate how cool you are for helping.'"
@@ -681,12 +686,11 @@ this is the orc-gone rule:
 	the rule fails;
 
 this is the ready-to-test rule:
-	if location of player is Fun 'Nuf, the rule succeeds;
-	if emitted is false:
-		say "You aren't sure how the Yard Ray works, or what it needs to zap people with. Maybe you should review it to figure things out.";
-		the rule fails;
-	say "That seems right, but you should probably go where there aren't many people. Like back to Fun [']Nuf.";
+	if emitted is true, the rule succeeds;
+	say "You aren't sure how the Yard Ray works, or what it needs to zap people with. Maybe you should review it to figure things out.";
 	the rule fails;
+
+[??	say "That seems right, but you should probably go where there aren't many people. Like back to Fun [']Nuf.";]
 
 this is the sod-in-cup rule:
 	if puce cup is soddy, the rule succeeds;
@@ -738,6 +742,8 @@ this is the wear-garb rule:
 
 this is the you-win rule:
 	say "You head off to saner arenas for a while, just to reflect on all you did.";
+	end the story finally;
+	say "1.";
 	the rule succeeds;
 
 chapter failed useons
@@ -818,7 +824,7 @@ carry out packing:
 	if the player has the pact cap, say "You already did.";
 	say "Yes, that's how to get the cap. You are ready to go![paragraph break]'Good job! Here's a set o['] notes to replace that darer ad,' the Flee Elf says. It salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
 	move flee elf to ZeroRez;
-	now Tix Exit is in ZeroRez;
+	now Tix Exit is in Fun 'Nuf;
 	now darer ad is in ZeroRez;
 	now player has set o notes;
 	now player wears the cap;
@@ -909,8 +915,7 @@ carry out emiting:
 	if player is in location of Yuge Guy, say "No...the Yuge Guy needs to be defeated by other means." instead;
 	if Diktat Kid is in ZeroRez, say "You already got rid of the Diktat Kid." instead;
 	if the topic understood matches "noontime":
-		say "BOOM! The yard ray emits too much light for the Diktat Kid to bear. 'Liven evil!' the Kid booms, but it's not enough. The Kid runs off, but not before dropping some X-Ite Tix, which you take.";
-		now player has X-Ite Tix;
+		say "BOOM! The yard ray emits so much light, you immediately have to switch it off. Well, that was a good start. Now you want to make sure you can aim it at something that can be destroyed.";
 		now emitted is true;
 		score-inc; [Dim Mid/emit noontime]
 		the rule succeeds;
@@ -1054,7 +1059,7 @@ nailing is an action applying to one thing.
 
 understand the command "nail" as something new.
 
-understand "nail [something]" as nailing when player is in Worn Row and Ian is in Worn Row.
+understand "nail [something]" as nailing when player is in Mont Nom and Ian is in Mont Nom.
 
 carry out nailing:
 	if Ian is in ZeroRez, say "There's nobody named Elian to nail later in the game, so this isn't an action you need to take any more." instead;
@@ -1353,6 +1358,8 @@ to wear-down (w - a workable):
 	if useleft of w is 1, say "[the w] wheezes emphatically. Hopefully, you won't need to use it too much more.";
 	if machuses is 0:
 		say "[line break]With [list of workables] all destroyed, Work Row shakes a bit more. The machines fall out from a wall, revealing something behind ... a test set. It's big and huge and you can't move it, but who knows what it'll be useful for later?";
+		move test set to Worn Row;
+		now all workables are in ZeroRez;
 
 to decide which number is machuses:
 	let retval be 0;
@@ -1757,7 +1764,7 @@ check taking rep popper:
 	if player has dork rod, say "With the dork rod, you aren't THAT worried about your rep, but you're still worried enough not to take the popper. Maybe you can do a bit better..." instead;
 	if dork rod is not in ZeroRez, say "No way! You're not sure how much rep you have, but taking that rep popper would drop it a notch or more, and the prospect seems too horrible." instead;
 
-[??Yuge Guy rep popper used what's wrong with yopu? I make boring people feel less boring vs you describing how you figured things out and only 26 possibilities really and also some trial and error]
+[??Yuge Guy rep popper used what's wrong with you? I make boring people feel less boring vs you describing how you figured things out and only 26 possibilities really and also some trial and error]
 
 the bomb mob are plural-named people. description is "They're ignoring you, and that's probably for the best."
 
