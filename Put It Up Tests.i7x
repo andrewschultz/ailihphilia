@@ -23,9 +23,9 @@ test part8 with "w/s/pace cap/use troll ort on brag garb/s/s/n/n/w/w/s/s/yak oka
 test part9 with "n/use exam axe on lie veil/n/get bro orb/s/e/e/e/s/w/use dork rod on reifier/use dna band on reifier/use roto motor on dna hand/use eroded ore on reviver/use you buoy on rotator/e/n/n/n/e/use bang nab on tnt/get rep popper/w/s/s/w/w/n/n/use nat's tan on scorn rocs"
 
 test rollup with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9"
-[test rollup with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9/"]
+[test rollup with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9/test part10	"]
 
-test part-last with "w/use rep popper on yuge guy/e/s/s/e/e/e/n/use bro orb on madam/s/w/s/w/use murk rum on yard ray/emit noontime/use yard ray on test set/e/n/w/use tnt on ore zero/n/use me gem on knife fink/use taboo bat on verses rev/use yard ray on diktat kid/s/use x-ite tix on tix exit"
+test part10 with "w/use rep popper on yuge guy/e/s/s/e/e/e/n/use bro orb on madam/s/w/s/w/use murk rum on yard ray/emit noontime/use yard ray on test set/e/n/w/use tnt on ore zero/n/use me gem on knife fink/use taboo bat on verses rev/use yard ray on diktat kid/s/use x-ite tix on tix exit"
 
 Put It Up Tests ends here.
 

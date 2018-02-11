@@ -54,6 +54,10 @@ Odd Do is a region. max-score of Odd Do is 5.
 
 index map with Dirge Grid mapped east of Toll Lot.
 
+chapter for beta testers
+
+in-beta is a truth state that varies.
+
 volume unsorted
 
 section part of a puzzle but not fully linked yet
@@ -326,12 +330,33 @@ carry out verbing:
 	say "[line break]Standard verbs like X (EXAMINE) and LOOK also work.";
 	say "[line break]GT or GO TO lets you go to a room where you've been before.";
 	say "[line break]THINK gives very general hints.";
-	say "[line break]Many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy.";
+	say "[line break]T or TALK TO talks to someone. You don't need to, to win the game, but there you are.";
+	say "[line break]USE (item) ON (item) is frequently used. It replaces a lot of verbs like GIVE or THROW.";
 	say "[line break]AID gives you hints for where you are. ABOUT and CREDITS tell about the game.";
+	say "[line break]Many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy.";
 	if wr-short-note is true and player is in Worn Row and workrow is true, say "[line break]REV, ROT and REI use an item on the reviver, rotator and reifier, respectively.";
+	if in-beta is true:
+		say "[line break]RR lets you try all three items in the Word Row machines. If one nets a point, it goes last.";
+		say "[line break]ENDGAME kicks you to the endgame.";
 	the rule succeeds;
 
 wr-short-note is a truth state that varies.
+
+chapter ting
+
+talktoing is an action applying to one thing.
+
+understand the command "t" as something new.
+understand the command "talk to" as something new.
+
+understand "t [something]" as talktoing.
+understand "talk to [something]" as talktoing.
+
+carry out talktoing:
+	if noun is not a person, say "Talking to people or, at least, animals is your best bet." instead;
+	if noun is Mike Kim, say "Did you find any Stray Arts? I can always use them." instead;
+	say "(fill in here)." instead;
+	the rule succeeds.
 
 chapter drinking
 
@@ -456,14 +481,14 @@ carry out xyzzying:
 
 chapter useing
 
+useoning it with is an action applying to two things.
+
+does the player mean useoning the noun with the noun: it is very unlikely.
+
 understand the command "use" as something new.
 
 understand "use [something] on [something]" as useoning it with.
 understand "use [something] with [something]" as useoning it with.
-
-useoning it with is an action applying to two things.
-
-does the player mean useoning the noun with the noun: it is very unlikely.
 
 to build-the-tron:
 	move north tron to Fun 'Nuf;
@@ -974,7 +999,7 @@ the cash sac is a thing.
 
 chapter scorn rocs
 
-The scorn rocs are scenery in Flu Gulf. "While they're motionless, their stare drives you back. They're fiercely proud and blazingly colored."
+The scorn rocs are plural-named scenery in Flu Gulf. "While they're motionless, their stare drives you back. They're fiercely proud and blazingly colored."
 
 check going west in Flu Gulf when scorn rocs are in Flu Gulf:	say "The scorn rocs remain motionless, but their gaze freezes you as you try to go west." instead;
 
@@ -992,7 +1017,7 @@ Sneer Greens is above Flu Gulf.
 
 printed name of Sneer Greens is "[if Yuge Guy is in sneer greens]Sneer Greens[else]Et Tu Butte[end if]"
 
-understand "et tu butte" and "et/tu/butte" and "et tu" and "et/tu butte" as Sneer Greens when Yuge Guy is is Sneer Greens.
+understand "et tu butte" and "et/tu/butte" and "et tu" and "et/tu butte" as Sneer Greens when Yuge Guy is in Sneer Greens.
 
 after looking in Sneer Greens for the first time:
 	say "The Yuge Guy calls 'BOO! NOOB!' just to reinforce his contempt.";
@@ -1319,9 +1344,10 @@ to say tract-status:
 	else:
 		say "[if number of books in Worn Row is 1]almost empty[else]holding a few books[end if]"
 
-for printing a locale paragraph about a book:
-	say "The tract cart contains [list of books in Worn Row].";
-	now all books are mentioned;
+for printing a locale paragraph about a book (called bk):
+	if bk is not mentioned:
+		say "The tract cart contains [list of books in Worn Row].";
+		now all books are mentioned;
 
 chapter Rob
 
@@ -1566,7 +1592,7 @@ carry out wornrowing:
 
 book Art Xtra
 
-Art Xtra is north of Yawn Way. It is in Yelpley. "The only way out is north."
+Art Xtra is north of Yawn Way. It is in Yelpley. "You can go south or north here."
 
 the trap art is a thing in Art Xtra. "Some trap art sits here. It's free. You might as well take it.". description is "The trap art depicts a bunch of nasty, dirty animals being trapped--it's not a real trap, but maybe it could become one."
 
@@ -1913,7 +1939,7 @@ report taking when player is in pro corp:
 	if number of things in pro corp is 0:
 		say "Pro Corp is now a bald lab.";
 		now bald-lab is true;
-		now printed name of Pro Corp is "Bald Lab"
+		now printed name of Pro Corp is "Bald Lab";
 	else:
 		continue the action;
 
@@ -2281,6 +2307,9 @@ this is the peep-yet rule:
 
 volume beta testing - not for release
 
+when play begins:
+	now in-beta is true;
+
 chapter endgame
 
 endgameing is an action applying to nothing.
@@ -2299,7 +2328,10 @@ carry out endgameing:
 	now Darer Ad is in ZeroRez;
 	now elf is in ZeroRez;
 	now player has pact cap;
+	now player has taboo bat;
+	now player has ME gem;
 	now Tix Exit is in Fun 'Nuf;
+	if player is not in Fun 'Nuf, move player to Fun 'Nuf;
 	the rule succeeds;
 
 chapter rring

@@ -2,7 +2,7 @@ Version 1/171220 of Put It Up Mistakes by Andrew Schultz begins here.
 
 volume Mistakes
 
-to decide whether (mt - a thing) is quicknear:
+to decide whether (mt - a thing) is/are quicknear:
 	if mt is in location of player, yes;
 	if player carries mt, yes;
 	no;
@@ -72,19 +72,25 @@ understand "gnu lung" as a mistake ("The gnu dung smells bad enough without drop
 
 understand "turd rut" as a mistake ("Hmm! Maybe you could fill the rut up with ... something ... to cross it.") when player is in dumb mud and poo coop is not in ZeroRez.
 
-understand "turn rut" as a mistake ("It's too large to redirect[if poo coop is in ZeroRez], and besides, you already have a way across[end if].")
+understand "turn rut" as a mistake ("It's too large to redirect[if poo coop is in ZeroRez], and besides, you already have a way across[end if].") when player is in dumb mud.
 
 book Cold Loc
 
 understand "rife fir" as a mistake ("It's already big enough.") when player is in Cold Loc.
 
+book Flu Gulf
+
+understand "score rocs" as a mistake ("You don't have any witty way to score off them, or steal them, or whatever, and you don't need to.") when scorn rocs are quicknear.
+
+understand "rocs cor" as a mistake ("Your flattery doesn't move the rocs.") when scorn rocs are quicknear.
+
 book Ooze Zoo
 
-understand "eel flee" as a mistake ("Well, you could maybe get one eel to leave, but there are a lot.") when speel eels are quicknear.
+understand "eel flee" as a mistake ("Well, you could maybe get one eel to leave, but there are a lot.") when sleep eels are quicknear.
 
-understand "eel glee" as a mistake ("The eels squirm a bit. I bet they're having fun dreams! Too bad I can't describe them.") when speel eels are quicknear.
+understand "eel glee" as a mistake ("The eels squirm a bit. I bet they're having fun dreams! Too bad I can't describe them.") when sleep eels are quicknear.
 
-understand "sleet eels" as a mistake ("They are alive. Turning them to metal would be cruel.") when speel eels are quicknear.
+understand "sleet eels" as a mistake ("They are alive. Turning them to metal would be cruel.") when sleep eels are quicknear.
 
 book Mont Nom
 
