@@ -16,7 +16,7 @@ test part5 with "s/use yob attaboy on sniffins/use elan ale on sniffins/stand na
 
 test part6 with "word row/get some demos/e/n/e/e/n/n/get all/s/s/w/w/w/w/s/s/e/use some demos on yahoo hay/w/n/n/e/e/n/use straw arts on mike kim/use gate tag on soot tattoos/s/s/w/get null illun/work row/use gold log on rotator/use dirt rid on reviver/e/n/w/w/w/use poo coop on gnu dung/use poo coop on turf rut"
 
-test part7 with "w/use radar on made dam/n/use null illun on known wonk/use cave vac on tru yurt/use el doodle on edits tide/n/use elope pole on kayak/use dork rod on tao boat/s/s/s/use tent net on code doc/use spa maps on code doc/n/e/e/n/e/use spa maps on go-by bog"
+test part7 with "w/use radar on made dam/n/use null illun on known wonk/use moor broom on tru yurt/use el doodle on edits tide/n/use elope pole on kayak/use dork rod on tao boat/s/s/s/use tent net on code doc/use spa maps on code doc/n/e/e/n/e/use spa maps on go-by bog"
 
 test part8 with "w/s/pace cap/use troll ort on brag garb/s/s/n/n/w/w/s/s/yak okay/e/use sage gas on guru rug/w/n/n/e/s/nail ian/use snack cans on ufo tofu/use gift fig on mayo yam"
 

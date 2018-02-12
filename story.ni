@@ -62,15 +62,11 @@ volume unsorted
 
 section part of a puzzle but not fully linked yet
 
-section no precise function yet
-
 The Balsa Slab is a thing.
 
-The DNA band is a thing.
+The Moor Broom is a thing.
 
-The DNA hand is a thing.
-
-The bang nab is a thing.
+section no precise function yet
 
 [?? tame mat would be sort of funny. Where does it go?]
 
@@ -643,7 +639,7 @@ poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	"The gnu dung is sucked tow
 poo coop	turf rut	--	coop-full rule	--	true	true	true	Grebeberg	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture. The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
 radar	made dam	eroded ore	--	--	true	false	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow."
 NULL ILLUN	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me.' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. And if it's simple, well, I need to know when simple stuff works.' The Known Wonk apologizes--it's back to a Tru Yurt for a thought session."
-Cave Vac	Tru Yurt	Exam Axe	--	--	true	true	false	Grebeberg	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe!"
+Moor Broom	Tru Yurt	Exam Axe	--	--	true	true	false	Grebeberg	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe!"
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest."
 dork rod	tao boat	--	--	--	true	false	false	Grebeberg	"The dork rod melds into the Tao Boat. You step aboard. After you leave, you feel much more peaceful."
@@ -1278,7 +1274,13 @@ Yawn Way is east of Fun 'Nuf. It is in Yelpley. "Not much to do here, and it's q
 
 book My Gym
 
-My Gym is south of Yawn Way. It is in Yelpley. "You can go back out south to Yawn Way. There's also passage west."
+My Gym is south of Yawn Way. It is in Yelpley. "You can go back out south to Yawn Way. There's also passage west. Some small sword rows are off in one corner."
+
+the sword rows are scenery in My Gym. "They aren't very big, but they whir a bit as you get near them."
+
+instead of doing something with sword rows:
+	if current action is useoning, continue the action;
+	say "The sword rows are sharp. It's probably only a good idea to USE something on them to cut them down."
 
 chapter Dave
 
@@ -1958,11 +1960,13 @@ chapter gold log
 
 the gold log is a thing in Pro Corp.
 
-chapter DNA band and hand
+chapter DNA band and hand and what's after
 
 The DNA band is a thing in Pro Corp.
 
 The DNA hand is a thing.
+
+The bang nab is a thing.
 
 chapter roto motor
 

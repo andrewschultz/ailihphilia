@@ -234,7 +234,7 @@ USE EL DOODLE ON EDITS TIDE.
 ?Can I clean the Tru Yurt?
 The Dirt Rid doesn't quite do the trick. Not energetic enough.
 USE DIRT RID ON REVIVER.
-USE CAVE VAC ON TRU YURT.
+USE MOOR BROOM ON TRU YURT.
 >>CALCIFIC LAC
 ?What do I do with the Tao Boat?
 It won't let you in unless you have something that shows self-effacement.
@@ -493,7 +493,7 @@ There are 27 total points in Grebeberg.
 1 point if you USE POO COOP ON TURF RUT.
 1 point if you USE RADAR ON MADE DAM.
 1 point if you USE NULL ILLUN ON KNOWN WONK.
-1 point if you USE CAVE VAC ON TRU YURT.
+1 point if you USE MOOR BROOM ON TRU YURT.
 1 point if you USE EL DOODLE ON EDITS TIDE.
 1 point if you USE ELOPE POLE ON KAYAK.
 1 point if you USE DORK ROD ON TAO BOAT.

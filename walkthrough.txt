@@ -244,7 +244,7 @@ We can stop here to make passage to not one, but two, new places.
 We can help the Known Wonk out doubly, now, and even help ourselves a bit.
 
 (+1) >USE NULL ILLUN ON KNOWN WONK
-(+1) >USE CAVE VAC ON TRU YURT
+(+1) >USE MOOR BROOM ON TRU YURT
 (+1) >USE EL DOODLE ON EDITS TIDE
 
 >N

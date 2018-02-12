@@ -369,12 +369,8 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 			<dock index="1" id="29" port="ne" />
 		</line>
 		<room id="144" name="USE YOB ATTABOY ON SNIFFINS" subtitle="" x="864" y="-128" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Gorge Grog" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="145" name="USE DIRT RID ON REVIVER" subtitle="" x="224" y="-256" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="146" name="USE CAVE VAC ON TRU YURT" subtitle="" x="384" y="-256" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<line id="147" name="" description="" flow="oneWay">
-			<dock index="0" id="145" port="e" />
-			<dock index="1" id="146" port="w" />
-		</line>
+		<room id="145" name="USE DIRT RID ON REVIVER" subtitle="" x="-256" y="-128" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="146" name="USE MOOR BROOM ON TRU YURT" subtitle="" x="384" y="-256" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="141" name="" description="" flow="oneWay">
 			<dock index="0" id="46" port="w" />
 			<dock index="1" id="110" port="e" />

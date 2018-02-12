@@ -122,6 +122,8 @@ understand "crop orc" as a mistake ("That attack would boomerang, and not just b
 
 understand "crap arc" as a mistake ("You might cause a mudslide, or worse.") when player is in Toll Lot or player is in Scrap Arcs.
 
+understand "cram arc" as a mistake ("You can't stuff anything in it.") when player is in Scrap Arcs.
+
 understand "crab arc" as a mistake ("That's just what you need, a giant crab coming after you[if cross orc is in Toll Lot], along with the cross orc[end if].") when player is in Toll Lot.
 
 part row 4
