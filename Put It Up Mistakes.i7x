@@ -43,6 +43,10 @@ book Cold Loc
 
 understand "rife fir" as a mistake ("It's already big enough.") when player is in Cold Loc.
 
+understand "cola loc" as a mistake ("You'd be better off with a warmer drink.") when player is in Cold Loc.
+
+understand "colt loc" as a mistake ("No gandered nag appears.") when player is in Cold Loc.
+
 book Apse Spa
 
 book Art Xtra
@@ -56,6 +60,8 @@ understand "yarn ray" as a mistake ("If you want more story, then sorry, this on
 understand "yarg ray" and "yarr ray" as a mistake ("Becoming a pirate at the end? A clever heel turn!") when player has yard ray.
 
 book Gross Org
+
+understand "dent ned" as a mistake ("Less violence, more subtlety.") when ned is quickvis.
 
 part row 3
 
@@ -75,7 +81,11 @@ understand "turd rut" as a mistake ("Hmm! Maybe you could fill the rut up with .
 
 understand "turn rut" as a mistake ("It's too large to redirect[if poo coop is in ZeroRez], and besides, you already have a way across[end if].") when player is in dumb mud.
 
+understand "turnon rut" and "turn on rut" as a mistake ("No innuendo here! The gnu dung[if gnu dung is not in dumb mud] with the poo coop[end if] is about as close as you'll get.") when player is in dumb mud.
+
 book Seer Trees
+
+understand "seer frees" as a mistake ("[if stark rats are in seer trees]It won't be THAT easy[else]You already feel free enough here[end if].") when player is in Seer Trees.
 
 book Fun 'Nuf
 
@@ -110,7 +120,7 @@ book Toll Lot
 
 understand "crop orc" as a mistake ("That attack would boomerang, and not just because this is a palindrome-y game. The orc is lots, lots bigger than you.") when cross orc is quicknear.
 
-understand "crap arc" as a mistake ("You might cause a mudslide, or worse.") when player is in Toll Lot.
+understand "crap arc" as a mistake ("You might cause a mudslide, or worse.") when player is in Toll Lot or player is in Scrap Arcs.
 
 understand "crab arc" as a mistake ("That's just what you need, a giant crab coming after you[if cross orc is in toll lot], along with the cross orc[end if].") when player is in Toll Lot.
 
@@ -152,17 +162,37 @@ book Swept Pews
 
 book Deli Tiled
 
+understand "bon knob" as a mistake ("You don't need to help Sniffins with interior decorating, here.") when player is in Deli Tiled and YOB ATTABOY is in lalaland.
+
 part row 5
 
 book Lair Trial
 
 book Motto Bottom
 
+understand "gurn rug" as a mistake ("It's a guru rug. It's too good to be moved by such a cheap bailout.") when guru rug is quickvis.
+
 book Frush Surf
 
 book Moo Room
 
+understand "moo doom" as a mistake ("Die? I'd...") when player is in moo room.
+
+understand "moo boom" as a mistake ("You hear something strafe farts far away.") when player is in moo room.
+
 book Dope Pod
+
+understand "pod op" as a mistake ("But what sort of op?") when player is in dope pod.
+
+understand "do pod" as a mistake ("But what to do to it? How to change it?") when player is in dope pod.
+
+book Drawl Ward
+
+understand "drawn ward" as a mistake ("The room remains text-based.") when player is in drawl ward.
+
+book Scrap Arcs
+
+understand "scram arcs" as a mistake ("The arcs stay still, but you can just go back east if you want.") when player is in Scrap Arcs.
 
 volume prospective
 
