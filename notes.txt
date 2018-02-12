@@ -4,8 +4,12 @@
 
 # Points: the reifier 3, reviver 3, rotator 3
 
-balsa slab + =
- + yahoo hay = moor broom
+-yetNEW PUZZLES
+balsa slab + sword rows = not-a-baton
+not-a-baton + reifier = taboo bat (replaces the old)
+dork rod + yahoo hay = moor broom
+moor broom + tru-yurt = exam axe (replaces cave vac)
+cave vac + cassettes sac = radar
 
 Scepsis Pecs
 Snooty Toons: Not sure where to put it
@@ -30,8 +34,6 @@ SOME MEMOS: what you start with?
 
 Stray Arts, or something close
 Raft Far: to get away from the Elided Ile
-Balm Lab: secret location you can only visit if lucky?
-EOL Aloe gets people to shut up.
 
 Two-Nowt: said when you ...
 

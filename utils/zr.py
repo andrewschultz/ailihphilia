@@ -24,8 +24,6 @@ if not os.path.exists("story.ni"):
 
 only_test = False
 
-difs = 0
-line_count = 0
 always_adj = defaultdict(bool)
 cap_search = defaultdict(bool)
 regex_detail = defaultdict(str)
@@ -65,8 +63,6 @@ while count < len(sys.argv):
 if not os.path.exists("zr.txt"):
     print("You need a zr.txt in ", os.getcwd(), "or you need to change the project.")
 
-fout = open("story.ni2", "w", newline='\n') # STORY.NI files have unix line endings
-
 with open("zr.txt") as file:
     for line in file:
         if line.startswith('#'): continue
@@ -85,56 +81,66 @@ with open("zr.txt") as file:
 
 cs = cap_search.keys()
 
-with open("story.ni") as file:
-    for line in file:
-        line_count = line_count + 1
-        ll = line
-        if 'use1 entry on' in ll.lower():
-            print("WARNING replacing use1 entry on with use1 entry with at line", line_count)
-            ll = re.sub("use1 entry on", "use1 entry with", ll)
-            difs = difs + 1
-        if 'useoning noun on' in ll.lower():
-            print("WARNING replacing use1 entry on with use1 entry with at line", line_count)
-            ll = re.sub("useoning noun on", "useoning noun with", ll)
-            difs = difs + 1
-        if 'lalaland' in ll.lower():
-            print("WARNING replacing lalaland with ZeroRez at line", line_count)
-            ll = re.sub("lalaland", "ZeroRez", ll)
-            difs = difs + 1
-        if '[ic]' not in ll:
-            for x in cs:
-                if x.lower() in line.lower():
-                    if always_adj[x] or (x.upper() not in line):
-                        ll_old = ll
-                        ll = re.sub(r'\b{:s}\b'.format(regex_detail[x] if x in regex_detail.keys() else x), x, ll, 0, re.IGNORECASE)
-                        if ll != ll_old:
-                            difs = difs + 1
-                            print("Line", line_count, "miscapitalized", x + ":", line.strip())
-        fout.write(ll)
-
-fout.close()
-
-if not cmp("story.ni", "story.ni2"):
-    if difs == 0:
-        print("There are no flagged differences, but story.ni is not story2.ni. This should not happen. Bailing.")
-        exit()
-    print(difs, "differences, copying back over")
-    if only_test:
-        print("Testing differences, so, not copying back over.")
-        system("wm story.ni story.ni2")
-        exit()
-    try:
-        copy("story.ni2", "story.ni")
-    except:
-        print("Couldn't copy back to story.ni.")
-        exit()
-    try:
-        os.remove("story.ni2")
-    except:
-        print("Tried and failed to remove story.ni2.")
-        exit()
-else:
-    if difs:
-        print("Oops! I should be copying back over, but I'm not.")
+def check_source(a):
+    line_count = 0
+    difs = 0
+    b = a + "2"
+    short = re.sub(".*[\\\/]", "", a)
+    fout = open(b, "w", newline='\n') # STORY.NI files have unix line endings
+    with open(a) as file:
+        for line in file:
+            line_count = line_count + 1
+            ll = line
+            if 'use1 entry on' in ll.lower():
+                print("WARNING replacing use1 entry on with use1 entry with at line", line_count)
+                ll = re.sub("use1 entry on", "use1 entry with", ll)
+                difs = difs + 1
+            if 'useoning noun on' in ll.lower():
+                print("WARNING replacing use1 entry on with use1 entry with at line", line_count)
+                ll = re.sub("useoning noun on", "useoning noun with", ll)
+                difs = difs + 1
+            if 'lalaland' in ll.lower():
+                print("WARNING replacing lalaland with ZeroRez at line", line_count)
+                ll = re.sub("lalaland", "ZeroRez", ll)
+                difs = difs + 1
+            if '[ic]' not in ll:
+                for x in cs:
+                    if x.lower() in line.lower():
+                        if always_adj[x] or (x.upper() not in line):
+                            ll_old = ll
+                            ll = re.sub(r'\b{:s}\b'.format(regex_detail[x] if x in regex_detail.keys() else x), x, ll, 0, re.IGNORECASE)
+                            if ll != ll_old:
+                                difs = difs + 1
+                                print("Line", line_count, "of", short, "miscapitalized", x + ":", line.strip())
+            fout.write(ll)
+    fout.close()
+    print(a, b)
+    if not cmp(a, b):
+        if difs == 0:
+            print("There are no flagged differences, but story.ni is not story2.ni. This should not happen. Bailing.")
+            exit()
+        print(difs, "differences, copying back over")
+        if only_test:
+            print("Testing differences, so, not copying back over.")
+            system("wm {:s} {:s}".format(a, b))
+            exit()
+        try:
+            copy(b, a)
+        except:
+            print("Couldn't copy back to story.ni.")
+            exit()
+        try:
+            os.remove(b)
+        except:
+            print("Tried and failed to remove story.ni2.")
+            exit()
     else:
-        print("No differences, no copying back over" + (", so not running diff" if only_test else "") + ".")
+        if difs:
+            print("Oops! I should be copying back over, but I'm not.")
+        else:
+            print("No differences, no copying back over" + (", so not running diff" if only_test else "") + ".")
+
+proj = "put-it-up"
+for x in i7.i7f[proj]:
+    check_source(x)
+
