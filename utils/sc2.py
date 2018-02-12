@@ -57,6 +57,8 @@ invis_points = defaultdict(int)
 invis_region_points = defaultdict(int)
 source_region = defaultdict(str)
 
+test_ary = []
+test_order = defaultdict(int)
 walkthrough_order = defaultdict(int)
 source_cmd_order = defaultdict(int)
 
@@ -70,10 +72,7 @@ def usage():
     print("-h to show hash values")
     exit()
 
-def walkthrough_vs_test_file():
-    test_ary = []
-    wthru_ary = []
-    count = 0
+def read_test_file_order():
     with open(test_file) as file:
         for line in file:
             if not re.search(r"^\[?test part", line): continue
@@ -81,6 +80,13 @@ def walkthrough_vs_test_file():
             cmd_ary = re.sub("\/$", "", qary[1]).split("/")
             for x in cmd_ary:
                 test_ary.append(x)
+    for a in range(0, len(test_ary)):
+        if test_ary[a] not in dupes.keys():
+            test_order[test_ary[a]] = a+1
+
+def walkthrough_vs_test_file():
+    wthru_ary = []
+    count = 0
     with open(main_thru) as file:
         for line in file:
             if '>' not in line: continue
@@ -118,7 +124,6 @@ def walkthrough_vs_test_file():
     if out_dif_string: print(out_dif_string)
 
 def source_table_vs_test_file():
-    test_ary = []
     in_test = defaultdict(bool)
     test_order = defaultdict(int)
     test_file_short = re.sub(".*[\\\/]", "", test_file)
@@ -206,6 +211,9 @@ def source_vs_invisiclues():
     in_summary = False
     this_line = 0
     summary_region = ''
+    last_test = 0
+    ooo_this_region = 0
+    ooo_test = 0
     with open(invis_raw) as file:
         for line in file:
             this_line = this_line + 1
@@ -226,9 +234,13 @@ def source_vs_invisiclues():
                 continue
             if in_summary:
                 if line.startswith('?How do I get all the'):
+                    if ooo_this_region:
+                        print(summary_region, "had", ooo_this_region, "out of order in invisiclues.")
+                        ooo_this_region = 0
                     summary_region = re.sub(".*points for ", "", line.lower().strip())
                     summary_region = re.sub("\?", "", summary_region)
                     # print("Starting region", summary_region)
+                    last_test = 0
                     continue
                 elif line.strip() == ';' or line.startswith('?What is unsorted'):
                     summary_region = ''
@@ -237,6 +249,15 @@ def source_vs_invisiclues():
                     ll = re.sub("^1 point (for|if you) ", "", line.strip())
                     ll = re.sub("\..*", "", ll)
                     ll = re.sub(" [a-z].*", "", ll)
+                    if ll in test_order.keys():
+                        if test_order[ll] < last_test:
+                            print("Out of order", test_order[ll], ll, "in invisiclues point summary.")
+                            ooo_this_region = ooo_this_region + 1
+                            ooo_test = ooo_test + 1
+                        else:
+                            pass
+                            # print(ll, test_order[ll])
+                        last_test = test_order[ll]
                     if ll not in source_region:
                         summary_err = summary_err + 1
                         print("Command", ll, "is in summary but not source. Summary region={:s}.".format(summary_region))
@@ -251,6 +272,8 @@ def source_vs_invisiclues():
                     # print("Found in invisiclues main:", ll)
                     if ll in use_in_invisiclues_main.keys(): print("WARNING line", this_line,"has duplicate command:", ll)
                     use_in_invisiclues_main[ll] = True
+    if ooo_test:
+        print("Test/invisiclues total out of order =", ooo_test)
     for x in list(set(use_in_invisiclues_main.keys()) | set(use_in_source.keys())):
         if x not in use_in_invisiclues_main.keys():
             if source_region[x] == 'odd do': continue
@@ -524,6 +547,8 @@ while argval < len(sys.argv):
         print()
         usage()
     argval = argval + 1
+
+read_test_file_order()
 
 get_stuff_from_source()
 

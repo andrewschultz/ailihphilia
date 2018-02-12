@@ -1,11 +1,13 @@
 # dno.py checks this against source and cleans this up
 
-# XITE TIX lead to A MORE EXCITING REAL WORLD. Well, given all the palindromes you dealt with, you probably should've expected a circular loop to back where you began. But you did have fun. Probably more than if you'd stood around and leveled up a whole bunch. So that's something.
+# XITE TIX lead to A MORE EXCITING REAL WORLD. Well, given all the palindromes you dealt with, you probably should've expected a circular loop to back where you began. But you did have fun. Probably more than if you'd stood around and leveled up a whole bunch. So that's something. / Not even a DVD! / Back Cab
 
 # Points: the reifier 3, reviver 3, rotator 3
 
+Scepsis Pecs
+Snooty Toons: Not sure where to put it
+
 PCP as a joke ending
-Not even a DVD!
 
 Voodoo V = fake clue
 
@@ -19,29 +21,9 @@ Stack Cats
 
 What to do with
 Beating up the villains:
-replace TRUCK CURT with BORE ROB. Rob now guards Worn Row.
-NAIL IAN: add detail that he walks away in shame as his nose picking is exposed.
 DENY NED: he wants to get in an argument or fight, so you get in an argument over whether it's really necessary, and then you say, that wasn't so great, see? He slinks off.
-Rob, Ian, Ned, Dave are minor henchmen.
-2 major henchmen.
-
-Et-Tu Butte
 
 SOME MEMOS: what you start with?
-
-SCORE ROCS
-ROCS COR
-
-Tiled Deli becomes Bon Snob once you give the right book
-
-Tru Yurt is the Known Wonk.
-
-1. use dirt rid on reviver = CAVE VAC. Now that's powerful!
-2. use CAVE VAC on (???) to get a Gift Fig. (Yow!)
-
-3. Ira Bari becomes Sniffins.
-
-psi wisp: chases player from Pro Corp
 
 Stray Arts, or something close
 Raft Far: to get away from the Elided Ile
@@ -376,7 +358,7 @@ Toby Bot
 
 WANT? NAW
 
-Back Cab becomes Race Car
+Back Cab: glad it's not a race car. You don't want or need to get back too quickly. You'll never see this place again. But it was fun.
 
 Dah Chad
 
@@ -862,7 +844,6 @@ slangish signals
 smarty trams
 Smart Rams:Mark Ram
 smooth tooms
-snooty toons
 snorting ignitrons
 sored eros
 soppy gyppos

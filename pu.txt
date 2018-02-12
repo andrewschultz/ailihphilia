@@ -290,7 +290,7 @@ It has a small gig you can put something in.
 What sheets of paper could go in the navy van?
 Most you find are just for you.
 But one has a free something or other. Just, you can't redeem it by yourself.
-PUT PITY TIP IN NAVY VAN.
+USE PITY TIP ON NAVY VAN.
 ?How do I get the TNT from the bomb mob?
 You need an agent to do it for you.
 Do you have the DNA band or DNA hand?
@@ -304,8 +304,6 @@ The net isn't quite stable yet.
 There's a way to make it a bit more stable.
 TEND NET.
 >>MY GYM
-?Can I get the resto poster?
-Yes, once Dave's not in the way.
 ?How do I get around Dave?
 Well, you need to avoid him. Not quite avoid him.
 But do something to him. ????? DAVE.
@@ -438,77 +436,77 @@ Some commands could be made into palindromes, and there are some (hopefully) amu
 There are 10 total points in Dim Mid.
 1 point for PACK CAP.
 1 point for PACE CAP.
-1 point if you USE TNT ON ORE ZERO or any pair of ingredients to create the North-Tron.
 1 point if you USE MURK RUM ON YARD RAY.
-1 point if you USE YARD RAY ON TEST SET.
 1 point if you EMIT NOONTIME.
+1 point if you USE YARD RAY ON TEST SET.
+1 point if you USE TNT ON ORE ZERO or any pair of ingredients to create the North-Tron.
 1 point if you USE ME GEM ON KNIFE FINK.
 1 point if you USE TABOO BAT ON VERSES REV.
 1 point if you USE YARD RAY ON DIKTAT KID.
 1 point if you USE X-ITE TIX ON TIX EXIT
 ?How do I get all the points for Yelpley?
 There are 34 total points in Yelpley.
-1 point if you USE STAMP MATS ON SLATE METALS.
-1 point if you USE PITY TIP ON NAVY VAN.
 1 point if you EVADE DAVE.
-1 point if you DENY NED.
 1 point if you BORE ROB.
+1 point for WORD ROW.
+1 point if you USE TO IDIOT ON REVOLT LOVER.
+1 point if you USE PITY TIP ON NAVY VAN.
 1 point if you TEND NET.
 1 point for WORK ROW.
-1 point for WORD ROW.
-1 point for WORN ROW once the Psi Wisp is nearby.
-1 point if you USE YOB ATTABOY ON SNIFFINS.
-1 point if you USE STINK KNITS ON ROTATOR.
-1 point if you USE GOLD LOG ON ROTATOR.
 1 point if you USE TRAP ART ON REIFIER.
-1 point if you USE DNA BAND ON REIFIER.
-1 point if you USE DORK ROD ON REIFIER.
-1 point if you USE DIRT RID ON REVIVER.
 1 point if you USE DEBT BED ON REVIVER.
-1 point if you USE ERODED ORE ON REVIVER.
-1 point if you USE PUCE CUP ON MARGE PEGRAM.
-1 point if you USE ROTO MOTOR ON DNA HAND.
-1 point if you USE BANG NAB ON TNT.
-1 point if you USE ELAN ALE ON SNIFFINS.
-1 point if you USE YE KEY ON ETAGE GATE.
-1 point if you USE TO IDIOT ON REVOLT LOVER.
 1 point if you PUFF UP with the Spur Ups.
 1 point if you PULL UP in the Emo Dome.
 1 point if you USE PUCE CUP ON LIAR GRAIL.
+1 point if you USE PUCE CUP ON MARGE PEGRAM.
+1 point if you USE STAMP MATS ON SLATE METALS.
 1 point if you USE CASH SAC ON CROSS ORC.
-1 point if you STAND NAT'S.
 1 point if you USE RADAR ON CRAG ARC.
-1 point if you USE GATE TAG ON SOOT TATTOOS.
+1 point if you USE YOB ATTABOY ON SNIFFINS.
+1 point if you USE ELAN ALE ON SNIFFINS.
+1 point if you STAND NAT'S.
+1 point if you DENY NED.
+1 point if you USE YE KEY ON ETAGE GATE.
+1 point for WORN ROW once the Psi Wisp is nearby.
+1 point if you USE STINK KNITS ON ROTATOR.
 1 point if you USE STRAW ARTS ON MIKE KIM.
+1 point if you USE GATE TAG ON SOOT TATTOOS.
+1 point if you USE GOLD LOG ON ROTATOR.
+1 point if you USE DIRT RID ON REVIVER.
+1 point if you USE DORK ROD ON REIFIER.
+1 point if you USE DNA BAND ON REIFIER.
+1 point if you USE ROTO MOTOR ON DNA HAND.
+1 point if you USE ERODED ORE ON REVIVER.
 1 point if you USE YOU BUOY ON ROTATOR.
+1 point if you USE BANG NAB ON TNT.
 1 point if you USE BRO ORB ON MADAM.
 ?How do I get all the points for Grebeberg?
 There are 27 total points in Grebeberg.
-1 point if you NAIL IAN.
-1 point if you USE CAVE VAC ON TRU YURT.
-1 point if you USE ERA FARE ON KING NIK.
-1 point if you USE DEMO MED ON GULF LUG.
-1 point if you USE TENT NET ON CODE DOC.
-1 point if you USE SPA MAPS ON CODE DOC.
-1 point if you USE PUCE CUP ON DOSE SOD.
-1 point if you USE ELOPE POLE ON KAYAK.
-1 point if you USE EL DOODLE ON EDITS TIDE.
 1 point if you USE PARTY TRAP ON STARK RATS.
+1 point if you USE ERA FARE ON KING NIK.
+1 point if you USE STOCK COTS ON SLEEP EELS.
+1 point if you USE PUCE CUP ON PAST SAP. [?? use it on the fir too]
+1 point if you USE PUCE CUP ON DOSE SOD.
+1 point if you USE DEMO MED ON GULF LUG.
+1 point if you USE SOME DEMOS ON YAHOO HAY.
 1 point if you USE POO COOP ON GNU DUNG.
 1 point if you USE POO COOP ON TURF RUT.
-1 point if you USE PUCE CUP ON PAST SAP. [?? use it on the fir too]
 1 point if you USE RADAR ON MADE DAM.
-1 point if you USE GIFT FIG ON MAYO YAM.
-1 point if you USE SNACK CANS ON UFO TOFU.
-1 point if you USE SPA MAPS ON GO-BY BOG.
 1 point if you USE NULL ILLUN ON KNOWN WONK.
+1 point if you USE CAVE VAC ON TRU YURT.
+1 point if you USE EL DOODLE ON EDITS TIDE.
+1 point if you USE ELOPE POLE ON KAYAK.
 1 point if you USE DORK ROD ON TAO BOAT.
+1 point if you USE TENT NET ON CODE DOC.
+1 point if you USE SPA MAPS ON CODE DOC.
+1 point if you USE SPA MAPS ON GO-BY BOG.
 1 point if you USE TROLL ORT ON BRAG GARB. (note: this can be done outside of Grebeberg, but it's part of a Grebeberg puzzle.)
-1 point if you USE STOCK COTS ON SLEEP EELS.
-1 point if you USE EXAM AXE ON LIE VEIL.
-1 point if you USE SOME DEMOS ON YAHOO HAY.
 1 point for YAK OKAY around the Ergot Ogre.
 1 point if you USE SAGE GAS ON GURU RUG.
+1 point if you NAIL IAN.
+1 point if you USE SNACK CANS ON UFO TOFU.
+1 point if you USE GIFT FIG ON MAYO YAM.
+1 point if you USE EXAM AXE ON LIE VEIL.
 1 point if you USE NAT'S TAN ON SCORN ROCS.
 1 point if you USE REP POPPER ON YUGE GUY.
 ?How do I get all the points for Odd Do?
