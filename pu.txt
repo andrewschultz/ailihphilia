@@ -245,7 +245,7 @@ Now that you're all peaceful, you can explore other places.
 ?The Tao Boat caused one of my items to be diminished! What else do I need to do?
 The dork rod no longer seems as cool as it used to.
 You need to make it more subversive.
-USE DORK ROD ON REIFIER.
+USE NOT-A-BATON ON REIFIER.
 ?Can the kayak take me anywhere?
 Yes, but you need something to propel you.
 An oar, or a pole, or something.
@@ -473,7 +473,7 @@ There are 34 total points in Yelpley.
 1 point if you USE GATE TAG ON SOOT TATTOOS.
 1 point if you USE GOLD LOG ON ROTATOR.
 1 point if you USE DIRT RID ON REVIVER.
-1 point if you USE DORK ROD ON REIFIER.
+1 point if you USE NOT-A-BATON ON REIFIER.
 1 point if you USE DNA BAND ON REIFIER.
 1 point if you USE ROTO MOTOR ON DNA HAND.
 1 point if you USE ERODED ORE ON REVIVER.
