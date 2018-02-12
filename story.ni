@@ -50,7 +50,7 @@ Dim Mid is a region. max-score of Dim Mid is 10.
 
 Yelpley is a region. max-score of Yelpley is 34.
 
-Odd Do is a region. max-score of Odd Do is 5.
+Odd Do is a region. max-score of Odd Do is 6.
 
 index map with Dirge Grid mapped east of Toll Lot.
 
@@ -2111,6 +2111,24 @@ to decide whether done-here:
 	if player is in Calcific Lac and dork rod is in ZeroRez, yes;
 	no;
 
+chapter balmlabing
+
+balm-got is a truth state that varies.
+
+balmlabing is an action applying to nothing.
+
+understand the command "balmlab" as something new.
+understand the command "balm lab" as something new.
+
+understand "balm lab" as balmlabing when player is in Pro Corp and number of things in pro corp is 0.
+understand "balmlab" as balmlabing when player is in Pro Corp and number of things in pro corp is 0.
+
+carry out balmlabing:
+	if balm-got is true, say "No double dipping." instead;
+	now balm-got is true;
+	reg-inc Odd Do; [BALM LAB]
+	say "Some EOL Aloe squirts out of the butene tub. You rub it on yourself. You immediately quit running around in circles in your mind, and when a disturbing through pops back up, you sort of say EOL, and it disappears, and it doesn't feel cheesy." instead;
+
 chapter peeping
 
 peeped-yet is a truth state that varies.
@@ -2133,9 +2151,9 @@ chapter pooping
 
 pooping is an action applying to nothing.
 
-understand the commands "boob" and "poop" as something new.
+understand the commands "boob" and "poop" and "pap" as something new.
 
-understand "boob" and "poop" as pooping.
+understand "boob" and "poop" and "pap" as pooping.
 
 poop-boob-yet is a truth state that varies.
 
@@ -2281,11 +2299,16 @@ this is the what-missed rule:
 
 table of potential misses
 funstuff	dorule
-"BOOB or POOP to swear 'right"	pb-yet rule
+"BOOB or POOP or PAP to swear 'right"	pb-yet rule
 "REFER instead of THINK"	refer-yet rule
 "DIAL AID instead of AID"	dial-yet rule
 "SLAM MAMMALS around the eels"	slam-yet rule
 "PEEP instead of looking"	peep-yet rule
+"BALM LAB in the Bald Lab"	balm-yet rule
+
+this is the balm-yet rule:
+	if balm-got is true, the rule succeeds;
+	the rule fails;
 
 this is the dial-yet rule:
 	if dial-yet is true, the rule succeeds;
