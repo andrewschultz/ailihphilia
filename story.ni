@@ -1594,6 +1594,8 @@ book Art Xtra
 
 Art Xtra is north of Yawn Way. It is in Yelpley. "You can go south or north here."
 
+[??mike kim likes the look of your pact cap]
+
 the trap art is a thing in Art Xtra. "Some trap art sits here. It's free. You might as well take it.". description is "The trap art depicts a bunch of nasty, dirty animals being trapped--it's not a real trap, but maybe it could become one."
 
 El Doodle is a thing. "It looks like it could be a map--or something--but it sure could use some paring down."
@@ -1909,19 +1911,19 @@ chapter slate metals
 
 slate metals are scenery in Scrap Arcs. "They aren't leet steel. You could probably carve something out of them, with the right implement(s)."
 
-book Dope Pod
+book Dopy Pod
 
-Dope Pod is west of Drawl Ward. It is in Yelpley.
+Dopy Pod is west of Drawl Ward. It is in Yelpley.
 
 chapter radar
 
-the radar is a thing in Dope Pod.
+the radar is a thing in Dopy Pod.
 
 chapter Demo Med
 
-a Demo Med is an edible thing in Dope Pod. "A demo med sits here, on a pill lip.". description is "You're not sure what it could be. Xanax? Whatever, you feel calmer just looking at it."
+a Demo Med is an edible thing in Dopy Pod. "A demo med sits here, on a pill lip.". description is "You're not sure what it could be. Xanax? Whatever, you feel calmer just looking at it."
 
-the pill lip is scenery in Dope Pod. "A Demo Med rests on the Pill Lip."
+the pill lip is scenery in Dopy Pod. "A Demo Med rests on the Pill Lip."
 
 instead of doing something with pill lip, say "The pill lip is just there to prevent the demo med from getting dirty on the ground."
 

@@ -31,7 +31,7 @@ book Yell Alley
 
 book Pro Corp
 
-understand "dna land" as a mistake ("Biochemistry has its own nuances with symmetry, but we're sticking with something a lot dumber, here.") when dna band is quicknear or dna hand is quicknear.
+understand "dna land" as a mistake ("Biochemistry has its own nuances with symmetry, but we're sticking with something a lot dumber, here.") when DNA band is quicknear or DNA hand is quicknear.
 
 part row 2
 
@@ -61,7 +61,7 @@ understand "yarg ray" and "yarr ray" as a mistake ("Becoming a pirate at the end
 
 book Gross Org
 
-understand "dent ned" as a mistake ("Less violence, more subtlety.") when ned is quickvis.
+understand "dent Ned" as a mistake ("Less violence, more subtlety.") when Ned is quickvis.
 
 part row 3
 
@@ -77,15 +77,15 @@ understand "gnu bung" as a mistake ("Yes, that's where it came from.") when gnu 
 
 understand "gnu lung" as a mistake ("The gnu dung smells bad enough without dropping more internal organs into the mix.") when gnu dung is quicknear.
 
-understand "turd rut" as a mistake ("Hmm! Maybe you could fill the rut up with ... something ... to cross it.") when player is in dumb mud and poo coop is not in ZeroRez.
+understand "turd rut" as a mistake ("Hmm! Maybe you could fill the rut up with ... something ... to cross it.") when player is in Dumb Mud and poo coop is not in ZeroRez.
 
-understand "turn rut" as a mistake ("It's too large to redirect[if poo coop is in ZeroRez], and besides, you already have a way across[end if].") when player is in dumb mud.
+understand "turn rut" as a mistake ("It's too large to redirect[if poo coop is in ZeroRez], and besides, you already have a way across[end if].") when player is in Dumb Mud.
 
-understand "turnon rut" and "turn on rut" as a mistake ("No innuendo here! The gnu dung[if gnu dung is not in dumb mud] with the poo coop[end if] is about as close as you'll get.") when player is in dumb mud.
+understand "turnon rut" and "turn on rut" as a mistake ("No innuendo here! The gnu dung[if gnu dung is not in Dumb Mud] with the poo coop[end if] is about as close as you'll get.") when player is in Dumb Mud.
 
 book Seer Trees
 
-understand "seer frees" as a mistake ("[if stark rats are in seer trees]It won't be THAT easy[else]You already feel free enough here[end if].") when player is in Seer Trees.
+understand "seer frees" as a mistake ("[if stark rats are in Seer Trees]It won't be THAT easy[else]You already feel free enough here[end if].") when player is in Seer Trees.
 
 book Fun 'Nuf
 
@@ -122,7 +122,7 @@ understand "crop orc" as a mistake ("That attack would boomerang, and not just b
 
 understand "crap arc" as a mistake ("You might cause a mudslide, or worse.") when player is in Toll Lot or player is in Scrap Arcs.
 
-understand "crab arc" as a mistake ("That's just what you need, a giant crab coming after you[if cross orc is in toll lot], along with the cross orc[end if].") when player is in Toll Lot.
+understand "crab arc" as a mistake ("That's just what you need, a giant crab coming after you[if cross orc is in Toll Lot], along with the cross orc[end if].") when player is in Toll Lot.
 
 part row 4
 
@@ -146,9 +146,9 @@ book Worn Row
 
 understand "worm row" as a mistake ("Ugh! You don't need to make this place worse.") when player is in Worn Row.
 
-understand "bork rob" as a mistake ("Maybe there is a more nonviolent way to get him to give up.") when Rob is quicknear.
+understand "bork Rob" as a mistake ("Maybe there is a more nonviolent way to get him to give up.") when Rob is quicknear.
 
-understand "borg rob" as a mistake ("He is already assimilated.") when Rob is quicknear.
+understand "borg Rob" as a mistake ("He is already assimilated.") when Rob is quicknear.
 
 chapter dork rod
 
@@ -162,7 +162,7 @@ book Swept Pews
 
 book Deli Tiled
 
-understand "bon knob" as a mistake ("You don't need to help Sniffins with interior decorating, here.") when player is in Deli Tiled and YOB ATTABOY is in lalaland.
+understand "bon knob" as a mistake ("You don't need to help Sniffins with interior decorating, here.") when player is in Deli Tiled and YOB ATTABOY is in ZeroRez.
 
 part row 5
 
@@ -176,19 +176,19 @@ book Frush Surf
 
 book Moo Room
 
-understand "moo doom" as a mistake ("Die? I'd...") when player is in moo room.
+understand "moo doom" as a mistake ("Die? I'd...") when player is in Moo Room.
 
-understand "moo boom" as a mistake ("You hear something strafe farts far away.") when player is in moo room.
+understand "moo boom" as a mistake ("You hear something strafe farts far away.") when player is in Moo Room.
 
-book Dope Pod
+book Dopy Pod
 
-understand "pod op" as a mistake ("But what sort of op?") when player is in dope pod.
+understand "pod op" as a mistake ("But what sort of op?") when player is in Dopy Pod.
 
-understand "do pod" as a mistake ("But what to do to it? How to change it?") when player is in dope pod.
+understand "do pod" as a mistake ("But what to do to it? How to change it?") when player is in Dopy Pod.
 
 book Drawl Ward
 
-understand "drawn ward" as a mistake ("The room remains text-based.") when player is in drawl ward.
+understand "drawn ward" as a mistake ("The room remains text-based.") when player is in Drawl Ward.
 
 book Scrap Arcs
 

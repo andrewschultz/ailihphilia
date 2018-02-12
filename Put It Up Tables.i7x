@@ -488,7 +488,6 @@ randtxt
 "Rise Aesir"
 "Risk Sir"
 "Solo Gigolos"
-"Some Demos"
 "Some Memos"
 "Sore Heros"
 "Sore Zeros"
@@ -593,6 +592,7 @@ table of yessies
 randtxt
 "Hosannas, Oh!"
 "Nod on!"
+"Pep!"
 "Pip, pip!"
 "Plus? Ulp."
 "Wahoo! Haw!"
