@@ -75,6 +75,19 @@ def usage():
     print("-md for maximum difference in walkthrough files. default = 0, which means don't run.")
     exit()
 
+def best_guess(ll):
+    closest_under = "START"
+    closest_over = "END"
+    for x in sorted(test_order.keys(), key=test_order.get):
+        if source_region[x] != source_region[ll]:
+            continue
+        if test_order[x] < test_order[ll]:
+            closest_under = x
+        if test_order[x] > test_order[ll]:
+            closest_over = x
+            break
+    return "between {:s}({:d}) and {:s}({:d})".format(closest_under, test_order[closest_under], closest_over, test_order[closest_over])
+
 def read_test_file_order():
     with open(test_file) as file:
         for line in file:
@@ -267,7 +280,8 @@ def source_vs_invisiclues():
                     ll = re.sub(" [a-z].*", "", ll)
                     if ll in test_order.keys():
                         if test_order[ll] < last_test:
-                            print("Out of order", test_order[ll], ll, "in invisiclues point summary.")
+                            print("Out of order", test_order[ll], ll, "in invisiclues point summary region", source_region[ll])
+                            print("        Best guess:", best_guess(ll))
                             ooo_this_region = ooo_this_region + 1
                             ooo_test = ooo_test + 1
                         else:
@@ -290,7 +304,6 @@ def source_vs_invisiclues():
                     use_in_invisiclues_main[ll] = True
     if ooo_test:
         print("Test/invisiclues total out of order =", ooo_test)
-        print(','.join(sorted(test_order.keys(),key=lambda x:(source_region[x], test_order[x]))))
     for x in list(set(use_in_invisiclues_main.keys()) | set(use_in_source.keys())):
         if x not in use_in_invisiclues_main.keys():
             if source_region[x] == 'odd do': continue
