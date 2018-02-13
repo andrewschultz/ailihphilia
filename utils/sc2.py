@@ -191,7 +191,7 @@ def bonus_mistake_check():
     if count:
         print(count, "total error" + ("" if count == 1 else "s"))
     else:
-        print("No 'understand/mistake' positioning errors.")
+        print("No 'understand as a mistake' errors in source. Trivial test passed.")
 
 def detect_region(a, b):
     if '[' not in a:

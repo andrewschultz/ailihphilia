@@ -38,6 +38,8 @@ a thing can be drinkable. a thing is usually not drinkable.
 
 an ingredient is a kind of thing. an ingredient is usually edible. an ingredient can be solid or liquid.
 
+[?? rejig this in inventory]
+
 the description of a room is usually "[if number of viable directions is 1]An exit leads[else]Exits lead[end if] [list of viable directions]. NOTE: I need to change this generic text."
 
 chapter region and room stuff
@@ -88,7 +90,7 @@ instead of doing something with state tats:
 
 Ye Key is a thing.
 
-the brag garb is a thing.
+the brag garb is a proper-named thing.
 
 section ingredients
 
@@ -534,7 +536,7 @@ check useoning it with:
 			now wr-short-note is true;
 	if second noun is a workable and useleft of second noun is 0, say "No point. The [second noun] is broken." instead;
 	if noun is an ingredient and second noun is an ingredient:
-		chef noun and second noun;
+		chef noun and second noun instead;
 	repeat through table of cantuse:
 		if noun is use1 entry or second noun is use1 entry, say "[babble entry][line break]" instead;
 	if noun is a person, say "[one of]You're not any good at using other people. In fact, if you tried, they'd wind up using YOU. Plus you don't want to be, really. There's another way. So, no[or]Using people is out[stopping]. Maybe you could use something on a person, though." instead;
@@ -636,10 +638,11 @@ YOB ATTABOY	Sniffins	Dirt Rid	--	--	true	true	false	Yelpley	"Sniffins accepts yo
 Elan Ale	Sniffins	Gorge Grog	--	--	true	true	false	Yelpley	"Sniffins looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'" [af:stand nat's/deny Ned]
 Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again. A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it." [af:Worn Row]
 stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
-SOME DEMOS	yahoo hay	straw arts	--	--	true	false	true	Grebeberg	"With the help of SOME DEMOS, you manage to rejig the hay into something more aesthetically pleasing: straw arts!"
+SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	false	false	Grebeberg	"With the help of SOME DEMOS, you manage to rejig the hay into something more aesthetically pleasing: straw arts!"
 straw arts	Mike Kim	soot tattoos	--	--	true	true	false	Yelpley	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
 gate tag	soot tattoos	state tats	--	--	true	true	true	Yelpley	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
+dork rod	yahoo hay	moor broom	--	hay-gone rule	true	false	false	Grebeberg	"You stick some strands of yahoo hay into the damaged end of the dork rod. It's now a moor broom!"
 Dirt Rid	reviver	Cave Vac	--	--	true	true	false	Yelpley	"You watch as the Dirt Rid swirls and becomes shinier and much more powerful. A Cave Vac! It will be capable of cleaning...well, somewhere."
 Cave Vac	cassettes sac	radar	--	--	true	true	true	Yelpley	"The Cave Vac has the power to clean up the Dirt Rid, though it chokes and sputters at the end of the effort. And while a lot of the cassettes are beyond repair, there's something at the very bottom.[paragraph break]Wow! Radar![paragraph break]You hear noises from the pod, as a hidden robot appears and whisks the garbage away. That's pretty slick! Looking back, the pod doesn't seem so dopy any more, between the Demo Med's help and how you're sure the radar will help."
 poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
@@ -653,7 +656,7 @@ dork rod	tao boat	--	--	--	true	false	false	Grebeberg	"The dork rod melds into t
 tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Say! Thanks! I appreciate that. Let me know if I can share some knowledge in return."
 spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
 spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
-troll ort	brag garb	--	--	--	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. It's now an entirely different smell from the Stink Knits, but a much more edible one. You guess." [b4:pace cap] [af:yak okay]
+troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. It's now an entirely different smell from the Stink Knits, but a much more edible one. You guess." [b4:pace cap] [af:yak okay]
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	"The sword rows cut into the balsa slab, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far."
@@ -736,9 +739,21 @@ section post-use rules
 
 [please add alphabetically]
 
+this is the chase-in-zoo rule:
+	if location of player is Frush Surf, start-chase Kayo Yak;
+	the rule succeeds;
+
 this is the empty-cup rule:
 	now puce cup is empty;
 	if Marge Pegram is in ZeroRez and liar grail is in ZeroRez, say "You probably don't need the puce cup any more.";
+	the rule succeeds;
+
+this is the hay-gone rule:
+	if SOME DEMOS is in ZeroRez and dork rod is in ZeroRez:
+		say "You used up all the hay.";
+		now yahoo hay is in ZeroRez;
+	else:
+		say "There's still some hay (yah!) left over for another creative project.";
 	the rule succeeds;
 
 this is the maps-explain rule:
@@ -1276,7 +1291,7 @@ Go-By Bog is scenery in Apse Spa.
 
 chapter sage gas
 
-the sage gas is a thing. [It's found in Apse Spa, but it is not in Apse Spa.]
+some sage gas is a thing. [It's found in Apse Spa, but it is not in Apse Spa.]
 
 part Yelpley region
 

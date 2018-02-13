@@ -5,9 +5,9 @@
 # Points: the reifier 3, reviver 3, rotator 3
 
 NEW PUZZLES
-balsa slab + sword rows = not-a-baton
-not-a-baton + reifier = taboo bat (replaces the old)
-dork rod + yahoo hay = moor broom
+# balsa slab + sword rows = not-a-baton
+# not-a-baton + reifier = taboo bat (replaces the old)
+# dork rod + yahoo hay = moor broom
 # moor broom + tru-yurt = exam axe (replaces cave vac)
 # cave vac + cassettes sac = radar
 
@@ -577,8 +577,6 @@ none xenon
 noises ion
 noose soon: a taunt for you
 nome lemon
-not a gigaton
-not-a-baton
 noo cocoon
 noveleses elevon
 nongame magnon
@@ -622,7 +620,6 @@ plugs gulp
 porch crop: moved to somewhere else?
 possesses sop
 posts op
-po bop
 po hop
 pomp mop
 posh sop
