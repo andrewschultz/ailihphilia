@@ -257,6 +257,12 @@ to decide whether the action is procedural: [aip]
 	if listening, yes;
 	no;
 
+to decide whether the action is pro-and-use: [aip2]
+	if useoning, yes;
+	if the action is procedural, yes;
+	no;
+	no;
+
 chapter refering / thinking
 
 refer-bonus is a truth state that varies.
@@ -869,18 +875,17 @@ carry out paceing:
 	if kayo yak is in ZeroRez, say "You had enough high-speed fun for one game." instead;
 	if pact cap is in Fun 'Nuf, say "That'll work later, but you need something a little different to actually TAKE the pact cap." instead;
 	if cap-pace is true, say "It's already a pace cap." instead;
+	if mrlp is Grebeberg, now cap-pace is whether or not cap-pace is true;
 	if cap-ever-pace is false:
 		score-inc; [Dim Mid/pace cap]
 		now cap-ever-pace is true;
 		say "[if mrlp is not Grebeberg]You realize it can sort of be a pace cap, too, but there isn't enough open space to run around productively for too long.[else]You suddenly feel [pace-of]![end if]";
-		if mrlp is Grebeberg, now cap-pace is whether or not cap-pace is true;
 	else:
 		say "You suddenly feel [pace-of].";
-		now cap-pace is whether or not cap-pace is true;
 	the rule succeeds;
 
 to say pace-of:
-	say "[if cap-pace is true]swifter[else]slower[end if]"
+	say "[if cap-pace is true]full of deep speed[else]slower[end if]"
 
 check going to Fun 'Nuf:
 	if cap-pace is true, say "You feel like you can slow down a bit. You adjust the pace cap back to a pact cap.";
@@ -1042,8 +1047,7 @@ check going north in Dumb Mud:
 	if lie veil is in Dumb Mud, say "As you touch the lie veil, you shake your head. No. You don't really want or need to explore north. Surely there's some better place to be? Perhaps you're not 100% prepared for the lie veil's thought provoking paradoxes, and it's doing you a favor pushing you back? You try to walk further north, but somehow you wind up walking back south." instead;
 
 instead of doing something with gnu dung:
-	if action is procedural, continue the action;
-	if current action is useoning, continue the action;
+	if action is pro-and-use, continue the action;
 	say "Eewee! (You probably want to deal with the gnu dung indirectly.)"
 
 chapter turf rut
@@ -1281,7 +1285,7 @@ My Gym is south of Yawn Way. It is in Yelpley. "You can go back out south to Yaw
 the sword rows are scenery in My Gym. "They aren't very big, but they whir a bit as you get near them."
 
 instead of doing something with sword rows:
-	if current action is useoning, continue the action;
+	if action is pro-and-use, continue the action;
 	say "The sword rows are sharp. It's probably only a good idea to USE something on them to cut them down."
 
 chapter Dave
@@ -1918,6 +1922,14 @@ slate metals are scenery in Scrap Arcs. "They aren't leet steel. You could proba
 book Dopy Pod
 
 Dopy Pod is west of Drawl Ward. It is in Yelpley.
+
+chapter cassettes sac
+
+the cassettes sac is a thing in Dopy Pod. "A rather large cassettes sac sits here. It's too dirty to pick up."
+
+instead of doing something with cassettes sac:
+	if action is pro-and-use, continue the action;
+	say "The cassettes sac is too messy to do anything with. You need to find a way to clean it up."
 
 chapter radar
 

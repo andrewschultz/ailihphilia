@@ -574,7 +574,9 @@ randtxt
 
 table of waittxt
 randtxt
+"Camp, mac!"
 "Deed, deed, deed!"
+"Def['] faffed!"
 "Don't nod!"
 "Gall! Lag!"
 "GO, dog!"

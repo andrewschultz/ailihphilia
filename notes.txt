@@ -8,7 +8,7 @@
 balsa slab + sword rows = not-a-baton
 not-a-baton + reifier = taboo bat (replaces the old)
 dork rod + yahoo hay = moor broom
-moor broom + tru-yurt = exam axe (replaces cave vac)
+# moor broom + tru-yurt = exam axe (replaces cave vac)
 cave vac + cassettes sac = radar
 
 Scepsis Pecs
@@ -164,18 +164,13 @@ bunk nub
 bust sub
 burdened? Rub
 burs rub
-butene tub
 busy sub
-cassettes sac
-Camp, mac!
 Cigar? Tragic!
 Cito, Idiotic
 City Tic: everyone develops one
 Colby Bloc
 Cramp Marc
 Crank Narc
-deep speed
-def faffed
 
 dev reserved
 defy fed

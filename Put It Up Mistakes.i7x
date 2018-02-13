@@ -61,7 +61,7 @@ understand "yarg ray" and "yarr ray" as a mistake ("Becoming a pirate at the end
 
 book Gross Org
 
-understand "dent Ned" as a mistake ("Less violence, more subtlety.") when Ned is quickvis.
+understand "dent Ned" as a mistake ("Less violence, more subtlety.") when Ned is quicknear.
 
 part row 3
 
@@ -172,7 +172,7 @@ book Lair Trial
 
 book Motto Bottom
 
-understand "gurn rug" as a mistake ("It's a guru rug. It's too good to be moved by such a cheap bailout.") when guru rug is quickvis.
+understand "gurn rug" as a mistake ("It's a guru rug. It's too good to be moved by such a cheap bailout.") when guru rug is quicknear.
 
 book Frush Surf
 

@@ -86,8 +86,8 @@ randtxt
 
 table of waittxt
 randtxt
+"Camp, mac!"
 "Deed, deed, deed!"
-"Don't nod!"
 
 table of yessies
 randtxt
