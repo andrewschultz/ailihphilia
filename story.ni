@@ -66,10 +66,6 @@ section part of a puzzle but not fully linked yet
 
 The not-a-baton is a thing.
 
-The Moor Broom is a thing.
-
-The Enact Cane is a thing.
-
 The roto motor is a thing.
 
 section no precise function yet
@@ -289,11 +285,31 @@ instead of thinking:
 
 chapter inventory
 
+check taking inventory when Dave-evade is true:
+	now all things enclosed by the player are marked for listing;
+	now all ingredients are unmarked for listing;
+	now all tronparts are unmarked for listing;
+	now all things worn by the player are unmarked for listing;
+	say "[if number of things carried by player > 7]Your scepsis pecs help you carry a lot of things, though you're suspicious and unclear as to how.[else]'Met item' list:[line break][end if]";
+	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
+	if number of ingredients carried by player > 0, say "Food found: [a list of ingredients carried by player].";
+	if number of things worn by player > 0, say "You are wearing: [a list of things worn by player].";
+	if number of tronparts carried by player > 0, say "North-tron parts found: [the list of tronparts carried by player][unless martini tram is off-stage]. The martini tram is in Fun [']Nuf, too[end if].";
+	the rule succeeds;
+
 after printing the name of a tronpart while taking inventory: if player has epicer recipe, say " (recipe item)".
 
 after printing the name of yard ray while taking inventory: say " ([unless murk rum is in ZeroRez]un[end if]charged)".
 
 after printing the name of spa maps while taking inventory: say "([if maps-explained is true]deciphered[else]indecipherable[end if])".
+
+after printing the name of the puce cup while taking inventory:
+	if puce cup is sappy, say " (full of past sap)";
+	if puce cup is soddy, say " (full of dose sod)";
+	continue the action;
+
+after printing the name of the radar while taking inventory:
+	unless eroded ore is off-stage and UFO tofu is off-stage, say " (damaged)"
 
 chapter abouting
 
@@ -501,7 +517,8 @@ understand "use [something] with [something]" as useoning it with.
 to build-the-tron:
 	move north tron to Fun 'Nuf;
 	now all tronparts are in ZeroRez;
-	say "You build the north tron with the instructions from the epicer recipe. It points north and blasts a hole with a huge tron snort before collapsing into uselessness. You must be close now!";
+	say "You build the north tron with the instructions from the epicer recipe. It points north and blasts a hole with a huge tron snort before collapsing into uselessness. You tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
+	now epicer recipe is in ZeroRez;
 	now Dirge Grid is mapped north of Fun 'Nuf;
 	now Fun 'Nuf is mapped south of Dirge Grid;
 	score-inc; [Dim Mid/USE TNT ON ORE ZERO]
@@ -656,7 +673,7 @@ NULL ILLUN	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins t
 Moor Broom	Tru Yurt	Exam Axe	--	--	true	true	false	Grebeberg	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe!"
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest. 'Raft far!' they call as you sail away. The buoy helps you float the last bit to Calcific Lac, as the raft returns."
-dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	"The dork rod melds into the Tao Boat. You step aboard the Tao Boat. As you do, the dork rod shatters and re-forms into ... an enact-cane. You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
+dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
 tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Say! Thanks! I appreciate that. Let me know if I can share some knowledge in return."
 spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
 spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
@@ -761,7 +778,7 @@ this is the hay-gone rule:
 	the rule succeeds;
 
 this is the kid-left rule:
-	if Verses Rev is in ZeroRez and Knife Fink is in zero rez: say "Two-nowt, you muse to yourself.";
+	if Verses Rev is in ZeroRez and Knife Fink is in ZeroRez, say "Two-nowt, you muse to yourself.";
 	the rule succeeds;
 
 this is the maps-explain rule:
@@ -779,6 +796,7 @@ this is the radar-blink rule:
 	else:
 		say "Between the UFO tofu dropped on the radar and the eroded ore getting too close to it, the radar splits open. A roto motor falls out. You take it.";
 		now player has roto motor;
+		now radar is in ZeroRez;
 	the rule succeeds;
 
 this is the sap-to-cup rule:
@@ -803,7 +821,7 @@ this is the wear-garb rule:
 
 this is the you-win rule:
 	say "You head off to saner arenas for a while, just to reflect on all you did. You consider writing a book. What to call it? Hmm, that's it. SOME MEMOS.";
-	end the story finally;
+	end the story finally saying "Darn! Rad!";
 	say "(this needs to be a lot better. I need to look through my notes more carefully.)";
 	the rule succeeds;
 
@@ -1199,6 +1217,10 @@ chapter straw arts
 
 the straw arts are a plural-named thing. description is "Whatever they are, you made them, and you hope it expresses something or other."
 
+chapter moor broom
+
+the moor broom is a thing.
+
 book Mire Rim
 
 Mire Rim is west of Dumb Mud. It is in Grebeberg. "A made dam blocks your way west. You can go north, south and east here."
@@ -1281,6 +1303,10 @@ chapter kayak
 
 The kayak is scenery in Calcific Lac. "It's, well, just a kayak. It doesn't have anything to steer it with, though. Maybe you have something, or you could find something."
 
+instead of doing something with kayak when elope pole is in ZeroRez: [??use X on kayak]
+	if action is procedural, continue the action;
+	say "The kayak has served its purpose."
+
 chapter tao boat
 
 The Tao Boat is scenery in Calcific Lac.
@@ -1288,6 +1314,10 @@ The Tao Boat is scenery in Calcific Lac.
 chapter dork rod
 
 The dork rod is a thing. description is "It's kind of neat and quirky, but it's not shiny enough to be the famed Dorada Rod."
+
+chapter enact cane
+
+The Enact Cane is a thing.
 
 chapter taboo bat
 
@@ -1351,11 +1381,11 @@ understand "evade [something]" as evadeing.
 does the player mean evadeing Dave: it is very likely.
 
 Dave-evade is a truth state that varies.
-
+[?? try doing something with the room name]
 carry out evadeing:
 	if noun is Dave:
 		if Dave-evade is true, say "You don't need to evade Dave again.";
-		say "You evade Dave! Deked! Deked!";
+		say "You evade Dave! Deked! Deked![paragraph break]Behind Dave, you find a pair of scepsis pecs. You're suspicious they actually work, but as you test them out, a surge goes through you. After a few seconds, you've half forgotten you have them.";
 		now Dave is in ZeroRez;
 		now Dave-evade is true;
 		score-inc; [Yelpley/evade dave]
@@ -1713,11 +1743,6 @@ Ned is a person in Gross Org. "'Ned's Den!' someone booms. You're guessing their
 
 The Puce Cup is a thing in Emo Dome. description is "It's, well, puce, and it seems sturdy enough. It's currently [if puce cup is empty]empty[else if puce cup is sappy]full of Past Sap from the rift fir in Cold Loc[else]full of Dose Sod from the Apse Spa[end if]."
 
-after printing the name of the puce cup while taking inventory:
-	if puce cup is sappy, say " (full of past sap)";
-	if puce cup is soddy, say " (full of dose sod)";
-	continue the action;
-
 the puce cup can be empty, sappy or soddy. the puce cup is empty.
 
 chapter Gate Tag
@@ -1736,7 +1761,7 @@ does the player mean denying Ned: it is likely.
 
 carry out denying:
 	if noun is Ned:
-		say "Bam! Bye bye Ned.";
+		say "Ned wants to get in an argument or fight, so you get in an argument over whether it's really necessary, and then you say, that wasn't so great, see? He slinks off, defeated.";
 		now Ned is in ZeroRez;
 		score-inc; [Yelpley/deny Ned]
 	the rule succeeds;
@@ -1808,11 +1833,11 @@ the ten level net is scenery in Trapeze Part. "[if epicer recipe is off-stage]It
 
 the tent net is a thing.
 
-the epicer recipe is a thing. description is "You've seen recipes before, but this is a big interesting one! It describes how to make a north-tron, which will get you north of Fun [']Nuf.[paragraph break][tronpartlist]"
+the epicer recipe is a thing. description is "You've seen recipes before, but this is a big interesting one! It describes how to make a north-tron, which will get you north of Fun [']Nuf.[paragraph break][tronpartlist][run paragraph on]"
 
 to say tronpartlist:
 	repeat with tp running through tronparts:
-		say "--[tp][if player has tp] (got it!)[end if][line break]"
+		say "--[tp][if player has tp or tp is in Fun 'Nuf] (got it!)[end if][line break]"
 
 chapter tending
 
@@ -1922,8 +1947,9 @@ check going to Emo Dome:
 		now emo-dir is noun;
 
 check going north in Emo Dome:
-	unless player has state tats, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a voice: 'DIFF-ID?'[paragraph break]You don't have anything identifying yourself. 'Oh, who? Go jog!' the voice continues. You think, hang? Nah." instead;
-	if Red Roses Order is unvisited, say "You step into what may be your final challenge in Yelpley..."
+	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a voice: 'DIFF-ID?'[paragraph break]You don't have anything identifying yourself. 'Oh, who? Go jog!' the voice continues. You think, hang? Nah." instead;
+	if Bro Orb is off-stage, say "You don't feel prepared enough to enter the Red Roses Order, yet." instead;
+	say "You make sure your state tats are visible for scanning. They are accepted and promptly rub off.[paragraph break]You step into what may be your final challenge in Yelpley..."
 
 book Red Roses Order
 
@@ -1934,6 +1960,8 @@ Red Roses Order is above Emo Dome.
 Madam is a person in Red Roses Order.
 
 understand "la gal" and "la/gal" as Madam.
+
+check going south in Red Roses Order: say "No way! You are locked in mortal combat! Plus, there's really only one thing to do, here." instead;
 
 book Swept Pews
 
@@ -1966,7 +1994,7 @@ Scrap Arcs is east of Drawl Ward. It is in Yelpley.
 
 chapter slate metals
 
-slate metals are scenery in Scrap Arcs. "They aren't leet steel. You could probably carve something out of them, with the right implement(s)."
+slate metals are scenery in Scrap Arcs. "You could probably carve something out of them, with the right implement(s). Maybe not steel fleets, but something useful."
 
 book Dopy Pod
 

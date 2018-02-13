@@ -21,8 +21,6 @@ For the tope depot! Sniffins, uh, sniffs at you.
 
 Stack Cats
 
-DENY NED: he wants to get in an argument or fight, so you get in an argument over whether it's really necessary, and then you say, that wasn't so great, see? He slinks off.
-
 Falses-Laf
 
 if you can't quite do something but figured out the command for later, this should be printed.
@@ -177,7 +175,6 @@ ecarte retrace
 egresses serge
 egoless eloge
 exult luxe: where to get extra riches
-gazelle zag
 Gaters Retag
 gemini meg
 
@@ -855,7 +852,6 @@ stork rots
 Steely leets:weird stuff
 stile lits
 sterol florets
-stave vats
 stress asserts
 stride dirts
 stir grits
