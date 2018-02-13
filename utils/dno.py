@@ -17,6 +17,9 @@ from shutil import copy
 pals = defaultdict(int)
 twice = defaultdict(bool)
 
+# constants
+on_off = [ "off", "on" ]
+
 # options
 modify_notes = True
 twice_okay = False
@@ -32,7 +35,9 @@ colons_max = 0
 colons_start = 0
 read_last = 0
 comments_too = False
+list_sections = False
 
+# variables
 colon_string = ""
 
 def modify_notes(s):
@@ -77,6 +82,7 @@ def usage():
     print("-c = show lines with colons in them, which are likely to be good ideas to work on. On which to work. (-co)")
     print("  You can also specify a number, but not as a separate argument. (Also, -q = -c10)")
     print("-a = count all lines with colons, even commented")
+    print("-ls/-sl = list sections, -ln/-nl = don't, default =", on_off[list_sections])
     print("-?/-u = this usage statement")
     exit()
 
@@ -102,6 +108,8 @@ def check_notes(s):
     xtranote = 0
     colons = 0
     seen = 0
+    this_section = ""
+    last_noted_section = ""
     notes_file_to_read = "c:/games/inform/{:s}.inform/source/notes.txt".format(s)
     source_files = [ "c:/games/inform/{:s}.inform/source/story.ni".format(s),
       "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/{:s} mistakes.i7x".format(re.sub("-", " ", s)),
@@ -115,6 +123,9 @@ def check_notes(s):
         for line in file:
             line_count = line_count + 1
             ll = line.strip()
+            if ll.startswith("="):
+                this_section = ll
+                continue
             if ll.startswith('#'):
                 if not comments_too: continue
                 ll = re.sub("^#+", "", ll)
@@ -125,6 +136,9 @@ def check_notes(s):
                 if read_colons:
                     colons = colons + 1
                     if (colons_max == 0 and colons_start == 0) or (colons_max == 0 and colons >= colons_start) or (colons >= colons_start and colons <= colons_max + colons_start):
+                        if list_sections and this_section != last_noted_section:
+                            colon_string = colon_string + this_section + "\n"
+                            last_noted_section = this_section
                         colon_string = colon_string + str(colons) + ": " + line
                         seen = seen + 1
             if pally(ll):
@@ -236,6 +250,10 @@ while count < len(sys.argv):
         verbose = True
     elif l == 'f':
         open_first = True
+    elif l == 'ls' or l == 'sl':
+        list_sections = True
+    elif l == 'nl' or l == 'ln':
+        list_sections = False
     elif l == 'q':
         read_colons = True
         colons_max = 10

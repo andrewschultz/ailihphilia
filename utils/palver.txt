@@ -25,6 +25,8 @@ s:the machine message rules
 s:every turn
 s:description
 s:the puce cup can be
+s:report
+s:a person can be
 # ignore-includes
 i:rule:
 i:is an activity
@@ -32,6 +34,7 @@ i:are cappy
 i:rule is listed
 i:is a kind
 i:is a truth state
+i:is a person that varies
 i:is a direction
 i:is a number
 i:is an action
@@ -39,5 +42,5 @@ i:rule for printing
 i:are an object-based rulebook
 i:the description of a room is usually
 # regexes
-r:^(madam sniffins|dave|ian|ned|curt) is a person
+r:^(sniffins|madam|dave|ian|ned|curt|rob) is a person
 ;

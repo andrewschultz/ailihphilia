@@ -1,17 +1,27 @@
 # dno.py checks this against source and cleans this up
 
+==================stuff to include for sure
+
 # XITE TIX lead to A MORE EXCITING REAL WORLD. Well, given all the palindromes you dealt with, you probably should've expected a circular loop to back where you began. But you did have fun. Probably more than if you'd stood around and leveled up a whole bunch. So that's something. / Not even a DVD! / Back Cab
 
 # Points: the reifier 3, reviver 3, rotator 3
 
 Leet steel: what Knife Fink has
 Part strap: what rev has
+Erupt, Pure:Verses Rev?
 waster fretsaw: one of many items on the Dirge Grid at the end
 
 Scepsis Pecs: helps you carry a ton of stuff.
 Snooty Toons: Not sure where to put it
 
 PCP as a joke ending
+
+===================done in story but need proofreading
+
+KAYO YAK: when wearing the brag garb, you use the troll ort on it. That makes the yak chase you. It's definitely not a tao goat! (follow it to the tao boat) then have it follow you to the Ergot Ogre. They get in a fight. Both are disappeared.
+
+
+===================features/weird/not quite sure
 
 Voodoo V = fake clue
 
@@ -63,8 +73,6 @@ BOOK: Drawn Inward?
 
 Ailihphilia: It is what you think, you. What, is it?
 
-"Believe Me. Adore Me. Believe!"
-
 "Is it crazy how saying sentences backwards makes backwards sentences saying how crazy it is?"
 Lid off a daffodil.
 Yreka Bakery
@@ -78,9 +86,12 @@ El Live Ville: another? Maybe a big fight over it
 
 A six is a six is a...
 
-# KAYO YAK: when wearing the brag garb, you use the troll ort on it. That makes the yak chase you. It's definitely not a tao goat! (follow it to the tao boat) then have it follow you to the Ergot Ogre. They get in a fight. Both are disappeared.
-
 Yo Banana Boy
+
+======================DWELT LEWD stuff.
+
+start:Dennis, Nell, Edna, Leon, Nedra, Anita, Rolf, Nora, Alice, Carol, Leo, Jane, Reed, Dena
+end:Ned, Dee, Rena, Joel, Lora, Cecil, Aaron, Flora, Tina, Arden, Noel, and Ellen sinned.
 
 "Dennis, Nell, Edna, Leon, Nedra, Anita, Rolf, Nora, Alice, Carol, Leo, Jane, Reed, Dena, Dale, Basil, Rae, Penny, Lana, Dave, Denny, Lena, Ida, Bernadette, Ben, Ray, Lila, Nina, Jo, Ira, Mara, Sara, Mario, Jan, Ina, Lily, Arne, Bette, Dan, Reba, Diane, Lynn, Ed, Eva, Dana, Lynne, Pearl, Isabel, Ada, Ned, Dee, Rena, Joel, Lora, Cecil, Aaron, Flora, Tina, Arden, Noel, and Ellen sinned."
 
@@ -97,7 +108,6 @@ If I Had a Hi-Fi
 
 No, it can! Action!
 
-Dennis and Edna sinned.  : Porn
 So many dynamos.
 Race fast, safe car.
 
@@ -130,8 +140,6 @@ Hank? Nah
 Rise, Sir!
 
 rep-a-paper
-
-The Bomb Mob carries TNT. You get it with a Bang-Nab. When you do, they become a poor troop.
 
 So Memos
 Bolo Lob
@@ -195,15 +203,8 @@ Palm Lap
 Fix If
 
 Emacs Came
-enol cyclone
 enol alone
 epoch cope
-Eponymy? Nope: BOOK?
-
-Erupt, Pure!
-
-etage-negate
-egate-legate
 
 Fray! Arf!
 
@@ -434,7 +435,7 @@ Marv Ram
 
 arming margin ...
 
-RANDOM STUFF:
+================RANDOM WORD MATCHES
 
 animals' lamina
 a cross orca
@@ -514,7 +515,6 @@ martyry tram
 mate tam
 meets esteem
 met system
-met item: random found
 metic item
 misdeed sim: a program?
 miss sim
@@ -554,7 +554,6 @@ nutso stun
 nutsy stun
 oats tao
 offers reffo
-ogee ego
 ogamic imago
 oil olio
 oldened lo
@@ -639,7 +638,6 @@ resold loser
 resin ozoniser
 reffing niffer
 recall lacer
-resale laser
 redleg elder
 rebuts tuber
 regresses serger

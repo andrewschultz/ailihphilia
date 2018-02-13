@@ -28,10 +28,12 @@ def read_ignore_file():
                 q = ll[2:]
                 regex_ignore_dict[q] = True
 
+def zap_prefix(x):
+    t2 = re.sub(r"^(the|a|some|there is a book called) ", "", x, 0, re.IGNORECASE)
+    return t2
 
 def letonly(x):
     t2 = x.strip().lower()
-    t2 = re.sub(r"^(the|a) ", "", t2, 0, re.IGNORECASE)
     temp = re.sub("[^a-z]", "", t2)
     return temp
 
@@ -91,11 +93,12 @@ def pal_ver(f):
                 ll = line.lower().strip()
                 if start_ignore(ll) or include_ignore(ll) or regex_ignore(ll):
                     continue
-                ll = re.sub(r" (is|are) .*", "", line.strip())
+                ll = zap_prefix(line.strip())
+                ll = re.sub(r"(\. it is|\. they are| is| are) .*", "", ll, 0, re.IGNORECASE)
                 ll = letonly(ll)
                 if ll != ll[::-1]:
                     err_count = err_count + 1
-                    print("Bad line", line_count, "/", err_count, "in", f, "--", line.strip())
+                    print("Bad line", line_count, "/", err_count, "in", f, "--", line.strip(), "->", ll)
                     # print(ll, '/', ll[::-1], line)
     if err_count == 0:
         print("TEST SUCCEEDED:basic palindrome check for", f)

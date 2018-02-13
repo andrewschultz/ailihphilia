@@ -51,8 +51,8 @@ part the tables
 
 table of altbooks
 randtxt
+"Eponymy? Nope"
 "Gigolo Gig"
-"Rise Aesir"
 
 table of attackings
 randtxt
