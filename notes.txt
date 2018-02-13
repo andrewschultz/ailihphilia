@@ -4,12 +4,12 @@
 
 # Points: the reifier 3, reviver 3, rotator 3
 
--yetNEW PUZZLES
+NEW PUZZLES
 balsa slab + sword rows = not-a-baton
 not-a-baton + reifier = taboo bat (replaces the old)
 dork rod + yahoo hay = moor broom
 # moor broom + tru-yurt = exam axe (replaces cave vac)
-cave vac + cassettes sac = radar
+# cave vac + cassettes sac = radar
 
 Scepsis Pecs
 Snooty Toons: Not sure where to put it

@@ -48,7 +48,7 @@ Grebeberg is a region. max-score of Grebeberg is 27.
 
 Dim Mid is a region. max-score of Dim Mid is 10.
 
-Yelpley is a region. max-score of Yelpley is 34.
+Yelpley is a region. max-score of Yelpley is 35.
 
 Odd Do is a region. max-score of Odd Do is 6.
 
@@ -643,6 +643,7 @@ straw arts	Mike Kim	soot tattoos	--	--	true	true	false	Yelpley	"'Brilliant! Bril
 gate tag	soot tattoos	state tats	--	--	true	true	true	Yelpley	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 Dirt Rid	reviver	Cave Vac	--	--	true	true	false	Yelpley	"You watch as the Dirt Rid swirls and becomes shinier and much more powerful. A Cave Vac! It will be capable of cleaning...well, somewhere."
+Cave Vac	cassettes sac	radar	--	--	true	true	true	Yelpley	"The Cave Vac has the power to clean up the Dirt Rid, though it chokes and sputters at the end of the effort. And while a lot of the cassettes are beyond repair, there's something at the very bottom.[paragraph break]Wow! Radar![paragraph break]You hear noises from the pod, as a hidden robot appears and whisks the garbage away. That's pretty slick! Looking back, the pod doesn't seem so dopy any more, between the Demo Med's help and how you're sure the radar will help."
 poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
 poo coop	turf rut	--	coop-full rule	--	true	true	true	Grebeberg	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture. The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
 radar	made dam	eroded ore	--	--	true	false	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow."
@@ -1921,11 +1922,13 @@ slate metals are scenery in Scrap Arcs. "They aren't leet steel. You could proba
 
 book Dopy Pod
 
-Dopy Pod is west of Drawl Ward. It is in Yelpley.
+Dopy Pod is west of Drawl Ward. It is in Yelpley. printed name of Dopy Pod is "[if cassettes sac is in ZeroRez]Dope[else]Dopy[end if] Pod".
 
 chapter cassettes sac
 
 the cassettes sac is a thing in Dopy Pod. "A rather large cassettes sac sits here. It's too dirty to pick up."
+
+understand "casette/casete/cassette/cassetes sac" and "casette/casete/cassette/cassetes" as cassettes sac. [1 is technically not an anagram but it's a plausible misspelling, so we should allow it.]
 
 instead of doing something with cassettes sac:
 	if action is pro-and-use, continue the action;

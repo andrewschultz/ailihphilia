@@ -12,7 +12,7 @@ test part3 with "w/w/w/n/use puce cup on past sap/s/e/e/e/s/get demo med/get tro
 
 test part4 with "w/get all/e/e/get radar/use stamp mats on slate metals/w/n/n/w/w/w/n/n/use demo med on gulf lug/s/s/e/e/e/e/use cash sac on cross orc/use radar on crag arc"
 
-test part5 with "s/use yob attaboy on sniffins/use elan ale on sniffins/stand nat's/n/n/deny ned/get all/use ye key on etage gate/n/s/s/w/w/s/w/worn row/work row/use stink knits on rotator"
+test part5 with "s/use yob attaboy on sniffins/use elan ale on sniffins/stand nat's/n/w/s/s/w/use cave vac on cassettes sac/n/deny ned/get all/use ye key on etage gate/n/s/s/w/w/s/w/worn row/work row/use stink knits on rotator"
 
 test part6 with "word row/get some demos/e/n/e/e/n/n/get all/s/s/w/w/w/w/s/s/e/use some demos on yahoo hay/w/n/n/e/e/n/use straw arts on mike kim/use gate tag on soot tattoos/s/s/w/get null illun/work row/use gold log on rotator/use dirt rid on reviver/e/n/w/w/w/use poo coop on gnu dung/use poo coop on turf rut"
 

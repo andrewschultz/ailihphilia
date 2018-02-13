@@ -233,7 +233,6 @@ What is the Edits Tide good for?
 USE EL DOODLE ON EDITS TIDE.
 ?Can I clean the Tru Yurt?
 The Dirt Rid doesn't quite do the trick. Not energetic enough.
-USE DIRT RID ON REVIVER.
 USE MOOR BROOM ON TRU YURT.
 >>CALCIFIC LAC
 ?What do I do with the Tao Boat?
@@ -364,9 +363,15 @@ You could use the Dose Sod from the Apse Spa...
 Use the Puce Cup to get it.
 USE PUCE CUP ON MARGE PEGRAM.
 Fill in later.
->>DOPE POD
-?What to do here?
-Fill in later.
+>>DOPY POD
+?What do I do with the demo med?
+Just take it, for now.
+?How do I clean up the cassettes sac? Is it worth it?
+You need something powerful.
+The Dirt Rid isn't powerful enough.
+So you need to give it a boost.
+USE DIRT RID ON REVIVER.
+USE CAVE VAC ON CASSETTES SAC.
 >>SCRAP ARCS
 ?What to do with the slate metals?
 They could get a pattern carved in them.
@@ -445,7 +450,7 @@ There are 10 total points in Dim Mid.
 1 point if you USE YARD RAY ON DIKTAT KID.
 1 point if you USE X-ITE TIX ON TIX EXIT
 ?How do I get all the points for Yelpley?
-There are 34 total points in Yelpley.
+There are 35 total points in Yelpley.
 1 point if you EVADE DAVE.
 1 point if you BORE ROB.
 1 point for WORD ROW.
@@ -461,9 +466,10 @@ There are 34 total points in Yelpley.
 1 point if you USE PUCE CUP ON MARGE PEGRAM.
 1 point if you USE STAMP MATS ON SLATE METALS.
 1 point if you USE CASH SAC ON CROSS ORC.
-1 point if you USE RADAR ON CRAG ARC.
 1 point if you USE YOB ATTABOY ON SNIFFINS.
 1 point if you USE ELAN ALE ON SNIFFINS.
+1 point if you USE CAVE VAC ON CASSETTES SAC
+1 point if you USE RADAR ON CRAG ARC.
 1 point if you STAND NAT'S.
 1 point if you DENY NED.
 1 point if you USE YE KEY ON ETAGE GATE.

@@ -180,7 +180,11 @@ We can do a bit of the work in Deli, Tiled. Even change it.
 
 (+1) > STAND NAT'S
 
->N.N
+>N.W.S.S.W
+
+(+1) > USE CAVE VAC ON CASSETTES SAC
+
+>E.N.N.E.N
 
 (+1) >DENY NED
 
