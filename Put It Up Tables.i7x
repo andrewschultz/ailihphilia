@@ -501,6 +501,7 @@ randtxt
 "Ole! Lo!"
 "Pah! Whap?"
 "Pal, SLAP?!"
+"Po['] bop!"
 "Pop!"
 "Pow-op! Pow-op!"
 "Tiff. Fit."

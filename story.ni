@@ -48,7 +48,7 @@ Grebeberg is a region. max-score of Grebeberg is 27.
 
 Dim Mid is a region. max-score of Dim Mid is 10.
 
-Yelpley is a region. max-score of Yelpley is 35.
+Yelpley is a region. max-score of Yelpley is 36.
 
 Odd Do is a region. max-score of Odd Do is 6.
 
@@ -63,8 +63,6 @@ volume unsorted
 section part of a puzzle but not fully linked yet
 
 The not-a-baton is a thing.
-
-The Balsa Slab is a thing.
 
 The Moor Broom is a thing.
 
@@ -658,6 +656,7 @@ spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Eve
 troll ort	brag garb	--	--	--	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. It's now an entirely different smell from the Stink Knits, but a much more edible one. You guess." [b4:pace cap] [af:yak okay]
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
+balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	"The sword rows cut into the balsa slab, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You will be able to smite a bad-faith pearl-clutcher for sure with one of these."
 DNA band	reifier	DNA hand	--	--	true	true	false	Yelpley	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand!"
 roto motor	DNA hand	bang nab	--	--	true	true	true	Yelpley	"The roto motor fits right in. The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on it, now: BANG NAB. I guess that's what to call it, now. It probably has the dexterity to deal with volatile stuff."
@@ -1060,6 +1059,12 @@ understand "turd rut" as turf rut when poo coop is in ZeroRez.
 book Le Babel
 
 Le Babel is north of Dumb Mud. It is in Grebeberg.
+
+chapter balsa slab
+
+The Balsa Slab is a thing in Le Babel.
+
+report taking the Balsa Slab: say "It's light. It weighs ... not a gigaton."
 
 chapter Bro Orb
 

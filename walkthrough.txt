@@ -309,7 +309,13 @@ We could've done this before going up Mont Nom, but this is good enough.
 
 (+1) >USE EXAM AXE ON LIE VEIL
 
->N.GET BRO ORB.S.E.E.E.S.W
+>N.GET BRO ORB.S.E.E.E.S
+
+Finally, we can use the sword rows!
+
+(+1) >USE BALSA SLAB ON SWORD ROWS
+
+>W
 
 Now with all the junk we have, we can make non-junk.
 

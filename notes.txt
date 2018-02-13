@@ -20,8 +20,6 @@ Voodoo V = fake clue
 
 randomize male/female of some characters
 
-Flat Alf
-
 For the tope depot! Sniffins, uh, sniffs at you.
 
 Stack Cats
@@ -164,7 +162,6 @@ bunk nub
 bust sub
 burdened? Rub
 burs rub
-busy sub
 Cigar? Tragic!
 Cito, Idiotic
 City Tic: everyone develops one
@@ -199,22 +196,16 @@ drooly loord
 Dump Mud: vs dumb mud
 dwelt lewd
 ecarte retrace
-Eel Flee
-Eel Glee
 egresses serge
 egoless eloge
 exult luxe: where to get extra riches
 gazelle zag
-gandered nag
 Gaters Retag
 gemini meg
 
 Girt Rig: borders a lot of places
 
 goth tog: takes pictures
-
-Flag Alf
-Flat Alf
 
 Face Decaf
 
@@ -305,7 +296,6 @@ O Bonobo: So Bonobos
 Peewee P
 Petite P
 Trekker T
-Voodoo V
 Wanna W
 Weewee W
 
@@ -626,7 +616,6 @@ perp rep
 peels asleep
 pee keep
 pi tip
-pity tip
 pink nip
 pint nip
 plugs gulp
@@ -878,7 +867,6 @@ spots nonstops
 sprew twerps
 sparth traps
 stem mammets
-stack cats
 strap parts
 Storm Rots:new location?
 star brats:star frats
@@ -891,7 +879,6 @@ still lits
 stunk nuts
 steno nets
 strati tarts
-strafe farts
 stipend nepits
 stire merits
 stork rots
@@ -916,8 +903,7 @@ sun gnus:sun on us
 sullage gallus
 swarm raws
 swardy draws
-sword rows
-sworn rows
+sworn rows: but they are inanimate
 swami maws
 swart straws
 ta rat
@@ -1177,7 +1163,6 @@ avent neva
 avery reva
 avie iva
 bede deb
-borg rob
 deere reed
 deneke ned
 deng ned

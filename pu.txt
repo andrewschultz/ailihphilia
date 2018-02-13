@@ -307,6 +307,11 @@ TEND NET.
 Well, you need to avoid him. Not quite avoid him.
 But do something to him. ????? DAVE.
 EVADE DAVE.
+>What are the sword rows for?
+You won't need them until very late in the game.
+They could be useful to cut something up.
+Wood, maybe.
+USE BALSA SLAB ON SWORD ROWS.
 >>WORN ROW
 ?How do I get past Ian?
 NAIL IAN.
@@ -450,7 +455,7 @@ There are 10 total points in Dim Mid.
 1 point if you USE YARD RAY ON DIKTAT KID.
 1 point if you USE X-ITE TIX ON TIX EXIT
 ?How do I get all the points for Yelpley?
-There are 35 total points in Yelpley.
+There are 36 total points in Yelpley.
 1 point if you EVADE DAVE.
 1 point if you BORE ROB.
 1 point for WORD ROW.
@@ -479,6 +484,7 @@ There are 35 total points in Yelpley.
 1 point if you USE GATE TAG ON SOOT TATTOOS.
 1 point if you USE GOLD LOG ON ROTATOR.
 1 point if you USE DIRT RID ON REVIVER.
+1 point if you USE BALSA SLAB ON SWORD ROWS.
 1 point if you USE NOT-A-BATON ON REIFIER.
 1 point if you USE DNA BAND ON REIFIER.
 1 point if you USE ROTO MOTOR ON DNA HAND.
@@ -523,9 +529,8 @@ There are 6 total points in Odd Do.
 1 point if you REFER instead of THINK.
 1 point if you DIAL AID instead of AID.
 1 point if you SLAM MAMMALS around the eels.
-?What is unsorted?
 ;
->>GROSS ORG
+>>BUSY SUB
 ?What can I do about the glam-amalg?
 Note that using anything on it gives a decisive reject.
 This is another verb you need to guess.
@@ -541,3 +546,7 @@ Because Wolf Low does not exist.
 Neither does Gross Org.
 You shouldn't develop clues you don't know the answers to yet!
 Go, dog!
+?What do I do with Flat Alf?
+It's hard to get his attention, since he is 2-D and all.
+FLAG ALF.
+
