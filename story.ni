@@ -70,6 +70,8 @@ The Moor Broom is a thing.
 
 The Enact Cane is a thing.
 
+The roto motor is a thing.
+
 section no precise function yet
 
 [?? tame mat would be sort of funny. Where does it go?]
@@ -635,7 +637,7 @@ puce cup	Marge Pegram	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yel
 stamp mats	slate metals	ye key	--	--	true	false	false	Yelpley	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY."
 demo med	gulf lug	cash sac	--	--	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' he looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes to look for ... well, something else."
-radar	crag arc	UFO tofu	orc-gone rule	--	true	false	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO as it flies off. It bounces off you. 'O Furor! UFO!' you cry. You look at it and--it's unharmed, and still in a cubic shape. Looks like you got yourself some UFO tofu."
+radar	crag arc	UFO tofu	orc-gone rule	radar-blink rule	true	false	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO as it flies off. It bounces off you. 'O Furor! UFO!' you cry. You look at it and--it's unharmed, and still in a cubic shape. Looks like you got yourself some UFO tofu."
 YOB ATTABOY	Sniffins	Dirt Rid	--	--	true	true	false	Yelpley	"Sniffins accepts your gift. His sniffs slowly change from sadness to something more snooty. He thanks you for helping him be too good for you before handing you a Dirt Rid and kicking you out."
 Elan Ale	Sniffins	Gorge Grog	--	--	true	true	false	Yelpley	"Sniffins looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'" [af:stand nat's/deny Ned]
 Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate, which retracts upward before you can pull Ye Key out. Well, you can't imagine needing it again. A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it." [af:Worn Row]
@@ -649,7 +651,7 @@ Dirt Rid	reviver	Cave Vac	--	--	true	true	false	Yelpley	"You watch as the Dirt R
 Cave Vac	cassettes sac	radar	--	--	true	true	true	Yelpley	"The Cave Vac has the power to clean up the Dirt Rid, though it chokes and sputters at the end of the effort. And while a lot of the cassettes are beyond repair, there's something at the very bottom.[paragraph break]Wow! Radar![paragraph break]You hear noises from the pod, as a hidden robot appears and whisks the garbage away. That's pretty slick! Looking back, the pod doesn't seem so dopy any more, between the Demo Med's help and how you're sure the radar will help."
 poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
 poo coop	turf rut	--	coop-full rule	--	true	true	true	Grebeberg	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture. The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
-radar	made dam	eroded ore	--	--	true	false	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow."
+radar	made dam	eroded ore	--	radar-blink rule	true	false	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow."
 NULL ILLUN	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me.' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. And if it's simple, well, I need to know when simple stuff works.' The Known Wonk apologizes--it's back to a Tru Yurt for a thought session."
 Moor Broom	Tru Yurt	Exam Axe	--	--	true	true	false	Grebeberg	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe!"
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
@@ -765,6 +767,14 @@ this is the maps-explain rule:
 this is the mob-to-alley rule:
 	now bomb mob is in Yell Alley;
 	now tnt is in Yell Alley;
+	the rule succeeds;
+
+this is the radar-blink rule:
+	if eroded ore is off-stage or UFO tofu is off-stage:
+		say "The radar blinks and clicks a bit. It's still working, but it's close to broken.";
+	else:
+		say "Between the UFO tofu dropped on the radar and the eroded ore getting too close to it, the radar splits open. A roto motor falls out. You take it.";
+		now player has roto motor;
 	the rule succeeds;
 
 this is the sap-to-cup rule:
@@ -1183,7 +1193,7 @@ the yahoo hay is scenery in Moo Room.
 
 chapter straw arts
 
-the straw arts are a plural-named thing.
+the straw arts are a plural-named thing. description is "Whatever they are, you made them, and you hope it expresses something or other."
 
 book Mire Rim
 
@@ -1213,7 +1223,7 @@ book Lair Trial
 
 Lair Trial is south of Birch Crib. It is in Grebeberg.
 
-the ergot ogre is a person in Lair Trial. "An ergot ogre blocks the way east.".
+the ergot ogre is a person in Lair Trial. "An ergot ogre blocks the way east.". description is "It looks vicious, and you don't want it touching you, due to disease and possible dismemberment. You need to get the ogre out of the way, somehow."
 
 check going east in Lair Trial: if ergot ogre is in Lair Trial, say "Not with the ergot ogre guarding the way." instead;
 
@@ -1265,7 +1275,7 @@ to say eli-ile:
 
 chapter kayak
 
-The kayak is scenery in Calcific Lac.
+The kayak is scenery in Calcific Lac. "It's, well, just a kayak. It doesn't have anything to steer it with, though. Maybe you have something, or you could find something."
 
 chapter tao boat
 
@@ -1390,7 +1400,7 @@ Rob is a person in Worn Row.
 
 chapter test set
 
-The test set is a thing.
+The test set is a thing. "A test set lies here, looking convoluted and -- well, open to abuse.". description is "You're not sure what it's good for, but now that you worked through all the machines, maybe you just need it to, well, try stuff before your final confrontation.".
 
 check taking the test set: say "It's too unwieldy. But it has to be useful for something." instead;
 
@@ -1692,11 +1702,16 @@ instead of opening etage gate:
 
 check going north in Gross Org: if etage gate is in Gross Org, say "The etage gate blocks you." instead;
 
-understand "evened" and "den evened" as Gross Org when Ned is in ZeroRez
+understand "evened" and "den evened" as Gross Org when Ned is in ZeroRez.
 
 Ned is a person in Gross Org. "'Ned's Den!' someone booms. You're guessing their name must be Ned."
 
-The Puce Cup is a thing in Emo Dome.
+The Puce Cup is a thing in Emo Dome. description is "It's, well, puce, and it seems sturdy enough. It's currently [if puce cup is empty]empty[else if puce cup is sappy]full of Past Sap from the rift fir in Cold Loc[else]full of Dose Sod from the Apse Spa[end if]."
+
+after printing the name of the puce cup while taking inventory:
+	if puce cup is sappy, say " (full of past sap)";
+	if puce cup is soddy, say " (full of dose sod)";
+	continue the action;
 
 the puce cup can be empty, sappy or soddy. the puce cup is empty.
 
@@ -2012,10 +2027,6 @@ The DNA band is a thing in Pro Corp.
 The DNA hand is a thing.
 
 The bang nab is a thing.
-
-chapter roto motor
-
-The roto motor is a thing in Pro Corp. [?? the radar breaks and reveals a roto motor instead]
 
 volume gotoing
 

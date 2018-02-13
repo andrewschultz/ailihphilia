@@ -4,6 +4,12 @@ volume tests
 
 [the purpose of this file is to have something separate to look at so that there is that much less mess in the main file. Also, I want to be able to kill it easily if I go over the z-machine limit. It should be included near the end.]
 
+chapter test module(s)
+
+a thing can be abstract. a thing is usually not abstract.
+
+include Property Checking by Emily Short.
+
 chapter main walkthrough
 
 test part1 with "pack cap/e/n/get trap art/s/s/evade dave/w/bore rob/word row/get to idiot/e/n/n/n/use to idiot on revolt lover/get debt bed/e/get all/use pity tip on navy van/w/w/tend net/e/s/s/s/w/work row/use trap art on reifier/use debt bed on reviver"
