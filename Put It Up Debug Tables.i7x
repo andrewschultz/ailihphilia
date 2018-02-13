@@ -34,16 +34,16 @@ to next-rand (t - a table name):
 	say "[randtxt entry][if lb is true][line break][end if]";
 
 table of all randoms
-tabnam	tabidx	lbrk
-table of altbooks	0	false
-table of attackings	0	true
-table of burnies	0	true
-table of noesies	0	true
-table of nothings	0	true
-table of singstuff	0	true
-table of swearstuff	0	true
-table of waittxt	0	true
-table of yessies	0	true
+tabnam	tabidx	lbrk	desc
+table of altbooks	0	false	"extra books in the Tract Cart"
+table of attackings	0	true	"responses to ATTACK"
+table of burnies	0	true	"responses to BURN"
+table of noesies	0	true	"responses to NO"
+table of nothings	0	true	"responses to empty commands"
+table of singstuff	0	true	"responses to SINGing"
+table of swearstuff	0	true	"responses to SWEARing"
+table of waittxt	0	true	"responses to WAITing"
+table of yessies	0	true	"responses to YES"
 
 part the tables
 
