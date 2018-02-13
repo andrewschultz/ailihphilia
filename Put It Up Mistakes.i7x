@@ -73,6 +73,8 @@ understand "eros ore" as a mistake ("I don't even want to know what you're tryin
 
 book Dumb Mud
 
+understand "dump mud" as a mistake ("It's already kind of dumped here[if poo coop is not in ZeroRez]. Maybe you could dump the mud into the rut for passage south, but it might take too long, and you don't have a shovel. You'd need something else[end if].") when player is in Dumb Mud.
+
 understand "gnu bung" as a mistake ("Yes, that's where it came from.") when gnu dung is quicknear.
 
 understand "gnu lung" as a mistake ("The gnu dung smells bad enough without dropping more internal organs into the mix.") when gnu dung is quicknear.
