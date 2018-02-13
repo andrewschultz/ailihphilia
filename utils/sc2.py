@@ -36,6 +36,8 @@ invis_line_to_open = 0
 
 undef_use_points = 0
 
+max_dif = 0
+
 current_region = "None"
 
 region_def_line = defaultdict(int)
@@ -70,6 +72,7 @@ def usage():
     print("-v for verbose")
     print("-s for semi verbose")
     print("-h to show hash values")
+    print("-md for maximum difference in walkthrough files. default = 0, which means don't run.")
     exit()
 
 def read_test_file_order():
@@ -84,7 +87,10 @@ def read_test_file_order():
         if test_ary[a] not in dupes.keys():
             test_order[test_ary[a]] = a+1
 
-def walkthrough_vs_test_file():
+def walkthrough_vs_test_file(maxdif):
+    if not maxdif:
+        print("Skipping walkthrough vs test file comparison. Run -md(#) or -md (#) to try this.")
+        return
     wthru_ary = []
     count = 0
     with open(main_thru) as file:
@@ -98,9 +104,9 @@ def walkthrough_vs_test_file():
     up_to = min(len(test_ary), len(wthru_ary))
     if len(test_ary) != len(wthru_ary):
         print("WARNING test/walkthrough are different sizes:", len(test_ary), "<test wthru>", len(wthru_ary))
-    max_dif = 50
     cur_dif = 0
     dif_ary = []
+    print("Showing (up to) first", up_to, "differences.")
     for i in range(0, up_to):
         if test_ary[i] != wthru_ary[i]:
             cur_dif = cur_dif + 1
@@ -542,6 +548,16 @@ while argval < len(sys.argv):
         semi_verbose = True
     elif noh == 'h':
         show_hash = True
+    elif noh == 'md':
+        try:
+            if re.search("[0-9]", noh):
+                max_dif = int(re.sub("^md", "", noh))
+            else:
+                argval = argval + 1
+                max_dif = int(sys.argv[argval].lower())
+        except:
+                print("-md needs an integer after -- in the same argument, or with a space in between.")
+                exit()
     else:
         print(sys.argv[argval].lower(), "not recognized.")
         print()
@@ -607,8 +623,8 @@ if show_hash:
     for x in sorted(use_in_walkthrough.keys()):
         print(x, use_in_walkthrough[x])
     print("Source hash")
-    for x in sorted(use_in_invisiclues.keys()):
-        print(x, use_in_invisiclues[x])
+    for x in sorted(use_in_invisiclues_source.keys()):
+        print(x, use_in_invisiclues_source[x])
 
 if source_line_to_open:
     i7.npo(main_source, source_line_to_open, True)
@@ -620,7 +636,7 @@ print("Total =", t2)
 bonus_mistake_check()
 
 source_table_vs_test_file()
-walkthrough_vs_test_file()
+walkthrough_vs_test_file(max_dif)
 
 if invis_line_to_open:
     i7.npo(invis_raw, invis_line_to_open, True)
