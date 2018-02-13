@@ -1,7 +1,5 @@
 "Put it Up" by Andrew Schultz
 
-[?? track all could-work-later things e.g. if you give the spa maps to the code doc without the tent net first]
-
 [blurb for comp = A *GASP* SAGA]
 
 [there are things you can search for to make the source more navigable.
@@ -38,15 +36,13 @@ a thing can be drinkable. a thing is usually not drinkable.
 
 an ingredient is a kind of thing. an ingredient is usually edible. an ingredient can be solid or liquid.
 
-[?? rejig this in inventory]
-
 the description of a room is usually "[if number of viable directions is 1]An exit leads[else]Exits lead[end if] [list of viable directions]. NOTE: I need to change this generic text."
 
 chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
 
-Grebeberg is a region. max-score of Grebeberg is 27.
+Grebeberg is a region. max-score of Grebeberg is 28.
 
 Dim Mid is a region. max-score of Dim Mid is 10.
 
@@ -62,6 +58,9 @@ in-beta is a truth state that varies.
 
 volume unsorted
 
+to say etg:
+	end the story;
+
 section part of a puzzle but not fully linked yet
 
 The not-a-baton is a thing.
@@ -69,8 +68,6 @@ The not-a-baton is a thing.
 The roto motor is a thing.
 
 section no precise function yet
-
-[?? tame mat would be sort of funny. Where does it go?]
 
 section part of a puzzle but still floating
 
@@ -662,7 +659,7 @@ cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the c
 radar	crag arc	UFO tofu	orc-gone rule	radar-blink rule	true	false	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO as it flies off. It bounces off you. 'O Furor! UFO!' you cry. You look at it and--it's unharmed, and still in a cubic shape. Looks like you got yourself some UFO tofu."
 YOB ATTABOY	Sniffins	Dirt Rid	--	--	true	true	false	Yelpley	"Sniffins accepts your gift. His sniffs slowly change from sadness to something more snooty. He thanks you for helping him be too good for you before handing you a Dirt Rid and kicking you out."
 Elan Ale	Sniffins	Gorge Grog	--	--	true	true	false	Yelpley	"Sniffins looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'" [af:stand nat's/deny Ned]
-Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paagraph break]A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it." [af:Worn Row]
+Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paragraph break]A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it." [af:Worn Row]
 stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
 SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	false	false	Grebeberg	"With the help of SOME DEMOS, you manage to rejig the hay into something more aesthetically pleasing: straw arts!"
 straw arts	Mike Kim	soot tattoos	--	--	true	true	false	Yelpley	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
@@ -1133,8 +1130,6 @@ report taking Bro Orb:
 	now tenet is in ZeroRez;
 	say "As you take the Bro Orb, you watch the tenet flutter off into the void around Le Babel. Oh, well. You carry it in your mind and heart and stuff anyway, now.";
 
-[?? if you tried to take the Bro Orb or rep popper before, put up a warning saying, ok, you can do this now, if you have the right items.]
-
 book Mont Nom
 
 Mont Nom is south of Dumb Mud. It is in Grebeberg. "An ark of okra blocks passage every way except back north here."
@@ -1272,7 +1267,7 @@ chapter tenet
 
 The tenet is a thing. description is "It seems a bit too cliche, but you have the wisdom to get the encouragement you need from it."
 
-[?? take tenet/take Bro Orb = use sage gas on tenet/use tenet on Bro Orb]
+check useoning tenet with Bro Orb: try taking Bro Orb instead;
 
 book Swamp Maws
 
@@ -1386,7 +1381,7 @@ understand "evade [something]" as evadeing.
 does the player mean evadeing Dave: it is very likely.
 
 Dave-evade is a truth state that varies.
-[?? try doing something with the room name]
+
 carry out evadeing:
 	if noun is Dave:
 		if Dave-evade is true, say "You don't need to evade Dave again.";
@@ -1541,7 +1536,6 @@ check examining tract cart:
 		say "It's empty now. Maybe some day, someone will write a book like ";
 		next-rand table of altbooks;
 		say ". Maybe it could be you! But you don't have the time to read right now, really." instead;
-[?? Trace cart]
 
 a book is a kind of thing. description of a book is "It [if player carries the item described]is[else]looks[end if] really heavy and incomprehensible to you."
 
@@ -1551,7 +1545,7 @@ the pity tip is a thing. description of pity tip is "It's not THAT hard to figur
 
 section books with purpose so far
 
-TO IDIOT is a proper-named book. [Revolt Lover] [?? at start of command "to" messes things up for give]
+TO IDIOT is a proper-named book. [Revolt Lover]
 NULL ILLUN is a proper-named book. [Known Wonk]
 ERA FARE is a proper-named book. [King Nik]
 YOB ATTABOY is a proper-named book. [Sniffins]
@@ -1608,8 +1602,13 @@ workrow is a truth state that varies.
 
 ever-workrow is a truth state that varies.
 
+this is the wornrow-change rule:
+	if Rob is in Worn Row, say "That'll work when Rob is gone." instead;
+	if Psi Wisp is in Worn Row, say "Right idea, wrong room to change to." instead;
+	continue the action;
+
 carry out workrowing:
-	if Ian is in Worn Row, say "That'll work when Ian is gone." instead;
+	abide by the wornrow-change rule;
 	if workrow is true, say "You're already in Work Row." instead;
 	now workrow is true;
 	now wordrow is false;
@@ -1640,7 +1639,7 @@ wordrow is a truth state that varies.
 ever-wordrow is a truth state that varies.
 
 carry out wordrowing:
-	if Ian is in Worn Row, say "That'll work when Ian is gone." instead;
+	abide by the wornrow-change rule;
 	if wordrow is true, say "You're already in Word Row." instead;
 	now wordrow is true;
 	now workrow is false;
@@ -1720,8 +1719,6 @@ chapter crag arc
 the crag arc is scenery in Toll Lot. "It soars high and is too dangerous to climb[if UFO tofu is off-stage]. It's so intricate, maybe it is hiding something you can find[end if]."
 
 book Gross Org
-
-[?? den, evened]
 
 Gross Org is north of Toll Lot. It is in Yelpley. description is "[if etage gate is in Gross Org]An etage gate blocks your way north. You can go back south[else]With the etage gate gone, you can go north or south[end if]."
 
@@ -1817,7 +1814,7 @@ book Evaded Ave
 
 Evaded Ave is north of Art Xtra. It is in Yelpley. "It's a bit sleazy in here. You could probably score some dangerous drugs if you knew what to ask for. You can go back south. Or you can go east and west."
 
-the Revolt Lover is a person in Evaded Ave. "Someone introduces themselves as the Revolt Lover. They peg you as not insurgent enough to deserve to visit west or east, without a proper gift[else]With the Revolt Lover around, you're not likely to go east or west[end if]."
+the Revolt Lover is a person in Evaded Ave. "Someone introduces themselves as the Revolt Lover. [if Revolt Lover is in Evaded Ave]They peg you as not insurgent enough to deserve to visit west or east, without a proper gift[else]With the Revolt Lover around, you're not likely to go east or west[end if]."
 
 check going in Evaded Ave:
 	if Revolt Lover is in Evaded Ave:
@@ -2323,7 +2320,7 @@ carry out randlisting:
 	choose row number understood in table of all randoms;
 	let mytab be tabnam entry;
 	now count is 0;
-	say "All random text for [mytab]:[line break]";
+	say "All random text for [desc entry]:[line break]";
 	repeat through mytab:
 		increment count;
 		say "[randtxt entry][line break]";

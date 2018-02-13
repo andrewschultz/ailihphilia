@@ -503,7 +503,7 @@ There are 36 total points in Yelpley.
 1 point if you USE BANG NAB ON TNT.
 1 point if you USE BRO ORB ON MADAM.
 ?How do I get all the points for Grebeberg?
-There are 27 total points in Grebeberg.
+There are 28 total points in Grebeberg.
 1 point if you USE PARTY TRAP ON STARK RATS.
 1 point if you USE ERA FARE ON KING NIK.
 1 point if you USE STOCK COTS ON SLEEP EELS.
@@ -529,6 +529,7 @@ There are 27 total points in Grebeberg.
 1 point if you USE SNACK CANS ON UFO TOFU.
 1 point if you USE GIFT FIG ON MAYO YAM.
 1 point if you USE EXAM AXE ON LIE VEIL.
+1 point if you USE ENACT CANE ON YAHOO HAY.
 1 point if you USE NAT'S TAN ON SCORN ROCS.
 1 point if you USE REP POPPER ON YUGE GUY.
 ?How do I get all the points for Odd Do?
