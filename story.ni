@@ -1815,20 +1815,22 @@ carry out standing:
 
 book Evaded Ave
 
-Evaded Ave is north of Art Xtra. It is in Yelpley.
+Evaded Ave is north of Art Xtra. It is in Yelpley. "It's a bit sleazy in here. You could probably score some dangerous drugs if you knew what to ask for. You can go back south. Or you can go east and west."
 
-the Revolt Lover is a person in Evaded Ave.
-
-the debt bed is a thing in Evaded Ave.
-
-the stock cots are a plural-named thing.
+the Revolt Lover is a person in Evaded Ave. "Someone introduces themselves as the Revolt Lover. They peg you as not insurgent enough to deserve to visit west or east, without a proper gift[else]With the Revolt Lover around, you're not likely to go east or west[end if]."
 
 check going in Evaded Ave:
 	if Revolt Lover is in Evaded Ave:
 		if noun is west or noun is east, say "The Revolt Lover blocks you. Maybe if you gave them a gift, they'd be more generous." instead;
 
+chapter debt bed
+
+the debt bed is a thing in Evaded Ave. "A debt bed lies [if Revolt Lover is in Evaded Ave]behind the Revolt Lover[else]around for the taking[end if]."
+
 check taking debt bed:
 	if Revolt Lover is in Evaded Ave, say "The Revolt Lover won't let you." instead;
+
+the stock cots are a plural-named thing.
 
 book Trapeze Part
 

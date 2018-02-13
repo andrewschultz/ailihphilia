@@ -2,24 +2,35 @@
 
 ==================stuff to include for sure
 
-# XITE TIX lead to A MORE EXCITING REAL WORLD. Well, given all the palindromes you dealt with, you probably should've expected a circular loop to back where you began. But you did have fun. Probably more than if you'd stood around and leveled up a whole bunch. So that's something. / Not even a DVD! / Back Cab
-
 # Points: the reifier 3, reviver 3, rotator 3
-
-Leet steel: what Knife Fink has
-Part strap: what rev has
-Erupt, Pure:Verses Rev?
-waster fretsaw: one of many items on the Dirge Grid at the end
 
 Scepsis Pecs: helps you carry a ton of stuff.
 Snooty Toons: Not sure where to put it
 
-PCP as a joke ending
+==========================final fight
+Dire! Rid!
+Leet steel: what Knife Fink has
+Part strap: what rev has
+Erupt, Pure:Verses Rev?
+waster fretsaw: one of many items on the Dirge Grid at the end
+resoldered loser: name you are called
+
+===================Very begin/end detail
+# XITE TIX lead to A MORE EXCITING REAL WORLD. Well, given all the palindromes you dealt with, you probably should've expected a circular loop to back where you began. But you did have fun. Probably more than if you'd stood around and leveled up a whole bunch. So that's something. / Not even a DVD! / Back Cab works better than a racecar.
+Drawn Inward
+
+
+===================(extra) points
+
+TRACE CART
+muss opossum
+
+===================mistakes
+sworn rows: but they are inanimate
 
 ===================done in story but need proofreading
 
 KAYO YAK: when wearing the brag garb, you use the troll ort on it. That makes the yak chase you. It's definitely not a tao goat! (follow it to the tao boat) then have it follow you to the Ergot Ogre. They get in a fight. Both are disappeared.
-
 
 ===================features/weird/not quite sure
 
@@ -69,7 +80,6 @@ Deport! Roped!: what yuge guy says if you try to ...
 "One day, I will build my redivider!"
 
 PSA Hasp
-BOOK: Drawn Inward?
 
 Ailihphilia: It is what you think, you. What, is it?
 
@@ -176,7 +186,6 @@ Dire, Rid
 Div, Avid
 Diva Vid
 dragging niggard
-drawn inward
 drunk nurd
 drooly loord
 ecarte retrace
@@ -233,9 +242,6 @@ glass alg
 
 #Ruby Bur
 Bush Sub
-
-
-Ring O' Zognir
 
 Dir: Arid:car?
 Ride Dir:car?
@@ -529,7 +535,6 @@ morocco rom
 mule velum
 must-sum: what to do?
 murdered rum
-muss opossum
 nay cyan
 name garageman
 nadir acaridan
@@ -651,7 +656,6 @@ retags gater
 remanded namer
 releve beveler
 retarded rater
-resoldered loser: name you are called
 remand namer
 regress serger
 remate tamer
@@ -867,7 +871,6 @@ sun gnus:sun on us
 sullage gallus
 swarm raws
 swardy draws
-sworn rows: but they are inanimate
 swami maws
 swart straws
 ta rat
@@ -943,7 +946,6 @@ went new
 well lew
 #wonks know
 worth trow
-wolf low
 worral arrow
 worses row
 wolfers reflow
@@ -963,7 +965,7 @@ zest sez
 
 Pat's Tap = bar
 
-FULL NAMES BELOW=================
+=================FULL NAMES BELOW
 adina canida
 aida madia
 aide media
@@ -1076,7 +1078,7 @@ wei liew
 zella callez
 zora varoz
 
-Backwards:
+=================FULL BACKWARD NAMES BELOW
 adam amada
 adelizzi leda
 adle zelda

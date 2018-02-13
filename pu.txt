@@ -320,18 +320,28 @@ They're worN. But maybe worn row can become...
 WORK ROW.
 You can also change it to something else.
 WORD ROW.
-?What do I put in which machine?
+?What do I put in which machine? Can I mess things up?
 You can use trial and error.
 Or you can just use the spoilers below.
+There's no way to use the machines to break the game.
 ?What do I do with the reifier?
+There are three things.
 You may notice the trap art is a plan for something bigger, to be made real.
 USE TRAP ART ON REIFIER.
-The party trap is useful elsewhere.
+The first item is the trap art.
+The second is the DNA hand.
+The third is the not-a-baton.
 ?What do I do with the rotator?
 USE STINK KNITS ON ROTATOR.
 USE GOLD LOG ON ROTATOR.
+The first item is the Stink Knits.
+The second item is the gold log.
+The third item is the you buoy.
 ?What do I do with the reviver?
 USE ERODED ORE ON REVIVER.
+The first item is the debt bed.
+The second item is the eroded ore.
+The third item is the dirt rid.
 ?Help! A machine broke!
 That just clues you don't need to use it any more.
 ?Help! All the machines broke!
@@ -540,13 +550,13 @@ Listen more carefully, and you'll recognize a few SHAM AHS.
 You'll definitely want to SHUN UHS. Or Shut them. But you want something more active.
 Of course, you can't SHED EHS meaningfully, either.
 SHOW OHS.
-?What does Wolf Low want?
-Nothing.
-Because Wolf Low does not exist.
-Neither does Gross Org.
-You shouldn't develop clues you don't know the answers to yet!
-Go, dog!
 ?What do I do with Flat Alf?
 It's hard to get his attention, since he is 2-D and all.
 FLAG ALF.
-
+?What does Wolf Low want?
+Nothing.
+Because Wolf Low does not exist.
+Neither does the Busy Sub.
+Or Flat Alf.
+You shouldn't develop clues you don't know the answers to yet!
+Go, dog!
