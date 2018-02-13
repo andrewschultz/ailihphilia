@@ -150,7 +150,7 @@ You now have access to a few more rooms. But let's go cover a few we've seen, so
 
 Let's loot what's behind Marge, now.
 
->W.GET ALL.E.E.GET RADAR
+>W.GET ALL.E.E
 
 (+1) > USE STAMP MATS ON SLATE METALS
 
@@ -168,8 +168,6 @@ A reward! We don't have much to buy, so...
 
 (+1) > USE CASH SAC ON CROSS ORC
 
-(+1) >USE RADAR ON CRAG ARC
-
 >S
 
 We can do a bit of the work in Deli, Tiled. Even change it.
@@ -180,11 +178,21 @@ We can do a bit of the work in Deli, Tiled. Even change it.
 
 (+1) > STAND NAT'S
 
->N.W.S.S.W
+>N.W.W.S.W
+
+>WORK ROW
+
+(+1) >USE DIRT RID ON REVIVER
+
+>E.N.E.S.S.W
 
 (+1) > USE CAVE VAC ON CASSETTES SAC
 
->E.N.N.E.N
+>E.N.N.E
+
+(+1) >USE RADAR ON CRAG ARC
+
+>N
 
 (+1) >DENY NED
 
@@ -214,7 +222,13 @@ Bam! There goes the Psi Wisp. Back to work. We have some stuff to convert, now, 
 
 >GET ALL
 
->S.S.W.W.W.W.S.S.E
+>S.S.W.W.S.W
+
+>WORK ROW
+
+(+1) >USE GOLD LOG ON ROTATOR
+
+>E.N.W.W.S.S.E
 
 (+1) >USE SOME DEMOS ON YAHOO HAY
 
@@ -224,13 +238,9 @@ Bam! There goes the Psi Wisp. Back to work. We have some stuff to convert, now, 
 
 (+1) >USE GATE TAG ON SOOT TATTOOS
 
->S.S.W.GET NULL ILLUN.WORK ROW
+>S.S.W.WORD ROW.GET NULL ILLUN.WORK ROW
 
 Now the Gold Log is shiny, but it's not particularly useful, and it's not you. It seems to be rattling, as if it holds something inside, but you can't figure out how to open it.
-
-(+1) >USE GOLD LOG ON ROTATOR
-
-(+1) >USE DIRT RID ON REVIVER
 
 >E.N.W.W.W
 
@@ -248,7 +258,6 @@ We can stop here to make passage to not one, but two, new places.
 We can help the Known Wonk out doubly, now, and even help ourselves a bit.
 
 (+1) >USE NULL ILLUN ON KNOWN WONK
-(+1) >USE MOOR BROOM ON TRU YURT
 (+1) >USE EL DOODLE ON EDITS TIDE
 
 >N
@@ -276,14 +285,15 @@ The spa maps probably belong with ... the Apse Spa.
 
 Now to get by the Ergot Ogre to the south of the Code Doc. You won't have seen the ogre if you just blindly followed this walkthrough, but trust me, it's there!
 
->W.S
+>W.S.S.S.E
 
+(+1) >USE ENACT CANE ON YAHOO HAY
 (+1) >PACE CAP
 (+1) >USE TROLL ORT ON BRAG GARB
 
 Now, run for your life!
 
->S.S.N.N.W.W.S.S
+>W.N.N.W.W.S.S
 
 How to get the yak to charge?
 
@@ -303,13 +313,15 @@ What do we do about Ian? Once we do something, we can mix foods.
 
 Now you have all the ingredients for the North-Tron, and you need to activate them. But it's a bit more efficient to do other things first.
 
->N
+>N.W.N
 
-We could've done this before going up Mont Nom, but this is good enough.
+(+1) >USE MOOR BROOM ON TRU YURT
+
+>S.E
 
 (+1) >USE EXAM AXE ON LIE VEIL
 
->N.GET BRO ORB.S.E.E.E.S
+>N.GET ALL.S.E.E.E.S
 
 Finally, we can use the sword rows!
 

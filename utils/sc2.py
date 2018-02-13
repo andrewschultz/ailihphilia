@@ -106,14 +106,19 @@ def walkthrough_vs_test_file(maxdif):
         print("WARNING test/walkthrough are different sizes:", len(test_ary), "<test wthru>", len(wthru_ary))
     cur_dif = 0
     dif_ary = []
-    print("Showing (up to) first", up_to, "differences.")
+    walk_test_mismatch_yet = False
     for i in range(0, up_to):
         if test_ary[i] != wthru_ary[i]:
+            if not walk_test_mismatch_yet:
+                walk_test_mismatch_yet = True
+                print("Showing (up to) first", up_to, "differences.")
             cur_dif = cur_dif + 1
             print(i, cur_dif, test_ary[i], "< test ary, wthru ary >", wthru_ary[i])
             dif_ary.append(test_ary[i])
             if cur_dif == max_dif:
                 break
+    if cur_dif == 0:
+        print("No differences! Walkthrough matches test file.")
     out_dif_string = ""
     cr = 0
     for i in range(0, len(dif_ary)):
@@ -135,6 +140,7 @@ def source_table_vs_test_file():
     test_file_short = re.sub(".*[\\\/]", "", test_file)
     test_file_errs = 0
     count = 0
+    test_source_order_yet = False
     with open(test_file) as file:
         for line in file:
             if not re.search(r"^\[?test part", line): continue
@@ -175,9 +181,13 @@ def source_table_vs_test_file():
                 look_again = True
                 str2 = x
         if str1 != str2:
+            if not test_source_order_yet:
+                print("NOTE: The #s on the right are the order found in the source.")
+                test_source_order_yet = True
             oops = oops + 1
-            print(cmdval, oops, str1, source_cmd_order[str1], "< test source >", str2)
-    print("Total source table vs. test file errors:", test_file_errs)
+            print(cmdval, oops, str1, source_cmd_order[str1], "< test source >", str2, source_cmd_order[str2])
+            test_file_errs = test_file_errs + 1
+    print("Total source table vs. test file errors:", test_file_errs, "with", oops, "being order errors.")
 
 def bonus_mistake_check():
     count = 0
@@ -280,6 +290,7 @@ def source_vs_invisiclues():
                     use_in_invisiclues_main[ll] = True
     if ooo_test:
         print("Test/invisiclues total out of order =", ooo_test)
+        print(','.join(sorted(test_order.keys(),key=lambda x:(source_region[x], test_order[x]))))
     for x in list(set(use_in_invisiclues_main.keys()) | set(use_in_source.keys())):
         if x not in use_in_invisiclues_main.keys():
             if source_region[x] == 'odd do': continue

@@ -158,10 +158,12 @@ YAK OKAY.
 Get the Poo Coop.
 You can deal with the hay much later.
 ?What can I do with the yahoo hay?
-You can make it into something artier.
+Two things. First, you can make it into something artier.
 But you need help.
 Once you've read all the books in Word Row, a new one pops out.
 USE SOME DEMOS ON YAHOO HAY.
+Later you can make it into something more practical.
+USE ENACT CANE ON YAHOO HAY.
 >>SNEER GREENS
 ?How do I kill off the Yuge Guy?
 You'll need something to dent his pride.
@@ -483,17 +485,17 @@ There are 36 total points in Yelpley.
 1 point if you USE CASH SAC ON CROSS ORC.
 1 point if you USE YOB ATTABOY ON SNIFFINS.
 1 point if you USE ELAN ALE ON SNIFFINS.
+1 point if you STAND NAT'S.
+1 point if you USE DIRT RID ON REVIVER.
 1 point if you USE CAVE VAC ON CASSETTES SAC
 1 point if you USE RADAR ON CRAG ARC.
-1 point if you STAND NAT'S.
 1 point if you DENY NED.
 1 point if you USE YE KEY ON ETAGE GATE.
 1 point for WORN ROW once the Psi Wisp is nearby.
 1 point if you USE STINK KNITS ON ROTATOR.
+1 point if you USE GOLD LOG ON ROTATOR.
 1 point if you USE STRAW ARTS ON MIKE KIM.
 1 point if you USE GATE TAG ON SOOT TATTOOS.
-1 point if you USE GOLD LOG ON ROTATOR.
-1 point if you USE DIRT RID ON REVIVER.
 1 point if you USE BALSA SLAB ON SWORD ROWS.
 1 point if you USE NOT-A-BATON ON REIFIER.
 1 point if you USE DNA BAND ON REIFIER.
@@ -515,21 +517,21 @@ There are 28 total points in Grebeberg.
 1 point if you USE POO COOP ON TURF RUT.
 1 point if you USE RADAR ON MADE DAM.
 1 point if you USE NULL ILLUN ON KNOWN WONK.
-1 point if you USE MOOR BROOM ON TRU YURT.
 1 point if you USE EL DOODLE ON EDITS TIDE.
 1 point if you USE ELOPE POLE ON KAYAK.
 1 point if you USE DORK ROD ON TAO BOAT.
 1 point if you USE TENT NET ON CODE DOC.
 1 point if you USE SPA MAPS ON CODE DOC.
 1 point if you USE SPA MAPS ON GO-BY BOG.
+1 point if you USE ENACT CANE ON YAHOO HAY.
 1 point if you USE TROLL ORT ON BRAG GARB. (note: this can be done outside of Grebeberg, but it's part of a Grebeberg puzzle.)
 1 point for YAK OKAY around the Ergot Ogre.
 1 point if you USE SAGE GAS ON GURU RUG.
 1 point if you NAIL IAN.
 1 point if you USE SNACK CANS ON UFO TOFU.
 1 point if you USE GIFT FIG ON MAYO YAM.
+1 point if you USE MOOR BROOM ON TRU YURT.
 1 point if you USE EXAM AXE ON LIE VEIL.
-1 point if you USE ENACT CANE ON YAHOO HAY.
 1 point if you USE NAT'S TAN ON SCORN ROCS.
 1 point if you USE REP POPPER ON YUGE GUY.
 ?How do I get all the points for Odd Do?
