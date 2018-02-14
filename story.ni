@@ -823,7 +823,7 @@ this is the wear-garb rule:
 	the rule succeeds;
 
 this is the you-win rule:
-	say "You head off to saner arenas for a while, just to reflect on all you did. You consider writing a book. What to call it? Hmm, that's it. SOME MEMOS.";
+	say "You head off to saner arenas for a while, just to reflect on all you did. You consider writing a book. What to call it? Hmm, that's it. SOME MEMOS. No, DRAWN INWARD.";
 	end the story finally saying "Darn! Rad!";
 	say "(this needs to be a lot better. I need to look through my notes more carefully.)";
 	the rule succeeds;
@@ -1597,13 +1597,15 @@ check examining tract cart:
 		next-rand table of altbooks;
 		say ". Maybe it could be you! But you don't have the time to read right now, really." instead;
 
-a book is a kind of thing. description of a book is "It [if player carries the item described]is[else]looks[end if] really heavy and incomprehensible to you."
+a book is a kind of thing. description of a book is usually "It [if player carries the item described]is[else]looks[end if] really heavy and incomprehensible to you."
+
+a book can be in-row or hidden. a book is usually in-row.
 
 section pity tip
 
 the pity tip is a thing. description of pity tip is "It's not THAT hard to figure what to do to the cart. There are only 26 choices, really.[paragraph break]NOTE: this document is good for free snack cans, not redeemable if purchaser is able to eat them."
 
-section books with purpose so far
+section books in bookcase
 
 TO IDIOT is a proper-named book. [Revolt Lover]
 NULL ILLUN is a proper-named book. [Known Wonk]
@@ -1612,10 +1614,7 @@ YOB ATTABOY is a proper-named book. [Sniffins]
 
 section books without purpose so far
 
-there is a book called SOME DEMOS. It is proper-named.
-there is a book called DWELT LEWD. It is proper-named.
-[EMOTE TO ME is a proper-named book.
-WONDERED NOW is a proper-named book.]
+there is a book called SOME DEMOS. It is proper-named and hidden.
 
 gap-yet is a truth state that varies.
 
@@ -1624,15 +1623,53 @@ after examining a book:
 	now gap-yet is true;
 	continue the action;
 
+section DWELT LEWD
+
+DWELT LEWD is a proper-named hidden book.
+
+dwelt-first is a list of text that varies. dwelt-first is { "Nell, Edna", "Leon", "Nedra", "Anita", "Rolf", "Nora", "Alice", "Carol", "Leo", "Jane", "Reed", "Dena" }.
+dwelt-last is a list of text that varies. dwelt-last is { "Ned", "Dee", "Rena", "Joel", "Lora", "Cecil", "Aaron", "Flora", "Tina", "Arden", "Noel", "and Ellen" }
+
+lewd-chap is a number that varies. lewd-chap is 0.
+lewd-read is a truth state that varies.
+
+check examining DWELT LEWD: if lewd-chap is 1 and lewd-read is true, say "Another round? Sicko.[paragraph break]";
+
+description of DWELT LEWD is "[lewd-details].".
+
+to say lewd-details:
+	let lelt be number of entries in dwelt-first;
+	if lelt is not number of entries in dwelt-last, say "(BUG mismatched text array sizes) "; [should never happen, but just in case]
+	increment lewd-chap;
+	say "You read chapter [lewd-chap]: Dennis";
+	repeat with X running from 1 to lewd-chap - 1:
+		say ", [entry X of dwelt-first]";
+	let temp be lewd-chap;
+	let min be lelt + 2 - lewd-chap;
+	if debug-state is true and lewd-chap > 1, say ","; [for reference, to see where the midpoint is]
+	repeat with X running from min to lelt:
+		say "[if X is not lelt],[end if] [entry X of dwelt-last]";
+	say " Sinned";
+	if lewd-chap is number of entries in dwelt-first + 1 and lewd-read is false:
+		say ".[paragraph break]Whew! You've finished DWELT LEWD. You've forgotten the plot [one of]already[or]yet again[stopping], if there was one";
+		now lewd-chap is 0;
+		now lewd-read is true;
+
 section book verbs
 
 books-carried-yet is a truth state that varies.
 
 check taking a book:
 	if player has noun, continue the action;
-	if number of books in Worn Row is 1:
+	if number of books in ZeroRez is 2 and SOME DEMOS is off-stage:
 		say "As you pick up [noun], something else falls out. It's a smaller pamphlet, called SOME DEMOS. You pick it up.";
 		now player has SOME DEMOS;
+		now SOME DEMOS is in-row;
+		continue the action;
+	if number of books in ZeroRez is 3 and DWELT LEWD is off-stage:
+		say "Oh dear. Hidden at the very back is a book called DWELT LEWD. I won't judge you if you wish to read it, but you have been warned.";
+		now DWELT LEWD is in Worn Row;
+		now DWELT LEWD is in-row;
 		continue the action;
 	if books-carried-yet is false:
 		say "Oof! That's a heavy book. Looks like you'll only be able to take one at a time from the tract cart.";
