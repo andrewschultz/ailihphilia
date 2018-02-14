@@ -36,8 +36,6 @@ a thing can be drinkable. a thing is usually not drinkable.
 
 an ingredient is a kind of thing. an ingredient is usually edible. an ingredient can be solid or liquid.
 
-the description of a room is usually "[if number of viable directions is 1]An exit leads[else]Exits lead[end if] [list of viable directions]. NOTE: I need to change this generic text."
-
 chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
@@ -51,6 +49,12 @@ Yelpley is a region. max-score of Yelpley is 36.
 Odd Do is a region. max-score of Odd Do is 8.
 
 index map with Dirge Grid mapped east of Toll Lot.
+
+the change default appearance for blank rooms rule is listed after the room description body text rule in the carry out looking rules.
+
+carry out looking (this is the change default appearance for blank rooms rule):
+	if the description of the location is empty, say "[if number of viable directions is 1]An exit leads[else]Exits lead[end if] [list of viable directions]. NOTE: I need to change this generic text.";
+	continue the action;
 
 chapter for (beta) testers
 
@@ -863,20 +867,20 @@ elf-warn is a number that varies.
 the Tix Exit is scenery.
 
 check going south in Fun 'Nuf:
-		if player has X-ITE TIX, try useoning X-ITE TIX with Tix Exit instead;
-		if Tix Exit is in Fun 'Nuf, say "The Tix Exit blocks your way to where Evac Ave was. I guess you're stuck questing, here." instead;
-		if flee elf is in ZeroRez, say "You have no way back now that you accepted the Pact Cap." instead;
-		if elf-warn < 3, increment elf-warn;
-		say "[if elf-warn is 1]The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go[else if elf-warn is 2]'Oy! Oy! Yo-yo!' The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap[else]The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else[end if].";
-		if elf-warn < 3, the rule succeeds;
-		say "[line break]Do you still wish to go through Evac Ave and turn your back on adventure?";
-		if the player yes-consents:
-			say "The Flee Elf cries 'Fool! Aloof!' as you walk south past Evac Ave through the Elim-Mile, which removes all your memories of your brief time adventuring.";
-			end the story saying "NOWT WON";
+	if player has X-ITE TIX, try useoning X-ITE TIX with Tix Exit instead;
+	if Tix Exit is in Fun 'Nuf, say "The Tix Exit blocks your way to where Evac Ave was. I guess you're stuck questing, here." instead;
+	if flee elf is in ZeroRez, say "You have no way back now that you accepted the Pact Cap." instead;
+	if elf-warn < 3, increment elf-warn;
+	say "[if elf-warn is 1]The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go[else if elf-warn is 2]'Oy! Oy! Yo-yo!' The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap[else]The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else[end if].";
+	if elf-warn < 3, the rule succeeds;
+	say "[line break]Do you still wish to go through Evac Ave and turn your back on adventure?";
+	if the player yes-consents:
+		say "The Flee Elf cries 'Fool! Aloof!' as you walk south past Evac Ave through the Elim-Mile, which removes all your memories of your brief time adventuring.";
+		end the story saying "NOWT WON";
 
 check going when Flee Elf is in Fun 'Nuf: if noun is west or noun is east, say "'Keen! Eek!' the Flee Elf stops you. 'You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley.'" instead;
 
-check going north in fun [']nuf:
+check going north in Fun 'Nuf:
 		if Diktat Kid is in ZeroRez, say "No need to go back." instead;
 		if north tron is not in Fun 'Nuf, say "Not until you built the North-Tron." instead;
 		if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
@@ -1028,12 +1032,12 @@ part Grebeberg region
 
 book Seer Trees
 
-Seer Trees is west of Fun 'Nuf. It is in Grebeberg.
+Seer Trees is west of Fun 'Nuf. It is in Grebeberg. "East leads back to Fun [']Nuf[if Yawn Way is visited] and Yelpley[end if], but the other directions lead to further rustic adventure.".
 
 check going in Seer Trees:
 	if noun is not east and stark rats are in Seer Trees, say "The stark rats block you from going anywhere. At least they are not banging stop pots." instead;
 
-the stark rats are a plural-named thing in Seer Trees.
+the stark rats are a plural-named thing in Seer Trees. "Stark rats impede you every way except back east.". description is "They are scurrying about. There are too many to get through without getting bitten."
 
 check taking stark rats: say "There are too many, and they'd probably bite you, anyway." instead;
 
@@ -1067,7 +1071,7 @@ book Flu Gulf
 
 Flu Gulf is north of Cold Loc. It is in Grebeberg. "North and east, it's, oh, too H2O. The passage is clear back south, but [if scorn rocs are in Flu Gulf]scorn rocs['] gaze blocks you going west[else]west past the scorn rocs seems a bit treacherous[end if]."
 
-the Gulf Lug is a proper-named person in Flu Gulf. "The Gulf Lug stands here, holding his stomach.". description is "He looks slightly ill. Maybe you could help him."
+the Gulf Lug is a proper-named person in Flu Gulf. "The Gulf Lug stands here, holding his stomach.". description is "He looks slightly ill. Maybe you could help him.". talk-text is "'Ill, I...'"
 
 the cash sac is a thing.
 
@@ -1260,7 +1264,7 @@ carry out yakokaying:
 
 book Moo Room
 
-Moo Room is east of Frush Surf. It is in Grebeberg.
+Moo Room is east of Frush Surf. It is in Grebeberg. "You can't see any cows, but you occasionally hear them. From what you can see, the farm belongs to a Mr. A, who is not around. The only way back is west."
 
 the poo coop is in Moo Room. "A poo coop sits here. Thankfully, it looks empty.". description is "While it's 1/4 too small to be a pooch coop, it's 1) empty and 2) somehow bigger on the inside than the outside. Maybe it can clean up a dirty area. Well, a less dirty area than the Moo Room where you found it."
 
@@ -1288,7 +1292,7 @@ book Birch Crib
 
 Birch Crib is south of Mire Rim. It is in Grebeberg.
 
-Code Doc is a person in Birch Crib. "[one of]Someone is pacing back and forth here, muttering 'More ROM! MORE Rom! MORE ROM!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]
+Code Doc is a person in Birch Crib. "[one of]Someone is pacing back and forth here, muttering 'More ROM! MORE Rom! MORE ROM!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]"
 
 chapter Spa Maps
 
@@ -1304,7 +1308,7 @@ book Lair Trial
 
 Lair Trial is south of Birch Crib. It is in Grebeberg.
 
-the ergot ogre is a person in Lair Trial. "An ergot ogre blocks the way east.". description is "It looks vicious, and you don't want it touching you, due to disease and possible dismemberment. You need to get the ogre out of the way, somehow."
+the ergot ogre is a person in Lair Trial. "An ergot ogre blocks the way east.". description is "It looks vicious, and you don't want it touching you, due to disease and possible dismemberment. You need to get the ogre out of the way, somehow.". talk-text is "'Guh! Ug!'[paragraph break]Diplomacy won't get you by, here."
 
 check going east in Lair Trial: if ergot ogre is in Lair Trial, say "Not with the ergot ogre guarding the way." instead;
 
@@ -1814,6 +1818,8 @@ chapter cross orc
 
 The cross orc is a person in Toll Lot.
 
+talk-text is "'Pay?! Yap!'"
+
 chapter crag arc
 
 the crag arc is scenery in Toll Lot. "It soars high and is too dangerous to climb[if UFO tofu is off-stage]. It's so intricate, maybe it is hiding something you can find[end if]."
@@ -2043,7 +2049,7 @@ carry out pulluping:
 
 book Emo Dome
 
-Emo Dome is east of Yawn Way. It is in Yelpley.
+Emo Dome is east of Yawn Way. It is in Yelpley. "You can go any direction here, and you sort of want to, because it's stuffy in here. [if madam is in ZeroRez]But not back north. You're done there[else]However, the way north looks particularly treacherous[end if]."
 
 instead of doing something in Emo Dome when pulled-up is false:
 	if current action is pulluping, continue the action;
@@ -2106,7 +2112,7 @@ check going in Drawl Ward:
 
 book Scrap Arcs
 
-Scrap Arcs is east of Drawl Ward. It is in Yelpley.
+Scrap Arcs is east of Drawl Ward. It is in Yelpley. "You can't go any farther here--only back west."
 
 chapter slate metals
 
@@ -2223,7 +2229,8 @@ section gotocheck - not for release
 [this is to make sure that rooms are unfolded]
 
 when play begins:
-	say "[if number of notyet rooms is 0]All rooms have a switch saying you can go there[else]Rooms that are still notyet: [list of notyet rooms][end if]."
+	let n be number of notyet rooms;
+	say "Minor check for GOTO behavior: [if n is 0]All rooms have a switch saying you can go there[else]There are [n] that need to be ordered. They are: [list of notyet rooms not in Odd Do][end if]."
 
 volume chases
 
@@ -2284,9 +2291,17 @@ volume metarooms
 
 part Odd Do region
 
-ZeroRez is a room in Odd Do.
+[don't give the player any accidental access to the rooms]
 
-TempMet is a room in Odd Do.
+ZeroRez is a privately-named room in Odd Do. "Bug."
+
+TempMet is a privately-named room in Odd Do. "Bug."
+
+section debug helps - not for release
+
+understand "zr/zero/ZeroRez/ll/lll/ZeroRez" as ZeroRez. [ZeroRez is my default for other games. So why not.]
+
+understand "tm/TempMet" as TempMet.
 
 volume bonus points and odd verbs
 
@@ -2663,7 +2678,7 @@ when play begins (this is the make sure everyone is chatty rule):
 	repeat with Q running through people:
 		if talk-text of Q is empty:
 			increment count;
-			say "[count]. [Q] needs basic talk-stuff.";
+			say "[count]. [Q] needs basic talk-text.";
 	if count is 0:
 		say "YAY all people accounted for!";
 	else:
