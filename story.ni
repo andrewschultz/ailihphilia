@@ -661,7 +661,7 @@ YOB ATTABOY	Sniffins	Dirt Rid	--	--	true	true	false	Yelpley	"Sniffins accepts yo
 Elan Ale	Sniffins	Gorge Grog	--	--	true	true	false	Yelpley	"Sniffins looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'" [af:stand nat's]
 Dirt Rid	reviver	Cave Vac	--	--	true	true	false	Yelpley	"You watch as the Dirt Rid swirls and becomes shinier and much more powerful. A Cave Vac! It will be capable of cleaning...well, somewhere."
 Cave Vac	cassettes sac	radar	--	--	true	true	true	Yelpley	"The Cave Vac has the power to clean up the Dirt Rid, though it chokes and sputters at the end of the effort. And while a lot of the cassettes are beyond repair, there's something at the very bottom.[paragraph break]Wow! Radar![paragraph break]You hear noises from the pod, as a hidden robot appears and whisks the garbage away. That's pretty slick! Looking back, the pod doesn't seem so dopy any more, between the Demo Med's help and how you're sure the radar will help."
-radar	crag arc	UFO tofu	orc-gone rule	radar-blink rule	true	false	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO as it flies off. It bounces off you. 'O Furor! UFO!' you cry. You look at it and--it's unharmed, and still in a cubic shape. Looks like you got yourself some UFO tofu." [af:deny Ned]
+radar	crag arc	UFO tofu	orc-gone rule	radar-blink rule	true	false	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO and lands on the radar, which fizzles a bit from the impact and wetness. It hardens quickly and weirdly into a cubic shape. What could it be? You think a minute. It has to be UFO tofu." [af:deny Ned]
 Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paragraph break]A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it." [af:Worn Row]
 stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
@@ -670,7 +670,7 @@ straw arts	Mike Kim	soot tattoos	--	--	true	true	false	Yelpley	"'Brilliant! Bril
 gate tag	soot tattoos	state tats	--	--	true	true	true	Yelpley	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
 poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
 poo coop	turf rut	--	coop-full rule	--	true	true	true	Grebeberg	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture. The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
-radar	made dam	eroded ore	--	radar-blink rule	true	false	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow."
+radar	made dam	eroded ore	--	radar-blink rule	true	false	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow. The radar plays a weird scale. Being close to the ore has damaged it somehow."
 NULL ILLUN	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me.' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. And if it's simple, well, I need to know when simple stuff works.' The Known Wonk apologizes--it's back to a Tru Yurt for a thought session."
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest. 'Raft far!' they call as you sail away. The buoy helps you float the last bit to Calcific Lac, as the raft returns."
@@ -795,9 +795,9 @@ this is the mob-to-alley rule:
 
 this is the radar-blink rule:
 	if eroded ore is off-stage or UFO tofu is off-stage:
-		say "The radar blinks and clicks a bit. It's still working, but it's close to broken.";
+		say "One more hit like that, and the radar might give out for good.";
 	else:
-		say "Between the UFO tofu dropped on the radar and the eroded ore getting too close to it, the radar splits open. A roto motor falls out. You take it.";
+		say "Between the UFO tofu dropped on the radar and the eroded ore getting too close to it, the radar shorts out. After a pop, it splits open. A roto motor falls out and looks undamaged, so you take it.";
 		now player has roto motor;
 		now radar is in ZeroRez;
 	the rule succeeds;
@@ -1957,7 +1957,7 @@ check taking rep popper:
 
 chapter bomb mob
 
-the bomb mob are plural-named people. description is "They're ignoring you, and that's probably for the best."
+the bomb mob are plural-named people. description is "They're ignoring you, and that's probably for the best.". talk-text is "You don't need a gang nag. Maybe you can sneak around them to get the TNT, though."
 
 understand "poor troop" and "poor/troop" as bomb mob when DNA hand is in ZeroRez.
 
@@ -2223,7 +2223,7 @@ check going when being-chased is true:
 
 check going to Fun 'Nuf when being-chased is true: say "You feel yourself running up against an invisible barrier. Apparently, running away that way from the [chase-person] won't help." instead;
 
-the Psi Wisp is a chaser. chase-room of Psi Wisp is Pro Corp.
+the Psi Wisp is a chaser. chase-room of Psi Wisp is Pro Corp. talk-text is "It has nothing to say. It just pulses."
 
 after looking when being-chased is false:
 	if player is in pro corp and psi wisp is not in ZeroRez:
@@ -2496,6 +2496,8 @@ funstuff	dorule
 "SLAM MAMMALS around the eels"	slam-yet rule
 "PEEP instead of looking"	peep-yet rule
 "BALM LAB in the Bald Lab"	balm-yet rule
+"STATS to get the score"	stats-yet rule
+"MUSS OPOSSUM to make a friend"	muss-yet rule
 
 this is the balm-yet rule:
 	if balm-got is true, the rule succeeds;
@@ -2505,8 +2507,16 @@ this is the dial-yet rule:
 	if dial-yet is true, the rule succeeds;
 	the rule fails;
 
+this is the muss-yet rule:
+	if opossum is in ZeroRez, the rule succeeds;
+	the rule fails;
+
 this is the pb-yet rule:
 	if poop-boob-yet is true, the rule succeeds;
+	the rule fails;
+
+this is the peep-yet rule:
+	if peeped-yet is true, the rule succeeds;
 	the rule fails;
 
 this is the refer-yet rule:
@@ -2517,8 +2527,8 @@ this is the slam-yet rule:
 	if slam-mam is true, the rule succeeds;
 	the rule fails;
 
-this is the peep-yet rule:
-	if peeped-yet is true, the rule succeeds;
+this is the stats-yet rule:
+	if stats-yet is true, the rule succeeds;
 	the rule fails;
 
 volume beta testing - not for release
@@ -2608,6 +2618,15 @@ when play begins (this is the debug tweaks rule):
 	now ignore-wait is true;
 	now debug-state is true;
 
-[comment out if/when memory is tight]
+when play begins (this is the make sure everyone is chatty rule):
+	let count be 0;
+	repeat with Q running through people:
+		if talk-text of Q is empty:
+			increment count;
+			say "[count]. [Q] needs basic talk-stuff.";
+	if count is 0:
+		say "YAY all people accounted for!";
+	else:
+		say "[count] of [number of people] unaccounted for.";
 
 include Put It Up Tests by Andrew Schultz.
