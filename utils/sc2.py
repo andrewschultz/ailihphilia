@@ -480,7 +480,7 @@ def get_stuff_from_source():
                     continue
                 increment = 1
                 if this_cmd:
-                    this_cmd_ary = this_cmd.split("&")
+                    this_cmd_ary = this_cmd.upper().split("&")
                     increment = len(this_cmd_ary)
                     for t in this_cmd_ary:
                         source_region[t] = temp_region

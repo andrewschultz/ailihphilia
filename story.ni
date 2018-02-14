@@ -48,7 +48,7 @@ Dim Mid is a region. max-score of Dim Mid is 10.
 
 Yelpley is a region. max-score of Yelpley is 36.
 
-Odd Do is a region. max-score of Odd Do is 6.
+Odd Do is a region. max-score of Odd Do is 7.
 
 index map with Dirge Grid mapped east of Toll Lot.
 
@@ -1109,17 +1109,40 @@ understand "turd rut" as turf rut when poo coop is in ZeroRez.
 
 book Le Babel
 
-Le Babel is north of Dumb Mud. It is in Grebeberg.
+Le Babel is north of Dumb Mud. It is in Grebeberg. "This is a weird place. Nothing makes sense here. Go Fog pushes on you every way except to the south."
+
+chapter opossum
+
+the opossum is a thing in Le Babel. "An opossum crouches here, looking scared. Maybe you can help it be less frozen by fear."
+
+instead of doing something with opossum:
+	if action is procedural, continue the action;
+	say "You probably want to find a way to comfort the poor scared opossum."
+
+section mussing
+
+mussing is an action applying to one thing.
+
+understand the command "muss" as something new.
+
+understand "muss [something]" as mussing.
+
+carry out mussing:
+	if noun is not opossum, say "You don't need to muss [the noun]." instead;
+	say "You reach over and give the opossum a loving scratch. It perks up! Suddenly, it looks around and runs off, in search of home, wherever that is.";
+	reg-inc Odd Do; [muss opossum]
+	move opossum to ZeroRez;
+	the rule succeeds.
 
 chapter balsa slab
 
-The Balsa Slab is a thing in Le Babel.
+The Balsa Slab is a thing in Le Babel. "A balsa slab is just lying here. You're not sure how it get here, but here it is."
 
 report taking the Balsa Slab: say "It's light. It weighs ... not a gigaton."
 
 chapter Bro Orb
 
-the Bro Orb is a thing in Le Babel.
+the Bro Orb is a thing in Le Babel. "[one of]An orb hovers in the air. You know it must be a Bro Orb[or]The Bro Orb still hovers in the air[stopping]. You would love to take it, but you're not sure if you're worthy."
 
 check taking Bro Orb:
 	if player has Bro Orb, say "You already have it." instead;

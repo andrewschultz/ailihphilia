@@ -195,6 +195,11 @@ It doesn't matter which solid you use with which liquid.
 USE GIFT FIG ON MAYO YAM.
 USE SNACK CANS ON UFO TOFU.
 >>LE BABEL
+?What is the opossum doing? Is it useful?
+Only for maximum points.
+An affectionate gesture would go a long way.
+The opossum isn't a palindrome, but maybe the middle part...
+MUSS OPOSSUM.
 ?Why can't I take the bro orb?
 You're not at peace with yourself.
 You need to have spent time in the Tao Boat for that to happen.
@@ -507,8 +512,8 @@ There are 36 total points in Yelpley.
 ?How do I get all the points for Grebeberg?
 There are 28 total points in Grebeberg.
 1 point if you USE PARTY TRAP ON STARK RATS.
-1 point if you USE STOCK COTS ON SLEEP EELS.
 1 point if you USE ERA FARE ON KING NIK.
+1 point if you USE STOCK COTS ON SLEEP EELS.
 1 point if you USE PUCE CUP ON PAST SAP. [?? use it on the fir too]
 1 point if you USE PUCE CUP ON DOSE SOD.
 1 point if you USE DEMO MED ON GULF LUG.
@@ -535,13 +540,14 @@ There are 28 total points in Grebeberg.
 1 point if you USE NAT'S TAN ON SCORN ROCS.
 1 point if you USE REP POPPER ON YUGE GUY.
 ?How do I get all the points for Odd Do?
-There are 6 total points in Odd Do.
+There are 7 total points in Odd Do.
 1 point for BALM LAB once you've cleared Pro Corp to make it a bald lab.
 1 point for PEEP.
 1 point for POOP. Or BOOB.
 1 point if you REFER instead of THINK.
 1 point if you DIAL AID instead of AID.
-1 point if you SLAM MAMMALS around the eels.
+1 point if you SLAM MAMMALS around the eels before you get rid of them.
+1 point for MUSS OPOSSUM.
 ;
 >>BUSY SUB
 ?What can I do about the glam-amalg?
