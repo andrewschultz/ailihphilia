@@ -59,6 +59,8 @@ invis_points = defaultdict(int)
 invis_region_points = defaultdict(int)
 source_region = defaultdict(str)
 
+llp_commands = defaultdict(int)
+
 test_ary = []
 test_order = defaultdict(int)
 walkthrough_order = defaultdict(int)
@@ -95,10 +97,11 @@ def read_test_file_order():
             qary = line.strip().upper().split('"')
             cmd_ary = re.sub("\/$", "", qary[1]).split("/")
             for x in cmd_ary:
-                test_ary.append(x)
+                if x not in llp_commands.keys():
+                    test_ary.append(x)
     for a in range(0, len(test_ary)):
         if test_ary[a] not in dupes.keys():
-            test_order[test_ary[a]] = a+1
+            test_order[test_ary[a]] = a + 1
 
 def walkthrough_vs_test_file(maxdif):
     if not maxdif:
@@ -162,6 +165,7 @@ def source_table_vs_test_file():
             for x in cmd_ary:
                 w1 = re.sub(" .*", "", x)
                 if w1.upper() in ignore_cmd_array.keys(): continue
+                if x.upper() in llp_commands.keys(): continue
                 if x.upper() in dupes.keys() and x in in_test.keys(): continue
                 if x in in_test.keys():
                     print("WARNING", x, "duplicated in", qary[0])
@@ -174,7 +178,7 @@ def source_table_vs_test_file():
             print("Need test_order entry for", x)
             test_file_errs = test_file_errs + 1
     for x in sorted(test_order.keys()):
-        if x not in source_cmd_order.keys():
+        if x not in source_cmd_order.keys() and x not in llp_commands.keys():
             print("Oops! Test command", x, "does not appear in the source commands.")
             test_file_errs = test_file_errs + 1
     cmdval = 0
@@ -222,7 +226,7 @@ def detect_region(a, b):
     temp = re.sub(".*\[", "", a.strip())
     temp = re.sub("\].*", "", temp)
     if semi_verbose: print("DEBUG:", temp)
-    if 'odd do' in a.lower():
+    if 'odd do' in a.lower() or 'abide by the llp rule' in a.lower():
         return('odd do', temp)
     ary = temp.split("/")
     if len(ary) == 1:
@@ -279,7 +283,7 @@ def source_vs_invisiclues():
                     ll = re.sub("\..*", "", ll)
                     ll = re.sub(" [a-z].*", "", ll)
                     if ll in test_order.keys():
-                        if test_order[ll] < last_test:
+                        if test_order[ll] < last_test and source_region[ll] != 'odd do':
                             print("Out of order", test_order[ll], ll, "in invisiclues point summary region", source_region[ll])
                             print("        Best guess:", best_guess(ll))
                             ooo_this_region = ooo_this_region + 1
@@ -288,7 +292,7 @@ def source_vs_invisiclues():
                             pass
                             # print(ll, test_order[ll])
                         last_test = test_order[ll]
-                    if ll not in source_region:
+                    if ll not in source_region and ll not in llp_commands.keys():
                         summary_err = summary_err + 1
                         print("Command", ll, "is in summary but not source. Summary region={:s}.".format(summary_region))
                     elif source_region[ll] != summary_region:
@@ -320,11 +324,11 @@ def source_vs_invisiclues():
     if in_summary:
         if main_err: print("=" * 40)
         for x in list(set(use_in_invisiclues_summary.keys()) | set(use_in_source.keys())):
-            if x not in use_in_invisiclues_summary.keys():
+            if x not in use_in_invisiclues_summary.keys() and x not in llp_commands.keys():
                 if not main_err and not summary_err: print ("=" * 40)
                 print("ERROR: Need this source line in invisiclues summary:", x)
                 summary_err = summary_err + 1
-            elif x not in use_in_source.keys():
+            elif x not in use_in_source.keys() and x not in llp_commands.keys():
                 if not main_err and not summary_err: print ("=" * 40)
                 print("ERROR: Need this invisiclues summary line in source(table of useons or [region/command]:", x)
                 summary_err = summary_err + 1
@@ -369,7 +373,7 @@ def source_vs_trizbort_flow():
             print("ERROR: source not flow", x, "in source but not in trizbort flow file", triz_flow)
             summary_err = summary_err + 1
     for x in list(set(use_in_trizflow.keys()) | set(use_in_source.keys())):
-        if x not in sorted(use_in_source.keys()):
+        if x not in use_in_source.keys() and x not in llp_commands.keys():
             if "USE " + x in use_in_source.keys():
                 print("TIP: Need USE before", x)
             print("ERROR: flow not source", x, "in trizbort flow file", triz_flow, "but not source")
@@ -474,9 +478,13 @@ def get_stuff_from_source():
                 region_def_line[l2] = line_count
                 if semi_verbose: print("Noting region", l2)
                 continue
-            if ('score-inc' in line or 'reg-inc odd do' in line.lower()) and '\t' in line:
+            if ('score-inc' in line or 'abide by the llp rule' in line.lower()) and '\t' in line:
                 (temp_region, this_cmd) = detect_region(line, current_region)
                 if temp_region == 'ignore':
+                    continue
+                if temp_region == 'odd do':
+                    llp_commands[this_cmd.upper()] = line_count
+                    source_region[this_cmd.upper()] = temp_region
                     continue
                 increment = 1
                 if this_cmd:
@@ -572,7 +580,7 @@ while argval < len(sys.argv):
         semi_verbose = True
     elif noh == 'h':
         show_hash = True
-    elif noh == 'md':
+    elif noh.startswith('md'):
         try:
             if re.search("[0-9]", noh):
                 max_dif = int(re.sub("^md", "", noh))
@@ -588,9 +596,9 @@ while argval < len(sys.argv):
         usage()
     argval = argval + 1
 
-read_test_file_order()
-
 get_stuff_from_source()
+
+read_test_file_order()
 
 source_vs_trizbort_flow()
 source_vs_invisiclues()

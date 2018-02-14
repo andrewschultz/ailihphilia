@@ -15,7 +15,7 @@ part row 1
 
 book Calcific Lac
 
-understand "tao goat" as a mistake ("The goat wouldn't remain placid for long once it was plunged into water." when player is in Calcific Lac.
+understand "tao goat" as a mistake ("The goat wouldn't remain placid for long once it was plunged into water.") when player is in Calcific Lac.
 
 book Sneer Greens
 

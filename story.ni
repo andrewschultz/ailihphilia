@@ -52,7 +52,9 @@ Odd Do is a region. max-score of Odd Do is 8.
 
 index map with Dirge Grid mapped east of Toll Lot.
 
-chapter for beta testers
+chapter for (beta) testers
+
+llp-reject is a truth state that varies. [for my own tests: walkthrough with LLPs and without]
 
 in-beta is a truth state that varies.
 
@@ -67,11 +69,7 @@ The not-a-baton is a thing.
 
 The roto motor is a thing.
 
-section no precise function yet
-
 section part of a puzzle but still floating
-
-Sniffins is a person.
 
 [Otto is a person.]
 
@@ -161,6 +159,10 @@ check requesting the score:
 		let ni be number of tronparts carried by the player;
 		say "You also have [ni] of [number of tronparts] piece[if ni is not 1]s[end if] of the North Tron, according to the set-o-notes.";
 	the rule succeeds;
+
+this is the llp rule:
+	if llp-reject is true, the rule succeeds;
+	reg-inc Odd Do;
 
 to reg-inc (re - a region):
 	if re is not Odd Do and re is not mrlp, say "DEBUG NOTE: scored [re] point in [mrlp].";
@@ -258,7 +260,6 @@ to decide whether the action is pro-and-use: [aip2]
 	if useoning, yes;
 	if the action is procedural, yes;
 	no;
-	no;
 
 chapter refering / thinking
 
@@ -273,7 +274,7 @@ understand "refer" as refering.
 carry out refering:
 	if refer-bonus is false:
 		say "Yes! That's a slightly more appropriate way to think, here.";
-		reg-inc Odd Do; [REFER]
+		abide by the llp rule; [REFER]
 		now refer-bonus is true;
 	try thinking instead;
 
@@ -1127,9 +1128,11 @@ understand "turd rut" as turf rut when poo coop is in ZeroRez.
 
 book Le Babel
 
-Le Babel is north of Dumb Mud. It is in Grebeberg. "This is a weird place. Nothing makes sense here. A voodoo v blocks passage everywhere except back south.
+Le Babel is north of Dumb Mud. It is in Grebeberg. "This is a weird place. Nothing makes sense here. A voodoo v blocks passage--and sight--everywhere except back south."
 
 chapter voodoo v
+
+the voodoo v is scenery. "Maybe you could walk across it without getting hurt, but you doubt it. It's there, and it's immovable."
 
 instead of doing something with voodoo v:
 	if action is procedural, continue the action;
@@ -1140,6 +1143,7 @@ chapter opossum
 the opossum is a thing in Le Babel. "An opossum crouches here, looking scared. Maybe you can help it be less frozen by fear."
 
 instead of doing something with opossum:
+	if current action is taking, say "The opossum bounds away. Perhaps you can be less grabby." instead;
 	if action is procedural, continue the action;
 	if current action is mussing, continue the action;
 	say "You probably want to find a way to comfort the poor scared opossum."
@@ -1155,7 +1159,7 @@ understand "muss [something]" as mussing.
 carry out mussing:
 	if noun is not opossum, say "You don't need to muss [the noun]." instead;
 	say "You reach over and give the opossum a loving scratch. It perks up! Suddenly, it looks around and runs off, in search of home, wherever that is.";
-	reg-inc Odd Do; [muss opossum]
+	abide by the llp rule; [muss opossum]
 	move opossum to ZeroRez;
 	the rule succeeds.
 
@@ -1826,7 +1830,7 @@ carry out denying:
 
 book Deli Tiled
 
-Deli Tiled is south of Toll Lot. It is in Yelpley. printed name is "[if yob attaboy is in ZeroRez]Bon Snob[else]Deli, Tiled[end if]". description is "There's not much decor in this [if yob attaboy is in ZeroRez]deli[else]fancy eatery, except for some snooty toons[end if]. You can exit to the north.
+Deli Tiled is south of Toll Lot. It is in Yelpley. printed name is "[if yob attaboy is in ZeroRez]Bon Snob[else]Deli, Tiled[end if]". description is "There's not much decor in this [if yob attaboy is in ZeroRez]deli[else]fancy eatery, except for some snooty toons[end if]. You can exit to the north."
 
 the gift fig is a solid ingredient. description is "Well, it's a fig."
 
@@ -2261,7 +2265,7 @@ dial-yet is a truth state that varies.
 check aiding:
 	if dial-yet is false and word number 1 in the player's command is "dial":
 		say "Your 'correct' way of asking for aid nets a last lousy point. Yay![paragraph break]";
-		reg-inc Odd Do; [DIAL AID]
+		abide by the llp rule; [DIAL AID]
 		now dial-yet is true;
 	if dial-yet is false:
 		say "Aid... aid...[paragraph break]";
@@ -2291,7 +2295,7 @@ understand "balmlab" as balmlabing when player is in Pro Corp and number of thin
 carry out balmlabing:
 	if balm-got is true, say "No double dipping." instead;
 	now balm-got is true;
-	reg-inc Odd Do; [BALM LAB]
+	abide by the llp rule; [BALM LAB]
 	say "Some EOL Aloe squirts out of the butene tub. You rub it on yourself. You immediately quit running around in circles in your mind, and when a disturbing through pops back up, you sort of say EOL, and it disappears, and it doesn't feel cheesy. But then an enol cyclone blows you over, and when you wake up again, it's a bald lab." instead;
 
 chapter peeping
@@ -2309,7 +2313,7 @@ carry out peeping:
 	if peeped-yet is false:
 		now peeped-yet is true;
 		say "You feel more in tune with the world, now that you've looked a little differently.";
-		reg-inc Odd Do; [PEEP]
+		abide by the llp rule; [PEEP]
 	the rule succeeds;
 
 chapter pooping
@@ -2333,7 +2337,7 @@ carry out pooping:
 		repeat with Q running from 1 to 6:
 			say "[line break][bracket][if Q is 1]Wait, no, y[else]Y[end if]our score has just gone down [if Q > 1]again [end if]by 121 points.[close bracket]";
 			wfak;
-		reg-inc Odd Do; [POOP]
+		abide by the llp rule; [POOP]
 		now the last notified score is the score;
 	else:
 		say "[line break]X2?[paragraph break]...X!";
@@ -2354,7 +2358,7 @@ carry out slammammalsing:
 	if sleep eels are in ZeroRez, say "Too late for that." instead;
 	unless player is in Ooze Zoo and sleep eels are in Ooze Zoo, say "You have no sympathetic audience." instead;
 	say "The sleep eels wake from their slumber briefly to squirm. They telephathically project their pleasure before going back to sleep. You've ... done something, I guess?";
-	reg-inc Odd Do; [SLAM MAMMALS]
+	abide by the llp rule; [SLAM MAMMALS]
 	the rule succeeds;
 
 chapter statsing
@@ -2371,7 +2375,7 @@ carry out statsing:
 	try requesting the score;
 	if stats-yet is false:
 		say "Extra style point for requesting the score 'correctly.'";
-		reg-inc Odd Do; [STATS]
+		abide by the llp rule; [STATS]
 		now stats-yet is true;
 	the rule succeeds;
 
@@ -2448,6 +2452,8 @@ rule for amusing a victorious player:
 	else:
 		say "[line break]Toggle what you already did with AMT.";
 
+chapter amusing table
+
 table of amusing stuff
 funstuff	dorule
 "FLEA ELF?"	elf-fleaed rule
@@ -2479,6 +2485,8 @@ this is the what-missed rule:
 			say "[funstuff entry]";
 			increment missed;
 	if missed is 0, say "You found all the points!"
+
+chapter misses table
 
 table of potential misses
 funstuff	dorule
@@ -2517,6 +2525,19 @@ volume beta testing - not for release
 
 when play begins:
 	now in-beta is true;
+
+chapter llping
+
+llping is an action out of world.
+
+understand the command "llp" as something new.
+
+understand "llp" as llping.
+
+carry out llping:
+	now llp-reject is whether or not llp-reject is true;
+	say "LLP reject is now [on-off of llp-reject].";
+	the rule succeeds;
 
 chapter endgame
 
