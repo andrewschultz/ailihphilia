@@ -168,6 +168,8 @@ book My Gym
 
 understand "evade dave" as a mistake ("Dave's not here, man!") when player is not in My Gym.
 
+understand "sworn rows" as a mistake ("The sword rows are inanimate and neutral.") when player is in My Gym.
+
 book Swept Pews
 
 book Deli Tiled

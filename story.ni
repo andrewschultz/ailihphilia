@@ -960,17 +960,35 @@ check going to Dirge Grid: if test set is not in ZeroRez, say "[if player does n
 
 printed name of Dirge Grid is "[if Diktat Kid is in ZeroRez]Top Spot[else]Dirge Grid[end if]"
 
-Diktat Kid is a proper-named person in Dirge Grid.
-
-the Knife Fink is a person in Dirge Grid.
-
-the Verses Rev is a person in Dirge Grid.
-
 after looking in Dirge Grid for the first time:
 	say "The Diktat Kid booms 'Engage le jeu que je le gagne!'";
 	continue the action;
 
 check going south in Dirge Grid: if Diktat Kid is in Dirge Grid, say "'Mom! SOS! LOL! SOS! Mom!' the Diktat Kid mocks you.[paragraph break]You can't chicken out. You must be close!" instead;
+
+chapter Diktat Kid
+
+Diktat Kid is a proper-named person in Dirge Grid.
+
+chapter Knife Fink
+
+the Knife Fink is a person in Dirge Grid. "A Knife Fink wields some leet steel here."
+
+the Knife Fink carries the leet steel.
+
+instead of doing something with leet steel:
+	if action is procedural, continue the action;
+	say "You want to focus on the Verses Rev."
+
+chapter Verses Rev
+
+the Verses Rev is a person in Dirge Grid. "A Verses Rev wields a part strap here."
+
+the Verses Rev carries the part strap.
+
+instead of doing something with part strap:
+	if action is procedural, continue the action;
+	say "You want to focus on the Verses Rev."
 
 chapter x-ite tix
 
@@ -1117,6 +1135,7 @@ the opossum is a thing in Le Babel. "An opossum crouches here, looking scared. M
 
 instead of doing something with opossum:
 	if action is procedural, continue the action;
+	if current action is mussing, continue the action;
 	say "You probably want to find a way to comfort the poor scared opossum."
 
 section mussing
@@ -1797,7 +1816,7 @@ Deli Tiled is south of Toll Lot. It is in Yelpley. printed name is "[if yob atta
 
 the gift fig is a solid ingredient. description is "Well, it's a fig."
 
-the dirt rid is a thing. description is "The Dirt Rid looks old and decrepit. Sniffins probably wore it out converting the Bon Snob, but it's yours now."
+the Dirt Rid is a thing. description is "The Dirt Rid looks old and decrepit. Sniffins probably wore it out converting the Bon Snob, but it's yours now."
 
 the cave vac is a thing. description is "It looks a lot more powerful than the Dirt Rid."
 
