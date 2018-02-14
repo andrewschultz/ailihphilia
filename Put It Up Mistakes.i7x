@@ -160,6 +160,8 @@ understand "bork Rob" as a mistake ("Maybe there is a more nonviolent way to get
 
 understand "borg Rob" as a mistake ("He is already assimilated.") when Rob is quicknear.
 
+understand "track cart" as a mistake ("Right idea, but the cart isn't going anywhere.") when player is in Worn Row and workrow is true.
+
 chapter dork rod
 
 understand "dorm rod" and "dorm" as a mistake ("You reveal no frat. Arf!") when dork rod is quicknear.

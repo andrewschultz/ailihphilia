@@ -595,6 +595,7 @@ randtxt
 table of yessies
 randtxt
 "Hosannas, Oh!"
+"Laud-ual!"
 "Nod on!"
 "Pep!"
 "Pip, pip!"

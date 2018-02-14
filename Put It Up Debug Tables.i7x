@@ -92,7 +92,7 @@ randtxt
 table of yessies
 randtxt
 "Hosannas, Oh!"
-"Nod on!"
+"Laud-ual!"
 
 Put it Up debug Tables ends here.
 

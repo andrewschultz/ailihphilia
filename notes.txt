@@ -13,9 +13,10 @@ Redivider: another weapon
 
 ===================Very begin/end detail
 # You've had this nightmare before. You're young again, back in high school. Diary raid! Diary raid!@
-# XITE TIX lead to A MORE EXCITING REAL WORLD. Well, given all the palindromes you dealt with, you probably should've expected a circular loop to back where you began. But you did have fun. Probably more than if you'd stood around and leveled up a whole bunch. So that's something. / Not even a DVD! / Back Cab works better than a racecar. You enjoy the trip.
+# Aloha Hola
+# XITE TIX lead to A MORE EXCITING REAL WORLD. Well, given all the palindromes you dealt with, you probably should've expected a circular loop to back where you began. But you did have fun. Probably more than if you'd stood around and leveled up a whole bunch. So that's something. / Not even a DVD! / Back Cab works better than a racecar. You enjoy the trip. It may or may not be a Toyota--you don't check.
 #Tropiciport/El Live Ville
-What will your memoir be? Drawn Inward
+What will your memoir be? Drawn Inward? Some Memos?
 
 
 ===================(extra) points
@@ -25,11 +26,15 @@ use radar on eels = how you know about mammals
 
 ===================mistakes
 
+===================technical
+
+randomize male/female of some characters
+
 ===================done in story but need proofreading
 
 ===================features/weird/not quite sure
 
-randomize male/female of some characters
+morph prom
 
 For the tope depot! Sniffins, uh, sniffs at you.
 
@@ -44,10 +49,6 @@ Rah! Thar!
 Emulo-Volume
 
 Bunk nub left when you help the eels, or, each breaks off a bunk nub?
-
-Nag Ol Slogan
-
-ending:Darn! Rad!
 
 Epit-ipe
 
@@ -86,16 +87,7 @@ A six is a six is a...
 
 Yo Banana Boy
 
-======================DWELT LEWD stuff.
-
-start:Dennis, Nell, Edna, Leon, Nedra, Anita, Rolf, Nora, Alice, Carol, Leo, Jane, Reed, Dena
-end:Ned, Dee, Rena, Joel, Lora, Cecil, Aaron, Flora, Tina, Arden, Noel, and Ellen sinned.
-
-"Dennis, Nell, Edna, Leon, Nedra, Anita, Rolf, Nora, Alice, Carol, Leo, Jane, Reed, Dena, Dale, Basil, Rae, Penny, Lana, Dave, Denny, Lena, Ida, Bernadette, Ben, Ray, Lila, Nina, Jo, Ira, Mara, Sara, Mario, Jan, Ina, Lily, Arne, Bette, Dan, Reba, Diane, Lynn, Ed, Eva, Dana, Lynne, Pearl, Isabel, Ada, Ned, Dee, Rena, Joel, Lora, Cecil, Aaron, Flora, Tina, Arden, Noel, and Ellen sinned."
-
 bar crab?
-
-Yo Aloha Hola Oy
 
 A nut for a jar of tuna.
 
@@ -302,17 +294,11 @@ militia
 
 RAM OMAR
 
-gang nag
-
-Dual Laud
-
 frac-scarf: tinker reknit tinker reknit
 
 Leer Reel: well you don't want to watch it. It's not for good upstanding citizens.
 
 Toby Bot
-
-WANT? NAW
 
 Dah Chad
 
@@ -320,46 +306,30 @@ park rap
 
 Still, it's...
 
-Eels appear ...
-
 # Demi-Med vs Demo Med
 
 Gulps Plug = somewhere ...
 
 hand? Nah
 
-More rom
-
 Bill Lib
 
 Trope Port: location for where you have lots of, well, things
 
-Golf Log
-Track Cart
-
 Da Pad
 Damp Mad
-
-USE Dirt-Rid ON Cave-Vac so it can really clean stuff up!
-
-Not a ton
-
-'S Sensuousness
 
 Loot Stool
 
 Attack, cat? Ta!
 
-Hurt! Ruh!
-A Thump, Mutha'!
 Miff 'im!
 Mix 'im!
 Maid, I am!
-Main, I am!: diktat kid says
 
-TIE IT: solution to puzzle
+Hurt! Ruh!
+A Thump, Mutha'!
 
-Misdeeds? I'm ... : Yuge Guy
 pu
 Dub a Bud
 
@@ -370,8 +340,6 @@ Sagas
 Solos
 
 Ye Fey
-
-A Toyota
 
 INITIALED NAMES BELOW=====================
 S. Tibbits

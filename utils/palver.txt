@@ -17,9 +17,12 @@ s:the release number
 s:printed name of
 s:the story headline
 s:the eels are people
+s:the opossum is a
 s:check
 s:instead
 s:before
+s:talk-text
+s:a book can be
 s:after
 s:the machine message rules
 s:every turn
@@ -34,6 +37,7 @@ i:are cappy
 i:rule is listed
 i:is a kind
 i:is a truth state
+i:is a list of text
 i:is a person that varies
 i:is a direction
 i:is a number

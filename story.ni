@@ -675,7 +675,7 @@ NULL ILLUN	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins t
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest. 'Raft far!' they call as you sail away. The buoy helps you float the last bit to Calcific Lac, as the raft returns."
 dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
-tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Say! Thanks! I appreciate that. Let me know if I can share some knowledge in return."
+tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Together, you figure out what to do to make the tent net proper cover for the birch crib. 'Tie it ... tie it ...'[paragraph break]Once the work is done, the Code Doc thanks you and offers to share some knowledge in return, whenever."
 spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
 spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	"You stick some strands of yahoo hay into the damaged end of the dork rod. It's now a moor broom!"
@@ -862,25 +862,26 @@ elf-warn is a number that varies.
 
 the Tix Exit is scenery.
 
-check going in Fun 'Nuf:
-	if noun is south:
+check going south in Fun 'Nuf:
 		if player has X-ITE TIX, try useoning X-ITE TIX with Tix Exit instead;
 		if Tix Exit is in Fun 'Nuf, say "The Tix Exit blocks your way to where Evac Ave was. I guess you're stuck questing, here." instead;
 		if flee elf is in ZeroRez, say "You have no way back now that you accepted the Pact Cap." instead;
 		if elf-warn < 3, increment elf-warn;
-		say "[if elf-warn is 1]The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go[else if elf-warn is 2]The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap[else]The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else[end if].";
+		say "[if elf-warn is 1]The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go[else if elf-warn is 2]'Oy! Oy! Yo-yo!' The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap[else]The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else[end if].";
 		if elf-warn < 3, the rule succeeds;
 		say "[line break]Do you still wish to go through Evac Ave and turn your back on adventure?";
 		if the player yes-consents:
 			say "The Flee Elf cries 'Fool! Aloof!' as you walk south past Evac Ave through the Elim-Mile, which removes all your memories of your brief time adventuring.";
 			end the story saying "NOWT WON";
-	if Flee Elf is in Fun 'Nuf:
-		if noun is west or noun is east, say "'Keen! Eek!' the Flee Elf stops you. 'You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley.'" instead;
-	if noun is north:
+
+check going when Flee Elf is in Fun 'Nuf: if noun is west or noun is east, say "'Keen! Eek!' the Flee Elf stops you. 'You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley.'" instead;
+
+check going north in fun [']nuf:
 		if Diktat Kid is in ZeroRez, say "No need to go back." instead;
 		if north tron is not in Fun 'Nuf, say "Not until you built the North-Tron." instead;
 		if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
 		if murk rum is not in ZeroRez, say "You have the yard ray, but it isn't, well, charged." instead;
+		if player does not have ME gem or player does not have Taboo Bat, say "You feel well equipped ... but well equipped enough?";
 
 chapter Pact Cap
 
@@ -1079,7 +1080,7 @@ check going west in Flu Gulf when scorn rocs are in Flu Gulf:	say "The scorn roc
 book Sneer Greens
 
 every turn when player is in Sneer Greens:
-	if a random chance of 1 in 2 succeeds, say "The Yuge Guy mumbles '[one of]Soros! Soros![or]Huge! Guh![or]Rofl! For...[or]Gibe! Big![in random order]'";
+	if a random chance of 1 in 2 succeeds, say "The Yuge Guy mumbles '[one of]Main, I am![or]Soros! Soros![or]Huge! Guh![or]Rofl! For...[or]Gibe! Big![or]Misdeeds? I'm ...[in random order]'";
 
 check going east in Sneer Greens:
 	if Yuge Guy is in Sneer Greens, say "'LOW AWOL!' the Yuge Guy booms, as you run away."
@@ -1096,7 +1097,9 @@ after looking in Sneer Greens for the first time:
 	say "The Yuge Guy calls 'BOO! NOOB!' just to reinforce his contempt.";
 	continue the action;
 
-Yuge Guy is a proper-named person in Sneer Greens. understand "evil/clive" and "evil clive" as Yuge Guy.
+Yuge Guy is a proper-named person in Sneer Greens. description is "Bilgy. Glib."
+
+understand "evil/clive" and "evil clive" as Yuge Guy.
 
 book Dumb Mud
 
@@ -1171,16 +1174,16 @@ report taking the Balsa Slab: say "It's light. It weighs ... not a gigaton."
 
 chapter Bro Orb
 
-the Bro Orb is a thing in Le Babel. "[one of]An orb hovers in the air. You know it must be a Bro Orb[or]The Bro Orb still hovers in the air[stopping]. You would love to take it, but you're not sure if you're worthy."
+the Bro Orb is a thing in Le Babel. "[one of]An orb hovers in the air. You know it must be a Bro Orb[or]The Bro Orb still hovers in the air[stopping]. You would love to take it, but you're not sure if you're worthy." [??bros orb]
 
 check taking Bro Orb:
 	if player has Bro Orb, say "You already have it." instead;
-	if player does not have tenet, say "You aren't sure you can handle the potentially corrupting power of the Bro Orb. [if player has sage gas]The sage gas helps you to understand how things could go wrong, but still, you're a bit worried[end if]. Maybe if you had some more balance to your thinking." instead;
-	say "With the tenet, you feel balanced enough to take the Bro Orb and accept the responsibility for doing so."
+	if player does not have tenet, say "A voice in your head says 'WANT? NAW!'[paragraph break]You aren't sure you can handle the potentially corrupting power of the Bro Orb. [if player has sage gas]The sage gas helps you to understand how things could go wrong, but still, you're a bit worried[end if]. Maybe if you had some more balance to your thinking." instead;
+	say "You wonder if you should take the Bro Orb. If you deserve to. But you reread the tenet and whisper to yourself, 'Nag, ol['] slogan,' and feel balanced enough to take the Bro Orb and accept the responsibility for doing so.";
 
 report taking Bro Orb:
 	now tenet is in ZeroRez;
-	say "As you take the Bro Orb, you watch the tenet flutter off into the void around Le Babel. Oh, well. You carry it in your mind and heart and stuff anyway, now.";
+	say "Taking the Bro Orb requires two hands. You watch the tenet flutter off beyond the Voodoo V. Oh, well. You carry the tenant's message in your mind and heart and stuff anyway, now.";
 
 book Mont Nom
 
@@ -1285,7 +1288,7 @@ book Birch Crib
 
 Birch Crib is south of Mire Rim. It is in Grebeberg.
 
-Code Doc is a person in Birch Crib.
+Code Doc is a person in Birch Crib. "[one of]Someone is pacing back and forth here, muttering 'More ROM! MORE Rom! MORE ROM!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]
 
 chapter Spa Maps
 
@@ -1635,7 +1638,7 @@ lewd-read is a truth state that varies.
 
 check examining DWELT LEWD: if lewd-chap is 1 and lewd-read is true, say "Another round? Sicko.[paragraph break]";
 
-description of DWELT LEWD is "[lewd-details].".
+description of DWELT LEWD is "[lewd-details][line break]".
 
 to say lewd-details:
 	let lelt be number of entries in dwelt-first;
@@ -1651,7 +1654,7 @@ to say lewd-details:
 		say "[if X is not lelt],[end if] [entry X of dwelt-last]";
 	say " Sinned";
 	if lewd-chap is number of entries in dwelt-first + 1 and lewd-read is false:
-		say ".[paragraph break]Whew! You've finished DWELT LEWD. You've forgotten the plot [one of]already[or]yet again[stopping], if there was one";
+		say ".[paragraph break]Whew! You've finished DWELT LEWD. After reading the blurb for the sequel, [']S SENSUOUSNESS, you realize you've forgotten the plot [one of]already[or]yet again[stopping], if there was one. Sicko. (Hey, don't look at me, I just wrote the abstract code for the 'book.')";
 		now lewd-chap is 0;
 		now lewd-read is true;
 
@@ -2164,7 +2167,7 @@ instead of doing something with butene tub:
 
 chapter gold log
 
-the gold log is a thing in Pro Corp.
+the gold log is a thing in Pro Corp. description is "It's pretty cylindrical but feels hollow, not a ton, lighter than it should. Maybe if it were shaped a bit different it would be a golf log you could use to putt up, but as-is, it's not too useful."
 
 chapter DNA band and hand and what's after
 
