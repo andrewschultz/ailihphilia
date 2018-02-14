@@ -15,6 +15,8 @@ part row 1
 
 book Calcific Lac
 
+understand "tao goat" as a mistake ("The goat wouldn't remain placid for long once it was plunged into water." when player is in Calcific Lac.
+
 book Sneer Greens
 
 book Flu Gulf
@@ -34,6 +36,8 @@ understand "pcp" as a mistake ("While searching for a bost, you're apprehended b
 book Pro Corp
 
 understand "dna land" as a mistake ("Biochemistry has its own nuances with symmetry, but we're sticking with something a lot dumber, here.") when DNA band is quicknear or DNA hand is quicknear.
+
+understand "DNA hand" as a mistake ("Right idea, but you can't do it on your own. You need technology to help you.") when DNA band is quicknear.
 
 part row 2
 

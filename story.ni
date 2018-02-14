@@ -1216,7 +1216,7 @@ understand "yak okay" as yakokaying.
 carry out yakokaying:
 	if ergot ogre is in ZeroRez, say "[if yak is in location of player]The yak has served you well. It deserves a rest.[else]You relive past glories. Why not?[end if]" instead;
 	if yak is in location of player and ergot ogre is in location of player:
-		say "The kayo yak surges at the ergot ogre and knocks it over! The ergot won't spread to the yak's horns, so that's good. The ogre dusts itself off and walks away, embarrassed. The yak, for its part, heads back to the Frush Surf.";
+		say "The kayo yak surges at the ergot ogre and knocks it over! The ergot won't spread to the yak's horns, so that's good. The ogre dusts itself off and walks away, embarrassed. The yak, for its part, looks relaxed--almost like a tao goat--and heads off, not to the Frush Surf, but somewhere calmer.";
 		score-inc; [Grebeberg/YAK OKAY]
 		now yak is in ZeroRez;
 		now ergot ogre is in ZeroRez;
@@ -1793,15 +1793,15 @@ carry out denying:
 
 book Deli Tiled
 
-Deli Tiled is south of Toll Lot. It is in Yelpley. printed name is "[if yob attaboy is in ZeroRez]Bon Snob[else]Deli, Tiled[end if]".
+Deli Tiled is south of Toll Lot. It is in Yelpley. printed name is "[if yob attaboy is in ZeroRez]Bon Snob[else]Deli, Tiled[end if]". description is "There's not much decor in this [if yob attaboy is in ZeroRez]deli[else]fancy eatery, except for some snooty toons[end if]. You can exit to the north.
 
-the gift fig is a solid ingredient.
+the gift fig is a solid ingredient. description is "Well, it's a fig."
 
-the dirt rid is a thing.
+the dirt rid is a thing. description is "The Dirt Rid looks old and decrepit. Sniffins probably wore it out converting the Bon Snob, but it's yours now."
 
-the cave vac is a thing.
+the cave vac is a thing. description is "It looks a lot more powerful than the Dirt Rid."
 
-Sniffins is a person in Deli Tiled.
+Sniffins is a person in Deli Tiled. "[one of]You hear a sniff, and the proprietor introduces themselves as Sniffins, apologizing for how lame the ambience and decor are, but there's just no INSPIRATION to do better[or]Sniffins sniffs here[stopping]."
 
 The Gorge Grog is in Deli Tiled. "Some Gorge Grog is here. It looks out of place in the Bon Snob, but Sniffins probably won't give it to you for free.". description is "Unsurprisingly, it is a product of Grog-Org."
 
@@ -1817,6 +1817,14 @@ a tame mat is in Deli Tiled. "A tame mat reading Deli Tiled here."
 
 check taking tame mat:
 	say "That would be stealing." instead;
+
+chapter snooty toons
+
+The snooty toons are scenery. "They certainly add ambience to the place. You're not sure whether you should feel obliged to laugh at them or not good enough to laugh at them. But they're not really hurting you, you guess."
+
+instead of doing something with snooty toons:
+	if action is procedural, continue the action;
+	say "The snooty toons can't help or harm you. They're just there."
 
 chapter standing
 
