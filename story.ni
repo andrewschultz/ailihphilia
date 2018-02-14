@@ -48,7 +48,7 @@ Dim Mid is a region. max-score of Dim Mid is 10.
 
 Yelpley is a region. max-score of Yelpley is 36.
 
-Odd Do is a region. max-score of Odd Do is 7.
+Odd Do is a region. max-score of Odd Do is 8.
 
 index map with Dirge Grid mapped east of Toll Lot.
 
@@ -1127,7 +1127,13 @@ understand "turd rut" as turf rut when poo coop is in ZeroRez.
 
 book Le Babel
 
-Le Babel is north of Dumb Mud. It is in Grebeberg. "This is a weird place. Nothing makes sense here. Go Fog pushes on you every way except to the south."
+Le Babel is north of Dumb Mud. It is in Grebeberg. "This is a weird place. Nothing makes sense here. A voodoo v blocks passage everywhere except back south.
+
+chapter voodoo v
+
+instead of doing something with voodoo v:
+	if action is procedural, continue the action;
+	say "You don't want or need to mess with the voodoo v.";
 
 chapter opossum
 
@@ -1297,7 +1303,15 @@ check going east in Lair Trial: if ergot ogre is in Lair Trial, say "Not with th
 
 book Motto Bottom
 
-Motto Bottom is east of Lair Trial. It is in Grebeberg.
+Motto Bottom is east of Lair Trial. It is in Grebeberg. "Go-fog blocks passage every way except back west."
+
+chapter go fog
+
+the go fog is scenery in Motto Bottom. understand "gofog" and "go-fog" as go fog. "The go fog is very opaque. It would be too easy to get lost in."
+
+instead of doing something with go fog:
+	if action is procedural, continue the action;
+	say "The go fog is very dense. It pushes you back west even as you look at it. As if to say, go away, and also, get going with what you want and need to do."
 
 chapter guru rug
 
@@ -2341,6 +2355,24 @@ carry out slammammalsing:
 	unless player is in Ooze Zoo and sleep eels are in Ooze Zoo, say "You have no sympathetic audience." instead;
 	say "The sleep eels wake from their slumber briefly to squirm. They telephathically project their pleasure before going back to sleep. You've ... done something, I guess?";
 	reg-inc Odd Do; [SLAM MAMMALS]
+	the rule succeeds;
+
+chapter statsing
+
+stats-yet is a truth state that varies.
+
+statsing is an action out of world.
+
+understand the command "stats" as something new.
+
+understand "stats" as statsing.
+
+carry out statsing:
+	try requesting the score;
+	if stats-yet is false:
+		say "Extra style point for requesting the score 'correctly.'";
+		reg-inc Odd Do; [STATS]
+		now stats-yet is true;
 	the rule succeeds;
 
 volume endgame stuff
