@@ -60,6 +60,8 @@ chapter for (beta) testers
 
 llp-reject is a truth state that varies. [for my own tests: walkthrough with LLPs and without]
 
+endgame-test is a truth state that varies.
+
 in-beta is a truth state that varies.
 
 volume unsorted
@@ -220,11 +222,14 @@ Rule for printing a parser error when the latest parser error is the i beg your 
 
 Rule for printing a parser error when the latest parser error is the can't see any such thing error:
 	let X be indexed text;
-	now X is "[location of player]";
+	now X is "[location of player]" in lower case;
+	replace the text "[']" in X with "";
+	replace the text "-" in X with " ";
 	repeat with J running from 1 to number of words in X:
 		let Y be word number J in X;
 		if the player's command matches the text "[Y]", case insensitively:
-			say "It looks like you tried to do something with the location name. You don't need to[if balm-got is false], and you got the sneaky bonus point for doing so[else], though you'll get a bonus point in the right place. Location names are generally just to describe unnecessary scenery.";
+			say "It looks like you tried to do something with the location name.[if balm-got is false], and you got the sneaky bonus point for doing so[else], though you'll get a bonus point in the right place. Location names are generally just to describe unnecessary scenery[end if].";
+			if gone-to is false, say "[line break]However, GO TO/GT (room) may be a nice shortcut to visit a previous location.";
 			the rule succeeds;
 	continue the action;
 
@@ -362,18 +367,18 @@ understand "verb" as verbing.
 understand "v" as verbing.
 
 carry out verbing:
-	say "The four basic directions (N, S, E, W) are the main ones, along with USE, in order to get through the game. Also, in some places, specific verbs will be needed. None are terribly long, and---well, there is a pattern to them.";
-	say "[line break]Standard verbs like X (EXAMINE) and LOOK also work.";
-	say "[line break]GT or GO TO lets you go to a room where you've been before.";
-	say "[line break]THINK gives very general hints.";
-	say "[line break]T or TALK TO talks to someone. You don't need to, to win the game, but there you are.";
-	say "[line break]USE (item) ON (item) is frequently used. It replaces a lot of verbs like GIVE or THROW.";
-	say "[line break]AID gives you hints for where you are. ABOUT and CREDITS tell about the game.";
+	say "The four basic directions ([b]N, S, E, W[r]) are the main ones, along with [b]USE[r], in order to get through the game. Also, in some places, specific verbs will be needed. None are terribly long, and---well, there is a pattern to them.";
+	say "[line break]Standard verbs like [b]X[r] ([b]EXAMINE[r]) and [b]LOOK[r] also work.";
+	say "[line break][b]GT[r] or [b]GO TO[r] lets you go to a room where you've been before.";
+	say "[line break][b]THINK[r] gives very general hints.";
+	say "[line break][b]T[r] or [b]TALK TO[r] talks to someone. You don't need to, to win the game, but there you are.";
+	say "[line break][b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
+	say "[line break][b]AID[r] gives you hints for where you are. [b]ABOUT[r] and [b]CREDITS[r] tell about the game.";
 	say "[line break]Many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy.";
-	if wr-short-note is true and player is in Worn Row and workrow is true, say "[line break]REV, ROT and REI use an item on the reviver, rotator and reifier, respectively.";
+	if wr-short-note is true and player is in Worn Row and workrow is true, say "[line break][b]REV[r], [b]ROT[r] and [b]REI[r] use an item on the reviver, rotator and reifier, respectively.";
 	if in-beta is true:
-		say "[line break]RR lets you try all three items in the Word Row machines. If one nets a point, it goes last.";
-		say "[line break]ENDGAME kicks you to the endgame.";
+		say "[line break][b]RR[r] lets you try all three items in the Word Row machines. If one nets a point, it goes last.";
+		say "[line break][b]ENDGAME[r] kicks you to the endgame, where you have all the weapons to win the game, though you will be limited to Fun [']Nuf and the Dirge Grid.";
 	the rule succeeds;
 
 wr-short-note is a truth state that varies.
@@ -888,7 +893,10 @@ check going south in Fun 'Nuf:
 		say "The Flee Elf cries 'Fool! Aloof!' as you walk south past Evac Ave through the Elim-Mile, which removes all your memories of your brief time adventuring.";
 		end the story saying "NOWT WON";
 
-check going when Flee Elf is in Fun 'Nuf: if noun is west or noun is east, say "'Keen! Eek!' the Flee Elf stops you. 'You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley.'" instead;
+check going in Fun 'Nuf:
+	if noun is west or noun is east:
+		if Flee Elf is in Fun 'Nuf, say "'Keen! Eek!' the Flee Elf stops you. 'You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley.'" instead;
+		if endgame-test is true, say "Endgame testing is on. So you are restricted to the final combat." instead;
 
 check going north in Fun 'Nuf:
 		if Diktat Kid is in ZeroRez, say "No need to go back." instead;
@@ -2213,13 +2221,16 @@ understand the command "gt" as something new.
 understand the command "goto" as something new.
 understand the command "go to" as something new.
 
-understand "go to [room]" as gotoing.
-understand "goto [room]" as gotoing.
-understand "gt [room]" as gotoing.
+understand "go to [any room]" as gotoing.
+understand "goto [any room]" as gotoing.
+understand "gt [any room]" as gotoing.
 
 to decide whether goto-available:
-	if player is in Dirge Grid and Diktat Kid is in Dirge Grid, no;
+	if Diktat Kid is quicknear, no;
+	if Madam is quicknear, no;
 	yes. [obviously we don't want this to be trivial once the game's complete, but we want the code in place.]
+
+gone-to is a truth state that varies.
 
 carry out gotoing:
 	if being-chased is true, say "Sorry, but since you're being chased by the [chase-person], you need to be specific about directions, here." instead;
@@ -2231,6 +2242,7 @@ carry out gotoing:
 	if noun is not available, say "[noun] isn't available yet, so you can't go there." instead;
 	if noun is available and noun is not visited, say "You can reach [noun], but you haven't visited there, yet. So I'm going to be a stickler and say you have to get there first." instead;
 	if noun is Dirge Grid, say "You already beat the Diktat Kid. You don't need to go back." instead;
+	now gone-to is true;
 	move player to noun;
 	the rule succeeds;
 
@@ -2622,7 +2634,7 @@ understand the command "endgame" as something new.
 
 understand "endgame" as endgameing.
 
-carry out endgameing:
+carry out endgameing: [?? what about martini tram]
 	say "Giving you all the cool stuff to defeat the Diktat Kid.";
 	now player carries all tronparts;
 	now player carries murk rum;
@@ -2636,6 +2648,7 @@ carry out endgameing:
 	now player has ME gem;
 	now Tix Exit is in Fun 'Nuf;
 	if player is not in Fun 'Nuf, move player to Fun 'Nuf;
+	now endgame-test is true;
 	the rule succeeds;
 
 chapter rring
