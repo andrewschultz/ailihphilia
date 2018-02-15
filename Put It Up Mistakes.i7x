@@ -101,6 +101,14 @@ understand "start rats" as a mistake ("You sort of need to stop them, instead.")
 
 book Fun 'Nuf
 
+chapter cap abuse
+
+understand "paca cap" and "pacb cap" and "pacc cap" and "pacd cap" and "pacf cap" and "pacg cap" and "pach cap" and "paci cap" and "pacj cap" and "pacl cap" and "pacm cap" and "pacn cap" and "pacp cap" and "pacq cap" and "pacr cap" and "pacs cap" and "pacu cap" and "pacv cap" and "pacw cap" and "pacx cap" and and "pacz cap" as a mistake ("'Hmm, try again,' grumps the Flee Elf.") when Flee Elf is quickvis.
+
+understand "paco cap" as a mistake ("The Flee Elf notes that's a pejorative term for policemen in Central America--not quite what you want.") when Flee Elf is quicknear.
+
+understand "pact cap" as a mistake ("It already is!") when Flee Elf is quicknear.
+
 chapter flee elf abuse
 
 understand "flea elf" and "flea" as a mistake("[fe0]The elf scratches for a bit, then looks embarrassed.") when Flee Elf is quicknear.
