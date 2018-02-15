@@ -36,6 +36,8 @@ a chaser is a kind of person. a chaser has a room called chase-room.
 
 a thing can be drinkable. a thing is usually not drinkable.
 
+a thing can be peripheral. a thing is usually not peripheral.
+
 an ingredient is a kind of thing. an ingredient is usually edible. an ingredient can be solid or liquid.
 
 chapter region and room stuff
@@ -114,19 +116,9 @@ section part of a puzzle but still floating
 
 [Otto is a person.]
 
-section stuff to move
-
-the state tats are a plural-named thing. description is "They say OMG MO[']."
-
-instead of doing something with state tats:
-	if action is procedural, continue the action;
-	say "You don't need to do anything to or with the state tats, now that you're wearing them.";
-
 the brag garb is a proper-named thing.
 
 section ingredients
-
-the snack cans are a plural-named solid ingredient.
 
 the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, unsurprisingly."
 
@@ -1027,9 +1019,24 @@ the Knife Fink is a person in Dirge Grid. "A Knife Fink wields some leet steel h
 
 the Knife Fink carries the leet steel.
 
-instead of doing something with leet steel:
+the leet steel is peripheral.
+
+instead of doing something with a peripheral thing:
 	if action is procedural, continue the action;
-	say "You want to focus on the Verses Rev."
+	blanket-reject noun instead;
+
+instead of useoning something with a peripheral thing:
+	if action is procedural, continue the action;
+	blanket-reject second noun instead;
+
+to blanket-reject (bj - a thing):
+	repeat through table of periphery:
+		if itm entry is bj, say "[reject entry]";
+
+table of periphery
+itm	reject
+leet steel	"You want to focus on the Knife Fink and not the leet steel."
+part strap	"You want to focus on the Verses Rev and not the part strap."
 
 chapter Verses Rev
 
@@ -1037,9 +1044,7 @@ the Verses Rev is a person in Dirge Grid. "A Verses Rev wields a part strap here
 
 the Verses Rev carries the part strap.
 
-instead of doing something with part strap:
-	if action is procedural, continue the action;
-	say "You want to focus on the Verses Rev."
+the part strap is peripheral.
 
 chapter x-ite tix
 
@@ -1481,7 +1486,7 @@ instead of doing something with sword rows:
 
 chapter not-a-baton
 
-The not-a-baton is a thing. "It is wood and round and long. It's too long to be a baton, but it looks like it could be something else.
+The not-a-baton is a thing. description is "It is wood and round and long. It's too long to be a baton, but it looks like it could be something else."
 
 chapter Dave
 
@@ -1665,18 +1670,18 @@ a book is a kind of thing. description of a book is usually "It [if player carri
 
 a book can be in-row or hidden. a book is usually in-row.
 
-section pity tip
+chapter pity tip
 
 the pity tip is a thing. description of pity tip is "It's not THAT hard to figure what to do to the cart. There are only 26 choices, really.[paragraph break]NOTE: this document is good for free snack cans, not redeemable if purchaser is able to eat them."
 
-section books in bookcase
+chapter books in bookcase
 
 TO IDIOT is a proper-named book. [Revolt Lover]
 NULL ILLUN is a proper-named book. [Known Wonk]
 ERA FARE is a proper-named book. [King Nik]
 YOB ATTABOY is a proper-named book. [Sniffins]
 
-section books without purpose so far
+chapter SOME DEMOS
 
 there is a book called SOME DEMOS. It is proper-named and hidden.
 
@@ -1687,7 +1692,7 @@ after examining a book:
 	now gap-yet is true;
 	continue the action;
 
-section DWELT LEWD
+chapter DWELT LEWD
 
 DWELT LEWD is a proper-named hidden book.
 
@@ -1857,6 +1862,14 @@ chapter Mike Kim
 
 Mike Kim is a person in Art Xtra.
 
+chapter state tats
+
+the state tats are a plural-named thing. description is "They say OMG MO[']."
+
+instead of doing something with state tats:
+	if action is procedural, continue the action;
+	say "You don't need to do anything to or with the state tats, now that you're wearing them.";
+
 chapter soot tattoos
 
 the soot tattoos are a plural-named thing. description is "They're blank now, but maybe if they were the right shape, they could help your image, somehow."
@@ -1883,7 +1896,7 @@ the crag arc is scenery in Toll Lot. "It soars high and is too dangerous to clim
 
 chapter UFO tofu
 
-some UFO tofu is a liquid ingredient. "It's a disturbingly squishy, yet impenetrable, block. I guess the preservatives mean it won't go bad too soon. I mean, more bad than tofu itself is.
+some UFO tofu is a liquid ingredient. description is "It's a disturbingly squishy, yet impenetrable, block. I guess the preservatives mean it won't go bad too soon. I mean, more bad than tofu itself is."
 
 book Gross Org
 
@@ -2045,13 +2058,23 @@ book Yell Alley
 
 Yell Alley is east of Evaded Ave. It is in Yelpley. "The only way back is west. The way east is blocked by a [if navy van is in Yell Alley]navy van... you're not sure[else]bomb mob... so that's[end if] where the yelling is from."
 
+chapter navy van
+
 the navy van is scenery in Yell Alley. "There seems to be no way to enter it. It has a small gig where you could maybe put something in."
 
 understand "gig" as navy van.
 
-the Mayo Yam is a liquid ingredient in Yell Alley. "A gross looking -- something -- is here. It's a mayo yam! It's a bit on the slimy side, and it's probably worse inside."
+chapter snack cans
 
-the rep popper is a thing in Yell Alley.
+the snack cans are a plural-named solid ingredient. description is "You're not sure what's in them, but whatever it is--well, you're not hungry enough. Yet.".
+
+chapter Mayo Yam
+
+the Mayo Yam is a liquid ingredient in Yell Alley. "A gross looking -- something -- is here. It's a mayo yam! It's a bit on the slimy side, and it's probably worse inside.". description is "Fortunately, the mayo yam's skin is sturdy enough to avoid being burst and making a mess. But you can still smell the mayo inside it, and there are a few globs on its surface."
+
+chapter rep popper
+
+the rep popper is a thing in Yell Alley. "A rep popper lies here. You're wary of getting too close to it. You're not sure how good your rep is, but that thing looks [if dork rod is in ZeroRez]less fearsome than it used to[else]like it could embarrass you quickly[end if]."
 
 check taking rep popper:
 	if player has taboo bat:
@@ -2199,11 +2222,11 @@ instead of doing something with cassettes sac:
 
 chapter radar
 
-to determine which number is radar-used:
+to decide which number is radar-used:
 	let temp be 0;
 	if eroded ore is not off-stage, increment temp;
 	if UFO tofu is not off-stage, increment temp;
-	decide temp;
+	decide on temp;
 
 the radar is a thing in Dopy Pod. description is "You're not sure of the deeper science, but you will probably figure how to USE it when the time comes[if radar-used is 1] again, though it does seem slightly damaged[end if]."
 
