@@ -95,6 +95,10 @@ book Seer Trees
 
 understand "seer frees" as a mistake ("[if stark rats are in Seer Trees]It won't be THAT easy[else]You already feel free enough here[end if].") when player is in Seer Trees.
 
+understand "stare rats" as a mistake ("You try to win a blinking contest, and maybe you could with one, but not that many.") when stark rats are quicknear.
+
+understand "start rats" as a mistake ("You sort of need to stop them, instead.") when stark rats are quicknear.
+
 book Fun 'Nuf
 
 chapter flee elf abuse

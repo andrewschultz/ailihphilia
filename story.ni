@@ -64,6 +64,45 @@ endgame-test is a truth state that varies.
 
 in-beta is a truth state that varies.
 
+volume parser simplification
+
+Understand the command "slice" as something new.
+Understand the command "prune" as something new.
+Understand the command "chop" as something new.
+
+Understand the command "kiss" as something new.
+Understand the command "hug" as something new.
+Understand the command "embrace" as something new.
+Understand the command "buy" as something new.
+Understand the command "purchase" as something new.
+understand the command "buy" as something new.
+understand the command "light" as something new.
+understand the command "jump" as something new.
+understand the command "hop" as something new.
+understand the command "skip" as something new.
+understand the command "sip" as something new.
+understand the command "swallow" as something new.
+
+Understand the command "shine" as something new.
+Understand the command "polish" as something new.
+Understand the command "sweep" as something new.
+Understand the command "clean" as something new.
+Understand the command "dust" as something new.
+Understand the command "wipe" as something new.
+Understand the command "scrub" as something new.
+Understand the command "rub" as something new.
+
+Understand the command "fight" as something new.
+Understand the command "torture" as something new.
+Understand the command "wreck" as something new.
+Understand the command "crack" as something new.
+Understand the command "murder" as something new.
+Understand the command "kill" as something new.
+Understand the command "punch" as something new.
+understand the command "thump" as something new.
+understand the command "wave" as something new.
+understand the command "sorry" as something new.
+
 volume unsorted
 
 to say etg:
