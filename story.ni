@@ -8,6 +8,7 @@ First, Put It Up tables.i7x contains all the random responses.
 Second, Put It Up tables.i7x contains responses to mistakes e.g. palindrome verbs/phrases that don't advance the game but are good tries.
 Put XX before each of these to find the beginning of a table, ZZ for the end:
 USE for the Table of Useons (USE X ON Y gives a point)
+TALK for talk texts
 
 to search for an item, look for chapter [item].
 ]
@@ -414,14 +415,11 @@ understand "talk to [something]" as talktoing.
 
 carry out talktoing:
 	if noun is not a person, say "Talking to people or, at least, animals is your best bet." instead;
-	if noun is Mike Kim, say "Did you find any Stray Arts? I can always use them." instead;
 	if talk-text of noun is empty, say "Nothing. (change this)" instead;
 	say "[talk-text of noun]" instead;
-	the rule succeeds.
+	the rule succeeds. [see volume dialogue for all the specifics]
 
 a person has text called talk-text.
-
-talk-text of Yuge Guy is "'Believe Me. Adore Me. Believe!' O gee, ego, you think to yourself."
 
 chapter drinking
 
@@ -966,7 +964,7 @@ understand the command "pacy cap" as something new.
 understand "pace cap" and "pacy cap" as paceing.
 
 carry out paceing:
-	if kayo yak is in ZeroRez, say "You had enough high-speed fun for one game." instead;
+	if kayo yak is in ZeroRez, say "You had enough high-speed fun for one game. If you want to zip around the map, though, GT is always an option." instead;
 	if pact cap is in Fun 'Nuf, say "That'll work later, but you need something a little different to actually TAKE the pact cap." instead;
 	if cap-pace is true, say "It's already a pace cap." instead;
 	if mrlp is Grebeberg, now cap-pace is whether or not cap-pace is true;
@@ -975,7 +973,7 @@ carry out paceing:
 		now cap-ever-pace is true;
 		say "[if mrlp is not Grebeberg]You realize it can sort of be a pace cap, too, but there isn't enough open space to run around productively for too long.[else]You suddenly feel [pace-of]![end if]";
 	else:
-		say "You suddenly feel [pace-of].";
+		say "[if mrlp is not Grebeberg]That should work, but it doesn't, here. Maybe try over in Grebeberg?[else]You suddenly feel [pace-of].[end if]";
 	the rule succeeds;
 
 to say pace-of:
@@ -997,7 +995,7 @@ the elite tile is scenery. "Done? Nod![line break]Nif-T-Fin!"
 
 book Dirge Grid
 
-Dirge Grid is a room in Mid Dim. "The only way back is south[if Diktat Kid is in Dirge Grid], but you can't really run away from the Diktat Kid[else], and you might as well go that way, now you've vanquished the Diktat Kid[end if]."
+Dirge Grid is a room in Mid Dim. "The only way back is south[if Diktat Kid is in Dirge Grid], but you can't really run away from the Diktat Kid[else], and you might as well go that way, now you've vanquished the Diktat Kid[end if]. A Tru Hurt is pointed at you, but if you deal with the Kid, that won't matter."
 
 check going to Dirge Grid: if test set is not in ZeroRez, say "[if player does not have yard ray]You don't have an adequate weapon[else]You need to get some practice with the Yard Ray before going north[end if]." instead;
 
@@ -1031,12 +1029,16 @@ instead of useoning something with a peripheral thing:
 
 to blanket-reject (bj - a thing):
 	repeat through table of periphery:
-		if itm entry is bj, say "[reject entry]";
+		if itm entry is bj:
+			say "[reject entry][line break]";
+			continue the action;
+	say "While [the noun] doesn't need any detailed futzing, I don't have a detailed message for why. I need to fix that. Sorry."
 
 table of periphery
 itm	reject
 leet steel	"You want to focus on the Knife Fink and not the leet steel."
 part strap	"You want to focus on the Verses Rev and not the part strap."
+Tru Hurt	"If you dispose of the Diktat Kid, the Tru Hurt won't be able to hurt you."
 
 chapter Verses Rev
 
@@ -1052,7 +1054,7 @@ the x-ite tix are a plural-named thing. understand "xite" and "xite tix" as x-it
 
 chapter tru hurt
 
-the tru hurt is a thing in Dirge Grid. "The Tru Hurt is here, and it's aimed at you!"
+the tru hurt is peripheral scenery in Dirge Grid. "The Tru Hurt is here, and it's aimed at you!"
 
 instead of doing something with the tru hurt, say "You need to take care of the Diktat Kid. With the Yard Ray."
 
@@ -1121,7 +1123,7 @@ book Flu Gulf
 
 Flu Gulf is north of Cold Loc. It is in Grebeberg. "North and east, it's, oh, too H2O. The passage is clear back south, but [if scorn rocs are in Flu Gulf]scorn rocs['] gaze blocks you going west[else]west past the scorn rocs seems a bit treacherous[end if]."
 
-the Gulf Lug is a proper-named person in Flu Gulf. "The Gulf Lug stands here, holding his stomach.". description is "He looks slightly ill. Maybe you could help him.". talk-text is "'Ill, I...'"
+the Gulf Lug is a proper-named person in Flu Gulf. "The Gulf Lug stands here, holding his stomach.". description is "He looks slightly ill. Maybe you could help him.".
 
 the cash sac is a thing.
 
@@ -1340,7 +1342,7 @@ The Eroded Ore is a thing.
 
 book Birch Crib
 
-Birch Crib is south of Mire Rim. It is in Grebeberg.
+Birch Crib is south of Mire Rim. It is in Grebeberg. "This is a homey little north-south passage, [if tent net is in ZeroRez]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet[end if]."
 
 Code Doc is a person in Birch Crib. "[one of]Someone is pacing back and forth here, muttering 'More ROM! MORE Rom! MORE ROM!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]"
 
@@ -1358,7 +1360,7 @@ book Lair Trial
 
 Lair Trial is south of Birch Crib. It is in Grebeberg.
 
-the ergot ogre is a person in Lair Trial. "An ergot ogre blocks the way east.". description is "It looks vicious, and you don't want it touching you, due to disease and possible dismemberment. You need to get the ogre out of the way, somehow.". talk-text is "'Guh! Ug!'[paragraph break]Diplomacy won't get you by, here."
+the ergot ogre is a person in Lair Trial. "An ergot ogre blocks the way east.". description is "It looks vicious, and you don't want it touching you, due to disease and possible dismemberment. You need to get the ogre out of the way, somehow.".
 
 check going east in Lair Trial: if ergot ogre is in Lair Trial, say "Not with the ergot ogre guarding the way." instead;
 
@@ -1888,8 +1890,6 @@ chapter cross orc
 
 The cross orc is a person in Toll Lot.
 
-talk-text is "'Pay?! Yap!'"
-
 chapter crag arc
 
 the crag arc is scenery in Toll Lot. "It soars high and is too dangerous to climb[if UFO tofu is off-stage]. It's so intricate, maybe it is hiding something you can find[end if]."
@@ -2087,7 +2087,7 @@ check taking rep popper:
 
 chapter bomb mob
 
-the bomb mob are plural-named people. description is "They're ignoring you, and that's probably for the best.". talk-text is "You don't need a gang nag. Maybe you can sneak around them to get the TNT, though."
+the bomb mob are plural-named people. description is "They're ignoring you, and that's probably for the best.".
 
 understand "poor troop" and "poor/troop" as bomb mob when DNA hand is in ZeroRez.
 
@@ -2278,6 +2278,30 @@ The DNA band is a thing in Pro Corp.
 The DNA hand is a thing.
 
 The bang nab is a thing.
+
+volume dialogue
+
+section talk texts
+
+[xxtalk]
+[organized alphabetically, why not ... this doesn't need to be here, strictly, but I'd rather define talk text AFTER defining people]
+
+talk-text of the player is "'Me! Hi! Hem.'"
+
+talk-text of Bomb Mob is "You don't need a gang nag. Maybe you can sneak around them to get the TNT, though.".
+talk-text of Code Doc is "There is some awkward small talk. The Code Doc is more about understanding and explaining things.".
+talk-text of Cross Orc is "'Pay?! Yap!'".
+talk-text of Ergot Ogre is "'Guh! Ug!'[paragraph break]Diplomacy won't get you by, here.".
+talk-text of Flee Elf is "[one of]'That cap. It's for you. Find the right way to take it, and I'll leave you on your way. Ask me again for hints.'[or]'Well, there are only twenty-six ways to take the Pact Cap--um, okay, twenty-five, if you think about it. And don't overthink. Once you do, I'm on my way.'[stopping]"
+talk-text of Gulf Lug is "'Ill, I...'".
+talk-text of Kayo Yak is "It looks up a bit but then ignores you. Maybe there's an order it can respond to.".
+talk-text of Known Wonk is "There is some awkward small talk. The Known Wonk's mind is elsewhere, but maybe you can help with practical matters.".
+talk-text of Mike Kim is "Did you find any Stray Arts? I can always use them.".
+talk-text of Marge Pegram is "'I ain't much for talking now I'm sick...'".
+talk-text of Ned is "Ned's not in the mood for regular talk. He seems to want an argument or fight, but you don't.".
+talk-text of Rob is "Rob yawns. He doesn't find you very interesting. Maybe there's a way to take advantage of that.".
+talk-text of sleep eels is "Maybe they are sending some sort of electric message, but they're not talking.".
+talk-text of Yuge Guy is "'Believe Me. Adore Me. Believe!' O gee, ego, you think to yourself."
 
 volume gotoing
 
