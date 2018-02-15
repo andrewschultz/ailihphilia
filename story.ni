@@ -218,6 +218,16 @@ nothing-txt is a number that varies.
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
 	next-rand table of nothings;
 
+Rule for printing a parser error when the latest parser error is the can't see any such thing error:
+	let X be indexed text;
+	now X is "[location of player]";
+	repeat with J running from 1 to number of words in X:
+		let Y be word number J in X;
+		if the player's command matches the text "[Y]", case insensitively:
+			say "It looks like you tried to do something with the location name. You don't need to[if balm-got is false], and you got the sneaky bonus point for doing so[else], though you'll get a bonus point in the right place. Location names are generally just to describe unnecessary scenery.";
+			the rule succeeds;
+	continue the action;
+
 chapter unrecognized verb
 
 Rule for printing a parser error when the latest parser error is the didn't understand error:
