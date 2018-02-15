@@ -8,6 +8,8 @@ First, Put It Up tables.i7x contains all the random responses.
 Second, Put It Up tables.i7x contains responses to mistakes e.g. palindrome verbs/phrases that don't advance the game but are good tries.
 Put XX before each of these to find the beginning of a table, ZZ for the end:
 USE for the Table of Useons (USE X ON Y gives a point)
+
+to search for an item, look for chapter [item].
 ]
 
 the story headline is "Yo, Joy! Wow!"
@@ -108,17 +110,9 @@ volume unsorted
 to say etg:
 	end the story;
 
-section part of a puzzle but not fully linked yet
-
-The not-a-baton is a thing.
-
-The roto motor is a thing.
-
 section part of a puzzle but still floating
 
 [Otto is a person.]
-
-The Exam Axe is a thing. description is "Just looking at the exam axe, you feel as though you've been right about stuff. Maybe not right or morally superior, but you're able to see through obvious nonsense. You know it will help you with some max-exam, somewhere."
 
 section stuff to move
 
@@ -128,15 +122,9 @@ instead of doing something with state tats:
 	if action is procedural, continue the action;
 	say "You don't need to do anything to or with the state tats, now that you're wearing them.";
 
-Ye Key is a thing.
-
 the brag garb is a proper-named thing.
 
 section ingredients
-
-the Mayo Yam is a liquid ingredient.
-
-some UFO tofu is a liquid ingredient.
 
 the snack cans are a plural-named solid ingredient.
 
@@ -365,7 +353,7 @@ after printing the name of the puce cup while taking inventory:
 	continue the action;
 
 after printing the name of the radar while taking inventory:
-	unless eroded ore is off-stage and UFO tofu is off-stage, say " (damaged)"
+	unless radar-used is 0, say " (damaged)"
 
 chapter abouting
 
@@ -852,7 +840,7 @@ this is the mob-to-alley rule:
 	the rule succeeds;
 
 this is the radar-blink rule:
-	if eroded ore is off-stage or UFO tofu is off-stage:
+	if radar-used is 1:
 		say "One more hit like that, and the radar might give out for good.";
 	else:
 		say "Between the UFO tofu dropped on the radar and the eroded ore getting too close to it, the radar shorts out. After a pop, it splits open. A roto motor falls out and looks undamaged, so you take it.";
@@ -1397,9 +1385,15 @@ book Swamp Maws
 
 Swamp Maws is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west. You can go north or south here. [if Known Wonk is in ZeroRez]The Known Wonk's Tru-Yurt is here. It looks really messy[end if]."
 
+check going north in Swamp Maws when Known Wonk is in Swamp Maws: say "The Known Wonk pushes you back. 'You don't know how weird it is to the north. But I know a thing or two about adventuring theory.'" instead;
+
+chapter Known Wonk
+
 The Known Wonk is a person in Swamp Maws. "The Known Wonk stands by a Tru Yurt, [one of]figuring you'll have to do, even though you're not as interesting as a book[or]waiting for intellectual conversation[stopping]."
 
-check going north in Swamp Maws when Known Wonk is in Swamp Maws: say "The Known Wonk pushes you back. 'You don't know how weird it is to the north. But I know a thing or two about adventuring theory.'" instead;
+chapter  Exam Axe
+
+The Exam Axe is a thing. description is "Just looking at the exam axe, you feel as though you've been right about stuff. Maybe not right or morally superior, but you're able to see through obvious nonsense. You know it will help you with some max-exam, somewhere."
 
 chapter Tru Yurt
 
@@ -1477,11 +1471,17 @@ book My Gym
 
 My Gym is south of Yawn Way. It is in Yelpley. "You can go back out south to Yawn Way. There's also passage west. Some small sword rows are off in one corner."
 
+chapter sword rows
+
 the sword rows are scenery in My Gym. "They aren't very big, but they whir a bit as you get near them."
 
 instead of doing something with sword rows:
 	if action is pro-and-use, continue the action;
 	say "The sword rows are sharp. It's probably only a good idea to USE something on them to cut them down."
+
+chapter not-a-baton
+
+The not-a-baton is a thing. "It is wood and round and long. It's too long to be a baton, but it looks like it could be something else.
 
 chapter Dave
 
@@ -1881,6 +1881,10 @@ chapter crag arc
 
 the crag arc is scenery in Toll Lot. "It soars high and is too dangerous to climb[if UFO tofu is off-stage]. It's so intricate, maybe it is hiding something you can find[end if]."
 
+chapter UFO tofu
+
+some UFO tofu is a liquid ingredient. "It's a disturbingly squishy, yet impenetrable, block. I guess the preservatives mean it won't go bad too soon. I mean, more bad than tofu itself is.
+
 book Gross Org
 
 Gross Org is north of Toll Lot. It is in Yelpley. description is "[if etage gate is in Gross Org]An etage gate blocks your way north. You can go back south[else]With the etage gate gone, you can go north or south[end if]."
@@ -2045,7 +2049,7 @@ the navy van is scenery in Yell Alley. "There seems to be no way to enter it. It
 
 understand "gig" as navy van.
 
-the mayo yam is a thing in Yell Alley. "A gross looking -- something -- is here. It's a mayo yam! It's a bit on the slimy side, and it's probably worse inside."
+the Mayo Yam is a liquid ingredient in Yell Alley. "A gross looking -- something -- is here. It's a mayo yam! It's a bit on the slimy side, and it's probably worse inside."
 
 the rep popper is a thing in Yell Alley.
 
@@ -2175,6 +2179,10 @@ chapter slate metals
 
 slate metals are scenery in Scrap Arcs. "You could probably carve something out of them, with the right implement(s). Maybe not steel fleets, but something useful."
 
+chapter Ye Key
+
+Ye Key is a thing. description is "Engraved YE KEY, it clearly looks important. There are only so many locked places here, so you'll probably find what it can open."
+
 book Dopy Pod
 
 Dopy Pod is west of Drawl Ward. It is in Yelpley. printed name of Dopy Pod is "[if cassettes sac is in ZeroRez]Dope[else]Dopy[end if] Pod".
@@ -2191,7 +2199,15 @@ instead of doing something with cassettes sac:
 
 chapter radar
 
-the radar is a thing in Dopy Pod.
+to determine which number is radar-used:
+	let temp be 0;
+	if eroded ore is not off-stage, increment temp;
+	if UFO tofu is not off-stage, increment temp;
+	decide temp;
+
+the radar is a thing in Dopy Pod. description is "You're not sure of the deeper science, but you will probably figure how to USE it when the time comes[if radar-used is 1] again, though it does seem slightly damaged[end if]."
+
+The roto motor is a thing. "It seems to have been saved from whatever caused the radar to go on the fritz."
 
 chapter Demo Med
 
