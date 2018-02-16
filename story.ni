@@ -248,7 +248,7 @@ Rule for printing a parser error when the latest parser error is the can't see a
 	repeat with J running from 1 to number of words in X:
 		let Y be word number J in X;
 		if the player's command matches the text "[Y]", case insensitively:
-			say "It looks like you tried to do something with the location name.[if balm-got is false], and you got the sneaky bonus point for doing so[else], though you'll get a bonus point in the right place. Location names are generally just to describe unnecessary scenery[end if].";
+			say "It looks like you tried to do something with the location name[if balm-got is false], and you got the sneaky bonus point for doing so[else], though you'll get a bonus point in the right place. Location names are generally just to describe unnecessary scenery[end if].";
 			if gone-to is false, say "[line break]However, GO TO/GT (room) may be a nice shortcut to visit a previous location.";
 			the rule succeeds;
 	continue the action;
@@ -1019,6 +1019,10 @@ the Knife Fink carries the leet steel.
 
 the leet steel is peripheral.
 
+instead of doing something when second noun is a peripheral thing:
+	if action is procedural, continue the action;
+	blanket-reject second noun instead;
+
 instead of doing something with a peripheral thing:
 	if action is procedural, continue the action;
 	blanket-reject noun instead;
@@ -1358,7 +1362,7 @@ maps-explained is a truth state that varies.
 
 book Lair Trial
 
-Lair Trial is south of Birch Crib. It is in Grebeberg.
+Lair Trial is south of Birch Crib. It is in Grebeberg. "This lair bends north and east, [if ergot ogre is in ZeroRez], and with the trial over, you're free to go either way[end if]."
 
 the ergot ogre is a person in Lair Trial. "An ergot ogre blocks the way east.". description is "It looks vicious, and you don't want it touching you, due to disease and possible dismemberment. You need to get the ogre out of the way, somehow.".
 
@@ -2159,7 +2163,7 @@ check going north in Emo Dome:
 
 book Red Roses Order
 
-Red Roses Order is north of Emo Dome. It is in Yelpley.
+Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in red roses order]The only way back is south, but you can't chicken out[else]Your work is done here. Time to go back south[end if]."
 
 Red Roses Order is above Emo Dome.
 
@@ -2171,7 +2175,7 @@ check going south in Red Roses Order: say "No way! You are locked in mortal comb
 
 book Swept Pews
 
-Swept Pews is south of Emo Dome. It is in Yelpley.
+Swept Pews is south of Emo Dome. It is in Yelpley. "You can go back north to the Emo Dome in this tidy little area[if liar grail is in ZeroRez]. A passage has been opened south with the Liar Grail's demise[end if]."
 
 The Liar Grail is a thing in Swept Pews. description is "It's carved with 'LIAR TRAIL? NOT ON!' You don't know if this means there is a liar trail and you can't get there, or there isn't one. Either way, it annoys you enough to want to get rid of the liar grail."
 
@@ -2186,7 +2190,7 @@ the troll ort is an edible thing in Swept Pews.
 
 book Drawl Ward
 
-Drawl Ward is south of Swept Pews. It is in Yelpley.
+Drawl Ward is south of Swept Pews. It is in Yelpley. "This passage is a T, walled off to the south."
 
 Marge Pegram is a person in Drawl Ward. "[one of]'Hi! I'm Marge Pegram. I ain't feeling so good, but I wondered if maybe I could get some medicine.'[or]Marge Pegram continues to moan colloquially about how sick she is.[stopping]"
 
@@ -2208,7 +2212,7 @@ Ye Key is a thing. description is "Engraved YE KEY, it clearly looks important. 
 
 book Dopy Pod
 
-Dopy Pod is west of Drawl Ward. It is in Yelpley. printed name of Dopy Pod is "[if cassettes sac is in ZeroRez]Dope[else]Dopy[end if] Pod".
+Dopy Pod is west of Drawl Ward. It is in Yelpley. printed name of Dopy Pod is "[if cassettes sac is in ZeroRez]Dope[else]Dopy[end if] Pod". "[if cassettes sac is in ZeroRez]There's not much left here, but it was neat to get the radar. [else]There doesn't seem like there's much useful in here, but who knows? [end if]The only exit is back east."
 
 chapter cassettes sac
 
@@ -2292,7 +2296,7 @@ talk-text of Bomb Mob is "You don't need a gang nag. Maybe you can sneak around 
 talk-text of Code Doc is "There is some awkward small talk. The Code Doc is more about understanding and explaining things.".
 talk-text of Cross Orc is "'Pay?! Yap!'".
 talk-text of Ergot Ogre is "'Guh! Ug!'[paragraph break]Diplomacy won't get you by, here.".
-talk-text of Flee Elf is "[one of]'That cap. It's for you. Find the right way to take it, and I'll leave you on your way. Ask me again for hints.'[or]'Well, there are only twenty-six ways to take the Pact Cap--um, okay, twenty-five, if you think about it. And don't overthink. Once you do, I'm on my way.'[stopping]"
+talk-text of Flee Elf is "[one of]'That cap. It's for you. Find the right way to take it, and I'll leave you on your way. Ask me again for hints.'[or]'Well, there are only twenty-six ways to take the Pact Cap--um, okay, twenty-five, if you think about it. And don't overthink. Once you do, I'm on my way.'[stopping]".
 talk-text of Gulf Lug is "'Ill, I...'".
 talk-text of Kayo Yak is "It looks up a bit but then ignores you. Maybe there's an order it can respond to.".
 talk-text of Known Wonk is "There is some awkward small talk. The Known Wonk's mind is elsewhere, but maybe you can help with practical matters.".
@@ -2788,6 +2792,18 @@ understand "win" as wining.
 
 carry out wining:
 	end the story finally;
+	the rule succeeds;
+
+chapter pering
+
+pering is an action out of world.
+
+understand the command "per" as something new.
+
+understand "per" as pering.
+
+carry out pering:
+	say "Peripheral things: [list of peripheral things].";
 	the rule succeeds;
 
 volume internal testing - not for release
