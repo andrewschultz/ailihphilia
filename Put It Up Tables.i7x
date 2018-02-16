@@ -492,6 +492,7 @@ randtxt
 "Some Memos"
 "Sore Heros"
 "Sore Zeros"
+"Torsos, ROT"
 
 table of attackings
 randtxt

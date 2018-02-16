@@ -119,6 +119,10 @@ section part of a puzzle but still floating
 
 the brag garb is a proper-named thing.
 
+section helpdocs
+
+a helpdoc is a kind of thing.
+
 section ingredients
 
 the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, unsurprisingly."
@@ -143,15 +147,7 @@ The Ore Zero is a tronpart.
 
 volume the player
 
-the player carries the Darer Ad.
-
 description of player is "Flesh. Self."
-
-description of Darer Ad is "No LOL on? SEE, REFER-EES! Do! Nod!"
-
-after examining the Darer Ad for the first time:
-	say "Well, you need something with a bit more concrete advice. Maybe you'll find it quickly enough.";
-	continue the action;
 
 check dropping:
 	say "This game is not Pro-Drop. In other words, you don't need to drop anything. You may wish to USE it instead." instead;
@@ -162,12 +158,6 @@ to decide which region is mrlp:
 after looking (this is the make available for goto rule):
 	if location of player is not Emo Dome, now location of player is available;
 	continue the action;
-
-section set o notes
-
-the set o notes is a thing. description is "There's some general vague advice about making a North Tron to defeat the Diktat Kid, but first you'll have to defeat Madam and the Yuge Guy, Evil Clive. The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that."
-
-after examining set o notes for the first time, say "Maybe you'll get something even more detailed than the Set O Notes later."
 
 part scoring
 
@@ -399,6 +389,8 @@ carry out verbing:
 	if in-beta is true:
 		say "[line break][b]RR[r] lets you try all three items in the Word Row machines. If one nets a point, it goes last.";
 		say "[line break][b]ENDGAME[r] kicks you to the endgame, where you have all the weapons to win the game, though you will be limited to Fun [']Nuf and the Dirge Grid.";
+	if debug-state is true:
+		say "[line break]WIN lets you win, PER describes peripheral things, and IA flags everything without an initial appearance.";
 	the rule succeeds;
 
 wr-short-note is a truth state that varies.
@@ -504,11 +496,13 @@ chapter smelling
 rod-smelled is a truth state that varies;
 
 instead of smelling:
+	if stink knits are quicknear, say "The stink knits take over everything and smell of torn rot." instead;
+	if troll ort is quicknear, say "The troll ort emits a musk-sum which isn't unpleasant, but it's distinctive." instead;
 	if player has dork rod:
 		now rod-smelled is true;
 		say "You might expect a rod odor, but there isn't one. OR MAYBE IT IS SO INGRAINED IN YOU, YOU NO LONGER SMELL IT." instead;
 	if player is in Deli Tiled, say "Ham?! Ah!" instead;
-	if player is in Sneer Greens, say "You smell an amoral aroma." instead;
+	if player is in Sneer Greens and Yuge Guy is in sneer greens, say "You smell an amoral aroma." instead;
 	say "Noses, on[one of]! (you don't need to smell anything in this game)[or][stopping]!"
 
 chapter singing
@@ -684,7 +678,7 @@ pity tip	navy van	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	"The v
 trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
 debt bed	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching and slurping, the debt bed is changed to a bunch of much smaller, but more comfortable looking, stock cots."
 party trap	stark rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
-ERA FARE	King Nik	Spur Ups	--	--	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'This will help me when I get back to South Ihtuos. Thank you!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me.'"
+ERA FARE	King Nik	Spur Ups	--	--	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'This will help me when I get back to South Ihtuos. Thank you!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...I must leave and RAFT FAR back to '"
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
 puce cup	past sap	--	--	sap-to-cup rule	true	false	false	Grebeberg	"You pour some sap into the cup."
 puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"The past sap pours into the liar grail and exposes how bad the grail has been over the years. As it cracks to allow passage south, you snicker to yourself. Liar grail? More like Liar FRAIL!"
@@ -709,7 +703,7 @@ poo coop	turf rut	--	coop-full rule	--	true	true	true	Grebeberg	"The poo coop re
 radar	made dam	eroded ore	--	radar-blink rule	true	false	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow. The radar plays a weird scale. Being close to the ore has damaged it somehow."
 NULL ILLUN	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me.' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. And if it's simple, well, I need to know when simple stuff works.' The Known Wonk apologizes--it's back to a Tru Yurt for a thought session."
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
-elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest. 'Raft far!' they call as you sail away. The buoy helps you float the last bit to Calcific Lac, as the raft returns."
+elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Calcific Lac. As it gets near and bends away, you jump off, using the buoy to paddle and float back to Calcific Lac."
 dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
 tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Together, you figure out what to do to make the tent net proper cover for the birch crib. 'Tie it ... tie it ...'[paragraph break]Once the work is done, the Code Doc thanks you and offers to share some knowledge in return, whenever."
 spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
@@ -983,6 +977,24 @@ check going to Fun 'Nuf:
 	if cap-pace is true, say "You feel like you can slow down a bit. You adjust the pace cap back to a pact cap.";
 	now cap-pace is false;
 
+[helpdocs below]
+
+chapter darer ad
+
+the Darer Ad is a helpdoc. The player carries the Darer Ad.
+
+description of Darer Ad is "No LOL on? SEE, REFER-EES! Do! Nod!"
+
+after examining the Darer Ad for the first time:
+	say "Well, you need something with a bit more concrete advice. Maybe you'll find it quickly enough.";
+	continue the action;
+
+chapter set o notes
+
+the set o notes is a helpdoc. description is "There's some general vague advice about making a North Tron to defeat the Diktat Kid, but first you'll have to defeat Madam and the Yuge Guy, Evil Clive. The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that."
+
+after examining set o notes for the first time, say "Maybe you'll get something even more detailed than the Set O Notes later."
+
 chapter tile lit
 
 the tile lit is scenery in Fun 'Nuf. "It's a rough compass, with GREBEBERG west by it, YELPLEY east, Evac Ave south and Dirge Grid north. You can't seem to go [if flee elf is in ZeroRez]south and [end if]north, though." [ic]
@@ -1129,7 +1141,7 @@ Flu Gulf is north of Cold Loc. It is in Grebeberg. "North and east, it's, oh, to
 
 the Gulf Lug is a proper-named person in Flu Gulf. "The Gulf Lug stands here, holding his stomach.". description is "He looks slightly ill. Maybe you could help him.".
 
-the cash sac is a thing.
+the cash sac is a thing. description is "It's full of currency--currency which you don't know whether you can spend anywhere."
 
 chapter scorn rocs
 
@@ -1908,7 +1920,9 @@ Gross Org is north of Toll Lot. It is in Yelpley. description is "[if etage gate
 
 chapter stink knits
 
-the stink knits are a plural-named thing in Gross Org. description is "They don't smell very good. In a failed attempt at irony, they are lettered DAFT FAD."
+the stink knits are a plural-named thing in Gross Org. description is "The inside of the stink knits reveals they were sewn together by SMELLEMS.". "Stink knits, unwearable enough even without DAFT FAD printed on the front, lie here.".
+
+check wearing the stink knits: say "That's physically possible, but no. No way." instead;
 
 check taking when player is in Gross Org and Ned is in Gross Org: say "Not with Ned around, you won't." instead;
 
@@ -2014,7 +2028,7 @@ check going in Evaded Ave:
 
 chapter debt bed
 
-the debt bed is a thing in Evaded Ave. "A debt bed lies [if Revolt Lover is in Evaded Ave]behind the Revolt Lover[else]around for the taking[end if]."
+the debt bed is a thing in Evaded Ave. "A small debt bed lies [if Revolt Lover is in Evaded Ave]behind the Revolt Lover[else]around for the taking[end if].". description is "It's small, so an actual person couldn't sleep on it."
 
 check taking debt bed:
 	if Revolt Lover is in Evaded Ave, say "The Revolt Lover won't let you." instead;
@@ -2027,9 +2041,11 @@ Trapeze Part is west of Evaded Ave. It is in Yelpley. "[if epicer recipe is off-
 
 the ten level net is scenery in Trapeze Part. "[if epicer recipe is off-stage]It doesn't quite look sturdy enough. Maybe you could do something to fix it[else]It was sturdy enough to help you get the epicer recipe, and that's enough[end if]."
 
-the tent net is a thing.
+the tent net is a thing. description is "It doesn't have any pegs or anything to attach it to, to make a structure. But maybe it could complete a home somewhere."
 
-the epicer recipe is a thing. description is "You've seen recipes before, but this is a big interesting one! It describes how to make a north-tron, which will get you north of Fun [']Nuf.[paragraph break][tronpartlist][run paragraph on]"
+chapter epicer recipe
+
+the epicer recipe is a helpdoc. description is "You've seen recipes before, but this is a big interesting one! It describes how to make a north-tron, which will get you north of Fun [']Nuf.[paragraph break][tronpartlist][run paragraph on]"
 
 to say tronpartlist:
 	repeat with tp running through tronparts:
@@ -2216,7 +2232,7 @@ Dopy Pod is west of Drawl Ward. It is in Yelpley. printed name of Dopy Pod is "[
 
 chapter cassettes sac
 
-the cassettes sac is a thing in Dopy Pod. "A rather large cassettes sac sits here. It's too dirty to pick up."
+the cassettes sac is a thing in Dopy Pod. "A rather large cassettes sac sits here. It's too dirty to pick up.". description is "Phew! It's too dirty to look at too closely."
 
 understand "casette/casete/cassette/cassetes sac" and "casette/casete/cassette/cassetes" as cassettes sac. [1 is technically not an anagram but it's a plausible misspelling, so we should allow it.]
 
@@ -2234,7 +2250,7 @@ to decide which number is radar-used:
 
 the radar is a thing in Dopy Pod. description is "You're not sure of the deeper science, but you will probably figure how to USE it when the time comes[if radar-used is 1] again, though it does seem slightly damaged[end if]."
 
-The roto motor is a thing. "It seems to have been saved from whatever caused the radar to go on the fritz."
+The roto motor is a thing. description is "It seems to have been saved from whatever caused the radar to go on the fritz."
 
 chapter Demo Med
 
@@ -2266,7 +2282,7 @@ bald-lab is a truth state that varies.
 
 understand "bald/lab" and "bald lab" as Pro Corp when bald-lab is true.
 
-the butene tub is scenery in Pro Corp.
+the butene tub is scenery in Pro Corp. "It smells pretty nice, though there's no visible way to operate it."
 
 instead of doing something with butene tub:
 	say "You don't need to tinker with the butene tub. It's empty, and that's probably a good thing. Just, a secret lab hideout needs something mysterious and weird."
@@ -2299,6 +2315,7 @@ talk-text of Ergot Ogre is "'Guh! Ug!'[paragraph break]Diplomacy won't get you b
 talk-text of Flee Elf is "[one of]'That cap. It's for you. Find the right way to take it, and I'll leave you on your way. Ask me again for hints.'[or]'Well, there are only twenty-six ways to take the Pact Cap--um, okay, twenty-five, if you think about it. And don't overthink. Once you do, I'm on my way.'[stopping]".
 talk-text of Gulf Lug is "'Ill, I...'".
 talk-text of Kayo Yak is "It looks up a bit but then ignores you. Maybe there's an order it can respond to.".
+talk-text of King Nik is "'I am not a very good king! I tried to understand social forces and big picture issues and stuff on my trip abroad, but I do not understand them yet. Maybe you could help me?'".
 talk-text of Known Wonk is "There is some awkward small talk. The Known Wonk's mind is elsewhere, but maybe you can help with practical matters.".
 talk-text of Mike Kim is "Did you find any Stray Arts? I can always use them.".
 talk-text of Marge Pegram is "'I ain't much for talking now I'm sick...'".
@@ -2792,6 +2809,39 @@ understand "win" as wining.
 
 carry out wining:
 	end the story finally;
+	the rule succeeds;
+
+chapter iaing
+
+a thing can be need-ia. a thing is usually need-ia.
+
+a book is usually not need-ia. a helpdoc is usually not need-ia. scenery is usually not need-ia.
+
+the player is not need-ia. the leet steel is not need-ia. the part strap is not need-ia.
+
+ia-yet is a truth state that varies.
+
+iaing is an action out of world.
+
+understand the command "ia" as something new.
+
+understand "ia" as iaing.
+
+carry out iaing:
+	let count be 0;
+	let got be 0;
+	if ia-yet is false:
+		now ia-yet is true;
+		repeat through table of useons:
+			if there is a getit entry:
+				now getit entry is not need-ia;
+	repeat with Q running through things:
+		if Q is need-ia and initial appearance of Q is empty:
+			increment count;
+			say "[count]: [Q] needs initial appearance.";
+		else:
+			increment got;
+	say "[got] has initial appearance, [count] doesn't.";
 	the rule succeeds;
 
 chapter pering
