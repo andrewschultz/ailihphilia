@@ -137,7 +137,7 @@ a tronpart is a kind of thing.
 
 description of a tronpart is usually "The [item described] is one of [number of tronparts] parts needed for the North-Tron."
 
-the martini tram is a tronpart. [?? if we don't have the epicer recipe we don't know what the tram is for. Can we get the tram before the recipe?]
+the martini tram is a tronpart. "That martini tram that appeared from Mont Nom is here.". description is "The martini tram looks like it'll provide a handy base for the future North-Tron.".
 
 TNT is a tronpart.
 
@@ -408,7 +408,7 @@ understand "talk to [something]" as talktoing.
 carry out talktoing:
 	if noun is not a person, say "Talking to people or, at least, animals is your best bet." instead;
 	if talk-text of noun is empty, say "Nothing. (change this)" instead;
-	say "[talk-text of noun]" instead;
+	say "[talk-text of noun][line break]" instead;
 	the rule succeeds. [see volume dialogue for all the specifics]
 
 a person has text called talk-text.
@@ -668,6 +668,9 @@ Ian	"Ian's worse than useless. You need to use your wit on him."
 Rob	"Rob's not going to be obliging. You have to get rid of him, somehow."
 Ned	"Ned wants a fight, and you need some other way around him."
 Pact Cap	"Your pact cap is fine where it is, on your head."
+epicer recipe	"It's meant for referral."
+Darer Ad	"It was only useful to sucker you into this mess."
+Set O Notes	"It's useful for an overview, but not for DOING anything."
 
 [the table of useons approximately follows not only the test commands but also the walkthrough]
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
@@ -862,6 +865,7 @@ chapter failed useons
 
 table of useons (continued)
 use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
+troll ort	cross orc	--	--	--	false	true	true	--	"The cross orc mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE and don't WANT to. But the way it looks at you, you suspect it'd forgive you if you gave the right gift."
 yard ray	Tru Hurt	--	--	--	false	true	true	--	"The yard ray bounces harmlessly off the Tru Hurt. Maybe it needs to be used nonviolently."
 yard ray	Diktat Kid	--	--	--	false	true	true	--	"The yard ray bounces harmlessly off the Diktat Kid. Maybe it needs to be used nonviolently."
 
@@ -1904,7 +1908,7 @@ check going in Toll Lot:
 
 chapter cross orc
 
-The cross orc is a person in Toll Lot.
+The cross orc is a person in Toll Lot. "A cross orc paces quickly back and forth between the north and south exits, just to reinforce that you'd better not try to go that way with it around."
 
 chapter crag arc
 
@@ -1941,7 +1945,7 @@ understand "evened" and "den evened" as Gross Org when Ned is in ZeroRez.
 
 Ned is a person in Gross Org. "'Ned's Den!' someone booms. You're guessing their name must be Ned."
 
-The Puce Cup is a thing in Emo Dome. description is "It's, well, puce, and it seems sturdy enough. It's currently [if puce cup is empty]empty[else if puce cup is sappy]full of Past Sap from the rift fir in Cold Loc[else]full of Dose Sod from the Apse Spa[end if]."
+The Puce Cup is a thing in Emo Dome. "Someone has left a puce cup here.". description is "It's, well, puce, and it seems sturdy enough. It's currently [if puce cup is empty]empty[else if puce cup is sappy]full of Past Sap from the rift fir in Cold Loc[else]full of Dose Sod from the Apse Spa[end if]."
 
 the puce cup can be empty, sappy or soddy. the puce cup is empty.
 
@@ -2018,9 +2022,9 @@ carry out standing:
 
 book Evaded Ave
 
-Evaded Ave is north of Art Xtra. It is in Yelpley. "It's a bit sleazy in here. You could probably score some dangerous drugs if you knew what to ask for. You can go back south. Or you can go east and west."
+Evaded Ave is north of Art Xtra. It is in Yelpley. "It's a bit sleazy in here. You can go back south. Or you can go east and west."
 
-the Revolt Lover is a person in Evaded Ave. "Someone introduces themselves as the Revolt Lover. [if Revolt Lover is in Evaded Ave]They peg you as not insurgent enough to deserve to visit west or east, without a proper gift[else]With the Revolt Lover around, you're not likely to go east or west[end if]."
+the Revolt Lover is a person in Evaded Ave. "[one of]Someone waving their fists and shouting at who-knows-what pauses as you walk by. 'I'm the Revolt Lover.' They peg you as not insurgent enough to deserve to visit west or east, without a proper gift[or]The Revolt Lover continues to pace back and forth here, making sure you don't sneak off any way but back south[stopping]."
 
 check going in Evaded Ave:
 	if Revolt Lover is in Evaded Ave:
@@ -2183,7 +2187,9 @@ Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in red ros
 
 Red Roses Order is above Emo Dome.
 
-Madam is a person in Red Roses Order.
+Madam is a person in Red Roses Order. Madam carries the gal flag. description is "MADAM stands here in defiance, holding the Gal Flag high."
+
+description of Gal Flag is "It's fluttering even without a breeze."
 
 understand "la gal" and "la/gal" as Madam.
 
@@ -2193,7 +2199,7 @@ book Swept Pews
 
 Swept Pews is south of Emo Dome. It is in Yelpley. "You can go back north to the Emo Dome in this tidy little area[if liar grail is in ZeroRez]. A passage has been opened south with the Liar Grail's demise[end if]."
 
-The Liar Grail is a thing in Swept Pews. description is "It's carved with 'LIAR TRAIL? NOT ON!' You don't know if this means there is a liar trail and you can't get there, or there isn't one. Either way, it annoys you enough to want to get rid of the liar grail."
+The Liar Grail is a thing in Swept Pews. description is "It's carved with 'LIAR TRAIL? NOT ON!' You don't know if this means there is a liar trail and you can't get there, or there isn't one. Either way, it annoys you enough to want to get rid of the liar grail.". "A liar grail is embedded in the south wall, aw. But maybe you could pour something in it."
 
 check taking liar grail: say "A small voice cries 'Da cad! Da cad!' You probably don't want the liar grail corrupting you." instead;
 
@@ -2202,7 +2208,7 @@ check going south in Swept Pews:
 
 chapter troll ort
 
-the troll ort is an edible thing in Swept Pews.
+the troll ort is an edible thing in Swept Pews. "A troll ort lies on the floor here, but it looks dry enough, the five-second rule can't matter too much."
 
 book Drawl Ward
 
@@ -2293,7 +2299,7 @@ the gold log is a thing in Pro Corp. description is "It's pretty cylindrical but
 
 chapter DNA band and hand and what's after
 
-The DNA band is a thing in Pro Corp.
+The DNA band is a thing in Pro Corp. "A DNA band sits here, nice and tidy and helical.". description is "The DNA band seems like it could come to life, but you'd need some cool science to do so.".
 
 The DNA hand is a thing.
 
@@ -2311,17 +2317,26 @@ talk-text of the player is "'Me! Hi! Hem.'"
 talk-text of Bomb Mob is "You don't need a gang nag. Maybe you can sneak around them to get the TNT, though.".
 talk-text of Code Doc is "There is some awkward small talk. The Code Doc is more about understanding and explaining things.".
 talk-text of Cross Orc is "'Pay?! Yap!'".
+talk-text of Dave is "Dave's here, man. And Dave's not chatty, man. He just seems to want to block you from doing anything.".
+talk-text of Diktat Kid is "Now's not the time for talk. Okay, the Diktat Kid might be bragging, but you won't get a word in.".
 talk-text of Ergot Ogre is "'Guh! Ug!'[paragraph break]Diplomacy won't get you by, here.".
 talk-text of Flee Elf is "[one of]'That cap. It's for you. Find the right way to take it, and I'll leave you on your way. Ask me again for hints.'[or]'Well, there are only twenty-six ways to take the Pact Cap--um, okay, twenty-five, if you think about it. And don't overthink. Once you do, I'm on my way.'[stopping]".
 talk-text of Gulf Lug is "'Ill, I...'".
+talk-text of Ian is "Ian sniffs. 'Why should I talk to someone not classy enough to BELONG here on Mont Nom?' He turns his head for a moment, as if doing something he's ashamed of.".
 talk-text of Kayo Yak is "It looks up a bit but then ignores you. Maybe there's an order it can respond to.".
 talk-text of King Nik is "'I am not a very good king! I tried to understand social forces and big picture issues and stuff on my trip abroad, but I do not understand them yet. Maybe you could help me?'".
+talk-text of Knife Fink is "The Knife Fink stops and looks over your possessions for a moment.".
 talk-text of Known Wonk is "There is some awkward small talk. The Known Wonk's mind is elsewhere, but maybe you can help with practical matters.".
+talk-text of Madam is "She is raising the Gal Flag and incanting ... something. You're not sure what. But talking won't interrupt it.".
 talk-text of Mike Kim is "Did you find any Stray Arts? I can always use them.".
 talk-text of Marge Pegram is "'I ain't much for talking now I'm sick...'".
 talk-text of Ned is "Ned's not in the mood for regular talk. He seems to want an argument or fight, but you don't.".
+talk-text of Psi Wisp is "It has nothing to say. It just pulses.".
+talk-text of Revolt Lover is "The Revolt Lover launches into how everyone is really stupid and at fault, and you can't really do anything except snark about it.".
 talk-text of Rob is "Rob yawns. He doesn't find you very interesting. Maybe there's a way to take advantage of that.".
 talk-text of sleep eels is "Maybe they are sending some sort of electric message, but they're not talking.".
+talk-text of Sniffins is "[if YOB ATTABOY is not in ZeroRez]'Poor lower class me is a failure! If only I had some success manual!'[else]'Oh. It's you again. If you were REALLY smart, you'd have taken the advice in that book you gave me.'[end if]".
+talk-text of Verses Rev is "The Verses Rev piously intones how weirdos not in line with the Diktat Kid's values need to be eradicated.".
 talk-text of Yuge Guy is "'Believe Me. Adore Me. Believe!' O gee, ego, you think to yourself."
 
 volume gotoing
@@ -2415,7 +2430,7 @@ check going when being-chased is true:
 
 check going to Fun 'Nuf when being-chased is true: say "You feel yourself running up against an invisible barrier. Apparently, running away that way from the [chase-person] won't help." instead;
 
-the Psi Wisp is a chaser. chase-room of Psi Wisp is Pro Corp. talk-text is "It has nothing to say. It just pulses."
+the Psi Wisp is a chaser. chase-room of Psi Wisp is Pro Corp. description is "The Psi Wisp is very red, and it pulses fervently. If it had feelings, you'd be pretty sure it didn't like you."
 
 after looking when being-chased is false:
 	if player is in pro corp and psi wisp is not in ZeroRez:
@@ -2818,6 +2833,8 @@ a thing can be need-ia. a thing is usually need-ia.
 a book is usually not need-ia. a helpdoc is usually not need-ia. scenery is usually not need-ia.
 
 the player is not need-ia. the leet steel is not need-ia. the part strap is not need-ia.
+
+the tent net is need-ia. the elope pole is need-ia. the pity tip is need-ia.
 
 ia-yet is a truth state that varies.
 

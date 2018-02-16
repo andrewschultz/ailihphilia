@@ -572,6 +572,7 @@ randtxt
 "Tit!"
 "Tut!"
 "We mew!"
+"Well, EW!"
 "Y'booby!"
 "Y'kooky?"
 
