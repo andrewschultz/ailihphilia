@@ -8,6 +8,7 @@ First, Put It Up tables.i7x contains all the random responses.
 Second, Put It Up tables.i7x contains responses to mistakes e.g. palindrome verbs/phrases that don't advance the game but are good tries.
 Put XX before each of these to find the beginning of a table, ZZ for the end:
 USE for the Table of Useons (USE X ON Y gives a point)
+FAIL for Useons that don't work
 TALK for talk texts
 
 to search for an item, look for chapter [item].
@@ -117,19 +118,13 @@ section part of a puzzle but still floating
 
 [Otto is a person.]
 
-the brag garb is a proper-named thing.
+the brag garb is a proper-named thing. description is "You don't know fashion that well, but this is way spiffier and more comfortable than the old stink knits."
 
 section helpdocs
 
 a helpdoc is a kind of thing.
 
 section ingredients
-
-the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, unsurprisingly."
-
-the yard ray is a thing. description is "It looks pretty lethal. It's no dinky resale laser![paragraph break]There are also has instructions: EMIT ********.[paragraph break]It's currently [if murk rum is in ZeroRez]loaded with energy from the Murk Rum[else]empty of fuel[end if]."
-
-the murk rum is a drinkable thing. [put this in the yard ray]
 
 section tronparts
 
@@ -712,7 +707,7 @@ tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Together, you figure out w
 spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
 spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	"You stick some strands of yahoo hay into the damaged end of the dork rod. It's now a moor broom!"
-troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. It's now an entirely different smell from the Stink Knits, but a much more edible one. You guess." [b4:pace cap] [af:yak okay]
+troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the Stink Knits, but still quite distinctive." [b4:pace cap] [af:yak okay]
 sage gas	guru rug	tenet	--	--	true	true	false	Grebeberg	"The sage gas bubbles out under the guru rug and makes it float away. Under the guru rug is a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 Moor Broom	Tru Yurt	Exam Axe	--	--	true	true	false	Grebeberg	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe!" [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
@@ -730,7 +725,7 @@ murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with ene
 Yard Ray	test set	--	ready-to-test rule	--	true	false	true	Dim Mid	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, successfully bribed." [b4:use tnt on ore zero]
 taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	Dim Mid	"You raise the Taboo Bat, and suddenly the Verses Rev knows what he's up against. It's not that it's particularly violent or lethal, but the Verses Rev sees several ways culture has gone to seed (and several it's gotten better, but he's too set in his ways.) More importantly, he sees himself in that. He turns and runs."
-Yard Ray	Diktat Kid	X-ITE TIX	--	--	true	true	true	Dim Mid	"Fzzt! Zap! The yard ray zaps the Diktat Kid. Both explode."
+Yard Ray	Diktat Kid	X-ITE TIX	--	--	true	true	true	Dim Mid	"Fzzt! Zap! The yard ray zaps the Diktat Kid, who goes running off. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]... REDIVIDER!'"
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse]
 
@@ -863,11 +858,15 @@ this is the you-win rule:
 
 chapter failed useons
 
+[xxfail]
 table of useons (continued)
 use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
-troll ort	cross orc	--	--	--	false	true	true	--	"The cross orc mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE and don't WANT to. But the way it looks at you, you suspect it'd forgive you if you gave the right gift."
+radar	sleep eels	--	--	--	false	false	false	--	"A radar isn't supposed to work this way, but somehow, you detect some bitterness at mammals in general. But it's secondary to needing a more comfortable place to sleep."
+troll ort	cross orc	--	--	--	false	false	false	--	"The cross orc mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE and don't WANT to. But the way it looks at you, you suspect it'd forgive you if you gave the right gift."
+troll ort	kayo yak	--	--	--	false	false	false	--	"As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up."
 yard ray	Tru Hurt	--	--	--	false	true	true	--	"The yard ray bounces harmlessly off the Tru Hurt. Maybe it needs to be used nonviolently."
 yard ray	Diktat Kid	--	--	--	false	true	true	--	"The yard ray bounces harmlessly off the Diktat Kid. Maybe it needs to be used nonviolently."
+[zzfail]
 
 volume rooms
 
@@ -1059,6 +1058,7 @@ itm	reject
 leet steel	"You want to focus on the Knife Fink and not the leet steel."
 part strap	"You want to focus on the Verses Rev and not the part strap."
 Tru Hurt	"If you dispose of the Diktat Kid, the Tru Hurt won't be able to hurt you."
+Waster Fretsaw	"If you dispose of the Diktat Kid, the Waster Fretsaw won't be able to hurt you."
 
 chapter Verses Rev
 
@@ -1078,7 +1078,7 @@ chapter tru hurt
 
 the tru hurt is peripheral scenery in Dirge Grid. "The Tru Hurt is here, and it's aimed at you!"
 
-instead of doing something with the tru hurt, say "You need to take care of the Diktat Kid. With the Yard Ray."
+the waster fretsaw is peripheral scenery in Dirge Grid. "The less thought of, the better. Without the Diktat Kid to operate it, it'll be less harmful."
 
 chapter emiting
 
@@ -1139,7 +1139,7 @@ King Nik is a person in Cold Loc.
 
 chapter Spur Ups
 
-the Spur Ups are a plural-named thing.
+the Spur Ups are a plural-named thing. description is "Boy! These are so much better than that round tuitt a teacher gave you as a joke. If you could mass produce and market them when you got back, what a motivational fad you could start--and profit from."
 
 book Flu Gulf
 
@@ -1157,13 +1157,7 @@ check going west in Flu Gulf when scorn rocs are in Flu Gulf:	say "The scorn roc
 
 book Sneer Greens
 
-every turn when player is in Sneer Greens:
-	if a random chance of 1 in 2 succeeds, say "The Yuge Guy mumbles '[one of]Main, I am![or]Soros! Soros![or]Huge! Guh![or]Rofl! For...[or]Gibe! Big![or]Misdeeds? I'm ...[in random order]'";
-
-check going east in Sneer Greens:
-	if Yuge Guy is in Sneer Greens, say "'LOW AWOL!' the Yuge Guy booms, as you run away."
-
-Sneer Greens is west of Flu Gulf. It is in Grebeberg. "Despite the impressive view, this place still feels like it's gone to pot."
+Sneer Greens is west of Flu Gulf. It is in Grebeberg. "[if Yuge Guy is in sneer greens]Despite the impressive view, the place has gone to pot.[else]Nicer with the Yuge Guy gone. Still, it's...[end if][paragraph break]You can only go back east."
 
 Sneer Greens is above Flu Gulf.
 
@@ -1175,9 +1169,21 @@ after looking in Sneer Greens for the first time:
 	say "The Yuge Guy calls 'BOO! NOOB!' just to reinforce his contempt.";
 	continue the action;
 
+every turn when player is in Sneer Greens:
+	if a random chance of 1 in 2 succeeds, say "The Yuge Guy mumbles '[one of]Main, I am![or]Soros! Soros![or]Huge! Guh![or]Rofl! For...[or]Gibe! Big![or]Misdeeds? I'm ...[in random order]'";
+
+check going east in Sneer Greens:
+	if Yuge Guy is in Sneer Greens, say "'LOW AWOL!' the Yuge Guy booms, as you run away."
+
+chapter Yuge Guy
+
 Yuge Guy is a proper-named person in Sneer Greens. description is "Bilgy. Glib."
 
 understand "evil/clive" and "evil clive" as Yuge Guy.
+
+chapter murk rum
+
+the murk rum is a drinkable thing. description is "You're not sure what's in it, but boy, it looks potent."
 
 book Dumb Mud
 
@@ -1221,7 +1227,7 @@ instead of doing something with voodoo v:
 
 chapter opossum
 
-the opossum is a thing in Le Babel. "An opossum crouches here, looking scared. Maybe you can help it be less frozen by fear."
+the opossum is a thing in Le Babel. "An opossum crouches here, looking scared. Maybe you can help it be less frozen by fear.". description is "Cute little thing, lovely fur, but it could use a friendly gesture."
 
 instead of doing something with opossum:
 	if current action is taking, say "The opossum bounds away. Perhaps you can be less grabby." instead;
@@ -1231,9 +1237,15 @@ instead of doing something with opossum:
 
 section mussing
 
+opmussing is an action applying to nothing.
+
 mussing is an action applying to one thing.
 
 understand the command "muss" as something new.
+
+understand "ruff fur" as opmussing when opossum is quicknear.
+
+instead of opmussing, try mussing opossum instead.
 
 understand "muss [something]" as mussing.
 
@@ -1252,7 +1264,7 @@ report taking the Balsa Slab: say "It's light. It weighs ... not a gigaton."
 
 chapter Bro Orb
 
-the Bro Orb is a thing in Le Babel. "[one of]An orb hovers in the air. You know it must be a Bro Orb[or]The Bro Orb still hovers in the air[stopping]. You would love to take it, but you're not sure if you're worthy." [??bros orb]
+the Bro Orb is a thing in Le Babel. "[one of]An orb hovers in the air. You know it must be a Bro Orb[or]The Bro Orb still hovers in the air[stopping]. You would love to take it, but you're not sure if you're worthy.". description is "Looking into the Bro Orb, you start to understand social, subjective knowledge you assumed only jerks know. Maybe they know it better, but you realize you are cheating yourself if you don't learn it.". [??bros orb]
 
 check taking Bro Orb:
 	if player has Bro Orb, say "You already have it." instead;
@@ -1326,7 +1338,7 @@ understand "yak okay" as yakokaying.
 carry out yakokaying:
 	if ergot ogre is in ZeroRez, say "[if yak is in location of player]The yak has served you well. It deserves a rest.[else]You relive past glories. Why not?[end if]" instead;
 	if yak is in location of player and ergot ogre is in location of player:
-		say "The kayo yak surges at the ergot ogre and knocks it over! The ergot won't spread to the yak's horns, so that's good. The ogre dusts itself off and walks away, embarrassed. The yak, for its part, looks relaxed--almost like a tao goat--and heads off, not to the Frush Surf, but somewhere calmer.";
+		say "The kayo yak surges at the ergot ogre and knocks it over with a few ... smart rams! The ergot won't spread to the yak's horns, so that's good. The ogre dusts itself off and walks away, embarrassed. The yak, for its part, looks relaxed--almost like a tao goat--and heads off, not to the Frush Surf, but somewhere calmer.[paragraph break]You think you hear an elk cackle in the distance.";
 		score-inc; [Grebeberg/YAK OKAY]
 		now yak is in ZeroRez;
 		now ergot ogre is in ZeroRez;
@@ -1344,7 +1356,7 @@ the poo coop is in Moo Room. "A poo coop sits here. Thankfully, it looks empty."
 
 chapter yahoo hay
 
-the yahoo hay is scenery in Moo Room.
+the yahoo hay is scenery in Moo Room. "Just being around the yahoo hay makes you feel, man, this can be used to build even cooler stuff."
 
 chapter straw arts
 
@@ -1352,15 +1364,15 @@ the straw arts are a plural-named thing. description is "Whatever they are, you 
 
 chapter moor broom
 
-the moor broom is a thing.
+the moor broom is a thing. description is "It's made of that enact came amd the yahoo hay, and just looking at it, you feel almost excited about cleaning."
 
 book Mire Rim
 
 Mire Rim is west of Dumb Mud. It is in Grebeberg. "A made dam blocks your way west. You can go north, south and east here."
 
-the made dam is scenery in Mire Rim.
+the made dam is scenery in Mire Rim. description is "It looks hastily put together, and you're not sure if it's actually protecting any great torrent of water."
 
-The Eroded Ore is a thing.
+The Eroded Ore is a thing. description is "You're no expert metallurgist, but it's dim and porous and probably not as potent as it could be."
 
 book Birch Crib
 
@@ -1400,7 +1412,7 @@ instead of doing something with go fog:
 
 chapter guru rug
 
-The guru rug is a thing in Motto Bottom. "A guru rug lies here. It looks like it's about to float away, but at the same time, it looks like something you're not good enough to touch."
+The guru rug is a thing in Motto Bottom. "A guru rug lies here. You're not sure how impressed you should be by it.". description is "Hmm, it's not fully tacked to the ground. Maybe you could slip the right thing in or under. Its simplicity leads you to believe it holds even greater secrets within."
 
 check taking guru rug: say "'Egad! Adage!' you think to yourself. You're not up to any great philosophy. Maybe something less heavy than the guru rug." instead;
 
@@ -1456,7 +1468,7 @@ instead of doing something with kayak when elope pole is in ZeroRez: [??use X on
 
 chapter tao boat
 
-The Tao Boat is scenery in Calcific Lac.
+The Tao Boat is scenery in Calcific Lac. "It rocks gently on the waves. You [if dork rod is in ZeroRez]wonder what it's like inside, if you're worthy[else]look back on your time inside with fondness. It put you at peace with the job you have ahead[end if]."
 
 chapter dork rod
 
@@ -1464,31 +1476,33 @@ The dork rod is a thing. description is "It's kind of neat and quirky, but it's 
 
 chapter enact cane
 
-The Enact Cane is a thing.
+The Enact Cane is a thing. description is "Just holding it makes you feel snazzier and more authoritative and with it. It's slightly mussed at one end, as if maybe you could attach something there."
 
 chapter taboo bat
 
-The taboo bat is a thing.
+The taboo bat is a thing. description is "You feel rebellious just holding this thing. One look, and visions of chances taken and authority bucked in your youth, sensible or not, swirl at you for a bit."
 
 chapter you buoy
 
-the you buoy is a thing.
+the you buoy is a thing. description is "It's reallly plain, now you look at it. Also, as you look it over, it rattles a bit."
+
+check opening you buoy: say "You can't find an opening. Sadly, this is sllightly trickier than Zork I. Slightly." instead;
 
 chapter ME gem
 
-the ME gem is a thing. description is "You feel a strong urge to keep this and not share it, because of all the crazy things you did to get it, but you know that's not quite right."
+the ME gem is a thing. description is "You feel a strong urge to keep this and not share it, because of all the crazy things you did to get it, but you know that's not quite right.[paragraph break]Also, it looks nothing at all like the emerald in Zork I, so stop thinking that."
 
 book Apse Spa
 
 Apse Spa is east of Cold Loc. It is in Grebeberg. "The Apse Spa is covered with dose sod, which you can't take--you're not sick--but it looks beautiful. Also, Go-By Bog expands every way except back west[if sage gas is off-stage]. You could traverse it, if you knew what you were doing[else]You already went through it, though[end if]."
 
-the dose sod is scenery in Apse Spa.
+the dose sod is scenery in Apse Spa. "It looks ucky, but given you're in an Apse Spa, it may have health benefits for those that need them."
 
 Go-By Bog is scenery in Apse Spa.
 
 chapter sage gas
 
-some sage gas is a thing. [It's found in Apse Spa, but it is not in Apse Spa.]
+some sage gas is a thing. description is "It's pretty translucent--you're just glad you've been able to bottle it up in the maps, somehow.".
 
 part Yelpley region
 
@@ -1608,6 +1622,8 @@ carry out boreing:
 chapter workables
 
 a workable is a kind of thing. a workable has a number called useleft.
+
+description of a workable is "[if useleft of item described is 0]It's broken now, but you got good use out of it[else if useleft of item described is 3]The only way you can tell it from the other two is because [printed name of item described in upper case] is printed on the front[else]Since you had success using [the item described], you feel more comfortable using it again[end if]."
 
 the reifier is a workable. useleft is 3.
 the reviver is a workable. useleft is 3.
@@ -1740,7 +1756,7 @@ to say lewd-details:
 		say "[if X is not lelt],[end if] [entry X of dwelt-last]";
 	say " Sinned";
 	if lewd-chap is number of entries in dwelt-first + 1 and lewd-read is false:
-		say ".[paragraph break]Whew! You've finished DWELT LEWD. After reading the blurb for the sequel, [']S SENSUOUSNESS, you realize you've forgotten the plot [one of]already[or]yet again[stopping], if there was one. Sicko. (Hey, don't look at me, I just wrote the abstract code for the 'book.')";
+		say ".[paragraph break]Whew! You've finished DWELT LEWD. After reading the blurb for the sequel, [']S SENSUOUSNESS, and a related Leer Reel, MUCH, you realize you've forgotten the plot [one of]already[or]yet again[stopping], if there was one. Sicko. (Hey, don't look at me, I just wrote the abstract code for the 'book.')";
 		now lewd-chap is 0;
 		now lewd-read is true;
 
@@ -1774,7 +1790,7 @@ check taking a book:
 
 chapter party trap
 
-the party trap is a thing. "It looks really complex, like it could trap more than one thing if you USE it right. That would be cool. I mean, if you used it on things that deserved it."
+the party trap is a thing. description is "It looks roughly like the notes from the trap art, but you don't need to worry about the details. Poking around would be dangerous. It looks You just hope it works right when you USE it. That would be cool. I mean, if you used it on things that deserved it.".
 
 chapter workrowing
 
@@ -1870,7 +1886,7 @@ Art Xtra is north of Yawn Way. It is in Yelpley. "You can go south or north here
 
 the trap art is a thing in Art Xtra. "Some trap art sits here. It's free. You might as well take it.". description is "The trap art depicts a bunch of nasty, dirty animals being trapped--it's not a real trap, but maybe it could become one."
 
-El Doodle is a thing. "It looks like it could be a map--or something--but it sure could use some paring down."
+El Doodle is a thing. description is "A jumble of raw creativity, it looks like it could be a map--or something--but it sure could use some paring down."
 
 after going to Art Xtra when El Doodle is off-stage:
 	if stark rats are in ZeroRez:
@@ -1906,7 +1922,7 @@ check going in Toll Lot:
 
 chapter cross orc
 
-The cross orc is a person in Toll Lot. "A cross orc paces quickly back and forth between the north and south exits, just to reinforce that you'd better not try to go that way with it around.". description is "It paces quickly, rubbing its fingers together, mumbling to itself about the fabled moola loom or a possible bank nab."
+The cross orc is a person in Toll Lot. "A cross orc paces quickly back and forth between the north and south exits, just to reinforce that you'd better not try to go that way with it around.". description is "It paces quickly, rubbing its fingers together, mumbling to itself about the fabled moola loom and loot stool, or a possible bank nab or bar grab."
 
 chapter crag arc
 
@@ -1987,8 +2003,6 @@ check taking Gorge Grog: say "Sniffins chides you. 'It's worthless to us, but if
 Nat's Tan is a thing in Deli Tiled. "A container of something called Nat's Tan is here."
 
 check taking nat's: say "Ugh! It feels too gross to take. Maybe you need to build yourself up to figure how to take it." instead;
-
-Le Falafel is a proper-named thing in Deli Tiled.
 
 a tame mat is in Deli Tiled. "A tame mat reading Deli Tiled here."
 
@@ -2126,7 +2140,7 @@ understand "puff up" as puffuping.
 carry out puffuping:
 	if spur ups are in ZeroRez, say "You already did." instead;
 	if player does not have spur ups, say "You don't possess anything that would help you feel more up." instead;
-	say "As you hold the Spur-Ups, you thik about how great you are and can and will be. Surprisingly, it works! It works so well, you figure you don't even need the spur-ups for a boost in the future. You feel more confident, more able to deal with sadness now.";
+	say "As you hold the Spur-Ups, you think about how great you are and can and will be. Surprisingly, it works! It works so well, you figure you don't even need the spur-ups for a boost in the future. You feel more confident, more able to deal with sadness now.";
 	now Spur Ups are in ZeroRez;
 	score-inc; [Yelpley/puff up]
 	the rule succeeds;
@@ -2185,13 +2199,19 @@ Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in red ros
 
 Red Roses Order is above Emo Dome.
 
+chapter madam
+
 Madam is a person in Red Roses Order. Madam carries the gal flag. description is "MADAM stands here in defiance, holding the Gal Flag high."
 
 description of Gal Flag is "It's fluttering even without a breeze."
 
 understand "la gal" and "la/gal" as Madam.
 
-check going south in Red Roses Order: say "No way! You are locked in mortal combat! Plus, there's really only one thing to do, here." instead;
+check going south in Red Roses Order when Madam is in Red Roses Order: say "No way! You are locked in mortal combat! Plus, there's really only one thing to do, here." instead;
+
+chapter yard ray
+
+the yard ray is a thing. description is "It looks pretty lethal. It's no dinky resale laser![paragraph break]There are also has instructions: EMIT ********.[paragraph break]It's currently [if murk rum is in ZeroRez]loaded with energy from the Murk Rum[else]empty of fuel[end if]."
 
 book Swept Pews
 
@@ -2206,7 +2226,7 @@ check going south in Swept Pews:
 
 chapter troll ort
 
-the troll ort is an edible thing in Swept Pews. "A troll ort lies on the floor here, but it looks dry enough, the five-second rule can't matter too much."
+the troll ort is an edible thing in Swept Pews. "A troll ort lies on the floor here, but it looks dry enough, the five-second rule can't matter too much.". description is "It doesn't look particularly edible to you. It also has a strong smell."
 
 book Drawl Ward
 
@@ -2217,6 +2237,8 @@ Marge Pegram is a person in Drawl Ward. "[one of]'Hi! I'm Marge Pegram. I ain't 
 check going in Drawl Ward:
 	if Marge Pegram is in Drawl Ward:
 		if noun is west or noun is east, say "You hear Marge Pegram groaning and think it wouldn't be heroic to pass her by. Maybe you should find a way to help her feel less sick." instead;
+
+the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, unsurprisingly."
 
 book Scrap Arcs
 
@@ -2299,9 +2321,9 @@ chapter DNA band and hand and what's after
 
 The DNA band is a thing in Pro Corp. "A DNA band sits here, nice and tidy and helical.". description is "The DNA band seems like it could come to life, but you'd need some cool science to do so.".
 
-The DNA hand is a thing.
+The DNA hand is a thing. "It's motionless, but it looks lifelike enough. There must be a way to bring it to life!"
 
-The bang nab is a thing.
+The bang nab is a thing. "Wow! It's really evolved from a DNA band! It's sturdy. If it had eyes, it'd be looking for something to steel and run--umm, that's not quite right--off with. You're not sure why it hasn't run off with anything in your inventory. Is all this stuff you piled up worthless? Perhaps the bang nab is just grateful."
 
 volume dialogue
 
@@ -2332,8 +2354,8 @@ talk-text of Ned is "Ned's not in the mood for regular talk. He seems to want an
 talk-text of Psi Wisp is "It has nothing to say. It just pulses.".
 talk-text of Revolt Lover is "The Revolt Lover launches into how everyone is really stupid and at fault, and you can't really do anything except snark about it.".
 talk-text of Rob is "Rob yawns. He doesn't find you very interesting. Maybe there's a way to take advantage of that.".
-talk-text of sleep eels is "Maybe they are sending some sort of electric message, but they're not talking.".
-talk-text of Sniffins is "[if YOB ATTABOY is not in ZeroRez]'Tony? Not! Poor lower class me is a failure! If only I had some success manual!'[else]'Oh. It's you again. If you were REALLY smart, you'd have taken the advice in that book you gave me.'[end if]".
+talk-text of sleep eels is "Maybe they are sending some sort of electric message you could detect with the right instrument, but they're not talking. You're more struck, though, by how uncomfortable they look while sleeping--wriggling about.".
+talk-text of Sniffins is "[if YOB ATTABOY is not in ZeroRez]'Tony? Not! Poor lower class me is a failure! Nobody wants Le Falafel! If only I had some success manual!'[else]'Oh. It's you again. If you were REALLY smart, you'd have taken the advice in that book you gave me.'[end if]".
 talk-text of Verses Rev is "The Verses Rev booms 'Erupt! Pure!' then piously intones how weirdos not in line with the Diktat Kid's values need to be eradicated.".
 talk-text of Yuge Guy is "'Believe Me. Adore Me. Believe!' O gee, ego, you think to yourself."
 
