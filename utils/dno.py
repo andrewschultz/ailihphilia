@@ -36,7 +36,7 @@ colons_start = 0
 read_last = 0
 comments_too = False
 list_sections = False
-detail = False
+do_detail = False
 
 # variables
 colon_string = ""
@@ -51,15 +51,15 @@ def check_detail_notes(s):
     with open(notes_file_to_read) as file:
         for line in file:
             line_count = line_count + 1
+            if line.startswith('='): continue
             line = re.sub("-", "", line.lower().strip())
             line = re.sub("[^a-z ]", "", line)
             ary = line.split(" ")
             if len(ary) == 2:
                 matches[line_count] = ary
-    count = 0
-    for x in matches.keys():
-        print(x, matches[x][0], matches[x][1])
-    print(len(matches))
+    dupe = 0
+    poss = 0
+    eq = "=" * 20
     for x in source_files:
         short = re.sub(".*[\\\/]", "", x)
         with open(x) as file:
@@ -70,10 +70,14 @@ def check_detail_notes(s):
                 l2 = re.sub("[^a-z ]", "", ll)
                 for x in matches.keys():
                     if matches[x][0] in l2 and matches[x][1] in l2:
-                        if re.search(r"\b{:s}\b".format(matches[x][0]), l2, re.IGNORECASE):
-                            if re.search(r"\b{:s}\b".format(matches[x][1]), l2, re.IGNORECASE):
-                                count = count + 1
-                                print("Dupe", count, "Notes line", x, short, "line", line_count, matches[x][0], "/", matches[x][1], "/", ll)
+                        if re.search(r"\b{:s} {:s}\b".format(matches[x][0], matches[x][1]), l2, re.IGNORECASE):
+                            dupe = dupe + 1
+                            print(eq, "Dupe", dupe, "Notes line", x, short, "line", line_count, matches[x][0], "/", matches[x][1])
+                            print("        ", ll.strip())
+                        elif re.search(r"\b{:s}\b".format(matches[x][0]), l2, re.IGNORECASE) and re.search(r"\b{:s}\b".format(matches[x][1]), l2, re.IGNORECASE):
+                            poss = poss + 1
+                            print(eq, "Poss-dupe", poss, "Notes line", x, short, "line", line_count, matches[x][0], "/", matches[x][1])
+                            print("        ", ll.strip())
                         #print(x, "line", line_count, "takes from", '/'.join(matches[x]), "at line", x)
     exit()
 
