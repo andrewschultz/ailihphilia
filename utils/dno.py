@@ -36,9 +36,46 @@ colons_start = 0
 read_last = 0
 comments_too = False
 list_sections = False
+detail = False
 
 # variables
 colon_string = ""
+
+def check_detail_notes(s):
+    notes_file_to_read = "c:/games/inform/{:s}.inform/source/notes.txt".format(s)
+    source_files = [ "c:/games/inform/{:s}.inform/source/story.ni".format(s),
+      "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/{:s} mistakes.i7x".format(re.sub("-", " ", s)),
+      "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/{:s} tables.i7x".format(re.sub("-", " ", s)) ]
+    line_count = 0
+    matches = defaultdict(list)
+    with open(notes_file_to_read) as file:
+        for line in file:
+            line_count = line_count + 1
+            line = re.sub("-", "", line.lower().strip())
+            line = re.sub("[^a-z ]", "", line)
+            ary = line.split(" ")
+            if len(ary) == 2:
+                matches[line_count] = ary
+    count = 0
+    for x in matches.keys():
+        print(x, matches[x][0], matches[x][1])
+    print(len(matches))
+    for x in source_files:
+        short = re.sub(".*[\\\/]", "", x)
+        with open(x) as file:
+            line_count = 0
+            for line in file:
+                line_count = line_count + 1
+                ll = line.lower()
+                l2 = re.sub("[^a-z ]", "", ll)
+                for x in matches.keys():
+                    if matches[x][0] in l2 and matches[x][1] in l2:
+                        if re.search(r"\b{:s}\b".format(matches[x][0]), l2, re.IGNORECASE):
+                            if re.search(r"\b{:s}\b".format(matches[x][1]), l2, re.IGNORECASE):
+                                count = count + 1
+                                print("Dupe", count, "Notes line", x, short, "line", line_count, matches[x][0], "/", matches[x][1], "/", ll)
+                        #print(x, "line", line_count, "takes from", '/'.join(matches[x]), "at line", x)
+    exit()
 
 def modify_notes(s):
     lines_changed = 0
@@ -70,6 +107,7 @@ def usage():
     print("USAGE" + '=' * 40)
     print("-v = verbose")
     print("-m = modify notes file before starting, -mo = modify only")
+    print("-d = do detailed search e.g. anything with 2 words is searched")
     print("-2 = report appearance of notes.txt stirng in story.ni/put it up tables.i7x more than once.")
     print("    -2n/-n2 = negation. Default = off.")
     print("-l = launch after.")
@@ -248,6 +286,8 @@ while count < len(sys.argv):
         exit()
     elif l == 'v':
         verbose = True
+    elif l == 'd':
+        do_detail = True
     elif l == 'f':
         open_first = True
     elif l == 'ls' or l == 'sl':
@@ -294,7 +334,10 @@ while count < len(sys.argv):
         usage()
     count = count + 1
 
-check_notes("put-it-up")
+if do_detail:
+    check_detail_notes("put-it-up")
+else:
+    check_notes("put-it-up")
 
 if colon_string:
     print(colon_string.strip())
