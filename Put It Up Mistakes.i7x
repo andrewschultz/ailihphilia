@@ -186,6 +186,8 @@ understand "sworn rows" as a mistake ("The sword rows are inanimate and neutral.
 
 book Swept Pews
 
+understand "liar frail" and "liar trail" as a mistake ("The grail remains in your way to the south. But it was worth a try.") when liar grail is quicknear.
+
 book Deli Tiled
 
 understand "bon knob" as a mistake ("You don't need to help Sniffins with interior decorating, here.") when player is in Deli Tiled and YOB ATTABOY is in ZeroRez.

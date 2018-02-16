@@ -137,8 +137,6 @@ a tronpart is a kind of thing.
 
 description of a tronpart is usually "The [item described] is one of [number of tronparts] parts needed for the North-Tron."
 
-the martini tram is a tronpart. "That martini tram that appeared from Mont Nom is here.". description is "The martini tram looks like it'll provide a handy base for the future North-Tron.".
-
 TNT is a tronpart.
 
 Gorge Grog is a tronpart.
@@ -575,7 +573,9 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 		now i2 is in ZeroRez;
 		score-inc; [Grebeberg/USE GIFT FIG ON MAYO YAM&USE SNACK CANS ON UFO TOFU]
 		if chef-yet is true:
-			say "A martini tram pops out from behind the Ark of Okra. Now that you've made so much food, you need drinks! Except, well, the tram doesn't have any drinks. You notice, though, that it's on your epicer recipe, so you push it back to Fun [']Nuf.";
+			say "A martini tram rattles out from behind the Ark of Okra. Guess you need drinks with your, uh, food![paragraph break][if player does not have the epicer recipe]You're shocked to see it, and it rollls further down, over the turf rut to Dumb Mud, then back through the Seer Trees to Fun [']Nuf[else]But you're prepared for it, with your epicer recipe. You move it back to Fun [']Nuf, where it looks like a good base structure for your North Tron[end if]..";
+			move martini tram to Fun 'Nuf;
+			move player to Fun 'Nuf, without printing a room description;
 		else:
 			say "You suspect something is behind there! Maybe you can find another combination, you'll see what.";
 			now chef-yet is true;
@@ -684,7 +684,7 @@ party trap	stark rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try 
 ERA FARE	King Nik	Spur Ups	--	--	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'This will help me when I get back to South Ihtuos. Thank you!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...I must leave and RAFT FAR back to '"
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
 puce cup	past sap	--	--	sap-to-cup rule	true	false	false	Grebeberg	"You pour some sap into the cup."
-puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"The past sap pours into the liar grail and exposes how bad the grail has been over the years. As it cracks to allow passage south, you snicker to yourself. Liar grail? More like Liar FRAIL!"
+puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"The past sap pours into the liar grail and exposes how bad the grail has been over the years. As it cracks, along with the wall it was attached to to allow passage south, you snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL!"
 puce cup	dose sod	--	--	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
 puce cup	Marge Pegram	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley	"You give marge the puce cup. She drinks the dose sod and immediately feels better. 'Well... I have a lot of catching up to do. Can't hang around. Here's some Elan Ale for you, to celebrate how cool you are for helping.'"
 stamp mats	slate metals	ye key	--	--	true	false	false	Yelpley	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY."
@@ -884,7 +884,7 @@ the north tron is scenery. "It seems to have pushed a passage north here in Fun 
 
 chapter Flee Elf
 
-The Flee Elf is a person in Fun 'Nuf. "A Flee Elf stands here by Evac Ave to the south.". description is "You'd expect to see the Flee Elf wearing a gateman nametag, but maybe that's in some other, even more insanely brilliant, adventure."
+The Flee Elf is a person in Fun 'Nuf. "A Flee Elf stands here, guarding Evac Ave to the south.". description is "You'd expect to see the Flee Elf wearing a gateman nametag, but maybe that's in some other, even more insanely brilliant, wonderful and creative adventure."
 
 chapter Evac Ave
 
@@ -894,7 +894,7 @@ instead of entering Evac Ave, try going south.
 
 elf-warn is a number that varies.
 
-the Tix Exit is scenery.
+the Tix Exit is scenery. "It's nothing particularly fancy. I'm going to go out on a limb here and say it'll accept your X-ITE TIX."
 
 check going south in Fun 'Nuf:
 	if player has X-ITE TIX, try useoning X-ITE TIX with Tix Exit instead;
@@ -1033,7 +1033,7 @@ the Knife Fink is a person in Dirge Grid. "A Knife Fink wields some leet steel h
 
 the Knife Fink carries the leet steel.
 
-the leet steel is peripheral.
+the leet steel is peripheral. description is "The Knife Fink is waving it around with intent. It looks more like fancy cutlery than an effective weapon, though. But you don't want the Knife Fink to get close enough so you know for sure."
 
 instead of doing something when second noun is a peripheral thing:
 	if action is procedural, continue the action;
@@ -1066,11 +1066,13 @@ the Verses Rev is a person in Dirge Grid. "A Verses Rev wields a part strap here
 
 the Verses Rev carries the part strap.
 
-the part strap is peripheral.
+the part strap is peripheral. description is "It's more for overzealous religious flagellation to be daunting. A more practical weapon just might defeat it."
 
 chapter x-ite tix
 
-the x-ite tix are a plural-named thing. understand "xite" and "xite tix" as x-ite tix.
+the x-ite tix are a plural-named thing. description is "A duo. Loud. They promise passage to an EVEN MORE EXCITING AND EXPANSIVE ADVENTURE THAN THE ONE YOU'VE JUST FINISHED.[paragraph break]The words 'WOW' and 'YAY' are also written about ten times on each ticket."
+
+understand "xite" and "xite tix" as x-ite tix.
 
 chapter tru hurt
 
@@ -1244,7 +1246,7 @@ carry out mussing:
 
 chapter balsa slab
 
-The Balsa Slab is a thing in Le Babel. "A balsa slab is just lying here. You're not sure how it get here, but here it is."
+The Balsa Slab is a thing in Le Babel. "A balsa slab is just lying here. You're not sure how it get here, but here it is.". description is "It appears grooved, as if someone has labeled places to cut it to make it into something useful."
 
 report taking the Balsa Slab: say "It's light. It weighs ... not a gigaton."
 
@@ -1269,9 +1271,9 @@ Mont Nom is above Dumb Mud.
 
 The ark of okra is scenery in Mont Nom. "You always found okra, or the idea, icky, but the ark is beautiful enough, you sort of wonder how it'd taste."
 
-the martini tram is a thing in Mont Nom.
-
 instead of eating ark of okra: say "You don't know how long it's been out here. It's probably, like, the vegetable version of wax fruit."
+
+the martini tram is a tronpart. "That martini tram that appeared from Mont Nom is here.". description is "The martini tram looks like it'll provide a handy base for the future North-Tron.".
 
 chapter Ian
 
@@ -1474,7 +1476,7 @@ the you buoy is a thing.
 
 chapter ME gem
 
-the ME gem is a thing.
+the ME gem is a thing. description is "You feel a strong urge to keep this and not share it, because of all the crazy things you did to get it, but you know that's not quite right."
 
 book Apse Spa
 
@@ -1496,19 +1498,7 @@ Yawn Way is east of Fun 'Nuf. It is in Yelpley. "Not much to do here, and it's q
 
 book My Gym
 
-My Gym is south of Yawn Way. It is in Yelpley. "You can go back out south to Yawn Way. There's also passage west. Some small sword rows are off in one corner."
-
-chapter sword rows
-
-the sword rows are scenery in My Gym. "They aren't very big, but they whir a bit as you get near them."
-
-instead of doing something with sword rows:
-	if action is pro-and-use, continue the action;
-	say "The sword rows are sharp. It's probably only a good idea to USE something on them to cut them down."
-
-chapter not-a-baton
-
-The not-a-baton is a thing. description is "It is wood and round and long. It's too long to be a baton, but it looks like it could be something else."
+My Gym is south of Yawn Way. It is in Yelpley. "You can go back out south to Yawn Way. There's also passage west."
 
 chapter Dave
 
@@ -1520,6 +1510,14 @@ instead of doing something with Dave:
 	say "Looks like you'll need to do something special with, or to, Dave. Nothing destructive. But psych him out, somehow."
 
 check going west in My Gym when Dave is in My Gym: say "Dave says, 'I can't let you do that, Hal. Ah!' There must be a succinct, clever way to sneak around him!" instead;
+
+chapter sword rows
+
+the sword rows are a plural-named thing in My Gym. "Some tiny sword rows lie here[if Dave is in My Gym] behind Dave[end if].". description is "[if Dave is in My Gym]They're tiny. You can't get a good look with Dave guarding them[else]They could probably cut or chip away at something, if you needed them to[end if]."
+
+chapter not-a-baton
+
+The not-a-baton is a thing. description is "It is wood and round and long. It's too long to be a baton, but it's the right shape to be something powerful. It just sort of feels lifeless right now."
 
 chapter evadeing
 
@@ -1908,7 +1906,7 @@ check going in Toll Lot:
 
 chapter cross orc
 
-The cross orc is a person in Toll Lot. "A cross orc paces quickly back and forth between the north and south exits, just to reinforce that you'd better not try to go that way with it around."
+The cross orc is a person in Toll Lot. "A cross orc paces quickly back and forth between the north and south exits, just to reinforce that you'd better not try to go that way with it around.". description is "It paces quickly, rubbing its fingers together, mumbling to itself about the fabled moola loom or a possible bank nab."
 
 chapter crag arc
 
@@ -2199,7 +2197,7 @@ book Swept Pews
 
 Swept Pews is south of Emo Dome. It is in Yelpley. "You can go back north to the Emo Dome in this tidy little area[if liar grail is in ZeroRez]. A passage has been opened south with the Liar Grail's demise[end if]."
 
-The Liar Grail is a thing in Swept Pews. description is "It's carved with 'LIAR TRAIL? NOT ON!' You don't know if this means there is a liar trail and you can't get there, or there isn't one. Either way, it annoys you enough to want to get rid of the liar grail.". "A liar grail is embedded in the south wall, aw. But maybe you could pour something in it."
+The Liar Grail is a thing in Swept Pews. description is "It's carved with 'NIP IN? NOT ON!' If you hadn't examined it, you wouldn't think there might be a passage to the south, but now that you have, you consider the possibility. Either way, it annoys you enough to want to get rid of the liar grail. Lies are sometimes self-defeating like that". "A liar grail is embedded in the south wall, aw."
 
 check taking liar grail: say "A small voice cries 'Da cad! Da cad!' You probably don't want the liar grail corrupting you." instead;
 
@@ -2335,8 +2333,8 @@ talk-text of Psi Wisp is "It has nothing to say. It just pulses.".
 talk-text of Revolt Lover is "The Revolt Lover launches into how everyone is really stupid and at fault, and you can't really do anything except snark about it.".
 talk-text of Rob is "Rob yawns. He doesn't find you very interesting. Maybe there's a way to take advantage of that.".
 talk-text of sleep eels is "Maybe they are sending some sort of electric message, but they're not talking.".
-talk-text of Sniffins is "[if YOB ATTABOY is not in ZeroRez]'Poor lower class me is a failure! If only I had some success manual!'[else]'Oh. It's you again. If you were REALLY smart, you'd have taken the advice in that book you gave me.'[end if]".
-talk-text of Verses Rev is "The Verses Rev piously intones how weirdos not in line with the Diktat Kid's values need to be eradicated.".
+talk-text of Sniffins is "[if YOB ATTABOY is not in ZeroRez]'Tony? Not! Poor lower class me is a failure! If only I had some success manual!'[else]'Oh. It's you again. If you were REALLY smart, you'd have taken the advice in that book you gave me.'[end if]".
+talk-text of Verses Rev is "The Verses Rev booms 'Erupt! Pure!' then piously intones how weirdos not in line with the Diktat Kid's values need to be eradicated.".
 talk-text of Yuge Guy is "'Believe Me. Adore Me. Believe!' O gee, ego, you think to yourself."
 
 volume gotoing

@@ -4,12 +4,23 @@
 
 # Points: the reifier 3, reviver 3, rotator 3
 
+Oho!
+Aha!
+
+==========================redo
+
+sword rows now open up the past sap instead of puce cup. But they break by the time you use them. What a bunch of junk! When it goes to warmer climates, it returns to passes sap.
+
+use line nil on balsa slab
+
 ==========================final fight
 Dire! Rid!
 Erupt, Pure:Verses Rev?
 waster fretsaw: one of many items on the Dirge Grid at the end
 resoldered loser: name you are called
 Redivider: another weapon
+
+duo, loud
 
 ===================Very begin/end detail
 # You've had this nightmare before. You're young again, back in high school. Diary raid! Diary raid!@
@@ -66,8 +77,6 @@ It will be as prodded-dorp!
 To Jot! To jot!
 
 Trade Dart: Traded Art
-
-# Tru-Yurt
 
 Deport! Roped!: what yuge guy says if you try to ...
 
@@ -424,7 +433,6 @@ balk lab
 barge, grab
 bank nab
 bar grab
-Bilgy, glib.
 blub bulb
 boldened lob!
 Bolt? Lob
@@ -1171,5 +1179,6 @@ trube burt
 truka kurt
 yeo joey
 
+nary ran
 
 1w.py : not just STDIN but break things into dictionaries of dictionaries by first letter. See 2pal.py for details.

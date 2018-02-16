@@ -507,6 +507,7 @@ randtxt
 "Pop!"
 "Pow-op! Pow-op!"
 "Tiff. Fit."
+"Tonk? Not."
 "Ye KO? Pokey!"
 "Yob! Boy."
 
