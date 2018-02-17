@@ -101,11 +101,13 @@ understand "stare rats" as a mistake ("You try to win a blinking contest, and ma
 
 understand "start rats" as a mistake ("You sort of need to stop them, instead.") when stark rats are quicknear.
 
-book Fun 'Nuf
+book Fun Nuf
 
-understand "funk nuf" as a mistake ("No cool music plays.") when player is in Fun 'Nuf.
+understand "fun enuf" as a mistake ("Still ungrammatical!") when player is in Fun Nuf.
 
-understand "fund nuf" as a mistake ("Nonsense! Adventure is its own reward!") when player is in Fun 'Nuf.
+understand "funk nuf" as a mistake ("No cool music plays.") when player is in Fun Nuf.
+
+understand "fund nuf" as a mistake ("Nonsense! Adventure is its own reward!") when player is in Fun Nuf.
 
 chapter cap abuse
 

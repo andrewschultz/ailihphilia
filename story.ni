@@ -204,7 +204,7 @@ when play begins:
 	say "EVIL'S LIVE![wfak-d]";
 	say "LIVE DEVIL![wfak-d]";
 	say "BOSSES! SOB![wfak-d]";
-	say "Then you hear a voice say 'Pass, sap!' You look up, and you're no longer on the way to the store. You're somewhere else. With someone else: a Flee Elf, who looks at you and says 'You'll do, I guess. The first thing to do is, figure how to take this cap.'[wfak-d]"
+	say "You fold the Darer Ad and start off to the store.[paragraph break]'Aloha! Hola!' someone, or something, cries. You run in the general direction of the voice.  You look up, and you're no longer on the way to the store. You're somewhere else. With someone else: a Flee Elf, who looks at you and says 'You'll do, I guess. The first thing to do is, figure how to take this cap.'[wfak-d]"
 
 volume parser errors operations and death
 
@@ -542,12 +542,12 @@ understand "use [something] on [something]" as useoning it with.
 understand "use [something] with [something]" as useoning it with.
 
 to build-the-tron:
-	move north tron to Fun 'Nuf;
+	move north tron to Fun Nuf;
 	now all tronparts are in ZeroRez;
 	say "You build the north tron with the instructions from the epicer recipe. It points north and blasts a hole with a huge tron snort before collapsing into uselessness. You tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
 	now epicer recipe is in ZeroRez;
-	now Dirge Grid is mapped north of Fun 'Nuf;
-	now Fun 'Nuf is mapped south of Dirge Grid;
+	now Dirge Grid is mapped north of Fun Nuf;
+	now Fun Nuf is mapped south of Dirge Grid;
 	score-inc; [Dim Mid/USE TNT ON ORE ZERO]
 
 chef-yet is a truth state that varies.
@@ -570,8 +570,8 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 		score-inc; [Grebeberg/USE GIFT FIG ON MAYO YAM&USE SNACK CANS ON UFO TOFU]
 		if chef-yet is true:
 			say "A martini tram rattles out from behind the Ark of Okra. Guess you need drinks with your, uh, food![paragraph break][if player does not have the epicer recipe]You're shocked to see it, and it rollls further down, over the turf rut to Dumb Mud, then back through the Seer Trees to Fun [']Nuf[else]But you're prepared for it, with your epicer recipe. You move it back to Fun [']Nuf, where it looks like a good base structure for your North Tron[end if]..";
-			move martini tram to Fun 'Nuf;
-			move player to Fun 'Nuf, without printing a room description;
+			move martini tram to Fun Nuf;
+			move player to Fun Nuf, without printing a room description;
 		else:
 			say "You suspect something is behind there! Maybe you can find another combination, you'll see what.";
 			now chef-yet is true;
@@ -594,10 +594,10 @@ check useoning it with:
 		if second noun is a tronpart or noun is epicer recipe:
 			if player does not have epicer recipe, say "Those two things seem to go together, but you don't have detailed instructions." instead;
 			if number of off-stage tronparts > 0, say "You have the start of something, but not enough to make a north-tron." instead;
-			if player is not in Fun 'Nuf:
+			if player is not in Fun Nuf:
 				say "You might be better served using these things in Fun [']Nuf. Go there?";
 				if the player no-consents, say "OK, but protip: that's where you need to assemble things." instead;
-				move player to Fun 'Nuf, without printing a room description;
+				move player to Fun Nuf, without printing a room description;
 			build-the-tron instead;
 	repeat through table of useons:
 		if there is a use1 entry and noun is use1 entry:
@@ -727,7 +727,7 @@ Yard Ray	test set	--	ready-to-test rule	--	true	false	true	Dim Mid	"Fzzt! Zap! T
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, successfully bribed." [b4:use tnt on ore zero]
 taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	Dim Mid	"You raise the Taboo Bat, and suddenly the Verses Rev knows what he's up against. It's not that it's particularly violent or lethal, but the Verses Rev sees several ways culture has gone to seed (and several it's gotten better, but he's too set in his ways.) More importantly, he sees himself in that. He turns and runs."
 Yard Ray	Diktat Kid	X-ITE TIX	--	--	true	true	true	Dim Mid	"Fzzt! Zap! The yard ray zaps the Diktat Kid, who goes running off. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]... REDIVIDER!'"
-X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
+X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through. The Flee Elf greets you on the other side. You ask hesitantly about the new adventures promised."
 [zzuse]
 
 section pre-use rules
@@ -852,6 +852,8 @@ this is the wear-garb rule:
 	the rule succeeds;
 
 this is the you-win rule:
+	say "The X-ITE TIX lead to A REAL WORLD THAT WILL BE MORE EXCITING AFTER YOUR EXPERINCE HERE!'[wfak]Well, given all the palindromes you dealt with, you probably should've expected a circular loop to 'back where you began' non-twist. Books like that always kind of annoyed you, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something.[wfak]"
+	say "As you leave you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered by it?"
 	say "You head off to saner arenas for a while, just to reflect on all you did. You consider writing a book. What to call it? Hmm, that's it. SOME MEMOS. No, DRAWN INWARD.";
 	end the story finally saying "Darn! Rad!";
 	say "(this needs to be a lot better. I need to look through my notes more carefully.)";
@@ -873,22 +875,22 @@ volume rooms
 
 part Dim Mid region
 
-book Fun 'Nuf
+book Fun Nuf
 
-Fun 'Nuf is a room in Mid Dim. "[if elite tile is in Fun 'Nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what is the various directions[xit-ave][end if][if north tron is in Fun 'Nuf]. Also, the North Tron has carved a passage north[end if]."
+Fun Nuf is a room in Mid Dim. "[if elite tile is in Fun Nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what is the various directions[xit-ave][end if][if north tron is in Fun Nuf]. Also, the North Tron has carved a passage north[end if]."
 
 to say xit-ave:
-	say ". The [if tix exit is in Fun 'Nuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]"
+	say ". The [if tix exit is in Fun Nuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]"
 
 the north tron is scenery. "It seems to have pushed a passage north here in Fun [']Nuf. Do you have the guts to follow it to your destiny?"
 
 chapter Flee Elf
 
-The Flee Elf is a person in Fun 'Nuf. "A Flee Elf stands here, guarding Evac Ave to the south.". description is "You'd expect to see the Flee Elf wearing a gateman nametag, but maybe that's in some other, even more insanely brilliant, wonderful and creative adventure."
+The Flee Elf is a person in Fun Nuf. "A Flee Elf stands here, guarding Evac Ave to the south.". description is "You'd expect to see the Flee Elf wearing a gateman nametag, but maybe that's in some other, even more insanely brilliant, wonderful and creative adventure."
 
 chapter Evac Ave
 
-Evac Ave is scenery in Fun 'Nuf. "Evac Ave leads back to where you were."
+Evac Ave is scenery in Fun Nuf. "Evac Ave leads back to where you were."
 
 instead of entering Evac Ave, try going south.
 
@@ -896,9 +898,9 @@ elf-warn is a number that varies.
 
 the Tix Exit is scenery. "It's nothing particularly fancy. I'm going to go out on a limb here and say it'll accept your X-ITE TIX."
 
-check going south in Fun 'Nuf:
+check going south in Fun Nuf:
 	if player has X-ITE TIX, try useoning X-ITE TIX with Tix Exit instead;
-	if Tix Exit is in Fun 'Nuf, say "The Tix Exit blocks your way to where Evac Ave was. I guess you're stuck questing, here." instead;
+	if Tix Exit is in Fun Nuf, say "The Tix Exit blocks your way to where Evac Ave was. I guess you're stuck questing, here." instead;
 	if flee elf is in ZeroRez, say "You have no way back now that you accepted the Pact Cap." instead;
 	if elf-warn < 3, increment elf-warn;
 	say "[if elf-warn is 1]The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go[else if elf-warn is 2]'Oy! Oy! Yo-yo!' The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap[else]The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else[end if].";
@@ -908,21 +910,21 @@ check going south in Fun 'Nuf:
 		say "The Flee Elf cries 'Fool! Aloof!' as you walk south past Evac Ave through the Elim-Mile, which removes all your memories of your brief time adventuring.";
 		end the story saying "NOWT WON";
 
-check going in Fun 'Nuf:
+check going in Fun Nuf:
 	if noun is west or noun is east:
-		if Flee Elf is in Fun 'Nuf, say "'Keen! Eek!' the Flee Elf stops you. 'You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley.'" instead;
+		if Flee Elf is in Fun Nuf, say "'Keen! Eek!' the Flee Elf stops you. 'You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley.'" instead;
 		if endgame-test is true, say "Endgame testing is on. So you are restricted to the final combat." instead;
 
-check going north in Fun 'Nuf:
+check going north in Fun Nuf:
 		if Diktat Kid is in ZeroRez, say "No need to go back." instead;
-		if north tron is not in Fun 'Nuf, say "Not until you built the North-Tron." instead;
+		if north tron is not in Fun Nuf, say "Not until you built the North-Tron." instead;
 		if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
 		if murk rum is not in ZeroRez, say "You have the yard ray, but it isn't, well, charged." instead;
 		if player does not have ME gem or player does not have Taboo Bat, say "You feel well equipped ... but well equipped enough?";
 
 chapter Pact Cap
 
-The Pact Cap is a wearable thing in Fun 'Nuf. "A pact cap sits here. You need to find the right way to accept it to begin your quest.". description is "It's no stetson, but it is less messy than a tahini hat, and it [if player has pact cap]feels[else]looks[end if] serviceable enough."
+The Pact Cap is a wearable thing in Fun Nuf. "A pact cap sits here. You need to find the right way to accept it to begin your quest.". description is "It's no stetson, but it is less messy than a tahini hat, and it [if player has pact cap]feels[else]looks[end if] serviceable enough."
 
 check taking off the pact cap: say "No, you...uh, made a pact." instead;
 
@@ -944,7 +946,7 @@ carry out packing:
 	if the player has the pact cap, say "You already did.";
 	say "Yes, that's how to get the cap. You are ready to go![paragraph break]'Good job! Here's a set o['] notes to replace that darer ad,' the Flee Elf says. It salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
 	move flee elf to ZeroRez;
-	now Tix Exit is in Fun 'Nuf;
+	now Tix Exit is in Fun Nuf;
 	now darer ad is in ZeroRez;
 	now player has set o notes;
 	now player wears the cap;
@@ -963,7 +965,7 @@ understand "pace cap" and "pacy cap" as paceing.
 
 carry out paceing:
 	if kayo yak is in ZeroRez, say "You had enough high-speed fun for one game. If you want to zip around the map, though, GT is always an option." instead;
-	if pact cap is in Fun 'Nuf, say "That'll work later, but you need something a little different to actually TAKE the pact cap." instead;
+	if pact cap is in Fun Nuf, say "That'll work later, but you need something a little different to actually TAKE the pact cap." instead;
 	if cap-pace is true, say "It's already a pace cap." instead;
 	if mrlp is Grebeberg, now cap-pace is whether or not cap-pace is true;
 	if cap-ever-pace is false:
@@ -977,7 +979,7 @@ carry out paceing:
 to say pace-of:
 	say "[if cap-pace is true]full of deep speed[else]slower[end if]"
 
-check going to Fun 'Nuf:
+check going to Fun Nuf:
 	if cap-pace is true, say "You feel like you can slow down a bit. You adjust the pace cap back to a pact cap.";
 	now cap-pace is false;
 
@@ -1001,7 +1003,7 @@ after examining set o notes for the first time, say "Maybe you'll get something 
 
 chapter tile lit
 
-the tile lit is scenery in Fun 'Nuf. "It's a rough compass, with GREBEBERG west by it, YELPLEY east, Evac Ave south and Dirge Grid north. You can't seem to go [if flee elf is in ZeroRez]south and [end if]north, though." [ic]
+the tile lit is scenery in Fun Nuf. "It's a rough compass, with GREBEBERG west by it, YELPLEY east, Evac Ave south and Dirge Grid north. You can't seem to go [if flee elf is in ZeroRez]south and [end if]north, though." [ic]
 
 check taking tile lit: say "It's sort of embedded into the ground. It looks nice there, anyway, and it's useful for information."
 
@@ -1107,7 +1109,7 @@ part Grebeberg region
 
 book Seer Trees
 
-Seer Trees is west of Fun 'Nuf. It is in Grebeberg. "East leads back to Fun [']Nuf[if Yawn Way is visited] and Yelpley[end if], but the other directions lead to further rustic adventure.".
+Seer Trees is west of Fun Nuf. It is in Grebeberg. "East leads back to Fun [']Nuf[if Yawn Way is visited] and Yelpley[end if], but the other directions lead to further rustic adventure.".
 
 check going in Seer Trees:
 	if noun is not east and stark rats are in Seer Trees, say "The stark rats block you from going anywhere. At least they are not banging stop pots." instead;
@@ -1509,7 +1511,7 @@ part Yelpley region
 
 book Yawn Way
 
-Yawn Way is east of Fun 'Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but Art Xtra is to the north, and My Gym is to the south. An alley is to the east."
+Yawn Way is east of Fun Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but Art Xtra is to the north, and My Gym is to the south. An alley is to the east."
 
 book My Gym
 
@@ -2066,7 +2068,7 @@ the epicer recipe is a helpdoc. description is "You've seen recipes before, but 
 
 to say tronpartlist:
 	repeat with tp running through tronparts:
-		say "--[tp][if player has tp or tp is in Fun 'Nuf] (got it!)[end if][line break]"
+		say "--[tp][if player has tp or tp is in Fun Nuf] (got it!)[end if][line break]"
 
 chapter tending
 
@@ -2366,7 +2368,9 @@ volume gotoing
 
 a room can be notyet, available, cappy, davey, ratsy, pully, tamey, or gatey.
 
-Fun 'Nuf is available.
+Fun Nuf is available.
+
+printed name of Fun Nuf is "Fun [']Nuf".
 
 Seer Trees, Yawn Way, Art Xtra and My Gym are cappy.
 
@@ -2395,7 +2399,7 @@ carry out gotoing:
 	if being-chased is true, say "Sorry, but since you're being chased by the [chase-person], you need to be specific about directions, here." instead;
 	if cap-pace is true and map region of location of noun is not Grebeberg:
 		now cap-pace is false;
-		say "Your pace cap slows down as you [if noun is Fun 'Nuf]enter[else]cross[end if] Fun [']Nuf..." instead;
+		say "Your pace cap slows down as you [if noun is Fun Nuf]enter[else]cross[end if] Fun [']Nuf..." instead;
 	if noun is location of player, say "Already there!";
 	unless goto-available, say "You're at a point in the game where goto isn't available." instead;
 	if noun is not available, say "[noun] isn't available yet, so you can't go there." instead;
@@ -2449,7 +2453,7 @@ after going when being-chased is true:
 check going when being-chased is true:
 	if last-chase-direction is opposite of noun, say "The [chase-person] is blocking you from the [noun]. You try a gazelle-zag but don't have the moves." instead;
 
-check going to Fun 'Nuf when being-chased is true: say "You feel yourself running up against an invisible barrier. Apparently, running away that way from the [chase-person] won't help." instead;
+check going to Fun Nuf when being-chased is true: say "You feel yourself running up against an invisible barrier. Apparently, running away that way from the [chase-person] won't help." instead;
 
 the Psi Wisp is a chaser. chase-room of Psi Wisp is Pro Corp. description is "The Psi Wisp is very red, and it pulses fervently. If it had feelings, you'd be pretty sure it didn't like you."
 
@@ -2510,7 +2514,7 @@ check aiding:
 
 to decide whether done-here:
 	if player is in Yawn Way, yes;
-	if player is in Fun 'Nuf and flee elf is in ZeroRez, yes;
+	if player is in Fun Nuf and flee elf is in ZeroRez, yes;
 	if player is in My Gym and Dave is in ZeroRez, yes;
 	if player is in Seer Trees and stark rats are in ZeroRez, yes;
 	if player is in Calcific Lac and dork rod is in ZeroRez, yes;
@@ -2805,8 +2809,8 @@ carry out endgameing: [?? what about martini tram]
 	now player has pact cap;
 	now player has taboo bat;
 	now player has ME gem;
-	now Tix Exit is in Fun 'Nuf;
-	if player is not in Fun 'Nuf, move player to Fun 'Nuf;
+	now Tix Exit is in Fun Nuf;
+	if player is not in Fun Nuf, move player to Fun Nuf;
 	now endgame-test is true;
 	the rule succeeds;
 
