@@ -39,6 +39,8 @@ understand "dna land" as a mistake ("Biochemistry has its own nuances with symme
 
 understand "DNA hand" as a mistake ("Right idea, but you can't do it on your own. You need technology to help you.") when DNA band is quicknear.
 
+understand "balk lab" as a mistake ("There's not much to do or say here, for sure[if balm-got is false]![else]--well, maybe something that's not quite BALK.[end if]") when player is in Pro Corp.
+
 part row 2
 
 book Swamp Maws
@@ -101,6 +103,10 @@ understand "start rats" as a mistake ("You sort of need to stop them, instead.")
 
 book Fun 'Nuf
 
+understand "funk nuf" as a mistake ("No cool music plays.") when player is in Fun 'Nuf.
+
+understand "fund nuf" as a mistake ("Nonsense! Adventure is its own reward!") when player is in Fun 'Nuf.
+
 chapter cap abuse
 
 understand "paca cap" and "pacb cap" and "pacc cap" and "pacd cap" and "pacf cap" and "pacg cap" and "pach cap" and "paci cap" and "pacj cap" and "pacl cap" and "pacm cap" and "pacn cap" and "pacp cap" and "pacq cap" and "pacr cap" and "pacs cap" and "pacu cap" and "pacv cap" and "pacw cap" and "pacx cap" and and "pacz cap" as a mistake ("'Hmm, try again,' grumps the Flee Elf.") when Flee Elf is quicknear.
@@ -139,6 +145,8 @@ understand "emo home" as a mistake ("It's too wide open a space.") when player i
 book Toll Lot
 
 understand "crop orc" as a mistake ("That attack would boomerang, and not just because this is a palindrome-y game. The orc is lots, lots bigger than you.") when cross orc is quicknear.
+
+understand "cray arc" as a mistake ("The arc doesn't need to change shape or become more volatile.") when player is in Toll Lot.
 
 understand "crap arc" as a mistake ("You might cause a mudslide, or worse.") when player is in Toll Lot or player is in Scrap Arcs.
 

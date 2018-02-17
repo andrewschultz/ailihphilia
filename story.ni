@@ -355,6 +355,7 @@ understand "credits" as creditsing.
 
 carry out creditsing:
 	say "(Your name here, tester!)";
+	say "[line break][one of]I also found some websites useful. CREDITS again to see them.[or]Websites that helped with this game:[paragraph break]  --http://www.angelfire.com/in2/sedavis/palindromes.html STOP LAUGHING ANGELFIRE WAS COOL WHEN IT FIRST CAME OUT ANYWAY GEOCITIES WAS MORE MY BEAT[line break]-- https://www.reddit.com/r/AskReddit/comments/4z899e/whats_your_favorite_palindrome/[paragraph break]";
 	the rule succeeds;
 
 chapter verbing
@@ -412,7 +413,7 @@ drink-warning is a truth state that varies.
 
 check drinking:
 	say "[if noun is drinkable]Pish! Sip?![else][']S not wet. Ew--TONS.[end if]";
-	if drink-warning is false, say "(You don't need to drink anything. Any liquid is probably used for much more aggressive purposes.)[paragraph break]";
+	if drink-warning is false, say "(You don't need to drink anything. Liquids have their purpose in this game, but also, there is no Pee Keep anywhere.)[paragraph break]";
 	now drink-warning is true instead;
 
 chapter eating
@@ -809,7 +810,7 @@ this is the hay-gone rule:
 	the rule succeeds;
 
 this is the kid-left rule:
-	if Verses Rev is in ZeroRez and Knife Fink is in ZeroRez, say "Two-nowt, you muse to yourself.";
+	if Verses Rev is in ZeroRez and Knife Fink is in ZeroRez, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'I should've gone with Mad Adam. Iller Elli. Able Melba.'";
 	the rule succeeds;
 
 this is the maps-explain rule:
@@ -929,7 +930,7 @@ cap-pace is a truth state that varies. cap-pace is false.
 
 cap-ever-pace is a truth state that varies. cap-ever-pace is false.
 
-check taking pact cap: say "The Flee Elf shakes its head. 'Too direct. You're not doing it right. Don't [b]TAKE[r] it, precisely.'" instead;
+check taking pact cap: say "The Flee Elf shakes its head. 'Too direct. You're not doing it right. Don't [b]TAKE[r] it, precisely. A different ... possess-op.'" instead;
 
 section pack cap
 
@@ -1922,7 +1923,7 @@ check going in Toll Lot:
 
 chapter cross orc
 
-The cross orc is a person in Toll Lot. "A cross orc paces quickly back and forth between the north and south exits, just to reinforce that you'd better not try to go that way with it around.". description is "It paces quickly, rubbing its fingers together, mumbling to itself about the fabled moola loom and loot stool, or a possible bank nab or bar grab."
+The cross orc is a person in Toll Lot. "A cross orc paces quickly back and forth between the north and south exits, just to reinforce that you'd better not try to go that way with it around.". description is "It paces quickly, rubbing its fingers together, mumbling to itself about the fabled moola loom and loot stool, or a possible bank nab or bar grab to afford a nice place on Fee Reef."
 
 chapter crag arc
 
