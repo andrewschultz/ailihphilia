@@ -144,6 +144,8 @@ book Emo Dome
 
 understand "emo home" as a mistake ("It's too wide open a space.") when player is in Emo Dome.
 
+understand "puck cup" as a mistake ("There's no rink nir. Near.") when puce cup is quicknear.
+
 book Toll Lot
 
 understand "crop orc" as a mistake ("That attack would boomerang, and not just because this is a palindrome-y game. The orc is lots, lots bigger than you.") when cross orc is quicknear.

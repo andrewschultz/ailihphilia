@@ -136,9 +136,13 @@ def check_source(a):
             exit()
     else:
         if difs:
-            print("Oops! I should be copying back over, but I'm not.")
+            print("Oops! I should be copying back over, but I'm not. This is a bug. Sorry.")
         else:
             print("No differences, no copying back over" + (", so not running diff" if only_test else "") + ".")
+        try:
+            os.remove(b)
+        except:
+            print("Tried and failed to delete tempfile", b)
 
 proj = "put-it-up"
 for x in i7.i7f[proj]:

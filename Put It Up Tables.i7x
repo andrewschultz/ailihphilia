@@ -598,6 +598,7 @@ randtxt
 "Gall! Lag!"
 "GO, dog!"
 "A lag gala!"
+"No gig on?"
 "Now? On!"
 "Panic? I nap!"
 "Resume, muser!"

@@ -6,10 +6,11 @@
 
 First, Put It Up tables.i7x contains all the random responses.
 Second, Put It Up tables.i7x contains responses to mistakes e.g. palindrome verbs/phrases that don't advance the game but are good tries.
-Put XX before each of these to find the beginning of a table, ZZ for the end:
+Put an x or two before each of these to find the beginning of a table, ZZ for the end:
 USE for the Table of Useons (USE X ON Y gives a point)
 FAIL for Useons that don't work
 TALK for talk texts
+WIN for winning the game
 
 to search for an item, look for chapter [item].
 ]
@@ -724,8 +725,8 @@ murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with ene
 Yard Ray	test set	--	ready-to-test rule	--	true	false	true	Dim Mid	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, successfully bribed." [b4:use tnt on ore zero]
 taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	Dim Mid	"You raise the Taboo Bat, and suddenly the Verses Rev knows what he's up against. It's not that it's particularly violent or lethal, but the Verses Rev sees several ways culture has gone to seed (and several it's gotten better, but he's too set in his ways.) More importantly, he sees himself in that. He turns and runs."
-Yard Ray	Diktat Kid	X-ITE TIX	--	--	true	true	true	Dim Mid	"Fzzt! Zap! The yard ray zaps the Diktat Kid, who goes running off. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]... REDIVIDER!'"
-X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through. The Flee Elf greets you on the other side. You ask hesitantly about the new adventures promised."
+Yard Ray	Diktat Kid	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	"Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who goes running off. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]... REDIVIDER!'[paragraph break]With the Diktat Kid gone, you see saner arenas all around."
+X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse]
 
 section pre-use rules
@@ -807,6 +808,10 @@ this is the hay-gone rule:
 		say "There's still some hay (yah!) left over for another creative project.";
 	the rule succeeds;
 
+this is the kid-bye rule:
+	move saner arenas to Dirge Grid;
+	the rule succeeds;
+
 this is the kid-left rule:
 	if Verses Rev is in ZeroRez and Knife Fink is in ZeroRez, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'I should've gone with Mad Adam. Iller Elli. Able Melba.'";
 	the rule succeeds;
@@ -849,12 +854,12 @@ this is the wear-garb rule:
 	now player wears the brag garb;
 	the rule succeeds;
 
-this is the you-win rule:
-	say "The X-ITE TIX lead to A REAL WORLD THAT WILL BE MORE EXCITING AFTER YOUR EXPERINCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a circular loop to 'back where you began' non-twist. Books like that always kind of annoyed you, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something.[wfak-d]";
-	say "As you leave you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered by it?";
-	say "You head off to saner arenas for a while, just to reflect on all you did. You consider writing a book. What to call it? Hmm, that's it. SOME MEMOS. No, DRAWN INWARD.";
+this is the you-win rule: [xxwin]
+	say "The Flee Elf greets you on the other side. 'Deified! Deified!' You ask hesitantly about the new adventures promised.[wfak-d]";
+	say "The X-ITE TIX lead to A REAL WORLD THAT WILL BE MORE EXCITING AFTER YOUR EXPERINCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a circular loop to 'back where you began' non-twist. Books like that always kind of annoyed you, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something. The Flee Elf shakes your hand and pulls out a device. 'This RIDE-DIR will help you return to your own world.'[wfak-d]";
+	say "As you wait, you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered by it?[wfak-d]";
+	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call them? It's a tough call between SOME MEMOS, SAGAS or SOLOS. Hmm, maybe DRAWN INWARD.";
 	end the story finally saying "Darn! Rad!";
-	say "(this needs to be a lot better. I need to look through my notes more carefully.)";
 	the rule succeeds;
 
 chapter failed useons
@@ -1009,9 +1014,13 @@ chapter elite tile
 
 the elite tile is scenery. "Done? Nod![line break]Nif-T-Fin!"
 
+after going to Fun Nuf when Diktat Kid is in ZeroRez:
+	say "You notice the elite tile has changed slightly.";
+	continue the action;
+
 book Dirge Grid
 
-Dirge Grid is a room in Mid Dim. "The only way back is south[if Diktat Kid is in Dirge Grid], but you can't really run away from the Diktat Kid[else], and you might as well go that way, now you've vanquished the Diktat Kid[end if]. A Tru Hurt is pointed at you, but if you deal with the Kid, that won't matter."
+Dirge Grid is a room in Mid Dim. "The only way back is south[if Diktat Kid is in Dirge Grid], but you can't really run away from the Diktat Kid. A Tru Hurt is pointed at you, but if you deal with the Kid, that won't matter.[else], and you might as well go that way, now you've vanquished the Diktat Kid. Saner Arenas surround you [end if]"
 
 check going to Dirge Grid: if test set is not in ZeroRez, say "[if player does not have yard ray]You don't have an adequate weapon[else]You need to get some practice with the Yard Ray before going north[end if]." instead;
 
@@ -1023,6 +1032,17 @@ after looking in Dirge Grid for the first time:
 
 check going south in Dirge Grid: if Diktat Kid is in Dirge Grid, say "'Mom! SOS! LOL! SOS! Mom!' the Diktat Kid mocks you.[paragraph break]You can't chicken out. You must be close!" instead;
 
+advance-kid is a truth state that varies.
+
+kid-moves is a number that varies.
+
+every turn when player is in Dirge Grid:
+	if advance-kid is true, increment kid-moves;
+	if kid-moves is 5:
+		say "Deport! Roped!"; [?? punch up]
+
+saner arenas are peripheral scenery. "They're a sign that Grebeberg and Yelpley will return to where they were."
+
 chapter Diktat Kid
 
 Diktat Kid is a proper-named person in Dirge Grid.
@@ -1031,7 +1051,7 @@ every turn when Diktat Kid is quicknear:
 	if a random chance of 1 in 2 succeeds:
 		say "The Diktat Kid whines '";
 		next-rand table of diktat taunts;
-		say '";
+		say "'";
 
 chapter Knife Fink
 
@@ -1180,7 +1200,7 @@ every turn when Yuge Guy is quicknear:
 	if a random chance of 1 in 2 succeeds:
 		say "The Yuge Guy mumbles '";
 		next-rand table of yuge taunts;
-		say '";
+		say "'";
 
 check going east in Sneer Greens:
 	if Yuge Guy is in Sneer Greens, say "'LOW AWOL!' the Yuge Guy booms, as you run away."
@@ -1291,7 +1311,7 @@ Mont Nom is south of Dumb Mud. It is in Grebeberg. "An ark of okra blocks passag
 
 Mont Nom is above Dumb Mud.
 
-The ark of okra is scenery in Mont Nom. "You always found okra, or the idea, icky, but the ark is beautiful enough, you sort of wonder how it'd taste."
+The ark of okra is scenery in Mont Nom. "You always found okra, or the idea, icky, but the ark is beautiful enough, you sort of wonder how it'd taste. Here it's almost saying 'C'mon! Nom!'"
 
 instead of eating ark of okra: say "You don't know how long it's been out here. It's probably, like, the vegetable version of wax fruit."
 
@@ -1768,7 +1788,7 @@ to say lewd-details:
 		say "[if X is not lelt],[end if] [entry X of dwelt-last]";
 	say " Sinned";
 	if lewd-chap is number of entries in dwelt-first + 1 and lewd-read is false:
-		say ".[paragraph break]Whew! You've finished DWELT LEWD. After reading the blurb for the sequel, [']S SENSUOUSNESS, and a related Leer Reel, MUCH, you realize you've forgotten the plot [one of]already[or]yet again[stopping], if there was one. Sicko. (Hey, don't look at me, I just wrote the abstract code for the 'book.')";
+		say ".[paragraph break]Whew! You've finished DWELT LEWD. After reading the blurb for the sequel, [']S SENSUOUSNESS, and a related Leer Reel (on DVD), MUCH, you realize you've forgotten the plot [one of]already[or]yet again[stopping], if there was one. Sicko. (Hey, don't look at me, I just wrote the abstract code for the 'book.')";
 		now lewd-chap is 0;
 		now lewd-read is true;
 
