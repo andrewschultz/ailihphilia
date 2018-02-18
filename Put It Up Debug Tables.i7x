@@ -65,6 +65,16 @@ randtxt
 "Burn! Rub!"
 "Igniting, I!"
 
+[the Diktat Kid insults you. The Yuge Guy puffs himself up.]
+table of diktat taunts
+randtxt
+"Dire! Rid!"
+"Resoldered loser!"
+"Peewee, weep!"
+"Poorer! Oop!"
+"Dude(tte)! Dud!"
+"Rofl! For..."
+
 table of noesies
 randtxt
 "Derided! Ired!"
@@ -95,13 +105,11 @@ randtxt
 "Hosannas, Oh!"
 "Laud-ual!"
 
-table of yuge stuff
+table of yuge taunts
 randtxt
-"Dude(tte)! Dud!"
 "Main, I am!"
 "Soros! Soros!"
 "Huge! Guh!"
-"Rofl! For..."
 "Gibe! Big!"
 "Misdeeds? I'm ..."
 

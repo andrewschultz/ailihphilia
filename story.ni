@@ -1027,6 +1027,12 @@ chapter Diktat Kid
 
 Diktat Kid is a proper-named person in Dirge Grid.
 
+every turn when Diktat Kid is quicknear:
+	if a random chance of 1 in 2 succeeds:
+		say "The Diktat Kid whines '";
+		next-rand table of diktat taunts;
+		say '";
+
 chapter Knife Fink
 
 the Knife Fink is a person in Dirge Grid. "A Knife Fink wields some leet steel here."
@@ -1170,10 +1176,10 @@ after looking in Sneer Greens for the first time:
 	say "The Yuge Guy calls 'BOO! NOOB!' just to reinforce his contempt.";
 	continue the action;
 
-every turn when player is in Sneer Greens:
+every turn when Yuge Guy is quicknear:
 	if a random chance of 1 in 2 succeeds:
 		say "The Yuge Guy mumbles '";
-		next-rand table of yuge-stuff;
+		next-rand table of yuge taunts;
 		say '";
 
 check going east in Sneer Greens:
