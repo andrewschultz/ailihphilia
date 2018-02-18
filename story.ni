@@ -132,8 +132,6 @@ a tronpart is a kind of thing.
 
 description of a tronpart is usually "The [item described] is one of [number of tronparts] parts needed for the North-Tron."
 
-TNT is a tronpart.
-
 Gorge Grog is a tronpart.
 
 The Ore Zero is a tronpart.
@@ -355,7 +353,7 @@ understand "credits" as creditsing.
 
 carry out creditsing:
 	say "(Your name here, tester!)";
-	say "[line break][one of]I also found some websites useful. CREDITS again to see them.[or]Websites that helped with this game:[paragraph break]  --http://www.angelfire.com/in2/sedavis/palindromes.html STOP LAUGHING ANGELFIRE WAS COOL WHEN IT FIRST CAME OUT ANYWAY GEOCITIES WAS MORE MY BEAT[line break]-- https://www.reddit.com/r/AskReddit/comments/4z899e/whats_your_favorite_palindrome/[paragraph break]";
+	say "[line break][one of]I also found some websites useful. CREDITS again to see them.[or]Websites that helped with this game:[paragraph break]  --http://www.angelfire.com/in2/sedavis/palindromes.html STOP LAUGHING ANGELFIRE WAS COOL WHEN IT FIRST CAME OUT ANYWAY GEOCITIES WAS MORE MY BEAT[line break]-- https://www.reddit.com/r/AskReddit/comments/4z899e/whats_your_favorite_palindrome/[stopping]";
 	the rule succeeds;
 
 chapter verbing
@@ -673,7 +671,7 @@ Set O Notes	"It's useful for an overview, but not for DOING anything."
 table of useons [xxuse]
 use1	use2 (an object)	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
 TO IDIOT	Revolt Lover	--	--	--	true	true	true	Yelpley	"The Revolt Lover begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Revolt Lover runs away." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
-pity tip	navy van	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	"The van takes the pity tip and whooshes off. It spits out some snack cans, which roll on the ground. You take them. The navy van then leaves for good. It was apparently obstructing a whole bomb mob!" [af:TEND NET/WORK ROW]
+pity tip	navy van	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	"The van takes the pity tip and whooshes off. It spits out some snack cans, which roll on the ground. You take them. The navy van then leaves for good. It was apparently obstructing a whole bomb mob! That's who was making all the noise!" [af:TEND NET/WORK ROW]
 trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
 debt bed	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching and slurping, the debt bed is changed to a bunch of much smaller, but more comfortable looking, stock cots."
 party trap	stark rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
@@ -698,14 +696,14 @@ SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	false	false	Grebeberg	"Wit
 straw arts	Mike Kim	soot tattoos	--	--	true	true	false	Yelpley	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
 gate tag	soot tattoos	state tats	--	--	true	true	true	Yelpley	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
 poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
-poo coop	turf rut	--	coop-full rule	--	true	true	true	Grebeberg	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture. The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
+poo coop	turf rut	--	coop-full rule	--	true	true	true	Grebeberg	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture.[paragraph break]A bold lob! The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
 radar	made dam	eroded ore	--	radar-blink rule	true	false	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow. The radar plays a weird scale. Being close to the ore has damaged it somehow."
 NULL ILLUN	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me.' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. And if it's simple, well, I need to know when simple stuff works.' The Known Wonk apologizes--it's back to a Tru Yurt for a thought session."
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Calcific Lac. As it gets near and bends away, you jump off, using the buoy to paddle and float back to Calcific Lac."
 dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
 tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Together, you figure out what to do to make the tent net proper cover for the birch crib. 'Tie it ... tie it ...'[paragraph break]Once the work is done, the Code Doc thanks you and offers to share some knowledge in return, whenever."
-spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Ah! That's how to interpret them. You just do this... and this ...' and suddenly it makes complete sense to you."
+spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. Let's see--this? That? Ah! Here we go...' and soon it makes complete sense to you."
 spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	"You stick some strands of yahoo hay into the damaged end of the dork rod. It's now a moor broom!"
 troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the Stink Knits, but still quite distinctive." [b4:pace cap] [af:yak okay]
@@ -852,8 +850,8 @@ this is the wear-garb rule:
 	the rule succeeds;
 
 this is the you-win rule:
-	say "The X-ITE TIX lead to A REAL WORLD THAT WILL BE MORE EXCITING AFTER YOUR EXPERINCE HERE!'[wfak]Well, given all the palindromes you dealt with, you probably should've expected a circular loop to 'back where you began' non-twist. Books like that always kind of annoyed you, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something.[wfak]"
-	say "As you leave you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered by it?"
+	say "The X-ITE TIX lead to A REAL WORLD THAT WILL BE MORE EXCITING AFTER YOUR EXPERINCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a circular loop to 'back where you began' non-twist. Books like that always kind of annoyed you, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something.[wfak-d]";
+	say "As you leave you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered by it?";
 	say "You head off to saner arenas for a while, just to reflect on all you did. You consider writing a book. What to call it? Hmm, that's it. SOME MEMOS. No, DRAWN INWARD.";
 	end the story finally saying "Darn! Rad!";
 	say "(this needs to be a lot better. I need to look through my notes more carefully.)";
@@ -1497,11 +1495,13 @@ the ME gem is a thing. description is "You feel a strong urge to keep this and n
 
 book Apse Spa
 
-Apse Spa is east of Cold Loc. It is in Grebeberg. "The Apse Spa is covered with dose sod, which you can't take--you're not sick--but it looks beautiful. Also, Go-By Bog expands every way except back west[if sage gas is off-stage]. You could traverse it, if you knew what you were doing[else]You already went through it, though[end if]."
+Apse Spa is east of Cold Loc. It is in Grebeberg. "The Apse Spa is covered with dose sod, which you can't take--you're not sick--but it looks beautiful. Pool gloop and Go-By Bog block pretty much every way except back west[if sage gas is off-stage]. You could traverse it, if you knew what you were doing[else]You already went through it, though[end if]."
 
 the dose sod is scenery in Apse Spa. "It looks ucky, but given you're in an Apse Spa, it may have health benefits for those that need them."
 
-Go-By Bog is scenery in Apse Spa.
+Go-By Bog is scenery in Apse Spa. description is "It's too hazy. You'd get lost navigating it without a lot of help."
+
+The pool gloop is peripheral scenery in Apse Spa. "The pool gloop is probably to help people convalesce, but you're not sick."
 
 chapter sage gas
 
@@ -2130,6 +2130,12 @@ the bomb mob are plural-named people. description is "They're ignoring you, and 
 
 understand "poor troop" and "poor/troop" as bomb mob when DNA hand is in ZeroRez.
 
+chapter TNT
+
+TNT is a tronpart. "Well, it's not going to blow up in your hands.".
+
+check taking TNT: say "The bomb mob would say a bit more than 'Yank? Nay!' You'd be seen too easily." instead;
+
 chapter puffuping
 
 puffuping is an action applying to nothing.
@@ -2241,7 +2247,7 @@ check going in Drawl Ward:
 	if Marge Pegram is in Drawl Ward:
 		if noun is west or noun is east, say "You hear Marge Pegram groaning and think it wouldn't be heroic to pass her by. Maybe you should find a way to help her feel less sick." instead;
 
-the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, unsurprisingly."
+the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, unsurprisingly. It's about the size of a pint nip."
 
 book Scrap Arcs
 
@@ -2253,7 +2259,7 @@ slate metals are scenery in Scrap Arcs. "You could probably carve something out 
 
 chapter Ye Key
 
-Ye Key is a thing. description is "Engraved YE KEY, it clearly looks important. There are only so many locked places here, so you'll probably find what it can open."
+Ye Key is a thing. description is "Engraved YE KEY, it clearly looks important. Maybe it does not lead to Ye Fey or Ye Ley, but there are only so many locked places here, so you'll probably find what it can open."
 
 book Dopy Pod
 
@@ -2504,7 +2510,7 @@ dial-yet is a truth state that varies.
 
 check aiding:
 	if dial-yet is false and word number 1 in the player's command is "dial":
-		say "Your 'correct' way of asking for aid nets a last lousy point. Yay![paragraph break]";
+		say "Your 'correct' way of asking for aid nets a last lousy point. You even throw in a 'Plea! Elp!' just to make sure.[paragraph break]Yay![paragraph break]";
 		abide by the llp rule; [DIAL AID]
 		now dial-yet is true;
 	if dial-yet is false:

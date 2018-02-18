@@ -576,6 +576,7 @@ randtxt
 "Well, EW!"
 "Y'booby!"
 "Y'kooky?"
+"Yap? Ay!"
 
 table of waittxt
 randtxt
