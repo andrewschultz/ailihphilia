@@ -44,6 +44,7 @@ table of singstuff	0	true	"responses to SINGing"
 table of swearstuff	0	true	"responses to SWEARing"
 table of waittxt	0	true	"responses to WAITing"
 table of yessies	0	true	"responses to YES"
+table of yuge stuff	0	true	"Yuge Guy taunts"
 
 part the tables
 
@@ -93,6 +94,16 @@ table of yessies
 randtxt
 "Hosannas, Oh!"
 "Laud-ual!"
+
+table of yuge stuff
+randtxt
+"Dude(tte)! Dud!"
+"Main, I am!"
+"Soros! Soros!"
+"Huge! Guh!"
+"Rofl! For..."
+"Gibe! Big!"
+"Misdeeds? I'm ..."
 
 Put it Up debug Tables ends here.
 

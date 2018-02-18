@@ -1171,7 +1171,10 @@ after looking in Sneer Greens for the first time:
 	continue the action;
 
 every turn when player is in Sneer Greens:
-	if a random chance of 1 in 2 succeeds, say "The Yuge Guy mumbles '[one of]Main, I am![or]Soros! Soros![or]Huge! Guh![or]Rofl! For...[or]Gibe! Big![or]Misdeeds? I'm ...[in random order]'";
+	if a random chance of 1 in 2 succeeds:
+		say "The Yuge Guy mumbles '";
+		next-rand table of yuge-stuff;
+		say '";
 
 check going east in Sneer Greens:
 	if Yuge Guy is in Sneer Greens, say "'LOW AWOL!' the Yuge Guy booms, as you run away."
