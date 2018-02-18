@@ -73,6 +73,8 @@ with open("zr.txt") as file:
             always = True
         if not line.strip(): continue
         line_ary = line.strip().split("\t")
+        if line_ary[0] in cap_search:
+            print("WARNING", line_ary[0], "already accounted for, probably a duplicate.")
         cap_search[line_ary[0]] = True
         if always:
             always_adj[line_ary[0]] = True

@@ -53,7 +53,7 @@ Dim Mid is a region. max-score of Dim Mid is 10.
 
 Yelpley is a region. max-score of Yelpley is 36.
 
-Odd Do is a region. max-score of Odd Do is 8.
+Odd Do is a region. max-score of Odd Do is 9.
 
 index map with Dirge Grid mapped east of Toll Lot.
 
@@ -168,8 +168,8 @@ check requesting the score:
 		say "You also have [ni] of [number of tronparts] piece[if ni is not 1]s[end if] of the North Tron, according to the set-o-notes.";
 	the rule succeeds;
 
-this is the llp rule:
-	if llp-reject is true, the rule succeeds;
+this is the LLP rule:
+	if LLP-reject is true, the rule succeeds;
 	reg-inc Odd Do;
 
 to reg-inc (re - a region):
@@ -295,7 +295,7 @@ understand "refer" as refering.
 carry out refering:
 	if refer-bonus is false:
 		say "Yes! That's a slightly more appropriate way to think, here.";
-		abide by the llp rule; [REFER]
+		abide by the LLP rule; [REFER]
 		now refer-bonus is true;
 	try thinking instead;
 
@@ -702,9 +702,9 @@ radar	made dam	eroded ore	--	radar-blink rule	true	false	false	Grebeberg	"You pl
 NULL ILLUN	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me.' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. And if it's simple, well, I need to know when simple stuff works.' The Known Wonk apologizes--it's back to a Tru Yurt for a thought session."
 el doodle	edits tide	spa maps	--	--	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps!"
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Calcific Lac. As it gets near and bends away, you jump off, using the buoy to paddle and float back to Calcific Lac."
-dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
+dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
 tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Together, you figure out what to do to make the tent net proper cover for the birch crib. 'Tie it ... tie it ...'[paragraph break]Once the work is done, the Code Doc thanks you and offers to share some knowledge in return, whenever."
-spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. Let's see--this? That? Ah! Here we go...' and soon it makes complete sense to you."
+spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. Let's see--this? That? Ah! Here we go...' and desipte a minor pupil slipup, it soon makes complete sense to you."
 spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	"You stick some strands of yahoo hay into the damaged end of the dork rod. It's now a moor broom!"
 troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the Stink Knits, but still quite distinctive." [b4:pace cap] [af:yak okay]
@@ -1282,7 +1282,7 @@ understand "muss [something]" as mussing.
 carry out mussing:
 	if noun is not opossum, say "You don't need to muss [the noun]." instead;
 	say "You reach over and give the opossum a loving scratch. It perks up! Suddenly, it looks around and runs off, in search of home, wherever that is.";
-	abide by the llp rule; [muss opossum]
+	abide by the LLP rule; [MUSS OPOSSUM]
 	move opossum to ZeroRez;
 	the rule succeeds.
 
@@ -1803,11 +1803,6 @@ check taking a book:
 		now player has SOME DEMOS;
 		now SOME DEMOS is in-row;
 		continue the action;
-	if number of books in ZeroRez is 3 and DWELT LEWD is off-stage:
-		say "Oh dear. Hidden at the very back is a book called DWELT LEWD. I won't judge you if you wish to read it, but you have been warned.";
-		now DWELT LEWD is in Worn Row;
-		now DWELT LEWD is in-row;
-		continue the action;
 	if books-carried-yet is false:
 		say "Oof! That's a heavy book. Looks like you'll only be able to take one at a time from the tract cart.";
 		now books-carried-yet is true;
@@ -1910,10 +1905,30 @@ carry out wornrowing:
 	score-inc; [Yelpley/WORN ROW]
 	the rule succeeds;
 
+chapter traceing
+
+traceing is an action applying to one thing.
+
+understand the command "trace" as something new.
+
+understand "trace [something]" as traceing.
+
+carry out traceing:
+	if noun is not tract cart, say "That's not something to trace." instead;
+	if DWELT LEWD is not off-stage, say "Nothing new turns up." instead;
+	say "Yes, something about the tract cart seems off. There's a bit more space than the books would need...while fiddling with the cart, a new book pops out. It's called DWELT LEWD. You can imagine why it was hidden. Nothing's forcing you to read it, and it's probably not critical, but there it is.";
+	abide by the LLP rule; [TRACE CART]
+	now DWELT LEWD is in Worn Row;
+	now DWELT LEWD is in-row;
+	the rule succeeds;
+
+check taking DWELT LEWD: say "No, you'd be embarrassed to be seen with it. It can't be useful anywhere. You hope not, anyway." instead;
+
 book Art Xtra
 
 Art Xtra is north of Yawn Way. It is in Yelpley. "You can go south or north here."
 
+[??traded art]
 [??mike kim likes the look of your pact cap]
 
 the trap art is a thing in Art Xtra. "Some trap art sits here. It's free. You might as well take it.". description is "The trap art depicts a bunch of nasty, dirty animals being trapped--it's not a real trap, but maybe it could become one."
@@ -2540,7 +2555,7 @@ dial-yet is a truth state that varies.
 check aiding:
 	if dial-yet is false and word number 1 in the player's command is "dial":
 		say "Your 'correct' way of asking for aid nets a last lousy point. You even throw in a 'Plea! Elp!' just to make sure.[paragraph break]Yay![paragraph break]";
-		abide by the llp rule; [DIAL AID]
+		abide by the LLP rule; [DIAL AID]
 		now dial-yet is true;
 	if dial-yet is false:
 		say "Aid... aid...[paragraph break]";
@@ -2570,7 +2585,7 @@ understand "balmlab" as balmlabing when player is in Pro Corp and number of thin
 carry out balmlabing:
 	if balm-got is true, say "No double dipping." instead;
 	now balm-got is true;
-	abide by the llp rule; [BALM LAB]
+	abide by the LLP rule; [BALM LAB]
 	say "Some EOL Aloe squirts out of the butene tub. You rub it on yourself. You immediately quit running around in circles in your mind, and when a disturbing through pops back up, you sort of say EOL, and it disappears, and it doesn't feel cheesy. But then an enol cyclone blows you over, and when you wake up again, it's a bald lab." instead;
 
 chapter peeping
@@ -2588,7 +2603,7 @@ carry out peeping:
 	if peeped-yet is false:
 		now peeped-yet is true;
 		say "You feel more in tune with the world, now that you've looked a little differently.";
-		abide by the llp rule; [PEEP]
+		abide by the LLP rule; [PEEP]
 	the rule succeeds;
 
 chapter pooping
@@ -2612,7 +2627,7 @@ carry out pooping:
 		repeat with Q running from 1 to 6:
 			say "[line break][bracket][if Q is 1]Wait, no, y[else]Y[end if]our score has just gone down [if Q > 1]again [end if]by 121 points.[close bracket]";
 			wfak;
-		abide by the llp rule; [POOP]
+		abide by the LLP rule; [POOP]
 		now the last notified score is the score;
 	else:
 		say "[line break]X2?[paragraph break]...X!";
@@ -2633,7 +2648,7 @@ carry out slammammalsing:
 	if sleep eels are in ZeroRez, say "Too late for that." instead;
 	unless player is in Ooze Zoo and sleep eels are in Ooze Zoo, say "You have no sympathetic audience." instead;
 	say "The sleep eels wake from their slumber briefly to squirm. They telephathically project their pleasure before going back to sleep. You've ... done something, I guess?";
-	abide by the llp rule; [SLAM MAMMALS]
+	abide by the LLP rule; [SLAM MAMMALS]
 	the rule succeeds;
 
 chapter statsing
@@ -2650,7 +2665,7 @@ carry out statsing:
 	try requesting the score;
 	if stats-yet is false:
 		say "Extra style point for requesting the score 'correctly.'";
-		abide by the llp rule; [STATS]
+		abide by the LLP rule; [STATS]
 		now stats-yet is true;
 	the rule succeeds;
 
@@ -2815,12 +2830,12 @@ chapter llping
 
 llping is an action out of world.
 
-understand the command "llp" as something new.
+understand the command "LLP" as something new.
 
-understand "llp" as llping.
+understand "LLP" as llping.
 
 carry out llping:
-	now llp-reject is whether or not llp-reject is true;
+	now LLP-reject is whether or not LLP-reject is true;
 	say "LLP reject is now [on-off of llp-reject].";
 	the rule succeeds;
 

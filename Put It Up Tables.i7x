@@ -490,7 +490,6 @@ randtxt
 "Rise Aesir"
 "Risk Sir"
 "Solo Gigolos"
-"Some Memos"
 "Sore Heros"
 "Sore Zeros"
 "Torsos, ROT"

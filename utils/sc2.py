@@ -485,6 +485,7 @@ def get_stuff_from_source():
                 if temp_region == 'odd do':
                     llp_commands[this_cmd.upper()] = line_count
                     source_region[this_cmd.upper()] = temp_region
+                    totals[temp_region] = totals[temp_region] + 1
                     continue
                 increment = 1
                 if this_cmd:

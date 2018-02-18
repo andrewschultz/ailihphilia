@@ -331,6 +331,12 @@ WORD ROW.
 You can use trial and error.
 Or you can just use the spoilers below.
 There's no way to use the machines to break the game.
+?Why does the cart seem a bit oddly shaped?
+Well, this is not critical to the game.
+You can do something with the Tract cart.
+Look for a hidden latch, or something.
+TRACE CART.
+The book that drops out is not useful.
 ?What do I do with the reifier?
 There are three things.
 You may notice the trap art is a plan for something bigger, to be made real.
@@ -540,7 +546,7 @@ There are 28 total points in Grebeberg.
 1 point if you USE NAT'S TAN ON SCORN ROCS.
 1 point if you USE REP POPPER ON YUGE GUY.
 ?How do I get all the points for Odd Do?
-There are 8 total points in Odd Do.
+There are 9 total points in Odd Do.
 1 point for BALM LAB once you've cleared Pro Corp to make it a bald lab.
 1 point for PEEP.
 1 point for POOP. Or BOOB.
@@ -549,6 +555,7 @@ There are 8 total points in Odd Do.
 1 point if you DIAL AID instead of AID.
 1 point if you SLAM MAMMALS around the eels before you get rid of them.
 1 point for MUSS OPOSSUM.
+1 point if you TRACE CART in Word Row.
 ;
 >>BUSY SUB
 ?What can I do about the glam-amalg?
