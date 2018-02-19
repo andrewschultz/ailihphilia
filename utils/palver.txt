@@ -21,6 +21,7 @@ s:the opossum is a
 s:check
 s:instead
 s:before
+s:carry out
 s:talk-text
 s:a book can be
 s:after
@@ -34,6 +35,7 @@ s:a person can be
 i:rule:
 i:is an activity
 i:are cappy
+i:is need-ia
 i:rule is listed
 i:is a kind
 i:is a truth state

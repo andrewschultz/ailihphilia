@@ -880,7 +880,7 @@ part Dim Mid region
 
 book Fun Nuf
 
-Fun Nuf is a room in Mid Dim. "[if elite tile is in Fun Nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what is the various directions[xit-ave][end if][if north tron is in Fun Nuf]. Also, the North Tron has carved a passage north[end if]."
+Fun Nuf is a room in Dim Mid. "[if elite tile is in Fun Nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what is the various directions[xit-ave][end if][if north tron is in Fun Nuf]. Also, the North Tron has carved a passage north[end if]."
 
 to say xit-ave:
 	say ". The [if tix exit is in Fun Nuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]"
@@ -1020,7 +1020,7 @@ after going to Fun Nuf when Diktat Kid is in ZeroRez:
 
 book Dirge Grid
 
-Dirge Grid is a room in Mid Dim. "The only way back is south[if Diktat Kid is in Dirge Grid], but you can't really run away from the Diktat Kid. A Tru Hurt is pointed at you, but if you deal with the Kid, that won't matter.[else], and you might as well go that way, now you've vanquished the Diktat Kid. Saner Arenas surround you [end if]"
+Dirge Grid is a room in Dim Mid. "The only way back is south[if Diktat Kid is in Dirge Grid], but you can't really run away from the Diktat Kid. A Tru Hurt is pointed at you, but if you deal with the Kid, that won't matter.[else], and you might as well go that way, now you've vanquished the Diktat Kid. Saner Arenas surround you [end if]"
 
 check going to Dirge Grid: if test set is not in ZeroRez, say "[if player does not have yard ray]You don't have an adequate weapon[else]You need to get some practice with the Yard Ray before going north[end if]." instead;
 

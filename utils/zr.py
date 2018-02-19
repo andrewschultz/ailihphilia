@@ -101,6 +101,9 @@ def check_source(a):
                 print("WARNING replacing use1 entry on with use1 entry with at line", line_count)
                 ll = re.sub("useoning noun on", "useoning noun with", ll)
                 difs = difs + 1
+            if ll.startswith('understand') and 'when' not in ll:
+                fout.write(ll)
+                continue
             if 'lalaland' in ll.lower():
                 print("WARNING replacing lalaland with ZeroRez at line", line_count)
                 ll = re.sub("lalaland", "ZeroRez", ll)
