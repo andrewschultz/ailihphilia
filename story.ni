@@ -679,7 +679,8 @@ debt bed	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching 
 party trap	stark rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
 ERA FARE	King Nik	Spur Ups	--	--	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'This will help me when I get back to South Ihtuos. Thank you!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...I must leave and RAFT FAR back to '"
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
-puce cup	past sap	--	--	sap-to-cup rule	true	false	false	Grebeberg	"You pour some sap into the cup."
+sword rows	past sap	--	sap-on-ground-yet rule	--	true	true	false	Grebeberg	"You hack away at the past sap with the sword rows. It's tricky, and the swords keep breaking, until ... the last one chips just before you cut through the sap! Fortunately, you're able to twist the sap off the rife fir."
+puce cup	past sap	--	sap-still-on-tree rule	sap-to-cup rule	false	false	false	--	"You pour some sap into the cup."
 puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"The past sap pours into the liar grail and exposes how bad the grail has been over the years. As it cracks, along with the wall it was attached to to allow passage south, you snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL!"
 puce cup	dose sod	--	--	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
 puce cup	Marge Pegram	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley	"You give marge the puce cup. She drinks the dose sod and immediately feels better. 'Well... I have a lot of catching up to do. Can't hang around. Here's some Elan Ale for you, to celebrate how cool you are for helping.'"
@@ -778,6 +779,16 @@ this is the ready-to-test rule:
 	the rule fails;
 
 [??	say "That seems right, but you should probably go where there aren't many people. Like back to Fun [']Nuf.";]
+
+this is the sap-still-on-tree rule:
+	if sword rows are not in ZeroRez, the rule succeeds;
+	say "You already chipped the sap off the tree.";
+	the rule fails;
+
+this is the sap-on-ground-yet rule:
+	if sword rows are in ZeroRez, the rule succeeds;
+	say "You need a way to chip the sap off the fir.";
+	the rule fails;
 
 this is the sod-in-cup rule:
 	if puce cup is soddy, the rule succeeds;
@@ -1159,11 +1170,11 @@ check dropping party trap in Seer Trees: try useoning party trap with stark rats
 
 book Cold Loc
 
-Cold Loc is north of Seer Trees. It is in Grebeberg. "Past sap drips from a rift fir that blocks a steep drop west."
+Cold Loc is north of Seer Trees. It is in Grebeberg. "A rift fir that blocks a steep drop west. [if sword rows are in ZeroRez]The past sap you cut from it is lumped on the ground[else]Some past sap clings to the rift fir[end if]."
 
 A rift fir is scenery in Cold Loc. "It's a rife fir. You're not getting past it, but you don't need to."
 
-the past sap is scenery in Cold Loc.
+the past sap is scenery in Cold Loc. "[if sword rows are in ZeroRez]It is in a lump on the ground[else]It's stuck to the rift fir, but with the right tool, maybe you could pry it off[end if]."
 
 check going west in Cold Loc: say "The rift fir blocks the way to much more dangerous places." instead;
 
@@ -1482,6 +1493,10 @@ The Tru Yurt is scenery in Swamp Maws. "It looks really messy. THe Known Wonk sa
 chapter Edits Tide
 
 The Edits Tide is scenery in Swamp Maws. "A voice from the edits tide seems to say [if spa maps are off-stage]that you could use its proofreading skills[else]it has labored enough for you[end if]."
+
+chapter sharp rahs
+
+the sharp rahs are a thing. "The sharp rahs get you enthused, but they're not enough by themselves. Perhaps they are a bit overdone. They need balance some way." [??rahs on mat]
 
 book Calcific Lac
 

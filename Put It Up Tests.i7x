@@ -16,7 +16,7 @@ test part1 with "pack cap/stats/peep/poop/dial aid/refer/e/n/get trap art/s/s/ev
 
 test part2 with "word row/get era fare/e/n/w/w/use party trap on stark rats/n/use era fare on king nik/s/s/slam mammals/use stock cots on sleep eels/s/get stamp mats/e/get poo coop/w/n/n/e/e/s/w/get yob attaboy/e/n/puff up/e/pull up/get puce cup"
 
-test part3 with "w/w/w/n/use puce cup on past sap/s/e/e/e/s/get demo med/get troll ort/use puce cup on liar grail/n/w/w/w/n/e/use puce cup on dose sod/w/s/e/e/e/s/s/use puce cup on marge pegram"
+test part3 with "w/w/w/n/use sword rows on past sap/use puce cup on past sap/s/e/e/e/s/get demo med/get troll ort/use puce cup on liar grail/n/w/w/w/n/e/use puce cup on dose sod/w/s/e/e/e/s/s/use puce cup on marge pegram"
 
 test part4 with "w/get all/e/e/use stamp mats on slate metals/w/n/n/w/w/w/n/n/use demo med on gulf lug/s/s/e/e/e/e/use cash sac on cross orc"
 
@@ -26,7 +26,7 @@ test part6 with "word row/get some demos/e/n/e/e/n/n/get all/balm lab/s/s/w/w/s/
 
 test part7 with "w/use radar on made dam/n/use null illun on known wonk/use el doodle on edits tide/n/use elope pole on kayak/use dork rod on tao boat/s/s/s/use tent net on code doc/use spa maps on code doc/n/e/e/n/e/use spa maps on go-by bog"
 
-test part8 with "w/s/s/s/e/use enact cane on yahoo hay/pace cap/use troll ort on brag garb/w/n/n/w/w/s/s/yak okay/e/use sage gas on guru rug/w/n/n/e/s/nail ian/use snack cans on ufo tofu/use gift fig on mayo yam"
+test part8 with "w/s/s/s/e/use enact cane on yahoo hay/pace cap/use troll ort on brag garb/w/n/n/w/w/s/s/yak okay/e/use sage gas on tame mat/use sharp rahs on guru rug/w/n/n/e/s/nail ian/use snack cans on ufo tofu/use gift fig on mayo yam"
 
 test part9 with "n/w/n/use moor broom on tru yurt/s/e/use exam axe on lie veil/n/muss opossum/get all/s/e/e/e/s/use balsa slab on sword rows/w/use not-a-baton on reifier/use dna band on reifier/use roto motor on dna hand/use eroded ore on reviver/use you buoy on rotator/e/n/n/n/e/use bang nab on tnt/get rep popper/w/s/s/w/w/n/n/use nat's tan on scorn rocs"
 
