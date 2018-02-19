@@ -696,7 +696,7 @@ stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The sti
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	false	false	Grebeberg	"With the help of SOME DEMOS, you manage to rejig the hay into something more aesthetically pleasing: straw arts!"
 straw arts	Mike Kim	soot tattoos	--	--	true	true	false	Yelpley	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
-gate tag	soot tattoos	state tats	--	--	true	true	true	Yelpley	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
+gate tag	soot tattoos	state tats	--	tats-peripheral rule	true	true	true	Yelpley	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
 poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
 poo coop	turf rut	--	coop-full rule	--	true	true	true	Grebeberg	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture.[paragraph break]A bold lob! The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
 radar	made dam	eroded ore	--	radar-blink rule	true	false	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow. The radar plays a weird scale. Being close to the ore has damaged it somehow."
@@ -850,6 +850,10 @@ this is the sod-to-cup rule:
 		if use1 entry is puce cup and use2 entry is dose sod:
 			now sco entry is false;
 			the rule succeeds;
+	the rule succeeds;
+
+this is the tats-peripheral rule:
+	now state tats are peripheral;
 	the rule succeeds;
 
 this is the wear-garb rule:
@@ -1084,8 +1088,13 @@ to blanket-reject (bj - a thing):
 
 table of periphery [xxper]
 itm	reject
+redness ender	"You don't want to do anything crazy with it. You don't want to go near it. It's dangerous looking."
 decal placed	"The decal placed decal is just there to advertise the food. It's not critical to the story."
 snooty toons	"The snooty toons are just there for ambience. They're not critical to the story."
+pill lip	"The pill lip is just there to prevent the demo med from getting dirty on the ground."
+go fog	"The go fog is very dense. It pushes you back west even as you look at it. As if to say, go away, and also, get going with what you want and need to do."
+butene tub	"You don't need to tinker with the butene tub. It's empty, and that's probably a good thing. Just, a secret lab hideout needs something mysterious and weird."
+voodoo v	"You don't want or need to mess with the voodoo v.";
 leet steel	"You want to focus on the Knife Fink and not the leet steel."
 part strap	"You want to focus on the Verses Rev and not the part strap."
 Tru Hurt	"If you dispose of the Diktat Kid, the Tru Hurt won't be able to hurt you."
@@ -1253,11 +1262,7 @@ Le Babel is north of Dumb Mud. It is in Grebeberg. "This is a weird place. Nothi
 
 chapter voodoo v
 
-the voodoo v is scenery. "Maybe you could walk across it without getting hurt, but you doubt it. It's there, and it's immovable."
-
-instead of doing something with voodoo v:
-	if action is procedural, continue the action;
-	say "You don't want or need to mess with the voodoo v.";
+the voodoo v is peripheral scenery. "Maybe you could walk across it without getting hurt, but you doubt it. It's there, and it's immovable."
 
 chapter opossum
 
@@ -1438,11 +1443,7 @@ Motto Bottom is east of Lair Trial. It is in Grebeberg. "Go-fog blocks passage e
 
 chapter go fog
 
-the go fog is scenery in Motto Bottom. understand "gofog" and "go-fog" as go fog. "The go fog is very opaque. It would be too easy to get lost in."
-
-instead of doing something with go fog:
-	if action is procedural, continue the action;
-	say "The go fog is very dense. It pushes you back west even as you look at it. As if to say, go away, and also, get going with what you want and need to do."
+the go fog is peripheral scenery in Motto Bottom. understand "gofog" and "go-fog" as go fog. "The go fog is very opaque. It would be too easy to get lost in."
 
 chapter tame mat
 
@@ -1569,6 +1570,8 @@ chapter sword rows
 
 the sword rows are a plural-named thing in My Gym. "Some tiny sword rows lie here[if Dave is in My Gym] behind Dave[end if].". description is "[if Dave is in My Gym]They're tiny. You can't get a good look with Dave guarding them[else]They could probably cut or chip away at something, if you needed them to[end if]."
 
+check taking sword rows when Dave is quicknear: say "Not with Dave around." instead;
+
 chapter not-a-baton
 
 The not-a-baton is a thing. description is "It is wood and round and long. It's too long to be a baton, but it's the right shape to be something powerful. It just sort of feels lifeless right now."
@@ -1608,11 +1611,7 @@ understand "word row" and "word" as Worn Row when wordrow is true.
 
 chapter redness ender
 
-the redness ender is a thing in Worn Row. "It also seems to double as a redness SENDER, as when you get close to look at it, an ominous red dot appears on you. You back off."
-
-instead of doing something with redness ender:
-	if action is procedural, continue the action;
-	say "You don't want to do anything crazy with it."
+the redness ender is a peripheral thing in Worn Row. "It also seems to double as a redness SENDER, as when you get close to look at it, an ominous red dot appears on you. You back off."
 
 chapter tract cart
 
@@ -1957,9 +1956,7 @@ chapter state tats
 
 the state tats are a plural-named thing. description is "They say OMG MO[']."
 
-instead of doing something with state tats:
-	if action is procedural, continue the action;
-	say "You don't need to do anything to or with the state tats, now that you're wearing them.";
+state tats	"You don't need to do anything to or with the state tats, now that you're wearing them."
 
 chapter soot tattoos
 
@@ -2343,9 +2340,7 @@ chapter Demo Med
 
 a Demo Med is an edible thing in Dopy Pod. "A demo med sits here, on a pill lip.". description is "You're not sure what it could be. Xanax? Whatever, you feel calmer just looking at it."
 
-the pill lip is scenery in Dopy Pod. "A Demo Med rests on the Pill Lip."
-
-instead of doing something with pill lip, say "The pill lip is just there to prevent the demo med from getting dirty on the ground."
+the pill lip is peripheral scenery in Dopy Pod. "A Demo Med rests on the Pill Lip."
 
 report taking demo med:
 	say "The pill lip retracts as you take the demo med.";
@@ -2369,10 +2364,7 @@ bald-lab is a truth state that varies.
 
 understand "bald/lab" and "bald lab" as Pro Corp when bald-lab is true.
 
-the butene tub is scenery in Pro Corp. "It smells pretty nice, though there's no visible way to operate it."
-
-instead of doing something with butene tub:
-	say "You don't need to tinker with the butene tub. It's empty, and that's probably a good thing. Just, a secret lab hideout needs something mysterious and weird."
+the butene tub is peripheral scenery in Pro Corp. "It smells pretty nice, though there's no visible way to operate it."
 
 chapter gold log
 
