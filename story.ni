@@ -11,6 +11,7 @@ USE for the Table of Useons (USE X ON Y gives a point)
 FAIL for Useons that don't work
 TALK for talk texts
 WIN for winning the game
+PER for table of periphery
 
 to search for an item, look for chapter [item].
 ]
@@ -1081,8 +1082,10 @@ to blanket-reject (bj - a thing):
 			continue the action;
 	say "While [the noun] doesn't need any detailed futzing, I don't have a detailed message for why. I need to fix that. Sorry."
 
-table of periphery
+table of periphery [xxper]
 itm	reject
+decal placed	"The decal placed decal is just there to advertise the food. It's not critical to the story."
+snooty toons	"The snooty toons are just there for ambience. They're not critical to the story."
 leet steel	"You want to focus on the Knife Fink and not the leet steel."
 part strap	"You want to focus on the Verses Rev and not the part strap."
 Tru Hurt	"If you dispose of the Diktat Kid, the Tru Hurt won't be able to hurt you."
@@ -2038,7 +2041,7 @@ carry out denying:
 
 book Deli Tiled
 
-Deli Tiled is south of Toll Lot. It is in Yelpley. printed name is "[if yob attaboy is in ZeroRez]Bon Snob[else]Deli, Tiled[end if]". description is "There's not much decor in this [if yob attaboy is in ZeroRez]deli[else]fancy eatery, except for some snooty toons[end if]. You can exit to the north."
+Deli Tiled is south of Toll Lot. It is in Yelpley. printed name is "[if yob attaboy is in ZeroRez]Bon Snob[else]Deli, Tiled[end if]". description is "There's not much decor in this [if yob attaboy is in ZeroRez]deli, except for a placed decal[else]fancy eatery, except for some snooty toons[end if]. You can exit to the north."
 
 the gift fig is a solid ingredient. description is "Well, it's a fig."
 
@@ -2061,13 +2064,13 @@ a tame mat is in Deli Tiled. "A tame mat reading Deli Tiled here."
 check taking tame mat:
 	say "That would be stealing." instead;
 
+chapter placed decal
+
+the decal placed is peripheral scenery. description is "It's an advertisement for LE FALAFEL."
+
 chapter snooty toons
 
-The snooty toons are scenery. "They certainly add ambience to the place. You're not sure whether you should feel obliged to laugh at them or not good enough to laugh at them. But they're not really hurting you, you guess."
-
-instead of doing something with snooty toons:
-	if action is procedural, continue the action;
-	say "The snooty toons can't help or harm you. They're just there."
+The snooty toons are peripheral scenery. "They certainly add ambience to the place. You're not sure whether you should feel obliged to laugh at them or not good enough to laugh at them. But they're not really hurting you, you guess."
 
 chapter standing
 
@@ -2413,7 +2416,7 @@ talk-text of Psi Wisp is "It has nothing to say. It just pulses.".
 talk-text of Revolt Lover is "The Revolt Lover launches into how everyone is really stupid and at fault, and you can't really do anything except snark about it.".
 talk-text of Rob is "Rob yawns. He doesn't find you very interesting. Maybe there's a way to take advantage of that.".
 talk-text of sleep eels is "Maybe they are sending some sort of electric message you could detect with the right instrument, but they're not talking. You're more struck, though, by how uncomfortable they look while sleeping--wriggling about.".
-talk-text of Sniffins is "[if YOB ATTABOY is not in ZeroRez]'Tony? Not! Poor lower class me is a failure! Nobody wants Le Falafel! If only I had some success manual!'[else]'Oh. It's you again. If you were REALLY smart, you'd have taken the advice in that book you gave me.'[end if]".
+talk-text of Sniffins is "[if YOB ATTABOY is not in ZeroRez]'Tony? Not! Poor lower class me is a failure! If only I had some success manual!'[else]'Oh. It's you again. If you were REALLY smart, you'd have taken the advice in that book you gave me.'[end if]".
 talk-text of Verses Rev is "The Verses Rev booms 'Erupt! Pure!' then piously intones how weirdos not in line with the Diktat Kid's values need to be eradicated.".
 talk-text of Yuge Guy is "'Believe Me. Adore Me. Believe!' O gee, ego, you think to yourself."
 
