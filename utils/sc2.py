@@ -264,7 +264,6 @@ def source_vs_invisiclues():
                 ll = re.sub("\..*", "", ll)
                 pts = re.sub(" *total points.*", "", line.strip())
                 pts = re.sub(".* ", "", pts)
-                print(ll, "has", pts, "points in InvisiClues.")
                 try:
                     invis_points[ll] = int(pts)
                 except:
@@ -313,6 +312,7 @@ def source_vs_invisiclues():
                     # print("Found in invisiclues main:", ll)
                     if ll in use_in_invisiclues_main.keys(): print("WARNING line", this_line,"has duplicate command:", ll)
                     use_in_invisiclues_main[ll] = True
+    print("Invisiclues points:", ', '.join(['{:s} {:d}'.format(i, invis_points[i]) for i in invis_points.keys()]))
     if ooo_test:
         print("Test/invisiclues total out of order =", ooo_test)
     for x in list(set(use_in_invisiclues_main.keys()) | set(use_in_source.keys())):
@@ -635,7 +635,8 @@ for x in directed_incs.keys():
         print('DIRECTED', x, directed_incs[x])
     totals[x] = totals[x] + directed_incs[x]
 
-print("List of points by region:")
+print("List of points by region:", ', '.join(['{:s}={:d}'.format(x, totals[x]) for x in totals.keys()]) + ", total=" + str(sum(totals.values())))
+
 for x in totals.keys():
     if totals[x] != in_source[x]:
         print("ERROR: region", x, "has", totals[x], "but source lists", in_source[x])
@@ -647,7 +648,6 @@ for x in totals.keys():
         if invis_line_to_open:
             print("NOTE: this supersedes opening line", invis_line_to_open)
         invis_line_to_open = invis_region_points[x]
-    print(x, totals[x])
 
 for x in sorted(machine_uses.keys()):
     if machine_uses[x] != machine_uses_in_source[x]:
@@ -662,8 +662,6 @@ if semi_verbose:
     for x in sorted(machine_uses.keys()):
         print("Machine", x, "used to score", machine_uses[x], "points. Flips below:")
         print(machine_actions[x], end="")
-
-t2 = sum(totals.values())
 
 if undef_use_points:
     print("ERROR: undef use points =", undef_use_points)
@@ -683,8 +681,6 @@ if source_line_to_open:
     i7.npo(main_source, source_line_to_open, True)
 elif warning_story_line:
     i7.npo(main_source, warning_story_line, True)
-
-print("Total =", t2)
 
 bonus_mistake_check()
 
