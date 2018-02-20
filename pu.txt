@@ -142,9 +142,9 @@ USE NAT'S TAN ON SCORN ROCS.
 They are blocking you but don't seem comfortable.
 Maybe you can find a nicer place for them to sleep.
 Or something nicer to sleep on.
-The Debt Bed doesn't quite work.
+The bunk nub doesn't quite work.
 But you can turn it into something nicer.
-USE DEBT BED ON REVIVER.
+USE BUNK NUB ON REVIVER.
 USE STOCK COTS ON SLEEP EELS.
 >>FRUSH SURF
 ?What do I do with the yak?
@@ -356,7 +356,7 @@ The second item is the gold log.
 The third item is the you buoy.
 ?What do I do with the reviver?
 USE ERODED ORE ON REVIVER.
-The first item is the debt bed.
+The first item is the bunk nub.
 The second item is the eroded ore.
 The third item is the dirt rid.
 ?Help! A machine broke!
@@ -494,7 +494,7 @@ There are 36 total points in Yelpley.
 1 point if you TEND NET.
 1 point for WORK ROW.
 1 point if you USE TRAP ART ON REIFIER.
-1 point if you USE DEBT BED ON REVIVER.
+1 point if you USE BUNK NUB ON REVIVER.
 1 point if you PUFF UP with the Spur Ups.
 1 point if you PULL UP in the Emo Dome.
 1 point if you USE PUCE CUP ON LIAR GRAIL.

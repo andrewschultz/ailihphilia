@@ -54,7 +54,7 @@ Now Worn Row isn't suitable for getting anything done, yet. It has that redness 
 
 (+1) >USE TO IDIOT ON REVOLT LOVER
 
->GET DEBT BED
+>GET BUNK NUB
 
 >E
 
@@ -82,7 +82,7 @@ Now, the trap art goes with one of the machines, but which one?
 
 (+1) >USE TRAP ART ON REIFIER
 
-(+1) >USE DEBT BED ON REVIVER
+(+1) >USE BUNK NUB ON REVIVER
 
 Now let's get another book.
 

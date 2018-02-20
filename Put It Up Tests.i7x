@@ -12,7 +12,7 @@ include Property Checking by Emily Short.
 
 chapter main walkthrough
 
-test part1 with "pack cap/stats/peep/poop/dial aid/refer/e/n/get trap art/s/s/evade dave/w/bore rob/word row/get to idiot/e/n/n/n/use to idiot on revolt lover/get debt bed/e/get all/use pity tip on navy van/w/w/tend net/e/s/s/s/w/work row/use trap art on reifier/use debt bed on reviver"
+test part1 with "pack cap/stats/peep/poop/dial aid/refer/e/n/get trap art/s/s/evade dave/w/bore rob/word row/get to idiot/e/n/n/n/use to idiot on revolt lover/get bunk nub/e/get all/use pity tip on navy van/w/w/tend net/e/s/s/s/w/work row/use trap art on reifier/use bunk nub on reviver"
 
 test part2 with "word row/get era fare/e/n/w/w/use party trap on stark rats/n/use era fare on king nik/s/s/slam mammals/use stock cots on sleep eels/s/get stamp mats/e/get poo coop/w/n/n/e/e/s/w/get yob attaboy/e/n/puff up/e/pull up/get puce cup"
 
