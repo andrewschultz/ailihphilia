@@ -723,7 +723,7 @@ you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as th
 bang nab	TNT	TNT	--	--	true	true	false	Yelpley	"The Bang Nab walks on its index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course."
 nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
-Bro Orb	Madam	Yard Ray	--	--	true	true	true	Yelpley	"The Bro Orb shines and drives Madam to rage. 'Live not on evil, madam, live not on evil!' you boom, as the ray does its work. She runs away, sobbing. The Yard Ray is left unguarded. You take it."
+Bro Orb	Madam	Yard Ray	--	no-tats rule	true	true	true	Yelpley	"The Bro Orb shines and drives Madam to rage. 'Live not on evil, madam, live not on evil!' you boom, as the ray does its work. She runs away, sobbing. The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
 Yard Ray	test set	--	ready-to-test rule	--	true	false	true	Dim Mid	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, successfully bribed." [b4:use tnt on ore zero]
@@ -836,6 +836,10 @@ this is the maps-explain rule:
 this is the mob-to-alley rule:
 	now bomb mob is in Yell Alley;
 	now tnt is in Yell Alley;
+	the rule succeeds;
+
+this is the no-tats rule:
+	now state tats are in ZeroRez;
 	the rule succeeds;
 
 this is the radar-blink rule:
@@ -1109,9 +1113,10 @@ snooty toons	"The snooty toons are just there for ambience. They're not critical
 pill lip	"The pill lip is just there to prevent the demo med from getting dirty on the ground."
 go fog	"The go fog is very dense. It pushes you back west even as you look at it. As if to say, go away, and also, get going with what you want and need to do."
 butene tub	"You don't need to tinker with the butene tub. It's empty, and that's probably a good thing. Just, a secret lab hideout needs something mysterious and weird."
-voodoo v	"You don't want or need to mess with the voodoo v.";
+voodoo v	"You don't want or need to mess with the voodoo v."
 leet steel	"You want to focus on the Knife Fink and not the leet steel."
 part strap	"You want to focus on the Verses Rev and not the part strap."
+state tats	"You don't need to do anything to or with the state tats, now that you're wearing them."
 Tru Hurt	"If you dispose of the Diktat Kid, the Tru Hurt won't be able to hurt you."
 Waster Fretsaw	"If you dispose of the Diktat Kid, the Waster Fretsaw won't be able to hurt you."
 
@@ -1166,11 +1171,17 @@ Seer Trees is west of Fun Nuf. It is in Grebeberg. "East leads back to Fun [']Nu
 check going in Seer Trees:
 	if noun is not east and stark rats are in Seer Trees, say "The stark rats block you from going anywhere. At least they are not banging stop pots." instead;
 
+chapter stark rats
+
 the stark rats are a plural-named thing in Seer Trees. "Stark rats impede you every way except back east.". description is "They are scurrying about. There are too many to get through without getting bitten."
 
 check taking stark rats: say "There are too many, and they'd probably bite you, anyway." instead;
 
 check dropping party trap in Seer Trees: try useoning party trap with stark rats instead;
+
+chapter gift fig
+
+the gift fig is a solid ingredient. description is "Well, it's a fig."
 
 book Cold Loc
 
@@ -1818,7 +1829,9 @@ to say lewd-details:
 		now lewd-chap is 0;
 		now lewd-read is true;
 
-section book verbs
+check taking DWELT LEWD: say "No, you'd be embarrassed to be seen with it. It can't be useful anywhere. You hope not, anyway." instead;
+
+chapter book verbs
 
 books-carried-yet is a truth state that varies.
 
@@ -1931,15 +1944,15 @@ carry out wornrowing:
 	score-inc; [Yelpley/WORN ROW]
 	the rule succeeds;
 
-chapter traceing
+chapter mytraceing
 
-traceing is an action applying to one thing.
+mytraceing is an action applying to one thing.
 
 understand the command "trace" as something new.
 
-understand "trace [something]" as traceing.
+understand "trace [something]" as mytraceing.
 
-carry out traceing:
+carry out mytraceing:
 	if noun is not tract cart, say "That's not something to trace." instead;
 	if DWELT LEWD is not off-stage, say "Nothing new turns up." instead;
 	say "Yes, something about the tract cart seems off. There's a bit more space than the books would need...while fiddling with the cart, a new book pops out. It's called DWELT LEWD. You can imagine why it was hidden. Nothing's forcing you to read it, and it's probably not critical, but there it is.";
@@ -1948,7 +1961,61 @@ carry out traceing:
 	now DWELT LEWD is in-row;
 	the rule succeeds;
 
-check taking DWELT LEWD: say "No, you'd be embarrassed to be seen with it. It can't be useful anywhere. You hope not, anyway." instead;
+chapter allow me to trace
+
+Include (-
+
+[ testcommandnoun obj o2;
+	switch (scope_stage) {
+		1: rtrue; ! allow multiple objects
+		2: objectloop (obj)
+			if ((obj ofclass Object) && (obj provides KD_Count))
+				PlaceInScope(obj, true);
+		3: print "There seems to be no such object anywhere in the model world.^";
+	}
+];
+
+{-testing-command:abstract}
+	* scope=testcommandnoun 'to' scope=testcommandnoun -> XAbstract;
+{-testing-command:actions}
+	*                                           -> ActionsOn
+	* 'on'                                      -> ActionsOn
+	* 'off'                                     -> ActionsOff;
+{-testing-command:gonear}
+	* scope=testcommandnoun                     -> Gonear;
+{-testing-command:purloin}
+	* scope=testcommandnoun                     -> XPurloin;
+{-testing-command:random}
+	*                                           -> Predictable;
+{-testing-command:relations}
+	*                                           -> ShowRelations;
+{-testing-command:rules}
+	*                                           -> RulesOn
+	* 'all'                                     -> RulesAll
+	* 'on'                                      -> RulesOn
+	* 'off'                                     -> RulesOff;
+{-testing-command:scenes}
+	*                                           -> ScenesOn
+	* 'on'                                      -> ScenesOn
+	* 'off'                                     -> ScenesOff;
+{-testing-command:scope}
+	*                                           -> Scope
+	* scope=testcommandnoun                     -> Scope;
+{-testing-command:showheap}
+	*                                           -> ShowHeap;
+{-testing-command:showme}
+	*                                           -> ShowMe
+	* scope=testcommandnoun                     -> ShowMe;
+{-testing-command:showverb}
+	* special                                   -> Showverb;
+{-testing-command:test}
+	*                                           -> TestScript
+	* special                                   -> TestScript;
+{-testing-command:tree}
+	*                                           -> XTree
+	* scope=testcommandnoun                     -> XTree;
+
+-) instead of "Grammar" in "Tests.i6t".
 
 book Art Xtra
 
@@ -1974,8 +2041,6 @@ Mike Kim is a person in Art Xtra.
 chapter state tats
 
 the state tats are a plural-named thing. description is "They say OMG MO[']."
-
-state tats	"You don't need to do anything to or with the state tats, now that you're wearing them."
 
 chapter soot tattoos
 
@@ -2030,9 +2095,26 @@ understand "evened" and "den evened" as Gross Org when Ned is in ZeroRez.
 
 Ned is a person in Gross Org. "'Ned's Den!' someone booms. You're guessing their name must be Ned."
 
-The Puce Cup is a thing in Emo Dome. "Someone has left a puce cup here.". description is "It's, well, puce, and it seems sturdy enough. It's currently [if puce cup is empty]empty[else if puce cup is sappy]full of Past Sap from the rift fir in Cold Loc[else]full of Dose Sod from the Apse Spa[end if]."
+chapter puce cup
+
+The Puce Cup is a thing in Emo Dome. "Someone has left a puce cup here.". description is "It's, well, puce, and it seems sturdy enough. It's currently [if puce cup is empty]empty[else if puce cup is sappy]full of [sap-sirup] from the rift fir in Cold Loc[else]full of Dose Sod from the Apse Spa[end if]."
+
+to say sap-sirup:
+	say "[if location of player is not Cold Loc]Past Sap[else]Purist Sirup[end if]"
 
 the puce cup can be empty, sappy or soddy. the puce cup is empty.
+
+understand "purist sirup" and "purist/sirup" as puce cup when puce cup is sappy and player is not in Cold Loc.
+
+understand "dose sod" as puce cup when puce cup is soddy and player is not in Apse Spa.
+
+after going from Cold Loc when puce cup is sappy:
+	say "The past sap in the puce cup thaws into purist sirup.";
+	continue the action;
+
+after going to Cold Loc when puce cup is sappy:
+	say "The purist sirup in the puce cup hardens [one of][or]back [stopping]into past sap.";
+	continue the action;
 
 chapter Gate Tag
 
@@ -2059,26 +2141,25 @@ book Deli Tiled
 
 Deli Tiled is south of Toll Lot. It is in Yelpley. printed name is "[if yob attaboy is in ZeroRez]Bon Snob[else]Deli, Tiled[end if]". description is "There's not much decor in this [if yob attaboy is in ZeroRez]deli, except for a placed decal[else]fancy eatery, except for some snooty toons[end if]. You can exit to the north."
 
-the gift fig is a solid ingredient. description is "Well, it's a fig."
+chapter Sniffins
+
+Sniffins is a person in Deli Tiled. "[one of]You hear a sniff, and the proprietor introduces themselves as Sniffins, apologizing for how lame the ambience and decor are, but there's just no INSPIRATION to do better[or]Sniffins sniffs here[stopping]."
 
 the Dirt Rid is a thing. description is "The Dirt Rid looks old and decrepit. Sniffins probably wore it out converting the Bon Snob, but it's yours now."
 
 the cave vac is a thing. description is "It looks a lot more powerful than the Dirt Rid."
 
-Sniffins is a person in Deli Tiled. "[one of]You hear a sniff, and the proprietor introduces themselves as Sniffins, apologizing for how lame the ambience and decor are, but there's just no INSPIRATION to do better[or]Sniffins sniffs here[stopping]."
+chapter Gorge Grog
 
 The Gorge Grog is in Deli Tiled. "Some Gorge Grog is here. It looks out of place in the Bon Snob, but Sniffins probably won't give it to you for free.". description is "Unsurprisingly, it is a product of Grog-Org."
 
 check taking Gorge Grog: say "Sniffins chides you. 'It's worthless to us, but if there's anything tackier than bad alcohol, it's people who want to steal it!'[paragraph break]Maybe you could trade something for it." instead;
 
+chapter Nat's Tan
+
 Nat's Tan is a thing in Deli Tiled. "A container of something called Nat's Tan is here."
 
 check taking nat's: say "Ugh! It feels too gross to take. Maybe you need to build yourself up to figure how to take it." instead;
-
-a tame mat is in Deli Tiled. "A tame mat reading Deli Tiled here."
-
-check taking tame mat:
-	say "That would be stealing." instead;
 
 chapter placed decal
 
