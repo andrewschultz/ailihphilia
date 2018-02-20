@@ -97,9 +97,11 @@ You can make it in Work Row, in Yelpley.
 You have to do something to another item. But once you get it...
 USE PARTY TRAP ON STARK RATS.
 >>COLD LOC
-?What do I do with the rift fir?
-It's more the past sap you need.
-You need a container for it.
+?What do I do with the rift fir and past sap?
+The past sap seems glued to the rift fir. Maybe you could wedge it off.
+Any blade you have that might work?
+USE SWORD ROWS ON PAST SAP.
+Now you need a container.
 USE PUCE CUP ON PAST SAP.
 ?What do I do with King Nik?
 He needs a book.
@@ -224,13 +226,16 @@ USE SPA MAPS ON CODE DOC.
 ?What to do here?
 Not much.
 >>MOTTO BOTTOM
+?What can I do with the tame mat?
+Its current motto is a bit lame. It could be more thoughtful.
+Any item you have that says smarts?
+The sage gas.
+USE SAGE GAS ON TAME MAT.
 ?What is the guru rug for?
 It hides an even greater secret.
-It seems like it could almost float.
-But you don't feel like you can touch it.
-What could help the guru rug float away?
-The sage gas.
-USE SAGE GAS ON GURU RUG.
+It's too esoteric, but maybe you could inject some emotion into it.
+Anything t hat might get you enthusiastic?
+USE SHARP RAHS ON GURU RUG.
 >>SWAMP MAWS
 ?How do I get past the Known Wonk?
 The Known Wonk seems to know a lot, but that doesn't contribute to happiness.
@@ -516,11 +521,11 @@ There are 36 total points in Yelpley.
 1 point if you USE BANG NAB ON TNT.
 1 point if you USE BRO ORB ON MADAM.
 ?How do I get all the points for Grebeberg?
-There are 28 total points in Grebeberg.
+There are 29 total points in Grebeberg.
 1 point if you USE PARTY TRAP ON STARK RATS.
 1 point if you USE ERA FARE ON KING NIK.
 1 point if you USE STOCK COTS ON SLEEP EELS.
-1 point if you USE PUCE CUP ON PAST SAP. [?? use it on the fir too]
+1 point if you USE SWORD ROWS ON PAST SAP. [?? use it on the fir too]
 1 point if you USE PUCE CUP ON DOSE SOD.
 1 point if you USE DEMO MED ON GULF LUG.
 1 point if you USE SOME DEMOS ON YAHOO HAY.
@@ -537,7 +542,8 @@ There are 28 total points in Grebeberg.
 1 point if you USE ENACT CANE ON YAHOO HAY.
 1 point if you USE TROLL ORT ON BRAG GARB. (note: this can be done outside of Grebeberg, but it's part of a Grebeberg puzzle.)
 1 point for YAK OKAY around the Ergot Ogre.
-1 point if you USE SAGE GAS ON GURU RUG.
+1 point if you USE SAGE GAS ON TAME MAT.
+1 point if you USE SHARP RAHS ON GURU RUG.
 1 point if you NAIL IAN.
 1 point if you USE SNACK CANS ON UFO TOFU.
 1 point if you USE GIFT FIG ON MAYO YAM.

@@ -60,6 +60,7 @@ invis_region_points = defaultdict(int)
 source_region = defaultdict(str)
 
 llp_commands = defaultdict(int)
+ignore_points = defaultdict(int)
 
 test_ary = []
 test_order = defaultdict(int)
@@ -324,7 +325,7 @@ def source_vs_invisiclues():
     if in_summary:
         if main_err: print("=" * 40)
         for x in list(set(use_in_invisiclues_summary.keys()) | set(use_in_source.keys())):
-            if x not in use_in_invisiclues_summary.keys() and x not in llp_commands.keys():
+            if x not in use_in_invisiclues_summary.keys() and x not in llp_commands.keys() and x not in ignore_points.keys():
                 if not main_err and not summary_err: print ("=" * 40)
                 print("ERROR: Need this source line in invisiclues summary:", x)
                 summary_err = summary_err + 1
@@ -397,7 +398,7 @@ def source_vs_walkthrough():
                 if ll in use_in_source.keys():
                     if ll in use_in_walkthrough.keys() and ll.upper() not in dupes.keys():
                         print(ll, "duplicate non-points command, may not be error.")
-                    if ll.upper() not in dupes.keys() and "(+1)" not in line:
+                    if ll.upper() not in dupes.keys() and "(+1)" not in line and ll.upper() not in ignore_points.keys():
                         print("WARNING: may need +1 at line", line_count, "of walkthrough:", ll)
                         plus_one = plus_one + 1
                         warning_walkthrough_line = line_count
@@ -531,8 +532,9 @@ def get_stuff_from_source():
                 continue
             if in_use_table:
                 x = ll.split("\t")
-                if x[5] != truth_array[need_true_score] and x[5] != "sco":
-                    print("WARNING: Line", line_count, "has wrong true/false for score. It is", x[5], "and should be", str(need_true_score).lower() + ".")
+                if x[5] == 'sco': continue # this is the header.
+                if x[5] != 'true' and x[5] != 'false':
+                    print("WARNING: Line", line_count, "needs true/false in column 5/6.")
                     warning_story_line = line_count
                 if use_ons:
                     if len(x) < 6: continue
@@ -542,16 +544,19 @@ def get_stuff_from_source():
                     if len(x) != 10:
                         print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 10. Ignoring data in this line.")
                         continue
+                    cmd = "USE {:s} ON {:s}".format(x[0].upper(), x[1].upper())
+                    new_cmd_ary = find_comment_cmds('b4', line)
+                    new_cmd_ary.append(cmd)
+                    new_cmd_ary = new_cmd_ary + find_comment_cmds('af', line)
+                    for temp_cmd in new_cmd_ary:
+                        source_cmd_count = source_cmd_count + 1
+                        if temp_cmd in source_cmd_order.keys() and not temp_cmd.startswith("USE"): print("WARNING", temp_cmd, "is a duplicate in table of useons, line", line_count)
+                        source_cmd_order[temp_cmd] = source_cmd_count
+                    use_in_source[cmd] = line_count # we only track line count for "use" commands and not unusual point gainers
+                    if x[5] == 'false':
+                        ignore_points[cmd] = line_count
+                        print("Ignoring points for", '/'.join(x[0:2]))
                     if x[5] == 'true':
-                        cmd = "USE {:s} ON {:s}".format(x[0].upper(), x[1].upper())
-                        new_cmd_ary = find_comment_cmds('b4', line)
-                        new_cmd_ary.append(cmd)
-                        new_cmd_ary = new_cmd_ary + find_comment_cmds('af', line)
-                        for temp_cmd in new_cmd_ary:
-                            source_cmd_count = source_cmd_count + 1
-                            if temp_cmd in source_cmd_order.keys() and not temp_cmd.startswith("USE"): print("WARNING", temp_cmd, "is a duplicate in table of useons, line", line_count)
-                            source_cmd_order[temp_cmd] = source_cmd_count
-                        use_in_source[cmd] = line_count # we only track line count for "use" commands and not unusual point gainers
                         temp_region = ""
                         if x[8] and x[8] != '--' and x[8] != 'reg-plus': # a bit hacky, but basically, check for entry 10 in useon table being a proper region
                             temp_region = x[8].lower()
@@ -566,7 +571,6 @@ def get_stuff_from_source():
                             elif verbose:
                                 print(temp_region, "at line", line_count, " in use table given extra point.")
                             undef_use_points = undef_use_points + 1
-
 # start main
 
 argval = 1
@@ -619,9 +623,9 @@ print("List of points by region:")
 for x in totals.keys():
     if totals[x] != in_source[x]:
         print("ERROR: region", x, "has", totals[x], "but source lists", in_source[x])
-        source_line_to_open = region_def_line[x]
         if source_line_to_open:
             print("NOTE: this supersedes opening line", source_line_to_open)
+        source_line_to_open = region_def_line[x]
     if in_source[x] != invis_points[x]:
         print("ERROR: region", x, "has", in_source[x], "in source, but invisiclues list", invis_points[x])
         if invis_line_to_open:
