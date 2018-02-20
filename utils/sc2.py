@@ -250,6 +250,7 @@ def source_vs_invisiclues():
     last_test = 0
     ooo_this_region = 0
     ooo_test = 0
+    last_cmd_tested = ""
     with open(invis_raw) as file:
         for line in file:
             this_line = this_line + 1
@@ -291,12 +292,13 @@ def source_vs_invisiclues():
                         if test_order[ll] < last_test and source_region[ll] != 'odd do':
                             print("Out of order", test_order[ll], ll, "in invisiclues point summary region", source_region[ll])
                             print("        Best guess:", best_guess(ll))
+                            print("        Last command that worked:", last_cmd_tested, test_order[last_cmd_tested] if last_cmd_tested in test_order.keys else "????")
                             ooo_this_region = ooo_this_region + 1
                             ooo_test = ooo_test + 1
                         else:
                             pass
                             # print(ll, test_order[ll])
-                        last_test = test_order[ll]
+                        last_cmd_tested = ll
                     if ll not in source_region and ll not in llp_commands.keys():
                         summary_err = summary_err + 1
                         print("Command", ll, "is in summary but not source. Summary region={:s}.".format(summary_region))

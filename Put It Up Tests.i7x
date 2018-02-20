@@ -28,11 +28,11 @@ test part7 with "w/use radar on made dam/n/use null illun on known wonk/use el d
 
 test part8 with "w/s/s/s/e/use enact cane on yahoo hay/pace cap/use troll ort on brag garb/w/n/n/w/w/s/s/yak okay/e/use sage gas on tame mat/use sharp rahs on guru rug/w/n/n/e/s/nail ian/use snack cans on ufo tofu/use gift fig on mayo yam"
 
-test part9 with "n/w/n/use moor broom on tru yurt/s/e/use exam axe on lie veil/n/muss opossum/get all/s/e/e/e/s/use balsa slab on sword rows/w/use not-a-baton on reifier/use dna band on reifier/use roto motor on dna hand/use eroded ore on reviver/use you buoy on rotator/e/n/n/n/e/use bang nab on tnt/get rep popper/w/s/s/w/w/n/n/use nat's tan on scorn rocs"
+test part9 with "n/w/n/use moor broom on tru yurt/s/e/use exam axe on lie veil/n/muss opossum/get all/s/e/e/e/s/w/use dna band on reifier/use roto motor on dna hand/use eroded ore on reviver/use you buoy on rotator/e/n/n/n/e/use bang nab on tnt/get rep popper/w/s/s/w/w/n/n/use nat's tan on scorn rocs"
 
 test rollup with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9"
 
-test part10 with "w/use rep popper on yuge guy/e/s/s/e/e/e/n/use bro orb on madam/s/w/s/w/use murk rum on yard ray/emit noontime/use yard ray on test set/e/n/w/use tnt on ore zero/n/use me gem on knife fink/use taboo bat on verses rev/use yard ray on diktat kid/s/use x-ite tix on tix exit"
+test part10 with "w/use rep popper on yuge guy/e/s/s/e/e/e/n/use bro orb on madam/use balsa slab on wash saw/s/w/s/w/use not-a-baton on reifier/use murk rum on yard ray/emit noontime/use yard ray on test set/e/n/w/use tnt on ore zero/n/use me gem on knife fink/use taboo bat on verses rev/use yard ray on diktat kid/s/use x-ite tix on tix exit"
 
 chapter rollup
 

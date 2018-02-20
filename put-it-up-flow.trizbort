@@ -74,7 +74,7 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 		</line>
 		<room id="26" name="USE POO COOP ON GNU DUNG" subtitle="" x="384" y="-128" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="27" name="USE GOLD LOG ON ROTATOR" subtitle="" x="704" y="-896" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects at="n" custom="yes" customRight="-40" customDown="0">(WORN ROW 1st)</objects>
+			<objects at="n" custom="yes" customRight="-40" customDown="0" />
 		</room>
 		<room id="28" name="USE DORK ROD ON TAO BOAT" subtitle="" x="704" y="-768" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="29" name="USE STINK KNITS ON ROTATOR" subtitle="" x="-96" y="-256" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
@@ -397,7 +397,9 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 			<dock index="0" id="145" port="e" />
 			<dock index="1" id="147" port="w" />
 		</line>
-		<room id="160" name="USE BALSA SLAB ON SWORD ROWS" subtitle="" x="864" y="-768" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="160" name="USE BALSA SLAB ON WASH SAW" subtitle="" x="864" y="-768" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects at="n" custom="yes" customRight="-48" customDown="0">(USE BRO ORB 1st)</objects>
+		</room>
 		<line id="161" name="" description="" flow="oneWay">
 			<dock index="0" id="160" port="s" />
 			<dock index="1" id="136" port="n" />
@@ -443,6 +445,11 @@ Color coding: white = work row, blue = useon, grey = guess the verb</description
 		<line id="54" name="" description="" flow="oneWay">
 			<dock index="0" id="52" port="n" />
 			<dock index="1" id="53" port="s" />
+		</line>
+		<room id="142" name="WORN ROW" subtitle="" x="864" y="-896" w="96" h="64" region="Unlinked" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<line id="143" name="" description="" flow="oneWay">
+			<dock index="0" id="142" port="w" />
+			<dock index="1" id="27" port="e" />
 		</line>
 	</map>
 	<settings>

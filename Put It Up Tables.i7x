@@ -545,6 +545,7 @@ randtxt
 "Dud!"
 "Eh, the..."
 "Hey! Eh?"
+"Line? Nil."
 "Mum?"
 "No peep on?"
 "Noise lesion."
@@ -625,6 +626,7 @@ randtxt
 "Huge! Guh!"
 "Gibe! Big!"
 "Misdeeds? I'm ..."
+"Wane? Naw!"
 
 Put It Up Tables ends here.
 

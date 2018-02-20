@@ -320,10 +320,9 @@ Well, you need to avoid him. Not quite avoid him.
 But do something to him. ????? DAVE.
 EVADE DAVE.
 >What are the sword rows for?
-You won't need them until very late in the game.
-They could be useful to cut something up.
-Wood, maybe.
-USE BALSA SLAB ON SWORD ROWS.
+They could be useful to cut something small and stubborn.
+Wood, maybe. Or something from wood.
+It's in Grebeberg.
 >>WORN ROW
 ?How do I get past Ian?
 NAIL IAN.
@@ -465,6 +464,9 @@ USE ELAN ALE ON SNIFFINS.
 You can't get in if you don't have what you need.
 Something that's the opposite of her.
 USE BRO ORB ON MADAM.
+?What is the wash saw for?
+Well, there's one thing that needs to be carved.
+USE BALSA SLAB ON WASH SAW.
 #summary below
 >META QUESTIONS
 ?What are the Odd Do points?
@@ -512,14 +514,14 @@ There are 36 total points in Yelpley.
 1 point if you USE GOLD LOG ON ROTATOR.
 1 point if you USE STRAW ARTS ON MIKE KIM.
 1 point if you USE GATE TAG ON SOOT TATTOOS.
-1 point if you USE BALSA SLAB ON SWORD ROWS.
-1 point if you USE NOT-A-BATON ON REIFIER.
 1 point if you USE DNA BAND ON REIFIER.
 1 point if you USE ROTO MOTOR ON DNA HAND.
 1 point if you USE ERODED ORE ON REVIVER.
 1 point if you USE YOU BUOY ON ROTATOR.
 1 point if you USE BANG NAB ON TNT.
 1 point if you USE BRO ORB ON MADAM.
+1 point if you USE NOT-A-BATON ON REIFIER.
+1 point if you USE BALSA SLAB ON WASH SAW.
 ?How do I get all the points for Grebeberg?
 There are 29 total points in Grebeberg.
 1 point if you USE PARTY TRAP ON STARK RATS.

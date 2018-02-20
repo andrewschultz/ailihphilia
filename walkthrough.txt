@@ -324,17 +324,10 @@ Now you have all the ingredients for the North-Tron, and you need to activate th
 
 (+1) >USE EXAM AXE ON LIE VEIL
 
->N.GET ALL.S.E.E.E.S
-
-Finally, we can use the sword rows!
-
-(+1) >USE BALSA SLAB ON SWORD ROWS
-
->W
+>N.GET ALL.S.E.E.E.S.W
 
 Now with all the junk we have, we can make non-junk.
 
-(+1) >USE NOT-A-BATON ON REIFIER
 (+1) >USE DNA BAND ON REIFIER
 (+1) >USE ROTO MOTOR ON DNA HAND
 (+1) >USE ERODED ORE ON REVIVER
@@ -358,9 +351,15 @@ Now with all the junk we have, we can make non-junk.
 
 (+1) >USE BRO ORB ON MADAM
 
+(+1) >USE BALSA SLAB ON WASH SAW
+
 >S.W.S.W
 
-Now you have a weapon to take out the Diktat Kid! But it's not loaded.
+The not-a-baton could use a boost.
+
+(+1) >USE NOT-A-BATON ON REIFIER
+
+Boom go the machines! Now you have a weapon to take out the Diktat Kid! But it's not loaded.
 
 (+1) >USE MURK RUM ON YARD RAY
 
