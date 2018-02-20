@@ -55,6 +55,8 @@ use_in_invisiclues_main = defaultdict(int)
 use_in_invisiclues_summary = defaultdict(int)
 use_in_walkthrough = defaultdict(int)
 use_in_trizflow = defaultdict(int)
+trizflow_llp_rooms = defaultdict(int)
+
 invis_points = defaultdict(int)
 invis_region_points = defaultdict(int)
 source_region = defaultdict(str)
@@ -251,6 +253,11 @@ def source_vs_invisiclues():
     with open(invis_raw) as file:
         for line in file:
             this_line = this_line + 1
+            if line.strip() == '#summary below':
+                in_summary = True
+                continue
+            if line.startswith('#'): continue
+            if line.startswith(';'): break
             if 'total points in' in line:
                 ll = re.sub(".*total points in *", "", line.strip().lower())
                 ll = re.sub("\..*", "", ll)
@@ -263,9 +270,6 @@ def source_vs_invisiclues():
                     print("Non integer points", pts, "getting region points from line", this_line, ":", line.strip())
                     exit()
                 invis_region_points[ll] = this_line
-            if line.strip() == '#summary below':
-                in_summary = True
-                continue
             if in_summary:
                 if line.startswith('?How do I get all the'):
                     if ooo_this_region:
@@ -364,7 +368,12 @@ def source_vs_trizbort_flow():
                 rn2 = re.sub("\*$", "", rn)
                 asterisked[rn2] = line_count
             else:
-                use_in_trizflow[rn] = line_count
+                if rn in trizflow_llp_rooms.keys() or rn in use_in_trizflow.keys():
+                    print("Possible duplicate room", rn)
+                if "Misc Points" in line:
+                    trizflow_llp_rooms[rn] = line_count
+                else:
+                    use_in_trizflow[rn] = line_count
             # print("Adding", rn)
     for x in asterisked.keys():
         if x not in use_in_trizflow.keys():
@@ -374,11 +383,16 @@ def source_vs_trizbort_flow():
             print("ERROR: source not flow", x, "in source but not in trizbort flow file", triz_flow)
             summary_err = summary_err + 1
     for x in list(set(use_in_trizflow.keys()) | set(use_in_source.keys())):
-        if x not in use_in_source.keys() and x not in llp_commands.keys():
+        if x not in use_in_source.keys():
             if "USE " + x in use_in_source.keys():
                 print("TIP: Need USE before", x)
             print("ERROR: flow not source", x, "in trizbort flow file", triz_flow, "but not source")
             summary_err = summary_err + 1
+    for x in list(set(trizflow_llp_rooms.keys()) | set(llp_commands.keys())):
+        if x not in trizflow_llp_rooms.keys():
+            print("Need", x, "as a Trizbort Flow LLP room.")
+        elif x not in llp_commands.keys():
+            print("Need", x, "as an LLP command, or delete from Trizbort Flow LLP.")
     print(summary_err, "trizbort flow/source sync violations.")
 
 def source_vs_walkthrough():
