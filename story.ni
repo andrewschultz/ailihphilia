@@ -124,7 +124,24 @@ the brag garb is a proper-named thing. description is "You don't know fashion th
 
 section helpdocs
 
-a helpdoc is a kind of thing.
+a helpdoc is a kind of thing. a helpdoc has a number called importancy.
+
+to say other-docs:
+	let L be the list of still-useful helpdocs carried by player;
+	sort L in reverse importancy order;
+	say "[the L]";
+
+Definition: A helpdoc is relevant if its importancy is 1 or more.
+
+to decide which number is max-useful:
+	let X be 0;
+	repeat with Q running through helpdocs carried by player:
+		if importancy of Q > X, now X is importancy of Q;
+	decide on X;
+
+Definition: A helpdoc (called h) is still-useful:
+	if importancy of h >= max-useful, no;
+	yes;
 
 section ingredients
 
@@ -207,7 +224,8 @@ when play begins:
 	say "You fold the Darer Ad and start off to the store.[paragraph break]'Aloha! Hola!' someone, or something, cries. You run in the general direction of the voice.  You look up, and you're no longer on the way to the store. You're somewhere else. With someone else: a Flee Elf, who notes you futzing with your smartphone. 'No El Google on.' You nod. Awkward silence.[wfak-d]";
 	say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because after being confused by it, you looked up the winning strategy on the internet. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers, before suddenly ...[wfak-d]";
 	say "'Put it up!' the Flee Elf yells after your fifth win in a row. You freeze--well, until you're knocked to the ground.[wfak-d]";
-	say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Raw Level War. You'll do for Yelpley, I guess.' The Flee Elf leads you away. 'The first thing to do is, figure how to take this cap.'[wfak-d]"
+	say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Raw Level War. You'll do for Yelpley, I guess.' The Flee Elf leads you away. 'The first thing to do is, figure how to take this cap.'[wfak-d]";
+	say "[location of player].";
 
 volume parser errors operations and death
 
@@ -312,12 +330,17 @@ check taking inventory when Dave-evade is true:
 	now all things enclosed by the player are marked for listing;
 	now all ingredients are unmarked for listing;
 	now all tronparts are unmarked for listing;
+	now all helpdocs are unmarked for listing;
 	now all things worn by the player are unmarked for listing;
 	now state tats are unmarked for listing;
 	say "[if number of things carried by player > 7]Your scepsis pecs help you carry a lot of things, though you're suspicious and unclear as to how.[else]'Met item' list:[line break][end if]";
 	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
 	if number of ingredients carried by player > 0, say "Food found: [a list of ingredients carried by player].";
 	if number of things worn by player > 0, say "You are wearing: [a list of things worn by player][if player has state tats], in addition to state tats[end if].";
+	if number of helpdocs carried by the player is 1:
+		say "So far, you only have [the list of helpdocs carried by the player] as reference. More later, maybe?";
+	else:
+		say "While the [b][relevantest helpdoc carried by the player][r] seems useful as a guide, [other-docs] may shore up a few minor points.";
 	if number of tronparts carried by player > 0, say "North-tron parts found: [the list of tronparts carried by player][unless martini tram is off-stage]. The martini tram is in Fun [']Nuf, too[end if].";
 	the rule succeeds;
 
@@ -980,10 +1003,9 @@ understand "pack cap" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did.";
-	say "Yes, that's how to get the cap. You are ready to go![paragraph break]'Good job! Here's a set o['] notes to replace that darer ad,' the Flee Elf says. It salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
+	say "Yes, that's how to get the cap. You are ready to go![paragraph break]'Good job! Here's a set o['] notes to help with that darer ad,' the Flee Elf says. It salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
 	move flee elf to ZeroRez;
 	now Tix Exit is in Fun Nuf;
-	now darer ad is in ZeroRez;
 	now player has set o notes;
 	now player wears the cap;
 	now all cappy rooms are available;
@@ -1023,7 +1045,7 @@ check going to Fun Nuf:
 
 chapter darer ad
 
-the Darer Ad is a helpdoc. The player carries the Darer Ad.
+the Darer Ad is a helpdoc. The player carries the Darer Ad. importancy of the Darer Ad is 1.
 
 description of Darer Ad is "No LOL on? SEE, REFER-EES! Do! Nod!"
 
@@ -1033,9 +1055,9 @@ after examining the Darer Ad for the first time:
 
 chapter set o notes
 
-the set o notes is a helpdoc. description is "There's some general vague advice about making a North Tron to defeat the Diktat Kid, but first you'll have to defeat Madam and the Yuge Guy, Evil Clive. The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that."
+the set o notes is a helpdoc. description is "There's some general vague advice about making a North Tron to defeat the Diktat Kid, but first you'll have to defeat [b]Madam[r], as well as the [b]Yuge Guy, Evil Clive[r]. The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
 
-after examining set o notes for the first time, say "Maybe you'll get something even more detailed than the Set O Notes later."
+after examining set o notes for the first time, say "More useful than the Darer Ad, but maybe you'll get something even more detailed than the Set O Notes later."
 
 chapter tile lit
 
@@ -1697,9 +1719,13 @@ to say tract-status:
 	else:
 		say "[if number of books in Worn Row is 1]almost empty[else]holding a few books[end if]"
 
+definition: a book (called bo) is sober:
+	if bo is DWELT LEWD, no;
+	yes;
+
 for printing a locale paragraph about a book (called bk):
 	if bk is not mentioned:
-		say "The tract cart contains [list of books in Worn Row].";
+		say "The tract cart contains [list of sober books in Worn Row][if dwelt lewd is in Worn Row], with DWELT LEWD off to the side[end if].";
 		now all books are mentioned;
 
 chapter Rob
@@ -1851,7 +1877,7 @@ lewd-read is a truth state that varies.
 
 check examining DWELT LEWD: if lewd-chap is 1 and lewd-read is true, say "Another round? Sicko.[paragraph break]";
 
-description of DWELT LEWD is "[lewd-details][line break]".
+description of DWELT LEWD is "[lewd-details]".
 
 to say lewd-details:
 	let lelt be number of entries in dwelt-first;
@@ -1865,9 +1891,9 @@ to say lewd-details:
 	if debug-state is true and lewd-chap > 1, say ","; [for reference, to see where the midpoint is]
 	repeat with X running from min to lelt:
 		say "[if X is not lelt],[end if] [entry X of dwelt-last]";
-	say " Sinned";
+	say " Sinned.";
 	if lewd-chap is number of entries in dwelt-first + 1 and lewd-read is false:
-		say ".[paragraph break]Whew! You've finished DWELT LEWD. After reading the blurb for the sequel, [']S SENSUOUSNESS, and a related Leer Reel (on DVD), MUCH, you realize you've forgotten the plot [one of]already[or]yet again[stopping], if there was one. Sicko. (Hey, don't look at me, I just wrote the abstract code for the 'book.')";
+		say "[line break]Whew! You've finished DWELT LEWD. After reading the blurb for the sequel, [']S SENSUOUSNESS, and a related Leer Reel (on DVD), MUCH, you realize you've forgotten the plot [one of]already[or]yet again[stopping], if there was one. Sicko. (Hey, don't look at me, I just wrote the abstract code for the 'book.')";
 		now lewd-chap is 0;
 		now lewd-read is true;
 
@@ -1951,19 +1977,24 @@ understand "word row" and "wordrow" as wordrowing when player is in Worn Row.
 
 ever-wordrow is a truth state that varies.
 
+definition: a book (called bo) is tractable:
+	if bo is hidden, no;
+	if bo is in ZeroRez, no;
+	if player carries bo, no;
+	yes;
+
 carry out wordrowing:
 	abide by the wornrow-change rule;
 	if Worn Row is wordy, say "You're already in Word Row." instead;
 	clear-worn-row;
 	now Worn Row is wordy;
 	now all workables are in TempMet;
-	now all books not in ZeroRez are in Worn Row; [?? what if you are carrying it]
 	if redness ender is in Worn Row, now redness ender is in TempMet;
 	move tract cart to Worn Row;
 	if ever-wordrow is false, score-inc; [Yelpley/word row]
 	now ever-wordrow is true;
 	say "A tract cart [one of]appears, with a pity tip fluttering down. You take the tip[or]re-appears[stopping].";
-	now all books in TempMet are in Worn Row;
+	now all tractable books are in Worn Row;
 	if pity tip is off-stage, now player has pity tip;
 	the rule succeeds;
 
@@ -2058,10 +2089,10 @@ Include (-
 	*                                           -> TestScript
 	* special                                   -> TestScript;
 {-testing-command:traec}
-    *                                           -> TraceOn
-    * number                                    -> TraceLevel
-    * 'on'                                      -> TraceOn
-    * 'off'                                     -> TraceOff;
+	*                                           -> TraceOn
+	* number                                    -> TraceLevel
+	* 'on'                                      -> TraceOn
+	* 'off'                                     -> TraceOff;
 {-testing-command:tree}
 	*                                           -> XTree
 	* scope=testcommandnoun                     -> XTree;
@@ -2098,6 +2129,9 @@ Mike Kim is a person.
 chapter Nora Maron
 
 Nora Maron is a person.
+
+gender-oppo of Mike Kim is Nora Maron.
+gender-oppo of Nora Maron is Mike Kim.
 
 chapter state tats
 
@@ -2274,7 +2308,7 @@ the tent net is a thing. description is "It doesn't have any pegs or anything to
 
 chapter epicer recipe
 
-the epicer recipe is a helpdoc. description is "You've seen recipes before, but this is a big interesting one! It describes how to make a north-tron, which will get you north of Fun [']Nuf.[paragraph break][tronpartlist][run paragraph on]"
+the epicer recipe is a helpdoc. description is "You've seen recipes before, but this is a big interesting one! It describes how to make a north-tron, which will get you north of Fun [']Nuf.[paragraph break][tronpartlist][run paragraph on]". importancy of the epicer recipe is 3.
 
 to say tronpartlist:
 	repeat with tp running through tronparts:
@@ -2291,10 +2325,9 @@ understand "tend [something]" as tending.
 carry out tending:
 	if noun is not level net, say "That doesn't need tending." instead;
 	if player has epicer recipe, say "You already did what you needed with the net." instead;
-	say "You adjust the ten level net. You're not sure how to make it work, but with some common sense, you make it. The set o['] notes gives surprising help. You climb and swing from the trapeze to the other side--falling into the ten level net about a hundred or so times--but the hundred and first bam! You notice an epic-er recipe on the other side.[paragraph break]It's a clear step up from the set o['] notes, which you won't be needing any more. Yay! There's also something labeled an elope pole, which you suspect may help you get away if and when you need to. Part of the net falls off, too. It'd make a nice tent: a tent net.";
+	say "You adjust the ten level net. You're not sure how to make it work, but with some common sense, you make it. The set o['] notes gives surprising help. You climb and swing from the trapeze to the other side--falling into the ten level net about a hundred or so times--but the hundred and first bam! You notice an epic-er recipe on the other side.[paragraph break]It's a clear step up from the set o['] notes. Yay! There's also something labeled an elope pole, which you suspect may help you get away if and when you need to. Part of the net falls off, too. It'd make a nice tent: a tent net.";
 	now player has elope pole;
 	now player has tent net;
-	now set o notes is in ZeroRez;
 	now player has epicer recipe;
 	score-inc; [Yelpley/TEND NET]
 	the rule succeeds.
@@ -2691,7 +2724,7 @@ volume gender switching
 
 chapter art-sell
 
-art-sell is a person that varies.
+art-sell is a person that varies. art-sell is Mike Kim.
 
 a person has a person called gender-oppo. gender-oppo of a person is usually Diktat Kid.
 
