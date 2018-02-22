@@ -503,6 +503,8 @@ randtxt
 "Ole! Lo!"
 "Pah! Whap?"
 "Pal, SLAP?!"
+"Hurt! Ruh!"
+"A Thump, Mutha[']!"
 "Po['] bop!"
 "Pop!"
 "Pow-op! Pow-op!"
@@ -526,6 +528,7 @@ randtxt
 "Poorer! Oop!"
 "Dude(tte)! Dud!"
 "Rofl! For..."
+"Mess [']em!"
 
 table of noesies
 randtxt
