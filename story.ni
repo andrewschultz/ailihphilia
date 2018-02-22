@@ -204,7 +204,8 @@ when play begins:
 	say "EVIL'S LIVE![wfak-d]";
 	say "LIVE DEVIL![wfak-d]";
 	say "BOSSES! SOB![wfak-d]";
-	say "You fold the Darer Ad and start off to the store.[paragraph break]'Aloha! Hola!' someone, or something, cries. You run in the general direction of the voice.  You look up, and you're no longer on the way to the store. You're somewhere else. With someone else: a Flee Elf, who looks at you and says 'You'll do, I guess. The first thing to do is, figure how to take this cap.'[wfak-d]"
+	say "You fold the Darer Ad and start off to the store.[paragraph break]'Aloha! Hola!' someone, or something, cries. You run in the general direction of the voice.  You look up, and you're no longer on the way to the store. You're somewhere else. With someone else: a Flee Elf, who looks at you and says 'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because after being confused by it, you looked up the winning strategy on the internet. 'Put it up!' the Flee Elf yells after your fifth win in a row. You freeze--well, until you're knocked to the ground.[wfak-d]";
+	say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Raw Level War. You'll do for Yelpley, I guess.' The Flee Elf leads you away. 'The first thing to do is, figure how to take this cap.'[wfak-d]"
 
 volume parser errors operations and death
 
@@ -320,6 +321,8 @@ check taking inventory when Dave-evade is true:
 
 after printing the name of a tronpart while taking inventory: if player has epicer recipe, say " (recipe item)".
 
+after printing the name of pact cap while taking inventory: if cap-pace is true, say " (bent slightly to be a PACE cap too)".
+
 after printing the name of yard ray while taking inventory: say " ([unless murk rum is in ZeroRez]un[end if]charged)".
 
 after printing the name of spa maps while taking inventory: say "([if maps-explained is true]deciphered[else]indecipherable[end if])".
@@ -402,7 +405,9 @@ understand "talk to [something]" as talktoing.
 
 carry out talktoing:
 	if noun is not a person, say "Talking to people or, at least, animals is your best bet." instead;
-	if talk-text of noun is empty, say "Nothing. (change this)" instead;
+	if talk-text of noun is empty:
+		if gender-oppo of noun is not Diktat Kid and talk-text of gender-oppo of noun is not empty, say "[talk-text of gender-oppo of noun][line break]" instead;
+		say "Nothing. (change this)" instead;
 	say "[talk-text of noun][line break]" instead;
 	the rule succeeds. [see volume dialogue for all the specifics]
 
@@ -1052,9 +1057,36 @@ check going to Dirge Grid: if test set is not in ZeroRez, say "[if player does n
 
 printed name of Dirge Grid is "[if Diktat Kid is in ZeroRez]Top Spot[else]Dirge Grid[end if]"
 
-after looking in Dirge Grid for the first time:
-	say "The Diktat Kid booms 'Engage le jeu que je le gagne!'";
-	continue the action;
+for writing a paragraph about a person when player is in Dirge Grid:
+	now all people in Dirge Grid are mentioned;
+	if Dirge Grid is visited:
+		say "You are greeted by someone who must be the Diktat Kid, who reminds you of a bully from high school. 'You did some weird things to get this far--but I've done some PRACTICAL things to make sure that's it! Knife Fink! Verses Rev!'[paragraph break]'ENGAGE LE JEU QUE JE LE GAGNE!'[wfak-d]";
+		say "They both appear. And they are armed! The Knife Fink, with leet steel, and the Verses Rev, with a part strap.";
+		if player does not have ME gem and player does not have taboo bat:
+			say "Looking at your items, there's no way you have enough to take care of the Diktat Kid and the two henchmen. You back off.";
+			move player to Fun Nuf, without printing a room description;
+			continue the action;
+		if player does not have ME gem and player does not have taboo bat:
+			say "You feel like you aren't quite prepared enough to tackle the Diktat Kid's henchmen. You back off.";
+			move player to Fun Nuf, without printing a room description;
+			continue the action;
+	else:
+		if player does not have ME gem and player does not have taboo bat:
+			say "You're still overwhelmed by all three opponents.";
+			move player to Fun Nuf, without printing a room description;
+			continue the action;
+		if player does not have ME gem and player does not have taboo bat:
+			say "You still don't feel confident of victory. You need just a little more.";
+			move player to Fun Nuf, without printing a room description;
+			continue the action;
+		else if Knife Fink is in ZeroRez and Verses Rev is in ZeroRez:
+			say "The Diktat Kid continues to rage at you. Two henchmen gone, but it's not over!";
+		else if Knife Fink is in ZeroRez:
+			say "The Diktat Kid continues to yell at the Verses Rev to do something.";
+		else if Verses Rev is in ZeroRez:
+			say "The Diktat Kid continues to yell at the Knife Fink to do something.";
+		else:
+			say "The Diktat Kid yells and wonders why the Verses Rev and Knife Fink haven't disposed of you, yet.";
 
 check going south in Dirge Grid: if Diktat Kid is in Dirge Grid, say "'Mom! SOS! LOL! SOS! Mom!' the Diktat Kid mocks you.[paragraph break]You can't chicken out. You must be close!" instead;
 
@@ -1074,10 +1106,9 @@ chapter Diktat Kid
 Diktat Kid is a proper-named person in Dirge Grid.
 
 every turn when Diktat Kid is quicknear:
-	if a random chance of 1 in 2 succeeds:
-		say "The Diktat Kid whines '";
-		next-rand table of diktat taunts;
-		say "'";
+	say "The Diktat Kid whines '";
+	next-rand table of diktat taunts;
+	say "'";
 
 chapter Knife Fink
 
@@ -2173,7 +2204,7 @@ check taking Gorge Grog: say "Sniffins chides you. 'It's worthless to us, but if
 
 chapter Nat's Tan
 
-Nat's Tan is a thing in Deft Fed. "A container of something called Nat's Tan is here."
+Nat's Tan is a thing in Deft Fed. "A container of something called Nat's Tan is here.". description is "Ugh! Given that it advertises turning you orange, you're not sure you'd want that. Maybe there are some people or things much neater than you that would hate it even more.".
 
 check taking nat's: say "Ugh! It feels too gross to take. Maybe you need to build yourself up to figure how to take it." instead;
 
@@ -2500,9 +2531,9 @@ chapter DNA band and hand and what's after
 
 The DNA band is a thing in Pro Corp. "A DNA band sits here, nice and tidy and helical.". description is "The DNA band seems like it could come to life, but you'd need some cool science to do so.".
 
-The DNA hand is a thing. "It's motionless, but it looks lifelike enough. There must be a way to bring it to life!"
+The DNA hand is a thing. description is "It's motionless, but it looks lifelike enough. There must be a way to bring it to life!"
 
-The bang nab is a thing. "Wow! It's really evolved from a DNA band! It's sturdy. If it had eyes, it'd be looking for something to steel and run--umm, that's not quite right--off with. You're not sure why it hasn't run off with anything in your inventory. Is all this stuff you piled up worthless? Perhaps the bang nab is just grateful."
+The bang nab is a thing. description is "Wow! It's really evolved from a DNA band! It's sturdy. If it had eyes, it'd be looking for something to steel and run--umm, that's not quite right--off with. You're not sure why it hasn't run off with anything in your inventory. Is all this stuff you piled up worthless? Perhaps the bang nab is just grateful."
 
 volume dialogue
 
@@ -2994,9 +3025,11 @@ understand the command "endgame" as something new.
 
 understand "endgame" as endgameing.
 
-carry out endgameing: [?? what about martini tram]
-	say "Giving you all the cool stuff to defeat the Diktat Kid.";
+carry out endgameing:
+	say "Giving you all the cool stuff to defeat the Diktat Kid. NOTE: Also moving the test set to Fun [']Nuf. It should be in work row, but it's easier this way.";
+	move test set to Fun Nuf;
 	now player carries all tronparts;
+	now martini tram is in Fun Nuf;
 	now player carries murk rum;
 	now player carries yard ray;
 	now player carries epicer recipe;
@@ -3107,6 +3140,9 @@ when play begins (this is the make sure everyone is chatty rule):
 	let count be 0;
 	repeat with Q running through people:
 		if talk-text of Q is empty:
+			if gender-oppo of Q is not Diktat Kid and talk-text of gender-oppo of Q is not empty:
+				say "[Q] maps to [gender-oppo of Q]. This is okay.";
+				next;
 			increment count;
 			say "[count]. [Q] needs basic talk-text.";
 	if count is 0:
