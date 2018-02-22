@@ -178,7 +178,7 @@ def source_table_vs_test_file():
                 test_order[x.upper()] = count
     for x in sorted(source_cmd_order, key=source_cmd_order.get):
         if x not in test_order.keys():
-            print("Need test_order entry for", x)
+            print("Need test_order entry for", x, "as it doesn't appear in the tests file.")
             test_file_errs = test_file_errs + 1
     for x in sorted(test_order.keys()):
         if x not in source_cmd_order.keys() and x not in llp_commands.keys():

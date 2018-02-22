@@ -103,7 +103,7 @@ USE PARTY TRAP ON STARK RATS.
 ?What do I do with the rift fir and past sap?
 The past sap seems glued to the rift fir. Maybe you could wedge it off.
 Any blade you have that might work?
-USE SWORD ROWS ON PAST SAP.
+USE WASH SAW ON PAST SAP.
 Now you need a container.
 USE PUCE CUP ON PAST SAP.
 ?What do I do with King Nik?
@@ -322,10 +322,10 @@ TEND NET.
 Well, you need to avoid him. Not quite avoid him.
 But do something to him. ????? DAVE.
 EVADE DAVE.
->What are the sword rows for?
-They could be useful to cut something small and stubborn.
+>What is the wash saw for?
+It could be useful to cut something small and stubborn.
 Wood, maybe. Or something from wood.
-It's in Grebeberg.
+What you need to cut is over in Grebeberg.
 >>WORN ROW
 ?How do I get past Ian?
 NAIL IAN.
@@ -467,9 +467,9 @@ USE ELAN ALE ON SNIFFINS.
 You can't get in if you don't have what you need.
 Something that's the opposite of her.
 USE BRO ORB ON MADAM.
-?What is the wash saw for?
+?What are the sword rows for for?
 Well, there's one thing that needs to be carved.
-USE BALSA SLAB ON WASH SAW.
+USE BALSA SLAB ON SWORD ROWS.
 #summary below
 >META QUESTIONS
 ?What are the Odd Do points?
@@ -524,13 +524,13 @@ There are 36 total points in Yelpley.
 1 point if you USE BANG NAB ON TNT.
 1 point if you USE BRO ORB ON MADAM.
 1 point if you USE NOT-A-BATON ON REIFIER.
-1 point if you USE BALSA SLAB ON WASH SAW.
+1 point if you USE BALSA SLAB ON SWORD ROWS.
 ?How do I get all the points for Grebeberg?
 There are 29 total points in Grebeberg.
 1 point if you USE PARTY TRAP ON STARK RATS.
 1 point if you USE ERA FARE ON KING NIK.
 1 point if you USE STOCK COTS ON SLEEP EELS.
-1 point if you USE SWORD ROWS ON PAST SAP. [?? use it on the fir too]
+1 point if you USE WASH SAW ON PAST SAP. [?? use it on the fir too]
 1 point if you USE PUCE CUP ON DOSE SOD.
 1 point if you USE DEMO MED ON GULF LUG.
 1 point if you USE SOME DEMOS ON YAHOO HAY.

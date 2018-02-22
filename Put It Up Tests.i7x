@@ -16,7 +16,7 @@ test part1 with "pack cap/stats/peep/poop/dial aid/refer/e/n/get trap art/s/s/ev
 
 test part2 with "word row/get era fare/e/n/w/w/use party trap on stark rats/n/use era fare on king nik/s/s/slam mammals/use stock cots on sleep eels/s/get stamp mats/e/get poo coop/w/n/n/e/e/s/w/get yob attaboy/e/n/puff up/e/pull up/get puce cup"
 
-test part3 with "w/w/w/n/use sword rows on past sap/use puce cup on past sap/s/e/e/e/s/get demo med/get troll ort/use puce cup on liar grail/n/w/w/w/n/e/use puce cup on dose sod/w/s/e/e/e/s/s/use puce cup on marge pegram"
+test part3 with "w/w/w/n/use wash saw on past sap/use puce cup on past sap/s/e/e/e/s/get demo med/get troll ort/use puce cup on liar grail/n/w/w/w/n/e/use puce cup on dose sod/w/s/e/e/e/s/s/use puce cup on marge pegram"
 
 test part4 with "w/get all/e/e/use stamp mats on slate metals/w/n/n/w/w/w/n/n/use demo med on gulf lug/s/s/e/e/e/e/use cash sac on cross orc"
 
@@ -32,7 +32,7 @@ test part9 with "n/w/n/use moor broom on tru yurt/s/e/use exam axe on lie veil/n
 
 test rollup with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9"
 
-test part10 with "w/use rep popper on yuge guy/e/s/s/e/e/e/n/use bro orb on madam/use balsa slab on wash saw/s/w/s/w/use not-a-baton on reifier/use murk rum on yard ray/emit noontime/use yard ray on test set/e/n/w/use tnt on ore zero/n/use me gem on knife fink/use taboo bat on verses rev/use yard ray on diktat kid/s/use x-ite tix on tix exit"
+test part10 with "w/use rep popper on yuge guy/e/s/s/e/e/e/n/use bro orb on madam/use balsa slab on sword rows/s/w/s/w/use not-a-baton on reifier/use murk rum on yard ray/emit noontime/use yard ray on test set/e/n/w/use tnt on ore zero/n/use me gem on knife fink/use taboo bat on verses rev/use yard ray on diktat kid/s/use x-ite tix on tix exit"
 
 chapter rollup
 

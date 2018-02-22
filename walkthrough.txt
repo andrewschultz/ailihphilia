@@ -134,7 +134,7 @@ You now have access to a few more rooms. But let's go cover a few we've seen, so
 
 >W.W.W.N
 
-(+1) >USE SWORD ROWS ON PAST SAP
+(+1) >USE WASH SAW ON PAST SAP
 >USE PUCE CUP ON PAST SAP
 
 >S.E.E.E.S.GET DEMO MED.GET TROLL ORT
@@ -351,7 +351,7 @@ Now with all the junk we have, we can make non-junk.
 
 (+1) >USE BRO ORB ON MADAM
 
-(+1) >USE BALSA SLAB ON WASH SAW
+(+1) >USE BALSA SLAB ON SWORD ROWS
 
 >S.W.S.W
 
