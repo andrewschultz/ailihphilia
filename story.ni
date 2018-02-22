@@ -1883,7 +1883,7 @@ to say lewd-details:
 	let lelt be number of entries in dwelt-first;
 	if lelt is not number of entries in dwelt-last, say "(BUG mismatched text array sizes) "; [should never happen, but just in case]
 	increment lewd-chap;
-	say "You read chapter [lewd-chap]: Dennis";
+	say "[one of]It's by Liberty Trebil and Bernie Weinreb. [or][stopping]You read chapter [lewd-chap]: Dennis";
 	repeat with X running from 1 to lewd-chap - 1:
 		say ", [entry X of dwelt-first]";
 	let temp be lewd-chap;
@@ -2733,6 +2733,10 @@ when play begins (this is the gender randomize rule):
 	gop Lee McMeel and Marge Pegram;
 	now art-sell is gend-rand of Mike Kim;
 	now poor-sick is gend-rand of Lee McMeel;
+	sort table of random authors in random order; [not strictly gender, but its gender can be changed]
+	if debug-state is true:
+		repeat through table of random authors:
+			if can-f entry is false and can-m entry is false, say "DUMB BUG can-f and can-m entries are both false."; [?? I should put this in a simple Python script instead. Maybe it can also vacuum up duplicate names just in case]
 	gender-sort;
 
 to gop (p1 - a person) and (p2 - a person):
@@ -2760,6 +2764,8 @@ carry out ming:
 	abide by the gender-too-late rule;
 	now art-sell is Mike Kim;
 	now poor-sick is Lee McMeel;
+	sort table of random authors in random order;
+	sort table of random authors in reverse can-m order;
 	gender-sort;
 	the rule succeeds;
 
@@ -2775,6 +2781,8 @@ carry out fing:
 	abide by the gender-too-late rule;
 	now art-sell is Nora Maron;
 	now poor-sick is Marge Pegram;
+	sort table of random authors in random order;
+	sort table of random authors in reverse can-f order;
 	gender-sort;
 	the rule succeeds;
 

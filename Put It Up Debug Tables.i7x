@@ -6,10 +6,16 @@ volume random names of people and places
 
 chapter random names
 
+[NOTE: can-m + can-f = a unisex name. False/False should never happen.]
+table of random authors
+person-name	can-m	can-f
+"Leta Patel"	false	true
+"Levi Rivel"	false	true
+
 table of random palindrome names
 person-name
 "Abe Keba"
-"Adam Imada"
+"Agnus Unga"
 
 chapter random businesses
 

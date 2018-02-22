@@ -6,10 +6,17 @@ volume random names of people and places
 
 chapter random names
 
+[NOTE: can-m + can-f = a unisex name. False/False should never happen.]
+table of random authors
+person-name	can-m	can-f
+"Leta Patel"	false	true
+"Levi Rivel"	false	true
+"Adam Imada"	true	false
+"Blake DeKalb"	true	true
+
 table of random palindrome names
 person-name
 "Abe Keba"
-"Adam Imada"
 "Agnus Unga"
 "Alena Panela"
 "Ali Vila"
@@ -29,7 +36,6 @@ person-name
 "Bernie Weinreb"
 "Bert Streb"
 "Betsey Esteb"
-"Blake Dekalb"
 "Blake Kalb"
 "Breana Erb"
 "Breanna Erb"
@@ -188,8 +194,6 @@ person-name
 "Lesa Basel"
 "Lesia Maisel"
 "Lessie Geissel"
-"Leta Patel"
-"Levi Rivel"
 "Li Cecil"
 "Lia Gail"
 "Liana Nail"
