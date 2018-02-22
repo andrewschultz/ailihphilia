@@ -29,6 +29,8 @@ book Trapeze Part
 
 book Evaded Ave
 
+understand "bung nub" as a mistake ("The bunk nub is in bad enough shape as-is.") when bunk nub is quicknear.
+
 book Yell Alley
 
 understand "pcp" as a mistake ("While searching for a bost, you're apprehended by a crank narc! I'm very disappointed in you. Not the whole drugs bit, but that this game didn't alter reality enough for you.[etg]") when player is in Yell Alley or player is in Evaded Ave.
@@ -60,6 +62,10 @@ book Apse Spa
 book Art Xtra
 
 book Red Roses Order
+
+understand "gal slag" as a mistake ("You managed to annoy Madam enough that she lashes out and conks you with a mortal blow with the Gal Flag. Okay, not really, but name calling won't help.") when Gal Flag is quicknear. [?? do fake death thing]
+
+understand "sworn rows" as a mistake ("The sword rows are inanimate and neutral. Unless you get too close to them.") when sword rows are quicknear.
 
 chapter yard ray misuse
 
@@ -192,17 +198,21 @@ understand "dorm rod" and "dorm" as a mistake ("You reveal no frat. Arf!") when 
 
 book My Gym
 
-understand "evade dave" as a mistake ("Dave's not here, man!") when player is not in My Gym.
+understand "evade dave" as a mistake ("Dave's not here, man!") when player is in My Gym and Dave is in ZeroRez.
 
-understand "sworn rows" as a mistake ("The sword rows are inanimate and neutral.") when player is in My Gym.
+understand "wasp saw" as a mistake ("You don't need the wash saw to turn into something that might sting you[if dave is in zerorez]. Dave's enough[else if player has wasp saw], especially since you are carrying it[else]. You should probably just take it, instead[end if].")
 
 book Swept Pews
 
 understand "liar frail" and "liar trail" as a mistake ("The grail remains in your way to the south. But it was worth a try.") when liar grail is quicknear.
 
-book Deli Tiled
+book Deft Fed
 
-understand "bon knob" as a mistake ("You don't need to help Sniffins with interior decorating, here.") when player is in Deli Tiled and YOB ATTABOY is in ZeroRez.
+understand "defy fed" as a mistake ("Way to go! Keep that Hunger! Well, I hope it's that and not conspiracy theories about the Fed.") when player is in Deft Fed and YOB ATTABOY is not in ZeroRez
+
+chapter Bon Snob
+
+understand "bon knob" as a mistake ("You don't need to help Sniffins with interior decorating, here.") when player is in Deft Fed and YOB ATTABOY is in ZeroRez.
 
 part row 5
 
