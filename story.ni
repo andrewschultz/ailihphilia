@@ -385,7 +385,7 @@ carry out verbing:
 	say "[line break][b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
 	say "[line break][b]AID[r] gives you hints for where you are. [b]ABOUT[r] and [b]CREDITS[r] tell about the game.";
 	say "[line break]Many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy.";
-	if wr-short-note is true and player is in Worn Row and workrow is true, say "[line break][b]REV[r], [b]ROT[r] and [b]REI[r] use an item on the reviver, rotator and reifier, respectively.";
+	if wr-short-note is true and player is in Worn Row and Worn Row is worky, say "[line break][b]REV[r], [b]ROT[r] and [b]REI[r] use an item on the reviver, rotator and reifier, respectively.";
 	if in-beta is true:
 		say "[line break][b]RR[r] lets you try all three items in the Word Row machines. If one nets a point, it goes last.";
 		say "[line break][b]ENDGAME[r] kicks you to the endgame, where you have all the weapons to win the game, though you will be limited to Fun [']Nuf and the Dirge Grid.";
@@ -1672,14 +1672,14 @@ carry out evadeing:
 
 book Worn Row
 
-Worn Row is west of My Gym. It is in Yelpley. "[if workrow is true]Three machines are here[else if wordrow is true]A tract cart is here, [tract-status][else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if][if redness ender is in Worn Row]. There's also a redness ender here, but it looks dangerous to get too close to[end if]."
+Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky]Three machines are here[else if Worn Row is wordy]A tract cart is here, [tract-status][else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if][if redness ender is in Worn Row]. There's also a redness ender here, but it looks dangerous to get too close to[end if]."
 
-printed name of Worn Row is "[if wordrow is true]Word[else if workrow is true]Work[else]Worn[end if] Row"
+printed name of Worn Row is "[if Worn Row is wordy]Word[else if Worn Row is worky]Work[else]Worn[end if] Row"
 
 Worn Row can be worny, wordy or worky. Worn Row is worny.
 
-understand "work row" and "work" as Worn Row when workrow is true.
-understand "word row" and "word" as Worn Row when wordrow is true.
+understand "work row" and "work" as Worn Row when Worn Row is worky.
+understand "word row" and "word" as Worn Row when Worn Row is wordy.
 
 chapter redness ender
 
@@ -1732,7 +1732,7 @@ carry out boreing:
 
 chapter workables
 
-a workable is a kind of thing. a workable has a number called useleft.
+a workable is a kind of thing. a workable has a number called useleft. useleft of a workable is usually 3.
 
 description of a workable is "[if useleft of item described is 0]It's broken now, but you got good use out of it[else if useleft of item described is 3]The only way you can tell it from the other two is because [printed name of item described in upper case] is printed on the front[else]Since you had success using [the item described], you feel more comfortable using it again[end if]."
 
@@ -1773,7 +1773,7 @@ reiing is an action applying to one thing.
 
 understand the command "rei" as something new.
 
-understand "rei [something]" as reiing when player is in Worn Row and reifier is not off-stage.
+understand "rei [something]" as reiing when player is in Worn Row and reifier is not off-stage and ever-workrow is true.
 
 carry out reiing:
 	if reifier is not in Worn Row, say "You need to bring back Work Row." instead;
@@ -1785,7 +1785,7 @@ reving is an action applying to one thing.
 
 understand the command "rev" as something new.
 
-understand "rev [something]" as reving when player is in Worn Row and reviver is not off-stage.
+understand "rev [something]" as reving when player is in Worn Row and reviver is not off-stage and ever-workrow is true.
 
 carry out reving:
 	if reviver is not in Worn Row, say "You need to bring back Work Row." instead;
@@ -1797,7 +1797,7 @@ roting is an action applying to one thing.
 
 understand the command "rot" as something new.
 
-understand "rot [something]" as roting when player is in Worn Row and rotator is not off-stage.
+understand "rot [something]" as roting when player is in Worn Row and rotator is not off-stage and ever-workrow is true.
 
 carry out roting:
 	if reifier is not in Worn Row, say "You need to bring back word row." instead;
@@ -1896,9 +1896,21 @@ check taking a book:
 			say "It's a bit unwieldy, but you manage to pick up [noun].";
 	now player has noun instead;
 
-chapter party trap
+chapter clear Worn Row
 
-the party trap is a thing. description is "It looks roughly like the notes from the trap art, but you don't need to worry about the details. Poking around would be dangerous. It looks You just hope it works right when you USE it. That would be cool. I mean, if you used it on things that deserved it.".
+to clear-worn-row:
+	if Worn Row is worny:
+		if redness ender is in Worn Row, move redness ender to TempMet;
+	else if Worn Row is wordy:
+		move tract cart to TempMet;
+		repeat with Q running through books:
+			if Q is in Worn Row, now Q is in TempMet;
+	else if Worn Row is worky:
+		if test set is in Worn Row, move test set to TempMet;
+		repeat with Q running through workables:
+			if Q is in Worn Row, now q is in TempMet;
+	else:
+		say "This should never happen, but it did. I'd be interested to see how."
 
 chapter workrowing
 
@@ -1907,8 +1919,6 @@ workrowing is an action applying to nothing.
 understand the command "workrow" as something new.
 
 understand "work row" and "workrow" as workrowing when player is in Worn Row.
-
-workrow is a truth state that varies.
 
 ever-workrow is a truth state that varies.
 
@@ -1919,10 +1929,10 @@ this is the wornrow-change rule:
 
 carry out workrowing:
 	abide by the wornrow-change rule;
-	if workrow is true, say "You're already in Work Row." instead;
-	now workrow is true;
-	now wordrow is false;
-	say "Three machines [one of][or]re[stopping]appear[if wordrow is true], replacing the books[end if].";
+	if Worn Row is worky, say "You're already in Work Row." instead;
+	clear-worn-row;
+	now Worn Row is worky;
+	say "Three machines [one of][or]re[stopping]appear[if Worn Row is wordy], replacing the books[end if].";
 	if ever-workrow is false, score-inc; [Yelpley/work row]
 	now ever-workrow is true;
 	now all workables are in Worn Row;
@@ -1930,11 +1940,6 @@ carry out workrowing:
 	if redness ender is in Worn Row, now redness ender is in TempMet;
 	now tract cart is in TempMet;
 	the rule succeeds;
-
-to decide whether shouldnt-revert:
-	unless player is in Worn Row, no;
-	if workrow is false and wordrow is false, no;
-	yes;
 
 chapter wordrowing
 
@@ -1944,15 +1949,13 @@ understand the command "wordrow" as something new.
 
 understand "word row" and "wordrow" as wordrowing when player is in Worn Row.
 
-wordrow is a truth state that varies.
-
 ever-wordrow is a truth state that varies.
 
 carry out wordrowing:
 	abide by the wornrow-change rule;
-	if wordrow is true, say "You're already in Word Row." instead;
-	now wordrow is true;
-	now workrow is false;
+	if Worn Row is wordy, say "You're already in Word Row." instead;
+	clear-worn-row;
+	now Worn Row is wordy;
 	now all workables are in TempMet;
 	now all books not in ZeroRez are in Worn Row; [?? what if you are carrying it]
 	if redness ender is in Worn Row, now redness ender is in TempMet;
@@ -1977,12 +1980,13 @@ understand "Worn Row" as wornrowing when player is in Worn Row.
 carry out wornrowing:
 	if psi wisp is in ZeroRez, say "You already used the redness ender for something." instead;
 	if psi wisp is not in Worn Row, say "You don't want to face the redness ender alone." instead;
+	clear-worn-row;
 	say "Worn Row rematerializes, along with the redness ender. Zap! Zot! It locks on the Psi Wisp, which explodes in a shower of rage. But somehow, the Psi Wisp connects enough to zap the redness ender back. Whew.";
-	move psi wisp to ZeroRez;
 	now being-chased is false;
+	clear-worn-row;
+	now Worn Row is worny;
+	move psi wisp to ZeroRez;
 	now redness ender is in ZeroRez;
-	now workrow is false;
-	now wordrow is false;
 	score-inc; [Yelpley/WORN ROW]
 	the rule succeeds;
 
@@ -2071,6 +2075,8 @@ Art Xtra is north of Yawn Way. It is in Yelpley. "You can go south or north here
 [??traded art]
 [??mike kim likes the look of your pact cap]
 
+chapter trap art
+
 the trap art is a thing in Art Xtra. "Some trap art sits here. It's free. You might as well take it.". description is "The trap art depicts a bunch of nasty, dirty animals being trapped--it's not a real trap, but maybe it could become one."
 
 El Doodle is a thing. description is "A jumble of raw creativity, it looks like it could be a map--or something--but it sure could use some paring down."
@@ -2080,6 +2086,10 @@ after going to Art Xtra when El Doodle is off-stage:
 		say "You tell [art-sell] about how you got rid of the stark rats. [art-sell], impressed, mentions there's something else for you. 'Someone left it here a while back. It's indecipherable. I can't use it, but maybe you can figure it out.'";
 		now player has El Doodle;
 	continue the action;
+
+chapter party trap
+
+the party trap is a thing. description is "It looks roughly like the notes from the trap art, but you don't need to worry about the details. Poking around would be dangerous. It looks You just hope it works right when you USE it. That would be cool. I mean, if you used it on things that deserved it.".
 
 chapter Mike Kim
 

@@ -113,6 +113,8 @@ understand "fun enuf" as a mistake ("Still ungrammatical!") when player is in Fu
 
 understand "funk nuf" as a mistake ("No cool music plays.") when player is in Fun Nuf.
 
+understand "fun snuf" as a mistake ("You vow to take saving fantasy worlds much more seriously. No more frivolity!") when player is in Fun Nuf.
+
 understand "fund nuf" as a mistake ("Nonsense! Adventure is its own reward!") when player is in Fun Nuf.
 
 chapter cap abuse
@@ -190,7 +192,7 @@ understand "bork Rob" as a mistake ("Maybe there is a more nonviolent way to get
 
 understand "borg Rob" as a mistake ("He is already assimilated.") when Rob is quicknear.
 
-understand "track cart" as a mistake ("Right idea, but the cart isn't going anywhere.") when player is in Worn Row and workrow is true.
+understand "track cart" as a mistake ("Right idea, but the cart isn't going anywhere.") when player is in Worn Row and Worn Row is worky.
 
 chapter dork rod
 
