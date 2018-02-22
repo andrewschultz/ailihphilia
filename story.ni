@@ -140,7 +140,7 @@ The Ore Zero is a tronpart.
 
 volume the player
 
-description of player is "Flesh. Self."
+description of player is "Flesh. Self.". initial appearance of player is "U R U".
 
 check dropping:
 	say "This game is not Pro-Drop. In other words, you don't need to drop anything. You may wish to USE it instead." instead;
@@ -310,10 +310,11 @@ check taking inventory when Dave-evade is true:
 	now all ingredients are unmarked for listing;
 	now all tronparts are unmarked for listing;
 	now all things worn by the player are unmarked for listing;
+	now state tats are unmarked for listing;
 	say "[if number of things carried by player > 7]Your scepsis pecs help you carry a lot of things, though you're suspicious and unclear as to how.[else]'Met item' list:[line break][end if]";
 	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
 	if number of ingredients carried by player > 0, say "Food found: [a list of ingredients carried by player].";
-	if number of things worn by player > 0, say "You are wearing: [a list of things worn by player].";
+	if number of things worn by player > 0, say "You are wearing: [a list of things worn by player][if player has state tats], in addition to state tats[end if].";
 	if number of tronparts carried by player > 0, say "North-tron parts found: [the list of tronparts carried by player][unless martini tram is off-stage]. The martini tram is in Fun [']Nuf, too[end if].";
 	the rule succeeds;
 
@@ -714,8 +715,6 @@ sage gas	tame mat	guru rug	--	--	true	true	true	Grebeberg	"The sage gas bubbles 
 sharp rahs	guru rug	tenet	--	--	true	true	true	Grebeberg	"The sharp rahs meld into the guru rug, which feels less weighted down by philosophy and floats away. Under it there's a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 Moor Broom	Tru Yurt	Exam Axe	--	--	true	true	false	Grebeberg	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe!" [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
-balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	"The sword rows cut into the balsa slab, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far."
-not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You will be able to smite a bad-faith pearl-clutcher for sure with one of these."
 DNA band	reifier	DNA hand	--	--	true	true	false	Yelpley	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand!"
 roto motor	DNA hand	bang nab	--	--	true	true	true	Yelpley	"The roto motor fits right in. The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on it, now: BANG NAB. I guess that's what to call it, now. It probably has the dexterity to deal with volatile stuff. The bomb mob, for their part, becomes a poor troop once they see what they've lost."
 Eroded Ore	reviver	Ore Zero	--	--	true	true	false	Yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
@@ -723,7 +722,9 @@ you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as th
 bang nab	TNT	TNT	--	--	true	true	false	Yelpley	"The Bang Nab walks on its index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course."
 nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
 rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
-Bro Orb	Madam	Yard Ray	--	no-tats rule	true	true	true	Yelpley	"The Bro Orb shines and drives Madam to rage. 'Live not on evil, madam, live not on evil!' you boom, as the ray does its work. She runs away, sobbing. The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
+Bro Orb	Madam	Yard Ray	--	wash-saw-reveal rule	true	true	true	Yelpley	"The Bro Orb shines and drives Madam to rage. 'Live not on evil, madam, live not on evil!' you boom, as the ray does its work. She runs away, sobbing. The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
+balsa slab	wash saw	not-a-baton	--	--	true	true	false	Yelpley	"The wash saw cuts the balsa slab along the markings, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far.[paragraph break]Just as you wonder why it hadn't washed anything, you get a huge blast of water, which is just fine. You've been carrying a lot of stuff a lot of places, and you feel refreshed for the final task."
+not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You will be able to smite a bad-faith pearl-clutcher for sure with one of these."
 murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
 Yard Ray	test set	--	ready-to-test rule	--	true	false	true	Dim Mid	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, successfully bribed." [b4:use tnt on ore zero]
@@ -838,10 +839,6 @@ this is the mob-to-alley rule:
 	now tnt is in Yell Alley;
 	the rule succeeds;
 
-this is the no-tats rule:
-	now state tats are in ZeroRez;
-	the rule succeeds;
-
 this is the radar-blink rule:
 	if radar-used is 1:
 		say "One more hit like that, and the radar might give out for good.";
@@ -873,6 +870,10 @@ this is the sod-to-cup rule:
 
 this is the tats-peripheral rule:
 	now state tats are peripheral;
+	the rule succeeds;
+
+this is the wash-saw-reveal rule:
+	move wash saw to red roses order;
 	the rule succeeds;
 
 this is the wear-garb rule:
@@ -1393,9 +1394,9 @@ Frush Surf is south of Ooze Zoo. "Slate metals are here by the shore. They're to
 
 [Line Nil is scenery in Frush Surf.]
 
-stamp mats are a thing in Frush Surf.
+stamp mats are a thing in Frush Surf. "Stamp mats lie here.". description is "The stamp mats appear to be engraved in order to cut a pattern out."
 
-The Kayo Yak is a chaser in Frush Surf.
+The Kayo Yak is a chaser in Frush Surf. "A kayo yak paws the ground here. It doesn't seem violent, but it seems up for rough play."
 
 chapter yakokaying
 
@@ -1517,7 +1518,7 @@ The Edits Tide is scenery in Swamp Maws. "A voice from the edits tide seems to s
 
 chapter sharp rahs
 
-the sharp rahs are a thing. "The sharp rahs get you enthused, but they're not enough by themselves. Perhaps they are a bit overdone. They need balance some way." [??rahs on mat]
+the sharp rahs are a thing. "The sharp rahs get you enthused, but they're not enough by themselves. Perhaps they are a bit overdone. They need balance some way.". description is "Reading the rahs leaves you feeling more motivated for a bit, but not long, because you used all; your mental energy getting motivated. Perhaps they need to be balanced with something more cerebral." [??rahs on mat]
 
 book Calcific Lac
 
@@ -1627,7 +1628,7 @@ Dave-evade is a truth state that varies.
 carry out evadeing:
 	if noun is Dave:
 		if Dave-evade is true, say "You don't need to evade Dave again.";
-		say "You evade Dave! Deked! Deked![paragraph break]Behind Dave, you find a pair of scepsis pecs. You're suspicious they actually work, but as you test them out, a surge goes through you. After a few seconds, you've half forgotten you have them.";
+		say "You evade Dave! Deked! Deked![paragraph break]Dave, frustrated from spinning around trying to catch you, runs off.[paragraph break]Suspicious there are no actual weight machines, you find a passage to a hidden spate of Sperses-Reps machines. You're suspicious they actually work, but as you test them out, a surge goes through you. Your attitude nets you scepsis-pecs, which will help you carry any amount or weight of things you pick up in your journey. After a few seconds, you've half forgotten you have them.";
 		now Dave is in ZeroRez;
 		now Dave-evade is true;
 		score-inc; [Yelpley/evade dave]
@@ -1647,7 +1648,7 @@ understand "word row" and "word" as Worn Row when wordrow is true.
 
 chapter redness ender
 
-the redness ender is a peripheral thing in Worn Row. "It also seems to double as a redness SENDER, as when you get close to look at it, an ominous red dot appears on you. You back off."
+the redness ender is a peripheral thing in Worn Row. "A redness ender sits here, looking lethal. Maybe it's part of why Worn Row is so worn--nobody wants to stick around enough to clean things up, or build anything.". description is "It also seems to double as a redness SENDER, as when you get close to look at it, an ominous red dot appears on you. You back off.".
 
 chapter tract cart
 
@@ -2041,13 +2042,17 @@ El Doodle is a thing. description is "A jumble of raw creativity, it looks like 
 
 after going to Art Xtra when El Doodle is off-stage:
 	if stark rats are in ZeroRez:
-		say "You tell Mike Kim about how you got rid of the stark rats. He's impressed. He mentions he has something else for you he can't decipher, but maybe you can. 'Someone left it for me. They called it El Doodle. Maybe you can make sense of it.'";
+		say "You tell [art-sell] about how you got rid of the stark rats. [art-sell], impressed, mentions there's something else for you. 'Someone left it here a while back. It's indecipherable. I can't use it, but maybe you can figure it out.'";
 		now player has El Doodle;
 	continue the action;
 
 chapter Mike Kim
 
-Mike Kim is a person in Art Xtra.
+Mike Kim is a person.
+
+chapter Nora Maron
+
+Nora Maron is a person.
 
 chapter state tats
 
@@ -2212,7 +2217,7 @@ the bunk nub is a thing in Evaded Ave. "A small bunk nub lies [if Revolt Lover i
 check taking bunk nub:
 	if Revolt Lover is in Evaded Ave, say "The Revolt Lover won't let you." instead;
 
-the stock cots are a plural-named thing.
+the stock cots are a plural-named thing. description is "The stock cots are cut cleverly from the remains of the bunk nub. They'll make a great place to sleep for any number of small animals."
 
 book Trapeze Part
 
@@ -2273,7 +2278,7 @@ the Mayo Yam is a liquid ingredient in Yell Alley. "A gross looking -- something
 
 chapter rep popper
 
-the rep popper is a thing in Yell Alley. "A rep popper lies here. You're wary of getting too close to it. You're not sure how good your rep is, but that thing looks [if dork rod is in ZeroRez]less fearsome than it used to[else]like it could embarrass you quickly[end if]."
+the rep popper is a thing in Yell Alley. "A rep popper lies here. You're wary of getting too close to it. You're not sure how good your rep is, but that thing looks [if dork rod is in ZeroRez]less fearsome than it used to[else]like it could embarrass you quickly[end if].". description is "The rep popper is a combination of a funny flower, joy buzzer, and several old stupid gags. You're not sure how it's supposed to work, and it's not something you carry around to show off how cool it is."
 
 check taking rep popper:
 	if player has taboo bat:
@@ -2360,17 +2365,23 @@ check going to Emo Dome:
 check going north in Emo Dome:
 	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a voice: 'DIFF-ID?'[paragraph break]You don't have anything identifying yourself. 'Oh, who? Go jog!' the voice continues. You think, hang? Nah." instead;
 	if Bro Orb is off-stage, say "You don't feel prepared enough to enter the Red Roses Order, yet." instead;
+	if not-a-baton is off-stage, say "You probably did all you needed to." instead;
+	say "You make sure your state tats are visible for scanning. They are accepted.[paragraph break][if madam is in red roses order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the wash saw.[end if]";
 	say "You make sure your state tats are visible for scanning. They are accepted and promptly rub off.[paragraph break]You step into what may be your final challenge in Yelpley..."
 
 book Red Roses Order
 
-Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in red roses order]The only visible way back is south, with a mist sim blocking the other directions, but you can't chicken out[else]Your work is done here. Time to go back south[end if]."
+Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in red roses order]The only visible way back is south, with a mist sim blocking the other directions, but you can't chicken out[else]A wash saw was revealed once the mist sim dispersed. You can go back south[end if]."
 
 Red Roses Order is above Emo Dome.
 
 chapter mist sim
 
 mist sim is peripheral scenery in Red Roses Order. "You can't see through it, but you really should be focused on Madam now, anyway."
+
+chapter wash saw
+
+The wash saw is scenery in Red Roses Order. "[if not-a-baton is in ZeroRez]It doesn't look like you broke it, but you probably don't need it any more[else]It looks automatic. Put something it can cut in, and get something out[end if]."
 
 chapter madam
 
@@ -2630,6 +2641,27 @@ after looking when being-chased is false:
 		start-chase Kayo Yak;
 		say "The Kayo Yak bounds after you!";
 	continue the action;
+
+volume gender switching
+
+chapter art-sell
+
+art-sell is a person that varies.
+
+a person has a person called gender-oppo. gender-oppo of a person is usually Diktat Kid.
+
+when play begins (this is the gender randomize rule):
+	if a random chance of 1 in 2 succeeds, now art-sell is Nora Maron;
+	table-comb art-sell;
+	move art-sell to Art Xtra;
+
+to table-comb (myp - a person):
+	if gender-oppo of myp is Diktat Kid, continue the action;
+	repeat through table of useons:
+		if use2 entry is gender-oppo of myp:
+			if debug-state is true, say "DEBUG: switched [use2 entry] to [myp].";
+			now use2 entry is myp;
+			continue the action;
 
 volume unsorted
 

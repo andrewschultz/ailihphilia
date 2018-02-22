@@ -200,7 +200,7 @@ book My Gym
 
 understand "evade dave" as a mistake ("Dave's not here, man!") when player is in My Gym and Dave is in ZeroRez.
 
-understand "wasp saw" as a mistake ("You don't need the wash saw to turn into something that might sting you[if dave is in zerorez]. Dave's enough[else if player has wasp saw], especially since you are carrying it[else]. You should probably just take it, instead[end if].")
+understand "wasp saw" as a mistake ("You don't need the wash saw to turn into something that might sting you[if Dave is in ZeroRez]. Dave's enough[else if player has wash saw], especially since you are carrying it[else]. You should probably just take it, instead[end if].") when wash saw is quicknear.
 
 book Swept Pews
 

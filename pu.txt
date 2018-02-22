@@ -11,6 +11,9 @@ out=put-it-up-invisiclues.htm
 Palindromes.
 It's a bit restrictive, since they're a bit rare.
 But I hope you find my riffs on them interesting.
+?Fake clues! Some people mentioned don't exist!
+The game picks a few people's names randomly on startup. There is one male and one female.
+None of this has any effect on the story. But I figured it was a decent way to combine (relative) gender balance with being able to show off a few of the cooler names I found.
 >Dim Mid
 >>FUN 'NUF
 ?Why can't I leave?
