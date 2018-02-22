@@ -2130,9 +2130,6 @@ chapter Nora Maron
 
 Nora Maron is a person.
 
-gender-oppo of Mike Kim is Nora Maron.
-gender-oppo of Nora Maron is Mike Kim.
-
 chapter state tats
 
 the state tats are a plural-named thing. description is "They say OMG MO[']."
@@ -2494,11 +2491,13 @@ book Drawl Ward
 
 Drawl Ward is south of Swept Pews. It is in Yelpley. "This passage is a T, walled off to the south."
 
-Marge Pegram is a person in Drawl Ward. "[one of]'Hi! I'm Marge Pegram. I ain't feeling so good, but I wondered if maybe I could get some medicine.'[or]Marge Pegram continues to moan colloquially about how sick she is.[stopping]"
+Marge Pegram is a person. "[one of]'Hi! I'm Marge Pegram. I ain't feeling so good, but I wondered if maybe I could get some medicine.'[or]Marge Pegram continues to moan colloquially about how sick she is.[stopping]"
+
+Lee McMeel is a person. "[one of]'Hi! I'm Lee McMeel. I ain't feeling so good, but I wondered if maybe I could get some medicine.'[or]Lee McMeel continues to moan colloquially about how sick he is.[stopping]"
 
 check going in Drawl Ward:
-	if Marge Pegram is in Drawl Ward:
-		if noun is west or noun is east, say "You hear Marge Pegram groaning and think it wouldn't be heroic to pass her by. Maybe you should find a way to help her feel less sick." instead;
+	if poor-sick is in Drawl Ward:
+		if noun is west or noun is east, say "You hear [poor-sick] groaning and think it wouldn't be heroic to pass by. Maybe you should find a way to help them feel less sick." instead;
 
 the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, unsurprisingly. It's about the size of a pint nip."
 
@@ -2722,14 +2721,66 @@ after looking when being-chased is false:
 
 volume gender switching
 
-chapter art-sell
+chapter picking random genders for players
 
-art-sell is a person that varies. art-sell is Mike Kim.
+art-sell is a person that varies.
+poor-sick is a person that varies.
 
 a person has a person called gender-oppo. gender-oppo of a person is usually Diktat Kid.
 
 when play begins (this is the gender randomize rule):
-	if a random chance of 1 in 2 succeeds, now art-sell is Nora Maron;
+	gop Mike Kim and Nora Maron;
+	gop Lee McMeel and Marge Pegram;
+	now art-sell is gend-rand of Mike Kim;
+	now poor-sick is gend-rand of Lee McMeel;
+	gender-sort;
+
+to gop (p1 - a person) and (p2 - a person):
+	now gender-oppo of p1 is p2;
+	now gender-oppo of p2 is p1;
+	now p1 is male;
+	now p2 is female;
+
+to decide which person is gend-rand of (op - a person):
+	if a random chance of 1 in 2 succeeds, decide on op;
+	decide on gender-oppo of op;
+
+this is the gender-too-late rule:
+	if Art Xtra is visited, say "Too late to switch genders." instead;
+
+chapter ming
+
+ming is an action applying to nothing.
+
+understand the command "m" as something new.
+
+understand "m" as ming.
+
+carry out ming:
+	abide by the gender-too-late rule;
+	now art-sell is Mike Kim;
+	now poor-sick is Lee McMeel;
+	gender-sort;
+	the rule succeeds;
+
+chapter fing
+
+fing is an action applying to nothing.
+
+understand the command "f" as something new.
+
+understand "f" as fing.
+
+carry out fing:
+	abide by the gender-too-late rule;
+	now art-sell is Nora Maron;
+	now poor-sick is Marge Pegram;
+	gender-sort;
+	the rule succeeds;
+
+chapter gender-sort
+
+to gender-sort:
 	table-comb art-sell;
 	move art-sell to Art Xtra;
 
