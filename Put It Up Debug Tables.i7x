@@ -78,6 +78,7 @@ randtxt
 "Ode? Redo!"
 "Rock! Cor!"
 
+[?? tafl.pl sort so parentheses as well as a/an/the don't affect alphabetization]
 table of swearstuff
 randtxt
 "(R)rude! Dur(r)!"

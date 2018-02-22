@@ -429,7 +429,6 @@ person-name
 "Tressie Weissert"
 "Troy Ort"
 "Wade Daw"
-"Ward Raw"
 "Yetta Battey"
 "Yetta Mattey"
 "Yevette Vey"
@@ -568,12 +567,14 @@ randtxt
 "Tone? Not!"
 "Tune nut!"
 
+[?? tafl.pl sort so parentheses as well as a/an/the don't affect alphabetization]
 table of swearstuff
 randtxt
 "(R)rude! Dur(r)!"
 "Bad? A dab!"
 "Dammit, I'm mad!"
 "Dark. Rad!"
+"Ward raw..."
 "Guff! Ug!"
 "Hoot! Ooh!"
 "Hot! Oh!"
@@ -631,6 +632,8 @@ randtxt
 "Gibe! Big!"
 "Misdeeds? I'm ..."
 "Wane? Naw!"
+"Hog, oh!"
+"Name: HE-MAN!"
 
 Put It Up Tables ends here.
 
