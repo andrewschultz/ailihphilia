@@ -340,7 +340,7 @@ check taking inventory when Dave-evade is true:
 	if number of helpdocs carried by the player is 1:
 		say "So far, you only have [the list of helpdocs carried by the player] as reference. More later, maybe?";
 	else:
-		say "While the [b][relevantest helpdoc carried by the player][r] seems useful as a guide, [other-docs] may shore up a few minor points.";
+		say "AIDE MEDIA: While the [b][relevantest helpdoc carried by the player][r] seems useful as a guide, [other-docs] may shore up a few minor points.";
 	if number of tronparts carried by player > 0, say "North-tron parts found: [the list of tronparts carried by player][unless martini tram is off-stage]. The martini tram is in Fun [']Nuf, too[end if].";
 	the rule succeeds;
 
@@ -1127,7 +1127,13 @@ saner arenas are peripheral scenery. "They're a sign that Grebeberg and Yelpley 
 
 chapter Diktat Kid
 
-Diktat Kid is a proper-named person in Dirge Grid.
+Diktat Kid is a proper-named person in Dirge Grid. description is "The Diktat Kid [if henchmen-left is 0]is yelling at you, now[else if henchmen-left is 1]alternates beteen yelling at the henchman you dispatched and the one remaining[else]is barking out orders needlessly to the Knife Fink and Verses Rev[end if]."
+
+to decide which number is henchmen-left:
+	let count be 0;
+	if Knife Fink is in Dirge Grid, increment count;
+	if Verses Rev is in Dirge Grid, increment count;
+	decide on count;
 
 every turn when Diktat Kid is quicknear:
 	say "The Diktat Kid whines '";
@@ -1136,7 +1142,7 @@ every turn when Diktat Kid is quicknear:
 
 chapter Knife Fink
 
-the Knife Fink is a person in Dirge Grid. "A Knife Fink wields some leet steel here."
+the Knife Fink is a person in Dirge Grid. "A Knife Fink wields some leet steel here.". description is "A rough customer, to be sure. But the Fink's dazed look suggests greed more than hate, obligation more than violence."
 
 the Knife Fink carries the leet steel.
 
@@ -1180,7 +1186,11 @@ Waster Fretsaw	"If you dispose of the Diktat Kid, the Waster Fretsaw won't be ab
 
 chapter Verses Rev
 
-the Verses Rev is a person in Dirge Grid. "A Verses Rev wields a part strap here."
+the Verses Rev is a person in Dirge Grid. "A Verses Rev wields a part strap here.". description of Verses Rev is "Looking pretty average in a par wrap, but the hate and brimstone the Rev intones at you is a different matter."
+
+the Verses Rev wears the Par Wrap.
+
+the Par Wrap is peripheral. description is "It's your average religious-person clothing.".
 
 the Verses Rev carries the part strap.
 
@@ -1259,7 +1269,7 @@ instead of doing something with past sap:
 
 chapter King Nik
 
-King Nik is a person in Cold Loc. "A man sits here, shaking his head. On seeing you, he gets up. 'I'm King Nik, and I came to Grebeberg for advice. Got any?'"
+King Nik is a person in Cold Loc. "[one of]A man sits here, shaking his head. On seeing you, he gets up. 'I'm King Nik, and I came to Grebeberg for advice. Got any?'[or]King Nik paces around hopelessly, looking lost.[stopping]". description is "He doesn't look very regal. Maybe he needs something that can help him gain, or learn, gravitas.".
 
 chapter Spur Ups
 
@@ -1416,7 +1426,7 @@ the martini tram is a tronpart. "That martini tram that appeared from Mont Nom i
 
 chapter Ian
 
-Ian is a person in Mont Nom. "[one of]'I'm Ian. I guess I can't make you leave, but you seem ill equipped to deal with the sophisticated blend of tastes served up by Mont Nom.'[or]Ian continues to look down his nose at you.[stopping]"
+Ian is a person in Mont Nom. "[one of]'I'm Ian. I guess I can't make you leave, but you seem ill equipped to deal with the sophisticated blend of tastes served up by Mont Nom.'[or]Ian continues to look down his nose at you.[stopping]". description is "Ian smirks back at you. You turn away. He seems just a bit too suave.".
 
 chapter nailing
 
@@ -1438,7 +1448,7 @@ book Ooze Zoo
 
 Ooze Zoo is south of Seer Trees. It is in Grebeberg. "[if sleep eels are in Ooze Zoo]Sleep eels block passage south, but you can still go back north[else]With the sleep eels gone, you can go north, or south to [s-dray][end if]."
 
-the sleep eels are plural-named people in Ooze Zoo. "The sleep eels squirm. Maybe there's a humane way to move them out."
+the sleep eels are plural-named people in Ooze Zoo. "The sleep eels look comfortable where they are. Maybe you can give them better sleeping quarters.". description is "The sleep eels squirm. Maybe there's a humane way to move them out."
 
 to say s-dray:
 	say "[if Frush Surf is visited]the Frush Surf[else]a coastal place[end if]"
@@ -1451,7 +1461,7 @@ Frush Surf is south of Ooze Zoo. "Slate metals are here by the shore. They're to
 
 stamp mats are a thing in Frush Surf. "Stamp mats lie here.". description is "The stamp mats appear to be engraved in order to cut a pattern out."
 
-The Kayo Yak is a chaser in Frush Surf. "A kayo yak paws the ground here. It doesn't seem violent, but it seems up for rough play."
+The Kayo Yak is a chaser in Frush Surf. "A kayo yak paws the ground here. It doesn't seem violent, but it seems up for rough play.". description is "[if being-chased is true]The Kayo Yak is really rumbling around, here[else]The Kayo Yak looks alert, ready for more than just standing around[end if]."
 
 chapter yakokaying
 
@@ -1505,7 +1515,7 @@ book Birch Crib
 
 Birch Crib is south of Mire Rim. It is in Grebeberg. "This is a homey little north-south passage, [if tent net is in ZeroRez]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet[end if]."
 
-Code Doc is a person in Birch Crib. "[one of]Someone is pacing back and forth here, muttering 'More ROM! MORE Rom! MORE ROM!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]"
+Code Doc is a person in Birch Crib. "[one of]Someone is pacing back and forth here, muttering 'More ROM! MORE Rom! MORE ROM!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket. Busy, but not too busy to help someone else."
 
 chapter Spa Maps
 
@@ -1557,7 +1567,7 @@ check going north in Swamp Maws when Known Wonk is in Swamp Maws: say "The Known
 
 chapter Known Wonk
 
-The Known Wonk is a person in Swamp Maws. "The Known Wonk stands by a Tru Yurt, [one of]figuring you'll have to do, even though you're not as interesting as a book[or]waiting for intellectual conversation[stopping]."
+The Known Wonk is a person in Swamp Maws. "The Known Wonk stands by a Tru Yurt, [one of]figuring you'll have to do, even though you're not as interesting as a book[or]waiting for intellectual conversation[stopping].". description is "Not particularly disheveled, but then, not terribly charismatic. The Known Wonk seems lost in more esoteric matters than helping you figure how to save Grebeberg and Yelpley."
 
 chapter  Exam Axe
 
@@ -1573,7 +1583,7 @@ The Edits Tide is scenery in Swamp Maws. "A voice from the edits tide seems to s
 
 chapter sharp rahs
 
-the sharp rahs are a thing. "The sharp rahs get you enthused, but they're not enough by themselves. Perhaps they are a bit overdone. They need balance some way.". description is "Reading the rahs leaves you feeling more motivated for a bit, but not long, because you used all; your mental energy getting motivated. Perhaps they need to be balanced with something more cerebral." [??rahs on mat]
+the sharp rahs are a thing. "The sharp rahs get you enthused, but they're not enough by themselves. Perhaps they are a bit overdone, with stuff like ZEST SEZ. They need balance some way.". description is "Reading the rahs leaves you feeling more motivated for a bit, but not long, because you used all; your mental energy getting motivated. Perhaps they need to be balanced with something more cerebral." [??rahs on mat]
 
 book Calcific Lac
 
@@ -1730,7 +1740,7 @@ for printing a locale paragraph about a book (called bk):
 
 chapter Rob
 
-Rob is a person in Worn Row. "[one of]'Oh, hi! I'm Rob, it's pretty uninteresting here, so you'd sort of fit in, but I'm trying to make it better. So, bug off, okay?'[or]Rob is still here giving you the side-eye.[stopping]"
+Rob is a person in Worn Row. "[one of]'Oh, hi! I'm Rob, it's pretty uninteresting here, so you'd sort of fit in, but I'm trying to make it better. So, bug off, okay?'[or]Rob is still here giving you the side-eye.[stopping]". description is "Rob sniffs and rolls his eyes as if he is too good for Worn Row."
 
 chapter test set
 
@@ -2124,7 +2134,7 @@ the party trap is a thing. description is "It looks roughly like the notes from 
 
 chapter Mike Kim
 
-Mike Kim is a person. "[one of]'Hi! I'm [art-sell]. Business is slow here, but I still have a few freebies. If you're able to use them, I'd be willing to trade for more.'[or][art-sell] smiles at you.[stopping]".
+Mike Kim is a person. "[one of]'Hi! I'm [art-sell]. Business is slow here, but I still have a few freebies. If you're able to use them, I'd be willing to trade for more.'[or][art-sell] smiles at you.[stopping]". description is "Artsy looking, but not pretentiously hipster-ish.".
 
 chapter Nora Maron
 
@@ -2185,7 +2195,7 @@ check going north in Gross Org: if etage gate is in Gross Org, say "The etage ga
 
 understand "evened" and "den evened" as Gross Org when Ned is in ZeroRez.
 
-Ned is a person in Gross Org. "'Ned's Den!' someone booms. You're guessing their name must be Ned."
+Ned is a person in Gross Org. "'Ned's Den!' someone booms. You're guessing their name must be Ned.". description is "Ned is sort of wildly flailing about, looking for a verbal or physical altercation, but that's not really your thing.".
 
 chapter puce cup
 
@@ -2235,7 +2245,7 @@ Deft Fed is south of Toll Lot. It is in Yelpley. printed name is "[if yob attabo
 
 chapter Sniffins
 
-Sniffins is a person in Deft Fed. "[one of]You hear a sniff, and the proprietor introduces themselves as Sniffins, apologizing for how lame the ambience and decor are, but there's just no INSPIRATION to do better[or]Sniffins sniffs here[stopping]."
+Sniffins is a person in Deft Fed. "[one of]You hear a sniff, and the proprietor introduces themselves as Sniffins, apologizing for how lame the ambience and decor are, but there's just no INSPIRATION to do better[or]Sniffins sniffs here[stopping].". description is "Sniffins looks despondent [if yob attaboy is in ZeroRez]and unfriendly despite your help[else]and pleading, for any sort of help[end if]."
 
 the Dirt Rid is a thing. description is "The Dirt Rid looks old and decrepit. Sniffins probably wore it out converting the Bon Snob, but it's yours now."
 
@@ -2280,7 +2290,7 @@ book Evaded Ave
 
 Evaded Ave is north of Art Xtra. It is in Yelpley. "It's a bit sleazy in here. You can go back south. Or you can go east and west."
 
-the Revolt Lover is a person in Evaded Ave. "[one of]Someone waving their fists and shouting at who-knows-what pauses as you walk by. 'I'm the Revolt Lover.' They peg you as not insurgent enough to deserve to visit west or east, without a proper gift[or]The Revolt Lover continues to pace back and forth here, making sure you don't sneak off any way but back south[stopping]."
+the Revolt Lover is a person in Evaded Ave. "[one of]Someone waving their fists and shouting at who-knows-what pauses as you walk by. 'I'm the Revolt Lover.' They peg you as not insurgent enough to deserve to visit west or east, without a proper gift[or]The Revolt Lover continues to pace back and forth here, making sure you don't sneak off any way but back south[stopping].". description is "Probably not angry enough to actually do anything besides block others from doing what they want."
 
 check going in Evaded Ave:
 	if Revolt Lover is in Evaded Ave:
@@ -2491,15 +2501,19 @@ book Drawl Ward
 
 Drawl Ward is south of Swept Pews. It is in Yelpley. "This passage is a T, walled off to the south."
 
-Marge Pegram is a person. "[one of]'Hi! I'm Marge Pegram. I ain't feeling so good, but I wondered if maybe I could get some medicine.'[or]Marge Pegram continues to moan colloquially about how sick she is.[stopping]"
-
-Lee McMeel is a person. "[one of]'Hi! I'm Lee McMeel. I ain't feeling so good, but I wondered if maybe I could get some medicine.'[or]Lee McMeel continues to moan colloquially about how sick he is.[stopping]"
-
-check going in Drawl Ward:
+check going west in Drawl Ward:
 	if poor-sick is in Drawl Ward:
-		if noun is west or noun is east, say "You hear [poor-sick] groaning and think it wouldn't be heroic to pass by. Maybe you should find a way to help them feel less sick." instead;
+		if noun is west or noun is east, say "You hear [poor-sick] groaning and think it wouldn't be nice to pass by. They'll let you by once you help them with whatever sickness they have." instead;
 
 the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, unsurprisingly. It's about the size of a pint nip."
+
+chapter Lee McMeel
+
+Lee McMeel is a person. "[one of]'Hi! I'm [poor-sick]. I ain't feeling so good, but I wondered if maybe I could get some medicine.'[or][poor-sick] continues to moan colloquially about the sickness, the pain.[stopping]". description is "[poor-sick] looks pretty ill. Nothing life-threatening, but too sick to go fetch even the dinkiest over-the-counter medication."
+
+chapter Marge Pegram
+
+Marge Pegram is a person.
 
 book Scrap Arcs
 

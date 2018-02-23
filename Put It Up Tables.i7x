@@ -533,6 +533,7 @@ randtxt
 "Dude(tte)! Dud!"
 "Rofl! For..."
 "Mess [']em!"
+"ZAP, spaz!"
 
 table of noesies
 randtxt
@@ -570,6 +571,7 @@ randtxt
 "Rock! Cor!"
 "Tone? Not!"
 "Tune nut!"
+"Yodeled? Oy!"
 
 [?? tafl.pl sort so parentheses as well as a/an/the don't affect alphabetization]
 table of swearstuff
