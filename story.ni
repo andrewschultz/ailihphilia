@@ -1259,7 +1259,7 @@ instead of doing something with past sap:
 
 chapter King Nik
 
-King Nik is a person in Cold Loc.
+King Nik is a person in Cold Loc. "A man sits here, shaking his head. On seeing you, he gets up. 'I'm King Nik, and I came to Grebeberg for advice. Got any?'"
 
 chapter Spur Ups
 
@@ -1304,7 +1304,7 @@ check going east in Sneer Greens:
 
 chapter Yuge Guy
 
-Yuge Guy is a proper-named person in Sneer Greens. description is "Bilgy. Glib."
+Yuge Guy is a proper-named person in Sneer Greens. description is "Bilgy. Glib.". "[one of]'I am the Yuge Guy!' someone booms. And he is huge, if not vertically.[or]The Yuge Guy continues carrying on about how the world stinks, except for him.[stopping]"
 
 understand "evil/clive" and "evil clive" as Yuge Guy.
 
@@ -1416,7 +1416,7 @@ the martini tram is a tronpart. "That martini tram that appeared from Mont Nom i
 
 chapter Ian
 
-Ian is a person in Mont Nom.
+Ian is a person in Mont Nom. "[one of]'I'm Ian. I guess I can't make you leave, but you seem ill equipped to deal with the sophisticated blend of tastes served up by Mont Nom.'[or]Ian continues to look down his nose at you.[stopping]"
 
 chapter nailing
 
@@ -1730,7 +1730,7 @@ for printing a locale paragraph about a book (called bk):
 
 chapter Rob
 
-Rob is a person in Worn Row.
+Rob is a person in Worn Row. "[one of]'Oh, hi! I'm Rob, it's pretty uninteresting here, so you'd sort of fit in, but I'm trying to make it better. So, bug off, okay?'[or]Rob is still here giving you the side-eye.[stopping]"
 
 chapter test set
 
@@ -2124,7 +2124,7 @@ the party trap is a thing. description is "It looks roughly like the notes from 
 
 chapter Mike Kim
 
-Mike Kim is a person.
+Mike Kim is a person. "[one of]'Hi! I'm [art-sell]. Business is slow here, but I still have a few freebies. If you're able to use them, I'd be willing to trade for more.'[or][art-sell] smiles at you.[stopping]".
 
 chapter Nora Maron
 
@@ -2366,7 +2366,7 @@ check taking rep popper:
 
 chapter bomb mob
 
-the bomb mob are plural-named people. description is "They're ignoring you, and that's probably for the best.".
+the bomb mob are plural-named people. description is "They're ignoring you, and that's probably for the best.". "You're lucky the bomb mob is not looking your way, or you'd be in trouble."
 
 understand "poor troop" and "poor/troop" as bomb mob when DNA hand is in ZeroRez.
 
@@ -2460,7 +2460,7 @@ The wash saw is scenery in Red Roses Order. "[if not-a-baton is in ZeroRez]It do
 
 chapter madam
 
-Madam is a person in Red Roses Order. Madam carries the gal flag. description is "MADAM stands here in defiance, holding the Gal Flag high."
+Madam is a person in Red Roses Order. Madam carries the gal flag. "MADAM stands here in defiance, holding the Gal Flag high and waving it.". description is "She is waving that Gal Flag. You should probably be grateful she doesn't have a girl rig, too. You need a way to neutralize the Gal Flag!"
 
 description of Gal Flag is "It's fluttering even without a breeze."
 
@@ -2708,7 +2708,7 @@ check going when being-chased is true:
 
 check going to Fun Nuf when being-chased is true: say "You feel yourself running up against an invisible barrier. Apparently, running away that way from the [chase-person] won't help." instead;
 
-the Psi Wisp is a chaser. chase-room of Psi Wisp is Pro Corp. description is "The Psi Wisp is very red, and it pulses fervently. If it had feelings, you'd be pretty sure it didn't like you."
+the Psi Wisp is a chaser. chase-room of Psi Wisp is Pro Corp. description is "The Psi Wisp is very red, and it pulses fervently. If it had feelings, you'd be pretty sure it didn't like you.". "[one of]A Psi Wisp appears and starts chasing you![or]The Psi Wisp is still chasing you![stopping]".
 
 after looking when being-chased is false:
 	if player is in pro corp and psi wisp is not in ZeroRez:
@@ -2744,6 +2744,8 @@ to gop (p1 - a person) and (p2 - a person):
 	now gender-oppo of p2 is p1;
 	now p1 is male;
 	now p2 is female;
+	now description of p2 is description of p1;
+	now initial appearance of p2 is initial appearance of p1;
 
 to decide which person is gend-rand of (op - a person):
 	if a random chance of 1 in 2 succeeds, decide on op;
@@ -3236,6 +3238,12 @@ carry out pering:
 
 volume internal testing - not for release
 
+include Put It Up Tests by Andrew Schultz. [must come first so blank-appear-okay is accepted]
+
+Diktat Kid is blank-appear-okay.
+Knife Fink is blank-appear-okay.
+Verses Rev is blank-appear-okay.
+
 the debug tweaks rule is listed first in the when play begins rulebook.
 
 when play begins (this is the debug tweaks rule):
@@ -3256,4 +3264,3 @@ when play begins (this is the make sure everyone is chatty rule):
 	else:
 		say "[count] of [number of people] unaccounted for.";
 
-include Put It Up Tests by Andrew Schultz.
