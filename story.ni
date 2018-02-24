@@ -54,7 +54,7 @@ Dim Mid is a region. max-score of Dim Mid is 10.
 
 Yelpley is a region. max-score of Yelpley is 37.
 
-Odd Do is a region. max-score of Odd Do is 9.
+Odd Do is a region. max-score of Odd Do is 10.
 
 index map with Dirge Grid mapped east of Toll Lot.
 
@@ -1491,6 +1491,12 @@ book Moo Room
 Moo Room is east of Frush Surf. It is in Grebeberg. "You can't see any cows, but you occasionally hear them. From what you can see, the farm belongs to a Mr. A, who is not around. The only way back is west."
 
 the poo coop is in Moo Room. "A poo coop sits here. Thankfully, it looks empty.". description is "While it's 1/4 too small to be a pooch coop, it's 1) empty and 2) somehow bigger on the inside than the outside. Maybe it can clean up a dirty area. Well, a less dirty area than the Moo Room where you found it."
+
+chapter senile felines
+
+the senile felines are peripheral things in Moo Room.
+
+the late petal is peripheral scenery in Moo Room.
 
 chapter yahoo hay
 
@@ -2967,10 +2973,24 @@ understand "slam mammals" as slammammalsing.
 
 carry out slammammalsing:
 	if slam-mam is true, say "You already did. Don't overdo it.";
-	if sleep eels are in DevReserved, say "Too late for that." instead;
 	unless player is in Ooze Zoo and sleep eels are in Ooze Zoo, say "You have no sympathetic audience." instead;
-	say "The sleep eels wake from their slumber briefly to squirm. They telephathically project their pleasure before going back to sleep. You've ... done something, I guess?";
+	say "The sleep eels wake from their slumber briefly to squirm. They telepathically project their pleasure [if sleep eels are in DevReserved]from their stock cots [end if]before going back to sleep. You've ... done something, I guess?";
 	abide by the LLP rule; [SLAM MAMMALS]
+	the rule succeeds;
+
+chapter stacking
+
+stacking is an action applying to nothing.
+
+understand the command "stack cats" as something new.
+
+understand "stack cats" as stacking.
+
+carry out stacking:
+	if senile felines are in DevReserved, say "You already did." instead;
+	if player is not in Moo Room, say "Not here." instead;
+	say "You stack the cats so they can reach the late petal, but once you do, the top one bats it and it falls. They walk away, disinterested. But they still seemed to have fun. Well, cats are like that.";
+	abide by the LLP rule; [STACK CATS]
 	the rule succeeds;
 
 chapter statsing
