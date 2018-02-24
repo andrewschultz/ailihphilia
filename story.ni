@@ -178,9 +178,9 @@ check requesting the score:
 	say "Your overall score so far is [score] of [maximum score][if score < 4]. But don't worry, points pile up pretty quickly once you get going[end if].";
 	say "Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do].";
 	if My Gym is visited or Evaded Ave is visited:
-		if number of grunty people is not number of grunty people in ZeroRez, say "You currently disposed of [number of grunty people in ZeroRez] grunts blocking your way: [list of grunty people in ZeroRez].";
-	if Yuge Guy is in ZeroRez, say "You've gotten rid of the Yuge Guy, Evil Clive.";
-	if Madam is in ZeroRez, say "You've gotten rid of the La Gal/Madam.";
+		if number of grunty people is not number of grunty people in DevReserved, say "You currently disposed of [number of grunty people in DevReserved] grunts blocking your way: [list of grunty people in DevReserved].";
+	if Yuge Guy is in DevReserved, say "You've gotten rid of the Yuge Guy, Evil Clive.";
+	if Madam is in DevReserved, say "You've gotten rid of the La Gal/Madam.";
 	if player has set o notes and north tron is off-stage:
 		let ni be number of tronparts carried by the player;
 		say "You also have [ni] of [number of tronparts] piece[if ni is not 1]s[end if] of the North Tron, according to the set-o-notes.";
@@ -348,7 +348,7 @@ after printing the name of a tronpart while taking inventory: if player has epic
 
 after printing the name of pact cap while taking inventory: if cap-pace is true, say " (bent slightly to be a PACE cap too)".
 
-after printing the name of yard ray while taking inventory: say " ([unless murk rum is in ZeroRez]un[end if]charged)".
+after printing the name of yard ray while taking inventory: say " ([unless murk rum is in DevReserved]un[end if]charged)".
 
 after printing the name of spa maps while taking inventory: say "([if maps-explained is true]deciphered[else]indecipherable[end if])".
 
@@ -574,9 +574,9 @@ understand "use [something] with [something]" as useoning it with.
 
 to build-the-tron:
 	move north tron to Fun Nuf;
-	now all tronparts are in ZeroRez;
+	now all tronparts are in DevReserved;
 	say "You build the north tron with the instructions from the epicer recipe. It points north and blasts a hole with a huge tron snort before collapsing into uselessness. You tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
-	now epicer recipe is in ZeroRez;
+	now epicer recipe is in DevReserved;
 	now Dirge Grid is mapped north of Fun Nuf;
 	now Fun Nuf is mapped south of Dirge Grid;
 	score-inc; [Dim Mid/USE TNT ON ORE ZERO]
@@ -596,8 +596,8 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 		say "Those are both too solid to go together.";
 	else:
 		say "You mix [the i1] with [the i2] in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.[paragraph break]";
-		now i1 is in ZeroRez;
-		now i2 is in ZeroRez;
+		now i1 is in DevReserved;
+		now i2 is in DevReserved;
 		score-inc; [Grebeberg/USE GIFT FIG ON MAYO YAM&USE SNACK CANS ON UFO TOFU]
 		if chef-yet is true:
 			say "A martini tram rattles out from behind the Ark of Okra. Guess you need drinks with your, uh, food![paragraph break][if player does not have the epicer recipe]You're shocked to see it, and it rollls further down, over the turf rut to Dumb Mud, then back through the Seer Trees to Fun [']Nuf[else]But you're prepared for it, with your epicer recipe. You move it back to Fun [']Nuf, where it looks like a good base structure for your North Tron[end if]..";
@@ -639,9 +639,9 @@ check useoning it with:
 				if there is a getit entry:
 					now player has getit entry;
 				if d2 entry is true:
-					now use2 entry is in ZeroRez;
+					now use2 entry is in DevReserved;
 				if d1 entry is true:
-					now use1 entry is in ZeroRez;
+					now use1 entry is in DevReserved;
 				if sco entry is true:
 					if there is a reg-plus entry:
 						reg-inc reg-plus entry;
@@ -653,7 +653,7 @@ check useoning it with:
 					consider the postproc entry;
 				if there is a getit entry and player has getit entry: [try to let "it" be defined]
 					set the pronoun it to getit entry;
-				else if use1 entry is in ZeroRez and use2 entry is not in ZeroRez:
+				else if use1 entry is in DevReserved and use2 entry is not in DevReserved:
 					set the pronoun it to use2 entry;
 				if second noun is a workable:
 					wear-down second noun;
@@ -768,7 +768,7 @@ section pre-use rules
 [please add alphabetically]
 
 this is the coop-full rule:
-	if gnu dung is in ZeroRez, the rule succeeds;
+	if gnu dung is in DevReserved, the rule succeeds;
 	say "The poo coop is empty, but if it wasn't, that could work.";
 	the rule fails;
 
@@ -784,7 +784,7 @@ this is the maps-still-confusing rule:
 	if maps-explained is true:
 		say "You already got the Code Doc to decipher the spa maps.";
 		the rule fails;
-	if tent net is not in ZeroRez:
+	if tent net is not in DevReserved:
 		say "'I might, but I need some help here first, to make my home here properly homey.'";
 		the rule fails;
 	the rule succeeds;
@@ -795,7 +795,7 @@ this is the maps-readable rule:
 	the rule fails;
 
 this is the Ned-gone rule:
-	if Ned is in ZeroRez, the rule succeeds;
+	if Ned is in DevReserved, the rule succeeds;
 	say "Good idea, but not with Ned around.";
 	the rule fails;
 
@@ -812,12 +812,12 @@ this is the ready-to-test rule:
 [??	say "That seems right, but you should probably go where there aren't many people. Like back to Fun [']Nuf.";]
 
 this is the sap-still-on-tree rule:
-	if sword rows are not in ZeroRez, the rule succeeds;
+	if sword rows are not in DevReserved, the rule succeeds;
 	say "You already chipped the sap off the tree.";
 	the rule fails;
 
 this is the sap-on-ground-yet rule:
-	if sword rows are in ZeroRez, the rule succeeds;
+	if sword rows are in DevReserved, the rule succeeds;
 	say "You need a way to chip the sap off the fir.";
 	the rule fails;
 
@@ -841,13 +841,13 @@ this is the chase-in-zoo rule:
 
 this is the empty-cup rule:
 	now puce cup is empty;
-	if Marge Pegram is in ZeroRez and liar grail is in ZeroRez, say "You probably don't need the puce cup any more.";
+	if Marge Pegram is in DevReserved and liar grail is in DevReserved, say "You probably don't need the puce cup any more.";
 	the rule succeeds;
 
 this is the hay-gone rule:
-	if SOME DEMOS is in ZeroRez and dork rod is in ZeroRez:
+	if SOME DEMOS is in DevReserved and dork rod is in DevReserved:
 		say "You used up all the hay.";
-		now yahoo hay is in ZeroRez;
+		now yahoo hay is in DevReserved;
 	else:
 		say "There's still some hay (yah!) left over for another creative project.";
 	the rule succeeds;
@@ -857,7 +857,7 @@ this is the kid-bye rule:
 	the rule succeeds;
 
 this is the kid-left rule:
-	if Verses Rev is in ZeroRez and Knife Fink is in ZeroRez, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'I should've gone with Mad Adam. Iller Elli. Able Melba.'";
+	if Verses Rev is in DevReserved and Knife Fink is in DevReserved, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'I should've gone with Mad Adam. Iller Elli. Able Melba.'";
 	the rule succeeds;
 
 this is the maps-explain rule:
@@ -875,7 +875,7 @@ this is the radar-blink rule:
 	else:
 		say "Between the UFO tofu dropped on the radar and the eroded ore getting too close to it, the radar shorts out. After a pop, it splits open. A roto motor falls out and looks undamaged, so you take it.";
 		now player has roto motor;
-		now radar is in ZeroRez;
+		now radar is in DevReserved;
 	the rule succeeds;
 
 this is the rahs-too rule:
@@ -960,7 +960,7 @@ the Tix Exit is scenery. "It's nothing particularly fancy. I'm going to go out o
 check going south in Fun Nuf:
 	if player has X-ITE TIX, try useoning X-ITE TIX with Tix Exit instead;
 	if Tix Exit is in Fun Nuf, say "The Tix Exit blocks your way to where Evac Ave was. You try to look for a way to bust through, but a voice booms 'EL BARRABLE!'[paragraph break]I guess you're stuck questing, here." instead;
-	if flee elf is in ZeroRez, say "You have no way back now that you accepted the Pact Cap." instead;
+	if flee elf is in DevReserved, say "You have no way back now that you accepted the Pact Cap." instead;
 	if elf-warn < 3, increment elf-warn;
 	say "[if elf-warn is 1]The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go[else if elf-warn is 2]'Oy! Oy! Yo-yo!' The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap[else]The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else[end if].";
 	if elf-warn < 3, the rule succeeds;
@@ -975,10 +975,10 @@ check going in Fun Nuf:
 		if endgame-test is true, say "Endgame testing is on. So you are restricted to the final combat." instead;
 
 check going north in Fun Nuf:
-		if Diktat Kid is in ZeroRez, say "No need to go back." instead;
+		if Diktat Kid is in DevReserved, say "No need to go back." instead;
 		if north tron is not in Fun Nuf, say "Not until you built the North-Tron." instead;
 		if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
-		if murk rum is not in ZeroRez, say "You have the yard ray, but it isn't, well, charged." instead;
+		if murk rum is not in DevReserved, say "You have the yard ray, but it isn't, well, charged." instead;
 		if player does not have ME gem or player does not have Taboo Bat, say "You feel well equipped ... but well equipped enough?";
 
 chapter Pact Cap
@@ -1004,7 +1004,7 @@ understand "pack cap" as packing.
 carry out packing:
 	if the player has the pact cap, say "You already did.";
 	say "Yes, that's how to get the cap. You are ready to go![paragraph break]'Good job! Here's a set o['] notes to help with that darer ad,' the Flee Elf says. It salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
-	move flee elf to ZeroRez;
+	move flee elf to DevReserved;
 	now Tix Exit is in Fun Nuf;
 	now player has set o notes;
 	now player wears the cap;
@@ -1022,7 +1022,7 @@ understand the command "pacy cap" as something new.
 understand "pace cap" and "pacy cap" as paceing.
 
 carry out paceing:
-	if kayo yak is in ZeroRez, say "You had enough high-speed fun for one game. If you want to zip around the map, though, GT is always an option." instead;
+	if kayo yak is in DevReserved, say "You had enough high-speed fun for one game. If you want to zip around the map, though, GT is always an option." instead;
 	if pact cap is in Fun Nuf, say "That'll work later, but you need something a little different to actually TAKE the pact cap." instead;
 	if cap-pace is true, say "It's already a pace cap." instead;
 	if mrlp is Grebeberg, now cap-pace is whether or not cap-pace is true;
@@ -1061,7 +1061,7 @@ after examining set o notes for the first time, say "More useful than the Darer 
 
 chapter tile lit
 
-the tile lit is scenery in Fun Nuf. "It's a rough compass, with GREBEBERG west by it, YELPLEY east, Evac Ave south and Dirge Grid north. You can't seem to go [if flee elf is in ZeroRez]south and [end if]north, though." [ic]
+the tile lit is scenery in Fun Nuf. "It's a rough compass, with GREBEBERG west by it, YELPLEY east, Evac Ave south and Dirge Grid north. You can't seem to go [if flee elf is in DevReserved]south and [end if]north, though." [ic]
 
 check taking tile lit: say "It's sort of embedded into the ground. It looks nice there, anyway, and it's useful for information."
 
@@ -1069,7 +1069,7 @@ chapter elite tile
 
 the elite tile is scenery. "Done? Nod![line break]Nif-T-Fin!"
 
-after going to Fun Nuf when Diktat Kid is in ZeroRez:
+after going to Fun Nuf when Diktat Kid is in DevReserved:
 	say "You notice the elite tile has changed slightly.";
 	continue the action;
 
@@ -1077,9 +1077,9 @@ book Dirge Grid
 
 Dirge Grid is a room in Dim Mid. "The only way back is south[if Diktat Kid is in Dirge Grid], but you can't really run away from the Diktat Kid. A Tru Hurt is pointed at you, but if you deal with the Kid, that won't matter.[else], and you might as well go that way, now you've vanquished the Diktat Kid. Saner Arenas surround you [end if]"
 
-check going to Dirge Grid: if test set is not in ZeroRez, say "[if player does not have yard ray]You don't have an adequate weapon[else]You need to get some practice with the Yard Ray before going north[end if]." instead;
+check going to Dirge Grid: if test set is not in DevReserved, say "[if player does not have yard ray]You don't have an adequate weapon[else]You need to get some practice with the Yard Ray before going north[end if]." instead;
 
-printed name of Dirge Grid is "[if Diktat Kid is in ZeroRez]Top Spot[else]Dirge Grid[end if]"
+printed name of Dirge Grid is "[if Diktat Kid is in DevReserved]Top Spot[else]Dirge Grid[end if]"
 
 for writing a paragraph about a person when player is in Dirge Grid:
 	now all people in Dirge Grid are mentioned;
@@ -1103,11 +1103,11 @@ for writing a paragraph about a person when player is in Dirge Grid:
 			say "You still don't feel confident of victory. You need just a little more.";
 			move player to Fun Nuf, without printing a room description;
 			continue the action;
-		else if Knife Fink is in ZeroRez and Verses Rev is in ZeroRez:
+		else if Knife Fink is in DevReserved and Verses Rev is in DevReserved:
 			say "The Diktat Kid continues to rage at you. Two henchmen gone, but it's not over!";
-		else if Knife Fink is in ZeroRez:
+		else if Knife Fink is in DevReserved:
 			say "The Diktat Kid continues to yell at the Verses Rev to do something.";
-		else if Verses Rev is in ZeroRez:
+		else if Verses Rev is in DevReserved:
 			say "The Diktat Kid continues to yell at the Knife Fink to do something.";
 		else:
 			say "The Diktat Kid yells and wonders why the Verses Rev and Knife Fink haven't disposed of you, yet.";
@@ -1179,7 +1179,7 @@ voodoo v	"You don't want or need to mess with the voodoo v."
 leet steel	"You want to focus on the Knife Fink and not the leet steel."
 part strap	"You want to focus on the Verses Rev and not the part strap."
 state tats	"You don't need to do anything to or with the state tats, now that you're wearing them."
-girt rig	"The girt rig is too sturdy to move. It's just there to block you exploring too far. The Yuge Guy [if Yuge Guy is in ZeroRez]was[else]is[end if] the focus, here."
+girt rig	"The girt rig is too sturdy to move. It's just there to block you exploring too far. The Yuge Guy [if Yuge Guy is in DevReserved]was[else]is[end if] the focus, here."
 mist sim	"Getting distracted by the mist sim would be a good way to get blindsided by Madam."
 Tru Hurt	"If you dispose of the Diktat Kid, the Tru Hurt won't be able to hurt you."
 Waster Fretsaw	"If you dispose of the Diktat Kid, the Waster Fretsaw won't be able to hurt you."
@@ -1219,9 +1219,9 @@ understand the command "emit" as something new.
 understand "emit [text]" as emiting when player has yard ray.
 
 carry out emiting:
-	if murk rum is not in ZeroRez, say "The Yard Ray isn't charged enough to emit anything." instead;
+	if murk rum is not in DevReserved, say "The Yard Ray isn't charged enough to emit anything." instead;
 	if player is in location of Yuge Guy, say "No...the Yuge Guy needs to be defeated by other means." instead;
-	if Diktat Kid is in ZeroRez, say "You already got rid of the Diktat Kid." instead;
+	if Diktat Kid is in DevReserved, say "You already got rid of the Diktat Kid." instead;
 	if the topic understood matches "noontime":
 		say "BOOM! The yard ray emits so much light, you immediately have to switch it off. Well, that was a good start. Now you want to make sure you can aim it at something that can be destroyed.";
 		now emitted is true;
@@ -1253,19 +1253,19 @@ the gift fig is a solid ingredient. description is "Well, it's a fig."
 
 book Cold Loc
 
-Cold Loc is north of Seer Trees. It is in Grebeberg. "A rift fir that blocks a steep drop west. [if sword rows are in ZeroRez]The past sap you cut from it is lumped on the ground[else]Some past sap clings to the rift fir[end if]."
+Cold Loc is north of Seer Trees. It is in Grebeberg. "A rift fir that blocks a steep drop west. [if sword rows are in DevReserved]The past sap you cut from it is lumped on the ground[else]Some past sap clings to the rift fir[end if]."
 
 A rift fir is scenery in Cold Loc. "It's a rife fir. You're not getting past it, but you don't need to."
 
-the past sap is scenery in Cold Loc. "[if sword rows are in ZeroRez]It is in a lump on the ground[else]It's stuck to the rift fir, but with the right tool, maybe you could pry it off[end if]."
+the past sap is scenery in Cold Loc. "[if sword rows are in DevReserved]It is in a lump on the ground[else]It's stuck to the rift fir, but with the right tool, maybe you could pry it off[end if]."
 
 check going west in Cold Loc: say "The rift fir blocks the way to much more dangerous places." instead;
 
-check taking past sap: say "[if liar grail is in ZeroRez]You probably don't need any more past sap, now that you used it to dispose of the Liar Grail.[else]It's too sticky to carry around by itself. Maybe have a container carrying it?[end if]"
+check taking past sap: say "[if liar grail is in DevReserved]You probably don't need any more past sap, now that you used it to dispose of the Liar Grail.[else]It's too sticky to carry around by itself. Maybe have a container carrying it?[end if]"
 
 instead of doing something with past sap:
 	if action is procedural, continue the action;
-	say "[if liar grail is in ZeroRez]With the liar grail gone, you don't want to have to deal with the past sap again[else]The past sap might be useful, but you need a way to take it, first[end if]."
+	say "[if liar grail is in DevReserved]With the liar grail gone, you don't want to have to deal with the past sap again[else]The past sap might be useful, but you need a way to take it, first[end if]."
 
 chapter King Nik
 
@@ -1320,7 +1320,7 @@ understand "evil/clive" and "evil clive" as Yuge Guy.
 
 chapter girt rig
 
-the girt rig is peripheral scenery in Sneer Greens. description is "It is too sturdy to climb or break down. But then, you probably just need[if Yuge Guy is in ZeroRez]ed[end if] to deal with the Yuge Guy, here."
+the girt rig is peripheral scenery in Sneer Greens. description is "It is too sturdy to climb or break down. But then, you probably just need[if Yuge Guy is in DevReserved]ed[end if] to deal with the Yuge Guy, here."
 
 chapter murk rum
 
@@ -1328,7 +1328,7 @@ the murk rum is a drinkable thing. description is "You're not sure what's in it,
 
 book Dumb Mud
 
-Dumb Mud is west of Seer Trees. It is in Grebeberg. "A turf rut to the south is [if poo coop is in ZeroRez]filled in enough[else]too deep[end if] to cross. The way west is [if gnu dung is in ZeroRez]blocked by gnu dung[else]free[end if]. [if lie veil is in Dumb Mud]A lie veil blocks your way[else]With the lie veil removed, you can go[end if] north."
+Dumb Mud is west of Seer Trees. It is in Grebeberg. "A turf rut to the south is [if poo coop is in DevReserved]filled in enough[else]too deep[end if] to cross. The way west is [if gnu dung is in DevReserved]blocked by gnu dung[else]free[end if]. [if lie veil is in Dumb Mud]A lie veil blocks your way[else]With the lie veil removed, you can go[end if] north."
 
 The lie veil is scenery in Dumb Mud. "It looks untrustworthy."
 
@@ -1338,7 +1338,7 @@ check going west in Dumb Mud:
 	if gnu dung is in Dumb Mud, say "Not through the gnu dung you aren't." instead;
 
 check going south in Dumb Mud:
-	if poo coop is not in ZeroRez, say "The turf rut is too deep. You need a way to fill it in." instead;
+	if poo coop is not in DevReserved, say "The turf rut is too deep. You need a way to fill it in." instead;
 	if Mont Nom is unvisited, say "With the turf rut filled in, the way across remains stable, and it even smells okay! Bonus! You climb up to...";
 
 check going north in Dumb Mud:
@@ -1350,9 +1350,9 @@ instead of doing something with gnu dung:
 
 chapter turf rut
 
-The turf rut is scenery in Dumb Mud. "[if poo coop is in ZeroRez]Since you filled it in, you can walk across it to the south[else]It's deep enough to prevent you going south[end if]."
+The turf rut is scenery in Dumb Mud. "[if poo coop is in DevReserved]Since you filled it in, you can walk across it to the south[else]It's deep enough to prevent you going south[end if]."
 
-understand "turd rut" as turf rut when poo coop is in ZeroRez.
+understand "turd rut" as turf rut when poo coop is in DevReserved.
 
 book Le Babel
 
@@ -1390,7 +1390,7 @@ carry out mussing:
 	if noun is not opossum, say "You don't need to muss [the noun]." instead;
 	say "You reach over and give the opossum a loving scratch. It perks up! Suddenly, it looks around and runs off, in search of home, wherever that is.";
 	abide by the LLP rule; [MUSS OPOSSUM]
-	move opossum to ZeroRez;
+	move opossum to DevReserved;
 	the rule succeeds.
 
 chapter balsa slab
@@ -1409,7 +1409,7 @@ check taking Bro Orb:
 	say "You wonder if you should take the Bro Orb. If you deserve to. But you reread the tenet and whisper to yourself, 'Nag, ol['] slogan,' and feel balanced enough to take the Bro Orb and accept the responsibility for doing so.";
 
 report taking Bro Orb:
-	now tenet is in ZeroRez;
+	now tenet is in DevReserved;
 	say "Taking the Bro Orb requires two hands. You watch the tenet flutter off beyond the Voodoo V. Oh, well. You carry the tenant's message in your mind and heart and stuff anyway, now.";
 
 book Mont Nom
@@ -1437,10 +1437,10 @@ understand the command "nail" as something new.
 understand "nail [something]" as nailing when player is in Mont Nom and Ian is in Mont Nom.
 
 carry out nailing:
-	if Ian is in ZeroRez, say "There's nobody named Elian to nail later in the game, so this isn't an action you need to take any more." instead;
+	if Ian is in DevReserved, say "There's nobody named Elian to nail later in the game, so this isn't an action you need to take any more." instead;
 	if noun is not Ian, say "You'll know what or whom to nail, and that's not it." instead;
 	say "You wait and hide. After a while, you catch Ian picking his nose absent-mindedly. You call him on it! In the presence of food, no less! Ian hurries away in shame across the Turf Rut. He takes one look at the, um, bridge and realizes that if he hadn't DONE anything gross, he wouldn't have to CROSS anything gross.";
-	move Ian to ZeroRez;
+	move Ian to DevReserved;
 	score-inc; [Grebeberg/nail ian]
 	the rule succeeds;
 
@@ -1473,12 +1473,12 @@ understand the command "yak okay" as something new.
 understand "yak okay" as yakokaying.
 
 carry out yakokaying:
-	if ergot ogre is in ZeroRez, say "[if yak is in location of player]The yak has served you well. It deserves a rest.[else]You relive past glories. Why not?[end if]" instead;
+	if ergot ogre is in DevReserved, say "[if yak is in location of player]The yak has served you well. It deserves a rest.[else]You relive past glories. Why not?[end if]" instead;
 	if yak is in location of player and ergot ogre is in location of player:
 		say "The kayo yak surges at the ergot ogre and knocks it over with a few ... smart rams! The ergot won't spread to the yak's horns, so that's good. The ogre dusts itself off and walks away, damp, mad. The yak, for its part, looks relaxed--almost like a tao goat--and heads off, not to the Frush Surf, but somewhere calmer.[paragraph break]You think you hear an elk cackle in the distance.";
 		score-inc; [Grebeberg/YAK OKAY]
-		now yak is in ZeroRez;
-		now ergot ogre is in ZeroRez;
+		now yak is in DevReserved;
+		now ergot ogre is in DevReserved;
 		now being-chased is false;
 		the rule succeeds;
 	if yak is in location of player, say "The yak sees nothing to attack." instead;
@@ -1513,7 +1513,7 @@ The Eroded Ore is a thing. description is "You're no expert metallurgist, but it
 
 book Birch Crib
 
-Birch Crib is south of Mire Rim. It is in Grebeberg. "This is a homey little north-south passage, [if tent net is in ZeroRez]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet[end if]."
+Birch Crib is south of Mire Rim. It is in Grebeberg. "This is a homey little north-south passage, [if tent net is in DevReserved]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet[end if]."
 
 Code Doc is a person in Birch Crib. "[one of]Someone is pacing back and forth here, muttering 'More ROM! MORE Rom! MORE ROM!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket. Busy, but not too busy to help someone else."
 
@@ -1529,7 +1529,7 @@ maps-explained is a truth state that varies.
 
 book Lair Trial
 
-Lair Trial is south of Birch Crib. It is in Grebeberg. "This lair bends north and east, [if ergot ogre is in ZeroRez], and with the trial over, you're free to go either way[end if]."
+Lair Trial is south of Birch Crib. It is in Grebeberg. "This lair bends north and east, [if ergot ogre is in DevReserved], and with the trial over, you're free to go either way[end if]."
 
 the ergot ogre is a person in Lair Trial. "An ergot ogre blocks the way east.". description is "It looks vicious, and you don't want it touching you, due to disease and possible dismemberment. You need to get the ogre out of the way, somehow.".
 
@@ -1561,7 +1561,7 @@ check useoning tenet with Bro Orb: try taking Bro Orb instead;
 
 book Swamp Maws
 
-Swamp Maws is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west. You can go north or south here. [if Known Wonk is in ZeroRez]The Known Wonk's Tru-Yurt is here. It looks really messy[end if]."
+Swamp Maws is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west. You can go north or south here. [if Known Wonk is in DevReserved]The Known Wonk's Tru-Yurt is here. It looks really messy[end if]."
 
 check going north in Swamp Maws when Known Wonk is in Swamp Maws: say "The Known Wonk pushes you back. 'You don't know how weird it is to the north. But I know a thing or two about adventuring theory.'" instead;
 
@@ -1587,14 +1587,14 @@ the sharp rahs are a thing. "The sharp rahs get you enthused, but they're not en
 
 book Calcific Lac
 
-Calcific Lac is north of Swamp Maws. It is in Grebeberg. "A Tao Boat rests at the edge of Calcific Lac. [eli-ile].[paragraph break][if dork rod is in ZeroRez]The Tao Boat that helped you get at peace with things is here[else]A Tao Boat rests on the shore, here[end if]."
+Calcific Lac is north of Swamp Maws. It is in Grebeberg. "A Tao Boat rests at the edge of Calcific Lac. [eli-ile].[paragraph break][if dork rod is in DevReserved]The Tao Boat that helped you get at peace with things is here[else]A Tao Boat rests on the shore, here[end if]."
 
 to say eli-ile:
-	if elope pole is in ZeroRez:
+	if elope pole is in DevReserved:
 		say "That kayak you took to Elided Ile is here, too";
 	else:
 		say "There's a kayak, too. ";
-		if NULL ILLUN is in ZeroRez:
+		if NULL ILLUN is in DevReserved:
 			say "[one of]And wait! If you look into the distance, you see something! Elided Ile! Just as the Known Wonk said it had to be somewhere! The Wonk's calculations and predictions were all right[or]You see Elided Ile in the distance. Maybe some day, you will get there[stopping]";
 		else:
 			say "You scan in the distance for anywhere the kayak might take you, but you can't find anywhere, yet";
@@ -1603,13 +1603,13 @@ chapter kayak
 
 The kayak is scenery in Calcific Lac. "It's, well, just a kayak. It doesn't have anything to steer it with, though. Maybe you have something, or you could find something."
 
-instead of doing something with kayak when elope pole is in ZeroRez: [??use X on kayak]
+instead of doing something with kayak when elope pole is in DevReserved: [??use X on kayak]
 	if action is procedural, continue the action;
 	say "The kayak has served its purpose."
 
 chapter tao boat
 
-The Tao Boat is scenery in Calcific Lac. "It rocks gently on the waves. You [if dork rod is in ZeroRez]wonder what it's like inside, if you're worthy[else]look back on your time inside with fondness. It put you at peace with the job you have ahead[end if]."
+The Tao Boat is scenery in Calcific Lac. "It rocks gently on the waves. You [if dork rod is in DevReserved]wonder what it's like inside, if you're worthy[else]look back on your time inside with fondness. It put you at peace with the job you have ahead[end if]."
 
 chapter dork rod
 
@@ -1694,7 +1694,7 @@ carry out evadeing:
 	if noun is Dave:
 		if Dave-evade is true, say "You don't need to evade Dave again.";
 		say "You evade Dave! Deked! Deked![paragraph break]Dave, frustrated from spinning around trying to catch you, runs off.[paragraph break]Suspicious there are no actual weight machines, you find a passage to a hidden spate of Sperses-Reps machines. You're suspicious they actually work, but as you test them out, a surge goes through you. Your attitude nets you scepsis-pecs, which will help you carry any amount or weight of things you pick up in your journey. After a few seconds, you've half forgotten you have them.";
-		now Dave is in ZeroRez;
+		now Dave is in DevReserved;
 		now Dave-evade is true;
 		score-inc; [Yelpley/evade dave]
 		now all davey rooms are available;
@@ -1762,7 +1762,7 @@ carry out boreing:
 	if noun is not a person, say "You should try to bore people, not things." instead;
 	if noun is not Rob, say "Wrong thing or person to bore." instead;
 	say "You bore Rob successfully. He wanders off.";
-	move Rob to ZeroRez;
+	move Rob to DevReserved;
 	score-inc; [Yelpley/bore rob]
 	the rule succeeds.
 
@@ -1783,7 +1783,7 @@ to wear-down (w - a workable):
 	if machuses is 0:
 		say "[line break]With [list of workables] all destroyed, Work Row shakes a bit more. The machines fall out from a wall, revealing something behind ... a test set. It's big and huge and you can't move it, but who knows what it'll be useful for later?";
 		move test set to Worn Row;
-		now all workables are in ZeroRez;
+		now all workables are in DevReserved;
 
 to decide which number is machuses:
 	let retval be 0;
@@ -1915,7 +1915,7 @@ books-carried-yet is a truth state that varies.
 
 check taking a book:
 	if player has noun, continue the action;
-	if number of books in ZeroRez is 2 and SOME DEMOS is off-stage:
+	if number of books in DevReserved is 2 and SOME DEMOS is off-stage:
 		say "As you pick up [noun], something else falls out. It's a smaller pamphlet, called SOME DEMOS. You pick it up.";
 		now player has SOME DEMOS;
 		now SOME DEMOS is in-row;
@@ -1989,7 +1989,7 @@ ever-wordrow is a truth state that varies.
 
 definition: a book (called bo) is tractable:
 	if bo is hidden, no;
-	if bo is in ZeroRez, no;
+	if bo is in DevReserved, no;
 	if player carries bo, no;
 	yes;
 
@@ -2019,15 +2019,15 @@ understand "wornrow" as wornrowing when player is in Worn Row.
 understand "Worn Row" as wornrowing when player is in Worn Row.
 
 carry out wornrowing:
-	if psi wisp is in ZeroRez, say "You already used the redness ender for something." instead;
+	if psi wisp is in DevReserved, say "You already used the redness ender for something." instead;
 	if psi wisp is not in Worn Row, say "You don't want to face the redness ender alone." instead;
 	clear-worn-row;
 	say "Worn Row rematerializes, along with the redness ender. Zap! Zot! It locks on the Psi Wisp, which explodes in a shower of rage. But somehow, the Psi Wisp connects enough to zap the redness ender back. Whew.";
 	now being-chased is false;
 	clear-worn-row;
 	now Worn Row is worny;
-	move psi wisp to ZeroRez;
-	now redness ender is in ZeroRez;
+	move psi wisp to DevReserved;
+	now redness ender is in DevReserved;
 	score-inc; [Yelpley/WORN ROW]
 	the rule succeeds;
 
@@ -2123,7 +2123,7 @@ the trap art is a thing in Art Xtra. "Some trap art sits here. It's free. You mi
 El Doodle is a thing. description is "A jumble of raw creativity, it looks like it could be a map--or something--but it sure could use some paring down."
 
 after going to Art Xtra when El Doodle is off-stage:
-	if stark rats are in ZeroRez:
+	if stark rats are in DevReserved:
 		say "You tell [art-sell] about how you got rid of the stark rats. [art-sell], impressed, mentions there's something else for you. 'Someone left it here a while back. It's indecipherable. I can't use it, but maybe you can figure it out.'";
 		now player has El Doodle;
 	continue the action;
@@ -2150,7 +2150,7 @@ the soot tattoos are a plural-named thing. description is "They're blank now, bu
 
 book Toll Lot
 
-Toll Lot is east of Emo Dome. It is in Yelpley. "[if cross orc is in Toll Lot]While it's easy enough to go back west to the Emo Dome, that cross orc doesn't seem to want to let you go north or south[else]You can go north or south with the cross orc gone or, well, back west, too[end if]. A crag arc rises to the east[if UFO tofu is not in ZeroRez]--maybe it is hiding something[end if]."
+Toll Lot is east of Emo Dome. It is in Yelpley. "[if cross orc is in Toll Lot]While it's easy enough to go back west to the Emo Dome, that cross orc doesn't seem to want to let you go north or south[else]You can go north or south with the cross orc gone or, well, back west, too[end if]. A crag arc rises to the east[if UFO tofu is not in DevReserved]--maybe it is hiding something[end if]."
 
 [??snuff funs]
 
@@ -2193,7 +2193,7 @@ instead of opening etage gate:
 
 check going north in Gross Org: if etage gate is in Gross Org, say "The etage gate blocks you." instead;
 
-understand "evened" and "den evened" as Gross Org when Ned is in ZeroRez.
+understand "evened" and "den evened" as Gross Org when Ned is in DevReserved.
 
 Ned is a person in Gross Org. "'Ned's Den!' someone booms. You're guessing their name must be Ned.". description is "Ned is sort of wildly flailing about, looking for a verbal or physical altercation, but that's not really your thing.".
 
@@ -2235,17 +2235,17 @@ does the player mean denying Ned: it is likely.
 carry out denying:
 	if noun is Ned:
 		say "Ned wants to get in an argument or fight, so you get in an argument over whether it's really necessary, and then you say, that wasn't so great, see? He slinks off, defeated.";
-		now Ned is in ZeroRez;
+		now Ned is in DevReserved;
 		score-inc; [Yelpley/deny Ned]
 	the rule succeeds;
 
 book Deft Fed
 
-Deft Fed is south of Toll Lot. It is in Yelpley. printed name is "[if yob attaboy is in ZeroRez]Bon Snob[else]Deli, Tiled[end if]". description is "There's not much decor in this [if yob attaboy is in ZeroRez]deli, tiled, except for a decal placed[else]fancy eatery, except for some snooty toons[end if]. You can exit to the north."
+Deft Fed is south of Toll Lot. It is in Yelpley. printed name is "[if yob attaboy is in DevReserved]Bon Snob[else]Deli, Tiled[end if]". description is "There's not much decor in this [if yob attaboy is in DevReserved]deli, tiled, except for a decal placed[else]fancy eatery, except for some snooty toons[end if]. You can exit to the north."
 
 chapter Sniffins
 
-Sniffins is a person in Deft Fed. "[one of]You hear a sniff, and the proprietor introduces themselves as Sniffins, apologizing for how lame the ambience and decor are, but there's just no INSPIRATION to do better[or]Sniffins sniffs here[stopping].". description is "Sniffins looks despondent [if yob attaboy is in ZeroRez]and unfriendly despite your help[else]and pleading, for any sort of help[end if]."
+Sniffins is a person in Deft Fed. "[one of]You hear a sniff, and the proprietor introduces themselves as Sniffins, apologizing for how lame the ambience and decor are, but there's just no INSPIRATION to do better[or]Sniffins sniffs here[stopping].". description is "Sniffins looks despondent [if yob attaboy is in DevReserved]and unfriendly despite your help[else]and pleading, for any sort of help[end if]."
 
 the Dirt Rid is a thing. description is "The Dirt Rid looks old and decrepit. Sniffins probably wore it out converting the Bon Snob, but it's yours now."
 
@@ -2363,14 +2363,14 @@ the Mayo Yam is a liquid ingredient in Yell Alley. "A gross looking -- something
 
 chapter rep popper
 
-the rep popper is a thing in Yell Alley. "A rep popper lies here. You're wary of getting too close to it. You're not sure how good your rep is, but that thing looks [if dork rod is in ZeroRez]less fearsome than it used to[else]like it could embarrass you quickly[end if].". description is "The rep popper is a combination of a funny flower, joy buzzer, and several old stupid gags. You're not sure how it's supposed to work, and it's not something you carry around to show off how cool it is."
+the rep popper is a thing in Yell Alley. "A rep popper lies here. You're wary of getting too close to it. You're not sure how good your rep is, but that thing looks [if dork rod is in DevReserved]less fearsome than it used to[else]like it could embarrass you quickly[end if].". description is "The rep popper is a combination of a funny flower, joy buzzer, and several old stupid gags. You're not sure how it's supposed to work, and it's not something you carry around to show off how cool it is."
 
 check taking rep popper:
 	if player has taboo bat:
 		now player has rep popper;
 		say "With the taboo bat in your possession, you just don't care about stuff like rep, so you have no problem taking the rep popper." instead;
 	if player has dork rod, say "With the dork rod, you aren't THAT worried about your rep, but you're still worried enough not to take the popper. Maybe you can do a bit better..." instead;
-	if dork rod is not in ZeroRez, say "No way! You're not sure how much rep you have, but taking that rep popper would drop it a notch or more, and the prospect seems too horrible." instead;
+	if dork rod is not in DevReserved, say "No way! You're not sure how much rep you have, but taking that rep popper would drop it a notch or more, and the prospect seems too horrible." instead;
 
 [??Yuge Guy rep popper used what's wrong with you? I make boring people feel less boring vs you describing how you figured things out and only 26 possibilities really and also some trial and error]
 
@@ -2378,7 +2378,7 @@ chapter bomb mob
 
 the bomb mob are plural-named people. description is "They're ignoring you, and that's probably for the best.". "You're lucky the bomb mob is not looking your way, or you'd be in trouble."
 
-understand "poor troop" and "poor/troop" as bomb mob when DNA hand is in ZeroRez.
+understand "poor troop" and "poor/troop" as bomb mob when DNA hand is in DevReserved.
 
 chapter TNT
 
@@ -2397,10 +2397,10 @@ understand "puffup" as puffuping.
 understand "puff up" as puffuping.
 
 carry out puffuping:
-	if spur ups are in ZeroRez, say "You already did." instead;
+	if spur ups are in DevReserved, say "You already did." instead;
 	if player does not have spur ups, say "You don't possess anything that would help you feel more up." instead;
 	say "As you hold the Spur-Ups, you think about how great you are and can and will be. Surprisingly, it works! It works so well, you figure you don't even need the spur-ups for a boost in the future. You feel more confident, more able to deal with sadness now.";
-	now Spur Ups are in ZeroRez;
+	now Spur Ups are in DevReserved;
 	score-inc; [Yelpley/puff up]
 	the rule succeeds;
 
@@ -2428,7 +2428,7 @@ carry out pulluping:
 
 book Emo Dome
 
-Emo Dome is east of Yawn Way. It is in Yelpley. "You can go any direction here, and you sort of want to, because it's stuffy in here. [if madam is in ZeroRez]But not back north. You're done there[else]However, the way north looks particularly treacherous[end if]."
+Emo Dome is east of Yawn Way. It is in Yelpley. "You can go any direction here, and you sort of want to, because it's stuffy in here. [if madam is in DevReserved]But not back north. You're done there[else]However, the way north looks particularly treacherous[end if]."
 
 instead of doing something in Emo Dome when pulled-up is false:
 	if current action is pulluping, continue the action;
@@ -2466,7 +2466,7 @@ mist sim is peripheral scenery in Red Roses Order. "You can't see through it, bu
 
 chapter wash saw
 
-The wash saw is scenery in Red Roses Order. "[if not-a-baton is in ZeroRez]It doesn't look like you broke it, but you probably don't need it any more[else]It looks automatic. Put something it can cut in, and get something out[end if]."
+The wash saw is scenery in Red Roses Order. "[if not-a-baton is in DevReserved]It doesn't look like you broke it, but you probably don't need it any more[else]It looks automatic. Put something it can cut in, and get something out[end if]."
 
 chapter madam
 
@@ -2480,11 +2480,11 @@ check going south in Red Roses Order when Madam is in Red Roses Order: say "No w
 
 chapter yard ray
 
-the yard ray is a thing. description is "It looks pretty lethal. It's no dinky resale laser![paragraph break]There are also has instructions: EMIT ********.[paragraph break]It's currently [if murk rum is in ZeroRez]loaded with energy from the Murk Rum[else]empty of fuel[end if]."
+the yard ray is a thing. description is "It looks pretty lethal. It's no dinky resale laser![paragraph break]There are also has instructions: EMIT ********.[paragraph break]It's currently [if murk rum is in DevReserved]loaded with energy from the Murk Rum[else]empty of fuel[end if]."
 
 book Swept Pews
 
-Swept Pews is south of Emo Dome. It is in Yelpley. "You can go back north to the Emo Dome in this tidy little area[if liar grail is in ZeroRez]. A passage has been opened south with the Liar Grail's demise[end if]."
+Swept Pews is south of Emo Dome. It is in Yelpley. "You can go back north to the Emo Dome in this tidy little area[if liar grail is in DevReserved]. A passage has been opened south with the Liar Grail's demise[end if]."
 
 The Liar Grail is a thing in Swept Pews. description is "It's carved with 'NIP IN? NOT ON!' If you hadn't examined it, you wouldn't think there might be a passage to the south, but now that you have, you consider the possibility. Either way, it annoys you enough to want to get rid of the liar grail. Lies are sometimes self-defeating like that". "A liar grail is embedded in the south wall, aw."
 
@@ -2529,7 +2529,7 @@ Ye Key is a thing. description is "Engraved YE KEY, it clearly looks important. 
 
 book Dopy Pod
 
-Dopy Pod is west of Drawl Ward. It is in Yelpley. printed name of Dopy Pod is "[if cassettes sac is in ZeroRez]Dope[else]Dopy[end if] Pod". "[if cassettes sac is in ZeroRez]There's not much left here, but it was neat to get the radar. [else]There doesn't seem like there's much useful in here, but who knows? [end if]The only exit is back east."
+Dopy Pod is west of Drawl Ward. It is in Yelpley. printed name of Dopy Pod is "[if cassettes sac is in DevReserved]Dope[else]Dopy[end if] Pod". "[if cassettes sac is in DevReserved]There's not much left here, but it was neat to get the radar. [else]There doesn't seem like there's much useful in here, but who knows? [end if]The only exit is back east."
 
 chapter cassettes sac
 
@@ -2561,7 +2561,7 @@ the pill lip is peripheral scenery in Dopy Pod. "A Demo Med rests on the Pill Li
 
 report taking demo med:
 	say "The pill lip retracts as you take the demo med.";
-	move pill lip to ZeroRez.
+	move pill lip to DevReserved.
 
 book Pro Corp
 
@@ -2625,7 +2625,7 @@ talk-text of Psi Wisp is "It has nothing to say. It just pulses.".
 talk-text of Revolt Lover is "The Revolt Lover launches into how everyone is really stupid and at fault, and you can't really do anything except snark about it.".
 talk-text of Rob is "Rob yawns. He doesn't find you very interesting. Maybe there's a way to take advantage of that.".
 talk-text of sleep eels is "Maybe they are sending some sort of electric message you could detect with the right instrument, but they're not talking. You're more struck, though, by how uncomfortable they look while sleeping--wriggling about.".
-talk-text of Sniffins is "[if YOB ATTABOY is not in ZeroRez]'Tony? Not! Poor lower class me is a failure! If only I had some success manual!'[else]'Oh. It's you again. If you were REALLY smart, you'd have taken the advice in that book you gave me.'[end if]".
+talk-text of Sniffins is "[if YOB ATTABOY is not in DevReserved]'Tony? Not! Poor lower class me is a failure! If only I had some success manual!'[else]'Oh. It's you again. If you were REALLY smart, you'd have taken the advice in that book you gave me.'[end if]".
 talk-text of Verses Rev is "The Verses Rev booms 'Erupt! Pure!' then piously intones how weirdos not in line with the Diktat Kid's values need to be eradicated.".
 talk-text of Yuge Guy is "'Believe Me. Adore Me. Believe!' O gee, ego, you think to yourself."
 
@@ -2725,10 +2725,10 @@ check going to Fun Nuf when being-chased is true: say "You feel yourself running
 the Psi Wisp is a chaser. chase-room of Psi Wisp is Pro Corp. description is "The Psi Wisp is very red, and it pulses fervently. If it had feelings, you'd be pretty sure it didn't like you.". "[one of]A Psi Wisp appears and starts chasing you![or]The Psi Wisp is still chasing you![stopping]".
 
 after looking when being-chased is false:
-	if player is in pro corp and psi wisp is not in ZeroRez:
+	if player is in pro corp and psi wisp is not in DevReserved:
 		start-chase Psi Wisp;
 		say "The Psi Wisp begins to chase after you!";
-	if troll ort is in ZeroRez and player is in frush surf and kayo yak is in frush surf:
+	if troll ort is in DevReserved and player is in frush surf and kayo yak is in frush surf:
 		start-chase Kayo Yak;
 		say "The Kayo Yak bounds after you!";
 	continue the action;
@@ -2822,19 +2822,19 @@ chapter crap arc
 
 volume metarooms
 
-[there is a little bit of cute code here. Odd Do's score = weird stuff, but it's also where ZeroRez, the collect-all room for used objects, goes. TempMet is for items that temporarily disappear.]
+[there is a little bit of cute code here. Odd Do's score = weird stuff, but it's also where DevReserved, the collect-all room for used objects, goes. TempMet is for items that temporarily disappear.]
 
 part Odd Do region
 
 [don't give the player any accidental access to the rooms]
 
-ZeroRez is a privately-named room in Odd Do. "Bug."
+DevReserved is a privately-named room in Odd Do. "Bug."
 
 TempMet is a privately-named room in Odd Do. "Bug."
 
 section debug helps - not for release
 
-understand "zr/zero/ZeroRez/ll/lll/ZeroRez" as ZeroRez. [ZeroRez is my default for other games. So why not.]
+understand "zr/zero/DevReserved/ll/lll/DevReserved" as DevReserved. [DevReserved is my default for other games. So why not.]
 
 understand "tm/TempMet" as TempMet.
 
@@ -2864,10 +2864,10 @@ check aiding:
 
 to decide whether done-here:
 	if player is in Yawn Way, yes;
-	if player is in Fun Nuf and flee elf is in ZeroRez, yes;
-	if player is in My Gym and Dave is in ZeroRez, yes;
-	if player is in Seer Trees and stark rats are in ZeroRez, yes;
-	if player is in Calcific Lac and dork rod is in ZeroRez, yes;
+	if player is in Fun Nuf and flee elf is in DevReserved, yes;
+	if player is in My Gym and Dave is in DevReserved, yes;
+	if player is in Seer Trees and stark rats are in DevReserved, yes;
+	if player is in Calcific Lac and dork rod is in DevReserved, yes;
 	no;
 
 chapter balmlabing
@@ -2945,7 +2945,7 @@ understand "slam mammals" as slammammalsing.
 
 carry out slammammalsing:
 	if slam-mam is true, say "You already did. Don't overdo it.";
-	if sleep eels are in ZeroRez, say "Too late for that." instead;
+	if sleep eels are in DevReserved, say "Too late for that." instead;
 	unless player is in Ooze Zoo and sleep eels are in Ooze Zoo, say "You have no sympathetic audience." instead;
 	say "The sleep eels wake from their slumber briefly to squirm. They telephathically project their pleasure before going back to sleep. You've ... done something, I guess?";
 	abide by the LLP rule; [SLAM MAMMALS]
@@ -3098,7 +3098,7 @@ this is the dial-yet rule:
 	the rule fails;
 
 this is the muss-yet rule:
-	if opossum is in ZeroRez, the rule succeeds;
+	if opossum is in DevReserved, the rule succeeds;
 	the rule fails;
 
 this is the pb-yet rule:
@@ -3155,9 +3155,9 @@ carry out endgameing:
 	now player carries murk rum;
 	now player carries yard ray;
 	now player carries epicer recipe;
-	now set o notes is in ZeroRez;
-	now Darer Ad is in ZeroRez;
-	now elf is in ZeroRez;
+	now set o notes is in DevReserved;
+	now Darer Ad is in DevReserved;
+	now elf is in DevReserved;
 	now player has pact cap;
 	now player has taboo bat;
 	now player has ME gem;

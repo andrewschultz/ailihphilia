@@ -4,7 +4,7 @@
 #
 # can/should be generalized
 #
-# named zr.py because ZeroRez is the original.
+# named zr.py because ZeroRez was the original until changed to DevReserved.
 #
 
 from collections import defaultdict
@@ -105,8 +105,8 @@ def check_source(a):
                 fout.write(ll)
                 continue
             if 'lalaland' in ll.lower():
-                print("WARNING replacing lalaland with ZeroRez at line", line_count)
-                ll = re.sub("lalaland", "ZeroRez", ll)
+                print("WARNING replacing lalaland with DevReserved at line", line_count)
+                ll = re.sub("lalaland", "DevReserved", ll)
                 difs = difs + 1
             if '[ic]' not in ll:
                 for x in cs:

@@ -299,7 +299,7 @@ Initially sent to source code/repository November 2017.</history>
 			<objectListOffset>4</objectListOffset>
 			<connectionStalkLength>16</connectionStalkLength>
 			<preferredDistanceBetweenRooms>64</preferredDistanceBetweenRooms>
-			<defaultRoomName>ZeroRez</defaultRoomName>
+			<defaultRoomName>DevReserved</defaultRoomName>
 		</rooms>
 		<ui>
 			<handleSize>12</handleSize>

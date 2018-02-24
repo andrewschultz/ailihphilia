@@ -87,15 +87,15 @@ understand "eros ore" as a mistake ("I don't even want to know what you're tryin
 
 book Dumb Mud
 
-understand "dump mud" as a mistake ("It's already kind of dumped here[if poo coop is not in ZeroRez]. Maybe you could dump the mud into the rut for passage south, but it might take too long, and you don't have a shovel. You'd need something else[end if].") when player is in Dumb Mud.
+understand "dump mud" as a mistake ("It's already kind of dumped here[if poo coop is not in DevReserved]. Maybe you could dump the mud into the rut for passage south, but it might take too long, and you don't have a shovel. You'd need something else[end if].") when player is in Dumb Mud.
 
 understand "gnu bung" as a mistake ("Yes, that's where it came from.") when gnu dung is quicknear.
 
 understand "gnu lung" as a mistake ("The gnu dung smells bad enough without dropping more internal organs into the mix.") when gnu dung is quicknear.
 
-understand "turd rut" as a mistake ("Hmm! Maybe you could fill the rut up with ... something ... to cross it.") when player is in Dumb Mud and poo coop is not in ZeroRez.
+understand "turd rut" as a mistake ("Hmm! Maybe you could fill the rut up with ... something ... to cross it.") when player is in Dumb Mud and poo coop is not in DevReserved.
 
-understand "turn rut" as a mistake ("It's too large to redirect[if poo coop is in ZeroRez], and besides, you already have a way across[end if].") when player is in Dumb Mud.
+understand "turn rut" as a mistake ("It's too large to redirect[if poo coop is in DevReserved], and besides, you already have a way across[end if].") when player is in Dumb Mud.
 
 understand "turnon rut" and "turn on rut" as a mistake ("No innuendo here! The gnu dung[if gnu dung is not in Dumb Mud] with the poo coop[end if] is about as close as you'll get.") when player is in Dumb Mud.
 
@@ -200,9 +200,9 @@ understand "dorm rod" and "dorm" as a mistake ("You reveal no frat. Arf!") when 
 
 book My Gym
 
-understand "evade dave" as a mistake ("Dave's not here, man!") when player is in My Gym and Dave is in ZeroRez.
+understand "evade dave" as a mistake ("Dave's not here, man!") when player is in My Gym and Dave is in DevReserved.
 
-understand "wasp saw" as a mistake ("You don't need the wash saw to turn into something that might sting you[if Dave is in ZeroRez]. Dave's enough[else if player has wash saw], especially since you are carrying it[else]. You should probably just take it, instead[end if].") when wash saw is quicknear.
+understand "wasp saw" as a mistake ("You don't need the wash saw to turn into something that might sting you[if Dave is in DevReserved]. Dave's enough[else if player has wash saw], especially since you are carrying it[else]. You should probably just take it, instead[end if].") when wash saw is quicknear.
 
 book Swept Pews
 
@@ -210,11 +210,11 @@ understand "liar frail" and "liar trail" as a mistake ("The grail remains in you
 
 book Deft Fed
 
-understand "defy fed" as a mistake ("Way to go! Keep that Hunger! Well, I hope it's that and not conspiracy theories about the Fed.") when player is in Deft Fed and YOB ATTABOY is not in ZeroRez
+understand "defy fed" as a mistake ("Way to go! Keep that Hunger! Well, I hope it's that and not conspiracy theories about the Fed.") when player is in Deft Fed and YOB ATTABOY is not in DevReserved
 
 chapter Bon Snob
 
-understand "bon knob" as a mistake ("You don't need to help Sniffins with interior decorating, here.") when player is in Deft Fed and YOB ATTABOY is in ZeroRez.
+understand "bon knob" as a mistake ("You don't need to help Sniffins with interior decorating, here.") when player is in Deft Fed and YOB ATTABOY is in DevReserved.
 
 part row 5
 
