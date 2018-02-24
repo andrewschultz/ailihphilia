@@ -463,6 +463,7 @@ def find_comment_cmds(pattern, line):
     return temp.split("/")
 
 def get_stuff_from_source():
+    useon_idx = 0
     in_use_table = False
     use_ons = False
     func_list = ''
@@ -536,6 +537,7 @@ def get_stuff_from_source():
                 if myreg not in region_def_line.keys():
                     print("WARNING", ll, "defines start of invalid region.")
             if line.startswith("table of useons"):
+                useon_idx = useon_idx + 1
                 in_use_table = True
                 if 'continued' not in line:
                     need_true_score = True
@@ -549,6 +551,10 @@ def get_stuff_from_source():
             if in_use_table:
                 x = ll.split("\t")
                 if x[5] == 'sco': continue # this is the header.
+                if useon_idx > 1:
+                    for idx in [5, 6, 7]:
+                        if x[idx] != 'false':
+                            print("WARNING: Line", line_count, "must be false in non-scoring table of useons, column", (idx + 1))
                 if x[5] != 'true' and x[5] != 'false':
                     print("WARNING: Line", line_count, "needs true/false in column 5/6.")
                     warning_story_line = line_count

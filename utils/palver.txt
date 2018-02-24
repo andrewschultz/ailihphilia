@@ -18,6 +18,8 @@ s:printed name of
 s:the story headline
 s:the eels are people
 s:the opossum is a
+s:include
+s:for writing
 s:check
 s:instead
 s:before
@@ -31,12 +33,17 @@ s:description
 s:the puce cup can be
 s:report
 s:a person can be
+s:worn row can be
+i:has a number called
+i:has a person called
 # ignore-includes
 i:rule:
 i:is an activity
 i:are cappy
 i:is need-ia
 i:rule is listed
+i:rule is not listed
+i:need-ia
 i:is a kind
 i:is a truth state
 i:is a list of text
