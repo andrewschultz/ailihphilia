@@ -1852,7 +1852,22 @@ check examining tract cart:
 
 a book is a kind of thing. description of a book is usually "It [if player carries the item described]is[else]looks[end if] really heavy and incomprehensible to you."
 
+after examining a book:
+	say "The author is ";
+	choose row auth-row of noun in table of random authors;
+	say "[person-name entry].";
+	continue the action;
+
 a book can be in-row or hidden. a book is usually in-row.
+
+a book has a number called auth-row. auth-row of a book is usually 0.
+
+auth-ind is a number that varies.
+
+check examining a book (this is the assign a book to a random table rule):
+	if auth-num of noun is 0:
+		increment auth-ind;
+		now auth-num of noun is auth-ind;
 
 chapter pity tip
 
