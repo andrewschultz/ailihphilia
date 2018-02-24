@@ -442,7 +442,12 @@ chapter drinking
 
 drink-warning is a truth state that varies.
 
+the block drinking rule is not listed in any rulebook.
+
 check drinking:
+	if noun is Elan Ale, say "No drinking on the job. Besides, with what you've done so far, you might be able to trade it for something more useful." instead;
+	if noun is Gorge Grog, say "One look at the grog, and you realize you're not up to such super-powered alcohol." instead;
+	if noun is murk rum, say "The rum part is drinkable, but the murk rum isn't." instead;
 	say "[if noun is drinkable]Pish! Sip?![else][']S not wet. Ew--TONS.[end if]";
 	if drink-warning is false, say "(You don't need to drink anything. Liquids have their purpose in this game, but also, there is no Pee Keep anywhere.)[paragraph break]";
 	now drink-warning is true instead;
@@ -927,8 +932,9 @@ use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
 radar	sleep eels	--	--	--	false	false	false	--	"A radar isn't supposed to work this way, but somehow, you detect some bitterness at mammals in general. But it's secondary to needing a more comfortable place to sleep."
 troll ort	cross orc	--	--	--	false	false	false	--	"The cross orc mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE and don't WANT to. But the way it looks at you, you suspect it'd forgive you if you gave the right gift."
 troll ort	kayo yak	--	--	--	false	false	false	--	"As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up."
-yard ray	Tru Hurt	--	--	--	false	true	true	--	"The yard ray bounces harmlessly off the Tru Hurt. Maybe it needs to be used nonviolently."
-yard ray	Diktat Kid	--	--	--	false	true	true	--	"The yard ray bounces harmlessly off the Diktat Kid. Maybe it needs to be used nonviolently."
+Gorge Grog	yard ray	--	--	--	false	false	false
+yard ray	Tru Hurt	--	--	--	false	false	false	--	"The yard ray bounces harmlessly off the Tru Hurt. Maybe it needs to be used nonviolently."
+yard ray	Diktat Kid	--	--	--	false	false	false	--	"The yard ray bounces harmlessly off the Diktat Kid. Maybe it needs to be used nonviolently."
 [zzfail]
 
 volume rooms
@@ -1325,7 +1331,7 @@ the girt rig is peripheral scenery in Sneer Greens. description is "It is too st
 
 chapter murk rum
 
-the murk rum is a drinkable thing. description is "You're not sure what's in it, but boy, it looks potent."
+the murk rum is a drinkable thing. description is "It looks viscous, like oil."
 
 book Dumb Mud
 
@@ -1419,7 +1425,7 @@ Mont Nom is south of Dumb Mud. It is in Grebeberg. "An ark of okra blocks passag
 
 Mont Nom is above Dumb Mud.
 
-The ark of okra is scenery in Mont Nom. "You always found okra, or the idea, icky, but the ark is beautiful enough, you sort of wonder how it'd taste. Here it's almost saying 'C'mon! Nom!'"
+The ark of okra is scenery in Mont Nom. "You always found okra, or the idea, icky, but the ark is beautiful enough, you sort of wonder how it'd taste. Here it's almost saying 'C'mon! Nom!' or even 'Tum-Smut!'"
 
 instead of eating ark of okra: say "You don't know how long it's been out here. It's probably, like, the vegetable version of wax fruit."
 
@@ -1871,9 +1877,9 @@ a book has a number called auth-row. auth-row of a book is usually 0.
 auth-ind is a number that varies.
 
 check examining a book (this is the assign a book to a random table rule):
-	if auth-num of noun is 0:
+	if auth-row of noun is 0:
 		increment auth-ind;
-		now auth-num of noun is auth-ind;
+		now auth-row of noun is auth-ind;
 
 chapter pity tip
 
