@@ -22,10 +22,12 @@ def depends_add(result, needed, line=-1):
 
 
 
+verbose = False
+
+
 in_table = False
 header_next = False
 line_count = 0
-verbose = False
 
 with open("story.ni") as file:
 	for line in file:
@@ -44,15 +46,41 @@ with open("story.ni") as file:
 			ary = line.lower().strip().split("\t")
 			if ary[2] == '--':
 				continue
-			print(ary[2], "needs", ary[1], "and", ary[0])
+			# print(ary[2], "needs", ary[1], "and", ary[0])
 			if ary[2] != ary[1]:
 				depends_add(ary[2], ary[1], line_count)
 			if ary[2] != ary[0]:
 				depends_add(ary[2], ary[0], line_count)
 
-for x in depends.keys():
+in_table = False
+header_next = False
+line_count = 0
+
+with open("rely.txt") as file:
+	for line in file:
+		line_count = line_count + 1
+		if line.startswith(";"):
+			last
+		if line.startswith("#"):
+			continue
+		if '/' not in line:
+			print("Warning line", line_count, "needs slash")
+			continue
+		ary = line.lower().strip().split("/")
+		needers = ary[0].split(",")
+		neededs = ary[1].split(",")
+		for n1 in needers:
+			for n2 in neededs:
+				depends_add(n1, n2, line_count)
+
+totals = 0
+
+for x in sorted(depends.keys()):
 	if len(depends[x].keys()):
-		print(x, "requires", ', '.join(sorted(depends[x].keys())))
+		totals = totals + len(depends[x].keys())
+		print(x, "requires", len(depends[x].keys()), ":", ', '.join(sorted(depends[x].keys())))
 	else:
 		if verbose:
 			print(x, "has no requirements")
+
+print(totals, "total dependencies.")
