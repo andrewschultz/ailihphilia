@@ -451,6 +451,11 @@ All sorts of cool stuff! Take everything you want!
 It's not quite something living.
 It can become a body, or part of one.
 USE DNA BAND ON REIFIER.
+?What can I do with the butene tub?
+More like, what can you do TO it.
+An unstable chemical reaction.
+Do you have anything particularly volatile in inventory?
+USE GORGE GROG ON BUTENE TUB.
 >>DEFT FED
 ?What does Sniffins want?
 He is obviously upset.
@@ -488,7 +493,7 @@ There are 10 total points in Dim Mid.
 1 point if you USE YARD RAY ON DIKTAT KID.
 1 point if you USE X-ITE TIX ON TIX EXIT
 ?How do I get all the points for Yelpley?
-There are 36 total points in Yelpley.
+There are 37 total points in Yelpley.
 1 point if you EVADE DAVE.
 1 point if you BORE ROB.
 1 point for WORD ROW.
@@ -513,6 +518,7 @@ There are 36 total points in Yelpley.
 1 point if you DENY NED.
 1 point if you USE YE KEY ON ETAGE GATE.
 1 point for WORN ROW once the Psi Wisp is nearby.
+1 point if you USE GORGE GROG ON BUTENE TUB.
 1 point if you USE STINK KNITS ON ROTATOR.
 1 point if you USE GOLD LOG ON ROTATOR.
 1 point if you USE STRAW ARTS ON MIKE KIM.

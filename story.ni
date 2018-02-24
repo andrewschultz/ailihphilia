@@ -52,7 +52,7 @@ Grebeberg is a region. max-score of Grebeberg is 29.
 
 Dim Mid is a region. max-score of Dim Mid is 10.
 
-Yelpley is a region. max-score of Yelpley is 36.
+Yelpley is a region. max-score of Yelpley is 37.
 
 Odd Do is a region. max-score of Odd Do is 9.
 
@@ -151,7 +151,7 @@ a tronpart is a kind of thing.
 
 description of a tronpart is usually "The [item described] is one of [number of tronparts] parts needed for the North-Tron."
 
-Gorge Grog is a tronpart.
+The resale laser is a tronpart.
 
 The Ore Zero is a tronpart.
 
@@ -725,6 +725,7 @@ Cave Vac	cassettes sac	radar	--	--	true	true	true	Yelpley	"The Cave Vac has the 
 radar	crag arc	UFO tofu	orc-gone rule	radar-blink rule	true	false	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO and lands on the radar, which fizzles a bit from the impact and wetness. It hardens quickly and weirdly into a cubic shape. What could it be? You think a minute. It has to be UFO tofu." [af:deny Ned]
 Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paragraph break]A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it." [af:Worn Row]
 stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
+Gorge Grog	Butene Tub	resale laser	--	--	true	true	true	Yelpley	"The Gorge Grog immediately starts fizzing as it pours down the tub, which rumbles disturbingly. You find it best to hide, and that's the right thing to do, because the butene tub explodes into pieces. Under it is a resale laser!"
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	false	false	Grebeberg	"With the help of SOME DEMOS, you manage to rejig the hay into something more aesthetically pleasing: straw arts!"
 straw arts	Mike Kim	soot tattoos	--	--	true	true	false	Yelpley	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
@@ -2581,7 +2582,13 @@ bald-lab is a truth state that varies.
 
 understand "bald/lab" and "bald lab" as Pro Corp when bald-lab is true.
 
-the butene tub is peripheral scenery in Pro Corp. "It smells pretty nice, though there's no visible way to operate it."
+chapter butene tub
+
+the butene tub is scenery in Pro Corp. "It smells pretty nice, though there's no visible way to operate it."
+
+chapter resale laser
+
+the resale laser is a thing. description is "It looks lethal enough."
 
 chapter gold log
 
