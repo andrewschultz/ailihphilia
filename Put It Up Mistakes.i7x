@@ -2,7 +2,7 @@ Version 1/171220 of Put It Up Mistakes by Andrew Schultz begins here.
 
 volume Mistakes
 
-[this is arranged from left to right, up/down. When an item triggers the mistake, the room will be the one where you first find the item. If there are two places, we go with the first: for instance, (partial spoiler) the roto motor appears in the west of the two locations where it can turn up.]
+[the rooms here are arranged alphabetically. When an item triggers the mistake, the room will be the one where you first find the item. If there are two places, we go with the first: for instance, (partial spoiler) the roto motor appears in the west of the two locations where it can turn up.]
 
 to decide whether (mt - a thing) is/are quicknear:
 	if mt is in location of player, yes;
@@ -11,43 +11,15 @@ to decide whether (mt - a thing) is/are quicknear:
 
 [todo: (programming exercise) write script that can automatically change when player is in x and (y) is in x to when (y) is quicknear)]
 
-part row 1
+book Apse Spa
+
+book Art Xtra
+
+book Birch Crib
 
 book Calcific Lac
 
 understand "tao goat" as a mistake ("The goat wouldn't remain placid for long once it was plunged into water.") when player is in Calcific Lac.
-
-book Sneer Greens
-
-book Flu Gulf
-
-understand "score rocs" as a mistake ("You don't have any witty way to score off them, or steal them, or whatever, and you don't need to.") when scorn rocs are quicknear.
-
-understand "rocs cor" as a mistake ("Your flattery doesn't move the rocs.") when scorn rocs are quicknear.
-
-book Trapeze Part
-
-book Evaded Ave
-
-understand "bung nub" as a mistake ("The bunk nub is in bad enough shape as-is.") when bunk nub is quicknear.
-
-book Yell Alley
-
-understand "pcp" as a mistake ("While searching for a bost, you're apprehended by a crank narc! I'm very disappointed in you. Not the whole drugs bit, but that this game didn't alter reality enough for you.[etg]") when player is in Yell Alley or player is in Evaded Ave.
-
-book Pro Corp
-
-understand "dna land" as a mistake ("Biochemistry has its own nuances with symmetry, but we're sticking with something a lot dumber, here.") when DNA band is quicknear or DNA hand is quicknear.
-
-understand "DNA hand" as a mistake ("Right idea, but you can't do it on your own. You need technology to help you.") when DNA band is quicknear.
-
-understand "balk lab" as a mistake ("There's not much to do or say here, for sure[if balm-got is false]![else]--well, maybe something that's not quite BALK.[end if]") when player is in Pro Corp.
-
-part row 2
-
-book Swamp Maws
-
-book Le Babel
 
 book Cold Loc
 
@@ -57,39 +29,29 @@ understand "cola loc" as a mistake ("You'd be better off with a warmer drink.") 
 
 understand "colt loc" as a mistake ("No gandered nag appears.") when player is in Cold Loc.
 
-book Apse Spa
+book Deft Fed
 
-book Art Xtra
+understand "defy fed" as a mistake ("Way to go! Keep that Hunger! Well, I hope it's that and not conspiracy theories about the Fed.") when player is in Deft Fed and YOB ATTABOY is not in DevReserved
 
-book Red Roses Order
+chapter Bon Snob
 
-understand "gal slag" as a mistake ("You managed to annoy Madam enough that she lashes out and conks you with a mortal blow with the Gal Flag. Okay, not really, but name calling won't help.") when Gal Flag is quicknear. [?? do fake death thing]
+understand "bon knob" as a mistake ("You don't need to help Sniffins with interior decorating, here.") when player is in Deft Fed and YOB ATTABOY is in DevReserved.
 
-understand "sworn rows" as a mistake ("The sword rows are inanimate and neutral. Unless you get too close to them.") when sword rows are quicknear.
+book Dopy Pod
 
-chapter yard ray misuse
+understand "pod op" as a mistake ("But what sort of op?") when player is in Dopy Pod.
 
-understand "yarn ray" as a mistake ("If you want more story, then sorry, this one's nearly at an end.") when player has yard ray.
+understand "do pod" as a mistake ("But what to do to it? How to change it?") when player is in Dopy Pod.
 
-understand "yarg ray" and "yarr ray" as a mistake ("Becoming a pirate at the end? A clever heel turn!") when player has yard ray.
+book Drawl Ward
 
-book Gross Org
-
-understand "dent Ned" as a mistake ("Less violence, more subtlety.") when Ned is quicknear.
-
-part row 3
-
-book Mire Rim
-
-chapter eroded ore
-
-understand "eros ore" as a mistake ("I don't even want to know what you're trying to do, there.") when eroded ore is quicknear.
+understand "drawn ward" as a mistake ("The room remains text-based.") when player is in Drawl Ward.
 
 book Dumb Mud
 
 understand "dump mud" as a mistake ("It's already kind of dumped here[if poo coop is not in DevReserved]. Maybe you could dump the mud into the rut for passage south, but it might take too long, and you don't have a shovel. You'd need something else[end if].") when player is in Dumb Mud.
 
-understand "gnu bung" as a mistake ("Yes, that's where it came from.") when gnu dung is quicknear.
+understand "gnu bung" as a mistake ("There's no way to put the toothpaste back in the tube, as it were.") when gnu dung is quicknear.
 
 understand "gnu lung" as a mistake ("The gnu dung smells bad enough without dropping more internal organs into the mix.") when gnu dung is quicknear.
 
@@ -99,13 +61,23 @@ understand "turn rut" as a mistake ("It's too large to redirect[if poo coop is i
 
 understand "turnon rut" and "turn on rut" as a mistake ("No innuendo here! The gnu dung[if gnu dung is not in Dumb Mud] with the poo coop[end if] is about as close as you'll get.") when player is in Dumb Mud.
 
-book Seer Trees
+book Emo Dome
 
-understand "seer frees" as a mistake ("[if stark rats are in Seer Trees]It won't be THAT easy[else]You already feel free enough here[end if].") when player is in Seer Trees.
+understand "emo home" as a mistake ("It's too wide open a space.") when player is in Emo Dome.
 
-understand "stare rats" as a mistake ("You try to win a blinking contest, and maybe you could with one, but not that many.") when stark rats are quicknear.
+understand "puck cup" as a mistake ("There's no rink nir. Near.") when puce cup is quicknear.
 
-understand "start rats" as a mistake ("You sort of need to stop them, instead.") when stark rats are quicknear.
+book Evaded Ave
+
+understand "bung nub" as a mistake ("The bunk nub is in bad enough shape as-is.") when bunk nub is quicknear.
+
+book Flu Gulf
+
+understand "score rocs" as a mistake ("You don't have any witty way to score off them, or steal them, or whatever, and you don't need to.") when scorn rocs are quicknear.
+
+understand "rocs cor" as a mistake ("Your flattery doesn't move the rocs.") when scorn rocs are quicknear.
+
+book Frush Surf
 
 book Fun Nuf
 
@@ -146,13 +118,89 @@ to say fe1:
 to say fe2:
 	now fleece-elf is true;
 
-book Yawn Way
+book Gross Org
 
-book Emo Dome
+understand "dent Ned" as a mistake ("Less violence, more subtlety.") when Ned is quicknear.
 
-understand "emo home" as a mistake ("It's too wide open a space.") when player is in Emo Dome.
+book Lair Trial
 
-understand "puck cup" as a mistake ("There's no rink nir. Near.") when puce cup is quicknear.
+book Le Babel
+
+book Mire Rim
+
+chapter eroded ore
+
+understand "eros ore" as a mistake ("I don't even want to know what you're trying to do, there.") when eroded ore is quicknear.
+
+book Mont Nom
+
+[understand "truce curt" as a mistake ("You'll need something more violent, here.") when player is in Mont Nom and Curt is in Mont Nom.
+
+understand "truco curt" as a mistake ("You don't have a deck of cards, and Curt wouldn't want to play.") when player is in Mont Nom and Curt is in Mont Nom.]
+
+book Motto Bottom
+
+understand "gurn rug" as a mistake ("It's a guru rug. It's too good to be moved by such a cheap bailout.") when guru rug is quicknear.
+
+book Moo Room
+
+understand "moo doom" as a mistake ("Die? I'd...") when player is in Moo Room.
+
+understand "moo boom" as a mistake ("You hear something strafe farts far away.") when player is in Moo Room.
+
+book My Gym
+
+understand "evade dave" as a mistake ("Dave's not here, man!") when player is in My Gym and Dave is in DevReserved.
+
+understand "wasp saw" as a mistake ("You don't need the wash saw to turn into something that might sting you[if Dave is in DevReserved]. Dave's enough[else if player has wash saw], especially since you are carrying it[else]. You should probably just take it, instead[end if].") when wash saw is quicknear.
+
+book Ooze Zoo
+
+understand "eel flee" as a mistake ("Well, you could maybe get one eel to leave, but there are a lot.") when sleep eels are quicknear.
+
+understand "eel glee" as a mistake ("The eels squirm a bit. I bet they're having fun dreams! Too bad I can't describe them.") when sleep eels are quicknear.
+
+understand "sleet eels" as a mistake ("They are alive. Turning them to metal would be cruel.") when sleep eels are quicknear.
+
+book Pro Corp
+
+understand "dna land" as a mistake ("Biochemistry has its own nuances with symmetry, but we're sticking with something a lot dumber, here.") when DNA band is quicknear or DNA hand is quicknear.
+
+understand "DNA hand" as a mistake ("Right idea, but you can't do it on your own. You need technology to help you.") when DNA band is quicknear.
+
+understand "balk lab" as a mistake ("There's not much to do or say here, for sure[if balm-got is false]![else]--well, maybe something that's not quite BALK.[end if]") when player is in Pro Corp.
+
+book Red Roses Order
+
+understand "gal slag" as a mistake ("You managed to annoy Madam enough that she lashes out and conks you with a mortal blow with the Gal Flag. Okay, not really, but name calling won't help.") when Gal Flag is quicknear. [?? do fake death thing]
+
+understand "sworn rows" as a mistake ("The sword rows are inanimate and neutral. Unless you get too close to them.") when sword rows are quicknear.
+
+chapter yard ray misuse
+
+understand "yarn ray" as a mistake ("If you want more story, then sorry, this one's nearly at an end.") when player has yard ray.
+
+understand "yarg ray" and "yarr ray" as a mistake ("Becoming a pirate at the end? A clever heel turn!") when player has yard ray.
+
+book Scrap Arcs
+
+understand "scram arcs" as a mistake ("The arcs stay still, but you can just go back east if you want.") when player is in Scrap Arcs.
+
+book Seer Trees
+
+understand "seer frees" as a mistake ("[if stark rats are in Seer Trees]It won't be THAT easy[else]You already feel free enough here[end if].") when player is in Seer Trees.
+
+understand "stare rats" as a mistake ("You try to win a blinking contest, and maybe you could with one, but not that many.") when stark rats are quicknear.
+
+understand "start rats" as a mistake ("You sort of need to stop them, instead.") when stark rats are quicknear.
+
+book Sneer Greens
+
+book Swamp Maws
+
+book Swept Pews
+
+understand "liar frail" and "liar trail" as a mistake ("The grail remains in your way to the south. But it was worth a try.") when liar grail is quicknear.
 
 book Toll Lot
 
@@ -166,23 +214,7 @@ understand "cram arc" as a mistake ("You can't stuff anything in it.") when play
 
 understand "crab arc" as a mistake ("That's just what you need, a giant crab coming after you[if cross orc is in Toll Lot], along with the cross orc[end if].") when player is in Toll Lot.
 
-part row 4
-
-book Birch Crib
-
-book Mont Nom
-
-[understand "truce curt" as a mistake ("You'll need something more violent, here.") when player is in Mont Nom and Curt is in Mont Nom.
-
-understand "truco curt" as a mistake ("You don't have a deck of cards, and Curt wouldn't want to play.") when player is in Mont Nom and Curt is in Mont Nom.]
-
-book Ooze Zoo
-
-understand "eel flee" as a mistake ("Well, you could maybe get one eel to leave, but there are a lot.") when sleep eels are quicknear.
-
-understand "eel glee" as a mistake ("The eels squirm a bit. I bet they're having fun dreams! Too bad I can't describe them.") when sleep eels are quicknear.
-
-understand "sleet eels" as a mistake ("They are alive. Turning them to metal would be cruel.") when sleep eels are quicknear.
+book Trapeze Part
 
 book Worn Row
 
@@ -198,53 +230,13 @@ chapter dork rod
 
 understand "dorm rod" and "dorm" as a mistake ("You reveal no frat. Arf!") when dork rod is quicknear.
 
-book My Gym
+book Yawn Way
 
-understand "evade dave" as a mistake ("Dave's not here, man!") when player is in My Gym and Dave is in DevReserved.
+understand "yawp way" and "yawl way" as a mistake ("It's still quiet here.") when player is in Yawn Way.
 
-understand "wasp saw" as a mistake ("You don't need the wash saw to turn into something that might sting you[if Dave is in DevReserved]. Dave's enough[else if player has wash saw], especially since you are carrying it[else]. You should probably just take it, instead[end if].") when wash saw is quicknear.
+book Yell Alley
 
-book Swept Pews
-
-understand "liar frail" and "liar trail" as a mistake ("The grail remains in your way to the south. But it was worth a try.") when liar grail is quicknear.
-
-book Deft Fed
-
-understand "defy fed" as a mistake ("Way to go! Keep that Hunger! Well, I hope it's that and not conspiracy theories about the Fed.") when player is in Deft Fed and YOB ATTABOY is not in DevReserved
-
-chapter Bon Snob
-
-understand "bon knob" as a mistake ("You don't need to help Sniffins with interior decorating, here.") when player is in Deft Fed and YOB ATTABOY is in DevReserved.
-
-part row 5
-
-book Lair Trial
-
-book Motto Bottom
-
-understand "gurn rug" as a mistake ("It's a guru rug. It's too good to be moved by such a cheap bailout.") when guru rug is quicknear.
-
-book Frush Surf
-
-book Moo Room
-
-understand "moo doom" as a mistake ("Die? I'd...") when player is in Moo Room.
-
-understand "moo boom" as a mistake ("You hear something strafe farts far away.") when player is in Moo Room.
-
-book Dopy Pod
-
-understand "pod op" as a mistake ("But what sort of op?") when player is in Dopy Pod.
-
-understand "do pod" as a mistake ("But what to do to it? How to change it?") when player is in Dopy Pod.
-
-book Drawl Ward
-
-understand "drawn ward" as a mistake ("The room remains text-based.") when player is in Drawl Ward.
-
-book Scrap Arcs
-
-understand "scram arcs" as a mistake ("The arcs stay still, but you can just go back east if you want.") when player is in Scrap Arcs.
+understand "pcp" as a mistake ("While searching for a bost, you're apprehended by a crank narc! I'm very disappointed in you. Not the whole drugs bit, but that this game didn't alter reality enough for you.[etg]") when player is in Yell Alley or player is in Evaded Ave.
 
 volume prospective
 
