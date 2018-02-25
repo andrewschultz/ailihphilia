@@ -37,6 +37,8 @@ chapter Bon Snob
 
 understand "bon knob" as a mistake ("You don't need to help Sniffins with interior decorating, here.") when player is in Deft Fed and YOB ATTABOY is in DevReserved.
 
+book Dirge Grid
+
 book Dopy Pod
 
 understand "pod op" as a mistake ("But what sort of op?") when player is in Dopy Pod.

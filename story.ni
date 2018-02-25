@@ -555,7 +555,7 @@ instead of smelling:
 		now rod-smelled is true;
 		say "You might expect a rod odor, but there isn't one. OR MAYBE IT IS SO INGRAINED IN YOU, YOU NO LONGER SMELL IT." instead;
 	if player is in Deft Fed, say "Ham?! Ah!" instead;
-	if player is in Sneer Greens and Yuge Guy is in sneer greens, say "You smell an amoral aroma." instead;
+	if player is in Sneer Greens and Yuge Guy is in Sneer Greens, say "You smell an amoral aroma." instead;
 	say "Noses, on[one of]! (you don't need to smell anything in this game)[or][stopping]!"
 
 chapter singing
@@ -932,7 +932,7 @@ this is the tats-peripheral rule:
 	the rule succeeds;
 
 this is the wash-saw-reveal rule:
-	move wash saw to red roses order;
+	move wash saw to Red Roses Order;
 	the rule succeeds;
 
 this is the wear-garb rule:
@@ -1326,11 +1326,11 @@ check going west in Flu Gulf when scorn rocs are in Flu Gulf:	say "The scorn roc
 
 book Sneer Greens
 
-Sneer Greens is west of Flu Gulf. It is in Grebeberg. "[if Yuge Guy is in sneer greens]Despite the impressive view, the place has gone to pot.[else]Nicer with the Yuge Guy gone. Still, it's...[end if][paragraph break]You can only go back east."
+Sneer Greens is west of Flu Gulf. It is in Grebeberg. "[if Yuge Guy is in Sneer Greens]Despite the impressive view, the place has gone to pot.[else]Nicer with the Yuge Guy gone. Still, it's...[end if][paragraph break]You can only go back east."
 
 Sneer Greens is above Flu Gulf.
 
-printed name of Sneer Greens is "[if Yuge Guy is in sneer greens]Sneer Greens[else]Et Tu Butte[end if]"
+printed name of Sneer Greens is "[if Yuge Guy is in Sneer Greens]Sneer Greens[else]Et Tu Butte[end if]"
 
 understand "et tu butte" and "et/tu/butte" and "et tu" and "et/tu butte" as Sneer Greens when Yuge Guy is in Sneer Greens.
 
@@ -2517,12 +2517,12 @@ check going north in Emo Dome:
 	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a voice: 'DIFF-ID?'[paragraph break]You don't have anything identifying yourself. 'Oh, who? Go jog!' the voice continues. You think, hang? Nah." instead;
 	if Bro Orb is off-stage, say "You don't feel prepared enough to enter the Red Roses Order, yet." instead;
 	if not-a-baton is off-stage, say "You probably did all you needed to." instead;
-	say "You make sure your state tats are visible for scanning. They are accepted.[paragraph break][if madam is in red roses order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the wash saw.[end if]";
+	say "You make sure your state tats are visible for scanning. They are accepted.[paragraph break][if madam is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the wash saw.[end if]";
 	say "You make sure your state tats are visible for scanning. They are accepted and promptly rub off.[paragraph break]You step into what may be your final challenge in Yelpley..."
 
 book Red Roses Order
 
-Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in red roses order]The only visible way back is south, with a mist sim blocking the other directions, but you can't chicken out[else]A wash saw was revealed once the mist sim dispersed. You can go back south[end if]."
+Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in Red Roses Order]The only visible way back is south, with a mist sim blocking the other directions, but you can't chicken out[else]A wash saw was revealed once the mist sim dispersed. You can go back south[end if]."
 
 Red Roses Order is above Emo Dome.
 
@@ -2635,8 +2635,8 @@ Pro Corp is north of Gross Org. It is in Yelpley. description is "A butene tub r
 
 Pro Corp is above Gross Org.
 
-report taking when player is in pro corp:
-	if number of things in pro corp is 0:
+report taking when player is in Pro Corp:
+	if number of things in Pro Corp is 0:
 		say "Pro Corp is now a bald lab.";
 		now bald-lab is true;
 		now printed name of Pro Corp is "Bald Lab";
@@ -2797,10 +2797,10 @@ check going to Fun Nuf when being-chased is true: say "You feel yourself running
 the Psi Wisp is a chaser. chase-room of Psi Wisp is Pro Corp. description is "The Psi Wisp is very red, and it pulses fervently. If it had feelings, you'd be pretty sure it didn't like you.". "[one of]A Psi Wisp appears and starts chasing you![or]The Psi Wisp is still chasing you![stopping]".
 
 after looking when being-chased is false:
-	if player is in pro corp and psi wisp is not in DevReserved:
+	if player is in Pro Corp and psi wisp is not in DevReserved:
 		start-chase Psi Wisp;
 		say "The Psi Wisp begins to chase after you!";
-	if troll ort is in DevReserved and player is in frush surf and kayo yak is in frush surf:
+	if troll ort is in DevReserved and player is in Frush Surf and kayo yak is in Frush Surf:
 		start-chase Kayo Yak;
 		say "The Kayo Yak bounds after you!";
 	continue the action;
@@ -2932,14 +2932,18 @@ check aiding:
 	if dial-yet is false:
 		say "Aid... aid...[paragraph break]";
 	abide by the done-rule of location of player;
-	say "It looks like [f location of player is Yawn Way]there's nothing to do[else]you're done[end if] here. Maybe try somewhere else.";
+	say "It looks like [if location of player is Yawn Way]there's nothing to do[else]you're done[end if] here. Would you like to try somewhere else?";
+	unless the player yes-consents, say "Okay." instead;
 	now search-hint-room is true;
 	repeat with Q running through rooms:
 		if Q is in Odd Do, next;
+		if Q is in Dim Mid, next; [?? delete later -- we need to establish priority of rooms]
 		consider the done-rule of Q;
 		if the rule succeeded:
-			say "[Q] is a possibility.";
+			say "As a general hint, [Q] might be a good place to look.";
 			break;
+		else:
+			say "[Q] is not a possibility.";
 	now search-hint-room is false;
 
 search-hint-room is a truth state that varies.
@@ -2956,15 +2960,16 @@ done-rule of birch crib is birch-crib rule.
 done-rule of Calcific Lac is calcific-lac rule.
 done-rule of Cold Loc is cold-loc rule.
 done-rule of Deft Fed is deft-fed rule.
+done-rule of Dirge Grid is dirge-grid rule.
 done-rule of Dopy Pod is dopy-pod rule.
 done-rule of Drawl Ward is drawl-ward rule.
 done-rule of Dumb Mud is dumb-mud rule.
 done-rule of Emo Dome is emo-dome rule.
 done-rule of Evaded Ave is evaded-ave rule.
 done-rule of Flu Gulf is flu-gulf rule.
-done-rule of frush surf is frush-surf rule.
+done-rule of Frush Surf is frush-surf rule.
 done-rule of Fun Nuf is fun-nuf rule.
-done-rule of gross org is gross-org rule.
+done-rule of Gross Org is gross-org rule.
 done-rule of Lair Trial is lair-trial rule.
 done-rule of Le Babel is le-babel rule.
 done-rule of Mire Rim is mire-rim rule.
@@ -2973,11 +2978,11 @@ done-rule of Moo Room is moo-room rule.
 done-rule of Motto Bottom is motto-bottom rule.
 done-rule of My Gym is my-gym rule.
 done-rule of Ooze Zoo is ooze-zoo rule.
-done-rule of pro corp is pro-corp rule.
-done-rule of red roses order is red-roses-order rule.
+done-rule of Pro Corp is pro-corp rule.
+done-rule of Red Roses Order is red-roses-order rule.
 done-rule of Scrap Arcs is scrap-arcs rule.
 done-rule of Seer Trees is seer-trees rule.
-done-rule of sneer greens is sneer-greens rule.
+done-rule of Sneer Greens is sneer-greens rule.
 done-rule of Swamp Maws is swamp-maws rule.
 done-rule of Swept Pews is swept-pews rule.
 done-rule of Toll Lot is toll-lot rule.
@@ -2989,6 +2994,7 @@ done-rule of Yell Alley is yell-alley rule.
 section Apse Spa rule
 
 this is the apse-spa rule:
+	if sage gas is not off-stage and poor-sick is in DevReserved, continue the action;
 	if search-hint-room is true, the rule succeeds;
 
 section Art Xtra rule
@@ -3016,6 +3022,11 @@ section Deft Fed rule
 this is the deft-fed rule:
 	if search-hint-room is true, the rule succeeds;
 
+section Dirge Grid rule
+
+this is the dirge-grid rule:
+	if search-hint-room is true, the rule succeeds;
+
 section Dopy Pod rule
 
 this is the dopy-pod rule:
@@ -3024,12 +3035,24 @@ this is the dopy-pod rule:
 section Drawl Ward rule
 
 this is the drawl-ward rule:
+	if poor-sick is in devreserved, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if puce cup is not soddy, say "[one of]You have the puce cup, but it needs to be filled with something other than the past sap/purist sirup that got you by the Liar Grail.[or]You need something healing.[or]If you navigated the Apse Spa, you'll see what's there.[or]Once you have the  dose sod from the Apse Spa, USE PUCE CUP ON [psu].[stopping]";
+	say "USE PUCE CUP ON [psu]." instead;
+
+to say psu:
+	let X be the printed name of poor-sick;
+	say "[X in upper case]";
 
 section Dumb Mud rule
 
 this is the dumb-mud rule:
+	if lie veil is in devreserved and turf rut is in devreserved, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if Moo Room is unvisited, say "There's a part of southeast Grebeberg you haven't explored yet[if Ooze Zoo is visited and sleep eels are in Ooze Zoo]. You need to get past the sleep eels[end if]." instead;
+	if gnu dung is in Dumb Mud, say "[one of]You need a way to get rid of the gnu dung so you can go west.[or][if player does not have poo coop]The poo coop in the Moo Room will help you[else]USE POO COOP ON GNU DUNG[end if].[stopping]" instead;
+	if turf rut is in Dumb Mud, say "[one of]You need a way to fill up the turf rut.[or]You'd love to get rid of the poo coop.[or]USE POO COOP ON TURF RUT.[stopping]" instead;
+	say "[one of]You need something to cut the lie veil.[or][if player has exam axe]You will need an item you don't have yet for the Lie Veil[else]USE EXAM AXE ON LIE VEIL[end if][stopping]." instead;
 
 section Emo Dome rule
 
@@ -3039,21 +3062,34 @@ this is the emo-dome rule:
 section Evaded Ave rule
 
 this is the evaded-ave rule:
+	if Revolt Lover is in devreserved and bunk nub is not in Evaded Ave, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if Revolt Lover is in Evaded Ave:
+		if My Gym is unvisited, say "Visit south of Yawn Way a bit." instead;
+		if Worn Row is unvisited, say "See about west of My Gym." instead;
+		if ever-wordrow is false, say "Worn Row can become something else[if ever-workrow is true], besides Work Row[end if]." instead;
+		if player has TO IDIOT, say "You have TO IDIOT. Give it to the Revolt Lover." instead;
+		say "[one of]Word Row has some interesting books. Maybe one would please the Revolt Lover.[or]You need something daring and obnoxious.[or]Get TO IDIOT from Word Row.[stopping]" instead;
+	say "You just need to take the bunk nub here." instead;
 
 section Flu Gulf rule
 
 this is the flu-gulf rule:
+	if gulf lug is in devreserved, continue the action;
 	if search-hint-room is true, the rule succeeds;
 
 section Frush Surf rule
 
 this is the frush-surf rule:
+	if kayo yak is in devreserved, continue the action;
 	if search-hint-room is true, the rule succeeds;
 
 section Fun Nuf rule
 
 this is the fun-nuf rule:
+	if Dirge Grid is mapped north of Fun Nuf:
+		if Diktat Kid is in devreserved, continue the action;
+	if search-hint-room is true, the rule succeeds;
 	if Flee Elf is in Fun Nuf, say "[one of]The Flee Elf wants you to take the cap. But not take. A simile. To show you're in tune with this place.[or]PAC* CAP is the way to go.[or]PACK CAP.[stopping]" instead;
 	if player does not have epicer recipe, say "There's a useful list of items in Yelpley that may help you figure a way north." instead;
 	say "You'll need to come back later to break open the North-Tron." instead;
@@ -3164,8 +3200,8 @@ this is the worn-row rule:
 section Yawn Way rule
 
 this is the yawn-way rule:
-	continue the action; [this is a trivial rule, but in case I decide to add something, it may be a help.]
 	if search-hint-room is true, the rule succeeds;
+	continue the action; [this is a trivial rule, but in case I decide to add something, it may be a help.]
 
 section Yell Alley rule
 
@@ -3181,8 +3217,8 @@ balmlabing is an action applying to nothing.
 understand the command "balmlab" as something new.
 understand the command "balm lab" as something new.
 
-understand "balm lab" as balmlabing when player is in Pro Corp and number of things in pro corp is 0.
-understand "balmlab" as balmlabing when player is in Pro Corp and number of things in pro corp is 0.
+understand "balm lab" as balmlabing when player is in Pro Corp and number of things in Pro Corp is 0.
+understand "balmlab" as balmlabing when player is in Pro Corp and number of things in Pro Corp is 0.
 
 carry out balmlabing:
 	if balm-got is true, say "No double dipping." instead;
