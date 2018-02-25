@@ -2932,7 +2932,17 @@ check aiding:
 	if dial-yet is false:
 		say "Aid... aid...[paragraph break]";
 	abide by the done-rule of location of player;
-	say "It looks like you're done here. Maybe try somewhere else.";
+	say "It looks like [f location of player is Yawn Way]there's nothing to do[else]you're done[end if] here. Maybe try somewhere else.";
+	now search-hint-room is true;
+	repeat with Q running through rooms:
+		if Q is in Odd Do, next;
+		consider the done-rule of Q;
+		if the rule succeeded:
+			say "[Q] is a possibility.";
+			break;
+	now search-hint-room is false;
+
+search-hint-room is a truth state that varies.
 
 a room has a rule called done-rule. done-rule of a room is usually dunno-hint rule.
 
@@ -2940,8 +2950,106 @@ this is the dunno-hint rule:
 	say "I haven't determined hints for [location of player], yet.";
 	the rule succeeds;
 
+done-rule of Apse Spa is apse-spa rule.
+done-rule of Art Xtra is art-xtra rule.
+done-rule of birch crib is birch-crib rule.
+done-rule of Calcific Lac is calcific-lac rule.
+done-rule of Cold Loc is cold-loc rule.
+done-rule of Deft Fed is deft-fed rule.
+done-rule of Dopy Pod is dopy-pod rule.
+done-rule of Drawl Ward is drawl-ward rule.
+done-rule of Dumb Mud is dumb-mud rule.
+done-rule of Emo Dome is emo-dome rule.
+done-rule of Evaded Ave is evaded-ave rule.
+done-rule of Flu Gulf is flu-gulf rule.
+done-rule of frush surf is frush-surf rule.
 done-rule of Fun Nuf is fun-nuf rule.
+done-rule of gross org is gross-org rule.
+done-rule of Lair Trial is lair-trial rule.
+done-rule of Le Babel is le-babel rule.
+done-rule of Mire Rim is mire-rim rule.
+done-rule of Mont Nom is mont-nom rule.
+done-rule of Moo Room is moo-room rule.
+done-rule of Motto Bottom is motto-bottom rule.
+done-rule of My Gym is my-gym rule.
+done-rule of Ooze Zoo is ooze-zoo rule.
+done-rule of pro corp is pro-corp rule.
+done-rule of red roses order is red-roses-order rule.
+done-rule of Scrap Arcs is scrap-arcs rule.
 done-rule of Seer Trees is seer-trees rule.
+done-rule of sneer greens is sneer-greens rule.
+done-rule of Swamp Maws is swamp-maws rule.
+done-rule of Swept Pews is swept-pews rule.
+done-rule of Toll Lot is toll-lot rule.
+done-rule of Trapeze Part is trapeze-part rule.
+done-rule of Worn Row is worn-row rule.
+done-rule of Yawn Way is yawn-way rule.
+done-rule of Yell Alley is yell-alley rule.
+
+section Apse Spa rule
+
+this is the apse-spa rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Art Xtra rule
+
+this is the art-xtra rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Birch Crib rule
+
+this is the birch-crib rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Calcific Lac rule
+
+this is the calcific-lac rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Cold Loc rule
+
+this is the cold-loc rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Deft Fed rule
+
+this is the deft-fed rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Dopy Pod rule
+
+this is the dopy-pod rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Drawl Ward rule
+
+this is the drawl-ward rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Dumb Mud rule
+
+this is the dumb-mud rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Emo Dome rule
+
+this is the emo-dome rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Evaded Ave rule
+
+this is the evaded-ave rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Flu Gulf rule
+
+this is the flu-gulf rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Frush Surf rule
+
+this is the frush-surf rule:
+	if search-hint-room is true, the rule succeeds;
 
 section Fun Nuf rule
 
@@ -2951,15 +3059,118 @@ this is the fun-nuf rule:
 	say "You'll need to come back later to break open the North-Tron." instead;
 	continue the action;
 
+section Gross Org rule
+
+this is the gross-org rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Lair Trial rule
+
+this is the lair-trial rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Le Babel rule
+
+this is the le-babel rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Mire Rim rule
+
+this is the mire-rim rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Mont Nom rule
+
+this is the mont-nom rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Moo Room rule
+
+this is the moo-room rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Motto Bottom rule
+
+this is the motto-bottom rule:
+	if search-hint-room is true, the rule succeeds;
+
+section My Gym rule
+
+this is the my-gym rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Ooze Zoo rule
+
+this is the ooze-zoo rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Pro Corp rule
+
+this is the pro-corp rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Red Roses Order rule
+
+this is the red-roses-order rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Scrap Arcs rule
+
+this is the scrap-arcs rule:
+	if search-hint-room is true, the rule succeeds;
+
 section Seer Trees rule
 
 this is the seer-trees rule:
 	if stark rats are in DevReserved, continue the action;
+	if search-hint-room is true, the rule succeeds;
 	if player has party trap, say "USE the party trap on the stark rats." instead;
 	if player has trap art, say "The trap art can be made into something bigger. ";
 	if ever-workrow is true, say "[one of]One of the machines in Work Row works.[or]USE TRAP ART ON REIFIER.[stopping]" instead;
 	if Worn Row is visited, say "Worn Row is more than it seems[if ever-wordrow is true]. Yes, even more than Word Row[end if]." instead;
 	say "There's a room you haven't been to, [if My Gym is visited]past My Gym[else if Yawn Way is unvisited]east in Yelpley[else]south of Yawn Way[end if]. Have a look there." instead;
+
+section Sneer Greens rule
+
+this is the sneer-greens rule:
+	if Yuge Guy is in DevReserved, continue the action;
+	if search-hint-room is true, the rule succeeds;
+
+section Swamp Maws rule
+
+this is the swamp-maws rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Swept Pews rule
+
+this is the swept-pews rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Toll Lot rule
+
+this is the toll-lot rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Trapeze Part rule
+
+this is the trapeze-part rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Worn Row rule
+
+this is the worn-row rule:
+	if search-hint-room is true, the rule succeeds;
+
+section Yawn Way rule
+
+this is the yawn-way rule:
+	continue the action; [this is a trivial rule, but in case I decide to add something, it may be a help.]
+	if search-hint-room is true, the rule succeeds;
+
+section Yell Alley rule
+
+this is the yell-alley rule:
+	if search-hint-room is true, the rule succeeds;
 
 chapter balmlabing
 

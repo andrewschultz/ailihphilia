@@ -33,6 +33,8 @@ gorge grog + butene tub = resale laser
 
 Line Nil = can't cross?
 
+yawp way = mistake
+
 Yuge Guy: Male Lam
 
 ==========================final fight
@@ -49,8 +51,6 @@ No Sin is On
 
 ===================technical
 
-randomize male/female of some characters
-
 ===================done in story but need proofreading
 
 ===================features/weird/not quite sure
@@ -62,8 +62,6 @@ For the tope depot! Sniffins, uh, sniffs at you.
 Falses-Laf
 
 if you can't quite do something but figured out the command for later, this should be printed.
-
-Rah! Thar!
 
 Emulo-Volume
 
