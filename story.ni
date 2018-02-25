@@ -1349,7 +1349,7 @@ check going east in Sneer Greens:
 
 chapter Yuge Guy
 
-Yuge Guy is a proper-named person in Sneer Greens. description is "Bilgy. Glib.". "[one of]'I am the Yuge Guy!' someone booms. And he is huge, if not vertically.[or]The Yuge Guy continues carrying on about how the world stinks, except for him.[stopping]"
+Yuge Guy is a proper-named person in Sneer Greens. description is "Bilgy. Glib.". "[one of]'BELIEVE ME! LOVE ME! BELIEVE!' yells someone Wow--he's a lot bigger than you.[paragraph break]'I am EVIL CLIVE! the Yuge Guy!' he drones on. After your initial shock, you see that while he is bigger than you, it's more horizontally than vertically.[or]The Yuge Guy continues carrying on about how the world stinks, except for him.[stopping]"
 
 understand "evil/clive" and "evil clive" as Yuge Guy.
 
@@ -1698,7 +1698,7 @@ part Yelpley region
 
 book Yawn Way
 
-Yawn Way is east of Fun Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but you can go in all four directions, here: back west to Fun [']Nuf, north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]a dome[else]Emo Dome[end if]."
+Yawn Way is east of Fun Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but you can go in all four directions, here: back west to Fun [']Nuf, north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]Emo Dome[else]a dome[end if]."
 
 book My Gym
 
@@ -2914,7 +2914,7 @@ volume bonus points and odd verbs
 
 chapter aiding
 
-aiding is an action applying to nothing.
+aiding is an action out of world.
 
 understand the command "dial aid" as something new.
 understand the command "aid" as something new.
@@ -2924,6 +2924,53 @@ understand "dial aid" as aiding.
 
 dial-yet is a truth state that varies.
 
+more-later is a truth state that varies.
+
+a room has a number called walkthru-prio. walkthru-prio of a room is usually 400.
+
+after taking trap art:
+	now walkthru-prio of Art Xtra is 175;
+	continue the action;
+
+[this is the list of how I do things in the walkthrough.]
+
+walkthru-prio of Fun Nuf is 0.
+walkthru-prio of Art Xtra is 10.
+walkthru-prio of My Gym is 20.
+walkthru-prio of Worn Row is 30. [bump to before Pro Corp after changing to work/Worn Row]
+walkthru-prio of Evaded Ave is 40.
+walkthru-prio of Yell Alley is 50. [bump way up on using van]
+walkthru-prio of Trapeze Part is 60.
+walkthru-prio of Seer Trees is 70.
+walkthru-prio of Cold Loc is 80. [bump on getting sap]
+walkthru-prio of Yawn Way is 90.
+walkthru-prio of Ooze Zoo is 100.
+walkthru-prio of Frush Surf is 110. [bump up on taking stamp mats]
+walkthru-prio of Moo Room is 120. [bump up on getting coop]
+walkthru-prio of Emo Dome is 130.
+walkthru-prio of Swept Pews is 140.
+walkthru-prio of Apse Spa is 150. [bump up after getting Dose Sod]
+walkthru-prio of Drawl Ward is 160.
+walkthru-prio of Dopy Pod is 170. [bump after taking all]
+walkthru-prio of Scrap Arcs is 180.
+walkthru-prio of Flu Gulf is 190. [bump up after curing Gulf Lug]
+walkthru-prio of Toll Lot is 200.
+walkthru-prio of Deft Fed is 210.
+walkthru-prio of Gross Org is 220.
+walkthru-prio of Pro Corp is 230.
+walkthru-prio of Dumb Mud is 240. [bump up after path to Mont Nom]
+walkthru-prio of Mire Rim is 250.
+walkthru-prio of Swamp Maws is 260.
+walkthru-prio of Calcific Lac is 270.
+walkthru-prio of Birch Crib is 280.
+walkthru-prio of Trial Lair is 290.
+walkthru-prio of Motto Bottom is 300.
+walkthru-prio of Mont Nom is 310.
+walkthru-prio of Le Babel is 320.
+walkthru-prio of Sneer Greens is 330.
+walkthru-prio of Red Roses Order is 340.
+walkthru-prio of Dirge Grid is 350.
+
 check aiding:
 	if dial-yet is false and word number 1 in the player's command is "dial":
 		say "Your 'correct' way of asking for aid nets a last lousy point. You even throw in a 'Plea! Elp!' just to make sure.[paragraph break]Yay![paragraph break]";
@@ -2931,20 +2978,28 @@ check aiding:
 		now dial-yet is true;
 	if dial-yet is false:
 		say "Aid... aid...[paragraph break]";
+	now more-later is false;
 	abide by the done-rule of location of player;
-	say "It looks like [if location of player is Yawn Way]there's nothing to do[else]you're done[end if] here. Would you like to try somewhere else?";
+	if more-later is true:
+		say "There's nothing to do here right now, but there may be later";
+	else:
+		say "It looks like [if location of player is Yawn Way]there's nothing to do[else]you're done[end if] here";
+	say ". Would you like to try somewhere else?";
 	unless the player yes-consents, say "Okay." instead;
 	now search-hint-room is true;
-	repeat with Q running through rooms:
-		if Q is in Odd Do, next;
-		if Q is in Dim Mid, next; [?? delete later -- we need to establish priority of rooms]
+	let rooms-in-order be list of rooms not in Odd Do;
+	sort rooms-in-order in walkthru-prio order;
+	repeat with Q running through rooms-in-order:
 		consider the done-rule of Q;
 		if the rule succeeded:
 			say "As a general hint, [Q] might be a good place to look.";
+			now search-hint-room is false;
 			break;
-		else:
-			say "[Q] is not a possibility.";
-	now search-hint-room is false;
+	if search-hint-room is true:
+		now search-hint-room is false;
+		say "I'm out of ideas for rooms you've visited. Maybe look around the map a bit more.";
+
+	the rule succeeds;
 
 search-hint-room is a truth state that varies.
 
@@ -3087,37 +3142,49 @@ this is the frush-surf rule:
 section Fun Nuf rule
 
 this is the fun-nuf rule:
-	if Dirge Grid is mapped north of Fun Nuf:
-		if Diktat Kid is in devreserved, continue the action;
+	now more-later is true; [ we will always have more to do here ]
+	if Dirge Grid is not mapped north of Fun Nuf and Flee Elf is in DevReserved, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if Dirge Grid is mapped north of Fun Nuf, say "You will need to go north." instead;
 	if Flee Elf is in Fun Nuf, say "[one of]The Flee Elf wants you to take the cap. But not take. A simile. To show you're in tune with this place.[or]PAC* CAP is the way to go.[or]PACK CAP.[stopping]" instead;
 	if player does not have epicer recipe, say "There's a useful list of items in Yelpley that may help you figure a way north." instead;
 	say "You'll need to come back later to break open the North-Tron." instead;
+	if player has X-ITE TIX, say "USE TIX ON TIX EXIT." instead;
 	continue the action;
 
 section Gross Org rule
 
 this is the gross-org rule:
+	if Ned is in devreserved and stink knits are in devreserved, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if Ned is in devreserved, say "You need to take the stink knits." instead;
+	say "[one of]You need to get rid of Ned.[or]Ned wants a fight, which you want to decline.[or]A better way to say it is, DENY NED.[stopping]" instead;
 
 section Lair Trial rule
 
 this is the lair-trial rule:
+	if ergot ogre is in devreserved, continue the action;
 	if search-hint-room is true, the rule succeeds;
 
 section Le Babel rule
 
 this is the le-babel rule:
+	if Bro Orb is not in Le Babel, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	say "All you really have to do here is take the Bro Orb." instead;
 
 section Mire Rim rule
 
 this is the mire-rim rule:
+	unless eroded ore is off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if player does not have radar, say "There's something important behind the made dam, but you don't have the tool to detect it, yet." instead;
+	say "[one of]There's something behind the made dam. How can you detect it?[or]You have one detection instrument.[or]The radar.[or]USE RADAR ON MADE DAM.[stopping]" instead;
 
 section Mont Nom rule
 
 this is the mont-nom rule:
+	unless martini tram is off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
 
 section Moo Room rule
@@ -3171,6 +3238,8 @@ section Sneer Greens rule
 this is the sneer-greens rule:
 	if Yuge Guy is in DevReserved, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if player has rep popper, say "USE REP POPPER ON YUGE GUY." instead;
+	if dork rod is in DevReserved, say "You can take the item you need to defeat the Yuge Guy." instead;
 
 section Swamp Maws rule
 
@@ -3200,8 +3269,8 @@ this is the worn-row rule:
 section Yawn Way rule
 
 this is the yawn-way rule:
-	if search-hint-room is true, the rule succeeds;
 	continue the action; [this is a trivial rule, but in case I decide to add something, it may be a help.]
+	if search-hint-room is true, the rule succeeds;
 
 section Yell Alley rule
 
