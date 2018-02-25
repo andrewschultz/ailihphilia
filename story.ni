@@ -343,7 +343,9 @@ carry out refering:
 	try thinking instead;
 
 instead of thinking:
-	say "[if refer-bonus is false]There might be a more appropriate way to think[else]You think for a bit[end if]."
+	say "[if refer-bonus is false]There might be a more appropriate (five-letter) way to think, given the environs[else]You think for a bit[end if].";
+	if pace-prev is true, say "You can use the PACE CAP somewhere.";
+	if cap-ever-pace is true, say "You haven't figured where to PACE CAP, yet.";
 
 chapter inventory
 
@@ -1049,14 +1051,19 @@ understand the command "pacy cap" as something new.
 
 understand "pace cap" and "pacy cap" as paceing.
 
+pace-prev is a truth state that varies.
+
 carry out paceing:
 	if kayo yak is in DevReserved, say "You had enough high-speed fun for one game. If you want to zip around the map, though, GT is always an option." instead;
-	if pact cap is in Fun Nuf, say "That'll work later, but you need something a little different to actually TAKE the pact cap." instead;
+	if pact cap is in Fun Nuf:
+		now pace-prev is true;
+		say "That'll work later, but you need something a little different to actually TAKE the pact cap." instead;
 	if cap-pace is true, say "It's already a pace cap." instead;
 	if mrlp is Grebeberg, now cap-pace is whether or not cap-pace is true;
 	if cap-ever-pace is false:
 		score-inc; [Dim Mid/pace cap]
 		now cap-ever-pace is true;
+		now pace-prev is false;
 		say "[if mrlp is not Grebeberg]You realize it can sort of be a pace cap, too, but there isn't enough open space to run around productively for too long.[else]You suddenly feel [pace-of]![end if]";
 	else:
 		say "[if mrlp is not Grebeberg]That should work, but it doesn't, here. Maybe try over in Grebeberg?[else]You suddenly feel [pace-of].[end if]";
@@ -2924,16 +2931,35 @@ check aiding:
 		now dial-yet is true;
 	if dial-yet is false:
 		say "Aid... aid...[paragraph break]";
-	if done-here, say "You're done here." instead;
-	say "Thinking...";
+	abide by the done-rule of location of player;
+	say "It looks like you're done here. Maybe try somewhere else.";
 
-to decide whether done-here:
-	if player is in Yawn Way, yes;
-	if player is in Fun Nuf and flee elf is in DevReserved, yes;
-	if player is in My Gym and Dave is in DevReserved, yes;
-	if player is in Seer Trees and stark rats are in DevReserved, yes;
-	if player is in Calcific Lac and dork rod is in DevReserved, yes;
-	no;
+a room has a rule called done-rule. done-rule of a room is usually dunno-hint rule.
+
+this is the dunno-hint rule:
+	say "I haven't determined hints for [location of player], yet.";
+	the rule succeeds;
+
+done-rule of Fun Nuf is fun-nuf rule.
+done-rule of Seer Trees is seer-trees rule.
+
+section Fun Nuf rule
+
+this is the fun-nuf rule:
+	if Flee Elf is in Fun Nuf, say "[one of]The Flee Elf wants you to take the cap. But not take. A simile. To show you're in tune with this place.[or]PAC* CAP is the way to go.[or]PACK CAP.[stopping]" instead;
+	if player does not have epicer recipe, say "There's a useful list of items in Yelpley that may help you figure a way north." instead;
+	say "You'll need to come back later to break open the North-Tron." instead;
+	continue the action;
+
+section Seer Trees rule
+
+this is the seer-trees rule:
+	if stark rats are in DevReserved, continue the action;
+	if player has party trap, say "USE the party trap on the stark rats." instead;
+	if player has trap art, say "The trap art can be made into something bigger. ";
+	if ever-workrow is true, say "[one of]One of the machines in Work Row works.[or]USE TRAP ART ON REIFIER.[stopping]" instead;
+	if Worn Row is visited, say "Worn Row is more than it seems[if ever-wordrow is true]. Yes, even more than Word Row[end if]." instead;
+	say "There's a room you haven't been to, [if My Gym is visited]past My Gym[else if Yawn Way is unvisited]east in Yelpley[else]south of Yawn Way[end if]. Have a look there." instead;
 
 chapter balmlabing
 
