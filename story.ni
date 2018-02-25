@@ -124,7 +124,7 @@ the brag garb is a proper-named thing. description is "You don't know fashion th
 
 section helpdocs
 
-a helpdoc is a kind of thing. a helpdoc has a number called importancy.
+a helpdoc is a kind of thing. a helpdoc has a number called importancy. the indefinite article of a helpdoc is usually "the".
 
 to say other-docs:
 	let L be the list of still-useful helpdocs carried by player;
@@ -249,10 +249,25 @@ Rule for printing a parser error when the latest parser error is the can't see a
 	now X is "[location of player]" in lower case;
 	replace the text "[']" in X with "";
 	replace the text "-" in X with " ";
+	abide by the dir-error rules for location of player; [check this room and any adjacent room descriptions]
+	abide by the dir-error rules for room north of location of player;
+	abide by the dir-error rules for room south of location of player;
+	abide by the dir-error rules for room east of location of player;
+	abide by the dir-error rules for room west of location of player;
+	continue the action;
+
+the dir-error rules are a room based rulebook.
+
+a dir-error rule for a room (called myr):
+	if myr is nowhere, continue the action;
+	let X be indexed text;
+	now X is "[myr]" in lower case;
+	replace the text "[']" in X with "";
+	replace the text "-" in X with " ";
 	repeat with J running from 1 to number of words in X:
 		let Y be word number J in X;
 		if the player's command matches the text "[Y]", case insensitively:
-			say "It looks like you tried to do something with the location name[if balm-got is false], and you got the sneaky bonus point for doing so[else], though you'll get a bonus point in the right place. Location names are generally just to describe unnecessary scenery[end if].";
+			say "It looks like you tried to do something with [if myr is location of player]this[else]an adjacent[end if] location. You don't ever need to do this to win the game, [if balm-got is true]and you got the sneaky bonus point for doing so[else]though you'll get a bonus point in the right place. Location names are generally just to describe unnecessary scenery[end if].";
 			if gone-to is false, say "[line break]However, GO TO/GT (room) may be a nice shortcut to visit a previous location.";
 			the rule succeeds;
 	continue the action;
@@ -303,6 +318,12 @@ to decide whether the action is pro-and-use: [aip2]
 	if useoning, yes;
 	if the action is procedural, yes;
 	no;
+
+chapter climbing
+
+the block climbing rule is not listed in any rulebook.
+
+instead of climbing, say "You haven't drunk enough Klimb-Milk. Err, Climb-Milc. Whichever. You don't need to climb to win the game."
 
 chapter refering / thinking
 
@@ -1502,9 +1523,13 @@ the poo coop is in Moo Room. "A poo coop sits here. Thankfully, it looks empty."
 
 chapter senile felines
 
-the senile felines are peripheral things in Moo Room.
+the senile felines are plural-named peripheral things in Moo Room. "Senile felines swat at a late petal just a bit too high to reach. It might be fun to help them, but they probably can't help you. CATS!". description is "They are just lazing around, swatting at the late petal but never reaching it. You guess it must be fun for them.[paragraph break]Maybe it'd be fun to think of them as CATS."
 
-the late petal is peripheral scenery in Moo Room.
+check taking the senile felines: say "Sure, that'd help them swat the petal and 'win' whatever game they're playing, but maybe they want to feel like they did it themselves. As CATS." instead;
+
+the late petal is peripheral scenery in Moo Room. "It's just out of reach of the cats."
+
+instead of taking late petal, say "That'd be cheating, to actually give the cats the petal."
 
 chapter yahoo hay
 
@@ -1666,7 +1691,7 @@ part Yelpley region
 
 book Yawn Way
 
-Yawn Way is east of Fun Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but Art Xtra is to the north, and My Gym is to the south. An alley is to the east."
+Yawn Way is east of Fun Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but you can go in all four directions, here: back west to Fun [']Nuf, north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]a dome[else]Emo Dome[end if]."
 
 book My Gym
 
@@ -2476,7 +2501,9 @@ instead of doing something in Emo Dome when pulled-up is false:
 emo-dir is a direction that varies. emo-dir is west.
 
 check going to Emo Dome:
-	if pulled-up is true:
+	if Spur Ups are off-stage, say "It's too whiny to the east! You back out." instead;
+	if Spur Ups are not in DevReserved, say "The Spur Ups make you feel a bit more confident, but you need to do something to make yourself feel a bit more up before entering the Emo Dome." instead;
+	if pulled-up is false:
 		now emo-dir is noun;
 
 check going north in Emo Dome:
