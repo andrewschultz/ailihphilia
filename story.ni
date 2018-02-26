@@ -66,11 +66,15 @@ carry out looking (this is the change default appearance for blank rooms rule):
 
 chapter for (beta) testers
 
+[these are variables that are not used in the final release, but often, they have to be defined in the release, because major verbs use them.]
+
 llp-reject is a truth state that varies. [for my own tests: walkthrough with LLPs and without]
 
 endgame-test is a truth state that varies.
 
 in-beta is a truth state that varies.
+
+aid-detail is a truth state that varies.
 
 volume parser simplification
 
@@ -3019,6 +3023,9 @@ check aiding:
 		if the rule succeeded:
 			say "As a general hint, [Q] might be a good place to look.";
 			now search-hint-room is false;
+			if aid-detail is true:
+				say "DEBUG: Here's what the hint would be: ";
+				consider the done-rule of Q;
 			break;
 	if search-hint-room is true:
 		now search-hint-room is false;
@@ -3723,4 +3730,17 @@ when play begins (this is the make sure everyone is chatty rule):
 		say "YAY all people accounted for!";
 	else:
 		say "[count] of [number of people] unaccounted for.";
+
+chapter adeing
+
+adeing is an action out of world.
+
+understand the command "ade" as something new.
+
+understand "ade" as adeing.
+
+carry out adeing:
+	now aid-detail is whether or not aid details is false;
+	say "Aid detail is now [on-off of aid-detail]. In other words, you [if aid-detail is true]will[else]won't[end if] see what hints would be in the room that's currently targeted for hints.";
+	the rule succeeds;
 
