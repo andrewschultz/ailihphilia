@@ -759,7 +759,7 @@ SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	false	false	Grebeberg	"Wit
 straw arts	Mike Kim	soot tattoos	--	--	true	true	false	Yelpley	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
 gate tag	soot tattoos	state tats	--	tats-peripheral rule	true	true	true	Yelpley	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
 poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
-poo coop	turf rut	--	coop-full rule	--	true	true	true	Grebeberg	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture.[paragraph break]A bold lob! The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
+poo coop	turf rut	--	coop-full rule	shift-dumb-mud rule	true	true	true	Grebeberg	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture.[paragraph break]A bold lob! The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
 radar	made dam	eroded ore	--	radar-blink rule	true	false	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow. The radar plays a weird scale. Being close to the ore has damaged it somehow."
 NULL ILLUN	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me.' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. And if it's simple, well, I need to know when simple stuff works.' The Known Wonk apologizes--it's back to a Tru Yurt for a thought session."
 el doodle	edits tide	spa maps	--	rahs-too rule	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps! And there is a bonus! It appears El Doodle was so jumbled, there were two things. Sharp rahs appear on another sheet of paper, as some sort of confused motivation, and you take them."
@@ -917,6 +917,10 @@ this is the sap-to-cup rule:
 		if use1 entry is puce cup and use2 entry is past sap:
 			now sco entry is false;
 			the rule succeeds;
+	the rule succeeds;
+
+this is the shift-dumb-mud rule:
+	shuffle-before Dumb Mud and Le Babel;
 	the rule succeeds;
 
 this is the sod-to-cup rule:
@@ -2615,7 +2619,7 @@ to decide which number is radar-used:
 	if UFO tofu is not off-stage, increment temp;
 	decide on temp;
 
-the radar is a thing in Dopy Pod. description is "You're not sure of the deeper science, but you will probably figure how to USE it when the time comes[if radar-used is 1] again, though it does seem slightly damaged[end if]."
+the radar is a thing. description is "You're not sure of the deeper science, but you will probably figure how to USE it when the time comes[if radar-used is 1] again, though it does seem slightly damaged[end if]."
 
 The roto motor is a thing. description is "It seems to have been saved from whatever caused the radar to go on the fritz."
 
@@ -2934,31 +2938,34 @@ after taking trap art:
 
 [this is the list of how I do things in the walkthrough.]
 
+L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Moo Room, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, lu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Dumb Mud, Mire Rim, Swamp Maws, Calcific Lac, Birch Crib, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
+
+[
 walkthru-prio of Fun Nuf is 0.
-walkthru-prio of Art Xtra is 10.
+walkthru-prio of Art Xtra is 10. [?? bump to before Swamp Maws after taking the Trap Art, then to before Red Roses Order after getting El Doodle]
 walkthru-prio of My Gym is 20.
-walkthru-prio of Worn Row is 30. [bump to before Pro Corp after changing to work/Worn Row]
+walkthru-prio of Worn Row is 30. [??bump to before Pro Corp after changing to work/Worn Row]
 walkthru-prio of Evaded Ave is 40.
-walkthru-prio of Yell Alley is 50. [bump way up on using van]
+walkthru-prio of Yell Alley is 50. [??bump to before Sneer Greens after using on van]
 walkthru-prio of Trapeze Part is 60.
 walkthru-prio of Seer Trees is 70.
-walkthru-prio of Cold Loc is 80. [bump on getting sap]
+walkthru-prio of Cold Loc is 80. [??bump to before Emo Dome on getting spurs]
 walkthru-prio of Yawn Way is 90.
 walkthru-prio of Ooze Zoo is 100.
-walkthru-prio of Frush Surf is 110. [bump up on taking stamp mats]
-walkthru-prio of Moo Room is 120. [bump up on getting coop]
+walkthru-prio of Frush Surf is 110. [??bump to before Trial Lair on taking stamp mats]
+walkthru-prio of Moo Room is 120. [??bump to before Red Roses Order on getting poo coop]
 walkthru-prio of Emo Dome is 130.
 walkthru-prio of Swept Pews is 140.
-walkthru-prio of Apse Spa is 150. [bump up after getting Dose Sod]
+walkthru-prio of Apse Spa is 150. [??bump to before Motto Bottom after getting Dose Sod]
 walkthru-prio of Drawl Ward is 160.
-walkthru-prio of Dopy Pod is 170. [bump after taking all]
+walkthru-prio of Dopy Pod is 170. [??bump to before Toll Lot after taking all]
 walkthru-prio of Scrap Arcs is 180.
-walkthru-prio of Flu Gulf is 190. [bump up after curing Gulf Lug]
+walkthru-prio of Flu Gulf is 190. [??bump to before Sneer Greens after curing Gulf Lug. There's some question if Yell Alley should be before Flu Gulf just in case. So maybe we need a 2-part reshuffle to make sure.]
 walkthru-prio of Toll Lot is 200.
 walkthru-prio of Deft Fed is 210.
 walkthru-prio of Gross Org is 220.
 walkthru-prio of Pro Corp is 230.
-walkthru-prio of Dumb Mud is 240. [bump up after path to Mont Nom]
+walkthru-prio of Dumb Mud is 240. [shifted to before Le Babel with Turf Rut gone]
 walkthru-prio of Mire Rim is 250.
 walkthru-prio of Swamp Maws is 260.
 walkthru-prio of Calcific Lac is 270.
@@ -2970,6 +2977,24 @@ walkthru-prio of Le Babel is 320.
 walkthru-prio of Sneer Greens is 330.
 walkthru-prio of Red Roses Order is 340.
 walkthru-prio of Dirge Grid is 350.
+]
+
+[?? nothing game-critical to do here = if there is a LLP]
+
+to shuffle-before (a - a room) and (b - a room):
+	let x1 be 0;
+	let LE be number of entries in L;
+	repeat with x running from 1 to LE:
+		if entry x of L is a:
+			now x1 is x;
+			break;
+	if x1 is 0, continue the action;
+	say "[x1] [LE].";
+	repeat with x2 running from x1 to LE:
+		if entry x2 of L is b:
+			say "Swapping elements [a] and [b].";
+			add a at entry x2 in L;
+			remove entry x1 from L;
 
 check aiding:
 	if dial-yet is false and word number 1 in the player's command is "dial":
