@@ -106,6 +106,39 @@ def read_test_file_order():
         if test_ary[a] not in dupes.keys():
             test_order[test_ary[a]] = a + 1
 
+# this reads through the file twice, but otherwise the file parsing gets too confusing. It's already probably more tangled than it should be.
+
+def check_source_rule_order():
+    line_count = 0
+    last_rule = ""
+    rule_search = False
+    errs = 0
+    rule_sections = 0
+    last_line = 0
+    with open(main_source) as file:
+        for line in file:
+            line_count = line_count + 1
+            if line.startswith("section"):
+                if 'post-use rules' in line or 'pre-use rules' in line:
+                    rule_search = True
+                    rule_sections = rule_sections + 1
+                    last_rule = ""
+                    continue
+            if re.search("^(chapter|section|book|part|volume)", line.lower()):
+                rule_search = False
+                continue
+            if rule_search and line.startswith("this is the"):
+                cur_rule = re.sub("^this is the ", "", line.strip().lower())
+                cur_rule = re.sub(" rule.*", "", cur_rule)
+                if cur_rule < last_rule:
+                    print("ERROR: Line", line_count, "rule", cur_rule, "alphabetically before", last_rule, "line", last_line)
+                    errs = errs + 1
+                last_rule = cur_rule
+                last_line = line_count
+    print((errs if errs > 0 else "no"), "rule order errors for table of useons.")
+    if rule_sections != 2:
+        print("Have", rule_sections, "rules but should have 2.")
+
 def walkthrough_vs_test_file(maxdif):
     if not maxdif:
         print("Skipping walkthrough vs test file comparison. Run -md(#) or -md (#) to try this.")
@@ -593,7 +626,10 @@ def get_stuff_from_source():
                             elif verbose:
                                 print(temp_region, "at line", line_count, " in use table given extra point.")
                             undef_use_points = undef_use_points + 1
-# start main
+
+#
+# start main code
+#
 
 argval = 1
 while argval < len(sys.argv):
@@ -624,6 +660,8 @@ while argval < len(sys.argv):
     argval = argval + 1
 
 get_stuff_from_source()
+
+check_source_rule_order()
 
 read_test_file_order()
 
