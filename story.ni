@@ -12,6 +12,8 @@ FAIL for Useons that don't work
 TALK for talk texts
 WIN for winning the game
 PER for table of periphery
+PRE for pre-rules in the table of useons
+POST for post-rules in the table of useons
 
 to search for an item, look for chapter [item].
 ]
@@ -740,7 +742,7 @@ pity tip	navy van	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	"The v
 trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
 bunk nub	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching and slurping, the bunk nub is changed to a bunch of much smaller, but more comfortable looking, stock cots."
 party trap	stark rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
-ERA FARE	King Nik	Spur Ups	--	--	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'This will help me when I get back to South Ihtuos. Thank you!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...I must leave and RAFT FAR back to '"
+ERA FARE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'This will help me when I get back to South Ihtuos. Thank you!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...I must leave and RAFT FAR back to '"
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
 wash saw	past sap	--	sap-on-ground-yet rule	--	true	true	false	Grebeberg	"You hack away at the past sap with the wash saw, first squirting some loosening/thawing liquid. It's tricky, but the saw holds out until ... rats! You were 80% done. Fortunately, with some perseverance, you're able to twist the sap off the rife fir."
 puce cup	past sap	--	sap-still-on-tree rule	sap-to-cup rule	false	false	false	--	"You pour some sap into the cup."
@@ -748,19 +750,19 @@ puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"T
 puce cup	dose sod	--	--	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
 puce cup	Marge Pegram	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley	"You give marge the puce cup. She drinks the dose sod and immediately feels better. 'Well... I have a lot of catching up to do. Can't hang around. Here's some Elan Ale for you, to celebrate how cool you are for helping.'"
 stamp mats	slate metals	ye key	--	--	true	false	false	Yelpley	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY."
-demo med	gulf lug	cash sac	--	--	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' he looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
+demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' he looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
 YOB ATTABOY	Sniffins	Dirt Rid	--	--	true	true	false	Yelpley	"Sniffins accepts your gift. His sniffs slowly change from sadness to something more snooty. He thanks you for helping him be too good for you before handing you a Dirt Rid and kicking you out."
 Elan Ale	Sniffins	Gorge Grog	--	--	true	true	false	Yelpley	"Sniffins looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'" [af:stand nat's]
 Dirt Rid	reviver	Cave Vac	--	--	true	true	false	Yelpley	"You watch as the Dirt Rid swirls and becomes shinier and much more powerful. A Cave Vac! It will be capable of cleaning...well, somewhere."
-Cave Vac	cassettes sac	radar	--	--	true	true	true	Yelpley	"The Cave Vac has the power to clean up the Dirt Rid, though it chokes and sputters at the end of the effort. And while a lot of the cassettes are beyond repair, there's something at the very bottom.[paragraph break]Wow! Radar![paragraph break]You hear noises from the pod, as a hidden robot appears and whisks the garbage away. That's pretty slick! Looking back, the pod doesn't seem so dopy any more, between the Demo Med's help and how you're sure the radar will help."
+Cave Vac	cassettes sac	radar	--	bump-pod rule	true	true	true	Yelpley	"The Cave Vac has the power to clean up the Dirt Rid, though it chokes and sputters at the end of the effort. And while a lot of the cassettes are beyond repair, there's something at the very bottom.[paragraph break]Wow! Radar![paragraph break]You hear noises from the pod, as a hidden robot appears and whisks the garbage away. That's pretty slick! Looking back, the pod doesn't seem so dopy any more, between the Demo Med's help and how you're sure the radar will help."
 radar	crag arc	UFO tofu	orc-gone rule	radar-blink rule	true	false	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO and lands on the radar, which fizzles a bit from the impact and wetness. It hardens quickly and weirdly into a cubic shape. What could it be? You think a minute. It has to be UFO tofu." [af:deny Ned]
 Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paragraph break]A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it." [af:Worn Row]
 stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
 Gorge Grog	Butene Tub	resale laser	--	--	true	true	true	Yelpley	"The Gorge Grog immediately starts fizzing as it pours down the tub, which rumbles disturbingly. You find it best to hide, and that's the right thing to do, because the butene tub explodes into pieces. Under it is a resale laser!"
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	false	false	Grebeberg	"With the help of SOME DEMOS, you manage to rejig the hay into something more aesthetically pleasing: straw arts!"
-straw arts	Mike Kim	soot tattoos	--	--	true	true	false	Yelpley	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
+straw arts	Mike Kim	soot tattoos	--	rebump-art-xtra rule	true	true	false	Yelpley	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
 gate tag	soot tattoos	state tats	--	tats-peripheral rule	true	true	true	Yelpley	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
 poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
 poo coop	turf rut	--	coop-full rule	shift-dumb-mud rule	true	true	true	Grebeberg	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture.[paragraph break]A bold lob! The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
@@ -790,13 +792,13 @@ balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	"The sword rows 
 not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You will be able to smite a bad-faith pearl-clutcher for sure with one of these."
 murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
 Yard Ray	test set	--	ready-to-test rule	--	true	false	true	Dim Mid	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
-ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, successfully bribed." [b4:use tnt on ore zero]
+ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, successfully bribed." [b4:use TNT on ore zero]
 taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	Dim Mid	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev knows what he's up against. It's not that it's particularly violent or lethal, but ... the Verses Rev has developed such a warped orthodoxy, the bat is much scarier than it should be. Nothing to do but turn and run!"
 Yard Ray	Diktat Kid	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	"Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who goes running off. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]... REDIVIDER!'[paragraph break]With the Diktat Kid gone, you see saner arenas all around."
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse]
 
-section pre-use rules
+section pre-use rules [xxpre]
 
 [please add alphabetically]
 
@@ -813,6 +815,11 @@ this is the in-mont-nom rule:
 	say "Ian is distracting you. Maybe you can get rid of him, first.";
 	the rule fails;
 
+this is the maps-readable rule:
+	if maps-explained is true, the rule succeeds;
+	say "Hmm. Maybe if the maps were a bit clearer to you, that would work. But not now.";
+	the rule fails;
+
 this is the maps-still-confusing rule:
 	if maps-explained is true:
 		say "You already got the Code Doc to decipher the spa maps.";
@@ -821,11 +828,6 @@ this is the maps-still-confusing rule:
 		say "'I might, but I need some help here first, to make my home here properly homey.'";
 		the rule fails;
 	the rule succeeds;
-
-this is the maps-readable rule:
-	if maps-explained is true, the rule succeeds;
-	say "Hmm. Maybe if the maps were a bit clearer to you, that would work. But not now.";
-	the rule fails;
 
 this is the Ned-gone rule:
 	if Ned is in DevReserved, the rule succeeds;
@@ -844,9 +846,9 @@ this is the ready-to-test rule:
 
 [??	say "That seems right, but you should probably go where there aren't many people. Like back to Fun [']Nuf.";]
 
-this is the sap-still-on-tree rule:
-	if sword rows are not in DevReserved, the rule succeeds;
-	say "You already chipped the sap off the tree.";
+this is the sap-in-cup rule:
+	if puce cup is sappy, the rule succeeds;
+	say "[if puce cup is soddy]The sod doesn't seem to belong in the Liar Grail, but maybe something else does[else]The puce cup is empty[end if].";
 	the rule fails;
 
 this is the sap-on-ground-yet rule:
@@ -854,27 +856,41 @@ this is the sap-on-ground-yet rule:
 	say "You need a way to chip the sap off the fir.";
 	the rule fails;
 
+this is the sap-still-on-tree rule:
+	if sword rows are not in DevReserved, the rule succeeds;
+	say "You already chipped the sap off the tree.";
+	the rule fails;
+
 this is the sod-in-cup rule:
 	if puce cup is soddy, the rule succeeds;
 	say "[if puce cup is sappy]Marge Pegram makes a face at the sap in the cup. Maybe something less unpalatable would help her[else]The puce cup is empty. It wouldn't help Marge Pegram[end if].";
 	the rule fails;
 
-this is the sap-in-cup rule:
-	if puce cup is sappy, the rule succeeds;
-	say "[if puce cup is soddy]The sod doesn't seem to belong in the Liar Grail, but maybe something else does[else]The puce cup is empty[end if].";
-	the rule fails;
-
-section post-use rules
+section post-use rules [xxpost]
 
 [please add alphabetically]
+
+this is the bump-gulf rule:
+	shuffle-before Flu Gulf and Sneer Greens;
+	the rule succeeds;
+
+this is the bump-pod rule:
+	shuffle-before Dopy Pod and Toll Lot;
+	the rule succeeds;
 
 this is the chase-in-zoo rule:
 	if location of player is Frush Surf, start-chase Kayo Yak;
 	the rule succeeds;
 
+this is the cold-loc-hint-bump rule:
+	shuffle-before Cold Loc and Emo Dome;
+	the rule succeeds;
+
 this is the empty-cup rule:
 	now puce cup is empty;
-	if Marge Pegram is in DevReserved and liar grail is in DevReserved, say "You probably don't need the puce cup any more.";
+	if poor-sick is in DevReserved and liar grail is in DevReserved:
+		say "[poor-sick] smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west."
+		shuffle-before Dose Sod and Motto Bottom;
 	the rule succeeds;
 
 this is the hay-gone rule:
@@ -899,7 +915,8 @@ this is the maps-explain rule:
 
 this is the mob-to-alley rule:
 	now bomb mob is in Yell Alley;
-	now tnt is in Yell Alley;
+	now TNT is in Yell Alley;
+	shuffle-before Yell Alley and Sneer Greens;
 	the rule succeeds;
 
 this is the radar-blink rule:
@@ -913,6 +930,10 @@ this is the radar-blink rule:
 
 this is the rahs-too rule:
 	now player has the sharp rahs;
+	the rule succeeds;
+
+this is the rebump-art-xtra rule:
+	shuffle-before Art Xtra and Red Roses Order;
 	the rule succeeds;
 
 this is the sap-to-cup rule:
@@ -1506,6 +1527,14 @@ check going south in Frush Surf: say "You barely step in, and the water's a bit 
 
 stamp mats are a thing in Frush Surf. "Stamp mats lie here.". description is "The stamp mats appear to be engraved in order to cut a pattern out."
 
+chapter Stamp Mats
+
+after taking stamp mats:
+	shuffle-before Frush Surf and Trial Lair;
+	continue the action;
+
+chapter Kayo Yak
+
 The Kayo Yak is a chaser in Frush Surf. "A kayo yak paws the ground here. It doesn't seem violent, but it seems up for rough play.". description is "[if being-chased is true]The Kayo Yak is really rumbling around, here[else]The Kayo Yak looks alert, ready for more than just standing around[end if]."
 
 chapter yakokaying
@@ -1638,7 +1667,7 @@ The Edits Tide is scenery in Swamp Maws. "A voice from the edits tide seems to s
 
 chapter sharp rahs
 
-the sharp rahs are a thing. "The sharp rahs get you enthused, but they're not enough by themselves. Perhaps they are a bit overdone, with stuff like ZEST SEZ. They need balance some way.". description is "Reading the rahs leaves you feeling more motivated for a bit, but not long, because you used all; your mental energy getting motivated. Perhaps they need to be balanced with something more cerebral." [??rahs on mat]
+the sharp rahs are a plural-named thing. "The sharp rahs get you enthused, but they're not enough by themselves. Perhaps they are a bit overdone, with stuff like ZEST SEZ. They need balance some way.". description is "Reading the rahs leaves you feeling more motivated for a bit, but not long, because you used all; your mental energy getting motivated. Perhaps they need to be balanced with something more cerebral." [??rahs on mat]
 
 book Calcific Lac
 
@@ -2039,8 +2068,10 @@ carry out workrowing:
 	clear-worn-row;
 	now Worn Row is worky;
 	say "Three machines [one of][or]re[stopping]appear[if Worn Row is wordy], replacing the books[end if].";
-	if ever-workrow is false, score-inc; [Yelpley/work row]
-	now ever-workrow is true;
+	if ever-workrow is false:
+		hint-bump-worn;
+		score-inc; [Yelpley/work row]
+	now 	now ever-workrow is true;
 	now all workables are in Worn Row;
 	now all books in Worn Row are in TempMet;
 	if redness ender is in Worn Row, now redness ender is in TempMet;
@@ -2071,7 +2102,9 @@ carry out wordrowing:
 	now all workables are in TempMet;
 	if redness ender is in Worn Row, now redness ender is in TempMet;
 	move tract cart to Worn Row;
-	if ever-wordrow is false, score-inc; [Yelpley/word row]
+	if ever-wordrow is false:
+		hint-bump-worn;
+		score-inc; [Yelpley/word row]
 	now ever-wordrow is true;
 	say "A tract cart [one of]appears, with a pity tip fluttering down. You take the tip[or]re-appears[stopping].";
 	now all tractable books are in Worn Row;
@@ -2189,6 +2222,16 @@ Art Xtra is north of Yawn Way. It is in Yelpley. "You can go south or north here
 chapter trap art
 
 the trap art is a thing in Art Xtra. "Some trap art sits here. It's free. You might as well take it.". description is "The trap art depicts a bunch of nasty, dirty animals being trapped--it's not a real trap, but maybe it could become one."
+
+after taking trap art:
+	shuffle-before Art Xtra and Swamp Maws;
+	continue the action;
+
+chapter el doodle
+
+after taking El Doodle:
+	shuffle-before Art Xtra and Red Roses Order;
+	continue the action;
 
 El Doodle is a thing. description is "A jumble of raw creativity, it looks like it could be a map--or something--but it sure could use some paring down."
 
@@ -2615,6 +2658,10 @@ instead of doing something with cassettes sac:
 	if action is pro-and-use, continue the action;
 	say "The cassettes sac is too messy to do anything with. You need to find a way to clean it up."
 
+after taking demo med:
+	consider the bump-pod rule;
+	continue the action;
+
 chapter radar
 
 to decide which number is radar-used:
@@ -2936,54 +2983,16 @@ more-later is a truth state that varies.
 
 a room has a number called walkthru-prio. walkthru-prio of a room is usually 400.
 
-after taking trap art:
-	now walkthru-prio of Art Xtra is 175;
-	continue the action;
+to hint-bump-worn:
+	shuffle-before Worn Row and Dirge Grid;
 
 [this is the list of how I do things in the walkthrough.]
 
 L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Moo Room, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, lu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Dumb Mud, Mire Rim, Swamp Maws, Calcific Lac, Birch Crib, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
 
-[
-walkthru-prio of Fun Nuf is 0.
-walkthru-prio of Art Xtra is 10. [?? bump to before Swamp Maws after taking the Trap Art, then to before Red Roses Order after getting El Doodle]
-walkthru-prio of My Gym is 20.
-walkthru-prio of Worn Row is 30. [??bump to before Pro Corp after changing to work/Worn Row]
-walkthru-prio of Evaded Ave is 40.
-walkthru-prio of Yell Alley is 50. [??bump to before Sneer Greens after using on van]
-walkthru-prio of Trapeze Part is 60.
-walkthru-prio of Seer Trees is 70.
-walkthru-prio of Cold Loc is 80. [??bump to before Emo Dome on getting spurs]
-walkthru-prio of Yawn Way is 90.
-walkthru-prio of Ooze Zoo is 100.
-walkthru-prio of Frush Surf is 110. [??bump to before Trial Lair on taking stamp mats]
-walkthru-prio of Moo Room is 120. [??bump to before Red Roses Order on getting poo coop]
-walkthru-prio of Emo Dome is 130.
-walkthru-prio of Swept Pews is 140.
-walkthru-prio of Apse Spa is 150. [??bump to before Motto Bottom after getting Dose Sod]
-walkthru-prio of Drawl Ward is 160.
-walkthru-prio of Dopy Pod is 170. [??bump to before Toll Lot after taking all]
-walkthru-prio of Scrap Arcs is 180.
-walkthru-prio of Flu Gulf is 190. [??bump to before Sneer Greens after curing Gulf Lug. There's some question if Yell Alley should be before Flu Gulf just in case. So maybe we need a 2-part reshuffle to make sure.]
-walkthru-prio of Toll Lot is 200.
-walkthru-prio of Deft Fed is 210.
-walkthru-prio of Gross Org is 220.
-walkthru-prio of Pro Corp is 230.
-walkthru-prio of Dumb Mud is 240. [shifted to before Le Babel with Turf Rut gone]
-walkthru-prio of Mire Rim is 250.
-walkthru-prio of Swamp Maws is 260.
-walkthru-prio of Calcific Lac is 270.
-walkthru-prio of Birch Crib is 280.
-walkthru-prio of Trial Lair is 290.
-walkthru-prio of Motto Bottom is 300.
-walkthru-prio of Mont Nom is 310.
-walkthru-prio of Le Babel is 320.
-walkthru-prio of Sneer Greens is 330.
-walkthru-prio of Red Roses Order is 340.
-walkthru-prio of Dirge Grid is 350.
-]
-
 [?? nothing game-critical to do here = if there is a LLP]
+
+[LATER: establish partially done room rules as opposed to completely done, for a room]
 
 to shuffle-before (a - a room) and (b - a room):
 	let x1 be 0;
@@ -3030,7 +3039,6 @@ check aiding:
 	if search-hint-room is true:
 		now search-hint-room is false;
 		say "I'm out of ideas for rooms you've visited. Maybe look around the map a bit more.";
-
 	the rule succeeds;
 
 search-hint-room is a truth state that varies.
@@ -3087,7 +3095,13 @@ this is the apse-spa rule:
 section Art Xtra rule
 
 this is the art-xtra rule:
+	if state tats are not off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if trap art is in Art Xtra, say "The trap art will be useful, with a change." instead;
+	if el doodle is in Art Xtra, say "El doodle will be useful, with a change." instead;
+	if player has straw arts, say "USE STRAW ARTS ON MIKE KIM." instead;
+	if player has soot tattoos, say "USE SOOT TATTOOS ON GATE TAG." instead;
+	say "I need to fill this in. Hints here are tricky." instead;
 
 section Birch Crib rule
 
