@@ -669,7 +669,7 @@ check useoning it with:
 			if there is a use2 entry and second noun is use2 entry:
 				if there is a preproc entry:
 					consider the preproc entry;
-					if the rule failed, the rule succeeds;
+					unless the rule succeeded, the rule succeeds;
 				if there is a getit entry:
 					now player has getit entry;
 				if d2 entry is true:
@@ -744,10 +744,10 @@ bunk nub	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching 
 party trap	stark rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
 ERA FARE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'This will help me when I get back to South Ihtuos. Thank you!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...I must leave and RAFT FAR back to '"
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
-wash saw	past sap	--	sap-on-ground-yet rule	--	true	true	false	Grebeberg	"You hack away at the past sap with the wash saw, first squirting some loosening/thawing liquid. It's tricky, but the saw holds out until ... rats! You were 80% done. Fortunately, with some perseverance, you're able to twist the sap off the rife fir."
-puce cup	past sap	--	sap-still-on-tree rule	sap-to-cup rule	false	false	false	--	"You pour some sap into the cup."
+wash saw	past sap	--	--	--	true	true	false	Grebeberg	"You hack away at the past sap with the wash saw, first squirting some loosening/thawing liquid. It's tricky, but the saw holds out until ... rats! You were 80% done. Fortunately, with some perseverance, you're able to twist the sap off the rife fir."
+puce cup	past sap	--	check-sap-cup rule	sap-to-cup rule	false	false	false	--	"You pour some sap into the cup."
 puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"The past sap pours into the liar grail and exposes how bad the grail has been over the years. As it cracks, along with the wall it was attached to to allow passage south, you snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL!"
-puce cup	dose sod	--	--	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
+puce cup	dose sod	--	check-sod-cup rule	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
 puce cup	Marge Pegram	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley	"You give marge the puce cup. She drinks the dose sod and immediately feels better. 'Well... I have a lot of catching up to do. Can't hang around. Here's some Elan Ale for you, to celebrate how cool you are for helping.'"
 stamp mats	slate metals	ye key	--	--	true	false	false	Yelpley	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY."
 demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' he looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
@@ -802,6 +802,32 @@ section pre-use rules [xxpre]
 
 [please add alphabetically]
 
+this is the check-sap-cup rule:
+	if wash saw is not in devreserved:
+		say "The sap is stuck to the tree.";
+		the rule fails;
+	if liar grail is in devreserved:
+		say "You doubt you will need the past sap again, since it got you by the Liar Grail[if puce cup is soddy]. In fact, the sod seems like a good thing to have[else]. But maybe something else[end if].";
+		the rule fails;
+	if puce cup is sappy:
+		say "The puce cup already contains past sap.";
+		the rule fails;
+	if puce cup is soddy:
+		say "The puce cup already contains dose sod. Pour it out to get the past sap?";
+		if the player yes-consents, the rule succeeds;
+		the rule fails;
+	the rule succeeds;
+
+this is the check-sod-cup rule:
+	if puce cup is soddy:
+		say "The puce cup already contains dose sod.";
+		the rule fails;
+	if puce cup is sappy:
+		say "The puce cup already contains past sap. Pour it out to get the dose sod?";
+		if the player yes-consents, the rule succeeds;
+		the rule fails;
+	the rule succeeds;
+
 this is the coop-full rule:
 	if gnu dung is in DevReserved, the rule succeeds;
 	say "The poo coop is empty, but if it wasn't, that could work.";
@@ -851,16 +877,6 @@ this is the sap-in-cup rule:
 	say "[if puce cup is soddy]The sod doesn't seem to belong in the Liar Grail, but maybe something else does[else]The puce cup is empty[end if].";
 	the rule fails;
 
-this is the sap-on-ground-yet rule:
-	if sword rows are in DevReserved, the rule succeeds;
-	say "You need a way to chip the sap off the fir.";
-	the rule fails;
-
-this is the sap-still-on-tree rule:
-	if sword rows are not in DevReserved, the rule succeeds;
-	say "You already chipped the sap off the tree.";
-	the rule fails;
-
 this is the sod-in-cup rule:
 	if puce cup is soddy, the rule succeeds;
 	say "[if puce cup is sappy]Marge Pegram makes a face at the sap in the cup. Maybe something less unpalatable would help her[else]The puce cup is empty. It wouldn't help Marge Pegram[end if].";
@@ -889,8 +905,8 @@ this is the cold-loc-hint-bump rule:
 this is the empty-cup rule:
 	now puce cup is empty;
 	if poor-sick is in DevReserved and liar grail is in DevReserved:
-		say "[poor-sick] smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west."
-		shuffle-before Dose Sod and Motto Bottom;
+		say "[poor-sick] smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west.";
+		shuffle-before Apse Spa and Motto Bottom;
 	the rule succeeds;
 
 this is the hay-gone rule:
@@ -2071,7 +2087,7 @@ carry out workrowing:
 	if ever-workrow is false:
 		hint-bump-worn;
 		score-inc; [Yelpley/work row]
-	now 	now ever-workrow is true;
+	now ever-workrow is true;
 	now all workables are in Worn Row;
 	now all books in Worn Row are in TempMet;
 	if redness ender is in Worn Row, now redness ender is in TempMet;
@@ -2988,7 +3004,7 @@ to hint-bump-worn:
 
 [this is the list of how I do things in the walkthrough.]
 
-L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Moo Room, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, lu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Dumb Mud, Mire Rim, Swamp Maws, Calcific Lac, Birch Crib, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
+L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Moo Room, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Dumb Mud, Mire Rim, Swamp Maws, Calcific Lac, Birch Crib, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
 
 [?? nothing game-critical to do here = if there is a LLP]
 
@@ -3018,11 +3034,8 @@ check aiding:
 		say "Aid... aid...[paragraph break]";
 	now more-later is false;
 	abide by the done-rule of location of player;
-	if more-later is true:
-		say "There's nothing to do here right now, but there may be later";
-	else:
-		say "It looks like [if location of player is Yawn Way]there's nothing to do[else]you're done[end if] here";
-	say ". Would you like to try somewhere else?";
+	consider the done-for-good rule of location of player;
+	say "You're done here, for [if more-later is true]now[else]good[end if]. Would you like to try somewhere else?";
 	unless the player yes-consents, say "Okay." instead;
 	now search-hint-room is true;
 	let rooms-in-order be list of rooms not in Odd Do;
@@ -3043,13 +3056,21 @@ check aiding:
 
 search-hint-room is a truth state that varies.
 
+this is the trivially false rule: the rule fails;
+
+this is the trivially true rule: the rule succeeds;
+
 a room has a rule called done-rule. done-rule of a room is usually dunno-hint rule.
 
-this is the dunno-hint rule:
+a room has a rule called done-for-good rule. done-for-good rule of a room is usually the trivially true rule.
+
+this is the dunno-hint rule: [I should never have to use this in the final release.]
 	say "I haven't determined hints for [location of player], yet.";
 	the rule succeeds;
 
-done-rule of Apse Spa is apse-spa rule.
+section bulk done-rule definitions
+
+done-rule of Apse Spa is apse-spa-part rule.
 done-rule of Art Xtra is art-xtra rule.
 done-rule of birch crib is birch-crib rule.
 done-rule of Calcific Lac is calcific-lac rule.
@@ -3086,11 +3107,31 @@ done-rule of Worn Row is worn-row rule.
 done-rule of Yawn Way is yawn-way rule.
 done-rule of Yell Alley is yell-alley rule.
 
+section done-for-good rule definitions
+
+[most of these will be the trivially right rule]
+
+done-for-good rule of Apse Spa is apse-spa-complete rule.
+
+done-for-good rule of Fun Nuf is trivially false rule.
+
 section Apse Spa rule
 
-this is the apse-spa rule:
-	if sage gas is not off-stage and poor-sick is in DevReserved, continue the action;
+this is the apse-spa-complete rule:
+	if sage gas is not off-stage, the rule succeeds;
+	the rule fails;
+
+this is the apse-spa-part rule:
+	if puce cup is soddy and poor-sick is in DevReserved, continue the action;
+	if sage gas is not off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if poor-sick is not in devreserved:
+		if player has puce cup, say "You need to USE the dose sod on the puce cup." instead;
+		say "You need something to carry the dose sod with." instead;
+	if maps-explained is true, say "USE MAPS ON BOG." instead;
+	if player has spa maps, say "You need to find someone who can decipher the maps." instead;
+	if player has el doodle, say "You have something that could become maps, but you need to find where to clear it up." instead;
+	say "You need to find or develop maps to get through Go-By Bog." instead;
 
 section Art Xtra rule
 
@@ -3126,7 +3167,11 @@ this is the deft-fed rule:
 section Dirge Grid rule
 
 this is the dirge-grid rule:
+	if player has the X-ITE TIX, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if Verses Rev is in Dirge Grid, say "Kill the Verses Rev.";
+	if Knife Fink is in Dirge Grid, say "Kill the Knife Fink.";
+	if Diktat Kid is in Dirge Grid, say "Kill the Diktat Kid.";
 
 section Dopy Pod rule
 
@@ -3175,15 +3220,25 @@ this is the evaded-ave rule:
 
 section Flu Gulf rule
 
+this is the flu-gulf-complete rule:
+	if scorn rocs are in devreserved, the rule succeeds;
+	the rule fails;
+
 this is the flu-gulf rule:
-	if gulf lug is in devreserved, continue the action;
+	if scorn rocs are in devreserved, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if gulf lug is in devreserved, say "The gulf lug needs medicine. The DEMO MED." instead;
 
 section Frush Surf rule
 
 this is the frush-surf rule:
 	if kayo yak is in devreserved, continue the action;
+	if player has stamp mats and gnu dung is in Dumb Mud, continue the action;
 	if search-hint-room is true, the rule succeeds;
+
+this is the frush-surf-complete rule:
+	if kayo yak is in devreserved, the rule succeeds;
+	the rule fails.
 
 section Fun Nuf rule
 
@@ -3754,7 +3809,7 @@ understand the command "ade" as something new.
 understand "ade" as adeing.
 
 carry out adeing:
-	now aid-detail is whether or not aid details is false;
+	now aid-detail is whether or not aid-detail is false;
 	say "Aid detail is now [on-off of aid-detail]. In other words, you [if aid-detail is true]will[else]won't[end if] see what hints would be in the room that's currently targeted for hints.";
 	the rule succeeds;
 
