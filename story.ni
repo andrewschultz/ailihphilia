@@ -1075,7 +1075,6 @@ carry out packing:
 	now Tix Exit is in Fun Nuf;
 	now player has set o notes;
 	now player wears the cap;
-	now all cappy rooms are available;
 	score-inc; [Dim Mid/pack cap]
 	the rule succeeds;
 
@@ -1789,7 +1788,6 @@ carry out evadeing:
 		now Dave is in DevReserved;
 		now Dave-evade is true;
 		score-inc; [Yelpley/evade dave]
-		now all davey rooms are available;
 	else:
 		say "There's only one person you need to evade in this game.";
 	the rule succeeds.
@@ -2768,8 +2766,6 @@ volume gotoing
 
 [?? rules for GT'ing a room]
 
-a room can be notyet, available, cappy, davey, ratsy, pully, tamey, or gatey.
-
 Fun Nuf is available.
 
 printed name of Fun Nuf is "Fun [']Nuf".
@@ -2804,20 +2800,162 @@ carry out gotoing:
 		say "Your pace cap slows down as you [if noun is Fun Nuf]enter[else]cross[end if] Fun [']Nuf..." instead;
 	if noun is location of player, say "Already there!";
 	unless goto-available, say "You're at a point in the game where goto isn't available." instead;
-	if noun is not available, say "[noun] isn't available yet, so you can't go there." instead;
-	if noun is available and noun is not visited, say "You can reach [noun], but you haven't visited there, yet. So I'm going to be a stickler and say you have to get there first." instead;
-	if noun is Dirge Grid, say "You already beat the Diktat Kid. You don't need to go back." instead;
+	consider the avail-rule room for noun;
+	if the rule failed, say "[noun] isn't available yet, so you can't go there." instead;
+	if noun is not visited, say "You can reach [noun], but you haven't visited there, yet. So I'm going to be a stickler and say you have to get there first." instead;
+	consider the unavail-rule room for noun;
+	if the rule succeeded, say "[noun] is no longer worth going to. You don't want to go back. Onward!" instead;
 	now gone-to is true;
 	move player to noun;
 	the rule succeeds;
 
-section gotocheck - not for release
+section available rules
 
-[this is to make sure that rooms are unfolded]
+[we could get cute here and define availability by what item is in devreserved, but that can go haywire once there's an exception. For instance, it's tricky to do stuff with the Spur Ups and the Psi Wisp, and Dirge Grid is tricky as well.]
 
-when play begins:
-	let n be number of notyet rooms;
-	say "Minor check for GOTO behavior: [if n is 0]All rooms have a switch saying you can go there[else]There are [n] that need to be ordered. They are: [list of notyet rooms not in Odd Do][end if]."
+a room has a rule called avail-rule. avail-rule of a room is usually the trivially true rule.
+
+avail-rule of Fun Nuf is trivially true rule. [described elsewhere]
+
+avail-rule of Worn Row is Dave-gone rule.
+
+this is the Dave-gone rule:
+	if Dave is in devreserved, the rule succeeds;
+	the rule fails;
+
+avail-rule of Frush Surf is eels-gone rule.
+avail-rule of Moo Room is eels-gone rule.
+
+this is the eels-gone rule:
+	if sleep eels are in devreserved, the rule succeeds;
+	the rule fails;
+
+avail-rule of Yell Alley is lover-gone rule.
+avail-rule of Trapeze Part is lover-gone rule.
+
+this is the lover-gone rule:
+	if Revolt Lover is in devreserved, the rule succeeds;
+	the rule fails;
+
+avail-rule of Art Xtra is packed-it rule.
+avail-rule of My Gym is packed-it rule.
+avail-rule of Seer Trees is packed-it rule.
+avail-rule of Evaded Ave is packed-it rule.
+avail-rule of Yawn Way is packed-it rule.
+
+this is the packed-it rule:
+	if player has pact cap, the rule succeeds;
+	the rule fails;
+
+avail-rule of Cold Loc is rats-gone rule.
+avail-rule of Ooze Zoo is rats-gone rule.
+avail-rule of Apse Spa is rats-gone rule.
+avail-rule of Flu Gulf is rats-gone rule.
+avail-rule of Dumb Mud is rats-gone rule.
+
+this is the rats-gone rule:
+	if stark rats are in devreserved, the rule succeeds;
+	the rule fails;
+
+avail-rule of Emo Dome is pulled-up rule.
+avail-rule of Swept Pews is pulled-up rule.
+
+this is the pulled-up rule:
+	if Spur Ups are in devreserved, the rule succeeds;
+	the rule fails;
+
+avail-rule of Dopy Pod is poorsick-gone rule.
+
+this is the poorsick-gone rule:
+	if poor-sick is in devreserved, the rule succeeds;
+	the rule fails;
+
+avail-rule of Drawl Ward is grail-gone rule.
+avail-rule of Scrap Arcs is grail-gone rule.
+
+this is the grail-gone rule:
+	if liar grail is in devreserved, the rule succeeds;
+	the rule fails;
+
+avail-rule of Toll Lot is puffed-up-yet rule.
+
+this is the puffed-up-yet rule:
+	if puffed-up is true, the rule succeeds;
+	the rule fails;
+
+avail-rule of Deft Fed is orc-gone rule.
+avail-rule of Gross Org is orc-gone rule.
+
+this is the orc-gone rule:
+	if cross orc is in devreserved, the rule succeeds;
+	the rule fails;
+
+avail-rule of Pro Corp is gate-gone rule.
+
+this is the gate-gone rule:
+	if etage gate is in devreserved, the rule succeeds;
+	the rule fails;
+
+avail-rule of Mire Rim is dung-gone rule.
+avail-rule of Swamp Maws is dung-gone rule.
+avail-rule of Birch Crib is dung-gone rule.
+avail-rule of Trial Lair is dung-gone rule.
+
+this is the dung-gone rule:
+	if gnu dung is in devreserved, the rule succeeds;
+	the rule fails;
+
+avail-rule of Calcific Lac is wonk-book rule.
+
+this is the wonk-book rule:
+	if NULL ILLUN is in devreserved, the rule succeeds;
+	the rule fails;
+
+avail-rule of Motto Bottom is ogre-gone rule.
+
+this is the ogre gone rule:
+	if ergot ogre is in devreserved, the rule succeeds;
+	the rule fails;
+
+avail-rule of Mont Nom is turf-gone rule.
+
+this is the turf-gone rule:
+	if turf rut is in devreserved, the rule succeeds;
+	the rule fails;
+
+avail-rule of Le Babel is veil-gone rule.
+
+this is the veil-gone rule:
+	if lie veil is in devreserved, the rule succeeds;
+	the rule fails;
+
+avail-rule of Sneer Greens is rocs-gone rule.
+
+this is the rocs-gone rule:
+	if scorn-rocs are in devreserved, the rule succeeds;
+	the rule fails;
+
+avail-rule of Red Roses Order is rose-tat rule.
+
+this is the rose-tat rule:
+	if soot tattoos are in devreserved and player has Bro Orb, the rule succeeds;
+	the rule fails;
+
+avail-rule of Dirge Grid is tron-done rule.
+
+this is the tron-done rule:
+	if TNT is in devreserved, the rule succeeds;
+	the rule fails;
+
+section unavailable rules
+
+a room has a rule called avail-rule. unavail-rule of a room is usually the trivially false rule.
+
+unavail-rule of Dirge Grid is grid-unavail rule.
+
+this is the grid-unavail rule:
+	if player has x-ite tix, the rule succeeds;
+	the rule fails;
 
 volume chases
 
@@ -3024,10 +3162,10 @@ check aiding:
 		now dial-yet is true;
 	if dial-yet is false:
 		say "Aid... aid...[paragraph break]";
-	now more-later is false;
 	abide by the done-rule of location of player;
 	consider the done-for-good rule of location of player;
-	say "You're done here, for [if more-later is true]now[else]good[end if]. Would you like to try somewhere else?";
+	let all-done-here be whether or not the rule succeeded;
+	say "You're done here, for [if all-done-here is true]good[else]now[end if]. Would you like to be pointed to somewhere else relevant?";
 	unless the player yes-consents, say "Okay." instead;
 	now search-hint-room is true;
 	let rooms-in-order be list of rooms not in Odd Do;
@@ -3114,11 +3252,11 @@ this is the apse-spa-complete rule:
 	the rule fails;
 
 this is the apse-spa-part rule:
-	if puce cup is soddy and poor-sick is in DevReserved, continue the action;
+	if puce cup is soddy and poor-sick is not in DevReserved, continue the action;
 	if sage gas is not off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if poor-sick is not in devreserved:
-		if player has puce cup, say "You need to USE the dose sod on the puce cup." instead;
+		if player has puce cup, say "You need to USE the puce cup on the dose sod." instead;
 		say "You need something to carry the dose sod with." instead;
 	if maps-explained is true, say "USE MAPS ON BOG." instead;
 	if player has spa maps, say "You need to find someone who can decipher the maps." instead;
