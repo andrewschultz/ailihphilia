@@ -172,10 +172,6 @@ check dropping:
 to decide which region is mrlp:
 	decide on map region of location of player;
 
-after looking (this is the make available for goto rule):
-	if location of player is not Emo Dome, now location of player is available;
-	continue the action;
-
 part scoring
 
 to score-inc:
@@ -191,7 +187,7 @@ check requesting the score:
 	if player has x-ite tix:
 		let Q be roving-LLP;
 		if Q is 0:
-			say "You may want to go back to Fun [']Nuf now and [if current score is maximum score - 1]use the tickets[else]try the other LLP command[plur-s of Q][end if].";
+			say "You may want to go back to Fun [']Nuf now and [if the score is maximum score - 1]use the tickets[else]try the other LLP command[plur-s of Q][end if].";
 		else:
 			say "You have [Q] roving last lousy point[unless Q is 1]s[end if] left."; [?? test roving LLPs]
 	if player has set o notes and north tron is off-stage:
@@ -265,20 +261,14 @@ Rule for printing a parser error when the latest parser error is the i beg your 
 	next-rand table of nothings;
 
 Rule for printing a parser error when the latest parser error is the can't see any such thing error:
-	let X be indexed text;
-	now X is "[location of player]" in lower case;
-	replace the text "[']" in X with "";
-	replace the text "-" in X with " ";
 	abide by the dir-error rules for location of player; [check this room and any adjacent room descriptions]
-	abide by the dir-error rules for room north of location of player;
-	abide by the dir-error rules for room south of location of player;
-	abide by the dir-error rules for room east of location of player;
-	abide by the dir-error rules for room west of location of player;
+	repeat with Q running through maindir:
+		abide by the dir-error rules for room Q of location of player;
 	continue the action;
 
 the dir-error rules are a room based rulebook.
 
-a dir-error rule for a room (called myr):
+a dir-error rule for a room (called myr) (this is the room text in command check rule):
 	if myr is nowhere, continue the action;
 	let X be indexed text;
 	now X is "[myr]" in lower case;
@@ -544,8 +534,10 @@ to say up-down-check:
 	unless the room down from the location of player is nowhere, say "up=[othdir of down]";
 	say ")"
 
+maindir is a list of directions variable. maindir is { north, west, south, east }
+
 to decide which direction is othdir of (d - a direction):
-	repeat with Q running through { north, west, south, east }:
+	repeat with Q running through maindir:
 		if the room Q of location of player is the room D of location of player, decide on Q;
 	say "(bug)";
 	decide on D;
@@ -1059,7 +1051,7 @@ check going in Fun Nuf:
 	if player has x-ite tix and xite-warn is false:
 		now xite-warn is true;
 		if roving-LLP is 0:
-			say "[if current score is maximum score - 1]There's nothing else to do. No last lousy points. You can/should really just leave[else]You have a few last lousy points left, but none require you to move[end if]. Do you still want to explore?";
+			say "[if the score is maximum score - 1]There's nothing else to do. No last lousy points. You can/should really just leave[else]You have a few last lousy points left, but none require you to move[end if]. Do you still want to explore?";
 			if the player yes-consents:
 				say "Okay, have fun.";
 			else:
@@ -1074,14 +1066,14 @@ to decide which number is roving-LLP: [Not location dependent: DIAL AID, STATS, 
 	if balm-got is false, increment temp;
 	if opossum is in devreserved, increment temp;
 	if DWELT LEWD is off-stage, increment temp;
-	decide temp;
+	decide on temp;
 
 check going north in Fun Nuf:
-		if Diktat Kid is in DevReserved, say "No need to go back." instead;
-		if north tron is not in Fun Nuf, say "Not until you built the North-Tron." instead;
-		if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
-		if murk rum is not in DevReserved, say "You have the yard ray, but it isn't, well, charged." instead;
-		if player does not have ME gem or player does not have Taboo Bat, say "You feel well equipped ... but well equipped enough?";
+	if Diktat Kid is in DevReserved, say "No need to go back." instead;
+	if north tron is not in Fun Nuf, say "Not until you built the North-Tron." instead;
+	if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
+	if murk rum is not in DevReserved, say "You have the yard ray, but it isn't, well, charged." instead;
+	if player does not have ME gem or player does not have Taboo Bat, say "You feel well equipped ... but well equipped enough?";
 
 chapter Pact Cap
 
@@ -2579,7 +2571,7 @@ carry out pulluping:
 		say "You manage to stop yourself. The whining isn't too bad. Yeah, you can hack it here.";
 		now pulled-up is true;
 		score-inc; [Yelpley/pull up]
-		now Emo Dome is available instead;
+		the rule succeeds;
 	say "This isn't the place[if Emo Dome is visited], but maybe you could do this in the Emo Dome[end if]." instead;
 
 book Emo Dome
@@ -2801,13 +2793,7 @@ volume gotoing
 
 [?? rules for GT'ing a room]
 
-Fun Nuf is available.
-
 printed name of Fun Nuf is "Fun [']Nuf".
-
-Seer Trees, Yawn Way, Art Xtra and My Gym are cappy.
-
-Worn Row is davey.
 
 chapter gotoing
 
@@ -2835,10 +2821,10 @@ carry out gotoing:
 		say "Your pace cap slows down as you [if noun is Fun Nuf]enter[else]cross[end if] Fun [']Nuf..." instead;
 	if noun is location of player, say "Already there!";
 	unless goto-available, say "You're at a point in the game where goto isn't available." instead;
-	consider the avail-rule room for noun;
+	consider the avail-rule of noun;
 	if the rule failed, say "[noun] isn't available yet, so you can't go there." instead;
 	if noun is not visited, say "You can reach [noun], but you haven't visited there, yet. So I'm going to be a stickler and say you have to get there first." instead;
-	consider the unavail-rule room for noun;
+	consider the unavail-rule of noun;
 	if the rule succeeded, say "[noun] is no longer worth going to. You don't want to go back. Onward!" instead;
 	now gone-to is true;
 	move player to noun;
@@ -2896,7 +2882,7 @@ avail-rule of Emo Dome is pulled-up rule.
 avail-rule of Swept Pews is pulled-up rule.
 
 this is the pulled-up rule:
-	if Spur Ups are in devreserved, the rule succeeds;
+	if pulled-up is true, the rule succeeds;
 	the rule fails;
 
 avail-rule of Dopy Pod is poorsick-gone rule.
@@ -2915,13 +2901,13 @@ this is the grail-gone rule:
 avail-rule of Toll Lot is puffed-up-yet rule.
 
 this is the puffed-up-yet rule:
-	if puffed-up is true, the rule succeeds;
+	if Spur Ups are in devreserved, the rule succeeds;
 	the rule fails;
 
-avail-rule of Deft Fed is orc-gone rule.
-avail-rule of Gross Org is orc-gone rule.
+avail-rule of Deft Fed is orc-block rule.
+avail-rule of Gross Org is orc-block rule.
 
-this is the orc-gone rule:
+this is the orc-block rule: [similar to orc-gone but with no text]
 	if cross orc is in devreserved, the rule succeeds;
 	the rule fails;
 
@@ -2948,7 +2934,7 @@ this is the wonk-book rule:
 
 avail-rule of Motto Bottom is ogre-gone rule.
 
-this is the ogre gone rule:
+this is the ogre-gone rule:
 	if ergot ogre is in devreserved, the rule succeeds;
 	the rule fails;
 
@@ -2967,7 +2953,7 @@ this is the veil-gone rule:
 avail-rule of Sneer Greens is rocs-gone rule.
 
 this is the rocs-gone rule:
-	if scorn-rocs are in devreserved, the rule succeeds;
+	if scorn rocs are in devreserved, the rule succeeds;
 	the rule fails;
 
 avail-rule of Red Roses Order is rose-tat rule.
@@ -2984,7 +2970,7 @@ this is the tron-done rule:
 
 section unavailable rules
 
-a room has a rule called avail-rule. unavail-rule of a room is usually the trivially false rule.
+a room has a rule called unavail-rule. unavail-rule of a room is usually the trivially false rule.
 
 unavail-rule of Dirge Grid is grid-unavail rule.
 
@@ -3771,14 +3757,24 @@ funstuff	dorule
 "BOOB or POOP or PAP to swear 'right"	pb-yet rule
 "REFER instead of THINK"	refer-yet rule
 "DIAL AID instead of AID"	dial-yet rule
-"SLAM MAMMALS around the eels"	slam-yet rule
 "PEEP instead of looking"	peep-yet rule
-"BALM LAB in the Bald Lab"	balm-yet rule
 "STATS to get the score"	stats-yet rule
+"TRACE CART to find an 'extra' book"	cart-traced rule
+"BALM LAB in the Bald Lab"	balm-yet rule
+"SLAM MAMMALS around the eels"	slam-yet rule
 "MUSS OPOSSUM to make a friend"	muss-yet rule
+"STACK CATS to help the senile felines"	cats-stacked rule
+
+this is the cart-traced rule:
+	if DWELT LEWD is off-stage, the rule fails;
+	the rule succeeds;
 
 this is the balm-yet rule:
 	if balm-got is true, the rule succeeds;
+	the rule fails;
+
+this is the cats-stacked rule:
+	if senile felines are in devreserved, the rule succeeds;
 	the rule fails;
 
 this is the dial-yet rule:
