@@ -14,6 +14,7 @@ WIN for winning the game
 PER for table of periphery
 PRE for pre-rules in the table of useons
 POST for post-rules in the table of useons
+LLP for last lousy points
 
 to search for an item, look for chapter [item].
 ]
@@ -187,14 +188,25 @@ check requesting the score:
 		if number of grunty people is not number of grunty people in DevReserved, say "You currently disposed of [number of grunty people in DevReserved] grunts blocking your way: [list of grunty people in DevReserved].";
 	if Yuge Guy is in DevReserved, say "You've gotten rid of the Yuge Guy, Evil Clive.";
 	if Madam is in DevReserved, say "You've gotten rid of the La Gal/Madam.";
+	if player has x-ite tix:
+		let Q be roving-LLP;
+		if Q is 0:
+			say "You may want to go back to Fun [']Nuf now and [if current score is maximum score - 1]use the tickets[else]try the other LLP command[plur-s of Q][end if].";
+		else:
+			say "You have [Q] roving last lousy point[unless Q is 1]s[end if] left."; [?? test roving LLPs]
 	if player has set o notes and north tron is off-stage:
 		let ni be number of tronparts carried by the player;
 		say "You also have [ni] of [number of tronparts] piece[if ni is not 1]s[end if] of the North Tron, according to the set-o-notes.";
 	the rule succeeds;
 
+to say plur-s of (myn - a number):
+	unless myn is 1, say "s"
+
 this is the LLP rule:
 	if LLP-reject is true, the rule succeeds;
+	let prev-rov be roving-LLP;
 	reg-inc Odd Do;
+	if player has x-ite tix and prev-rov is 1 and roving-LLP is 0, say "You have all the roving LLPs. You can go back to Fun [']Nuf now.";
 
 to reg-inc (re - a region):
 	if re is not Odd Do and re is not mrlp, say "DEBUG NOTE: scored [re] point in [mrlp].";
@@ -215,7 +227,9 @@ part when play begins
 when play begins:
 	repeat with Q running through regions:
 		increase maximum score by max-score of Q;
-	if debug-state is true, say "DEBUG NOTE: Maximum score is [maximum score].";
+	if debug-state is true:
+		say "DEBUG NOTE: Maximum score is [maximum score].";
+		say "[if max-score of Odd Do is number of rows in table of last lousy points]LLPs = LLP table rows[else]Uh oh, [max-score of Odd Do] Odd Do points and [number of rows in table of last lousy points] LLP table rows. We need to fix this[end if].";
 	now right hand status line is "[cur-score of mrlp]/[max-score of mrlp] [score]/[maximum score]";
 	now left hand status line is "[location of player] ([mrlp])";
 	repeat through table of all randoms:
@@ -1036,10 +1050,31 @@ check going south in Fun Nuf:
 		say "The Flee Elf cries 'Fool! Aloof!' as you walk south past Evac Ave through the Elim-Mile, which removes all your memories of your brief time adventuring.";
 		end the story saying "NOWT WON";
 
+xite-warn is a truth state that varies.
+
 check going in Fun Nuf:
 	if noun is west or noun is east:
 		if Flee Elf is in Fun Nuf, say "'Keen! Eek!' the Flee Elf stops you. 'You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley.'" instead;
 		if endgame-test is true, say "Endgame testing is on. So you are restricted to the final combat." instead;
+	if player has x-ite tix and xite-warn is false:
+		now xite-warn is true;
+		if roving-LLP is 0:
+			say "[if current score is maximum score - 1]There's nothing else to do. No last lousy points. You can/should really just leave[else]You have a few last lousy points left, but none require you to move[end if]. Do you still want to explore?";
+			if the player yes-consents:
+				say "Okay, have fun.";
+			else:
+				say "Okay, back to winning." instead;
+		else:
+			say "You have a few last lousy points to look around for, so why not poke around?";
+
+to decide which number is roving-LLP: [Not location dependent: DIAL AID, STATS, REFER, POOP, PEEP]
+	let temp be 0;
+	if senile felines are in Moo Room, increment temp;
+	if slam-mam is false, increment temp;
+	if balm-got is false, increment temp;
+	if opossum is in devreserved, increment temp;
+	if DWELT LEWD is off-stage, increment temp;
+	decide temp;
 
 check going north in Fun Nuf:
 		if Diktat Kid is in DevReserved, say "No need to go back." instead;
@@ -3582,7 +3617,7 @@ understand the command "slam mammals" as something new.
 understand "slam mammals" as slammammalsing.
 
 carry out slammammalsing:
-	if slam-mam is true, say "You already did. Don't overdo it.";
+	if slam-mam is true, say "You already did. Don't overdo it." instead;
 	unless player is in Ooze Zoo and sleep eels are in Ooze Zoo, say "You have no sympathetic audience." instead;
 	say "The sleep eels wake from their slumber briefly to squirm. They telepathically project their pleasure [if sleep eels are in DevReserved]from their stock cots [end if]before going back to sleep. You've ... done something, I guess?";
 	abide by the LLP rule; [SLAM MAMMALS]
@@ -3722,7 +3757,7 @@ this is the rod-smell rule:
 
 this is the what-missed rule:
 	let missed be 0;
-	repeat through table of potential misses:
+	repeat through table of last lousy points:
 		consider the dorule entry;
 		if the rule failed:
 			say "[funstuff entry]";
@@ -3731,7 +3766,7 @@ this is the what-missed rule:
 
 chapter misses table
 
-table of potential misses
+table of last lousy points [xxllp]
 funstuff	dorule
 "BOOB or POOP or PAP to swear 'right"	pb-yet rule
 "REFER instead of THINK"	refer-yet rule
