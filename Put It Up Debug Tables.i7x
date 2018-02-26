@@ -43,6 +43,15 @@ table of all randoms
 tabnam	tabidx	lbrk	desc
 table of altbooks	0	false	"extra books in the Tract Cart"
 table of attackings	0	true	"responses to ATTACK"
+table of burnies	0	true	"responses to BURN"
+table of diktat taunts	0	true	"Diktat Kid taunts"
+table of noesies	0	true	"responses to NO"
+table of nothings	0	true	"responses to empty commands"
+table of singstuff	0	true	"responses to SINGing"
+table of swearstuff	0	true	"responses to SWEARing"
+table of waittxt	0	true	"responses to WAITing"
+table of yessies	0	true	"responses to YES"
+table of yuge taunts	0	true	"Yuge Guy taunts"
 
 part the tables
 
