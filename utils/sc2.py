@@ -113,16 +113,33 @@ def check_source_rule_order():
     last_rule = ""
     rule_search = False
     errs = 0
+    extra_lines = 0
     rule_sections = 0
     last_line = 0
+    in_table = False
+    alfcheck = defaultdict(lambda: defaultdict(bool))
     with open(main_source) as file:
         for line in file:
+            if line.startswith("table"):
+                in_table = True
+                continue
+            if not line.strip():
+                in_table = False
+                continue
+            lary = re.split("\t+", line.strip())
+            if in_table and len(lary) > 5:
+                if 'rule' in lary[3]:
+                    alfcheck['xxpre'][re.sub(" rule.*", "", lary[3].lower())] = True
+                if 'rule' in lary[4]:
+                    alfcheck['xxpost'][re.sub(" rule.*", "", lary[4].lower())] = True
             line_count = line_count + 1
             if line.startswith("section"):
                 if 'post-use rules' in line or 'pre-use rules' in line:
                     rule_search = True
                     rule_sections = rule_sections + 1
                     last_rule = ""
+                    to_check = re.sub(".*\[", "", line.strip())
+                    to_check = re.sub("\].*", "", to_check)
                     continue
             if re.search("^(chapter|section|book|part|volume)", line.lower()):
                 rule_search = False
@@ -130,12 +147,16 @@ def check_source_rule_order():
             if rule_search and line.startswith("this is the"):
                 cur_rule = re.sub("^this is the ", "", line.strip().lower())
                 cur_rule = re.sub(" rule.*", "", cur_rule)
+                if cur_rule not in alfcheck[to_check].keys():
+                    print(cur_rule, "in", to_check, "may be extraneous, line", line_count)
+                    extra_rules = extra_rules + 1
                 if cur_rule < last_rule:
                     print("ERROR: Line", line_count, "rule", cur_rule, "alphabetically before", last_rule, "line", last_line)
                     errs = errs + 1
                 last_rule = cur_rule
                 last_line = line_count
     print((errs if errs > 0 else "no"), "rule order errors for table of useons.")
+    print((extra_lines if extra_lines > 0 else "no"), "extra rules post-table of useons.")
     if rule_sections != 2:
         print("Have", rule_sections, "rules but should have 2.")
 

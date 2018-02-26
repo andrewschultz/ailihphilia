@@ -833,14 +833,6 @@ this is the coop-full rule:
 	say "The poo coop is empty, but if it wasn't, that could work.";
 	the rule fails;
 
-this is the in-mont-nom rule:
-	if location of player is not Mont Nom:
-		say "Eww! Maybe if you were somewhere more magical with food, it would work.";
-		the rule succeeds;
-	if Ian is not in Mont Nom, the rule succeeds;
-	say "Ian is distracting you. Maybe you can get rid of him, first.";
-	the rule fails;
-
 this is the maps-readable rule:
 	if maps-explained is true, the rule succeeds;
 	say "Hmm. Maybe if the maps were a bit clearer to you, that would work. But not now.";
@@ -3489,6 +3481,7 @@ carry out statsing:
 		say "Extra style point for requesting the score 'correctly.'";
 		abide by the LLP rule; [STATS]
 		now stats-yet is true;
+	follow the notify score changes rule;
 	the rule succeeds;
 
 volume endgame stuff
