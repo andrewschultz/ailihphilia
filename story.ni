@@ -268,7 +268,7 @@ Rule for printing a parser error when the latest parser error is the can't see a
 
 the dir-error rules are a room based rulebook.
 
-a dir-error rule for a room (called myr) (this is the room text in command check rule):
+a dir-error rule for a room (called myr):
 	if myr is nowhere, continue the action;
 	let X be indexed text;
 	now X is "[myr]" in lower case;
@@ -2709,7 +2709,7 @@ The roto motor is a thing. description is "It seems to have been saved from what
 
 chapter Demo Med
 
-a Demo Med is an edible thing in Dopy Pod. "A demo med sits here, on a pill lip.". description is "You're not sure what it could be. Xanax? Whatever, you feel calmer just looking at it."
+a Demo Med is an edible thing in Dopy Pod. "The demo med that must not have worked for [poor-sick] sits here, on a pill lip.". description is "You're not sure what it could be. Xanax? Whatever, you feel calmer just looking at it."
 
 the pill lip is peripheral scenery in Dopy Pod. "A Demo Med rests on the Pill Lip."
 
@@ -3298,21 +3298,25 @@ this is the art-xtra rule:
 section Birch Crib rule
 
 this is the birch-crib rule:
+	if maps-explained is true, continue the action;
 	if search-hint-room is true, the rule succeeds;
 
 section Calcific Lac rule
 
 this is the calcific-lac rule:
+	if dork rod is in devreserved, continue the action;
 	if search-hint-room is true, the rule succeeds;
 
 section Cold Loc rule
 
 this is the cold-loc rule:
+	if King Nik is in devreserved and puce cup is sappy, continue the action;
 	if search-hint-room is true, the rule succeeds;
 
 section Deft Fed rule
 
 this is the deft-fed rule:
+	if Elan Ale is in devreserved, continue the action;
 	if search-hint-room is true, the rule succeeds;
 
 section Dirge Grid rule
@@ -3327,6 +3331,7 @@ this is the dirge-grid rule:
 section Dopy Pod rule
 
 this is the dopy-pod rule:
+	if cassettes sac is in devreserved and pill lip is in devreserved, continue the action;
 	if search-hint-room is true, the rule succeeds;
 
 section Drawl Ward rule
@@ -3354,7 +3359,9 @@ this is the dumb-mud rule:
 section Emo Dome rule
 
 this is the emo-dome rule:
+	if puce cup is not in Emo Dome and pulled-up is true, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if puce cup is in Emo Dome, say "Take the puce cup." instead;
 
 section Evaded Ave rule
 
@@ -3371,14 +3378,15 @@ this is the evaded-ave rule:
 
 section Flu Gulf rule
 
+this is the flu-gulf rule:
+	if scorn rocs are in devreserved, continue the action;
+	if poor-sick is in Drawl Ward, continue the action;
+	if search-hint-room is true, the rule succeeds;
+	if gulf lug is in devreserved, say "The gulf lug needs medicine. The DEMO MED." instead;
+
 this is the flu-gulf-complete rule:
 	if scorn rocs are in devreserved, the rule succeeds;
 	the rule fails;
-
-this is the flu-gulf rule:
-	if scorn rocs are in devreserved, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if gulf lug is in devreserved, say "The gulf lug needs medicine. The DEMO MED." instead;
 
 section Frush Surf rule
 
