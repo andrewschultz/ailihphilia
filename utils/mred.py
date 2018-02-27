@@ -10,18 +10,24 @@
 import re
 import i7
 
+red_char = "?"
+redact_all = True
+
+def obj_redact(b, red_char):
+    return re.sub("[A-Z]", ".", b)
+
 def redact(a):
-	red_char = "?"
-	splitz = re.split("[<>]", line.strip())
-	bars = splitz[2].split("|")
-	for x in range (0,len(bars)):
-		if bars[x] and bars[x] == bars[x].upper():
-			count = 0
-			while bars[x][count] != ' ':
-				bars[x] = bars[x][0:count] + red_char + bars[x][count+1:]
-				count = count + 1
-	unsplitz = '|'.join(bars)
-	return "\t\t\t" + splitz[0] + "<" + splitz[1] + ">" + unsplitz + "<" + splitz[3] + ">" + "\n"
+    splitz = re.split("[<>]", a.strip())
+    if redact_all:
+        unsplitz = ""
+    else:
+
+        bars = splitz[2].split("|")
+        for x in range (0,len(bars)):
+            if bars[x] and bars[x] == bars[x].upper():
+                bars[x] = obj_redact(bars[x], red_char)
+        unsplitz = '|'.join(bars)
+    return "\t\t\t" + splitz[0] + "<" + splitz[1] + ">" + unsplitz + "<" + splitz[3] + ">" + "\n"
 
 orig = "c:/games/inform/triz/mine/put-it-up.trizbort"
 reda = "c:/games/inform/triz/mine/put-it-up-redact.trizbort"
@@ -29,10 +35,13 @@ reda = "c:/games/inform/triz/mine/put-it-up-redact.trizbort"
 fout = open(reda, "w")
 
 with open(orig) as file:
-	for line in file:
-		if '<objects' not in line:
-			fout.write(line)
-			continue
-		fout.write(redact(line))
+    for line in file:
+        if '<line' in line:
+            if redact_all:
+                line = re.sub("(start|mid|end)text=\"[^\"]*\"", "", line, 0, re.IGNORECASE)
+        if '<objects' not in line:
+            fout.write(line)
+            continue
+        fout.write(redact(line))
 
 i7.npo(reda)
