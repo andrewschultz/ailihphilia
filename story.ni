@@ -1,3 +1,4 @@
+
 "Put it Up" by Andrew Schultz
 
 [blurb for comp = A *GASP* SAGA]
@@ -57,7 +58,7 @@ Dim Mid is a region. max-score of Dim Mid is 10.
 
 Yelpley is a region. max-score of Yelpley is 37.
 
-Odd Do is a region. max-score of Odd Do is 10.
+Odd Do is a region. max-score of Odd Do is 11.
 
 index map with Dirge Grid mapped east of Toll Lot.
 
@@ -261,6 +262,10 @@ Rule for printing a parser error when the latest parser error is the i beg your 
 	next-rand table of nothings;
 
 Rule for printing a parser error when the latest parser error is the can't see any such thing error:
+	if bees-seen is false and player is in Moo Room:
+		if the player's command matches the regular expression "bee(s)?", case insensitively:
+			say "You can't [one of]spot[or]look at[or]view[in random order] anything like that here.";
+			the rule succeeds;
 	abide by the dir-error rules for location of player; [check this room and any adjacent room descriptions]
 	repeat with Q running through maindir:
 		abide by the dir-error rules for room Q of location of player;
@@ -334,6 +339,24 @@ chapter climbing
 the block climbing rule is not listed in any rulebook.
 
 instead of climbing, say "You haven't drunk enough Klimb-Milk. Err, Climb-Milc. Whichever. You don't need to climb to win the game."
+
+chapter seebeesing
+
+seebeesing is an action applying to nothing.
+
+understand the command "see bees" as something new.
+
+understand "see bees" as seebeesing.
+
+bees-seen is a truth state that varies.
+
+carry out seebeesing:
+	if bees-seen is true, say "You already saw the bees [if player is in Moo Room]here[else]in Moo Room[end if]." instead;
+	if player is not in Moo Room, say "There are no bees to see here." instead;
+	say "You look carefully and hear a soft buzzing. Yes, that's where the bees are. You can see them, and you're not afraid.";
+	abide by the LLP rule; [SEE BEES]
+	now bees-seen is true;
+	the rule succeeds;
 
 chapter refering / thinking
 
@@ -482,7 +505,7 @@ check drinking:
 	if noun is Gorge Grog, say "One look at the grog, and you realize you're not up to such super-powered alcohol." instead;
 	if noun is murk rum, say "The rum part is drinkable, but the murk rum isn't." instead;
 	say "[if noun is drinkable]Pish! Sip?![else][']S not wet. Ew--TONS.[end if]";
-	if drink-warning is false, say "(You don't need to drink anything. Liquids have their purpose in this game, but also, there is no Pee Keep anywhere.)[paragraph break]";
+	if drink-warning is false, say "(You don't need to drink anything in this game. Liquids have other purposes. Besides, I didn't implement Pee Keep.)[paragraph break]";
 	now drink-warning is true instead;
 
 chapter eating
@@ -1066,6 +1089,7 @@ to decide which number is roving-LLP: [Not location dependent: DIAL AID, STATS, 
 	if balm-got is false, increment temp;
 	if opossum is in devreserved, increment temp;
 	if DWELT LEWD is off-stage, increment temp;
+	if bees-seen is false, increment temp;
 	decide on temp;
 
 check going north in Fun Nuf:
@@ -1426,7 +1450,7 @@ some murk rum is a drinkable thing. description is "It looks viscous, like oil."
 
 book Dumb Mud
 
-Dumb Mud is west of Seer Trees. It is in Grebeberg. "A turf rut to the south is [if poo coop is in DevReserved]filled in enough[else]too deep[end if] to cross. The way west is [if gnu dung is in DevReserved]blocked by gnu dung[else]free[end if]. [if lie veil is in Dumb Mud]A lie veil blocks your way[else]With the lie veil removed, you can go[end if] north."
+Dumb Mud is west of Seer Trees. It is in Grebeberg. "Mud! Umm...[paragraph break]A turf rut to the south is [if poo coop is in DevReserved]filled in enough[else]too deep[end if] to cross. The way west is [if gnu dung is in DevReserved]blocked by gnu dung[else]free[end if]. [if lie veil is in Dumb Mud]A lie veil blocks your way[else]With the lie veil removed, you can go[end if] north."
 
 The lie veil is scenery in Dumb Mud. "It looks untrustworthy."
 
