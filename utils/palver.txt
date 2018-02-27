@@ -37,6 +37,9 @@ s:worn row can be
 s:done-rule of
 s:a room has a rule
 s:walkthru-prio
+s:avail-rule
+s:unavail-rule
+s:done-for-good
 i:has a number called
 i:has a person called
 u:based rulebook

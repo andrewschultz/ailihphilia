@@ -563,7 +563,7 @@ There are 29 total points in Grebeberg.
 1 point if you USE NAT'S TAN ON SCORN ROCS.
 1 point if you USE REP POPPER ON YUGE GUY.
 ?How do I get all the points for Odd Do?
-There are 10 total points in Odd Do.
+There are 11 total points in Odd Do.
 1 point for BALM LAB once you've cleared Pro Corp to make it a bald lab.
 1 point for PEEP.
 1 point for POOP. Or BOOB.
@@ -573,6 +573,7 @@ There are 10 total points in Odd Do.
 1 point if you SLAM MAMMALS around the eels before you get rid of them.
 1 point if you MUSS OPOSSUM in Le Babel.
 1 point if you STACK CATS in the Moo Room.
+1 point if you SEE BEES in the Moo Room.
 1 point if you TRACE CART in Word Row.
 ;
 >>BUSY SUB

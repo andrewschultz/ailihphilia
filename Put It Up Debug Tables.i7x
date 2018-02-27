@@ -21,8 +21,8 @@ chapter random businesses
 
 table of businesses
 biz-name
+"Dairy Myriad"
 "Derby Bred"
-"Skooby Books"
 
 volume random responses
 
@@ -76,7 +76,7 @@ randtxt
 table of diktat taunts
 randtxt
 "Dire! Rid!"
-"Resoldered loser!"
+"Dude(tte)! Dud!"
 
 table of noesies
 randtxt
@@ -85,8 +85,8 @@ randtxt
 
 table of nothings
 randtxt
+"Drown, word!"
 "Dud!"
-"Eh, the..."
 
 table of singstuff
 randtxt
@@ -101,8 +101,8 @@ randtxt
 
 table of waittxt
 randtxt
+"A lag gala!"
 "Camp, mac!"
-"Deed, deed, deed!"
 
 table of yessies
 randtxt
@@ -111,8 +111,8 @@ randtxt
 
 table of yuge taunts
 randtxt
-"Main, I am!"
-"Soros! Soros!"
+"A papa! A papa!"
+"Gibe! Big!"
 
 Put it Up debug Tables ends here.
 

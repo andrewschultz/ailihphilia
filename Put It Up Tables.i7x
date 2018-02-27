@@ -39,8 +39,8 @@ person-name
 "Anika Kina"
 "Anitra Martina"
 "Annalee Lanna"
-"Anne Kenna"[
-"Annika Kinna"
+"Anne Kenna"
+["Annika Kinna"
 "Anya Rayna"
 "Asa Casa"
 "Ava Lava"
@@ -460,11 +460,11 @@ chapter random businesses
 
 table of businesses
 biz-name
-"Derby Bred"
-"Skooby Books"
-"Rife Kefir"
 "Dairy Myriad"
+"Derby Bred"
 "Looks Skool"
+"Rife Kefir"
+"Skooby Books"
 
 volume random responses
 
@@ -515,11 +515,11 @@ randtxt
 "D00d!"
 "Dude! Dud."
 "Harm! Rah!"
+"Hurt! Ruh!"
 "Knock! Conk!"
 "Ole! Lo!"
 "Pah! Whap?"
 "Pal, SLAP?!"
-"Hurt! Ruh!"
 "Po['] bop!"
 "Pop!"
 "Pow-op! Pow-op!"
@@ -538,13 +538,13 @@ randtxt
 table of diktat taunts
 randtxt
 "Dire! Rid!"
-"Resoldered loser!"
+"Dude(tte)! Dud!"
+"Mess [']em!"
 "Peewee, weep!"
 "Poorer! Oop!"
-"Dude(tte)! Dud!"
 "Rah! Thar!"
+"Resoldered loser!"
 "Rofl! For..."
-"Mess [']em!"
 "ZAP, spaz!"
 
 table of noesies
@@ -562,13 +562,13 @@ randtxt
 
 table of nothings
 randtxt
+"Drown, word!"
 "Dud!"
 "Eh, the..."
 "Hey! Eh?"
 "Line? Nil."
 "Mum?"
 "No peep on?"
-"Drown, word!"
 "Noise lesion."
 "Peep?!"
 "POST, sop!"
@@ -593,7 +593,6 @@ randtxt
 "Bad? A dab!"
 "Dammit, I'm mad!"
 "Dark. Rad!"
-"Ward raw..."
 "Guff! Ug!"
 "Hoot! Ooh!"
 "Hot! Oh!"
@@ -607,6 +606,7 @@ randtxt
 "Tic? Illicit."
 "Tit!"
 "Tut!"
+"Ward raw..."
 "We mew!"
 "Well, EW!"
 "Y'booby!"
@@ -615,13 +615,13 @@ randtxt
 
 table of waittxt
 randtxt
+"A lag gala!"
 "Camp, mac!"
 "Deed, deed, deed!"
 "Def['] faffed!"
 "Don't nod!"
 "Gall! Lag!"
 "GO, dog!"
-"A lag gala!"
 "No gig on?"
 "Now? On!"
 "Panic? I nap!"
@@ -645,15 +645,16 @@ randtxt
 
 table of yuge taunts
 randtxt
-"Main, I am!"
-"Soros! Soros!"
-"Huge! Guh!"
+"A papa! A papa!"
 "Gibe! Big!"
-"Misdeeds? I'm ..."
-"Nem O['] women!"
-"Wane? Naw!"
 "Hog, oh!"
+"Huge! Guh!"
+"Main, I am!"
+"Misdeeds? I'm ..."
 "Name: HE-MAN!"
+"Nem O['] women!"
+"Soros! Soros!"
+"Wane? Naw!"
 
 Put It Up Tables ends here.
 

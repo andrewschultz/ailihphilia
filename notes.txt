@@ -8,9 +8,15 @@ Your face turns derp-red
 
 ==========================final new puzzle
 
+Spot-Ops
+
+Ere-Me-Mere
+
 We Sew
 Tiny Nit
 Town Wot
+
+smirk rims bound every way except back east
 
 ==========================redo
 # El Bible
@@ -29,11 +35,7 @@ TAR PRAT = extra point?
 
 Lit by an unseen blu-bulb
 
-gorge grog + butene tub = resale laser
-
 Line Nil = can't cross?
-
-yawp way = mistake
 
 Yuge Guy: Male Lam
 
@@ -770,7 +772,6 @@ swart straws
 ta rat
 tap at
 tape pat
-tack cat
 tardo drat
 tango gnat
 tarp sprat
@@ -1102,5 +1103,7 @@ truka kurt
 yeo joey
 
 nary ran
+
+werewolf flower? Ew
 
 1w.py : not just STDIN but break things into dictionaries of dictionaries by first letter. See 2pal.py for details.
