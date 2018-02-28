@@ -231,7 +231,7 @@ when play begins:
 	now left hand status line is "[location of player] ([mrlp])";
 	repeat through table of all randoms:
 		sort tabnam entry in random order;
-	say "It's not the first dream you had about how awful high school was, but it's the worst in a while. A few 'favorite' classmates chanting 'Diary raid!' and passing it around as they mock 'Beefy? Feeb! Bony nob!'[wfak-d]";
+	say "It's not the first dream you had about how awful high school was, but it's the worst in a while. A few 'favorite' classmates chanting 'Diary raid!' and passing it around as they mock 'Beefy? Feeb! Bony Nob!'[wfak-d]";
 	say "You check your mail as you go out to the grocery store. A junk magazine! It's been so long since you got one, you're almost intrigued.[wfak-d]";
 	say "It just says GAME MAG. But the cover isn't telling you to actually buy anything, so you look inside. You have a whole backlog of games, but you can just recycle it when you get to the store.[wfak-d]";
 	say "Nothing really catches your mind until you see a DARER AD. It's really all caps, and it has a lot of messages.certainly loud.[wfak-d]";
@@ -777,7 +777,7 @@ wash saw	past sap	--	--	--	true	true	false	Grebeberg	"You hack away at the past 
 puce cup	past sap	--	check-sap-cup rule	sap-to-cup rule	false	false	false	--	"You pour some sap into the cup."
 puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"The past sap pours into the liar grail and exposes how bad the grail has been over the years. As it cracks, along with the wall it was attached to to allow passage south, you snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL!"
 puce cup	dose sod	--	check-sod-cup rule	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
-puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley	"You give the bond nob the puce cup. Gulp! Gulp! 'Well... I have a lot of catching up to do. Can't hang around. I'm the bond nob, not the bonded nob. Here's some Elan Ale for you, to celebrate how cool you are for helping. Oh, and enjoy my home to the west.'"
+puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley	"You give the Bond Nob the puce cup. Gulp! Gulp! 'Well... I have a lot of catching up to do. Can't hang around. I'm the Bond Nob, not the bonded nob. Here's some Elan Ale for you, to celebrate how cool you are for helping. Oh, and enjoy my home to the west.'"
 stamp mats	slate metals	ye key	--	--	true	false	false	Yelpley	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY."
 demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' he looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
@@ -926,7 +926,7 @@ this is the cold-loc-hint-bump rule:
 this is the empty-cup rule:
 	now puce cup is empty;
 	if Bond Nob is in DevReserved and liar grail is in DevReserved:
-		say "[Bond Nob] smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west.";
+		say "The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. I'm off to Pat's Tap!";
 		shuffle-before Apse Spa and Motto Bottom;
 	the rule succeeds;
 
@@ -2273,6 +2273,16 @@ book Art Xtra
 
 Art Xtra is north of Yawn Way. It is in Yelpley. "You can go south or north here."
 
+printed name of Art Xtra is "[if el doodle is in devreserved]Traded Art[else]Art Xtra[end if]".
+
+understand "traded" and "traded art" as Art Xtra when el doodle is in devreserved.
+
+after looking in Art Xtra:
+	if el doodle is in devreserved and art-free-warn is false:
+		now art-free-warn is true;
+		say "The Revolt Lover lets you know that there's some other art, more powerful stuff, but ... they need to know that you have an artsy side, too, and you won't just be the new tyrant replacing the old tyrant, here.";
+		continue the action;
+
 [??traded art]
 [??Revolt Lover likes the look of your pact cap]
 
@@ -3053,7 +3063,7 @@ chapter picking random genders for players
 
 a person has a person called gender-oppo. gender-oppo of a person is usually Diktat Kid.
 
-[Revolt Lover nora maron Marge Pegram lee mcmeel]
+[mike kim nora maron Marge Pegram lee mcmeel]
 
 when play begins (this is the gender randomize rule):
 	gop Revolt Lover and Nora Maron;

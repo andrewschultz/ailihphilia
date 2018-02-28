@@ -47,6 +47,14 @@ understand "do pod" as a mistake ("But what to do to it? How to change it?") whe
 
 book Drawl Ward
 
+understand "bony nob" as a mistake ("The Bond Nob's body weight is not an important issue, here.") when Bond Nob is quicknear.
+
+understand "bone nob" as a mistake ("Out of your league.") when Bond Nob is quicknear.
+
+understand "bonk nob" as a mistake ("That'd let you get west ... until the nob woke up and called a few friends.") when Bond Nob is quicknear.
+
+understand "bong nob" as a mistake ("The Bond Nob prefers alcohol.") when Bond Nob is quicknear.
+
 understand "drawn ward" as a mistake ("The room remains text-based.") when player is in Drawl Ward.
 
 book Dumb Mud
