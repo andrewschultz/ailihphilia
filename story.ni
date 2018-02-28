@@ -766,7 +766,7 @@ Set O Notes	"It's useful for an overview, but not for DOING anything."
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
 table of useons [xxuse]
 use1	use2 (an object)	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
-TO IDIOT	Revolt Lover	--	--	--	true	true	true	Yelpley	"The Revolt Lover begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Revolt Lover runs away." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
+TO IDIOT	Door Frood	--	--	--	true	true	true	Yelpley	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Door Frood runs away." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
 pity tip	navy van	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	"The van takes the pity tip and whooshes off. It spits out some snack cans, which roll on the ground. You take them. The navy van then leaves for good. It was apparently obstructing a whole bomb mob! That's who was making all the noise!" [af:TEND NET/WORK ROW]
 trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
 bunk nub	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching and slurping, the bunk nub is changed to a bunch of much smaller, but more comfortable looking, stock cots."
@@ -2015,7 +2015,7 @@ the pity tip is a thing. description of pity tip is "It's not THAT hard to figur
 
 chapter books in bookcase
 
-TO IDIOT is a proper-named book. [Revolt Lover]
+TO IDIOT is a proper-named book. [Door Frood]
 NULL ILLUN is a proper-named book. [Known Wonk]
 ERA FARE is a proper-named book. [King Nik]
 YOB ATTABOY is a proper-named book. [Sniffins]
@@ -2462,18 +2462,18 @@ book Evaded Ave
 
 Evaded Ave is north of Art Xtra. It is in Yelpley. "It's a bit sleazy in here. You can go back south. Or you can go east and west."
 
-the Revolt Lover is a person in Evaded Ave. "[one of]Someone waving their fists and shouting at who-knows-what pauses as you walk by. 'I'm the Revolt Lover.' They peg you as not insurgent enough to deserve to visit west or east, without a proper gift[or]The Revolt Lover continues to pace back and forth here, making sure you don't sneak off any way but back south[stopping].". description is "Probably not angry enough to actually do anything besides block others from doing what they want."
+the Door Frood is a person in Evaded Ave. "[one of]Someone waving their fists and shouting at who-knows-what pauses as you walk by. 'I'm the Door Frood.' They peg you as not insurgent enough to deserve to visit west or east, without a proper gift[or]The Door Frood continues to pace back and forth here, making sure you don't sneak off any way but back south[stopping].". description is "Probably not angry enough to actually do anything besides block others from doing what they want."
 
 check going in Evaded Ave:
-	if Revolt Lover is in Evaded Ave:
-		if noun is west or noun is east, say "The Revolt Lover blocks you. Maybe if you gave them a gift, they'd be more generous." instead;
+	if Door Frood is in Evaded Ave:
+		if noun is west or noun is east, say "The Door Frood blocks you. Maybe if you gave them a gift, they'd be more generous." instead;
 
 chapter bunk nub
 
-the bunk nub is a thing in Evaded Ave. "A small bunk nub lies [if Revolt Lover is in Evaded Ave]behind the Revolt Lover[else]around for the taking[end if].". description is "It's small, so an actual person couldn't sleep on it."
+the bunk nub is a thing in Evaded Ave. "A small bunk nub lies [if Door Frood is in Evaded Ave]behind the Door Frood[else]around for the taking[end if].". description is "It's small, so an actual person couldn't sleep on it."
 
 check taking bunk nub:
-	if Revolt Lover is in Evaded Ave, say "The Revolt Lover won't let you." instead;
+	if Door Frood is in Evaded Ave, say "The Door Frood won't let you." instead;
 
 the stock cots are a plural-named thing. description is "The stock cots are cut cleverly from the remains of the bunk nub. They'll make a great place to sleep for any number of small animals."
 
@@ -2806,7 +2806,7 @@ talk-text of Mike Kim is "Did you find any Stray Arts? I can always use them.".
 talk-text of Marge Pegram is "'I ain't much for talking now I'm sick...'".
 talk-text of Ned is "Ned's not in the mood for regular talk. He seems to want an argument or fight, but you don't.".
 talk-text of Psi Wisp is "It has nothing to say. It just pulses.".
-talk-text of Revolt Lover is "The Revolt Lover launches into how everyone is really stupid and at fault, and you can't really do anything except snark about it.".
+talk-text of Door Frood is "The Door Frood launches into how everyone is really stupid and at fault, and you can't really do anything except snark about it.".
 talk-text of Rob is "Rob yawns. He doesn't find you very interesting. Maybe there's a way to take advantage of that.".
 talk-text of sleep eels is "Maybe they are sending some sort of electric message you could detect with the right instrument, but they're not talking. You're more struck, though, by how uncomfortable they look while sleeping--wriggling about.".
 talk-text of Sniffins is "[if YOB ATTABOY is not in DevReserved]'Tony? Not! Poor lower class me is a failure! If only I had some success manual!'[else]'Oh. It's you again. If you were REALLY smart, you'd have taken the advice in that book you gave me.'[end if]".
@@ -2879,7 +2879,7 @@ avail-rule of Yell Alley is lover-gone rule.
 avail-rule of Trapeze Part is lover-gone rule.
 
 this is the lover-gone rule:
-	if Revolt Lover is in devreserved, the rule succeeds;
+	if Door Frood is in devreserved, the rule succeeds;
 	the rule fails;
 
 avail-rule of Art Xtra is packed-it rule.
@@ -3390,14 +3390,14 @@ this is the emo-dome rule:
 section Evaded Ave rule
 
 this is the evaded-ave rule:
-	if Revolt Lover is in devreserved and bunk nub is not in Evaded Ave, continue the action;
+	if Door Frood is in devreserved and bunk nub is not in Evaded Ave, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if Revolt Lover is in Evaded Ave:
+	if Door Frood is in Evaded Ave:
 		if My Gym is unvisited, say "Visit south of Yawn Way a bit." instead;
 		if Worn Row is unvisited, say "See about west of My Gym." instead;
 		if ever-wordrow is false, say "Worn Row can become something else[if ever-workrow is true], besides Work Row[end if]." instead;
-		if player has TO IDIOT, say "You have TO IDIOT. Give it to the Revolt Lover." instead;
-		say "[one of]Word Row has some interesting books. Maybe one would please the Revolt Lover.[or]You need something daring and obnoxious.[or]Get TO IDIOT from Word Row.[stopping]" instead;
+		if player has TO IDIOT, say "You have TO IDIOT. Give it to the Door Frood." instead;
+		say "[one of]Word Row has some interesting books. Maybe one would please the Door Frood.[or]You need something daring and obnoxious.[or]Get TO IDIOT from Word Row.[stopping]" instead;
 	say "You just need to take the bunk nub here." instead;
 
 section Flu Gulf rule

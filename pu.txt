@@ -292,12 +292,11 @@ The book SOME DEMOS gives advice on making art...
 ...and the Yahoo Hay in the Moo Room gives some art and building materials.
 USE STRAW ARTS ON MIKE KIM.
 >>EVADED AVE
-?Why won't the revolt lover let me go west or east?
-The revolt lover is a bit of a jerk.
+?Why won't the door frood let me go west or east?
+The door frood is a bit of a jerk.
 Maybe if you gave them a gift, they'd be happy.
-A revolting book, maybe?
-USE TO IDIOT ON REVOLT LOVER.
-Fill in later.
+A book that has "froody" humor? That gives them someone to look down on?
+USE TO IDIOT ON DOOR FROOD.
 >>YELL ALLEY
 ?What is the navy van for?
 It has a small gig you can put something in.
@@ -322,7 +321,7 @@ TEND NET.
 Well, you need to avoid him. Not quite avoid him.
 But do something to him. ????? DAVE.
 EVADE DAVE.
->What is the wash saw for?
+?What is the wash saw for?
 It could be useful to cut something small and stubborn.
 Wood, maybe. Or something from wood.
 What you need to cut is over in Grebeberg.
@@ -397,7 +396,6 @@ You could use the Dose Sod from the Apse Spa...
 ...but you can't carry it on its own.
 Use the Puce Cup to get it.
 USE PUCE CUP ON MARGE PEGRAM.
-Fill in later.
 >>DOPY POD
 ?What do I do with the demo med?
 Just take it, for now.
@@ -497,7 +495,7 @@ There are 37 total points in Yelpley.
 1 point if you EVADE DAVE.
 1 point if you BORE ROB.
 1 point for WORD ROW.
-1 point if you USE TO IDIOT ON REVOLT LOVER.
+1 point if you USE TO IDIOT ON DOOR FROOD.
 1 point if you USE PITY TIP ON NAVY VAN.
 1 point if you TEND NET.
 1 point for WORK ROW.
