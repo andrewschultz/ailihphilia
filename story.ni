@@ -80,6 +80,8 @@ in-beta is a truth state that varies.
 
 aid-detail is a truth state that varies.
 
+debug-verbose is a truth state that varies.
+
 volume parser simplification
 
 Understand the command "slice" as something new.
@@ -926,7 +928,7 @@ this is the cold-loc-hint-bump rule:
 this is the empty-cup rule:
 	now puce cup is empty;
 	if Bond Nob is in DevReserved and liar grail is in DevReserved:
-		say "The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. I'm off to Pat's Tap!";
+		say "The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. I'm off to Pat's Tap for some redics-cider!'";
 		shuffle-before Apse Spa and Motto Bottom;
 	the rule succeeds;
 
@@ -1812,9 +1814,9 @@ check going west in My Gym when Dave is in My Gym: say "Dave says, 'I can't let 
 
 chapter sword rows
 
-the sword rows are a plural-named thing in My Gym. "Some tiny sword rows lie here[if Dave is in My Gym] behind Dave[end if].". description is "[if Dave is in My Gym]They're tiny. You can't get a good look with Dave guarding them[else]They could probably cut or chip away at something, if you needed them to[end if]."
+The wash saw is in My Gym. description is "A small wash saw [if Dave is in DevReserved]lies here[else]is behind Dave[end if]."
 
-check taking sword rows when Dave is quicknear: say "Not with Dave around." instead;
+check taking wash saw when Dave is quicknear: say "Not with Dave around." instead;
 
 chapter not-a-baton
 
@@ -2277,6 +2279,8 @@ printed name of Art Xtra is "[if el doodle is in devreserved]Traded Art[else]Art
 
 understand "traded" and "traded art" as Art Xtra when el doodle is in devreserved.
 
+art-free-warn is a truth state that varies.
+
 after looking in Art Xtra:
 	if el doodle is in devreserved and art-free-warn is false:
 		now art-free-warn is true;
@@ -2314,7 +2318,7 @@ the party trap is a thing. description is "It looks roughly like the notes from 
 
 chapter Revolt Lover
 
-Revolt Lover is a person. "[one of]'Hi! I'm the Revolt Lover. Business is slow here, but I still have a few freebies. If you're able to use them, I'd be willing to trade for more.'[or]the Revolt Lover smiles at you.[stopping]". description is "Artsy looking, but not pretentiously hipster-ish.".
+Revolt Lover is a person in Art Xtra. "[one of]'Hi! I'm the Revolt Lover. Business is slow here, but I still have a few freebies. If you're able to use them, I'd be willing to trade for more.'[or]The Revolt Lover smiles at you.[stopping]". description is "Artsy looking, but not pretentiously hipster-ish.".
 
 chapter Nora Maron
 
@@ -2578,10 +2582,13 @@ understand the command "puff up" as something new.
 understand "puffup" as puffuping.
 understand "puff up" as puffuping.
 
+puffed-up is a truth state that varies.
+
 carry out puffuping:
-	if spur ups are in DevReserved, say "You already did." instead;
+	if puffed-up is true, say "You already did." instead;
 	if player does not have spur ups, say "You don't possess anything that would help you feel more up." instead;
 	say "As you hold the Spur-Ups, you think about how great you are and can and will be. Surprisingly, it works! It works so well, you figure you don't even need the spur-ups for a boost in the future. You feel more confident, more able to deal with sadness now.";
+	now puffed-up is true;
 	now Spur Ups are in DevReserved;
 	score-inc; [Yelpley/puff up]
 	the rule succeeds;
@@ -2640,7 +2647,7 @@ check going north in Emo Dome:
 
 book Red Roses Order
 
-Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in Red Roses Order]The only visible way back is south, with a mist sim blocking the other directions, but you can't chicken out[else]A wash saw was revealed once the mist sim dispersed. You can go back south[end if]."
+Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in Red Roses Order]The only visible way back is south, with a mist sim blocking the other directions, but you can't chicken out[else]Sword rows have been revealed once the mist sim dispersed. You can go back south[end if]."
 
 Red Roses Order is above Emo Dome.
 
@@ -2648,9 +2655,9 @@ chapter mist sim
 
 mist sim is peripheral scenery in Red Roses Order. "You can't see through it, but you really should be focused on Madam now, anyway."
 
-chapter wash saw
+chapter sword rows
 
-The wash saw is scenery in Red Roses Order. "[if not-a-baton is in DevReserved]It doesn't look like you broke it, but you probably don't need it any more[else]It looks automatic. Put something it can cut in, and get something out[end if]."
+The sword rows are plural-named scenery in Red Roses Order. ."[if not-a-baton is in DevReserved]It doesn't look like you broke them, but you probably don't need them any more[else]It looks automatic. Put something it can cut in, and get something out[end if]."
 
 chapter madam
 
@@ -2693,7 +2700,7 @@ the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, un
 
 chapter Bond Nob
 
-the Bond Nob is a person. "[one of]'Hi! I'm the Bond Nob. I ain't feeling so good, but I wondered if maybe I could get some medicine.'[or]the Bond Nob continues to moan colloquially about the sickness, the pain.[stopping]". description is "the Bond Nob looks pretty ill. Nothing life-threatening, but too sick to go fetch even the dinkiest over-the-counter medication."
+the Bond Nob is a person in Drawl Ward. "[one of]'Hi! I'm the Bond Nob. I ain't feeling so good, but I wondered if maybe I could get some medicine.'[or]the Bond Nob continues to moan colloquially about the sickness, the pain.[stopping]". description is "the Bond Nob looks pretty ill. Nothing life-threatening, but too sick to go fetch even the dinkiest over-the-counter medication."
 
 book Scrap Arcs
 
@@ -3066,24 +3073,7 @@ a person has a person called gender-oppo. gender-oppo of a person is usually Dik
 [mike kim nora maron Marge Pegram lee mcmeel]
 
 when play begins (this is the gender randomize rule):
-	gop Revolt Lover and Nora Maron;
 	sort table of random authors in random order; [not strictly gender, but its gender can be changed]
-	if debug-state is true:
-		repeat through table of random authors:
-			if can-f entry is false and can-m entry is false, say "DUMB BUG can-f and can-m entries are both false."; [?? I should put this in a simple Python script instead. Maybe it can also vacuum up duplicate names just in case]
-	gender-sort;
-
-to gop (p1 - a person) and (p2 - a person):
-	now gender-oppo of p1 is p2;
-	now gender-oppo of p2 is p1;
-	now p1 is male;
-	now p2 is female;
-	now description of p2 is description of p1;
-	now initial appearance of p2 is initial appearance of p1;
-
-to decide which person is gend-rand of (op - a person):
-	if a random chance of 1 in 2 succeeds, decide on op;
-	decide on gender-oppo of op;
 
 this is the gender-too-late rule:
 	if Art Xtra is visited, say "Too late to switch genders." instead;
@@ -3177,19 +3167,18 @@ L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evade
 
 [LATER: establish partially done room rules as opposed to completely done, for a room]
 
-to shuffle-before (a - a room) and (b - a room):
+to shuffle-before (ra - a room) and (rb - a room):
 	let x1 be 0;
 	let LE be number of entries in L;
 	repeat with x running from 1 to LE:
-		if entry x of L is a:
+		if entry x of L is ra:
 			now x1 is x;
 			break;
 	if x1 is 0, continue the action;
-	say "[x1] [LE].";
 	repeat with x2 running from x1 to LE:
-		if entry x2 of L is b:
-			say "Swapping elements [a] and [b].";
-			add a at entry x2 in L;
+		if entry x2 of L is rb:
+			say "(DEBUG: Swapping room walkthrough order for [ra] and [rb])";
+			add ra at entry x2 in L;
 			remove entry x1 from L;
 
 check aiding:
@@ -3205,12 +3194,17 @@ check aiding:
 	say "You're done here, for [if all-done-here is true]good[else]now[end if]. Would you like to be pointed to somewhere else relevant?";
 	unless the player yes-consents, say "Okay." instead;
 	now search-hint-room is true;
-	let rooms-in-order be list of rooms not in Odd Do;
-	sort rooms-in-order in walkthru-prio order;
-	repeat with Q running through rooms-in-order:
+	repeat with Q running through L:
+		if debug-verbose is true, say "Checking [Q] in order.";
 		consider the done-rule of Q;
 		if the rule succeeded:
-			say "As a general hint, [Q] might be a good place to look.";
+			if Q is location of player:
+				if debug-state is true, say "OOPS! This is a bug in the hints. The game thinks you're done here but the rule to tell you what to do missed a case.";
+				next;
+			if Q is visited:
+				say "As a general hint, [Q] might be a good place to look.";
+			else:
+				describe-nearby Q;
 			now search-hint-room is false;
 			if aid-detail is true:
 				say "DEBUG: Here's what the hint would be: ";
@@ -3220,6 +3214,18 @@ check aiding:
 		now search-hint-room is false;
 		say "I'm out of ideas for rooms you've visited. Maybe look around the map a bit more.";
 	the rule succeeds;
+
+to describe-nearby (ro - a room):
+	repeat with dir running through maindir:
+		let DR be the room dir of ro;
+		if DR is visited:
+			say "Try looking [opposite of dir] of [if DR is location of player]here[else][DR][end if]. You haven't, yet.";
+			continue the action;
+	if player is in Fun Nuf and ro is Art Xtra:
+		say "Try exploring Yelpley to the east.";
+		continue the action;
+	say "There's a room you haven't visited with something to do, but it's pretty far away.";
+	if in-beta is true, say "(BETA TESTER NOTE) [ro] isn't being flagged correctly."
 
 search-hint-room is a truth state that varies.
 
@@ -3237,7 +3243,7 @@ this is the dunno-hint rule: [I should never have to use this in the final relea
 
 section bulk done-rule definitions
 
-done-rule of Apse Spa is apse-spa-part rule.
+done-rule of Apse Spa is apse-spa rule.
 done-rule of Art Xtra is art-xtra rule.
 done-rule of birch crib is birch-crib rule.
 done-rule of Calcific Lac is calcific-lac rule.
@@ -3280,15 +3286,19 @@ section done-for-good rule definitions
 
 done-for-good rule of Apse Spa is apse-spa-complete rule.
 
+done-for-good rule of Art Xtra is art-xtra-complete rule.
+
 done-for-good rule of Fun Nuf is trivially false rule.
+
+done-for-good rule of Worn Row is worn-row-complete rule.
+
+done-for-good rule of Yawn Way is yawn-way-complete rule.
+
+done-for-good rule of Yell Alley is yell-alley-complete rule.
 
 section Apse Spa rule
 
-this is the apse-spa-complete rule:
-	if sage gas is not off-stage, the rule succeeds;
-	the rule fails;
-
-this is the apse-spa-part rule:
+this is the apse-spa rule:
 	if puce cup is soddy and Bond Nob is not in DevReserved, continue the action;
 	if sage gas is not off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
@@ -3300,16 +3310,25 @@ this is the apse-spa-part rule:
 	if player has el doodle, say "You have something that could become maps, but you need to find where to clear it up." instead;
 	say "You need to find or develop maps to get through Go-By Bog." instead;
 
+this is the apse-spa-complete rule:
+	if sage gas is not off-stage, the rule succeeds;
+	the rule fails;
+
 section Art Xtra rule
 
 this is the art-xtra rule:
+	if trap art is not in Art Xtra and stark rats are not in devreserved, continue the action;
 	if state tats are not off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if trap art is in Art Xtra, say "The trap art will be useful, with a change." instead;
 	if el doodle is in Art Xtra, say "El doodle will be useful, with a change." instead;
+	if straw arts is off-stage, say "You need to make some art for the Revolt Lover." instead;
 	if player has straw arts, say "USE STRAW ARTS ON REVOLT LOVER." instead;
 	if player has soot tattoos, say "USE SOOT TATTOOS ON GATE TAG." instead;
-	say "I need to fill this in. Hints here are tricky." instead;
+	say "Eep! There's a lot to do here, and I messed things up." instead;
+
+this is the art-xtra-complete rule:
+	if soot tattoos are in devreserved, the rule succeeds;
 
 section Birch Crib rule
 
@@ -3476,7 +3495,10 @@ this is the motto-bottom rule:
 section My Gym rule
 
 this is the my-gym rule:
+	if wash saw is not in My Gym, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if wash saw is in My Gym and Dave is not in My Gym, say "Take the wash saw." instead;
+	say "[one of]Dave is in the way, but he doesn't quite fit in Yelpley.[or]How could you expose him, appropriate to the whole game?[or]You need to sneak by.[or]EVADE DAVE.[stopping]" instead;
 
 section Ooze Zoo rule
 
@@ -3535,23 +3557,74 @@ this is the toll-lot rule:
 section Trapeze Part rule
 
 this is the trapeze-part rule:
+	unless epicer recipe is off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	say "[one of]The net needs you to do something to it.[or]TEND NET.[stopping]" instead;
 
 section Worn Row rule
 
 this is the worn-row rule:
+	if ever-wordrow is true and ever-workrow is true and etage gate is in Gross Org:
+		consider the got-machine-fodder rule;
+		unless the rule succeeded, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if rob is in Worn Row, say "BORE ROB." instead;
+	if ever-wordrow is false, say "You can change this place to WORD ROW." instead;
+	if ever-workrow is false, say "You can change this place to WORK ROW." instead;
+	if psi wisp is in worn row, say "WORN ROW." instead;
+	if rotator is in Worn Row, abide by the find-machine rule;
+	say "USE YARD RAY ON TEST SET." instead;
+
+machineables is a list of things variable. machineables is {stink knits, gold log, you buoy, bunk nub, Dirt Rid, eroded ore, trap art, DNA band, not-a-baton}. [?? if we use this a lot maybe we should make a property]
+
+this is the got-machine-fodder rule:
+	repeat with Q running through machineables:
+		if player has Q, the rule succeeds;
+	the rule fails;
+
+this is the find-machine rule:
+	repeat with Q running through machineables:
+		if player has Q:
+			repeat through table of useons:
+				if use1 entry is Q:
+					say "USE [printed name of use1 entry in upper case] ON [printed name of use2 entry in upper case].";
+					the rule succeeds;
+	say "Oops. Should be able to use something on a machine, but you can't." instead;
+	if player has stink knits, say "USE STINK KNITS ON ROTATOR." instead;
+	if player has gold log, say "USE GOLD LOG ON ROTATOR." instead;
+	if player has you buoy, say "USE YOU BUOY ON ROTATOR." instead;
+	if player has bunk nub, say "USE BUNK NUB ON REVIVER." instead;
+	if player has dirt rid, say "USE DIRT RID ON REVIVER." instead;
+	if player has eroded ore, say "USE ERODED ORE ON REVIVER." instead;
+	if player has trap art, say "USE TRAP ART ON REIFIER." instead;
+	if player has dna band, say "USE ON DNA BAND ON REIFIER." instead;
+	if player has not-a-baton, say "USE ON NOT-A-BATON ON REIFIER." instead;
+
+this is the worn-row-complete rule:
+	if test set is in devreserved, the rule succeeds;
 
 section Yawn Way rule
 
 this is the yawn-way rule:
-	continue the action; [this is a trivial rule, but in case I decide to add something, it may be a help.]
+	if stark rats are not in devreserved, continue the action;
+	if puffed-up is true, continue the action; [this is a trivial rule, but in case I decide to add something, it may be a help.]
 	if search-hint-room is true, the rule succeeds;
+	if player does not have Spur Ups, say "You may need to visit Cold Loc to receive an item to help you go east." instead;
+	say "[one of]The spur ups can make you go UP. But how should you go UP?[or]PUFF UP.[stopping]" instead;
+
+this is the yawn-way-complete rule:
+	if puffed-up is true, the rule succeeds; [this is a trivial rule, but in case I decide to add something, it may be a help.]
+	the rule fails;
 
 section Yell Alley rule
 
 this is the yell-alley rule:
+	if pity tip is in devreserved and psi wisp is not in devreserved, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if pity tip is not in devreserved, say "USE PITY TIP ON NAVY VAN." instead; [?SEEDY DEE'S]
+
+this is the yell-alley-complete rule:
+	if player has TNT or TNT is in devreserved, the rule succeeds;
 
 chapter balmlabing
 
@@ -3999,3 +4072,35 @@ carry out adeing:
 	say "Aid detail is now [on-off of aid-detail]. In other words, you [if aid-detail is true]will[else]won't[end if] see what hints would be in the room that's currently targeted for hints.";
 	the rule succeeds;
 
+chapter dving
+
+dving is an action applying to nothing.
+
+understand the command "dv" as something new.
+
+understand "dv" as dving.
+
+carry out dving:
+	now debug-verbose is whether or not debug-verbose is false;
+	say "Debug-verbose is now [on-off of debug-verbose].";
+	the rule succeeds;
+
+[below can be commented out.]
+
+chapter full monty extension
+
+include Full Monty Testing by Andrew Schultz.
+
+table of monties (continued)
+montopic (topic)	on-off	test-title (text)	test-action	topic-as-text (text)
+"aid"	false	"AIDING"	try-aid rule	"aid"
+
+exitsing is an action out of world.
+
+carry out exitsing:
+	repeat with Q running through maindir:
+		let Q2 be the room Q of location of player;
+		if Q2 is not nowhere, say "[Q2] is [Q] of [location of player].";
+
+this is the try-aid rule:
+	try aiding;
