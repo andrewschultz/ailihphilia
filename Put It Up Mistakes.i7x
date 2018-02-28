@@ -180,6 +180,8 @@ understand "DNA hand" as a mistake ("Right idea, but you can't do it on your own
 
 understand "balk lab" as a mistake ("There's not much to do or say here, for sure[if balm-got is false]![else]--well, maybe something that's not quite BALK.[end if]") when player is in Pro Corp.
 
+understand "golf log" as a mistake ("There is no Par Trap to navigate here, so you don't need to make a golf log.") when gold log is quicknear.
+
 book Red Roses Order
 
 understand "gal slag" as a mistake ("You managed to annoy Madam enough that she lashes out and conks you with a mortal blow with the Gal Flag. Okay, not really, but name calling won't help.") when Gal Flag is quicknear. [?? do fake death thing]
@@ -213,6 +215,8 @@ book Swept Pews
 understand "liar frail" and "liar trail" as a mistake ("The grail remains in your way to the south. But it was worth a try.") when liar grail is quicknear.
 
 book Toll Lot
+
+understand "told lot" as a mistake ("[if cross orc is in Toll Lot]The cross orc isn't open to verbal negotiation[else]You pretend you won an argument against the cross or and didn't just hand over money[end if].") when player is in Toll Lot.
 
 understand "crop orc" as a mistake ("That attack would boomerang, and not just because this is a palindrome-y game. The orc is lots, lots bigger than you.") when cross orc is quicknear.
 

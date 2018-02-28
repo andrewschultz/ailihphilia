@@ -674,6 +674,7 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 
 check useoning it with:
 	if noun is second noun, say "It's not productive to use something on itself, even with this game being full of palindromes." instead;
+	if noun is the player or second noun is the player, say "You never need to use anything explicitly on yourself." instead;
 	if noun is a workable and second noun is a workable, say "The machines are fixed in place. You can't use one on the other." instead;
 	if noun is a workable, try useoning second noun with noun instead;
 	if noun is a workable or second noun is a workable:
@@ -743,7 +744,7 @@ check useoning it with:
 		if second noun is use1 entry, say "[babble entry][line break]" instead;]
 	if second noun is a workable, abide by the machine message rules for the noun;
 	repeat through table of cantuse:
-		if noun is use1 entry, say "[babble entry]" instead;
+		if noun is use1 entry or second noun is use1 entry, say "[babble entry]" instead;
 	say "You think of ways to do that productively, but nothing comes up." instead;
 
 The machine message rules are an object-based rulebook.
@@ -755,6 +756,9 @@ a machine message rule for a thing (called t):
 
 table of cantuse
 use1	babble
+Spur Ups	"The Spur Ups make you want to do something for yourself, by yourself. You're not sure what."
+Psi Wisp	"The Psi Wisp is impervious. You need to outrun and outsmart it."
+Kayo Yak	"The Kayo Yak grunts. Looks like you can't, or don't want to, use anything on it."
 Dave	"Dave's not useful, man."
 Ian	"Ian's worse than useless. You need to use your wit on him."
 Rob	"Rob's not going to be obliging. You have to get rid of him, somehow."
@@ -763,6 +767,7 @@ Pact Cap	"Your pact cap is fine where it is, on your head."
 epicer recipe	"It's meant for referral."
 Darer Ad	"It was only useful to sucker you into this mess."
 Set O Notes	"It's useful for an overview, but not for DOING anything."
+north tron	"The north tron's already done its job."
 
 [the table of useons approximately follows not only the test commands but also the walkthrough]
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
@@ -1133,7 +1138,7 @@ carry out packing:
 
 section pace cap
 
-paceing is an action applying to nothing.
+paceing is an action out of world.
 
 understand the command "pace cap" as something new.
 understand the command "pacy cap" as something new.
@@ -3035,14 +3040,21 @@ every turn when being-chased is true:
 		say "You'd better get a move on. The [chase-person] looks pretty agitated.";
 		now init-turn is true;
 		continue the action;
+	if chase-person is Kayo Yak and cap-pace is false:
+		say "Oh no! The Kayo Yak was too fast for you! Maybe you can find a way to run faster.";
+		reset-chase instead;
 	if chase-person is in location of player:
-		say "You've been caught! Aigh!";
-		if mrlp is Grebeberg, move player to Seer Trees;
-		if mrlp is Yelpley, move player to Yawn Way;
-		move chase-person to chase-room of chase-person;
+		say "You've been caught! Aigh! Dazed and confused, you stagger back to...";
+		reset-chase instead;
 	else:
 		say "The [chase-person] follows you.";
 		move chase-person to location of player;
+
+to reset-chase:
+	wfak;
+	if mrlp is Grebeberg, move player to Seer Trees;
+	if mrlp is Yelpley, move player to Yawn Way;
+	move chase-person to chase-room of chase-person;
 
 after going when being-chased is true:
 	now last-chase-direction is noun;
@@ -4104,3 +4116,5 @@ carry out exitsing:
 
 this is the try-aid rule:
 	try aiding;
+
+[?? test to see about any person/place/scenery that is in table of rejects or useons but not both]
