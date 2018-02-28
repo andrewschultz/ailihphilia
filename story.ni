@@ -777,7 +777,7 @@ wash saw	past sap	--	--	--	true	true	false	Grebeberg	"You hack away at the past 
 puce cup	past sap	--	check-sap-cup rule	sap-to-cup rule	false	false	false	--	"You pour some sap into the cup."
 puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"The past sap pours into the liar grail and exposes how bad the grail has been over the years. As it cracks, along with the wall it was attached to to allow passage south, you snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL!"
 puce cup	dose sod	--	check-sod-cup rule	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
-puce cup	Marge Pegram	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley	"You give marge the puce cup. She drinks the dose sod and immediately feels better. 'Well... I have a lot of catching up to do. Can't hang around. Here's some Elan Ale for you, to celebrate how cool you are for helping.'"
+puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley	"You give the bond nob the puce cup. Gulp! Gulp! 'Well... I have a lot of catching up to do. Can't hang around. I'm the bond nob, not the bonded nob. Here's some Elan Ale for you, to celebrate how cool you are for helping. Oh, and enjoy my home to the west.'"
 stamp mats	slate metals	ye key	--	--	true	false	false	Yelpley	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY."
 demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' he looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
@@ -791,7 +791,7 @@ stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The sti
 Gorge Grog	Butene Tub	resale laser	--	--	true	true	true	Yelpley	"The Gorge Grog immediately starts fizzing as it pours down the tub, which rumbles disturbingly. You find it best to hide, and that's the right thing to do, because the butene tub explodes into pieces. Under it is a resale laser!"
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	false	false	Grebeberg	"With the help of SOME DEMOS, you manage to rejig the hay into something more aesthetically pleasing: straw arts!"
-straw arts	Mike Kim	soot tattoos	--	rebump-art-xtra rule	true	true	false	Yelpley	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
+straw arts	Revolt Lover	soot tattoos	--	rebump-art-xtra rule	true	true	false	Yelpley	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
 gate tag	soot tattoos	state tats	--	tats-peripheral rule	true	true	true	Yelpley	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
 poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
 poo coop	turf rut	--	coop-full rule	shift-dumb-mud rule	true	true	true	Grebeberg	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture.[paragraph break]A bold lob! The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
@@ -900,7 +900,7 @@ this is the sap-in-cup rule:
 
 this is the sod-in-cup rule:
 	if puce cup is soddy, the rule succeeds;
-	say "[if puce cup is sappy]Marge Pegram makes a face at the sap in the cup. Maybe something less unpalatable would help her[else]The puce cup is empty. It wouldn't help Marge Pegram[end if].";
+	say "[if puce cup is sappy]The Bond Nob makes a face at the sap in the cup. Maybe something less unpalatable would help her[else]The puce cup is empty. It wouldn't help the Bond Nob[end if].";
 	the rule fails;
 
 section post-use rules [xxpost]
@@ -925,8 +925,8 @@ this is the cold-loc-hint-bump rule:
 
 this is the empty-cup rule:
 	now puce cup is empty;
-	if poor-sick is in DevReserved and liar grail is in DevReserved:
-		say "[poor-sick] smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west.";
+	if Bond Nob is in DevReserved and liar grail is in DevReserved:
+		say "[Bond Nob] smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west.";
 		shuffle-before Apse Spa and Motto Bottom;
 	the rule succeeds;
 
@@ -2274,7 +2274,7 @@ book Art Xtra
 Art Xtra is north of Yawn Way. It is in Yelpley. "You can go south or north here."
 
 [??traded art]
-[??mike kim likes the look of your pact cap]
+[??Revolt Lover likes the look of your pact cap]
 
 chapter trap art
 
@@ -2294,7 +2294,7 @@ El Doodle is a thing. description is "A jumble of raw creativity, it looks like 
 
 after going to Art Xtra when El Doodle is off-stage:
 	if stark rats are in DevReserved:
-		say "You tell [art-sell] about how you got rid of the stark rats. [art-sell], impressed, mentions there's something else for you. 'Someone left it here a while back. It's indecipherable. I can't use it, but maybe you can figure it out.'";
+		say "You tell the Revolt Lover about how you got rid of the stark rats. the Revolt Lover, impressed, mentions there's something else for you. 'Someone left it here a while back. It's indecipherable. I can't use it, but maybe you can figure it out.'";
 		now player has El Doodle;
 	continue the action;
 
@@ -2302,9 +2302,9 @@ chapter party trap
 
 the party trap is a thing. description is "It looks roughly like the notes from the trap art, but you don't need to worry about the details. Poking around would be dangerous. It looks You just hope it works right when you USE it. That would be cool. I mean, if you used it on things that deserved it.".
 
-chapter Mike Kim
+chapter Revolt Lover
 
-Mike Kim is a person. "[one of]'Hi! I'm [art-sell]. Business is slow here, but I still have a few freebies. If you're able to use them, I'd be willing to trade for more.'[or][art-sell] smiles at you.[stopping]". description is "Artsy looking, but not pretentiously hipster-ish.".
+Revolt Lover is a person. "[one of]'Hi! I'm the Revolt Lover. Business is slow here, but I still have a few freebies. If you're able to use them, I'd be willing to trade for more.'[or]the Revolt Lover smiles at you.[stopping]". description is "Artsy looking, but not pretentiously hipster-ish.".
 
 chapter Nora Maron
 
@@ -2676,18 +2676,14 @@ book Drawl Ward
 Drawl Ward is south of Swept Pews. It is in Yelpley. "This passage is a T, walled off to the south."
 
 check going west in Drawl Ward:
-	if poor-sick is in Drawl Ward:
-		if noun is west or noun is east, say "You hear [poor-sick] groaning and think it wouldn't be nice to pass by. They'll let you by once you help them with whatever sickness they have." instead;
+	if Bond Nob is in Drawl Ward:
+		if noun is west or noun is east, say "You hear the Bond Nob groaning and think it wouldn't be nice to pass by. They'll let you by once you help them with whatever sickness they have." instead;
 
 the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, unsurprisingly. It's about the size of a pint nip."
 
-chapter Lee McMeel
+chapter Bond Nob
 
-Lee McMeel is a person. "[one of]'Hi! I'm [poor-sick]. I ain't feeling so good, but I wondered if maybe I could get some medicine.'[or][poor-sick] continues to moan colloquially about the sickness, the pain.[stopping]". description is "[poor-sick] looks pretty ill. Nothing life-threatening, but too sick to go fetch even the dinkiest over-the-counter medication."
-
-chapter Marge Pegram
-
-Marge Pegram is a person.
+the Bond Nob is a person. "[one of]'Hi! I'm the Bond Nob. I ain't feeling so good, but I wondered if maybe I could get some medicine.'[or]the Bond Nob continues to moan colloquially about the sickness, the pain.[stopping]". description is "the Bond Nob looks pretty ill. Nothing life-threatening, but too sick to go fetch even the dinkiest over-the-counter medication."
 
 book Scrap Arcs
 
@@ -2733,7 +2729,7 @@ The roto motor is a thing. description is "It seems to have been saved from what
 
 chapter Demo Med
 
-a Demo Med is an edible thing in Dopy Pod. "The demo med that must not have worked for [poor-sick] sits here, on a pill lip.". description is "You're not sure what it could be. Xanax? Whatever, you feel calmer just looking at it."
+a Demo Med is an edible thing in Dopy Pod. "The demo med that must not have worked for the Bond Nob sits here, on a pill lip.". description is "You're not sure what it could be. Xanax? Whatever, you feel calmer just looking at it."
 
 the pill lip is peripheral scenery in Dopy Pod. "A Demo Med rests on the Pill Lip."
 
@@ -2802,8 +2798,8 @@ talk-text of King Nik is "'I am not a very good king! I tried to understand soci
 talk-text of Knife Fink is "The Knife Fink stops and looks over your possessions for a moment.".
 talk-text of Known Wonk is "There is some awkward small talk. The Known Wonk's mind is elsewhere, but maybe you can help with practical matters.".
 talk-text of Madam is "She is raising the Gal Flag and incanting ... something. You're not sure what. But talking won't interrupt it.".
-talk-text of Mike Kim is "Did you find any Stray Arts? I can always use them.".
-talk-text of Marge Pegram is "'I ain't much for talking now I'm sick...'".
+talk-text of Revolt Lover is "Did you find any Stray Arts? I can always use them.".
+talk-text of Bond Nob is "'I ain't much for talking now I'm sick...'".
 talk-text of Ned is "Ned's not in the mood for regular talk. He seems to want an argument or fight, but you don't.".
 talk-text of Psi Wisp is "It has nothing to say. It just pulses.".
 talk-text of Door Frood is "The Door Frood launches into how everyone is really stupid and at fault, and you can't really do anything except snark about it.".
@@ -2912,7 +2908,7 @@ this is the pulled-up rule:
 avail-rule of Dopy Pod is poorsick-gone rule.
 
 this is the poorsick-gone rule:
-	if poor-sick is in devreserved, the rule succeeds;
+	if Bond Nob is in devreserved, the rule succeeds;
 	the rule fails;
 
 avail-rule of Drawl Ward is grail-gone rule.
@@ -3055,16 +3051,12 @@ volume gender switching
 
 chapter picking random genders for players
 
-art-sell is a person that varies.
-poor-sick is a person that varies.
-
 a person has a person called gender-oppo. gender-oppo of a person is usually Diktat Kid.
 
+[Revolt Lover nora maron Marge Pegram lee mcmeel]
+
 when play begins (this is the gender randomize rule):
-	gop Mike Kim and Nora Maron;
-	gop Lee McMeel and Marge Pegram;
-	now art-sell is gend-rand of Mike Kim;
-	now poor-sick is gend-rand of Lee McMeel;
+	gop Revolt Lover and Nora Maron;
 	sort table of random authors in random order; [not strictly gender, but its gender can be changed]
 	if debug-state is true:
 		repeat through table of random authors:
@@ -3096,11 +3088,8 @@ understand "m" as ming.
 
 carry out ming:
 	abide by the gender-too-late rule;
-	now art-sell is Mike Kim;
-	now poor-sick is Lee McMeel;
 	sort table of random authors in random order;
 	sort table of random authors in reverse can-m order;
-	gender-sort;
 	the rule succeeds;
 
 chapter fing
@@ -3113,18 +3102,11 @@ understand "f" as fing.
 
 carry out fing:
 	abide by the gender-too-late rule;
-	now art-sell is Nora Maron;
-	now poor-sick is Marge Pegram;
 	sort table of random authors in random order;
 	sort table of random authors in reverse can-f order;
-	gender-sort;
 	the rule succeeds;
 
 chapter gender-sort
-
-to gender-sort:
-	table-comb art-sell;
-	move art-sell to Art Xtra;
 
 to table-comb (myp - a person):
 	if gender-oppo of myp is Diktat Kid, continue the action;
@@ -3297,10 +3279,10 @@ this is the apse-spa-complete rule:
 	the rule fails;
 
 this is the apse-spa-part rule:
-	if puce cup is soddy and poor-sick is not in DevReserved, continue the action;
+	if puce cup is soddy and Bond Nob is not in DevReserved, continue the action;
 	if sage gas is not off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if poor-sick is not in devreserved:
+	if Bond Nob is not in devreserved:
 		if player has puce cup, say "You need to USE the puce cup on the dose sod." instead;
 		say "You need something to carry the dose sod with." instead;
 	if maps-explained is true, say "USE MAPS ON BOG." instead;
@@ -3315,7 +3297,7 @@ this is the art-xtra rule:
 	if search-hint-room is true, the rule succeeds;
 	if trap art is in Art Xtra, say "The trap art will be useful, with a change." instead;
 	if el doodle is in Art Xtra, say "El doodle will be useful, with a change." instead;
-	if player has straw arts, say "USE STRAW ARTS ON MIKE KIM." instead;
+	if player has straw arts, say "USE STRAW ARTS ON REVOLT LOVER." instead;
 	if player has soot tattoos, say "USE SOOT TATTOOS ON GATE TAG." instead;
 	say "I need to fill this in. Hints here are tricky." instead;
 
@@ -3361,13 +3343,13 @@ this is the dopy-pod rule:
 section Drawl Ward rule
 
 this is the drawl-ward rule:
-	if poor-sick is in devreserved, continue the action;
+	if Bond Nob is in devreserved, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if puce cup is not soddy, say "[one of]You have the puce cup, but it needs to be filled with something other than the past sap/purist sirup that got you by the Liar Grail.[or]You need something healing.[or]If you navigated the Apse Spa, you'll see what's there.[or]Once you have the  dose sod from the Apse Spa, USE PUCE CUP ON [psu].[stopping]";
 	say "USE PUCE CUP ON [psu]." instead;
 
 to say psu:
-	let X be the printed name of poor-sick;
+	let X be the printed name of Bond Nob;
 	say "[X in upper case]";
 
 section Dumb Mud rule
@@ -3404,7 +3386,7 @@ section Flu Gulf rule
 
 this is the flu-gulf rule:
 	if scorn rocs are in devreserved, continue the action;
-	if poor-sick is in Drawl Ward, continue the action;
+	if Bond Nob is in Drawl Ward, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if gulf lug is in devreserved, say "The gulf lug needs medicine. The DEMO MED." instead;
 

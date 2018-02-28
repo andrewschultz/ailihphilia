@@ -16,7 +16,7 @@ Initially sent to source code/repository November 2017.</history>
 		</room>
 		<room id="3" name="Yawn Way" subtitle="" x="96" y="-32" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="4" name="Art Xtra" subtitle="Traded Art" x="96" y="-160" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Mike Kim|Trap Art|(El Doodle)|State Tats</objects>
+			<objects>Revolt Lover|Trap Art|(El Doodle)|State Tats</objects>
 		</room>
 		<room id="5" name="Yell Alley" subtitle="" x="256" y="-288" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-24" customDown="0">Rep Popper|Navy Van|Mayo Yam</objects>
@@ -176,7 +176,7 @@ Initially sent to source code/repository November 2017.</history>
 			<objects custom="yes" customRight="-24" customDown="0">Kayo Yak|Stamp Mats</objects>
 		</room>
 		<room id="57" name="Drawl Ward" subtitle="" x="256" y="224" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects custom="yes" customRight="-40" customDown="0">Marge Pegram</objects>
+			<objects custom="yes" customRight="-40" customDown="0">Bond Nob</objects>
 		</room>
 		<room id="58" name="Dopy Pod" subtitle="Dope Pod" x="96" y="224" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-12" customDown="0">Cassettes Sac|Demo Med</objects>

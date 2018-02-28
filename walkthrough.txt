@@ -30,7 +30,7 @@ Now you're kind of blocked at the Seer Trees in Grebeberg to the west, so maybe 
 
 >E.N
 
-Mike Kim says the trap art is a useless design that didn't quite work. Maybe it'll work for you.
+The Revolt Lover says the trap art is a useless design that didn't quite work. Maybe it'll work for you.
 
 >GET TRAP ART
 
@@ -147,9 +147,9 @@ You now have access to a few more rooms. But let's go cover a few we've seen, so
 
 >W.S.E.E.E.S.S
 
-(+1) > USE PUCE CUP ON MARGE PEGRAM
+(+1) > USE PUCE CUP ON BOND NOB
 
-Let's loot what's behind Marge, now.
+Let's loot what's behind the nob, now.
 
 >W.GET ALL.E.E
 
@@ -237,7 +237,7 @@ Bam! There goes the Psi Wisp. Back to work. We have some stuff to convert, now, 
 
 >W.N.N.E.E.N
 
-(+1) >USE STRAW ARTS ON MIKE KIM
+(+1) >USE STRAW ARTS ON REVOLT LOVER
 
 (+1) >USE GATE TAG ON SOOT TATTOOS
 

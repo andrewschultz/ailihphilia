@@ -286,11 +286,11 @@ Nothing. Just take it. It's useful elsewhere.
 Nothing. Just take it. It's useful elsewhere.
 ?What are the stray arts for?
 General scenery and stuff.
-?How do I give Mike Kim something he wants?
+?How do I give the Revolt Lover something cool?
 You need to find something elsewhere, late in the game.
 The book SOME DEMOS gives advice on making art...
 ...and the Yahoo Hay in the Moo Room gives some art and building materials.
-USE STRAW ARTS ON MIKE KIM.
+USE STRAW ARTS ON REVOLT LOVER.
 >>EVADED AVE
 ?Why won't the door frood let me go west or east?
 The door frood is a bit of a jerk.
@@ -388,14 +388,14 @@ This can be done right away after you have both items.
 ?How do I deal with the liar grail?
 USE PUCE CUP ON LIAR GRAIL.
 >>DRAWL WARD
-?Can I help Marge Pegram?
+?Can I help the Bond Nob?
 Yes. She needs some sort of medicine.
 The Demo Med doesn't work.
 However, something more potent will.
 You could use the Dose Sod from the Apse Spa...
 ...but you can't carry it on its own.
 Use the Puce Cup to get it.
-USE PUCE CUP ON MARGE PEGRAM.
+USE PUCE CUP ON BOND NOB.
 >>DOPY POD
 ?What do I do with the demo med?
 Just take it, for now.
@@ -504,7 +504,7 @@ There are 37 total points in Yelpley.
 1 point if you PUFF UP with the Spur Ups.
 1 point if you PULL UP in the Emo Dome.
 1 point if you USE PUCE CUP ON LIAR GRAIL.
-1 point if you USE PUCE CUP ON MARGE PEGRAM.
+1 point if you USE PUCE CUP ON BOND NOB.
 1 point if you USE STAMP MATS ON SLATE METALS.
 1 point if you USE CASH SAC ON CROSS ORC.
 1 point if you USE YOB ATTABOY ON SNIFFINS.
@@ -519,7 +519,7 @@ There are 37 total points in Yelpley.
 1 point if you USE GORGE GROG ON BUTENE TUB.
 1 point if you USE STINK KNITS ON ROTATOR.
 1 point if you USE GOLD LOG ON ROTATOR.
-1 point if you USE STRAW ARTS ON MIKE KIM.
+1 point if you USE STRAW ARTS ON REVOLT LOVER.
 1 point if you USE GATE TAG ON SOOT TATTOOS.
 1 point if you USE DNA BAND ON REIFIER.
 1 point if you USE ROTO MOTOR ON DNA HAND.
