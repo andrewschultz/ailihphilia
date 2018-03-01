@@ -29,6 +29,8 @@ triz_flow = "c:/games/inform/triz/mine/put-it-up-flow.trizbort"
 invis_raw = "c:/writing/scripts/invis/pu.txt"
 test_file = "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/Put it Up Tests.i7x"
 
+obj_name_hash = { "ti": "TO IDIOT" }
+
 source_line_to_open = 0
 warning_story_line = 0
 warning_walkthrough_line = 0
@@ -604,6 +606,7 @@ def get_stuff_from_source():
                 continue
             if in_use_table:
                 x = ll.split("\t")
+                if x[0] in obj_name_hash.keys(): x[0] = obj_name_hash[x[0]]
                 if x[5] == 'sco': continue # this is the header.
                 if useon_idx > 1:
                     for idx in [5, 6, 7]:

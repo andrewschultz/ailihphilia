@@ -773,7 +773,7 @@ north tron	"The north tron's already done its job."
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
 table of useons [xxuse]
 use1	use2 (an object)	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
-TO IDIOT	Door Frood	--	--	--	true	true	true	Yelpley	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Door Frood runs away." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
+TI	Door Frood	--	--	--	true	true	true	Yelpley	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Door Frood runs away." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
 pity tip	navy van	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	"The van takes the pity tip and whooshes off. It spits out some snack cans, which roll on the ground. You take them. The navy van then leaves for good. It was apparently obstructing a whole bomb mob! That's who was making all the noise!" [af:TEND NET/WORK ROW]
 trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
 bunk nub	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching and slurping, the bunk nub is changed to a bunch of much smaller, but more comfortable looking, stock cots."
@@ -2033,7 +2033,7 @@ the pity tip is a thing. description of pity tip is "It's not THAT hard to figur
 
 chapter books in bookcase
 
-TO IDIOT is a proper-named book. [Door Frood]
+TI is a proper-named book. printed name of TI is "TO IDIOT (TI)". understand "to idiot" and "idiot" as ti. [Door Frood]
 NULL ILLUN is a proper-named book. [Known Wonk]
 ERA FARE is a proper-named book. [King Nik]
 YOB ATTABOY is a proper-named book. [Sniffins]
@@ -3436,8 +3436,8 @@ this is the evaded-ave rule:
 		if My Gym is unvisited, say "Visit south of Yawn Way a bit." instead;
 		if Worn Row is unvisited, say "See about west of My Gym." instead;
 		if ever-wordrow is false, say "Worn Row can become something else[if ever-workrow is true], besides Work Row[end if]." instead;
-		if player has TO IDIOT, say "You have TO IDIOT. Give it to the Door Frood." instead;
-		say "[one of]Word Row has some interesting books. Maybe one would please the Door Frood.[or]You need something daring and obnoxious.[or]Get TO IDIOT from Word Row.[stopping]" instead;
+		if player has TI, say "You have TI. Give it to the Door Frood." instead;
+		say "[one of]Word Row has some interesting books. Maybe one would please the Door Frood.[or]You need something daring and obnoxious.[or]Get TI from Word Row.[stopping]" instead;
 	say "You just need to take the bunk nub here." instead;
 
 section Flu Gulf rule
@@ -3617,7 +3617,7 @@ to decide whether any-books-left:
 	no;
 
 to decide which book is cur-book:
-	if Door Frood is not in devreserved, decide on TO IDIOT;
+	if Door Frood is not in devreserved, decide on TI;
 	if King Nik is not in devreserved, decide on ERA FARE;
 	if cross orc is not in devreserved and gnu dung is in devreserved, decide on NULL ILLUN;
 	if YOB ATTABOY is not in devreserved, decide on YOB ATTABOY;
