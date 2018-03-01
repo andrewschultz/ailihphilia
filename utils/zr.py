@@ -23,6 +23,7 @@ if not os.path.exists("story.ni"):
         exit()
 
 only_test = False
+source_only = False
 
 always_adj = defaultdict(bool)
 cap_search = defaultdict(bool)
@@ -36,6 +37,15 @@ def usage():
     print("e edits the text, though you can just type zr.txt instead.")
     print("t only tests things. It doesn't copy back over.")
 
+def title_unless_caps(a, b):
+    if a.startswith('"') and a.endswith('"'): return a
+    if a == a.upper(): return a
+    # this is a hack but it does the job of tracking quotes
+    # the alternative is a look-behind regex that is very confusing indeed
+    if a.startswith('"'): b = '"' + b
+    if a.endswith('"'): b = b + '"'
+    return b
+
 while count < len(sys.argv):
     myarg = sys.argv[count].lower()
     if (myarg[0] == '-'):
@@ -45,6 +55,8 @@ while count < len(sys.argv):
         exit()
     elif myarg == 'c':
         i7.open_source()
+    elif myarg == 's':
+        source_only = True
     elif myarg == 't':
         only_test = True
     elif myarg in i7.i7x.keys():
@@ -111,12 +123,18 @@ def check_source(a):
             if '[ic]' not in ll:
                 for x in cs:
                     if x.lower() in line.lower():
-                        if always_adj[x] or (x.upper() not in line):
-                            ll_old = ll
-                            ll = re.sub(r'\b{:s}\b'.format(regex_detail[x] if x in regex_detail.keys() else x), x, ll, 0, re.IGNORECASE)
-                            if ll != ll_old:
-                                difs = difs + 1
-                                print("Line", line_count, "of", short, "miscapitalized", x + ":", line.strip())
+                        ll_old = ll
+                        # once I understand regex better, I want to try this...
+                        # ll = re.sub(r'(?<=^(([^"]*(?<!\\)"[^"]*(?<!\\)"[^"]*)*|[^"]*))\b{:s}\b'.format(regex_detail[x] if x in regex_detail.keys() else x), lambda match: title_unless_caps(match.group(0), x, match), ll, 0, re.IGNORECASE)
+                        ll = re.sub(r'(\"?)\b{:s}\b(\"?)'.format(regex_detail[x] if x in regex_detail.keys() else x),
+                        # ll = re.sub(r'\b{:s}\b'.format(regex_detail[x] if x in regex_detail.keys() else x),
+                          lambda match: title_unless_caps(match.group(0), x), ll, 0, re.IGNORECASE)
+                        if ll != ll_old:
+                            difs = difs + 1
+                            print("Line", line_count, "of", short, "miscapitalized", x)
+                            print("   BEFORE", line.strip())
+                            print("      MID", ll_old.strip())
+                            print("    AFTER", ll.strip())
             fout.write(ll)
     fout.close()
     print(a, b)
@@ -127,18 +145,18 @@ def check_source(a):
         print(difs, "differences, copying back over")
         if only_test:
             print("Testing differences, so, not copying back over.")
-            system("wm {:s} {:s}".format(a, b))
-            exit()
-        try:
-            copy(b, a)
-        except:
-            print("Couldn't copy back to story.ni.")
-            exit()
-        try:
-            os.remove(b)
-        except:
-            print("Tried and failed to remove story.ni2.")
-            exit()
+            os.system("wm \"{:s}\" \"{:s}\"".format(a, b))
+        else:
+            try:
+                copy(b, a)
+            except:
+                print("Couldn't copy back to story.ni.")
+                exit()
+            try:
+                os.remove(b)
+            except:
+                print("Tried and failed to remove story.ni2.")
+                exit()
     else:
         if difs:
             print("Oops! I should be copying back over, but I'm not. This is a bug. Sorry.")
@@ -151,5 +169,6 @@ def check_source(a):
 
 proj = "put-it-up"
 for x in i7.i7f[proj]:
+    if source_only and 'story.ni' not in x.lower(): continue
     check_source(x)
 

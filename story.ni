@@ -1,4 +1,3 @@
-
 "Put it Up" by Andrew Schultz
 
 [blurb for comp = A *GASP* SAGA]
@@ -72,7 +71,7 @@ chapter for (beta) testers
 
 [these are variables that are not used in the final release, but often, they have to be defined in the release, because major verbs use them.]
 
-llp-reject is a truth state that varies. [for my own tests: walkthrough with LLPs and without]
+LLP-reject is a truth state that varies. [for my own tests: walkthrough with LLPs and without]
 
 endgame-test is a truth state that varies.
 
@@ -785,7 +784,7 @@ puce cup	past sap	--	check-sap-cup rule	sap-to-cup rule	false	false	false	--	"Yo
 puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"The past sap pours into the liar grail and exposes how bad the grail has been over the years. As it cracks, along with the wall it was attached to to allow passage south, you snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL!"
 puce cup	dose sod	--	check-sod-cup rule	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
 puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley	"You give the Bond Nob the puce cup. Gulp! Gulp! 'Well... I have a lot of catching up to do. Can't hang around. I'm the Bond Nob, not the bonded nob. Here's some Elan Ale for you, to celebrate how cool you are for helping. Oh, and enjoy my home to the west.'"
-stamp mats	slate metals	ye key	--	--	true	false	false	Yelpley	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY."
+stamp mats	slate metals	Ye Key	--	--	true	false	false	Yelpley	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY."
 demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' he looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
 YOB ATTABOY	Sniffins	Dirt Rid	--	--	true	true	false	Yelpley	"Sniffins accepts your gift. His sniffs slowly change from sadness to something more snooty. He thanks you for helping him be too good for you before handing you a Dirt Rid and kicking you out."
@@ -1880,7 +1879,7 @@ definition: a book (called bo) is sober:
 
 for printing a locale paragraph about a book (called bk):
 	if bk is not mentioned:
-		say "The tract cart contains [list of sober books in Worn Row][if dwelt lewd is in Worn Row], with DWELT LEWD off to the side[end if].";
+		say "The tract cart contains [list of sober books in Worn Row][if DWELT LEWD is in Worn Row], with DWELT LEWD off to the side[end if].";
 		now all books are mentioned;
 
 chapter Rob
@@ -2034,13 +2033,13 @@ the pity tip is a thing. description of pity tip is "It's not THAT hard to figur
 chapter books in bookcase
 
 TI is a proper-named book. printed name of TI is "TO IDIOT (TI)". understand "to idiot" and "idiot" as ti. [Door Frood]
-NULL ILLUN is a proper-named book. [Known Wonk]
-ERA FARE is a proper-named book. [King Nik]
-YOB ATTABOY is a proper-named book. [Sniffins]
+NULL ILLUN is a proper-named book. printed name of NULL ILLUN is "NULL ILLUN (NI)". understand "ni" as NULL ILLUN. [Known Wonk]
+ERA FARE is a proper-named book. printed name of ERA FARE is "ERA FARE (EF)". understand "ef" as ERA FARE. [King Nik]
+YOB ATTABOY is a proper-named book. printed name of YOB ATTABOY is "YOB ATTABOY (YA)". understand "ya" as YOB ATTABOY. [Sniffins]
 
 chapter SOME DEMOS
 
-there is a book called SOME DEMOS. It is proper-named and hidden.
+there is a book called SOME DEMOS. printed name is "SOME DEMOS (SD)". understand "sd" as SOME DEMOS. It is proper-named and hidden.
 
 gap-yet is a truth state that varies.
 
@@ -2051,7 +2050,7 @@ after examining a book:
 
 chapter DWELT LEWD
 
-DWELT LEWD is a proper-named not necessary hidden book.
+DWELT LEWD is a proper-named not necessary hidden book. printed name of DWELT LEWD is "DWELT LEWD (DL)".
 
 dwelt-first is a list of text that varies. dwelt-first is { "Nell, Edna", "Leon", "Nedra", "Anita", "Rolf", "Nora", "Alice", "Carol", "Leo", "Jane", "Reed", "Dena" }.
 dwelt-last is a list of text that varies. dwelt-last is { "Ned", "Dee", "Rena", "Joel", "Lora", "Cecil", "Aaron", "Flora", "Tina", "Arden", "Noel", "and Ellen" }
@@ -3367,7 +3366,7 @@ this is the cold-loc rule:
 	if pulled-up is false, continue the action;
 	if liar grail is in devreserved, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if king nik is in Cold Loc, say "USE ERA FARE ON KING NIK." instead;
+	if King Nik is in Cold Loc, say "USE ERA FARE ON KING NIK." instead;
 	if wash saw is in My Gym, say "Get the wash saw from My Gym." instead;
 	if player has wash saw, say "USE WASH SAW ON PAST SAP." instead;
 	if player does not have puce cup, say "You need the puce cup from the Emo Dome." instead;
@@ -3597,14 +3596,14 @@ this is the worn-row rule:
 		consider the got-machine-fodder rule;
 		unless the rule succeeded, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if Psi Wisp is in worn row, say "WORN ROW will get rid of the Psi Wisp." instead;
-	if rob is in Worn Row, say "BORE ROB." instead;
+	if Psi Wisp is in Worn Row, say "WORN ROW will get rid of the Psi Wisp." instead;
+	if Rob is in Worn Row, say "BORE ROB." instead;
 	if ever-wordrow is false, say "You can change this place to WORD ROW." instead;
 	if ever-workrow is false, say "You can change this place to WORK ROW." instead;
 	if Worn Row is worny, say "You can change Worn Row back to WORK ROW[if any-books-left] or WORD ROW[end if]." instead;
 	if Worn Row is wordy:
 		if number of not necessary books in Worn Row > 0:
-			say "You'll need to use all the books eventually[if dwelt lewd is not off-stage], except DWELT LEWD. [one of]AID again to see which book is probably next[or][stopping]." instead;
+			say "You'll need to use all the books eventually[if DWELT LEWD is not off-stage], except DWELT LEWD. [one of]AID again to see which book is probably next[or][stopping]." instead;
 		say "You don't have anything more to do in Word Row. Change it back to Work Row." instead;
 	if rotator is in Worn Row, abide by the find-machine rule;
 	say "USE YARD RAY ON TEST SET." instead;
@@ -3956,7 +3955,7 @@ understand "LLP" as llping.
 
 carry out llping:
 	now LLP-reject is whether or not LLP-reject is true;
-	say "LLP reject is now [on-off of llp-reject].";
+	say "LLP reject is now [on-off of LLP-reject].";
 	the rule succeeds;
 
 chapter endgame
