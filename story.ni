@@ -41,6 +41,9 @@ definition: a thing is moot:
 	if it is in devreserved, yes;
 	no;
 
+to moot (Q - a thing):
+	move Q to DevReserved;
+
 a person can be normal, grunty, ruling, chasey or henchy. a person is usually normal.
 
 a chaser is a kind of person. a chaser has a room called chase-room.
@@ -650,7 +653,7 @@ to build-the-tron:
 	move north tron to Fun Nuf;
 	now all tronparts are in DevReserved;
 	say "You build the north tron with the instructions from the epicer recipe. It points north and blasts a hole with a huge tron snort before collapsing into uselessness. You tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
-	move epicer recipe to DevReserved;
+	moot epicer recipe;
 	now Dirge Grid is mapped north of Fun Nuf;
 	now Fun Nuf is mapped south of Dirge Grid;
 	score-inc; [Dim Mid/USE TNT ON ORE ZERO]
@@ -670,8 +673,8 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 		say "Those are both too solid to go together.";
 	else:
 		say "You mix [the i1] with [the i2] in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.[paragraph break]";
-		move i1 to DevReserved;
-		move i2 to DevReserved;
+		moot i1;
+		moot i2;
 		score-inc; [Grebeberg/USE GIFT FIG ON MAYO YAM&USE SNACK CANS ON UFO TOFU]
 		if chef-yet is true:
 			say "A martini tram rattles out from behind the Ark of Okra. Guess you need drinks with your, uh, food![paragraph break][if player does not have the epicer recipe]You're shocked to see it, and it rollls further down, over the turf rut to Dumb Mud, then back through the Seer Trees to Fun [']Nuf[else]But you're prepared for it, with your epicer recipe. You move it back to Fun [']Nuf, where it looks like a good base structure for your North Tron[end if]..";
@@ -716,9 +719,9 @@ check useoning it with:
 				if there is a getit entry:
 					now player has getit entry;
 				if d2 entry is true:
-					move use2 entry to DevReserved;
+					moot use2 entry;
 				if d1 entry is true:
-					move use1 entry to DevReserved;
+					moot use1 entry;
 				if sco entry is true:
 					if there is a reg-plus entry:
 						reg-inc reg-plus entry;
@@ -951,7 +954,7 @@ this is the empty-cup rule:
 this is the hay-gone rule:
 	if SOME DEMOS is moot and dork rod is moot:
 		say "You used up all the hay.";
-		move yahoo hay to DevReserved;
+		moot yahoo hay;
 	else:
 		say "There's still some hay (yah!) left over for another creative project.";
 	the rule succeeds;
@@ -980,7 +983,7 @@ this is the radar-blink rule:
 	else:
 		say "Between the UFO tofu dropped on the radar and the eroded ore getting too close to it, the radar shorts out. After a pop, it splits open. A roto motor falls out and looks undamaged, so you take it.";
 		now player has roto motor;
-		move radar to DevReserved;
+		moot radar;
 	the rule succeeds;
 
 this is the rahs-too rule:
@@ -1140,7 +1143,7 @@ understand "pack cap" as packing.
 carry out packing:
 	if the player has the pact cap, say "You already did.";
 	say "Yes, that's how to get the cap. You are ready to go![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. It salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
-	move flee elf to DevReserved;
+	moot flee elf;
 	now Tix Exit is in Fun Nuf;
 	now player has Set O Notes;
 	now player wears the cap;
@@ -1530,7 +1533,7 @@ carry out mussing:
 	if noun is not opossum, say "You don't need to muss [the noun]." instead;
 	say "You reach over and give the opossum a loving scratch. It perks up! Suddenly, it looks around and runs off, in search of home, wherever that is.";
 	abide by the LLP rule; [MUSS OPOSSUM]
-	move opossum to DevReserved;
+	moot opossum;
 	the rule succeeds.
 
 chapter balsa slab
@@ -1549,7 +1552,7 @@ check taking Bro Orb:
 	say "You wonder if you should take the Bro Orb. If you deserve to. But you reread the tenet and whisper to yourself, 'Nag, ol['] slogan,' and feel balanced enough to take the Bro Orb and accept the responsibility for doing so.";
 
 report taking Bro Orb:
-	move tenet to DevReserved;
+	moot tenet;
 	say "Taking the Bro Orb requires two hands. You watch the tenet flutter off beyond the Voodoo V. Oh, well. You carry the tenant's message in your mind and heart and stuff anyway, now.";
 
 book Mont Nom
@@ -1580,7 +1583,7 @@ carry out nailing:
 	if Ian is moot, say "There's nobody named Elian to nail later in the game, so this isn't an action you need to take any more." instead;
 	if noun is not Ian, say "You'll know what or whom to nail, and that's not it." instead;
 	say "You wait and hide. After a while, you catch Ian picking his nose absent-mindedly. You call him on it! In the presence of food, no less! Ian hurries away in shame across the Turf Rut. He takes one look at the, um, bridge and realizes that if he hadn't DONE anything gross, he wouldn't have to CROSS anything gross.";
-	move Ian to DevReserved;
+	moot Ian;
 	score-inc; [Grebeberg/nail ian]
 	the rule succeeds;
 
@@ -1628,8 +1631,8 @@ carry out yakokaying:
 		say "The kayo yak surges at the ergot ogre and knocks it over with a few ... smart rams! The ergot won't spread to the yak's horns, so that's good. The ogre dusts itself off and walks away, damp, mad. The yak, for its part, looks relaxed--almost like a tao goat--and heads off, not to the Frush Surf, but somewhere calmer.[paragraph break]You think you hear an elk cackle in the distance.[paragraph break]Whew! That's enough exercise. You readjust your pace cap back to a pact cap.";
 		now cap-pace is false;
 		score-inc; [Grebeberg/YAK OKAY]
-		move yak to DevReserved;
-		move ergot ogre to DevReserved;
+		moot yak;
+		moot ergot ogre;
 		now being-chased is false;
 		the rule succeeds;
 	if yak is in location of player, say "The yak sees nothing to attack." instead;
@@ -1855,7 +1858,7 @@ carry out evadeing:
 	if noun is Dave:
 		if Dave-evade is true, say "You don't need to evade Dave again.";
 		say "You evade Dave! Deked! Deked![paragraph break]Dave, frustrated from spinning around trying to catch you, runs off.[paragraph break]Suspicious there are no actual weight machines, you find a passage to a hidden spate of Sperses-Reps machines. You're suspicious they actually work, but as you test them out, a surge goes through you. Your attitude nets you scepsis-pecs, which will help you carry any amount or weight of things you pick up in your journey. After a few seconds, you've half forgotten you have them.";
-		move Dave to DevReserved;
+		moot Dave;
 		now Dave-evade is true;
 		score-inc; [Yelpley/evade dave]
 	else:
@@ -1919,7 +1922,7 @@ carry out boreing:
 	if noun is not a person, say "You should try to bore people, not things." instead;
 	if noun is not Rob, say "Wrong thing or person to bore." instead;
 	say "You bore Rob successfully. He wanders off.";
-	move Rob to DevReserved;
+	moot Rob;
 	score-inc; [Yelpley/bore rob]
 	the rule succeeds.
 
@@ -2218,8 +2221,8 @@ carry out wornrowing:
 	now being-chased is false;
 	clear-worn-row;
 	now Worn Row is worny;
-	move psi wisp to DevReserved;
-	move redness ender to DevReserved;
+	moot psi wisp;
+	moot redness ender;
 	score-inc; [Yelpley/WORN ROW]
 	the rule succeeds;
 
@@ -2445,7 +2448,7 @@ does the player mean denying Ned: it is likely.
 carry out denying:
 	if noun is Ned:
 		say "Ned wants to get in an argument or fight, so you get in an argument over whether it's really necessary, and then you say, that wasn't so great, see? He slinks off, defeated.";
-		move Ned to DevReserved;
+		moot Ned;
 		score-inc; [Yelpley/deny Ned]
 	the rule succeeds;
 
@@ -3784,8 +3787,8 @@ carry out stacking:
 	if senile felines are in DevReserved, say "You already did." instead;
 	if player is not in Moo Room, say "Not here." instead;
 	say "You stack the cats so they can reach the late petal, but once you do, the top one bats it and it falls. They walk away, disinterested. But they still seemed to have fun. Well, cats are like that.";
-	move senile felines to devreserved;
-	move late petal to devreserved;
+	moot senile felines;
+	moot late petal;
 	abide by the LLP rule; [STACK CATS]
 	the rule succeeds;
 
@@ -4004,9 +4007,9 @@ carry out endgameing:
 	now player carries murk rum;
 	now player carries yard ray;
 	now player carries epicer recipe;
-	move Set O Notes to DevReserved;
-	move Darer Ad to DevReserved;
-	move elf to DevReserved;
+	moot Set O Notes;
+	moot Darer Ad;
+	moot elf;
 	now player has pact cap;
 	now player has taboo bat;
 	now player has ME gem;
