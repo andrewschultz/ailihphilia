@@ -1852,7 +1852,7 @@ carry out evadeing:
 
 book Worn Row
 
-Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky]Three machines are here[else if Worn Row is wordy]A tract cart is here, [tract-status][else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if][if redness ender is in Worn Row]. There's also a redness ender here, but it looks dangerous to get too close to[end if]."
+Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky]Three machines are here[else if Worn Row is wordy]A tract cart is here, [tract-status][else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if][if redness ender is in Worn Row]. There's also a redness ender here, but it looks dangerous to get too close to[end if]. The only way out is back east."
 
 printed name of Worn Row is "[if Worn Row is wordy]Word[else if Worn Row is worky]Work[else]Worn[end if] Row"
 
@@ -1872,10 +1872,7 @@ the tract cart is scenery in Worn Row.
 tract-trace is a truth state that varies.
 
 to say tract-status:
-	if tract-trace is false:
-		say "but it's closed";
-	else:
-		say "[if number of books in Worn Row is 1]almost empty[else]holding a few books[end if]"
+	say "[if number of books in Worn Row is 1]almost empty[else]holding a few books[end if]"
 
 definition: a book (called bo) is sober:
 	if bo is DWELT LEWD, no;
@@ -1929,6 +1926,7 @@ to wear-down (w - a workable):
 	if useleft of w is 0, say "You watch as [the w] sputters and dies. Well, you got a lot of good use out of it, and hopefully you won't need any more.";
 	if useleft of w is 1, say "[the w] wheezes emphatically. Hopefully, you won't need to use it too much more.";
 	if machuses is 0:
+		hint-bump-worn;
 		say "[line break]With [list of workables] all destroyed, Work Row shakes a bit more. The machines fall out from a wall, revealing something behind ... a test set. It's big and huge and you can't move it, but who knows what it'll be useful for later?";
 		move test set to Worn Row;
 		now all workables are in DevReserved;
@@ -1989,15 +1987,26 @@ carry out roting:
 
 chapter books
 
-the tract cart is scenery. "It carries [number of books in Worn Row] books: [list of books in Worn Row]."
+the tract cart is scenery. "It carries [number of books in Worn Row] books: [list of books in Worn Row][hint-trace]."
+
+to say hint-trace:
+	say "[if tract-trace is true]. But it also seems a bit too big for just carrying a few books. Maybe it holds a deeper secret[end if]"
 
 check examining tract cart:
-	if number of books in Worn Row is 0:
-		say "It's empty now. Maybe some day, someone will write a book like ";
+	if number of not necessary books in Worn Row is 0:
+		say "It's empty now[hint-trace]. Maybe some day, someone will write a book like ";
 		next-rand table of altbooks;
 		say ". Maybe it could be you! But you don't have the time to read right now, really." instead;
 
 a book is a kind of thing. description of a book is usually "It [if player carries the item described]is[else]looks[end if] really heavy and incomprehensible to you."
+
+to decide which book is rand-book:
+	let Q be a random carried book;
+	decide on Q;
+
+understand "book" as a book.
+
+does the player mean doing something with a carried book: it is very likely.
 
 after examining a book:
 	say "The author is ";
@@ -2006,6 +2015,8 @@ after examining a book:
 	continue the action;
 
 a book can be in-row or hidden. a book is usually in-row.
+
+a book can be necessary. a book is usually necessary.
 
 a book has a number called auth-row. auth-row of a book is usually 0.
 
@@ -2040,7 +2051,7 @@ after examining a book:
 
 chapter DWELT LEWD
 
-DWELT LEWD is a proper-named hidden book.
+DWELT LEWD is a proper-named not necessary hidden book.
 
 dwelt-first is a list of text that varies. dwelt-first is { "Nell, Edna", "Leon", "Nedra", "Anita", "Rolf", "Nora", "Alice", "Carol", "Leo", "Jane", "Reed", "Dena" }.
 dwelt-last is a list of text that varies. dwelt-last is { "Ned", "Dee", "Rena", "Joel", "Lora", "Cecil", "Aaron", "Flora", "Tina", "Arden", "Noel", "and Ellen" }
@@ -2133,7 +2144,6 @@ carry out workrowing:
 	now Worn Row is worky;
 	say "Three machines [one of][or]re[stopping]appear[if Worn Row is wordy], replacing the books[end if].";
 	if ever-workrow is false:
-		hint-bump-worn;
 		score-inc; [Yelpley/work row]
 	now ever-workrow is true;
 	now all workables are in Worn Row;
@@ -2324,10 +2334,6 @@ the party trap is a thing. description is "It looks roughly like the notes from 
 chapter Revolt Lover
 
 Revolt Lover is a person in Art Xtra. "[one of]'Hi! I'm the Revolt Lover. Business is slow here, but I still have a few freebies. If you're able to use them, I'd be willing to trade for more.'[or]The Revolt Lover smiles at you.[stopping]". description is "Artsy looking, but not pretentiously hipster-ish.".
-
-chapter Nora Maron
-
-Nora Maron is a person.
 
 chapter state tats
 
@@ -2638,7 +2644,7 @@ instead of doing something in Emo Dome when pulled-up is false:
 emo-dir is a direction that varies. emo-dir is west.
 
 check going to Emo Dome:
-	if Spur Ups are off-stage, say "It's too whiny to the east! You back out." instead;
+	if Spur Ups are off-stage, say "It's too whiny to the east! You just aren't positive enough to deal with it, yet. You back out." instead;
 	if Spur Ups are not in DevReserved, say "The Spur Ups make you feel a bit more confident, but you need to do something to make yourself feel a bit more up before entering the Emo Dome." instead;
 	if pulled-up is false:
 		now emo-dir is noun;
@@ -3358,7 +3364,18 @@ section Cold Loc rule
 
 this is the cold-loc rule:
 	if King Nik is in devreserved and puce cup is sappy, continue the action;
+	if pulled-up is false, continue the action;
+	if liar grail is in devreserved, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if king nik is in Cold Loc, say "USE ERA FARE ON KING NIK." instead;
+	if wash saw is in My Gym, say "Get the wash saw from My Gym." instead;
+	if player has wash saw, say "USE WASH SAW ON PAST SAP." instead;
+	if player does not have puce cup, say "You need the puce cup from the Emo Dome." instead;
+	say "USE PUCE CUP ON PAST SAP." instead;
+
+this is the cold-loc-done rule:
+	if King Nik is in devreserved and puce cup is sappy, the rule succeeds;
+	the rule fails;
 
 section Deft Fed rule
 
@@ -3580,12 +3597,31 @@ this is the worn-row rule:
 		consider the got-machine-fodder rule;
 		unless the rule succeeded, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if Psi Wisp is in worn row, say "WORN ROW will get rid of the Psi Wisp." instead;
 	if rob is in Worn Row, say "BORE ROB." instead;
 	if ever-wordrow is false, say "You can change this place to WORD ROW." instead;
 	if ever-workrow is false, say "You can change this place to WORK ROW." instead;
-	if psi wisp is in worn row, say "WORN ROW." instead;
+	if Worn Row is worny, say "You can change Worn Row back to WORK ROW[if any-books-left] or WORD ROW[end if]." instead;
+	if Worn Row is wordy:
+		if number of not necessary books in Worn Row > 0:
+			say "You'll need to use all the books eventually[if dwelt lewd is not off-stage], except DWELT LEWD. [one of]AID again to see which book is probably next[or][stopping]." instead;
+		say "You don't have anything more to do in Word Row. Change it back to Work Row." instead;
 	if rotator is in Worn Row, abide by the find-machine rule;
 	say "USE YARD RAY ON TEST SET." instead;
+
+to say book-hint:
+	say "[if player carries cur-book]You are carrying a good book to use[else]There's no strict order, but I'd suggest going with [cur-book]"
+
+to decide whether any-books-left:
+	if number of not necessary books in Worn Row > 0, yes;
+	no;
+
+to decide which book is cur-book:
+	if Door Frood is not in devreserved, decide on TO IDIOT;
+	if King Nik is not in devreserved, decide on ERA FARE;
+	if cross orc is not in devreserved and gnu dung is in devreserved, decide on NULL ILLUN;
+	if YOB ATTABOY is not in devreserved, decide on YOB ATTABOY;
+	decide on NULL ILLUN;
 
 machineables is a list of things variable. machineables is {stink knits, gold log, you buoy, bunk nub, Dirt Rid, eroded ore, trap art, DNA band, not-a-baton}. [?? if we use this a lot maybe we should make a property]
 
@@ -3601,16 +3637,7 @@ this is the find-machine rule:
 				if use1 entry is Q:
 					say "USE [printed name of use1 entry in upper case] ON [printed name of use2 entry in upper case].";
 					the rule succeeds;
-	say "Oops. Should be able to use something on a machine, but you can't." instead;
-	if player has stink knits, say "USE STINK KNITS ON ROTATOR." instead;
-	if player has gold log, say "USE GOLD LOG ON ROTATOR." instead;
-	if player has you buoy, say "USE YOU BUOY ON ROTATOR." instead;
-	if player has bunk nub, say "USE BUNK NUB ON REVIVER." instead;
-	if player has dirt rid, say "USE DIRT RID ON REVIVER." instead;
-	if player has eroded ore, say "USE ERODED ORE ON REVIVER." instead;
-	if player has trap art, say "USE TRAP ART ON REIFIER." instead;
-	if player has dna band, say "USE ON DNA BAND ON REIFIER." instead;
-	if player has not-a-baton, say "USE ON NOT-A-BATON ON REIFIER." instead;
+	say "You don't have anything you could use on a machine at the moment." instead;
 
 this is the worn-row-complete rule:
 	if test set is in devreserved, the rule succeeds;

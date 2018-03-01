@@ -21,13 +21,17 @@ book Calcific Lac
 
 understand "tao goat" as a mistake ("The goat wouldn't remain placid for long once it was plunged into water.") when player is in Calcific Lac.
 
+understand "tao moat" as a mistake ("The lake is peaceful enough as-is.") when player is in Calcific Lac.
+
+understand "tao coat" as a mistake ("You don't need protection from the weather here.") when player is in Calcific Lac.
+
 book Cold Loc
 
 understand "rife fir" as a mistake ("It's already big enough.") when player is in Cold Loc.
 
-understand "cola loc" as a mistake ("You'd be better off with a warmer drink.") when player is in Cold Loc.
+understand "cola loc" as a mistake ("You'd be better off with a warmer drink. Which isn't here.") when player is in Cold Loc.
 
-understand "colt loc" as a mistake ("No gandered nag appears.") when player is in Cold Loc.
+understand "colt loc" as a mistake ("No gandered nag appears. Or gun(ug).") when player is in Cold Loc.
 
 book Deft Fed
 
@@ -38,6 +42,8 @@ chapter Bon Snob
 understand "bon knob" as a mistake ("You don't need to help Sniffins with interior decorating, here.") when player is in Deft Fed and YOB ATTABOY is in DevReserved.
 
 book Dirge Grid
+
+understand "dir grid" as a mistake ("With only one way out, you don't need directions.") when player is in Dirge Grid.
 
 book Dopy Pod
 
@@ -80,6 +86,8 @@ understand "puck cup" as a mistake ("There's no rink nir. Near.") when puce cup 
 book Evaded Ave
 
 understand "bung nub" as a mistake ("The bunk nub is in bad enough shape as-is.") when bunk nub is quicknear.
+
+understand "door brood" as a mistake ("Just one guardian is enough to deal with.") when Door Frood is quicknear.
 
 book Flu Gulf
 
@@ -180,6 +188,8 @@ understand "DNA hand" as a mistake ("Right idea, but you can't do it on your own
 
 understand "balk lab" as a mistake ("There's not much to do or say here, for sure[if balm-got is false]![else]--well, maybe something that's not quite BALK.[end if]") when player is in Pro Corp.
 
+understand "Ball Lab" as a mistake ("Nothing fun explodes out from the walls or ceiling.") when player is in Pro Corp.
+
 understand "golf log" as a mistake ("There is no Par Trap to navigate here, so you don't need to make a golf log.") when gold log is quicknear.
 
 book Red Roses Order
@@ -232,7 +242,7 @@ book Trapeze Part
 
 book Worn Row
 
-understand "worm row" as a mistake ("Ugh! You don't need to make this place worse.") when player is in Worn Row.
+understand "worm row" as a mistake ("[if Worn Row is worny]Ugh! You don't need to make this place worse[else]You already upgraded Worn Row. No need to downgrade it[end if].") when player is in Worn Row.
 
 understand "bork Rob" as a mistake ("Maybe there is a more nonviolent way to get him to give up.") when Rob is quicknear.
 
