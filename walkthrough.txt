@@ -40,7 +40,7 @@ Now let's open up the part of Yelpley that lets you fiddle with the items you've
 
 (+1) >EVADE DAVE
 
->W
+>GET SAW.W
 
 (+1) >BORE ROB
 

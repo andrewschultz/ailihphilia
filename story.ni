@@ -184,7 +184,7 @@ to score-inc:
 	reg-inc mrlp;
 
 check requesting the score:
-	say "Your overall score so far is [score] of [maximum score][if score < 4]. But don't worry, points pile up pretty quickly once you get going[end if].";
+	say "Your overall score so far is [score] of [maximum score][if score < 4]. But don't worry, points pile up pretty quickly once you get going[end if]. [to-get-max].";
 	say "Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do].";
 	if My Gym is visited or Evaded Ave is visited:
 		if number of grunty people is not number of grunty people in DevReserved, say "You currently disposed of [number of grunty people in DevReserved] grunts blocking your way: [list of grunty people in DevReserved].";
@@ -196,10 +196,16 @@ check requesting the score:
 			say "You may want to go back to Fun [']Nuf now and [if the score is maximum score - 1]use the tickets[else]try the other LLP command[plur-s of Q][end if].";
 		else:
 			say "You have [Q] roving last lousy point[unless Q is 1]s[end if] left."; [?? test roving LLPs]
-	if player has set o notes and north tron is off-stage:
+	if player has Set O Notes and north tron is off-stage:
 		let ni be number of tronparts carried by the player;
-		say "You also have [ni] of [number of tronparts] piece[if ni is not 1]s[end if] of the North Tron, according to the set-o-notes.";
+		say "You also have [ni] of [number of tronparts] piece[if ni is not 1]s[end if] of the North Tron, according to the epicer recipe.";
 	the rule succeeds;
+
+to say to-get-max:
+	if cur-score of Odd Do is max-score of Odd Do:
+		say "You got all LLPs";
+	else:
+		say "You need at least [maximum score - max-score of Odd Do + cur-score of Odd Do] to win"
 
 to say plur-s of (myn - a number):
 	unless myn is 1, say "s"
@@ -394,8 +400,10 @@ check taking inventory when Dave-evade is true:
 	now all helpdocs are unmarked for listing;
 	now all things worn by the player are unmarked for listing;
 	now state tats are unmarked for listing;
+	now all books are unmarked for listing;
 	say "[if number of things carried by player > 7]Your scepsis pecs help you carry a lot of things, though you're suspicious and unclear as to how.[else]'Met item' list:[line break][end if]";
 	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
+	if number of carried books > 0, say "Currently lugging (oof) [list of carried books].";
 	if number of ingredients carried by player > 0, say "Food found: [a list of ingredients carried by player].";
 	if number of things worn by player > 0, say "You are wearing: [a list of things worn by player][if player has state tats], in addition to state tats[end if].";
 	if number of helpdocs carried by the player is 1:
@@ -404,8 +412,6 @@ check taking inventory when Dave-evade is true:
 		say "AIDE MEDIA: While the [b][relevantest helpdoc carried by the player][r] seems useful as a guide, [other-docs] may shore up a few minor points.";
 	if number of tronparts carried by player > 0, say "North-tron parts found: [the list of tronparts carried by player][unless martini tram is off-stage]. The martini tram is in Fun [']Nuf, too[end if].";
 	the rule succeeds;
-
-after printing the name of a tronpart while taking inventory: if player has epicer recipe, say " (recipe item)".
 
 after printing the name of pact cap while taking inventory: if cap-pace is true, say " (bent slightly to be a PACE cap too)".
 
@@ -671,6 +677,7 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 			say "A martini tram rattles out from behind the Ark of Okra. Guess you need drinks with your, uh, food![paragraph break][if player does not have the epicer recipe]You're shocked to see it, and it rollls further down, over the turf rut to Dumb Mud, then back through the Seer Trees to Fun [']Nuf[else]But you're prepared for it, with your epicer recipe. You move it back to Fun [']Nuf, where it looks like a good base structure for your North Tron[end if]..";
 			move martini tram to Fun Nuf;
 			move player to Fun Nuf, without printing a room description;
+			say "[b]Fun [']Nuf[r][paragraph break]";
 		else:
 			say "You suspect something is behind there! Maybe you can find another combination, you'll see what.";
 			now chef-yet is true;
@@ -686,7 +693,8 @@ check useoning it with:
 			now wr-short-note is true;
 	if second noun is a workable and useleft of second noun is 0, say "No point. The [second noun] is broken." instead;
 	if noun is an ingredient and second noun is an ingredient:
-		chef noun and second noun instead;
+		chef noun and second noun;
+		the rule succeeds;
 	repeat through table of cantuse:
 		if noun is use1 entry or second noun is use1 entry, say "[babble entry][line break]" instead;
 	if noun is a person, say "[one of]You're not any good at using other people. In fact, if you tried, they'd wind up using YOU. Plus you don't want to be, really. There's another way. So, no[or]Using people is out[stopping]. Maybe you could use something on a person, though." instead;
@@ -798,7 +806,7 @@ Cave Vac	cassettes sac	radar	--	bump-pod rule	true	true	true	Yelpley	"The Cave V
 radar	crag arc	UFO tofu	orc-gone rule	radar-blink rule	true	false	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO and lands on the radar, which fizzles a bit from the impact and wetness. It hardens quickly and weirdly into a cubic shape. What could it be? You think a minute. It has to be UFO tofu." [af:deny Ned]
 Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paragraph break]A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it." [af:Worn Row]
 stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
-Gorge Grog	Butene Tub	resale laser	--	--	true	true	true	Yelpley	"The Gorge Grog immediately starts fizzing as it pours down the tub, which rumbles disturbingly. You find it best to hide, and that's the right thing to do, because the butene tub explodes into pieces. Under it is a resale laser!"
+Gorge Grog	Butene Tub	resale laser	--	bald-lab rule	true	true	true	Yelpley	"The Gorge Grog immediately starts fizzing as it pours down the tub, which rumbles disturbingly. You find it best to hide, and that's the right thing to do, because the butene tub explodes into pieces. Under it is a resale laser!"
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	false	false	Grebeberg	"With the help of SOME DEMOS, you manage to rejig the hay into something more aesthetically pleasing: straw arts!"
 straw arts	Revolt Lover	soot tattoos	--	rebump-art-xtra rule	true	true	false	Yelpley	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
@@ -1131,10 +1139,10 @@ understand "pack cap" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did.";
-	say "Yes, that's how to get the cap. You are ready to go![paragraph break]'Good job! Here's a set o['] notes to help with that darer ad,' the Flee Elf says. It salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
+	say "Yes, that's how to get the cap. You are ready to go![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. It salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
 	move flee elf to DevReserved;
 	now Tix Exit is in Fun Nuf;
-	now player has set o notes;
+	now player has Set O Notes;
 	now player wears the cap;
 	score-inc; [Dim Mid/pack cap]
 	the rule succeeds;
@@ -1156,7 +1164,7 @@ carry out paceing:
 		now pace-prev is true;
 		say "That'll work later, but you need something a little different to actually TAKE the pact cap." instead;
 	if cap-pace is true, say "It's already a pace cap." instead;
-	if mrlp is Grebeberg, now cap-pace is whether or not cap-pace is true;
+	if mrlp is Grebeberg, now cap-pace is whether or not cap-pace is false;
 	if cap-ever-pace is false:
 		score-inc; [Dim Mid/pace cap]
 		now cap-ever-pace is true;
@@ -1175,9 +1183,9 @@ check going to Fun Nuf:
 
 [helpdocs below]
 
-chapter darer ad
+chapter Darer Ad
 
-the Darer Ad is a helpdoc. The player carries the Darer Ad. importancy of the Darer Ad is 1.
+the Darer Ad is a proper-named helpdoc. The player carries the Darer Ad. importancy of the Darer Ad is 1.
 
 description of Darer Ad is "No LOL on? SEE, REFER-EES! Do! Nod!"
 
@@ -1185,11 +1193,11 @@ after examining the Darer Ad for the first time:
 	say "Well, you need something with a bit more concrete advice. Maybe you'll find it quickly enough.";
 	continue the action;
 
-chapter set o notes
+chapter Set O Notes
 
-the set o notes is a helpdoc. description is "There's some general vague advice about making a North Tron to defeat the Diktat Kid, but first you'll have to defeat [b]Madam[r], as well as the [b]Yuge Guy, Evil Clive[r]. The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
+the Set O Notes is a proper-named helpdoc. description is "There's some general vague advice about making a North Tron to defeat the Diktat Kid, but first you'll have to defeat [b]Madam[r], as well as the [b]Yuge Guy, Evil Clive[r]. The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
 
-after examining set o notes for the first time, say "More useful than the Darer Ad, but maybe you'll get something even more detailed than the Set O Notes later."
+after examining Set O Notes for the first time, say "More useful than the Darer Ad, but maybe you'll get something even more detailed than the Set O Notes later."
 
 chapter tile lit
 
@@ -1617,7 +1625,8 @@ understand "yak okay" as yakokaying.
 carry out yakokaying:
 	if ergot ogre is moot, say "[if yak is in location of player]The yak has served you well. It deserves a rest.[else]You relive past glories. Why not?[end if]" instead;
 	if yak is in location of player and ergot ogre is in location of player:
-		say "The kayo yak surges at the ergot ogre and knocks it over with a few ... smart rams! The ergot won't spread to the yak's horns, so that's good. The ogre dusts itself off and walks away, damp, mad. The yak, for its part, looks relaxed--almost like a tao goat--and heads off, not to the Frush Surf, but somewhere calmer.[paragraph break]You think you hear an elk cackle in the distance.";
+		say "The kayo yak surges at the ergot ogre and knocks it over with a few ... smart rams! The ergot won't spread to the yak's horns, so that's good. The ogre dusts itself off and walks away, damp, mad. The yak, for its part, looks relaxed--almost like a tao goat--and heads off, not to the Frush Surf, but somewhere calmer.[paragraph break]You think you hear an elk cackle in the distance.[paragraph break]Whew! That's enough exercise. You readjust your pace cap back to a pact cap.";
+		now cap-pace is false;
 		score-inc; [Grebeberg/YAK OKAY]
 		move yak to DevReserved;
 		move ergot ogre to DevReserved;
@@ -2042,7 +2051,7 @@ chapter books in bookcase
 TI is a proper-named book. printed name of TI is "TO IDIOT (TI)". understand "to idiot" and "idiot" as ti. description is "It's full of hot takes and 'clever' put-downs based on assuming the recipient isn't as smart as they really are. You remember laughing at this sort of thing when you were really bored or grouchy, and you sort of regret it now.". [Door Frood]
 NULL ILLUN is a proper-named book. printed name of NULL ILLUN is "NULL ILLUN (NI)". understand "ni" as NULL ILLUN. description is "Surprisingly wise advice about how to achieve happiness and shake annoyances you can't dispel with just logic.". [Known Wonk]
 ERA FARE is a proper-named book. printed name of ERA FARE is "ERA FARE (EF)". understand "ef" as ERA FARE. description is "All sorts of present-day political and social musings.". [King Nik]
-YOB ATTABOY is a proper-named book. printed name of YOB ATTABOY is "YOB ATTABOY (YA)". understand "ya" as YOB ATTABOY. description is "All about picking yourself up by your bootstraps and not feeling sorry for yourself or being too jealous of what others know or can do." [Sniffins]
+YOB ATTABOY is a proper-named book. printed name of YOB ATTABOY is "YOB ATTABOY (YA)". understand "ya" as YOB ATTABOY. description is "All about picking yourself up by your bootstraps and not feeling sorry for yourself or being too jealous of what others know or can do.". [Sniffins]
 
 chapter SOME DEMOS
 
@@ -2657,8 +2666,8 @@ check going to Emo Dome:
 
 check going north in Emo Dome:
 	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a voice: 'DIFF-ID?'[paragraph break]You don't have anything identifying yourself. 'Oh, who? Go jog!' the voice continues. You think, hang? Nah." instead;
-	if Bro Orb is off-stage, say "You don't feel prepared enough to enter the Red Roses Order, yet." instead;
-	if not-a-baton is off-stage, say "You probably did all you needed to." instead;
+	if Bro Orb is in Le Babel, say "You don't feel prepared enough to enter the Red Roses Order, yet." instead;
+	if not-a-baton is moot, say "You probably did all you needed to." instead;
 	say "You make sure your state tats are visible for scanning. They are accepted.[paragraph break][if madam is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the wash saw.[end if]";
 	say "You make sure your state tats are visible for scanning. They are accepted and promptly rub off.[paragraph break]You step into what may be your final challenge in Yelpley..."
 
@@ -2777,8 +2786,19 @@ Pro Corp is north of Gross Org. It is in Yelpley. description is "A butene tub r
 
 Pro Corp is above Gross Org.
 
+check taking when player is in Pro Corp and Psi Wisp is in Pro Corp:
+	let Q be the noun;
+	if the number of entries in multiple object list is greater than 1:
+		alter the multiple object list to { };
+		add Q to the multiple object list; [?? saying {Q} doesn't work]
+	say "OUCH! The psi wisp stings your hand before you can grab [the noun]." instead;
+
 report taking when player is in Pro Corp:
-	if number of things in Pro Corp is 0:
+	consider the bald-lab rule;
+	continue the action;
+
+this is the bald-lab rule:
+	if number of things in Pro Corp is 1:
 		say "Pro Corp is now a bald lab.";
 		now bald-lab is true;
 		now printed name of Pro Corp is "Bald Lab";
@@ -3680,8 +3700,8 @@ balmlabing is an action applying to nothing.
 understand the command "balmlab" as something new.
 understand the command "balm lab" as something new.
 
-understand "balm lab" as balmlabing when player is in Pro Corp and number of things in Pro Corp is 0.
-understand "balmlab" as balmlabing when player is in Pro Corp and number of things in Pro Corp is 0.
+understand "balm lab" as balmlabing when player is in Pro Corp and bald-lab is true.
+understand "balmlab" as balmlabing when player is in Pro Corp and bald-lab is true.
 
 carry out balmlabing:
 	if balm-got is true, say "No double dipping." instead;
@@ -3746,8 +3766,9 @@ understand "slam mammals" as slammammalsing.
 
 carry out slammammalsing:
 	if slam-mam is true, say "You already did. Don't overdo it." instead;
-	unless player is in Ooze Zoo and sleep eels are in Ooze Zoo, say "You have no sympathetic audience." instead;
-	say "The sleep eels wake from their slumber briefly to squirm. They telepathically project their pleasure [if sleep eels are in DevReserved]from their stock cots [end if]before going back to sleep. You've ... done something, I guess?";
+	unless player is in Ooze Zoo, say "You have no sympathetic audience." instead;
+	say "The sleep eels wake from their slumber [if bunk nub is moot]just out of sight [end if]briefly to squirm. They telepathically project their pleasure [if sleep eels are in DevReserved]from their stock cots [end if]before going back to sleep. You've ... done something, I guess? And hopefully without too much whataboutism?";
+	now slam-mam is true;
 	abide by the LLP rule; [SLAM MAMMALS]
 	the rule succeeds;
 
@@ -3763,6 +3784,8 @@ carry out stacking:
 	if senile felines are in DevReserved, say "You already did." instead;
 	if player is not in Moo Room, say "Not here." instead;
 	say "You stack the cats so they can reach the late petal, but once you do, the top one bats it and it falls. They walk away, disinterested. But they still seemed to have fun. Well, cats are like that.";
+	move senile felines to devreserved;
+	move late petal to devreserved;
 	abide by the LLP rule; [STACK CATS]
 	the rule succeeds;
 
@@ -3981,7 +4004,7 @@ carry out endgameing:
 	now player carries murk rum;
 	now player carries yard ray;
 	now player carries epicer recipe;
-	move set o notes to DevReserved;
+	move Set O Notes to DevReserved;
 	move Darer Ad to DevReserved;
 	move elf to DevReserved;
 	now player has pact cap;
