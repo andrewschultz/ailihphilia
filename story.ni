@@ -37,6 +37,10 @@ include undo output control by Erik Temple.
 
 volume definitions
 
+definition: a thing is moot:
+	if it is in devreserved, yes;
+	no;
+
 a person can be normal, grunty, ruling, chasey or henchy. a person is usually normal.
 
 a chaser is a kind of person. a chaser has a room called chase-room.
@@ -184,8 +188,8 @@ check requesting the score:
 	say "Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do].";
 	if My Gym is visited or Evaded Ave is visited:
 		if number of grunty people is not number of grunty people in DevReserved, say "You currently disposed of [number of grunty people in DevReserved] grunts blocking your way: [list of grunty people in DevReserved].";
-	if Yuge Guy is in DevReserved, say "You've gotten rid of the Yuge Guy, Evil Clive.";
-	if Madam is in DevReserved, say "You've gotten rid of the La Gal/Madam.";
+	if Yuge Guy is moot, say "You've gotten rid of the Yuge Guy, Evil Clive.";
+	if Madam is moot, say "You've gotten rid of the La Gal/Madam.";
 	if player has x-ite tix:
 		let Q be roving-LLP;
 		if Q is 0:
@@ -405,7 +409,7 @@ after printing the name of a tronpart while taking inventory: if player has epic
 
 after printing the name of pact cap while taking inventory: if cap-pace is true, say " (bent slightly to be a PACE cap too)".
 
-after printing the name of yard ray while taking inventory: say " ([unless murk rum is in DevReserved]un[end if]charged)".
+after printing the name of yard ray while taking inventory: say " ([unless murk rum is moot]un[end if]charged)".
 
 after printing the name of spa maps while taking inventory: say "([if maps-explained is true]deciphered[else]indecipherable[end if])".
 
@@ -640,7 +644,7 @@ to build-the-tron:
 	move north tron to Fun Nuf;
 	now all tronparts are in DevReserved;
 	say "You build the north tron with the instructions from the epicer recipe. It points north and blasts a hole with a huge tron snort before collapsing into uselessness. You tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
-	now epicer recipe is in DevReserved;
+	move epicer recipe to DevReserved;
 	now Dirge Grid is mapped north of Fun Nuf;
 	now Fun Nuf is mapped south of Dirge Grid;
 	score-inc; [Dim Mid/USE TNT ON ORE ZERO]
@@ -660,8 +664,8 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 		say "Those are both too solid to go together.";
 	else:
 		say "You mix [the i1] with [the i2] in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.[paragraph break]";
-		now i1 is in DevReserved;
-		now i2 is in DevReserved;
+		move i1 to DevReserved;
+		move i2 to DevReserved;
 		score-inc; [Grebeberg/USE GIFT FIG ON MAYO YAM&USE SNACK CANS ON UFO TOFU]
 		if chef-yet is true:
 			say "A martini tram rattles out from behind the Ark of Okra. Guess you need drinks with your, uh, food![paragraph break][if player does not have the epicer recipe]You're shocked to see it, and it rollls further down, over the turf rut to Dumb Mud, then back through the Seer Trees to Fun [']Nuf[else]But you're prepared for it, with your epicer recipe. You move it back to Fun [']Nuf, where it looks like a good base structure for your North Tron[end if]..";
@@ -704,9 +708,9 @@ check useoning it with:
 				if there is a getit entry:
 					now player has getit entry;
 				if d2 entry is true:
-					now use2 entry is in DevReserved;
+					move use2 entry to DevReserved;
 				if d1 entry is true:
-					now use1 entry is in DevReserved;
+					move use1 entry to DevReserved;
 				if sco entry is true:
 					if there is a reg-plus entry:
 						reg-inc reg-plus entry;
@@ -718,7 +722,7 @@ check useoning it with:
 					consider the postproc entry;
 				if there is a getit entry and player has getit entry: [try to let "it" be defined]
 					set the pronoun it to getit entry;
-				else if use1 entry is in DevReserved and use2 entry is not in DevReserved:
+				else if use1 entry is moot and use2 entry is not in DevReserved:
 					set the pronoun it to use2 entry;
 				if second noun is a workable:
 					wear-down second noun;
@@ -841,7 +845,7 @@ this is the check-sap-cup rule:
 	if wash saw is not in devreserved:
 		say "The sap is stuck to the tree.";
 		the rule fails;
-	if liar grail is in devreserved:
+	if liar grail is moot:
 		say "You doubt you will need the past sap again, since it got you by the Liar Grail[if puce cup is soddy]. In fact, the sod seems like a good thing to have[else]. But maybe something else[end if].";
 		the rule fails;
 	if puce cup is sappy:
@@ -864,7 +868,7 @@ this is the check-sod-cup rule:
 	the rule succeeds;
 
 this is the coop-full rule:
-	if gnu dung is in DevReserved, the rule succeeds;
+	if gnu dung is moot, the rule succeeds;
 	say "The poo coop is empty, but if it wasn't, that could work.";
 	the rule fails;
 
@@ -883,7 +887,7 @@ this is the maps-still-confusing rule:
 	the rule succeeds;
 
 this is the Ned-gone rule:
-	if Ned is in DevReserved, the rule succeeds;
+	if Ned is moot, the rule succeeds;
 	say "Good idea, but not with Ned around.";
 	the rule fails;
 
@@ -931,15 +935,15 @@ this is the cold-loc-hint-bump rule:
 
 this is the empty-cup rule:
 	now puce cup is empty;
-	if Bond Nob is in DevReserved and liar grail is in DevReserved:
+	if Bond Nob is moot and liar grail is moot:
 		say "The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. I'm off to Pat's Tap for some redics-cider!'";
 		shuffle-before Apse Spa and Motto Bottom;
 	the rule succeeds;
 
 this is the hay-gone rule:
-	if SOME DEMOS is in DevReserved and dork rod is in DevReserved:
+	if SOME DEMOS is moot and dork rod is moot:
 		say "You used up all the hay.";
-		now yahoo hay is in DevReserved;
+		move yahoo hay to DevReserved;
 	else:
 		say "There's still some hay (yah!) left over for another creative project.";
 	the rule succeeds;
@@ -949,7 +953,7 @@ this is the kid-bye rule:
 	the rule succeeds;
 
 this is the kid-left rule:
-	if Verses Rev is in DevReserved and Knife Fink is in DevReserved, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'I should've gone with Mad Adam. Iller Elli. Able Melba.'";
+	if Verses Rev is moot and Knife Fink is moot, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'I should've gone with Mad Adam. Iller Elli. Able Melba.'";
 	the rule succeeds;
 
 this is the maps-explain rule:
@@ -968,7 +972,7 @@ this is the radar-blink rule:
 	else:
 		say "Between the UFO tofu dropped on the radar and the eroded ore getting too close to it, the radar shorts out. After a pop, it splits open. A roto motor falls out and looks undamaged, so you take it.";
 		now player has roto motor;
-		now radar is in DevReserved;
+		move radar to DevReserved;
 	the rule succeeds;
 
 this is the rahs-too rule:
@@ -1062,7 +1066,7 @@ the Tix Exit is scenery. "It's nothing particularly fancy. I'm going to go out o
 check going south in Fun Nuf:
 	if player has X-ITE TIX, try useoning X-ITE TIX with Tix Exit instead;
 	if Tix Exit is in Fun Nuf, say "The Tix Exit blocks your way to where Evac Ave was. You try to look for a way to bust through, but a voice booms 'EL BARRABLE!'[paragraph break]I guess you're stuck questing, here." instead;
-	if flee elf is in DevReserved, say "You have no way back now that you accepted the Pact Cap." instead;
+	if flee elf is moot, say "You have no way back now that you accepted the Pact Cap." instead;
 	if elf-warn < 3, increment elf-warn;
 	say "[if elf-warn is 1]The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go[else if elf-warn is 2]'Oy! Oy! Yo-yo!' The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap[else]The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else[end if].";
 	if elf-warn < 3, the rule succeeds;
@@ -1093,13 +1097,13 @@ to decide which number is roving-LLP: [Not location dependent: DIAL AID, STATS, 
 	if senile felines are in Moo Room, increment temp;
 	if slam-mam is false, increment temp;
 	if balm-got is false, increment temp;
-	if opossum is in devreserved, increment temp;
+	if opossum is moot, increment temp;
 	if DWELT LEWD is off-stage, increment temp;
 	if bees-seen is false, increment temp;
 	decide on temp;
 
 check going north in Fun Nuf:
-	if Diktat Kid is in DevReserved, say "No need to go back." instead;
+	if Diktat Kid is moot, say "No need to go back." instead;
 	if north tron is not in Fun Nuf, say "Not until you built the North-Tron." instead;
 	if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
 	if murk rum is not in DevReserved, say "You have the yard ray, but it isn't, well, charged." instead;
@@ -1147,7 +1151,7 @@ understand "pace cap" and "pacy cap" as paceing.
 pace-prev is a truth state that varies.
 
 carry out paceing:
-	if kayo yak is in DevReserved, say "You had enough high-speed fun for one game. If you want to zip around the map, though, GT is always an option." instead;
+	if kayo yak is moot, say "You had enough high-speed fun for one game. If you want to zip around the map, though, GT is always an option." instead;
 	if pact cap is in Fun Nuf:
 		now pace-prev is true;
 		say "That'll work later, but you need something a little different to actually TAKE the pact cap." instead;
@@ -1189,7 +1193,7 @@ after examining set o notes for the first time, say "More useful than the Darer 
 
 chapter tile lit
 
-the tile lit is scenery in Fun Nuf. "It's a rough compass, with GREBEBERG west by it, YELPLEY east, Evac Ave south and Dirge Grid north. You can't seem to go [if flee elf is in DevReserved]south and [end if]north, though." [ic]
+the tile lit is scenery in Fun Nuf. "It's a rough compass, with GREBEBERG west by it, YELPLEY east, Evac Ave south and Dirge Grid north. You can't seem to go [if flee elf is moot]south and [end if]north, though." [ic]
 
 check taking tile lit: say "It's sort of embedded into the ground. It looks nice there, anyway, and it's useful for information."
 
@@ -1197,7 +1201,7 @@ chapter elite tile
 
 the elite tile is scenery. "Done? Nod![line break]Nif-T-Fin!"
 
-after going to Fun Nuf when Diktat Kid is in DevReserved:
+after going to Fun Nuf when Diktat Kid is moot:
 	say "You notice the elite tile has changed slightly.";
 	continue the action;
 
@@ -1207,7 +1211,7 @@ Dirge Grid is a room in Dim Mid. "The only way back is south[if Diktat Kid is in
 
 check going to Dirge Grid: if test set is not in DevReserved, say "[if player does not have yard ray]You don't have an adequate weapon[else]You need to get some practice with the Yard Ray before going north[end if]." instead;
 
-printed name of Dirge Grid is "[if Diktat Kid is in DevReserved]Top Spot[else]Dirge Grid[end if]"
+printed name of Dirge Grid is "[if Diktat Kid is moot]Top Spot[else]Dirge Grid[end if]"
 
 for writing a paragraph about a person when player is in Dirge Grid:
 	now all people in Dirge Grid are mentioned;
@@ -1231,11 +1235,11 @@ for writing a paragraph about a person when player is in Dirge Grid:
 			say "You still don't feel confident of victory. You need just a little more.";
 			move player to Fun Nuf, without printing a room description;
 			continue the action;
-		else if Knife Fink is in DevReserved and Verses Rev is in DevReserved:
+		else if Knife Fink is moot and Verses Rev is moot:
 			say "The Diktat Kid continues to rage at you. Two henchmen gone, but it's not over!";
-		else if Knife Fink is in DevReserved:
+		else if Knife Fink is moot:
 			say "The Diktat Kid continues to yell at the Verses Rev to do something.";
-		else if Verses Rev is in DevReserved:
+		else if Verses Rev is moot:
 			say "The Diktat Kid continues to yell at the Knife Fink to do something.";
 		else:
 			say "The Diktat Kid yells and wonders why the Verses Rev and Knife Fink haven't disposed of you, yet.";
@@ -1307,7 +1311,7 @@ voodoo v	"You don't want or need to mess with the voodoo v."
 leet steel	"You want to focus on the Knife Fink and not the leet steel."
 part strap	"You want to focus on the Verses Rev and not the part strap."
 state tats	"You don't need to do anything to or with the state tats, now that you're wearing them."
-girt rig	"The girt rig is too sturdy to move. It's just there to block you exploring too far. The Yuge Guy [if Yuge Guy is in DevReserved]was[else]is[end if] the focus, here."
+girt rig	"The girt rig is too sturdy to move. It's just there to block you exploring too far. The Yuge Guy [if Yuge Guy is moot]was[else]is[end if] the focus, here."
 mist sim	"Getting distracted by the mist sim would be a good way to get blindsided by Madam."
 Tru Hurt	"If you dispose of the Diktat Kid, the Tru Hurt won't be able to hurt you."
 Waster Fretsaw	"If you dispose of the Diktat Kid, the Waster Fretsaw won't be able to hurt you."
@@ -1349,7 +1353,7 @@ understand "emit [text]" as emiting when player has yard ray.
 carry out emiting:
 	if murk rum is not in DevReserved, say "The Yard Ray isn't charged enough to emit anything." instead;
 	if player is in location of Yuge Guy, say "No...the Yuge Guy needs to be defeated by other means." instead;
-	if Diktat Kid is in DevReserved, say "You already got rid of the Diktat Kid." instead;
+	if Diktat Kid is moot, say "You already got rid of the Diktat Kid." instead;
 	if the topic understood matches "noontime":
 		say "BOOM! The yard ray emits so much light, you immediately have to switch it off. Well, that was a good start. Now you want to make sure you can aim it at something that can be destroyed.";
 		now emitted is true;
@@ -1389,11 +1393,11 @@ the past sap is scenery in Cold Loc. "[if sword rows are in DevReserved]It is in
 
 check going west in Cold Loc: say "The rift fir blocks the way to much more dangerous places." instead;
 
-check taking past sap: say "[if liar grail is in DevReserved]You probably don't need any more past sap, now that you used it to dispose of the Liar Grail.[else]It's too sticky to carry around by itself. Maybe have a container carrying it?[end if]"
+check taking past sap: say "[if liar grail is moot]You probably don't need any more past sap, now that you used it to dispose of the Liar Grail.[else]It's too sticky to carry around by itself. Maybe have a container carrying it?[end if]"
 
 instead of doing something with past sap:
 	if action is procedural, continue the action;
-	say "[if liar grail is in DevReserved]With the liar grail gone, you don't want to have to deal with the past sap again[else]The past sap might be useful, but you need a way to take it, first[end if]."
+	say "[if liar grail is moot]With the liar grail gone, you don't want to have to deal with the past sap again[else]The past sap might be useful, but you need a way to take it, first[end if]."
 
 chapter King Nik
 
@@ -1448,7 +1452,7 @@ understand "evil/clive" and "evil clive" as Yuge Guy.
 
 chapter girt rig
 
-the girt rig is peripheral scenery in Sneer Greens. description is "It is too sturdy to climb or break down. But then, you probably just need[if Yuge Guy is in DevReserved]ed[end if] to deal with the Yuge Guy, here."
+the girt rig is peripheral scenery in Sneer Greens. description is "It is too sturdy to climb or break down. But then, you probably just need[if Yuge Guy is moot]ed[end if] to deal with the Yuge Guy, here."
 
 chapter murk rum
 
@@ -1456,7 +1460,7 @@ some murk rum is a drinkable thing. description is "It looks viscous, like oil."
 
 book Dumb Mud
 
-Dumb Mud is west of Seer Trees. It is in Grebeberg. "Mud! Umm...[paragraph break]A turf rut to the south is [if poo coop is in DevReserved]filled in enough[else]too deep[end if] to cross. The way west is [if gnu dung is in DevReserved]blocked by gnu dung[else]free[end if]. [if lie veil is in Dumb Mud]A lie veil blocks your way[else]With the lie veil removed, you can go[end if] north."
+Dumb Mud is west of Seer Trees. It is in Grebeberg. "Mud! Umm...[paragraph break]A turf rut to the south is [if poo coop is moot]filled in enough[else]too deep[end if] to cross. The way west is [if gnu dung is moot]blocked by gnu dung[else]free[end if]. [if lie veil is in Dumb Mud]A lie veil blocks your way[else]With the lie veil removed, you can go[end if] north."
 
 The lie veil is scenery in Dumb Mud. "It looks untrustworthy."
 
@@ -1478,9 +1482,9 @@ instead of doing something with gnu dung:
 
 chapter turf rut
 
-The turf rut is scenery in Dumb Mud. "[if poo coop is in DevReserved]Since you filled it in, you can walk across it to the south[else]It's deep enough to prevent you going south[end if]."
+The turf rut is scenery in Dumb Mud. "[if poo coop is moot]Since you filled it in, you can walk across it to the south[else]It's deep enough to prevent you going south[end if]."
 
-understand "turd rut" as turf rut when poo coop is in DevReserved.
+understand "turd rut" as turf rut when poo coop is moot.
 
 book Le Babel
 
@@ -1537,7 +1541,7 @@ check taking Bro Orb:
 	say "You wonder if you should take the Bro Orb. If you deserve to. But you reread the tenet and whisper to yourself, 'Nag, ol['] slogan,' and feel balanced enough to take the Bro Orb and accept the responsibility for doing so.";
 
 report taking Bro Orb:
-	now tenet is in DevReserved;
+	move tenet to DevReserved;
 	say "Taking the Bro Orb requires two hands. You watch the tenet flutter off beyond the Voodoo V. Oh, well. You carry the tenant's message in your mind and heart and stuff anyway, now.";
 
 book Mont Nom
@@ -1565,7 +1569,7 @@ understand the command "nail" as something new.
 understand "nail [something]" as nailing when player is in Mont Nom and Ian is in Mont Nom.
 
 carry out nailing:
-	if Ian is in DevReserved, say "There's nobody named Elian to nail later in the game, so this isn't an action you need to take any more." instead;
+	if Ian is moot, say "There's nobody named Elian to nail later in the game, so this isn't an action you need to take any more." instead;
 	if noun is not Ian, say "You'll know what or whom to nail, and that's not it." instead;
 	say "You wait and hide. After a while, you catch Ian picking his nose absent-mindedly. You call him on it! In the presence of food, no less! Ian hurries away in shame across the Turf Rut. He takes one look at the, um, bridge and realizes that if he hadn't DONE anything gross, he wouldn't have to CROSS anything gross.";
 	move Ian to DevReserved;
@@ -1611,12 +1615,12 @@ understand the command "yak okay" as something new.
 understand "yak okay" as yakokaying.
 
 carry out yakokaying:
-	if ergot ogre is in DevReserved, say "[if yak is in location of player]The yak has served you well. It deserves a rest.[else]You relive past glories. Why not?[end if]" instead;
+	if ergot ogre is moot, say "[if yak is in location of player]The yak has served you well. It deserves a rest.[else]You relive past glories. Why not?[end if]" instead;
 	if yak is in location of player and ergot ogre is in location of player:
 		say "The kayo yak surges at the ergot ogre and knocks it over with a few ... smart rams! The ergot won't spread to the yak's horns, so that's good. The ogre dusts itself off and walks away, damp, mad. The yak, for its part, looks relaxed--almost like a tao goat--and heads off, not to the Frush Surf, but somewhere calmer.[paragraph break]You think you hear an elk cackle in the distance.";
 		score-inc; [Grebeberg/YAK OKAY]
-		now yak is in DevReserved;
-		now ergot ogre is in DevReserved;
+		move yak to DevReserved;
+		move ergot ogre to DevReserved;
 		now being-chased is false;
 		the rule succeeds;
 	if yak is in location of player, say "The yak sees nothing to attack." instead;
@@ -1661,7 +1665,7 @@ The Eroded Ore is a thing. description is "You're no expert metallurgist, but it
 
 book Birch Crib
 
-Birch Crib is south of Mire Rim. It is in Grebeberg. "This is a homey little north-south passage, [if tent net is in DevReserved]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet[end if]."
+Birch Crib is south of Mire Rim. It is in Grebeberg. "This is a homey little north-south passage, [if tent net is moot]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet[end if]."
 
 Code Doc is a person in Birch Crib. "[one of]Someone is pacing back and forth here, muttering 'More ROM! MORE Rom! MORE ROM!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket. Busy, but not too busy to help someone else."
 
@@ -1677,7 +1681,7 @@ maps-explained is a truth state that varies.
 
 book Lair Trial
 
-Lair Trial is south of Birch Crib. It is in Grebeberg. "This lair bends north and east, [if ergot ogre is in DevReserved], and with the trial over, you're free to go either way[end if]."
+Lair Trial is south of Birch Crib. It is in Grebeberg. "This lair bends north and east, [if ergot ogre is moot], and with the trial over, you're free to go either way[end if]."
 
 the ergot ogre is a person in Lair Trial. "An ergot ogre blocks the way east.". description is "It looks vicious, and you don't want it touching you, due to disease and possible dismemberment. You need to get the ogre out of the way, somehow.".
 
@@ -1709,7 +1713,7 @@ check useoning tenet with Bro Orb: try taking Bro Orb instead;
 
 book Swamp Maws
 
-Swamp Maws is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west. You can go north or south here. [if Known Wonk is in DevReserved]The Known Wonk's Tru-Yurt is here. It looks really messy[end if]."
+Swamp Maws is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west. You can go north or south here. [if Known Wonk is moot]The Known Wonk's Tru-Yurt is here. It looks really messy[end if]."
 
 check going north in Swamp Maws when Known Wonk is in Swamp Maws: say "The Known Wonk pushes you back. 'You don't know how weird it is to the north. But I know a thing or two about adventuring theory.'" instead;
 
@@ -1735,14 +1739,14 @@ the sharp rahs are a plural-named thing. "The sharp rahs get you enthused, but t
 
 book Calcific Lac
 
-Calcific Lac is north of Swamp Maws. It is in Grebeberg. "A Tao Boat rests at the edge of Calcific Lac. [eli-ile].[paragraph break][if dork rod is in DevReserved]The Tao Boat that helped you get at peace with things is here[else]A Tao Boat rests on the shore, here[end if]."
+Calcific Lac is north of Swamp Maws. It is in Grebeberg. "A Tao Boat rests at the edge of Calcific Lac. [eli-ile].[paragraph break][if dork rod is moot]The Tao Boat that helped you get at peace with things is here[else]A Tao Boat rests on the shore, here[end if]."
 
 to say eli-ile:
-	if elope pole is in DevReserved:
+	if elope pole is moot:
 		say "That kayak you took to Elided Ile is here, too";
 	else:
 		say "There's a kayak, too. ";
-		if NULL ILLUN is in DevReserved:
+		if NULL ILLUN is moot:
 			say "[one of]And wait! If you look into the distance, you see something! Elided Ile! Just as the Known Wonk said it had to be somewhere! The Wonk's calculations and predictions were all right[or]You see Elided Ile in the distance. Maybe some day, you will get there[stopping]";
 		else:
 			say "You scan in the distance for anywhere the kayak might take you, but you can't find anywhere, yet";
@@ -1751,13 +1755,13 @@ chapter kayak
 
 The kayak is scenery in Calcific Lac. "It's, well, just a kayak. It doesn't have anything to steer it with, though. Maybe you have something, or you could find something."
 
-instead of doing something with kayak when elope pole is in DevReserved: [??use X on kayak]
+instead of doing something with kayak when elope pole is moot: [??use X on kayak]
 	if action is procedural, continue the action;
 	say "The kayak has served its purpose."
 
 chapter tao boat
 
-The Tao Boat is scenery in Calcific Lac. "It rocks gently on the waves. You [if dork rod is in DevReserved]wonder what it's like inside, if you're worthy[else]look back on your time inside with fondness. It put you at peace with the job you have ahead[end if]."
+The Tao Boat is scenery in Calcific Lac. "It rocks gently on the waves. You [if dork rod is moot]wonder what it's like inside, if you're worthy[else]look back on your time inside with fondness. It put you at peace with the job you have ahead[end if]."
 
 chapter dork rod
 
@@ -1818,7 +1822,7 @@ check going west in My Gym when Dave is in My Gym: say "Dave says, 'I can't let 
 
 chapter sword rows
 
-The wash saw is in My Gym. description is "A small wash saw [if Dave is in DevReserved]lies here[else]is behind Dave[end if]."
+The wash saw is in My Gym. description is "A small wash saw [if Dave is moot]lies here[else]is behind Dave[end if]."
 
 check taking wash saw when Dave is quicknear: say "Not with Dave around." instead;
 
@@ -1842,7 +1846,7 @@ carry out evadeing:
 	if noun is Dave:
 		if Dave-evade is true, say "You don't need to evade Dave again.";
 		say "You evade Dave! Deked! Deked![paragraph break]Dave, frustrated from spinning around trying to catch you, runs off.[paragraph break]Suspicious there are no actual weight machines, you find a passage to a hidden spate of Sperses-Reps machines. You're suspicious they actually work, but as you test them out, a surge goes through you. Your attitude nets you scepsis-pecs, which will help you carry any amount or weight of things you pick up in your journey. After a few seconds, you've half forgotten you have them.";
-		now Dave is in DevReserved;
+		move Dave to DevReserved;
 		now Dave-evade is true;
 		score-inc; [Yelpley/evade dave]
 	else:
@@ -2038,7 +2042,7 @@ chapter books in bookcase
 TI is a proper-named book. printed name of TI is "TO IDIOT (TI)". understand "to idiot" and "idiot" as ti. description is "It's full of hot takes and 'clever' put-downs based on assuming the recipient isn't as smart as they really are. You remember laughing at this sort of thing when you were really bored or grouchy, and you sort of regret it now.". [Door Frood]
 NULL ILLUN is a proper-named book. printed name of NULL ILLUN is "NULL ILLUN (NI)". understand "ni" as NULL ILLUN. description is "Surprisingly wise advice about how to achieve happiness and shake annoyances you can't dispel with just logic.". [Known Wonk]
 ERA FARE is a proper-named book. printed name of ERA FARE is "ERA FARE (EF)". understand "ef" as ERA FARE. description is "All sorts of present-day political and social musings.". [King Nik]
-YOB ATTABOY is a proper-named book. printed name of YOB ATTABOY is "YOB ATTABOY (YA)". understand "ya" as YOB ATTABOY. "All about picking yourself up by your bootstraps and not feeling sorry for yourself or being too jealous of what others know or can do." [Sniffins]
+YOB ATTABOY is a proper-named book. printed name of YOB ATTABOY is "YOB ATTABOY (YA)". understand "ya" as YOB ATTABOY. description is "All about picking yourself up by your bootstraps and not feeling sorry for yourself or being too jealous of what others know or can do." [Sniffins]
 
 chapter SOME DEMOS
 
@@ -2166,7 +2170,7 @@ ever-wordrow is a truth state that varies.
 
 definition: a book (called bo) is tractable:
 	if bo is hidden, no;
-	if bo is in DevReserved, no;
+	if bo is moot, no;
 	if player carries bo, no;
 	yes;
 
@@ -2198,7 +2202,7 @@ understand "wornrow" as wornrowing when player is in Worn Row.
 understand "Worn Row" as wornrowing when player is in Worn Row.
 
 carry out wornrowing:
-	if psi wisp is in DevReserved, say "You already used the redness ender for something." instead;
+	if psi wisp is moot, say "You already used the redness ender for something." instead;
 	if psi wisp is not in Worn Row, say "You don't want to face the redness ender alone." instead;
 	clear-worn-row;
 	say "Worn Row rematerializes, along with the redness ender. Zap! Zot! It locks on the Psi Wisp, which explodes in a shower of rage. But somehow, the Psi Wisp connects enough to zap the redness ender back. Whew.";
@@ -2206,7 +2210,7 @@ carry out wornrowing:
 	clear-worn-row;
 	now Worn Row is worny;
 	move psi wisp to DevReserved;
-	now redness ender is in DevReserved;
+	move redness ender to DevReserved;
 	score-inc; [Yelpley/WORN ROW]
 	the rule succeeds;
 
@@ -2292,14 +2296,14 @@ book Art Xtra
 
 Art Xtra is north of Yawn Way. It is in Yelpley. "You can go south or north here."
 
-printed name of Art Xtra is "[if el doodle is in devreserved]Traded Art[else]Art Xtra[end if]".
+printed name of Art Xtra is "[if el doodle is moot]Traded Art[else]Art Xtra[end if]".
 
-understand "traded" and "traded art" as Art Xtra when el doodle is in devreserved.
+understand "traded" and "traded art" as Art Xtra when el doodle is moot.
 
 art-free-warn is a truth state that varies.
 
 after looking in Art Xtra:
-	if el doodle is in devreserved and art-free-warn is false:
+	if el doodle is moot and art-free-warn is false:
 		now art-free-warn is true;
 		say "The Revolt Lover lets you know that there's some other art, more powerful stuff, but ... they need to know that you have an artsy side, too, and you won't just be the new tyrant replacing the old tyrant, here.";
 		continue the action;
@@ -2390,7 +2394,7 @@ instead of opening etage gate:
 
 check going north in Gross Org: if etage gate is in Gross Org, say "The etage gate blocks you." instead;
 
-understand "evened" and "den evened" as Gross Org when Ned is in DevReserved.
+understand "evened" and "den evened" as Gross Org when Ned is moot.
 
 Ned is a person in Gross Org. "'Ned's Den!' someone booms. You're guessing their name must be Ned.". description is "Ned is sort of wildly flailing about, looking for a verbal or physical altercation, but that's not really your thing.".
 
@@ -2432,17 +2436,17 @@ does the player mean denying Ned: it is likely.
 carry out denying:
 	if noun is Ned:
 		say "Ned wants to get in an argument or fight, so you get in an argument over whether it's really necessary, and then you say, that wasn't so great, see? He slinks off, defeated.";
-		now Ned is in DevReserved;
+		move Ned to DevReserved;
 		score-inc; [Yelpley/deny Ned]
 	the rule succeeds;
 
 book Deft Fed
 
-Deft Fed is south of Toll Lot. It is in Yelpley. printed name is "[if yob attaboy is in DevReserved]Bon Snob[else]Deli, Tiled[end if]". description is "There's not much decor in this [if yob attaboy is in DevReserved]deli, tiled, except for a decal placed[else]fancy eatery, except for some snooty toons[end if]. You can exit to the north."
+Deft Fed is south of Toll Lot. It is in Yelpley. printed name is "[if yob attaboy is moot]Bon Snob[else]Deli, Tiled[end if]". description is "There's not much decor in this [if yob attaboy is moot]deli, tiled, except for a decal placed[else]fancy eatery, except for some snooty toons[end if]. You can exit to the north."
 
 chapter Sniffins
 
-Sniffins is a person in Deft Fed. "[one of]You hear a sniff, and the proprietor introduces themselves as Sniffins, apologizing for how lame the ambience and decor are, but there's just no INSPIRATION to do better[or]Sniffins sniffs here[stopping].". description is "Sniffins looks despondent [if yob attaboy is in DevReserved]and unfriendly despite your help[else]and pleading, for any sort of help[end if]."
+Sniffins is a person in Deft Fed. "[one of]You hear a sniff, and the proprietor introduces themselves as Sniffins, apologizing for how lame the ambience and decor are, but there's just no INSPIRATION to do better[or]Sniffins sniffs here[stopping].". description is "Sniffins looks despondent [if yob attaboy is moot]and unfriendly despite your help[else]and pleading, for any sort of help[end if]."
 
 the Dirt Rid is a thing. description is "The Dirt Rid looks old and decrepit. Sniffins probably wore it out converting the Bon Snob, but it's yours now."
 
@@ -2562,7 +2566,7 @@ the Mayo Yam is a liquid ingredient in Yell Alley. "A gross looking -- something
 
 chapter rep popper
 
-the rep popper is a thing in Yell Alley. "A rep popper lies here. You're wary of getting too close to it. You're not sure how good your rep is, but that thing looks [if dork rod is in DevReserved]less fearsome than it used to[else]like it could embarrass you quickly[end if].". description is "The rep popper is a combination of a funny flower, joy buzzer, and several old stupid gags. You're not sure how it's supposed to work, and it's not something you carry around to show off how cool it is."
+the rep popper is a thing in Yell Alley. "A rep popper lies here. You're wary of getting too close to it. You're not sure how good your rep is, but that thing looks [if dork rod is moot]less fearsome than it used to[else]like it could embarrass you quickly[end if].". description is "The rep popper is a combination of a funny flower, joy buzzer, and several old stupid gags. You're not sure how it's supposed to work, and it's not something you carry around to show off how cool it is."
 
 check taking rep popper:
 	if player has taboo bat:
@@ -2577,7 +2581,7 @@ chapter bomb mob
 
 the bomb mob are plural-named people. description is "They're ignoring you, and that's probably for the best.". "You're lucky the bomb mob is not looking your way, or you'd be in trouble."
 
-understand "poor troop" and "poor/troop" as bomb mob when DNA hand is in DevReserved.
+understand "poor troop" and "poor/troop" as bomb mob when DNA hand is moot.
 
 chapter TNT
 
@@ -2630,7 +2634,7 @@ carry out pulluping:
 
 book Emo Dome
 
-Emo Dome is east of Yawn Way. It is in Yelpley. "You can go any direction here, and you sort of want to, because it's stuffy in here. [if madam is in DevReserved]But not back north. You're done there[else]However, the way north looks particularly treacherous[end if]."
+Emo Dome is east of Yawn Way. It is in Yelpley. "You can go any direction here, and you sort of want to, because it's stuffy in here. [if madam is moot]But not back north. You're done there[else]However, the way north looks particularly treacherous[end if]."
 
 instead of doing something in Emo Dome when pulled-up is false:
 	if current action is pulluping, continue the action;
@@ -2670,7 +2674,7 @@ mist sim is peripheral scenery in Red Roses Order. "You can't see through it, bu
 
 chapter sword rows
 
-The sword rows are plural-named scenery in Red Roses Order. ."[if not-a-baton is in DevReserved]It doesn't look like you broke them, but you probably don't need them any more[else]It looks automatic. Put something it can cut in, and get something out[end if]."
+The sword rows are plural-named scenery in Red Roses Order. ."[if not-a-baton is moot]It doesn't look like you broke them, but you probably don't need them any more[else]It looks automatic. Put something it can cut in, and get something out[end if]."
 
 chapter madam
 
@@ -2684,11 +2688,11 @@ check going south in Red Roses Order when Madam is in Red Roses Order: say "No w
 
 chapter yard ray
 
-the yard ray is a thing. description is "It looks pretty lethal. It's no dinky resale laser![paragraph break]There are also has instructions: EMIT ********.[paragraph break]It's currently [if murk rum is in DevReserved]loaded with energy from the Murk Rum[else]empty of fuel[end if]."
+the yard ray is a thing. description is "It looks pretty lethal. It's no dinky resale laser![paragraph break]There are also has instructions: EMIT ********.[paragraph break]It's currently [if murk rum is moot]loaded with energy from the Murk Rum[else]empty of fuel[end if]."
 
 book Swept Pews
 
-Swept Pews is south of Emo Dome. It is in Yelpley. "You can go back north to the Emo Dome in this tidy little area[if liar grail is in DevReserved]. A passage has been opened south with the Liar Grail's demise[end if]."
+Swept Pews is south of Emo Dome. It is in Yelpley. "You can go back north to the Emo Dome in this tidy little area[if liar grail is moot]. A passage has been opened south with the Liar Grail's demise[end if]."
 
 The Liar Grail is a thing in Swept Pews. description is "It's carved with 'NIP IN? NOT ON!' If you hadn't examined it, you wouldn't think there might be a passage to the south, but now that you have, you consider the possibility. Either way, it annoys you enough to want to get rid of the liar grail. Lies are sometimes self-defeating like that". "A liar grail is embedded in the south wall, aw."
 
@@ -2729,7 +2733,7 @@ Ye Key is a thing. description is "Engraved YE KEY, it clearly looks important. 
 
 book Dopy Pod
 
-Dopy Pod is west of Drawl Ward. It is in Yelpley. printed name of Dopy Pod is "[if cassettes sac is in DevReserved]Dope[else]Dopy[end if] Pod". "[if cassettes sac is in DevReserved]There's not much left here, but it was neat to get the radar. [else]There doesn't seem like there's much useful in here, but who knows? [end if]The only exit is back east."
+Dopy Pod is west of Drawl Ward. It is in Yelpley. printed name of Dopy Pod is "[if cassettes sac is moot]Dope[else]Dopy[end if] Pod". "[if cassettes sac is moot]There's not much left here, but it was neat to get the radar. [else]There doesn't seem like there's much useful in here, but who knows? [end if]The only exit is back east."
 
 chapter cassettes sac
 
@@ -2882,7 +2886,7 @@ carry out gotoing:
 
 section available rules
 
-[we could get cute here and define availability by what item is in devreserved, but that can go haywire once there's an exception. For instance, it's tricky to do stuff with the Spur Ups and the Psi Wisp, and Dirge Grid is tricky as well.]
+[we could get cute here and define availability by what item is moot, but that can go haywire once there's an exception. For instance, it's tricky to do stuff with the Spur Ups and the Psi Wisp, and Dirge Grid is tricky as well.]
 
 a room has a rule called avail-rule. avail-rule of a room is usually the trivially true rule.
 
@@ -2891,7 +2895,7 @@ avail-rule of Fun Nuf is trivially true rule. [described elsewhere]
 avail-rule of Worn Row is Dave-gone rule.
 
 this is the Dave-gone rule:
-	if Dave is in devreserved, the rule succeeds;
+	if Dave is moot, the rule succeeds;
 	the rule fails;
 
 avail-rule of Frush Surf is eels-gone rule.
@@ -2905,7 +2909,7 @@ avail-rule of Yell Alley is lover-gone rule.
 avail-rule of Trapeze Part is lover-gone rule.
 
 this is the lover-gone rule:
-	if Door Frood is in devreserved, the rule succeeds;
+	if Door Frood is moot, the rule succeeds;
 	the rule fails;
 
 avail-rule of Art Xtra is packed-it rule.
@@ -2938,14 +2942,14 @@ this is the pulled-up rule:
 avail-rule of Dopy Pod is poorsick-gone rule.
 
 this is the poorsick-gone rule:
-	if Bond Nob is in devreserved, the rule succeeds;
+	if Bond Nob is moot, the rule succeeds;
 	the rule fails;
 
 avail-rule of Drawl Ward is grail-gone rule.
 avail-rule of Scrap Arcs is grail-gone rule.
 
 this is the grail-gone rule:
-	if liar grail is in devreserved, the rule succeeds;
+	if liar grail is moot, the rule succeeds;
 	the rule fails;
 
 avail-rule of Toll Lot is puffed-up-yet rule.
@@ -2958,13 +2962,13 @@ avail-rule of Deft Fed is orc-block rule.
 avail-rule of Gross Org is orc-block rule.
 
 this is the orc-block rule: [similar to orc-gone but with no text]
-	if cross orc is in devreserved, the rule succeeds;
+	if cross orc is moot, the rule succeeds;
 	the rule fails;
 
 avail-rule of Pro Corp is gate-gone rule.
 
 this is the gate-gone rule:
-	if etage gate is in devreserved, the rule succeeds;
+	if etage gate is moot, the rule succeeds;
 	the rule fails;
 
 avail-rule of Mire Rim is dung-gone rule.
@@ -2973,31 +2977,31 @@ avail-rule of Birch Crib is dung-gone rule.
 avail-rule of Trial Lair is dung-gone rule.
 
 this is the dung-gone rule:
-	if gnu dung is in devreserved, the rule succeeds;
+	if gnu dung is moot, the rule succeeds;
 	the rule fails;
 
 avail-rule of Calcific Lac is wonk-book rule.
 
 this is the wonk-book rule:
-	if NULL ILLUN is in devreserved, the rule succeeds;
+	if NULL ILLUN is moot, the rule succeeds;
 	the rule fails;
 
 avail-rule of Motto Bottom is ogre-gone rule.
 
 this is the ogre-gone rule:
-	if ergot ogre is in devreserved, the rule succeeds;
+	if ergot ogre is moot, the rule succeeds;
 	the rule fails;
 
 avail-rule of Mont Nom is turf-gone rule.
 
 this is the turf-gone rule:
-	if turf rut is in devreserved, the rule succeeds;
+	if turf rut is moot, the rule succeeds;
 	the rule fails;
 
 avail-rule of Le Babel is veil-gone rule.
 
 this is the veil-gone rule:
-	if lie veil is in devreserved, the rule succeeds;
+	if lie veil is moot, the rule succeeds;
 	the rule fails;
 
 avail-rule of Sneer Greens is rocs-gone rule.
@@ -3015,7 +3019,7 @@ this is the rose-tat rule:
 avail-rule of Dirge Grid is tron-done rule.
 
 this is the tron-done rule:
-	if TNT is in devreserved, the rule succeeds;
+	if TNT is moot, the rule succeeds;
 	the rule fails;
 
 section unavailable rules
@@ -3079,7 +3083,7 @@ after looking when being-chased is false:
 	if player is in Pro Corp and psi wisp is not in DevReserved:
 		start-chase Psi Wisp;
 		say "The Psi Wisp begins to chase after you!";
-	if troll ort is in DevReserved and player is in Frush Surf and kayo yak is in Frush Surf:
+	if troll ort is moot and player is in Frush Surf and kayo yak is in Frush Surf:
 		start-chase Kayo Yak;
 		say "The Kayo Yak bounds after you!";
 	continue the action;
@@ -3359,15 +3363,15 @@ this is the birch-crib rule:
 section Calcific Lac rule
 
 this is the calcific-lac rule:
-	if dork rod is in devreserved, continue the action;
+	if dork rod is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 
 section Cold Loc rule
 
 this is the cold-loc rule:
-	if King Nik is in devreserved and puce cup is sappy, continue the action;
+	if King Nik is moot and puce cup is sappy, continue the action;
 	if pulled-up is false, continue the action;
-	if liar grail is in devreserved, continue the action;
+	if liar grail is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if King Nik is in Cold Loc, say "USE ERA FARE ON KING NIK." instead;
 	if wash saw is in My Gym, say "Get the wash saw from My Gym." instead;
@@ -3376,13 +3380,13 @@ this is the cold-loc rule:
 	say "USE PUCE CUP ON PAST SAP." instead;
 
 this is the cold-loc-done rule:
-	if King Nik is in devreserved and puce cup is sappy, the rule succeeds;
+	if King Nik is moot and puce cup is sappy, the rule succeeds;
 	the rule fails;
 
 section Deft Fed rule
 
 this is the deft-fed rule:
-	if Elan Ale is in devreserved, continue the action;
+	if Elan Ale is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 
 section Dirge Grid rule
@@ -3397,13 +3401,13 @@ this is the dirge-grid rule:
 section Dopy Pod rule
 
 this is the dopy-pod rule:
-	if cassettes sac is in devreserved and pill lip is in devreserved, continue the action;
+	if cassettes sac is moot and pill lip is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 
 section Drawl Ward rule
 
 this is the drawl-ward rule:
-	if Bond Nob is in devreserved, continue the action;
+	if Bond Nob is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if puce cup is not soddy, say "[one of]You have the puce cup, but it needs to be filled with something other than the past sap/purist sirup that got you by the Liar Grail.[or]You need something healing.[or]If you navigated the Apse Spa, you'll see what's there.[or]Once you have the  dose sod from the Apse Spa, USE PUCE CUP ON [psu].[stopping]";
 	say "USE PUCE CUP ON [psu]." instead;
@@ -3415,7 +3419,7 @@ to say psu:
 section Dumb Mud rule
 
 this is the dumb-mud rule:
-	if lie veil is in devreserved and turf rut is in devreserved, continue the action;
+	if lie veil is moot and turf rut is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if Moo Room is unvisited, say "There's a part of southeast Grebeberg you haven't explored yet[if Ooze Zoo is visited and sleep eels are in Ooze Zoo]. You need to get past the sleep eels[end if]." instead;
 	if gnu dung is in Dumb Mud, say "[one of]You need a way to get rid of the gnu dung so you can go west.[or][if player does not have poo coop]The poo coop in the Moo Room will help you[else]USE POO COOP ON GNU DUNG[end if].[stopping]" instead;
@@ -3432,7 +3436,7 @@ this is the emo-dome rule:
 section Evaded Ave rule
 
 this is the evaded-ave rule:
-	if Door Frood is in devreserved and bunk nub is not in Evaded Ave, continue the action;
+	if Door Frood is moot and bunk nub is not in Evaded Ave, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if Door Frood is in Evaded Ave:
 		if My Gym is unvisited, say "Visit south of Yawn Way a bit." instead;
@@ -3448,7 +3452,7 @@ this is the flu-gulf rule:
 	if scorn rocs are in devreserved, continue the action;
 	if Bond Nob is in Drawl Ward, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if gulf lug is in devreserved, say "The gulf lug needs medicine. The DEMO MED." instead;
+	if gulf lug is moot, say "The gulf lug needs medicine. The DEMO MED." instead;
 
 this is the flu-gulf-complete rule:
 	if scorn rocs are in devreserved, the rule succeeds;
@@ -3457,19 +3461,19 @@ this is the flu-gulf-complete rule:
 section Frush Surf rule
 
 this is the frush-surf rule:
-	if kayo yak is in devreserved, continue the action;
+	if kayo yak is moot, continue the action;
 	if player has stamp mats and gnu dung is in Dumb Mud, continue the action;
 	if search-hint-room is true, the rule succeeds;
 
 this is the frush-surf-complete rule:
-	if kayo yak is in devreserved, the rule succeeds;
+	if kayo yak is moot, the rule succeeds;
 	the rule fails.
 
 section Fun Nuf rule
 
 this is the fun-nuf rule:
 	now more-later is true; [ we will always have more to do here ]
-	if Dirge Grid is not mapped north of Fun Nuf and Flee Elf is in DevReserved, continue the action;
+	if Dirge Grid is not mapped north of Fun Nuf and Flee Elf is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if Dirge Grid is mapped north of Fun Nuf, say "You will need to go north." instead;
 	if Flee Elf is in Fun Nuf, say "[one of]The Flee Elf wants you to take the cap. But not take. A simile. To show you're in tune with this place.[or]PAC* CAP is the way to go.[or]PACK CAP.[stopping]" instead;
@@ -3481,15 +3485,15 @@ this is the fun-nuf rule:
 section Gross Org rule
 
 this is the gross-org rule:
-	if Ned is in devreserved and stink knits are in devreserved, continue the action;
+	if Ned is moot and stink knits are in devreserved, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if Ned is in devreserved, say "You need to take the stink knits." instead;
+	if Ned is moot, say "You need to take the stink knits." instead;
 	say "[one of]You need to get rid of Ned.[or]Ned wants a fight, which you want to decline.[or]A better way to say it is, DENY NED.[stopping]" instead;
 
 section Lair Trial rule
 
 this is the lair-trial rule:
-	if ergot ogre is in devreserved, continue the action;
+	if ergot ogre is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 
 section Le Babel rule
@@ -3565,10 +3569,10 @@ this is the seer-trees rule:
 section Sneer Greens rule
 
 this is the sneer-greens rule:
-	if Yuge Guy is in DevReserved, continue the action;
+	if Yuge Guy is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if player has rep popper, say "USE REP POPPER ON YUGE GUY." instead;
-	if dork rod is in DevReserved, say "You can take the item you need to defeat the Yuge Guy." instead;
+	if dork rod is moot, say "You can take the item you need to defeat the Yuge Guy." instead;
 
 section Swamp Maws rule
 
@@ -3621,7 +3625,7 @@ to decide whether any-books-left:
 to decide which book is cur-book:
 	if Door Frood is not in devreserved, decide on TI;
 	if King Nik is not in devreserved, decide on ERA FARE;
-	if cross orc is not in devreserved and gnu dung is in devreserved, decide on NULL ILLUN;
+	if cross orc is not in devreserved and gnu dung is moot, decide on NULL ILLUN;
 	if YOB ATTABOY is not in devreserved, decide on YOB ATTABOY;
 	decide on NULL ILLUN;
 
@@ -3642,7 +3646,7 @@ this is the find-machine rule:
 	say "You don't have anything you could use on a machine at the moment." instead;
 
 this is the worn-row-complete rule:
-	if test set is in devreserved, the rule succeeds;
+	if test set is moot, the rule succeeds;
 
 section Yawn Way rule
 
@@ -3660,12 +3664,12 @@ this is the yawn-way-complete rule:
 section Yell Alley rule
 
 this is the yell-alley rule:
-	if pity tip is in devreserved and psi wisp is not in devreserved, continue the action;
+	if pity tip is moot and psi wisp is not in devreserved, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if pity tip is not in devreserved, say "USE PITY TIP ON NAVY VAN." instead; [?SEEDY DEE'S]
 
 this is the yell-alley-complete rule:
-	if player has TNT or TNT is in devreserved, the rule succeeds;
+	if player has TNT or TNT is moot, the rule succeeds;
 
 chapter balmlabing
 
@@ -3920,7 +3924,7 @@ this is the dial-yet rule:
 	the rule fails;
 
 this is the muss-yet rule:
-	if opossum is in DevReserved, the rule succeeds;
+	if opossum is moot, the rule succeeds;
 	the rule fails;
 
 this is the pb-yet rule:
@@ -3977,9 +3981,9 @@ carry out endgameing:
 	now player carries murk rum;
 	now player carries yard ray;
 	now player carries epicer recipe;
-	now set o notes is in DevReserved;
-	now Darer Ad is in DevReserved;
-	now elf is in DevReserved;
+	move set o notes to DevReserved;
+	move Darer Ad to DevReserved;
+	move elf to DevReserved;
 	now player has pact cap;
 	now player has taboo bat;
 	now player has ME gem;
