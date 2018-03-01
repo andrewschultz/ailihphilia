@@ -1997,7 +1997,10 @@ check examining tract cart:
 		next-rand table of altbooks;
 		say ". Maybe it could be you! But you don't have the time to read right now, really." instead;
 
-a book is a kind of thing. description of a book is usually "It [if player carries the item described]is[else]looks[end if] really heavy and incomprehensible to you."
+a book is a kind of thing.
+
+check examining a book:
+	if description of noun is empty, say "It [if player carries the item described]is[else]looks[end if] really heavy and incomprehensible to you."
 
 to decide which book is rand-book:
 	let Q be a random carried book;
@@ -2032,14 +2035,14 @@ the pity tip is a thing. description of pity tip is "It's not THAT hard to figur
 
 chapter books in bookcase
 
-TI is a proper-named book. printed name of TI is "TO IDIOT (TI)". understand "to idiot" and "idiot" as ti. [Door Frood]
-NULL ILLUN is a proper-named book. printed name of NULL ILLUN is "NULL ILLUN (NI)". understand "ni" as NULL ILLUN. [Known Wonk]
-ERA FARE is a proper-named book. printed name of ERA FARE is "ERA FARE (EF)". understand "ef" as ERA FARE. [King Nik]
-YOB ATTABOY is a proper-named book. printed name of YOB ATTABOY is "YOB ATTABOY (YA)". understand "ya" as YOB ATTABOY. [Sniffins]
+TI is a proper-named book. printed name of TI is "TO IDIOT (TI)". understand "to idiot" and "idiot" as ti. description is "It's full of hot takes and 'clever' put-downs based on assuming the recipient isn't as smart as they really are. You remember laughing at this sort of thing when you were really bored or grouchy, and you sort of regret it now.". [Door Frood]
+NULL ILLUN is a proper-named book. printed name of NULL ILLUN is "NULL ILLUN (NI)". understand "ni" as NULL ILLUN. description is "Surprisingly wise advice about how to achieve happiness and shake annoyances you can't dispel with just logic.". [Known Wonk]
+ERA FARE is a proper-named book. printed name of ERA FARE is "ERA FARE (EF)". understand "ef" as ERA FARE. description is "All sorts of present-day political and social musings.". [King Nik]
+YOB ATTABOY is a proper-named book. printed name of YOB ATTABOY is "YOB ATTABOY (YA)". understand "ya" as YOB ATTABOY. "All about picking yourself up by your bootstraps and not feeling sorry for yourself or being too jealous of what others know or can do." [Sniffins]
 
 chapter SOME DEMOS
 
-there is a book called SOME DEMOS. printed name is "SOME DEMOS (SD)". understand "sd" as SOME DEMOS. It is proper-named and hidden.
+there is a book called SOME DEMOS. printed name is "SOME DEMOS (SD)". understand "sd" as SOME DEMOS. It is proper-named and hidden. description is "It's a sort of life hacker book with a particular emphasis on having fun with weird art and not worrying too much how good it is.".
 
 gap-yet is a truth state that varies.
 
