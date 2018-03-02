@@ -38,7 +38,7 @@ include undo output control by Erik Temple.
 volume definitions
 
 definition: a thing is moot:
-	if it is moot, yes;
+	if it is in devreserved, yes; [ic]
 	no;
 
 to moot (Q - a thing):
@@ -3106,9 +3106,11 @@ after looking when being-chased is false:
 	if player is in Pro Corp and psi wisp is not moot:
 		start-chase Psi Wisp;
 		say "The Psi Wisp begins to chase after you!";
+		continue the action;
 	if troll ort is moot and player is in Frush Surf and kayo yak is in Frush Surf:
 		start-chase Kayo Yak;
 		say "The Kayo Yak bounds after you!";
+		continue the action;
 	continue the action;
 
 volume gender switching
@@ -3208,7 +3210,7 @@ to hint-bump-worn:
 
 [this is the list of how I do things in the walkthrough.]
 
-L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Moo Room, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Dumb Mud, Mire Rim, Swamp Maws, Calcific Lac, Birch Crib, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
+L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Moo Room, Dumb Mud, Mire Rim, Swamp Maws, Calcific Lac, Birch Crib, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
 
 [?? nothing game-critical to do here = if there is a LLP]
 
@@ -3235,6 +3237,13 @@ check aiding:
 		now dial-yet is true;
 	if dial-yet is false:
 		say "Aid... aid...[paragraph break]";
+	if being-chased is true:
+		if chase-person is kayo yak:
+			if cap-pace is false, say "[one of]You're not quite fast enough to outrun the yak on your own. An item you have can help.[or]The pact cap.[or]The pact cap can become a PACE cap.[stopping]" instead;
+			if player is in trial lair, say "[one of]The kayo yak can take out the ergot ogre.[or]You just need to give the right command to the kayo yak.[or]YAK, ????[or]YAK, OKAY.[stopping]" instead;
+			say "[one of]The kayo yak will keep chasing you. Maybe you can find someone else for it to knock over.[or]Someone guarding something?[or]The ergot ogre.[or]You'll need to do one more thing once you get to the Trial Lair.[stopping]" instead;
+		if player is in Worn Row, say "[one of]You have the Psi Wisp in the right place, but you can't do anything here in [Worn Row], yet.[or]You have to change it.[or]WORN ROW. The redness ender will take care of the psi wisp.[stopping]" instead;
+		say "[one of]The psi wisp is certainly red. Maybe there's something that could neutralize it.[or]Do you remember a room at the start?[or]It sort of isn't there any more.[or]Go to Word/Work row, first.[stopping]" instead;
 	abide by the done-rule of location of player;
 	consider the done-for-good rule of location of player;
 	let all-done-here be whether or not the rule succeeded;
@@ -3543,7 +3552,13 @@ this is the mont-nom rule:
 section Moo Room rule
 
 this is the moo-room rule:
+	if yahoo hay is moot, continue the action;
+	if art-free-warn is false:
+		if poo coop is not in Moo Room and straw arts are not off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if poo coop is in Moo Room, say "Take the poo coop." instead;
+	if player has SOME DEMOS, say "USE SOME DEMOS ON YAHOO HAY." instead;
+	say "You need to use a book on the hay to make art." instead;
 
 section Motto Bottom rule
 
@@ -3561,6 +3576,7 @@ this is the my-gym rule:
 section Ooze Zoo rule
 
 this is the ooze-zoo rule:
+	if sleep eels are moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 
 section Pro Corp rule
@@ -3576,7 +3592,13 @@ this is the red-roses-order rule:
 section Scrap Arcs rule
 
 this is the scrap-arcs rule:
+	if slate metals are moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if player does not have stamp mats, say "[one of]You need something from Grebeberg to cut the slate metals.[or][if Frush Surf is visited]Get the stamp mats from Frush Surf.[else]Look south of [trees-zoo].[end if][stopping]";
+	say "USE STAMP MATS ON SLATE METALS." instead;
+
+to say trees-zoo:
+	say "[if Ooze Zoo is visited]Ooze Zoo[else]Seer Trees[end if]"
 
 section Seer Trees rule
 
@@ -3605,12 +3627,20 @@ this is the swamp-maws rule:
 section Swept Pews rule
 
 this is the swept-pews rule:
+	if liar grail is moot and troll ort is not in Swept Pews, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if troll ort is in Swept Pews, say "Take the troll ort." instead;
+	if player does not have puce cup, say "You need the puce cup to pour something in the liar grail." instead;
+	if puce cup is not sappy, say "[one of]You need to pour something [if puce cup is not empty]else [end if]in the puce cup.[or][if Cold Loc is unvisited]You haven't looked north of Seer Trees[else]Cold Loc has something. The past sap.[end if][stopping]" instead;
+	if liar grail is not moot, say "Get the puce cup and use it on the liar grail." instead;
 
 section Toll Lot rule
 
 this is the toll-lot rule:
+	if cross orc is moot and UFO tofu is not off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if cash sac is off-stage, say "[one of]You need to bribe the cross orc with something in Grebeberg.[or]If you help someone in Grebeberg, you will get paid, and you can give that to the cross orc.[or][if Flu Gulf is visited]The cash sac from the Gulf Lug in Flu Gulf works[else]Check north of Cold Loc for someone to help.[end if][stopping]" instead;
+	if cross orc is in Toll Lot, say "USE CASH SAC ON CROSS ORC." instead;
 
 section Trapeze Part rule
 
