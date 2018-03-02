@@ -29,6 +29,8 @@ always_adj = defaultdict(bool)
 cap_search = defaultdict(bool)
 regex_detail = defaultdict(str)
 
+text_change = defaultdict(str)
+
 count = 1
 
 def usage():
@@ -75,10 +77,17 @@ while count < len(sys.argv):
 if not os.path.exists("zr.txt"):
     print("You need a zr.txt in ", os.getcwd(), "or you need to change the project.")
 
+line_count = 0
 with open("zr.txt") as file:
     for line in file:
         if line.startswith('#'): continue
         if line.startswith(';'): break
+        if '>' in line: # this could get hairy later if I use backchecks in regexes
+            ary = line.strip().split(">")
+            if len(ary) > 2:
+                print("Too many >'s at line", line_count, "in zr.txt:", line.strip())
+                exit()
+            text_change[ary[0].lower()] = ary[1]
         always = False
         if line.startswith('a:'):
             line = re.sub('a:', '', line)
@@ -99,7 +108,8 @@ def check_source(a):
     line_count = 0
     difs = 0
     b = a + "2"
-    short = re.sub(".*[\\\/]", "", a)
+    short = os.path.basename(a)
+    short2 = os.path.basename(b)
     fout = open(b, "w", newline='\n') # STORY.NI files have unix line endings
     with open(a) as file:
         for line in file:
@@ -116,11 +126,13 @@ def check_source(a):
             if ll.startswith('understand') and 'when' not in ll:
                 fout.write(ll)
                 continue
-            if 'lalaland' in ll.lower():
-                print("WARNING replacing lalaland with DevReserved at line", line_count)
-                ll = re.sub("lalaland", "DevReserved", ll)
-                difs = difs + 1
-            if '[ic]' not in ll:
+            if '[ic]' not in ll: # ignore changes/cases
+                for t in text_change.keys():
+                    if t.lower() in ll.lower():
+                        print("WARNING replacing", t, "with", text_change[t], "at line", line_count)
+                        ll = re.sub(t, text_change[t], ll, 0, re.IGNORECASE)
+                        print("Replacing", t, "with", text_change[t], "at line", line_count)
+                        difs = difs + 1
                 for x in cs:
                     if x.lower() in line.lower():
                         ll_old = ll
@@ -132,15 +144,11 @@ def check_source(a):
                         if ll != ll_old:
                             difs = difs + 1
                             print("Line", line_count, "of", short, "miscapitalized", x)
-                            print("   BEFORE", line.strip())
-                            print("      MID", ll_old.strip())
-                            print("    AFTER", ll.strip())
             fout.write(ll)
     fout.close()
-    print(a, b)
     if not cmp(a, b):
         if difs == 0:
-            print("There are no flagged differences, but story.ni is not story2.ni. This should not happen. Bailing.")
+            print("There are no flagged differences, but", short, "is not", short2 + ". This should not happen. Bailing.")
             exit()
         print(difs, "differences, copying back over")
         if only_test:
@@ -159,9 +167,10 @@ def check_source(a):
                 exit()
     else:
         if difs:
-            print("Oops! I should be copying back over, but I'm not. This is a bug. Sorry.")
+            print("Oops! I should be copying", short, "back over, but I'm not. This is a bug. Sorry.")
+            # os.system("wm \"{:s}\" \"{:s}\"".format(a, b))
         else:
-            print("No differences, no copying back over" + (", so not running diff" if only_test else "") + ".")
+            print("No differences in", short + ", no copying back over" + (", so not running diff" if only_test else "") + ".")
         try:
             os.remove(b)
         except:
