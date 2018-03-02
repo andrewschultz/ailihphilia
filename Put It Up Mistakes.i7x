@@ -33,13 +33,15 @@ understand "cola loc" as a mistake ("You'd be better off with a warmer drink. Wh
 
 understand "colt loc" as a mistake ("No gandered nag appears. Or gun(ug).") when player is in Cold Loc.
 
+understand "purr up" as a mistake ("The Spur Ups make you feel you can be anyone, but not anything.") when player has spur ups.
+
 book Deft Fed
 
-understand "defy fed" as a mistake ("Way to go! Keep that Hunger! Well, I hope it's that and not conspiracy theories about the Fed.") when player is in Deft Fed and YOB ATTABOY is not in DevReserved
+understand "defy fed" as a mistake ("Way to go! Keep that Hunger! Well, I hope it's that and not conspiracy theories about the Fed.") when player is in Deft Fed and YOB ATTABOY is not moot
 
 chapter Bon Snob
 
-understand "bon knob" as a mistake ("You don't need to help Sniffins with interior decorating, here.") when player is in Deft Fed and YOB ATTABOY is in DevReserved.
+understand "bon knob" as a mistake ("You don't need to help Sniffins with interior decorating, here.") when player is in Deft Fed and YOB ATTABOY is moot.
 
 book Dirge Grid
 
@@ -65,15 +67,15 @@ understand "drawn ward" as a mistake ("The room remains text-based.") when playe
 
 book Dumb Mud
 
-understand "dump mud" as a mistake ("It's already kind of dumped here[if poo coop is not in DevReserved]. Maybe you could dump the mud into the rut for passage south, but it might take too long, and you don't have a shovel. You'd need something else[end if].") when player is in Dumb Mud.
+understand "dump mud" as a mistake ("It's already kind of dumped here[if poo coop is not moot]. Maybe you could dump the mud into the rut for passage south, but it might take too long, and you don't have a shovel. You'd need something else[end if].") when player is in Dumb Mud.
 
 understand "gnu bung" as a mistake ("There's no way to put the toothpaste back in the tube, as it were.") when gnu dung is quicknear.
 
 understand "gnu lung" as a mistake ("The gnu dung smells bad enough without dropping more internal organs into the mix.") when gnu dung is quicknear.
 
-understand "turd rut" as a mistake ("Hmm! Maybe you could fill the rut up with ... something ... to cross it.") when player is in Dumb Mud and poo coop is not in DevReserved.
+understand "turd rut" as a mistake ("Hmm! Maybe you could fill the rut up with ... something ... to cross it.") when player is in Dumb Mud and poo coop is not moot.
 
-understand "turn rut" as a mistake ("It's too large to redirect[if poo coop is in DevReserved], and besides, you already have a way across[end if].") when player is in Dumb Mud.
+understand "turn rut" as a mistake ("It's too large to redirect[if poo coop is moot], and besides, you already have a way across[end if].") when player is in Dumb Mud.
 
 understand "turnon rut" and "turn on rut" as a mistake ("No innuendo here! The gnu dung[if gnu dung is not in Dumb Mud] with the poo coop[end if] is about as close as you'll get.") when player is in Dumb Mud.
 
@@ -168,9 +170,9 @@ understand "moo boom" as a mistake ("You hear something strafe farts far away.")
 
 book My Gym
 
-understand "evade dave" as a mistake ("Dave's not here, man!") when player is in My Gym and Dave is in DevReserved.
+understand "evade dave" as a mistake ("Dave's not here, man!") when player is in My Gym and Dave is moot.
 
-understand "wasp saw" as a mistake ("You don't need the wash saw to turn into something that might sting you[if Dave is in DevReserved]. Dave's enough[else if player has wash saw], especially since you are carrying it[else]. You should probably just take it, instead[end if].") when wash saw is quicknear.
+understand "wasp saw" as a mistake ("You don't need the wash saw to turn into something that might sting you[if Dave is moot]. Dave's enough[else if player has wash saw], especially since you are carrying it[else]. You should probably just take it, instead[end if].") when wash saw is quicknear.
 
 book Ooze Zoo
 
@@ -228,7 +230,9 @@ book Toll Lot
 
 understand "told lot" as a mistake ("[if cross orc is in Toll Lot]The cross orc isn't open to verbal negotiation[else]You pretend you won an argument against the cross or and didn't just hand over money[end if].") when player is in Toll Lot.
 
-understand "crop orc" as a mistake ("That attack would boomerang, and not just because this is a palindrome-y game. The orc is lots, lots bigger than you.") when cross orc is quicknear.
+understand "crop orc" as a mistake ("That attack would boomerang, and not just because this is a palindrome-y game. The orc is lots, lots bigger than you.[paragraph break]Also, there is no farm nearby.") when cross orc is quicknear.
+
+understand "crop orc" as a mistake ("You don't want to hear the orc's bragging.") when cross orc is quicknear.
 
 understand "cray arc" as a mistake ("The arc doesn't need to change shape or become more volatile.") when player is in Toll Lot.
 

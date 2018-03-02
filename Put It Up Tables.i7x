@@ -539,6 +539,7 @@ table of diktat taunts
 randtxt
 "Dire! Rid!"
 "Dude(tte)! Dud!"
+"Duh, THUD!"
 "Mess [']em!"
 "Peewee, weep!"
 "Poorer! Oop!"

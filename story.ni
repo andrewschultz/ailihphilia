@@ -38,7 +38,7 @@ include undo output control by Erik Temple.
 volume definitions
 
 definition: a thing is moot:
-	if it is in devreserved, yes;
+	if it is moot, yes;
 	no;
 
 to moot (Q - a thing):
@@ -733,7 +733,7 @@ check useoning it with:
 					consider the postproc entry;
 				if there is a getit entry and player has getit entry: [try to let "it" be defined]
 					set the pronoun it to getit entry;
-				else if use1 entry is moot and use2 entry is not in DevReserved:
+				else if use1 entry is moot and use2 entry is not moot:
 					set the pronoun it to use2 entry;
 				if second noun is a workable:
 					wear-down second noun;
@@ -853,7 +853,7 @@ section pre-use rules [xxpre]
 [please add alphabetically]
 
 this is the check-sap-cup rule:
-	if wash saw is not in devreserved:
+	if wash saw is not moot:
 		say "The sap is stuck to the tree.";
 		the rule fails;
 	if liar grail is moot:
@@ -892,7 +892,7 @@ this is the maps-still-confusing rule:
 	if maps-explained is true:
 		say "You already got the Code Doc to decipher the spa maps.";
 		the rule fails;
-	if tent net is not in DevReserved:
+	if tent net is not moot:
 		say "'I might, but I need some help here first, to make my home here properly homey.'";
 		the rule fails;
 	the rule succeeds;
@@ -964,7 +964,7 @@ this is the kid-bye rule:
 	the rule succeeds;
 
 this is the kid-left rule:
-	if Verses Rev is moot and Knife Fink is moot, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'I should've gone with Mad Adam. Iller Elli. Able Melba.'";
+	if Verses Rev is moot and Knife Fink is moot, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with Mad Adam. Iller Elli. Able Melba.'";
 	the rule succeeds;
 
 this is the maps-explain rule:
@@ -1117,7 +1117,7 @@ check going north in Fun Nuf:
 	if Diktat Kid is moot, say "No need to go back." instead;
 	if north tron is not in Fun Nuf, say "Not until you built the North-Tron." instead;
 	if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
-	if murk rum is not in DevReserved, say "You have the yard ray, but it isn't, well, charged." instead;
+	if murk rum is not moot, say "You have the yard ray, but it isn't, well, charged." instead;
 	if player does not have ME gem or player does not have Taboo Bat, say "You feel well equipped ... but well equipped enough?";
 
 chapter Pact Cap
@@ -1220,7 +1220,7 @@ book Dirge Grid
 
 Dirge Grid is a room in Dim Mid. "The only way back is south[if Diktat Kid is in Dirge Grid], but you can't really run away from the Diktat Kid. A Tru Hurt is pointed at you, but if you deal with the Kid, that won't matter.[else], and you might as well go that way, now you've vanquished the Diktat Kid. Saner Arenas surround you [end if]"
 
-check going to Dirge Grid: if test set is not in DevReserved, say "[if player does not have yard ray]You don't have an adequate weapon[else]You need to get some practice with the Yard Ray before going north[end if]." instead;
+check going to Dirge Grid: if test set is not moot, say "[if player does not have yard ray]You don't have an adequate weapon[else]You need to get some practice with the Yard Ray before going north[end if]." instead;
 
 printed name of Dirge Grid is "[if Diktat Kid is moot]Top Spot[else]Dirge Grid[end if]"
 
@@ -1362,7 +1362,7 @@ understand the command "emit" as something new.
 understand "emit [text]" as emiting when player has yard ray.
 
 carry out emiting:
-	if murk rum is not in DevReserved, say "The Yard Ray isn't charged enough to emit anything." instead;
+	if murk rum is not moot, say "The Yard Ray isn't charged enough to emit anything." instead;
 	if player is in location of Yuge Guy, say "No...the Yuge Guy needs to be defeated by other means." instead;
 	if Diktat Kid is moot, say "You already got rid of the Diktat Kid." instead;
 	if the topic understood matches "noontime":
@@ -1481,7 +1481,7 @@ check going west in Dumb Mud:
 	if gnu dung is in Dumb Mud, say "Not through the gnu dung you aren't." instead;
 
 check going south in Dumb Mud:
-	if poo coop is not in DevReserved, say "The turf rut is too deep. You need a way to fill it in." instead;
+	if poo coop is not moot, say "The turf rut is too deep. You need a way to fill it in." instead;
 	if Mont Nom is unvisited, say "With the turf rut filled in, the way across remains stable, and it even smells okay! Bonus! You climb up to...";
 
 check going north in Dumb Mud:
@@ -2363,7 +2363,7 @@ the soot tattoos are a plural-named thing. description is "They're blank now, bu
 
 book Toll Lot
 
-Toll Lot is east of Emo Dome. It is in Yelpley. "[if cross orc is in Toll Lot]While it's easy enough to go back west to the Emo Dome, that cross orc doesn't seem to want to let you go north or south[else]You can go north or south with the cross orc gone or, well, back west, too[end if]. A crag arc rises to the east[if UFO tofu is not in DevReserved]--maybe it is hiding something[end if]."
+Toll Lot is east of Emo Dome. It is in Yelpley. "[if cross orc is in Toll Lot]While it's easy enough to go back west to the Emo Dome, that cross orc doesn't seem to want to let you go north or south[else]You can go north or south with the cross orc gone or, well, back west, too[end if]. A crag arc rises to the east[if UFO tofu is not moot]--maybe it is hiding something[end if]."
 
 [??snuff funs]
 
@@ -2585,7 +2585,7 @@ check taking rep popper:
 		now player has rep popper;
 		say "With the taboo bat in your possession, you just don't care about stuff like rep, so you have no problem taking the rep popper." instead;
 	if player has dork rod, say "With the dork rod, you aren't THAT worried about your rep, but you're still worried enough not to take the popper. Maybe you can do a bit better..." instead;
-	if dork rod is not in DevReserved, say "No way! You're not sure how much rep you have, but taking that rep popper would drop it a notch or more, and the prospect seems too horrible." instead;
+	if dork rod is not moot, say "No way! You're not sure how much rep you have, but taking that rep popper would drop it a notch or more, and the prospect seems too horrible." instead;
 
 [??Yuge Guy rep popper used what's wrong with you? I make boring people feel less boring vs you describing how you figured things out and only 26 possibilities really and also some trial and error]
 
@@ -2781,7 +2781,7 @@ the pill lip is peripheral scenery in Dopy Pod. "A Demo Med rests on the Pill Li
 
 report taking demo med:
 	say "The pill lip retracts as you take the demo med.";
-	move pill lip to DevReserved.
+	moot pill lip;
 
 book Pro Corp
 
@@ -2862,7 +2862,7 @@ talk-text of Psi Wisp is "It has nothing to say. It just pulses.".
 talk-text of Door Frood is "The Door Frood launches into how everyone is really stupid and at fault, and you can't really do anything except snark about it.".
 talk-text of Rob is "Rob yawns. He doesn't find you very interesting. Maybe there's a way to take advantage of that.".
 talk-text of sleep eels is "Maybe they are sending some sort of electric message you could detect with the right instrument, but they're not talking. You're more struck, though, by how uncomfortable they look while sleeping--wriggling about.".
-talk-text of Sniffins is "[if YOB ATTABOY is not in DevReserved]'Tony? Not! Poor lower class me is a failure! If only I had some success manual!'[else]'Oh. It's you again. If you were REALLY smart, you'd have taken the advice in that book you gave me.'[end if]".
+talk-text of Sniffins is "[if YOB ATTABOY is not moot]'Tony? Not! Poor lower class me is a failure! If only I had some success manual!'[else]'Oh. It's you again. If you were REALLY smart, you'd have taken the advice in that book you gave me.'[end if]".
 talk-text of Verses Rev is "The Verses Rev booms 'Erupt! Pure!' then piously intones how weirdos not in line with the Diktat Kid's values need to be eradicated.".
 talk-text of Yuge Guy is "'Believe Me. Adore Me. Believe!' O gee, ego, you think to yourself."
 
@@ -3103,7 +3103,7 @@ check going to Fun Nuf when being-chased is true: say "You feel yourself running
 the Psi Wisp is a chaser. chase-room of Psi Wisp is Pro Corp. description is "The Psi Wisp is very red, and it pulses fervently. If it had feelings, you'd be pretty sure it didn't like you.". "[one of]A Psi Wisp appears and starts chasing you![or]The Psi Wisp is still chasing you![stopping]".
 
 after looking when being-chased is false:
-	if player is in Pro Corp and psi wisp is not in DevReserved:
+	if player is in Pro Corp and psi wisp is not moot:
 		start-chase Psi Wisp;
 		say "The Psi Wisp begins to chase after you!";
 	if troll ort is moot and player is in Frush Surf and kayo yak is in Frush Surf:
@@ -3346,10 +3346,10 @@ done-for-good rule of Yell Alley is yell-alley-complete rule.
 section Apse Spa rule
 
 this is the apse-spa rule:
-	if puce cup is soddy and Bond Nob is not in DevReserved, continue the action;
+	if puce cup is soddy and Bond Nob is not moot, continue the action;
 	if sage gas is not off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if Bond Nob is not in devreserved:
+	if Bond Nob is not moot:
 		if player has puce cup, say "You need to USE the puce cup on the dose sod." instead;
 		say "You need something to carry the dose sod with." instead;
 	if maps-explained is true, say "USE MAPS ON BOG." instead;
@@ -3646,10 +3646,10 @@ to decide whether any-books-left:
 	no;
 
 to decide which book is cur-book:
-	if Door Frood is not in devreserved, decide on TI;
-	if King Nik is not in devreserved, decide on ERA FARE;
-	if cross orc is not in devreserved and gnu dung is moot, decide on NULL ILLUN;
-	if YOB ATTABOY is not in devreserved, decide on YOB ATTABOY;
+	if Door Frood is not moot, decide on TI;
+	if King Nik is not moot, decide on ERA FARE;
+	if cross orc is not moot and gnu dung is moot, decide on NULL ILLUN;
+	if YOB ATTABOY is not moot, decide on YOB ATTABOY;
 	decide on NULL ILLUN;
 
 machineables is a list of things variable. machineables is {stink knits, gold log, you buoy, bunk nub, Dirt Rid, eroded ore, trap art, DNA band, not-a-baton}. [?? if we use this a lot maybe we should make a property]
@@ -3687,9 +3687,9 @@ this is the yawn-way-complete rule:
 section Yell Alley rule
 
 this is the yell-alley rule:
-	if pity tip is moot and psi wisp is not in devreserved, continue the action;
+	if pity tip is moot and psi wisp is not moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if pity tip is not in devreserved, say "USE PITY TIP ON NAVY VAN." instead; [?SEEDY DEE'S]
+	if pity tip is not moot, say "USE PITY TIP ON NAVY VAN." instead; [?SEEDY DEE'S]
 
 this is the yell-alley-complete rule:
 	if player has TNT or TNT is moot, the rule succeeds;
