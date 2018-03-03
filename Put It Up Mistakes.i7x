@@ -17,6 +17,8 @@ book Apse Spa
 
 book Art Xtra
 
+understand "art ecetra" as a mistake ("One silly misspelling does not beget another.[mis of 79]") when player is in Art Xtra.
+
 book Birch Crib
 
 book Calcific Lac
@@ -105,7 +107,7 @@ book Fun Nuf
 
 understand "fun enuf" as a mistake ("Still ungrammatical![mis of 30]") when player is in Fun Nuf.
 
-understand "funk nuf" as a mistake ("No cool music plays.[mis of 31]") when player is in Fun Nuf.
+understand "funk nuf" as a mistake ("No cool music plays, but at least it doesn't smell worse.[mis of 31]") when player is in Fun Nuf.
 
 understand "fun snuf" as a mistake ("You vow to take saving fantasy worlds much more seriously. No more frivolity![mis of 32]") when player is in Fun Nuf.
 
@@ -214,6 +216,8 @@ understand "scram arcs" as a mistake ("The arcs stay still, but you can just go 
 
 book Seer Trees
 
+understand "seer brees" as a mistake ("[one of]A man throws a football at you from 50 yards away, and it drills you right in the chest. Accurate![or]The man doesn't appear again. He probably has better things to do than schlep around in some text adventure. Perhaps he is off eating at a QB BBQ.[stopping][mis of 80]") when player is in Seer Trees.
+
 understand "seer frees" as a mistake ("[if stark rats are in Seer Trees]It won't be THAT easy[else]You already feel free enough here[end if].[mis of 61]") when player is in Seer Trees.
 
 understand "stare rats" as a mistake ("You try to win a blinking contest, and maybe you could with one, but not that many.[mis of 62]") when stark rats are quicknear.
@@ -276,7 +280,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 to say mis of (n - a number):
 	let Q be entry N in checkoffs;
@@ -293,6 +297,7 @@ to say mis of (n - a number):
 				consider the dorule entry;
 				if the rule failed:
 					say "[paragraph break]A voice from behind the fourth wall whispers: [cluey entry]";
+					now mclu entry is true;
 					if mis-yet is false:
 						now mis-yet is true;
 						say "[paragraph break]NOTE: THINK[if refer-bonus is true]/REFER[end if] will show you the LLPs clued so far that you haven't figured, yet.[run paragraph on][line break]";

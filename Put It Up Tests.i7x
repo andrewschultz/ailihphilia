@@ -52,7 +52,7 @@ test roll10 with "test part1/test part2/test part3/test part4/test part5/test pa
 
 chapter mistake quizzing
 
-test m1 with "flex elf/flea elf/fun enuf/funk nuf/fun nuf/fun snuf/paco cap/pace cap/e/yawn way/s/wasp saw/evade dave/w/bork rob/borg rob/bore rob/worm row"
+test m1 with "flex elf/flea elf/fun enuf/funk nuf/fund nuf/fun snuf/paco cap/pack cap/e/yawn way/n/art ecetra/s/s/wasp saw/evade dave/w/bork rob/borg rob/bore rob/worm row/word row/get idiot/e/n/n/n/give idiot to frood/get all/e/use tip on van/get all/w/w/tend net/e/s/s/w/w/seer brees/seer frees/stare rats/start rats/use trap on rats/s/use bunk nub on eels/s/get all/e/moo doom/moo boom/get all/w/n/n/n/cola loc"
 
 Put It Up Tests ends here.
 

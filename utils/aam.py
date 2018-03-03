@@ -14,6 +14,11 @@ def usage():
     print("-d / -nd = show differences / don't, default =", on_off[difs])
     exit()
 
+def num_of(a):
+    temp = re.sub(".*mis of ", "", a)
+    temp = re.sub("\].*", "", temp)
+    return int(temp)
+
 on_off = ['off', 'on']
 difs = True
 copy_back = False
@@ -50,17 +55,14 @@ with open(mis) as file:
         if re.search("mis of [0-9]+", line):
             got[num_of(line)] = True
 
-
-x = 0
 if len(got.keys()) > 0:
-    x = max(got, key=got.get)
+    x = max(got, key=int)
     for i in range(1, x+1):
         if i not in got.keys():
             print("Skipped", i, "in mistake cues.")
-    print("maximum value of", mis, "in mistake cues")
+    print("maximum value of", x, "in mistake cues")
 else:
     print("First run...")
-
 
 cur_num = x
 
