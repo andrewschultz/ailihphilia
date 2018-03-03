@@ -3354,6 +3354,8 @@ done-for-good rule of Apse Spa is apse-spa-complete rule.
 
 done-for-good rule of Art Xtra is art-xtra-complete rule.
 
+done-for-good rule of Cold Loc is cold-loc-complete rule.
+
 done-for-good rule of Fun Nuf is trivially false rule.
 
 done-for-good rule of Swamp Maws is swamp-maws-complete rule.
@@ -3403,12 +3405,19 @@ section Birch Crib rule
 this is the birch-crib rule:
 	if maps-explained is true, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if player does not have tent net, say "To make the Code Doc happy, there's something [if Trapeze Part is visited]west of Evaded Ave[else] in Trapeze Part[end if] you can get." instead;
+	if player has tent net, say "USE TENT NET ON CODE DOC." instead;
+	if player does not have el doodle, say "There's something back in [Art Xtra] to pick up." instead;
+	if player does not have spa maps, say "You can change El Doodle into something the Code Doc can decipher." instead;
+	say "USE SPA MAPS ON CODE DOC." instead;
 
 section Calcific Lac rule
 
 this is the calcific-lac rule:
 	if dork rod is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if player has dork rod, say "USE DORK ROD ON TAO BOAT." instead;
+	say "You need to find an item somewhere else to feel the peace needed to enter the Tao Boat." instead;
 
 section Cold Loc rule
 
@@ -3423,7 +3432,7 @@ this is the cold-loc rule:
 	if player does not have puce cup, say "You need the puce cup from the Emo Dome." instead;
 	say "USE PUCE CUP ON PAST SAP." instead;
 
-this is the cold-loc-done rule:
+this is the cold-loc-complete rule:
 	if King Nik is moot and puce cup is sappy, the rule succeeds;
 	the rule fails;
 
@@ -3431,16 +3440,23 @@ section Deft Fed rule
 
 this is the deft-fed rule:
 	if Elan Ale is moot, continue the action;
+	if Bond Nob is not moot and yob attaboy is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if yob attaboy is not moot, say "USE YOB ATTABOY ON SNIFFINS." instead;
+	say "USE ELAN ALE ON SNIFFINS." instead;
+
+this is the deft-fed-complete rule:
+	if Elan Ale is moot, the rule succeeds;
+	the rule fails;
 
 section Dirge Grid rule
 
 this is the dirge-grid rule:
 	if player has the X-ITE TIX, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if Verses Rev is in Dirge Grid, say "Kill the Verses Rev.";
-	if Knife Fink is in Dirge Grid, say "Kill the Knife Fink.";
-	if Diktat Kid is in Dirge Grid, say "Kill the Diktat Kid.";
+	if Verses Rev is in Dirge Grid, say "Kill the Verses Rev." instead;
+	if Knife Fink is in Dirge Grid, say "Kill the Knife Fink." instead;
+	if Diktat Kid is in Dirge Grid, say "Kill the Diktat Kid." instead;
 
 section Dopy Pod rule
 
@@ -3475,7 +3491,8 @@ section Emo Dome rule
 this is the emo-dome rule:
 	if puce cup is not in Emo Dome and pulled-up is true, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if puce cup is in Emo Dome, say "Take the puce cup." instead;
+	if pulled-up is false, say "PULL UP." instead;
+	say "Take the puce cup." instead;
 
 section Evaded Ave rule
 
@@ -3508,6 +3525,10 @@ this is the frush-surf rule:
 	if kayo yak is moot, continue the action;
 	if player has stamp mats and gnu dung is in Dumb Mud, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if stamp mats are in Frush Surf, say "Take the stamp mats." instead;
+	if cap-pace is false, say "You need to make the pact cap a PACE CAP." instead;
+	if player does not have brag garb, say "You need some [if player has stink knits]cooler [end if]clothes." instead;
+	say "USE TROLL ORT ON BRAG GARB." instead;
 
 this is the frush-surf-complete rule:
 	if kayo yak is moot, the rule succeeds;
@@ -3540,6 +3561,8 @@ section Lair Trial rule
 this is the lair-trial rule:
 	if ergot ogre is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if kayo yak is in Lair Trial, say "YAK OKAY." instead;
+	say "[one of]You need to bring something that can knock the ogre off. You can't do it yourself.[or]Get the kayo yak to chase you.[stopping]";
 
 section Le Babel rule
 
@@ -3562,6 +3585,9 @@ section Mont Nom rule
 this is the mont-nom rule:
 	unless martini tram is off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if Ian is in Mont Nom, say "NAIL IAN." instead;
+	if number of solid ingredients carried by player > 0 and number of liquid ingredients carried by player > 0, say "[one of]You can make some food here.[or]USE [printed name of random solid ingredient carried by player in upper case] ON [printed name of random liquid ingredient carried by player in upper case].[stopping]" instead;
+	say "You need to find some more food before using it here." instead;
 
 section Moo Room rule
 
@@ -3609,7 +3635,11 @@ this is the pro-corp rule:
 section Red Roses Order rule
 
 this is the red-roses-order rule:
+	if taboo bat is not off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if madam is in Red Roses Order, say "USE BRO ORB ON MADAM." instead;
+	if player does not have balsa slab, say "You need to get the balsa slab from Frush Surf." instead;
+	say "USE BALSA SLAB ON SWORD ROWS." instead;
 
 section Scrap Arcs rule
 
