@@ -17,6 +17,7 @@ Utils:
 * 2pal.py = 2 word palindromes with optional first, last or middle string added, along with any combo of first/last name or word list
 * 32.py = sped up combo checker (30 sec vs 1 hour). It tracks the difference between a starting word and an ending word and puts the possible different words in a hash.
 * 3w.py = 3 word combo checker. Takes a while. Can skip uneven first/last palindromes e.g. stab bat.
+* aam.py = adjust all mistakes. This syncs the mistakes file so new "mistake" verbs contribute toward a hint.
 * bnam.py = best names.py. Takes 2 arguments: min length and if you need unique lettering
 * dnm.py = searches the table file for names that are reused in the source. Not palindrome specific, as it is used for Spell Woken too.
 * dno.py = searches the notes file for names and concepts that are reused in the source. Split by slashes, or anything right of a colon is deleted. Potentially not palindrome specific: we could use ! to start a line to say it's something we want to look a, since spoonerisms aren't as obvious.
