@@ -20,6 +20,7 @@ Utils:
 * bnam.py = best names.py. Takes 2 arguments: min length and if you need unique lettering
 * dnm.py = searches the table file for names that are reused in the source. Not palindrome specific, as it is used for Spell Woken too.
 * dno.py = searches the notes file for names and concepts that are reused in the source. Split by slashes, or anything right of a colon is deleted. Potentially not palindrome specific: we could use ! to start a line to say it's something we want to look a, since spoonerisms aren't as obvious.
+* fu.py = find-use, where we find if/when an item can be manipulated with the USE command.
 * mred.py = minor utility that redacts the game map before sending it to testers (may be able to expand to others)
 * palver.py = trivial palindrome verifier for source (palver.txt has list of stuff to ignore)
 * rely.py = what relies on what to get through the game. Needs auxiliary file rely.txt
