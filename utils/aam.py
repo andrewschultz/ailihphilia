@@ -2,13 +2,37 @@
 #
 # add all mistakes: adds a number [mis of #] to each line that doesn't have it
 
+import sys
 import os
 import re
 from collections import defaultdict
 from shutil import copy
 from filecmp import cmp
 
-compare = True
+def usage():
+    print("-c / -nc = copy over / don't, default =", on_off[copy_back])
+    print("-d / -nd = show differences / don't, default =", on_off[difs])
+    exit()
+
+on_off = ['off', 'on']
+difs = True
+copy_back = False
+count = 1
+
+while count < len(sys.argv):
+    arg = sys.argv[count]
+    if arg[0] == '-': arg = arg[1:]
+    if arg == 'c':
+        copy_back = True
+    elif arg == 'nc':
+        copy_back = False
+    elif arg == 'd':
+        difs = True
+    elif arg == 'nd':
+        difs = False
+    else:
+        usage()
+    count = count + 1
 
 def insert_num(my_str, my_num): # this may be more complex in the future
     return re.sub("\"\)", "[mis of {:d}]\")".format(my_num), my_str, 0)
@@ -52,9 +76,13 @@ with open(mis) as file:
 
 fout.close()
 
-if compare:
-    os.system("wm \"{:s}\" \"{:s}\"".format(mis, mis2))
-else:
+if difs:
+    if cmp(mis, mis2):
+        print("No changes. No compare shown.")
+    else:
+        os.system("wm \"{:s}\" \"{:s}\"".format(mis, mis2))
+
+if copy_back:
     if cmp(mis, mis2):
         print("No changes needed in mistakes file. Not copying over.")
     else:
