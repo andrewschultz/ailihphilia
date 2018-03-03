@@ -174,7 +174,7 @@ book My Gym
 
 understand "evade dave" as a mistake ("Dave's not here, man![mis of 46]") when player is in My Gym and Dave is moot.
 
-understand "wasp saw" as a mistake ("You don't need the wash saw to turn into something that might sting you[if Dave is moot]. Dave's enough[else if player has wash saw], especially since you are carrying it[else]. You should probably just take it, instead[end if].[mis of 47]") when wash saw is quicknear.
+understand "wasp saw" as a mistake ("You don't need the wash saw to turn into something that might sting you[if Dave is not moot]. Dave's enough to deal with, right now[else if player has wash saw], especially since you are carrying it[else]. You should probably just take it, instead[end if].[mis of 47]") when wash saw is quicknear.
 
 book Ooze Zoo
 
@@ -272,6 +272,8 @@ volume checking off mistakes from the player
 
 mist-found is a number that varies.
 
+mis-yet is a truth state that varies.
+
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
 checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
@@ -281,13 +283,19 @@ to say mis of (n - a number):
 	if Q is false:
 		now entry N in checkoffs is true;
 		increment mist-found;
+		if mist-found is 1:
+			say "[paragraph break](NOTE: this was a specific reject for a good try. For the most part, you don't need to riff on anything after the pact cap, but enough good guesses will tell you how to get secret points.)";
+			continue the action;
 		if the remainder after dividing mist-found by 10 is 0:
 			while cur-LLP-hint-row < number of rows in table of last lousy points:
 				increment cur-LLP-hint-row;
 				choose row cur-LLP-hint-row in table of last lousy points;
 				consider the dorule entry;
 				if the rule failed:
-					say "[paragraph break]Hint here, #[cur-LLP-hint-row].[run paragraph on]";
+					say "[paragraph break]A voice from behind the fourth wall whispers: [cluey entry]";
+					if mis-yet is false:
+						now mis-yet is true;
+						say "[paragraph break]NOTE: THINK[if refer-bonus is true]/REFER[end if] will show you the LLPs clued so far that you haven't figured, yet.[run paragraph on][line break]";
 					continue the action;
 
 volume prospective

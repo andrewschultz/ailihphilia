@@ -50,6 +50,10 @@ test roll8 with "test part1/test part2/test part3/test part4/test part5/test par
 test roll9 with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9".
 test roll10 with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9/test part10".
 
+chapter mistake quizzing
+
+test m1 with "flex elf/flea elf/fun enuf/funk nuf/fun nuf/fun snuf/paco cap/pace cap/e/yawn way/s/wasp saw/evade dave/w/bork rob/borg rob/bore rob/worm row"
+
 Put It Up Tests ends here.
 
 ---- DOCUMENTATION ----
