@@ -282,18 +282,31 @@ def bonus_mistake_check():
 def detect_region(a, b):
     if '[' not in a:
         return ('ignore', b)
-    temp = re.sub(".*\[", "", a.strip())
+    temp = re.sub(".*\[", "", a.strip().lower())
     temp = re.sub("\].*", "", temp)
     if semi_verbose: print("DEBUG:", temp)
     if 'odd do' in a.lower() or 'abide by the llp rule' in a.lower():
         return('odd do', temp)
+    my_region = ""
+    cmd = ""
     ary = temp.split("/")
-    if len(ary) == 1:
-        return (ary[0].lower(), None)
-    elif len(ary) > 2:
-        print("TOO MANY SLASHES:", a)
-        exit()
-    return (ary[0].lower(), ary[1].upper())
+    if 'reg-inc ' in a:
+        my_region = re.sub(".*reg-inc ", "", a.strip().lower())
+        my_region = re.sub(";.*", "", my_region)
+        if (len(ary) > 1):
+            print("NO SLASHES WHEN REGION IS DEFINED BY REG-INC:", a, end='')
+            print("NO SLASHES WHEN REGION IS DEFINED BY REG-INC:", a.rstrip())
+            exit()
+        cmd = ary[0]
+    else:
+        if len(ary) == 1:
+            return (ary[0].lower(), None)
+        elif len(ary) > 2:
+            print("TOO MANY SLASHES:", a)
+            exit()
+        my_region = ary[0]
+        cmd = ary[1]
+    return (my_region, cmd)
 
 # these two could be lumped together, but it was quicker to C&P for the moment
 
@@ -552,7 +565,7 @@ def get_stuff_from_source():
                 region_def_line[l2] = line_count
                 if semi_verbose: print("Noting region", l2)
                 continue
-            if ('score-inc' in line or 'abide by the llp rule' in line.lower()) and '\t' in line:
+            if ('score-inc' in line or 'abide by the llp rule' in line.lower()) and '\t' in line or 'reg-inc ' in line:
                 (temp_region, this_cmd) = detect_region(line, current_region)
                 if temp_region == 'ignore':
                     continue

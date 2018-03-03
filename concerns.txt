@@ -1,0 +1,7 @@
+Concerns so far:
+
+* Not sure how to navigate changes from guess the verb
+* still need to flesh out hints
+* LLPs are lumped together (2 in 1 place) -- we expect this by the Birthday Paradox, but I'd like to clean it up. There must be an empty room.
+
+* GT / going to a room can be different code oaths. after printing room description?
