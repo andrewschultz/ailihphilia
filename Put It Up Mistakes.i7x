@@ -266,6 +266,28 @@ book Yell Alley
 
 understand "pcp" as a mistake ("While searching for a bost, you're apprehended by a crank narc! I'm very disappointed in you. Not the whole drugs bit, but that this game didn't alter reality enough for you.[etg]") when player is in Yell Alley or player is in Evaded Ave.
 
+volume checking off mistakes from the player
+
+mist-found is a number that varies.
+
+cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
+
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+
+to say mis of (n - a number):
+	let Q be entry N in checkoffs;
+	if Q is false:
+		now entry N in checkoffs is true;
+		increment mist-found;
+		if the remainder after dividing mist-found by 2 is 0:
+			while cur-LLP-hint-row < number of rows in table of last lousy points:
+				increment cur-LLP-hint-row;
+				choose row cur-LLP-hint-row in table of last lousy points;
+				consider the dorule entry;
+				if the rule failed:
+					say "[paragraph break]Hint here, #[cur-LLP-hint-row].[run paragraph on]";
+					continue the action;
+
 volume prospective
 
 [?? understand "tamp mat" as a mistake ("That's not quite what to do. This is a game about palindromes, not homonyms.") when tame mat is quicknear.]

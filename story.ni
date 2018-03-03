@@ -1039,6 +1039,7 @@ this is the you-win rule: [xxwin]
 	say "As you wait, you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered by it?[wfak-d]";
 	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call them? It's a tough call between SOME MEMOS, SAGAS or SOLOS. Hmm, maybe DRAWN INWARD.";
 	end the story finally saying "Darn! Rad!";
+	sort the table of last lousy points in finord order;
 	the rule succeeds;
 
 chapter failed useons
@@ -4011,18 +4012,18 @@ this is the what-missed rule:
 chapter misses table
 
 table of last lousy points [xxllp]
-funstuff	dorule
-"BOOB or POOP or PAP to swear 'right"	pb-yet rule
-"REFER instead of THINK"	refer-yet rule
-"DIAL AID instead of AID"	dial-yet rule
-"PEEP instead of looking"	peep-yet rule
-"STATS to get the score"	stats-yet rule
-"TRACE CART to find an 'extra' book"	cart-traced rule
-"BALM LAB in the Bald Lab"	balm-yet rule
-"SLAM MAMMALS around the eels"	slam-yet rule
-"MUSS OPOSSUM to make a friend"	muss-yet rule
-"STACK CATS to help the senile felines"	cats-stacked rule
-"SEE BEES in Moo Room"	bees-seen rule
+funstuff	finord	dorule
+"BOOB or POOP or PAP to swear 'right"	1	pb-yet rule
+"REFER instead of THINK"	2	refer-yet rule
+"DIAL AID instead of AID"	3	dial-yet rule
+"PEEP instead of looking"	4	peep-yet rule
+"STATS to get the score"	5	stats-yet rule
+"TRACE CART to find an 'extra' book"	6	cart-traced rule
+"SLAM MAMMALS around the eels"	7	slam-yet rule
+"STACK CATS to help the senile felines"	8	cats-stacked rule
+"SEE BEES in Moo Room"	9	bees-seen rule
+"BALM LAB in the Bald Lab"	10	balm-yet rule
+"MUSS OPOSSUM to make a friend"	11	muss-yet rule
 
 this is the balm-yet rule:
 	if balm-got is true, the rule succeeds;
