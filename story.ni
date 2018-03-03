@@ -621,7 +621,9 @@ instead of swearing obscenely, next-rand table of swearstuff;
 
 chapter sleeping
 
-instead of sleeping, try waiting instead;
+instead of sleeping:
+	say "Zzz.[paragraph break]Wait, no. That's cheating... let's pretend you're waiting, instead.[paragraph break]";
+	try waiting instead;
 
 chapter waiting
 
@@ -799,7 +801,7 @@ puce cup	past sap	--	check-sap-cup rule	sap-to-cup rule	false	false	false	--	"Yo
 puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"The past sap pours into the liar grail and exposes how bad the grail has been over the years. As it cracks, along with the wall it was attached to to allow passage south, you snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL!"
 puce cup	dose sod	--	check-sod-cup rule	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
 puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley	"You give the Bond Nob the puce cup. Gulp! Gulp! 'Well... I have a lot of catching up to do. Can't hang around. I'm the Bond Nob, not the bonded nob. Here's some Elan Ale for you, to celebrate how cool you are for helping. Oh, and enjoy my home to the west.'"
-stamp mats	slate metals	Ye Key	--	--	true	false	false	Yelpley	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY."
+stamp mats	slate metals	Ye Key	--	--	true	false	false	Yelpley	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY. You find it hard to pull the stamp mats out, and when you take YE KEY, the mats quickly morph into the slate metals. Eh, well. Less inventory to worry about."
 demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' he looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
 YOB ATTABOY	Sniffins	Dirt Rid	--	--	true	true	false	Yelpley	"Sniffins accepts your gift. His sniffs slowly change from sadness to something more snooty. He thanks you for helping him be too good for you before handing you a Dirt Rid and kicking you out."
@@ -817,7 +819,7 @@ gate tag	soot tattoos	state tats	--	tats-peripheral rule	true	true	true	Yelpley	
 poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
 poo coop	turf rut	--	coop-full rule	shift-dumb-mud rule	true	true	true	Grebeberg	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture.[paragraph break]A bold lob! The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
 radar	made dam	eroded ore	--	radar-blink rule	true	false	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow. The radar plays a weird scale. Being close to the ore has damaged it somehow."
-NULL ILLUN	Known Wonk	--	--	--	true	true	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me.' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. And if it's simple, well, I need to know when simple stuff works.' The Known Wonk apologizes--it's back to a Tru Yurt for a thought session."
+NULL ILLUN	Known Wonk	--	--	bump-maws-back rule	true	true	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me.' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. And if it's simple, well, I need to know when simple stuff works.' The Known Wonk apologizes--it's back to the Tru Yurt for a thought session."
 el doodle	edits tide	spa maps	--	rahs-too rule	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps! And there is a bonus! It appears El Doodle was so jumbled, there were two things. Sharp rahs appear on another sheet of paper, as some sort of confused motivation, and you take them."
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Calcific Lac. As it gets near and bends away, you jump off, using the buoy to paddle and float back to Calcific Lac."
 dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
@@ -932,6 +934,11 @@ this is the bump-gulf rule:
 	shuffle-before Flu Gulf and Sneer Greens;
 	the rule succeeds;
 
+this is the bump-maws-back rule:
+	shuffle-before Dumb Mud and Le Babel;
+	shuffle-before Swamp Maws and Dumb Mud;
+	the rule succeeds;
+
 this is the bump-pod rule:
 	shuffle-before Dopy Pod and Toll Lot;
 	the rule succeeds;
@@ -1028,7 +1035,7 @@ this is the wear-garb rule:
 
 this is the you-win rule: [xxwin]
 	say "The Flee Elf greets you on the other side. 'Deified! Deified!' You ask hesitantly about the new adventures promised.[wfak-d]";
-	say "The X-ITE TIX lead to A REAL WORLD THAT WILL BE MORE EXCITING AFTER YOUR EXPERINCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a circular loop to 'back where you began' non-twist. Books like that always kind of annoyed you, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something. The Flee Elf shakes your hand and pulls out a device. 'This RIDE-DIR will help you return to your own world.'[wfak-d]";
+	say "The X-ITE TIX lead to A REAL WORLD THAT WILL BE MORE EXCITING AFTER YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a circular loop to 'back where you began' non-twist. Books like that always kind of annoyed you, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something. The Flee Elf shakes your hand and pulls out a device. 'This RIDE-DIR will help you return to your own world.'[wfak-d]";
 	say "As you wait, you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered by it?[wfak-d]";
 	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call them? It's a tough call between SOME MEMOS, SAGAS or SOLOS. Hmm, maybe DRAWN INWARD.";
 	end the story finally saying "Darn! Rad!";
@@ -1108,7 +1115,7 @@ to decide which number is roving-LLP: [Not location dependent: DIAL AID, STATS, 
 	if senile felines are in Moo Room, increment temp;
 	if slam-mam is false, increment temp;
 	if balm-got is false, increment temp;
-	if opossum is moot, increment temp;
+	if opossum is not moot, increment temp;
 	if DWELT LEWD is off-stage, increment temp;
 	if bees-seen is false, increment temp;
 	decide on temp;
@@ -1169,7 +1176,7 @@ carry out paceing:
 	if cap-pace is true, say "It's already a pace cap." instead;
 	if mrlp is Grebeberg, now cap-pace is whether or not cap-pace is false;
 	if cap-ever-pace is false:
-		score-inc; [Dim Mid/pace cap]
+		reg-inc Dim Mid; [pace cap]
 		now cap-ever-pace is true;
 		now pace-prev is false;
 		say "[if mrlp is not Grebeberg]You realize it can sort of be a pace cap, too, but there isn't enough open space to run around productively for too long.[else]You suddenly feel [pace-of]![end if]";
@@ -1673,7 +1680,7 @@ Mire Rim is west of Dumb Mud. It is in Grebeberg. "A made dam blocks your way we
 
 the made dam is scenery in Mire Rim. description is "It looks hastily put together, and you're not sure if it's actually protecting any great torrent of water."
 
-The Eroded Ore is a thing. description is "You're no expert metallurgist, but it's dim and porous and probably not as potent as it could be."
+some Eroded Ore is a thing. description is "You're no expert metallurgist, but it's dim and porous and probably not as potent as it could be."
 
 book Birch Crib
 
@@ -3229,6 +3236,9 @@ to shuffle-before (ra - a room) and (rb - a room):
 			say "(DEBUG: Swapping room walkthrough order for [ra] and [rb])";
 			add ra at entry x2 in L;
 			remove entry x1 from L;
+			if debug-verbose is true, say "DEBUG NEW LIST:[L].";
+			continue the action;
+	if debug-verbose is true, say "WARNING [rb] was already before [ra]. No shifting.";
 
 check aiding:
 	if dial-yet is false and word number 1 in the player's command is "dial":
@@ -3251,7 +3261,7 @@ check aiding:
 	unless the player yes-consents, say "Okay." instead;
 	now search-hint-room is true;
 	repeat with Q running through L:
-		if debug-verbose is true, say "Checking [Q] in order.";
+		if debug-verbose is true, say "Checking [Q] in order.[run paragraph on][line break]";
 		consider the done-rule of Q;
 		if the rule succeeded:
 			if Q is location of player:
@@ -3345,6 +3355,8 @@ done-for-good rule of Apse Spa is apse-spa-complete rule.
 done-for-good rule of Art Xtra is art-xtra-complete rule.
 
 done-for-good rule of Fun Nuf is trivially false rule.
+
+done-for-good rule of Swamp Maws is swamp-maws-complete rule.
 
 done-for-good rule of Worn Row is worn-row-complete rule.
 
@@ -3456,7 +3468,7 @@ this is the dumb-mud rule:
 	if Moo Room is unvisited, say "There's a part of southeast Grebeberg you haven't explored yet[if Ooze Zoo is visited and sleep eels are in Ooze Zoo]. You need to get past the sleep eels[end if]." instead;
 	if gnu dung is in Dumb Mud, say "[one of]You need a way to get rid of the gnu dung so you can go west.[or][if player does not have poo coop]The poo coop in the Moo Room will help you[else]USE POO COOP ON GNU DUNG[end if].[stopping]" instead;
 	if turf rut is in Dumb Mud, say "[one of]You need a way to fill up the turf rut.[or]You'd love to get rid of the poo coop.[or]USE POO COOP ON TURF RUT.[stopping]" instead;
-	say "[one of]You need something to cut the lie veil.[or][if player has exam axe]You will need an item you don't have yet for the Lie Veil[else]USE EXAM AXE ON LIE VEIL[end if][stopping]." instead;
+	say "[one of]You need something to cut the lie veil[or][if player has exam axe]You will need an item you don't have yet for the Lie Veil[else]USE EXAM AXE ON LIE VEIL[end if][stopping]." instead;
 
 section Emo Dome rule
 
@@ -3517,9 +3529,10 @@ this is the fun-nuf rule:
 section Gross Org rule
 
 this is the gross-org rule:
-	if Ned is moot and stink knits are in devreserved, continue the action;
+	if stink knits are not in Gross Org, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if Ned is moot, say "You need to take the stink knits." instead;
+	if Ned is not moot, say "DENY NED." instead;
+	if stink knits are in Gross Org, say "You need to take the stink knits." instead;
 	say "[one of]You need to get rid of Ned.[or]Ned wants a fight, which you want to decline.[or]A better way to say it is, DENY NED.[stopping]" instead;
 
 section Lair Trial rule
@@ -3533,6 +3546,7 @@ section Le Babel rule
 this is the le-babel rule:
 	if Bro Orb is not in Le Babel, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if player does not have tenet, say "You need something to help you take the Bro Orb. It's in [if Motto Bottom is visited]a place you haven't visited yet[else]Motto Bottom[end if]." instead;
 	say "All you really have to do here is take the Bro Orb." instead;
 
 section Mire Rim rule
@@ -3563,7 +3577,10 @@ this is the moo-room rule:
 section Motto Bottom rule
 
 this is the motto-bottom rule:
+	if tenet is moot or player has tenet, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if player does not have sage gas, say "You need to get something from Apse Spa." instead;
+	if player does not have tenet, say "USE SHARP RAHS ON GURU RUG." instead;
 
 section My Gym rule
 
@@ -3582,7 +3599,12 @@ this is the ooze-zoo rule:
 section Pro Corp rule
 
 this is the pro-corp rule:
+	if resale laser is not off-stage and DNA band is not in Pro Corp and gold log is not in Pro Corp, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if player does not have DNA band, say "Take the DNA band." instead;
+	if player does not have gold log, say "Take the gold log." instead;
+	if player does not have Gorge Grog, say "[one of]You need a liquid to pour down the butene tub. A caustic one.[or]Bon Snob has something.[stopping]" instead;
+	say "USE GORGE GROG ON BUTENE TUB."
 
 section Red Roses Order rule
 
@@ -3592,7 +3614,7 @@ this is the red-roses-order rule:
 section Scrap Arcs rule
 
 this is the scrap-arcs rule:
-	if slate metals are moot, continue the action;
+	if Ye Key is not off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if player does not have stamp mats, say "[one of]You need something from Grebeberg to cut the slate metals.[or][if Frush Surf is visited]Get the stamp mats from Frush Surf.[else]Look south of [trees-zoo].[end if][stopping]";
 	say "USE STAMP MATS ON SLATE METALS." instead;
@@ -3622,7 +3644,15 @@ this is the sneer-greens rule:
 section Swamp Maws rule
 
 this is the swamp-maws rule:
+	if dork rod is not moot and NULL ILLUN is moot, continue the action;
+	if moor broom is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
+	if NULL ILLUN is not moot, say "[if player has Known Wonk]USE NULL ILLUN ON KNOWN WONK[else]You need to give the Knowk Wonk a book[end if]." instead;
+	if player does not have moor broom, say "The enact cane can be combined to better purpose." instead;
+	say "USE MOOR BROOM ON TRU YURT." instead;
+
+this is the swamp-maws-complete rule:
+	if moor broom is moot, the rule succeeds;
 
 section Swept Pews rule
 
@@ -3962,14 +3992,19 @@ funstuff	dorule
 "SLAM MAMMALS around the eels"	slam-yet rule
 "MUSS OPOSSUM to make a friend"	muss-yet rule
 "STACK CATS to help the senile felines"	cats-stacked rule
-
-this is the cart-traced rule:
-	if DWELT LEWD is off-stage, the rule fails;
-	the rule succeeds;
+"SEE BEES in Moo Room"	bees-seen rule
 
 this is the balm-yet rule:
 	if balm-got is true, the rule succeeds;
 	the rule fails;
+
+this is the bees-seen rule:
+	if bees-seen is true, the rule succeeds;
+	the rule fails;
+
+this is the cart-traced rule:
+	if DWELT LEWD is off-stage, the rule fails;
+	the rule succeeds;
 
 this is the cats-stacked rule:
 	if senile felines are in devreserved, the rule succeeds;
@@ -4187,6 +4222,25 @@ carry out dving:
 	the rule succeeds;
 
 [below can be commented out.]
+
+chapter ahing
+
+ahing is an action out of world.
+
+understand the command "ah" as something new.
+
+understand "ah" as ahing.
+
+carry out ahing:
+	say "Order list: [L].";
+	repeat with Q running through L:
+		if Q is in Odd Do, next;
+		if Q is unvisited, next;
+		consider the done-rule of Q;
+		if the rule succeeded:
+			consider the done-for-good rule of Q;
+			say "Q is done[unless the rule succeeded], but not[end if] for good.";
+	the rule succeeds;
 
 chapter full monty extension
 

@@ -24,7 +24,7 @@ test part4 with "w/get all/e/e/use stamp mats on slate metals/w/n/n/w/w/w/n/n/us
 
 test part5 with "s/use yob attaboy on sniffins/use elan ale on sniffins/stand nat's/n/w/w/s/w/work row/use dirt rid on reviver/e/n/e/s/s/w/use cave vac on cassettes sac/e/n/n/e/use radar on crag arc/n/deny ned/get all/use ye key on etage gate/n/s/s/w/w/s/w/worn row/work row/use stink knits on rotator"
 
-test part6 with "word row/get some demos/e/n/e/e/n/n/get all/use gorge grog on butene tub/balm lab/s/s/w/w/s/w/work row/use gold log on rotator/e/n/w/w/s/s/e/stack cats/see bees/use some demos on yahoo hay/w/n/n/e/e/n/use straw arts on revolt lover/use gate tag on soot tattoos/s/s/w/word row/get null illun/work row/e/n/w/w/w/use poo coop on gnu dung/use poo coop on turf rut"
+test part6 with "word row/e/n/e/e/n/n/get all/use gorge grog on butene tub/balm lab/s/s/w/w/s/w/work row/use gold log on rotator/e/n/w/w/s/s/e/stack cats/see bees/use some demos on yahoo hay/w/n/n/e/e/n/use straw arts on revolt lover/use gate tag on soot tattoos/s/s/w/word row/get null illun/work row/e/n/w/w/w/use poo coop on gnu dung/use poo coop on turf rut"
 
 test part7 with "w/use radar on made dam/n/use null illun on known wonk/use el doodle on edits tide/n/use elope pole on kayak/use dork rod on tao boat/s/s/s/use tent net on code doc/use spa maps on code doc/n/e/e/n/e/use spa maps on go-by bog"
 
