@@ -848,7 +848,7 @@ Eroded Ore	reviver	Ore Zero	--	--	true	true	false	Yelpley	"The reviver whirs as 
 you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. It's so tempting and beautiful, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
 bang nab	TNT	TNT	--	--	true	true	false	Yelpley	"The Bang Nab walks on its index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course."
 nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
-rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"The rep popper deflates the Yuge Guy, leaving behind only murk rum."
+rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"'BOO! NOOB!' the Yuge Guy booms, but he's clearly scared. You hold the rep popper at the Yuge Guy until he deflates like a balloon and whooshes out over the smirk rims.[paragraph break]He was carrying some murk rum, which fell from his clothes. You pick it up."
 Bro Orb	Madam	Yard Ray	--	wash-saw-reveal rule	true	true	true	Yelpley	"The Bro Orb shines and drives Madam to rage. 'Live not on evil, madam, live not on evil!' you boom, as the ray does its work. She runs away, sobbing. The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Madam."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You will be able to smite a bad-faith pearl-clutcher for sure with one of these."
@@ -989,6 +989,7 @@ this is the maps-explain rule:
 	the rule succeeds;
 
 this is the mob-to-alley rule:
+	now girt rig is in Yell Alley;
 	now bomb mob is in Yell Alley;
 	now TNT is in Yell Alley;
 	shuffle-before Yell Alley and Sneer Greens;
@@ -1330,6 +1331,7 @@ to blanket-reject (bj - a thing):
 
 table of periphery [xxper]
 itm	reject
+girt rig	"The girt rig is too sturdy to move. But then, there's even sleazier stuff beyond it."
 redness ender	"You don't want to do anything crazy with it. You don't want to go near it. It's dangerous looking."
 decal placed	"The decal placed decal is just there to advertise the food. It's not critical to the story."
 snooty toons	"The snooty toons are just there for ambience. They're not critical to the story."
@@ -1340,7 +1342,7 @@ voodoo v	"You don't want or need to mess with the voodoo v."
 leet steel	"You want to focus on the Knife Fink and not the leet steel."
 part strap	"You want to focus on the Verses Rev and not the part strap."
 state tats	"You don't need to do anything to or with the state tats, now that you're wearing them."
-girt rig	"The girt rig is too sturdy to move. It's just there to block you exploring too far. The Yuge Guy [if Yuge Guy is moot]was[else]is[end if] the focus, here."
+smirk rims	"The smirk rims are only important if you let them be. In other words, they're not."
 mist sim	"Getting distracted by the mist sim would be a good way to get blindsided by Madam."
 Tru Hurt	"If you dispose of the Diktat Kid, the Tru Hurt won't be able to hurt you."
 Waster Fretsaw	"If you dispose of the Diktat Kid, the Waster Fretsaw won't be able to hurt you."
@@ -1452,7 +1454,7 @@ check going west in Flu Gulf when scorn rocs are in Flu Gulf:	say "The scorn roc
 
 book Sneer Greens
 
-Sneer Greens is west of Flu Gulf. It is in Grebeberg. "[if Yuge Guy is in Sneer Greens]Despite the impressive view, the place has gone to pot.[else]Nicer with the Yuge Guy gone. Still, it's...[end if][paragraph break]You can only go back east."
+Sneer Greens is west of Flu Gulf. It is in Grebeberg. "[if Yuge Guy is in Sneer Greens]Despite the impressive view, the place has gone to pot.[else]Nicer with the Yuge Guy gone. Still, it's...[end if][paragraph break]You can only go back east. Smirk rims block every way back except east."
 
 Sneer Greens is above Flu Gulf.
 
@@ -1461,7 +1463,7 @@ printed name of Sneer Greens is "[if Yuge Guy is in Sneer Greens]Sneer Greens[el
 understand "et tu butte" and "et/tu/butte" and "et tu" and "et/tu butte" as Sneer Greens when Yuge Guy is in Sneer Greens.
 
 after looking in Sneer Greens for the first time:
-	say "The Yuge Guy calls 'BOO! NOOB!' just to reinforce his contempt.";
+	say "'Believe Me. Adore Me. Believe!' O gee, ego, you think to yourself.";
 	continue the action;
 
 every turn when Yuge Guy is quicknear:
@@ -1471,7 +1473,7 @@ every turn when Yuge Guy is quicknear:
 		say "'";
 
 check going east in Sneer Greens:
-	if Yuge Guy is in Sneer Greens, say "'LOW AWOL!' the Yuge Guy booms, as you run away."
+	if Yuge Guy is in Sneer Greens, say "'LOW AWOL! BOO, NOOB!' the Yuge Guy booms, as you run away."
 
 chapter Yuge Guy
 
@@ -1479,9 +1481,9 @@ Yuge Guy is a proper-named person in Sneer Greens. description is "Bilgy. Glib."
 
 understand "evil/clive" and "evil clive" as Yuge Guy.
 
-chapter girt rig
+chapter smirk rims
 
-the girt rig is peripheral scenery in Sneer Greens. description is "It is too sturdy to climb or break down. But then, you probably just need[if Yuge Guy is moot]ed[end if] to deal with the Yuge Guy, here."
+the smirk rims are peripheral scenery in Sneer Greens. description is "They look at you as if to say, 'What makes you think you can beat the [if Yuge Guy is in Sneer Greens]Yuge Guy[else]Diktat Kid[end if]?'"
 
 chapter murk rum
 
@@ -2578,7 +2580,7 @@ The elope pole is a thing. description is "It looks foldable, maybe even separab
 
 book Yell Alley
 
-Yell Alley is east of Evaded Ave. It is in Yelpley. "The only way back is west. The way east is blocked by a [if navy van is in Yell Alley]navy van... you're not sure[else]bomb mob... so that's[end if] where the yelling is from."
+Yell Alley is east of Evaded Ave. It is in Yelpley. "[if girt rig is in Yell Alley]A girt rig blocks every way except back[else]The only way back is[end if] west. The way east is blocked by a [if navy van is in Yell Alley]navy van... you're not sure[else]bomb mob... so that's[end if] where the yelling is from."
 
 chapter navy van
 
@@ -2589,6 +2591,10 @@ understand "gig" as navy van.
 chapter snack cans
 
 the snack cans are a plural-named solid ingredient. description is "You're not sure what's in them, but whatever it is--well, you're not hungry enough. Yet.".
+
+chapter girt rig
+
+the girt rig is peripheral scenery. description is "It is too sturdy to climb or break down."
 
 chapter Mayo Yam
 
@@ -2807,11 +2813,16 @@ Pro Corp is north of Gross Org. It is in Yelpley. description is "A butene tub r
 
 Pro Corp is above Gross Org.
 
-check taking when player is in Pro Corp and Psi Wisp is in Pro Corp:
+instead of dropping when number of entries in multiple object list > 1 (this is the don't allow dropping all rule):
+	alter the multiple object list to { };
+	add noun to multiple object list;
+	continue the action;
+
+instead of taking a thing when player is in Pro Corp and Psi Wisp is in Pro Corp:
 	let Q be the noun;
 	if the number of entries in multiple object list is greater than 1:
 		alter the multiple object list to { };
-		add Q to the multiple object list; [?? saying {Q} doesn't work]
+		add Q to multiple object list;
 	say "OUCH! The psi wisp stings your hand before you can grab [the noun]." instead;
 
 report taking when player is in Pro Corp:
@@ -2882,7 +2893,7 @@ talk-text of Rob is "Rob yawns. He doesn't find you very interesting. Maybe ther
 talk-text of sleep eels is "Maybe they are sending some sort of electric message you could detect with the right instrument, but they're not talking. You're more struck, though, by how uncomfortable they look while sleeping--wriggling about.".
 talk-text of Sniffins is "[if YOB ATTABOY is not moot]'Tony? Not! Poor lower class me is a failure! If only I had some success manual!'[else]'Oh. It's you again. If you were REALLY smart, you'd have taken the advice in that book you gave me.'[end if]".
 talk-text of Verses Rev is "The Verses Rev booms 'Erupt! Pure!' then piously intones how weirdos not in line with the Diktat Kid's values need to be eradicated.".
-talk-text of Yuge Guy is "'Believe Me. Adore Me. Believe!' O gee, ego, you think to yourself."
+talk-text of Yuge Guy is "'I'm ... ' / 'TMI!'"
 
 volume gotoing
 
@@ -3290,6 +3301,7 @@ check aiding:
 	if search-hint-room is true:
 		now search-hint-room is false;
 		say "I'm out of ideas for rooms you've visited. Maybe look around the map a bit more.";
+	follow the notify score changes rule;
 	the rule succeeds;
 
 to describe-nearby (ro - a room):
@@ -4281,6 +4293,35 @@ carry out ahing:
 		if the rule succeeded:
 			consider the done-for-good rule of Q;
 			say "Q is done[unless the rule succeeded], but not[end if] for good.";
+	the rule succeeds;
+
+chapter finording
+
+finording is an action out of world.
+
+understand the command "finord" as something new.
+
+understand "finord" as finording.
+
+carry out finording:
+	sort table of last lousy points in finord order;
+	say "Last lousy point table now sorted according to finord column.";
+	the rule succeeds;
+
+chapter finordning
+
+finordning is an action applying to one number.
+
+understand "finord [number]" as finordning.
+
+carry out finordning:
+	if the number understood < 1 or the number understood > 20:
+		say "[the number understood] is out of range. Use 1-20 instead." instead;
+	try finording;
+	let Q be number of entries in checkoffs;
+	now hint-every-x is number understood;
+	let Q2 be hint-every-x * number of rows in table of last lousy points;
+	say "With clues every [hint-every-x] good guesses, you'll get a maximum of [Q2]. There are [Q] total checkoffs. You can[if Q < Q2][']t[end if] make it.";
 	the rule succeeds;
 
 chapter full monty extension

@@ -34,7 +34,7 @@ Initially sent to source code/repository November 2017.</history>
 			<objects>King Nik|Rift Fir</objects>
 		</room>
 		<room id="10" name="My Gym" subtitle="" x="96" y="96" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects custom="yes" customRight="-16" customDown="0">DAVE</objects>
+			<objects custom="yes" customRight="-16" customDown="0">DAVE|wash saw</objects>
 		</room>
 		<line id="11" name="" description="" style="dashed">
 			<dock index="0" id="1" port="w" />
