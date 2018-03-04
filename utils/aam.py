@@ -12,6 +12,7 @@ from filecmp import cmp
 def usage():
     print("-c / -nc = copy over / don't, default =", on_off[copy_back])
     print("-d / -nd = show differences / don't, default =", on_off[difs])
+    print("-r / -nr = reorder / don't, default =", on_off[reorder])
     exit()
 
 def num_of(a):
@@ -23,6 +24,7 @@ on_off = ['off', 'on']
 difs = True
 copy_back = False
 count = 1
+reorder = False
 
 while count < len(sys.argv):
     arg = sys.argv[count]
@@ -35,9 +37,16 @@ while count < len(sys.argv):
         difs = True
     elif arg == 'nd':
         difs = False
+    elif arg == 'r':
+        reorder = True
+    elif arg == 'nr':
+        reorder = False
     else:
         usage()
     count = count + 1
+
+def change_mis(my_str, my_num):
+    return re.sub("(\[[^\]]*\])?\"\)", "[mis of {:d}]\")".format(my_num), my_str, 0)
 
 def insert_num(my_str, my_num): # this may be more complex in the future
     return re.sub("\"\)", "[mis of {:d}]\")".format(my_num), my_str, 0)
@@ -64,14 +73,19 @@ if len(got.keys()) > 0:
 else:
     print("First run...")
 
-cur_num = x
+cur_num = (0 if reorder else x)
+
 
 with open(mis) as file:
     for line in file:
         if re.search("^understand.*as a mistake", line):
-            if not re.search("mis of [0-9]+", line):
+            if reorder:
                 cur_num = cur_num + 1
-                line = insert_num(line, cur_num)
+                line = change_mis(line, cur_num)
+            else:
+                if not re.search("mis of [0-9]+", line):
+                    cur_num = cur_num + 1
+                    line = insert_num(line, cur_num)
         elif re.search("is a list of truth state", line):
             line = "checkoffs is a list of truth states variable. checkoffs is {{ {:s} }}.\n".format(', '.join(['false'] * cur_num))
         fout.write(line)

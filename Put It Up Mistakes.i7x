@@ -164,6 +164,8 @@ understand "truco curt" as a mistake ("You don't have a deck of cards, and Curt 
 
 book Motto Bottom
 
+understand "tamp mat" as a mistake ("It's already pretty beaten down.") when player is in Motto Bottom and tame mat is in Motto Bottom.
+
 understand "gurn rug" as a mistake ("It's a guru rug. It's too good to be moved by such a cheap bailout.[mis of 43]") when guru rug is quicknear.
 
 book Moo Room
@@ -230,6 +232,8 @@ book Swamp Maws
 
 book Swept Pews
 
+understand "trod ort" as a mistake ("It looks run-down enough.") when troll ort is in Swept Pews.
+
 understand "liar frail" and "liar trail" as a mistake ("The grail remains in your way to the south. But it was worth a try.[mis of 64]") when liar grail is quicknear.
 
 book Toll Lot
@@ -282,6 +286,8 @@ cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
 checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
+hint-every-x is a number that varies. hint-every-x is 5.
+
 to say mis of (n - a number):
 	let Q be entry N in checkoffs;
 	if Q is false:
@@ -290,7 +296,7 @@ to say mis of (n - a number):
 		if mist-found is 1:
 			say "[paragraph break](NOTE: this was a specific reject for a good try. For the most part, you don't need to riff on anything after the pact cap, but enough good guesses will tell you how to get secret points.)";
 			continue the action;
-		if the remainder after dividing mist-found by 10 is 0:
+		if the remainder after dividing mist-found by hint-every-x is 0:
 			while cur-LLP-hint-row < number of rows in table of last lousy points:
 				increment cur-LLP-hint-row;
 				choose row cur-LLP-hint-row in table of last lousy points;
@@ -304,8 +310,6 @@ to say mis of (n - a number):
 					continue the action;
 
 volume prospective
-
-[?? understand "tamp mat" as a mistake ("That's not quite what to do. This is a game about palindromes, not homonyms.") when tame mat is quicknear.]
 
 Put It Up Mistakes ends here.
 
