@@ -257,7 +257,7 @@ when play begins:
 	say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because after being confused by it, you looked up the winning strategy on the internet. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers, before suddenly ...[wfak-d]";
 	say "'Put it up!' the Flee Elf yells after your fifth win in a row. You freeze--well, until you're knocked to the ground.[wfak-d]";
 	say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Raw Level War. You'll do for Yelpley, I guess.' The Flee Elf leads you away. 'The first thing to do is, figure how to take this cap.'[wfak-d]";
-	pass; [debug information below here. I've had problems putting it in and not deleting it, so I want to make things clear.]
+	do nothing; [debug information below here. I've had problems putting it in and not deleting it, so I want to make things clear.]
 
 volume parser errors operations and death
 

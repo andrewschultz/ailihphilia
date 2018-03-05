@@ -1,7 +1,8 @@
 # aam.py
 #
 # add all mistakes: adds a number [mis of #] to each line that doesn't have it
-
+#
+# we *could* do better than 2 passes through but
 import sys
 import os
 import re
@@ -12,17 +13,58 @@ from filecmp import cmp
 def usage():
     print("-c / -nc = copy over / don't, default =", on_off[copy_back])
     print("-d / -nd = show differences / don't, default =", on_off[difs])
-    print("-r / -nr = reorder / don't, default =", on_off[reorder])
+    print("-fr / -f = fill and reorder, trumps other options", on_off[reorder])
     exit()
 
 def my_mistake(a):
     x = a.split('"')
     return x[1]
 
+def change_mis(my_str, my_num):
+    return re.sub("(\[[^\]]*\])?\"\)", "[mis of {:d}]\")".format(my_num), my_str, 0)
+
+def insert_num(my_str, my_num): # this may be more complex in the future
+    return re.sub("\"\)", "[mis of {:d}]\")".format(my_num), my_str, 0)
+
 def num_of(a):
     temp = re.sub(".*mis of ", "", a)
     temp = re.sub("\].*", "", temp)
     return int(temp)
+
+def mistake_check(reord):
+    local_copy_back = True
+    cur_num = (0 if reord else x)
+    filre = ['fill', 'reorder']
+    fout = open(mis2, "w", newline='\n')
+    with open(mis) as file:
+        for line in file:
+            if re.search("^understand.*as a mistake", line):
+                if reord:
+                    cur_num = cur_num + 1
+                    line = change_mis(line, cur_num)
+                else:
+                    if not re.search("mis of [0-9]+", line):
+                        cur_num = cur_num + 1
+                        line = insert_num(line, cur_num)
+            elif re.search("is a list of truth state", line):
+                line = "checkoffs is a list of truth states variable. checkoffs is {{ {:s} }}.\n".format(', '.join(['false'] * cur_num))
+            fout.write(line)
+    fout.close()
+    print("RESULTS FOR", filre[reord], "........")
+    if difs:
+        if cmp(mis, mis2):
+            print("No changes. No compare shown.")
+        else:
+            print("Comparing")
+            os.system("wm \"{:s}\" \"{:s}\"".format(mis, mis2))
+    if copy_back:
+        if not local_copy_back:
+            print("Not copying back. Fix bugs first.")
+        if cmp(mis, mis2):
+            print("No changes needed in mistakes file. Not copying over.")
+        else:
+            print("Copying back")
+            copy(mis2, mis)
 
 on_off = ['off', 'on']
 difs = True
@@ -49,19 +91,11 @@ while count < len(sys.argv):
         usage()
     count = count + 1
 
-def change_mis(my_str, my_num):
-    return re.sub("(\[[^\]]*\])?\"\)", "[mis of {:d}]\")".format(my_num), my_str, 0)
-
-def insert_num(my_str, my_num): # this may be more complex in the future
-    return re.sub("\"\)", "[mis of {:d}]\")".format(my_num), my_str, 0)
-
 got = defaultdict(bool)
 
 mis = 'c:\Program Files (x86)\Inform 7\Inform7\Extensions\Andrew Schultz\Put It Up Mistakes.i7x'
 mis2 = "temp.i7x"
 # mis2 = mis + '2'
-
-fout = open(mis2, "w", newline='\n')
 
 last_num_of = 0
 last_mist = ""
@@ -89,33 +123,4 @@ if len(got.keys()) > 0:
 else:
     print("First run...")
 
-cur_num = (0 if reorder else x)
-
-
-with open(mis) as file:
-    for line in file:
-        if re.search("^understand.*as a mistake", line):
-            if reorder:
-                cur_num = cur_num + 1
-                line = change_mis(line, cur_num)
-            else:
-                if not re.search("mis of [0-9]+", line):
-                    cur_num = cur_num + 1
-                    line = insert_num(line, cur_num)
-        elif re.search("is a list of truth state", line):
-            line = "checkoffs is a list of truth states variable. checkoffs is {{ {:s} }}.\n".format(', '.join(['false'] * cur_num))
-        fout.write(line)
-
-fout.close()
-
-if difs:
-    if cmp(mis, mis2):
-        print("No changes. No compare shown.")
-    else:
-        os.system("wm \"{:s}\" \"{:s}\"".format(mis, mis2))
-
-if copy_back:
-    if cmp(mis, mis2):
-        print("No changes needed in mistakes file. Not copying over.")
-    else:
-        copy(mis2, mis)
+mistake_check(reorder)
