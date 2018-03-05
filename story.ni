@@ -241,6 +241,7 @@ when play begins:
 	if debug-state is true:
 		say "DEBUG NOTE: Maximum score is [maximum score].";
 		say "[if max-score of Odd Do is number of rows in table of last lousy points]LLPs = LLP table rows[else]Uh oh, [max-score of Odd Do] Odd Do points and [number of rows in table of last lousy points] LLP table rows. We need to fix this[end if].";
+	if debug-state is true, try percing;
 	now right hand status line is "[cur-score of mrlp]/[max-score of mrlp] [score]/[maximum score]";
 	now left hand status line is "[location of player] ([mrlp])";
 	sort table of last lousy points in random order;
@@ -1337,7 +1338,6 @@ decal placed	"The decal placed decal is just there to advertise the food. It's n
 snooty toons	"The snooty toons are just there for ambience. They're not critical to the story."
 pill lip	"The pill lip is just there to prevent the demo med from getting dirty on the ground."
 go fog	"The go fog is very dense. It pushes you back west even as you look at it. As if to say, go away, and also, get going with what you want and need to do."
-butene tub	"You don't need to tinker with the butene tub. It's empty, and that's probably a good thing. Just, a secret lab hideout needs something mysterious and weird."
 voodoo v	"You don't want or need to mess with the voodoo v."
 leet steel	"You want to focus on the Knife Fink and not the leet steel."
 part strap	"You want to focus on the Verses Rev and not the part strap."
@@ -1745,13 +1745,21 @@ check useoning tenet with Bro Orb: try taking Bro Orb instead;
 
 book Swamp Maws
 
-Swamp Maws is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west. You can go north or south here. [if Known Wonk is moot]The Known Wonk's Tru-Yurt is here. It looks really messy[end if]."
+Swamp Maws is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west, and storm rots block your way east. You can go [if Known Wonk is moot]north and [end if]south here. [if Known Wonk is moot]The Known Wonk's Tru-Yurt is here. It looks really messy[end if]."
 
 check going north in Swamp Maws when Known Wonk is in Swamp Maws: say "The Known Wonk pushes you back. 'You don't know how weird it is to the north. But I know a thing or two about adventuring theory.'" instead;
 
+check going west in Swamp Maws: say "The edits tide [if el doodle is moot]was more useful to help reconfigure El Doodle[else]is probably better for something edit-able[end if]." instead;
+
+check going east in Swamp Maws: say "You don't want or need to have anything to do with the storm rots." instead;
+
+chapter storm rots
+
+the storm rots are scenery in Swamp Maws. "Euugh. You don't want to go anywhere near them."
+
 chapter Known Wonk
 
-The Known Wonk is a person in Swamp Maws. "The Known Wonk stands by a Tru Yurt, [one of]figuring you'll have to do, even though you're not as interesting as a book[or]waiting for intellectual conversation[stopping].". description is "Not particularly disheveled, but then, not terribly charismatic. The Known Wonk seems lost in more esoteric matters than helping you figure how to save Grebeberg and Yelpley."
+The Known Wonk is a person in Swamp Maws. "The Known Wonk stands by a Tru Yurt, blocking the way north and [one of]figuring you'll have to do, even though you're not as interesting as a book[or]waiting for intellectual conversation[stopping].". description is "Not particularly disheveled, but then, not terribly charismatic. The Known Wonk seems lost in more esoteric matters than helping you figure how to save Grebeberg and Yelpley."
 
 chapter  Exam Axe
 
@@ -1819,13 +1827,17 @@ the ME gem is a thing. description is "You feel a strong urge to keep this and n
 
 book Apse Spa
 
-Apse Spa is east of Cold Loc. It is in Grebeberg. "The Apse Spa is covered with dose sod, which you can't take--you're not sick--but it looks beautiful. Pool gloop and Go-By Bog block pretty much every way except back west[if sage gas is off-stage]. You could traverse it, if you knew what you were doing[else]You already went through it, though[end if]."
+Apse Spa is east of Cold Loc. It is in Grebeberg. "The Apse Spa is covered with dose sod, which you can't take--you're not sick--but it looks beautiful. Pool gloop and Go-By Bog block pretty much every way except back west[if sage gas is off-stage]. You could traverse it, if you knew what you were doing[else]You already went through it, though[end if]. There are also spa taps here you shouldn't mess with, since you're not a paying customer."
 
 the dose sod is scenery in Apse Spa. "It looks ucky, but given you're in an Apse Spa, it may have health benefits for those that need them."
 
 Go-By Bog is scenery in Apse Spa. description is "It's too hazy. You'd get lost navigating it without a lot of help."
 
 The pool gloop is peripheral scenery in Apse Spa. "The pool gloop is probably to help people convalesce, but you're not sick."
+
+chapter spa taps
+
+some spa taps are plural-named peripheral scenery in Apse Spa. "They probably keep the spa feeling relaxing, somehow. You resist the urge to twiddle them."
 
 chapter sage gas
 
@@ -4320,6 +4332,28 @@ carry out finordning:
 	now hint-every-x is number understood;
 	let Q2 be hint-every-x * number of rows in table of last lousy points;
 	say "With clues every [hint-every-x] good guesses, you'll get a maximum of [Q2]. There are [Q] total checkoffs. You can[if Q < Q2][']t[end if] make it.";
+	the rule succeeds;
+
+chapter percing
+
+percing is an action out of world.
+
+understand the command "perc" as something new.
+
+understand "perc" as percing.
+
+carry out percing:
+	let count be 0;
+	repeat through table of periphery:
+		if itm entry is not peripheral:
+			if itm entry is state tats, next;
+			say "[itm entry] is in periphery table but is not peripheral.";
+			increment count;
+	repeat with Q running through peripheral things:
+		if Q is not an itm listed in table of periphery:
+			say "Need periphery entry for [Q].";
+			increment count;
+	say "[if count is 0]Yay! Periphery succeeds![else][count] periphery errors.[end if]";
 	the rule succeeds;
 
 chapter full monty extension
