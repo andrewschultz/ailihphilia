@@ -52,7 +52,17 @@ test roll10 with "test part1/test part2/test part3/test part4/test part5/test pa
 
 chapter mistake quizzing
 
-test m1 with "flex elf/flea elf/fun enuf/funk nuf/fund nuf/fun snuf/paco cap/pack cap/e/yawn way/n/art ecetra/s/s/wasp saw/evade dave/w/bork rob/borg rob/bore rob/worm row/word row/get idiot/e/n/n/n/give idiot to frood/get all/e/use tip on van/get all/w/w/tend net/e/s/s/w/w/seer brees/seer frees/stare rats/start rats/use trap on rats/s/use bunk nub on eels/s/get all/e/moo doom/moo boom/get all/w/n/n/n/cola loc"
+[each one is 10 mistakes. I may cut this down or add to it based on what you find.]
+
+[finord and trying a LLP is worth checking as well.]
+
+test m1 with "finord 3/flex elf/flea elf/fun enuf/funk nuf/fund nuf/fun snuf/paco cap/pack cap/e/yawn way/n/art ecetra"
+
+test m2 with "s/s/wasp saw/evade dave/w/bork rob/borg rob/bore rob/worm row/word row/get idiot/e/n/n/n/door brood/give idiot to frood/get all/e/use tip on van/get all/w/w/tend net/e/s/s/s/w/get era fare/work row/use trap art on reifier/w/w/seer brees/seer frees/stare rats/start rats/use trap on rats/s/use bunk nub on eels/s/get all/e/moo doom"
+
+test m3 with "moo boom/get all/w/n/n/n/cola loc/use era fare on king nik/s/e/e/purr up/puff up/e/pull up/get all/puck cup/emo home/w/w/n/use saw on sap/s/e/e/s/trod ort"
+
+test m4 with "get all/use cup on grail/liar trail/n/w/w/w/n/e/use puce cup on dose sod/spa caps/spa naps/spa raps/spa zaps/s/drawn ward/bony nob/bone nob/bonk nob/bong nob"
 
 Put It Up Tests ends here.
 

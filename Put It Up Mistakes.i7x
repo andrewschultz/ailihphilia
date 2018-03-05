@@ -15,6 +15,14 @@ to decide whether (mt - a thing) is/are quicknear:
 
 book Apse Spa
 
+understand "spa caps" as a mistake ("But you already have your pace cap!") when player is in Apse Spa or spa maps are quicknear.
+
+understand "spa naps" as a mistake ("No time to relax! There's adventuring to be had!") when player is in Apse Spa or spa maps are quicknear.
+
+understand "spa raps" as a mistake ("The spa is a place of peace. Stop that noise, and get off mylawn!") when player is in Apse Spa or spa maps are quicknear.
+
+understand "spa zaps" as a mistake ("You don't need a weapon.") when player is in Apse Spa or spa maps are quicknear.
+
 book Art Xtra
 
 understand "art ecetra" as a mistake ("One silly misspelling does not beget another.[mis of 79]") when player is in Art Xtra.
@@ -65,7 +73,7 @@ understand "bone nob" as a mistake ("Out of your league.[mis of 14]") when Bond 
 
 understand "bonk nob" as a mistake ("That'd let you get west ... until the nob woke up and called a few friends.[mis of 15]") when Bond Nob is quicknear.
 
-understand "bong nob" as a mistake ("The Bond Nob prefers alcohol.[mis of 16]") when Bond Nob is quicknear.
+understand "bong nob" as a mistake ("The Bond Nob probably knows someone but prefers alcohol.[mis of 16]") when Bond Nob is quicknear.
 
 understand "drawn ward" as a mistake ("The room remains text-based.[mis of 17]") when player is in Drawl Ward.
 
@@ -242,7 +250,9 @@ understand "told lot" as a mistake ("[if cross orc is in Toll Lot]The cross orc 
 
 understand "crop orc" as a mistake ("That attack would boomerang, and not just because this is a palindrome-y game. The orc is lots, lots bigger than you.[paragraph break]Also, there is no farm nearby.[mis of 66]") when cross orc is quicknear.
 
-understand "crop orc" as a mistake ("You don't want to hear the orc's bragging.[mis of 67]") when cross orc is quicknear.
+understand "croc orc" as a mistake ("The orc is fearsome enough without becoming a total genetic monstrosity.[mis of 67]") when cross orc is quicknear.
+
+understand "crow orc" as a mistake ("The orc remains silent (yay) and flightless (boo).") when cross orc is quicknear.
 
 understand "cray arc" as a mistake ("The arc doesn't need to change shape or become more volatile.[mis of 68]") when player is in Toll Lot.
 

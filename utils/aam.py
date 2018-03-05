@@ -15,6 +15,10 @@ def usage():
     print("-r / -nr = reorder / don't, default =", on_off[reorder])
     exit()
 
+def my_mistake(a):
+    x = a.split('"')
+    return x[1]
+
 def num_of(a):
     temp = re.sub(".*mis of ", "", a)
     temp = re.sub("\].*", "", temp)
@@ -59,10 +63,22 @@ mis2 = "temp.i7x"
 
 fout = open(mis2, "w", newline='\n')
 
+last_num_of = 0
+last_mist = ""
+this_mist = ""
+
 with open(mis) as file:
     for line in file:
         if re.search("mis of [0-9]+", line):
-            got[num_of(line)] = True
+            nol = num_of(line)
+            if nol in got.keys():
+                print("WARNING", nol, "pops up twice in mistake file.")
+            got[nol] = True
+            this_mist = my_mistake(line)
+            if nol - last_num_of != 1:
+                print("WARNING bad delta from", last_mist, last_num_of, "to", this_mist, nol)
+            last_num_of = nol
+            last_mist = this_mist
 
 if len(got.keys()) > 0:
     x = max(got, key=int)
