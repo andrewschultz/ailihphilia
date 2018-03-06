@@ -215,8 +215,6 @@ T-Rex, Exert!
 
 Grerg
 
-door brood
-
 Nev Even
 
 Neg Gen
@@ -729,11 +727,6 @@ spacers recaps
 space caps
 speedy deeps
 spar traps
-spa zaps
-spa caps
-spa raps
-spa taps
-spa naps: reference to Apse Spa
 sprats tarps
 spool gloops
 sprawl warps
@@ -746,7 +739,6 @@ sprew twerps
 sparth traps
 stem mammets
 strap parts
-Storm Rots:new location?
 star brats:star frats
 Stella Ballets
 stops eyespots
@@ -853,7 +845,6 @@ womb mow
 Ya May
 Yah Shay
 Yar Gray:Yar Pray
-yawl way
 # yarded ray
 yank nay
 yes mimsey

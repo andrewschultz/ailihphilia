@@ -17,7 +17,7 @@ book Apse Spa
 
 understand "spa caps" as a mistake ("But you already have your pace cap![mis of 1]") when player is in Apse Spa or spa maps are quicknear.
 
-understand "spa naps" as a mistake ("No time to relax! There's adventuring to be had![mis of 88]") when player is in Apse Spa or spa maps are quicknear.
+understand "spa naps" as a mistake ("No time to relax! There's adventuring to be had![mis of 2]") when player is in Apse Spa or spa maps are quicknear.
 
 understand "spa raps" as a mistake ("The spa is a place of peace. Stop that noise, and get off mylawn![mis of 3]") when player is in Apse Spa or spa maps are quicknear.
 
@@ -204,7 +204,7 @@ understand "DNA hand" as a mistake ("Right idea, but you can't do it on your own
 
 understand "balk lab" as a mistake ("There's not much to do or say here, for sure[if balm-got is false]![else]--well, maybe something that's not quite BALK.[end if][mis of 59]") when player is in Pro Corp.
 
-understand "Ball Lab" as a mistake ("Nothing fun explodes out from the walls or ceiling.[mis of 60]") when player is in Pro Corp.
+understand "ball lab" as a mistake ("Nothing fun explodes out from the walls or ceiling.[mis of 60]") when player is in Pro Corp.
 
 understand "golf log" as a mistake ("There is no Par Trap to navigate here, so you don't need to make a golf log.[mis of 61]") when gold log is quicknear.
 
@@ -294,7 +294,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 

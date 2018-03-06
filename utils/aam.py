@@ -65,12 +65,16 @@ def mistake_check(reord):
         else:
             print("Copying back")
             copy(mis2, mis)
+    elif not cmp(mis, mis2):
+        print("Run -c to copy changes over.")
+
 
 on_off = ['off', 'on']
 difs = True
 copy_back = False
 count = 1
 reorder = False
+max_errs = 9
 
 while count < len(sys.argv):
     arg = sys.argv[count]
@@ -87,6 +91,11 @@ while count < len(sys.argv):
         reorder = True
     elif arg == 'nr':
         reorder = False
+    elif arg == 'm':
+        try:
+            max_errs = int(sys.argv[count+1])
+        except:
+            print("Need # argument after m.")
     else:
         usage()
     count = count + 1
@@ -101,16 +110,20 @@ last_num_of = 0
 last_mist = ""
 this_mist = ""
 
+errs = 0
+
 with open(mis) as file:
     for line in file:
         if re.search("mis of [0-9]+", line):
             nol = num_of(line)
             if nol in got.keys():
                 print("WARNING", nol, "pops up twice in mistake file.")
+                errs = errs + 1
             got[nol] = True
             this_mist = my_mistake(line)
             if nol - last_num_of != 1:
                 print("WARNING bad delta from", last_mist, last_num_of, "to", this_mist, nol)
+                errs = errs + 1
             last_num_of = nol
             last_mist = this_mist
 
@@ -122,5 +135,9 @@ if len(got.keys()) > 0:
     print("maximum value of", x, "in mistake cues")
 else:
     print("First run...")
+
+if max_errs and errs > max_errs and not reorder:
+    print("Forcing reorder since there are more than", max_errs, "numbering errors.")
+    reorder = True
 
 mistake_check(reorder)
