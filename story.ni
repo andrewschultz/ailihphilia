@@ -1725,6 +1725,8 @@ chapter made dam
 
 the made dam is scenery in Mire Rim. description is "It looks hastily put together, and you're not sure if it's actually protecting any great torrent of water."
 
+instead of attacking made dam, say "You don't want to make it a ... maddened dam."
+
 chapter eroded ore
 
 some Eroded Ore is a thing. description is "You're no expert metallurgist, but it's dim and porous and probably not as potent as it could be."

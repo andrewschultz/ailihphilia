@@ -29,6 +29,8 @@ understand "art ecetra" as a mistake ("One silly misspelling does not beget anot
 
 book Birch Crib
 
+understand "cods doc" as a mistake ("No way. It's nice to be around someone non-fishy, actually.[mis of 88]") when player is in Birch Crib.
+
 book Calcific Lac
 
 understand "tao goat" as a mistake ("The goat wouldn't remain placid for long once it was plunged into water.[mis of 6]") when player is in Calcific Lac.
@@ -94,6 +96,8 @@ understand "turnon rut" and "turn on rut" as a mistake ("No innuendo here! The g
 book Emo Dome
 
 understand "emo home" as a mistake ("It's too wide open a space.[mis of 29]") when player is in Emo Dome.
+
+understand "emo tome" as a mistake ("That would be out of place among all the stupid jokes, here.[mis of 89]") when player is in Emo Dome.
 
 understand "puck cup" as a mistake ("There's no rink nir. Near.[mis of 30]") when puce cup is quicknear.
 
@@ -196,11 +200,19 @@ understand "eel glee" as a mistake ("The eels squirm a bit. I bet they're having
 
 understand "sleet eels" as a mistake ("They are alive. Turning them to metal would be cruel.[mis of 56]") when sleep eels are quicknear.
 
+understand "sleek eels" as a mistake ("The eels don't need dexterity. They need comfort. They are slippery enough.[mis of 90]") when sleep eels are quicknear.
+
 book Pro Corp
 
 understand "dna land" as a mistake ("Biochemistry has its own nuances with symmetry, but we're sticking with something a lot dumber, here.[mis of 57]") when DNA band is quicknear or DNA hand is quicknear.
 
 understand "DNA hand" as a mistake ("Right idea, but you can't do it on your own. You need technology to help you.[mis of 58]") when DNA band is quicknear.
+
+understand "DNA sand" as a mistake ("That will happen with the passage of time.[mis of 91]") when DNA band is quicknear or DNA hand is quicknear.
+
+understand "dna wand" as a mistake ("No. You know TRUE MAGIC MUST COME FROM WITHIN.[mis of 92]") when DNA band is quicknear or DNA hand is quicknear.
+
+understand "band nab" as a mistake ("The bang nab tries to grap itself. It fails.[mis of 93]") when bang nab is quicknear.
 
 understand "balk lab" as a mistake ("There's not much to do or say here, for sure[if balm-got is false]![else]--well, maybe something that's not quite BALK.[end if][mis of 59]") when player is in Pro Corp.
 
@@ -238,6 +250,8 @@ book Sneer Greens
 
 book Swamp Maws
 
+understand "swami maws" as a mistake ("They can't quite be. The Known Wonk's knowledge is not universal enough.[mis of 94]") when player is in Swamp Maws.
+
 book Swept Pews
 
 understand "trod ort" as a mistake ("It looks run-down enough.[mis of 71]") when troll ort is in Swept Pews.
@@ -257,6 +271,8 @@ understand "crow orc" as a mistake ("The orc remains silent (yay) and flightless
 understand "cray arc" as a mistake ("The arc doesn't need to change shape or become more volatile.[mis of 77]") when player is in Toll Lot.
 
 understand "crap arc" as a mistake ("You might cause a mudslide, or worse.[mis of 78]") when player is in Toll Lot or player is in Scrap Arcs.
+
+understand "crass arc" as a mistake ("[if cross orc is in Toll Lot]The cross orc and crag arc don't fuse together. Rats[else]You spend a few seconds feeling deeply offended by the crag arc[end if].[mis of 95]") when player is in Toll Lot or player is in Scrap Arcs.
 
 understand "cram arc" as a mistake ("You can't stuff anything in it.[mis of 79]") when player is in Scrap Arcs.
 
@@ -286,6 +302,8 @@ book Yell Alley
 
 understand "pcp" as a mistake ("While searching for a bost, you're apprehended by a crank narc! I'm very disappointed in you. Not the whole drugs bit, but that this game didn't alter reality enough for you.[etg][mis of 87]") when player is in Yell Alley or player is in Evaded Ave.
 
+understand "nacelle can" as a mistake ("You don't need a huge engine.[mis of 96]") when player has snack cans.
+
 volume checking off mistakes from the player
 
 mist-found is a number that varies.
@@ -294,7 +312,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 

@@ -647,6 +647,7 @@ randtxt
 table of yuge taunts
 randtxt
 "A papa! A papa!"
+"Ahahahahahaha!"
 "Gibe! Big!"
 "Hog, oh!"
 "Huge! Guh!"

@@ -112,7 +112,7 @@ randtxt
 table of yuge taunts
 randtxt
 "A papa! A papa!"
-"Gibe! Big!"
+"Ahahahahahaha!"
 
 Put it Up debug Tables ends here.
 
