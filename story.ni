@@ -88,6 +88,9 @@ aid-detail is a truth state that varies.
 
 debug-verbose is a truth state that varies.
 
+to display-dropbox-link:
+	say "If you can take a look at https://www.dropbox.com/s/hex2w7dzhs8lg5k/piu-concerns.txt?dl=0 to see if anything rings a bell, that would be a big help. I didn't want to expose this before a first play through."
+
 volume parser simplification
 
 Understand the command "slice" as something new.
@@ -202,6 +205,7 @@ check requesting the score:
 	if player has Set O Notes and north tron is off-stage:
 		let ni be number of tronparts carried by the player;
 		say "You also have [ni] of [number of tronparts] piece[if ni is not 1]s[end if] of the North Tron, according to the epicer recipe.";
+	if mist-found > 0, say "[line break]You've also found [mist-found] of [number of entries in checkoffs] palindromes that were there but not critical to the story. [if mist-found * 2 > number of entries in checkoffs]Very impressive![else]Don't knock yourself out trying to find them all.[end if]";
 	the rule succeeds;
 
 to say to-get-max:
@@ -241,7 +245,6 @@ when play begins:
 	if debug-state is true:
 		say "DEBUG NOTE: Maximum score is [maximum score].";
 		say "[if max-score of Odd Do is number of rows in table of last lousy points]LLPs = LLP table rows[else]Uh oh, [max-score of Odd Do] Odd Do points and [number of rows in table of last lousy points] LLP table rows. We need to fix this[end if].";
-	if debug-state is true, try percing;
 	now right hand status line is "[cur-score of mrlp]/[max-score of mrlp] [score]/[maximum score]";
 	now left hand status line is "[location of player] ([mrlp])";
 	sort table of last lousy points in random order;
@@ -1052,6 +1055,7 @@ this is the you-win rule: [xxwin]
 	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call them? It's a tough call between SOME MEMOS, SAGAS or SOLOS. Hmm, maybe DRAWN INWARD.";
 	end the story finally saying "Darn! Rad!";
 	sort the table of last lousy points in finord order;
+	if in-beta is true, display-dropbox-link;
 	the rule succeeds;
 
 chapter failed useons
@@ -1607,7 +1611,7 @@ instead of eating ark of okra: say "You don't know how long it's been out here. 
 
 chapter martini tram
 
-the martini tram is a tronpart. "That martini tram that appeared from Mont Nom is here.". description is "[if player has epicer recipt]The martini tram looks like it'll provide a handy base for the future North-Tron the epicer recipe described[else]You're not sure what it is for, but it seems sturdy[end if].". [?? "examined" as a property]
+the martini tram is a tronpart. "That martini tram that appeared from Mont Nom is here.". description is "[if player has epicer recipe]The martini tram looks like it'll provide a handy base for the future North-Tron the epicer recipe described[else]You're not sure what it is for, but it seems sturdy[end if].". [?? "examined" as a property]
 
 chapter Ian
 
@@ -4156,6 +4160,9 @@ volume beta testing - not for release
 when play begins:
 	now in-beta is true;
 
+check quitting the game:
+	display-dropbox-link;
+
 chapter llping
 
 llping is an action out of world.
@@ -4307,6 +4314,9 @@ when play begins (this is the make sure everyone is chatty rule):
 		say "YAY all people accounted for!";
 	else:
 		say "[count] of [number of people] unaccounted for.";
+
+when play begins (this is the miscellaneous deep testing rule):
+	if debug-state is true, try percing;
 
 chapter adeing
 
