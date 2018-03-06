@@ -22,6 +22,7 @@ pal_list = defaultdict(str)
 check_possible_max = 25
 check_possible = True
 only_stdin = False
+read_file = False
 
 every_cr = 4
 
@@ -32,6 +33,16 @@ end_cand = defaultdict(lambda: defaultdict(bool))
 start_cand = defaultdict(lambda: defaultdict(bool))
 
 hdr = "=" * 30
+
+def read_it_all():
+    got_what = defaultdict(int)
+    with open('c:/games/inform/put-it-up.inform/Source/1w.txt') as file:
+        for line in file:
+            if line.startswith('#'): continue
+            if line.startswith(';'): break
+            q = line.strip().lower().split()
+            for z in q: got_what[z] = got_what[z] + 1
+    return sorted(got_what.keys())
 
 def read_in(a):
     with open(a) as file:
@@ -50,6 +61,7 @@ def usage():
     print("(Capital) C means try all consonants e.g. bVg = big bag bog bug beg byg")
     print("-i uses stdin.")
     print("-m adjusts the maximum possible palindromes we check for.")
+    print("-f reads data from 1w.txt which has all the game critical stuff.")
     print("-? shows this usage without telling you you wrote in a bad flag")
     print()
     print("PROTIP: sending several words on the command line at once can save time.")
@@ -135,7 +147,7 @@ def palz(pals):
             print("Nothing found for", x)
     if can_increase: print("Use -m to increase maximum # of results, currently", check_possible_max)
     end_time = time.time()
-    print("Total time taken to extract palindromes: {:.4f} seconds.".format(end_time - start_time))
+    print("Total time taken to extract", len(pals), "palindrome sets: {:.4f} seconds.".format(end_time - start_time))
 
 argcount = 0
 
@@ -145,6 +157,9 @@ while argcount < len(sys.argv) - 1:
     xl = xr.lower()
     if xl == "-a":
         file_array = [firstfile, lastfile, wordfile]
+        continue
+    if xl == "-f":
+        read_file = True
         continue
     if re.match("^-[wfl]+$", xl):
         file_array = []
@@ -188,8 +203,12 @@ while argcount < len(sys.argv) - 1:
             pals.append(y)
 
 start_time = time.time()
+if read_file:
+    pals = read_it_all()
+
 for x in file_array:
     read_in(x)
+
 end_time = time.time()
 print(end_time-start_time, "seconds to read in file/define word arrays.")
 

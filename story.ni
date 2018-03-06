@@ -1078,7 +1078,9 @@ Fun Nuf is a room in Dim Mid. "[if elite tile is in Fun Nuf]Elite tile has repla
 to say xit-ave:
 	say ". The [if tix exit is in Fun Nuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]"
 
-the north tron is scenery. "It seems to have pushed a passage north here in Fun [']Nuf. Do you have the guts to follow it to your destiny?"
+chapter north tron
+
+the north tron is scenery. "[if Dirge Grid is visited]The north tron is useless now.[else]It seems to have cracked open a passage north here in Fun [']Nuf. Do you have the guts to follow it to your destiny?[end if]"
 
 chapter Flee Elf
 
@@ -1170,7 +1172,7 @@ carry out packing:
 	score-inc; [Dim Mid/pack cap]
 	the rule succeeds;
 
-section pace cap
+chapter pace cap
 
 paceing is an action out of world.
 
@@ -1285,6 +1287,8 @@ every turn when player is in Dirge Grid:
 	if advance-kid is true, increment kid-moves;
 	if kid-moves is 5:
 		say "Deport! Roped!"; [?? punch up]
+
+chapter saner arenas
 
 saner arenas are peripheral scenery. "They're a sign that Grebeberg and Yelpley will return to where they were."
 
@@ -1418,13 +1422,19 @@ book Cold Loc
 
 Cold Loc is north of Seer Trees. It is in Grebeberg. "A rift fir that blocks a steep drop west. [if sword rows are in DevReserved]The past sap you cut from it is lumped on the ground[else]Some past sap clings to the rift fir[end if]."
 
+check going west in Cold Loc: say "The rift fir blocks the way to much more dangerous places." instead;
+
+chapter rift fir
+
 A rift fir is scenery in Cold Loc. "It's a rife fir. You're not getting past it, but you don't need to."
+
+chapter past sap
 
 the past sap is scenery in Cold Loc. "[if sword rows are in DevReserved]It is in a lump on the ground[else]It's stuck to the rift fir, but with the right tool, maybe you could pry it off[end if]."
 
-check going west in Cold Loc: say "The rift fir blocks the way to much more dangerous places." instead;
-
 check taking past sap: say "[if liar grail is moot]You probably don't need any more past sap, now that you used it to dispose of the Liar Grail.[else]It's too sticky to carry around by itself. Maybe have a container carrying it?[end if]"
+
+instead of taking the past sap: say "It'd get sticky on your fingers. You need some way to carry it."
 
 instead of doing something with past sap:
 	if action is procedural, continue the action;
@@ -1442,7 +1452,11 @@ book Flu Gulf
 
 Flu Gulf is north of Cold Loc. It is in Grebeberg. "North and east, it's, oh, too H2O. The passage is clear back south, but [if scorn rocs are in Flu Gulf]scorn rocs['] gaze blocks you going west[else]west past the scorn rocs seems a bit treacherous[end if]."
 
+chapter gulf lug
+
 the Gulf Lug is a proper-named person in Flu Gulf. "The Gulf Lug stands here, holding his stomach.". description is "He looks slightly ill. Maybe you could help him.".
+
+chapter cash sac
 
 the cash sac is a thing. description is "It's full of currency--currency which you don't know whether you can spend anywhere."
 
@@ -1493,10 +1507,6 @@ book Dumb Mud
 
 Dumb Mud is west of Seer Trees. It is in Grebeberg. "Mud! Umm...[paragraph break]A turf rut to the south is [if poo coop is moot]filled in enough[else]too deep[end if] to cross. The way west is [if gnu dung is moot]blocked by gnu dung[else]free[end if]. [if lie veil is in Dumb Mud]A lie veil blocks your way[else]With the lie veil removed, you can go[end if] north."
 
-The lie veil is scenery in Dumb Mud. "It looks untrustworthy."
-
-the gnu dung is in Dumb Mud. "Gnu dung blocks exit west from the Dumb Mud.". description is "You're not an expert in this sort of biology, but given what you've seen so far, it's probably from a gnu."
-
 check going west in Dumb Mud:
 	if gnu dung is in Dumb Mud, say "Not through the gnu dung you aren't." instead;
 
@@ -1507,6 +1517,10 @@ check going south in Dumb Mud:
 check going north in Dumb Mud:
 	if lie veil is in Dumb Mud, say "As you touch the lie veil, you shake your head. No. You don't really want or need to explore north. Surely there's some better place to be? Perhaps you're not 100% prepared for the lie veil's thought provoking paradoxes, and it's doing you a favor pushing you back? You try to walk further north, but somehow you wind up walking back south." instead;
 
+chapter gnu dung
+
+the gnu dung is in Dumb Mud. "Gnu dung blocks exit west from the Dumb Mud.". description is "You're not an expert in this sort of biology, but given what you've seen so far, it's probably from a gnu."
+
 instead of doing something with gnu dung:
 	if action is pro-and-use, continue the action;
 	say "Eewee! (You probably want to deal with the gnu dung indirectly.)"
@@ -1516,6 +1530,10 @@ chapter turf rut
 The turf rut is scenery in Dumb Mud. "[if poo coop is moot]Since you filled it in, you can walk across it to the south[else]It's deep enough to prevent you going south[end if]."
 
 understand "turd rut" as turf rut when poo coop is moot.
+
+chapter lie veil
+
+The lie veil is scenery in Dumb Mud. "It looks untrustworthy."
 
 book Le Babel
 
@@ -1581,11 +1599,15 @@ Mont Nom is south of Dumb Mud. It is in Grebeberg. "An ark of okra blocks passag
 
 Mont Nom is above Dumb Mud.
 
+chapter ark of okra
+
 The ark of okra is scenery in Mont Nom. "You always found okra, or the idea, icky, but the ark is beautiful enough, you sort of wonder how it'd taste. Here it's almost saying 'C'mon! Nom!' or even 'Tum-Smut!'"
 
 instead of eating ark of okra: say "You don't know how long it's been out here. It's probably, like, the vegetable version of wax fruit."
 
-the martini tram is a tronpart. "That martini tram that appeared from Mont Nom is here.". description is "The martini tram looks like it'll provide a handy base for the future North-Tron.".
+chapter martini tram
+
+the martini tram is a tronpart. "That martini tram that appeared from Mont Nom is here.". description is "[if player has epicer recipt]The martini tram looks like it'll provide a handy base for the future North-Tron the epicer recipe described[else]You're not sure what it is for, but it seems sturdy[end if].". [?? "examined" as a property]
 
 chapter Ian
 
@@ -1611,6 +1633,8 @@ book Ooze Zoo
 
 Ooze Zoo is south of Seer Trees. It is in Grebeberg. "[if sleep eels are in Ooze Zoo]Sleep eels block passage south, but you can still go back north[else]With the sleep eels gone, you can go north, or south to [s-dray][end if]."
 
+chapter sleep eels
+
 the sleep eels are plural-named people in Ooze Zoo. "The sleep eels look comfortable where they are. Maybe you can give them better sleeping quarters.". description is "The sleep eels squirm. Maybe there's a humane way to move them out."
 
 to say s-dray:
@@ -1624,9 +1648,9 @@ check going south in Frush Surf: say "You barely step in, and the water's a bit 
 
 [Line Nil is scenery in Frush Surf.]
 
-stamp mats are a thing in Frush Surf. "Stamp mats lie here.". description is "The stamp mats appear to be engraved in order to cut a pattern out."
-
 chapter Stamp Mats
+
+stamp mats are a thing in Frush Surf. "Stamp mats lie here.". description is "The stamp mats appear to be engraved in order to cut a pattern out."
 
 after taking stamp mats:
 	shuffle-before Frush Surf and Trial Lair;
@@ -1663,6 +1687,8 @@ book Moo Room
 
 Moo Room is east of Frush Surf. It is in Grebeberg. "You can't see any cows, but you occasionally hear them. From what you can see, the farm belongs to a Mr. A, who is not around. The only way back is west."
 
+chapter poo coop
+
 the poo coop is in Moo Room. "A poo coop sits here. Thankfully, it looks empty.". description is "While it's 1/4 too small to be a pooch coop, it's 1) empty and 2) somehow bigger on the inside than the outside. Maybe it can clean up a dirty area. Well, a less dirty area than the Moo Room where you found it."
 
 chapter senile felines
@@ -1691,13 +1717,19 @@ book Mire Rim
 
 Mire Rim is west of Dumb Mud. It is in Grebeberg. "A made dam blocks your way west. You can go north, south and east here."
 
+chapter made dam
+
 the made dam is scenery in Mire Rim. description is "It looks hastily put together, and you're not sure if it's actually protecting any great torrent of water."
+
+chapter eroded ore
 
 some Eroded Ore is a thing. description is "You're no expert metallurgist, but it's dim and porous and probably not as potent as it could be."
 
 book Birch Crib
 
 Birch Crib is south of Mire Rim. It is in Grebeberg. "This is a homey little north-south passage, [if tent net is moot]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet[end if]."
+
+chapter code doc
 
 Code Doc is a person in Birch Crib. "[one of]Someone is pacing back and forth here, muttering 'More ROM! MORE Rom! MORE ROM!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket. Busy, but not too busy to help someone else."
 
@@ -1714,6 +1746,8 @@ maps-explained is a truth state that varies.
 book Lair Trial
 
 Lair Trial is south of Birch Crib. It is in Grebeberg. "This lair bends north and east, [if ergot ogre is moot], and with the trial over, you're free to go either way[end if]."
+
+chapter ergot ogre
 
 the ergot ogre is a person in Lair Trial. "An ergot ogre blocks the way east.". description is "It looks vicious, and you don't want it touching you, due to disease and possible dismemberment. You need to get the ogre out of the way, somehow.".
 
@@ -1829,9 +1863,15 @@ book Apse Spa
 
 Apse Spa is east of Cold Loc. It is in Grebeberg. "The Apse Spa is covered with dose sod, which you can't take--you're not sick--but it looks beautiful. Pool gloop and Go-By Bog block pretty much every way except back west[if sage gas is off-stage]. You could traverse it, if you knew what you were doing[else]You already went through it, though[end if]. There are also spa taps here you shouldn't mess with, since you're not a paying customer."
 
+chapter dose sod
+
 the dose sod is scenery in Apse Spa. "It looks ucky, but given you're in an Apse Spa, it may have health benefits for those that need them."
 
+chapter go-by bog
+
 Go-By Bog is scenery in Apse Spa. description is "It's too hazy. You'd get lost navigating it without a lot of help."
+
+chapter pool gloop
 
 The pool gloop is peripheral scenery in Apse Spa. "The pool gloop is probably to help people convalesce, but you're not sick."
 
@@ -1849,6 +1889,27 @@ book Yawn Way
 
 Yawn Way is east of Fun Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but you can go in all four directions, here: back west to Fun [']Nuf, north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]Emo Dome[else]a dome[end if]."
 
+chapter puffuping
+
+puffuping is an action applying to nothing.
+
+understand the command "puffup" as something new.
+understand the command "puff up" as something new.
+
+understand "puffup" as puffuping.
+understand "puff up" as puffuping.
+
+puffed-up is a truth state that varies.
+
+carry out puffuping:
+	if puffed-up is true, say "You already did." instead;
+	if player does not have spur ups, say "You don't possess anything that would help you feel more up." instead;
+	say "As you hold the Spur-Ups, you think about how great you are and can and will be. Surprisingly, it works! It works so well, you figure you don't even need the spur-ups for a boost in the future. You feel more confident, more able to deal with sadness now.";
+	now puffed-up is true;
+	now Spur Ups are in DevReserved;
+	score-inc; [Yelpley/puff up]
+	the rule succeeds;
+
 book My Gym
 
 My Gym is south of Yawn Way. It is in Yelpley. "You can go back out south to Yawn Way. There's also passage west."
@@ -1864,15 +1925,11 @@ instead of doing something with Dave:
 
 check going west in My Gym when Dave is in My Gym: say "Dave says, 'I can't let you do that, Hal. Ah!' There must be a succinct, clever way to sneak around him!" instead;
 
-chapter sword rows
+chapter wash saw
 
 The wash saw is in My Gym. description is "A small wash saw [if Dave is moot]lies here[else]is behind Dave[end if]."
 
 check taking wash saw when Dave is quicknear: say "Not with Dave around." instead;
-
-chapter not-a-baton
-
-The not-a-baton is a thing. description is "It is wood and round and long. It's too long to be a baton, but it's the right shape to be something powerful. It just sort of feels lifeless right now."
 
 chapter evadeing
 
@@ -2442,27 +2499,6 @@ understand "evened" and "den evened" as Gross Org when Ned is moot.
 
 Ned is a person in Gross Org. "'Ned's Den!' someone booms. You're guessing their name must be Ned.". description is "Ned is sort of wildly flailing about, looking for a verbal or physical altercation, but that's not really your thing.".
 
-chapter puce cup
-
-The Puce Cup is a thing in Emo Dome. "Someone has left a puce cup here.". description is "It's, well, puce, and it seems sturdy enough. It's currently [if puce cup is empty]empty[else if puce cup is sappy]full of [sap-sirup] from the rift fir in Cold Loc[else]full of Dose Sod from the Apse Spa[end if]."
-
-to say sap-sirup:
-	say "[if location of player is not Cold Loc]Past Sap[else]Purist Sirup[end if]"
-
-the puce cup can be empty, sappy or soddy. the puce cup is empty.
-
-understand "purist sirup" and "purist/sirup" as puce cup when puce cup is sappy and player is not in Cold Loc.
-
-understand "dose sod" as puce cup when puce cup is soddy and player is not in Apse Spa.
-
-after going from Cold Loc when puce cup is sappy:
-	say "The past sap in the puce cup thaws into purist sirup.";
-	continue the action;
-
-after going to Cold Loc when puce cup is sappy:
-	say "The purist sirup in the puce cup hardens [one of][or]back [stopping]into past sap.";
-	continue the action;
-
 chapter Gate Tag
 
 the Gate Tag is a thing. description is "It has an emblem a lot like what you saw north of the Emo Dome."
@@ -2556,7 +2592,11 @@ book Trapeze Part
 
 Trapeze Part is west of Evaded Ave. It is in Yelpley. "[if epicer recipe is off-stage]There's a ten level net on the floor, here. It could protect you from a long fall. You're convinced there must be something at the far end, but it's probably not safe to use the trapeze to get over until, well, you've done safety checks[else]The ten level net still sits here, and it'd be handy if there was anything else on the other side of it, but there isn't[end if]."
 
+chapter ten level net
+
 the ten level net is scenery in Trapeze Part. "[if epicer recipe is off-stage]It doesn't quite look sturdy enough. Maybe you could do something to fix it[else]It was sturdy enough to help you get the epicer recipe, and that's enough[end if]."
+
+chapter tent net
 
 the tent net is a thing. description is "It doesn't have any pegs or anything to attach it to, to make a structure. But maybe it could complete a home somewhere."
 
@@ -2595,6 +2635,8 @@ book Yell Alley
 Yell Alley is east of Evaded Ave. It is in Yelpley. "[if girt rig is in Yell Alley]A girt rig blocks every way except back[else]The only way back is[end if] west. The way east is blocked by a [if navy van is in Yell Alley]navy van... you're not sure[else]bomb mob... so that's[end if] where the yelling is from."
 
 chapter navy van
+
+[??seedy dee's]
 
 the navy van is scenery in Yell Alley. "There seems to be no way to enter it. It has a small gig where you could maybe put something in."
 
@@ -2637,49 +2679,6 @@ TNT is a tronpart. "Well, it's not going to blow up in your hands.".
 
 check taking TNT: say "The bomb mob would say a bit more than 'Yank? Nay!' You'd be seen too easily." instead;
 
-chapter puffuping
-
-puffuping is an action applying to nothing.
-
-understand the command "puffup" as something new.
-understand the command "puff up" as something new.
-
-understand "puffup" as puffuping.
-understand "puff up" as puffuping.
-
-puffed-up is a truth state that varies.
-
-carry out puffuping:
-	if puffed-up is true, say "You already did." instead;
-	if player does not have spur ups, say "You don't possess anything that would help you feel more up." instead;
-	say "As you hold the Spur-Ups, you think about how great you are and can and will be. Surprisingly, it works! It works so well, you figure you don't even need the spur-ups for a boost in the future. You feel more confident, more able to deal with sadness now.";
-	now puffed-up is true;
-	now Spur Ups are in DevReserved;
-	score-inc; [Yelpley/puff up]
-	the rule succeeds;
-
-chapter pulluping
-
-pulled-up is a truth state that varies.
-
-pulluping is an action applying to nothing.
-
-understand the command "pull up" as something new.
-understand the command "pullup" as something new.
-
-understand "pull up" as pulluping.
-understand "pullup" as pulluping.
-
-carry out pulluping:
-	if pulled-up is true, say "You already did." instead;
-	if player has Spur Ups, say "Maybe you can be or do that sort of up, later.";
-	if player is in Emo Dome:
-		say "You manage to stop yourself. The whining isn't too bad. Yeah, you can hack it here.";
-		now pulled-up is true;
-		score-inc; [Yelpley/pull up]
-		the rule succeeds;
-	say "This isn't the place[if Emo Dome is visited], but maybe you could do this in the Emo Dome[end if]." instead;
-
 book Emo Dome
 
 Emo Dome is east of Yawn Way. It is in Yelpley. "You can go any direction here, and you sort of want to, because it's stuffy in here. [if madam is moot]But not back north. You're done there[else]However, the way north looks particularly treacherous[end if]."
@@ -2710,6 +2709,49 @@ check going north in Emo Dome:
 	say "You make sure your state tats are visible for scanning. They are accepted.[paragraph break][if madam is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the wash saw.[end if]";
 	say "You make sure your state tats are visible for scanning. They are accepted and promptly rub off.[paragraph break]You step into what may be your final challenge in Yelpley..."
 
+chapter pulluping
+
+pulled-up is a truth state that varies.
+
+pulluping is an action applying to nothing.
+
+understand the command "pull up" as something new.
+understand the command "pullup" as something new.
+
+understand "pull up" as pulluping.
+understand "pullup" as pulluping.
+
+carry out pulluping:
+	if pulled-up is true, say "You already did." instead;
+	if player has Spur Ups, say "Maybe you can be or do that sort of up, later.";
+	if player is in Emo Dome:
+		say "You manage to stop yourself. The whining isn't too bad. Yeah, you can hack it here.";
+		now pulled-up is true;
+		score-inc; [Yelpley/pull up]
+		the rule succeeds;
+	say "This isn't the place[if Emo Dome is visited], but maybe you could do this in the Emo Dome[end if]." instead;
+
+chapter puce cup
+
+The Puce Cup is a thing in Emo Dome. "Someone has left a puce cup here.". description is "It's, well, puce, and it seems sturdy enough. It's currently [if puce cup is empty]empty[else if puce cup is sappy]full of [sap-sirup] from the rift fir in Cold Loc[else]full of Dose Sod from the Apse Spa[end if]."
+
+to say sap-sirup:
+	say "[if location of player is not Cold Loc]Past Sap[else]Purist Sirup[end if]"
+
+the puce cup can be empty, sappy or soddy. the puce cup is empty.
+
+understand "purist sirup" and "purist/sirup" as puce cup when puce cup is sappy and player is not in Cold Loc.
+
+understand "dose sod" as puce cup when puce cup is soddy and player is not in Apse Spa.
+
+after going from Cold Loc when puce cup is sappy:
+	say "The past sap in the puce cup thaws into purist sirup.";
+	continue the action;
+
+after going to Cold Loc when puce cup is sappy:
+	say "The purist sirup in the puce cup hardens [one of][or]back [stopping]into past sap.";
+	continue the action;
+
 book Red Roses Order
 
 Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in Red Roses Order]The only visible way back is south, with a mist sim blocking the other directions, but you can't chicken out[else]Sword rows have been revealed once the mist sim dispersed. You can go back south[end if]."
@@ -2723,6 +2765,10 @@ mist sim is peripheral scenery in Red Roses Order. "You can't see through it, bu
 chapter sword rows
 
 The sword rows are plural-named scenery in Red Roses Order. ."[if not-a-baton is moot]It doesn't look like you broke them, but you probably don't need them any more[else]It looks automatic. Put something it can cut in, and get something out[end if]."
+
+chapter not-a-baton
+
+The not-a-baton is a thing. description is "It is wood and round and long. It's too long to be a baton, but it's the right shape to be something powerful. It just sort of feels lifeless right now."
 
 chapter madam
 
@@ -2742,12 +2788,14 @@ book Swept Pews
 
 Swept Pews is south of Emo Dome. It is in Yelpley. "You can go back north to the Emo Dome in this tidy little area[if liar grail is moot]. A passage has been opened south with the Liar Grail's demise[end if]."
 
+check going south in Swept Pews:
+	if Liar Grail in Swept Pews, say "Maybe there's a path where you could get rid of the grail, but not yet." instead;
+
+chapter liar grail
+
 The Liar Grail is a thing in Swept Pews. description is "It's carved with 'NIP IN? NOT ON!' If you hadn't examined it, you wouldn't think there might be a passage to the south, but now that you have, you consider the possibility. Either way, it annoys you enough to want to get rid of the liar grail. Lies are sometimes self-defeating like that". "A liar grail is embedded in the south wall, aw."
 
 check taking liar grail: say "A small voice cries 'Da cad! Da cad!' You probably don't want the liar grail corrupting you." instead;
-
-check going south in Swept Pews:
-	if Liar Grail in Swept Pews, say "Maybe there's a path where you could get rid of the grail, but not yet." instead;
 
 chapter troll ort
 
@@ -2761,11 +2809,13 @@ check going west in Drawl Ward:
 	if Bond Nob is in Drawl Ward:
 		if noun is west or noun is east, say "You hear the Bond Nob groaning and think it wouldn't be nice to pass by. They'll let you by once you help them with whatever sickness they have." instead;
 
-the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, unsurprisingly. It's about the size of a pint nip."
-
 chapter Bond Nob
 
 the Bond Nob is a person in Drawl Ward. "[one of]'Hi! I'm the Bond Nob. I ain't feeling so good, but I wondered if maybe I could get some medicine.'[or]the Bond Nob continues to moan colloquially about the sickness, the pain.[stopping]". description is "the Bond Nob looks pretty ill. Nothing life-threatening, but too sick to go fetch even the dinkiest over-the-counter medication."
+
+chapter Elan Ale
+
+the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, unsurprisingly. It's about the size of a pint nip."
 
 book Scrap Arcs
 

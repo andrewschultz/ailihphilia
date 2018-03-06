@@ -33,8 +33,6 @@ Town Wot
 # El Batable
 # El Bannable
 
-Doo-Doo'd!
-
 Tardy! Drat!
 
 opera repo
