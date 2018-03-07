@@ -576,6 +576,7 @@ randtxt
 "Spill, lips!"
 "Too moot."
 "Verb! Rev!"
+"Verb! Rev!"
 "Ya, no! Nay!"
 "Yo! Coy?"
 
@@ -627,6 +628,7 @@ randtxt
 "Now? On!"
 "Panic? I nap!"
 "Resume, muser!"
+"Sod dos."
 "Stare? Rats!"
 "Stir! It's..."
 "Truce, curt."
@@ -655,8 +657,10 @@ randtxt
 "Misdeeds? I'm ..."
 "Name: HE-MAN!"
 "Nem O['] women!"
+"Null [']un!"
 "Soros! Soros!"
 "Wane? Naw!"
+"You! Oy!"
 
 Put It Up Tables ends here.
 

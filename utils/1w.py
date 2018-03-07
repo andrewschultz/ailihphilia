@@ -160,6 +160,7 @@ while argcount < len(sys.argv) - 1:
         continue
     if xl == "-f":
         read_file = True
+        check_possible = False
         continue
     if re.match("^-[wfl]+$", xl):
         file_array = []
