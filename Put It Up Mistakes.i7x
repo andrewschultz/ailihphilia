@@ -129,6 +129,12 @@ understand "door brood" as a mistake ("Just one guardian is enough to deal with.
 
 book Flu Gulf
 
+understand "gull lug" as a mistake("You shouldn't try to take advantage of sick people. Help the Gulf Lug instead.[mis of 114]") when gulf lug is quicknear.
+
+understand "gulp lug" as a mistake("Cannibalism is wrong. Besides, you'd probably catch whatever the Gulf Lug has.[mis of 115]") when gulf lug is quicknear.
+
+chapter scorn rocs
+
 understand "score rocs" as a mistake ("You don't have any witty way to score off them, or steal them, or whatever, and you don't need to.[mis of 42]") when scorn rocs are quicknear.
 
 understand "rocs cor" as a mistake ("Your flattery doesn't move the rocs.[mis of 43]") when scorn rocs are quicknear.
@@ -358,7 +364,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 

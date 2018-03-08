@@ -316,11 +316,15 @@ What do we do about Ian? Once we do something, we can mix foods.
 
 Now you have all the ingredients for the North-Tron, and you need to activate them. But it's a bit more efficient to do other things first.
 
->N.W.N
+>W.W.W.N
 
 (+1) >USE MOOR BROOM ON TRU YURT
 
->S.E
+>S.S
+
+(+1) > USE WASH SAW ON PORCH CROP
+
+>N.E
 
 (+1) >USE EXAM AXE ON LIE VEIL
 

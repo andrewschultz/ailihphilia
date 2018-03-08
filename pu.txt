@@ -147,7 +147,7 @@ Maybe you can find a nicer place for them to sleep.
 Or something nicer to sleep on.
 The bunk nub doesn't quite work.
 But you can turn it into something nicer.
-USE BUNK NUB ON REVIVER.
+You can upgrade the bunk nub by using it on the reviver in Work Row.
 USE STOCK COTS ON SLEEP EELS.
 >>FRUSH SURF
 ?What do I do with the yak?
@@ -225,6 +225,10 @@ The code doc could help you decipher something.
 Do you have a document that almost, but doesn't quite, make sense?
 The spa maps, once you get them.
 USE SPA MAPS ON CODE DOC.
+?A porch crop sprouted up! How do I tame or trim it?
+Do you have any sharp item that worked before to cut something?
+The wash saw worked on the past sap.
+USE WASH SAW ON PORCH CROP.
 >>LAIR TRIAL
 ?What to do here?
 Not much.
@@ -259,7 +263,7 @@ Now that you're all peaceful, you can explore other places.
 ?The Tao Boat caused one of my items to be diminished! What else do I need to do?
 The dork rod no longer seems as cool as it used to.
 You need to make it more subversive.
-USE NOT-A-BATON ON REIFIER.
+The not-a-baton can be used on the reifier in Work Row.
 ?Can the kayak take me anywhere?
 Yes, but you need something to propel you.
 An oar, or a pole, or something.
@@ -269,7 +273,7 @@ USE ELOPE POLE ON KAYAK.
 It rattles a bit. Something's inside.
 How would you open the buoy if you can't do so manually?
 Use a machine.
-USE YOU BUOY ON ROTATOR.
+Using the you buoy on the rotator in Work Row will cause something to fall out.
 >Yelpley
 >>YAWN WAY
 ?Is there anything to do here?
@@ -348,8 +352,8 @@ There are three things.
 You may notice the trap art is a plan for something bigger, to be made real.
 The first item is the trap art.
 USE TRAP ART ON REIFIER.
-The second is the DNA hand.
-USE DNA HAND ON REIFIER.
+The second is the DNA band.
+USE DNA BAND ON REIFIER.
 The third is the not-a-baton.
 USE NOT-A-BATON ON REIFIER.
 ?What do I do with the rotator?
@@ -408,7 +412,7 @@ Just take it, for now.
 You need something powerful.
 The Dirt Rid isn't powerful enough.
 So you need to give it a boost.
-USE DIRT RID ON REVIVER.
+You can use the Dirt Rid on the reviver back in Work Row.
 USE CAVE VAC ON CASSETTES SAC.
 >>SCRAP ARCS
 ?What to do with the slate metals?
@@ -453,7 +457,7 @@ All sorts of cool stuff! Take everything you want!
 ?What do I do with the DNA band?
 It's not quite something living.
 It can become a body, or part of one.
-USE DNA BAND ON REIFIER.
+If you use it on the reifier in Work Row, it becomes a more viable life form. Or part of one.
 ?What can I do with the butene tub?
 More like, what can you do TO it.
 An unstable chemical reaction.
@@ -535,7 +539,7 @@ There are 37 total points in Yelpley.
 1 point if you USE NOT-A-BATON ON REIFIER.
 1 point if you USE BALSA SLAB ON SWORD ROWS.
 ?How do I get all the points for Grebeberg?
-There are 29 total points in Grebeberg.
+There are 30 total points in Grebeberg.
 1 point if you USE PARTY TRAP ON STARK RATS.
 1 point if you USE ERA FARE ON KING NIK.
 1 point if you USE STOCK COTS ON SLEEP EELS.
@@ -562,6 +566,7 @@ There are 29 total points in Grebeberg.
 1 point if you USE SNACK CANS ON UFO TOFU.
 1 point if you USE GIFT FIG ON MAYO YAM.
 1 point if you USE MOOR BROOM ON TRU YURT.
+1 point if you USE WASH SAW ON PORCH CROP.
 1 point if you USE EXAM AXE ON LIE VEIL.
 1 point if you USE NAT'S TAN ON SCORN ROCS.
 1 point if you USE REP POPPER ON YUGE GUY.

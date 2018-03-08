@@ -64,7 +64,7 @@ chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.
 
-Grebeberg is a region. max-score of Grebeberg is 29.
+Grebeberg is a region. max-score of Grebeberg is 30.
 
 Dim Mid is a region. max-score of Dim Mid is 10.
 
@@ -817,7 +817,7 @@ bunk nub	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching 
 party trap	stark rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
 ERA FARE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'This will help me when I get back to South Ihtuos. Thank you!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...I must leave and RAFT FAR back to '"
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
-wash saw	past sap	--	--	--	true	true	false	Grebeberg	"You hack away at the past sap with the wash saw, first squirting some loosening/thawing liquid. It's tricky, but the saw holds out until ... rats! You were 80% done. Fortunately, with some perseverance, you're able to twist the sap off the rife fir."
+wash saw	past sap	--	--	--	true	false	false	Grebeberg	"You hack away at the past sap with the wash saw, first squirting some loosening/thawing liquid. It's tricky, but the saw holds out, and with some perseverance, you're able to twist the sap off the rife fir."
 puce cup	past sap	--	check-sap-cup rule	sap-to-cup rule	false	false	false	--	"You pour some sap into the cup."
 puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"The past sap pours into the liar grail and exposes how bad the grail has been over the years. As it cracks, along with the wall it was attached to to allow passage south, you snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL!"
 puce cup	dose sod	--	check-sod-cup rule	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
@@ -852,6 +852,7 @@ troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	Grebeberg	"You rub t
 sage gas	tame mat	guru rug	--	--	true	true	true	Grebeberg	"The sage gas bubbles out under the tame mat, and the message changes. To something wiser. But perhaps a bit stuffy."
 sharp rahs	guru rug	tenet	--	--	true	true	true	Grebeberg	"The sharp rahs meld into the guru rug, which feels less weighted down by philosophy and floats away. Under it there's a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 Moor Broom	Tru Yurt	Exam Axe	--	--	true	true	false	Grebeberg	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe!" [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
+wash saw	porch crop	balsa slab	--	--	true	true	false	Grebeberg	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods. You've done well."
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
 DNA band	reifier	DNA hand	--	--	true	true	false	Yelpley	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand!"
 roto motor	DNA hand	bang nab	--	--	true	true	true	Yelpley	"The roto motor fits right in. The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on it, now: BANG NAB. I guess that's what to call it, now. It probably has the dexterity to deal with volatile stuff. The bomb mob, for their part, becomes a poor troop once they see what they've lost."
@@ -1585,12 +1586,6 @@ carry out mussing:
 	moot opossum;
 	the rule succeeds.
 
-chapter balsa slab
-
-The Balsa Slab is a thing in Le Babel. "A balsa slab is just lying here. You're not sure how it get here, but here it is.". description is "It appears grooved, as if someone has labeled places to cut it to make it into something useful."
-
-report taking the Balsa Slab: say "It's light. It weighs ... not a gigaton."
-
 chapter Bro Orb
 
 the Bro Orb is a thing in Le Babel. "[one of]An orb hovers in the air. You know it must be a Bro Orb[or]The Bro Orb still hovers in the air[stopping]. You would love to take it, but you're not sure if you're worthy.". description is "Looking into the Bro Orb, you start to understand social, subjective knowledge you assumed only jerks know. Maybe they know it better, but you realize you are cheating yourself if you don't learn it.". [??bros orb]
@@ -1603,6 +1598,10 @@ check taking Bro Orb:
 report taking Bro Orb:
 	moot tenet;
 	say "Taking the Bro Orb requires two hands. You watch the tenet flutter off beyond the Voodoo V. Oh, well. You carry the tenant's message in your mind and heart and stuff anyway, now.";
+
+check useoning tenet with Bro Orb:
+	say "You don't need to wave the tenet around or anything to take the orb, but you focus on the tenet to make sure.[paragraph break]";
+	try taking Bro Orb instead;
 
 book Mont Nom
 
@@ -1740,7 +1739,7 @@ some Eroded Ore is a thing. description is "You're no expert metallurgist, but i
 
 book Birch Crib
 
-Birch Crib is south of Mire Rim. It is in Grebeberg. "This is a homey little north-south passage, [if tent net is moot]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet[end if]."
+Birch Crib is south of Mire Rim. It is in Grebeberg. "This is a homey little north-south passage, [if tent net is moot]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet[end if][if-porch]."
 
 chapter code doc
 
@@ -1755,6 +1754,18 @@ check examining spa maps:
 	try useoning spa maps with go-by bog instead;
 
 maps-explained is a truth state that varies.
+
+chapter porch crop
+
+the porch crop is scenery. "[if wash saw is moot]It's been cleared up since you used the wash saw on it[else]It really sprawls. Maybe there is a way to trim it to help the Code Doc[end if]."
+
+to say if-porch:
+	if porch crop is in birch crib:
+		say ". [if wash saw is moot]The porch crop is still trimmed back[else]Some porch crop has sprouted up, and it looks okay, but there's just too much of it[end if]";
+
+chapter balsa slab
+
+The Balsa Slab is a thing. "A balsa slab is just lying here. You're not sure how it get here, but here it is.". description is "It appears grooved, as if someone has labeled places to cut it to make it into something useful."
 
 book Lair Trial
 

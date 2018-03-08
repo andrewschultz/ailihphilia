@@ -31,7 +31,7 @@ test part7 with "w/use radar on made dam/n/use null illun on known wonk/use el d
 test part8 with "w/s/s/s/e/use enact cane on yahoo hay/pace cap/use troll ort on brag garb/w/n/n/w/w/s/s/yak okay/e/use sage gas on tame mat/use sharp rahs on guru rug/w/n/n/e/s/nail ian/use snack cans on ufo tofu/use gift fig on mayo yam"
 
 [ note I could probably save a move or two here by visiting mont nom just before going back east ... now that getting the Martini Tram moves you back to Fun Nuf ]
-test part9 with "w/w/w/n/use moor broom on tru yurt/s/e/use exam axe on lie veil/n/muss opossum/get all/s/e/e/e/s/w/use dna band on reifier/use roto motor on dna hand/use eroded ore on reviver/use you buoy on rotator/e/n/n/n/e/use bang nab on tnt/get rep popper/w/s/s/w/w/n/n/use nat's tan on scorn rocs"
+test part9 with "w/w/w/n/use moor broom on tru yurt/s/s/use wash saw on porch crop/n/e/use exam axe on lie veil/n/muss opossum/get all/s/e/e/e/s/w/use dna band on reifier/use roto motor on dna hand/use eroded ore on reviver/use you buoy on rotator/e/n/n/n/e/use bang nab on tnt/get rep popper/w/s/s/w/w/n/n/use nat's tan on scorn rocs"
 
 test rollup with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9"
 
