@@ -22,7 +22,7 @@ test part3 with "w/w/w/n/use wash saw on past sap/use puce cup on past sap/s/e/e
 
 test part4 with "w/get all/e/e/use stamp mats on slate metals/w/n/n/w/w/w/n/n/use demo med on gulf lug/s/s/e/e/e/e/use cash sac on cross orc"
 
-test part5 with "s/use yob attaboy on sniffins/use elan ale on sniffins/stand nat's/n/w/w/s/w/work row/use dirt rid on reviver/e/n/e/s/s/w/use cave vac on cassettes sac/e/n/n/e/use radar on crag arc/n/deny ned/get all/use ye key on etage gate/n/s/s/w/w/s/w/worn row/work row/use stink knits on rotator"
+test part5 with "s/use yob attaboy on sniffins/use elan ale on sniffins/stand nat's/n/w/w/s/w/work row/use dirt rid on reviver/e/n/e/s/s/w/use cave vac on cassettes sac/e/n/n/e/use radar on crag arc/n/deny ned/get all/use ye key on etage gate/n/s/s/w/w/s/w/worn row/work row/use stinky knits on rotator"
 
 test part6 with "word row/e/n/e/e/n/n/get all/use gorge grog on butene tub/balm lab/s/s/w/w/s/w/work row/use gold log on rotator/e/n/w/w/s/s/e/stack cats/see bees/use some demos on yahoo hay/w/n/n/e/e/n/use straw arts on revolt lover/use gate tag on soot tattoos/s/s/w/word row/get null illun/work row/e/n/w/w/w/use poo coop on gnu dung/use poo coop on turf rut"
 

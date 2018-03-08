@@ -145,7 +145,7 @@ section part of a puzzle but still floating
 
 [Otto is a person.]
 
-the brag garb is a proper-named thing. description is "You don't know fashion that well, but this is way spiffier and more comfortable than the old stink knits."
+the brag garb is a proper-named thing. description is "You don't know fashion that well, but this is way spiffier and more comfortable than the old stinky knits."
 
 section helpdocs
 
@@ -618,7 +618,7 @@ chapter smelling
 rod-smelled is a truth state that varies;
 
 instead of smelling:
-	if stink knits are quicknear, say "The stink knits take over everything and smell of torn rot." instead;
+	if stinky knits are quicknear, say "The stinky knits take over everything and smell of torn rot." instead;
 	if troll ort is quicknear, say "The troll ort emits a musk-sum which isn't unpleasant, but it's distinctive." instead;
 	if player has dork rod:
 		now rod-smelled is true;
@@ -831,7 +831,7 @@ Dirt Rid	reviver	Cave Vac	--	--	true	true	false	Yelpley	"You watch as the Dirt R
 Cave Vac	cassettes sac	radar	--	bump-pod rule	true	true	true	Yelpley	"The Cave Vac has the power to clean up the Dirt Rid, though it chokes and sputters at the end of the effort. And while a lot of the cassettes are beyond repair, there's something at the very bottom.[paragraph break]Wow! Radar![paragraph break]You hear noises from the pod, as a hidden robot appears and whisks the garbage away. That's pretty slick! Looking back, the pod doesn't seem so dopy any more, between the Demo Med's help and how you're sure the radar will help."
 radar	crag arc	UFO tofu	orc-gone rule	radar-blink rule	true	false	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO and lands on the radar, which fizzles a bit from the impact and wetness. It hardens quickly and weirdly into a cubic shape. What could it be? You think a minute. It has to be UFO tofu." [af:deny Ned]
 Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paragraph break]A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it." [af:Worn Row]
-stink knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stink knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
+stinky knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stinky knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
 Gorge Grog	Butene Tub	resale laser	--	bald-lab rule	true	true	true	Yelpley	"The Gorge Grog immediately starts fizzing as it pours down the tub, which rumbles disturbingly. You find it best to hide, and that's the right thing to do, because the butene tub explodes into pieces. Under it is a resale laser!"
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
 SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	false	false	Grebeberg	"With the help of SOME DEMOS, you manage to rejig the hay into something more aesthetically pleasing: straw arts!"
@@ -848,7 +848,7 @@ tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Together, you figure out w
 spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my math tam for this one. One second, let's see--Aha! Oho...' and desipte a minor pupil slipup, it soon makes complete sense to you."
 spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	"You stick some strands of yahoo hay into the damaged end of the dork rod. It's now a moor broom!"
-troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the Stink Knits, but still quite distinctive." [b4:pace cap] [af:yak okay]
+troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the stinky knits, but still quite distinctive." [b4:pace cap] [af:yak okay]
 sage gas	tame mat	guru rug	--	--	true	true	true	Grebeberg	"The sage gas bubbles out under the tame mat, and the message changes. To something wiser. But perhaps a bit stuffy."
 sharp rahs	guru rug	tenet	--	--	true	true	true	Grebeberg	"The sharp rahs meld into the guru rug, which feels less weighted down by philosophy and floats away. Under it there's a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 Moor Broom	Tru Yurt	Exam Axe	--	--	true	true	false	Grebeberg	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe!" [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
@@ -2489,11 +2489,11 @@ book Gross Org
 
 Gross Org is north of Toll Lot. It is in Yelpley. description is "[if etage gate is in Gross Org]An etage gate blocks your way north. You can go back south[else]With the etage gate gone, you can go north or south[end if]."
 
-chapter stink knits
+chapter stinky knits
 
-the stink knits are a plural-named thing in Gross Org. description is "The inside of the stink knits reveals they were sewn together by SMELLEMS.". "Stink knits, unwearable enough even without DAFT FAD printed on the front, lie here.".
+the stinky knits are a plural-named thing in Gross Org. description is "The inside of the stinky knits reveals they were sewn together by SMELLEMS.". "Stinky knits, unwearable enough even without DAFT FAD printed on the front, lie here.".
 
-check wearing the stink knits: say "That's physically possible, but no. No way." instead;
+check wearing the stinky knits: say "That's physically possible, but no. No way." instead;
 
 check taking when player is in Gross Org and Ned is in Gross Org: say "Not with Ned around, you won't." instead;
 
@@ -3623,7 +3623,7 @@ this is the frush-surf rule:
 	if search-hint-room is true, the rule succeeds;
 	if stamp mats are in Frush Surf, say "Take the stamp mats." instead;
 	if cap-pace is false, say "You need to make the pact cap a PACE CAP." instead;
-	if player does not have brag garb, say "You need some [if player has stink knits]cooler [end if]clothes." instead;
+	if player does not have brag garb, say "You need some [if player has stinky knits]cooler [end if]clothes." instead;
 	say "USE TROLL ORT ON BRAG GARB." instead;
 
 this is the frush-surf-complete rule:
@@ -3646,10 +3646,10 @@ this is the fun-nuf rule:
 section Gross Org rule
 
 this is the gross-org rule:
-	if stink knits are not in Gross Org, continue the action;
+	if stinky knits are not in Gross Org, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if Ned is not moot, say "DENY NED." instead;
-	if stink knits are in Gross Org, say "You need to take the stink knits." instead;
+	if stinky knits are in Gross Org, say "You need to take the stinky knits." instead;
 	say "[one of]You need to get rid of Ned.[or]Ned wants a fight, which you want to decline.[or]A better way to say it is, DENY NED.[stopping]" instead;
 
 section Lair Trial rule
@@ -3838,7 +3838,7 @@ to decide which book is cur-book:
 	if YOB ATTABOY is not moot, decide on YOB ATTABOY;
 	decide on NULL ILLUN;
 
-machineables is a list of things variable. machineables is {stink knits, gold log, you buoy, bunk nub, Dirt Rid, eroded ore, trap art, DNA band, not-a-baton}. [?? if we use this a lot maybe we should make a property]
+machineables is a list of things variable. machineables is {stinky knits, gold log, you buoy, bunk nub, Dirt Rid, eroded ore, trap art, DNA band, not-a-baton}. [?? if we use this a lot maybe we should make a property]
 
 this is the got-machine-fodder rule:
 	repeat with Q running through machineables:

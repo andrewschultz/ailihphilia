@@ -346,21 +346,26 @@ The book that drops out is not useful.
 ?What do I do with the reifier?
 There are three things.
 You may notice the trap art is a plan for something bigger, to be made real.
-USE TRAP ART ON REIFIER.
 The first item is the trap art.
+USE TRAP ART ON REIFIER.
 The second is the DNA hand.
+USE DNA HAND ON REIFIER.
 The third is the not-a-baton.
+USE NOT-A-BATON ON REIFIER.
 ?What do I do with the rotator?
-USE STINK KNITS ON ROTATOR.
-USE GOLD LOG ON ROTATOR.
-The first item is the Stink Knits.
+The first item is the stinky knits.
+USE STINKY KNITS ON ROTATOR.
 The second item is the gold log.
+USE GOLD LOG ON ROTATOR.
 The third item is the you buoy.
+USE YOU BUOY ON ROTATOR.
 ?What do I do with the reviver?
-USE ERODED ORE ON REVIVER.
 The first item is the bunk nub.
+USE BUNK NUB ON REVIVER.
 The second item is the eroded ore.
+USE ERODED ORE ON REVIVER.
 The third item is the dirt rid.
+USE DIRT RID ON REVIVER.
 ?Help! A machine broke!
 That just clues you don't need to use it any more.
 ?Help! All the machines broke!
@@ -517,7 +522,7 @@ There are 37 total points in Yelpley.
 1 point if you USE YE KEY ON ETAGE GATE.
 1 point for WORN ROW once the Psi Wisp is nearby.
 1 point if you USE GORGE GROG ON BUTENE TUB.
-1 point if you USE STINK KNITS ON ROTATOR.
+1 point if you USE STINKY KNITS ON ROTATOR.
 1 point if you USE GOLD LOG ON ROTATOR.
 1 point if you USE STRAW ARTS ON REVOLT LOVER.
 1 point if you USE GATE TAG ON SOOT TATTOOS.

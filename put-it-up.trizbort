@@ -63,7 +63,7 @@ Initially sent to source code/repository November 2017.</history>
 			<objects>Yahoo Hay|Poo Coop</objects>
 		</room>
 		<room id="21" name="Gross Org" subtitle="Den, Evened" x="416" y="-160" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>NED|Stink Knits|Etage Gate</objects>
+			<objects>NED|Stinky Knits|Etage Gate</objects>
 		</room>
 		<room id="22" name="Worn Row" subtitle="???????" x="-64" y="96" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Can be changed to WORK or WORD row." roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-36" customDown="0">ROB|Reviver/Reifier/Rotator|Tract Cart|Redness Ender</objects>
@@ -300,6 +300,7 @@ Initially sent to source code/repository November 2017.</history>
 			<connectionStalkLength>16</connectionStalkLength>
 			<preferredDistanceBetweenRooms>64</preferredDistanceBetweenRooms>
 			<defaultRoomName>DevReserved</defaultRoomName>
+			<defaultRoomShape>0</defaultRoomShape>
 		</rooms>
 		<ui>
 			<handleSize>12</handleSize>

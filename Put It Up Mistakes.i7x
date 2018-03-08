@@ -180,7 +180,7 @@ book Gross Org
 
 understand "dent Ned" as a mistake ("Less violence, more subtlety.[mis of 55]") when Ned is quicknear.
 
-understand "stinko knits" as a mistake ("In this game, you don't need to get drunk. Nurd.[mis of 56]") when stink knits are quicknear.
+understand "stinko knits" as a mistake ("In this game, you don't need to get drunk. Nurd.[mis of 56]") when stinky knits are quicknear.
 
 book Lair Trial
 
