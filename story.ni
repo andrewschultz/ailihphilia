@@ -54,6 +54,12 @@ a thing can be peripheral. a thing is usually not peripheral.
 
 an ingredient is a kind of thing. an ingredient is usually edible. an ingredient can be solid or liquid.
 
+section compiler constants
+
+section compiler constants - not for release
+
+use MAX_VERBS of 270.
+
 chapter region and room stuff
 
 a region has a number called max-score. a region has a number called cur-score.

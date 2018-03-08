@@ -1,7 +1,11 @@
 Concerns so far:
 
-* Not sure how to navigate changes from guess the verb
+* Not sure how to navigate changes from guess the verb to USE X ON Y
 * still need to flesh out hints
-* LLPs are lumped together (2 in 1 place) -- we expect this by the Birthday Paradox, but I'd like to clean it up. There must be an empty room.
+* anything I can find that will give detail, I want to know about, as I've put in quite a lot of placeholders
+* LLPs are lumped together (2 in 1 place) -- we expect this by the Birthday Paradox, but I'd like to clean it up. There must be an empty room besides the Moo Room. Felines/Bees though it's animals...
 
 * GT / going to a room can be different code oaths. after printing room description?
+
+* track good tries in score
+* link to concerns file on quitting or winning

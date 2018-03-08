@@ -80,8 +80,8 @@ randtxt
 
 table of noesies
 randtxt
+"Dash sad."
 "Derided! Ired!"
-"Emo, me."
 
 table of nothings
 randtxt

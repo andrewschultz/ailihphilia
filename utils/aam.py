@@ -2,7 +2,8 @@
 #
 # add all mistakes: adds a number [mis of #] to each line that doesn't have it
 #
-# we *could* do better than 2 passes through but
+# todo: alphabetize mistakes by room?
+
 import sys
 import os
 import re
