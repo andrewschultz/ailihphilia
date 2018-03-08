@@ -34,6 +34,13 @@ start_cand = defaultdict(lambda: defaultdict(bool))
 
 hdr = "=" * 30
 
+def wrong_letters(a):
+    l = len(a) - 1
+    retval = ""
+    for i in range(0, len(a)):
+        retval = retval + (a[i] if a[i] == a[l-i] else '*')
+    return retval
+
 def read_it_all():
     got_what = defaultdict(int)
     with open('c:/games/inform/put-it-up.inform/Source/1w.txt') as file:
@@ -175,6 +182,10 @@ while argcount < len(sys.argv) - 1:
         except:
             print("Tried to change maximum # of listings but didn't give a valid number.")
         continue
+    if xl == "-e":
+        j = ''.join(sys.argv[argcount+1:]).lower()
+        print("Palindrome check", "succeeded." if j == j[::-1] else "failed:\n  {:s}\n  {:s}\n  {:s}".format(j, j[::-1], wrong_letters(j)))
+        exit()
     if xl == "-c":
         check_possible = True
         continue
