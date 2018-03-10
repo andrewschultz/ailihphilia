@@ -58,7 +58,7 @@ section compiler constants
 
 section compiler constants - not for release
 
-use MAX_VERBS of 270.
+use MAX_VERBS of 280.
 
 chapter region and room stuff
 
@@ -259,13 +259,13 @@ when play begins:
 	say "It's not the first dream you had about how awful high school was, but it's the worst in a while. A few 'favorite' classmates chanting 'Diary raid!' and passing it around as they mock 'Beefy? Feeb! Bony Nob!'[wfak-d]";
 	say "You check your mail as you go out to the grocery store. A junk magazine! It's been so long since you got one, you're almost intrigued.[wfak-d]";
 	say "It just says GAME MAG. But the cover isn't telling you to actually buy anything, so you look inside. You have a whole backlog of games, but you can just recycle it when you get to the store. No, not the erot-store![wfak-d]";
-	say "Nothing really catches your mind until you see a DARER AD. It's really all caps, and it has a lot of messages.certainly loud.[wfak-d]";
+	say "Nothing really catches your mind until you see a DARER AD. It's a bit vague, but it catches your eye.[wfak-d]";
 	say "EVIL'S LIVE![wfak-d]";
 	say "LIVE DEVIL![wfak-d]";
 	say "BOSSES! SOB![wfak-d]";
 	say "You fold the Darer Ad and start off to the store.[paragraph break]'Aloha! Hola!' someone, or something, cries. You run in the general direction of the voice.  You look up, and you're no longer on the way to the store. You're somewhere else. With someone else: a Flee Elf, who notes you futzing with your smartphone. 'No El Google on.' You nod. Awkward silence.[wfak-d]";
-	say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because after being confused by it, you looked up the winning strategy on the internet. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers, before suddenly ...[wfak-d]";
-	say "'Put it up!' the Flee Elf yells after your fifth win in a row. You freeze--well, until you're knocked to the ground.[wfak-d]";
+	say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because after being confused by it, you looked up the winning strategy on the internet. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers. Then 'Is reversi...?'";
+	say "After your fifth win in a row, the Flee Elf yells 'Put it up!' You freeze--well, until you're knocked to the ground.[wfak-d]";
 	say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Raw Level War. You'll do for Yelpley, I guess.' The Flee Elf leads you away. 'The first thing to do is, figure how to take this cap.'[wfak-d]";
 	do nothing; [debug information below here. I've had problems putting it in and not deleting it, so I want to make things clear.]
 
@@ -650,6 +650,17 @@ chapter waiting
 
 instead of waiting, next-rand table of waittxt;
 
+chapter plughing
+
+plughing is an action out of world.
+
+understand the command "plugh" as something new.
+
+understand "plugh" as plughing.
+
+carry out plughing:
+	say "GULP." instead;
+
 chapter xyzzying
 
 xyzzying is an action out of world.
@@ -851,7 +862,7 @@ enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	"You 
 troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the stinky knits, but still quite distinctive." [b4:pace cap] [af:yak okay]
 sage gas	tame mat	guru rug	--	--	true	true	true	Grebeberg	"The sage gas bubbles out under the tame mat, and the message changes. To something wiser. But perhaps a bit stuffy."
 sharp rahs	guru rug	tenet	--	--	true	true	true	Grebeberg	"The sharp rahs meld into the guru rug, which feels less weighted down by philosophy and floats away. Under it there's a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
-Moor Broom	Tru Yurt	Exam Axe	--	crib-bump rule	true	true	false	Grebeberg	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe!" [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
+Moor Broom	Tru Yurt	Exam Axe	--	bump-crib rule	true	true	false	Grebeberg	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe!" [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
 wash saw	porch crop	balsa slab	--	--	true	true	false	Grebeberg	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods. You've done well."
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
 DNA band	reifier	DNA hand	--	--	true	true	false	Yelpley	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand!"
@@ -868,7 +879,7 @@ murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with ene
 Yard Ray	test set	--	ready-to-test rule	--	true	false	true	Dim Mid	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, successfully bribed." [b4:use TNT on ore zero]
 taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	Dim Mid	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev knows what he's up against. It's not that it's particularly violent or lethal, but ... the Verses Rev has developed such a warped orthodoxy, the bat is much scarier than it should be. Nothing to do but turn and run!"
-Yard Ray	Diktat Kid	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	"Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who goes running off. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]... REDIVIDER!'[paragraph break]With the Diktat Kid gone, you see saner arenas all around."
+Yard Ray	Diktat Kid	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	"Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who goes running off. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid is going to check for that now, but with the Kid gone, you see saner arenas all around."
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse]
 
@@ -1078,9 +1089,11 @@ use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
 radar	sleep eels	--	--	--	false	false	false	--	"A radar isn't supposed to work this way, but somehow, you detect some bitterness at mammals in general. But it's secondary to needing a more comfortable place to sleep."
 troll ort	cross orc	--	--	--	false	false	false	--	"The cross orc mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE and don't WANT to. But the way it looks at you, you suspect it'd forgive you if you gave the right gift."
 troll ort	kayo yak	--	--	--	false	false	false	--	"As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up."
-Gorge Grog	yard ray	--	--	--	false	false	false
-yard ray	Tru Hurt	--	--	--	false	false	false	--	"The yard ray bounces harmlessly off the Tru Hurt. Maybe it needs to be used nonviolently."
-yard ray	Diktat Kid	--	--	--	false	false	false	--	"The yard ray bounces harmlessly off the Diktat Kid. Maybe it needs to be used nonviolently."
+Gorge Grog	yard ray	--	--	--	false	false	false	--	"The gorge grog is pretty strong stuff, but you may need something even stronger."
+yard ray	Diktat Kid	--	--	--	false	false	false	--	"The Diktat Kid laughs as you point the yard ray. 'Destroy me, but my work will remain!'"
+yard ray	Tru Hurt	--	--	--	false	false	false	--	"The Tru Hurt is dangerous, but maybe you should use the yard ray on something even more harmful."
+yard ray	Waster Fretsaw	--	--	--	false	false	false	--	"The Waster Fretsaw is dangerous, but maybe you should use the yard ray on something even more harmful."
+soot tattoos	DIFF ID	--	--	--	false	false	false	--	"You can just walk north to get through."
 [zzfail]
 
 volume rooms
@@ -1360,12 +1373,22 @@ pill lip	"The pill lip is just there to prevent the demo med from getting dirty 
 go fog	"The go fog is very dense. It pushes you back west even as you look at it. As if to say, go away, and also, get going with what you want and need to do."
 voodoo v	"You don't want or need to mess with the voodoo v."
 leet steel	"You want to focus on the Knife Fink and not the leet steel."
+senile felines	"You don't have to do anything standard with the senile felines. In fact, you should think of them as cats."
+late petal	"You don't need to do anything with the late petal. Perhaps you could help the felines, uh, cats reach it?"
 part strap	"You want to focus on the Verses Rev and not the part strap."
+pool gloop	"Fortunately, you don't need to do anything special to or with the pool gloop."
+spa taps	"The spa taps can't do much. You're not a customer, anyway."
 state tats	"You don't need to do anything to or with the state tats, now that you're wearing them."
 smirk rims	"The smirk rims are only important if you let them be. In other words, they're not."
 mist sim	"Getting distracted by the mist sim would be a good way to get blindsided by Madam."
-Tru Hurt	"If you dispose of the Diktat Kid, the Tru Hurt won't be able to hurt you."
-Waster Fretsaw	"If you dispose of the Diktat Kid, the Waster Fretsaw won't be able to hurt you."
+DIFF ID	"The DIFF ID can't be broken. You [if red roses order is visited]already found[else]just need to find[end if] a way to identify yourself."
+Par Wrap	"It's not the Verses Rev's clothes you need to worry about."
+Tru Hurt	"[rediv-instead of tru hurt]."
+Waster Fretsaw	"[rediv-instead of waster fretsaw]."
+saner arenas	"It's good the saner arenas are there, but you don't need to mess with them."
+
+to say rediv-instead of (th - a thing):
+	say "While the [th] is worrisome, it's clearly not as dangerous as the Redivider."
 
 chapter Verses Rev
 
@@ -1385,9 +1408,15 @@ the x-ite tix are a plural-named thing. description is "A duo. Loud. They promis
 
 understand "xite" and "xite tix" as x-ite tix.
 
+chapter redivider
+
+the redivider is scenery in Dirge Grid. "Just looking at the redivider makes you very mad at friends who said something mean two years ago, as if people who lived life better would've stayed madder and found even better friends. It's hard to pull yourself away, but you do."
+
 chapter tru hurt
 
 the tru hurt is peripheral scenery in Dirge Grid. "The Tru Hurt is here, and it's aimed at you!"
+
+chapter waster fretsaw
 
 the waster fretsaw is peripheral scenery in Dirge Grid. "The less thought of, the better. Without the Diktat Kid to operate it, it'll be less harmful."
 
@@ -1731,8 +1760,9 @@ book Mire Rim
 
 Mire Rim is west of Dumb Mud. It is in Grebeberg. "A made dam blocks your way west. You can go north, south and east here."
 
+crib-clue is a truth state that varies.
+
 after looking in Mire Rim when player has exam axe:
-	crib-clue is a truth state that varies.
 	say "You notice that the birch crib to the south looks a bit different. Something's been growing there. Maybe you should check it out.";
 	now crib-clue is true;
 	continue the action;
@@ -1938,7 +1968,7 @@ puffed-up is a truth state that varies.
 carry out puffuping:
 	if puffed-up is true, say "You already did." instead;
 	if player does not have spur ups, say "You don't possess anything that would help you feel more up." instead;
-	say "As you hold the Spur-Ups, you think about how great you are and can and will be. Surprisingly, it works! It works so well, you figure you don't even need the spur-ups for a boost in the future. You feel more confident, more able to deal with sadness now.";
+	say "As you hold the Spur-Ups, you think about how great you are and can and will be. Surprisingly, it works! It works so well, you figure you don't even need the spur-ups for a boost in the future.[paragraph break]Hardened! Rah![paragraph break]You feel more confident, more able to deal with sadness now.";
 	now puffed-up is true;
 	now Spur Ups are in DevReserved;
 	score-inc; [Yelpley/puff up]
@@ -2715,7 +2745,13 @@ check taking TNT: say "The bomb mob would say a bit more than 'Yank? Nay!' You'd
 
 book Emo Dome
 
-Emo Dome is east of Yawn Way. It is in Yelpley. "You can go any direction here, and you sort of want to, because it's stuffy in here. [if madam is moot]But not back north. You're done there[else]However, the way north looks particularly treacherous[end if]."
+Emo Dome is east of Yawn Way. It is in Yelpley. "You can go any direction here, and you sort of want to, because it's stuffy in here. [can-go-rro]."
+
+to say can-go-rro:
+	if red roses order is unvisited:
+		say "Something labeling itself DIFF ID guards the way north";
+	else:
+		say "[if not-a-baton is off-stage]You feel you may still have unfinished business behind the DIFF ID to the north[else]The DIFF ID guards the Red Roses Order, which no longer holds adventure[end if]"
 
 instead of doing something in Emo Dome when pulled-up is false:
 	if current action is pulluping, continue the action;
@@ -2737,11 +2773,16 @@ check going to Emo Dome:
 		now emo-dir is noun;
 
 check going north in Emo Dome:
-	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a voice: 'DIFF-ID?'[paragraph break]You don't have anything identifying yourself. 'Oh, who? Go jog!' the voice continues. You think, hang? Nah." instead;
-	if Bro Orb is in Le Babel, say "You don't feel prepared enough to enter the Red Roses Order, yet." instead;
+	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a voice from the DIFF-ID: 'Oh! Who?'[paragraph break]You don't have anything identifying yourself. 'Go jog!' the voice continues. You think, hang? Nah." instead;
+	if Bro Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet." instead;
 	if not-a-baton is moot, say "You probably did all you needed to." instead;
-	say "You make sure your state tats are visible for scanning. They are accepted.[paragraph break][if madam is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the wash saw.[end if]";
-	say "You make sure your state tats are visible for scanning. They are accepted and promptly rub off.[paragraph break]You step into what may be your final challenge in Yelpley..."
+	say "You make sure your state tats are visible for scanning. They are accepted.[paragraph break][if madam is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the sword rows.[end if]";
+
+chapter DIFF ID
+
+[?? if you have the tattoos and tried going north, we should check those cases]
+
+the DIFF ID is peripheral scenery in Emo Dome. "You can't really look directly into it too much, but it seems like one of those scanners that could pop up a force field, or make a really annoying noise, if you tried to cross it."
 
 chapter pulluping
 

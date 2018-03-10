@@ -541,6 +541,7 @@ randtxt
 "Dude(tte)! Dud!"
 "Duh, THUD!"
 "Mess [']em!"
+"Noose soon!"
 "Peewee, weep!"
 "Poorer! Oop!"
 "Rah! Thar!"
