@@ -438,7 +438,7 @@ check taking inventory when Dave-evade is true:
 
 after printing the name of pact cap while taking inventory: if cap-pace is true, say " (bent slightly to be a PACE cap too)".
 
-after printing the name of yard ray while taking inventory: say " ([unless murk rum is moot]un[end if]charged)".
+after printing the name of yard ray while taking inventory: say " ([unless murdered rum is moot]un[end if]charged)".
 
 after printing the name of spa maps while taking inventory: say "([if maps-explained is true]deciphered[else]indecipherable[end if])".
 
@@ -537,7 +537,7 @@ the block drinking rule is not listed in any rulebook.
 check drinking:
 	if noun is Elan Ale, say "No drinking on the job. Besides, with what you've done so far, you might be able to trade it for something more useful." instead;
 	if noun is Gorge Grog, say "One look at the grog, and you realize you're not up to such super-powered alcohol." instead;
-	if noun is murk rum, say "The rum part is drinkable, but the murk rum isn't." instead;
+	if noun is murdered rum, say "The rum part is drinkable, but the murdered rum isn't." instead;
 	say "[if noun is drinkable]Pish! Sip?![else][']S not wet. Ew--TONS.[end if]";
 	if drink-warning is false, say "(You don't need to drink anything in this game. Liquids have other purposes. Besides, I didn't implement Pee Keep.)[paragraph break]";
 	now drink-warning is true instead;
@@ -872,11 +872,11 @@ Eroded Ore	reviver	Ore Zero	--	--	true	true	false	Yelpley	"The reviver whirs as 
 you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. It's so tempting and beautiful, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
 bang nab	TNT	TNT	--	--	true	true	false	Yelpley	"The Bang Nab walks on its index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course."
 nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
-rep popper	Yuge Guy	murk rum	--	totem-out rule	true	true	true	Grebeberg	"'BOO! NOOB!' the Yuge Guy booms, but he's clearly scared. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims.[paragraph break]The ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
+rep popper	Yuge Guy	murdered rum	--	totem-out rule	true	true	true	Grebeberg	"'BOO! NOOB!' the Yuge Guy booms, but he's clearly scared. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims.[paragraph break]The ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
 Bro Orb	Madam	Yard Ray	--	wash-saw-reveal rule	true	true	true	Yelpley	"The Bro Orb shines and drives Madam to rage. 'Live not on evil, madam, live not on evil!' you boom, as the ray does its work. She runs away, sobbing. The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Madam."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You will be able to smite a bad-faith pearl-clutcher for sure with one of these."
-murk rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
+murdered rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
 Yard Ray	test set	--	ready-to-test rule	--	true	false	true	Dim Mid	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, successfully bribed." [b4:use TNT on ore zero]
 taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	Dim Mid	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev knows what he's up against. It's not that it's particularly violent or lethal, but ... the Verses Rev has developed such a warped orthodoxy, the bat is much scarier than it should be. Nothing to do but turn and run!"
@@ -964,12 +964,12 @@ section post-use rules [xxpost]
 
 [please add alphabetically]
 
-this is the bump-gulf rule:
-	shuffle-before Flu Gulf and Sneer Greens;
-	the rule succeeds;
-
 this is the bump-crib rule:
 	shuffle-before Birch Crib and Red Roses Order;
+	the rule succeeds;
+
+this is the bump-gulf rule:
+	shuffle-before Flu Gulf and Sneer Greens;
 	the rule succeeds;
 
 this is the bump-maws rule:
@@ -1173,7 +1173,7 @@ check going north in Fun Nuf:
 	if Diktat Kid is moot, say "No need to go back." instead;
 	if north tron is not in Fun Nuf, say "Not until you built the North-Tron." instead;
 	if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
-	if murk rum is not moot, say "You have the yard ray, but it isn't, well, charged." instead;
+	if murdered rum is not moot, say "You have the yard ray, but it isn't, well, charged." instead;
 	if player does not have ME gem or player does not have Taboo Bat, say "You feel well equipped ... but well equipped enough?";
 
 chapter Pact Cap
@@ -1437,7 +1437,7 @@ understand the command "emit" as something new.
 understand "emit [text]" as emiting when player has yard ray.
 
 carry out emiting:
-	if murk rum is not moot, say "The Yard Ray isn't charged enough to emit anything." instead;
+	if murdered rum is not moot, say "The Yard Ray isn't charged enough to emit anything." instead;
 	if player is in location of Yuge Guy, say "No...the Yuge Guy needs to be defeated by other means." instead;
 	if Diktat Kid is moot, say "You already got rid of the Diktat Kid." instead;
 	if the topic understood matches "noontime":
@@ -1554,9 +1554,9 @@ chapter smirk rims
 
 the smirk rims are peripheral scenery in Sneer Greens. description is "They look at you as if to say, 'What makes you think you can beat the [if Yuge Guy is in Sneer Greens]Yuge Guy[else]Diktat Kid[end if]?'"
 
-chapter murk rum
+chapter murdered rum
 
-some murk rum is a drinkable thing. description is "It looks viscous, like oil."
+some murdered rum is a drinkable thing. description is "It looks viscous, like oil. Perhaps it was only murk rum long ago, before it sat in the belly of the ME Totem for so long. It's ... well, you wouldn't want to get in contact with it. A lot more powerful than regular alcohol."
 
 book Dumb Mud
 
@@ -2867,7 +2867,7 @@ check going south in Red Roses Order when Madam is in Red Roses Order: say "No w
 
 chapter yard ray
 
-the yard ray is a thing. description is "It looks pretty lethal. It's no dinky resale laser![paragraph break]There are also has instructions: EMIT ********.[paragraph break]It's currently [if murk rum is moot]loaded with energy from the Murk Rum[else]empty of fuel[end if]."
+the yard ray is a thing. description is "It looks pretty lethal. It's no dinky resale laser![paragraph break]There are also has instructions: EMIT ********.[paragraph break]It's currently [if murdered rum is moot]loaded with energy from the murdered rum[else]empty of fuel[end if]."
 
 book Swept Pews
 
@@ -4275,7 +4275,7 @@ carry out endgameing:
 	move test set to Fun Nuf;
 	now player carries all tronparts;
 	now martini tram is in Fun Nuf;
-	now player carries murk rum;
+	now player carries murdered rum;
 	now player carries yard ray;
 	now player carries epicer recipe;
 	moot Set O Notes;

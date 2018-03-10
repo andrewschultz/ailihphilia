@@ -365,7 +365,7 @@ The not-a-baton could use a boost.
 
 Boom go the machines! Now you have a weapon to take out the Diktat Kid! But it's not loaded.
 
-(+1) >USE MURK RUM ON YARD RAY
+(+1) >USE MURDERED RUM ON YARD RAY
 
 How do you turn it on?
 
