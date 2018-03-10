@@ -816,6 +816,7 @@ epicer recipe	"It's meant for referral."
 Darer Ad	"It was only useful to sucker you into this mess."
 Set O Notes	"It's useful for an overview, but not for DOING anything."
 north tron	"The north tron's already done its job."
+ME Totem	"It's the Yuge Guy you want to concentrate on, here."
 
 [the table of useons approximately follows not only the test commands but also the walkthrough]
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
@@ -871,7 +872,7 @@ Eroded Ore	reviver	Ore Zero	--	--	true	true	false	Yelpley	"The reviver whirs as 
 you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. It's so tempting and beautiful, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
 bang nab	TNT	TNT	--	--	true	true	false	Yelpley	"The Bang Nab walks on its index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course."
 nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
-rep popper	Yuge Guy	murk rum	--	--	true	true	true	Grebeberg	"'BOO! NOOB!' the Yuge Guy booms, but he's clearly scared. You hold the rep popper at the Yuge Guy until he deflates like a balloon and whooshes out over the smirk rims.[paragraph break]He was carrying some murk rum, which fell from his clothes. You pick it up."
+rep popper	Yuge Guy	murk rum	--	totem-out rule	true	true	true	Grebeberg	"'BOO! NOOB!' the Yuge Guy booms, but he's clearly scared. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims.[paragraph break]The ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
 Bro Orb	Madam	Yard Ray	--	wash-saw-reveal rule	true	true	true	Yelpley	"The Bro Orb shines and drives Madam to rage. 'Live not on evil, madam, live not on evil!' you boom, as the ray does its work. She runs away, sobbing. The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Madam."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You will be able to smite a bad-faith pearl-clutcher for sure with one of these."
@@ -1061,6 +1062,10 @@ this is the sod-to-cup rule:
 
 this is the tats-peripheral rule:
 	now state tats are peripheral;
+	the rule succeeds;
+
+this is the totem-out rule:
+	moot ME Totem;
 	the rule succeeds;
 
 this is the wash-saw-reveal rule:
@@ -1378,8 +1383,9 @@ late petal	"You don't need to do anything with the late petal. Perhaps you could
 part strap	"You want to focus on the Verses Rev and not the part strap."
 pool gloop	"Fortunately, you don't need to do anything special to or with the pool gloop."
 spa taps	"The spa taps can't do much. You're not a customer, anyway."
-state tats	"You don't need to do anything to or with the state tats, now that you're wearing them."
 smirk rims	"The smirk rims are only important if you let them be. In other words, they're not."
+ME Totem	"If you can deal with the Yuge Guy, the ME Totem won't matter."
+state tats	"You don't need to do anything to or with the state tats, now that you're wearing them."
 mist sim	"Getting distracted by the mist sim would be a good way to get blindsided by Madam."
 DIFF ID	"The DIFF ID can't be broken. You [if red roses order is visited]already found[else]just need to find[end if] a way to identify yourself."
 Par Wrap	"It's not the Verses Rev's clothes you need to worry about."
@@ -1513,7 +1519,7 @@ check going west in Flu Gulf when scorn rocs are in Flu Gulf:	say "The scorn roc
 
 book Sneer Greens
 
-Sneer Greens is west of Flu Gulf. It is in Grebeberg. "[if Yuge Guy is in Sneer Greens]Despite the impressive view, the place has gone to pot.[else]Nicer with the Yuge Guy gone. Still, it's...[end if][paragraph break]You can only go back east. Smirk rims block every way back except east."
+Sneer Greens is west of Flu Gulf. It is in Grebeberg. "[if Yuge Guy is in Sneer Greens]Despite the impressive view, the place has gone to pot.[else]Nicer with the Yuge Guy gone. Still, it's...[end if][paragraph break]You can only go back east. Smirk rims block every way back except east[if me totem is in sneer greens], and a ME Totem towers above you."
 
 Sneer Greens is above Flu Gulf.
 
@@ -1536,9 +1542,13 @@ check going east in Sneer Greens:
 
 chapter Yuge Guy
 
-Yuge Guy is a proper-named person in Sneer Greens. description is "Bilgy. Glib.". "[one of]'BELIEVE ME! LOVE ME! BELIEVE!' yells someone Wow--he's a lot bigger than you.[paragraph break]'I am EVIL CLIVE! the Yuge Guy!' he drones on. After your initial shock, you see that while he is bigger than you, it's more horizontally than vertically.[or]The Yuge Guy continues carrying on about how the world stinks, except for him.[stopping]"
+Yuge Guy is a proper-named person in Sneer Greens. description is "Bilgy. Glib.". "[one of]'BELIEVE ME! LOVE ME! BELIEVE!' yells someone Wow--he's a lot bigger than you.[paragraph break]'I am EVIL CLIVE! the Yuge Guy!' he drones on. After your initial shock, you see that while he is bigger than you, it's more horizontally than vertically, and he looks like the ME Totem, too.[or]The Yuge Guy continues carrying on about how the world stinks, except for him.[stopping]"
 
 understand "evil/clive" and "evil clive" as Yuge Guy.
+
+chapter ME Totem
+
+the ME Totem is peripheral scenery in Sneer Greens. description is "It's a more favorable version of the Yuge Guy: taller, thinner, better looking. It's overdone, but you can see how people would be fooled by it. It is hard to look away. But you know you need to."
 
 chapter smirk rims
 
