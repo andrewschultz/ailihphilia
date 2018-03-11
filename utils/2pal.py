@@ -28,6 +28,8 @@ caps_hash = { "f": True, "l": True, "d": False }
 # that's up to 26x (676x) faster (Cauchy's Inequality says it can't be more than that)
 brute_force_hashing = False
 
+all_three = False
+
 one_letter_jazz = False
 
 edit_files = False
@@ -75,10 +77,14 @@ def optcaps(z):
     else:
         return z
 
+def no_valid_words():
+    if args.start_array or args.end_array: return False
+    return True
+
 def freq_use():
     print("2pal.py -ht(l) = create the HTML tree and launch it")
     print("2pal.py -hc -m and = create an HTML sub-tree for 'and' in the middle")
-    print("2pal.py -fs f -fe l = run through . The f/l/d can be in a 3x3 matrix of separate commands to get everything.")
+    print("2pal.py -fs f,l,d -fe f,l,d = run through first/last names. The f/l/d can be in a 3x3 matrix of separate commands to get everything.")
     print("    If they are in a CSV, then the file name is -f-l-d.")
     print("2pal.py -fs f,l -fe d -r -fi would send (word) (name) and (name) (word) to separate files.")
 
@@ -88,9 +94,9 @@ def usage():
     print("-f = start/end files, -fs = start files, -fe = end files. The file hash is below:")
     print('   ', ', '.join([x + "=" + file_hash[x] for x in sorted(file_hash.keys())]))
     print("-co provides a concordance of commands that still need to be run.")
-    print("-b -m -e = begin, middle, end string")
-    print("-v = view file in notepad")
-    print("-sp suppresses progress in stdout, -s0 shows zero-ish e.g. zg/gz will have no possible matches")
+    print("-b -m -e = begin, middle, end string.")
+    print("-v = view file in notepad.")
+    print("-sp suppresses progress in stderr, -s0 shows zero-ish e.g. zg/gz will have no possible matches.")
     print("-tf/-fi sends output to file, -o/-of overwrites if it's there, -eo sends to edit file.")
     print("-c/-cf tacks on a custom file string.")
     print("-ol processes one-letter words in palindromes, start/end/middle. It is a long test.")
@@ -99,7 +105,8 @@ def usage():
     print("-trt = debug flag to track run totals of first/last words checked so far.")
     print("-hc/hl = html create/launch, -ht/htl = html tree create/launch.")
     print("-d dumb test")
-    print("-2 quicken things by using hash tables to match only words with same 2 first/last letters")
+    print("-2 quicken things by using hash tables to match only words with same 2 first/last letters.")
+    print("-3 puts a letter in all 3 positions.")
     print("-x gives frequent-use examples.")
     print("-r reverses the main argument.")
     print("-? this usage without a message saying you had an unrecognized parameter. -h gives Python's generated help.")
@@ -183,9 +190,15 @@ def pal_to_edit(a):
     else:
         print("No", a, "to copy to", x)
 
-def one_at_a_time():
+def one_at_a_time(newfile=True, my_string = ''):
+    global begin_string
+    global end_string
+    global mid_string
     base_file = "pals-out-1-{:s}-2-{:s}".format('-'.join(start_files), '-'.join(end_files))
+    if all_three:
+        base_file = "pals-out-all3-{:s}".format(my_string)
     out_files = custom_munge(base_file, 'txt')
+    write_str = "w" if newfile else "a"
     if one_letter_jazz:
         print(out_files)
         return
@@ -206,8 +219,8 @@ def one_at_a_time():
                 return
         print("Writing palindromes to", out_files[PALINDROME])
         print("Writing anagrams to", out_files[ANAGRAM])
-        fout = open(out_files[PALINDROME], "w")
-        fouta = open(out_files[ANAGRAM], "w")
+        fout = open(out_files[PALINDROME], write_str)
+        fouta = open(out_files[ANAGRAM], write_str)
         if fout is None:
             print("Unable to open", out_file, "for writing.")
             return
@@ -284,10 +297,23 @@ def one_at_a_time():
     print(end-start, 'total seconds', totals, 'total comparisons')
 
 def turn_the_crank():
+    global begin_string
+    global middle_string
+    global end_string
     if brute_force_hashing:
         brute_force_hashing()
     else:
-        one_at_a_time()
+        if all_three:
+            begin_string = all_3_string # ??
+            one_at_a_time(True, all_3_string)
+            begin_string = ''
+            middle_string = all_3_string
+            one_at_a_time(False, all_3_string)
+            middle_string = ''
+            end_string = all_3_string
+            one_at_a_time(False, all_3_string)
+        else:
+            one_at_a_time()
 
 # end functions
 
@@ -301,6 +327,7 @@ parser.add_argument('-co', action='store_true', dest='concordance', help='run co
 parser.add_argument('-trt', action='store_true', dest='track_run_total', help='tracking the run total of first/last letters so far')
 parser.add_argument('-d', action='store_true', dest='dumb_test', help='run dumb test focusing on specific letters')
 parser.add_argument('-2', action='store_false', dest='twosies')
+parser.add_argument('-3', type=str, help="all-3 string", dest='all_3_string')
 parser.add_argument('-?', action='store_true', dest='usage')
 parser.add_argument('-f', type=str, help="start and end arrays", dest='file_array')
 parser.add_argument('-fs', type=str, help="start array", dest='start_array')
@@ -335,6 +362,14 @@ if args.usage:
 
 if args.one_letter_jazz:
     one_letter_jazz = True
+
+all_3_string = ""
+
+if args.all_3_string:
+    all_3_string = args.all_3_string
+    all_three = True
+    args.start_array = 'f,l,d'
+    args.end_array = 'f,l,d'
 
 if args.rewrite_all_file:
     print("Ignoring all other flags. Rewriting", file_hash['a'])
@@ -465,7 +500,7 @@ if args.file_array:
     args.start_array = args.file_array
     args.end_array = args.file_array
 else:
-    if not args.start_array or not args.end_array:
+    if no_valid_words():
         print("You need to define start/end array or a file array (-fs&-fe or -f).")
         exit()
 
