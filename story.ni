@@ -3273,6 +3273,7 @@ to reset-chase:
 	if mrlp is Grebeberg, move player to Seer Trees;
 	if mrlp is Yelpley, move player to Yawn Way;
 	move chase-person to chase-room of chase-person;
+	now being-chased is false;
 
 after going when being-chased is true:
 	now last-chase-direction is noun;
@@ -3283,16 +3284,16 @@ check going when being-chased is true:
 
 check going to Fun Nuf when being-chased is true: say "You feel yourself running up against an invisible barrier. Apparently, running away that way from the [chase-person] won't help." instead;
 
-the Psi Wisp is a chaser. chase-room of Psi Wisp is Pro Corp. description is "The Psi Wisp is very red, and it pulses fervently. If it had feelings, you'd be pretty sure it didn't like you.". "[one of]A Psi Wisp appears and starts chasing you![or]The Psi Wisp is still chasing you![stopping]".
+the Psi Wisp is a chaser. chase-room of Psi Wisp is Pro Corp. description is "The Psi Wisp is very red, and it pulses fervently. If it had feelings, you'd be pretty sure it didn't like you.". "[one of]A Psi Wisp pulses here before lurching alarmingly in your direction![or]The Psi Wisp is still chasing you![stopping]".
 
-after looking when being-chased is false:
+after looking when being-chased is false (this is the start-chase-in-case rule):
 	if player is in Pro Corp and psi wisp is not moot:
 		start-chase Psi Wisp;
-		say "The Psi Wisp begins to chase after you!";
+		say "The Psi Wisp begins to chase after you[one of][or] again[stopping]!";
 		continue the action;
 	if troll ort is moot and player is in Frush Surf and kayo yak is in Frush Surf:
 		start-chase Kayo Yak;
-		say "The Kayo Yak bounds after you!";
+		say "The Kayo Yak bounds after you[one of][or] again[stopping]!";
 		continue the action;
 	continue the action;
 
