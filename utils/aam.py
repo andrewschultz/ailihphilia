@@ -30,7 +30,10 @@ def insert_num(my_str, my_num): # this may be more complex in the future
 def num_of(a):
     temp = re.sub(".*mis of ", "", a)
     temp = re.sub("\].*", "", temp)
-    return int(temp)
+    try:
+        return int(temp)
+    except:
+        return 0
 
 def mistake_check(reord):
     local_copy_back = True
@@ -115,15 +118,18 @@ errs = 0
 
 with open(mis) as file:
     for line in file:
-        if re.search("mis of [0-9]+", line):
+        if line.startswith("understand"):
             nol = num_of(line)
-            if nol in got.keys():
+            if nol in got.keys() and nol > 0:
                 print("WARNING", nol, "pops up twice in mistake file.")
                 errs = errs + 1
             got[nol] = True
             this_mist = my_mistake(line)
             if nol - last_num_of != 1:
-                print("WARNING bad delta from", last_mist, last_num_of, "to", this_mist, nol)
+                if nol:
+                    print("WARNING bad delta from", last_mist, last_num_of, "to", this_mist, nol)
+                else:
+                    print("WARNING blank number for", this_mist, nol)
                 errs = errs + 1
             last_num_of = nol
             last_mist = this_mist
@@ -138,7 +144,7 @@ else:
     print("First run...")
 
 if max_errs and errs > max_errs and not reorder:
-    print("Forcing reorder since there are more than", max_errs, "numbering errors.")
+    print("Forcing reorder since there are more than", max_errs, "numbering errors: to be precise,", errs)
     reorder = True
 
 mistake_check(reorder)

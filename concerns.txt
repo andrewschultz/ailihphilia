@@ -16,3 +16,5 @@ Concerns so far:
 * Should Bro Orb be Bros Orb?
 
 * There are some instances where I've shifted items around. If anything looks weird, I need to know this. I've tried to root out obviously wrong stuff caused by shifting puzzles around, but if you find one thing, it may help me find others.
+
+* descriptions of USE X ON Y successfully have been rushed.
