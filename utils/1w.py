@@ -64,6 +64,7 @@ def usage():
     print()
     print("Any word sent in is scoured for palindromes. CSV or space.")
     print("-c checks possible palindromes for longer sentences. -nc forces it off. Default is", ["off", "on"][check_possible])
+    print("-e checks errors in one word sequence.")
     print("(Capital) V means try all vowels e.g. bVg = big bag bog bug beg byg")
     print("(Capital) C means try all consonants e.g. bVg = big bag bog bug beg byg")
     print("-i uses stdin.")
@@ -184,6 +185,7 @@ while argcount < len(sys.argv) - 1:
         continue
     if xl == "-e":
         j = ''.join(sys.argv[argcount+1:]).lower()
+        j = re.sub(r"[^a-z]", "", j, re.IGNORECASE)
         print("Palindrome check", "succeeded." if j == j[::-1] else "failed:\n  {:s}\n  {:s}\n  {:s}".format(j, j[::-1], wrong_letters(j)))
         exit()
     if xl == "-c":
