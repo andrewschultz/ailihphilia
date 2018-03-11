@@ -23,16 +23,22 @@ start_pal = defaultdict(lambda: defaultdict(bool))
 
 def usage():
     print("3 word palindrome searcher.")
+    print("-g = group by start/end words.")
     print("-f = find in 3w2.txt.")
     print("-q = quick search. Skip begin/end palindromes e.g. ACISODIS/ISODICA.")
     print("-l = pick up where 3w(2).txt left off")
     print("-m = maximum word length")
+    print("-o = order results by last word, -no/-on turns this off")
     print("-s = skip uneven palindromes e.g. top X spot. Speedup, but may miss a few.")
     print("-e = write progress to STDERR, useful when piping output to a file. (-ne turns it off, default is on)")
+    print("-x3 = extract specific word from file of 3-palindromes (x3w/x3o = only that word)")
     print("-w = warn every X new words (default = {:d}).".format(warning_every_x))
     print("any word = what word to start with.")
     print("-? = this function.")
     exit()
+
+def is_pal(x):
+    return x == x[::-1]
 
 def search_output(x):
     output_file = '3w2.txt'
@@ -49,10 +55,27 @@ def search_output(x):
         print(x, "found", count, "times.")
     exit()
 
+def extract_from_file(x, y = True):
+    any_yet = False
+    exact_word = y
+    with open("3w-sorted.txt") as file:
+        for line in file:
+            if x in line:
+                if exact_word and not re.search(r"\b{:s}\b".format(x), line, re.IGNORECASE): continue
+                if not any_yet: fout = open("3w-part.txt", "w")
+                any_yet = True
+                fout.write(line)
+    if any_yet:
+        fout.close()
+        os.system("3w-part.txt")
+    else:
+        print("No matches found, not creating 3w-part.txt")
+
+
 def end_array(x):
     if len(x) >= 2:
-        return lasty[x[-2:]]
-    return lasty[x[-1:]]
+        return lasty[x[-2::-1]] if not order_results else sorted(lasty[x[-2::-1]])
+    return lasty[x[-1:]] if not order_results else sorted(lasty[x[-1:]])
 
 def start_array(x):
     if len(x) >= 2:
@@ -145,6 +168,8 @@ words_listed_yet = False
 ignored = 0
 overall_word_count = 0
 
+group_by_start_end = False
+
 # options
 skip_beginend_palindrome = False
 ignore_2_letter_words = True
@@ -152,11 +177,13 @@ start_val = ''
 look_for_last = False
 skip_uneven_palindromes = False
 progress_to_stderr = True
-warning_every_x = 10
+warning_every_x = 100
 max_word_length = 13
 find_string = ''
 
 # start initialization stuff
+
+order_results = False
 
 if len(sys.argv) > 1:
     count = 1
@@ -168,13 +195,33 @@ if len(sys.argv) > 1:
             usage()
         elif ll == '-s':
             skip_uneven_palindromes = True
+        elif ll == '-o':
+            order_results = True
+        elif ll == '-on' or ll == 'no':
+            order_results = False
         elif ll == '-q':
             skip_beginend_palindrome = True
+        elif ll == '-x3':
+            try:
+                to_extract = sys.argv[count+1]
+            except:
+                print("You need a string to extract.")
+            extract_from_file(to_extract, False)
+            exit()
+        elif ll == '-x3w' or ll == '-x3o':
+            try:
+                to_extract = sys.argv[count+1]
+            except:
+                print("You need a string to extract.")
+            extract_from_file(to_extract, True)
+            exit()
         elif ll == '-l':
             look_for_last = True
         elif ll == '-f':
             find_string = sys.argv[count+1].lower()
             search_output(find_string)
+        elif ll == '-g':
+            group_by_start_end = True
         elif ll == '-e':
             progress_to_stderr = True
         elif ll == '-ne':
@@ -220,9 +267,11 @@ if look_for_last:
 
 t1 = time.time()
 
-okay_2_letter_words = [ "a", "an", "in", "on", "of", "or", "to", "my", "it"]
+okay_2_letter_words = ['a', 'am', 'an', 'as', 'at', 'be', 'by', 'do', 'go', 'he', 'if', 'in', 'is', 'it', 'me', 'my', 'no', 'of', 'on', 'or', 'so', 'to', 'up', 'us', 'we']
 
 for x in okay_2_letter_words:
+    if x in wordy.keys():
+        print(x, "is a duplicate")
     wordy[x] = True
     firsty[x[0]][x] = True
     lasty[x[-1]][x] = True
@@ -290,6 +339,7 @@ if progress_to_stderr:
 
 last_start = ""
 last_end = ""
+last_group = ""
 
 for a in sk:
     if a < start_val:
@@ -304,6 +354,7 @@ for a in sk:
         sys.stderr.write("{:d} starting words considered this run. Currently at {:s} after {:.3f} seconds, delta = {:.3f}, average = {:.6f}.\n".format(overall_word_count, a, time_taken, time_taken - last_delt, (time_taken - last_delt) / overall_word_count));
         last_delt = time_taken
     this_word_count = 0
+    cur_array = []
     for b in end_array(a):
         q = pal_conv_hash(a, b)
         if q:
@@ -311,9 +362,20 @@ for a in sk:
             for c in sorted(q):
                 count = count + 1
                 this_word_count = this_word_count + 1
-                print(this_word_count, count, a, c, b, "=", a + c + b + ("" if a == last_start and b == last_end else " (*)"))
+                if group_by_start_end:
+                    cur_array.append('"{:s} {:s} {:s}"'.format(a, c, b))
+                else:
+                    print(this_word_count, count, a, c, b, "=", a + c + b + ("" if a == last_start and b == last_end else " (*)"))
                 last_start = a
                 last_end = b
+        if group_by_start_end and len(cur_array):
+            if a != last_group: print('=' * 40, a)
+            last_group = a
+            print('{:s} + ? + {:s} ({:d}{:s}) ='.format(a, b, len(cur_array), '/already' if is_pal(a+b) else ''), '  /  '.join(cur_array))
+            cur_array = []
+
+
+if len(cur_array): print(' / '.join(cur_array))
 
 t3 = time.time() - bt
 print(t3, "seconds for all 3-word palindromes.")
