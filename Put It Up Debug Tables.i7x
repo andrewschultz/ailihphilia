@@ -101,8 +101,8 @@ randtxt
 
 table of waittxt
 randtxt
-"A lag gala!"
 "Camp, mac!"
+"Deed, deed, deed!"
 
 table of yessies
 randtxt
@@ -111,8 +111,8 @@ randtxt
 
 table of yuge taunts
 randtxt
-"A papa! A papa!"
 "Ahahahahahaha!"
+"Gibe! Big!"
 
 Put it Up debug Tables ends here.
 

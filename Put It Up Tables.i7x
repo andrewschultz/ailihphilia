@@ -503,12 +503,14 @@ table of altbooks
 randtxt
 "Eponymy? Nope"
 "Gigolo Gig"
+"A Mardy Drama"
 "Rise Aesir"
 "Risk Sir"
 "Solo Gigolos"
 "Sore Heros"
 "Sore Zeros"
 "Torsos, ROT"
+"We Few"
 
 table of attackings
 randtxt
@@ -547,6 +549,7 @@ randtxt
 "Rah! Thar!"
 "Resoldered loser!"
 "Rofl! For..."
+"A tarred errata!"
 "ZAP, spaz!"
 
 table of noesies
@@ -620,16 +623,17 @@ randtxt
 
 table of waittxt
 randtxt
-"A lag gala!"
 "Camp, mac!"
 "Deed, deed, deed!"
 "Def['] faffed!"
 "Don't nod!"
 "Gall! Lag!"
 "GO, dog!"
+"A lag gala!"
 "No gig on?"
 "Now? On!"
 "Panic? I nap!"
+"A rests era!"
 "Resume, muser!"
 "Sod dos."
 "Stare? Rats!"
@@ -651,7 +655,6 @@ randtxt
 
 table of yuge taunts
 randtxt
-"A papa! A papa!"
 "Ahahahahahaha!"
 "Gibe! Big!"
 "Hog, oh!"
@@ -661,6 +664,7 @@ randtxt
 "Name: HE-MAN!"
 "Nem O['] women!"
 "Null [']un!"
+"A papa! A papa!"
 "Soros! Soros!"
 "Wane? Naw!"
 "You! Oy!"
