@@ -829,7 +829,7 @@ bunk nub	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching 
 party trap	stark rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
 ERA FARE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'This will help me when I get back to South Ihtuos. Thank you!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...I must leave and RAFT FAR back to '"
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
-wash saw	past sap	--	--	--	true	false	false	Grebeberg	"You hack away at the past sap with the wash saw, first squirting some loosening/thawing liquid. It's tricky, but the saw holds out, and with some perseverance, you're able to twist the sap off the rife fir."
+wash saw	past sap	--	--	sap-loose rule	true	false	false	Grebeberg	"You hack away at the past sap with the wash saw, first squirting some loosening/thawing liquid. It's tricky, but the saw holds out, and with some perseverance, you're able to twist the sap off the rife fir."
 puce cup	past sap	--	check-sap-cup rule	sap-to-cup rule	false	false	false	--	"You pour some sap into the cup."
 puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"The past sap pours into the liar grail and exposes how bad the grail has been over the years. As it cracks, along with the wall it was attached to to allow passage south, you snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL!"
 puce cup	dose sod	--	check-sod-cup rule	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
@@ -873,7 +873,7 @@ you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as th
 bang nab	TNT	TNT	--	--	true	true	false	Yelpley	"The Bang Nab walks on its index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course."
 nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
 rep popper	Yuge Guy	murdered rum	--	totem-out rule	true	true	true	Grebeberg	"'BOO! NOOB!' the Yuge Guy booms, but he's clearly scared. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims.[paragraph break]The ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
-Bro Orb	Madam	Yard Ray	--	wash-saw-reveal rule	true	true	true	Yelpley	"The Bro Orb shines and drives Madam to rage. 'Live not on evil, madam, live not on evil!' you boom, as the ray does its work. She runs away, sobbing. The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
+Bro Orb	Madam	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	"The Bro Orb shines and drives Madam to rage. 'Live not on evil, madam, live not on evil!' you boom, as the ray does its work. She runs away, sobbing. The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Madam."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You will be able to smite a bad-faith pearl-clutcher for sure with one of these."
 murdered rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
@@ -889,7 +889,7 @@ section pre-use rules [xxpre]
 [please add alphabetically]
 
 this is the check-sap-cup rule:
-	if wash saw is not moot:
+	if sap-takeable is false:
 		say "The sap is stuck to the tree.";
 		the rule fails;
 	if liar grail is moot:
@@ -966,6 +966,7 @@ section post-use rules [xxpost]
 
 this is the bump-crib rule:
 	shuffle-before Birch Crib and Red Roses Order;
+	move porch crop to birch crib;
 	the rule succeeds;
 
 this is the bump-gulf rule:
@@ -1040,6 +1041,10 @@ this is the rebump-art-xtra rule:
 	shuffle-before Art Xtra and Red Roses Order;
 	the rule succeeds;
 
+this is the sap-loose rule:
+	now sap-takeable is true;
+	the rule succeeds;
+
 this is the sap-to-cup rule:
 	now puce cup is sappy;
 	repeat through table of useons:
@@ -1060,16 +1065,16 @@ this is the sod-to-cup rule:
 			the rule succeeds;
 	the rule succeeds;
 
+this is the sword-rows-reveal rule:
+	move sword rows to Red Roses Order;
+	the rule succeeds;
+
 this is the tats-peripheral rule:
 	now state tats are peripheral;
 	the rule succeeds;
 
 this is the totem-out rule:
 	moot ME Totem;
-	the rule succeeds;
-
-this is the wash-saw-reveal rule:
-	move wash saw to Red Roses Order;
 	the rule succeeds;
 
 this is the wear-garb rule:
@@ -1490,6 +1495,8 @@ instead of taking the past sap: say "It'd get sticky on your fingers. You need s
 instead of doing something with past sap:
 	if action is procedural, continue the action;
 	say "[if liar grail is moot]With the liar grail gone, you don't want to have to deal with the past sap again[else]The past sap might be useful, but you need a way to take it, first[end if]."
+
+sap-takeable is a truth state that varies.
 
 chapter King Nik
 
