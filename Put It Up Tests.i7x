@@ -16,7 +16,7 @@ chapter main walkthrough
 
 test part1 with "pack cap/stats/peep/poop/dial aid/refer/e/n/get trap art/s/s/evade dave/get saw/w/bore rob/word row/trace cart/get to idiot/e/n/n/n/use to idiot on door frood/get bunk nub/e/get all/use pity tip on navy van/w/w/tend net/e/s/s/s/w/work row/use trap art on reifier/use bunk nub on reviver"
 
-test part2 with "word row/get era fare/e/n/w/w/use party trap on stark rats/n/use era fare on king nik/s/s/slam mammals/use stock cots on sleep eels/s/get stamp mats/e/get poo coop/w/n/n/e/e/s/w/get yob attaboy/e/n/puff up/e/pull up/get puce cup"
+test part2 with "word row/get epoch cope/e/n/w/w/use party trap on stark rats/n/use epoch cope on king nik/s/s/slam mammals/use stock cots on sleep eels/s/get stamp mats/e/get poo coop/w/n/n/e/e/s/w/get yob attaboy/e/n/puff up/e/pull up/get puce cup"
 
 test part3 with "w/w/w/n/use wash saw on past sap/use puce cup on past sap/s/e/e/e/s/get demo med/get troll ort/use puce cup on liar grail/n/w/w/w/n/e/use puce cup on dose sod/w/s/e/e/e/s/s/use puce cup on bond nob"
 
@@ -64,9 +64,9 @@ chapter mistake quizzing
 
 test m1 with "finord 3/flex elf/flea elf/fun enuf/funk nuf/fund nuf/fun snuf/paco cap/pack cap/e/yawn way/n/art ecetra"
 
-test m2 with "s/s/wasp saw/evade dave/w/bork rob/borg rob/bore rob/worm row/word row/get idiot/e/n/n/n/door brood/give idiot to frood/get all/e/use tip on van/get all/w/w/tend net/e/s/s/s/w/get era fare/work row/use trap art on reifier/w/w/seer brees/seer frees/stare rats/start rats/use trap on rats/s/use bunk nub on eels/s/get all/e/moo doom"
+test m2 with "s/s/wasp saw/evade dave/w/bork rob/borg rob/bore rob/worm row/word row/get idiot/e/n/n/n/door brood/give idiot to frood/get all/e/use tip on van/get all/w/w/tend net/e/s/s/s/w/get epoch cope/work row/use trap art on reifier/w/w/seer brees/seer frees/stare rats/start rats/use trap on rats/s/use bunk nub on eels/s/get all/e/moo doom"
 
-test m3 with "moo boom/get all/w/n/n/n/cola loc/use era fare on king nik/s/e/e/purr up/puff up/e/pull up/get all/puck cup/emo home/w/w/n/use saw on sap/s/e/e/s/trod ort"
+test m3 with "moo boom/get all/w/n/n/n/cola loc/use epoch cope on king nik/s/e/e/purr up/puff up/e/pull up/get all/puck cup/emo home/w/w/n/use saw on sap/s/e/e/s/trod ort"
 
 test m4 with "get all/use cup on grail/liar trail/n/w/w/w/n/e/use puce cup on dose sod/spa caps/spa naps/spa raps/spa zaps/s/drawn ward/bony nob/bone nob/bonk nob/bong nob"
 

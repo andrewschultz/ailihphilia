@@ -139,7 +139,7 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="1" id="39" port="w" />
 		</line>
 		<room id="67" name="USE RADAR ON MADE DAM" subtitle="" x="544" y="-128" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="68" name="USE NULL ILLUN ON KNOWN WONK" subtitle="" x="544" y="-896" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00ffff" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="68" name="USE NULL ILLUN ON KNOWN WONK" subtitle="" x="544" y="-896" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="69" name="USE TROLL ORT ON BRAG GARB" subtitle="" x="64" y="-256" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="70" name="USE YE KEY ON ETAGE GATE" subtitle="" x="1024" y="128" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="71" name="" description="" flow="oneWay">
@@ -186,7 +186,7 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="68" port="se" />
 			<dock index="1" id="28" port="nw" />
 		</line>
-		<room id="85" name="USE TO IDIOT ON DOOR FROOD" subtitle="" x="64" y="0" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00ffff" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="85" name="USE TO IDIOT ON DOOR FROOD" subtitle="" x="64" y="0" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="86" name="USE EXAM AXE ON LIE VEIL" subtitle="" x="544" y="-256" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="87" name="" description="" flow="oneWay">
 			<dock index="0" id="86" port="w" />
@@ -220,7 +220,7 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="67" port="e" />
 			<dock index="1" id="31" port="w" />
 		</line>
-		<room id="96" name="USE ERA FARE ON KING NIK" subtitle="" x="384" y="-896" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00ffff" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="96" name="USE EPOCH COPE ON KING NIK" subtitle="" x="384" y="-896" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="97" name="" description="" flow="oneWay">
 			<dock index="0" id="96" port="s" />
 			<dock index="1" id="91" port="n" />
@@ -251,7 +251,7 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="108" port="e" />
 			<dock index="1" id="52" port="w" />
 		</line>
-		<room id="110" name="USE PUCE CUP ON PAST SAP" subtitle="No points" x="224" y="-768" w="96" h="64" region="No Points" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="110" name="USE PUCE CUP ON PAST SAP" subtitle="No points" x="224" y="-768" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="#00FFFF" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="111" name="USE PUCE CUP ON LIAR GRAIL" subtitle="" x="224" y="-896" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="112" name="" description="" flow="oneWay">
 			<dock index="0" id="110" port="n" />
@@ -306,7 +306,7 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="44" port="s" />
 			<dock index="1" id="8" port="n" />
 		</line>
-		<room id="82" name="USE SOME DEMOS ON YAHOO HAY" subtitle="" x="64" y="-640" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00ffff" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="82" name="USE SOME DEMOS ON YAHOO HAY" subtitle="" x="64" y="-640" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="132" name="USE STRAW ARTS ON REVOLT LOVER" subtitle="" x="224" y="-512" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="133" name="" description="" flow="oneWay">
 			<dock index="0" id="82" port="se" />
@@ -491,7 +491,7 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 		<regions>
 			<End____OK Name="End OK" TextColor="Black">Red</End____OK>
 			<Misc____Points Name="Misc Points" TextColor="MidnightBlue">Yellow</Misc____Points>
-			<No____Points Name="No Points" TextColor="Black">#00ffff</No____Points>
+			<No____Points Name="No Points" TextColor="Black">#00FFFF</No____Points>
 			<NoRegion Name="NoRegion" TextColor="Black">White</NoRegion>
 			<Standard Name="Standard" TextColor="Black">Lime</Standard>
 			<Verb____Guessing Name="Verb Guessing" TextColor="MidnightBlue">Silver</Verb____Guessing>

@@ -88,7 +88,7 @@ Now let's get another book.
 
 >WORD ROW
 
->GET ERA FARE
+>GET EPOCH COPE
 
 You can only pick up one book at a time, and I think this is the best to start with to open up more of the map.
 
@@ -98,7 +98,7 @@ You can only pick up one book at a time, and I think this is the best to start w
 
 >N
 
-(+1) >USE ERA FARE ON KING NIK
+(+1) >USE EPOCH COPE ON KING NIK
 
 Spur-ups! Ooh! We'll get to those in a bit.
 

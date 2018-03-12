@@ -354,18 +354,6 @@ chapter dork rod
 
 understand "dorm rod" and "dorm" as a mistake ("You reveal no frat. Arf![mis of 117]") when dork rod is quicknear.
 
-chapter ERA FARE
-
-understand "era ware" as a mistake("The book is neither software nor for sale.[mis of 118]") when ERA FARE is quicknear.
-
-understand "era hare" as a mistake("You always wanted to learn how to pull a rabbit out of a big book, but this isn't hollow enough.[mis of 119]") when ERA FARE is quicknear.
-
-understand "era rare" as a mistake("Every time seems odd if you look at it right, yes.[mis of 120]") when ERA FARE is quicknear.
-
-understand "era mare" as a mistake("Quit horsing around with the book.[mis of 121]") when ERA FARE is quicknear.
-
-understand "era care" as a mistake("You try to inject some sympathy into the book's dry writing, but you're worried you'll overdo it.[mis of 122]") when ERA FARE is quicknear.
-
 book Yawn Way
 
 understand "yawp way" and "yawl way" as a mistake ("It's still quiet here.[mis of 123]") when player is in Yawn Way.

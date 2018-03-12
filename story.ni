@@ -829,7 +829,7 @@ pity tip	navy van	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	"The v
 trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
 bunk nub	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching and slurping, the bunk nub is changed to a bunch of much smaller, but more comfortable looking, stock cots."
 party trap	stark rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
-ERA FARE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'This will help me when I get back to South Ihtuos. Thank you!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...I must leave and RAFT FAR back to '"
+EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff my parents told me I needed to one day. Era Fare, Era Care, Era Ware ... and maybe even Era Dare! Thank you!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...I must leave and RAFT FAR back to South Ihtuos.'"
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
 wash saw	past sap	--	--	sap-loose rule	true	false	false	Grebeberg	"You hack away at the past sap with the wash saw, first squirting some loosening/thawing liquid. It's tricky, but the saw holds out, and with some perseverance, you're able to twist the sap off the rife fir."
 puce cup	past sap	--	check-sap-cup rule	sap-to-cup rule	false	false	false	--	"You pour some sap into the cup."
@@ -2225,7 +2225,7 @@ chapter books in bookcase
 
 TI is a proper-named book. printed name of TI is "TO IDIOT (TI)". understand "to idiot" and "idiot" as ti. description is "It's full of hot takes and 'clever' put-downs based on assuming the recipient isn't as smart as they really are. You remember laughing at this sort of thing when you were really bored or grouchy, and you sort of regret it now.". [Door Frood]
 NULL ILLUN is a proper-named book. printed name of NULL ILLUN is "NULL ILLUN (NI)". understand "ni" as NULL ILLUN. description is "Surprisingly wise advice about how to achieve happiness and shake annoyances you can't dispel with just logic.". [Known Wonk]
-ERA FARE is a proper-named book. printed name of ERA FARE is "ERA FARE (EF)". understand "ef" as ERA FARE. description is "All sorts of present-day political and social musings.". [King Nik]
+EPOCH COPE is a proper-named book. printed name of EPOCH COPE is "EPOCH COPE (EF)". understand "ef" as EPOCH COPE. description is "All sorts of present-day political and social musings.". [King Nik]
 YOB ATTABOY is a proper-named book. printed name of YOB ATTABOY is "YOB ATTABOY (YA)". understand "ya" as YOB ATTABOY. description is "All about picking yourself up by your bootstraps and not feeling sorry for yourself or being too jealous of what others know or can do.". [Sniffins]
 
 chapter SOME DEMOS
@@ -3609,7 +3609,7 @@ this is the cold-loc rule:
 	if pulled-up is false, continue the action;
 	if liar grail is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if King Nik is in Cold Loc, say "USE ERA FARE ON KING NIK." instead;
+	if King Nik is in Cold Loc, say "USE EPOCH COPE ON KING NIK." instead;
 	if wash saw is in My Gym, say "Get the wash saw from My Gym." instead;
 	if player has wash saw, say "USE WASH SAW ON PAST SAP." instead;
 	if player does not have puce cup, say "You need the puce cup from the Emo Dome." instead;
@@ -3920,7 +3920,7 @@ to decide whether any-books-left:
 
 to decide which book is cur-book:
 	if Door Frood is not moot, decide on TI;
-	if King Nik is not moot, decide on ERA FARE;
+	if King Nik is not moot, decide on EPOCH COPE;
 	if cross orc is not moot and gnu dung is moot, decide on NULL ILLUN;
 	if YOB ATTABOY is not moot, decide on YOB ATTABOY;
 	decide on NULL ILLUN;
