@@ -268,20 +268,20 @@ if look_for_last:
 
 t1 = time.time()
 
-okay_2_letter_words = ['a', 'am', 'an', 'as', 'at', 'be', 'by', 'do', 'go', 'he', 'if', 'in', 'is', 'it', 'me', 'my', 'no', 'of', 'on', 'or', 'so', 'to', 'up', 'us', 'we']
+# default 3w-ok = ['a', 'am', 'an', 'as', 'at', 'be', 'by', 'do', 'go', 'he', 'if', 'in', 'is', 'it', 'me', 'my', 'no', 'of', 'on', 'or', 'so', 'to', 'up', 'us', 'we']
 
 dupes = False
-for x in okay_2_letter_words:
-    if x in wordy.keys():
-        print(x, "is a duplicate")
-        dupes = True
+with open("3w-ok.txt") as file:
+    for line in file:
+        ll = line.lower().strip()
+        if ll in ok_2.keys():
+            print(ll, "is a duplicate")
+            dupes = True
+        ok_2[line.lower().strip()] = True
 
 if dupes:
     print("Fix dupes before continuing.")
     exit()
-
-for x in okay_2_letter_words:
-    ok_2[x] = True
 
 endpals = 0
 startpals = 0
