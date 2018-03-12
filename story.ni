@@ -626,6 +626,7 @@ instead of smelling:
 		say "You might expect a rod odor, but there isn't one. OR MAYBE IT IS SO INGRAINED IN YOU, YOU NO LONGER SMELL IT." instead;
 	if player is in Moo Room, say "Hay! Ah!" instead;
 	if player is in Deft Fed, say "Ham?! Ah!" instead;
+	if player is in pro corp and butene tub is in pro corp, say "The butene tub smells kind of nice. Much nicer than a butt tub." instead;
 	if player is in Sneer Greens and Yuge Guy is in Sneer Greens, say "You smell an amoral aroma." instead;
 	say "Noses, on[one of]! (you don't need to smell anything in this game)[or][stopping]!"
 

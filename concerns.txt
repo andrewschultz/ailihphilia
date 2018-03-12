@@ -1,17 +1,17 @@
 Concerns so far:
 
-* Not sure how to navigate changes from guess the verb to USE X ON Y
+* Not sure how to navigate changes from guess the verb to USE X ON Y. Would it be a good idea to use the Set o Notes? Is it clear enough that non-palindromic people need something special?
 * still need to flesh out hints
-* anything I can find that will give detail, I want to know about, as I've put in quite a lot of placeholders
+* anything I can find that will give detail, I want to know about, as I've put in quite a lot of placeholders just to get a conceptual idea of what's going on. I generally create the walkthrough framework and fill in details later, and often, there are details I think I've filled in but haven't.
 * LLPs are lumped together (2 in 1 place) -- we expect this by the Birthday Paradox, but I'd like to clean it up. There must be an empty room besides the Moo Room. Felines/Bees though it's animals...
+* Also were the LLPs too obscure? Is there another way to clue them?
 
-* GT / going to a room can be different code oaths. after printing room description?
+* The chases were the trickiest part to code. Did you find any particular problems with them?
 
-* track good tries in score
-* link to concerns file on quitting or winning
+* did you find it interesting to make good palindrome tries? Was the warning message (e.g. Yawl Way gives a clue) sensible?
 
-* I need USE X ON Y good guesses
-* Murdered Rum was murk rum. Which works better?
+* I need lots of USE X ON Y good guesses
+* Murdered Rum was murk rum. I like Murdered Rum a lot better, but I still want to check. Which works better?
 
 * Should Bro Orb be Bros Orb?
 
@@ -19,4 +19,6 @@ Concerns so far:
 
 * descriptions of USE X ON Y successfully have been rushed.
 
-* would EPOCH COPE be a better title than ERA FARE?
+* would EPOCH COPE be a better title than ERA FARE? I think I'd like one to refer to the other when you give ERA FARE to the right person.
+
+*If you've played Shuffling Around, did you find anything that was a too obvious duplicate? I think I've done a pretty good job not reusing the location/item names (and I also changed A Yell Alley to the Bile Libe in the latest release,) but if anything stands out, I'd be curious. Of course, since 2-word palindromes are often anagrams, it's unavoidable there's some overlap. And some of the palindromes may be covered in obscure random text. And the palindromes are not as sophisticated as full anagrams. But I hope there's enough there, there.

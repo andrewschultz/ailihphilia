@@ -15,6 +15,7 @@ from collections import defaultdict
 # variables
 
 wordy = defaultdict(bool)
+ok_2 = defaultdict(bool)
 lasty = defaultdict(lambda: defaultdict(bool))
 firsty = defaultdict(lambda: defaultdict(bool))
 
@@ -269,15 +270,18 @@ t1 = time.time()
 
 okay_2_letter_words = ['a', 'am', 'an', 'as', 'at', 'be', 'by', 'do', 'go', 'he', 'if', 'in', 'is', 'it', 'me', 'my', 'no', 'of', 'on', 'or', 'so', 'to', 'up', 'us', 'we']
 
+dupes = False
 for x in okay_2_letter_words:
     if x in wordy.keys():
         print(x, "is a duplicate")
-    wordy[x] = True
-    firsty[x[0]][x] = True
-    lasty[x[-1]][x] = True
-    if len(x) > 1:
-        firsty[x[:2]][x] = True
-        lasty[x[-2:]][x] = True
+        dupes = True
+
+if dupes:
+    print("Fix dupes before continuing.")
+    exit()
+
+for x in okay_2_letter_words:
+    ok_2[x] = True
 
 endpals = 0
 startpals = 0
@@ -289,13 +293,14 @@ with open("c:/writing/dict/brit-1word.txt") as file:
         ll = line.lower().strip()
         if len(ll) > max_word_length:
             continue # we could just break given brit-1word.txt is sorted by length but that's iffy coding
-        if len(ll) < 3 and ignore_2_letter_words:
+        if len(ll) < 3 and not ll in ok_2.keys():
             continue
         wordy[ll] = True
         firsty[ll[0]][ll] = True
         lasty[ll[-1]][ll] = True
-        firsty[ll[:2]][ll] = True
-        lasty[ll[-2:]][ll] = True
+        if len(ll) > 1:
+            firsty[ll[:2]][ll] = True
+            lasty[ll[-2:]][ll] = True
         for i in range (1,len(ll)):
             if ll[i:] == ll[i:][::-1]:
                 start_pal[ll[:i]][ll] = True
@@ -341,6 +346,10 @@ last_start = ""
 last_end = ""
 last_group = ""
 
+cur_array = []
+
+# sk = ['a']
+# change to test specific cases
 for a in sk:
     if a < start_val:
         ignored = ignored + 1
@@ -355,7 +364,7 @@ for a in sk:
         last_delt = time_taken
     this_word_count = 0
     cur_array = []
-    for b in end_array(a):
+    for b in end_array(a): # change this to test specific cases
         q = pal_conv_hash(a, b)
         if q:
             # print(a, b, q)
@@ -373,7 +382,6 @@ for a in sk:
             last_group = a
             print('{:s} + ? + {:s} ({:d}{:s}) ='.format(a, b, len(cur_array), '/already' if is_pal(a+b) else ''), '  /  '.join(cur_array))
             cur_array = []
-
 
 if len(cur_array): print(' / '.join(cur_array))
 
