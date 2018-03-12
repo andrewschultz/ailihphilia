@@ -29,9 +29,9 @@ book Art Xtra
 
 understand "art ecetra" as a mistake ("One silly misspelling does not beget another.[mis of 6]") when player is in Art Xtra.
 
-book Birch Crib
+book All Ivy Villa
 
-understand "cods doc" as a mistake ("No way. It's nice to be around someone non-fishy, actually.[mis of 7]") when player is in Birch Crib.
+understand "cods doc" as a mistake ("No way. It's nice to be around someone non-fishy, actually.[mis of 7]") when player is in All Ivy Villa.
 
 book Calcific Lac
 

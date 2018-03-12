@@ -22,6 +22,8 @@ firsty = defaultdict(lambda: defaultdict(bool))
 end_pal = defaultdict(lambda: defaultdict(bool))
 start_pal = defaultdict(lambda: defaultdict(bool))
 
+go_proj("up")
+
 def usage():
     print("3 word palindrome searcher.")
     print("-g = group by start/end words.")
@@ -271,16 +273,20 @@ t1 = time.time()
 # default 3w-ok = ['a', 'am', 'an', 'as', 'at', 'be', 'by', 'do', 'go', 'he', 'if', 'in', 'is', 'it', 'me', 'my', 'no', 'of', 'on', 'or', 'so', 'to', 'up', 'us', 'we']
 
 dupes = False
-with open("3w-ok.txt") as file:
+
+two_word_file = "3w-ok.txt"
+with open(two_word_file) as file:
     for line in file:
         ll = line.lower().strip()
-        if ll in ok_2.keys():
-            print(ll, "is a duplicate")
-            dupes = True
+        la = re.split(",( )?", ll)
+        for li in la:
+            if li in ok_2.keys():
+                print(li, "is a duplicate")
+                dupes = True
         ok_2[line.lower().strip()] = True
 
 if dupes:
-    print("Fix dupes before continuing.")
+    print("Fix duplicates in 2-word file {:s} before continuing.".format(two_word_file))
     exit()
 
 endpals = 0

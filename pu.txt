@@ -213,10 +213,10 @@ You need to have spent time in the Tao Boat for that to happen.
 It looks pretty hashed together, bumpy. Something could be in there.
 USE RADAR ON MADE DAM.
 This helps you locate something.
->>BIRCH CRIB
+>>ALL-IVY VILLA
 ?Why won't the Code Doc help me?
 Help the Code Doc make a full house.
-If something went over the birch crib, it'd provide some protection.
+The all ivy villa is not covered on top. If something went over it, it'd be complete.
 Maybe you have found a covering elsewhere?
 Like, in the Trapeze Part?
 USE TENT NET ON CODE DOC.
