@@ -29,9 +29,9 @@ book Art Xtra
 
 understand "art ecetra" as a mistake ("One silly misspelling does not beget another.[mis of 6]") when player is in Art Xtra.
 
-book All Ivy Villa
+book Ivy Villa
 
-understand "cods doc" as a mistake ("No way. It's nice to be around someone non-fishy, actually.[mis of 7]") when player is in All Ivy Villa.
+understand "cods doc" as a mistake ("No way. It's nice to be around someone non-fishy, actually.[mis of 7]") when player is in Ivy Villa.
 
 book Calcific Lac
 
@@ -306,9 +306,9 @@ understand "shark rahs" as a mistake ("You don't want to alert any land sharks.[
 
 understand "shard rahs" as a mistake ("The rahs are on paper, and besides, they might be useful.[mis of 98]") when sharp rahs are quicknear.
 
-understand "story rots" as a mistake ("No, the storm rots help keep you focused on the story. They aren't blocking anything. Or good for anything.[mis of 99]") when player is in swamp maws.
+understand "story rots" as a mistake ("No, the storm rots help keep you focused on the story. They aren't blocking anything. Or good for anything.[mis of 99]") when player is in Swamp Maws.
 
-understand "stork rots" as a mistake ("You don't want to know what sort of carcasses are buried in the swamp.[mis of 100]") when player is in swamp maws.
+understand "stork rots" as a mistake ("You don't want to know what sort of carcasses are buried in the swamp.[mis of 100]") when player is in Swamp Maws.
 
 book Swept Pews
 
@@ -340,7 +340,7 @@ book Trapeze Part
 
 book Worn Row
 
-understand "worsts row" and "worses row" as a mistake ("It [if worn row is worny]is[else]was[end if] bad enough already.[mis of 112]") when player is in worn row.
+understand "worsts row" and "worses row" as a mistake ("It [if Worn Row is worny]is[else]was[end if] bad enough already.[mis of 112]") when player is in Worn Row.
 
 understand "worm row" as a mistake ("[if Worn Row is worny]Ugh! You don't need to make this place worse[else]You already upgraded Worn Row. No need to downgrade it[end if].[mis of 113]") when player is in Worn Row.
 

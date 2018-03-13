@@ -327,7 +327,15 @@ to decide whether gtv:
 part after command
 
 after reading a command:
-	do nothing;
+	if the player's command matches the regular expression "<^a-z 0-9>":
+		if no-punc-flag is false:
+			say "(NOTE: you don't need to use anything but letters to get through the game. The parser simply strips out non-alphanumeric characters.)[paragraph break]";
+			now no-punc-flag is true;
+			let XX be the player's command;
+			replace the regular expression "<^a-z 0-9>" in XX with "";
+			change the text of the player's command to XX;
+
+no-punc-flag is a truth state that varies.
 
 part dying
 
@@ -620,13 +628,13 @@ rod-smelled is a truth state that varies;
 instead of smelling:
 	if stinky knits are quicknear, say "The stinky knits take over everything and smell of torn rot." instead;
 	if troll ort is quicknear, say "The troll ort emits a musk-sum which isn't unpleasant, but it's distinctive." instead;
-	if player is in swamp maws or player is in mire rim, say "A morass aroma." instead;
+	if player is in Swamp Maws or player is in Mire Rim, say "A morass aroma." instead;
 	if player has dork rod:
 		now rod-smelled is true;
 		say "You might expect a rod odor, but there isn't one. OR MAYBE IT IS SO INGRAINED IN YOU, YOU NO LONGER SMELL IT." instead;
 	if player is in Moo Room, say "Hay! Ah!" instead;
 	if player is in Deft Fed, say "Ham?! Ah!" instead;
-	if player is in pro corp and butene tub is in pro corp, say "The butene tub smells kind of nice. Much nicer than a butt tub." instead;
+	if player is in Pro Corp and butene tub is in Pro Corp, say "The butene tub smells kind of nice. Much nicer than a butt tub." instead;
 	if player is in Sneer Greens and Yuge Guy is in Sneer Greens, say "You smell an amoral aroma." instead;
 	say "Noses, on[one of]! (you don't need to smell anything in this game)[or][stopping]!"
 
@@ -829,7 +837,7 @@ pity tip	navy van	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	"The v
 trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
 bunk nub	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching and slurping, the bunk nub is changed to a bunch of much smaller, but more comfortable looking, stock cots."
 party trap	stark rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
-EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff my parents told me I needed to one day. Era Fare, Era Care, Era Ware ... and maybe even Era Dare! Thank you!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...I must leave and RAFT FAR back to South Ihtuos.'"
+EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff my parents told me I needed to one day. ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...I must leave and RAFT FAR back to South Ihtuos.'"
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
 wash saw	past sap	--	--	sap-loose rule	true	false	false	Grebeberg	"You hack away at the past sap with the wash saw, first squirting some loosening/thawing liquid. It's tricky, but the saw holds out, and with some perseverance, you're able to twist the sap off the rife fir."
 puce cup	past sap	--	check-sap-cup rule	sap-to-cup rule	false	false	false	--	"You pour some sap into the cup."
@@ -967,8 +975,8 @@ section post-use rules [xxpost]
 [please add alphabetically]
 
 this is the bump-crib rule:
-	shuffle-before All Ivy Villa and Red Roses Order;
-	move porch crop to All Ivy Villa;
+	shuffle-before Ivy Villa and Red Roses Order;
+	move porch crop to Ivy Villa;
 	the rule succeeds;
 
 this is the bump-gulf rule:
@@ -1101,7 +1109,7 @@ use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
 radar	sleep eels	--	--	--	false	false	false	--	"A radar isn't supposed to work this way, but somehow, you detect some bitterness at mammals in general. But it's secondary to needing a more comfortable place to sleep."
 troll ort	cross orc	--	--	--	false	false	false	--	"The cross orc mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE and don't WANT to. But the way it looks at you, you suspect it'd forgive you if you gave the right gift."
 troll ort	kayo yak	--	--	--	false	false	false	--	"As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up."
-Gorge Grog	yard ray	--	--	--	false	false	false	--	"The gorge grog is pretty strong stuff, but you may need something even stronger."
+Gorge Grog	yard ray	--	--	--	false	false	false	--	"The Gorge Grog is pretty strong stuff, but you may need something even stronger."
 yard ray	Diktat Kid	--	--	--	false	false	false	--	"The Diktat Kid laughs as you point the yard ray. 'Destroy me, but my work will remain!'"
 yard ray	Tru Hurt	--	--	--	false	false	false	--	"The Tru Hurt is dangerous, but maybe you should use the yard ray on something even more harmful."
 yard ray	Waster Fretsaw	--	--	--	false	false	false	--	"The Waster Fretsaw is dangerous, but maybe you should use the yard ray on something even more harmful."
@@ -1394,7 +1402,7 @@ smirk rims	"The smirk rims are only important if you let them be. In other words
 ME Totem	"If you can deal with the Yuge Guy, the ME Totem won't matter."
 state tats	"You don't need to do anything to or with the state tats, now that you're wearing them."
 mist sim	"Getting distracted by the mist sim would be a good way to get blindsided by Madam."
-DIFF ID	"The DIFF ID can't be broken. You [if red roses order is visited]already found[else]just need to find[end if] a way to identify yourself."
+DIFF ID	"The DIFF ID can't be broken. You [if Red Roses Order is visited]already found[else]just need to find[end if] a way to identify yourself."
 Par Wrap	"It's not the Verses Rev's clothes you need to worry about."
 Tru Hurt	"[rediv-instead of tru hurt]."
 Waster Fretsaw	"[rediv-instead of waster fretsaw]."
@@ -1528,7 +1536,7 @@ check going west in Flu Gulf when scorn rocs are in Flu Gulf:	say "The scorn roc
 
 book Sneer Greens
 
-Sneer Greens is west of Flu Gulf. It is in Grebeberg. "[if Yuge Guy is in Sneer Greens]Despite the impressive view, the place has gone to pot.[else]Nicer with the Yuge Guy gone. Still, it's...[end if][paragraph break]You can only go back east. Smirk rims block every way back except east[if me totem is in sneer greens], and a ME Totem towers above you."
+Sneer Greens is west of Flu Gulf. It is in Grebeberg. "[if Yuge Guy is in Sneer Greens]Despite the impressive view, the place has gone to pot.[else]Nicer with the Yuge Guy gone. Still, it's...[end if][paragraph break]You can only go back east. Smirk rims block every way back except east[if me totem is in Sneer Greens], and a ME Totem towers above you."
 
 Sneer Greens is above Flu Gulf.
 
@@ -1798,11 +1806,11 @@ some Eroded Ore is a thing. description is "You're no expert metallurgist, but i
 
 book All Ivy Villa
 
-All Ivy Villa is south of Mire Rim. It is in Grebeberg. "This is a homey little north-south passage, [if tent net is moot]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet[end if][if-porch]."
+The room called All Ivy Villa is south of Mire Rim. It is in Grebeberg. "This is a homey little north-south passage, [if tent net is moot]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet[end if][if-porch]."
 
 chapter code doc
 
-Code Doc is a person in All Ivy Villa. "[one of]Someone is pacing back and forth here, muttering 'More ROM! MORE Rom! MORE ROM!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket. Busy, but not too busy to help someone else."
+Code Doc is a person in Ivy Villa. "[one of]Someone is pacing back and forth here, muttering 'More ROM! MORE Rom! MORE ROM!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket. Busy, but not too busy to help someone else."
 
 chapter Spa Maps
 
@@ -1819,7 +1827,7 @@ chapter porch crop
 the porch crop is scenery. "[if wash saw is moot]It's been cleared up since you used the wash saw on it[else]It really sprawls. Maybe there is a way to trim it to help the Code Doc[end if]."
 
 to say if-porch:
-	if porch crop is in All Ivy Villa:
+	if porch crop is in Ivy Villa:
 		say ". [if wash saw is moot]The porch crop is still trimmed back[else]Some porch crop has sprouted up, and it looks okay, but there's just too much of it[end if]";
 
 chapter balsa slab
@@ -1828,7 +1836,7 @@ The Balsa Slab is a thing. "A balsa slab is just lying here. You're not sure how
 
 book Lair Trial
 
-Lair Trial is south of All Ivy Villa. It is in Grebeberg. "This lair bends north and east, [if ergot ogre is moot], and with the trial over, you're free to go either way[end if]."
+Lair Trial is south of Ivy Villa. It is in Grebeberg. "This lair bends north and east, [if ergot ogre is moot], and with the trial over, you're free to go either way[end if]."
 
 chapter ergot ogre
 
@@ -2225,7 +2233,7 @@ chapter books in bookcase
 
 TI is a proper-named book. printed name of TI is "TO IDIOT (TI)". understand "to idiot" and "idiot" as ti. description is "It's full of hot takes and 'clever' put-downs based on assuming the recipient isn't as smart as they really are. You remember laughing at this sort of thing when you were really bored or grouchy, and you sort of regret it now.". [Door Frood]
 NULL ILLUN is a proper-named book. printed name of NULL ILLUN is "NULL ILLUN (NI)". understand "ni" as NULL ILLUN. description is "Surprisingly wise advice about how to achieve happiness and shake annoyances you can't dispel with just logic.". [Known Wonk]
-EPOCH COPE is a proper-named book. printed name of EPOCH COPE is "EPOCH COPE (EF)". understand "ef" as EPOCH COPE. description is "All sorts of present-day political and social musings.". [King Nik]
+EPOCH COPE is a proper-named book. printed name of EPOCH COPE is "EPOCH: COPE (EF)". understand "ef" as EPOCH COPE. description is "All sorts of present-day political and social musings.". [King Nik]
 YOB ATTABOY is a proper-named book. printed name of YOB ATTABOY is "YOB ATTABOY (YA)". understand "ya" as YOB ATTABOY. description is "All about picking yourself up by your bootstraps and not feeling sorry for yourself or being too jealous of what others know or can do.". [Sniffins]
 
 chapter SOME DEMOS
@@ -2767,7 +2775,7 @@ book Emo Dome
 Emo Dome is east of Yawn Way. It is in Yelpley. "You can go any direction here, and you sort of want to, because it's stuffy in here. [can-go-rro]."
 
 to say can-go-rro:
-	if red roses order is unvisited:
+	if Red Roses Order is unvisited:
 		say "Something labeling itself DIFF ID guards the way north";
 	else:
 		say "[if not-a-baton is off-stage]You feel you may still have unfinished business behind the DIFF ID to the north[else]The DIFF ID guards the Red Roses Order, which no longer holds adventure[end if]"
@@ -3181,7 +3189,7 @@ this is the gate-gone rule:
 
 avail-rule of Mire Rim is dung-gone rule.
 avail-rule of Swamp Maws is dung-gone rule.
-avail-rule of All Ivy Villa is dung-gone rule.
+avail-rule of Ivy Villa is dung-gone rule.
 avail-rule of Trial Lair is dung-gone rule.
 
 this is the dung-gone rule:
@@ -3394,7 +3402,7 @@ to hint-bump-worn:
 
 [this is the list of how I do things in the walkthrough.]
 
-L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Moo Room, Dumb Mud, Mire Rim, Swamp Maws, Calcific Lac, All Ivy Villa, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
+L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Moo Room, Dumb Mud, Mire Rim, Swamp Maws, Calcific Lac, Ivy Villa, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
 
 [?? nothing game-critical to do here = if there is a LLP]
 
@@ -3489,7 +3497,7 @@ section bulk done-rule definitions
 
 done-rule of Apse Spa is apse-spa rule.
 done-rule of Art Xtra is art-xtra rule.
-done-rule of All Ivy Villa is all-ivy-villa rule.
+done-rule of Ivy Villa is all-ivy-villa rule.
 done-rule of Calcific Lac is calcific-lac rule.
 done-rule of Cold Loc is cold-loc rule.
 done-rule of Deft Fed is deft-fed rule.
@@ -3578,13 +3586,13 @@ this is the art-xtra rule:
 this is the art-xtra-complete rule:
 	if soot tattoos are in devreserved, the rule succeeds;
 
-section All Ivy Villa rule
+section Ivy Villa rule
 
 this is the all-ivy-villa rule:
 	if wash saw is moot, continue the action;
 	if maps-explained is true, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if porch crop is in All Ivy Villa, say "USE WASH SAW ON PORCH CROP." instead;
+	if porch crop is in Ivy Villa, say "USE WASH SAW ON PORCH CROP." instead;
 	if player does not have tent net, say "To make the Code Doc happy, there's something [if Trapeze Part is visited]west of Evaded Ave[else] in Trapeze Part[end if] you can get." instead;
 	if player has tent net, say "USE TENT NET ON CODE DOC." instead;
 	if player does not have el doodle, say "There's something back in [Art Xtra] to pick up." instead;
