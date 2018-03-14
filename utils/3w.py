@@ -9,6 +9,7 @@ import time
 import sys
 import re
 import os
+import i7
 
 from collections import defaultdict
 
@@ -22,7 +23,7 @@ firsty = defaultdict(lambda: defaultdict(bool))
 end_pal = defaultdict(lambda: defaultdict(bool))
 start_pal = defaultdict(lambda: defaultdict(bool))
 
-go_proj("up")
+i7.go_proj("up")
 
 def usage():
     print("3 word palindrome searcher.")
@@ -294,6 +295,11 @@ startpals = 0
 
 time_before_read_word_file = time.time()
 
+# cheap and dirty
+max_word_length = 4
+
+#print('doc'[:-1])
+#print(sorted(ok_2.keys()))
 with open("c:/writing/dict/brit-1word.txt") as file:
     for line in file:
         ll = line.lower().strip()
@@ -307,6 +313,13 @@ with open("c:/writing/dict/brit-1word.txt") as file:
         if len(ll) > 1:
             firsty[ll[:2]][ll] = True
             lasty[ll[-2:]][ll] = True
+        if ll in wordy:
+            end_pal[ll][ll] = True
+            start_pal[ll][ll] = True
+        if ll[:-1] in wordy:
+            start_pal[ll][ll[:-1]] = True
+        if ll[1:] in wordy:
+            end_pal[ll][ll[1:]] = True
         for i in range (1,len(ll)):
             if ll[i:] == ll[i:][::-1]:
                 start_pal[ll[:i]][ll] = True
@@ -329,6 +342,9 @@ sys.stderr.write("{:2d} partial start-anagrams, {:2d} partial end-anagrams.\n".f
 
 # uncomment this to test any code changes. One word should anagram the start of the other.
 # silly_test("frato", "arf")
+#print(start_pal['doc'])
+#print(end_pal['wan'])
+#exit()
 
 sk = sorted(wordy.keys())
 
@@ -346,16 +362,17 @@ last_delt = 0
 time_taken = 0
 
 if progress_to_stderr:
-    sys.stderr.write("Printing progress every {:d} starting words.\n".format(warning_every_x))
+    sys.stderr.write("Printing progress to STDERR every {:d} starting words.\n".format(warning_every_x))
 
 last_start = ""
 last_end = ""
 last_group = ""
 
 cur_array = []
+cur_matches = 0
 
-# sk = ['a']
-# change to test specific cases
+# change this for specific letter tests
+sk = ['a']
 for a in sk:
     if a < start_val:
         ignored = ignored + 1
@@ -373,6 +390,7 @@ for a in sk:
     for b in end_array(a): # change this to test specific cases
         q = pal_conv_hash(a, b)
         if q:
+            cur_matches = cur_matches + len(q)
             # print(a, b, q)
             for c in sorted(q):
                 count = count + 1
@@ -384,7 +402,11 @@ for a in sk:
                 last_start = a
                 last_end = b
         if group_by_start_end and len(cur_array):
-            if a != last_group: print('=' * 40, a)
+            if a != last_group:
+                if last_group:
+                    print(last_group, "had", cur_match, "matches.")
+                cur_matches = 0
+                print('=' * 40, a)
             last_group = a
             print('{:s} + ? + {:s} ({:d}{:s}) ='.format(a, b, len(cur_array), '/already' if is_pal(a+b) else ''), '  /  '.join(cur_array))
             cur_array = []
