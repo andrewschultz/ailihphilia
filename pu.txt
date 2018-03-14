@@ -216,7 +216,7 @@ This helps you locate something.
 >>ALL-IVY VILLA
 ?Why won't the Code Doc help me?
 Help the Code Doc make a full house.
-The all ivy villa is not covered on top. If something went over it, it'd be complete.
+The all-ivy villa is not covered on top. If something went over it, it'd be complete.
 Maybe you have found a covering elsewhere?
 Like, in the Trapeze Part?
 USE TENT NET ON CODE DOC.
@@ -225,6 +225,9 @@ The code doc could help you decipher something.
 Do you have a document that almost, but doesn't quite, make sense?
 The spa maps, once you get them.
 USE SPA MAPS ON CODE DOC.
+?What's the deal with the name change?
+Well, it's not *all* ivy now that the tent net is on top, so it had to be changed.
+There is no practical difference. I hope you enjoy the name change.
 ?A porch crop sprouted up! How do I tame or trim it?
 Do you have any sharp item that worked before to cut something?
 The wash saw worked on the past sap.

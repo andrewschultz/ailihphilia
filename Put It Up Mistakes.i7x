@@ -31,7 +31,7 @@ understand "art ecetra" as a mistake ("One silly misspelling does not beget anot
 
 book Ivy Villa
 
-understand "cods doc" as a mistake ("No way. It's nice to be around someone non-fishy, actually.[mis of 7]") when player is in Ivy Villa.
+understand "cods doc" as a mistake ("No way. It's nice to be around someone non-fishy, actually.[mis of 7]") when player is in Den Ivy Vined.
 
 book Calcific Lac
 
