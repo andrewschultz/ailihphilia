@@ -38,6 +38,7 @@ def usage():
     print("-x3 = extract specific word from file of 3-palindromes (x3w/x3o = only that word)")
     print("-w = warn every X new words (default = {:d}).".format(warning_every_x))
     print("any word = what word to start with.")
+    print("For specific test cases, -m 4 -o can make things pop up easier.")
     print("-? = this function.")
     exit()
 
@@ -295,8 +296,8 @@ startpals = 0
 
 time_before_read_word_file = time.time()
 
-# cheap and dirty
-max_word_length = 4
+# cheap and dirty: should use -m 4 instead
+# max_word_length = 4
 
 #print('doc'[:-1])
 #print(sorted(ok_2.keys()))
