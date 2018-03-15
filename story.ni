@@ -58,6 +58,8 @@ an ingredient is a kind of thing. an ingredient is usually edible. an ingredient
 
 section compiler constants
 
+use MAX_VERBS of 260.
+
 section compiler constants - not for release
 
 use MAX_VERBS of 290. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
@@ -752,6 +754,7 @@ check useoning it with:
 			if player does not have epicer recipe, say "Those two things seem to go together, but you don't have detailed instructions." instead;
 			if number of off-stage tronparts > 0, say "You have the start of something, but not enough to make a north-tron." instead;
 			if player is not in Fun Nuf:
+				if madam is quicknear or Yuge Guy is quicknear, say "Deal with [if player is in Red Roses Order]Madam[else]the Yuge Guy[end if] first." instead;
 				say "You might be better served using these things in Fun [']Nuf. Go there?";
 				if the player no-consents, say "OK, but protip: that's where you need to assemble things." instead;
 				move player to Fun Nuf, without printing a room description;
@@ -828,7 +831,6 @@ epicer recipe	"It's meant for referral."
 Darer Ad	"It was only useful to sucker you into this mess."
 Set O Notes	"It's useful for an overview, but not for DOING anything."
 north tron	"The north tron's already done its job."
-ME Totem	"It's the Yuge Guy you want to concentrate on, here."
 
 [the table of useons approximately follows not only the test commands but also the walkthrough]
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
@@ -885,7 +887,7 @@ you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as th
 bang nab	TNT	TNT	--	--	true	true	false	Yelpley	"The Bang Nab walks on its index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course."
 nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
 rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	Grebeberg	"'BOO! NOOB!' the Yuge Guy booms, but he's clearly scared. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Male lam! Male lam!' he cries.[paragraph break]The ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
-Bro Orb	Mist Sim	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	"The Bro Orb shines and blinks. The mist sim dissipates under the brutal light. 'Live not on evil, madam, live not on evil!' you boom, as the Orb does its work. She runs away, sobbing. 'You can't catch me! Not with Line Nil in place!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
+Bro Orb	Mist Sim	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	"The Bro Orb shines and blinks. The mist sim dissipates under the brutal light. 'Live not on evil, madam, live not on evil!' you boom, as the Orb does its work. Maadam looks much less intimidating now. She runs away, sobbing. 'You can't catch me! Not with Line Nil in place!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Madam."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You will be able to smite a bad-faith pearl-clutcher for sure with one of these."
 murdered rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
@@ -1019,6 +1021,7 @@ this is the hay-gone rule:
 
 this is the kid-bye rule:
 	move saner arenas to Dirge Grid;
+	moot Diktat Kid;
 	the rule succeeds;
 
 this is the kid-left rule:
@@ -1444,11 +1447,9 @@ part strap	"You want to focus on the Verses Rev and not the part strap."
 pool gloop	"Fortunately, you don't need to do anything special to or with the pool gloop."
 spa taps	"The spa taps can't do much. You're not a customer, anyway."
 smirk rims	"The smirk rims are only important if you let them be. In other words, they're not."
-ME Totem	"If you can deal with the Yuge Guy, the ME Totem won't matter."
 state tats	"You don't need to do anything to or with the state tats, now that you're wearing them."
 storm rots	"Yuck. You don't want or need to touch the storm rots, or do anything with them. There's probably worse behind them."
 Line Nil	"There's no way to dispel Line Nil, but Madam isn't the main enemy here, any more."
-mist sim	"Getting distracted by the mist sim would be a good way to get blindsided by Madam."
 DIFF ID	"The DIFF ID can't be broken. You [if Red Roses Order is visited]already found[else]just need to find[end if] a way to identify yourself."
 Par Wrap	"It's not the Verses Rev's clothes you need to worry about."
 Tru Hurt	"[rediv-instead of tru hurt]."
@@ -1614,7 +1615,7 @@ understand "evil/clive" and "evil clive" as Yuge Guy.
 
 chapter ME Totem
 
-the ME Totem is peripheral scenery in Sneer Greens. description is "It's a more favorable version of the Yuge Guy: taller, thinner, better looking. It's overdone, but you can see how people would be fooled by it. It is hard to look away. But you know you need to."
+the ME Totem is scenery in Sneer Greens. description is "It's a more favorable version of the Yuge Guy: taller, thinner, better looking. It's overdone, but you can see how people would be fooled by it. It is hard to look away. But you know you need to."
 
 chapter smirk rims
 
@@ -2909,17 +2910,17 @@ after going to Cold Loc when puce cup is sappy:
 
 book Red Roses Order
 
-Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in Red Roses Order]The only visible way back is south, with a mist sim blocking the other directions, but you can't chicken out[else]Sword rows have been revealed once the mist sim dispersed. Line Nil flickers and guards the way north where Madam left. You can go back south[end if]."
+Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in Red Roses Order]The only visible way back is south, with a mist sim blocking the other directions and seeming very threatening and oppressive indeed, but you can't chicken out[else]Sword rows have been revealed once the mist sim dispersed. Line Nil flickers and guards the way north where Madam left. You can go back south[end if]."
 
 Red Roses Order is above Emo Dome.
 
 chapter mist sim
 
-mist sim is peripheral scenery in Red Roses Order. "You can't see through it, but you really should be focused on Madam now, anyway."
+the mist sim is scenery in Red Roses Order. "You can't see through it, and you have a feeling it may be fake, but what if it isn't? If only there was a way to dispel it..."
 
 chapter sword rows
 
-The sword rows are plural-named scenery in Red Roses Order. ."[if not-a-baton is moot]It doesn't look like you broke them, but you probably don't need them any more[else]It looks automatic. Put something it can cut in, and get something out[end if]."
+The sword rows are plural-named scenery. ."[if not-a-baton is moot]It doesn't look like you broke them, but you probably don't need them any more[else]It looks automatic. Put something it can cut in, and get something out[end if]."
 
 chapter not-a-baton
 
@@ -2943,7 +2944,7 @@ chapter Line Nil
 
 Line Nil is peripheral scenery in Red Roses Order. "It's, well, a red line you would do well not to cross."
 
-check going south in Red Roses Order when Line Nil is in Red Roses Order: say "Whether or not Line Nil could damage you, you don't need to follow Madam. You need to take down the Diktat Kid!" instead;
+check going north in Red Roses Order when Line Nil is in Red Roses Order: say "Whether or not Line Nil could damage you, you don't need to follow Madam. You need to take down the Diktat Kid!" instead;
 
 book Swept Pews
 
