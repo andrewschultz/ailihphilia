@@ -48,6 +48,8 @@ a person can be normal, grunty, ruling, chasey or henchy. a person is usually no
 
 a chaser is a kind of person. a chaser has a room called chase-room.
 
+a guhthug is a kind of person. [Ian, Rob, Ned, Dave]
+
 a thing can be drinkable. a thing is usually not drinkable.
 
 a thing can be peripheral. a thing is usually not peripheral.
@@ -882,7 +884,7 @@ Eroded Ore	reviver	Ore Zero	--	--	true	true	false	Yelpley	"The reviver whirs as 
 you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. 'You BOFFO buoy!' you can't help shouting.[paragraph break]The gem's so tempting and beautiful, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
 bang nab	TNT	TNT	--	--	true	true	false	Yelpley	"The Bang Nab walks on its index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course."
 nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
-rep popper	Yuge Guy	murdered rum	--	totem-out rule	true	true	true	Grebeberg	"'BOO! NOOB!' the Yuge Guy booms, but he's clearly scared. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims.[paragraph break]The ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
+rep popper	Yuge Guy	murdered rum	--	totem-out rule	true	true	true	Grebeberg	"'BOO! NOOB!' the Yuge Guy booms, but he's clearly scared. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Male lam! Male lam!' he cries.[paragraph break]The ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
 Bro Orb	Madam	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	"The Bro Orb shines and drives Madam to rage. 'Live not on evil, madam, live not on evil!' you boom, as the ray does its work. She runs away, sobbing. 'You can't catch me! Not with Line Nil in place!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Madam."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You will be able to smite a bad-faith pearl-clutcher for sure with one of these."
@@ -1133,7 +1135,10 @@ the north tron is scenery. "[if Dirge Grid is visited]The north tron is useless 
 
 chapter Flee Elf
 
-The Flee Elf is a person in Fun Nuf. "A Flee Elf stands here, guarding Evac Ave to the south.". description is "You'd expect to see the Flee Elf wearing a gateman nametag, but maybe that's in some other, even more insanely brilliant, wonderful and creative adventure."
+The Flee Elf is a person in Fun Nuf. "A Flee Elf stands here, guarding Evac Ave to the south.". description is "Quite a pert rep. You'd expect to see the Flee Elf wearing a gateman nametag, but maybe that's in some other, even more insanely brilliant, wonderful and creative adventure."
+
+understand "pert/rep" and "pert rep" as Flee Elf.
+does the player mean doing something with rep popper: it is likely.
 
 chapter Evac Ave
 
@@ -1269,9 +1274,39 @@ after examining the Darer Ad for the first time:
 
 chapter Set O Notes
 
-the Set O Notes is a proper-named helpdoc. description is "There's some general vague advice about making a North Tron to defeat the Diktat Kid, but first you'll have to defeat [b]Madam[r], as well as the [b]Yuge Guy, Evil Clive[r]. The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
+the Set O Notes is a proper-named helpdoc. description is "There's some general vague advice about making a North Tron to defeat the Diktat Kid, but first you'll have to defeat [b]Madam[r], as well as the [b]Yuge Guy, Evil Clive[r].[paragraph break]You notice that there is a guh-thug at various places that doesn't quite fit in, and you can probably guess what to do there. [thug-report].[paragraph break]Also scribbled, in the center, is FUN [']NUF with TRI-GIRL below that. [paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
 
-after examining Set O Notes for the first time, say "More useful than the Darer Ad, but maybe you'll get something even more detailed than the Set O Notes later."
+x-notes-yet is a truth state that varies.
+
+to say thug-report:
+	let GG be number of moot guhthugs;
+	let GG2 be number of seenees guhthugs;
+	if GG is 4:
+		say "You've gotten all of them, so yay";
+		continue the action:
+	else if GG is 0:
+		say "[if GG2 is 0]You haven't seen any yet, but who knows[else][list of seenees guhthugs] may fit this description. Maybe you can get past [if GG2 is 1]him[else]them[end if]"
+	else:
+		say "[if number of seenees guhthugs is 0]Maybe you will figure how to tackle [list of seenees guhthugs][else]You got rid of [list of moot guhthugs], but maybe someone else is around[end if]"
+
+to decide whether (th - a thug) is seenees:
+	if location of th is visited, yes;
+	no;
+
+after examining Set O Notes:
+	if x-notes-yet is false:
+		say "Much more useful than the Darer Ad, but maybe you'll get something even more detailed than the Set O Notes later.";
+		now x-notes-yet is true;
+	if player is in Worn Row, say "[trigirt].";
+
+to say trigirt:
+	if x-notes-yet was false, say "[line break]";
+	if ever-workrow is true and ever-wordrow is true:
+		say "Well, that makes sense. You've changed Worn Row to Word Row and Work Row";
+	else if ever-workrow is false and ever-wordrow is false:
+		say "Hmm. You wonder what Tri-Girt could mean, here. Maybe Worn Row is not quite as static as it seems";
+	else:
+		say "You've made [location of player] Row, but the 'tri' makes you think there might be something else"
 
 chapter tile lit
 
@@ -1538,6 +1573,8 @@ book Sneer Greens
 
 Sneer Greens is west of Flu Gulf. It is in Grebeberg. "[if Yuge Guy is in Sneer Greens]Despite the impressive view, the place has gone to pot.[else]Nicer with the Yuge Guy gone. Still, it's...[end if][paragraph break]You can only go back east. Smirk rims block every way back except east[if me totem is in Sneer Greens], and a ME Totem towers above you."
 
+check going nowhere in Sneer Greens: say "The smirk rims push you back, but you really don't need to do anything [if Yuge Guy is moot]more here[else]with them, just the Yuge Guy[end if]." instead;
+
 Sneer Greens is above Flu Gulf.
 
 printed name of Sneer Greens is "[if Yuge Guy is in Sneer Greens]Sneer Greens[else]Et Tu Butte[end if]"
@@ -1681,7 +1718,7 @@ the martini tram is a tronpart. "That martini tram that appeared from Mont Nom i
 
 chapter Ian
 
-Ian is a person in Mont Nom. "[one of]'I'm Ian. I guess I can't make you leave, but you seem ill equipped to deal with the sophisticated blend of tastes served up by Mont Nom.'[or]Ian continues to look down his nose at you.[stopping]". description is "Ian smirks back at you. You turn away. He seems just a bit too suave.".
+Ian is a proper-named guhthug in Mont Nom. "[one of]'I'm Ian. I guess I can't make you leave, but you seem ill equipped to deal with the sophisticated blend of tastes served up by Mont Nom.'[or]Ian continues to look down his nose at you.[stopping]". description is "Ian smirks back at you. You turn away. He seems just a bit too suave.".
 
 chapter nailing
 
@@ -1880,7 +1917,7 @@ check going east in Swamp Maws: say "You don't want or need to have anything to 
 
 chapter storm rots
 
-the storm rots are scenery in Swamp Maws. "Euugh. You don't want to go anywhere near them."
+the storm rots are plural-named peripheral scenery in Swamp Maws. "Euugh. You don't want to go anywhere near them."
 
 chapter Known Wonk
 
@@ -2007,7 +2044,7 @@ My Gym is south of Yawn Way. It is in Yelpley. "You can go back out south to Yaw
 
 chapter Dave
 
-Dave is a person in My Gym. initial appearance is "[one of]A fellow walks over to you and booms 'I'M Dave!' You freeze, and after a few seconds, he whispers, 'Dud.'[or]Dave is here, keeping an eye on you, guarding the passage west.[stopping]". description is "Dave is big and strong and fast."
+Dave is a proper-named guhthug in My Gym. initial appearance is "[one of]A fellow walks over to you and booms 'I'M Dave!' You freeze, and after a few seconds, he whispers, 'Dud.'[or]Dave is here, keeping an eye on you, guarding the passage west.[stopping]". description is "Dave is big and strong and fast."
 
 instead of doing something with Dave:
 	if action is procedural, continue the action;
@@ -2080,7 +2117,7 @@ for printing a locale paragraph about a book (called bk):
 
 chapter Rob
 
-Rob is a person in Worn Row. "[one of]'Oh, hi! I'm Rob, it's pretty uninteresting here, so you'd sort of fit in, but I'm trying to make it better. So, bug off, okay?'[or]Rob is still here giving you the side-eye.[stopping]". description is "Rob sniffs and rolls his eyes as if he is too good for Worn Row."
+Rob is a proper-named guhthug in Worn Row. "[one of]'Oh, hi! I'm Rob, it's pretty uninteresting here, so you'd sort of fit in, but I'm trying to make it better. So, bug off, okay?'[or]Rob is still here giving you the side-eye.[stopping]". description is "Rob sniffs and rolls his eyes as if he is too good for Worn Row."
 
 chapter test set
 
@@ -2588,7 +2625,7 @@ check going north in Gross Org: if etage gate is in Gross Org, say "The etage ga
 
 understand "evened" and "den evened" as Gross Org when Ned is moot.
 
-Ned is a person in Gross Org. "'Ned's Den!' someone booms. You're guessing their name must be Ned.". description is "Ned is sort of wildly flailing about, looking for a verbal or physical altercation, but that's not really your thing.".
+Ned is a proper-named guhthug in Gross Org. "'Ned's Den!' someone booms. You're guessing their name must be Ned.". description is "Ned is sort of wildly flailing about, looking for a verbal or physical altercation, but that's not really your thing.".
 
 chapter Gate Tag
 
@@ -2856,7 +2893,7 @@ after going to Cold Loc when puce cup is sappy:
 
 book Red Roses Order
 
-Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in Red Roses Order]The only visible way back is south, with a mist sim blocking the other directions, but you can't chicken out[else]Sword rows have been revealed once the mist sim dispersed. You can go back south[end if]."
+Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in Red Roses Order]The only visible way back is south, with a mist sim blocking the other directions, but you can't chicken out[else]Sword rows have been revealed once the mist sim dispersed. Line Nil flickers and guards the way north where Madam left. You can go back south[end if]."
 
 Red Roses Order is above Emo Dome.
 
@@ -2885,6 +2922,12 @@ check going south in Red Roses Order when Madam is in Red Roses Order: say "No w
 chapter yard ray
 
 the yard ray is a thing. description is "It looks pretty lethal. It's no dinky resale laser![paragraph break]There are also has instructions: EMIT ********.[paragraph break]It's currently [if murdered rum is moot]loaded with energy from the murdered rum[else]empty of fuel[end if]."
+
+chapter Line Nil
+
+Line Nil is peripheral scenery in Red Roses Order. "It's, well, a red line you would do well not to cross."
+
+check going south in Red Roses Order when Line Nil is in Red Roses Order: say "Whether or not Line Nil could damage you, you don't need to follow Madam. You need to take down the Diktat Kid!" instead;
 
 book Swept Pews
 
