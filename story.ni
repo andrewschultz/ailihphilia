@@ -866,7 +866,7 @@ NULL ILLUN	Known Wonk	--	--	bump-maws rule	true	true	true	Grebeberg	"The Known W
 el doodle	edits tide	spa maps	--	rahs-too rule	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps! And there is a bonus! It appears El Doodle was so jumbled, there were two things. Sharp rahs appear on another sheet of paper, as some sort of confused motivation, and you take them."
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Calcific Lac. As it gets near and bends away, you jump off, using the buoy to paddle and float back to Calcific Lac."
 dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
-tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Together, you figure out what to do to make the tent net proper cover for the Den Ivy Vined. 'Tie it ... tie it ...'[paragraph break]Once the work is done, the Code Doc thanks you and offers to share some knowledge in return, whenever."
+tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Together, you figure out what to do to make the tent net proper cover for the All Ivy Villa. 'Tie it ... tie it ...'[paragraph break]Once the work is done, the Code Doc thanks you and offers to share some knowledge in return, whenever."
 spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my math tam for this one. One second, let's see--Aha! Oho...' and desipte a minor pupil slipup, it soon makes complete sense to you."
 spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	"You stick some strands of yahoo hay into the damaged end of the dork rod. It's now a moor broom!"
@@ -975,8 +975,8 @@ section post-use rules [xxpost]
 [please add alphabetically]
 
 this is the bump-crib rule:
-	shuffle-before Den Ivy Vined and Red Roses Order;
-	move porch crop to Den Ivy Vined;
+	shuffle-before Ivy Villa and Red Roses Order;
+	move porch crop to Ivy Villa;
 	the rule succeeds;
 
 this is the bump-gulf rule:
@@ -1790,7 +1790,7 @@ Mire Rim is west of Dumb Mud. It is in Grebeberg. "A made dam blocks your way we
 crib-clue is a truth state that varies.
 
 after looking in Mire Rim when player has exam axe:
-	say "You notice that the Den Ivy Vined to the south looks a bit different. Something's been growing there. Maybe you should check it out.";
+	say "You notice that the All Ivy Villa to the south looks a bit different. Something's been growing there. Maybe you should check it out.";
 	now crib-clue is true;
 	continue the action;
 
@@ -1804,15 +1804,13 @@ chapter eroded ore
 
 some Eroded Ore is a thing. description is "You're no expert metallurgist, but it's dim and porous and probably not as potent as it could be."
 
-book Den Ivy Vined
+book All Ivy Villa
 
-printed name of Den Ivy Vined is "[if tent net is moot]Den, Ivy-Vined[else]All-Ivy Villa[end if]"
-
-The room called Den Ivy Vined is south of Mire Rim. It is in Grebeberg. "This is a homey little north-south passage, [if tent net is moot]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet[end if][if-porch]."
+The room called All Ivy Villa is south of Mire Rim. It is in Grebeberg. "This is a homey little north-south passage, [if tent net is moot]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet[end if][if-porch]."
 
 chapter code doc
 
-Code Doc is a person in Den Ivy Vined. "[one of]Someone is pacing back and forth here, muttering 'More ROM! MORE Rom! MORE ROM!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket. Busy, but not too busy to help someone else."
+Code Doc is a person in Ivy Villa. "[one of]Someone is pacing back and forth here, muttering 'More ROM! MORE Rom! MORE ROM!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket. Busy, but not too busy to help someone else."
 
 chapter Spa Maps
 
@@ -1829,7 +1827,7 @@ chapter porch crop
 the porch crop is scenery. "[if wash saw is moot]It's been cleared up since you used the wash saw on it[else]It really sprawls. Maybe there is a way to trim it to help the Code Doc[end if]."
 
 to say if-porch:
-	if porch crop is in Den Ivy Vined:
+	if porch crop is in Ivy Villa:
 		say ". [if wash saw is moot]The porch crop is still trimmed back[else]Some porch crop has sprouted up, and it looks okay, but there's just too much of it[end if]";
 
 chapter balsa slab
@@ -1838,7 +1836,7 @@ The Balsa Slab is a thing. "A balsa slab is just lying here. You're not sure how
 
 book Lair Trial
 
-Lair Trial is south of Den Ivy Vined. It is in Grebeberg. "This lair bends north and east, [if ergot ogre is moot], and with the trial over, you're free to go either way[end if]."
+Lair Trial is south of Ivy Villa. It is in Grebeberg. "This lair bends north and east, [if ergot ogre is moot], and with the trial over, you're free to go either way[end if]."
 
 chapter ergot ogre
 
@@ -3191,7 +3189,7 @@ this is the gate-gone rule:
 
 avail-rule of Mire Rim is dung-gone rule.
 avail-rule of Swamp Maws is dung-gone rule.
-avail-rule of Den Ivy Vined is dung-gone rule.
+avail-rule of Ivy Villa is dung-gone rule.
 avail-rule of Trial Lair is dung-gone rule.
 
 this is the dung-gone rule:
@@ -3404,7 +3402,7 @@ to hint-bump-worn:
 
 [this is the list of how I do things in the walkthrough.]
 
-L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Moo Room, Dumb Mud, Mire Rim, Swamp Maws, Calcific Lac, Den Ivy Vined, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
+L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Moo Room, Dumb Mud, Mire Rim, Swamp Maws, Calcific Lac, Ivy Villa, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
 
 [?? nothing game-critical to do here = if there is a LLP]
 
@@ -3499,7 +3497,7 @@ section bulk done-rule definitions
 
 done-rule of Apse Spa is apse-spa rule.
 done-rule of Art Xtra is art-xtra rule.
-done-rule of Den Ivy Vined is den-ivy-vined rule.
+done-rule of Ivy Villa is all-ivy-villa rule.
 done-rule of Calcific Lac is calcific-lac rule.
 done-rule of Cold Loc is cold-loc rule.
 done-rule of Deft Fed is deft-fed rule.
@@ -3588,20 +3586,20 @@ this is the art-xtra rule:
 this is the art-xtra-complete rule:
 	if soot tattoos are in devreserved, the rule succeeds;
 
-section Den Ivy Vined rule
+section Ivy Villa rule
 
-this is the den-ivy-vined rule:
+this is the all-ivy-villa rule:
 	if wash saw is moot, continue the action;
 	if maps-explained is true, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if porch crop is in Den Ivy Vined, say "USE WASH SAW ON PORCH CROP." instead;
+	if porch crop is in Ivy Villa, say "USE WASH SAW ON PORCH CROP." instead;
 	if player does not have tent net, say "To make the Code Doc happy, there's something [if Trapeze Part is visited]west of Evaded Ave[else] in Trapeze Part[end if] you can get." instead;
 	if player has tent net, say "USE TENT NET ON CODE DOC." instead;
 	if player does not have el doodle, say "There's something back in [Art Xtra] to pick up." instead;
 	if player does not have spa maps, say "You can change El Doodle into something the Code Doc can decipher." instead;
 	say "USE SPA MAPS ON CODE DOC." instead;
 
-this is the den-ivy-vined-complete rule:
+this is the all-ivy-villa-complete rule:
 	if wash saw is moot, the rule succeeds;
 
 section Calcific Lac rule
