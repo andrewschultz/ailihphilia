@@ -868,7 +868,7 @@ NULL ILLUN	Known Wonk	--	--	bump-maws rule	true	true	true	Grebeberg	"The Known W
 el doodle	edits tide	spa maps	--	rahs-too rule	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps! And there is a bonus! It appears El Doodle was so jumbled, there were two things. Sharp rahs appear on another sheet of paper, as some sort of confused motivation, and you take them."
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Calcific Lac. As it gets near and bends away, you jump off, using the buoy to paddle and float back to Calcific Lac."
 dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
-tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Together, you figure out what to do to make the tent net proper cover for the All Ivy Villa. 'Tie it ... tie it ...'[paragraph break]Once the work is done, the Code Doc thanks you and offers to share some knowledge in return, whenever."
+tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Together, you figure out what to do to make the tent net proper cover for the All-Ivy Villa. 'Tie it ... tie it ...'[paragraph break]Once the work is done, the Code Doc thanks you and offers to share some knowledge in return, whenever."
 spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my math tam for this one. One second, let's see--Aha! Oho...' and desipte a minor pupil slipup, it soon makes complete sense to you."
 spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	"You stick some strands of yahoo hay into the damaged end of the dork rod. It's now a moor broom!"
@@ -884,15 +884,15 @@ Eroded Ore	reviver	Ore Zero	--	--	true	true	false	Yelpley	"The reviver whirs as 
 you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. 'You BOFFO buoy!' you can't help shouting.[paragraph break]The gem's so tempting and beautiful, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
 bang nab	TNT	TNT	--	--	true	true	false	Yelpley	"The Bang Nab walks on its index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course."
 nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
-rep popper	Yuge Guy	murdered rum	--	totem-out rule	true	true	true	Grebeberg	"'BOO! NOOB!' the Yuge Guy booms, but he's clearly scared. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Male lam! Male lam!' he cries.[paragraph break]The ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
-Bro Orb	Madam	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	"The Bro Orb shines and drives Madam to rage. 'Live not on evil, madam, live not on evil!' you boom, as the ray does its work. She runs away, sobbing. 'You can't catch me! Not with Line Nil in place!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
+rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	Grebeberg	"'BOO! NOOB!' the Yuge Guy booms, but he's clearly scared. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Male lam! Male lam!' he cries.[paragraph break]The ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
+Bro Orb	Mist Sim	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	"The Bro Orb shines and blinks. The mist sim dissipates under the brutal light. 'Live not on evil, madam, live not on evil!' you boom, as the Orb does its work. She runs away, sobbing. 'You can't catch me! Not with Line Nil in place!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Madam."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You will be able to smite a bad-faith pearl-clutcher for sure with one of these."
 murdered rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
 Yard Ray	test set	--	ready-to-test rule	--	true	false	true	Dim Mid	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, successfully bribed." [b4:use TNT on ore zero]
 taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	Dim Mid	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev knows what he's up against. It's not that it's particularly violent or lethal, but ... the Verses Rev has developed such a warped orthodoxy, the bat is much scarier than it should be. Nothing to do but turn and run!"
-Yard Ray	Diktat Kid	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	"Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who goes running off. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid is going to check for that now, but with the Kid gone, you see saner arenas all around. Revel, clever! Revel, ever!"
+Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	"Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who goes running off. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid is going to check for that now, but with the Kid gone, you see saner arenas all around. Revel, clever! Revel, ever!"
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse]
 
@@ -977,8 +977,8 @@ section post-use rules [xxpost]
 [please add alphabetically]
 
 this is the bump-crib rule:
-	shuffle-before Ivy Villa and Red Roses Order;
-	move porch crop to Ivy Villa;
+	shuffle-before Den Ivy Vined and Red Roses Order;
+	move porch crop to Den Ivy Vined;
 	the rule succeeds;
 
 this is the bump-gulf rule:
@@ -1079,6 +1079,8 @@ this is the sod-to-cup rule:
 
 this is the sword-rows-reveal rule:
 	move sword rows to Red Roses Order;
+	moot madam;
+	move Line Nil to Red Roses Order;
 	the rule succeeds;
 
 this is the tats-peripheral rule:
@@ -1112,11 +1114,16 @@ radar	sleep eels	--	--	--	false	false	false	--	"A radar isn't supposed to work t
 troll ort	cross orc	--	--	--	false	false	false	--	"The cross orc mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE and don't WANT to. But the way it looks at you, you suspect it'd forgive you if you gave the right gift."
 troll ort	kayo yak	--	--	--	false	false	false	--	"As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up."
 Gorge Grog	yard ray	--	--	--	false	false	false	--	"The Gorge Grog is pretty strong stuff, but you may need something even stronger."
+Rep Popper	Yuge Guy	--	--	--	false	false	false	--	"It seems like the Rep Popper should work, but it doesn't, quite. Maybe there is something that is giving the Yuge Guy all his rep?"
+Bro Orb	Madam	--	--	--	false	false	false	--	"The Bro Orb might dissolve her, but you're not out to kill anyone. Still, close."
 yard ray	Diktat Kid	--	--	--	false	false	false	--	"The Diktat Kid laughs as you point the yard ray. 'Destroy me, but my work will remain!'"
 yard ray	Tru Hurt	--	--	--	false	false	false	--	"The Tru Hurt is dangerous, but maybe you should use the yard ray on something even more harmful."
 yard ray	Waster Fretsaw	--	--	--	false	false	false	--	"The Waster Fretsaw is dangerous, but maybe you should use the yard ray on something even more harmful."
 soot tattoos	DIFF ID	--	--	--	false	false	false	--	"You can just walk north to get through."
 [zzfail]
+
+[below is something to cut and paste to the table of failed useons]
+[item1	item2	--	--	--	false	false	false	--	"[fill-in-here]"]
 
 volume rooms
 
@@ -1283,13 +1290,16 @@ to say thug-report:
 	let GG2 be number of seenees guhthugs;
 	if GG is 4:
 		say "You've gotten all of them, so yay";
-		continue the action:
+		continue the action;
 	else if GG is 0:
-		say "[if GG2 is 0]You haven't seen any yet, but who knows[else][list of seenees guhthugs] may fit this description. Maybe you can get past [if GG2 is 1]him[else]them[end if]"
+		if GG2 is 0:
+			say "[if GG2 is 0]You haven't seen any yet, but who knows";
+		else:
+			say "[list of seenees guhthugs] may fit this description. Maybe you can get past [if GG2 is 1]him[else]them[end if]";
 	else:
-		say "[if number of seenees guhthugs is 0]Maybe you will figure how to tackle [list of seenees guhthugs][else]You got rid of [list of moot guhthugs], but maybe someone else is around[end if]"
+		say "[if number of seenees guhthugs is 0]Maybe you will figure how to tackle [list of seenees guhthugs][else]You got rid of [list of moot guhthugs], but maybe someone else is around[end if]";
 
-to decide whether (th - a thug) is seenees:
+definition: a guhthug (called th) is seenees:
 	if location of th is visited, yes;
 	no;
 
@@ -1436,6 +1446,8 @@ spa taps	"The spa taps can't do much. You're not a customer, anyway."
 smirk rims	"The smirk rims are only important if you let them be. In other words, they're not."
 ME Totem	"If you can deal with the Yuge Guy, the ME Totem won't matter."
 state tats	"You don't need to do anything to or with the state tats, now that you're wearing them."
+storm rots	"Yuck. You don't want or need to touch the storm rots, or do anything with them. There's probably worse behind them."
+Line Nil	"There's no way to dispel Line Nil, but Madam isn't the main enemy here, any more."
 mist sim	"Getting distracted by the mist sim would be a good way to get blindsided by Madam."
 DIFF ID	"The DIFF ID can't be broken. You [if Red Roses Order is visited]already found[else]just need to find[end if] a way to identify yourself."
 Par Wrap	"It's not the Verses Rev's clothes you need to worry about."
@@ -1466,7 +1478,7 @@ understand "xite" and "xite tix" as x-ite tix.
 
 chapter redivider
 
-the redivider is scenery in Dirge Grid. "Just looking at the redivider makes you very mad at friends who said something mean two years ago, as if people who lived life better would've stayed madder and found even better friends. It's hard to pull yourself away, but you do."
+the redivider is scenery in Dirge Grid. "[if Diktat Kid is moot]It's broken down now. You don't understand how it works, but perhaps it could be repurposed as something more useful. Like a rotavator. The folks in Grebeberg could use a few extra agricultural tools[else]Just looking at the redivider makes you very mad at friends who said something mean two years ago, as if people who lived life better would've stayed madder and found even better friends. It's hard to pull yourself away, but you do[end if]."
 
 chapter tru hurt
 
@@ -1827,7 +1839,7 @@ Mire Rim is west of Dumb Mud. It is in Grebeberg. "A made dam blocks your way we
 crib-clue is a truth state that varies.
 
 after looking in Mire Rim when player has exam axe:
-	say "You notice that the All Ivy Villa to the south looks a bit different. Something's been growing there. Maybe you should check it out.";
+	say "You notice that the den to the south looks a bit different. Something's been growing there. Maybe you should check it out.";
 	now crib-clue is true;
 	continue the action;
 
@@ -1841,13 +1853,17 @@ chapter eroded ore
 
 some Eroded Ore is a thing. description is "You're no expert metallurgist, but it's dim and porous and probably not as potent as it could be."
 
-book All Ivy Villa
+book Den Ivy Vined
 
-The room called All Ivy Villa is south of Mire Rim. It is in Grebeberg. "This is a homey little north-south passage, [if tent net is moot]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet[end if][if-porch]."
+Den Ivy Vined is south of Mire Rim. It is in Grebeberg. "This is a homey little north-south passage, [if tent net is moot]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet[end if][if-porch]."
+
+printed name of Den Ivy Vined is "[if tent net is moot]Den, Ivy-Vined[else]All-Ivy Villa[end if]".
+
+understand "all ivy villa" and "all ivy" and "all/ivy" and "all/ivy villa" as den ivy vined when tent net is not moot.
 
 chapter code doc
 
-Code Doc is a person in Ivy Villa. "[one of]Someone is pacing back and forth here, muttering 'More ROM! MORE Rom! MORE ROM!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket. Busy, but not too busy to help someone else."
+Code Doc is a person in Den Ivy Vined. "[one of]Someone is pacing back and forth here, muttering 'More ROM! MORE Rom! MORE ROM!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket. Busy, but not too busy to help someone else."
 
 chapter Spa Maps
 
@@ -1864,7 +1880,7 @@ chapter porch crop
 the porch crop is scenery. "[if wash saw is moot]It's been cleared up since you used the wash saw on it[else]It really sprawls. Maybe there is a way to trim it to help the Code Doc[end if]."
 
 to say if-porch:
-	if porch crop is in Ivy Villa:
+	if porch crop is in Den Ivy Vined:
 		say ". [if wash saw is moot]The porch crop is still trimmed back[else]Some porch crop has sprouted up, and it looks okay, but there's just too much of it[end if]";
 
 chapter balsa slab
@@ -1873,7 +1889,7 @@ The Balsa Slab is a thing. "A balsa slab is just lying here. You're not sure how
 
 book Lair Trial
 
-Lair Trial is south of Ivy Villa. It is in Grebeberg. "This lair bends north and east, [if ergot ogre is moot], and with the trial over, you're free to go either way[end if]."
+Lair Trial is south of Den Ivy Vined. It is in Grebeberg. "This lair bends north and east, [if ergot ogre is moot], and with the trial over, you're free to go either way[end if]."
 
 chapter ergot ogre
 
@@ -3232,7 +3248,7 @@ this is the gate-gone rule:
 
 avail-rule of Mire Rim is dung-gone rule.
 avail-rule of Swamp Maws is dung-gone rule.
-avail-rule of Ivy Villa is dung-gone rule.
+avail-rule of Den Ivy Vined is dung-gone rule.
 avail-rule of Trial Lair is dung-gone rule.
 
 this is the dung-gone rule:
@@ -3445,7 +3461,7 @@ to hint-bump-worn:
 
 [this is the list of how I do things in the walkthrough.]
 
-L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Moo Room, Dumb Mud, Mire Rim, Swamp Maws, Calcific Lac, Ivy Villa, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
+L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Moo Room, Dumb Mud, Mire Rim, Swamp Maws, Calcific Lac, Den Ivy Vined, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
 
 [?? nothing game-critical to do here = if there is a LLP]
 
@@ -3540,10 +3556,10 @@ section bulk done-rule definitions
 
 done-rule of Apse Spa is apse-spa rule.
 done-rule of Art Xtra is art-xtra rule.
-done-rule of Ivy Villa is all-ivy-villa rule.
 done-rule of Calcific Lac is calcific-lac rule.
 done-rule of Cold Loc is cold-loc rule.
 done-rule of Deft Fed is deft-fed rule.
+done-rule of Den Ivy Vined is den-ivy-vined rule.
 done-rule of Dirge Grid is dirge-grid rule.
 done-rule of Dopy Pod is dopy-pod rule.
 done-rule of Drawl Ward is drawl-ward rule.
@@ -3584,6 +3600,8 @@ done-for-good rule of Apse Spa is apse-spa-complete rule.
 done-for-good rule of Art Xtra is art-xtra-complete rule.
 
 done-for-good rule of Cold Loc is cold-loc-complete rule.
+
+done-for-good rule of Den Ivy Vined is den-ivy-vined-complete rule.
 
 done-for-good rule of Fun Nuf is trivially false rule.
 
@@ -3629,22 +3647,6 @@ this is the art-xtra rule:
 this is the art-xtra-complete rule:
 	if soot tattoos are in devreserved, the rule succeeds;
 
-section Ivy Villa rule
-
-this is the all-ivy-villa rule:
-	if wash saw is moot, continue the action;
-	if maps-explained is true, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if porch crop is in Ivy Villa, say "USE WASH SAW ON PORCH CROP." instead;
-	if player does not have tent net, say "To make the Code Doc happy, there's something [if Trapeze Part is visited]west of Evaded Ave[else] in Trapeze Part[end if] you can get." instead;
-	if player has tent net, say "USE TENT NET ON CODE DOC." instead;
-	if player does not have el doodle, say "There's something back in [Art Xtra] to pick up." instead;
-	if player does not have spa maps, say "You can change El Doodle into something the Code Doc can decipher." instead;
-	say "USE SPA MAPS ON CODE DOC." instead;
-
-this is the all-ivy-villa-complete rule:
-	if wash saw is moot, the rule succeeds;
-
 section Calcific Lac rule
 
 this is the calcific-lac rule:
@@ -3682,6 +3684,22 @@ this is the deft-fed rule:
 this is the deft-fed-complete rule:
 	if Elan Ale is moot, the rule succeeds;
 	the rule fails;
+
+section Den Ivy Vined rule
+
+this is the den-ivy-vined rule:
+	if wash saw is moot, continue the action;
+	if maps-explained is true, continue the action;
+	if search-hint-room is true, the rule succeeds;
+	if porch crop is in Den Ivy Vined, say "USE WASH SAW ON PORCH CROP." instead;
+	if player does not have tent net, say "To make the Code Doc happy, there's something [if Trapeze Part is visited]west of Evaded Ave[else] in Trapeze Part[end if] you can get." instead;
+	if player has tent net, say "USE TENT NET ON CODE DOC." instead;
+	if player does not have el doodle, say "There's something back in [Art Xtra] to pick up." instead;
+	if player does not have spa maps, say "You can change El Doodle into something the Code Doc can decipher." instead;
+	say "USE SPA MAPS ON CODE DOC." instead;
+
+this is the den-ivy-vined-complete rule:
+	if wash saw is moot, the rule succeeds;
 
 section Dirge Grid rule
 
