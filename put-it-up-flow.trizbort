@@ -20,10 +20,10 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="4" port="n" />
 			<dock index="1" id="6" port="s" />
 		</line>
-		<room id="8" name="USE REP POPPER ON YUGE GUY" subtitle="" x="544" y="-512" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="8" name="USE REP POPPER ON ME TOTEM" subtitle="" x="544" y="-512" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-40" customDown="0">GET MURDERED RUM</objects>
 		</room>
-		<room id="9" name="USE BRO ORB ON MADAM" subtitle="" x="544" y="-384" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="9" name="USE BRO ORB ON MIST SIM" subtitle="" x="544" y="-384" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-36" customDown="0">GET YARD RAY</objects>
 		</room>
 		<room id="10" name="USE TNT ON ORE ZERO" subtitle="" x="864" y="-128" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
@@ -240,7 +240,7 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="14" port="n" />
 			<dock index="1" id="103" port="s" />
 		</line>
-		<room id="18" name="USE YARD RAY ON DIKTAT KID" subtitle="" x="1024" y="-640" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="18" name="USE YARD RAY ON REDIVIDER" subtitle="" x="1024" y="-640" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="107" name="" description="" flow="oneWay">
 			<dock index="0" id="18" port="n" />
 			<dock index="1" id="17" port="s" />

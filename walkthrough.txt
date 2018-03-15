@@ -349,11 +349,11 @@ Now with all the junk we have, we can make non-junk.
 
 >W
 
-(+1) >USE REP POPPER ON YUGE GUY
+(+1) >USE REP POPPER ON ME TOTEM
 
 >E.S.S.E.E.E.N
 
-(+1) >USE BRO ORB ON MADAM
+(+1) >USE BRO ORB ON MIST SIM
 
 (+1) >USE BALSA SLAB ON SWORD ROWS
 
@@ -385,7 +385,8 @@ Now, carnage! And points! And so on.
 
 (+1) >USE ME GEM ON KNIFE FINK
 (+1) >USE TABOO BAT ON VERSES REV
-(+1) >USE YARD RAY ON DIKTAT KID
+(+1) >USE YARD RAY ON REDIVIDER
+
 >S
 
 One last thing to do. It's not too tricky, I hope.

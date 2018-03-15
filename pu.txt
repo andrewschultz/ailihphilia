@@ -88,7 +88,7 @@ The Verses Rev sure is holier than thou!
 Maybe you can offend the Verses Rev.
 USE TABOO BAT ON VERSES REV.
 ?How do I defeat the Diktat Kid?
-USE YARD RAY ON DIKTAT KID.
+USE YARD RAY ON REDIVIDER.
 Now you will get a new item, and you can go back south and win the game.
 >Grebeberg
 >>SEER TREES
@@ -173,7 +173,7 @@ USE ENACT CANE ON YAHOO HAY.
 ?How do I kill off the Yuge Guy?
 You'll need something to dent his pride.
 Something you yourself may have had trouble taking, because you were too proud at first.
-USE REP POPPER ON YUGE GUY.
+USE REP POPPER ON ME TOTEM.
 >>DUMB MUD
 ?How do I get rid of the gnu dung blocking the way west?
 You need something that can hold dung, or something like it.
@@ -481,7 +481,7 @@ USE ELAN ALE ON SNIFFINS.
 ?How do I defeat Madam?
 You can't get in if you don't have what you need.
 Something that's the opposite of her.
-USE BRO ORB ON MADAM.
+USE BRO ORB ON MIST SIM.
 ?What are the sword rows for for?
 Well, there's one thing that needs to be carved.
 USE BALSA SLAB ON SWORD ROWS.
@@ -500,7 +500,7 @@ There are 10 total points in Dim Mid.
 1 point if you USE TNT ON ORE ZERO or any pair of ingredients to create the North-Tron.
 1 point if you USE ME GEM ON KNIFE FINK.
 1 point if you USE TABOO BAT ON VERSES REV.
-1 point if you USE YARD RAY ON DIKTAT KID.
+1 point if you USE YARD RAY ON REDIVIDER.
 1 point if you USE X-ITE TIX ON TIX EXIT
 ?How do I get all the points for Yelpley?
 There are 37 total points in Yelpley.
@@ -538,7 +538,7 @@ There are 37 total points in Yelpley.
 1 point if you USE ERODED ORE ON REVIVER.
 1 point if you USE YOU BUOY ON ROTATOR.
 1 point if you USE BANG NAB ON TNT.
-1 point if you USE BRO ORB ON MADAM.
+1 point if you USE BRO ORB ON MIST SIM.
 1 point if you USE NOT-A-BATON ON REIFIER.
 1 point if you USE BALSA SLAB ON SWORD ROWS.
 ?How do I get all the points for Grebeberg?
@@ -572,7 +572,7 @@ There are 30 total points in Grebeberg.
 1 point if you USE WASH SAW ON PORCH CROP.
 1 point if you USE EXAM AXE ON LIE VEIL.
 1 point if you USE NAT'S TAN ON SCORN ROCS.
-1 point if you USE REP POPPER ON YUGE GUY.
+1 point if you USE REP POPPER ON ME TOTEM.
 ?How do I get all the points for Odd Do?
 There are 11 total points in Odd Do.
 1 point for BALM LAB once you've cleared Pro Corp to make it a bald lab.
