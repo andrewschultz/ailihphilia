@@ -1,4 +1,20 @@
-I was able to start early, which was nice. I'd used source control before, but usually only a month before. Github has that handy tracker, and Bitbucket doesn't.
+IFComp 2018 postmortem
+
+I was able to start early, which was nice. I even started on this postmortem early, so I didn't forget how it started. I'd used source control before, but usually only a month before. Github has that handy tracker, and Bitbucket doesn't, and that affects my motivation surprisingly.
+
+I probably originally got the idea from Kingdom of Loathing's Palindome and Nick Montfort's I Palindrome I. Palindromes had been on my radar for a while, and maybe seeing the [::-1] trick in Python convinced me that, whether or not there WERE enough palindromes, I could check pretty quickly to see about it, and I'd have fun. PERL worked well, but sometimes, a special feature lets you pull a thread, and that thread leads somewhere.
+
+ I originally thought the game would be part of a bigger game (coming IFComp 2019,) but it grew from 4 rooms to 9, then 15, 21, 27 and now 35 and that's it. You can imagine I was able to chip away at 2 word palindromes and start doing stuff and seeing what was funny and what wasn't, and you can see how math/computer science would help me with this. Just poking around with 2-word palindromes gave me the initial puzzle with the rats and the trap. It took me a while to figure what on earth could get me to convert trap art to a party trap, but they seemed to go together. The answer was surprisingly simple--I'd had a list of 1-word palindromes, as it was one of the first things I did. The '-er' looked like good bets for machines. I had them, and I decided to have the player use them equally throughout the game. I didn't know what to put in, when, but I had faith that would turn up.
+
+I'm also really proud of writing and honing a Python script to extract 3-word palindromes. That's in 3w.py. The text files referenced are lists of first and last names and words. Pretty much any word list should work. At first I just ran it and put it away, but then I saw 'ark okra' in the 2-word palindroms and realized I could slip an 'of' in there and that I needed to look seriously at the 3-word palindromes. Red Roses Order fell next.
+
+The first run would've taken 2 days (brute force) but halfway through I figured a way to speed it up, and it got down to 25 seconds now with judicious uses of hashes. For instance, end['a'] stores all words ending in a, and start['a'] has all starting in a. There's no sense in matching end['a'] with start['b'], for instance. In fact, you can do even better with two-letter strings. Then, instead of searching through all the words for the middle string, I defined a hash of "what words would be palindromes if you knocked something off the start or end?"
+
+3w.py is the file in the repository  that does the magic.
+
+I have flashbacks here to CompSci courses where I thought, who would want to use a hash? Or I found those examples with people mapped to phone numbers really contrived. Now, though, I've used hashes so much, with this or my anagram games, it's just nice to know writing games has helped me grow.
+
+========
 
 Of course many two-word palindromes are either anagrams or almost anagrams, so I had a bit of a head start for this. Also, the utilities were easier to create. And I had a bona fide notes file to refer to. To which to refer.
 
