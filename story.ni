@@ -2671,7 +2671,7 @@ Deft Fed is south of Toll Lot. It is in Yelpley. printed name is "[if yob attabo
 
 chapter Sniffins
 
-Sniffins is a person in Deft Fed. "[one of]You hear a sniff, and the proprietor introduces themselves as Sniffins, apologizing for how lame the ambience and decor are, but there's just no INSPIRATION to do better[or]Sniffins sniffs here[stopping].". description is "Sniffins looks despondent [if yob attaboy is moot]and unfriendly despite your help[else]and pleading, for any sort of help[end if]."
+Sniffins is a person in Deft Fed. "[one of]You hear a sniff, and the proprietor introduces themselves as Sniffins, apologizing for how lame the ambience and decor are, but there's just no INSPIRATION to do better[or]Sniffins sniffs here[stopping].". description is "Sniffins looks [if yob attaboy is moot]unfriendly despite your help--what a posh sop[else]despondent and pleading, for any sort of help[end if]."
 
 the Dirt Rid is a thing. description is "The Dirt Rid looks old and decrepit. Sniffins probably wore it out converting the Bon Snob, but it's yours now."
 

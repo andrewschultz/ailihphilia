@@ -462,6 +462,7 @@ table of businesses
 biz-name
 "Dairy Myriad"
 "Derby Bred"
+"Layaway Al"
 "Looks Skool"
 "Rife Kefir"
 "Skooby Books"
@@ -501,10 +502,15 @@ part the tables
 
 table of altbooks
 randtxt
+"Emacs Came"
 "Eponymy? Nope"
 "Gigolo Gig"
+"If I Had a Hi-Fi"
 "A Mardy Drama"
 "Mo['] Idiom"
+"More ROM"
+"Mr. Owl Worm"
+"Otter Amaretto"
 "Rise Aesir"
 "Risk Sir"
 "Solo Gigolos"
@@ -512,6 +518,7 @@ randtxt
 "Sore Zeros"
 "Torsos, ROT"
 "We Few"
+"Yo Banana Boy"
 
 table of attackings
 randtxt
