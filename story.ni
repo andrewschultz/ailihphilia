@@ -42,9 +42,7 @@ definition: a thing is moot:
 	no;
 
 to moot (Q - a thing):
-	move Q to DevReserved;
-
-a person can be normal, grunty, ruling, chasey or henchy. a person is usually normal.
+	move Q to DevReserved; [ic]
 
 a chaser is a kind of person. a chaser has a room called chase-room.
 
@@ -203,7 +201,7 @@ check requesting the score:
 	say "Your overall score so far is [score] of [maximum score][if score < 4]. But don't worry, points pile up pretty quickly once you get going[end if]. [to-get-max].";
 	say "Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do].";
 	if My Gym is visited or Evaded Ave is visited:
-		if number of grunty people is not number of grunty people in DevReserved, say "You currently disposed of [number of grunty people in DevReserved] grunts blocking your way: [list of grunty people in DevReserved].";
+		if number of guhthugs is not number of moot guhthugs, say "You currently disposed of [number of moot guhthugs] grunts blocking your way: [list of moot guhthugs].";
 	if Yuge Guy is moot, say "You've gotten rid of the Yuge Guy, Evil Clive.";
 	if Madam is moot, say "You've gotten rid of the La Gal/Madam.";
 	if player has x-ite tix:
@@ -699,7 +697,7 @@ understand "use [something] with [something]" as useoning it with.
 
 to build-the-tron:
 	move north tron to Fun Nuf;
-	now all tronparts are in DevReserved;
+	now all tronparts are in devreserved; [ic]
 	say "You build the north tron with the instructions from the epicer recipe. It points north and blasts a hole with a huge tron snort before collapsing into uselessness. You tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
 	moot epicer recipe;
 	now Dirge Grid is mapped north of Fun Nuf;
@@ -1534,7 +1532,7 @@ the gift fig is a solid ingredient. description is "Well, it's a fig."
 
 book Cold Loc
 
-Cold Loc is north of Seer Trees. It is in Grebeberg. "A rift fir that blocks a steep drop west. [if sword rows are in DevReserved]The past sap you cut from it is lumped on the ground[else]Some past sap clings to the rift fir[end if]."
+Cold Loc is north of Seer Trees. It is in Grebeberg. "A rift fir that blocks a steep drop west. [if sword rows are moot]The past sap you cut from it is lumped on the ground[else]Some past sap clings to the rift fir[end if]."
 
 check going west in Cold Loc: say "The rift fir blocks the way to much more dangerous places." instead;
 
@@ -1544,7 +1542,7 @@ A rift fir is scenery in Cold Loc. "It's a rife fir. You're not getting past it,
 
 chapter past sap
 
-the past sap is scenery in Cold Loc. "[if sword rows are in DevReserved]It is in a lump on the ground[else]It's stuck to the rift fir, but with the right tool, maybe you could pry it off[end if]."
+the past sap is scenery in Cold Loc. "[if sword rows are moot]It is in a lump on the ground[else]It's stuck to the rift fir, but with the right tool, maybe you could pry it off[end if]."
 
 check taking past sap: say "[if liar grail is moot]You probably don't need any more past sap, now that you used it to dispose of the Liar Grail.[else]It's too sticky to carry around by itself. Maybe have a container carrying it?[end if]"
 
@@ -2051,7 +2049,7 @@ carry out puffuping:
 	if player does not have spur ups, say "You don't possess anything that would help you feel more up." instead;
 	say "As you hold the Spur-Ups, you think about how great you are and can and will be. Surprisingly, it works! It works so well, you figure you don't even need the spur-ups for a boost in the future.[paragraph break]Hardened! Rah![paragraph break]You feel more confident, more able to deal with sadness now.";
 	now puffed-up is true;
-	now Spur Ups are in DevReserved;
+	moot Spur Ups;
 	score-inc; [Yelpley/puff up]
 	the rule succeeds;
 
@@ -2178,7 +2176,8 @@ to wear-down (w - a workable):
 		hint-bump-worn;
 		say "[line break]With [list of workables] all destroyed, Work Row shakes a bit more. The machines fall out from a wall, revealing something behind ... a test set. It's big and huge and you can't move it, but who knows what it'll be useful for later?";
 		move test set to Worn Row;
-		now all workables are in DevReserved;
+		now all workables are in devreserved; [ic]
+		[?? how to moot all workables]
 
 to decide which number is machuses:
 	let retval be 0;
@@ -2341,7 +2340,7 @@ books-carried-yet is a truth state that varies.
 
 check taking a book:
 	if player has noun, continue the action;
-	if number of books in DevReserved is 2 and SOME DEMOS is off-stage:
+	if number of moot books is 2 and SOME DEMOS is off-stage:
 		say "As you pick up [noun], something else falls out. It's a smaller pamphlet, called SOME DEMOS. You pick it up.";
 		now player has SOME DEMOS;
 		now SOME DEMOS is in-row;
@@ -2574,7 +2573,7 @@ after taking El Doodle:
 El Doodle is a thing. description is "A jumble of raw creativity, it looks like it could be a map--or something--but it sure could use some paring down."
 
 after going to Art Xtra when El Doodle is off-stage:
-	if stark rats are in DevReserved:
+	if stark rats are moot:
 		say "You tell the Revolt Lover about how you got rid of the stark rats. the Revolt Lover, impressed, mentions there's something else for you. 'Someone left it here a while back. It's indecipherable. I can't use it, but maybe you can figure it out.'";
 		now player has El Doodle;
 	continue the action;
@@ -2849,7 +2848,7 @@ emo-dir is a direction that varies. emo-dir is west.
 
 check going to Emo Dome:
 	if Spur Ups are off-stage, say "It's too whiny to the east! You just aren't positive enough to deal with it, yet. You back out." instead;
-	if Spur Ups are not in DevReserved, say "The Spur Ups make you feel a bit more confident, but you need to do something to make yourself feel a bit more up before entering the Emo Dome." instead;
+	if Spur Ups are not moot, say "The Spur Ups make you feel a bit more confident, but you need to do something to make yourself feel a bit more up before entering the Emo Dome." instead;
 	if pulled-up is false:
 		now emo-dir is noun;
 
@@ -3178,7 +3177,7 @@ avail-rule of Frush Surf is eels-gone rule.
 avail-rule of Moo Room is eels-gone rule.
 
 this is the eels-gone rule:
-	if sleep eels are in devreserved, the rule succeeds;
+	if sleep eels are moot, the rule succeeds;
 	the rule fails;
 
 avail-rule of Yell Alley is lover-gone rule.
@@ -3205,7 +3204,7 @@ avail-rule of Flu Gulf is rats-gone rule.
 avail-rule of Dumb Mud is rats-gone rule.
 
 this is the rats-gone rule:
-	if stark rats are in devreserved, the rule succeeds;
+	if stark rats are moot, the rule succeeds;
 	the rule fails;
 
 avail-rule of Emo Dome is pulled-up rule.
@@ -3231,7 +3230,7 @@ this is the grail-gone rule:
 avail-rule of Toll Lot is puffed-up-yet rule.
 
 this is the puffed-up-yet rule:
-	if Spur Ups are in devreserved, the rule succeeds;
+	if Spur Ups are moot, the rule succeeds;
 	the rule fails;
 
 avail-rule of Deft Fed is orc-block rule.
@@ -3283,13 +3282,13 @@ this is the veil-gone rule:
 avail-rule of Sneer Greens is rocs-gone rule.
 
 this is the rocs-gone rule:
-	if scorn rocs are in devreserved, the rule succeeds;
+	if scorn rocs are moot, the rule succeeds;
 	the rule fails;
 
 avail-rule of Red Roses Order is rose-tat rule.
 
 this is the rose-tat rule:
-	if soot tattoos are in devreserved and player has Bro Orb, the rule succeeds;
+	if soot tattoos are moot and player has Bro Orb, the rule succeeds;
 	the rule fails;
 
 avail-rule of Dirge Grid is tron-done rule.
@@ -3635,7 +3634,7 @@ this is the apse-spa-complete rule:
 section Art Xtra rule
 
 this is the art-xtra rule:
-	if trap art is not in Art Xtra and stark rats are not in devreserved, continue the action;
+	if trap art is not in Art Xtra and stark rats are not moot, continue the action;
 	if state tats are not off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if trap art is in Art Xtra, say "The trap art will be useful, with a change." instead;
@@ -3646,7 +3645,7 @@ this is the art-xtra rule:
 	say "Eep! There's a lot to do here, and I messed things up." instead;
 
 this is the art-xtra-complete rule:
-	if soot tattoos are in devreserved, the rule succeeds;
+	if soot tattoos are moot, the rule succeeds;
 
 section Calcific Lac rule
 
@@ -3763,13 +3762,13 @@ this is the evaded-ave rule:
 section Flu Gulf rule
 
 this is the flu-gulf rule:
-	if scorn rocs are in devreserved, continue the action;
+	if scorn rocs are moot, continue the action;
 	if Bond Nob is in Drawl Ward, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if gulf lug is moot, say "The gulf lug needs medicine. The DEMO MED." instead;
 
 this is the flu-gulf-complete rule:
-	if scorn rocs are in devreserved, the rule succeeds;
+	if scorn rocs are moot, the rule succeeds;
 	the rule fails;
 
 section Frush Surf rule
@@ -3908,7 +3907,7 @@ to say trees-zoo:
 section Seer Trees rule
 
 this is the seer-trees rule:
-	if stark rats are in DevReserved, continue the action;
+	if stark rats are moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if player has party trap, say "USE the party trap on the stark rats." instead;
 	if player has trap art, say "The trap art can be made into something bigger. ";
@@ -4017,7 +4016,7 @@ this is the worn-row-complete rule:
 section Yawn Way rule
 
 this is the yawn-way rule:
-	if stark rats are not in devreserved, continue the action;
+	if stark rats are not moot, continue the action;
 	if puffed-up is true, continue the action; [this is a trivial rule, but in case I decide to add something, it may be a help.]
 	if search-hint-room is true, the rule succeeds;
 	if player does not have Spur Ups, say "You may need to visit Cold Loc to receive an item to help you go east." instead;
@@ -4113,7 +4112,7 @@ understand "slam mammals" as slammammalsing.
 carry out slammammalsing:
 	if slam-mam is true, say "You already did. Don't overdo it." instead;
 	unless player is in Ooze Zoo, say "You have no sympathetic audience." instead;
-	say "The sleep eels wake from their slumber [if bunk nub is moot]just out of sight [end if]briefly to squirm. They telepathically project their pleasure [if sleep eels are in DevReserved]from their stock cots [end if]before going back to sleep. You've ... done something, I guess? And hopefully without too much whataboutism?";
+	say "The sleep eels wake from their slumber [if bunk nub is moot]just out of sight [end if]briefly to squirm. They telepathically project their pleasure [if sleep eels are moot]from their stock cots [end if]before going back to sleep. You've ... done something, I guess? And hopefully without too much whataboutism?";
 	now slam-mam is true;
 	abide by the LLP rule; [SLAM MAMMALS]
 	the rule succeeds;
@@ -4127,7 +4126,7 @@ understand the command "stack cats" as something new.
 understand "stack cats" as stacking.
 
 carry out stacking:
-	if senile felines are in DevReserved, say "You already did." instead;
+	if senile felines are moot, say "You already did." instead;
 	if player is not in Moo Room, say "Not here." instead;
 	say "You stack the cats so they can reach the late petal, but once you do, the top one bats it and it falls. They walk away, disinterested. But they still seemed to have fun. Well, cats are like that.";
 	moot senile felines;
@@ -4290,7 +4289,7 @@ this is the cart-traced rule:
 	the rule succeeds;
 
 this is the cats-stacked rule:
-	if senile felines are in devreserved, the rule succeeds;
+	if senile felines are moot, the rule succeeds;
 	the rule fails;
 
 this is the dial-yet rule:
