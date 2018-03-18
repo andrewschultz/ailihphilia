@@ -835,7 +835,7 @@ north tron	"The north tron's already done its job."
 table of useons [xxuse]
 use1	use2 (an object)	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
 TI	Door Frood	--	--	--	true	true	true	Yelpley	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Door Frood runs away." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
-pity tip	navy van	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	"The van takes the pity tip and whooshes off. It spits out some snack cans, which roll on the ground. You take them. The navy van then leaves for good. It was apparently obstructing a whole bomb mob! That's who was making all the noise!" [af:TEND NET/WORK ROW]
+pity tip	eye	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	"The eye scans the pity tip, and the navy van beeps and boops and spits out some snack cans, which roll on the ground. You take them. The navy van then becomes a navi-van and whooshes off to leave for good. And there's something behind it! Apparently, a whole bomb mob! That's who was making all the noise!" [af:TEND NET/WORK ROW]
 trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
 bunk nub	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching and slurping, the bunk nub is changed to a bunch of much smaller, but more comfortable looking, stock cots."
 party trap	stark rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
@@ -1031,6 +1031,7 @@ this is the maps-explain rule:
 	the rule succeeds;
 
 this is the mob-to-alley rule:
+	moot navy van;
 	now girt rig is in Yell Alley;
 	now bomb mob is in Yell Alley;
 	now TNT is in Yell Alley;
@@ -2782,9 +2783,11 @@ chapter navy van
 
 [??seedy dee's]
 
-the navy van is scenery in Yell Alley. "There seems to be no way to enter it. It has a small gig where you could maybe put something in."
+the navy van is scenery in Yell Alley. "There seems to be no way to enter it. It is labeled SEEDY DEE'S and has a small gig you could USE something on to scan it."
 
-understand "gig" as navy van.
+section eye
+
+the eye is part of the navy van. "It looks electronic and (unsurprisingly) symmetrically spherical. Perhaps you could USE something on it."
 
 chapter snack cans
 

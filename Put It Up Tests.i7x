@@ -14,7 +14,7 @@ chapter main walkthrough
 
 [?? why didn't GQ flag revolt lover this in its run through?]
 
-test part1 with "pack cap/stats/peep/poop/dial aid/refer/e/n/get trap art/s/s/evade dave/get saw/w/bore rob/word row/trace cart/get to idiot/e/n/n/n/use to idiot on door frood/get bunk nub/e/get all/use pity tip on navy van/w/w/tend net/e/s/s/s/w/work row/use trap art on reifier/use bunk nub on reviver"
+test part1 with "pack cap/stats/peep/poop/dial aid/refer/e/n/get trap art/s/s/evade dave/get saw/w/bore rob/word row/trace cart/get to idiot/e/n/n/n/use to idiot on door frood/get bunk nub/e/get all/use pity tip on eye/w/w/tend net/e/s/s/s/w/work row/use trap art on reifier/use bunk nub on reviver"
 
 test part2 with "word row/get epoch cope/e/n/w/w/use party trap on stark rats/n/use epoch cope on king nik/s/s/slam mammals/use stock cots on sleep eels/s/get stamp mats/e/get poo coop/w/n/n/e/e/s/w/get yob attaboy/e/n/puff up/e/pull up/get puce cup"
 

@@ -187,7 +187,6 @@ Palm Lap
 
 Fix If
 
-Emacs Came
 enol alone
 Fray! Arf!
 
@@ -263,8 +262,7 @@ MRA Farm
 Mice Decim
 Hat Ptah
 
-"A cub, Cuba, is here."
-BUCK CUB
+# "A cub, Cuba, is here." / BUCK CUB
 
 Emir Grime
 
@@ -411,15 +409,13 @@ la minimal
 lad iridal
 lad udal
 lager egal
-layaway al
 legs gel
 lesser tressel
 leek eel
 levant navel
 lepers repel
-level eyelevel
+#level eyelevel
 liane renail
-link nil
 lie deil
 lives evil
 look skool
@@ -475,7 +471,6 @@ omen emo
 oops poo
 ope repo
 orang ignaro
-otter amaretto
 paleae lap
 parses rap
 palsy slap
@@ -498,7 +493,6 @@ plugs gulp
 possesses sop
 posts op
 po hop
-posh sop
 potsy stop
 port strop
 prahu harp

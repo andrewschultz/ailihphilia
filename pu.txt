@@ -306,11 +306,11 @@ A book that has "froody" humor? That gives them someone to look down on?
 USE TO IDIOT ON DOOR FROOD.
 >>YELL ALLEY
 ?What is the navy van for?
-It has a small gig you can put something in.
-What sheets of paper could go in the navy van?
+It has a small eye you can scan something on.
+What sheets of paper could go in the navy van/on the eye?
 Most you find are just for you.
 But one has a free something or other. Just, you can't redeem it by yourself.
-USE PITY TIP ON NAVY VAN.
+USE PITY TIP ON EYE.
 ?How do I get the TNT from the bomb mob?
 You need an agent to do it for you.
 Do you have the DNA band or DNA hand?
@@ -508,7 +508,7 @@ There are 37 total points in Yelpley.
 1 point if you BORE ROB.
 1 point for WORD ROW.
 1 point if you USE TO IDIOT ON DOOR FROOD.
-1 point if you USE PITY TIP ON NAVY VAN.
+1 point if you USE PITY TIP ON EYE.
 1 point if you TEND NET.
 1 point for WORK ROW.
 1 point if you USE TRAP ART ON REIFIER.
