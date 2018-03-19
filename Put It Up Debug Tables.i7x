@@ -49,6 +49,7 @@ table of noesies	0	true	"responses to NO"
 table of nothings	0	true	"responses to empty commands"
 table of singstuff	0	true	"responses to SINGing"
 table of swearstuff	0	true	"responses to SWEARing"
+table of undoings	0	true	"UNDOing notifications"
 table of waittxt	0	true	"responses to WAITing"
 table of yessies	0	true	"responses to YES"
 table of yuge taunts	0	true	"Yuge Guy taunts"
@@ -59,8 +60,8 @@ part the tables
 
 table of altbooks
 randtxt
-"Emacs Came"
-"Eponymy? Nope"
+"D'oh, Serene, Reshod"
+"D'oh, Temp Method"
 
 table of attackings
 randtxt
@@ -112,7 +113,7 @@ randtxt
 table of yuge taunts
 randtxt
 "Ahahahahahaha!"
-"Gibe! Big!"
+"D'oh! Shun unshod!"
 
 Put it Up debug Tables ends here.
 
