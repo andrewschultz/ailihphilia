@@ -349,8 +349,17 @@ volume verbs (standard or semi-standard to Inform)
 chapter undoing
 
 report undoing an action:
-	say "[one of]Nixin[']...[or][']S poor. Oops![or]Time: remit.[or]'Redo-coder! Redo-coder!'[in random order]";
-	rule succeeds.
+	next-rand table of undoings;
+	the rule succeeds;
+
+table of undoings
+randtxt
+"Did. Error? Redid."
+"Did. [']Nuff? Undid."
+"Nixin[']..."
+"[']S poor. Oops!"
+"Time: remit."
+"'Redo-coder! Redo-coder!'"
 
 chapter procedurality
 
@@ -1533,7 +1542,7 @@ the gift fig is a solid ingredient. description is "Well, it's a fig."
 
 book Cold Loc
 
-Cold Loc is north of Seer Trees. It is in Grebeberg. "A rift fir that blocks a steep drop west. [if sword rows are moot]The past sap you cut from it is lumped on the ground[else]Some past sap clings to the rift fir[end if]."
+Cold Loc is north of Seer Trees. It is in Grebeberg. "It's kind of dewed, here. A rift fir that blocks a steep drop west. [if sword rows are moot]The past sap you cut from it is lumped on the ground[else]Some past sap clings to the rift fir[end if]."
 
 check going west in Cold Loc: say "The rift fir blocks the way to much more dangerous places." instead;
 
