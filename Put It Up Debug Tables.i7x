@@ -100,6 +100,11 @@ randtxt
 "(R)rude! Dur(r)!"
 "Bad? A dab!"
 
+table of undoings
+randtxt
+"'Redo-coder! Redo-coder!'"
+"[']S poor. Oops!"
+
 table of waittxt
 randtxt
 "Camp, mac!"

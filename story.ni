@@ -352,16 +352,6 @@ report undoing an action:
 	next-rand table of undoings;
 	the rule succeeds;
 
-table of undoings
-randtxt
-"Did. Error? Redid."
-"Did. [']Nuff? Undid."
-"Eff a gaffe."
-"Nixin[']..."
-"[']S poor. Oops!"
-"Time: remit."
-"'Redo-coder! Redo-coder!'"
-
 chapter procedurality
 
 to decide whether the action is procedural: [aip]

@@ -524,6 +524,12 @@ randtxt
 "Do Pacific a Pod"
 "Do Pay a Pod"
 "Do, Gamma God"
+"Don Represser Pernod"
+"Due Spy Pseud"
+"Duo-Ladened Aloud"
+"Eat, Roam, Aortae"
+"Ebb, Acidic Abbe"
+"Ebb, Error Rebbe"
 "Emacs Came"
 "Eponymy? Nope"
 "Gigolo Gig"
@@ -652,6 +658,16 @@ randtxt
 "Y'booby!"
 "Y'kooky?"
 "Yap? Ay!"
+
+table of undoings
+randtxt
+"'Redo-coder! Redo-coder!'"
+"[']S poor. Oops!"
+"Did. [']Nuff? Undid."
+"Did. Error? Redid."
+"Eff a gaffe."
+"Nixin[']..."
+"Time: remit."
 
 table of waittxt
 randtxt
