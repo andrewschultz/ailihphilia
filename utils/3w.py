@@ -4,6 +4,18 @@
 #
 # usage() lists command line options
 #
+# technical details:
+#
+# end_pal is a two-dimensional hash of all the possible words that can have a word at the end...
+# for instance, CAN and DAN and AN will be in end_pal[AN]
+#
+# start_pal is a two-dimensional hash of all the possible words that can have a word at the start...
+# for instance, AND and ANT will be in start_pal[AN]
+#
+# silly_test is a unit test to check these hashes for one word, TRUE bails after
+#
+# 3w-ok.txt has a list of 1 or 2 letter words that are okay and popular enough.
+#
 
 import time
 import sys
@@ -41,6 +53,11 @@ def usage():
     print("For specific test cases, -m 4 -o can make things pop up easier.")
     print("-? = this function.")
     exit()
+
+def silly_test(look_string, bail=False)
+    print(look_string, start_pal[look_string])
+    print(look_string, end_pal[look_string])
+    if bail: exit()
 
 def is_pal(x):
     return x == x[::-1]
@@ -272,11 +289,10 @@ if look_for_last:
 
 t1 = time.time()
 
-# default 3w-ok = ['a', 'am', 'an', 'as', 'at', 'be', 'by', 'do', 'go', 'he', 'if', 'in', 'is', 'it', 'me', 'my', 'no', 'of', 'on', 'or', 'so', 'to', 'up', 'us', 'we']
-
 dupes = False
 
 two_word_file = "3w-ok.txt"
+
 with open(two_word_file) as file:
     for line in file:
         ll = line.lower().strip()
@@ -308,15 +324,18 @@ with open("c:/writing/dict/brit-1word.txt") as file:
             continue # we could just break given brit-1word.txt is sorted by length but that's iffy coding
         if len(ll) < 3 and not ll in ok_2.keys():
             continue
+        llr = ll[::-1]
         wordy[ll] = True
         firsty[ll[0]][ll] = True
         lasty[ll[-1]][ll] = True
         if len(ll) > 1:
             firsty[ll[:2]][ll] = True
             lasty[ll[-2:]][ll] = True
-        if ll in wordy:
-            end_pal[ll][ll] = True
-            start_pal[ll][ll] = True
+        end_pal[ll][ll] = True
+        start_pal[ll][ll] = True
+#        if llr in wordy:
+#            end_pal[ll][llr] = True
+#            start_pal[ll][llr] = True
         if ll[:-1] in wordy:
             start_pal[ll][ll[:-1]] = True
         if ll[1:] in wordy:
@@ -342,10 +361,7 @@ sys.stderr.write("Time to read word file and put stuff into hashes: {:.4f} secon
 sys.stderr.write("{:2d} partial start-anagrams, {:2d} partial end-anagrams.\n".format(startpals, endpals))
 
 # uncomment this to test any code changes. One word should anagram the start of the other.
-# silly_test("frato", "arf")
-#print(start_pal['doc'])
-#print(end_pal['wan'])
-#exit()
+# silly_test("bow", True)
 
 sk = sorted(wordy.keys())
 
