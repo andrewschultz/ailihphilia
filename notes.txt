@@ -2,6 +2,7 @@
 
 ==================stuff to include for sure
 
+for prof
 Ear Brae = scenery (?) noisy
 
 eel emo melee
@@ -1075,4 +1076,76 @@ nary ran
 
 werewolf flower? Ew
 
-1w.py : not just STDIN but break things into dictionaries of dictionaries by first letter. See 2pal.py for details.
+
+El = should be in
+# 3 below
+
+Elf Fabs Baffle
+Elf Fur Ruffle = not in? How to include?
+Elf Irk Rifle
+Elk Nab Ankle
+Elk City Tickle
+Elt-Name Mantle
+Elt Surf Rustle
+
+Emo swag! Awesome!
+Emu, Serene, Resume
+Emu Psi Spume
+Emu Love Volume / Avid Diva / Diva Vid
+"Eon Ace Canoe"
+"Era, Friar, Airfare"
+"Era Was Aware"
+"Era War Aware"
+"Era Web Beware"
+"Era Hoodoo Hare"
+"Era [']Mare"
+"Era Pare"
+"Era: Perps Prepare"
+"Era, Rare"
+"Era Flew: Welfare"
+"Ere Hoodoo Here"
+"Ere Manna, Mere"
+"Ere Mojo Mere"
+"Ere Simp Misere"?
+"Ere Peewee, Pere"
+"Erg Lamb Malgre"
+Erg off ogre
+ETA Collar Allocate
+ETA Lids Dilate
+ETA names emanate
+Fee Beef
+Fee Reef
+Fib If
+Fin If
+Fix If
+Fop Of
+For a Jar Of
+fox of
+Fra Zarf / Fra Barf
+Gag Nuff! Ungag!
+Gem Tuna Nutmeg
+Gnu, Snub Unsung
+Gnu, Snuff Unsung
+"Go, Gaily, Agog"
+Go Here, Hog
+Go Loco Log
+Go Drawn, War Dog
+God Pale Lapdog
+Gun Snug <- hopefully there's no
+Hah, solo shah!
+hep met tempeh=item on the menu at Sniffins
+Hoop? Ooh
+Hoo! Preyer? Pooh
+In, Imp, Mini
+it, eye, yetei
+It's best I...=flee elf says good bye? Or you?
+kid daze zaddik
+lab ace cabal: NE room notes
+Lac Oft Focal: calcific lac new location? Calm Lac
+I/O Koi
+Lac Old Local
+lad navy vandal
+lag nuff fungal
+lap opal = shiny?
+
+# 1w.py : not just STDIN but break things into dictionaries of dictionaries by first letter. See 2pal.py for details.

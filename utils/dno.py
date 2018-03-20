@@ -129,17 +129,27 @@ def usage():
     exit()
 
 def pally(s):
-    s = re.sub("[=:].*", "", s)
+    s = re.sub(" *[=:].*", "", s)
     # print(s, "!", s.upper(), s.lower())
     if not (s.upper() or s.lower()):
         # print("No letters.")
         return False
-    s2 = re.sub("[^a-z\/]", "", s, 0, re.IGNORECASE)
-    a = s2.lower().split("/")
+    s2 = re.sub("[^a-z\/]", "", s, 0, re.IGNORECASE).lower()
+    if '/' in s2:
+        s3 = re.sub("/", "", s2, 0, re.IGNORECASE)
+        if s3 == s3[::-1]:
+            if verbose: print("Full line palindrome for", s)
+            return True
+    a = s2.split("/")
+    anypal = False
+    retval = True
     for b in a:
         if b != b[::-1]:
-            return False
-    return True
+            retval = False
+        else:
+            anypal = True
+    if anypal and retval == False: print(s, "has some palindromes, some not with slash(es)")
+    return retval
 
 def check_notes(s):
     global colon_string
@@ -198,6 +208,7 @@ def check_notes(s):
                     else:
                         q2 = q.strip()
                         q2 = re.sub("-", " ", q2, 0, re.IGNORECASE)
+                        q2 = re.sub("\"", "", q2, 0, re.IGNORECASE)
                         pals[q2] = line_count
                         pal_count = pal_count + 1
                         # print(count, q2)
