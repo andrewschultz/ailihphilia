@@ -37,8 +37,14 @@ start_pal = defaultdict(lambda: defaultdict(bool))
 
 i7.go_proj("up")
 
+sorted_file = "3w-sorted.txt"
+edited_output_file = "3w-sorted-edit.txt"
+
 def usage():
     print("3 word palindrome searcher.")
+    print("-0 = edit the current generated 3-pal file.")
+    print("-2 = edit file of okay 2-length words.")
+    print("-a = array (specific) CSV for words to find eg mo,my")
     print("-g = group by start/end words.")
     print("-f = find in 3w2.txt.")
     print("-q = quick search. Skip begin/end palindromes e.g. ACISODIS/ISODICA.")
@@ -54,13 +60,25 @@ def usage():
     print("-? = this function.")
     exit()
 
-def silly_test(look_string, bail=False)
+def silly_test(look_string, bail=False):
     print(look_string, start_pal[look_string])
     print(look_string, end_pal[look_string])
     if bail: exit()
 
+def should_print(a, b, c):
+    if no_fixed_array: return True
+    return a in fixed_array or b in fixed_array or c in fixed_array
+
 def is_pal(x):
     return x == x[::-1]
+
+def leftover(a, b):
+    if len(a) < len(b):
+        return '-' + b[len(a):]
+    elif len(b) < len(a):
+        return a[len(b):] + '-'
+    else:
+        return '-'
 
 def search_output(x):
     output_file = '3w2.txt'
@@ -207,30 +225,45 @@ find_string = ''
 
 order_results = False
 
+two_word_file = "3w-ok.txt"
+fixed_array = []
+
 if len(sys.argv) > 1:
     count = 1
     while count < len(sys.argv):
         ll = sys.argv[count].lower()
+        lln = ll # most of the time we want to allow for 1 letter boundaries, but if there is a #/letter mix, forget it
+        if lln[0] == '-':
+            lln = lln[1:]
         if sys.argv[count].isalpha():
             start_val = sys.argv[count].tolower()
-        elif ll == '-?' or ll == '?':
+        elif lln == '?':
             usage()
+        elif lln == '0':
+            os.system(edited_output_file)
+            exit()
+        elif lln == '2':
+            os.system(two_word_file)
+            exit()
+        elif lln == 'a':
+            fixed_array = sys.argv[count+1].lower().split(",")
+            count = count + 1
         elif ll == '-s':
             skip_uneven_palindromes = True
         elif ll == '-o':
             order_results = True
-        elif ll == '-on' or ll == 'no':
+        elif ll == '-on' or ll == '-no':
             order_results = False
         elif ll == '-q':
             skip_beginend_palindrome = True
-        elif ll == '-x3':
+        elif lln == 'x3':
             try:
                 to_extract = sys.argv[count+1]
             except:
                 print("You need a string to extract.")
             extract_from_file(to_extract, False)
             exit()
-        elif ll == '-x3w' or ll == '-x3o':
+        elif lln == 'x3w' or lln == 'x3o':
             try:
                 to_extract = sys.argv[count+1]
             except:
@@ -290,8 +323,6 @@ if look_for_last:
 t1 = time.time()
 
 dupes = False
-
-two_word_file = "3w-ok.txt"
 
 with open(two_word_file) as file:
     for line in file:
@@ -388,8 +419,10 @@ last_group = ""
 cur_array = []
 cur_matches = 0
 
-# change this for specific letter tests
-sk = ['a']
+# use -a to change fixed array
+if len(fixed_array) > 0: sk = fixed_array
+no_fixed_array = len(fixed_array) > 0
+
 for a in sk:
     if a < start_val:
         ignored = ignored + 1
@@ -415,7 +448,8 @@ for a in sk:
                 if group_by_start_end:
                     cur_array.append('"{:s} {:s} {:s}"'.format(a, c, b))
                 else:
-                    print(this_word_count, count, a, c, b, "=", a + c + b + ("" if a == last_start and b == last_end else " (*)"))
+                    if should_print(a, c, b):
+                        print(this_word_count, count, a, c, b, "=", a + c + b + ("" if a == last_start and b == last_end else " (*)"))
                 last_start = a
                 last_end = b
         if group_by_start_end and len(cur_array):
@@ -425,7 +459,8 @@ for a in sk:
                 cur_matches = 0
                 print('=' * 40, a)
             last_group = a
-            print('{:s} + ? + {:s} ({:d}{:s}) ='.format(a, b, len(cur_array), '/already' if is_pal(a+b) else ''), '  /  '.join(cur_array))
+            if should_print(a, '', c):
+                print('{:s} + {:s} + {:s} ({:d}{:s}) ='.format(a, leftover(a, b), b, len(cur_array), '/already' if is_pal(a+b) else ''), '  /  '.join(cur_array))
             cur_array = []
 
 if len(cur_array): print(' / '.join(cur_array))
