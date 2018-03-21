@@ -45,15 +45,15 @@ def usage():
     print("-0  = edit the current generated 3-pal file.")
     print("-2  = edit file of okay 2-length words.")
     print("-a  = array (specific) CSV for words to find eg mo,my")
-    print("-g  = group by start/end words.")
+    print("-e  = write progress to STDERR, useful when piping output to a file. (-en/ne turns it off, default is on)")
     print("-f  = find in 3w2.txt.")
-    print("-q  = quick search. Skip begin/end palindromes e.g. ACISODIS/ISODICA.")
-    print("-i2 = ignore 2-letter words")
+    print("-g  = group by start/end words.")
+    print("-i = ignore 2-letter words")
     print("-l  = pick up where 3w(2).txt left off")
-    print("-m  = maximum word length")
+    print("-m  = maximum word length (minimum = 2)")
     print("-o  = order results by last word, -no/-on turns this off")
+    print("-q  = quick search. Skip begin/end palindromes e.g. ACISODIS/ISODICA.")
     print("-s  = skip uneven palindromes e.g. top X spot. Speedup, but may miss a few.")
-    print("-e  = write progress to STDERR, useful when piping output to a file. (-ne turns it off, default is on)")
     print("-x3 = extract specific word from file of 3-palindromes (x3w/x3o = only that word)")
     print("-w  = warn every X new words (default = {:d}).".format(warning_every_x))
     print("any word = what word to start with.")
@@ -252,7 +252,7 @@ look_for_last = False
 skip_uneven_palindromes = False
 progress_to_stderr = True
 warning_every_x = 100
-max_word_length = 13
+max_word_length = 12
 find_string = ''
 
 order_results = False
@@ -288,14 +288,50 @@ if len(sys.argv) > 1:
         elif lln == 'a':
             fixed_array = sys.argv[count+1].lower().split(",")
             count = count + 1
-        elif ll == '-s':
-            skip_uneven_palindromes = True
+        elif ll == '-e':
+            progress_to_stderr = True
+        elif ll == '-en' or ll == '-ne':
+            progress_to_stderr = False
+        elif ll == '-f':
+            find_string = sys.argv[count+1].lower()
+            search_output(find_string)
+        elif ll == '-g':
+            group_by_start_end = True
+        elif ll == '-i2':
+            ignore_2_letter_words = True
+        elif ll == '-l':
+            look_for_last = True
+        elif ll == 'm':
+            try:
+                max_word_length = int(sys.argv[count+1])
+                if max_word_length < 2:
+                    print("Max word length can't be less than 2.")
+                    max_word_length = 2
+                elif max_word_length > 12:
+                    print("NOTE: a maximum word length of >12 doesn't find that much more and will slow things down a bit.")
+            except:
+                print("Need a number after -m for max word length.")
+                exit()
         elif ll == '-o':
             order_results = True
         elif ll == '-on' or ll == '-no':
             order_results = False
         elif ll == '-q':
             skip_beginend_palindrome = True
+        elif ll == '-s':
+            skip_uneven_palindromes = True
+        elif ll == '-w':
+            try:
+                temp = int(sys.argv[count + 1])
+                if temp < 1:
+                    sys.stderr.write("WARNING the progress-every-X must be at least 1.\n")
+                    # raise Exception("WARNING the progress-every-X must be at least 1.")
+                else:
+                    warning_every_x = temp
+            except:
+                print("No valid number after -w. Going to default of", warning_every_x)
+            count = count + 2
+            continue
         elif lln == 'x3':
             try:
                 to_extract = sys.argv[count+1]
@@ -310,38 +346,6 @@ if len(sys.argv) > 1:
                 print("You need a string to extract.")
             extract_from_file(to_extract, True)
             exit()
-        elif ll == '-l':
-            look_for_last = True
-        elif ll == '-f':
-            find_string = sys.argv[count+1].lower()
-            search_output(find_string)
-        elif ll == '-g':
-            group_by_start_end = True
-        elif ll == '-e':
-            progress_to_stderr = True
-        elif ll == '-ne':
-            progress_to_stderr = False
-        elif ll == '-m':
-            try:
-                temp = int(sys.argv[count+1])
-                if temp < 5:
-                    sys.stderr.write("WARNING max word length should be at least 5.")
-                else:
-                    max_word_length = temp
-            except:
-                print("No valid number after -m. Going to default of", max_word_length)
-        elif ll == '-w':
-            try:
-                temp = int(sys.argv[count + 1])
-                if temp < 1:
-                    sys.stderr.write("WARNING the progress-every-X must be at least 1.\n")
-                    # raise Exception("WARNING the progress-every-X must be at least 1.")
-                else:
-                    warning_every_x = temp
-            except:
-                print("No valid number after -w. Going to default of", warning_every_x)
-            count = count + 2
-            continue
         else:
             if ll[0] == '-':
                 print("Bad flag.")
@@ -377,12 +381,6 @@ if dupes:
     exit()
 
 time_before_read_word_file = time.time()
-
-# cheap and dirty: should use -m 4 instead
-max_word_length = 4
-
-#print('doc'[:-1])
-#print(sorted(ok_2.keys()))
 
 for x in ok_2.keys():
     hash_tweak(x)
