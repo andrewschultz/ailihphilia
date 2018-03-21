@@ -41,26 +41,27 @@ sorted_file = "3w-sorted.txt"
 edited_output_file = "3w-sorted-edit.txt"
 
 def usage():
-    print("3 word palindrome searcher.")
-    print("-0 = edit the current generated 3-pal file.")
-    print("-2 = edit file of okay 2-length words.")
-    print("-a = array (specific) CSV for words to find eg mo,my")
-    print("-g = group by start/end words.")
-    print("-f = find in 3w2.txt.")
-    print("-q = quick search. Skip begin/end palindromes e.g. ACISODIS/ISODICA.")
-    print("-l = pick up where 3w(2).txt left off")
-    print("-m = maximum word length")
-    print("-o = order results by last word, -no/-on turns this off")
-    print("-s = skip uneven palindromes e.g. top X spot. Speedup, but may miss a few.")
-    print("-e = write progress to STDERR, useful when piping output to a file. (-ne turns it off, default is on)")
+    print("============3 word palindrome searcher.")
+    print("-0  = edit the current generated 3-pal file.")
+    print("-2  = edit file of okay 2-length words.")
+    print("-a  = array (specific) CSV for words to find eg mo,my")
+    print("-g  = group by start/end words.")
+    print("-f  = find in 3w2.txt.")
+    print("-q  = quick search. Skip begin/end palindromes e.g. ACISODIS/ISODICA.")
+    print("-i2 = ignore 2-letter words")
+    print("-l  = pick up where 3w(2).txt left off")
+    print("-m  = maximum word length")
+    print("-o  = order results by last word, -no/-on turns this off")
+    print("-s  = skip uneven palindromes e.g. top X spot. Speedup, but may miss a few.")
+    print("-e  = write progress to STDERR, useful when piping output to a file. (-ne turns it off, default is on)")
     print("-x3 = extract specific word from file of 3-palindromes (x3w/x3o = only that word)")
-    print("-w = warn every X new words (default = {:d}).".format(warning_every_x))
+    print("-w  = warn every X new words (default = {:d}).".format(warning_every_x))
     print("any word = what word to start with.")
     print("For specific test cases, -m 4 -o can make things pop up easier.")
     print("-? = this function.")
     exit()
 
-def silly_test(look_string, bail=False):
+def start_end_unit(look_string, bail=False):
     print(look_string, start_pal[look_string])
     print(look_string, end_pal[look_string])
     if bail: exit()
@@ -183,7 +184,7 @@ def can_palindrome_mid(a, b):
         return a == b[-len(a):][::-1]
     return b == a[:len(b)][::-1]
 
-def silly_test(a, b):
+def two_words_in_pal_test(a, b):
     count = 0
     print('=' * 40, a, "to", b)
     for x in pal_conv_hash(a, b):
@@ -203,6 +204,39 @@ def silly_test(a, b):
             exit()
     exit()
 
+def hash_tweak(wd):
+    global startpals
+    global endpals
+    bkwd = wd[::-1]
+    wordy[wd] = True
+    firsty[wd[0]][wd] = True
+    lasty[wd[-1]][wd] = True
+    if len(wd) > 1:
+        firsty[wd[:2]][wd] = True
+        lasty[wd[-2:]][wd] = True
+    end_pal[wd][wd] = True
+    start_pal[wd][wd] = True
+    if wd[:-1] in wordy:
+        start_pal[wd][wd[:-1]] = True
+    if wd[1:] in wordy:
+        end_pal[wd][wd[1:]] = True
+    for i in range (1,len(wd)):
+        if wd[i:] == wd[i:][::-1]:
+            start_pal[wd[:i]][wd] = True
+            startpals = startpals + 1
+            if len(wd[i:]) > 3:
+                continue
+                print("remove", wd[:i], "of", len(wd), "from", wd, "to get", wd[i:], i, "start partial anagram")
+        if wd[:i] == wd[:i][::-1]:
+            end_pal[wd[i:]][wd] = True
+            endpals = endpals + 1
+            if len(wd[:i]) > 3:
+                continue
+                print("remove", wd[i:], "from", wd, "to get", wd[:i], i, "end partial anagram")
+            # print(wd[:-i], wd, i, "end partial anagram")
+
+# functions above, main program below
+
 # default values
 words_listed_yet = False
 ignored = 0
@@ -212,7 +246,7 @@ group_by_start_end = False
 
 # options
 skip_beginend_palindrome = False
-ignore_2_letter_words = True
+ignore_2_letter_words = False
 start_val = ''
 look_for_last = False
 skip_uneven_palindromes = False
@@ -221,12 +255,18 @@ warning_every_x = 100
 max_word_length = 13
 find_string = ''
 
-# start initialization stuff
-
 order_results = False
 
 two_word_file = "3w-ok.txt"
 fixed_array = []
+
+dupes = False
+
+endpals = 0
+startpals = 0
+
+# end initialization stuff
+# start command line reading
 
 if len(sys.argv) > 1:
     count = 1
@@ -318,11 +358,9 @@ if look_for_last:
         exit()
     start_val = get_last_word_tried()
 
-# end initialization stuff
+# end command line reading
 
 t1 = time.time()
-
-dupes = False
 
 with open(two_word_file) as file:
     for line in file:
@@ -338,53 +376,21 @@ if dupes:
     print("Fix duplicates in 2-word file {:s} before continuing.".format(two_word_file))
     exit()
 
-endpals = 0
-startpals = 0
-
 time_before_read_word_file = time.time()
 
 # cheap and dirty: should use -m 4 instead
-# max_word_length = 4
+max_word_length = 4
 
 #print('doc'[:-1])
 #print(sorted(ok_2.keys()))
-with open("c:/writing/dict/brit-1word.txt") as file:
-    for line in file:
-        ll = line.lower().strip()
-        if len(ll) > max_word_length:
-            continue # we could just break given brit-1word.txt is sorted by length but that's iffy coding
-        if len(ll) < 3 and not ll in ok_2.keys():
-            continue
-        llr = ll[::-1]
-        wordy[ll] = True
-        firsty[ll[0]][ll] = True
-        lasty[ll[-1]][ll] = True
-        if len(ll) > 1:
-            firsty[ll[:2]][ll] = True
-            lasty[ll[-2:]][ll] = True
-        end_pal[ll][ll] = True
-        start_pal[ll][ll] = True
-#        if llr in wordy:
-#            end_pal[ll][llr] = True
-#            start_pal[ll][llr] = True
-        if ll[:-1] in wordy:
-            start_pal[ll][ll[:-1]] = True
-        if ll[1:] in wordy:
-            end_pal[ll][ll[1:]] = True
-        for i in range (1,len(ll)):
-            if ll[i:] == ll[i:][::-1]:
-                start_pal[ll[:i]][ll] = True
-                startpals = startpals + 1
-                if len(ll[i:]) > 3:
-                    continue
-                    print("remove", ll[:i], "of", len(ll), "from", ll, "to get", ll[i:], i, "start partial anagram")
-            if ll[:i] == ll[:i][::-1]:
-                end_pal[ll[i:]][ll] = True
-                endpals = endpals + 1
-                if len(ll[:i]) > 3:
-                    continue
-                    print("remove", ll[i:], "from", ll, "to get", ll[:i], i, "end partial anagram")
-                # print(ll[:-i], ll, i, "end partial anagram")
+
+for x in ok_2.keys():
+    hash_tweak(x)
+
+for x in range(3, max_word_length + 1):
+    with open("c:/writing/dict/words-{:d}.txt".format(x)) as file:
+        for line in file:
+            hash_tweak(line.lower().strip())
 
 time_after_read_word_file = time.time()
 
@@ -392,7 +398,9 @@ sys.stderr.write("Time to read word file and put stuff into hashes: {:.4f} secon
 sys.stderr.write("{:2d} partial start-anagrams, {:2d} partial end-anagrams.\n".format(startpals, endpals))
 
 # uncomment this to test any code changes. One word should anagram the start of the other.
-# silly_test("bow", True)
+print(end_array('ahs'))
+start_end_unit("ahs", False)
+start_end_unit("bow", True)
 
 sk = sorted(wordy.keys())
 
