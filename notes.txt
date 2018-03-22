@@ -1147,5 +1147,60 @@ Lac Old Local
 lad navy vandal
 lag nuff fungal
 lap opal = shiny?
+lav oval=alternate1 to pee keep
+Loo Cool:alternate2 to pee keep
+Loo Pool
+Lug O Mogul
+Loo Fool: what you are
+law oval avowal
+lay oldened loyal
+Led, O Model
+Lee, Hobo Heel
+Leg Duck Cudgel
+Les Maddened Damsel
+Les Severe Vessel
+Let Race Cartel
+Yob Ops Po['] Boy
+"Yet a Matey"
+Yes Rah Arsey
+Yes, truce, curtsey
+"Ye po['] mopey!"
+"Ye So Nosey!"
+Yen O['] Money
+"Yap Ere Repay"
+"Yap? Spay"
+"Yap Nuff, Unpay"
+"Yaw, dim midway"
+"Yaw Nurses Runway"
+Let Nix Intel
+Levant Navel
+Lit Null Until
+We Nab Anew
+war dagga draw
+We'd Lime Mildew
+wend new
+Woe Meow:what cats do
+Won Enow: if you don't get all the points
+Won Ere Now
+Wonk, Now!
+Won Snow
+Mac See Scam
+Mad-Eyed, Am
+Mal Slam
+Mar-Gnomon Gram
+Me, Log Golem
+Me: Opt, Poem
+med-aid diadem
+met item: it's a met-ill item
+met stem
+mix a maxim: right way to
+Mod? Naff: Fandom
+Mod Less Seldom
+Moi: Dig Idiom
+My Nonacidic Anonym
+Moo Rave Varoom
+Mop, Mop, Pompom
+Nab Rum Urban
 
+# lap a papal = case we need to get working
 # 1w.py : not just STDIN but break things into dictionaries of dictionaries by first letter. See 2pal.py for details.

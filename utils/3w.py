@@ -47,8 +47,9 @@ def usage():
     print("-a  = array (specific) CSV for words to find eg mo,my")
     print("-e  = write progress to STDERR, useful when piping output to a file. (-en/ne turns it off, default is on)")
     print("-f  = find in 3w2.txt.")
-    print("-g  = group by start/end words.")
+    print("-g  = group by start/end words, -ng/-gn = don't group by start/end words.")
     print("-i = ignore 2-letter words")
+    print("-h = hash tests")
     print("-l  = pick up where 3w(2).txt left off")
     print("-m  = maximum word length (minimum = 2)")
     print("-o  = order results by last word, -no/-on turns this off")
@@ -61,9 +62,16 @@ def usage():
     print("-? = this function.")
     exit()
 
-def start_end_unit(look_string, bail=False):
-    print(look_string, start_pal[look_string])
-    print(look_string, end_pal[look_string])
+def start_end_hash_unit(look_string, bail=False):
+    print("=" * 40, "start/end hashes for", look_string)
+    print(look_string, "start hash", start_pal[look_string])
+    print(look_string, "end hash", end_pal[look_string])
+    if bail: exit()
+
+def start_end_array_unit(look_string, bail=False):
+    print("=" * 40, "start/end arrays for", look_string)
+    print(look_string, "start array", start_array(look_string))
+    print(look_string, "end array", end_array(look_string))
     if bail: exit()
 
 def should_print(a, b, c):
@@ -242,7 +250,7 @@ words_listed_yet = False
 ignored = 0
 overall_word_count = 0
 
-group_by_start_end = False
+group_by_start_end = True
 
 # options
 skip_beginend_palindrome = False
@@ -255,10 +263,14 @@ warning_every_x = 100
 max_word_length = 12
 find_string = ''
 
+extra_words = []
+
 order_results = False
 
 two_word_file = "3w-ok.txt"
 fixed_array = []
+
+hash_test_array = []
 
 dupes = False
 
@@ -272,11 +284,12 @@ if len(sys.argv) > 1:
     count = 1
     while count < len(sys.argv):
         ll = sys.argv[count].lower()
+        l2 = sys.argv[count+1].lower() if count < len(sys.argv) - 1 else ""
         lln = ll # most of the time we want to allow for 1 letter boundaries, but if there is a #/letter mix, forget it
         if lln[0] == '-':
             lln = lln[1:]
         if sys.argv[count].isalpha():
-            start_val = sys.argv[count].tolower()
+            start_val = sys.argv[count].lower()
         elif lln == '?':
             usage()
         elif lln == '0':
@@ -286,8 +299,13 @@ if len(sys.argv) > 1:
             os.system(two_word_file)
             exit()
         elif lln == 'a':
-            fixed_array = sys.argv[count+1].lower().split(",")
-            count = count + 1
+            if l2:
+                fixed_array = sys.argv[count+1].lower().split(",")
+            else:
+                print("You need a valid argument (comma separated) after -h to test hash/array values.")
+                exit()
+            count = count + 2
+            continue
         elif ll == '-e':
             progress_to_stderr = True
         elif ll == '-en' or ll == '-ne':
@@ -297,11 +315,21 @@ if len(sys.argv) > 1:
             search_output(find_string)
         elif ll == '-g':
             group_by_start_end = True
+        elif ll == '-gn' or ll == 'ng':
+            group_by_start_end = False
+        elif ll == '-h':
+            if l2:
+                hash_test_array = l2.split(",")
+            else:
+                print("You need a valid argument (comma separated) after -h to test hash/array values.")
+                exit()
+            count = count + 2
+            continue
         elif ll == '-i2':
             ignore_2_letter_words = True
         elif ll == '-l':
             look_for_last = True
-        elif ll == 'm':
+        elif ll == '-m':
             try:
                 max_word_length = int(sys.argv[count+1])
                 if max_word_length < 2:
@@ -309,6 +337,8 @@ if len(sys.argv) > 1:
                     max_word_length = 2
                 elif max_word_length > 12:
                     print("NOTE: a maximum word length of >12 doesn't find that much more and will slow things down a bit.")
+                count = count + 2
+                continue
             except:
                 print("Need a number after -m for max word length.")
                 exit()
@@ -331,7 +361,9 @@ if len(sys.argv) > 1:
             except:
                 print("No valid number after -w. Going to default of", warning_every_x)
             count = count + 2
-            continue
+            continue # I could just do count = count + 1 and count on the next, but that feels cutesy.
+        elif ',' in ll:
+            extra_words = extra_words + ll.lower().split(",")
         elif lln == 'x3':
             try:
                 to_extract = sys.argv[count+1]
@@ -352,7 +384,7 @@ if len(sys.argv) > 1:
                 print()
                 usage()
             else:
-                print("The parameter must be a word. It says which word the palindrome search starts on, alphabetically.")
+                print("Parameter", count, "/", sys.argv[count], "must be a word. It says which word the palindrome search starts on, alphabetically.")
             exit()
         count = count + 1
 
@@ -366,24 +398,30 @@ if look_for_last:
 
 t1 = time.time()
 
-with open(two_word_file) as file:
-    for line in file:
-        ll = line.lower().strip()
-        la = re.split(",( )?", ll)
-        for li in la:
-            if li in ok_2.keys():
-                print(li, "is a duplicate")
-                dupes = True
-        ok_2[line.lower().strip()] = True
+if not ignore_2_letter_words:
+    with open(two_word_file) as file:
+        for line in file:
+            ll = line.lower().strip()
+            la = re.split(",( )?", ll)
+            for li in la:
+                if li in ok_2.keys():
+                    print(li, "is a duplicate")
+                    dupes = True
+            hash_tweak(ll)
+
+if len(extra_words):
+    for xw in extra_words:
+        if xw in wordy.keys():
+            sys.stderr.write("WARNING: {:s} is already in the list of words.\n")
+            dupes = True
+        else:
+            hash_tweak[xw]
 
 if dupes:
     print("Fix duplicates in 2-word file {:s} before continuing.".format(two_word_file))
     exit()
 
 time_before_read_word_file = time.time()
-
-for x in ok_2.keys():
-    hash_tweak(x)
 
 for x in range(3, max_word_length + 1):
     with open("c:/writing/dict/words-{:d}.txt".format(x)) as file:
@@ -396,9 +434,11 @@ sys.stderr.write("Time to read word file and put stuff into hashes: {:.4f} secon
 sys.stderr.write("{:2d} partial start-anagrams, {:2d} partial end-anagrams.\n".format(startpals, endpals))
 
 # uncomment this to test any code changes. One word should anagram the start of the other.
-print(end_array('ahs'))
-start_end_unit("ahs", False)
-start_end_unit("bow", True)
+if len(hash_test_array):
+    for h in hash_test_array:
+        start_end_array_unit(h, False)
+        start_end_hash_unit(h, False)
+    exit()
 
 sk = sorted(wordy.keys())
 
@@ -427,7 +467,7 @@ cur_matches = 0
 
 # use -a to change fixed array
 if len(fixed_array) > 0: sk = fixed_array
-no_fixed_array = len(fixed_array) > 0
+no_fixed_array = len(fixed_array) == 0
 
 for a in sk:
     if a < start_val:
