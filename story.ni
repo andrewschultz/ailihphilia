@@ -637,6 +637,7 @@ instead of smelling:
 	if stinky knits are quicknear, say "The stinky knits take over everything and smell of torn rot and stunk-nuts." instead;
 	if troll ort is quicknear, say "The troll ort emits a musk-sum which isn't unpleasant, but it's distinctive." instead;
 	if player is in Swamp Maws or player is in Mire Rim, say "A morass aroma." instead;
+	if y-poopy: say "Whew! Worse than an emu fume!" instead;
 	if player has dork rod:
 		now rod-smelled is true;
 		say "You might expect a rod odor, but there isn't one. OR MAYBE IT IS SO INGRAINED IN YOU, YOU NO LONGER SMELL IT." instead;
@@ -645,6 +646,11 @@ instead of smelling:
 	if player is in Pro Corp and butene tub is in Pro Corp, say "The butene tub smells kind of nice. Much nicer than a butt tub." instead;
 	if player is in Sneer Greens and Yuge Guy is in Sneer Greens, say "You smell an amoral aroma." instead;
 	say "Noses, on[one of]! (you don't need to smell anything in this game)[or][stopping]!"
+
+to decide whether y-poopy:
+	if gnu dung is quicknear, yes;
+	if player has poo coop and gnu dung is moot, yes;
+	no;
 
 chapter singing
 
@@ -1659,6 +1665,11 @@ instead of doing something with gnu dung:
 chapter turf rut
 
 The turf rut is scenery in Dumb Mud. "[if poo coop is moot]Since you filled it in, you can walk across it to the south[else]It's deep enough to prevent you going south[end if]."
+
+check taking turf rut: say "You'd need a nab-rut turban to do that. There's no nab-rut turban in this game[if poo coop is moot]. Besides, you already [rut-made-go] across[end if]." instead;
+
+to say rut-made-go:
+	say "[if Mont Nom is visited]made it[else]can go[end if]"
 
 understand "turd rut" as turf rut when poo coop is moot.
 
@@ -2905,6 +2916,8 @@ The Puce Cup is a thing in Emo Dome. "Someone has left a puce cup here.". descri
 
 to say sap-sirup:
 	say "[if location of player is not Cold Loc]Past Sap[else]Purist Sirup[end if]"
+
+report taking puce cup: say "Emo swag! Awesome!"
 
 the puce cup can be empty, sappy or soddy. the puce cup is empty.
 
