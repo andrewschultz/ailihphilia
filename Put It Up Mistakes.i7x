@@ -167,11 +167,16 @@ understand "fund nuf" as a mistake ("Nonsense! Adventure is its own reward![mis 
 
 chapter cap abuse
 
-understand "paca cap" and "pacb cap" and "pacc cap" and "pacd cap" and "pacf cap" and "pacg cap" and "pach cap" and "paci cap" and "pacj cap" and "pacl cap" and "pacm cap" and "pacn cap" and "pacp cap" and "pacq cap" and "pacr cap" and "pacs cap" and "pacu cap" and "pacv cap" and "pacw cap" and "pacx cap" and and "pacz cap" as a mistake ("'Hmm, try again,' grumps the Flee Elf.[mis of 57]") when Flee Elf is quicknear.
+understand "pac cap" as a mistake ("You almost take the cap, but you fumble it slightly. The Flee Elf blinks. 'You're almost there, but ... umm, well, you need to do a little more.'[mis of 127]") when Flee Elf is quicknear.
 
-understand "paco cap" as a mistake ("The Flee Elf notes that's a pejorative term for policemen in Central America--not quite what you want.[mis of 58]") when Flee Elf is quicknear.
+understand "paca cap" and "pacb cap" and "pacc cap" and "pacd cap" and "pacf cap" and "pacg cap" and "pach cap" and "paci cap" and "pacj cap" and "pacl cap" and "pacm cap" and "pacn cap" and "pacp cap" and "pacq cap" and "pacr cap" and "pacs cap" and "pacu cap" and "pacv cap" and "pacw cap" and "pacx cap" and and "pacz cap" as a mistake ("[if player has pace cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].[mis of 57]") when Flee Elf is quicknear.
+
+understand "paco cap" as a mistake ("[if player has pace cap][pace-clue-maybe][else]The Flee Elf notes that's a pejorative term for policemen in Central America--not quite what you want[end if].[mis of 58]") when Flee Elf is quicknear.
 
 understand "pact cap" as a mistake ("It already is![mis of 59]") when Flee Elf is quicknear.
+
+to say pace-clue-maybe:
+	say "[if pace-prev is true]There's nothing else special to do with the pace cap[else]There may be one more thing to do other than PACK the cap, but that's not it[end if]"
 
 chapter flee elf abuse
 
@@ -384,7 +389,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 
