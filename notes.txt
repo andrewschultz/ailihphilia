@@ -2,6 +2,18 @@
 
 ==================stuff to include for sure
 
+mention trivial anagrams if ...
+
+(check what to do)
+
+The Bond Nob mentions the bars to go bar-crawling: The tope depot! Nigh Gin!
+
+Sniffins, uh, sniffs at you.
+
+Pal Flap
+Wordy Drow = blocking the way? <- every turn when wordy drow is in the way
+
+
 for prof
 Ear Brae = scenery (?) noisy
 
@@ -25,7 +37,7 @@ Carry coop around?
 
 Put Up = alternate solution if changed to Ailihphilia
 
-redi-aide
+redi-aider
 
 Spot-Ops
 
@@ -49,7 +61,6 @@ TAR PRAT = extra point?
 
 Lit by an unseen blu-bulb
 
-
 Krew Twerk
 
 girt rig: you build it with stuff. Move it as scenery?
@@ -58,9 +69,13 @@ girt rig: you build it with stuff. Move it as scenery?
 
 ===================Very begin/end detail
 
+Wordy Drow's speakings:
+
 wall law:deity tied (Swept pews)
 Eh, Tithe
 No Sin is On
+
+morph prom = what the drow can visit once you release it
 
 ===================(extra) points
 
@@ -72,9 +87,6 @@ No Sin is On
 
 ===================features/weird/not quite sure
 
-morph prom
-
-For the tope depot! Sniffins, uh, sniffs at you.
 
 Falses-Laf
 
@@ -108,13 +120,13 @@ Sock Cos
 
 Reno Loner
 
-A six is a six is a...
 
 bar crab?
 
+=======================from reddit
+
+A six is a six is a...
 A nut for a jar of tuna.
-
-
 No, it can! Action!
 
 So many dynamos.
@@ -126,7 +138,7 @@ Rise to vote, sir!
 
 It doesn't get much more generic than "put it up."
 
-Diss Sid
+Diss Sid = FAKE CLUES
 
 miasms aim
 
@@ -143,7 +155,7 @@ Rise, Sir!
 
 rep-a-paper
 
-So Memos
+# So Memos
 Bolo Lob
 Bosh Sob
 bust sub
@@ -169,7 +181,7 @@ detinue united
 desks ed
 Diaper, Prepaid
 Div, Avid
-Diva Vid: another porn movie?
+Diva Vid: another porn movie from DWELT LEWD?
 dragging niggard
 drunk nurd
 drooly loord
@@ -357,8 +369,6 @@ redo names in alphabetical order
 # Describe what THE DETH
 
 H/t! A path!
-Path Tap
-
 
 Da Bad
 Meh, Them
@@ -444,7 +454,6 @@ moory byroom
 moste jetsom
 morocco rom
 mule velum
-must-sum: what to do?
 nay cyan
 name garageman
 nadir acaridan
@@ -452,7 +461,6 @@ nagor brogan
 newt wen
 nets ten
 never even
-nigh gin: bar crab smells of
 nimrods dormin
 nielli villein
 nitro cortin
@@ -1201,6 +1209,14 @@ My Nonacidic Anonym
 Moo Rave Varoom
 Mop, Mop, Pompom
 Nab Rum Urban
+nae dyspepsy, dean
+nae meds demean
+nae logo lean
+nae cod ocean
+nae wanna wean
+nag ebb began
+nag old logan
+nag rot organ
 
 # lap a papal = case we need to get working
 # 1w.py : not just STDIN but break things into dictionaries of dictionaries by first letter. See 2pal.py for details.

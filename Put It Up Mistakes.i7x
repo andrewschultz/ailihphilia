@@ -169,9 +169,9 @@ chapter cap abuse
 
 understand "pac cap" as a mistake ("You almost take the cap, but you fumble it slightly. The Flee Elf blinks. 'You're almost there, but ... umm, well, you need to do a little more.'[mis of 127]") when Flee Elf is quicknear.
 
-understand "paca cap" and "pacb cap" and "pacc cap" and "pacd cap" and "pacf cap" and "pacg cap" and "pach cap" and "paci cap" and "pacj cap" and "pacl cap" and "pacm cap" and "pacn cap" and "pacp cap" and "pacq cap" and "pacr cap" and "pacs cap" and "pacu cap" and "pacv cap" and "pacw cap" and "pacx cap" and and "pacz cap" as a mistake ("[if player has pace cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].[mis of 57]") when Flee Elf is quicknear.
+understand "paca cap" and "pacb cap" and "pacc cap" and "pacd cap" and "pacf cap" and "pacg cap" and "pach cap" and "paci cap" and "pacj cap" and "pacl cap" and "pacm cap" and "pacn cap" and "pacp cap" and "pacq cap" and "pacr cap" and "pacs cap" and "pacu cap" and "pacv cap" and "pacw cap" and "pacx cap" and and "pacz cap" as a mistake ("[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].[mis of 57]") when Flee Elf is quicknear.
 
-understand "paco cap" as a mistake ("[if player has pace cap][pace-clue-maybe][else]The Flee Elf notes that's a pejorative term for policemen in Central America--not quite what you want[end if].[mis of 58]") when Flee Elf is quicknear.
+understand "paco cap" as a mistake ("[if player has pact cap][pace-clue-maybe][else]The Flee Elf notes that's a pejorative term for policemen in Central America--not quite what you want[end if].[mis of 58]") when Flee Elf is quicknear.
 
 understand "pact cap" as a mistake ("It already is![mis of 59]") when Flee Elf is quicknear.
 
@@ -223,7 +223,7 @@ book Mont Nom
 
 understand "truco curt" as a mistake ("You don't have a deck of cards, and Curt wouldn't want to play.[mis of 67]") when player is in Mont Nom and Curt is in Mont Nom.]
 
-understand "mar tram" as a mistake ("No. [if epicer recipe is examined]You need it to build the north-tron[else]It must be good for something[end if].[mis of 68]") when martini tram is quicknear.
+understand "mar tram" as a mistake ("No. [if er-ex is true]You need it to build the north-tron[else]It must be good for something[end if].[mis of 68]") when martini tram is quicknear.
 
 book Motto Bottom
 
@@ -303,6 +303,8 @@ understand "stare rats" as a mistake ("You try to win a blinking contest, and ma
 
 understand "start rats" as a mistake ("You sort of need to stop them, instead.[mis of 97]") when stark rats are quicknear.
 
+understand "star rats" as a mistake ("You would rather they didn't star in your adventure, here. Must be some way to dispose of them.[mis of 97]") when stark rats are quicknear.
+
 chapter gift fig
 
 understand "gif fig" as a mistake ("No graphics, here![mis of 98]") when gift fig is quicknear.
@@ -365,7 +367,9 @@ understand "bork Rob" as a mistake ("Maybe there is a more nonviolent way to get
 
 understand "borg Rob" as a mistake ("He is already assimilated.[mis of 121]") when Rob is quicknear.
 
-understand "track cart" as a mistake ("Right idea, but the cart isn't going anywhere.[mis of 122]") when player is in Worn Row and Worn Row is worky.
+understand "track cart" as a mistake ("[if DWELT LEWD is off-stage]Right idea, but the cart isn't going anywhere[else]It's not going anywhere. You already unlocked a secret, anyway[end if].[mis of 122]") when tract cart is quicknear.
+
+understand "dwell lewd" as a mistake ("DWELT LEWD should NOT be read as an instruction manual. Well, it shouldn't be read at all, really.[mis of 128]") when DWELT LEWD is quicknear.
 
 chapter dork rod
 
@@ -389,7 +393,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 

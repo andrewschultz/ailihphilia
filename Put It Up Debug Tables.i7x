@@ -11,6 +11,20 @@ table of random authors
 person-name	can-m	can-f
 "Eliza Bazile"	false	true
 "Kera Marek"	false	true
+"Leta Patel"	false	true
+"Mika Hakim"	false	true
+"Norma Damron"	false	true
+"Reiko Kier"	false	true
+"Rhea Baehr"	false	true
+"Blake DeKalb"	true	true
+"Leigh Giel"	true	true
+"Adam Imada"	true	false
+"Eldon Odle"	true	false
+"Emory Rome"	true	false
+"Gino Konig"	true	false
+"Levi Rivel"	true	false
+"Mark Cockram"	true	false
+"Neil Klien"	true	false
 
 table of random palindrome names
 person-name
