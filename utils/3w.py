@@ -29,8 +29,8 @@ from collections import defaultdict
 
 wordy = defaultdict(bool)
 ok_2 = defaultdict(bool)
-lasty = defaultdict(lambda: defaultdict(bool))
-firsty = defaultdict(lambda: defaultdict(bool))
+last_1_or_2 = defaultdict(lambda: defaultdict(bool))
+first_1_or_2 = defaultdict(lambda: defaultdict(bool))
 
 end_pal = defaultdict(lambda: defaultdict(bool))
 start_pal = defaultdict(lambda: defaultdict(bool))
@@ -66,6 +66,8 @@ def start_end_hash_unit(look_string, bail=False):
     print("=" * 40, "start/end hashes for", look_string)
     print(look_string, "start hash", start_pal[look_string])
     print(look_string, "end hash", end_pal[look_string])
+    print(look_string[::-1], "start hash", start_pal[look_string[::-1]])
+    print(look_string[::-1], "end hash", end_pal[look_string[::-1]])
     if bail: exit()
 
 def start_end_array_unit(look_string, bail=False):
@@ -83,9 +85,9 @@ def is_pal(x):
 
 def leftover(a, b):
     if len(a) < len(b):
-        return '-' + b[len(a):]
+        return b[:len(b)-len(a)][::-1] + '-'
     elif len(b) < len(a):
-        return a[len(b):] + '-'
+        return '-' + a[len(b):]
     else:
         return '-'
 
@@ -123,13 +125,13 @@ def extract_from_file(x, y = True):
 
 def end_array(x):
     if len(x) >= 2:
-        return lasty[x[-2::-1]] if not order_results else sorted(lasty[x[-2::-1]])
-    return lasty[x[-1:]] if not order_results else sorted(lasty[x[-1:]])
+        return last_1_or_2[x[1::-1]] if not order_results else sorted(last_1_or_2[x[1::-1]])
+    return last_1_or_2[x[-1:]] if not order_results else sorted(last_1_or_2[x[-1:]])
 
 def start_array(x):
     if len(x) >= 2:
-        return firsty[x[:2]]
-    return firsty[x[:1]]
+        return first_1_or_2[x[:2]]
+    return first_1_or_2[x[:1]]
 
 # return the end-pal or start-pal stuff between the two end words
 # note that if a and b are reverses, I ignore things, because we already have all the palindromes in another file, so that is just duplicate work.
@@ -217,11 +219,11 @@ def hash_tweak(wd):
     global endpals
     bkwd = wd[::-1]
     wordy[wd] = True
-    firsty[wd[0]][wd] = True
-    lasty[wd[-1]][wd] = True
+    first_1_or_2[wd[0]][wd] = True
+    last_1_or_2[wd[-1]][wd] = True
     if len(wd) > 1:
-        firsty[wd[:2]][wd] = True
-        lasty[wd[-2:]][wd] = True
+        first_1_or_2[wd[:2]][wd] = True
+        last_1_or_2[wd[-2:]][wd] = True
     end_pal[wd][wd] = True
     start_pal[wd][wd] = True
     if wd[:-1] in wordy:
@@ -298,11 +300,12 @@ if len(sys.argv) > 1:
         elif lln == '2':
             os.system(two_word_file)
             exit()
-        elif lln == 'a':
+        elif ll == '-a':
             if l2:
                 fixed_array = sys.argv[count+1].lower().split(",")
+                progress_to_stderr = False
             else:
-                print("You need a valid argument (comma separated) after -h to test hash/array values.")
+                print("You need a valid argument (comma separated) after -a to test hash/array values.")
                 exit()
             count = count + 2
             continue
@@ -466,8 +469,9 @@ cur_array = []
 cur_matches = 0
 
 # use -a to change fixed array
-if len(fixed_array) > 0: sk = fixed_array
 no_fixed_array = len(fixed_array) == 0
+
+cur_words = 0
 
 for a in sk:
     if a < start_val:
@@ -484,11 +488,14 @@ for a in sk:
     this_word_count = 0
     cur_array = []
     for b in end_array(a): # change this to test specific cases
+        in_mid = False
         q = pal_conv_hash(a, b)
         if q:
             cur_matches = cur_matches + len(q)
+            cur_words = cur_words + 1
             # print(a, b, q)
             for c in sorted(q):
+                if not no_fixed_array and c in fixed_array: in_mid = True
                 count = count + 1
                 this_word_count = this_word_count + 1
                 if group_by_start_end:
@@ -496,16 +503,19 @@ for a in sk:
                 else:
                     if should_print(a, c, b):
                         print(this_word_count, count, a, c, b, "=", a + c + b + ("" if a == last_start and b == last_end else " (*)"))
+                        last_group = a
                 last_start = a
                 last_end = b
         if group_by_start_end and len(cur_array):
-            if a != last_group:
-                if last_group:
-                    print(last_group, "had", cur_match, "matches.")
-                cur_matches = 0
-                print('=' * 40, a)
-            last_group = a
-            if should_print(a, '', c):
+            if should_print(a, '', b) or in_mid:
+                if a != last_group:
+                    if last_group and no_fixed_array:
+                        print(last_group, "had", cur_matches, "/", cur_words, "matches.")
+                        cur_matches = 0
+                        cur_words = 0
+                        print('=' * 40, a)
+                    last_group = a
+                # if a == 'set': print(cur_array, fixed_array)
                 print('{:s} + {:s} + {:s} ({:d}{:s}) ='.format(a, leftover(a, b), b, len(cur_array), '/already' if is_pal(a+b) else ''), '  /  '.join(cur_array))
             cur_array = []
 
