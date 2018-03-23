@@ -646,20 +646,30 @@ the reject noncardinal directions rule is listed first in the check going rulebo
 
 chapter smelling
 
-rod-smelled is a truth state that varies;
+instead of smelling stinky knits, say "The stinky knits take over everything and smell of torn rot and stunk-nuts." instead;
 
-instead of smelling:
-	if stinky knits are quicknear, say "The stinky knits take over everything and smell of torn rot and stunk-nuts." instead;
-	if troll ort is quicknear, say "The troll ort emits a musk-sum which isn't unpleasant, but it's distinctive." instead;
+instead of smelling dork rod, say "You might expect a rod odor, but there isn't one. OR MAYBE IT IS SO INGRAINED IN YOU, YOU NO LONGER SMELL IT." instead;
+
+instead of smelling butene tub, say "The butene tub smells kind of nice. Much nicer than a butt tub." instead;
+
+instead of smelling mush sum, say "Unsurprisingly, the mush sum emits a musk sum." instead;
+
+instead of smelling troll ort, say "The troll ort emits a musk-sum which isn't unpleasant, but it's distinctive." instead;
+
+instead of smelling location of player:
+	if stinky knits are quicknear, try smelling stinky knits instead;
 	if player is in Swamp Maws or player is in Mire Rim, say "A morass aroma." instead;
-	if player is in Flu Gulf, say "Unsurprisingly, the mush sum emits a musk sum." instead;
+	if player is in Flu Gulf, try smelling mush sum instead;
 	if y-poopy, say "Whew! Worse than an emu fume!" instead;
-	if player has dork rod, say "You might expect a rod odor, but there isn't one. OR MAYBE IT IS SO INGRAINED IN YOU, YOU NO LONGER SMELL IT." instead;
+	if player has dork rod, try smelling dork rod instead;
+	if troll ort is quicknear, try smelling troll ort instead;
 	if player is in Moo Room, say "Hay! Ah!" instead;
 	if player is in Deft Fed, say "Ham?! Ah!" instead;
-	if player is in Pro Corp and butene tub is in Pro Corp, say "The butene tub smells kind of nice. Much nicer than a butt tub." instead;
+	if player is in Pro Corp and butene tub is in Pro Corp, try smelling butene tub instead;
 	if player is in Sneer Greens and Yuge Guy is in Sneer Greens, say "You smell an amoral aroma." instead;
-	say "Noses, on[one of]! (you don't need to smell anything in this game)[or][stopping]!"
+	continue the action;
+
+instead of smelling, say "Noses, on[one of]! (you don't need to smell anything in this game, thoiugh some specific items give silly text.)[or][stopping]!"
 
 to decide whether y-poopy:
 	if gnu dung is quicknear, yes;
@@ -1818,7 +1828,7 @@ after taking stamp mats:
 
 chapter Kayo Yak
 
-The Kayo Yak is a chaser in Frush Surf. "A kayo yak paws the ground here. It doesn't seem violent, but it seems up for rough play.". description is "[if being-chased is true]The Kayo Yak is really rumbling around, here[else]The Kayo Yak looks alert, ready for more than just standing around[end if]."
+The Kayo Yak is a chaser in Frush Surf. chase-room of Kayo Yak is Frush Surf. "A kayo yak paws the ground here. It doesn't seem violent, but it seems up for rough play.". description is "[if being-chased is true]The Kayo Yak is really rumbling around, here[else]The Kayo Yak looks alert, ready for more than just standing around[end if]."
 
 chapter yakokaying
 
@@ -1909,6 +1919,8 @@ Code Doc is a person in Den Ivy Vined. "[one of]Someone is pacing back and forth
 chapter Spa Maps
 
 Spa Maps are a plural-named proper-named thing. description is "[if sage gas is not off-stage]The maps seem old hat now you've gotten the sage gas[else if maps-explained is false]You can't quite make sense out of them. There's Gobs-Bog and Go-By Bog, and one is a lot safer than the other, but you're not sure which[else]The spa maps clearly demark Go-By Bog and Gobs Bog and even Goblin-Nil Bog, which probably contains a troll or two. And no hospitality[end if]."
+
+understand "spa map" and "map" as spa maps.
 
 check examining spa maps:
 	if player is not in Apse Spa, say "It doesn't look like the maps are useful here." instead;
@@ -2666,7 +2678,7 @@ the soot tattoos are a plural-named thing. description is "They're blank now, bu
 
 book Toll Lot
 
-Toll Lot is east of Emo Dome. It is in Yelpley. "[if cross orc is in Toll Lot]While it's easy enough to go back west to the Emo Dome, that cross orc doesn't seem to want to let you go north or south[else]You can go north or south with the cross orc gone or, well, back west, too[end if]. A crag arc rises to the east[if UFO tofu is not moot]--maybe it is hiding something[end if]."
+Toll Lot is east of Emo Dome. It is in Yelpley. "[if cross orc is in Toll Lot]While it's easy enough to go back west to the Emo Dome, that cross orc doesn't seem to want to let you go north or south[else]You can go north or south with the cross orc gone or, well, back west, too[end if]. A crag arc rises to the east[if UFO tofu is not off-stage]--maybe it is hiding something[end if]."
 
 [??snuff funs]
 
@@ -2862,7 +2874,7 @@ the navy van is scenery in Yell Alley. "There seems to be no way to enter it. It
 
 section eye
 
-the eye is part of the navy van. "It looks electronic and (unsurprisingly) symmetrically spherical. Perhaps you could USE something on it."
+the eye is part of the navy van. description is "It looks electronic and (unsurprisingly) symmetrically spherical. Perhaps you could USE something on it."
 
 chapter snack cans
 
@@ -4315,7 +4327,6 @@ funstuff	dorule
 "FLEA ELF?"	elf-fleaed rule
 "FLEX ELF?"	elf-flexed rule
 "FLEECE ELF?"	elf-fleeced rule
-"SMELLing the dork rod?"	rod-smell rule
 
 this is the elf-fleaed rule:
 	if flea-elf is true, the rule succeeds;
@@ -4327,10 +4338,6 @@ this is the elf-flexed rule:
 
 this is the elf-fleeced rule:
 	if fleece-elf is true, the rule succeeds;
-	the rule fails;
-
-this is the rod-smell rule:
-	if rod-smelled is true, the rule succeeds;
 	the rule fails;
 
 this is the what-missed rule:
