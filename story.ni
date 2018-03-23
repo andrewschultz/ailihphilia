@@ -352,6 +352,9 @@ to die:
 
 volume verbs (standard or semi-standard to Inform)
 
+check taking scenery: say "Grab? Arg! (Scenery doesn't need to be taken.)[paragraph break]" instead;
+check taking a workable: say "Grab? Arg! (Scenery doesn't need to be taken.)[paragraph break]" instead;
+
 chapter search replacement
 
 search-warn is a truth state that varies.
@@ -757,7 +760,7 @@ understand "use [something] with [something]" as useoning it with.
 to build-the-tron:
 	move north tron to Fun Nuf;
 	now all tronparts are in devreserved; [ic]
-	say "You build the north tron with the instructions from the epicer recipe. It points north and blasts a hole with a huge tron snort before collapsing into uselessness. You tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
+	say "You build the north tron with the instructions from the epicer recipe. It points north and blasts a hole with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break]Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
 	moot epicer recipe;
 	now Dirge Grid is mapped north of Fun Nuf;
 	now Fun Nuf is mapped south of Dirge Grid;
@@ -1089,7 +1092,7 @@ this is the kid-bye rule:
 	the rule succeeds;
 
 this is the kid-left rule:
-	if Verses Rev is moot and Knife Fink is moot, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with Mad Adam. Iller Elli. Able Melba.'";
+	if Verses Rev is moot and Knife Fink is moot, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with Mad Adam. Iller Elli. Able Melba. Wolf Low.'";
 	the rule succeeds;
 
 this is the maps-explain rule:
@@ -1336,16 +1339,16 @@ carry out paceing:
 		reg-inc Dim Mid; [pace cap]
 		now cap-ever-pace is true;
 		now pace-prev is false;
-		say "[if mrlp is not Grebeberg]You realize it can sort of be a pace cap, too, but there isn't enough open space to run around productively for too long.[else]You suddenly feel [pace-of]![end if]";
+		say "[if mrlp is not Grebeberg]As you flip the cap, a voice booms 'WALK: LAW.' Perhaps you need to change it in a slower area.[else]You suddenly feel [pace-of]![end if]";
 	else:
-		say "[if mrlp is not Grebeberg]That should work, but it doesn't, here. Maybe try over in Grebeberg?[else]You suddenly feel [pace-of].[end if]";
+		say "[if mrlp is not Grebeberg]As you flip the cap, a voice booms 'WALK: LAW.' Perhaps you need to change it in a slower area. Like Grebeberg to the west?[else]You suddenly feel [pace-of].[end if]";
 	the rule succeeds;
 
 to say pace-of:
 	say "[if cap-pace is true]full of deep speed[else]slower[end if]"
 
 check going to Fun Nuf:
-	if cap-pace is true, say "You feel like you can slow down a bit. You adjust the pace cap back to a pact cap.";
+	if cap-pace is true, say "From the east, a voice booms 'WALK: LAW.' You adjust your pace cap back to a pact cap." pact cap.";
 	now cap-pace is false;
 
 [helpdocs below]
@@ -2096,11 +2099,11 @@ chapter you buoy
 
 the you buoy is a thing. description is "It's reallly plain, now you look at it. Also, as you look it over, it rattles a bit."
 
-check opening you buoy: say "You can't find an opening. Sadly, this is sllightly trickier than Zork I. Slightly." instead;
+check opening you buoy: say "You can't find an opening. Sadly, this is slightly trickier than Zork I. Slightly." instead;
 
 chapter ME gem
 
-the ME gem is a thing. description is "You feel a strong urge to keep this and not share it, because of all the crazy things you did to get it, but you know that's not quite right.[paragraph break]Also, it looks nothing at all like the emerald in Zork I, so stop thinking that."
+the ME gem is a thing. description is "You feel a strong urge to keep this and not share it, because of all the crazy things you did to get it, but you know that's not quite right. You wonder of its origin--perhaps it was chipped off from Le We Jewel, or it was originally engraved in the Ring O['] Zognir.[paragraph break]Also, it looks nothing at all like the emerald in Zork I, which was also in a buoy, so stop thinking that."
 
 book Apse Spa
 
@@ -2452,7 +2455,22 @@ chapter book verbs
 
 books-carried-yet is a truth state that varies.
 
+a thing has a number called take-order. the take-order of a thing is usually 1.
+
+take-order of DWELT LEWD is 2.
+
+The book-sort rule is listed before the generate action rule in the turn sequence rules.
+
+This is the book-sort rule:
+    let L be the multiple object list;
+    if the number of entries in L is greater than 1:
+        sort L in dramatic potential order;
+        alter the multiple object list to L.
+
 check taking a book:
+	if number of entries in multiple object list > 1:
+		let Q be the noun;
+		alter the multiple object list to { Q };
 	if player has noun, continue the action;
 	if number of moot books is 2 and SOME DEMOS is off-stage:
 		say "As you pick up [noun], something else falls out. It's a smaller pamphlet, called SOME DEMOS. You pick it up.";
@@ -2460,12 +2478,12 @@ check taking a book:
 		now SOME DEMOS is in-row;
 		continue the action;
 	if books-carried-yet is false:
-		say "Oof! That's a heavy book. Looks like you'll only be able to take one at a time from the tract cart.";
+		say "Oof! a bit heavy, but after working out in My Gym, it's not TOO unwieldy.";
 		now books-carried-yet is true;
 	else:
 		if number of books carried by player is 1:
 			let myb be random book carried by player;
-			say "Oof! You need to put [myb] back in the tract cart to take [noun]. So you do.";
+			say "A flashback to that time you checked out too many library books and got a small fine when you couldn't finish them all impels you to put [myb] back in the tract cart to take [noun].[paragraph break]Plus nothing says 'adventure' less than schlepping around multiple books.";
 			now myb is in Worn Row;
 		else:
 			say "It's a bit unwieldy, but you manage to pick up [noun].";
