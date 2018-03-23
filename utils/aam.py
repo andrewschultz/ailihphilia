@@ -12,9 +12,11 @@ from shutil import copy
 from filecmp import cmp
 
 def usage():
-    print("-c / -nc = copy over / don't, default =", on_off[copy_back])
-    print("-d / -nd = show differences / don't, default =", on_off[difs])
-    print("-fr / -f = fill and reorder, trumps other options", on_off[reorder])
+    print("-a  / -q              = all opts (copy, no dif, fill/reorder)")
+    print("-c  / -nc             = copy over / don't, default =", on_off[copy_back])
+    print("-d  / -nd             = show differences / don't, default =", on_off[difs])
+    print("-co / -do / -oc / -od = only copy/show differences, not both")
+    print("-f  / -fr / -rf       = fill and reorder, trumps other options (-nr/-rn turns it off)", on_off[reorder])
     exit()
 
 def my_mistake(a):
@@ -67,7 +69,7 @@ def mistake_check(reord):
         if cmp(mis, mis2):
             print("No changes needed in mistakes file. Not copying over.")
         else:
-            print("Copying back")
+            print("Copying back modified file.")
             copy(mis2, mis)
     elif not cmp(mis, mis2):
         print("Run -c to copy changes over.")
@@ -83,17 +85,27 @@ max_errs = 9
 while count < len(sys.argv):
     arg = sys.argv[count]
     if arg[0] == '-': arg = arg[1:]
-    if arg == 'c':
+    if arg == 'a' or arg == 'q':
+        copy_back = True
+        difs = False
+        reorder = True
+    elif arg == 'c':
         copy_back = True
     elif arg == 'nc':
         copy_back = False
+    elif arg == 'co' or arg == 'oc':
+        copy_back = True
+        difs = False
     elif arg == 'd':
+        difs = True
+    elif arg == 'do' or arg == 'od':
+        copy_back = False
         difs = True
     elif arg == 'nd':
         difs = False
-    elif arg == 'r':
+    elif arg == 'r' or arg == 'fr' or arg == 'f':
         reorder = True
-    elif arg == 'nr':
+    elif arg == 'nr' or arg == 'rn':
         reorder = False
     elif arg == 'm':
         try:
@@ -146,5 +158,7 @@ else:
 if max_errs and errs > max_errs and not reorder:
     print("Forcing reorder since there are more than", max_errs, "numbering errors: to be precise,", errs)
     reorder = True
+
+if not reorder and errs > 0: print("Use -f to reorder fully. Only found", errs, "out of", max_errs, "errors necessary for automatic reorder.")
 
 mistake_check(reorder)
