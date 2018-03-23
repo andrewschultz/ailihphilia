@@ -153,6 +153,9 @@ section helpdocs
 
 a helpdoc is a kind of thing. a helpdoc has a number called importancy. the indefinite article of a helpdoc is usually "the".
 
+before printing the name of a helpdoc while taking inventory:
+	if Dave is off-stage, say "the ";
+
 to say other-docs:
 	let L be the list of still-useful helpdocs carried by player;
 	sort L in reverse importancy order;
@@ -473,7 +476,7 @@ check taking inventory when Dave-evade is true:
 	if number of helpdocs carried by the player is 1:
 		say "So far, you only have [the list of helpdocs carried by the player] as reference. More later, maybe?";
 	else:
-		say "AIDE MEDIA: While the [b][relevantest helpdoc carried by the player][r] seems useful as a guide, [other-docs] may shore up a few minor points.";
+		say "AIDE MEDIA: While [b][relevantest helpdoc carried by the player][r] seems useful as a guide, [other-docs] may shore up a few minor points.";
 	if number of tronparts carried by player > 0, say "North-tron parts found: [the list of tronparts carried by player][unless martini tram is off-stage]. The martini tram is in Fun [']Nuf, too[end if].";
 	the rule succeeds;
 
@@ -500,9 +503,10 @@ understand the command "about" as something new.
 understand "about" as abouting.
 
 carry out abouting:
-	say "Put it Up was originally written for IFComp 2018. Like many of my games, I got the idea from Nord and Bert Couldn't Make Head or Tail of It, at least partially. Another game that gave me ideas was Nick Montfort's [b]I Palindrome I[r], part of the Apollo 18+20 collection Kevin Jackson-Mead organized. I felt there could be more that could be done with palindromes, but I didn't know what. Also, the Palindome in Kingdom of Loathing prompted my curiosity years ago. I tried to avoid palindromes it already considered, though the Dumb Mud from Heavy Rains was too good to pass up.";
+	say "Put it Up was originally written for IFComp 2018. Like many of my games, I got the idea from [i]Nord and Bert Couldn't Make Head or Tail of It[r], at least partially. Another game that gave me ideas was Nick Montfort's [i]I Palindrome I[r], part of the Apollo 18+20 collection Kevin Jackson-Mead organized back in 2012. I felt there could be more that could be done with palindromes, but I didn't know what, and I didn't know how much.[paragraph break]Also, the Palindome in Kingdom of Loathing prompted my curiosity back in 2010. I would still be playing it today, if it hadn't inspired me to try to write my own games, which left less time for KoL (spoiler: I still ascended over 100 times.) I tried to avoid palindromes it already considered, though the Dumb Mud from the special Heavy Rains was too good to pass up. It's an item there but a location here, so I can't claim to copycat too much.";
+	say "[line break]In my continuing quest to nail down my Python knowledge, I realized that even if I didn't get MANY palindromes, a few scripts could print things out. I had word and name lists from my anagram games Shuffling Around and A Roiling Original, so I had the raw materials.";
 	say "[line break]The result of all my work is some guess-the-verb, but hopefully with the game's general idea, you'll see what's going on.";
-	say "[line break]Originally, Put it Up was part of a spoonerism game--a sort of side area--but eventually I found enough rooms and ideas it could be its own game. Whether or not it's a good game, I guess you have to decide. It doesn't have any deep philosophy, but I hope you enjoy it, and if you write games yourself, I hope it inspires you to go through with anything unusual you weren't sure if you should try. (Spoiler: you should!)";
+	say "[line break]Originally, Put it Up was part of a spoonerism game--a sort of side area--but eventually I found enough rooms and ideas it could be its own game. Whether or not it's a good game, I guess you have to decide. It doesn't have any deep philosophy, but I hope you enjoy it. If you write games yourself, I hope it inspires you to go through with anything unusual you weren't sure if you should try, even if it rubs you the wrong way. (Spoiler: you should write that game! Just start early and take all the notes you can, but don't think the first draft needs to be perfect!)[paragraph break]";
 	the rule succeeds;
 
 chapter creditsing
@@ -514,8 +518,14 @@ understand the command "credits" as something new.
 understand "credits" as creditsing.
 
 carry out creditsing:
-	say "(Your name here, tester!)";
-	say "[line break][one of]I also found some websites useful. CREDITS again to see them.[or]Websites that helped with this game:[paragraph break]  --http://www.angelfire.com/in2/sedavis/palindromes.html STOP LAUGHING ANGELFIRE WAS COOL WHEN IT FIRST CAME OUT ANYWAY GEOCITIES WAS MORE MY BEAT[line break]-- https://www.reddit.com/r/AskReddit/comments/4z899e/whats_your_favorite_palindrome/[stopping]";
+	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in first name alphabetical order: Anssi Raissanen, Brian Rushton, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and gave positive suggestions.[paragraph break]IFComp organizers past and present. Without them, I wouldn't have started and kept going. Whether that's good for gaming is up for debate, but it's been good for me.[paragraph break]Various Python communities, especially StackOverflow, helped me to write utilities that helped not only to extract palindromes but also to tune up Inform code (obligatory thanks to all past and current Inform developers) and run simple tests.";
+	if no-sites is false:
+		now no-sites is true;
+		say "I also found some websites useful. CREDITS again to see them.";
+	else:
+		say "Websites that helped with this game:[paragraph break]
+		say "  --http://www.angelfire.com/in2/sedavis/palindromes.html STOP LAUGHING ANGELFIRE WAS COOL WHEN IT FIRST CAME OUT ANYWAY GEOCITIES WAS MORE MY BEAT[line break]";
+		say "  --https://www.reddit.com/r/AskReddit/comments/4z899e/whats_your_favorite_palindrome/";
 	the rule succeeds;
 
 chapter verbing
@@ -1878,11 +1888,11 @@ carry out yakokaying:
 
 book Moo Room
 
-Moo Room is east of Frush Surf. It is in Grebeberg. "You can't see any cows, but you occasionally hear them. From what you can see, the farm belongs to a Mr. A, who is not around. The only way back is west."
+Moo Room is east of Frush Surf. It is in Grebeberg. "You can't see any cows, but you occasionally hear them. From what you can see, the farm belongs to a Mr. A, who is not around. [f yahoo hay is in Moo Room]Yahoo hay is piled all around. [end if]The only way back is west."
 
 chapter poo coop
 
-the poo coop is in Moo Room. "A poo coop sits here. Thankfully, it looks empty.". description is "While it's 1/4 too small to be a pooch coop, it's 1) empty and 2) somehow bigger on the inside than the outside. Maybe it can clean up a dirty area. Well, a less dirty area than the Moo Room where you found it."
+the poo coop is in Moo Room. "A poo coop sits here. Thankfully, it looks empty.". description is "While it's 1/4 too small to be a pooch coop, it's 1) empty and 2) somehow bigger on the inside than the outside. [if gnu dung is moot]It's full of gnu dung, which would be nice to get rid of[else]Maybe it can clean up a dirty area. Well, a less dirty area than the Moo Room where you found it[end if]."
 
 chapter senile felines
 
@@ -2184,8 +2194,8 @@ printed name of Worn Row is "[if Worn Row is wordy]Word[else if Worn Row is work
 
 Worn Row can be worny, wordy or worky. Worn Row is worny.
 
-understand "work row" and "work" as Worn Row when Worn Row is worky.
-understand "word row" and "word" as Worn Row when Worn Row is wordy.
+understand "work row" and "work" as Worn Row when ever-work is true.
+understand "word row" and "word" as Worn Row when ever-word is true.
 
 chapter redness ender
 
@@ -2489,7 +2499,7 @@ carry out workrowing:
 		score-inc; [Yelpley/work row]
 	else:
 		say "[Worn Row] returns once again to Work Row. It's a little less disorienting this time around.";
-	say "[line break][one of]Those three machines re[or]Three machines[stopping]appear[if Worn Row is wordy], replacing the tract cart[end if].";
+	say "[line break][one of]Those three machines re[or]Three machines, once again, [stopping]appear[if Worn Row is wordy], replacing the tract cart[end if]."; [?? what if you have destroyed the machines]
 	now ever-workrow is true;
 	now all workables are in Worn Row;
 	now all books in Worn Row are in TempMet;
@@ -3996,10 +4006,10 @@ section Pro Corp rule
 this is the pro-corp rule:
 	if resale laser is not off-stage and DNA band is not in Pro Corp and gold log is not in Pro Corp, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if player does not have DNA band, say "Take the DNA band." instead;
-	if player does not have gold log, say "Take the gold log." instead;
-	if player does not have Gorge Grog, say "[one of]You need a liquid to pour down the butene tub. A caustic one.[or]Bon Snob has something.[stopping]" instead;
-	say "USE GORGE GROG ON BUTENE TUB."
+	if DNA band is in Pro Corp, say "Take the DNA band." instead;
+	if gold log is in Pro Corp, say "Take the gold log." instead;
+	if Gorge Grog is off-stage, say "[one of]You need a liquid to pour down the butene tub. A caustic one.[or]Bon Snob has a liquid to pour down the tub.[stopping]" instead;
+	say "USE GORGE GROG ON BUTENE TUB." instead;
 
 section Red Roses Order rule
 
