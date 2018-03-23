@@ -407,7 +407,11 @@ instead of climbing, say "You haven't drunk enough Klimb-Milk. Err, Climb-Milc. 
 chapter listening
 
 instead of listening:
-	if player is in Mont Nom, say "The Ark of Okra is almost saying 'C'mon! Nom!' or even 'Tum-Smut!'";
+	if player is in My Gym:
+		say "[if Dave is in My Gym]Behind Dave's grunts,[else]Y[end if]ou hear ";
+		next-rand table of My Gym songs;
+		say "[one of], or at least, that's what repeats in the chorus[or][stopping]." instead;
+	if player is in Mont Nom, say "The Ark of Okra is almost saying 'C'mon! Nom!' or even 'Tum-Smut!'" instead;
 	say "Noise lesion."
 
 chapter seebeesing
@@ -1348,7 +1352,7 @@ to say pace-of:
 	say "[if cap-pace is true]full of deep speed[else]slower[end if]"
 
 check going to Fun Nuf:
-	if cap-pace is true, say "From the east, a voice booms 'WALK: LAW.' You adjust your pace cap back to a pact cap." pact cap.";
+	if cap-pace is true, say "From the east, a voice booms 'WALK: LAW.' You adjust your pace cap back to a pact cap.";
 	now cap-pace is false;
 
 [helpdocs below]
@@ -2160,7 +2164,7 @@ carry out puffuping:
 
 book My Gym
 
-My Gym is south of Yawn Way. It is in Yelpley. "You can go back out north to Yawn Way. There's also passage west."
+My Gym is south of Yawn Way. It is in Yelpley. "You can go back out north to Yawn Way. There's also passage west[if Worn Row is visited]to [Worn Row][end if]. Or you can LISTEN to soak up 'energetic' beats."
 
 chapter Dave
 
@@ -2462,15 +2466,15 @@ take-order of DWELT LEWD is 2.
 The book-sort rule is listed before the generate action rule in the turn sequence rules.
 
 This is the book-sort rule:
-    let L be the multiple object list;
-    if the number of entries in L is greater than 1:
-        sort L in dramatic potential order;
-        alter the multiple object list to L.
+	let L be the multiple object list;
+	if the number of entries in L is greater than 1:
+		sort L in take-order order;
+		alter the multiple object list to L.
 
 check taking a book:
 	if number of entries in multiple object list > 1:
-		let Q be the noun;
-		alter the multiple object list to { Q };
+		let firstbook be the noun;
+		alter the multiple object list to { firstbook };
 	if player has noun, continue the action;
 	if number of moot books is 2 and SOME DEMOS is off-stage:
 		say "As you pick up [noun], something else falls out. It's a smaller pamphlet, called SOME DEMOS. You pick it up.";

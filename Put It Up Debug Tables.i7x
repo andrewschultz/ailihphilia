@@ -59,6 +59,7 @@ table of altbooks	0	false	"extra books in the Tract Cart"
 table of attackings	0	true	"responses to ATTACK"
 table of burnies	0	true	"responses to BURN"
 table of diktat taunts	0	true	"Diktat Kid taunts"
+table of My Gym songs	0	false	"songs in My Gym (LISTEN)"
 table of noesies	0	true	"responses to NO"
 table of nothings	0	true	"responses to empty commands"
 table of singstuff	0	true	"responses to SINGing"
@@ -92,6 +93,11 @@ table of diktat taunts
 randtxt
 "Dire! Rid!"
 "Dude(tte)! Dud!"
+
+table of My Gym songs
+randtxt
+"Kazoo Zak"
+"Krew Twerk"
 
 table of noesies
 randtxt
