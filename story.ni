@@ -349,6 +349,16 @@ to die:
 
 volume verbs (standard or semi-standard to Inform)
 
+chapter search replacement
+
+search-warn is a truth state that varies.
+
+instead of searching:
+	if search-warn is false:
+		say "You never need to search something. Examining works just as well.";
+		now search-warn is true;
+	try examining noun instead;
+
 chapter give replacement
 
 give-warn is a truth state that varies.
@@ -794,7 +804,7 @@ check useoning it with:
 				move player to Fun Nuf, without printing a room description;
 			build-the-tron instead;
 	repeat through table of useons:
-		if there is a use1 entry and noun is use1 entry:
+		if there is a use1 entry and noun is use1 entry: [I would like to get rid of this ... the table of cantuse should take care of this, but I need to check things]
 			if there is a use2 entry and second noun is use2 entry:
 				if there is a preproc entry:
 					consider the preproc entry;
@@ -837,6 +847,12 @@ check useoning it with:
 				the rule succeeds;
 [	repeat through table of usemaybes:
 		if noun is use1 entry, say "[babble entry][line break]" instead;
+	repeat through table of specific use rejects:
+		if noun is use1 entry and second noun is use2 entry:
+			say "[babble entry][line break]" instead;
+	repeat through table of shiftables:
+		if noun is use1 entry and second noun is use2 entry, try useoning use3 entry with use2 entry instead;
+		if noun is use2 entry and second noun is use1 entry, try useoning use3 entry with use2 entry instead;
 	repeat through table of usemaybes:
 		if second noun is use1 entry, say "[babble entry][line break]" instead;]
 	if second noun is a workable, abide by the machine message rules for the noun;
@@ -1147,23 +1163,29 @@ this is the you-win rule: [xxwin]
 chapter failed useons
 
 [xxfail]
-table of useons (continued)
-use1	use2	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
-Dirt Rid	cassettes sac	--	--	--	false	false	false	--	"The Dirt Rid wheezes but is unable to clean up the cassettes sac. You need something more powerful."
-radar	sleep eels	--	--	--	false	false	false	--	"A radar isn't supposed to work this way, but somehow, you detect some bitterness at mammals in general. But it's secondary to needing a more comfortable place to sleep."
-troll ort	cross orc	--	--	--	false	false	false	--	"The cross orc mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE and don't WANT to. But the way it looks at you, you suspect it'd forgive you if you gave the right gift."
-troll ort	kayo yak	--	--	--	false	false	false	--	"As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up."
-Gorge Grog	yard ray	--	--	--	false	false	false	--	"The Gorge Grog is pretty strong stuff, but you may need something even stronger."
-Rep Popper	Yuge Guy	--	--	--	false	false	false	--	"It seems like the Rep Popper should work, but it doesn't, quite. Maybe there is something that is giving the Yuge Guy all his rep?"
-Bro Orb	Madam	--	--	--	false	false	false	--	"The Bro Orb might dissolve her, but you're not out to kill anyone. Still, close."
-yard ray	Diktat Kid	--	--	--	false	false	false	--	"The Diktat Kid laughs as you point the yard ray. 'Destroy me, but my work will remain!'"
-yard ray	Tru Hurt	--	--	--	false	false	false	--	"The Tru Hurt is dangerous, but maybe you should use the yard ray on something even more harmful."
-yard ray	Waster Fretsaw	--	--	--	false	false	false	--	"The Waster Fretsaw is dangerous, but maybe you should use the yard ray on something even more harmful."
-soot tattoos	DIFF ID	--	--	--	false	false	false	--	"You can just walk north to get through."
+table of specific use rejects
+use1	use2	babble
+Dirt Rid	cassettes sac	"The Dirt Rid wheezes but is unable to clean up the cassettes sac. You need something more powerful."
+radar	sleep eels	"A radar isn't supposed to work this way, but somehow, you detect some bitterness at mammals in general. But it's secondary to needing a more comfortable place to sleep."
+troll ort	cross orc	"The cross orc mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE and don't WANT to. But the way it looks at you, you suspect it'd forgive you if you gave the right gift."
+troll ort	kayo yak	"As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up."
+Gorge Grog	yard ray	"The Gorge Grog is pretty strong stuff, but you may need something even stronger."
+Rep Popper	Yuge Guy	"It seems like the Rep Popper should work, but it doesn't, quite. Maybe there is something that is giving the Yuge Guy all his rep?"
+Bro Orb	Madam	"The Bro Orb might dissolve her, but you're not out to kill anyone. Still, close."
+yard ray	Diktat Kid	"The Diktat Kid laughs as you point the yard ray. 'Destroy me, but my work will remain!'"
+yard ray	Tru Hurt	"The Tru Hurt is dangerous, but maybe you should use the yard ray on something even more harmful."
+yard ray	Waster Fretsaw	"The Waster Fretsaw is dangerous, but maybe you should use the yard ray on something even more harmful."
+soot tattoos	DIFF ID	"You can just walk north to get through."
 [zzfail]
 
 [below is something to cut and paste to the table of failed useons]
-[item1	item2	--	--	--	false	false	false	--	"[fill-in-here]"]
+[item1	item2	"[fill-in-here]"]
+
+chapter shiftables
+
+table of shiftables
+use1	use2	use3
+wash saw	rift fir	past sap
 
 volume rooms
 
@@ -2318,7 +2340,7 @@ to decide which book is rand-book:
 	let Q be a random carried book;
 	decide on Q;
 
-understand "book" as a book.
+understand "book/books" as a book. [?? doesn't work long term]
 
 does the player mean doing something with a carried book: it is very likely.
 
@@ -4472,7 +4494,7 @@ carry out rring:
 			try useoning use1 entry with reifier;
 			try useoning use1 entry with rotator;
 			try useoning use1 entry with reviver;
-			the rule succeds;
+			the rule succeeds;
 		if use2 entry is reifier and use1 entry is noun:
 			try useoning use1 entry with rotator;
 			try useoning use1 entry with reviver;
