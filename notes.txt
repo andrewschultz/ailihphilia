@@ -2,6 +2,11 @@
 
 ==================stuff to include for sure
 
+emote tome
+gardened rag
+
+REV OVER ...
+
 mention trivial anagrams if ...
 
 (check what to do)
@@ -1217,6 +1222,7 @@ nae wanna wean
 nag ebb began
 nag old logan
 nag rot organ
+lob my symbol
 
 # lap a papal = case we need to get working
 # 1w.py : not just STDIN but break things into dictionaries of dictionaries by first letter. See 2pal.py for details.

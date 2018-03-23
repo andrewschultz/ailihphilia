@@ -517,13 +517,15 @@ understand the command "credits" as something new.
 
 understand "credits" as creditsing.
 
+showed-sites is a truth state that varies.
+
 carry out creditsing:
 	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in first name alphabetical order: Anssi Raissanen, Brian Rushton, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and gave positive suggestions.[paragraph break]IFComp organizers past and present. Without them, I wouldn't have started and kept going. Whether that's good for gaming is up for debate, but it's been good for me.[paragraph break]Various Python communities, especially StackOverflow, helped me to write utilities that helped not only to extract palindromes but also to tune up Inform code (obligatory thanks to all past and current Inform developers) and run simple tests.";
-	if no-sites is false:
-		now no-sites is true;
+	if showed-sites is false:
+		now showed-sites is true;
 		say "I also found some websites useful. CREDITS again to see them.";
 	else:
-		say "Websites that helped with this game:[paragraph break]
+		say "Websites that helped with this game:[paragraph break]";
 		say "  --http://www.angelfire.com/in2/sedavis/palindromes.html STOP LAUGHING ANGELFIRE WAS COOL WHEN IT FIRST CAME OUT ANYWAY GEOCITIES WAS MORE MY BEAT[line break]";
 		say "  --https://www.reddit.com/r/AskReddit/comments/4z899e/whats_your_favorite_palindrome/";
 	the rule succeeds;
@@ -685,6 +687,7 @@ instead of smelling location of player:
 	if troll ort is quicknear, try smelling troll ort instead;
 	if player is in Moo Room, say "Hay! Ah!" instead;
 	if player is in Deft Fed, say "Ham?! Ah!" instead;
+	if player is in Red Roses Order or player is in Emo Dome, say "You smell roses. Weird." instead;
 	if player is in Pro Corp and butene tub is in Pro Corp, try smelling butene tub instead;
 	if player is in Sneer Greens and Yuge Guy is in Sneer Greens, say "You smell an amoral aroma." instead;
 	continue the action;
@@ -912,12 +915,12 @@ puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley
 stamp mats	slate metals	Ye Key	--	--	true	true	false	Yelpley	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY. You find it hard to pull the stamp mats out, and when you take YE KEY, the mats quickly morph into the slate metals. Eh, well. Less inventory to worry about."
 demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' he looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
-YOB ATTABOY	Sniffins	Dirt Rid	--	--	true	true	false	Yelpley	"Sniffins accepts your gift. His sniffs slowly change from sadness to something more snooty. He thanks you for helping him be too good for you before handing you a Dirt Rid and kicking you out."
+YOB ATTABOY	Sniffins	Dirt Rid	--	toons-to-den rule	true	true	false	Yelpley	"Sniffins accepts your gift, with sniffs slowly changing from sadness to something more snooty. Your thanks for helping Sniffins be too good for you is a Dirt Rid. Sniffins shoos you back out. There is remodeling to be done!"
 Elan Ale	Sniffins	Gorge Grog	--	--	true	true	false	Yelpley	"Sniffins looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'" [af:stand nat's]
 Dirt Rid	reviver	Cave Vac	--	--	true	true	false	Yelpley	"You watch as the Dirt Rid swirls and becomes shinier and much more powerful. A Cave Vac! It will be capable of cleaning...well, somewhere."
 Cave Vac	cassettes sac	radar	--	bump-pod rule	true	true	true	Yelpley	"The Cave Vac has the power to clean up the cassettes sac, though it chokes and sputters at the end of the effort. And while a lot of the cassettes are beyond repair, there's something at the very bottom.[paragraph break]Wow! Radar![paragraph break]You hear noises from the pod, as a hidden robot appears and whisks the garbage away. That's pretty slick! Looking back, the pod doesn't seem so dopy any more, between the Demo Med's help and how you're sure the radar will help."
 radar	crag arc	UFO tofu	orc-gone rule	radar-blink rule	true	false	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO and lands on the radar, which fizzles a bit from the impact and wetness. It hardens quickly and weirdly into a cubic shape. What could it be? You think a minute. It has to be UFO tofu." [af:deny Ned]
-Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'A hall! Aha! Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paragraph break]A gate tag falls off. It has a curious emblem, much like you saw at the Emo Dome, so you decide to keep it." [af:Worn Row]
+Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'A hall! Aha! Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paragraph break]A gate tag falls off. You pick it up." [af:Worn Row]
 stinky knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stinky knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
 Gorge Grog	Butene Tub	resale laser	--	bald-lab rule	true	true	true	Yelpley	"The Gorge Grog immediately starts fizzing as it pours down the tub, which rumbles disturbingly. You find it best to hide, and that's the right thing to do, because the butene tub explodes into pieces. Under it is a resale laser!"
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
@@ -1150,6 +1153,12 @@ this is the sword-rows-reveal rule:
 
 this is the tats-peripheral rule:
 	now state tats are peripheral;
+	the rule succeeds;
+
+this is the toons-to-den rule:
+	move player to Toll Lot;
+	moot decal placed;
+	move snooty toons to Deft Fed;
 	the rule succeeds;
 
 this is the totem-out rule:
@@ -1582,6 +1591,10 @@ carry out emiting:
 		now emitted is true;
 		score-inc; [Dim Mid/emit noontime]
 		the rule succeeds;
+	if the topic understood matches "time":
+		say "Yes, but what sort of time? Something positive and cheery, you'd guess." instead;
+	if the topic understood includes "time":
+		say "Not that sort of time. But it must be SOME time. A good time." instead;
 	say "No, that's not quite what to emit.";
 	the rule succeeds;
 
@@ -1705,7 +1718,7 @@ some murdered rum is a drinkable thing. description is "It looks viscous, like o
 
 book Dumb Mud
 
-Dumb Mud is west of Seer Trees. It is in Grebeberg. "Mud! Umm...[paragraph break]A turf rut to the south is [if poo coop is moot]filled in enough[else]too deep[end if] to cross. The way west is [if gnu dung is moot]blocked by gnu dung[else]free[end if]. [if lie veil is in Dumb Mud]A lie veil blocks your way[else]With the lie veil removed, you can go[end if] north."
+Dumb Mud is west of Seer Trees. It is in Grebeberg. "Mud! Umm...[paragraph break]A turf rut to the south is [if poo coop is moot]filled in enough[else]too deep[end if] to cross. The way west is [if gnu dung is moot]free[else]blocked by gnu dung[end if]. [if lie veil is in Dumb Mud]A lie veil blocks your way[else]With the lie veil removed, you can go[end if] north."
 
 check going west in Dumb Mud:
 	if gnu dung is in Dumb Mud, say "Not through the gnu dung you aren't." instead;
@@ -1888,7 +1901,7 @@ carry out yakokaying:
 
 book Moo Room
 
-Moo Room is east of Frush Surf. It is in Grebeberg. "You can't see any cows, but you occasionally hear them. From what you can see, the farm belongs to a Mr. A, who is not around. [f yahoo hay is in Moo Room]Yahoo hay is piled all around. [end if]The only way back is west."
+Moo Room is east of Frush Surf. It is in Grebeberg. "You can't see any cows, but you occasionally hear them. From what you can see, the farm belongs to a Mr. A, who is not around. [if yahoo hay is in Moo Room]Yahoo hay is piled all around. [end if]The only way back is west."
 
 chapter poo coop
 
@@ -2194,8 +2207,8 @@ printed name of Worn Row is "[if Worn Row is wordy]Word[else if Worn Row is work
 
 Worn Row can be worny, wordy or worky. Worn Row is worny.
 
-understand "work row" and "work" as Worn Row when ever-work is true.
-understand "word row" and "word" as Worn Row when ever-word is true.
+understand "work row" and "work" as Worn Row when ever-workrow is true.
+understand "word row" and "word" as Worn Row when ever-wordrow is true.
 
 chapter redness ender
 
@@ -2760,7 +2773,7 @@ Ned is a proper-named guhthug in Gross Org. "'Ned's Den!' someone booms. You're 
 
 chapter Gate Tag
 
-the Gate Tag is a thing. description is "It has an emblem a lot like what you saw north of the Emo Dome."
+the Gate Tag is a thing. description is "It--well, it seems patterned. Roses, or..."
 
 chapter denying
 
@@ -2807,7 +2820,7 @@ check taking nat's: say "Ugh! It feels too gross to take. Maybe you need to buil
 
 chapter placed decal
 
-the decal placed is peripheral scenery. description is "It's an advertisement for LE FALAFEL."
+the decal placed is peripheral scenery in Deft Fed. description is "It's an advertisement for LE FALAFEL."
 
 chapter snooty toons
 
@@ -2901,9 +2914,9 @@ Yell Alley is east of Evaded Ave. It is in Yelpley. "[if girt rig is in Yell All
 
 chapter navy van
 
-[??seedy dee's]
+the navy van is scenery in Yell Alley. "There seems to be no way to enter it. It is labeled SEEDY DEE'S and has a small eye you could USE something on to scan it."
 
-the navy van is scenery in Yell Alley. "There seems to be no way to enter it. It is labeled SEEDY DEE'S and has a small gig you could USE something on to scan it."
+understand "seedy/dee/dees" and "seedy dee/dees" as navy van.
 
 section eye
 
@@ -2911,7 +2924,9 @@ the eye is part of the navy van. description is "It looks electronic and (unsurp
 
 chapter snack cans
 
-the snack cans are a plural-named solid ingredient. description is "You're not sure what's in them, but whatever it is--well, you're not hungry enough. Yet.".
+the snack cans are a plural-named solid ingredient. description is "They're labeled DEE FEED. You're not sure what's in them, but whatever it is--well, you're not hungry enough. Yet.".
+
+understand "dee feed" and "dee/feed" as snack cans.
 
 chapter girt rig
 
@@ -4158,7 +4173,7 @@ section Yell Alley rule
 this is the yell-alley rule:
 	if pity tip is moot and psi wisp is not moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if pity tip is not moot, say "USE PITY TIP ON NAVY VAN." instead; [?SEEDY DEE'S]
+	if pity tip is not moot, say "USE PITY TIP ON NAVY VAN." instead;
 
 this is the yell-alley-complete rule:
 	if player has TNT or TNT is moot, the rule succeeds;
