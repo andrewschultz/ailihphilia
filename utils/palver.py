@@ -84,7 +84,7 @@ def pal_ver(f):
             if line.startswith("\"") and '\t' not in line:
                 q = letonly(line)
                 if 'by Andrew Schultz' in line: continue
-                if q != q[::-1]:
+                if q != q[::-1] and '[ignore]' not in line:
                     err_count = err_count + 1
                     print("Bad line", line_count, "in", f, "--", line.strip())
                 continue

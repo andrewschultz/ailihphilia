@@ -35,6 +35,8 @@ include Put It Up Mistakes by Andrew Schultz.
 
 include undo output control by Erik Temple.
 
+use American dialect.
+
 volume definitions
 
 definition: a thing is moot:
@@ -60,7 +62,7 @@ use MAX_VERBS of 260.
 
 section compiler constants - not for release
 
-use MAX_VERBS of 290. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 300. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 chapter region and room stuff
 
@@ -268,7 +270,7 @@ when play begins:
 	say "EVIL'S LIVE![wfak-d]";
 	say "LIVE DEVIL![wfak-d]";
 	say "BOSSES! SOB![wfak-d]";
-	say "You fold the Darer Ad and start off to the store.[paragraph break]'Aloha! Hola!' someone, or something, cries. You run in the general direction of the voice.  You look up, and you're no longer on the way to the store. You're somewhere else. With someone else: a Flee Elf, who notes you futzing with your smartphone. 'No El Google on.' You nod. Awkward silence.[wfak-d]";
+	say "You fold the Darer Ad and start off to the store.[paragraph break]'Aloha! Hola!' someone, or something, cries. You run in the general direction of the voice.  You look up, and you're no longer on the way to the store. You're somewhere else. Your smartphone starts blinking: LOAD AOL! You look up. Who is responsible for this? An elf, who sees you futzing with your smartphone. 'No El Google on?' You nod. Awkward silence.[wfak-d]";
 	say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because after being confused by it, you looked up the winning strategy on the internet. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers. Then 'Is reversi...?'";
 	say "After your fifth win in a row, the Flee Elf yells 'Put it up!' You freeze--well, until you're knocked to the ground.[wfak-d]";
 	say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Raw Level War. You'll do for Yelpley, I guess.' The Flee Elf leads you away. 'The first thing to do is, figure how to take this cap.'[wfak-d]";
@@ -319,7 +321,7 @@ a dir-error rule for a room (called myr):
 
 chapter unrecognized verb
 
-Rule for printing a parser error when the latest parser error is the didn't understand error:
+Rule for printing a parser error when the latest parser error is the didn't understand error or the latest parser error is the not a verb I recognise error:
 	say "[if gtv]You do need a special verb here, but not that one. It may not be a standard one, but given the game's theme, I bet you can figure it out. If you want standard verbs, y[else]I didn't recognize that action. Y[end if]ou can type VERB or VERBS to get a list of them.";
 
 to decide whether gtv:
@@ -1528,7 +1530,8 @@ decal placed	"The decal placed decal is just there to advertise the food. It's n
 snooty toons	"The snooty toons are just there for ambience. They're not critical to the story."
 pill lip	"The pill lip is just there to prevent the demo med from getting dirty on the ground."
 mush sum	"The mush sum is too murky and unstable to deal with. And to break the fourth wall, it's just there to provide a north border."
-go fog	"The go fog is very dense. It pushes you back west even as you look at it. As if to say, go away, and also, get going with what you want and need to do."
+go fog	"The go fog is very dense. It pushes you back even as you look at it. As if to say, go away, and also, get going with what you want and need to do."
+be web	"The be web is--well, it's itself, and maybe there's a message here but you'll figure it out once you're finished adventuring. It's not important enough now."
 voodoo v	"You don't want or need to mess with the voodoo v."
 leet steel	"You want to focus on the Knife Fink and not the leet steel."
 senile felines	"You don't have to do anything standard with the senile felines. In fact, you should think of them as cats."
@@ -1995,7 +1998,9 @@ The Balsa Slab is a thing. description is "It appears grooved, as if someone has
 
 book Lair Trial
 
-Lair Trial is south of Den Ivy Vined. It is in Grebeberg. "This lair bends north and east, [if ergot ogre is moot], and with the trial over, you're free to go either way[end if]."
+Lair Trial is south of Den Ivy Vined. It is in Grebeberg. "Thick go-fog causes passage in this lair to bend [if Motto Bottom is unvisited]back [end if]north and east, [if ergot ogre is moot], and with the trial over, you're free to go either way[end if]."
+
+check going nowhere in Lair Trial: say "[if ogre is in Lair Trial]You can't sneak around the ergot ogre. You need to get rid of it[else]There's nothing in the fog[end if]." instead;
 
 chapter ergot ogre
 
@@ -2003,13 +2008,17 @@ the ergot ogre is a person in Lair Trial. "An ergot ogre blocks the way east.". 
 
 check going east in Lair Trial: if ergot ogre is in Lair Trial, say "Not with the ergot ogre guarding the way." instead;
 
-book Motto Bottom
-
-Motto Bottom is east of Lair Trial. It is in Grebeberg. "Go-fog blocks passage every way except back west."
-
 chapter go fog
 
-the go fog is peripheral scenery in Motto Bottom. understand "gofog" and "go-fog" as go fog. "The go fog is very opaque. It would be too easy to get lost in."
+the go fog is peripheral scenery in Trial Lair. understand "gofog" and "go-fog" as go fog. "The go fog is very opaque. It would be too easy to get lost in."
+
+book Motto Bottom
+
+Motto Bottom is east of Lair Trial. It is in Grebeberg. "A be-web blocks passage every way except back west."
+
+chapter be web
+
+the be web is peripheral scenery in Motto Bottom. understand "beweb" as be web. "The be-web spans everywhere except back west. Perhaps if you were a lot cleverer, or sillier, you could find meaning in it, but as-is, it only blocks your way back west."
 
 chapter tame mat
 
@@ -2262,7 +2271,7 @@ does the player mean boreing Rob: it is very likely.
 carry out boreing:
 	if noun is not a person, say "You should try to bore people, not things." instead;
 	if noun is not Rob, say "Wrong thing or person to bore." instead;
-	say "You bore Rob successfully. He wanders off.";
+	say "You bore Rob successfully. He wanders off, perhaps to Ybor.";
 	moot Rob;
 	score-inc; [Yelpley/bore rob]
 	the rule succeeds.
@@ -2474,7 +2483,8 @@ This is the book-sort rule:
 check taking a book:
 	if number of entries in multiple object list > 1:
 		let firstbook be the noun;
-		alter the multiple object list to { firstbook };
+		alter the multiple object list to { };
+		add noun to multiple object list;
 	if player has noun, continue the action;
 	if number of moot books is 2 and SOME DEMOS is off-stage:
 		say "As you pick up [noun], something else falls out. It's a smaller pamphlet, called SOME DEMOS. You pick it up.";
@@ -3013,7 +3023,7 @@ check going to Emo Dome:
 		now emo-dir is noun;
 
 check going north in Emo Dome:
-	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a voice from the DIFF-ID: 'Oh! Who?'[paragraph break]You don't have anything identifying yourself. 'Go jog!' the voice continues. You think, hang? Nah." instead;
+	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a bright no-go-gon and a voice from the DIFF-ID: 'Oh! Who?'[paragraph break]You don't have anything identifying yourself. 'Go jog!' the voice continues. You think, hang? Nah." instead;
 	if Bro Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet." instead;
 	if not-a-baton is moot, say "You probably did all you needed to." instead;
 	say "You make sure your state tats are visible for scanning. They are accepted.[paragraph break][if madam is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the sword rows.[end if]";
@@ -3286,6 +3296,7 @@ talk-text of Rob is "Rob yawns. He doesn't find you very interesting. Maybe ther
 talk-text of sleep eels is "Maybe they are sending some sort of electric message you could detect with the right instrument, but they're not talking. You're more struck, though, by how uncomfortable they look while sleeping--wriggling about.".
 talk-text of Sniffins is "[if YOB ATTABOY is not moot]'Tony? Not! Poor lower class me is a failure! If only I had some success manual!'[else]'Oh. It's you again. If you were REALLY smart, you'd have taken the advice in that book you gave me.'[end if]".
 talk-text of Verses Rev is "The Verses Rev booms 'Erupt! Pure!' then piously intones how weirdos not in line with the Diktat Kid's values need to be eradicated.".
+talk-text of Wordy Drow is "It moans and points at the Liar Grail. They're forced together, somehow, but maybe you can change that."
 talk-text of Yuge Guy is "'I'm ... ' / 'TMI!'"
 
 volume gotoing

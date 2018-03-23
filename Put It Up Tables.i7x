@@ -597,9 +597,10 @@ table of My Gym songs
 randtxt
 "Kazoo Zak"
 "Krew Twerk"
-"O/T Teh Ghetto"
+"O/T: Teh Ghetto"
 "Opera Repo"
 "Rap Spar"
+"Yo, Beer Free, Boy"
 
 table of noesies
 randtxt
@@ -694,23 +695,26 @@ randtxt
 "Gall! Lag!"
 "GO, dog!"
 "A lag gala!"
+"Mull! Um..."
 "No gig on?"
 "Now? On!"
 "Pal...flap!"
 "Panic? I nap!"
 "A rests era!"
 "Resume, muser!"
-"Rove! Move [']r!"
+"Rev, O Rover!"
 "Sod dos."
 "Stare? Rats!"
 "Stir! It's..."
 "Truce, curt."
+"Wait! I ... aw ..."
 "Wandered? Naw."
 "Won't, Now."
 
 table of wordy drow laments
 randtxt
 "'Deity...tied!'"
+"'Die, id!'"
 "'Eh, Tithe!'"
 "'No Sin is On!'"
 
@@ -729,17 +733,17 @@ randtxt
 table of yuge taunts
 randtxt
 "Ahahahahahaha!"
-"D'oh! Shun unshod!"
 "Gibe! Big!"
 "Hog, oh!"
 "Huge! Guh!"
 "Main, I am!"
 "ME!!!! Haw. Ahem."
+"Me: sees [']em!"
 "Misdeeds? I'm ..."
 "Name: HE-MAN!"
 "Nem O['] women!"
 "Null [']un!"
-"Odd-*** Saddo!"
+"Odd-*** Saddo!" [ignore]
 "Ooh...shoo!"
 "Pal! Clap!"
 "Pal, rub burlap!"

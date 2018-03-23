@@ -335,6 +335,8 @@ understand "story rots" as a mistake ("No, the storm rots help keep you focused 
 
 understand "stork rots" as a mistake ("You don't want to know what sort of carcasses are buried in the swamp.[mis of 111]") when player is in Swamp Maws.
 
+understand "store rots" as a mistake ("You don't need to buy anything in this game, and any store wouldn't sell anything good.[mis of 111]") when player is in Swamp Maws.
+
 book Swept Pews
 
 understand "trod ort" as a mistake ("It looks run-down enough.[mis of 112]") when troll ort is in Swept Pews.

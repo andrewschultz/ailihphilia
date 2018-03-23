@@ -133,7 +133,7 @@ randtxt
 table of wordy drow laments
 randtxt
 "'Deity...tied!'"
-"'Eh, Tithe!'"
+"'Die, id!'"
 
 table of yessies
 randtxt
@@ -143,7 +143,7 @@ randtxt
 table of yuge taunts
 randtxt
 "Ahahahahahaha!"
-"D'oh! Shun unshod!"
+"Gibe! Big!"
 
 Put it Up debug Tables ends here.
 
