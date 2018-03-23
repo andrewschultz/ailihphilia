@@ -918,7 +918,7 @@ wash saw	past sap	--	--	sap-loose rule	true	false	false	Grebeberg	"You hack away
 puce cup	past sap	--	check-sap-cup rule	sap-to-cup rule	false	false	false	--	"You pour some sap into the cup."
 puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"The past sap pours into the liar grail and exposes how bad the grail has been over the years. As it cracks, along with the wall it was attached to to allow passage south, you snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL!"
 puce cup	dose sod	--	check-sod-cup rule	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
-puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley	"You give the Bond Nob the puce cup. Gulp! Gulp! 'Well... I have a lot of catching up to do. Can't hang around. I'm the Bond Nob, not the bonded nob. Here's some Elan Ale for you, to celebrate how cool you are for helping. Oh, and enjoy my home to the west.'"
+puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley	"You give the Bond Nob the puce cup. Gulp! Gulp! 'Well... I have a lot of bar crawling to do. Can't hang around. I'm the Bond Nob, not the bonded nob. Here's some Elan Ale for you, to celebrate how cool you are for helping. Oh, and enjoy my home to the west. I'm off: Tope Depot, Nigh Gin, Sara's, Soto's, Pat's Tap...'"
 stamp mats	slate metals	Ye Key	--	--	true	true	false	Yelpley	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY. You find it hard to pull the stamp mats out, and when you take YE KEY, the mats quickly morph into the slate metals. Eh, well. Less inventory to worry about."
 demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' he looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
@@ -3119,6 +3119,12 @@ chapter liar grail
 The Liar Grail is a thing in Swept Pews. description is "It's carved with 'NIP IN? NOT ON!' If you hadn't examined it, you wouldn't think there might be a passage to the south, but now that you have, you consider the possibility. Either way, it annoys you enough to want to get rid of the liar grail. Lies are sometimes self-defeating like that". "A liar grail is embedded in the south wall, aw."
 
 check taking liar grail: say "A small voice cries 'Da cad! Da cad!' You probably don't want the liar grail corrupting you." instead;
+
+every turn when player is in Swept Pews and wordy drow is in Swept Pews: next-rand table of wordy drow laments;
+
+chapter wordy drow
+
+The wordy drow is a person in Swept Pews. description is "Seemingly attached to the Liar Grail. Maybe you can release it.". "[one of]A[or]The[stopping] wordy drow mumbles to itself here, sometimes blurting out something intelligble and haunting."
 
 chapter troll ort
 

@@ -652,6 +652,7 @@ randtxt
 "Dammit, I'm mad!"
 "Dark. Rad!"
 "Guff! Ug!"
+"Hell, eh?"
 "Hoot! Ooh!"
 "Hot! Oh!"
 "Kook!"
@@ -706,6 +707,12 @@ randtxt
 "Truce, curt."
 "Wandered? Naw."
 "Won't, Now."
+
+table of wordy drow laments
+randtxt
+"'Deity...tied!'"
+"'Eh, Tithe!'"
+"'No Sin is On!'"
 
 table of yessies
 randtxt

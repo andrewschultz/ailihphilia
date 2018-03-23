@@ -130,6 +130,11 @@ randtxt
 "Camp, mac!"
 "Deed, deed, deed!"
 
+table of wordy drow laments
+randtxt
+"'Deity...tied!'"
+"'Eh, Tithe!'"
+
 table of yessies
 randtxt
 "Hosannas, Oh!"
