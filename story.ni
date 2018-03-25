@@ -276,7 +276,7 @@ when play begins:
 	say "EVIL'S LIVE![wfak-d]";
 	say "LIVE DEVIL![wfak-d]";
 	say "BOSSES! SOB![wfak-d]";
-	say "You fold the Darer Ad and start off to the store.[paragraph break]'Aloha! Hola!' someone, or something, cries. You run in the general direction of the voice.  You look up, and you're no longer on the way to the store. You're somewhere else. Your smartphone starts blinking: LOAD AOL! You look up. Who is responsible for this? An elf, who sees you futzing with your smartphone. 'No El Google on?' You nod. Awkward silence.[wfak-d]";
+	say "You fold the Darer Ad and start off to the store.[paragraph break]'[unicode 161]Aloha. Hola!' someone, or something, cries. You run in the general direction of the voice.  You look up, and you're no longer on the way to the store. You're somewhere else. Your smartphone starts blinking: LOAD AOL! You look up. Who is responsible for this? An elf, who sees you futzing with your smartphone. 'No El Google on?' You nod. Awkward silence.[wfak-d]";
 	say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because after being confused by it, you looked up the winning strategy on the internet. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers. Then 'Is reversi...?'";
 	say "After your fifth win in a row, the Flee Elf yells 'Put it up!' You freeze--well, until you're knocked to the ground.[wfak-d]";
 	say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Raw Level War. You'll do for Yelpley, I guess.' The Flee Elf leads you away. 'The first thing to do is, figure how to take this cap.'[wfak-d]";
@@ -345,7 +345,7 @@ after reading a command:
 		reject the player's command;
 	if the player's command matches the regular expression "<^a-z 0-9>":
 		if no-punc-flag is false:
-			say "(NOTE: you don't need to use anything but letters to get through the game. The parser simply strips out non-alphanumeric characters.)[paragraph break]";
+			say "(NOTE: you don't need to use anything but letters to get through the game. The parser simply strips out non-alphabetic characters.)[paragraph break]";
 			now no-punc-flag is true;
 			let XX be the player's command;
 			replace the regular expression "<^a-z 0-9>" in XX with "";
@@ -1759,7 +1759,7 @@ some murdered rum is a drinkable thing. description is "It looks viscous, like o
 
 book Dumb Mud
 
-Dumb Mud is west of Seer Trees. It is in Grebeberg. "Mud! Umm...[paragraph break]A turf rut to the south is [if poo coop is moot]filled in enough[else]too deep[end if] to cross. The way west is [if gnu dung is moot]free[else]blocked by gnu dung[end if]. [if lie veil is in Dumb Mud]A lie veil blocks your way[else]With the lie veil removed, you can go[end if] north."
+Dumb Mud is west of Seer Trees. It is in Grebeberg. "Mud! Um...[paragraph break]A turf rut to the south is [if poo coop is moot]filled in enough[else]too deep[end if] to cross. The way west is [if gnu dung is moot]free[else]blocked by gnu dung[end if]. [if lie veil is in Dumb Mud]A lie veil blocks your way[else]With the lie veil removed, you can go[end if] north."
 
 check going west in Dumb Mud:
 	if gnu dung is in Dumb Mud, say "Not through the gnu dung you aren't." instead;
@@ -1868,7 +1868,7 @@ the martini tram is a tronpart. "That martini tram that appeared from Mont Nom i
 
 chapter Ian
 
-Ian is a proper-named guhthug in Mont Nom. "[one of]'I'm Ian. I guess I can't make you leave, but you seem ill equipped to deal with the sophisticated blend of tastes served up by Mont Nom.'[or]Ian continues to look down his nose at you.[stopping]". description is "Ian smirks back at you. You turn away. He seems just a bit too suave.".
+Ian is a proper-named guhthug in Mont Nom. "[one of]'I'm Ian. I guess I can't make you leave, but you seem ill-equipped to deal with the sophisticated blend of tastes served up by Mont Nom.'[or]Ian continues to look down his nose at you.[stopping]". description is "Ian smirks back at you. You turn away. He seems just a bit too suave.".
 
 chapter nailing
 
@@ -2029,7 +2029,7 @@ The Balsa Slab is a thing. description is "It appears grooved, as if someone has
 
 book Lair Trial
 
-Lair Trial is south of Den Ivy Vined. It is in Grebeberg. "Thick go-fog causes passage in this lair to bend [if Motto Bottom is unvisited]back [end if]north and east, [if ergot ogre is moot], and with the trial over, you're free to go either way[end if]."
+Lair Trial is south of Den Ivy Vined. It is in Grebeberg. "Thick go-fog causes passage in this lair to bend [if Motto Bottom is unvisited]back [end if]north and east[if ergot ogre is moot], and with the trial over, you're free to go either way[end if]."
 
 check going nowhere in Lair Trial: say "[if ogre is in Lair Trial]You can't sneak around the ergot ogre. You need to get rid of it[else]There's nothing in the fog[end if]." instead;
 
@@ -2069,7 +2069,7 @@ check useoning tenet with Bro Orb: try taking Bro Orb instead;
 
 book Swamp Maws
 
-Swamp Maws is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west, and storm rots block your way east. You can go [if Known Wonk is moot]north and [end if]south here. [if Known Wonk is moot]The Known Wonk's Tru-Yurt is here. It looks really messy[end if]."
+Swamp Maws is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west, and storm rots block your way east. You can go [if Known Wonk is moot]north and [end if]south here[if Known Wonk is moot]. The Known Wonk's Tru-Yurt is here. It looks really messy[end if]."
 
 check going north in Swamp Maws when Known Wonk is in Swamp Maws: say "The Known Wonk pushes you back. 'You don't know how weird it is to the north. But I know a thing or two about adventuring theory.'" instead;
 
@@ -2091,7 +2091,7 @@ The Exam Axe is a thing. description is "Just looking at the exam axe, you feel 
 
 chapter Tru Yurt
 
-The Tru Yurt is scenery in Swamp Maws. "It looks really messy. THe Known Wonk said it needed a good cleaning."
+The Tru Yurt is scenery in Swamp Maws. "It looks really messy. The Known Wonk said it needed a good cleaning."
 
 chapter Edits Tide
 
@@ -3084,7 +3084,7 @@ understand "pullup" as pulluping.
 
 carry out pulluping:
 	if pulled-up is true, say "You already did." instead;
-	if player has Spur Ups, say "Maybe you can be or do that sort of up, later.";
+	if Spur Ups are off-stage, say "Maybe you can be or do that sort of up, later." instead;
 	if player is in Emo Dome:
 		say "You manage to stop yourself. The whining isn't too bad. Yeah, you can hack it here.";
 		now pulled-up is true;
@@ -3180,7 +3180,7 @@ the troll ort is an edible thing in Swept Pews. "A troll ort lies on the floor h
 
 book Drawl Ward
 
-Drawl Ward is south of Swept Pews. It is in Yelpley. "This passage is a T, walled off to the south."
+Drawl Ward is south of Swept Pews. It is in Yelpley. "This passage is a T (well, a [unicode 9524]), walled off to the south."
 
 check going west in Drawl Ward:
 	if Bond Nob is in Drawl Ward:
@@ -4434,46 +4434,7 @@ ignore-done is a truth state that varies.
 
 rule for amusing a victorious player:
 	let count be 0;
-	repeat through table of amusing stuff:
-		if ignore-done is true:
-			if there is no dorule entry, next;
-			follow the dorule entry;
-			if the rule succeeded, next;
-			increment count;
-		say "[funstuff entry][if ignore-done is false][line break][end if]";
-	if ignore-done is true:
-		say "[if count is 0]You found everything potentially funny! Way to go![else][line break]That's [count] total missed.[end if]";
-	else:
-		say "[line break]Toggle what you already did with AMT.";
-
-chapter amusing table
-
-table of amusing stuff
-funstuff	dorule
-"FLEA ELF?"	elf-fleaed rule
-"FLEX ELF?"	elf-flexed rule
-"FLEECE ELF?"	elf-fleeced rule
-
-this is the elf-fleaed rule:
-	if flea-elf is true, the rule succeeds;
-	the rule fails;
-
-this is the elf-flexed rule:
-	if flex-elf is true, the rule succeeds;
-	the rule fails;
-
-this is the elf-fleeced rule:
-	if fleece-elf is true, the rule succeeds;
-	the rule fails;
-
-this is the what-missed rule:
-	let missed be 0;
-	repeat through table of last lousy points:
-		consider the dorule entry;
-		if the rule failed:
-			say "[funstuff entry]";
-			increment missed;
-	if missed is 0, say "You found all the points!"
+	say "The mistakes file ([gt] mistakes.i7x) should have all the possible palindrome tries. You can read through there.[paragraph break]Similarly, the tables file ([gt] tables.i7x) should have all the random texts.";
 
 chapter misses table
 
