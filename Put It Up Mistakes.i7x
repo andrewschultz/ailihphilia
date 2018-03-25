@@ -231,6 +231,12 @@ understand "truco curt" as a mistake ("You don't have a deck of cards, and Curt 
 
 understand "mar tram" as a mistake ("No. [if er-ex is true]You need it to build the north-tron[else]It must be good for something[end if].[mis of 72]") when martini tram is quicknear.
 
+understand "nair Ian" as a mistake ("That would be painful and embarrassing enough to chase him off, but alas, you don't have anything to do the job[if player has nat's tan]. The bottle of Nat's Tan doesn't count[end if].") when Ian is quicknear.
+
+understand "naif Ian" as a mistake ("Sadly, mind control is beyond your powers.") when Ian is quicknear.
+
+understand "nain Ian" as a mistake ("Owning/pwning would embarrass Ian, but that is too archaic a synonym.") when Ian is quicknear.
+
 book Motto Bottom
 
 understand "tamp mat" as a mistake ("It's already pretty beaten down.[mis of 73]") when player is in Motto Bottom and tame mat is in Motto Bottom.
@@ -298,6 +304,8 @@ book Scrap Arcs
 understand "scram arcs" as a mistake ("The arcs stay still, but you can just go back east if you want.[mis of 97]") when player is in Scrap Arcs.
 
 book Seer Trees
+
+understand "fig gif" as a mistake ("The gif remains firmly text-based. Eh, it's more edible that way.") when gift fig is quicknear.
 
 understand "seer brees" as a mistake ("[one of]A man throws a football at you from 50 yards away, and it drills you right in the chest. Accurate![or]The man doesn't appear again. He probably has better things to do than schlep around in some text adventure. Perhaps he is off eating at a QB BBQ.[stopping][mis of 98]") when player is in Seer Trees.
 
@@ -426,7 +434,13 @@ to say mis of (n - a number):
 						say "[paragraph break]NOTE: THINK[if refer-bonus is true]/REFER[end if] will show you the LLPs clued so far that you haven't figured, yet.[run paragraph on][line break]";
 					continue the action;
 
-volume prospective
+volume old school verbs
+
+understand "rub [text]" as a mistake ("There's no one named Burt in this game, so you don't have to rub anyone or anything.")
+
+understand "wave" as a mistake ("Nobody named Eva is beyond the fourth wall.")
+
+understand "rm gnu/dung" and "rm gnu dung" as a mistake ("You don't have the proper permissions. It is (wait for it) too root.") when gnu dung is quicknear.
 
 Put It Up Mistakes ends here.
 

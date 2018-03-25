@@ -727,6 +727,7 @@ randtxt
 "Pep!"
 "Pip, pip!"
 "Plus? Ulp."
+"Too woot!"
 "Wahoo! Haw!"
 "Yay!"
 

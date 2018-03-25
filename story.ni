@@ -927,19 +927,19 @@ wash saw	past sap	--	sap-not-cut-yet rule	sap-loose rule	true	false	false	Grebeb
 puce cup	past sap	--	check-sap-cup rule	sap-to-cup rule	false	false	false	--	"You pour some sap into the cup."
 puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"The past sap pours into the liar grail and exposes how bad the grail has been over the years. As it cracks, along with the wall it was attached to allow passage south, you snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL!"
 puce cup	dose sod	--	check-sod-cup rule	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
-puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley	"You give the Bond Nob the puce cup. Gulp! Gulp! 'Well... I have a lot of bar crawling to do. Can't hang around. I'm the Bond Nob, not the bonded nob. Here's some Elan Ale for you, to celebrate how cool you are for helping. Oh, and enjoy my home to the west. I'm off: Tope Depot, Nigh Gin, Sara's, Soto's, Pat's Tap...'"
+puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley	"You give the Bond Nob the puce cup. Gulp! Gulp! 'The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. So many places to visit: Tope Depot, Nigh Gin, Sara's, Soto's, Pat's Tap...'"
 stamp mats	slate metals	Ye Key	--	--	true	true	false	Yelpley	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY. You find it hard to pull the stamp mats out, and when you take YE KEY, the mats quickly morph into the slate metals. Eh, well. Less inventory to worry about."
 demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' he looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
 YOB ATTABOY	Sniffins	Dirt Rid	--	toons-to-den rule	true	true	false	Yelpley	"Sniffins accepts your gift, with sniffs slowly changing from sadness to something more snooty. Your thanks for helping Sniffins be too good for you is a Dirt Rid. Sniffins shoos you back out. There is remodeling to be done!"
-Elan Ale	Sniffins	Gorge Grog	--	--	true	true	false	Yelpley	"Sniffins looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.'" [af:stand nat's]
+Elan Ale	Sniffins	Gorge Grog	--	--	true	true	false	Yelpley	"Sniffins looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.' Hey, you're not one to say 'stuff free stuff.'" [af:stand nat's]
 Dirt Rid	reviver	Cave Vac	--	--	true	true	false	Yelpley	"You watch as the Dirt Rid swirls and becomes shinier and much more powerful. A Cave Vac! It will be capable of cleaning...well, somewhere."
 Cave Vac	cassettes sac	radar	--	bump-pod rule	true	true	true	Yelpley	"The Cave Vac has the power to clean up the cassettes sac, though it chokes and sputters at the end of the effort. And while a lot of the cassettes are beyond repair, there's something at the very bottom.[paragraph break]Wow! Radar![paragraph break]You hear noises from the pod, as a hidden robot appears and whisks the garbage away. That's pretty slick! Looking back, the pod doesn't seem so dopy any more, between the Demo Med's help and how you're sure the radar will help."
 radar	crag arc	UFO tofu	orc-gone rule	radar-blink rule	true	false	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO and lands on the radar, which fizzles a bit from the impact and wetness. It hardens quickly and weirdly into a cubic shape. What could it be? You think a minute. It has to be UFO tofu." [af:deny Ned]
 Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'A hall! Aha! Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paragraph break]A gate tag falls off. You pick it up." [af:Worn Row]
 stinky knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stinky knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
-Gorge Grog	Butene Tub	resale laser	--	bald-lab rule	true	true	true	Yelpley	"The Gorge Grog immediately starts fizzing as it pours down the tub, which rumbles disturbingly. You find it best to hide, and that's the right thing to do, because the butene tub explodes into pieces. Under it is a resale laser!"
-gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod!"
+Gorge Grog	Butene Tub	resale laser	--	make-sag rule	true	true	true	Yelpley	"The Gorge Grog starts fizzing as it pours down the tub, and nothing seems to happen, until you hear a FOOMP below and the tub starts shaking. There must've been an open spark below the tub. You find it best to hide, and that's the right thing to do, because the butene tub explodes into pieces. Under it is a resale laser! You figure the really good stuff is hidden way back for security reasons, and this is probably just an emergency gadget, but it's got to be good for something."
+gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod! You wonder briefly if you deserve to take it, or E there's something wrong with you if you deserve to, but once you hold it, memories of past silliness come back, and they're easier to deal with, now. You have some perspective. You even feel sorry for people who pointed out you were a dork. They'd be barred from an adventure like this. So you keep the dork rod."
 SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	false	false	Grebeberg	"With the help of SOME DEMOS, you manage to rejig the hay into something more aesthetically pleasing: straw arts!"
 straw arts	Revolt Lover	soot tattoos	--	rebump-art-xtra rule	true	true	false	Yelpley	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
 gate tag	soot tattoos	state tats	--	tats-peripheral rule	true	true	true	Yelpley	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
@@ -1091,10 +1091,8 @@ this is the cold-loc-hint-bump rule:
 	the rule succeeds;
 
 this is the empty-cup rule:
-	now puce cup is empty;
-	if Bond Nob is moot and liar grail is moot:
-		say "The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. I'm off to Pat's Tap for some redics-cider!'";
-		shuffle-before Apse Spa and Motto Bottom;
+	now puce cup is moot;
+	shuffle-before Apse Spa and Motto Bottom;
 	the rule succeeds;
 
 this is the hay-gone rule:
@@ -1112,6 +1110,12 @@ this is the kid-bye rule:
 
 this is the kid-left rule:
 	if Verses Rev is moot and Knife Fink is moot, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with Mad Adam. Iller Elli. Able Melba. Wolf Low.'";
+	the rule succeeds;
+
+this is the make-sag rule:
+	move gash sag to Pro Corp;
+	say "Soon after you take the resale laser, a small gash sag fills in the explosion you made. Technology!";
+	consider the bald-lab rule;
 	the rule succeeds;
 
 this is the maps-explain rule:
@@ -1315,6 +1319,8 @@ to decide which number is roving-LLP: [Not location dependent: DIAL AID, STATS, 
 
 check going north in Fun Nuf:
 	if Diktat Kid is moot, say "No need to go back." instead;
+	if epicer recipe is off-stage, say "You need to get there. But you have no clue what to build, or how." instead;
+	if er-ex is false, say "You're clueless how. But you decide to look at the epicer recipe...[paragraph break]" instead;
 	if north tron is not in Fun Nuf, say "Not until you built the North-Tron." instead;
 	if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
 	if murdered rum is not moot, say "You have the yard ray, but it isn't, well, charged." instead;
@@ -1952,6 +1958,8 @@ chapter senile felines
 
 the senile felines are plural-named peripheral things in Moo Room. "Senile felines swat at a late petal just a bit too high to reach. It might be fun to help them, but they probably can't help you. CATS!". description is "They are just lazing around, swatting at the late petal but never reaching it. You guess it must be fun for them.[paragraph break]Maybe it'd be fun to think of them as CATS."
 
+understand "cats" as senile felines.
+
 check taking the senile felines: say "Sure, that'd help them swat the petal and 'win' whatever game they're playing, but maybe they want to feel like they did it themselves. As CATS." instead;
 
 the late petal is peripheral scenery in Moo Room. "It's just out of reach of the cats."
@@ -2103,7 +2111,7 @@ the sharp rahs are a plural-named thing. "The sharp rahs get you enthused, but t
 
 book Calcific Lac
 
-Calcific Lac is north of Swamp Maws. It is in Grebeberg. "A Tao Boat rests at the edge of Calcific Lac. [eli-ile].[paragraph break][if dork rod is moot]The Tao Boat that helped you get at peace with things is here[else]A Tao Boat rests on the shore, here[end if]."
+Calcific Lac is north of Swamp Maws. It is in Grebeberg. "[if dork rod is moot]The Tao Boat that helped you get at peace with things is here[else]A Tao Boat rests on the shore, here, with no clear entry[end if]. [eli-ile].[paragraph break]"
 
 to say eli-ile:
 	if elope pole is moot:
@@ -2125,11 +2133,13 @@ instead of doing something with kayak when elope pole is moot: [??use X on kayak
 
 chapter tao boat
 
-The Tao Boat is scenery in Calcific Lac. "It rocks gently on the waves. You [if dork rod is moot]wonder what it's like inside, if you're worthy[else]look back on your time inside with fondness. It put you at peace with the job you have ahead[end if]."
+The Tao Boat is scenery in Calcific Lac. "It rocks gently on the waves, with no clear entry, just fine without anyone riding on it. You [if dork rod is moot]wonder what it's like inside, if you're worthy[else]look back on your time inside with fondness. It has put you at peace with the job you have ahead[end if]. Just looking at it gives more inner peace than you'd get from any of the medicine or alcohol you've come across in the game."
+
+check entering tao boat: say "You see no clear entry. Perhaps you need to make some gesture, or show the boat an emblem of your worth or self-acceptance." instead;
 
 chapter dork rod
 
-The dork rod is a thing. description is "It's kind of neat and quirky, but it's not shiny enough to be the famed Dorada Rod."
+The dork rod is a thing. description is "It's kind of neat and quirky, but it's not shiny enough to be the famed Dorada Rod. Which would be worth more at a pawn shop, but the dork rod reminds you of embarrassing things you did in the past, and yet...you're not quite so embarrassed about them! You know how to deal a bit better, now."
 
 chapter enact cane
 
@@ -2313,6 +2323,8 @@ chapter workables
 
 a workable is a kind of thing. a workable has a number called useleft. useleft of a workable is usually 3.
 
+understand "machine" as a workable.
+
 description of a workable is "[if useleft of item described is 0]It's broken now, but you got good use out of it[else if useleft of item described is 3]The only way you can tell it from the other two is because [printed name of item described in upper case] is printed on the front[else]Since you had success using [the item described], you feel more comfortable using it again[end if]."
 
 the reifier is a workable. useleft is 3.
@@ -2454,7 +2466,7 @@ YOB ATTABOY is a proper-named book. printed name of YOB ATTABOY is "YOB ATTABOY 
 
 chapter SOME DEMOS
 
-there is a book called SOME DEMOS. printed name is "SOME DEMOS (SD)". understand "sd" as SOME DEMOS. It is proper-named and hidden. description is "It's a sort of life hacker book with a particular emphasis on having fun with weird art and not worrying too much how good it is.".
+there is a book called SOME DEMOS. printed name is "SOME DEMOS (SD)". understand "sd" as SOME DEMOS. It is proper-named and hidden. description is "It's a sort of life hacker book with a particular emphasis on having fun with making weird art out of common or even unsophisticated materials and not worrying too much how good it is.".
 
 gap-yet is a truth state that varies.
 
@@ -2871,11 +2883,11 @@ the cave vac is a thing. description is "It looks a lot more powerful than the D
 
 chapter Gorge Grog
 
-Gorge Grog is in Deft Fed. "Some Gorge Grog is here. It looks out of place in the Bon Snob, but Sniffins probably won't give it to you for free.". description is "Unsurprisingly, it is a product of Grog-Org."
+Gorge Grog is in Deft Fed. "Some Gorge Grog is here. It looks out of place in the Bon Snob, but Sniffins probably won't give it to you for free.". description is "Unsurprisingly, it is a product of Grog-Org. It's considerably more than four prouf. Err, foor proof."
 
 Gorge Grog is proper-named.
 
-check taking Gorge Grog: say "Sniffins chides you. 'It's worthless to us, but if there's anything tackier than bad alcohol, it's people who want to steal it!'[paragraph break]Maybe you could trade something for it." instead;
+check taking Gorge Grog when player does not have Gorge Grog: say "Sniffins chides you. 'It's worthless to us, but if there's anything tackier than bad alcohol, it's people who want to steal it!'[paragraph break]Maybe you could trade something for it." instead;
 
 chapter Nat's Tan
 
@@ -2962,7 +2974,7 @@ understand "tend [something]" as tending.
 carry out tending:
 	if noun is not level net, say "That doesn't need tending." instead;
 	if player has epicer recipe, say "You already did what you needed with the net." instead;
-	say "You adjust the ten level net. You're not sure how to make it work, but with some common sense, you make it. The set o['] notes gives surprising help. You climb and swing from the trapeze to the other side--falling into the ten level net about a hundred or so times--but the hundred and first bam! You notice an epic-er recipe under some superfluous steno-nets.[paragraph break]It's a clear step up from the set o['] notes. Yay! There's also something labeled an elope pole, which you suspect may help you get away if and when you need to. Part of the net falls off, too. It'd make a nice tent: a tent net.";
+	say "You adjust the ten level net. You're not sure how to make it work, but with some common sense, you make it. The set o['] notes gives surprising help. You climb and swing from the trapeze to the other side--falling into the ten level net about a hundred or so times--but the hundred and first bam! You notice an epic-er recipe under some superfluous steno-nets.[paragraph break]It's a clear step up from the set o['] notes. Yay! There's also something labeled an elope pole, which you suspect may help you get away if and when you need to. Part of the net falls off, too. It'd make a nice tent: a tent net. You gather up a nice haul: pole, net, recipe.";
 	now player has elope pole;
 	now player has tent net;
 	now player has epicer recipe;
@@ -3045,7 +3057,7 @@ instead of doing something in Emo Dome when pulled-up is false:
 		if noun is not west and noun is not east:
 			say "You're scared those places would be even worse.";
 			try going emo-dir instead;
-		say "You run [if noun is emo-dir]away[else if noun is opposite of emo-dir] with extra speed.";
+		say "You run [if noun is emo-dir]away[else if noun is opposite of emo-dir] with extra speed[end if].[paragraph break]";
 		continue the action;
 	say "You keep running [emo-dir], instead. It's too whiny in here.";
 	try going emo-dir instead;
@@ -3240,7 +3252,9 @@ The roto motor is a thing. description is "It seems to have been saved from what
 
 chapter Demo Med
 
-a Demo Med is an edible thing in Dopy Pod. "The demo med that must not have worked for the Bond Nob sits here, on a pill lip.". description is "You're not sure what it could be. Xanax? Whatever, you feel calmer just looking at it."
+a Demo Med is an edible thing in Dopy Pod. "The demo med that must not have worked for the Bond Nob sits here, on a pill lip.". description is "You're not sure what it could be. Xanax? You don't want to risk it, though, because you're not sick."
+
+instead of eating demo med, say "That would only be a temporary reprieve from your troubles."
 
 the pill lip is peripheral scenery in Dopy Pod. "A Demo Med rests on the Pill Lip."
 
@@ -3250,7 +3264,7 @@ report taking demo med:
 
 book Pro Corp
 
-Pro Corp is north of Gross Org. It is in Yelpley. description is "A butene tub rests here. You probably don't want to mess with it, [if bald-lab is true]since you've yoinked enough[else]but there's other useful stuff here[end if]. The only way out is back south."
+Pro Corp is north of Gross Org. It is in Yelpley. description is "[if butene tub is in Pro Corp]A butene tub rests here. At least, that's what it says it is[else]Pro Corp is devoid of equipment now you blew up the butene tub[end if]. The only way out is back south."
 
 Pro Corp is above Gross Org.
 
@@ -3284,7 +3298,13 @@ understand "bald/lab" and "bald lab" as Pro Corp when bald-lab is true.
 
 chapter butene tub
 
-the butene tub is scenery in Pro Corp. "It smells pretty nice, though there's no visible way to operate it."
+the butene tub is scenery in Pro Corp. "It smells pretty nice. But it's been marked condemned, dangerously close to falling apart if you put too much weight on it. Who knows what sort of reactions could occur with the flammable butene if the tub collapsed to the dangerously sparky area below with special instruments and such? You can't just pour any old thing down![paragraph break]What sort of adventurer could ignore a warning like that? Especially in a game that's meant to be polite on the Zarfian cruelty scale!"
+
+[??It looks unstable? Part of the warning?]
+
+chapter gash sag
+
+the gash sag is peripheral scenery. "It has covered up your destruction of the butene tub."
 
 chapter resale laser
 
@@ -3370,7 +3390,9 @@ carry out gotoing:
 	if noun is location of player, say "Already there!";
 	unless goto-available, say "You're at a point in the game where goto isn't available." instead;
 	consider the avail-rule of noun;
-	if the rule failed, say "[noun] isn't available yet, so you can't go there." instead;
+	if the rule failed:
+		if noun is Emo Dome and Emo Dome is visited, say "You'd run away from the Emo Dome too quickly. You need a plan of attack to deal with it." instead;
+		say "[noun] isn't available yet, so you can't go there." instead;
 	if noun is not visited, say "You can reach [noun], but you haven't visited there, yet. So I'm going to be a stickler and say you have to get there first." instead;
 	consider the unavail-rule of noun;
 	if the rule succeeded, say "[noun] is no longer worth going to. You don't want to go back. Onward!" instead;
@@ -3598,34 +3620,6 @@ when play begins (this is the gender randomize rule):
 
 this is the gender-too-late rule:
 	if Art Xtra is visited, say "Too late to switch genders." instead;
-
-chapter ming
-
-ming is an action applying to nothing.
-
-understand the command "m" as something new.
-
-understand "m" as ming.
-
-carry out ming:
-	abide by the gender-too-late rule;
-	sort table of random authors in random order;
-	sort table of random authors in reverse can-m order;
-	the rule succeeds;
-
-chapter fing
-
-fing is an action applying to nothing.
-
-understand the command "f" as something new.
-
-understand "f" as fing.
-
-carry out fing:
-	abide by the gender-too-late rule;
-	sort table of random authors in random order;
-	sort table of random authors in reverse can-f order;
-	the rule succeeds;
 
 chapter gender-sort
 
@@ -3883,7 +3877,7 @@ this is the cold-loc rule:
 	if search-hint-room is true, the rule succeeds;
 	if King Nik is in Cold Loc, say "USE EPOCH COPE ON KING NIK." instead;
 	if wash saw is in My Gym, say "Get the wash saw from My Gym." instead;
-	if player has wash saw, say "USE WASH SAW ON PAST SAP." instead;
+	if sap-takeable is true, say "USE WASH SAW ON PAST SAP." instead;
 	if player does not have puce cup, say "You need the puce cup from the Emo Dome." instead;
 	say "USE PUCE CUP ON PAST SAP." instead;
 
@@ -3911,7 +3905,7 @@ this is the den-ivy-vined rule:
 	if maps-explained is true, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if porch crop is in Den Ivy Vined, say "USE WASH SAW ON PORCH CROP." instead;
-	if player does not have tent net, say "To make the Code Doc happy, there's something [if Trapeze Part is visited]west of Evaded Ave[else] in Trapeze Part[end if] you can get." instead;
+	if tent net is off-stage, say "To make the Code Doc happy, there's something [if Trapeze Part is visited]west of Evaded Ave[else] in Trapeze Part[end if] you can get." instead;
 	if player has tent net, say "USE TENT NET ON CODE DOC." instead;
 	if player does not have el doodle, say "There's something back in [Art Xtra] to pick up." instead;
 	if player does not have spa maps, say "You can change El Doodle into something the Code Doc can decipher." instead;
@@ -4339,15 +4333,15 @@ carry out slammammalsing:
 
 chapter stacking
 
-stacking is an action applying to nothing.
+stacking is an action applying to one thing.
 
-understand the command "stack cats" as something new.
+understand the command "stack" as something new.
 
-understand "stack cats" as stacking.
+understand "stack [something]" as stacking.
 
 carry out stacking:
-	if senile felines are moot, say "You already did." instead;
-	if player is not in Moo Room, say "Not here." instead;
+	if noun is not senile felines, say "Not worth stacking." instead;
+	unless the player's command matches the text "cats", say "Refer to the felines by a simpler synonym, and you've got it." instead;
 	say "You stack the cats so they can reach the late petal, but once you do, the top one bats it and it falls. They walk away, disinterested. But they still seemed to have fun. Well, cats are like that.";
 	moot senile felines;
 	moot late petal;
