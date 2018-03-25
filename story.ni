@@ -683,14 +683,15 @@ instead of smelling dork rod, say "You might expect a rod odor, but there isn't 
 
 instead of smelling butene tub, say "The butene tub smells kind of nice. Much nicer than a butt tub." instead;
 
-instead of smelling mush sum, say "Unsurprisingly, the mush sum emits a musk sum." instead;
+instead of smelling mush sum, say "Unsurprisingly, the mush sum emits an unavoidable musk sum." instead;
 
 instead of smelling troll ort, say "The troll ort emits a musk-sum which isn't unpleasant, but it's distinctive." instead;
 
 instead of smelling location of player:
 	if stinky knits are quicknear, try smelling stinky knits instead;
-	if player is in Swamp Maws or player is in Mire Rim, say "A morass aroma." instead;
 	if player is in Flu Gulf, try smelling mush sum instead;
+	if player is in Emo Dome or player is in Red Roses Order, say "Roses ... or ..." instead;
+	if player is in Swamp Maws or player is in Mire Rim, say "A morass aroma." instead;
 	if y-poopy, say "Whew! Worse than an emu fume!" instead;
 	if player has dork rod, try smelling dork rod instead;
 	if troll ort is quicknear, try smelling troll ort instead;
@@ -1203,7 +1204,9 @@ Bro Orb	Madam	"The Bro Orb might dissolve her, but you're not out to kill anyone
 yard ray	Diktat Kid	"The Diktat Kid laughs as you point the yard ray. 'Destroy me, but my work will remain!'"
 yard ray	Tru Hurt	"The Tru Hurt is dangerous, but maybe you should use the yard ray on something even more harmful."
 yard ray	Waster Fretsaw	"The Waster Fretsaw is dangerous, but maybe you should use the yard ray on something even more harmful."
-soot tattoos	DIFF ID	"You can just walk north to get through."
+gate tag	DIFF ID	"You wave the gate tag in front of the DIFF ID, which beeps for a second, then ... nothing. Maybe the gate tag (or its pattern) needs to be read a different way."
+soot tattoos	DIFF ID	"The Diff-ID doesn't respond. Maybe you need a way to put them on you, somehow."
+state tats	DIFF ID	"You can just walk north to get through."
 [zzfail]
 
 [below is something to cut and paste to the table of failed useons]
@@ -1291,7 +1294,7 @@ check going north in Fun Nuf:
 	if north tron is not in Fun Nuf, say "Not until you built the North-Tron." instead;
 	if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
 	if murdered rum is not moot, say "You have the yard ray, but it isn't, well, charged." instead;
-	if player does not have ME gem or player does not have Taboo Bat, say "You feel well equipped ... but well equipped enough?";
+	if player does not have ME gem or player does not have Taboo Bat, say "As you go north, you hear three voices. Perhaps the yard ray would work okay at first, but ... you get the feeling you may need some other stuff to take out EVERYBODY.";
 
 chapter Pact Cap
 
@@ -2237,7 +2240,7 @@ the tract cart is scenery in Worn Row.
 tract-trace is a truth state that varies.
 
 to say tract-status:
-	say "[if number of books in Worn Row is 1]almost empty[else]holding a few books[end if]"
+	say "[if number of books in Worn Row is 1]almost empty[else if number of books in Worn Row is 0]holding no books[else]holding a few books[end if]"
 
 definition: a book (called bo) is sober:
 	if bo is DWELT LEWD, no;
@@ -2731,7 +2734,7 @@ after going to Art Xtra when El Doodle is off-stage:
 
 chapter party trap
 
-the party trap is a thing. description is "It looks roughly like the notes from the trap art, but you don't need to worry about the details. Poking around would be dangerous. It looks You just hope it works right when you USE it. That would be cool. I mean, if you used it on things that deserved it.".
+the party trap is a thing. description is "It looks roughly like the notes from the trap art, and when you read it you note it's more powerful than a MICE-DECIM. You just hope it works right when you USE it. That would be cool. I mean, if you used it on things that deserved it.".
 
 chapter traping
 
@@ -2788,7 +2791,7 @@ check wearing the stinky knits: say "That's physically possible, but no. No way.
 
 check taking when player is in Gross Org and Ned is in Gross Org: say "Not with Ned around, you won't." instead;
 
-the etage gate is scenery in Gross Org. "It is locked and too strong to move."
+the etage gate is scenery in Gross Org. "It is locked and too strong to move. It's engraved with...hmm, roses, or..."
 
 instead of opening etage gate:
 	if player has Ye Key, try useoning Ye Key with etage gate instead;
@@ -2942,7 +2945,10 @@ The elope pole is a thing. description is "It looks foldable, maybe even separab
 
 book Yell Alley
 
-Yell Alley is east of Evaded Ave. It is in Yelpley. "[if girt rig is in Yell Alley]A girt rig blocks every way except back[else]The only way back is[end if] west. The way east is blocked by a [if navy van is in Yell Alley]navy van... you're not sure[else]bomb mob... so that's[end if] where the yelling is from."
+Yell Alley is east of Evaded Ave. It is in Yelpley. "[if girt rig is in Yell Alley]A girt rig blocks every way except back[else]The only way back is[end if] west. The way east is blocked by a [alley-e-block] where the yelling is from."
+
+to say alley-e-block:
+	say "[if navy van is in Yell Alley]navy van... you're not sure[else]bomb mob... so that's[end if]"
 
 chapter navy van
 
@@ -2995,7 +3001,7 @@ check taking TNT: say "The bomb mob would say a bit more than 'Yank? Nay!' You'd
 
 book Emo Dome
 
-Emo Dome is east of Yawn Way. It is in Yelpley. "You can go any direction here, and you sort of want to, because it's stuffy in here. [can-go-rro]."
+Emo Dome is east of Yawn Way. It is in Yelpley. "You can go any direction here, and you sort of want to, because it's stuffy in here, even if it smells nice. [can-go-rro]."
 
 to say can-go-rro:
 	if Red Roses Order is unvisited:
@@ -3166,7 +3172,7 @@ slate metals are scenery in Scrap Arcs. "You could probably carve something out 
 
 chapter Ye Key
 
-Ye Key is a thing. description is "Engraved YE KEY, it clearly looks important. Maybe it does not lead to Ye Fey or Ye Ley, but there are only so many locked places here, so you'll probably find what it can open."
+Ye Key is a thing. description is "Engraved YE KEY, it clearly looks important. It's carved with...well, roses, or ... you're not sure. Maybe it does not lead to Ye Fey or Ye Ley, but there are only so many locked places here, so you'll probably find what it can open."
 
 book Dopy Pod
 

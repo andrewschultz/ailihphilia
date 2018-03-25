@@ -14,6 +14,22 @@ The first run would've taken 2 days (brute force) but halfway through I figured 
 
 I have flashbacks here to CompSci courses where I thought, who would want to use a hash? Or I found those examples with people mapped to phone numbers really contrived. Now, though, I've used hashes so much, with this or my anagram games, it's just nice to know writing games has helped me grow.
 
+The game was complicated and nonlinear enough that a flowchart would be handy. I wanted invisiclues, as well as a walkthrough. The only problem was, what if I changed something?
+
+That's how my walkthrough verifier script was born. It compares my test walkthrough to the real walkthrough players got to the actual source. This had been a pie in the sky goal for my earlier games, and while Threediopolis/Fourdiopolis allowed me to make sure of the internal puzzle logic, here, I was worried of a few things: what if I changed an item name, or puzzle order, or where something was?
+
+It wasn't too bad, and I was able to make tweaks later. The thing was, many of the USE X ON Y that give points could be translated from
+
+trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
+
+It's not hard to convert that to
+
+USE (COLUMN 1 IN UPPER CASE) ON (COLUMN 2 IN UPPER CASE)
+
+Keeping the table in walkthrough order.
+
+A lot of extra stuff popped up too. Many 2-word phrases that were cool but just didn't fit. I realized book titles would be a perfect way to expand the universe. I had a notes file I organized, and I had a script to see if any 2-word palindromes had been used and I didn't know it. Slowly, some palindromes grew on me, and some dropped out, which left me with pretty clear paths to what details to add.
+
 ========
 
 Of course many two-word palindromes are either anagrams or almost anagrams, so I had a bit of a head start for this. Also, the utilities were easier to create. And I had a bona fide notes file to refer to. To which to refer.
