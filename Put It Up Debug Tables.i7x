@@ -45,7 +45,7 @@ part the code
 to next-rand (t - a table name):
 	choose row with tabnam of t in table of all randoms;
 	increment tabidx entry;
-	if tabidx entry > number of rows in tabnam entry:
+	if debug-state is true and tabidx entry > number of rows in tabnam entry:
 		say "(Cycling) ";
 		now tabidx entry is 1;
 	let Q be tabidx entry;

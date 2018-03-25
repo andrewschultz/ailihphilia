@@ -671,7 +671,7 @@ definition: a direction (called d) is viable:
 check going (this is the reject noncardinal directions rule):
 	if noun is diagonal, say "You don't need diagonal directions in this game." instead;
 	if noun is up or noun is down:
-		if the room noun of location of player is nowhere, say "You never need to go up or down in this game." instead;
+		if the room noun of location of player is nowhere, say "You never need to go up or down in this game, though sometimes they act as a backup to the main cardinal directions--for instance, to or from [if Mont Nom is visited] Mont Nom[else]a hill[end if]." instead;
 
 the reject noncardinal directions rule is listed first in the check going rulebook.
 
@@ -917,7 +917,7 @@ bunk nub	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching 
 party trap	stark rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
 EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff my parents told me I needed to one day. ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...I must leave and RAFT FAR back to South Ihtuos.'"
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
-wash saw	past sap	--	--	sap-loose rule	true	false	false	Grebeberg	"You hack away at the past sap with the wash saw, first squirting some loosening/thawing liquid. It's tricky, but the saw holds out, and with some perseverance, you're able to twist the sap off the rife fir."
+wash saw	past sap	--	sap-not-cut-yet rule	sap-loose rule	true	false	false	Grebeberg	"You hack away at the past sap with the wash saw, first squirting some loosening/thawing liquid. It's tricky, but the saw holds out, and with some perseverance, you're able to twist the sap off the rife fir."
 puce cup	past sap	--	check-sap-cup rule	sap-to-cup rule	false	false	false	--	"You pour some sap into the cup."
 puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"The past sap pours into the liar grail and exposes how bad the grail has been over the years. As it cracks, along with the wall it was attached to allow passage south, you snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL!"
 puce cup	dose sod	--	check-sod-cup rule	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
@@ -1038,6 +1038,12 @@ this is the ready-to-test rule:
 
 [??	say "That seems right, but you should probably go where there aren't many people. Like back to Fun [']Nuf.";]
 
+this is the sap-not-cut-yet rule:
+	if sap-takeable is true:
+		say "You already hacked enough sap off.";
+		the rule fails;
+	the rule succeeds;
+
 this is the sap-in-cup rule:
 	if puce cup is sappy, the rule succeeds;
 	say "[if puce cup is soddy]The sod doesn't seem to belong in the Liar Grail, but maybe something else does[else]The puce cup is empty[end if].";
@@ -1133,6 +1139,10 @@ this is the rebump-art-xtra rule:
 
 this is the sap-loose rule:
 	now sap-takeable is true;
+	if player has puce cup:
+		say "Hmm, the puce cup would be perfect to carry the past sap in[if cup is not empty], though you'd need to empty the cup, first[end if].";
+		the rule succeeds;
+	say "You don't want to take the sap now--you don't have a container that would hold it in the sticky warmth. But you've cut enough off the tree.";
 	the rule succeeds;
 
 this is the sap-to-cup rule:
@@ -1193,6 +1203,8 @@ this is the you-win rule: [xxwin]
 
 chapter failed useons
 
+[?? poo coop on, well, everything]
+
 [xxfail]
 table of specific use rejects
 use1	use2	babble
@@ -1203,6 +1215,8 @@ troll ort	kayo yak	"As you hold the troll ort out, the Kayo Yak butts your hand!
 Gorge Grog	yard ray	"The Gorge Grog is pretty strong stuff, but you may need something even stronger."
 Rep Popper	Yuge Guy	"It seems like the Rep Popper should work, but it doesn't, quite. Maybe there is something that is giving the Yuge Guy all his rep?"
 Bro Orb	Madam	"The Bro Orb might dissolve her, but you're not out to kill anyone. Still, close."
+poo coop	Yuge Guy	"That could be fun, but he might be normalised to the stuff in the coop."
+poo coop	Liar Grail	"Maybe if the contents came from a bull and not a gnu, it would be appropriate."
 yard ray	Diktat Kid	"The Diktat Kid laughs as you point the yard ray. 'Destroy me, but my work will remain!'"
 yard ray	Tru Hurt	"The Tru Hurt is dangerous, but maybe you should use the yard ray on something even more harmful."
 yard ray	Waster Fretsaw	"The Waster Fretsaw is dangerous, but maybe you should use the yard ray on something even more harmful."
@@ -1355,6 +1369,7 @@ carry out paceing:
 		say "[if mrlp is not Grebeberg]As you flip the cap, a voice booms 'WALK: LAW.' Perhaps you need to change it in a slower area.[else]You suddenly feel [pace-of]![end if]";
 	else:
 		say "[if mrlp is not Grebeberg]As you flip the cap, a voice booms 'WALK: LAW.' Perhaps you need to change it in a slower area. Like Grebeberg to the west?[else]You suddenly feel [pace-of].[end if]";
+	follow the notify score changes rule;
 	the rule succeeds;
 
 to say pace-of:
@@ -1638,7 +1653,7 @@ the gift fig is a solid ingredient. description is "Well, it's a fig."
 
 book Cold Loc
 
-Cold Loc is north of Seer Trees. It is in Grebeberg. "It's kind of dewed, here. A rift fir that blocks a steep drop west. [if sword rows are moot]The past sap you cut from it is lumped on the ground[else]Some past sap clings to the rift fir[end if]."
+Cold Loc is north of Seer Trees. It is in Grebeberg. "It's kind of dewed, here. A rift fir that blocks a steep drop west. [if sap-takeable is true]The past sap you cut from it is lumped on the ground[else]Some past sap clings to the rift fir[end if]."
 
 check going west in Cold Loc: say "The rift fir blocks the way to much more dangerous places." instead;
 
@@ -3699,7 +3714,7 @@ check aiding:
 	abide by the done-rule of location of player;
 	consider the done-for-good rule of location of player;
 	let all-done-here be whether or not the rule succeeded;
-	say "You're done here, for [if all-done-here is true]good[else]now[end if]. Would you like to be pointed to somewhere else relevant?";
+	say "You're done here, for [if all-done-here is true]good[else]now[end if]. Would you like to be pointed to somewhere else relevant?"; [?? test case: remove Yuge Guy check in Sneer Greens but have him around. I should see an error]
 	unless the player yes-consents, say "Okay." instead;
 	now search-hint-room is true;
 	repeat with Q running through L:
@@ -4120,6 +4135,7 @@ this is the sneer-greens rule:
 	if search-hint-room is true, the rule succeeds;
 	if player has rep popper, say "USE REP POPPER ON YUGE GUY." instead;
 	if dork rod is moot, say "You can take the item you need to defeat the Yuge Guy." instead;
+	if Yuge Guy is in Sneer Greens, say "[one of]You need something from elsewhere to defeat the Yuge Guy. AID again to see where[or]What you need to defeat the Yuge Guy is in Yell Alley[stopping]."
 
 section Swamp Maws rule
 
