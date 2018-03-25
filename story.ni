@@ -217,7 +217,7 @@ check requesting the score:
 			say "You have [Q] roving last lousy point[unless Q is 1]s[end if] left."; [?? test roving LLPs]
 	if player has Set O Notes and north tron is off-stage:
 		let ni be number of tronparts carried by the player;
-		say "You also have [ni] of [number of tronparts] piece[if ni is not 1]s[end if] of the North Tron, according to the epicer recipe.";
+		say "You also have [ni] of [number of tronparts] piece[if ni is not 1]s[end if] of the North-Tron, according to the epicer recipe.";
 	if mist-found > 0, say "[line break]You've also found [mist-found] of [number of entries in checkoffs] palindromes that were there but not critical to the story. [if mist-found * 2 > number of entries in checkoffs]Very impressive![else]Don't knock yourself out trying to find them all.[end if]";
 	the rule succeeds;
 
@@ -493,7 +493,7 @@ after printing the name of pact cap while taking inventory: if cap-pace is true,
 
 after printing the name of yard ray while taking inventory: say " ([unless murdered rum is moot]un[end if]charged)".
 
-after printing the name of spa maps while taking inventory: say "([if maps-explained is true]deciphered[else]indecipherable[end if])".
+after printing the name of spa maps while taking inventory: say " ([if maps-explained is true]deciphered[else]indecipherable[end if])".
 
 after printing the name of the puce cup while taking inventory:
 	if puce cup is sappy, say " (full of past sap)";
@@ -767,7 +767,7 @@ understand "use [something] with [something]" as useoning it with.
 to build-the-tron:
 	move north tron to Fun Nuf;
 	now all tronparts are in devreserved; [ic]
-	say "You build the north tron with the instructions from the epicer recipe. It points north and blasts a hole with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break]Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
+	say "You build the North-Tron with the instructions from the epicer recipe. It points north and blasts a hole with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break]Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
 	moot epicer recipe;
 	now Dirge Grid is mapped north of Fun Nuf;
 	now Fun Nuf is mapped south of Dirge Grid;
@@ -792,7 +792,7 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 		moot i2;
 		score-inc; [Grebeberg/USE GIFT FIG ON MAYO YAM&USE SNACK CANS ON UFO TOFU]
 		if chef-yet is true:
-			say "A martini tram rattles out from behind the Ark of Okra. Guess you need drinks with your, uh, food![paragraph break][if player does not have the epicer recipe]You're shocked to see it, and it rollls further down, over the turf rut to Dumb Mud, then back through the Seer Trees to Fun [']Nuf[else]But you're prepared for it, with your epicer recipe. You move it back to Fun [']Nuf, where it looks like a good base structure for your North Tron[end if]..";
+			say "A martini tram rattles out from behind the Ark of Okra. Guess you need drinks with your, uh, food![paragraph break][if player does not have the epicer recipe]You're shocked to see it, and it rollls further down, over the turf rut to Dumb Mud, then back through the Seer Trees to Fun [']Nuf[else]But you're prepared for it, with your epicer recipe. You move it back to Fun [']Nuf, where it looks like a good base structure for your North-Tron[end if].";
 			move martini tram to Fun Nuf;
 			move player to Fun Nuf, without printing a room description;
 			say "[b]Fun [']Nuf[r][paragraph break]";
@@ -904,7 +904,7 @@ Pact Cap	"Your pact cap is fine where it is, on your head."
 epicer recipe	"It's meant for referral."
 Darer Ad	"It was only useful to sucker you into this mess."
 Set O Notes	"It's useful for an overview, but not for DOING anything."
-north tron	"The north tron's already done its job."
+north tron	"The North-Tron's already done its job."
 
 [the table of useons approximately follows not only the test commands but also the walkthrough]
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
@@ -919,7 +919,7 @@ EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	Grebeberg
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
 wash saw	past sap	--	--	sap-loose rule	true	false	false	Grebeberg	"You hack away at the past sap with the wash saw, first squirting some loosening/thawing liquid. It's tricky, but the saw holds out, and with some perseverance, you're able to twist the sap off the rife fir."
 puce cup	past sap	--	check-sap-cup rule	sap-to-cup rule	false	false	false	--	"You pour some sap into the cup."
-puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"The past sap pours into the liar grail and exposes how bad the grail has been over the years. As it cracks, along with the wall it was attached to to allow passage south, you snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL!"
+puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"The past sap pours into the liar grail and exposes how bad the grail has been over the years. As it cracks, along with the wall it was attached to allow passage south, you snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL!"
 puce cup	dose sod	--	check-sod-cup rule	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
 puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley	"You give the Bond Nob the puce cup. Gulp! Gulp! 'Well... I have a lot of bar crawling to do. Can't hang around. I'm the Bond Nob, not the bonded nob. Here's some Elan Ale for you, to celebrate how cool you are for helping. Oh, and enjoy my home to the west. I'm off: Tope Depot, Nigh Gin, Sara's, Soto's, Pat's Tap...'"
 stamp mats	slate metals	Ye Key	--	--	true	true	false	Yelpley	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY. You find it hard to pull the stamp mats out, and when you take YE KEY, the mats quickly morph into the slate metals. Eh, well. Less inventory to worry about."
@@ -945,7 +945,7 @@ el doodle	edits tide	spa maps	--	rahs-too rule	true	true	false	Grebeberg	"The ed
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Calcific Lac. As it gets near and bends away, you jump off, using the buoy to paddle and float back to Calcific Lac."
 dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
 tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Together, you figure out what to do to make the tent net proper cover for the All-Ivy Villa. 'Tie it ... tie it ...'[paragraph break]Once the work is done, the Code Doc thanks you and offers to share some knowledge in return, whenever."
-spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my math tam for this one. One second, let's see--Aha! Oho...' and desipte a minor pupil slipup, it soon makes complete sense to you."
+spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my math tam for this one. One second, let's see--Aha! Oho...' and despite a minor pupil slip-up, it soon makes complete sense to you."
 spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	"You stick some strands of yahoo hay into the damaged end of the dork rod. It's now a moor broom!"
 troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the stinky knits, but still quite distinctive." [b4:pace cap] [af:yak okay]
@@ -1137,6 +1137,7 @@ this is the sap-loose rule:
 
 this is the sap-to-cup rule:
 	now puce cup is sappy;
+	now puce-ever is true;
 	repeat through table of useons:
 		if use1 entry is puce cup and use2 entry is past sap:
 			now sco entry is false;
@@ -1149,6 +1150,7 @@ this is the shift-dumb-mud rule:
 
 this is the sod-to-cup rule:
 	now puce cup is soddy;
+	now puce-ever is true;
 	repeat through table of useons:
 		if use1 entry is puce cup and use2 entry is dose sod:
 			now sco entry is false;
@@ -1224,14 +1226,16 @@ part Dim Mid region
 
 book Fun Nuf
 
-Fun Nuf is a room in Dim Mid. "[if elite tile is in Fun Nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what is the various directions[xit-ave][end if][if north tron is in Fun Nuf]. Also, the North Tron has carved a passage north[end if]."
+Fun Nuf is a room in Dim Mid. "[if elite tile is in Fun Nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what is the various directions[xit-ave][end if][if north tron is in Fun Nuf]. Also, the North-Tron has carved a passage north[end if]."
 
 to say xit-ave:
 	say ". The [if tix exit is in Fun Nuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]"
 
 chapter north tron
 
-the north tron is scenery. "[if Dirge Grid is visited]The north tron is useless now.[else]It seems to have cracked open a passage north here in Fun [']Nuf. Do you have the guts to follow it to your destiny?[end if]"
+the north tron is scenery. "[if Dirge Grid is visited]The North-Tron is useless now.[else]It seems to have cracked open a passage north here in Fun [']Nuf. Do you have the guts to follow it to your destiny?[end if]"
+
+printed name of north tron is "North-Tron".
 
 chapter Flee Elf
 
@@ -1374,7 +1378,7 @@ after examining the Darer Ad for the first time:
 
 chapter Set O Notes
 
-the Set O Notes is a proper-named helpdoc. description is "There's some general vague advice about making a North Tron to defeat the Diktat Kid, but first you'll have to defeat [b]Madam[r], as well as the [b]Yuge Guy, Evil Clive[r].[paragraph break]You notice that there is a guh-thug at various places that doesn't quite fit in, and you can probably guess what to do there. [thug-report].[paragraph break]Also scribbled, in the center, is FUN [']NUF with TRI-GIRT below that. [paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
+the Set O Notes is a proper-named helpdoc. description is "There's some general vague advice about making a North-Tron to defeat the Diktat Kid, but first you'll have to defeat [b]Madam[r], as well as the [b]Yuge Guy, Evil Clive[r].[paragraph break]You notice that there is a guh-thug at various places that doesn't quite fit in, and you can probably guess what to do there. [thug-report].[paragraph break]Also scribbled, in the center, is FUN [']NUF with TRI-GIRT below that. [paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
 
 x-notes-yet is a truth state that varies.
 
@@ -1427,7 +1431,7 @@ after going to Fun Nuf when Diktat Kid is moot:
 
 book Dirge Grid
 
-Dirge Grid is a room in Dim Mid. "The only way back is south[if Diktat Kid is in Dirge Grid], but you can't really run away from the Diktat Kid. A Tru Hurt is pointed at you, but if you deal with the Kid, that won't matter.[else], and you might as well go that way, now you've vanquished the Diktat Kid. Saner Arenas surround you [end if]"
+Dirge Grid is a room in Dim Mid. "The only way back is south[if Diktat Kid is in Dirge Grid], but you can't really run away from the Diktat Kid. A Tru Hurt is pointed at you, but if you deal with the Kid, that won't matter[else], and you might as well go that way, now you've vanquished the Diktat Kid. Saner Arenas surround you[end if]."
 
 check going to Dirge Grid: if test set is not moot, say "[if player does not have yard ray]You don't have an adequate weapon[else]You need to get some practice with the Yard Ray before going north[end if]." instead;
 
@@ -1553,7 +1557,7 @@ Waster Fretsaw	"[rediv-instead of waster fretsaw]."
 saner arenas	"It's good the saner arenas are there, but you don't need to mess with them."
 
 to say rediv-instead of (th - a thing):
-	say "While the [th] is worrisome, it's clearly not as dangerous as the Redivider."
+	say "While the [th] is worrisome, it's clearly not as dangerous as the Redivider"
 
 chapter Verses Rev
 
@@ -1652,7 +1656,10 @@ instead of taking the past sap: say "It'd get sticky on your fingers. You need s
 
 instead of doing something with past sap:
 	if action is procedural, continue the action;
-	say "[if liar grail is moot]With the liar grail gone, you don't want to have to deal with the past sap again[else]The past sap might be useful, but you need a way to take it, first[end if]."
+	say "[if liar grail is moot]With the liar grail gone, you don't want to have to deal with the past sap again[else]The past sap might be useful, but you [how-take-sap[end if]."
+
+to say how-take-sap:
+	say "might [if puce-ever is true]want to USE the cup to hold it[else]need something to carry it in. It's sticky[end if]"
 
 sap-takeable is a truth state that varies.
 
@@ -2123,11 +2130,13 @@ the ME gem is a thing. description is "You feel a strong urge to keep this and n
 
 book Apse Spa
 
-Apse Spa is east of Cold Loc. It is in Grebeberg. "The Apse Spa is covered with dose sod, which you can't take--you're not sick--but it looks beautiful. Pool gloop and Go-By Bog block pretty much every way except back west[if sage gas is off-stage]. You could traverse it, if you knew what you were doing[else]You already went through it, though[end if]. There are also spa taps here you shouldn't mess with, since you're not a paying customer."
+Apse Spa is east of Cold Loc. It is in Grebeberg. "The Apse Spa is covered with dose sod, which you don't need for yourself--you're not sick--but it looks beautiful. Pool gloop and Go-By Bog block pretty much every way except back west. You [if sage gas is off-stage]could traverse it, if you knew what you were doing[else]already went through it, though[end if]. There are also spa taps here you shouldn't mess with, since you're not a paying customer."
 
 chapter dose sod
 
 the dose sod is scenery in Apse Spa. "It looks ucky, but given you're in an Apse Spa, it may have health benefits for those that need them."
+
+check taking dose sod: say "It's pretty slimy. And if it has curative properties, that'd be canceled out by your germs carrying it." instead;
 
 chapter go-by bog
 
@@ -3073,6 +3082,8 @@ report taking puce cup: say "Emo swag! Awesome!"
 
 the puce cup can be empty, sappy or soddy. the puce cup is empty.
 
+puce-ever is a truth state that varies.
+
 understand "purist sirup" and "purist/sirup" as puce cup when puce cup is sappy and player is not in Cold Loc.
 
 understand "dose sod" as puce cup when puce cup is soddy and player is not in Apse Spa.
@@ -3132,7 +3143,7 @@ check going south in Swept Pews:
 
 chapter liar grail
 
-The Liar Grail is a thing in Swept Pews. description is "It's carved with 'NIP IN? NOT ON!' If you hadn't examined it, you wouldn't think there might be a passage to the south, but now that you have, you consider the possibility. Either way, it annoys you enough to want to get rid of the liar grail. Lies are sometimes self-defeating like that". "A liar grail is embedded in the south wall, aw."
+The Liar Grail is a thing in Swept Pews. description is "It's carved with 'NIP IN? NOT ON!' If you hadn't examined it, you wouldn't think there might be a passage to the south, but now that you have, you consider the possibility. Either way, it annoys you enough to want to get rid of the liar grail. Lies are sometimes self-defeating like that.". "A liar grail is embedded in the south wall, aw."
 
 check taking liar grail: say "A small voice cries 'Da cad! Da cad!' You probably don't want the liar grail corrupting you." instead;
 
