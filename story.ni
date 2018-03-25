@@ -440,28 +440,10 @@ carry out seebeesing:
 	now bees-seen is true;
 	the rule succeeds;
 
-chapter refering / thinking
-
-refer-bonus is a truth state that varies.
-
-refering is an action applying to nothing.
-
-understand the command "refer" as something new.
-
-understand "refer" as refering.
-
-carry out refering:
-	if refer-bonus is false:
-		say "Yes! That's a slightly more appropriate way to think, here.";
-		abide by the LLP rule; [REFER]
-		now refer-bonus is true;
-	try thinking instead;
+chapter thinking
 
 instead of thinking:
-	say "[if refer-bonus is false]There might be a more appropriate (five-letter) way to think, given the environs[else]You think for a bit[end if].";
-	if pace-prev is true, say "You can use the PACE CAP somewhere.";
-	if cap-ever-pace is true, say "You haven't figured where to PACE CAP, yet.";
-	let LLP-yet be false;
+	say "A knihtg (sic) appears and redirects you to the AID command.";
 	repeat through table of last lousy points:
 		if mclu entry is true:
 			consider the dorule entry;
@@ -470,6 +452,7 @@ instead of thinking:
 					now LLP-yet is true;
 					say "LAST LOUSY POINTS NOTES:[line break]";
 				say "[cluey entry][line break]";
+	if LLP-yet is false, say "You don't have any last lousy points left to nail down."
 
 chapter inventory
 
@@ -558,23 +541,43 @@ understand "verb" as verbing.
 understand "v" as verbing.
 
 carry out verbing:
-	say "The four basic directions ([b]N, S, E, W[r]) are the main ones, along with [b]USE[r], in order to get through the game. Also, in some places, specific verbs will be needed. None are terribly long, and---well, there is a pattern to them.";
+	say "The four basic directions ([b]N, S, E, W[r]) are the main ones, along with [b]USE[r], in order to get through the game. Also, in some places, specific verbs will be needed. None are terribly long, and---well, there is a thematic pattern to them.";
 	say "[line break]Standard verbs like [b]X[r] ([b]EXAMINE[r]) and [b]LOOK[r] also work.";
 	say "[line break][b]GT[r] or [b]GO TO[r] lets you go to a room where you've been before.";
-	say "[line break][b]THINK[r] gives very general hints.";
 	say "[line break][b]T[r] or [b]TALK TO[r] talks to someone. You don't need to, to win the game, but there you are.";
 	say "[line break][b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
-	say "[line break][b]AID[r] gives you hints for where you are. [b]ABOUT[r] and [b]CREDITS[r] tell about the game.";
-	say "[line break]Many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy.";
+	say "[line break][b]AID[r] gives you hints for where you are. [b]SCORE[r] tracks the score. [b]ABOUT[r] and [b]CREDITS[r] tell about the game.";
 	if wr-short-note is true and player is in Worn Row and Worn Row is worky, say "[line break][b]REV[r], [b]ROT[r] and [b]REI[r] use an item on the reviver, rotator and reifier, respectively.";
 	if in-beta is true:
+		say "[line break](start beta commands)";
 		say "[line break][b]RR[r] lets you try all three items in the Word Row machines. If one nets a point, it goes last.";
-		say "[line break][b]ENDGAME[r] kicks you to the endgame, where you have all the weapons to win the game, though you will be limited to Fun [']Nuf and the Dirge Grid.";
+		say "[line break][b]ENDGAME[r] kicks you to the endgame, where you have all the weapons to win the game, though you will be limited to Fun [']Nuf and the Dirge Grid. It will be superseded by REV OVER.";
+		say "[line break](end beta commands)";
 	if debug-state is true:
-		say "[line break]WIN lets you win, PER describes peripheral things, and IA flags everything without an initial appearance.";
+		say "[line break]PROGRAMMER TESTING COMMANDS: WIN lets you win, PER describes peripheral things, and IA flags everything without an initial appearance.";
+	if cur-points of Odd Do < max-points of Odd Do:
+		say "[line break]There are also a few guess-the-verb bonus points that are hidden. Some relate to objects or people that need help but can't help you, and some are riffs on standard commands. [if refer-bonus is false]There's a different way to revisit, rehash or recap this very command, for example[else]For instance, you got REFER as VERBS[end if]".
+	say "[line break]Also, many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy. If you miss them, you'll see the entire list at the end.";
 	the rule succeeds;
 
 wr-short-note is a truth state that varies.
+
+section refering
+
+refer-bonus is a truth state that varies.
+
+refering is an action applying to nothing.
+
+understand the command "refer" as something new.
+
+understand "refer" as refering.
+
+carry out refering:
+	if refer-bonus is false:
+		say "Yes! That's a slightly more appropriate way to look at the verb list, here.";
+		abide by the LLP rule; [REFER]
+		now refer-bonus is true;
+	try verbing instead;
 
 chapter ting
 
@@ -595,6 +598,10 @@ carry out talktoing:
 	the rule succeeds. [see volume dialogue for all the specifics]
 
 a person has text called talk-text.
+
+instead of asking it about:
+	say "[one of]You don't ever need to ask about specific subjects. [or][stopping]TALKing instead.[paragraph break]";
+	try talking to the noun instead;
 
 chapter drinking
 
@@ -698,15 +705,22 @@ instead of smelling location of player:
 	if player is in Flu Gulf, try smelling mush sum instead;
 	if player is in Emo Dome or player is in Red Roses Order, say "Roses ... or ..." instead;
 	if player is in Swamp Maws or player is in Mire Rim, say "A morass aroma." instead;
-	if y-poopy, say "Whew! Worse than an emu fume!" instead;
+	if y-poopy, say "Whew! The gnu dung [if gnu dung is moot]in the poo coop[end if] is worse than an emu fume!" instead;
 	if player has dork rod, try smelling dork rod instead;
 	if troll ort is quicknear, try smelling troll ort instead;
 	if player is in Moo Room, say "Hay! Ah!" instead;
 	if player is in Deft Fed, say "Ham?! Ah!" instead;
+	if player is in Mont Nom, say "Everything smells delicious. Life is good[if Ian is in Mont Nom], even with Ian around[end if]." instead;
 	if player is in Red Roses Order or player is in Emo Dome, say "You smell roses. Weird." instead;
 	if player is in Pro Corp and butene tub is in Pro Corp, try smelling butene tub instead;
 	if player is in Sneer Greens and Yuge Guy is in Sneer Greens, say "You smell an amoral aroma." instead;
 	continue the action;
+
+instead of smelling an ingredient:
+	say "You didn't expect [the noun] would smell this nice, but maybe that is the magic of Mont Nom. You are feeling a bit hungry." instead;
+	if noun is snack cans, say "Delicious, if not nutritious." instead;
+	if noun is gift fig, say "Nice and fruity and not too young or ripe." instead;
+	say "It smells a bit better than it looks. Maybe it could be used as a condiment to spice up 'real' foods, in the right place."
 
 instead of smelling, say "Noses, on[one of]! (you don't need to smell anything in this game, thoiugh some specific items give silly text.)[or][stopping]!"
 
@@ -1024,7 +1038,7 @@ this is the maps-still-confusing rule:
 		say "You already got the Code Doc to decipher the spa maps.";
 		the rule fails;
 	if tent net is not moot:
-		say "'I might, but I need some help here first, to make my home here properly homey.'";
+		say "'I might, but I need some help here first, to make my home here properly homey. I've got everything except a roof.'";
 		the rule fails;
 	the rule succeeds;
 
@@ -1380,9 +1394,9 @@ carry out paceing:
 		reg-inc Dim Mid; [pace cap]
 		now cap-ever-pace is true;
 		now pace-prev is false;
-		say "[if mrlp is not Grebeberg]As you flip the cap, a voice booms 'WALK: LAW.' Perhaps you need to change it in a slower area.[else]You suddenly feel [pace-of]![end if]";
+		say "[if mrlp is not Grebeberg]As you flip the cap, a voice booms 'WALK: LAW.' You decide to be, um, civic. Perhaps you need to change it in a slower area.[else]You suddenly feel [pace-of]![end if]";
 	else:
-		say "[if mrlp is not Grebeberg]As you flip the cap, a voice booms 'WALK: LAW.' Perhaps you need to change it in a slower area. Like Grebeberg to the west?[else]You suddenly feel [pace-of].[end if]";
+		say "[if mrlp is not Grebeberg]As you flip the cap, a voice booms 'WALK: LAW.' You decide to be, um, civic. Perhaps you need to change it in a slower area. Like Grebeberg to the west?[else]You suddenly feel [pace-of].[end if]";
 	follow the notify score changes rule;
 	the rule succeeds;
 
@@ -1390,7 +1404,7 @@ to say pace-of:
 	say "[if cap-pace is true]full of deep speed[else]slower[end if]"
 
 check going to Fun Nuf:
-	if cap-pace is true, say "From the east, a voice booms 'WALK: LAW.' You adjust your pace cap back to a pact cap.";
+	if cap-pace is true, say "From the east, a voice booms 'WALK: LAW.' You decide to be, um, civic. You adjust your pace cap back to a pact cap.";
 	now cap-pace is false;
 
 [helpdocs below]
@@ -1865,6 +1879,13 @@ Mont Nom is south of Dumb Mud. It is in Grebeberg. "An ark of okra blocks passag
 
 Mont Nom is above Dumb Mud.
 
+after going to Mont Nom:
+	if number of carried ingredients is 1:
+		say "Your [random carried ingredient] smells a bit nicer, here.";
+	else if number of carried ingredients > 1:
+		say "The smells from your [list of carried ingredients] mix[one of] unexpectedly pleasantly[or] pleasantly, again,[stopping] here.";
+	continue the action:
+
 chapter ark of okra
 
 The ark of okra is scenery in Mont Nom. "You always found okra, or the idea, icky, but the ark is beautiful enough, you sort of wonder how it'd taste. Here you can see DO OFT FOOD inscribed on it. Maybe if you LISTEN you'll hear an equally weird and vaguely useful message."
@@ -2002,7 +2023,7 @@ some Eroded Ore is a thing. description is "You're no expert metallurgist, but i
 
 book Den Ivy Vined
 
-Den Ivy Vined is south of Mire Rim. It is in Grebeberg. "This is a homey little north-south passage, [if tent net is moot]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet[end if][if-porch]."
+Den Ivy Vined is south of Mire Rim. It is in Grebeberg. "This is a homey little north-south passage, [if tent net is moot]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet. Having some sort of roof might make it even homier[end if][if-porch]."
 
 printed name of Den Ivy Vined is "[if tent net is moot]Den, Ivy-Vined[else]All-Ivy Villa[end if]".
 
@@ -2328,11 +2349,14 @@ understand "machine" as a workable.
 
 [?? if the player's command includes "machine" and the player is in work row, say "You need to refer to it individually."]
 
-description of a workable is "[if useleft of item described is 0]It's broken now, but you got good use out of it[else if useleft of item described is 3]The only way you can tell it from the other two is because [printed name of item described in upper case] is printed on the front[else]Since you had success using [the item described], you feel more comfortable using it again[end if]."
+check examining a workable:
+	if useleft of item described is 0, say "It's broken now, but you got good use out of it." instead;
 
-the reifier is a workable. useleft is 3. understand "rei" as reifier.
-the reviver is a workable. useleft is 3. understand "rev" as reviver.
-the rotator is a workable. useleft is 3. understand "rot" as rotator. understand "ro" as rotator.
+after examining a workable: say "[if useleft of noun is 3]Oh, the word [printed name of item described in upper case] is printed on the front[else]Since you had success using [the item described], you feel more comfortable using it again[end if]."
+
+the reifier is a workable. useleft is 3. understand "rei" as reifier. description is "The most esoteric of the three machines, but if you put something in it, maybe it could become something much better."
+the reviver is a workable. useleft is 3. understand "rev" as reviver. description of reviver is "It reads FIX IF OLD, LO! Sounds like beaten-up items could go here."
+the rotator is a workable. useleft is 3. understand "rot" as rotator. understand "ro" as rotator. description of rotator is "It is circular, like a washing machine. It can probably can shake up items you can't. Maybe split them open to find neat things."
 
 rule for supplying a missing second noun when useoning:
 	if noun is a workable:
@@ -2588,11 +2612,10 @@ carry out workrowing:
 	clear-worn-row;
 	now Worn Row is worky;
 	if ever-workrow is false:
-		say "VLABADABOOM! [Worn Row] shakes, and you're thrown to the ground. When you get up, things look different.";
+		say "VLABADABOOM! [Worn Row] shakes, and you're thrown to the ground. When you get up, things look different. There are three machines in front of you. One looks particularly odd, another is spinning like a washer or dryer, and the third--well, it looks like one of those cryogenic things to store frozen bodies for resurrection. A quick glance shows they are a rotator, reifier and reviver, in that order.";
 		score-inc; [Yelpley/work row]
 	else:
-		say "[Worn Row] returns once again to Work Row. It's a little less disorienting this time around.";
-	say "[line break][one of]Those three machines re[or]Three machines, once again, [stopping]appear[if Worn Row is wordy], replacing the tract cart[end if]."; [?? what if you have destroyed the machines]
+		say "[Worn Row] returns once again to Work Row. It's a little less disorienting this time around. [if test set is not off-stage]The reifier, reviver and rotator reappear[else if test set is in Worn Row]The test set re-appears[else]Work row is still barren, though[end if].";
 	now ever-workrow is true;
 	now all workables are in Worn Row;
 	now all books in Worn Row are in TempMet;
@@ -2950,7 +2973,7 @@ the ten level net is scenery in Trapeze Part. "[if epicer recipe is off-stage]It
 
 chapter tent net
 
-the tent net is a thing. description is "It doesn't have any pegs or anything to attach it to, to make a structure. But maybe it could complete a home somewhere."
+the tent net is a thing. description is "It's tagged as a 'Tent o['] Dot Net,' which seems to be overdoing the trendy-to-techies angle. All the same, though it can't make a structure on its own, it could probably let just the right amount of light in a home that needs a roof."
 
 chapter epicer recipe
 
@@ -3599,7 +3622,7 @@ after going when being-chased is true:
 check going when being-chased is true:
 	if last-chase-direction is opposite of noun, say "The [chase-person] is blocking you from the [noun]. You try a gazelle-zag but don't have the moves." instead;
 
-check going to Fun Nuf when being-chased is true: say "You feel yourself running up against an invisible barrier. Apparently, running away that way from the [chase-person] won't help." instead;
+check going to Fun Nuf when being-chased is true: say "A bar crab suddenly appears! It's a hologram, but enough to stun you[one of][or] again[stopping]. Apparently, running away that way from the [chase-person] won't help. Maybe the Flee Elf worries you'll go crashing through the Tix Exit in panic, or something." instead;
 
 the Psi Wisp is a chaser in Pro Corp. chase-room of Psi Wisp is Pro Corp. description is "The Psi Wisp is very red, and it pulses fervently. If it had feelings, you'd be pretty sure it didn't like you.". "[one of]A Psi Wisp pulses here before lurching alarmingly in your direction![or]The Psi Wisp is still chasing you![stopping]".
 
