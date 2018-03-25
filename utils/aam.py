@@ -38,22 +38,26 @@ def num_of(a):
         return 0
 
 def mistake_check(reord):
+    old_school_yet = True
     local_copy_back = True
     cur_num = (0 if reord else x)
     filre = ['fill', 'reorder']
     fout = open(mis2, "w", newline='\n')
     with open(mis) as file:
         for line in file:
-            if re.search("^understand.*as a mistake", line):
-                if reord:
-                    cur_num = cur_num + 1
-                    line = change_mis(line, cur_num)
-                else:
-                    if not re.search("mis of [0-9]+", line):
+            if 'volume old school' in line:
+                old_school_yet = True
+            if old_school_yet is false:
+                if re.search("^understand.*as a mistake", line):
+                    if reord:
                         cur_num = cur_num + 1
-                        line = insert_num(line, cur_num)
-            elif re.search("is a list of truth state", line):
-                line = "checkoffs is a list of truth states variable. checkoffs is {{ {:s} }}.\n".format(', '.join(['false'] * cur_num))
+                        line = change_mis(line, cur_num)
+                    else:
+                        if not re.search("mis of [0-9]+", line):
+                            cur_num = cur_num + 1
+                            line = insert_num(line, cur_num)
+                elif re.search("is a list of truth state", line):
+                    line = "checkoffs is a list of truth states variable. checkoffs is {{ {:s} }}.\n".format(', '.join(['false'] * cur_num))
             fout.write(line)
     fout.close()
     print("RESULTS FOR", filre[reord], "........")

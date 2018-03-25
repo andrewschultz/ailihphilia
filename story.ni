@@ -106,7 +106,6 @@ volume parser simplification
 Understand the command "slice" as something new.
 Understand the command "prune" as something new.
 Understand the command "chop" as something new.
-
 Understand the command "kiss" as something new.
 Understand the command "hug" as something new.
 Understand the command "embrace" as something new.
@@ -119,7 +118,6 @@ understand the command "hop" as something new.
 understand the command "skip" as something new.
 understand the command "sip" as something new.
 understand the command "swallow" as something new.
-
 Understand the command "shine" as something new.
 Understand the command "polish" as something new.
 Understand the command "sweep" as something new.
@@ -128,7 +126,6 @@ Understand the command "dust" as something new.
 Understand the command "wipe" as something new.
 Understand the command "scrub" as something new.
 Understand the command "rub" as something new.
-
 Understand the command "fight" as something new.
 Understand the command "torture" as something new.
 Understand the command "wreck" as something new.
@@ -139,6 +136,15 @@ Understand the command "punch" as something new.
 understand the command "thump" as something new.
 understand the command "wave" as something new.
 understand the command "sorry" as something new.
+
+chapter oldschooling
+
+understand the command "slice/prune/chop/kiss/hug/embrace/buy/purchase/buy/light/jump/hop/skip/sip/swallow/shine/polish/sweep/clean/dust/wipe/scrub/rub/fight/torture/wreck/crack/murder/kill/punch/thump/wave/sorry" as oldschooling.
+
+oldschooling is an action out of world.
+
+carry out oldschooling:
+	say "That's an old school very and won't be necessary in this game. See V/VERB/VERBS for what is used/useful." instead;
 
 volume unsorted
 
@@ -4234,7 +4240,7 @@ this is the yawn-way rule:
 	if puffed-up is true, continue the action; [this is a trivial rule, but in case I decide to add something, it may be a help.]
 	if search-hint-room is true, the rule succeeds;
 	if player does not have Spur Ups, say "You may need to visit Cold Loc to receive an item to help you go east." instead;
-	say "[one of]The spur ups can make you go UP. But how should you go UP?[or]PUFF UP.[stopping]" instead;
+	say "[one of]The spur ups can make you feel, if not go, UP. But how should you get more UP?[or]PUFF UP.[stopping]" instead;
 
 this is the yawn-way-complete rule:
 	if puffed-up is true, the rule succeeds; [this is a trivial rule, but in case I decide to add something, it may be a help.]
