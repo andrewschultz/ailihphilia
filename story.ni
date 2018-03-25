@@ -911,6 +911,7 @@ epicer recipe	"It's meant for referral."
 Darer Ad	"It was only useful to sucker you into this mess."
 Set O Notes	"It's useful for an overview, but not for DOING anything."
 north tron	"The North-Tron's already done its job."
+wordy drow	"The wordy drow moans 'Er ... eh ... there,' pointing to the Liar Grail."
 
 [the table of useons approximately follows not only the test commands but also the walkthrough]
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
@@ -967,7 +968,7 @@ you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as th
 bang nab	TNT	TNT	--	--	true	true	false	Yelpley	"The Bang Nab walks on its index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course."
 nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
 rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	Grebeberg	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'SOS! SOS!' he cries, making a male lam.[paragraph break]The ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
-Bro Orb	Mist Sim	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	"The Bro Orb shines and blinks. The mist sim dissipates under the brutal light. 'Live not on evil, madam, live not on evil!' you boom, as the Orb does its work. Maadam looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'You can't catch me! Not with Line Nil in place!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
+Bro Orb	Mist Sim	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	"The Bro Orb shines and blinks. The mist sim dissipates under the brutal light. 'Live not on evil, madam, live not on evil!' you boom, as the Orb does its work. Madam looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'You can't catch me! Not with the E-Divide in place!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Madam."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You will be able to smite a bad-faith pearl-clutcher for sure with one of these."
 murdered rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
@@ -1180,7 +1181,7 @@ this is the sod-to-cup rule:
 this is the sword-rows-reveal rule:
 	move sword rows to Red Roses Order;
 	moot madam;
-	move Line Nil to Red Roses Order;
+	move E Divide to Red Roses Order;
 	the rule succeeds;
 
 this is the tats-peripheral rule:
@@ -1241,8 +1242,9 @@ state tats	DIFF ID	"You can just walk north to get through."
 chapter shiftables
 
 table of shiftables
-use1	use2	use3
+use1	use2	use3 [use 3, not 1, on 2]
 wash saw	rift fir	past sap
+wordy drow	puce cup	liar grail
 
 volume rooms
 
@@ -1570,13 +1572,14 @@ voodoo v	"You don't want or need to mess with the voodoo v."
 leet steel	"You want to focus on the Knife Fink and not the leet steel."
 senile felines	"You don't have to do anything standard with the senile felines. In fact, you should think of them as cats."
 late petal	"You don't need to do anything with the late petal. Perhaps you could help the felines, uh, cats reach it?"
+link nil	"There's nothing you need behind the Link Nil security system. Some things are better left imagined."
 part strap	"You want to focus on the Verses Rev and not the part strap."
 pool gloop	"Fortunately, you don't need to do anything special to or with the pool gloop."
 spa taps	"The spa taps can't do much. You're not a customer, anyway."
 smirk rims	"The smirk rims are only important if you let them be. In other words, they're not."
 state tats	"You don't need to do anything to or with the state tats, now that you're wearing them."
 storm rots	"Yuck. You don't want or need to touch the storm rots, or do anything with them. There's probably worse behind them."
-Line Nil	"There's no way to dispel Line Nil, but Madam isn't the main enemy here, any more."
+E Divide	"There's no way to dispel the E-Divide, but Madam isn't the main enemy here, any more."
 DIFF ID	"The DIFF ID can't be broken. You [if Red Roses Order is visited]already found[else]just need to find[end if] a way to identify yourself."
 Par Wrap	"It's not the Verses Rev's clothes you need to worry about."
 Tru Hurt	"[rediv-instead of tru hurt]."
@@ -1671,7 +1674,7 @@ check going west in Cold Loc: say "The rift fir blocks the way to much more dang
 
 chapter rift fir
 
-A rift fir is scenery in Cold Loc. "It's a rife fir. You're not getting past it, but you don't need to."
+A rift fir is scenery in Cold Loc. "It sure is a rife fir. You're not getting past it, but you don't need to. It might even be protecting you from the treacherous Splat Alps."
 
 chapter past sap
 
@@ -1858,7 +1861,7 @@ check useoning tenet with Bro Orb:
 
 book Mont Nom
 
-Mont Nom is south of Dumb Mud. It is in Grebeberg. "An ark of okra blocks passage every way except back north here."
+Mont Nom is south of Dumb Mud. It is in Grebeberg. "An ark of okra blocks passage every way except back down north here."
 
 Mont Nom is above Dumb Mud.
 
@@ -1908,8 +1911,6 @@ book Frush Surf
 Frush Surf is south of Ooze Zoo. "The land curves here. You can go north or east. The surf is to the south.". It is in Grebeberg.
 
 check going south in Frush Surf: say "You barely step in, and the water's a bit hot. You're worried you might run into some scorch crocs." instead;
-
-[Line Nil is scenery in Frush Surf.]
 
 chapter Stamp Mats
 
@@ -2325,11 +2326,13 @@ a workable is a kind of thing. a workable has a number called useleft. useleft o
 
 understand "machine" as a workable.
 
+[?? if the player's command includes "machine" and the player is in work row, say "You need to refer to it individually."]
+
 description of a workable is "[if useleft of item described is 0]It's broken now, but you got good use out of it[else if useleft of item described is 3]The only way you can tell it from the other two is because [printed name of item described in upper case] is printed on the front[else]Since you had success using [the item described], you feel more comfortable using it again[end if]."
 
-the reifier is a workable. useleft is 3.
-the reviver is a workable. useleft is 3.
-the rotator is a workable. useleft is 3.
+the reifier is a workable. useleft is 3. understand "rei" as reifier.
+the reviver is a workable. useleft is 3. understand "rev" as reviver.
+the rotator is a workable. useleft is 3. understand "rot" as rotator. understand "ro" as rotator.
 
 rule for supplying a missing second noun when useoning:
 	if noun is a workable:
@@ -3131,7 +3134,7 @@ after going to Cold Loc when puce cup is sappy:
 
 book Red Roses Order
 
-Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in Red Roses Order]The only visible way back is south, with a mist sim blocking the other directions and seeming very threatening and oppressive indeed, but you can't chicken out[else]Sword rows have been revealed once the mist sim dispersed. Line Nil flickers and guards the way north where Madam left. You can go back south[end if]."
+Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in Red Roses Order]The only visible way back is south, with a mist sim blocking the other directions and seeming very threatening and oppressive indeed, but you can't chicken out[else]Sword rows have been revealed once the mist sim dispersed. The E-Divide flickers and guards the way north where Madam left. You can go back south[end if]."
 
 Red Roses Order is above Emo Dome.
 
@@ -3149,9 +3152,9 @@ The not-a-baton is a thing. description is "It is wood and round and long. It's 
 
 chapter madam
 
-Madam is a person in Red Roses Order. Madam carries the gal flag. "MADAM stands here in defiance, holding the Gal Flag high and waving it.". description is "She is waving that Gal Flag. You should probably be grateful she doesn't have a girl rig, too. You need a way to neutralize the Gal Flag!"
+Madam is a person in Red Roses Order. "MADAM stands here in defiance, holding the Gal Flag high and waving it.". description is "She is waving that Gal Flag. You should probably be grateful she doesn't have a girl rig, too. You need a way to neutralize the Gal Flag!"
 
-description of Gal Flag is "It's fluttering even without a breeze."
+Madam carries the Gal Flag. description of Gal Flag is "It's fluttering even without a breeze."
 
 understand "la gal" and "la/gal" as Madam.
 
@@ -3161,11 +3164,11 @@ chapter yard ray
 
 the yard ray is a thing. description is "It looks pretty lethal. It's no dinky resale laser![paragraph break]There are also has instructions: EMIT ********.[paragraph break]It's currently [if murdered rum is moot]loaded with energy from the murdered rum[else]empty of fuel[end if]."
 
-chapter Line Nil
+chapter E-Divide
 
-Line Nil is peripheral scenery in Red Roses Order. "It's, well, a red line you would do well not to cross."
+the E Divide is peripheral scenery in Red Roses Order. "Madam crossed it, but you don't need to follow her. It would probably be dangerous. And yes, it's too narrow to slip through the tines.". printed name of E Divide is "E-Divide". understand "e-divide" as e divide.
 
-check going north in Red Roses Order when Line Nil is in Red Roses Order: say "Whether or not Line Nil could damage you, you don't need to follow Madam. You need to take down the Diktat Kid!" instead;
+check going north in Red Roses Order when E Divide is in Red Roses Order: say "Whether or not the E-Divide could damage you, you don't need to follow Madam. You need to take down the Diktat Kid!" instead;
 
 book Swept Pews
 
@@ -3264,7 +3267,7 @@ report taking demo med:
 
 book Pro Corp
 
-Pro Corp is north of Gross Org. It is in Yelpley. description is "[if butene tub is in Pro Corp]A butene tub rests here. At least, that's what it says it is[else]Pro Corp is devoid of equipment now you blew up the butene tub[end if]. The only way out is back south."
+Pro Corp is north of Gross Org. It is in Yelpley. description is "[if butene tub is in Pro Corp]A butene tub rests here. At least, that's what it says it is[else]Pro Corp is devoid of equipment now you blew up the butene tub[end if]. The only way out is back south--a LINK NIL security system guards the other ways."
 
 Pro Corp is above Gross Org.
 
@@ -3295,6 +3298,10 @@ this is the bald-lab rule:
 bald-lab is a truth state that varies.
 
 understand "bald/lab" and "bald lab" as Pro Corp when bald-lab is true.
+
+chapter Link Nil
+
+Link Nil is peripheral scenery in Pro Corp. "It's really arcane, and it's meant to keep people out. You don't even see how to break through it. And anyway, if it had a number keypad, the passkey would probably have to be a palindrome, which would cut down on the possibilities and be a lot less secure."
 
 chapter butene tub
 

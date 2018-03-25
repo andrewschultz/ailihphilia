@@ -47,7 +47,7 @@ def mistake_check(reord):
         for line in file:
             if 'volume old school' in line:
                 old_school_yet = True
-            if old_school_yet is false:
+            if old_school_yet is False:
                 if re.search("^understand.*as a mistake", line):
                     if reord:
                         cur_num = cur_num + 1

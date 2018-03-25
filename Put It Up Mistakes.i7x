@@ -269,6 +269,8 @@ understand "sleek eels" as a mistake ("The eels don't need dexterity. They need 
 
 book Pro Corp
 
+understand "line nil" as a mistake ("The Link Nil security system fails to turn into a line and vanish. That's pretty secure!") when player is in Pro Corp.
+
 understand "dna land" as a mistake ("Biochemistry has its own nuances with symmetry, but we're sticking with something a lot dumber, here.[mis of 84]") when DNA band is quicknear or DNA hand is quicknear.
 
 understand "DNA hand" as a mistake ("Right idea, but you can't do it on your own. You need technology to help you.[mis of 85]") when DNA band is quicknear.
@@ -290,8 +292,6 @@ book Red Roses Order
 understand "gal slag" as a mistake ("You managed to annoy Madam enough that she lashes out and conks you with a mortal blow with the Gal Flag. Okay, not really, but name calling won't help.[mis of 92]") when Gal Flag is quicknear. [?? do fake death thing]
 
 understand "sworn rows" as a mistake ("The sword rows are inanimate and neutral. Unless you get too close to them.[mis of 93]") when sword rows are quicknear.
-
-understand "link nil" as a mistake ("Line Nil is there. It can't be messed with. Whether it goes anywhere doesn't matter.[mis of 94]") when Line Nil is quicknear.
 
 chapter yard ray misuse
 
