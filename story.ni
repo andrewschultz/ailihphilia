@@ -58,6 +58,10 @@ a thing can be peripheral. a thing is usually not peripheral.
 
 an ingredient is a kind of thing. an ingredient is usually edible. an ingredient can be solid or liquid.
 
+understand "man" as a person when the person is male.
+understand "man/woman" as a person when the person is neuter.
+understand "woman" as a person when the person is female.
+
 section compiler constants
 
 use MAX_VERBS of 260.
@@ -1356,7 +1360,7 @@ printed name of north tron is "North-Tron".
 
 chapter Flee Elf
 
-The Flee Elf is a person in Fun Nuf. "A Flee Elf stands here, guarding Evac Ave to the south.". description is "Quite a pert rep. You'd expect to see the Flee Elf wearing a gateman nametag, but maybe that's in some other, even more insanely brilliant, wonderful and creative adventure."
+The Flee Elf is a neuter person in Fun Nuf. "A Flee Elf stands here, guarding Evac Ave to the south.". description is "Quite a pert rep. You'd expect to see the Flee Elf wearing a gateman nametag, but maybe that's in some other, even more insanely brilliant, wonderful and creative adventure."
 
 understand "pert/rep" and "pert rep" as Flee Elf.
 does the player mean doing something with rep popper: it is likely.
@@ -1624,7 +1628,7 @@ every turn when Diktat Kid is quicknear:
 
 chapter Knife Fink
 
-the Knife Fink is a person in Dirge Grid. "A Knife Fink wields some leet steel here.". description is "A rough customer, to be sure. But the Fink's dazed look suggests greed more than hate, obligation more than violence."
+the Knife Fink is a neuter person in Dirge Grid. "A Knife Fink wields some leet steel here.". description is "A rough customer, to be sure. But the Fink's dazed look suggests greed more than hate, obligation more than violence."
 
 the Knife Fink carries the leet steel.
 
@@ -1632,7 +1636,7 @@ the leet steel is peripheral. description is "The Knife Fink is waving it around
 
 chapter Verses Rev
 
-the Verses Rev is a person in Dirge Grid. "A Verses Rev wields a part strap here.". description of Verses Rev is "Looking pretty average in a par wrap, but the hate and brimstone the Rev intones at you is a different matter."
+the Verses Rev is a neuter person in Dirge Grid. "A Verses Rev wields a part strap here.". description of Verses Rev is "Looking pretty average in a par wrap, but the hate and brimstone the Rev intones at you is a different matter."
 
 the Verses Rev wears the Par Wrap.
 
@@ -1736,7 +1740,7 @@ sap-takeable is a truth state that varies.
 
 chapter King Nik
 
-King Nik is a person in Cold Loc. "[one of]A man sits here, shaking his head. On seeing you, he gets up. 'I'm King Nik, and I came to Grebeberg for advice. Got any?'[or]King Nik paces around hopelessly, looking lost.[stopping]". description is "He doesn't look very regal. Maybe he needs something that can help him gain, or learn, gravitas.".
+King Nik is a male person in Cold Loc. "[one of]A man sits here, shaking his head. On seeing you, he gets up. 'I'm King Nik, and I came to Grebeberg for advice. Got any?'[or]King Nik paces around hopelessly, looking lost.[stopping]". description is "He doesn't look very regal. Maybe he needs something that can help him gain, or learn, gravitas.".
 
 chapter Spur Ups
 
@@ -2058,7 +2062,7 @@ understand "all ivy villa" and "all ivy" and "all/ivy" and "all/ivy villa" as de
 
 chapter code doc
 
-Code Doc is a person in Den Ivy Vined. "[one of]Someone is pacing back and forth here, muttering 'More ROM! MORE Rom! MORE ROM!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket. Busy, but not too busy to help someone else."
+Code Doc is a neuter person in Den Ivy Vined. "[one of]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket. Busy, but not too busy to help someone else."
 
 chapter Spa Maps
 
@@ -2092,7 +2096,7 @@ check going nowhere in Lair Trial: say "[if ogre is in Lair Trial]You can't snea
 
 chapter ergot ogre
 
-the ergot ogre is a person in Lair Trial. "An ergot ogre blocks the way east.". description is "It looks vicious, and you don't want it touching you, due to disease and possible dismemberment. You need to get the ogre out of the way, somehow.".
+the ergot ogre is a neuter person in Lair Trial. "An ergot ogre blocks the way east.". description is "It looks vicious, and you don't want it touching you, due to disease and possible dismemberment. You need to get the ogre out of the way, somehow.".
 
 check going east in Lair Trial: if ergot ogre is in Lair Trial, say "Not with the ergot ogre guarding the way." instead;
 
@@ -2140,7 +2144,7 @@ the storm rots are plural-named peripheral scenery in Swamp Maws. "Euugh. You do
 
 chapter Known Wonk
 
-The Known Wonk is a person in Swamp Maws. "The Known Wonk stands by a Tru Yurt, blocking the way north and [one of]figuring you'll have to do, even though you're not as interesting as a book[or]waiting for intellectual conversation[stopping].". description is "Not particularly disheveled, but then, not terribly charismatic. The Known Wonk seems lost in more esoteric matters than helping you figure how to save Grebeberg and Yelpley."
+The Known Wonk is a neuter person in Swamp Maws. "The Known Wonk stands by a Tru Yurt, blocking the way north and [one of]figuring you'll have to do, even though you're not as interesting as a book[or]waiting for intellectual conversation[stopping].". description is "Not particularly disheveled, but then, not terribly charismatic. The Known Wonk seems lost in more esoteric matters than helping you figure how to save Grebeberg and Yelpley."
 
 chapter  Exam Axe
 
@@ -2906,7 +2910,7 @@ carry out traping:
 
 chapter Revolt Lover
 
-Revolt Lover is a person in Art Xtra. "[one of]'Hi! I'm the Revolt Lover. Business is slow here, but I still have a few freebies. If you're able to use them, I'd be willing to trade for more.'[or]The Revolt Lover smiles at you.[stopping]". description is "Artsy looking, but not pretentiously hipster-ish.".
+Revolt Lover is a neuter person in Art Xtra. "[one of]'Hi! I'm the Revolt Lover. Business is slow here, but I still have a few freebies. If you're able to use them, I'd be willing to trade for more.'[or]The Revolt Lover smiles at you.[stopping]". description is "Artsy looking, but not pretentiously hipster-ish.".
 
 chapter state tats
 
@@ -3016,7 +3020,7 @@ check going in Toll Lot:
 
 chapter cross orc
 
-The cross orc is a person in Toll Lot. "A cross orc paces quickly back and forth between the north and south exits, just to reinforce that you'd better not try to go that way with it around.". description is "It paces quickly, rubbing its fingers together, mumbling to itself about the fabled moola loom and loot stool, or a possible bank nab or bar grab to afford a nice place on Fee Reef."
+The cross orc is a neuter person in Toll Lot. "A cross orc paces quickly back and forth between the north and south exits, just to reinforce that you'd better not try to go that way with it around.". description is "It paces quickly, rubbing its fingers together, mumbling to itself about the fabled moola loom and loot stool, or a possible bank nab or bar grab to afford a nice place on Fee Reef."
 
 chapter crag arc
 
@@ -3080,7 +3084,7 @@ Deft Fed is south of Toll Lot. It is in Yelpley. printed name is "[if yob attabo
 
 chapter Sniffins
 
-Sniffins is a person in Deft Fed. "[one of]You hear a sniff, and the proprietor introduces themselves as Sniffins, apologizing for how lame the ambience and decor are, but there's just no INSPIRATION to do better[or]Sniffins sniffs here[stopping].". description is "Sniffins looks [if yob attaboy is moot]unfriendly despite your help--what a posh sop[else]despondent and pleading, for any sort of help[end if]."
+Sniffins is a neuter person in Deft Fed. "[one of]You hear a sniff, and the proprietor introduces themselves as Sniffins, apologizing for how lame the ambience and decor are, but there's just no INSPIRATION to do better[or]Sniffins sniffs here[stopping].". description is "Sniffins looks [if yob attaboy is moot]unfriendly despite your help--what a posh sop[else]despondent and pleading, for any sort of help[end if]."
 
 the Dirt Rid is a thing. description is "The Dirt Rid looks old and decrepit. Sniffins probably wore it out converting the Bon Snob, but it's yours now."
 
@@ -3127,7 +3131,7 @@ book Evaded Ave
 
 Evaded Ave is north of Art Xtra. It is in Yelpley. "It's a bit sleazy in here. You can go back south. Or you can go east and west."
 
-the Door Frood is a person in Evaded Ave. "[one of]Someone waving their fists and shouting at who-knows-what pauses as you walk by. 'I'm the Door Frood.' They peg you as not insurgent enough to deserve to visit west or east, without a proper gift[or]The Door Frood continues to pace back and forth here, making sure you don't sneak off any way but back south[stopping].". description is "Probably not angry enough to actually do anything besides block others from doing what they want."
+the Door Frood is a neuter person in Evaded Ave. "[one of]Someone waving their fists and shouting at who-knows-what pauses as you walk by. 'I'm the Door Frood.' They peg you as not insurgent enough to deserve to visit west or east, without a proper gift[or]The Door Frood continues to pace back and forth here, making sure you don't sneak off any way but back south[stopping].". description is "Probably not angry enough to actually do anything besides block others from doing what they want."
 
 check going in Evaded Ave:
 	if Door Frood is in Evaded Ave:
@@ -3266,7 +3270,7 @@ The not-a-baton is a thing. description is "It is wood and round and long. It's 
 
 chapter madam
 
-Madam is a person in Red Roses Order. "MADAM stands here in defiance, holding the Gal Flag high and waving it.". description is "She is waving that Gal Flag. You should probably be grateful she doesn't have a girl rig, too. You need a way to neutralize the Gal Flag!"
+Madam is a proper-named female person in Red Roses Order. "MADAM stands here in defiance, holding the Gal Flag high and waving it.". description is "She is waving that Gal Flag. You should probably be grateful she doesn't have a girl rig, too. You need a way to neutralize the Gal Flag!"
 
 Madam carries the Gal Flag. description of Gal Flag is "It's fluttering even without a breeze."
 
@@ -3301,7 +3305,7 @@ every turn when player is in Swept Pews and wordy drow is in Swept Pews: next-ra
 
 chapter wordy drow
 
-The wordy drow is a person in Swept Pews. description is "Seemingly attached to the Liar Grail. Maybe you can release it.". "[one of]A[or]The[stopping] wordy drow mumbles to itself here, sometimes blurting out something intelligble and haunting."
+The wordy drow is a neuter person in Swept Pews. description is "Seemingly attached to the Liar Grail. Maybe you can release it.". "[one of]A[or]The[stopping] wordy drow mumbles to itself here, sometimes blurting out something intelligble and haunting."
 
 chapter troll ort
 
@@ -3317,7 +3321,7 @@ check going west in Drawl Ward:
 
 chapter Bond Nob
 
-the Bond Nob is a person in Drawl Ward. "[one of]'Hi! I'm the Bond Nob. I ain't feeling so good, but I wondered if maybe I could get some medicine.'[or]the Bond Nob continues to moan colloquially about the sickness, the pain.[stopping]". description is "the Bond Nob looks pretty ill. Nothing life-threatening, but too sick to go fetch even the dinkiest over-the-counter medication."
+the Bond Nob is a neuter person in Drawl Ward. "[one of]'Hi! I'm the Bond Nob. I ain't feeling so good, but I wondered if maybe I could get some medicine.'[or]the Bond Nob continues to moan colloquially about the sickness, the pain.[stopping]". description is "the Bond Nob looks pretty ill. Nothing life-threatening, but too sick to go fetch even the dinkiest over-the-counter medication."
 
 chapter Elan Ale
 
