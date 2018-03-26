@@ -492,6 +492,7 @@ table of diktat taunts	0	true	"Diktat Kid taunts"
 table of My Gym songs	0	false	"songs in My Gym (LISTEN)"
 table of noesies	0	true	"responses to NO"
 table of nothings	0	true	"responses to empty commands"
+table of Rob droning	0	true	"things Rob babbles about"
 table of singstuff	0	true	"responses to SINGing"
 table of swearstuff	0	true	"responses to SWEARing"
 table of undoings	0	true	"UNDOing notifications"
@@ -596,11 +597,14 @@ randtxt
 
 table of My Gym songs
 randtxt
+"[']Allo, Dolla[']"
+"Do Mo['] Mod"
 "Kazoo Zak"
 "Krew Twerk"
 "O/T: Teh Ghetto"
 "Opera Repo"
 "Rap Spar"
+"Sun on Us"
 "Yo, Beer Free, Boy"
 
 table of noesies
@@ -637,6 +641,12 @@ randtxt
 "Verb! Rev!"
 "Ya, no! Nay!"
 "Yo! Coy?"
+
+table of Rob droning
+"EOF, Foe!"
+"More ROM!"
+"Prove VORP!"
+"Resume [']m, user!"
 
 table of singstuff
 randtxt

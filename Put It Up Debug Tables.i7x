@@ -64,6 +64,7 @@ table of diktat taunts	0	true	"Diktat Kid taunts"
 table of My Gym songs	0	false	"songs in My Gym (LISTEN)"
 table of noesies	0	true	"responses to NO"
 table of nothings	0	true	"responses to empty commands"
+table of Rob droning	0	true	"things Rob babbles about"
 table of singstuff	0	true	"responses to SINGing"
 table of swearstuff	0	true	"responses to SWEARing"
 table of undoings	0	true	"UNDOing notifications"
@@ -98,8 +99,8 @@ randtxt
 
 table of My Gym songs
 randtxt
-"Kazoo Zak"
-"Krew Twerk"
+"[']Allo, Dolla[']"
+"Do Mo['] Mod"
 
 table of noesies
 randtxt
@@ -110,6 +111,11 @@ table of nothings
 randtxt
 "Drown, word!"
 "Dud!"
+
+table of Rob droning
+"EOF, Foe!"
+"More ROM!"
+"Prove VORP!"
 
 table of singstuff
 randtxt

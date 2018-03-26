@@ -551,7 +551,7 @@ def get_stuff_from_source():
             if 'workable. useleft' in ll:
                 mname = re.sub(" is a workable.*", "", ll)
                 mname = re.sub("^the ", "", mname)
-                muses = re.sub(".* is ", "", ll)
+                muses = re.sub(".* useleft is ", "", ll)
                 muses = re.sub("\..*", "", muses)
                 machine_uses_in_source[mname] = int(muses)
                 machine_def[mname] = line_count
