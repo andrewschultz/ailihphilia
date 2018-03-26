@@ -275,6 +275,7 @@ when play begins:
 		sort tabnam entry in random order;
 	sort table of random palindrome names in random order; [ move these to table of all randoms eventually? Need to check]
 	sort table of random authors in random order;
+	now phone-seed is a random number between 0 and (prime-constant - number of rows in table of random palindrome names - 1);
 	say "It's not the first dream you had about how awful high school was, but it's the worst in a while. A few 'favorite' classmates chanting 'Diary raid!' and passing it around as they mock 'Beefy? Feeb! Bony Nob!'[wfak-d]";
 	say "You check your mail as you go out to the grocery store. A junk magazine! It's been so long since you got one, you're almost intrigued.[wfak-d]";
 	say "It just says GAME MAG. But the cover isn't telling you to actually buy anything, so you look inside. You have a whole backlog of games, but you can just recycle it when you get to the store. No, not the erot-store![wfak-d]";
@@ -896,17 +897,18 @@ check useoning it with:
 			if there is a use2 entry and noun is use2 entry:
 				try useoning second noun with noun;
 				the rule succeeds;
-[	repeat through table of usemaybes:
-		if noun is use1 entry, say "[babble entry][line break]" instead;
 	repeat through table of specific use rejects:
 		if noun is use1 entry and second noun is use2 entry:
 			say "[babble entry][line break]" instead;
+	if second noun is a workable, abide by the machine message rules for the noun; [order is important here. This can get trumped if placed below the following rules, but it is specific to Work Row, so it needs to be here.]
+	repeat through table of use redir:
+		if noun is use1 entry:
+			say "[if second noun is a person][person-reject entry][else][thing-reject entry][line break]" instead;
+		else if second noun is use1 entry:
+			say "[if noun is a person][person-reject entry][else][thing-reject entry][line break]" instead;
 	repeat through table of shiftables:
 		if noun is use1 entry and second noun is use2 entry, try useoning use3 entry with use2 entry instead;
 		if noun is use2 entry and second noun is use1 entry, try useoning use3 entry with use2 entry instead;
-	repeat through table of usemaybes:
-		if second noun is use1 entry, say "[babble entry][line break]" instead;]
-	if second noun is a workable, abide by the machine message rules for the noun;
 	repeat through table of cantuse:
 		if noun is use1 entry or second noun is use1 entry, say "[babble entry]" instead;
 	say "You think of ways to do that productively, but nothing comes up." instead;
@@ -916,7 +918,8 @@ The machine message rules are an object-based rulebook.
 a machine message rule for a thing (called t):
 	repeat through table of useons:
 		if t is use1 entry and use2 entry is a workable, say "Nothing happens, but you feel you must be close, here." instead;
-	say "Nothing happens at all. Maybe [the t] needs to be used more actively." instead;
+	if t is listed in postmachines, say "You already built [the t] here. Time to do something else with it." instead;
+	say "Nothing happens at all. Maybe [the t] doesn't need any sort of machine augmentation." instead;
 
 table of cantuse [xxcant]
 use1	babble
@@ -936,6 +939,10 @@ north tron	"The North-Tron's already done its job."
 x-it stix	"They're just there to block you."
 wordy drow	"The wordy drow moans 'Er ... eh ... there,' pointing to the Liar Grail."
 [zzcant]
+
+table of use redir [xxur]
+use1	person-reject	thing-reject
+party trap	"The trap can't work on a person. It's too small, and people are too smart."	"You need to use the party trap on something animate."
 
 [the table of useons approximately follows not only the test commands but also the walkthrough]
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
@@ -1274,6 +1281,62 @@ use1	use2	use3 [use 3, not 1, on 2]
 wash saw	rift fir	past sap
 wordy drow	puce cup	liar grail
 
+chapter peripherals
+
+instead of doing something when second noun is a peripheral thing:
+	if action is procedural, continue the action;
+	blanket-reject second noun instead;
+
+instead of doing something with a peripheral thing:
+	if action is procedural, continue the action;
+	blanket-reject noun instead;
+
+instead of useoning something with a peripheral thing:
+	if action is procedural, continue the action;
+	blanket-reject second noun instead;
+
+to blanket-reject (bj - a thing):
+	repeat through table of periphery:
+		if itm entry is bj:
+			say "[reject entry][line break]";
+			continue the action;
+	say "While [the noun] doesn't need any detailed futzing, I don't have a detailed message for why. I need to fix that. Sorry."
+
+table of periphery [xxper]
+itm	reject
+Name ME Man	"The phone book is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting, but it's there."
+bad dab	"Its message seems important, but it's not good for much except examining."
+gash sag	"You don't want to mess with the gash sag. Destroying the butene tub is damage enough."
+x-it stix	"No way you're getting through the X-It Stix."
+girt rig	"The girt rig is too sturdy to move. But then, there's even sleazier stuff beyond it."
+redness ender	"You don't want to do anything crazy with the Redness Ender. You don't want to go near it. It's dangerous looking. You can picture it ambushing someone who doesn't expect it."
+decal placed	"The decal placed decal is just there to advertise the food. It's not critical to the story."
+snooty toons	"The snooty toons are just there for ambience. They're not critical to the story."
+pill lip	"The pill lip is just there to prevent the demo med from getting dirty on the ground."
+mush sum	"The mush sum is too murky and unstable to deal with. And to break the fourth wall, it's just there to provide a north border."
+go fog	"The go fog is very dense. It pushes you back even as you look at it. As if to say, go away, and also, get going with what you want and need to do."
+be web	"The be web is--well, it's itself, and maybe there's a message here but you'll figure it out once you're finished adventuring. It's not important enough now."
+voodoo v	"You don't want or need to mess with the voodoo v."
+leet steel	"You want to focus on the Knife Fink and not the leet steel."
+senile felines	"You don't have to do anything standard with the senile felines. In fact, you should think of them as cats."
+late petal	"You don't need to do anything with the late petal. Perhaps you could help the felines, uh, cats reach it?"
+link nil	"There's nothing you need behind the Link Nil security system. Some things are better left imagined."
+part strap	"You want to focus on the Verses Rev and not the part strap."
+pool gloop	"Fortunately, you don't need to do anything special to or with the pool gloop."
+spa taps	"The spa taps can't do much. You're not a customer, anyway."
+smirk rims	"The smirk rims are only important if you let them be. In other words, they're not."
+state tats	"You don't need to do anything to or with the state tats, now that you're wearing them."
+storm rots	"Yuck. You don't want or need to touch the storm rots, or do anything with them. There's probably worse behind them."
+E Divide	"There's no way to dispel the E-Divide, but Madam isn't the main enemy here, any more."
+DIFF ID	"The DIFF ID can't be broken. You [if Red Roses Order is visited]already found[else]just need to find[end if] a way to identify yourself."
+Par Wrap	"It's not the Verses Rev's clothes you need to worry about."
+Tru Hurt	"[rediv-instead of tru hurt]."
+Waster Fretsaw	"[rediv-instead of waster fretsaw]."
+saner arenas	"It's good the saner arenas are there, but you don't need to mess with them."
+
+to say rediv-instead of (th - a thing):
+	say "While the [th] is worrisome, it's clearly not as dangerous as the Redivider"
+
 volume rooms
 
 part Dim Mid region
@@ -1566,57 +1629,6 @@ the Knife Fink is a person in Dirge Grid. "A Knife Fink wields some leet steel h
 the Knife Fink carries the leet steel.
 
 the leet steel is peripheral. description is "The Knife Fink is waving it around with intent. It looks more like fancy cutlery than an effective weapon, though. But you don't want the Knife Fink to get close enough so you know for sure."
-
-instead of doing something when second noun is a peripheral thing:
-	if action is procedural, continue the action;
-	blanket-reject second noun instead;
-
-instead of doing something with a peripheral thing:
-	if action is procedural, continue the action;
-	blanket-reject noun instead;
-
-instead of useoning something with a peripheral thing:
-	if action is procedural, continue the action;
-	blanket-reject second noun instead;
-
-to blanket-reject (bj - a thing):
-	repeat through table of periphery:
-		if itm entry is bj:
-			say "[reject entry][line break]";
-			continue the action;
-	say "While [the noun] doesn't need any detailed futzing, I don't have a detailed message for why. I need to fix that. Sorry."
-
-table of periphery [xxper]
-itm	reject
-Name ME Man	"The phone book is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting, but it's there."
-girt rig	"The girt rig is too sturdy to move. But then, there's even sleazier stuff beyond it."
-redness ender	"You don't want to do anything crazy with the Redness Ender. You don't want to go near it. It's dangerous looking. You can picture it ambushing someone who doesn't expect it."
-decal placed	"The decal placed decal is just there to advertise the food. It's not critical to the story."
-snooty toons	"The snooty toons are just there for ambience. They're not critical to the story."
-pill lip	"The pill lip is just there to prevent the demo med from getting dirty on the ground."
-mush sum	"The mush sum is too murky and unstable to deal with. And to break the fourth wall, it's just there to provide a north border."
-go fog	"The go fog is very dense. It pushes you back even as you look at it. As if to say, go away, and also, get going with what you want and need to do."
-be web	"The be web is--well, it's itself, and maybe there's a message here but you'll figure it out once you're finished adventuring. It's not important enough now."
-voodoo v	"You don't want or need to mess with the voodoo v."
-leet steel	"You want to focus on the Knife Fink and not the leet steel."
-senile felines	"You don't have to do anything standard with the senile felines. In fact, you should think of them as cats."
-late petal	"You don't need to do anything with the late petal. Perhaps you could help the felines, uh, cats reach it?"
-link nil	"There's nothing you need behind the Link Nil security system. Some things are better left imagined."
-part strap	"You want to focus on the Verses Rev and not the part strap."
-pool gloop	"Fortunately, you don't need to do anything special to or with the pool gloop."
-spa taps	"The spa taps can't do much. You're not a customer, anyway."
-smirk rims	"The smirk rims are only important if you let them be. In other words, they're not."
-state tats	"You don't need to do anything to or with the state tats, now that you're wearing them."
-storm rots	"Yuck. You don't want or need to touch the storm rots, or do anything with them. There's probably worse behind them."
-E Divide	"There's no way to dispel the E-Divide, but Madam isn't the main enemy here, any more."
-DIFF ID	"The DIFF ID can't be broken. You [if Red Roses Order is visited]already found[else]just need to find[end if] a way to identify yourself."
-Par Wrap	"It's not the Verses Rev's clothes you need to worry about."
-Tru Hurt	"[rediv-instead of tru hurt]."
-Waster Fretsaw	"[rediv-instead of waster fretsaw]."
-saner arenas	"It's good the saner arenas are there, but you don't need to mess with them."
-
-to say rediv-instead of (th - a thing):
-	say "While the [th] is worrisome, it's clearly not as dangerous as the Redivider"
 
 chapter Verses Rev
 
@@ -2234,7 +2246,9 @@ chapter name me man
 
 name-me-row is a number that varies.
 
-Name ME Man is proper-named peripheral scenery in Yawn Way. printed name is "NAME ME, MAN". "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers:[line break][fixed letter spacing][name-num of 5][variable letter spacing]"
+Name ME Man is proper-named peripheral scenery in Yawn Way. printed name is "NAME ME, MAN". "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers:[line break][fixed letter spacing][name-num of 5][variable letter spacing][run paragraph on]"
+
+understand "nm/mm/phone/book" and "phone book" as Name ME Man.
 
 does the player mean doing something with name me man: it is unlikely.
 
@@ -2243,24 +2257,36 @@ to say name-num of (n - a number):
 	repeat with x running from 1 to n:
 		increment name-me-row;
 		choose row name-me-row in table of random palindrome names;
-		say "[person-name entry]: [phone-number of name-me-row][line break]";
+		say "[person-name entry]: ";
+		let A be number of characters in "[person-name entry]";
+		if A < 14:
+			repeat with AA running from A to 13:
+				say " ";
+		say "[phone-number of name-me-row][line break]";
 		if name-me-row is numrow:
 			say "That's the end!";
 			now name-me-row is 0;
 			continue the action;
 
-prime-constant is a number that varies. prime-constant is 8999.
+after examining name me man for the first time:
+	if debug-state is true, say "Seed = [phone-seed].";
+	say "(If you want, you can abbreviate Name Me Man as NM or MM.)[paragraph break]";
+	continue the action;
+
+prime-constant is a number that varies. prime-constant is 7993.
+
+phone-seed is a number that varies.
 
 to say phone-number of (x - a number):
 	let x2 be 1;
-	let x1 be x + 1;
-	say "![x] [x2][line break]";
+	let x1 be x + 1 + phone-seed;
+	[say "([x] [x2])";]
 	while x1 > 1:
 		let Y be (prime-constant / x1) + 1;
 		now x1 is the remainder after dividing x1 * y by prime-constant;
 		now x2 is the remainder after dividing x2 * y by prime-constant;
-		say "![y] [x] [x2][line break]";
-	now x2 is x2 + 1000;
+		[say "([y] [x] [x2])";]
+	now x2 is x2 + 2000; [phone # can't start with 1]
 	say "[x2 / 10]-[remainder after dividing x2 by 10][remainder after dividing x2 / 10 by 10][remainder after dividing x2 / 100 by 10][x2 / 1000]"
 
 chapter puffuping
@@ -2367,7 +2393,7 @@ Rob is a proper-named guhthug in Worn Row. "[one of]'Oh, hi! I'm Rob, it's prett
 
 chapter bad dab
 
-the bad dab is peripheral scenery in Worn Row. description is "[if Rob is in Worn Row]WORN ROW is written, somewhat dubiously[else if ever-work is true or ever-worn is true]WOR- ROW is still here, faded now since you opened [Worn Row][else]WOR- ROW is here. Maybe there's more here than just Worn Row[end if]."
+the bad dab is peripheral scenery in Worn Row. description is "[if Rob is in Worn Row]WORN ROW is written, somewhat dubiously[else if ever-workrow is true or ever-wordrow is true]WOR- ROW is still here, faded now since you opened [Worn Row][else]WOR- ROW is here. Maybe there's more here than just Worn Row[end if]."
 
 chapter test set
 
@@ -2680,7 +2706,8 @@ carry out workrowing:
 
 to check-dab:
 	if bad dab is in Worn Row:
-		if ever-workrow is true and ever-wornrow is true:
+		say "[line break]";
+		if ever-workrow is true and ever-wordrow is true:
 			say "The WOR- ROW text of the bad dab fades out of sight.";
 			moot bad dab;
 		else:
@@ -3421,16 +3448,16 @@ printed name of Mr Arm is "Mr. Arm".
 understand "bang/nab" and "bang nab" as Mr Arm.
 
 to say arm-dir:
-	if player is in yell aley:
+	if location of player is Yell Alley:
 		say "is waving around frantically!";
 		continue the action;
 	let Horz be (remainder after dividing loc-num of location of player by 10) -  (remainder after dividing loc-num of Yell Alley by 10);
 	let Vert be (loc-num of location of player / 10) -  (loc-num of Yell Alley / 10);
 	if Vert is 0:
-		say "[if Horz > 0]west[else]east"
+		say "[if Horz > 0]west[else]east";
 	else if Horz is 0:
 		say "north";
-	else if Vert + Horz = 0:
+	else if Vert + Horz is 0:
 		say "northeast";
 	else if Vert is Horz:
 		say "northwest";
@@ -3706,7 +3733,7 @@ this is the grid-unavail rule:
 volume chases
 
 after going when being-chased is true:
-	if x-it stix are in location of player, say "X-it Stix X out the way [if location of player is west of Fun Nuf]east[else]west[end if]. It's probably bad for the [chase-person] to get loose in [if player is in Yawn Way]Grebeberg[else]Yelpley[end if].";
+	if x-it stix are in location of player, say "X-it Stix X out the way [if Fun Nuf is room east of location of player]east[else]west[end if]. It's probably bad for the [chase-person] to get loose in [if player is in Yawn Way]Grebeberg[else]Yelpley[end if].";
 	continue the action;
 
 x-it stix are peripheral scenery. "They look like the metal grating shops pull out over their doors and windows at closing time.[paragraph break]They are in an X, and while they don't allow an Xit, they do x out one way to go, which may help you figure how you need to get away from the [chase-person].[paragraph break]Of course, any wordplay adventurer worth their salt (like you--you're pretty far along, here) knows the difference between EXIT and X-IT. These things are telling you what you can't do!";
@@ -4348,6 +4375,8 @@ to decide which book is cur-book:
 	decide on NULL ILLUN;
 
 machineables is a list of things variable. machineables is {stinky knits, gold log, you buoy, bunk nub, Dirt Rid, eroded ore, trap art, DNA band, not-a-baton}. [?? if we use this a lot maybe we should make a property]
+
+postmachines is a list of things variable. postmachines is { brag garb, dork rod, ME gem, stock cots, cave vac, ore zero, party trap, DNA hand, taboo bat}.
 
 this is the got-machine-fodder rule:
 	repeat with Q running through machineables:
