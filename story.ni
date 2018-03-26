@@ -7,6 +7,7 @@
 First, Put It Up tables.i7x contains all the random responses.
 Second, Put It Up tables.i7x contains responses to mistakes e.g. palindrome verbs/phrases that don't advance the game but are good tries.
 Put an x or two before each of these to find the beginning of a table, ZZ for the end:
+CANT for can't-use default messages
 USE for the Table of Useons (USE X ON Y gives a point)
 FAIL for Useons that don't work
 TALK for talk texts
@@ -47,7 +48,7 @@ definition: a thing is moot:
 to moot (Q - a thing):
 	move Q to DevReserved; [ic]
 
-a chaser is a kind of person. a chaser has a room called chase-room.
+a chaser is a kind of person. a chaser has a room called chase-room. a chaser has a room called stix-room.
 
 a guhthug is a kind of person. [Ian, Rob, Ned, Dave]
 
@@ -917,7 +918,7 @@ a machine message rule for a thing (called t):
 		if t is use1 entry and use2 entry is a workable, say "Nothing happens, but you feel you must be close, here." instead;
 	say "Nothing happens at all. Maybe [the t] needs to be used more actively." instead;
 
-table of cantuse
+table of cantuse [xxcant]
 use1	babble
 redness ender	"The redness ender is good for destroying stuff. Probably evil stuff. You don't need to vaporize anything you're carrying." [?? Rob]
 Spur Ups	"The Spur Ups make you want to do something for yourself, by yourself. You're not sure what."
@@ -932,7 +933,9 @@ epicer recipe	"It's meant for referral."
 Darer Ad	"It was only useful to sucker you into this mess."
 Set O Notes	"It's useful for an overview, but not for DOING anything."
 north tron	"The North-Tron's already done its job."
+x-it stix	"They're just there to block you."
 wordy drow	"The wordy drow moans 'Er ... eh ... there,' pointing to the Liar Grail."
+[zzcant]
 
 [the table of useons approximately follows not only the test commands but also the walkthrough]
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
@@ -3688,6 +3691,12 @@ this is the grid-unavail rule:
 
 volume chases
 
+after going when being-chased is true:
+	if x-it stix are in location of player, say "X-it Stix X out the way [if location of player is west of Fun Nuf]east[else]west[end if]. It's probably bad for the [chase-person] to get loose in [if player is in Yawn Way]Grebeberg[else]Yelpley[end if].";
+	continue the action;
+
+x-it stix are peripheral scenery. "They are in an X, and while they don't allow an Xit, they do x out one way to go, which may help you figure how you need to get away from the [chase-person].";
+
 being-chased is a truth state that varies.
 init-turn is a truth state that varies.
 
@@ -3696,7 +3705,7 @@ chase-person is a person that varies.
 last-chase-direction is a direction that varies.
 
 to start-chase (guy - a person):
-	move x-it stix to stix-room of
+	move x-it stix to stix-room of guy;
 	now chase-person is guy;
 	now last-chase-direction is southwest;
 	now being-chased is true;
@@ -3719,6 +3728,7 @@ every turn when being-chased is true:
 
 to reset-chase:
 	wfak;
+	move x-it stix to TempMet;
 	if mrlp is Grebeberg, move player to Seer Trees;
 	if mrlp is Yelpley, move player to Yawn Way;
 	move chase-person to chase-room of chase-person;

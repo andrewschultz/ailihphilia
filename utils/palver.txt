@@ -4,6 +4,8 @@
 #
 # ignore-starts
 s:[
+s:loc-num
+s:machineables
 s:understand
 s:does the player mean
 s:description of
@@ -23,6 +25,9 @@ s:for writing
 s:check
 s:instead
 s:before
+s:TI is a
+s:take-order of DWELT
+s:there is a book called
 s:carry out
 s:talk-text
 s:a book can be
@@ -41,6 +46,12 @@ s:avail-rule
 s:unavail-rule
 s:done-for-good
 s:maindir is a list
+s:ned is a
+s:rob is a
+s:ian is a
+s:dave is a
+s:madam carries
+s:the dir-error rules are
 # ignore-includes
 i:rule:
 i:is an activity
