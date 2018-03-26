@@ -279,13 +279,17 @@ understand "DNA sand" as a mistake ("That will happen with the passage of time.[
 
 understand "dna wand" as a mistake ("No. You know TRUE MAGIC MUST COME FROM WITHIN.[mis of 87]") when DNA band is quicknear or DNA hand is quicknear.
 
-understand "band nab" as a mistake ("The bang nab tries to grap itself. It fails.[mis of 88]") when bang nab is quicknear.
+understand "band nab" as a mistake ("Mr. Arm tries to grip his own wrist but can't quite.[mis of 88]") when Mr Arm is quicknear.
+
+understand "mra arm" as a mistake ("No! Mr. Arm is on the side of social justice.[mis of 88]") when Mr Arm is quicknear.
 
 understand "balk lab" as a mistake ("There's not much to do or say here, for sure[if balm-got is false]![else]--well, maybe something that's not quite BALK.[end if][mis of 89]") when player is in Pro Corp.
 
 understand "ball lab" as a mistake ("Nothing fun explodes out from the walls or ceiling.[mis of 90]") when player is in Pro Corp.
 
 understand "golf log" as a mistake ("There is no Par Trap to navigate here, so you don't need to make a golf log.[mis of 91]") when gold log is quicknear.
+
+understand "rm mr" as a mistake ("No, Mr. Arm will be helpful. (Spoiler: he'll leave for better things once he has helped, so happy endings all around. Yay.[paragraph break]") when Mr Arm is quicknear.
 
 book Red Roses Order
 

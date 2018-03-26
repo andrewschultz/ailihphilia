@@ -28,8 +28,9 @@ include Trivial Niceties Z-Only by Andrew Schultz.
 include Basic Screen Effects by Emily Short.
 
 [this may be toggled for debug depending on how much space is left--or if I want to force unit tests to make sure that, say, waiting text cycles after only 2 entries. If I add a random wait response, for instance, that would be one more bit of text to account for. For which to account.]
-[include Put It Up Tables by Andrew Schultz.]
-include Put It Up Debug Tables by Andrew Schultz.
+
+include Put It Up Tables by Andrew Schultz.
+[include Put It Up Debug Tables by Andrew Schultz.]
 
 include Put It Up Mistakes by Andrew Schultz.
 
@@ -139,7 +140,9 @@ understand the command "sorry" as something new.
 
 chapter oldschooling
 
-understand the command "slice/prune/chop/kiss/hug/embrace/buy/purchase/buy/light/jump/hop/skip/sip/swallow/shine/polish/sweep/clean/dust/wipe/scrub/rub/fight/torture/wreck/crack/murder/kill/punch/thump/wave/sorry" as oldschooling.
+understand the command "slice/prune/chop/kiss/hug/embrace/buy/purchase/buy/light/jump/hop/skip/sip/swallow/shine/polish/sweep/clean/dust/wipe/scrub/rub/fight/torture/wreck/crack/murder/kill/punch/thump/wave/sorry" as something new.
+
+[oldschooling.]
 
 oldschooling is an action out of world.
 
@@ -448,6 +451,7 @@ chapter thinking
 
 instead of thinking:
 	say "A knihtg (sic) appears and redirects you to the AID command.";
+	let LLP-yet be false;
 	repeat through table of last lousy points:
 		if mclu entry is true:
 			consider the dorule entry;
@@ -559,8 +563,8 @@ carry out verbing:
 		say "[line break](end beta commands)";
 	if debug-state is true:
 		say "[line break]PROGRAMMER TESTING COMMANDS: WIN lets you win, PER describes peripheral things, and IA flags everything without an initial appearance.";
-	if cur-points of Odd Do < max-points of Odd Do:
-		say "[line break]There are also a few guess-the-verb bonus points that are hidden. Some relate to objects or people that need help but can't help you, and some are riffs on standard commands. [if refer-bonus is false]There's a different way to revisit, rehash or recap this very command, for example[else]For instance, you got REFER as VERBS[end if]".
+	if cur-score of Odd Do < max-score of Odd Do:
+		say "[line break]There are also a few guess-the-verb bonus points that are hidden. Some relate to objects or people that need help but can't help you, and some are riffs on standard commands. [if refer-bonus is false]There's a different way to revisit, rehash or recap this very command, for example[else]For instance, you got REFER as VERBS[end if]";
 	say "[line break]Also, many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy. If you miss them, you'll see the entire list at the end.";
 	the rule succeeds;
 
@@ -596,16 +600,15 @@ understand "talk to [something]" as talktoing.
 carry out talktoing:
 	if noun is not a person, say "Talking to people or, at least, animals is your best bet." instead;
 	if talk-text of noun is empty:
-		if gender-oppo of noun is not Diktat Kid and talk-text of gender-oppo of noun is not empty, say "[talk-text of gender-oppo of noun][line break]" instead;
 		say "Nothing. (change this)" instead;
 	say "[talk-text of noun][line break]" instead;
 	the rule succeeds. [see volume dialogue for all the specifics]
 
 a person has text called talk-text.
 
-instead of asking it about:
+instead of asking someone about:
 	say "[one of]You don't ever need to ask about specific subjects. [or][stopping]TALKing instead.[paragraph break]";
-	try talking to the noun instead;
+	try talktoing the noun instead;
 
 chapter drinking
 
@@ -980,10 +983,10 @@ Moor Broom	Tru Yurt	Exam Axe	--	bump-crib rule	true	true	false	Grebeberg	"You be
 wash saw	porch crop	balsa slab	--	--	true	true	false	Grebeberg	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods. You've done well. There's a balsa slab lying around. The Code doc offers it to you. Now, you do own wood!"
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
 DNA band	reifier	DNA hand	--	--	true	true	false	Yelpley	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand!"
-roto motor	DNA hand	bang nab	--	--	true	true	true	Yelpley	"The roto motor fits right in. The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on it, now: BANG NAB. I guess that's what to call it, now. It probably has the dexterity to deal with volatile stuff. The bomb mob, for their part, becomes a poor troop once they see what they've lost."
+roto motor	DNA hand	Mr Arm	--	--	true	true	true	Yelpley	"Some of the stuffing inside the hand has to pop out to make space for the roto motor to fit in. There's enough to make a whole arm! The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on the arm (MR. ARM) and hand: BANG NAB. The arm will probably give the hand a bit more reach."
 Eroded Ore	reviver	Ore Zero	--	--	true	true	false	Yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
 you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. 'You BOFFO buoy!' you can't help shouting.[paragraph break]The gem's so tempting and beautiful, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
-bang nab	TNT	TNT	--	--	true	true	false	Yelpley	"The Bang Nab walks on its index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course."
+Mr Arm	TNT	TNT	--	mob-bye rule	true	true	false	Yelpley	"Mr. Arm walks on his index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. Being an arm, it/he has more leverage than just a DNA hand would've. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course. Perhaps Mr. Arm will find a Do-Bod to be truly complete. The bomb mob, for their part, becomes a poor troop once they see what they've lost."
 nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
 rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	Grebeberg	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'SOS! SOS!' he cries, making a male lam.[paragraph break]The ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
 Bro Orb	Mist Sim	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	"The Bro Orb shines and blinks. The mist sim dissipates under the brutal light. 'Live not on evil, madam, live not on evil!' you boom, as the Orb does its work. Madam looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'You can't catch me! Not with the E-Divide in place!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
@@ -1110,7 +1113,7 @@ this is the cold-loc-hint-bump rule:
 	the rule succeeds;
 
 this is the empty-cup rule:
-	now puce cup is moot;
+	moot puce cup;
 	shuffle-before Apse Spa and Motto Bottom;
 	the rule succeeds;
 
@@ -1147,6 +1150,10 @@ this is the mob-to-alley rule:
 	now bomb mob is in Yell Alley;
 	now TNT is in Yell Alley;
 	shuffle-before Yell Alley and Sneer Greens;
+	the rule succeeds;
+
+this is the mob-bye rule:
+	moot bomb mob;
 	the rule succeeds;
 
 this is the radar-blink rule:
@@ -1705,7 +1712,7 @@ instead of taking the past sap: say "It'd get sticky on your fingers. You need s
 
 instead of doing something with past sap:
 	if action is procedural, continue the action;
-	say "[if liar grail is moot]With the liar grail gone, you don't want to have to deal with the past sap again[else]The past sap might be useful, but you [how-take-sap[end if]."
+	say "[if liar grail is moot]With the liar grail gone, you don't want to have to deal with the past sap again[else]The past sap might be useful, but you [how-take-sap][end if]."
 
 to say how-take-sap:
 	say "might [if puce-ever is true]want to USE the cup to hold it[else]need something to carry it in. It's sticky[end if]"
@@ -2218,34 +2225,40 @@ part Yelpley region
 
 book Yawn Way
 
-Yawn Way is east of Fun Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but you can go in all four directions, here: back west to Fun [']Nuf, north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]Emo Dome[else]a dome[end if]."
+Yawn Way is east of Fun Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but you can go in all four directions, here: back west to Fun [']Nuf, north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]Emo Dome[else]a dome[end if].[paragraph break][one of]There's also something called NAME ME, MAN, which--well, it's really just a glorified phone book. Yawn[or]NAME ME, MAN waits for your perusal, if you have a great need to procrastinate[stopping]."
 
 chapter name me man
 
 name-me-row is a number that varies.
 
-Name ME Man is proper-named peripheral scenery in Yawn Way. printed name is "Name ME, MAN". "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers:[line break][fixed letter spacing][name-num of 5][variable letter spacing]"
+Name ME Man is proper-named peripheral scenery in Yawn Way. printed name is "NAME ME, MAN". "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers:[line break][fixed letter spacing][name-num of 5][variable letter spacing]"
+
+does the player mean doing something with name me man: it is unlikely.
 
 to say name-num of (n - a number):
 	let numrow be number of rows in table of random palindrome names;
 	repeat with x running from 1 to n:
 		increment name-me-row;
 		choose row name-me-row in table of random palindrome names;
-		say "[person-name entry]: [phone-number of name-me-row][line break]"
+		say "[person-name entry]: [phone-number of name-me-row][line break]";
 		if name-me-row is numrow:
 			say "That's the end!";
 			now name-me-row is 0;
+			continue the action;
 
 prime-constant is a number that varies. prime-constant is 8999.
 
 to say phone-number of (x - a number):
 	let x2 be 1;
-	while x > 1:
-		let Y be (prime-constant / x) + 1;
-		now x is the remainder after dividing x * y by prime-constant;
+	let x1 be x + 1;
+	say "![x] [x2][line break]";
+	while x1 > 1:
+		let Y be (prime-constant / x1) + 1;
+		now x1 is the remainder after dividing x1 * y by prime-constant;
 		now x2 is the remainder after dividing x2 * y by prime-constant;
+		say "![y] [x] [x2][line break]";
 	now x2 is x2 + 1000;
-	say "[x2 / 10]-[remainder after dividing x2 by 10][remainder after dividing x2 / 10 by 10][remainder after dividing x2 / 100 by 10][x2 / 1000][line break]"
+	say "[x2 / 10]-[remainder after dividing x2 by 10][remainder after dividing x2 / 10 by 10][remainder after dividing x2 / 100 by 10][x2 / 1000]"
 
 chapter puffuping
 
@@ -2386,9 +2399,11 @@ check examining a workable:
 
 after examining a workable: say "[if useleft of noun is 3]Oh, the word [printed name of item described in upper case] is printed on the front[else]Since you had success using [the item described], you feel more comfortable using it again[end if]."
 
-the reifier is a workable. useleft is 3. understand "rei" as reifier. description is "The most esoteric of the three machines, but if you put something in it, maybe it could become something much better."
-the reviver is a workable. useleft is 3. understand "rev" as reviver. description of reviver is "It reads FIX IF OLD, LO! Sounds like beaten-up items could go here."
-the rotator is a workable. useleft is 3. understand "rot" as rotator. understand "ro" as rotator. description of rotator is "It is circular, like a washing machine. It can probably can shake up items you can't. Maybe split them open to find neat things."
+the reifier is a workable. useleft is 3. understand "rei" as reifier. description is "The most esoteric of the three machines, but if you put something in it, maybe it could become something much better.".
+
+the reviver is a workable. useleft is 3. understand "rev" as reviver. description of reviver is "It reads FIX IF OLD, LO! Sounds like beaten-up items could go here.".
+
+the rotator is a workable. useleft is 3. understand "rot" as rotator. understand "ro" as rotator. description of rotator is "It is circular, like a washing machine. It can probably can shake up items you can't. Maybe split them open to find neat things.".
 
 rule for supplying a missing second noun when useoning:
 	if noun is a workable:
@@ -2857,6 +2872,94 @@ chapter soot tattoos
 
 the soot tattoos are a plural-named thing. description is "They're blank now, but maybe if they were the right shape, they could help your image, somehow."
 
+book Emo Dome
+
+Emo Dome is east of Yawn Way. It is in Yelpley. "You can go any direction here, and you sort of want to, because it's stuffy in here, even if it smells nice. [can-go-rro]."
+
+to say can-go-rro:
+	if Red Roses Order is unvisited:
+		say "Something labeling itself DIFF ID guards the way north";
+	else:
+		say "[if not-a-baton is off-stage]You feel you may still have unfinished business behind the DIFF ID to the north[else]The DIFF ID guards the Red Roses Order, which no longer holds adventure[end if]"
+
+instead of doing something in Emo Dome when pulled-up is false:
+	if current action is pulluping, continue the action;
+	if current action is going:
+		if noun is not west and noun is not east:
+			say "You're scared those places would be even worse.";
+			try going emo-dir instead;
+		say "You run [if noun is emo-dir]away[else if noun is opposite of emo-dir] with extra speed[end if].[paragraph break]";
+		continue the action;
+	say "You keep running [emo-dir], instead. It's too whiny in here.";
+	try going emo-dir instead;
+
+emo-dir is a direction that varies. emo-dir is west.
+
+check going to Emo Dome:
+	if Spur Ups are off-stage, say "It's too whiny to the east! You just aren't positive enough to deal with it, yet. You back out." instead;
+	if Spur Ups are not moot, say "The Spur Ups make you feel a bit more confident, but you need to do something to make yourself feel a bit more up before entering the Emo Dome." instead;
+	if pulled-up is false:
+		now emo-dir is noun;
+
+check going north in Emo Dome:
+	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a bright no-go-gon and a voice from the DIFF-ID: 'Oh! Who?'[paragraph break]You don't have anything identifying yourself. 'Go jog!' the voice continues. You think, hang? Nah." instead;
+	if Bro Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet." instead;
+	if not-a-baton is moot, say "You probably did all you needed to." instead;
+	say "You make sure your state tats are visible for scanning. They are accepted.[paragraph break][if madam is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the sword rows.[end if]";
+
+chapter DIFF ID
+
+[?? if you have the tattoos and tried going north, we should check those cases]
+
+the DIFF ID is peripheral scenery in Emo Dome. "You can't really look directly into it too much, but it seems like one of those scanners that could pop up a force field, or make a really annoying noise, if you tried to cross it."
+
+chapter pulluping
+
+pulled-up is a truth state that varies.
+
+pulluping is an action applying to nothing.
+
+understand the command "pull up" as something new.
+understand the command "pullup" as something new.
+
+understand "pull up" as pulluping.
+understand "pullup" as pulluping.
+
+carry out pulluping:
+	if pulled-up is true, say "You already did." instead;
+	if Spur Ups are off-stage, say "Maybe you can be or do that sort of up, later." instead;
+	if player is in Emo Dome:
+		say "You manage to stop yourself. The whining isn't too bad. Yeah, you can hack it here.";
+		now pulled-up is true;
+		score-inc; [Yelpley/pull up]
+		the rule succeeds;
+	say "This isn't the place[if Emo Dome is visited], but maybe you could do this in the Emo Dome[end if]." instead;
+
+chapter puce cup
+
+The Puce Cup is a thing in Emo Dome. "Someone has left a puce cup here.". description is "It's, well, puce, and it seems sturdy enough. It's currently [if puce cup is empty]empty[else if puce cup is sappy]full of [sap-sirup] from the rift fir in Cold Loc[else]full of Dose Sod from the Apse Spa[end if]."
+
+to say sap-sirup:
+	say "[if location of player is not Cold Loc]Past Sap[else]Purist Sirup[end if]"
+
+report taking puce cup: say "Emo swag! Awesome!"
+
+the puce cup can be empty, sappy or soddy. the puce cup is empty.
+
+puce-ever is a truth state that varies.
+
+understand "purist sirup" and "purist/sirup" as puce cup when puce cup is sappy and player is not in Cold Loc.
+
+understand "dose sod" as puce cup when puce cup is soddy and player is not in Apse Spa.
+
+after going from Cold Loc when puce cup is sappy:
+	say "The past sap in the puce cup thaws into purist sirup.";
+	continue the action;
+
+after going to Cold Loc when puce cup is sappy:
+	say "The purist sirup in the puce cup hardens [one of][or]back [stopping]into past sap.";
+	continue the action;
+
 book Toll Lot
 
 Toll Lot is east of Emo Dome. It is in Yelpley. "[if cross orc is in Toll Lot]While it's easy enough to go back west to the Emo Dome, that cross orc doesn't seem to want to let you go north or south[else]You can go north or south with the cross orc gone or, well, back west, too[end if]. A crag arc rises to the east[if UFO tofu is not off-stage]--maybe it is hiding something[end if]."
@@ -3099,94 +3202,6 @@ TNT is a tronpart. "Well, it's not going to blow up in your hands.".
 
 check taking TNT: say "The bomb mob would say a bit more than 'Yank? Nay!' You'd be seen too easily." instead;
 
-book Emo Dome
-
-Emo Dome is east of Yawn Way. It is in Yelpley. "You can go any direction here, and you sort of want to, because it's stuffy in here, even if it smells nice. [can-go-rro]."
-
-to say can-go-rro:
-	if Red Roses Order is unvisited:
-		say "Something labeling itself DIFF ID guards the way north";
-	else:
-		say "[if not-a-baton is off-stage]You feel you may still have unfinished business behind the DIFF ID to the north[else]The DIFF ID guards the Red Roses Order, which no longer holds adventure[end if]"
-
-instead of doing something in Emo Dome when pulled-up is false:
-	if current action is pulluping, continue the action;
-	if current action is going:
-		if noun is not west and noun is not east:
-			say "You're scared those places would be even worse.";
-			try going emo-dir instead;
-		say "You run [if noun is emo-dir]away[else if noun is opposite of emo-dir] with extra speed[end if].[paragraph break]";
-		continue the action;
-	say "You keep running [emo-dir], instead. It's too whiny in here.";
-	try going emo-dir instead;
-
-emo-dir is a direction that varies. emo-dir is west.
-
-check going to Emo Dome:
-	if Spur Ups are off-stage, say "It's too whiny to the east! You just aren't positive enough to deal with it, yet. You back out." instead;
-	if Spur Ups are not moot, say "The Spur Ups make you feel a bit more confident, but you need to do something to make yourself feel a bit more up before entering the Emo Dome." instead;
-	if pulled-up is false:
-		now emo-dir is noun;
-
-check going north in Emo Dome:
-	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a bright no-go-gon and a voice from the DIFF-ID: 'Oh! Who?'[paragraph break]You don't have anything identifying yourself. 'Go jog!' the voice continues. You think, hang? Nah." instead;
-	if Bro Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet." instead;
-	if not-a-baton is moot, say "You probably did all you needed to." instead;
-	say "You make sure your state tats are visible for scanning. They are accepted.[paragraph break][if madam is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the sword rows.[end if]";
-
-chapter DIFF ID
-
-[?? if you have the tattoos and tried going north, we should check those cases]
-
-the DIFF ID is peripheral scenery in Emo Dome. "You can't really look directly into it too much, but it seems like one of those scanners that could pop up a force field, or make a really annoying noise, if you tried to cross it."
-
-chapter pulluping
-
-pulled-up is a truth state that varies.
-
-pulluping is an action applying to nothing.
-
-understand the command "pull up" as something new.
-understand the command "pullup" as something new.
-
-understand "pull up" as pulluping.
-understand "pullup" as pulluping.
-
-carry out pulluping:
-	if pulled-up is true, say "You already did." instead;
-	if Spur Ups are off-stage, say "Maybe you can be or do that sort of up, later." instead;
-	if player is in Emo Dome:
-		say "You manage to stop yourself. The whining isn't too bad. Yeah, you can hack it here.";
-		now pulled-up is true;
-		score-inc; [Yelpley/pull up]
-		the rule succeeds;
-	say "This isn't the place[if Emo Dome is visited], but maybe you could do this in the Emo Dome[end if]." instead;
-
-chapter puce cup
-
-The Puce Cup is a thing in Emo Dome. "Someone has left a puce cup here.". description is "It's, well, puce, and it seems sturdy enough. It's currently [if puce cup is empty]empty[else if puce cup is sappy]full of [sap-sirup] from the rift fir in Cold Loc[else]full of Dose Sod from the Apse Spa[end if]."
-
-to say sap-sirup:
-	say "[if location of player is not Cold Loc]Past Sap[else]Purist Sirup[end if]"
-
-report taking puce cup: say "Emo swag! Awesome!"
-
-the puce cup can be empty, sappy or soddy. the puce cup is empty.
-
-puce-ever is a truth state that varies.
-
-understand "purist sirup" and "purist/sirup" as puce cup when puce cup is sappy and player is not in Cold Loc.
-
-understand "dose sod" as puce cup when puce cup is soddy and player is not in Apse Spa.
-
-after going from Cold Loc when puce cup is sappy:
-	say "The past sap in the puce cup thaws into purist sirup.";
-	continue the action;
-
-after going to Cold Loc when puce cup is sappy:
-	say "The purist sirup in the puce cup hardens [one of][or]back [stopping]into past sap.";
-	continue the action;
-
 book Red Roses Order
 
 Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in Red Roses Order]The only visible way back is south, with a mist sim blocking the other directions and seeming very threatening and oppressive indeed, but you can't chicken out[else]Sword rows have been revealed once the mist sim dispersed. The E-Divide flickers and guards the way north where Madam left. You can go back south[end if]."
@@ -3382,7 +3397,68 @@ The DNA band is a thing in Pro Corp. "A DNA band sits here, nice and tidy and he
 
 The DNA hand is a thing. description is "It's motionless, but it looks lifelike enough. There must be a way to bring it to life!"
 
-The bang nab is a thing. description is "Wow! It's really evolved from a DNA band! It's sturdy. If it had eyes, it'd be looking for something to steel and run--umm, that's not quite right--off with. You're not sure why it hasn't run off with anything in your inventory. Is all this stuff you piled up worthless? Perhaps the bang nab is just grateful."
+Mr Arm is a proper-named thing. description is "Wow! It's really evolved from a DNA band! It's sturdy. If it had eyes, it'd be looking for something to steal and run--umm, that's not quite right--off with. You're not sure why it hasn't run off with anything in your inventory. Is all this stuff you piled up worthless? Perhaps the Mr Arm is just grateful and wants to steal something for you.[paragraph break][one of]Mr. Arm seems about to point somewhere. If you look again, you can see where[or]Mr. Arm points [arm-dir][stopping]"
+
+printed name of Mr Arm is "Mr. Arm".
+
+understand "bang/nab" and "bang nab" as Mr Arm.
+
+to say arm-dir:
+	if player is in yell aley:
+		say "is waving around frantically!";
+		continue the action;
+	let Horz be (remainder after dividing loc-num of location of player by 10) -  (remainder after dividing loc-num of Yell Alley by 10);
+	let Vert be (loc-num of location of player / 10) -  (loc-num of Yell Alley / 10);
+	if Vert is 0:
+		say "[if Horz > 0]west[else]east"
+	else if Horz is 0:
+		say "north";
+	else if Vert + Horz = 0:
+		say "northeast";
+	else if Vert is Horz:
+		say "northwest";
+	else if Horz > 0:
+		say "[if Vert > Horz]north[else]west[end if]-northwestish";
+	else:
+		say "[if Vert + Horz > 0]north[else]east[end if]-northeastish";
+
+a room has a number called loc-num.
+
+loc-num of Calcific Lac is 00.
+loc-num of Sneer Greens is 01.
+loc-num of Flu Gulf is 02.
+loc-num of Trapeze Part is 03.
+loc-num of Evaded Ave is 04.
+loc-num of Yell Alley is 05.
+loc-num of Pro Corp is 06.
+loc-num of Swamp Maws is 10.
+loc-num of Le Babel is 11.
+loc-num of Cold Loc is 12.
+loc-num of Apse Spa is 13.
+loc-num of Art Xtra is 14.
+loc-num of Red Roses Order is 15.
+loc-num of Gross Org is 16.
+loc-num of Mire Rim is 20.
+loc-num of Dumb Mud is 21.
+loc-num of Seer Trees is 22.
+loc-num of Fun Nuf is 23.
+loc-num of Yawn Way is 24.
+loc-num of Emo Dome is 25.
+loc-num of Toll Lot is 26.
+loc-num of Den Ivy Vined is 30.
+loc-num of Mont Nom is 31.
+loc-num of Ooze Zoo is 32.
+loc-num of Worn Row is 33.
+loc-num of My Gym is 34.
+loc-num of Swept Pews is 35.
+loc-num of Deft Fed is 36.
+loc-num of Lair Trial is 40.
+loc-num of Motto Bottom is 41.
+loc-num of Frush Surf is 42.
+loc-num of Moo Room is 43.
+loc-num of Dopy Pod is 44.
+loc-num of Drawl Ward is 45.
+loc-num of Scrap Arcs is 46.
 
 volume dialogue
 
@@ -3416,7 +3492,7 @@ talk-text of Rob is "Rob yawns. He doesn't find you very interesting. Maybe ther
 talk-text of sleep eels is "Maybe they are sending some sort of electric message you could detect with the right instrument, but they're not talking. You're more struck, though, by how uncomfortable they look while sleeping--wriggling about.".
 talk-text of Sniffins is "[if YOB ATTABOY is not moot]'Tony? Not! Poor lower class me is a failure! If only I had some success manual!'[else]'Oh. It's you again. If you were REALLY smart, you'd have taken the advice in that book you gave me.'[end if]".
 talk-text of Verses Rev is "The Verses Rev booms 'Erupt! Pure!' then piously intones how weirdos not in line with the Diktat Kid's values need to be eradicated.".
-talk-text of Wordy Drow is "It moans and points at the Liar Grail. They're forced together, somehow, but maybe you can change that."
+talk-text of Wordy Drow is "It moans and points at the Liar Grail. They're forced together, somehow, but maybe you can change that.".
 talk-text of Yuge Guy is "'I'm ... ' / 'TMI!'"
 
 volume gotoing
@@ -3620,6 +3696,7 @@ chase-person is a person that varies.
 last-chase-direction is a direction that varies.
 
 to start-chase (guy - a person):
+	move x-it stix to stix-room of
 	now chase-person is guy;
 	now last-chase-direction is southwest;
 	now being-chased is true;
@@ -4439,34 +4516,30 @@ carry out randlisting:
 
 loafing is an activity.
 
-chapter random listing rules
+part amusing the player
+
+ignore-done is a truth state that varies. [?? bring this back for really hidden stuff like RM GNU /RM MR]
 
 this is the amuse-toggle rule:
 	now ignore-done is whether or not ignore-done is false;
 	say "Ignoring done amusements is now [on-off of ignore-done].";
 
-this is the no-list rule:
-	plowit table of noesies;
-
-this is the wait-list rule:
-	plowit table of waittxt;
-
-this is the empty-list rule:
-	plowit table of nothings;
-
-to plowit (t - a table name):
-	let count be 0;
-	repeat through t:
-		increment count;
-		say "[count]. [randtxt entry][line break]";
-
-part amusing and what you missed
-
-ignore-done is a truth state that varies.
+to say gt: say "Put It Up";
 
 rule for amusing a victorious player:
 	let count be 0;
 	say "The mistakes file ([gt] mistakes.i7x) should have all the possible palindrome tries. You can read through there.[paragraph break]Similarly, the tables file ([gt] tables.i7x) should have all the random texts.";
+
+part what you missed (LLP)
+
+this is the what-missed rule:
+	let missed be 0;
+	repeat through table of last lousy points:
+		consider the dorule entry;
+		if the rule failed:
+			say "[funstuff entry]";
+			increment missed;
+	if missed is 0, say "You found all the points!"
 
 chapter misses table
 
@@ -4678,9 +4751,6 @@ when play begins (this is the make sure everyone is chatty rule):
 	let count be 0;
 	repeat with Q running through people:
 		if talk-text of Q is empty:
-			if gender-oppo of Q is not Diktat Kid and talk-text of gender-oppo of Q is not empty:
-				say "[Q] maps to [gender-oppo of Q]. This is okay.";
-				next;
 			increment count;
 			say "[count]. [Q] needs basic talk-text.";
 	if count is 0:

@@ -22,7 +22,7 @@ test part3 with "w/w/w/n/use wash saw on past sap/use puce cup on past sap/s/e/e
 
 test part4 with "w/get all/e/e/use stamp mats on slate metals/w/n/n/w/w/w/n/n/use demo med on gulf lug/s/s/e/e/e/e/use cash sac on cross orc"
 
-test p5a with "s/use yob attaboy on sniffins/use elan ale on sniffins/stand nat's/n/w/w/s/w/work row/use dirt rid on reviver/e/n/e/s/s/w/use cave vac on cassettes sac/e/n/n/e/use radar on crag arc/n/deny ned/get all/use ye key on etage gate/n"
+test p5a with "s/use yob attaboy on sniffins/s/use elan ale on sniffins/stand nat's/n/w/w/s/w/work row/use dirt rid on reviver/e/n/e/s/s/w/use cave vac on cassettes sac/e/n/n/e/use radar on crag arc/n/deny ned/get all/use ye key on etage gate/n"
 [this is to give the psi wisp another go]
 
 test part5 with "s/use yob attaboy on sniffins/use elan ale on sniffins/stand nat's/n/w/w/s/w/work row/use dirt rid on reviver/e/n/e/s/s/w/use cave vac on cassettes sac/e/n/n/e/use radar on crag arc/n/deny ned/get all/use ye key on etage gate/n/s/s/w/w/s/w/worn row/work row/use stinky knits on rotator"
@@ -37,7 +37,7 @@ test p8a with "w/s/s/s/e/use enact cane on yahoo hay/pace cap/use troll ort on b
 [this is to give the kayo yak another go]
 
 [ note I could probably save a move or two here by visiting mont nom just before going back east ... now that getting the Martini Tram moves you back to Fun Nuf ]
-test part9 with "w/w/w/n/use moor broom on tru yurt/s/s/use wash saw on porch crop/n/e/use exam axe on lie veil/n/muss opossum/get all/s/e/e/e/s/w/use dna band on reifier/use roto motor on dna hand/use eroded ore on reviver/use you buoy on rotator/e/n/n/n/e/use bang nab on tnt/get rep popper/w/s/s/w/w/n/n/use nat's tan on scorn rocs"
+test part9 with "w/w/w/n/use moor broom on tru yurt/s/s/use wash saw on porch crop/n/e/use exam axe on lie veil/n/muss opossum/get all/s/e/e/e/s/w/use dna band on reifier/use roto motor on dna hand/use eroded ore on reviver/use you buoy on rotator/e/n/n/n/e/use mr arm on tnt/get rep popper/w/s/s/w/w/n/n/use nat's tan on scorn rocs"
 
 test rollup with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9"
 

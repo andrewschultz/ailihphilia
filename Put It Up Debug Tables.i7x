@@ -53,7 +53,7 @@ to next-rand (t - a table name):
 	let Q be tabidx entry;
 	let lb be lbrk entry;
 	choose row Q in tabnam entry;
-	say "[randtxt entry][if lb is true][line break][end if][else][run paragraph on][end if]";
+	say "[randtxt entry][if lb is true][line break][else][run paragraph on][end if]";
 
 table of all randoms
 tabnam	tabidx	lbrk	desc

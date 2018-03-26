@@ -317,7 +317,7 @@ Do you have the DNA band or DNA hand?
 With the band, put it in the right machine.
 You need to mobilize the hand to get the TNT. It's small enough, the mob won't spot it.
 USE ROTO MOTOR ON DNA HAND.
-USE BANG NAB ON TNT.
+USE MR ARM ON TNT.
 >>TRAPEZE PART
 ?How do I get across the trapeze?
 The net isn't quite stable yet.
@@ -537,7 +537,7 @@ There are 37 total points in Yelpley.
 1 point if you USE ROTO MOTOR ON DNA HAND.
 1 point if you USE ERODED ORE ON REVIVER.
 1 point if you USE YOU BUOY ON ROTATOR.
-1 point if you USE BANG NAB ON TNT.
+1 point if you USE MR ARM ON TNT.
 1 point if you USE BRO ORB ON MIST SIM.
 1 point if you USE NOT-A-BATON ON REIFIER.
 1 point if you USE BALSA SLAB ON SWORD ROWS.

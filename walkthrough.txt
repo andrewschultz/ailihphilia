@@ -175,6 +175,10 @@ We can do a bit of the work in Deli, Tiled. Even change it.
 
 (+1) > USE YOB ATTABOY ON SNIFFINS
 
+You're kicked out, but you can just go back in.
+
+>S
+
 (+1) > USE ELAN ALE ON SNIFFINS
 
 (+1) > STAND NAT'S
@@ -339,7 +343,7 @@ Now with all the junk we have, we can make non-junk.
 
 >E.N.N.N.E
 
-(+1) >USE BANG NAB ON TNT
+(+1) >USE MR ARM ON TNT
 
 >GET REP POPPER
 
