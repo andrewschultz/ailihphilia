@@ -38,17 +38,21 @@ def num_of(a):
         return 0
 
 def mistake_check(reord):
-    old_school_yet = True
+    line_count = 0
+    old_school_yet = False
     local_copy_back = True
     cur_num = (0 if reord else x)
     filre = ['fill', 'reorder']
     fout = open(mis2, "w", newline='\n')
     with open(mis) as file:
         for line in file:
+            line_count = line_count + 1
             if 'volume old school' in line:
                 old_school_yet = True
+                print("Ignoring all past line", line_count)
             if old_school_yet is False:
                 if re.search("^understand.*as a mistake", line):
+                    # print(reord, line_count, line)
                     if reord:
                         cur_num = cur_num + 1
                         line = change_mis(line, cur_num)
@@ -63,7 +67,7 @@ def mistake_check(reord):
     print("RESULTS FOR", filre[reord], "........")
     if difs:
         if cmp(mis, mis2):
-            print("No changes. No compare shown.")
+            print("No changes", mis, mis2, ". No compare shown.")
         else:
             print("Comparing")
             os.system("wm \"{:s}\" \"{:s}\"".format(mis, mis2))
