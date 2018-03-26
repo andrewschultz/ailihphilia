@@ -12,6 +12,7 @@ person-name	can-m	can-f
 "Eliza Bazile"	false	true
 "Kera Marek"	false	true
 "Leta Patel"	false	true
+"Marge Pegram"	false	true
 "Mika Hakim"	false	true
 "Norma Damron"	false	true
 "Reiko Kier"	false	true
@@ -20,6 +21,7 @@ person-name	can-m	can-f
 "Leigh Giel"	true	true
 "Adam Imada"	true	false
 "Eldon Odle"	true	false
+"Elias Osaile"	true	false
 "Emory Rome"	true	false
 "Gino Konig"	true	false
 "Levi Rivel"	true	false
@@ -40,7 +42,7 @@ person-name
 "Anitra Martina"
 "Annalee Lanna"
 "Anne Kenna"
-["Annika Kinna"
+"Annika Kinna"
 "Anya Rayna"
 "Asa Casa"
 "Ava Lava"
@@ -79,7 +81,6 @@ person-name
 "Elda Wadle"
 "Eldon Odle"
 "Eli Kile"
-"Elias Osaile"
 "Elida Nadile"
 "Elisa Basile"
 "Eliza Bazile"
@@ -454,7 +455,7 @@ person-name
 "Zena Llanez"
 "Zita Batiz"
 "Zoe Oz"
-"Zula Luz"]
+"Zula Luz"
 
 chapter random businesses
 

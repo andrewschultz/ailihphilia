@@ -269,6 +269,8 @@ when play begins:
 	sort table of last lousy points in random order;
 	repeat through table of all randoms:
 		sort tabnam entry in random order;
+	sort table of random palindrome names in random order; [ move these to table of all randoms eventually? Need to check]
+	sort table of random authors in random order;
 	say "It's not the first dream you had about how awful high school was, but it's the worst in a while. A few 'favorite' classmates chanting 'Diary raid!' and passing it around as they mock 'Beefy? Feeb! Bony Nob!'[wfak-d]";
 	say "You check your mail as you go out to the grocery store. A junk magazine! It's been so long since you got one, you're almost intrigued.[wfak-d]";
 	say "It just says GAME MAG. But the cover isn't telling you to actually buy anything, so you look inside. You have a whole backlog of games, but you can just recycle it when you get to the store. No, not the erot-store![wfak-d]";
@@ -281,6 +283,8 @@ when play begins:
 	say "After your fifth win in a row, the Flee Elf yells 'Put it up!' You freeze--well, until you're knocked to the ground.[wfak-d]";
 	say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Raw Level War. You'll do for Yelpley, I guess.' The Flee Elf leads you away. 'The first thing to do is, figure how to take this cap.'[wfak-d]";
 	do nothing; [debug information below here. I've had problems putting it in and not deleting it, so I want to make things clear.]
+
+[??mike kim nora maron Marge Pegram lee mcmeel]
 
 volume parser errors operations and death
 
@@ -1574,6 +1578,7 @@ to blanket-reject (bj - a thing):
 
 table of periphery [xxper]
 itm	reject
+Name ME Man	"The phone book is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting, but it's there."
 girt rig	"The girt rig is too sturdy to move. But then, there's even sleazier stuff beyond it."
 redness ender	"You don't want to do anything crazy with the Redness Ender. You don't want to go near it. It's dangerous looking. You can picture it ambushing someone who doesn't expect it."
 decal placed	"The decal placed decal is just there to advertise the food. It's not critical to the story."
@@ -2214,6 +2219,33 @@ part Yelpley region
 book Yawn Way
 
 Yawn Way is east of Fun Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but you can go in all four directions, here: back west to Fun [']Nuf, north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]Emo Dome[else]a dome[end if]."
+
+chapter name me man
+
+name-me-row is a number that varies.
+
+Name ME Man is proper-named peripheral scenery in Yawn Way. printed name is "Name ME, MAN". "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers:[line break][fixed letter spacing][name-num of 5][variable letter spacing]"
+
+to say name-num of (n - a number):
+	let numrow be number of rows in table of random palindrome names;
+	repeat with x running from 1 to n:
+		increment name-me-row;
+		choose row name-me-row in table of random palindrome names;
+		say "[person-name entry]: [phone-number of name-me-row][line break]"
+		if name-me-row is numrow:
+			say "That's the end!";
+			now name-me-row is 0;
+
+prime-constant is a number that varies. prime-constant is 8999.
+
+to say phone-number of (x - a number):
+	let x2 be 1;
+	while x > 1:
+		let Y be (prime-constant / x) + 1;
+		now x is the remainder after dividing x * y by prime-constant;
+		now x2 is the remainder after dividing x2 * y by prime-constant;
+	now x2 is x2 + 1000;
+	say "[x2 / 10]-[remainder after dividing x2 by 10][remainder after dividing x2 / 10 by 10][remainder after dividing x2 / 100 by 10][x2 / 1000][line break]"
 
 chapter puffuping
 
@@ -3638,30 +3670,6 @@ after looking when being-chased is false (this is the start-chase-in-case rule):
 	continue the action;
 
 volume gender switching
-
-chapter picking random genders for players
-
-a person has a person called gender-oppo. gender-oppo of a person is usually Diktat Kid.
-
-[??mike kim nora maron Marge Pegram lee mcmeel]
-
-when play begins (this is the gender randomize rule):
-	sort table of random authors in random order; [not strictly gender, but its gender can be changed]
-
-this is the gender-too-late rule:
-	if Art Xtra is visited, say "Too late to switch genders." instead;
-
-chapter gender-sort
-
-to table-comb (myp - a person):
-	if gender-oppo of myp is Diktat Kid, continue the action;
-	repeat through table of useons:
-		if use2 entry is gender-oppo of myp:
-			if debug-state is true, say "DEBUG: switched [use2 entry] to [myp].";
-			now use2 entry is myp;
-			continue the action;
-
-volume unsorted
 
 volume metarooms
 
