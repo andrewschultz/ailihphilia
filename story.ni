@@ -2330,7 +2330,7 @@ carry out evadeing:
 
 book Worn Row
 
-Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky]Three machines are here[else if Worn Row is wordy]A tract cart is here, [tract-status][else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if][if redness ender is in Worn Row]. There's also a redness ender here, but it looks dangerous to get too close to[end if]. The only way out is back east."
+Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky]Three machines are here[else if Worn Row is wordy]A tract cart is here, [tract-status][else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if][if redness ender is in Worn Row]. There's also a redness ender here, but it looks dangerous to get too close to[end if]. The only way out is back east[if bad dab is in Worn Row]. A bad dab is splashed on the floor, too--a simple message[end if]."
 
 printed name of Worn Row is "[if Worn Row is wordy]Word[else if Worn Row is worky]Work[else]Worn[end if] Row"
 
@@ -2365,6 +2365,10 @@ chapter Rob
 
 Rob is a proper-named guhthug in Worn Row. "[one of]'Oh, hi! I'm Rob, it's pretty uninteresting here, so you'd sort of fit in, but I'm trying to make it better. So, bug off, okay?'[or]Rob is still here giving you the side-eye.[stopping]". description is "Rob sniffs and rolls his eyes as if he is too good for Worn Row."
 
+chapter bad dab
+
+the bad dab is peripheral scenery in Worn Row. description is "[if Rob is in Worn Row]WORN ROW is written, somewhat dubiously[else if ever-work is true or ever-worn is true]WOR- ROW is still here, faded now since you opened [Worn Row][else]WOR- ROW is here. Maybe there's more here than just Worn Row[end if]."
+
 chapter test set
 
 The test set is a thing. "A test set lies here, looking convoluted and -- well, open to abuse.". description is "You're not sure what it's good for, but now that you worked through all the machines, maybe you just need it to, well, try stuff before your final confrontation.".
@@ -2384,7 +2388,7 @@ does the player mean boreing Rob: it is very likely.
 carry out boreing:
 	if noun is not a person, say "You should try to bore people, not things." instead;
 	if noun is not Rob, say "Wrong thing or person to bore." instead;
-	say "You bore Rob successfully. He wanders off, perhaps to Ybor.";
+	say "You bore Rob successfully. He begins pacing around, even grinding out the 'N' in the bad dab, leaving it as WOR- ROW, before wandering off. Perhaps to Ybor.";
 	moot Rob;
 	score-inc; [Yelpley/bore rob]
 	the rule succeeds.
@@ -2667,11 +2671,20 @@ carry out workrowing:
 	else:
 		say "[Worn Row] returns once again to Work Row. It's a little less disorienting this time around. [if test set is not off-stage]The reifier, reviver and rotator reappear[else if test set is in Worn Row]The test set re-appears[else]Work row is still barren, though[end if].";
 	now ever-workrow is true;
+	check-dab;
 	now all workables are in Worn Row;
 	now all books in Worn Row are in TempMet;
 	if redness ender is in Worn Row, now redness ender is in TempMet;
 	now tract cart is in TempMet;
 	the rule succeeds;
+
+to check-dab:
+	if bad dab is in Worn Row:
+		if ever-workrow is true and ever-wornrow is true:
+			say "The WOR- ROW text of the bad dab fades out of sight.";
+			moot bad dab;
+		else:
+			say "The bad dab saying WOR- ROW fades slightly."
 
 chapter wordrowing
 
@@ -2704,6 +2717,7 @@ carry out wordrowing:
 	else:
 		say "The tract cart re-appears.";
 	now ever-wordrow is true;
+	check-dab;
 	now all tractable books are in Worn Row;
 	if pity tip is off-stage, now player has pity tip;
 	the rule succeeds;
@@ -3695,7 +3709,7 @@ after going when being-chased is true:
 	if x-it stix are in location of player, say "X-it Stix X out the way [if location of player is west of Fun Nuf]east[else]west[end if]. It's probably bad for the [chase-person] to get loose in [if player is in Yawn Way]Grebeberg[else]Yelpley[end if].";
 	continue the action;
 
-x-it stix are peripheral scenery. "They are in an X, and while they don't allow an Xit, they do x out one way to go, which may help you figure how you need to get away from the [chase-person].";
+x-it stix are peripheral scenery. "They look like the metal grating shops pull out over their doors and windows at closing time.[paragraph break]They are in an X, and while they don't allow an Xit, they do x out one way to go, which may help you figure how you need to get away from the [chase-person].[paragraph break]Of course, any wordplay adventurer worth their salt (like you--you're pretty far along, here) knows the difference between EXIT and X-IT. These things are telling you what you can't do!";
 
 being-chased is a truth state that varies.
 init-turn is a truth state that varies.
