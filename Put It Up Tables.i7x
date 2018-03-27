@@ -644,6 +644,7 @@ randtxt
 "Yo! Coy?"
 
 table of Rob droning
+randtxt
 "EOF, Foe!"
 "More ROM!"
 "Prove VORP!"

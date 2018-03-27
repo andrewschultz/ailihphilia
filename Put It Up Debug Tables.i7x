@@ -113,9 +113,9 @@ randtxt
 "Dud!"
 
 table of Rob droning
+randtxt
 "EOF, Foe!"
 "More ROM!"
-"Prove VORP!"
 
 table of singstuff
 randtxt

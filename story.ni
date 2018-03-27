@@ -68,7 +68,7 @@ use MAX_VERBS of 260.
 
 section compiler constants - not for release
 
-use MAX_VERBS of 300. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 310. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 chapter region and room stuff
 
@@ -233,6 +233,7 @@ check requesting the score:
 		let ni be number of tronparts carried by the player;
 		say "You also have [ni] of [number of tronparts] piece[if ni is not 1]s[end if] of the North-Tron, according to the epicer recipe.";
 	if mist-found > 0, say "[line break]You've also found [mist-found] of [number of entries in checkoffs] palindromes that were there but not critical to the story. [if mist-found * 2 > number of entries in checkoffs]Very impressive![else]Don't knock yourself out trying to find them all.[end if]";
+	if score-cheat > 0, say "[line break]Also, you used REV OVER to plow past [score-cheat] point puzzles, but I won't hold it against you.";
 	the rule succeeds;
 
 to say to-get-max:
@@ -987,7 +988,7 @@ el doodle	edits tide	spa maps	--	rahs-too rule	true	true	false	Grebeberg	"The ed
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Calcific Lac. As it gets near and bends away, you jump off, using the buoy to paddle and float back to Calcific Lac."
 dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
 tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Together, you figure out what to do to make the tent net proper cover for the All-Ivy Villa. 'Tie it ... tie it ...'[paragraph break]Once the work is done, the Code Doc thanks you and offers to share some knowledge in return, whenever."
-spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my math tam for this one. One second, let's see--Aha! Oho...' and despite a minor pupil slip-up, it soon makes complete sense to you."
+spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my for-prof math tam for this one. One second, let's see--Aha! Oho...' and despite a minor pupil slip-up, it soon makes complete sense to you."
 spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	"You stick some strands of yahoo hay into the damaged end of the dork rod. It's now a moor broom!"
 troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the stinky knits, but still quite distinctive." [b4:pace cap] [af:yak okay]
@@ -4794,6 +4795,52 @@ understand "per" as pering.
 carry out pering:
 	say "Peripheral things: [list of peripheral things].";
 	the rule succeeds;
+
+chapter revovering
+
+revovering is an action out of world.
+
+understand the command "rev over" as something new.
+
+understand "rev over" as revovering.
+
+global-delay is a number that varies.
+
+score-cheat is a number that varies.
+
+carry out revovering:
+	if being-chased is true, say "Oops, that's too much for me to do at once! Either escape or get caught by [the chase-person] first, then we can proceed." instead;
+	if player is in Dirge Grid, say "You're already at the Dirge Grid!" instead;
+	if Dirge Grid is visited, say "Too late! You've already been to the Dirge Grid." instead;
+	if emitted is true and player has ME gem and player has taboo bat, say "You're already near the endgame.";
+	say "Attempting to REV OVER...";
+	now global-delay is 0;
+	if flee elf is in Fun Nuf, say "You PACK CAP to take the pact cap...[line break]Visit Yawn Way...[isco]";
+	if trap art is in Art Xtra, say "You get the trap art from Art Xtra north of Yawn Way...";
+	if Rob is in Worn Row, say "You bore Rob out of Worn Row...[isco]";
+	if ever-wordrow is false, say "You change Worn Row to Word Row to reveal a tract cart full of books...[isco]";
+	if epoch cope is in Worn Row, say "You take [epoch cope] from Word Row...";
+	if ever-workrow is false, say "You change Worn Row to Work Row to reveal three machines...[isco]";
+	if party trap is off-stage, say "You create a party trap from the trap art in Work Row...[isco]";
+	if stark rats are in Seer Trees, say "You use the party trap on the stark rats in Seer Trees west of Fun [']Nuf...[isco]";
+	if King Nik is in Cold Loc, say "You give King Nik [epoch cope]...[isco]";
+	if score > last notified score:
+		say "[bracket]I just gave you [score - last notified score] points to go with your quick trip, because I'm generous like that.[close bracket][paragraph break]";
+		now score-cheat is score-cheat + score - last notified score;
+		now last notified score is score;
+	follow the notify score changes rule;
+	the rule succeeds;
+
+to say isco:
+	abide by the delay-or-bail rule;
+	increment the score;
+	increment global-delay;
+
+this is the delay-or-bail rule:
+	if global-delay > 0 and remainder after dividing global-delay by 5 is 0:
+		say "REV OVER more?";
+		if the player yes-consents, continue the action;
+		stop the action;
 
 volume internal testing - not for release
 
