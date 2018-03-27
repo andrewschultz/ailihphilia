@@ -67,7 +67,7 @@ def mistake_check(reord):
     print("RESULTS FOR", filre[reord], "........")
     if difs:
         if cmp(mis, mis2):
-            print("No changes", mis, mis2, ". No compare shown.")
+            print("No changes", mis, "vs", mis2 + ". No compare shown.")
         else:
             print("Comparing")
             os.system("wm \"{:s}\" \"{:s}\"".format(mis, mis2))
@@ -138,6 +138,8 @@ errs = 0
 
 with open(mis) as file:
     for line in file:
+        if line.startswith("volume old school verbs"):
+            break
         if line.startswith("understand"):
             nol = num_of(line)
             if nol in got.keys() and nol > 0:

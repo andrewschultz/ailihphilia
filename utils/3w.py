@@ -52,6 +52,7 @@ def usage():
     print("-h = hash tests")
     print("-l  = pick up where 3w(2).txt left off")
     print("-m  = maximum word length (minimum = 2)")
+    print("-n  = names not words, -nw/-wn = both")
     print("-o  = order results by last word, -no/-on turns this off")
     print("-q  = quick search. Skip begin/end palindromes e.g. ACISODIS/ISODICA.")
     print("-s  = skip uneven palindromes e.g. top X spot. Speedup, but may miss a few.")
@@ -217,6 +218,7 @@ def two_words_in_pal_test(a, b):
 def hash_tweak(wd):
     global startpals
     global endpals
+    if wd in wordy.keys(): return
     bkwd = wd[::-1]
     wordy[wd] = True
     first_1_or_2[wd[0]][wd] = True
@@ -245,6 +247,11 @@ def hash_tweak(wd):
                 print("remove", wd[i:], "from", wd, "to get", wd[:i], i, "end partial anagram")
             # print(wd[:-i], wd, i, "end partial anagram")
 
+def hash_tweak_file(file_name):
+    with open(file_name) as file:
+        for line in file:
+            hash_tweak(line.lower().strip())
+
 # functions above, main program below
 
 # default values
@@ -269,7 +276,7 @@ extra_words = []
 
 order_results = False
 
-two_word_file = "3w-ok.txt"
+two_word_file = "3w-ok-words.txt"
 fixed_array = []
 
 hash_test_array = []
@@ -328,7 +335,7 @@ if len(sys.argv) > 1:
                 exit()
             count = count + 2
             continue
-        elif ll == '-i2':
+        elif ll == '-i2' or ll == '-i':
             ignore_2_letter_words = True
         elif ll == '-l':
             look_for_last = True
@@ -345,6 +352,13 @@ if len(sys.argv) > 1:
             except:
                 print("Need a number after -m for max word length.")
                 exit()
+        elif ll == '-n':
+            do_dict_words = False
+            do_names = True
+            two_word_file = "3w-ok-names.txt"
+        elif ll == '-nw' or ll == '-wn':
+            do_dict_words = True
+            do_names = True
         elif ll == '-o':
             order_results = True
         elif ll == '-on' or ll == '-no':
@@ -426,10 +440,13 @@ if dupes:
 
 time_before_read_word_file = time.time()
 
-for x in range(3, max_word_length + 1):
-    with open("c:/writing/dict/words-{:d}.txt".format(x)) as file:
-        for line in file:
-            hash_tweak(line.lower().strip())
+if do_dict_words:
+    for x in range(3, max_word_length + 1):
+        hash_tweak_file("c:/writing/dict/words-{:d}.txt".format(x))
+
+if do_names:
+    hash_tweak_file("c:/writing/dict/firsts.txt")
+    hash_tweak_file("c:/writing/dict/lasts.txt")
 
 time_after_read_word_file = time.time()
 
