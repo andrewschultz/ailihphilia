@@ -58,6 +58,12 @@ a thing can be peripheral. a thing is usually not peripheral.
 
 an ingredient is a kind of thing. an ingredient is usually edible. an ingredient can be solid or liquid.
 
+a thing can be nyet or xyet. A thing is usually nyet.
+
+after examining:
+	now the noun is xyet;
+	continue the action;
+
 understand "man" as a person when the person is male.
 understand "man/woman" as a person when the person is neuter.
 understand "woman" as a person when the person is female.
@@ -1441,7 +1447,7 @@ to decide which number is roving-LLP: [Not location dependent: DIAL AID, STATS, 
 check going north in Fun Nuf:
 	if Diktat Kid is moot, say "No need to go back." instead;
 	if epicer recipe is off-stage, say "You need to get there. But you have no clue what to build, or how." instead;
-	if er-ex is false, say "You're clueless how. But you decide to look at the epicer recipe...[paragraph break]" instead;
+	if epicer recipe is xyet, say "You're clueless how. But you decide to look at the epicer recipe...[paragraph break]" instead;
 	if north tron is not in Fun Nuf, say "Not until you built the North-Tron." instead;
 	if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
 	if murdered rum is not moot, say "You have the yard ray, but it isn't, well, charged." instead;
@@ -1528,8 +1534,6 @@ chapter Set O Notes
 
 the Set O Notes is a proper-named helpdoc. description is "There's some general vague advice about making a North-Tron to defeat the Diktat Kid, but first you'll have to defeat [b]Madam[r], as well as the [b]Yuge Guy, Evil Clive[r].[paragraph break]You notice that there is a guh-thug at various places that doesn't quite fit in, and you can probably guess what to do there. [thug-report].[paragraph break]Also scribbled, in the center, is FUN [']NUF with TRI-GIRT below that. [paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
 
-x-notes-yet is a truth state that varies.
-
 to say thug-report:
 	let GG be number of moot guhthugs;
 	let GG2 be number of seenees guhthugs;
@@ -1549,13 +1553,10 @@ definition: a guhthug (called th) is seenees:
 	no;
 
 after examining Set O Notes:
-	if x-notes-yet is false:
-		say "Well, that was much more useful than the Darer Ad, but maybe you'll get something even more detailed than the Set-O-Notes later.";
-		now x-notes-yet is true;
+	if Set O Notes is not xyet, say "Well, that was much more useful than the Darer Ad, but maybe you'll get something even more detailed than the Set-O-Notes later.[if player is in Worn Row][paragraph break]";
 	if player is in Worn Row, say "[trigirt].";
 
 to say trigirt:
-	if x-notes-yet was false, say "[line break]";
 	if ever-workrow is true and ever-wordrow is true:
 		say "Well, that makes sense. You've changed Worn Row to Word Row and Work Row";
 	else if ever-workrow is false and ever-wordrow is false:
@@ -2268,7 +2269,7 @@ part Yelpley region
 
 book Yawn Way
 
-Yawn Way is east of Fun Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but you can go in all four directions, here: back west to Fun [']Nuf, north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]Emo Dome[else]a dome[end if].[paragraph break][one of]There's also something called NAME ME, MAN, which--well, it's really just a glorified phone book. Yawn[or]NAME ME, MAN waits for your perusal, if you have a great need to procrastinate[stopping]."
+Yawn Way is east of Fun Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but you can go in all four directions, here: back west to Fun [']Nuf, north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]Emo Dome[else]a dome[end if].[paragraph break][one of]There's also something called NAME ME, MAN, which--well, it's really just a glorified phone book. Yawn[or]NAME ME, MAN waits for your perusal, if you have a great need to procrastinate[if name me man is xyet] some more[end if][stopping]."
 
 chapter name me man
 
@@ -2978,8 +2979,7 @@ instead of doing something in Emo Dome when pulled-up is false:
 	if current action is taking or current action is dropping:
 		say "Possessions! What do they matter? Why does anything matter?[paragraph break]";
 	say "You keep running [emo-dir], instead. It's too whiny in here.";
-	move player to the room emo-dir of Emo Dome;
-	reject the player's command;
+	try going emo-dir instead;
 
 emo-dir is a direction that varies. emo-dir is west.
 
@@ -3055,6 +3055,10 @@ book Toll Lot
 Toll Lot is east of Emo Dome. It is in Yelpley. "[if cross orc is in Toll Lot]While it's easy enough to go back west to the Emo Dome, that cross orc doesn't seem to want to let you go north or south[else]You can go north or south with the cross orc gone or, well, back west, too[end if]. A crag arc rises to the east[if UFO tofu is not off-stage]--maybe it is hiding something[end if]."
 
 [??snuff funs]
+
+after looking in Toll Lot when pulled-up is false:
+	say "Oh no! You still feel emo, since that cross orc won't let you go anywhere. Probably just have to go back west. No fair! No fair!";
+	continue the action;
 
 check going in Toll Lot:
 	if cross orc is in Toll Lot:
@@ -3201,12 +3205,6 @@ chapter tent net
 the tent net is a thing. description is "It's tagged as a 'Tent o['] Dot Net,' which seems to be overdoing the trendy-to-techies angle. All the same, though it can't make a structure on its own, it could probably let just the right amount of light in a home that needs a roof."
 
 chapter epicer recipe
-
-er-ex is a truth state that varies. [?? delete with EXAMINED property later]
-
-after examining epicer recipe:
-	now er-ex is true;
-	continue the action;
 
 the epicer recipe is a helpdoc. description is "You've seen recipes before, but this is a big interesting one! It describes how to make a north-tron, which will get you north of Fun [']Nuf.[paragraph break][tronpartlist][run paragraph on]". importancy of the epicer recipe is 3.
 
