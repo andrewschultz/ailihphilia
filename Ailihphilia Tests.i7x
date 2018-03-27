@@ -56,6 +56,10 @@ test roll8 with "test part1/test part2/test part3/test part4/test part5/test par
 test roll9 with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9".
 test roll10 with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9/test part10".
 
+chapter annoying bugs
+
+test bb25 with "pack cap/e/purloin ups/puff up/e/get all"
+
 chapter mistake quizzing
 
 [each one is 10 mistakes. I may cut this down or add to it based on what you find.]

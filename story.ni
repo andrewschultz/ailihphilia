@@ -107,6 +107,28 @@ debug-verbose is a truth state that varies.
 to display-dropbox-link:
 	say "If you can take a look at https://www.dropbox.com/s/hex2w7dzhs8lg5k/piu-concerns.txt?dl=0 to see if anything rings a bell, that would be a big help. I didn't want to expose this before a first play through."
 
+volume i6 modification(s)
+
+section something dramatic has happened bug
+
+[this is to fix GET ALL in Emo Dome when there is only 1 thing to get. It appears to be a bug in the core.]
+
+Include (-
+
+[ GenerateMultipleActions initial_location k item;
+	initial_location = location;
+	for (k=1: k<=multiple_object-->0: k++) {
+		item = multiple_object-->k;
+		RunParagraphOn();
+		if (inp1 == 0) { inp1 = item; BeginAction(action, item, second, item); inp1 = 0; }
+		else { inp2 = item; BeginAction(action, noun, item, item); inp2 = 0; }
+		if (deadflag) return;
+		if ((location ~= initial_location) && (k < multiple_object-->0)) { L__M(##Miscellany, 51); return; }
+	}
+];
+
+-) instead of "Generate Multiple Actions" in "OrderOfPlay.i6t".
+
 volume parser simplification
 
 Understand the command "slice" as something new.
@@ -1435,7 +1457,7 @@ cap-pace is a truth state that varies. cap-pace is false.
 
 cap-ever-pace is a truth state that varies. cap-ever-pace is false.
 
-check taking pact cap: say "The Flee Elf shakes its head. 'Too direct. You're not doing it right. Don't [b]TAKE[r] it, precisely. A different ... possess-op.'" instead;
+check taking pact cap: say "The Flee Elf shakes its head. 'Too direct. You're not doing it right. Don't [b]TAKE[r] it, precisely. You could take a kat, maybe. Try a different ... possess-op.'" instead;
 
 section pack cap
 
@@ -2300,17 +2322,24 @@ chapter puffuping
 puffuping is an action applying to nothing.
 
 understand the command "puffup" as something new.
+understand the command "putup" as something new.
+understand the command "put up" as something new.
+understand the command "put it up" as something new.
 understand the command "puff up" as something new.
 
 understand "puffup" as puffuping.
 understand "puff up" as puffuping.
+understand "putup" as puffuping.
+understand "put up" as puffuping.
+understand "put it up" as puffuping.
 
 puffed-up is a truth state that varies.
 
 carry out puffuping:
 	if puffed-up is true, say "You already did." instead;
+	let puff-put be whether or not word number 1 in the player's command is "puff";
 	if player does not have spur ups, say "You don't possess anything that would help you feel more up." instead;
-	say "As you hold the Spur-Ups, you think about how great you are and can and will be. Surprisingly, it works! It works so well, you figure you don't even need the spur-ups for a boost in the future.[paragraph break]Hardened! Rah![paragraph break]You feel more confident, more able to deal with sadness now.";
+	say "As you hold the Spur-Ups, you think about how [if puff-put is false]you need to put up with a little bad stuff for big goals[else]great you are and can and will be[end if]. Surprisingly, it works! It works so well, you figure you don't even need the spur-ups for a boost in the future.[paragraph break]Hardened! Rah![paragraph break]You feel more confident, more able to deal with sadness now.";
 	now puffed-up is true;
 	moot Spur Ups;
 	score-inc; [Yelpley/puff up]
@@ -2938,6 +2967,7 @@ to say can-go-rro:
 		say "[if not-a-baton is off-stage]You feel you may still have unfinished business behind the DIFF ID to the north[else]The DIFF ID guards the Red Roses Order, which no longer holds adventure[end if]"
 
 instead of doing something in Emo Dome when pulled-up is false:
+	if current action is puffuping, say "That was then. The old tricks won't work. You need something new!" instead;
 	if current action is pulluping, continue the action;
 	if current action is going:
 		if noun is not west and noun is not east:
@@ -2945,8 +2975,11 @@ instead of doing something in Emo Dome when pulled-up is false:
 			try going emo-dir instead;
 		say "You run [if noun is emo-dir]away[else if noun is opposite of emo-dir] with extra speed[end if].[paragraph break]";
 		continue the action;
+	if current action is taking or current action is dropping:
+		say "Possessions! What do they matter? Why does anything matter?[paragraph break]";
 	say "You keep running [emo-dir], instead. It's too whiny in here.";
-	try going emo-dir instead;
+	move player to the room emo-dir of Emo Dome;
+	reject the player's command;
 
 emo-dir is a direction that varies. emo-dir is west.
 
@@ -2997,7 +3030,9 @@ The Puce Cup is a thing in Emo Dome. "Someone has left a puce cup here.". descri
 to say sap-sirup:
 	say "[if location of player is not Cold Loc]Past Sap[else]Purist Sirup[end if]"
 
-report taking puce cup: say "Emo swag! Awesome!"
+report taking puce cup:
+	say "Emo swag! Awesome!";
+	the rule succeeds;
 
 the puce cup can be empty, sappy or soddy. the puce cup is empty.
 
