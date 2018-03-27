@@ -22,12 +22,12 @@ show_hash = False
 
 # variables
 
-main_dir = "c:/games/inform/put-it-up.inform/source"
+main_dir = "c:/games/inform/ailihphilia.inform/source"
 main_source = main_dir + "/story.ni"
 main_thru = main_dir + "/walkthrough.txt"
-triz_flow = "c:/games/inform/triz/mine/put-it-up-flow.trizbort"
-invis_raw = "c:/writing/scripts/invis/pu.txt"
-test_file = "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/Put it Up Tests.i7x"
+triz_flow = "c:/games/inform/triz/mine/ailihphilia-flow.trizbort"
+invis_raw = "c:/writing/scripts/invis/ai.txt"
+test_file = "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/Ailihphilia Tests.i7x"
 
 obj_name_hash = { "ti": "TO IDIOT" }
 

@@ -84,8 +84,8 @@ while count < len(sys.argv):
 
 count = 0
 
-get_good_pals("c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/Put it Up tables.i7x")
-get_good_pals("c:/games/inform/put-it-up.inform/source/notes.txt")
+get_good_pals("c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/Ailihphilia tables.i7x")
+get_good_pals("c:/games/inform/ailihphilia.inform/source/notes.txt")
 
 if blocks_found != blocks_expected:
     print("Found", blocks_found, "blocks but expected", blocks_expected)

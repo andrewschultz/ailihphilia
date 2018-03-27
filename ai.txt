@@ -1,9 +1,9 @@
 # coordinate this with the source for the points list
 #
 # todo: track # of +1 points in the summary vs # listed for sc2.py
-out=put-it-up-invisiclues.htm
-!Put It Up HTML Clues
-->c:/games/inform/put-it-up Materials/Release
+out=ailihphilia-invisiclues.htm
+!Ailihphilia HTML Clues
+->c:/games/inform/ailihphilia Materials/Release
 ==endheader
 # remember to run msc.py to check the total points check out
 >Introduction

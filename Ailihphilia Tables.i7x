@@ -1,4 +1,4 @@
-Version 1/171220 of Put It Up Tables by Andrew Schultz begins here.
+Version 1/171220 of Ailihphilia Tables by Andrew Schultz begins here.
 
 volume random names of people and places
 
@@ -767,6 +767,6 @@ randtxt
 "Wane? Naw!"
 "You! Oy!"
 
-Put It Up Tables ends here.
+Ailihphilia Tables ends here.
 
 ---- DOCUMENTATION ----

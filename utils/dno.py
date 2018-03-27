@@ -112,7 +112,7 @@ def usage():
     print("-v = verbose")
     print("-m = modify notes file before starting, -mo = modify only")
     print("-d = do detailed search e.g. anything with 2 words is searched")
-    print("-2 = report appearance of notes.txt stirng in story.ni/put it up tables.i7x more than once.")
+    print("-2 = report appearance of notes.txt stirng in story.ni/ailihphilia tables.i7x more than once.")
     print("    -2n/-n2 = negation. Default = off.")
     print("-l = launch after.")
     print("    -ln/-nl = don't. Default = on.")
@@ -297,7 +297,7 @@ while count < len(sys.argv):
             print("Already modified notes file or tried to.")
             exit()
         modified_yet = True
-        modify_notes("put-it-up")
+        modify_notes("ailihphilia")
         exit()
     elif l == 'v':
         verbose = True
@@ -350,9 +350,9 @@ while count < len(sys.argv):
     count = count + 1
 
 if do_detail:
-    check_detail_notes("put-it-up")
+    check_detail_notes("ailihphilia")
 else:
-    check_notes("put-it-up")
+    check_notes("ailihphilia")
 
 if colon_string:
     print(colon_string.strip())

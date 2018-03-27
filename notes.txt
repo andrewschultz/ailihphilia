@@ -5,8 +5,6 @@
 emote tome
 gardened rag
 
-REV OVER ...
-
 mention trivial anagrams if ...
 
 (check what to do)
@@ -32,6 +30,8 @@ Doo-doo'd
 Carry coop around?
 
 ==========================final new puzzle
+
+#It doesn't get much more generic than "put it up."
 
 Put Up = alternate solution if changed to Ailihphilia
 
@@ -120,8 +120,6 @@ Race fast, safe car.
 Sad No Hondas
 
 Rise to vote, sir!
-
-It doesn't get much more generic than "put it up."
 
 Diss Sid = FAKE CLUES
 

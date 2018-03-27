@@ -1,6 +1,6 @@
-README for Put It Up
+README for Ailihphilia
 
-Possible 2018 IFComp candidate
+2018 IFComp candidate
 
 It's about, well, palindromes.
 

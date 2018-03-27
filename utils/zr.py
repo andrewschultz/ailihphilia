@@ -17,7 +17,7 @@ import i7
 
 if not os.path.exists("story.ni"):
     try:
-        os.chdir("c:/games/inform/put-it-up.inform/source")
+        os.chdir("c:/games/inform/ailihphilia.inform/source")
     except:
         print("No story.ni and no default directory path.")
         exit()
@@ -176,7 +176,7 @@ def check_source(a):
         except:
             print("Tried and failed to delete tempfile", b)
 
-proj = "put-it-up"
+proj = "ailihphilia"
 for x in i7.i7f[proj]:
     if source_only and 'story.ni' not in x.lower(): continue
     check_source(x)

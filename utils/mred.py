@@ -1,6 +1,6 @@
 # mred.py
 #
-# map redactor for testers for Put It Up
+# map redactor for testers for Ailihphilia
 #
 # note I'd like to send this to codereview.stackexchange.com
 #
@@ -29,8 +29,8 @@ def redact(a):
         unsplitz = '|'.join(bars)
     return "\t\t\t" + splitz[0] + "<" + splitz[1] + ">" + unsplitz + "<" + splitz[3] + ">" + "\n"
 
-orig = "c:/games/inform/triz/mine/put-it-up.trizbort"
-reda = "c:/games/inform/triz/mine/put-it-up-redact.trizbort"
+orig = "c:/games/inform/triz/mine/ailihphilia.trizbort"
+reda = "c:/games/inform/triz/mine/ailihphilia-redact.trizbort"
 
 fout = open(reda, "w")
 

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <trizbort version="1.6.0.0">
 	<info>
-		<title>Put it Up map</title>
+		<title>Ailihphilia map</title>
 		<author>Andrew Schultz</author>
-		<description>Map of my IFComp 2018 game Put it Up.</description>
+		<description>Map of my IFComp 2018 game Ailihphilia.</description>
 		<history>Conceived October 2017 as part of a spoonerism game.
 Initially sent to source code/repository November 2017.</history>
 	</info>

@@ -13,7 +13,7 @@ import re
 mscore = defaultdict(int)
 mokay = defaultdict(int)
 
-with open("c:/games/inform/put-it-up.inform/source/story.ni") as file:
+with open("c:/games/inform/ailihphilia.inform/source/story.ni") as file:
     for line in file:
         if line.lower().startswith('the maximum score is'):
             l2 = re.sub(".* ", "", line.lower().strip())

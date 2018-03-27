@@ -126,7 +126,7 @@ while count < len(sys.argv):
 
 got = defaultdict(bool)
 
-mis = 'c:\Program Files (x86)\Inform 7\Inform7\Extensions\Andrew Schultz\Put It Up Mistakes.i7x'
+mis = 'c:\Program Files (x86)\Inform 7\Inform7\Extensions\Andrew Schultz\Ailihphilia Mistakes.i7x'
 mis2 = "temp.i7x"
 # mis2 = mis + '2'
 

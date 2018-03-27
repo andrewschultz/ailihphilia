@@ -1,4 +1,4 @@
-Version 1/171220 of Put it Up debug Tables by Andrew Schultz begins here.
+Version 1/171220 of Ailihphilia debug Tables by Andrew Schultz begins here.
 
 volume random names of people and places
 
@@ -153,6 +153,6 @@ randtxt
 "Ahahahahahaha!"
 "Gibe! Big!"
 
-Put it Up debug Tables ends here.
+Ailihphilia debug Tables ends here.
 
 ---- DOCUMENTATION ----

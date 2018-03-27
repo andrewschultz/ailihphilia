@@ -9,7 +9,7 @@ include_ignore_dict = defaultdict(bool)
 regex_ignore_dict = defaultdict(bool)
 
 def read_ignore_file():
-    ignore_file = "c:/games/inform/put-it-up.inform/source/palver.txt"
+    ignore_file = "c:/games/inform/ailihphilia.inform/source/palver.txt"
     with open(ignore_file) as file:
         for line in file:
             if line.startswith('#'):
@@ -109,5 +109,5 @@ def pal_ver(f):
 
 read_ignore_file()
 
-for x in i7.i7f["put-it-up"]:
+for x in i7.i7f["ailihphilia"]:
     pal_ver(x)

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <trizbort version="1.6.0.0">
 	<info>
-		<title>Put It Up flowchart</title>
+		<title>Ailihphilia flowchart</title>
 		<author>Andrew Schultz</author>
-		<description>Walkthrough flowchart for Put It Up
+		<description>Walkthrough flowchart for Ailihphilia
 May or may not be included in the game's assembly
 sc2.py is the utility that checks this matches the source code with no grievous errors
 

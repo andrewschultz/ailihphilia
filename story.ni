@@ -1,11 +1,11 @@
-"Put it Up" by Andrew Schultz
+"Ailihphilia" by Andrew Schultz
 
 [blurb for comp = A *GASP* SAGA]
 
 [there are things you can search for to make the source more navigable.
 
-First, Put It Up tables.i7x contains all the random responses.
-Second, Put It Up tables.i7x contains responses to mistakes e.g. palindrome verbs/phrases that don't advance the game but are good tries.
+First, Ailihphilia tables.i7x contains all the random responses.
+Second, Ailihphilia tables.i7x contains responses to mistakes e.g. palindrome verbs/phrases that don't advance the game but are good tries.
 Put an x or two before each of these to find the beginning of a table, ZZ for the end:
 CANT for can't-use default messages
 USE for the Table of Useons (USE X ON Y gives a point)
@@ -30,10 +30,10 @@ include Basic Screen Effects by Emily Short.
 
 [this may be toggled for debug depending on how much space is left--or if I want to force unit tests to make sure that, say, waiting text cycles after only 2 entries. If I add a random wait response, for instance, that would be one more bit of text to account for. For which to account.]
 
-include Put It Up Tables by Andrew Schultz.
-[include Put It Up Debug Tables by Andrew Schultz.]
+include Ailihphilia Tables by Andrew Schultz.
+[include Ailihphilia Debug Tables by Andrew Schultz.]
 
-include Put It Up Mistakes by Andrew Schultz.
+include Ailihphilia Mistakes by Andrew Schultz.
 
 include undo output control by Erik Temple.
 
@@ -516,10 +516,11 @@ understand the command "about" as something new.
 understand "about" as abouting.
 
 carry out abouting:
-	say "Put it Up was originally written for IFComp 2018. Like many of my games, I got the idea from [i]Nord and Bert Couldn't Make Head or Tail of It[r], at least partially. Another game that gave me ideas was Nick Montfort's [i]I Palindrome I[r], part of the Apollo 18+20 collection Kevin Jackson-Mead organized back in 2012. I felt there could be more that could be done with palindromes, but I didn't know what, and I didn't know how much.[paragraph break]Also, the Palindome in Kingdom of Loathing prompted my curiosity back in 2010. I would still be playing it today, if it hadn't inspired me to try to write my own games, which left less time for KoL (spoiler: I still ascended over 100 times.) I tried to avoid palindromes it already considered, though the Dumb Mud from the special Heavy Rains was too good to pass up. It's an item there but a location here, so I can't claim to copycat too much.";
+	say "Ailihphilia was originally written for IFComp 2018. It was conceived in October 2017 as 'Put It Up' before I realized there was an actual word for, well, liking palindromes. I started coding in November.";
+	say "[line break]Like many of my games, I got the idea from [i]Nord and Bert Couldn't Make Head or Tail of It[r], at least partially. Another game that gave me ideas was Nick Montfort's [i]I Palindrome I[r], part of the Apollo 18+20 collection Kevin Jackson-Mead organized back in 2012. I felt there could be more that could be done with palindromes, but I didn't know what, and I didn't know how much.[paragraph break]Also, the Palindome in Kingdom of Loathing prompted my curiosity back in 2010. I would still be playing it today, if it hadn't inspired me to try to write my own games, which left less time for KoL (spoiler: I still ascended over 100 times.) I tried to avoid palindromes it already considered, though the Dumb Mud from the special Heavy Rains was too good to pass up. It's an item there but a location here, so I can't claim to copycat too much.";
 	say "[line break]In my continuing quest to nail down my Python knowledge, I realized that even if I didn't get MANY palindromes, a few scripts could print things out. I had word and name lists from my anagram games Shuffling Around and A Roiling Original, so I had the raw materials.";
 	say "[line break]The result of all my work is some guess-the-verb, but hopefully with the game's general idea, you'll see what's going on.";
-	say "[line break]Originally, Put it Up was part of a spoonerism game--a sort of side area--but eventually I found enough rooms and ideas it could be its own game. Whether or not it's a good game, I guess you have to decide. It doesn't have any deep philosophy, but I hope you enjoy it. If you write games yourself, I hope it inspires you to go through with anything unusual you weren't sure if you should try, even if it rubs you the wrong way. (Spoiler: you should write that game! Just start early and take all the notes you can, but don't think the first draft needs to be perfect!)[paragraph break]";
+	say "[line break]Originally, Ailihphilia was part of a spoonerism game--a sort of side area--but eventually I found enough rooms and ideas it could be its own game. Whether or not it's a good game on its own, I guess you have to decide. It doesn't have any deep philosophy, but I hope you enjoy it. If you write games yourself, I hope it inspires you to go through with anything unusual you weren't sure if you should try, even if it rubs you the wrong way. (Spoiler: you should write that game! Just start early and take all the notes you can, but don't think the first draft needs to be perfect!)[paragraph break]";
 	the rule succeeds;
 
 chapter creditsing
@@ -4587,7 +4588,7 @@ this is the amuse-toggle rule:
 	now ignore-done is whether or not ignore-done is false;
 	say "Ignoring done amusements is now [on-off of ignore-done].";
 
-to say gt: say "Put It Up";
+to say gt: say "Ailihphilia";
 
 rule for amusing a victorious player:
 	let count be 0;
@@ -4844,7 +4845,7 @@ this is the delay-or-bail rule:
 
 volume internal testing - not for release
 
-include Put It Up Tests by Andrew Schultz. [must come first so blank-appear-okay is accepted]
+include Ailihphilia Tests by Andrew Schultz. [must come first so blank-appear-okay is accepted]
 
 Diktat Kid is blank-appear-okay.
 Knife Fink is blank-appear-okay.

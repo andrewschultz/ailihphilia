@@ -1,8 +1,8 @@
-Hello, and welcome to the walkthrough for Put it Up, an IFComp 2018 game by Andrew Schultz.
+Hello, and welcome to the walkthrough for Ailihphilia, an IFComp 2018 game by Andrew Schultz.
 
-I didn't intend this game to be overly difficult or to have any weird profound meanings, but I had good laughs putting the puzzles together, and I hope you have fun solving them, even if you see what is going on and how there aren't THAT many possibilities to solve them.
+I didn't intend this game to be overly difficult or to have any weird profound meanings, but I had good laughs putting the puzzles together, and I hope you have fun solving them, even if you see what is going on and how there aren't THAT many possibilities to solve them. It may be a bit on the long side for two hours, and so I don't mind if you need to look for a walkthrough, or if I may lose scoring for that. Just one thing...REV OVER is a useful command to help push you through.
 
-There should be no way to die or be locked out of a win in Put it Up.
+There should be no way to die or be locked out of a win in Ailihphilia.
 
 If you are technically inclined, you can grep -i "^>" walkthrough.txt | sed "s/.*>//" to plow through. But if you're technically inclined, you likely won't need the walkthrough. Still, if you want the quick way without comments, there it is.
 

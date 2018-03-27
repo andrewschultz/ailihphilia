@@ -1,4 +1,4 @@
-Version 1/171220 of Put It Up Mistakes by Andrew Schultz begins here.
+Version 1/171220 of Ailihphilia Mistakes by Andrew Schultz begins here.
 
 volume Mistakes
 
@@ -462,6 +462,6 @@ understand "wave" as a mistake ("Nobody named Eva is beyond the fourth wall.")
 
 understand "rm gnu/dung" and "rm gnu dung" as a mistake ("You don't have the proper permissions. It is (wait for it) too root.") when gnu dung is quicknear.
 
-Put It Up Mistakes ends here.
+Ailihphilia Mistakes ends here.
 
 ---- DOCUMENTATION ----

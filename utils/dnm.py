@@ -33,7 +33,7 @@ def check_dupes(s):
                         print(l2, "appears twice in", table_file_to_read, "at line", line_count)
                         table_table = table_table + 1
                     poss_dupes[l2] = line_count
-                if s == "put-it-up":
+                if s == "ailihphilia":
                     q = re.sub("[^a-z]", "", line, 0, re.IGNORECASE)
                     if len(q) % 2 == 1:
                         mz = midzap(q)
@@ -57,5 +57,5 @@ def check_dupes(s):
     print(("No" if source_table == 0 else "{:d}".format(source_table)), " source/table conflicts with", s, "and", pdl, "total keys")
     print(("No" if table_table == 0 else "{:d}".format(table_table)), " table/table conflicts with", s, "and", pdl, "total keys")
 
-check_dupes("put-it-up")
+check_dupes("ailihphilia")
 check_dupes("spell-woken")

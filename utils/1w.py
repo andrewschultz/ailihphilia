@@ -43,7 +43,7 @@ def wrong_letters(a):
 
 def read_it_all():
     got_what = defaultdict(int)
-    with open('c:/games/inform/put-it-up.inform/Source/1w.txt') as file:
+    with open('c:/games/inform/ailihphilia.inform/Source/1w.txt') as file:
         for line in file:
             if line.startswith('#'): continue
             if line.startswith(';'): break
