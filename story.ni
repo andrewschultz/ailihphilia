@@ -484,13 +484,19 @@ carry out seebeesing:
 
 chapter thinking
 
+definition: a room (called rm) is available:
+	consider the avail-rule of rm;
+	if the rule succeeded, yes;
+	no;
+
 instead of thinking:
 	say "A knihtg (sic) appears and redirects you to the AID command.";
 	let LLP-yet be false;
+	let got-later-use be false;
 	repeat through table of lateruses:
 		if in-limbo entry is true:
 			if got-later-use is false, say "Stuff you've half figured out:[line break]";
-			say "[remind-message entry][line break]";
+			say "[remind-msg entry][line break]";
 			now got-later-use is true;
 	if got-later-use is false, say "Nothing half-figured out.";
 	let wayoutrooms be 0;
@@ -527,7 +533,7 @@ stuck-rule of Drawl Ward is drawl-ward-stuck rule.
 stuck-rule of Dumb Mud is dumb-mud-stuck rule.
 stuck-rule of Emo Dome is emo-dome-stuck rule.
 stuck-rule of Evaded Ave is evaded-ave-stuck rule.
-stuck-rule of Flu Gulf ifs flu-gulf-stuck rule.
+stuck-rule of Flu Gulf is flu-gulf-stuck rule.
 stuck-rule of Fun Nuf is fun-nuf-stuck rule.
 stuck-rule of Gross Org is gross-org-stuck rule.
 stuck-rule of Lair Trial is lair-trial-stuck rule.
@@ -546,7 +552,7 @@ this is the drawl-ward-stuck rule:
 this is the dumb-mud-stuck rule:
 	if lie veil is moot and gnu dung is moot and poo coop is moot, the rule fails;
 	let any-yet be false;
-	say "You need to get by "
+	say "You need to get by ";
 	unless gnu dung is moot:
 		now any-yet is true;
 		say "the gnu dung";
@@ -560,7 +566,7 @@ this is the dumb-mud-stuck rule:
 			say "/";
 			now any-yet is true;
 			say "the lie veil(north)";
-	say " [hn].";
+	say " [hn of Dumb Mud].";
 	the rule succeeds;
 
 this is the emo-dome-stuck rule:
@@ -575,11 +581,11 @@ this is the evaded-ave-stuck rule:
 
 this is the flu-gulf-stuck rule:
 	if scorn rocs are moot, the rule fails;
-	say "You need a way by the scorn rocs [hn of Flu Gulf]."
+	say "You need a way by the scorn rocs [hn of Flu Gulf].";
 	the rule succeeds;
 
 this is the fun-nuf-stuck rule:
-	if Dirge Grid is north of Fun Nuf, the rule fails; [??not good enough -- need to make sure have weapons]
+	if Dirge Grid is mapped north of Fun Nuf, the rule fails; [??not good enough -- need to make sure have weapons]
 	say "You need to figure what's north of [hn of Fun Nuf]...eventually.";
 	the rule succeeds;
 
@@ -615,7 +621,7 @@ this is the swept-pews-stuck rule:
 
 this is the toll-lot-stuck rule:
 	if cash sac is moot, the rule succeeds;
-	say "You need to figure a way past the cross orc [hn.of Toll Lot]";
+	say "You need to figure a way past the cross orc [hn of Toll Lot]";
 	the rule succeeds;
 
 this is the yawn-way-stuck rule:
@@ -1144,7 +1150,7 @@ NULL ILLUN	Known Wonk	--	--	bump-maws rule	true	true	true	Grebeberg	"The Known W
 el doodle	edits tide	spa maps	--	rahs-too rule	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps! And there is a bonus! It appears El Doodle was so jumbled, there were two things. Sharp rahs appear on another sheet of paper, as some sort of confused motivation, and you take them."
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Calcific Lac. As it gets near and bends away, you jump off, using the buoy to paddle and float back to Calcific Lac."
 dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
-tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Together, you figure out what to do to make the tent net proper cover for the All-Ivy Villa. 'Tie it ... tie it ...'[paragraph break]Once the work is done, the Code Doc thanks you and offers to share some knowledge in return, whenever[if spa maps are in-limbo]. In fact, the Code Doc would probably be more receptive to helping you with the spa maps[end if]."
+tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Together, you figure out what to do to make the tent net proper cover for the All-Ivy Villa. 'Tie it ... tie it ...'[paragraph break]Once the work is done, the Code Doc thanks you and offers to share some knowledge in return, whenever[if spa maps are preclued]. In fact, the Code Doc would probably be more receptive to helping you with the spa maps[end if]."
 spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my for-prof math tam for this one. One second, let's see--Aha! Oho...' and despite a minor pupil slip-up, it soon makes complete sense to you."
 spa maps	go-by bog	sage gas	maps-readable rule	gas-think-wipe rule	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	"You stick some strands of yahoo hay into the damaged end of the dork rod. It's now a moor broom!"
@@ -1539,10 +1545,17 @@ to say rediv-instead of (th - a thing):
 
 chapter lateruses
 
+definition: a thing ( called th) is preclued:
+	repeat through table of lateruses:
+		if to-get entry is th:
+			if in-limbo entry is true, yes;
+			if in-limbo entry is false, yes;
+	no;
+
 table of lateruses [xxlat]
 to-get	in-limbo	remind-msg
 UFO tofu	false	"You [if cross orc is in Toll Lot]need to get rid of the cross orc to[else]can now[end if] use the radar on the crag arc."
-Spa Maps	false	"You [tent net is not moot]need to do something so the Code Doc is willing[else]can now ask the Code Doc[end if] to decipher the Spa Maps the spa maps deciphered."
+Spa Maps	false	"You [if tent net is not moot]need to do something so the Code Doc is willing[else]can now ask the Code Doc[end if] to decipher the Spa Maps the spa maps deciphered."
 past sap	false	"You [if player has wash saw]may now have[else]need to find[end if] something that can cut the past sap off the rift fir."
 liar grail	false	"You didn't have the right stuff to pour in the Liar Grail from the Puce Cup last time."
 dose sod	false	"You didn't have anything to take the dose sod with in Apse Spa."
@@ -1557,7 +1570,7 @@ test set	false	"You [if emitted is false]need to find[else]now know[end if] how 
 to get-reject (th - a thing):
 	repeat through table of lateruses:
 		if to-get entry is th:
-			say "[remind-msg][line break]";
+			say "[remind-msg entry][line break]";
 			now in-limbo entry is true;
 			continue the action;
 	say "NONCRITICAL bug: I should've rejected getting [the th], but I didn't. This loophole may make the game slightly shorter, but I'd like to know how it happened."
