@@ -120,8 +120,11 @@ def check_source_rule_order():
     last_line = 0
     in_table = False
     alfcheck = defaultdict(lambda: defaultdict(bool))
+    ignorables = defaultdict(bool)
+    extra_rules = 0
     with open(main_source) as file:
         for line in file:
+            line_count = line_count + 1
             if line.startswith("table"):
                 in_table = True
                 continue
@@ -134,7 +137,6 @@ def check_source_rule_order():
                     alfcheck['xxpre'][re.sub(" rule.*", "", lary[3].lower())] = True
                 if 'rule' in lary[4]:
                     alfcheck['xxpost'][re.sub(" rule.*", "", lary[4].lower())] = True
-            line_count = line_count + 1
             if line.startswith("section"):
                 if 'post-use rules' in line or 'pre-use rules' in line:
                     rule_search = True
@@ -146,10 +148,10 @@ def check_source_rule_order():
             if re.search("^(chapter|section|book|part|volume)", line.lower()):
                 rule_search = False
                 continue
-            if rule_search and line.startswith("this is the"):
+            if rule_search and line.startswith("this is the") and not '[ignore rule check]' in line.lower():
                 cur_rule = re.sub("^this is the ", "", line.strip().lower())
                 cur_rule = re.sub(" rule.*", "", cur_rule)
-                if cur_rule not in alfcheck[to_check].keys():
+                if cur_rule not in alfcheck[to_check].keys() and cur_rule not in ignorables.keys():
                     print(cur_rule, "in", to_check, "may be extraneous, line", line_count)
                     extra_rules = extra_rules + 1
                 if cur_rule < last_rule:
@@ -664,6 +666,56 @@ def get_stuff_from_source():
                                 print(temp_region, "at line", line_count, " in use table given extra point.")
                             undef_use_points = undef_use_points + 1
 
+
+def think_look_check():
+    skip_header = False
+    in_main_table = False
+    reject_track = defaultdict(int)
+    wipe_track = defaultdict(int)
+    table_track = defaultdict(int)
+    with open(main_source) as file:
+        line_count = 0
+        for line in file:
+            line_count = line_count + 1
+            if skip_header:
+                skip_header = False
+                continue
+            if line.startswith('table of lateruses'):
+                in_main_table = True
+                skip_header = True
+                continue
+            if in_main_table:
+                ll = line.lower().split("\t")
+                if len(ll) < 2:
+                    in_main_table = False
+                    continue
+                table_track[ll[0]] = line_count
+                continue
+            if '\tget-reject' in line:
+                ll = re.sub(".*get-reject ", "", line.lower().strip())
+                ll = re.sub(";.*", "", ll)
+                reject_track[ll] = line_count
+            if '\tlater-wipe' in line:
+                ll = re.sub(".*later-wipe ", "", line.lower().strip())
+                ll = re.sub(";.*", "", ll)
+                wipe_track[ll] = line_count
+    think_check = 0
+    for x in sorted(list(set(wipe_track.keys()) | set(table_track.keys()) | set(reject_track.keys()))):
+        # print(x, "===================")
+        if x not in wipe_track.keys():
+            print(x, "needs to have a later-wipe line.")
+            think_check = think_check + 1
+        if x not in table_track.keys():
+            print(x, "needs to have a table of lateruses line.")
+            think_check = think_check + 1
+        if x not in reject_track.keys():
+            print(x, "needs to have a get-reject line.")
+            think_check = think_check + 1
+    if think_check == 0:
+        print("Think check passed")
+    else:
+        print(think_check, "think check errors")
+
 #
 # start main code
 #
@@ -767,6 +819,8 @@ bonus_mistake_check()
 
 source_table_vs_test_file()
 walkthrough_vs_test_file(max_dif)
+
+think_look_check()
 
 if invis_line_to_open:
     i7.npo(invis_raw, invis_line_to_open, True)

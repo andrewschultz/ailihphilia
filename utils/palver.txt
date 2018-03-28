@@ -62,7 +62,8 @@ i:rule is not listed
 i:need-ia
 i:is a kind
 i:is a truth state
-i:is a list of text
+i:is a list of text variable
+i:is a list of things variable
 i:is a person that varies
 i:is a direction
 i:is a number

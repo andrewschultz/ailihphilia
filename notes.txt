@@ -33,8 +33,6 @@ Carry coop around?
 
 #It doesn't get much more generic than "put it up."
 
-Put Up = alternate solution if changed to Ailihphilia
-
 redi-aider
 
 Spot-Ops
@@ -105,9 +103,7 @@ Sock Cos
 
 Reno Loner
 
-
 bar crab?
-
 =======================from reddit
 
 A six is a six is a...

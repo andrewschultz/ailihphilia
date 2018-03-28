@@ -991,9 +991,9 @@ EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	Grebeberg
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
 wash saw	past sap	--	sap-not-cut-yet rule	sap-loose rule	true	false	false	Grebeberg	"You hack away at the past sap with the wash saw, first squirting some loosening/thawing liquid. It's tricky, but the saw holds out, and with some perseverance, you're able to twist the sap off the rife fir."
 puce cup	past sap	--	check-sap-cup rule	sap-to-cup rule	false	false	false	--	"You pour some sap into the cup."
-puce cup	liar grail	--	sap-in-cup rule	empty-cup rule	true	false	true	Yelpley	"The past sap pours into the liar grail and exposes how bad the grail has been over the years. As it cracks, along with the wall it was attached to allow passage south, you snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL!"
+puce cup	liar grail	--	sap-in-cup rule	empty-grail rule	true	false	true	Yelpley	"The past sap pours into the liar grail and exposes how bad the grail has been over the years. As it cracks, along with the wall it was attached to allow passage south, you snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL!"
 puce cup	dose sod	--	check-sod-cup rule	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough."
-puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-cup rule	true	true	true	Yelpley	"You give the Bond Nob the puce cup. Gulp! Gulp! 'The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. So many places to visit: Tope Depot, Nigh Gin, Sara's, Soto's, Pat's Tap...'"
+puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-nob rule	true	true	true	Yelpley	"You give the Bond Nob the puce cup. Gulp! Gulp! 'The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. So many places to visit: Tope Depot, Nigh Gin, Sara's, Soto's, Pat's Tap...'"
 stamp mats	slate metals	Ye Key	--	--	true	true	false	Yelpley	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY. You find it hard to pull the stamp mats out, and when you take YE KEY, the mats quickly morph into the slate metals. Eh, well. Less inventory to worry about."
 demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' he looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
@@ -1002,7 +1002,7 @@ Elan Ale	Sniffins	Gorge Grog	--	--	true	true	false	Yelpley	"Sniffins looks the E
 Dirt Rid	reviver	Cave Vac	--	--	true	true	false	Yelpley	"You watch as the Dirt Rid swirls and becomes shinier and much more powerful. A Cave Vac! It will be capable of cleaning...well, somewhere."
 Cave Vac	cassettes sac	radar	--	bump-pod rule	true	true	true	Yelpley	"The Cave Vac has the power to clean up the cassettes sac, though it chokes and sputters at the end of the effort. And while a lot of the cassettes are beyond repair, there's something at the very bottom.[paragraph break]Wow! Radar![paragraph break]You hear noises from the pod, as a hidden robot appears and whisks the garbage away. That's pretty slick! Looking back, the pod doesn't seem so dopy any more, between how the Demo Med already helped and how you're sure the radar will."
 radar	crag arc	UFO tofu	orc-gone rule	radar-crag rule	true	false	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO and lands on the radar, which fizzles a bit from the impact and wetness. It hardens quickly and weirdly into a cubic shape. What could it be? You think a minute. It has to be UFO tofu." [af:deny Ned]
-Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'A hall! Aha! Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paragraph break]A gate tag falls off. You pick it up." [af:Worn Row]
+Ye Key	etage gate	gate tag	Ned-gone rule	tag-later-wipe rule	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'A hall! Aha! Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paragraph break]A gate tag falls off. You pick it up." [af:Worn Row]
 stinky knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stinky knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
 Gorge Grog	Butene Tub	resale laser	--	make-sag rule	true	true	true	Yelpley	"The Gorge Grog starts fizzing as it pours down the tub, and nothing seems to happen, until you hear a FOOMP below and the tub starts shaking. There must've been an open spark below the tub. You find it best to hide, and that's the right thing to do, because the butene tub explodes into pieces. Under it is a resale laser! You figure the really good stuff is hidden way back for security reasons, and this is probably just an emergency gadget, but it's got to be good for something."
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod! You wonder briefly if you deserve to take it, or E there's something wrong with you if you deserve to, but once you hold it, memories of past silliness come back, and they're easier to deal with, now. You have some perspective. You even feel sorry for people who pointed out you were a dork. They'd be barred from an adventure like this. So you keep the dork rod."
@@ -1018,7 +1018,7 @@ elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope 
 dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
 tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Together, you figure out what to do to make the tent net proper cover for the All-Ivy Villa. 'Tie it ... tie it ...'[paragraph break]Once the work is done, the Code Doc thanks you and offers to share some knowledge in return, whenever[if spa maps are in-limbo]. In fact, the Code Doc would probably be more receptive to helping you with the spa maps[end if]."
 spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my for-prof math tam for this one. One second, let's see--Aha! Oho...' and despite a minor pupil slip-up, it soon makes complete sense to you."
-spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
+spa maps	go-by bog	sage gas	maps-readable rule	gas-think-wipe rule	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	"You stick some strands of yahoo hay into the damaged end of the dork rod. It's now a moor broom!"
 troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the stinky knits, but still quite distinctive." [b4:pace cap] [af:yak okay]
 sage gas	tame mat	guru rug	--	--	true	true	true	Grebeberg	"The sage gas bubbles out under the tame mat, and the message changes. To something wiser. But perhaps a bit stuffy."
@@ -1037,7 +1037,7 @@ Bro Orb	Mist Sim	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	"The 
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Madam."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You will be able to smite a bad-faith pearl-clutcher for sure with one of these."
 murdered rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
-Yard Ray	test set	--	ready-to-test rule	--	true	false	true	Dim Mid	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
+Yard Ray	test set	--	ready-to-test rule	test-set-zapped rule	true	false	true	Dim Mid	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, successfully bribed." [b4:use TNT on ore zero]
 taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	Dim Mid	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev knows what he's up against. It's not that it's particularly violent or lethal, but ... the Verses Rev has developed such a warped orthodoxy, the bat is much scarier than it should be. Nothing to do but turn and run!"
 Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	"'Havoc, OVAH!' you should as you aim and fire the yard ray.[paragraph break]Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who goes running off. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid is going to check for that now, but with the Kid gone, you see saner arenas all around. Revel, clever! Revel, ever!"
@@ -1053,6 +1053,7 @@ section pre-use rules [xxpre]
 this is the check-sap-cup rule:
 	if sap-takeable is false:
 		say "The sap is stuck to the tree.";
+		get-reject past sap;
 		the rule fails;
 	if liar grail is moot:
 		say "You doubt you will need the past sap again, since it got you by the Liar Grail[if puce cup is soddy]. In fact, the sod seems like a good thing to have[else]. But maybe something else[end if].";
@@ -1060,6 +1061,7 @@ this is the check-sap-cup rule:
 	if puce cup is sappy:
 		say "The puce cup already contains past sap.";
 		the rule fails;
+	later-wipe past sap;
 	if puce cup is soddy:
 		say "The puce cup already contains dose sod. Pour it out to get the past sap?";
 		if the player yes-consents, the rule succeeds;
@@ -1067,6 +1069,7 @@ this is the check-sap-cup rule:
 	the rule succeeds;
 
 this is the check-sod-cup rule:
+	later-wipe dose sod;
 	if puce cup is soddy:
 		say "The puce cup already contains dose sod.";
 		the rule fails;
@@ -1084,6 +1087,7 @@ this is the coop-full rule:
 this is the maps-readable rule:
 	if maps-explained is true, the rule succeeds;
 	say "Hmm. Maybe if the maps were a bit clearer to you, that would work. But not now.";
+	get-reject sage gas;
 	the rule fails;
 
 this is the maps-still-confusing rule:
@@ -1099,6 +1103,7 @@ this is the maps-still-confusing rule:
 this is the Ned-gone rule:
 	if Ned is moot, the rule succeeds;
 	say "Good idea, but not with Ned around.";
+	get-reject gate tag;
 	the rule fails;
 
 this is the orc-gone rule:
@@ -1109,10 +1114,15 @@ this is the orc-gone rule:
 
 this is the ready-to-test rule:
 	if emitted is true, the rule succeeds;
-	say "You aren't sure how the Yard Ray works, or what it needs to zap people with. Maybe you should review it to figure things out.";
+	get-reject test set;
+	say "[if murdered rum is moot]The yard ray is empty[else]You aren't sure how the Yard Ray works, or what it needs to zap people with. Maybe you should review it to figure things out[end if].";
 	the rule fails;
 
-[??	say "That seems right, but you should probably go where there aren't many people. Like back to Fun [']Nuf.";]
+this is the sap-in-cup rule:
+	if puce cup is sappy, the rule succeeds;
+	get-reject liar grail;
+	say "[if puce cup is soddy]The sod doesn't seem to belong in the Liar Grail, but maybe something else does[else]The puce cup is empty[end if].";
+	the rule fails;
 
 this is the sap-not-cut-yet rule:
 	if sap-takeable is true:
@@ -1120,13 +1130,9 @@ this is the sap-not-cut-yet rule:
 		the rule fails;
 	the rule succeeds;
 
-this is the sap-in-cup rule:
-	if puce cup is sappy, the rule succeeds;
-	say "[if puce cup is soddy]The sod doesn't seem to belong in the Liar Grail, but maybe something else does[else]The puce cup is empty[end if].";
-	the rule fails;
-
 this is the sod-in-cup rule:
 	if puce cup is soddy, the rule succeeds;
+	get-reject Bond Nob;
 	say "[if puce cup is sappy]The Bond Nob makes a face at the sap in the cup. Maybe something less unpalatable would help her[else]The puce cup is empty. It wouldn't help the Bond Nob[end if].";
 	the rule fails;
 
@@ -1160,9 +1166,23 @@ this is the cold-loc-hint-bump rule:
 	shuffle-before Cold Loc and Emo Dome;
 	the rule succeeds;
 
-this is the empty-cup rule:
+this is the empty-cup rule: [ignore rule check]
 	moot puce cup;
 	shuffle-before Apse Spa and Motto Bottom;
+	the rule succeeds;
+
+this is the empty-grail rule:
+	later-wipe liar grail;
+	consider the empty-cup rule;
+	the rule succeeds;
+
+this is the empty-nob rule:
+	later-wipe Bond Nob;
+	consider the empty-cup rule;
+	the rule succeeds;
+
+this is the gas-think-wipe rule:
+	later-wipe sage gas;
 	the rule succeeds;
 
 this is the hay-gone rule:
@@ -1193,16 +1213,16 @@ this is the maps-explain rule:
 	now maps-explained is true;
 	the rule succeeds;
 
+this is the mob-bye rule:
+	moot bomb mob;
+	the rule succeeds;
+
 this is the mob-to-alley rule:
 	moot navy van;
 	now girt rig is in Yell Alley;
 	now bomb mob is in Yell Alley;
 	now TNT is in Yell Alley;
 	shuffle-before Yell Alley and Sneer Greens;
-	the rule succeeds;
-
-this is the mob-bye rule:
-	moot bomb mob;
 	the rule succeeds;
 
 this is the radar-blink rule:
@@ -1263,8 +1283,16 @@ this is the sword-rows-reveal rule:
 	move E Divide to Red Roses Order;
 	the rule succeeds;
 
+this is the tag-later-wipe rule:
+	later-wipe gate tag;
+	the rule succeeds;
+
 this is the tats-peripheral rule:
 	now state tats are peripheral;
+	the rule succeeds;
+
+this is the test-set-zapped rule:
+	later-wipe test set;
 	the rule succeeds;
 
 this is the toons-to-den rule:
@@ -1306,7 +1334,7 @@ Gorge Grog	yard ray	"The Gorge Grog is pretty strong stuff, but you may need som
 Rep Popper	Yuge Guy	"It seems like the Rep Popper should work, but it doesn't, quite. Maybe there is something that is giving the Yuge Guy all his rep?"
 Bro Orb	Madam	"The Bro Orb might dissolve her, but you're not out to kill anyone. Still, close."
 poo coop	Yuge Guy	"That could be fun, but he might be normalised to the stuff in the coop."
-poo coop	Liar Grail	"Maybe if the contents came from a bull and not a gnu, it would be appropriate."
+poo coop	Liar Grail	"Maybe if the contents came from a bull and not a gnu, it would be appropriate (this is not a palindrome 'joke.')"
 yard ray	Diktat Kid	"The Diktat Kid laughs as you point the yard ray. 'Destroy me, but my work will remain!'"
 yard ray	Tru Hurt	"The Tru Hurt is dangerous, but maybe you should use the yard ray on something even more harmful."
 yard ray	Waster Fretsaw	"The Waster Fretsaw is dangerous, but maybe you should use the yard ray on something even more harmful."
@@ -1383,10 +1411,20 @@ to say rediv-instead of (th - a thing):
 
 chapter lateruses
 
-table of lateruses
+table of lateruses [xxlat]
 to-get	in-limbo	remind-msg
 UFO tofu	false	"You [if cross orc is in Toll Lot]need to get rid of the cross orc to[else]can now[end if] use the radar on the crag arc."
 Spa Maps	false	"You [tent net is not moot]need to do something so the Code Doc is willing[else]can now ask the Code Doc[end if] to decipher the Spa Maps the spa maps deciphered."
+past sap	false	"You [if player has wash saw]may now have[else]need to find[end if] something that can cut the past sap off the rift fir."
+liar grail	false	"You didn't have the right stuff to pour in the Liar Grail from the Puce Cup last time."
+dose sod	false	"You didn't have anything to take the dose sod with in Apse Spa."
+Bond Nob	false	"You didn't have the right stuff to give the Bond Nob from the Puce Cup last time."
+gate tag	false	"You [if Ned is moot]got[else]need to find a way to get[end if] rid of Ned, so you can use Ye Key on the etage gate in peace."
+sage gas	false	"You [if maps-explained is false]need to[else]now can[end if] make sense of the spa maps to get by Go-By Bog in the Spa Apse."
+test set	false	"You [if emitted is false]need to find[else]now know[end if] how to work the yard ray."
+[zzlat]
+
+[?? take hash of capitalizations]
 
 to get-reject (th - a thing):
 	repeat through table of lateruses:
@@ -2277,7 +2315,9 @@ chapter dose sod
 
 the dose sod is scenery in Apse Spa. "It looks ucky, but given you're in an Apse Spa, it may have health benefits for those that need them."
 
-check taking dose sod: say "It's pretty slimy. And if it has curative properties, that'd be canceled out by your germs carrying it." instead;
+check taking dose sod:
+	get-reject dose sod;
+	say "It's pretty slimy. Any curative properties would be canceled out by your germs carrying it. You need something to hold it in. In which to hold it." instead;
 
 chapter go-by bog
 
@@ -2659,8 +2699,8 @@ chapter DWELT LEWD
 
 DWELT LEWD is a proper-named not necessary hidden book. printed name of DWELT LEWD is "DWELT LEWD (DL)".
 
-dwelt-first is a list of text that varies. dwelt-first is { "Nell, Edna", "Leon", "Nedra", "Anita", "Rolf", "Nora", "Alice", "Carol", "Leo", "Jane", "Reed", "Dena" }.
-dwelt-last is a list of text that varies. dwelt-last is { "Ned", "Dee", "Rena", "Joel", "Lora", "Cecil", "Aaron", "Flora", "Tina", "Arden", "Noel", "and Ellen" }
+dwelt-first is a list of text variable. dwelt-first is { "Nell, Edna", "Leon", "Nedra", "Anita", "Rolf", "Nora", "Alice", "Carol", "Leo", "Jane", "Reed", "Dena" }.
+dwelt-last is a list of text variable. dwelt-last is { "Ned", "Dee", "Rena", "Joel", "Lora", "Cecil", "Aaron", "Flora", "Tina", "Arden", "Noel", "and Ellen" }
 
 lewd-chap is a number that varies. lewd-chap is 0.
 lewd-read is a truth state that varies.
