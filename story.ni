@@ -1000,8 +1000,8 @@ cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the c
 YOB ATTABOY	Sniffins	Dirt Rid	--	toons-to-den rule	true	true	false	Yelpley	"Sniffins accepts your gift, with sniffs slowly changing from sadness to something more snooty. Your thanks for helping Sniffins be too good for you is a Dirt Rid. Sniffins shoos you back out. There is remodeling to be done! Sniffins will outdo Rentner, whoever that is!"
 Elan Ale	Sniffins	Gorge Grog	--	--	true	true	false	Yelpley	"Sniffins looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.' Hey, you're not one to say 'stuff free stuff.'" [af:stand nat's]
 Dirt Rid	reviver	Cave Vac	--	--	true	true	false	Yelpley	"You watch as the Dirt Rid swirls and becomes shinier and much more powerful. A Cave Vac! It will be capable of cleaning...well, somewhere."
-Cave Vac	cassettes sac	radar	--	bump-pod rule	true	true	true	Yelpley	"The Cave Vac has the power to clean up the cassettes sac, though it chokes and sputters at the end of the effort. And while a lot of the cassettes are beyond repair, there's something at the very bottom.[paragraph break]Wow! Radar![paragraph break]You hear noises from the pod, as a hidden robot appears and whisks the garbage away. That's pretty slick! Looking back, the pod doesn't seem so dopy any more, between the Demo Med's help and how you're sure the radar will help."
-radar	crag arc	UFO tofu	orc-gone rule	radar-blink rule	true	false	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO and lands on the radar, which fizzles a bit from the impact and wetness. It hardens quickly and weirdly into a cubic shape. What could it be? You think a minute. It has to be UFO tofu." [af:deny Ned]
+Cave Vac	cassettes sac	radar	--	bump-pod rule	true	true	true	Yelpley	"The Cave Vac has the power to clean up the cassettes sac, though it chokes and sputters at the end of the effort. And while a lot of the cassettes are beyond repair, there's something at the very bottom.[paragraph break]Wow! Radar![paragraph break]You hear noises from the pod, as a hidden robot appears and whisks the garbage away. That's pretty slick! Looking back, the pod doesn't seem so dopy any more, between how the Demo Med already helped and how you're sure the radar will."
+radar	crag arc	UFO tofu	orc-gone rule	radar-crag rule	true	false	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO and lands on the radar, which fizzles a bit from the impact and wetness. It hardens quickly and weirdly into a cubic shape. What could it be? You think a minute. It has to be UFO tofu." [af:deny Ned]
 Ye Key	etage gate	gate tag	Ned-gone rule	--	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'A hall! Aha! Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paragraph break]A gate tag falls off. You pick it up." [af:Worn Row]
 stinky knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stinky knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb!"
 Gorge Grog	Butene Tub	resale laser	--	make-sag rule	true	true	true	Yelpley	"The Gorge Grog starts fizzing as it pours down the tub, and nothing seems to happen, until you hear a FOOMP below and the tub starts shaking. There must've been an open spark below the tub. You find it best to hide, and that's the right thing to do, because the butene tub explodes into pieces. Under it is a resale laser! You figure the really good stuff is hidden way back for security reasons, and this is probably just an emergency gadget, but it's got to be good for something."
@@ -1016,7 +1016,7 @@ NULL ILLUN	Known Wonk	--	--	bump-maws rule	true	true	true	Grebeberg	"The Known W
 el doodle	edits tide	spa maps	--	rahs-too rule	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps! And there is a bonus! It appears El Doodle was so jumbled, there were two things. Sharp rahs appear on another sheet of paper, as some sort of confused motivation, and you take them."
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Calcific Lac. As it gets near and bends away, you jump off, using the buoy to paddle and float back to Calcific Lac."
 dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
-tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Together, you figure out what to do to make the tent net proper cover for the All-Ivy Villa. 'Tie it ... tie it ...'[paragraph break]Once the work is done, the Code Doc thanks you and offers to share some knowledge in return, whenever."
+tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Together, you figure out what to do to make the tent net proper cover for the All-Ivy Villa. 'Tie it ... tie it ...'[paragraph break]Once the work is done, the Code Doc thanks you and offers to share some knowledge in return, whenever[if spa maps are in-limbo]. In fact, the Code Doc would probably be more receptive to helping you with the spa maps[end if]."
 spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my for-prof math tam for this one. One second, let's see--Aha! Oho...' and despite a minor pupil slip-up, it soon makes complete sense to you."
 spa maps	go-by bog	sage gas	maps-readable rule	--	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	"You stick some strands of yahoo hay into the damaged end of the dork rod. It's now a moor broom!"
@@ -1047,6 +1047,8 @@ X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time t
 section pre-use rules [xxpre]
 
 [please add alphabetically]
+
+[?? do with a script? It seems possible]
 
 this is the check-sap-cup rule:
 	if sap-takeable is false:
@@ -1090,6 +1092,7 @@ this is the maps-still-confusing rule:
 		the rule fails;
 	if tent net is not moot:
 		say "'I might, but I need some help here first, to make my home here properly homey. I've got everything except a roof.'";
+		get-reject Spa Maps;
 		the rule fails;
 	the rule succeeds;
 
@@ -1101,6 +1104,7 @@ this is the Ned-gone rule:
 this is the orc-gone rule:
 	if orc is not in Toll Lot, the rule succeeds;
 	say "The cross orc prevents you from trying anything possibly constructive. Maybe with the orc gone, you should try it again.";
+	get-reject UFO tofu;
 	the rule fails;
 
 this is the ready-to-test rule:
@@ -1185,6 +1189,7 @@ this is the make-sag rule:
 	the rule succeeds;
 
 this is the maps-explain rule:
+	later-wipe spa maps;
 	now maps-explained is true;
 	the rule succeeds;
 
@@ -1207,6 +1212,11 @@ this is the radar-blink rule:
 		say "Between the UFO tofu dropped on the radar and the eroded ore getting too close to it, the radar shorts out. After a pop, it splits open. A roto motor falls out and looks undamaged, so you take it.";
 		now player has roto motor;
 		moot radar;
+	the rule succeeds;
+
+this is the radar-crag rule:
+	consider the radar-blink rule;
+	later-wipe UFO tofu;
 	the rule succeeds;
 
 this is the rahs-too rule:
@@ -1370,6 +1380,28 @@ saner arenas	"It's good the saner arenas are there, but you don't need to mess w
 
 to say rediv-instead of (th - a thing):
 	say "While the [th] is worrisome, it's clearly not as dangerous as the Redivider"
+
+chapter lateruses
+
+table of lateruses
+to-get	in-limbo	remind-msg
+UFO tofu	false	"You [if cross orc is in Toll Lot]need to get rid of the cross orc to[else]can now[end if] use the radar on the crag arc."
+Spa Maps	false	"You [tent net is not moot]need to do something so the Code Doc is willing[else]can now ask the Code Doc[end if] to decipher the Spa Maps the spa maps deciphered."
+
+to get-reject (th - a thing):
+	repeat through table of lateruses:
+		if to-get entry is th:
+			say "[remind-msg][line break]";
+			now in-limbo entry is true;
+			continue the action;
+	say "NONCRITICAL bug: I should've rejected getting [the th], but I didn't. This loophole may make the game slightly shorter, but I'd like to know how it happened."
+
+to later-wipe (th - a thing):
+	repeat through table of lateruses:
+		if to-get entry is th:
+			now in-limbo entry is false;
+			continue the action;
+	say "NONCRITICAL bug: I tried to erase an item from the 'do it later' list, but it was never in there. This doesn't affect the game, but I'd like to know about it."
 
 volume rooms
 
@@ -3377,7 +3409,7 @@ slate metals are scenery in Scrap Arcs. "You could probably carve something out 
 
 chapter Ye Key
 
-Ye Key is a thing. description is "Engraved YE KEY, it clearly looks important. It's carved with...well, roses, or ... you're not sure. Maybe it does not lead to Ye Fey or Ye Ley, but there are only so many locked places here, so you'll probably find what it can open."
+Ye Key is a thing. description is "Engraved YE KEY, it clearly looks important. It's carved with...well, roses, or ... you're not sure. Maybe it does not lead to Ye Fey or Ye Ley, but you haven't seen too many locked places, and its label also is a relief there aren't a whole bunch to chase down. You've been running around enough so far."
 
 book Dopy Pod
 
