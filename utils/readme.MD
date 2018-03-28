@@ -21,3 +21,5 @@ To-do:
 
 * rerun 3w.py to vacuum up special test cases and check off again 2 months later when my mind is fresh
     * is there a bug with, say, abcded needing cba in end_array and dedcba needing abc in start_array? If so, report an issue. This is minor, but I want to fix it before the next go-through.
+* Also, refine CAPDIC.PY to see about questionable/variable capitalizations (m = re.findall("ufo tofu", xxx, re.IGNORECASE)) (may go to MISC utils since it is generally useful)
+

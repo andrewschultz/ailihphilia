@@ -487,6 +487,25 @@ chapter thinking
 instead of thinking:
 	say "A knihtg (sic) appears and redirects you to the AID command.";
 	let LLP-yet be false;
+	repeat through table of lateruses:
+		if in-limbo entry is true:
+			if got-later-use is false, say "Stuff you've half figured out:[line break]";
+			say "[remind-message entry][line break]";
+			now got-later-use is true;
+	if got-later-use is false, say "Nothing half-figured out.";
+	let wayoutrooms be 0;
+	repeat with Q running through available rooms:
+		if Q is not visited:
+			let q-connect be false;
+			repeat with QDIR running through maindir:
+				if the room QDIR of Q is visited:
+					now q-connect is true;
+					say "You haven't looked [opposite of QDIR] of [room QDIR of Q].";
+					break;
+			if q-connect is false, increment wayoutrooms;
+	if wayoutrooms > 1, say "You have [wayoutrooms] place[if wayoutrooms is 1]s[end if] that are way away but available.";
+	repeat with Q running through visited rooms:
+		consider stuck-rule of Q;
 	repeat through table of last lousy points:
 		if mclu entry is true:
 			consider the dorule entry;
@@ -496,6 +515,113 @@ instead of thinking:
 					say "LAST LOUSY POINTS NOTES:[line break]";
 				say "[cluey entry][line break]";
 	if LLP-yet is false, say "You don't have any last lousy points left to nail down."
+
+section stuck-rules
+
+to say hn of (rm - a room):
+	say "[if player is in rm]here[else]in [rm][end if]"
+
+a room has a rule called stuck-rule. stuck-rule of room is usually the trivially false rule.
+
+stuck-rule of Drawl Ward is drawl-ward-stuck rule.
+stuck-rule of Dumb Mud is dumb-mud-stuck rule.
+stuck-rule of Emo Dome is emo-dome-stuck rule.
+stuck-rule of Evaded Ave is evaded-ave-stuck rule.
+stuck-rule of Flu Gulf ifs flu-gulf-stuck rule.
+stuck-rule of Fun Nuf is fun-nuf-stuck rule.
+stuck-rule of Gross Org is gross-org-stuck rule.
+stuck-rule of Lair Trial is lair-trial-stuck rule.
+stuck-rule of Ooze Zoo is ooze-zoo-stuck rule.
+stuck-rule of Seer Trees is seer-trees-stuck rule.
+stuck-rule of Swamp Maws is swamp-maws-stuck rule.
+stuck-rule of Swept Pews is swept-pews-stuck rule.
+stuck-rule of Toll Lot is toll-lot-stuck rule.
+stuck-rule of Yawn Way is yawn-way-stuck rule.
+
+this is the drawl-ward-stuck rule:
+	if Bond Nob is moot, the rule fails;
+	say "You need to find a way to help the Bond Nob [hn of Drawl Ward].";
+	the rule succeeds;
+
+this is the dumb-mud-stuck rule:
+	if lie veil is moot and gnu dung is moot and poo coop is moot, the rule fails;
+	let any-yet be false;
+	say "You need to get by "
+	unless gnu dung is moot:
+		now any-yet is true;
+		say "the gnu dung";
+	unless poo coop is moot:
+		if any-yet is false:
+			say "/";
+			now any-yet is true;
+			say "the turf rut(soith)";
+	unless lie veil is moot:
+		if any-yet is false:
+			say "/";
+			now any-yet is true;
+			say "the lie veil(north)";
+	say " [hn].";
+	the rule succeeds;
+
+this is the emo-dome-stuck rule:
+	if Red Roses Order is visited, the rule succeeds;
+	say "[if pulled-up is false]You need to figure a way to slow down in [else]You need to figure a way north from [end if][hn of Emo Dome].";
+	the rule succeeds;
+
+this is the evaded-ave-stuck rule:
+	if Door Frood is moot, the rule fails;
+	say "You need a way by the Door Frood [hn of Evaded Ave].";
+	the rule succeeds;
+
+this is the flu-gulf-stuck rule:
+	if scorn rocs are moot, the rule fails;
+	say "You need a way by the scorn rocs [hn of Flu Gulf]."
+	the rule succeeds;
+
+this is the fun-nuf-stuck rule:
+	if Dirge Grid is north of Fun Nuf, the rule fails; [??not good enough -- need to make sure have weapons]
+	say "You need to figure what's north of [hn of Fun Nuf]...eventually.";
+	the rule succeeds;
+
+this is the gross-org-stuck rule:
+	if etage gate is moot, the rule fails;
+	say "You need to [if Ned is in Gross Org]get rid of Ned and [end if]unlock the etage gate [hn of Gross Org].";
+	the rule succeeds;
+
+this is the lair-trial-stuck rule:
+	if ergot ogre is moot, the rule fails;
+	say "You need to get by the ergot ogre [hn of Lair Trial].";
+	the rule succeeds;
+
+this is the ooze-zoo-stuck rule:
+	if sleep eels are moot, the rule fails;
+	say "You need to get by the sleep eels [hn of Ooze Zoo].";
+	the rule succeeds;
+
+this is the seer-trees-stuck rule:
+	if stark rats are moot, the rule fails;
+	say "You need a way past the stark rats [hn of Seer Trees].";
+	the rule succeeds;
+
+this is the swamp-maws-stuck rule:
+	if NULL ILLUN is moot, the rule succeeds;
+	say "You need to figure a way to help the Known Wonk [hn of Swamp Maws].";
+	the rule succeeds;
+
+this is the swept-pews-stuck rule:
+	if liar grail is moot, the rule succeeds;
+	say "You need to figure how to get past the Liar Grail and release the Wordy Drow [hn of Swept Pews].";
+	the rule succeeds;
+
+this is the toll-lot-stuck rule:
+	if cash sac is moot, the rule succeeds;
+	say "You need to figure a way past the cross orc [hn.of Toll Lot]";
+	the rule succeeds;
+
+this is the yawn-way-stuck rule:
+	if spur ups are moot, the rule succeeds;
+	say "You need to figure how to get east [hn of Yawn Way].";
+	the rule succeeds;
 
 chapter inventory
 
@@ -576,6 +702,7 @@ chapter verbing
 
 verbing is an action applying to nothing.
 
+understand the command "help" as something new.
 understand the command "v" as something new.
 understand the command "verb" as something new.
 understand the command "verbs" as something new.
@@ -583,6 +710,7 @@ understand the command "verbs" as something new.
 understand "verbs" as verbing.
 understand "verb" as verbing.
 understand "v" as verbing.
+understand "help" as verbing.
 
 carry out verbing:
 	say "The four basic directions ([b]N, S, E, W[r]) are the main ones, along with [b]USE[r], in order to get through the game. Also, in some places, specific verbs will be needed. None are terribly long, and---well, there is a thematic pattern to them.";
@@ -4025,7 +4153,7 @@ to describe-nearby (ro - a room):
 	repeat with dir running through maindir:
 		let DR be the room dir of ro;
 		if DR is visited:
-			say "Try looking [opposite of dir] of [if DR is location of player]here[else][DR][end if]. You haven't, yet.";
+			say "Try looking [opposite of dir] [hn of DR]. You haven't, yet.";
 			continue the action;
 	if player is in Fun Nuf and ro is Art Xtra:
 		say "Try exploring Yelpley to the east.";
