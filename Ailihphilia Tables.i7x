@@ -766,6 +766,8 @@ randtxt
 "Soros! Soros!"
 "Wane? Naw!"
 "You! Oy!"
+"ROB ALL LABOR!"
+"Sue Me?! Us?!"
 
 Ailihphilia Tables ends here.
 

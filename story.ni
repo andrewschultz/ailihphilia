@@ -7,9 +7,12 @@
 First, Ailihphilia tables.i7x contains all the random responses.
 Second, Ailihphilia tables.i7x contains responses to mistakes e.g. palindrome verbs/phrases that don't advance the game but are good tries.
 Put an x or two before each of these to find the beginning of a table, ZZ for the end:
+START XX/ZZ DIR
 CANT for can't-use default messages
 USE for the Table of Useons (USE X ON Y gives a point)
+UR for use redirect
 FAIL for Useons that don't work
+LAT for
 TALK for talk texts
 WIN for winning the game
 PER for table of periphery
@@ -461,6 +464,7 @@ instead of listening:
 		say "[if Dave is in My Gym]Behind Dave's grunts,[else]Y[end if]ou hear ";
 		next-rand table of My Gym songs;
 		say "[one of], or at least, that's what repeats in the chorus[or][stopping]." instead;
+	if player is in Apse Spa, say "Surprisingly, no spa yaps." instead;
 	if player is in Mont Nom, say "The Ark of Okra is almost saying 'C'mon! Nom!' or even 'Tum-Smut!'" instead;
 	say "Noise lesion."
 
@@ -1111,6 +1115,7 @@ wordy drow	"The wordy drow moans 'Er ... eh ... there,' pointing to the Liar Gra
 table of use redir [xxur]
 use1	person-reject	thing-reject
 party trap	"The trap can't work on a person. It's too small, and people are too smart."	"You need to use the party trap on something animate."
+[zzur]
 
 [the table of useons approximately follows not only the test commands but also the walkthrough]
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
@@ -1146,7 +1151,7 @@ gate tag	soot tattoos	state tats	--	tats-peripheral rule	true	true	true	Yelpley	
 poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
 poo coop	turf rut	--	coop-full rule	shift-dumb-mud rule	true	true	true	Grebeberg	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture.[paragraph break]A bold lob! The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
 radar	made dam	eroded ore	--	radar-blink rule	true	false	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow. The radar plays a weird scale. Being close to the ore has damaged it somehow."
-NULL ILLUN	Known Wonk	--	--	bump-maws rule	true	true	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me. I mean, it's almost as bad as [i]EBB?! BE[r].' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. And if it's simple, well, I need to know when simple stuff works.' The Known Wonk apologizes--it's back to the Tru Yurt for a thought session."
+NULL ILLUN	Known Wonk	--	--	bump-maws rule	true	true	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me. I mean, it's almost as bad as [i]EBB?! BE[r].' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. Rid a nadir. Rid ANY nadir! Sometimes, simple stuff works.' The Known Wonk apologizes--it's back to the Tru Yurt for a thought session."
 el doodle	edits tide	spa maps	--	rahs-too rule	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps! And there is a bonus! It appears El Doodle was so jumbled, there were two things. Sharp rahs appear on another sheet of paper, as some sort of confused motivation, and you take them."
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. First at the Yack Cay for some chat. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and the citizens hand you a YOU BUOY to tell you they're glad you're you. They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Calcific Lac. As it gets near and bends away, you jump off, using the buoy to paddle and float back to Calcific Lac."
 dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
@@ -1269,6 +1274,8 @@ this is the sod-in-cup rule:
 	get-reject Bond Nob;
 	say "[if puce cup is sappy]The Bond Nob makes a face at the sap in the cup. Maybe something less unpalatable would help her[else]The puce cup is empty. It wouldn't help the Bond Nob[end if].";
 	the rule fails;
+
+[zzpre]
 
 section post-use rules [xxpost]
 
@@ -1452,13 +1459,15 @@ this is the you-win rule: [xxwin]
 	sort the table of last lousy points in finord order;
 	if in-beta is true, display-dropbox-link;
 	the rule succeeds;
+[zzwin]
+
+[zzpost]
 
 chapter failed useons
 
 [?? poo coop on, well, everything]
 
-[xxfail]
-table of specific use rejects
+table of specific use rejects [xxfail]
 use1	use2	babble
 Dirt Rid	cassettes sac	"The Dirt Rid wheezes but is unable to clean up the cassettes sac. You need something more powerful."
 radar	sleep eels	"A radar isn't supposed to work this way, but somehow, you detect some bitterness at mammals in general. But it's secondary to needing a more comfortable place to sleep."
@@ -1539,6 +1548,7 @@ Par Wrap	"It's not the Verses Rev's clothes you need to worry about."
 Tru Hurt	"[rediv-instead of tru hurt]."
 Waster Fretsaw	"[rediv-instead of waster fretsaw]."
 saner arenas	"It's good the saner arenas are there, but you don't need to mess with them."
+[zzper]
 
 to say rediv-instead of (th - a thing):
 	say "While the [th] is worrisome, it's clearly not as dangerous as the Redivider"
@@ -1588,7 +1598,7 @@ part Dim Mid region
 
 book Fun Nuf
 
-Fun Nuf is a room in Dim Mid. "[if elite tile is in Fun Nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what is the various directions[xit-ave][end if][if north tron is in Fun Nuf]. Also, the North-Tron has carved a passage north[end if]."
+Fun Nuf is a room in Dim Mid. "[if elite tile is in Fun Nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what is the various directions[xit-ave][end if][if north tron is in Fun Nuf]. Also, the North-Tron has carved a passage north. It's too big to, uh, repaper[end if]."
 
 to say xit-ave:
 	say ". The [if tix exit is in Fun Nuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]"
@@ -2155,7 +2165,7 @@ after going to Mont Nom:
 
 chapter ark of okra
 
-The ark of okra is scenery in Mont Nom. "You always found okra, or the idea, icky, but the ark is beautiful enough, you sort of wonder how it'd taste. Here you can see DO OFT FOOD inscribed on it. Maybe if you LISTEN you'll hear an equally weird and vaguely useful message."
+The ark of okra is scenery in Mont Nom. "You always found okra, or the idea, icky, but the ark is beautiful enough, you sort of wonder how it'd taste. Here you can see DO OFT FOOD inscribed on it. Maybe if you LISTEN you'll hear an equally weird and vaguely useful message[if martini tram is off-stage]. You bet something cool is behind it. Maybe a tahini hat[end if]."
 
 instead of eating ark of okra: say "You don't know how long it's been out here. It's probably, like, the vegetable version of wax fruit."
 
@@ -3795,6 +3805,7 @@ talk-text of Sniffins is "[if YOB ATTABOY is not moot]'Tony? Not! Poor lower cla
 talk-text of Verses Rev is "The Verses Rev booms 'Erupt! Pure!' then piously intones how weirdos not in line with the Diktat Kid's values need to be eradicated.".
 talk-text of Wordy Drow is "It moans and points at the Liar Grail. They're forced together, somehow, but maybe you can change that.".
 talk-text of Yuge Guy is "'I'm ... ' / 'TMI!'"
+[zztalk]
 
 volume gotoing
 
@@ -4866,6 +4877,7 @@ funstuff	mclu	finord	dorule	cluey
 "SEE BEES in Moo Room"	false	9	bees-seen rule	"notice the source of the buzzing in Moo Room"
 "BALM LAB in the Bald Lab"	false	10	balm-yet rule	"get one more item [if Pro Corp is unvisited]from the northwest room after looting it[else]from [Pro Corp][end if]"
 "MUSS OPOSSUM to make a friend"	false	11	muss-yet rule	"be nice to [if Le Babel is visited]an opossum[else]the opossum in Le Babel[end if]"
+[zzllp]
 
 this is the balm-yet rule:
 	if balm-got is true, the rule succeeds;

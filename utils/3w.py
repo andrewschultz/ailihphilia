@@ -219,6 +219,7 @@ def hash_tweak(wd):
     global startpals
     global endpals
     if wd in wordy.keys(): return
+    if wd in offensive.keys(): return
     bkwd = wd[::-1]
     wordy[wd] = True
     first_1_or_2[wd[0]][wd] = True
@@ -277,7 +278,10 @@ extra_words = []
 order_results = False
 
 two_word_file = "3w-ok-words.txt"
+bad_word_file = "3w-bad-words.txt"
 fixed_array = []
+
+offensive = defaultdict(bool)
 
 hash_test_array = []
 
@@ -415,9 +419,15 @@ if look_for_last:
 
 t1 = time.time()
 
+with open(bad_word_file) as file:
+    for line in file:
+        ll = line.lower().strip()
+        offensive[ll] = True
+
 if not ignore_2_letter_words:
     with open(two_word_file) as file:
         for line in file:
+            if ll.startswith(';'): break
             ll = line.lower().strip()
             la = re.split(",( )?", ll)
             for li in la:
