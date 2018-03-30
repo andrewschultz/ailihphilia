@@ -15,7 +15,6 @@ Utils:
 * rely.py = what relies on what to get through the game. Needs auxiliary file rely.txt
 * sc2.py = does internal code verification of maximum score byregion. Also cross-checks invisiclues and trizbort flowchart.
     * Supersedes the weaker msc.py. msc.py did a much more trivial runthrough.
-* zr.py = trivial utility that fixes capitalization for certain room names (should eventually be spun off somewhere more general)
 
 To-do:
 
