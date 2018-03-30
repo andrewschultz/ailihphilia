@@ -1066,39 +1066,181 @@ werewolf flower? Ew
 El = should be in
 # 3 below
 
-Elf Fabs Baffle
-Elf Fur Ruffle = not in? How to include?
-Elf Irk Rifle
-Elk Nab Ankle
-Elk City Tickle
-Elt-Name Mantle
-Elt Surf Rustle
-
-Emo swag! Awesome!
-Emu, Serene, Resume
-Emu Psi Spume
-Emu Love Volume / Avid Diva / Diva Vid
+"sez tidy ditzes"
+"sez tire ritzes"
 "Eon Ace Canoe"
-"Era, Friar, Airfare"
-"Era Was Aware"
-"Era War Aware"
-"Era Web Beware"
-"Era Hoodoo Hare"
-"Era [']Mare"
-"Era Pare"
-"Era: Perps Prepare"
-"Era, Rare"
+"Er, Old Lore"
 "Era Flew: Welfare"
+"Era Hoodoo Hare"
+"Era Pare"
+"Era War Aware"
+"Era Was Aware"
+"Era Web Beware"
+"Era [']Mare"
+"Era, Friar, Airfare"
+"Era, Rare"
+"Era: Perps Prepare"
 "Ere Hoodoo Here"
 "Ere Manna, Mere"
 "Ere Mojo Mere"
-"Ere Simp Misere"?
 "Ere Peewee, Pere"
+"Ere Simp Misere"?
 "Erg Lamb Malgre"
-Erg off ogre
+"Go, Gaily, Agog"
+"Ned, de-redden!"
+"No Dibs Bid On"
+"No Dull Udon"
+"No Last Salon"
+"No Naff Anon!" <- it buzzes at you
+"No Obsesses Boon"
+"No One Noon"song
+"No Orcs Croon"
+"No ROMs, moron!"
+"No cede, con!"
+"No cert recon"
+"No ill lion"
+"No melee. lemon!"att
+"No old loon"
+"No romp, moron!"
+"No same mason"
+"No! Ebb, eon!"
+"No, son"
+"No-Losses Solon!"
+"Now Ere Rewon"
+"SETI cites" Rob
+"See pure rupees"
+"See weepy peewees!"
+"Set agates"
+"Set areal arates"
+"Set naff antes"
+"Sir, Be Debris!"
+"Sly Dim Idyls"
+"So Ill, iOS!"
+"So Lost Solos"
+"So Mild Limos"
+"So, Like Kilos?"
+"Sod! No Condos?"
+"Sod-u. Kodus?"
+"Sog, Ebb, Egos":drow
+"Tad effed-at!"
+"Tae FEAT!"
+"Tae HEAT!"
+"Tae Here Reheat"
+"Tae Petite Peat"
+"Tag At"
+"Tag Nimming At"
+"Tao Memo At"
+"Tar data? Drat!"
+"Ted, Ace Cadet"
+"Tie, boss? So be it!"
+"To Banana Bot"
+"To Call a Cot"
+"To Data Dot"
+"To Grab Argoit"
+"To Gray Argoit"
+"To Grey Ergot"
+"To Old Loot"
+"To Oldened Loot"
+"To Orb Root"
+"To Own: WOOT"
+"To Prefer Pot"
+"To Rot"
+"To Tax a Tot"
+"Tom Ramp, Marmot"
+"Ton Knot"
+"Too 'boohoo?' Boot!"
+"Too Fab Afoot"
+"Too Faded Afoot"
+"Too Far Afoot"
+"Too Lotto Loot"
+"Too Wanna-Woot"
+"Too coocoo, coot!"
+"Too here Hoot"
+"Too hoodoo hoot."
+"Too rococo root"
+"We Degage Dew"
+"We Few"
+"We Freitier Few"
+"We Hew"
+"We Ivy View"
+"We Nab Anew"
+"We Nap Anew"
+"We, Serene, Resew"
+"We, Snug, Unsew
+"Yap Ere Repay"
+"Yap Nuff, Unpay"
+"Yap? Spay"
+"Yaw Nurses Runway"
+"Yaw, dim midway"
+"Ye So Nosey!"
+"Ye po['] mopey!"
+"Yet a Matey"
+"You get a tat, STAT."
+"[']Sup, Mack Campus"
+"[']Tis. Suss it!"
+"no next xenon"
+"no smirch crimson"
+"ren trapeze partner"
+"rep maddened damper"
+"rep mulch clumper"
+"rep push supper"
+"rot animals laminator"
+"rot call actor"
+"rot idea editor"
+"sat severe vestas"
+"sec naifs fiances"
+"sec nailers reliances"
+"set aft fates"
+"set agent negates"
+"set agile ligates"
+"set alert relates"
+"set aloft folates"
+"set also slates"
+"set art rates"
+"set indeed nites"
+"set indexed nites"
+"set interpret nites"
+"set overs revotes"
+"set tall lattes"
+"set umm mutes"
+"set upside disputes"
+"sex imp mixes"song
+"sit nay antis"
+"so cede decos"
+"so doddered dodos"
+"so obsesses boos"
+"so uddered duos"
+"soc serfs frescos"
+"sod purer updos"
+"sog oldened logos"
+"sog rack cargos"
+"sun ego genus"
+"sun obsesses bonus"
+"tab mock combat"
+"tae solo seat"
+"to bore robot"
+"to perp repot"
+"to perv repot"
+"to rate tarot"
+?? duplicate taunts in tables
+?? want to show a-b-c anagram acronyms
+??missing red no wonder
+Denny [']N Ned
 ETA Collar Allocate
 ETA Lids Dilate
 ETA names emanate
+Elf Fabs Baffle
+Elf Fur Ruffle = not in? How to include?
+Elf Irk Rifle
+Elk City Tickle
+Elk Nab Ankle
+Elt Surf Rustle
+Elt-Name Mantle
+Emo swag! Awesome!
+Emu Love Volume / Avid Diva / Diva Vid
+Emu Psi Spume
+Emu, Serene, Resume
+Erg off ogre
 Fee Beef
 Fee Reef
 Fib If
@@ -1106,96 +1248,394 @@ Fin If
 Fix If
 Fop Of
 For a Jar Of
-fox of
 Fra Zarf / Fra Barf
 Gag Nuff! Ungag!
 Gem Tuna Nutmeg
 Gnu, Snub Unsung
 Gnu, Snuff Unsung
-"Go, Gaily, Agog"
+Go Drawn, War Dog
 Go Here, Hog
 Go Loco Log
-Go Drawn, War Dog
 God Pale Lapdog
 Gun Snug <- hopefully there's no
+Ha Fools['] Loofah
 Hah, solo shah!
-hep met tempeh=item on the menu at Sniffins
-Hoop? Ooh
 Hoo! Preyer? Pooh
-In, Imp, Mini
-it, eye, yetei
-It's best I...=flee elf says good bye? Or you?
-kid daze zaddik
-lab ace cabal: NE room notes
-Lac Oft Focal: calcific lac new location? Calm Lac
+Hoop? Ooh
 I/O Koi
+In, Imp, Mini
+It's best I...=flee elf says good bye? Or you?
+It: Revert, I
+Lac Oft Focal: calcific lac new location? Calm Lac
 Lac Old Local
-lad navy vandal
-lag nuff fungal
-lap opal = shiny?
-lav oval=alternate1 to pee keep
-Loo Cool:alternate2 to pee keep
-Loo Pool
-Lug O Mogul
-Loo Fool: what you are
-law oval avowal
-lay oldened loyal
 Led, O Model
 Lee, Hobo Heel
 Leg Duck Cudgel
 Les Maddened Damsel
 Les Severe Vessel
-Let Race Cartel
-Yob Ops Po['] Boy
-"Yet a Matey"
-Yes Rah Arsey
-Yes, truce, curtsey
-"Ye po['] mopey!"
-"Ye So Nosey!"
-Yen O['] Money
-"Yap Ere Repay"
-"Yap? Spay"
-"Yap Nuff, Unpay"
-"Yaw, dim midway"
-"Yaw Nurses Runway"
 Let Nix Intel
+Let Race Cartel
 Levant Navel
 Lit Null Until
-We Nab Anew
-war dagga draw
-We'd Lime Mildew
-wend new
-Woe Meow:what cats do
-Won Enow: if you don't get all the points
-Won Ere Now
-Wonk, Now!
-Won Snow
+Loo Cool
+Loo Cool:alternate2 to pee keep
+Loo Fool: what you are
+Loo Pool
+Lug O Mogul
 Mac See Scam
 Mad-Eyed, Am
 Mal Slam
 Mar-Gnomon Gram
 Me, Log Golem
 Me: Opt, Poem
+Mod Less Seldom
+Mod? Naff: Fandom
+Moi: Dig Idiom
+Moo Rave Varoom
+Mop, Mop, Pompom
+My Nonacidic Anonym
+Nab Rum Urban
+Naw See Swan
+Nay Cyan
+Net Foe/Fog Often
+Net For Often
+Net To Gotten
+Net Torn Rotten
+Net-safe-fasten
+New area if you get all the points
+Nil Appallin[']
+Nil In!
+Nil Merge, Gremlin
+Nim In?
+Nix Alert: Relaxin!
+No Gamma Gon
+No Gawk Wagon <- navy van may be a
+No Grog, Gorgon
+No Igniting Ion
+No Puff Upon
+No Pull Upon
+No Purer Upon
+No Rig, Iron
+No Sinus Unison
+No Yobbo Yon
+No bracy carbon
+No dark radon <- detected by radar
+No endewed neon
+No mongo gnomon
+No, hon
+No-Trekker-Ton
+No? Woo! Won
+Nod Octet Codon
+Nom On, Nom On
+Nom, Rest, Sermon
+Non-Ace Canon
+Noo! Bad! A Boon?
+Nor Igniting Iron
+Nor a Baron
+Not Ruby Borton
+Not To Cotton...
+Not. Revert. On!
+Now Null Unwon
+Now On
+Ode Lots Toledo
+Ode: Dude, DO
+Of Feds? Deffo
+Of Fobs Boffo
+Of Nil Info
+Oil-Off Folio
+Ole Gnat Tangelo
+Ole Putz Tupelo
+On Nude? Dunno
+On Ropy Porno
+On, Nag, Anno
+One Garage? No
+One minme? NO!
+One pipe? No
+One? No
+Ooh Cad Achoo
+Ooh Chaff Ahchoo
+Ooh, awe! Wahoo!
+Or Be, Bro
+Or Boohoo, Bro
+Or Camp Metro
+Or Cleve Velcro
+Or Fab Afro
+Or Fall, Afro
+Or Prefer Pro
+Or Temp Metro
+Or Terror Retro
+Orc Imp Micro
+Orc Levee Velcro
+Orc: A Macro / Amp Micro
+Ore Hero
+Ore Torero
+Ort Era Retro
+Ort Indeed Nitro
+Ort Niff Intro
+Pace Recap
+Pad Digresser Giddap
+Pan Stat Snap
+Par Trap = mistakes
+Par? Crap
+Pee Jeep/Keep/Weep
+Pet, Step
+Pol? Flop
+Poo Goop <- it already is
+Poo Hoop <- umm...
+Pop <- you'd really expect they sold pop here, but ...
+Pub Up
+Pug Nipping Up
+Puh Same Mashup
+Rad Eco-Cedar
+Rap, Bust Subpar
+Rat Avatar
+Rat Lab Altar / Rat Ladened Altar
+Rat Romp: Mortar
+Raw Non-War
+Re-Gamin['] Imager
+Rec Acer
+Rec Artery Retracer
+Rec Indeed Nicer
+Rec Interpret Nicer
+Rec Organa Grocer
+Red Apse Spader
+Red Art Trader: revolt lover, that'd be too easy
+Red Dale Ladder
+Red Darer Adder
+Red Doc Odder
+Red Eco Ceder
+Red Ice Cider
+Red Ladened Alder
+Red Led Elder
+Red Limp Milder
+Red Locs Colder: where King Nik goes?
+Red Loss Older
+Red Nerd Render
+Red Nice Cinder
+Red Nuff Funder
+Red Robust Suborder
+Red Ronin Order
+Red Well Lewder
+Red? No wonder!
+Ref Lord Rolfer
+Reg Naff/Nab Anger
+Ren Evilness Enlivener
+Ren Naff Fanner
+Ren Rage Garner
+Ren Rube Burner
+Ren Woe Owner
+Ren Wordy Drowner
+Ren, Old Loner
+Rep Elm Leper
+Rep Mate Tamper
+Rep Meta Temper
+Rep a Paper
+Repaid Diaper
+Ret All Later
+Ret Life Filter
+Ret Lift Filter
+Ret Same Master
+Rev End Never
+Rev Ever
+Rev I Fiver
+Rev I Liver
+Rev Love Evolver
+Rev Oh Hover
+Rev [']Er Ever
+Rev, off, OVER!
+Rex a Taxer
+Rex, Indexed Nixer
+Rim Emir: Who is he?
+Rip a Tapir
+Rot Corpses Proctor
+Rot, Cart, Tractor
+Rot, Ordered Rotor
+Rot-Cert Rector
+Rot-Cesses Sector
+Row Or
+Row, or ...
+Rue Carte Traceur
+Rum Elf Lemur
+Rum Elk Lemur
+Rum, rum murmur!
+SETI Sites
+Sab Mambas
+Sad As
+Sag, Emo, Omegas
+Sal Alas
+Saw [']Twas
+Sec All Aces
+Sec Ices
+Sedu-Dudes
+Set Arcana Crates
+Set Emetes
+Set aha hates
+Set, Add Dates
+Sex O['] Foxes
+Sex, Eff Exes
+Sex-I-Fixes
+Sexism, Sixes
+She FEHs
+She Hehs
+She Hoodoo-Hehs
+Sim Amis
+Sim Aramis
+Sim-All Amis
+Sin Is...
+Sin Uneven Unis
+Sin, I? Finis
+Sip! A tap is...
+Sir A Paris
+Sir Ever is
+Sir Kris: friend of King Nik
+Sir afar is!
+Sir, buh! Hubris!
+Sir, oops, poor is
+Sir, tetris?
+Sis Emend Nemesis
+Sis Is
+Site Yetis
+Six Axis
+Ska Off Oaks
+Ska Yaks
+Ski Oiks: perhaps to the west
+Sly canikin acyls: casks?
+Sly mad amyls: on butene tub
+Sly mass amyls: on butene tub
+So Ate Taos
+So Ceded Ecos
+So Cold Locos
+So Darer Ados
+So Full UFOs: !!! attack from above and drop some of their cargo.
+So Get Egos
+So Here Hos
+So Hog Ohos
+So Mew Emos
+So Pace Capos
+So Pert Repos
+So Real Aeros
+So Rec Eros
+So Rued Euros
+So Shh SOS
+So obese? Boos!
+So! PoS!
+So-Class Alcos: not alcohol
+Sob! Mild Limbos!: drow
+Sob, Mudded Dumbos
+Sob-Mock Combos
+Sod Dos
+Sod [']er! Redos!
+Soma Camos
+Sub us! Sub us!
+Sue Deus
+Sue Zeus
+Sum Emus
+Sum Us
+Sun Eve Venus
+Sun Even Us
+Sun Gnus = mistake
+Sun I Minus
+Sun Off On Us
+Sun On Us
+Tahini Hat
+Tar Frat
+Tee FEet
+Tie Cede Deceit
+Til Era Relit
+Til Null Unlit
+Til Psi Split
+Til Purer Uplit
+Tin Even It
+Tin Unit
+Tinker ... Reknit!
+To Lips, Pilot
+Tub Error Rebut
+Tube Rebut
+We Nab Anew
+We'd Lime Mildew
+Woe Meow:what cats do
+Won Enow: if you don't get all the points
+Won Ere Now
+Won Snow
+Wonk, Now!
+Yen O['] Money
+Yes Rah Arsey
+Yes, truce, curtsey
+Yob Ops Po['] Boy
+You feel a need to make a ... sup opus.
+dust/sud/dust/sud
+fox of
+hep met tempeh=item on the menu at Sniffins
+it, eye, yetei
+kid daze zaddik
+klep-elk
+lab ace cabal: NE room notes
+lad navy vandal
+lag nuff fungal
+lap opal = shiny?
+lav oval=alternate1 to pee keep
+law oval avowal
+lay oldened loyal
+lob my symbol
 med-aid diadem
 met item: it's a met-ill item
 met stem
 mix a maxim: right way to
-Mod? Naff: Fandom
-Mod Less Seldom
-Moi: Dig Idiom
-My Nonacidic Anonym
-Moo Rave Varoom
-Mop, Mop, Pompom
-Nab Rum Urban
-nae dyspepsy, dean
-nae meds demean
-nae logo lean
 nae cod ocean
+nae dyspepsy, dean
+nae logo lean
+nae meds demean
 nae wanna wean
 nag ebb began
 nag old logan
 nag rot organ
-lob my symbol
+nah prop orphan
+nap span
+ned damn madden
+ned rage garden
+nitro-cortin
+no graded argon in the butene tub
+no left felon
+no tuft futon <- ooze zoo
+oba keeps peekabo
+odd eyed do
+or tiny nitro
+rep more romper
+rob rat arbor
+roe temp meteor
+rom rad armor
+rue craft farceur
+savi-divas
+sedi-tides
+sedicides
+see beebees
+see belle bees/see boffo bees/see bozo bees/see brr bees/see brewer bees/see banana bees
+set age gates
+sew agmosomg awes
+sewer ewes
+sly rad aryls
+so bold lobos
+solo bolos
+song
+sow twos
+soya-mayos
+spa elk leaps
+spa gaps: search for them
+spa grammar gaps
+spa laps: pool gloop
+spa maps: spa mini-maps even tougher to read
+spa saps
+spa yaps
+spy gyps: in sniffins
+sub main iambus
+tap saga spat
+tar boohoo brat
+tar comedy democrat
+tar ever at
+til saga gaslit
+war dagga draw
+wend new
+you never asked. OK, never asked unloaded question.
 
 # lap a papal = case we need to get working
 # 1w.py : not just STDIN but break things into dictionaries of dictionaries by first letter. See 2pal.py for details.
