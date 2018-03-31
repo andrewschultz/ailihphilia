@@ -1139,7 +1139,7 @@ pity tip	eye	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	"The eye sc
 trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
 bunk nub	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching and slurping, the bunk nub is changed to a bunch of much smaller, but more comfortable looking, stock cots."
 party trap	stark rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
-EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff my parents told me I needed to one day. ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...I must leave and RAFT FAR back to South Ihtuos.'"
+EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris told me I needed to one day. ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! Now I can lead against the Rim Emir and his emir crime and emir grime!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...I must leave and RAFT FAR back to Dragon-o-gard.'"
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
 --	--	--	rev-puff-up rule
 --	--	--	rev-pull-up rule
@@ -1156,7 +1156,7 @@ Elan Ale	Sniffins	Gorge Grog	--	--	true	true	false	Yelpley	"Sniffins looks the E
 --	--	--	rev-stand-nats rule
 Dirt Rid	reviver	Cave Vac	--	--	true	true	false	Yelpley	"You watch as the Dirt Rid swirls and becomes shinier and much more powerful. A Cave Vac! It will be capable of cleaning...well, somewhere."
 Cave Vac	cassettes sac	radar	--	bump-pod rule	true	true	true	Yelpley	"The Cave Vac has the power to clean up the cassettes sac, though it chokes and sputters at the end of the effort. And while a lot of the cassettes are beyond repair, there's something at the very bottom.[paragraph break]Wow! Radar![paragraph break]You hear noises from the pod, as a hidden robot appears and whisks the garbage away. That's pretty slick! Looking back, the pod doesn't seem so dopy any more, between how the Demo Med already helped and how you're sure the radar will."
-radar	crag arc	UFO tofu	orc-gone rule	radar-crag rule	true	false	false	Yelpley	"Beeeep... beeeep..... the radar has found something! A small saucer arises from a hidden part of the crag. Splat! something weird and warm drops from the UFO and lands on the radar, which fizzles a bit from the impact and wetness. It hardens quickly and weirdly into a cubic shape. What could it be? You think a minute. It has to be UFO tofu." [af:deny Ned]
+radar	crag arc	UFO tofu	orc-gone rule	radar-crag rule	true	false	false	Yelpley	"Beeeep... beeeep..... the radar has found something! Two small saucer arises from a hidden part of the crag. So Full UFOs! And splat! something weird and warm drops from them and lands on the radar, which fizzles a bit from the impact and wetness. It hardens quickly and weirdly into a cubic shape. What could it be? You think a minute. It has to be UFO tofu." [af:deny Ned]
 --	--	--	rev-deny-Ned rule
 Ye Key	etage gate	gate tag	Ned-gone rule	tag-later-wipe rule	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'A hall! Aha! Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paragraph break]A gate tag falls off. You pick it up." [af:Worn Row]
 --	--	--	rev-worn-row rule
@@ -1194,7 +1194,7 @@ Eroded Ore	reviver	Ore Zero	--	--	true	true	false	Yelpley	"The reviver whirs as 
 you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. 'You BOFFO buoy!' you can't help shouting.[paragraph break]The gem's so tempting and beautiful, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
 Mr Arm	TNT	TNT	--	mob-bye rule	true	true	false	Yelpley	"Mr. Arm walks on his index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. Being an arm, it/he has more leverage than just a DNA hand would've. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course. Perhaps Mr. Arm will find a Do-Bod to be truly complete. The bomb mob, for their part, becomes a poor troop once they see what they've lost."
 nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
-rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	Grebeberg	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'SOS! SOS!' he cries, making a male lam.[paragraph break]The ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
+rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	Grebeberg	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'SOS! SOS!' he cries, making a male lam. From his babbling, he's apparently retreating to a glam-amalg in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]The ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
 Bro Orb	Mist Sim	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	"The Bro Orb shines and blinks. The mist sim dissipates under the brutal light. 'Live not on evil, madam, live not on evil!' you boom, as the Orb does its work. Madam looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'You can't catch me! Not with the E-Divide in place!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Madam."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You will be able to smite a bad-faith pearl-clutcher for fdrawlsure with one of these."
@@ -1207,12 +1207,25 @@ Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	"'Havoc, OVA
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse]
 
+[the 3 sections below are automatically sorted with sc2.py]
+
 section rev rules [xxrr]
 
-this is the rev-pack-cap rule:
-	if flee elf is moot, the rule fails;
-	say "You PACK CAP to please the flee elf.";
-	get-cap;
+this is the rev-bore-Rob rule:
+	if Rob is moot, the rule fails;
+	say "You BORE ROB, and he leaves Worn Row out of boredom.";
+	boot-Rob;
+	the rule succeeds;
+
+this is the rev-deny-Ned rule:
+	if Ned is moot, the rule fails;
+	say "You DENY NED a chance at fighting.";
+	moot Ned;
+	the rule succeeds;
+
+this is the rev-emit-noontime rule:
+	if emitted is true, the rule fails;
+	say "You EMIT NOONTIME with the Yard Ray.";
 	the rule succeeds;
 
 this is the rev-evade-Dave rule:
@@ -1221,15 +1234,17 @@ this is the rev-evade-Dave rule:
 	say "You EVADE DAVE, and he leaves My Gym out of fear.";
 	the rule succeeds;
 
-this is the rev-bore-Rob rule:
-	if Rob is moot, the rule fails;
-	say "You BORE ROB, and he leaves Worn Row out of boredom.";
-	boot-Rob;
+this is the rev-first-food-combo rule:
+	if number of moot ingredients >= 2, the rule fails;
+	say "You mix two ingredients together in Mont Nom.";
+	moot random not moot solid ingredient;
+	moot random not moot liquid ingredient;
 	the rule succeeds;
 
-this is the rev-word-row rule:
-	if ever-wordrow is true, the rule fails;
-	say "You transform Worn Row into WORD ROW.";
+this is the rev-nail-Ian rule:
+	if Ian is moot, the rule fails;
+	say "You NAIL IAN to cast him from Mont Nom.";
+	moot Ian;
 	the rule succeeds;
 
 this is the rev-pace-cap rule:
@@ -1238,13 +1253,10 @@ this is the rev-pace-cap rule:
 	say "You tweak your pact cap to a PACE CAP.";
 	the rule succeeds;
 
-this is the rev-tend-net rule:
-	say "You TEND NET in the Trapeze Part.";
-	the rule succeeds;
-
-this is the rev-work-row rule:
-	if ever-workrow is true, the rule fails;
-	say "You transform Worn Row into WORK ROW.";
+this is the rev-pack-cap rule:
+	if flee elf is moot, the rule fails;
+	say "You PACK CAP to please the flee elf.";
+	get-cap;
 	the rule succeeds;
 
 this is the rev-puff-up rule:
@@ -1257,6 +1269,13 @@ this is the rev-pull-up rule:
 	say "You PULL UP in the Emo Dome.";
 	the rule succeeds;
 
+this is the rev-second-food-combo rule:
+	if number of moot ingredients is 4, the rule fails;
+	say "You mix two more ingredients together in Mont Nom.";
+	moot random not moot solid ingredient;
+	moot random not moot liquid ingredient;
+	the rule succeeds;
+
 this is the rev-stand-nats rule:
 	showme nat's tan;
 	if nat's tan is moot or player carries Nat's tan, the rule fails;
@@ -1264,10 +1283,18 @@ this is the rev-stand-nats rule:
 	now player has Nat's;
 	the rule succeeds;
 
-this is the rev-deny-Ned rule:
-	if Ned is moot, the rule fails;
-	say "You DENY NED a chance at fighting.";
-	moot Ned;
+this is the rev-tend-net rule:
+	say "You TEND NET in the Trapeze Part.";
+	the rule succeeds;
+
+this is the rev-word-row rule:
+	if ever-wordrow is true, the rule fails;
+	say "You transform Worn Row into WORD ROW.";
+	the rule succeeds;
+
+this is the rev-work-row rule:
+	if ever-workrow is true, the rule fails;
+	say "You transform Worn Row into WORK ROW.";
 	the rule succeeds;
 
 this is the rev-worn-row rule:
@@ -1282,38 +1309,9 @@ this is the rev-yak-okay rule:
 	banish-ogre;
 	the rule succeeds;
 
-this is the rev-nail-Ian rule:
-	if Ian is moot, the rule fails;
-	say "You NAIL IAN to cast him from Mont Nom.";
-	moot Ian;
-	the rule succeeds;
-
-this is the rev-first-food-combo rule:
-	if number of moot ingredients >= 2, the rule fails;
-	say "You mix two ingredients together in Mont Nom.";
-	moot random not moot solid ingredient;
-	moot random not moot liquid ingredient;
-	the rule succeeds;
-
-this is the rev-second-food-combo rule:
-	if number of moot ingredients is 4, the rule fails;
-	say "You mix two more ingredients together in Mont Nom.";
-	moot random not moot solid ingredient;
-	moot random not moot liquid ingredient;
-	the rule succeeds;
-
-this is the rev-emit-noontime rule:
-	if emitted is true, the rule fails;
-	say "You EMIT NOONTIME with the Yard Ray.";
-	the rule succeeds;
-
 [zzrr]
 
 section pre-use rules [xxpre]
-
-[please add alphabetically]
-
-[?? do with a script? It seems possible]
 
 this is the check-sap-cup rule:
 	if sap-takeable is false:
@@ -1466,7 +1464,7 @@ this is the kid-bye rule:
 	the rule succeeds;
 
 this is the kid-left rule:
-	if Verses Rev is moot and Knife Fink is moot, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with Mad Adam. Iller Elli. Able Melba. Wolf Low.'";
+	if Verses Rev is moot and Knife Fink is moot, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with Mad Adam. Iller Elli. Able Melba. Wolf Low. Ammo Momma. Obese Bo.'";
 	the rule succeeds;
 
 this is the make-sag rule:
@@ -1822,7 +1820,7 @@ understand "pack cap" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did.";
-	say "Yes, that's how to get the cap. You are ready to go![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. It salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
+	say "Yes, that's how to get the cap. You are ready to go![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. It mumbles 'It's best I...' and salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
 	get-cap;
 	score-inc; [Dim Mid/pack cap]
 	the rule succeeds;
@@ -2090,11 +2088,11 @@ book Cold Loc
 
 Cold Loc is north of Seer Trees. It is in Grebeberg. "It's kind of dewed, here. A rift fir that blocks a steep drop west. [if sap-takeable is true]The past sap you cut from it is lumped on the ground[else]Some past sap clings to the rift fir[end if]."
 
-check going west in Cold Loc: say "The rift fir blocks the way to much more dangerous places." instead;
+check going west in Cold Loc: say "The rift fir blocks the way to much more dangerous places, maybe Red Locs Colder or the Splat Alps. Perhaps ski oiks await." instead;
 
 chapter rift fir
 
-A rift fir is scenery in Cold Loc. "It sure is a rife fir. You're not getting past it, but you don't need to. It might even be protecting you from the treacherous Splat Alps."
+A rift fir is scenery in Cold Loc. "It sure is a rife fir. You're not getting past it, but you don't need to. It might even be protecting you from ski oiks in the treacherous Splat Alps or Red Locs Colder."
 
 chapter past sap
 
@@ -2264,7 +2262,9 @@ carry out mussing:
 
 chapter Bro Orb
 
-the Bro Orb is a thing in Le Babel. "[one of]An orb hovers in the air. You know it must be a Bro Orb[or]The Bro Orb still hovers in the air[stopping]. You would love to take it, but you're not sure if you're worthy.". description is "Looking into the Bro Orb, you think, 'Do orbs brood?' You start to understand social, subjective knowledge you assumed only jerks know. Maybe they know it better, but you realize you are cheating yourself if you don't learn it.". [??bros orb]
+the Bro Orb is a thing in Le Babel. "[one of]An orb hovers in the air. You know it must be a Bro Orb[or]The Bro Orb still hovers in the air[stopping]. You would love to take it, but you're not sure if you're worthy.". description is "Looking into the Bro Orb, you think, 'Do orbs brood?' There is a brief vision of star frats, lacking star brats. You start to understand social, subjective knowledge you assumed only jerks know. About how to be likable to others. Of course some go overboard, but these people know it better, but you realize you are cheating yourself if you don't learn it.".
+
+understand "bros" and "bros orb" as Bro Orb.
 
 check taking Bro Orb:
 	if player has Bro Orb, say "You already have it." instead;
@@ -2445,6 +2445,9 @@ Code Doc is a neuter person in Den Ivy Vined. "[one of]Someone is pacing back an
 chapter Spa Maps
 
 Spa Maps are a plural-named proper-named thing. description is "[if sage gas is not off-stage]The maps seem old hat now you've gotten the sage gas[else if maps-explained is false]You can't quite make sense out of them. There's Gobs-Bog and Go-By Bog, and one is a lot safer than the other, but you're not sure which[else]The spa maps clearly demark Go-By Bog and Gobs Bog and even Goblin-Nil Bog, which probably contains a troll or two. And no hospitality[end if]."
+
+after examining spa maps for the first time:
+	say "[line break]Good thing they're not spa mini-maps. They'd be IMPOSSIBLE to read.";
 
 understand "spa map" and "map" as spa maps.
 
@@ -3604,6 +3607,8 @@ to say alley-e-block:
 chapter navy van
 
 the navy van is scenery in Yell Alley. "There seems to be no way to enter it. It is labeled SEEDY DEE'S and has a small eye you could USE something on to scan it."
+
+after examining the navy van for the first time, say "You worry a second too late it may be a no-gawk wagon. But nothing happens. Whew!"
 
 understand "seedy/dee/dees" and "seedy dee/dees" as navy van.
 
