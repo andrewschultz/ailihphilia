@@ -26,6 +26,7 @@ s:check
 s:instead
 s:before
 s:TI is a
+s:stuck-rule
 s:take-order of DWELT
 s:there is a book called
 s:carry out
