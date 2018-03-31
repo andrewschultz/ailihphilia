@@ -1211,9 +1211,8 @@ section rev rules [xxrr]
 
 this is the rev-pack-cap rule:
 	if flee elf is moot, the rule fails;
-	moot flee elf;
-	now player has pact cap;
 	say "You PACK CAP to please the flee elf.";
+	get-cap;
 	the rule succeeds;
 
 this is the rev-evade-Dave rule:
@@ -1224,8 +1223,8 @@ this is the rev-evade-Dave rule:
 
 this is the rev-bore-Rob rule:
 	if Rob is moot, the rule fails;
-	moot Rob;
 	say "You BORE ROB, and he leaves Worn Row out of boredom.";
+	boot-Rob;
 	the rule succeeds;
 
 this is the rev-word-row rule:
@@ -1276,10 +1275,11 @@ this is the rev-worn-row rule:
 	say "You lure the Psi Wisp back to Wor(k/d) row, changing it to Worn Row.";
 	moot psi wisp;
 	the rule succeeds;
+
 this is the rev-yak-okay rule:
 	if yak is moot, the rule fails;
 	say "You say YAK OKAY to dispose of the Ergot Ogre.";
-	moot yak;
+	banish-ogre;
 	the rule succeeds;
 
 this is the rev-nail-Ian rule:
@@ -1823,12 +1823,15 @@ understand "pack cap" as packing.
 carry out packing:
 	if the player has the pact cap, say "You already did.";
 	say "Yes, that's how to get the cap. You are ready to go![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. It salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
+	get-cap;
+	score-inc; [Dim Mid/pack cap]
+	the rule succeeds;
+
+to get-cap:
 	moot flee elf;
 	now Tix Exit is in Fun Nuf;
 	now player has Set O Notes;
 	now player wears the cap;
-	score-inc; [Dim Mid/pack cap]
-	the rule succeeds;
 
 chapter pace cap
 
@@ -2361,15 +2364,18 @@ carry out yakokaying:
 	if ergot ogre is moot, say "[if yak is in location of player]The yak has served you well. It deserves a rest.[else]You relive past glories. Why not?[end if]" instead;
 	if yak is in location of player and ergot ogre is in location of player:
 		say "The kayo yak surges at the ergot ogre and knocks it over with a few ... smart rams! The ergot won't spread to the yak's horns, so that's good. The ogre dusts itself off and walks away, damp, mad. The yak, for its part, looks relaxed--almost like a tao goat--and heads off, not to the Frush Surf, but somewhere calmer.[paragraph break]You think you hear an elk cackle in the distance.[paragraph break]Whew! That's enough exercise. You readjust your pace cap back to a pact cap.";
-		now cap-pace is false;
 		score-inc; [Grebeberg/YAK OKAY]
-		moot yak;
-		moot ergot ogre;
-		now being-chased is false;
+		banish-ogre;
 		the rule succeeds;
 	if yak is in location of player, say "The yak sees nothing to attack." instead;
 	say "There's no yak to say okay to." instead;
 	the rule succeeds;
+
+to banish-ogre:
+	now cap-pace is false;
+	moot yak;
+	moot ergot ogre;
+	now being-chased is false;
 
 book Moo Room
 
@@ -2805,9 +2811,13 @@ carry out boreing:
 	if noun is not a person, say "You should try to bore people, not things." instead;
 	if noun is not Rob, say "Wrong thing or person to bore." instead;
 	say "You bore Rob successfully. He begins pacing around, even grinding out the 'N' in the bad dab, leaving it as WOR- ROW, before wandering off mumbling how he is too hard core even for Dre Nerd and Nerd Ren. Perhaps to Ybor.";
-	moot Rob;
+	boot-Rob;
 	score-inc; [Yelpley/bore rob]
 	the rule succeeds.
+
+to boot-Rob:
+	moot Rob;
+	move bad dab to Worn Row;
 
 chapter workables
 
@@ -3124,20 +3134,21 @@ carry out wordrowing:
 	if Worn Row is wordy, say "You're already in Word Row." instead;
 	clear-worn-row;
 	now Worn Row is wordy;
-	now all workables are in TempMet;
-	if redness ender is in Worn Row, now redness ender is in TempMet;
-	move tract cart to Worn Row;
 	if ever-wordrow is false:
 		hint-bump-worn;
 		score-inc; [Yelpley/word row]
 		say "A tract cart appears, full of odd books. A pity tip also flutters down. You take the tip.";
 	else:
 		say "The tract cart re-appears.";
-	now ever-wordrow is true;
-	check-dab;
-	now all tractable books are in Worn Row;
-	if pity tip is off-stage, now player has pity tip;
 	the rule succeeds;
+
+to word-row-open:
+	clear-worn-row;
+	now ever-wordrow is true;
+	now all tractable books are in Worn Row;
+	move tract cart to Worn Row;
+	check-dab;
+	if pity tip is off-stage, now player has pity tip;
 
 chapter wornrowing
 
