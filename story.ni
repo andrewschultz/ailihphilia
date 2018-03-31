@@ -927,8 +927,12 @@ instead of swearing obscenely, next-rand table of swearstuff;
 
 chapter sleeping
 
+slept-yet is a truth state that varies.
+
 instead of sleeping:
-	say "Zzz.[paragraph break]Wait, no. That's cheating... let's pretend you're waiting, instead.[paragraph break]";
+	if slept-yet is false:
+		now slept-yet is true;
+		say "Zzz.[paragraph break]Wait, no. That's cheating...[paragraph break]To cot?[paragraph break]No, that's a bit forced.[paragraph break]Let's pretend you're waiting, instead.[paragraph break]";
 	try waiting instead;
 
 chapter waiting
@@ -3548,7 +3552,7 @@ check going in Evaded Ave:
 
 chapter bunk nub
 
-the bunk nub is a thing in Evaded Ave. "A small bunk nub lies [if Door Frood is in Evaded Ave]behind the Door Frood[else]around for the taking[end if].". description is "It's small, so an actual person couldn't sleep on it."
+the bunk nub is a thing in Evaded Ave. "A small bunk nub lies [if Door Frood is in Evaded Ave]behind the Door Frood[else]around for the taking[end if].". description is "It's small, so an actual person couldn't sleep on it. Perhaps it was once part of a larger debt bed."
 
 check taking bunk nub:
 	if Door Frood is in Evaded Ave, say "The Door Frood won't let you." instead;

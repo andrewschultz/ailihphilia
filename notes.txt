@@ -95,6 +95,8 @@ PSA Hasp
 
 Ailihphilia: It is what you think, you. What, is it? Warning: not recommended for those with aibohphobia.
 
+Kiwiwik = new location?
+
 "Is it crazy how saying sentences backwards makes backwards sentences saying how crazy it is?"
 Lid off a daffodil.
 Yreka Bakery
@@ -167,7 +169,6 @@ drooly loord
 ecarte retrace
 egresses serge
 egoless eloge
-exult luxe: where to get extra riches
 Gaters Retag
 gemini meg
 
@@ -177,8 +178,9 @@ Face Decaf
 
 Habit, I? Bah
 
-York Roy
 
+York Roy
++
 Tuck, Cut
 
 Palm Lap
@@ -202,8 +204,6 @@ Nev Even
 Neg Gen
 
 Pun Up!
-
-# TWO OTHER BAD GUYS: Ammo Momma, Obese Bo
 
 glass alg
 
@@ -692,7 +692,6 @@ sprew twerps
 sparth traps
 stem mammets
 strap parts
-star brats:star frats
 Stella Ballets
 stops eyespots
 strip spirts
@@ -1116,7 +1115,6 @@ El = should be in
 "So, Like Kilos?"
 "Sod! No Condos?"
 "Sod-u. Kodus?"
-"Sog, Ebb, Egos":drow
 "Tad effed-at!"
 "Tae FEAT!"
 "Tae HEAT!"
@@ -1137,7 +1135,6 @@ El = should be in
 "To Old Loot"
 "To Oldened Loot"
 "To Orb Root"
-"To Own: WOOT"
 "To Prefer Pot"
 "To Rot"
 "To Tax a Tot"
@@ -1258,7 +1255,6 @@ Hoo! Preyer? Pooh
 Hoop? Ooh
 I/O Koi
 In, Imp, Mini
-It's best I...=flee elf says good bye? Or you?
 It: Revert, I
 Lac Oft Focal: calcific lac new location? Calm Lac
 Lac Old Local
@@ -1281,7 +1277,6 @@ Mad-Eyed, Am
 Mal Slam
 Mar-Gnomon Gram
 Me, Log Golem
-Me: Opt, Poem
 Mod Less Seldom
 Mod? Naff: Fandom
 Moi: Dig Idiom
@@ -1303,7 +1298,6 @@ Nil Merge, Gremlin
 Nim In?
 Nix Alert: Relaxin!
 No Gamma Gon
-No Gawk Wagon <- navy van may be a
 No Grog, Gorgon
 No Igniting Ion
 No Puff Upon
@@ -1332,7 +1326,6 @@ Not. Revert. On!
 Now Null Unwon
 Now On
 Ode Lots Toledo
-Ode: Dude, DO
 Of Feds? Deffo
 Of Fobs Boffo
 Of Nil Info
@@ -1374,8 +1367,6 @@ Par? Crap
 Pee Jeep/Keep/Weep
 Pet, Step
 Pol? Flop
-Poo Goop <- it already is
-Poo Hoop <- umm...
 Pop <- you'd really expect they sold pop here, but ...
 Pub Up
 Pug Nipping Up
@@ -1402,7 +1393,6 @@ Red Ice Cider
 Red Ladened Alder
 Red Led Elder
 Red Limp Milder
-Red Locs Colder: where King Nik goes?
 Red Loss Older
 Red Nerd Render
 Red Nice Cinder
@@ -1439,7 +1429,6 @@ Rev [']Er Ever
 Rev, off, OVER!
 Rex a Taxer
 Rex, Indexed Nixer
-Rim Emir: Who is he?
 Rip a Tapir
 Rot Corpses Proctor
 Rot, Cart, Tractor
@@ -1481,7 +1470,6 @@ Sin, I? Finis
 Sip! A tap is...
 Sir A Paris
 Sir Ever is
-Sir Kris: friend of King Nik
 Sir afar is!
 Sir, buh! Hubris!
 Sir, oops, poor is
@@ -1492,7 +1480,6 @@ Site Yetis
 Six Axis
 Ska Off Oaks
 Ska Yaks
-Ski Oiks: perhaps to the west
 Sly canikin acyls: casks?
 Sly mad amyls: on butene tub
 Sly mass amyls: on butene tub
@@ -1500,7 +1487,6 @@ So Ate Taos
 So Ceded Ecos
 So Cold Locos
 So Darer Ados
-So Full UFOs: !!! attack from above and drop some of their cargo.
 So Get Egos
 So Here Hos
 So Hog Ohos
@@ -1514,7 +1500,6 @@ So Shh SOS
 So obese? Boos!
 So! PoS!
 So-Class Alcos: not alcohol
-Sob! Mild Limbos!: drow
 Sob, Mudded Dumbos
 Sob-Mock Combos
 Soma Camos
@@ -1610,10 +1595,7 @@ song
 sow twos
 soya-mayos
 spa elk leaps
-spa gaps: search for them
 spa grammar gaps
-spa laps: pool gloop
-spa saps
 spy gyps: in sniffins
 sub main iambus
 tap saga spat
@@ -1623,7 +1605,6 @@ tar ever at
 til saga gaslit
 war dagga draw
 wend new
-you never asked. OK, never asked unloaded question.
 
 # lap a papal = case we need to get working
 # 1w.py : not just STDIN but break things into dictionaries of dictionaries by first letter. See 2pal.py for details.
