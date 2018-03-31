@@ -122,23 +122,28 @@ def check_source_rule_order():
     alfcheck = defaultdict(lambda: defaultdict(bool))
     ignorables = defaultdict(bool)
     extra_rules = 0
+    current_table = ''
     with open(main_source) as file:
         for line in file:
             line_count = line_count + 1
             if line.startswith("table"):
+                current_table = line.strip()
                 in_table = True
                 continue
             if not line.strip():
                 in_table = False
                 continue
             lary = re.split("\t+", line.strip())
+            if in_table and 'useons' in current_table and lary[0] == '--' and lary[1] == '--':
+                if 'rule' in lary[3]:
+                    alfcheck['xxrr'][re.sub(" rule.*", "", lary[3].lower())] = True
             if in_table and len(lary) > 5:
                 if 'rule' in lary[3]:
                     alfcheck['xxpre'][re.sub(" rule.*", "", lary[3].lower())] = True
                 if 'rule' in lary[4]:
                     alfcheck['xxpost'][re.sub(" rule.*", "", lary[4].lower())] = True
             if line.startswith("section"):
-                if 'post-use rules' in line or 'pre-use rules' in line:
+                if 'post-use rules' in line or 'pre-use rules' in line or 'section rev rules' in line:
                     rule_search = True
                     rule_sections = rule_sections + 1
                     last_rule = ""
@@ -161,8 +166,8 @@ def check_source_rule_order():
                 last_line = line_count
     print((errs if errs > 0 else "no"), "rule order errors for table of useons.")
     print((extra_lines if extra_lines > 0 else "no"), "extra rules post-table of useons.")
-    if rule_sections != 2:
-        print("Have", rule_sections, "rules but should have 2.")
+    if rule_sections != 3: # hard coded ?? can we list the sections we want?
+        print("Have", rule_sections, "rules but should have 3.")
 
 def walkthrough_vs_test_file(maxdif):
     if not maxdif:
@@ -621,6 +626,10 @@ def get_stuff_from_source():
                 continue
             if in_use_table:
                 x = ll.split("\t")
+                if len(x) < 6:
+                    if not (x[0] == '--' and x[1] == '--'):
+                        print("Bad line", line_count, ll)
+                    continue # this should mean a rule
                 if x[0] in obj_name_hash.keys(): x[0] = obj_name_hash[x[0]]
                 if x[5] == 'sco': continue # this is the header.
                 if useon_idx > 1:
@@ -712,9 +721,9 @@ def think_look_check():
             print(x, "needs to have a get-reject line.")
             think_check = think_check + 1
     if think_check == 0:
-        print("Think check passed")
+        print("Think check (get-reject/later-wipe/table of later uses) passed")
     else:
-        print(think_check, "think check errors")
+        print(think_check, "think check (get-reject/later-wipe/table of later uses) errors")
 
 #
 # start main code

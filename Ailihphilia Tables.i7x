@@ -593,7 +593,10 @@ randtxt
 "Opera Repo"
 "Rap Spar"
 "Sun on Us"
+"To Own: WOOT"
 "Yo, Beer Free, Boy"
+"Me: Opt, Poem"
+"Ode: Dude, DO"
 
 table of noesies
 randtxt
@@ -682,6 +685,7 @@ randtxt
 "Nixin[']..."
 "Or, Perp, REPRO!"
 "Pah, simp! Mishap!"
+"Sod [']er! Redos!"
 "Time: remit."
 
 table of waittxt
@@ -714,8 +718,10 @@ table of wordy drow laments
 randtxt
 "'Deity...tied!'"
 "'Die, id!'"
+"Sob! Mild Limbos!"
 "'Eh, Tithe!'"
 "'No Sin is On!'"
+"Sog, Ebb, Egos!"
 
 table of yessies
 randtxt

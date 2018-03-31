@@ -183,8 +183,6 @@ Tuck, Cut
 
 Palm Lap
 
-Fix If
-
 enol alone
 Fray! Arf!
 
@@ -498,7 +496,6 @@ raw nonwar
 ragged eggar
 rawest sewar
 rails liar
-rap spar
 range gnar
 rawer prewar
 refill lifer
@@ -533,7 +530,6 @@ remand namer
 regress serger
 remate tamer
 repots toper
-rev over
 retract carter
 reimage gamier
 regina niger
@@ -1022,7 +1018,6 @@ naidoo dian
 naidu dian
 naik ian
 nair brian
-nair ian
 navin ivan
 neller ellen
 new gwen
@@ -1159,7 +1154,6 @@ El = should be in
 "Too hoodoo hoot."
 "Too rococo root"
 "We Degage Dew"
-"We Few"
 "We Freitier Few"
 "We Hew"
 "We Ivy View"
@@ -1523,8 +1517,6 @@ So-Class Alcos: not alcohol
 Sob! Mild Limbos!: drow
 Sob, Mudded Dumbos
 Sob-Mock Combos
-Sod Dos
-Sod [']er! Redos!
 Soma Camos
 Sub us! Sub us!
 Sue Deus
@@ -1536,8 +1528,6 @@ Sun Even Us
 Sun Gnus = mistake
 Sun I Minus
 Sun Off On Us
-Sun On Us
-Tahini Hat
 Tar Frat
 Tee FEet
 Tie Cede Deceit
@@ -1563,7 +1553,7 @@ Yes Rah Arsey
 Yes, truce, curtsey
 Yob Ops Po['] Boy
 You feel a need to make a ... sup opus.
-dust/sud/dust/sud
+Dust sud
 fox of
 hep met tempeh=item on the menu at Sniffins
 it, eye, yetei
@@ -1623,9 +1613,7 @@ spa elk leaps
 spa gaps: search for them
 spa grammar gaps
 spa laps: pool gloop
-spa maps: spa mini-maps even tougher to read
 spa saps
-spa yaps
 spy gyps: in sniffins
 sub main iambus
 tap saga spat
