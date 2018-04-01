@@ -1456,10 +1456,10 @@ this is the gas-think-wipe rule:
 
 this is the hay-gone rule:
 	if SOME DEMOS is moot and dork rod is moot:
-		say "You used up all the hay.";
+		if revving-over is false, say "You used up all the hay.";
 		moot yahoo hay;
 	else:
-		say "There's still some hay (yah!) left over for another creative project.";
+		if revving-over is false, say "There's still some hay (yah!) left over for another creative project.";
 	the rule succeeds;
 
 this is the kid-bye rule:
@@ -1473,7 +1473,7 @@ this is the kid-left rule:
 
 this is the make-sag rule:
 	move gash sag to Pro Corp;
-	say "Soon after you take the resale laser, a small gash sag fills in the explosion you made. Technology!";
+	if revving-over is false, say "Soon after you take the resale laser, a small gash sag fills in the explosion you made. Technology!";
 	consider the bald-lab rule;
 	the rule succeeds;
 
@@ -1496,9 +1496,9 @@ this is the mob-to-alley rule:
 
 this is the radar-blink rule:
 	if radar-used is 1:
-		say "One more hit like that, and the radar might give out for good.";
+		if revving-over is false, say "One more hit like that, and the radar might give out for good.";
 	else:
-		say "Between the UFO tofu dropped on the radar and the eroded ore getting too close to it, the radar shorts out. After a pop, it splits open. A roto motor falls out and looks undamaged, so you take it.";
+		if revving-over is false, say "Between the UFO tofu dropped on the radar and the eroded ore getting too close to it, the radar shorts out. After a pop, it splits open. A roto motor falls out and looks undamaged, so you take it.";
 		now player has roto motor;
 		moot radar;
 	the rule succeeds;
@@ -1519,9 +1519,9 @@ this is the rebump-art-xtra rule:
 this is the sap-loose rule:
 	now sap-takeable is true;
 	if player has puce cup:
-		say "Hmm, the puce cup would be perfect to carry the past sap in[if cup is not empty], though you'd need to empty the cup, first[end if].";
+		if revving-over is false, say "Hmm, the puce cup would be perfect to carry the past sap in[if cup is not empty], though you'd need to empty the cup, first[end if].";
 		the rule succeeds;
-	say "You don't want to take the sap now--you don't have a container that would hold it in the sticky warmth. But you've cut enough off the tree.";
+	if revving-over is false, say "You don't want to take the sap now--you don't have a container that would hold it in the sticky warmth. But you've cut enough off the tree.";
 	the rule succeeds;
 
 this is the sap-to-cup rule:
@@ -5213,6 +5213,8 @@ global-delay is a number that varies.
 
 score-cheat is a number that varies.
 
+revving-over is a truth state that varies.
+
 carry out revovering: [?? need postprocessing of rules but pretty good so far]
 	if being-chased is true, say "Oops, that's too much for me to do at once! Either escape or get caught by [the chase-person] first, then we can proceed." instead;
 	if player is in Dirge Grid, say "You're already at the Dirge Grid!" instead;
@@ -5221,8 +5223,10 @@ carry out revovering: [?? need postprocessing of rules but pretty good so far]
 	say "Attempting to REV OVER...";
 	now global-delay is 0;
 	let count be 0;
+	now revving-over is true;
 	repeat through table of useons:
 		increment count;
+		if use1 entry is ME gem, break;
 		[say "Rows so far [count - 1], current score [score].";]
 		if there is no use1 entry:
 			consider the preproc entry;
@@ -5253,6 +5257,8 @@ carry out revovering: [?? need postprocessing of rules but pretty good so far]
 		if there is a getit entry, now player has getit entry;
 		if d1 entry is true, moot use1 entry;
 		if d2 entry is true, moot use2 entry;
+		if there is a post-proc entry, follow the post-proc entry;
+	now revving-over is false;
 	say "Done.";
 	if score > last notified score:
 		say "[bracket]I just gave you [score - last notified score] points to go with your quick trip, because I'm generous like that.[close bracket][paragraph break]";
