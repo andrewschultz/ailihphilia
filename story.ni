@@ -5201,6 +5201,24 @@ carry out pering:
 	say "Peripheral things: [list of peripheral things].";
 	the rule succeeds;
 
+chapter deepspeeding
+
+deepspeeding is an action out of world.
+
+deep-speeding is a truth state that varies.
+
+understand the command "deepspeed" as something new.
+
+understand "deepspeed" as deepspeeding.
+
+carry out deepspeeding:
+	abide by the rev-check rule;
+	now deep-speeding is true;
+	say "DEEP SPEEDing to near the end...";
+	try revovering;
+	now deep-speeding is false;
+	the rule succeeds;
+
 chapter revovering
 
 revovering is an action out of world.
@@ -5215,12 +5233,16 @@ score-cheat is a number that varies.
 
 revving-over is a truth state that varies.
 
-carry out revovering: [?? need postprocessing of rules but pretty good so far]
+this is the rev-check rule:
 	if being-chased is true, say "Oops, that's too much for me to do at once! Either escape or get caught by [the chase-person] first, then we can proceed." instead;
 	if player is in Dirge Grid, say "You're already at the Dirge Grid!" instead;
 	if Dirge Grid is visited, say "Too late! You've already been to the Dirge Grid." instead;
-	if emitted is true and player has ME gem and player has taboo bat, say "You're already near the endgame.";
-	say "Attempting to REV OVER...";
+	if emitted is true and player has ME gem and player has taboo bat, say "You're already near the endgame." instead;
+	continue the action;
+
+carry out revovering:
+	abide by the rev-check rule;
+	if deep-speeding is false, say "Attempting to REV OVER...";
 	now global-delay is 0;
 	let count be 0;
 	now revving-over is true;
@@ -5233,8 +5255,8 @@ carry out revovering: [?? need postprocessing of rules but pretty good so far]
 			if the rule succeeded:
 				increment global-delay;
 				increment the score;
-			if global-delay is 5:
-				if the player consents:
+			if global-delay is 5 and deep-speeding is false:
+				if the player yes-consents:
 					do nothing;
 				else:
 					break;
@@ -5253,7 +5275,7 @@ carry out revovering: [?? need postprocessing of rules but pretty good so far]
 			if use2 entry is not a workable and use2 entry is not test set and use2 entry is not tame mat: [?? needs a lot more checkoffs here. Otherwise there is inventory overload]
 				now u2a is true;
 				now player has use2 entry;
-		say "You [if u1a is true](acquire and) [end if]use [the use1 entry] on/with [if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if].";
+		if deep-speeding is false, say "You [if u1a is true](acquire and) [end if]use [the use1 entry] on/with [if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if].";
 		if there is a getit entry, now player has getit entry;
 		if d1 entry is true, moot use1 entry;
 		if d2 entry is true, moot use2 entry;
@@ -5264,6 +5286,8 @@ carry out revovering: [?? need postprocessing of rules but pretty good so far]
 		say "[bracket]I just gave you [score - last notified score] points to go with your quick trip, because I'm generous like that.[close bracket][paragraph break]";
 		now score-cheat is score-cheat + score - last notified score;
 		now last notified score is score;
+	else:
+		say "There should've been a reject message, or there is a bug in the rev over/deep speed code. If you have a transcript, report the bug at my github site or email me.";
 	follow the notify score changes rule;
 	the rule succeeds;
 
