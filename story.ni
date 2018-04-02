@@ -671,8 +671,8 @@ after printing the name of the puce cup while taking inventory:
 	continue the action;
 
 after printing the name of the radar while taking inventory:
-	if radar-used is 1, say " (damaged)"
-	if radar-used is 2, say " (BUG--should be destroyed)"
+	if radar-used is 1, say " (damaged)";
+	if radar-used is 2, say " (BUG--should be destroyed)";
 
 chapter abouting
 
@@ -1456,10 +1456,10 @@ this is the gas-think-wipe rule:
 
 this is the hay-gone rule:
 	if SOME DEMOS is moot and dork rod is moot:
-		if revving-over is false, say "You used up all the hay.";
+		if redact-postrule, say "You used up all the hay.";
 		moot yahoo hay;
 	else:
-		if revving-over is false, say "There's still some hay (yah!) left over for another creative project.";
+		if redact-postrule, say "There's still some hay (yah!) left over for another creative project.";
 	the rule succeeds;
 
 this is the kid-bye rule:
@@ -1473,7 +1473,7 @@ this is the kid-left rule:
 
 this is the make-sag rule:
 	move gash sag to Pro Corp;
-	if revving-over is false, say "Soon after you take the resale laser, a small gash sag fills in the explosion you made. Technology!";
+	if redact-postrule, say "Soon after you take the resale laser, a small gash sag fills in the explosion you made. Technology!";
 	consider the bald-lab rule;
 	the rule succeeds;
 
@@ -1496,9 +1496,9 @@ this is the mob-to-alley rule:
 
 this is the radar-blink rule:
 	if radar-used is 1:
-		if revving-over is false, say "One more hit like that, and the radar might give out for good.";
+		if redact-postrule, say "One more hit like that, and the radar might give out for good.";
 	else:
-		if revving-over is false, say "Between the UFO tofu dropped on the radar and the eroded ore getting too close to it, the radar shorts out. After a pop, it splits open. A roto motor falls out and looks undamaged, so you take it.";
+		if redact-postrule, say "Between the UFO tofu dropped on the radar and the eroded ore getting too close to it, the radar shorts out. After a pop, it splits open. A roto motor falls out and looks undamaged, so you take it.";
 		now player has roto motor;
 		moot radar;
 	the rule succeeds;
@@ -1519,9 +1519,9 @@ this is the rebump-art-xtra rule:
 this is the sap-loose rule:
 	now sap-takeable is true;
 	if player has puce cup:
-		if revving-over is false, say "Hmm, the puce cup would be perfect to carry the past sap in[if cup is not empty], though you'd need to empty the cup, first[end if].";
+		if redact-postrule, say "Hmm, the puce cup would be perfect to carry the past sap in[if cup is not empty], though you'd need to empty the cup, first[end if].";
 		the rule succeeds;
-	if revving-over is false, say "You don't want to take the sap now--you don't have a container that would hold it in the sticky warmth. But you've cut enough off the tree.";
+	if redact-postrule, say "You don't want to take the sap now--you don't have a container that would hold it in the sticky warmth. But you've cut enough off the tree.";
 	the rule succeeds;
 
 this is the sap-to-cup rule:
@@ -5203,6 +5203,10 @@ carry out pering:
 
 chapter deepspeeding
 
+to decide whether redact-postrule:
+	if deep-speeding is false and revving-over is true, yes;
+	no;
+
 deepspeeding is an action out of world.
 
 deep-speeding is a truth state that varies.
@@ -5279,7 +5283,7 @@ carry out revovering:
 		if there is a getit entry, now player has getit entry;
 		if d1 entry is true, moot use1 entry;
 		if d2 entry is true, moot use2 entry;
-		if there is a post-proc entry, follow the post-proc entry;
+		if there is a postproc entry, follow the postproc entry;
 	now revving-over is false;
 	say "Done.";
 	if score > last notified score:
@@ -5289,6 +5293,9 @@ carry out revovering:
 	else:
 		say "There should've been a reject message, or there is a bug in the rev over/deep speed code. If you have a transcript, report the bug at my github site or email me.";
 	follow the notify score changes rule;
+	if test set is moot and player is not in Fun Nuf:
+		say "(Also moving you to Fun [']Nuf for the endgame)[paragraph break]";
+		move player to Fun Nuf, without printing a room description;
 	the rule succeeds;
 
 to say isco:
