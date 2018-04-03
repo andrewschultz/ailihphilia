@@ -1152,7 +1152,7 @@ pity tip	eye	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	"The eye sc
 --	--	--	rev-work-row rule
 trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. I bet it could trap more than one person, or thing, or whatever."
 bunk nub	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching and slurping, the bunk nub is changed to a bunch of much smaller, but more comfortable looking, stock cots."
-party trap	stark rats	gift fig	--	--	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out. You take it."
+party trap	stark rats	gift fig	--	oh-who-to rule	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out.[wfak-d]You take it, and as you do, a book drops from above. THUMP! Good thing you were wearing that pact cap. One glance reveals it to be [b]Oh, Who[r]--a phone book for Grebeberg, like [b]Name Me Man[r] for Yelpley."
 EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris told me I needed to one day. ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! Now I can lead against the Rim Emir and his emir crime and emir grime!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...I must leave and RAFT FAR back to Dragon-o-gard.'"
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
 --	--	--	rev-puff-up rule
@@ -1504,6 +1504,10 @@ this is the mob-to-alley rule:
 	shuffle-before Yell Alley and Sneer Greens;
 	the rule succeeds;
 
+this is the oh-who-to rule:
+	now oh who is in Seer Trees;
+	the rule succeeds;
+
 this is the radar-blink rule:
 	if radar-used is 1:
 		if redact-postrule, say "One more hit like that, and the radar might give out for good.";
@@ -1660,8 +1664,9 @@ to blanket-reject (bj - a thing):
 
 table of periphery [xxper]
 itm	reject
-Name ME Man	"The phone book is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting, but it's there."
 bad dab	"Its message seems important, but it's not good for much except examining."
+Oh Who	"Oh Who is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting, but it's there."
+Name ME Man	"NAME ME MAN is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting, but it's there."
 gash sag	"You don't want to mess with the gash sag. Destroying the butene tub is damage enough."
 x-it stix	"No way you're getting through the X-It Stix."
 girt rig	"The girt rig is too sturdy to move. But then, there's even sleazier stuff beyond it."
@@ -2103,7 +2108,7 @@ the gift fig is a solid ingredient. description is "Well, it's a fig."
 
 chapter Oh Who
 
-Oh Who is a proper-named peripheral phonebook.
+Oh Who is a proper-named peripheral phonebook. booktable of Oh Who is table of random palindrome firstlast names. description is "You read several [one of][or]more [stopping]names and numbers of Grebeberg residents:[line break][name-num of 5 and oh who][variable letter spacing][run paragraph on]". "Oh Who rests here, safe from the stark rats you got rid of, but not particularly useful."
 
 book Cold Loc
 
@@ -2652,9 +2657,7 @@ Yawn Way is east of Fun Nuf. It is in Yelpley. "Not much to do here, and it's qu
 
 chapter Name ME Man
 
-Name ME Man is a proper-named peripheral phonebook in Yawn Way. printed name is "NAME ME, MAN". description is "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers:[line break][name-num of 5 and name me man][variable letter spacing][run paragraph on]". "[one of]There's also something called NAME ME, MAN, which--well, it's really just a glorified phone book. Yawn[or]NAME ME, MAN waits for your perusal, if you have a great need to procrastinate[if name me man is xyet] some more[end if][stopping]."
-
-curseed of Name ME Man is 0. booktable of Name ME Man is table of random palindrome lastfirst names.
+Name ME Man is a proper-named peripheral phonebook in Yawn Way. printed name is "NAME ME, MAN". description is "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers of Yelpley residents:[line break][name-num of 5 and name me man][variable letter spacing][run paragraph on]". "[one of]There's also something called NAME ME, MAN, which--well, it's really just a glorified phone book. Yawn[or]NAME ME, MAN waits for your perusal, if you have a great need to procrastinate[if name me man is xyet] some more[end if][stopping].". booktable of Name ME Man is table of random palindrome lastfirst names.
 
 understand "nm/mm/nmm/phone/book" and "phone book" as Name ME Man.
 
@@ -2679,11 +2682,11 @@ to say name-num of (n - a number) and (ph - a phonebook):
 			continue the action;
 
 after examining oh who for the first time:
-	if debug-state is true, say "Seed = [curseed of oh who].";
+	if debug-state is true, say "Seed = [initseed of oh who].";
 	continue the action;
 
 after examining name me man for the first time:
-	if debug-state is true, say "Seed = [curseed of name me man].";
+	if debug-state is true, say "Seed = [initseed of name me man].";
 	say "(If you want, you can abbreviate Name Me Man as NM or MM or even NMM.)[paragraph break]";
 	continue the action;
 
@@ -5450,9 +5453,9 @@ carry out percing:
 			if itm entry is state tats, next;
 			say "[itm entry] is in periphery table but is not peripheral.";
 			increment count;
-	repeat with Q running through peripheral things:
-		if Q is not an itm listed in table of periphery:
-			say "Need periphery entry for [Q].";
+	repeat with pthi running through peripheral things:
+		if pthi is not an itm listed in table of periphery:
+			say "Need periphery entry for [pthi].";
 			increment count;
 	say "[if count is 0]Yay! Periphery succeeds![else][count] periphery errors.[end if]";
 	the rule succeeds;

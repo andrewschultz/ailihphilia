@@ -1,3 +1,7 @@
+# palver.py
+#
+# palindrome verification: make sure any names aren't fake palindromes e.g. resto poster
+#
 
 import i7
 import re
@@ -7,6 +11,8 @@ from collections import defaultdict
 start_ignore_dict = defaultdict(bool)
 include_ignore_dict = defaultdict(bool)
 regex_ignore_dict = defaultdict(bool)
+
+quiet = False
 
 def read_ignore_file():
     ignore_file = "c:/games/inform/ailihphilia.inform/source/palver.txt"
@@ -81,10 +87,13 @@ def pal_ver(f):
             if in_table and line.startswith("\["):
                 in_table = "" # allow for comments at the end of a table, e.g. [xxuse] [zzuse] define start and end of table
                 continue
+            if in_table and line.startswith('"') and line.strip().endswith(']'):
+                if '[ignore]' in line: continue
+                line = re.sub("\[[^\[]*\]$", "", line)
             if line.startswith("\"") and '\t' not in line:
                 q = letonly(line)
-                if 'by Andrew Schultz' in line: continue
-                if q != q[::-1] and '[ignore]' not in line:
+                if 'by Andrew Schultz' in line: continue # this is the title
+                if q != q[::-1]: # and '[ignore]' not in line and '[okdup]' not in line:
                     err_count = err_count + 1
                     print("Bad line", line_count, "in", f, "--", line.strip())
                 continue
