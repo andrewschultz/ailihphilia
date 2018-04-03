@@ -247,7 +247,7 @@ understand "truco curt" as a mistake ("You don't have a deck of cards, and Curt 
 
 understand "mar tram" as a mistake ("No. [if epicer recipe is xyet]You need it to build the north-tron[else]It must be good for something[end if].[mis of 77]") when martini tram is quicknear.
 
-understand "nair Ian" as a mistake ("That would be painful and embarrassing enough to chase him off, but alas, you don't have anything to do the job[if player has nat's tan]. The bottle of Nat's Tan doesn't count[end if].[mis of 78]") when Ian is quicknear.
+understand "nair Ian" as a mistake ("That would be painful and embarrassing enough to chase him, or someone named Brian, off, but alas, you don't have anything to do the job[if player has nat's tan]. The bottle of Nat's Tan doesn't count[end if].[mis of 78]") when Ian is quicknear.
 
 understand "naif Ian" as a mistake ("Sadly, mind control is beyond your powers.[mis of 79]") when Ian is quicknear.
 

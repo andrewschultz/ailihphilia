@@ -51,17 +51,23 @@ definition: a thing is moot:
 to moot (Q - a thing):
 	move Q to DevReserved; [ic]
 
+section kinds of things
+
 a chaser is a kind of person. a chaser has a room called chase-room. a chaser has a room called stix-room.
 
 a guhthug is a kind of person. [Ian, Rob, Ned, Dave]
 
 understand "guh/thug/guhthug" and "guh thug" as a guhthug.
 
+a phonebook is a kind of thing. a phonebook has a number called initseed. a phonebook has a number called curseed. a phonebook has a table name called booktable.
+
+an ingredient is a kind of thing. an ingredient is usually edible. an ingredient can be solid or liquid.
+
+section thing properties
+
 a thing can be drinkable. a thing is usually not drinkable.
 
 a thing can be peripheral. a thing is usually not peripheral.
-
-an ingredient is a kind of thing. an ingredient is usually edible. an ingredient can be solid or liquid.
 
 a thing can be nyet or xyet. A thing is usually nyet.
 
@@ -182,7 +188,7 @@ chapter oldschooling
 
 understand the command "slice/prune/chop/kiss/hug/embrace/buy/purchase/buy/light/jump/hop/skip/sip/swallow/shine/polish/sweep/clean/dust/wipe/scrub/rub/fight/torture/wreck/crack/murder/kill/punch/thump/wave/sorry" as something new.
 
-[oldschooling.]
+[oldschooling ??]
 
 oldschooling is an action out of world.
 
@@ -313,9 +319,11 @@ when play begins:
 	sort table of last lousy points in random order;
 	repeat through table of all randoms:
 		sort tabnam entry in random order;
-	sort table of random palindrome names in random order; [ move these to table of all randoms eventually? Need to check]
+	sort table of random palindrome firstlast names in random order;
+	sort table of random palindrome lastfirst names in random order;
 	sort table of random authors in random order;
-	now phone-seed is a random number between 0 and (prime-constant - number of rows in table of random palindrome names - 1);
+	now initseed of Name ME Man is a random number between 0 and prime-constant / 2 - (number of rows in table of random palindrome lastfirst names);
+	now initseed of Oh Who is a random number between prime-constant / 2 + 1 and prime-constant - (number of rows in table of random palindrome firstlast names);
 	say "It's not the first dream you had about how awful high school was, but it's the worst in a while. A few 'favorite' classmates chanting 'Diary raid!' and passing it around as they mock 'Beefy? Feeb! Bony Nob!'[wfak-d]";
 	say "You check your mail as you go out to the grocery store. A junk magazine! It's been so long since you got one, you're almost intrigued.[wfak-d]";
 	say "It just says GAME MAG. But the cover isn't telling you to actually buy anything, so you look inside. You have a whole backlog of games, but you can just recycle it when you get to the store. No, not the erot-store![wfak-d]";
@@ -2093,6 +2101,10 @@ chapter gift fig
 
 the gift fig is a solid ingredient. description is "Well, it's a fig."
 
+chapter Oh Who
+
+Oh Who is a proper-named peripheral phonebook.
+
 book Cold Loc
 
 Cold Loc is north of Seer Trees. It is in Grebeberg. "It's kind of dewed, here. A rift fir that blocks a steep drop west. [if sap-takeable is true]The past sap you cut from it is lumped on the ground[else]Some past sap clings to the rift fir[end if]."
@@ -2636,46 +2648,50 @@ part Yelpley region
 
 book Yawn Way
 
-Yawn Way is east of Fun Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but you can go in all four directions, here: back west to Fun [']Nuf, north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]Emo Dome[else]a dome[end if].[paragraph break][one of]There's also something called NAME ME, MAN, which--well, it's really just a glorified phone book. Yawn[or]NAME ME, MAN waits for your perusal, if you have a great need to procrastinate[if name me man is xyet] some more[end if][stopping]."
+Yawn Way is east of Fun Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but you can go in all four directions, here: back west to Fun [']Nuf, north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]Emo Dome[else]a dome[end if]."
 
-chapter name me man
+chapter Name ME Man
 
-name-me-row is a number that varies.
+Name ME Man is a proper-named peripheral phonebook in Yawn Way. printed name is "NAME ME, MAN". description is "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers:[line break][name-num of 5 and name me man][variable letter spacing][run paragraph on]". "[one of]There's also something called NAME ME, MAN, which--well, it's really just a glorified phone book. Yawn[or]NAME ME, MAN waits for your perusal, if you have a great need to procrastinate[if name me man is xyet] some more[end if][stopping]."
 
-Name ME Man is proper-named peripheral scenery in Yawn Way. printed name is "NAME ME, MAN". "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers:[line break][fixed letter spacing][name-num of 5][variable letter spacing][run paragraph on]"
+curseed of Name ME Man is 0. booktable of Name ME Man is table of random palindrome lastfirst names.
 
-understand "nm/mm/phone/book" and "phone book" as Name ME Man.
+understand "nm/mm/nmm/phone/book" and "phone book" as Name ME Man.
 
 does the player mean doing something with name me man: it is unlikely.
 
-to say name-num of (n - a number):
-	let numrow be number of rows in table of random palindrome names;
+to say name-num of (n - a number) and (ph - a phonebook):
+	let numrow be number of rows in booktable of ph;
+	say "[fixed letter spacing]EL TITLE         MUNICI-NUM[line break]";
+[	if debug-state is true, say "Curseed [curseed of ph] initseed [initseed of ph].";]
 	repeat with x running from 1 to n:
-		increment name-me-row;
-		choose row name-me-row in table of random palindrome names;
+		increment curseed of ph;
+		choose row curseed of ph in booktable of ph;
 		say "[person-name entry]: ";
 		let A be number of characters in "[person-name entry]";
-		if A < 14:
-			repeat with AA running from A to 13:
+		if A < 16:
+			repeat with AA running from A to 15:
 				say " ";
-		say "[phone-number of name-me-row][line break]";
-		if name-me-row is numrow:
-			say "That's the end!";
-			now name-me-row is 0;
+		say "[phone-number of curseed of ph + initseed of ph][line break]";
+		if curseed of ph is numrow:
+			say "[variable letter spacing]That's the end!";
+			now curseed of ph is 0;
 			continue the action;
 
+after examining oh who for the first time:
+	if debug-state is true, say "Seed = [curseed of oh who].";
+	continue the action;
+
 after examining name me man for the first time:
-	if debug-state is true, say "Seed = [phone-seed].";
-	say "(If you want, you can abbreviate Name Me Man as NM or MM.)[paragraph break]";
+	if debug-state is true, say "Seed = [curseed of name me man].";
+	say "(If you want, you can abbreviate Name Me Man as NM or MM or even NMM.)[paragraph break]";
 	continue the action;
 
 prime-constant is a number that varies. prime-constant is 7993.
 
-phone-seed is a number that varies.
-
-to say phone-number of (x - a number):
+to say phone-number of (x - a number): [this takes the multiplicative inverse of x mod 7993 and adds 2000 to get abcd, then converts to abc-dcba.]
 	let x2 be 1;
-	let x1 be x + 1 + phone-seed;
+	let x1 be x;
 	[say "([x] [x2])";]
 	while x1 > 1:
 		let Y be (prime-constant / x1) + 1;
