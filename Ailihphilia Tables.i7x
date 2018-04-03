@@ -485,6 +485,7 @@ table of singstuff	0	true	"responses to SINGing"
 table of swearstuff	0	true	"responses to SWEARing"
 table of undoings	0	true	"UNDOing notifications"
 table of waittxt	0	true	"responses to WAITing"
+table of wordy drow laments	0	true	"Wordy Drow laments"
 table of yessies	0	true	"responses to YES"
 table of yuge taunts	0	true	"Yuge Guy taunts"
 
@@ -587,6 +588,7 @@ table of My Gym songs
 randtxt
 "[']Allo, Dolla[']"
 "Do Mo['] Mod"
+"We Nab Anew"
 "Kazoo Zak"
 "Krew Twerk"
 "O/T: Teh Ghetto"
@@ -710,6 +712,7 @@ randtxt
 "Stare? Rats!"
 "Stir! It's..."
 "Truce, curt."
+"We nap anew."
 "Wait! I ... aw ..."
 "Wandered? Naw."
 "Won't, Now."

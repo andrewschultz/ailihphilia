@@ -137,7 +137,7 @@ You now have access to a few more rooms. But let's go cover a few we've seen, so
 (+1) >USE WASH SAW ON PAST SAP
 >USE PUCE CUP ON PAST SAP
 
->S.E.E.E.S.GET DEMO MED.GET TROLL ORT
+>S.E.E.E.S.GET TROLL ORT
 
 (+1) > USE PUCE CUP ON LIAR GRAIL
 

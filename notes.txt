@@ -2,6 +2,8 @@
 
 ==================stuff to include for sure
 
+Mista-T Sim
+
 emote tome
 gardened rag
 
@@ -28,6 +30,16 @@ No eon. One? No.
 
 Doo-doo'd
 Carry coop around?
+
+====>immediate changes (often from duplicates)
+Won Snow
+nitro-cortin
+spy gyps: in sniffins
+solo bolos
+sir tetris
+
+=========>animal stuff
+sab mambas
 
 ==========================final new puzzle
 
@@ -336,8 +348,6 @@ R Etter
 
 Star Prats
 
-Won Snow
-
 --read through first/last and last/first for reverses
 --designate output files for (group of stuff)/group of stuff
 redo names in alphabetical order
@@ -439,7 +449,6 @@ nets ten
 never even
 nimrods dormin
 nielli villein
-nitro cortin
 nival flavin
 nose meson
 none xenon
@@ -579,7 +588,6 @@ sageness senegas
 sabre yerbas
 saluki kulas
 sale melas
-sab mambas
 sap poppas
 sap spas
 saggard raggas
@@ -638,7 +646,6 @@ shoo poohs
 signary rangis
 sine penis
 sir kris
-sir tetris
 signa rangis
 silent nelis
 six axis
@@ -672,7 +679,6 @@ sorting nitros
 Soho's
 soral claros
 sovran arvos
-solo bolos
 sook cuckoos
 sol peplos
 sob mambos
@@ -684,7 +690,6 @@ sprats tarps
 spool gloops
 sprawl warps
 spoon oops
-spy gyps
 spireme rips
 spoof oops
 spots nonstops
@@ -1154,8 +1159,6 @@ El = should be in
 "We Freitier Few"
 "We Hew"
 "We Ivy View"
-"We Nab Anew"
-"We Nap Anew"
 "We, Serene, Resew"
 "We, Snug, Unsew
 "Yap Ere Repay"
@@ -1442,7 +1445,6 @@ Rum Elf Lemur
 Rum Elk Lemur
 Rum, rum murmur!
 SETI Sites
-Sab Mambas
 Sad As
 Sag, Emo, Omegas
 Sal Alas
@@ -1526,12 +1528,10 @@ Tinker ... Reknit!
 To Lips, Pilot
 Tub Error Rebut
 Tube Rebut
-We Nab Anew
 We'd Lime Mildew
 Woe Meow:what cats do
 Won Enow: if you don't get all the points
 Won Ere Now
-Won Snow
 Wonk, Now!
 Yen O['] Money
 Yes Rah Arsey
@@ -1568,7 +1568,6 @@ nah prop orphan
 nap span
 ned damn madden
 ned rage garden
-nitro-cortin
 no graded argon in the butene tub
 no left felon
 no tuft futon <- ooze zoo
@@ -1590,13 +1589,11 @@ sew agmosomg awes
 sewer ewes
 sly rad aryls
 so bold lobos
-solo bolos
 song
 sow twos
 soya-mayos
 spa elk leaps
 spa grammar gaps
-spy gyps: in sniffins
 sub main iambus
 tap saga spat
 tar boohoo brat

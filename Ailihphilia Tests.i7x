@@ -18,7 +18,7 @@ test part1 with "pack cap/stats/peep/poop/dial aid/refer/e/n/get trap art/s/s/ev
 
 test part2 with "word row/get epoch cope/e/n/w/w/use party trap on stark rats/n/use epoch cope on King Nik/s/s/slam mammals/use stock cots on sleep eels/s/get stamp mats/e/get poo coop/w/n/n/e/e/s/w/get yob attaboy/e/n/puff up/e/pull up/get puce cup"
 
-test part3 with "w/w/w/n/use wash saw on past sap/use puce cup on past sap/s/e/e/e/s/get demo med/get troll ort/use puce cup on liar grail/n/w/w/w/n/e/use puce cup on dose sod/w/s/e/e/e/s/s/use puce cup on Bond Nob"
+test part3 with "w/w/w/n/use wash saw on past sap/use puce cup on past sap/s/e/e/e/s/get troll ort/use puce cup on liar grail/n/w/w/w/n/e/use puce cup on dose sod/w/s/e/e/e/s/s/use puce cup on Bond Nob"
 
 test part4 with "w/get all/e/e/use stamp mats on slate metals/w/n/n/w/w/w/n/n/use demo med on gulf lug/s/s/e/e/e/e/use cash sac on cross orc"
 
