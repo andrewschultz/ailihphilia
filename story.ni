@@ -55,6 +55,8 @@ a chaser is a kind of person. a chaser has a room called chase-room. a chaser ha
 
 a guhthug is a kind of person. [Ian, Rob, Ned, Dave]
 
+understand "guh/thug/guhthug" and "guh thug" as a guhthug.
+
 a thing can be drinkable. a thing is usually not drinkable.
 
 a thing can be peripheral. a thing is usually not peripheral.
@@ -75,11 +77,11 @@ Fun Nuf is a room. [just to be sure where the player starts]
 
 section compiler constants
 
-use MAX_VERBS of 260.
+use MAX_VERBS of 270.
 
-section compiler constants - not for release
+section debug compiler globals - not for release
 
-use MAX_VERBS of 310. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 320. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 chapter region and room stuff
 
@@ -1442,7 +1444,7 @@ this is the empty-cup rule: [ignore rule check]
 
 this is the empty-grail rule:
 	later-wipe liar grail;
-	consider the empty-cup rule;
+	now puce cup is empty;
 	the rule succeeds;
 
 this is the empty-nob rule:
@@ -1528,9 +1530,10 @@ this is the sap-to-cup rule:
 	now puce cup is sappy;
 	now puce-ever is true;
 	repeat through table of useons:
-		if use1 entry is puce cup and use2 entry is past sap:
-			now sco entry is false;
-			the rule succeeds;
+		if there is a use1 entry:
+			if use1 entry is puce cup and use2 entry is past sap:
+				now sco entry is false;
+				the rule succeeds;
 	the rule succeeds;
 
 this is the shift-dumb-mud rule:
@@ -1541,9 +1544,10 @@ this is the sod-to-cup rule:
 	now puce cup is soddy;
 	now puce-ever is true;
 	repeat through table of useons:
-		if use1 entry is puce cup and use2 entry is dose sod:
-			now sco entry is false;
-			the rule succeeds;
+		if there is a use1 entry:
+			if use1 entry is puce cup and use2 entry is dose sod:
+				now sco entry is false;
+				the rule succeeds;
 	the rule succeeds;
 
 this is the sword-rows-reveal rule:
@@ -1632,6 +1636,7 @@ instead of doing something when second noun is a peripheral thing:
 
 instead of doing something with a peripheral thing:
 	if action is procedural, continue the action;
+	if current action is stacking and noun is senile felines, continue the action; [?? horrid hack]
 	blanket-reject noun instead;
 
 instead of useoning something with a peripheral thing:
@@ -1918,7 +1923,7 @@ to say trigirt:
 
 chapter tile lit
 
-the tile lit is scenery in Fun Nuf. "It's a rough compass, with GREBEBERG west by it, YELPLEY east, Evac Ave south and Dirge Grid north. You can't seem to go [if flee elf is moot]south and [end if]north, though." [ic]
+the tile lit is scenery in Fun Nuf. "It's a rough compass, with GREBEBERG west by it, YELPLEY east, Evac Ave. south and Dirge Grid north. You can't seem to go [if flee elf is moot and diktat kid is not moot]south and [end if]north, though." [ic]
 
 check taking tile lit: say "It's sort of embedded into the ground. It looks nice there, anyway, and it's useful for information."
 
@@ -3147,6 +3152,7 @@ carry out wordrowing:
 		say "A tract cart appears, full of odd books. A pity tip also flutters down. You take the tip.";
 	else:
 		say "The tract cart re-appears.";
+	word-row-open;
 	the rule succeeds;
 
 to word-row-open:
@@ -3710,7 +3716,7 @@ The Liar Grail is a thing in Swept Pews. description is "It's carved with 'NIP I
 
 check taking liar grail: say "A small voice cries 'Da cad! Da cad!' You probably don't want the liar grail corrupting you." instead;
 
-every turn when player is in Swept Pews and wordy drow is in Swept Pews: next-rand table of wordy drow laments;
+every turn when player is in Swept Pews and wordy drow is in Swept Pews and wordy drow was in Swept Pews: next-rand table of wordy drow laments;
 
 chapter wordy drow
 
@@ -3815,8 +3821,8 @@ report taking when player is in Pro Corp:
 	continue the action;
 
 this is the bald-lab rule:
-	if number of things in Pro Corp is 1:
-		say "Pro Corp is now a bald lab.";
+	if butene tub is moot and DNA band is not in Pro Corp and gold log is not in Pro Corp:
+		say "Thanks to your actions, Pro Corp is now a bald lab.";
 		now bald-lab is true;
 		now printed name of Pro Corp is "Bald Lab";
 	else:
