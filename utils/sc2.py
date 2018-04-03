@@ -636,8 +636,11 @@ def get_stuff_from_source():
                     for idx in [5, 6, 7]:
                         if x[idx] != 'false':
                             print("WARNING: Line", line_count, "must be false in non-scoring table of useons, column", (idx + 1))
-                if x[5] != 'true' and x[5] != 'false':
-                    print("WARNING: Line", line_count, "needs true/false in column 5/6.")
+                if x[0] != '--' and x[1] != '--':
+                    if x[5] != 'true' and x[5] != 'false':
+                        print("WARNING: Line", line_count, "needs true/false in column 5.")
+                    if x[6] != 'true' and x[6] != 'false':
+                        print("WARNING: Line", line_count, "needs true/false in column 5.")
                     warning_story_line = line_count
                 if use_ons:
                     if len(x) < 6: continue

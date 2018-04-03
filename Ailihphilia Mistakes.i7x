@@ -349,6 +349,8 @@ chapter gift fig
 
 understand "gif fig" as a mistake ("No graphics, here![mis of 115]") when gift fig is quicknear.
 
+understand "gift fig" as a mistake ("It already is one. And you don't need to pass it on.[mis of 115]") when gift fig is quicknear.
+
 understand "gi fig" as a mistake ("No violence, here![mis of 116]") when gift fig is quicknear.
 
 book Sneer Greens
@@ -403,7 +405,9 @@ book Worn Row
 
 understand "worsts row" and "worses row" as a mistake ("It [if Worn Row is worny]is[else]was[end if] bad enough already.[mis of 136]") when player is in Worn Row.
 
-understand "worm row" as a mistake ("[if Worn Row is worny]Ugh! You don't need to make this place worse[else]You already upgraded Worn Row. No need to downgrade it[end if].[mis of 137]") when player is in Worn Row.
+understand "worm row" as a mistake ("[if Worn Row is worny]Ugh! You don't need to make this place worse[else]You already upgraded Worn Row. No need to make it worse than it was[red-clue][end if].[mis of 137]") when player is in Worn Row.
+
+to say red-clue: if redness ender is not moot, say ", but who knows, that redness ender might help you some day"
 
 understand "bork Rob" as a mistake ("Maybe there is a more nonviolent way to get him to give up.[mis of 138]") when Rob is quicknear.
 
