@@ -640,7 +640,7 @@ def get_stuff_from_source():
                     if x[5] != 'true' and x[5] != 'false':
                         print("WARNING: Line", line_count, "needs true/false in column 5.")
                     if x[6] != 'true' and x[6] != 'false':
-                        print("WARNING: Line", line_count, "needs true/false in column 5.")
+                        print("WARNING: Line", line_count, "needs true/false in column 6.")
                     warning_story_line = line_count
                 if use_ons:
                     if len(x) < 6: continue
