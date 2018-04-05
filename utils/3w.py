@@ -249,6 +249,7 @@ def hash_tweak(wd):
             # print(wd[:-i], wd, i, "end partial anagram")
 
 def hash_tweak_file(file_name):
+    print("Looking for hash values in", file_name)
     with open(file_name) as file:
         for line in file:
             hash_tweak(line.lower().strip())
@@ -274,6 +275,9 @@ max_word_length = 12
 find_string = ''
 
 extra_words = []
+
+do_dict_words = True
+do_names = False
 
 order_results = False
 
@@ -427,8 +431,8 @@ with open(bad_word_file) as file:
 if not ignore_2_letter_words:
     with open(two_word_file) as file:
         for line in file:
-            if ll.startswith(';'): break
             ll = line.lower().strip()
+            if ll.startswith(';'): break
             la = re.split(",( )?", ll)
             for li in la:
                 if li in ok_2.keys():

@@ -441,6 +441,9 @@ volume verbs (standard or semi-standard to Inform)
 check taking scenery: say "Grab? Arg! (Scenery doesn't need to be taken.)[paragraph break]" instead;
 check taking a workable: say "Grab? Arg! (Machines don't need to be taken.)[paragraph break]" instead;
 
+check pushing: say "Push?! [']Sup?! [one of](You never need to push anything in Ailihphilia.)[or][line break][stopping]" instead;
+check pushing: say "You never need to pull anything in Ailihphilia. Well, nothing concrete." instead;
+
 chapter going nowhere
 
 chapter search replacement
@@ -1354,15 +1357,15 @@ this is the rev-bore-Rob rule:
 	boot-Rob;
 	the rule succeeds;
 
+this is the rev-create-tron rule:
+	move north tron to Fun Nuf;
+	now all ingredients are in devreserved; [??]
+	the rule succeeds;
+
 this is the rev-deny-Ned rule:
 	if Ned is moot, the rule fails;
 	say "You DENY NED a chance at fighting.";
 	moot Ned;
-	the rule succeeds;
-
-this is the rev-create-tron rule:
-	move north tron to Fun Nuf;
-	now all ingredients are in devreserved; [??]
 	the rule succeeds;
 
 this is the rev-emit-noontime rule:
@@ -1823,7 +1826,6 @@ test set	false	"You [if emitted is false]need to find[else]now know[end if] how 
 to get-reject (th - a thing):
 	repeat through table of lateruses:
 		if to-get entry is th:
-			say "[remind-msg entry][line break]";
 			now in-limbo entry is true;
 			continue the action;
 	say "NONCRITICAL bug: I should've rejected getting [the th], but I didn't. This loophole may make the game slightly shorter, but I'd like to know how it happened."
@@ -2154,11 +2156,13 @@ chapter tile lit
 
 the tile lit is scenery in Fun Nuf. "It's a rough compass, with GREBEBERG west by it, YELPLEY east, Evac Ave. south and Dirge Grid north. You can't seem to go [if flee elf is moot and diktat kid is not moot]south and [end if]north, though." [ic]
 
-check taking tile lit: say "It's sort of embedded into the ground. It looks nice there, anyway, and it's useful for information."
+check taking tile lit: say "It's sort of embedded into the ground. It looks nice there, anyway, and it's useful for information." instead;
 
 chapter elite tile
 
-the elite tile is scenery. "Done? Nod![line break]Nif-T-Fin!"
+the elite tile is scenery. "Done? Nod![line break]Nif-T-Fin!".
+
+check taking elite tile: say "It's a memento, not a souvenir." instead;
 
 after going to Fun Nuf when Diktat Kid is moot:
 	say "You notice the elite tile has changed slightly.";
@@ -2269,7 +2273,7 @@ the redivider is scenery in Dirge Grid. "[if Diktat Kid is moot]It's broken down
 
 chapter tru hurt
 
-the tru hurt is peripheral scenery in Dirge Grid. "The Tru Hurt is here, and it's aimed at you!"
+the Tru Hurt is peripheral scenery in Dirge Grid. "The Tru Hurt is here, and it's aimed at you!"
 
 chapter waster fretsaw
 
@@ -2449,7 +2453,7 @@ check going south in Dumb Mud:
 	if Mont Nom is unvisited, say "With the turf rut filled in, the way across remains stable, and it even smells okay! Bonus! You climb up to...";
 
 check going north in Dumb Mud:
-	if lie veil is in Dumb Mud, say "As you touch the lie veil, you shake your head. No. You don't really want or need to explore north. Surely there's some better place to be? Perhaps you're not 100% prepared for the lie veil's thought provoking paradoxes, and it's doing you a favor pushing you back? You try to walk further north, but somehow you wind up walking back south." instead;
+	if lie veil is in Dumb Mud, say "As you're about to touch the lie veil, you shake your head. No. You don't really want or need to explore north. Surely there's some better place to be? Perhaps you're not 100% prepared for the lie veil's thought provoking paradoxes, and it's doing you a favor pushing you back? Plus what if it hides a hidden booby trap? You try to walk further north, but somehow you wind up walking back south." instead;
 
 chapter gnu dung
 
@@ -2461,7 +2465,7 @@ instead of doing something with gnu dung:
 
 chapter turf rut
 
-The turf rut is scenery in Dumb Mud. "[if poo coop is moot]Since you filled it in, you can walk across it to the south[else]It's deep enough to prevent you going south[end if]."
+The turf rut is scenery in Dumb Mud. "[if poo coop is moot]Since you filled it in, you can walk across it to the south[else]It's deep enough to prevent you going south. Maybe you could fill it in with something. Anything[end if]."
 
 check taking turf rut: say "You'd need a nab-rut turban to do that. There's no nab-rut turban in this game[if poo coop is moot]. Besides, you already [rut-made-go] across[end if]." instead;
 
@@ -2472,7 +2476,7 @@ understand "turd rut" as turf rut when poo coop is moot.
 
 chapter lie veil
 
-The lie veil is scenery in Dumb Mud. "It looks untrustworthy."
+The lie veil is scenery in Dumb Mud. "It looks flimsy, yet at the same time, you are scared it might have some secret trap that would zap you to unconsciousness and, worse, make you feel silly for not noticing it in the first place."
 
 book Le Babel
 
@@ -2480,7 +2484,7 @@ Le Babel is north of Dumb Mud. It is in Grebeberg. "This is a weird place. Nothi
 
 chapter voodoo v
 
-the voodoo v is peripheral scenery. "Maybe you could walk across it without getting hurt, but you doubt it. It's there, and it's immovable."
+the voodoo v is peripheral scenery. "Maybe you could walk across it without getting hurt, but you doubt it. It's there, and it's immovable. Things probably will get weirder beyond it."
 
 chapter opossum
 
@@ -2652,7 +2656,7 @@ understand "cats" as senile felines.
 
 check taking the senile felines: say "Sure, that'd help them swat the petal and 'win' whatever game they're playing, but maybe they want to feel like they did it themselves. As CATS." instead;
 
-the late petal is peripheral scenery in Moo Room. "It's just out of reach of the cats."
+the late petal is peripheral scenery in Moo Room. "It's just out of reach of the cats. Felines. Same thing--or is it?"
 
 instead of taking late petal, say "That'd be cheating, to actually give the cats the petal."
 
@@ -2699,7 +2703,9 @@ understand "all ivy villa" and "all ivy" and "all/ivy" and "all/ivy villa" as de
 
 chapter code doc
 
-Code Doc is a neuter person in Den Ivy Vined. "[one of]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket. Busy, but not too busy to help someone else."
+Code Doc is a neuter person in Den Ivy Vined. "[one of]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket labeled DR A. CARD. Busy, but not too busy to help someone else."
+
+understand "dr/card" and "dr card" as code doc.
 
 chapter Spa Maps
 
@@ -2794,6 +2800,8 @@ chapter Tru Yurt
 
 The Tru Yurt is scenery in Swamp Maws. "It looks really messy. The Known Wonk said it needed a good cleaning."
 
+check taking yurt: say "It's the Known Wonk's." instead;
+
 check entering yurt: say "No, that's where the Known Wonk lives. [if exam axe is off-stage]Maybe you could clean it up[else]You already helped clean it up, and that's enough[end if]." instead;
 
 chapter Edits Tide
@@ -2821,6 +2829,8 @@ to say eli-ile:
 chapter kayak
 
 The kayak is scenery in Calcific Lac. "It's, well, just a kayak. It doesn't have anything to steer it with, though. Maybe you have something, or you could find something."
+
+check taking kayak: say "You got strong in My Gym, but not that strong!" instead;
 
 instead of entering kayak: say "[if elope pole is moot]Your elope pole is gone. There's no way to steer it[else]You need to find a way to steer it. Maybe there's no paddle, but something long and straight[end if]."
 
@@ -2876,7 +2886,7 @@ Go-By Bog is scenery in Apse Spa. description is "It's too hazy. You'd get lost 
 
 chapter pool gloop
 
-The pool gloop is peripheral scenery in Apse Spa. "The pool gloop is probably to help people convalesce, but you're not sick."
+The pool gloop is peripheral scenery in Apse Spa. "The pool gloop is probably to help people convalesce, or it's advertised as such, but you're not sick, and you already followed one silly ad to get here."
 
 chapter spa taps
 
@@ -3852,6 +3862,8 @@ chapter ten level net
 
 the ten level net is scenery in Trapeze Part. "[if epicer recipe is off-stage]It doesn't quite look sturdy enough. Maybe you could do something to fix it[else]It was sturdy enough to help you get the epicer recipe, and that's enough[end if]."
 
+check taking the level net: say "But then you couldn't get across it without serious risk!" instead;
+
 chapter tent net
 
 the tent net is a thing. description is "It's tagged as a 'Tent o['] Dot Net,' which seems to be overdoing the trendy-to-techies angle. All the same, though it can't make a structure on its own, it could probably let just the right amount of light in a home that needs a roof."
@@ -4041,7 +4053,7 @@ Scrap Arcs is east of Drawl Ward. It is in Yelpley. "You can't go any farther he
 
 chapter slate metals
 
-slate metals are scenery in Scrap Arcs. "You could probably carve something out of them, with the right implement(s). Maybe not steel fleets, but something useful."
+slate metals are scenery in Scrap Arcs. "You could probably carve something out of them, with the right implement(s). Maybe not steel fleets, but something useful for a humbler and less violent task."
 
 chapter Ye Key
 
@@ -4134,11 +4146,9 @@ chapter butene tub
 
 the butene tub is scenery in Pro Corp. "It smells pretty nice. But it's been marked condemned, dangerously close to falling apart if you put too much weight on it. Who knows what sort of reactions could occur with the flammable butene if the tub collapsed to the dangerously sparky area below with special instruments and such? You can't just pour any old thing down![paragraph break]What sort of adventurer could ignore a warning like that? Especially in a game that's meant to be polite on the Zarfian cruelty scale!"
 
-[??It looks unstable? Part of the warning?]
-
 chapter gash sag
 
-the gash sag is peripheral scenery. "It has covered up your destruction of the butene tub."
+the gash sag is peripheral scenery. "It has covered up your destruction of the butene tub, but at least you got that resale laser first."
 
 chapter resale laser
 
