@@ -486,9 +486,9 @@ to decide whether thug-near:
 understand "tri girt" as a mistake ("[girt-clue].") when player has Set O Notes.
 
 to say girt-clue:
-	if ever-wordrow is true and ever-workrow is true:
+	if row-prog > 1:
 		say "Hmm. You seem to have found the three configurations for Worn Row[if psi wisp is not moot]. Maybe Worn Row will be useful in the future, maybe not[else], and you even used the Redness Ender[end if].";
-	else if ever-wordrow is false and ever-workrow is false:
+	else if row-prog is 0:
 		say "You need to figure out what that means. It seems to indicate [if Worn Row is visited][Worn Row][else]a room south of [Fun Nuf][end if]";
 	else:
 		say "Hmm. Tri indicates three. You've found two different configurations for Worn Row/[Worn Row]. What is the third, you wonder";

@@ -394,9 +394,9 @@ a dir-error rule for a room (called myr):
 	continue the action;
 
 to say row-clue:
-	if ever-workrow is false and ever-wordrow is false:
+	if row-prog is 0:
 		say "There's only one place you need to do this";
-	else if ever-workrow is true and ever-wordrow is true:
+	else if row-prog > 1:
 		say "You found the place where you need to twiddle things";
 	else:
 		say "You've half twiddled [Worn Row]";
@@ -2143,9 +2143,9 @@ after examining Set O Notes:
 	if player is in Worn Row, say "[trigirt].";
 
 to say trigirt:
-	if ever-workrow is true and ever-wordrow is true:
+	if row-prog > 1:
 		say "Well, that makes sense. You've changed Worn Row to Word Row and Work Row";
-	else if ever-workrow is false and ever-wordrow is false:
+	else if row-prog is 0:
 		say "Hmm. You wonder what Tri-Girt could mean, here. Maybe Worn Row is not quite as static as it seems";
 	else:
 		say "You've made [location of player] Row, but the 'tri' makes you think there might be something else"
@@ -3059,7 +3059,7 @@ every turn when player is in Worn Row and Rob is in Worn Row:
 
 chapter bad dab
 
-the bad dab is peripheral scenery in Worn Row. description is "[if Rob is in Worn Row]WORN ROW is written, somewhat dubiously[else if ever-workrow is true or ever-wordrow is true]WOR- ROW is still here, faded now since you opened [Worn Row][else]WOR- ROW is here. Maybe there's more here than just Worn Row[end if]."
+the bad dab is peripheral scenery in Worn Row. description is "[if Rob is in Worn Row]WORN ROW is written, somewhat dubiously[else if row-prog > 0]WOR- ROW is still here, faded now since you opened [Worn Row][else]WOR- ROW is here. Maybe there's more here than just Worn Row[end if]."
 
 chapter test set
 
@@ -3340,6 +3340,13 @@ this is the book-took rule:
 		the rule succeeds;
 	continue the action;
 
+to decide what number is row-prog:
+	if redness ender is moot, decide on 3;
+	let ret be 0;
+	if ever-workrow is true, increment ret;
+	if ever-wordrow is true, increment ret;
+	decide on ret;
+
 chapter clear Worn Row
 
 to clear-worn-row:
@@ -3392,7 +3399,7 @@ carry out workrowing:
 to check-dab:
 	if bad dab is in Worn Row:
 		say "[line break]";
-		if ever-workrow is true and ever-wordrow is true:
+		if row-prog > 1:
 			say "The WOR- ROW text of the bad dab fades out of sight.";
 			moot bad dab;
 		else:
@@ -4846,7 +4853,8 @@ this is the evaded-ave rule:
 	if Door Frood is in Evaded Ave:
 		if My Gym is unvisited, say "Visit south of Yawn Way a bit." instead;
 		if Worn Row is unvisited, say "See about west of My Gym." instead;
-		if ever-wordrow is false, say "Worn Row can become something else[if ever-workrow is true], besides Work Row[end if]." instead;
+		if row-prog is 0, say "Worn Row can become something else. A couple other things, actually." instead;
+		if row-prog is 1, say "You changed [Worn Row] from Worn Row, but it can become something else." instead;
 		if player has TI, say "You have TI. Give it to the Door Frood." instead;
 		say "[one of]Word Row has some interesting books. Maybe one would please the Door Frood.[or]You need something daring and obnoxious.[or]Get TI from Word Row.[stopping]" instead;
 	say "You just need to take the bunk nub here." instead;
@@ -5057,7 +5065,7 @@ this is the trapeze-part rule:
 section Worn Row rule
 
 this is the worn-row rule:
-	if ever-wordrow is true and ever-workrow is true and etage gate is in Gross Org:
+	if row-prog is 2:
 		consider the got-machine-fodder rule;
 		unless the rule succeeded, continue the action;
 	if search-hint-room is true, the rule succeeds;
