@@ -139,6 +139,12 @@ to display-dropbox-link:
 
 volume i6 modification(s)
 
+section processing not considering
+
+[thanks to climbingstars https://www.intfiction.org/forum/viewtopic.php?p=41700]
+
+To process (RL - a rule): (- ProcessRulebook({RL}, 0, true); -)
+
 section something dramatic has happened bug
 
 [this is to fix GET ALL in Emo Dome when there is only 1 thing to get. It appears to be a bug in the core.]
@@ -541,25 +547,25 @@ instead of thinking:
 			if got-later-use is false, say "Stuff you've half figured out:[line break]";
 			say "[remind-msg entry][line break]";
 			now got-later-use is true;
-	if got-later-use is false, say "Nothing half-figured out.";
+	if got-later-use is false, say "You don't have anything you figured out but didn't quite have the items for.";
 	let wayoutrooms be 0;
 	repeat with Q running through available rooms:
-		if Q is not visited:
+		if Q is not visited and Q is not in Odd Do:
 			let q-connect be false;
 			repeat with QDIR running through maindir:
 				if the room QDIR of Q is visited:
 					now q-connect is true;
-					say "You haven't looked [opposite of QDIR] of [room QDIR of Q].";
+					say "You haven't looked [opposite of QDIR] of [room QDIR of Q].[run paragraph on][line break]";
 					break;
 			if q-connect is false:
 				increment wayoutrooms;
-				if debug-state is true, say "DEBUG: (can visit [Q]).";
-	if wayoutrooms > 1, say "You have [wayoutrooms] place[if wayoutrooms > 1]s[end if] that are more than one room away from where you've currently explored, but they're available.";
+				[if debug-state is true, say "DEBUG: (can visit [Q]).";]
+	if wayoutrooms > 1, say "You'll want to visit [wayoutrooms in words] place[if wayoutrooms > 1]s[end if] more than move away from everywhere you've currently explored. I won't spoil them, but they're available.";
 	repeat with Q running through visited rooms:
-		consider stuck-rule of Q;
+		process stuck-rule of Q;
 	repeat through table of last lousy points:
 		if mclu entry is true:
-			consider the dorule entry;
+			process the dorule entry;
 			if the rule failed:
 				if LLP-yet is false:
 					now LLP-yet is true;
