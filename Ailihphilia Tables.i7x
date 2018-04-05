@@ -729,8 +729,8 @@ part the code
 to next-rand (t - a table name):
 	choose row with tabnam of t in table of all randoms;
 	increment tabidx entry;
-	if debug-state is true and tabidx entry > number of rows in tabnam entry:
-		say "(Cycling) ";
+	if tabidx entry > number of rows in tabnam entry:
+		if debug-state is true, say "(Cycling) ";
 		now tabidx entry is 1;
 	let Q be tabidx entry;
 	let lb be lbrk entry;
@@ -746,7 +746,7 @@ table of diktat taunts	0	true	"Diktat Kid taunts"
 table of My Gym songs	0	false	"songs in My Gym (LISTEN)"
 table of noesies	0	true	"responses to NO"
 table of nothings	0	true	"responses to empty commands"
-table of Rob droning	0	true	"things Rob babbles about"
+table of Rob droning	0	false	"things Rob babbles about"
 table of singstuff	0	true	"responses to SINGing"
 table of swearstuff	0	true	"responses to SWEARing"
 table of undoings	0	true	"UNDOing notifications"
@@ -904,6 +904,7 @@ table of Rob droning
 randtxt
 "EOF, Foe!"
 "More ROM!"
+"Posts-op? POST, sop!'"
 "Prove VORP!"
 "Resume [']m, user!"
 

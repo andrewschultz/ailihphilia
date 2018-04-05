@@ -28,7 +28,7 @@ the story headline is "Yo, Joy! Wow!"
 
 the release number is 1.
 
-include Trivial Niceties Z-Only by Andrew Schultz.
+include Trivial Niceties by Andrew Schultz.
 
 include Basic Screen Effects by Emily Short.
 
@@ -68,7 +68,7 @@ section thing properties
 
 a thing can be drinkable. a thing is usually not drinkable.
 
-a thing can be peripheral. a thing is usually not peripheral.
+a thing can be peripheral, semiperipheral or integral. a thing is usually integral.
 
 a thing can be nyet or xyet. A thing is usually nyet.
 
@@ -94,11 +94,11 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 280.
+use MAX_VERBS of 290.
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 320. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 330. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 chapter region and room stuff
 
@@ -428,6 +428,7 @@ after reading a command:
 			let XX be the player's command;
 			replace the regular expression "<^a-z 0-9>" in XX with "";
 			change the text of the player's command to XX;
+			if debug-state is true, say "Changed to: [XX][line break]";
 
 no-punc-flag is a truth state that varies.
 
@@ -499,7 +500,7 @@ chapter listening
 
 instead of listening:
 	if player is in My Gym:
-		say "[if Dave is in My Gym]Behind Dave's grunts,[else]Y[end if]ou hear ";
+		say "[if Dave is in My Gym]Behind Dave's grunts, y[else]Y[end if]ou hear ";
 		next-rand table of My Gym songs;
 		say "[one of], or at least, that's what repeats in the chorus[or][stopping]." instead;
 	if player is in Apse Spa, say "Surprisingly, no spa yaps." instead;
@@ -550,14 +551,16 @@ instead of thinking:
 					now q-connect is true;
 					say "You haven't looked [opposite of QDIR] of [room QDIR of Q].";
 					break;
-			if q-connect is false, increment wayoutrooms;
-	if wayoutrooms > 1, say "You have [wayoutrooms] place[if wayoutrooms is 1]s[end if] that are way away but available.";
+			if q-connect is false:
+				increment wayoutrooms;
+				if debug-state is true, say "DEBUG: (can visit [Q]).";
+	if wayoutrooms > 1, say "You have [wayoutrooms] place[if wayoutrooms > 1]s[end if] that are more than one room away from where you've currently explored, but they're available.";
 	repeat with Q running through visited rooms:
 		consider stuck-rule of Q;
 	repeat through table of last lousy points:
 		if mclu entry is true:
 			consider the dorule entry;
-			if the rule succeeded:
+			if the rule failed:
 				if LLP-yet is false:
 					now LLP-yet is true;
 					say "LAST LOUSY POINTS NOTES:[line break]";
@@ -568,6 +571,9 @@ section stuck-rules
 
 to say hn of (rm - a room):
 	say "[if player is in rm]here[else]in [rm][end if]"
+
+to say hn2 of (rm - a room):
+	say "[if player is in rm]here[else][rm][end if]"
 
 a room has a rule called stuck-rule. stuck-rule of room is usually the trivially false rule.
 
@@ -628,7 +634,7 @@ this is the flu-gulf-stuck rule:
 
 this is the fun-nuf-stuck rule:
 	if Dirge Grid is mapped north of Fun Nuf, the rule fails; [??not good enough -- need to make sure have weapons]
-	say "You need to figure what's north of [hn of Fun Nuf]...eventually.";
+	say "You need to figure what's north of [hn2 of Fun Nuf]...eventually.";
 	the rule succeeds;
 
 this is the gross-org-stuck rule:
@@ -826,7 +832,7 @@ carry out talktoing:
 a person has text called talk-text.
 
 instead of asking someone about:
-	say "[one of]You don't ever need to ask about specific subjects. [or][stopping]TALKing instead.[paragraph break]";
+	say "You don't ever need to ask about specific subjects. ASKing about redirects to TALKing to a person.";
 	try talktoing the noun instead;
 
 chapter drinking
@@ -1100,7 +1106,7 @@ check useoning it with:
 	repeat through table of useons:
 		if there is no use1 entry, next;
 		if there is no use2 entry and debug-state is true:
-			say "WARNING: there is a blank entry with use1 of [use1 entry].";
+			say "WARNING: there is a blank use2 entry with use1 of [use1 entry].";
 			next;
 		if noun is use1 entry: [I would like to get rid of this ... the table of cantuse should take care of this, but I need to check things]
 			if second noun is use2 entry:
@@ -1149,9 +1155,11 @@ check useoning it with:
 	if second noun is a workable, abide by the machine message rules for the noun; [order is important here. This can get trumped if placed below the following rules, but it is specific to Work Row, so it needs to be here.]
 	repeat through table of use redir:
 		if noun is use1 entry:
-			say "[if second noun is a person][person-reject entry][else][thing-reject entry][line break]" instead;
+			if second noun is a person and there is a person-reject entry, say "[person-reject entry][line break]" instead;
+			if there is a thing-reject entry, say "[thing-reject entry][line break]" instead;
 		else if second noun is use1 entry:
-			say "[if noun is a person][person-reject entry][else][thing-reject entry][line break]" instead;
+			if noun is a person and there is a person-reject entry, say "[person-reject entry][line break]" instead;
+			if there is a thing-reject entry, say "[thing-reject entry][line break]" instead;
 	repeat through table of shiftables:
 		if noun is use1 entry and second noun is use2 entry, try useoning use3 entry with use2 entry instead;
 		if noun is use2 entry and second noun is use1 entry, try useoning use3 entry with use2 entry instead;
@@ -1172,6 +1180,7 @@ a machine message rule for a thing (called t):
 	if t is exhausted, say "You already tried everything, and nothing worked." instead;
 	if t is listed in postmachines, say "You already built [the t] here. Time to do something else with it." instead;
 	repeat through table of useons:
+		unless there is a use1 entry, next;
 		if t is use1 entry and use2 entry is a workable, say "Nothing happens, but you feel you must be close, here." instead;
 		if t is use3 entry and use2 entry is a workable, say "The [second noun] hums a bit as you bring [the t] close. You already used a machine to make [the t]. Maybe you should do something else." instead;
 	if second noun is reifier, now t is reified;
@@ -1207,9 +1216,9 @@ Rob	"Rob's not going to be obliging. You have to get rid of him, somehow."
 Ned	"Ned wants a fight, and you need some other way around him."
 ergot ogre	"The ogre can't be bribed or baited. At least, not by you. You're not fast or strong enough to outfox it."
 Pact Cap	"Your pact cap is fine where it is, on your head."
-epicer recipe	"It's meant for referral."
-Darer Ad	"It was only useful to sucker you into this mess."
-Set O Notes	"It's useful for an overview, but not for DOING anything."
+epicer recipe	"The epicer recipe is meant for referral."
+Darer Ad	"The Darer Ad was only useful to sucker you into this mess."
+Set O Notes	"The Set-O-Notes is useful for an overview, but not for DOING anything."
 north tron	"The North-Tron's already done its job."
 x-it stix	"They're just there to block you."
 ergot ogre	"You worry anything that touches the ergot ogre might shrivel up. Maybe you need the services of someone or something that can beat up the ogre without touching its skin."
@@ -1219,6 +1228,7 @@ wordy drow	"The wordy drow moans 'Er ... eh ... there,' pointing to the Liar Gra
 table of use redir [xxur]
 use1	person-reject	thing-reject
 party trap	"The trap can't work on a person. It's too small, and people are too smart."	"You need to use the party trap on something animate."
+wash saw	"The saw wasn't meant for violence."	--
 [zzur]
 
 [?? poo coop on, well, everything]
@@ -1230,11 +1240,15 @@ use1	use2	babble
 trap art	stark rats	"Whatever's planned on the trap art might work, but not the trap art itself."
 Dirt Rid	cassettes sac	"The Dirt Rid wheezes but is unable to clean up the cassettes sac. You need something more powerful."
 Dirt Rid	gnu dung	"The Dirt Rid is ineffective. You may need something stronger."
+Trap Art	Revolt Lover	"But the Revolt Lover gave it to you in the first place."
+Party Trap	Revolt Lover	"'Whoah! Neat! That's a lot more useful than my art.'"
 Cave Vac	gnu dung	"The Cave Vac sputters. You may need something more specifically suited to the, uh, material to clean up."
 radar	sleep eels	"A radar isn't supposed to work this way, but somehow, you detect some bitterness at mammals in general. But it's secondary to needing a more comfortable place to sleep."
 troll ort	ergot ogre	"The ergot ogre mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. Perhaps you need a more violent way to dispose of the ogre."
 troll ort	cross orc	"The cross orc mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. But the way it looks at you, you suspect it'd forgive you if you gave the right gift."
 troll ort	kayo yak	"As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up. The yak seems weirdly attracted to it."
+wash saw	crag arc	"The crag arc is much too big to get anywhere[if UFO tofu is off-stage]. Maybe there's a better way to find what's behind there[end if]."
+wash saw	made dam	"The made dam is much too big to get anywhere[if eroded ore is off-stage]. Maybe there's a better way to find what's behind there[end if]."
 Gorge Grog	yard ray	"The Gorge Grog is pretty strong stuff, but you may need something even stronger."
 Rep Popper	Yuge Guy	"It seems like the Rep Popper should work, but it doesn't, quite. Maybe there is something that is giving the Yuge Guy all his rep?"
 Bro Orb	Madam	"The Bro Orb might dissolve her, but you're not out to kill anyone. Still, close."
@@ -1245,6 +1259,7 @@ yard ray	Diktat Kid	"The Diktat Kid laughs as you point the yard ray. 'Destroy m
 yard ray	Tru Hurt	"The Tru Hurt is dangerous, but maybe you should use the yard ray on something even more harmful."
 yard ray	Waster Fretsaw	"The Waster Fretsaw is dangerous, but maybe you should use the yard ray on something even more harmful."
 sage gas	sharp rahs	"Hmm! The contrast between the two...that should work. But maybe you need some sort of intermediary that could hold them both."
+wash saw	stark rats	"You couldn't catch and hold a rat long enough to cut it with the wash saw."
 ME gem	ME Totem	"The egotistical forces in the gem and totem repel each other. Just as well. You don't know if you could survive if such insufferability synergized."
 gate tag	DIFF ID	"You wave the gate tag in front of the DIFF ID, which beeps for a second, then ... nothing. Maybe the gate tag (or its pattern) needs to be read a different way."
 soot tattoos	DIFF ID	"The Diff-ID doesn't respond. Maybe you need a way to put them on you, somehow."
@@ -1728,7 +1743,7 @@ this is the wear-garb rule:
 
 this is the you-win rule: [xxwin]
 	say "The Flee Elf greets you on the other side. 'Deified! Deified!' You ask hesitantly about the new adventures promised.[wfak-d]";
-	say "The X-ITE TIX lead to A REAL WORLD THAT WILL BE MORE EXCITING AFTER YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a circular loop to 'back where you began' non-twist. Books like that always kind of annoyed you, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something. The Flee Elf shakes your hand and pulls out a device. 'This RIDE-DIR will help you return to your own world.'[wfak-d]";
+	say "'The X-ITE TIX lead to A REAL WORLD THAT WILL BE MORE EXCITING AFTER YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a circular loop to 'back where you began' non-twist. Books like that always kind of annoyed you, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something. The Flee Elf shakes your hand and pulls out a device. 'This RIDE-DIR will help you return to your own world.'[wfak-d]";
 	say "As you wait, you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered by it?[wfak-d]";
 	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call them? It's a tough call between SOME MEMOS, SAGAS or SOLOS. Hmm, maybe DRAWN INWARD.";
 	end the story finally saying "Darn! Rad!";
@@ -1754,6 +1769,18 @@ instead of useoning something with a peripheral thing:
 	if action is procedural, continue the action;
 	blanket-reject second noun instead;
 
+instead of doing something when second noun is a semiperipheral thing:
+	if action is pro-and-use, continue the action;
+	blanket-reject second noun instead;
+
+instead of doing something with a semiperipheral thing:
+	if action is pro-and-use, continue the action;
+	blanket-reject noun instead;
+
+instead of useoning something with a semiperipheral thing:
+	if action is pro-and-use, continue the action;
+	blanket-reject second noun instead;
+
 to blanket-reject (bj - a thing):
 	repeat through table of periphery:
 		if itm entry is bj:
@@ -1768,6 +1795,7 @@ Oh Who	"Oh Who is just there to list all the people you may be helping. Like mos
 Name ME Man	"NAME ME MAN is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting, but it's there."
 gash sag	"You don't want to mess with the gash sag. Destroying the butene tub is damage enough."
 x-it stix	"No way you're getting through the X-It Stix."
+cassettes sac	"The cassettes sac is too messy to do anything with. You need to find a way to clean it up."
 girt rig	"The girt rig is too sturdy to move. But then, there's even sleazier stuff beyond it."
 redness ender	"You don't want to do anything crazy with the Redness Ender. You don't want to go near it. It's dangerous looking. You can picture it ambushing someone who doesn't expect it."
 decal placed	"The decal placed decal is just there to advertise the food. It's not critical to the story."
@@ -1775,6 +1803,7 @@ snooty toons	"The snooty toons are just there for ambience. They're not critical
 pill lip	"The pill lip is just there to prevent the demo med from getting dirty on the ground."
 mush sum	"The mush sum is too murky and unstable to deal with. And to break the fourth wall, it's just there to provide a north border."
 go fog	"The go fog is very dense. It pushes you back even as you look at it. As if to say, go away, and also, get going with what you want and need to do."
+past sap	"[if liar grail is moot]With the liar grail gone, you don't want to have to deal with the past sap again[else]The past sap might be useful, but you [how-take-sap][end if]."
 be web	"The be web is--well, it's itself, and maybe there's a message here but you'll figure it out once you're finished adventuring. It's not important enough now."
 voodoo v	"You don't want or need to mess with the voodoo v."
 leet steel	"You want to focus on the Knife Fink and not the leet steel."
@@ -1789,7 +1818,7 @@ smirk rims	"The smirk rims are only important if you let them be. In other words
 state tats	"You don't need to do anything to or with the state tats, now that you're wearing them."
 storm rots	"Yuck. You don't want or need to touch the storm rots, or do anything with them. There's probably worse behind them."
 E Divide	"There's no way to dispel the E-Divide, but Madam isn't the main enemy here, any more."
-DIFF ID	"The DIFF ID can't be broken. You [if Red Roses Order is visited]already found[else]just need to find[end if] a way to identify yourself."
+DIFF ID	"You don't have the skill to tinker with the DIFF-ID. You [if Red Roses Order is visited]already found[else]just need to find[end if] a way to identify yourself."
 Par Wrap	"It's not the Verses Rev's clothes you need to worry about."
 Tru Hurt	"[rediv-instead of tru hurt]."
 Waster Fretsaw	"[rediv-instead of waster fretsaw]."
@@ -2310,7 +2339,12 @@ part Grebeberg region
 
 book Seer Trees
 
-Seer Trees is west of Fun Nuf. It is in Grebeberg. "East leads back to Fun [']Nuf[if Yawn Way is visited] and Yelpley[end if], but the other directions lead to further rustic adventure.".
+Seer Trees is west of Fun Nuf. It is in Grebeberg. "East leads back to Fun [']Nuf[if Yawn Way is visited] and Yelpley[end if], but the other three directions lead to further rustic adventure[seer-see].".
+
+to say seer-see:
+	if Cold Loc is visited, say ". Cold Loc is north";
+	if Ooze Zoo is visited, say ". Ooze Zoo is south";
+	if Dumb Mud is visited, say ". Dumb Mud is west";
 
 check going in Seer Trees:
 	if noun is not east and stark rats are in Seer Trees, say "The stark rats block you from going anywhere. At least they are not banging stop pots." instead;
@@ -2339,7 +2373,7 @@ Oh Who is a proper-named peripheral phonebook. booktable of Oh Who is table of r
 
 book Cold Loc
 
-Cold Loc is north of Seer Trees. It is in Grebeberg. "It's kind of dewed, here. A rift fir that blocks a steep drop west. [if sap-takeable is true]The past sap you cut from it is lumped on the ground[else]Some past sap clings to it[end if]."
+Cold Loc is north of Seer Trees. It is in Grebeberg. "It's kind of dewed, here. A rift fir blocks a steep drop west. [if sap-takeable is true]The past sap you cut from it is lumped on the ground[else]Some past sap clings to it[end if]."
 
 check going west in Cold Loc: say "The rift fir blocks the way to much more dangerous places, maybe Red Locs Colder or the Splat Alps. Perhaps ski oiks await." instead;
 
@@ -2349,15 +2383,13 @@ A rift fir is scenery in Cold Loc. "It sure is a rife fir. You're not getting pa
 
 chapter past sap
 
-the past sap is scenery in Cold Loc. "[if sap-takeable is true]A good chunk of it is lumped on the ground[else]It's stuck to the rift fir, but with the right tool, maybe you could pry it off[end if]."
+the past sap is semiperipheral scenery in Cold Loc. "[if sap-takeable is true]A good chunk of it is lumped on the ground[else]It's stuck to the rift fir, but with the right tool, maybe you could pry it off[end if]."
 
 check taking past sap: say "[if liar grail is moot]You probably don't need any more past sap, now that you used it to dispose of the Liar Grail.[else]It's too sticky to carry around by itself. Maybe have a container carrying it?[end if]"
 
 instead of taking the past sap: say "It'd get sticky on your fingers. You need some way to carry it."
 
-instead of doing something with past sap:
-	if action is procedural, continue the action;
-	say "[if liar grail is moot]With the liar grail gone, you don't want to have to deal with the past sap again[else]The past sap might be useful, but you [how-take-sap][end if]."
+instead of useoning past sap with an ingredient, say "The past sap isn't edible by itself or with food."
 
 to say how-take-sap:
 	say "might [if puce-ever is true]want to USE the cup to hold it[else]need something to carry it in. It's sticky[end if]"
@@ -2462,6 +2494,10 @@ the gnu dung is scenery in Dumb Mud. description is "You're not an expert in thi
 instead of doing something with gnu dung:
 	if action is pro-and-use, continue the action;
 	say "Eewee! (You probably want to deal with the gnu dung indirectly.)"
+
+instead of smelling gnu dung, say "Not on.";
+
+instead of eating gnu dung, say "Not on.";
 
 chapter turf rut
 
@@ -2587,6 +2623,8 @@ book Ooze Zoo
 
 Ooze Zoo is south of Seer Trees. It is in Grebeberg. "[if sleep eels are in Ooze Zoo]Sleep eels block passage south, but you can still go back north[else]With the sleep eels gone, you can go north, or south to [s-dray][end if]."
 
+check going south in Ooze Zoo: if sleep eels are in Ooze Zoo, say "There are too many eels. It would be inhumane to step on one. Maybe you can give them somewhere else to sleep, or something to sleep on." instead;
+
 chapter sleep eels
 
 the sleep eels are plural-named people in Ooze Zoo. "The sleep eels look comfortable where they are. Maybe you can give them better sleeping quarters.". description is "The sleep eels squirm. Maybe there's a humane way to move them out."
@@ -2685,7 +2723,7 @@ after looking in Mire Rim when player has exam axe:
 
 chapter made dam
 
-the made dam is scenery in Mire Rim. description is "It looks hastily put together, and you're not sure if it's actually protecting any great torrent of water."
+the made dam is scenery in Mire Rim. description is "It looks hastily put together, and you're not sure if it's actually protecting any great torrent of water. It also looks heterogeneous--if there were a way to find if part of the dam were particularly odd or valuable, you could maybe scrape away, there."
 
 instead of attacking made dam, say "You don't want to make it a ... maddened dam."
 
@@ -2902,7 +2940,7 @@ part Yelpley region
 
 book Yawn Way
 
-Yawn Way is east of Fun Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil way, but you can go in all four directions, here: back west to Fun [']Nuf, north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]Emo Dome[else]a dome[end if]."
+Yawn Way is east of Fun Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil Way, but you can go in all four directions, here: back west to Fun [']Nuf, north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]Emo Dome[else]a dome[end if]."
 
 chapter Name ME Man
 
@@ -3041,8 +3079,6 @@ chapter redness ender
 the redness ender is a peripheral thing in Worn Row. "A redness ender sits here, looking lethal. Maybe it's part of why Worn Row is so worn--nobody wants to stick around enough to clean things up, or build anything. But maybe there is a simple way to get rid of it.". description is "It also seems to double as a redness SENDER, as when you get close to look at it, an ominous red dot appears on you. You back off.".
 
 chapter tract cart
-
-the tract cart is scenery in Worn Row.
 
 tract-trace is a truth state that varies.
 
@@ -3569,7 +3605,7 @@ art-free-warn is a truth state that varies.
 
 chapter trap art
 
-some trap art is a thing in Art Xtra. "Some trap art sits here. It's free. You might as well take it.". description is "The trap art depicts a bunch of nasty, dirty animals being trapped--it's not a real trap, but maybe it could become one."
+some trap art is a singular-named thing in Art Xtra. "Some trap art sits here. It's free. You might as well take it.". description is "The trap art depicts a bunch of nasty, dirty animals being trapped--it's not a real trap, but maybe it could become one."
 
 after taking trap art:
 	shuffle-before Art Xtra and Swamp Maws;
@@ -3659,7 +3695,7 @@ chapter DIFF ID
 
 [?? if you have the tattoos and tried going north, we should check those cases]
 
-the DIFF ID is peripheral scenery in Emo Dome. "You can't really look directly into it too much, but it seems like one of those scanners that could pop up a force field, or make a really annoying noise, if you tried to cross it."
+the DIFF ID is semiperipheral scenery in Emo Dome. "You can't really look directly into it too much, but it seems like one of those scanners that could pop up a force field, or make a really annoying noise, if you tried to cross it."
 
 chapter pulluping
 
@@ -3979,7 +4015,7 @@ chapter not-a-baton
 
 The not-a-baton is a thing. description is "It is wood and round and long. It's too long to be a baton, but it's the right shape to be something powerful. It just sort of feels lifeless right now."
 
-understand "not/baton" and "not baton" as not-a-baton.
+understand "not/baton" and "not a/baton" and "not a baton" as not-a-baton.
 [understand "not a baton"  as not-a-baton]
 
 chapter madam
@@ -4067,13 +4103,9 @@ check going nowhere in Dopy Pod: say "Maybe there's a do-prefer pod somewhere, b
 
 chapter cassettes sac
 
-the cassettes sac is a thing in Dopy Pod. "A rather large cassettes sac sits here. It's too dirty to pick up.". description is "Phew! It's too dirty to look at too closely."
+the cassettes sac is a semiperipheral thing in Dopy Pod. "A rather large cassettes sac sits here. It's too dirty to pick up.". description is "Phew! It's too dirty to look at too closely."
 
 understand "casette/casete/cassette/cassetes sac" and "casette/casete/cassette/cassetes" as cassettes sac. [1 is technically not an anagram but it's a plausible misspelling, so we should allow it.]
-
-instead of doing something with cassettes sac:
-	if action is pro-and-use, continue the action;
-	say "The cassettes sac is too messy to do anything with. You need to find a way to clean it up."
 
 after taking demo med:
 	consider the bump-pod rule;
@@ -5338,8 +5370,8 @@ funstuff	mclu	finord	dorule	cluey
 "SLAM MAMMALS around the eels"	false	7	slam-yet rule	"apologize for mammals to the eels"
 "STACK CATS to help the senile felines"	false	8	cats-stacked rule	"help the cats"
 "SEE BEES in Moo Room"	false	9	bees-seen rule	"notice the source of the buzzing in Moo Room"
-"BALM LAB in the Bald Lab"	false	10	balm-yet rule	"get one more item [if Pro Corp is unvisited]from the northwest room after looting it[else]from [Pro Corp][end if]"
-"MUSS OPOSSUM to make a friend"	false	11	muss-yet rule	"be nice to [if Le Babel is visited]an opossum[else]the opossum in Le Babel[end if]"
+"BALM LAB in the Bald Lab"	false	10	balm-yet rule	"get one more item [if Pro Corp is unvisited]from the northeast room[else]from [Pro Corp][end if][if bald-lab is true] after looting it[end if]"
+"MUSS OPOSSUM to make a friend"	false	11	muss-yet rule	"be nice to [if Le Babel is not visited]an opossum somewhere in the future[else]the opossum in Le Babel[end if]"
 [zzllp]
 
 this is the balm-yet rule:
@@ -5634,7 +5666,7 @@ understand "perc" as percing.
 carry out percing:
 	let count be 0;
 	repeat through table of periphery:
-		if itm entry is not peripheral:
+		if itm entry is integral:
 			if itm entry is state tats, next;
 			say "[itm entry] is in periphery table but is not peripheral.";
 			increment count;
