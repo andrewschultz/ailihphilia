@@ -94,7 +94,7 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 270.
+use MAX_VERBS of 280.
 
 section debug compiler globals - not for release
 
@@ -739,7 +739,7 @@ understand "credits" as creditsing.
 showed-sites is a truth state that varies.
 
 carry out creditsing:
-	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in first name alphabetical order: Anssi Raissanen, Brian Rushton, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and gave positive suggestions.[paragraph break]IFComp organizers past and present. Without them, I wouldn't have started and kept going. Whether that's good for gaming is up for debate, but it's been good for me.[paragraph break]Various Python communities, especially StackOverflow, helped me to write utilities that helped not only to extract palindromes but also to tune up Inform code (obligatory thanks to all past and current Inform developers) and run simple tests.";
+	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in alphabetical order: Anssi Raissanen, Brian Rushton, Mike Spivey, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and gave positive suggestions.[paragraph break]IFComp organizers past and present. Without them, I wouldn't have started and kept going. Whether that's good for gaming is up for debate, but it's been good for me.[paragraph break]Various Python communities, especially StackOverflow, helped me to write utilities that helped not only to extract palindromes but also to tune up Inform code (obligatory thanks to all past and current Inform developers, from whom I've stolen game code and/or used extensions) and run simple tests.";
 	if showed-sites is false:
 		now showed-sites is true;
 		say "I also found some websites useful. CREDITS again to see them.";
@@ -1297,7 +1297,7 @@ radar	crag arc	UFO tofu	orc-gone rule	radar-crag rule	true	false	false	Yelpley	"
 Ye Key	etage gate	gate tag	Ned-gone rule	tag-later-wipe rule	true	true	true	Yelpley	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'A hall! Aha! Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paragraph break]A gate tag falls off. You pick it up." [af:Worn Row]
 --	--	--	rev-worn-row rule	--	true	--	--	Yelpley
 stinky knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stinky knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb! You can't resist wearing your flashy new duds."
-Gorge Grog	Butene Tub	resale laser	--	make-sag rule	true	true	true	Yelpley	"The Gorge Grog starts fizzing as it pours down the tub, and nothing seems to happen, until you hear a FOOMP below and the tub starts shaking. There must've been an open spark below the tub. You find it best to hide, and that's the right thing to do, because the butene tub explodes into pieces. Under it is a resale laser! You figure the really good stuff is hidden way back for security reasons, and this is probably just an emergency gadget, but it's got to be good for something."
+Gorge Grog	Butene Tub	resale laser	--	make-sag rule	true	true	true	Yelpley	"The Gorge Grog starts fizzing as it pours down the tub, and nothing seems to happen, until you hear a FOOMP below and the tub starts shaking. There must've been an open spark below the tub, perhaps a noir ion. You find it best to hide, and that's the right thing to do, because the butene tub explodes into pieces. Under it is a resale laser! You figure the really good stuff is hidden way back for security reasons, and this is probably just an emergency gadget, but it's got to be good for something."
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod! You wonder briefly if you deserve to take it, or E there's something wrong with you if you deserve to, but once you hold it, memories of past silliness come back, and they're easier to deal with, now. You have some perspective. You even feel sorry for people who pointed out you were a dork. They'd be barred from an adventure like this. So you keep the dork rod."
 SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	false	false	Grebeberg	"With the help of SOME DEMOS, you manage to rejig the hay into something more aesthetically pleasing: straw arts!"
 straw arts	Revolt Lover	soot tattoos	--	rebump-art-xtra rule	true	true	false	Yelpley	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
@@ -1331,7 +1331,7 @@ you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as th
 Mr Arm	TNT	TNT	--	mob-bye rule	true	true	false	Yelpley	"Mr. Arm walks on his index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. Being an arm, it/he has more leverage than just a DNA hand would've. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course. Perhaps Mr. Arm will find a Do-Bod to be truly complete. The bomb mob, for their part, becomes a poor troop once they see what they've lost."
 nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
 rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	Grebeberg	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'SOS! SOS!' he cries, making a male lam. From his babbling, he's apparently retreating to a glam-amalg in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]The ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
-Bro Orb	Mist Sim	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	"The Bro Orb shines and blinks. The mist sim dissipates under the brutal light. 'Live not on evil, madam, live not on evil!' you boom, as the Orb does its work. Madam looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'You can't catch me! Not with the E-Divide in place!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
+Bro Orb	Mist Sim	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	"The Bro Orb shines and blinks. The mist sim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Madam has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, madam, live not on evil!' you boom, as the Orb does its work. Madam looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'You can't catch me! Not with the E-Divide in place!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Madam."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
 murdered rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
@@ -1693,6 +1693,7 @@ this is the sword-rows-reveal rule:
 	move sword rows to Red Roses Order;
 	moot madam;
 	move E Divide to Red Roses Order;
+	move Sci Pics to Red Roses Order;
 	the rule succeeds;
 
 this is the tag-later-wipe rule:
@@ -1715,6 +1716,7 @@ this is the toons-to-den rule:
 
 this is the totem-out rule:
 	moot ME Totem;
+	moot Yuge Guy;
 	the rule succeeds;
 
 this is the wear-garb rule:
@@ -1725,7 +1727,7 @@ this is the you-win rule: [xxwin]
 	say "The Flee Elf greets you on the other side. 'Deified! Deified!' You ask hesitantly about the new adventures promised.[wfak-d]";
 	say "The X-ITE TIX lead to A REAL WORLD THAT WILL BE MORE EXCITING AFTER YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a circular loop to 'back where you began' non-twist. Books like that always kind of annoyed you, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something. The Flee Elf shakes your hand and pulls out a device. 'This RIDE-DIR will help you return to your own world.'[wfak-d]";
 	say "As you wait, you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered by it?[wfak-d]";
-	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call them? It's a tough call between SOME MEMOS, SAGAS or SOLOS. Hmm, maybe DRAWN INWARD.";
+	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call them? It's a tough call between SOME MEMOS, SAGAS or SOLOS. Hmm, maybe DRAWN INWARD.";
 	end the story finally saying "Darn! Rad!";
 	sort the table of last lousy points in finord order;
 	if in-beta is true, display-dropbox-link;
@@ -1778,6 +1780,7 @@ late petal	"You don't need to do anything with the late petal. Perhaps you could
 link nil	"There's nothing you need behind the Link Nil security system. Some things are better left imagined."
 part strap	"You want to focus on the Verses Rev and not the part strap."
 pool gloop	"Fortunately, you don't need to do anything special to or with the pool gloop."
+Sci Pics	"They are just there to spell out that Madam is not doing things for Yelpley's own good or as a balance to the Yuge Guy."
 spa taps	"The spa taps can't do much. You're not a customer, anyway."
 smirk rims	"The smirk rims are only important if you let them be. In other words, they're not."
 state tats	"You don't need to do anything to or with the state tats, now that you're wearing them."
@@ -1832,6 +1835,120 @@ to later-wipe (th - a thing):
 			continue the action;
 	say "NONCRITICAL bug: I tried to erase an item from the 'do it later' list, but it was never in there. This doesn't affect the game, but I'd like to know about it."
 
+volume accelerator commands
+
+chapter deepspeeding
+
+to decide whether redact-postrule:
+	if deep-speeding is false and revving-over is true, yes;
+	no;
+
+deepspeeding is an action out of world.
+
+deep-speeding is a truth state that varies.
+
+understand the command "deepspeed" as something new.
+
+understand "deepspeed" as deepspeeding.
+
+carry out deepspeeding:
+	abide by the rev-check rule;
+	now deep-speeding is true;
+	say "DEEP SPEEDing to near the end...";
+	try revovering;
+	now deep-speeding is false;
+	the rule succeeds;
+
+chapter revovering
+
+revovering is an action out of world.
+
+understand the command "rev over" as something new.
+
+understand "rev over" as revovering.
+
+global-delay is a number that varies.
+
+score-cheat is a number that varies.
+
+revving-over is a truth state that varies.
+
+this is the rev-check rule:
+	if being-chased is true, say "Oops, that's too much for me to do at once! Either escape or get caught by [the chase-person] first, then we can proceed." instead;
+	if player is in Dirge Grid, say "You're already at the Dirge Grid!" instead;
+	if Dirge Grid is visited, say "Too late! You've already been to the Dirge Grid." instead;
+	if emitted is true and player has ME gem and player has taboo bat, say "You're already near the endgame." instead;
+	continue the action;
+
+carry out revovering:
+	abide by the rev-check rule;
+	if deep-speeding is false, say "Attempting to REV OVER...";
+	now global-delay is 0;
+	let count be 0;
+	now revving-over is true;
+	repeat through table of useons:
+		increment count;
+		if use1 entry is ME gem, break;
+		[say "Rows so far [count - 1], current score [score].";]
+		if there is no use1 entry:
+			consider the preproc entry;
+			if the rule succeeded:
+				increment global-delay;
+				if sco entry is true:
+					increment the score;
+					increment cur-score of reg-plus entry;
+			if global-delay is 5 and deep-speeding is false:
+				if the player yes-consents:
+					do nothing;
+				else:
+					break;
+			next;
+		if there is a getit entry and getit entry is not off-stage and getit entry is not Gorge Grog, next; [the Gorge Grog is already visible. Other items aren't.]
+		if use1 entry is moot or use2 entry is moot, next;
+		increment global-delay;
+		if sco entry is true:
+			increment the score;
+			increment cur-score of reg-plus entry;
+		let u1a be false;
+		let u2a be false;
+		let g1a be false;
+		if the player does not have use1 entry and use1 entry is not a person and use1 entry is not scenery:
+			now u1a is true;
+			now player has use1 entry;
+		if the player does not have use2 entry and use2 entry is not a person and use2 entry is not scenery:
+			if use2 entry is not a workable and use2 entry is not test set and use2 entry is not tame mat: [?? needs a lot more checkoffs here. Otherwise there is inventory overload]
+				now u2a is true;
+				now player has use2 entry;
+		if deep-speeding is false, say "You [if u1a is true](acquire and) [end if]use [the use1 entry] on/with [if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if].";
+		if there is a getit entry, now player has getit entry;
+		if d1 entry is true, moot use1 entry;
+		if d2 entry is true, moot use2 entry;
+		if there is a postproc entry, follow the postproc entry;
+	now revving-over is false;
+	say "Done.";
+	if score > last notified score:
+		say "[bracket]I just gave you [score - last notified score] points to go with your quick trip, because I'm generous like that.[close bracket][paragraph break]";
+		now score-cheat is score-cheat + score - last notified score;
+		now last notified score is score;
+	else:
+		say "There should've been a reject message, or there is a bug in the rev over/deep speed code. If you have a transcript, report the bug at my github site or email me.";
+	follow the notify score changes rule;
+	if test set is moot and player is not in Fun Nuf:
+		say "(Also moving you to Fun [']Nuf for the endgame)[paragraph break]";
+		move player to Fun Nuf, without printing a room description;
+	the rule succeeds;
+
+to say isco:
+	abide by the delay-or-bail rule;
+	increment the score;
+	increment global-delay;
+
+this is the delay-or-bail rule:
+	if global-delay > 0 and remainder after dividing global-delay by 5 is 0:
+		say "REV OVER more?";
+		if the player yes-consents, continue the action;
+		stop the action;
+
 volume rooms
 
 part Dim Mid region
@@ -1858,7 +1975,7 @@ does the player mean doing something with rep popper: it is likely.
 
 chapter Evac Ave
 
-Evac Ave is scenery in Fun Nuf. "Evac Ave leads back to where you were."
+Evac Ave is scenery in Fun Nuf. "Evac Ave leads back to where you came, and your ordinary life--it goes on for a while, and you can't see the end."
 
 instead of entering Evac Ave, try going south.
 
@@ -1990,11 +2107,13 @@ the Darer Ad is a proper-named helpdoc. The player carries the Darer Ad. importa
 
 description of Darer Ad is "No LOL on? SEE, REFER-EES! Do! Nod!"
 
-after examining the Darer Ad for the first time:
-	if Set O Notes is xyet:
+after examining the Darer Ad:
+	if Darer Ad is not xyet and Set O Notes is xyet:
 		say "Well! It was worth reading the Set-O-Notes first.";
-	else:
+	else if Set O Notes is not xyet:
 		say "Well, you need something with a bit more concrete advice. [if player has Set O Notes]Like the Set-O-Notes[else]Maybe you'll find it quickly enough[end if].";
+	else:
+		say "Wow! This is pretty useless compared to the Set O Notes you got later.";
 	continue the action;
 
 chapter Set O Notes
@@ -2200,9 +2319,15 @@ check taking stark rats: say "There are too many, and they'd probably bite you, 
 
 check dropping party trap in Seer Trees: try useoning party trap with stark rats instead;
 
+Include (-
+	has transparent animate
+-) when defining stark rats.
+
+understand "rat" and "stark rat" as stark rats.
+
 chapter gift fig
 
-the gift fig is a solid ingredient. description is "Well, it's a fig."
+the gift fig is a solid ingredient. description is "It looks edible, but it's too small to eat on its own."
 
 chapter Oh Who
 
@@ -2328,7 +2453,7 @@ check going north in Dumb Mud:
 
 chapter gnu dung
 
-the gnu dung is in Dumb Mud. "Gnu dung blocks exit west from the Dumb Mud.". description is "You're not an expert in this sort of biology, but given what you've seen so far, it's probably from a gnu. It's too icky and wide to cross, but it's not too deep."
+the gnu dung is scenery in Dumb Mud. description is "You're not an expert in this sort of biology, but given what you've seen so far, it's probably from a gnu. It's too icky and wide to cross, but it's not too deep."
 
 instead of doing something with gnu dung:
 	if action is pro-and-use, continue the action;
@@ -2852,7 +2977,7 @@ My Gym is south of Yawn Way. It is in Yelpley. "You can go back out north to Yaw
 
 chapter Dave
 
-Dave is a proper-named guhthug in My Gym. initial appearance is "[one of]A fellow walks over to you and booms 'I'M DAVE!' You freeze, and after a few seconds, he whispers, 'Dud.'[or]Dave is here, keeping an eye on you, guarding the passage west.[stopping]". description is "Dave is big and strong and fast."
+Dave is a proper-named guhthug in My Gym. initial appearance is "[one of]A fellow walks over to you and booms 'I'm DAVE!' You freeze, and after a few seconds, he whispers, 'Dud.'[or]Dave is here, keeping an eye on you, guarding the passage west.[stopping]". description is "Dave is big and strong and fast."
 
 instead of doing something with Dave:
 	if action is procedural, continue the action;
@@ -2865,7 +2990,7 @@ chapter wash saw
 
 The wash saw is in My Gym. "A small wash saw [if Dave is moot]lies here[else]is behind Dave[end if].". description of wash saw is "How handy! It can squirt out cleaning fluid or whatever. Useful if something's stuck.".
 
-check taking wash saw when Dave is quicknear: say "Not with Dave around." instead;
+check taking wash saw when Dave is quicknear: say "It's behind Dave, who doesn't seem willing to let you by." instead;
 
 chapter evadeing
 
@@ -2912,7 +3037,7 @@ the tract cart is scenery in Worn Row.
 tract-trace is a truth state that varies.
 
 to say tract-status:
-	say "[if number of books in Worn Row is 1]almost empty[else if number of books in Worn Row is 0]holding no books[else]holding a few books[end if]"
+	say "[if number of necessary books in Worn Row is 1]almost empty[else if number of necessary books in Worn Row is 0]holding no books[else]holding a few books[end if]"
 
 definition: a book (called bo) is sober:
 	if bo is DWELT LEWD, no;
@@ -3027,8 +3152,10 @@ section reiing
 reiing is an action applying to one thing.
 
 understand the command "rei" as something new.
+understand the command "reify" as something new.
 
 understand "rei [something]" as reiing when player is in Worn Row and reifier is not off-stage and ever-workrow is true.
+understand "reify [something]" as reiing when player is in Worn Row and reifier is not off-stage and ever-workrow is true.
 
 carry out reiing:
 	if reifier is not in Worn Row, say "You need to bring back Work Row." instead;
@@ -3039,8 +3166,10 @@ section reving
 reving is an action applying to one thing.
 
 understand the command "rev" as something new.
+understand the command "revive" as something new.
 
 understand "rev [something]" as reving when player is in Worn Row and reviver is not off-stage and ever-workrow is true.
+understand "revive [something]" as reving when player is in Worn Row and reviver is not off-stage and ever-workrow is true.
 
 carry out reving:
 	if reviver is not in Worn Row, say "You need to bring back Work Row." instead;
@@ -3051,8 +3180,10 @@ section roting
 roting is an action applying to one thing.
 
 understand the command "rot" as something new.
+understand the command "rotate" as something new.
 
 understand "rot [something]" as roting when player is in Worn Row and rotator is not off-stage and ever-workrow is true.
+understand "rotate [something]" as roting when player is in Worn Row and rotator is not off-stage and ever-workrow is true.
 
 carry out roting:
 	if reifier is not in Worn Row, say "You need to bring back Word Row." instead;
@@ -3188,7 +3319,7 @@ check taking a book:
 		add noun to multiple object list;
 	if player has noun, continue the action;
 	if books-carried-yet is false:
-		say "Oof! a bit heavy, but after working out in My Gym, it's not TOO unwieldy.";
+		say "Oof! a bit heavy and bulky, but after working out in My Gym, you can just about juggle it.";
 		now books-carried-yet is true;
 	else:
 		if number of books carried by player is 1:
@@ -3197,10 +3328,12 @@ check taking a book:
 			now myb is in Worn Row;
 		else:
 			say "It's a bit unwieldy, but you manage to pick up [noun].";
+	consider the book-took rule;
 	now player has noun instead;
 
-report taking a book:
-	if number of moot books is 2 and SOME DEMOS is off-stage:
+this is the book-took rule:
+	if debug-state is true, say "[number of moot books] [list of moot books].";
+	if number of moot books > 1 and SOME DEMOS is off-stage:
 		say "As you pick up [noun], something else falls out. It's a smaller pamphlet, called SOME DEMOS. You pick it up.";
 		now player has SOME DEMOS;
 		now SOME DEMOS is in-row;
@@ -3457,7 +3590,7 @@ carry out traping:
 
 chapter Revolt Lover
 
-the Revolt Lover is a neuter person in Art Xtra. "[one of]'Hi! I'm the Revolt Lover. Business is slow here, but I still have a few freebies. If you're able to use them, I'd be willing to trade for more.'[or]The Revolt Lover smiles at you.[stopping]". description is "Artsy looking, but not pretentiously hipster-ish.".
+the Revolt Lover is a neuter person in Art Xtra. "[one of]'Hi! I'm the Revolt Lover. Business is slow here, but I still have a few freebies. If you're able to use them, I'd be willing to trade for more.'[or]The Revolt Lover [one of]smiles[or]nods[or]winks[at random] at you.[stopping]". description is "Artsy looking, but not pretentiously hipster-ish.".
 
 chapter state tats
 
@@ -3700,7 +3833,7 @@ chapter bunk nub
 the bunk nub is a thing in Evaded Ave. "A small bunk nub lies [if Door Frood is in Evaded Ave]behind the Door Frood[else]around for the taking[end if].". description is "It's small, so an actual person couldn't sleep on it. Perhaps it was once part of a larger debt bed."
 
 check taking bunk nub:
-	if Door Frood is in Evaded Ave, say "The Door Frood won't let you." instead;
+	if Door Frood is in Evaded Ave, say "The Door Frood blocks you. 'Well, maybe, if you get something interesting for me, first...'" instead;
 
 the stock cots are a plural-named thing. description is "The stock cots are cut cleverly from the remains of the bunk nub. They'll make a great place to sleep for any number of small animals."
 
@@ -3805,7 +3938,7 @@ instead of doing something with TNT when bomb mob has TNT:
 
 chapter TNT
 
-TNT is a tronpart. description is "Well, it's not going to blow up in your hands.".
+TNT is a tronpart. description is "Well, it's not going to blow up in your hands.". the bomb mob carries the TNT.
 
 check taking TNT: say "The bomb mob would say a bit more than 'Yank? Nay!' You'd be seen too easily." instead;
 
@@ -3845,6 +3978,10 @@ chapter yard ray
 the yard ray is a thing. description is "It looks pretty lethal. It's no dinky resale laser![paragraph break]There are also has instructions: EMIT ********.[paragraph break]It's currently [if murdered rum is moot]loaded with energy from the murdered rum[else]empty of fuel[end if]."
 
 does the player mean useoning with the Set O Notes: it is unlikely.
+
+chapter Sci Pics
+
+the Sci Pics are plural-named peripheral scenery in Red Roses Order. "They detail the relationship between Madam, the Yuge Guy and the Diktat Kid. You see the three of them dining and laughing together, which must be the soft sciences, along with Madam helping the Diktat Kid to build some huge, weird, disturbing machines. They are unnamed."
 
 chapter E-Divide
 
@@ -4930,7 +5067,7 @@ this is the worn-row rule:
 	if ever-workrow is false, say "You can change this place to WORK ROW." instead;
 	if Worn Row is worny, say "You can change Worn Row back to WORK ROW[if any-books-left] or WORD ROW[end if]." instead;
 	if Worn Row is wordy:
-		if number of not necessary books in Worn Row > 0:
+		if number of necessary books in Worn Row > 0:
 			say "You'll need to use all the books eventually[if DWELT LEWD is not off-stage], except DWELT LEWD. [one of]AID again to see which book is probably next[or][stopping]." instead;
 		say "You don't have anything more to do in Word Row. Change it back to Work Row." instead;
 	if rotator is in Worn Row, abide by the find-machine rule;
@@ -5235,6 +5372,7 @@ volume beta testing - not for release
 
 when play begins:
 	now in-beta is true;
+	say "(DEBUG ONLY NOTE: in-beta is true.)[paragraph break]";
 
 check quitting the game:
 	display-dropbox-link;
@@ -5362,118 +5500,6 @@ understand "per" as pering.
 carry out pering:
 	say "Peripheral things: [list of peripheral things].";
 	the rule succeeds;
-
-chapter deepspeeding
-
-to decide whether redact-postrule:
-	if deep-speeding is false and revving-over is true, yes;
-	no;
-
-deepspeeding is an action out of world.
-
-deep-speeding is a truth state that varies.
-
-understand the command "deepspeed" as something new.
-
-understand "deepspeed" as deepspeeding.
-
-carry out deepspeeding:
-	abide by the rev-check rule;
-	now deep-speeding is true;
-	say "DEEP SPEEDing to near the end...";
-	try revovering;
-	now deep-speeding is false;
-	the rule succeeds;
-
-chapter revovering
-
-revovering is an action out of world.
-
-understand the command "rev over" as something new.
-
-understand "rev over" as revovering.
-
-global-delay is a number that varies.
-
-score-cheat is a number that varies.
-
-revving-over is a truth state that varies.
-
-this is the rev-check rule:
-	if being-chased is true, say "Oops, that's too much for me to do at once! Either escape or get caught by [the chase-person] first, then we can proceed." instead;
-	if player is in Dirge Grid, say "You're already at the Dirge Grid!" instead;
-	if Dirge Grid is visited, say "Too late! You've already been to the Dirge Grid." instead;
-	if emitted is true and player has ME gem and player has taboo bat, say "You're already near the endgame." instead;
-	continue the action;
-
-carry out revovering:
-	abide by the rev-check rule;
-	if deep-speeding is false, say "Attempting to REV OVER...";
-	now global-delay is 0;
-	let count be 0;
-	now revving-over is true;
-	repeat through table of useons:
-		increment count;
-		if use1 entry is ME gem, break;
-		[say "Rows so far [count - 1], current score [score].";]
-		if there is no use1 entry:
-			consider the preproc entry;
-			if the rule succeeded:
-				increment global-delay;
-				if sco entry is true:
-					increment the score;
-					increment cur-score of reg-plus entry;
-			if global-delay is 5 and deep-speeding is false:
-				if the player yes-consents:
-					do nothing;
-				else:
-					break;
-			next;
-		if there is a getit entry and getit entry is not off-stage and getit entry is not Gorge Grog, next; [the Gorge Grog is already visible. Other items aren't.]
-		if use1 entry is moot or use2 entry is moot, next;
-		increment global-delay;
-		if sco entry is true:
-			increment the score;
-			increment cur-score of reg-plus entry;
-		let u1a be false;
-		let u2a be false;
-		let g1a be false;
-		if the player does not have use1 entry and use1 entry is not a person and use1 entry is not scenery:
-			now u1a is true;
-			now player has use1 entry;
-		if the player does not have use2 entry and use2 entry is not a person and use2 entry is not scenery:
-			if use2 entry is not a workable and use2 entry is not test set and use2 entry is not tame mat: [?? needs a lot more checkoffs here. Otherwise there is inventory overload]
-				now u2a is true;
-				now player has use2 entry;
-		if deep-speeding is false, say "You [if u1a is true](acquire and) [end if]use [the use1 entry] on/with [if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if].";
-		if there is a getit entry, now player has getit entry;
-		if d1 entry is true, moot use1 entry;
-		if d2 entry is true, moot use2 entry;
-		if there is a postproc entry, follow the postproc entry;
-	now revving-over is false;
-	say "Done.";
-	if score > last notified score:
-		say "[bracket]I just gave you [score - last notified score] points to go with your quick trip, because I'm generous like that.[close bracket][paragraph break]";
-		now score-cheat is score-cheat + score - last notified score;
-		now last notified score is score;
-	else:
-		say "There should've been a reject message, or there is a bug in the rev over/deep speed code. If you have a transcript, report the bug at my github site or email me.";
-	follow the notify score changes rule;
-	if test set is moot and player is not in Fun Nuf:
-		say "(Also moving you to Fun [']Nuf for the endgame)[paragraph break]";
-		move player to Fun Nuf, without printing a room description;
-	the rule succeeds;
-
-to say isco:
-	abide by the delay-or-bail rule;
-	increment the score;
-	increment global-delay;
-
-this is the delay-or-bail rule:
-	if global-delay > 0 and remainder after dividing global-delay by 5 is 0:
-		say "REV OVER more?";
-		if the player yes-consents, continue the action;
-		stop the action;
 
 volume internal testing - not for release
 
