@@ -1575,6 +1575,7 @@ this is the bump-gulf rule:
 	the rule succeeds;
 
 this is the bump-maws rule:
+	moot mist sim;
 	shuffle-before Dumb Mud and Le Babel;
 	shuffle-before Swamp Maws and Dumb Mud;
 	the rule succeeds;
@@ -1795,6 +1796,7 @@ Oh Who	"Oh Who is just there to list all the people you may be helping. Like mos
 Name ME Man	"NAME ME MAN is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting, but it's there."
 gash sag	"You don't want to mess with the gash sag. Destroying the butene tub is damage enough."
 x-it stix	"No way you're getting through the X-It Stix."
+mist sim	"You don't have anything that would dispel the mist sim."
 cassettes sac	"The cassettes sac is too messy to do anything with. You need to find a way to clean it up."
 girt rig	"The girt rig is too sturdy to move. But then, there's even sleazier stuff beyond it."
 redness ender	"You don't want to do anything crazy with the Redness Ender. You don't want to go near it. It's dangerous looking. You can picture it ambushing someone who doesn't expect it."
@@ -2816,19 +2818,25 @@ book Swamp Maws
 
 Swamp Maws is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west, and storm rots block your way east. You can go [if Known Wonk is moot]north and [end if]south here[if Known Wonk is moot]. The Known Wonk's Tru-Yurt is here. It looks really messy[end if]."
 
-check going north in Swamp Maws when Known Wonk is in Swamp Maws: say "The Known Wonk pushes you back. 'You don't know how weird it is to the north. But I know a thing or two about adventuring theory.'" instead;
+check going north in Swamp Maws when mist sim is in Swamp Maws: say "The Known Wonk pushes you back. 'You don't know how weird it is to the north, especially beyond that mist sim! It's potentially WORSE than normal mist! But I know a thing or two about adventuring... well, adventuring theory. And I can tell you, boy oh boy, there are risks.'[paragraph break]The Known Wonk lists a few. You don't know if the Known Wonk believes all this. But you can't refute it, and you do have a nagging worry." instead;
 
 check going west in Swamp Maws: say "The edits tide [if el doodle is moot]was more useful to help reconfigure El Doodle[else]is probably better for something edit-able[end if]." instead;
 
 check going east in Swamp Maws: say "You don't want or need to have anything to do with the storm rots." instead;
 
+chapter Known Wonk
+
+The Known Wonk is a neuter person in Swamp Maws. "The Known Wonk stands by a Tru Yurt, babbling about ... well, lots of smart sounding things.". description is "Not particularly disheveled, but then, not terribly charismatic. The Known Wonk seems lost in more esoteric matters than helping you figure how to save Grebeberg and Yelpley."
+
+chapter mist sim
+
+the mist sim is semiperipheral scenery in Swamp Maws. "It's blocking your way north, and it doesn't look dangerous, but you never know. You're new here, after all."
+
+check entering mist sim: try going north instead;
+
 chapter storm rots
 
 the storm rots are plural-named peripheral scenery in Swamp Maws. "Euugh. You don't want to go anywhere near them."
-
-chapter Known Wonk
-
-The Known Wonk is a neuter person in Swamp Maws. "The Known Wonk stands by a Tru Yurt, blocking the way north and [one of]figuring you'll have to do, even though you're not as interesting as a book[or]gesturing intellectually and stuff[stopping].". description is "Not particularly disheveled, but then, not terribly charismatic. The Known Wonk seems lost in more esoteric matters than helping you figure how to save Grebeberg and Yelpley."
 
 chapter  Exam Axe
 
