@@ -243,11 +243,11 @@ book Lair Trial
 
 book Le Babel
 
-book Mire Rim
+book Swamp Maws
 
-understand "swami maws" and "swamy maws" as a mistake ("They can't quite be. The Known Wonk's knowledge is not universal enough.[mis of 131]") when player is in Mire Rim.
+understand "swami maws" and "swamy maws" as a mistake ("They can't quite be. The Known Wonk's knowledge is not universal enough.[mis of 131]") when player is in Swamp Maws.
 
-understand "swam maws" as a mistake ("Perhaps someone has, but you don't need to.[mis of 132]") when player is in Mire Rim.
+understand "swam maws" as a mistake ("Perhaps someone has, but you don't need to.[mis of 132]") when player is in Swamp Maws.
 
 chapter eroded ore
 

@@ -946,7 +946,7 @@ instead of smelling location of player:
 	if stinky knits are quicknear, try smelling stinky knits instead;
 	if player is in Flu Gulf, try smelling mush sum instead;
 	if player is in Emo Dome or player is in Red Roses Order, say "Roses ... or ..." instead;
-	if player is in Yack Cay or player is in Mire Rim, say "A morass aroma." instead;
+	if player is in Yack Cay or player is in Swamp Maws, say "A morass aroma." instead;
 	if y-poopy, say "Whew! The gnu dung [if gnu dung is moot]in the poo coop[end if] is worse than an emu fume!" instead;
 	if player has dork rod, try smelling dork rod instead;
 	if troll ort is quicknear, try smelling troll ort instead;
@@ -2711,20 +2711,20 @@ chapter moor broom
 
 the moor broom is a thing. description is "It's made of that enact came amd the yahoo hay, and just looking at it, you feel almost excited about cleaning."
 
-book Mire Rim
+book Swamp Maws
 
-Mire Rim is west of Dumb Mud. It is in Grebeberg. "A made dam blocks your way west. You can go north, south and east here."
+Swamp Maws is west of Dumb Mud. It is in Grebeberg. "A made dam blocks your way west. You can go north, south and east here."
 
 crib-clue is a truth state that varies.
 
-after looking in Mire Rim when player has exam axe:
+after looking in Swamp Maws when player has exam axe:
 	say "You notice that the den to the south looks a bit different. Something's been growing there. Maybe you should check it out.";
 	now crib-clue is true;
 	continue the action;
 
 chapter made dam
 
-the made dam is scenery in Mire Rim. description is "It looks hastily put together, and you're not sure if it's actually protecting any great torrent of water. It also looks heterogeneous--if there were a way to find if part of the dam were particularly odd or valuable, you could maybe scrape away, there."
+the made dam is scenery in Swamp Maws. description is "It looks hastily put together, and you're not sure if it's actually protecting any great torrent of water. It also looks heterogeneous--if there were a way to find if part of the dam were particularly odd or valuable, you could maybe scrape away, there."
 
 instead of attacking made dam, say "You don't want to make it a ... maddened dam."
 
@@ -2734,7 +2734,7 @@ some Eroded Ore is a thing. description is "You're no expert metallurgist, but i
 
 book Den Ivy Vined
 
-Den Ivy Vined is south of Mire Rim. It is in Grebeberg. "This is a homey little north-south passage, [if tent net is moot]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet. Having some sort of roof might make it even homier[end if][if-porch]."
+Den Ivy Vined is south of Swamp Maws. It is in Grebeberg. "This is a homey little north-south passage, [if tent net is moot]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet. Having some sort of roof might make it even homier[end if][if-porch]."
 
 printed name of Den Ivy Vined is "[if tent net is moot]Den, Ivy-Vined[else]All-Ivy Villa[end if]".
 
@@ -2815,7 +2815,7 @@ check useoning tenet with Bro Orb: try taking Bro Orb instead;
 
 book Yack Cay
 
-Yack Cay is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west, and storm rots block your way east. You can go [if Known Wonk is moot]north and [end if]south here[if Known Wonk is moot]. The Known Wonk's Tru-Yurt is here. It looks really messy[end if]."
+Yack Cay is north of Swamp Maws. It is in Grebeberg. "An edits tide blocks your way west, and storm rots block your way east. You can go [if Known Wonk is moot]north and [end if]south here[if Known Wonk is moot]. The Known Wonk's Tru-Yurt is here. It looks really messy[end if]."
 
 check going north in Yack Cay when mist sim is in Yack Cay: say "The Known Wonk pushes you back. 'You don't know how weird it is to the north, especially beyond that mist sim! It's potentially WORSE than normal mist! But I know a thing or two about adventuring... well, adventuring theory. And I can tell you, boy oh boy, there are risks.'[paragraph break]The Known Wonk lists a few. You don't know if the Known Wonk believes all this. But you can't refute it, and you do have a nagging worry." instead;
 
@@ -4244,7 +4244,7 @@ loc-num of Apse Spa is 13.
 loc-num of Art Xtra is 14.
 loc-num of Red Roses Order is 15.
 loc-num of Gross Org is 16.
-loc-num of Mire Rim is 20.
+loc-num of Swamp Maws is 20.
 loc-num of Dumb Mud is 21.
 loc-num of Seer Trees is 22.
 loc-num of Fun Nuf is 23.
@@ -4432,7 +4432,7 @@ this is the gate-gone rule:
 	if etage gate is moot, the rule succeeds;
 	the rule fails;
 
-avail-rule of Mire Rim is dung-gone rule.
+avail-rule of Swamp Maws is dung-gone rule.
 avail-rule of Yack Cay is dung-gone rule.
 avail-rule of Den Ivy Vined is dung-gone rule.
 avail-rule of Trial Lair is dung-gone rule.
@@ -4609,7 +4609,7 @@ to hint-bump-worn:
 
 [this is the list of how I do things in the walkthrough.]
 
-L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Moo Room, Dumb Mud, Mire Rim, Yack Cay, Calcific Lac, Den Ivy Vined, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
+L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Moo Room, Dumb Mud, Swamp Maws, Yack Cay, Calcific Lac, Den Ivy Vined, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
 
 [?? nothing game-critical to do here = if there is a LLP]
 
@@ -4720,7 +4720,7 @@ done-rule of Fun Nuf is fun-nuf rule.
 done-rule of Gross Org is gross-org rule.
 done-rule of Lair Trial is lair-trial rule.
 done-rule of Le Babel is le-babel rule.
-done-rule of Mire Rim is mire-rim rule.
+done-rule of Swamp Maws is swamp-maws rule.
 done-rule of Mont Nom is mont-nom rule.
 done-rule of Moo Room is moo-room rule.
 done-rule of Motto Bottom is motto-bottom rule.
@@ -4973,9 +4973,9 @@ this is the le-babel rule:
 	if player does not have tenet, say "You need something to help you take the Bro Orb. It's in [if Motto Bottom is visited]a place you haven't visited yet[else]Motto Bottom[end if]." instead;
 	say "All you really have to do here is take the Bro Orb." instead;
 
-section Mire Rim rule
+section Swamp Maws rule
 
-this is the mire-rim rule:
+this is the swamp-maws rule:
 	unless eroded ore is off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if player does not have radar, say "There's something important behind the made dam, but you don't have the tool to detect it, yet." instead;
