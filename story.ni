@@ -122,7 +122,7 @@ carry out looking (this is the change default appearance for blank rooms rule):
 
 chapter for (beta) testers
 
-[these are variables that are not used in the final release, but often, they have to be defined in the release, because major verbs use them.]
+[these are variables that are not used in the final release, but often, they have to be defined in the release, because major verbs use them for debugging purposes.]
 
 LLP-reject is a truth state that varies. [for my own tests: walkthrough with LLPs and without]
 
@@ -139,15 +139,9 @@ to display-dropbox-link:
 
 volume i6 modification(s)
 
-section processing not considering
-
-[thanks to climbingstars https://www.intfiction.org/forum/viewtopic.php?p=41700]
-
-To process (RL - a rule): (- ProcessRulebook({RL}, 0, true); -)
-
 section something dramatic has happened bug
 
-[this is to fix GET ALL in Emo Dome when there is only 1 thing to get. It appears to be a bug in the core.]
+[this is to fix GET ALL in Emo Dome when there is only 1 thing to get. It appears to be a bug in the core, fixed in later versions of Inform.]
 
 Include (-
 
@@ -1355,7 +1349,7 @@ you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as th
 Mr Arm	TNT	TNT	--	mob-bye rule	true	true	false	Yelpley	"Mr. Arm walks on his index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. Being an arm, it/he has more leverage than just a DNA hand would've. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course. Perhaps Mr. Arm will find a Do-Bod to be truly complete. The bomb mob, for their part, becomes a poor troop once they see what they've lost."
 nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
 rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	Grebeberg	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'SOS! SOS!' he cries, making a male lam. From his babbling, he's apparently retreating to a glam-amalg in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]The ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
-Bro Orb	Mist Sim	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	"The Bro Orb shines and blinks. The mist sim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Madam has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, madam, live not on evil!' you boom, as the Orb does its work. Madam looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'You can't catch me! Not with the E-Divide in place!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
+Bro Orb	Mirror Rim	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	"The Bro Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Madam has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, madam, live not on evil!' you boom, as the Orb does its work. Madam looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'You can't catch me! Not with the E-Divide in place!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Madam."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
 murdered rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
@@ -4005,13 +3999,13 @@ check taking TNT: say "The bomb mob would say a bit more than 'Yank? Nay!' You'd
 
 book Red Roses Order
 
-Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in Red Roses Order]The only visible way back is south, with a mist sim blocking the other directions and seeming very threatening and oppressive indeed, but you can't chicken out[else]Sword rows have been revealed once the mist sim dispersed. The E-Divide flickers and guards the way north where Madam left. You can go back south[end if]."
+Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in Red Roses Order]The only visible way back is south, with a Mirror Rim blocking the other directions and seeming very threatening and oppressive indeed, but you can't chicken out[else]Sword rows have been revealed once the Mirror Rim dispersed. The E-Divide flickers and guards the way north where Madam left. You can go back south[end if]."
 
 Red Roses Order is above Emo Dome.
 
-chapter mist sim
+chapter Mirror Rim
 
-the mist sim is scenery in Red Roses Order. "You can't see through it, and you have a feeling it may be fake, but what if it isn't? If only there was a way to dispel it..."
+the Mirror Rim is scenery in Red Roses Order. "You can't see through it, and you have a feeling it may be fake, but what if it isn't? If only there was a way to dispel it..."
 
 chapter sword rows
 

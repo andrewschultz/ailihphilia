@@ -465,19 +465,19 @@ to say mis of (n - a number):
 		now entry N in checkoffs is true;
 		increment mist-found;
 		if mist-found is 1:
-			say "[paragraph break](NOTE: this was a specific reject for a good try. For the most part, you don't need to riff on anything after the pact cap, but enough good guesses will tell you how to get secret points.)";
+			say "[paragraph break](NOTE: this was a specific reject for a good try. For the most part, you don't need to riff on any item after the pact cap, but enough good guesses will tell you how to get secret points.)[run paragraph on][line break]";
 			continue the action;
 		if the remainder after dividing mist-found by hint-every-x is 0:
 			while cur-LLP-hint-row < number of rows in table of last lousy points:
 				increment cur-LLP-hint-row;
 				choose row cur-LLP-hint-row in table of last lousy points;
-				consider the dorule entry;
+				process the dorule entry;
 				if the rule failed:
-					say "[paragraph break]A voice from behind the fourth wall whispers: [i][cluey entry][r].";
+					say "[paragraph break]A voice from behind the fourth wall whispers: [i][cluey entry][r].[if mis-yet is true][run paragraph on][end if]";
 					now mclu entry is true;
 					if mis-yet is false:
 						now mis-yet is true;
-						say "[paragraph break]NOTE: THINK[if refer-bonus is true]/REFER[end if] will show you the LLPs clued so far that you haven't figured, yet.[run paragraph on][line break]";
+						say "[line break]NOTE: THINK[if refer-bonus is true]/REFER[end if] will show you the LLPs clued so far that you haven't figured, yet.[run paragraph on][line break]";
 					continue the action;
 
 volume old school verbs

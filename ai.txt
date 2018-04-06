@@ -481,7 +481,8 @@ USE ELAN ALE ON SNIFFINS.
 ?How do I defeat Madam?
 You can't get in if you don't have what you need.
 Something that's the opposite of her.
-USE BRO ORB ON MIST SIM.
+But you can't use the orb on her. It wouldn't magnify enough.
+USE BRO ORB ON MIRROR RIM.
 ?What are the sword rows for for?
 Well, there's one thing that needs to be carved.
 USE BALSA SLAB ON SWORD ROWS.
@@ -538,7 +539,7 @@ There are 37 total points in Yelpley.
 1 point if you USE ERODED ORE ON REVIVER.
 1 point if you USE YOU BUOY ON ROTATOR.
 1 point if you USE MR ARM ON TNT.
-1 point if you USE BRO ORB ON MIST SIM.
+1 point if you USE BRO ORB ON MIRROR RIM.
 1 point if you USE NOT-A-BATON ON REIFIER.
 1 point if you USE BALSA SLAB ON SWORD ROWS.
 ?How do I get all the points for Grebeberg?

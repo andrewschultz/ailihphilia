@@ -357,7 +357,7 @@ Now with all the junk we have, we can make non-junk.
 
 >E.S.S.E.E.E.N
 
-(+1) >USE BRO ORB ON MIST SIM
+(+1) >USE BRO ORB ON MIRROR RIM
 
 (+1) >USE BALSA SLAB ON SWORD ROWS
 
