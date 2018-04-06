@@ -245,6 +245,10 @@ book Le Babel
 
 book Mire Rim
 
+understand "swami maws" and "swamy maws" as a mistake ("They can't quite be. The Known Wonk's knowledge is not universal enough.[mis of 131]") when player is in Mire Rim.
+
+understand "swam maws" as a mistake ("Perhaps someone has, but you don't need to.[mis of 132]") when player is in Mire Rim.
+
 chapter eroded ore
 
 understand "eros ore" as a mistake ("I don't even want to know what you're trying to do, there.[mis of 83]") when eroded ore is quicknear.
@@ -371,11 +375,7 @@ understand "gi fig" as a mistake ("No violence, here![mis of 130]") when gift fi
 
 book Sneer Greens
 
-book Swamp Maws
-
-understand "swami maws" and "swamy maws" as a mistake ("They can't quite be. The Known Wonk's knowledge is not universal enough.[mis of 131]") when player is in Swamp Maws.
-
-understand "swam maws" as a mistake ("Perhaps someone has, but you don't need to.[mis of 132]") when player is in Swamp Maws.
+book Yack Cay
 
 understand "share rahs" as a mistake ("You're on this quest by yourself.[mis of 133]") when sharp rahs are quicknear.
 
@@ -383,11 +383,11 @@ understand "shark rahs" as a mistake ("You don't want to alert any land sharks.[
 
 understand "shard rahs" as a mistake ("The rahs are on paper, and besides, they might be useful.[mis of 135]") when sharp rahs are quicknear.
 
-understand "story rots" as a mistake ("No, the storm rots help keep you focused on the story. They aren't blocking anything. Or good for anything.[mis of 136]") when player is in Swamp Maws.
+understand "story rots" as a mistake ("No, the storm rots help keep you focused on the story. They aren't blocking anything. Or good for anything.[mis of 136]") when player is in Yack Cay.
 
-understand "stork rots" as a mistake ("You don't want to know what sort of carcasses are buried in the swamp.[mis of 137]") when player is in Swamp Maws.
+understand "stork rots" as a mistake ("You don't want to know what sort of carcasses are buried in the swamp.[mis of 137]") when player is in Yack Cay.
 
-understand "store rots" as a mistake ("You don't need to buy anything in this game, and any store wouldn't sell anything good.[mis of 138]") when player is in Swamp Maws.
+understand "store rots" as a mistake ("You don't need to buy anything in this game, and any store wouldn't sell anything good.[mis of 138]") when player is in Yack Cay.
 
 book Swept Pews
 

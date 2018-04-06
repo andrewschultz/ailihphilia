@@ -587,7 +587,7 @@ stuck-rule of Gross Org is gross-org-stuck rule.
 stuck-rule of Lair Trial is lair-trial-stuck rule.
 stuck-rule of Ooze Zoo is ooze-zoo-stuck rule.
 stuck-rule of Seer Trees is seer-trees-stuck rule.
-stuck-rule of Swamp Maws is swamp-maws-stuck rule.
+stuck-rule of Yack Cay is yack-cay-stuck rule.
 stuck-rule of Swept Pews is swept-pews-stuck rule.
 stuck-rule of Toll Lot is toll-lot-stuck rule.
 stuck-rule of Yawn Way is yawn-way-stuck rule.
@@ -657,9 +657,9 @@ this is the seer-trees-stuck rule:
 	say "You need a way past the stark rats [hn of Seer Trees].";
 	the rule succeeds;
 
-this is the swamp-maws-stuck rule:
+this is the yack-cay-stuck rule:
 	if NULL ILLUN is moot, the rule succeeds;
-	say "You need to figure a way to help the Known Wonk [hn of Swamp Maws].";
+	say "You need to figure a way to help the Known Wonk [hn of Yack Cay].";
 	the rule succeeds;
 
 this is the swept-pews-stuck rule:
@@ -946,7 +946,7 @@ instead of smelling location of player:
 	if stinky knits are quicknear, try smelling stinky knits instead;
 	if player is in Flu Gulf, try smelling mush sum instead;
 	if player is in Emo Dome or player is in Red Roses Order, say "Roses ... or ..." instead;
-	if player is in Swamp Maws or player is in Mire Rim, say "A morass aroma." instead;
+	if player is in Yack Cay or player is in Mire Rim, say "A morass aroma." instead;
 	if y-poopy, say "Whew! The gnu dung [if gnu dung is moot]in the poo coop[end if] is worse than an emu fume!" instead;
 	if player has dork rod, try smelling dork rod instead;
 	if troll ort is quicknear, try smelling troll ort instead;
@@ -1577,7 +1577,7 @@ this is the bump-gulf rule:
 this is the bump-maws rule:
 	moot mist sim;
 	shuffle-before Dumb Mud and Le Babel;
-	shuffle-before Swamp Maws and Dumb Mud;
+	shuffle-before Yack Cay and Dumb Mud;
 	the rule succeeds;
 
 this is the bump-pod rule:
@@ -2813,29 +2813,29 @@ The tenet is a thing. description is "It seems a bit too cliche, but you have th
 
 check useoning tenet with Bro Orb: try taking Bro Orb instead;
 
-book Swamp Maws
+book Yack Cay
 
-Swamp Maws is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west, and storm rots block your way east. You can go [if Known Wonk is moot]north and [end if]south here[if Known Wonk is moot]. The Known Wonk's Tru-Yurt is here. It looks really messy[end if]."
+Yack Cay is north of Mire Rim. It is in Grebeberg. "An edits tide blocks your way west, and storm rots block your way east. You can go [if Known Wonk is moot]north and [end if]south here[if Known Wonk is moot]. The Known Wonk's Tru-Yurt is here. It looks really messy[end if]."
 
-check going north in Swamp Maws when mist sim is in Swamp Maws: say "The Known Wonk pushes you back. 'You don't know how weird it is to the north, especially beyond that mist sim! It's potentially WORSE than normal mist! But I know a thing or two about adventuring... well, adventuring theory. And I can tell you, boy oh boy, there are risks.'[paragraph break]The Known Wonk lists a few. You don't know if the Known Wonk believes all this. But you can't refute it, and you do have a nagging worry." instead;
+check going north in Yack Cay when mist sim is in Yack Cay: say "The Known Wonk pushes you back. 'You don't know how weird it is to the north, especially beyond that mist sim! It's potentially WORSE than normal mist! But I know a thing or two about adventuring... well, adventuring theory. And I can tell you, boy oh boy, there are risks.'[paragraph break]The Known Wonk lists a few. You don't know if the Known Wonk believes all this. But you can't refute it, and you do have a nagging worry." instead;
 
-check going west in Swamp Maws: say "The edits tide [if el doodle is moot]was more useful to help reconfigure El Doodle[else]is probably better for something edit-able[end if]." instead;
+check going west in Yack Cay: say "The edits tide [if el doodle is moot]was more useful to help reconfigure El Doodle[else]is probably better for something edit-able[end if]." instead;
 
-check going east in Swamp Maws: say "You don't want or need to have anything to do with the storm rots." instead;
+check going east in Yack Cay: say "You don't want or need to have anything to do with the storm rots." instead;
 
 chapter Known Wonk
 
-The Known Wonk is a neuter person in Swamp Maws. "The Known Wonk stands by a Tru Yurt, babbling about ... well, lots of smart sounding things.". description is "Not particularly disheveled, but then, not terribly charismatic. The Known Wonk seems lost in more esoteric matters than helping you figure how to save Grebeberg and Yelpley."
+The Known Wonk is a neuter person in Yack Cay. "The Known Wonk stands by a Tru Yurt, babbling about ... well, lots of smart sounding things.". description is "Not particularly disheveled, but then, not terribly charismatic. The Known Wonk seems lost in more esoteric matters than helping you figure how to save Grebeberg and Yelpley."
 
 chapter mist sim
 
-the mist sim is semiperipheral scenery in Swamp Maws. "It's blocking your way north, and it doesn't look dangerous, but you never know. You're new here, after all."
+the mist sim is semiperipheral scenery in Yack Cay. "It's blocking your way north, and it doesn't look dangerous, but you never know. You're new here, after all."
 
 check entering mist sim: try going north instead;
 
 chapter storm rots
 
-the storm rots are plural-named peripheral scenery in Swamp Maws. "Euugh. You don't want to go anywhere near them."
+the storm rots are plural-named peripheral scenery in Yack Cay. "Euugh. You don't want to go anywhere near them."
 
 chapter  Exam Axe
 
@@ -2843,7 +2843,7 @@ The Exam Axe is a thing. description is "Just looking at the exam axe, you feel 
 
 chapter Tru Yurt
 
-The Tru Yurt is scenery in Swamp Maws. "It looks really messy. The Known Wonk said it needed a good cleaning."
+The Tru Yurt is scenery in Yack Cay. "It looks really messy. The Known Wonk said it needed a good cleaning."
 
 check taking yurt: say "It's the Known Wonk's." instead;
 
@@ -2851,7 +2851,7 @@ check entering yurt: say "No, that's where the Known Wonk lives. [if exam axe is
 
 chapter Edits Tide
 
-The Edits Tide is scenery in Swamp Maws. "A voice from the edits tide seems to say [if spa maps are off-stage]that you could use its proofreading skills[else]it has labored enough for you[end if]."
+The Edits Tide is scenery in Yack Cay. "A voice from the edits tide seems to say [if spa maps are off-stage]that you could use its proofreading skills[else]it has labored enough for you[end if]."
 
 chapter sharp rahs
 
@@ -2859,7 +2859,7 @@ the sharp rahs are a plural-named thing. "The sharp rahs get you enthused, but t
 
 book Calcific Lac
 
-Calcific Lac is north of Swamp Maws. It is in Grebeberg. "[if dork rod is moot]The Tao Boat that helped you get at peace with things is here[else]A Tao Boat rests on the shore, here, with no clear entry[end if]. [eli-ile].[paragraph break]"
+Calcific Lac is north of Yack Cay. It is in Grebeberg. "[if dork rod is moot]The Tao Boat that helped you get at peace with things is here[else]A Tao Boat rests on the shore, here, with no clear entry[end if]. [eli-ile].[paragraph break]"
 
 to say eli-ile:
 	if elope pole is moot:
@@ -3615,7 +3615,7 @@ chapter trap art
 some trap art is a singular-named thing in Art Xtra. "Some trap art sits here. It's free. You might as well take it.". description is "The trap art depicts a bunch of nasty, dirty animals being trapped--it's not a real trap, but maybe it could become one."
 
 after taking trap art:
-	shuffle-before Art Xtra and Swamp Maws;
+	shuffle-before Art Xtra and Yack Cay;
 	continue the action;
 
 chapter el doodle
@@ -4237,7 +4237,7 @@ loc-num of Trapeze Part is 03.
 loc-num of Evaded Ave is 04.
 loc-num of Yell Alley is 05.
 loc-num of Pro Corp is 06.
-loc-num of Swamp Maws is 10.
+loc-num of Yack Cay is 10.
 loc-num of Le Babel is 11.
 loc-num of Cold Loc is 12.
 loc-num of Apse Spa is 13.
@@ -4433,7 +4433,7 @@ this is the gate-gone rule:
 	the rule fails;
 
 avail-rule of Mire Rim is dung-gone rule.
-avail-rule of Swamp Maws is dung-gone rule.
+avail-rule of Yack Cay is dung-gone rule.
 avail-rule of Den Ivy Vined is dung-gone rule.
 avail-rule of Trial Lair is dung-gone rule.
 
@@ -4609,7 +4609,7 @@ to hint-bump-worn:
 
 [this is the list of how I do things in the walkthrough.]
 
-L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Moo Room, Dumb Mud, Mire Rim, Swamp Maws, Calcific Lac, Den Ivy Vined, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
+L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Moo Room, Dumb Mud, Mire Rim, Yack Cay, Calcific Lac, Den Ivy Vined, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
 
 [?? nothing game-critical to do here = if there is a LLP]
 
@@ -4731,7 +4731,7 @@ done-rule of Red Roses Order is red-roses-order rule.
 done-rule of Scrap Arcs is scrap-arcs rule.
 done-rule of Seer Trees is seer-trees rule.
 done-rule of Sneer Greens is sneer-greens rule.
-done-rule of Swamp Maws is swamp-maws rule.
+done-rule of Yack Cay is yack-cay rule.
 done-rule of Swept Pews is swept-pews rule.
 done-rule of Toll Lot is toll-lot rule.
 done-rule of Trapeze Part is trapeze-part rule.
@@ -4753,7 +4753,7 @@ done-for-good rule of Den Ivy Vined is den-ivy-vined-complete rule.
 
 done-for-good rule of Fun Nuf is trivially false rule.
 
-done-for-good rule of Swamp Maws is swamp-maws-complete rule.
+done-for-good rule of Yack Cay is yack-cay-complete rule.
 
 done-for-good rule of Worn Row is worn-row-complete rule.
 
@@ -5073,9 +5073,9 @@ this is the sneer-greens rule:
 	if dork rod is moot, say "You can take the item you need to defeat the Yuge Guy." instead;
 	if Yuge Guy is in Sneer Greens, say "[one of]You need something from elsewhere to defeat the Yuge Guy. AID again to see where[or]What you need to defeat the Yuge Guy is in Yell Alley[stopping]."
 
-section Swamp Maws rule
+section Yack Cay rule
 
-this is the swamp-maws rule:
+this is the yack-cay rule:
 	if dork rod is not moot and NULL ILLUN is moot, continue the action;
 	if moor broom is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
@@ -5083,7 +5083,7 @@ this is the swamp-maws rule:
 	if player does not have moor broom, say "The enact cane can be combined to better purpose." instead;
 	say "USE MOOR BROOM ON TRU YURT." instead;
 
-this is the swamp-maws-complete rule:
+this is the yack-cay-complete rule:
 	if moor broom is moot, the rule succeeds;
 
 section Swept Pews rule
