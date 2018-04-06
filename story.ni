@@ -1160,9 +1160,13 @@ check useoning it with:
 		else if second noun is use1 entry:
 			if noun is a person and there is a person-reject entry, say "[person-reject entry][line break]" instead;
 			if there is a thing-reject entry, say "[thing-reject entry][line break]" instead;
+	let found-shift be false;
 	repeat through table of shiftables:
-		if noun is use1 entry and second noun is use2 entry, try useoning use3 entry with use2 entry instead;
-		if noun is use2 entry and second noun is use1 entry, try useoning use3 entry with use2 entry instead;
+		if noun is use1 entry and second noun is use2 entry, now found-shift is true;
+		if noun is use2 entry and second noun is use1 entry, now found-shift is true;
+		if found-shift is true:
+			if there is a use-text entry, say "[use-text entry][line break]";
+			try useoning use3 entry with use2 entry instead;
 	if noun is a book:
 		repeat through table of bookrejects:
 			if second noun is use2 entry, say "[book-reject entry][line break]" instead;
@@ -1272,7 +1276,8 @@ state tats	DIFF ID	"You can just walk north to get through."
 section table of shiftables
 
 table of shiftables
-use1	use2	use3 [use 3, not 1, on 2]
+use1	use2	use3 [use 3, not 1, on 2]	use-text
+navy van	pity tip	eye	"Nothing happens until you wave the pity tip across the eye.";
 wash saw	rift fir	past sap
 wordy drow	puce cup	liar grail
 
@@ -5183,7 +5188,7 @@ section Yell Alley rule
 this is the yell-alley rule:
 	if pity tip is moot and psi wisp is not moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if pity tip is not moot, say "USE PITY TIP ON NAVY VAN." instead;
+	if pity tip is not moot, say "USE PITY TIP ON EYE (or NAVY VAN)." instead;
 
 this is the yell-alley-complete rule:
 	if player has TNT or TNT is moot, the rule succeeds;
