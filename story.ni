@@ -1712,7 +1712,6 @@ this is the sword-rows-reveal rule:
 	move sword rows to Red Roses Order;
 	moot madam;
 	move E Divide to Red Roses Order;
-	move Sci Pics to Red Roses Order;
 	the rule succeeds;
 
 this is the tag-later-wipe rule:
@@ -1814,7 +1813,7 @@ late petal	"You don't need to do anything with the late petal. Perhaps you could
 link nil	"There's nothing you need behind the Link Nil security system. Some things are better left imagined."
 part strap	"You want to focus on the Verses Rev and not the part strap."
 pool gloop	"Fortunately, you don't need to do anything special to or with the pool gloop."
-Sci Pics	"They are just there to spell out that Madam is not doing things for Yelpley's own good or as a balance to the Yuge Guy."
+Sci Pics	"They are just there to [if Gorge Grog is moot]rehash what happened[else]spell out what happens[end if] if you go pouring random explosive liquids down the butene tub."
 spa taps	"The spa taps can't do much. You're not a customer, anyway."
 smirk rims	"The smirk rims are only important if you let them be. In other words, they're not."
 state tats	"You don't need to do anything to or with the state tats, now that you're wearing them."
@@ -4042,10 +4041,6 @@ the yard ray is a thing. description is "It looks pretty lethal. It's no dinky r
 
 does the player mean useoning with the Set O Notes: it is unlikely.
 
-chapter Sci Pics
-
-the Sci Pics are plural-named peripheral scenery in Red Roses Order. "They detail the relationship between Madam, the Yuge Guy and the Diktat Kid. You see the three of them dining and laughing together, which must be the soft sciences, along with Madam helping the Diktat Kid to build some huge, weird, disturbing machines. They are unnamed."
-
 chapter E-Divide
 
 the E Divide is peripheral scenery in Red Roses Order. "Madam crossed it, but you don't need to follow her. It would probably be dangerous. And yes, it's too narrow to slip through the tines.". printed name of E Divide is "E-Divide". understand "e-divide" as e divide.
@@ -4146,7 +4141,7 @@ report taking demo med:
 
 book Pro Corp
 
-Pro Corp is north of Gross Org. It is in Yelpley. description is "[if butene tub is in Pro Corp]A butene tub rests here. At least, that's what it says it is[else]Pro Corp is devoid of equipment now you blew up the butene tub[end if]. The only way out is back south--a LINK NIL security system guards the other ways."
+Pro Corp is north of Gross Org. It is in Yelpley. description is "[if butene tub is in Pro Corp]A butene tub rests here. At least, that's what it says it is[else]Pro Corp is devoid of equipment now you blew up the butene tub[end if]. The only way out is back south--a LINK NIL security system guards the other ways. There are also sci-pics that seem to warn what NOT to do with the butene tub."
 
 Pro Corp is above Gross Org.
 
@@ -4181,6 +4176,10 @@ understand "bald/lab" and "bald lab" as Pro Corp when bald-lab is true.
 chapter Link Nil
 
 Link Nil is peripheral scenery in Pro Corp. "It's really arcane, and it's meant to keep people out. You don't even see how to break through it. And anyway, if it had a number keypad, the passkey would probably have to be a palindrome, which would cut down on the possibilities and be a lot less secure."
+
+chapter Sci Pics
+
+the Sci Pics are plural-named peripheral scenery in Pro Corp. "They detail what happen[if Gorge Grog is moot]ed when you poured[else] if you pour[end if] a potentially explosive liquid down the butene tub."
 
 chapter butene tub
 
