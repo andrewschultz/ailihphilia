@@ -114,6 +114,7 @@ person-name
 "Gia Haig"
 "Gil Lellig"
 "Gino Honig"
+"Gitte Rettig"
 "Glenn Elg"
 "Hal Olah"
 "Harold Lorah"
@@ -795,6 +796,7 @@ randtxt
 "A Mardy Drama"
 "Mo['] Idiom"
 "Mr. Owl Worm"
+"My Nonacidic Anonym"
 "Otter Amaretto"
 "Rise Aesir"
 "Risk Sir"
@@ -854,17 +856,17 @@ table of My Gym songs
 randtxt
 "[']Allo, Dolla[']"
 "Do Mo['] Mod"
-"We Nab Anew"
 "Kazoo Zak"
 "Krew Twerk"
+"Me: Opt, Poem"
 "O/T: Teh Ghetto"
+"Ode: Dude, DO"
 "Opera Repo"
 "Rap Spar"
 "Sun on Us"
 "To Own: WOOT"
+"We Nab Anew"
 "Yo, Beer Free, Boy"
-"Me: Opt, Poem"
-"Ode: Dude, DO"
 
 table of noesies
 randtxt
@@ -979,18 +981,18 @@ randtxt
 "Stare? Rats!"
 "Stir! It's..."
 "Truce, curt."
-"We nap anew."
 "Wait! I ... aw ..."
 "Wandered? Naw."
+"We nap anew."
 "Won't, Now."
 
 table of wordy drow laments
 randtxt
 "'Deity...tied!'"
 "'Die, id!'"
-"Sob! Mild Limbos!"
 "'Eh, Tithe!'"
 "'No Sin is On!'"
+"Sob! Mild Limbos!"
 "Sog, Ebb, Egos!"
 
 table of yessies
@@ -1024,11 +1026,11 @@ randtxt
 "Pal! Clap!"
 "Pal, rub burlap!"
 "A papa! A papa!"
+"ROB ALL LABOR!"
 "Soros! Soros!"
+"Sue Me?! Us?!"
 "Wane? Naw!"
 "You! Oy!"
-"ROB ALL LABOR!"
-"Sue Me?! Us?!"
 
 Ailihphilia Tables ends here.
 

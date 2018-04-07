@@ -2,6 +2,8 @@
 
 [blurb for comp = A *GASP* SAGA]
 
+[blurb: It is what you think, you. What, is it? Warning: not recommended for those with aibohphobia.]
+
 [there are things you can search for to make the source more navigable.
 
 First, Ailihphilia tables.i7x contains all the random responses.
@@ -24,7 +26,7 @@ LLP for last lousy points
 to search for an item, look for chapter [item].
 ]
 
-the story headline is "Yo, Joy! Wow!"
+the story headline is "A *GASP* SAGA!"
 
 the release number is 1.
 
@@ -1367,7 +1369,7 @@ Yard Ray	test set	--	ready-to-test rule	test-set-zapped rule	true	false	true	Dim
 --	--	--	rev-create-tron rule	--	true	--	--	Dim Mid
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, successfully bribed." [b4:use TNT on ore zero]
 taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	Dim Mid	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev knows what he's up against. It's not that it's particularly violent or lethal, but ... the Verses Rev has developed such a warped orthodoxy, the bat is much scarier than it should be. Nothing to do but turn and run!"
-Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	"'Havoc, OVAH!' you should as you aim and fire the yard ray.[paragraph break]Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who goes running off. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid is going to check for that now, but with the Kid gone, you see saner arenas all around. Revel, clever! Revel, ever![paragraph break]And what's this? Some X-ITE TIX fell out of the redivider!"
+Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	"'Havoc, OVAH!' you should as you aim and fire the yard ray.[paragraph break]Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who goes running off. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid is going to check for that now, but with the Kid gone, you see saner arenas all around. Revel, clever! Revel, ever![paragraph break]And what's this? Some X-ITE TIX fell out of the redivider! Wow! Yo, joy! Wow!"
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse]
 
@@ -2505,9 +2507,9 @@ instead of doing something with gnu dung:
 	if action is pro-and-use, continue the action;
 	say "Eewee! (You probably want to deal with the gnu dung indirectly.)"
 
-instead of smelling gnu dung, say "Not on.";
+instead of smelling gnu dung, say "Gag!";
 
-instead of eating gnu dung, say "Not on.";
+instead of eating gnu dung, say "Gag!";
 
 chapter turf rut
 
@@ -2958,6 +2960,10 @@ book Yawn Way
 
 Yawn Way is east of Fun Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil Way, but you can go in all four directions, here: back west to Fun [']Nuf, north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]Emo Dome[else]a dome[end if]."
 
+after looking in Yawn Way for the first time:
+	say "Whew! You were worried you'd develop a city tic, but thankfully not.";
+	continue the action;
+
 chapter Name ME Man
 
 Name ME Man is a proper-named peripheral phonebook in Yawn Way. printed name is "NAME ME, MAN". description is "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers of Yelpley residents:[line break][name-num of 5 and name me man][variable letter spacing][run paragraph on]". "[one of]There's also something called NAME ME, MAN, which--well, it's really just a glorified phone book. Yawn[or]NAME ME, MAN waits for your perusal, if you have a great need to procrastinate[if name me man is xyet] some more[end if][stopping].". booktable of Name ME Man is table of random palindrome lastfirst names.
@@ -3311,7 +3317,7 @@ chapter books in bookcase
 TI is a proper-named book. printed name of TI is "TO IDIOT (TI)". understand "to idiot" and "idiot" as ti. description is "It's full of hot takes and 'clever' put-downs based on assuming the recipient isn't as smart as they think they are. You remember laughing at this sort of thing when you were really bored or grouchy, and you sort of regret it now. Still, it keeps some people busy.". [Door Frood]
 NULL ILLUN is a proper-named book. printed name of NULL ILLUN is "NULL ILLUN (NI)". understand "ni" as NULL ILLUN. description is "Surprisingly wise advice about how to achieve happiness and shake annoyances you can't dispel with just logic.". [Known Wonk]
 EPOCH COPE is a proper-named book. printed name of EPOCH COPE is "EPOCH: COPE (EC)". understand "ec" as EPOCH COPE. description is "All sorts of present-day political and social musings.". [King Nik]
-YOB ATTABOY is a proper-named book. printed name of YOB ATTABOY is "YOB ATTABOY (YA)". understand "ya" as YOB ATTABOY. description is "All about picking yourself up by your bootstraps and not feeling sorry for yourself or being too jealous of what others know or can do.". [Sniffins]
+YOB ATTABOY is a proper-named book. printed name of YOB ATTABOY is "YOB ATTABOY (YA)". understand "ya" as YOB ATTABOY. description is "All about picking yourself up by your bootstraps and not feeling sorry for yourself or being too jealous of what others know or can do--SHED EH'S is repeated in big bold letters.". [Sniffins]
 
 chapter SOME DEMOS
 
@@ -3702,7 +3708,7 @@ check going to Emo Dome:
 		now emo-dir is noun;
 
 check going north in Emo Dome:
-	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a bright no-go-gon and a voice from the DIFF-ID: 'Go jog!'[paragraph break]You think, hang? Nah." instead;
+	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a bright no-go-gon and a voice from the DIFF-ID: 'Dim ID! Go jog!'[paragraph break]You think, hang? Nah." instead;
 	if Bro Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet." instead;
 	if not-a-baton is moot, say "You probably did all you needed to." instead;
 	say "You make sure your state tats are visible for scanning. They are accepted.[paragraph break][if madam is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the sword rows.[end if]";
@@ -4536,7 +4542,7 @@ every turn when being-chased is true:
 		now chase-mulligan is false;
 		continue the action;
 	if chase-person is Kayo Yak and cap-pace is false:
-		say "Oh no! The Kayo Yak was too fast for you! Maybe you can find a way to run faster.";
+		say "Oh no! The Kayo Yak was too fast for you! It gives you quite a headbutt and, well, at least it wasn't a GI Pig. Maybe you can find a way to run faster.";
 		reset-chase instead;
 	if chase-person is in location of player:
 		say "You've been caught! Aigh! Dazed and confused, you stagger back to...";
@@ -5273,7 +5279,7 @@ understand "slam mammals" as slammammalsing.
 carry out slammammalsing:
 	if slam-mam is true, say "You already did. Don't overdo it." instead;
 	unless player is in Ooze Zoo, say "You have no sympathetic audience." instead;
-	say "The sleep eels wake from their slumber [if bunk nub is moot]just out of sight [end if]briefly to squirm. They telepathically project their pleasure [if sleep eels are moot]from their stock cots [end if]before going back to sleep. You've ... done something, I guess? And hopefully without too much whataboutism?";
+	say "You babble some rubbish about deer greed. The sleep eels wake from their slumber [if bunk nub is moot]just out of sight [end if]briefly to squirm. They telepathically project their pleasure [if sleep eels are moot]from their stock cots [end if]before going back to sleep. You've ... done something, I guess? And hopefully without too much whataboutism?";
 	now slam-mam is true;
 	abide by the LLP rule; [SLAM MAMMALS]
 	the rule succeeds;
