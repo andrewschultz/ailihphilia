@@ -266,6 +266,7 @@ to decide which region is mrlp:
 part scoring
 
 to score-inc:
+	if debug-state is true, say "DEBUG standard score-inc.";
 	reg-inc mrlp;
 
 check requesting the score:
@@ -307,8 +308,11 @@ to reg-inc (re - a region):
 	if re is not Odd Do and re is not mrlp, say "DEBUG NOTE: scored [re] point in [mrlp].";
 	increment cur-score of re;
 	increment the score; [this is the only incidence that shouldn't be replaced]
-	if debug-state is true and cur-score of mrlp > max-score of mrlp, say "DEBUG WARNING: REGION SCORE TOO HIGH!";
-	if debug-state is true and score > maximum score, say "DEBUG WARNING: OVERALL SCORE TOO HIGH!"
+	if debug-state is true:
+		say "DEBUG TALLY: Grebeberg [cur-score of Grebeberg] Yelpley [cur-score of Yelpley] Dim Mid [cur-score of Dim Mid] Odd Do [cur-score of Odd Do].";
+		if cur-score of mrlp > max-score of mrlp, say "DEBUG WARNING: REGION SCORE TOO HIGH!";
+		if debug-state is true and score > maximum score, say "DEBUG WARNING: OVERALL SCORE TOO HIGH!";
+		if mrlp is not re, say "DEBUG WARNING: potential region misdirected point!"
 
 to say regres of (re - a region):
 	say "[cur-score of re] of [max-score of re] ";
@@ -1255,7 +1259,7 @@ wash saw	crag arc	"The crag arc is much too big to get anywhere[if UFO tofu is o
 wash saw	made dam	"The made dam is much too big to get anywhere[if eroded ore is off-stage]. Maybe there's a better way to find what's behind there[end if]."
 Gorge Grog	yard ray	"The Gorge Grog is pretty strong stuff, but you may need something even stronger."
 Rep Popper	Yuge Guy	"It seems like the Rep Popper should work, but it doesn't, quite. Maybe there is something that is giving the Yuge Guy all his rep?"
-Bro Orb	Madam	"The Bro Orb might dissolve her, but you're not out to kill anyone. Still, close."
+Bro Orb	Madam	"As you lift the Bro Orb to throw at Madam, you see yourself in the Mirror Rim. You don't look so great or heroic. In fact, you feel unusually self-conscious. More than you deserve to, you think. Besides, the Bro Orb might dissolve her or something, but you're not out to kill anyone."
 poo coop	Yuge Guy	"That could be fun, but he might be normalised to the stuff in the coop."
 poo coop	Liar Grail	"Maybe if the contents came from a bull and not a gnu, it would be appropriate (this is not a palindrome 'joke.')"
 elope pole	Tao Boat	"The Tao Boat is too big to control with the elope pole."
@@ -1277,7 +1281,7 @@ section table of shiftables
 
 table of shiftables
 use1	use2	use3 [use 3, not 1, on 2]	use-text
-navy van	pity tip	eye	"Nothing happens until you wave the pity tip across the eye.";
+navy van	pity tip	eye	"Nothing happens until you wave the pity tip across the eye."
 wash saw	rift fir	past sap
 wordy drow	puce cup	liar grail
 
@@ -1750,7 +1754,7 @@ this is the you-win rule: [xxwin]
 	say "The Flee Elf greets you on the other side. 'Deified! Deified!' You ask hesitantly about the new adventures promised.[wfak-d]";
 	say "'The X-ITE TIX lead to A REAL WORLD THAT WILL BE MORE EXCITING AFTER YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a circular loop to 'back where you began' non-twist. Books like that always kind of annoyed you, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something. The Flee Elf shakes your hand and pulls out a device. 'This RIDE-DIR will help you return to your own world.'[wfak-d]";
 	say "As you wait, you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered by it?[wfak-d]";
-	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call them? It's a tough call between SOME MEMOS, SAGAS or SOLOS. Hmm, maybe DRAWN INWARD.";
+	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call them? It's a tough call between SOME MEMOS, I SAW [']TWAS I, SAGAS or SOLOS. Hmm, maybe DRAWN INWARD.";
 	end the story finally saying "Darn! Rad!";
 	sort the table of last lousy points in finord order;
 	if in-beta is true, display-dropbox-link;
@@ -2332,7 +2336,7 @@ carry out emiting:
 	if the topic understood matches "noontime":
 		say "BOOM! The yard ray emits so much light, you immediately have to switch it off. Well, that was a good start. Now you want to make sure you can aim it at something that can be destroyed.";
 		now emitted is true;
-		score-inc; [Dim Mid/emit noontime]
+		reg-inc Dim Mid; [Dim Mid/emit noontime]
 		the rule succeeds;
 	if the topic understood matches "time":
 		say "Yes, but what sort of time? Something positive and cheery, you'd guess." instead;
@@ -3175,7 +3179,7 @@ rule for supplying a missing second noun when useoning:
 to wear-down (w - a workable):
 	decrement useleft of w;
 	if useleft of w is 0, say "[line break]You watch as [the w] sputters and dies. [if number of workedout workables is 2]Oh dear. That's the second one down[else]Well, you got a lot of good use out of it, and hopefully you won't need any more[end if].";
-	if useleft of w is 1, say "[line break][the w] wheezes emphatically. Hopefully, you won't need to use it too much more.";
+	if useleft of w is 1, say "[line break]The [w] wheezes emphatically. Hopefully, you won't need to use it too much more.";
 	if machuses is 0:
 		hint-bump-worn;
 		say "[line break]With [list of workables] all destroyed, Work Row shakes a bit more. The machines fall out from a wall, revealing something behind ... a test set. It's big and huge and you can't move it, but who knows what it'll be useful for later?";
@@ -4017,7 +4021,7 @@ Red Roses Order is above Emo Dome.
 
 chapter Mirror Rim
 
-the Mirror Rim is scenery in Red Roses Order. "You can't see through it, and you have a feeling it may be fake, but what if it isn't? If only there was a way to dispel it..."
+the Mirror Rim is scenery in Red Roses Order. "Looking in the Mirror Rim, you see ... well, you don't look terribly heroic. No wonder you were rejected for Raw Level War! In fact, you look kind of grouchy and upset. But it's not just that. You see and recall flaws you've forgotten, and you're pretty sure they're magnified beyond what they should be. But you feel half-obliged to keep looking at the Mirror Rim for an 'objective' amplification of all your tiny faults.[paragraph break]Oh, and the Pact Cap looks even sillier on you than you imagined it would. At least Madam has to see you wearing it!"
 
 chapter sword rows
 
