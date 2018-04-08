@@ -2,6 +2,10 @@
 
 ==================stuff to include for sure
 
+sewer ewes: random animals that you can't find?
+
+Wend new. Went new.
+
 Businesses repopulating Yelpley.
 
 sail alias
@@ -10,6 +14,8 @@ Mista-T Sim
 
 "No, Son"
 No. YON!
+
+Smart Trams
 
 emote tome
 gardened rag
@@ -22,7 +28,6 @@ Sniffins, uh, sniffs at you.
 
 Ear Brae = scenery (?) noisy
 
-eel emo melee
 eel slee
 
 Do Mini Mod
@@ -442,7 +447,6 @@ nadir acaridan
 nagor brogan
 newt wen
 nets ten
-never even
 nimrods dormin
 nielli villein
 nival flavin
@@ -478,7 +482,6 @@ parterre trap
 panama nap
 pannikin nap
 pansy snap
-pet step
 perp rep
 peels asleep
 pi tip
@@ -569,7 +572,6 @@ ruellia tailleur
 sassy lyssas
 salami malas
 say as: note that say "As" gets flagged...
-saw twas
 satire veritas
 salle fellas
 sage degas
@@ -711,7 +713,6 @@ subdewed bus
 sumac camus
 sue deus
 sum us:sum emus
-sublevel bus:transports you somewhere
 sugar tragus
 Suede Us:suede deus
 sun gnus:sun on us
@@ -1095,7 +1096,6 @@ El = should be in
 "No romp, moron!"
 "No same mason"
 "No! Ebb, eon!"
-"No, son"
 "No-Losses Solon!"
 "Now Ere Rewon"
 "SETI cites" Rob
@@ -1136,7 +1136,6 @@ El = should be in
 "To Rot"
 "To Tax a Tot"
 "Tom Ramp, Marmot"
-"Ton Knot"
 "Too 'boohoo?' Boot!"
 "Too Fab Afoot"
 "Too Faded Afoot"
@@ -1246,7 +1245,7 @@ Ha Fools['] Loofah
 Hah, solo shah!
 Hoo! Preyer? Pooh
 Hoop? Ooh
-I/O Koi
+IO Koi
 In, Imp, Mini
 It: Revert, I
 Lac Oft Focal: calcific lac new location? Calm Lac
@@ -1258,12 +1257,7 @@ Les Maddened Damsel
 Les Severe Vessel
 Let Nix Intel
 Let Race Cartel
-Levant Navel
 Lit Null Until
-Loo Cool
-Loo Cool:alternate2 to pee keep
-Loo Fool: what you are
-Loo Pool
 Lug O Mogul
 Mac See Scam
 Mad-Eyed, Am
@@ -1277,17 +1271,13 @@ Moo Rave Varoom
 Mop, Mop, Pompom
 Nab Rum Urban
 Naw See Swan
-Nay Cyan
 Net Foe/Fog Often
 Net For Often
 Net To Gotten
 Net Torn Rotten
 Net-safe-fasten
 New area if you get all the points
-Nil Appallin[']
-Nil In!
 Nil Merge, Gremlin
-Nim In?
 Nix Alert: Relaxin!
 No Gamma Gon
 No Grog, Gorgon
@@ -1350,19 +1340,13 @@ Ore Torero
 Ort Era Retro
 Ort Indeed Nitro
 Ort Niff Intro
-Pace Recap
 Pad Digresser Giddap
 Pan Stat Snap
 Pee Jeep/Keep/Weep
-Pet, Step
-Pol? Flop
-Pop <- you'd really expect they sold pop here, but ...
-Pub Up
 Pug Nipping Up
 Puh Same Mashup
 Rad Eco-Cedar
 Rap, Bust Subpar
-Rat Avatar
 Rat Lab Altar / Rat Ladened Altar
 Rat Romp: Mortar
 Raw Non-War
@@ -1402,7 +1386,6 @@ Ren, Old Loner
 Rep Elm Leper
 Rep Mate Tamper
 Rep Meta Temper
-Rep a Paper
 Repaid Diaper
 Ret All Later
 Ret Life Filter
@@ -1424,8 +1407,6 @@ Rot, Cart, Tractor
 Rot, Ordered Rotor
 Rot-Cert Rector
 Rot-Cesses Sector
-Row Or
-Row, or ...
 Rue Carte Traceur
 Rum Elf Lemur
 Rum Elk Lemur
@@ -1433,8 +1414,6 @@ Rum, rum murmur!
 SETI Sites
 Sad As
 Sag, Emo, Omegas
-Sal Alas
-Saw [']Twas
 Sec All Aces
 Sec Ices
 Sedu-Dudes
@@ -1445,7 +1424,6 @@ Set, Add Dates
 Sex O['] Foxes
 Sex, Eff Exes
 Sex-I-Fixes
-Sexism, Sixes
 She FEHs
 She Hehs
 She Hoodoo-Hehs
@@ -1458,11 +1436,8 @@ Sir Ever is
 Sir afar is!
 Sir, buh! Hubris!
 Sir, oops, poor is
-Sir, tetris?
 Sis Emend Nemesis
 Sis Is
-Site Yetis
-Six Axis
 Ska Off Oaks
 Ska Yaks
 Sly canikin acyls: casks?
@@ -1489,10 +1464,8 @@ Sob, Mudded Dumbos
 Sob-Mock Combos
 Soma Camos
 Sub us! Sub us!
-Sue Deus
 Sue Zeus
 Sum Emus
-Sum Us
 Sun Eve Venus
 Sun Even Us
 Sun Gnus = mistake
@@ -1563,7 +1536,6 @@ see beebees
 see belle bees/see boffo bees/see bozo bees/see brr bees/see brewer bees/see banana bees
 set age gates
 sew agmosomg awes
-sewer ewes
 sly rad aryls
 so bold lobos
 song
@@ -1583,11 +1555,8 @@ wend new
 ===========================from google docs file
 worry the security guards might look over and wonder if ailihphilia is something offensive, or whether it was fun to google it all and see "OH! THAT'S WHAT THAT MEANS!"
 Staff Ats
-Tut! Tut, tut!
-TekCo Docket
 Y'all, ay!
 Fer a Ref
-Dr. A. Card = name of the Code Doc
 set-a-mates / Met 'em
 Allo Dolla
 mass-am
@@ -1595,30 +1564,19 @@ Fer a Ref Y'all, Ay
 Trope Report: where?
 TekCo Docket
 co-data doc
-met 'em.
 Tider Credit
 What do I do with the Trope Report?
 Grerg Knonk = pen name
 rodney endor
 Be sure that caps check is in MISC
-Bash! Sab! (if attacking machine)
 Sno-Gons
-servile livres
-good at stab-ats
-strain i arts
-"I Saw [']Twas I"
 epi-wipe
-sun gnus
-Never even. Never even!
 knit-ink
 train, i art
 grain i art
 Foom! Oof! / Food! Oof
-There is no sub-level bus.
 Sort order app that takes a start and end and sorts everything. If in start/end, put it to temp buffer. If hit end, process end buffer.
 
-Nix In / Nil In
-New Gwen
 Major O Jam
 Mahalo-laham
 Livesse-Vil
@@ -1637,56 +1595,30 @@ Star Frats, and you see that although there is a lot of sordid stuff, there is a
 vogue-u-gov
 Oro-boro
 
-Went New
-
 cert-rec
 Doll OD
 gonif elf pelt lep
-Remand Namer
-Tiny Nit
 nun
-sewer ewes: random animals that you can't find?
 gnilling
 Old, Lo
 Hook! Ooh.
 gun gin
-palm lap
 gong nog
 hag
-Earl Rae
 Scold-Locs = sunglasses
-Regager has (X) charges left and describes what the others have ...
 How Oh
-arid ira
 Dray Yard
-eric ire
-Tuck Cut
-food, oof
 Fool, aloof
-FIX if
-Smart Trams
-Warn Raw
-Glass Alg
 hat ah
-old lo
-Done? Nod.
-Ares's Era
 Gone, nog!
 hag gun gin gan nag nVg
-Spidered IPs
 Oppo = what to do?
 hatstah
-"EVAR Grave?" No
-civic level = the final
-Vim IV
 Stall Ats
-Wend New
 Dean
 
 Signe Kengis
 red lo fi folder
-Set a['] Mates
-Say As
 Ebola lobe: scenic boundary
 Drag-Grad
 "Is he there? He IS!"
@@ -1695,16 +1627,10 @@ rag us, sugar?
 revile-liver
 spine nips
 spire RIPs
-brace-carb
 Ay, a Papaya
 Nom La Salmon
 Neil's Lein
-Lie, Neil
-x/o box = regardless of how much personal space you have, you appreciate the gesture! (At the end) <- it's something you can't take). Maybe it seems a bit on the simple side, but you didn't want anything too complex to remember. I mean, how would you explain it?
 plover
-Reno Loner
-Torn? Rot
-Done Nod
 Loner Enol
 buck cub
 Res BS'er
@@ -1721,7 +1647,6 @@ Test all food combos before testing the right ones e.g. A WITH B, C WITH D, A WI
 "Boone?! Noob!"
 weed eew
 yr dry
-bath tab
 grass arg
 nano onan
 Want? Naw
@@ -1729,8 +1654,6 @@ balder blared le bard
 ALCLU = all clues (verb)
 Mess Em
 Truce, Curt.
-Knit Ink
-Nik's Kin
 Poon Snoop
 DONE = go through all rooms. Which doable?
 rub bur / burn rub
@@ -1739,8 +1662,6 @@ Dark! Rad!
 not-dud-ton
 note-ton
 eval-slave
-warn raw
-Smart Trams
 nepo-pen
 Frau Arf
 Poof Oop / Foot Oof
@@ -1749,19 +1670,12 @@ Goon! Oog!
 gt 11 / NE
 Duo Loud
 Cape Pac
-Sap Spas
-Strain...I...Arts <- Some Demos
-Me Gem + Me Totem = not really. Me Totem is with the Yuge Guy, Mist Sim with Madam
-Me, Lo, Golem
-dust sud
-wan gnaw
 All I Villa! <- where the Yuge Guy goes
 Not-Kook-Ton
 Ya Nay
 The ME TOTEM is a thing. It fills your head with circular arguments that rise and fall so poetically but do not go anywhere or give you a chance to think about it.
 Wash Saw    Porch Crop    Balsa Slab    --    --    true    true    true    Grebeberg    "The wash saw breaks as you clear the worst of the overgrown porch crop. You discover a balsa slab underneath. The code doc asks to trade. Sure, why not? The saw won't be a great weapon, but who knows what you can do with the balsa slab."
 NOTE: we also have to make sure the wash saw is not destroyed after using it on the rift fir.
-Glass Alg
 
 # lap a papal = case we need to get working
 # 1w.py : not just STDIN but break things into dictionaries of dictionaries by first letter. See 2pal.py for details.

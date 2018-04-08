@@ -767,6 +767,7 @@ part the tables
 
 table of altbooks
 randtxt
+"Ares's Era"
 "D'oh, Serene, Reshod"
 "D'oh, Temp Method"
 "Dew Onuses Unowed"
@@ -799,6 +800,7 @@ randtxt
 "Gigolo Gig"
 "If I Had a Hi-Fi"
 "A Mardy Drama"
+"Me, Lo, Golem"
 "Mo['] Idiom"
 "Mr. Owl Worm"
 "My Nonacidic Anonym"
@@ -882,6 +884,7 @@ randtxt
 "Dash sad."
 "Derided! Ired!"
 "Emo, me."
+"EVAR Grave?"
 "Hm. SMH."
 "Moody? Doom!"
 "No way? Aw, ON!"
@@ -915,9 +918,10 @@ table of Rob droning
 randtxt
 "EOF, Foe!"
 "More ROM!"
-"Posts-op? POST, sop!'"
+"Posts-op? POST, sop!"
 "Prove VORP!"
 "Resume [']m, user!"
+"Spidered IPs?!"
 
 table of singstuff
 randtxt
@@ -979,6 +983,7 @@ randtxt
 "GO, dog!"
 "A lag gala!"
 "Mull! Um..."
+"Nix ALERT. Relaxin[']!'"
 "No gig on?"
 "Now? On!"
 "Pal...flap!"
@@ -1030,6 +1035,7 @@ randtxt
 "Misdeeds? I'm ..."
 "Name: HE-MAN!"
 "Nem O['] women!"
+"Nil Appallin[']!"
 "Null [']un!"
 "Odd-*** Saddo!" [ignore]
 "Ooh...shoo!"
