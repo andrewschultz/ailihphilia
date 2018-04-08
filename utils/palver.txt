@@ -53,6 +53,8 @@ s:ian is a
 s:dave is a
 s:madam carries
 s:the dir-error rules are
+s:to say red-clue
+s:to say chase-mulligan
 # ignore-includes
 i:rule:
 i:is an activity

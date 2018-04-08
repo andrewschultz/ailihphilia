@@ -1035,7 +1035,7 @@ randtxt
 "Misdeeds? I'm ..."
 "Name: HE-MAN!"
 "Nem O['] women!"
-"Nil Appallin[']!"
+"Nil Appalin[']!"
 "Null [']un!"
 "Odd-*** Saddo!" [ignore]
 "Ooh...shoo!"

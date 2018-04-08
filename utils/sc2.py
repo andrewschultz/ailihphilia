@@ -605,7 +605,6 @@ def get_stuff_from_source():
                 if temp_region == current_region:
                     base_reg_incs[temp_region] = base_reg_incs[temp_region] + increment
                 else:
-                    print(temp_region, line)
                     directed_incs[temp_region] = directed_incs[temp_region] + increment
             if ll.startswith('part ') and 'region' in ll:
                 myreg = re.sub("^part ", "", ll)
@@ -654,26 +653,28 @@ def get_stuff_from_source():
                     if len(x) != 9 and x[0] == '--':
                         print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 9. Ignoring data in this line.")
                         continue
-                    if len(x) == 9: continue
-                    cmd = "USE {:s} ON {:s}".format(x[0].upper(), x[1].upper())
-                    new_cmd_ary = find_comment_cmds('b4', line)
-                    new_cmd_ary.append(cmd)
-                    new_cmd_ary = new_cmd_ary + find_comment_cmds('af', line)
-                    for temp_cmd in new_cmd_ary:
-                        source_cmd_count = source_cmd_count + 1
-                        if temp_cmd in source_cmd_order.keys() and not temp_cmd.startswith("USE"): print("WARNING", temp_cmd, "is a duplicate in table of useons, line", line_count)
-                        source_cmd_order[temp_cmd] = source_cmd_count
-                    use_in_source[cmd] = line_count # we only track line count for "use" commands and not unusual point gainers
+                    if x[0] != '--' and x[1] != '--':
+                        cmd = "USE {:s} ON {:s}".format(x[0].upper(), x[1].upper())
+                        new_cmd_ary = find_comment_cmds('b4', line)
+                        new_cmd_ary.append(cmd)
+                        new_cmd_ary = new_cmd_ary + find_comment_cmds('af', line)
+                        for temp_cmd in new_cmd_ary:
+                            source_cmd_count = source_cmd_count + 1
+                            if temp_cmd in source_cmd_order.keys() and not temp_cmd.startswith("USE"): print("WARNING", temp_cmd, "is a duplicate in table of useons, line", line_count)
+                            source_cmd_order[temp_cmd] = source_cmd_count
+                        use_in_source[cmd] = line_count # we only track line count for "use" commands and not unusual point gainers
                     if x[5] == 'false':
                         ignore_points[cmd] = line_count
                         print("Ignoring points for", '/'.join(x[0:2]))
                     if x[5] == 'true':
                         temp_region = ""
-                        if x[8] and x[8] != '--' and x[8] != 'reg-plus': # a bit hacky, but basically, check for entry 10 in useon table being a proper region
+                        if x[8] and x[8] != '--' and x[8] != 'reg-plus': # a bit hacky, but basically, check for 9th useon table entry being a proper region
                             temp_region = x[8].lower()
                         if temp_region:
-                            directed_incs[temp_region] = directed_incs[temp_region] + 1
-                            source_region[cmd] = temp_region
+                            table_totals[temp_region] = table_totals[temp_region] + 1
+                            if x[0] != '--':
+                                directed_incs[temp_region] = directed_incs[temp_region] + 1
+                                source_region[cmd] = temp_region
                         else:
                             if not temp_region:
                                 print("Blank temp region at line", line_count, "in use table.")
@@ -786,6 +787,11 @@ for x in directed_incs.keys():
     nontable_totals[x] = nontable_totals[x] + directed_incs[x]
 
 print("List of points by region:", ', '.join(['{:s}={:d}'.format(x, nontable_totals[x]) for x in nontable_totals.keys()]) + ", total=" + str(sum(nontable_totals.values())))
+
+for x in nontable_totals.keys():
+    if x == 'odd do': continue
+    if table_totals[x] != nontable_totals[x]:
+        print("Incosistent table vs full source totals for region", x, "has table", table_totals[x], "vs nontable", nontable_totals[x], "without revover", directed_incs[x])
 
 for x in nontable_totals.keys():
     if nontable_totals[x] != in_source[x]:
