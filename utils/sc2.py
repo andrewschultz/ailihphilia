@@ -45,7 +45,8 @@ current_region = "None"
 region_def_line = defaultdict(int)
 base_reg_incs = defaultdict(int)
 directed_incs = defaultdict(int)
-totals = defaultdict(int)
+nontable_totals = defaultdict(int)
+table_totals = defaultdict(int)
 in_source = defaultdict(int)
 machine_uses = defaultdict(int)
 machine_uses_in_source = defaultdict(int)
@@ -286,7 +287,7 @@ def bonus_mistake_check():
     else:
         print("No 'understand as a mistake' errors in source. Trivial test passed.")
 
-def detect_region(a, b):
+def detect_region(a, b, lc):
     if '[' not in a:
         return ('ignore', b)
     temp = re.sub(".*\[", "", a.strip().lower())
@@ -301,8 +302,7 @@ def detect_region(a, b):
         my_region = re.sub(".*reg-inc ", "", a.strip().lower())
         my_region = re.sub(";.*", "", my_region)
         if (len(ary) > 1):
-            print("NO SLASHES WHEN REGION IS DEFINED BY REG-INC:", a, end='')
-            print("NO SLASHES WHEN REGION IS DEFINED BY REG-INC:", a.rstrip())
+            print("Line", lc, "NO SLASHES WHEN REGION IS DEFINED BY REG-INC:", a.rstrip()) # also end=''
             exit()
         cmd = ary[0]
     else:
@@ -573,13 +573,13 @@ def get_stuff_from_source():
                 if semi_verbose: print("Noting region", l2)
                 continue
             if ('score-inc' in line or 'abide by the llp rule' in line.lower()) and '\t' in line or 'reg-inc ' in line:
-                (temp_region, this_cmd) = detect_region(line, current_region)
+                (temp_region, this_cmd) = detect_region(line, current_region, line_count)
                 if temp_region == 'ignore':
                     continue
                 if temp_region == 'odd do':
                     llp_commands[this_cmd.upper()] = line_count
                     source_region[this_cmd.upper()] = temp_region
-                    totals[temp_region] = totals[temp_region] + 1
+                    nontable_totals[temp_region] = nontable_totals[temp_region] + 1
                     continue
                 increment = 1
                 if this_cmd:
@@ -605,6 +605,7 @@ def get_stuff_from_source():
                 if temp_region == current_region:
                     base_reg_incs[temp_region] = base_reg_incs[temp_region] + increment
                 else:
+                    print(temp_region, line)
                     directed_incs[temp_region] = directed_incs[temp_region] + increment
             if ll.startswith('part ') and 'region' in ll:
                 myreg = re.sub("^part ", "", ll)
@@ -647,9 +648,13 @@ def get_stuff_from_source():
                     if x[1] == 'reifier' or x[1] == 'reviver' or x[1] == 'rotator':
                         machine_uses[x[1]] = machine_uses[x[1]] + 1
                         machine_actions[x[1]] = machine_actions[x[1]] + "    {:s} -> {:s}\n".format(x[0], x[2])
-                    if len(x) != 10:
+                    if len(x) != 10 and x[0] != '--':
                         print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 10. Ignoring data in this line.")
                         continue
+                    if len(x) != 9 and x[0] == '--':
+                        print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 9. Ignoring data in this line.")
+                        continue
+                    if len(x) == 9: continue
                     cmd = "USE {:s} ON {:s}".format(x[0].upper(), x[1].upper())
                     new_cmd_ary = find_comment_cmds('b4', line)
                     new_cmd_ary.append(cmd)
@@ -773,18 +778,18 @@ source_vs_walkthrough()
 for x in base_reg_incs.keys():
     if semi_verbose or verbose:
         print('BASE', x, base_reg_incs[x])
-    totals[x] = totals[x] + base_reg_incs[x]
+    nontable_totals[x] = nontable_totals[x] + base_reg_incs[x]
 
 for x in directed_incs.keys():
     if semi_verbose or verbose:
         print('DIRECTED', x, directed_incs[x])
-    totals[x] = totals[x] + directed_incs[x]
+    nontable_totals[x] = nontable_totals[x] + directed_incs[x]
 
-print("List of points by region:", ', '.join(['{:s}={:d}'.format(x, totals[x]) for x in totals.keys()]) + ", total=" + str(sum(totals.values())))
+print("List of points by region:", ', '.join(['{:s}={:d}'.format(x, nontable_totals[x]) for x in nontable_totals.keys()]) + ", total=" + str(sum(nontable_totals.values())))
 
-for x in totals.keys():
-    if totals[x] != in_source[x]:
-        print("ERROR: region", x, "has", totals[x], "but source lists", in_source[x])
+for x in nontable_totals.keys():
+    if nontable_totals[x] != in_source[x]:
+        print("ERROR: region", x, "has", nontable_totals[x], "but source lists", in_source[x])
         if source_line_to_open:
             print("NOTE: this supersedes opening line", source_line_to_open)
         source_line_to_open = region_def_line[x]
