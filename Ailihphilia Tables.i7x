@@ -797,6 +797,7 @@ randtxt
 "Mo['] Idiom"
 "Mr. Owl Worm"
 "My Nonacidic Anonym"
+"O Bonobo"
 "Otter Amaretto"
 "Rise Aesir"
 "Risk Sir"
@@ -839,6 +840,7 @@ randtxt
 [the Diktat Kid insults you. The Yuge Guy puffs himself up.]
 table of diktat taunts
 randtxt
+"Da bad! Da BAD!! DA BAD!!!"
 "Dire! Rid!"
 "Dude(tte)! Dud!"
 "Duh, THUD!"
