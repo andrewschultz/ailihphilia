@@ -2,6 +2,8 @@
 
 ==================stuff to include for sure
 
+Businesses repopulating Yelpley.
+
 sail alias
 
 Mista-T Sim
@@ -56,7 +58,6 @@ Spot-Ops
 
 Ere-Me-Mere
 
-We Sew
 Tiny Nit
 Town Wot
 
@@ -395,7 +396,7 @@ imam umami
 image degami
 ingest segni
 iodid oi
-i/o poi
+i o poi
 it cacti
 lame mal
 lava naval
@@ -423,7 +424,6 @@ lo googol
 looters retool
 
 mark ram
-martyry tram
 mate tam
 meets esteem
 met system
@@ -485,8 +485,6 @@ pi tip
 pink nip
 plugs gulp
 possesses sop
-posts op
-po hop
 potsy stop
 port strop
 prahu harp
@@ -558,7 +556,6 @@ riza nazir
 riza wazir
 rimes emir
 risotto sir
-rim emir
 rotary gyrator
 roting ignitor
 rotative levitator
@@ -641,7 +638,6 @@ shtetl teths
 shoo poohs
 signary rangis
 sine penis
-sir kris
 signa rangis
 silent nelis
 six axis
@@ -1234,7 +1230,6 @@ Erg off ogre
 Fee Beef
 Fib If
 Fin If
-Fix If
 Fop Of
 For a Jar Of
 Fra Zarf / Fra Barf
@@ -1335,7 +1330,6 @@ On, Nag, Anno
 One Garage? No
 One minme? NO!
 One pipe? No
-One? No
 Ooh Cad Achoo
 Ooh Chaff Ahchoo
 Ooh, awe! Wahoo!
@@ -1455,10 +1449,7 @@ Sexism, Sixes
 She FEHs
 She Hehs
 She Hoodoo-Hehs
-Sim Amis
-Sim Aramis
 Sim-All Amis
-Sin Is...
 Sin Uneven Unis
 Sin, I? Finis
 Sip! A tap is...
@@ -1521,31 +1512,25 @@ To Lips, Pilot
 Tub Error Rebut
 Tube Rebut
 We'd Lime Mildew
-Woe Meow:what cats do
-Won Enow: if you don't get all the points
 Won Ere Now
-Wonk, Now!
 Yen O['] Money
 Yes Rah Arsey
 Yes, truce, curtsey
 Yob Ops Po['] Boy
-You feel a need to make a ... sup opus.
 Dust sud
 fox of
 hep met tempeh=item on the menu at Sniffins
-it, eye, yetei
+it, eye, yeti
 kid daze zaddik
 klep-elk
 lab ace cabal: NE room notes
 lad navy vandal
 lag nuff fungal
 lap opal = shiny?
-lav oval=alternate1 to pee keep
 law oval avowal
 lay oldened loyal
 lob my symbol
 med-aid diadem
-met item: it's a met-ill item
 met stem
 mix a maxim: right way to
 nae cod ocean
@@ -1588,7 +1573,7 @@ spa elk leaps
 spa grammar gaps
 sub main iambus
 tap saga spat
-tar boohoo brat
+"Tar! Boohoo, brat!"
 tar comedy democrat
 tar ever at
 til saga gaslit
@@ -1596,16 +1581,10 @@ war dagga draw
 wend new
 
 ===========================from google docs file
-GIG = written in big letters in the darer ads
-Oh Who = phone book for Grebeberg. Munici-Num = phone #
 worry the security guards might look over and wonder if ailihphilia is something offensive, or whether it was fun to google it all and see "OH! THAT'S WHAT THAT MEANS!"
-x/y pyx
-dork rod: wand? Naw
 Staff Ats
-St. At's / St. Emmet's = The Pews are inscribed St. Emmet's
 Tut! Tut, tut!
 TekCo Docket
-Regard, rager! / Attack
 Y'all, ay!
 Fer a Ref
 Dr. A. Card = name of the Code Doc
@@ -1623,15 +1602,11 @@ Grerg Knonk = pen name
 rodney endor
 Be sure that caps check is in MISC
 Bash! Sab! (if attacking machine)
-"'S civics." <- King Nik
-Wait: Pas ASAP!
 Sno-Gons
 servile livres
-glam amalg / exult luxe = yugest, best (Yuge Guy talks to you)
 good at stab-ats
 strain i arts
 "I Saw [']Twas I"
-evol-glove
 epi-wipe
 sun gnus
 Never even. Never even!
@@ -1641,20 +1616,9 @@ grain i art
 Foom! Oof! / Food! Oof
 There is no sub-level bus.
 Sort order app that takes a start and end and sorts everything. If in start/end, put it to temp buffer. If hit end, process end buffer.
-CAPDIC.PY:
-for x in capital_list.keys():
-    if x in line or x-dash in line: for q in re.findall(): x[q] = x[q] + 1
-last[q] = line_num
-for j in avail.keys():
-    if avail[j].keys() == 0: continue
-    if avail[j].keys() == 1: print("Uniform capitalization on", j)
-    print('/'.join(y + ' ' + str(avail[j][y]) for y in avail[j]))
 
-star/stars rats
-Bang Nab is scrawled on Mr. Arm ************************* It high fives you before crawling off, perhaps in search of a DO-BOD. You are confident it will find one. Perhaps even an evol-glove!
 Nix In / Nil In
 New Gwen
-Norah Aron
 Major O Jam
 Mahalo-laham
 Livesse-Vil
@@ -1667,7 +1631,6 @@ rectotcer
 Reteceter
 No-Do-Lodon
 Mahi Ham
-St Ottots
 Wah Shaw
 deli tiled
 Star Frats, and you see that although there is a lot of sordid stuff, there is also people sharing things with each others, and helping kids...
@@ -1675,92 +1638,35 @@ vogue-u-gov
 Oro-boro
 
 Went New
-Either have a table of locations that you check later, or have
 
-a room can be untrawled, hot or trawled.
-
-a room has a number called xval. a room has a number called yval. xval of a room is usually 0. yval of a room is usually 0.
-
-to trawl-rooms:
-now (redacted name) is hot;
-now all rooms in meta-rooms are trawled;
-now (unreachable til later room) is trawled;
-while number of hot rooms > 0:
-repeat with x running through hot rooms:
-    now x is trawled;
-    if room south of x is untrawled:
-        now room south of x is hot;
-        xval of room south of x is xval of x;
-        yval of room south of x is yval of x + 1;
-    if room north of x is untrawled:
-        now room north of x is hot;
-        xval of room north of x is xval of x;
-        yval of room north of x is yval of x - 1;
-    if room east of x is untrawled:
-        now room east of x is hot;
-        xval of room east of x is xval of x + 1;
-        yval of room east of x is yval of x;
-    if room west of x is untrawled:
-        now room west of x is hot;
-        xval of room west of x is xval of x - 1;
-        yval of room west of x is yval of x;
-if number of untrawled rooms > 0: say "Untrawled: [list of untrawled rooms].";
-
-THINK tells you what you should have done
-1w.py candidates: void haze
-gq/gr = add same thing added to ga.bat. Also, maybe have a way for GH.PL to print out the file stream to stdout or to the file name. What should the file name be?
 cert-rec
 Doll OD
 gonif elf pelt lep
-mite minor
-ZOT! A to Z!
 Remand Namer
-Star Frats
 Tiny Nit
-Matt Tam
 nun
 sewer ewes: random animals that you can't find?
-Trap Art
-Ark of Okra
 gnilling
-"Name, Man?"
-Ring O' Zognir / Ring of Ufogrin
-UFO Tofu
-Era Fare
 Old, Lo
-Hook! Ook
+Hook! Ooh.
 gun gin
-business: Brehm Herb
 palm lap
 gong nog
 hag
-Stand Nat's/Nat's Tan
 Earl Rae
 Scold-Locs = sunglasses
 Regager has (X) charges left and describes what the others have ...
-Art Xtra
 How Oh
-Nif-t-fin!
 arid ira
 Dray Yard
-ride dir
 eric ire
-Flea Elf
-Gig
 Tuck Cut
-yack cay
 food, oof
 Fool, aloof
 FIX if
-Mice-Decim
-Stamp Mats
 Smart Trams
-Wan Gnaw
 Warn Raw
 Glass Alg
-Rife Kefir
-Skooby Books
-Businesses repopulating Yelpley.
 hat ah
 old lo
 Done? Nod.
@@ -1769,37 +1675,24 @@ Gone, nog!
 hag gun gin gan nag nVg
 Spidered IPs
 Oppo = what to do?
-stats
-radar
 hatstah
 "EVAR Grave?" No
 civic level = the final
 Vim IV
 Stall Ats
 Wend New
-We Sew
-Ned Aden
 Dean
 
 Signe Kengis
 red lo fi folder
-Sim Amis
-War? Raw.
 Set a['] Mates
-pert rep
 Say As
 Ebola lobe: scenic boundary
-Etta Matte
 Drag-Grad
 "Is he there? He IS!"
 red rod order
-exult-luxe: Loot Stool
-Evol-Glove
-eel flee
-Redo Coder
 rag us, sugar?
 revile-liver
-Link Nil = E-Divide
 spine nips
 spire RIPs
 brace-carb
@@ -1807,18 +1700,15 @@ Ay, a Papaya
 Nom La Salmon
 Neil's Lein
 Lie, Neil
-bold lob
 x/o box = regardless of how much personal space you have, you appreciate the gesture! (At the end) <- it's something you can't take). Maybe it seems a bit on the simple side, but you didn't want anything too complex to remember. I mean, how would you explain it?
 plover
-does the player mean useoning a noun with itself: it is very unlikely.
-evol-glove (special note for hyphen)
 Reno Loner
 Torn? Rot
 Done Nod
 Loner Enol
 buck cub
 Res BS'er
-City Tic / Cite TIC
+Cite Tic
 A Gem O' Omega! <- use ME GEM
 gq.pl also tracks with STDERR every 5 such things it prints something out in STDIN. This can be adjusted.
 Elsif Isle is a place where you can go, but HOW?
@@ -1827,51 +1717,31 @@ This meta-narrative is stupid! Why is it even in the game? <- InvisiClues
 What about GO TO PRO CORP? / GO TO MOO ROOM is blocked with the goat in the way. GO TO also blocked with running
 Colby Bloc = biz
 Fie If
-THINK tells you what you could/should have done. Maybe have something in place every few moves to cue you what to do?
 Test all food combos before testing the right ones e.g. A WITH B, C WITH D, A WITH D, B WITH C, undo, undo, A WITH C, B WITH D
-sleet eels / sleek eels
 "Boone?! Noob!"
 weed eew
-Gina Hanig
 yr dry
 bath tab
 grass arg
 nano onan
-Eliza Bazile
-Grerg
 Want? Naw
-Enoch Cone
-mist-sim makes it more dramatic
 balder blared le bard
 ALCLU = all clues (verb)
-Emir Crime
-Emir Grime
 Mess Em
-stork rots/storm rots/store rots
-Wand? Naw
-deer greed
 Truce, Curt.
 Knit Ink
 Nik's Kin
 Poon Snoop
 DONE = go through all rooms. Which doable?
-ride dir
-Link Nil
 rub bur / burn rub
 Edu-Dude is Edu-Rude
 Dark! Rad!
 not-dud-ton
-tropiciport
 note-ton
 eval-slave
-wan gnaw
 warn raw
 Smart Trams
 nepo-pen
-Derby Bred
-Rife Kefir
-anne kenna
-Skooby Books
 Frau Arf
 Poof Oop / Foot Oof
 Deza Zed
@@ -1891,7 +1761,6 @@ Ya Nay
 The ME TOTEM is a thing. It fills your head with circular arguments that rise and fall so poetically but do not go anywhere or give you a chance to think about it.
 Wash Saw    Porch Crop    Balsa Slab    --    --    true    true    true    Grebeberg    "The wash saw breaks as you clear the worst of the overgrown porch crop. You discover a balsa slab underneath. The code doc asks to trade. Sure, why not? The saw won't be a great weapon, but who knows what you can do with the balsa slab."
 NOTE: we also have to make sure the wash saw is not destroyed after using it on the rift fir.
-Mo! Nom!
 Glass Alg
 
 # lap a papal = case we need to get working

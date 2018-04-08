@@ -113,6 +113,7 @@ person-name
 "Florene Rolf"
 "Gia Haig"
 "Gil Lellig"
+"Gina Hanig"
 "Gino Honig"
 "Gitte Rettig"
 "Glenn Elg"
@@ -236,6 +237,7 @@ person-name
 "Marta Tram"
 "Marty Tram"
 "Mary Byram"
+"Matt Tam"
 "Maya Rayam"
 "Maybelle Byam"
 "Mel Klem"
@@ -403,6 +405,8 @@ person-name
 "Sena Vanes"
 "Setsuko Kustes"
 "Shawanna Wahs"
+"Sim Amis"
+"Sim Aramis"
 "Sima Damis"
 "Sina Mcmanis"
 "Sirena Neris"
@@ -722,6 +726,7 @@ biz-name
 "Looks Skool"
 "Rife Kefir"
 "Skooby Books"
+"We Sew"
 
 volume random responses
 
@@ -808,6 +813,7 @@ randtxt
 "We Few"
 "Wedded Dew"
 "Yo Banana Boy"
+"Zot: A to Z"
 
 table of attackings
 randtxt
@@ -824,6 +830,7 @@ randtxt
 "Po['] bop!"
 "Pop!"
 "Pow-op! Pow-op!"
+"Regard, rager!"
 "Spare raps!"
 "Tiff. Fit."
 "To ire! Riot!"
@@ -976,6 +983,7 @@ randtxt
 "Now? On!"
 "Pal...flap!"
 "Panic? I nap!"
+"Pas ASAP!"
 "A rests era!"
 "Resume, muser!" [okdup]
 "Rev, O Rover!"

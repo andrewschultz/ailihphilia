@@ -114,8 +114,6 @@ Yelpley is a region. max-score of Yelpley is 37.
 
 Odd Do is a region. max-score of Odd Do is 11.
 
-index map with Dirge Grid mapped east of Toll Lot.
-
 the change default appearance for blank rooms rule is listed after the room description body text rule in the carry out looking rules.
 
 carry out looking (this is the change default appearance for blank rooms rule):
@@ -173,7 +171,6 @@ Understand the command "buy" as something new.
 Understand the command "purchase" as something new.
 understand the command "buy" as something new.
 understand the command "light" as something new.
-understand the command "jump" as something new.
 understand the command "hop" as something new.
 understand the command "skip" as something new.
 understand the command "sip" as something new.
@@ -207,6 +204,54 @@ oldschooling is an action out of world.
 
 carry out oldschooling:
 	say "That's an old school very and won't be necessary in this game. See V/VERB/VERBS for what is used/useful." instead;
+
+volume room specifications
+
+chapter loc-num
+
+[originally for bang nab/mr arm]
+
+a room has a number called loc-num.
+
+loc-num of Calcific Lac is 00.
+loc-num of Sneer Greens is 01.
+loc-num of Flu Gulf is 02.
+loc-num of Trapeze Part is 03.
+loc-num of Evaded Ave is 04.
+loc-num of Yell Alley is 05.
+loc-num of Pro Corp is 06.
+loc-num of Yack Cay is 10.
+loc-num of Le Babel is 11.
+loc-num of Cold Loc is 12.
+loc-num of Apse Spa is 13.
+loc-num of Art Xtra is 14.
+loc-num of Red Roses Order is 15.
+loc-num of Gross Org is 16.
+loc-num of Swamp Maws is 20.
+loc-num of Dumb Mud is 21.
+loc-num of Seer Trees is 22.
+loc-num of Fun Nuf is 23.
+loc-num of Yawn Way is 24.
+loc-num of Emo Dome is 25.
+loc-num of Toll Lot is 26.
+loc-num of Den Ivy Vined is 30.
+loc-num of Mont Nom is 31.
+loc-num of Ooze Zoo is 32.
+loc-num of Worn Row is 33.
+loc-num of My Gym is 34.
+loc-num of Swept Pews is 35.
+loc-num of Deft Fed is 36.
+loc-num of Lair Trial is 40.
+loc-num of Motto Bottom is 41.
+loc-num of Frush Surf is 42.
+loc-num of Moo Room is 43.
+loc-num of Dopy Pod is 44.
+loc-num of Drawl Ward is 45.
+loc-num of Scrap Arcs is 46.
+
+chapter internal mapping
+
+index map with Dirge Grid mapped east of Toll Lot.
 
 volume unsorted
 
@@ -260,7 +305,7 @@ volume the player
 description of player is "Flesh. Self.". initial appearance of player is "U R U".
 
 check dropping:
-	say "This game is not Pro-Drop. In other words, you don't need to drop anything. You may wish to USE it instead." instead;
+	say "This game is not Pro-Drop. There is no met-ill item. In other words, you don't need to drop anything. You may wish to USE it instead." instead;
 
 to decide which region is mrlp:
 	decide on map region of location of player;
@@ -450,8 +495,6 @@ check taking a workable: say "Grab? Arg! (Machines don't need to be taken.)[para
 
 check pushing: say "Push?! [']Sup?! [one of](You never need to push anything in Ailihphilia.)[or][line break][stopping]" instead;
 check pushing: say "You never need to pull anything in Ailihphilia. Well, nothing concrete." instead;
-
-chapter going nowhere
 
 chapter search replacement
 
@@ -852,7 +895,7 @@ check drinking:
 	if noun is Gorge Grog, say "One look at the grog, and you realize you're not up to such super-powered alcohol." instead;
 	if noun is murdered rum, say "The rum part is drinkable, but the murdered rum isn't." instead;
 	say "[if noun is drinkable]Pish! Sip?![else][']S not wet. Ew--TONS.[end if]";
-	if drink-warning is false, say "(You don't need to drink anything in this game. Liquids have other purposes. Besides, I didn't implement Pee Keep.)[paragraph break]";
+	if drink-warning is false, say "(You don't need to drink anything in this game. Liquids have other purposes. Besides, I didn't implement Pee Keep or Lav Oval.)[paragraph break]";
 	now drink-warning is true instead;
 
 chapter eating
@@ -863,6 +906,10 @@ check eating:
 	say "[if noun is Demo Med]You're not sick enough to risk it. Maybe someone in much worse shape than you...[else if noun is edible]Food? Oof![else]You contemplate a wan gnaw, but no voice says 'Naw. G'wan!'[end if]";
 	if eat-warning is false, say "(You don't need to eat anything to win. Food may be more useful for other people.)[paragraph break]";
 	now eat-warning is true instead;
+
+chapter jumping
+
+instead of jumping, say "You only manage a po['] hop (you don't need to jump in this game).";
 
 chapter burning
 
@@ -1189,10 +1236,12 @@ definition: a thing (called t) is exhausted:
 a machine message rule for a thing (called t):
 	if t is exhausted, say "You already tried everything, and nothing worked." instead;
 	if t is listed in postmachines, say "You already built [the t] here. Time to do something else with it." instead;
+	say "1.";
 	repeat through table of useons:
 		unless there is a use1 entry, next;
 		if t is use1 entry and use2 entry is a workable, say "Nothing happens, but you feel you must be close, here." instead;
 		if t is use3 entry and use2 entry is a workable, say "The [second noun] hums a bit as you bring [the t] close. You already used a machine to make [the t]. Maybe you should do something else." instead;
+	say "2.";
 	if second noun is reifier, now t is reified;
 	if second noun is rotator, now t is rotated;
 	if second noun is reviver, now t is revived;
@@ -1334,7 +1383,7 @@ gate tag	soot tattoos	state tats	--	tats-peripheral rule	true	true	true	Yelpley	
 poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
 poo coop	turf rut	--	coop-full rule	shift-dumb-mud rule	true	true	true	Grebeberg	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture.[paragraph break]A bold lob! The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
 radar	made dam	eroded ore	--	radar-blink rule	true	false	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow. The radar plays a weird scale. Being close to the ore has damaged it somehow."
-NULL ILLUN	Known Wonk	--	--	bump-maws rule	true	false	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me. I mean, it's almost as bad as [i]EBB?! BE[r].' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. Rid a nadir. Rid ANY nadir! Sometimes, simple stuff works.' As the Known Wonk babbles, the mist sim lifts, too. 'Wow!' But no, your acts deserve a better cheer than that. 'H/t! A path!'"
+NULL ILLUN	Known Wonk	--	--	bump-maws rule	true	false	true	Grebeberg	"The Known Wonk begins to read. 'This is too simple. It has to be beneath me. I mean, it's almost as bad as [i]EBB?! BE[r].' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. Rid a nadir. Rid ANY nadir! Wonk, now! Sometimes, simple stuff works.' As the Known Wonk babbles, the mist sim lifts, too. 'Wow!' But no, your acts deserve a better cheer than that. 'H/t! A path!'"
 el doodle	edits tide	spa maps	--	rahs-too rule	true	true	false	Grebeberg	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps! And there is a bonus! It appears El Doodle was so jumbled, there were two things. Sharp rahs appear on another sheet of paper, as some sort of confused motivation, and you take them."
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where, but you see Elided Ile in the distance. So you stop off there. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and you are worthy to fight the vicious Bar Crab. It is no match for your elope pole. The citizens hand you a YOU BUOY to tell you they're glad you're you, asking only for the elope pole as a souvenir. Well, it was getting a bit awkward to carry.[paragraph break]They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Calcific Lac. As it gets near and bends away, you jump off, using the buoy to paddle and float back all the way."
 dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
@@ -1357,9 +1406,9 @@ DNA band	reifier	DNA hand	--	--	true	true	false	Yelpley	"After considerable goop
 roto motor	DNA hand	Mr Arm	--	--	true	true	true	Yelpley	"Some of the stuffing inside the hand has to pop out to make space for the roto motor to fit in. There's enough to make a whole arm! The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on the arm (MR. ARM) and hand: BANG NAB. The arm will probably give the hand a bit more reach."
 Eroded Ore	reviver	Ore Zero	--	--	true	true	false	Yelpley	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
 you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. 'You BOFFO buoy!' you can't help shouting.[paragraph break]The gem's so tempting and beautiful, you grab it quickly, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
-Mr Arm	TNT	TNT	--	mob-bye rule	true	true	false	Yelpley	"Mr. Arm walks on his index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. Being an arm, it/he has more leverage than just a DNA hand would've. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course. Perhaps Mr. Arm will find a Do-Bod to be truly complete. The bomb mob, for their part, becomes a poor troop once they see what they've lost."
+Mr Arm	TNT	TNT	--	mob-bye rule	true	true	false	Yelpley	"Mr. Arm walks on his index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. Being an arm, it/he has more leverage than just a DNA hand would've. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course. Perhaps Mr. Arm will find a Do-Bod or even an Evol-Glove to be truly complete. The bomb mob, for their part, becomes a poor troop once they see what they've lost."
 nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
-rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	Grebeberg	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'SOS! SOS!' he cries, making a male lam. From his babbling, he's apparently retreating to a glam-amalg in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]The ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
+rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	Grebeberg	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'SOS! SOS!' he cries, making a male lam. From his babbling, he's apparently retreating to the glam-amalg (Loot Stool included) in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]The ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
 Bro Orb	Mirror Rim	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	"The Bro Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Madam has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, madam, live not on evil!' you boom, as the Orb does its work. Madam looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'You can't catch me! Not with the E-Divide in place!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Madam."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
@@ -1753,7 +1802,7 @@ this is the wear-garb rule:
 	the rule succeeds;
 
 this is the you-win rule: [xxwin]
-	say "The Flee Elf greets you on the other side. 'Deified! Deified!' You ask hesitantly about the new adventures promised.[wfak-d]";
+	say "The Flee Elf greets you on the other side. 'Deified! [if cur-score of Odd Do is max-score of odd-do]Won! All Illa['] Now[else]Won enow[end if]! / Deified!' You ask hesitantly about the new adventures promised.[wfak-d]";
 	say "'The X-ITE TIX lead to A REAL WORLD THAT WILL BE MORE EXCITING AFTER YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a circular loop to 'back where you began' non-twist. Books like that always kind of annoyed you (well, okay, the first ones seemed profound,) but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand and pulls out a device. 'This RIDE-DIR will help you return to your own world. And here is an x/o box.'[wfak-d]";
 	say "The x/o box isn't much: nothing's inside, and it's engraved 'U Remem'er, U.' As you stare at it, you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered stuff you can't fix?[wfak-d]";
 	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call them? It's a tough call between SOME MEMOS, I SAW [']TWAS I, SAGAS or SOLOS. Hmm, maybe DRAWN INWARD.";
@@ -2338,7 +2387,7 @@ carry out emiting:
 	if the topic understood matches "noontime":
 		say "BOOM! The yard ray emits so much light, you immediately have to switch it off. Well, that was a good start. Now you want to make sure you can aim it at something that can be destroyed.";
 		now emitted is true;
-		reg-inc Dim Mid; [Dim Mid/emit noontime]
+		reg-inc Dim Mid; [EMIT NOONTIME]
 		the rule succeeds;
 	if the topic understood matches "time":
 		say "Yes, but what sort of time? Something positive and cheery, you'd guess." instead;
@@ -2600,7 +2649,7 @@ after going to Mont Nom:
 
 chapter ark of okra
 
-The ark of okra is scenery in Mont Nom. "You always found okra, or the idea, icky, but the ark is beautiful enough, you sort of wonder how it'd taste. Here you can see DO OFT FOOD inscribed on it. Maybe if you LISTEN you'll hear an equally weird and vaguely useful message[if martini tram is off-stage]. You bet something cool is behind it. Maybe a tahini hat[end if]."
+The ark of okra is scenery in Mont Nom. "You always found okra, or the idea, icky, but the ark is beautiful enough, you sort of wonder how it'd taste. Here you can see DO OFT FOOD inscribed on it. Maybe if you LISTEN you'll hear an equally weird and vaguely useful message[if martini tram is off-stage]. You bet something cool is behind it. Maybe a tahini hat. You really want to make a sup opus here[end if]."
 
 instead of eating ark of okra:
 	say "You don't know how long it's been out here. It's probably, like, the vegetable version of wax fruit."
@@ -2639,7 +2688,7 @@ check going south in Ooze Zoo: if sleep eels are in Ooze Zoo, say "There are too
 
 chapter sleep eels
 
-the sleep eels are plural-named people in Ooze Zoo. "The sleep eels look comfortable where they are. Maybe you can give them better sleeping quarters.". description is "The sleep eels squirm. Maybe there's a humane way to move them out."
+the sleep eels are plural-named people in Ooze Zoo. "The sleep eels look slightly uncomfortable where they are. Maybe you can give them better sleeping quarters.". description is "The sleep eels squirm. Maybe there's a humane way to move them out."
 
 to say s-dray:
 	say "[if Frush Surf is visited]the Frush Surf[else]a coastal place[end if]"
@@ -2904,7 +2953,7 @@ check taking tao boat: say "The tao boat is much too big." instead;
 
 chapter dork rod
 
-The dork rod is a thing. description is "It's kind of neat and quirky, but it's not shiny enough to be the famed Dorada Rod. Which would be worth more at a pawn shop, but the dork rod reminds you of embarrassing things you did in the past, and yet...you're not quite so embarrassed about them! You know how to deal a bit better, now. You even feel less embarrassed you were shunted off into this quest instead of something more action-packed. At peace with yourself, even."
+The dork rod is a thing. description is "Wand? Naw. It's kind of neat and quirky, but it's not shiny enough to be the famed Dorada Rod. Which would be worth more at a pawn shop, but the dork rod reminds you of embarrassing things you did in the past, and yet...you're not quite so embarrassed about them! You know how to deal a bit better, now. You even feel less embarrassed you were shunted off into this quest instead of something more action-packed. At peace with yourself, even."
 
 chapter enact cane
 
@@ -2922,7 +2971,7 @@ check opening you buoy: say "You can't find an opening. Sadly, this is slightly 
 
 chapter ME gem
 
-the ME gem is a thing. description is "You feel a strong urge to keep this and not share it, because of all the crazy things you did to get it, but you know that's not quite right. You wonder of its origin--perhaps it was chipped off from Le We Jewel, or it was originally engraved in the Ring O['] Zognir.[paragraph break]Also, it looks nothing at all like the emerald in Zork I, which was also in a buoy, so stop thinking that."
+the ME gem is a thing. description is "You feel a strong urge to keep this and not share it, because of all the crazy things you did to get it, but you know that's not quite right. You wonder of its origin--perhaps it was chipped off from Le We Jewel, or it was originally engraved in the Ring O['] Zognir. Or was it the Ring of Ufogrin?[paragraph break]Also, it looks nothing at all like the emerald in Zork I, which was also in a buoy, so stop thinking that."
 
 book Apse Spa
 
@@ -2963,6 +3012,81 @@ Yawn Way is east of Fun Nuf. It is in Yelpley. "Not much to do here, and it's qu
 after looking in Yawn Way for the first time:
 	say "Whew! You were worried you'd develop a city tic, but thankfully not.";
 	continue the action;
+
+chapter X/Y Pyx
+
+the X Y Pyx is a thing in Yawn Way. printed name of x y pyx is "an X/Y Pyx". description of X Y Pyx is "[map-so-far]".
+
+to decide whether eithervisit of (rm - a room) and (di - a direction):
+	if the room di of rm is nowhere, no;
+	if rm is visited, yes;
+	if the room di of rm is visited, yes;
+	no;
+
+to say map-so-far:
+	let lastnum be -1;
+	let pyx-row be 0;
+	let thru-once be false;
+	let times-thru be 0;
+	say "[fixed letter spacing]";
+	while pyx-row < 35:
+		increment pyx-row;
+		choose row pyx-row in table of pyxloc;
+		if times-thru is 0:
+			if loc-num of rmname entry <= lastnum, say "WARNING pyxloc is out of order at [rmname entry].";
+			now lastnum is loc-num of rmname entry;
+			say "[if rmname entry is visited][uptxt entry][else]     [end if]";
+			say "[if eithervisit of rmname entry and east]===[else]   [end if]";
+		else if times-thru is 1:
+			say "[if rmname entry is visited][downtxt entry][else]     [end if]   ";
+		else:
+			say "  [if eithervisit of rmname entry and south]|[else] [end if]     ";
+		if the remainder after dividing pyx-row by 7 is 0:
+			say "[line break]";
+			increment times-thru;
+			if times-thru < 4:
+				now pyx-row is pyx-row - 7;
+			else:
+				now times-thru is 0;
+	say "[variable letter spacing]";
+
+table of pyxloc [xxpyx]
+rmname	uptxt	downtxt
+Calcific Lac	"CALCI"	" LAC "
+Sneer Greens	"SNEER"	"GREEN"
+Flu Gulf	" FLU "	"GULF "
+Trapeze Part	"TRAPE"	"PART "
+Evaded Ave	"EVADE"	" AVE "
+Yell Alley	"YELL "	"ALLEY"
+Pro Corp	" PRO "	"CORP "
+Yack Cay	"YACK "	" CAY "
+Le Babel	" LE  "	"BABEL"
+Cold Loc	"COLD "	" LOC "
+Apse Spa	"APSE "	" SPA "
+Art Xtra	" ART "	"XTRA "
+Red Roses Order	" RED "	"ROSES"
+Gross Org	"GROSS"	" ORG "
+Swamp Maws	"SWAMP"	"MAWS "
+Dumb Mud	"DUMB "	" MUD "
+Seer Trees	"SEER "	"TREES"
+Fun Nuf	" FUN "	" NUF "
+Yawn Way	"YAWN "	" WAY "
+Emo Dome	" EMO "	"DOME "
+Toll Lot	"TOLL "	" LOT "
+Den Ivy Vined	" DEN "	" IVY "
+Mont Nom	"MONT "	" NOM "
+Ooze Zoo	"OOZE "	" ZOO "
+Worn Row	"WORN "	" ROW "
+My Gym	" MY  "	" GYM "
+Swept Pews	"SWEPT"	"PEWS "
+Deft Fed	"DEFT "	" FED "
+Lair Trial	"LAIR "	"TRIAL"
+Motto Bottom	"MOTTO"	"BOTTO"
+Frush Surf	"FRUSH"	"SURF "
+Moo Room	" MOO "	"ROOM "
+Dopy Pod	"DOPY "	" POD "
+Drawl Ward	"DRAWL"	"WARD "
+Scrap Arcs	"SCRAP"	"ARCS "
 
 chapter Name ME Man
 
@@ -3316,7 +3440,7 @@ chapter books in bookcase
 
 TI is a proper-named book. printed name of TI is "TO IDIOT (TI)". understand "to idiot" and "idiot" as ti. description is "It's full of hot takes and 'clever' put-downs based on assuming the recipient isn't as smart as they think they are. You remember laughing at this sort of thing when you were really bored or grouchy, and you sort of regret it now. Still, it keeps some people busy.". [Door Frood]
 NULL ILLUN is a proper-named book. printed name of NULL ILLUN is "NULL ILLUN (NI)". understand "ni" as NULL ILLUN. description is "Surprisingly wise advice about how to achieve happiness and shake annoyances you can't dispel with just logic.". [Known Wonk]
-EPOCH COPE is a proper-named book. printed name of EPOCH COPE is "EPOCH: COPE (EC)". understand "ec" as EPOCH COPE. description is "All sorts of present-day political and social musings.". [King Nik]
+EPOCH COPE is a proper-named book. printed name of EPOCH COPE is "EPOCH: COPE (EC)". understand "ec" as EPOCH COPE. description is "All sorts of present-day political and social musings, with the catch phrase '[']S civics!'". [King Nik]
 YOB ATTABOY is a proper-named book. printed name of YOB ATTABOY is "YOB ATTABOY (YA)". understand "ya" as YOB ATTABOY. description is "All about picking yourself up by your bootstraps and not feeling sorry for yourself or being too jealous of what others know or can do--SHED EH'S is repeated in big bold letters.". [Sniffins]
 
 chapter SOME DEMOS
@@ -3912,6 +4036,8 @@ check taking bunk nub:
 
 the stock cots are a plural-named thing. description is "The stock cots are cut cleverly from the remains of the bunk nub. They'll make a great place to sleep for any number of small animals."
 
+understand "cot" as stock cots.
+
 book Trapeze Part
 
 Trapeze Part is west of Evaded Ave. It is in Yelpley. "[if epicer recipe is off-stage]There's a ten level net on the floor, here. It could protect you from a long fall. You're convinced there must be something at the far end, but it's probably not safe to use the trapeze to get over until, well, you've done safety checks[else]The ten level net still sits here, and it'd be handy if there was anything else on the other side of it, but there isn't[end if]."
@@ -3974,6 +4100,11 @@ understand "seedy/dee/dees" and "seedy dee/dees" as navy van.
 section eye
 
 the eye is part of the navy van. description is "It looks electronic and (unsurprisingly) symmetrically spherical. Perhaps you could USE something on it."
+
+instead of putting something on the eye: try useoning noun with eye;
+instead of putting something on the navy van: try useoning noun with navy van;
+instead of inserting into the eye: try useoning noun with eye;
+instead of inserting into the navy van: try useoning noun with navy van;
 
 chapter snack cans
 
@@ -4064,7 +4195,7 @@ check going north in Red Roses Order when E Divide is in Red Roses Order: say "W
 
 book Swept Pews
 
-Swept Pews is south of Emo Dome. It is in Yelpley. "You can go back north to the Emo Dome in this tidy little area[if liar grail is moot]. A passage has been opened south with the Liar Grail's demise[end if]."
+Swept Pews is south of Emo Dome. It is in Yelpley. "You can go back north to the Emo Dome in this tidy little area, unnamed but probably St. Emmet's[if liar grail is moot]. A passage has been opened south with the Liar Grail's demise[end if]."
 
 check going south in Swept Pews:
 	if Liar Grail in Swept Pews, say "Maybe there's a path where you could get rid of the grail, but not yet." instead;
@@ -4242,44 +4373,6 @@ to say arm-dir:
 		say "[if Vert > Horz]north[else]west[end if]-northwestish";
 	else:
 		say "[if Vert + Horz > 0]north[else]east[end if]-northeastish";
-
-a room has a number called loc-num.
-
-loc-num of Calcific Lac is 00.
-loc-num of Sneer Greens is 01.
-loc-num of Flu Gulf is 02.
-loc-num of Trapeze Part is 03.
-loc-num of Evaded Ave is 04.
-loc-num of Yell Alley is 05.
-loc-num of Pro Corp is 06.
-loc-num of Yack Cay is 10.
-loc-num of Le Babel is 11.
-loc-num of Cold Loc is 12.
-loc-num of Apse Spa is 13.
-loc-num of Art Xtra is 14.
-loc-num of Red Roses Order is 15.
-loc-num of Gross Org is 16.
-loc-num of Swamp Maws is 20.
-loc-num of Dumb Mud is 21.
-loc-num of Seer Trees is 22.
-loc-num of Fun Nuf is 23.
-loc-num of Yawn Way is 24.
-loc-num of Emo Dome is 25.
-loc-num of Toll Lot is 26.
-loc-num of Den Ivy Vined is 30.
-loc-num of Mont Nom is 31.
-loc-num of Ooze Zoo is 32.
-loc-num of Worn Row is 33.
-loc-num of My Gym is 34.
-loc-num of Swept Pews is 35.
-loc-num of Deft Fed is 36.
-loc-num of Lair Trial is 40.
-loc-num of Motto Bottom is 41.
-loc-num of Frush Surf is 42.
-loc-num of Moo Room is 43.
-loc-num of Dopy Pod is 44.
-loc-num of Drawl Ward is 45.
-loc-num of Scrap Arcs is 46.
 
 volume dialogue
 
