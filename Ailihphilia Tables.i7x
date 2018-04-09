@@ -720,6 +720,7 @@ chapter random businesses
 
 table of businesses
 biz-name
+"Colby Bloc"
 "Dairy Myriad"
 "Derby Bred"
 "Layaway Al"
@@ -821,6 +822,7 @@ table of attackings
 randtxt
 "D00d!"
 "Dude! Dud."
+"Goon! Oog!"
 "Harm! Rah!"
 "Hood! Ooh!"
 "Hurt! Ruh!"
@@ -916,12 +918,14 @@ randtxt
 
 table of Rob droning
 randtxt
+"Boone?! Noob!"
 "EOF, Foe!"
 "More ROM!"
 "Posts-op? POST, sop!"
 "Prove VORP!"
 "Resume [']m, user!"
 "Spidered IPs?!"
+"Thunk Knuth!"
 
 table of singstuff
 randtxt

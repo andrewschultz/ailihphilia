@@ -37,7 +37,7 @@ test p8a with "w/s/s/s/e/use enact cane on yahoo hay/pace cap/use troll ort on b
 [this is to give the kayo yak another go]
 
 [ note I could probably save a move or two here by visiting Mont Nom just before going back east ... now that getting the Martini Tram moves you back to Fun Nuf ]
-test part9 with "w/w/w/n/use moor broom on tru yurt/s/s/use wash saw on porch crop/n/e/use exam axe on lie veil/n/muss opossum/get all/s/e/e/e/s/w/use DNA band on reifier/use roto motor on DNA hand/use eroded ore on reviver/use you buoy on rotator/e/n/n/n/e/use mr arm on TNT/get rep popper/w/s/s/w/w/n/n/use nat's tan on scorn rocs"
+test part9 with "w/w/w/n/use moor broom on tru yurt/s/s/use wash saw on porch crop/n/e/use exam axe on lie veil/n/muss opossum/get all/s/e/e/e/s/w/use DNA band on reifier/use roto motor on DNA hand/use eroded ore on reviver/use you buoy on rotator/e/n/n/n/e/use mr arm on bomb mob/get rep popper/w/s/s/w/w/n/n/use nat's tan on scorn rocs"
 
 test rollup with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9"
 
@@ -55,6 +55,11 @@ test roll7 with "test part1/test part2/test part3/test part4/test part5/test par
 test roll8 with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8".
 test roll9 with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9".
 test roll10 with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9/test part10".
+
+chapter quickgo
+
+test ro with "rev over/use gem on fink/use bat on rev/use ray on redivider".
+test ds with "rev over".
 
 chapter annoying bugs
 
