@@ -1793,6 +1793,7 @@ this is the toons-to-den rule:
 	move player to Toll Lot;
 	moot decal placed;
 	move snooty toons to Deft Fed;
+	now Sniffins-reintro is true;
 	the rule succeeds;
 
 this is the totem-out rule:
@@ -3028,9 +3029,28 @@ after looking in Yawn Way for the first time:
 	say "Whew! You were worried you'd develop a city tic, but thankfully not.";
 	continue the action;
 
+after looking in Yawn Way:
+	if Diktat Kid is moot and day away ad is off-stage:
+		say "Oh! There's something new next to Name Me, Man. It's ... a day-away ad! Of businesses that will repopulate Yelpley with the Diktat Kid gone!";
+		move day away ad to Yawn Way;
+	continue the action;
+
+chapter day away ad
+
+the day away ad is scenery in Yawn Way. printed name of day away ad is "Day-Away Ad". "The Day-Away Ad describes businesses soon to open in the new improved Yelpley, including [two-ads]."
+
+to say two-ads:
+	next-rand table of businesses;
+	choose row with tabnam of table of businesses in table of all randoms;
+	if tabidx entry < number of rows in table of businesses:
+		say " and "
+		next-rand table of businesses;
+	if tabidx entry is number of rows in table of businesses:
+		say " ... and wait! There'll be a new Deft Fed,
+
 chapter X/Y Pyx
 
-the X Y Pyx is a thing in Yawn Way. printed name of x y pyx is "an X/Y Pyx". description of X Y Pyx is "[map-so-far]".
+the X Y Pyx is a thing in Yawn Way. printed name of x y pyx is "an X/Y Pyx". description of X Y Pyx is "[map-so-far]". "[one of]An X/Y pyx lies here. Closer inspection reveals that's just a fancy name for a map[or]The X/Y pyx still lies here[stopping]."
 
 to decide whether eithervisit of (rm - a room) and (di - a direction):
 	if the room di of rm is nowhere, no;
@@ -3106,7 +3126,7 @@ Ooze Zoo	"OOZE "	" ZOO "
 Worn Row	"WORN "	" ROW "
 My Gym	" MY  "	" GYM "
 Swept Pews	"SWEPT"	"PEWS "
-Deft Fed	"[if Elan Ale is moot]BON [else]DEFT[end if] "	"[if Elan Ale is moot]SNOB[else] FED[end if] "
+Deft Fed	"[if yob attaboy is moot]BON [else]DEFT[end if] "	"[if yob attaboy is moot]SNOB[else] FED[end if] "
 Lair Trial	"LAIR "	"TRIAL"
 Motto Bottom	"MOTTO"	"BOTTO"
 Frush Surf	"FRUSH"	"SURF "
@@ -4019,11 +4039,24 @@ Deft Fed is south of Toll Lot. It is in Yelpley. description is "There's not muc
 
 printed name of Deft Fed is "[if yob attaboy is moot]Bon Snob[else]Deft Fed[end if]".
 
+Sniffins-reintro is a truth state that varies.
+
+after looking in Deft Fed when Sniffins-reintro is false and yob attaboy is mute:
+	now Sniffins-reintro is true;
+	say "Oh! Hi! Now that I'm a bit classier, I've given myself a new name that gives me ironic distance from my station in life. You can call me Smuggums, if you like.";
+	continue the action;
+
 chapter Sniffins
 
-Sniffins is a neuter person in Deft Fed. "[one of]You hear a sniff, and the proprietor introduces themselves as Sniffins, apologizing for how lame the ambience and decor are, but there's just no INSPIRATION to do better[or]Sniffins sniffs here[stopping].". description is "Sniffins looks [if yob attaboy is moot]unfriendly despite your help--what a posh sop[else]despondent and pleading, for any sort of help[end if]."
+Sniffins is a neuter person in Deft Fed. "[one of]You hear a sniff, and the proprietor introduces themselves as Sniffins, apologizing for how lame the ambience and decor are, but there's just no INSPIRATION to do better[or]Sniffins[if Sniffins-reintro is true]/Smuggums[end if] sniffs here[stopping].". description is "[if yob attaboy is moot]Sniffins/Smuggums looks down at you despite your help--what a posh sop[else]Sniffins is despondent and pleading for any sort of help[end if]."
+
+understand "smuggums" as Sniffins when Sniffins-reintro is true.
+
+chapter Dirt Rid
 
 the Dirt Rid is a thing. description is "The Dirt Rid looks old and decrepit. Sniffins probably wore it out converting the Bon Snob, but it's yours now."
+
+chapter cave vac
 
 the cave vac is a thing. description is "It looks a lot more powerful than the Dirt Rid."
 
