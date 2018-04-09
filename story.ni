@@ -1421,7 +1421,7 @@ Yard Ray	test set	--	ready-to-test rule	test-set-zapped rule	true	false	true	Dim
 --	--	--	rev-create-tron rule	--	true	--	--	Dim Mid
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, successfully bribed." [b4:use TNT on ore zero]
 taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	Dim Mid	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev knows what he's up against. It's not that it's particularly violent or lethal, but ... the Verses Rev has developed such a warped orthodoxy, the bat is much scarier than it should be. Nothing to do but turn and run!"
-Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	"'Havoc, OVAH!' you should as you aim and fire the yard ray.[paragraph break]Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who goes running off. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid is going to check for that now, but with the Kid gone, you see saner arenas all around. Revel, clever! Revel, ever![paragraph break]And what's this? Some X-ITE TIX fell out of the redivider! Wow! Yo, joy! Wow!"
+Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	"'Havoc, OVAH!' you should as you aim and fire the yard ray.[paragraph break]Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who goes running off. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid is going to check for that now, but with the Kid gone, you see saner arenas all around. Revel, clever! Revel, ever![paragraph break]You don't notice the redivider exploding. When you wake up, it's much later. And you note something beside you: some X-ITE TIX fell out of the redivider! Wow! Yo, joy! Wow!"
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse]
 
@@ -3038,6 +3038,12 @@ to decide whether eithervisit of (rm - a room) and (di - a direction):
 	if the room di of rm is visited, yes;
 	no;
 
+definition: a room (called rm) is ungoable:
+	if Diktat Kid is moot, no;
+	if rm is westpost or rm is eastpost, yes;
+	if rm is eastcond and balm-lab is true, yes;"
+	no;
+
 to say map-so-far:
 	let lastnum be -1;
 	let pyx-row be 0;
@@ -3049,10 +3055,16 @@ to say map-so-far:
 		choose row pyx-row in table of pyxloc;
 		if times-thru is 0:
 			if loc-num of rmname entry <= lastnum, say "WARNING pyxloc is out of order at [rmname entry].";
+			if rmname entry is ungoable:
+				say "XXXXX";
+				continue;
 			now lastnum is loc-num of rmname entry;
 			say "[if rmname entry is visited][uptxt entry][else]     [end if]";
 			say "[if eithervisit of rmname entry and east]===[else]   [end if]";
 		else if times-thru is 1:
+			if rmname entry is ungoable:
+				say "XXXXX";
+				continue;
 			say "[if rmname entry is visited][downtxt entry][else]     [end if]   ";
 		else:
 			say "  [if eithervisit of rmname entry and south]|[else] [end if]     ";
@@ -3068,17 +3080,17 @@ to say map-so-far:
 table of pyxloc [xxpyx]
 rmname	uptxt	downtxt
 Calcific Lac	"CALCI"	" LAC "
-Sneer Greens	"SNEER"	"GREEN"
+Sneer Greens	"[if Yuge Guy is moot]ET TU[else]SNEER[end if]"	"[if Yuge Guy is moot]BUTTE[else]GREEN[end if]"
 Flu Gulf	" FLU "	"GULF "
 Trapeze Part	"TRAPE"	"PART "
 Evaded Ave	"EVADE"	" AVE "
 Yell Alley	"YELL "	"ALLEY"
-Pro Corp	" PRO "	"CORP "
+Pro Corp	"[if bald-lab is true]BALD[else] PRO[end if] "	"[if bald-lab is true]LAB [else]CORP[end if] "
 Yack Cay	"YACK "	" CAY "
 Le Babel	" LE  "	"BABEL"
 Cold Loc	"COLD "	" LOC "
 Apse Spa	"APSE "	" SPA "
-Art Xtra	" ART "	"XTRA "
+Art Xtra	"[if el doodle is moot]TRADE[else] ART [end if]"	"[if el doodle is moot] ART [else]XTRA [end if]"
 Red Roses Order	" RED "	"ROSES"
 Gross Org	"GROSS"	" ORG "
 Swamp Maws	"SWAMP"	"MAWS "
@@ -3086,15 +3098,15 @@ Dumb Mud	"DUMB "	" MUD "
 Seer Trees	"SEER "	"TREES"
 Fun Nuf	" FUN "	" NUF "
 Yawn Way	"YAWN "	" WAY "
-Emo Dome	" EMO "	"DOME "
+Emo Dome	"[if Diktat Kid is moot]DOME[else] EMO[end if] "	"[if Diktat Kid is moot] MOD[else]DOME[end if] "
 Toll Lot	"TOLL "	" LOT "
-Den Ivy Vined	" DEN "	" IVY "
+Den Ivy Vined	" IVY "	"[if tent net is moot]VINED[else]VILLA[end if]"
 Mont Nom	"MONT "	" NOM "
 Ooze Zoo	"OOZE "	" ZOO "
 Worn Row	"WORN "	" ROW "
 My Gym	" MY  "	" GYM "
 Swept Pews	"SWEPT"	"PEWS "
-Deft Fed	"DEFT "	" FED "
+Deft Fed	"[if Elan Ale is moot]BON [else]DEFT[end if] "	"[if Elan Ale is moot]SNOB[else] FED[end if] "
 Lair Trial	"LAIR "	"TRIAL"
 Motto Bottom	"MOTTO"	"BOTTO"
 Frush Surf	"FRUSH"	"SURF "
@@ -3105,7 +3117,9 @@ Scrap Arcs	"SCRAP"	"ARCS "
 
 chapter Name ME Man
 
-Name ME Man is a proper-named peripheral phonebook in Yawn Way. printed name is "NAME ME, MAN". description is "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers of Yelpley residents:[line break][name-num of 5 and name me man][variable letter spacing][run paragraph on]". "[one of]There's also something called NAME ME, MAN, which--well, it's really just a glorified phone book. Yawn[or]NAME ME, MAN waits for your perusal, if you have a great need to procrastinate[if name me man is xyet] some more[end if][stopping].". booktable of Name ME Man is table of random palindrome lastfirst names.
+Name ME Man is a proper-named peripheral phonebook in Yawn Way. description is "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers of Yelpley residents:[line break][name-num of 5 and name me man][variable letter spacing][run paragraph on]". "[one of]There's also something called NAME ME, MAN, which--well, it's really just a glorified phone book. Yawn[or]NAME ME, MAN waits for your perusal, if you have a great need to procrastinate[if name me man is xyet] some more[end if][stopping].". booktable of Name ME Man is table of random palindrome lastfirst names.
+
+printed name of Name ME Man is "NAME ME, MAN".
 
 understand "nm/mm/nmm/phone/book" and "phone book" as Name ME Man.
 
@@ -3467,7 +3481,7 @@ YOB ATTABOY is a proper-named book. printed name of YOB ATTABOY is "YOB ATTABOY 
 
 chapter SOME DEMOS
 
-there is a book called SOME DEMOS. printed name is "SOME DEMOS (SD)". understand "sd" as SOME DEMOS. It is proper-named and hidden. description is "It's a sort of life hacker book with a particular emphasis on having fun with making weird art out of common or even unsophisticated materials and not worrying too much how good it is. It's less heavy-duty than the books you've been schlepping out to others, but it's a fun read.".
+there is a book called SOME DEMOS. printed name of SOME DEMOS is "SOME DEMOS (SD)". understand "sd" as SOME DEMOS. It is proper-named and hidden. description is "It's a sort of life hacker book with a particular emphasis on having fun with making weird art out of common or even unsophisticated materials and not worrying too much how good it is. It's less heavy-duty than the books you've been schlepping out to others, but it's a fun read.".
 
 gap-yet is a truth state that varies.
 
@@ -4001,7 +4015,9 @@ carry out denying:
 
 book Deft Fed
 
-Deft Fed is south of Toll Lot. It is in Yelpley. printed name is "[if yob attaboy is moot]Bon Snob[else]Deli, Tiled[end if]". description is "There's not much decor in this [unless yob attaboy is moot]deli, tiled, except for a decal placed[else]fancy eatery, except for some snooty toons[end if]. You can exit to the north."
+Deft Fed is south of Toll Lot. It is in Yelpley. description is "There's not much decor in this [unless yob attaboy is moot]deli, tiled, except for a decal placed[else]fancy eatery, except for some snooty toons[end if]. You can exit to the north."
+
+printed name of Deft Fed is "[if yob attaboy is moot]Bon Snob[else]Deft Fed[end if]".
 
 chapter Sniffins
 
