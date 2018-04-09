@@ -2107,14 +2107,27 @@ check going in Fun Nuf:
 		else:
 			say "You have a few last lousy points to look around for, so why not poke around?";
 
+check going east in Fun Nuf:
+	if Diktat Kid is moot and east-LLP is 0, say "There's nothing more to do in Yelpley, not even a last lousy point, but you explore anyway...";
+
+check going west in Fun Nuf:
+	if Diktat Kid is moot and west-LLP is 0, say "There's nothing more to do in Grebeberg, not even a last lousy point, but you explore anyway...";
+
 to decide which number is roving-LLP: [Not location dependent: DIAL AID, STATS, REFER, POOP, PEEP]
+	decide on west-LLP + east-LLP;
+
+to decide which number is west-LLP:
 	let temp be 0;
 	if senile felines are in Moo Room, increment temp;
 	if slam-mam is false, increment temp;
-	if balm-got is false, increment temp;
 	if opossum is not moot, increment temp;
-	if DWELT LEWD is off-stage, increment temp;
 	if bees-seen is false, increment temp;
+	decide on temp;
+
+to decide which number is east-LLP:
+	let temp be 0;
+	if DWELT LEWD is off-stage, increment temp;
+	if balm-got is false, increment temp;
 	decide on temp;
 
 check going north in Fun Nuf:
@@ -2542,6 +2555,7 @@ check wearing the lie veil:
 	say "No way. You're on the side of good, here." instead;
 
 check going west in Dumb Mud:
+	if Diktat Kid is moot, say "[one of]You are informed that the Known Wonk and Code Doc have teamed up to design a system of Smarty-Trams to revitalize the economies of Grebeberg and Yelpley. Everything's still in the planning state, but construction has already started to the west[or]The Smarty-Trams construction and planning to the west is not to be disturbed. You've helped enough." instead;
 	if gnu dung is in Dumb Mud, say "Not through the gnu dung you aren't." instead;
 
 check going south in Dumb Mud:
@@ -3811,6 +3825,8 @@ book Emo Dome
 
 Emo Dome is east of Yawn Way. It is in Yelpley. "You can go any direction here, and you sort of want to, because it's stuffy in here, even if it smells nice. [can-go-rro]."
 
+printed name of Emo Dome is "[if Diktat Kid is moot]Dome, Mod[else]Emo Dome[end if]"
+
 to say can-go-rro:
 	if Red Roses Order is unvisited:
 		say "Something labeling itself DIFF ID guards the way north";
@@ -3839,7 +3855,11 @@ check going to Emo Dome:
 	if pulled-up is false:
 		now emo-dir is noun;
 
+check going south in Emo Dome:
+	say "The Swept Pews are closed for reconstruction. You've done all you could." instead;
+
 check going north in Emo Dome:
+	if Diktat Kid is moot, say "The Red Roses Order is being replaced by something more ... civic." instead;
 	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a bright no-go-gon and a voice from the DIFF-ID: 'Dim ID! Go jog!'[paragraph break]You think, hang? Nah." instead;
 	if Bro Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet." instead;
 	if not-a-baton is moot, say "You probably did all you needed to." instead;
@@ -3911,6 +3931,9 @@ after looking in Toll Lot when pulled-up is false:
 	continue the action;
 
 check going in Toll Lot:
+	if Diktat Kid is moot:
+		if noun is south, say "There's a party at the Bon Snob, and it's so exclusive, even you aren't invited!" instead;
+		if noun is north and balm-got is true, say "You already did a little extra in the Bald Lab. You figure it's best to keep away--you guess people probably thought Madam ruined it, and why fill them in on the truth?" instead;
 	if cross orc is in Toll Lot:
 		if noun is north or noun is south, say "The cross orc stops you from going [noun]. 'GIVE VIG!' it booms." instead;
 
@@ -4450,6 +4473,8 @@ carry out gotoing:
 		say "Your pace cap slows down as you [if noun is Fun Nuf]enter[else]cross[end if] Fun [']Nuf..." instead;
 	if noun is location of player, say "Already there!";
 	unless goto-available, say "You're at a point in the game where goto isn't available." instead;
+	if Diktat Kid is mood:
+		abide by the shut-rule of noun;
 	consider the avail-rule of noun;
 	if the rule failed:
 		if noun is Emo Dome and Emo Dome is visited, say "You'd run away from the Emo Dome too quickly. You need a plan of attack to deal with it." instead;
@@ -4460,6 +4485,10 @@ carry out gotoing:
 	now gone-to is true;
 	move player to noun;
 	the rule succeeds;
+
+section shut rule
+
+a room has a rule called avail-rule. avail-rule of a room is usually the trivially false rule.
 
 section available rules
 
