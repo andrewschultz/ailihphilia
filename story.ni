@@ -4474,7 +4474,9 @@ carry out gotoing:
 	if noun is location of player, say "Already there!";
 	unless goto-available, say "You're at a point in the game where goto isn't available." instead;
 	if Diktat Kid is mood:
-		abide by the shut-rule of noun;
+		if noun is Deft Fed, say "You can't crash the party. You weren't invited. It's REALLY exclusive." instead;
+		if noun is westpost, say "The Smarty Trams project is underway there, now you've dealt with the Diktat Kid." instead;
+		if noun is eastpost, say "That area is now undergoing civic restoration, with the Diktat Kid gone." instead;
 	consider the avail-rule of noun;
 	if the rule failed:
 		if noun is Emo Dome and Emo Dome is visited, say "You'd run away from the Emo Dome too quickly. You need a plan of attack to deal with it." instead;
@@ -4486,9 +4488,14 @@ carry out gotoing:
 	move player to noun;
 	the rule succeeds;
 
-section shut rule
+	[?? kick player to Toll Lot if they get LLP after ...]
+	[?? change map text of rooms]
 
-a room has a rule called avail-rule. avail-rule of a room is usually the trivially false rule.
+a room can be eastpost, eastcond, westpost or unblockable. a room is usually unblockable.
+
+Yack Cay is westpost. Swamp Maws is westpost. Calcific Lac is westpost. Trial Lair is westpost. Den Ivy Vined is westpost. Trial Lair is westpost. Motto Bottom is westpost.
+Red Roses Order is eastpost. Swept Pews is eastpost. Drawl Ward is eastpost. Dopy Pod is eastpost. Scrap Arcs is eastpost. Deft Fed is eastpost.
+Gross Org is eastcond. Pro Corp is eastcond.
 
 section available rules
 
