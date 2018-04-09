@@ -387,7 +387,8 @@ if len(sys.argv) > 1:
                 print("No valid number after -w. Going to default of", warning_every_x)
             count = count + 2
             continue # I could just do count = count + 1 and count on the next, but that feels cutesy.
-        elif ',' in ll:
+        elif ',' in ll or ll.startswith('x-'):
+            ll = re.sub("^x-", "", ll)
             extra_words = extra_words + ll.lower().split(",")
         elif lln == 'x3':
             try:
@@ -446,7 +447,7 @@ if len(extra_words):
             sys.stderr.write("WARNING: {:s} is already in the list of words.\n")
             dupes = True
         else:
-            hash_tweak[xw]
+            hash_tweak(xw)
 
 if dupes:
     print("Fix duplicates in 2-word file {:s} before continuing.".format(two_word_file))

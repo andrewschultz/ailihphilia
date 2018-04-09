@@ -663,10 +663,10 @@ def get_stuff_from_source():
                             if temp_cmd in source_cmd_order.keys() and not temp_cmd.startswith("USE"): print("WARNING", temp_cmd, "is a duplicate in table of useons, line", line_count)
                             source_cmd_order[temp_cmd] = source_cmd_count
                         use_in_source[cmd] = line_count # we only track line count for "use" commands and not unusual point gainers
-                    if x[5] == 'false':
+                    if x[5] == 'false' or 'sc2-ignore' in ll:
                         ignore_points[cmd] = line_count
-                        print("Ignoring points for", '/'.join(x[0:2]))
-                    if x[5] == 'true':
+                        print("Ignoring points for", '/'.join(x[0:2]) if x[0] != '--' else x[3])
+                    elif x[5] == 'true':
                         temp_region = ""
                         if x[8] and x[8] != '--' and x[8] != 'reg-plus': # a bit hacky, but basically, check for 9th useon table entry being a proper region
                             temp_region = x[8].lower()
