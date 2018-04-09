@@ -135,7 +135,7 @@ You now have access to a few more rooms. But let's go cover a few we've seen, so
 >W.W.W.N
 
 (+1) >USE WASH SAW ON PAST SAP
->USE PUCE CUP ON PAST SAP
+(+1) >USE PUCE CUP ON PAST SAP
 
 >S.E.E.E.S.GET TROLL ORT
 
@@ -143,7 +143,9 @@ You now have access to a few more rooms. But let's go cover a few we've seen, so
 
 >N.W.W.W.N.E
 
-(+1) > USE PUCE CUP ON DOSE SOD
+Trivia: you only get a point the first time you fill up the puce cup. So if you'd filled it with sod first, you'd have gotten a point for the sod.
+
+> USE PUCE CUP ON DOSE SOD
 
 >W.S.E.E.E.S.S
 
@@ -343,7 +345,9 @@ Now with all the junk we have, we can make non-junk.
 
 >E.N.N.N.E
 
-(+1) >USE MR ARM ON TNT
+(+1) >USE MR ARM ON BOMB MOB
+
+You can use it/him on the TNT, too.
 
 >GET REP POPPER
 
