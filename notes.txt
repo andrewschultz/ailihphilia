@@ -629,7 +629,6 @@ semiterete retimes
 selles mamselles
 senate cetanes
 seta dates
-seedy dees
 seminal animes
 selloff folles
 seder bredes
@@ -789,7 +788,6 @@ Ya May
 Yah Shay
 Yar Gray:Yar Pray
 # yarded ray
-yank nay
 yes mimsey
 yoga goy
 Yo Boy
@@ -1019,23 +1017,8 @@ new gwen
 new owen
 niles elin
 nora daron
-notley elton
-novel evon
-nybo robyn
 okimoto tomiko
-ord isidro
-pike kip
-ramos omar
-rial blair
 rial clair
-rona eleanor
-rover trevor
-sailer elias
-sallade dallas
-self les
-selz les
-seng agnes
-siller ellis
 sirko kris
 siu luis
 siva davis
@@ -1304,7 +1287,6 @@ Not Ruby Borton
 Not To Cotton...
 Not. Revert. On!
 Now Null Unwon
-Now On
 Ode Lots Toledo
 Of Feds? Deffo
 Of Fobs Boffo
@@ -1605,34 +1587,30 @@ hag
 Scold-Locs = sunglasses
 How Oh
 Dray Yard
-Fool, aloof
-hat ah
+Fool aloof
 Gone, nog!
 hag gun gin gan nag nVg
-Oppo = what to do?
 hatstah
 Stall Ats
 Dean
 
-Signe Kengis
+no revile-liver on
+Ay, a Papaya
+Nom La Salmon
+
 red lo fi folder
 Ebola lobe: scenic boundary
 Drag-Grad
 "Is he there? He IS!"
 red rod order
 rag us, sugar?
-revile-liver
 spine nips
 spire RIPs
-Ay, a Papaya
-Nom La Salmon
-Neil's Lein
 plover
 Loner Enol
 buck cub
 Res BS'er
 Cite Tic
-A Gem O' Omega! <- use ME GEM
 gq.pl also tracks with STDERR every 5 such things it prints something out in STDIN. This can be adjusted.
 Elsif Isle is a place where you can go, but HOW?
 Rob: THUNK KNUTH!
@@ -1647,12 +1625,9 @@ nano onan
 Want? Naw
 balder blared le bard
 ALCLU = all clues (verb)
-Mess Em
-Truce, Curt.
 Poon Snoop
 DONE = go through all rooms. Which doable?
 rub bur / burn rub
-Edu-Dude is Edu-Rude
 Dark! Rad!
 not-dud-ton
 note-ton
@@ -1661,13 +1636,11 @@ nepo-pen
 Frau Arf
 Poof Oop / Foot Oof
 Deza Zed
-Goon! Oog!
 gt 11 / NE
 Duo Loud
 Cape Pac
 All I Villa! <- where the Yuge Guy goes
 Not-Kook-Ton
-Ya Nay
 The ME TOTEM is a thing. It fills your head with circular arguments that rise and fall so poetically but do not go anywhere or give you a chance to think about it.
 Wash Saw    Porch Crop    Balsa Slab    --    --    true    true    true    Grebeberg    "The wash saw breaks as you clear the worst of the overgrown porch crop. You discover a balsa slab underneath. The code doc asks to trade. Sure, why not? The saw won't be a great weapon, but who knows what you can do with the balsa slab."
 NOTE: we also have to make sure the wash saw is not destroyed after using it on the rift fir.

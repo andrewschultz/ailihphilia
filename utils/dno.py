@@ -250,7 +250,7 @@ def check_notes(s):
         for x in sorted(found_errs.keys(), reverse=last_lines_first):
             print(found_errs[x].strip())
     if xtranote + dupes == 0:
-        print("Notes file has no duplicates/extras.")
+        print("Notes file has no duplicates/extras." + ("" if do_detail else " Try -d for extra duplicates"))
     else:
         print(xtranote, "extraneous notes in source,", dupes, "duplicate notes")
     if bowdlerize_notes and len(found_errs) + len (dupe_dict) > 0: # automatically delete duplicates

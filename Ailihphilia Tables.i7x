@@ -17,6 +17,7 @@ person-name	can-m	can-f
 "Norma Damron"	false	true
 "Reiko Kier"	false	true
 "Rhea Baehr"	false	true
+"Signe Kengis"	false	true
 "Blake DeKalb"	true	true
 "Leigh Giel"	true	true
 "Adam Imada"	true	false
@@ -805,6 +806,7 @@ randtxt
 "Mo['] Idiom"
 "Mr. Owl Worm"
 "My Nonacidic Anonym"
+"Neil's Lein"
 "O Bonobo"
 "Otter Amaretto"
 "Rise Aesir"
@@ -813,6 +815,7 @@ randtxt
 "Sore Heros"
 "Sore Zeros"
 "Torsos, ROT"
+"Truce, Curt"
 "We Few"
 "Wedded Dew"
 "Yo Banana Boy"

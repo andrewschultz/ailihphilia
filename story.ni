@@ -1392,7 +1392,7 @@ el doodle	edits tide	spa maps	--	rahs-too rule	true	true	false	Grebeberg	"The ed
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where. You whisper 'Row, or' whenever you get tired. Then you see Elided Ile in the distance. So you stop off there. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and you are worthy to fight the vicious Bar Crab. It is no match for your elope pole. The citizens hand you a YOU BUOY to tell you they're glad you're you, asking only for the elope pole as a souvenir. Well, it was getting a bit awkward to carry.[paragraph break]They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Calcific Lac. As it gets near and bends away, you jump off, using the buoy to paddle and float back all the way."
 dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
 tent net	Code Doc	--	--	--	true	true	false	Grebeberg	"Together, you figure out what to do to make the tent net proper cover for the All-Ivy Villa. 'Tie it ... tie it ...'[paragraph break]Once the work is done, the Code Doc thanks you and offers to share some knowledge in return, whenever[if spa maps are preclued]. In fact, the Code Doc would probably be more receptive to helping you with the spa maps[end if]."
-spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my for-prof math tam for this one. One second, let's see--Aha! Oho...' and despite a minor pupil slip-up, it soon makes complete sense to you."
+spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my for-prof math tam for this one. One second, let's see--Aha! Oho...' and despite a minor pupil slip-up, the Code Doc is never edu-rude. It soon makes complete sense to you."
 spa maps	go-by bog	sage gas	maps-readable rule	gas-think-wipe rule	true	true	false	Grebeberg	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	"You stick some strands of yahoo hay into the damaged end of the dork rod. It's now a moor broom!"
 --	--	--	rev-pace-cap rule	--	true	--	--	Dim Mid
@@ -2049,7 +2049,7 @@ understand "pack cap" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did.";
-	say "Yes, that's how to get the cap. You are ready to go![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. It mumbles 'It's best I...' and salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
+	say "Yes, that's how to get the cap. You are ready to go! Hat, ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. It mumbles 'It's best I...' and salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
 	get-cap;
 	score-inc; [Dim Mid/pack cap]
 	the rule succeeds;
@@ -2114,7 +2114,9 @@ after examining the Darer Ad:
 
 chapter Set O Notes
 
-the Set O Notes is a proper-named helpdoc. description is "There's some general vague advice about making a North-Tron to defeat the Diktat Kid, but first you'll have to defeat [b]Madam[r], as well as the [b]Yuge Guy, Evil Clive[r].[paragraph break]You notice that there is a guh-thug at various places that doesn't quite fit in, and you can probably guess what to do there. [thug-report].[paragraph break]Also scribbled, in the center, is FUN [']NUF with TRI-GIRT below that. [paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
+the Set O Notes is a proper-named helpdoc. description is "OPPO is printed at the top. There's vague advice about making a North-Tron to defeat the Diktat Kid, but first you'll have to defeat [b]Madam[r], as well as the [b]Yuge Guy, Evil Clive[r].[paragraph break]You notice that there is a guh-thug at various places that doesn't quite fit in, and you can probably guess what to do there. [thug-report].[paragraph break]Also scribbled, in the center, is FUN [']NUF with TRI-GIRT below that. [paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
+
+understand "oppo" as set o notes.
 
 to say thug-report:
 	let GG be number of moot guhthugs;
@@ -2874,7 +2876,7 @@ check opening you buoy: say "You can't find an opening. Sadly, this is slightly 
 
 chapter ME gem
 
-the ME gem is a thing. description is "You feel a strong urge to keep this and not share it, because of all the crazy things you did to get it, but you know that's not quite right. You wonder of its origin--perhaps it was chipped off from Le We Jewel, or it was originally engraved in the Ring O['] Zognir. Or was it the Ring of Ufogrin?[paragraph break]Also, it looks nothing at all like the emerald in Zork I, which was also in a buoy, so stop thinking that."
+the ME gem is a thing. description is "You feel a strong urge to keep this and not share it, because of all the crazy things you did to get it, but you know that's not quite right. You wonder of its origin--perhaps it was chipped off from Le We Jewel, or it was originally engraved in the Ring O['] Zognir. Or was it the Ring of Ufogrin?[paragraph break]Also, it looks nothing at all like the emerald in Zork I, which was also in a buoy, so stop thinking that.[paragraph break]It doesn't feel destructive, so it's not a gem o['] omega, or anything."
 
 book Apse Spa
 
