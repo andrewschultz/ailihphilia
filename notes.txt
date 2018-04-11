@@ -12,7 +12,6 @@ sail alias
 
 Mista-T Sim
 
-"No, Son"
 No. YON!
 
 Smart Trams
@@ -222,7 +221,6 @@ Pun Up!
 
 glass alg
 
-#Ruby Bur
 Bush Sub
 
 Dir: Arid:car?
@@ -248,7 +246,6 @@ G Nixing
 G, nipping?!
 Hoodoo H
 H Sash
-Igniting I
 Jessie J = Jesse J
 Kappa K
 Lulu L
@@ -269,8 +266,6 @@ Y'Revery
 
 miss a passim
 
-Walk! Law!
-
 Warn Raw
 
 MRA Farm
@@ -278,8 +273,6 @@ MRA Farm
 Hat Ptah
 
 # "A cub, Cuba, is here." / BUCK CUB
-
-Rob Ybor
 
 Pang-Nap: stops you from needing so much
 
@@ -402,7 +395,6 @@ ingest segni
 iodid oi
 i o poi
 it cacti
-lame mal
 lava naval
 lasso dossal
 lairage garial
@@ -790,9 +782,6 @@ Yar Gray:Yar Pray
 # yarded ray
 yes mimsey
 yoga goy
-Yo Boy
-
-Pat's Tap = bar
 
 =================FULL NAMES BELOW
 adina canida
@@ -816,17 +805,14 @@ dia said
 dick cid
 dorla walrod
 duane naud
-earl rae
 ed ade
 eda wade
-edie heide
 edna lande
 edna sande
 elba zable
 eli hile
 elia haile
 ella valle
-ellena janelle
 elli hille
 ellis ille
 elza hazle
@@ -866,7 +852,6 @@ milo lim
 mina ganim
 ming nim
 nedra warden
-nell allen
 neva daven
 nida jadin
 nila palin
@@ -893,7 +878,6 @@ rona manor
 rosanna sor
 shawn wahs
 sid edis
-sina janis
 tama kamat
 terresa serret
 tia tait
@@ -908,82 +892,29 @@ zora varoz
 
 =================FULL BACKWARD NAMES BELOW
 adam amada
-adelizzi leda
-adle zelda
-adler elda
-adling nilda
-adner brenda
-adney enda
-ahsan asha
-ahsing nisha
-ailes elia
 ailey elia
-airola loria
-akima tamika
 ales isela
-alesi gisela
 alex ela
-ali cecila
-alice cecila
 alie keila
-aline nila
 allex ella
 amis ima
-amonette noma
-amoroso roma
-amory roma
-anand nana
-anawalt lawana
-anawaty tawana
-ander edna
-andes edna
 anno donna
-arakawa kara
 araki kara
-aramini mara
-ard isidra
-arden edra
-ardis isidra
-arevalo lavera
-ariaza ira
-arimoto mira
 aro nora
-aron elenora
-asley elsa
-ater greta
 atlas alta
 avent neva
-avery reva
-avie iva
 bede deb
 deere reed
-deneke ned
-deng ned
 dorf rod
 dornan rod
 dube bud
 earp rae
-eisler elsie
-elleby belle
-ely kyle
-emore jerome
 enny lynne
-eron elenore
-etter everette
 grams marg
-guo doug
-halik akilah
-halima kamilah
-imoto tomi
-issacs cassi
 koor brook
-kramm mark
-lama jamal
 lamar amal
 lamax amal
 lanagan al
-larock coral
-laselle sal
 last sal
 lau al
 lava val
@@ -992,44 +923,19 @@ lavere val
 lea yael
 lemere mel
 lena janel
-leong noel
-lerra darrel
 lie neil
-lim emil
-llera darell
-lorr errol
 madan adam
-maday adam
 mahar graham
 mail lilliam
-marban abram
-mari hiram
 masaya sam
-mikasa kim
 mote tom
-naidoo dian
-naidu dian
-naik ian
-nair brian
-navin ivan
-neller ellen
 new gwen
 new owen
-niles elin
 nora daron
 okimoto tomiko
 rial clair
-sirko kris
-siu luis
-siva davis
-sivley elvis
-sung agnus
-todd dot
 traff art
-traut stuart
 trube burt
-truka kurt
-yeo joey
 
 nary ran
 
@@ -1538,7 +1444,6 @@ Staff Ats
 Y'all, ay!
 Fer a Ref
 set-a-mates / Met 'em
-Allo Dolla
 mass-am
 Fer a Ref Y'all, Ay
 Trope Report: where?
@@ -1579,7 +1484,6 @@ cert-rec
 Doll OD
 gonif elf pelt lep
 gnilling
-Old, Lo
 Hook! Ooh.
 gun gin
 gong nog
@@ -1587,7 +1491,6 @@ hag
 Scold-Locs = sunglasses
 How Oh
 Dray Yard
-Fool aloof
 Gone, nog!
 hag gun gin gan nag nVg
 hatstah
@@ -1628,7 +1531,6 @@ ALCLU = all clues (verb)
 Poon Snoop
 DONE = go through all rooms. Which doable?
 rub bur / burn rub
-Dark! Rad!
 not-dud-ton
 note-ton
 eval-slave
@@ -1637,7 +1539,6 @@ Frau Arf
 Poof Oop / Foot Oof
 Deza Zed
 gt 11 / NE
-Duo Loud
 Cape Pac
 All I Villa! <- where the Yuge Guy goes
 Not-Kook-Ton

@@ -21,6 +21,8 @@ twice = defaultdict(bool)
 on_off = [ "off", "on" ]
 
 # options
+notes_file_order = False
+notes_file_reverse = False
 modify_notes = True
 twice_okay = False
 launch_after = True
@@ -38,8 +40,15 @@ comments_too = False
 list_sections = False
 do_detail = False
 
+notes_array = []
+
 # variables
 colon_string = ""
+
+def notes_file_sort(x):
+    y = re.sub(".*Notes line ", "", x, 0, re.IGNORECASE)
+    y = re.sub(" .*", "", y)
+    return(int(y))
 
 def check_detail_notes(s):
     notes_file_to_read = "c:/games/inform/{:s}.inform/source/notes.txt".format(s)
@@ -72,13 +81,25 @@ def check_detail_notes(s):
                     if matches[x][0] in l2 and matches[x][1] in l2:
                         if re.search(r"\b{:s} {:s}\b".format(matches[x][0], matches[x][1]), l2, re.IGNORECASE):
                             dupe = dupe + 1
-                            print(eq, "Dupe", dupe, "Notes line", x, short, "line", line_count, matches[x][0], "/", matches[x][1])
-                            print("        ", ll.strip())
+                            format_string = "{:s} dupe {:d} Notes Line {:d} {:s} line {:d} matches {:s}/{:s}\n        {:s}".format(eq, dupe, x, short, line_count, matches[x][0], matches[x][1], ll.strip())
+                            if not notes_file_order:
+                                print(format_string)
+                            else:
+                                notes_array.append(format_string)
                         elif re.search(r"\b{:s}\b".format(matches[x][0]), l2, re.IGNORECASE) and re.search(r"\b{:s}\b".format(matches[x][1]), l2, re.IGNORECASE):
                             poss = poss + 1
-                            print(eq, "Poss-dupe", poss, "Notes line", x, short, "line", line_count, matches[x][0], "/", matches[x][1])
-                            print("        ", ll.strip())
+                            format_string = "{:s} poss-dupe {:d} Notes Line {:d} {:s} line {:d} matches {:s}/{:s}\n        {:s}".format(eq, poss, x, short, line_count, matches[x][0], matches[x][1], ll.strip())
+                            if notes_file_order:
+                                notes_array.append(format_string)
+                            else:
+                                print(format_string)
                         #print(x, "line", line_count, "takes from", '/'.join(matches[x]), "at line", x)
+    if notes_file_order:
+        if len(notes_array) == 0:
+            print("No possible matches!")
+        else:
+            na2 = sorted(notes_array, key=notes_file_sort, reverse=notes_file_reverse)
+            print('\n'.join(na2))
     exit()
 
 def modify_notes(s):
@@ -119,6 +140,7 @@ def usage():
     print("-i = ignore word boundaries. To catch stuff like 'da bad' with 'neda baden'.")
     print("    -in/-ni = don't. Default = off.")
     print("-f = open first repetition, -fn/-nf = open last.")
+    print("-no = notes file order for source duplicates of notes.")
     print("-o = print first lines first (last lines first lets you follow line numbers for deletion more easily).")
     print("-b = bowdlerize duplicates in notes. -bt only copies to notes2.txt, for testing purposes.")
     print("-c = show lines with colons in them, which are likely to be good ideas to work on. On which to work. (-co)")
@@ -314,6 +336,11 @@ while count < len(sys.argv):
         colons_max = 10
     elif l == 'fn' or l == 'nf':
         open_first = False
+    elif l == 'no':
+        notes_file_order = True
+    elif l == 'nor':
+        notes_file_order = True
+        notes_file_reverse = True
     elif l == 'i':
         ignore_word_bounds = True
     elif l == 'in' or l == 'ni':
