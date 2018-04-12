@@ -14,8 +14,9 @@ CANT for can't-use default messages
 USE for the Table of Useons (USE X ON Y gives a point)
 UR for use redirect
 BKR for bookrejects
+PSR for person specific rejects
 FAIL for Useons that don't work
-LAT for
+LAT for later uses
 TALK for talk texts
 WIN for winning the game
 PER for table of periphery
@@ -66,13 +67,13 @@ a phonebook is a kind of thing. a phonebook has a number called initseed. a phon
 
 an ingredient is a kind of thing. an ingredient is usually edible. an ingredient can be solid or liquid.
 
-section thing properties
+chapter thing properties
 
 a thing can be drinkable. a thing is usually not drinkable.
 
 a thing can be peripheral, semiperipheral or integral. a thing is usually integral.
 
-a thing can be nyet or xyet. A thing is usually nyet.
+section machines
 
 a thing can be rotated. a thing is usually not rotated.
 
@@ -80,13 +81,21 @@ a thing can be revived. a thing is usually not revived.
 
 a thing can be reified. a thing is usually not reified.
 
+section examining
+
+a thing can be nyet or xyet. A thing is usually nyet.
+
 after examining:
 	now the noun is xyet;
 	continue the action;
 
+section gender stuff
+
 understand "man" as a person when the person is male.
 understand "man/woman" as a person when the person is neuter.
 understand "woman" as a person when the person is female.
+
+the player is neuter.
 
 Fun Nuf is a room. [just to be sure where the player starts]
 
@@ -96,11 +105,11 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 290.
+use MAX_VERBS of 300.
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 330. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 340. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 chapter region and room stuff
 
@@ -262,8 +271,6 @@ section part of a puzzle but still floating
 
 [Otto is a person.]
 
-the brag garb is a proper-named thing. description is "You don't know fashion that well, but this is way spiffier and more comfortable than the old stinky knits."
-
 section helpdocs
 
 a helpdoc is a kind of thing. a helpdoc has a number called importancy. the indefinite article of a helpdoc is usually "the".
@@ -352,14 +359,14 @@ this is the LLP rule:
 	if player has x-ite tix and prev-rov is 1 and roving-LLP is 0, say "You have all the roving LLPs. You can go back to Fun [']Nuf now.";
 
 to reg-inc (re - a region):
-	if re is not Odd Do and re is not mrlp, say "DEBUG NOTE: scored [re] point in [mrlp].";
+	if debug-state is true and re is not Odd Do and re is not mrlp, say "DEBUG NOTE: scored [re] point in [mrlp].";
 	increment cur-score of re;
 	increment the score; [this is the only incidence that shouldn't be replaced]
 	if debug-state is true:
 		say "DEBUG TALLY: Grebeberg [cur-score of Grebeberg] Yelpley [cur-score of Yelpley] Dim Mid [cur-score of Dim Mid] Odd Do [cur-score of Odd Do].";
 		if cur-score of mrlp > max-score of mrlp, say "DEBUG WARNING: REGION SCORE TOO HIGH!";
 		if debug-state is true and score > maximum score, say "DEBUG WARNING: OVERALL SCORE TOO HIGH!";
-		if mrlp is not re, say "DEBUG WARNING: potential region misdirected point!"
+		if mrlp is not re and re is not Odd Do, say "DEBUG WARNING: potential region misdirected point!"
 
 to say regres of (re - a region):
 	say "[cur-score of re] of [max-score of re] ";
@@ -477,7 +484,8 @@ after reading a command:
 			say "(NOTE: you don't need to use anything but letters to get through the game. The parser simply strips out non-alphabetic characters.)[paragraph break]";
 			now no-punc-flag is true;
 			let XX be the player's command;
-			replace the regular expression "<^a-z 0-9>" in XX with "";
+			replace the regular expression "-" in XX with " ";
+			replace the regular expression "<^a-z, 0-9>" in XX with "";
 			change the text of the player's command to XX;
 			if debug-state is true, say "Changed to: [XX][line break]";
 
@@ -493,8 +501,11 @@ volume verbs (standard or semi-standard to Inform)
 check taking scenery: say "Grab? Arg! (Scenery doesn't need to be taken.)[paragraph break]" instead;
 check taking a workable: say "Grab? Arg! (Machines don't need to be taken.)[paragraph break]" instead;
 
+the can't push what's fixed in place rule is not listed in any rulebook.
+the can't pull what's fixed in place rule is not listed in any rulebook.
+
 check pushing: say "Push?! [']Sup?! [one of](You never need to push anything in Ailihphilia.)[or][line break][stopping]" instead;
-check pushing: say "You never need to pull anything in Ailihphilia. Well, nothing concrete." instead;
+check pulling: say "You never need to pull anything in Ailihphilia. Well, nothing concrete, [if pulled-up is false]but maybe you can figure what or how to pull[else]and you already pulled up in the Emo Dome[end if]." instead;
 
 chapter search replacement
 
@@ -513,7 +524,10 @@ give-warn is a truth state that varies.
 instead of giving to a person:
 	if give-warn is false:
 		now give-warn is true;
-		say "(NOTE: USE X ON Y is the preferred syntax, though GIVE/TO should work too.)[paragraph break]";
+		say "(NOTE: USE X ON Y is the preferred syntax, though GIVE/TO should work too and sometimes gives rejects.)[paragraph break]";
+	if noun is wash saw or noun is cave vac or noun is Dirt Rid, say "If there's any manual work to be done, you need to do it yourself." instead;
+	if noun is gift fig, say "Hmm. It was a gift FOR you. You need to figure what to do with it." instead;
+	if noun is an ingredient, say "You've been carrying [the noun] around for a while. [second noun] might not know where it's been." instead;
 	try useoning noun with second noun;
 
 chapter undoing
@@ -751,7 +765,7 @@ check taking inventory when Dave is moot:
 	if number of carried exhausted things > 0 and reviver is not moot, say "(x) = exhausted (tried all 3 machines in Work Row)[line break]";
 	the rule succeeds;
 
-after printing the name of an exhausted thing while taking inventory: say "(x)";
+after printing the name of an exhausted thing while taking inventory: say " (x)";
 
 [??use pace cap on machine]
 
@@ -827,7 +841,7 @@ carry out verbing:
 	say "[line break][b]GT[r] or [b]GO TO[r] lets you go to a room where you've been before.";
 	say "[line break][b]T[r] or [b]TALK TO[r] talks to someone. You don't need to, to win the game, but there you are.";
 	say "[line break][b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
-	say "[line break][b]AID[r] gives you hints for where you are. [b]SCORE[r] tracks the score. [b]ABOUT[r] and [b]CREDITS[r] tell about the game.";
+	say "[line break][b]THINK gives general non-spoiler hints, including where you may wish to visit, or what is blocking you. [b]AID[r] gives you hints for where you are. [b]SCORE[r] tracks the score. [b]ABOUT[r] and [b]CREDITS[r] tell about the game.";
 	if wr-short-note is true and player is in Worn Row and Worn Row is worky, say "[line break][b]REV[r], [b]ROT[r] and [b]REI[r] use an item on the reviver, rotator and reifier, respectively.";
 	if in-beta is true:
 		say "[line break](start beta commands)";
@@ -881,7 +895,7 @@ carry out talktoing:
 a person has text called talk-text.
 
 instead of asking someone about:
-	say "You don't ever need to ask about specific subjects. ASKing about redirects to TALKing to a person.";
+	say "You don't ever need to ask about specific subjects. ASKing about redirects to TALKing TO a person... which itself only gives minimal clues. If you want to give or use something, USE X ON Y.";
 	try talktoing the noun instead;
 
 chapter drinking
@@ -902,9 +916,9 @@ chapter eating
 
 eat-warning is a truth state that varies.
 
-check eating:
+instead of eating:
 	say "[if noun is Demo Med]You're not sick enough to risk it. Maybe someone in much worse shape than you...[else if noun is edible]Food? Oof![else]You contemplate a wan gnaw, but no voice says 'Naw. G'wan!'[end if]";
-	if eat-warning is false, say "(You don't need to eat anything to win. Food may be more useful for other people.)[paragraph break]";
+	if eat-warning is false, say "(You don't need to eat anything to win. Food may be more useful in other ways.)[paragraph break]";
 	now eat-warning is true instead;
 
 chapter jumping
@@ -982,7 +996,10 @@ definition: a direction (called d) is viable:
 check going (this is the reject noncardinal directions rule):
 	if noun is diagonal, say "You don't need diagonal directions in this game." instead;
 	if noun is up or noun is down:
-		if the room noun of location of player is nowhere, say "You never need to go up or down in this game, though sometimes they act as a backup to the main cardinal directions--for instance, to or from [if Mont Nom is visited] Mont Nom[else]a hill[end if]." instead;
+		if the room noun of location of player is nowhere:
+			say "You never need to go up or down in this game, though sometimes they act as a backup to the main cardinal directions--for instance, to or from [if Mont Nom is visited] Mont Nom[else]a hill[end if].";
+			if player has Spur Ups, say "[line break]You DO have to do something with the Spur Ups, though. Just not go.";
+			the rule succeeds;
 
 the reject noncardinal directions rule is listed first in the check going rulebook.
 
@@ -1228,6 +1245,8 @@ check useoning it with:
 			if second noun is use2 entry, say "[book-reject entry][line break]" instead;
 	repeat through table of cantuse:
 		if noun is use1 entry or second noun is use1 entry, say "[babble entry]" instead;
+	repeat through table of person specific rejects:
+		if noun is use1 entry or second noun is use1 entry, say "[babble entry]" instead;
 	say "You think of ways to do that productively, but nothing comes up." instead;
 
 The machine message rules are an object-based rulebook.
@@ -1237,14 +1256,17 @@ definition: a thing (called t) is exhausted:
 	no;
 
 a machine message rule for a thing (called t):
+	if t is an ingredient, say "The only machine you should put food in is a microwave. Or, maybe, a BAKE-KAB. Or a heata['], eh?" instead;
+	if t is a tronpart, say "No, [the t] [if epicer recipe is xyet]is[else]seems[end if] too important." instead;
 	if t is exhausted, say "You already tried everything, and nothing worked." instead;
-	if t is listed in postmachines, say "You already built [the t] here. Time to do something else with it." instead;
-	say "1.";
+	if t is listed in postmachines:
+		say "The [second noun] hums ominously as you bring [the t] close. You already used a machine to make [the t]. Maybe you should do something else." instead;
 	repeat through table of useons:
 		unless there is a use1 entry, next;
-		if t is use1 entry and use2 entry is a workable, say "Nothing happens, but you feel you must be close, here." instead;
-		if t is use3 entry and use2 entry is a workable, say "The [second noun] hums a bit as you bring [the t] close. You already used a machine to make [the t]. Maybe you should do something else." instead;
-	say "2.";
+		if use2 entry is not a workable, next;
+		unless there is a use3 entry, next; [?? should never happen]
+		if t is use1 entry, say "Nothing happens, but you feel you must be close, here." instead;
+		if t is use3 entry, say "The [second noun] hums a bit as you bring [the t] close. You already used a machine to make [the t]. Maybe you should do something else." instead; [?? may be duplicate code]
 	if second noun is reifier, now t is reified;
 	if second noun is rotator, now t is rotated;
 	if second noun is reviver, now t is revived;
@@ -1259,7 +1281,7 @@ cross orc	"The cross orc is not big on books."
 Madam	"Any simple book you could find would be beneath Madam."
 Yuge Guy	"The Yuge Guy doesn't bother with books--not even a ghostwritten, self-serving autobiography."
 Door Frood	"'Pfft, nah, not clever and edgy enough.'"
-Code Doc	"'Thanks, but I have more than enough to read at the moment.'"
+Code Doc	"'That's probably a nice easy read, but I'd rather have something I can work through.'"
 King Nik	"'Hm, maybe, but I need some serious policy discussions.'"
 Known Wonk	"'I have enough hard knowledge. I need something clever and fun.'"
 Ian	"'I'm a food snob, not a book snob. Geez!'"
@@ -1269,7 +1291,7 @@ Sniffins	"'[if yob attaboy is moot]I'm too busy to read! I have a thriving busin
 table of cantuse [xxcant]
 use1	babble
 redness ender	"The redness ender is good for destroying stuff. Probably evil stuff. You don't need to vaporize anything you're carrying." [?? Rob]
-Spur Ups	"The Spur Ups make you want to do something for yourself, by yourself. You're not sure what."
+Spur Ups	"The Spur Ups can't physically levitate anything, but they make you want to do something for yourself, by yourself, to yourself, for a pick up or something like it. You're not sure what."
 Psi Wisp	"[chase-mulligan]The Psi Wisp is impervious to bribery or normal physical attacks. You need to outrun and outsmart it."
 Kayo Yak	"The Kayo Yak grunts. Looks like you can't, or don't want to, use anything on it."
 Dave	"Dave's not useful, man."
@@ -1284,13 +1306,22 @@ Set O Notes	"The Set-O-Notes is useful for an overview, but not for DOING anythi
 north tron	"The North-Tron's already done its job."
 x-it stix	"They're just there to block you."
 ergot ogre	"You worry anything that touches the ergot ogre might shrivel up. Maybe you need the services of someone or something that can beat up the ogre without touching its skin."
+ark of okra	"While the ark inspires you to want to mix foods, you don't want to mix anything with IT. You don't know how long that okra's been there!"
 wordy drow	"The wordy drow moans 'Er ... eh ... there,' pointing to the Liar Grail."
+level net	"There's got to be a way to untangle the net on your own, so it doesn't get cut or destroyed."
 [zzcant]
+
+table of person specific rejects [xxpsr]
+use1	babble
+Door Frood	"The Door Frood yawns. A gift would be nice, but THAT seems kind of boring."
+[zzpsr]
 
 table of use redir [xxur]
 use1	person-reject	thing-reject
 party trap	"The trap can't work on a person. It's too small, and people are too smart."	"You need to use the party trap on something animate."
-wash saw	"The saw wasn't meant for violence."	--
+wash saw	"The saw wasn't meant for violence."	"The saw is best used to trim things there's an excess of, not just to cut stuff down."
+el doodle	"They don't seem like the sort that can decipher things."
+pity tip	"You don't want to give it away! You [if navy van is xyet]should maybe use it, yourself. Now where was Seedy Dee's?[else]have a feeling you can find Seedy Dee's, if you look hard enough.[end if]"
 [zzur]
 
 [?? poo coop on, well, everything]
@@ -1304,8 +1335,17 @@ Dirt Rid	cassettes sac	"The Dirt Rid wheezes but is unable to clean up the casse
 Dirt Rid	gnu dung	"The Dirt Rid is ineffective. You may need something stronger."
 Trap Art	Revolt Lover	"But the Revolt Lover gave it to you in the first place."
 Party Trap	Revolt Lover	"'Whoah! Neat! That's a lot more useful than my art.'"
+TI	Revolt Lover	"'Hmm. A bit too mean for me. Maybe it's more someone else's speed.'"
+Epoch Cope	Revolt Lover	"'Wish I could be interested in politics, but I'm not.'"
+stamp mats	Tru Yurt	"The stamp mats aren't a home-y sort of mat."
+NULL ILLUN	Revolt Lover	"'I guess we all could use it a little. But someone else might need it more than me. Um, I hope.'"
+pity tip	Door Frood	"The Door Frood is too good for a mere pity tip. Well, in the Door Frood's mind."
 Cave Vac	gnu dung	"The Cave Vac sputters. You may need something more specifically suited to the, uh, material to clean up."
+bunk nub	sleep eels	"That -- well, it almost works. But the bunk nub isn't shaped right to house that many small animals. Maybe it could be changed."
 radar	sleep eels	"A radar isn't supposed to work this way, but somehow, you detect some bitterness at mammals in general. But it's secondary to needing a more comfortable place to sleep."
+el doodle	Known Wonk	"The Known Wonk looks at El Doodle, thinks, and says 'Ugh, sorry, never could decipher these things. No good rules to. Maybe you could use the edits tide, though.'"
+el doodle	code doc	"'This isn't quite clear enough for me. If you could clean it up, though, I could help you.'"
+el doodle	Revolt Lover	"But the Revolt Lover pretty much offered it to you in the first place."
 troll ort	ergot ogre	"The ergot ogre mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. Perhaps you need a more violent way to dispose of the ogre."
 troll ort	cross orc	"The cross orc mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. But the way it looks at you, you suspect it'd forgive you if you gave the right gift."
 troll ort	kayo yak	"As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up. The yak seems weirdly attracted to it."
@@ -1356,7 +1396,7 @@ pity tip	eye	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	"The eye sc
 --	--	--	rev-work-row rule	--	true	--	--	Yelpley
 trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. You pull it out of the reifier and inspect it. It could probably capture more than one thing."
 bunk nub	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching and slurping, the bunk nub is changed to a bunch of much smaller, but more comfortable looking, stock cots. You take them."
-party trap	stark rats	gift fig	--	oh-who-to rule	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out.[wfak-d]You take it, and as you do, a book drops from above. THUMP! Good thing you were wearing that pact cap. One glance reveals it to be [b]Oh, Who[r]--a phone book for Grebeberg, like [b]Name Me Man[r] for Yelpley."
+party trap	stark rats	gift fig	--	oh-who-to rule	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out.[paragraph break]You take it, and as you do, a book drops from above. THUMP! Good thing you were wearing that pact cap. One glance reveals it to be [b]Oh, Who[r]--a phone book for Grebeberg, like [b]Name Me Man[r] for Yelpley."
 EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris told me I needed to one day. ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! Now I can lead against the Rim Emir and his emir crime and emir grime!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...I must leave and RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
 --	--	--	rev-puff-up rule	--	true	--	--	Yelpley
@@ -2134,6 +2174,7 @@ to say thug-report:
 
 definition: a guhthug (called th) is seenees:
 	if location of th is visited, yes;
+	if th is moot, yes;
 	no;
 
 after examining Set O Notes:
@@ -2308,6 +2349,8 @@ book Seer Trees
 
 Seer Trees is west of Fun Nuf. It is in Grebeberg. "East leads back to Fun [']Nuf[if Yawn Way is visited] and Yelpley[end if], but the other three directions lead to further rustic adventure[seer-see].".
 
+understand "tree" and "seer tree" as seer trees.
+
 to say seer-see:
 	if Cold Loc is visited, say ". Cold Loc is north";
 	if Ooze Zoo is visited, say ". Ooze Zoo is south";
@@ -2371,6 +2414,8 @@ chapter Spur Ups
 
 the Spur Ups are a plural-named thing. description is "Boy! These are so much better than that round tuitt a teacher gave you as a joke. If you could mass produce and market them when you got back, what a motivational fad you could start--and profit from."
 
+instead of wearing spur ups, say "They would be too pointy for comfort. There are no boots-too-b attached to and no West-Sew tailors to make them.";
+
 book Flu Gulf
 
 Flu Gulf is north of Cold Loc. It is in Grebeberg. "North and east, it's, oh, too H2O. The passage is clear back south, but [if scorn rocs are in Flu Gulf]scorn rocs['] gaze blocks you going west[else]west past the scorn rocs seems a bit treacherous[end if]. No way you're getting through the mush sum to the north."
@@ -2391,11 +2436,15 @@ chapter scorn rocs
 
 The scorn rocs are plural-named scenery in Flu Gulf. "While they're motionless, their stare drives you back. They're fiercely proud and shiny, white and clean."
 
+understand "roc" and "scorn roc" as scorn rocs.
+
 check going west in Flu Gulf when scorn rocs are in Flu Gulf:	say "The scorn rocs remain motionless, but their gaze freezes you as you try to go west." instead;
 
 book Sneer Greens
 
 Sneer Greens is west of Flu Gulf. It is in Grebeberg. "[if Yuge Guy is in Sneer Greens]Despite the impressive view, the place has gone to pot.[else]Nicer with the Yuge Guy gone. Still, it's...[end if][paragraph break]You can only go back east. Smirk rims block every way back except east[if me totem is in Sneer Greens], and a ME Totem towers above you."
+
+understand "green" and "sneer greens" as seer trees.
 
 check going nowhere in Sneer Greens: say "The smirk rims push you back, but you really don't need to do anything [if Yuge Guy is moot]more here[else]with them, just the Yuge Guy[end if]." instead;
 
@@ -2481,6 +2530,12 @@ understand "turd rut" as turf rut when poo coop is moot.
 chapter lie veil
 
 The lie veil is scenery in Dumb Mud. "It looks flimsy, yet at the same time, you are scared it might have some secret trap that would zap you to unconsciousness and, worse, make you feel silly for not noticing it in the first place."
+
+Include (-
+	has transparent animate
+-) when defining stark rats.
+
+instead of talktoing lie veil, say "It's already messing with your mind. Probably a good thing it can't talk.";
 
 book Le Babel
 
@@ -2597,6 +2652,8 @@ chapter sleep eels
 
 the sleep eels are plural-named people in Ooze Zoo. "The sleep eels look slightly uncomfortable where they are. Maybe you can give them better sleeping quarters.". description is "The sleep eels squirm. Maybe there's a humane way to move them out."
 
+check taking sleep eels: say "There are too many, and they'd slip through your fingers." instead;
+
 to say s-dray:
 	say "[if Frush Surf is visited]the Frush Surf[else]a coastal place[end if]"
 
@@ -2634,7 +2691,9 @@ carry out yakokaying:
 		score-inc; [Grebeberg/YAK OKAY]
 		banish-ogre;
 		the rule succeeds;
-	if yak is in location of player, say "The yak sees nothing to attack." instead;
+	if yak is in location of player:
+		if being-chased is true, now chase-mulligan is true;
+		say "The yak paws the ground aggressively and runs in a circle before settling back. It seemed agitated, there, like it wanted to do more, but this wasn't the place." instead;
 	say "There's no yak to say okay to." instead;
 	the rule succeeds;
 
@@ -2681,6 +2740,8 @@ the moor broom is a thing. description is "It's made of that enact came amd the 
 book Swamp Maws
 
 Swamp Maws is west of Dumb Mud. It is in Grebeberg. "A made dam blocks your way west. You can go north, south and east here."
+
+understand "swamp maw" and "maw" as swamp maws.
 
 crib-clue is a truth state that varies.
 
@@ -2812,7 +2873,7 @@ The Tru Yurt is scenery in Yack Cay. "It looks really messy. The Known Wonk said
 
 check taking yurt: say "It's the Known Wonk's." instead;
 
-check entering yurt: say "No, that's where the Known Wonk lives. [if exam axe is off-stage]Maybe you could clean it up[else]You already helped clean it up, and that's enough[end if]." instead;
+check entering yurt: say "No, that's where the Known Wonk lives. [if exam axe is off-stage]Maybe you could clean it up, by using the right item[else]You already helped clean it up, and that's enough[end if]." instead;
 
 chapter Edits Tide
 
@@ -2824,17 +2885,7 @@ the sharp rahs are a plural-named thing. "The sharp rahs get you enthused, but t
 
 book Calcific Lac
 
-Calcific Lac is north of Yack Cay. It is in Grebeberg. "[if dork rod is moot]The Tao Boat that helped you get at peace with things is here[else]A Tao Boat rests on the shore, here, with no clear entry[end if]. [eli-ile].[paragraph break]"
-
-to say eli-ile:
-	if elope pole is moot:
-		say "That kayak you took to Elided Ile is here, too";
-	else:
-		say "There's a kayak, too. ";
-		if NULL ILLUN is moot:
-			say "[one of]And wait! If you look into the distance, you see something! Elided Ile! Just as the Known Wonk said it had to be somewhere! The Wonk's calculations and predictions were all right[or]You see Elided Ile in the distance. Maybe some day, you will get there[stopping]";
-		else:
-			say "You scan in the distance for anywhere the kayak might take you, but you can't find anywhere, yet";
+Calcific Lac is north of Yack Cay. It is in Grebeberg. "[if dork rod is moot]The Tao Boat that helped you get at peace with things is here[else]A Tao Boat rests on the shore, here, with no clear entry[end if]. [if elope pole is moot]That kayak you took to Elided Ile is here, too[else]There's a kayak, too. [one of]And wait! If you look into the distance, you see something! Elided Ile! Just as the Known Wonk said it had to be somewhere! The Wonk's calculations and predictions were all right[or]You see Elided Ile in the distance. Maybe some day, you will get there[stopping][end if]."
 
 chapter kayak
 
@@ -3026,6 +3077,8 @@ Scrap Arcs	"SCRAP"	"ARCS "
 
 chapter Name ME Man
 
+does the player mean doing something with name me man when player is in Yawn Way: it is likely.
+
 Name ME Man is a proper-named peripheral phonebook in Yawn Way. description is "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers of Yelpley residents:[line break][name-num of 5 and name me man][variable letter spacing][run paragraph on]". "[one of]There's also something called NAME ME, MAN, which--well, it's really just a glorified phone book. Yawn[or]NAME ME, MAN waits for your perusal, if you have a great need to procrastinate[if name me man is xyet] some more[end if][stopping].". booktable of Name ME Man is table of random palindrome lastfirst names.
 
 printed name of Name ME Man is "NAME ME, MAN".
@@ -3114,7 +3167,7 @@ carry out puffuping:
 
 book My Gym
 
-My Gym is south of Yawn Way. It is in Yelpley. "You can go back out north to Yawn Way. There's also a way west[if Worn Row is visited]to [Worn Row][end if]. Or you can LISTEN to soak up 'energetic' beats."
+My Gym is south of Yawn Way. It is in Yelpley. "You can go back out north to Yawn Way. There's also a way west[if Worn Row is visited] to [Worn Row][end if]. Or you can LISTEN to soak up 'energetic' beats."
 
 chapter Dave
 
@@ -3378,7 +3431,7 @@ to define-author (bk - a book):
 
 chapter pity tip
 
-the pity tip is a thing. description of pity tip is "'You can do something neat with the cart! There are so many possibilities, of course.'[paragraph break]NOTE: this document is good for free snack cans at Seedy Dee's."
+the pity tip is a thing. description of pity tip is "[if DWELT LEWD is off-stage]'You can do something neat and completely unnecessary with the cart! There are so many possibilities, of course.'[paragraph break]NOTE: document is[else]You figured what the tip about the tract cart was, but the tip is still[end if] good for free snack cans at Seedy Dee's."
 
 chapter books in bookcase
 
@@ -3410,7 +3463,7 @@ lewd-read is a truth state that varies.
 
 check examining DWELT LEWD: if lewd-chap is 1 and lewd-read is true, say "Another round? Sicko.[paragraph break]";
 
-description of DWELT LEWD is "[lewd-details]".
+description of DWELT LEWD is "[lewd-details][run paragraph on]".
 
 to say lewd-details:
 	let lelt be number of entries in dwelt-first;
@@ -3421,12 +3474,11 @@ to say lewd-details:
 		say ", [entry X of dwelt-first]";
 	let temp be lewd-chap;
 	let min be lelt + 2 - lewd-chap;
-	if debug-state is true and lewd-chap > 1, say ","; [for reference, to see where the midpoint is]
 	repeat with X running from min to lelt:
 		say "[if X is not lelt],[end if] [entry X of dwelt-last]";
 	say " Sinned.";
 	if lewd-chap is number of entries in dwelt-first + 1 and lewd-read is false:
-		say "[line break]Whew! You've finished DWELT LEWD. After reading the blurb for the sequel, [']S SENSUOUSNESS, and a related Leer Reel (on DVD), MUCH, you realize you've forgotten the plot [one of]already[or]yet again[stopping], if there was one. Sicko. (Hey, don't look at me, I just wrote the abstract code for the 'book.')";
+		say "[line break]Whew! You've finished DWELT LEWD. After reading the blurb for the sequel, [']S SENSUOUSNESS, and a related Leer Reel (on DVD), MUCH, you realize you've forgotten the plot [one of]already[or]yet again[stopping], if there was one. Sicko. (Hey, don't look at me, I just wrote the abstract code for the 'book' as a purely intellectual exercise.)";
 		now lewd-chap is 0;
 		now lewd-read is true;
 
@@ -3460,8 +3512,9 @@ check taking a book:
 	else:
 		if number of books carried by player is 1:
 			let myb be random book carried by player;
-			say "A flashback to that time you checked out too many library books and got a small fine when you couldn't finish them all impels you to put [myb] back in the tract cart to take [noun].[paragraph break]Plus nothing says 'adventure' less than schlepping around multiple books.";
-			now myb is in Worn Row;
+			if myb is not SOME DEMOS:
+				say "A flashback to that time you checked out too many library books and got a small fine when you couldn't finish them all impels you to put [myb] back in the tract cart to take [noun].[paragraph break]Plus nothing says 'adventure' less than schlepping around multiple books.";
+				now myb is in Worn Row;
 		else:
 			say "It's a bit unwieldy, but you manage to pick up [noun].";
 	consider the book-took rule;
@@ -3722,13 +3775,18 @@ chapter party trap
 
 the party trap is a thing. description is "It looks roughly like the notes from the trap art, and when you read it you note it's more powerful than a MICE-DECIM. You just hope it works right when you USE it. That would be cool. I mean, if you used it on things that deserved it.".
 
-chapter traping
+report taking party trap:
+	say "'Enjoy! if you can find some use for it, that'd be awesome!'";
+	the rule succeeds;
+
+section traping
 
 traping is an action applying to one thing.
 
-understand "trap [something]" as traping when player has party trap.
+understand "trap [something]" as traping when player has party trap or player has trap art.
 
 carry out traping:
+	if player has trap art, try useoning trap art with noun instead;
 	try useoning party trap with noun instead;
 
 chapter Revolt Lover
@@ -3742,6 +3800,8 @@ the state tats are a plural-named thing. description is "They say OMG MO[']."
 chapter soot tattoos
 
 the soot tattoos are a plural-named thing. description is "They're blank now, but maybe if they were the right shape, they could help your image, somehow."
+
+instead of wearing soot tattoos, say "Right idea, but you need a way to press them onto your skin.";
 
 book Emo Dome
 
@@ -3884,14 +3944,6 @@ book Gross Org
 
 Gross Org is north of Toll Lot. It is in Yelpley. description is "[if etage gate is in Gross Org]An etage gate blocks your way north. You can go back south[else]With the etage gate gone, you can go north or south[end if]."
 
-chapter stinky knits
-
-the stinky knits are a plural-named thing in Gross Org. description is "The inside of the stinky knits reveals they were sewn together by SMELLEMS.". "Stinky knits, unwearable enough even without DAFT FAD printed on the front, lie here.".
-
-understand "daft/fad" and "daft fad" as stinky knits.
-
-check wearing the stinky knits: say "That's physically possible, but no. No way." instead;
-
 check taking when player is in Gross Org and Ned is in Gross Org: say "Not with Ned around, you won't." instead;
 
 the etage gate is scenery in Gross Org. "It is locked and too strong to force out of the way. It's engraved with...hmm, roses, or..."
@@ -3903,11 +3955,25 @@ instead of opening etage gate:
 [instead of unlocking etage gate:
 	try going north;]
 
+chapter Ned
+
 check going north in Gross Org: if etage gate is in Gross Org, say "The etage gate blocks you." instead;
 
 understand "evened" and "den evened" as Gross Org when Ned is moot.
 
 Ned is a proper-named guhthug in Gross Org. "'Ned's Den!' someone booms. You're guessing their name must be Ned.". description is "Ned is sort of wildly flailing about, looking for a verbal or physical altercation, but that's not really your thing.".
+
+chapter stinky knits
+
+the stinky knits are a plural-named thing in Gross Org. description is "The inside of the stinky knits reveals they were sewn together by SMELLEMS.". "Stinky knits, unwearable enough even without DAFT FAD printed on the front, lie here.".
+
+understand "daft/fad" and "daft fad" as stinky knits.
+
+check wearing the stinky knits: say "That's physically possible, but no. No way." instead;
+
+chapter Brag Garb
+
+the brag garb is a proper-named thing. description is "You don't know fashion that well, but this is way spiffier and more comfortable than the old stinky knits."
 
 chapter Gate Tag
 
@@ -4002,7 +4068,7 @@ the Door Frood is a neuter person in Evaded Ave. "[one of]Someone waving their f
 
 check going in Evaded Ave:
 	if Door Frood is in Evaded Ave:
-		if noun is west or noun is east, say "The Door Frood blocks you. Maybe if you gave them a gift, they'd be more generous." instead;
+		if noun is west or noun is east, say "The Door Frood blocks you. Maybe if you gave them something to keep them occupied, they'd be more generous." instead;
 
 chapter bunk nub
 
@@ -4177,6 +4243,8 @@ book Swept Pews
 
 Swept Pews is south of Emo Dome. It is in Yelpley. "You can go back north to the Emo Dome in this tidy little area, unnamed but probably St. Emmet's[if liar grail is moot]. A passage has been opened south with the Liar Grail's demise[end if]."
 
+understand "pew" and "swept pew" as swept pews.
+
 check going south in Swept Pews:
 	if Liar Grail in Swept Pews, say "Maybe there's a path where you could get rid of the grail, but not yet." instead;
 
@@ -4215,6 +4283,8 @@ the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, un
 book Scrap Arcs
 
 Scrap Arcs is east of Drawl Ward. It is in Yelpley. "You can't go any farther here--only back west. Some slate metals are lying around here[if stamp mats are moot]--you've probably already used what you need[else], and if you needed to use a bit, nobody would notice[end if]."
+
+understand "arc" and "scrap arc" as scrap arcs.
 
 chapter slate metals
 
