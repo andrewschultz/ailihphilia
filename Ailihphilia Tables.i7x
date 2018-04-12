@@ -990,7 +990,7 @@ randtxt
 "GO, dog!"
 "A lag gala!"
 "Mull! Um..."
-"Nix ALERT. Relaxin[']!'"
+"Nix ALERT. Relaxin[']!"
 "No gig on?"
 "Now? On!"
 "Pal...flap!"

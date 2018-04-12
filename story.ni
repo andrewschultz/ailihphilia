@@ -359,6 +359,7 @@ this is the LLP rule:
 	if player has x-ite tix and prev-rov is 1 and roving-LLP is 0, say "You have all the roving LLPs. You can go back to Fun [']Nuf now.";
 
 to reg-inc (re - a region):
+	now last-move-scored is turn count;
 	if debug-state is true and re is not Odd Do and re is not mrlp, say "DEBUG NOTE: scored [re] point in [mrlp].";
 	increment cur-score of re;
 	increment the score; [this is the only incidence that shouldn't be replaced]
@@ -590,15 +591,25 @@ carry out seebeesing:
 
 chapter thinking
 
+last-move-scored is a number that varies.
+basic-hint-yet is a truth state that varies.
+thought-yet is a truth state that varies.
+
+every turn when basic-hint-yet is false:
+	if turn count - last-move-scored is 20 and score > 0:
+		say "You've gone without any point scoring for a while. So I'd like to break the fourth wall and [if thought-yet is true]remind[else]tell[end if] you that THINK can give you a general overview of where you've been and what places are blocked. This nag won't appear again, but I want to give you less chance of feeling lost and frustrated.";
+		now basic-hint-yet is true;
+
 definition: a room (called rm) is available:
 	consider the avail-rule of rm;
 	if the rule succeeded, yes;
 	no;
 
 instead of thinking:
-	say "A knihtg (sic) appears and redirects you to the AID command.";
+	if thought-yet is false, say "A knihtg (sic) appears and taps you on the shoulder, and you suddenly recall big-picture things.";
 	let LLP-yet be false;
 	let got-later-use be false;
+	now thought-yet is true;
 	repeat through table of lateruses:
 		if in-limbo entry is true:
 			if got-later-use is false, say "Stuff you've half figured out:[line break]";
@@ -879,9 +890,11 @@ chapter ting
 talktoing is an action applying to one thing.
 
 understand the command "t" as something new.
+understand the command "talk" as something new.
 understand the command "talk to" as something new.
 
 understand "t [something]" as talktoing.
+understand "talk [something]" as talktoing.
 understand "talk to [something]" as talktoing.
 
 carry out talktoing:
@@ -2533,7 +2546,7 @@ The lie veil is scenery in Dumb Mud. "It looks flimsy, yet at the same time, you
 
 Include (-
 	has transparent animate
--) when defining stark rats.
+-) when defining lie veil.
 
 instead of talktoing lie veil, say "It's already messing with your mind. Probably a good thing it can't talk.";
 
