@@ -425,6 +425,7 @@ nothing-txt is a number that varies.
 
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
 	next-rand table of nothings;
+	consider the notify cycling rule;
 
 Rule for printing a parser error when the latest parser error is the can't see any such thing error:
 	if bees-seen is false and player is in Moo Room:

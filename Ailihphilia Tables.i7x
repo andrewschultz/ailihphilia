@@ -740,6 +740,8 @@ to next-rand (t - a table name):
 	if tabidx entry > number of rows in tabnam entry:
 		if debug-state is true, say "(Cycling) ";
 		now tabidx entry is 1;
+		if thru-yet entry is 0, now thru-yet entry is 1;
+		now rand-cycle is true;
 	let Q be tabidx entry;
 	let lb be lbrk entry;
 	choose row Q in tabnam entry;
@@ -749,22 +751,40 @@ to say next-rand-txt of (t - a table name):
 	next-rand t;
 
 table of all randoms
-tabnam	tabidx	lbrk	desc
-table of altbooks	0	false	"extra books in the Tract Cart"
-table of attackings	0	true	"responses to ATTACK"
-table of burnies	0	true	"responses to BURN"
-table of diktat taunts	0	false	"Diktat Kid taunts"
-table of My Gym songs	0	false	"songs in My Gym (LISTEN)"
-table of noesies	0	true	"responses to NO"
-table of nothings	0	true	"responses to empty commands"
-table of Rob droning	0	false	"things Rob babbles about"
-table of singstuff	0	true	"responses to SINGing"
-table of swearstuff	0	true	"responses to SWEARing"
-table of undoings	0	true	"UNDOing notifications"
-table of waittxt	0	true	"responses to WAITing"
-table of wordy drow laments	0	true	"Wordy Drow laments"
-table of yessies	0	true	"responses to YES"
-table of yuge taunts	0	true	"Yuge Guy taunts"
+tabnam	tabidx	thru-yet	lbrk	desc	cycle-note
+table of altbooks	0	0	false	"extra books in the Tract Cart"	"You've read all the books on the tract cart. Hooray for curiosity!"
+table of attackings	0	0	true	"responses to ATTACK"	--
+table of burnies	0	0	true	"responses to BURN"	--
+table of diktat taunts	0	0	false	"Diktat Kid taunts"	--
+table of My Gym songs	0	0	false	"songs in My Gym (LISTEN)"	--
+table of noesies	0	0	true	"responses to NO"	--
+table of nothings	0	0	true	"responses to empty commands"	--
+table of Rob droning	0	0	false	"things Rob babbles about"	--
+table of singstuff	0	0	true	"responses to SINGing"	--
+table of swearstuff	0	0	true	"responses to SWEARing"	--
+table of undoings	0	0	true	"UNDOing notifications"	--
+table of waittxt	0	0	true	"responses to WAITing"	--
+table of wordy drow laments	0	0	true	"Wordy Drow laments"	--
+table of yessies	0	0	true	"responses to YES"	--
+table of yuge taunts	0	0	true	"Yuge Guy taunts"	--
+
+rand-cycle is a truth state that varies.
+
+every turn (this is the notify cycling rule):
+	if rand-cycle is true:
+		let tn be a table-name;
+		let tables-found be 0;
+		now rand-cycle is false;
+		repeat through table of all randoms:
+			if thru-yet entry is 1:
+				now thru-yet entry is 2;
+				increment tables-found;
+				if tables-found is 1:
+					say "[if there is a cycle-note entry][cycle-note entry][else]You have cycled all the available random responses for an action or NPC's babble.[end if]";
+				else if tables-found is 2:
+					say "This is a further note to say you've done so more than once this turn, which is an impressive bit of timing, even if it doesn't get you any points.";
+		if tables-found is 0 and debug-state is true, say "This is a BUG--you should be notified of cycling.";
+		the rule succeeds;
 
 part the tables
 
