@@ -83,10 +83,10 @@ a thing can be reified. a thing is usually not reified.
 
 section examining
 
-a thing can be nyet or xyet. A thing is usually nyet.
+a thing can be nox or xed. A thing is usually nox.
 
 after examining:
-	now the noun is xyet;
+	now the noun is xed;
 	continue the action;
 
 section gender stuff
@@ -364,6 +364,7 @@ to reg-inc (re - a region):
 	increment cur-score of re;
 	increment the score; [this is the only incidence that shouldn't be replaced]
 	if debug-state is true:
+		say "DEBUG: player in [mrlp], increased points for [re].";
 		say "DEBUG TALLY: Grebeberg [cur-score of Grebeberg] Yelpley [cur-score of Yelpley] Dim Mid [cur-score of Dim Mid] Odd Do [cur-score of Odd Do].";
 		if cur-score of mrlp > max-score of mrlp, say "DEBUG WARNING: REGION SCORE TOO HIGH!";
 		if debug-state is true and score > maximum score, say "DEBUG WARNING: OVERALL SCORE TOO HIGH!";
@@ -1121,7 +1122,7 @@ understand "use [something] with [something]" as useoning it with.
 to build-the-tron:
 	move north tron to Fun Nuf;
 	now all tronparts are in devreserved; [ic]
-	if epicer recipe is nyet, say "[if epicer recipe is nyet]You're clueless how, at first. But then you take a look at the epicer recipe[else]You build the North-Tron with the instructions from[end if] the epicer recipe after a few 'How? OH!' moments. It points north and blasts a hole with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break]Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
+	if epicer recipe is nox, say "[if epicer recipe is nox]You're clueless how, at first. But then you take a look at the epicer recipe[else]You build the North-Tron with the instructions from[end if] the epicer recipe after a few 'How? OH!' moments. It points north and blasts a hole with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break]Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
 	moot epicer recipe;
 	now Dirge Grid is mapped north of Fun Nuf;
 	now Fun Nuf is mapped south of Dirge Grid;
@@ -1212,6 +1213,8 @@ check useoning it with:
 						reg-inc reg-plus entry;
 					else:
 						score-inc; [ignore]
+				else:
+					if debug-state is true, say "DEBUG: not giving point for [use1 entry]/[use2 entry] use.";
 				say "[babble entry][line break]";
 				if there is a postproc entry:
 					[if debug-state is true, say "(considering [postproc entry])[line break]";]
@@ -1272,7 +1275,7 @@ definition: a thing (called t) is exhausted:
 
 a machine message rule for a thing (called t):
 	if t is an ingredient, say "The only machine you should put food in is a microwave. Or, maybe, a BAKE-KAB. Or a heata['], eh?" instead;
-	if t is a tronpart, say "No, [the t] [if epicer recipe is xyet]is[else]seems[end if] too important." instead;
+	if t is a tronpart, say "No, [the t] [if epicer recipe is xed]is[else]seems[end if] too important." instead;
 	if t is exhausted, say "You already tried everything, and nothing worked." instead;
 	if t is listed in postmachines:
 		say "The [second noun] hums ominously as you bring [the t] close. You already used a machine to make [the t]. Maybe you should do something else." instead;
@@ -1336,7 +1339,7 @@ use1	person-reject	thing-reject
 party trap	"The trap can't work on a person. It's too small, and people are too smart."	"You need to use the party trap on something animate."
 wash saw	"The saw wasn't meant for violence."	"The saw is best used to trim things there's an excess of, not just to cut stuff down."
 el doodle	"They don't seem like the sort that can decipher things."
-pity tip	"You don't want to give it away! You [if navy van is xyet]should maybe use it, yourself. Now where was Seedy Dee's?[else]have a feeling you can find Seedy Dee's, if you look hard enough.[end if]"
+pity tip	"You don't want to give it away! You [if navy van is xed]should maybe use it, yourself. Now where was Seedy Dee's?[else]have a feeling you can find Seedy Dee's, if you look hard enough.[end if]"
 [zzur]
 
 [?? poo coop on, well, everything]
@@ -1863,7 +1866,7 @@ this is the wear-garb rule:
 	the rule succeeds;
 
 this is the you-win rule: [xxwin]
-	say "The Flee Elf greets you on the other side. 'Deified! [if cur-score of Odd Do is max-score of Odd Do]Won! All Illa['] Now[else]Won enow[end if]! / Deified!' You ask hesitantly about the new adventures promised.[wfak-d]";
+	say "The Flee Elf greets you on the other side. 'Deified! [if cur-score of Odd Do is max-score of Odd Do]Decay?! ACED[else]Won enow[end if]! / Deified!' You ask hesitantly about the new adventures promised.[wfak-d]";
 	say "'The X-ITE TIX lead to A REAL WORLD THAT WILL BE MORE EXCITING AFTER YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a circular loop to 'back where you began' non-twist. Books like that always kind of annoyed you (well, okay, the first ones seemed profound,) but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand and pulls out a device. 'This RIDE-DIR will help you return to your own world. And here is an x/o box.'[wfak-d]";
 	say "The x/o box isn't much: nothing's inside, and it's engraved 'U Remem'er, U,' 'Done? NOD' and 'U Did U.' But if it were too obvious and gaudy, how would you explain it back home?[paragraph break]As you stare at it, you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered stuff you can't fix?[wfak-d]";
 	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call them? It's a tough call between SOME MEMOS, I SAW [']TWAS I, SAGAS or SOLOS. Hmm, maybe DRAWN INWARD.";
@@ -2159,9 +2162,9 @@ the Darer Ad is a proper-named helpdoc. The player carries the Darer Ad. importa
 description of Darer Ad is "Gig, gig, gig![paragraph break]No LOL on? SEE, REFER-EES! Do! Nod!"
 
 after examining the Darer Ad:
-	if Darer Ad is not xyet and Set O Notes is xyet:
+	if Darer Ad is not xed and Set O Notes is xed:
 		say "Well! It was worth reading the Set-O-Notes first.";
-	else if Set O Notes is not xyet:
+	else if Set O Notes is not xed:
 		say "Well, you need something with a bit more concrete advice. [if player has Set O Notes]Like the Set-O-Notes[else]Maybe you'll find it quickly enough[end if].";
 	else:
 		say "Wow! This is pretty useless compared to the Set O Notes you got later.";
@@ -2193,7 +2196,7 @@ definition: a guhthug (called th) is seenees:
 	no;
 
 after examining Set O Notes:
-	if Set O Notes is not xyet, say "Well, that was much more useful than the Darer Ad, but maybe you'll get something even more detailed than the Set-O-Notes later.[if player is in Worn Row][paragraph break]";
+	if Set O Notes is not xed, say "Well, that was much more useful than the Darer Ad, but maybe you'll get something even more detailed than the Set-O-Notes later.[if player is in Worn Row][paragraph break]";
 	if player is in Worn Row, say "[trigirt].";
 
 to say trigirt:
@@ -2289,7 +2292,7 @@ to decide which number is henchmen-left:
 	decide on count;
 
 every turn when Diktat Kid is quicknear:
-	say "The Diktat Kid whines '[next-rand-txt of table of diktat taunts]'";
+	say "The Diktat Kid whines '[next-rand-txt of table of diktat taunts]'[paragraph break]";
 
 chapter Knife Fink
 
@@ -3116,7 +3119,7 @@ chapter Name ME Man
 
 does the player mean doing something with name me man when player is in Yawn Way: it is likely.
 
-Name ME Man is a proper-named peripheral phonebook in Yawn Way. description is "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers of Yelpley residents:[line break][name-num of 5 and name me man][variable letter spacing][run paragraph on]". "[one of]There's also something called NAME ME, MAN, which--well, it's really just a glorified phone book. Yawn[or]NAME ME, MAN waits for your perusal, if you have a great need to procrastinate[if name me man is xyet] some more[end if][stopping].". booktable of Name ME Man is table of random palindrome lastfirst names.
+Name ME Man is a proper-named peripheral phonebook in Yawn Way. description is "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers of Yelpley residents:[line break][name-num of 5 and name me man][variable letter spacing][run paragraph on]". "[one of]There's also something called NAME ME, MAN, which--well, it's really just a glorified phone book. Yawn[or]NAME ME, MAN waits for your perusal, if you have a great need to procrastinate[if name me man is xed] some more[end if][stopping].". booktable of Name ME Man is table of random palindrome lastfirst names.
 
 printed name of Name ME Man is "NAME ME, MAN".
 
@@ -3939,12 +3942,15 @@ after going to Cold Loc when puce cup is sappy:
 
 section cup points
 
+cup-nerf is a truth state that varies.
+
 to no-extra-cup-points:
+	if cup-nerf is true, continue the action;
 	repeat through table of useons:
 		if there is a use1 entry:
-			if use1 entry is puce cup and use2 entry is not liar grail:
-				now sco entry is false;
-				the rule succeeds;
+			if use1 entry is puce cup:
+				if use2 entry is dose sod or use2 entry is past sap, now sco entry is false;
+	now cup-nerf is true;
 
 book Toll Lot
 

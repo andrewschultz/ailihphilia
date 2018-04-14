@@ -766,7 +766,7 @@ table of singstuff	0	0	true	"responses to SINGing"	--
 table of swearstuff	0	0	true	"responses to SWEARing"	--
 table of undoings	0	0	true	"UNDOing notifications"	--
 table of waittxt	0	0	true	"responses to WAITing"	--
-table of wordy drow laments	0	0	true	"Wordy Drow laments"	--
+table of wordy drow laments	0	0	false	"Wordy Drow laments"	--
 table of yessies	0	0	true	"responses to YES"	--
 table of yuge taunts	0	0	true	"Yuge Guy taunts"	"Señor drones, you think you yourself, as the Yuge Guy winds up for another round of nonsense."
 
@@ -911,6 +911,7 @@ randtxt
 table of My Gym songs
 randtxt
 "[']Allo, Dolla[']"
+"All Illa[']"
 "Do Mo['] Mod"
 "Hat-stah"
 "Hook Ooh"

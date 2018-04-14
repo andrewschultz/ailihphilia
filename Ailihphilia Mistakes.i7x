@@ -265,7 +265,7 @@ book Mont Nom
 
 understand "truco curt" as a mistake ("You don't have a deck of cards, and Curt wouldn't want to play.[mis of 89]") when player is in Mont Nom and Curt is in Mont Nom.]
 
-understand "mar tram" as a mistake ("No. [if epicer recipe is xyet]You need it to build the north-tron[else]It must be good for something[end if].[mis of 90]") when martini tram is quicknear.
+understand "mar tram" as a mistake ("No. [if epicer recipe is xed]You need it to build the north-tron[else]It must be good for something[end if].[mis of 90]") when martini tram is quicknear.
 
 understand "nair Ian" as a mistake ("That would be painful and embarrassing enough to chase him, or someone named Brian, off, but alas, you don't have anything to do the job[if player has nat's tan]. The bottle of Nat's Tan doesn't count[end if].[mis of 91]") when Ian is quicknear.
 
