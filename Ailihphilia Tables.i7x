@@ -913,6 +913,7 @@ randtxt
 "[']Allo, Dolla[']"
 "All Illa[']"
 "Do Mo['] Mod"
+"Emote to Me"
 "Hat-stah"
 "Hook Ooh"
 "Kazoo Zak"
@@ -922,6 +923,8 @@ randtxt
 "Ode: Dude, DO"
 "Opera Repo"
 "Rap Spar"
+"Set-a-Dates"
+"Set-a-Mates"
 "Sun on Us"
 "To Own: WOOT"
 "We Nab Anew"
@@ -1100,6 +1103,7 @@ randtxt
 "Soros! Soros!"
 "Sue Me?! Us?!"
 "Wane? Naw!"
+"Y'r Dry!"
 "You! Oy!"
 
 Ailihphilia Tables ends here.

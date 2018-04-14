@@ -55,6 +55,12 @@ definition: a thing is moot:
 to moot (Q - a thing):
 	move Q to DevReserved; [ic]
 
+to say bb: say "https://bitbucket.org/andrews[ascii character 66]hultz/ailihphilia"
+
+to say gh: say "https://github.com/andrews[ascii character 66]hultz/ailihphilia"
+
+to say email: say "blurgle[ascii character 66]runcheon@gmail.com"
+
 section kinds of things
 
 a chaser is a kind of person. a chaser has a room called chase-room. a chaser has a room called stix-room.
@@ -405,7 +411,7 @@ when play begins:
 	say "You fold the Darer Ad and start off to the store.[paragraph break]'[unicode 161]Aloha. Hola!' someone, or something, cries. You run in the general direction of the voice.  You look up, and you're no longer on the way to the store. You're somewhere else. Your smartphone starts blinking: LOAD AOL! You look up. Who is responsible for this? An elf, who sees you futzing with your smartphone. 'No El Google on?' You nod. Awkward silence.[wfak-d]";
 	say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because after being confused by it, you looked up the winning strategy on the internet. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers. Then 'Is reversi...?'";
 	say "After your fifth win in a row, the Flee Elf yells 'Put it up!' You freeze--well, until you're knocked to the ground.[wfak-d]";
-	say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Raw Level War. You'll do for Yelpley, I guess.' The Flee Elf leads you away. 'The first thing to do is, figure how to take this cap.'[wfak-d]";
+	say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Raw Level War or Mista-T Sim. You'll do for Yelpley, I guess.' The Flee Elf leads you away. 'The first thing to do is, figure how to take this cap.'[wfak-d]";
 	do nothing; [debug information below here. I've had problems putting it in and not deleting it, so I want to make things clear.]
 
 [??mike kim nora maron Marge Pegram lee mcmeel]
@@ -808,9 +814,10 @@ understand "about" as abouting.
 carry out abouting:
 	say "Ailihphilia was originally written for IFComp 2018. It was conceived in October 2017 as 'Put It Up' before I realized there was an actual word for, well, liking palindromes. I started coding in November.";
 	say "[line break]Like many of my games, I got the idea from [i]Nord and Bert Couldn't Make Head or Tail of It[r], at least partially. Another game that gave me ideas was Nick Montfort's [i]I Palindrome I[r], part of the Apollo 18+20 collection Kevin Jackson-Mead organized back in 2012. I felt there could be more that could be done with palindromes, but I didn't know what, and I didn't know how much.[paragraph break]Also, the Palindome in Kingdom of Loathing prompted my curiosity back in 2010. I would still be playing it today, if it hadn't inspired me to try to write my own games, which left less time for KoL (spoiler: I still ascended over 100 times.) I tried to avoid palindromes it already considered, though the Dumb Mud from the special Heavy Rains was too good to pass up. It's an item there but a location here, so I can't claim to copycat too much.";
-	say "[line break]In my continuing quest to nail down my Python knowledge, I realized that even if I didn't get MANY palindromes, a few scripts could print things out. I had word and name lists from my anagram games Shuffling Around and A Roiling Original, so I had the raw materials.";
-	say "[line break]The result of all my work is some guess-the-verb, but hopefully with the game's general idea, you'll see what's going on.";
+	say "[line break]In my continuing quest to nail down my Python knowledge, I realized that even if I didn't get MANY palindromes, a few scripts could print things out. I had word and name lists from my anagram games Shuffling Around and A Roiling Original, so I had the raw materials--but at the same time, I needed to weed out overlaps.";
+	say "[line break]The result of all my work is some guess-the-verb, but hopefully with the game's general idea, you'll see what's going on. Ailihphilia is meant to be polite on the Zarfian cruelty scale, although I hope you enjoy some of the impolite jokes.";
 	say "[line break]Originally, Ailihphilia was part of a spoonerism game--a sort of side area--but eventually I found enough rooms and ideas it could be its own game. Whether or not it's a good game on its own, I guess you have to decide. It doesn't have any deep philosophy, but I hope you enjoy it. If you write games yourself, I hope it inspires you to go through with anything unusual you weren't sure if you should try, even if it rubs you the wrong way. (Spoiler: you should write that game! Just start early and take all the notes you can, but don't think the first draft needs to be perfect!)[paragraph break]";
+	say "I'm at [email] if you have suggestions for bug fixes, etc.";
 	the rule succeeds;
 
 chapter creditsing
@@ -824,7 +831,7 @@ understand "credits" as creditsing.
 showed-sites is a truth state that varies.
 
 carry out creditsing:
-	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in alphabetical order: Anssi Raissanen, Brian Rushton, Mike Spivey, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and gave positive suggestions.[paragraph break]IFComp organizers past and present. Without them, I wouldn't have started and kept going. Whether that's good for gaming is up for debate, but it's been good for me.[paragraph break]Various Python communities, especially StackOverflow, helped me to write utilities that helped not only to extract palindromes but also to tune up Inform code (obligatory thanks to all past and current Inform developers, from whom I've stolen game code and/or used extensions) and run simple tests.";
+	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in alphabetical order: Anssi Raissanen, Brian Rushton, Mike Spivey, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and gave positive suggestions. If you want to join this elite club, and you find a bug, write me at [email].[paragraph break]IFComp organizers past and present. Without them, I wouldn't have started and kept going. Whether that's good for gaming is up for debate, but it's been good for me.[paragraph break]Various Python communities, especially StackOverflow, helped me to organize source control and write utilities that helped not only to extract palindromes but also to tune up Inform code (obligatory thanks to all past and current Inform developers, from whom I've stolen game code and/or used extensions) and run simple tests.";
 	if showed-sites is false:
 		now showed-sites is true;
 		say "I also found some websites useful. CREDITS again to see them.";
@@ -832,6 +839,9 @@ carry out creditsing:
 		say "Websites that helped with this game:[paragraph break]";
 		say "  --http://www.angelfire.com/in2/sedavis/palindromes.html STOP LAUGHING ANGELFIRE WAS COOL WHEN IT FIRST CAME OUT ANYWAY GEOCITIES WAS MORE MY BEAT[line break]";
 		say "  --https://www.reddit.com/r/AskReddit/comments/4z899e/whats_your_favorite_palindrome/";
+		say "[paragraph break]From a technical standpoint, Bitbucket helped me get started, and Github is/will be used for the post-release.";
+		say "  --Github: [gh][line break]";
+		say "  --BitBucket: [bb][line break]";
 	the rule succeeds;
 
 chapter verbing
@@ -1869,7 +1879,7 @@ this is the you-win rule: [xxwin]
 	say "The Flee Elf greets you on the other side. 'Deified! [if cur-score of Odd Do is max-score of Odd Do]Decay?! ACED[else]Won enow[end if]! / Deified!' You ask hesitantly about the new adventures promised.[wfak-d]";
 	say "'The X-ITE TIX lead to A REAL WORLD THAT WILL BE MORE EXCITING AFTER YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a circular loop to 'back where you began' non-twist. Books like that always kind of annoyed you (well, okay, the first ones seemed profound,) but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand and pulls out a device. 'This RIDE-DIR will help you return to your own world. And here is an x/o box.'[wfak-d]";
 	say "The x/o box isn't much: nothing's inside, and it's engraved 'U Remem'er, U,' 'Done? NOD' and 'U Did U.' But if it were too obvious and gaudy, how would you explain it back home?[paragraph break]As you stare at it, you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered stuff you can't fix?[wfak-d]";
-	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call them? It's a tough call between SOME MEMOS, I SAW [']TWAS I, SAGAS or SOLOS. Hmm, maybe DRAWN INWARD.";
+	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call them? It's a tough call between SOME MEMOS, I SAW [']TWAS I, DRAWN INWARD, SAGAS or SOLOS. Hmm, maybe WENT NEW.";
 	end the story finally saying "Darn! Rad!";
 	sort the table of last lousy points in finord order;
 	if in-beta is true, display-dropbox-link;
@@ -2233,7 +2243,7 @@ printed name of Dirge Grid is "[if Diktat Kid is moot]Top Spot[else]Dirge Grid[e
 
 for writing a paragraph about a person when player is in Dirge Grid:
 	now all people in Dirge Grid are mentioned;
-	if Dirge Grid is visited:
+	if Dirge Grid is unvisited:
 		say "You are greeted by someone who must be the Diktat Kid, who reminds you of a bully from high school. 'You did some weird things to get this far--but I've done some PRACTICAL things to make sure that's it! Knife Fink! Verses Rev!'[paragraph break]'ENGAGE LE JEU QUE JE LE GAGNE!'[wfak-d]";
 		say "They both appear. And they are armed! The Knife Fink, with leet steel, and the Verses Rev, with a part strap.";
 		if player does not have ME gem and player does not have taboo bat:
@@ -2244,6 +2254,7 @@ for writing a paragraph about a person when player is in Dirge Grid:
 			say "You feel like you aren't quite prepared enough to tackle the Diktat Kid's henchmen. You back off.";
 			move player to Fun Nuf, without printing a room description;
 			continue the action;
+		say "You sense a slight hesitation from your adversaries and unwisely boom 'Step, puppets!'[paragraph break]Uh oh. You'd better be able to back up your words, here.";
 	else:
 		if player does not have ME gem and player does not have taboo bat:
 			say "You're still overwhelmed by all three opponents.";
@@ -2488,7 +2499,7 @@ understand "evil/clive" and "evil clive" as Yuge Guy.
 
 chapter ME Totem
 
-the ME Totem is scenery in Sneer Greens. description is "It's a more favorable version of the Yuge Guy: taller, thinner, better looking. It's overdone, but you can see how people would be fooled by it. It is hard to look away. But you know you need to."
+the ME Totem is scenery in Sneer Greens. description is "It's a more favorable version of the Yuge Guy: taller, thinner, better looking. It's overdone, but you can see how people would be fooled by it. It looks like it may be broadcasting to ... well, lots of places. It is hard to look away, as the ME Totem fills your head with circular arguments and 'would I lie about this' babble. But you know you need to."
 
 chapter smirk rims
 
