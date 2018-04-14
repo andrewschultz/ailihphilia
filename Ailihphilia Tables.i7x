@@ -984,7 +984,16 @@ randtxt
 "Tune nut!"
 "Yodeled? Oy!"
 
-[?? tafl.pl sort so parentheses as well as a/an/the don't affect alphabetization]
+table of snooty toon ads
+randtxt
+"Ay, a papaya"
+"Food ... oof"
+"No revile-liver on"
+"Nom la salmon"
+"Risotto, Sir"
+"Salad (alas)"
+
+[?? tafl.py sort so parentheses as well as a/an/the don't affect alphabetization]
 table of swearstuff
 randtxt
 "(R)rude! Dur(r)!"

@@ -4095,7 +4095,7 @@ the decal placed is peripheral scenery in Deft Fed. description is "It's an adve
 
 chapter snooty toons
 
-The snooty toons are peripheral scenery. "They certainly add ambience to the place. You're not sure whether you should feel obliged to laugh at them or not good enough to laugh at them. But they're not really hurting you, you guess."
+The snooty toons are peripheral scenery. "They certainly add ambience to the place. You're not sure whether you should feel obliged to laugh at them or not good enough to laugh at them. But they're not really hurting you, you guess. They're also advertising something: [next-rand-txt of table of snooty toon ads]."
 
 chapter standing
 
