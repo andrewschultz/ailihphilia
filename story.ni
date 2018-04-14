@@ -1121,7 +1121,7 @@ understand "use [something] with [something]" as useoning it with.
 to build-the-tron:
 	move north tron to Fun Nuf;
 	now all tronparts are in devreserved; [ic]
-	say "You build the North-Tron with the instructions from the epicer recipe after a few 'How? OH!' moments. It points north and blasts a hole with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break]Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
+	if epicer recipe is nyet, say "[if epicer recipe is nyet]You're clueless how, at first. But then you take a look at the epicer recipe[else]You build the North-Tron with the instructions from[end if] the epicer recipe after a few 'How? OH!' moments. It points north and blasts a hole with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break]Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
 	moot epicer recipe;
 	now Dirge Grid is mapped north of Fun Nuf;
 	now Fun Nuf is mapped south of Dirge Grid;
@@ -2075,8 +2075,7 @@ to decide which number is east-LLP:
 
 check going north in Fun Nuf:
 	if Diktat Kid is moot, say "No need to go back." instead;
-	if epicer recipe is off-stage, say "You need to get there. But you have no clue what to build, or how." instead;
-	if epicer recipe is xyet, say "You're clueless how. But you decide to look at the epicer recipe...[paragraph break]" instead;
+	if epicer recipe is off-stage, say "You need to get there. But you have no clue what to build, or how[if number of carried ingredients > 2]--though some of your inventory looks useful for that[end if]." instead;
 	if north tron is not in Fun Nuf, say "Not until you've built the North-Tron." instead;
 	if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
 	if murdered rum is not moot, say "You have the yard ray, but it isn't, well, charged." instead;
