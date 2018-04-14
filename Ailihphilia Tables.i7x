@@ -728,6 +728,7 @@ biz-name
 "Looks Skool"
 "Rife Kefir"
 "Skooby Books"
+"Tru-Go Yogurt"
 "We Sew"
 
 volume random responses
@@ -767,7 +768,7 @@ table of undoings	0	0	true	"UNDOing notifications"	--
 table of waittxt	0	0	true	"responses to WAITing"	--
 table of wordy drow laments	0	0	true	"Wordy Drow laments"	--
 table of yessies	0	0	true	"responses to YES"	--
-table of yuge taunts	0	0	true	"Yuge Guy taunts"	--
+table of yuge taunts	0	0	true	"Yuge Guy taunts"	"Señor drones, you think you yourself, as the Yuge Guy winds up for another round of nonsense."
 
 rand-cycle is a truth state that varies.
 
@@ -911,6 +912,8 @@ table of My Gym songs
 randtxt
 "[']Allo, Dolla[']"
 "Do Mo['] Mod"
+"Hat-stah"
+"Hook Ooh"
 "Kazoo Zak"
 "Krew Twerk"
 "Me: Opt, Poem"
@@ -1041,6 +1044,7 @@ randtxt
 "Sod dos."
 "Stare? Rats!"
 "Stir! It's..."
+"Task: SAT!"
 "Truce, curt."
 "Wait! I ... aw ..."
 "Wandered? Naw."
@@ -1049,12 +1053,15 @@ randtxt
 
 table of wordy drow laments
 randtxt
-"'Deity...tied!'"
-"'Die, id!'"
-"'Eh, Tithe!'"
-"'No Sin is On!'"
+"Deity...tied!"
+"Die, id!"
+"Ebb? Be!"
+"Eh, Tithe!"
+"No Sin is On!"
+"Onan? A no!"
 "Sob! Mild Limbos!"
 "Sog, Ebb, Egos!"
+"Want? Naw!"
 
 table of yessies
 randtxt

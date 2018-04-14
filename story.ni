@@ -15,7 +15,7 @@ USE for the Table of Useons (USE X ON Y gives a point)
 UR for use redirect
 BKR for bookrejects
 PSR for person specific rejects
-FAIL for Useons that don't work
+REJ or FAIL for Useons that don't work
 LAT for later uses
 TALK for talk texts
 WIN for winning the game
@@ -347,7 +347,7 @@ to say to-get-max:
 	if cur-score of Odd Do is max-score of Odd Do:
 		say "You got all LLPs";
 	else:
-		say "You need at least [maximum score - max-score of Odd Do + cur-score of Odd Do] to win"
+		say "You need at least [maximum score - max-score of Odd Do + cur-score of Odd Do] to win[if cur-score of Odd Do > 0], since you got [cur-score of Odd Do]bonus point[plur-s of cur-score of Odd Do][end if]"
 
 to say plur-s of (myn - a number):
 	unless myn is 1, say "s"
@@ -1313,7 +1313,7 @@ Dave	"Dave's not useful, man."
 Ian	"Ian's worse than useless. You need to use your wit on him."
 Rob	"Rob's not going to be obliging. You have to get rid of him, somehow."
 Ned	"Ned wants a fight, and you need some other way around him."
-ergot ogre	"The ogre can't be bribed or baited. At least, not by you. You're not fast or strong enough to outfox it."
+ergot ogre	"The ogre can't be bribed or baited. At least, not by you. You're not fast or strong enough to outfox (or out-any other animal) it on your own."
 Pact Cap	"Your pact cap is fine where it is, on your head."
 epicer recipe	"The epicer recipe is meant for referral."
 Darer Ad	"The Darer Ad was only useful to sucker you into this mess."
@@ -1343,7 +1343,7 @@ pity tip	"You don't want to give it away! You [if navy van is xyet]should maybe 
 
 section table of specific use rejects
 
-table of specific use rejects [xxfail]
+table of specific use rejects [xxrej] [xxfail]
 use1	use2	babble
 trap art	stark rats	"Whatever's planned on the trap art might work, but not the trap art itself."
 Dirt Rid	cassettes sac	"The Dirt Rid wheezes but is unable to clean up the cassettes sac. You need something more powerful."
@@ -1361,6 +1361,7 @@ radar	sleep eels	"A radar isn't supposed to work this way, but somehow, you dete
 el doodle	Known Wonk	"The Known Wonk looks at El Doodle, thinks, and says 'Ugh, sorry, never could decipher these things. No good rules to. Maybe you could use the edits tide, though.'"
 el doodle	code doc	"'This isn't quite clear enough for me. If you could clean it up, though, I could help you.'"
 el doodle	Revolt Lover	"But the Revolt Lover pretty much offered it to you in the first place."
+stamp mats	yahoo hay	"The mats don't quite work on the hay. They might work better on something with more surface area."
 troll ort	ergot ogre	"The ergot ogre mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. Perhaps you need a more violent way to dispose of the ogre."
 troll ort	cross orc	"The cross orc mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. But the way it looks at you, you suspect it'd forgive you if you gave the right gift."
 troll ort	kayo yak	"As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up. The yak seems weirdly attracted to it."
@@ -1369,7 +1370,7 @@ wash saw	made dam	"The made dam is much too big to get anywhere[if eroded ore is
 Gorge Grog	yard ray	"The Gorge Grog is pretty strong stuff, but you may need something even stronger."
 Rep Popper	Yuge Guy	"It seems like the Rep Popper should work, but it doesn't, quite. Maybe there is something that is giving the Yuge Guy all his rep?"
 Bro Orb	Madam	"As you lift the Bro Orb to throw at Madam, you see yourself in the Mirror Rim. You don't look so great or heroic. In fact, you feel unusually self-conscious. More than you deserve to, you think. Besides, the Bro Orb might dissolve her or something, but you're not out to kill anyone."
-poo coop	Yuge Guy	"That could be fun, but he might be normalised to the stuff in the coop."
+poo coop	Yuge Guy	"That could be fun, but he might be too normalised to the stuff in the coop to do damage."
 poo coop	Liar Grail	"Maybe if the contents came from a bull and not a gnu, it would be appropriate (this is not a palindrome 'joke.')"
 elope pole	Tao Boat	"The Tao Boat is too big to control with the elope pole."
 yard ray	Diktat Kid	"The Diktat Kid laughs as you point the yard ray. 'Destroy me, but my work will remain!'"
@@ -1381,7 +1382,7 @@ ME gem	ME Totem	"The egotistical forces in the gem and totem repel each other. J
 gate tag	DIFF ID	"You wave the gate tag in front of the DIFF ID, which beeps for a second, then ... nothing. Maybe the gate tag (or its pattern) needs to be read a different way."
 soot tattoos	DIFF ID	"The Diff-ID doesn't respond. Maybe you need a way to put them on you, somehow."
 state tats	DIFF ID	"You can just walk north to get through."
-[zzfail]
+[zzrej] [zzfail]
 
 [below is something to cut and paste to the table of failed useons]
 [item1	item2	"[fill-in-here]"]
@@ -1411,16 +1412,16 @@ pity tip	eye	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	"The eye sc
 --	--	--	rev-work-row rule	--	true	--	--	Yelpley
 trap art	reifier	party trap	--	--	true	true	false	Yelpley	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. You pull it out of the reifier and inspect it. It could probably capture more than one thing."
 bunk nub	reviver	stock cots	--	--	true	true	false	Yelpley	"After some crunching and slurping, the bunk nub is changed to a bunch of much smaller, but more comfortable looking, stock cots. You take them."
-party trap	stark rats	gift fig	--	oh-who-to rule	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit. You watch as a gift fig rolls out.[paragraph break]You take it, and as you do, a book drops from above. THUMP! Good thing you were wearing that pact cap. One glance reveals it to be [b]Oh, Who[r]--a phone book for Grebeberg, like [b]Name Me Man[r] for Yelpley."
+party trap	stark rats	gift fig	--	oh-who-to rule	true	true	true	Grebeberg	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit.[paragraph break]THUMP! They left you a present--good thing you were wearing that pact cap, because a book fell on your head. One glance reveals it to be [b]Oh, Who[r]--a phone book for Grebeberg, like [b]Name Me Man[r] for Yelpley.[paragraph break]You also find a gift fig, which you pick up."
 EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	Grebeberg	"King Nik reads it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris told me I needed to one day. ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! Now I can lead against the Rim Emir and his emir crime and emir grime!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...I must leave and RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
 --	--	--	rev-puff-up rule	--	true	--	--	Yelpley
 --	--	--	rev-pull-up rule	--	true	--	--	Yelpley
 wash saw	past sap	--	sap-not-cut-yet rule	sap-loose rule	true	false	false	Grebeberg	"You hack away at the past sap with the wash saw, first squirting some loosening/thawing liquid. It's tricky, but the saw holds out, and with some perseverance, you're able to twist the sap off the rife fir."
 puce cup	past sap	--	check-sap-cup rule	sap-to-cup rule	true	false	false	Grebeberg	"You pour some sap into the cup."
-puce cup	liar grail	--	sap-in-cup rule	empty-grail rule	true	false	true	Yelpley	"The past sap pours into the liar grail and exposes how bad the grail has been over the years. As it cracks, along with the wall it was attached to allow passage south, you snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL! You look around, worried a nun will say 'Tut!' But all is still."
+puce cup	liar grail	--	sap-in-cup rule	empty-grail rule	true	false	true	Yelpley	"The past sap pours into the liar grail. As it does, the Wordy Drow slips away from it and ... yes! It breaks free! 'Wend new! Wend new!' it calls to you.[paragraph break]The passage south looks clear. You snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL! You look around, worried a nun will say 'Tut!' But all is still."
 puce cup	dose sod	--	check-sod-cup rule	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough." [sc2-ignore]
-puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-nob rule	true	true	true	Yelpley	"You give the Bond Nob the puce cup. Gulp! Gulp! 'The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. So many places to visit: Tope Depot, Nigh Gin, Sara's, Soto's, Pub UP, Bar Crab, Pat's Tap...'"
+puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-nob rule	true	true	true	Yelpley	"You give the Bond Nob the puce cup. Gulp! Gulp! 'The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. So many places to visit: Tope Depot, Nigh Gin, Sara's, Soho's, Tipsy Spit, Soto's, Pub UP, Bar Crab, Pat's Tap...'"
 stamp mats	slate metals	Ye Key	--	--	true	true	false	Yelpley	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY. You find it hard to pull the stamp mats out, and when you take YE KEY, the mats quickly morph into the slate metals. Eh, well. Less inventory to worry about."
 demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' and looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
@@ -1439,7 +1440,7 @@ gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spi
 SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	false	false	Grebeberg	"With the help of SOME DEMOS, you (after several grunts of 'STRAIN! I! ARTS!') manage to rejig the hay into something more aesthetically pleasing: straw arts!"
 straw arts	Revolt Lover	soot tattoos	--	rebump-art-xtra rule	true	true	false	Yelpley	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
 gate tag	soot tattoos	state tats	--	tats-peripheral rule	true	true	true	Yelpley	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
-poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	"The gnu dung is sucked towards the poo coop. In fact, it forms a crass arc as it seems like the dung inside the coop must be several times the volume of the coop itself. Whatever, you can now go south."
+poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	"A heretofore hidden poos scoop pops out from the poo coop. It shovels and vacuumss the offending dung into the coop, forming a crass arc that seems to contain several times the volume of the coop itself. Whatever, you can now go south."
 poo coop	turf rut	--	coop-full rule	shift-dumb-mud rule	true	true	true	Grebeberg	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture.[paragraph break]A bold lob! The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
 radar	made dam	eroded ore	--	radar-blink rule	true	false	false	Grebeberg	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow. The radar plays a weird scale. Being close to the ore has damaged it somehow."
 NULL ILLUN	Known Wonk	--	--	bump-maws rule	true	false	true	Grebeberg	"The Known Wonk begins to read. 'Old, lo! Too simple. It has to be beneath me. I mean, it's almost as bad as [i]EBB?! BE[r].' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. Rid a nadir. Rid ANY nadir! Wonk, now! Sometimes, simple stuff works.' As the Known Wonk babbles, the mist sim lifts, too. 'Wow!' But no, your acts deserve a better cheer than that. 'H/t! A path!'"
@@ -2083,7 +2084,7 @@ check going north in Fun Nuf:
 
 chapter Pact Cap
 
-The Pact Cap is a wearable thing in Fun Nuf. "A pact cap sits here. You need to find the right way to accept it to begin your quest.". description is "It's no stetson, but it is less messy than a tahini hat, and it [if player has pact cap]feels[else]looks[end if] serviceable enough."
+The Pact Cap is a wearable thing in Fun Nuf. "A pact cap sits here. You need to find the right way to accept it to begin your quest.". description is "It's no stetson, and it's not as helpful as a ref-titfer, but it is less messy than a tahini hat, and it [if player has pact cap]feels[else]looks[end if] serviceable enough."
 
 check taking off the pact cap: say "No, you...uh, made a pact." instead;
 
@@ -2344,7 +2345,7 @@ carry out emiting:
 	if Diktat Kid is moot, say "You already got rid of the Diktat Kid." instead;
 	if emitted is true, say "You already figured how to use the Yard Ray." instead;
 	if the topic understood matches "noontime":
-		say "BOOM! The yard ray emits so much light, you immediately have to switch it off. Well, that was a good start. Now you want to make sure you can aim it at something that can be destroyed.";
+		say "FOOM! Oof! The yard ray emits so much light, you immediately have to switch it off. Well, that was a good start. Now you want to make sure you can aim it at something that can be destroyed.";
 		now emitted is true;
 		reg-inc Dim Mid; [EMIT NOONTIME]
 		the rule succeeds;
@@ -2587,7 +2588,7 @@ carry out mussing:
 
 chapter Bro Orb
 
-the Bro Orb is a thing in Le Babel. "[one of]An orb hovers in the air. You know it must be a Bro Orb[or]The Bro Orb still hovers in the air[stopping]. You would love to take it, but you're not sure if you're worthy.". description is "Looking into the Bro Orb, you think, 'Do orbs brood?' There is a brief vision of star frats, lacking star brats. You start to understand social, subjective knowledge you assumed only jerks know. About how to be likable to others. Of course some go overboard, but these people know it better, but you realize you are cheating yourself if you don't learn it.".
+the Bro Orb is a thing in Le Babel. "[one of]An orb hovers in the air. You know it must be a Bro Orb[or]The Bro Orb still hovers in the air[stopping]. You would love to take it, but you're not sure if you're worthy.". description is "Looking into the Bro Orb, you think, 'Do orbs brood?' There is a brief vision of star frats, lacking star brats or prats. They all do community service, and if their heart isn't in the right place, it gets done. You start to understand social, subjective knowledge you assumed only jerks know. About how to be likable to others. Of course some go overboard, but these people know it better, but you realize you are cheating yourself if you don't learn it.".
 
 understand "bros" and "bros orb" as Bro Orb.
 
@@ -2674,7 +2675,11 @@ check going south in Frush Surf: say "You barely step in, and the water's a bit 
 
 chapter Stamp Mats
 
-stamp mats are a thing in Frush Surf. "Stamp mats lie here.". description is "The stamp mats appear to be engraved in order to cut a pattern out."
+stamp mats are a thing in Frush Surf. "Stamp mats lie here.". description is "The stamp mats are thin and appear to be engraved in order to cut a pattern out."
+
+report taking stamp mats:
+	say "They are thin enough, they don't weigh too much.";
+	the rule succeeds;
 
 after taking stamp mats:
 	shuffle-before Frush Surf and Trial Lair;
@@ -2720,7 +2725,8 @@ chapter poo coop
 
 the poo coop is in Moo Room. "A poo coop sits here. Thankfully, it looks empty.". description is "While it's 1/4 too small to be a pooch coop, it's 1) empty and 2) somehow bigger on the inside than the outside. [if gnu dung is moot]It's full of gnu dung, which would be nice to get rid of[else]Maybe it can clean up a dirty area. Well, a less dirty area than [hn of Moo Room] where you found it[end if]."
 
-[?? specify the poo coop has weird automation]
+understand "poos scoop" and "poos/scoop" as poo coop.
+understand "gnu dung" and "gnu/dung" as poo coop when player has poo coop and gnu dung is moot.
 
 chapter senile felines
 
@@ -3420,6 +3426,8 @@ check examining tract cart:
 
 a book is a kind of thing.
 
+instead of opening a book: try examining the noun instead;
+
 check examining a book:
 	if description of noun is empty, say "It [if player carries the item described]is[else]looks[end if] really heavy and incomprehensible to you."
 
@@ -3462,7 +3470,7 @@ the pity tip is a thing. description of pity tip is "[if DWELT LEWD is off-stage
 
 chapter books in bookcase
 
-TI is a proper-named book. printed name of TI is "TO IDIOT (TI)". understand "to idiot" and "idiot" as ti. description is "It's full of hot takes and 'clever' put-downs based on assuming the recipient isn't as smart as they think they are. You remember laughing at this sort of thing when you were really bored or grouchy, and you sort of regret it now. Still, it keeps some people busy.". [Door Frood]
+TI is a proper-named book. printed name of TI is "TO IDIOT (TI)". understand "to idiot" and "to/idiot" as ti. description is "It's full of hot takes and 'clever' put-downs based on assuming the recipient isn't as smart as they think they are. You remember laughing at this sort of thing when you were really bored or grouchy, and you sort of regret it now. Still, it keeps some people busy.". [Door Frood]
 NULL ILLUN is a proper-named book. printed name of NULL ILLUN is "NULL ILLUN (NI)". understand "ni" as NULL ILLUN. description is "Surprisingly wise advice about how to achieve happiness and shake annoyances you can't dispel with just logic.". [Known Wonk]
 EPOCH COPE is a proper-named book. printed name of EPOCH COPE is "EPOCH: COPE (EC)". understand "ec" as EPOCH COPE. description is "All sorts of present-day political and social musings, with the catch phrase '[']S civics!'". [King Nik]
 YOB ATTABOY is a proper-named book. printed name of YOB ATTABOY is "YOB ATTABOY (YA)". understand "ya" as YOB ATTABOY. description is "All about picking yourself up by your bootstraps and not feeling sorry for yourself or being too jealous of what others know or can do--SHED EH'S is repeated in big bold letters.". [Sniffins]
@@ -4099,7 +4107,9 @@ check going in Evaded Ave:
 
 chapter bunk nub
 
-the bunk nub is a thing in Evaded Ave. "A small bunk nub lies [if Door Frood is in Evaded Ave]behind the Door Frood[else]around for the taking[end if].". description is "It's small, so an actual person couldn't sleep on it. Perhaps it was once part of a larger debt bed."
+the bunk nub is a thing in Evaded Ave. "A small bunk nub lies [if Door Frood is in Evaded Ave]behind the Door Frood[else]around for the taking[end if].". description is "It's small, so an actual person couldn't sleep on it. Perhaps it was once part of a larger debt bed. It reads, ironically, NOO COCOON."
+
+understand "noo/cocoon" and "noo cocoon" as bunk nub.
 
 check taking bunk nub:
 	if Door Frood is in Evaded Ave, say "The Door Frood blocks you. 'Well, maybe, if you get something interesting for me, first...'" instead;
@@ -4182,6 +4192,8 @@ instead of inserting into the navy van: try useoning noun with navy van;
 chapter snack cans
 
 the snack cans are a plural-named solid ingredient. description is "They're labeled DEE FEED. You're not sure what's in them, but whatever it is--well, you're not hungry enough. Yet.".
+
+instead of opening snack cans, say "You will open them when the time comes to use them." instead;
 
 understand "dee feed" and "dee/feed" as snack cans.
 
@@ -4273,7 +4285,7 @@ Swept Pews is south of Emo Dome. It is in Yelpley. "You can go back north to the
 understand "pew" and "swept pew" as swept pews.
 
 check going south in Swept Pews:
-	if Liar Grail in Swept Pews, say "Maybe there's a path where you could get rid of the grail, but not yet." instead;
+	if Liar Grail in Swept Pews, say "'No yon! No yon!' moans the wordy drow." instead;
 
 chapter liar grail
 
@@ -4281,11 +4293,12 @@ The Liar Grail is a thing in Swept Pews. description is "It's carved with 'NIP I
 
 check taking liar grail: say "A small voice cries 'Da cad! Da cad!' You probably don't want the liar grail corrupting you." instead;
 
-every turn when player is in Swept Pews and wordy drow is in Swept Pews and wordy drow was in Swept Pews: next-rand table of wordy drow laments;
+every turn when player is in Swept Pews and wordy drow is in Swept Pews and wordy drow was in Swept Pews:
+	say "The wordy drow moans '[next-rand-txt of table of wordy drow laments]'";
 
 chapter wordy drow
 
-The wordy drow is a neuter person in Swept Pews. description is "Seemingly attached to the Liar Grail. Maybe you can release it.". "[one of]A[or]The[stopping] wordy drow mumbles to itself here, sometimes blurting out something intelligble and haunting. It blocks the way south."
+The wordy drow is a neuter person in Swept Pews. description is "Seemingly attached to the Liar Grail, looking sad and helpless--perhaps you can help release it from its self-pity and preaching.". "[one of]A[or]The[stopping] wordy drow moans admonishments and regrets here. It blocks the way south."
 
 chapter troll ort
 
@@ -5578,7 +5591,7 @@ understand "slam mammals" as slammammalsing.
 carry out slammammalsing:
 	if slam-mam is true, say "You already did. Don't overdo it." instead;
 	unless player is in Ooze Zoo, say "You have no sympathetic audience." instead;
-	say "You babble some rubbish about deer greed. The sleep eels wake from their slumber [if bunk nub is moot]just out of sight [end if]briefly to squirm. They telepathically project their pleasure [if sleep eels are moot]from their stock cots [end if]before going back to sleep. You've ... done something, I guess? And hopefully without too much whataboutism?";
+	say "You babble some rubbish about deer greed. The sleep eels wake from their slumber [if bunk nub is moot]just out of sight [end if]briefly to squirm. They telepathically project their pleasure [if sleep eels are moot]from their stock cots [end if]before dozing off. They seem to have appreciated your sleep speels. You've ... done something, I guess? And hopefully without too much whataboutism?";
 	now slam-mam is true;
 	abide by the LLP rule; [SLAM MAMMALS]
 	the rule succeeds;
