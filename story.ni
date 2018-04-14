@@ -55,11 +55,13 @@ definition: a thing is moot:
 to moot (Q - a thing):
 	move Q to DevReserved; [ic]
 
-to say bb: say "https://bitbucket.org/andrews[ascii character 66]hultz/ailihphilia"
+to say hc: say "ch"
 
-to say gh: say "https://github.com/andrews[ascii character 66]hultz/ailihphilia"
+to say bb: say "https://bitbucket.org/andrews[hc]ultz/ailihphilia"
 
-to say email: say "blurgle[ascii character 66]runcheon@gmail.com"
+to say gh: say "https://github.com/andrews[hc]ultz/ailihphilia"
+
+to say email: say "blurglecrun[hc]eon@gmail.com"
 
 section kinds of things
 
@@ -577,6 +579,7 @@ instead of listening:
 		say "[one of], or at least, that's what repeats in the chorus[or][stopping]." instead;
 	if player is in Apse Spa, say "Surprisingly, no spa yaps." instead;
 	if player is in Mont Nom, say "The Ark of Okra is almost saying 'C'mon! Nom!' or even 'Tum-Smut!'" instead;
+	if player is in Moo Room, say "You think you hear [next-rand-txt of table of Moo Room animals] in addition to the mooing." instead;
 	say "Noise lesion."
 
 chapter seebeesing
@@ -3429,7 +3432,10 @@ carry out roting:
 
 chapter books
 
-the tract cart is scenery. "It carries [number of books in Worn Row] books: [list of books in Worn Row][hint-trace]."
+to decide what number is books-in-cart:
+	decide on number of sober books in Worn Row;
+
+the tract cart is scenery. "It carries [books-in-cart] book[plur-s of books-in-cart]: [list of sober books in Worn Row][hint-trace]."
 
 to say hint-trace:
 	say "[if tract-trace is true]. But it also seems a bit too big for just carrying a few books. Maybe it holds a deeper secret[end if]"

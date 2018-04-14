@@ -758,15 +758,17 @@ table of altbooks	0	0	false	"extra books in the Tract Cart"	"You've read all the
 table of attackings	0	0	true	"responses to ATTACK"	--
 table of burnies	0	0	true	"responses to BURN"	--
 table of diktat taunts	0	0	false	"Diktat Kid taunts"	--
+table of Moo Room animals	0	0	true	"Moo Room animals (LISTEN)"	--
 table of My Gym songs	0	0	false	"songs in My Gym (LISTEN)"	--
 table of noesies	0	0	true	"responses to NO"	--
 table of nothings	0	0	true	"responses to empty commands"	--
-table of Rob droning	0	0	false	"things Rob babbles about"	--
+table of Rob droning	0	0	true	"things Rob babbles about"	--
 table of singstuff	0	0	true	"responses to SINGing"	--
+table of snooty toon ads	0	0	true	"snooty toons ads"	--
 table of swearstuff	0	0	true	"responses to SWEARing"	--
 table of undoings	0	0	true	"UNDOing notifications"	--
 table of waittxt	0	0	true	"responses to WAITing"	--
-table of wordy drow laments	0	0	false	"Wordy Drow laments"	--
+table of wordy drow laments	0	0	true	"Wordy Drow laments"	--
 table of yessies	0	0	true	"responses to YES"	--
 table of yuge taunts	0	0	true	"Yuge Guy taunts"	"Señor drones, you think you yourself, as the Yuge Guy winds up for another round of nonsense."
 
@@ -907,6 +909,15 @@ randtxt
 "Rofl! For..."
 "A tarred errata!"
 "ZAP, spaz!"
+
+table of Moo Room animals
+randtxt
+"a buck cub"
+"a rat avatar"
+"sab mambas"
+"sewer ewes"
+"smart rams"
+"a tart rat"
 
 table of My Gym songs
 randtxt
