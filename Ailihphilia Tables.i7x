@@ -745,6 +745,9 @@ to next-rand (t - a table name):
 	choose row Q in tabnam entry;
 	say "[randtxt entry][if lb is true][line break][else][run paragraph on][end if]";
 
+to say next-rand-txt of (t - a table name):
+	next-rand t;
+
 table of all randoms
 tabnam	tabidx	lbrk	desc
 table of altbooks	0	false	"extra books in the Tract Cart"

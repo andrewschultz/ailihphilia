@@ -2287,9 +2287,7 @@ to decide which number is henchmen-left:
 	decide on count;
 
 every turn when Diktat Kid is quicknear:
-	say "The Diktat Kid whines '";
-	next-rand table of diktat taunts;
-	say "'[paragraph break]"; [?? nxran of for inside quotes]
+	say "The Diktat Kid whines '[next-rand-txt of table of diktat taunts]'";
 
 chapter Knife Fink
 
@@ -2472,10 +2470,7 @@ after looking in Sneer Greens for the first time:
 	continue the action;
 
 every turn when Yuge Guy is quicknear:
-	if a random chance of 1 in 2 succeeds:
-		say "The Yuge Guy mumbles '";
-		next-rand table of yuge taunts;
-		say "'";
+	say "The Yuge Guy booms '[next-rand-txt of table of yuge taunts]'";
 
 check going east in Sneer Greens:
 	if Yuge Guy is in Sneer Greens, say "'LOW AWOL! BOO, NOOB!' the Yuge Guy booms, as you run away."
@@ -2996,8 +2991,7 @@ to say two-ads:
 	next-rand table of businesses;
 	choose row with tabnam of table of businesses in table of all randoms;
 	if tabidx entry < number of rows in table of businesses:
-		say " and ";
-		next-rand table of businesses;
+		say " and [next-rand-txt of table of businesses]";
 	if tabidx entry is number of rows in table of businesses:
 		say " ... and wait! There'll even be a new Deft Fed, owned by a salt-of-the-earth type named Treffert, now that Sniffins/Smuggums totally sold out"
 
@@ -3255,9 +3249,7 @@ chapter Rob
 Rob is a proper-named guhthug in Worn Row. "[one of]'Oh, hi! I'm Rob, it's pretty uninteresting here, so you'd sort of fit in, but I'm trying to make it better. So, bug off, okay?'[or]Rob is still here giving you the side-eye.[stopping]". description is "Rob sniffs and rolls his eyes as if he is too good for Worn Row."
 
 every turn when player is in Worn Row and Rob is in Worn Row:
-	say "Rob mumbles '";
-	next-rand table of Rob droning;
-	say "', looking over to see if you're impressed.";
+	say "Rob mumbles '[next-rand-txt of table of Rob droning]', looking over to see if you're impressed.";
 
 chapter bad dab
 
@@ -3400,9 +3392,7 @@ to say hint-trace:
 
 check examining tract cart:
 	if number of not necessary books in Worn Row is 0:
-		say "It's empty now[hint-trace]. Maybe some day, someone will write a book like ";
-		next-rand table of altbooks;
-		say ". Maybe it could be you! But you don't have the time to read right now, really." instead;
+		say "It's empty now[hint-trace]. Maybe some day, someone will write a book like [next-rand-txt of table of altbooks]. Maybe it could be you! But you don't have the time to read right now, really." instead;
 
 a book is a kind of thing.
 
