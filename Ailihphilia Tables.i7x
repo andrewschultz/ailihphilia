@@ -740,8 +740,9 @@ to next-rand (t - a table name):
 	if tabidx entry > number of rows in tabnam entry:
 		if debug-state is true, say "(Cycling) ";
 		now tabidx entry is 1;
-		if thru-yet entry is 0, now thru-yet entry is 1;
-		now rand-cycle is true;
+		if thru-yet entry is 0:
+			now thru-yet entry is 1;
+			now rand-cycle is true;
 	let Q be tabidx entry;
 	let lb be lbrk entry;
 	choose row Q in tabnam entry;
@@ -785,6 +786,21 @@ every turn (this is the notify cycling rule):
 					say "This is a further note to say you've done so more than once this turn, which is an impressive bit of timing, even if it doesn't get you any points.";
 		if tables-found is 0 and debug-state is true, say "This is a BUG--you should be notified of cycling.";
 		the rule succeeds;
+
+section debugs
+
+chapter troing
+
+troing is an action out of world.
+
+understand the command "tro" as something new.
+
+understand "tro" as troing.
+
+carry out troing:
+	repeat through table of all randoms:
+		say "[tabnam entry] has [number of rows in tabnam entry] rows.";
+	the rule succeeds;
 
 part the tables
 

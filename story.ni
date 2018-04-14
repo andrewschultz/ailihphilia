@@ -853,7 +853,8 @@ carry out verbing:
 	say "[line break][b]GT[r] or [b]GO TO[r] lets you go to a room where you've been before.";
 	say "[line break][b]T[r] or [b]TALK TO[r] talks to someone. You don't need to, to win the game, but there you are.";
 	say "[line break][b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
-	say "[line break][b]THINK gives general non-spoiler hints, including where you may wish to visit, or what is blocking you. [b]AID[r] gives you hints for where you are. [b]SCORE[r] tracks the score. [b]ABOUT[r] and [b]CREDITS[r] tell about the game.";
+	say "[line break][b]THINK gives general non-spoiler hints, including where you may wish to visit, or what is blocking you[if pyx is quicknear][b]X X[r] or [b]MAP[r] will let you examine the X/Y Pyx.";
+	say "[line break][b]AID[r] gives you hints for where you are. [b]SCORE[r] tracks the score. [b]ABOUT[r] and [b]CREDITS[r] tell about the game.";
 	if wr-short-note is true and player is in Worn Row and Worn Row is worky, say "[line break][b]REV[r], [b]ROT[r] and [b]REI[r] use an item on the reviver, rotator and reifier, respectively.";
 	if in-beta is true:
 		say "[line break](start beta commands)";
@@ -3000,11 +3001,29 @@ chapter X/Y Pyx
 
 the X Y Pyx is a thing in Yawn Way. printed name of x y pyx is "an X/Y Pyx". description of X Y Pyx is "[map-so-far]". "[one of]An X/Y pyx lies here. Closer inspection reveals that's just a fancy name for a map[or]The X/Y pyx still lies here[stopping]."
 
+after examining pyx for the first time:
+	say "Notes for the future: X X or MAP will examine the pyx, to save keystrokes[if player does not have pyx]. Also, you can take the pyx, if you want[end if].";
+
 to decide whether eithervisit of (rm - a room) and (di - a direction):
 	if the room di of rm is nowhere, no;
 	if rm is visited, yes;
 	if the room di of rm is visited, yes;
 	no;
+
+understand the command "map" as something new.
+
+understand "map" as xpyxing when pyx is quicknear.
+
+xpyxing is an action applying to nothing.
+
+carry out xpyxing: try examining the pyx instead;
+
+definition: a room (called rm) is wayout:
+	if eithervisit of rm and north, no;
+	if eithervisit of rm and west, no;
+	if eithervisit of rm and south, no;
+	if eithervisit of rm and east, no;
+	yes;
 
 definition: a room (called rm) is ungoable:
 	if Diktat Kid is moot, no;
@@ -3023,22 +3042,27 @@ to say map-so-far:
 		choose row pyx-row in table of pyxloc;
 		if times-thru is 0:
 			if loc-num of rmname entry <= lastnum, say "WARNING pyxloc is out of order at [rmname entry].";
-			if rmname entry is ungoable:
+			if rmname entry is wayout:
+				say "?????[run paragraph on]";
+			else if rmname entry is ungoable:
 				say "XXXXX";
-				next;
+			else:
+				say "[if rmname entry is visited][uptxt entry][else]     [end if]";
 			now lastnum is loc-num of rmname entry;
-			say "[if rmname entry is visited][uptxt entry][else]     [end if]";
 			say "[if eithervisit of rmname entry and east]===[else]   [end if]";
 		else if times-thru is 1:
-			if rmname entry is ungoable:
+			if rmname entry is wayout:
+				say "?????[run paragraph on]";
+			else if rmname entry is ungoable:
 				say "XXXXX";
-				next;
-			say "[if rmname entry is visited][downtxt entry][else]     [end if]   ";
+			else:
+				say "[if rmname entry is visited][downtxt entry][else]     [end if]";
+			say "   ";
 		else:
 			say "  [if eithervisit of rmname entry and south]|[else] [end if]     ";
 		if the remainder after dividing pyx-row by 7 is 0:
-			say "[line break]";
 			increment times-thru;
+			say "[if pyx-row is 35 and times-thru > 1][run paragraph on][else][line break][end if]";
 			if times-thru < 4:
 				now pyx-row is pyx-row - 7;
 			else:
