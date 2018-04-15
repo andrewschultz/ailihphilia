@@ -630,7 +630,7 @@ instead of thinking:
 	if got-later-use is false, say "You don't have anything you figured out but didn't quite have the items for.";
 	let wayoutrooms be 0;
 	repeat with Q running through available rooms:
-		if Q is not visited and Q is not in Odd Do and Q is not Dirge Grid:
+		if Q is unvisited and Q is not in Odd Do:
 			let q-connect be false;
 			repeat with QDIR running through maindir:
 				if the room QDIR of Q is visited:
@@ -870,7 +870,7 @@ carry out verbing:
 	say "[line break][b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
 	say "[line break][b]THINK gives general non-spoiler hints, including where you may wish to visit, or what is blocking you[if pyx is quicknear][b]X X[r] or [b]MAP[r] will let you examine the X/Y Pyx.";
 	say "[line break][b]AID[r] gives you hints for where you are. [b]SCORE[r] tracks the score. [b]ABOUT[r] and [b]CREDITS[r] tell about the game.";
-	if wr-short-note is true and player is in Worn Row and Worn Row is worky, say "[line break][b]REV[r], [b]ROT[r] and [b]REI[r] use an item on the reviver, rotator and reifier, respectively.";
+	if wr-short-note is true and in-work, say "[line break][b]REV[r], [b]ROT[r] and [b]REI[r] use an item on the reviver, rotator and reifier, respectively.";
 	if in-beta is true:
 		say "[line break](start beta commands)";
 		say "[line break][b]RR[r] lets you try all three items in the Word Row machines. If one nets a point, it goes last.";
@@ -1048,7 +1048,7 @@ instead of smelling troll ort, say "The troll ort emits a musk-sum which isn't u
 instead of smelling rotator: say "[if stinky knits are moot]It no longer smells of detergent. I guess it used it all on the stinky knits.[else]There's a whiff of detergent coming from the rotator. It probably has some way to know if something is dirty enough. Technology![end if]";
 
 instead of smelling location of player:
-	if player is in Worn Row and Worn Row is wordy and stinky knits are not moot, try smelling rotator instead;
+	if in-work and stinky knits are not moot, try smelling rotator instead;
 	if stinky knits are quicknear, try smelling stinky knits instead;
 	if player is in Flu Gulf, try smelling mush sum instead;
 	if player is in Emo Dome or player is in Red Roses Order, say "Roses ... or ..." instead;
@@ -1359,6 +1359,10 @@ wordy drow	"The wordy drow moans 'Er ... eh ... there,' pointing to the Liar Gra
 level net	"There's got to be a way to untangle the net on your own, so it doesn't get cut or destroyed."
 radar	"The radar detects nothing. It's probably most useful for finding hidden stuff."
 tao boat	"The tao boat remains impassive. But surely something you can show it will prove your worth."
+enact cane	"The enact cane needs to be augmented, but not quite like that."
+sharp rahs	"The rahs need to be combined with some other motivational material."
+Bro Orb	"Nothing physical seems to work on the orb. You need a psychological push, here."
+test set	"You need to use something violent on the test set."
 [zzcant]
 
 table of person specific rejects [xxpsr]
@@ -1375,6 +1379,7 @@ party trap	"The trap can't work on a person. It's too small, and people are too 
 wash saw	"The saw wasn't meant for violence."	"The saw is best used to trim things there's an excess of, not just to cut stuff down."
 el doodle	"They don't seem like the sort that can decipher things."	--
 pity tip	"You don't want to give it away! You [if navy van is xed]should maybe use it, yourself. Now where was Seedy Dee's?[else]have a feeling you can find Seedy Dee's, if you look hard enough.[end if]"	--
+ME gem	"They look a bit frightened by the power of the ME gem. It must only work on, or for, really bad people or things."
 [zzur]
 
 [?? poo coop on, well, everything]
@@ -1386,17 +1391,28 @@ use1	use2	babble
 trap art	stark rats	"Whatever's planned on the trap art might work, but not the trap art itself."
 Dirt Rid	cassettes sac	"The Dirt Rid wheezes but is unable to clean up the cassettes sac. You need something more powerful."
 roto motor	kayak	"The kayak is not electrical, and besides, the roto motor is too small."
+taboo bat	bomb mob	"No way. You'd be outnumbered. You'd need stealth."
+DNA hand	Yuge Guy	"The hand doesn't seem to want to move toward the Yuge Guy."
+Mr Arm	Yuge Guy	"Mr. Arm doesn't seem to want to move toward the Yuge Guy."
+exam axe	porch crop	"That might be overkill. The wash saw, on the other hand..."
+exam axe	balsa slab	"You're not sure what to cut the slab into, and you don't need firewood."
 roto motor	tao boat	"The tao boat is not electrical, and besides, the roto motor is too small."
 Gorge Grog	Yuge Guy	"The Yuge Guy doesn't drink, and neither does Johnny. Also, the Yuge Guy may or may not be a germaphobe."
+taboo bat	Yuge Guy	"Violence isn't the answer. The Yuge Guy is not repelled by moral turpitude."
+taboo bat	ME Totem	"Violence isn't the answer. The ME Totem is not repelled by moral turpitude."
 Dirt Rid	gnu dung	"The Dirt Rid is ineffective. You may need something stronger."
 Trap Art	Revolt Lover	"But the Revolt Lover gave it to you in the first place."
 Party Trap	Revolt Lover	"'Whoah! Neat! That's a lot more useful than my art.'"
 TI	Revolt Lover	"'Hmm. A bit too mean for me. Maybe it's more someone else's speed.'"
 gold log	kayak	"The gold log is too heavy to be an effective paddle."
+enact cane	kayak	"The enact cane doesn't seem like the right tool to propel the kayak. It's more for chores."
+sharp rahs	Bro Orb	"You feel a shock--perhaps you approached the Bro Orb too eagerly! But it seems you were on the right track."
+enact cane	rep popper	"But that might bust your own rep, since you are the nearest person."
 dork rod	kayak	"The dork rod is too weak and wimpy to be an effective paddle."
 Epoch Cope	Revolt Lover	"'Wish I could be interested in politics, but I'm not.'"
 stamp mats	Tru Yurt	"The stamp mats aren't a home-y sort of mat."
 stamp mats	soot tattoos	"Hmm. If the soot tattoos had a pattern, that would be interesting. But they don't, yet."
+taboo bat	test set	"This isn't cricket. You do, however, need to use SOME weapon on the test set."
 resale laser	made dam	"There might be something behind the dam. But you need to be subtler looking for it."
 NULL ILLUN	Revolt Lover	"'I guess we all could use it a little. But someone else might need it more than me. Um, I hope.'"
 pity tip	Door Frood	"The Door Frood is too good for a mere pity tip. Well, in the Door Frood's mind."
@@ -1436,6 +1452,7 @@ yard ray	Waster Fretsaw	"The Waster Fretsaw is dangerous, but maybe you should u
 sage gas	sharp rahs	"Hmm! The contrast between the two...that should work. But maybe you need some sort of intermediary that could hold them both."
 wash saw	stark rats	"You couldn't catch and hold a rat long enough to cut it with the wash saw."
 YE KEY	DIFF ID	"You wave Ye Key in front of the Diff ID. Nothing happens. The engraving on Ye Key seems to match up with what the Diff ID wants to see, but maybe you need something else."
+ME gem	Yuge Guy	"That might make the Yuge Guy's ego too much to handle."
 ME gem	ME Totem	"The egotistical forces in the gem and totem repel each other. Just as well. You don't know if you could survive if such insufferability synergized."
 gate tag	DIFF ID	"You wave the gate tag in front of the DIFF ID, which beeps for a second, then ... nothing. Maybe the gate tag (or its pattern) needs to be read a different way."
 soot tattoos	DIFF ID	"The Diff-ID doesn't respond. Maybe you need a way to put them on you, somehow."
@@ -1512,12 +1529,12 @@ enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	"You 
 --	--	--	rev-pace-cap rule	--	true	--	--	Dim Mid
 troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	Grebeberg	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the stinky knits, but still quite distinctive." [b4:pace cap] [af:yak okay]
 --	--	--	rev-yak-okay rule	--	true	--	--	Grebeberg
-sage gas	tame mat	guru rug	--	--	true	true	true	Grebeberg	"The sage gas bubbles out under the tame mat, and the message changes. To something wiser. But perhaps a bit stuffy."
+sage gas	tame mat	guru rug	--	--	true	true	true	Grebeberg	"The sage gas bubbles out under the tame mat, and the message changes. To something wiser. But perhaps a bit stuffy: a guru rug!"
 sharp rahs	guru rug	tenet	--	--	true	true	true	Grebeberg	"The sharp rahs meld into the guru rug, which feels less weighted down by philosophy and floats away. Under it there's a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 --	--	--	rev-nail-Ian rule	--	true	--	--	Grebeberg
 --	--	--	rev-first-food-combo rule	--	true	--	--	Grebeberg
 --	--	--	rev-second-food-combo rule	--	true	--	--	Grebeberg
-Moor Broom	Tru Yurt	Exam Axe	--	bump-crib rule	true	true	false	Grebeberg	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe!" [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
+Moor Broom	Tru Yurt	Exam Axe	--	bump-crib rule	true	true	false	Grebeberg	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! Then, back to the Tru-Yurt for the Wonk. They've done enough for you." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
 --	--	--	rev-get-bro-orb rule	--	false	--	--	--
 wash saw	porch crop	balsa slab	--	--	true	true	false	Grebeberg	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods. You've done well. There's a balsa slab lying around. The Code doc offers it to you. Now, you do own wood!"
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
@@ -2150,7 +2167,7 @@ cap-pace is a truth state that varies. cap-pace is false.
 
 cap-ever-pace is a truth state that varies. cap-ever-pace is false.
 
-check taking pact cap: say "The Flee Elf shakes its head. 'Too direct. You're not doing it right. Don't [b]TAKE[r] it, precisely. You could take a kat, maybe. Try a different ... possess-op.'" instead;
+check taking pact cap when flee elf is quicknear: say "The Flee Elf shakes its head. 'Too direct. You're not doing it right. Don't [b]TAKE[r] it, precisely. You could take a kat, maybe. Try a different ... possess-op.'" instead;
 
 section pack cap
 
@@ -2612,7 +2629,7 @@ Le Babel is north of Dumb Mud. It is in Grebeberg. "This is a weird place. Nothi
 
 chapter voodoo v
 
-the voodoo v is peripheral scenery. "Maybe you could walk across it without getting hurt, but you doubt it. It's there, and it's immovable. Things probably will get weirder beyond it."
+the voodoo v is peripheral scenery in Le Babel. "Maybe you could walk across it without getting hurt, but you doubt it. It's there, and it's immovable. Things probably will get weirder beyond it."
 
 chapter opossum
 
@@ -2907,6 +2924,8 @@ chapter tame mat
 
 The tame mat is a thing in Motto Bottom. "A tame mat lies here. It's supposed to be profound and universal, but you're half embarrassed to look at what it says.". description is "'MAIN, I AM!' it reads. That's sort of lame. There must be some way to improve it, make it cleverer or weightier."
 
+check taking tame mat: say "As you try to take the tame mat, you feel stuck-cuts. Whatever you need to do with the mat, you need to do it here." instead;
+
 chapter guru rug
 
 The guru rug is a thing. "A guru rug lies here. You're not sure how impressed you should be by it.". description is "Hmm, it's not fully tacked to the ground. Maybe you could slip the right thing in or under. Its simplicity leads you to believe it holds even greater secrets within."
@@ -2951,7 +2970,7 @@ chapter Tru Yurt
 
 The Tru Yurt is scenery in Yack Cay. "It looks really messy. The Known Wonk said it needed a good cleaning."
 
-check taking yurt: say "It's the Known Wonk's." instead;
+check taking tru yurt: say "It's the Known Wonk's." instead;
 
 check entering yurt: say "No, that's where the Known Wonk lives. [if exam axe is off-stage]Maybe you could clean it up, by using the right item[else]You already helped clean it up, and that's enough[end if]." instead;
 
@@ -3001,7 +3020,7 @@ The taboo bat is a thing. description is "You feel rebellious just holding this 
 
 chapter you buoy
 
-the you buoy is a thing. description is "It's reallly plain, now you look at it. Also, as you look it over, it rattles a bit."
+the you buoy is a thing. description is "It's really plain, now you look at it. Also, as you look it over, it rattles a bit."
 
 check opening you buoy: say "You can't find an opening. Sadly, this is slightly trickier than Zork I. Slightly." instead;
 
@@ -3329,6 +3348,14 @@ Worn Row can be worny, wordy or worky. Worn Row is worny.
 understand "work row" and "work" as Worn Row when ever-workrow is true.
 understand "word row" and "word" as Worn Row when ever-wordrow is true.
 
+to decide whether in-work:
+	if player is in Worn Row and Worn Row is worky, yes;
+	no;
+
+to decide whether in-word:
+	if player is in Worn Row and Worn Row is wordy, yes;
+	no;
+
 chapter redness ender
 
 the redness ender is a peripheral thing in Worn Row. "A redness ender sits here, looking lethal. Maybe it's part of why Worn Row is so worn--nobody wants to stick around enough to clean things up, or build anything. But maybe there is a simple way to get rid of it.". description is "It also seems to double as a redness SENDER, as when you get close to look at it, an ominous red dot appears on you. You back off.".
@@ -3419,7 +3446,7 @@ to wear-down (w - a workable):
 	if useleft of w is 1, say "[line break]The [w] wheezes emphatically. Hopefully, you won't need to use it too much more.";
 	if machuses is 0:
 		hint-bump-worn;
-		say "[line break]With [list of workables] all destroyed, Work Row shakes a bit more. The machines fall out from a wall, revealing something behind ... a test set. It's big and huge and you can't move it, but who knows what it'll be useful for later?";
+		say "[line break]With [the list of workables] all destroyed, Work Row shakes a bit more. The machines fall out from a wall, revealing something behind ... a test set. It's big and huge and you can't move it, but who knows what it'll be useful for later?";
 		move test set to Worn Row;
 		now all workables are in devreserved; [ic]
 		[?? how to moot all workables]
@@ -3912,7 +3939,7 @@ the state tats are a plural-named thing. description is "They say OMG MO[']."
 
 chapter soot tattoos
 
-the soot tattoos are a plural-named thing. description is "They're blank now, but maybe if they were the right shape, they could help your image, somehow."
+the soot tattoos are a plural-named thing. description is "They're blank now, but maybe if they were the right shape, they could help your image, somehow. Maybe you could imprint something on them, to give them shape and texture."
 
 instead of wearing soot tattoos, say "Right idea, but you need a way to press them onto your skin.";
 
@@ -4155,7 +4182,7 @@ chapter Nat's Tan
 
 Nat's Tan is a thing in Deft Fed. "A container of something called NAT'S Tan is here.". description is "Ugh! Given that it advertises turning you orange with that Ol['] Glo, you're not sure you'd want that. Maybe there are some people or things much neater than you that would hate it even more. The NAT'S is disproportionately big compared to the 'tan' text.".
 
-check taking nat's: say "Ugh! It feels too gross to take. Maybe you need to prepare yourself to feel less squeamish about taking it." instead;
+check taking nat's when nat's is in Deft Fed: say "Ugh! It feels too gross to take. Maybe you need to prepare yourself to feel less squeamish about taking it." instead;
 
 understand "nats" and "nats tan" as nat's tan.
 
@@ -4320,7 +4347,7 @@ chapter TNT
 
 TNT is a tronpart. description is "Well, it's not going to blow up in your hands.". the bomb mob carries the TNT.
 
-check taking TNT: say "The bomb mob would say a bit more than 'Yank? Nay!' You'd be seen too easily." instead;
+check taking TNT when bomb mob is quicknear: say "The bomb mob would say a bit more than 'Yank? Nay!' You'd be seen too easily." instead;
 
 book Red Roses Order
 
@@ -4526,7 +4553,7 @@ The DNA band is a thing in Pro Corp. "A DNA band sits here, nice and tidy and he
 
 The DNA hand is a thing. description is "It's motionless, but it looks lifelike enough. There must be a way to bring it to life!"
 
-Mr Arm is a proper-named thing. description is "Wow! It's really evolved from a DNA band! It's sturdy. If it had eyes, it'd be looking for something to steal and run--umm, that's not quite right--off with. You're not sure why it hasn't run off with anything in your inventory. Is all this stuff you piled up worthless? Perhaps the Mr Arm is just grateful and wants to steal something for you.[paragraph break][one of]Mr. Arm seems about to point somewhere. If you look again, you can see where[or]Mr. Arm points [arm-dir][stopping]"
+Mr Arm is a proper-named thing. description is "Wow! It's really evolved from a DNA band! It's sturdy. If it had eyes, it'd be looking for something to steal and run--umm, that's not quite right--off with. You're not sure why it hasn't run off with anything in your inventory. Is all this stuff you piled up worthless? Perhaps the Mr Arm is just grateful and wants to steal something for you.[paragraph break][one of]Mr. Arm seems about to point somewhere. If you look again, you can see where[or]Mr. Arm [arm-dir][stopping]"
 
 printed name of Mr Arm is "Mr. Arm".
 
@@ -4536,6 +4563,7 @@ to say arm-dir:
 	if location of player is Yell Alley:
 		say "is waving around frantically!";
 		continue the action;
+	say "points ";
 	let Horz be (remainder after dividing loc-num of location of player by 10) -  (remainder after dividing loc-num of Yell Alley by 10);
 	let Vert be (loc-num of location of player / 10) -  (loc-num of Yell Alley / 10);
 	if Vert is 0:
@@ -4627,7 +4655,7 @@ carry out gotoing:
 	if the rule failed:
 		if noun is Emo Dome and Emo Dome is visited, say "You'd run away from the Emo Dome too quickly. You need a plan of attack to deal with it." instead;
 		say "[noun] isn't available yet, so you can't go there." instead;
-	if noun is not visited, say "You can reach [noun], but you haven't visited there, yet. So I'm going to be a stickler and say you have to get there first." instead;
+	if noun is unvisited, say "You can reach [noun], but you haven't visited there, yet. So I'm going to be a stickler and say you have to get there first." instead;
 	consider the unavail-rule of noun;
 	if the rule succeeded, say "[noun] is no longer worth going to. You don't want to go back. Onward!" instead;
 	now gone-to is true;
@@ -4648,6 +4676,9 @@ section available rules
 [we could get cute here and define availability by what item is moot, but that can go haywire once there's an exception. For instance, it's tricky to do stuff with the Spur Ups and the Psi Wisp, and Dirge Grid is tricky as well.]
 
 a room has a rule called avail-rule. avail-rule of a room is usually the trivially true rule.
+
+avail-rule of DevReserved is the trivially false rule.
+avail-rule of TempMet is the trivially false rule.
 
 avail-rule of Fun Nuf is trivially true rule. [described elsewhere]
 
@@ -4950,7 +4981,7 @@ carry out revovering:
 			if debug-state is true, say "(+1 above)[line break]";
 			increment the score;
 			increment cur-score of reg-plus entry;
-		if there is a getit entry, now player has getit entry;
+		if there is a getit entry, now player has getit entry; [?? guru rug shouldn't be take-able but code is tricky]
 		if d1 entry is true, moot use1 entry;
 		if d2 entry is true, moot use2 entry;
 		if there is a postproc entry, follow the postproc entry;
