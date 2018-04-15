@@ -67,9 +67,11 @@ test bb25 with "pack cap/e/purloin ups/puff up/e/get all"
 
 chapter mistake quizzing
 
-[each one is 10 mistakes. I may cut this down or add to it based on what you find.]
+[each one is 10 mistakes. I may cut this down or add to it based on what people find. m0 eliminates the everywhere LLPs, which are less likely to have bugs.]
 
 [finord and trying a LLP is worth checking as well.]
+
+test m0 with "refer/peep/poop/stats/dial aid"
 
 test m1 with "finord 3/flex elf/flea elf/fun enuf/funk nuf/fund nuf/fun snuf/paco cap/pack cap/e/Yawn Way/n/art ecetra"
 
@@ -78,6 +80,8 @@ test m2 with "s/s/wasp saw/evade dave/w/bork Rob/borg Rob/bore rob/worm row/word
 test m3 with "moo boom/get all/w/n/n/n/cola loc/use epoch cope on King Nik/s/e/e/purr up/puff up/e/pull up/get all/puck cup/emo home/w/w/n/use saw on sap/s/e/e/s/trod ort"
 
 test m4 with "get all/use cup on grail/liar trail/n/w/w/w/n/e/use puce cup on dose sod/spa caps/spa naps/spa raps/spa zaps/s/drawn ward/bony nob/bone nob/bonk nob/bong nob"
+
+test ma with "test m1/test m2/test m3/test m4"
 
 Ailihphilia Tests ends here.
 

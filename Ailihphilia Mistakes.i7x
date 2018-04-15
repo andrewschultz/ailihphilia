@@ -91,6 +91,10 @@ understand "defy fed" as a mistake ("Way to go! Keep that Hunger! Well, I hope i
 
 understand "defy fed" as a mistake ("No problem, you're not getting fed anyway.[mis of 30]") when player is in Deft Fed and yob attaboy is not moot.
 
+understand "stank nats" and "stank nat's" as a mistake ("Yes, it's pretty awful.[mis of 169]") when nat's tan is quicknear.
+
+understand "stan nats" and "stan nat's" as a mistake ("Well, Nat's must have its stans, but you don't want to be one.[mis of 170]") when nat's tan is quicknear.
+
 chapter Bon Snob
 
 understand "bon knob" as a mistake ("You don't need to help Sniffins with interior decorating, here.[mis of 31]") when player is in Deft Fed and YOB ATTABOY is moot.
@@ -168,6 +172,16 @@ book Flu Gulf
 understand "gull lug" as a mistake ("You shouldn't try to take advantage of sick people. Help the Gulf Lug instead.[mis of 60]") when gulf lug is quicknear.
 
 understand "gulp lug" as a mistake ("Cannibalism is wrong. Besides, you'd probably catch whatever the Gulf Lug has.[mis of 61]") when gulf lug is quicknear.
+
+understand "case sac" as a mistake ("You look extra carefully at the sac. No, no secret compartments.[mis of 171]") when either-sac.
+
+understand "cast sac" as a mistake ("No need to fling stuff around, and no need for magic, either.[mis of 172]") when either-sac.
+
+understand "cash sac" as a mistake ("You look extra carefully at the sac. No, no secret compartments.[mis of 173]") when cassettes sac is quicknear and player does not have cash sac.
+
+to decide whether either-sac:
+	if cassettes sac is quicknear or player has cash sac, yes;
+	no;
 
 chapter scorn rocs
 
@@ -415,6 +429,8 @@ understand "croc orc" as a mistake ("The orc is fearsome enough without becoming
 
 understand "crow orc" as a mistake ("The orc remains silent (yay) and flightless (boo).[mis of 149]") when cross orc is quicknear.
 
+understand "cram arc" as a mistake ("Litterbug. Besides, you need pretty much everything you're carrying.[mis of 174]") when player is in Toll Lot.
+
 understand "cray arc" as a mistake ("The arc doesn't need to change shape or become more volatile.[mis of 150]") when player is in Toll Lot.
 
 understand "crap arc" as a mistake ("You might cause a mudslide, or worse.[mis of 151]") when player is in Toll Lot or player is in Scrap Arcs.
@@ -473,7 +489,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 
