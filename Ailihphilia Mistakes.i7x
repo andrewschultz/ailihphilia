@@ -113,7 +113,7 @@ book Drawl Ward
 
 understand "bony nob" as a mistake ("The Bond Nob's body weight is not an important issue, here.[mis of 37]") when Bond Nob is quicknear.
 
-understand "bone nob" as a mistake ("Out of your league.[mis of 38]") when Bond Nob is quicknear.
+understand "bone nob" as a mistake ("Out of your league.[paragraph break]I mean, the Bond Nob has an active social life that revolves around bars, and you ... well, you're just a text adventure. That's barely a step above people who program text adventures![mis of 38]") when Bond Nob is quicknear.
 
 understand "bonk nob" as a mistake ("That'd let you get west ... until the nob woke up and called a few friends.[mis of 39]") when Bond Nob is quicknear.
 

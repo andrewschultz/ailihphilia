@@ -94,7 +94,7 @@ section examining
 a thing can be nox or xed. A thing is usually nox.
 
 after examining:
-	now the noun is xed;
+	if the noun provides the property xed, now the noun is xed;
 	continue the action;
 
 section gender stuff
@@ -650,7 +650,7 @@ instead of thinking:
 					now LLP-yet is true;
 					say "LAST LOUSY POINTS NOTES:[line break]";
 				say "[cluey entry][line break]";
-	if LLP-yet is false, say "You don't have any last lousy points left to nail down."
+	if LLP-yet is false, say "You don't have any last lousy points to figure that've been clued in-game."
 
 section stuck-rules
 
@@ -798,7 +798,7 @@ after printing the name of yard ray while taking inventory: say " ([unless murde
 after printing the name of spa maps while taking inventory: say " ([if maps-explained is true]deciphered[else]indecipherable[end if])".
 
 after printing the name of the puce cup while taking inventory:
-	if puce cup is sappy, say " (full of past sap)";
+	if puce cup is sappy, say " (full of [if player is in Cold Loc]past sap[else]purist sirup[end if])";
 	if puce cup is soddy, say " (full of dose sod)";
 	continue the action;
 
@@ -1026,7 +1026,7 @@ check going (this is the reject noncardinal directions rule):
 	if noun is diagonal, say "You don't need diagonal directions in this game." instead;
 	if noun is up or noun is down:
 		if the room noun of location of player is nowhere:
-			say "You never need to go up or down in this game, though sometimes they act as a backup to the main cardinal directions--for instance, to or from [if Mont Nom is visited] Mont Nom[else]a hill[end if].";
+			say "You never need to go up or down in this game, though sometimes they act as a backup to the main cardinal directions--for instance, to or from [if Mont Nom is visited]Mont Nom[else]a hill[end if].";
 			if player has Spur Ups, say "[line break]You DO have to do something with the Spur Ups, though. Just not go.";
 			the rule succeeds;
 
@@ -1168,31 +1168,35 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 			now chef-yet is true;
 
 to decide what number is useprio of (th - a thing): [saving a lot of space for numbers. The higher the number, the more likely it is to be a 2nd item]
+	if th is the player, decide on 25;
 	if th is a workable, decide on 20;
 	if th is DIFF ID, decide on 18;
 	if th is a person, decide on 15;
 	if th is a tronpart, decide on 10;
+	if th is Ark of Okra, decide on 8;
 	if th is an ingredient, decide on 5;
 	decide on 1;
 
 check useoning it with:
 	if noun is second noun, say "It's not productive to use something on itself, even with this game being full of palindromes." instead;
-	if noun is the player or second noun is the player, say "You never need to use anything explicitly on yourself." instead;
 	if noun is a workable and second noun is a workable, say "The machines are fixed in place. You can't use one on the other." instead;
 	if noun is a helpdoc or second noun is a helpdoc, say "All the help literature you find is for review only." instead;
 	if useprio of noun > useprio of second noun, try useoning second noun with noun instead;
-	if noun is a workable or second noun is a workable:
+	if second noun is the player:
+		if noun is soot tattoos, say "That'll work, when you find a way to make a pattern of the soot tattoos. They're too plain, now." instead;
+		say "You never need to use anything explicitly on yourself." instead;
+	if noun is a workable or second noun is a workable: [may not need "noun is a workable" with useprio now but want to make sure of it]
 		if wr-short-note is false:
 			say "(NOTE: You can abbreviate this command with ROT, REI and REV for the respective machines, later.)[paragraph break]";
 			now wr-short-note is true;
 	if noun is a book and second noun is a workable:
 		say "You can't alter what's in a book. You don't need to[if noun is not SOME DEMOS]. Someone may appreciate it as it is[end if]." instead;
 	if second noun is a workable and useleft of second noun is 0, say "No point. The [second noun] is broken." instead;
-	if noun is an ingredient and second noun is an ingredient:
-		chef noun and second noun;
-		the rule succeeds;
-	repeat through table of cantuse:
-		if noun is use1 entry or second noun is use1 entry, say "[babble entry][line break]" instead;
+	if noun is an ingredient:
+		if second noun is an ingredient:
+			chef noun and second noun;
+			the rule succeeds;
+		if second noun is ark of okra, say "No--the okra doesn't seem to mix with anything. But you feel like you could mix other stuff together, here." instead;
 	if noun is a person, say "[one of]You're not any good at using other people. In fact, if you tried, they'd wind up using YOU. Plus you don't want to be, really. There's another way. So, no[or]Using people is out[stopping]. Maybe you could use something on a person, though." instead;
 	if noun is a tronpart or noun is epicer recipe:
 		if second noun is a tronpart or noun is epicer recipe:
@@ -1256,6 +1260,8 @@ check useoning it with:
 	repeat through table of specific use rejects:
 		if noun is use1 entry and second noun is use2 entry:
 			say "[babble entry][line break]" instead;
+	repeat through table of cantuse: [?? perhaps we need 2 tables of cantuse: high and low priority]
+		if noun is use1 entry or second noun is use1 entry, say "[babble entry][line break]" instead;
 	if second noun is a workable, abide by the machine message rules for the noun; [order is important here. This can get trumped if placed below the following rules, but it is specific to Work Row, so it needs to be here.]
 	repeat through table of use redir:
 		if noun is use1 entry:
@@ -1272,6 +1278,7 @@ check useoning it with:
 			if there is a use-text entry, say "[use-text entry][line break]";
 			try useoning use3 entry with use2 entry instead;
 	if noun is a book:
+		if second noun is a person and noun is SOME DEMOS, say "Hmm, you feel like this book was meant specifically for you." instead;
 		repeat through table of bookrejects:
 			if second noun is use2 entry, say "[book-reject entry][line break]" instead;
 	repeat through table of cantuse:
@@ -1313,10 +1320,12 @@ Madam	"Any simple book you could find would be beneath Madam."
 Yuge Guy	"The Yuge Guy doesn't bother with books--not even a ghostwritten, self-serving autobiography."
 Door Frood	"'Pfft, nah, not clever and edgy enough.'"
 Code Doc	"'That's probably a nice easy read, but I'd rather have something I can work through.'"
+Bond Nob	"The Bond Nob was probably too cool for school and is definitely too cool for reminders of school."
 King Nik	"'Hm, maybe, but I need some serious policy discussions.'"
 Known Wonk	"'I have enough hard knowledge. I need something clever and fun.'"
 Ian	"'I'm a food snob, not a book snob. Geez!'"
 Sniffins	"'[if yob attaboy is moot]I'm too busy to read! I have a thriving business[else]That won't help my business thrive[end if]!'"
+tao boat	"You sense that the tao boat requires more than just wordy knowledge. It requires ... feeling."
 [zzbr]
 
 table of cantuse [xxcant]
@@ -1345,6 +1354,8 @@ level net	"There's got to be a way to untangle the net on your own, so it doesn'
 table of person specific rejects [xxpsr]
 use1	babble
 Door Frood	"The Door Frood yawns. A gift would be nice, but THAT seems kind of boring."
+cross orc	"The cross orc squints a bit. It doesn't seem big on culture or gifts for their own sake. You may have to be unsubtle, here."
+liar grail	"Attacking the grail doesn't seem on, but perhaps putting something in it might cause a drastic act."
 [zzpsr]
 
 table of use redir [xxur]
@@ -1369,6 +1380,7 @@ Party Trap	Revolt Lover	"'Whoah! Neat! That's a lot more useful than my art.'"
 TI	Revolt Lover	"'Hmm. A bit too mean for me. Maybe it's more someone else's speed.'"
 Epoch Cope	Revolt Lover	"'Wish I could be interested in politics, but I'm not.'"
 stamp mats	Tru Yurt	"The stamp mats aren't a home-y sort of mat."
+stamp mats	soot tattoos	"Hmm. If the soot tattoos had a pattern, that would be interesting. But they don't, yet."
 NULL ILLUN	Revolt Lover	"'I guess we all could use it a little. But someone else might need it more than me. Um, I hope.'"
 pity tip	Door Frood	"The Door Frood is too good for a mere pity tip. Well, in the Door Frood's mind."
 Cave Vac	gnu dung	"The Cave Vac sputters. You may need something more specifically suited to the, uh, material to clean up."
@@ -1381,8 +1393,10 @@ stamp mats	yahoo hay	"The mats don't quite work on the hay. They might work bett
 troll ort	ergot ogre	"The ergot ogre mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. Perhaps you need a more violent way to dispose of the ogre."
 troll ort	cross orc	"The cross orc mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. But the way it looks at you, you suspect it'd forgive you if you gave the right gift."
 troll ort	kayo yak	"As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up. The yak seems weirdly attracted to it."
+elope pole	crag arc	"The pole is for navigation, not for vaulting."
 wash saw	crag arc	"The crag arc is much too big to get anywhere[if UFO tofu is off-stage]. Maybe there's a better way to find what's behind there[end if]."
 wash saw	made dam	"The made dam is much too big to get anywhere[if eroded ore is off-stage]. Maybe there's a better way to find what's behind there[end if]."
+wash saw	lie veil	"Not even the wash saw could clean off the lie veil. You need something much more brutal."
 Gorge Grog	yard ray	"The Gorge Grog is pretty strong stuff, but you may need something even stronger."
 Rep Popper	Yuge Guy	"It seems like the Rep Popper should work, but it doesn't, quite. Maybe there is something that is giving the Yuge Guy all his rep?"
 Bro Orb	Madam	"As you lift the Bro Orb to throw at Madam, you see yourself in the Mirror Rim. You don't look so great or heroic. In fact, you feel unusually self-conscious. More than you deserve to, you think. Besides, the Bro Orb might dissolve her or something, but you're not out to kill anyone."
@@ -1394,6 +1408,7 @@ yard ray	Tru Hurt	"The Tru Hurt is dangerous, but maybe you should use the yard 
 yard ray	Waster Fretsaw	"The Waster Fretsaw is dangerous, but maybe you should use the yard ray on something even more harmful."
 sage gas	sharp rahs	"Hmm! The contrast between the two...that should work. But maybe you need some sort of intermediary that could hold them both."
 wash saw	stark rats	"You couldn't catch and hold a rat long enough to cut it with the wash saw."
+YE KEY	DIFF ID	"You wave Ye Key in front of the Diff ID. Nothing happens. The engraving on Ye Key seems to match up with what the Diff ID wants to see, but maybe you need something else."
 ME gem	ME Totem	"The egotistical forces in the gem and totem repel each other. Just as well. You don't know if you could survive if such insufferability synergized."
 gate tag	DIFF ID	"You wave the gate tag in front of the DIFF ID, which beeps for a second, then ... nothing. Maybe the gate tag (or its pattern) needs to be read a different way."
 soot tattoos	DIFF ID	"The Diff-ID doesn't respond. Maybe you need a way to put them on you, somehow."
@@ -1453,7 +1468,7 @@ Ye Key	etage gate	gate tag	Ned-gone rule	tag-later-wipe rule	true	true	true	Yelp
 stinky knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	"The stinky knits fit into the rotator without stuffing them too much. After some spinning, you look in again and--they're something much shinier now. Brag garb! You can't resist wearing your flashy new duds."
 Gorge Grog	Butene Tub	resale laser	--	make-sag rule	true	true	true	Yelpley	"The Gorge Grog starts fizzing as it pours down the tub, and nothing seems to happen, until you hear a FOOMP below and the tub starts shaking. There must've been an open spark below the tub, perhaps a noir ion. You find it best to hide, and that's the right thing to do, because the butene tub explodes into pieces. Under it is a resale laser! You figure the really good stuff is hidden way back for security reasons, and this is probably just an emergency gadget, but it's got to be good for something."
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	"The gold log begins spinning until it cracks open--leaving a dork rod! You wonder briefly if you deserve to take it, or E there's something wrong with you if you deserve to, but once you hold it, memories of past silliness come back, and they're easier to deal with, now. You have some perspective. You even feel sorry for people who pointed out you were a dork. They'd be barred from an adventure like this. So you keep the dork rod."
-SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	false	false	Grebeberg	"With the help of SOME DEMOS, you (after several grunts of 'STRAIN! I! ARTS!') manage to rejig the hay into something more aesthetically pleasing: straw arts!"
+SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	false	false	Grebeberg	"With the help of SOME DEMOS, you (after several grunts of 'STRAIN! I! ARTS!') manage to rejig the hay into something more aesthetically pleasing: straw arts! You're so enthusiastic, you even fold a few pages of SOME DEMOS into it to create ... well, something."
 straw arts	Revolt Lover	soot tattoos	--	rebump-art-xtra rule	true	true	false	Yelpley	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
 gate tag	soot tattoos	state tats	--	tats-peripheral rule	true	true	true	Yelpley	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
 poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	"A heretofore hidden poos scoop pops out from the poo coop. It shovels and vacuumss the offending dung into the coop, forming a crass arc that seems to contain several times the volume of the coop itself. Whatever, you can now go south."
@@ -1745,6 +1760,7 @@ this is the empty-cup rule: [ignore rule check]
 this is the empty-grail rule:
 	later-wipe liar grail;
 	now puce cup is empty;
+	moot wordy drow;
 	the rule succeeds;
 
 this is the empty-nob rule:
@@ -1972,7 +1988,6 @@ definition: a thing ( called th) is preclued:
 	repeat through table of lateruses:
 		if to-get entry is th:
 			if in-limbo entry is true, yes;
-			if in-limbo entry is false, yes;
 	no;
 
 table of lateruses [xxlat]
@@ -2965,6 +2980,16 @@ book Apse Spa
 
 Apse Spa is east of Cold Loc. It is in Grebeberg. "The Apse Spa is covered with dose sod, which you don't need for yourself--you're not sick--but it looks beautiful. Pool gloop and Go-By Bog block pretty much every way except back west. You [if sage gas is off-stage]could traverse it, if you knew what you were doing[else]already went through it, though[end if]. There are also spa taps here you shouldn't mess with, since you're not a paying customer."
 
+check entering bog:
+	if maps-explained is true, try useoning spa maps with go-by bog instead;
+	if spa maps are moot, say "You don't want or need to revisit the bog." instead;
+	if word number 1 in the player's command is "go" and word number 2 in the player's command is "bog":
+		say "In the true palindrome spirit, you take one step in the bog, then reverse direction before it gets dangerous. You probably need some sort of guide to navigate safely." instead;
+	say "The bog is dangerous without guidance." instead;
+
+check going in Apse Spa:
+	if noun is not west, try entering bog instead;
+
 chapter dose sod
 
 the dose sod is scenery in Apse Spa. "It looks ucky, but given you're in an Apse Spa, it may have health benefits for those that need them."
@@ -3862,6 +3887,10 @@ book Emo Dome
 
 Emo Dome is east of Yawn Way. It is in Yelpley. "You can go any direction here, and you sort of want to, because it's stuffy in here, even if it smells nice. [can-go-rro]."
 
+after looking in Emo Dome when pulled-up is false:
+	say "You remember the Spur Ups and how they got you here. You just need to do, or be, up in one more way to be able to STAY here. You just sense it!";
+	the rule succeeds;
+
 printed name of Emo Dome is "[if Diktat Kid is moot]Dome, Mod[else]Emo Dome[end if]"
 
 to say can-go-rro:
@@ -3888,7 +3917,7 @@ emo-dir is a direction that varies. emo-dir is west.
 
 check going to Emo Dome:
 	if Spur Ups are off-stage, say "It's too whiny to the east! You're just too, well, down to deal with it, yet. You back out." instead;
-	if Spur Ups are not moot, say "The Spur Ups make you feel a bit less down, but you need to do something to make yourself feel a bit more up before entering the Emo Dome." instead;
+	if Spur Ups are not moot, say "The Spur Ups make you feel a bit less down, but maybe they can help you feel a bit more up before entering the Emo Dome." instead;
 	if pulled-up is false:
 		now emo-dir is noun;
 
@@ -4147,7 +4176,7 @@ Trapeze Part is west of Evaded Ave. It is in Yelpley. "[if epicer recipe is off-
 
 chapter ten level net
 
-the ten level net is scenery in Trapeze Part. "[if epicer recipe is off-stage]It doesn't quite look sturdy enough. Maybe you could do something to fix it[else]It was sturdy enough to help you get the epicer recipe, and that's enough[end if]."
+the ten level net is scenery in Trapeze Part. "[if epicer recipe is off-stage]It doesn't quite look sturdy enough. Maybe you could do something to fix it. For all its seeming complexity, it's really just a net, and you probably don't need any crazy tool to make sure it's safe[else]It was sturdy enough to help you get the epicer recipe, and that's enough[end if]."
 
 check taking the level net: say "But then you couldn't get across it without serious risk!" instead;
 
@@ -4498,7 +4527,7 @@ talk-text of the player is "'Me! Hi! Hem.'"
 
 talk-text of Bomb Mob is "You don't need a gang nag. Maybe you can sneak around them to get the TNT, though.".
 talk-text of Code Doc is "There is some awkward small talk. The Code Doc is more about understanding and explaining things.".
-talk-text of Cross Orc is "'Pay?! Yap!'".
+talk-text of Cross Orc is "'Yap?! Pay!'".
 talk-text of Dave is "Dave's here, man. And Dave's not chatty, man. He just seems to want to block you from doing anything.".
 talk-text of Diktat Kid is "Now's not the time for talk. Okay, the Diktat Kid might be bragging, but you won't get a word in.".
 talk-text of Ergot Ogre is "'Guh! Ug!'[paragraph break]Diplomacy won't get you by, here.".
@@ -5313,7 +5342,7 @@ this is the lair-trial rule:
 	if ergot ogre is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if kayo yak is in Lair Trial, say "YAK OKAY." instead;
-	say "[one of]You need to bring something that can knock the ogre off. You can't do it yourself.[or]Get the kayo yak to chase you.[stopping]";
+	say "[one of]You need to bring something that can knock the ogre off. You can't do it yourself.[or]Get the kayo yak to chase you.[stopping]" instead;
 
 section Le Babel rule
 
