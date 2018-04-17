@@ -190,7 +190,7 @@ Initially sent to source code/repository November 2017.</history>
 		<room id="61" name="Lair Trial" subtitle="" x="-544" y="224" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-20" customDown="0">Ergot Ogre</objects>
 		</room>
-		<room id="62" name="Yack Cay" subtitle="" x="-544" y="-160" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="62" name="Yack Cay" subtitle="Roomy Moor" x="-544" y="-160" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>Known Wonk|Tru Yurt</objects>
 		</room>
 		<line id="31" name="" description="">

@@ -580,6 +580,7 @@ instead of listening:
 		say "[one of], or at least, that's what repeats in the chorus[or][stopping]." instead;
 	if player is in Apse Spa, say "Surprisingly, no spa yaps." instead;
 	if player is in Mont Nom, say "The Ark of Okra is almost saying 'Nom on!' or 'C'mon! Nom!' or even 'Tum-Smut!'" instead;
+	if player is in Yack Cay and Known Wonk is in Yack Cay, say "The Known Wonk is just babbling on about stuff you aren't be interested in." instead;
 	if player is in Moo Room, say "You think you hear [next-rand-txt of table of Moo Room animals] in addition to the mooing." instead;
 	say "Noise lesion."
 
@@ -1534,7 +1535,7 @@ sharp rahs	guru rug	tenet	--	--	true	true	true	Grebeberg	"The sharp rahs meld in
 --	--	--	rev-nail-Ian rule	--	true	--	--	Grebeberg
 --	--	--	rev-first-food-combo rule	--	true	--	--	Grebeberg
 --	--	--	rev-second-food-combo rule	--	true	--	--	Grebeberg
-Moor Broom	Tru Yurt	Exam Axe	--	bump-crib rule	true	true	false	Grebeberg	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! Then, back to the Tru-Yurt for the Wonk. They've done enough for you." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
+Moor Broom	Tru Yurt	Exam Axe	--	bump-ivy rule	true	true	false	Grebeberg	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! Then, back to the Tru-Yurt for the Wonk. They've done enough for you." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
 --	--	--	rev-get-bro-orb rule	--	false	--	--	--
 wash saw	porch crop	balsa slab	--	--	true	true	false	Grebeberg	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods. You've done well. There's a balsa slab lying around. The Code doc offers it to you. Now, you ... do own wood!"
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
@@ -1769,9 +1770,10 @@ section post-use rules [xxpost]
 
 [please add alphabetically]
 
-this is the bump-crib rule:
+this is the bump-ivy rule:
 	shuffle-before Den Ivy Vined and Red Roses Order;
 	move porch crop to Den Ivy Vined;
+	moot Known Wonk;
 	the rule succeeds;
 
 this is the bump-gulf rule:
@@ -2943,6 +2945,10 @@ check useoning tenet with Bro Orb: try taking Bro Orb instead;
 book Yack Cay
 
 Yack Cay is north of Swamp Maws. It is in Grebeberg. "An edits tide blocks your way west, and storm rots block your way east. You can go [if mist sim is moot]north and [end if]south here[if mist sim is moot]. The Known Wonk's Tru-Yurt is here. It looks really messy[end if]."
+
+printed name of Yack Cay is "[if Known Wonk is moot]Roomy Moor[else]Yack Cay[end if]".
+
+understand "roomy/moor" and "roomy moor" as Yack Cay when Known Wonk is moot.
 
 check going north in Yack Cay when mist sim is in Yack Cay: say "The Known Wonk pushes you back. 'You don't know how weird it is to the north, especially beyond that mist sim! It's potentially WORSE than normal mist! But I know a thing or two about adventuring... well, adventuring theory. And I can tell you, boy oh boy, there are risks.'[paragraph break]The Known Wonk lists a few. You don't know if the Known Wonk believes all this. But you can't refute it, and you do have a nagging worry." instead;
 
