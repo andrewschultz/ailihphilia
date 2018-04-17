@@ -6032,6 +6032,26 @@ when play begins (this is the make sure everyone is chatty rule):
 when play begins (this is the miscellaneous deep testing rule):
 	if debug-state is true, try percing;
 
+chapter uuing
+
+uuing is an action applying to two visible things.
+
+understand the command "uu" as something new.
+
+understand "uu [any thing] on [any thing]" as uuing.
+
+carry out uuing:
+	let L1 be TempMet;
+	let L2 be TempMet;
+	if noun is not off-stage and noun is not carried, now L1 is location of noun;
+	if second noun is not off-stage and second noun is not carried, now L2 is location of second noun;
+	if player does not carry noun, move noun to location of player;
+	if player does not carry second noun, move second noun to location of player;
+	try useoning noun with second noun;
+	move noun to L1;
+	move second noun to L2;
+	the rule succeeds.
+
 chapter adeing
 
 adeing is an action out of world.
