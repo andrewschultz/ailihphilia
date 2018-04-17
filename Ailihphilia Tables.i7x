@@ -756,6 +756,7 @@ table of all randoms
 tabnam	tabidx	thru-yet	lbrk	desc	cycle-note
 table of altbooks	0	0	false	"extra books in the Tract Cart"	"You've read all the books on the tract cart. Hooray for curiosity!"
 table of attackings	0	0	true	"responses to ATTACK"	--
+table of Bond Nob bars	0	0	false	"bars the Bond Nob visits"	-- [?? may cause a problem cycling talking to nob]
 table of burnies	0	0	true	"responses to BURN"	--
 table of diktat taunts	0	0	false	"Diktat Kid taunts"	--
 table of Moo Room animals	0	0	true	"Moo Room animals (LISTEN)"	--
@@ -893,7 +894,22 @@ randtxt
 "Igniting, I!"
 "Rah! Char!"
 
-[the Diktat Kid insults you. The Yuge Guy puffs himself up.]
+table of Bond Nob bars
+randtxt
+"Bar Crab"
+"Nigh Gin"
+"Pat's Tap"
+"Pub UP"
+"Sara's"
+"Scene C's"
+"Soho's"
+"Soto's"
+"Spike-Kip's"
+"Tipsy Spit"
+"Tope Depot"
+"Zorro'z"
+
+[this may be related to Yuge Guy taunts, but the Diktat Kid insults you. The Yuge Guy puffs himself up.]
 table of diktat taunts
 randtxt
 "Da bad! Da BAD!! DA BAD!!!"
@@ -1081,6 +1097,7 @@ randtxt
 "Die, id!"
 "Ebb? Be!"
 "Eh, Tithe!"
+"Id-egged, I"
 "No Sin is On!"
 "Onan? A no!"
 "Sob! Mild Limbos!"

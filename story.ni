@@ -113,11 +113,11 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 300.
+use MAX_VERBS of 310.
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 340. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 350. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 chapter region and room stuff
 
@@ -579,7 +579,7 @@ instead of listening:
 		next-rand table of My Gym songs;
 		say "[one of], or at least, that's what repeats in the chorus[or][stopping]." instead;
 	if player is in Apse Spa, say "Surprisingly, no spa yaps." instead;
-	if player is in Mont Nom, say "The Ark of Okra is almost saying 'C'mon! Nom!' or even 'Tum-Smut!'" instead;
+	if player is in Mont Nom, say "The Ark of Okra is almost saying 'Nom on!' or 'C'mon! Nom!' or even 'Tum-Smut!'" instead;
 	if player is in Moo Room, say "You think you hear [next-rand-txt of table of Moo Room animals] in addition to the mooing." instead;
 	say "Noise lesion."
 
@@ -1496,7 +1496,7 @@ wash saw	past sap	--	sap-not-cut-yet rule	sap-loose rule	true	false	false	Grebeb
 puce cup	past sap	--	check-sap-cup rule	sap-to-cup rule	true	false	false	Grebeberg	"You pour some sap into the cup."
 puce cup	liar grail	--	sap-in-cup rule	empty-grail rule	true	false	true	Yelpley	"The past sap pours into the liar grail. As it does, the Wordy Drow slips away from it and ... yes! It breaks free! 'Wend new! Wend new!' it calls to you.[paragraph break]The passage south looks clear. You snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL! You look around, worried a nun will say 'Tut!' But all is still."
 puce cup	dose sod	--	check-sod-cup rule	sod-to-cup rule	true	false	false	Grebeberg	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough." [sc2-ignore]
-puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-nob rule	true	true	true	Yelpley	"You give the Bond Nob the puce cup. Gulp! Gulp! The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. So many places to visit: Tope Depot, Nigh Gin, Sara's, Soho's, Tipsy Spit, Soto's, Pub UP, Bar Crab, Pat's Tap...'"
+puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-nob rule	true	true	true	Yelpley	"You give the Bond Nob the puce cup. Gulp! Gulp! The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. So many places to visit: [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars]...'"
 stamp mats	slate metals	Ye Key	--	--	true	true	false	Yelpley	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY. You find it hard to pull the stamp mats out, and when you take YE KEY, the mats quickly morph into the slate metals. Eh, well. Less inventory to worry about."
 demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	Grebeberg	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' and looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
@@ -1536,7 +1536,7 @@ sharp rahs	guru rug	tenet	--	--	true	true	true	Grebeberg	"The sharp rahs meld in
 --	--	--	rev-second-food-combo rule	--	true	--	--	Grebeberg
 Moor Broom	Tru Yurt	Exam Axe	--	bump-crib rule	true	true	false	Grebeberg	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! Then, back to the Tru-Yurt for the Wonk. They've done enough for you." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
 --	--	--	rev-get-bro-orb rule	--	false	--	--	--
-wash saw	porch crop	balsa slab	--	--	true	true	false	Grebeberg	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods. You've done well. There's a balsa slab lying around. The Code doc offers it to you. Now, you do own wood!"
+wash saw	porch crop	balsa slab	--	--	true	true	false	Grebeberg	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods. You've done well. There's a balsa slab lying around. The Code doc offers it to you. Now, you ... do own wood!"
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
 DNA band	reifier	DNA hand	--	--	true	true	false	Yelpley	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand! It doesn't have any slime or blood leaking, and when you take it, it doesn't twitch too much."
 roto motor	DNA hand	Mr Arm	--	--	true	true	true	Yelpley	"Some of the stuffing inside the hand has to pop out to make space for the roto motor to fit in. There's enough to make a whole arm! The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on the arm (MR. ARM) and hand: BANG NAB. The arm will probably give the hand a bit more reach."
@@ -1810,6 +1810,8 @@ this is the empty-grail rule:
 this is the empty-nob rule:
 	later-wipe Bond Nob;
 	consider the empty-cup rule;
+	choose row with tabnam of table of Bond Nob bars in table of all randoms;
+	if thru-yet entry is 0, now thru-yet entry is 1; [to make sure a weird 'cycling' message is not printed]
 	the rule succeeds;
 
 this is the gas-think-wipe rule:
@@ -3341,6 +3343,8 @@ book Worn Row
 
 Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky]Three machines are here[else if Worn Row is wordy]A tract cart is here, [tract-status][else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if][if redness ender is in Worn Row]. There's also a redness ender here, but it looks dangerous to get too close to[end if]. The only way out is back east[if bad dab is in Worn Row]. A bad dab is splashed on the floor, too--a simple message[end if]."
 
+[?? tract cart is replaced ...]
+
 printed name of Worn Row is "[if Worn Row is wordy]Word[else if Worn Row is worky]Work[else]Worn[end if] Row"
 
 Worn Row can be worny, wordy or worky. Worn Row is worny.
@@ -4603,7 +4607,7 @@ talk-text of Knife Fink is "The Knife Fink stops and looks over your possessions
 talk-text of Known Wonk is "'Say, as...' There is some awkward small talk. The Known Wonk's mind is elsewhere, but maybe you can help with practical matters.".
 talk-text of Madam is "She is raising the Gal Flag and incanting ... something. You're not sure what. But talking won't interrupt it.".
 talk-text of Revolt Lover is "'Did you find any Stray Arts? I can always use them.'".
-talk-text of Bond Nob is "'I ain't much for talking now I'm sick...'".
+talk-text of Bond Nob is "'I ain't much for talking now I'm sick... no way I can visit [next-rand-txt of table of Bond Nob bars] or [next-rand-txt of table of Bond Nob bars] or any other cool bar with my pals...'".
 talk-text of Ned is "Ned's not in the mood for regular talk. He seems to want an argument or fight, but you don't.".
 talk-text of Psi Wisp is "It has nothing to say. It just pulses.".
 talk-text of Door Frood is "The Door Frood launches into how everyone is really stupid and at fault, and you can't really do anything except snark about it.".
