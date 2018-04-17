@@ -1,0 +1,126 @@
+########################### abbreviation maps
+m:ec=epoch cope
+m:ya=yob attaboy
+m:ti=to idiot
+m:ni=null illun
+m:rei=reifier
+m:rot=rotator
+m:rev=reviver
+########################### typos/ignore
+i:rader
+i:guyt
+i:tenent
+i:et
+i:row
+i:cop
+i:had
+i:scoop
+########################### not usable
+i:opossum
+########################### one word items
+s:tnt
+s:rotator
+s:reviver
+s:reifier
+s:radar
+s:tenet
+s:eye
+s:kayak
+s:ned
+s:ian
+s:rob
+s:dave
+########################### 3 long
+not a baton
+ark of okra
+go by bog
+########################### regular
+door frood
+bro orb
+porch crop
+wash saw
+dirt rid
+past sap
+casettes sac
+cash sac
+soot tattoos
+mush sum
+edits tide
+pity tip
+bond nob
+pact cap
+tame mat
+north tron
+mirror rim
+murdered rum
+cross orc
+emo dome
+gold log
+spa maps
+test set
+sharp rahs
+nats tan
+yard ray
+balsa slab
+dose sod
+stamp mats
+bomb mob
+roto motor
+resale laser
+sword rows
+guru rug
+ufo tofu
+snack cans
+code doc
+el doodle
+gift fig
+sage gas
+####################below should be in this order for now
+gate tag
+etage gate
+####################above should be in this order for now
+navy van
+lie veil
+butene tub
+cave vac
+martini tram
+tent net
+diff id
+ye key
+yahoo hay
+scorn rocs
+dork rod
+tao boat
+mist sim
+slate metals
+yob attaboy
+tru yurt
+kayo yak
+mayo yam
+me gem
+me totem
+puce cup
+made dam
+some demos
+liar grail
+gorge grog
+yuge guy
+poo coop
+gnu dung
+turf rut
+elope pole
+rep popper
+taboo bat
+moor broom
+enact cane
+crag arc
+dna band
+dna hand
+mr arm
+demo med
+elan ale
+exam axe
+party trap
+start rats
+troll ort
+;
