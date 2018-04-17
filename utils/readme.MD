@@ -13,6 +13,7 @@ Utils:
 * mred.py = minor utility that redacts the game map before sending it to testers (may be able to expand to others)
 * palver.py = trivial palindrome verifier for source (palver.txt has list of stuff to ignore)
 * rely.py = what relies on what to get through the game. Needs auxiliary file rely.txt
+* utw.py = writes out scripts to regression test and AutoIt files based on code in table of rejects
 * sc2.py = does internal code verification of maximum score byregion. Also cross-checks invisiclues and trizbort flowchart.
     * Supersedes the weaker msc.py. msc.py did a much more trivial runthrough.
 
