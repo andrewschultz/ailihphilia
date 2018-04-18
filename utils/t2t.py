@@ -1,4 +1,4 @@
-# t2t.py = transcript to test
+# t2t.py = tran1script to test
 #
 
 import re
@@ -104,12 +104,18 @@ def add_to_use_hash(file_name):
                 # print(l2)
                 l2 = re.sub(" with ", " on ", l2)
                 la = re.split(" +on +", l2)
+                if la[0] in one_to_two_maps.keys():
+                    la[0] = one_to_two_maps[la[0]]
+                if len(la) > 1:
+                    if la[1] in one_to_two_maps.keys():
+                        la[1] = one_to_two_maps[la[1]]
                 if len(la) == 3:
                     la = la[0] + la[2]
                 if len(la) != 2:
                     print("Bad use line:", line.strip())
                     continue
                 lb = sorted(map(expanded_name, la))
+                if lb[0] in ignore.keys() or lb[1] in ignore.keys(): continue
                 if lb[1] not in score_to_ignore[lb[0]].keys():
                     total_count[lb[0]][lb[1]] = total_count[lb[0]][lb[1]] + 1
                     if lb[1] not in this_time[lb[0]].keys():
@@ -129,18 +135,36 @@ read_point_matches()
 for x in onlyfiles:
     add_to_use_hash('transcripts/{:s}'.format(x))
 
+sort_alphabetically = True
+sort_by_appearance = True
 
-for j in sorted(total_count.keys()):
-    for l in sorted(total_count[j].keys()):
-        if alpha_flip:
-            cmd = "uu {:s} on {:s}".format((l, j) if alpha_flip else (j, l))
-        else:
-            cmd = "uu {:s} on {:s}".format(j, l)
-        au3.write("; {:d} transcripts, {:d} total times.\n".format(transcripts_containing[j][l], total_count[j][l]))
+if sort_by_appearance:
+    for j in sorted(total_count.keys()):
+        for l in sorted(total_count[j].keys()):
+            if alpha_flip:
+                x = "{:s}/{:s}".format(l, j)
+            else:
+                x = "{:s}/{:s}".format(j, l)
+            transcripts_containing[''][x] = transcripts_containing[j][l]
+            total_count[''][x] = total_count[j][l]
+    for x in sorted(transcripts_containing[''].keys(), key=lambda x: (transcripts_containing[''][x], total_count[''][x])):
+        print(x, transcripts_containing[''][x], total_count[''][x])
+        cmd = "uu {:s}".format(x)
+        cmd = re.sub("/", " on ", cmd)
+        au3.write("; {:d} transcripts, {:d} total times.\n".format(transcripts_containing[''][x], total_count[''][x]))
         au3.write("send(\"{:s}{{ENTER}}\")\nsleep(500)\n\n".format(cmd))
+else:
+    for j in sorted(total_count.keys()):
+        for l in sorted(total_count[j].keys()):
+            if sort_alphabetically:
+                if alpha_flip:
+                    cmd = "uu {:s} on {:s}".format((l, j) if alpha_flip else (j, l))
+                else:
+                    cmd = "uu {:s} on {:s}".format(j, l)
+                au3.write("; {:d} transcripts, {:d} total times.\n".format(transcripts_containing[j][l], total_count[j][l]))
+                au3.write("send(\"{:s}{{ENTER}}\")\nsleep(500)\n\n".format(cmd))
 
 au3.close()
-
 
 if len(may_need_space.keys()):
     print("May need space({:d}):".format(len(may_need_space.keys())), '/'.join(sorted(may_need_space.keys())))

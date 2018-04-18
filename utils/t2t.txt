@@ -3,18 +3,26 @@ m:ec=epoch cope
 m:ya=yob attaboy
 m:ti=to idiot
 m:ni=null illun
+m:sd=some demos
 m:rei=reifier
 m:rot=rotator
 m:rev=reviver
+m:rat=start rats
+m:map=spa maps
+m:start rats=stark rats
 ########################### typos/ignore
 i:rader
 i:guyt
+i:stick
+i:kints
 i:tenent
 i:et
 i:row
+i:tower
 i:cop
 i:had
 i:scoop
+i:yurty
 ########################### not usable
 i:opossum
 ########################### one word items
@@ -36,15 +44,34 @@ ark of okra
 go by bog
 ########################### regular
 door frood
+ore zero
+eroded ore
 bro orb
+ergot ogre
 porch crop
 wash saw
 dirt rid
+spur ups
+dumb mud
+bon snob
+bang nab
+stock cots
+sleep eels
+redness ender
+king nik
+redness sender
+epoch cope
+stinky knits
+revolt lover
 past sap
 casettes sac
 cash sac
 soot tattoos
 mush sum
+brag garb
+diktat kid
+knife fink
+known wonk
 edits tide
 pity tip
 bond nob
@@ -75,9 +102,14 @@ code doc
 el doodle
 gift fig
 sage gas
+straw arts
+bunk nub
+go fog
 ####################below should be in this order for now
 gate tag
 etage gate
+trap art
+party trap
 ####################above should be in this order for now
 navy van
 lie veil
@@ -105,6 +137,7 @@ some demos
 liar grail
 gorge grog
 yuge guy
+gulf lug
 poo coop
 gnu dung
 turf rut
