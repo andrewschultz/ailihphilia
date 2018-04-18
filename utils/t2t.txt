@@ -14,6 +14,7 @@ m:start rats=stark rats
 i:rader
 i:guyt
 i:stick
+i:ar
 i:kints
 i:tenent
 i:et
@@ -153,7 +154,6 @@ mr arm
 demo med
 elan ale
 exam axe
-party trap
-start rats
+stark rats
 troll ort
 ;

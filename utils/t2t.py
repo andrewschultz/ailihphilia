@@ -95,14 +95,22 @@ def expanded_name(x):
 
 def add_to_use_hash(file_name):
     this_time = defaultdict(lambda: defaultdict(bool))
+    line_count = 0
+    long_of = { "rei":"reifier", "rev":"reviver", "rot":"rotator" }
     with open(file_name) as file:
         for line in file:
+            line_count = line_count + 1
+            l2 = ''
+            ll = line.strip().lower()
+            if re.search("> *(rei|rev|rot) +", line, re.IGNORECASE):
+                l2 = re.sub(r'> *(r..) +(.*)', r'use {:s} on {:s}', ll, re.IGNORECASE)
             if re.search("> *use +", line, re.IGNORECASE):
                 l2 = re.sub("> *use *", "", line.strip().lower())
                 l2 = re.sub("-", " ", l2)
                 l2 = re.sub("'", "", l2)
                 # print(l2)
                 l2 = re.sub(" with ", " on ", l2)
+            if l2:
                 la = re.split(" +on +", l2)
                 if la[0] in one_to_two_maps.keys():
                     la[0] = one_to_two_maps[la[0]]
@@ -112,7 +120,7 @@ def add_to_use_hash(file_name):
                 if len(la) == 3:
                     la = la[0] + la[2]
                 if len(la) != 2:
-                    print("Bad use line:", line.strip())
+                    print("Bad use line", file_name, line_count, ":", line.strip())
                     continue
                 lb = sorted(map(expanded_name, la))
                 if lb[0] in ignore.keys() or lb[1] in ignore.keys(): continue
@@ -123,7 +131,6 @@ def add_to_use_hash(file_name):
                         transcripts_containing[lb[0]][lb[1]] = transcripts_containing[lb[0]][lb[1]] + 1
                     space_check(la[0], line)
                     space_check(la[1], line)
-                # print(la, lb)
 
 mypath = 'C:/games/inform/ailihphilia.inform/Source/transcripts'
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]

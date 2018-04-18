@@ -3370,6 +3370,8 @@ chapter redness ender
 
 the redness ender is a peripheral thing in Worn Row. "A redness ender sits here, looking lethal. Maybe it's part of why Worn Row is so worn--nobody wants to stick around enough to clean things up, or build anything. But maybe there is a simple way to get rid of it.". description is "It also seems to double as a redness SENDER, as when you get close to look at it, an ominous red dot appears on you. You back off.".
 
+understand "sender" and "redness sender" as redness ender.
+
 chapter tract cart
 
 tract-trace is a truth state that varies.
