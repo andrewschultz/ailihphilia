@@ -356,7 +356,10 @@ to say to-get-max:
 	if cur-score of Odd Do is max-score of Odd Do:
 		say "You got all LLPs";
 	else:
-		say "You need at least [maximum score - max-score of Odd Do + cur-score of Odd Do] to win[if cur-score of Odd Do > 0], since you got [cur-score of Odd Do]bonus point[plur-s of cur-score of Odd Do][end if]"
+		say "You need at least [min-win] to win[if cur-score of Odd Do > 0], since you got [cur-score of Odd Do]bonus point[plur-s of cur-score of Odd Do][end if]"
+
+to decide which number is min-win:
+	decide on maximum score - max-score of Odd Do + cur-score of Odd Do;
 
 to say plur-s of (myn - a number):
 	unless myn is 1, say "s"
@@ -388,14 +391,24 @@ to say regres of (re - a region):
 
 part when play begins
 
+to say dir-summary:
+	let Q be the room north of location of player;
+	if Q is not nowhere, say " N[run paragraph on][if Q is not available]-[end if]";
+	let Q be the room south of location of player;
+	if Q is not nowhere, say " S[run paragraph on][if Q is not available]-[end if]";
+	now Q is the room east of location of player;
+	if Q is not nowhere, say " E[run paragraph on][if Q is not available]-[end if]";
+	now Q is the room west of location of player;
+	if Q is not nowhere, say " W[run paragraph on][if Q is not available]-[end if]";
+
 when play begins:
 	repeat with Q running through regions:
 		increase maximum score by max-score of Q;
 	if debug-state is true:
 		say "DEBUG NOTE: Maximum score is [maximum score].";
 		say "[if max-score of Odd Do is number of rows in table of last lousy points]LLPs = LLP table rows[else]Uh oh, [max-score of Odd Do] Odd Do points and [number of rows in table of last lousy points] LLP table rows. We need to fix this[end if].";
-	now right hand status line is "[cur-score of mrlp]/[max-score of mrlp] [score]/[maximum score]";
-	now left hand status line is "[location of player] ([mrlp])";
+	now right hand status line is "[if cur-score of mrlp < 10] [end if][cur-score of mrlp]/[max-score of mrlp] [if score < 10] [end if][score]/[min-win]-[maximum score]";
+	now left hand status line is "[location of player] ([mrlp])[dir-summary]";
 	sort table of last lousy points in random order;
 	repeat through table of all randoms:
 		sort tabnam entry in random order;
