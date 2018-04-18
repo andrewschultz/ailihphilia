@@ -9,11 +9,43 @@ from collections import defaultdict
 
 alpha_flip = False
 uselist = defaultdict(lambda: defaultdict(int))
+score_to_ignore = defaultdict(lambda: defaultdict(bool))
 
 may_need_space = defaultdict(bool)
 single = defaultdict(bool)
 ignore = defaultdict(bool)
 one_to_two_maps = defaultdict(str)
+
+au3 = open("t2t.au3", "w")
+
+au3_header = "Opt(\"SendKeyDelay\", 0)\n\nOpt(\"WinTitleMatchMode\", -2)\nWinActivate(\"Ailihphilia.inform \")\nWinWaitActive(\"Ailihphilia.inform \")\n\nMouseMove(1640,972)\n\nSleep(500)\n\n";
+
+au3.write(au3_header)
+
+def read_point_matches():
+    next_header = False
+    in_point_table = False
+    with open('story.ni') as file:
+        for line in file:
+            if next_header:
+                next_header = False
+                in_point_table = True
+                continue
+            if 'xxuse' in line:
+                print("Got start")
+                next_header = True
+                continue
+            if in_point_table:
+                if 'zzuse' in line or not line.strip():
+                    in_point_table = False
+                    continue
+            else:
+                continue
+            ll = line.lower().strip()
+            la = ll.split('\t')
+            if la[0] == '--': continue
+            la = sorted(la[:2])
+            score_to_ignore[la[0]][la[1]] = True
 
 def read_mapper_file():
     line_count = 0
@@ -45,7 +77,6 @@ def read_mapper_file():
                         print("WARNING redefining", x, "at line", line_count, "from", one_to_two_maps[x], "to", ll)
                 one_to_two_maps[x] = ll
                 # print(x, "to", ll)
-    exit()
 
 def space_check(x, line_in):
     if ' ' in x: return
@@ -76,9 +107,10 @@ def add_to_use_hash(file_name):
                     print("Bad use line:", line.strip())
                     continue
                 lb = sorted(map(expanded_name, la))
-                uselist[lb[0]][lb[1]] = uselist[lb[0]][lb[1]] + 1
-                space_check(la[0], line)
-                space_check(la[1], line)
+                if lb[1] not in score_to_ignore[lb[0]].keys():
+                    uselist[lb[0]][lb[1]] = uselist[lb[0]][lb[1]] + 1
+                    space_check(la[0], line)
+                    space_check(la[1], line)
                 # print(la, lb)
 
 mypath = 'C:/games/inform/ailihphilia.inform/Source/transcripts'
@@ -86,17 +118,22 @@ onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 
 read_mapper_file()
 
+read_point_matches()
+
+
 for x in onlyfiles:
     add_to_use_hash('transcripts/{:s}'.format(x))
 
 
 for j in sorted(uselist.keys()):
     for l in sorted(uselist[j].keys()):
-        continue
         if alpha_flip:
-            print ("use", l, "on", j, uselist[j][l])
+            cmd = "uu {:s} on {:s}".format((l, j) if alpha_flip else (j, l))
         else:
-            print ("use", j, "on", l, uselist[j][l])
+            cmd = "uu {:s} on {:s}".format(j, l)
+        au3.write("send(\"{:s}{{ENTER}}\")\nsleep(500)\n\n".format(cmd))
+
+au3.close()
 
 
 if len(may_need_space.keys()):
