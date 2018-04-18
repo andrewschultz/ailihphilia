@@ -14,6 +14,13 @@ regex_ignore_dict = defaultdict(bool)
 
 quiet = False
 
+def un_palindrome(q):
+    if q == q[::-1]: return False
+    if q.startswith('a'):
+        q2 = q[1:]
+        if q2 == q2[::-1]: return False
+    return True
+
 def read_ignore_file():
     ignore_file = "c:/games/inform/ailihphilia.inform/source/palver.txt"
     with open(ignore_file) as file:
@@ -93,7 +100,7 @@ def pal_ver(f):
             if line.startswith("\"") and '\t' not in line:
                 q = letonly(line)
                 if 'by Andrew Schultz' in line: continue # this is the title
-                if q != q[::-1]: # and '[ignore]' not in line and '[okdup]' not in line:
+                if un_palindrome(q): # and '[ignore]' not in line and '[okdup]' not in line:
                     err_count = err_count + 1
                     print("Bad line", line_count, "in", f, "--", line.strip())
                 continue

@@ -1770,14 +1770,14 @@ section post-use rules [xxpost]
 
 [please add alphabetically]
 
+this is the bump-gulf rule:
+	shuffle-before Flu Gulf and Sneer Greens;
+	the rule succeeds;
+
 this is the bump-ivy rule:
 	shuffle-before Den Ivy Vined and Red Roses Order;
 	move porch crop to Den Ivy Vined;
 	moot Known Wonk;
-	the rule succeeds;
-
-this is the bump-gulf rule:
-	shuffle-before Flu Gulf and Sneer Greens;
 	the rule succeeds;
 
 this is the bump-maws rule:

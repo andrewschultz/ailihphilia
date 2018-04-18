@@ -849,7 +849,7 @@ randtxt
 "Mo['] Idiom"
 "Mr. Owl Worm"
 "My Nonacidic Anonym"
-"Neil's Lein"
+"Neil's Lien"
 "O Bonobo"
 "Otter Amaretto"
 "Rise Aesir"
@@ -897,6 +897,7 @@ randtxt
 table of Bond Nob bars
 randtxt
 "Bar Crab"
+"Met [']Em"
 "Nigh Gin"
 "Pat's Tap"
 "Pub UP"
@@ -1001,7 +1002,6 @@ randtxt
 "Prove VORP!"
 "Resume [']m, user!"
 "Spidered IPs?!"
-"Thunk Knuth!"
 
 table of singstuff
 randtxt

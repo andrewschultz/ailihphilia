@@ -8,6 +8,8 @@ s:loc-num
 s:machineables
 s:understand
 s:does the player mean
+s:a room can be
+s:the player is neuter
 s:description of
 s:rule for
 s:when play begins
