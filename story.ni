@@ -1206,7 +1206,8 @@ check useoning it with:
 	if noun is a tronpart or noun is epicer recipe:
 		if second noun is a tronpart or noun is epicer recipe:
 			if player does not have epicer recipe, say "Those two things seem to go together, but you don't have detailed instructions." instead;
-			if number of off-stage tronparts > 0, say "You have the start of something, but not enough to make a north-tron." instead;
+			if number of off-stage tronparts is 1, say "You see how everything fits--even the [random off-stage tronpart], which you don't have yet. Rats, so close!" instead;
+			if number of off-stage tronparts is 2, say "That looks like the start of something. But you still need to find a couple things." instead;
 			if player is not in Fun Nuf:
 				if madam is quicknear or Yuge Guy is quicknear, say "Deal with [if player is in Red Roses Order]Madam[else]the Yuge Guy[end if] first." instead;
 				say "You might be better served using these things in Fun [']Nuf. Go there?";
@@ -3369,8 +3370,6 @@ to decide whether in-word:
 chapter redness ender
 
 the redness ender is a peripheral thing in Worn Row. "A redness ender sits here, looking lethal. Maybe it's part of why Worn Row is so worn--nobody wants to stick around enough to clean things up, or build anything. But maybe there is a simple way to get rid of it.". description is "It also seems to double as a redness SENDER, as when you get close to look at it, an ominous red dot appears on you. You back off.".
-
-understand "sender" and "redness sender" as redness ender.
 
 chapter tract cart
 

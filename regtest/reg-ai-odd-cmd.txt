@@ -1,0 +1,29 @@
+# reg-up-odd-cmd.txt
+
+> s
+
+> s
+
+> s
+NOWT WON
+
+>undo
+
+>flea
+The elf scratches for a bit, then looks embarrassed.
+
+>fled
+The elf looks more flexible than you. It's the cap you want to concentrate on.
+
+>flex
+There is much more fortune and glory in adventure! It's the cap you want to concentrate on.
+
+>pack cap
+by one point
+
+>s
+
+>win
+>amusing
+>undo
+>undo

@@ -1,0 +1,241 @@
+# reg-ai-mult-poss.txt
+
+* mont nom combos
+
+# fig and cans are solid
+
+>purloin mayo yam
+>purloin snack cans
+>purloin gift fig
+>purloin ufo tofu
+
+>use yam on cans
+You're not in the right place to mix food together.
+
+>gonear mont nom
+
+>use yam on cans
+Not with Ian around.
+
+>undo
+
+>nail ian
+
+>use yam on cans
+in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.
+
+>undo
+
+>use yam on fig
+in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.
+
+>undo
+
+>use yam on tofu
+Those are both too liquid to go together.
+>undo
+
+>use cans on fig
+Those are both too solid to go together.
+>undo
+
+>use cans on tofu
+in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.
+>undo
+
+>use fig on tofu
+in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.
+
+>undo
+
+# now backwards
+
+>use cans on yam
+in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.
+>undo
+
+>use fig on yam
+>in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.
+undo
+
+>use tofu on yam
+Those are both too liquid to go together.
+>undo
+
+>use fig on cans
+Those are both too solid to go together.
+>undo
+
+>use tofu on cans
+in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.
+>undo
+
+>use tofu on fig
+in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.
+>undo
+
+* tronpart combos
+
+# verify no recipe, no help
+
+>uu tnt on laser
+Those two things seem to go together, but you don't have detailed instructions.
+
+>purloin epicer recipe
+
+# auto-look-at recipe
+
+>use tnt on laser
+You're clueless how, at first. But then you take a look at
+>undo
+
+# temporary weird case ... what if recipe unexamined?
+
+# standard "you looked at the recipe"
+>x epicer recipe
+
+>uu martini tram on tnt
+That looks like the start of something. But you still need to find a couple things.
+>uu ore zero on tnt
+That looks like the start of something. But you still need to find a couple things.
+>uu resale laser on tnt
+That looks like the start of something. But you still need to find a couple things.
+
+>uu ore zero on resale laser
+That looks like the start of something. But you still need to find a couple things.
+>uu resale laser on martini tran
+That looks like the start of something. But you still need to find a couple things.
+>uu ore zero on martini tram
+That looks like the start of something. But you still need to find a couple things.
+
+>abstract martini tram to fun nuf
+>purloin tnt
+>purloin ore zero
+>purloin resale laser
+
+>use tnt on ore
+You build the North-Tron with the instructions from
+>undo
+
+>use tnt on tram
+You build the North-Tron with the instructions from
+>undo
+
+>use laser on ore
+You build the North-Tron with the instructions from
+>undo
+
+>use laser on tram
+You build the North-Tron with the instructions from
+>undo
+>use ore on tram
+
+# backwards
+
+>use laser on tnt
+You build the North-Tron with the instructions from
+>undo
+
+>use ore on tnt
+You build the North-Tron with the instructions from
+>undo
+
+>use tram on tnt
+You build the North-Tron with the instructions from
+>undo
+
+>use ore on laser
+You build the North-Tron with the instructions from
+>undo
+
+>use tram on laser
+You build the North-Tron with the instructions from
+>undo
+
+>use tram on ore
+You build the North-Tron with the instructions from
+>undo
+
+# recipe
+>use recipe on tnt
+You build the North-Tron with the instructions from
+>undo
+
+>use recipe on ore
+You build the North-Tron with the instructions from
+>undo
+
+>use recipe on tram
+You build the North-Tron with the instructions from
+>undo
+
+>use recipe on laser
+You build the North-Tron with the instructions from
+>undo
+
+>use tnt on recipe
+You build the North-Tron with the instructions from
+>undo
+
+>use ore on recipe
+You build the North-Tron with the instructions from
+>undo
+
+>use tram on recipe
+You build the North-Tron with the instructions from
+>undo
+
+>use laser on recipe
+You build the North-Tron with the instructions from
+>undo
+
+# now for 3 of each
+
+>abstract tram to tempmet
+>use laser on tnt
+You see how everything fits--even the martini tram
+>undo
+>use ore on tnt
+You see how everything fits--even the martini tram
+>undo
+>use ore on laser
+You see how everything fits--even the martini tram
+>undo
+>undo
+
+>abstract laser to tempmet
+>use tram on tnt
+You see how everything fits--even the resale laser
+>undo
+>use ore on tnt
+You see how everything fits--even the resale laser
+>undo
+>use ore on tram
+You see how everything fits--even the resale laser
+>undo
+>undo
+
+>abstract ore to tempmet
+>use tram on tnt
+You see how everything fits--even the ore zero
+>undo
+>use laser on tnt
+You see how everything fits--even the ore zero
+>undo
+>use laser on tram
+You see how everything fits--even the ore zero
+>undo
+>undo
+
+>abstract tnt to tempmet
+>use tram on laser
+You see how everything fits--even the TNT
+>undo
+>use ore on laser
+You see how everything fits--even the TNT
+>undo
+>use ore on tram
+You see how everything fits--even the TNT
+>undo
+>undo
+
