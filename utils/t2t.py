@@ -8,7 +8,9 @@ from os.path import isfile, join
 from collections import defaultdict
 
 alpha_flip = False
-uselist = defaultdict(lambda: defaultdict(int))
+total_count = defaultdict(lambda: defaultdict(int))
+transcripts_containing = defaultdict(lambda: defaultdict(bool))
+
 score_to_ignore = defaultdict(lambda: defaultdict(bool))
 
 may_need_space = defaultdict(bool)
@@ -92,6 +94,7 @@ def expanded_name(x):
     return x
 
 def add_to_use_hash(file_name):
+    this_time = defaultdict(lambda: defaultdict(bool))
     with open(file_name) as file:
         for line in file:
             if re.search("> *use +", line, re.IGNORECASE):
@@ -108,7 +111,10 @@ def add_to_use_hash(file_name):
                     continue
                 lb = sorted(map(expanded_name, la))
                 if lb[1] not in score_to_ignore[lb[0]].keys():
-                    uselist[lb[0]][lb[1]] = uselist[lb[0]][lb[1]] + 1
+                    total_count[lb[0]][lb[1]] = total_count[lb[0]][lb[1]] + 1
+                    if lb[1] not in this_time[lb[0]].keys():
+                        this_time[lb[0]][lb[1]] = True
+                        transcripts_containing[lb[0]][lb[1]] = transcripts_containing[lb[0]][lb[1]] + 1
                     space_check(la[0], line)
                     space_check(la[1], line)
                 # print(la, lb)
@@ -120,17 +126,17 @@ read_mapper_file()
 
 read_point_matches()
 
-
 for x in onlyfiles:
     add_to_use_hash('transcripts/{:s}'.format(x))
 
 
-for j in sorted(uselist.keys()):
-    for l in sorted(uselist[j].keys()):
+for j in sorted(total_count.keys()):
+    for l in sorted(total_count[j].keys()):
         if alpha_flip:
             cmd = "uu {:s} on {:s}".format((l, j) if alpha_flip else (j, l))
         else:
             cmd = "uu {:s} on {:s}".format(j, l)
+        au3.write("; {:d} transcripts, {:d} total times.\n".format(transcripts_containing[j][l], total_count[j][l]))
         au3.write("send(\"{:s}{{ENTER}}\")\nsleep(500)\n\n".format(cmd))
 
 au3.close()
