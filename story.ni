@@ -63,25 +63,32 @@ to say gh: say "https://github.com/andrews[hc]ultz/ailihphilia"
 
 to say email: say "blurglecrun[hc]eon@gmail.com"
 
-section kinds of things
-
-a chaser is a kind of person. a chaser has a room called chase-room. a chaser has a room called stix-room.
-
-a guhthug is a kind of person. [Ian, Rob, Ned, Dave]
-
-understand "guh/thug/guhthug" and "guh thug" as a guhthug.
-
-a phonebook is a kind of thing. a phonebook has a number called initseed. a phonebook has a number called curseed. a phonebook has a table name called booktable.
-
-an ingredient is a kind of thing. an ingredient is usually edible. an ingredient can be solid or liquid.
-
 chapter thing properties
 
 a thing can be drinkable. a thing is usually not drinkable.
 
 a thing can be peripheral, semiperipheral or integral. a thing is usually integral.
 
-section machines
+a thing can be ordinary, beepy or llpish. a thing is usually ordinary.
+
+beep-yet is a truth state that varies.
+beep-llp-yet is a truth state that varies.
+
+after examining a not ordinary thing:
+	if cap-vol is true, continue the action;
+	say "You hear [if beep-yet is false]an odd[else]that weird[end if] [if noun is llpish]but very quiet [end if]BEE-BOO-BEEB from [if beep-yet is false]somewhere. It seems like [end if]the inside of your pac[if cap-pace is true]e[else]t[end if] cap[if beep-yet is true] again[end if].";
+	if beep-llp-yet is false and noun is llpish:
+		say "[line break]Hmm. That wasn't very loud. Maybe that's something you don't need to get rid of, but it'd be nice.";
+		now beep-llp-yet is true;
+	now beep-yet is true;
+
+the cap-beep rules are an object-based rulebook.
+
+a cap-beep rule for a thing (called x):
+	if cap-vol is true, say "You hear a [if x is llpish]soft [end if]BOO-WEE-WOOB after dealing with [the X].";
+	the rule succeeds;
+
+section machine actions
 
 a thing can be rotated. a thing is usually not rotated.
 
@@ -118,6 +125,22 @@ use MAX_VERBS of 310.
 section debug compiler globals - not for release
 
 use MAX_VERBS of 350. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+
+chapter kinds of things
+
+section kinds of things
+
+a chaser is a kind of person. a chaser has a room called chase-room. a chaser has a room called stix-room.
+
+a guhthug is a kind of person. [Ian, Rob, Ned, Dave]
+
+a guhthug is usually beepy.
+
+understand "guh/thug/guhthug" and "guh thug" as a guhthug.
+
+a phonebook is a kind of thing. a phonebook has a number called initseed. a phonebook has a number called curseed. a phonebook has a table name called booktable.
+
+an ingredient is a kind of thing. an ingredient is usually edible. an ingredient can be solid or liquid.
 
 chapter region and room stuff
 
@@ -777,6 +800,8 @@ this is the yawn-way-stuck rule:
 	say "You need to figure how to get east [hn of Yawn Way].";
 	the rule succeeds;
 
+volume irregular verbs
+
 chapter inventory
 
 after printing the name of a book (called bk) while taking inventory: say " (by [auth-name of bk])"
@@ -885,6 +910,7 @@ carry out verbing:
 	say "[line break][b]THINK gives general non-spoiler hints, including where you may wish to visit, or what is blocking you[if pyx is quicknear][b]X X[r] or [b]MAP[r] will let you examine the X/Y Pyx.";
 	say "[line break][b]AID[r] gives you hints for where you are. [b]SCORE[r] tracks the score. [b]ABOUT[r] and [b]CREDITS[r] tell about the game.";
 	if wr-short-note is true and in-work, say "[line break][b]REV[r], [b]ROT[r] and [b]REI[r] use an item on the reviver, rotator and reifier, respectively.";
+	if beep-yet is true, say "[b]LO VOL[r] and [b]LOVE VOL[r] turn the pact cap's hints volume down and up, respectively.";
 	if in-beta is true:
 		say "[line break](start beta commands)";
 		say "[line break][b]RR[r] lets you try all three items in the Word Row machines. If one nets a point, it goes last.";
@@ -899,7 +925,47 @@ carry out verbing:
 
 wr-short-note is a truth state that varies.
 
-section refering
+chapter lovoling
+
+cap-vol is a truth state that varies. cap-vol is true.
+
+lovoling is an action out of world.
+
+understand the command "lovol" as something new.
+understand the command "lo vol" as something new.
+
+understand "lovol" as lovoling.
+understand "lo vol" as lovoling.
+
+carry out lovoling:
+	abide by the cap-check rule;
+	say "The pact cap's volume is [if cap-vol is false]already[else]now[end if] off.";
+	now cap-vol is false;
+	the rule succeeds;
+
+chapter lovoling
+
+lovevoling is an action out of world.
+
+understand the command "lovevol" as something new.
+understand the command "love vol" as something new.
+
+understand "lovevol" as lovevoling.
+understand "love vol" as lovevoling.
+
+this is the cap-check rule:
+	if player does not have pact cap, say "You need to figure how to get the pact cap, first." instead;
+	if beep-yet is false:
+		say "(first finding how to adjust volume for the pace cap)[paragraph break]";
+		now beep-yet is true;
+
+carry out lovevoling:
+	abide by the cap-check rule;
+	say "The pact cap's volume is [if cap-vol is true]already[else]now[end if] on.";
+	now cap-vol is true;
+	the rule succeeds;
+
+chapter refering
 
 refer-bonus is a truth state that varies.
 
@@ -1563,7 +1629,7 @@ rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	Grebeberg	"'BO
 Bro Orb	Mirror Rim	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	"The Bro Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Madam has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, madam, live not on evil!' you boom, as the Orb does its work. Madam looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'My sub-level bus! You won't catch it! The E-Divide will block you!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Madam."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
-murdered rum	yard ray	--	--	--	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
+murdered rum	yard ray	--	--	ray-beepy-now rule	true	true	false	Dim Mid	"The yard ray gleams with energy. It seems like it could do some damage now."
 --	--	--	rev-emit-noontime rule	--	true	--	--	Dim Mid
 Yard Ray	test set	--	ready-to-test rule	test-set-zapped rule	true	false	true	Dim Mid	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
 --	--	--	rev-create-tron rule	--	true	--	--	Dim Mid
@@ -1892,6 +1958,10 @@ this is the radar-crag rule:
 
 this is the rahs-too rule:
 	now player has the sharp rahs;
+	the rule succeeds;
+
+this is the ray-beepy-now rule:
+	now yard ray is beepy;
 	the rule succeeds;
 
 this is the rebump-art-xtra rule:
@@ -2651,7 +2721,7 @@ the voodoo v is peripheral scenery in Le Babel. "Maybe you could walk across it 
 
 chapter opossum
 
-the opossum is a thing in Le Babel. "An opossum crouches here, looking scared. Maybe you can help it be less frozen by fear.". description is "Cute little thing, lovely fur, but it could use a friendly gesture."
+the opossum is a llpish peripheral thing in Le Babel. "An opossum crouches here, looking scared. Maybe you can help it be less frozen by fear.". description is "Cute little thing, lovely fur, but it could use a friendly gesture."
 
 instead of doing something with opossum:
 	if current action is taking, say "The opossum bounds away. Perhaps you can be less grabby." instead;
@@ -2781,7 +2851,7 @@ after taking stamp mats:
 
 chapter Kayo Yak
 
-The Kayo Yak is a chaser in Frush Surf. chase-room of Kayo Yak is Frush Surf. "A kayo yak paws the ground here. It doesn't seem violent, but it seems up for rough play.". description is "[if being-chased is true]The Kayo Yak is really rumbling around, here[else]The Kayo Yak looks alert, ready for more than just standing around[end if]."
+The Kayo Yak is a beepy chaser in Frush Surf. chase-room of Kayo Yak is Frush Surf. "A kayo yak paws the ground here. It doesn't seem violent, but it seems up for rough play.". description is "[if being-chased is true]The Kayo Yak is really rumbling around, here[else]The Kayo Yak looks alert, ready for more than just standing around[end if]."
 
 chapter yakokaying
 
@@ -2824,7 +2894,7 @@ understand "gnu dung" and "gnu/dung" as poo coop when player has poo coop and gn
 
 chapter senile felines
 
-the senile felines are plural-named peripheral things in Moo Room. "Senile felines swat at a late petal just a bit too high to reach. It might be fun to help them, but they probably can't help you. CATS!". description is "They are just lazing around, swatting at the late petal but never reaching it. You guess it must be fun for them.[paragraph break]Maybe it'd be fun to think of them as CATS."
+the senile felines are plural-named llpish peripheral things in Moo Room. "Senile felines swat at a late petal just a bit too high to reach. It might be fun to help them, but they probably can't help you. CATS!". description is "They are just lazing around, swatting at the late petal but never reaching it. You guess it must be fun for them.[paragraph break]Maybe it'd be fun to think of them as CATS."
 
 understand "cats" as senile felines.
 
@@ -4204,7 +4274,7 @@ check taking Gorge Grog when player does not have Gorge Grog: say "Sniffins chid
 
 chapter Nat's Tan
 
-Nat's Tan is a thing in Deft Fed. "A container of something called NAT'S Tan is here.". description is "Ugh! Given that it advertises turning you orange with that Ol['] Glo, you're not sure you'd want that. Maybe there are some people or things much neater than you that would hate it even more. The NAT'S is disproportionately big compared to the 'tan' text.".
+Nat's Tan is a beepy thing in Deft Fed. "A container of something called NAT'S Tan is here.". description is "Ugh! Given that it advertises turning you orange with that Ol['] Glo, you're not sure you'd want that. Maybe there are some people or things much neater than you that would hate it even more. The NAT'S is disproportionately big compared to the 'tan' text.".
 
 check taking nat's when nat's is in Deft Fed: say "Ugh! It feels too gross to take. Maybe you need to prepare yourself to feel less squeamish about taking it." instead;
 
