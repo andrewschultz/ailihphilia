@@ -85,7 +85,7 @@ after examining a not ordinary thing:
 the cap-beep rules are an object-based rulebook.
 
 a cap-beep rule for a thing (called x):
-	if cap-vol is true, say "You hear a [if x is llpish]soft [end if]BOO-WEE-WOOB after dealing with [the X].";
+	if revving-over is false and cap-vol is true, say "You hear a [if x is llpish]soft [end if]BOO-WEE-WOOB after dealing with [the X].";
 	the rule succeeds;
 
 section machine actions
@@ -807,6 +807,7 @@ chapter inventory
 after printing the name of a book (called bk) while taking inventory: say " (by [auth-name of bk])"
 
 check taking inventory when Dave is moot:
+	if being-chased is true, now chase-mulligan is true;
 	now all things enclosed by the player are marked for listing;
 	now all ingredients are unmarked for listing;
 	now all tronparts are unmarked for listing;
@@ -911,6 +912,8 @@ carry out verbing:
 	say "[line break][b]AID[r] gives you hints for where you are. [b]SCORE[r] tracks the score. [b]ABOUT[r] and [b]CREDITS[r] tell about the game.";
 	if wr-short-note is true and in-work, say "[line break][b]REV[r], [b]ROT[r] and [b]REI[r] use an item on the reviver, rotator and reifier, respectively.";
 	if beep-yet is true, say "[b]LO VOL[r] and [b]LOVE VOL[r] turn the pact cap's hints volume down and up, respectively.";
+	if ever-chased is true:
+		if psi wisp is not moot and kayo yak is not moot, say "[no-time-note].";
 	if in-beta is true:
 		say "[line break](start beta commands)";
 		say "[line break][b]RR[r] lets you try all three items in the Word Row machines. If one nets a point, it goes last.";
@@ -1067,15 +1070,13 @@ definition: a room (called rm) is wally:
 	if map region of rm is not Yelpley, no;
 	yes;
 
-chase-pass is a truth state that varies.
-
-to say chase-mulligan: now chase-pass is true;
+to say chase-pass: now chase-mulligan is true;
 
 check going (this is the new generic going reject rule):
 	if noun is outside and number of viable directions is 1, try going a random viable direction instead;
 	if noun is inside, say "You don't ever need to use IN in the game. Just the four cardinal directions." instead;
 	if the room noun of location of player is nowhere:
-		say "[chase-mulligan][if location of player is wally]Wall! Aw.[paragraph break][end if]You can only go [list of viable directions] here[up-down-check]." instead;
+		say "[chase-pass][if location of player is wally]Wall! Aw.[paragraph break][end if]You can only go [list of viable directions] here[up-down-check]." instead;
 
 to say up-down-check:
 	let xud be 0;
@@ -1419,7 +1420,7 @@ table of cantuse [xxcant]
 use1	babble
 redness ender	"The redness ender is good for destroying stuff. Probably evil stuff. You don't need to vaporize anything you're carrying." [?? Rob]
 Spur Ups	"The Spur Ups can't physically levitate anything, but they make you want to do something for yourself, by yourself, to yourself, for a pick up or something like it. You're not sure what."
-Psi Wisp	"[chase-mulligan]The Psi Wisp is impervious to bribery or normal physical attacks. You need to outrun and outsmart it."
+Psi Wisp	"The Psi Wisp is impervious to bribery or normal physical attacks. You need to outrun and outsmart it."
 Kayo Yak	"The Kayo Yak grunts. Looks like you can't, or don't want to, use anything on it."
 Dave	"Dave's not useful, man."
 Ian	"Ian's worse than useless. You need to use your wit on him."
@@ -2814,6 +2815,7 @@ carry out nailing:
 	say "You wait and hide. After a while, you catch Ian picking his nose absent-mindedly. You call him on it! In the presence of food, no less! Ian hurries away in shame across the Turf Rut. He takes one look at the, um, bridge and realizes that if he hadn't DONE anything gross, he wouldn't have to CROSS anything gross.";
 	moot Ian;
 	score-inc; [Grebeberg/nail ian]
+	consider the cap-beep rules for Ian;
 	the rule succeeds;
 
 book Ooze Zoo
@@ -3425,6 +3427,7 @@ carry out evadeing:
 		say "You evade Dave! Deked! Deked![paragraph break]Dave, frustrated from spinning around trying to catch you, runs off.[paragraph break]Suspicious there are no actual weight machines, you find a passage to a hidden spate of Sperses-Reps machines. You're suspicious they actually work, but as you test them out, a surge goes through you. Your attitude nets you scepsis-pecs, which will help you carry any amount or weight of things you pick up in your journey. After a few seconds, you've half forgotten you have them.";
 		moot Dave;
 		score-inc; [Yelpley/evade dave]
+		consider the cap-beep rules for Dave;
 	else:
 		say "There's only one person you need to evade in this game.";
 	the rule succeeds.
@@ -3503,6 +3506,7 @@ carry out boreing:
 	say "You bore Rob successfully. He begins pacing around, even grinding out the 'N' in the bad dab, leaving it as WOR- ROW, before wandering off mumbling how he is too hard core even for Dre Nerd and Nerd Ren. Perhaps to Ybor.";
 	boot-Rob;
 	score-inc; [Yelpley/bore rob]
+	consider the cap-beep rules for Rob;
 	the rule succeeds.
 
 to boot-Rob:
@@ -4235,6 +4239,7 @@ carry out denying:
 		say "Ned wants to get in an argument or fight, so you get in an argument over whether it's really necessary, and then you say, that wasn't so great, see? He slinks off, defeated.";
 		moot Ned;
 		score-inc; [Yelpley/deny Ned]
+		consider the cap-beep rules for Ned;
 	the rule succeeds;
 
 book Deft Fed
@@ -4932,14 +4937,23 @@ chase-person is a person that varies.
 
 last-chase-direction is a direction that varies.
 
+ever-chased is a truth state that varies.
+
 to start-chase (guy - a person):
 	move x-it stix to stix-room of guy;
 	now chase-person is guy;
 	now last-chase-direction is southwest;
-	now being-chased is true;
 	now init-turn is false;
+	if ever-chased is false:
+		now ever-chased is true;
+		say "(NOTE: [no-time-note].)[paragraph break]";
+	now being-chased is true;
+
+to say no-time-note:
+	say "When you are in a chase[if being-chased is true], like right now[end if], commands like X/EXAMINE and I/INVENTORY and even THINK/AID (if you must) will take no time"
 
 every turn when being-chased is true:
+	if current action is procedural, continue the action;
 	if init-turn is false:
 		say "You'd better get a move on. The [chase-person] looks pretty agitated.";
 		now init-turn is true;
@@ -4971,14 +4985,14 @@ after going when being-chased is true:
 check going when being-chased is true:
 	if last-chase-direction is opposite of noun, say "The [chase-person] is blocking you from the [noun]. You try a gazelle-zag but don't have the moves." instead;
 
-check going to Fun Nuf when being-chased is true: say "[chase-mulligan]The X-It Stix block you." instead;
+check going to Fun Nuf when being-chased is true: say "[chase-pass]The X-It Stix block you." instead;
 
 the Psi Wisp is a chaser in Pro Corp. chase-room of Psi Wisp is Pro Corp. description is "The Psi Wisp is very red, and it pulses fervently. If it had feelings, you'd be pretty sure it didn't like you.". "[one of]A Psi Wisp pulses here before lurching alarmingly in your direction![or]The Psi Wisp is [if player is in Pro Corp]pulses again! Back to the chase.[else]still chasing you![end if][stopping]".
 
 after looking when being-chased is false (this is the start-chase-in-case rule):
 	if player is in Pro Corp and psi wisp is not moot:
-		start-chase Psi Wisp;
 		say "The Psi Wisp begins to chase after you[one of][or] again[stopping]!";
+		start-chase Psi Wisp;
 		continue the action;
 	if troll ort is moot and player is in Frush Surf and kayo yak is in Frush Surf:
 		start-chase Kayo Yak;
