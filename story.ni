@@ -81,7 +81,7 @@ after examining a not ordinary thing:
 	say "You hear [if beep-yet is false]an odd[else]that weird[end if] [if noun is llpish]but very quiet [end if]BEE-BOO-BEEB from [if beep-yet is false]somewhere. It seems like [end if]the inside of your pac[if cap-pace is true]e[else]t[end if] cap[if beep-yet is true] again[end if].";
 	now noun is beeped;
 	if beep-llp-yet is false and noun is llpish:
-		say "[line break]Hmm. That wasn't very loud. Maybe that's something you don't need to get rid of, but it'd be nice.";
+		say "[line break]Hmm. That wasn't very loud. Maybe you don't need to deal with [the noun], but it'd be nice.";
 		now beep-llp-yet is true;
 	now beep-yet is true;
 
@@ -673,7 +673,7 @@ instead of thinking:
 			say "[remind-msg entry][line break]";
 			now got-later-use is true;
 	if got-later-use is false, say "You don't have anything you figured out but didn't quite have the items for.";
-	if number of beep-think things > 0, say "You need to do something weird to get by [list of beep-think things].";
+	if number of beep-think things > 0, say "You need to do something weird to deal with [the list of beep-think things].";
 	let wayoutrooms be 0;
 	repeat with Q running through available rooms:
 		if Q is unvisited and Q is not in Odd Do:
@@ -2057,7 +2057,8 @@ instead of doing something when second noun is a peripheral thing:
 
 instead of doing something with a peripheral thing:
 	if action is procedural, continue the action;
-	if current action is stacking and noun is senile felines, continue the action; [?? horrid hack]
+	if current action is stacking and noun is senile felines, continue the action; [?? horrid hack for LLP here and below]
+	if current action is mussing and noun is opossum, continue the action;
 	blanket-reject noun instead;
 
 instead of useoning something with a peripheral thing:
@@ -2106,6 +2107,7 @@ leet steel	"You want to focus on the Knife Fink and not the leet steel."
 senile felines	"You don't have to do anything standard with the senile felines. In fact, you should think of them as cats."
 late petal	"You don't need to do anything with the late petal. Perhaps you could help the felines, uh, cats reach it?"
 link nil	"There's nothing you need behind the Link Nil security system. Some things are better left imagined."
+opossum	"The opossum is just there to (optionally) be nice to, in a special way."
 part strap	"You want to focus on the Verses Rev and not the part strap."
 pool gloop	"Fortunately, you don't need to do anything special to or with the pool gloop."
 Sci Pics	"They are just there to [if Gorge Grog is moot]rehash what happened[else]spell out what happens[end if] if you go pouring random explosive liquids down the butene tub."
@@ -4348,7 +4350,7 @@ Trapeze Part is west of Evaded Ave. It is in Yelpley. "[if epicer recipe is off-
 
 chapter ten level net
 
-the ten level net is scenery in Trapeze Part. "[if epicer recipe is off-stage]It doesn't quite look sturdy enough. Maybe you could do something to fix it. For all its seeming complexity, it's really just a net, and you probably don't need any crazy tool to make sure it's safe[else]It was sturdy enough to help you get the epicer recipe, and that's enough[end if]."
+the ten level net is beepy scenery in Trapeze Part. "[if epicer recipe is off-stage]It doesn't quite look sturdy enough. Maybe you could do something to fix it. For all its seeming complexity, it's really just a net, and you probably don't need any crazy tool to make sure it's safe[else]It was sturdy enough to help you get the epicer recipe, and that's enough[end if]."
 
 check taking the level net: say "But then you couldn't get across it without serious risk!" instead;
 
@@ -4933,6 +4935,11 @@ this is the grid-unavail rule:
 	the rule fails;
 
 volume chases
+
+every turn (this is the don't increment trivial turns rule):
+	if action is procedural or chase-mulligan is true, decrement turn count;
+
+the don't increment trivial turns rule is listed first in the every turn rulebook.
 
 after going when being-chased is true:
 	if x-it stix are in location of player, say "X-it Stix X out the way [if Fun Nuf is room east of location of player]east[else]west[end if]. It's probably bad for the [chase-person] to get loose in [if player is in Yawn Way]Grebeberg[else]Yelpley[end if].";
