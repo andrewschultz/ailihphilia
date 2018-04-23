@@ -85,7 +85,9 @@ test m4 with "get all/use cup on grail/liar trail/n/w/w/w/n/e/use puce cup on do
 
 test ma with "test m1/test m2/test m3/test m4".
 
-test beeps with "gonear rob/x rob/bore rob/gonear ian/x ian/nail ian/gonear ned/x ned/deny ned/gonear dave/x dave/evade dave/purloin nats/x nats/stand nats/purloin spur ups/x ups/pull up/purloin murdered rum/purloin yard ray/x ray/use rum on ray/x ray/gonear yak/x yak/gonear felines/x felines/stack cats/gonear opossum/x opossum/muss opossum/gonear ten level net/x ten level net/tend net".
+test beep1 with "gonear rob/x rob/gonear ian/nail ian/gonear ned/x ned/deny ned/gonear dave/x dave/purloin nats/x nats/purloin spur ups/x ups/purloin murdered rum/purloin yard ray/x ray/use rum on ray/x ray/gonear yak/x yak/gonear felines/x felines/gonear opossum/x opossum/gonear ten level net/x ten level net/think".
+test beep2 with "gonear rob/bore rob/gonear ian/nail ian/gonear ned/deny ned/gonear dave/evade dave/stand nats/gonear yawn way/pull up/abstract test set to yawn way/use ray on test set/gonear felines/stack cats/gonear opossum/muss opossum/gonear ten level net/tend net/gonear yak/purloin brag garb/purloin troll ort/use ort on garb/n/gonear dumb mud/gonear swamp maws/s/s/okay yak/think".
+test beeps with "test beep1/test beep2".
 
 Ailihphilia Tests ends here.
 
