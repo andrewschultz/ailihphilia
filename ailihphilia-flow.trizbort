@@ -12,24 +12,24 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 </history>
 	</info>
 	<map>
-		<room id="1" name="PACK CAP" subtitle="" x="64" y="256" w="96" h="64" region="Verb Guessing" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isStartRoom="yes" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="2" name="USE PARTY TRAP ON STARK RATS" subtitle="" x="224" y="0" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="4" name="EVADE DAVE" subtitle="" x="-96" y="256" w="96" h="64" region="Verb Guessing" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="6" name="BORE ROB" subtitle="" x="-96" y="128" w="96" h="64" region="Verb Guessing" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="1" name="PACK CAP" subtitle="" x="64" y="256" w="96" h="64" region="Dim Mid" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isStartRoom="yes" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="2" name="USE PARTY TRAP ON STARK RATS" subtitle="" x="224" y="0" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="4" name="EVADE DAVE" subtitle="" x="-96" y="256" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="6" name="BORE ROB" subtitle="" x="-96" y="128" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="7" name="" description="" flow="oneWay">
 			<dock index="0" id="4" port="n" />
 			<dock index="1" id="6" port="s" />
 		</line>
-		<room id="8" name="USE REP POPPER ON ME TOTEM" subtitle="" x="544" y="-512" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="8" name="USE REP POPPER ON ME TOTEM" subtitle="" x="544" y="-512" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dot" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-40" customDown="0">GET MURDERED RUM</objects>
 		</room>
-		<room id="9" name="USE BRO ORB ON MIRROR RIM" subtitle="" x="544" y="-384" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="9" name="USE BRO ORB ON MIRROR RIM" subtitle="" x="544" y="-384" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-36" customDown="0">GET YARD RAY</objects>
 		</room>
-		<room id="10" name="USE TNT ON ORE ZERO" subtitle="" x="864" y="-128" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="10" name="USE TNT ON ORE ZERO" subtitle="" x="864" y="-128" w="96" h="64" region="Dim Mid" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>North Tron</objects>
 		</room>
-		<room id="11" name="USE MURDERED RUM ON YARD RAY" subtitle="" x="704" y="-512" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="11" name="USE MURDERED RUM ON YARD RAY" subtitle="" x="704" y="-512" w="96" h="64" region="Dim Mid" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="12" name="" description="" flow="oneWay">
 			<dock index="0" id="9" port="ne" />
 			<dock index="1" id="11" port="sw" />
@@ -38,7 +38,7 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="8" port="e" />
 			<dock index="1" id="11" port="w" />
 		</line>
-		<room id="14" name="EMIT NOONTIME" subtitle="" x="864" y="-256" w="96" h="64" region="Verb Guessing" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="14" name="EMIT NOONTIME" subtitle="" x="864" y="-256" w="96" h="64" region="Dim Mid" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="15" name="" description="" flow="oneWay">
 			<dock index="0" id="10" port="n" />
 			<dock index="1" id="14" port="s" />
@@ -47,14 +47,14 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="11" port="se" />
 			<dock index="1" id="14" port="nw" />
 		</line>
-		<room id="17" name="USE X-ITE TIX ON TIX EXIT" subtitle="" x="1024" y="-768" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isEndRoom="yes" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="19" name="USE SNACK CANS ON UFO TOFU" subtitle="" x="704" y="128" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="20" name="WORD ROW" subtitle="" x="-96" y="0" w="96" h="64" region="Verb Guessing" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="17" name="USE X-ITE TIX ON TIX EXIT" subtitle="" x="1024" y="-768" w="96" h="64" region="Dim Mid" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isEndRoom="yes" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="19" name="USE SNACK CANS ON UFO TOFU" subtitle="" x="704" y="128" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="20" name="WORD ROW" subtitle="" x="-96" y="0" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="21" name="" description="" flow="oneWay">
 			<dock index="0" id="6" port="n" />
 			<dock index="1" id="20" port="s" />
 		</line>
-		<room id="22" name="WORK ROW" subtitle="" x="64" y="128" w="96" h="64" region="Verb Guessing" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="22" name="WORK ROW" subtitle="" x="64" y="128" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="23" name="" description="" flow="oneWay">
 			<dock index="0" id="6" port="e" />
 			<dock index="1" id="22" port="w" />
@@ -63,7 +63,7 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="1" port="w" />
 			<dock index="1" id="4" port="e" />
 		</line>
-		<room id="5" name="USE TRAP ART ON REIFIER" subtitle="" x="224" y="128" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="5" name="USE TRAP ART ON REIFIER" subtitle="" x="224" y="128" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="24" name="" description="" flow="oneWay">
 			<dock index="0" id="22" port="e" />
 			<dock index="1" id="5" port="w" />
@@ -72,35 +72,35 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="5" port="n" />
 			<dock index="1" id="2" port="s" />
 		</line>
-		<room id="26" name="USE POO COOP ON GNU DUNG" subtitle="" x="384" y="-128" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="27" name="USE GOLD LOG ON ROTATOR" subtitle="" x="704" y="-896" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="26" name="USE POO COOP ON GNU DUNG" subtitle="" x="384" y="-128" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="27" name="USE GOLD LOG ON ROTATOR" subtitle="" x="704" y="-896" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects at="n" custom="yes" customRight="-40" customDown="0" />
 		</room>
-		<room id="28" name="USE DORK ROD ON TAO BOAT" subtitle="" x="704" y="-768" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="29" name="USE STINKY KNITS ON ROTATOR" subtitle="" x="-96" y="-256" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="30" name="USE ELAN ALE ON SNIFFINS" subtitle="" x="1024" y="0" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Gorge Grog" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="31" name="USE ERODED ORE ON REVIVER" subtitle="" x="704" y="-128" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="32" name="USE SHARP RAHS ON GURU RUG" subtitle="" x="384" y="-384" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="28" name="USE DORK ROD ON TAO BOAT" subtitle="" x="704" y="-768" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="29" name="USE STINKY KNITS ON ROTATOR" subtitle="" x="-96" y="-256" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="30" name="USE ELAN ALE ON SNIFFINS" subtitle="" x="1024" y="0" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="Gorge Grog" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="31" name="USE ERODED ORE ON REVIVER" subtitle="" x="704" y="-128" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="32" name="USE SHARP RAHS ON GURU RUG" subtitle="" x="384" y="-384" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="33" name="DIAL AID" subtitle="" x="-96" y="-640" w="96" h="64" region="Misc Points" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="34" name="POOP" subtitle="Boob/Pap too" x="64" y="-896" w="96" h="64" region="Misc Points" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="35" name="REFER" subtitle="" x="-96" y="-896" w="96" h="64" region="Misc Points" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="36" name="USE STOCK COTS ON SLEEP EELS" subtitle="" x="224" y="-128" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="36" name="USE STOCK COTS ON SLEEP EELS" subtitle="" x="224" y="-128" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>Can visit Swamp Maws</objects>
 		</room>
-		<room id="37" name="PACE CAP" subtitle="" x="224" y="256" w="96" h="64" region="Verb Guessing" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="37" name="PACE CAP" subtitle="" x="224" y="256" w="96" h="64" region="Dim Mid" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="38" name="" description="" flow="oneWay">
 			<dock index="0" id="1" port="e" />
 			<dock index="1" id="37" port="w" />
 		</line>
-		<room id="39" name="DENY NED" subtitle="" x="1024" y="256" w="96" h="64" region="Verb Guessing" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="40" name="TEND NET" subtitle="" x="1184" y="-384" w="96" h="64" region="Verb Guessing" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="45" name="STAND NAT'S" subtitle="" x="544" y="-768" w="96" h="64" region="Verb Guessing" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="46" name="PULL UP" subtitle="" x="384" y="-640" w="96" h="64" region="Verb Guessing" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="39" name="DENY NED" subtitle="" x="1024" y="256" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="40" name="TEND NET" subtitle="" x="1184" y="-384" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="45" name="STAND NAT'S" subtitle="" x="544" y="-768" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="46" name="PULL UP" subtitle="" x="384" y="-640" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="47" name="" description="" flow="oneWay">
 			<dock index="0" id="46" port="se" />
 			<dock index="1" id="9" port="nw" />
 		</line>
-		<room id="48" name="NAIL IAN" subtitle="" x="544" y="0" w="96" h="64" region="Verb Guessing" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="48" name="NAIL IAN" subtitle="" x="544" y="0" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dot" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="49" name="Get Rep Popper" subtitle="" x="704" y="-640" w="96" h="64" region="No Points" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="50" name="" description="" flow="oneWay">
 			<dock index="0" id="28" port="s" />
@@ -110,8 +110,8 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="49" port="sw" />
 			<dock index="1" id="8" port="ne" />
 		</line>
-		<room id="52" name="USE SPA MAPS ON CODE DOC" subtitle="" x="64" y="-384" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="53" name="USE SPA MAPS ON GO-BY BOG" subtitle="" x="64" y="-512" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="52" name="USE SPA MAPS ON CODE DOC" subtitle="" x="64" y="-384" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="53" name="USE SPA MAPS ON GO-BY BOG" subtitle="" x="64" y="-512" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="56" name="Get Bro Orb" subtitle="" x="384" y="-256" w="96" h="64" region="No Points" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="57" name="" description="" flow="oneWay">
 			<dock index="0" id="32" port="s" />
@@ -121,32 +121,32 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="56" port="ne" />
 			<dock index="1" id="9" port="sw" />
 		</line>
-		<room id="59" name="USE EL DOODLE ON EDITS TIDE" subtitle="" x="-96" y="-512" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="59" name="USE EL DOODLE ON EDITS TIDE" subtitle="" x="-96" y="-512" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="60" name="" description="" flow="oneWay">
 			<dock index="0" id="59" port="se" />
 			<dock index="1" id="52" port="nw" />
 		</line>
-		<room id="61" name="USE PUCE CUP ON DOSE SOD" subtitle="" x="1184" y="128" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="62" name="USE PUCE CUP ON BOND NOB" subtitle="" x="1184" y="0" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="61" name="USE PUCE CUP ON DOSE SOD" subtitle="" x="1184" y="128" w="96" h="64" region="No Points" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dot" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="62" name="USE PUCE CUP ON BOND NOB" subtitle="" x="1184" y="0" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="63" name="" description="" flow="oneWay">
 			<dock index="0" id="61" port="n" />
 			<dock index="1" id="62" port="s" />
 		</line>
-		<room id="64" name="USE DEMO MED ON GULF LUG" subtitle="" x="704" y="256" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="65" name="USE CASH SAC ON CROSS ORC" subtitle="" x="864" y="256" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="64" name="USE DEMO MED ON GULF LUG" subtitle="" x="704" y="256" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="65" name="USE CASH SAC ON CROSS ORC" subtitle="" x="864" y="256" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="66" name="" description="" flow="oneWay">
 			<dock index="0" id="65" port="e" />
 			<dock index="1" id="39" port="w" />
 		</line>
-		<room id="67" name="USE RADAR ON MADE DAM" subtitle="" x="544" y="-128" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="68" name="USE NULL ILLUN ON KNOWN WONK" subtitle="" x="544" y="-896" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="69" name="USE TROLL ORT ON BRAG GARB" subtitle="" x="64" y="-256" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="70" name="USE YE KEY ON ETAGE GATE" subtitle="" x="1024" y="128" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="67" name="USE RADAR ON MADE DAM" subtitle="" x="544" y="-128" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="68" name="USE NULL ILLUN ON KNOWN WONK" subtitle="" x="544" y="-896" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="69" name="USE TROLL ORT ON BRAG GARB" subtitle="" x="64" y="-256" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="70" name="USE YE KEY ON ETAGE GATE" subtitle="" x="1024" y="128" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="71" name="" description="" flow="oneWay">
 			<dock index="0" id="39" port="n" />
 			<dock index="1" id="70" port="s" />
 		</line>
-		<room id="72" name="USE BUNK NUB ON REVIVER" subtitle="" x="64" y="-128" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="72" name="USE BUNK NUB ON REVIVER" subtitle="" x="64" y="-128" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="73" name="" description="" flow="oneWay">
 			<dock index="0" id="72" port="e" />
 			<dock index="1" id="36" port="w" />
@@ -155,7 +155,7 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="36" port="e" />
 			<dock index="1" id="26" port="w" />
 		</line>
-		<room id="75" name="YAK OKAY" subtitle="" x="224" y="-256" w="96" h="64" region="Verb Guessing" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="75" name="YAK OKAY" subtitle="" x="224" y="-256" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dot" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>(need Pace Cap)|(Ergot Ogre leaves)</objects>
 		</room>
 		<line id="77" name="" description="" flow="oneWay">
@@ -186,13 +186,13 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="68" port="se" />
 			<dock index="1" id="28" port="nw" />
 		</line>
-		<room id="85" name="USE TO IDIOT ON DOOR FROOD" subtitle="" x="64" y="0" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="86" name="USE EXAM AXE ON LIE VEIL" subtitle="" x="544" y="-256" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="85" name="USE TO IDIOT ON DOOR FROOD" subtitle="" x="64" y="0" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="86" name="USE EXAM AXE ON LIE VEIL" subtitle="" x="544" y="-256" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="87" name="" description="" flow="oneWay">
 			<dock index="0" id="86" port="w" />
 			<dock index="1" id="56" port="e" />
 		</line>
-		<room id="88" name="USE RADAR ON CRAG ARC" subtitle="" x="864" y="128" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="88" name="USE RADAR ON CRAG ARC" subtitle="" x="864" y="128" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>UFO tofu</objects>
 		</room>
 		<line id="89" name="" description="" flow="oneWay">
@@ -203,7 +203,7 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="65" port="n" />
 			<dock index="1" id="88" port="s" />
 		</line>
-		<room id="91" name="PUFF UP" subtitle="" x="384" y="-768" w="96" h="64" region="Verb Guessing" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="91" name="PUFF UP" subtitle="" x="384" y="-768" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="92" name="" description="" flow="oneWay">
 			<dock index="0" id="91" port="s" />
 			<dock index="1" id="46" port="n" />
@@ -220,12 +220,12 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="67" port="e" />
 			<dock index="1" id="31" port="w" />
 		</line>
-		<room id="96" name="USE EPOCH COPE ON KING NIK" subtitle="" x="384" y="-896" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="96" name="USE EPOCH COPE ON KING NIK" subtitle="" x="384" y="-896" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="97" name="" description="" flow="oneWay">
 			<dock index="0" id="96" port="s" />
 			<dock index="1" id="91" port="n" />
 		</line>
-		<room id="98" name="USE ELOPE POLE ON KAYAK" subtitle="" x="1024" y="-256" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="98" name="USE ELOPE POLE ON KAYAK" subtitle="" x="1024" y="-256" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="99" name="" description="" flow="oneWay">
 			<dock index="0" id="40" port="sw" />
 			<dock index="1" id="98" port="ne" />
@@ -235,32 +235,32 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="48" port="se" />
 			<dock index="1" id="19" port="nw" />
 		</line>
-		<room id="103" name="USE YARD RAY ON TEST SET" subtitle="" x="864" y="-384" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="103" name="USE YARD RAY ON TEST SET" subtitle="" x="864" y="-384" w="96" h="64" region="Dim Mid" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="104" name="" description="" flow="oneWay">
 			<dock index="0" id="14" port="n" />
 			<dock index="1" id="103" port="s" />
 		</line>
-		<room id="18" name="USE YARD RAY ON REDIVIDER" subtitle="" x="1024" y="-640" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="18" name="USE YARD RAY ON REDIVIDER" subtitle="" x="1024" y="-640" w="96" h="64" region="Dim Mid" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="107" name="" description="" flow="oneWay">
 			<dock index="0" id="18" port="n" />
 			<dock index="1" id="17" port="s" />
 		</line>
 		<room id="105" name="PEEP" subtitle="" x="-96" y="-768" w="96" h="64" region="Misc Points" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="108" name="USE TENT NET ON CODE DOC" subtitle="" x="-96" y="-384" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="108" name="USE TENT NET ON CODE DOC" subtitle="" x="-96" y="-384" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="109" name="" description="" flow="oneWay">
 			<dock index="0" id="108" port="e" />
 			<dock index="1" id="52" port="w" />
 		</line>
-		<room id="110" name="USE PUCE CUP ON PAST SAP" subtitle="No points" x="224" y="-768" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="#00FFFF" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="111" name="USE PUCE CUP ON LIAR GRAIL" subtitle="" x="224" y="-896" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="110" name="USE PUCE CUP ON PAST SAP" subtitle="No points" x="224" y="-768" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="#00FFFF" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="111" name="USE PUCE CUP ON LIAR GRAIL" subtitle="" x="224" y="-896" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="112" name="" description="" flow="oneWay">
 			<dock index="0" id="110" port="n" />
 			<dock index="1" id="111" port="s" />
 		</line>
-		<room id="42" name="USE GIFT FIG ON MAYO YAM" subtitle="" x="704" y="0" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="117" name="USE DNA BAND ON REIFIER" subtitle="" x="1184" y="-256" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="118" name="USE ROTO MOTOR ON DNA HAND" subtitle="" x="1184" y="-128" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="120" name="USE MR ARM ON BOMB MOB" subtitle="" x="1024" y="-128" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="42" name="USE GIFT FIG ON MAYO YAM" subtitle="" x="704" y="0" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="117" name="USE DNA BAND ON REIFIER" subtitle="" x="1184" y="-256" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="118" name="USE ROTO MOTOR ON DNA HAND" subtitle="" x="1184" y="-128" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="120" name="USE MR ARM ON BOMB MOB" subtitle="" x="1024" y="-128" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="119" name="" description="" flow="oneWay">
 			<dock index="0" id="117" port="s" />
 			<dock index="1" id="118" port="n" />
@@ -273,12 +273,12 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="120" port="w" />
 			<dock index="1" id="10" port="e" />
 		</line>
-		<room id="41" name="USE YOU BUOY ON ROTATOR" subtitle="" x="1024" y="-384" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="41" name="USE YOU BUOY ON ROTATOR" subtitle="" x="1024" y="-384" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="100" name="" description="" flow="oneWay">
 			<dock index="0" id="98" port="n" />
 			<dock index="1" id="41" port="s" />
 		</line>
-		<room id="123" name="USE ME GEM ON KNIFE FINK" subtitle="" x="1024" y="-512" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="123" name="USE ME GEM ON KNIFE FINK" subtitle="" x="1024" y="-512" w="96" h="64" region="Dim Mid" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="124" name="" description="" flow="oneWay">
 			<dock index="0" id="123" port="n" />
 			<dock index="1" id="18" port="s" />
@@ -291,13 +291,13 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="103" port="ne" />
 			<dock index="1" id="123" port="sw" />
 		</line>
-		<room id="127" name="USE TABOO BAT ON VERSES REV" subtitle="" x="864" y="-512" w="96" h="64" region="End OK" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="127" name="USE TABOO BAT ON VERSES REV" subtitle="" x="864" y="-512" w="96" h="64" region="Dim Mid" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="128" name="" description="" flow="oneWay">
 			<dock index="0" id="103" port="n" />
 			<dock index="1" id="127" port="s" />
 		</line>
-		<room id="129" name="USE GATE TAG ON SOOT TATTOOS" subtitle="" x="384" y="-512" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="44" name="USE NAT'S TAN ON SCORN ROCS" subtitle="" x="544" y="-640" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="129" name="USE GATE TAG ON SOOT TATTOOS" subtitle="" x="384" y="-512" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="44" name="USE NAT'S TAN ON SCORN ROCS" subtitle="" x="544" y="-640" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="130" name="" description="" flow="oneWay">
 			<dock index="0" id="45" port="s" />
 			<dock index="1" id="44" port="n" />
@@ -306,8 +306,8 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="44" port="s" />
 			<dock index="1" id="8" port="n" />
 		</line>
-		<room id="82" name="USE SOME DEMOS ON YAHOO HAY" subtitle="" x="64" y="-640" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="132" name="USE STRAW ARTS ON REVOLT LOVER" subtitle="" x="224" y="-512" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="82" name="USE SOME DEMOS ON YAHOO HAY" subtitle="" x="64" y="-640" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#00FFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="132" name="USE STRAW ARTS ON REVOLT LOVER" subtitle="" x="224" y="-512" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="133" name="" description="" flow="oneWay">
 			<dock index="0" id="82" port="se" />
 			<dock index="1" id="132" port="nw" />
@@ -324,7 +324,7 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="127" port="ne" />
 			<dock index="1" id="18" port="sw" />
 		</line>
-		<room id="136" name="USE NOT-A-BATON ON REIFIER" subtitle="" x="864" y="-640" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="136" name="USE NOT-A-BATON ON REIFIER" subtitle="" x="864" y="-640" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="137" name="" description="" flow="oneWay">
 			<dock index="0" id="136" port="s" />
 			<dock index="1" id="127" port="n" />
@@ -337,7 +337,7 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="42" port="ne" />
 			<dock index="1" id="10" port="sw" />
 		</line>
-		<room id="115" name="USE POO COOP ON TURF RUT" subtitle="" x="384" y="0" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="115" name="USE POO COOP ON TURF RUT" subtitle="" x="384" y="0" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="116" name="" description="" flow="oneWay">
 			<dock index="0" id="115" port="e" />
 			<dock index="1" id="48" port="w" />
@@ -354,19 +354,19 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="52" port="sw" />
 			<dock index="1" id="29" port="ne" />
 		</line>
-		<room id="144" name="USE YOB ATTABOY ON SNIFFINS" subtitle="" x="384" y="128" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="145" name="USE DIRT RID ON REVIVER" subtitle="" x="384" y="256" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="146" name="USE MOOR BROOM ON TRU YURT" subtitle="" x="704" y="-256" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="144" name="USE YOB ATTABOY ON SNIFFINS" subtitle="" x="384" y="128" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="145" name="USE DIRT RID ON REVIVER" subtitle="" x="384" y="256" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="146" name="USE MOOR BROOM ON TRU YURT" subtitle="" x="704" y="-256" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="141" name="" description="" flow="oneWay">
 			<dock index="0" id="46" port="w" />
 			<dock index="1" id="171" port="e" />
 		</line>
-		<room id="150" name="USE STAMP MATS ON SLATE METALS" subtitle="" x="1184" y="256" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="150" name="USE STAMP MATS ON SLATE METALS" subtitle="" x="1184" y="256" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="151" name="" description="" flow="oneWay">
 			<dock index="0" id="150" port="nw" />
 			<dock index="1" id="70" port="se" />
 		</line>
-		<room id="152" name="USE PITY TIP ON EYE" subtitle="" x="544" y="128" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="152" name="USE PITY TIP ON EYE" subtitle="" x="544" y="128" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="153" name="" description="" flow="oneWay">
 			<dock index="0" id="152" port="e" />
 			<dock index="1" id="19" port="w" />
@@ -384,19 +384,19 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="1" id="103" port="e" />
 		</line>
 		<room id="158" name="BALM LAB" subtitle="" x="1184" y="-608" w="96" h="64" region="Misc Points" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="147" name="USE CAVE VAC ON CASSETTES SAC" subtitle="" x="544" y="256" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="147" name="USE CAVE VAC ON CASSETTES SAC" subtitle="" x="544" y="256" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="159" name="" description="" flow="oneWay">
 			<dock index="0" id="145" port="e" />
 			<dock index="1" id="147" port="w" />
 		</line>
-		<room id="160" name="USE BALSA SLAB ON SWORD ROWS" subtitle="" x="864" y="-768" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="160" name="USE BALSA SLAB ON SWORD ROWS" subtitle="" x="864" y="-768" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects at="n" custom="yes" customRight="-48" customDown="0" />
 		</room>
 		<line id="161" name="" description="" flow="oneWay">
 			<dock index="0" id="160" port="s" />
 			<dock index="1" id="136" port="n" />
 		</line>
-		<room id="162" name="USE ENACT CANE ON YAHOO HAY" subtitle="" x="704" y="-384" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="162" name="USE ENACT CANE ON YAHOO HAY" subtitle="" x="704" y="-384" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="163" name="" description="" flow="oneWay">
 			<dock index="0" id="162" port="s" />
 			<dock index="1" id="146" port="n" />
@@ -415,12 +415,12 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="147" port="ne" />
 			<dock index="1" id="88" port="sw" />
 		</line>
-		<room id="171" name="USE WASH SAW ON PAST SAP" subtitle="" x="224" y="-640" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="171" name="USE WASH SAW ON PAST SAP" subtitle="" x="224" y="-640" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="172" name="" description="" flow="oneWay">
 			<dock index="0" id="171" port="n" />
 			<dock index="1" id="110" port="s" />
 		</line>
-		<room id="173" name="USE SAGE GAS ON TAME MAT" subtitle="" x="224" y="-384" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="173" name="USE SAGE GAS ON TAME MAT" subtitle="" x="224" y="-384" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="55" name="" description="" flow="oneWay">
 			<dock index="0" id="53" port="se" />
 			<dock index="1" id="173" port="nw" />
@@ -438,7 +438,7 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="52" port="n" />
 			<dock index="1" id="53" port="s" />
 		</line>
-		<room id="142" name="WORN ROW" subtitle="" x="864" y="-896" w="96" h="64" region="Verb Guessing" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="142" name="WORN ROW" subtitle="" x="864" y="-896" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="#C0C0C0" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="143" name="" description="" flow="oneWay">
 			<dock index="0" id="142" port="w" />
 			<dock index="1" id="27" port="e" />
@@ -447,7 +447,7 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<dock index="0" id="62" port="w" />
 			<dock index="1" id="30" port="e" />
 		</line>
-		<room id="43" name="USE GORGE GROG ON BUTENE TUB" subtitle="" x="864" y="0" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
+		<room id="43" name="USE GORGE GROG ON BUTENE TUB" subtitle="" x="864" y="0" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Dash" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<line id="148" name="" description="" flow="oneWay">
 			<dock index="0" id="70" port="nw" />
 			<dock index="1" id="43" port="se" />
@@ -466,7 +466,7 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 		</line>
 		<room id="170" name="STACK CATS" subtitle="" x="1184" y="-896" w="96" h="64" region="Misc Points" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="177" name="SEE BEES" subtitle="" x="1184" y="-512" w="96" h="64" region="Misc Points" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
-		<room id="178" name="USE WASH SAW ON PORCH CROP" subtitle="" x="1024" y="-896" w="96" h="64" region="Standard" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+		<room id="178" name="USE WASH SAW ON PORCH CROP" subtitle="" x="1024" y="-896" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="BottomRight" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-48" customDown="0">(USE MOOR BROOM 1st)</objects>
 		</room>
 		<line id="179" name="" description="" flow="oneWay">
@@ -489,12 +489,13 @@ Color coding: white = work row, blue = book, green = standard, grey = guess the 
 			<endRoom>Red</endRoom>
 		</colors>
 		<regions>
-			<End____OK Name="End OK" TextColor="Black">Red</End____OK>
+			<Dim____Mid Name="Dim Mid" TextColor="Black">Red</Dim____Mid>
+			<Grebeberg Name="Grebeberg" TextColor="Black">Lime</Grebeberg>
 			<Misc____Points Name="Misc Points" TextColor="MidnightBlue">Yellow</Misc____Points>
 			<No____Points Name="No Points" TextColor="Black">#00FFFF</No____Points>
 			<NoRegion Name="NoRegion" TextColor="Black">White</NoRegion>
-			<Standard Name="Standard" TextColor="Black">Lime</Standard>
 			<Verb____Guessing Name="Verb Guessing" TextColor="MidnightBlue">Silver</Verb____Guessing>
+			<Yelpley Name="Yelpley" TextColor="Black">#FF8000</Yelpley>
 		</regions>
 		<fonts>
 			<room size="9.75">Arial</room>

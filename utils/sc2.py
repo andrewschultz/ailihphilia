@@ -31,6 +31,8 @@ test_file = "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/A
 
 obj_name_hash = { "ti": "TO IDIOT" }
 
+reg_to_border = { "yelpley": "dash", "dim mid": "solid", "grebeberg": "dot" }
+
 source_line_to_open = 0
 warning_story_line = 0
 warning_walkthrough_line = 0
@@ -63,6 +65,7 @@ trizflow_llp_rooms = defaultdict(int)
 invis_points = defaultdict(int)
 invis_region_points = defaultdict(int)
 source_region = defaultdict(str)
+flow_region = defaultdict(str)
 
 llp_commands = defaultdict(int)
 ignore_points = defaultdict(int)
@@ -429,6 +432,7 @@ def source_vs_trizbort_flow():
     summary_err = 0
     line_count = 0
     plus_one = 0
+    flo_region_errs = 0
     asterisked = defaultdict(int)
     with open(triz_flow) as file:
         for line in file:
@@ -452,12 +456,19 @@ def source_vs_trizbort_flow():
                     trizflow_llp_rooms[rn] = line_count
                 else:
                     use_in_trizflow[rn] = line_count
+                    floreg = re.sub(".*region=\"", "", line.strip().lower())
+                    floreg = re.sub("\".*", "", floreg)
+                    if floreg != source_region[rn]:
+                        print("Oops mismatched source/flow regions for", rn, "/", floreg, "/", source_region[rn])
+                        flo_region_errs = flo_region_errs + 1
             # print("Adding", rn)
+    if flo_region_errs > 0:
+        print(flo_region_errs, "region/border errors")
     for x in asterisked.keys():
         if x not in use_in_trizflow.keys():
             print(x, "has an asterisked flowchart entry but not a non-asterisked.")
     for x in list(set(use_in_trizflow.keys()) | set(use_in_source.keys())):
-        if x not in sorted(use_in_trizflow.keys()):
+        if x not in use_in_trizflow.keys() and x not in ignore_points.keys():
             print("ERROR: source not flow", x, "in source but not in trizbort flow file", triz_flow)
             summary_err = summary_err + 1
     for x in list(set(use_in_trizflow.keys()) | set(use_in_source.keys())):
