@@ -351,7 +351,9 @@ check dropping:
 to decide which region is mrlp:
 	decide on map region of location of player;
 
-part scoring
+part scoring and turn count
+
+chapter mostly scoring
 
 to score-inc:
 	if debug-state is true, say "DEBUG standard score-inc.";
@@ -414,6 +416,25 @@ to say regres of (re - a region):
 		say "extra points";
 	else:
 		say "for [re][if mrlp is re] (current region)[end if]"
+
+chapter turn count
+
+every turn (this is the don't increment trivial turns rule):
+	if action is procedural or chase-mulligan is true, decrement turn count;
+
+the don't increment trivial turns rule is listed first in the every turn rulebook.
+
+this is the check palindrome turns rule: [this could be at the end but those are item based rules]
+	let Q be "[turn count]";
+	let Z be number of characters in Q;
+	let i be 1;
+	let pal-turns be true;
+	while i <= Z / 2:
+		if character number i in Q is not character number (Z + 1 - i) in Q, now pal-turns is false;
+		increment i;
+	say "You scored [score] of [maximum score] points in [turn count] moves. [if pal-turns is false]That's not perfectly cosmically in tune--your turns weren't a palindrome--but it'll do.[else]You are cosmically in tune! Even your turn count was a palindrome![end if]";
+
+the check palindrome turns rule is listed instead of the print final score rule in for printing the player's obituary.
 
 part when play begins
 
@@ -2048,18 +2069,6 @@ this is the you-win rule: [xxwin]
 [zzwin]
 
 [zzpost]
-
-this is the check palindrome turns rule:
-	let Q be "[turn count]";
-	let Z be number of characters in Q;
-	let i be 1;
-	let pal-turns be true;
-	while i <= Z / 2:
-		if character number i in Q is not character number (Z + 1 - i) in Q, now pal-turns is false;
-		increment i;
-	say "You scored [score] of [maximum score] points in [turn count] moves. [if pal-turns is false]That's not perfectly cosmically in tune--your turns weren't a palindrome--but it'll do.[else]You are cosmically in tune! Even your turn count was a palindrome![end if]";
-
-the check palindrome turns rule is listed instead of the print final score rule in for printing the player's obituary.
 
 chapter peripherals
 
@@ -4947,11 +4956,6 @@ this is the grid-unavail rule:
 	the rule fails;
 
 volume chases
-
-every turn (this is the don't increment trivial turns rule):
-	if action is procedural or chase-mulligan is true, decrement turn count;
-
-the don't increment trivial turns rule is listed first in the every turn rulebook.
 
 after going when being-chased is true:
 	if x-it stix are in location of player, say "X-it Stix X out the way [if Fun Nuf is room east of location of player]east[else]west[end if]. It's probably bad for the [chase-person] to get loose in [if player is in Yawn Way]Grebeberg[else]Yelpley[end if].";
