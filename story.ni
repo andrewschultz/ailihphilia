@@ -358,7 +358,7 @@ to score-inc:
 	reg-inc mrlp;
 
 check requesting the score:
-	say "Your overall score so far is [score] of [maximum score][if score < 4]. But don't worry, points pile up pretty quickly once you get going[end if]. [to-get-max].";
+	say "Your overall score so far is [score] of [maximum score] in [turn count] turn[unless turn count is 1]s[end if][if score < 4]. But don't worry, points pile up pretty quickly once you get going[end if]. [to-get-max].";
 	say "Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do].";
 	if My Gym is visited or Evaded Ave is visited:
 		if number of guhthugs is not number of moot guhthugs, say "You currently disposed of [number of moot guhthugs] grunts blocking your way: [list of moot guhthugs].";
@@ -2048,6 +2048,18 @@ this is the you-win rule: [xxwin]
 [zzwin]
 
 [zzpost]
+
+this is the check palindrome turns rule:
+	let Q be "[turn count]";
+	let Z be number of characters in Q;
+	let i be 1;
+	let pal-turns be true;
+	while i <= Z / 2:
+		if character number i in Q is not character number (Z + 1 - i) in Q, now pal-turns is false;
+		increment i;
+	say "You scored [score] of [maximum score] points in [turn count] moves. [if pal-turns is false]That's not perfectly cosmically in tune--your turns weren't a palindrome--but it'll do.[else]You are cosmically in tune! Even your turn count was a palindrome![end if]";
+
+the check palindrome turns rule is listed instead of the print final score rule in for printing the player's obituary.
 
 chapter peripherals
 
