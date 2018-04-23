@@ -71,12 +71,15 @@ a thing can be peripheral, semiperipheral or integral. a thing is usually integr
 
 a thing can be ordinary, beepy or llpish. a thing is usually ordinary.
 
+a thing can be beeped. a thing is usually not beeped.
+
 beep-yet is a truth state that varies.
 beep-llp-yet is a truth state that varies.
 
 after examining a not ordinary thing:
-	if cap-vol is true, continue the action;
+	if cap-vol is false, continue the action;
 	say "You hear [if beep-yet is false]an odd[else]that weird[end if] [if noun is llpish]but very quiet [end if]BEE-BOO-BEEB from [if beep-yet is false]somewhere. It seems like [end if]the inside of your pac[if cap-pace is true]e[else]t[end if] cap[if beep-yet is true] again[end if].";
+	now noun is beeped;
 	if beep-llp-yet is false and noun is llpish:
 		say "[line break]Hmm. That wasn't very loud. Maybe that's something you don't need to get rid of, but it'd be nice.";
 		now beep-llp-yet is true;
@@ -100,7 +103,7 @@ section examining
 
 a thing can be nox or xed. A thing is usually nox.
 
-after examining:
+after examining (this is the nox to xed rule):
 	if the noun provides the property xed, now the noun is xed;
 	continue the action;
 
@@ -654,6 +657,11 @@ definition: a room (called rm) is available:
 	if the rule succeeded, yes;
 	no;
 
+definition: a thing (called x) is beep-think:
+	if x is moot, no;
+	if x is beeped, yes;
+	no;
+
 instead of thinking:
 	if thought-yet is false, say "A knihtg (sic) appears and taps you on the shoulder, and you suddenly recall big-picture things.";
 	let LLP-yet be false;
@@ -665,6 +673,7 @@ instead of thinking:
 			say "[remind-msg entry][line break]";
 			now got-later-use is true;
 	if got-later-use is false, say "You don't have anything you figured out but didn't quite have the items for.";
+	if number of beep-think things > 0, say "You need to do something weird to get by [list of beep-think things].";
 	let wayoutrooms be 0;
 	repeat with Q running through available rooms:
 		if Q is unvisited and Q is not in Odd Do:
@@ -2513,6 +2522,7 @@ carry out emiting:
 		say "FOOM! Oof! The yard ray emits so much light, you immediately have to switch it off. Well, that was a good start. Now you want to make sure you can aim it at something that can be destroyed.";
 		now emitted is true;
 		reg-inc Dim Mid; [EMIT NOONTIME]
+		consider the cap-beep rules for the yard ray;
 		the rule succeeds;
 	if the topic understood matches "time":
 		say "Yes, but what sort of time? Something positive and cheery, you'd guess." instead;
@@ -2870,6 +2880,7 @@ carry out yakokaying:
 		say "The kayo yak surges at the ergot ogre and knocks it over with a few ... smart rams! The ergot won't spread to the yak's horns, so that's good. The ogre dusts itself off and walks away, damp, mad. The yak, for its part, looks relaxed--almost like a tao goat--and heads off, not to the Frush Surf, but somewhere calmer.[paragraph break]You think you hear an elk cackle in the distance.[paragraph break]Whew! That's enough exercise. You readjust your pace cap back to a pact cap.";
 		score-inc; [Grebeberg/YAK OKAY]
 		banish-ogre;
+		consider the cap-beep rules for the kayo yak;
 		the rule succeeds;
 	if yak is in location of player:
 		if being-chased is true, now chase-mulligan is true;
@@ -4953,7 +4964,9 @@ to say no-time-note:
 	say "When you are in a chase[if being-chased is true], like right now[end if], commands like X/EXAMINE and I/INVENTORY and even THINK/AID (if you must) will take no time"
 
 every turn when being-chased is true:
-	if current action is procedural, continue the action;
+	if action is procedural:
+		if debug-state is true, say "[current action].";
+		continue the action;
 	if init-turn is false:
 		say "You'd better get a move on. The [chase-person] looks pretty agitated.";
 		now init-turn is true;
