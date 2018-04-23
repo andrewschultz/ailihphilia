@@ -11,7 +11,7 @@ Second, Ailihphilia tables.i7x contains responses to mistakes e.g. palindrome ve
 Put an x or two before each of these to find the beginning of a table, ZZ for the end:
 START XX/ZZ DIR
 CANT for can't-use default messages
-USE for the Table of Useons (USE X ON Y gives a point)
+USE / GOOD for the table of goodacts (USE X ON Y gives a point, or other things in REV OVER)
 UR for use redirect
 BKR for bookrejects
 PSR for person specific rejects
@@ -20,8 +20,8 @@ LAT for later uses
 TALK for talk texts
 WIN for winning the game
 PER for table of periphery
-PRE for pre-rules in the table of useons
-POST for post-rules in the table of useons
+PRE for pre-rules in the table of goodacts
+POST for post-rules in the table of goodacts
 LLP for last lousy points
 
 to search for an item, look for chapter [item].
@@ -1325,7 +1325,7 @@ check useoning it with:
 				move player to Fun Nuf, without printing a room description;
 			score-inc; [Dim Mid/USE TNT ON ORE ZERO]
 			build-the-tron instead;
-	repeat through table of useons:
+	repeat through table of goodacts:
 		if there is no use1 entry, next;
 		if there is no use2 entry and debug-state is true:
 			say "WARNING: there is a blank use2 entry with use1 of [use1 entry].";
@@ -1414,7 +1414,7 @@ a machine message rule for a thing (called t):
 	if t is nat's tan, say "Nat's Tan is pretty much hopeless. You'll need to fob it off on someone or something." instead;
 	if t is listed in postmachines:
 		say "The [second noun] hums ominously as you bring [the t] close. You already used a machine to make [the t]. Maybe you should do something else." instead;
-	repeat through table of useons:
+	repeat through table of goodacts:
 		unless there is a use1 entry, next;
 		if use2 entry is not a workable, next;
 		unless there is a use3 entry, next; [?? should never happen]
@@ -1444,7 +1444,7 @@ tao boat	"You sense that the tao boat requires more than just wordy knowledge. I
 [zzbr]
 
 [??table of generic fails for if an item has something that works with it]
-[?? perl script to make sure nothing in the cantuse is in the use1 or use2 slot of table of useons]
+[?? perl script to make sure nothing in the cantuse is in the use1 or use2 slot of table of goodacts]
 
 table of cantuse [xxcant]
 use1	babble
@@ -1583,11 +1583,11 @@ wash saw	rift fir	past sap	--
 wordy drow	puce cup	liar grail	--
 TNT	Mr Arm	bomb mob	--
 
-section table of useons
+section table of goodacts
 
-[the table of useons approximately follows not only the test commands but also the walkthrough]
+[the table of goodacts approximately follows not only the test commands but also the walkthrough]
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
-table of useons [xxuse]
+table of goodacts [xxuse] [xxgood]
 use1	use2 (an object)	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	babble
 --	--	--	rev-pack-cap rule	--	true	--	--	Dim Mid
 --	--	--	rev-evade-Dave rule	--	true	--	--	Yelpley
@@ -1668,7 +1668,7 @@ ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	"The Knife Fink pau
 taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	Dim Mid	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev knows what he's up against. It's not that it's particularly violent or lethal, but ... the Verses Rev has developed such a warped orthodoxy, the bat is much scarier than it should be. Nothing to do but turn and run!"
 Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	"'Havoc, OVAH!' you should as you aim and fire the yard ray.[paragraph break]Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who goes running off. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid is going to check for that now, but with the Kid gone, you see saner arenas all around. Revel, clever! Revel, ever![paragraph break]You don't notice the redivider exploding. When you wake up, it's much later. And you note something beside you: some X-ITE TIX fell out of the redivider! Wow! Yo, joy! Wow!"
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
-[zzuse]
+[zzuse] [zzgood]
 
 [the 3 sections below are automatically sorted with sc2.py]
 
@@ -4184,7 +4184,7 @@ cup-nerf is a truth state that varies.
 
 to no-extra-cup-points:
 	if cup-nerf is true, continue the action;
-	repeat through table of useons:
+	repeat through table of goodacts:
 		if there is a use1 entry:
 			if use1 entry is puce cup:
 				if use2 entry is dose sod or use2 entry is past sap, now sco entry is false;
@@ -5089,7 +5089,7 @@ carry out revovering:
 	now global-delay is 0;
 	let count be 0;
 	now revving-over is true;
-	repeat through table of useons:
+	repeat through table of goodacts:
 		increment count;
 		if there is a use1 entry and use1 entry is ME gem, break;
 		[say "Rows so far [count - 1], current score [score].";]
@@ -5742,7 +5742,7 @@ this is the got-machine-fodder rule:
 this is the find-machine rule:
 	repeat with Q running through machineables:
 		if player has Q:
-			repeat through table of useons:
+			repeat through table of goodacts:
 				if use1 entry is Q:
 					say "USE [printed name of use1 entry in upper case] ON [printed name of use2 entry in upper case].";
 					the rule succeeds;
@@ -6069,7 +6069,7 @@ understand the command "rr" as something new.
 understand "rr [something]" as rring.
 
 carry out rring:
-	repeat through table of useons: [It would be simpler to use an if statement but things could get shuffled in the table of useons. This assures that we try all possible machines before an item vanishes permanently.]
+	repeat through table of goodacts: [It would be simpler to use an if statement but things could get shuffled in the table of goodacts. This assures that we try all possible machines before an item vanishes permanently.]
 		if use2 entry is reviver and use1 entry is noun:
 			try useoning use1 entry with reifier;
 			try useoning use1 entry with rotator;
@@ -6120,7 +6120,7 @@ carry out iaing:
 	let got be 0;
 	if ia-yet is false:
 		now ia-yet is true;
-		repeat through table of useons:
+		repeat through table of goodacts:
 			if there is a getit entry:
 				now getit entry is not need-ia;
 	repeat with Q running through things:

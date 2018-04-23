@@ -138,7 +138,7 @@ def check_source_rule_order():
                 in_table = False
                 continue
             lary = re.split("\t+", line.strip())
-            if in_table and 'useons' in current_table and lary[0] == '--' and lary[1] == '--':
+            if in_table and 'goodacts' in current_table and lary[0] == '--' and lary[1] == '--':
                 if 'rule' in lary[3]:
                     alfcheck['xxrr'][re.sub(" rule.*", "", lary[3].lower())] = True
             if in_table and len(lary) > 5:
@@ -168,8 +168,8 @@ def check_source_rule_order():
                     errs = errs + 1
                 last_rule = cur_rule
                 last_line = line_count
-    print((errs if errs > 0 else "no"), "rule order errors for table of useons.")
-    print((extra_lines if extra_lines > 0 else "no"), "extra rules post-table of useons.")
+    print((errs if errs > 0 else "no"), "rule order errors for table of goodacts.")
+    print((extra_lines if extra_lines > 0 else "no"), "extra rules post-table of goodacts.")
     if rule_sections != 3: # hard coded ?? can we list the sections we want?
         print("Have", rule_sections, "rules but should have 3.")
 
@@ -403,7 +403,7 @@ def source_vs_invisiclues():
         elif x not in use_in_source.keys():
             if source_region[x] == 'odd do': continue
             if not main_err: print("=" * 40)
-            print("ERROR: Need this invisiclues main line in source(table of useons or [region/command]:", x)
+            print("ERROR: Need this invisiclues main line in source(table of goodacts or [region/command]:", x)
             main_err = main_err + 1
         elif verbose:
             print("Synced to main:", x)
@@ -416,7 +416,7 @@ def source_vs_invisiclues():
                 summary_err = summary_err + 1
             elif x not in use_in_source.keys() and x not in llp_commands.keys():
                 if not main_err and not summary_err: print ("=" * 40)
-                print("ERROR: Need this invisiclues summary line in source(table of useons or [region/command]:", x)
+                print("ERROR: Need this invisiclues summary line in source(table of goodacts or [region/command]:", x)
                 summary_err = summary_err + 1
             elif verbose:
                 print("Synced to summary:", x)
@@ -517,7 +517,7 @@ def source_vs_walkthrough():
             print("ERROR: Need this line in walkthrough:", x)
             any_err = any_err + 1
         elif x not in use_in_source.keys():
-            print("ERROR: (from walkthrough) Need this line in table of useons:", x)
+            print("ERROR: (from walkthrough) Need this line in table of goodacts:", x)
             any_err = any_err + 1
         elif verbose:
             print("Synced:", x)
@@ -530,13 +530,13 @@ def source_vs_walkthrough():
             if x.startswith("USE"):
                 print("Need use-line or af/b4 reference for command", x)
             else:
-                print ("Need to add command in comments after useon entry:", x)
+                print ("Need to add command in comments after goodacts entry:", x)
         else:
             if source_cmd_order[x] < last_source_got:
-                print("Source commands/table of useons out of order with command", x, "walkthrough command", wtc, "last source index", last_source_got, "order in source", source_cmd_order[x])
+                print("Source commands/table of goodacts out of order with command", x, "walkthrough command", wtc, "last source index", last_source_got, "order in source", source_cmd_order[x])
                 ooo = ooo + 1
             last_source_got = source_cmd_order[x]
-    if ooo > 0: print(ooo, "walkthrough <=> table of useons order sync errors")
+    if ooo > 0: print(ooo, "walkthrough <=> table of goodacts order sync errors")
     if plus_one or any_err:
         print(plus_one, "walkthrough +1's needed")
         print(any_err, "total walkthrough ~ errors (non order)")
@@ -550,7 +550,7 @@ def find_comment_cmds(pattern, line):
     return temp.split("/")
 
 def get_stuff_from_source():
-    useon_idx = 0
+    goodact_idx = 0
     in_use_table = False
     use_ons = False
     func_list = ''
@@ -623,8 +623,8 @@ def get_stuff_from_source():
                 current_region = myreg.lower()
                 if myreg not in region_def_line.keys():
                     print("WARNING", ll, "defines start of invalid region.")
-            if line.startswith("table of useons"):
-                useon_idx = useon_idx + 1
+            if line.startswith("table of goodacts"):
+                goodact_idx = goodact_idx + 1
                 in_use_table = True
                 if 'continued' not in line:
                     need_true_score = True
@@ -643,10 +643,10 @@ def get_stuff_from_source():
                     continue # this should mean a rule
                 if x[0] in obj_name_hash.keys(): x[0] = obj_name_hash[x[0]]
                 if x[5] == 'sco': continue # this is the header.
-                if useon_idx > 1:
+                if goodact_idx > 1:
                     for idx in [5, 6, 7]:
                         if x[idx] != 'false':
-                            print("WARNING: Line", line_count, "must be false in non-scoring table of useons, column", (idx + 1))
+                            print("WARNING: Line", line_count, "must be false in non-scoring table of goodacts, column", (idx + 1))
                 if x[0] != '--' and x[1] != '--':
                     if x[5] != 'true' and x[5] != 'false':
                         print("WARNING: Line", line_count, "needs true/false in column 5.")
@@ -671,7 +671,7 @@ def get_stuff_from_source():
                         new_cmd_ary = new_cmd_ary + find_comment_cmds('af', line)
                         for temp_cmd in new_cmd_ary:
                             source_cmd_count = source_cmd_count + 1
-                            if temp_cmd in source_cmd_order.keys() and not temp_cmd.startswith("USE"): print("WARNING", temp_cmd, "is a duplicate in table of useons, line", line_count)
+                            if temp_cmd in source_cmd_order.keys() and not temp_cmd.startswith("USE"): print("WARNING", temp_cmd, "is a duplicate in table of goodacts, line", line_count)
                             source_cmd_order[temp_cmd] = source_cmd_count
                         use_in_source[cmd] = line_count # we only track line count for "use" commands and not unusual point gainers
                     if x[5] == 'false' or 'sc2-ignore' in ll:
@@ -679,7 +679,7 @@ def get_stuff_from_source():
                         print("Ignoring points for", '/'.join(x[0:2]) if x[0] != '--' else x[3])
                     elif x[5] == 'true':
                         temp_region = ""
-                        if x[8] and x[8] != '--' and x[8] != 'reg-plus': # a bit hacky, but basically, check for 9th useon table entry being a proper region
+                        if x[8] and x[8] != '--' and x[8] != 'reg-plus': # a bit hacky, but basically, check for 9th goodacts table entry being a proper region
                             temp_region = x[8].lower()
                         if temp_region:
                             table_totals[temp_region] = table_totals[temp_region] + 1

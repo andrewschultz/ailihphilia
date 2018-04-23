@@ -1,5 +1,5 @@
 # fu.py :oh no no no no no, people! It doesn't mean ... that.
-# it means "find use..." it searches for an item in Table of Useons
+# it means "find use..." it searches for an item in Table of Goodacts
 # then says what it's used on or how it's created.
 
 import sys
@@ -17,7 +17,7 @@ in_use_table = False
 with open("story.ni") as file:
 	for line in file:
 		line_count = line_count + 1
-		if line.startswith("table of useons"):
+		if line.startswith("table of goodacts"):
 			in_use_table = True
 			# print(line_count)
 			continue
@@ -28,6 +28,7 @@ with open("story.ni") as file:
 		if in_use_table:
 			table_count = table_count + 1
 			x = ll.split("\t")[:3]
+            if x[0] == '--': continue
 			x2 = ' '.join(x)
 			plus = "{:s} + {:s} = {:s}".format(x[0], x[1], x[2])
 			# print(args, plus)
