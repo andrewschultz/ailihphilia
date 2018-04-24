@@ -907,7 +907,7 @@ understand "credits" as creditsing.
 showed-sites is a truth state that varies.
 
 carry out creditsing:
-	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in alphabetical order: Anssi Raissanen, Brian Rushton, Mike Spivey, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and gave positive suggestions. If you want to join this elite club, and you find a bug, write me at [email].[paragraph break]IFComp organizers past and present. Without them, I wouldn't have started and kept going. Whether that's good for gaming is up for debate, but it's been good for me.[paragraph break]Various Python communities, especially StackOverflow, helped me to organize source control and write utilities that helped not only to extract palindromes but also to tune up Inform code (obligatory thanks to all past and current Inform developers, from whom I've stolen game code and/or used extensions) and run simple tests.[paragraph break]I also found some websites useful. TIP IT will show which helped me and how."; again to see them.";
+	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in alphabetical order: Anssi Raissanen, Brian Rushton, Mike Spivey, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and gave positive suggestions. If you want to join this elite club, and you find a bug, write me at [email].[paragraph break]IFComp organizers past and present. Without them, I wouldn't have started and kept going. Whether that's good for gaming is up for debate, but it's been good for me.[paragraph break]Various Python communities, especially StackOverflow, helped me to organize source control and write utilities that helped not only to extract palindromes but also to tune up Inform code (obligatory thanks to all past and current Inform developers, from whom I've stolen game code and/or used extensions) and run simple tests.[paragraph break]I also found some websites useful. TIP IT will show which helped me and how.";
 
 chapter tipiting
 
@@ -2883,6 +2883,9 @@ Frush Surf is south of Ooze Zoo. "The land curves here. The surf blocks the way 
 
 check going south in Frush Surf: say "You barely step in, and the water's a bit hot. You're worried you might run into some scorch crocs." instead;
 
+check going north in frush surf when being-chased is true:
+	rob-the-player;
+
 chapter Stamp Mats
 
 stamp mats are a thing in Frush Surf. "Stamp mats lie here.". description is "The stamp mats are thin and appear to be engraved in order to cut a pattern out."
@@ -2915,6 +2918,7 @@ carry out yakokaying:
 		score-inc; [Grebeberg/YAK OKAY]
 		banish-ogre;
 		consider the cap-beep rules for the kayo yak;
+		recover-items;
 		the rule succeeds;
 	if yak is in location of player:
 		if being-chased is true, now chase-mulligan is true;
@@ -2927,6 +2931,11 @@ to banish-ogre:
 	moot yak;
 	moot ergot ogre;
 	now being-chased is false;
+
+chapter blocking east
+
+check going east in frush surf when being-chased is true:
+	say "[chase-pass]That seems like a dead end. The yak would have you cornered." instead;
 
 book Moo Room
 
@@ -3683,6 +3692,8 @@ check examining tract cart:
 
 a book is a kind of thing.
 
+a book has a truth state called chase-dropped. chase-dropped of a book is usually false.
+
 instead of opening a book: try examining the noun instead;
 
 check examining a book:
@@ -3944,6 +3955,7 @@ carry out wornrowing:
 	now Worn Row is worny;
 	moot psi wisp;
 	moot redness ender;
+	recover-items;
 	score-inc; [Yelpley/WORN ROW]
 	the rule succeeds;
 
@@ -4646,6 +4658,9 @@ book Pro Corp
 
 Pro Corp is north of Gross Org. It is in Yelpley. description is "[if butene tub is in Pro Corp]A butene tub rests here. At least, that's what it says it is[else]Pro Corp is devoid of equipment now you blew up the butene tub[end if]. The only way out is back south--a LINK NIL security system guards the other ways. There are also sci-pics that seem to warn what NOT to do with the butene tub."
 
+check going south in Pro Corp when being chased is true:
+	rob-the-player;
+
 Pro Corp is above Gross Org.
 
 instead of dropping when number of entries in multiple object list > 1 (this is the don't allow dropping all rule):
@@ -5003,6 +5018,20 @@ to start-chase (guy - a person):
 		say "(NOTE: [no-time-note].)[paragraph break]";
 	now being-chased is true;
 
+to rob-the-player:
+	say "You drop all your possessions as you flee[one of][or] again[stopping]! That will make you a bit faster, but it looks like you'll need your own wit and quick actions to escape, here[one of].[wfak-d][or].[stopping]";
+	now all things enclosed by player are in tempmet;
+
+definition: a thing (called th) is recoverable:
+	unless th is in tempmet, no;
+	if th is a workable, no;
+	if th is redness ender, no;
+	if th provides the property chase-dropped and chase-dropped of th is true, yes;
+	if th is a book, no;
+	if th is tract cart, no;
+	if th is x-it stix, no;
+	yes;
+
 to say no-time-note:
 	say "When you are in a chase[if being-chased is true], like right now[end if], commands like X/EXAMINE and I/INVENTORY and even THINK/AID (if you must) will take no time"
 
@@ -5020,18 +5049,27 @@ every turn when being-chased is true:
 		now chase-mulligan is false;
 		continue the action;
 	if chase-person is in location of player:
-		say "You've been caught! Aigh! Dazed and confused, you stagger back to...";
+		say "You've been caught! Aigh! Dazed and confused, you [if player is in ooze zoo or player is in gross org]run around in circles a bit[else]stagger back to[end if]...";
 		reset-chase instead;
 	else:
 		say "The [chase-person] follows you.";
 		move chase-person to location of player;
 
+to recover-items:
+	repeat with TMT running through things in TempMet:
+		unless TMT is recoverable, next;
+		now player has TMT;
+		if TMT is wearable, now player wears TMT;
+		if TMT provides the property chase-dropped, now chase-dropped of TMT is false;
+
 to reset-chase:
 	wfak;
 	move x-it stix to TempMet;
-	if mrlp is Grebeberg, move player to Seer Trees;
-	if mrlp is Yelpley, move player to Yawn Way;
+	recover-items;
+	if mrlp is Grebeberg, move player to Ooze Zoo;
+	if mrlp is Yelpley, move player to Gross Org;
 	move chase-person to chase-room of chase-person;
+	unless player was in frush surf or player was in pro corp, say "Well, all your items you dropped are still here, so that's something. You take them back."
 	now being-chased is false;
 
 after going when being-chased is true:
