@@ -837,7 +837,9 @@ chapter inventory
 after printing the name of a book (called bk) while taking inventory: say " (by [auth-name of bk])"
 
 check taking inventory when Dave is moot:
-	if being-chased is true, now chase-mulligan is true;
+	if being-chased is true:
+		now chase-mulligan is true;
+		say "You dropped everything out of surprise when [the chase-person] started chasing you!" instead;
 	now all things enclosed by the player are marked for listing;
 	now all ingredients are unmarked for listing;
 	now all tronparts are unmarked for listing;
@@ -845,7 +847,7 @@ check taking inventory when Dave is moot:
 	now all things worn by the player are unmarked for listing;
 	now state tats are unmarked for listing;
 	now all books are unmarked for listing;
-	say "[if number of things carried by player > 7]Your scepsis pecs help you carry a lot of things, though you're suspicious and unclear as to how.[else]'Met item' list:[line break][end if]";
+	say "[if number of things carried by player > 7]Your STO-LOTS makes sure carrying many things isn't awkward.[else]'Met item' list:[line break][end if]";
 	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
 	if number of carried books > 0, say "Currently lugging (oof) [list of carried books].";
 	if number of ingredients carried by player > 0, say "Food found: [a list of ingredients carried by player].";
@@ -905,17 +907,25 @@ understand "credits" as creditsing.
 showed-sites is a truth state that varies.
 
 carry out creditsing:
-	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in alphabetical order: Anssi Raissanen, Brian Rushton, Mike Spivey, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and gave positive suggestions. If you want to join this elite club, and you find a bug, write me at [email].[paragraph break]IFComp organizers past and present. Without them, I wouldn't have started and kept going. Whether that's good for gaming is up for debate, but it's been good for me.[paragraph break]Various Python communities, especially StackOverflow, helped me to organize source control and write utilities that helped not only to extract palindromes but also to tune up Inform code (obligatory thanks to all past and current Inform developers, from whom I've stolen game code and/or used extensions) and run simple tests.";
-	if showed-sites is false:
-		now showed-sites is true;
-		say "I also found some websites useful. CREDITS again to see them.";
-	else:
-		say "Websites that helped with this game:[paragraph break]";
-		say "  --http://www.angelfire.com/in2/sedavis/palindromes.html STOP LAUGHING ANGELFIRE WAS COOL WHEN IT FIRST CAME OUT ANYWAY GEOCITIES WAS MORE MY BEAT[line break]";
-		say "  --https://www.reddit.com/r/AskReddit/comments/4z899e/whats_your_favorite_palindrome/";
-		say "[paragraph break]From a technical standpoint, Bitbucket helped me get started, and Github is/will be used for the post-release.";
-		say "  --Github: [gh][line break]";
-		say "  --BitBucket: [bb][line break]";
+	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in alphabetical order: Anssi Raissanen, Brian Rushton, Mike Spivey, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and gave positive suggestions. If you want to join this elite club, and you find a bug, write me at [email].[paragraph break]IFComp organizers past and present. Without them, I wouldn't have started and kept going. Whether that's good for gaming is up for debate, but it's been good for me.[paragraph break]Various Python communities, especially StackOverflow, helped me to organize source control and write utilities that helped not only to extract palindromes but also to tune up Inform code (obligatory thanks to all past and current Inform developers, from whom I've stolen game code and/or used extensions) and run simple tests.[paragraph break]I also found some websites useful. TIP IT will show which helped me and how."; again to see them.";
+
+chapter tipiting
+
+tipiting is an action out of world.
+
+understand the command "tipit" as something new.
+understand the command "tip it" as something new.
+
+understand "tipit" as tipiting.
+understand "tip it" as tipiting.
+
+carry out tipiting:
+	say "Websites that helped with this game:[paragraph break]";
+	say "  --http://www.angelfire.com/in2/sedavis/palindromes.html STOP LAUGHING ANGELFIRE WAS COOL WHEN IT FIRST CAME OUT ANYWAY GEOCITIES WAS MORE MY BEAT[line break]";
+	say "  --https://www.reddit.com/r/AskReddit/comments/4z899e/whats_your_favorite_palindrome/";
+	say "[paragraph break]From a technical standpoint, Bitbucket helped me get started, and Github is/will be used for the post-release.";
+	say "  --Github: [gh][line break]";
+	say "  --BitBucket: [bb][line break]";
 	the rule succeeds;
 
 chapter verbing
@@ -1945,7 +1955,7 @@ this is the kid-bye rule:
 	the rule succeeds;
 
 this is the kid-left rule:
-	if Verses Rev is moot and Knife Fink is moot, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with Mad Adam. Iller Elli. Able Melba. Wolf Low. Ammo Momma. Obese Bo.'";
+	if Verses Rev is moot and Knife Fink is moot, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with Mad Adam. Iller Elli. Emil Slime. Able Melba. Wolf Low. Ammo Momma. Obese Bo.'";
 	the rule succeeds;
 
 this is the make-sag rule:
@@ -2110,6 +2120,7 @@ itm	reject
 bad dab	"Its message seems important, but it's not good for much except examining."
 Oh Who	"Oh Who is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting, but it's there."
 Name ME Man	"NAME ME MAN is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting, but it's there."
+sto lots	"You don't want to tinker with the STO LOTS more than it has to. It makes carrying stuff easier, and that's good enough."
 gash sag	"You don't want to mess with the gash sag. Destroying the butene tub is damage enough."
 x-it stix	"No way you're getting through the X-It Stix."
 mist sim	"You don't have anything that would dispel the mist sim."
@@ -2594,7 +2605,7 @@ Oh Who is a proper-named peripheral phonebook. booktable of Oh Who is table of r
 
 book Cold Loc
 
-Cold Loc is north of Seer Trees. It is in Grebeberg. "It's kind of dewed, here. A rift fir blocks a steep drop west. [if sap-takeable is true]The past sap you cut from it is lumped on the ground[else]Some past sap clings to it[end if]."
+Cold Loc is north of Seer Trees. It is in Grebeberg. "It's kind of dewed, here, but at least it's not the Snow-Ons. A rift fir blocks a steep drop west. [if sap-takeable is true]The past sap you cut from it is lumped on the ground[else]Some past sap clings to it[end if]."
 
 check going west in Cold Loc: say "The rift fir blocks the way to much more dangerous places, maybe Red Locs Colder or the Splat Alps. Perhaps ski oiks await." instead;
 
@@ -3430,7 +3441,7 @@ My Gym is south of Yawn Way. It is in Yelpley. "You can go back out north to Yaw
 
 chapter Dave
 
-Dave is a proper-named guhthug in My Gym. initial appearance is "[one of]A fellow walks over to you and booms 'I'm DAVE!' You freeze, and after a few seconds, he whispers, 'Dud.'[or]Dave is here, keeping an eye on you, guarding the passage west.[stopping]". description is "Dave is big and strong and fast."
+Dave is a proper-named guhthug in My Gym. initial appearance is "[one of]A fellow walks over to you and booms 'I'm DAVE!' You freeze, and after a few seconds, he whispers, 'Dud.'[or]Dave is here, keeping an eye on you, guarding the passage west.[stopping]". description is "Dave is big and strong--quite a musc-sum, but maybe too beefy to be fully mobile. Maybe you can take advantage of that."
 
 instead of doing something with Dave:
 	if action is procedural, continue the action;
@@ -3439,11 +3450,17 @@ instead of doing something with Dave:
 
 check going west in My Gym when Dave is in My Gym: say "Dave says, 'I can't let you do that, Hal. Ah!' There must be a succinct, clever way to sneak around him!" instead;
 
+the stole lots is a thing in My Gym. "A container labeled STOLE LOTS is behind Dave.". description is "It looks like it'd be handy for carrying a lot of items around.".
+
 chapter wash saw
 
-The wash saw is in My Gym. "A small wash saw [if Dave is moot]lies here[else]is behind Dave[end if].". description of wash saw is "How handy! It can squirt out cleaning fluid or whatever. Useful if something's stuck.".
+The wash saw is a thing. "A small wash saw [if Dave is moot]lies here[else]is behind Dave[end if].". description of wash saw is "How handy! It can squirt out cleaning fluid or whatever. Useful if something's stuck.".
 
-check taking wash saw when Dave is quicknear: say "It's behind Dave, who doesn't seem willing to let you by." instead;
+check taking stole lots when Dave is quicknear: say "It's behind Dave, who doesn't seem willing to let you by." instead;
+
+chapter sto lots
+
+the sto lots is a peripheral thing. "It helps you carry everything you have."
 
 chapter evadeing
 
@@ -3458,8 +3475,11 @@ does the player mean evadeing Dave: it is very likely.
 carry out evadeing:
 	if noun is Dave:
 		if Dave is moot, say "You don't need to evade Dave again.";
-		say "You evade Dave! Deked! Deked![paragraph break]Dave, frustrated from spinning around trying to catch you, runs off.[paragraph break]Suspicious there are no actual weight machines, you find a passage to a hidden spate of Sperses-Reps machines. You're suspicious they actually work, but as you test them out, a surge goes through you. Your attitude nets you scepsis-pecs, which will help you carry any amount or weight of things you pick up in your journey. After a few seconds, you've half forgotten you have them.";
+		say "You evade Dave! Deked! Deked![paragraph break]Dave, frustrated from spinning around trying to catch you, runs off.[paragraph break]Suspicious there are no actual weight machines, you find a passage to a hidden spate of Sperses-Reps machines with the motto 'Scepsis?! Pecs!' They help you bulk up a bit, so weight will not be a factor. But you don't want to waste too much time bulking up. You go back out and have a look at the Stole-Lots. There wasn't much there except for a wash saw, which you take. You also check if the E and an L rub out quickly, and they do, making it a Sto-Lots, Bam! That solves a logistical AND a moral problem!";
 		moot Dave;
+		moot stole lots;
+		now player has sto lots;
+		now player has wash saw;
 		score-inc; [Yelpley/evade dave]
 		consider the cap-beep rules for Dave;
 	else:
@@ -3652,7 +3672,7 @@ chapter books
 to decide what number is books-in-cart:
 	decide on number of sober books in Worn Row;
 
-the tract cart is scenery. "It carries [books-in-cart] book[plur-s of books-in-cart]: [list of sober books in Worn Row][hint-trace]."
+the tract cart is scenery. "GREED-E? ERG is emblazoned on it, suggesting you should take only one book at a time. It carries [books-in-cart] book[plur-s of books-in-cart]: [list of sober books in Worn Row][hint-trace]."
 
 to say hint-trace:
 	say "[if tract-trace is true]. But it also seems a bit too big for just carrying a few books. Maybe it holds a deeper secret[end if]"
@@ -3785,7 +3805,7 @@ check taking a book:
 		if number of books carried by player is 1:
 			let myb be random book carried by player;
 			if myb is not SOME DEMOS:
-				say "A flashback to that time you checked out too many library books and got a small fine when you couldn't finish them all impels you to put [myb] back in the tract cart to take [noun].[paragraph break]Plus nothing says 'adventure' less than schlepping around multiple books.";
+				say "Your eyes run across GREED-E? ERG on the tract cart, and you flash back to that time you checked out too many library books and got a small fine when you couldn't finish them all.[paragraph break]You put [myb] back in the tract cart before taking [noun].[paragraph break]Besides, nothing says 'adventure' less than schlepping around multiple books. Well, except maybe sitting in front of a computer.";
 				now myb is in Worn Row;
 		else:
 			say "It's a bit unwieldy, but you manage to pick up [noun].";
