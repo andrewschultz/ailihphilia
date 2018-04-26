@@ -839,7 +839,7 @@ after printing the name of a book (called bk) while taking inventory: say " (by 
 check taking inventory when Dave is moot:
 	if being-chased is true:
 		now chase-mulligan is true;
-		say "You dropped everything out of surprise when [the chase-person] started chasing you!" instead;
+		say "You dropped everything out of surprise when [the chase-person] started chasing you! You're only wearing [list of worn things]. But hey, you can go faster." instead;
 	now all things enclosed by the player are marked for listing;
 	now all ingredients are unmarked for listing;
 	now all tronparts are unmarked for listing;
@@ -2339,16 +2339,20 @@ carry out paceing:
 		now pace-prev is true;
 		say "That'll work later, but you need something a little different to actually TAKE the pact cap." instead;
 	if cap-pace is true, say "It's already a pace cap." instead;
+	if being-chased is true and mrlp is yelpley, say "[chase-pass][walk-law]. [if kayo yak is moot]The Psi Wisp isn't nearly as fast as the Kayo Yak, so maybe you just need to find where to go and what to do[else]Maybe that'll work against someone, or something, faster[end if]." instead;
 	if mrlp is Grebeberg, now cap-pace is whether or not cap-pace is false;
 	if cap-ever-pace is false:
 		reg-inc Dim Mid; [pace cap]
 		now cap-ever-pace is true;
 		now pace-prev is false;
-		say "[if mrlp is not Grebeberg]As you flip the cap, a voice booms 'WALK: LAW.' You decide to be, um, civic. Perhaps you need to change it in a slower area.[else]You suddenly feel [pace-of]![end if]";
+		say "[if mrlp is not Grebeberg][walk-law].[else]You suddenly feel [pace-of]![end if]";
 	else:
-		say "[if mrlp is not Grebeberg]As you flip the cap, a voice booms 'WALK: LAW.' You decide to be, um, civic. Perhaps you need to change it in a slower area. Like Grebeberg to the west?[else]You suddenly feel [pace-of].[end if]";
+		say "[if mrlp is not Grebeberg][walk-law]. Like Grebeberg to the west?[else]You suddenly feel [pace-of].[end if]";
 	follow the notify score changes rule;
 	the rule succeeds;
+
+to say walk-law:
+	say "As you flip the cap, a voice booms 'WALK: LAW.' You decide to be, um, civic. Perhaps you need to change it in a slower area"
 
 to say pace-of:
 	say "[if cap-pace is true]full of deep speed[else]slower[end if]"
@@ -5019,8 +5023,8 @@ to start-chase (guy - a person):
 	now being-chased is true;
 
 to rob-the-player:
-	say "You drop all your possessions as you flee[one of][or] again[stopping]! That will make you a bit faster, but it looks like you'll need your own wit and quick actions to escape, here[one of].[wfak-d][or].[stopping]";
-	now all things enclosed by player are in tempmet;
+	say "You drop all your possessions(except [the list of worn things]) as you flee[one of][or] again[stopping]! That will make you a bit faster, but it looks like you'll need your own wit and quick actions to escape, here[one of].[wfak-d][or].[stopping]";
+	now all things carried by the player are in tempmet;
 
 definition: a thing (called th) is recoverable:
 	unless th is in tempmet, no;
