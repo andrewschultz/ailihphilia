@@ -123,11 +123,11 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 310.
+use MAX_VERBS of 320.
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 350. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 360. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 chapter kinds of things
 
@@ -836,6 +836,11 @@ chapter inventory
 
 after printing the name of a book (called bk) while taking inventory: say " (by [auth-name of bk])"
 
+definition: a book is lugged:
+	if noun is Some Demos, no;
+	if noun is carried, yes;
+	no;
+
 check taking inventory when Dave is moot:
 	if being-chased is true:
 		now chase-mulligan is true;
@@ -846,10 +851,12 @@ check taking inventory when Dave is moot:
 	now all helpdocs are unmarked for listing;
 	now all things worn by the player are unmarked for listing;
 	now state tats are unmarked for listing;
+	now sto lots is unmarked for listing;
 	now all books are unmarked for listing;
 	say "[if number of things carried by player > 7]Your STO-LOTS makes sure carrying many things isn't awkward.[else]'Met item' list:[line break][end if]";
 	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
-	if number of carried books > 0, say "Currently lugging (oof) [list of carried books].";
+	if number of lugged books > 0, say "Currently lugging (oof) [list of carried books].";
+	if number of lugged books is 0 and player has Some Demos, say "You've also got that Some Demos (SD) book.";
 	if number of ingredients carried by player > 0, say "Food found: [a list of ingredients carried by player].";
 	if number of things worn by player > 0, say "You are wearing: [a list of things worn by player][if player has state tats], in addition to state tats[end if].";
 	if number of helpdocs carried by the player is 1:
@@ -3696,8 +3703,6 @@ check examining tract cart:
 
 a book is a kind of thing.
 
-a book has a truth state called chase-dropped. chase-dropped of a book is usually false.
-
 instead of opening a book: try examining the noun instead;
 
 check examining a book:
@@ -3723,6 +3728,8 @@ to say auth-name of (mybk - a book):
 a book can be in-row or hidden. a book is usually in-row.
 
 a book can be necessary. a book is usually necessary.
+
+a book can be return-after-chase. a book is usually not return-after-chase.
 
 a book has a number called auth-row. auth-row of a book is usually 0.
 
@@ -3817,11 +3824,10 @@ check taking a book:
 		say "Oof! a bit heavy and bulky, but after working out in My Gym, you can just about juggle it.";
 		now books-carried-yet is true;
 	else:
-		if number of books carried by player is 1:
-			let myb be random book carried by player;
-			if myb is not SOME DEMOS:
-				say "Your eyes run across GREED-E? ERG on the tract cart, and you flash back to that time you checked out too many library books and got a small fine when you couldn't finish them all.[paragraph break]You put [myb] back in the tract cart before taking [noun].[paragraph break]Besides, nothing says 'adventure' less than schlepping around multiple books. Well, except maybe sitting in front of a computer.";
-				now myb is in Worn Row;
+		if number of lugged books > 0:
+			let myb be a random lugged book;
+			say "Your eyes run across GREED-E? ERG on the tract cart, and you flash back to that time you checked out too many library books and got a small fine when you couldn't finish them all.[paragraph break]You put [myb] back in the tract cart before taking [noun].[paragraph break]Besides, nothing says 'adventure' less than schlepping around multiple books. Well, except maybe sitting in front of a computer.";
+			now myb is in Worn Row;
 		else:
 			say "It's a bit unwieldy, but you manage to pick up [noun].";
 	consider the book-took rule;
@@ -3883,7 +3889,7 @@ carry out workrowing:
 		say "VLABADABOOM! [Worn Row] shakes, and you're thrown to the ground. When you get up, things look different. There are three machines in front of you. One looks particularly odd, another is spinning like a washer or dryer, and the third--well, it looks like one of those cryogenic things to store frozen bodies for resurrection. A quick glance shows they are a rotator, reifier and reviver, in that order.";
 		score-inc; [Yelpley/work row]
 	else:
-		say "[Worn Row] returns once again to Work Row. It's a little less disorienting this time around. [if test set is not off-stage]The reifier, reviver and rotator reappear[else if test set is in Worn Row]The test set re-appears[else]Work row is still barren, though[end if].";
+		say "[Worn Row] returns once again to Work Row. It's a little less disorienting this time around. [if test set is off-stage]The reifier, reviver and rotator reappear[else if test set is in Worn Row]The test set re-appears[else]Work row is still barren, though[end if].";
 	now ever-workrow is true;
 	check-dab;
 	now all workables are in Worn Row;
@@ -4073,7 +4079,7 @@ El Doodle is a thing. description is "A jumble of raw creativity, it looks like 
 
 understand "map" as doodle when doodle is quicknear.
 
-after going to Art Xtra when El Doodle is off-stage:
+after looking in Art Xtra when El Doodle is off-stage:
 	if stark rats are moot:
 		say "You tell the Revolt Lover about how you got rid of the stark rats. the Revolt Lover, impressed, mentions there's something else for you. 'Someone left it here a while back. It's indecipherable. I can't use it, but maybe you can figure it out.'";
 		now player has El Doodle;
@@ -4662,7 +4668,7 @@ book Pro Corp
 
 Pro Corp is north of Gross Org. It is in Yelpley. description is "[if butene tub is in Pro Corp]A butene tub rests here. At least, that's what it says it is[else]Pro Corp is devoid of equipment now you blew up the butene tub[end if]. The only way out is back south--a LINK NIL security system guards the other ways. There are also sci-pics that seem to warn what NOT to do with the butene tub."
 
-check going south in Pro Corp when being chased is true:
+check going south in Pro Corp when being-chased is true:
 	rob-the-player;
 
 Pro Corp is above Gross Org.
@@ -5024,13 +5030,12 @@ to start-chase (guy - a person):
 
 to rob-the-player:
 	say "You drop all your possessions(except [the list of worn things]) as you flee[one of][or] again[stopping]! That will make you a bit faster, but it looks like you'll need your own wit and quick actions to escape, here[one of].[wfak-d][or].[stopping]";
-	now all things carried by the player are in tempmet;
+	now all things carried by the player are in DropOrd;
 
-definition: a thing (called th) is recoverable:
+definition: a thing (called th) is recoverable: [orphaned definition but potentially useful]
 	unless th is in tempmet, no;
 	if th is a workable, no;
 	if th is redness ender, no;
-	if th provides the property chase-dropped and chase-dropped of th is true, yes;
 	if th is a book, no;
 	if th is tract cart, no;
 	if th is x-it stix, no;
@@ -5060,11 +5065,7 @@ every turn when being-chased is true:
 		move chase-person to location of player;
 
 to recover-items:
-	repeat with TMT running through things in TempMet:
-		unless TMT is recoverable, next;
-		now player has TMT;
-		if TMT is wearable, now player wears TMT;
-		if TMT provides the property chase-dropped, now chase-dropped of TMT is false;
+	now player has all things in DropOrd;
 
 to reset-chase:
 	wfak;
@@ -5073,7 +5074,7 @@ to reset-chase:
 	if mrlp is Grebeberg, move player to Ooze Zoo;
 	if mrlp is Yelpley, move player to Gross Org;
 	move chase-person to chase-room of chase-person;
-	unless player was in frush surf or player was in pro corp, say "Well, all your items you dropped are still here, so that's something. You take them back."
+	unless player was in frush surf or player was in pro corp, say "Well, all your items you dropped are still here, so that's something. You take them back.";
 	now being-chased is false;
 
 after going when being-chased is true:
@@ -5222,11 +5223,13 @@ volume metarooms
 
 part Odd Do region
 
-[don't give the player any accidental access to the rooms]
+[don't give the player any accidental access to these meta-rooms]
 
-DevReserved is a privately-named room in Odd Do. "Bug."
+DevReserved is a privately-named room in Odd Do. "Bug." [for items you're done with]
 
-TempMet is a privately-named room in Odd Do. "Bug."
+TempMet is a privately-named room in Odd Do. "Bug." [for items in work/word row]
+
+DropOrd is a privately-named room in Odd Do. "Bug." [for items dropped during the chase]
 
 section debug helps - not for release
 
