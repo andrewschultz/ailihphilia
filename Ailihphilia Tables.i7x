@@ -931,6 +931,7 @@ table of Moo Room animals
 randtxt
 "a buck cub"
 "a rat avatar"
+"an un-gnu"
 "sab mambas"
 "sewer ewes"
 "smart rams"
@@ -1052,6 +1053,7 @@ table of undoings
 randtxt
 "'Redo-coder! Redo-coder!'"
 "[']S poor. Oops!"
+"Ay, CYA."
 "Did. [']Nuff? Undid."
 "Did. Error? Redid."
 "Eff a gaffe."
