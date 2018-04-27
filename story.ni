@@ -761,12 +761,12 @@ this is the dumb-mud-stuck rule:
 		if any-yet is true:
 			say " / ";
 			now any-yet is true;
-			say "the turf rut(south)";
+		say "the turf rut(south)";
 	unless lie veil is moot:
 		if any-yet is true:
 			say " / ";
 			now any-yet is true;
-			say "the lie veil(north)";
+		say "the lie veil(north)";
 	say " [hn of Dumb Mud].";
 	the rule succeeds;
 
@@ -838,7 +838,7 @@ after printing the name of a book (called bk) while taking inventory: say " (by 
 
 definition: a book is lugged:
 	if noun is Some Demos, no;
-	if noun is carried, yes;
+	if noun is enclosed by the player, yes;
 	no;
 
 check taking inventory when Dave is moot:
@@ -856,7 +856,7 @@ check taking inventory when Dave is moot:
 	say "[if number of things carried by player > 7]Your STO-LOTS makes sure carrying many things isn't awkward.[else]'Met item' list:[line break][end if]";
 	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
 	if number of lugged books > 0, say "Currently lugging (oof) [list of carried books].";
-	if number of lugged books is 0 and player has Some Demos, say "You've also got that Some Demos (SD) book.";
+	if number of lugged books is 0 and player has Some Demos, say "You've also got that small book, [some demos].";
 	if number of ingredients carried by player > 0, say "Food found: [a list of ingredients carried by player].";
 	if number of things worn by player > 0, say "You are wearing: [a list of things worn by player][if player has state tats], in addition to state tats[end if].";
 	if number of helpdocs carried by the player is 1:
@@ -1656,8 +1656,8 @@ straw arts	Revolt Lover	soot tattoos	--	rebump-art-xtra rule	true	true	false	Yel
 gate tag	soot tattoos	state tats	--	tats-peripheral rule	true	true	true	Yelpley	false	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
 poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	false	"A heretofore hidden poos scoop pops out from the poo coop. It shovels and vacuumss the offending dung into the coop, forming a crass arc that seems to contain several times the volume of the coop itself. Whatever, you can now go south."
 poo coop	turf rut	--	coop-full rule	shift-dumb-mud rule	true	true	true	Grebeberg	false	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture.[paragraph break]A bold lob! The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
-radar	made dam	eroded ore	--	radar-blink rule	true	false	false	Grebeberg	false	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow. The radar plays a weird scale. Being close to the ore has damaged it somehow."
-NULL ILLUN	Known Wonk	--	--	bump-maws rule	true	false	true	Grebeberg	false	"The Known Wonk begins to read. 'Old, lo! Too simple. It has to be beneath me. I mean, it's almost as bad as [i]EBB?! BE[r].' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. Rid a nadir. Rid ANY nadir! Wonk, now! Sometimes, simple stuff works.' As the Known Wonk babbles, the mist sim lifts, too. 'Wow!' But no, your acts deserve a better cheer than that. 'H/t! A path!'"
+radar	made dam	eroded ore	got-ore-yet rule	radar-blink rule	true	false	false	Grebeberg	false	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow. The radar plays a weird scale. Being close to the ore has damaged it somehow."
+NULL ILLUN	Known Wonk	--	--	bump-maws rule	true	true	false	Grebeberg	false	"The Known Wonk begins to read. 'Old, lo! Too simple. It has to be beneath me. I mean, it's almost as bad as [i]EBB?! BE[r].' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. Rid a nadir. Rid ANY nadir! Wonk, now! Sometimes, simple stuff works.' As the Known Wonk babbles, the mist sim lifts, too. 'Wow!' But no, your acts deserve a better cheer than that. 'H/t! A path!'"
 el doodle	edits tide	spa maps	--	rahs-too rule	true	true	false	Grebeberg	false	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps! And there is a bonus! It appears El Doodle was so jumbled, there were two things. Sharp rahs appear on another sheet of paper, as some sort of confused motivation, and you take them."
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	false	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where. You whisper 'Row, or' whenever you get tired. Then you see Elided Ile in the distance. So you stop off there. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and you are worthy to fight the vicious Bar Crab. It is no match for your elope pole. The citizens hand you a YOU BUOY to tell you they're glad you're you, asking only for the elope pole as a souvenir. Well, it was getting a bit awkward to carry.[paragraph break]They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Calcific Lac. As it gets near and bends away, you jump off, using the buoy to paddle and float back all the way."
 dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	false	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
@@ -1850,6 +1850,12 @@ this is the coop-full rule:
 	say "The poo coop is empty, but if it wasn't, that could work.";
 	the rule fails;
 
+this is the got-ore-yet rule:
+	if eroded ore is not off-stage:
+		say "You already scanned the made dam successfully.";
+		the rule fails;
+	the rule succeeds;
+
 this is the maps-readable rule:
 	if maps-explained is true, the rule succeeds;
 	say "Hmm. Maybe if the maps were a bit clearer to you, that would work. But not now.";
@@ -1873,6 +1879,9 @@ this is the Ned-gone rule:
 	the rule fails;
 
 this is the orc-gone rule:
+	if UFO tofu is not off-stage:
+		say "You already scanned the crag arc successfully.";
+		the rule fails;
 	if orc is not in Toll Lot, the rule succeeds;
 	say "The cross orc prevents you from trying anything possibly constructive. Maybe with the orc gone, you should try it again.";
 	get-reject UFO tofu;
@@ -2085,7 +2094,8 @@ this is the wear-garb rule:
 	the rule succeeds;
 
 this is the you-win rule: [xxwin]
-	say "The Flee Elf greets you on the other side. 'Deified! [if cur-score of Odd Do is max-score of Odd Do]Decay?! ACED[else]Won enow[end if]! / Deified!' You ask hesitantly about the new adventures promised.[wfak-d]";
+	follow the notify score changes rule;
+	say "[line break]The Flee Elf greets you on the other side. 'Deified! [if cur-score of Odd Do is max-score of Odd Do]Decay?! ACED[else]Won enow[end if]! / Deified!' You ask hesitantly about the new adventures promised.[wfak-d]";
 	say "'The X-ITE TIX lead to A REAL WORLD THAT WILL BE MORE EXCITING AFTER YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a circular loop to 'back where you began' non-twist. Books like that always kind of annoyed you (well, okay, the first ones seemed profound,) but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand and pulls out a device. 'This RIDE-DIR will help you return to your own world. And here is an x/o box.'[wfak-d]";
 	say "The x/o box isn't much: nothing's inside, and it's engraved 'U Remem'er, U,' 'Done? NOD' and 'U Did U.' But if it were too obvious and gaudy, how would you explain it back home?[paragraph break]As you stare at it, you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered stuff you can't fix?[wfak-d]";
 	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call them? It's a tough call between SOME MEMOS, I SAW [']TWAS I, DRAWN INWARD, SAGAS or SOLOS. Hmm, maybe WENT NEW.";
@@ -2331,6 +2341,7 @@ carry out packing:
 	say "Yes, that's how to get the cap. You are ready to go! Hat, ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. It mumbles 'It's best I...' and salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
 	get-cap;
 	score-inc; [Dim Mid/pack cap]
+	verify-done rev-pack-cap rule;
 	the rule succeeds;
 
 to get-cap:
@@ -3202,9 +3213,9 @@ book Apse Spa
 
 Apse Spa is east of Cold Loc. It is in Grebeberg. "The Apse Spa is covered with dose sod, which you don't need for yourself--you're not sick--but it looks beautiful. Pool gloop and Go-By Bog block pretty much every way except back west. You [if sage gas is off-stage]could traverse it, if you knew what you were doing[else]already went through it, though[end if]. There are also spa taps here you shouldn't mess with, since you're not a paying customer."
 
-check entering bog:
-	if maps-explained is true, try useoning spa maps with go-by bog instead;
+check entering go-by bog:
 	if spa maps are moot, say "You don't want or need to revisit the bog." instead;
+	if maps-explained is true, try useoning spa maps with go-by bog instead;
 	if word number 1 in the player's command is "go" and word number 2 in the player's command is "bog":
 		say "In the true palindrome spirit, you take one step in the bog, then reverse direction before it gets dangerous. You probably need some sort of guide to navigate safely." instead;
 	say "The bog is dangerous without guidance." instead;
@@ -3513,6 +3524,7 @@ carry out evadeing:
 		now player has wash saw;
 		score-inc; [Yelpley/evade dave]
 		consider the cap-beep rules for Dave;
+		verify-done rev-evade-Dave rule;
 	else:
 		say "There's only one person you need to evade in this game.";
 	the rule succeeds.
@@ -3592,6 +3604,7 @@ carry out boreing:
 	boot-Rob;
 	score-inc; [Yelpley/bore rob]
 	consider the cap-beep rules for Rob;
+	verify-done rev-bore-Rob rule;
 	the rule succeeds.
 
 to boot-Rob:
@@ -3899,6 +3912,7 @@ carry out workrowing:
 	if ever-workrow is false:
 		say "VLABADABOOM! [Worn Row] shakes, and you're thrown to the ground. When you get up, things look different. There are three machines in front of you. One looks particularly odd, another is spinning like a washer or dryer, and the third--well, it looks like one of those cryogenic things to store frozen bodies for resurrection. A quick glance shows they are a rotator, reifier and reviver, in that order.";
 		score-inc; [Yelpley/work row]
+		verify-done rev-work-row rule;
 	else:
 		say "[Worn Row] returns once again to Work Row. It's a little less disorienting this time around. [if test set is off-stage]The reifier, reviver and rotator reappear[else if test set is in Worn Row]The test set re-appears[else]Work row is still barren, though[end if].";
 	now ever-workrow is true;
@@ -3942,6 +3956,7 @@ carry out wordrowing:
 	if ever-wordrow is false:
 		hint-bump-worn;
 		score-inc; [Yelpley/word row]
+		verify-done rev-word-row rule;
 		say "A tract cart appears, full of odd books. A pity tip also flutters down. You take the tip.";
 	else:
 		say "The tract cart re-appears.";
@@ -3972,6 +3987,7 @@ carry out wornrowing:
 	clear-worn-row;
 	say "Worn Row rematerializes, along with the redness ender. Zap! Zot! It locks on the Psi Wisp, which explodes in a shower of rage. But somehow, the Psi Wisp connects enough to zap the redness ender back. Whew.";
 	now being-chased is false;
+	verify-done rev-work-row rule;
 	clear-worn-row;
 	now Worn Row is worny;
 	moot psi wisp;
@@ -4454,6 +4470,7 @@ carry out tending:
 	say "You adjust the ten level net. You're not sure how to make it work, but with some common sense, you make it. The set o['] notes gives surprising help. You climb and swing from the trapeze to the other side--falling into the ten level net about a hundred or so times--but the hundred and first bam! You notice an epic-er recipe under some superfluous steno-nets.[paragraph break]It's a clear step up from the set o['] notes. Yay! There's also something labeled an elope pole, which you suspect may help you get away if and when you need to. Part of the net falls off, too. It'd make a nice tent: a tent net. You gather up a nice haul: pole, net, recipe.";
 	get-tended-stuff;
 	score-inc; [Yelpley/TEND NET]
+	verify-done rev-tend-net rule;
 	the rule succeeds.
 
 to get-tended-stuff:
@@ -4510,11 +4527,9 @@ chapter rep popper
 the rep popper is a thing in Yell Alley. "A rep popper lies here. You're wary of getting too close to it. You're not sure how good your rep is, but that thing looks [if dork rod is moot]less fearsome than it used to[else]like it could embarrass you quickly[end if].". description is "The rep popper is a combination of a funny flower, joy buzzer, and several old stupid gags. You're not sure how it's supposed to work, and it's not something you carry around to show off how cool it is."
 
 check taking rep popper:
-	if player has taboo bat:
-		now player has rep popper;
-		say "With the taboo bat in your possession, you just don't care about stuff like rep, so you have no problem taking the rep popper." instead;
-	if player has dork rod, say "With the dork rod, you aren't THAT worried about your rep, but you're still worried enough not to take the popper. Maybe you can do a bit better..." instead;
 	if dork rod is not moot, say "No way! You're not sure how much rep you have, but taking that rep popper would drop it a notch or more, and the prospect seems too horrible." instead;
+	now player has rep popper;
+	say "[if player has taboo bat]With the taboo bat in your possession, you just don't care about stuff like rep, so you have no problem taking the rep popper[else]Now you've visited the Tao Boat with the dork rod, you aren't worried about your rep any more. You take the rep popper cautiously. Whew! No crazy explosion[end if]." instead;
 
 [??Yuge Guy rep popper used what's wrong with you? I make boring people feel less boring vs you describing how you figured things out and only 26 possibilities really and also some trial and error]
 
@@ -5175,6 +5190,7 @@ carry out revovering:
 					if debug-state is true, say "(+1 [preproc entry])[line break]";
 					increment the score;
 					increment cur-score of reg-plus entry;
+					now done entry is true;
 			if global-delay is 5 and deep-speeding is false:
 				if the player yes-consents:
 					do nothing;
@@ -5183,6 +5199,7 @@ carry out revovering:
 			next;
 		if there is a getit entry and getit entry is not off-stage and getit entry is not Gorge Grog, next; [the Gorge Grog is already visible. Other items aren't.]
 		if use1 entry is moot or use2 entry is moot, next;
+		now done entry is true;
 		increment global-delay;
 		let u1a be false;
 		let u2a be false;
