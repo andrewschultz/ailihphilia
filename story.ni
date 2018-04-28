@@ -895,11 +895,11 @@ understand the command "about" as something new.
 understand "about" as abouting.
 
 carry out abouting:
-	say "Ailihphilia was originally written for IFComp 2018. It was conceived in October 2017 as 'Put It Up' before I realized there was an actual word for, well, liking palindromes. I started coding in November.";
+	say "Ailihphilia was originally written for IFComp 2018. It was conceived in October 2017 as 'Put It Up' (and a side part of a bigger game) before I realized there was an actual word for, well, liking palindromes. I started coding in November.";
 	say "[line break]Like many of my games, I got the idea from [i]Nord and Bert Couldn't Make Head or Tail of It[r], at least partially. Another game that gave me ideas was Nick Montfort's [i]I Palindrome I[r], part of the Apollo 18+20 collection Kevin Jackson-Mead organized back in 2012. I felt there could be more that could be done with palindromes, but I didn't know what, and I didn't know how much.[paragraph break]Also, the Palindome in Kingdom of Loathing prompted my curiosity back in 2010. I would still be playing it today, if it hadn't inspired me to try to write my own games, which left less time for KoL (spoiler: I still ascended over 100 times.) I tried to avoid palindromes it already considered, though the Dumb Mud from the special Heavy Rains was too good to pass up. It's an item there but a location here, so I can't claim to copycat too much.";
 	say "[line break]In my continuing quest to nail down my Python knowledge, I realized that even if I didn't get MANY palindromes, a few scripts could print things out. I had word and name lists from my anagram games Shuffling Around and A Roiling Original, so I had the raw materials--but at the same time, I needed to weed out overlaps.";
 	say "[line break]The result of all my work is some guess-the-verb, but hopefully with the game's general idea, you'll see what's going on. Ailihphilia is meant to be polite on the Zarfian cruelty scale, although I hope you enjoy some of the impolite jokes.";
-	say "[line break]Originally, Ailihphilia was part of a spoonerism game--a sort of side area--but eventually I found enough rooms and ideas it could be its own game. Whether or not it's a good game on its own, I guess you have to decide. It doesn't have any deep philosophy, but I hope you enjoy it. If you write games yourself, I hope it inspires you to go through with anything unusual you weren't sure if you should try, even if it rubs you the wrong way. (Spoiler: you should write that game! Just start early and take all the notes you can, but don't think the first draft needs to be perfect!)[paragraph break]";
+	say "[line break]Whether or not Ailihphilia's a good game on its own, I guess you have to decide. It doesn't have any deep philosophy, but I hope you enjoy it. If you write games yourself, I hope it inspires you to go through with anything unusual you weren't sure if you should try, even if it rubs you the wrong way. (Spoiler: you should write that game! Just start early and take all the notes you can, but don't think the first draft needs to be perfect!)[paragraph break]";
 	say "I'm at [email] if you have suggestions for bug fixes, etc.";
 	the rule succeeds;
 
@@ -1651,7 +1651,7 @@ Ye Key	etage gate	gate tag	Ned-gone rule	tag-later-wipe rule	true	true	true	Yelp
 stinky knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	false	"The stinky knits fit into the rotator without stuffing them too much. After some spinning (and a smell of detergent--where'd that come from?) you look in again and--they're something much shinier now. Brag garb! You can't resist wearing your flashy new duds."
 Gorge Grog	Butene Tub	resale laser	--	make-sag rule	true	true	true	Yelpley	false	"The Gorge Grog starts fizzing as it pours down the tub, and nothing seems to happen, until you hear a FOOMP below and the tub starts shaking. There must've been an open spark below the tub, perhaps a noir ion. You find it best to hide, and that's the right thing to do, because the butene tub explodes into pieces. Under it is a resale laser! You figure the really good stuff is hidden way back for security reasons, and this is probably just an emergency gadget, but it's got to be good for something."
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	false	"The gold log begins spinning until it cracks open--leaving a dork rod! You wonder briefly if you deserve to take it, or if there's something wrong with you if you deserve to, but once you hold it, memories of past silliness come back, and they're easier to deal with, now. You have some perspective. You even feel sorry for people who pointed out you were a dork. They'd be barred from a cool adventure like this. So you keep the dork rod."
-SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	false	false	Grebeberg	false	"With the help of SOME DEMOS, you (after several grunts of 'STRAIN! I! ARTS!') manage to rejig the hay into something more aesthetically pleasing: straw arts! You're so enthusiastic, you even fold a few pages of SOME DEMOS into it to create ... well, something."
+SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	true	false	Grebeberg	false	"With the help of SOME DEMOS, you (after several grunts of 'STRAIN! I! ARTS!') manage to rejig the hay into something more aesthetically pleasing: straw arts! You're so enthusiastic, you even fold a few pages of SOME DEMOS into it to create ... well, something."
 straw arts	Revolt Lover	soot tattoos	--	rebump-art-xtra rule	true	true	false	Yelpley	false	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
 gate tag	soot tattoos	state tats	--	tats-peripheral rule	true	true	true	Yelpley	false	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
 poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	false	"A heretofore hidden poos scoop pops out from the poo coop. It shovels and vacuumss the offending dung into the coop, forming a crass arc that seems to contain several times the volume of the coop itself. Whatever, you can now go south."
@@ -2337,7 +2337,7 @@ understand the command "pack cap" as something new.
 understand "pack cap" as packing.
 
 carry out packing:
-	if the player has the pact cap, say "You already did.";
+	if the player has the pact cap, say "You already did." instead;
 	say "Yes, that's how to get the cap. You are ready to go! Hat, ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. It mumbles 'It's best I...' and salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
 	get-cap;
 	score-inc; [Dim Mid/pack cap]
@@ -3982,7 +3982,7 @@ understand "wornrow" as wornrowing when player is in Worn Row.
 understand "Worn Row" as wornrowing when player is in Worn Row.
 
 carry out wornrowing:
-	if psi wisp is moot, say "You already used the redness ender for something." instead;
+	if psi wisp is moot, say "You already used the redness ender to get rid of the Psi Wisp. You don't want to risk things." instead;
 	if psi wisp is not in Worn Row, say "You don't want to face the redness ender alone." instead;
 	clear-worn-row;
 	say "Worn Row rematerializes, along with the redness ender. Zap! Zot! It locks on the Psi Wisp, which explodes in a shower of rage. But somehow, the Psi Wisp connects enough to zap the redness ender back. Whew.";
@@ -4405,6 +4405,7 @@ understand the command "stand" as something new.
 understand "stand [something]" as standing.
 
 carry out standing:
+	if player has nat's tan, say "You already did. And you still do. Barely. Best not do anything to upset that." instead;
 	if noun is nat's tan:
 		say "It's tough, but you manage to stand the icky Nat's Tan enough to pick it up--it's for the good of your adventure. Maybe you can dump it on someone or something who finds it even ickier than you do.";
 		score-inc; [Yelpley/stand nat's]
@@ -4859,10 +4860,10 @@ carry out gotoing:
 			reset-chase instead;
 		if mrlp is not map region of noun:
 			say "You run into some x-it stix that block your way to Fun [']Nuf.";
-			move the chase-person to noun;
-			move the player to noun;
+			if mrlp is yelpley, move player to yawn way instead;
+			if mrlp is grebeberg, move player to seer trees instead;
+			say "UH OH bad bug ... should be moved somewhere.";
 			the rule succeeds;
-		move the chase-person to noun;
 		move the player to noun;
 		the rule succeeds;
 	if cap-pace is true and map region of location of noun is not Grebeberg:
