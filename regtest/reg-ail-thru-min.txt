@@ -1,26 +1,3 @@
-files=reg-ail-thru-min.txt,reg-ail-thru-all.txt,reg-ail-thru-mist.txt
-dupefile=reg-ail-thru-dupe.txt
-
-#reg-ail-thru.txt
-# tests everything
-
-===1,2
->stats
-by one point
-
->peep
-by one point
-
->poop
-by one point
-
->dial aid
-by one point
-
->refer
-by one point
-
-===0,1,2
 >pack cap
 by one point
 
@@ -49,11 +26,6 @@ by one point
 >word row
 by one point
 
-===1,2
->trace cart
-by one point
-
-===0,1,2
 >get TO IDIOT
 
 >e
@@ -127,11 +99,6 @@ by one point
 
 >s
 
-===1,2
->slam mammals
-by one point
-
-===0,1,2
 >use stock cots on sleep eels
 by one point
 
@@ -231,170 +198,6 @@ by one point
 
 >s
 
-===2
-#mistake test for bony nob
->bony nob
-The Bond Nob's body weight is not an important issue, here.
-===1,2
-
->use puce cup on Bond Nob
-by one point
-
->w
-
->get all
-
->e
-
->e
-
->use stamp mats on slate metals
-by one point
-
->w
-
->n
-
->n
-
->w
-
->w
-
->w
-
->n
-
->n
-
->use demo med on gulf lug
-by one point
-
->s
-
->s
-
->e
-
->e
-
->e
-
->e
-
->use cash sac on cross orc
-by one point
-
->s
-
->use yob attaboy on Sniffins
-by one point
-
->s
-
->use Elan Ale on Sniffins
-by one point
-
->stand nat's
-by one point
-
->n
-
->w
-
->w
-
->s
-
->w
-
->work row
-
->use Dirt Rid on reviver
-by one point
-
->e
-
->n
-
->e
-
->s
-
->s
-
->w
-
->use cave vac on cassettes sac
-by one point
-
->e
-
->n
-
->n
-
->e
-
->use radar on crag arc
-by one point
-
->n
-
->deny ned
-by one point
-
->get all
-
->use Ye Key on etage gate
-by one point
-
->n
-
->s
-
->s
-
->w
-
->w
-
->s
-
->w
-
->Worn Row
-by one point
-
->work row
-
->use stinky knits on rotator
-by one point
-
->word row
-
->e
-
->n
-
->e
-
->e
-
->n
-
->n
-
->get all
-
->use Gorge Grog on butene tub
-by one point
-
-===1,2
->balm lab
-by one point
-
-===0,1,2
 >s
 
 >s
@@ -426,14 +229,6 @@ by one point
 
 >e
 
-===1,2
->stack cats
-by one point
-
->see bees
-by one point
-
-===0,1,2
 >use SOME DEMOS on yahoo hay
 by one point
 
@@ -642,11 +437,6 @@ by one point
 
 >n
 
-===1,2
->muss opossum
-by one point
-
-===0,1,2
 >get all
 
 >s

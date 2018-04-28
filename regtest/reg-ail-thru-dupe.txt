@@ -1,28 +1,38 @@
-files=reg-ail-thru-min.txt,reg-ail-thru-all.txt,reg-ail-thru-mist.txt
-dupefile=reg-ail-thru-dupe.txt
-
-#reg-ail-thru.txt
-# tests everything
-
-===1,2
 >stats
 by one point
+
+>stats
+/by one point
 
 >peep
 by one point
 
+>peep
+/by one point
+
 >poop
 by one point
+
+>poop
+/by one point
 
 >dial aid
 by one point
 
+>dial aid
+/by one point
+
 >refer
 by one point
 
-===0,1,2
+>refer
+/by one point
+
 >pack cap
 by one point
+
+>pack cap
+/by one point
 
 >e
 
@@ -30,6 +40,9 @@ by one point
 
 >get trap art
 by one point
+
+>get trap art
+/by one point
 
 >s
 
@@ -39,6 +52,9 @@ by one point
 >evade dave
 by one point
 
+>evade dave
+/by one point
+
 >get saw
 
 >w
@@ -46,14 +62,21 @@ by one point
 >bore rob
 by one point
 
+>bore rob
+/by one point
+
 >word row
 by one point
 
-===1,2
+>word row
+/by one point
+
 >trace cart
 by one point
 
-===0,1,2
+>trace cart
+/by one point
+
 >get TO IDIOT
 
 >e
@@ -67,6 +90,9 @@ by one point
 >use TO IDIOT on Door Frood
 by one point
 
+>use to idiot on door frood
+/by one point
+
 >get bunk nub
 
 >e
@@ -76,12 +102,18 @@ by one point
 >use pity tip on eye
 by one point
 
+>use pity tip on eye
+/by one point
+
 >w
 
 >w
 
 >tend net
 by one point
+
+>tend net
+/by one point
 
 >e
 
@@ -96,11 +128,20 @@ by one point
 >work row
 by one point
 
+>work row
+/by one point
+
 >use trap art on reifier
 by one point
 
+>use trap art on reifier
+/by one point
+
 >use bunk nub on reviver
 by one point
+
+>use bunk nub on reviver
+/by one point
 
 
 >word row
@@ -118,22 +159,32 @@ by one point
 >use party trap on stark rats
 by one point
 
+>use party trap on stark rats
+/by one point
+
 >n
 
 >use epoch cope on King Nik
 by one point
 
->s
+>use epoch cope on king nik
+/by one point
 
 >s
 
-===1,2
+>s
+
 >slam mammals
 by one point
 
-===0,1,2
+>slam mammals
+/by one point
+
 >use stock cots on sleep eels
 by one point
+
+>use stock cots on sleep eels
+/by one point
 
 >s
 
@@ -166,10 +217,16 @@ by one point
 >puff up
 by one point
 
+>puff up
+/by one point
+
 >e
 
 >pull up
 by one point
+
+>pull up
+/by one point
 
 >get puce cup
 
@@ -185,8 +242,14 @@ by one point
 >use wash saw on past sap
 by one point
 
+>use wash saw on past sap
+/by one point
+
 >use puce cup on past sap
 by one point
+
+>use puce cup on past sap
+/by one point
 
 >s
 
@@ -202,6 +265,9 @@ by one point
 
 >use puce cup on liar grail
 by one point
+
+>use puce cup on liar grail
+/by one point
 
 >n
 
@@ -231,14 +297,12 @@ by one point
 
 >s
 
-===2
-#mistake test for bony nob
->bony nob
-The Bond Nob's body weight is not an important issue, here.
-===1,2
 
 >use puce cup on Bond Nob
 by one point
+
+>use puce cup on bond nob
+/by one point
 
 >w
 
@@ -250,6 +314,9 @@ by one point
 
 >use stamp mats on slate metals
 by one point
+
+>use stamp mats on slate metals
+/by one point
 
 >w
 
@@ -270,6 +337,9 @@ by one point
 >use demo med on gulf lug
 by one point
 
+>use demo med on gulf lug
+/by one point
+
 >s
 
 >s
@@ -285,18 +355,30 @@ by one point
 >use cash sac on cross orc
 by one point
 
+>use cash sac on cross orc
+/by one point
+
 >s
 
 >use yob attaboy on Sniffins
 by one point
+
+>use yob attaboy on sniffins
+/by one point
 
 >s
 
 >use Elan Ale on Sniffins
 by one point
 
+>use elan ale on sniffins
+/by one point
+
 >stand nat's
 by one point
+
+>stand nat's
+/by one point
 
 >n
 
@@ -313,6 +395,9 @@ by one point
 >use Dirt Rid on reviver
 by one point
 
+>use dirt rid on reviver
+/by one point
+
 >e
 
 >n
@@ -328,6 +413,9 @@ by one point
 >use cave vac on cassettes sac
 by one point
 
+>use cave vac on cassettes sac
+/by one point
+
 >e
 
 >n
@@ -339,15 +427,24 @@ by one point
 >use radar on crag arc
 by one point
 
+>use radar on crag arc
+/by one point
+
 >n
 
 >deny ned
 by one point
 
+>deny ned
+/by one point
+
 >get all
 
 >use Ye Key on etage gate
 by one point
+
+>use ye key on etage gate
+/by one point
 
 >n
 
@@ -366,10 +463,16 @@ by one point
 >Worn Row
 by one point
 
+>worn row
+/by one point
+
 >work row
 
 >use stinky knits on rotator
 by one point
+
+>use stinky knits on rotator
+/by one point
 
 >word row
 
@@ -390,11 +493,15 @@ by one point
 >use Gorge Grog on butene tub
 by one point
 
-===1,2
+>use gorge grog on butene tub
+/by one point
+
 >balm lab
 by one point
 
-===0,1,2
+>balm lab
+/by one point
+
 >s
 
 >s
@@ -412,6 +519,9 @@ by one point
 >use gold log on rotator
 by one point
 
+>use gold log on rotator
+/by one point
+
 >e
 
 >n
@@ -426,16 +536,23 @@ by one point
 
 >e
 
-===1,2
 >stack cats
 by one point
+
+>stack cats
+/by one point
 
 >see bees
 by one point
 
-===0,1,2
+>see bees
+/by one point
+
 >use SOME DEMOS on yahoo hay
 by one point
+
+>use some demos on yahoo hay
+/by one point
 
 >w
 
@@ -452,8 +569,14 @@ by one point
 >use straw arts on Revolt Lover
 by one point
 
+>use straw arts on revolt lover
+/by one point
+
 >use gate tag on soot tattoos
 by one point
+
+>use gate tag on soot tattoos
+/by one point
 
 >s
 
@@ -480,8 +603,14 @@ by one point
 >use poo coop on gnu dung
 by one point
 
+>use poo coop on gnu dung
+/by one point
+
 >use poo coop on turf rut
 by one point
+
+>use poo coop on turf rut
+/by one point
 
 
 >w
@@ -489,21 +618,36 @@ by one point
 >use radar on made dam
 by one point
 
+>use radar on made dam
+/by one point
+
 >n
 
 >use NULL ILLUN on Known Wonk
 by one point
 
+>use null illun on known wonk
+/by one point
+
 >use el doodle on edits tide
 by one point
+
+>use el doodle on edits tide
+/by one point
 
 >n
 
 >use elope pole on kayak
 by one point
 
+>use elope pole on kayak
+/by one point
+
 >use dork rod on tao boat
 by one point
+
+>use dork rod on tao boat
+/by one point
 
 >s
 
@@ -514,8 +658,14 @@ by one point
 >use tent net on code doc
 by one point
 
+>use tent net on code doc
+/by one point
+
 >use spa maps on code doc
 by one point
+
+>use spa maps on code doc
+/by one point
 
 >n
 
@@ -530,6 +680,9 @@ by one point
 >use spa maps on go-by bog
 by one point
 
+>use spa maps on go-by bog
+/by one point
+
 >w
 
 >s
@@ -543,11 +696,23 @@ by one point
 >use enact cane on yahoo hay
 by one point
 
+>use enact cane on yahoo hay
+/by one point
+
 >pace cap
 by one point
 
+>pace cap
+/by one point
+
+>pace cap
+/by one point
+
 >use troll ort on brag garb
 by one point
+
+>use troll ort on brag garb
+/by one point
 
 >w
 
@@ -566,13 +731,22 @@ by one point
 >yak okay
 by one point
 
+>yak okay
+/by one point
+
 >e
 
 >use sage gas on tame mat
 by one point
 
+>use sage gas on tame mat
+/by one point
+
 >use sharp rahs on guru rug
 by one point
+
+>use sharp rahs on guru rug
+/by one point
 
 >w
 
@@ -587,11 +761,20 @@ by one point
 >nail ian
 by one point
 
+>nail ian
+/by one point
+
 >use snack cans on UFO tofu
 by one point
 
+>use snack cans on ufo tofu
+/by one point
+
 >use gift fig on mayo yam
 by one point
+
+>use gift fig on mayo yam
+/by one point
 
 >w
 
@@ -605,6 +788,9 @@ by one point
 
 >use enact cane on yahoo hay
 by one point
+
+>use enact cane on yahoo hay
+/by one point
 
 >pace cap
 
@@ -626,12 +812,18 @@ by one point
 >use moor broom on tru yurt
 by one point
 
+>use moor broom on tru yurt
+/by one point
+
 >s
 
 >s
 
 >use wash saw on porch crop
 by one point
+
+>use wash saw on porch crop
+/by one point
 
 >n
 
@@ -640,13 +832,17 @@ by one point
 >use exam axe on lie veil
 by one point
 
+>use exam axe on lie veil
+/by one point
+
 >n
 
-===1,2
 >muss opossum
 by one point
 
-===0,1,2
+>muss opossum
+/by one point
+
 >get all
 
 >s
@@ -664,14 +860,26 @@ by one point
 >use DNA band on reifier
 by one point
 
+>use dna band on reifier
+/by one point
+
 >use roto motor on DNA hand
 by one point
+
+>use roto motor on dna hand
+/by one point
 
 >use eroded ore on reviver
 by one point
 
+>use eroded ore on reviver
+/by one point
+
 >use you buoy on rotator
 by one point
+
+>use you buoy on rotator
+/by one point
 
 >e
 
@@ -685,6 +893,9 @@ by one point
 
 >use mr arm on bomb mob
 by one point
+
+>use mr arm on bomb mob
+/by one point
 
 >get rep popper
 
@@ -705,10 +916,16 @@ by one point
 >use nat's tan on scorn rocs
 by one point
 
+>use nat's tan on scorn rocs
+/by one point
+
 >w
 
 >use rep popper on me totem
 by one point
+
+>use rep popper on me totem
+/by one point
 
 >e
 
@@ -727,8 +944,14 @@ by one point
 >use Bro Orb on mirror rim
 by one point
 
+>use bro orb on mirror rim
+/by one point
+
 >use balsa slab on sword rows
 by one point
+
+>use balsa slab on sword rows
+/by one point
 
 >s
 
@@ -741,14 +964,26 @@ by one point
 >use not-a-baton on reifier
 by one point
 
+>use not-a-baton on reifier
+/by one point
+
 >use murdered rum on yard ray
 by one point
+
+>use murdered rum on yard ray
+/by one point
 
 >emit noontime
 by one point
 
+>emit noontime
+/by one point
+
 >use yard ray on test set
 by one point
+
+>use yard ray on test set
+/by one point
 
 >e
 
@@ -759,19 +994,34 @@ by one point
 >use TNT on ore zero
 by one point
 
+>use tnt on ore zero
+/by one point
+
 >n
 
 >use ME gem on Knife Fink
 by one point
 
+>use me gem on knife fink
+/by one point
+
 >use taboo bat on Verses Rev
 by one point
 
+>use taboo bat on verses rev
+/by one point
+
 >use yard ray on redivider
 by one point
+
+>use yard ray on redivider
+/by one point
 
 >s
 
 >use x-ite tix on tix exit
 by one point
+
+>use x-ite tix on tix exit
+/by one point
 
