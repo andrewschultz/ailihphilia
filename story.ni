@@ -853,7 +853,7 @@ check taking inventory when Dave is moot:
 	now state tats are unmarked for listing;
 	now sto lots is unmarked for listing;
 	now all books are unmarked for listing;
-	say "[if number of things carried by player > 7]Your STO-LOTS makes sure carrying many things isn't awkward.[else]'Met item' list:[line break][end if]";
+	say "[if number of things carried by player > 7]Your STO-LOTS makes sure carrying many things isn't awkward. It contains:[line break][else]'Met item' list:[line break][end if]";
 	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
 	if number of lugged books > 0, say "Currently lugging (oof) [list of carried books].";
 	if number of lugged books is 0 and player has Some Demos, say "You've also got that small book, [some demos].";
@@ -1155,7 +1155,7 @@ check going (this is the reject noncardinal directions rule):
 	if noun is diagonal, say "You don't need diagonal directions in this game." instead;
 	if noun is up or noun is down:
 		if the room noun of location of player is nowhere:
-			say "You never need to go up or down in this game, though sometimes they act as a backup to the main cardinal directions--for instance, to or from [if Mont Nom is visited]Mont Nom[else]a hill[end if].";
+			say "You never need to go up or down in this game, though sometimes they act as a backup to the main cardinal directions--for instance, up to or down from [if player is in Mont Nom]here[else if Mont Nom is visited]Mont Nom[else]a hill[end if].";
 			if player has Spur Ups, say "[line break]You DO have to do something with the Spur Ups, though. Just not go.";
 			the rule succeeds;
 
@@ -4844,10 +4844,17 @@ to decide whether goto-available:
 
 gone-to is a truth state that varies.
 
+to decide which direction is first-move of (r1 - a room) and (r2 - a room):
+	let D1 be the best route from r1 to r2;
+	if D1 is not up and D1 is not down, decide on D1;
+	repeat with D2 running through maindir:
+		if the room D1 of r1 is the room D2 of r1, decide on D2;
+	decide on up; [??this should never happen. But I'd like a bail statement if it does.]
+
 carry out gotoing:
 	if noun is location of player, say "Already there! Er, here." instead;
 	if being-chased is true:
-		if the best route from the location of the player to noun is the opposite of last-chase-direction:
+		if first-move of location of the player and noun is the opposite of last-chase-direction:
 			say "Before you can double back, [the chase-person] catches you and sends you spinning!";
 			reset-chase instead;
 		if mrlp is not map region of noun:
@@ -5118,8 +5125,12 @@ after going when being-chased is true:
 	now last-chase-direction is noun;
 	continue the action;
 
-check going when being-chased is true:
+check going when being-chased is true (this is the block reverse and flatten directions rule):
 	if last-chase-direction is opposite of noun, say "The [chase-person] is blocking you from the [noun]. You try a gazelle-zag but don't have the moves." instead;
+	if noun is up or noun is down:
+		if the room noun of location of player is nowhere, continue the action;
+		repeat with DR running through maindir:
+			if the room DR of location of player is the room noun of location of player, try going DR instead;
 
 check going to Fun Nuf when being-chased is true: say "[chase-pass]The X-It Stix block you." instead;
 
@@ -6407,10 +6418,39 @@ definition: a room (called ro) is chaseable:
 	if ro is dirge grid, no;
 	yes;
 
+to decide which number is exit-count of (r1 - a room):
+	let ret be 0;
+	repeat with DR running through maindir:
+		if the room DR of r1 is not nothing, increment ret;
+	decide on ret;
+
+to decide which direction is exit-dir of (r1 - a room):
+	repeat with DR running through maindir:
+		if the room DR of r1 is not nothing, decide on DR;
+	decide on up;
+
 carry out dirvering:
+	let list-none be false;
+	let XDX be up;
+	let XCX be 0;
 	repeat with X running through chaseable rooms:
+		now XCX is exit-count of X;
+		now list-none is false;
+		if exit-count of X is 1, now list-none is true;
+		if list-none is true:
+			now XDX is exit-dir of X;
+			say "[XDX] is the expected direction from [x].";
+		else:
+			say "[XCX] ways out of [x].";
 		repeat with Y running through chaseable rooms:
-			say "[X] to [Y] starts [best route from X to Y].";
+			if X is Y, next;
+			let fmo be first-move of X and Y;
+			if list-none is false:
+				say "[X] to [Y] starts [fmo].";
+			else:
+				let Y2 be the room XDX of X;
+				if fmo is not XDX:
+					say "[X] to [Y] is incorrectly derived as starting [fmo] when it should be [XDX].";
 	the rule succeeds;
 
 chapter scvering
