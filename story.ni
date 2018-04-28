@@ -4681,7 +4681,7 @@ chapter Demo Med
 
 a Demo Med is an edible thing in Dopy Pod. "The demo med that must not have worked for the Bond Nob sits here, on a pill lip.". description is "You're not sure what it could be. Xanax? You don't want to risk it, though, because you're not sick."
 
-instead of eating demo med, say "That would only be a temporary reprieve from your troubles."
+instead of eating demo med, say "That would only be a temporary reprieve from your troubles. Plus, what if it is a demon-o-med?"
 
 the pill lip is peripheral scenery in Dopy Pod. "A Demo Med rests on the Pill Lip."
 
@@ -4757,7 +4757,7 @@ The DNA band is a thing in Pro Corp. "A DNA band sits here, nice and tidy and he
 
 The DNA hand is a thing. description is "It's motionless, but it looks lifelike enough. There must be a way to bring it to life!"
 
-Mr Arm is a proper-named thing. description is "Wow! It's really evolved from a DNA band! It's sturdy. If it had eyes, it'd be looking for something to steal and run--umm, that's not quite right--off with. You're not sure why it hasn't run off with anything in your inventory. Is all this stuff you piled up worthless? Perhaps the Mr Arm is just grateful and wants to steal something for you.[paragraph break][one of]Mr. Arm seems about to point somewhere. If you look again, you can see where[or]Mr. Arm [arm-dir][stopping]"
+Mr Arm is a proper-named thing. description is "Wow! It's really evolved from a DNA band! The BANG NAB written on it indicates it's more than a measly banana nab. It's sturdy. If it had eyes, it'd be looking for something to steal and run--umm, that's not quite right--off with. You're not sure why it hasn't run off with anything in your inventory. Is all this stuff you piled up worthless? Perhaps the Mr Arm is just grateful and wants to steal something for you.[paragraph break][one of]Mr. Arm seems about to point somewhere. If you look again, you can see where[or]Mr. Arm [arm-dir][stopping]"
 
 printed name of Mr Arm is "Mr. Arm".
 
@@ -4845,11 +4845,22 @@ to decide whether goto-available:
 gone-to is a truth state that varies.
 
 carry out gotoing:
-	if being-chased is true, say "Sorry, but since you're being chased by the [chase-person], you need to be specific about directions, here." instead;
+	if noun is location of player, say "Already there! Er, here." instead;
+	if being-chased is true:
+		if the best route from the location of the player to noun is the opposite of last-chase-direction:
+			say "Before you can double back, [the chase-person] catches you and sends you spinning!";
+			reset-chase instead;
+		if mrlp is not map region of noun:
+			say "You run into some x-it stix that block your way to Fun [']Nuf.";
+			move the chase-person to noun;
+			move the player to noun;
+			the rule succeeds;
+		move the chase-person to noun;
+		move the player to noun;
+		the rule succeeds;
 	if cap-pace is true and map region of location of noun is not Grebeberg:
 		now cap-pace is false;
 		say "Your pace cap slows down as you [if noun is Fun Nuf]enter[else]cross[end if] Fun [']Nuf..." instead;
-	if noun is location of player, say "Already there!";
 	unless goto-available, say "You're at a point in the game where goto isn't available." instead;
 	if Diktat Kid is moot:
 		if noun is Deft Fed, say "You can't crash the party. You weren't invited. It's REALLY exclusive." instead;
@@ -6381,6 +6392,25 @@ carry out percing:
 			say "Need periphery entry for [pthi].";
 			increment count;
 	say "[if count is 0]Yay! Periphery succeeds![else][count] periphery errors.[end if]";
+	the rule succeeds;
+
+chapter dirvering
+
+dirvering is an action out of world.
+
+understand the command "dirver" as something new.
+
+understand "dirver" as dirvering.
+
+definition: a room (called ro) is chaseable:
+	if ro is in odd do, no;
+	if ro is dirge grid, no;
+	yes;
+
+carry out dirvering:
+	repeat with X running through chaseable rooms:
+		repeat with Y running through chaseable rooms:
+			say "[X] to [Y] starts [best route from X to Y].";
 	the rule succeeds;
 
 chapter scvering
