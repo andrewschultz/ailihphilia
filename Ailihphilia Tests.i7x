@@ -16,6 +16,32 @@ a thing can be abstract. a thing is usually not abstract.
 
 include Property Checking by Emily Short.
 
+chapter go walkthrough
+
+test gh1 with "pack cap/stats/peep/poop/dial aid/refer/e/n/get trap art/s/s/evade dave/get saw/w/bore rob/word row/trace cart/get TO IDIOT/gt art xtra/n/use TO IDIOT on Door Frood/get bunk nub/e/get all/use pity tip on eye/w/w/tend net/gt word row/work row/use trap art on reifier/use bunk nub on reviver".
+
+test gh2 with "word row/get epoch cope/gt fun nuf/w/use party trap on stark rats/n/use epoch cope on King Nik/s/s/slam mammals/use stock cots on sleep eels/s/get stamp mats/e/get poo coop/gt word row/get yob attaboy/gt yawn way/puff up/e/pull up/get puce cup".
+
+test gh3 with "gt cold loc/use wash saw on past sap/use puce cup on past sap/gt emo dome/s/get troll ort/use puce cup on liar grail/gt cold loc/e/use puce cup on dose sod/gt swept pews/s/use puce cup on Bond Nob".
+
+test gh4 with "w/get all/e/e/use stamp mats on slate metals/gt cold loc/n/use demo med on gulf lug/gt emo dome/e/use cash sac on cross orc".
+
+test gh5 with "s/use yob attaboy on Sniffins/s/use Elan Ale on Sniffins/stand nat's/gt word row/work row/use Dirt Rid on reviver/gt drawl ward/w/use cave vac on cassettes sac/gt toll lot/use radar on crag arc/n/deny ned/get all/use Ye Key on etage gate".
+
+test gh6 with "n/gt work row/worn row".
+
+test gh7 with "work row/use stinky knits on rotator/word row/gt pro corp/get all/use Gorge Grog on butene tub/balm lab/gt word row/work row/use gold log on rotator/gt moo room/stack cats/see bees/use SOME DEMOS on yahoo hay/gt art xtra/use straw arts on Revolt Lover/use gate tag on soot tattoos/gt work row/word row/get NULL ILLUN/work row/gt seer trees/w/use poo coop on gnu dung/use poo coop on turf rut".
+
+test gh8 with "w/use radar on made dam/n/use NULL ILLUN on Known Wonk/use el doodle on edits tide/n/use elope pole on kayak/use dork rod on tao boat/gt swamp maws/s/use tent net on code doc/use spa maps on code doc/gt apse spa/use spa maps on go-by bog".
+
+test gh9 with "gt moo room/use enact cane on yahoo hay/w/pace cap/use troll ort on brag garb/gt ivy/s/yak okay".
+
+test gh10 with "e/use sage gas on tame mat/use sharp rahs on guru rug/gt dumb mud/s/nail ian/use snack cans on UFO tofu/use gift fig on mayo yam/gt yack cay/use moor broom on tru yurt/gt ivy/use wash saw on porch crop/gt dumb mud/use exam axe on lie veil/n/muss opossum/get all/gt work row/use DNA band on reifier/use roto motor on DNA hand/use eroded ore on reviver/use you buoy on rotator/gt yell alley/use mr arm on bomb mob/get rep popper/gt flu gulf/use nat's tan on scorn rocs".
+
+test gh11 with "w/use rep popper on me totem/gt emo dome/n/use Bro Orb on mirror rim/use balsa slab on sword rows/gt work row/use not-a-baton on reifier/use murdered rum on yard ray/emit noontime/use yard ray on test set/gt fun nuf/use TNT on ore zero/n/use ME gem on Knife Fink/use taboo bat on Verses Rev/use yard ray on redivider/s/use x-ite tix on tix exit".
+
+test ghs with "test gh1/test gh2/test gh3/test gh4/test gh5/test gh6/test gh7/test gh8/test gh9/test gh10/test gh11"
+
 chapter main walkthrough
 
 test part1 with "pack cap/stats/peep/poop/dial aid/refer/e/n/get trap art/s/s/evade dave/get saw/w/bore rob/word row/trace cart/get TO IDIOT/e/n/n/n/use TO IDIOT on Door Frood/get bunk nub/e/get all/use pity tip on eye/w/w/tend net/e/s/s/s/w/work row/use trap art on reifier/use bunk nub on reviver".
@@ -109,6 +135,7 @@ test s6 with "test part1/test part2/test part3/test part4/test part5/test part6"
 test s7 with "test part1/test part2/test part3/test part4/test part5/test part6/test part7".
 test s8 with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8".
 test s9 with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9".
+test s9a with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test p9a".
 test s10 with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9/test part10".
 test s11 with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9/test part10/test part11".
 
