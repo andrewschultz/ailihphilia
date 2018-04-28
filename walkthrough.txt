@@ -4,7 +4,7 @@ I didn't intend this game to be overly difficult or to have any weird profound m
 
 There should be no way to die or be locked out of a win in Ailihphilia.
 
-If you are technically inclined, you can grep -i "^>" walkthrough.txt | sed "s/.*>//" to plow through. But if you're technically inclined, you likely won't need the walkthrough. Still, if you want the quick way without comments, there it is.
+If you are technically inclined, you can grep -i "^>" walkthrough.txt | sed "s/.*>//" to plow through. But if you're technically inclined, you likely won't need the walkthrough. Still, if you want the quick way without comments, there it is. (Okay, it could be quicker, turn-wise, with the GT command. But you might not save keystrokes.)
 
 Some particular spoilers, such as the general procedure for puzzles, may be encoded in ROT13. You'll know them, because they look like gibberish. Copy and paste them to Rot13.com to see what happens.
 
@@ -221,8 +221,6 @@ Bam! There goes the Psi Wisp. Back to work. We have some stuff to convert, now, 
 
 (+1) > USE STINKY KNITS ON ROTATOR
 
->WORD ROW
-
 >E.N.E.E.N.N
 
 >GET ALL
@@ -230,8 +228,6 @@ Bam! There goes the Psi Wisp. Back to work. We have some stuff to convert, now, 
 (+1) >USE GORGE GROG ON BUTENE TUB
 
 >S.S.W.W.S.W
-
->WORK ROW
 
 (+1) >USE GOLD LOG ON ROTATOR
 

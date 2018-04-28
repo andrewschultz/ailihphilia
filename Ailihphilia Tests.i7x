@@ -30,7 +30,7 @@ test gh5 with "s/use yob attaboy on Sniffins/s/use Elan Ale on Sniffins/stand na
 
 test gh6 with "n/gt work row/worn row".
 
-test gh7 with "work row/use stinky knits on rotator/word row/gt pro corp/get all/use Gorge Grog on butene tub/balm lab/gt word row/work row/use gold log on rotator/gt moo room/stack cats/see bees/use SOME DEMOS on yahoo hay/gt art xtra/use straw arts on Revolt Lover/use gate tag on soot tattoos/gt work row/word row/get NULL ILLUN/work row/gt seer trees/w/use poo coop on gnu dung/use poo coop on turf rut".
+test gh7 with "work row/use stinky knits on rotator/gt pro corp/get all/use Gorge Grog on butene tub/balm lab/gt word row/use gold log on rotator/gt moo room/stack cats/see bees/use SOME DEMOS on yahoo hay/gt art xtra/use straw arts on Revolt Lover/use gate tag on soot tattoos/gt work row/word row/get NULL ILLUN/work row/gt seer trees/w/use poo coop on gnu dung/use poo coop on turf rut".
 
 test gh8 with "w/use radar on made dam/n/use NULL ILLUN on Known Wonk/use el doodle on edits tide/n/use elope pole on kayak/use dork rod on tao boat/gt swamp maws/s/use tent net on code doc/use spa maps on code doc/gt apse spa/use spa maps on go-by bog".
 
@@ -56,7 +56,7 @@ test part5 with "s/use yob attaboy on Sniffins/s/use Elan Ale on Sniffins/stand 
 
 test part6 with "n/s/s/w/w/s/w/Worn Row".
 
-test part7 with "work row/use stinky knits on rotator/word row/e/n/e/e/n/n/get all/use Gorge Grog on butene tub/balm lab/s/s/w/w/s/w/work row/use gold log on rotator/e/n/w/w/s/s/e/stack cats/see bees/use SOME DEMOS on yahoo hay/w/n/n/e/e/n/use straw arts on Revolt Lover/use gate tag on soot tattoos/s/s/w/word row/get NULL ILLUN/work row/e/n/w/w/w/use poo coop on gnu dung/use poo coop on turf rut".
+test part7 with "work row/use stinky knits on rotator/e/n/e/e/n/n/get all/use Gorge Grog on butene tub/balm lab/s/s/w/w/s/w/use gold log on rotator/e/n/w/w/s/s/e/stack cats/see bees/use SOME DEMOS on yahoo hay/w/n/n/e/e/n/use straw arts on Revolt Lover/use gate tag on soot tattoos/s/s/w/word row/get NULL ILLUN/work row/e/n/w/w/w/use poo coop on gnu dung/use poo coop on turf rut".
 
 test part8 with "w/use radar on made dam/n/use NULL ILLUN on Known Wonk/use el doodle on edits tide/n/use elope pole on kayak/use dork rod on tao boat/s/s/s/use tent net on code doc/use spa maps on code doc/n/e/e/n/e/use spa maps on go-by bog".
 
@@ -74,6 +74,32 @@ test part11 with "w/use rep popper on me totem/e/s/s/e/e/e/n/use Bro Orb on mirr
 
 test rollup with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9/test part10".
 
+chapter duplicates walkthrough
+
+test dup1 with "pack cap/pack cap/stats/stats/peep/peep/poop/poop/dial aid/dial aid/refer/refer/e/n/get trap art/get trap art/s/s/evade dave/evade dave/get saw/get saw/w/bore rob/bore rob/word row/word row/trace cart/trace cart/get to idiot/get to idiot/e/n/n/n/use to idiot on door frood/use to idiot on door frood/get bunk nub/get bunk nub/e/get all/get all/use pity tip on eye/use pity tip on eye/w/w/tend net/tend net/e/s/s/s/w/work row/work row/use trap art on reifier/use trap art on reifier/use bunk nub on reviver/use bunk nub on reviver"
+
+test dup2 with "word row/word row/get epoch cope/get epoch cope/e/n/w/w/use party trap on stark rats/use party trap on stark rats/n/use epoch cope on king nik/use epoch cope on king nik/s/s/slam mammals/slam mammals/use stock cots on sleep eels/use stock cots on sleep eels/s/get stamp mats/get stamp mats/e/get poo coop/get poo coop/w/n/n/e/e/s/w/get yob attaboy/get yob attaboy/e/n/puff up/puff up/e/pull up/pull up/get puce cup/get puce cup"
+
+test dup3 with "w/w/w/n/use wash saw on past sap/use wash saw on past sap/use puce cup on past sap/use puce cup on past sap/s/e/e/e/s/get troll ort/get troll ort/use puce cup on liar grail/use puce cup on liar grail/n/w/w/w/n/e/use puce cup on dose sod/use puce cup on dose sod/w/s/e/e/e/s/s/use puce cup on bond nob/use puce cup on bond nob"
+
+test dup4 with "w/get all/get all/e/e/use stamp mats on slate metals/use stamp mats on slate metals/w/n/n/w/w/w/n/n/use demo med on gulf lug/use demo med on gulf lug/s/s/e/e/e/e/use cash sac on cross orc/use cash sac on cross orc"
+
+test dup5 with "s/use yob attaboy on sniffins/use yob attaboy on sniffins/s/use elan ale on sniffins/use elan ale on sniffins/stand nat's/stand nat's/n/w/w/s/w/work row/work row/use dirt rid on reviver/use dirt rid on reviver/e/n/e/s/s/w/use cave vac on cassettes sac/use cave vac on cassettes sac/e/n/n/e/use radar on crag arc/use radar on crag arc/n/deny ned/deny ned/get all/get all/use ye key on etage gate/use ye key on etage gate"
+
+test dup6 with "n/s/s/w/w/s/w/worn row/worn row"
+
+test dup7 with "work row/work row/use stinky knits on rotator/use stinky knits on rotator/e/n/e/e/n/n/get all/get all/use gorge grog on butene tub/use gorge grog on butene tub/balm lab/balm lab/s/s/w/w/s/w/use gold log on rotator/use gold log on rotator/e/n/w/w/s/s/e/stack cats/stack cats/see bees/see bees/use some demos on yahoo hay/use some demos on yahoo hay/w/n/n/e/e/n/use straw arts on revolt lover/use straw arts on revolt lover/use gate tag on soot tattoos/use gate tag on soot tattoos/s/s/w/word row/word row/get null illun/get null illun/work row/work row/e/n/w/w/w/use poo coop on gnu dung/use poo coop on gnu dung/use poo coop on turf rut/use poo coop on turf rut"
+
+test dup8 with "w/use radar on made dam/use radar on made dam/n/use null illun on known wonk/use null illun on known wonk/use el doodle on edits tide/use el doodle on edits tide/n/use elope pole on kayak/use elope pole on kayak/use dork rod on tao boat/use dork rod on tao boat/s/s/s/use tent net on code doc/use tent net on code doc/use spa maps on code doc/use spa maps on code doc/n/e/e/n/e/use spa maps on go-by bog/use spa maps on go-by bog"
+
+test dup9 with "w/s/s/s/e/use enact cane on yahoo hay/use enact cane on yahoo hay/pace cap/pace cap/pace cap/use troll ort on brag garb/use troll ort on brag garb/w/n/n/w/w/s/s/yak okay/yak okay"
+
+test dup10 with "e/use sage gas on tame mat/use sage gas on tame mat/use sharp rahs on guru rug/use sharp rahs on guru rug/w/n/n/e/s/nail ian/nail ian/use snack cans on ufo tofu/use snack cans on ufo tofu/use gift fig on mayo yam/use gift fig on mayo yam/w/w/w/n/use moor broom on tru yurt/use moor broom on tru yurt/s/s/use wash saw on porch crop/use wash saw on porch crop/n/e/use exam axe on lie veil/use exam axe on lie veil/n/muss opossum/muss opossum/get all/get all/s/e/e/e/s/w/use dna band on reifier/use dna band on reifier/use roto motor on dna hand/use roto motor on dna hand/use eroded ore on reviver/use eroded ore on reviver/use you buoy on rotator/use you buoy on rotator/e/n/n/n/e/use mr arm on bomb mob/use mr arm on bomb mob/get rep popper/get rep popper/w/s/s/w/w/n/n/use nat's tan on scorn rocs/use nat's tan on scorn rocs"
+
+test dup11 with "w/use rep popper on me totem/use rep popper on me totem/e/s/s/e/e/e/n/use bro orb on mirror rim/use bro orb on mirror rim/use balsa slab on sword rows/use balsa slab on sword rows/s/w/s/w/use not-a-baton on reifier/use not-a-baton on reifier/use murdered rum on yard ray/use murdered rum on yard ray/emit noontime/emit noontime/use yard ray on test set/use yard ray on test set/e/n/w/use tnt on ore zero/use tnt on ore zero/n/use me gem on knife fink/use me gem on knife fink/use taboo bat on verses rev/use taboo bat on verses rev/use yard ray on redivider/use yard ray on redivider/s/use x-ite tix on tix exit/use x-ite tix on tix exit"
+
+test dups with "test dup1/test dup2/test dup3/test dup4/test dup5/test dup6/test dup7/test dup8/test dup9/test dup10/test dup11"
+
 chapter different directions
 
 section east first
@@ -86,7 +112,7 @@ test east3 with "w/get all/e/n/n/w/w/w/n/n/use demo med on gulf lug/s/s/e/e/s/w/
 
 test east4 with "n/e/s/s/w/use cave vac on cassettes sac/e/n/n/w/w/w/s/use stock cots on sleep eels/s/get mats/n/n/e/e/e/s/s/e/use stamp mats on slate metals/w/n/n/e/use radar on crag arc/n/deny ned/use ye key on etage gate/n/s/s/w/w/s/w/worn row/e/n/e/e/n/n/use gorge grog on butene tub"
 
-test east5 with "get all/s/get all/s/w/w/s/w/work row/use gold log on rotator/use stinky knits on rotator/use dna band on reifier/e/n/w/w/s/s/e/use some demos on yahoo hay/get all/w/n/n/e/e/n/use straw arts on revolt lover/use gate tag on soot tattoos"
+test east5 with "get all/s/get all/s/w/w/s/w/use gold log on rotator/use stinky knits on rotator/use dna band on reifier/e/n/w/w/s/s/e/use some demos on yahoo hay/get all/w/n/n/e/e/n/use straw arts on revolt lover/use gate tag on soot tattoos"
 
 test east6 with "s/w/w/w/use poo coop on gnu dung/w/use radar on made dam/use roto motor on dna hand/e/e/e/e/s/w/use eroded ore on reviver/word row/get null illun/e/n/n/n/e/use mr arm on bomb mob/w/s/s/w/w/w/w/n/use null illun on known wonk/n/use elope pole on kayak/s/s/e/e/e/e/s/w/work row/use you buoy on rotator"
 
