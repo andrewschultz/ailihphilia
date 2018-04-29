@@ -658,12 +658,13 @@ def get_stuff_from_source():
                     if x[1] == 'reifier' or x[1] == 'reviver' or x[1] == 'rotator':
                         machine_uses[x[1]] = machine_uses[x[1]] + 1
                         machine_actions[x[1]] = machine_actions[x[1]] + "    {:s} -> {:s}\n".format(x[0], x[2])
-                    if len(x) != 10 and x[0] != '--':
+                    if len(x) != 11 and x[0] != '--':
+                        print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 11. Ignoring data in this line.")
+                        continue
+                    if len(x) != 10 and x[0] == '--':
                         print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 10. Ignoring data in this line.")
                         continue
-                    if len(x) != 9 and x[0] == '--':
-                        print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 9. Ignoring data in this line.")
-                        continue
+                    cmd = ""
                     if x[0] != '--' and x[1] != '--':
                         cmd = "USE {:s} ON {:s}".format(x[0].upper(), x[1].upper())
                         new_cmd_ary = find_comment_cmds('b4', line)
@@ -674,6 +675,8 @@ def get_stuff_from_source():
                             if temp_cmd in source_cmd_order.keys() and not temp_cmd.startswith("USE"): print("WARNING", temp_cmd, "is a duplicate in table of goodacts, line", line_count)
                             source_cmd_order[temp_cmd] = source_cmd_count
                         use_in_source[cmd] = line_count # we only track line count for "use" commands and not unusual point gainers
+                    else:
+                        cmd = x[3]
                     if x[5] == 'false' or 'sc2-ignore' in ll:
                         ignore_points[cmd] = line_count
                         print("Ignoring points for", '/'.join(x[0:2]) if x[0] != '--' else x[3])
