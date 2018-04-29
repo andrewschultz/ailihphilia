@@ -27,7 +27,7 @@ understand "spa laps" as a mistake ("You never need to swim anywhere in this gam
 
 understand "spa naps" as a mistake ("No time to relax! There's adventuring to be had![mis of 6]") when player is in Apse Spa or spa maps are quicknear.
 
-understand "spa raps" as a mistake ("The spa is a place of peace. Stop that noise, and get off mylawn![mis of 7]") when player is in Apse Spa or spa maps are quicknear.
+understand "spa raps" as a mistake ("The spa is a place of peace. Stop that noise, and get off my lawn![mis of 7]") when player is in Apse Spa or spa maps are quicknear.
 
 understand "spa saps" as a mistake ("One day, with the Diktat Kid gone, plenty of people will waste money on a spa, but your job is to get things there.[mis of 8]") when player is in Apse Spa or spa maps are quicknear.
 
@@ -91,9 +91,7 @@ understand "spud ups" as a mistake ("The Spur Ups don't become potatoes or Frenc
 
 chapter Deft Fed
 
-understand "defy fed" as a mistake ("Way to go! Keep that Hunger! Well, I hope it's that and not conspiracy theories about the Fed.[mis of 31]") when player is in Deft Fed and YOB ATTABOY is not moot.
-
-understand "defy fed" as a mistake ("No problem, you're not getting fed anyway.[mis of 32]") when player is in Deft Fed and yob attaboy is not moot.
+understand "defy fed" as a mistake ("[if yob attaboy is moot]Way to go! Keep that Hunger! Well, I hope it's that and not conspiracy theories about the Fed[else]No problem, you're not getting fed anyway[end if].[mis of 31]") when player is in Deft Fed and YOB ATTABOY is not moot.
 
 understand "stank nats" and "stank nat's" as a mistake ("Yes, it's pretty awful.[mis of 33]") when nat's tan is quicknear.
 
@@ -258,13 +256,11 @@ chapter Gross Org
 
 understand "grow org" as a mistake ("[one of]This game is just a bunch of dumb jokes and silly wordplay mashed together, and any attempt at personal growth is severely frowned upon. So stop that![or]Your height does not change.[stopping][mis of 90]") when player is in Gross Org.
 
-understand "stinko knits" as a mistake ("There's time to get loaded after solving things.[mis of 91]") when stinky knits are quicknear.
+understand "stinko knits" as a mistake ("There's time to get loaded after solving things. Or drunk. Nurd.[mis of 91]") when stinky knits are quicknear.
 
 understand "dent Ned" as a mistake ("Less violence, more subtlety.[mis of 92]") when Ned is quicknear.
 
 understand "bra garb" as a mistake ("I've tried to keep this game gender neutral.[mis of 191]") when brag garb is quicknear.
-
-understand "stinko knits" as a mistake ("In this game, you don't need to get drunk. Nurd.[mis of 93]") when stinky knits are quicknear.
 
 understand "grot org" as a mistake ("Gross, grot ... same thing.[mis of 94]") when player is in Gross Org.
 
@@ -278,7 +274,7 @@ chapter Le Babel
 
 chapter Swamp Maws
 
-understand "swami maws" and "swamy maws" as a mistake ("They can't quite be. The Known Wonk's knowledge is not universal enough.[mis of 97]") when player is in Swamp Maws.
+understand "swami maws" and "swamy maws" as a mistake ("[if yack cay is visited and den ivy vined is visited]Aw, come on, you've already met TWO SMART PEOPLE nearby[else if yack cay is unvisited and den ivy vined is unvisited]There might be someone smart nearby[else]Aw, come on, you've already met someone smart nearby[end if].[mis of 97]") when player is in Swamp Maws.
 
 understand "swam maws" as a mistake ("Perhaps someone has, but you don't need to.[mis of 98]") when player is in Swamp Maws.
 
@@ -287,10 +283,6 @@ section eroded ore
 understand "eros ore" as a mistake ("I don't even want to know what you're trying to do, there.[mis of 99]") when eroded ore is quicknear.
 
 chapter Mont Nom
-
-[understand "truce curt" as a mistake ("You'll need something more violent, here.") when player is in Mont Nom and Curt is in Mont Nom.
-
-understand "truco curt" as a mistake ("You don't have a deck of cards, and Curt wouldn't want to play.[mis of 100]") when player is in Mont Nom and Curt is in Mont Nom.]
 
 understand "mar tram" as a mistake ("No. [if epicer recipe is xed]You need it to build the north-tron[else]It must be good for something[end if].[mis of 101]") when martini tram is quicknear.
 
@@ -354,11 +346,11 @@ understand "sci dics" as a mistake ("You don't have time to learn weird terminol
 
 understand "sci fics" as a mistake ("But you already have reading material![mis of 126]") when player is in Pro Corp.
 
-understand "sci mics" as a mistake ("Your experience remains relatively quiet.[mis of 127]") when player is in Pro Corp.
+understand "sci mics" as a mistake ("Your experience remains relatively quiet but also free of static.[mis of 127]") when player is in Pro Corp.
 
 understand "sci sics" as a mistake ("You think you spy a typo somewhere in the sci pics, leaving you feel free to feel smarter than something you don't unerstand. Go, you![mis of 128]") when player is in Pro Corp.
 
-understand "sci tics" as a mistake ("You laugh at how silly thethe sci pics are, then sniff a bit, then tap your head.[mis of 129]") when player is in Pro Corp.
+understand "sci tics" as a mistake ("You laugh at how silly the sci pics are, then sniff a bit, then tap your head.[mis of 129]") when player is in Pro Corp.
 
 understand "psi lisp" as a mistake ("The Psi Wisp can't speak.[mis of 130]") when Psi Wisp is quicknear.
 
@@ -391,10 +383,6 @@ chapter Red Roses Order
 understand "gal slag" as a mistake ("You managed to annoy Madam enough that she lashes out and conks you with a mortal blow with the Gal Flag. Okay, not really, but name calling won't help.[mis of 143]") when Gal Flag is quicknear. [?? do fake death thing]
 
 understand "sworn rows" as a mistake ("The sword rows are inanimate and neutral. Unless you get too close to them.[mis of 144]") when sword rows are quicknear.
-
-understand "sci mics" as a mistake("You don't need to make your voice heard.[mis of 145]") when sci pics are quicknear.
-
-understand "sci tics" as a mistake("The picture fails to twitch.[mis of 146]") when sci pics are quicknear.
 
 section yard ray misuse
 
@@ -462,15 +450,13 @@ understand "croc orc" as a mistake ("The orc is fearsome enough without becoming
 
 understand "crow orc" as a mistake ("The orc remains silent (yay) and flightless (boo).[mis of 170]") when cross orc is quicknear.
 
-understand "cram arc" as a mistake ("Litterbug. Besides, you need pretty much everything you're carrying.[mis of 171]") when player is in Toll Lot.
+understand "cram arc" as a mistake ("Litterbug. Besides, you need pretty much everything you're carrying. And nothing would fit, anyway.[mis of 171]") when player is in Toll Lot.
 
 understand "cray arc" as a mistake ("The arc doesn't need to change shape or become more volatile.[mis of 172]") when player is in Toll Lot.
 
 understand "crap arc" as a mistake ("You might cause a mudslide, or worse.[mis of 173]") when player is in Toll Lot or player is in Scrap Arcs.
 
 understand "crass arc" as a mistake ("[if cross orc is in Toll Lot]The cross orc and crag arc don't fuse together. Rats[else]You spend a few seconds feeling deeply offended by the crag arc[end if].[mis of 174]") when player is in Toll Lot or player is in Scrap Arcs.
-
-understand "cram arc" as a mistake ("You can't stuff anything in it.[mis of 175]") when player is in Scrap Arcs.
 
 understand "crab arc" as a mistake ("That's just what you need, a giant crab coming after you[if cross orc is in Toll Lot], along with the cross orc[end if].[mis of 176]") when player is in Toll Lot.
 
@@ -508,7 +494,7 @@ understand "yawp way" and "yawl way" as a mistake ("It's still quiet here.[mis o
 
 chapter Yell Alley
 
-understand "pcp" as a mistake ("While searching for a bost, you're apprehended by a crank narc! I'm very disappointed in you. Not the whole drugs bit, but that this game didn't alter reality enough for you.[etg][mis of 188]") when player is in Yell Alley or player is in Evaded Ave.
+understand "pcp" as a mistake ("While searching for a boost, you're apprehended by a crank narc! I'm very disappointed in you. Not the whole drugs bit, but that this game didn't alter reality ENOUGH for you.[etg][mis of 188]") when player is in Yell Alley or player is in Evaded Ave.
 
 understand "may yam" as a mistake ("You don't want the yam to age. It would probably start to smell bad.[mis of 189]") when mayo yam is quicknear.
 
@@ -549,13 +535,20 @@ to say mis of (n - a number):
 
 volume old school verbs
 
-understand "rub [text]" as a mistake ("There's no one named Burt in this game, so you don't have to rub anyone or anything.")
+chapter no-loc
+
+understand "rub [text]" as a mistake ("There's no one named Burt or Babbur or Liwilbur anything like that in this game, so you don't have to rub anyone or anything.")
 
 understand "wave" as a mistake ("Nobody named Eva is beyond the fourth wall.")
 
-understand "rm gnu/dung" and "rm gnu dung" as a mistake ("You don't have the proper permissions. It is (wait for it) too root.") when gnu dung is quicknear.
+understand "rm gnu/dung" and "rm gnu dung" as a mistake ("You don't have the proper permissions. It is (wait for it) too root.") when dung-near.
 
 understand "guh" and "thug" and "guh thug" as a mistake ("That's what [random visible guhthug] is, but you need to figure how to get rid of him.") when thug-near.
+
+to decide whether dung-near:
+	if gnu dung is quicknear, yes;
+	if gnu dung is moot and player has poo coop, yes;
+	no;
 
 to decide whether thug-near:
 	repeat with Z running through guhthugs:
@@ -571,6 +564,12 @@ to say girt-clue:
 		say "You need to figure out what that means. It seems to indicate [if Worn Row is visited][Worn Row][else]a room south of [Fun Nuf][end if]";
 	else:
 		say "Hmm. Tri indicates three. You've found two different configurations for Worn Row/[Worn Row]. What is the third, you wonder";
+
+chapter deprecated mistakes
+
+[understand "truce curt" as a mistake ("You'll need something more violent, here.") when player is in Mont Nom and Curt is in Mont Nom.]
+
+[understand "truco curt" as a mistake ("You don't have a deck of cards, and Curt wouldn't want to play.[mis of 100]") when player is in Mont Nom and Curt is in Mont Nom.]
 
 Ailihphilia Mistakes ends here.
 
