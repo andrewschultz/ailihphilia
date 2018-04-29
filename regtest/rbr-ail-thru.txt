@@ -20,11 +20,130 @@ by one point
 >refer
 by one point
 
-===0,1,2
+===2
+#mistake test for evaded ave
+>evaded ave
+That'll appear later.
+
+#mistake test for fun enuf
+>fun enuf
+Still ungrammatical!
+
+#mistake test for funk nuf
+>funk nuf
+No cool music plays, but at least it doesn't smell worse.
+
+#mistake test for fun snuf
+>fun snuf
+You vow to take saving fantasy worlds much more seriously. No more frivolity!
+
+#mistake test for fund nuf
+>fund nuf
+Nonsense! Adventure is its own reward!
+
+#mistake test for pac cap
+>pac cap
+You almost take the cap, but you fumble it slightly. The Flee Elf blinks. 'You're almost there, but ... umm, well, you need to do a little more.'
+
+#mistake test for paca cap/pacb cap/pacc cap/pacd cap/pacf cap/pacg cap/pach cap/paci cap/pacj cap/pacl cap/pacm cap/pacn cap/pacp cap/pacq cap/pacr cap/pacs cap/pacu cap/pacv cap/pacw cap/pacx cap/and pacz cap
+>paca cap
+[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
+>pacb cap
+[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
+>pacc cap
+[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
+>pacd cap
+[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
+>pacf cap
+[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
+>pacg cap
+[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
+>pach cap
+[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
+>paci cap
+[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
+>pacj cap
+[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
+>pacl cap
+[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
+>pacm cap
+[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
+>pacn cap
+[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
+>pacp cap
+[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
+>pacq cap
+[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
+>pacr cap
+[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
+>pacs cap
+[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
+>pacu cap
+[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
+>pacv cap
+[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
+>pacw cap
+[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
+>pacx cap
+[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
+>and pacz cap
+[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
+
+#mistake test for paco cap
+>paco cap
+[if player has pact cap][pace-clue-maybe][else]The Flee Elf notes that's a pejorative term for policemen in Central America--not quite what you want, for decency or for practicality[end if].
+
+#mistake test for pact cap
+>pact cap
+It already is!
+
+#mistake test for pa cap
+>pa cap
+The word DAD briefly flashes on the Pact Cap. Weird, but not really.
+
+#mistake test for flea elf/flea
+>flea elf
+[fe0]The elf scratches for a bit, then looks embarrassed.
+>flea
+[fe0]The elf scratches for a bit, then looks embarrassed.
+
+#mistake test for flex elf/flex
+>flex elf
+[fe1]The elf looks more flexible than you. It's the cap you want to concentrate on.
+>flex
+[fe1]The elf looks more flexible than you. It's the cap you want to concentrate on.
+
+#mistake test for fleece elf/fleece
+>fleece elf
+[fe2]There is much more fortune and glory in adventure! It's the cap you want to concentrate on.
+>fleece
+[fe2]There is much more fortune and glory in adventure! It's the cap you want to concentrate on.
+===a
+
 >pack cap
 by one point
 
+===2
+#mistake test for rub [text]
+>rub zozimus
+There's no one named Burt or Babbur or Liwilbur anything like that in this game, so you don't have to rub anyone or anything.
+
+#mistake test for wave
+>wave
+Nobody named Eva is beyond the fourth wall.
+
+#mistake test for tri girt
+>tri girt
+[girt-clue].
+===a
+
 >e
+
+#mistake test for yawp way/yawl way
+>yawp way
+It's still quiet here.[mis of 187]
+>yawl way
+It's still quiet here.[mis of 187]
 
 >n
 
@@ -34,17 +153,65 @@ by one point
 >s
 
 >s
-##mistake test for evade dave
 
+
+===2
+#mistake test for guh/thug/guh thug
+>guh
+That's what [random visible guhthug] is, but you need to figure how to get rid of him.
+>thug
+That's what [random visible guhthug] is, but you need to figure how to get rid of him.
+>guh thug
+That's what [random visible guhthug] is, but you need to figure how to get rid of him.
+===0,1,2
+
+#mistake test for evade dave
 >evade dave
 by one point
 
->get saw
+===2
+#mistake test for wasp saw
+>wasp saw
+You don't need the wash saw to turn into something that might sting you[if Dave is not moot]. Dave's enough to deal with, right now[else if player has wash saw], especially since y
+ou are carrying it[else]. You should probably just take it, instead[end if]. ?? no longer see it before
+===a
+
+>get all
 
 >w
 
+#mistake test for borg rob
+>borg rob
+He is already assimilated.
+
+#mistake test for bork rob
+>bork rob
+Maybe there is a more nonviolent way to get him to give up.
+
 >bore rob
 by one point
+
+#mistake test for worsts row/worses row
+>worsts row
+It [if Worn Row is worny]is[else]was[end if] bad enough already.
+>worses row
+It [if Worn Row is worny]is[else]was[end if] bad enough already.
+
+#mistake test for worm row
+>worm row
+[if Worn Row is worny]Ugh! You don't need to make this place worse[else]You already upgraded Worn Row. No need to make it worse than it was[red-clue][end if].
+
+#mistake test for wort row
+>wort row
+[Worn Row] is not meant to be a garden. Maybe it would look nicer that way, but it wouldn't be helpful to you.
+
+#mistake test for track cart
+>track cart
+[if DWELT LEWD is off-stage]Right idea, but the cart isn't going anywhere[else]It's not going anywhere. You already unlocked a secret, anyway[end if].
+
+#mistake test for dwell lewd
+>dwell lewd
+DWELT LEWD should NOT be read as an instruction manual. Well, it shouldn't be read at all, really.
 
 >word row
 by one point
@@ -56,6 +223,16 @@ by one point
 ===0,1,2
 >get TO IDIOT
 
+===2
+#mistake test for pita tip
+>pita tip
+Sorry, you're getting ambiguous snack cans and not any specific cuisine.
+
+#mistake test for pith tip
+>pith tip
+It's already pretty pithy, and there's not enough material for a helmet.
+===0,1,2
+
 >e
 
 >n
@@ -63,6 +240,26 @@ by one point
 >n
 
 >n
+
+===2
+#mistake test for bung nub
+>bung nub
+The bunk nub is in bad enough shape as-is.
+
+#mistake test for bunt nub
+>bunt nub
+Baseball references are a bit too Zork 2.
+
+#mistake test for bun nub/buns nub
+>bun nub
+No free food. Boo.
+>buns nub
+No free food. Boo.
+
+#mistake test for door brood
+>door brood
+Just one guardian is enough to deal with.
+===a
 
 >use TO IDIOT on Door Frood
 by one point
@@ -70,6 +267,18 @@ by one point
 >get bunk nub
 
 >e
+
+#mistake test for pcp
+>pcp
+While searching for a boost, you're apprehended by a crank narc! I'm very disappointed in you. Not the whole drugs bit, but that this game didn't alter reality ENOUGH for you.
+
+#mistake test for may yam
+>may yam
+You don't want the yam to age. It would probably start to smell bad.
+
+#mistake test for nacelle can
+>nacelle can
+You don't need a huge engine.
 
 >get all
 
@@ -115,10 +324,78 @@ by one point
 
 >w
 
+===2
+#mistake test for seer brees
+>seer brees
+[one of]A man throws a football at you from 50 yards away, and it drills you right in the chest. Accurate![or]The man doesn't appear again. He probably has better things to do than schlep around in some text adventure. Perhaps he is off eating at a QB BBQ.[stopping]
+
+#mistake test for seer frees
+>seer frees
+[if stark rats are in Seer Trees]It won't be THAT easy[else]You already feel free enough here[end if].
+
+#mistake test for stare rats
+>stare rats
+You try to win a blinking contest, and maybe you could with one, but not that many.
+
+#mistake test for start rats
+>start rats
+You sort of need to stop them, instead.
+
+#mistake test for star rats
+>star rats
+You would rather they didn't star in your adventure, here. Must be some way to dispose of them.
+===a
+
 >use party trap on stark rats
 by one point
 
+===2
+#mistake test for fig gif
+>fig gif
+The gif remains firmly text-based. Eh, it's more edible that way.
+
+#mistake test for gif fig
+>gif fig
+No graphics, here!
+
+#mistake test for gift fig
+>gift fig
+It already is one. And you don't need to pass it on.
+
+#mistake test for gi fig
+>gi fig
+No violence, here!
+===a
+
 >n
+
+===2
+#mistake test for kind nik
+>kind nik
+He already seems pretty nice. His deficiencies are more ... administrative.
+
+#mistake test for kin nik/kine nik
+>kin nik
+Sorry. You're not related, and that's that.
+>kine nik
+Sorry. You're not related, and that's that.
+
+#mistake test for rife fir
+>rife fir
+It's already big enough.
+
+#mistake test for riff fir
+>riff fir
+It's rife enough to block passage west and to provide past sap.
+
+#mistake test for cola loc
+>cola loc
+You'd be better off with a warmer drink. Which isn't here.
+
+#mistake test for colt loc
+>colt loc
+No gandered nag appears. Or gun(ug).
+===0,1,2
 
 >use epoch cope on King Nik
 by one point
@@ -131,7 +408,25 @@ by one point
 >slam mammals
 by one point
 
+===2
+#mistake test for eel flee
+>eel flee
+Well, you could maybe get one eel to leave, but there are a lot.
+
+#mistake test for eel glee
+>eel glee
+The eels squirm a bit. I bet they're having fun dreams! Too bad I can't describe them.
+
+#mistake test for sleet eels
+>sleet eels
+They are alive. Turning them to metal would be cruel.
+
+#mistake test for sleek eels
+>sleek eels
+The eels don't need dexterity. They need comfort. They are slippery enough.
 ===0,1,2
+
+
 >use stock cots on sleep eels
 by one point
 
@@ -142,6 +437,50 @@ by one point
 >e
 
 >get poo coop
+
+===2
+#mistake test for moo boom
+>moo boom
+You hear something strafe farts far away.
+
+#mistake test for moo doom
+>moo doom
+Die? I'd...
+
+#mistake test for moo loom
+>moo loom
+The noises stay around.
+
+#mistake test for poo boop/poo foop/poo zoop
+>poo boop
+That's not the appropriate sound effect for the coop or [if gnu dung is moot]its[else]any potential[end if] contents.
+>poo foop
+That's not the appropriate sound effect for the coop or [if gnu dung is moot]its[else]any potential[end if] contents.
+>poo zoop
+That's not the appropriate sound effect for the coop or [if gnu dung is moot]its[else]any potential[end if] contents.
+
+#mistake test for poo noop
+>poo noop
+Doing nothing with the coop or what [if gnu dung is moot]is[else]could go[end if] in it is not an option.
+
+#mistake test for poo goop
+>poo goop
+The coop is intended to prevent AGAINST having to carry yucky stuff, here.
+
+#mistake test for poo hoop/poo loop
+>poo hoop
+No, the coop needs to hold something.
+>poo loop
+No, the coop needs to hold something.
+
+#mistake test for poo woop
+>poo woop
+How or why it excites you, I don't want to know.
+
+#mistake test for poo soop
+>poo soop
+Good thing this isn't a cooking sim.
+===a
 
 >w
 
@@ -168,8 +507,44 @@ by one point
 
 >e
 
+===2
+#mistake test for purr up
+>purr up
+The Spur Ups make you feel you can be anyone, but not anything.
+
+#mistake test for spun ups
+>spun ups
+The Spur Ups fail to rotate.
+
+#mistake test for spud ups
+>spud ups
+The Spur Ups don't become potatoes or French fries or whatever.
+===0,1,2
+
 >pull up
 by one point
+
+===2
+#mistake test for emo come
+>emo come
+You feel increased whininess inside.
+
+#mistake test for emo rome
+>emo rome
+This game is not remotely close to historical fiction. Sorry.
+
+#mistake test for emo home
+>emo home
+It's too wide open a space.
+
+#mistake test for emo tome
+>emo tome
+That would be out of place among all the stupid jokes, here.
+
+#mistake test for puck cup
+>puck cup
+There's no rink nir. Near.
+===a
 
 >get puce cup
 
@@ -200,6 +575,18 @@ by one point
 
 >get troll ort
 
+===2
+#mistake test for trod ort
+>trod ort
+It looks run-down enough.
+
+#mistake test for liar frail/liar trail
+>liar frail
+The grail remains in your way to the south. But it was worth a try.
+>liar trail
+The grail remains in your way to the south. But it was worth a try.
+===a
+
 >use puce cup on liar grail
 by one point
 
@@ -216,6 +603,44 @@ by one point
 >e
 
 >use puce cup on dose sod
+
+===2
+#mistake test for esp apse
+>esp apse
+You don't see what to do next.
+
+#mistake test for pool sloop
+>pool sloop
+No boat appears to take you across the watery bits. [if sage gas is off-stage]You'll need another way through[else]You already got the sage gas, anyway.
+
+#mistake test for spa caps
+>spa caps
+But you already have your pace cap!
+
+#mistake test for spa gaps
+>spa gaps
+The Apse Spa is too sturdy. You don't want it to collapse.
+
+#mistake test for spa laps
+>spa laps
+You never need to swim anywhere in this game. Or drink anything.
+
+#mistake test for spa naps
+>spa naps
+No time to relax! There's adventuring to be had!
+
+#mistake test for spa raps
+>spa raps
+The spa is a place of peace. Stop that noise, and get off my lawn!
+
+#mistake test for spa saps
+>spa saps
+One day, with the Diktat Kid gone, plenty of people will waste money on a spa, but your job is to get things there.
+
+#mistake test for spa zaps
+>spa zaps
+You don't need a weapon.
+===0,1,2
 
 >w
 
@@ -235,7 +660,23 @@ by one point
 #mistake test for bony nob
 >bony nob
 The Bond Nob's body weight is not an important issue, here.
-===1,2
+
+#mistake test for bone nob
+>bone nob
+Out of your league.[paragraph break]I mean, the Bond Nob has an active social life that revolves around bars, and you ... well, you're just a text adventure. That's barely a step above people who program text adventures!
+
+#mistake test for bonk nob
+>bonk nob
+That'd let you get west ... until the nob woke up and called a few friends.
+
+#mistake test for bong nob
+>bong nob
+The Bond Nob probably knows someone but prefers alcohol.
+
+#mistake test for drawn ward
+>drawn ward
+The room remains text-based.
+===a
 
 >use puce cup on Bond Nob
 by one point
@@ -247,6 +688,12 @@ by one point
 >e
 
 >e
+
+===2
+#mistake test for scram arcs
+>scram arcs
+The arcs stay still, but you can just go back east if you want.
+===a
 
 >use stamp mats on slate metals
 by one point
@@ -267,6 +714,40 @@ by one point
 
 >n
 
+===2
+#mistake test for corn roc
+>corn roc
+The scorn rocs remain plural and inorganic.
+
+#mistake test for rocs cor
+>rocs cor
+Your flattery doesn't move the rocs.
+
+#mistake test for gull lug
+>gull lug
+You shouldn't try to take advantage of sick people. Help the Gulf Lug instead.
+
+#mistake test for gulp lug
+>gulp lug
+Cannibalism is wrong. Besides, you'd probably catch whatever the Gulf Lug has.
+
+#mistake test for case sac
+>case sac
+You look extra carefully at the sac. No, no secret compartments.
+
+#mistake test for cast sac
+>cast sac
+No need to fling stuff around, and no need for magic, either.
+
+#mistake test for cash sac
+>cash sac
+You look extra carefully at the sac. No, no secret compartments.
+
+#mistake test for score rocs
+>score rocs
+You don't have any witty way to score off them, or steal them, or whatever, and you don't need to.
+===a
+
 >use demo med on gulf lug
 by one point
 
@@ -282,15 +763,89 @@ by one point
 
 >e
 
+===2
+#mistake test for told lot
+>told lot
+[if cross orc is in Toll Lot]The cross orc isn't open to verbal negotiation[else]You pretend you won an argument against the cross or and didn't just hand over money[end if].[mis of 167]
+
+#mistake test for crop orc
+>crop orc
+That attack would boomerang, and not just because this is a palindrome-y game. The orc is lots, lots bigger than you.[paragraph break]Also, there is no farm nearby.[mis of 168]
+
+#mistake test for croc orc
+>croc orc
+The orc is fearsome enough without becoming a total genetic monstrosity.[mis of 169]
+
+#mistake test for crow orc
+>crow orc
+The orc remains silent (yay) and flightless (boo).[mis of 170]
+
+#mistake test for cram arc
+>cram arc
+Litterbug. Besides, you need pretty much everything you're carrying. And nothing would fit, anyway.[mis of 171]
+
+#mistake test for cray arc
+>cray arc
+The arc doesn't need to change shape or become more volatile.[mis of 172]
+
+#mistake test for crap arc
+>crap arc
+You might cause a mudslide, or worse.[mis of 173]
+
+#mistake test for crass arc
+>crass arc
+[if cross orc is in Toll Lot]The cross orc and crag arc don't fuse together. Rats[else]You spend a few seconds feeling deeply offended by the crag arc[end if].
+
+#mistake test for crab arc
+>crab arc
+That's just what you need, a giant crab coming after you[if cross orc is in Toll Lot], along with the cross orc[end if].
+===a
+
 >use cash sac on cross orc
 by one point
 
 >s
 
+===2
+#mistake test for defy fed
+>defy fed
+[if yob attaboy is moot]Way to go! Keep that Hunger! Well, I hope it's that and not conspiracy theories about the Fed[else]No problem, you're not getting fed anyway[end if].
+===0,1,2
+
 >use yob attaboy on Sniffins
 by one point
 
 >s
+
+===2
+#mistake test for stank nats/stank nat's
+>stank nats
+Yes, it's pretty awful.
+>stank nat's
+Yes, it's pretty awful.
+
+#mistake test for tank nat
+>tank nat
+No, even a small amount of Nat's is enough.
+
+#mistake test for tang nat
+>tang nat
+It's probably already too tangy.
+
+#mistake test for tannin nat
+>tannin nat
+It probably has enough weird, horrible ingredients.
+
+#mistake test for stan nats/stan nat's
+>stan nats
+Well, Nat's must have its stans, but you don't want to be one.
+>stan nat's
+Well, Nat's must have its stans, but you don't want to be one.
+
+#mistake test for bon knob
+>bon knob
+You don't need to help Sniffins with interior decorating, here.
+===0,1,2
 
 >use Elan Ale on Sniffins
 by one point
@@ -328,6 +883,16 @@ by one point
 >use cave vac on cassettes sac
 by one point
 
+===2
+#mistake test for pod op
+>pod op
+But what sort of op?
+
+#mistake test for do pod
+>do pod
+But what to do to it? How to change it?
+===a
+
 >e
 
 >n
@@ -340,6 +905,25 @@ by one point
 by one point
 
 >n
+
+===2
+#mistake test for grow org
+>grow org
+[one of]This game is just a bunch of dumb jokes and silly wordplay mashed together, and any attempt at personal growth is severely frowned upon. So stop that![or]Your height does n
+ot change.[stopping]
+
+#mistake test for stinko knits
+>stinko knits
+There's time to get loaded after solving things. Or drunk. Nurd.
+
+#mistake test for dent ned
+>dent Ned
+Less violence, more subtlety.
+
+#mistake test for grot org
+>grot org
+Gross, grot ... same thing.
+===a
 
 >deny ned
 by one point
@@ -363,6 +947,12 @@ by one point
 
 >w
 
+===
+#mistake test for psi lisp
+>psi lisp
+The Psi Wisp can't speak.
+===
+
 >Worn Row
 by one point
 
@@ -370,6 +960,12 @@ by one point
 
 >use stinky knits on rotator
 by one point
+
+===2
+#mistake test for bra garb
+>bra garb
+I've tried to keep this game gender neutral.
+===a
 
 >word row
 
@@ -387,6 +983,28 @@ by one point
 
 >get all
 
+===2
+#mistake test for line nil
+>line nil
+The Link Nil security system fails to turn into a line and vanish. That's pretty secure!
+
+#mistake test for dna land
+>dna land
+Biochemistry has its own nuances with symmetry, but we're sticking with something a lot dumber, here.
+
+#mistake test for dna hand
+>DNA hand
+Right idea, but you can't do it on your own. You need technology to help you.
+
+#mistake test for dna sand
+>DNA sand
+That will happen with the passage of time.
+
+#mistake test for dna wand
+>dna wand
+No. You know TRUE MAGIC MUST COME FROM WITHIN.
+===a
+
 >use Gorge Grog on butene tub
 by one point
 
@@ -394,7 +1012,44 @@ by one point
 >balm lab
 by one point
 
+===2
+#mistake test for sci bics
+>sci bics
+You don't need any exotic writing implements.
+
+#mistake test for sci dics
+>sci dics
+You don't have time to learn weird terminology now.
+
+#mistake test for sci fics
+>sci fics
+But you already have reading material!
+
+#mistake test for sci mics
+>sci mics
+Your experience remains relatively quiet but also free of static.
+
+#mistake test for sci sics
+>sci sics
+You think you spy a typo somewhere in the sci pics, leaving you feel free to feel smarter than something you don't unerstand. Go, you!
+
+#mistake test for sci tics
+>sci tics
+You laugh at how silly the sci pics are, then sniff a bit, then tap your head.
+
+#mistake test for balk lab
+>balk lab
+There's not much to do or say here, for sure[if balm-got is false]![else]--well, maybe something that's not quite BALK.[end if]
+
+#mistake test for ball lab
+>ball lab
+Nothing fun explodes out from the walls or ceiling.
+
+#mistake test for golf log
+>golf log
+There is no Par Trap or Tee Meet to navigate here, so you don't need to make a golf log.
 ===0,1,2
+
 >s
 
 >s
@@ -449,6 +1104,12 @@ by one point
 
 >n
 
+===2
+#mistake test for art ecetra
+>art ecetra
+One silly misspelling does not beget another.
+===0,1,2
+
 >use straw arts on Revolt Lover
 by one point
 
@@ -477,6 +1138,58 @@ by one point
 
 >w
 
+===2
+#mistake test for rm gnu/dung/rm gnu dung
+>rm gnu
+You don't have the proper permissions. It is (wait for it) too root.
+>dung
+You don't have the proper permissions. It is (wait for it) too root.
+>rm gnu dung
+You don't have the proper permissions. It is (wait for it) too root.
+
+#mistake test for dump mud
+>dump mud
+It's already kind of dumped here[if poo coop is not moot]. Maybe you could dump the mud into the rut for passage south, but it might take too long, and you don't have a shovel. You'd need something else[end if].
+
+#mistake test for un gnu
+>un gnu
+Eliminating the perpetrator won't eliminate what they've dung. Uh, dun. Er, done.
+
+#mistake test for gnu bung
+>gnu bung
+There's no way to put the toothpaste back in the tube, as it were.
+
+#mistake test for gnu hung
+>gnu hung
+Uggh. It's good you're in a text adventure, I guess.
+
+#mistake test for gnu lung
+>gnu lung
+The gnu dung smells bad enough without dropping more internal organs into the mix.
+
+#mistake test for gnu rung
+>gnu rung
+You want to move west from here, not up.
+
+#mistake test for gnu sung
+>gnu sung
+You don't need to speculate what the gnu was doing.
+
+#mistake test for turd rut
+>turd rut
+Hmm! Maybe you could fill the rut up with ... something ... to cross it.
+
+#mistake test for turn rut
+>turn rut
+It's too large to redirect[if poo coop is moot], and besides, you already have a way across[end if].
+
+#mistake test for turnon rut/turn on rut
+>turnon rut
+No innuendo here! The gnu dung[if gnu dung is not in Dumb Mud] with the poo coop[end if] is about as close as you'll get.
+>turn on rut
+No innuendo here! The gnu dung[if gnu dung is not in Dumb Mud] with the poo coop[end if] is about as close as you'll get.
+===a
+
 >use poo coop on gnu dung
 by one point
 
@@ -486,10 +1199,36 @@ by one point
 
 >w
 
+===2
+#mistake test for swami maws/swamy maws
+>swami maws
+There might be someone smart nearby.
+>swamy maws
+There might be someone smart nearby.
+
+#mistake test for swam maws
+>swam maws
+Perhaps someone has, but you don't need to.
+===a
+
 >use radar on made dam
 by one point
 
 >n
+
+===2
+#mistake test for story rots
+>story rots
+No, the storm rots help keep you focused on the story. They aren't blocking anything. Or good for anything.
+
+#mistake test for stork rots
+>stork rots
+You don't want to know what sort of carcasses are buried in the swamp.
+
+#mistake test for store rots
+>store rots
+You don't need to buy anything in this game, and any store wouldn't sell anything good.
+===0,1,2
 
 >use NULL ILLUN on Known Wonk
 by one point
@@ -497,10 +1236,62 @@ by one point
 >use el doodle on edits tide
 by one point
 
+===2
+#mistake test for share rahs
+>share rahs
+You're on this quest by yourself.
+
+#mistake test for shark rahs
+>shark rahs
+You don't want to alert any land sharks.
+
+#mistake test for shard rahs
+>shard rahs
+The rahs are on paper, and besides, they might be useful.
+===0,1,2
+
 >n
+
+===2
+#mistake test for calf lac
+>calf lac
+There is [if moo room is unvisited]another room with that, sort of[else]already the Moo Room. Let's not overdo it[end if]. Plus, cows can't swim.
+
+#mistake test for calm lac
+>calm lac
+It is calm enough.
+
+#mistake test for calk lac
+>calk lac
+It is not leaking.
+
+#mistake test for call lac
+>call lac
+It does not respond.
+
+#mistake test for tao goat
+>tao goat
+The goat wouldn't remain placid for long once it was plunged into water.
+
+#mistake test for tao moat
+>tao moat
+The lake is peaceful enough as-is.
+
+#mistake test for tao coat
+>tao coat
+You don't need protection from the weather here.
+===0,1,2
 
 >use elope pole on kayak
 by one point
+
+===2
+#mistake test for dorm rod/dorm
+>dorm rod
+You reveal no frat. Arf!
+>dorm
+You reveal no frat. Arf!
+===a
 
 >use dork rod on tao boat
 by one point
@@ -509,7 +1300,19 @@ by one point
 
 >s
 
+===2
+#mistake retest for swami maws
+>swami maws
+Aw, come on, you've already met someone smart nearby.
+===a
+
 >s
+
+===2
+#mistake test for cods doc
+>cods doc
+No way. It's nice to be around someone non-fishy, actually.
+===a
 
 >use tent net on code doc
 by one point
@@ -518,6 +1321,13 @@ by one point
 by one point
 
 >n
+
+===2
+#mistake retest for swami maws
+>swami maws
+Aw, come on, you've already met TWO SMART PEOPLE nearby.
+===a
+
 
 >e
 
@@ -537,6 +1347,12 @@ by one point
 >s
 
 >s
+
+===2
+#mistake test for yak kay
+>yak kay
+The yak perks its ears up slightly, then goes back to looking bored. Maybe you didn't quite say things right.
+===a
 
 >e
 
@@ -563,13 +1379,33 @@ by one point
 
 >s
 
+#mistake test for ergo ogre
+>ergo ogre
+You aren't going to impress it with your smarts.
+
+#mistake test for erg ogre
+>erg ogre
+The ogre would destroy you in a grunting match.
+
 >yak okay
 by one point
 
 >e
 
+===2
+#mistake test for tamp mat
+>tamp mat
+It's already pretty beaten down.
+===a
+
 >use sage gas on tame mat
 by one point
+
+===2
+#mistake test for gurn rug
+>gurn rug
+It's a guru rug. It's too good to be moved by such a cheap bailout.
+===a
 
 >use sharp rahs on guru rug
 by one point
@@ -583,6 +1419,28 @@ by one point
 >e
 
 >s
+
+===2
+#mistake test for nair ian
+>nair Ian
+That would be painful and embarrassing enough to chase him, or someone named Brian, off, but alas, you don't have anything to do the job[if player has nat's tan]. The bottle of Nat's Tan doesn't count[end if].
+
+#mistake test for naif ian
+>naif Ian
+Sadly, mind control is beyond your powers.
+
+#mistake test for nain ian
+>nain Ian
+Owning/pwning would embarrass Ian, but that is too archaic a synonym.
+
+#mistake test for mo nom
+>mo nom
+Greedy! There's enough food to find around here, really.
+
+#mistake test for krab ark
+>krab ark
+You don't have the materials to climb the ark, and you don't need to.
+===a
 
 >nail ian
 by one point
@@ -622,6 +1480,16 @@ by one point
 >w
 
 >n
+
+===0,1,2
+#mistake test for moor groom
+>moor groom
+There is no romance, here. Besides, I can't do anything with 'bride.'
+
+#mistake test for moor vroom
+>moor vroom
+The moor broom is not equipped for transport. Some brooms are, but this isn't.
+===2
 
 >use moor broom on tru yurt
 by one point
@@ -667,11 +1535,35 @@ by one point
 >use roto motor on DNA hand
 by one point
 
+===2
+#mistake test for band nab
+>band nab
+Mr. Arm tries to grip his own wrist but can't quite.
+
+#mistake test for bank nab
+>bank nab
+Whoah! You're one of the good guys, here.
+
+#mistake test for mra arm
+>mra arm
+No! Mr. Arm is on the side of social justice.
+
+#mistake test for rm mr
+>rm mr
+No, Mr. Arm will be helpful. (Spoiler: he'll leave for better things once he has helped, so happy endings all around. Yay.
+===a
+
 >use eroded ore on reviver
 by one point
 
 >use you buoy on rotator
 by one point
+
+===2
+#mistake test for mega gem
+>mega gem
+That'd be useful in Kingdom of Loathing, but not here.
+===a
 
 >e
 
@@ -724,8 +1616,30 @@ by one point
 
 >n
 
+===2
+#mistake test for gal slag
+>gal slag
+You managed to annoy Madam enough that she lashes out and conks you with a mortal blow with the Gal Flag. Okay, not really, but name calling won't help.
+===a
+
 >use Bro Orb on mirror rim
 by one point
+
+===2
+#mistake test for sworn rows
+>sworn rows
+The sword rows are inanimate and neutral. Unless you get too close to them.
+
+#mistake test for yarn ray
+>yarn ray
+If you want more story, then sorry, this one's nearly at an end.
+
+#mistake test for yarg ray/yarr ray
+>yarg ray
+Becoming a pirate at the end? A clever heel turn!
+>yarr ray
+Becoming a pirate at the end? A clever heel turn!
+===a
 
 >use balsa slab on sword rows
 by one point
@@ -756,10 +1670,36 @@ by one point
 
 >w
 
+===2
+#mistake test for eros ore
+>eros ore
+I don't even want to know what you're trying to do, there.
+===a
+
 >use TNT on ore zero
 by one point
 
+===2
+#mistake test for mar tram
+>mar tram
+No. [if epicer recipe is xed]You need it to build the north-tron[else]It must be good for something[end if].
+===a
+
 >n
+
+===2
+#mistake test for dir grid
+>dir grid
+With only one way out, you don't need directions.
+
+#mistake test for par trap
+>par trap
+You aren't on a golf course.
+
+#mistake test for par crap
+>par crap
+Making fun of others['] clothing isn't as evil as the Diktat Kid, but it's not what real heroes do!
+===0,1,2
 
 >use ME gem on Knife Fink
 by one point
