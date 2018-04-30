@@ -170,13 +170,36 @@ That's what [random visible guhthug] is, but you need to figure how to get rid o
 by one point
 
 ===2
-#mistake test for wasp saw
->wasp saw
-You don't need the wash saw to turn into something that might sting you[if Dave is not moot]. Dave's enough to deal with, right now[else if player has wash saw], especially since y
-ou are carrying it[else]. You should probably just take it, instead[end if]. ?? no longer see it before
+
+#mistake test for sto bots
+>sto bots
+No cool robots pop out.
+
+#mistake test for sto dots
+>sto dots
+The Sto Lots remains unadorned.
+
+#mistake test for sto gots
+>sto gots
+Yes, you gots a lot of space, and you will gots a lot of stuff as the game goes on.
+
+#mistake test for sto nots
+>sto nots
+That would defeat the purpose!
+
+#   5 to find(341)
+#mistake test for sto sots
+>sto sots
+It's not big enough to be a drunk tank.
 ===a
 
 >get all
+
+===2
+#mistake test for wasp saw
+>wasp saw
+You don't need the wash saw to turn into something that might sting you, especially since you are carrying it.
+===a
 
 >w
 
