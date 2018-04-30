@@ -432,7 +432,14 @@ this is the check palindrome turns rule: [this could be at the end but those are
 	while i <= Z / 2:
 		if character number i in Q is not character number (Z + 1 - i) in Q, now pal-turns is false;
 		increment i;
-	say "You scored [score] of [maximum score] points in [turn count] moves. [if pal-turns is false]That's not perfectly cosmically in tune--your turns weren't a palindrome--but it'll do.[else]You are cosmically in tune! Even your turn count was a palindrome![end if]";
+	say "You scored [score] of [maximum score] points in [turn count] moves.[paragraph break]When you get home, you open the X/O box. ";
+	if pal-turns is true:
+		if score is maximum score:
+			say "Inside is a spiffy CERT REC for being cosmically in tune and covering even the smallest details. Well done!";
+			continue the action;
+		say "As you open it, you see some sort of piece of paper dissolve. You think and wonder if things would be  better if you'd done everything, and yet, you feel you did something weird right, possibly without knowing[if score is 77]. The old 'so far yet so close' cliche rings in your head[end if].";
+	else:
+		say "You expected something nice inside the box--you think you did everything you could--but you open it to find nothing. You have a vision of Grebeberg and Yelpley sliding back in a few years to where they were. Well, you'll still have your memories. But you can't shake the feeling you could've done something weird, or done things weirdly, that might've kept Yelpley and Grebeberg safe even longer.";
 
 the check palindrome turns rule is listed instead of the print final score rule in for printing the player's obituary.
 
@@ -468,6 +475,7 @@ when play begins:
 	say "You check your mail as you go out to the grocery store. A junk magazine! It's been so long since you got one, you're almost intrigued.[wfak-d]";
 	say "It just says GAME MAG. But the cover isn't telling you to actually buy anything, so you look inside. You have a whole backlog of games, but you can just recycle it when you get to the store. No, not the erot-store![wfak-d]";
 	say "Nothing really catches your mind until you see a DARER AD. It's a bit vague, but it catches your eye.[wfak-d]";
+	say "(MA'AM)/ SIR, TETRIS?![wfak-d]";
 	say "EVIL'S LIVE![wfak-d]";
 	say "LIVE DEVIL![wfak-d]";
 	say "BOSSES! SOB![wfak-d]";
@@ -1621,7 +1629,7 @@ use1	use2 (an object)	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plu
 --	--	--	rev-bore-Rob rule	--	true	--	--	Yelpley	false
 --	--	--	rev-word-row rule	--	true	--	--	Yelpley	false
 TI	Door Frood	--	--	--	true	true	true	Yelpley	false	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Door Frood runs away." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
-pity tip	eye	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	false	"The eye scans the pity tip, and the navy van beeps and boops and spits out some snack cans, which roll on the ground. You take them. The navy van then becomes a navi-van and whooshes off to leave for good. And there's something behind it! Apparently, a whole bomb mob! That's who was making all the noise!" [af:TEND NET/WORK ROW]
+pity tip	eye	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	false	"The eye scans the pity tip, and the navy van beeps and boops and spits out some snack cans, which roll on the ground. You take them. Then you hear a loud whisper: 'Dee? Weed?' The navy van then becomes a navi-van and whooshes off to leave for good. And there's something behind it! Apparently, a whole bomb mob! That's who was making all the noise!" [af:TEND NET/WORK ROW]
 --	--	--	rev-tend-net rule	--	true	--	--	Yelpley	false
 --	--	--	rev-work-row rule	--	true	--	--	Yelpley	false
 trap art	reifier	party trap	--	--	true	true	false	Yelpley	false	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. You pull it out of the reifier and inspect it. It could probably capture more than one thing."
@@ -1635,7 +1643,7 @@ wash saw	past sap	--	sap-not-cut-yet rule	sap-loose rule	true	false	false	Grebeb
 puce cup	past sap	--	check-sap-cup rule	sap-to-cup rule	true	false	false	Grebeberg	false	"You pour some sap into the cup."
 puce cup	liar grail	--	sap-in-cup rule	empty-grail rule	true	false	true	Yelpley	false	"The past sap pours into the liar grail. As it does, the Wordy Drow slips away from it and ... yes! It breaks free! 'Wend new! Wend new!' it calls to you.[paragraph break]The passage south looks clear. You snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL! You look around, worried a nun will say 'Tut!' But all is still."
 puce cup	dose sod	--	check-sod-cup rule	sod-to-cup rule	true	false	false	Grebeberg	false	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough." [sc2-ignore]
-puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-nob rule	true	true	true	Yelpley	false	"You give the Bond Nob the puce cup. Gulp! Gulp! The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. So many places to visit: [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars]...'"
+puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-nob rule	true	true	true	Yelpley	false	"You give the Bond Nob the puce cup. Gulp! Gulp! The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. So many places to visit: [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars]... well, everywhere except Soda Do's.'"
 stamp mats	slate metals	Ye Key	--	--	true	true	false	Yelpley	false	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY. You find it hard to pull the stamp mats out, and when you take YE KEY, the mats quickly morph into the slate metals. Eh, well. Less inventory to worry about."
 demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	Grebeberg	false	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' and looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	false	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
@@ -2098,7 +2106,7 @@ this is the you-win rule: [xxwin]
 	say "[line break]The Flee Elf greets you on the other side. 'Deified! [if cur-score of Odd Do is max-score of Odd Do]Decay?! ACED[else]Won enow[end if]! / Deified!' You ask hesitantly about the new adventures promised.[wfak-d]";
 	say "'The X-ITE TIX lead to A REAL WORLD THAT WILL BE MORE EXCITING AFTER YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a circular loop to 'back where you began' non-twist. Books like that always kind of annoyed you (well, okay, the first ones seemed profound,) but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand and pulls out a device. 'This RIDE-DIR will help you return to your own world. And here is an x/o box.'[wfak-d]";
 	say "The x/o box isn't much: nothing's inside, and it's engraved 'U Remem'er, U,' 'Done? NOD' and 'U Did U.' But if it were too obvious and gaudy, how would you explain it back home?[paragraph break]As you stare at it, you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered stuff you can't fix?[wfak-d]";
-	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call them? It's a tough call between SOME MEMOS, I SAW [']TWAS I, DRAWN INWARD, SAGAS or SOLOS. Hmm, maybe WENT NEW.";
+	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call them? It's a tough call between SOME MEMOS, I SAW [']TWAS I, DRAWN INWARD, NOW I WON, SAGAS or SOLOS. Hmm, maybe WENT NEW.";
 	end the story finally saying "Darn! Rad!";
 	sort the table of last lousy points in finord order;
 	if in-beta is true, display-dropbox-link;
@@ -2947,7 +2955,7 @@ understand "yak okay" as yakokaying.
 carry out yakokaying:
 	if ergot ogre is moot, say "[if yak is in location of player]The yak has served you well. It deserves a rest.[else]You relive past glories. Why not?[end if]" instead;
 	if yak is in location of player and ergot ogre is in location of player:
-		say "The kayo yak surges at the ergot ogre and knocks it over with a few ... smart rams! The ergot won't spread to the yak's horns, so that's good. The ogre dusts itself off and walks away, damp, mad. The yak, for its part, looks relaxed--almost like a tao goat--and heads off, not to the Frush Surf, but somewhere calmer.[paragraph break]You think you hear an elk cackle in the distance.[paragraph break]Whew! That's enough exercise. You readjust your pace cap back to a pact cap.";
+		say "The kayo yak surges at the ergot ogre and knocks it over with a few ... smart rams! The ergot won't spread to the yak's horns, so that's good. The ogre dusts itself off and walks away, damp, mad. The yak, for its part, looks relaxed--almost like a tao goat--and seems to be begging. You toss it the troll ort, which it eats. It must be hungry after all that running! And tired, too. It heads off, not to the Frush Surf, but somewhere calmer.[paragraph break]You think you hear an elk cackle in the distance.[paragraph break]Whew! That's enough exercise. You readjust your pace cap back to a pact cap.";
 		score-inc; [Grebeberg/YAK OKAY]
 		banish-ogre;
 		consider the cap-beep rules for the kayo yak;
@@ -2963,6 +2971,7 @@ to banish-ogre:
 	now cap-pace is false;
 	moot yak;
 	moot ergot ogre;
+	moot troll ort;
 	now being-chased is false;
 
 chapter blocking east
@@ -3498,7 +3507,7 @@ chapter wash saw
 
 The wash saw is a thing. "A small wash saw [if Dave is moot]lies here[else]is behind Dave[end if].". description of wash saw is "How handy! It can squirt out cleaning fluid or whatever. Useful if something's stuck.".
 
-check taking stole lots when Dave is quicknear: say "It's behind Dave, who doesn't seem willing to let you by." instead;
+check taking stole lots when Dave is quicknear: say "It's behind Dave, who booms 'BAR GRAB!' He doesn't seem willing to let you by." instead;
 
 chapter sto lots
 
@@ -3773,7 +3782,7 @@ the pity tip is a thing. description of pity tip is "[if DWELT LEWD is off-stage
 chapter books in bookcase
 
 TI is a proper-named book. printed name of TI is "TO IDIOT (TI)". understand "to idiot" and "to/idiot" as ti. description is "It's full of hot takes and 'clever' put-downs based on assuming the recipient isn't as smart as they think they are. You remember laughing at this sort of thing when you were really bored or grouchy, and you sort of regret it now. Still, it keeps some people busy.". [Door Frood]
-NULL ILLUN is a proper-named book. printed name of NULL ILLUN is "NULL ILLUN (NI)". understand "ni" as NULL ILLUN. description is "Surprisingly wise advice about how to achieve happiness and shake annoyances you can't dispel with just logic.". [Known Wonk]
+NULL ILLUN is a proper-named book. printed name of NULL ILLUN is "NULL ILLUN (NI)". understand "ni" as NULL ILLUN. description is "Surprisingly wise advice about how to achieve happiness and shake annoyances you can't dispel with just logic. It discusses how to flex your SCEPSIS-PECS so you don't just know a lot of stuff you aren't sure what to do with.". [Known Wonk]
 EPOCH COPE is a proper-named book. printed name of EPOCH COPE is "EPOCH: COPE (EC)". understand "ec" as EPOCH COPE. description is "All sorts of present-day political and social musings, with the catch phrase '[']S civics!'". [King Nik]
 YOB ATTABOY is a proper-named book. printed name of YOB ATTABOY is "YOB ATTABOY (YA)". understand "ya" as YOB ATTABOY. description is "All about picking yourself up by your bootstraps and not feeling sorry for yourself or being too jealous of what others know or can do--SHED EH'S is repeated in big bold letters.". [Sniffins]
 
@@ -5102,7 +5111,7 @@ every turn when being-chased is true:
 		now chase-mulligan is false;
 		continue the action;
 	if chase-person is in location of player:
-		say "You've been caught! Aigh! Dazed and confused, you [if player is in ooze zoo or player is in gross org]run around in circles a bit[else]stagger back to[end if]...";
+		say "You've been caught! Aigh! [if chase-person is kayo yak]A quick butt, nothing violent, but just to show you who's boss leaves[else]Sting-nits, a lot, leave[end if] you dazed and confused, you [if player is in ooze zoo or player is in gross org]run around in circles a bit[else]stagger back to[end if]...";
 		reset-chase instead;
 	else:
 		say "The [chase-person] follows you.";
@@ -6476,7 +6485,32 @@ carry out scvering:
 				say "Something odd happening with row [rows].";
 	the rule succeeds;
 
-chapter full monty extension
+chapter full monty extensionchapter tccing
+
+tccing is an action out of world.
+
+understand the command "tcc" as something new.
+
+understand "tcc" as tccing.
+
+carry out tccing:
+	unless player is in fun nuf and diktat kid is moot, say "This is only valid at game's end." instead;
+	if turn count < 100, say "No way you solved the game yet! You don't need this."
+	if turn count > 10000, say "Ulp! Can't help you!" instead;
+	let oldt be turn count;
+	if turn count < 1000:
+		let x be the remainder after dividing turn count by 10;
+		now turn count is turn count - x;
+		let y be x / 100;
+		now turn count is turn count + y;
+	else:
+		let z be turn count / 1001;
+		let w be 110 * (w / 110);
+		now turn count is (z * 1001) + w;
+	decrement turn count;
+	if turn count is oldt, say "No change in turn count." instead;
+	say "Change from [oldt] to [turn count].";
+	the rule succeeds;
 
 include Full Monty Testing by Andrew Schultz.
 

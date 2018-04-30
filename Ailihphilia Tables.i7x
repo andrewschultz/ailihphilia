@@ -898,6 +898,8 @@ table of Bond Nob bars
 randtxt
 "Bar Crab"
 "Met [']Em"
+"Set-a-Mates"
+"Met [']Em"
 "Nigh Gin"
 "Pat's Tap"
 "Pub UP"
@@ -930,6 +932,7 @@ randtxt
 table of Moo Room animals
 randtxt
 "a buck cub"
+"ska yaks"
 "a rat avatar"
 "an un-gnu"
 "sab mambas"
@@ -1144,6 +1147,7 @@ randtxt
 "Wane? Naw!"
 "Y'r Dry!"
 "You! Oy!"
+"Iz no Ponzi!"
 
 Ailihphilia Tables ends here.
 
