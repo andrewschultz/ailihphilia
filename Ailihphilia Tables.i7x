@@ -1108,6 +1108,7 @@ randtxt
 "Sob! Mild Limbos!"
 "Sog, Ebb, Egos!"
 "Want? Naw!"
+"Guts, TUG!"
 
 table of yessies
 randtxt

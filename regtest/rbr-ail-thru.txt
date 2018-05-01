@@ -12,7 +12,8 @@ by one point
 by one point
 
 >poop
-by one point
+727
+121
 
 >dial aid
 by one point
@@ -1738,3 +1739,24 @@ by one point
 >use x-ite tix on tix exit
 by one point
 
+#
+===0
+>tcc
+>z
+>s
+>undo
+>tcc
+>s
+>undo
+>z
+>s
+>undo
+>stats
+>s
+===1,2
+>tcc
+>s
+>undo
+>z
+>s
+===a
