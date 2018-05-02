@@ -1989,7 +1989,7 @@ this is the kid-bye rule:
 	the rule succeeds;
 
 this is the kid-left rule:
-	if Verses Rev is moot and Knife Fink is moot, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with Mad Adam. Iller Elli. Emil Slime. Able Melba. Wolf Low. Ammo Momma. Obese Bo.'";
+	if Verses Rev is moot and Knife Fink is moot, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with Mad Adam. ASAP Asa. Iller Elli. Emil Slime. Able Melba. Wolf Low. Ammo Momma. Obese Bo.'";
 	the rule succeeds;
 
 this is the make-sag rule:

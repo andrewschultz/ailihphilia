@@ -817,6 +817,7 @@ randtxt
 "D'oh, Temp Method"
 "Dew Onuses Unowed"
 "Dew, Awed"
+"Dad, Dad"
 "Dew, Owed"
 "Dib [']Nuff Unbid"
 "Die, Rended Nereid"
@@ -952,6 +953,7 @@ randtxt
 "Krew Twerk"
 "Me: Opt, Poem"
 "O/T: Teh Ghetto"
+"O, Got to Go"
 "Ode: Dude, DO"
 "Opera Repo"
 "Rap Spar"
@@ -1002,6 +1004,7 @@ randtxt
 "Boone?! Noob!"
 "EOF, Foe!"
 "More ROM!"
+"Piece IP?!"
 "Posts-op? POST, sop!"
 "Prove VORP!"
 "Resume [']m, user!"
@@ -1030,6 +1033,7 @@ randtxt
 "(R)rude! Dur(r)!"
 "Bad? A dab!"
 "Dammit, I'm mad!"
+"D00d!"
 "Dark. Rad!"
 "Guff! Ug!"
 "Hell, eh?"
@@ -1149,6 +1153,7 @@ randtxt
 "Y'r Dry!"
 "You! Oy!"
 "Iz no Ponzi!"
+"A-lists? I? La!"
 
 Ailihphilia Tables ends here.
 
