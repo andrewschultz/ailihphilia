@@ -2106,7 +2106,7 @@ this is the you-win rule: [xxwin]
 	say "[line break]The Flee Elf greets you on the other side. 'Deified! [if cur-score of Odd Do is max-score of Odd Do]Decay?! ACED[else]Won enow[end if]! / Deified!' You ask hesitantly about the new adventures promised.[wfak-d]";
 	say "'The X-ITE TIX lead to A REAL WORLD THAT WILL BE MORE EXCITING AFTER YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a circular loop to 'back where you began' non-twist. Books like that always kind of annoyed you (well, okay, the first ones seemed profound,) but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand and pulls out a device. 'This RIDE-DIR will help you return to your own world. And here is an x/o box.'[wfak-d]";
 	say "The x/o box isn't much: nothing's inside, and it's engraved 'U Remem'er, U,' 'Done? NOD' and 'U Did U.' But if it were too obvious and gaudy, how would you explain it back home?[paragraph break]As you stare at it, you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered stuff you can't fix?[wfak-d]";
-	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call them? It's a tough call between SOME MEMOS, I SAW [']TWAS I, DRAWN INWARD, NOW I WON, SAGAS or SOLOS. Hmm, maybe WENT NEW.";
+	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call your writing? It's a tough call between SOME MEMOS, I SAW [']TWAS I, DRAWN INWARD, WENT NEW, SAGAS or SOLOS. Hmm, since this sort of thing really isn't publishable, maybe even NOW I WON.";
 	end the story finally saying "Darn! Rad!";
 	sort the table of last lousy points in finord order;
 	if in-beta is true, display-dropbox-link;
@@ -6398,6 +6398,33 @@ carry out finordning:
 	say "With clues every [hint-every-x] good guesses, you'll get a maximum of [Q2]. There are [Q] total checkoffs. You can[if Q < Q2][']t[end if] make it.";
 	the rule succeeds;
 
+chapter raytesting
+
+raytesting is an action out of world.
+
+understand the command "raytest" as something new.
+
+understand "raytest" as raytesting.
+
+carry out raytesting:
+	if north tron is off-stage, say "The north tron must be on stage before running this test." instead;
+	now yard ray is off-stage;
+	now emitted is false;
+	now me gem is off-stage;
+	now taboo bat is off-stage;
+	try going north;
+	now player has yard ray;
+	try going north;
+	now emitted is true;
+	try going north;
+	now player has me gem;
+	try going north;
+	now player has taboo bat;
+	now me gem is off-stage;
+	try going north;
+	say "If you are doing further testing, UNDO immediately now you've run this. Trust me. There was too much to tie up, here.";
+	the rule succeeds;
+
 chapter percing
 
 percing is an action out of world.
@@ -6491,7 +6518,7 @@ carry out scvering:
 				say "Something odd happening with row [rows].";
 	the rule succeeds;
 
-chapter full monty extensionchapter tccing
+chapter tccing
 
 tccing is an action out of world.
 
@@ -6501,7 +6528,7 @@ understand "tcc" as tccing.
 
 carry out tccing:
 	unless player is in fun nuf and diktat kid is moot, say "This is only valid at game's end." instead;
-	if turn count < 100, say "No way you solved the game yet! You don't need this."
+	if turn count < 100, say "No way you solved the game yet! Even with GT, you need at least 160 moves. I checked. It's too soon." instead;
 	if turn count > 10000, say "Ulp! Can't help you!" instead;
 	let oldt be turn count;
 	if turn count < 1000:
@@ -6511,12 +6538,15 @@ carry out tccing:
 		now turn count is turn count + y;
 	else:
 		let z be turn count / 1001;
-		let w be 110 * (w / 110);
+		let w be the remainder after dividing z by 1001;
+		now w is 110 * (w / 110);
 		now turn count is (z * 1001) + w;
 	decrement turn count;
 	if turn count is oldt, say "No change in turn count." instead;
 	say "Change from [oldt] to [turn count].";
 	the rule succeeds;
+
+chapter full monty extension
 
 include Full Monty Testing by Andrew Schultz.
 

@@ -338,7 +338,7 @@ understand "sto gots" as a mistake ("Yes, you gots a lot of space, and you will 
 
 understand "sto nots" as a mistake ("That would defeat the purpose![mis of 121]") when sto lots is quicknear.
 
-understand "sto pots = no, it's more efficient as one entity. Also, this is not a cooking sim.") when sto lots is quicknear.
+understand "sto pots" as a mistake("No, it's more efficient as one entity. Also, this is not a cooking sim.[mis of 192]") when sto lots is quicknear.
 
 understand "sto sots" as a mistake ("It's not big enough to be a drunk tank.[mis of 122]") when sto lots is quicknear.
 
@@ -454,11 +454,11 @@ understand "trod ort" as a mistake ("[if player has troll ort]Nah, you should ke
 
 understand "liar frail" and "liar trail" as a mistake ("The grail remains in your way to the south. But it was worth a try.[mis of 167]") when liar grail is quicknear.
 
-understand "fra zarf" as a mistake ("This would send you on a long journey to Hadean Lands. One you might enjoy so much, you'll forget about Yelpley!) when player is in Swept Pews.
+understand "fra zarf" as a mistake ("This would send you on a long journey to Hadean Lands. One you might enjoy so much, you'll forget about Yelpley![mis of 193]") when player is in Swept Pews.
 
 chapter Toll Lot
 
-understand "told lot" as a mistake ("[if cross orc is in Toll Lot]The cross orc isn't open to verbal negotiation[else]You pretend you won an argument against the cross or and didn't just hand over money[end if].[mis of 168]") when player is in Toll Lot.
+understand "told lot" as a mistake ("[if cross orc is in Toll Lot]The cross orc isn't open to verbal negotiation[else]You pretend you won an argument against the cross orc and didn't just hand over money[end if].[mis of 168]") when player is in Toll Lot.
 
 understand "crop orc" as a mistake ("That attack would boomerang, and not just because this is a palindrome-y game. The orc is lots, lots bigger than you.[paragraph break]Also, there is no farm nearby.[mis of 169]") when cross orc is quicknear.
 
@@ -524,7 +524,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 
