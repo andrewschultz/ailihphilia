@@ -1,15 +1,44 @@
 >e
 WRONG
->s
-WRONG
 >n
-WRONG
+The flee elf sees you looking that way but says 'First things first! Get the cap the right way, here.
 >w
 WRONG
+>s
+WRONG
+>s
+WRONG
+>s
+WRONG
+>undo
 
 >pack cap
 by one point
 
+>n
+You need to get there. But you have no clue what to build, or how.
+
+
+>n
+WRONG
+>s
+WRONG
+>nw
+WRONG
+>ne
+WRONG
+>sw
+WRONG
+>se
+WRONG
+>u
+WRONG
+>d
+WRONG
+>in
+WRONG
+>out
+WRONG
 
 >e
 
@@ -24,10 +53,21 @@ It's still quiet here.[mis of 187]
 >get trap art
 by one point
 
->s
+>w
+WRONG
+>e
+WRONG
 
 >s
 
+>s
+
+>w
+WRONG
+>s
+WRONG
+>e
+WRONG
 
 
 #mistake test for evade dave
@@ -50,6 +90,13 @@ Maybe there is a more nonviolent way to get him to give up.
 
 >bore rob
 by one point
+
+>w
+WRONG
+>n
+WRONG
+>s
+WRONG
 
 #mistake test for worsts row/worses row
 >worsts row
@@ -109,12 +156,26 @@ You don't need a huge engine.
 
 >get all
 
+>n
+WRONG
+>e
+WRONG
+>s
+WRONG
+
 >use pity tip on eye
 by one point
 
 >w
 
 >w
+
+>n
+Since this is the Trapeze Part, you'd think there'd be a way to go to a place to WATCH it, but there isn't. You can only go back east.
+>w
+Since this is the Trapeze Part, you'd think there'd be a way to go to a place to WATCH it, but there isn't. You can only go back east.
+>s
+Since this is the Trapeze Part, you'd think there'd be a way to go to a place to WATCH it, but there isn't. You can only go back east.
 
 >tend net
 by one point
@@ -138,7 +199,6 @@ by one point
 >use bunk nub on reviver
 by one point
 
-
 >word row
 
 >get epoch cope
@@ -149,7 +209,22 @@ by one point
 
 >w
 
+>n
+WRONG
+
+>x recipe
+
+>n
+WRONG
+
 >w
+
+>n
+WRONG
+>w
+WRONG
+>s
+WRONG
 
 
 >use party trap on stark rats
@@ -157,6 +232,9 @@ by one point
 
 
 >n
+
+>w
+WRONG
 
 
 >use epoch cope on King Nik
@@ -166,6 +244,13 @@ by one point
 
 >s
 
+==3t
+>s
+WRONG
+>e
+WRONG
+>w
+WRONG
 
 
 >use stock cots on sleep eels
@@ -173,9 +258,21 @@ by one point
 
 >s
 
+>w
+WRONG
+>s
+WRONG
+
 >get stamp mats
 
 >e
+
+>e
+WRONG
+>n
+WRONG
+>s
+WRONG
 
 >get poo coop
 
@@ -205,13 +302,31 @@ by one point
 
 >e
 
+>s
+WRONG
+>undo
+>n
+WRONG
+>undo
+>e
+WRONG
+>undo
+
 
 >pull up
 by one point
 
+# this is hard to do in the course of play, so I'll just do it now
+>n
+WRONG
+>purloin state tats
+>n
+WRONG
+>undo
+>undo
+
 
 >get puce cup
-
 
 >w
 
@@ -239,6 +354,13 @@ by one point
 
 >get troll ort
 
+>w
+WRONG
+>e
+WRONG
+>s
+WRONG
+
 
 >use puce cup on liar grail
 by one point
@@ -254,6 +376,13 @@ by one point
 >n
 
 >e
+
+>e
+WRONG
+>n
+WRONG
+>s
+WRONG
 
 >use puce cup on dose sod
 
@@ -272,17 +401,38 @@ by one point
 
 >s
 
+>w
+WRONG
+>e
+WRONG
+>s
+WRONG
+
 
 >use puce cup on Bond Nob
 by one point
 
 >w
 
+>w
+WRONG
+>n
+WRONG
+>s
+WRONG
+
 >get all
 
 >e
 
 >e
+
+>e
+WRONG
+>n
+WRONG
+>s
+WRONG
 
 
 >use stamp mats on slate metals
@@ -304,6 +454,13 @@ by one point
 
 >n
 
+>w
+WRONG
+>n
+WRONG
+>e
+WRONG
+
 
 >use demo med on gulf lug
 by one point
@@ -320,11 +477,25 @@ by one point
 
 >e
 
+>e
+WRONG
+>n
+WRONG
+>s
+WRONG
+
 
 >use cash sac on cross orc
 by one point
 
 >s
+
+>s
+WRONG
+>w
+WRONG
+>e
+WRONG
 
 
 >use yob attaboy on Sniffins
@@ -383,9 +554,19 @@ by one point
 
 >n
 
+>w
+WRONG
+>n
+WRONG
+>e
+WRONG
+
 
 >deny ned
 by one point
+
+>n
+WRONG
 
 >get all
 
@@ -393,6 +574,13 @@ by one point
 by one point
 
 >n
+
+>w
+WRONG
+>n
+WRONG
+>e
+WRONG
 
 >s
 
@@ -503,6 +691,12 @@ by one point
 
 >w
 
+>w
+WRONG
+>n
+WRONG
+>s
+WRONG
 
 >use poo coop on gnu dung
 by one point
@@ -513,11 +707,21 @@ by one point
 
 >w
 
+>w
+WRONG
+
 
 >use radar on made dam
 by one point
 
 >n
+
+>w
+WRONG
+>n
+WRONG
+>e
+WRONG
 
 
 >use NULL ILLUN on Known Wonk
@@ -529,27 +733,53 @@ by one point
 
 >n
 
+>w
+WRONG
+>n
+WRONG
+>e
+WRONG
+
 
 >use elope pole on kayak
 by one point
+
+#maybe delete this if it's not relevant
+>n
+WRONG
 
 
 >use dork rod on tao boat
 by one point
 
->s
+#maybe delete this if it's not relevant
+>n
+WRONG
 
 >s
 
+>s
+
 
 >s
 
+
+>w
+WRONG
+>e
+WRONG
 
 >use tent net on code doc
 by one point
 
 >use spa maps on code doc
 by one point
+
+>s
+>e
+WRONG
+>undo
+>undo
 
 >n
 
@@ -565,6 +795,13 @@ by one point
 
 >use spa maps on go-by bog
 by one point
+
+>e
+WRONG
+>n
+WRONG
+>s
+WRONG
 
 >w
 
@@ -611,7 +848,19 @@ The ogre would destroy you in a grunting match.
 >yak okay
 by one point
 
+>s
+WRONG
+>w
+WRONG
+
 >e
+
+>s
+WRONG
+>e
+WRONG
+>n
+WRONG
 
 
 >use sage gas on tame mat
@@ -631,6 +880,13 @@ by one point
 
 >s
 
+>s
+WRONG
+>w
+WRONG
+>e
+WRONG
+
 
 >nail ian
 by one point
@@ -641,7 +897,9 @@ by one point
 >use gift fig on mayo yam
 by one point
 
->n
+>w
+
+>w
 
 >w
 
@@ -654,6 +912,12 @@ There is no romance, here. Besides, I can't do anything with 'bride.'
 #mistake test for moor vroom
 >moor vroom
 The moor broom is not equipped for transport. Some brooms are, but this isn't.
+>n
+WRONG
+>w
+WRONG
+>e
+WRONG
 >get all
 
 >s
@@ -716,6 +980,13 @@ by one point
 
 >w
 
+>s
+WRONG
+>n
+WRONG
+>w
+WRONG
+
 >use rep popper on me totem
 by one point
 
@@ -734,14 +1005,31 @@ by one point
 >n
 
 
+>n
+WRONG
+>e
+WRONG
+>w
+WRONG
+
 >use Bro Orb on mirror rim
 by one point
+
+>n
+WRONG
+>e
+WRONG
+>w
+WRONG
 
 
 >use balsa slab on sword rows
 by one point
 
 >s
+
+>n
+WRONG
 
 >w
 
@@ -771,8 +1059,18 @@ by one point
 >use TNT on ore zero
 by one point
 
+>raytest
+WRONG
+
 
 >n
+
+>n
+WRONG
+>e
+WRONG
+>w
+WRONG
 
 
 >use ME gem on Knife Fink
@@ -784,7 +1082,17 @@ by one point
 >use yard ray on redivider
 by one point
 
+>n
+WRONG
+>e
+WRONG
+>w
+WRONG
+
 >s
+
+>n
+WRONG
 
 >use x-ite tix on tix exit
 by one point

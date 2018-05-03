@@ -2267,7 +2267,6 @@ the Tix Exit is scenery. "It's nothing particularly fancy, though it says TIX IF
 check going south in Fun Nuf:
 	if player has X-ITE TIX, try useoning X-ITE TIX with Tix Exit instead;
 	if Tix Exit is in Fun Nuf, say "The Tix Exit blocks your way to where Evac Ave was. You try to look for a way to bust through, but a voice booms 'EL BARRABLE!'[paragraph break]I guess you're stuck questing, here." instead;
-	if flee elf is moot, say "You have no way back now that you accepted the Pact Cap." instead;
 	if elf-warn < 3, increment elf-warn;
 	say "[if elf-warn is 1]The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go[else if elf-warn is 2]'Oy! Oy! Yo-yo!' The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap[else]The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else[end if].";
 	if elf-warn < 3, the rule succeeds;
@@ -2318,10 +2317,12 @@ to decide which number is east-LLP:
 
 check going north in Fun Nuf:
 	if Diktat Kid is moot, say "No need to go back." instead;
-	if epicer recipe is off-stage, say "You need to get there. But you have no clue what to build, or how[if number of carried ingredients > 2]--though some of your inventory looks useful for that[end if]." instead;
-	if north tron is not in Fun Nuf, say "Not until you've built the North-Tron." instead;
+	if flee elf is in Fun Nuf, say "The flee elf sees you looking that way but says 'First things first! Get the cap the right way, here." instead;
+	if epicer recipe is nox, say "You need to get there. But you have no clue what to build, or how[if number of carried ingredients > 2]--though some of your inventory looks useful for that[end if][if player has epicer recipe]Hmm, maybe Xing the epicer recipe will help that[end if]." instead;
+	if north tron is off-stage, say "Not until you've built the North-Tron." instead;
 	if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
 	if murdered rum is not moot, say "You have the yard ray, but it isn't, well, charged." instead;
+	if emitted is false, say "You don't know how to work the yard ray." instead;
 	if player does not have ME gem or player does not have Taboo Bat, say "As you go north, you hear three voices. Perhaps the yard ray would work okay at first, but ... you get the feeling you may need some other stuff to take out EVERYBODY.";
 
 chapter Pact Cap
@@ -4447,6 +4448,8 @@ book Trapeze Part
 
 Trapeze Part is west of Evaded Ave. It is in Yelpley. "[if epicer recipe is off-stage]There's a ten level net on the floor, here. It could protect you from a long fall. You're convinced there must be something at the far end, but it's probably not safe to use the trapeze to get over until, well, you've done safety checks[else]The ten level net still sits here, and it'd be handy if there was anything else on the other side of it, but there isn't[end if]."
 
+check going nowhere in Trapeze Part: say "Since this is the Trapeze Part, you'd think there'd be a way to go to a place to WATCH it, but there isn't. You can only go back east." instead;
+
 chapter ten level net
 
 the ten level net is beepy scenery in Trapeze Part. "[if epicer recipe is off-stage]It doesn't quite look sturdy enough. Maybe you could do something to fix it. For all its seeming complexity, it's really just a net, and you probably don't need any crazy tool to make sure it's safe[else]It was sturdy enough to help you get the epicer recipe, and that's enough[end if]."
@@ -4497,6 +4500,9 @@ Yell Alley is east of Evaded Ave. It is in Yelpley. "[if girt rig is in Yell All
 
 to say alley-e-block:
 	say "[if navy van is in Yell Alley]navy van... you're not sure[else]bomb mob... so that's[end if]"
+
+check going nowhere in yell alley:
+	say "It probably gets even seedier [if navy van is in yell alley]behind the navy van[else if bomb mob is in yell alley]behind the bomb mob[else]if you go further[end if]. Best just go go back east." instead;
 
 chapter navy van
 

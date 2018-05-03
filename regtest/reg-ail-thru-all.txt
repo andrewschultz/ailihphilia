@@ -14,6 +14,8 @@ by one point
 by one point
 
 
+
+
 >e
 
 #mistake test for yawp way/yawl way
@@ -26,6 +28,7 @@ It's still quiet here.[mis of 187]
 
 >get trap art
 by one point
+
 
 >s
 
@@ -53,6 +56,7 @@ Maybe there is a more nonviolent way to get him to give up.
 
 >bore rob
 by one point
+
 
 #mistake test for worsts row/worses row
 >worsts row
@@ -115,12 +119,14 @@ You don't need a huge engine.
 
 >get all
 
+
 >use pity tip on eye
 by one point
 
 >w
 
 >w
+
 
 >tend net
 by one point
@@ -144,7 +150,6 @@ by one point
 >use bunk nub on reviver
 by one point
 
-
 >word row
 
 >get epoch cope
@@ -155,7 +160,12 @@ by one point
 
 >w
 
+
+>x recipe
+
+
 >w
+
 
 
 >use party trap on stark rats
@@ -165,6 +175,7 @@ by one point
 >n
 
 
+
 >use epoch cope on King Nik
 by one point
 
@@ -172,9 +183,16 @@ by one point
 
 >s
 
+==3t
+>s
+WRONG
+>e
+WRONG
+>w
+WRONG
+
 >slam mammals
 by one point
-
 
 
 >use stock cots on sleep eels
@@ -182,9 +200,11 @@ by one point
 
 >s
 
+
 >get stamp mats
 
 >e
+
 
 >get poo coop
 
@@ -215,12 +235,13 @@ by one point
 >e
 
 
+
 >pull up
 by one point
 
 
->get puce cup
 
+>get puce cup
 
 >w
 
@@ -249,6 +270,7 @@ by one point
 >get troll ort
 
 
+
 >use puce cup on liar grail
 by one point
 
@@ -263,6 +285,7 @@ by one point
 >n
 
 >e
+
 
 >use puce cup on dose sod
 
@@ -282,16 +305,19 @@ by one point
 >s
 
 
+
 >use puce cup on Bond Nob
 by one point
 
 >w
+
 
 >get all
 
 >e
 
 >e
+
 
 
 >use stamp mats on slate metals
@@ -314,6 +340,7 @@ by one point
 >n
 
 
+
 >use demo med on gulf lug
 by one point
 
@@ -330,10 +357,12 @@ by one point
 >e
 
 
+
 >use cash sac on cross orc
 by one point
 
 >s
+
 
 
 >use yob attaboy on Sniffins
@@ -393,8 +422,10 @@ by one point
 >n
 
 
+
 >deny ned
 by one point
+
 
 >get all
 
@@ -402,6 +433,7 @@ by one point
 by one point
 
 >n
+
 
 >s
 
@@ -532,10 +564,12 @@ by one point
 >w
 
 
+
 >use radar on made dam
 by one point
 
 >n
+
 
 
 >use NULL ILLUN on Known Wonk
@@ -548,19 +582,23 @@ by one point
 >n
 
 
+
 >use elope pole on kayak
 by one point
+
 
 
 >use dork rod on tao boat
 by one point
 
->s
 
 >s
 
+>s
+
 
 >s
+
 
 
 >use tent net on code doc
@@ -568,6 +606,7 @@ by one point
 
 >use spa maps on code doc
 by one point
+
 
 >n
 
@@ -583,6 +622,7 @@ by one point
 
 >use spa maps on go-by bog
 by one point
+
 
 >w
 
@@ -629,7 +669,9 @@ The ogre would destroy you in a grunting match.
 >yak okay
 by one point
 
+
 >e
+
 
 
 >use sage gas on tame mat
@@ -650,6 +692,7 @@ by one point
 >s
 
 
+
 >nail ian
 by one point
 
@@ -659,7 +702,9 @@ by one point
 >use gift fig on mayo yam
 by one point
 
->n
+>w
+
+>w
 
 >w
 
@@ -737,6 +782,7 @@ by one point
 
 >w
 
+
 >use rep popper on me totem
 by one point
 
@@ -755,14 +801,17 @@ by one point
 >n
 
 
+
 >use Bro Orb on mirror rim
 by one point
+
 
 
 >use balsa slab on sword rows
 by one point
 
 >s
+
 
 >w
 
@@ -793,7 +842,9 @@ by one point
 by one point
 
 
+
 >n
+
 
 
 >use ME gem on Knife Fink
@@ -805,7 +856,9 @@ by one point
 >use yard ray on redivider
 by one point
 
+
 >s
+
 
 >use x-ite tix on tix exit
 by one point

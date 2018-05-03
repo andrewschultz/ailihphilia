@@ -110,6 +110,7 @@ The word DAD briefly flashes on the Pact Cap. Weird, but not really.
 >pack cap
 by one point
 
+
 #mistake test for rub [text]
 >rub zozimus
 There's no one named Burt or Babbur or Liwilbur anything like that in this game, so you don't have to rub anyone or anything.
@@ -121,6 +122,7 @@ Nobody named Eva is beyond the fourth wall.
 #mistake test for tri girt
 >tri girt
 [girt-clue].
+
 
 >e
 
@@ -134,6 +136,7 @@ It's still quiet here.[mis of 187]
 
 >get trap art
 by one point
+
 
 >s
 
@@ -152,24 +155,18 @@ That's what [random visible guhthug] is, but you need to figure how to get rid o
 >evade dave
 by one point
 
-
 #mistake test for sto bots
 >sto bots
 No cool robots pop out.
-
 #mistake test for sto dots
 >sto dots
 The Sto Lots remains unadorned.
-
 #mistake test for sto gots
 >sto gots
 Yes, you gots a lot of space, and you will gots a lot of stuff as the game goes on.
-
 #mistake test for sto nots
 >sto nots
 That would defeat the purpose!
-
-#   5 to find(341)
 #mistake test for sto sots
 >sto sots
 It's not big enough to be a drunk tank.
@@ -192,6 +189,7 @@ Maybe there is a more nonviolent way to get him to give up.
 
 >bore rob
 by one point
+
 
 #mistake test for worsts row/worses row
 >worsts row
@@ -278,12 +276,14 @@ You don't need a huge engine.
 
 >get all
 
+
 >use pity tip on eye
 by one point
 
 >w
 
 >w
+
 
 >tend net
 by one point
@@ -307,7 +307,6 @@ by one point
 >use bunk nub on reviver
 by one point
 
-
 >word row
 
 >get epoch cope
@@ -318,7 +317,12 @@ by one point
 
 >w
 
+
+>x recipe
+
+
 >w
+
 
 #mistake test for seer brees
 >seer brees
@@ -361,6 +365,7 @@ No violence, here!
 
 >n
 
+
 #mistake test for kind nik
 >kind nik
 He already seems pretty nice. His deficiencies are more ... administrative.
@@ -394,6 +399,14 @@ by one point
 
 >s
 
+==3t
+>s
+WRONG
+>e
+WRONG
+>w
+WRONG
+
 >slam mammals
 by one point
 
@@ -413,15 +426,16 @@ They are alive. Turning them to metal would be cruel.
 >sleek eels
 The eels don't need dexterity. They need comfort. They are slippery enough.
 
-
 >use stock cots on sleep eels
 by one point
 
 >s
 
+
 >get stamp mats
 
 >e
+
 
 >get poo coop
 
@@ -492,6 +506,7 @@ by one point
 
 >e
 
+
 #mistake test for purr up
 >purr up
 The Spur Ups make you feel you can be anyone, but not anything.
@@ -506,6 +521,7 @@ The Spur Ups don't become potatoes or French fries or whatever.
 
 >pull up
 by one point
+
 
 #mistake test for emo come
 >emo come
@@ -528,7 +544,6 @@ That would be out of place among all the stupid jokes, here.
 There's no rink nir. Near.
 
 >get puce cup
-
 
 >w
 
@@ -556,6 +571,7 @@ by one point
 
 >get troll ort
 
+
 #mistake test for trod ort
 >trod ort
 It looks run-down enough.
@@ -580,6 +596,7 @@ by one point
 >n
 
 >e
+
 
 >use puce cup on dose sod
 
@@ -633,6 +650,7 @@ You don't need a weapon.
 
 >s
 
+
 #mistake test for bony nob
 >bony nob
 The Bond Nob's body weight is not an important issue, here.
@@ -658,11 +676,13 @@ by one point
 
 >w
 
+
 >get all
 
 >e
 
 >e
+
 
 #mistake test for scram arcs
 >scram arcs
@@ -686,6 +706,7 @@ by one point
 >n
 
 >n
+
 
 #mistake test for corn roc
 >corn roc
@@ -734,6 +755,7 @@ by one point
 
 >e
 
+
 #mistake test for told lot
 >told lot
 [if cross orc is in Toll Lot]The cross orc isn't open to verbal negotiation[else]You pretend you won an argument against the cross or and didn't just hand over money[end if].[mis of 167]
@@ -774,6 +796,7 @@ That's just what you need, a giant crab coming after you[if cross orc is in Toll
 by one point
 
 >s
+
 
 #mistake test for defy fed
 >defy fed
@@ -869,6 +892,7 @@ by one point
 
 >n
 
+
 #mistake test for grow org
 >grow org
 [one of]This game is just a bunch of dumb jokes and silly wordplay mashed together, and any attempt at personal growth is severely frowned upon. So stop that![or]Your height does n
@@ -889,12 +913,14 @@ Gross, grot ... same thing.
 >deny ned
 by one point
 
+
 >get all
 
 >use Ye Key on etage gate
 by one point
 
 >n
+
 
 >s
 
@@ -1082,6 +1108,7 @@ You don't have the proper permissions. It is (wait for it) too root.
 >rm gnu dung
 You don't have the proper permissions. It is (wait for it) too root.
 
+
 #mistake test for dump mud
 >dump mud
 It's already kind of dumped here[if poo coop is not moot]. Maybe you could dump the mud into the rut for passage south, but it might take too long, and you don't have a shovel. You'd need something else[end if].
@@ -1133,6 +1160,7 @@ by one point
 
 >w
 
+
 #mistake test for swami maws/swamy maws
 >swami maws
 There might be someone smart nearby.
@@ -1147,6 +1175,7 @@ Perhaps someone has, but you don't need to.
 by one point
 
 >n
+
 
 #mistake test for story rots
 >story rots
@@ -1180,6 +1209,7 @@ The rahs are on paper, and besides, they might be useful.
 
 >n
 
+
 #mistake test for calf lac
 >calf lac
 There is [if moo room is unvisited]another room with that, sort of[else]already the Moo Room. Let's not overdo it[end if]. Plus, cows can't swim.
@@ -1211,6 +1241,7 @@ You don't need protection from the weather here.
 >use elope pole on kayak
 by one point
 
+
 #mistake test for dorm rod/dorm
 >dorm rod
 You reveal no frat. Arf!
@@ -1219,6 +1250,7 @@ You reveal no frat. Arf!
 
 >use dork rod on tao boat
 by one point
+
 
 >s
 
@@ -1234,11 +1266,13 @@ Aw, come on, you've already met someone smart nearby.
 >cods doc
 No way. It's nice to be around someone non-fishy, actually.
 
+
 >use tent net on code doc
 by one point
 
 >use spa maps on code doc
 by one point
+
 
 >n
 
@@ -1257,6 +1291,7 @@ Aw, come on, you've already met TWO SMART PEOPLE nearby.
 
 >use spa maps on go-by bog
 by one point
+
 
 >w
 
@@ -1306,7 +1341,9 @@ The ogre would destroy you in a grunting match.
 >yak okay
 by one point
 
+
 >e
+
 
 #mistake test for tamp mat
 >tamp mat
@@ -1331,6 +1368,7 @@ by one point
 >e
 
 >s
+
 
 #mistake test for nair ian
 >nair Ian
@@ -1361,7 +1399,9 @@ by one point
 >use gift fig on mayo yam
 by one point
 
->n
+>w
+
+>w
 
 >w
 
@@ -1393,6 +1433,7 @@ by one point
 by one point
 
 >n
+
 
 >muss opossum
 by one point
@@ -1477,6 +1518,7 @@ by one point
 
 >w
 
+
 >use rep popper on me totem
 by one point
 
@@ -1498,8 +1540,10 @@ by one point
 >gal slag
 You managed to annoy Madam enough that she lashes out and conks you with a mortal blow with the Gal Flag. Okay, not really, but name calling won't help.
 
+
 >use Bro Orb on mirror rim
 by one point
+
 
 #mistake test for sworn rows
 >sworn rows
@@ -1519,6 +1563,7 @@ Becoming a pirate at the end? A clever heel turn!
 by one point
 
 >s
+
 
 >w
 
@@ -1551,11 +1596,13 @@ I don't even want to know what you're trying to do, there.
 >use TNT on ore zero
 by one point
 
+
 #mistake test for mar tram
 >mar tram
 No. [if epicer recipe is xed]You need it to build the north-tron[else]It must be good for something[end if].
 
 >n
+
 
 #mistake test for dir grid
 >dir grid
@@ -1578,7 +1625,9 @@ by one point
 >use yard ray on redivider
 by one point
 
+
 >s
+
 
 >use x-ite tix on tix exit
 by one point

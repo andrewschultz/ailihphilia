@@ -20,12 +20,17 @@ by one point
 ==t3
 >e
 WRONG
->s
-WRONG
 >n
-WRONG
+The flee elf sees you looking that way but says 'First things first! Get the cap the right way, here.
 >w
 WRONG
+>s
+WRONG
+>s
+WRONG
+>s
+WRONG
+>undo
 
 ===2
 #mistake test for evaded ave
@@ -129,6 +134,10 @@ The word DAD briefly flashes on the Pact Cap. Weird, but not really.
 
 >pack cap
 by one point
+
+==t3
+>n
+You need to get there. But you have no clue what to build, or how.
 
 ===2
 #mistake test for rub [text]
@@ -248,6 +257,7 @@ Maybe there is a more nonviolent way to get him to give up.
 >bore rob
 by one point
 
+==t3
 >w
 WRONG
 >n
@@ -305,6 +315,12 @@ It's already pretty pithy, and there's not enough material for a helmet.
 
 >n
 
+===3t
+>w
+WRONG
+>e
+WRONG
+
 ===2
 #mistake test for bung nub
 >bung nub
@@ -346,12 +362,28 @@ You don't need a huge engine.
 
 >get all
 
+==t3
+>n
+WRONG
+>e
+WRONG
+>s
+WRONG
+
 >use pity tip on eye
 by one point
 
 >w
 
 >w
+
+==t3
+>n
+Since this is the Trapeze Part, you'd think there'd be a way to go to a place to WATCH it, but there isn't. You can only go back east.
+>w
+Since this is the Trapeze Part, you'd think there'd be a way to go to a place to WATCH it, but there isn't. You can only go back east.
+>s
+Since this is the Trapeze Part, you'd think there'd be a way to go to a place to WATCH it, but there isn't. You can only go back east.
 
 >tend net
 by one point
@@ -375,7 +407,6 @@ by one point
 >use bunk nub on reviver
 by one point
 
-
 >word row
 
 >get epoch cope
@@ -386,7 +417,25 @@ by one point
 
 >w
 
+==t3
+>n
+WRONG
+
+>x recipe
+
+==t3
+>n
+WRONG
+
 >w
+
+==t3
+>n
+WRONG
+>w
+WRONG
+>s
+WRONG
 
 ===2
 #mistake test for seer brees
@@ -433,6 +482,10 @@ No violence, here!
 
 >n
 
+==t3
+>w
+WRONG
+
 ===2
 #mistake test for kind nik
 >kind nik
@@ -468,6 +521,14 @@ by one point
 
 >s
 
+==3t
+>s
+WRONG
+>e
+WRONG
+>w
+WRONG
+
 ===1,2
 >slam mammals
 by one point
@@ -490,15 +551,28 @@ They are alive. Turning them to metal would be cruel.
 The eels don't need dexterity. They need comfort. They are slippery enough.
 ===a
 
-
 >use stock cots on sleep eels
 by one point
 
 >s
 
+==t3
+>w
+WRONG
+>s
+WRONG
+
 >get stamp mats
 
 >e
+
+==t3
+>e
+WRONG
+>n
+WRONG
+>s
+WRONG
 
 >get poo coop
 
@@ -571,6 +645,17 @@ by one point
 
 >e
 
+==t3
+>s
+WRONG
+>undo
+>n
+WRONG
+>undo
+>e
+WRONG
+>undo
+
 ===2
 #mistake test for purr up
 >purr up
@@ -587,6 +672,16 @@ The Spur Ups don't become potatoes or French fries or whatever.
 
 >pull up
 by one point
+
+==t3
+# this is hard to do in the course of play, so I'll just do it now
+>n
+WRONG
+>purloin state tats
+>n
+WRONG
+>undo
+>undo
 
 ===2
 #mistake test for emo come
@@ -611,7 +706,6 @@ There's no rink nir. Near.
 ===a
 
 >get puce cup
-
 
 >w
 
@@ -639,6 +733,14 @@ by one point
 
 >get troll ort
 
+==t3
+>w
+WRONG
+>e
+WRONG
+>s
+WRONG
+
 ===2
 #mistake test for trod ort
 >trod ort
@@ -665,6 +767,14 @@ by one point
 >n
 
 >e
+
+==t3
+>e
+WRONG
+>n
+WRONG
+>s
+WRONG
 
 >use puce cup on dose sod
 
@@ -720,6 +830,14 @@ You don't need a weapon.
 
 >s
 
+==t3
+>w
+WRONG
+>e
+WRONG
+>s
+WRONG
+
 ===2
 #mistake test for bony nob
 >bony nob
@@ -747,11 +865,27 @@ by one point
 
 >w
 
+==t3
+>w
+WRONG
+>n
+WRONG
+>s
+WRONG
+
 >get all
 
 >e
 
 >e
+
+==t3
+>e
+WRONG
+>n
+WRONG
+>s
+WRONG
 
 ===2
 #mistake test for scram arcs
@@ -777,6 +911,14 @@ by one point
 >n
 
 >n
+
+==t3
+>w
+WRONG
+>n
+WRONG
+>e
+WRONG
 
 ===2
 #mistake test for corn roc
@@ -827,6 +969,14 @@ by one point
 
 >e
 
+==t3
+>e
+WRONG
+>n
+WRONG
+>s
+WRONG
+
 ===2
 #mistake test for told lot
 >told lot
@@ -869,6 +1019,14 @@ That's just what you need, a giant crab coming after you[if cross orc is in Toll
 by one point
 
 >s
+
+==t3
+>s
+WRONG
+>w
+WRONG
+>e
+WRONG
 
 ===2
 #mistake test for defy fed
@@ -970,6 +1128,14 @@ by one point
 
 >n
 
+==t3
+>w
+WRONG
+>n
+WRONG
+>e
+WRONG
+
 ===2
 #mistake test for grow org
 >grow org
@@ -992,12 +1158,24 @@ Gross, grot ... same thing.
 >deny ned
 by one point
 
+==t3
+>n
+WRONG
+
 >get all
 
 >use Ye Key on etage gate
 by one point
 
 >n
+
+==t3
+>w
+WRONG
+>n
+WRONG
+>e
+WRONG
 
 >s
 
@@ -1211,6 +1389,14 @@ You don't have the proper permissions. It is (wait for it) too root.
 >rm gnu dung
 You don't have the proper permissions. It is (wait for it) too root.
 
+==t3
+>w
+WRONG
+>n
+WRONG
+>s
+WRONG
+
 #mistake test for dump mud
 >dump mud
 It's already kind of dumped here[if poo coop is not moot]. Maybe you could dump the mud into the rut for passage south, but it might take too long, and you don't have a shovel. You'd need something else[end if].
@@ -1263,6 +1449,10 @@ by one point
 
 >w
 
+==t3
+>w
+WRONG
+
 ===2
 #mistake test for swami maws/swamy maws
 >swami maws
@@ -1279,6 +1469,14 @@ Perhaps someone has, but you don't need to.
 by one point
 
 >n
+
+==t3
+>w
+WRONG
+>n
+WRONG
+>e
+WRONG
 
 ===2
 #mistake test for story rots
@@ -1316,6 +1514,14 @@ The rahs are on paper, and besides, they might be useful.
 
 >n
 
+==t3
+>w
+WRONG
+>n
+WRONG
+>e
+WRONG
+
 ===2
 #mistake test for calf lac
 >calf lac
@@ -1349,6 +1555,11 @@ You don't need protection from the weather here.
 >use elope pole on kayak
 by one point
 
+==t3
+#maybe delete this if it's not relevant
+>n
+WRONG
+
 ===2
 #mistake test for dorm rod/dorm
 >dorm rod
@@ -1359,6 +1570,11 @@ You reveal no frat. Arf!
 
 >use dork rod on tao boat
 by one point
+
+==t3
+#maybe delete this if it's not relevant
+>n
+WRONG
 
 >s
 
@@ -1378,11 +1594,24 @@ Aw, come on, you've already met someone smart nearby.
 No way. It's nice to be around someone non-fishy, actually.
 ===a
 
+==t3
+>w
+WRONG
+>e
+WRONG
+
 >use tent net on code doc
 by one point
 
 >use spa maps on code doc
 by one point
+
+==t3
+>s
+>e
+WRONG
+>undo
+>undo
 
 >n
 
@@ -1403,6 +1632,14 @@ Aw, come on, you've already met TWO SMART PEOPLE nearby.
 
 >use spa maps on go-by bog
 by one point
+
+==t3
+>e
+WRONG
+>n
+WRONG
+>s
+WRONG
 
 >w
 
@@ -1454,7 +1691,21 @@ The ogre would destroy you in a grunting match.
 >yak okay
 by one point
 
+==t3
+>s
+WRONG
+>w
+WRONG
+
 >e
+
+==t3
+>s
+WRONG
+>e
+WRONG
+>n
+WRONG
 
 ===2
 #mistake test for tamp mat
@@ -1483,6 +1734,14 @@ by one point
 >e
 
 >s
+
+==t3
+>s
+WRONG
+>w
+WRONG
+>e
+WRONG
 
 ===2
 #mistake test for nair ian
@@ -1515,7 +1774,9 @@ by one point
 >use gift fig on mayo yam
 by one point
 
->n
+>w
+
+>w
 
 >w
 
@@ -1549,6 +1810,14 @@ by one point
 by one point
 
 >n
+
+==t3
+>n
+WRONG
+>w
+WRONG
+>e
+WRONG
 
 ===1,2
 >muss opossum
@@ -1639,6 +1908,14 @@ by one point
 
 >w
 
+==t3
+>s
+WRONG
+>n
+WRONG
+>w
+WRONG
+
 >use rep popper on me totem
 by one point
 
@@ -1662,8 +1939,24 @@ by one point
 You managed to annoy Madam enough that she lashes out and conks you with a mortal blow with the Gal Flag. Okay, not really, but name calling won't help.
 ===a
 
+==t3
+>n
+WRONG
+>e
+WRONG
+>w
+WRONG
+
 >use Bro Orb on mirror rim
 by one point
+
+==t3
+>n
+WRONG
+>e
+WRONG
+>w
+WRONG
 
 ===2
 #mistake test for sworn rows
@@ -1685,6 +1978,10 @@ Becoming a pirate at the end? A clever heel turn!
 by one point
 
 >s
+
+==t3
+>n
+WRONG
 
 >w
 
@@ -1719,6 +2016,10 @@ I don't even want to know what you're trying to do, there.
 >use TNT on ore zero
 by one point
 
+==t3
+>raytest
+WRONG
+
 ===2
 #mistake test for mar tram
 >mar tram
@@ -1726,6 +2027,14 @@ No. [if epicer recipe is xed]You need it to build the north-tron[else]It must be
 ===a
 
 >n
+
+==t3
+>n
+WRONG
+>e
+WRONG
+>w
+WRONG
 
 ===2
 #mistake test for dir grid
@@ -1750,7 +2059,19 @@ by one point
 >use yard ray on redivider
 by one point
 
+==t3
+>n
+WRONG
+>e
+WRONG
+>w
+WRONG
+
 >s
+
+==t3
+>n
+WRONG
 
 >use x-ite tix on tix exit
 by one point
