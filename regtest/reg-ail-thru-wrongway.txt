@@ -1,3 +1,11 @@
+>e
+WRONG
+>s
+WRONG
+>n
+WRONG
+>w
+WRONG
 
 >pack cap
 by one point
@@ -782,15 +790,3 @@ by one point
 by one point
 
 #
->tcc
->z
->s
->undo
->tcc
->s
->undo
->z
->s
->undo
->stats
->s

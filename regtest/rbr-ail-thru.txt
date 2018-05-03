@@ -1,25 +1,31 @@
-files=reg-ail-thru-min.txt,reg-ail-thru-all.txt,reg-ail-thru-mist.txt
+files=reg-ail-thru-min.txt,reg-ail-thru-all.txt,reg-ail-thru-mist.txt,reg-ail-thru-wrongway.txt
 dupefile=reg-ail-thru-dupe.txt
 
 #reg-ail-thru.txt
 # tests everything
 
-===1,2
+==t1,2
 >stats
 by one point
-
 >peep
 by one point
-
 >poop
 727
 121
-
 >dial aid
 by one point
-
 >refer
 by one point
+
+==t3
+>e
+WRONG
+>s
+WRONG
+>n
+WRONG
+>w
+WRONG
 
 ===2
 #mistake test for evaded ave
@@ -164,7 +170,7 @@ That's what [random visible guhthug] is, but you need to figure how to get rid o
 That's what [random visible guhthug] is, but you need to figure how to get rid of him.
 >guh thug
 That's what [random visible guhthug] is, but you need to figure how to get rid of him.
-===0,1,2
+===a
 
 #mistake test for evade dave
 >evade dave
@@ -244,7 +250,7 @@ by one point
 >trace cart
 by one point
 
-===0,1,2
+===a
 >get TO IDIOT
 
 ===2
@@ -255,7 +261,7 @@ Sorry, you're getting ambiguous snack cans and not any specific cuisine.
 #mistake test for pith tip
 >pith tip
 It's already pretty pithy, and there's not enough material for a helmet.
-===0,1,2
+===a
 
 >e
 
@@ -419,7 +425,7 @@ You'd be better off with a warmer drink. Which isn't here.
 #mistake test for colt loc
 >colt loc
 No gandered nag appears. Or gun(ug).
-===0,1,2
+===a
 
 >use epoch cope on King Nik
 by one point
@@ -448,7 +454,7 @@ They are alive. Turning them to metal would be cruel.
 #mistake test for sleek eels
 >sleek eels
 The eels don't need dexterity. They need comfort. They are slippery enough.
-===0,1,2
+===a
 
 
 >use stock cots on sleep eels
@@ -543,7 +549,7 @@ The Spur Ups fail to rotate.
 #mistake test for spud ups
 >spud ups
 The Spur Ups don't become potatoes or French fries or whatever.
-===0,1,2
+===a
 
 >pull up
 by one point
@@ -664,7 +670,7 @@ One day, with the Diktat Kid gone, plenty of people will waste money on a spa, b
 #mistake test for spa zaps
 >spa zaps
 You don't need a weapon.
-===0,1,2
+===a
 
 >w
 
@@ -834,7 +840,7 @@ by one point
 #mistake test for defy fed
 >defy fed
 [if yob attaboy is moot]Way to go! Keep that Hunger! Well, I hope it's that and not conspiracy theories about the Fed[else]No problem, you're not getting fed anyway[end if].
-===0,1,2
+===a
 
 >use yob attaboy on Sniffins
 by one point
@@ -869,7 +875,7 @@ Well, Nat's must have its stans, but you don't want to be one.
 #mistake test for bon knob
 >bon knob
 You don't need to help Sniffins with interior decorating, here.
-===0,1,2
+===a
 
 >use Elan Ale on Sniffins
 by one point
@@ -1072,7 +1078,7 @@ Nothing fun explodes out from the walls or ceiling.
 #mistake test for golf log
 >golf log
 There is no Par Trap or Tee Meet to navigate here, so you don't need to make a golf log.
-===0,1,2
+===a
 
 >s
 
@@ -1112,7 +1118,7 @@ by one point
 >see bees
 by one point
 
-===0,1,2
+===a
 >use SOME DEMOS on yahoo hay
 by one point
 
@@ -1132,7 +1138,7 @@ by one point
 #mistake test for art ecetra
 >art ecetra
 One silly misspelling does not beget another.
-===0,1,2
+===a
 
 >use straw arts on Revolt Lover
 by one point
@@ -1252,7 +1258,7 @@ You don't want to know what sort of carcasses are buried in the swamp.
 #mistake test for store rots
 >store rots
 You don't need to buy anything in this game, and any store wouldn't sell anything good.
-===0,1,2
+===a
 
 >use NULL ILLUN on Known Wonk
 by one point
@@ -1272,7 +1278,7 @@ You don't want to alert any land sharks.
 #mistake test for shard rahs
 >shard rahs
 The rahs are on paper, and besides, they might be useful.
-===0,1,2
+===a
 
 >n
 
@@ -1304,7 +1310,7 @@ The lake is peaceful enough as-is.
 #mistake test for tao coat
 >tao coat
 You don't need protection from the weather here.
-===0,1,2
+===a
 
 >use elope pole on kayak
 by one point
@@ -1475,37 +1481,13 @@ by one point
 >use gift fig on mayo yam
 by one point
 
->w
-
->s
-
->s
-
->s
-
->e
-
->use enact cane on yahoo hay
-by one point
-
->pace cap
-
->use troll ort on brag garb
-
->w
-[this is to give the kayo yak another go]
-
-[ note I could probably save a move or two here by visiting Mont Nom just before going back east ... now that getting the Martini Tram moves you back to Fun Nuf ]
-
->w
-
->w
+>n
 
 >w
 
 >n
 
-===0,1,2
+===a
 #mistake test for moor groom
 >moor groom
 There is no romance, here. Besides, I can't do anything with 'bride.'
@@ -1538,7 +1520,7 @@ by one point
 >muss opossum
 by one point
 
-===0,1,2
+===a
 >get all
 
 >s
@@ -1723,7 +1705,7 @@ You aren't on a golf course.
 #mistake test for par crap
 >par crap
 Making fun of others['] clothing isn't as evil as the Diktat Kid, but it's not what real heroes do!
-===0,1,2
+===a
 
 >use ME gem on Knife Fink
 by one point

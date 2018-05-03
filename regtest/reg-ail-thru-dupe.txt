@@ -3,25 +3,19 @@ by one point
 
 >stats
 /by one point
-
 >peep
 by one point
 
 >peep
 /by one point
-
 >poop
-by one point
-
->poop
-/by one point
-
+727
+121
 >dial aid
 by one point
 
 >dial aid
 /by one point
-
 >refer
 by one point
 
@@ -33,8 +27,15 @@ by one point
 
 >pack cap
 /by one point
+
 
 >e
+
+#mistake test for yawp way/yawl way
+>yawp way
+It's still quiet here.[mis of 187]
+>yawl way
+It's still quiet here.[mis of 187]
 
 >n
 
@@ -47,23 +48,57 @@ by one point
 >s
 
 >s
-##mistake test for evade dave
 
+
+
+#mistake test for evade dave
 >evade dave
 by one point
 
 >evade dave
 /by one point
 
->get saw
+
+>get all
+
 
 >w
 
+#mistake test for borg rob
+>borg rob
+He is already assimilated.
+
+#mistake test for bork rob
+>bork rob
+Maybe there is a more nonviolent way to get him to give up.
+
 >bore rob
 by one point
 
 >bore rob
 /by one point
+
+#mistake test for worsts row/worses row
+>worsts row
+It [if Worn Row is worny]is[else]was[end if] bad enough already.
+>worses row
+It [if Worn Row is worny]is[else]was[end if] bad enough already.
+
+#mistake test for worm row
+>worm row
+[if Worn Row is worny]Ugh! You don't need to make this place worse[else]You already upgraded Worn Row. No need to make it worse than it was[red-clue][end if].
+
+#mistake test for wort row
+>wort row
+[Worn Row] is not meant to be a garden. Maybe it would look nicer that way, but it wouldn't be helpful to you.
+
+#mistake test for track cart
+>track cart
+[if DWELT LEWD is off-stage]Right idea, but the cart isn't going anywhere[else]It's not going anywhere. You already unlocked a secret, anyway[end if].
+
+#mistake test for dwell lewd
+>dwell lewd
+DWELT LEWD should NOT be read as an instruction manual. Well, it shouldn't be read at all, really.
 
 >word row
 by one point
@@ -79,6 +114,7 @@ by one point
 
 >get TO IDIOT
 
+
 >e
 
 >n
@@ -86,6 +122,7 @@ by one point
 >n
 
 >n
+
 
 >use TO IDIOT on Door Frood
 by one point
@@ -96,6 +133,18 @@ by one point
 >get bunk nub
 
 >e
+
+#mistake test for pcp
+>pcp
+While searching for a boost, you're apprehended by a crank narc! I'm very disappointed in you. Not the whole drugs bit, but that this game didn't alter reality ENOUGH for you.
+
+#mistake test for may yam
+>may yam
+You don't want the yam to age. It would probably start to smell bad.
+
+#mistake test for nacelle can
+>nacelle can
+You don't need a huge engine.
 
 >get all
 
@@ -156,13 +205,16 @@ by one point
 
 >w
 
+
 >use party trap on stark rats
 by one point
 
 >use party trap on stark rats
 /by one point
 
+
 >n
+
 
 >use epoch cope on King Nik
 by one point
@@ -180,6 +232,8 @@ by one point
 >slam mammals
 /by one point
 
+
+
 >use stock cots on sleep eels
 by one point
 
@@ -193,6 +247,7 @@ by one point
 >e
 
 >get poo coop
+
 
 >w
 
@@ -222,11 +277,13 @@ by one point
 
 >e
 
+
 >pull up
 by one point
 
 >pull up
 /by one point
+
 
 >get puce cup
 
@@ -263,6 +320,7 @@ by one point
 
 >get troll ort
 
+
 >use puce cup on liar grail
 by one point
 
@@ -282,6 +340,7 @@ by one point
 >e
 
 >use puce cup on dose sod
+
 
 >w
 
@@ -312,6 +371,7 @@ by one point
 
 >e
 
+
 >use stamp mats on slate metals
 by one point
 
@@ -333,6 +393,7 @@ by one point
 >n
 
 >n
+
 
 >use demo med on gulf lug
 by one point
@@ -352,6 +413,7 @@ by one point
 
 >e
 
+
 >use cash sac on cross orc
 by one point
 
@@ -359,6 +421,7 @@ by one point
 /by one point
 
 >s
+
 
 >use yob attaboy on Sniffins
 by one point
@@ -367,6 +430,7 @@ by one point
 /by one point
 
 >s
+
 
 >use Elan Ale on Sniffins
 by one point
@@ -416,6 +480,7 @@ by one point
 >use cave vac on cassettes sac
 /by one point
 
+
 >e
 
 >n
@@ -431,6 +496,7 @@ by one point
 /by one point
 
 >n
+
 
 >deny ned
 by one point
@@ -460,19 +526,6 @@ by one point
 
 >w
 
->Worn Row
-by one point
-
->worn row
-/by one point
-
->work row
-
->use stinky knits on rotator
-by one point
-
->use stinky knits on rotator
-/by one point
 
 >word row
 
@@ -490,6 +543,7 @@ by one point
 
 >get all
 
+
 >use Gorge Grog on butene tub
 by one point
 
@@ -501,6 +555,7 @@ by one point
 
 >balm lab
 /by one point
+
 
 >s
 
@@ -566,6 +621,7 @@ by one point
 
 >n
 
+
 >use straw arts on Revolt Lover
 by one point
 
@@ -600,6 +656,7 @@ by one point
 
 >w
 
+
 >use poo coop on gnu dung
 by one point
 
@@ -615,6 +672,7 @@ by one point
 
 >w
 
+
 >use radar on made dam
 by one point
 
@@ -622,6 +680,7 @@ by one point
 /by one point
 
 >n
+
 
 >use NULL ILLUN on Known Wonk
 by one point
@@ -635,13 +694,16 @@ by one point
 >use el doodle on edits tide
 /by one point
 
+
 >n
 
+
 >use elope pole on kayak
 by one point
 
 >use elope pole on kayak
 /by one point
+
 
 >use dork rod on tao boat
 by one point
@@ -653,7 +715,9 @@ by one point
 
 >s
 
+
 >s
+
 
 >use tent net on code doc
 by one point
@@ -668,6 +732,8 @@ by one point
 /by one point
 
 >n
+
+
 
 >e
 
@@ -690,6 +756,7 @@ by one point
 >s
 
 >s
+
 
 >e
 
@@ -728,6 +795,14 @@ by one point
 
 >s
 
+#mistake test for ergo ogre
+>ergo ogre
+You aren't going to impress it with your smarts.
+
+#mistake test for erg ogre
+>erg ogre
+The ogre would destroy you in a grunting match.
+
 >yak okay
 by one point
 
@@ -736,11 +811,13 @@ by one point
 
 >e
 
+
 >use sage gas on tame mat
 by one point
 
 >use sage gas on tame mat
 /by one point
+
 
 >use sharp rahs on guru rug
 by one point
@@ -757,6 +834,7 @@ by one point
 >e
 
 >s
+
 
 >nail ian
 by one point
@@ -776,67 +854,19 @@ by one point
 >use gift fig on mayo yam
 /by one point
 
->w
-
->s
-
->s
-
->s
-
->e
-
->use enact cane on yahoo hay
-by one point
-
->use enact cane on yahoo hay
-/by one point
-
->pace cap
-
->use troll ort on brag garb
-
->w
-[this is to give the kayo yak another go]
-
-[ note I could probably save a move or two here by visiting Mont Nom just before going back east ... now that getting the Martini Tram moves you back to Fun Nuf ]
-
->w
-
->w
+>n
 
 >w
 
 >n
 
->use moor broom on tru yurt
-by one point
+#mistake test for moor groom
+>moor groom
+There is no romance, here. Besides, I can't do anything with 'bride.'
 
->use moor broom on tru yurt
-/by one point
-
->s
-
->s
-
->use wash saw on porch crop
-by one point
-
->use wash saw on porch crop
-/by one point
-
->n
-
->e
-
->use exam axe on lie veil
-by one point
-
->use exam axe on lie veil
-/by one point
-
->n
-
+#mistake test for moor vroom
+>moor vroom
+The moor broom is not equipped for transport. Some brooms are, but this isn't.
 >muss opossum
 by one point
 
@@ -869,6 +899,7 @@ by one point
 >use roto motor on dna hand
 /by one point
 
+
 >use eroded ore on reviver
 by one point
 
@@ -880,6 +911,7 @@ by one point
 
 >use you buoy on rotator
 /by one point
+
 
 >e
 
@@ -941,11 +973,13 @@ by one point
 
 >n
 
+
 >use Bro Orb on mirror rim
 by one point
 
 >use bro orb on mirror rim
 /by one point
+
 
 >use balsa slab on sword rows
 by one point
@@ -991,13 +1025,16 @@ by one point
 
 >w
 
+
 >use TNT on ore zero
 by one point
 
 >use tnt on ore zero
 /by one point
 
+
 >n
+
 
 >use ME gem on Knife Fink
 by one point
@@ -1025,3 +1062,9 @@ by one point
 >use x-ite tix on tix exit
 /by one point
 
+#
+>tcc
+>s
+>undo
+>z
+>s
