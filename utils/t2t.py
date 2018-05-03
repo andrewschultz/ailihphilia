@@ -1,4 +1,4 @@
-# t2t.py = tran1script to test
+# t2t.py = transcript to test
 #
 
 import re

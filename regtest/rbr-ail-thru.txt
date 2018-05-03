@@ -144,6 +144,28 @@ Nobody named Eva is beyond the fourth wall.
 [girt-clue].
 ===a
 
+==t3
+>n
+WRONG
+>s
+WRONG
+>nw
+WRONG
+>ne
+WRONG
+>sw
+WRONG
+>se
+WRONG
+>u
+WRONG
+>d
+WRONG
+>in
+WRONG
+>out
+WRONG
+
 >e
 
 #mistake test for yawp way/yawl way
@@ -157,10 +179,23 @@ It's still quiet here.[mis of 187]
 >get trap art
 by one point
 
->s
+==t3
+>w
+WRONG
+>e
+WRONG
 
 >s
 
+>s
+
+==t3
+>w
+WRONG
+>s
+WRONG
+>e
+WRONG
 
 ===2
 #mistake test for guh/thug/guh thug
@@ -176,37 +211,29 @@ That's what [random visible guhthug] is, but you need to figure how to get rid o
 >evade dave
 by one point
 
-===2
-
+==t2
 #mistake test for sto bots
 >sto bots
 No cool robots pop out.
-
 #mistake test for sto dots
 >sto dots
 The Sto Lots remains unadorned.
-
 #mistake test for sto gots
 >sto gots
 Yes, you gots a lot of space, and you will gots a lot of stuff as the game goes on.
-
 #mistake test for sto nots
 >sto nots
 That would defeat the purpose!
-
-#   5 to find(341)
 #mistake test for sto sots
 >sto sots
 It's not big enough to be a drunk tank.
-===a
 
 >get all
 
-===2
+==t2
 #mistake test for wasp saw
 >wasp saw
 You don't need the wash saw to turn into something that might sting you, especially since you are carrying it.
-===a
 
 >w
 
@@ -220,6 +247,13 @@ Maybe there is a more nonviolent way to get him to give up.
 
 >bore rob
 by one point
+
+>w
+WRONG
+>n
+WRONG
+>s
+WRONG
 
 #mistake test for worsts row/worses row
 >worsts row
