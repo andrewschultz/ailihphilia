@@ -1,70 +1,108 @@
-# reg-ail-thru-gt.txt
-#
-# this could technically be rolled into the differences file, but for now, it's separate and straight from the tests
-#
-# e.g. thru=4
-# ==t!4
-# >w.n.w.n
-# ==t4
-# >gt x
+## *FILE
+
+** game: /home/andrew/prt/debug-ailihphilia.ulx
+** interpreter: /home/andrew/prt/glulxe -q
+
+>stats
+by one point
+>peep
+by one point
+>poop
+727
+121
+>dial aid
+by one point
+>refer
+by one point
+
+
 
 >pack cap
 by one point
 
->stats
-by one point
 
->peep
-by one point
 
->poop
-by one point
-
->dial aid
-by one point
-
->refer
-by one point
 
 >e
+
+
 >n
+
 >get trap art
+by one point
+
+
 >s
+
 >s
+
+
+
+#mistake test for evade dave
 >evade dave
 by one point
 
->get saw
-by one point
+
+>get all
+
 
 >w
+
+
 >bore rob
 by one point
+
+
+
+#mistake test for track cart
+>track cart
+[if DWELT LEWD is off-stage]Right idea, but the cart isn't going anywhere[else]It's not going anywhere. You already unlocked a secret, anyway[end if].
+
+#mistake test for dwell lewd
+>dwell lewd
+DWELT LEWD should NOT be read as an instruction manual. Well, it shouldn't be read at all, really.
 
 >word row
 by one point
 
->trace cart
-by one point
-
 >get TO IDIOT
+
+
 >gt art xtra
->n
+
+
 >use TO IDIOT on Door Frood
 by one point
 
 >get bunk nub
+
 >e
+
+
 >get all
+
+
 >use pity tip on eye
 by one point
 
 >w
+
 >w
+
+
 >tend net
 by one point
 
->gt word row
+>e
+
+>s
+
+>s
+
+>s
+
+>w
+
 >work row
 by one point
 
@@ -75,83 +113,151 @@ by one point
 by one point
 
 >word row
+
 >get epoch cope
+
 >gt fun nuf
+
+
+>x recipe
+
+
 >w
+
+
+
 >use party trap on stark rats
 by one point
 
+
 >n
+
+
+
 >use epoch cope on King Nik
 by one point
 
 >s
+
 >s
->slam mammals
-by one point
+
+
 
 >use stock cots on sleep eels
 by one point
 
 >s
+
+
 >get stamp mats
+
 >e
+
+
 >get poo coop
+
+
 >gt word row
+
 >get yob attaboy
+
 >gt yawn way
+
 >puff up
 by one point
 
 >e
+
+
+
 >pull up
 by one point
+
+
+
 
 >get puce cup
 
 >gt cold loc
+
 >use wash saw on past sap
 by one point
 
 >use puce cup on past sap
 by one point
 
->gt emo dome
 >s
+
+>e
+
+>e
+
+>e
+
+>s
+
 >get troll ort
+
+
+
 >use puce cup on liar grail
 by one point
 
 >gt cold loc
->e
+
+
 >use puce cup on dose sod
+
+
 >gt swept pews
+
 >s
+
+
+
 >use puce cup on Bond Nob
 by one point
 
 >w
+
+
 >get all
+
 >e
+
 >e
+
+
+
 >use stamp mats on slate metals
 by one point
 
 >gt cold loc
->n
+
+
+
 >use demo med on gulf lug
 by one point
 
 >gt emo dome
+
 >e
+
+
+
 >use cash sac on cross orc
 by one point
 
 >s
+
+
+
 >use yob attaboy on Sniffins
 by one point
 
 >s
+
+
 >use Elan Ale on Sniffins
 by one point
 
@@ -159,59 +265,70 @@ by one point
 by one point
 
 >gt word row
+
 >work row
+
 >use Dirt Rid on reviver
 by one point
 
 >gt drawl ward
+
 >w
+
 >use cave vac on cassettes sac
 by one point
 
+
 >gt toll lot
+
 >use radar on crag arc
 by one point
 
 >n
+
+
+
 >deny ned
 by one point
 
+
 >get all
+
 >use Ye Key on etage gate
 by one point
 
 >n
->gt work row
->worn row
-by one point
 
->work row
->use stinky knits on rotator
-by one point
+
+>gt work row
+
+
+>word row
 
 >gt pro corp
+
 >get all
+
+
 >use Gorge Grog on butene tub
 by one point
 
->balm lab
-by one point
 
 >gt word row
+
+>work row
+
 >use gold log on rotator
 by one point
 
 >gt moo room
->stack cats
-by one point
-
->see bees
-by one point
 
 >use SOME DEMOS on yahoo hay
 by one point
 
 >gt art xtra
+
+
 >use straw arts on Revolt Lover
 by one point
 
@@ -219,70 +336,124 @@ by one point
 by one point
 
 >gt work row
+
 >word row
+
 >get NULL ILLUN
+
 >work row
+
 >gt seer trees
->w
+
+
 >use poo coop on gnu dung
 by one point
 
 >use poo coop on turf rut
 by one point
 
+
 >w
+
+
+
 >use radar on made dam
 by one point
 
 >n
+
+
+
 >use NULL ILLUN on Known Wonk
 by one point
 
 >use el doodle on edits tide
 by one point
 
+
 >n
+
+
+
 >use elope pole on kayak
 by one point
+
+
 
 >use dork rod on tao boat
 by one point
 
+
 >gt swamp maws
+
+
 >s
+
+
+
 >use tent net on code doc
 by one point
 
 >use spa maps on code doc
 by one point
 
+
+
+
+
 >gt apse spa
+
 >use spa maps on go-by bog
 by one point
 
+
 >gt moo room
+
+
+>e
+
 >use enact cane on yahoo hay
 by one point
 
->w
 >pace cap
+by one point
+
 >use troll ort on brag garb
 by one point
 
+>w
+
 >gt ivy
->s
+
+#mistake test for ergo ogre
+>ergo ogre
+You aren't going to impress it with your smarts.
+
+#mistake test for erg ogre
+>erg ogre
+The ogre would destroy you in a grunting match.
+
 >yak okay
 by one point
 
+
 >e
+
+
+
 >use sage gas on tame mat
 by one point
+
 
 >use sharp rahs on guru rug
 by one point
 
 >gt dumb mud
+
 >s
+
+
+
 >nail ian
 by one point
 
@@ -293,28 +464,34 @@ by one point
 by one point
 
 >gt yack cay
+
+
 >use moor broom on tru yurt
 by one point
 
 >gt ivy
+
 >use wash saw on porch crop
 by one point
 
 >gt dumb mud
+
 >use exam axe on lie veil
 by one point
 
 >n
->muss opossum
-by one point
+
 
 >get all
+
 >gt work row
+
 >use DNA band on reifier
 by one point
 
 >use roto motor on DNA hand
 by one point
+
 
 >use eroded ore on reviver
 by one point
@@ -322,45 +499,49 @@ by one point
 >use you buoy on rotator
 by one point
 
+
 >gt yell alley
+
 >use mr arm on bomb mob
 by one point
 
 >get rep popper
+
 >gt flu gulf
+
 >use nat's tan on scorn rocs
 by one point
 
 >w
+
+
 >use rep popper on me totem
 by one point
 
 >gt emo dome
->n
+
+
+
 >use Bro Orb on mirror rim
 by one point
+
+
 
 >use balsa slab on sword rows
 by one point
 
 >gt work row
->use not-a-baton on reifier
-by one point
-
->use murdered rum on yard ray
-by one point
-
->emit noontime
-by one point
-
->use yard ray on test set
-by one point
-
 >gt fun nuf
+
 >use TNT on ore zero
 by one point
 
+
+
 >n
+
+
+
 >use ME gem on Knife Fink
 by one point
 
@@ -370,7 +551,11 @@ by one point
 >use yard ray on redivider
 by one point
 
+
 >s
+
+
 >use x-ite tix on tix exit
 by one point
 
+#

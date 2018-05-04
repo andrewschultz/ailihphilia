@@ -1,4 +1,4 @@
-** reg-ail-thru-wrongway.txt
+## *FILE
 
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
@@ -7,7 +7,7 @@
 >e
 WRONG
 >n
-The flee elf sees you looking that way but says 'First things first! Get the cap the right way, here.
+The flee elf sees you looking that way but says 'First things first! Get the cap the right way, here.'
 >w
 WRONG
 >s
@@ -49,11 +49,6 @@ WRONG
 
 >e
 
-#mistake test for yawp way/yawl way
->yawp way
-It's still quiet here.[mis of 187]
->yawl way
-It's still quiet here.[mis of 187]
 
 >n
 
@@ -87,13 +82,6 @@ by one point
 
 >w
 
-#mistake test for borg rob
->borg rob
-He is already assimilated.
-
-#mistake test for bork rob
->bork rob
-Maybe there is a more nonviolent way to get him to give up.
 
 >bore rob
 by one point
@@ -105,19 +93,6 @@ WRONG
 >s
 WRONG
 
-#mistake test for worsts row/worses row
->worsts row
-It [if Worn Row is worny]is[else]was[end if] bad enough already.
->worses row
-It [if Worn Row is worny]is[else]was[end if] bad enough already.
-
-#mistake test for worm row
->worm row
-[if Worn Row is worny]Ugh! You don't need to make this place worse[else]You already upgraded Worn Row. No need to make it worse than it was[red-clue][end if].
-
-#mistake test for wort row
->wort row
-[Worn Row] is not meant to be a garden. Maybe it would look nicer that way, but it wouldn't be helpful to you.
 
 #mistake test for track cart
 >track cart
@@ -134,11 +109,8 @@ by one point
 
 
 >e
-
 >n
-
 >n
-
 >n
 
 
@@ -149,17 +121,6 @@ by one point
 
 >e
 
-#mistake test for pcp
->pcp
-While searching for a boost, you're apprehended by a crank narc! I'm very disappointed in you. Not the whole drugs bit, but that this game didn't alter reality ENOUGH for you.
-
-#mistake test for may yam
->may yam
-You don't want the yam to age. It would probably start to smell bad.
-
-#mistake test for nacelle can
->nacelle can
-You don't need a huge engine.
 
 >get all
 
@@ -211,9 +172,7 @@ by one point
 >get epoch cope
 
 >e
-
 >n
-
 >w
 
 >n
@@ -251,7 +210,6 @@ by one point
 
 >s
 
-==3t
 >s
 WRONG
 >e
@@ -285,23 +243,16 @@ WRONG
 
 
 >w
-
 >n
-
 >n
-
 >e
-
 >e
-
 >s
-
 >w
 
 >get yob attaboy
 
 >e
-
 >n
 
 >puff up
@@ -333,14 +284,12 @@ WRONG
 >undo
 
 
+
 >get puce cup
 
 >w
-
 >w
-
 >w
-
 >n
 
 >use wash saw on past sap
@@ -373,15 +322,10 @@ WRONG
 by one point
 
 >n
-
 >w
-
 >w
-
 >w
-
 >n
-
 >e
 
 >e
@@ -395,15 +339,10 @@ WRONG
 
 
 >w
-
 >s
-
 >e
-
 >e
-
 >e
-
 >s
 
 >s
@@ -446,19 +385,12 @@ WRONG
 by one point
 
 >w
-
 >n
-
 >n
-
 >w
-
 >w
-
 >w
-
 >n
-
 >n
 
 >w
@@ -473,13 +405,9 @@ WRONG
 by one point
 
 >s
-
 >s
-
 >e
-
 >e
-
 >e
 
 >e
@@ -518,13 +446,9 @@ by one point
 by one point
 
 >n
-
 >w
-
 >w
-
 >s
-
 >w
 
 >work row
@@ -533,13 +457,9 @@ by one point
 by one point
 
 >e
-
 >n
-
 >e
-
 >s
-
 >s
 
 >w
@@ -549,11 +469,8 @@ by one point
 
 
 >e
-
 >n
-
 >n
-
 >e
 
 >use radar on crag arc
@@ -590,30 +507,20 @@ WRONG
 WRONG
 
 >s
-
 >s
-
 >w
-
 >w
-
 >s
-
 >w
 
 
 >word row
 
 >e
-
 >n
-
 >e
-
 >e
-
 >n
-
 >n
 
 >get all
@@ -624,15 +531,10 @@ by one point
 
 
 >s
-
 >s
-
 >w
-
 >w
-
 >s
-
 >w
 
 >work row
@@ -641,32 +543,21 @@ by one point
 by one point
 
 >e
-
 >n
-
 >w
-
 >w
-
 >s
-
 >s
-
 >e
 
 >use SOME DEMOS on yahoo hay
 by one point
 
 >w
-
 >n
-
 >n
-
 >e
-
 >e
-
 >n
 
 
@@ -677,9 +568,7 @@ by one point
 by one point
 
 >s
-
 >s
-
 >w
 
 >word row
@@ -689,13 +578,9 @@ by one point
 >work row
 
 >e
-
 >n
-
 >w
-
 >w
-
 >w
 
 >w
@@ -764,7 +649,6 @@ by one point
 WRONG
 
 >s
-
 >s
 
 
@@ -788,16 +672,16 @@ WRONG
 >undo
 >undo
 
->n
 
 
-
->e
-
->e
 
 >n
-
+==2
+>swami maws
+Aw, come on, you've already met TWO SMART PEOPLE nearby.
+>e
+>e
+>n
 >e
 
 >use spa maps on go-by bog
@@ -811,11 +695,8 @@ WRONG
 WRONG
 
 >w
-
 >s
-
 >s
-
 >s
 
 
@@ -833,15 +714,10 @@ by one point
 >w
 
 >n
-
 >n
-
 >w
-
 >w
-
 >s
-
 >s
 
 #mistake test for ergo ogre
@@ -878,11 +754,8 @@ by one point
 by one point
 
 >w
-
 >n
-
 >n
-
 >e
 
 >s
@@ -905,38 +778,42 @@ by one point
 by one point
 
 >w
-
 >w
-
 >w
+>n
+
+
+>use moor broom on tru yurt
+by one point
+
+>s
+>s
+
+>use wash saw on porch crop
+by one point
+
+>n
+>e
+
+>use exam axe on lie veil
+by one point
 
 >n
 
-#mistake test for moor groom
->moor groom
-There is no romance, here. Besides, I can't do anything with 'bride.'
-
-#mistake test for moor vroom
->moor vroom
-The moor broom is not equipped for transport. Some brooms are, but this isn't.
 >n
 WRONG
 >w
 WRONG
 >e
 WRONG
+
 >get all
 
 >s
-
 >e
-
 >e
-
 >e
-
 >s
-
 >w
 
 >use DNA band on reifier
@@ -954,13 +831,9 @@ by one point
 
 
 >e
-
 >n
-
 >n
-
 >n
-
 >e
 
 >use mr arm on bomb mob
@@ -969,17 +842,11 @@ by one point
 >get rep popper
 
 >w
-
 >s
-
 >s
-
 >w
-
 >w
-
 >n
-
 >n
 
 >use nat's tan on scorn rocs
@@ -998,17 +865,11 @@ WRONG
 by one point
 
 >e
-
 >s
-
 >s
-
 >e
-
 >e
-
 >e
-
 >n
 
 
@@ -1036,14 +897,10 @@ WRONG
 by one point
 
 >s
-
 >n
 WRONG
-
 >w
-
 >s
-
 >w
 
 >use not-a-baton on reifier
@@ -1059,9 +916,7 @@ by one point
 by one point
 
 >e
-
 >n
-
 >w
 
 

@@ -1,4 +1,4 @@
-** reg-ail-thru-mist.txt
+## *FILE
 
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
@@ -40,7 +40,7 @@ Nonsense! Adventure is its own reward!
 >pac cap
 You almost take the cap, but you fumble it slightly. The Flee Elf blinks. 'You're almost there, but ... umm, well, you need to do a little more.'
 
-#mistake test for paca cap/pacb cap/pacc cap/pacd cap/pacf cap/pacg cap/pach cap/paci cap/pacj cap/pacl cap/pacm cap/pacn cap/pacp cap/pacq cap/pacr cap/pacs cap/pacu cap/pacv cap/pacw cap/pacx cap/and pacz cap
+#mistake test for paca cap/pacb cap/pacc cap/pacd cap/pacf cap/pacg cap/pach cap/paci cap/pacj cap/pacl cap/pacm cap/pacn cap/pacp cap/pacq cap/pacr cap/pacs cap/pacu cap/pacv cap/pacw cap/pacx cap/pacz cap
 >paca cap
 [if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
 >pacb cap
@@ -81,7 +81,7 @@ You almost take the cap, but you fumble it slightly. The Flee Elf blinks. 'You'r
 [if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
 >pacx cap
 [if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
->and pacz cap
+>pacz cap
 [if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].
 
 #mistake test for paco cap
@@ -189,7 +189,6 @@ You don't need the wash saw to turn into something that might sting you, especia
 #mistake test for borg rob
 >borg rob
 He is already assimilated.
-
 #mistake test for bork rob
 >bork rob
 Maybe there is a more nonviolent way to get him to give up.
@@ -203,11 +202,9 @@ by one point
 It [if Worn Row is worny]is[else]was[end if] bad enough already.
 >worses row
 It [if Worn Row is worny]is[else]was[end if] bad enough already.
-
 #mistake test for worm row
 >worm row
 [if Worn Row is worny]Ugh! You don't need to make this place worse[else]You already upgraded Worn Row. No need to make it worse than it was[red-clue][end if].
-
 #mistake test for wort row
 >wort row
 [Worn Row] is not meant to be a garden. Maybe it would look nicer that way, but it wouldn't be helpful to you.
@@ -237,11 +234,8 @@ Sorry, you're getting ambiguous snack cans and not any specific cuisine.
 It's already pretty pithy, and there's not enough material for a helmet.
 
 >e
-
 >n
-
 >n
-
 >n
 
 #mistake test for bung nub
@@ -272,11 +266,9 @@ by one point
 #mistake test for pcp
 >pcp
 While searching for a boost, you're apprehended by a crank narc! I'm very disappointed in you. Not the whole drugs bit, but that this game didn't alter reality ENOUGH for you.
-
 #mistake test for may yam
 >may yam
 You don't want the yam to age. It would probably start to smell bad.
-
 #mistake test for nacelle can
 >nacelle can
 You don't need a huge engine.
@@ -319,9 +311,7 @@ by one point
 >get epoch cope
 
 >e
-
 >n
-
 >w
 
 
@@ -406,13 +396,6 @@ by one point
 
 >s
 
-==3t
->s
-WRONG
->e
-WRONG
->w
-WRONG
 
 >slam mammals
 by one point
@@ -449,15 +432,12 @@ by one point
 #mistake test for moo boom
 >moo boom
 You hear something strafe farts far away.
-
 #mistake test for moo doom
 >moo doom
 Die? I'd...
-
 #mistake test for moo loom
 >moo loom
 The noises stay around.
-
 #mistake test for poo boop/poo foop/poo zoop
 >poo boop
 That's not the appropriate sound effect for the coop or [if gnu dung is moot]its[else]any potential[end if] contents.
@@ -465,47 +445,35 @@ That's not the appropriate sound effect for the coop or [if gnu dung is moot]its
 That's not the appropriate sound effect for the coop or [if gnu dung is moot]its[else]any potential[end if] contents.
 >poo zoop
 That's not the appropriate sound effect for the coop or [if gnu dung is moot]its[else]any potential[end if] contents.
-
 #mistake test for poo noop
 >poo noop
 Doing nothing with the coop or what [if gnu dung is moot]is[else]could go[end if] in it is not an option.
-
 #mistake test for poo goop
 >poo goop
 The coop is intended to prevent AGAINST having to carry yucky stuff, here.
-
 #mistake test for poo hoop/poo loop
 >poo hoop
 No, the coop needs to hold something.
 >poo loop
 No, the coop needs to hold something.
-
 #mistake test for poo woop
 >poo woop
 How or why it excites you, I don't want to know.
-
 #mistake test for poo soop
 >poo soop
 Good thing this isn't a cooking sim.
 
 >w
-
 >n
-
 >n
-
 >e
-
 >e
-
 >s
-
 >w
 
 >get yob attaboy
 
 >e
-
 >n
 
 >puff up
@@ -517,11 +485,9 @@ by one point
 #mistake test for purr up
 >purr up
 The Spur Ups make you feel you can be anyone, but not anything.
-
 #mistake test for spun ups
 >spun ups
 The Spur Ups fail to rotate.
-
 #mistake test for spud ups
 >spud ups
 The Spur Ups don't become potatoes or French fries or whatever.
@@ -533,31 +499,25 @@ by one point
 #mistake test for emo come
 >emo come
 You feel increased whininess inside.
-
 #mistake test for emo rome
 >emo rome
 This game is not remotely close to historical fiction. Sorry.
-
 #mistake test for emo home
 >emo home
 It's too wide open a space.
-
 #mistake test for emo tome
 >emo tome
 That would be out of place among all the stupid jokes, here.
-
 #mistake test for puck cup
 >puck cup
 There's no rink nir. Near.
 
+
 >get puce cup
 
 >w
-
 >w
-
 >w
-
 >n
 
 >use wash saw on past sap
@@ -593,15 +553,10 @@ The grail remains in your way to the south. But it was worth a try.
 by one point
 
 >n
-
 >w
-
 >w
-
 >w
-
 >n
-
 >e
 
 
@@ -644,15 +599,10 @@ One day, with the Diktat Kid gone, plenty of people will waste money on a spa, b
 You don't need a weapon.
 
 >w
-
 >s
-
 >e
-
 >e
-
 >e
-
 >s
 
 >s
@@ -699,19 +649,12 @@ The arcs stay still, but you can just go back east if you want.
 by one point
 
 >w
-
 >n
-
 >n
-
 >w
-
 >w
-
 >w
-
 >n
-
 >n
 
 
@@ -751,13 +694,9 @@ You don't have any witty way to score off them, or steal them, or whatever, and 
 by one point
 
 >s
-
 >s
-
 >e
-
 >e
-
 >e
 
 >e
@@ -849,13 +788,9 @@ by one point
 by one point
 
 >n
-
 >w
-
 >w
-
 >s
-
 >w
 
 >work row
@@ -864,13 +799,9 @@ by one point
 by one point
 
 >e
-
 >n
-
 >e
-
 >s
-
 >s
 
 >w
@@ -887,11 +818,8 @@ But what sort of op?
 But what to do to it? How to change it?
 
 >e
-
 >n
-
 >n
-
 >e
 
 >use radar on crag arc
@@ -930,15 +858,10 @@ by one point
 
 
 >s
-
 >s
-
 >w
-
 >w
-
 >s
-
 >w
 
 #mistake test for bra garb
@@ -948,15 +871,10 @@ I've tried to keep this game gender neutral.
 >word row
 
 >e
-
 >n
-
 >e
-
 >e
-
 >n
-
 >n
 
 >get all
@@ -1024,15 +942,10 @@ Nothing fun explodes out from the walls or ceiling.
 There is no Par Trap or Tee Meet to navigate here, so you don't need to make a golf log.
 
 >s
-
 >s
-
 >w
-
 >w
-
 >s
-
 >w
 
 >work row
@@ -1041,17 +954,11 @@ There is no Par Trap or Tee Meet to navigate here, so you don't need to make a g
 by one point
 
 >e
-
 >n
-
 >w
-
 >w
-
 >s
-
 >s
-
 >e
 
 >stack cats
@@ -1064,15 +971,10 @@ by one point
 by one point
 
 >w
-
 >n
-
 >n
-
 >e
-
 >e
-
 >n
 
 #mistake test for art ecetra
@@ -1086,9 +988,7 @@ by one point
 by one point
 
 >s
-
 >s
-
 >w
 
 >word row
@@ -1098,13 +998,9 @@ by one point
 >work row
 
 >e
-
 >n
-
 >w
-
 >w
-
 >w
 
 #mistake test for rm gnu/dung/rm gnu dung
@@ -1260,7 +1156,6 @@ by one point
 
 
 >s
-
 >s
 
 #mistake retest for swami maws
@@ -1281,19 +1176,16 @@ by one point
 by one point
 
 
->n
 
-#mistake retest for swami maws
+
+
+>n
+==2
 >swami maws
 Aw, come on, you've already met TWO SMART PEOPLE nearby.
-
-
 >e
-
 >e
-
 >n
-
 >e
 
 >use spa maps on go-by bog
@@ -1301,11 +1193,8 @@ by one point
 
 
 >w
-
 >s
-
 >s
-
 >s
 
 #mistake test for yak kay
@@ -1326,15 +1215,10 @@ by one point
 >w
 
 >n
-
 >n
-
 >w
-
 >w
-
 >s
-
 >s
 
 #mistake test for ergo ogre
@@ -1367,11 +1251,8 @@ It's a guru rug. It's too good to be moved by such a cheap bailout.
 by one point
 
 >w
-
 >n
-
 >n
-
 >e
 
 >s
@@ -1407,17 +1288,13 @@ by one point
 by one point
 
 >w
-
 >w
-
 >w
-
 >n
 
 #mistake test for moor groom
 >moor groom
 There is no romance, here. Besides, I can't do anything with 'bride.'
-
 #mistake test for moor vroom
 >moor vroom
 The moor broom is not equipped for transport. Some brooms are, but this isn't.
@@ -1426,14 +1303,12 @@ The moor broom is not equipped for transport. Some brooms are, but this isn't.
 by one point
 
 >s
-
 >s
 
 >use wash saw on porch crop
 by one point
 
 >n
-
 >e
 
 >use exam axe on lie veil
@@ -1448,15 +1323,10 @@ by one point
 >get all
 
 >s
-
 >e
-
 >e
-
 >e
-
 >s
-
 >w
 
 >use DNA band on reifier
@@ -1492,13 +1362,9 @@ by one point
 That'd be useful in Kingdom of Loathing, but not here.
 
 >e
-
 >n
-
 >n
-
 >n
-
 >e
 
 >use mr arm on bomb mob
@@ -1507,17 +1373,11 @@ by one point
 >get rep popper
 
 >w
-
 >s
-
 >s
-
 >w
-
 >w
-
 >n
-
 >n
 
 >use nat's tan on scorn rocs
@@ -1530,17 +1390,11 @@ by one point
 by one point
 
 >e
-
 >s
-
 >s
-
 >e
-
 >e
-
 >e
-
 >n
 
 #mistake test for gal slag
@@ -1570,12 +1424,8 @@ Becoming a pirate at the end? A clever heel turn!
 by one point
 
 >s
-
-
 >w
-
 >s
-
 >w
 
 >use not-a-baton on reifier
@@ -1591,9 +1441,7 @@ by one point
 by one point
 
 >e
-
 >n
-
 >w
 
 #mistake test for eros ore
