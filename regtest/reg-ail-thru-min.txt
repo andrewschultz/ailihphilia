@@ -1,3 +1,10 @@
+** reg-ail-thru-min.txt
+
+** game: /home/andrew/prt/debug-ailihphilia.ulx
+** interpreter: /home/andrew/prt/glulxe -q
+
+
+
 
 >pack cap
 by one point

@@ -1,8 +1,9 @@
 files=reg-ail-thru-min.txt,reg-ail-thru-all.txt,reg-ail-thru-mist.txt,reg-ail-thru-wrongway.txt
 dupefile=reg-ail-thru-dupe.txt
+*FILE
 
-#reg-ail-thru.txt
-# tests everything
+** game: /home/andrew/prt/debug-ailihphilia.ulx
+** interpreter: /home/andrew/prt/glulxe -q
 
 ==t1,2
 >stats
@@ -1945,6 +1946,8 @@ WRONG
 >e
 WRONG
 >w
+WRONG
+>s
 WRONG
 
 >use Bro Orb on mirror rim

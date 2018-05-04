@@ -1,3 +1,8 @@
+** reg-ail-thru-mist.txt
+
+** game: /home/andrew/prt/debug-ailihphilia.ulx
+** interpreter: /home/andrew/prt/glulxe -q
+
 >stats
 by one point
 >peep
@@ -9,6 +14,8 @@ by one point
 by one point
 >refer
 by one point
+
+
 #mistake test for evaded ave
 >evaded ave
 That'll appear later.

@@ -1,3 +1,8 @@
+*FILE
+
+** game: /home/andrew/prt/debug-ailihphilia.ulx
+** interpreter: /home/andrew/prt/glulxe -q
+
 >stats
 by one point
 
@@ -21,6 +26,8 @@ by one point
 
 >refer
 /by one point
+
+
 
 >pack cap
 by one point

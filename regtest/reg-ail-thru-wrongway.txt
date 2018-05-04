@@ -1,3 +1,9 @@
+** reg-ail-thru-wrongway.txt
+
+** game: /home/andrew/prt/debug-ailihphilia.ulx
+** interpreter: /home/andrew/prt/glulxe -q
+
+
 >e
 WRONG
 >n
@@ -11,6 +17,7 @@ WRONG
 >s
 WRONG
 >undo
+
 
 >pack cap
 by one point
@@ -1010,6 +1017,8 @@ WRONG
 >e
 WRONG
 >w
+WRONG
+>s
 WRONG
 
 >use Bro Orb on mirror rim
