@@ -12,6 +12,7 @@ Utils:
 * fu.py = find-use, where we find if/when an item can be manipulated with the USE command.
 * mred.py = minor utility that redacts the game map before sending it to testers (may be able to expand to others)
 * palver.py = trivial palindrome verifier for source (palver.txt has list of stuff to ignore)
+* reguse.py = makes sure all USE X ON Y are written to a test file as well (reg-ail-thru-alt.txt)
 * rely.py = what relies on what to get through the game. Needs auxiliary file rely.txt
 * utw.py = writes out scripts to regression test and AutoIt files based on code in table of rejects
 * sc2.py = does internal code verification of maximum score byregion. Also cross-checks invisiclues and trizbort flowchart.

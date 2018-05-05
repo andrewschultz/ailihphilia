@@ -23,6 +23,7 @@ PER for table of periphery
 PRE for pre-rules in the table of goodacts
 POST for post-rules in the table of goodacts
 LLP for last lousy points
+SHI for table of shiftables
 
 to search for an item, look for chapter [item].
 ]
@@ -1611,7 +1612,7 @@ state tats	DIFF ID	"You can just walk north to get through."
 
 section table of shiftables
 
-table of shiftables
+table of shiftables [[xxshi]
 use1	use2	use3 [use 3, not 1, on 2]	use-text
 navy van	pity tip	eye	"Nothing happens until you wave the pity tip across the eye."
 wash saw	rift fir	past sap	--
@@ -2317,7 +2318,7 @@ to decide which number is east-LLP:
 
 check going north in Fun Nuf:
 	if Diktat Kid is moot, say "No need to go back." instead;
-	if flee elf is in Fun Nuf, say "The flee elf sees you looking that way but says 'First things first! Get the cap the right way, here." instead;
+	if flee elf is in Fun Nuf, say "The flee elf sees you looking that way but says 'First things first! Get the cap the right way, here.'" instead;
 	if epicer recipe is nox, say "You need to get there. But you have no clue what to build, or how[if number of carried ingredients > 2]--though some of your inventory looks useful for that[end if][if player has epicer recipe]Hmm, maybe Xing the epicer recipe will help that[end if]." instead;
 	if north tron is off-stage, say "Not until you've built the North-Tron." instead;
 	if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
@@ -4588,9 +4589,9 @@ understand "not/baton" and "not a/baton" and "not a baton" as not-a-baton.
 
 chapter madam
 
-Madam is a proper-named female person in Red Roses Order. "[one of]Before you have time to gloat '[']N I'm In, you see MADAM standing[or]MADAM stands[stopping] here in defiance, holding the Gal Flag high and waving it.". description is "She is waving that Gal Flag. You should probably be grateful she doesn't have a girl rig, too. You need a way to neutralize the Gal Flag!"
+Madam is a proper-named female person in Red Roses Order. "[one of]Before you have time to gloat '[']N I'm In, you see MADAM standing[or]MADAM stands[stopping] here in defiance, holding the Gal Flag high and waving it.". description is "She obviously didn't get to her position of power by being some over-educated pantsuited fool who made a small mistake with an e-mail server once.[paragraph break]As she waves that Gal Flag. You should probably be grateful she doesn't have a girl rig, too. You need a way to neutralize the Gal Flag!"
 
-Madam carries the Gal Flag. description of Gal Flag is "It's fluttering even without a breeze."
+Madam carries the Gal Flag. description of Gal Flag is "It's fluttering even without a breeze, and it reflects throughout the mirror rim to make you feel more than a little overwhelmed."
 
 understand "la gal" and "la/gal" as Madam.
 
