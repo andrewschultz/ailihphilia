@@ -53,7 +53,7 @@ def read_mapper_file():
     line_count = 0
     with open('t2t.txt') as file:
         for line in file:
-            line_count = line_count + 1
+            line_count += 1
             if line.startswith(';'): return
             if line.startswith('#'): continue
             ll = line.strip().lower()
@@ -99,7 +99,7 @@ def add_to_use_hash(file_name):
     long_of = { "rei":"reifier", "rev":"reviver", "rot":"rotator" }
     with open(file_name) as file:
         for line in file:
-            line_count = line_count + 1
+            line_count += 1
             l2 = ''
             ll = line.strip().lower()
             if re.search("> *(rei|rev|rot) +", line, re.IGNORECASE):

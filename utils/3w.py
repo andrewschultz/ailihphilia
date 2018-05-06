@@ -100,7 +100,7 @@ def search_output(x):
         for line in file:
             if q in line:
                 print(line.strip())
-                count = count + 1
+                count += 1
     if count == 0:
         print("Nothing found.")
     else:
@@ -200,7 +200,7 @@ def two_words_in_pal_test(a, b):
     print('=' * 40, a, "to", b)
     for x in pal_conv_hash(a, b):
         u = a + x + b
-        count = count + 1
+        count += 1
         print(count, "frato", x, "arf")
         if u != u[::-1]:
             print ("Bad palindrome above!")
@@ -208,7 +208,7 @@ def two_words_in_pal_test(a, b):
     print('=' * 40, b[::-1], "to", a[::-1])
     for x in pal_conv_hash(b[::-1], a[::-1]):
         u = b[::-1] + x + a[::-1]
-        count = count + 1
+        count += 1
         print(count, "fra", x, "otarf")
         if u != u[::-1]:
             print ("Bad palindrome above!")
@@ -236,13 +236,13 @@ def hash_tweak(wd):
     for i in range (1,len(wd)):
         if wd[i:] == wd[i:][::-1]:
             start_pal[wd[:i]][wd] = True
-            startpals = startpals + 1
+            startpals += 1
             if len(wd[i:]) > 3:
                 continue
                 print("remove", wd[:i], "of", len(wd), "from", wd, "to get", wd[i:], i, "start partial anagram")
         if wd[:i] == wd[:i][::-1]:
             end_pal[wd[i:]][wd] = True
-            endpals = endpals + 1
+            endpals += 1
             if len(wd[:i]) > 3:
                 continue
                 print("remove", wd[i:], "from", wd, "to get", wd[:i], i, "end partial anagram")
@@ -386,7 +386,7 @@ if len(sys.argv) > 1:
             except:
                 print("No valid number after -w. Going to default of", warning_every_x)
             count = count + 2
-            continue # I could just do count = count + 1 and count on the next, but that feels cutesy.
+            continue # I could just do count += 1 and count on the next, but that feels cutesy.
         elif ',' in ll or ll.startswith('x-'):
             ll = re.sub("^x-", "", ll)
             extra_words = extra_words + ll.lower().split(",")
@@ -412,7 +412,7 @@ if len(sys.argv) > 1:
             else:
                 print("Parameter", count, "/", sys.argv[count], "must be a word. It says which word the palindrome search starts on, alphabetically.")
             exit()
-        count = count + 1
+        count += 1
 
 if look_for_last:
     if start_val:
@@ -507,12 +507,12 @@ cur_words = 0
 
 for a in sk:
     if a < start_val:
-        ignored = ignored + 1
+        ignored += 1
         continue
     if ignored > 0 and words_listed_yet is False:
         words_listed_yet = True
         sys.stderr.write("{:d} of {:d} words ignored to start. Starting with {:s}.\n".format(ignored, len(sk), a))
-    overall_word_count = overall_word_count + 1
+    overall_word_count += 1
     if progress_to_stderr and overall_word_count % warning_every_x == 0:
         time_taken = time.time() - bt
         sys.stderr.write("{:d} starting words considered this run. Currently at {:s} after {:.3f} seconds, delta = {:.3f}, average = {:.6f}.\n".format(overall_word_count, a, time_taken, time_taken - last_delt, (time_taken - last_delt) / overall_word_count));
@@ -524,12 +524,12 @@ for a in sk:
         q = pal_conv_hash(a, b)
         if q:
             cur_matches = cur_matches + len(q)
-            cur_words = cur_words + 1
+            cur_words += 1
             # print(a, b, q)
             for c in sorted(q):
                 if not no_fixed_array and c in fixed_array: in_mid = True
-                count = count + 1
-                this_word_count = this_word_count + 1
+                count += 1
+                this_word_count += 1
                 if group_by_start_end:
                     cur_array.append('"{:s} {:s} {:s}"'.format(a, c, b))
                 else:

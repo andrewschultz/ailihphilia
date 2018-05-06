@@ -59,7 +59,7 @@ def check_detail_notes(s):
     matches = defaultdict(list)
     with open(notes_file_to_read) as file:
         for line in file:
-            line_count = line_count + 1
+            line_count += 1
             if line.startswith('='): continue
             line = re.sub("-", "", line.lower().strip())
             line = re.sub("[^a-z ]", "", line)
@@ -74,20 +74,20 @@ def check_detail_notes(s):
         with open(x) as file:
             line_count = 0
             for line in file:
-                line_count = line_count + 1
+                line_count += 1
                 ll = line.lower()
                 l2 = re.sub("[^a-z ]", "", ll)
                 for x in matches.keys():
                     if matches[x][0] in l2 and matches[x][1] in l2:
                         if re.search(r"\b{:s} {:s}\b".format(matches[x][0], matches[x][1]), l2, re.IGNORECASE):
-                            dupe = dupe + 1
+                            dupe += 1
                             format_string = "{:s} dupe {:d} Notes Line {:d} {:s} line {:d} matches {:s}/{:s}\n        {:s}".format(eq, dupe, x, short, line_count, matches[x][0], matches[x][1], ll.strip())
                             if not notes_file_order:
                                 print(format_string)
                             else:
                                 notes_array.append(format_string)
                         elif re.search(r"\b{:s}\b".format(matches[x][0]), l2, re.IGNORECASE) and re.search(r"\b{:s}\b".format(matches[x][1]), l2, re.IGNORECASE):
-                            poss = poss + 1
+                            poss += 1
                             format_string = "{:s} poss-dupe {:d} Notes Line {:d} {:s} line {:d} matches {:s}/{:s}\n        {:s}".format(eq, poss, x, short, line_count, matches[x][0], matches[x][1], ll.strip())
                             if notes_file_order:
                                 notes_array.append(format_string)
@@ -115,7 +115,7 @@ def modify_notes(s):
                 ll = re.sub(" ~ PALINDROME.", "", ll)
                 ll = re.sub(" \+ ", " ", ll)
                 f2.write(ll)
-                lines_changed = lines_changed + 1
+                lines_changed += 1
             else:
                 f2.write(line)
     f2.close()
@@ -195,7 +195,7 @@ def check_notes(s):
         shorts[x] = re.sub(".*[\\\/]", "", x)
     with open(notes_file_to_read) as file:
         for line in file:
-            line_count = line_count + 1
+            line_count += 1
             ll = line.strip()
             if ll.startswith("="):
                 this_section = ll
@@ -208,13 +208,13 @@ def check_notes(s):
                     colon_ary.append(ll)
                     continue
                 if read_colons:
-                    colons = colons + 1
+                    colons += 1
                     if (colons_max == 0 and colons_start == 0) or (colons_max == 0 and colons >= colons_start) or (colons >= colons_start and colons <= colons_max + colons_start):
                         if list_sections and this_section != last_noted_section:
                             colon_string = colon_string + this_section + "\n"
                             last_noted_section = this_section
                         colon_string = colon_string + str(colons) + ": " + line
-                        seen = seen + 1
+                        seen += 1
             if pally(ll):
                 l2 = re.sub("[:=].*", "", line.strip().lower(), 0, re.IGNORECASE)
                 l2 = re.sub("-", " ", l2, 0, re.IGNORECASE)
@@ -225,14 +225,14 @@ def check_notes(s):
                         print("Duplicate", q, line_count, "from", pals[q], "in notes file")
                         if not open_line:
                             open_line = pals[q] if open_first else line_count
-                        dupes = dupes + 1
+                        dupes += 1
                         dupe_dict[line_count] = True
                     else:
                         q2 = q.strip()
                         q2 = re.sub("-", " ", q2, 0, re.IGNORECASE)
                         q2 = re.sub("\"", "", q2, 0, re.IGNORECASE)
                         pals[q2] = line_count
-                        pal_count = pal_count + 1
+                        pal_count += 1
                         # print(count, q2)
     if read_last:
         print('\n'.join("{:d}: {:s}".format(rl, colon_ary[rl]) for rl in range(len(colon_ary)-read_last, len(colon_ary))))
@@ -249,7 +249,7 @@ def check_notes(s):
                     table_name = line.lower().strip()
                 elif not line.strip() or line.startswith('['):
                     table_name = ''
-                count = count + 1
+                count += 1
                 ll = re.sub("[\.\",!\?]", "", line.lower())
                 ll = re.sub("-", " ", line.lower())
                 for q in pals.keys():
@@ -266,7 +266,7 @@ def check_notes(s):
                             elif pals[q] > open_line:
                                 open_line = pals[q]
                             twice[q] = True
-                            xtranote = xtranote + 1
+                            xtranote += 1
             if verbose: print(count, "total lines")
     if len(found_errs) > 0:
         for x in sorted(found_errs.keys(), reverse=last_lines_first):
@@ -281,7 +281,7 @@ def check_notes(s):
         f2 = open(notes_file_backup, "w")
         with open(notes_file_to_read) as file:
             for line in file:
-                count = count + 1
+                count += 1
                 if count in found_errs.keys() or count in dupe_dict.keys():
                     continue
                 f2.write(line)
@@ -374,7 +374,7 @@ while count < len(sys.argv):
     else:
         print("Unknown option", l)
         usage()
-    count = count + 1
+    count += 1
 
 if do_detail:
     check_detail_notes("ailihphilia")

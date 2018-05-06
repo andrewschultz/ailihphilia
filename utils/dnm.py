@@ -21,7 +21,7 @@ def check_dupes(s):
     line_count = 0
     with open(table_file_to_read) as file:
         for line in file:
-            line_count = line_count + 1
+            line_count += 1
             if already_reading:
                 if line.strip == '':
                     already_reading = False
@@ -31,7 +31,7 @@ def check_dupes(s):
                     l2 = re.sub("\".*", "", l2)
                     if l2 in poss_dupes:
                         print(l2, "appears twice in", table_file_to_read, "at line", line_count)
-                        table_table = table_table + 1
+                        table_table += 1
                     poss_dupes[l2] = line_count
                 if s == "ailihphilia":
                     q = re.sub("[^a-z]", "", line, 0, re.IGNORECASE)
@@ -47,12 +47,12 @@ def check_dupes(s):
     line_count = 0
     with open(source_file) as file:
         for line in file:
-            line_count = line_count + 1
+            line_count += 1
             l2 = line.strip().lower()
             for q in poss_dupes.keys():
                 if q in l2:
                     print (q, "line", line_count, "in source matches with", l2, "originally line", poss_dupes[q])
-                    source_table = source_table + 1
+                    source_table += 1
     pdl = len(poss_dupes.keys())
     print(("No" if source_table == 0 else "{:d}".format(source_table)), " source/table conflicts with", s, "and", pdl, "total keys")
     print(("No" if table_table == 0 else "{:d}".format(table_table)), " table/table conflicts with", s, "and", pdl, "total keys")

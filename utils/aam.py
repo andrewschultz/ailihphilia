@@ -175,3 +175,4 @@ if max_errs and errs > max_errs and not reorder:
 if not reorder and errs > 0: print("Use -f to reorder fully. Only found", errs, "out of", max_errs, "errors necessary for automatic reorder.")
 
 mistake_check(reorder)
+os.remove(mis2)

@@ -48,7 +48,7 @@ def read_it_all():
             if line.startswith('#'): continue
             if line.startswith(';'): break
             q = line.strip().lower().split()
-            for z in q: got_what[z] = got_what[z] + 1
+            for z in q: got_what[z] += 1
     return sorted(got_what.keys())
 
 def read_in(a):
@@ -97,7 +97,7 @@ def palz(pals):
         for l in sorted(loc_end[st], key=lambda x: (len(x), x)):
             x = st + l
             if x == x[::-1]:
-                found[st] = found[st] + 1
+                found[st] += 1
                 if found[st] == 1:
                     pal_list[st] = "FIRST"
                 elif found[st] % every_cr == 1:
@@ -113,12 +113,12 @@ def palz(pals):
                         possible_starts[st] = possible_starts[st] + " " + l
                     else:
                         can_increase = True
-                    count = count + 1
+                    count += 1
         count = 0
         for l in sorted(loc_start[st], key=lambda x: (len(x), x)):
             y = l + st
             if y == y[::-1]:
-                last_found[st] = last_found[st] + 1
+                last_found[st] += 1
                 if last_found[st] == 1:
                     if found[st]:
                         pal_list[st] = pal_list[st] + "\n"
@@ -128,7 +128,7 @@ def palz(pals):
                 else:
                     pal_list[st] = pal_list[st] + " /"
                 pal_list[st] = pal_list[st] + " {:s} + *{:s}* = {:s}".format(l, st, y)
-                found[st] = found[st] + 1
+                found[st] += 1
                 # print("Added", l, st)
                 continue
             if check_possible:
@@ -137,7 +137,7 @@ def palz(pals):
                         possible_ends[st] = possible_ends[st] + " " + l
                     else:
                         can_increase = True
-                    count = count + 1
+                    count += 1
     for x in sorted(found.keys()):
         got_something = False
         if found[x] or possible_ends[x] or possible_starts[x]:
@@ -160,7 +160,7 @@ def palz(pals):
 argcount = 0
 
 while argcount < len(sys.argv) - 1:
-    argcount = argcount + 1
+    argcount += 1
     xr = sys.argv[argcount]
     xl = xr.lower()
     if xl == "-a":
@@ -179,7 +179,7 @@ while argcount < len(sys.argv) - 1:
     if xl == "-m":
         try:
             check_possible_max = int(sys.argv[argcount+1])
-            argcount = argcount + 1
+            argcount += 1
         except:
             print("Tried to change maximum # of listings but didn't give a valid number.")
         continue

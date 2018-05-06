@@ -129,7 +129,7 @@ def check_source_rule_order():
     current_table = ''
     with open(main_source) as file:
         for line in file:
-            line_count = line_count + 1
+            line_count += 1
             if line.startswith("table"):
                 current_table = line.strip()
                 in_table = True
@@ -149,7 +149,7 @@ def check_source_rule_order():
             if line.startswith("section"):
                 if 'post-use rules' in line or 'pre-use rules' in line or 'section rev rules' in line:
                     rule_search = True
-                    rule_sections = rule_sections + 1
+                    rule_sections += 1
                     last_rule = ""
                     to_check = re.sub(".*\[", "", line.strip())
                     to_check = re.sub("\].*", "", to_check)
@@ -162,10 +162,10 @@ def check_source_rule_order():
                 cur_rule = re.sub(" rule.*", "", cur_rule)
                 if cur_rule not in alfcheck[to_check].keys() and cur_rule not in ignorables.keys():
                     print(cur_rule, "in", to_check, "may be extraneous, line", line_count)
-                    extra_rules = extra_rules + 1
+                    extra_rules += 1
                 if cur_rule < last_rule:
                     print("ERROR: Line", line_count, "rule", cur_rule, "alphabetically before", last_rule, "line", last_line)
-                    errs = errs + 1
+                    errs += 1
                 last_rule = cur_rule
                 last_line = line_count
     print((errs if errs > 0 else "no"), "rule order errors for table of goodacts.")
@@ -198,7 +198,7 @@ def walkthrough_vs_test_file(maxdif):
             if not walk_test_mismatch_yet:
                 walk_test_mismatch_yet = True
                 print("Showing (up to) first", up_to, "differences.")
-            cur_dif = cur_dif + 1
+            cur_dif += 1
             print(i, cur_dif, test_ary[i], "< test ary, wthru ary >", wthru_ary[i])
             dif_ary.append(test_ary[i])
             if cur_dif == max_dif:
@@ -213,10 +213,10 @@ def walkthrough_vs_test_file(maxdif):
             cr = 0
         elif cr % 5 == 0:
             out_dif_string = out_dif_string + "\n>"
-            cr = cr + 1
+            cr += 1
         else:
             out_dif_string = out_dif_string + "."
-            cr = cr + 1
+            cr += 1
         out_dif_string = out_dif_string + dif_ary[i]
     if out_dif_string: print(out_dif_string)
 
@@ -241,22 +241,22 @@ def source_table_vs_test_file():
                     print("WARNING", x, "duplicated in", qary[0])
                     continue
                 in_test[x] = True
-                count = count + 1
+                count += 1
                 test_order[x.upper()] = count
     for x in sorted(source_cmd_order, key=source_cmd_order.get):
         if x not in test_order.keys():
             print("Need test_order entry for", x, "as it doesn't appear in the tests file.")
-            test_file_errs = test_file_errs + 1
+            test_file_errs += 1
     for x in sorted(test_order.keys()):
         if x not in source_cmd_order.keys() and x not in llp_commands.keys():
             print("Oops! Test command", x, "does not appear in the source commands.")
-            test_file_errs = test_file_errs + 1
+            test_file_errs += 1
     cmdval = 0
     oops = 0
     look_again = True
     while look_again:
         look_again = False
-        cmdval = cmdval + 1
+        cmdval += 1
         str1 = 'N/A'
         str2 = 'N/A'
         for x in test_order.keys():
@@ -271,9 +271,9 @@ def source_table_vs_test_file():
             if not test_source_order_yet:
                 print("NOTE: The #s on the right are the order found in the source.")
                 test_source_order_yet = True
-            oops = oops + 1
+            oops += 1
             print(cmdval, oops, str1, source_cmd_order[str1], "< test source >", str2, source_cmd_order[str2])
-            test_file_errs = test_file_errs + 1
+            test_file_errs += 1
     print("Total source table vs. test file errors:", test_file_errs, "with", oops, "being order errors.")
 
 def bonus_mistake_check():
@@ -281,10 +281,10 @@ def bonus_mistake_check():
     line_count = 0
     with open(main_source) as file:
         for line in file:
-            line_count = line_count + 1
+            line_count += 1
             if re.search("understand.*as a mistake", line, re.IGNORECASE):
                 print("ERROR: line", line_count, "should be relocated to mistakes.i7x:", line.strip())
-                count = count + 1
+                count += 1
     if count:
         print(count, "total error" + ("" if count == 1 else "s"))
     else:
@@ -332,7 +332,7 @@ def source_vs_invisiclues():
     last_cmd_tested = ""
     with open(invis_raw) as file:
         for line in file:
-            this_line = this_line + 1
+            this_line += 1
             if line.strip() == '#summary below':
                 in_summary = True
                 continue
@@ -371,17 +371,17 @@ def source_vs_invisiclues():
                             print("Out of order", test_order[ll], ll, "in invisiclues point summary region", source_region[ll])
                             print("        Best guess:", best_guess(ll))
                             print("        Last command that worked:", last_cmd_tested, test_order[last_cmd_tested] if last_cmd_tested in test_order.keys else "????")
-                            ooo_this_region = ooo_this_region + 1
-                            ooo_test = ooo_test + 1
+                            ooo_this_region += 1
+                            ooo_test += 1
                         else:
                             pass
                             # print(ll, test_order[ll])
                         last_cmd_tested = ll
                     if ll not in source_region and ll not in llp_commands.keys():
-                        summary_err = summary_err + 1
+                        summary_err += 1
                         print("Command", ll, "is in summary but not source. Summary region={:s}.".format(summary_region))
                     elif source_region[ll] != summary_region:
-                        summary_err = summary_err + 1
+                        summary_err += 1
                         print("Command", ll, "has conflicting source and summary regions. Source={:s}, Summary={:s}.".format(source_region[ll], summary_region))
                     if ll in use_in_invisiclues_summary.keys(): print("WARNING line", this_line,"has duplicate command:", ll)
                     use_in_invisiclues_summary[ll] = True
@@ -399,12 +399,12 @@ def source_vs_invisiclues():
             if source_region[x] == 'odd do': continue
             if not main_err: print("=" * 40)
             print("ERROR: Need this source line in invisiclues main:", x)
-            main_err = main_err + 1
+            main_err += 1
         elif x not in use_in_source.keys():
             if source_region[x] == 'odd do': continue
             if not main_err: print("=" * 40)
             print("ERROR: Need this invisiclues main line in source(table of goodacts or [region/command]:", x)
-            main_err = main_err + 1
+            main_err += 1
         elif verbose:
             print("Synced to main:", x)
     if in_summary:
@@ -413,11 +413,11 @@ def source_vs_invisiclues():
             if x not in use_in_invisiclues_summary.keys() and x not in llp_commands.keys() and x not in ignore_points.keys():
                 if not main_err and not summary_err: print ("=" * 40)
                 print("ERROR: Need this source line in invisiclues summary:", x)
-                summary_err = summary_err + 1
+                summary_err += 1
             elif x not in use_in_source.keys() and x not in llp_commands.keys():
                 if not main_err and not summary_err: print ("=" * 40)
                 print("ERROR: Need this invisiclues summary line in source(table of goodacts or [region/command]:", x)
-                summary_err = summary_err + 1
+                summary_err += 1
             elif verbose:
                 print("Synced to summary:", x)
     else:
@@ -436,7 +436,7 @@ def source_vs_trizbort_flow():
     asterisked = defaultdict(int)
     with open(triz_flow) as file:
         for line in file:
-            line_count = line_count + 1
+            line_count += 1
             if not "room id=" in line: continue
             if 'secondFill="#80FFFF"' in line:
                 print("WARNING line", line_count, "has the wrong color blue. Yeah, trivial, but...")
@@ -460,7 +460,7 @@ def source_vs_trizbort_flow():
                     floreg = re.sub("\".*", "", floreg)
                     if floreg != source_region[rn]:
                         print("Oops mismatched source/flow regions for", rn, "/", floreg, "/", source_region[rn])
-                        flo_region_errs = flo_region_errs + 1
+                        flo_region_errs += 1
             # print("Adding", rn)
     if flo_region_errs > 0:
         print(flo_region_errs, "region/border errors")
@@ -470,13 +470,13 @@ def source_vs_trizbort_flow():
     for x in list(set(use_in_trizflow.keys()) | set(use_in_source.keys())):
         if x not in use_in_trizflow.keys() and x not in ignore_points.keys():
             print("ERROR: source not flow", x, "in source but not in trizbort flow file", triz_flow)
-            summary_err = summary_err + 1
+            summary_err += 1
     for x in list(set(use_in_trizflow.keys()) | set(use_in_source.keys())):
         if x not in use_in_source.keys():
             if "USE " + x in use_in_source.keys():
                 print("TIP: Need USE before", x)
             print("ERROR: flow not source", x, "in trizbort flow file", triz_flow, "but not source")
-            summary_err = summary_err + 1
+            summary_err += 1
     for x in list(set(trizflow_llp_rooms.keys()) | set(llp_commands.keys())):
         if x not in trizflow_llp_rooms.keys():
             print("Need", x, "as a Trizbort Flow LLP room.")
@@ -492,7 +492,7 @@ def source_vs_walkthrough():
     global warning_walkthrough_line
     with open(main_thru) as file:
         for line in file:
-            line_count = line_count + 1
+            line_count += 1
             if not line.startswith('>') and not line.startswith("(+1)"): continue
             ll = re.sub(".*> *", "", line.strip())
             cmd_ary = ll.split(".")
@@ -503,22 +503,22 @@ def source_vs_walkthrough():
                         print(ll, "duplicate non-points command, may not be error.")
                     if ll.upper() not in dupes.keys() and "(+1)" not in line and ll.upper() not in ignore_points.keys():
                         print("WARNING: may need +1 at line", line_count, "of walkthrough:", ll)
-                        plus_one = plus_one + 1
+                        plus_one += 1
                         warning_walkthrough_line = line_count
                 if ll in use_in_walkthrough.keys() and ll.upper() not in dupes.keys():
                     print("WARNING line", line_count, "has duplicate command:", ll)
                     warning_walkthrough_line = line_count
                 if ll not in use_in_walkthrough.keys():
                     use_in_walkthrough[ll] = line_count
-                    walkthrough_count = walkthrough_count + 1
+                    walkthrough_count += 1
                     walkthrough_order[ll] = walkthrough_count
     for x in list(set(use_in_walkthrough.keys()) | set(use_in_source.keys())):
         if x not in use_in_walkthrough.keys() and source_region[x] != 'odd do':
             print("ERROR: Need this line in walkthrough:", x)
-            any_err = any_err + 1
+            any_err += 1
         elif x not in use_in_source.keys():
             print("ERROR: (from walkthrough) Need this line in table of goodacts:", x)
-            any_err = any_err + 1
+            any_err += 1
         elif verbose:
             print("Synced:", x)
     last_source_got = 0
@@ -534,7 +534,7 @@ def source_vs_walkthrough():
         else:
             if source_cmd_order[x] < last_source_got:
                 print("Source commands/table of goodacts out of order with command", x, "walkthrough command", wtc, "last source index", last_source_got, "order in source", source_cmd_order[x])
-                ooo = ooo + 1
+                ooo += 1
             last_source_got = source_cmd_order[x]
     if ooo > 0: print(ooo, "walkthrough <=> table of goodacts order sync errors")
     if plus_one or any_err:
@@ -560,7 +560,7 @@ def get_stuff_from_source():
     with open(main_source) as file:
         line_count = 0
         for line in file:
-            line_count = line_count + 1
+            line_count += 1
             ll = line.strip().lower()
             if ll:
                 func_list = func_list + line
@@ -590,7 +590,7 @@ def get_stuff_from_source():
                 if temp_region == 'odd do':
                     llp_commands[this_cmd.upper()] = line_count
                     source_region[this_cmd.upper()] = temp_region
-                    nontable_totals[temp_region] = nontable_totals[temp_region] + 1
+                    nontable_totals[temp_region] += 1
                     continue
                 increment = 1
                 if this_cmd:
@@ -624,7 +624,7 @@ def get_stuff_from_source():
                 if myreg not in region_def_line.keys():
                     print("WARNING", ll, "defines start of invalid region.")
             if line.startswith("table of goodacts"):
-                goodact_idx = goodact_idx + 1
+                goodact_idx += 1
                 in_use_table = True
                 if 'continued' not in line:
                     need_true_score = True
@@ -671,7 +671,7 @@ def get_stuff_from_source():
                         new_cmd_ary.append(cmd)
                         new_cmd_ary = new_cmd_ary + find_comment_cmds('af', line)
                         for temp_cmd in new_cmd_ary:
-                            source_cmd_count = source_cmd_count + 1
+                            source_cmd_count += 1
                             if temp_cmd in source_cmd_order.keys() and not temp_cmd.startswith("USE"): print("WARNING", temp_cmd, "is a duplicate in table of goodacts, line", line_count)
                             source_cmd_order[temp_cmd] = source_cmd_count
                         use_in_source[cmd] = line_count # we only track line count for "use" commands and not unusual point gainers
@@ -685,9 +685,9 @@ def get_stuff_from_source():
                         if x[8] and x[8] != '--' and x[8] != 'reg-plus': # a bit hacky, but basically, check for 9th goodacts table entry being a proper region
                             temp_region = x[8].lower()
                         if temp_region:
-                            table_totals[temp_region] = table_totals[temp_region] + 1
+                            table_totals[temp_region] += 1
                             if x[0] != '--':
-                                directed_incs[temp_region] = directed_incs[temp_region] + 1
+                                directed_incs[temp_region] += 1
                                 source_region[cmd] = temp_region
                         else:
                             if not temp_region:
@@ -696,7 +696,7 @@ def get_stuff_from_source():
                                 print(temp_region, "at line", line_count, " in use table not a valid region.")
                             elif verbose:
                                 print(temp_region, "at line", line_count, " in use table given extra point.")
-                            undef_use_points = undef_use_points + 1
+                            undef_use_points += 1
 
 
 def think_look_check():
@@ -708,7 +708,7 @@ def think_look_check():
     with open(main_source) as file:
         line_count = 0
         for line in file:
-            line_count = line_count + 1
+            line_count += 1
             if skip_header:
                 skip_header = False
                 continue
@@ -736,13 +736,13 @@ def think_look_check():
         # print(x, "===================")
         if x not in wipe_track.keys():
             print(x, "needs to have a later-wipe line.")
-            think_check = think_check + 1
+            think_check += 1
         if x not in table_track.keys():
             print(x, "needs to have a table of lateruses line.")
-            think_check = think_check + 1
+            think_check += 1
         if x not in reject_track.keys():
             print(x, "needs to have a get-reject line.")
-            think_check = think_check + 1
+            think_check += 1
     if think_check == 0:
         print("Think check (get-reject/later-wipe/table of later uses) passed")
     else:
@@ -769,7 +769,7 @@ while argval < len(sys.argv):
             if re.search("[0-9]", noh):
                 max_dif = int(re.sub("^md", "", noh))
             else:
-                argval = argval + 1
+                argval += 1
                 max_dif = int(sys.argv[argval].lower())
         except:
                 print("-md needs an integer after -- in the same argument, or with a space in between.")
@@ -778,7 +778,7 @@ while argval < len(sys.argv):
         print(sys.argv[argval].lower(), "not recognized.")
         print()
         usage()
-    argval = argval + 1
+    argval += 1
 
 get_stuff_from_source()
 

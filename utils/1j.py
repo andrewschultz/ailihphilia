@@ -46,7 +46,7 @@ while count < len(sys.argv):
         strict_reverse = False
     else:
         usage()
-    count = count + 1
+    count += 1
 
 def one_pal(a):
     count = 0
@@ -61,7 +61,7 @@ def one_pal(a):
             ll = line.lower().strip()
             temp_words[ll] = True
             if strict_reverse and temp_words[ll[::-1]] == True and ll != ll[::-1]:
-                src = src + 1
+                src += 1
                 print(src, ll, "<==>", ll[::-1])
                 continue
         for ll in sorted(temp_words.keys(), key=lambda x:(len(x), x)):
@@ -77,7 +77,7 @@ def one_pal(a):
                         count2 = count2 + 1
                         print(count2, "palindrome w/o end", rem_str, l2, ll)
             if print_standard_palindrome and not rem_str and ll == ll[::-1]:
-                count = count + 1
+                count += 1
                 print(count, ll)
             if tack_start_on_end:
                 l2 = ll + ll[:1]
