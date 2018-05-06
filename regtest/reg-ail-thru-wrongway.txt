@@ -116,6 +116,7 @@ by one point
 >n
 
 
+
 >use TO IDIOT on Door Frood
 by one point
 
@@ -132,6 +133,7 @@ WRONG
 WRONG
 >s
 WRONG
+
 
 >use pity tip on eye
 by one point
@@ -165,6 +167,7 @@ by one point
 
 >use trap art on reifier
 by one point
+
 
 >use bunk nub on reviver
 by one point

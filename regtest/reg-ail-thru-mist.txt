@@ -258,6 +258,7 @@ No free food. Boo.
 >door brood
 Just one guardian is enough to deal with.
 
+
 >use TO IDIOT on Door Frood
 by one point
 
@@ -276,6 +277,7 @@ You don't want the yam to age. It would probably start to smell bad.
 You don't need a huge engine.
 
 >get all
+
 
 
 >use pity tip on eye
@@ -304,6 +306,7 @@ by one point
 
 >use trap art on reifier
 by one point
+
 
 >use bunk nub on reviver
 by one point

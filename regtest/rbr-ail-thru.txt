@@ -323,6 +323,8 @@ It's already pretty pithy, and there's not enough material for a helmet.
 WRONG
 >e
 WRONG
+>n
+WRONG
 
 ===2
 #mistake test for bung nub
@@ -343,6 +345,11 @@ No free food. Boo.
 >door brood
 Just one guardian is enough to deal with.
 ===a
+
+==t5
+>give TO IDIOT to Door Frood
+by one point
+>undo
 
 >use TO IDIOT on Door Frood
 by one point
@@ -372,6 +379,9 @@ WRONG
 >s
 WRONG
 
+==t5
+>use pity tip on navy van
+
 >use pity tip on eye
 by one point
 
@@ -396,6 +406,15 @@ by one point
 
 >s
 
+==t5
+>w
+>w
+>use trap art on stark rats
+WRONG
+>undo
+>undo
+>undo
+
 >s
 
 >w
@@ -405,6 +424,21 @@ by one point
 
 >use trap art on reifier
 by one point
+
+==t5
+>rei bunk nub
+WRONG
+>rot bunk nub
+WRONG
+>rev bunk nub
+by one point
+>undo
+>rei set o notes
+WRONG
+>rev set o notes
+WRONG
+>rot set o notes
+WRONG
 
 >use bunk nub on reviver
 by one point
@@ -461,6 +495,10 @@ You sort of need to stop them, instead.
 >star rats
 You would rather they didn't star in your adventure, here. Must be some way to dispose of them.
 ===a
+
+==t5
+>use wash saw on stark rats
+WRONG
 
 >use party trap on stark rats
 by one point
@@ -1061,6 +1099,13 @@ by one point
 >s
 >w
 
+==t5
+>gt dopy pod
+>use dirt rid on cassettes sac
+WRONG
+>undo
+>undo
+
 >work row
 
 >use Dirt Rid on reviver
@@ -1515,6 +1560,10 @@ The lake is peaceful enough as-is.
 >tao coat
 You don't need protection from the weather here.
 ===a
+
+==t5
+>use roto motor on kayak
+WRONG
 
 >use elope pole on kayak
 by one point
