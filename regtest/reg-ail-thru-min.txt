@@ -1,4 +1,6 @@
-## *FILE
+** *FILE
+
+tsv:** minimum walkthrough
 
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
 ** interpreter: /home/andrew/prt/glulxe -q

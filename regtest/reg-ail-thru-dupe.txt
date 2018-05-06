@@ -1,4 +1,5 @@
-## *FILE
+** *FILE
+
 
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
 ** interpreter: /home/andrew/prt/glulxe -q

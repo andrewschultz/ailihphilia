@@ -1,6 +1,8 @@
-files=reg-ail-thru-min.txt,reg-ail-thru-all.txt,reg-ail-thru-mist.txt,reg-ail-thru-wrongway.txt,reg-ail-thru-gt.txt
+files=reg-ail-thru-min.txt,reg-ail-thru-all.txt,reg-ail-thru-mist.txt,reg-ail-thru-wrongway.txt,reg-ail-thru-gt.txt,reg-ail-thru-alt.txt
 dupefile=reg-ail-thru-dupe.txt
-## *FILE
+** *FILE
+
+TSV:** minimum walkthrough	** walkthrough with all points	walkthrough with all mistakees	** walkthrough with wrong ways/running into walls or blocking NPCs	** walkthrough with GT when possible	** walkthrough with alternate verbs or nouns
 
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
