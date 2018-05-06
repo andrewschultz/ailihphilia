@@ -4,12 +4,15 @@
 #
 # todo: alphabetize mistakes by room?
 
+import i7
 import sys
 import os
 import re
 from collections import defaultdict
 from shutil import copy
 from filecmp import cmp
+
+proj = 'ai'
 
 def usage():
     print("-a  / -q              = all opts (copy, no dif, fill/reorder)")
@@ -64,7 +67,7 @@ def mistake_check(reord):
                     line = "checkoffs is a list of truth states variable. checkoffs is {{ {:s} }}.\n".format(', '.join(['false'] * cur_num))
             fout.write(line)
     fout.close()
-    print("RESULTS FOR", filre[reord], "........")
+    print("RESULTS FOR", filre[reord], "operations........")
     if difs:
         if cmp(mis, mis2):
             print("No changes", mis, "vs", mis2 + ". No compare shown.")
@@ -126,8 +129,8 @@ while count < len(sys.argv):
 
 got = defaultdict(bool)
 
-mis = 'c:\Program Files (x86)\Inform 7\Inform7\Extensions\Andrew Schultz\Ailihphilia Mistakes.i7x'
-mis2 = "temp.i7x"
+mis = i7.mifi(proj)
+mis2 = i7.sdir(proj) + "\\temp.i7x"
 # mis2 = mis + '2'
 
 last_num_of = 0
