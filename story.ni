@@ -1536,75 +1536,75 @@ section table of specific use rejects
 
 table of specific use rejects [xxrej] [xxfail]
 use1	use2	babble
-trap art	stark rats	"Whatever's planned on the trap art might work, but not the trap art itself."
-Dirt Rid	cassettes sac	"The Dirt Rid wheezes but is unable to clean up the cassettes sac. You need something more powerful."
-roto motor	kayak	"The kayak is not electrical, and besides, the roto motor is too small."
-taboo bat	bomb mob	"No way. You'd be outnumbered. You'd need stealth."
-DNA hand	Yuge Guy	"The hand doesn't seem to want to move toward the Yuge Guy."
-Mr Arm	Yuge Guy	"Mr. Arm doesn't seem to want to move toward the Yuge Guy."
-exam axe	porch crop	"That might be overkill. The wash saw, on the other hand..."
-exam axe	balsa slab	"You're not sure what to cut the slab into, and you don't need firewood."
-roto motor	tao boat	"The tao boat is not electrical, and besides, the roto motor is too small."
-Gorge Grog	Yuge Guy	"The Yuge Guy doesn't drink, and neither does Johnny. Also, the Yuge Guy may or may not be a germaphobe."
-taboo bat	Yuge Guy	"Violence isn't the answer. The Yuge Guy is not repelled by moral turpitude."
-taboo bat	ME Totem	"Violence isn't the answer. The ME Totem is not repelled by moral turpitude."
-Dirt Rid	gnu dung	"The Dirt Rid is ineffective. You may need something stronger."
-Trap Art	Revolt Lover	"But the Revolt Lover gave it to you in the first place."
-Party Trap	Revolt Lover	"'Whoah! Neat! That's a lot more useful than my art.'"
-TI	Revolt Lover	"'Hmm. A bit too mean for me. Maybe it's more someone else's speed.'"
-gold log	kayak	"The gold log is too heavy to be an effective paddle."
-enact cane	kayak	"The enact cane doesn't seem like the right tool to propel the kayak. It's more for chores."
-sharp rahs	Bro Orb	"You feel a shock--perhaps you approached the Bro Orb too eagerly! But it seems you were on the right track."
-enact cane	rep popper	"But that might bust your own rep, since you are the nearest person."
-dork rod	kayak	"The dork rod is too weak and wimpy to be an effective paddle."
-Epoch Cope	Revolt Lover	"'Wish I could be interested in politics, but I'm not.'"
-stamp mats	Tru Yurt	"The stamp mats aren't a home-y sort of mat."
-stamp mats	soot tattoos	"Hmm. If the soot tattoos had a pattern, that would be interesting. But they don't, yet."
-taboo bat	test set	"This isn't cricket. You do, however, need to use SOME weapon on the test set."
-resale laser	made dam	"There might be something behind the dam. But you need to be subtler looking for it."
-NULL ILLUN	Revolt Lover	"'I guess we all could use it a little. But someone else might need it more than me. Um, I hope.'"
-pity tip	Door Frood	"The Door Frood is too good for a mere pity tip. Well, in the Door Frood's mind."
+Bro Orb	Madam	"As you lift the Bro Orb to throw at Madam, you see yourself in the Mirror Rim. You don't look so great or heroic. In fact, you feel unusually self-conscious. More than you deserve to, you think. Besides, the Bro Orb might dissolve her or something, but you're not out to kill anyone."
 Cave Vac	gnu dung	"The Cave Vac sputters. You may need something more specifically suited to the, uh, material to clean up."
-bunk nub	sleep eels	"That -- well, it almost works. But the bunk nub isn't shaped right to house that many small animals. Maybe it could be changed."
-radar	sleep eels	"A radar isn't supposed to work this way, but somehow, you detect some bitterness at mammals in general. But it's secondary to needing a more comfortable place to sleep."
-radar	go-by bog	"The radar detects nothing. So there is probably no horribly bogy gob. But [if sage gas is off-stage]there are plenty of other places you could slip and fall and disappear forever[else]you got the sage gas, already[end if]."
-wash saw	cassettes sac	"The wash saw isn't big enough to clean up the cassettes sac. You need a more powerful cleaner."
+DNA hand	Yuge Guy	"The hand doesn't seem to want to move toward the Yuge Guy."
+Dirt Rid	cassettes sac	"The Dirt Rid wheezes but is unable to clean up the cassettes sac. You need something more powerful."
+Dirt Rid	gnu dung	"The Dirt Rid is ineffective. You may need something stronger."
+Dirt Rid	go-by bog	"The bog is too big for that."
+Epoch Cope	Revolt Lover	"'Wish I could be interested in politics, but I'm not.'"
+Gorge Grog	Yuge Guy	"The Yuge Guy doesn't drink, and neither does Johnny. Also, the Yuge Guy may or may not be a germaphobe."
 Gorge Grog	cassettes sac	"That'd clean up the cassettes sac, but it'd probably dissolve it, too."
+Gorge Grog	yard ray	"The Gorge Grog is pretty strong stuff, but you may need something even stronger."
+ME gem	ME Totem	"The egotistical forces in the gem and totem repel each other. Just as well. You don't know if you could survive if such insufferability synergized."
+ME gem	Yuge Guy	"That might make the Yuge Guy's ego too much to handle."
+Mr Arm	Yuge Guy	"Mr. Arm doesn't seem to want to move toward the Yuge Guy."
+NULL ILLUN	Revolt Lover	"'I guess we all could use it a little. But someone else might need it more than me. Um, I hope.'"
+Party Trap	Revolt Lover	"'Whoah! Neat! That's a lot more useful than my art.'"
+Rep Popper	Yuge Guy	"It seems like the Rep Popper should work, but it doesn't, quite. Maybe there is something that is giving the Yuge Guy all his rep?"
+TI	Revolt Lover	"'Hmm. A bit too mean for me. Maybe it's more someone else's speed.'"
+Trap Art	Revolt Lover	"But the Revolt Lover gave it to you in the first place."
+YE KEY	DIFF ID	"You wave Ye Key in front of the Diff ID. Nothing happens. The engraving on Ye Key seems to match up with what the Diff ID wants to see, but maybe you need something else."
+bunk nub	sleep eels	"That -- well, it almost works. But the bunk nub isn't shaped right to house that many small animals. Maybe it could be changed."
+cave vac	go-by bog	"The bog is too big for that."
 demo med	Elan Ale	"No, combining alcohol and pills is a bad, bad idea."
 demo med	Gorge Grog	"No, combining alcohol and pills is a bad, bad idea."
+dork rod	kayak	"The dork rod is too weak and wimpy to be an effective paddle."
 el doodle	Known Wonk	"The Known Wonk looks at El Doodle, thinks, and says 'Ugh, sorry, never could decipher these things. No good rules to. Maybe you could use the edits tide, though.'"
-el doodle	code doc	"'This isn't quite clear enough for me. If you could clean it up, though, I could help you.'"
 el doodle	Revolt Lover	"But the Revolt Lover pretty much offered it to you in the first place."
-stamp mats	yahoo hay	"The mats don't quite work on the hay. They might work better on something with more surface area."
-troll ort	ergot ogre	"The ergot ogre mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. Perhaps you need a more violent way to dispose of the ogre."
-troll ort	cross orc	"The cross orc mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. But the way it looks at you, you suspect it'd forgive you if you gave the right gift."
-troll ort	kayo yak	"As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up. The yak seems weirdly attracted to it."
-elope pole	go-by bog	"The bog is too wide for that."
-Dirt Rid	go-by bog	"The bog is too big for that."
-cave vac	go-by bog	"The bog is too big for that."
-elope pole	crag arc	"The pole is for navigation, not for vaulting."
-elope pole	made dam	"The pole is for navigation, not for vaulting."
-elope pole	lie veil	"The veil resists the pole. You need a more violent implement."
-wash saw	crag arc	"The crag arc is much too big to get anywhere[if UFO tofu is off-stage]. Maybe there's a better way to find what's behind there[end if]."
-wash saw	made dam	"The made dam is much too big to get anywhere[if eroded ore is off-stage]. Maybe there's a better way to find what's behind there[end if]."
-wash saw	lie veil	"Not even the wash saw could clean off the lie veil. You need something much more brutal."
-Gorge Grog	yard ray	"The Gorge Grog is pretty strong stuff, but you may need something even stronger."
-Rep Popper	Yuge Guy	"It seems like the Rep Popper should work, but it doesn't, quite. Maybe there is something that is giving the Yuge Guy all his rep?"
-Bro Orb	Madam	"As you lift the Bro Orb to throw at Madam, you see yourself in the Mirror Rim. You don't look so great or heroic. In fact, you feel unusually self-conscious. More than you deserve to, you think. Besides, the Bro Orb might dissolve her or something, but you're not out to kill anyone."
-poo coop	Yuge Guy	"That could be fun, but he might be too normalised to the stuff in the coop to do damage."
-poo coop	Liar Grail	"Maybe if the contents came from a bull and not a gnu, it would be appropriate (this is not a palindrome 'joke.')"
+el doodle	code doc	"'This isn't quite clear enough for me. If you could clean it up, though, I could help you.'"
 elope pole	Tao Boat	"The Tao Boat is too big to control with the elope pole."
+elope pole	crag arc	"The pole is for navigation, not for vaulting."
+elope pole	go-by bog	"The bog is too wide for that."
+elope pole	lie veil	"The veil resists the pole. You need a more violent implement."
+elope pole	made dam	"The pole is for navigation, not for vaulting."
+enact cane	kayak	"The enact cane doesn't seem like the right tool to propel the kayak. It's more for chores."
+enact cane	rep popper	"But that might bust your own rep, since you are the nearest person."
+exam axe	balsa slab	"You're not sure what to cut the slab into, and you don't need firewood."
+exam axe	porch crop	"That might be overkill. The wash saw, on the other hand..."
+gate tag	DIFF ID	"You wave the gate tag in front of the DIFF ID, which beeps for a second, then ... nothing. Maybe the gate tag (or its pattern) needs to be read a different way."
+gold log	kayak	"The gold log is too heavy to be an effective paddle."
+pity tip	Door Frood	"The Door Frood is too good for a mere pity tip. Well, in the Door Frood's mind."
+poo coop	Liar Grail	"Maybe if the contents came from a bull and not a gnu, it would be appropriate (this is not a palindrome 'joke.')"
+poo coop	Yuge Guy	"That could be fun, but he might be too normalised to the stuff in the coop to do damage."
+radar	go-by bog	"The radar detects nothing. So there is probably no horribly bogy gob. But [if sage gas is off-stage]there are plenty of other places you could slip and fall and disappear forever[else]you got the sage gas, already[end if]."
+radar	sleep eels	"A radar isn't supposed to work this way, but somehow, you detect some bitterness at mammals in general. But it's secondary to needing a more comfortable place to sleep."
+resale laser	made dam	"There might be something behind the dam. But you need to be subtler looking for it."
+roto motor	kayak	"The kayak is not electrical, and besides, the roto motor is too small."
+roto motor	tao boat	"The tao boat is not electrical, and besides, the roto motor is too small."
+sage gas	sharp rahs	"Hmm! The contrast between the two...that should work. But maybe you need some sort of intermediary that could hold them both."
+sharp rahs	Bro Orb	"You feel a shock--perhaps you approached the Bro Orb too eagerly! But it seems you were on the right track."
+soot tattoos	DIFF ID	"The Diff-ID doesn't respond. Maybe you need a way to put them on you, somehow."
+stamp mats	Tru Yurt	"The stamp mats aren't a home-y sort of mat."
+stamp mats	soot tattoos	"Hmm. If the soot tattoos had a pattern, that would be interesting. But they don't, yet."
+stamp mats	yahoo hay	"The mats don't quite work on the hay. They might work better on something with more surface area."
+state tats	DIFF ID	"You can just walk north to get through."
+taboo bat	ME Totem	"Violence isn't the answer. The ME Totem is not repelled by moral turpitude."
+taboo bat	Yuge Guy	"Violence isn't the answer. The Yuge Guy is not repelled by moral turpitude."
+taboo bat	bomb mob	"No way. You'd be outnumbered. You'd need stealth."
+taboo bat	test set	"This isn't cricket. You do, however, need to use SOME weapon on the test set."
+trap art	stark rats	"Whatever's planned on the trap art might work, but not the trap art itself."
+troll ort	cross orc	"The cross orc mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. But the way it looks at you, you suspect it'd forgive you if you gave the right gift."
+troll ort	ergot ogre	"The ergot ogre mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. Perhaps you need a more violent way to dispose of the ogre."
+troll ort	kayo yak	"As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up. The yak seems weirdly attracted to it."
+wash saw	cassettes sac	"The wash saw isn't big enough to clean up the cassettes sac. You need a more powerful cleaner."
+wash saw	crag arc	"The crag arc is much too big to get anywhere[if UFO tofu is off-stage]. Maybe there's a better way to find what's behind there[end if]."
+wash saw	lie veil	"Not even the wash saw could clean off the lie veil. You need something much more brutal."
+wash saw	made dam	"The made dam is much too big to get anywhere[if eroded ore is off-stage]. Maybe there's a better way to find what's behind there[end if]."
+wash saw	stark rats	"You couldn't catch and hold a rat long enough to cut it with the wash saw."
 yard ray	Diktat Kid	"The Diktat Kid laughs as you point the yard ray. 'Destroy me, but my work will remain!'"
 yard ray	Tru Hurt	"The Tru Hurt is dangerous, but maybe you should use the yard ray on something even more harmful."
 yard ray	Waster Fretsaw	"The Waster Fretsaw is dangerous, but maybe you should use the yard ray on something even more harmful."
-sage gas	sharp rahs	"Hmm! The contrast between the two...that should work. But maybe you need some sort of intermediary that could hold them both."
-wash saw	stark rats	"You couldn't catch and hold a rat long enough to cut it with the wash saw."
-YE KEY	DIFF ID	"You wave Ye Key in front of the Diff ID. Nothing happens. The engraving on Ye Key seems to match up with what the Diff ID wants to see, but maybe you need something else."
-ME gem	Yuge Guy	"That might make the Yuge Guy's ego too much to handle."
-ME gem	ME Totem	"The egotistical forces in the gem and totem repel each other. Just as well. You don't know if you could survive if such insufferability synergized."
-gate tag	DIFF ID	"You wave the gate tag in front of the DIFF ID, which beeps for a second, then ... nothing. Maybe the gate tag (or its pattern) needs to be read a different way."
-soot tattoos	DIFF ID	"The Diff-ID doesn't respond. Maybe you need a way to put them on you, somehow."
-state tats	DIFF ID	"You can just walk north to get through."
 [zzrej] [zzfail]
 
 [below is something to cut and paste to the table of failed useons]
@@ -1612,10 +1612,10 @@ state tats	DIFF ID	"You can just walk north to get through."
 
 section table of shiftables
 
-table of shiftables [[xxshi]
+table of shiftables [xxshi]
 use1	use2	use3 [use 3, not 1, on 2]	use-text
 navy van	pity tip	eye	"Nothing happens until you wave the pity tip across the eye."
-wash saw	rift fir	past sap	--
+rift fir	wash saw	past sap	--
 wordy drow	puce cup	liar grail	--
 TNT	Mr Arm	bomb mob	--
 
@@ -2237,7 +2237,7 @@ part Dim Mid region
 
 book Fun Nuf
 
-Fun Nuf is a room in Dim Mid. "[if elite tile is in Fun Nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what is the various directions[xit-ave][end if][if north tron is in Fun Nuf]. Also, the North-Tron has carved a passage north. It's too big to, uh, repaper[end if]."
+Fun Nuf is a room in Dim Mid. "[if elite tile is in Fun Nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what leads west and east[xit-ave][end if][if north tron is in Fun Nuf]. Also, the North-Tron has carved a passage north. It's too big to, uh, repaper[end if]."
 
 to say xit-ave:
 	say ". The [if tix exit is in Fun Nuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]"
@@ -2612,7 +2612,7 @@ part Grebeberg region
 
 book Seer Trees
 
-Seer Trees is west of Fun Nuf. It is in Grebeberg. "East leads back to Fun [']Nuf[if Yawn Way is visited] and Yelpley[end if], but the other three directions lead to further rustic adventure[seer-see].".
+Seer Trees is west of Fun Nuf. It is in Grebeberg. "East leads back to Fun [']Nuf[if Yawn Way is visited] and Yelpley[end if], but the other three directions lead to further rustic adventure[if stark rats are in seer trees], or will once you clear those stark rats[end if][seer-see].".
 
 understand "tree" and "seer tree" as seer trees.
 
@@ -2626,9 +2626,9 @@ check going in Seer Trees:
 
 chapter stark rats
 
-the stark rats are a plural-named thing in Seer Trees. "Stark rats impede you every way except back east.". description is "They are scurrying about. There are too many to get through without getting bitten."
+the stark rats are a plural-named thing in Seer Trees. "Stark rats scuttle about, impeding passage every way except back east.". description is "They are too fast and numerous to run by without getting bitten."
 
-check taking stark rats: say "There are too many, and they'd probably bite you, anyway." instead;
+check taking stark rats: say "Perhaps you could USE something that would catch them all, instead." instead;
 
 check dropping party trap in Seer Trees: try useoning party trap with stark rats instead;
 
@@ -2648,7 +2648,7 @@ Oh Who is a proper-named peripheral phonebook. booktable of Oh Who is table of r
 
 book Cold Loc
 
-Cold Loc is north of Seer Trees. It is in Grebeberg. "It's kind of dewed, here, but at least it's not the Snow-Ons. A rift fir blocks a steep drop west. [if sap-takeable is true]The past sap you cut from it is lumped on the ground[else]Some past sap clings to it[end if]."
+Cold Loc is north of Seer Trees. It is in Grebeberg. "It's kind of dewed, here, but at least it's not the Snow-Ons. A rift fir blocks a steep drop west, but it's clear to the north, south and east. [if sap-takeable is true]The past sap you cut from it is lumped on the ground[else]Some past sap clings to it[end if]."
 
 check going west in Cold Loc: say "The rift fir blocks the way to much more dangerous places, maybe Red Locs Colder or the Splat Alps. Perhaps ski oiks await." instead;
 
@@ -2749,7 +2749,14 @@ some murdered rum is a drinkable thing. description is "It looks viscous, like o
 
 book Dumb Mud
 
-Dumb Mud is west of Seer Trees. It is in Grebeberg. "Mud! Um...[paragraph break]A turf rut to the south is [if poo coop is moot]filled in enough[else]too deep[end if] to cross. The way west is [if gnu dung is moot]free[else]blocked by gnu dung[end if]. [if lie veil is in Dumb Mud]A lie veil (nowhere near small enough to wear) blocks your way[else]With the lie veil removed, you can go[end if] north."
+Dumb Mud is west of Seer Trees. It is in Grebeberg. "Mud! Um...[paragraph break]A turf rut to the south is [if poo coop is moot]filled in enough[else]too deep[end if] to cross. The way west is [if gnu dung is moot]free[else]blocked by gnu dung[end if]. [if lie veil is in Dumb Mud]A lie veil (nowhere near small enough to wear) blocks your way[else]With the lie veil removed, you can go[end if] north. [mud-go] back east."
+
+to say mud-go:
+	let DS be 0;
+	if gnu dung is moot, increment DS;
+	if lie veil is moot, increment DS;
+	if turf rut is moot, increment DS;
+	say "[if DS is 0]So the only current exit is[else if DS is 1 or DS is 2]You can also go[else]And there's always[end if]"
 
 check wearing the lie veil:
 	ignore the can't wear what's not held rule;
@@ -3128,7 +3135,9 @@ check useoning tenet with Bro Orb: try taking Bro Orb instead;
 
 book Yack Cay
 
-Yack Cay is north of Swamp Maws. It is in Grebeberg. "An edits tide blocks your way west, and storm rots block your way east. You can go [if mist sim is moot]north and [end if]south here[if mist sim is moot]. The Known Wonk's Tru-Yurt is here. It looks really messy[end if]."
+Yack Cay is north of Swamp Maws. It is in Grebeberg. "An edits tide blocks your way west, and storm rots block your way east. [if mist sim is moot]You can go north or south here with ease[else]Mist sim hovers to the north, but there's no blocking back south[end if][if mist sim is moot]. The Known Wonk's Tru-Yurt is here[is-yurt-messy][end if]."
+
+to say is-yurt-messy: if moor broom is moot, say ". It looks messy"
 
 printed name of Yack Cay is "[if Known Wonk is moot]Roomy Moor[else]Yack Cay[end if]".
 
@@ -3176,7 +3185,7 @@ the sharp rahs are a plural-named thing. "The sharp rahs get you enthused, but t
 
 book Calcific Lac
 
-Calcific Lac is north of Yack Cay. It is in Grebeberg. "[if dork rod is moot]The Tao Boat that helped you get at peace with things is here[else]A Tao Boat rests on the shore, here, with no clear entry[end if]. [if elope pole is moot]That kayak you took to Elided Ile is here, too[else]There's a kayak, too. [one of]And wait! If you look into the distance, you see something! Elided Ile! Just as the Known Wonk said it had to be somewhere! The Wonk's calculations and predictions were all right[or]You see Elided Ile in the distance. Maybe some day, you will get there[stopping][end if]."
+Calcific Lac is north of Yack Cay. It is in Grebeberg. "[if dork rod is moot]The Tao Boat that helped you get at peace with things is here[else]A Tao Boat rests on the shore, here, with no clear entry[end if]. [if elope pole is moot]That kayak you took to Elided Ile is here, too[else]There's a kayak, too. [one of]And wait! If you look into the distance, you see something! Elided Ile! Just as the Known Wonk said it had to be somewhere! The Wonk's calculations and predictions were all right[or]You see Elided Ile in the distance. Maybe some day, you will get there[stopping][end if]. The only exit is back south to the [yack cay]."
 
 chapter kayak
 
@@ -4447,7 +4456,7 @@ understand "cot" as stock cots.
 
 book Trapeze Part
 
-Trapeze Part is west of Evaded Ave. It is in Yelpley. "[if epicer recipe is off-stage]There's a ten level net on the floor, here. It could protect you from a long fall. You're convinced there must be something at the far end, but it's probably not safe to use the trapeze to get over until, well, you've done safety checks[else]The ten level net still sits here, and it'd be handy if there was anything else on the other side of it, but there isn't[end if]."
+Trapeze Part is west of Evaded Ave. It is in Yelpley. "[if epicer recipe is off-stage]There's a ten level net on the floor, here. It could protect you from a long fall. You're convinced there must be something at the far end, but it's probably not safe to use the trapeze to get over until, well, you've done safety checks[else]The ten level net still sits here, and it'd be handy if there was anything else on the other side of it, but there isn't[end if]. You can only go back east."
 
 check going nowhere in Trapeze Part: say "Since this is the Trapeze Part, you'd think there'd be a way to go to a place to WATCH it, but there isn't. You can only go back east." instead;
 
@@ -4611,7 +4620,13 @@ check going north in Red Roses Order when E Divide is in Red Roses Order: say "W
 
 book Swept Pews
 
-Swept Pews is south of Emo Dome. It is in Yelpley. "You can go back north to the Emo Dome in this tidy little area, unnamed but probably St. Emmet's[if liar grail is moot]. A passage has been opened south with the Liar Grail's demise[end if]."
+Swept Pews is south of Emo Dome. It is in Yelpley. "There is a wide passage back north to the Emo Dome in this tidy little area, unnamed but probably St. Emmet's. It's narrower south[if liar grail is moot], but with the liar grail and wordy drow gone, it should be no problem to go that way, either[end if]."
+
+for printing a locale paragraph about a thing in swept pews:
+	if noun is troll ort, continue the action;
+	say "A wordy drow is pinned to a liar grail here. They block the way south.";
+	now wordy drow is mentioned;
+	now liar grail is mentioned;
 
 understand "pew" and "swept pew" as swept pews.
 
@@ -4637,7 +4652,7 @@ the troll ort is an edible thing in Swept Pews. "A troll ort lies on the floor h
 
 book Drawl Ward
 
-Drawl Ward is south of Swept Pews. It is in Yelpley. "This passage is a T (well, a [unicode 9524]), walled off to the south."
+Drawl Ward is south of Swept Pews. It is in Yelpley. "This passage is a T (well, a [unicode 9524]), walled off to the south. It looks homier to the west and a bit barren to the east, but you can always go back north through the Swept Pews."
 
 check going west in Drawl Ward:
 	if Bond Nob is in Drawl Ward:
@@ -4812,7 +4827,7 @@ talk-text of Bomb Mob is "You don't need a gang nag. Maybe you can sneak around 
 talk-text of Code Doc is "There is some awkward small talk. The Code Doc is more about understanding and explaining things.".
 talk-text of Cross Orc is "'Yap?! Pay!'".
 talk-text of Dave is "Dave's here, man. And Dave's not chatty, man. He just seems to want to block you from doing anything.".
-talk-text of Diktat Kid is "Now's not the time for talk. Okay, the Diktat Kid might be bragging, but you won't get a word in.".
+talk-text of Diktat Kid is "Now's not the time for talk. Okay, the Diktat Kid might be bragging, but you won't get a word in. Maybe a stiff 'It's...'".
 talk-text of Ergot Ogre is "'Guh! Ug!'[paragraph break]Diplomacy won't get you by, here.".
 talk-text of Flee Elf is "[one of]'That cap. It's for you. Find the right way to take it, and I'll leave you on your way. Ask me again for hints.'[or]'Well, there are only twenty-six ways to take the Pact Cap--um, okay, twenty-five, if you think about it. And don't overthink. Once you do, I'm on my way.'[stopping]".
 talk-text of Gulf Lug is "'Ill, I...'".
@@ -6564,5 +6579,14 @@ carry out exitsing:
 
 this is the try-aid rule:
 	try aiding;
+
+chapter stuff we can comment out
+
+Include Room Description Verification by Andrew Schultz.
+
+when play begins:
+	now seer trees is check-immune;
+	now emo dome is check-immune;
+	consider the check-room-descriptions rule;
 
 [?? test to see about any person/place/scenery that is in table of rejects or useons but not both]
