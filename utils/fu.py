@@ -16,7 +16,7 @@ in_use_table = False
 
 with open("story.ni") as file:
 	for line in file:
-		line_count = line_count + 1
+		line_count += 1
 		if line.startswith("table of goodacts"):
 			in_use_table = True
 			# print(line_count)
@@ -26,7 +26,7 @@ with open("story.ni") as file:
 			# if in_use_table: print("Not", line_count)
 			in_use_table = False
 		if in_use_table:
-			table_count = table_count + 1
+			table_count += 1
 			x = ll.split("\t")[:3]
             if x[0] == '--': continue
 			x2 = ' '.join(x)

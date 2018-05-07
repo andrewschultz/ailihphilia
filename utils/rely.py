@@ -31,7 +31,7 @@ line_count = 0
 
 with open("story.ni") as file:
 	for line in file:
-		line_count = line_count + 1
+		line_count += 1
 		if 'xxuse' in line:
 			header_next = True
 			in_table = True
@@ -58,7 +58,7 @@ line_count = 0
 
 with open("rely.txt") as file:
 	for line in file:
-		line_count = line_count + 1
+		line_count += 1
 		if line.startswith(";"):
 			last
 		if line.startswith("#"):

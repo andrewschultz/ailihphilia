@@ -74,7 +74,7 @@ def pal_ver(f):
     print("Starting", f)
     with open(f) as file:
         for line in file:
-            line_count = line_count + 1
+            line_count += 1
             if line.startswith('[') and ']' not in line: # multi line comment check here and below
                 in_comment = line_count
                 continue
@@ -101,7 +101,7 @@ def pal_ver(f):
                 q = letonly(line)
                 if 'by Andrew Schultz' in line: continue # this is the title
                 if un_palindrome(q): # and '[ignore]' not in line and '[okdup]' not in line:
-                    err_count = err_count + 1
+                    err_count += 1
                     print("Bad line", line_count, "in", f, "--", line.strip())
                 continue
             if ' is ' in line or ' are ' in line:
@@ -113,7 +113,7 @@ def pal_ver(f):
                 ll = re.sub(r"(\. it is|\. they are| is| are) .*", "", ll, 0, re.IGNORECASE)
                 ll = letonly(ll)
                 if ll != ll[::-1]:
-                    err_count = err_count + 1
+                    err_count += 1
                     print("Bad line", line_count, "/", err_count, "in", f, "--", line.strip(), "->", ll)
                     # print(ll, '/', ll[::-1], line)
     if err_count == 0:

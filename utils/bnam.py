@@ -40,9 +40,9 @@ def get_good_pals(fi):
     print("Checking", short)
     with open(fi) as file:
         for line in file:
-            line_count = line_count + 1
+            line_count += 1
             if start_name_list(line):
-                blocks_found = blocks_found + 1
+                blocks_found += 1
                 in_pal_table = True
                 continue
             if not line.strip():
@@ -63,8 +63,8 @@ def get_good_pals(fi):
                         dupes[ls] = True
                         continue
                     names_so_far[x2] = True
-                    loc_count = loc_count + 1
-                    count = count + 1
+                    loc_count += 1
+                    count += 1
                     print(count, line.strip(), "seems like a cool name." + ( " newfile {:s}".format(fi) if loc_count == 1 else ""))
     count = count + loc_count
 
@@ -80,7 +80,7 @@ while count < len(sys.argv):
         need_no_unique = False
     elif ar[0] == 'l':
         low_limit = int(ar[1:])
-    count = count + 1
+    count += 1
 
 count = 0
 

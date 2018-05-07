@@ -49,7 +49,7 @@ def mistake_check(reord):
     fout = open(mis2, "w", newline='\n')
     with open(mis) as file:
         for line in file:
-            line_count = line_count + 1
+            line_count += 1
             if 'volume old school' in line:
                 old_school_yet = True
                 print("Ignoring all past line", line_count)
@@ -57,11 +57,11 @@ def mistake_check(reord):
                 if re.search("^understand.*as a mistake", line):
                     # print(reord, line_count, line)
                     if reord:
-                        cur_num = cur_num + 1
+                        cur_num += 1
                         line = change_mis(line, cur_num)
                     else:
                         if not re.search("mis of [0-9]+", line):
-                            cur_num = cur_num + 1
+                            cur_num += 1
                             line = insert_num(line, cur_num)
                 elif re.search("is a list of truth state", line):
                     line = "checkoffs is a list of truth states variable. checkoffs is {{ {:s} }}.\n".format(', '.join(['false'] * cur_num))
@@ -125,7 +125,7 @@ while count < len(sys.argv):
             print("Need # argument after m.")
     else:
         usage()
-    count = count + 1
+    count += 1
 
 got = defaultdict(bool)
 
@@ -147,7 +147,7 @@ with open(mis) as file:
             nol = num_of(line)
             if nol in got.keys() and nol > 0:
                 print("WARNING", nol, "pops up twice in mistake file.")
-                errs = errs + 1
+                errs += 1
             got[nol] = True
             this_mist = my_mistake(line)
             if nol - last_num_of != 1:
@@ -155,7 +155,7 @@ with open(mis) as file:
                     print("WARNING bad delta from", last_mist, last_num_of, "to", this_mist, nol)
                 else:
                     print("WARNING blank number for", this_mist, nol)
-                errs = errs + 1
+                errs += 1
             last_num_of = nol
             last_mist = this_mist
 
