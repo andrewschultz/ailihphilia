@@ -747,7 +747,7 @@ to next-rand (t - a table name):
 	let Q be tabidx entry;
 	let lb be lbrk entry;
 	choose row Q in tabnam entry;
-	say "[randtxt entry][if lb is true][line break][else][run paragraph on][end if]";
+	say "[randtxt entry][if lb is true][line break][else][no line break][end if]";
 
 to say next-rand-txt of (t - a table name):
 	next-rand t;
@@ -763,13 +763,13 @@ table of Moo Room animals	0	0	true	"Moo Room animals (LISTEN)"	--
 table of My Gym songs	0	0	false	"songs in My Gym (LISTEN)"	--
 table of noesies	0	0	true	"responses to NO"	--
 table of nothings	0	0	true	"responses to empty commands"	--
-table of Rob droning	0	0	true	"things Rob babbles about"	--
+table of Rob droning	0	0	false	"things Rob babbles about"	--
 table of singstuff	0	0	true	"responses to SINGing"	--
 table of snooty toon ads	0	0	true	"snooty toons ads"	--
 table of swearstuff	0	0	true	"responses to SWEARing"	--
 table of undoings	0	0	true	"UNDOing notifications"	--
 table of waittxt	0	0	true	"responses to WAITing"	--
-table of wordy drow laments	0	0	true	"Wordy Drow laments"	--
+table of wordy drow laments	0	0	false	"Wordy Drow laments"	--
 table of yessies	0	0	true	"responses to YES"	--
 table of yuge taunts	0	0	true	"Yuge Guy taunts"	"Señor drones, you think you yourself, as the Yuge Guy winds up for another round of nonsense."
 
@@ -815,9 +815,9 @@ randtxt
 "Ares's Era"
 "D'oh, Serene, Reshod"
 "D'oh, Temp Method"
+"Dad, Dad"
 "Dew Onuses Unowed"
 "Dew, Awed"
-"Dad, Dad"
 "Dew, Owed"
 "Dib [']Nuff Unbid"
 "Die, Rended Nereid"
@@ -847,6 +847,7 @@ randtxt
 "If I Had a Hi-Fi"
 "A Mardy Drama"
 "Me, Lo, Golem"
+"Miss a Passim"
 "Mo['] Idiom"
 "Mr. Owl Worm"
 "My Nonacidic Anonym"
@@ -855,6 +856,7 @@ randtxt
 "Otter Amaretto"
 "Rise Aesir"
 "Risk Sir"
+"Satire Veritas"
 "Solo Gigolos"
 "Sore Heros"
 "Sore Zeros"
@@ -899,13 +901,13 @@ table of Bond Nob bars
 randtxt
 "Bar Crab"
 "Met [']Em"
-"Set-a-Mates"
-"Met [']Em"
+"MRA Farm"
 "Nigh Gin"
 "Pat's Tap"
 "Pub UP"
 "Sara's"
 "Scene C's"
+"Set-a-Mates"
 "Soho's"
 "Soto's"
 "Spike-Kip's"
@@ -932,12 +934,12 @@ randtxt
 
 table of Moo Room animals
 randtxt
-"a buck cub"
-"ska yaks"
-"a rat avatar"
 "an un-gnu"
+"a buck cub"
+"a rat avatar"
 "sab mambas"
 "sewer ewes"
+"ska yaks"
 "smart rams"
 "a tart rat"
 
@@ -952,8 +954,8 @@ randtxt
 "Kazoo Zak"
 "Krew Twerk"
 "Me: Opt, Poem"
-"O/T: Teh Ghetto"
 "O, Got to Go"
+"O/T: Teh Ghetto"
 "Ode: Dude, DO"
 "Opera Repo"
 "Rap Spar"
@@ -989,6 +991,7 @@ randtxt
 "It? Nah, anti."
 "Line? Nil."
 "Meh. Ahem!"
+"Minim..."
 "Mum?"
 "No peep on?"
 "Peep?!"
@@ -1032,8 +1035,8 @@ table of swearstuff
 randtxt
 "(R)rude! Dur(r)!"
 "Bad? A dab!"
-"Dammit, I'm mad!"
 "D00d!"
+"Dammit, I'm mad!"
 "Dark. Rad!"
 "Guff! Ug!"
 "Hell, eh?"
@@ -1106,13 +1109,13 @@ randtxt
 "Die, id!"
 "Ebb? Be!"
 "Eh, Tithe!"
+"Guts, TUG!"
 "Id-egged, I"
 "No Sin is On!"
 "Onan? A no!"
 "Sob! Mild Limbos!"
 "Sog, Ebb, Egos!"
 "Want? Naw!"
-"Guts, TUG!"
 
 table of yessies
 randtxt
@@ -1129,10 +1132,12 @@ randtxt
 
 table of yuge taunts
 randtxt
+"A-lists? I? La!"
 "Ahahahahahaha!"
 "Gibe! Big!"
 "Hog, oh!"
 "Huge! Guh!"
+"Iz no Ponzi!"
 "Main, I am!"
 "ME!!!! Haw. Ahem."
 "Me: sees [']em!"
@@ -1152,8 +1157,6 @@ randtxt
 "Wane? Naw!"
 "Y'r Dry!"
 "You! Oy!"
-"Iz no Ponzi!"
-"A-lists? I? La!"
 
 Ailihphilia Tables ends here.
 
