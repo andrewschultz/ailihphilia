@@ -17,7 +17,7 @@ To-do:
     * "double play" walkthrough = run each scoring command twice to make sure the total is 88
     * "break the game" walkthrough = try to go certain directions before we are allowed to
 
-Utils explanations are in the Utils subdirectory.
+Utils and hook(ish) script explanations are in the Utils subdirectory.
 
 Regular expressions tests are in the Regtest subdirectory. They are used with Zarf's regtest.py and an Ubuntu emulator. REG files can be run. RBR = regtest breakup and are used to generate REG files.
 

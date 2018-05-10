@@ -144,7 +144,7 @@ It's still quiet here.[mis of 187]
 >n
 
 >get trap art
-by one point
+
 
 
 >s
@@ -238,6 +238,8 @@ It's already pretty pithy, and there's not enough material for a helmet.
 >e
 >n
 >n
+
+
 >n
 
 #mistake test for bung nub
@@ -263,6 +265,8 @@ Just one guardian is enough to deal with.
 by one point
 
 >get bunk nub
+#got bunk nub
+
 
 >e
 
@@ -282,6 +286,7 @@ You don't need a huge engine.
 
 >use pity tip on eye
 by one point
+#lost pity tip
 
 >w
 
@@ -290,12 +295,14 @@ by one point
 
 >tend net
 by one point
+#got elope pole
 
 >e
 
 >s
 
 >s
+
 
 >s
 
@@ -345,6 +352,7 @@ You sort of need to stop them, instead.
 #mistake test for star rats
 >star rats
 You would rather they didn't star in your adventure, here. Must be some way to dispose of them.
+
 
 >use party trap on stark rats
 by one point
@@ -421,6 +429,7 @@ They are alive. Turning them to metal would be cruel.
 >sleek eels
 The eels don't need dexterity. They need comfort. They are slippery enough.
 
+
 >use stock cots on sleep eels
 by one point
 
@@ -430,6 +439,7 @@ by one point
 >get stamp mats
 
 >e
+
 
 
 >get poo coop
@@ -525,6 +535,7 @@ There's no rink nir. Near.
 >w
 >n
 
+
 >use wash saw on past sap
 by one point
 
@@ -554,6 +565,8 @@ The grail remains in your way to the south. But it was worth a try.
 >liar trail
 The grail remains in your way to the south. But it was worth a try.
 
+
+
 >use puce cup on liar grail
 by one point
 
@@ -566,6 +579,7 @@ by one point
 
 
 >use puce cup on dose sod
+/by one point
 
 #mistake test for esp apse
 >esp apse
@@ -640,6 +654,7 @@ by one point
 
 
 >get all
+#got dirt rid
 
 >e
 
@@ -650,8 +665,10 @@ by one point
 >scram arcs
 The arcs stay still, but you can just go back east if you want.
 
+
 >use stamp mats on slate metals
 by one point
+#lost stamp mats
 
 >w
 >n
@@ -743,6 +760,7 @@ You might cause a mudslide, or worse.[mis of 173]
 >crab arc
 That's just what you need, a giant crab coming after you[if cross orc is in Toll Lot], along with the cross orc[end if].
 
+
 >use cash sac on cross orc
 by one point
 
@@ -786,22 +804,27 @@ Well, Nat's must have its stans, but you don't want to be one.
 >bon knob
 You don't need to help Sniffins with interior decorating, here.
 
+
 >use Elan Ale on Sniffins
 by one point
+#got gorge grog
 
 >stand nat's
 by one point
+#got nat's
 
 >n
 >w
 >w
 >s
 >w
+
 
 >work row
 
 >use Dirt Rid on reviver
 by one point
+#got dirt rid
 
 >e
 >n
@@ -811,8 +834,11 @@ by one point
 
 >w
 
+
 >use cave vac on cassettes sac
 by one point
+#lost cave vac
+
 
 #mistake test for pod op
 >pod op
@@ -827,8 +853,10 @@ But what to do to it? How to change it?
 >n
 >e
 
+
 >use radar on crag arc
 by one point
+#got ufo tofu
 
 >n
 
@@ -883,6 +911,7 @@ I've tried to keep this game gender neutral.
 >n
 
 >get all
+
 
 #mistake test for line nil
 >line nil
@@ -989,6 +1018,7 @@ One silly misspelling does not beget another.
 >use straw arts on Revolt Lover
 by one point
 
+
 >use gate tag on soot tattoos
 by one point
 
@@ -1059,6 +1089,7 @@ No innuendo here! The gnu dung[if gnu dung is not in Dumb Mud] with the poo coop
 >turn on rut
 No innuendo here! The gnu dung[if gnu dung is not in Dumb Mud] with the poo coop[end if] is about as close as you'll get.
 
+
 >use poo coop on gnu dung
 by one point
 
@@ -1079,8 +1110,10 @@ There might be someone smart nearby.
 >swam maws
 Perhaps someone has, but you don't need to.
 
+
 >use radar on made dam
 by one point
+
 
 >n
 
@@ -1100,8 +1133,10 @@ You don't need to buy anything in this game, and any store wouldn't sell anythin
 >use NULL ILLUN on Known Wonk
 by one point
 
+
 >use el doodle on edits tide
 by one point
+
 
 #mistake test for share rahs
 >share rahs
@@ -1146,6 +1181,7 @@ The lake is peaceful enough as-is.
 >tao coat
 You don't need protection from the weather here.
 
+
 >use elope pole on kayak
 by one point
 
@@ -1158,6 +1194,7 @@ You reveal no frat. Arf!
 
 >use dork rod on tao boat
 by one point
+#got enact cane
 
 
 >s
@@ -1193,8 +1230,10 @@ Aw, come on, you've already met TWO SMART PEOPLE nearby.
 >n
 >e
 
+
 >use spa maps on go-by bog
 by one point
+
 
 
 >w
@@ -1206,10 +1245,14 @@ by one point
 >yak kay
 The yak perks its ears up slightly, then goes back to looking bored. Maybe you didn't quite say things right.
 
+
 >e
+
 
 >use enact cane on yahoo hay
 by one point
+#lost enact cane
+#got moor broom
 
 >pace cap
 by one point
@@ -1233,6 +1276,7 @@ You aren't going to impress it with your smarts.
 #mistake test for erg ogre
 >erg ogre
 The ogre would destroy you in a grunting match.
+
 
 >yak okay
 by one point
@@ -1304,14 +1348,17 @@ There is no romance, here. Besides, I can't do anything with 'bride.'
 >moor vroom
 The moor broom is not equipped for transport. Some brooms are, but this isn't.
 
+
 >use moor broom on tru yurt
 by one point
 
 >s
 >s
 
+
 >use wash saw on porch crop
 by one point
+
 
 >n
 >e
@@ -1361,6 +1408,7 @@ by one point
 
 >use you buoy on rotator
 by one point
+#got me gem
 
 #mistake test for mega gem
 >mega gem
@@ -1371,6 +1419,7 @@ That'd be useful in Kingdom of Loathing, but not here.
 >n
 >n
 >e
+
 
 >use mr arm on bomb mob
 by one point
@@ -1391,6 +1440,8 @@ by one point
 >w
 
 
+
+
 >use rep popper on me totem
 by one point
 
@@ -1405,6 +1456,7 @@ by one point
 #mistake test for gal slag
 >gal slag
 You managed to annoy Madam enough that she lashes out and conks you with a mortal blow with the Gal Flag. Okay, not really, but name calling won't help.
+
 
 
 >use Bro Orb on mirror rim
@@ -1436,11 +1488,13 @@ by one point
 >use not-a-baton on reifier
 by one point
 
+
 >use murdered rum on yard ray
 by one point
 
 >emit noontime
 by one point
+
 
 >use yard ray on test set
 by one point
@@ -1481,6 +1535,7 @@ by one point
 
 >use taboo bat on Verses Rev
 by one point
+
 
 >use yard ray on redivider
 by one point

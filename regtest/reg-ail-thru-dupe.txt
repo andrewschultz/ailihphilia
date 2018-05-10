@@ -45,10 +45,7 @@ by one point
 >n
 
 >get trap art
-by one point
 
->get trap art
-/by one point
 
 
 >s
@@ -105,6 +102,8 @@ by one point
 >e
 >n
 >n
+
+
 >n
 
 
@@ -116,6 +115,8 @@ by one point
 /by one point
 
 >get bunk nub
+#got bunk nub
+
 
 >e
 
@@ -129,6 +130,7 @@ by one point
 
 >use pity tip on eye
 /by one point
+#lost pity tip
 
 >w
 
@@ -140,12 +142,14 @@ by one point
 
 >tend net
 /by one point
+#got elope pole
 
 >e
 
 >s
 
 >s
+
 
 >s
 
@@ -186,6 +190,7 @@ by one point
 
 
 
+
 >use party trap on stark rats
 by one point
 
@@ -215,6 +220,7 @@ by one point
 /by one point
 
 
+
 >use stock cots on sleep eels
 by one point
 
@@ -227,6 +233,7 @@ by one point
 >get stamp mats
 
 >e
+
 
 
 >get poo coop
@@ -271,6 +278,7 @@ by one point
 >w
 >n
 
+
 >use wash saw on past sap
 by one point
 
@@ -297,6 +305,8 @@ by one point
 
 
 
+
+
 >use puce cup on liar grail
 by one point
 
@@ -312,6 +322,10 @@ by one point
 
 
 >use puce cup on dose sod
+/by one point
+
+>use puce cup on dose sod
+/by one point
 
 
 >w
@@ -335,10 +349,12 @@ by one point
 
 
 >get all
+#got dirt rid
 
 >e
 
 >e
+
 
 
 
@@ -347,6 +363,7 @@ by one point
 
 >use stamp mats on slate metals
 /by one point
+#lost stamp mats
 
 >w
 >n
@@ -372,6 +389,7 @@ by one point
 >e
 
 >e
+
 
 
 
@@ -394,23 +412,27 @@ by one point
 >s
 
 
+
 >use Elan Ale on Sniffins
 by one point
 
 >use elan ale on sniffins
 /by one point
+#got gorge grog
 
 >stand nat's
 by one point
 
 >stand nat's
 /by one point
+#got nat's
 
 >n
 >w
 >w
 >s
 >w
+
 
 >work row
 
@@ -419,6 +441,7 @@ by one point
 
 >use dirt rid on reviver
 /by one point
+#got dirt rid
 
 >e
 >n
@@ -428,11 +451,14 @@ by one point
 
 >w
 
+
 >use cave vac on cassettes sac
 by one point
 
 >use cave vac on cassettes sac
 /by one point
+#lost cave vac
+
 
 
 >e
@@ -440,11 +466,13 @@ by one point
 >n
 >e
 
+
 >use radar on crag arc
 by one point
 
 >use radar on crag arc
 /by one point
+#got ufo tofu
 
 >n
 
@@ -486,6 +514,7 @@ by one point
 >n
 
 >get all
+
 
 
 >use Gorge Grog on butene tub
@@ -556,6 +585,7 @@ by one point
 >use straw arts on revolt lover
 /by one point
 
+
 >use gate tag on soot tattoos
 by one point
 
@@ -579,6 +609,7 @@ by one point
 >w
 
 
+
 >use poo coop on gnu dung
 by one point
 
@@ -596,11 +627,13 @@ by one point
 
 
 
+
 >use radar on made dam
 by one point
 
 >use radar on made dam
 /by one point
+
 
 >n
 
@@ -612,17 +645,20 @@ by one point
 >use null illun on known wonk
 /by one point
 
+
 >use el doodle on edits tide
 by one point
 
 >use el doodle on edits tide
 /by one point
+
 
 
 >n
 
 
 
+
 >use elope pole on kayak
 by one point
 
@@ -636,6 +672,7 @@ by one point
 
 >use dork rod on tao boat
 /by one point
+#got enact cane
 
 
 >s
@@ -671,11 +708,13 @@ Aw, come on, you've already met TWO SMART PEOPLE nearby.
 >n
 >e
 
+
 >use spa maps on go-by bog
 by one point
 
 >use spa maps on go-by bog
 /by one point
+
 
 
 >w
@@ -684,13 +723,17 @@ by one point
 >s
 
 
+
 >e
+
 
 >use enact cane on yahoo hay
 by one point
 
 >use enact cane on yahoo hay
 /by one point
+#lost enact cane
+#got moor broom
 
 >pace cap
 by one point
@@ -723,6 +766,7 @@ You aren't going to impress it with your smarts.
 #mistake test for erg ogre
 >erg ogre
 The ogre would destroy you in a grunting match.
+
 
 >yak okay
 by one point
@@ -781,6 +825,7 @@ by one point
 >n
 
 
+
 >use moor broom on tru yurt
 by one point
 
@@ -790,11 +835,13 @@ by one point
 >s
 >s
 
+
 >use wash saw on porch crop
 by one point
 
 >use wash saw on porch crop
 /by one point
+
 
 >n
 >e
@@ -847,6 +894,7 @@ by one point
 
 >use you buoy on rotator
 /by one point
+#got me gem
 
 
 >e
@@ -854,6 +902,7 @@ by one point
 >n
 >n
 >e
+
 
 >use mr arm on bomb mob
 by one point
@@ -880,6 +929,8 @@ by one point
 >w
 
 
+
+
 >use rep popper on me totem
 by one point
 
@@ -893,6 +944,7 @@ by one point
 >e
 >e
 >n
+
 
 
 
@@ -921,6 +973,7 @@ by one point
 >use not-a-baton on reifier
 /by one point
 
+
 >use murdered rum on yard ray
 by one point
 
@@ -932,6 +985,7 @@ by one point
 
 >emit noontime
 /by one point
+
 
 >use yard ray on test set
 by one point
@@ -967,6 +1021,7 @@ by one point
 
 >use taboo bat on verses rev
 /by one point
+
 
 >use yard ray on redivider
 by one point

@@ -190,7 +190,10 @@ It's still quiet here.[mis of 187]
 >n
 
 >get trap art
-by one point
+
+==t5
+>use trap art on revolt lover
+WRONG
 
 ==t3
 >w
@@ -316,6 +319,21 @@ It's already pretty pithy, and there's not enough material for a helmet.
 >e
 >n
 >n
+
+==t5
+>use to idiot on revolt lover
+WRONG
+>purloin epoch cope
+>use epoch cope on revolt lover
+WRONG
+>undo
+>undo
+>purloin null illun
+>use null illun on revolt lover
+WRONG
+>undo
+>undo
+
 >n
 
 ===3t
@@ -347,6 +365,8 @@ Just one guardian is enough to deal with.
 ===a
 
 ==t5
+>use pity tip on door frood
+WRONG
 >give TO IDIOT to Door Frood
 by one point
 >undo
@@ -355,6 +375,14 @@ by one point
 by one point
 
 >get bunk nub
+#got bunk nub
+
+==t5
+>gonear sleep eels
+>use bunk nub on sleep eels
+WRONG
+>undo
+>undo
 
 >e
 
@@ -381,9 +409,12 @@ WRONG
 
 ==t5
 >use pity tip on navy van
+by one point
+>undo
 
 >use pity tip on eye
 by one point
+#lost pity tip
 
 >w
 
@@ -399,6 +430,7 @@ Since this is the Trapeze Part, you'd think there'd be a way to go to a place to
 
 >tend net
 by one point
+#got elope pole
 
 >e
 
@@ -439,6 +471,11 @@ WRONG
 WRONG
 >rot set o notes
 WRONG
+>gt art xtra
+>use party trap on revolt lover
+WRONG
+>undo
+>undo
 
 >use bunk nub on reviver
 by one point
@@ -592,6 +629,13 @@ They are alive. Turning them to metal would be cruel.
 The eels don't need dexterity. They need comfort. They are slippery enough.
 ===a
 
+==t5
+>purloin radar
+>use radar on sleep eels
+WRONG
+>undo
+>undo
+
 >use stock cots on sleep eels
 by one point
 
@@ -606,6 +650,10 @@ WRONG
 >get stamp mats
 
 >e
+
+==t5
+>use stamp mats on yahoo hay
+WRONG
 
 ==t3
 >e
@@ -739,6 +787,11 @@ There's no rink nir. Near.
 >w
 >n
 
+==t5
+>use wash saw on rift fir
+by one point
+undo
+
 >use wash saw on past sap
 by one point
 
@@ -777,6 +830,21 @@ The grail remains in your way to the south. But it was worth a try.
 The grail remains in your way to the south. But it was worth a try.
 ===a
 
+==t5
+>use puce cup on wordy drow
+by one point
+>undo
+
+==t5
+>use poo coop on liar grail
+WRONG
+>abstract gnu dung to devreserved
+>use poo coop on liar grail
+WRONG
+>undo
+>undo
+>undo
+
 >use puce cup on liar grail
 by one point
 
@@ -799,6 +867,7 @@ WRONG
 WRONG
 
 >use puce cup on dose sod
+/by one point
 
 ===2
 #mistake test for esp apse
@@ -894,6 +963,7 @@ WRONG
 WRONG
 
 >get all
+#got dirt rid
 
 >e
 
@@ -913,8 +983,16 @@ WRONG
 The arcs stay still, but you can just go back east if you want.
 ===a
 
+==t5
+>purloin soot tattoos
+>use stamp mats on soot tattoos
+WRONG
+>undo
+>undo
+
 >use stamp mats on slate metals
 by one point
+#lost stamp mats
 
 ==t4
 >gt cold loc
@@ -922,6 +1000,10 @@ by one point
 >w
 >n
 >n
+==t5
+>use ye key on diff id
+WRONG
+==!4
 >w
 >w
 >w
@@ -1030,6 +1112,15 @@ You might cause a mudslide, or worse.[mis of 173]
 That's just what you need, a giant crab coming after you[if cross orc is in Toll Lot], along with the cross orc[end if].
 ===a
 
+==t5
+>use troll ort on cross orc
+WRONG
+>use elope pole on crag arc
+WRONG
+# it is not a weapon
+>use elope pole on cross orc
+WRONG
+
 >use cash sac on cross orc
 by one point
 
@@ -1084,11 +1175,20 @@ Well, Nat's must have its stans, but you don't want to be one.
 You don't need to help Sniffins with interior decorating, here.
 ===a
 
+==t5
+>purloin demo med
+>use demo med on gorge grog
+WRONG
+>undo
+>undo
+
 >use Elan Ale on Sniffins
 by one point
+#got gorge grog
 
 >stand nat's
 by one point
+#got nat's
 
 ==t4
 >gt word row
@@ -1110,6 +1210,7 @@ WRONG
 
 >use Dirt Rid on reviver
 by one point
+#got dirt rid
 
 ==t4
 >gt drawl ward
@@ -1122,8 +1223,19 @@ by one point
 
 >w
 
+==t5
+>use gorge grog on cassettes sac
+WRONG
+>use wash saw on cassettes sac
+WRONG
+
 >use cave vac on cassettes sac
 by one point
+#lost cave vac
+
+==t5
+>use demo med on elan ale
+WRONG
 
 ===2
 #mistake test for pod op
@@ -1143,8 +1255,13 @@ But what to do to it? How to change it?
 >n
 >e
 
+==t5
+>use wash saw on crag arc
+WRONG
+
 >use radar on crag arc
 by one point
+#got ufo tofu
 
 >n
 
@@ -1240,6 +1357,13 @@ I've tried to keep this game gender neutral.
 >n
 
 >get all
+
+==t5
+>gonear kayak
+>use gold log on kayak
+WRONG
+>undo
+>undo
 
 ===2
 #mistake test for line nil
@@ -1364,6 +1488,25 @@ One silly misspelling does not beget another.
 >use straw arts on Revolt Lover
 by one point
 
+==t5
+>use el doodle on revolt lover
+WRONG
+>s
+>e
+>use gate tag on diff id
+WRONG
+>use soot tattoos on diff id
+WRONG
+>undo
+>undo
+>use gate tag on soot tattoos
+WRONG
+>use state tats on diff id
+>undo
+>undo
+>undo
+>undo
+
 >use gate tag on soot tattoos
 by one point
 
@@ -1449,6 +1592,24 @@ No innuendo here! The gnu dung[if gnu dung is not in Dumb Mud] with the poo coop
 No innuendo here! The gnu dung[if gnu dung is not in Dumb Mud] with the poo coop[end if] is about as close as you'll get.
 ===a
 
+==t5
+>purloin cave vac
+>use cave vac on gnu dung
+WRONG
+>undo
+>undo
+>purloin dirt rid
+>use dirt rid on gnu dung
+WRONG
+>undo
+>undo
+>use poo coop on lie veil
+WRONG
+>use elope pole on lie veil
+WRONG
+>use wash saw on lie veil
+WRONG
+
 >use poo coop on gnu dung
 by one point
 
@@ -1474,8 +1635,26 @@ There might be someone smart nearby.
 Perhaps someone has, but you don't need to.
 ===a
 
+==t5
+>use elope pole on made dam
+WRONG
+>use wash saw on made dam
+WRONG
+>purloin resale laser
+>use resale laser on made dam
+WRONG
+>undo
+>undo
+
 >use radar on made dam
 by one point
+
+==t5
+>s
+>use el doodle on code doc
+WRONG
+>undo
+>undo
 
 >n
 
@@ -1504,8 +1683,19 @@ You don't need to buy anything in this game, and any store wouldn't sell anythin
 >use NULL ILLUN on Known Wonk
 by one point
 
+==t5
+>use el doodle on known wonk
+WRONG
+
 >use el doodle on edits tide
 by one point
+
+==t5
+>gonear bro orb
+>use sharp rahs on bro orb
+WRONG
+>undo
+>undo
 
 ===2
 #mistake test for share rahs
@@ -1562,8 +1752,19 @@ You don't need protection from the weather here.
 ===a
 
 ==t5
+>use dork rod on kayak
+WRONG
 >use roto motor on kayak
 WRONG
+>use elope pole on tao boat
+WRONG
+>use roto motor on tao boat
+WRONG
+>purloin enact cane
+>use enact cane on kayak
+WRONG
+>undo
+>undo
 
 >use elope pole on kayak
 by one point
@@ -1583,6 +1784,7 @@ You reveal no frat. Arf!
 
 >use dork rod on tao boat
 by one point
+#got enact cane
 
 ==t3
 #maybe delete this if it's not relevant
@@ -1644,8 +1846,22 @@ Aw, come on, you've already met TWO SMART PEOPLE nearby.
 >n
 >e
 
+==t5
+>use dirt rid on go-by bog
+WRONG
+>use cave vac on go-by bog
+WRONG
+>use elope pole on go-by bog
+WRONG
+>use radar on go-by bog
+WRONG
+
 >use spa maps on go-by bog
 by one point
+
+==t5
+>use sage gas on sharp rahs
+WRONG
 
 ==t3
 >e
@@ -1669,10 +1885,23 @@ WRONG
 The yak perks its ears up slightly, then goes back to looking bored. Maybe you didn't quite say things right.
 ===a
 
+==t5
+>use troll ort on kayo yak
+WRONG
+
 >e
+
+==t5
+>gonear rep popper
+>use enact cane on rep popper
+WRONg
+>undo
+>undo
 
 >use enact cane on yahoo hay
 by one point
+#lost enact cane
+#got moor broom
 
 >pace cap
 by one point
@@ -1699,6 +1928,10 @@ You aren't going to impress it with your smarts.
 #mistake test for erg ogre
 >erg ogre
 The ogre would destroy you in a grunting match.
+
+==t5
+>use troll ort on ergot ogre
+WRONG
 
 >yak okay
 by one point
@@ -1802,6 +2035,13 @@ There is no romance, here. Besides, I can't do anything with 'bride.'
 >moor vroom
 The moor broom is not equipped for transport. Some brooms are, but this isn't.
 
+==t5
+>purloin stamp mats
+>use stamp mats on tru yurt
+WRONG
+>undo
+>undo
+
 >use moor broom on tru yurt
 by one point
 
@@ -1811,8 +2051,16 @@ by one point
 >s
 >s
 
+==t5
+>use exam axe on porch crop
+WRONG
+
 >use wash saw on porch crop
 by one point
+
+==t5
+>use exam axe on balsa slab
+WRONG
 
 ==t4
 >gt dumb mud
@@ -1879,6 +2127,7 @@ by one point
 
 >use you buoy on rotator
 by one point
+#got me gem
 
 ===2
 #mistake test for mega gem
@@ -1894,6 +2143,16 @@ That'd be useful in Kingdom of Loathing, but not here.
 >n
 >n
 >e
+
+==t5
+>use mr arm on tnt
+by one point
+undo
+>purloin taboo bat
+>use taboo bat on bomb mob
+WRONG
+>undo
+>undo
 
 >use mr arm on bomb mob
 by one point
@@ -1922,6 +2181,44 @@ WRONG
 >n
 WRONG
 >w
+WRONG
+
+==t5
+>purloin dna hand
+>use dna hand on yuge guy
+WRONG
+>undo
+>undo
+>purloin gorge grog
+>use gorge grog on yuge guy
+WRONG
+>undo
+>undo
+>use me gem on yuge guy
+WRONG
+>purloin mr arm
+>use mr arm on yuge guy
+WRONG
+>undo
+>undo
+>use rep popper on yuge guy
+WRONG
+>purloin poo coop
+>use poo coop on yuge guy
+WRONG
+>undo
+>undo
+>purloin taboo bat
+>use taboo bat on me totem
+WRONG
+>undo
+>use taboo bat on yuge guy
+WRONG
+>undo
+>undo
+
+==t5
+>use me gem on me totem
 WRONG
 
 >use rep popper on me totem
@@ -1953,6 +2250,11 @@ WRONG
 WRONG
 >s
 WRONG
+
+==t5
+>use Bro Orb on madam
+by one point
+>undo
 
 >use Bro Orb on mirror rim
 by one point
@@ -1999,11 +2301,22 @@ WRONG
 >use not-a-baton on reifier
 by one point
 
+==t5
+>purloin gorge grog
+>use gorge grog on yard ray
+WRONG
+>undo
+>undo
+
 >use murdered rum on yard ray
 by one point
 
 >emit noontime
 by one point
+
+==t5
+>use taboo bat on test set
+WRONG
 
 >use yard ray on test set
 by one point
@@ -2064,6 +2377,14 @@ by one point
 
 >use taboo bat on Verses Rev
 by one point
+
+==t5
+>use yard ray on diktat kid
+WRONG
+>use yard ray on tru hurt
+WRONG
+>use yard ray on waster fretsaw
+WRONG
 
 >use yard ray on redivider
 by one point

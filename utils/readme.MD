@@ -18,6 +18,22 @@ Utils:
 * sc2.py = does internal code verification of maximum score byregion. Also cross-checks invisiclues and trizbort flowchart.
     * Supersedes the weaker msc.py. msc.py did a much more trivial runthrough.
 
+Hooks: (not officially built into GIT, but run before I commit)
+
+* game specific
+  * palver.py makes sure that objects and table entries are proper palindromes
+  * sc2.py checks for coordination between source, walkthrough, trizbort and invisiclues for point scoring commands
+  * aam.py (run after alphabetizer malf.py) rejigs the mistake numbers ('mis of ###')
+* general
+  * dbh.py cuts down the tables so I can cycle through random text events with a unit tester (e.g. there are two, so Z.Z shows them all).
+  * dno.py lists highest priority notes to look at in notes.txt.
+  * zr.py takes care of trivial capitalization.
+  * roomsync.py compares Trizbort map to source as well as Invisiclues (e.g. room="Yell Alley" and >>YELL ALLEY and Yell Alley is (a room/east of) should all match up).
+  * duptab.py: detects if any random palindromes are duplicated in tables.
+  * salf.py: section alphabetizing for the various rules.
+  * malf.py: mistake file alphabetizing so I (or curious players) can search through it and note duplicates.
+  * talf.py table alphabetizer.
+
 To-do:
 
 * rerun 3w.py to vacuum up special test cases and check off again 2 months later when my mind is fresh
