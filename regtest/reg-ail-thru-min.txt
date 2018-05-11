@@ -1,9 +1,11 @@
-** *FILE
+## reg-ail-thru-min.txt
 
-tsv:** minimum walkthrough
+## minimum walkthrough
 
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
+
+* runthrough
 
 
 
@@ -45,16 +47,9 @@ by one point
 
 
 
-#mistake test for track cart
->track cart
-[if DWELT LEWD is off-stage]Right idea, but the cart isn't going anywhere[else]It's not going anywhere. You already unlocked a secret, anyway[end if].
-
-#mistake test for dwell lewd
->dwell lewd
-DWELT LEWD should NOT be read as an instruction manual. Well, it shouldn't be read at all, really.
-
 >word row
 by one point
+
 
 >get TO IDIOT
 
@@ -230,11 +225,12 @@ by one point
 >w
 >w
 >n
+
 >e
 
 
 >use puce cup on dose sod
-/by one point
+!by one point
 
 
 >w
@@ -275,6 +271,7 @@ by one point
 >w
 >w
 >n
+
 >n
 
 
@@ -377,6 +374,15 @@ by one point
 >w
 
 
+>Worn Row
+by one point
+
+>work row
+
+>use stinky knits on rotator
+by one point
+
+
 >word row
 
 >e
@@ -446,6 +452,7 @@ by one point
 >n
 >w
 >w
+
 >w
 
 
@@ -513,9 +520,6 @@ by one point
 
 
 >n
-==2
->swami maws
-Aw, come on, you've already met TWO SMART PEOPLE nearby.
 >e
 >e
 >n
@@ -555,15 +559,9 @@ by one point
 >w
 >w
 >s
+
 >s
 
-#mistake test for ergo ogre
->ergo ogre
-You aren't going to impress it with your smarts.
-
-#mistake test for erg ogre
->erg ogre
-The ogre would destroy you in a grunting match.
 
 
 >yak okay
@@ -687,6 +685,7 @@ by one point
 >e
 >e
 >e
+
 >n
 
 

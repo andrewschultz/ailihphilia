@@ -1,9 +1,11 @@
-** *FILE
+## reg-ail-thru-gt.txt
 
-** walkthrough with gt when possible
+## walkthrough with gt when possible
 
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
+
+* runthrough
 
 >stats
 by one point
@@ -56,16 +58,9 @@ by one point
 
 
 
-#mistake test for track cart
->track cart
-[if DWELT LEWD is off-stage]Right idea, but the cart isn't going anywhere[else]It's not going anywhere. You already unlocked a secret, anyway[end if].
-
-#mistake test for dwell lewd
->dwell lewd
-DWELT LEWD should NOT be read as an instruction manual. Well, it shouldn't be read at all, really.
-
 >word row
 by one point
+
 
 >get TO IDIOT
 
@@ -224,9 +219,11 @@ by one point
 
 >gt cold loc
 
+>e
+
 
 >use puce cup on dose sod
-/by one point
+!by one point
 
 
 >gt swept pews
@@ -256,6 +253,10 @@ by one point
 #lost stamp mats
 
 >gt cold loc
+
+>n
+
+
 
 >use demo med on gulf lug
 by one point
@@ -335,6 +336,15 @@ by one point
 >gt work row
 
 
+>Worn Row
+by one point
+
+>work row
+
+>use stinky knits on rotator
+by one point
+
+
 >word row
 
 >gt pro corp
@@ -378,6 +388,8 @@ by one point
 >work row
 
 >gt seer trees
+
+>w
 
 
 
@@ -472,13 +484,8 @@ by one point
 
 >gt ivy
 
-#mistake test for ergo ogre
->ergo ogre
-You aren't going to impress it with your smarts.
+>s
 
-#mistake test for erg ogre
->erg ogre
-The ogre would destroy you in a grunting match.
 
 
 >yak okay
@@ -575,6 +582,8 @@ by one point
 
 >gt emo dome
 
+>n
+
 
 
 
@@ -587,7 +596,23 @@ by one point
 by one point
 
 >gt work row
+
+>use not-a-baton on reifier
+by one point
+
+
+>use murdered rum on yard ray
+by one point
+
+>emit noontime
+by one point
+
+
+>use yard ray on test set
+by one point
+
 >gt fun nuf
+
 
 >use TNT on ore zero
 by one point

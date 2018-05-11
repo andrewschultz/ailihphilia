@@ -1,23 +1,26 @@
-** *FILE
+## reg-ail-thru-wrongway.txt
 
-** walkthrough with wrong ways/running into walls or blocking npcs
+## walkthrough with wrong ways/running into walls or blocking npcs
 
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
 
+* runthrough
+
 
 >e
-WRONG
+"Keen! Eek!" the Flee Elf stops you. "You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley."
 >n
 The flee elf sees you looking that way but says 'First things first! Get the cap the right way, here.'
 >w
-WRONG
+"Keen! Eek!" the Flee Elf stops you. "You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley."
 >s
-WRONG
+The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go.
 >s
-WRONG
+"Oy! Oy! Yo-yo!" The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap.
 >s
-WRONG
+The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else.
+!When you get home, you open the X/O box.
 >undo
 
 
@@ -58,20 +61,20 @@ WRONG
 
 
 >w
-WRONG
+Wall! Aw.
 >e
-WRONG
+Wall! Aw.
 
 >s
 
 >s
 
 >w
-WRONG
+Dave says, "I can't let you do that, Hal. Ah!" There must be a succinct, clever way to sneak around him!
 >s
-WRONG
+Wall! Aw.
 >e
-WRONG
+Wall! Aw.
 
 
 #mistake test for evade dave
@@ -96,16 +99,15 @@ WRONG
 WRONG
 
 
+>word row
+by one point
+
 #mistake test for track cart
 >track cart
 [if DWELT LEWD is off-stage]Right idea, but the cart isn't going anywhere[else]It's not going anywhere. You already unlocked a secret, anyway[end if].
-
 #mistake test for dwell lewd
 >dwell lewd
 DWELT LEWD should NOT be read as an instruction manual. Well, it shouldn't be read at all, really.
-
->word row
-by one point
 
 >get TO IDIOT
 
@@ -344,6 +346,7 @@ by one point
 >w
 >w
 >n
+
 >e
 
 >e
@@ -354,7 +357,7 @@ WRONG
 WRONG
 
 >use puce cup on dose sod
-/by one point
+!by one point
 
 
 >w
@@ -413,6 +416,7 @@ by one point
 >w
 >w
 >n
+
 >n
 
 >w
@@ -546,6 +550,18 @@ WRONG
 >s
 >w
 
+#mistake test for psi lisp
+>psi lisp
+The Psi Wisp can't speak.
+
+>Worn Row
+by one point
+
+>work row
+
+>use stinky knits on rotator
+by one point
+
 
 >word row
 
@@ -616,6 +632,7 @@ by one point
 >n
 >w
 >w
+
 >w
 
 >w
@@ -718,7 +735,6 @@ WRONG
 
 
 >n
-==2
 >swami maws
 Aw, come on, you've already met TWO SMART PEOPLE nearby.
 >e
@@ -766,12 +782,12 @@ by one point
 >w
 >w
 >s
+
 >s
 
 #mistake test for ergo ogre
 >ergo ogre
 You aren't going to impress it with your smarts.
-
 #mistake test for erg ogre
 >erg ogre
 The ogre would destroy you in a grunting match.
@@ -926,6 +942,7 @@ by one point
 >e
 >e
 >e
+
 >n
 
 

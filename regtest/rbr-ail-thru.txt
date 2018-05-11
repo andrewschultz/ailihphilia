@@ -1,11 +1,13 @@
 files=reg-ail-thru-min.txt,reg-ail-thru-all.txt,reg-ail-thru-mist.txt,reg-ail-thru-wrongway.txt,reg-ail-thru-gt.txt,reg-ail-thru-alt.txt
 dupefile=reg-ail-thru-dupe.txt
-** *FILE
+## *FILE
 
-TSV:** minimum walkthrough	** walkthrough with all points	walkthrough with all mistakees	** walkthrough with wrong ways/running into walls or blocking NPCs	** walkthrough with GT when possible	** walkthrough with alternate verbs or nouns
+TSV:## minimum walkthrough	## walkthrough with all points	walkthrough with all mistakees	## walkthrough with wrong ways/running into walls or blocking NPCs	## walkthrough with GT when possible	## walkthrough with alternate verbs or nouns
 
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
+
+* runthrough
 
 ==t1,2,4
 >stats
@@ -22,17 +24,18 @@ by one point
 
 ==t3
 >e
-WRONG
+"Keen! Eek!" the Flee Elf stops you. "You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley."
 >n
 The flee elf sees you looking that way but says 'First things first! Get the cap the right way, here.'
 >w
-WRONG
+"Keen! Eek!" the Flee Elf stops you. "You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley."
 >s
-WRONG
+The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go.
 >s
-WRONG
+"Oy! Oy! Yo-yo!" The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap.
 >s
-WRONG
+The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else.
+!When you get home, you open the X/O box.
 >undo
 
 ===2
@@ -197,9 +200,9 @@ WRONG
 
 ==t3
 >w
-WRONG
+Wall! Aw.
 >e
-WRONG
+Wall! Aw.
 
 >s
 
@@ -207,11 +210,11 @@ WRONG
 
 ==t3
 >w
-WRONG
+Dave says, "I can't let you do that, Hal. Ah!" There must be a succinct, clever way to sneak around him!
 >s
-WRONG
+Wall! Aw.
 >e
-WRONG
+Wall! Aw.
 
 ===2
 #mistake test for guh/thug/guh thug
@@ -285,16 +288,16 @@ It [if Worn Row is worny]is[else]was[end if] bad enough already.
 >wort row
 [Worn Row] is not meant to be a garden. Maybe it would look nicer that way, but it wouldn't be helpful to you.
 
+>word row
+by one point
+
+==t3
 #mistake test for track cart
 >track cart
 [if DWELT LEWD is off-stage]Right idea, but the cart isn't going anywhere[else]It's not going anywhere. You already unlocked a secret, anyway[end if].
-
 #mistake test for dwell lewd
 >dwell lewd
 DWELT LEWD should NOT be read as an instruction manual. Well, it shouldn't be read at all, really.
-
->word row
-by one point
 
 ===1,2
 >trace cart
@@ -856,6 +859,7 @@ by one point
 >w
 >w
 >n
+
 >e
 
 ==t3
@@ -867,7 +871,7 @@ WRONG
 WRONG
 
 >use puce cup on dose sod
-/by one point
+!by one point
 
 ===2
 #mistake test for esp apse
@@ -1000,7 +1004,7 @@ by one point
 >w
 >n
 >n
-==t5
+===5
 >use ye key on diff id
 WRONG
 ==!4
@@ -1008,6 +1012,7 @@ WRONG
 >w
 >w
 >n
+
 >n
 
 ==t3
@@ -1324,11 +1329,10 @@ WRONG
 >s
 >w
 
-===
+==t3
 #mistake test for psi lisp
 >psi lisp
 The Psi Wisp can't speak.
-===
 
 >Worn Row
 by one point
@@ -1530,6 +1534,7 @@ by one point
 >n
 >w
 >w
+
 >w
 
 ===2
@@ -1837,7 +1842,7 @@ WRONG
 >gt apse spa
 ==!
 >n
-==2
+===3
 >swami maws
 Aw, come on, you've already met TWO SMART PEOPLE nearby.
 ==!4
@@ -1919,12 +1924,13 @@ by one point
 >w
 >w
 >s
+
 >s
 
+==t3
 #mistake test for ergo ogre
 >ergo ogre
 You aren't going to impress it with your smarts.
-
 #mistake test for erg ogre
 >erg ogre
 The ogre would destroy you in a grunting match.
@@ -2233,6 +2239,7 @@ by one point
 >e
 >e
 >e
+
 >n
 
 ===2
@@ -2290,7 +2297,7 @@ by one point
 >gt work row
 ==!
 >s
-==t3
+===3
 >n
 WRONG
 ==!4
