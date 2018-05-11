@@ -1011,6 +1011,7 @@ randtxt
 "Posts-op? POST, sop!"
 "Prove VORP!"
 "Resume [']m, user!"
+"SETI sites!"
 "Spidered IPs?!"
 
 table of singstuff

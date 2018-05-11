@@ -9,6 +9,7 @@ volume Mistakes
 to decide whether (mt - a thing) is/are quicknear:
 	if mt is in location of player, yes;
 	if player carries mt, yes;
+	if player wears mt, yes;
 	no;
 
 [todo: (programming exercise) write script that can automatically change when player is in x and (y) is in x to when (y) is quicknear)]
@@ -17,7 +18,7 @@ chapter Apse Spa
 
 understand "esp apse" as a mistake ("You don't see what to do next.[mis of 1]") when player is in Apse Spa.
 
-understand "pool sloop" as a mistake ("No boat appears to take you across the watery bits. [if sage gas is off-stage]You'll need another way through[else]You already got the sage gas, anyway.[mis of 2]") when player is in Apse Spa.
+understand "pool sloop" as a mistake ("No boat appears to take you across the watery bits. [if sage gas is off-stage]You'll need another way through[else]You already got the sage gas, anyway[end if].[mis of 2]") when player is in Apse Spa.
 
 understand "spa caps" as a mistake ("But you already have your pace cap![mis of 3]") when player is in Apse Spa or spa maps are quicknear.
 
@@ -43,7 +44,7 @@ understand "cods doc" as a mistake ("No way. It's nice to be around someone non-
 
 chapter Calcific Lac
 
-understand "calf lac" as a mistake ("There is [if moo room is unvisited]another room with that, sort of[else]already the Moo Room. Let's not overdo it[end if]. Plus, cows can't swim.[mis of 12]")
+understand "calf lac" as a mistake ("There is [if moo room is not visited]another room with that, sort of[else]already the Moo Room. Let's not overdo it[end if]. Plus, cows can't swim.[mis of 12]")
 
 understand "calk lac" as a mistake ("It is not leaking.[mis of 13]")
 
@@ -107,7 +108,7 @@ understand "spun ups" as a mistake ("The Spur Ups fail to rotate.[mis of 38]") w
 
 chapter Deft Fed
 
-understand "defy fed" as a mistake ("[if yob attaboy is moot]Way to go! Keep that Hunger! Well, I hope it's that and not conspiracy theories about the Fed[else]No problem, you're not getting fed anyway[end if].[mis of 39]") when player is in Deft Fed and YOB ATTABOY is not moot.
+understand "defy fed" as a mistake ("[if yob attaboy is moot]Way to go! Keep that Hunger! Well, I hope it's that and not conspiracy theories about the Fed[else]No problem, you're not getting fed anyway[end if].[mis of 39]") when player is in Deft Fed.
 
 understand "stan nats" and "stan nat's" as a mistake ("Well, Nat's must have its stans, but you don't want to be one.[mis of 40]") when nat's tan is quicknear.
 
@@ -127,11 +128,13 @@ chapter Dirge Grid
 
 understand "dir grid" as a mistake ("With only one way out, you don't need directions.[mis of 46]") when player is in Dirge Grid.
 
-understand "par crap" as a mistake ("Making fun of others['] clothing isn't as evil as the Diktat Kid, but it's not what real heroes do![mis of 47]") when Verses Rev is quicknear.
+understand "par crap" as a mistake ("Making fun of others['] clothing isn't as evil as the Diktat Kid, but it's not what REAL heroes do![mis of 47]") when Verses Rev is quicknear.
 
 understand "par trap" as a mistake ("You aren't on a golf course.[mis of 48]") when Verses Rev is quicknear.
 
 chapter Dopy Pod
+
+understand "cash sac" as a mistake ("You look extra carefully at the sac. No, no secret compartments.[mis of 77]") when cassettes sac is quicknear and player does not have cash sac.
 
 understand "do pod" as a mistake ("But what to do to it? How to change it?[mis of 49]") when player is in Dopy Pod.
 
@@ -167,7 +170,7 @@ understand "turd rut" as a mistake ("Hmm! Maybe you could fill the rut up with .
 
 understand "turn rut" as a mistake ("It's too large to redirect[if poo coop is moot], and besides, you already have a way across[end if].[mis of 63]") when player is in Dumb Mud.
 
-understand "turnon rut" and "turn on rut" as a mistake ("No innuendo here! The gnu dung[if gnu dung is not in Dumb Mud] with the poo coop[end if] is about as close as you'll get.[mis of 64]") when player is in Dumb Mud.
+understand "turnon rut" and "turn on rut" as a mistake ("No innuendo here! The gnu dung[if gnu dung is not in Dumb Mud] with the poo coop[end if] is about as close as you'll get to R-rated.[mis of 64]") when player is in Dumb Mud.
 
 understand "un gnu" as a mistake ("Eliminating the perpetrator won't eliminate what they've dung. Uh, dun. Er, done.[mis of 65]") when gnu dung is quicknear.
 
@@ -203,8 +206,6 @@ to decide whether either-sac:
 
 understand "case sac" as a mistake ("You look extra carefully at the sac. No, no secret compartments.[mis of 76]") when either-sac.
 
-understand "cash sac" as a mistake ("You look extra carefully at the sac. No, no secret compartments.[mis of 77]") when cassettes sac is quicknear and player does not have cash sac.
-
 understand "cast sac" as a mistake ("No need to fling stuff around, and no need for magic, either.[mis of 78]") when either-sac.
 
 understand "gull lug" as a mistake ("You shouldn't try to take advantage of sick people. Help the Gulf Lug instead.[mis of 79]") when gulf lug is quicknear.
@@ -238,7 +239,7 @@ understand "funk nuf" as a mistake ("No cool music plays, but at least it doesn'
 section cap abuse
 
 to say pace-clue-maybe:
-	say "[if pace-prev is true]There's nothing else special to do with the pace cap[else]There may be one more thing to do other than PACK the cap, but that's not it[end if]"
+	say "[if pace-prev is true or cap-ever-pace is true]There's nothing else special to do with the pace cap[else]There may be one more thing to do other than PACK the cap, but that's not it[end if]"
 
 understand "pa cap" as a mistake ("The word DAD briefly flashes on the Pact Cap. Weird, but not really.[mis of 90]") when Pact Cap is quicknear.
 
@@ -412,7 +413,7 @@ understand "golf log" as a mistake ("There is no Par Trap or Tee Meet to navigat
 
 chapter Red Roses Order
 
-understand "gal slag" as a mistake ("You managed to annoy Madam enough that she lashes out and conks you with a mortal blow with the Gal Flag. Okay, not really, but name calling won't help.[mis of 159]") when Gal Flag is quicknear. [?? do fake death thing]
+understand "gal slag" as a mistake ("You managed to annoy Madam enough that she lashes out and conks you with a mortal blow with the Gal Flag. Okay, not really, but name calling won't help.[mis of 159]") when Madam is quicknear. [?? do fake death thing]
 
 understand "sworn rows" as a mistake ("The sword rows are inanimate and neutral. Unless you get too close to them.[mis of 160]") when sword rows are quicknear.
 
@@ -428,7 +429,7 @@ understand "scram arcs" as a mistake ("The arcs stay still, but you can just go 
 
 chapter Seer Trees
 
-understand "seer brees" as a mistake ("[one of]A man throws a football at you from 50 yards away, and it drills you right in the chest. Accurate![or]The man doesn't appear again. He probably has better things to do than schlep around in some text adventure. Perhaps he is off eating at a QB BBQ.[stopping][mis of 164]") when player is in Seer Trees.
+understand "seer brees" as a mistake ("[one of]A man in black and gold throws a football at you from 50 yards away, and it drills you right in the chest. Accurate![or]The man doesn't appear again. He probably has better things to do than schlep around in some text adventure. Perhaps he is off eating at a QB BBQ.[stopping][mis of 164]") when player is in Seer Trees.
 
 understand "seer frees" as a mistake ("[if stark rats are in Seer Trees]It won't be THAT easy[else]You already feel free enough here[end if].[mis of 165]") when player is in Seer Trees.
 
@@ -444,7 +445,7 @@ section gift fig
 
 understand "gi fig" as a mistake ("Hard to imagine how to weaponize the fig.[mis of 169]") when gift fig is quicknear.
 
-understand "gif fig" and "fig gif" as a mistake ("The fig remains firmly text-based.[mis of 170]") when gift fig is quicknear.
+understand "gif fig" and "fig gif" as a mistake ("The fig remains firmly text-based. Eh, it's more edible that way.[mis of 170]") when gift fig is quicknear.
 
 chapter Sneer Greens
 
@@ -456,7 +457,7 @@ understand "swami maws" and "swamy maws" as a mistake ("[if Yack Cay is visited 
 
 section eroded ore
 
-understand "eros ore" as a mistake ("I don't even want to know what you're trying to do, there.[mis of 173]") when eroded ore is quicknear.
+understand "eros ore" as a mistake ("I don't even want to know what you're trying to do, there.[mis of 173]") when eroded ore is quicknear or ore zero is quicknear.
 
 chapter Swept Pews
 
@@ -464,7 +465,7 @@ understand "fra zarf" as a mistake ("This would send you on a long journey to Ha
 
 understand "liar frail" and "liar trail" as a mistake ("The grail remains in your way to the south. But it was worth a try.[mis of 175]") when liar grail is quicknear.
 
-understand "trod ort" as a mistake ("[if player has troll ort]Nah, you should keep it[else]It looks run-down enough[end if].[mis of 176]") when troll ort is in Swept Pews.
+understand "trod ort" as a mistake ("[if player has troll ort]Nah, you should keep it[else]It looks run-down enough[end if].[mis of 176]") when troll ort is quicknear.
 
 chapter Toll Lot
 

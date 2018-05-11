@@ -226,7 +226,6 @@ Understand the command "clean" as something new.
 Understand the command "dust" as something new.
 Understand the command "wipe" as something new.
 Understand the command "scrub" as something new.
-Understand the command "rub" as something new.
 Understand the command "fight" as something new.
 Understand the command "torture" as something new.
 Understand the command "wreck" as something new.
@@ -235,12 +234,11 @@ Understand the command "murder" as something new.
 Understand the command "kill" as something new.
 Understand the command "punch" as something new.
 understand the command "thump" as something new.
-understand the command "wave" as something new.
 understand the command "sorry" as something new.
 
 chapter oldschooling
 
-understand the command "slice/prune/chop/kiss/hug/embrace/buy/purchase/buy/light/jump/hop/skip/sip/swallow/shine/polish/sweep/clean/dust/wipe/scrub/rub/fight/torture/wreck/crack/murder/kill/punch/thump/wave/sorry" as something new.
+understand the command "slice/prune/chop/kiss/hug/embrace/buy/purchase/buy/light/jump/hop/skip/sip/swallow/shine/polish/sweep/clean/dust/wipe/scrub/fight/torture/wreck/crack/murder/kill/punch/thump/sorry" as something new.
 
 [oldschooling ??]
 
@@ -6626,6 +6624,22 @@ carry out exitsing:
 
 this is the try-aid rule:
 	try aiding;
+
+chapter noxing
+
+noxing is an action applying to one thing.
+
+understand the command "nox" as something new.
+
+understand "nox [something]" as noxing.
+
+carry out noxing:
+	if the noun provides the property nox:
+		say "[if the noun is nox]Already is[else]Changed[end if].";
+		now the noun is nox;
+	else:
+		say "You can't nox/xed [noun].";
+	the rule succeeds.
 
 chapter stuff we can comment out
 
