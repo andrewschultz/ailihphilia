@@ -686,7 +686,7 @@ every turn when basic-hint-yet is false:
 		say "You've gone without any point scoring for a while. So I'd like to break the fourth wall and [if thought-yet is true]remind[else]tell[end if] you that THINK can give you a general overview of where you've been and what places are blocked. This nag won't appear again, but I want to give you less chance of feeling lost and frustrated.";
 		now basic-hint-yet is true;
 
-definition: a room (called rm) is available:
+definition: a room (called rm) is available: [?? mix this with viable directions so 'cant go that way' makes more sense]
 	consider the avail-rule of rm;
 	if the rule succeeded, yes;
 	no;
@@ -1179,7 +1179,7 @@ check going (this is the new generic going reject rule):
 		say "OUT or any synonym is never necessary in the game, though if there is only one exit direction, you'll go that way." instead;
 	if noun is inside, say "You don't ever need to use IN in the game. Just the four cardinal directions." instead;
 	if the room noun of location of player is nowhere:
-		say "[chase-pass][if location of player is wally]Wall! Aw.[paragraph break][end if]You can only go [list of viable directions] here[up-down-check]." instead;
+		say "[chase-pass][if location of player is wally]Wall! Aw.[paragraph break][end if]You can only go [if number of viable directions is 1]back [end if][list of viable directions] here[up-down-check]." instead;
 
 check going (this is the reject noncardinal directions rule):
 	if noun is diagonal, say "You don't need diagonal directions in this game." instead;
@@ -2342,8 +2342,8 @@ to decide which number is east-LLP:
 
 check going north in Fun Nuf:
 	if Diktat Kid is moot, say "No need to go back." instead;
-	if flee elf is in Fun Nuf, say "The flee elf sees you looking that way but says 'First things first! Get the cap the right way, here.'" instead;
-	if epicer recipe is nox, say "You need to get there. But you have no clue what to build, or how[if number of carried ingredients > 2]--though some of your inventory looks useful for that[end if][if player has epicer recipe]Hmm, maybe Xing the epicer recipe will help that[end if]." instead;
+	if flee elf is in Fun Nuf, say "The flee elf sees you looking north but says 'First things first! Get the cap the right way, here.'" instead;
+	if epicer recipe is nox, say "You need to get there. But you have no clue what to build, or how[if number of carried ingredients > 2]--though some of your inventory looks useful for that[end if][if player has epicer recipe]. Hmm, maybe Xing the epicer recipe will help that[end if]." instead;
 	if north tron is off-stage, say "Not until you've built the North-Tron." instead;
 	if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
 	if murdered rum is not moot, say "You have the yard ray, but it isn't, well, charged." instead;
@@ -2510,7 +2510,7 @@ for writing a paragraph about a person when player is in Dirge Grid:
 			say "Looking at your items, there's no way you have enough to take care of the Diktat Kid and the two henchmen. You back off.";
 			move player to Fun Nuf, without printing a room description;
 			continue the action;
-		if player does not have ME gem and player does not have taboo bat:
+		if player does not have ME gem or player does not have taboo bat:
 			say "You feel like you aren't quite prepared enough to tackle the Diktat Kid's henchmen. You back off.";
 			move player to Fun Nuf, without printing a room description;
 			continue the action;
@@ -2532,6 +2532,10 @@ for writing a paragraph about a person when player is in Dirge Grid:
 			say "The Diktat Kid continues to yell at the Knife Fink to do something.";
 		else:
 			say "The Diktat Kid yells and wonders why the Verses Rev and Knife Fink haven't disposed of you, yet.";
+
+check going in Dirge Grid:
+	if Diktat Kid is in Dirge Grid, say "No running, no secret passages. You need to face down the Diktat Kid." instead;
+	if noun is not south and noun is not outside, say "There's nothing more to do here with the Diktat Kid gone." instead;
 
 check going south in Dirge Grid: if Diktat Kid is in Dirge Grid, say "'Mom! SOS! LOL! SOS! Mom!' the Diktat Kid mocks you.[paragraph break]You can't chicken out. You must be close!" instead;
 
@@ -4204,14 +4208,18 @@ to say can-go-rro:
 	else:
 		say "[if not-a-baton is off-stage]You feel you may still have unfinished business behind the DIFF ID to the north[else]The DIFF ID guards the Red Roses Order, which no longer holds adventure[end if]"
 
+emo-dir-adj is a truth state that varies.
+
 instead of doing something in Emo Dome when pulled-up is false:
 	if current action is puffuping, say "That was then. The old tricks won't work. You need something new!" instead;
 	if current action is pulluping, continue the action;
 	if current action is going:
 		if noun is not west and noun is not east:
-			say "You're scared those places would be even worse.";
+			say "You're scared whatever's [if noun is north or noun is south][noun][else]that way[end if] would be even worse. You keep running [emo-dir] instead.";
+			now emo-dir-adj is true;
 			try going emo-dir instead;
-		say "You run [if noun is emo-dir]away[else if noun is opposite of emo-dir] with extra speed[end if].[paragraph break]";
+		if emo-dir-adj is false, say "You run [if noun is emo-dir][noun] with extra speed[else if noun is opposite of emo-dir]further [emo-dir] instead[end if].[paragraph break]";
+		now emo-dir-adj is false;
 		continue the action;
 	if current action is taking or current action is dropping:
 		say "Possessions! What do they matter? Why does anything matter?[paragraph break]";
@@ -4233,7 +4241,7 @@ check going north in Emo Dome:
 	if Diktat Kid is moot, say "The Red Roses Order is being replaced by something more ... civic." instead;
 	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a bright no-go-gon and a voice from the DIFF-ID: 'Dim ID! Go jog!'[paragraph break]You think, hang? Nah." instead;
 	if Bro Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet." instead;
-	if balsa slab is moot, say "You probably did all you needed to." instead;
+	if balsa slab is moot, say "You did all you needed to there." instead;
 	say "You make sure your state tats are visible for scanning. They are accepted.[paragraph break][if madam is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the sword rows.[end if]";
 
 chapter DIFF ID
@@ -4465,6 +4473,7 @@ the Door Frood is a neuter person in Evaded Ave. "[one of]Someone waving their f
 check going in Evaded Ave:
 	if Door Frood is in Evaded Ave:
 		if noun is west or noun is east, say "The Door Frood blocks you. Maybe if you gave them something to keep them occupied, they'd be more generous." instead;
+		if noun is north, say "The Door Frood would enjoy laughing at you for running into a wall, but you might not join in." instead;
 
 chapter bunk nub
 
@@ -4537,7 +4546,7 @@ to say alley-e-block:
 	say "[if navy van is in Yell Alley]navy van... you're not sure[else]bomb mob... so that's[end if]"
 
 check going nowhere in Yell Alley:
-	say "It probably gets even seedier [if navy van is in Yell Alley]behind the navy van[else if bomb mob is in Yell Alley]behind the bomb mob[else]if you go further[end if]. Best just go go back east." instead;
+	say "It probably gets even seedier [if navy van is in Yell Alley]behind the navy van[else if bomb mob is in Yell Alley]behind the bomb mob[else]if you go further[end if]. Best just to go back east." instead;
 
 chapter navy van
 
@@ -4629,7 +4638,10 @@ Madam carries the Gal Flag. description of Gal Flag is "It's fluttering even wit
 
 understand "la gal" and "la/gal" as Madam.
 
-check going south in Red Roses Order when Madam is in Red Roses Order: say "No way! You are locked in mortal combat! Plus, there's really only one thing to do, here." instead;
+check going in Red Roses Order:
+	if noun is south and Madam is in Red Roses Order, say "No way! You are locked in mortal combat! Plus, there's really only one thing to do, here." instead;
+	if noun is north and madam is moot, say "Whether or not the E-Divide could damage you, you don't need to follow Madam. You need to take down the Diktat Kid!" instead;
+	if noun is not south, say "[if madam is moot]There are no secret passages [noun][else]There are more effective ways to shatter the mirror rim than running into it[end if]." instead;
 
 chapter yard ray
 
@@ -4640,8 +4652,6 @@ does the player mean useoning with the Set O Notes: it is unlikely.
 chapter E-Divide
 
 the E Divide is peripheral scenery in Red Roses Order. "Madam crossed it, but you don't need to follow her. It would probably be dangerous. And yes, it's too narrow to slip through the tines.". printed name of E Divide is "E-Divide". understand "e-divide" as e divide.
-
-check going north in Red Roses Order when E Divide is in Red Roses Order: say "Whether or not the E-Divide could damage you, you don't need to follow Madam. You need to take down the Diktat Kid!" instead;
 
 book Swept Pews
 
@@ -4679,7 +4689,7 @@ the troll ort is an edible thing in Swept Pews. "A troll ort lies on the floor h
 
 book Drawl Ward
 
-Drawl Ward is south of Swept Pews. It is in Yelpley. "This passage is a T (well, a [unicode 9524]), walled off to the south. It looks homier to the west and a bit barren to the east, but you can always go back north through the Swept Pews."
+Drawl Ward is south of Swept Pews. It is in Yelpley. "This passage is a T (well, a [unicode 9524]), walled off to the south. It looks homier to the west and a bit barren to the east, but you can always go back north through the Swept Pews." [?? can only go n w e here = slightly wrong]
 
 check going in Drawl Ward:
 	if Bond Nob is in Drawl Ward:
@@ -6450,28 +6460,31 @@ carry out finordning:
 
 chapter raytesting
 
-raytesting is an action out of world.
+raytesting is an action applying to one number.
 
 understand the command "raytest" as something new.
 
-understand "raytest" as raytesting.
+understand "raytest [number]" as raytesting.
 
 carry out raytesting:
 	if north tron is off-stage, say "The north tron must be on stage before running this test." instead;
+	let nu be the number understood;
+	if nu < 1 or nu > 5, say "1-5 please." instead;
 	now yard ray is off-stage;
 	now emitted is false;
 	now ME gem is off-stage;
 	now taboo bat is off-stage;
-	try going north;
+	if nu is 1, try going north;
 	now player has yard ray;
-	try going north;
+	if nu is 2, try going north;
 	now emitted is true;
-	try going north;
-	now player has ME gem;
-	try going north;
-	now player has taboo bat;
-	now ME gem is off-stage;
-	try going north;
+	if nu is 3, try going north;
+	if nu is 4:
+		now player has ME gem;
+		try going north;
+	if nu is 5:
+		now player has taboo bat;
+		try going north;
 	say "If you are doing further testing, UNDO immediately now you've run this. Trust me. There was too much to tie up, here.";
 	the rule succeeds;
 
