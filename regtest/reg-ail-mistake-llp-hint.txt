@@ -1,0 +1,166 @@
+** reg-all-mistake-llp-hint.txt
+
+** mistake/clue revealing tester
+** not attacked to the main walkthrough file
+
+** game: /home/andrew/prt/debug-ailihphilia.ulx
+** interpreter: /home/andrew/prt/glulxe -q
+
+>finord
+
+>flee elf
+>Flea elf
+>fleece elf
+>pa cap
+
+# test the first reveal: it should be row 2, since you got row 1, then after the undo, row 1.
+# row 2 = refer / row 1 = swears
+>poop
+>pac cap
+THINK, or recall,
+/swear "right"
+>undo
+>undo
+>pac cap
+/THINK, or recall,
+swear "right"
+
+>pacs cap
+>pacd cap
+>pact cap
+
+>e
+# here 2 of the same mistake should not trigger the clue
+>yawn way
+>yawl way
+/THINK, or recall,
+
+>n
+>art ecetra
+THINK, or recall,
+
+# #3
+>get all
+>s
+>s
+>evade dave
+>tri girt
+>sto bots
+>sto cots
+>sto dots
+>sto gots
+ask for AID
+
+# #4
+>sto nots
+>sto pots
+>sto sots
+>borg rob
+>bork rob
+LOOK differently
+
+# #5
+>bore rob
+>worm row
+>wort row
+>worsts row
+>word row
+>get ti
+>track cart
+get the SCoRE differently
+
+# #6
+>pita tip
+>pith tip
+>>pi tip
+>work row
+>rei trap art
+>seer brees
+>seer frees
+find an extra book in
+
+# #7
+>star rats
+>stark rats
+>start rats
+>use trap on rats
+by one point
+>gi fig
+>s
+>gif fig
+apologize for mammals to the eels
+>undo
+>undo
+>gif fig
+apologize for mammals to some non-mammals
+
+# #8
+>e
+>e
+>n
+>n
+>door brood
+>use ti on frood
+>get all
+>pcp
+>buns nub
+>bung nub
+>gonear moo room
+>bunt nub
+help the cats in Moo Room
+>undo
+>undo
+>bunt nub
+help the cats in a barn-ish
+
+# #9
+>gt work row
+>rei stock cots
+>gt ooze zoo
+>eel flee
+>eel glee
+>sleek eels
+>sleet eels
+>use stock cots on eels
+>s
+>yak kay
+buzzing in a barn-ish
+>undo
+>undo
+>e
+>moo boom
+buzzing in Moo Room
+
+# #10
+>moo doom
+>moo loom
+>moo zoom
+>poo foop
+>poo goop
+get one more item from the northeast room
+
+# #11
+>poo hoop
+>poo noop
+>poo soop
+>poo woop
+>w
+>n
+>n
+>n
+>kind nik
+be nice to an opossum
+>gonear le babel
+>bron orb
+be nice to the opossum
+>undo
+>undo
+
+# #12 (in other words, no runtime errors)
+
+>colt loc
+>cola loc
+>kine nik
+>rife fir
+>riff fir
+/error
