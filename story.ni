@@ -124,11 +124,11 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 330.
+use MAX_VERBS of 340.
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 370. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 380. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 chapter kinds of things
 
@@ -421,7 +421,9 @@ to say regres of (re - a region):
 chapter turn count
 
 every turn (this is the don't increment trivial turns rule):
-	if action is procedural or chase-mulligan is true, decrement turn count;
+	if action is procedural or chase-mulligan is true:
+		if debug-state is true, say "DEBUG: no turn count added: [if chase-mulligan is true]Chase mulligan![else]Procedural action.[end if]";
+		decrement turn count;
 
 the don't increment trivial turns rule is listed first in the every turn rulebook.
 
@@ -433,7 +435,9 @@ this is the check palindrome turns rule: [this could be at the end but those are
 	while i <= Z / 2:
 		if character number i in Q is not character number (Z + 1 - i) in Q, now pal-turns is false;
 		increment i;
-	say "You scored [score] of [maximum score] points in [turn count] moves.[paragraph break]When you get home, you open the X/O box. ";
+	say "You scored [score] of [maximum score] points in [turn count] moves.[paragraph break]";
+	if Yawn Way is unvisited, continue the action;
+	say "When you get home, you open the X/O box. ";
 	if pal-turns is true:
 		if score is maximum score:
 			say "Inside is a spiffy CERT REC for being cosmically in tune and covering even the smallest details. Well done!";
@@ -1037,7 +1041,7 @@ chapter refering
 
 refer-bonus is a truth state that varies.
 
-refering is an action applying to nothing.
+refering is an action out of world.
 
 understand the command "refer" as something new.
 
@@ -1048,7 +1052,9 @@ carry out refering:
 		say "Yes! That's a slightly more appropriate way to look at the verb list, here.";
 		abide by the LLP rule; [REFER]
 		now refer-bonus is true;
-	try verbing instead;
+	try verbing;
+	follow the notify score changes rule;
+	the rule succeeds;
 
 chapter ting
 
@@ -1128,20 +1134,12 @@ instead of attacking:
 
 chapter going
 
-the new generic going reject rule is listed before the can't go that way rule in the check going rules.
-
 definition: a room (called rm) is wally:
 	if rm is Moo Room, yes;
 	if map region of rm is not Yelpley, no;
 	yes;
 
-to say chase-pass: now chase-mulligan is true;
-
-check going (this is the new generic going reject rule):
-	if noun is outside and number of viable directions is 1, try going a random viable direction instead;
-	if noun is inside, say "You don't ever need to use IN in the game. Just the four cardinal directions." instead;
-	if the room noun of location of player is nowhere:
-		say "[chase-pass][if location of player is wally]Wall! Aw.[paragraph break][end if]You can only go [list of viable directions] here[up-down-check]." instead;
+to say chase-pass: if being-chased is true, now chase-mulligan is true;
 
 to say up-down-check:
 	let xud be 0;
@@ -1168,6 +1166,20 @@ definition: a direction (called d) is viable:
 	if d is north and lp is Gross Org and etage gate is in Gross Org, no;
 	if d is up or d is down, no; [you may be able to go that way, but we'll hide that from the reader.]
 	yes;
+
+section rules to be shuffled
+
+the new generic going reject rule is listed before the can't go that way rule in the check going rules.
+
+instead of exiting, try going outside;
+
+check going (this is the new generic going reject rule):
+	if noun is outside:
+		if number of viable directions is 1, try going a random viable direction instead;
+		say "OUT or any synonym is never necessary in the game, though if there is only one exit direction, you'll go that way." instead;
+	if noun is inside, say "You don't ever need to use IN in the game. Just the four cardinal directions." instead;
+	if the room noun of location of player is nowhere:
+		say "[chase-pass][if location of player is wally]Wall! Aw.[paragraph break][end if]You can only go [list of viable directions] here[up-down-check]." instead;
 
 check going (this is the reject noncardinal directions rule):
 	if noun is diagonal, say "You don't need diagonal directions in this game." instead;
@@ -4221,7 +4233,7 @@ check going north in Emo Dome:
 	if Diktat Kid is moot, say "The Red Roses Order is being replaced by something more ... civic." instead;
 	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a bright no-go-gon and a voice from the DIFF-ID: 'Dim ID! Go jog!'[paragraph break]You think, hang? Nah." instead;
 	if Bro Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet." instead;
-	if not-a-baton is moot, say "You probably did all you needed to." instead;
+	if balsa slab is moot, say "You probably did all you needed to." instead;
 	say "You make sure your state tats are visible for scanning. They are accepted.[paragraph break][if madam is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the sword rows.[end if]";
 
 chapter DIFF ID
@@ -4669,7 +4681,7 @@ book Drawl Ward
 
 Drawl Ward is south of Swept Pews. It is in Yelpley. "This passage is a T (well, a [unicode 9524]), walled off to the south. It looks homier to the west and a bit barren to the east, but you can always go back north through the Swept Pews."
 
-check going west in Drawl Ward:
+check going in Drawl Ward:
 	if Bond Nob is in Drawl Ward:
 		if noun is west or noun is east, say "You hear the Bond Nob groaning and think it wouldn't be nice to pass by. They'll let you by once you help them with whatever sickness they have." instead;
 
@@ -5351,37 +5363,7 @@ dial-yet is a truth state that varies.
 
 more-later is a truth state that varies.
 
-a room has a number called walkthru-prio. walkthru-prio of a room is usually 400.
-
-to hint-bump-worn:
-	shuffle-before Worn Row and Dirge Grid;
-
-[this is the list of how I do things in the walkthrough.]
-
-L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Moo Room, Dumb Mud, Swamp Maws, Yack Cay, Calcific Lac, Den Ivy Vined, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
-
-[?? nothing game-critical to do here = if there is a LLP]
-
-[LATER: establish partially done room rules as opposed to completely done, for a room]
-
-to shuffle-before (ra - a room) and (rb - a room):
-	let x1 be 0;
-	let LE be number of entries in L;
-	repeat with x running from 1 to LE:
-		if entry x of L is ra:
-			now x1 is x;
-			break;
-	if x1 is 0, continue the action;
-	repeat with x2 running from x1 to LE:
-		if entry x2 of L is rb:
-			if debug-state is true, say "(DEBUG: Swapping room walkthrough order for [ra] and [rb])";
-			add ra at entry x2 in L;
-			remove entry x1 from L;
-			if debug-verbose is true, say "DEBUG NEW LIST:[L].";
-			continue the action;
-	if debug-verbose is true, say "WARNING [rb] was already before [ra]. No shifting.";
-
-check aiding:
+carry out aiding:
 	if dial-yet is false and word number 1 in the player's command is "dial":
 		say "Your 'correct' way of asking for aid nets a last lousy point. You even throw in a 'Plea! Elp!' just to make sure.[paragraph break]Yay![paragraph break]";
 		abide by the LLP rule; [DIAL AID]
@@ -5420,8 +5402,9 @@ check aiding:
 	if search-hint-room is true:
 		now search-hint-room is false;
 		say "I'm out of ideas for rooms you've visited. Maybe look around the map a bit more.";
-	follow the notify score changes rule;
 	the rule succeeds;
+
+report aiding: follow the notify score changes rule;
 
 to describe-nearby (ro - a room):
 	repeat with dir running through maindir:
@@ -5448,6 +5431,36 @@ a room has a rule called done-for-good rule. done-for-good rule of a room is usu
 this is the dunno-hint rule: [I should never have to use this in the final release.]
 	say "I haven't determined hints for [location of player], yet.";
 	the rule succeeds;
+
+section shuffling and room clue order
+
+to hint-bump-worn:
+	shuffle-before Worn Row and Dirge Grid;
+
+[this is the list of how I do things in the walkthrough.]
+
+L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Moo Room, Dumb Mud, Swamp Maws, Yack Cay, Calcific Lac, Den Ivy Vined, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
+
+[?? nothing game-critical to do here = if there is a LLP]
+
+[LATER: establish partially done room rules as opposed to completely done, for a room]
+
+to shuffle-before (ra - a room) and (rb - a room):
+	let x1 be 0;
+	let LE be number of entries in L;
+	repeat with x running from 1 to LE:
+		if entry x of L is ra:
+			now x1 is x;
+			break;
+	if x1 is 0, continue the action;
+	repeat with x2 running from x1 to LE:
+		if entry x2 of L is rb:
+			if debug-state is true, say "(DEBUG: Swapping room walkthrough order for [ra] and [rb])";
+			add ra at entry x2 in L;
+			remove entry x1 from L;
+			if debug-verbose is true, say "DEBUG NEW LIST:[L].";
+			continue the action;
+	if debug-verbose is true, say "WARNING [rb] was already before [ra]. No shifting.";
 
 section bulk done-rule definitions
 
@@ -5975,7 +5988,7 @@ carry out peeping:
 
 chapter pooping
 
-pooping is an action applying to nothing.
+pooping is an action out of world.
 
 understand the commands "boob" and "poop" and "pap" as something new.
 
@@ -5998,6 +6011,7 @@ carry out pooping:
 		now the last notified score is the score;
 	else:
 		say "[line break]X2?[paragraph break]...X!";
+	follow the notify score changes rule;
 	the rule succeeds;
 
 chapter slammammalsing
