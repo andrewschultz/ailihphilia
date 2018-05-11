@@ -6117,18 +6117,21 @@ chapter misses table
 
 table of last lousy points [xxllp]
 funstuff	mclu	finord	dorule	cluey
-"BOOB or POOP or PAP to swear 'right"	false	1	pb-yet rule	"swear 'right'"
+"BOOB or POOP or PAP to swear 'right'"	false	1	pb-yet rule	"swear 'right'"
 "REFER instead of THINK"	false	2	refer-yet rule	"THINK, or recall, information differently"
 "DIAL AID instead of AID"	false	3	dial-yet rule	"ask for AID a bit more formally"
 "PEEP instead of looking"	false	4	peep-yet rule	"LOOK differently"
 "STATS to get the score"	false	5	stats-yet rule	"get the SCORE differently"
-"TRACE CART to find an 'extra' book"	false	6	cart-traced rule	"find an extra book in the tract cart"
+"TRACE CART to find an 'extra' book"	false	6	cart-traced rule	"find an extra book in [if ever-wordrow is true]the tract cart[else]a cart containing books[end if]"
 "SLAM MAMMALS around the eels"	false	7	slam-yet rule	"apologize for mammals to [if Ooze Zoo is unvisited]to some non-mammals[else]the eels[end if]"
-"STACK CATS to help the senile felines"	false	8	cats-stacked rule	"help the cats"
-"SEE BEES in Moo Room"	false	9	bees-seen rule	"notice the source of the buzzing in Moo Room"
+"STACK CATS to help the senile felines"	false	8	cats-stacked rule	"help the cats in [moo-room-vis]"
+"SEE BEES in Moo Room"	false	9	bees-seen rule	"notice the source of the buzzing in [moo-room-vis]"
 "BALM LAB in the Bald Lab"	false	10	balm-yet rule	"get one more item [if Pro Corp is unvisited]from the northeast room[else]from [Pro Corp][end if][if bald-lab is true] after looting it[end if]"
 "MUSS OPOSSUM to make a friend"	false	11	muss-yet rule	"be nice to [if Le Babel is unvisited]an opossum somewhere in the future[else]the opossum in Le Babel[end if]"
 [zzllp]
+
+to say moo-room-vis:
+	say "[if Moo Room is visited]Moo Room[else]a barn-ish area you haven't seen yet[end if]"
 
 this is the balm-yet rule:
 	if balm-got is true, the rule succeeds;
