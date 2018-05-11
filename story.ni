@@ -4675,7 +4675,7 @@ The Liar Grail is a thing in Swept Pews. description is "It's carved with 'NIP I
 check taking liar grail: say "A small voice cries 'Da cad! Da cad!' You probably don't want the liar grail corrupting you." instead;
 
 every turn when player is in Swept Pews and wordy drow is in Swept Pews and wordy drow was in Swept Pews:
-	say "The wordy drow moans '[next-rand-txt of table of wordy drow laments]'[line break]";
+	say "A rum, rum murmur from the wordy drow: '[next-rand-txt of table of wordy drow laments]'[line break]";
 
 chapter wordy drow
 

@@ -25,7 +25,6 @@ The Flee Elf mentions there are really only 26 simple ways to pick up the cap, i
 >pack cap
 by one point
 
-
 >n
 You need to get there. But you have no clue what to build, or how.
 >s
@@ -46,30 +45,16 @@ You never need to go up or down in this game, though sometimes they act as a bac
 You don't ever need to use IN in the game. Just the four cardinal directions.
 >out
 OUT or any synonym is never necessary in the game, though if there is only one exit direction, you'll go that way.
->e
-
->n
-
->get trap art
-
 >w
 Wall! Aw.
 >e
 Wall! Aw.
->s
-
->s
-
 >w
 Dave says, "I can't let you do that, Hal. Ah!" There must be a succinct, clever way to sneak around him!
 >s
 Wall! Aw.
 >e
 Wall! Aw.
-
-#mistake test for evade dave
->evade dave
-by one point
 
 >get all
 
@@ -108,8 +93,6 @@ by one point
 #got bunk nub
 
 >e
-
->get all
 
 >n
 It probably gets even seedier behind the navy van. Best just to go back east.
@@ -178,7 +161,6 @@ The stark rats block you from going anywhere. At least they are not banging stop
 
 >use party trap on stark rats
 by one point
-
 
 >n
 
@@ -287,8 +269,6 @@ by one point
 
 >s
 
->get troll ort
-
 >w
 Wall! Aw.
 You can only go north and south here.
@@ -381,7 +361,6 @@ The scorn rocs remain motionless, but their gaze freezes you as you try to go we
 You can only go south and west here (up=west).
 >e
 You can only go south and west here (up=west).
-
 >use demo med on gulf lug
 by one point
 
@@ -414,7 +393,6 @@ You can only go back north here.
 >e
 Wall! Aw.
 You can only go back north here.
-
 >use yob attaboy on Sniffins
 by one point
 
@@ -498,9 +476,6 @@ You can only go back south here (up=south).
 >w
 >s
 >w
-#mistake test for psi lisp
->psi lisp
-The Psi Wisp can't speak.
 >Worn Row
 by one point
 
@@ -587,7 +562,6 @@ by one point
 >use poo coop on turf rut
 by one point
 
-
 >w
 
 >w
@@ -610,7 +584,6 @@ by one point
 
 >use el doodle on edits tide
 by one point
-
 
 >n
 
@@ -702,12 +675,6 @@ by one point
 >s
 >s
 
-#mistake test for ergo ogre
->ergo ogre
-You aren't going to impress it with your smarts.
-#mistake test for erg ogre
->erg ogre
-The ogre would destroy you in a grunting match.
 >yak okay
 by one point
 
@@ -902,7 +869,6 @@ As you go north, you hear three voices. Perhaps the yard ray would work okay at 
 >raytest 5
 As you go north, you hear three voices. Perhaps the yard ray would work okay at first, but ... you get the feeling you may need some other stuff to take out EVERYBODY.
 >undo
-
 >n
 
 >n

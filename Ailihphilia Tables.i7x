@@ -1114,6 +1114,7 @@ randtxt
 "Id-egged, I"
 "No Sin is On!"
 "Onan? A no!"
+"Sad as..."
 "Sob! Mild Limbos!"
 "Sog, Ebb, Egos!"
 "Want? Naw!"

@@ -385,10 +385,10 @@ The fig remains firmly text-based. Eh, it's more edible that way.
 #mistake test for gift fig
 >gift fig
 It already is one. And you don't need to pass it on.
+
 #mistake test for gi fig
 >gi fig
 Hard to imagine how to weaponize the fig.
-
 >n
 
 #mistake test for kind nik
@@ -524,6 +524,7 @@ The Spur Ups are for more than just getting by.
 #mistake test for putt up
 >putt up
 The Spur Ups have no suitable flat edge with which to hit a golf ball.
+
 #mistake test for puz up/puzz up
 >puz up
 Oh, there are plenty of puzzles ahead.
@@ -538,7 +539,6 @@ The Spur Ups fail to rotate.
 #mistake test for spud ups
 >spud ups
 The Spur Ups don't become potatoes or French fries or whatever.
-
 >puff up
 by one point
 
@@ -787,6 +787,13 @@ That's just what you need, a giant crab coming after you, along with the cross o
 >use cash sac on cross orc
 by one point
 
+#mistake retest for told lot
+>told lot
+You pretend you won an argument against the cross or and didn't just hand over money.
+>crass arc
+You spend a few seconds feeling deeply offended by the crag arc.
+>crab arc
+That's just what you need, a giant crab coming after you.
 >s
 
 #mistake test for defy fed
@@ -964,6 +971,12 @@ by one point
 >balm lab
 by one point
 
+>balm lab
+#mistake retest for balk lab
+>balk lab
+There's not much to do or say here, for sure!
+>undo
+>undo
 #mistake test for sci bics
 >sci bics
 You don't need any exotic writing implements.

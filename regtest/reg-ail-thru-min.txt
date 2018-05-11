@@ -10,36 +10,68 @@
 
 
 
+
+
+
+
+
+
 >pack cap
 by one point
 
 
 
 
->e
-
-
->n
-
->get trap art
 
 
 
->s
-
->s
 
 
 
-#mistake test for evade dave
->evade dave
-by one point
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 >get all
 
 
+
+
+
+
 >w
+
+
+
+
 
 
 >bore rob
@@ -47,11 +79,42 @@ by one point
 
 
 
+
+
+
+
+
+
+
+
 >word row
 by one point
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 >get TO IDIOT
+
+
+
+
 
 
 >e
@@ -59,7 +122,20 @@ by one point
 >n
 
 
+
+
+
+
 >n
+
+
+
+
+
+
+
+
+
 
 
 
@@ -70,10 +146,24 @@ by one point
 #got bunk nub
 
 
+
+
+
+
 >e
 
 
->get all
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -81,9 +171,18 @@ by one point
 by one point
 #lost pity tip
 
+
+
+
+
+
 >w
 
 >w
+
+
+
+
 
 
 >tend net
@@ -97,6 +196,10 @@ by one point
 >s
 
 
+
+
+
+
 >s
 
 >w
@@ -106,6 +209,10 @@ by one point
 
 >use trap art on reifier
 by one point
+
+
+
+
 
 
 >use bunk nub on reviver
@@ -120,10 +227,26 @@ by one point
 >w
 
 
+
+
+
+
 >x recipe
 
 
+
+
+
+
 >w
+
+
+
+
+
+
+
+
 
 
 
@@ -132,7 +255,20 @@ by one point
 by one point
 
 
+
+
+
+
+
+
+
+
+
 >n
+
+
+
+
 
 
 
@@ -146,10 +282,22 @@ by one point
 
 
 
+
+
+
+
+
+
+
+
 >use stock cots on sleep eels
 by one point
 
 >s
+
+
+
+
 
 
 >get stamp mats
@@ -158,7 +306,19 @@ by one point
 
 
 
+
+
+
+
+
+
+
+
 >get poo coop
+
+
+
+
 
 
 >w
@@ -174,6 +334,11 @@ by one point
 >e
 >n
 
+
+
+
+
+
 >puff up
 by one point
 
@@ -181,8 +346,19 @@ by one point
 
 
 
+
+
+
 >pull up
 by one point
+
+
+
+
+
+
+
+
 
 
 
@@ -193,6 +369,10 @@ by one point
 >w
 >w
 >n
+
+
+
+
 
 
 >use wash saw on past sap
@@ -211,7 +391,17 @@ by one point
 
 >s
 
->get troll ort
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -229,6 +419,10 @@ by one point
 >e
 
 
+
+
+
+
 >use puce cup on dose sod
 !by one point
 
@@ -244,10 +438,18 @@ by one point
 
 
 
+
+
+
+
 >use puce cup on Bond Nob
 by one point
 
 >w
+
+
+
+
 
 
 >get all
@@ -256,6 +458,14 @@ by one point
 >e
 
 >e
+
+
+
+
+
+
+
+
 
 
 
@@ -276,9 +486,22 @@ by one point
 
 
 
+
+
+
+
+
+
+
+
 >use demo med on gulf lug
 by one point
 
+
+
+
+
+
 >s
 >s
 >e
@@ -286,6 +509,14 @@ by one point
 >e
 
 >e
+
+
+
+
+
+
+
+
 
 
 
@@ -293,7 +524,20 @@ by one point
 >use cash sac on cross orc
 by one point
 
+
+
+
+
+
 >s
+
+
+
+
+
+
+
+
 
 
 
@@ -301,6 +545,15 @@ by one point
 by one point
 
 >s
+
+
+
+
+
+
+
+
+
 
 
 
@@ -319,6 +572,10 @@ by one point
 >w
 
 
+
+
+
+
 >work row
 
 >use Dirt Rid on reviver
@@ -334,16 +591,33 @@ by one point
 >w
 
 
+
+
+
+
+
+
+
+
+
 >use cave vac on cassettes sac
 by one point
 #lost cave vac
 
 
 
+
+
+
+
 >e
 >n
 >n
 >e
+
+
+
+
 
 
 >use radar on crag arc
@@ -354,8 +628,16 @@ by one point
 
 
 
+
+
+
+
 >deny ned
 by one point
+
+
+
+
 
 
 >get all
@@ -366,12 +648,20 @@ by one point
 >n
 
 
+
+
+
+
 >s
 >s
 >w
 >w
 >s
 >w
+
+
+
+
 
 
 >Worn Row
@@ -396,8 +686,17 @@ by one point
 
 
 
+
+
+
+
 >use Gorge Grog on butene tub
 by one point
+
+
+
+
+
 
 
 >s
@@ -435,6 +734,10 @@ by one point
 by one point
 
 
+
+
+
+
 >use gate tag on soot tattoos
 by one point
 
@@ -457,14 +760,40 @@ by one point
 
 
 
+
+
+
+
+
+
+
+
+
 >use poo coop on gnu dung
 by one point
+
+
+
+
+
 
 >use poo coop on turf rut
 by one point
 
 
+
+
+
+
 >w
+
+
+
+
+
+
+
+
 
 
 
@@ -473,7 +802,15 @@ by one point
 by one point
 
 
+
+
+
+
 >n
+
+
+
+
 
 
 
@@ -481,12 +818,32 @@ by one point
 by one point
 
 
+
+
+
+
 >use el doodle on edits tide
 by one point
 
 
 
+
+
+
+
+
+
+
+
 >n
+
+
+
+
+
+
+
+
 
 
 
@@ -496,16 +853,28 @@ by one point
 
 
 
+
+
+
+
 >use dork rod on tao boat
 by one point
 #got enact cane
 
 
+
+
+
+
 >s
 >s
 
 
 >s
+
+
+
+
 
 
 
@@ -519,15 +888,36 @@ by one point
 
 
 
+
+
+
+
 >n
 >e
 >e
 >n
 >e
+
+
+
+
 
 
 >use spa maps on go-by bog
 by one point
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -538,7 +928,15 @@ by one point
 
 
 
+
+
+
+
 >e
+
+
+
+
 
 
 >use enact cane on yahoo hay
@@ -564,11 +962,27 @@ by one point
 
 
 
+
+
+
+
+
+
+
+
 >yak okay
 by one point
 
 
+
+
+
+
 >e
+
+
+
+
 
 
 
@@ -588,6 +1002,10 @@ by one point
 
 
 
+
+
+
+
 >nail ian
 by one point
 
@@ -604,6 +1022,14 @@ by one point
 
 
 
+
+
+
+
+
+
+
+
 >use moor broom on tru yurt
 by one point
 
@@ -611,8 +1037,16 @@ by one point
 >s
 
 
+
+
+
+
 >use wash saw on porch crop
 by one point
+
+
+
+
 
 
 >n
@@ -622,6 +1056,15 @@ by one point
 by one point
 
 >n
+
+
+
+
+
+
+
+
+
 
 
 >get all
@@ -655,6 +1098,10 @@ by one point
 >e
 
 
+
+
+
+
 >use mr arm on bomb mob
 by one point
 
@@ -676,6 +1123,18 @@ by one point
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 >use rep popper on me totem
 by one point
 
@@ -691,8 +1150,20 @@ by one point
 
 
 
+
+
+
+
+
+
+
+
 >use Bro Orb on mirror rim
 by one point
+
+
+
+
 
 
 
@@ -708,11 +1179,19 @@ by one point
 by one point
 
 
+
+
+
+
 >use murdered rum on yard ray
 by one point
 
 >emit noontime
 by one point
+
+
+
+
 
 
 >use yard ray on test set
@@ -723,12 +1202,24 @@ by one point
 >w
 
 
+
+
+
+
+
 >use TNT on ore zero
 by one point
 
 
 
+
+
+
 >n
+
+
+
+
 
 
 
@@ -739,11 +1230,23 @@ by one point
 by one point
 
 
+
+
+
+
 >use yard ray on redivider
 by one point
 
 
+
+
+
+
 >s
+
+
+
+
 
 
 >use x-ite tix on tix exit
