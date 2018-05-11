@@ -6,6 +6,8 @@
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
 
+* mistake_testing
+
 >finord
 
 >flee elf
