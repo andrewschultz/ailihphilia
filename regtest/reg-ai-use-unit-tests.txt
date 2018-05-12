@@ -1,207 +1,240 @@
-> uu trap art on stark rats
+# reg-ail-use-unit-tests.txt
+#
+# mistake/clue revealing tester
+# not attacked to the main walkthrough file
 
-"whatever's planned on the trap art might work, but not the trap art itself."
-> uu dirt rid on cassettes sac
+** game: /home/andrew/prt/debug-ailihphilia.ulx
+** interpreter: /home/andrew/prt/glulxe -q
 
-"the dirt rid wheezes but is unable to clean up the cassettes sac. you need something more powerful."
-> uu roto motor on kayak
+* use_unit_test
 
-"the kayak is not electrical, and besides, the roto motor is too small."
-> uu taboo bat on bomb mob
+# note to self: check for new ones every now and then
 
-"no way. you'd be outnumbered. you'd need stealth."
-> uu dna hand on yuge guy
+>z
 
-"the hand doesn't seem to want to move toward the yuge guy."
-> uu mr arm on yuge guy
+>uu bro orb on madam
+As you lift the Bro Orb to throw at Madam, you see yourself in the Mirror Rim. You don't look so great or heroic. In fact, you feel unusually self-conscious. More than you deserve to, you think. Besides, the Bro Orb might dissolve her or something, but you're not out to kill anyone.
 
-"mr. arm doesn't seem to want to move toward the yuge guy."
-> uu exam axe on porch crop
+>uu cave vac on gnu dung
+The Cave Vac sputters. You may need something more specifically suited to the, uh, material to clean up.
 
-"that might be overkill. the wash saw, on the other hand..."
-> uu exam axe on balsa slab
+>uu dna hand on yuge guy
+The hand doesn't seem to want to move toward the Yuge Guy.
 
-"you're not sure what to cut the slab into, and you don't need firewood."
-> uu roto motor on tao boat
+>uu dirt rid on cassettes sac
+The Dirt Rid wheezes but is unable to clean up the cassettes sac. You need something more powerful.
 
-"the tao boat is not electrical, and besides, the roto motor is too small."
-> uu gorge grog on yuge guy
+>uu dirt rid on gnu dung
+The Dirt Rid is ineffective. You may need something stronger.
 
-"the yuge guy doesn't drink, and neither does johnny. also, the yuge guy may or may not be a germaphobe."
-> uu taboo bat on yuge guy
+>uu dirt rid on go-by bog
+The bog is too big for that.
 
-"violence isn't the answer. the yuge guy is not repelled by moral turpitude."
-> uu taboo bat on me totem
+>uu epoch cope on revolt lover
+"Wish I could be interested in politics, but I'm not."
 
-"violence isn't the answer. the me totem is not repelled by moral turpitude."
-> uu dirt rid on gnu dung
+>uu gorge grog on yuge guy
+The Yuge Guy doesn't drink, and neither does Johnny. Also, the Yuge Guy may or may not be a germaphobe.
 
-"the dirt rid is ineffective. you may need something stronger."
-> uu trap art on revolt lover
+>uu gorge grog on cassettes sac
+That'd clean up the cassettes sac, but it'd probably dissolve it, too.
 
-"but the revolt lover gave it to you in the first place."
-> uu party trap on revolt lover
+>uu gorge grog on yard ray
+The Gorge Grog is pretty strong stuff, but you may need something even stronger.
 
-"'whoah! neat! that's a lot more useful than my art.'"
-> uu ti on revolt lover
+>uu me gem on me totem
+The egotistical forces in the gem and totem repel each other. Just as well. You don't know if you could survive if such insufferability synergized.
 
-"'hmm. a bit too mean for me. maybe it's more someone else's speed.'"
-> uu gold log on kayak
+>uu me gem on yuge guy
+That might make the Yuge Guy's ego too much to handle.
 
-"the gold log is too heavy to be an effective paddle."
-> uu enact cane on kayak
+>uu mr arm on yuge guy
+Mr. Arm doesn't seem to want to move toward the Yuge Guy.
 
-"the enact cane doesn't seem like the right tool to propel the kayak. it's more for chores."
-> uu sharp rahs on bro orb
+>uu null illun on revolt lover
+"I guess we all could use it a little. But someone else might need it more than me. Um, I hope."
 
-"you feel a shock--perhaps you approached the bro orb too eagerly! but it seems you were on the right track."
-> uu enact cane on rep popper
+>uu party trap on revolt lover
+"Whoah! Neat! That's a lot more useful than my art."
 
-"but that might bust your own rep, since you are the nearest person."
-> uu dork rod on kayak
+>uu rep popper on yuge guy
+It seems like the Rep Popper should work, but it doesn't, quite. Maybe there is something that is giving the Yuge Guy all his rep?
 
-"the dork rod is too weak and wimpy to be an effective paddle."
-> uu epoch cope on revolt lover
+>uu ti on revolt lover
+"Hmm. A bit too mean for me. Maybe it's more someone else's speed."
 
-"'wish i could be interested in politics, but i'm not.'"
-> uu stamp mats on tru yurt
+>uu trap art on revolt lover
+But the Revolt Lover gave it to you in the first place.
 
-"the stamp mats aren't a home-y sort of mat."
-> uu stamp mats on soot tattoos
+>uu ye key on diff id
+You wave Ye Key in front of the Diff ID. Nothing happens. The engraving on Ye Key seems to match up with what the Diff ID wants to see, but maybe you need something else.
 
-"hmm. if the soot tattoos had a pattern, that would be interesting. but they don't, yet."
-> uu taboo bat on test set
+>uu bunk nub on sleep eels
+That -- well, it almost works. But the bunk nub isn't shaped right to house that many small animals. Maybe it could be changed.
 
-"this isn't cricket. you do, however, need to use some weapon on the test set."
-> uu resale laser on made dam
+>uu cave vac on go-by bog
+The bog is too big for that.
 
-"there might be something behind the dam. but you need to be subtler looking for it."
-> uu null illun on revolt lover
+>uu demo med on elan ale
+No, combining alcohol and pills is a bad, bad idea.
 
-"'i guess we all could use it a little. but someone else might need it more than me. um, i hope.'"
-> uu pity tip on door frood
+>uu demo med on gorge grog
+No, combining alcohol and pills is a bad, bad idea.
 
-"the door frood is too good for a mere pity tip. well, in the door frood's mind."
-> uu cave vac on gnu dung
+>uu dork rod on kayak
+The dork rod is too weak and wimpy to be an effective paddle.
 
-"the cave vac sputters. you may need something more specifically suited to the, uh, material to clean up."
-> uu bunk nub on sleep eels
+>uu el doodle on known wonk
+The Known Wonk looks at El Doodle, thinks, and says "Ugh, sorry, never could decipher these things. No good rules to. Maybe you could use the edits tide, though."
 
-"that -- well, it almost works. but the bunk nub isn't shaped right to house that many small animals. maybe it could be changed."
-> uu radar on sleep eels
+>uu el doodle on revolt lover
+But the Revolt Lover pretty much offered it to you in the first place.
 
-"a radar isn't supposed to work this way, but somehow, you detect some bitterness at mammals in general. but it's secondary to needing a more comfortable place to sleep."
-> uu radar on go-by bog
+>uu el doodle on code doc
+"This isn't quite clear enough for me. If you could clean it up, though, I could help you."
 
-"the radar detects nothing. so there is probably no horribly bogy gob. but [if sage gas is off-stage]there are plenty of other places you could slip and fall and disappear forever[else]you got the sage gas, already[end if]."
-> uu wash saw on cassettes sac
+>uu elope pole on tao boat
+The Tao Boat is too big to control with the elope pole.
 
-"the wash saw isn't big enough to clean up the cassettes sac. you need a more powerful cleaner."
-> uu gorge grog on cassettes sac
+>uu elope pole on crag arc
+The pole is for navigation, not for vaulting.
 
-"that'd clean up the cassettes sac, but it'd probably dissolve it, too."
-> uu demo med on elan ale
+>uu elope pole on go-by bog
+The bog is too wide for that.
 
-"no, combining alcohol and pills is a bad, bad idea."
-> uu demo med on gorge grog
+>uu elope pole on lie veil
+The veil resists the pole. You need a more violent implement.
 
-"no, combining alcohol and pills is a bad, bad idea."
-> uu el doodle on known wonk
+>uu elope pole on made dam
+The pole is for navigation, not for vaulting.
 
-"the known wonk looks at el doodle, thinks, and says 'ugh, sorry, never could decipher these things. no good rules to. maybe you could use the edits tide, though.'"
-> uu el doodle on code doc
+>uu enact cane on kayak
+The enact cane doesn't seem like the right tool to propel the kayak. It's more for chores.
 
-"'this isn't quite clear enough for me. if you could clean it up, though, i could help you.'"
-> uu el doodle on revolt lover
+>uu enact cane on rep popper
+But that might bust your own rep, since you are the nearest person.
 
-"but the revolt lover pretty much offered it to you in the first place."
-> uu stamp mats on yahoo hay
+>uu exam axe on balsa slab
+You're not sure what to cut the slab into, and you don't need firewood.
 
-"the mats don't quite work on the hay. they might work better on something with more surface area."
-> uu troll ort on ergot ogre
+>uu exam axe on porch crop
+That might be overkill. The wash saw, on the other hand...
 
-"the ergot ogre mutters something unrepeatable about prejudiced people who can't tell the difference between them and trolls and don't want to. perhaps you need a more violent way to dispose of the ogre."
-> uu troll ort on cross orc
+>uu gate tag on diff id
+You wave the gate tag in front of the DIFF ID, which beeps for a second, then ... nothing. Maybe the gate tag (or its pattern) needs to be read a different way.
 
-"the cross orc mutters something unrepeatable about prejudiced people who can't tell the difference between them and trolls and don't want to. but the way it looks at you, you suspect it'd forgive you if you gave the right gift."
-> uu troll ort on kayo yak
+>uu gold log on kayak
+The gold log is too heavy to be an effective paddle.
 
-"as you hold the troll ort out, the kayo yak butts your hand! the troll ort goes flying. you walk over to pick it up. the yak seems weirdly attracted to it."
-> uu elope pole on go-by bog
+>uu pity tip on door frood
+The Door Frood is too good for a mere pity tip. Well, in the Door Frood's mind.
 
-"the bog is too wide for that."
-> uu dirt rid on go-by bog
+>uu poo coop on liar grail
+Maybe if the contents came from a bull and not a gnu, it would be appropriate (this is not a palindrome "joke.")
 
-"the bog is too big for that."
-> uu cave vac on go-by bog
+>uu poo coop on yuge guy
+That could be fun, but he might be too normalised to the stuff in the coop to do damage.
 
-"the bog is too big for that."
-> uu elope pole on crag arc
+>uu radar on go-by bog
+The radar detects nothing. So there is probably no horribly bogy gob. But there are plenty of other places you could slip and fall and disappear forever.
+>purloin sage gas
+>uu radar on go-by bog
+The radar detects nothing. So there is probably no horribly bogy gob. But you got the sage gas, already.
+>undo
+>undo
 
-"the pole is for navigation, not for vaulting."
-> uu elope pole on made dam
+>uu radar on sleep eels
+A radar isn't supposed to work this way, but somehow, you detect some bitterness at mammals in general. But it's secondary to needing a more comfortable place to sleep.
 
-"the pole is for navigation, not for vaulting."
-> uu elope pole on lie veil
+>uu resale laser on made dam
+There might be something behind the dam. But you need to be subtler looking for it.
 
-"the veil resists the pole. you need a more violent implement."
-> uu wash saw on crag arc
+>uu roto motor on kayak
+The kayak is not electrical, and besides, the roto motor is too small.
 
-"the crag arc is much too big to get anywhere[if ufo tofu is off-stage]. maybe there's a better way to find what's behind there[end if]."
-> uu wash saw on made dam
+>uu roto motor on tao boat
+The tao boat is not electrical, and besides, the roto motor is too small.
 
-"the made dam is much too big to get anywhere[if eroded ore is off-stage]. maybe there's a better way to find what's behind there[end if]."
-> uu wash saw on lie veil
+>uu sage gas on sharp rahs
+Hmm! The contrast between the two...that should work. But maybe you need some sort of intermediary that could hold them both.
 
-"not even the wash saw could clean off the lie veil. you need something much more brutal."
-> uu gorge grog on yard ray
+>uu sharp rahs on bro orb
+You feel a shock--perhaps you approached the Bro Orb too eagerly! But it seems you were on the right track.
 
-"the gorge grog is pretty strong stuff, but you may need something even stronger."
-> uu rep popper on yuge guy
+>uu soot tattoos on diff id
+The Diff-ID doesn't respond. Maybe you need a way to put them on you, somehow.
 
-"it seems like the rep popper should work, but it doesn't, quite. maybe there is something that is giving the yuge guy all his rep?"
-> uu bro orb on madam
+>uu stamp mats on tru yurt
+The stamp mats aren't a home-y sort of mat.
 
-"as you lift the bro orb to throw at madam, you see yourself in the mirror rim. you don't look so great or heroic. in fact, you feel unusually self-conscious. more than you deserve to, you think. besides, the bro orb might dissolve her or something, but you're not out to kill anyone."
-> uu poo coop on yuge guy
+>uu stamp mats on soot tattoos
+Hmm. If the soot tattoos had a pattern, that would be interesting. But they don't, yet.
 
-"that could be fun, but he might be too normalised to the stuff in the coop to do damage."
-> uu poo coop on liar grail
+>uu stamp mats on yahoo hay
+The mats don't quite work on the hay. They might work better on something with more surface area.
 
-"maybe if the contents came from a bull and not a gnu, it would be appropriate (this is not a palindrome 'joke.')"
-> uu elope pole on tao boat
+>uu state tats on diff id
+You can just walk north to get through.
 
-"the tao boat is too big to control with the elope pole."
-> uu yard ray on diktat kid
+>uu taboo bat on me totem
+Violence isn't the answer. The ME Totem is not repelled by moral turpitude.
 
-"the diktat kid laughs as you point the yard ray. 'destroy me, but my work will remain!'"
-> uu yard ray on tru hurt
+>uu taboo bat on yuge guy
+Violence isn't the answer. The Yuge Guy is not repelled by moral turpitude.
 
-"the tru hurt is dangerous, but maybe you should use the yard ray on something even more harmful."
-> uu yard ray on waster fretsaw
+>uu taboo bat on bomb mob
+No way. You'd be outnumbered. You'd need stealth.
 
-"the waster fretsaw is dangerous, but maybe you should use the yard ray on something even more harmful."
-> uu sage gas on sharp rahs
+>uu taboo bat on test set
+This isn't cricket. You do, however, need to use SOME weapon on the test set.
 
-"hmm! the contrast between the two...that should work. but maybe you need some sort of intermediary that could hold them both."
-> uu wash saw on stark rats
+>uu trap art on stark rats
+Whatever's planned on the trap art might work, but not the trap art itself.
 
-"you couldn't catch and hold a rat long enough to cut it with the wash saw."
-> uu ye key on diff id
+>uu troll ort on cross orc
+The cross orc mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. But the way it looks at you, you suspect it'd forgive you if you gave the right gift.
 
-"you wave ye key in front of the diff id. nothing happens. the engraving on ye key seems to match up with what the diff id wants to see, but maybe you need something else."
-> uu me gem on yuge guy
+>uu troll ort on ergot ogre
+The ergot ogre mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. Perhaps you need a more violent way to dispose of the ogre.
 
-"that might make the yuge guy's ego too much to handle."
-> uu me gem on me totem
+>uu troll ort on kayo yak
+As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up. The yak seems weirdly attracted to it.
 
-"the egotistical forces in the gem and totem repel each other. just as well. you don't know if you could survive if such insufferability synergized."
-> uu gate tag on diff id
+>uu wash saw on cassettes sac
+The wash saw isn't big enough to clean up the cassettes sac. You need a more powerful cleaner.
 
-"you wave the gate tag in front of the diff id, which beeps for a second, then ... nothing. maybe the gate tag (or its pattern) needs to be read a different way."
-> uu soot tattoos on diff id
+>uu wash saw on crag arc
+The crag arc is much too big to get anywhere. Maybe there's a better way to find what's behind there.
 
-"the diff-id doesn't respond. maybe you need a way to put them on you, somehow."
-> uu state tats on diff id
+>purloin ufo tofu
+>uu wash saw on crag arc
+The crag arc is much too big to get anywhere.
+!Maybe there's
+>undo
+>undo
 
-"you can just walk north to get through."
+>uu wash saw on lie veil
+Not even the wash saw could clean off the lie veil. You need something much more brutal.
+
+>uu wash saw on made dam
+The made dam is much too big to get anywhere. Maybe there's a better way to find what's behind there.
+
+>purloin eroded ore
+>uu wash saw on made dam
+The made dam is much too big to get anywhere.
+!Maybe there's
+>undo
+>undo
+
+>uu wash saw on stark rats
+You couldn't catch and hold a rat long enough to cut it with the wash saw.
+
+>uu yard ray on diktat kid
+The Diktat Kid laughs as you point the yard ray. "Destroy me, but my work will remain!"
+
+>uu yard ray on tru hurt
+The Tru Hurt is dangerous, but maybe you should use the yard ray on something even more harmful.
+
+>uu yard ray on waster fretsaw
+The Waster Fretsaw is dangerous, but maybe you should use the yard ray on something even more harmful.
+
