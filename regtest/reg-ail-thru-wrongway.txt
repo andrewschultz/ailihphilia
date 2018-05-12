@@ -45,10 +45,20 @@ You don't ever need to use IN in the game. Just the four cardinal directions.
 >out
 OUT or any synonym is never necessary in the game, though if there is only one exit direction, you'll go that way.
 
+>e
+
+>n
+
+>get trap art
+
 >w
 Wall! Aw.
 >e
 Wall! Aw.
+
+>s
+
+>s
 
 >w
 Dave says, "I can't let you do that, Hal. Ah!" There must be a succinct, clever way to sneak around him!
@@ -56,6 +66,8 @@ Dave says, "I can't let you do that, Hal. Ah!" There must be a succinct, clever 
 Wall! Aw.
 >e
 Wall! Aw.
+
+>evade dave
 
 >get all
 
@@ -96,6 +108,8 @@ by one point
 #got bunk nub
 
 >e
+
+>get all
 
 >n
 It probably gets even seedier behind the navy van. Best just to go back east.
@@ -282,6 +296,8 @@ by one point
 >e
 
 >s
+
+>get troll ort
 
 >w
 Wall! Aw.

@@ -9,8 +9,20 @@
 >pack cap
 by one point
 
+>e
+
+>n
+
+>get trap art
+
 >use trap art on revolt lover
 WRONG
+
+>s
+
+>s
+
+>evade dave
 
 >get all
 
@@ -62,6 +74,8 @@ WRONG
 >undo
 
 >e
+
+>get all
 
 >use pity tip on navy van
 by one point
@@ -202,7 +216,7 @@ by one point
 
 >use wash saw on rift fir
 by one point
-undo
+>undo
 
 >use wash saw on past sap
 by one point
@@ -219,6 +233,8 @@ by one point
 >e
 
 >s
+
+>get troll ort
 
 >use puce cup on wordy drow
 by one point

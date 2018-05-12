@@ -21,6 +21,18 @@ by one point
 >pack cap
 by one point
 
+>e
+
+>n
+
+>get trap art
+
+>s
+
+>s
+
+>evade dave
+
 >get all
 
 >w
@@ -49,6 +61,8 @@ by one point
 #got bunk nub
 
 >e
+
+>get all
 
 >use pity tip on eye
 by one point
@@ -162,6 +176,8 @@ by one point
 >e
 
 >s
+
+>get troll ort
 
 >use puce cup on liar grail
 by one point

@@ -155,7 +155,7 @@ There's nothing else special to do with the pace cap
 >undo
 >undo
 
-===2
+==t2
 #mistake test for rub [text]
 >rub zozimus
 There's no one named Burt or Babbur or Liwilbur anything like that in this game, so you don't have to rub anyone or anything.
@@ -232,7 +232,7 @@ Wall! Aw.
 >e
 Wall! Aw.
 
-===2
+==t2
 #mistake test for guh/thug/guh thug
 >guh
 That's what Dave is, but you need to figure how to get rid of him.
@@ -240,7 +240,8 @@ That's what Dave is, but you need to figure how to get rid of him.
 That's what Dave is, but you need to figure how to get rid of him.
 >guh thug
 That's what Dave is, but you need to figure how to get rid of him.
-===a
+
+>evade dave
 
 ==t2
 #mistake test for evade dave
@@ -443,7 +444,7 @@ While searching for a boost, you're apprehended by a crank narc! I'm very disapp
 #mistake test for may yam
 >may yam
 You don't want the yam to age. It would probably start to smell bad.
-#mistake test for nacelle can
+
 >get all
 
 ==t3
@@ -886,7 +887,7 @@ There's no rink nir. Near.
 ==t5
 >use wash saw on rift fir
 by one point
-undo
+>undo
 
 >use wash saw on past sap
 by one point
@@ -904,7 +905,7 @@ by one point
 
 >s
 
-===2
+==t2
 #mistake test for fra zarf
 >fra zarf
 This would send you on a long journey to Hadean Lands. One you might enjoy so much, you'll forget about Yelpley!
