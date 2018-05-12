@@ -16,7 +16,7 @@ Flat out TAKEing the Pact Cap doesn't work. TAKE says maybe if it were a KAT. GE
 
 You need some sort of palindrome ending in CAP, and the simplest is PAC? CAP.
 
-(+1) > PACK CAP
+(+1) >PACK CAP
 
 lets you take it.
 
@@ -139,23 +139,23 @@ You now have access to a few more rooms. But let's go cover a few we've seen, so
 
 >S.E.E.E.S.GET TROLL ORT
 
-(+1) > USE PUCE CUP ON LIAR GRAIL
+(+1) >USE PUCE CUP ON LIAR GRAIL
 
 >N.W.W.W.N.E
 
 Trivia: you only get a point the first time you fill up the puce cup. So if you'd filled it with sod first, you'd have gotten a point for the sod.
 
-> USE PUCE CUP ON DOSE SOD
+>USE PUCE CUP ON DOSE SOD
 
 >W.S.E.E.E.S.S
 
-(+1) > USE PUCE CUP ON BOND NOB
+(+1) >USE PUCE CUP ON BOND NOB
 
 Let's loot what's behind the nob, now.
 
 >W.GET ALL.E.E
 
-(+1) > USE STAMP MATS ON SLATE METALS
+(+1) >USE STAMP MATS ON SLATE METALS
 
 Ooh, a key! Not just any key, but YE KEY!
 
@@ -163,27 +163,27 @@ And maybe we can help the Gulf Lug now.
 
 >W.N.N.W.W.W.N.N
 
-(+1) > USE DEMO MED ON GULF LUG
+(+1) >USE DEMO MED ON GULF LUG
 
 A reward! We don't have much to buy, so...
 
 >S.S.E.E.E.E
 
-(+1) > USE CASH SAC ON CROSS ORC
+(+1) >USE CASH SAC ON CROSS ORC
 
 >S
 
 We can do a bit of the work in Deli, Tiled. Even change it.
 
-(+1) > USE YOB ATTABOY ON SNIFFINS
+(+1) >USE YOB ATTABOY ON SNIFFINS
 
 You're kicked out, but you can just go back in.
 
 >S
 
-(+1) > USE ELAN ALE ON SNIFFINS
+(+1) >USE ELAN ALE ON SNIFFINS
 
-(+1) > STAND NAT'S
+(+1) >STAND NAT'S
 
 >N.W.W.S.W
 
@@ -193,7 +193,7 @@ You're kicked out, but you can just go back in.
 
 >E.N.E.S.S.W
 
-(+1) > USE CAVE VAC ON CASSETTES SAC
+(+1) >USE CAVE VAC ON CASSETTES SAC
 
 >E.N.N.E
 
@@ -205,7 +205,7 @@ You're kicked out, but you can just go back in.
 
 >GET ALL
 
-(+1) > USE YE KEY ON ETAGE GATE
+(+1) >USE YE KEY ON ETAGE GATE
 
 >N
 
@@ -219,7 +219,7 @@ Bam! There goes the Psi Wisp. Back to work. We have some stuff to convert, now, 
 
 >WORK ROW
 
-(+1) > USE STINKY KNITS ON ROTATOR
+(+1) >USE STINKY KNITS ON ROTATOR
 
 >E.N.E.E.N.N
 
@@ -249,8 +249,8 @@ Now the Gold Log is shiny, but it's not particularly useful, and it's not you. I
 
 We can stop here to make passage to not one, but two, new places.
 
-(+1) > USE POO COOP ON GNU DUNG
-(+1) > USE POO COOP ON TURF RUT
+(+1) >USE POO COOP ON GNU DUNG
+(+1) >USE POO COOP ON TURF RUT
 
 >W
 
@@ -324,7 +324,7 @@ Now you have all the ingredients for the North-Tron, and you need to activate th
 
 >S.S
 
-(+1) > USE WASH SAW ON PORCH CROP
+(+1) >USE WASH SAW ON PORCH CROP
 
 >N.E
 

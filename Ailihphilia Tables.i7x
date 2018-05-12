@@ -1039,6 +1039,7 @@ randtxt
 "D00d!"
 "Dammit, I'm mad!"
 "Dark. Rad!"
+"Delivery: reviled!"
 "Guff! Ug!"
 "Hell, eh?"
 "Hoot! Ooh!"

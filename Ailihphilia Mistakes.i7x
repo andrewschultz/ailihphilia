@@ -509,6 +509,8 @@ understand "pith tip" as a mistake ("It's already pretty pithy, and there's not 
 
 understand "track cart" as a mistake ("[if DWELT LEWD is off-stage]Right idea, but the cart isn't going anywhere[else]It's not going anywhere. You already unlocked a secret, anyway[end if].[mis of 193]") when tract cart is quicknear.
 
+understand "worf row" as a mistake ("No Enterprise security officer arrives to help you.[mis of 111]") when player is in Worn Row.
+
 understand "worm row" as a mistake ("[if Worn Row is worny]Ugh! You don't need to make this place worse[else]You already upgraded Worn Row. No need to make it worse than it was[red-clue][end if].[mis of 194]") when player is in Worn Row.
 
 understand "worsts row" and "worses row" as a mistake ("It [if Worn Row is worny]is[else]was[end if] bad enough already.[mis of 195]") when player is in Worn Row.
