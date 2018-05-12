@@ -8,10 +8,14 @@
 
 * mistake_testing
 
+#otherwise UNDO may not have the proper effect
+>z
+
 >finord
 
->flee elf
->Flea elf
+>flex elf
+NOTE: this was a specific reject for a good try. For the most part, you don't need to riff on any item after the pact cap, but enough good guesses will tell you how to get secret points.
+>flea elf
 >fleece elf
 >pa cap
 
@@ -20,22 +24,23 @@
 >poop
 >pac cap
 THINK, or recall,
-/swear "right"
+!swear "right"
 >undo
 >undo
 >pac cap
-/THINK, or recall,
+!THINK, or recall,
 swear "right"
 
 >pacs cap
 >pacd cap
 >pact cap
+>pack cap
 
 >e
 # here 2 of the same mistake should not trigger the clue
 >yawn way
 >yawl way
-/THINK, or recall,
+!THINK, or recall,
 
 >n
 >art ecetra
@@ -57,44 +62,50 @@ ask for AID
 >sto nots
 >sto pots
 >sto sots
+>w
 >borg rob
 >bork rob
 LOOK differently
 
 # #5
 >bore rob
+>worf row
 >worm row
 >wort row
 >worsts row
 >word row
 >get ti
 >track cart
-get the SCoRE differently
+get the SCORE differently
 
 # #6
 >pita tip
 >pith tip
->>pi tip
+>pi tip
 >work row
 >rei trap art
+>e
+>n
+>w
+>w
 >seer brees
 >seer frees
 find an extra book in
 
 # #7
 >star rats
->stark rats
+>stare rats
 >start rats
 >use trap on rats
 by one point
 >gi fig
+>gif fig
+apologize for mammals to some non-mammals
+>undo
 >s
 >gif fig
 apologize for mammals to the eels
->undo
->undo
->gif fig
-apologize for mammals to some non-mammals
+>n
 
 # #8
 >e
@@ -117,7 +128,7 @@ help the cats in a barn-ish
 
 # #9
 >gt work row
->rei stock cots
+>rev bunk nub
 >gt ooze zoo
 >eel flee
 >eel glee
@@ -128,8 +139,7 @@ help the cats in a barn-ish
 >yak kay
 buzzing in a barn-ish
 >undo
->undo
->e
+>gonear moo room
 >moo boom
 buzzing in Moo Room
 
@@ -152,6 +162,7 @@ get one more item from the northeast room
 >n
 >kind nik
 be nice to an opossum
+>undo
 >gonear le babel
 >bron orb
 be nice to the opossum
@@ -165,4 +176,5 @@ be nice to the opossum
 >kine nik
 >rife fir
 >riff fir
-/error
+!error
+!Error

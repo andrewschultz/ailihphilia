@@ -298,7 +298,11 @@ index map with Dirge Grid mapped east of Toll Lot.
 volume unsorted
 
 to say etg:
-	end the story;
+	say "[paragraph break]    * * * Deliverer? Re-reviled! * * *[paragraph break]";
+	wfak;
+	say "Eh, nah, that's too mean. Let's pretend that didn't happen.[paragraph break]";
+	wfak;
+	say "[b][location of player][r][paragraph break]";
 
 section part of a puzzle but still floating
 
@@ -562,6 +566,9 @@ after reading a command:
 	if in-beta is true and the player's command matches the regular expression "^<;\*>":
 		say "(Noted.)[paragraph break]";
 		reject the player's command;
+	if the player's command matches the regular expression "<A-Z>":
+		let XX be the player's command;
+		change the text of the player's command to "[XX in lower case]";
 	if the player's command matches the regular expression "<^a-z 0-9>":
 		if no-punc-flag is false:
 			say "(NOTE: you don't need to use anything but letters to get through the game. The parser simply strips out non-alphabetic characters.)[paragraph break]";
@@ -1295,7 +1302,7 @@ understand "use [something] with [something]" as useoning it with.
 to build-the-tron:
 	move north tron to Fun Nuf;
 	now all tronparts are in devreserved; [ic]
-	if epicer recipe is nox, say "[if epicer recipe is nox]You're clueless how, at first. But then you take a look at the epicer recipe[else]You build the North-Tron with the instructions from[end if] the epicer recipe after a few 'How? OH!' moments. It points north and blasts a hole with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break]Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
+	say "[if epicer recipe is nox]You're clueless how, at first. But then you take a look at the epicer recipe[else]You build the North-Tron with the instructions from[end if] the epicer recipe after a few 'How? OH!' moments. It points north and blasts a hole with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break]Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
 	moot epicer recipe;
 	now Dirge Grid is mapped north of Fun Nuf;
 	now Fun Nuf is mapped south of Dirge Grid;
@@ -1310,7 +1317,7 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 		say "Not with Ian around.";
 		continue the action;
 	if i1 is liquid and i2 is liquid:
-		say "Those are both too liquid.";
+		say "Those are both too liquid to go together.";
 	else if i1 is solid and i2 is solid:
 		say "Those are both too solid to go together.";
 	else:
@@ -1328,6 +1335,11 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 			verify-done rev-first-food-combo rule;
 			say "You suspect something is behind there! Maybe you can find another combination, you'll see what.";
 			now chef-yet is true;
+
+definition: a thing (called th) is notyet:
+	if th is off-stage, yes;
+	if th is in TempMet, yes;
+	no;
 
 to decide what number is useprio of (th - a thing): [saving a lot of space for numbers. The higher the number, the more likely it is to be a 2nd item]
 	if th is the player, decide on 25;
@@ -1349,8 +1361,12 @@ to verify-done (ru - a rule):
 check useoning it with:
 	if noun is second noun, say "It's not productive to use something on itself, even with this game being full of palindromes." instead;
 	if noun is a workable and second noun is a workable, say "The machines are fixed in place. You can't use one on the other." instead;
-	if noun is a helpdoc or second noun is a helpdoc, say "All the help literature you find is for review only." instead;
 	if useprio of noun > useprio of second noun, try useoning second noun with noun instead;
+	if noun is a helpdoc or second noun is a helpdoc:
+		if noun is epicer recipe and second noun is a tronpart:
+			if number of off-stage tronparts is 1, say "You can't do too much with just [the second noun]." instead;
+		else:
+			say "All the help literature you find is for review only." instead;
 	if second noun is the player:
 		if noun is soot tattoos, say "That'll work, when you find a way to make a pattern of the soot tattoos. They're too plain, now." instead;
 		say "You never need to use anything explicitly on yourself." instead;
@@ -1370,11 +1386,11 @@ check useoning it with:
 	if noun is a tronpart or noun is epicer recipe:
 		if second noun is a tronpart or noun is epicer recipe:
 			if player does not have epicer recipe, say "Those two things seem to go together, but you don't have detailed instructions." instead;
-			if number of off-stage tronparts is 1, say "You see how everything fits--even the [random off-stage tronpart], which you don't have yet. Rats, so close!" instead;
-			if number of off-stage tronparts is 2, say "That looks like the start of something. But you still need to find a couple things." instead;
-			if player is not in Fun Nuf:
-				if madam is quicknear or Yuge Guy is quicknear, say "Deal with [if player is in Red Roses Order]Madam[else]the Yuge Guy[end if] first." instead;
-				say "You might be better served using these things in Fun [']Nuf. Go there?";
+			if number of notyet tronparts is 1, say "[recxcheck of false]You see how everything fits--even the [random notyet tronpart], which you don't have yet. Rats, so close!" instead;
+			if number of notyet tronparts is 2, say "[recxcheck of false]That looks like the start of something. But you still need to find a couple things." instead;
+			if player is not in Fun Nuf: [this could happen, since the martini tram only stays in Fun Nuf.]
+				if madam is quicknear or Yuge Guy is quicknear, say "[recxcheck of false]. But you'll need to deal with [if player is in Red Roses Order]Madam[else]the Yuge Guy[end if] first." instead;
+				say "[recxcheck of false]You might be better served using these things in Fun [']Nuf, where the martini tram is. Go there?";
 				if the player no-consents, say "OK, but protip: that's where you need to assemble things." instead;
 				move player to Fun Nuf, without printing a room description;
 			score-inc; [Dim Mid/USE TNT ON ORE ZERO]
@@ -1467,16 +1483,8 @@ a machine message rule for a thing (called t):
 	if t is a tronpart, say "No, [the t] [if epicer recipe is xed]is[else]seems[end if] too important." instead;
 	if t is exhausted, say "You already tried everything, and nothing worked." instead;
 	if t is nat's tan, say "Nat's Tan is pretty much hopeless. You'll need to fob it off on someone or something." instead;
-	if t is listed in postmachines:
-		say "The [second noun] hums ominously as you bring [the t] close. You already used a machine to make [the t]. Maybe you should do something else." instead;
-	repeat through table of goodacts:
-		unless there is a use1 entry, next;
-		say "[t] [use1 entry] [use2 entry].";
-		if use2 entry is not a workable, next;
-		unless there is a use3 entry, next; [?? should never happen]
-		say "[t] [use1 entry] [use2 entry].";
-		if t is use1 entry, say "Nothing happens, but you feel you must be close, here." instead;
-		if t is use3 entry, say "The [second noun] hums a bit as you bring [the t] close. You already used a machine to make [the t]. Maybe you should do something else." instead; [?? may be duplicate code]
+	if t is listed in postmachines, say "The [second noun] hums ominously as you bring [the t] close. You already used a machine to make [the t]. Maybe you should do something else." instead;
+	if t is listed in premachines, say "Nothing happens. And you felt optimistic there! Hmm." instead;
 	if second noun is reifier, now t is reified;
 	if second noun is rotator, now t is rotated;
 	if second noun is reviver, now t is revived;
@@ -4596,7 +4604,10 @@ the bomb mob are plural-named people. description is "They're ignoring you, and 
 
 understand "poor troop" and "poor/troop" as bomb mob when DNA hand is moot.
 
+TNT-test is a truth state that varies. [needs to be hear and not behind a "not for release" block]
+
 instead of doing something with TNT when bomb mob has TNT:
+	if TNT-test is true, continue the action;
 	if current action is useoning, continue the action;
 	if action is procedural, continue the action;
 	say "[if player has epicer recipe]You need a sneaky way to get the TNT[else]You aren't sure what you'd want with the TNT, yet[end if]." instead;
@@ -5233,10 +5244,15 @@ understand the command "deep speed" as something new.
 understand "deep speed" as deepspeeding.
 understand "deepspeed" as deepspeeding.
 
+to say recxcheck of (speedy - a truth state) :
+	if player has epicer recipe and epicer recipe is nox:
+		say "[if speedy is true] (examining the epicer recipe first) [else]You examine the epicer recipe first. You haven't, yet.[paragraph break][end if]";
+		now epicer recipe is xed;
+
 carry out deepspeeding:
 	abide by the rev-check rule;
 	now deep-speeding is true;
-	say "DEEP SPEEDing to near the end...";
+	say "DEEP SPEEDing to near the end[recxcheck of true]...";
 	try revovering;
 	now deep-speeding is false;
 	the rule succeeds;
@@ -5264,7 +5280,7 @@ this is the rev-check rule:
 
 carry out revovering:
 	abide by the rev-check rule;
-	if deep-speeding is false, say "Attempting to REV OVER...";
+	if deep-speeding is false, say "Attempting to REV OVER[recxcheck of true]...";
 	now global-delay is 0;
 	let count be 0;
 	now revving-over is true;
@@ -5916,7 +5932,9 @@ to decide which book is cur-book:
 
 machineables is a list of things variable. machineables is {stinky knits, gold log, you buoy, bunk nub, Dirt Rid, eroded ore, trap art, DNA band, not-a-baton}. [?? if we use this a lot maybe we should make a property]
 
-postmachines is a list of things variable. postmachines is { brag garb, dork rod, ME gem, stock cots, cave vac, ore zero, party trap, DNA hand, taboo bat}.
+postmachines is a list of things variable. postmachines is { brag garb, dork rod, ME gem, stock cots, cave vac, ore zero, party trap, DNA hand, taboo bat }.
+
+premachines is a list of things variable. premachines is { bunk nub, Dirt Rid, eroded ore, gold log, not-a-baton, stinky knits, straw arts, trap art, you buoy }.
 
 this is the got-machine-fodder rule:
 	repeat with Q running through machineables:
@@ -6145,7 +6163,7 @@ funstuff	mclu	finord	dorule	cluey
 "PEEP instead of looking"	false	4	peep-yet rule	"LOOK differently"
 "STATS to get the score"	false	5	stats-yet rule	"get the SCORE differently"
 "TRACE CART to find an 'extra' book"	false	6	cart-traced rule	"find an extra book in [if ever-wordrow is true]the tract cart[else]a cart containing books[end if]"
-"SLAM MAMMALS around the eels"	false	7	slam-yet rule	"apologize for mammals to [if Ooze Zoo is unvisited]to some non-mammals[else]the eels[end if]"
+"SLAM MAMMALS around the eels"	false	7	slam-yet rule	"apologize for mammals to [if Ooze Zoo is unvisited]some non-mammals[else]the eels[end if]"
 "STACK CATS to help the senile felines"	false	8	cats-stacked rule	"help the cats in [moo-room-vis]"
 "SEE BEES in Moo Room"	false	9	bees-seen rule	"notice the source of the buzzing in [moo-room-vis]"
 "BALM LAB in the Bald Lab"	false	10	balm-yet rule	"get one more item [if Pro Corp is unvisited]from the northeast room[else]from [Pro Corp][end if][if bald-lab is true] after looting it[end if]"
@@ -6360,6 +6378,19 @@ when play begins (this is the make sure everyone is chatty rule):
 when play begins (this is the miscellaneous deep testing rule):
 	if debug-state is true, try percing;
 
+chapter tntting
+
+tntting is an action out of world.
+
+understand the command "tntt" as something new.
+
+understand "tntt" as tntting.
+
+carry out tntting:
+	now TNT-test is whether or not TNT-test is false;
+	say "TNT test is now [on-off of TNT-test]. Best not to run a walkthrough while it's on.";
+	the rule succeeds;
+
 chapter uuing
 
 uuing is an action applying to two visible things.
@@ -6371,13 +6402,21 @@ understand "uu [any thing] on [any thing]" as uuing.
 carry out uuing:
 	let L1 be TempMet;
 	let L2 be TempMet;
+	let O1 be whether or not noun is off-stage;
+	let O2 be whether or not second noun is off-stage;
 	if noun is not off-stage and noun is not carried, now L1 is location of noun;
 	if second noun is not off-stage and second noun is not carried, now L2 is location of second noun;
 	if player does not carry noun, move noun to location of player;
 	if player does not carry second noun, move second noun to location of player;
 	try useoning noun with second noun;
-	move noun to L1;
-	move second noun to L2;
+	if O1 is true:
+		now noun is off-stage;
+	else:
+		move noun to L1;
+	if O2 is true:
+		now second noun is off-stage;
+	else:
+		move second noun to L2;
 	the rule succeeds.
 
 chapter adeing
