@@ -3,6 +3,8 @@
 # takes the table of specific rejects and goes through each combination
 #
 
+import re
+
 in_use_table = False
 header_next = False
 
@@ -26,11 +28,13 @@ with open("story.ni") as file:
             if not line.strip() or '\t' not in line:
                 in_use_table = False
                 continue
-            la = line.lower().strip().split("\t")
+            la = line.strip().split("\t")
             if la[0] == '--': continue
-            cmd = "uu {:s} on {:s}".format(la[0], la[1])
+            cmd = "uu {:s} on {:s}".format(la[0].lower(), la[1].lower())
             reg.write("> {:s}\n".format(cmd))
-            reg.write("\n{:s}\n".format(la[2]))
+            actual_text = re.sub("^'", "\"", la[2][1:-1])
+            actual_text = re.sub("'$", "\"", actual_text)
+            reg.write("{:s}\n\n".format(actual_text))
             au3.write("send(\"{:s}{{enter}}\")\n\n".format(cmd))
             au3.write("sleep(500)\n\n".format(cmd))
 

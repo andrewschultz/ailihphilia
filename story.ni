@@ -638,7 +638,7 @@ to decide whether the action is procedural: [aip]
 	if listening, yes;
 	no;
 
-to decide whether the action is pro-and-use: [aip2]
+to decide whether the action is pro-and-use: [aip2] [redefined in debug part]
 	if useoning, yes;
 	if the action is procedural, yes;
 	no;
@@ -1389,7 +1389,7 @@ check useoning it with:
 			if number of notyet tronparts is 1, say "[recxcheck of false]You see how everything fits--even the [random notyet tronpart], which you don't have yet. Rats, so close!" instead;
 			if number of notyet tronparts is 2, say "[recxcheck of false]That looks like the start of something. But you still need to find a couple things." instead;
 			if player is not in Fun Nuf: [this could happen, since the martini tram only stays in Fun Nuf.]
-				if madam is quicknear or Yuge Guy is quicknear, say "[recxcheck of false]. But you'll need to deal with [if player is in Red Roses Order]Madam[else]the Yuge Guy[end if] first." instead;
+				if madam is quicknear or Yuge Guy is quicknear, say "[recxcheck of false]But you'll need to deal with [if player is in Red Roses Order]Madam[else]the Yuge Guy[end if] first." instead;
 				say "[recxcheck of false]You might be better served using these things in Fun [']Nuf, where the martini tram is. Go there?";
 				if the player no-consents, say "OK, but protip: that's where you need to assemble things." instead;
 				move player to Fun Nuf, without printing a room description;
@@ -1445,8 +1445,8 @@ check useoning it with:
 				try useoning second noun with noun;
 				the rule succeeds;
 	repeat through table of specific use rejects:
-		if noun is use1 entry and second noun is use2 entry:
-			say "[babble entry][line break]" instead;
+		if noun is use1 entry and second noun is use2 entry, say "[babble entry][line break]" instead;
+		if noun is use2 entry and second noun is use1 entry, say "[babble entry][line break]" instead;
 	if second noun is a workable, abide by the machine message rules for the noun; [order is important here. This can get trumped if placed below the following rules, but it is specific to Work Row, so it needs to be here.]
 	let found-shift be false;
 	repeat through table of shiftables:
@@ -2607,11 +2607,11 @@ the redivider is scenery in Dirge Grid. "[if Diktat Kid is moot]It's broken down
 
 chapter tru hurt
 
-the Tru Hurt is peripheral scenery in Dirge Grid. "The Tru Hurt is here, and it's aimed at you!"
+the Tru Hurt is semiperipheral scenery in Dirge Grid. "The Tru Hurt is here, and it's aimed at you!"
 
 chapter waster fretsaw
 
-the waster fretsaw is peripheral scenery in Dirge Grid. "The less thought of, the better. Without the Diktat Kid to operate it, it'll be less harmful."
+the waster fretsaw is semiperipheral scenery in Dirge Grid. "The less thought of, the better. Without the Diktat Kid to operate it, it'll be less harmful."
 
 chapter emiting
 
@@ -6679,6 +6679,14 @@ carry out noxing:
 	else:
 		say "You can't nox/xed [noun].";
 	the rule succeeds.
+
+chapter worth a try
+
+to decide whether the action is pro-and-use: [aip2]
+	if useoning, yes;
+	if uuing, yes;
+	if the action is procedural, yes;
+	no;
 
 chapter stuff we can comment out
 
