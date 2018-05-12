@@ -1,7 +1,6 @@
 ## reg-ail-thru-gt.txt
 
 ## walkthrough with gt when possible
-
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
 
@@ -22,7 +21,6 @@ by one point
 >pack cap
 by one point
 
-
 >get all
 
 >w
@@ -36,8 +34,8 @@ by one point
 >get TO IDIOT
 
 >gt art xtra
->n
 
+>n
 
 >use TO IDIOT on Door Frood
 by one point
@@ -83,16 +81,15 @@ by one point
 >get epoch cope
 
 >gt fun nuf
+
 >x recipe
 
 >w
-
 
 >use party trap on stark rats
 by one point
 
 >n
-
 
 >use epoch cope on King Nik
 by one point
@@ -100,7 +97,6 @@ by one point
 >s
 
 >s
-
 
 >use stock cots on sleep eels
 by one point
@@ -114,9 +110,11 @@ by one point
 >get poo coop
 
 >gt word row
+
 >get yob attaboy
 
 >gt yawn way
+
 >puff up
 by one point
 
@@ -125,10 +123,10 @@ by one point
 >pull up
 by one point
 
-
 >get puce cup
 
 >gt cold loc
+
 >use wash saw on past sap
 by one point
 
@@ -145,20 +143,19 @@ by one point
 
 >s
 
-
 >use puce cup on liar grail
 by one point
 
 >gt cold loc
+
 >e
 
 >use puce cup on dose sod
 !by one point
 
-
 >gt swept pews
->s
 
+>s
 
 >use puce cup on Bond Nob
 by one point
@@ -172,20 +169,20 @@ by one point
 
 >e
 
-
 >use stamp mats on slate metals
 by one point
 #lost stamp mats
 
 >gt cold loc
+
 >n
 
 >use demo med on gulf lug
 by one point
 
 >gt emo dome
->e
 
+>e
 
 >use cash sac on cross orc
 by one point
@@ -197,7 +194,6 @@ by one point
 
 >s
 
-
 >use Elan Ale on Sniffins
 by one point
 #got gorge grog
@@ -207,6 +203,7 @@ by one point
 #got nat's
 
 >gt word row
+
 >work row
 
 >use Dirt Rid on reviver
@@ -214,20 +211,20 @@ by one point
 #got dirt rid
 
 >gt drawl ward
+
 >w
 
 >use cave vac on cassettes sac
 by one point
 #lost cave vac
 
-
 >gt toll lot
+
 >use radar on crag arc
 by one point
 #got ufo tofu
 
 >n
-
 
 >deny ned
 by one point
@@ -240,6 +237,7 @@ by one point
 >n
 
 >gt work row
+
 >Worn Row
 by one point
 
@@ -248,24 +246,24 @@ by one point
 >use stinky knits on rotator
 by one point
 
-
 >word row
 
 >gt pro corp
->get all
 
+>get all
 
 >use Gorge Grog on butene tub
 by one point
 
-
 >gt word row
+
 >work row
 
 >use gold log on rotator
 by one point
 
 >gt moo room
+
 >use SOME DEMOS on yahoo hay
 by one point
 
@@ -278,6 +276,7 @@ by one point
 by one point
 
 >gt work row
+
 >word row
 
 >get NULL ILLUN
@@ -285,8 +284,8 @@ by one point
 >work row
 
 >gt seer trees
->w
 
+>w
 
 >use poo coop on gnu dung
 by one point
@@ -296,12 +295,10 @@ by one point
 
 >w
 
-
 >use radar on made dam
 by one point
 
 >n
-
 
 >use NULL ILLUN on Known Wonk
 by one point
@@ -311,10 +308,8 @@ by one point
 
 >n
 
-
 >use elope pole on kayak
 by one point
-
 
 >use dork rod on tao boat
 by one point
@@ -324,17 +319,14 @@ by one point
 
 >s
 
-
 >use tent net on code doc
 by one point
 
 >use spa maps on code doc
 by one point
 
-
-
-
 >gt apse spa
+
 >use spa maps on go-by bog
 by one point
 
@@ -356,6 +348,7 @@ by one point
 >w
 
 >gt ivy
+
 >s
 
 >yak okay
@@ -363,17 +356,15 @@ by one point
 
 >e
 
-
 >use sage gas on tame mat
 by one point
-
 
 >use sharp rahs on guru rug
 by one point
 
 >gt dumb mud
->s
 
+>s
 
 >nail ian
 by one point
@@ -385,14 +376,17 @@ by one point
 by one point
 
 >gt yack cay
+
 >use moor broom on tru yurt
 by one point
 
 >gt ivy
+
 >use wash saw on porch crop
 by one point
 
 >gt dumb mud
+
 >use exam axe on lie veil
 by one point
 
@@ -401,12 +395,12 @@ by one point
 >get all
 
 >gt work row
+
 >use DNA band on reifier
 by one point
 
 >use roto motor on DNA hand
 by one point
-
 
 >use eroded ore on reviver
 by one point
@@ -415,14 +409,15 @@ by one point
 by one point
 #got me gem
 
-
 >gt yell alley
+
 >use mr arm on bomb mob
 by one point
 
 >get rep popper
 
 >gt flu gulf
+
 >use nat's tan on scorn rocs
 by one point
 
@@ -432,17 +427,17 @@ by one point
 by one point
 
 >gt emo dome
->n
 
+>n
 
 >use Bro Orb on mirror rim
 by one point
-
 
 >use balsa slab on sword rows
 by one point
 
 >gt work row
+
 >use not-a-baton on reifier
 by one point
 
@@ -461,7 +456,6 @@ by one point
 by one point
 
 >n
-
 
 >use ME gem on Knife Fink
 by one point

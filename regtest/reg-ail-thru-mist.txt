@@ -1,7 +1,6 @@
 ## reg-ail-thru-mist.txt
 
 ## walkthrough with all mistakes: t2.py checks it's ok
-
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
 
@@ -18,6 +17,7 @@ by one point
 by one point
 >refer
 by one point
+
 #mistake test for evaded ave
 >evaded ave
 That'll appear later.
@@ -131,6 +131,7 @@ There's nothing else special to do with the pace cap
 >undo
 >undo
 >undo
+
 #mistake test for rub [text]
 >rub zozimus
 There's no one named Burt or Babbur or Liwilbur anything like that in this game, so you don't have to rub anyone or anything.
@@ -150,11 +151,13 @@ There is another room with that, sort of. Plus, cows can't swim.
 >undo
 >undo
 #the above is where we put stuff that's out of order and tough to test otherwise
+
 #mistake test for yawp way/yawl way
 >yawp way
 It's still quiet here.
 >yawl way
 It's still quiet here.
+
 >n
 
 >get trap art
@@ -196,11 +199,13 @@ No, it's more efficient as one entity. Also, this is not a cooking sim.
 #mistake test for sto sots
 >sto sots
 It's not big enough to be a drunk tank.
+
 >get all
 
 #mistake test for wasp saw
 >wasp saw
 You don't need the wash saw to turn into something that might sting you, especially since you are carrying it.
+
 >w
 
 #mistake test for borg rob
@@ -209,6 +214,7 @@ He is already assimilated.
 #mistake test for bork rob
 >bork rob
 Maybe there is a more nonviolent way to get him to give up.
+
 >bore rob
 by one point
 
@@ -223,6 +229,7 @@ Ugh! You don't need to make this place worse
 #mistake test for wort row
 >wort row
 Worn Row is not meant to be a garden. Maybe it would look nicer that way, but it wouldn't be helpful to you.
+
 >word row
 by one point
 
@@ -230,6 +237,7 @@ by one point
 >pi tip
 4/1 - 4/3 + 4/5 - 4/7 + 4/9 - 4/11 ... wait, no, that's a bit slow.
 3 + 4/(2*3*4) - 4/(4*5*6) + 4/(6*7*8) - 4/(8*9*10) + 4/(10*11*12) - 4/(12*13*14) ...
+
 #mistake retest for worsts row
 >worsts row
 It was bad enough already.
@@ -239,6 +247,7 @@ It was bad enough already.
 You already upgraded Worn Row. No need to make it worse than it was, but who knows, that redness ender might help you some day.
 >wort row
 Word Row is not meant to be a garden. Maybe it would look nicer that way, but it wouldn't be helpful to you.
+
 #mistake test for track cart
 >track cart
 Right idea, but the cart isn't going anywhere
@@ -255,6 +264,7 @@ DWELT LEWD should NOT be read as an instruction manual. Well, it shouldn't be re
 >undo
 >undo
 >undo
+
 >get TO IDIOT
 
 #mistake test for pita tip
@@ -263,9 +273,11 @@ Sorry, you're getting ambiguous snack cans and not any specific cuisine.
 #mistake test for pith tip
 >pith tip
 It's already pretty pithy, and there's not enough material for a helmet.
+
 >e
 >n
 >n
+
 >n
 
 #mistake test for bung nub
@@ -303,6 +315,7 @@ While searching for a boost, you're apprehended by a crank narc! I'm very disapp
 You don't want the yam to age. It would probably start to smell bad.
 #mistake test for nacelle can
 >get all
+
 >use pity tip on eye
 by one point
 #lost pity tip
@@ -310,6 +323,7 @@ by one point
 #mistake retest for nacelle can
 >nacelle can
 You don't need a huge engine.
+
 >w
 
 >w
@@ -344,6 +358,7 @@ by one point
 >e
 >n
 >w
+
 >x recipe
 
 >w
@@ -376,6 +391,7 @@ by one point
 #mistake retest for seer frees
 >seer frees
 You already feel free enough here.
+
 #mistake test for fig gif/gif fig
 >fig gif
 The fig remains firmly text-based. Eh, it's more edible that way.
@@ -389,6 +405,7 @@ It already is one. And you don't need to pass it on.
 #mistake test for gi fig
 >gi fig
 Hard to imagine how to weaponize the fig.
+
 >n
 
 #mistake test for kind nik
@@ -490,6 +507,7 @@ How or why it excites you, I don't want to know.
 #mistake test for poo soop
 >poo soop
 Good thing this isn't a cooking sim.
+
 >w
 >n
 >n
@@ -497,10 +515,12 @@ Good thing this isn't a cooking sim.
 >e
 >s
 >w
+
 >get yob attaboy
 
 >e
 >n
+
 #mistake test for pua up
 >pua up
 That's completely the wrong way to gain confidence.
@@ -539,6 +559,7 @@ The Spur Ups fail to rotate.
 #mistake test for spud ups
 >spud ups
 The Spur Ups don't become potatoes or French fries or whatever.
+
 >puff up
 by one point
 
@@ -569,6 +590,7 @@ There's no rink nir. Near.
 >w
 >w
 >n
+
 >use wash saw on past sap
 by one point
 
@@ -612,6 +634,7 @@ by one point
 >w
 >w
 >n
+
 >e
 
 >use puce cup on dose sod
@@ -659,6 +682,7 @@ You don't need a weapon.
 >e
 >e
 >s
+
 >s
 
 #mistake test for bony nob
@@ -709,6 +733,7 @@ by one point
 >w
 >w
 >n
+
 >n
 
 #mistake test for corn roc
@@ -730,6 +755,7 @@ Cannibalism is wrong. Besides, you'd probably catch whatever the Gulf Lug has.
 #mistake test for score rocs
 >score rocs
 You don't have any witty way to score off them, or steal them, or whatever, and you don't need to.
+
 >use demo med on gulf lug
 by one point
 
@@ -740,11 +766,13 @@ You look extra carefully at the sac. No, no secret compartments.
 #mistake test for cast sac
 >cast sac
 No need to fling stuff around, and no need for magic, either.
+
 >s
 >s
 >e
 >e
 >e
+
 >e
 
 #mistake test for told lot
@@ -789,16 +817,18 @@ by one point
 
 #mistake retest for told lot
 >told lot
-You pretend you won an argument against the cross or and didn't just hand over money.
+You pretend you won an argument against the cross orc and didn't just hand over money.
 >crass arc
 You spend a few seconds feeling deeply offended by the crag arc.
 >crab arc
 That's just what you need, a giant crab coming after you.
+
 >s
 
 #mistake test for defy fed
 >defy fed
 No problem, you're not getting fed anyway.
+
 >use yob attaboy on Sniffins
 by one point
 
@@ -807,6 +837,7 @@ by one point
 #mistake test for defy fed
 >defy fed
 Way to go! Keep that Hunger! Well, I hope it's that and not conspiracy theories about the Fed.
+
 #mistake test for stank nats/stank nat's
 >stank nats
 Yes, it's pretty awful.
@@ -848,6 +879,7 @@ by one point
 >w
 >s
 >w
+
 >work row
 
 >use Dirt Rid on reviver
@@ -859,11 +891,13 @@ by one point
 >e
 >s
 >s
+
 >w
 
 #mistake test for cash sac
 >cash sac
 You look extra carefully at the sac. No, no secret compartments.
+
 >use cave vac on cassettes sac
 by one point
 #lost cave vac
@@ -880,6 +914,7 @@ But what to do to it? How to change it?
 >n
 >n
 >e
+
 >use radar on crag arc
 by one point
 #got ufo tofu
@@ -920,9 +955,11 @@ by one point
 >w
 >s
 >w
+
 #mistake test for psi lisp
 >psi lisp
 The Psi Wisp can't speak.
+
 >Worn Row
 by one point
 
@@ -943,6 +980,7 @@ I've tried to keep this game gender neutral.
 >e
 >n
 >n
+
 >get all
 
 #mistake test for line nil
@@ -968,15 +1006,13 @@ No. You know TRUE MAGIC MUST COME FROM WITHIN.
 >use Gorge Grog on butene tub
 by one point
 
+#mistake test for balk lab
+>balk lab
+There's not much to do or say here, for sure!
+
 >balm lab
 by one point
 
->balm lab
-#mistake retest for balk lab
->balk lab
-There's not much to do or say here, for sure!
->undo
->undo
 #mistake test for sci bics
 >sci bics
 You don't need any exotic writing implements.
@@ -1019,6 +1055,7 @@ There is no Par Trap or Tee Meet to navigate here, so you don't need to make a g
 >w
 >s
 >w
+
 >work row
 
 >use gold log on rotator
@@ -1031,6 +1068,7 @@ by one point
 >s
 >s
 >e
+
 >stack cats
 by one point
 
@@ -1046,6 +1084,7 @@ by one point
 >e
 >e
 >n
+
 #mistake test for art ecetra
 >art ecetra
 One silly misspelling does not beget another.
@@ -1059,6 +1098,7 @@ by one point
 >s
 >s
 >w
+
 >word row
 
 >get NULL ILLUN
@@ -1069,6 +1109,7 @@ by one point
 >n
 >w
 >w
+
 >w
 
 #mistake test for rm gnu/dung/rm gnu dung
@@ -1133,6 +1174,7 @@ Doing nothing with the coop or what is in it is not an option.
 No innuendo here! The gnu dung with the poo coop is about as close as you'll get to R-rated.
 >turn on rut
 No innuendo here! The gnu dung with the poo coop is about as close as you'll get to R-rated.
+
 >use poo coop on turf rut
 by one point
 
@@ -1142,6 +1184,7 @@ It's too large to redirect, and besides, you already have a way across.
 #mistake retest for dump mud
 >dump mud
 It's already kind of dumped here.
+
 >w
 
 #mistake test for swami maws/swamy maws
@@ -1188,6 +1231,7 @@ You don't want to alert any land sharks.
 #mistake test for shard rahs
 >shard rahs
 The rahs are on paper, and besides, they might be useful.
+
 >n
 
 #mistake retest for calf lac
@@ -1233,6 +1277,7 @@ by one point
 
 >s
 >s
+
 #mistake retest for swami maws
 >swami maws
 Aw, come on, you've already met someone smart nearby.
@@ -1249,24 +1294,24 @@ by one point
 >use spa maps on code doc
 by one point
 
-
-
-
 >n
 >e
 >e
 >n
 >e
+
 >use spa maps on go-by bog
 by one point
 
 #mistake retest for pool sloop
 >pool sloop
 No boat appears to take you across the watery bits. You already got the sage gas, anyway.
+
 >w
 >s
 >s
 >s
+
 #mistake test for yak kay
 >yak kay
 The yak perks its ears up slightly, then goes back to looking bored. Maybe you didn't quite say things right.
@@ -1291,6 +1336,7 @@ by one point
 >w
 >w
 >s
+
 >s
 
 #mistake test for ergo ogre
@@ -1299,6 +1345,7 @@ You aren't going to impress it with your smarts.
 #mistake test for erg ogre
 >erg ogre
 The ogre would destroy you in a grunting match.
+
 >yak okay
 by one point
 
@@ -1322,6 +1369,7 @@ by one point
 >n
 >n
 >e
+
 >s
 
 #mistake test for nair ian
@@ -1363,22 +1411,26 @@ by one point
 >w
 >w
 >n
+
 #mistake test for moor groom
 >moor groom
 There is no romance, here. Besides, I can't do anything with "bride."
 #mistake test for moor vroom
 >moor vroom
 The moor broom is not equipped for transport. Some brooms are, but this isn't.
+
 >use moor broom on tru yurt
 by one point
 
 >s
 >s
+
 >use wash saw on porch crop
 by one point
 
 >n
 >e
+
 >use exam axe on lie veil
 by one point
 
@@ -1387,6 +1439,7 @@ by one point
 #mistake test for bron orb
 >bron orb
 King James's orb is a basketball, and that's that.
+
 >muss opossum
 by one point
 
@@ -1398,6 +1451,7 @@ by one point
 >e
 >s
 >w
+
 >use DNA band on reifier
 by one point
 
@@ -1436,6 +1490,7 @@ That'd be useful in Kingdom of Loathing, but not here.
 >n
 >n
 >e
+
 >use mr arm on bomb mob
 by one point
 
@@ -1448,6 +1503,7 @@ by one point
 >w
 >n
 >n
+
 >use nat's tan on scorn rocs
 by one point
 
@@ -1462,6 +1518,7 @@ by one point
 >e
 >e
 >e
+
 >n
 
 #mistake test for gal slag
@@ -1492,6 +1549,7 @@ by one point
 >w
 >s
 >w
+
 >use not-a-baton on reifier
 by one point
 
@@ -1507,6 +1565,7 @@ by one point
 >e
 >n
 >w
+
 #mistake test for mar tram
 >mar tram
 No. You need it to build the north-tron
@@ -1515,6 +1574,7 @@ No. You need it to build the north-tron
 No. It must be good for something.
 >undo
 >undo
+
 #mistake test for eros ore
 >eros ore
 I don't even want to know what you're trying to do, there.

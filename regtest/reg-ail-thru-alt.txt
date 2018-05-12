@@ -1,12 +1,10 @@
 ## reg-ail-thru-alt.txt
 
 ## walkthrough with alternate verbs or nouns
-
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
 
 * runthrough
-
 
 >pack cap
 by one point
@@ -29,6 +27,7 @@ by one point
 >e
 >n
 >n
+
 >use to idiot on revolt lover
 WRONG
 >purloin epoch cope
@@ -41,14 +40,15 @@ WRONG
 WRONG
 >undo
 >undo
->n
 
+>n
 
 >use pity tip on door frood
 WRONG
 >give TO IDIOT to Door Frood
 by one point
 >undo
+
 >use TO IDIOT on Door Frood
 by one point
 
@@ -60,11 +60,13 @@ by one point
 WRONG
 >undo
 >undo
+
 >e
 
 >use pity tip on navy van
 by one point
 >undo
+
 >use pity tip on eye
 by one point
 #lost pity tip
@@ -90,6 +92,7 @@ WRONG
 >undo
 >undo
 >undo
+
 >s
 
 >w
@@ -118,6 +121,7 @@ WRONG
 WRONG
 >undo
 >undo
+
 >use bunk nub on reviver
 by one point
 
@@ -128,18 +132,18 @@ by one point
 >e
 >n
 >w
+
 >x recipe
 
 >w
 
-
 >use wash saw on stark rats
 WRONG
+
 >use party trap on stark rats
 by one point
 
 >n
-
 
 >use epoch cope on King Nik
 by one point
@@ -148,12 +152,12 @@ by one point
 
 >s
 
-
 >purloin radar
 >use radar on sleep eels
 WRONG
 >undo
 >undo
+
 >use stock cots on sleep eels
 by one point
 
@@ -165,6 +169,7 @@ by one point
 
 >use stamp mats on yahoo hay
 WRONG
+
 >get poo coop
 
 >w
@@ -174,10 +179,12 @@ WRONG
 >e
 >s
 >w
+
 >get yob attaboy
 
 >e
 >n
+
 >puff up
 by one point
 
@@ -186,16 +193,17 @@ by one point
 >pull up
 by one point
 
-
 >get puce cup
 
 >w
 >w
 >w
 >n
+
 >use wash saw on rift fir
 by one point
 undo
+
 >use wash saw on past sap
 by one point
 
@@ -212,10 +220,10 @@ by one point
 
 >s
 
-
 >use puce cup on wordy drow
 by one point
 >undo
+
 >use poo coop on liar grail
 WRONG
 >abstract gnu dung to devreserved
@@ -224,6 +232,7 @@ WRONG
 >undo
 >undo
 >undo
+
 >use puce cup on liar grail
 by one point
 
@@ -232,11 +241,11 @@ by one point
 >w
 >w
 >n
+
 >e
 
 >use puce cup on dose sod
 !by one point
-
 
 >w
 >s
@@ -244,8 +253,8 @@ by one point
 >e
 >e
 >s
->s
 
+>s
 
 >use puce cup on Bond Nob
 by one point
@@ -259,12 +268,12 @@ by one point
 
 >e
 
-
 >purloin soot tattoos
 >use stamp mats on soot tattoos
 WRONG
 >undo
 >undo
+
 >use stamp mats on slate metals
 by one point
 #lost stamp mats
@@ -278,6 +287,7 @@ WRONG
 >w
 >w
 >n
+
 >n
 
 >use demo med on gulf lug
@@ -288,8 +298,8 @@ by one point
 >e
 >e
 >e
->e
 
+>e
 
 >use troll ort on cross orc
 WRONG
@@ -298,6 +308,7 @@ WRONG
 # it is not a weapon
 >use elope pole on cross orc
 WRONG
+
 >use cash sac on cross orc
 by one point
 
@@ -308,12 +319,12 @@ by one point
 
 >s
 
-
 >purloin demo med
 >use demo med on gorge grog
 WRONG
 >undo
 >undo
+
 >use Elan Ale on Sniffins
 by one point
 #got gorge grog
@@ -327,11 +338,13 @@ by one point
 >w
 >s
 >w
+
 >gt dopy pod
 >use dirt rid on cassettes sac
 WRONG
 >undo
 >undo
+
 >work row
 
 >use Dirt Rid on reviver
@@ -343,12 +356,14 @@ by one point
 >e
 >s
 >s
+
 >w
 
 >use gorge grog on cassettes sac
 WRONG
 >use wash saw on cassettes sac
 WRONG
+
 >use cave vac on cassettes sac
 by one point
 #lost cave vac
@@ -360,14 +375,15 @@ WRONG
 >n
 >n
 >e
+
 >use wash saw on crag arc
 WRONG
+
 >use radar on crag arc
 by one point
 #got ufo tofu
 
 >n
-
 
 >deny ned
 by one point
@@ -385,6 +401,7 @@ by one point
 >w
 >s
 >w
+
 >Worn Row
 by one point
 
@@ -392,7 +409,6 @@ by one point
 
 >use stinky knits on rotator
 by one point
-
 
 >word row
 
@@ -402,6 +418,7 @@ by one point
 >e
 >n
 >n
+
 >get all
 
 >gonear kayak
@@ -413,13 +430,13 @@ WRONG
 >use Gorge Grog on butene tub
 by one point
 
+>s
+>s
+>w
+>w
+>s
+>w
 
->s
->s
->w
->w
->s
->w
 >work row
 
 >use gold log on rotator
@@ -432,6 +449,7 @@ by one point
 >s
 >s
 >e
+
 >use SOME DEMOS on yahoo hay
 by one point
 
@@ -462,12 +480,14 @@ WRONG
 >undo
 >undo
 >undo
+
 >use gate tag on soot tattoos
 by one point
 
 >s
 >s
 >w
+
 >word row
 
 >get NULL ILLUN
@@ -478,8 +498,8 @@ by one point
 >n
 >w
 >w
->w
 
+>w
 
 >purloin cave vac
 >use cave vac on gnu dung
@@ -497,6 +517,7 @@ WRONG
 WRONG
 >use wash saw on lie veil
 WRONG
+
 >use poo coop on gnu dung
 by one point
 
@@ -504,7 +525,6 @@ by one point
 by one point
 
 >w
-
 
 >use elope pole on made dam
 WRONG
@@ -515,6 +535,7 @@ WRONG
 WRONG
 >undo
 >undo
+
 >use radar on made dam
 by one point
 
@@ -523,14 +544,15 @@ by one point
 WRONG
 >undo
 >undo
->n
 
+>n
 
 >use NULL ILLUN on Known Wonk
 by one point
 
 >use el doodle on known wonk
 WRONG
+
 >use el doodle on edits tide
 by one point
 
@@ -539,8 +561,8 @@ by one point
 WRONG
 >undo
 >undo
->n
 
+>n
 
 >use dork rod on kayak
 WRONG
@@ -555,9 +577,9 @@ WRONG
 WRONG
 >undo
 >undo
+
 >use elope pole on kayak
 by one point
-
 
 >use dork rod on tao boat
 by one point
@@ -568,21 +590,18 @@ by one point
 
 >s
 
-
 >use tent net on code doc
 by one point
 
 >use spa maps on code doc
 by one point
 
-
-
-
 >n
 >e
 >e
 >n
 >e
+
 >use dirt rid on go-by bog
 WRONG
 >use cave vac on go-by bog
@@ -591,11 +610,13 @@ WRONG
 WRONG
 >use radar on go-by bog
 WRONG
+
 >use spa maps on go-by bog
 by one point
 
 >use sage gas on sharp rahs
 WRONG
+
 >w
 >s
 >s
@@ -603,6 +624,7 @@ WRONG
 
 >use troll ort on kayo yak
 WRONG
+
 >e
 
 >gonear rep popper
@@ -610,6 +632,7 @@ WRONG
 WRONg
 >undo
 >undo
+
 >use enact cane on yahoo hay
 by one point
 #lost enact cane
@@ -628,19 +651,19 @@ by one point
 >w
 >w
 >s
+
 >s
 
 >use troll ort on ergot ogre
 WRONG
+
 >yak okay
 by one point
 
 >e
 
-
 >use sage gas on tame mat
 by one point
-
 
 >use sharp rahs on guru rug
 by one point
@@ -649,8 +672,8 @@ by one point
 >n
 >n
 >e
->s
 
+>s
 
 >nail ian
 by one point
@@ -665,25 +688,31 @@ by one point
 >w
 >w
 >n
+
 >purloin stamp mats
 >use stamp mats on tru yurt
 WRONG
 >undo
 >undo
+
 >use moor broom on tru yurt
 by one point
 
 >s
 >s
+
 >use exam axe on porch crop
 WRONG
+
 >use wash saw on porch crop
 by one point
 
 >use exam axe on balsa slab
 WRONG
+
 >n
 >e
+
 >use exam axe on lie veil
 by one point
 
@@ -697,12 +726,12 @@ by one point
 >e
 >s
 >w
+
 >use DNA band on reifier
 by one point
 
 >use roto motor on DNA hand
 by one point
-
 
 >use eroded ore on reviver
 by one point
@@ -711,12 +740,12 @@ by one point
 by one point
 #got me gem
 
+>e
+>n
+>n
+>n
+>e
 
->e
->n
->n
->n
->e
 >use mr arm on tnt
 by one point
 undo
@@ -725,6 +754,7 @@ undo
 WRONG
 >undo
 >undo
+
 >use mr arm on bomb mob
 by one point
 
@@ -737,6 +767,7 @@ by one point
 >w
 >n
 >n
+
 >use nat's tan on scorn rocs
 by one point
 
@@ -774,8 +805,10 @@ WRONG
 WRONG
 >undo
 >undo
+
 >use me gem on me totem
 WRONG
+
 >use rep popper on me totem
 by one point
 
@@ -785,15 +818,15 @@ by one point
 >e
 >e
 >e
->n
 
+>n
 
 >use Bro Orb on madam
 by one point
 >undo
+
 >use Bro Orb on mirror rim
 by one point
-
 
 >use balsa slab on sword rows
 by one point
@@ -802,6 +835,7 @@ by one point
 >w
 >s
 >w
+
 >use not-a-baton on reifier
 by one point
 
@@ -810,6 +844,7 @@ by one point
 WRONG
 >undo
 >undo
+
 >use murdered rum on yard ray
 by one point
 
@@ -818,6 +853,7 @@ by one point
 
 >use taboo bat on test set
 WRONG
+
 >use yard ray on test set
 by one point
 
@@ -829,7 +865,6 @@ by one point
 by one point
 
 >n
-
 
 >use ME gem on Knife Fink
 by one point
@@ -843,6 +878,7 @@ WRONG
 WRONG
 >use yard ray on waster fretsaw
 WRONG
+
 >use yard ray on redivider
 by one point
 

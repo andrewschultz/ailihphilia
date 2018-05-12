@@ -1,143 +1,31 @@
 ## reg-ail-thru-min.txt
 
 ## minimum walkthrough
-
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
 
 * runthrough
 
-
-
-
-
-
-
-
-
-
 >pack cap
 by one point
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 >get all
 
-
-
-
-
-
 >w
-
-
-
-
-
 
 >bore rob
 by one point
 
-
-
-
-
-
-
-
-
-
-
 >word row
 by one point
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 >get TO IDIOT
-
-
-
-
-
 
 >e
 >n
 >n
 
-
-
-
-
-
 >n
-
-
-
-
-
-
-
-
-
-
-
 
 >use TO IDIOT on Door Frood
 by one point
@@ -145,45 +33,15 @@ by one point
 >get bunk nub
 #got bunk nub
 
-
-
-
-
-
 >e
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 >use pity tip on eye
 by one point
 #lost pity tip
 
-
-
-
-
-
 >w
 
 >w
-
-
-
-
-
 
 >tend net
 by one point
@@ -195,11 +53,6 @@ by one point
 
 >s
 
-
-
-
-
-
 >s
 
 >w
@@ -209,11 +62,6 @@ by one point
 
 >use trap art on reifier
 by one point
-
-
-
-
-
 
 >use bunk nub on reviver
 by one point
@@ -226,51 +74,14 @@ by one point
 >n
 >w
 
-
-
-
-
-
 >x recipe
 
-
-
-
-
-
 >w
-
-
-
-
-
-
-
-
-
-
-
 
 >use party trap on stark rats
 by one point
 
-
-
-
-
-
-
-
-
-
-
 >n
-
-
-
-
-
-
 
 >use epoch cope on King Nik
 by one point
@@ -279,47 +90,16 @@ by one point
 
 >s
 
-
-
-
-
-
-
-
-
-
-
-
 >use stock cots on sleep eels
 by one point
 
 >s
 
-
-
-
-
-
 >get stamp mats
 
 >e
 
-
-
-
-
-
-
-
-
-
-
 >get poo coop
-
-
-
-
-
 
 >w
 >n
@@ -334,34 +114,13 @@ by one point
 >e
 >n
 
-
-
-
-
-
 >puff up
 by one point
 
 >e
 
-
-
-
-
-
 >pull up
 by one point
-
-
-
-
-
-
-
-
-
-
-
 
 >get puce cup
 
@@ -369,11 +128,6 @@ by one point
 >w
 >w
 >n
-
-
-
-
-
 
 >use wash saw on past sap
 by one point
@@ -391,22 +145,6 @@ by one point
 
 >s
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 >use puce cup on liar grail
 by one point
 
@@ -418,14 +156,8 @@ by one point
 
 >e
 
-
-
-
-
-
 >use puce cup on dose sod
 !by one point
-
 
 >w
 >s
@@ -435,22 +167,11 @@ by one point
 >s
 
 >s
-
-
-
-
-
-
 
 >use puce cup on Bond Nob
 by one point
 
 >w
-
-
-
-
-
 
 >get all
 #got dirt rid
@@ -458,17 +179,6 @@ by one point
 >e
 
 >e
-
-
-
-
-
-
-
-
-
-
-
 
 >use stamp mats on slate metals
 by one point
@@ -484,24 +194,9 @@ by one point
 
 >n
 
-
-
-
-
-
-
-
-
-
-
 >use demo med on gulf lug
 by one point
 
-
-
-
-
-
 >s
 >s
 >e
@@ -509,53 +204,16 @@ by one point
 >e
 
 >e
-
-
-
-
-
-
-
-
-
-
-
 
 >use cash sac on cross orc
 by one point
 
-
-
-
-
-
 >s
-
-
-
-
-
-
-
-
-
-
 
 >use yob attaboy on Sniffins
 by one point
 
 >s
-
-
-
-
-
-
-
-
-
-
-
 
 >use Elan Ale on Sniffins
 by one point
@@ -571,11 +229,6 @@ by one point
 >s
 >w
 
-
-
-
-
-
 >work row
 
 >use Dirt Rid on reviver
@@ -590,35 +243,14 @@ by one point
 
 >w
 
-
-
-
-
-
-
-
-
-
-
 >use cave vac on cassettes sac
 by one point
 #lost cave vac
 
-
-
-
-
-
-
 >e
 >n
 >n
 >e
-
-
-
-
-
 
 >use radar on crag arc
 by one point
@@ -626,19 +258,8 @@ by one point
 
 >n
 
-
-
-
-
-
-
 >deny ned
 by one point
-
-
-
-
-
 
 >get all
 
@@ -647,22 +268,12 @@ by one point
 
 >n
 
-
-
-
-
-
 >s
 >s
 >w
 >w
 >s
 >w
-
-
-
-
-
 
 >Worn Row
 by one point
@@ -671,7 +282,6 @@ by one point
 
 >use stinky knits on rotator
 by one point
-
 
 >word row
 
@@ -684,20 +294,8 @@ by one point
 
 >get all
 
-
-
-
-
-
-
 >use Gorge Grog on butene tub
 by one point
-
-
-
-
-
-
 
 >s
 >s
@@ -729,14 +327,8 @@ by one point
 >e
 >n
 
-
 >use straw arts on Revolt Lover
 by one point
-
-
-
-
-
 
 >use gate tag on soot tattoos
 by one point
@@ -758,125 +350,38 @@ by one point
 
 >w
 
-
-
-
-
-
-
-
-
-
-
-
 >use poo coop on gnu dung
 by one point
-
-
-
-
-
 
 >use poo coop on turf rut
 by one point
 
-
-
-
-
-
 >w
-
-
-
-
-
-
-
-
-
-
-
 
 >use radar on made dam
 by one point
 
-
-
-
-
-
 >n
-
-
-
-
-
-
 
 >use NULL ILLUN on Known Wonk
 by one point
 
-
-
-
-
-
 >use el doodle on edits tide
 by one point
 
-
-
-
-
-
-
-
-
-
-
 >n
-
-
-
-
-
-
-
-
-
-
-
 
 >use elope pole on kayak
 by one point
-
-
-
-
-
-
 
 >use dork rod on tao boat
 by one point
 #got enact cane
 
-
-
-
-
-
 >s
 >s
 
-
 >s
-
-
-
-
-
-
 
 >use tent net on code doc
 by one point
@@ -884,60 +389,21 @@ by one point
 >use spa maps on code doc
 by one point
 
-
-
-
-
-
-
-
-
 >n
 >e
 >e
 >n
 >e
-
-
-
-
-
 
 >use spa maps on go-by bog
 by one point
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 >w
 >s
 >s
 >s
 
-
-
-
-
-
-
 >e
-
-
-
-
-
 
 >use enact cane on yahoo hay
 by one point
@@ -960,35 +426,13 @@ by one point
 
 >s
 
-
-
-
-
-
-
-
-
-
-
 >yak okay
 by one point
 
-
-
-
-
-
 >e
-
-
-
-
-
-
 
 >use sage gas on tame mat
 by one point
-
 
 >use sharp rahs on guru rug
 by one point
@@ -999,12 +443,6 @@ by one point
 >e
 
 >s
-
-
-
-
-
-
 
 >nail ian
 by one point
@@ -1020,34 +458,14 @@ by one point
 >w
 >n
 
-
-
-
-
-
-
-
-
-
-
 >use moor broom on tru yurt
 by one point
 
 >s
 >s
 
-
-
-
-
-
 >use wash saw on porch crop
 by one point
-
-
-
-
-
 
 >n
 >e
@@ -1056,16 +474,6 @@ by one point
 by one point
 
 >n
-
-
-
-
-
-
-
-
-
-
 
 >get all
 
@@ -1082,7 +490,6 @@ by one point
 >use roto motor on DNA hand
 by one point
 
-
 >use eroded ore on reviver
 by one point
 
@@ -1090,17 +497,11 @@ by one point
 by one point
 #got me gem
 
-
 >e
 >n
 >n
 >n
 >e
-
-
-
-
-
 
 >use mr arm on bomb mob
 by one point
@@ -1120,21 +521,6 @@ by one point
 
 >w
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 >use rep popper on me totem
 by one point
 
@@ -1147,25 +533,8 @@ by one point
 
 >n
 
-
-
-
-
-
-
-
-
-
-
-
 >use Bro Orb on mirror rim
 by one point
-
-
-
-
-
-
 
 >use balsa slab on sword rows
 by one point
@@ -1178,21 +547,11 @@ by one point
 >use not-a-baton on reifier
 by one point
 
-
-
-
-
-
 >use murdered rum on yard ray
 by one point
 
 >emit noontime
 by one point
-
-
-
-
-
 
 >use yard ray on test set
 by one point
@@ -1201,27 +560,10 @@ by one point
 >n
 >w
 
-
-
-
-
-
-
 >use TNT on ore zero
 by one point
 
-
-
-
-
-
 >n
-
-
-
-
-
-
 
 >use ME gem on Knife Fink
 by one point
@@ -1229,25 +571,10 @@ by one point
 >use taboo bat on Verses Rev
 by one point
 
-
-
-
-
-
 >use yard ray on redivider
 by one point
 
-
-
-
-
-
 >s
-
-
-
-
-
 
 >use x-ite tix on tix exit
 by one point

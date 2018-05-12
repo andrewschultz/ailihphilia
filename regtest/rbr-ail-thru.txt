@@ -1238,7 +1238,7 @@ by one point
 ==t2
 #mistake retest for told lot
 >told lot
-You pretend you won an argument against the cross or and didn't just hand over money.
+You pretend you won an argument against the cross orc and didn't just hand over money.
 >crass arc
 You spend a few seconds feeling deeply offended by the crag arc.
 >crab arc
@@ -1502,80 +1502,75 @@ WRONG
 >undo
 >undo
 
-===2
+==t2
 #mistake test for line nil
 >line nil
 The Link Nil security system fails to turn into a line and vanish. That's pretty secure!
-
+\\
 #mistake test for dna land
 >dna land
 Biochemistry has its own nuances with symmetry, but we're sticking with something a lot dumber, here.
-
+\\
 #mistake test for dna hand
 >DNA hand
 Right idea, but you can't do it on your own. You need technology to help you.
-
+\\
 #mistake test for dna sand
 >DNA sand
 That will happen with the passage of time.
-
+\\
 #mistake test for dna wand
 >dna wand
 No. You know TRUE MAGIC MUST COME FROM WITHIN.
-===a
 
 >use Gorge Grog on butene tub
 by one point
 
-===1,2
+==t2
+#mistake test for balk lab
+>balk lab
+There's not much to do or say here, for sure!
+
+==t1,2
 >balm lab
 by one point
 
 ==t2
->balm lab
-#mistake retest for balk lab
->balk lab
-There's not much to do or say here, for sure!
->undo
->undo
-
-===2
 #mistake test for sci bics
 >sci bics
 You don't need any exotic writing implements.
-
+\\
 #mistake test for sci dics
 >sci dics
 You don't have time to learn weird terminology now.
-
+\\
 #mistake test for sci fics
 >sci fics
 But you already have reading material!
-
+\\
 #mistake test for sci mics
 >sci mics
 Your experience remains relatively quiet but also free of static.
-
+\\
 #mistake test for sci sics
 >sci sics
 You think you spy a typo somewhere in the sci pics, leaving you feel free to feel smarter than something you don't unerstand. Go, you!
-
+\\
 #mistake test for sci tics
 >sci tics
 You laugh at how silly the sci pics are, then sniff a bit, then tap your head.
-
+\\
 #mistake retest for balk lab
 >balk lab
 There's not much to do or say here, for sure--well, maybe something that's not quite BALK.
-
+\\
 #mistake test for ball lab
 >ball lab
 Nothing fun explodes out from the walls or ceiling.
-
+\\
 #mistake test for golf log
 >golf log
 There is no Par Trap or Tee Meet to navigate here, so you don't need to make a golf log.
-===a
 
 ==t4
 >gt word row

@@ -426,7 +426,6 @@ by one point
 >n
 >get all
 
-
 >use Gorge Grog on butene tub
 by one point
 
@@ -438,8 +437,6 @@ by one point
 
 >balm lab
 !by one point
-
-
 >s
 >s
 >w
