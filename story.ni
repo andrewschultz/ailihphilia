@@ -462,6 +462,8 @@ to say dir-summary:
 	now Q is the room west of location of player;
 	if Q is not nowhere, say " W[run paragraph on][if Q is not available]-[end if]";
 
+screen-reader is a truth state that varies.
+
 when play begins:
 	repeat with Q running through regions:
 		increase maximum score by max-score of Q;
@@ -470,6 +472,10 @@ when play begins:
 		say "[if max-score of Odd Do is number of rows in table of last lousy points]LLPs = LLP table rows[else]Uh oh, [max-score of Odd Do] Odd Do points and [number of rows in table of last lousy points] LLP table rows. We need to fix this[end if].";
 	now right hand status line is "[if cur-score of mrlp < 10] [end if][cur-score of mrlp]/[max-score of mrlp] [if score < 10] [end if][score]/[min-win]-[maximum score]";
 	now left hand status line is "[location of player] ([mrlp])[dir-summary]";
+	say "First, are you using a screen reader? Some of Ailihphilia's features, like the text map, don't work well with them.";
+	if the player no-consents:
+		now screen-reader is false;
+	say "You can always toggle the screen reader with SCR.";
 	sort table of last lousy points in random order;
 	repeat through table of all randoms:
 		sort tabnam entry in random order;
@@ -908,6 +914,19 @@ after printing the name of the puce cup while taking inventory:
 after printing the name of the radar while taking inventory:
 	if radar-used is 1, say " (damaged)";
 	if radar-used is 2, say " (BUG--should be destroyed)";
+
+chapter scring
+
+scring is an action out of world.
+
+understand the command "scr" as something new.
+
+understand "scr" as scring.
+
+carry out scring:
+	now screen-reader is whether or not screen-reader is false;
+	say "Screen reader mode is now [on-off of screen-reader].";
+	the rule succeeds;
 
 chapter abouting
 
@@ -3334,6 +3353,9 @@ to say two-ads:
 chapter X/Y Pyx
 
 an X Y Pyx is a thing in Yawn Way. printed name of x y pyx is "X/Y Pyx". description of X Y Pyx is "[map-so-far]". "[one of]An X/Y pyx lies here. Closer inspection reveals that's just a fancy name for a map[or]The X/Y pyx still lies here[stopping].". indefinite article of X Y Pyx is "an".
+
+check examining pix when screen-reader is true:
+	say "The text map doesn't play well with screen readers, so you can't examine it productively. Sorry. SRC toggles screen reader mode." instead;
 
 after examining pyx for the first time:
 	say "Notes for the future: X X or MAP will examine the pyx, to save keystrokes[if player does not have pyx]. Also, you can take the pyx, if you want[end if].";
