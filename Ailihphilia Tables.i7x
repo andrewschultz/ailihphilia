@@ -884,6 +884,7 @@ randtxt
 "Pop!"
 "Pow-op! Pow-op!"
 "Regard, rager!"
+"Spar? Traps!"
 "Spare raps!"
 "Tiff. Fit."
 "To ire! Riot!"
@@ -907,6 +908,7 @@ randtxt
 "Pub UP"
 "Sara's"
 "Scene C's"
+"Senor One's"
 "Set-a-Mates"
 "Soho's"
 "Soto's"
@@ -950,9 +952,11 @@ randtxt
 "Do Mo['] Mod"
 "Emote to Me"
 "Hat-stah"
-"Hook Ooh"
+"Hook, Ooh"
 "Kazoo Zak"
 "Krew Twerk"
+"Le BE Rebel"
+"Major Pro Jam"
 "Me: Opt, Poem"
 "O, Got to Go"
 "O/T: Teh Ghetto"
@@ -1012,7 +1016,9 @@ randtxt
 "Prove VORP!"
 "Resume [']m, user!"
 "SETI sites!"
+"Signing is..."
 "Spidered IPs?!"
+"Y-array?!"
 
 table of singstuff
 randtxt
@@ -1030,6 +1036,7 @@ randtxt
 "Nom la salmon"
 "Risotto, Sir"
 "Salad (alas)"
+"Sup Opus"
 
 [?? tafl.py sort so parentheses as well as a/an/the don't affect alphabetization]
 table of swearstuff
@@ -1104,6 +1111,7 @@ randtxt
 "Wandered? Naw."
 "We nap anew."
 "Won't, Now."
+"Y'revery!"
 
 table of wordy drow laments
 randtxt
