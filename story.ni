@@ -492,9 +492,9 @@ when play begins:
 	say "EVIL'S LIVE![wfak-d]";
 	say "LIVE DEVIL![wfak-d]";
 	say "BOSSES! SOB![wfak-d]";
-	say "You fold the Darer Ad and start off to the store.[paragraph break]'[unicode 161]Aloha. Hola!' someone, or something, cries. You run in the general direction of the voice.  You look up, and you're no longer on the way to the store. You're somewhere else. Your smartphone starts blinking: LOAD AOL! You look up. Who is responsible for this? An elf, who sees you futzing with your smartphone. 'No El Google on?' You nod. Awkward silence.[wfak-d]";
-	say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because after being confused by it, you looked up the winning strategy on the internet. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers. Then 'Is reversi...?'";
-	say "After your fifth win in a row, the Flee Elf yells 'Put it up!' You freeze--well, until you're knocked to the ground.[wfak-d]";
+	say "You fold the Darer Ad and start off to the store.[paragraph break]'[unicode 161]Aloha. Hola!' someone, or something, cries. 'Steer-greets! Steer-greets!'[paragraph break]You run in the general direction of the voice.  You look up, and you're no longer on the way to the store. You're somewhere else. Your smartphone starts blinking: LOAD AOL! You look up. Who is responsible for this? An elf, who sees you futzing with your smartphone. 'No El Google on?' You nod. Awkward silence.[wfak-d]";
+	say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because you looked up the winning strategy on the Internet after it confused you. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers. Then 'Is reversi...?'";
+	say "After your fifth win in a row, the Flee Elf yells 'Put it up!' again. You freeze--well, until you're knocked to the ground.[wfak-d]";
 	say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Raw Level War or Mista-T Sim. You'll do for Yelpley, I guess.' The Flee Elf leads you away. 'The first thing to do is, figure how to take this cap.'[wfak-d]";
 	do nothing; [debug information below here. I've had problems putting it in and not deleting it, so I want to make things clear.]
 
@@ -2703,7 +2703,7 @@ book Cold Loc
 
 Cold Loc is north of Seer Trees. It is in Grebeberg. "It's kind of dewed, here, but at least it's not the Snow-Ons. A rift fir blocks a steep drop west, but it's clear to the north, south and east. [if sap-takeable is true]The past sap you cut from it is lumped on the ground[else]Some past sap clings to it[end if]."
 
-check going west in Cold Loc: say "The rift fir blocks the way to much more dangerous places, maybe Red Locs Colder or the Splat Alps. Perhaps ski oiks await." instead;
+check going west in Cold Loc: say "The rift fir blocks the way to much more dangerous places, maybe Red Locs Colder or the Splat Alps. Perhaps ski oiks or even site yetis await." instead;
 
 chapter rift fir
 
@@ -2802,7 +2802,9 @@ some murdered rum is a drinkable thing. description is "It looks viscous, like o
 
 book Dumb Mud
 
-Dumb Mud is west of Seer Trees. It is in Grebeberg. "Mud! Um...[paragraph break]A turf rut to the south is [if poo coop is moot]filled in enough[else]too deep[end if] to cross. The way west is [if gnu dung is moot]free[else]blocked by gnu dung[end if]. [if lie veil is in Dumb Mud]A lie veil (nowhere near small enough to wear) blocks your way[else]With the lie veil removed, you can go[end if] north. [mud-go] back east."
+Dumb Mud is west of Seer Trees. It is in Grebeberg. "Mud! Um...[paragraph break]A turf rut to the south is [if poo coop is moot]filled in enough[else]too deep[end if] to cross. The way west is [if gnu dung is moot]free[else]blocked by gnu dung[end if]. [if lie veil is in Dumb Mud]A lie veil (nowhere near small enough to wear) blocks your way[else]With the lie veil removed, you can go[end if] north. [mud-go] back east.". printed name of Dumb Mud is "[if mud-go is 3]Stride Dirts[else]Dumb Mud[end if]".
+
+understand "stride dirts" and "stride/dirts" as Dumb Mud when mud-go is 3.
 
 to say mud-go:
 	let DS be 0;
@@ -4401,7 +4403,7 @@ check wearing the stinky knits: say "That's physically possible, but no. No way.
 
 chapter Brag Garb
 
-the brag garb is a thing. description is "You don't know fashion that well, but this is way spiffier and more comfortable than the old stinky knits."
+the brag garb is a thing. description is "You don't know fashion that well, but it's labeled STIFF FITS and seems way spiffier and more comfortable than the old stinky knits."
 
 chapter Gate Tag
 
@@ -4470,7 +4472,7 @@ understand "nats" and "nats tan" as nat's tan.
 
 chapter placed decal
 
-the decal placed is peripheral scenery in Deft Fed. description is "It's an advertisement for LE FALAFEL and, to wash it down, pop."
+the decal placed is peripheral scenery in Deft Fed. description is "It's an advertisement for LE FALAFEL and stir grits and, to wash them down, pop."
 
 chapter snooty toons
 
