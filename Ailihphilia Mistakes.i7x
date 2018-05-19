@@ -612,6 +612,8 @@ understand "rm gnu/dung" and "rm gnu dung" as a mistake ("You don't have the pro
 
 understand "rub [text]" as a mistake ("There's no one named Burt or Babbur or Liwilbur anything like that in this game, so you don't have to rub anyone or anything.")
 
+understand "tap at [text]" as a mistake ("That's in the spirit of the game, but sadly, I couldn't find a way to make it useful. Sorry!")
+
 understand "wave" as a mistake ("Nobody named Eva is beyond the fourth wall.")
 
 chapter deprecated mistakes

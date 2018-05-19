@@ -1725,7 +1725,7 @@ enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	false
 --	--	--	rev-pace-cap rule	--	true	--	--	Dim Mid	false
 troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	Grebeberg	false	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the stinky knits, but still quite distinctive." [b4:pace cap] [af:yak okay]
 --	--	--	rev-yak-okay rule	--	true	--	--	Grebeberg	false
-sage gas	tame mat	guru rug	--	--	true	true	true	Grebeberg	false	"The sage gas bubbles out under the tame mat, and the message changes. To something wiser. But perhaps a bit stuffy: a guru rug!"
+sage gas	tame mat	guru rug	--	--	true	true	true	Grebeberg	false	"'Mix a maxim...' you mutter to yourself. The sage gas bubbles out under the tame mat, and the message changes. To something wiser. But perhaps a bit stuffy: a guru rug!"
 sharp rahs	guru rug	tenet	--	--	true	true	true	Grebeberg	false	"The sharp rahs meld into the guru rug, which feels less weighted down by philosophy and floats away. Under it there's a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
 --	--	--	rev-nail-Ian rule	--	true	--	--	Grebeberg	false
 --	--	--	rev-first-food-combo rule	--	true	--	--	Grebeberg	false
@@ -2802,9 +2802,7 @@ some murdered rum is a drinkable thing. description is "It looks viscous, like o
 
 book Dumb Mud
 
-Dumb Mud is west of Seer Trees. It is in Grebeberg. "Mud! Um...[paragraph break]A turf rut to the south is [if poo coop is moot]filled in enough[else]too deep[end if] to cross. The way west is [if gnu dung is moot]free[else]blocked by gnu dung[end if]. [if lie veil is in Dumb Mud]A lie veil (nowhere near small enough to wear) blocks your way[else]With the lie veil removed, you can go[end if] north. [mud-go] back east.". printed name of Dumb Mud is "[if mud-go is 3]Stride Dirts[else]Dumb Mud[end if]".
-
-understand "stride dirts" and "stride/dirts" as Dumb Mud when mud-go is 3.
+Dumb Mud is west of Seer Trees. It is in Grebeberg. "Mud! Um...[paragraph break]A turf rut to the south is [if poo coop is moot]filled in enough[else]too deep[end if] to cross. The way west is [if gnu dung is moot]free[else]blocked by gnu dung[end if]. [if lie veil is in Dumb Mud]A lie veil (nowhere near small enough to wear) blocks your way[else]With the lie veil removed, you can go[end if] north. [mud-go] back east.".
 
 to say mud-go:
 	let DS be 0;
@@ -3148,7 +3146,11 @@ The Balsa Slab is a thing. description is "It appears grooved, as if someone has
 
 book Lair Trial
 
-Lair Trial is south of Den Ivy Vined. It is in Grebeberg. "Thick go-fog causes passage in this lair to bend [if Motto Bottom is unvisited]back [end if]north and east[if ergot ogre is moot], and with the trial over, you're free to go either way[end if]."
+Lair Trial is south of Den Ivy Vined. It is in Grebeberg. "Thick go-fog causes this passage to bend [if Motto Bottom is unvisited]back [end if]north and east[if ergot ogre is moot], and with the trial over, you're free to go either way[end if]."
+
+printed name of Lair Trial is "[if ergot ogre is in Lair Trial]Lair Trial[else]Stride Dirts[end if]".
+
+understand "stride dirts" and "stride/dirts" as Lair Trial when ergot ogre is moot.
 
 check going nowhere in Lair Trial: say "[if ogre is in Lair Trial]You can't sneak around the ergot ogre. You need to get rid of it[else]There's nothing in the fog[end if]." instead;
 

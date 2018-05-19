@@ -943,6 +943,7 @@ randtxt
 "sewer ewes"
 "ska yaks"
 "smart rams"
+"sum emus"
 "a tart rat"
 
 table of My Gym songs
