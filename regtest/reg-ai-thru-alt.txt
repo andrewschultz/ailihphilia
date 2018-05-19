@@ -1,4 +1,4 @@
-## reg-ail-thru-alt.txt
+## reg-ai-thru-alt.txt
 
 ## walkthrough with alternate verbs or nouns
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
@@ -86,36 +86,12 @@ by one point
 #lost pity tip
 
 >w
-
->w
-
->tend net
-by one point
-#got elope pole
-
->e
-
->s
-
->s
-
->w
 >w
 >use trap art on stark rats
 WRONG
 >undo
 >undo
 >undo
-
->s
-
->w
-
->work row
-by one point
-
->use trap art on reifier
-by one point
 
 >rei bunk nub
 WRONG
@@ -136,19 +112,8 @@ WRONG
 >undo
 >undo
 
->use bunk nub on reviver
-by one point
-
->word row
-
->get epoch cope
-
 >e
 >n
->w
-
->x recipe
-
 >w
 
 >use wash saw on stark rats
@@ -207,8 +172,6 @@ by one point
 >pull up
 by one point
 
->get puce cup
-
 >w
 >w
 >w
@@ -217,24 +180,6 @@ by one point
 >use wash saw on rift fir
 by one point
 >undo
-
->use wash saw on past sap
-by one point
-
->use puce cup on past sap
-by one point
-
->s
-
->e
-
->e
-
->e
-
->s
-
->get troll ort
 
 >use puce cup on wordy drow
 by one point

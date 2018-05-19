@@ -1,4 +1,4 @@
-## reg-ail-thru-mist.txt
+## reg-ai-thru-mist.txt
 
 ## walkthrough with all mistakes: t2.py checks it's ok
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
@@ -322,47 +322,8 @@ You don't want the yam to age. It would probably start to smell bad.
 by one point
 #lost pity tip
 
-#mistake retest for nacelle can
->nacelle can
-You don't need a huge engine.
-
->w
-
->w
-
->tend net
-by one point
-#got elope pole
-
->e
-
->s
-
->s
-
->s
-
->w
-
->work row
-by one point
-
->use trap art on reifier
-by one point
-
->use bunk nub on reviver
-by one point
-
->word row
-
->get epoch cope
-
 >e
 >n
->w
-
->x recipe
-
 >w
 
 #mistake test for seer brees
@@ -570,44 +531,10 @@ by one point
 >pull up
 by one point
 
-#mistake test for emo come
->emo come
-You feel increased whininess inside.
-#mistake test for emo rome
->emo rome
-This game is not remotely close to historical fiction. Sorry.
-#mistake test for emo home
->emo home
-It's too wide open a space.
-#mistake test for emo tome
->emo tome
-That would be out of place among all the stupid jokes, here.
-#mistake test for puck cup
->puck cup
-There's no rink nir. Near.
-
->get puce cup
-
 >w
 >w
 >w
 >n
-
->use wash saw on past sap
-by one point
-
->use puce cup on past sap
-by one point
-
->s
-
->e
-
->e
-
->e
-
->s
 
 #mistake test for fra zarf
 >fra zarf
@@ -615,8 +542,6 @@ This would send you on a long journey to Hadean Lands. One you might enjoy so mu
 #mistake test for trod ort
 >trod ort
 It looks run-down enough.
-
->get troll ort
 
 #mistake retest for trod ort
 >trod ort

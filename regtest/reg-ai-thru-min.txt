@@ -1,4 +1,4 @@
-## reg-ail-thru-min.txt
+## reg-ai-thru-min.txt
 
 ## minimum walkthrough
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
@@ -53,43 +53,8 @@ by one point
 by one point
 #lost pity tip
 
->w
-
->w
-
->tend net
-by one point
-#got elope pole
-
->e
-
->s
-
->s
-
->s
-
->w
-
->work row
-by one point
-
->use trap art on reifier
-by one point
-
->use bunk nub on reviver
-by one point
-
->word row
-
->get epoch cope
-
 >e
 >n
->w
-
->x recipe
-
 >w
 
 >use party trap on stark rats
@@ -136,30 +101,10 @@ by one point
 >pull up
 by one point
 
->get puce cup
-
 >w
 >w
 >w
 >n
-
->use wash saw on past sap
-by one point
-
->use puce cup on past sap
-by one point
-
->s
-
->e
-
->e
-
->e
-
->s
-
->get troll ort
 
 >use puce cup on liar grail
 by one point

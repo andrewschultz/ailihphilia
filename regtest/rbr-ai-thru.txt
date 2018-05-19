@@ -1,5 +1,5 @@
-files=reg-ail-thru-min.txt,reg-ail-thru-all.txt,reg-ail-thru-mist.txt,reg-ail-thru-wrongway.txt,reg-ail-thru-gt.txt,reg-ail-thru-alt.txt
-dupefile=reg-ail-thru-dupe.txt
+files=reg-ai-thru-min.txt,reg-ai-thru-all.txt,reg-ai-thru-mist.txt,reg-ai-thru-wrongway.txt,reg-ai-thru-gt.txt,reg-ai-thru-alt.txt
+dupefile=reg-ai-thru-dupe.txt
 ## *FILE
 
 TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with all mistakes: t2.py checks it's ok	## walkthrough with wrong ways/running into walls or blocking NPCs	## walkthrough with GT when possible	## walkthrough with alternate verbs or nouns
