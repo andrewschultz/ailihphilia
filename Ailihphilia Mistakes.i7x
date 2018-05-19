@@ -307,6 +307,12 @@ understand "mar tram" as a mistake ("No. [if epicer recipe is xed]You need it to
 
 understand "mo nom" as a mistake ("Greedy! There's enough food to find around here, really.[mis of 112]") when player is in Mont Nom.
 
+understand "mong nom" as a mistake ("No 'interesting' brownies appear.[mis of 97]") when player is in Mont Nom.
+
+understand "monk nom" as a mistake ("Cannibalism, or super sparse food, is not an option.[mis of 111]") when player is in Mont Nom.
+
+understand "mono nom" as a mistake ("Planning to eat alone is kinda sad.[mis of 95]") when player is in Mont Nom.
+
 understand "naif Ian" as a mistake ("Sadly, mind control is beyond your powers.[mis of 113]") when Ian is quicknear.
 
 understand "nain Ian" as a mistake ("Owning/pwning would embarrass Ian, but that is too archaic a synonym.[mis of 114]") when Ian is quicknear.
