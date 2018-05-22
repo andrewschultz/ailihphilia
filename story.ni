@@ -2223,6 +2223,7 @@ mush sum	"The mush sum is too murky and unstable to deal with. And to break the 
 go fog	"The go fog is very dense. It pushes you back even as you look at it. As if to say, go away, and also, get going with what you want and need to do."
 past sap	"[if liar grail is moot]With the liar grail gone, you don't want to have to deal with the past sap again[else]The past sap might be useful, but you [how-take-sap][end if]."
 stewy wets	"The stewy wets are unchangeable."
+do owe wood	"The Do Owe Wood is very confusing. There's probably worse behind it."
 be web	"The be web is--well, it's itself, and maybe there's a message here but you'll figure it out once you're finished adventuring. It's not important enough now."
 voodoo v	"You don't want or need to mess with the voodoo v."
 leet steel	"You want to focus on the Knife Fink and not the leet steel."
@@ -3119,15 +3120,21 @@ some Eroded Ore is a thing. description is "You're no expert metallurgist, but i
 
 book Den Ivy Vined
 
-Den Ivy Vined is south of Swamp Maws. It is in Grebeberg. "This is a homey little north-south passage, [if tent net is moot]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet. Having some sort of roof might make it even homier[end if][if-porch]."
+Den Ivy Vined is south of Swamp Maws. It is in Grebeberg. "[one of]The passage is mostly north-south[or]This north-south passage cuts nicely through the Do-Owe Wood[stopping], [if tent net is moot]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet. Having some sort of roof might make it even homier[end if][if-porch]."
+
+check going in den ivy vined: if noun is east or noun is west, say "Entering the do owe wood is not hard. Leaving, though..." instead;
 
 printed name of Den Ivy Vined is "[if tent net is moot]Den, Ivy-Vined[else]All-Ivy Villa[end if]".
 
 understand "all ivy villa" and "all ivy" and "all/ivy" and "all/ivy villa" as den ivy vined when tent net is not moot.
 
+chapter do owe wood
+
+the do owe wood is peripheral scenery in Den Ivy Vined. "It looks like a nice place to be, but you couldn't afford it[if player has cash sac], even with the cash sac[end if]."
+
 chapter code doc
 
-Code Doc is a neuter person in Den Ivy Vined. "[one of]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket labeled DR A. CARD. Busy, but not too busy to help someone else."
+Code Doc is a neuter person in Den Ivy Vined. "[one of]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.' The Doc also mentions the Do-Owe Wood is to the west and east.[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket labeled DR A. CARD. Busy, but not too busy to help someone else."
 
 understand "dr/card" and "dr card" as code doc.
 
