@@ -22,6 +22,14 @@ by one point
 >evaded ave
 That'll appear later.
 
+#mistake test for till lit
+>till lit
+You possess no farm tools. And this would be pointless anyway.
+
+#mistake test for tilt lit
+>tilt lit
+It's stuck into the ground.
+
 #mistake test for fun enuf
 >fun enuf
 Still ungrammatical!
@@ -42,7 +50,7 @@ Nonsense! Adventure is its own reward!
 >pac cap
 You almost take the cap, but you fumble it slightly. The Flee Elf blinks. "You're almost there, but ... umm, well, you need to do a little more."
 
-#mistake test for paca cap/pacb cap/pacc cap/pacd cap/pacf cap/pacg cap/pach cap/paci cap/pacj cap/pacl cap/pacm cap/pacn cap/pacp cap/pacq cap/pacr cap/pacs cap/pacu cap/pacv cap/pacw cap/pacx cap/pacz cap
+#mistake test for paca cap/pacb cap/pacc cap/pacd cap/pacf cap/pacg cap/pach cap/paci cap/pacj cap/pacl cap/pacm cap/pacn cap/pacp cap/pacq cap/pacr cap/pacu cap/pacv cap/pacw cap/pacx cap/pacz cap
 >paca cap
 "Hmm, try again," grumps the Flee Elf.
 >pacb cap
@@ -174,6 +182,7 @@ That's what Dave is, but you need to figure how to get rid of him.
 >guh thug
 That's what Dave is, but you need to figure how to get rid of him.
 
+#not a mistake
 >evade dave
 
 #mistake test for evade dave
@@ -192,6 +201,9 @@ The Sto Lots remains unadorned.
 #mistake test for sto gots
 >sto gots
 Yes, you gots a lot of space, and you will gots a lot of stuff as the game goes on.
+#mistake test for sto jots
+>sto jots
+There's already a bookcase in this game.
 #mistake test for sto nots
 >sto nots
 That would defeat the purpose!
@@ -231,6 +243,9 @@ Ugh! You don't need to make this place worse
 #mistake test for wort row
 >wort row
 Worn Row is not meant to be a garden. Maybe it would look nicer that way, but it wouldn't be helpful to you.
+#mistake test for worf row
+>worf row
+No Enterprise security officer arrives to help you.
 
 >word row
 by one point
@@ -355,7 +370,7 @@ by one point
 >seer frees
 You already feel free enough here.
 
-#mistake test for fig gif/gif fig
+#mistake test for gif fig/fig gif
 >fig gif
 The fig remains firmly text-based. Eh, it's more edible that way.
 >gif fig
@@ -443,10 +458,10 @@ Die? I'd...
 #mistake test for moo loom
 >moo loom
 The noises stay around.
-#mistake test for poo boop/poo foop/poo zoop
 #mistake test for moo zoom
 >moo zoom
 Nothing speeds up or gets magnified.
+#mistake test for poo boop/poo foop/poo zoop
 >poo boop
 That's not the appropriate sound effect for the coop or any potential contents.
 >poo foop
@@ -704,7 +719,7 @@ No need to fling stuff around, and no need for magic, either.
 
 #mistake test for told lot
 >told lot
-The cross orc isn't open to verbal negotiation
+The cross orc isn't open to verbal negotiation.
 
 #mistake test for crop orc
 >crop orc
@@ -739,6 +754,12 @@ The cross orc and crag arc don't fuse together. Rats.
 >crab arc
 That's just what you need, a giant crab coming after you, along with the cross orc.
 
+#mistake test for crac arc/crak arc
+>crac arc
+While there may be a correlation between bad spelling and extreme strength, there's no causation. Sorry.
+>crak arc
+While there may be a correlation between bad spelling and extreme strength, there's no causation. Sorry.
+
 >use cash sac on cross orc
 by one point
 
@@ -761,7 +782,7 @@ by one point
 
 >s
 
-#mistake test for defy fed
+#mistake retest for defy fed
 >defy fed
 Way to go! Keep that Hunger! Well, I hope it's that and not conspiracy theories about the Fed.
 
@@ -845,6 +866,10 @@ But what to do to it? How to change it?
 >use radar on crag arc
 by one point
 #got ufo tofu
+
+#mistake retest for crac arc/crak arc
+>crac arc
+While there may be a correlation between bad spelling and extreme strength, there's no causation. Sorry. Besides, you got something, already.
 
 >n
 
@@ -1320,6 +1345,18 @@ Owning/pwning would embarrass Ian, but that is too archaic a synonym.
 #mistake test for mo nom
 >mo nom
 Greedy! There's enough food to find around here, really.
+
+#mistake test for mong nom
+>mong nom
+No 'interesting' brownies appear.
+
+#mistake test for monk nom
+>monk nom
+Cannibalism, or super sparse food, is not an option.
+
+#mistake test for mono nom
+>mono nom
+Planning to eat alone is kinda sad.
 
 #mistake test for krab ark
 >krab ark

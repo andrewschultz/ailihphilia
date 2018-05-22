@@ -4,7 +4,7 @@ volume Mistakes
 
 [the rooms here are arranged alphabetically. When an item triggers the mistake, the room will be the one where you first find the item. If there are two places, we go with the first: for instance, (partial spoiler) the roto motor appears in the west of the two locations where it can turn up.]
 
-[programmer's note: the utility aam.py adds or sorts the 'mis' numbers]
+[programmer's note: the utility aam.py adds or sorts the 'mis' numbers. Mist.py makes sure each mistake is in the text file.]
 
 to decide whether (mt - a thing) is/are quicknear:
 	if mt is in location of player, yes;
@@ -212,60 +212,68 @@ understand "gull lug" as a mistake ("You shouldn't try to take advantage of sick
 
 understand "gulp lug" as a mistake ("Cannibalism is wrong. Besides, you'd probably catch whatever the Gulf Lug has.[mis of 80]") when gulf lug is quicknear.
 
+understand "musc sum" as a mistake ("You don't need Dave to return.[mis of 81]") when player is in Flu Gulf.
+
+understand "muse sum" as a mistake ("You think back to everyone who has inspired you, past and present. It's life-affirming![mis of 82]") when player is in Flu Gulf or Dave is quicknear.
+
+understand "musk sum" as a mistake ("[location of player] still smells the same.[mis of 83]") when player is in Flu Gulf or Dave is quicknear.
+
+understand "must sum" as a mistake ("You take stock of all you need to do--or at least, all you know you need to do. Or you think back to horrible repetitive exercises in math class, which were horrible whether you were good at them or not.[mis of 84]") when player is in Flu Gulf or Dave is quicknear.
+
 section scorn rocs
 
-understand "corn roc" as a mistake ("The scorn rocs remain plural and inorganic.[mis of 81]") when scorn rocs are quicknear.
+understand "corn roc" as a mistake ("The scorn rocs remain plural and inorganic.[mis of 85]") when scorn rocs are quicknear.
 
-understand "rocs cor" as a mistake ("Your flattery doesn't move the rocs.[mis of 82]") when scorn rocs are quicknear.
+understand "rocs cor" as a mistake ("Your flattery doesn't move the rocs.[mis of 86]") when scorn rocs are quicknear.
 
-understand "score rocs" as a mistake ("You don't have any witty way to score off them, or steal them, or whatever, and you don't need to.[mis of 83]") when scorn rocs are quicknear.
+understand "score rocs" as a mistake ("You don't have any witty way to score off them, or steal them, or whatever, and you don't need to.[mis of 87]") when scorn rocs are quicknear.
 
 chapter Frush Surf
 
-understand "slate petals" as a mistake ("The metals are for a didactic and not an aesthetic purpose.[mis of 84]") when slate metals are quicknear.
+understand "slate petals" as a mistake ("The metals are for a didactic and not an aesthetic purpose.[mis of 88]") when slate metals are quicknear.
 
-understand "yak kay" as a mistake ("The yak perks its ears up slightly, then goes back to looking bored. Maybe you didn't quite say things right.[mis of 85]") when yak is quicknear.
+understand "yak kay" as a mistake ("The yak perks its ears up slightly, then goes back to looking bored. Maybe you didn't quite say things right.[mis of 89]") when yak is quicknear.
 
 chapter Fun Nuf
 
-understand "evaded ave" as a mistake ("That'll appear later.[mis of 86]") when player is in Fun Nuf and Evaded Ave is unvisited. [?? see Dave in Evaded Ave]
+understand "evaded ave" as a mistake ("That'll appear later.[mis of 90]") when player is in Fun Nuf and Evaded Ave is unvisited. [?? see Dave in Evaded Ave]
 
-understand "fun enuf" as a mistake ("Still ungrammatical![mis of 87]") when player is in Fun Nuf.
+understand "fun enuf" as a mistake ("Still ungrammatical![mis of 91]") when player is in Fun Nuf.
 
-understand "fun snuf" as a mistake ("You vow to take saving fantasy worlds much more seriously. No more frivolity![mis of 88]") when player is in Fun Nuf.
+understand "fun snuf" as a mistake ("You vow to take saving fantasy worlds much more seriously. No more frivolity![mis of 92]") when player is in Fun Nuf.
 
-understand "fund nuf" as a mistake ("Nonsense! Adventure is its own reward![mis of 89]") when player is in Fun Nuf.
+understand "fund nuf" as a mistake ("Nonsense! Adventure is its own reward![mis of 93]") when player is in Fun Nuf.
 
-understand "funk nuf" as a mistake ("No cool music plays, but at least it doesn't smell worse.[mis of 90]") when player is in Fun Nuf.
+understand "funk nuf" as a mistake ("No cool music plays, but at least it doesn't smell worse.[mis of 94]") when player is in Fun Nuf.
 
-understand "till lit" as a mistake ("You possess no farm tools. And this would be pointless anyway.[mis of 91]") when player is in Fun Nuf.
+understand "till lit" as a mistake ("You possess no farm tools. And this would be pointless anyway.[mis of 95]") when player is in Fun Nuf.
 
-understand "tilt lit" as a mistake ("It's stuck into the ground.[mis of 92]") when player is in Fun Nuf.
+understand "tilt lit" as a mistake ("It's stuck into the ground.[mis of 96]") when player is in Fun Nuf.
 
 section cap abuse
 
 to say pace-clue-maybe:
 	say "[if pace-prev is true or cap-ever-pace is true]There's nothing else special to do with the pace cap[else]There may be one more thing to do other than PACK the cap, but that's not it[end if]"
 
-understand "pa cap" as a mistake ("The word DAD briefly flashes on the Pact Cap. Weird, but not really.[mis of 93]") when Pact Cap is quicknear.
+understand "pa cap" as a mistake ("The word DAD briefly flashes on the Pact Cap. Weird, but not really.[mis of 97]") when Pact Cap is quicknear.
 
-understand "pac cap" as a mistake ("You almost take the cap, but you fumble it slightly. The Flee Elf blinks. 'You're almost there, but ... umm, well, you need to do a little more.'[paragraph break]Also, PACs aren't necessarily evil, but they aren't terribly heroic.[mis of 94]") when Flee Elf is quicknear.
+understand "pac cap" as a mistake ("You almost take the cap, but you fumble it slightly. The Flee Elf blinks. 'You're almost there, but ... umm, well, you need to do a little more.'[paragraph break]Also, PACs aren't necessarily evil, but they aren't terribly heroic.[mis of 98]") when Flee Elf is quicknear.
 
-understand "paca cap" and "pacb cap" and "pacc cap" and "pacd cap" and "pacf cap" and "pacg cap" and "pach cap" and "paci cap" and "pacj cap" and "pacl cap" and "pacm cap" and "pacn cap" and "pacp cap" and "pacq cap" and "pacr cap" and "pacu cap" and "pacv cap" and "pacw cap" and "pacx cap" and "pacz cap" as a mistake ("[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].[mis of 95]") when Pact Cap is quicknear. [this should be trivially true, but just in case...]
+understand "paca cap" and "pacb cap" and "pacc cap" and "pacd cap" and "pacf cap" and "pacg cap" and "pach cap" and "paci cap" and "pacj cap" and "pacl cap" and "pacm cap" and "pacn cap" and "pacp cap" and "pacq cap" and "pacr cap" and "pacu cap" and "pacv cap" and "pacw cap" and "pacx cap" and "pacz cap" as a mistake ("[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].[mis of 99]") when Pact Cap is quicknear. [this should be trivially true, but just in case...]
 
-understand "paco cap" as a mistake ("[if player has pact cap][pace-clue-maybe][else]The Flee Elf notes that's a pejorative term for policemen in Central America--not quite what you want, for decency or for practicality[end if].[mis of 96]") when Pact Cap is quicknear.
+understand "paco cap" as a mistake ("[if player has pact cap][pace-clue-maybe][else]The Flee Elf notes that's a pejorative term for policemen in Central America--not quite what you want, for decency or for practicality[end if].[mis of 100]") when Pact Cap is quicknear.
 
-understand "pacs cap" as a mistake ("PACs aren't necessarily evil, but they aren't terribly heroic.[mis of 97]") when Pact Cap is quicknear.
+understand "pacs cap" as a mistake ("PACs aren't necessarily evil, but they aren't terribly heroic.[mis of 101]") when Pact Cap is quicknear.
 
-understand "pact cap" as a mistake ("It already is![mis of 98]") when Pact Cap is quicknear.
+understand "pact cap" as a mistake ("It already is![mis of 102]") when Pact Cap is quicknear.
 
 section flee elf abuse
 
-understand "flea elf" and "flea" as a mistake("The elf scratches for a bit, then looks embarrassed.[mis of 99]") when Flee Elf is quicknear.
+understand "flea elf" and "flea" as a mistake("The elf scratches for a bit, then looks embarrassed.[mis of 103]") when Flee Elf is quicknear.
 
-understand "fleece elf" and "fleece" as a mistake("There is much more fortune and glory in adventure! It's the cap you want to concentrate on.[mis of 100]") when Flee Elf is quicknear.
+understand "fleece elf" and "fleece" as a mistake("There is much more fortune and glory in adventure! It's the cap you want to concentrate on.[mis of 104]") when Flee Elf is quicknear.
 
-understand "flex elf" and "flex" as a mistake("The elf looks more flexible than you. It's the cap you want to concentrate on.[mis of 101]") when Flee Elf is quicknear.
+understand "flex elf" and "flex" as a mistake("The elf looks more flexible than you. It's the cap you want to concentrate on.[mis of 105]") when Flee Elf is quicknear.
 
 section Set O Notes abuse
 
@@ -277,285 +285,289 @@ to say girt-clue:
 	else:
 		say "Hmm. Tri indicates three. You've found two different configurations for Worn Row/[Worn Row]. What is the third, you wonder";
 
-understand "tri girt" as a mistake ("[girt-clue].[mis of 102]") when player has Set O Notes.
+understand "tri girt" as a mistake ("[girt-clue].[mis of 106]") when player has Set O Notes.
 
 chapter Gross Org
 
-understand "bra garb" as a mistake ("I've tried to keep this game gender neutral.[mis of 103]") when brag garb is quicknear.
+understand "bra garb" as a mistake ("I've tried to keep this game gender neutral.[mis of 107]") when brag garb is quicknear.
 
-understand "dent Ned" as a mistake ("Less violence, more subtlety.[mis of 104]") when Ned is quicknear.
+understand "dent Ned" as a mistake ("Less violence, more subtlety.[mis of 108]") when Ned is quicknear.
 
-understand "grot org" as a mistake ("Gross, grot ... same thing.[mis of 105]") when player is in Gross Org.
+understand "grot org" as a mistake ("Gross, grot ... same thing.[mis of 109]") when player is in Gross Org.
 
-understand "grow org" as a mistake ("[one of]This game is just a bunch of dumb jokes and silly wordplay mashed together, and any attempt at personal growth is severely frowned upon. So stop that![or]Your height does not change.[stopping][mis of 106]") when player is in Gross Org.
+understand "grow org" as a mistake ("[one of]This game is just a bunch of dumb jokes and silly wordplay mashed together, and any attempt at personal growth is severely frowned upon. So stop that![or]Your height does not change.[stopping][mis of 110]") when player is in Gross Org.
 
-understand "stinko knits" as a mistake ("AFTER cleaning up Yelpley and Grebeberg is when to get drunk. Nurd.[mis of 107]") when stinky knits are quicknear.
+understand "stinko knits" as a mistake ("AFTER cleaning up Yelpley and Grebeberg is when to get drunk. Nurd.[mis of 111]") when stinky knits are quicknear.
 
 chapter Lair Trial
 
-understand "erg ogre" as a mistake ("The ogre would destroy you in a grunting match.[mis of 108]") when ergot ogre is quicknear.
+understand "erg ogre" as a mistake ("The ogre would destroy you in a grunting match.[mis of 112]") when ergot ogre is quicknear.
 
-understand "ergo ogre" as a mistake ("You aren't going to impress it with your smarts.[mis of 109]") when ergot ogre is quicknear.
+understand "ergo ogre" as a mistake ("You aren't going to impress it with your smarts.[mis of 113]") when ergot ogre is quicknear.
 
 chapter Le Babel
 
-understand "bron orb" as a mistake ("King James's orb is a basketball, and that's that.[mis of 110]") when Bro Orb is quicknear.
+understand "bron orb" as a mistake ("King James's orb is a basketball, and that's that.[mis of 114]") when Bro Orb is quicknear.
 
 chapter Mont Nom
 
-understand "krab ark" as a mistake ("You don't have the materials to climb the ark, and you don't need to.[mis of 111]") when player is in Mont Nom.
+understand "krab ark" as a mistake ("You don't have the materials to climb the ark, and you don't need to.[mis of 115]") when player is in Mont Nom.
 
-understand "mar tram" as a mistake ("No. [if epicer recipe is xed]You need it to build the north-tron[else]It must be good for something[end if].[mis of 112]") when martini tram is quicknear.
+understand "mar tram" as a mistake ("No. [if epicer recipe is xed]You need it to build the north-tron[else]It must be good for something[end if].[mis of 116]") when martini tram is quicknear.
 
-understand "mo nom" as a mistake ("Greedy! There's enough food to find around here, really.[mis of 113]") when player is in Mont Nom.
+understand "mo nom" as a mistake ("Greedy! There's enough food to find around here, really.[mis of 117]") when player is in Mont Nom.
 
-understand "mong nom" as a mistake ("No 'interesting' brownies appear.[mis of 114]") when player is in Mont Nom.
+understand "mong nom" as a mistake ("No 'interesting' brownies appear.[mis of 118]") when player is in Mont Nom.
 
-understand "monk nom" as a mistake ("Cannibalism, or super sparse food, is not an option.[mis of 115]") when player is in Mont Nom.
+understand "monk nom" as a mistake ("Cannibalism, or super sparse food, is not an option.[mis of 119]") when player is in Mont Nom.
 
-understand "mono nom" as a mistake ("Planning to eat alone is kinda sad.[mis of 116]") when player is in Mont Nom.
+understand "mono nom" as a mistake ("Planning to eat alone is kinda sad.[mis of 120]") when player is in Mont Nom.
 
-understand "naif Ian" as a mistake ("Sadly, mind control is beyond your powers.[mis of 117]") when Ian is quicknear.
+understand "naif Ian" as a mistake ("Sadly, mind control is beyond your powers.[mis of 121]") when Ian is quicknear.
 
-understand "nain Ian" as a mistake ("Owning/pwning would embarrass Ian, but that is too archaic a synonym.[mis of 118]") when Ian is quicknear.
+understand "nain Ian" as a mistake ("Owning/pwning would embarrass Ian, but that is too archaic a synonym.[mis of 122]") when Ian is quicknear.
 
-understand "nair Ian" as a mistake ("That would be painful and embarrassing enough to chase him, or someone named Brian, off, but alas, you don't have anything to do the job[if player has nat's tan]. The bottle of Nat's Tan doesn't count[end if].[mis of 119]") when Ian is quicknear.
+understand "nair Ian" as a mistake ("That would be painful and embarrassing enough to chase him, or someone named Brian, off, but alas, you don't have anything to do the job[if player has nat's tan]. The bottle of Nat's Tan doesn't count[end if].[mis of 123]") when Ian is quicknear.
 
 chapter Motto Bottom
 
-understand "gurn rug" as a mistake ("It's a guru rug. It's too good to be moved by such a cheap bailout.[mis of 120]") when guru rug is quicknear.
+understand "gurn rug" as a mistake ("It's a guru rug. It's too good to be moved by such a cheap bailout.[mis of 124]") when guru rug is quicknear.
 
-understand "tamp mat" as a mistake ("It's already pretty beaten down.[mis of 121]") when player is in Motto Bottom and tame mat is in Motto Bottom.
+understand "tamp mat" as a mistake ("It's already pretty beaten down.[mis of 125]") when player is in Motto Bottom and tame mat is in Motto Bottom.
 
 chapter Moo Room
 
-understand "moo boom" as a mistake ("You hear something strafe farts far away.[mis of 122]") when player is in Moo Room.
+understand "moo boom" as a mistake ("You hear something strafe farts far away.[mis of 126]") when player is in Moo Room.
 
-understand "moo doom" as a mistake ("Die? I'd...[mis of 123]") when player is in Moo Room.
+understand "moo doom" as a mistake ("Die? I'd...[mis of 127]") when player is in Moo Room.
 
-understand "moo loom" as a mistake ("The noises stay around.[mis of 124]") when player is in Moo Room.
+understand "moo loom" as a mistake ("The noises stay around.[mis of 128]") when player is in Moo Room.
 
-understand "moo zoom" as a mistake ("Nothing speeds up or gets magnified.[mis of 125]") when player is in Moo Room.
+understand "moo zoom" as a mistake ("Nothing speeds up or gets magnified.[mis of 129]") when player is in Moo Room.
 
-understand "poo boop" and "poo foop" and "poo zoop" as a mistake ("That's not the appropriate sound effect for the coop or [if gnu dung is moot]its[else]any potential[end if] contents.[mis of 126]") when poo coop is quicknear.
+understand "poo boop" and "poo foop" and "poo zoop" as a mistake ("That's not the appropriate sound effect for the coop or [if gnu dung is moot]its[else]any potential[end if] contents.[mis of 130]") when poo coop is quicknear.
 
-understand "poo goop" as a mistake ("The coop is intended to prevent AGAINST having to carry yucky stuff, here.[mis of 127]") when poo coop is quicknear.
+understand "poo goop" as a mistake ("The coop is intended to prevent AGAINST having to carry yucky stuff, here.[mis of 131]") when poo coop is quicknear.
 
-understand "poo hoop" and "poo loop" as a mistake ("No, the coop needs to hold something.[mis of 128]") when poo coop is quicknear.
+understand "poo hoop" and "poo loop" as a mistake ("No, the coop needs to hold something.[mis of 132]") when poo coop is quicknear.
 
-understand "poo noop" as a mistake ("Doing nothing with the coop or what [if gnu dung is moot]is[else]could go[end if] in it is not an option.[mis of 129]") when poo coop is quicknear.
+understand "poo noop" as a mistake ("Doing nothing with the coop or what [if gnu dung is moot]is[else]could go[end if] in it is not an option.[mis of 133]") when poo coop is quicknear.
 
-understand "poo soop" as a mistake ("Good thing this isn't a cooking sim.[mis of 130]") when poo coop is quicknear.
+understand "poo soop" as a mistake ("Good thing this isn't a cooking sim.[mis of 134]") when poo coop is quicknear.
 
-understand "poo woop" as a mistake ("How or why it excites you, I don't want to know.[mis of 131]") when poo coop is quicknear.
+understand "poo woop" as a mistake ("How or why it excites you, I don't want to know.[mis of 135]") when poo coop is quicknear.
 
 chapter My Gym
 
-understand "evade dave" as a mistake ("Dave's not here, man![mis of 132]") when player is in My Gym and Dave is moot.
+understand "evade dave" as a mistake ("Dave's not here, man![mis of 136]") when player is in My Gym and Dave is moot.
 
-understand "sto bots" as a mistake ("No cool robots pop out.[mis of 133]") when sto lots is quicknear.
+understand "mush sum" as a mistake ("Dave worked hard to build these muscles. It'd be mean if you could wipe them out. And impractical--they might be slowing him down a bit, and that could help you.[mis of 137]") when Dave is quicknear.
 
-understand "sto cots" as a mistake ("No, it can store all kinds of things.[mis of 134]") when sto lots is quicknear.
+understand "my pym" as a mistake ("You suddenly have a brilliant idea for a Britcom featuring Edgar Allan Poe (a Poe-op?), but it slips away just as quickly.[mis of 138]") when player is in My Gym.
 
-understand "sto dots" as a mistake ("The Sto Lots remains unadorned.[mis of 135]") when sto lots is quicknear.
+understand "sto bots" as a mistake ("No cool robots pop out.[mis of 139]") when sto lots is quicknear.
 
-understand "sto gots" as a mistake ("Yes, you gots a lot of space, and you will gots a lot of stuff as the game goes on.[mis of 136]") when sto lots is quicknear.
+understand "sto cots" as a mistake ("No, it can store all kinds of things.[mis of 140]") when sto lots is quicknear.
 
-understand "sto jots" as a mistake ("There's already a bookcase in this game.[mis of 137]") when sto lots is quicknear.
+understand "sto dots" as a mistake ("The Sto Lots remains unadorned.[mis of 141]") when sto lots is quicknear.
 
-understand "sto nots" as a mistake ("That would defeat the purpose![mis of 138]") when sto lots is quicknear.
+understand "sto gots" as a mistake ("Yes, you gots a lot of space, and you will gots a lot of stuff as the game goes on.[mis of 142]") when sto lots is quicknear.
 
-understand "sto pots" as a mistake("No, it's more efficient as one entity. Also, this is not a cooking sim.[mis of 139]") when sto lots is quicknear.
+understand "sto jots" as a mistake ("There's already a bookcase in this game.[mis of 143]") when sto lots is quicknear.
 
-understand "sto sots" as a mistake ("It's not big enough to be a drunk tank.[mis of 140]") when sto lots is quicknear.
+understand "sto nots" as a mistake ("That would defeat the purpose![mis of 144]") when sto lots is quicknear.
 
-understand "wasp saw" as a mistake ("You don't need the wash saw to turn into something that might sting you, especially since you are carrying it.[mis of 141]") when wash saw is quicknear.
+understand "sto pots" as a mistake("No, it's more efficient as one entity. Also, this is not a cooking sim.[mis of 145]") when sto lots is quicknear.
+
+understand "sto sots" as a mistake ("It's not big enough to be a drunk tank.[mis of 146]") when sto lots is quicknear.
+
+understand "wasp saw" as a mistake ("You don't need the wash saw to turn into something that might sting you, especially since you are carrying it.[mis of 147]") when wash saw is quicknear.
 
 chapter Ooze Zoo
 
-understand "eel flee" as a mistake ("Well, you could maybe get one eel to leave, but there are a lot.[mis of 142]") when sleep eels are quicknear.
+understand "eel flee" as a mistake ("Well, you could maybe get one eel to leave, but there are a lot.[mis of 148]") when sleep eels are quicknear.
 
-understand "eel glee" as a mistake ("The eels squirm a bit. I bet they're having fun dreams! Too bad I can't describe them.[mis of 143]") when sleep eels are quicknear.
+understand "eel glee" as a mistake ("The eels squirm a bit. I bet they're having fun dreams! Too bad I can't describe them.[mis of 149]") when sleep eels are quicknear.
 
-understand "sleek eels" as a mistake ("The eels don't need dexterity. They need comfort. They are slippery enough.[mis of 144]") when sleep eels are quicknear.
+understand "sleek eels" as a mistake ("The eels don't need dexterity. They need comfort. They are slippery enough.[mis of 150]") when sleep eels are quicknear.
 
-understand "sleet eels" as a mistake ("They are alive. Turning them to metal would be cruel.[mis of 145]") when sleep eels are quicknear.
+understand "sleet eels" as a mistake ("They are alive. Turning them to metal would be cruel.[mis of 151]") when sleep eels are quicknear.
 
 chapter Pro Corp
 
-understand "balk lab" as a mistake ("There's not much to do or say here, for sure[if balm-got is false]![else]--well, maybe something that's not quite BALK.[end if][mis of 146]") when player is in Pro Corp.
+understand "balk lab" as a mistake ("There's not much to do or say here, for sure[if balm-got is false]![else]--well, maybe something that's not quite BALK.[end if][mis of 152]") when player is in Pro Corp.
 
-understand "ball lab" as a mistake ("Nothing fun explodes out from the walls or ceiling.[mis of 147]") when player is in Pro Corp.
+understand "ball lab" as a mistake ("Nothing fun explodes out from the walls or ceiling.[mis of 153]") when player is in Pro Corp.
 
-understand "band nab" as a mistake ("Mr. Arm tries to grip his own wrist but can't quite.[mis of 148]") when Mr Arm is quicknear.
+understand "band nab" as a mistake ("Mr. Arm tries to grip his own wrist but can't quite.[mis of 154]") when Mr Arm is quicknear.
 
-understand "bank nab" as a mistake ("Whoah! You're one of the good guys, here.[mis of 149]") when Mr Arm is quicknear.
+understand "bank nab" as a mistake ("Whoah! You're one of the good guys, here.[mis of 155]") when Mr Arm is quicknear.
 
-understand "DNA hand" as a mistake ("Right idea, but you can't do it on your own. You need technology to help you.[mis of 150]") when DNA band is quicknear.
+understand "DNA hand" as a mistake ("Right idea, but you can't do it on your own. You need technology to help you.[mis of 156]") when DNA band is quicknear.
 
-understand "dna land" as a mistake ("Biochemistry has its own nuances with symmetry, but we're sticking with something a lot dumber, here.[mis of 151]") when DNA band is quicknear or DNA hand is quicknear.
+understand "dna land" as a mistake ("Biochemistry has its own nuances with symmetry, but we're sticking with something a lot dumber, here.[mis of 157]") when DNA band is quicknear or DNA hand is quicknear.
 
-understand "DNA sand" as a mistake ("That will happen with the passage of time.[mis of 152]") when DNA band is quicknear or DNA hand is quicknear.
+understand "DNA sand" as a mistake ("That will happen with the passage of time.[mis of 158]") when DNA band is quicknear or DNA hand is quicknear.
 
-understand "dna wand" as a mistake ("No. You know TRUE MAGIC MUST COME FROM WITHIN.[mis of 153]") when DNA band is quicknear or DNA hand is quicknear.
+understand "dna wand" as a mistake ("No. You know TRUE MAGIC MUST COME FROM WITHIN.[mis of 159]") when DNA band is quicknear or DNA hand is quicknear.
 
-understand "line nil" as a mistake ("The Link Nil security system fails to turn into a line and vanish. That's pretty secure![mis of 154]") when player is in Pro Corp.
+understand "line nil" as a mistake ("The Link Nil security system fails to turn into a line and vanish. That's pretty secure![mis of 160]") when player is in Pro Corp.
 
-understand "mra arm" as a mistake ("No! Mr. Arm is on the side of social justice.[mis of 155]") when Mr Arm is quicknear.
+understand "mra arm" as a mistake ("No! Mr. Arm is on the side of social justice.[mis of 161]") when Mr Arm is quicknear.
 
-understand "psi lisp" as a mistake ("The Psi Wisp can't speak.[mis of 156]") when Psi Wisp is quicknear.
+understand "psi lisp" as a mistake ("The Psi Wisp can't speak.[mis of 162]") when Psi Wisp is quicknear.
 
-understand "rm mr" as a mistake ("No, Mr. Arm will be helpful. (Spoiler: he'll leave for better things once he has helped, so happy endings all around. Yay!)[mis of 157]") when Mr Arm is quicknear.
+understand "rm mr" as a mistake ("No, Mr. Arm will be helpful. (Spoiler: he'll leave for better things once he has helped, so happy endings all around. Yay!)[mis of 163]") when Mr Arm is quicknear.
 
-understand "sci bics" as a mistake ("You don't need any exotic writing implements.[mis of 158]") when player is in Pro Corp.
+understand "sci bics" as a mistake ("You don't need any exotic writing implements.[mis of 164]") when player is in Pro Corp.
 
-understand "sci dics" as a mistake ("You don't have time to learn weird terminology now.[mis of 159]") when player is in Pro Corp.
+understand "sci dics" as a mistake ("You don't have time to learn weird terminology now.[mis of 165]") when player is in Pro Corp.
 
-understand "sci fics" as a mistake ("But you already have reading material![mis of 160]") when player is in Pro Corp.
+understand "sci fics" as a mistake ("But you already have reading material![mis of 166]") when player is in Pro Corp.
 
-understand "sci mics" as a mistake ("Your experience remains relatively quiet but also free of static.[mis of 161]") when player is in Pro Corp.
+understand "sci mics" as a mistake ("Your experience remains relatively quiet but also free of static.[mis of 167]") when player is in Pro Corp.
 
-understand "sci sics" as a mistake ("You think you spy a typo somewhere in the sci pics, leaving you feel free to feel smarter than something you don't unerstand. Go, you![mis of 162]") when player is in Pro Corp.
+understand "sci sics" as a mistake ("You think you spy a typo somewhere in the sci pics, leaving you feel free to feel smarter than something you don't unerstand. Go, you![mis of 168]") when player is in Pro Corp.
 
-understand "sci tics" as a mistake ("You laugh at how silly the sci pics are, then sniff a bit, then tap your head.[mis of 163]") when player is in Pro Corp.
+understand "sci tics" as a mistake ("You laugh at how silly the sci pics are, then sniff a bit, then tap your head.[mis of 169]") when player is in Pro Corp.
 
 section golf log/dork rod
 
-understand "dorm rod" and "dorm" as a mistake ("You reveal no frat. Arf![mis of 164]") when dork rod is quicknear.
+understand "dorm rod" and "dorm" as a mistake ("You reveal no frat. Arf![mis of 170]") when dork rod is quicknear.
 
-understand "golf log" as a mistake ("There is no Par Trap or Tee Meet to navigate here, so you don't need to make a golf log.[mis of 165]") when gold log is quicknear.
+understand "golf log" as a mistake ("There is no Par Trap or Tee Meet to navigate here, so you don't need to make a golf log.[mis of 171]") when gold log is quicknear.
 
 chapter Red Roses Order
 
-understand "gal slag" as a mistake ("You managed to annoy Madam enough that she lashes out and conks you with a mortal blow with the Gal Flag. Okay, not really, but name calling won't help.[mis of 166]") when Madam is quicknear. [?? do fake death thing]
+understand "gal slag" as a mistake ("You managed to annoy Madam enough that she lashes out and conks you with a mortal blow with the Gal Flag. Okay, not really, but name calling won't help.[mis of 172]") when Madam is quicknear. [?? do fake death thing]
 
-understand "sworn rows" as a mistake ("The sword rows are inanimate and neutral. Unless you get too close to them.[mis of 167]") when sword rows are quicknear.
+understand "sworn rows" as a mistake ("The sword rows are inanimate and neutral. Unless you get too close to them.[mis of 173]") when sword rows are quicknear.
 
 section yard ray misuse
 
-understand "yarg ray" and "yarr ray" as a mistake ("Becoming a pirate at the end? A clever heel turn![mis of 168]") when player has yard ray.
+understand "yarg ray" and "yarr ray" as a mistake ("Becoming a pirate at the end? A clever heel turn![mis of 174]") when player has yard ray.
 
-understand "yarn ray" as a mistake ("If you want more story, then sorry, this one's nearly at an end.[mis of 169]") when player has yard ray.
+understand "yarn ray" as a mistake ("If you want more story, then sorry, this one's nearly at an end.[mis of 175]") when player has yard ray.
 
 chapter Scrap Arcs
 
-understand "scram arcs" as a mistake ("The arcs stay still, but you can just go back east if you want.[mis of 170]") when player is in Scrap Arcs.
+understand "scram arcs" as a mistake ("The arcs stay still, but you can just go back east if you want.[mis of 176]") when player is in Scrap Arcs.
 
 chapter Seer Trees
 
-understand "seer brees" as a mistake ("[one of]A man in black and gold throws a football at you from 50 yards away, and it drills you right in the chest. Accurate![or]The man doesn't appear again. He probably has better things to do than schlep around in some text adventure. Perhaps he is off eating at a QB BBQ.[stopping][mis of 171]") when player is in Seer Trees.
+understand "seer brees" as a mistake ("[one of]A man in black and gold throws a football at you from 50 yards away, and it drills you right in the chest. Accurate![or]The man doesn't appear again. He probably has better things to do than schlep around in some text adventure. Perhaps he is off eating at a QB BBQ.[stopping][mis of 177]") when player is in Seer Trees.
 
-understand "seer frees" as a mistake ("[if stark rats are in Seer Trees]It won't be THAT easy[else]You already feel free enough here[end if].[mis of 172]") when player is in Seer Trees.
+understand "seer frees" as a mistake ("[if stark rats are in Seer Trees]It won't be THAT easy[else]You already feel free enough here[end if].[mis of 178]") when player is in Seer Trees.
 
 section stark rats
 
-understand "star rats" as a mistake ("You would rather they didn't star in your adventure, here. Must be some way to dispose of them.[mis of 173]") when stark rats are quicknear.
+understand "star rats" as a mistake ("You would rather they didn't star in your adventure, here. Must be some way to dispose of them.[mis of 179]") when stark rats are quicknear.
 
-understand "stare rats" as a mistake ("You try to win a blinking contest, and maybe you could with one, but not that many.[mis of 174]") when stark rats are quicknear.
+understand "stare rats" as a mistake ("You try to win a blinking contest, and maybe you could with one, but not that many.[mis of 180]") when stark rats are quicknear.
 
-understand "start rats" as a mistake ("You sort of need to stop them, instead.[mis of 175]") when stark rats are quicknear.
+understand "start rats" as a mistake ("You sort of need to stop them, instead.[mis of 181]") when stark rats are quicknear.
 
 section gift fig
 
-understand "gi fig" as a mistake ("Hard to imagine how to weaponize the fig.[mis of 176]") when gift fig is quicknear.
+understand "gi fig" as a mistake ("Hard to imagine how to weaponize the fig.[mis of 182]") when gift fig is quicknear.
 
-understand "gif fig" and "fig gif" as a mistake ("The fig remains firmly text-based. Eh, it's more edible that way.[mis of 177]") when gift fig is quicknear.
+understand "gif fig" and "fig gif" as a mistake ("The fig remains firmly text-based. Eh, it's more edible that way.[mis of 183]") when gift fig is quicknear.
 
 chapter Sneer Greens
 
 chapter Swamp Maws
 
-understand "swam maws" as a mistake ("Perhaps someone has, but you don't need to.[mis of 178]") when player is in Swamp Maws.
+understand "swam maws" as a mistake ("Perhaps someone has, but you don't need to.[mis of 184]") when player is in Swamp Maws.
 
-understand "swami maws" and "swamy maws" as a mistake ("[if Yack Cay is visited and den ivy vined is visited]Aw, come on, you've already met TWO SMART PEOPLE nearby[else if Yack Cay is unvisited and den ivy vined is unvisited]There might be someone smart nearby[else]Aw, come on, you've already met someone smart nearby[end if].[mis of 179]") when player is in Swamp Maws.
+understand "swami maws" and "swamy maws" as a mistake ("[if Yack Cay is visited and den ivy vined is visited]Aw, come on, you've already met TWO SMART PEOPLE nearby[else if Yack Cay is unvisited and den ivy vined is unvisited]There might be someone smart nearby[else]Aw, come on, you've already met someone smart nearby[end if].[mis of 185]") when player is in Swamp Maws.
 
 section eroded ore
 
-understand "eros ore" as a mistake ("I don't even want to know what you're trying to do, there.[mis of 180]") when eroded ore is quicknear or ore zero is quicknear.
+understand "eros ore" as a mistake ("I don't even want to know what you're trying to do, there.[mis of 186]") when eroded ore is quicknear or ore zero is quicknear.
 
 chapter Swept Pews
 
-understand "fra zarf" as a mistake ("This would send you on a long journey to Hadean Lands. One you might enjoy so much, you'll forget about Yelpley![mis of 181]") when player is in Swept Pews.
+understand "fra zarf" as a mistake ("This would send you on a long journey to Hadean Lands. One you might enjoy so much, you'll forget about Yelpley![mis of 187]") when player is in Swept Pews.
 
-understand "liar frail" and "liar trail" as a mistake ("The grail remains in your way to the south. But it was worth a try.[mis of 182]") when liar grail is quicknear.
+understand "liar frail" and "liar trail" as a mistake ("The grail remains in your way to the south. But it was worth a try.[mis of 188]") when liar grail is quicknear.
 
-understand "trod ort" as a mistake ("[if player has troll ort]Nah, you should keep it[else]It looks run-down enough[end if].[mis of 183]") when troll ort is quicknear.
+understand "trod ort" as a mistake ("[if player has troll ort]Nah, you should keep it[else]It looks run-down enough[end if].[mis of 189]") when troll ort is quicknear.
 
 chapter Toll Lot
 
-understand "crab arc" as a mistake ("That's just what you need, a giant crab coming after you[if cross orc is in Toll Lot], along with the cross orc[end if].[mis of 184]") when player is in Toll Lot.
+understand "crab arc" as a mistake ("That's just what you need, a giant crab coming after you[if cross orc is in Toll Lot], along with the cross orc[end if].[mis of 190]") when player is in Toll Lot.
 
-understand "crac arc" and "crak arc" as a mistake ("While there may be a correlation between bad spelling and extreme strength, there's no causation. Sorry[if UFO tofu is not off-stage and player is in Toll Lot]. Besides, you got something, already[end if].[mis of 185]") when player is in Toll Lot or player is in Scrap Arcs.
+understand "crac arc" and "crak arc" as a mistake ("While there may be a correlation between bad spelling and extreme strength, there's no causation. Sorry[if UFO tofu is not off-stage and player is in Toll Lot]. Besides, you got something, already[end if].[mis of 191]") when player is in Toll Lot or player is in Scrap Arcs.
 
-understand "cram arc" as a mistake ("Litterbug. Besides, you need pretty much everything you're carrying. And nothing would fit, anyway.[mis of 186]") when player is in Toll Lot.
+understand "cram arc" as a mistake ("Litterbug. Besides, you need pretty much everything you're carrying. And nothing would fit, anyway.[mis of 192]") when player is in Toll Lot.
 
-understand "crap arc" as a mistake ("You might cause a mudslide, or worse.[mis of 187]") when player is in Toll Lot or player is in Scrap Arcs.
+understand "crap arc" as a mistake ("You might cause a mudslide, or worse.[mis of 193]") when player is in Toll Lot or player is in Scrap Arcs.
 
-understand "crass arc" as a mistake ("[if cross orc is in Toll Lot]The cross orc and crag arc don't fuse together. Rats[else]You spend a few seconds feeling deeply offended by the crag arc[end if].[mis of 188]") when player is in Toll Lot or player is in Scrap Arcs.
+understand "crass arc" as a mistake ("[if cross orc is in Toll Lot]The cross orc and crag arc don't fuse together. Rats[else]You spend a few seconds feeling deeply offended by the crag arc[end if].[mis of 194]") when player is in Toll Lot or player is in Scrap Arcs.
 
-understand "cray arc" as a mistake ("The arc doesn't need to change shape or become more volatile.[mis of 189]") when player is in Toll Lot.
+understand "cray arc" as a mistake ("The arc doesn't need to change shape or become more volatile.[mis of 195]") when player is in Toll Lot.
 
-understand "croc orc" as a mistake ("The orc is fearsome enough without becoming a total genetic monstrosity.[mis of 190]") when cross orc is quicknear.
+understand "croc orc" as a mistake ("The orc is fearsome enough without becoming a total genetic monstrosity.[mis of 196]") when cross orc is quicknear.
 
-understand "crop orc" as a mistake ("That attack would boomerang, and not just because this is a palindrome-y game. The orc is lots, lots bigger than you.[paragraph break]Also, there is no farm nearby.[mis of 191]") when cross orc is quicknear.
+understand "crop orc" as a mistake ("That attack would boomerang, and not just because this is a palindrome-y game. The orc is lots, lots bigger than you.[paragraph break]Also, there is no farm nearby.[mis of 197]") when cross orc is quicknear.
 
-understand "crow orc" as a mistake ("The orc remains silent (yay) and flightless (boo).[mis of 192]") when cross orc is quicknear.
+understand "crow orc" as a mistake ("The orc remains silent (yay) and flightless (boo).[mis of 198]") when cross orc is quicknear.
 
-understand "told lot" as a mistake ("[if cross orc is in Toll Lot]The cross orc isn't open to verbal negotiation[else]You pretend you won an argument against the cross orc and didn't just hand over money[end if].[mis of 193]") when player is in Toll Lot.
+understand "told lot" as a mistake ("[if cross orc is in Toll Lot]The cross orc isn't open to verbal negotiation[else]You pretend you won an argument against the cross orc and didn't just hand over money[end if].[mis of 199]") when player is in Toll Lot.
 
 chapter Trapeze Part
 
-understand "tendered net" as a mistake ("[if player has tent net]You already have it[else]Nobody comes by to hand it to you. You're on the right track. Maybe you're overthinking things[end if].[mis of 194]") when ten level net is quicknear or tent net is quicknear.
+understand "tendered net" as a mistake ("[if player has tent net]You already have it[else]Nobody comes by to hand it to you. You're on the right track. Maybe you're overthinking things[end if].[mis of 200]") when ten level net is quicknear or tent net is quicknear.
 
 chapter Worn Row
 
 to say red-clue: if redness ender is not moot, say ", but who knows, that redness ender might help you some day"
 
-understand "borg Rob" as a mistake ("He is already assimilated.[mis of 195]") when Rob is quicknear.
+understand "borg Rob" as a mistake ("He is already assimilated.[mis of 201]") when Rob is quicknear.
 
-understand "bork Rob" as a mistake ("Maybe there is a more nonviolent way to get him to give up.[mis of 196]") when Rob is quicknear.
+understand "bork Rob" as a mistake ("Maybe there is a more nonviolent way to get him to give up.[mis of 202]") when Rob is quicknear.
 
-understand "dwell lewd" as a mistake ("DWELT LEWD should NOT be read as an instruction manual. Well, it shouldn't be read at all, really.[mis of 197]") when DWELT LEWD is quicknear.
+understand "dwell lewd" as a mistake ("DWELT LEWD should NOT be read as an instruction manual. Well, it shouldn't be read at all, really.[mis of 203]") when DWELT LEWD is quicknear.
 
-understand "pi tip" as a mistake ("4/1 - 4/3 + 4/5 - 4/7 + 4/9 - 4/11 ... wait, no, that's a bit slow.[paragraph break]3 + 4/(2*3*4) - 4/(4*5*6) + 4/(6*7*8) - 4/(8*9*10) + 4/(10*11*12) - 4/(12*13*14) ...[mis of 198]") when pity tip is quicknear.
+understand "pi tip" as a mistake ("4/1 - 4/3 + 4/5 - 4/7 + 4/9 - 4/11 ... wait, no, that's a bit slow.[paragraph break]3 + 4/(2*3*4) - 4/(4*5*6) + 4/(6*7*8) - 4/(8*9*10) + 4/(10*11*12) - 4/(12*13*14) ...[mis of 204]") when pity tip is quicknear.
 
-understand "pita tip" as a mistake ("Sorry, you're getting ambiguous snack cans and not any specific cuisine.[mis of 199]") when pity tip is quicknear.
+understand "pita tip" as a mistake ("Sorry, you're getting ambiguous snack cans and not any specific cuisine.[mis of 205]") when pity tip is quicknear.
 
-understand "pith tip" as a mistake ("It's already pretty pithy, and there's not enough material for a helmet.[mis of 200]") when pity tip is quicknear.
+understand "pith tip" as a mistake ("It's already pretty pithy, and there's not enough material for a helmet.[mis of 206]") when pity tip is quicknear.
 
-understand "track cart" as a mistake ("[if DWELT LEWD is off-stage]Right idea, but the cart isn't going anywhere[else]It's not going anywhere. You already unlocked a secret, anyway[end if].[mis of 201]") when tract cart is quicknear.
+understand "track cart" as a mistake ("[if DWELT LEWD is off-stage]Right idea, but the cart isn't going anywhere[else]It's not going anywhere. You already unlocked a secret, anyway[end if].[mis of 207]") when tract cart is quicknear.
 
-understand "worf row" as a mistake ("No Enterprise security officer arrives to help you.[mis of 202]") when player is in Worn Row.
+understand "worf row" as a mistake ("No Enterprise security officer arrives to help you.[mis of 208]") when player is in Worn Row.
 
-understand "worm row" as a mistake ("[if Worn Row is worny]Ugh! You don't need to make this place worse[else]You already upgraded Worn Row. No need to make it worse than it was[red-clue][end if].[mis of 203]") when player is in Worn Row.
+understand "worm row" as a mistake ("[if Worn Row is worny]Ugh! You don't need to make this place worse[else]You already upgraded Worn Row. No need to make it worse than it was[red-clue][end if].[mis of 209]") when player is in Worn Row.
 
-understand "worsts row" and "worses row" as a mistake ("It [if Worn Row is worny]is[else]was[end if] bad enough already.[mis of 204]") when player is in Worn Row.
+understand "worsts row" and "worses row" as a mistake ("It [if Worn Row is worny]is[else]was[end if] bad enough already.[mis of 210]") when player is in Worn Row.
 
-understand "wort row" as a mistake ("[Worn Row] is not meant to be a garden. Maybe it would look nicer that way, but it wouldn't be helpful to you.[mis of 205]") when player is in Worn Row.
+understand "wort row" as a mistake ("[Worn Row] is not meant to be a garden. Maybe it would look nicer that way, but it wouldn't be helpful to you.[mis of 211]") when player is in Worn Row.
 
 chapter Yack Cay
 
-understand "shard rahs" as a mistake ("The rahs are on paper, and besides, they might be useful.[mis of 206]") when sharp rahs are quicknear.
+understand "shard rahs" as a mistake ("The rahs are on paper, and besides, they might be useful.[mis of 212]") when sharp rahs are quicknear.
 
-understand "share rahs" as a mistake ("You're on this quest by yourself.[mis of 207]") when sharp rahs are quicknear.
+understand "share rahs" as a mistake ("You're on this quest by yourself.[mis of 213]") when sharp rahs are quicknear.
 
-understand "shark rahs" as a mistake ("You don't want to alert any land sharks.[mis of 208]") when sharp rahs are quicknear.
+understand "shark rahs" as a mistake ("You don't want to alert any land sharks.[mis of 214]") when sharp rahs are quicknear.
 
-understand "store rots" as a mistake ("You don't need to buy anything in this game, and any store wouldn't sell anything good.[mis of 209]") when player is in Yack Cay.
+understand "store rots" as a mistake ("You don't need to buy anything in this game, and any store wouldn't sell anything good.[mis of 215]") when player is in Yack Cay.
 
-understand "stork rots" as a mistake ("You don't want to know what sort of carcasses are buried in the swamp.[mis of 210]") when player is in Yack Cay.
+understand "stork rots" as a mistake ("You don't want to know what sort of carcasses are buried in the swamp.[mis of 216]") when player is in Yack Cay.
 
-understand "story rots" as a mistake ("No, the storm rots help keep you focused on the story. They aren't blocking anything. Or good for anything.[mis of 211]") when player is in Yack Cay.
+understand "story rots" as a mistake ("No, the storm rots help keep you focused on the story. They aren't blocking anything. Or good for anything.[mis of 217]") when player is in Yack Cay.
 
 chapter Yawn Way
 
-understand "yawp way" and "yawl way" as a mistake ("It's still quiet here.[mis of 212]") when player is in Yawn Way.
+understand "yawp way" and "yawl way" as a mistake ("It's still quiet here.[mis of 218]") when player is in Yawn Way.
 
 chapter Yell Alley
 
-understand "may yam" as a mistake ("You don't want the yam to age. It would probably start to smell bad.[mis of 213]") when mayo yam is quicknear.
+understand "may yam" as a mistake ("You don't want the yam to age. It would probably start to smell bad.[mis of 219]") when mayo yam is quicknear.
 
-understand "nacelle can" as a mistake ("You don't need a huge engine.[mis of 214]") when player has snack cans.
+understand "nacelle can" as a mistake ("You don't need a huge engine.[mis of 220]") when player has snack cans.
 
 volume checking off mistakes from the player
 
@@ -565,7 +577,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 
