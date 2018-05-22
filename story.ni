@@ -2218,6 +2218,7 @@ pill lip	"The pill lip is just there to prevent the demo med from getting dirty 
 mush sum	"The mush sum is too murky and unstable to deal with. And to break the fourth wall, it's just there to provide a north border."
 go fog	"The go fog is very dense. It pushes you back even as you look at it. As if to say, go away, and also, get going with what you want and need to do."
 past sap	"[if liar grail is moot]With the liar grail gone, you don't want to have to deal with the past sap again[else]The past sap might be useful, but you [how-take-sap][end if]."
+stewy wets	"The stewy wets are unchangeable."
 be web	"The be web is--well, it's itself, and maybe there's a message here but you'll figure it out once you're finished adventuring. It's not important enough now."
 voodoo v	"You don't want or need to mess with the voodoo v."
 leet steel	"You want to focus on the Knife Fink and not the leet steel."
@@ -2510,7 +2511,7 @@ check taking tile lit: say "It's sort of embedded into the ground. It looks nice
 
 chapter elite tile
 
-the elite tile is scenery. "Done? Nod![line break]Nif-T-Fin!".
+the elite tile is scenery. "Done? Nod![line break]Nif-T-Fin![line break]Trape! Depart![line break]Nu-Fun!".
 
 check taking elite tile: say "It's a memento, not a souvenir." instead;
 
@@ -2780,7 +2781,7 @@ every turn when Yuge Guy is quicknear:
 	say "The Yuge Guy booms '[next-rand-txt of table of yuge taunts]'";
 
 check going east in Sneer Greens:
-	if Yuge Guy is in Sneer Greens, say "'LOW AWOL! BOO, NOOB!' the Yuge Guy booms, as you run away."
+	if Yuge Guy is in Sneer Greens, say "'LOW AWOL! TRAWL, WART! BOO, NOOB!' the Yuge Guy booms, as you run away."
 
 chapter Yuge Guy
 
@@ -2967,7 +2968,7 @@ carry out nailing:
 
 book Ooze Zoo
 
-Ooze Zoo is south of Seer Trees. It is in Grebeberg. "[if sleep eels are in Ooze Zoo]Sleep eels block passage south, but you can still go back north[else]With the sleep eels gone, you can go north, or south to [s-dray][end if]."
+Ooze Zoo is south of Seer Trees. It is in Grebeberg. "[if sleep eels are in Ooze Zoo]Sleep eels block passage south, but you can still go back north[else]With the sleep eels gone, you can go north, or south to [s-dray][end if]. Stewy wets block the way east and west."
 
 check going south in Ooze Zoo: if sleep eels are in Ooze Zoo, say "There are too many eels. It would be inhumane to step on one. Maybe you can give them somewhere else to sleep, or something to sleep on." instead;
 
@@ -2979,6 +2980,10 @@ check taking sleep eels: say "There are too many, and they'd slip through your f
 
 to say s-dray:
 	say "[if Frush Surf is visited]the Frush Surf[else]a coastal place[end if]"
+
+chapter stewy wets
+
+the stewy wets are peripheral scenery in Ooze Zoo. "The stewy wets look too treacherous to enter."
 
 book Frush Surf
 
@@ -4274,7 +4279,7 @@ check going north in Emo Dome:
 	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a bright no-go-gon and a voice from the DIFF-ID: 'Dim ID! Go jog!'[paragraph break]You think, hang? Nah." instead;
 	if Bro Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet." instead;
 	if balsa slab is moot, say "You did all you needed to there." instead;
-	say "You make sure your state tats are visible for scanning. They are accepted.[paragraph break][if madam is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the sword rows.[end if]";
+	say "You make sure your state tats are visible for scanning. They are accepted with a 'YA MAY!'.[paragraph break][if madam is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the sword rows.[end if]";
 
 chapter DIFF ID
 
