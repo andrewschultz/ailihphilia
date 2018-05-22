@@ -1229,6 +1229,8 @@ instead of smelling troll ort, say "The troll ort emits a musk-sum which isn't u
 
 instead of smelling rotator: say "[if stinky knits are moot]It no longer smells of detergent. I guess it used it all on the stinky knits.[else]There's a whiff of detergent coming from the rotator. It probably has some way to know if something is dirty enough. Technology![end if]";
 
+instead of smelling Yuge Guy, say "The Yuge Guy smells of an amoral aroma that is probably some repugnantly-named cologne like Turbo-Brut."
+
 instead of smelling location of player:
 	if in-work and stinky knits are not moot, try smelling rotator instead;
 	if stinky knits are quicknear, try smelling stinky knits instead;
@@ -1236,14 +1238,14 @@ instead of smelling location of player:
 	if player is in Emo Dome or player is in Red Roses Order, say "Roses ... or ..." instead;
 	if player is in Yack Cay or player is in Swamp Maws, say "A morass aroma." instead;
 	if y-poopy, say "Whew! The gnu dung [if gnu dung is moot]in the poo coop[end if] is worse than an emu fume!" instead;
-	if player has dork rod, try smelling dork rod instead;
-	if troll ort is quicknear, try smelling troll ort instead;
 	if player is in Moo Room, say "Hay! Ah!" instead;
 	if player is in Deft Fed, say "Ham?! Ah!" instead;
 	if player is in Mont Nom, say "Everything smells delicious. Life is good[if Ian is in Mont Nom], even with Ian around[end if]." instead;
 	if player is in Red Roses Order or player is in Emo Dome, say "You smell roses. Weird." instead;
 	if player is in Pro Corp and butene tub is in Pro Corp, try smelling butene tub instead;
-	if player is in Sneer Greens and Yuge Guy is in Sneer Greens, say "You smell an amoral aroma." instead;
+	if player is in Sneer Greens and Yuge Guy is in Sneer Greens, try smelling Yuge Guy instead;
+	if player has dork rod, try smelling dork rod instead;
+	if troll ort is quicknear, try smelling troll ort instead;
 	continue the action;
 
 instead of smelling an ingredient:
@@ -1626,6 +1628,7 @@ pity tip	Door Frood	"The Door Frood is too good for a mere pity tip. Well, in th
 poo coop	Liar Grail	"Maybe if the contents came from a bull and not a gnu, it would be appropriate (this is not a palindrome 'joke.')"
 poo coop	Yuge Guy	"That could be fun, but he might be too normalised to the stuff in the coop to do damage."
 radar	go-by bog	"The radar detects nothing. So there is probably no horribly bogy gob. But [if sage gas is off-stage]there are plenty of other places you could slip and fall and disappear forever[else]you got the sage gas, already[end if]."
+radar	trap mart rampart	"You detect nothing to the east or west. Maybe other structures like the rampart will hide something, though."
 radar	sleep eels	"A radar isn't supposed to work this way, but somehow, you detect some bitterness at mammals in general. But it's secondary to needing a more comfortable place to sleep."
 resale laser	made dam	"There might be something behind the dam. But you need to be subtler looking for it."
 roto motor	kayak	"The kayak is not electrical, and besides, the roto motor is too small."
@@ -2209,6 +2212,7 @@ sto lots	"You don't want to tinker with the STO LOTS more than it has to. It mak
 gash sag	"You don't want to mess with the gash sag. Destroying the butene tub is damage enough."
 x-it stix	"No way you're getting through the X-It Stix."
 mist sim	"You don't have anything that would dispel the mist sim."
+trap mart rampart	"It's too sturdy to climb or blow up and too wide to go around. But maybe that will just help you focus on where you need to go."
 cassettes sac	"The cassettes sac is too messy to do anything with. You need to find a way to clean it up."
 girt rig	"The girt rig is too sturdy to move. But then, there's even sleazier stuff beyond it."
 redness ender	"You don't want to do anything crazy with the Redness Ender. You don't want to go near it. It's dangerous looking. You can picture it ambushing someone who doesn't expect it."
@@ -2968,9 +2972,15 @@ carry out nailing:
 
 book Ooze Zoo
 
-Ooze Zoo is south of Seer Trees. It is in Grebeberg. "[if sleep eels are in Ooze Zoo]Sleep eels block passage south, but you can still go back north[else]With the sleep eels gone, you can go north, or south to [s-dray][end if]. Stewy wets block the way east and west."
+Ooze Zoo is south of Seer Trees. It is in Grebeberg. "[if sleep eels are in Ooze Zoo]Sleep eels block passage south, but you can still go back north[else]With the sleep eels gone, you can go north, or south to [s-dray][end if]. [one of]A rampart (branded TrampMart)[or]The TrapMart Rampart[stopping] blocks your way west and east."
 
 check going south in Ooze Zoo: if sleep eels are in Ooze Zoo, say "There are too many eels. It would be inhumane to step on one. Maybe you can give them somewhere else to sleep, or something to sleep on." instead;
+
+chapter trapmart rampart
+
+the trap mart rampart is peripheral scenery. "It's sturdy and too high to climb."
+
+understand "trapmart rampart" and "trapmart" as trap mart rampart.
 
 chapter sleep eels
 
@@ -2981,18 +2991,13 @@ check taking sleep eels: say "There are too many, and they'd slip through your f
 to say s-dray:
 	say "[if Frush Surf is visited]the Frush Surf[else]a coastal place[end if]"
 
-chapter stewy wets
-
-the stewy wets are peripheral scenery in Ooze Zoo. "The stewy wets look too treacherous to enter."
-
 book Frush Surf
 
-Frush Surf is south of Ooze Zoo. "The land curves here. The surf blocks the way south, but you can go north or east.". It is in Grebeberg.
+Frush Surf is south of Ooze Zoo. "The land curves here. Stewy wets thrash to the south and west, but you can go north or east.". It is in Grebeberg.
 
 check going south in Frush Surf: say "You barely step in, and the water's a bit hot. You're worried you might run into some scorch crocs." instead;
 
-check going north in Frush Surf when being-chased is true:
-	mug-the-player;
+check going north in Frush Surf when being-chased is true: mug-the-player;
 
 chapter Stamp Mats
 
@@ -3009,6 +3014,10 @@ after taking stamp mats:
 chapter Kayo Yak
 
 The Kayo Yak is a beepy chaser in Frush Surf. chase-room of Kayo Yak is Frush Surf. "A kayo yak paws the ground here. It doesn't seem violent, but it seems up for rough play.". description is "[if being-chased is true]The Kayo Yak is really rumbling around, here[else]The Kayo Yak looks alert, ready for more than just standing around[end if]."
+
+chapter stewy wets
+
+the stewy wets are peripheral scenery in Frush Surf. "The stewy wets look too treacherous to enter."
 
 chapter yakokaying
 
