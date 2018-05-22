@@ -3,6 +3,7 @@
 # data file for palver.py
 #
 # ignore-starts
+s:to say
 s:[
 s:loc-num
 s:machineables
@@ -55,8 +56,6 @@ s:ian is a
 s:dave is a
 s:madam carries
 s:the dir-error rules are
-s:to say red-clue
-s:to say chase-mulligan
 # ignore-includes
 i:rule:
 i:is an activity

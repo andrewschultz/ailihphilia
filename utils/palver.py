@@ -42,7 +42,7 @@ def read_ignore_file():
                 regex_ignore_dict[q] = True
 
 def zap_prefix(x):
-    t2 = re.sub(r"^(the|a|some|there is a book called) ", "", x, 0, re.IGNORECASE)
+    t2 = re.sub(r"^(the|a|an|some|there is a book called) ", "", x, 0, re.IGNORECASE)
     return t2
 
 def letonly(x):

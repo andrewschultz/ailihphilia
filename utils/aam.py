@@ -91,7 +91,7 @@ difs = True
 copy_back = False
 count = 1
 reorder = False
-max_errs = 9
+max_errs = 5
 
 while count < len(sys.argv):
     arg = sys.argv[count]

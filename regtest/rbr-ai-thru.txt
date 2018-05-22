@@ -43,6 +43,14 @@ The Flee Elf mentions there are really only 26 simple ways to pick up the cap, i
 >evaded ave
 That'll appear later.
 
+#mistake test for till lit
+>till lit
+You possess no farm tools. And this would be pointless anyway.
+
+#mistake test for tilt lit
+>tilt lit
+It's stuck into the ground.
+
 #mistake test for fun enuf
 >fun enuf
 Still ungrammatical!
@@ -63,7 +71,7 @@ Nonsense! Adventure is its own reward!
 >pac cap
 You almost take the cap, but you fumble it slightly. The Flee Elf blinks. "You're almost there, but ... umm, well, you need to do a little more."
 
-#mistake test for paca cap/pacb cap/pacc cap/pacd cap/pacf cap/pacg cap/pach cap/paci cap/pacj cap/pacl cap/pacm cap/pacn cap/pacp cap/pacq cap/pacr cap/pacs cap/pacu cap/pacv cap/pacw cap/pacx cap/pacz cap
+#mistake test for paca cap/pacb cap/pacc cap/pacd cap/pacf cap/pacg cap/pach cap/paci cap/pacj cap/pacl cap/pacm cap/pacn cap/pacp cap/pacq cap/pacr cap/pacu cap/pacv cap/pacw cap/pacx cap/pacz cap
 >paca cap
 "Hmm, try again," grumps the Flee Elf.
 >pacb cap
@@ -156,6 +164,9 @@ There's nothing else special to do with the pace cap
 >undo
 
 ==t2
+#mistake test for tap at [text]
+>tap at zozimus
+That's in the spirit of the game, but sadly, I couldn't find a way to make it useful. Sorry!
 #mistake test for rub [text]
 >rub zozimus
 There's no one named Burt or Babbur or Liwilbur anything like that in this game, so you don't have to rub anyone or anything.
@@ -240,7 +251,26 @@ That's what Dave is, but you need to figure how to get rid of him.
 That's what Dave is, but you need to figure how to get rid of him.
 >guh thug
 That's what Dave is, but you need to figure how to get rid of him.
+#mistake test for musk sum
+>musk sum
+My Gym still smells the same. For better or worse
+#mistake test for muse sum
+>muse sum
+You think back to everyone who has inspired you, past and present. It's life-affirming!
+#mistake test for must sum
+>must sum
+You take stock of all you need to do--or at least, all you know you need to do. Or you think back to horrible repetitive exercises in math class, which were horrible whether you we
+re good at them or not.
 
+#mistake test for mush sum
+>mush sum
+Dave worked hard to build these muscles. It'd be mean if you could wipe them out. And impractical--they might be slowing him down a bit, and that could help you.
+
+#mistake test for my pym
+>my pym
+You suddenly have a brilliant idea for a Britcom featuring Edgar Allan Poe (a Poe-op?), but it slips away just as quickly.
+
+#not a mistake
 >evade dave
 
 ==t2
@@ -260,6 +290,9 @@ The Sto Lots remains unadorned.
 #mistake test for sto gots
 >sto gots
 Yes, you gots a lot of space, and you will gots a lot of stuff as the game goes on.
+#mistake test for sto jots
+>sto jots
+There's already a bookcase in this game.
 #mistake test for sto nots
 >sto nots
 That would defeat the purpose!
@@ -310,6 +343,9 @@ Ugh! You don't need to make this place worse
 #mistake test for wort row
 >wort row
 Worn Row is not meant to be a garden. Maybe it would look nicer that way, but it wouldn't be helpful to you.
+#mistake test for worf row
+>worf row
+No Enterprise security officer arrives to help you.
 
 >word row
 by one point
@@ -465,7 +501,7 @@ by one point
 #lost pity tip
 
 ===t2
-#mistake retest for nacelle can
+#mistake test for nacelle can
 >nacelle can
 You don't need a huge engine.
 
@@ -481,9 +517,19 @@ Since this is the Trapeze Part, you'd think there'd be a way to go to a place to
 >s
 Since this is the Trapeze Part, you'd think there'd be a way to go to a place to WATCH it, but there isn't. You can only go back east.
 
+==t2
+#mistake test for tendered net
+>tendered net
+Nobody comes by to hand it to you. You're on the right track. Maybe you're overthinking things.
+
 >tend net
 by one point
 #got elope pole
+
+==t2
+#mistake retest for tendered net
+>tendered net
+You already have it.
 
 >e
 
@@ -601,7 +647,7 @@ by one point
 You already feel free enough here.
 
 ==t2
-#mistake test for fig gif/gif fig
+#mistake test for gif fig/fig gif
 >fig gif
 The fig remains firmly text-based. Eh, it's more edible that way.
 >gif fig
@@ -735,10 +781,10 @@ Die? I'd...
 #mistake test for moo loom
 >moo loom
 The noises stay around.
-#mistake test for poo boop/poo foop/poo zoop
 #mistake test for moo zoom
 >moo zoom
 Nothing speeds up or gets magnified.
+#mistake test for poo boop/poo foop/poo zoop
 >poo boop
 That's not the appropriate sound effect for the coop or any potential contents.
 >poo foop
@@ -1149,6 +1195,10 @@ You shouldn't try to take advantage of sick people. Help the Gulf Lug instead.
 >gulp lug
 Cannibalism is wrong. Besides, you'd probably catch whatever the Gulf Lug has.
 \\
+#mistake test for musc sum
+>musc sum
+You don't need Dave to return.
+\\
 #mistake test for score rocs
 >score rocs
 You don't have any witty way to score off them, or steal them, or whatever, and you don't need to.
@@ -1188,7 +1238,7 @@ The cross orc stops you from going south. "GIVE VIG!" it booms.
 ===2
 #mistake test for told lot
 >told lot
-The cross orc isn't open to verbal negotiation
+The cross orc isn't open to verbal negotiation.
 
 #mistake test for crop orc
 >crop orc
@@ -1222,6 +1272,12 @@ The cross orc and crag arc don't fuse together. Rats.
 #mistake test for crab arc
 >crab arc
 That's just what you need, a giant crab coming after you, along with the cross orc.
+
+#mistake test for crac arc/crak arc
+>crac arc
+While there may be a correlation between bad spelling and extreme strength, there's no causation. Sorry.
+>crak arc
+While there may be a correlation between bad spelling and extreme strength, there's no causation. Sorry.
 ===a
 
 ==t5
@@ -1269,7 +1325,7 @@ by one point
 >s
 
 ==t2
-#mistake test for defy fed
+#mistake retest for defy fed
 >defy fed
 Way to go! Keep that Hunger! Well, I hope it's that and not conspiracy theories about the Fed.
 
@@ -1395,6 +1451,11 @@ WRONG
 >use radar on crag arc
 by one point
 #got ufo tofu
+
+==t2
+#mistake retest for crac arc/crak arc
+>crac arc
+While there may be a correlation between bad spelling and extreme strength, there's no causation. Sorry. Besides, you got something, already.
 
 >n
 
@@ -2043,11 +2104,14 @@ You don't want or need to revisit the bog.
 >s
 >s
 
-===2
+==t2
 #mistake test for yak kay
 >yak kay
 The yak perks its ears up slightly, then goes back to looking bored. Maybe you didn't quite say things right.
-===a
+\\
+#mistake test for slate petals
+>slate petals
+The metals are for a didactic and not an aesthetic purpose.
 
 ==t5
 >use troll ort on kayo yak
@@ -2175,6 +2239,18 @@ Owning/pwning would embarrass Ian, but that is too archaic a synonym.
 #mistake test for mo nom
 >mo nom
 Greedy! There's enough food to find around here, really.
+
+#mistake test for mong nom
+>mong nom
+No 'interesting' brownies appear.
+
+#mistake test for monk nom
+>monk nom
+Cannibalism, or super sparse food, is not an option.
+
+#mistake test for mono nom
+>mono nom
+Planning to eat alone is kinda sad.
 
 #mistake test for krab ark
 >krab ark
