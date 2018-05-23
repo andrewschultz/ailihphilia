@@ -454,13 +454,13 @@ part when play begins
 
 to say dir-summary:
 	let Q be the room north of location of player;
-	if Q is not nowhere, say " N[run paragraph on][if Q is not available]-[end if]";
+	if Q is not nowhere, say " N[run paragraph on][if Q is not available]-[else if Q is not visited]![run paragraph on][end if]";
 	let Q be the room south of location of player;
-	if Q is not nowhere, say " S[run paragraph on][if Q is not available]-[end if]";
+	if Q is not nowhere, say " S[run paragraph on][if Q is not available]-[else if Q is not visited]![run paragraph on][end if]";
 	now Q is the room east of location of player;
-	if Q is not nowhere, say " E[run paragraph on][if Q is not available]-[end if]";
+	if Q is not nowhere, say " E[run paragraph on][if Q is not available]-[else if Q is not visited]![run paragraph on][end if]";
 	now Q is the room west of location of player;
-	if Q is not nowhere, say " W[run paragraph on][if Q is not available]-[end if]";
+	if Q is not nowhere, say " W[run paragraph on][if Q is not available]-[else if Q is not visited]![run paragraph on][end if]";
 
 screen-reader is a truth state that varies.
 
@@ -1203,7 +1203,8 @@ check going (this is the new generic going reject rule):
 		say "OUT or any synonym is never necessary in the game, though if there is only one exit direction, you'll go that way." instead;
 	if noun is inside, say "You don't ever need to use IN in the game. Just the four cardinal directions." instead;
 	if the room noun of location of player is nowhere:
-		say "[chase-pass][if location of player is wally]Wall! Aw.[paragraph break][end if]You can only go [if number of viable directions is 1]back [end if][list of viable directions] here[up-down-check]." instead;
+		let nvi be number of viable directions;
+		say "[chase-pass][if location of player is wally]Wall! Aw.[paragraph break][end if]You can [if nvi is 1]only [end if]go [if nvi is 1]back [else if nvi is 3]the other ways: [else if nvi is 2]both [end if][list of viable directions] here[up-down-check]." instead;
 
 check going (this is the reject noncardinal directions rule):
 	if noun is diagonal, say "You don't need diagonal directions in this game." instead;
@@ -2766,7 +2767,7 @@ The scorn rocs are plural-named scenery in Flu Gulf. "While they're motionless, 
 
 understand "roc" and "scorn roc" as scorn rocs.
 
-check going west in Flu Gulf when scorn rocs are in Flu Gulf:	say "The scorn rocs remain motionless, but their gaze freezes you as you try to go west." instead;
+check going west in Flu Gulf when scorn rocs are in Flu Gulf: say "The scorn rocs remain motionless, but their gaze freezes you as you try to go west." instead;
 
 book Sneer Greens
 
@@ -3959,7 +3960,7 @@ check taking a book:
 	else:
 		if number of lugged books > 0:
 			let myb be a random lugged book;
-			say "Your eyes run across GREED-E? ERG on the tract cart, and you flash back to that time you checked out too many library books and got a small fine when you couldn't finish them all.[paragraph break]Besides, nothing says 'adventure' less than schlepping around multiple books. Well, except maybe sitting in front of a computer.[paragraph break]You put [myb] back in the tract cart before taking [noun].";
+			say "[one of]Your eyes run across GREED-E? ERG on the tract cart, and you flash back to that time you checked out too many library books and got a small fine when you couldn't finish them all.[paragraph break]Besides, nothing says 'adventure' less than schlepping around multiple books. Well, except maybe sitting in front of a computer playing some silly game. Or programming one.[or][stopping][paragraph break]You put [myb] back in the tract cart before taking [noun].";
 			now myb is in Worn Row;
 		else:
 			say "It's a bit unwieldy, but you manage to pick up [noun].";
@@ -4763,7 +4764,7 @@ the troll ort is an edible thing in Swept Pews. "A troll ort lies on the floor h
 
 book Drawl Ward
 
-Drawl Ward is south of Swept Pews. It is in Yelpley. "This passage is a T (well, a [unicode 9524]), walled off to the south. It looks homier to the west and a bit barren to the east, but you can always go back north through the Swept Pews." [?? can only go n w e here = slightly wrong]
+Drawl Ward is south of Swept Pews. It is in Yelpley. "This passage is a T (well, a [unicode 9524]), walled off to the south by a girt rig. It looks homier to the west and a bit barren to the east, but you can always go back north through the Swept Pews." [?? can only go n w e here = slightly wrong]
 
 check going in Drawl Ward:
 	if Bond Nob is in Drawl Ward:
@@ -6722,6 +6723,9 @@ include Full Monty Testing by Andrew Schultz.
 table of monties (continued)
 montopic (topic)	on-off	test-title (text)	test-action	topic-as-text (text)
 "aid"	false	"AIDING"	try-aid rule	"aid"
+"xlist"	false	"DIRING"	show-dirs rule	"xlist"
+
+this is the show-dirs rule: say "Header = [location of player] ([mrlp])[dir-summary]."
 
 exitsing is an action out of world.
 
