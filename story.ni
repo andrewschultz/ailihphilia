@@ -1,4 +1,4 @@
-"Ailihphilia" by N. Y. Llewellyn
+"Ailihphilia" by "N. Y. Llewellyn"
 
 [blurb for comp = A *GASP* SAGA]
 
@@ -124,11 +124,11 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 340.
+use MAX_VERBS of 360. [-40 from max_verbs debug]
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 380. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 400. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 chapter kinds of things
 
@@ -1680,7 +1680,7 @@ use1	use2 (an object)	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plu
 --	--	--	rev-evade-Dave rule	--	true	--	--	Yelpley	false
 --	--	--	rev-bore-Rob rule	--	true	--	--	Yelpley	false
 --	--	--	rev-word-row rule	--	true	--	--	Yelpley	false
-TI	Door Frood	--	--	tube-to-ave rule	true	true	true	Yelpley	false	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Door Frood runs away.[parargaph break]Behind the Door Frood is a tube ... but ..." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
+TI	Door Frood	--	--	tube-to-ave rule	true	true	true	Yelpley	false	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Door Frood runs away.[paragraph break]Behind the Door Frood is a tube ... but ..." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
 pity tip	eye	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	false	"The eye scans the pity tip, and the navy van beeps and boops and spits out some snack cans, which roll on the ground. You take them. Then you hear a loud whisper: 'Dee? Weed?' The navy van then becomes a navi-van and whooshes off to leave for good. And there's something behind it! Apparently, a whole bomb mob! That's who was making all the noise!" [af:TEND NET/WORK ROW]
 --	--	--	rev-tend-net rule	--	true	--	--	Yelpley	false
 --	--	--	rev-work-row rule	--	true	--	--	Yelpley	false
@@ -2227,7 +2227,7 @@ mush sum	"The mush sum is too murky and unstable to deal with. And to break the 
 go fog	"The go fog is very dense. It pushes you back even as you look at it. As if to say, go away, and also, get going with what you want and need to do."
 past sap	"[if liar grail is moot]With the liar grail gone, you don't want to have to deal with the past sap again[else]The past sap might be useful, but you [how-take-sap][end if]."
 stewy wets	"The stewy wets are unchangeable."
-do owe wood	"The Do Owe Wood is very confusing. There's probably worse behind it."
+birch crib	"Each birch crib is private property."
 Line Nil	"There's nothing you need behind the Line Nil security system. In fact, it's probably protecting you."
 be web	"The be web is--well, it's itself, and maybe there's a message here but you'll figure it out once you're finished adventuring. It's not important enough now."
 voodoo v	"You don't want or need to mess with the voodoo v."
@@ -3124,21 +3124,25 @@ some Eroded Ore is a thing. description is "You're no expert metallurgist, but i
 
 book Den Ivy Vined
 
-Den Ivy Vined is south of Swamp Maws. It is in Grebeberg. "[one of]The passage is mostly north-south[or]This north-south passage cuts nicely through the Do-Owe Wood[stopping], [if tent net is moot]especially now that you helped the Code Doc add some furnishings[else]but it doesn't quite feel quite as comfortable as it should, yet. Having some sort of roof might make it even homier[end if][if-porch]."
+Den Ivy Vined is south of Swamp Maws. It is in Grebeberg. "This quasi-residence has a birch crib (slang for home, not a baby bed) west and east, but you can go north and south easily. [if tent net is moot]It feels nice and cozy now you helped the Code Doc add some furnishings[else]But it doesn't quite feel quite as comfortable as it should, yet. Having some sort of roof might make it even homier[end if][if-porch]."
 
-check going in den ivy vined: if noun is east or noun is west, say "Entering the do owe wood is not hard. Leaving, though..." instead;
+understand "cribs" and "birch cribs" as birch crib.
 
-printed name of Den Ivy Vined is "[if tent net is moot]Den, Ivy-Vined[else]All-Ivy Villa[end if]".
+instead of entering birch crib, try going west instead;
+
+check going in den ivy vined: if noun is east or noun is west, say "Each birch crib is much more private and closed than the den." instead;
+
+printed name of Den Ivy Vined is "[if tent net is not moot]Den, Ivy-Vined[else]All-Ivy Villa[end if]".
 
 understand "all ivy villa" and "all ivy" and "all/ivy" and "all/ivy villa" as den ivy vined when tent net is not moot.
 
-chapter do owe wood
+chapter birch crib
 
-the do owe wood is peripheral scenery in Den Ivy Vined. "It looks like a nice place to be, but you couldn't afford it[if player has cash sac], even with the cash sac[end if]."
+the birch crib is peripheral scenery in Den Ivy Vined. "It looks like a nice place to be, but you couldn't afford it[if player has cash sac], even with the cash sac[end if]."
 
 chapter code doc
 
-Code Doc is a neuter person in Den Ivy Vined. "[one of]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.' The Doc also mentions the Do-Owe Wood is to the west and east.[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket labeled DR A. CARD. Busy, but not too busy to help someone else."
+Code Doc is a neuter person in Den Ivy Vined. "[one of]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket labeled DR A. CARD. Busy, but not too busy to help someone else."
 
 understand "dr/card" and "dr card" as code doc.
 
@@ -3383,7 +3387,7 @@ chapter X/Y Pyx
 
 an X Y Pyx is a thing in Yawn Way. printed name of x y pyx is "X/Y Pyx". description of X Y Pyx is "[map-so-far]". "[one of]An X/Y pyx lies here. Closer inspection reveals that's just a fancy name for a map[or]The X/Y pyx still lies here[stopping].". indefinite article of X Y Pyx is "an".
 
-check examining pix when screen-reader is true:
+check examining pyx when screen-reader is true:
 	say "The text map doesn't play well with screen readers, so you can't examine it productively. Sorry. SRC toggles screen reader mode." instead;
 
 after examining pyx for the first time:
@@ -4523,7 +4527,7 @@ carry out standing:
 
 book Evaded Ave
 
-Evaded Ave is north of Art Xtra. It is in Yelpley. "It's a bit sleazy in here. Passages lead east and west, [if tube but is in Evaded Ave]and north there's a tube, but[tbut][else]but the way north is blocked.[end if]"
+Evaded Ave is north of Art Xtra. It is in Yelpley. "It's a bit sleazy in here. Passages lead east and west, [if tube but is in Evaded Ave]and north there's a tube, but[tbut][else]but the way north is blocked[end if]. You can go back south to [Art Xtra], too."
 
 the Door Frood is a neuter person in Evaded Ave. "[one of]Someone waving their fists and shouting at who-knows-what pauses as you walk by. 'I'm the Door Frood.' They peg you as not insurgent enough to deserve to visit west or east, without a proper gift[or]The Door Frood continues to pace back and forth here, making sure you don't sneak off any way but back south[stopping].". description is "Probably not angry enough to actually do anything besides block others from doing what they want."
 
@@ -4834,7 +4838,7 @@ report taking demo med:
 
 book Pro Corp
 
-Pro Corp is north of Gross Org. It is in Yelpley. description is "[if butene tub is in Pro Corp]A butene tub rests here. At least, that's what it says it is[else]Pro Corp is devoid of equipment now you blew up the butene tub[end if]. The only way out is back south. [if butene tub is moot]The Sci Pics you ignored while destroying[else]Sci Pics that seem to warn what NOT to do with[end of] the butene tub cover the walls."
+Pro Corp is north of Gross Org. It is in Yelpley. description is "[if butene tub is in Pro Corp]A butene tub rests here. At least, that's what it says it is[else]Pro Corp is devoid of equipment now you blew up the butene tub[end if]. The only way out is back south. [if butene tub is moot]The Sci Pics you ignored while destroying[else]Sci Pics that seem to warn what NOT to do with[end if] the butene tub cover the walls."
 
 check going south in Pro Corp when being-chased is true:
 	mug-the-player;

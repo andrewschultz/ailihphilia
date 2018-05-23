@@ -110,6 +110,8 @@ chapter Deft Fed
 
 understand "defy fed" as a mistake ("[if yob attaboy is moot]Way to go! Keep that Hunger! Well, I hope it's that and not conspiracy theories about the Fed[else]No problem, you're not getting fed anyway[end if].[mis of 39]") when player is in Deft Fed.
 
+understand "deli filed" as a mistake ("You are not a government bureaucrat.[mis of 221]") when player is in Deft Fed.
+
 understand "stan nats" and "stan nat's" as a mistake ("Well, Nat's must have its stans, but you don't want to be one.[mis of 40]") when nat's tan is quicknear.
 
 understand "stank nats" and "stank nat's" as a mistake ("Yes, it's pretty awful.[mis of 41]") when nat's tan is quicknear.
@@ -119,8 +121,6 @@ understand "tang nat" as a mistake ("It's probably already too tangy.[mis of 42]
 understand "tank nat" as a mistake ("No, even a small amount of Nat's is enough.[mis of 43]") when nat's tan is quicknear.
 
 understand "tannin nat" as a mistake ("It probably has enough weird, horrible ingredients.[mis of 44]") when nat's tan is quicknear.
-
-understood "deli filed" as a mistake ("You are not a government bureaucrat.") when player is in Deft Fed.
 
 section Bon Snob
 
@@ -413,8 +413,6 @@ understand "DNA sand" as a mistake ("That will happen with the passage of time.[
 
 understand "dna wand" as a mistake ("No. You know TRUE MAGIC MUST COME FROM WITHIN.[mis of 159]") when DNA band is quicknear or DNA hand is quicknear.
 
-understand "line nil" as a mistake ("The Link Nil security system fails to turn into a line and vanish. That's pretty secure![mis of 160]") when player is in Pro Corp.
-
 understand "mra arm" as a mistake ("No! Mr. Arm is on the side of social justice.[mis of 161]") when Mr Arm is quicknear.
 
 understand "psi lisp" as a mistake ("The Psi Wisp can't speak.[mis of 162]") when Psi Wisp is quicknear.
@@ -519,7 +517,7 @@ understand "told lot" as a mistake ("[if cross orc is in Toll Lot]The cross orc 
 
 chapter Trapeze Part
 
-understand "tendered net" as a mistake ("[if player has tent net]You already have it[else]Nobody comes by to hand it to you. You're on the right track. Maybe you're overthinking things[end if].[mis of 200]") when ten level net is quicknear or tent net is quicknear.
+understand "tendered net" as a mistake ("[if player has tent net]You already have it[else]Nobody comes by to hand it to you. You're on the right track. Maybe you're overthinking things[end if].[mis of 200]") when level net is quicknear or tent net is quicknear.
 
 chapter Worn Row
 
@@ -567,6 +565,8 @@ understand "yawp way" and "yawl way" as a mistake ("It's still quiet here.[mis o
 
 chapter Yell Alley
 
+understand "link nil" as a mistake ("The Line Nil security system fails to break apart. That's pretty secure![mis of 160]") when Line Nil is quicknear.
+
 understand "may yam" as a mistake ("You don't want the yam to age. It would probably start to smell bad.[mis of 219]") when mayo yam is quicknear.
 
 understand "nacelle can" as a mistake ("You don't need a huge engine.[mis of 220]") when player has snack cans.
@@ -579,7 +579,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 
