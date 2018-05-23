@@ -1,4 +1,4 @@
-"Ailihphilia" by Andrew Schultz
+"Ailihphilia" by N. Y. Llewellyn
 
 [blurb for comp = A *GASP* SAGA]
 
@@ -1680,7 +1680,7 @@ use1	use2 (an object)	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plu
 --	--	--	rev-evade-Dave rule	--	true	--	--	Yelpley	false
 --	--	--	rev-bore-Rob rule	--	true	--	--	Yelpley	false
 --	--	--	rev-word-row rule	--	true	--	--	Yelpley	false
-TI	Door Frood	--	--	--	true	true	true	Yelpley	false	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Door Frood runs away." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
+TI	Door Frood	--	--	tube-to-ave rule	true	true	true	Yelpley	false	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. This is funny. I'd try to explain it to you, but I'm not sure if you deserve to laugh at it yet. Maybe one day.' With uncontrollable laughter spasms, the Door Frood runs away.[parargaph break]Behind the Door Frood is a tube ... but ..." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
 pity tip	eye	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	false	"The eye scans the pity tip, and the navy van beeps and boops and spits out some snack cans, which roll on the ground. You take them. Then you hear a loud whisper: 'Dee? Weed?' The navy van then becomes a navi-van and whooshes off to leave for good. And there's something behind it! Apparently, a whole bomb mob! That's who was making all the noise!" [af:TEND NET/WORK ROW]
 --	--	--	rev-tend-net rule	--	true	--	--	Yelpley	false
 --	--	--	rev-work-row rule	--	true	--	--	Yelpley	false
@@ -2060,7 +2060,7 @@ this is the mob-bye rule:
 
 this is the mob-to-alley rule:
 	moot navy van;
-	now girt rig is in Yell Alley;
+	now Line Nil is in Yell Alley;
 	now bomb mob is in Yell Alley;
 	shuffle-before Yell Alley and Sneer Greens;
 	the rule succeeds;
@@ -2149,6 +2149,10 @@ this is the totem-out rule:
 	moot Yuge Guy;
 	the rule succeeds;
 
+this is the tube-to-ave rule:
+	move tube but to Evaded Ave;
+	the rule succeeds;
+
 this is the wear-garb rule:
 	now player wears the brag garb;
 	the rule succeeds;
@@ -2214,7 +2218,7 @@ x-it stix	"No way you're getting through the X-It Stix."
 mist sim	"You don't have anything that would dispel the mist sim."
 trap mart rampart	"It's too sturdy to climb or blow up and too wide to go around. But maybe that will just help you focus on where you need to go."
 cassettes sac	"The cassettes sac is too messy to do anything with. You need to find a way to clean it up."
-girt rig	"The girt rig is too sturdy to move. But then, there's even sleazier stuff beyond it."
+girt rig	"The girt rig is too sturdy to move. But there's nothing behind it."
 redness ender	"You don't want to do anything crazy with the Redness Ender. You don't want to go near it. It's dangerous looking. You can picture it ambushing someone who doesn't expect it."
 decal placed	"The decal placed decal is just there to advertise the food. It's not critical to the story."
 snooty toons	"The snooty toons are just there for ambience. They're not critical to the story."
@@ -2224,12 +2228,12 @@ go fog	"The go fog is very dense. It pushes you back even as you look at it. As 
 past sap	"[if liar grail is moot]With the liar grail gone, you don't want to have to deal with the past sap again[else]The past sap might be useful, but you [how-take-sap][end if]."
 stewy wets	"The stewy wets are unchangeable."
 do owe wood	"The Do Owe Wood is very confusing. There's probably worse behind it."
+Line Nil	"There's nothing you need behind the Line Nil security system. In fact, it's probably protecting you."
 be web	"The be web is--well, it's itself, and maybe there's a message here but you'll figure it out once you're finished adventuring. It's not important enough now."
 voodoo v	"You don't want or need to mess with the voodoo v."
 leet steel	"You want to focus on the Knife Fink and not the leet steel."
 senile felines	"You don't have to do anything standard with the senile felines. In fact, you should think of them as cats."
 late petal	"You don't need to do anything with the late petal. Perhaps you could help the felines, uh, cats reach it?"
-link nil	"There's nothing you need behind the Link Nil security system. Some things are better left imagined."
 opossum	"The opossum is just there to (optionally) be nice to, in a special way."
 part strap	"You want to focus on the Verses Rev and not the part strap."
 pool gloop	"Fortunately, you don't need to do anything special to or with the pool gloop."
@@ -4519,7 +4523,7 @@ carry out standing:
 
 book Evaded Ave
 
-Evaded Ave is north of Art Xtra. It is in Yelpley. "It's a bit sleazy in here. You can go back south. Or you can go east and west."
+Evaded Ave is north of Art Xtra. It is in Yelpley. "It's a bit sleazy in here. Passages lead east and west, [if tube but is in Evaded Ave]and north there's a tube, but[tbut][else]but the way north is blocked.[end if]"
 
 the Door Frood is a neuter person in Evaded Ave. "[one of]Someone waving their fists and shouting at who-knows-what pauses as you walk by. 'I'm the Door Frood.' They peg you as not insurgent enough to deserve to visit west or east, without a proper gift[or]The Door Frood continues to pace back and forth here, making sure you don't sneak off any way but back south[stopping].". description is "Probably not angry enough to actually do anything besides block others from doing what they want."
 
@@ -4540,6 +4544,20 @@ check taking bunk nub:
 the stock cots are a plural-named thing. description is "The stock cots are cut cleverly from the remains of the bunk nub. They'll make a great place to sleep for any number of small animals."
 
 understand "cot" as stock cots.
+
+chapter tube but
+
+the tube but is peripheral scenery.
+
+instead of entering tube but: try going north instead.
+
+tube-try is a truth state that varies.
+
+to say tbut: say "[if tube-try is false]...[else]... you already tried to follow the Door Frood, and nothing happened.[end if]"
+
+check going north when tube but is in Evaded Ave:
+	say "[if tube-try is true]There can't be anything north. Plus[else]You try to follow the Door Frood and enter the tube, but ... you hit your head on a block in the passage as the tube turns. You hear the Door Frood laughing. At you or [b]TO IDIOT[r], you don't know. Eh well[end if], you really don't want to see the Door Frood again.";
+	now tube-try is true instead;
 
 book Trapeze Part
 
@@ -4593,13 +4611,13 @@ The elope pole is a thing. description is "It looks foldable, maybe even separab
 
 book Yell Alley
 
-Yell Alley is east of Evaded Ave. It is in Yelpley. "[if girt rig is in Yell Alley]A girt rig blocks every way except back[else]The only way back is[end if] west. The way east is blocked by a [alley-e-block] where the yelling is from."
+Yell Alley is east of Evaded Ave. It is in Yelpley. "[if Line Nil is in Yell Alley]Line Nil security blocks every way except back[else]The only way back is[end if] west[if bomb mob is not moot]. The way east is blocked by a [alley-e-block] where the yelling is from[end if]."
 
 to say alley-e-block:
 	say "[if navy van is in Yell Alley]navy van... you're not sure[else]bomb mob... so that's[end if]"
 
 check going nowhere in Yell Alley:
-	say "It probably gets even seedier [if navy van is in Yell Alley]behind the navy van[else if bomb mob is in Yell Alley]behind the bomb mob[else]if you go further[end if]. Best just to go back east." instead;
+	say "It probably gets even seedier [if navy van is in Yell Alley]behind the navy van[else if bomb mob is in Yell Alley]behind the bomb mob[else]past Line Nil[end if]. Best just to go back east." instead;
 
 chapter navy van
 
@@ -4625,10 +4643,6 @@ the snack cans are a plural-named solid ingredient. description is "They're labe
 instead of opening snack cans, say "You will open them when the time comes to use them." instead;
 
 understand "dee feed" and "dee/feed" as snack cans.
-
-chapter girt rig
-
-the girt rig is peripheral scenery. description is "It is too sturdy to climb or break down."
 
 chapter Mayo Yam
 
@@ -4759,6 +4773,10 @@ chapter Elan Ale
 
 the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, unsurprisingly. It's about the size of a pint nip."
 
+chapter girt rig
+
+the girt rig is peripheral scenery in Drawl Ward. description is "It is too sturdy to climb or break down."
+
 book Scrap Arcs
 
 Scrap Arcs is east of Drawl Ward. It is in Yelpley. "You can't go any farther here--only back west. Some slate metals are lying around here[if stamp mats are moot]--you've probably already used what you need[else], and if you needed to use a bit, nobody would notice[end if]."
@@ -4816,7 +4834,7 @@ report taking demo med:
 
 book Pro Corp
 
-Pro Corp is north of Gross Org. It is in Yelpley. description is "[if butene tub is in Pro Corp]A butene tub rests here. At least, that's what it says it is[else]Pro Corp is devoid of equipment now you blew up the butene tub[end if]. The only way out is back south--a LINK NIL security system guards the other ways. There are also sci-pics that seem to warn what NOT to do with the butene tub."
+Pro Corp is north of Gross Org. It is in Yelpley. description is "[if butene tub is in Pro Corp]A butene tub rests here. At least, that's what it says it is[else]Pro Corp is devoid of equipment now you blew up the butene tub[end if]. The only way out is back south. [if butene tub is moot]The Sci Pics you ignored while destroying[else]Sci Pics that seem to warn what NOT to do with[end of] the butene tub cover the walls."
 
 check going south in Pro Corp when being-chased is true:
 	mug-the-player;
@@ -4853,7 +4871,7 @@ understand "bald/lab" and "bald lab" as Pro Corp when bald-lab is true.
 
 chapter Link Nil
 
-Link Nil is peripheral scenery in Pro Corp. "It's really arcane, and it's meant to keep people out. You don't even see how to break through it. And anyway, if it had a number keypad, the passkey would probably have to be a palindrome, which would cut down on the possibilities and be a lot less secure."
+Line Nil is peripheral scenery in Pro Corp. "It's a thin looking red line you're pretty sure you don't want to step over. Maybe somewhere there's a number keypad to disarm it, with a palindrome code of course, but not in this game."
 
 chapter Sci Pics
 

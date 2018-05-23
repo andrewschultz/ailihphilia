@@ -120,6 +120,8 @@ understand "tank nat" as a mistake ("No, even a small amount of Nat's is enough.
 
 understand "tannin nat" as a mistake ("It probably has enough weird, horrible ingredients.[mis of 44]") when nat's tan is quicknear.
 
+understood "deli filed" as a mistake ("You are not a government bureaucrat.") when player is in Deft Fed.
+
 section Bon Snob
 
 understand "bon knob" as a mistake ("You don't need to help Sniffins with interior decorating, here.[mis of 45]") when player is in Deft Fed and YOB ATTABOY is moot.
