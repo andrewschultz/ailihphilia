@@ -1,7 +1,8 @@
-Utils:
+Utils, alphabetically:
 
 * 1j.py = super quick word-on-its-own palindromes, with possible end or start.
 * 1w.py = 1 word and all the others that match it for palindromes. Can take space or comma separated values.
+* 1wget.py = derives all the words from scenery, people, things and rooms so I can check if I missed anything.
 * 2pal.py = 2 word palindromes with optional first, last or middle string added, along with any combo of first/last name or word list
 * 32.py = sped up combo checker (30 sec vs 1 hour). It tracks the difference between a starting word and an ending word and puts the possible different words in a hash.
 * 3w.py = 3 word combo checker. Takes a while. Can skip uneven first/last palindromes e.g. stab bat.

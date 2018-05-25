@@ -88,7 +88,7 @@ next_needs_content = False
 last_line = ()
 
 with open("rbr-ail-thru.txt") as file:
-    for (lc, line) in enumerate(file):
+    for (lc, line) in enumerate(file, 1):
         ll = line.strip().lower()
         if next_needs_content and (ll.startswith('use') or not ll): print("Line", lc, "should not be blank/new command:", last_line)
         next_needs_content = line.startswith(">use")
