@@ -1,7 +1,17 @@
-# no backdrops. We're lucky.
+#1wget.py
+#
+#extract all possible palindrome candidates from stuff in Ailihphilia
+#
+#usage: no args except edit source(c) or output(e)
 
+from filecmp import cmp
+from shutil import copy
 from collections import defaultdict
+import sys
+import os
 import re
+import i7
+import __main__ as main
 
 scen_tot = 0
 ppl_tot = 0
@@ -80,7 +90,7 @@ with open("story.ni") as file:
             rms += 1
             to_check_hash(st)
             # print(rms, st)
-        if '     scenery' in sent1:
+        if ' scenery' in sent1:
             scen_tot += 1
             st = no_art(sent1)
             st = cut_verb(st)
@@ -94,12 +104,28 @@ with open("story.ni") as file:
             to_check_hash(st)
             # print(ppl_tot, st)
 
-outfile = "1wget-out.txt"
-f2 = open(outfile, "w")
+i7.go_proj('ai')
+out_final = "1wget-out.txt"
+out_temp = "1wget-out-temp.txt"
+
+if len(sys.argv) > 1:
+    if sys.argv[1] == 'e' or sys.argv[1] == '-e':
+        print("Opening", out_final)
+        os.system(out_final)
+        exit()
+    if sys.argv[1] == 'c' or sys.argv[1] == '-c':
+        print("Opening", main.__file__)
+        i7.npo(main.__file__)
+        exit()
+
+f2 = open(out_temp, "w")
 
 for x in stuff_in_game.keys():
     f2.write(x + '\n')
 
 f2.close()
 
-print("Wrote", len(stuff_in_game.keys()), "palindromes to test, to", outfile)
+if cmp(out_temp, out_final):
+    print("No changes, no copying to", out_final)
+else:
+    print("Changes, copying over", len(stuff_in_game.keys()), "palindrome candidates to", out_final)
