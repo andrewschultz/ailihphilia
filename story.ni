@@ -15,7 +15,7 @@ USE / GOOD for the table of goodacts (USE X ON Y gives a point, or other things 
 UR for use redirect
 BKR for bookrejects
 PSR for person specific rejects
-REJ or FAIL for Useons that don't work
+REJ or FAIL or SUR for Useons that don't work
 LAT for later uses
 TALK for talk texts
 WIN for winning the game
@@ -1600,7 +1600,7 @@ ME gem	"They look a bit frightened by the power of the ME gem. It must only work
 
 section table of specific use rejects
 
-table of specific use rejects [xxrej] [xxfail]
+table of specific use rejects [xxrej] [xxfail] [xxsur]
 use1	use2	babble
 Bro Orb	Madam	"As you lift the Bro Orb to throw at Madam, you see yourself in the Mirror Rim. You don't look so great or heroic. In fact, you feel unusually self-conscious. More than you deserve to, you think. Besides, the Bro Orb might dissolve her or something, but you're not out to kill anyone."
 Cave Vac	gnu dung	"The Cave Vac sputters. You may need something more specifically suited to the, uh, material to clean up."
@@ -1643,6 +1643,7 @@ gold log	kayak	"The gold log is too heavy to be an effective paddle."
 pity tip	Door Frood	"The Door Frood is too good for a mere pity tip. Well, in the Door Frood's mind."
 poo coop	Liar Grail	"Maybe if the contents came from a bull and not a gnu, it would be appropriate (this is not a palindrome 'joke.')"
 poo coop	Yuge Guy	"That could be fun, but he might be too normalised to the stuff in the coop to do damage."
+radar	girt rig	"Still nothing."
 radar	go-by bog	"The radar detects nothing. So there is probably no horribly bogy gob. But [if sage gas is off-stage]there are plenty of other places you could slip and fall and disappear forever[else]you got the sage gas, already[end if]."
 radar	trap mart rampart	"You detect nothing to the east or west. Maybe other structures like the rampart will hide something, though."
 radar	sleep eels	"A radar isn't supposed to work this way, but somehow, you detect some bitterness at mammals in general. But it's secondary to needing a more comfortable place to sleep."
@@ -2230,6 +2231,7 @@ to blanket-reject (bj - a thing):
 
 table of periphery [xxper]
 itm	reject
+KAOS Oak	"The KAOS Oak is immune to poking. You'll need a powerful contraption indeed to dispel it!"
 bad dab	"Its message seems important, but it's not good for much except examining."
 Oh Who	"Oh Who is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting, but it's there."
 Name ME Man	"NAME ME MAN is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting, but it's there."
@@ -2318,10 +2320,19 @@ part Dim Mid region
 
 book Fun Nuf
 
-Fun Nuf is a room in Dim Mid. "[if elite tile is in Fun Nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what leads west and east[xit-ave][end if][if north tron is in Fun Nuf]. Also, the North-Tron has carved a passage north. It's too big to, uh, repaper[end if]."
+Fun Nuf is a room in Dim Mid. "[if elite tile is in Fun Nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what leads west and east[xit-ave][end if][if north tron is in Fun Nuf]. Also, the North-Tron has carved a passage north where the Kaos Oak was. It's too big to, uh, repaper[else if flee elf is in Fun Nuf]An oak blocks the way north. It's a wide oak[else]The KAOS Oak blocks your way north[end if]."
 
 to say xit-ave:
 	say ". The [if tix exit is in Fun Nuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]"
+
+chapter kaos oak
+
+instead of doing something with KAOS Oak when flee elf is in Fun Nuf: say "The Flee Elf directs your attention to the cap. 'First things first. The oak can wait for later. Much later.'" instead
+
+The KAOS Oak is peripheral scenery in Fun Nuf. "[if flee elf is in Fun Nuf]It's forbiddingly wide[else]It is much too sturdy. You'll need a wild, powerful contraption to deal with it[end if]."
+
+after examining the KAOS Oak for the first time:
+	say "One look and you find yourself mumbling 'Elp! A Maple!' Now that's (ch/k)aos!";
 
 chapter north tron
 
@@ -2429,7 +2440,7 @@ understand "pack cap" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did." instead;
-	say "Yes, that's how to get the cap. You are ready to go! Hat, ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. It mumbles 'It's best I...' and salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
+	say "Yes, that's how to get the cap. You are ready to go! Hat, ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. 'Maybe later you'll find a way past the KAOS Oak to the Dirge Grid to defeat the Diktat Kid. But it's complicated.[paragraph break]The Flee Elf mumbles 'It's best I...' and salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
 	get-cap;
 	score-inc; [Dim Mid/pack cap]
 	verify-done rev-pack-cap rule;
@@ -4605,7 +4616,7 @@ the tent net is a thing. description is "It's tagged as a 'Tent o['] Dot Net,' w
 
 chapter epicer recipe
 
-the epicer recipe is a helpdoc. description is "You've seen recipes before, but this is a big interesting one! It describes how to make a north-tron, which will get you north of Fun [']Nuf.[paragraph break][tronpartlist][run paragraph on]". importancy of the epicer recipe is 3.
+the epicer recipe is a helpdoc. description is "You've seen recipes before, but this is a big interesting one! It describes how to make a north-tron, which can blast through anything ... including the KAOS Oak![paragraph break][tronpartlist][run paragraph on]". importancy of the epicer recipe is 3.
 
 to say tronpartlist:
 	repeat with tp running through tronparts:
@@ -4798,7 +4809,7 @@ rig-yet is a truth state that varies.
 after looking in Drawl Ward:
 	if rig-yet is false and player has radar:
 		now rig-yet is true;
-		say "You're just itching for the chance to try your snazzy new radar on something, anything. That girt rig looks like just the thing! However, when you do, nothing happens.
+		say "You're just itching for the chance to try your snazzy new radar on something, anything. That girt rig looks like just the thing! However, when you do, nothing happens.";
 	continue the action;
 
 chapter Bond Nob
