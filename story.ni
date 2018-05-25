@@ -208,8 +208,6 @@ volume parser simplification
 Understand the command "slice" as something new.
 Understand the command "prune" as something new.
 Understand the command "chop" as something new.
-Understand the command "kiss" as something new.
-Understand the command "hug" as something new.
 Understand the command "embrace" as something new.
 Understand the command "buy" as something new.
 Understand the command "purchase" as something new.
@@ -246,6 +244,22 @@ oldschooling is an action out of world.
 
 carry out oldschooling:
 	say "That's an old school very and won't be necessary in this game. See V/VERB/VERBS for what is used/useful." instead;
+
+chapter hug/kiss why not
+
+chapter huging
+
+huging is an action applying to one thing.
+
+understand the command "hug" as something new.
+
+understand "hug [something]" as huging.
+
+carry out huging:
+	say "Hug? Uh...";
+	the rule succeeds.
+
+instead of kissing, say "[one of]XOXOX[or]OXOXO[at random]!"
 
 volume room specifications
 
@@ -1003,7 +1017,8 @@ carry out verbing:
 	say "[line break][b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
 	say "[line break][b]THINK gives general non-spoiler hints, including where you may wish to visit, or what is blocking you[if pyx is quicknear][b]X X[r] or [b]MAP[r] will let you examine the X/Y Pyx.";
 	say "[line break][b]AID[r] gives you hints for where you are. [b]SCORE[r] tracks the score. [b]ABOUT[r] and [b]CREDITS[r] tell about the game[if show-dev is true], and [b]DEV ED[r] shows technical details[end if].";
-	if wr-short-note is true and in-work, say "[line break][b]REV[r], [b]ROT[r] and [b]REI[r] use an item on the reviver, rotator and reifier, respectively.";
+	if wr-short-note is true and in-work, say "[line break][b]REV[r], [b]ROT[r] and [b]REI[r] is shorthand to use an item on the reviver, rotator and reifier, respectively.";
+	if player has radar, say "[line break][b]RAD[r] is shorthand to use the radar on something.";
 	if beep-yet is true, say "[b]LO VOL[r] and [b]LOVE VOL[r] turn the pact cap's hints volume down and up, respectively.";
 	if ever-chased is true:
 		if psi wisp is not moot and kayo yak is not moot, say "[no-time-note].";
@@ -1704,7 +1719,7 @@ YOB ATTABOY	Sniffins	Dirt Rid	--	toons-to-den rule	true	true	false	Yelpley	false
 Elan Ale	Sniffins	Gorge Grog	--	--	true	true	false	Yelpley	false	"Sniffins looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.' Hey, you're not one to say 'stuff free stuff.'" [af:stand nat's]
 --	--	--	rev-stand-nats rule	--	true	--	--	Yelpley	false
 Dirt Rid	reviver	Cave Vac	--	--	true	true	false	Yelpley	false	"You watch as the Dirt Rid swirls and becomes shinier and much more powerful--and lighter, too, when you retrieve it. A Cave Vac! It will be capable of cleaning...well, somewhere."
-Cave Vac	cassettes sac	radar	--	bump-pod rule	true	true	true	Yelpley	false	"The Cave Vac has the power to clean up the cassettes sac (and even clean up part of the floor to reveal 'DA PAD,') but it chokes and sputters at the end of the effort.[paragraph break]And while a lot of the cassettes are beyond repair, there's something at the very bottom.[paragraph break]Wow! Radar![paragraph break]You hear noises from the pod, as a hidden robot appears and whisks the garbage away. That's pretty slick! Looking back, the pod doesn't seem so dopy any more, between how the Demo Med already helped and how you're sure the radar will."
+Cave Vac	cassettes sac	radar	--	bump-pod rule	true	true	true	Yelpley	false	"The Cave Vac has the power to clean up the cassettes sac (and even clean up part of the floor to reveal 'DA PAD,') but it chokes and sputters at the end of the effort.[paragraph break]And while a lot of the cassettes are beyond repair, there's something at the very bottom.[paragraph break]Wow! Radar![paragraph break]You hear noises from the pod, as a hidden robot appears and whisks the garbage away. That's pretty slick! Looking back, the pod doesn't seem so dopy any more, between how the Demo Med already helped and how you're sure the radar will.[paragraph break](NOTE: You can RAD something to use the radar on it.)"
 radar	crag arc	UFO tofu	orc-gone rule	radar-crag rule	true	false	false	Yelpley	false	"Beeeep... beeeep..... the radar has found something! Two small saucer arises from a hidden part of the crag. So Full UFOs! And splat! something weird and warm drops from them and lands on the radar, which fizzles a bit from the impact and wetness. It hardens quickly and weirdly into a cubic shape. What could it be? You think a minute. It has to be UFO tofu." [af:deny Ned]
 --	--	--	rev-deny-Ned rule	--	true	--	--	Yelpley	false
 Ye Key	etage gate	gate tag	Ned-gone rule	tag-later-wipe rule	true	true	true	Yelpley	false	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'A hall! Aha! Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paragraph break]A gate tag falls off. You pick it up." [af:Worn Row]
@@ -2174,6 +2189,11 @@ this is the you-win rule: [xxwin]
 
 chapter peripherals
 
+instead of doing something when noun is a direction or second noun is a direction:
+	if current action is going, continue the action;
+	if current action is examining, say "You don't need to look far." instead;
+	say "You don't need to do anything fancy with directions. Just go that way."
+
 instead of doing something when second noun is a peripheral thing:
 	if action is procedural, continue the action;
 	blanket-reject second noun instead;
@@ -2182,6 +2202,7 @@ instead of doing something with a peripheral thing:
 	if action is procedural, continue the action;
 	if current action is stacking and noun is senile felines, continue the action; [?? horrid hack for LLP here and below]
 	if current action is mussing and noun is opossum, continue the action;
+	if current action is taking and noun is pyx, continue the action;
 	blanket-reject noun instead;
 
 instead of useoning something with a peripheral thing:
@@ -3154,7 +3175,7 @@ Spa Maps are a plural-named thing. indefinite article of Spa Maps is "some". des
 after examining spa maps for the first time:
 	say "[line break]Good thing they're not spa mini-maps. They'd be IMPOSSIBLE to read.";
 
-understand "spa map" and "map" as spa maps.
+understand "spa map" and "map" as spa maps when player has spa maps.
 
 check examining spa maps:
 	if player is not in Apse Spa, say "It doesn't look like the maps apply to the terrain here[if Apse Spa is unvisited] or anywhere you've been[else], but they seem somewhat familiar[end if]." instead;
@@ -3386,7 +3407,9 @@ to say two-ads:
 
 chapter X/Y Pyx
 
-an X Y Pyx is a thing in Yawn Way. printed name of x y pyx is "X/Y Pyx". description of X Y Pyx is "[map-so-far]". "[one of]An X/Y pyx lies here. Closer inspection reveals that's just a fancy name for a map[or]The X/Y pyx still lies here[stopping].". indefinite article of X Y Pyx is "an".
+an X Y Pyx is a thing in Yawn Way. printed name of x y pyx is "X/Y Pyx". description of X Y Pyx is "[map-so-far]". "[one of]An X/Y pyx lies here. Closer inspection reveals that's just a fancy name for a map[or]The X/Y pyx still lies here[stopping]. It wouldn't be too cumbersome to take.". indefinite article of X Y Pyx is "an".
+
+understand "map" as pyx when player has pyx and player does not have spa maps.
 
 check examining pyx when screen-reader is true:
 	say "The text map doesn't play well with screen readers, so you can't examine it productively. Sorry. SRC toggles screen reader mode." instead;
@@ -3627,7 +3650,7 @@ does the player mean evadeing Dave: it is very likely.
 carry out evadeing:
 	if noun is Dave:
 		if Dave is moot, say "You don't need to evade Dave again.";
-		say "You evade Dave! Deked! Deked![paragraph break]Dave, frustrated from spinning around trying to catch you, runs off.[paragraph break]Suspicious there are no actual weight machines, you find a passage to a hidden spate of Sperses-Reps machines with the motto 'Scepsis?! Pecs!' They help you bulk up a bit, so weight will not be a factor. But you don't want to waste too much time bulking up. You go back out and have a look at the Stole-Lots. There wasn't much there except for a wash saw, which you take. You consider making it a STORE-lots, but then the 'rots' is not so good, so then you also check if the E and an L rub out quickly. They do, making it a Sto(['])-Lots. Bam! That solves a logistical AND a moral problem!";
+		say "You evade Dave! Deked! Deked![paragraph break]Dave, frustrated from spinning around trying to catch you, runs off.[paragraph break]Suspicious there are no actual weight machines, you find a passage to a hidden spate of Sperses-Reps machines with the motto 'Scepsis?! Pecs!' They help you bulk up a bit, so weight will not be a factor. But you don't want to waste too much time bulking up. You go back out and have a look at the Stole-Lots. You consider making it a STORE-lots, but then the 'rots' is not so good, so then you also check if the E and an L rub out quickly. They do, making it a Sto(['])-Lots. Bam! That solves a logistical AND a moral problem![paragraph break]Also, you notice a wash saw in the Stole/Sto-Lots. It seems worth taking along.";
 		moot Dave;
 		now player has sto lots;
 		moot stole lots;
@@ -4552,7 +4575,7 @@ understand "cot" as stock cots.
 
 chapter tube but
 
-the tube but is peripheral scenery.
+the tube but is peripheral scenery. "[if tube-try is true]You don't see where it leads. It bends out of sight, but then, you probably don't want to see the Door Frood again[else]You already know it's a dead end. Not worth a re-try[end if]."
 
 instead of entering tube but: try going north instead.
 
@@ -4823,6 +4846,19 @@ to decide which number is radar-used:
 the radar is a thing. description is "You're not sure of the deeper science, but you will probably figure how to USE it when the time comes[if radar-used is 1] again, though it does seem slightly damaged[end if]."
 
 The roto motor is a thing. description is "It's quite tiny and seems unaffected by how you caused the radar to go on the fritz."
+
+chapter rading
+
+rading is an action applying to one thing.
+
+understand the command "rad" as something new.
+
+understand "rad [something]" as rading when radar is not off-stage.
+
+carry out rading:
+	if radar is moot, say "The radar did all it could.";
+	try useoning radar with noun;
+	the rule succeeds.
 
 chapter Demo Med
 
