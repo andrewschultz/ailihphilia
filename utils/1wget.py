@@ -90,7 +90,7 @@ with open("story.ni") as file:
             rms += 1
             to_check_hash(st)
             # print(rms, st)
-        if ' scenery' in sent1:
+        if re.search(" (scenery|backdrop)", sent1):
             scen_tot += 1
             st = no_art(sent1)
             st = cut_verb(st)
@@ -107,8 +107,10 @@ with open("story.ni") as file:
 i7.go_proj('ai')
 out_final = "1wget-out.txt"
 out_temp = "1wget-out-temp.txt"
+compare_first = False
 
 if len(sys.argv) > 1:
+    if sys.argv[1] == 'c1': compare_first = True
     if sys.argv[1] == 'e' or sys.argv[1] == '-e':
         print("Opening", out_final)
         os.system(out_final)
@@ -129,3 +131,5 @@ if cmp(out_temp, out_final):
     print("No changes, no copying to", out_final)
 else:
     print("Changes, copying over", len(stuff_in_game.keys()), "palindrome candidates to", out_final)
+    if compare_first: i7.wm(out_temp, out_final)
+    copy(out_temp, out_final)
