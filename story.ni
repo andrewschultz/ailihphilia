@@ -4793,6 +4793,14 @@ check going in Drawl Ward:
 	if Bond Nob is in Drawl Ward:
 		if noun is west or noun is east, say "You hear the Bond Nob groaning and think it wouldn't be nice to pass by. They'll let you by once you help them with whatever sickness they have." instead;
 
+rig-yet is a truth state that varies.
+
+after looking in Drawl Ward:
+	if rig-yet is false and player has radar:
+		now rig-yet is true;
+		say "You're just itching for the chance to try your snazzy new radar on something, anything. That girt rig looks like just the thing! However, when you do, nothing happens.
+	continue the action;
+
 chapter Bond Nob
 
 the Bond Nob is a neuter person in Drawl Ward. "[one of]'Hi! I'm the Bond Nob. I ain't feeling so good, but I wondered if maybe I could get some medicine.'[or]The Bond Nob continues to moan colloquially about the sickness, the pain.[stopping]". description is "the Bond Nob looks pretty ill. Nothing life-threatening, but too sick to go fetch even the dinkiest over-the-counter medication."
@@ -4803,7 +4811,7 @@ the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, un
 
 chapter girt rig
 
-the girt rig is peripheral scenery in Drawl Ward. description is "It is too sturdy to climb or break down."
+the girt rig is peripheral scenery in Drawl Ward. description is "It is too sturdy to climb or break down. Also, stuff like YA SAY? and YO BOY are scribbled in there so the Drawl Ward is still drawl-y with or without the Bond Nob."
 
 book Scrap Arcs
 
