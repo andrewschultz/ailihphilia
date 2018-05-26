@@ -124,11 +124,11 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 360. [-40 from max_verbs debug]
+use MAX_VERBS of 370. [-40 from max_verbs debug]
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 400. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 410. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 chapter kinds of things
 
@@ -182,6 +182,30 @@ to display-dropbox-link:
 	say "If you can take a look at https://www.dropbox.com/s/hex2w7dzhs8lg5k/piu-concerns.txt?dl=0 to see if anything rings a bell, that would be a big help. I didn't want to expose this before a first play through."
 
 volume i6 modification(s)
+
+section What Do You Want to X
+
+Include (-
+Replace LanguageVerb;
+-) after "Definitions.i6t".
+
+Include (-
+[ LanguageVerb i;
+    switch (i) {
+      'i//','inv','inventory':
+               print "take inventory";
+      'l//':   print "look";
+      'x//':   print "examine";
+      'rei//':   print "put in the reifier";
+      'rot//':   print "put in the rotator";
+      'rev//':   print "put in the reviver";
+      'rad//':   print "scan with the radar";
+      'z//':   print "wait";
+      default: rfalse;
+    }
+    rtrue;
+];
+-) after "Language.i6t".
 
 section something dramatic has happened bug
 
@@ -572,11 +596,7 @@ Rule for printing a parser error when the latest parser error is the didn't unde
 	if player has spur ups:
 		if the player's command includes "spur", say "You look at the spur ups, unsure how to use them. It's more that they're, well, Up than spurs." instead;
 		if number of words in the player's command > 1:
-			if word number 1 in the player's command is "up" or word number 1 is "ups":
-				say "Hmm. You need to do something up, with the Spur Ups, but ... thinking about it, not many words end in pu";
-				if word number 1 in the player's command is "ups", say ", much less spu";
-				say "." instead;
-		if word number 2 in the player's command is "ups" : say "There is only one you, so you only need to be, or do something, UP." instead;
+			if word number 2 in the player's command is "ups", say "There is only one you, so you only need to be, or do something, UP." instead;
 	say "[if gtv]You do need a special verb here, but not that one. It may not be a standard one, but given the game's theme, I bet you can figure it out. If you want standard verbs, y[else]I didn't recognize that action. Y[end if]ou can type VERB or VERBS to get a list of them.";
 
 to decide whether gtv:
@@ -3616,7 +3636,7 @@ carry out puffuping:
 	if puffed-up is true, say "You already did." instead;
 	let puff-put be whether or not word number 1 in the player's command is "puff";
 	if player does not have spur ups, say "You don't possess anything that would help you feel more up." instead;
-	say "As you hold the Spur-Ups, you think about how great you are and can and will be. Surprisingly, it works! It works so well, you figure you don't even need the spur-ups for a boost in the future.[paragraph break]Hardened! Rah![paragraph break]You feel more confident, more able to deal with sadness now.[paragraphs break]Plus you have an idea for a motivational gizmo that could make you millions. Round Tuit(t), move over! It has to work!";
+	say "As you hold the Spur-Ups, you think about how great you are and can and will be. Surprisingly, it works! It works so well, you figure you don't even need the spur-ups for a boost in the future.[paragraph break]Hardened! Rah![paragraph break]You feel more confident, more able to deal with sadness now.[paragraph break]Plus you have an idea for a motivational gizmo that could make you millions. Round Tuit(t), move over! It has to work!";
 	now puffed-up is true;
 	moot Spur Ups;
 	score-inc; [Yelpley/puff up]

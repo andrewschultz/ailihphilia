@@ -634,6 +634,8 @@ to decide whether thug-near:
 		if Z is quicknear, yes;
 	no;
 
+to say or-ups: if word number 1 in the player's command is "ups", say ", much less spu";
+
 understand "gift fig" as a mistake ("It already is one. And you don't need to pass it on.") when gift fig is quicknear.
 
 understand "guh" and "thug" and "guh thug" as a mistake ("That's what [random visible guhthug] is, but you need to figure how to get rid of him.") when thug-near.
@@ -646,7 +648,7 @@ understand "rub [text]" as a mistake ("There's no one named Burt or Babbur or Li
 
 understand "tap at [text]" as a mistake ("That's in the spirit of the game, but sadly, I couldn't find a way to make it useful. Sorry!")
 
-understand "up [text]" and "ups [text]" as a mistake ("You need to do something UP with the spurs, but ... UP needs to come second. Or last.") when player has spur ups.
+understand "up [text]" and "ups [text]" as a mistake ("You need to do something UP with the spurs, but ... UP needs to come second. Or last. You can't do much with PU[or-ups].") when player has spur ups.
 
 understand "wave" as a mistake ("Nobody named Eva is beyond the fourth wall.")
 
