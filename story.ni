@@ -569,8 +569,14 @@ to say row-clue:
 chapter unrecognized verb
 
 Rule for printing a parser error when the latest parser error is the didn't understand error or the latest parser error is the not a verb I recognise error:
-	if player has spur ups and the player's command includes "spur":
-		say "You look at the spur ups, unsure how to use them. It's more that they're, well, Up than spurs." instead;
+	if player has spur ups:
+		if the player's command includes "spur", say "You look at the spur ups, unsure how to use them. It's more that they're, well, Up than spurs." instead;
+		if number of words in the player's command > 1:
+			if word number 1 in the player's command is "up" or word number 1 is "ups":
+				say "Hmm. You need to do something up, with the Spur Ups, but ... thinking about it, not many words end in pu";
+				if word number 1 in the player's command is "ups", say ", much less spu";
+				say "." instead;
+		if word number 2 in the player's command is "ups" : say "There is only one you, so you only need to be, or do something, UP." instead;
 	say "[if gtv]You do need a special verb here, but not that one. It may not be a standard one, but given the game's theme, I bet you can figure it out. If you want standard verbs, y[else]I didn't recognize that action. Y[end if]ou can type VERB or VERBS to get a list of them.";
 
 to decide whether gtv:
@@ -1716,7 +1722,7 @@ puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-nob rule	true	true	true	Yelpley
 stamp mats	slate metals	Ye Key	--	--	true	true	false	Yelpley	false	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY. You find it hard to pull the stamp mats out, and when you take YE KEY, the mats quickly morph into the slate metals. Eh, well. Less inventory to worry about."
 demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	Grebeberg	false	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' and looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	false	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
-YOB ATTABOY	Sniffins	Dirt Rid	--	toons-to-den rule	true	true	false	Yelpley	false	"Sniffins accepts your gift, with sniffs slowly changing from sadness to something more snooty. Your thanks for helping Sniffins be too good for you is a Dirt Rid. Sniffins shoos you back out. There is remodeling to be done! Sniffins will outdo Rentner, whoever that is!"
+YOB ATTABOY	Sniffins	Dirt Rid	--	toons-to-den rule	true	true	false	Yelpley	false	"Sniffins accepts your gift, with sniffs slowly changing from sadness to something more snooty. Your thanks for helping Sniffins be too good for you is a Dirt Rid. Sniffins shoos you back out to the Toll Lot. There is remodeling to be done! Sniffins will outdo Rentner, whoever that is! From the south, you hear frantic cries of 'Repaper! Repaper! Repaper!'"
 Elan Ale	Sniffins	Gorge Grog	--	--	true	true	false	Yelpley	false	"Sniffins looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.' Hey, you're not one to say 'stuff free stuff.'" [af:stand nat's]
 --	--	--	rev-stand-nats rule	--	true	--	--	Yelpley	false
 Dirt Rid	reviver	Cave Vac	--	--	true	true	false	Yelpley	false	"You watch as the Dirt Rid swirls and becomes shinier and much more powerful--and lighter, too, when you retrieve it. A Cave Vac! It will be capable of cleaning...well, somewhere."
@@ -2773,7 +2779,7 @@ King Nik is a male person in Cold Loc. "[one of]A man sits here, shaking his hea
 
 chapter Spur Ups
 
-the Spur Ups are a plural-named thing. description is "Boy! These are so much better than that round tuitt a teacher gave you as a joke. If you could mass produce and market them when you got back, what a motivational fad you could start--and profit from."
+the Spur Ups are a plural-named thing. description is "The words PUT IT UP are engraved on them. You're not sure what IT is. It feels abstract. But the Spur Ups sure make you want to do something[if puffed-up is true] else[end if] UP. The question is, what?"
 
 instead of wearing spur ups, say "They would be too pointy for comfort. There are no boots-too-b attached to and no West-Sew tailors to make them.";
 
@@ -3599,15 +3605,10 @@ puffuping is an action applying to nothing.
 
 understand the command "puffup" as something new.
 understand the command "putup" as something new.
-understand the command "put up" as something new.
-understand the command "put it up" as something new.
 understand the command "puff up" as something new.
 
 understand "puffup" as puffuping.
 understand "puff up" as puffuping.
-understand "putup" as puffuping.
-understand "put up" as puffuping.
-understand "put it up" as puffuping.
 
 puffed-up is a truth state that varies.
 
@@ -3615,7 +3616,7 @@ carry out puffuping:
 	if puffed-up is true, say "You already did." instead;
 	let puff-put be whether or not word number 1 in the player's command is "puff";
 	if player does not have spur ups, say "You don't possess anything that would help you feel more up." instead;
-	say "As you hold the Spur-Ups, you think about how [if puff-put is false]you need to put up with a little bad stuff for big goals[else]great you are and can and will be[end if]. Surprisingly, it works! It works so well, you figure you don't even need the spur-ups for a boost in the future.[paragraph break]Hardened! Rah![paragraph break]You feel more confident, more able to deal with sadness now.";
+	say "As you hold the Spur-Ups, you think about how great you are and can and will be. Surprisingly, it works! It works so well, you figure you don't even need the spur-ups for a boost in the future.[paragraph break]Hardened! Rah![paragraph break]You feel more confident, more able to deal with sadness now.[paragraphs break]Plus you have an idea for a motivational gizmo that could make you millions. Round Tuit(t), move over! It has to work!";
 	now puffed-up is true;
 	moot Spur Ups;
 	score-inc; [Yelpley/puff up]
