@@ -161,9 +161,14 @@ with open(mis) as file:
 
 if len(got.keys()) > 0:
     x = max(got, key=int)
+    skips = 0
     for i in range(1, x+1):
         if i not in got.keys():
-            print("Skipped", i, "in mistake cues.")
+            skips += 1
+            if skips == 11:
+                print("Skipping all remaining notifications...")
+            elif skips <= 10:
+                print(skips, "Skipped", i, "in mistake cues.")
     print("maximum value of", x, "in mistake cues")
 else:
     print("First run...")
