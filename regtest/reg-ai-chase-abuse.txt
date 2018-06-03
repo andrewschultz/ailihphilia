@@ -1,0 +1,116 @@
+** game: /home/andrew/prt/debug-ailihphilia.ulx
+** interpreter: /home/andrew/prt/glulxe -q
+
+* runthrough
+
+>pack cap
+>e
+>s
+>evade dave
+>bore rob
+>word row
+>get to idiot
+>work row
+>e
+>n
+>n
+>get all
+>n
+>give ti to frood
+>get all
+>s
+>s
+>s
+>w
+>put trap art in reifier
+>put bunk nub in reviver
+>word row
+>get epoch cope
+>e
+>n
+>w
+>w
+>use party trap on stark rats
+>n
+>use epoch cope on king nik
+>s
+>s
+>use stock cots on sleep eels
+>n
+>e
+>e
+>puff up
+>e
+>pull up
+>s
+>get all
+>n
+>w
+>w
+>w
+>n
+>use wash saw on rift fir
+>use puce cup on past sap
+>s
+>e
+>e
+>e
+>s
+>get all
+>use puce cup on liar grail
+>n
+>w
+>w
+>W
+>n
+>e
+>use puce cup on dose sod
+>w
+>s
+>e
+>e
+>e
+>s
+>s
+>use puce cup on bond nob
+>w
+>get all
+>e
+>n
+>n
+>w
+>w
+>W
+>n
+>n
+>use demo med on gulf lug
+>s
+>s
+>e
+>e
+>e
+>e
+>give cash sac to cross orc
+>n
+>deny ned
+>get all
+>s
+>w
+>w
+>s
+>w
+>use stinky knits on rotator
+>e
+>n
+>W
+>w
+>s
+>s
+>use troll ort on brag garb
+>n
+>n
+>w
+>w
+>e
+>get all
+WRONG (note stuff is left over)

@@ -2888,7 +2888,7 @@ check wearing the lie veil:
 
 check going west in Dumb Mud:
 	if Diktat Kid is moot, say "[one of]You are informed that the Known Wonk and Code Doc have teamed up to design a system of Smarty-Trams to revitalize the economies of Grebeberg and Yelpley. Everything's still in the planning state, but construction has already started to the west[or]The Smarty-Trams construction and planning to the west is not to be disturbed. You've helped enough[stopping]." instead;
-	if gnu dung is in Dumb Mud, say "Not through the gnu dung you aren't." instead;
+	if gnu dung is in Dumb Mud, say "Not through the gnu dung you aren't[if being-chased is true]...perhaps there's a way behind it, and you may need it, to get away from the kayo yak[end if]." instead;
 
 check going south in Dumb Mud:
 	if poo coop is not moot, say "The turf rut is too deep. You need a way to fill it in." instead;
@@ -3119,6 +3119,9 @@ to banish-ogre:
 chapter blocking east
 
 check going east in Frush Surf when being-chased is true:
+	if poo coop is in Moo Room:
+		say "That seems like a dead end, but who knows, maybe you [if Moo Room is visited]missed[else]might find[end if] something valuable there.";
+		continue the action;
 	say "[chase-pass]That seems like a dead end. The yak would have you cornered." instead;
 
 book Moo Room
