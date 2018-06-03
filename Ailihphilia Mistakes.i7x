@@ -156,7 +156,7 @@ understand "bonk nob" as a mistake ("That'd let you get west ... until the nob w
 
 understand "bony nob" as a mistake ("The Bond Nob's body weight is not an important issue, here.[mis of 58]") when Bond Nob is quicknear.
 
-understand "drawn ward" as a mistake ("The room remains text-based.[mis of 59]") when player is in Drawl Ward.
+understand "drawn ward" and "draws ward" as a mistake ("The room remains text-based.[mis of 59]") when player is in Drawl Ward.
 
 understand "gi rig" as a mistake ("You don't need anything military-grade here. Even if you got one, you wouldn't know how to operate it.[mis of 60]") when player is in Drawl Ward.
 
@@ -459,7 +459,7 @@ chapter Red Roses Order
 
 understand "gal slag" as a mistake ("You managed to annoy Madam enough that she lashes out and conks you with a mortal blow with the Gal Flag. Okay, not really, but name calling won't help.[mis of 181]") when Madam is quicknear. [?? do fake death thing]
 
-understand "sworn rows" as a mistake ("The sword rows are inanimate and neutral. Unless you get too close to them.[mis of 182]") when sword rows are quicknear.
+understand "sworn rows" and "swore rows" as a mistake ("The sword rows are inanimate and neutral. Unless you get too close to them.[mis of 182]") when sword rows are quicknear.
 
 section yard ray misuse
 

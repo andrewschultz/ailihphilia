@@ -2825,7 +2825,9 @@ The scorn rocs are plural-named scenery in Flu Gulf. "While they're motionless, 
 
 understand "roc" and "scorn roc" as scorn rocs.
 
-check going west in Flu Gulf when scorn rocs are in Flu Gulf: say "The scorn rocs remain motionless, but their gaze freezes you as you try to go west." instead;
+check going west in Flu Gulf:
+	if scorn rocs are in Flu Gulf, say "The scorn rocs remain motionless, but their gaze freezes you as you try to go west." instead;
+	if being-chased is true, say "You don't want to face [if Sneer Greens is visited]the Yuge Guy[else]whatever's west[end if] while you're being chased, too." instead;
 
 book Sneer Greens
 
@@ -5271,6 +5273,10 @@ this is the grid-unavail rule:
 
 volume chases
 
+a room can be chase-blocked. a room is usually not chase-blocked.
+
+check going to a chase-blocked room when chase-mulligan is true: say "No, you've already been there, and you found nothing to do." instead;
+
 after going when being-chased is true:
 	if x-it stix are in location of player, say "X-it Stix X out the way [if Fun Nuf is room east of location of player]east[else]west[end if]. It's probably bad for the [chase-person] to get loose in [if player is in Yawn Way]Grebeberg[else]Yelpley[end if].";
 	continue the action;
@@ -5337,6 +5343,7 @@ to recover-items:
 	now player has all things in DropOrd;
 
 to reset-chase:
+	let LP be location of player;
 	wfak;
 	move x-it stix to TempMet;
 	recover-items;
@@ -5345,6 +5352,10 @@ to reset-chase:
 	move chase-person to chase-room of chase-person;
 	unless player was in Frush Surf or player was in Pro Corp, say "Well, all your items you dropped are still here, so that's something. You take them back.";
 	now being-chased is false;
+	consider chase-block-rule of LP;
+	if the rule succeeded:
+		say "You felt particularly frustrated in [location of player]. There was nothing to do. You decide not to go back next time.";
+		now location of player is chase-blocked;
 
 after going when being-chased is true:
 	now last-chase-direction is noun;
@@ -5371,6 +5382,64 @@ after looking when being-chased is false (this is the start-chase-in-case rule):
 		say "The Kayo Yak bounds after you[one of][or] again[stopping]!";
 		continue the action;
 	continue the action;
+
+chapter chase block rules
+
+a room has a rule called chase-block-rule. chase-block-rule of a room is usually the trivially false rule.
+
+section yak chase
+
+chase-block-rule of Flu Gulf is the trivially true rule.
+chase-block-rule of Apse Spa is the trivially true rule.
+chase-block-rule of Cold Loc is the block-cold-loc rule.
+chase-block-rule of Calcific Lac is the trivially true rule.
+chase-block-rule of Yack Cay is the block-yack-cay rule.
+
+this is the block-cold-loc rule:
+	if Flu Gulf is chase-blocked and Apse Spa is chase-blocked:
+		say "Brr. It's cold here. You'll freeze before the yak does. Maybe you need it to chase you somewhere else.";
+		the rule succeeds;
+	the rule fails;
+
+this is the block-yack-cay rule:
+	if Calcific Lac is chase-blocked:
+		say "There was nothing in Calcific Lac, and there's nothing here that could distract the yak from attacking you.";
+		the rule succeeds;
+	the rule fails;
+
+section wisp chase
+
+chase-block-rule of Deft Fed is the trivially true rule.
+chase-block-rule of Yell Alley is the trivially true rule.
+chase-block-rule of Trapeze Part is the trivially true rule.
+chase-block-rule of Evaded Ave is the block-evaded-ave rule.
+chase-block-rule of Art Xtra is the block-art-xtra rule.
+chase-block-rule of Scrap Arcs is the trivially true rule.
+chase-block-rule of Dopy Pod is the trivially true rule.
+chase-block-rule of Drawl Ward is the block-drawl-ward rule.
+chase-block-rule of Swept Pews is the block-swept-pews rule.
+
+this is the block-evaded-ave rule:
+	if Yell Alley is chase-blocked and Trapeze Part is chase-blocked:
+		say "Nothing to do west or east, and nothing here. The Psi Wisp might be a shock for the Door Frood ... but no way you'd outrace it through the tube. Somewhere else, then.";
+		the rule succeeds;
+	the rule fails;
+
+this is the block-art-xtra rule:
+	if Evaded Ave is chase-blocked:
+		say "There's nothing behind Art Xtra. The Revolt Lover would like to help you but can't. This can't be the way.";
+		the rule succeeds;
+	the rule fails;
+
+this is the block-drawl-ward rule:
+		say "Yyyuuuppp. Nothing to do here. You searched both west and east. Time to find somewhere else.";
+		the rule succeeds;
+	the rule fails;
+
+this is the block-swept-pews rule:
+		say "You cringe as you trhink of all the chaos you brought to the Swept Pews. There's nothing you see that could help you dispose of the Psi Wisp, which (un)fortunately isn't demoniac enough to be affected by such a holy place. Maybe you need something more physical or scientific.";
+		the rule succeeds;
+	the rule fails;
 
 volume accelerator commands
 
