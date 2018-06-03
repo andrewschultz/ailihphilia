@@ -21,9 +21,10 @@ print_warning = True
 print_requirements = True
 
 depends = defaultdict(lambda: defaultdict(bool))
+need_all = defaultdict(bool)
 
-item_file = "rely.txt"
-command_file = "rely-cmd.txt"
+item_file = "rely-items.txt"
+command_file = "rely-cmds.txt"
 
 def usage():
     print("-c = commands")
@@ -61,13 +62,15 @@ def items_from_depends():
 
 def plow_through(file_name):
     depends.clear()
+    need_all.clear()
     totals = 0
     if file_name == item_file: items_from_depends()
     with open(file_name) as file:
         for (line_count, line) in enumerate(file, 1):
-            if line.startswith(";"):
-                break
-            if line.startswith("#"):
+            if line.startswith(";"): break
+            if line.startswith("#"): continue
+            if line.startswith("needall"):
+                need_all[line[8:].strip()] = True
                 continue
             if '/' not in line:
                 print("Warning line", line_count, "needs slash")
@@ -75,6 +78,10 @@ def plow_through(file_name):
             ary = line.lower().strip().split("/")
             needers = ary[0].split(",")
             neededs = ary[1].split(",")
+            for n1 in neededs:
+                for n2 in neededs:
+                    if n2 in depends[n1].keys(): print("WARNING", needers[0], ":", n1, "already needs", n2)
+                    if n1 in depends[n2].keys(): print("WARNING", needers[0], ":", n2, "already needs", n1)
             for n1 in needers:
                 for n2 in neededs:
                     depends_add(n1, n2, line_count)
@@ -87,6 +94,12 @@ def plow_through(file_name):
         else:
             if verbose:
                 print(x, "has no requirements")
+    for x in need_all.keys():
+        need_count = 0
+        for y in sorted(depends.keys()):
+            if y != x and y not in depends[x].keys():
+                need_count += 1
+                print("Need-all command/item", x, "needs", y, "({:d})".format(need_count))
     print(totals, "total dependencies in", file_name, "for", len(depends.keys()), "items")
 
 def depends_add(result, needed, line=-1):
