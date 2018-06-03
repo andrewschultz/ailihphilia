@@ -1,0 +1,149 @@
+evade dave/pack cap
+bore rob/evade dave
+word row/bore rob
+use to idiot on door frood/word row
+use pity tip on eye/use to idiot on door frood
+tend net/use to idiot on door frood
+work row/bore rob
+use trap art on reifier/work row
+use bunk nub on reviver/work row,use to idiot on door frood
+use party trap on stark rats/use trap art on reifier
+use epoch cope on king nik/use party trap on stark rats,word row
+use stock cots on sleep eels/use bunk nub on reviver,use party trap on stark rats
+puff up/use epoch cope on king nik
+pull up/puff up
+use wash saw on past sap/use party trap on stark rats
+# note that we can switch the 2 below and not get an error. Tricky to fix but
+use puce cup on past sap/pull up,use party trap on stark rats,use wash saw on past sap
+use puce cup on liar grail/use puce cup on past sap
+use puce cup on dose sod/pull up
+use puce cup on bond nob/use puce cup on dose sod,use puce cup on liar grail
+use stamp mats on slate metals/use puce cup on bond nob,use stock cots on sleep eels
+use demo med on gulf lug/use puce cup on bond nob
+use cash sac on cross orc/use demo med on gulf lug,puff up
+use yob attaboy on sniffins/use cash sac on cross orc
+use elan ale on sniffins/use yob attaboy on sniffins,use puce cup on bond nob
+stand nat's/use elan ale on sniffins
+use dirt rid on reviver/use yob attaboy on sniffins
+use cave vac on cassettes sac/use dirt rid on reviver,use puce cup on bond nob
+use radar on crag arc/use cave vac on cassettes sac,use puce cup on bond nob
+deny ned/use cash sac on cross orc
+use ye key on etage gate/deny ned,use stamp mats on slate metals
+worn row/use ye key on etage gate
+use stinky knits on rotator/deny ned
+use gorge grog on butene tub/worn row,use elan ale on sniffins
+use gold log on rotator/worn row
+#technically you need to have done 2 things
+use some demos on yahoo hay/use epoch cope on king nik,use to idiot on door frood,use stock cots on sleep eels
+use straw arts on revolt lover/use some demos on yahoo hay
+use gate tag on soot tattoos/use straw arts on revolt lover
+use poo coop on gnu dung/use stock cots on sleep eels,use party trap on stark rats
+use poo coop on turf rut/use poo coop on gnu dung,use party trap on stark rats
+use radar on made dam/use poo coop on gnu dung,use cave vac on cassettes sac
+use null illun on known wonk/use poo coop on gnu dung,word row
+use el doodle on edits tide/use poo coop on gnu dung
+use elope pole on kayak/use null illun on known wonk,tend net
+use dork rod on tao boat/use poo coop on gnu dung,use gold log on rotator
+use tent net on code doc/tend net,use poo coop on gnu dung
+use spa maps on code doc/use tent net on code doc,use el doodle on edits tide
+use spa maps on go-by bog/use spa maps on code doc
+use enact cane on yahoo hay/use dork rod on tao boat
+pace cap/pack cap
+use troll ort on brag garb/use stinky knits on rotator
+yak okay/use troll ort on brag garb,use poo coop on gnu dung,pace cap
+use sage gas on tame mat/yak okay,use spa maps on go-by bog
+use sharp rahs on guru rug/yak okay,use sage gas on tame mat
+nail ian/use poo coop on turf rut
+use snack cans on ufo tofu/use radar on crag arc,use pity tip on eye,nail ian
+use gift fig on mayo yam/use to idiot on door frood,use party trap on stark rats,nail ian
+use moor broom on tru yurt/use enact cane on yahoo hay,use poo coop on gnu dung
+use wash saw on porch crop/use moor broom on tru yurt,evade dave
+use exam axe on lie veil/use moor broom on tru yurt
+use dna band on reifier/worn row
+use roto motor on dna hand/use dna band on reifier,use radar on made dam,use radar on crag arc
+use eroded ore on reviver/use radar on made dam
+use you buoy on rotator/use elope pole on kayak
+use mr arm on bomb mob/use roto motor on dna hand,use to idiot on door frood
+use nat's tan on scorn rocs/use yob attaboy on sniffins,use party trap on stark rats,stand nat's
+use rep popper on me totem/use dork rod on tao boat,use nat's tan on scorn rocs
+use tenet on bro orb/use sharp rahs on guru rug,use exam axe on lie veil
+use bro orb on mirror rim/use gate tag on soot tattoos,use tenet on bro orb
+use balsa slab on sword rows/use bro orb on mirror rim,use wash saw on porch crop
+use not-a-baton on reifier/use balsa slab on sword rows
+use murdered rum on yard ray/use bro orb on mirror rim,use rep popper on me totem
+emit noontime/use murdered rum on yard ray
+use yard ray on test set/emit noontime
+use tnt on ore zero/use snack cans on ufo tofu,use gift fig on mayo yam,use eroded ore on reviver,use mr arm on bomb mob,use gorge grog on butene tub,use yard ray on test set
+use me gem on knife fink/use you buoy on rotator,use tnt on ore zero
+use taboo bat on verses rev/use not-a-baton on reifier,use tnt on ore zero
+use yard ray on redivider/use taboo bat on verses rev,use me gem on knife fink
+use x-ite tix on tix exit/use yard ray on redivider
+needall:use x-ite tix on tix exit
+;
+PACK CAP/EVADE DAVE/BORE ROB/WORD ROW/USE TO IDIOT ON DOOR FROOD/USE PITY TIP ON EYE/TEND NET/WORK ROW/USE TRAP ART ON REIFIER/USE BUNK NUB ON REVIVER/USE PARTY TRAP ON STARK RATS
+USE EPOCH COPE ON KING NIK
+USE STOCK COTS ON SLEEP EELS
+PUFF UP/PULL UP
+USE WASH SAW ON PAST SAP
+USE PUCE CUP ON PAST SAP
+USE PUCE CUP ON LIAR GRAIL
+USE PUCE CUP ON BOND NOB
+USE STAMP MATS ON SLATE METALS
+USE DEMO MED ON GULF LUG
+USE CASH SAC ON CROSS ORC
+USE YOB ATTABOY ON SNIFFINS
+USE ELAN ALE ON SNIFFINS
+STAND NAT'S
+USE DIRT RID ON REVIVER
+USE CAVE VAC ON CASSETTES SAC
+USE RADAR ON CRAG ARC
+DENY NED
+USE YE KEY ON ETAGE GATE
+WORN ROW
+USE STINKY KNITS ON ROTATOR
+USE GORGE GROG ON BUTENE TUB
+USE GOLD LOG ON ROTATOR
+USE SOME DEMOS ON YAHOO HAY
+USE STRAW ARTS ON REVOLT LOVER
+USE GATE TAG ON SOOT TATTOOS
+USE POO COOP ON GNU DUNG
+USE POO COOP ON TURF RUT
+USE RADAR ON MADE DAM
+USE NULL ILLUN ON KNOWN WONK
+USE EL DOODLE ON EDITS TIDE
+USE ELOPE POLE ON KAYAK
+USE DORK ROD ON TAO BOAT
+USE TENT NET ON CODE DOC
+USE SPA MAPS ON CODE DOC
+USE SPA MAPS ON GO-BY BOG
+USE ENACT CANE ON YAHOO HAY
+PACE CAP
+USE TROLL ORT ON BRAG GARB
+YAK OKAY
+USE SAGE GAS ON TAME MAT
+USE SHARP RAHS ON GURU RUG
+NAIL IAN
+USE SNACK CANS ON UFO TOFU
+USE GIFT FIG ON MAYO YAM
+USE MOOR BROOM ON TRU YURT
+USE WASH SAW ON PORCH CROP
+USE EXAM AXE ON LIE VEIL
+USE DNA BAND ON REIFIER
+USE ROTO MOTOR ON DNA HAND
+USE ERODED ORE ON REVIVER
+USE YOU BUOY ON ROTATOR
+USE MR ARM ON BOMB MOB
+USE NAT'S TAN ON SCORN ROCS
+USE REP POPPER ON ME TOTEM
+USE BRO ORB ON MIRROR RIM
+USE BALSA SLAB ON SWORD ROWS
+USE NOT-A-BATON ON REIFIER
+USE MURDERED RUM ON YARD RAY
+EMIT NOONTIME
+USE YARD RAY ON TEST SET
+USE TNT ON ORE ZERO
+USE ME GEM ON KNIFE FINK
+USE TABOO BAT ON VERSES REV
+USE YARD RAY ON REDIVIDER
+USE X-ITE TIX ON TIX EXIT
+;
