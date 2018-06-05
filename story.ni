@@ -124,11 +124,11 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 370. [-40 from max_verbs debug]
+use MAX_VERBS of 380. [-40 from max_verbs debug]
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 410. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 420. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 chapter kinds of things
 
@@ -589,6 +589,12 @@ to say row-clue:
 		say "You found the place where you need to twiddle things";
 	else:
 		say "You've half twiddled [Worn Row]";
+
+Rule for printing a parser error when the latest parser error is can only do that to something animate error:
+	say "[noun] [second noun].";
+	if debug-state is true:
+		if noun is ti or second noun is ti, say "OK, got one!";
+	continue the action;
 
 chapter unrecognized verb
 
@@ -2346,7 +2352,7 @@ part Dim Mid region
 
 book Fun Nuf
 
-Fun Nuf is a room in Dim Mid. "[if elite tile is in Fun Nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what leads west and east[xit-ave][end if][if north tron is in Fun Nuf]. Also, the North-Tron has carved a passage north where the Kaos Oak was. It's too big to, uh, repaper[else if flee elf is in Fun Nuf]An oak blocks the way north. It's a wide oak[else]The KAOS Oak blocks your way north[end if]."
+Fun Nuf is a room in Dim Mid. "[if elite tile is in Fun Nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what leads west and east[xit-ave][end if]. [if north tron is in Fun Nuf]Also, the North-Tron has carved a passage north where the Kaos Oak was. It's too big to, uh, repaper[else if flee elf is in Fun Nuf]An oak blocks the way north. It's a wide oak[else]The KAOS Oak blocks your way north[end if]."
 
 to say xit-ave:
 	say ". The [if tix exit is in Fun Nuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]"
@@ -2827,7 +2833,9 @@ understand "roc" and "scorn roc" as scorn rocs.
 
 check going west in Flu Gulf:
 	if scorn rocs are in Flu Gulf, say "The scorn rocs remain motionless, but their gaze freezes you as you try to go west." instead;
-	if being-chased is true, say "You don't want to face [if Sneer Greens is visited]the Yuge Guy[else]whatever's west[end if] while you're being chased, too." instead;
+	if being-chased is true:
+		if Yuge Guy is moot, say "With the Yuge Guy defeated, you don't feel a need to go back to [Sneer Greens]." instead;
+		say "You don't want to face [if Sneer Greens is visited]the Yuge Guy[else]whatever's west[end if] while you're being chased, too." instead;
 
 book Sneer Greens
 
@@ -2892,10 +2900,10 @@ check going west in Dumb Mud:
 
 check going south in Dumb Mud:
 	if poo coop is not moot, say "The turf rut is too deep. You need a way to fill it in." instead;
-	if Mont Nom is unvisited, say "With the turf rut filled in, the way across remains stable, and it even smells okay! Bonus! You climb up to...";
 	if being-chased is true:
 		say "The slog uphill is too much for you, but the kayo yak traverses it easily and bumps you before you can make it up all the way.";
 		reset-chase instead;
+	if Mont Nom is unvisited, say "With the turf rut filled in, the way across remains stable, and it even smells okay! Bonus! You climb up to...";
 
 check going north in Dumb Mud:
 	if lie veil is in Dumb Mud, say "As you're about to touch the lie veil, you shake your head. No. You don't really want or need to explore north. Surely there's some better place to be? Perhaps you're not 100% prepared for the lie veil's thought provoking paradoxes, and it's doing you a favor pushing you back? Plus what if it hides a hidden booby trap? You try to walk further north, but somehow you wind up walking back south." instead;
@@ -3954,6 +3962,24 @@ NULL ILLUN is a book. printed name of NULL ILLUN is "NULL ILLUN (NI)". understan
 EPOCH COPE is a book. printed name of EPOCH COPE is "EPOCH: COPE (EC)". understand "ec" as EPOCH COPE. description is "All sorts of present-day political and social musings for shahs and other leaders, with the catch phrase '[']S civics!'". [King Nik]
 YOB ATTABOY is a book. printed name of YOB ATTABOY is "YOB ATTABOY (YA)". understand "ya" as YOB ATTABOY. description is "All about picking yourself up by your bootstraps and not feeling sorry for yourself or being too jealous of what others know or can do--SHED EH'S is repeated in big bold letters.". [Sniffins]
 
+section to workaround
+
+givesubbing is an action applying to two things.
+
+Understand "give [thing] [something preferably held]" as givesubbing (with nouns reversed)
+
+instead of givesubbing:
+	if player has ti:
+		if noun is ti and second noun is ti:
+			if number of npcish people in location of player > 1:
+				let rnpc be random npcish person in location of player;
+				try giving ti to rnpc instead;
+	continue the action;
+
+definition: a person (called per) is npcish:
+	if per is the player, no;
+	yes;
+
 chapter SOME DEMOS
 
 there is a book called SOME DEMOS. printed name of SOME DEMOS is "SOME DEMOS (SD)". understand "sd" as SOME DEMOS. It is hidden. description is "It's a sort of life hacker book with a particular emphasis on having fun with making weird art out of common or even unsophisticated materials and not worrying too much how good it is. It's less heavy-duty than the books you've been schlepping out to others, but it's a fun read.".
@@ -4594,7 +4620,7 @@ carry out standing:
 
 book Evaded Ave
 
-Evaded Ave is north of Art Xtra. It is in Yelpley. "It's a bit sleazy in here. Passages lead east and west, [if tube but is in Evaded Ave]and north there's a tube, but[tbut][else]but the way north is blocked[end if]. You can go back south to [Art Xtra], too."
+Evaded Ave is north of Art Xtra. It is in Yelpley. "It's a bit sleazy in here. Passages lead east and west, [if tube but is in Evaded Ave]and north there's a tube, but ... [tbut][else]but the way north is blocked[end if]. You can go back south to [Art Xtra], too."
 
 the Door Frood is a neuter person in Evaded Ave. "[one of]Someone waving their fists and shouting at who-knows-what pauses as you walk by. 'I'm the Door Frood.' They peg you as not insurgent enough to deserve to visit west or east, without a proper gift[or]The Door Frood continues to pace back and forth here, making sure you don't sneak off any way but back south[stopping].". description is "Probably not angry enough to actually do anything besides block others from doing what they want."
 
@@ -4624,10 +4650,10 @@ instead of entering tube but: try going north instead.
 
 tube-try is a truth state that varies.
 
-to say tbut: say "[if tube-try is false]...[else]... you already tried to follow the Door Frood, and nothing happened.[end if]"
+to say tbut: say "[if tube-try is false]you can't see where it goes[else]you already tried to follow the Door Frood, and nothing good happened.[end if]"
 
-check going north when tube but is in Evaded Ave:
-	say "[if tube-try is true]There can't be anything north. Plus[else]You try to follow the Door Frood and enter the tube, but ... you hit your head on a block in the passage as the tube turns. You hear the Door Frood laughing. At you or [b]TO IDIOT[r], you don't know. Eh well[end if], you really don't want to see the Door Frood again.";
+check going north in Evaded Ave:
+	if tube but is in Evaded Ave, say "[if tube-try is true]There can't be anything north. Plus[else]You try to follow the Door Frood and enter the tube, but ... you hit your head on a block in the passage as the tube turns. You hear the Door Frood laughing. At you or [b]TO IDIOT[r], you don't know. Eh well[end if], you really don't want to see the Door Frood again.";
 	now tube-try is true instead;
 
 book Trapeze Part
@@ -4799,6 +4825,9 @@ book Swept Pews
 Swept Pews is south of Emo Dome. It is in Yelpley. "There is a wide passage back north to the Emo Dome in this tidy little area, unnamed but probably St. Emmet's. It's narrower south[if liar grail is moot], but with the liar grail and wordy drow gone, it should be no problem to go that way, either[end if]."
 
 for printing a locale paragraph about a thing (called th) in Swept Pews:
+	if th is the player:
+		now the player is mentioned;
+		continue the action;
 	if th is wordy drow or th is liar grail:
 		if th is not mentioned:
 			say "A wordy drow is pinned to a liar grail here. Together, they block the way south.[paragraph break]";
@@ -5284,7 +5313,7 @@ volume chases
 
 a room can be chase-blocked. a room is usually not chase-blocked.
 
-check going to a chase-blocked room when chase-mulligan is true: say "No, you've already been there, and you found nothing to do." instead;
+check going to a chase-blocked room when being-chased is true: say "[chase-pass]No, you've already been there, and you found nothing to do." instead;
 
 after going when being-chased is true:
 	if x-it stix are in location of player, say "X-it Stix X out the way [if Fun Nuf is room east of location of player]east[else]west[end if]. It's probably bad for the [chase-person] to get loose in [if player is in Yawn Way]Grebeberg[else]Yelpley[end if].";
@@ -5361,10 +5390,13 @@ to reset-chase:
 	move chase-person to chase-room of chase-person;
 	unless player was in Frush Surf or player was in Pro Corp, say "Well, all your items you dropped are still here, so that's something. You take them back.";
 	now being-chased is false;
+	if debug-state is true, say "RULE TRACKER: [LP] ([chase-block-rule of LP]).";
+	if chase-block-rule of LP is trivially true rule:
+		now LP is chase-blocked;
+		say "Hmm, you didn't seem to need to go that way. [LP] was a dead end.";
+		continue the action;
 	consider chase-block-rule of LP;
-	if the rule succeeded:
-		say "You felt particularly frustrated in [location of player]. There was nothing to do. You decide not to go back next time.";
-		now location of player is chase-blocked;
+	if the rule succeeded, now LP is chase-blocked;
 
 after going when being-chased is true:
 	now last-chase-direction is noun;
@@ -5398,21 +5430,32 @@ a room has a rule called chase-block-rule. chase-block-rule of a room is usually
 
 section yak chase
 
-chase-block-rule of Flu Gulf is the trivially true rule.
+chase-block-rule of Moo Room is the block-moo-room rule.
+chase-block-rule of Flu Gulf is the block-flu-gulf rule.
 chase-block-rule of Apse Spa is the trivially true rule.
 chase-block-rule of Cold Loc is the block-cold-loc rule.
 chase-block-rule of Calcific Lac is the trivially true rule.
 chase-block-rule of Yack Cay is the block-yack-cay rule.
 
+this is the block-flu-gulf rule:
+	say "With [if scorn rocs are in Flu Gulf]whatever's west of the scorn rocs[else if Sneer Greens are unvisited]something scary to the west[else if Yuge Guy is moot]the Yuge Guy gone[else]the Yuge Guy looming[end if], [Sneer Greens] doesn't seem like the place to be. The Yak couldn't do much there.";
+	the rule succeeds;
+
+this is the block-moo-room rule:
+	if poo coop is not in Moo Room:
+		say "You know the Moo Room is a dead end, and since you got the poo coop from here, it seems like you need the yak to chase you somewhere else.";
+		the rule succeeds;
+	the rule fails;
+
 this is the block-cold-loc rule:
 	if Flu Gulf is chase-blocked and Apse Spa is chase-blocked:
-		say "Brr. It's cold here. You'll freeze before the yak does. Maybe you need it to chase you somewhere else.";
+		say "Brr. It was cold there. There was nothing north or east, and besides, you'd freeze before the yak did. Maybe you need it to chase you somewhere else.";
 		the rule succeeds;
 	the rule fails;
 
 this is the block-yack-cay rule:
 	if Calcific Lac is chase-blocked:
-		say "There was nothing in Calcific Lac, and there's nothing here that could distract the yak from attacking you.";
+		say "There was nothing in Calcific Lac OR [Yack Cay] you saw that could slow the yak down more than you. Well, that's another place you can ignore next time.";
 		the rule succeeds;
 	the rule fails;
 

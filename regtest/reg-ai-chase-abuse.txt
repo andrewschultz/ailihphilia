@@ -7,6 +7,7 @@
 >e
 >s
 >evade dave
+>w
 >bore rob
 >word row
 >get to idiot
@@ -16,7 +17,7 @@
 >n
 >get all
 >n
->give ti to frood
+>use ti on frood
 >get all
 >s
 >s
@@ -42,6 +43,7 @@
 >puff up
 >e
 >pull up
+>get all
 >s
 >get all
 >n
@@ -99,18 +101,177 @@
 >w
 >s
 >w
+>work row
 >use stinky knits on rotator
 >e
 >n
->W
+>w
 >w
 >s
 >s
+>pace cap
 >use troll ort on brag garb
 >n
 >n
 >w
 >w
+>s
+Frush Surf
 >e
 >get all
-WRONG (note stuff is left over)
+You know the Moo Room is a dead end, and since you got the poo coop from here, it seems like you need the yak to chase you somewhere else.
+>s
+>n
+>n
+>n
+>n
+>z
+doesn't seem like the place to be. The Yak couldn't do much there.
+>s
+Frush Surf
+# now try to revisit the Flu Gulf
+>n
+>n
+>n
+>n
+No, you've already been there, and you found nothing to do.
+>s
+Aigh
+>s
+Frush Surf
+#now Apse Spa
+>n
+>n
+>n
+>e
+>z
+dead end
+>s
+Frush Surf
+>n
+>n
+>n
+>z
+Brr.
+>s
+Frush Surf
+>n
+>n
+>n
+No, you've already been there, and you found nothing to do.
+>z
+Aigh
+>s
+>n
+>n
+>w
+>w
+butt
+>n
+>w
+Dumb Mud
+>use coop on dung
+>use coop on rut
+# technically cheating but we want to plow through here
+>purloin exam axe
+>use axe on veil
+>w
+>n
+>purloin null illun
+>use null illun on known wonk
+>s
+>e
+>e
+>s
+>s
+yak
+>n
+>n
+>w
+>s
+The slog uphill is too much for you, but the kayo yak traverses it easily and bumps you before you can make it up all the way.
+!With the turf rut filled in,
+>undo
+>n
+It's just too weird ahead to the north. You freeze up and are unable to avoid the kayo yak further.
+>s
+Frush Surf
+#calcific lac
+>n
+>n
+>w
+>w
+>n
+>n
+>z
+Hmm, you didn't seem to need to go that way. Calcific Lac was a dead end.
+>s
+Frush Surf
+>n
+>n
+>w
+>w
+>n
+>n
+There was nothing in Calcific Lac OR Yack Cay you saw that could slow the yak down more than you. Well, that's another place you can ignore next time.
+>s
+Frush Surf
+>s
+>n
+>n
+>w
+>w
+>n
+WRONG
+>s
+>n
+>n
+>w
+>w
+>s
+>s
+>yak okay
+>n
+>n
+>e
+>e
+>e
+>e
+>e
+>e
+>n
+>purloin ye key
+>use ye key on etage gate
+>n
+#first disrupt sniffins
+>s
+>s
+>s
+>z
+WRONG
+#now try to disrupt sniffins again
+>n
+>s
+>s
+>s
+WRONG
+>z
+# dopy pod
+>n
+>s
+>s
+>w
+>s
+>s
+>w
+>z
+WRONG
+# scrap arcs
+>n
+>s
+>s
+>w
+>s
+>s
+>e
+>z
