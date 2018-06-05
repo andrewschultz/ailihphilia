@@ -861,7 +861,6 @@ randtxt
 "Sore Heros"
 "Sore Zeros"
 "Torsos, ROT"
-"Truce, Curt"
 "We Few"
 "Wedded Dew"
 "Yo Banana Boy"
@@ -909,13 +908,14 @@ randtxt
 "Sara's"
 "Scene C's"
 "Senor One's"
-"Set-a-Mates"
 "Soho's"
 "Soto's"
 "Spike-Kip's"
 "Tipsy Spit"
 "Tope Depot"
+"Zara'Z"
 "Zorro'z"
+"Zuzu'Z"
 
 [this may be related to Yuge Guy taunts, but the Diktat Kid insults you. The Yuge Guy puffs himself up.]
 table of diktat taunts
@@ -964,6 +964,7 @@ randtxt
 "Ode: Dude, DO"
 "Opera Repo"
 "Rap Spar"
+"See Lee's"
 "Set-a-Dates"
 "Set-a-Mates"
 "Sum Us"
@@ -1046,7 +1047,6 @@ table of swearstuff
 randtxt
 "(R)rude! Dur(r)!"
 "Bad? A dab!"
-"D00d!"
 "Dammit, I'm mad!"
 "Dark. Rad!"
 "Delivery: reviled!"

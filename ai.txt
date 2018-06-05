@@ -398,8 +398,15 @@ You need to combine them with the gate tag that falls when you open the Etage GA
 USE GATE TAG ON SOOT TATTOOS.
 This can be done right away after you have both items.
 >>SWEPT PEWS
-?How do I deal with the liar grail?
+?How do I deal with the wordy drow and liar grail?
+The wordy drow is attached to the liar grail, but maybe you can free it.
+The liar grail seems to throw things at you from all angles. Maybe if you could focus it.
+USE PUCE CUP ON PAST SAP.
+Then it turns into purist sirup.
 USE PUCE CUP ON LIAR GRAIL.
+?Why is the wordy drow's first moan starred out?
+It's saying something palindromic, but some religions found it unspeakable.
+Google the Tetragrammaton to determine the middle of the seven letters.
 >>DRAWL WARD
 ?Can I help the Bond Nob?
 Yes. She needs some sort of medicine.

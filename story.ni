@@ -1765,7 +1765,7 @@ el doodle	edits tide	spa maps	--	rahs-too rule	true	true	false	Grebeberg	false	"
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	false	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where. You whisper 'Row, or' whenever you get tired. Then you see Elided Ile in the distance. So you stop off there. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and you are worthy to fight the vicious Bar Crab. It is no match for your elope pole. The citizens hand you a YOU BUOY to tell you they're glad you're you, asking only for the elope pole as a souvenir. Well, it was getting a bit awkward to carry.[paragraph break]They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Calcific Lac. As it gets near and bends away, you jump off, using the buoy to paddle and float back all the way."
 dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	false	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
 tent net	Code Doc	--	--	--	true	true	false	Grebeberg	false	"Together, you figure out what to do to make the tent net proper cover for the All-Ivy Villa. 'Tie it ... tie it ...'[paragraph break]Once the work is done, the Code Doc thanks you and offers to share some knowledge in return, whenever[if spa maps are preclued]. In fact, the Code Doc would probably be more receptive to helping you with the spa maps[end if]."
-spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	false	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my for-prof math tam for this one. One second, let's see--Aha! Oho...' and despite a minor pupil slip-up, the Code Doc is never edu-rude. It soon makes complete sense to you."
+spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	false	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my for-prof math tam for this one. One second, let's see--Aha! Oho...'[paragraph break]You each split an Ed-Ade to make sure the lesson is taught and remembered well. Despite a minor pupil slip-up, the Code Doc is never edu-rude. It soon makes complete sense to you."
 spa maps	go-by bog	sage gas	maps-readable rule	gas-think-wipe rule	true	true	false	Grebeberg	false	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	false	"You stick some strands of yahoo hay into the damaged end of the dork rod. It's now a moor broom!"
 --	--	--	rev-pace-cap rule	--	true	--	--	Dim Mid	false
@@ -1795,7 +1795,7 @@ murdered rum	yard ray	--	--	ray-beepy-now rule	true	true	false	Dim Mid	false	"Th
 Yard Ray	test set	--	ready-to-test rule	test-set-zapped rule	true	false	true	Dim Mid	false	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
 --	--	--	rev-create-tron rule	--	true	--	--	Dim Mid	false
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	false	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, successfully bribed." [b4:use TNT on ore zero]
-taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	Dim Mid	false	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev knows what he's up against. It's not that it's particularly violent or lethal, but ... the Verses Rev has developed such a warped orthodoxy, the bat is much scarier than it should be. Nothing to do but turn and run!"
+taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	Dim Mid	false	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev senses the Taboo Bat's ancient untapped power. It's not particularly violent or lethal, but it is just perfect to scare an orthodoxy as warped as the Verses Rev's. Nothing to do but turn and run! Perhaps to the safety of ... a rev reserver."
 Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	false	"'Havoc, OVAH!' you should as you aim and fire the yard ray.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who goes running off. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid is going to check for that now, but with the Kid gone, you see saner arenas all around. Revel, clever! Revel, ever![paragraph break]You don't notice the redivider exploding. When you wake up, it's much later. And you note something beside you: some X-ITE TIX fell out of the redivider! Wow! Yo, joy! Wow!"
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	false	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse] [zzgood]
@@ -2893,9 +2893,15 @@ check going west in Dumb Mud:
 check going south in Dumb Mud:
 	if poo coop is not moot, say "The turf rut is too deep. You need a way to fill it in." instead;
 	if Mont Nom is unvisited, say "With the turf rut filled in, the way across remains stable, and it even smells okay! Bonus! You climb up to...";
+	if being-chased is true:
+		say "The slog uphill is too much for you, but the kayo yak traverses it easily and bumps you before you can make it up all the way.";
+		reset-chase instead;
 
 check going north in Dumb Mud:
 	if lie veil is in Dumb Mud, say "As you're about to touch the lie veil, you shake your head. No. You don't really want or need to explore north. Surely there's some better place to be? Perhaps you're not 100% prepared for the lie veil's thought provoking paradoxes, and it's doing you a favor pushing you back? Plus what if it hides a hidden booby trap? You try to walk further north, but somehow you wind up walking back south." instead;
+	if being-chased is true:
+		say "It's just too weird ahead to the north. You freeze up and are unable to avoid the kayo yak further.";
+		reset-chase instead;
 
 chapter gnu dung
 
@@ -4816,7 +4822,7 @@ every turn when player is in Swept Pews and wordy drow is in Swept Pews and word
 
 chapter wordy drow
 
-The wordy drow is a neuter person in Swept Pews. description is "Seemingly attached to the Liar Grail, looking sad and helpless--perhaps you can help release it from its self-pity and preaching.". "[one of]A[or]The[stopping] wordy drow moans admonishments and regrets here. It blocks the way south."
+The wordy drow is a neuter person in Swept Pews. description is "Seemingly attached to the Liar Grail, looking sad and helpless--perhaps you can help release it from its self-pity and preaching.". "[one of]A[or]The[stopping] wordy drow moans admonishments and regrets here[one of]: '****! WHY?!' it cries[or][stopping]. It blocks the way south." [yhwh but of course that is unspeakable in some mythologies]
 
 chapter troll ort
 
