@@ -42,6 +42,7 @@ def num_of(a):
 
 def mistake_check(reord):
     line_count = 0
+    bail_after = False
     old_school_yet = False
     local_copy_back = True
     cur_num = (0 if reord else x)
@@ -55,6 +56,9 @@ def mistake_check(reord):
                 print("Ignoring all past line", line_count)
             if old_school_yet is False:
                 if re.search("^understand.*as a mistake", line):
+                    if not re.search("mis of [0-9]+\]\"", line):
+                        bail_after = True
+                        print("ERROR: 'mis of' syntax needs quote after parenthesis in line", line_count)
                     # print(reord, line_count, line)
                     if reord:
                         cur_num += 1
@@ -67,6 +71,7 @@ def mistake_check(reord):
                     line = "checkoffs is a list of truth states variable. checkoffs is {{ {:s} }}.\n".format(', '.join(['false'] * cur_num))
             fout.write(line)
     fout.close()
+    if bail_after: sys.exit("Fix mistakes to rerun.")
     print("RESULTS FOR", filre[reord], "operations........")
     if difs:
         if cmp(mis, mis2):

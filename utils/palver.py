@@ -13,12 +13,15 @@ include_ignore_dict = defaultdict(bool)
 regex_ignore_dict = defaultdict(bool)
 
 quiet = False
+verbose = False
 
 def un_palindrome(q):
     if q == q[::-1]: return False
-    if q.startswith('a'):
-        q2 = q[1:]
-        if q2 == q2[::-1]: return False
+    if q.startswith('an'): q = q[2:]
+    elif q.startswith('a'): q = q[1:]
+    elif q.startswith('the'): q = q[3:]
+    if q == q[::-1]: return False
+    if verbose: print("Oops couldn't palindrome", q)
     return True
 
 def read_ignore_file():
@@ -99,7 +102,7 @@ def pal_ver(f):
                 line = re.sub("\[[^\[]*\]$", "", line)
             if line.startswith("\"") and '\t' not in line:
                 q = letonly(line)
-                if 'by Andrew Schultz' in line: continue # this is the title
+                if '"Ailihphilia" by' in line: continue # this is the title
                 if un_palindrome(q): # and '[ignore]' not in line and '[okdup]' not in line:
                     err_count += 1
                     print("Bad line", line_count, "in", f, "--", line.strip())
