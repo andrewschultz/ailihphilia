@@ -1780,7 +1780,7 @@ spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	fals
 spa maps	go-by bog	sage gas	maps-readable rule	gas-think-wipe rule	true	true	false	Grebeberg	false	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	false	"You stick some strands of yahoo hay into the damaged end of the dork rod. It's now a moor broom!"
 --	--	--	rev-pace-cap rule	--	true	--	--	Dim Mid	false
-troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	Grebeberg	false	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the stinky knits, but still quite distinctive." [b4:pace cap] [af:yak okay]
+troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	Grebeberg	false	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the stinky knits, but still quite distinctive. The ort must've been covered by the dirt for a long time, because it disintegrates as its essence is leaked onto the brag garb." [b4:pace cap] [af:yak okay]
 --	--	--	rev-yak-okay rule	--	true	--	--	Grebeberg	false
 sage gas	tame mat	guru rug	--	--	true	true	true	Grebeberg	false	"'Mix a maxim...' you mutter to yourself. The sage gas bubbles out under the tame mat, and the message changes. To something wiser. But perhaps a bit stuffy: a guru rug!"
 sharp rahs	guru rug	tenet	--	brag-garb-bye rule	true	true	true	Grebeberg	false	"The sharp rahs meld into the guru rug, which feels less weighted down by philosophy and floats away. Under it there's a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do.[paragraph break]After reading it, you feel distinctly silly in your brag garb, which seems so gaudy now. Instinctively, you take it off and commit it to the Be Web. The brag garb floats away. You know you have done the right thing."
@@ -2099,7 +2099,7 @@ this is the kid-bye rule:
 	the rule succeeds;
 
 this is the kid-left rule:
-	if Verses Rev is moot and Knife Fink is moot, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with Mad Adam. ASAP Asa. Iller Elli. Emil Slime. Able Melba. Wolf Low. Ammo Momma. Obese Bo.'";
+	if Verses Rev is moot and Knife Fink is moot, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with Mad Adam. ASAP Asa. Iller Elli. Emil Slime. Able Melba. Wolf Low. Ammo Momma. Gory Rog. Obese Bo.'";
 	the rule succeeds;
 
 this is the make-sag rule:
@@ -4657,7 +4657,7 @@ understand "cot" as stock cots.
 
 chapter tube but
 
-the tube but is peripheral scenery. "[if tube-try is true]You don't see where it leads. It bends out of sight, but then, you probably don't want to see the Door Frood again[else]You already know it's a dead end. Not worth a re-try[end if]."
+the tube but is peripheral scenery. "It's dark enough to make you think, 'Grue! Urg!' [if tube-try is true]You don't see where it leads. It bends out of sight, but then, you probably don't want to see the Door Frood again[else]You already know it's a dead end. Not worth a re-try[end if]."
 
 instead of entering tube but: try going north instead.
 
