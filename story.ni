@@ -1371,8 +1371,9 @@ understand "use [something] with [something]" as useoning it with.
 to build-the-tron:
 	move north tron to Fun Nuf;
 	now all tronparts are in devreserved; [ic]
-	say "[if epicer recipe is nox]You're clueless how, at first. But then you take a look at the epicer recipe[else]You build the North-Tron with the instructions from[end if] the epicer recipe after a few 'How? OH!' moments. It points north and blasts a hole with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break]Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
+	say "[if epicer recipe is nox]You're clueless how, at first. But then you take a look at the epicer recipe[else]You build the North-Tron with the instructions from[end if] the epicer recipe after a few 'How? OH!' moments. It points north and blasts a hole in the KAOS Oak with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break]Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
 	moot epicer recipe;
+	moot kaos oak;
 	now Dirge Grid is mapped north of Fun Nuf;
 	now Fun Nuf is mapped south of Dirge Grid;
 
@@ -1778,7 +1779,7 @@ enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	false
 troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	Grebeberg	false	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the stinky knits, but still quite distinctive." [b4:pace cap] [af:yak okay]
 --	--	--	rev-yak-okay rule	--	true	--	--	Grebeberg	false
 sage gas	tame mat	guru rug	--	--	true	true	true	Grebeberg	false	"'Mix a maxim...' you mutter to yourself. The sage gas bubbles out under the tame mat, and the message changes. To something wiser. But perhaps a bit stuffy: a guru rug!"
-sharp rahs	guru rug	tenet	--	--	true	true	true	Grebeberg	false	"The sharp rahs meld into the guru rug, which feels less weighted down by philosophy and floats away. Under it there's a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do."
+sharp rahs	guru rug	tenet	--	brag-garb-bye rule	true	true	true	Grebeberg	false	"The sharp rahs meld into the guru rug, which feels less weighted down by philosophy and floats away. Under it there's a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do.[paragraph break]After reading it, you feel distinctly silly in your brag garb, which seems so gaudy now. Instinctively, you take it off and commit it to the Be Web. The brag garb floats away. You know you have done the right thing."
 --	--	--	rev-nail-Ian rule	--	true	--	--	Grebeberg	false
 --	--	--	rev-first-food-combo rule	--	true	--	--	Grebeberg	false
 --	--	--	rev-second-food-combo rule	--	true	--	--	Grebeberg	false
@@ -2025,6 +2026,10 @@ this is the sod-in-cup rule:
 section post-use rules [xxpost]
 
 [please add alphabetically]
+
+this is the brag-garb-bye rule:
+	moot brag garb;
+	the rule succeeds;
 
 this is the bump-gulf rule:
 	shuffle-before Flu Gulf and Sneer Greens;
@@ -4566,7 +4571,9 @@ after looking in Deft Fed when Sniffins-reintro is false and yob attaboy is moot
 
 chapter Sniffins
 
-Sniffins is a neuter person in Deft Fed. "[one of]You hear a sniff, and the proprietor introduces themselves as Sniffins, apologizing for how lame the ambience and decor are, but there's just no INSPIRATION to do better[or]Sniffins[if Sniffins-reintro is true]/Smuggums[end if] sniffs here[stopping].". description is "[if yob attaboy is moot]Sniffins/Smuggums looks down at you despite your help--what a posh sop[else]Sniffins is despondent and pleading for any sort of help[end if]."
+Sniffins is a neuter person in Deft Fed. "[one of]You hear a sniff, and the proprietor introduces themselves as Sniffins, apologizing for how lame the ambience and decor are, but there's just no INSPIRATION to do better[or][snismu] sniffs here[stopping].". description is "[if yob attaboy is moot]Sniffins/Smuggums looks down at you despite your help--what a posh sop[else]Sniffins is despondent and pleading for any sort of help[end if]."
+
+to say snismu: say "Sniffins[if Sniffins-reintro is true]/Smuggums[end if]"
 
 understand "smuggums" as Sniffins when Sniffins-reintro is true.
 
@@ -5385,17 +5392,14 @@ to reset-chase:
 	wfak;
 	move x-it stix to TempMet;
 	recover-items;
-	if mrlp is Grebeberg, move player to Ooze Zoo;
-	if mrlp is Yelpley, move player to Gross Org;
-	move chase-person to chase-room of chase-person;
-	unless player was in Frush Surf or player was in Pro Corp, say "Well, all your items you dropped are still here, so that's something. You take them back.";
+	say "[b][if mrlp is Grebeberg]Ooze Zoo[else]Gross Org[end if][paragraph break]";
+	unless player was in Frush Surf or player was in Pro Corp, say "Well, all your items you dropped are still here, so that's something. You take them back, staying where the [chase-person] won't quite find you.";
 	now being-chased is false;
 	if debug-state is true, say "RULE TRACKER: [LP] ([chase-block-rule of LP]).";
-	if chase-block-rule of LP is trivially true rule:
-		now LP is chase-blocked;
-		say "Hmm, you didn't seem to need to go that way. [LP] was a dead end.";
-		continue the action;
 	consider chase-block-rule of LP;
+	if mrlp is Grebeberg, move player to Ooze Zoo, without printing a room description;
+	if mrlp is Yelpley, move player to Gross Org, without printing a room description;
+	move chase-person to chase-room of chase-person;
 	if the rule succeeded, now LP is chase-blocked;
 
 after going when being-chased is true:
@@ -5415,7 +5419,7 @@ the Psi Wisp is a chaser in Pro Corp. chase-room of Psi Wisp is Pro Corp. descri
 
 after looking when being-chased is false (this is the start-chase-in-case rule):
 	if player is in Pro Corp and psi wisp is not moot:
-		say "The Psi Wisp begins to chase after you[one of][or] again[stopping]!";
+		say "The Psi Wisp hovers and pulses and swirls aggressively in the air[one of][or], again[stopping]!";
 		start-chase Psi Wisp;
 		continue the action;
 	if troll ort is moot and player is in Frush Surf and kayo yak is in Frush Surf:
@@ -5432,10 +5436,14 @@ section yak chase
 
 chase-block-rule of Moo Room is the block-moo-room rule.
 chase-block-rule of Flu Gulf is the block-flu-gulf rule.
-chase-block-rule of Apse Spa is the trivially true rule.
+chase-block-rule of Apse Spa is the block-room-generically rule.
 chase-block-rule of Cold Loc is the block-cold-loc rule.
-chase-block-rule of Calcific Lac is the trivially true rule.
+chase-block-rule of Calcific Lac is the block-room-generically rule.
 chase-block-rule of Yack Cay is the block-yack-cay rule.
+
+this is the block-room-generically rule:
+	say "Hmm, you didn't seem to need to go that way. [location of player] was a dead end.";
+	the rule succeeds;
 
 this is the block-flu-gulf rule:
 	say "With [if scorn rocs are in Flu Gulf]whatever's west of the scorn rocs[else if Sneer Greens are unvisited]something scary to the west[else if Yuge Guy is moot]the Yuge Guy gone[else]the Yuge Guy looming[end if], [Sneer Greens] doesn't seem like the place to be. The Yak couldn't do much there.";
@@ -5461,15 +5469,19 @@ this is the block-yack-cay rule:
 
 section wisp chase
 
-chase-block-rule of Deft Fed is the trivially true rule.
-chase-block-rule of Yell Alley is the trivially true rule.
-chase-block-rule of Trapeze Part is the trivially true rule.
+chase-block-rule of Yell Alley is the block-room-generically rule.
+chase-block-rule of Trapeze Part is the block-room-generically rule.
 chase-block-rule of Evaded Ave is the block-evaded-ave rule.
 chase-block-rule of Art Xtra is the block-art-xtra rule.
-chase-block-rule of Scrap Arcs is the trivially true rule.
-chase-block-rule of Dopy Pod is the trivially true rule.
+chase-block-rule of Scrap Arcs is the block-room-generically rule.
+chase-block-rule of Dopy Pod is the block-room-generically rule.
 chase-block-rule of Drawl Ward is the block-drawl-ward rule.
 chase-block-rule of Swept Pews is the block-swept-pews rule.
+chase-block-rule of Deft Fed is the block-deft-fed rule.
+
+this is the block-deft-fed rule:
+	say "You don't remember much of the wisp getting you, but you remember [snismu] yelling and generally carrying on. If there's any place that can get rid of the Psi Wisp, it's not [Deft Fed].";
+	the rule succeeds;
 
 this is the block-evaded-ave rule:
 	if Yell Alley is chase-blocked and Trapeze Part is chase-blocked:

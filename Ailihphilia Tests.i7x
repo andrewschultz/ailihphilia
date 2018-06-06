@@ -72,7 +72,7 @@ test part11 with "w/use rep popper on me totem/e/s/s/e/e/e/n/use bro orb on mirr
 
 [this is to get to the endgame before wiping out the baddies]
 
-test rollup with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9/test part10".
+test rollup with "test part1/test part2/test part3/test part4/test part5/test part6/test part7/test part8/test part9/test part10/test part11".
 
 chapter duplicates walkthrough
 

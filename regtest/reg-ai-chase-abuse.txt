@@ -129,7 +129,7 @@ You know the Moo Room is a dead end, and since you got the poo coop from here, i
 doesn't seem like the place to be. The Yak couldn't do much there.
 >s
 Frush Surf
-# now try to revisit the Flu Gulf
+#! now try to revisit the Flu Gulf
 >n
 >n
 >n
@@ -172,7 +172,7 @@ butt
 Dumb Mud
 >use coop on dung
 >use coop on rut
-# technically cheating but we want to plow through here
+#! technically cheating but we want to plow through here
 >purloin exam axe
 >use axe on veil
 >w
@@ -213,6 +213,9 @@ Frush Surf
 >w
 >n
 >n
+No, you've already been there
+!There was nothing in Calcific Lac OR Yack Cay you saw that could slow the yak down more than you. Well, that's another place you can ignore next time.
+>z
 There was nothing in Calcific Lac OR Yack Cay you saw that could slow the yak down more than you. Well, that's another place you can ignore next time.
 >s
 Frush Surf
@@ -222,15 +225,11 @@ Frush Surf
 >w
 >w
 >n
-WRONG
->s
->n
->n
->w
->w
+No, you've already been there, and you found nothing to do.
 >s
 >s
 >yak okay
+by one point
 >n
 >n
 >e
@@ -256,7 +255,7 @@ WRONG
 >s
 WRONG
 >z
-# dopy pod
+#! dopy pod
 >n
 >s
 >s
@@ -266,7 +265,7 @@ WRONG
 >w
 >z
 WRONG
-# scrap arcs
+#! scrap arcs
 >n
 >s
 >s
@@ -275,3 +274,81 @@ WRONG
 >s
 >e
 >z
+WRONG
+#!drawl ward
+>n
+>s
+>s
+>w
+>s
+>s
+>z
+WRONG
+#!trapeze part
+>n
+>s
+>s
+>w
+>w
+>n
+>n
+>w
+>z
+WRONG
+#!yell alley
+>n
+>s
+>s
+>w
+>w
+>n
+>n
+>e
+>z
+WRONG
+#!evaded ave
+>n
+>s
+>s
+>w
+>w
+>n
+>n
+>z
+WRONG
+#!art xtra
+>n
+>s
+>s
+>w
+>w
+>n
+>z
+WRONG
+#!1st fail word row
+>n
+>s
+>s
+>w
+>w
+>n
+>z
+WRONG
+#!2nd fail word row
+>n
+>s
+>s
+>w
+>w
+>n
+>z
+WRONG
+#!3rd fail word row
+>n
+>s
+>s
+>w
+>w
+>n
+>z
+WRONG
