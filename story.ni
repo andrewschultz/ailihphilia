@@ -911,6 +911,8 @@ this is the take what you got rule:
 
 after printing the name of a book (called bk) while taking inventory: say " (by [auth-name of bk])"
 
+after printing the name of the troll ort while taking inventory: say " (smelling of [if troll ort is moot]the troll ort[else]Turbo-Brut[end if])"
+
 definition: a book (called bk) is lugged:
 	if bk is SOME DEMOS, no;
 	if bk is carried by the player, yes;
@@ -1265,19 +1267,21 @@ the reject noncardinal directions rule is listed first in the check going rulebo
 
 chapter smelling
 
-instead of smelling stinky knits, say "The stinky knits take over everything and smell of torn rot and stunk-nuts." instead;
+instead of smelling stinky knits, say "The stinky knits take over everything and smell of torn rot and stunk-nuts."
 
-instead of smelling dork rod, say "You might expect a rod odor, but there isn't one. OR MAYBE IT IS SO INGRAINED IN YOU, YOU NO LONGER SMELL IT." instead;
+instead of smelling brag garb, say "It smells almost too perfumed. It's a bit choking, and maybe you could use something to mitigate or eliminate the smell."
 
-instead of smelling butene tub, say "The butene tub smells kind of nice. Much nicer than a butt tub." instead;
+instead of smelling dork rod, say "You might expect a rod odor, but there isn't one. OR MAYBE IT IS SO INGRAINED IN YOU, YOU NO LONGER SMELL IT."
 
-instead of smelling mush sum, say "Unsurprisingly, the mush sum emits an unavoidable musk sum." instead;
+instead of smelling butene tub, say "The butene tub smells kind of nice. Much nicer than a butt tub."
 
-instead of smelling troll ort, say "The troll ort emits a musk-sum which isn't unpleasant, but it's distinctive." instead;
+instead of smelling mush sum, say "Unsurprisingly, the mush sum emits an unavoidable musk sum."
+
+instead of smelling troll ort, say "The troll ort is too dusty to get a whiff of, for better or worse. You could probably USE it on something to make its smell change."
 
 instead of smelling rotator: say "[if stinky knits are moot]It no longer smells of detergent. I guess it used it all on the stinky knits.[else]There's a whiff of detergent coming from the rotator. It probably has some way to know if something is dirty enough. Technology![end if]";
 
-instead of smelling Yuge Guy, say "The Yuge Guy smells of an amoral aroma that is probably some repugnantly-named cologne like Turbo-Brut."
+instead of smelling Yuge Guy, say "The Yuge Guy smells of an amoral aroma[if brag garb is not off-stage] even worse than the Turbo-Brut from the Brag Garb[end if]."
 
 instead of smelling location of player:
 	if in-work and stinky knits are not moot, try smelling rotator instead;
@@ -1758,7 +1762,7 @@ radar	crag arc	UFO tofu	orc-gone rule	radar-crag rule	true	false	false	Yelpley	f
 --	--	--	rev-deny-Ned rule	--	true	--	--	Yelpley	false
 Ye Key	etage gate	gate tag	Ned-gone rule	tag-later-wipe rule	true	true	true	Yelpley	false	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'A hall! Aha! Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paragraph break]A gate tag falls off. You pick it up." [af:Worn Row]
 --	--	--	rev-worn-row rule	--	true	--	--	Yelpley	false
-stinky knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	false	"The stinky knits fit into the rotator without stuffing them too much. After some spinning (and a smell of detergent--where'd that come from?) you look in again and--they're something much shinier now. Brag garb! You can't resist wearing your flashy new duds."
+stinky knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	false	"The stinky knits fit into the rotator without stuffing them too much. After some spinning (and a smell of detergent--where'd that come from?) you look in again and--they're something much shinier now. Brag garb! You can't resist wearing your flashy new duds, though once you put them on, they do smell a bit ... intense. Looking at a hidden label, you note it has been liberally sloshed with Turbo-Brut."
 Gorge Grog	Butene Tub	resale laser	--	make-sag rule	true	true	true	Yelpley	false	"The Gorge Grog starts fizzing as it pours down the tub, and nothing seems to happen, until you hear a FOOMP below and the tub starts shaking. There must've been an open spark below the tub, perhaps a noir ion. You find it best to hide, and that's the right thing to do, because the butene tub explodes into pieces. Under it is a resale laser! You figure the really good stuff is hidden way back for security reasons, and this is probably just an emergency gadget, but it's got to be good for something."
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	false	"The gold log begins spinning until it cracks open--leaving a dork rod! You wonder briefly if you deserve to take it, or if there's something wrong with you if you deserve to, but once you hold it, memories of past silliness come back, and they're easier to deal with, now. You have some perspective. You even feel sorry for people who pointed out you were a dork. They'd be barred from a cool adventure like this. So you keep the dork rod."
 SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	true	false	Grebeberg	false	"With the help of SOME DEMOS, you (after several grunts of 'STRAIN! I! ARTS!') manage to rejig the hay into something more aesthetically pleasing: straw arts! You're so enthusiastic, you even fold a few pages of SOME DEMOS into it to create ... well, something."
@@ -3098,7 +3102,9 @@ after taking stamp mats:
 
 chapter Kayo Yak
 
-The Kayo Yak is a beepy chaser in Frush Surf. chase-room of Kayo Yak is Frush Surf. "A kayo yak paws the ground here. It doesn't seem violent, but it seems up for rough play.". description is "[if being-chased is true]The Kayo Yak is really rumbling around, here[else]The Kayo Yak looks alert, ready for more than just standing around[end if]."
+The Kayo Yak is a beepy chaser in Frush Surf. chase-room of Kayo Yak is Frush Surf. "[one of]A tough looking animal paces around here! It rushes after a few imaginary targets. It looks like a yak. That would make it ... a kayo yak. [or][stopping][if being-chased is true]The kayo yak has an aggressive look in its eyes! It's snorting, and you're the only thing worth chasing[else if kayo yak was not in location of player]The kayo yak [yak-smell][else]The kayo yak, having sniffed at you, is just pacing around now[end if].". description is "[if being-chased is true]The Kayo Yak is really rumbling around, here[else]The Kayo Yak looks alert, ready for more than just standing around[end if]."
+
+to say yak-smell: say "[if player wears stinky knits]bounds up to you and gives a sniff. It seems interested in your stinky knits, but not enough to really do anything[else if player wears brag garb]walks up, takes a whiff of your brag garb, and runs away howling. Hmm, the brag garb's scent is a bit too much for you, too[else]plods up to you and gives a cursory sniff but seems to find nothing too repellent or attractive. You feel almost blown off by this[end if]";
 
 chapter stewy wets
 
@@ -4524,7 +4530,7 @@ Ned is a proper-named guhthug in Gross Org. "'Ned's Den!' someone booms. You're 
 
 chapter stinky knits
 
-the stinky knits are a plural-named thing in Gross Org. description is "The inside of the stinky knits reveals they were sewn together by SMELLEMS.". "Stinky knits, unwearable enough even without DAFT FAD printed on the front, lie here.".
+the stinky knits are a plural-named thing in Gross Org. description is "The inside of the stinky knits is tagged PE-YOO? YEP.". "Stinky knits, unwearable enough even without DAFT FAD printed on the front, lie here.".
 
 understand "daft/fad" and "daft fad" as stinky knits.
 
@@ -4862,7 +4868,9 @@ The wordy drow is a neuter person in Swept Pews. description is "Seemingly attac
 
 chapter troll ort
 
-the troll ort is an edible thing in Swept Pews. "A troll ort lies on the floor here, but it looks dry enough, the five-second rule can't matter too much.". description is "It doesn't look particularly edible to you. It also has a strong smell."
+the troll ort is an edible thing in Swept Pews. "A troll ort lies on the floor here. It's too dusty to eat, even without the five-second rule, but who knows where it might be useful.". description is "It doesn't look particularly edible to you. It appears crusted over. From what you know of trolls and such, neither they nor their food smell very good, so maybe it's best that the smell is covered, for now."
+
+report taking troll ort: say "It just LOOKS musty. You suspect the dust covers up some of its odor, and this may be a good thing."
 
 book Drawl Ward
 
