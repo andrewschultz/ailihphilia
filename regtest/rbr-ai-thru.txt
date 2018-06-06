@@ -135,6 +135,12 @@ The elf scratches for a bit, then looks embarrassed.
 >flea
 The elf scratches for a bit, then looks embarrassed.
 
+#mistake test for flen elf/flen
+>flen elf
+Dry ketchup is gross. Besides, the elf is one of the good guys.
+>flen
+Dry ketchup is gross. Besides, the elf is one of the good guys.
+
 #mistake test for flex elf/flex
 >flex elf
 The elf looks more flexible than you. It's the cap you want to concentrate on.
@@ -829,26 +835,44 @@ Good thing this isn't a cooking sim.
 >n
 
 ==t2
+#mistake test for put it up
+>put it up
+That's what the Spur Ups say, but you need to re-interpret it slightly, to help yourself.
+\\
+#mistake test for up apu
+>up apu
+Apu would have some helpful advice, but he'd have to leave Springfield.
+\\
+#mistake test for up cpu
+>up cpu
+You shouldn't need many cycles to run a text adventure.
+\\
 #mistake test for pua up
 >pua up
 That's completely the wrong way to gain confidence.
+\\
 #mistake test for pub up
 >pub up
 Alcohol is not the answer.
+\\
 #mistake test for pug up/pup up
 >pug up
 You don't need a dog.
 >pup up
 You don't need a dog.
+\\
 #mistake test for pun up
 >pun up
 No time for lame jokes! Well, on your end, anyway.
+\\
 #mistake test for puss up
 >puss up
 No cat appears.
+\\
 #mistake test for put up
 >put up
 The Spur Ups are for more than just getting by.
+\\
 #mistake test for putt up
 >putt up
 The Spur Ups have no suitable flat edge with which to hit a golf ball.
@@ -858,15 +882,24 @@ The Spur Ups have no suitable flat edge with which to hit a golf ball.
 Oh, there are plenty of puzzles ahead.
 >puzz up
 Oh, there are plenty of puzzles ahead.
+\\
 #mistake test for purr up
 >purr up
 The Spur Ups make you feel you can be anyone, but not anything.
+\\
 #mistake test for spun ups
 >spun ups
 The Spur Ups fail to rotate.
+\\
 #mistake test for spud ups
 >spud ups
 The Spur Ups don't become potatoes or French fries or whatever.
+\\
+#mistake test for up [text]/ups [text]
+>up zozimus
+You need to do something UP with the spurs, but ... UP needs to come second. Or last. You can't do much with PU[or-ups].
+>ups zozimus
+You need to do something UP with the spurs, but ... UP needs to come second. Or last. You can't do much with PU[or-ups].
 
 >puff up
 by one point
@@ -976,11 +1009,35 @@ You can only go north and south here.
 >trod ort
 Nah, you should keep it.
 
+#mistake test for trog ort
+>trog ort
+Maybe it is low-class food, but you don't need to overdo mentioning it.
+
+#mistake test for troi ort
+>troi ort
+You don't need a counselor to tell you not to eat stuff like the troll ort.
+
+#mistake test for tron ort
+>tron ort
+No MCP orders light cycles to run you over. Whew!
+
+#mistake test for trop ort
+>trop ort
+The ort fails to split and reproduce until there is too much of it.
+
+#mistake test for troy ort
+>troy ort
+There's enough to save here. You don't want to have to deal with a 10-year war.
+
 #mistake test for liar frail/liar trail
 >liar frail
 The grail remains in your way to the south. But it was worth a try.
 >liar trail
 The grail remains in your way to the south. But it was worth a try.
+
+#mistake test for fra barf
+>fra barf
+Don't dirty up the pews!
 ===a
 
 ==t5
@@ -1100,9 +1157,35 @@ That'd let you get west ... until the nob woke up and called a few friends.
 >bong nob
 The Bond Nob probably knows someone but prefers alcohol.
 
-#mistake test for drawn ward
+#mistake test for drawn ward/draws ward
 >drawn ward
 The room remains text-based.
+>draws ward
+The room remains text-based.
+
+#mistake test for gi rig
+>gi rig
+You don't need anything military-grade here. Even if you got one, you wouldn't know how to operate it.
+
+#mistake test for gird rig
+>gird rig
+It is already substantial enough.
+
+#mistake test for gire rig
+>gire rig
+The rig fails to collapse. Even if it did, the hole it left would lead no way south.
+
+#mistake test for girl rig
+>girl rig
+I don't want to know why you thought this was a good idea.
+
+#mistake test for girn rig
+>girn rig
+It's sturdy enough.
+
+#mistake test for giro rig
+>giro rig
+No greasy sandwich appears.
 ===a
 
 >use puce cup on Bond Nob
@@ -1318,6 +1401,9 @@ You can only go back north here.
 #mistake test for defy fed
 >defy fed
 No problem, you're not getting fed anyway.
+#mistake test for deli filed
+>deli filed
+You are not a government bureaucrat.
 
 >use yob attaboy on Sniffins
 by one point
@@ -2406,8 +2492,18 @@ WRONG
 >undo
 >undo
 
+==t2
+#mistake test for link nil
+>link nil
+!Line Nil
+
 >use mr arm on bomb mob
 by one point
+
+==t2
+#mistake retest for link nil
+>link nil
+The Line Nil security system fails to break apart. That's pretty secure!
 
 >get rep popper
 
@@ -2521,8 +2617,10 @@ There are no secret passages east.
 There are no secret passages west.
 
 ===2
-#mistake test for sworn rows
+#mistake test for sworn rows/swore rows
 >sworn rows
+The sword rows are inanimate and neutral. Unless you get too close to them.
+>swore rows
 The sword rows are inanimate and neutral. Unless you get too close to them.
 
 #mistake test for yarn ray

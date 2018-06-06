@@ -114,6 +114,12 @@ The elf scratches for a bit, then looks embarrassed.
 >flea
 The elf scratches for a bit, then looks embarrassed.
 
+#mistake test for flen elf/flen
+>flen elf
+Dry ketchup is gross. Besides, the elf is one of the good guys.
+>flen
+Dry ketchup is gross. Besides, the elf is one of the good guys.
+
 #mistake test for flex elf/flex
 >flex elf
 The elf looks more flexible than you. It's the cap you want to concentrate on.
@@ -140,6 +146,9 @@ There's nothing else special to do with the pace cap
 >undo
 >undo
 
+#mistake test for tap at [text]
+>tap at zozimus
+That's in the spirit of the game, but sadly, I couldn't find a way to make it useful. Sorry!
 #mistake test for rub [text]
 >rub zozimus
 There's no one named Burt or Babbur or Liwilbur anything like that in this game, so you don't have to rub anyone or anything.
@@ -181,6 +190,24 @@ That's what Dave is, but you need to figure how to get rid of him.
 That's what Dave is, but you need to figure how to get rid of him.
 >guh thug
 That's what Dave is, but you need to figure how to get rid of him.
+#mistake test for musk sum
+>musk sum
+My Gym still smells the same. For better or worse
+#mistake test for muse sum
+>muse sum
+You think back to everyone who has inspired you, past and present. It's life-affirming!
+#mistake test for must sum
+>must sum
+You take stock of all you need to do--or at least, all you know you need to do. Or you think back to horrible repetitive exercises in math class, which were horrible whether you we
+re good at them or not.
+
+#mistake test for mush sum
+>mush sum
+Dave worked hard to build these muscles. It'd be mean if you could wipe them out. And impractical--they might be slowing him down a bit, and that could help you.
+
+#mistake test for my pym
+>my pym
+You suddenly have a brilliant idea for a Britcom featuring Edgar Allan Poe (a Poe-op?), but it slips away just as quickly.
 
 #not a mistake
 >evade dave
@@ -336,6 +363,14 @@ You don't want the yam to age. It would probably start to smell bad.
 >use pity tip on eye
 by one point
 #lost pity tip
+
+#mistake test for tendered net
+>tendered net
+Nobody comes by to hand it to you. You're on the right track. Maybe you're overthinking things.
+
+#mistake retest for tendered net
+>tendered net
+You already have it.
 
 >e
 >n
@@ -499,26 +534,44 @@ Good thing this isn't a cooking sim.
 >e
 >n
 
+#mistake test for put it up
+>put it up
+That's what the Spur Ups say, but you need to re-interpret it slightly, to help yourself.
+
+#mistake test for up apu
+>up apu
+Apu would have some helpful advice, but he'd have to leave Springfield.
+
+#mistake test for up cpu
+>up cpu
+You shouldn't need many cycles to run a text adventure.
+
 #mistake test for pua up
 >pua up
 That's completely the wrong way to gain confidence.
+
 #mistake test for pub up
 >pub up
 Alcohol is not the answer.
+
 #mistake test for pug up/pup up
 >pug up
 You don't need a dog.
 >pup up
 You don't need a dog.
+
 #mistake test for pun up
 >pun up
 No time for lame jokes! Well, on your end, anyway.
+
 #mistake test for puss up
 >puss up
 No cat appears.
+
 #mistake test for put up
 >put up
 The Spur Ups are for more than just getting by.
+
 #mistake test for putt up
 >putt up
 The Spur Ups have no suitable flat edge with which to hit a golf ball.
@@ -528,15 +581,24 @@ The Spur Ups have no suitable flat edge with which to hit a golf ball.
 Oh, there are plenty of puzzles ahead.
 >puzz up
 Oh, there are plenty of puzzles ahead.
+
 #mistake test for purr up
 >purr up
 The Spur Ups make you feel you can be anyone, but not anything.
+
 #mistake test for spun ups
 >spun ups
 The Spur Ups fail to rotate.
+
 #mistake test for spud ups
 >spud ups
 The Spur Ups don't become potatoes or French fries or whatever.
+
+#mistake test for up [text]/ups [text]
+>up zozimus
+You need to do something UP with the spurs, but ... UP needs to come second. Or last. You can't do much with PU[or-ups].
+>ups zozimus
+You need to do something UP with the spurs, but ... UP needs to come second. Or last. You can't do much with PU[or-ups].
 
 >puff up
 by one point
@@ -562,11 +624,35 @@ It looks run-down enough.
 >trod ort
 Nah, you should keep it.
 
+#mistake test for trog ort
+>trog ort
+Maybe it is low-class food, but you don't need to overdo mentioning it.
+
+#mistake test for troi ort
+>troi ort
+You don't need a counselor to tell you not to eat stuff like the troll ort.
+
+#mistake test for tron ort
+>tron ort
+No MCP orders light cycles to run you over. Whew!
+
+#mistake test for trop ort
+>trop ort
+The ort fails to split and reproduce until there is too much of it.
+
+#mistake test for troy ort
+>troy ort
+There's enough to save here. You don't want to have to deal with a 10-year war.
+
 #mistake test for liar frail/liar trail
 >liar frail
 The grail remains in your way to the south. But it was worth a try.
 >liar trail
 The grail remains in your way to the south. But it was worth a try.
+
+#mistake test for fra barf
+>fra barf
+Don't dirty up the pews!
 
 >use puce cup on liar grail
 by one point
@@ -648,6 +734,30 @@ The Bond Nob probably knows someone but prefers alcohol.
 >drawn ward
 The room remains text-based.
 
+#mistake test for gi rig
+>gi rig
+You don't need anything military-grade here. Even if you got one, you wouldn't know how to operate it.
+
+#mistake test for gird rig
+>gird rig
+It is already substantial enough.
+
+#mistake test for gire rig
+>gire rig
+The rig fails to collapse. Even if it did, the hole it left would lead no way south.
+
+#mistake test for girl rig
+>girl rig
+I don't want to know why you thought this was a good idea.
+
+#mistake test for girn rig
+>girn rig
+It's sturdy enough.
+
+#mistake test for giro rig
+>giro rig
+No greasy sandwich appears.
+
 >use puce cup on Bond Nob
 by one point
 
@@ -693,6 +803,10 @@ You shouldn't try to take advantage of sick people. Help the Gulf Lug instead.
 #mistake test for gulp lug
 >gulp lug
 Cannibalism is wrong. Besides, you'd probably catch whatever the Gulf Lug has.
+
+#mistake test for musc sum
+>musc sum
+You don't need Dave to return.
 
 #mistake test for score rocs
 >score rocs
@@ -776,6 +890,9 @@ That's just what you need, a giant crab coming after you.
 #mistake test for defy fed
 >defy fed
 No problem, you're not getting fed anyway.
+#mistake test for deli filed
+>deli filed
+You are not a government bureaucrat.
 
 >use yob attaboy on Sniffins
 by one point
@@ -1268,6 +1385,10 @@ No boat appears to take you across the watery bits. You already got the sage gas
 >yak kay
 The yak perks its ears up slightly, then goes back to looking bored. Maybe you didn't quite say things right.
 
+#mistake test for slate petals
+>slate petals
+The metals are for a didactic and not an aesthetic purpose.
+
 >e
 
 >use enact cane on yahoo hay
@@ -1455,8 +1576,16 @@ That'd be useful in Kingdom of Loathing, but not here.
 >n
 >e
 
+#mistake test for link nil
+>link nil
+!Line Nil
+
 >use mr arm on bomb mob
 by one point
+
+#mistake retest for link nil
+>link nil
+The Line Nil security system fails to break apart. That's pretty secure!
 
 >get rep popper
 

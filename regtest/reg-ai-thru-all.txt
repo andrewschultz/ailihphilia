@@ -31,6 +31,14 @@ by one point
 
 >s
 
+#mistake test for mush sum
+>mush sum
+Dave worked hard to build these muscles. It'd be mean if you could wipe them out. And impractical--they might be slowing him down a bit, and that could help you.
+
+#mistake test for my pym
+>my pym
+You suddenly have a brilliant idea for a Britcom featuring Edgar Allan Poe (a Poe-op?), but it slips away just as quickly.
+
 #not a mistake
 >evade dave
 
