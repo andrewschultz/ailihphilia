@@ -1267,6 +1267,8 @@ the reject noncardinal directions rule is listed first in the check going rulebo
 
 chapter smelling
 
+instead of smelling gnu dung, say "Gag!";
+
 instead of smelling stinky knits, say "The stinky knits take over everything and smell of torn rot and stunk-nuts."
 
 instead of smelling brag garb, say "It smells almost too perfumed. It's a bit choking, and maybe you could use something to mitigate or eliminate the smell."
@@ -1700,6 +1702,7 @@ taboo bat	bomb mob	"No way. You'd be outnumbered. You'd need stealth."
 taboo bat	test set	"This isn't cricket. You do, however, need to use SOME weapon on the test set."
 trap art	stark rats	"Whatever's planned on the trap art might work, but not the trap art itself."
 troll ort	cross orc	"The cross orc mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. But the way it looks at you, you suspect it'd forgive you if you gave the right gift."
+troll ort	senile felines	"The senile felines sniff lazily at the troll ort, but despite its saying PINT-A-CATNIP, they do nothing. Perhaps they are just too inactive."
 troll ort	ergot ogre	"The ergot ogre mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. Perhaps you need a more violent way to dispose of the ogre."
 troll ort	kayo yak	"As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up. The yak seems weirdly attracted to it."
 wash saw	cassettes sac	"The wash saw isn't big enough to clean up the cassettes sac. You need a more powerful cleaner."
@@ -1747,7 +1750,7 @@ stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	false	"The sleep eels se
 --	--	--	rev-pull-up rule	--	true	--	--	Yelpley	false
 wash saw	past sap	--	sap-not-cut-yet rule	sap-loose rule	true	false	false	Grebeberg	false	"You hack away at the past sap with the wash saw, first squirting some loosening/thawing liquid. It's tricky, but the saw holds out, and with some perseverance, you're able to twist the sap off the rife fir."
 puce cup	past sap	--	check-sap-cup rule	sap-to-cup rule	true	false	false	Grebeberg	false	"You pour some sap into the cup."
-puce cup	liar grail	--	sap-in-cup rule	empty-grail rule	true	false	true	Yelpley	false	"The past sap pours into the liar grail. As it does, the Wordy Drow slips away from it and ... yes! It breaks free! 'Wend new! Wend new!' it calls to you.[paragraph break]The passage south looks clear. You snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL! You look around, worried a nun will say 'Tut!' But all is still."
+puce cup	liar grail	--	sap-in-cup rule	empty-grail rule	true	false	true	Yelpley	false	"You pour the purist sirup into the liar grail. As the sirup bubbles, the Wordy Drow slips away from it and ... yes! It breaks free! 'Wend new! Wend new!' it calls to you.[paragraph break]Thoughts flow into your head from the liar grail, but the purist sirup has mutated its complex manipulations into much simple cries of protestation: it just doesn't want you to go there! You shrug, no longer mystified by its sophistry, and the grail cracks and rolls away.[paragraph break]The passage south looks clear. You snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL! You look around, worried a nun will say 'Tut!' But all is still."
 puce cup	dose sod	--	check-sod-cup rule	sod-to-cup rule	true	false	false	Grebeberg	false	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough." [sc2-ignore]
 puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-nob rule	true	true	true	Yelpley	false	"You give the Bond Nob the puce cup. Gulp! Gulp! The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. So many places to visit: [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars]... well, everywhere except Soda Do's.'"
 stamp mats	slate metals	Ye Key	--	--	true	true	false	Yelpley	false	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY. You find it hard to pull the stamp mats out, and when you take YE KEY, the mats quickly morph into the slate metals. Eh, well. Less inventory to worry about."
@@ -1767,7 +1770,7 @@ Gorge Grog	Butene Tub	resale laser	--	make-sag rule	true	true	true	Yelpley	false
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	false	"The gold log begins spinning until it cracks open--leaving a dork rod! You wonder briefly if you deserve to take it, or if there's something wrong with you if you deserve to, but once you hold it, memories of past silliness come back, and they're easier to deal with, now. You have some perspective. You even feel sorry for people who pointed out you were a dork. They'd be barred from a cool adventure like this. So you keep the dork rod."
 SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	true	false	Grebeberg	false	"With the help of SOME DEMOS, you (after several grunts of 'STRAIN! I! ARTS!') manage to rejig the hay into something more aesthetically pleasing: straw arts! You're so enthusiastic, you even fold a few pages of SOME DEMOS into it to create ... well, something."
 straw arts	Revolt Lover	soot tattoos	--	rebump-art-xtra rule	true	true	false	Yelpley	false	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
-gate tag	soot tattoos	state tats	--	tats-peripheral rule	true	true	true	Yelpley	false	"You stamp the gate tag into the soot tattoos, and they take on an official shape. They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
+gate tag	soot tattoos	state tats	--	tats-peripheral rule	true	true	true	Yelpley	false	"You stamp the gate tag into the soot tattoos, and they take on an official shape: tat, STAT! They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
 poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	false	"A heretofore hidden poos scoop pops out from the poo coop. It shovels and vacuumss the offending dung into the coop, forming a crass arc that seems to contain several times the volume of the coop itself. Whatever, you can now go south."
 poo coop	turf rut	--	coop-full rule	shift-dumb-mud rule	true	true	true	Grebeberg	false	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture.[paragraph break]A bold(ened) lob! The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
 radar	made dam	eroded ore	got-ore-yet rule	radar-blink rule	true	false	false	Grebeberg	false	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow. The radar plays a weird scale. Being close to the ore has damaged it somehow."
@@ -2613,7 +2616,7 @@ printed name of Dirge Grid is "[if Diktat Kid is moot]Top Spot[else]Dirge Grid[e
 for writing a paragraph about a person when player is in Dirge Grid:
 	now all people in Dirge Grid are mentioned;
 	if Dirge Grid is unvisited:
-		say "You are greeted by someone who must be the Diktat Kid, who reminds you of a bully from high school. 'You did some weird things to get this far--but I've done some PRACTICAL things to make sure that's it! Knife Fink! Verses Rev!'[paragraph break]'ENGAGE LE JEU QUE JE LE GAGNE!'[wfak-d]";
+		say "You are greeted by someone who must be the Diktat Kid, who reminds you of a bully from high school. 'You did some weird things to get this far--but I've done some PRACTICAL things to make sure that's it! Knife Fink! Verses Rev!'[paragraph break]'We hew! Due: FEUD!'[paragraph break]Then the Diktat Kid gets all fancy. 'ENGAGE LE JEU QUE JE LE GAGNE!'[wfak-d]";
 		say "They both appear. And they are armed! The Knife Fink, with leet steel, and the Verses Rev, with a part strap.";
 		if player does not have ME gem and player does not have taboo bat:
 			say "Looking at your items, there's no way you have enough to take care of the Diktat Kid and the two henchmen. You back off.";
@@ -2664,7 +2667,6 @@ saner arenas are peripheral scenery. "They're a sign that Grebeberg and Yelpley 
 chapter Diktat Kid
 
 Diktat Kid is a proper-named person in Dirge Grid. description is "The Diktat Kid [if henchmen-left is 0]is yelling at you, now[else if henchmen-left is 1]alternates between yelling at the departed [hl of true] and the remaining [hl of false][else]is barking out orders needlessly to the Knife Fink and Verses Rev[end if]."
-[??due: Feud]
 
 to say hl of (ts - a truth state):
 	say "[if ts is whether or not Verses Rev is moot]Knife Fink[else]Verses Rev[end if]"
@@ -2928,8 +2930,6 @@ instead of doing something with gnu dung:
 	if action is pro-and-use, continue the action;
 	say "Eewee! (You probably want to deal with the gnu dung indirectly.)"
 
-instead of smelling gnu dung, say "Gag!";
-
 instead of eating gnu dung, say "Gag!";
 
 chapter turf rut
@@ -3102,7 +3102,7 @@ after taking stamp mats:
 
 chapter Kayo Yak
 
-The Kayo Yak is a beepy chaser in Frush Surf. chase-room of Kayo Yak is Frush Surf. "[one of]A tough looking animal paces around here! It rushes after a few imaginary targets. It looks like a yak. That would make it ... a kayo yak. [or][stopping][if being-chased is true]The kayo yak has an aggressive look in its eyes! It's snorting, and you're the only thing worth chasing[else if kayo yak was not in location of player]The kayo yak [yak-smell][else]The kayo yak, having sniffed at you, is just pacing around now[end if].". description is "[if being-chased is true]The Kayo Yak is really rumbling around, here[else]The Kayo Yak looks alert, ready for more than just standing around[end if]."
+The Kayo Yak is a beepy chaser in Frush Surf. chase-room of Kayo Yak is Frush Surf. "[one of]A tough looking animal paces around here! It rushes after a few imaginary targets. It looks like a yak. That would make it ... a kayo yak. [or][stopping][if player is in Lair Trial]The kayo yak has slowed down temporarily. It seems to be looking back and forth between you and the Ergot Ogre[else if being-chased is true]The kayo yak has an aggressive look in its eyes! It's snorting, and you're the only thing worth chasing[else if kayo yak was not in location of player]The kayo yak [yak-smell][else]The kayo yak, having sniffed at you, is just pacing around now[end if].". description is "[if being-chased is true]The Kayo Yak is really rumbling around, here[else]The Kayo Yak looks alert, ready for more than just standing around[end if]."
 
 to say yak-smell: say "[if player wears stinky knits]bounds up to you and gives a sniff. It seems interested in your stinky knits, but not enough to really do anything[else if player wears brag garb]walks up, takes a whiff of your brag garb, and runs away howling. Hmm, the brag garb's scent is a bit too much for you, too[else]plods up to you and gives a cursory sniff but seems to find nothing too repellent or attractive. You feel almost blown off by this[end if]";
 
@@ -3311,6 +3311,8 @@ check useoning tenet with Bro Orb: try taking Bro Orb instead;
 book Yack Cay
 
 Yack Cay is north of Swamp Maws. It is in Grebeberg. "An edits tide blocks your way west, and storm rots block your way east. [if mist sim is moot]You can go north or south here with ease[else]Mist sim hovers to the north, but there's no blocking back south[end if][if mist sim is moot]. The Known Wonk's Tru-Yurt is here[is-yurt-messy][end if]."
+
+instead of entering tru yurt, say "A rebuke from the Known Wonk stops you: 'Ye so nosey!'"
 
 to say is-yurt-messy: if moor broom is moot, say ". It looks messy"
 
@@ -4540,6 +4542,8 @@ chapter Brag Garb
 
 the brag garb is a thing. description is "You don't know fashion that well, but it's labeled STIFF FITS and seems way spiffier and more comfortable than the old stinky knits."
 
+after printing the name of brag garb while taking inventory: say " (smelling of [if troll ort is moot]the troll ort[else]Turbo Brut[end if])";
+
 chapter Gate Tag
 
 the Gate Tag is a thing. description is "It--well, it seems patterned. Roses, or..."
@@ -4850,12 +4854,11 @@ for printing a locale paragraph about a thing (called th) in Swept Pews:
 
 understand "pew" and "swept pew" as swept pews.
 
-check going south in Swept Pews:
-	if Liar Grail in Swept Pews, say "'No yon! No yon!' moans the wordy drow." instead;
+check going south in Swept Pews: if Liar Grail in Swept Pews, say "'No yon! No yon!' moans the wordy drow, as the liar grail glows and fills your head with confusing arguments about how you don't need to go south, and even if you did, well, there's nobody interesting there, and even if there was, they'd have taken all the GOOD items, anyway." instead;
 
 chapter liar grail
 
-The Liar Grail is a thing in Swept Pews. description is "It's carved with 'NIP IN? NOT ON! NIL IN!' Looking into it, you remember all the times you were suckered by half-truths because you sort of wanted to believe them, or you'd feel dumb believing them if they were actually true. So the grail probably won't stop you ... and yet, you're filled with rage. You'd love to destroy it!". "A liar grail is to the south."
+The Liar Grail is a thing in Swept Pews. description is "It's carved with 'NIP IN? NOT ON! NIL IN!' Looking into it, your mind feels fogged with ambiguities. You recall being suckered by half-truths because you sort of wanted to believe them, or you'd feel dumb not believing them if they were actually true, whether or not they sounded intuitive. And while on some level you know the grail probably won't stop you and isn't, well, you're filled with rage and worried about an ignominious death if you go south. I mean, what if this game isn't REALLY polite on the Zarfian scale? How dumb you'd feel!". "A liar grail is to the south."
 
 check taking liar grail: say "A small voice cries 'Da cad! Da cad!' You probably don't want the liar grail corrupting you." instead;
 
@@ -4868,7 +4871,7 @@ The wordy drow is a neuter person in Swept Pews. description is "Seemingly attac
 
 chapter troll ort
 
-the troll ort is an edible thing in Swept Pews. "A troll ort lies on the floor here. It's too dusty to eat, even without the five-second rule, but who knows where it might be useful.". description is "It doesn't look particularly edible to you. It appears crusted over. From what you know of trolls and such, neither they nor their food smell very good, so maybe it's best that the smell is covered, for now."
+the troll ort is an edible thing in Swept Pews. "A troll ort lies on the floor here. It's too dusty to eat, even without the five-second rule, but who knows where it might be useful.". description is "It doesn't look particularly edible to you. It appears crusted over. From what you know of trolls and such, neither they nor their food smell very good, so maybe it's best that the smell is covered, for now.[paragraph break]Weirdly, it has PINT-A-CATNIP carved on it."
 
 report taking troll ort: say "It just LOOKS musty. You suspect the dust covers up some of its odor, and this may be a good thing."
 

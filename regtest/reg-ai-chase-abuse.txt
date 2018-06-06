@@ -110,6 +110,11 @@
 >s
 >s
 >pace cap
+>use troll ort on kayo yak
+WRONG
+>gonear ergot ogre
+>use troll ort on ergot ogre
+WRONG
 >use troll ort on brag garb
 >n
 >n

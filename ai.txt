@@ -401,8 +401,8 @@ This can be done right away after you have both items.
 ?How do I deal with the wordy drow and liar grail?
 The wordy drow is attached to the liar grail, but maybe you can free it.
 The liar grail seems to throw things at you from all angles. Maybe if you could focus it.
-USE PUCE CUP ON PAST SAP.
-Then it turns into purist sirup.
+First, you need to use the puce cup on the past sap back in Cold Loc.
+The sap melts into purist sirup.
 USE PUCE CUP ON LIAR GRAIL.
 ?Why is the wordy drow's first moan starred out?
 It's saying something palindromic, but some religions found it unspeakable.

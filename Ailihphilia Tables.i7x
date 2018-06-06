@@ -971,6 +971,7 @@ randtxt
 "Sun on Us"
 "To Own: WOOT"
 "We Nab Anew"
+"Yet a Matey"
 "Yo, Beer Free, Boy"
 
 table of noesies
@@ -987,6 +988,7 @@ randtxt
 "Poor droop."
 "Stone NOTs."
 "Woe meow."
+"Ye po['] mopey!"
 "Ye Po['] Nopey."
 
 table of nothings
@@ -1012,6 +1014,7 @@ randtxt
 
 table of Rob droning
 randtxt
+"[']Tis. Suss it!"
 "Boone?! Noob!"
 "EOF, Foe!"
 "More ROM!"
