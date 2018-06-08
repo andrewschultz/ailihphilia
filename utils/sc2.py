@@ -658,11 +658,8 @@ def get_stuff_from_source():
                     if x[1] == 'reifier' or x[1] == 'reviver' or x[1] == 'rotator':
                         machine_uses[x[1]] = machine_uses[x[1]] + 1
                         machine_actions[x[1]] = machine_actions[x[1]] + "    {:s} -> {:s}\n".format(x[0], x[2])
-                    if len(x) != 11 and x[0] != '--':
+                    if len(x) != 12 and x[0] != '--':
                         print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 11. Ignoring data in this line.")
-                        continue
-                    if len(x) != 10 and x[0] == '--':
-                        print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 10. Ignoring data in this line.")
                         continue
                     cmd = ""
                     if x[0] != '--' and x[1] != '--':
