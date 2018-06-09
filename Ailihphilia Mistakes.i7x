@@ -443,6 +443,8 @@ understand "band nab" as a mistake ("Mr. Arm tries to grip his own wrist but can
 
 understand "bank nab" as a mistake ("Whoah! You're one of the good guys, here.[mis of 175]") when Mr Arm is quicknear.
 
+understand "bannon nab" as a mistake ("That's up to Muelle ... um, there's enough political references in the game with the Yuge Guy.") when Mr Arm is quicknear.
+
 understand "DNA hand" as a mistake ("Right idea, but you can't do it on your own. You need technology to help you.[mis of 176]") when DNA band is quicknear.
 
 understand "dna land" as a mistake ("Biochemistry has its own nuances with symmetry, but we're sticking with something a lot dumber, here.[mis of 177]") when DNA band is quicknear or DNA hand is quicknear.

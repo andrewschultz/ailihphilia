@@ -145,7 +145,7 @@ this_mist = ""
 errs = 0
 
 with open(mis) as file:
-    for line in file:
+    for (line_count, line) in enumerate(file, 1):
         if line.startswith("volume old school verbs"):
             break
         if line.startswith("understand"):
@@ -163,6 +163,11 @@ with open(mis) as file:
                 errs += 1
             last_num_of = nol
             last_mist = this_mist
+        elif line.startswith("u") and 'mistake' in line:
+            print("******** Line {:d} has understand-typo ********".format(line_count))
+            print("************ FIX BEFORE CONTINUING ************".format(line_count))
+            i7.npo(mis, line_count, True)
+            exit()
 
 if len(got.keys()) > 0:
     x = max(got, key=int)
