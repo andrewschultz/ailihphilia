@@ -8,7 +8,7 @@ If you are technically inclined, you can grep -i "^>" walkthrough.txt | sed "s/.
 
 Some particular spoilers, such as the general procedure for puzzles, may be encoded in ROT13. You'll know them, because they look like gibberish. Copy and paste them to Rot13.com to see what happens.
 
-Many point scoring commands will be palindromes. Most of the others are of the form USE X ON Y. You can shorten them by just using one word. In other words, to plagiarize from Kingdom of Loathing's Palindome, USE EVIL OLIVE ON TACO CAT can be shortened to USE OLIVE ON CAT. (I wrote a script to make sure the walkthrough and source were relatively synced, and I used full item names.)
+Many point scoring commands will be palindromes. Most of the others are of the form USE X ON Y. You can shorten them by just using one word. In other words, to plagiarize from Kingdom of Loathing's Palindome, USE EVIL OLIVE ON TACO CAT can be shortened to USE OLIVE ON CAT. (I used the full names because I wrote a script to make sure the walkthrough and source were relatively synced, and I didn't want to cross up namespaces e.g. the Gulf Lug and Flu Gulf could both be GULF.)
 
 So! Fun 'Nuf is, well, not fun enough to start. And worse yet, you can't leave until you know what to do with the Pact Cap! Well, you can leave through the Tix Exit, but that's no fun, unless you like seeing bad ends.
 
