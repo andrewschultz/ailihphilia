@@ -4,6 +4,7 @@
 # convert the walkthrough to test files for REV OVER
 #
 
+import sys
 import re
 from collections import defaultdict
 
@@ -35,6 +36,30 @@ def make_wthru(start_num, end_num):
     f.close()
     print("Wrote", file_name)
 
+count = 0
+while count < len(sys.argv):
+    arg = sys.argv[count]
+    if arg[0] == '-': arg = arg[1:]
+    if arg[0].isdigit():
+        ary = [int(x) for x in arg.split(',')]
+        if len(ary) == 1: start_low = start_high = end_low = end_high = ary[0]
+        else:
+            start_low = end_low = ary[0]
+            start_high = end_high = ary[1]
+    if arg[0] == 's':
+        ary = [int(x) for x in arg[1:].split(',')]
+        if len(ary) == 1: start_low = start_high = ary[0]
+        else:
+            start_low = ary[0]
+            start_high = ary[1]
+    if arg[0] == 'e':
+        ary = [int(x) for x in arg[1:].split(',')]
+        if len(ary) == 1: end_low = end_high = ary[0]
+        else:
+            end_low = ary[0]
+            end_high = ary[1]
+    count += 1
+
 with open("walkthrough.txt") as file:
     cmd_count = 0
     for (line_count, line) in enumerate(file, 1):
@@ -54,4 +79,4 @@ if start_low > end_high: sys.exit("Lowest start must be less than the highest en
 for x in range (start_low, start_high + 1):
     for y in range (end_low, end_high + 1):
         if x > y: continue
-make_wthru(3, 4)
+    make_wthru(x, y)
