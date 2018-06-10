@@ -4,6 +4,7 @@
 # convert the walkthrough to test files for REV OVER
 #
 
+import os
 import sys
 import re
 from collections import defaultdict
@@ -14,11 +15,15 @@ orb_next = False
 line_nums = []
 start_low = start_high = 0
 end_low = end_high = 0
+launch_first = launch_last = False
+
+def my_file(s, e):
+    return "reg-ai-revthru-start-{:d}-end-{:d}.txt".format(s, e)
 
 def make_wthru(start_num, end_num):
     rev_part = False
     cmd_yet = False
-    file_name = "reg-ai-revthru-start-{:d}-end-{:d}.txt".format(start_num, end_num)
+    file_name = my_file(start_num, end_num)
     f = open(file_name, "w")
     f.write("# {:s}\n\n".format(file_name))
     f.write("** game: /home/andrew/prt/debug-ailihphilia.ulx\n** interpreter: /home/andrew/prt/glulxe -q\n\n* runthrough\n\n")
@@ -26,17 +31,20 @@ def make_wthru(start_num, end_num):
         for (line_count, line) in enumerate(file, 1):
             if not cmd_yet:
                 if not line.startswith('>') and not line.startswith('(+1)'):
-                    print("Skipping", line.strip())
+                    # print("Skipping", line.strip())
                     continue
                 cmd_yet = True
             if line_count == line_nums[start_num]:
                 rev_part = True
-                f.write(">rv {:d}\n#skipping point scoring commands {:d} to {:d}\n\n". format(end_num - start_num + 1, start_num, end_num))
+                if start_num == end_num:
+                    f.write(">rv {:d}\n#skipping point scoring command {:d}\n\n". format(1, start_num))
+                else:
+                    f.write(">rv {:d}\n#skipping point scoring commands {:d} to {:d}\n\n". format(end_num - start_num + 1, start_num, end_num))
+            line_mod = re.sub("\(\+1\) *", "", line)
+            if '>' in line and not rev_part: f.write(line_mod + "\n")
+            elif rev_part and line_count in line_nums: f.write("#{:s} (skipped)\n\n".format(what_skipped[line_count]))
             if line_count == line_nums[end_num]:
                 rev_part = False
-            line_mod = re.sub("\(\+1\) *", "", line)
-            if '>' in line and not rev_part: f.write(line_mod)
-            elif rev_part and line_count in line_nums: f.write("#{:s} (skipped)\n\n".format(what_skipped[line_count]))
     f.write("Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through.\n")
     f.close()
     print("Wrote", file_name)
@@ -48,24 +56,26 @@ while count < len(sys.argv):
     arg = sys.argv[count]
     if arg[0] == '-': arg = arg[1:]
     if arg[0].isdigit():
-        ary = [int(x) for x in arg.split(',')]
+        ary = [int(x) for x in re.split("[,-]", arg[1:])]
         if len(ary) == 1: start_low = start_high = end_low = end_high = ary[0]
         else:
             start_low = end_low = ary[0]
             start_high = end_high = ary[1]
     elif arg[0] == 's':
-        ary = [int(x) for x in arg[1:].split(',')]
+        ary = [int(x) for x in re.split("[,-]", arg[1:])]
         if len(ary) == 1: start_low = start_high = ary[0]
         else:
             start_low = ary[0]
             start_high = ary[1]
     elif arg[0] == 'e':
-        ary = [int(x) for x in arg[1:].split(',')]
+        ary = [int(x) for x in re.split("[,-]", arg[1:])]
         if len(ary) == 1: end_low = end_high = ary[0]
         else:
             end_low = ary[0]
             end_high = ary[1]
     elif arg[0] == 'a': do_all = True
+    elif arg == 'l' or arg == 'l1': launch_first = True
+    elif arg == 'll' or arg == 'l0': launch_last = True
     count += 1
 
 if start_low > start_high:
@@ -123,3 +133,6 @@ for x in range (start_low, start_high + 1):
     for y in range (end_low, end_high + 1):
         if x > y: continue
     make_wthru(x, y)
+
+if launch_first: os.system(my_file(start_low, end_low))
+if launch_last: os.system(my_file(start_high, end_high))
