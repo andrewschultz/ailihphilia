@@ -5569,6 +5569,7 @@ carry out revovering:
 	if deep-speeding is false, say "Attempting to REV OVER[recxcheck of true]...";
 	now global-delay is 0;
 	let count be 0;
+	let turns-to-add be 0;
 	now revving-over is true;
 	repeat through table of goodacts:
 		increment count;
@@ -5582,6 +5583,7 @@ carry out revovering:
 					if debug-state is true, say "(+1 [preproc entry])[line break]";
 					increment the score;
 					increment cur-score of reg-plus entry;
+					increment turns-to-add;
 					now done entry is true;
 			if global-delay is 5 and deep-speeding is false:
 				if the player yes-consents:
@@ -5614,10 +5616,12 @@ carry out revovering:
 		if there is a postproc entry, follow the postproc entry;
 	now revving-over is false;
 	say "Done.";
+	now turns-to-add is turns-to-add * 3;
 	if score > last notified score:
-		say "[bracket]I just gave you [score - last notified score] points to go with your quick trip, because I'm generous like that.[close bracket][paragraph break]";
+		say "[bracket]I just gave you [score - last notified score] points to go with your quick trip, because I'm generous like that.[close bracket] ... also, I tacked on [turns-to-add] turns, as a guesstimate.[paragraph break]";
 		now score-cheat is score-cheat + score - last notified score;
 		now last notified score is score;
+		increase turn count by turns-to-add;
 	else:
 		say "There should've been a reject message, or there is a bug in the rev over/deep speed code. If you have a transcript, report the bug at my github site or email me.";
 	follow the notify score changes rule;

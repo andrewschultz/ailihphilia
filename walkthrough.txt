@@ -330,7 +330,11 @@ Now you have all the ingredients for the North-Tron, and you need to activate th
 
 (+1) >USE EXAM AXE ON LIE VEIL
 
->N.GET ALL.S.E.E.E.S.W
+>N
+
+>GET ALL
+
+>S.E.E.E.S.W
 
 Now with all the junk we have, we can make non-junk.
 
