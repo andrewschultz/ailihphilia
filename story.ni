@@ -2095,6 +2095,7 @@ this is the hay-gone rule:
 
 this is the kid-bye rule:
 	move saner arenas to Dirge Grid;
+	move day away ad to Yawn Way;
 	moot Diktat Kid;
 	the rule succeeds;
 
@@ -2881,7 +2882,9 @@ the ME Totem is scenery in Sneer Greens. description is "It's a more favorable v
 
 chapter smirk rims
 
-the smirk rims are peripheral scenery in Sneer Greens. description is "They look at you as if to say, 'What makes you think you can beat the [if Yuge Guy is in Sneer Greens]Yuge Guy[else]Diktat Kid[end if]?'"
+the smirk rims are peripheral scenery in Sneer Greens. description is "They look at you as if to say, '[if Diktat Kid is moot]Why haven't you gotten on with your life, now you beat the Diktat Kid[else][cant-beat][end if]?'"
+
+to say cant-beat: say "What makes you think you can beat the [if Yuge Guy is in Sneer Greens]Yuge Guy[else]Diktat Kid[end if]"
 
 chapter murdered rum
 
@@ -3064,7 +3067,7 @@ check going south in Ooze Zoo: if sleep eels are in Ooze Zoo, say "There are too
 
 chapter trapmart rampart
 
-the trap mart rampart is peripheral scenery. "It's sturdy and too high to climb."
+the trap mart rampart is peripheral scenery in Ooze Zoo. "It's sturdy and too high to climb."
 
 understand "trapmart rampart" and "trapmart" as trap mart rampart.
 
@@ -3226,6 +3229,8 @@ chapter birch crib
 
 the birch crib is peripheral scenery in Den Ivy Vined. "It looks like a nice place to be, but you couldn't afford it[if player has cash sac], even with the cash sac[end if]."
 
+check going nowhere in den ivy vined: say "The Birch Crib is not somewhere you need to be." instead;
+
 chapter code doc
 
 Code Doc is a neuter person in Den Ivy Vined. "[one of]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket labeled DR A. CARD. Busy, but not too busy to help someone else."
@@ -3251,9 +3256,7 @@ chapter porch crop
 
 the porch crop is scenery. "[if wash saw is moot]It's been cleared up since you used the wash saw on it[else]It really sprawls. Maybe there is a way to trim it to help the Code Doc[end if]."
 
-to say if-porch:
-	if porch crop is in Den Ivy Vined:
-		say ". [if wash saw is moot]The porch crop is still trimmed back[else]Some porch crop has sprouted up, and it looks okay, but there's just too much of it[end if]";
+to say if-porch: if porch crop is in Den Ivy Vined, say ". [if wash saw is moot]The porch crop is still trimmed back[else]Some porch crop has sprouted up, and it looks okay, but there's just too much of it[end if]";
 
 chapter balsa slab
 
@@ -3447,7 +3450,7 @@ part Yelpley region
 
 book Yawn Way
 
-Yawn Way is east of Fun Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil Way, but you can go in all four directions, here: back west to Fun [']Nuf, north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]Emo Dome[else]a dome[end if]."
+Yawn Way is east of Fun Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil Way, but you can go in all four directions, here: back west to Fun [']Nuf, north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]Emo Dome[else]a dome[end if][if day away ad is in Yawn Way][one of]. And wait! There's a day-away ad, trumpeting all the business that'll return to Yelpley now you defeated the Diktat Kid[or]. You can still read the day-away ad, if you want[stopping][end if]."
 
 after looking in Yawn Way for the first time:
 	say "Whew! You were worried you'd develop a city tic, but thankfully not.";
@@ -3461,7 +3464,7 @@ after looking in Yawn Way:
 
 chapter day away ad
 
-the day away ad is scenery in Yawn Way. printed name of day away ad is "Day-Away Ad". "The Day-Away Ad describes businesses soon to open in the new improved Yelpley, including [two-ads]."
+the day away ad is scenery. printed name of day away ad is "Day-Away Ad". "The Day-Away Ad describes businesses soon to open in the new improved Yelpley, including [two-ads]."
 
 to say two-ads:
 	next-rand table of businesses;
@@ -4803,6 +4806,10 @@ TNT is a tronpart. description is "Well, it's not going to blow up in your hands
 
 check taking TNT when bomb mob is quicknear: say "The bomb mob would say a bit more than 'Yank? Nay!' You'd be seen too easily." instead;
 
+chapter Line Nil
+
+Line Nil is peripheral scenery in Yell Alley. "It's a thin looking red line you're pretty sure you don't want to step over. Maybe somewhere there's a number keypad to disarm it, with a palindrome code of course, but not in this game."
+
 book Red Roses Order
 
 Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in Red Roses Order]The only visible way back is south, with a Mirror Rim blocking the other directions and seeming very threatening and oppressive indeed, but you can't chicken out[else]Sword rows have been revealed once the Mirror Rim dispersed. The E-Divide flickers and guards the way north where Madam left. You can go back south[end if]."
@@ -5017,10 +5024,6 @@ this is the bald-lab rule:
 bald-lab is a truth state that varies.
 
 understand "bald/lab" and "bald lab" as Pro Corp when bald-lab is true.
-
-chapter Link Nil
-
-Line Nil is peripheral scenery in Pro Corp. "It's a thin looking red line you're pretty sure you don't want to step over. Maybe somewhere there's a number keypad to disarm it, with a palindrome code of course, but not in this game."
 
 chapter Sci Pics
 

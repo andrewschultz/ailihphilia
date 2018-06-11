@@ -9,7 +9,7 @@ Initially sent to source code/repository November 2017.</history>
 	</info>
 	<map>
 		<room id="1" name="Fun 'Nuf" subtitle="" x="-64" y="0" w="96" h="32" region="Dim Mid" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isStartRoom="yes" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects custom="yes" customRight="-30" customDown="0">Tile Lit|Pact Cap</objects>
+			<objects custom="yes" customRight="-30" customDown="0">Tile Lit|Pact Cap|(KAOS Oak/Tix Exit)</objects>
 		</room>
 		<room id="2" name="Seer Trees" subtitle="" x="-224" y="-32" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>Stark Rats</objects>
@@ -19,19 +19,19 @@ Initially sent to source code/repository November 2017.</history>
 			<objects>Revolt Lover|Trap Art|(El Doodle)|State Tats</objects>
 		</room>
 		<room id="5" name="Yell Alley" subtitle="" x="256" y="-288" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects custom="yes" customRight="-24" customDown="0">Rep Popper|Navy Van|Mayo Yam</objects>
+			<objects at="n" custom="yes" customRight="-24" customDown="0">Rep Popper|Navy Van (eye)|Mayo Yam</objects>
 		</room>
-		<room id="6" name="Deft Fed" subtitle="Bon Snob" x="416" y="96" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects custom="yes" customRight="-24" customDown="0">Nat's Tan|Sniffins</objects>
+		<room id="6" name="Deft Fed" subtitle="Bon Snob" x="416" y="96" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="&#xD;&#xA;" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects custom="yes" customRight="-24" customDown="0">Nat's Tan|Sniffins|(Snooty Toons)|(Decal Placed)</objects>
 		</room>
 		<room id="7" name="Emo Dome" subtitle="" x="256" y="-32" w="96" h="32" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects at="n">Puce Cup|EYE</objects>
+			<objects at="n">Puce Cup|Diff ID</objects>
 		</room>
 		<room id="8" name="Toll Lot" subtitle="" x="416" y="-32" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Cross Orc</objects>
+			<objects>Cross Orc|(Crag Arc)</objects>
 		</room>
 		<room id="9" name="Cold Loc" subtitle="" x="-224" y="-160" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>King Nik|Rift Fir</objects>
+			<objects>King Nik|Pat Sap|(Rift Fir)</objects>
 		</room>
 		<room id="10" name="My Gym" subtitle="" x="96" y="96" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-16" customDown="0">DAVE|wash saw</objects>
@@ -65,14 +65,14 @@ Initially sent to source code/repository November 2017.</history>
 		<room id="21" name="Gross Org" subtitle="Den, Evened" x="416" y="-160" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>NED|Stinky Knits|Etage Gate</objects>
 		</room>
-		<room id="22" name="Worn Row" subtitle="???????" x="-64" y="96" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Can be changed to WORK or WORD row." roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects custom="yes" customRight="-36" customDown="0">ROB|Reviver/Reifier/Rotator|Tract Cart|Redness Ender</objects>
+		<room id="22" name="Worn Row" subtitle="???????" x="-64" y="96" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="TRACT CART or REVIVER / ROTATOR / REIFIER can appear" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects custom="yes" customRight="-36" customDown="0">ROB|Redness Ender|(Bad Dab)</objects>
 		</room>
 		<room id="24" name="Le Babel" subtitle="" x="-384" y="-160" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects at="n" custom="yes" customRight="-20" customDown="0">Bro Orb</objects>
+			<objects at="n" custom="yes" customRight="-20" customDown="0">Bro Orb|(Voodoo V)</objects>
 		</room>
 		<room id="25" name="Red Roses Order" subtitle="" x="256" y="-160" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="yes" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects at="n" custom="yes" customRight="-38" customDown="0">La Gal/Madam</objects>
+			<objects at="n" custom="yes" customRight="-44" customDown="0">  LA GAL/MADAM|(Mirror Rim/E Divide)</objects>
 		</room>
 		<line id="26" name="" description="" style="dashed">
 			<dock index="0" id="25" port="s" />
@@ -91,7 +91,7 @@ Initially sent to source code/repository November 2017.</history>
 			<dock index="1" id="2" port="s" />
 		</line>
 		<room id="28" name="Evaded Ave" subtitle="" x="96" y="-288" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Door Frood|Bunk Nub</objects>
+			<objects>Door Frood|Bunk Nub|(Tube, but...)</objects>
 		</room>
 		<line id="34" name="" description="" style="dashed">
 			<dock index="0" id="28" port="e" />
@@ -110,14 +110,14 @@ Initially sent to source code/repository November 2017.</history>
 			<dock index="1" id="3" port="n" />
 		</line>
 		<room id="35" name="Apse Spa" subtitle="" x="-64" y="-160" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects at="n" custom="yes" customRight="-32" customDown="0">Dose Sod|Goblin-Nil Bog</objects>
+			<objects at="n" custom="yes" customRight="-32" customDown="0">  Dose Sod| Go-By Bog|(Pool Gloop)</objects>
 		</room>
 		<line id="36" name="" description="">
 			<dock index="0" id="9" port="e" />
 			<dock index="1" id="35" port="w" />
 		</line>
 		<room id="37" name="Flu Gulf" subtitle="" x="-224" y="-288" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects at="n" custom="yes" customRight="-22" customDown="0">Gulf Lug</objects>
+			<objects at="n" custom="yes" customRight="-24" customDown="0">  Gulf Lug|(Mush Sum)</objects>
 		</room>
 		<line id="38" name="" description="" style="dashed">
 			<dock index="0" id="9" port="n" />
@@ -128,14 +128,14 @@ Initially sent to source code/repository November 2017.</history>
 			<objects custom="yes" customRight="-20" customDown="0">Slate Metals</objects>
 		</room>
 		<room id="43" name="Sneer Greens" subtitle="Et Tu Butte" x="-384" y="-288" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="yes" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects at="n" custom="yes" customRight="-52" customDown="0">Yuge Guy/Evil Clive</objects>
+			<objects at="n" custom="yes" customRight="-52" customDown="0">Yuge Guy/Evil Clive|(Smirk Rims)</objects>
 		</room>
 		<line id="40" name="" description="" style="dashed" midText="Lie Veil">
 			<dock index="0" id="39" port="n" />
 			<dock index="1" id="24" port="s" />
 		</line>
 		<room id="44" name="Mont Nom" subtitle="" x="-384" y="96" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects custom="yes" customRight="-8" customDown="0">IAN</objects>
+			<objects custom="yes" customRight="-32" customDown="0">        IAN|(Ark of Okra)</objects>
 		</room>
 		<line id="46" name="" description="" style="dashed" midText="Turf Rut">
 			<dock index="0" id="39" port="s" />
@@ -145,7 +145,7 @@ Initially sent to source code/repository November 2017.</history>
 			<objects at="n">Troll Ort|Liar Grail</objects>
 		</room>
 		<room id="49" name="Swamp Maws" subtitle="" x="-544" y="-32" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Made Dam</objects>
+			<objects>(Made Dam)</objects>
 		</room>
 		<line id="50" name="" description="" style="dashed" startText="    Gnu Dung">
 			<dock index="0" id="49" port="e" />
@@ -154,8 +154,8 @@ Initially sent to source code/repository November 2017.</history>
 		<room id="51" name="Calcific Lac" subtitle="" x="-544" y="-288" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects at="n" custom="yes" customRight="-22" customDown="0">Tao Boat|Kayak</objects>
 		</room>
-		<room id="53" name="All-Ivy Villa" subtitle="Den, Ivy-Vined" x="-544" y="96" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Code Doc</objects>
+		<room id="53" name="Den, Ivy-Vined" subtitle="All-Ivy Villa" x="-544" y="96" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects>Code Doc|(Birch Crib)</objects>
 		</room>
 		<line id="54" name="" description="">
 			<dock index="0" id="49" port="s" />
@@ -170,28 +170,28 @@ Initially sent to source code/repository November 2017.</history>
 			<dock index="1" id="47" port="n" />
 		</line>
 		<room id="55" name="Pro Corp" subtitle="Bald Lab" x="416" y="-288" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>DNA Band|Gold Log|Butene Tub</objects>
+			<objects>DNA Band|Gold Log|Butene Tub|(Sci Pics)</objects>
 		</room>
 		<room id="56" name="Frush Surf" subtitle="" x="-224" y="224" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects custom="yes" customRight="-24" customDown="0">Kayo Yak|Stamp Mats</objects>
+			<objects custom="yes" customRight="-24" customDown="0">Kayo Yak|Stamp Mats|(Stewy Wets)</objects>
 		</room>
 		<room id="57" name="Drawl Ward" subtitle="" x="256" y="224" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects custom="yes" customRight="-40" customDown="0">Bond Nob</objects>
+			<objects custom="yes" customRight="-24" customDown="0">Bond Nob|(Girt Rig)</objects>
 		</room>
 		<room id="58" name="Dopy Pod" subtitle="Dope Pod" x="96" y="224" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-12" customDown="0">Cassettes Sac|Demo Med</objects>
 		</room>
 		<room id="59" name="Motto Bottom" subtitle="" x="-384" y="224" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects custom="yes" customRight="-24" customDown="0">Guru Rug</objects>
+			<objects custom="yes" customRight="-24" customDown="0">Guru Rug|(Be Web)</objects>
 		</room>
 		<room id="60" name="Trapeze Part" subtitle="" x="-64" y="-288" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects at="n" custom="yes" customRight="-34" customDown="0">Ten Level Net|Epicer Recipe</objects>
 		</room>
 		<room id="61" name="Lair Trial" subtitle="Stride Dirts" x="-544" y="224" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects custom="yes" customRight="-20" customDown="0">Ergot Ogre</objects>
+			<objects custom="yes" customRight="-20" customDown="0">Ergot Ogre| (Go Fog)</objects>
 		</room>
 		<room id="62" name="Yack Cay" subtitle="Roomy Moor" x="-544" y="-160" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Known Wonk|Tru Yurt</objects>
+			<objects at="w" custom="yes" customRight="0" customDown="-32">Known Wonk|Tru Yurt|Edits Tide|Mist Sim|(Storm Rots)</objects>
 		</room>
 		<line id="31" name="" description="">
 			<dock index="0" id="56" port="e" />
@@ -221,7 +221,7 @@ Initially sent to source code/repository November 2017.</history>
 			<dock index="0" id="28" port="w" />
 			<dock index="1" id="60" port="e" />
 		</line>
-		<line id="42" name="" description="">
+		<line id="42" name="" description="" style="dashed">
 			<dock index="0" id="21" port="n" />
 			<dock index="1" id="55" port="s" />
 		</line>
@@ -229,11 +229,11 @@ Initially sent to source code/repository November 2017.</history>
 			<dock index="0" id="47" port="s" />
 			<dock index="1" id="57" port="n" />
 		</line>
-		<line id="66" name="" description="">
+		<line id="66" name="" description="" style="dashed">
 			<dock index="0" id="57" port="e" />
 			<dock index="1" id="41" port="w" />
 		</line>
-		<line id="67" name="" description="">
+		<line id="67" name="" description="" style="dashed">
 			<dock index="0" id="57" port="w" />
 			<dock index="1" id="58" port="e" />
 		</line>
@@ -250,7 +250,7 @@ Initially sent to source code/repository November 2017.</history>
 			<dock index="1" id="43" port="e" />
 		</line>
 		<room id="71" name="Dirge Grid" subtitle="" x="-64" y="-64" w="96" h="32" region="Dim Mid" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isEndRoom="yes" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects at="n" custom="yes" customRight="-24" customDown="0">(Diktat Kid)</objects>
+			<objects at="n" custom="yes" customRight="-24" customDown="0">DIKTAT KID</objects>
 		</room>
 		<line id="72" name="" description="" style="dashed">
 			<dock index="0" id="1" port="n" />
