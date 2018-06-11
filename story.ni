@@ -465,13 +465,13 @@ every turn (this is the don't increment trivial turns rule):
 the don't increment trivial turns rule is listed first in the every turn rulebook.
 
 this is the check palindrome turns rule: [this could be at the end but those are item based rules]
-	let Q be "[turn count]";
-	let Z be number of characters in Q;
-	let i be 1;
-	let pal-turns be true;
-	while i <= Z / 2:
-		if character number i in Q is not character number (Z + 1 - i) in Q, now pal-turns is false;
-		increment i;
+	let revnum be 0;
+	let cutnum be turn count;
+	while cutnum > 0:
+		now revnum is revnum * 10;
+		increase revnum by the remainder after dividing cutnum by 10;
+		now cutnum is cutnum / 10;
+	let pal-turns be whether or not revnum is turn count;
 	say "Final stats (score/turn/maximum score): [score]/[turn count]/[maximum score].";
 	if Yawn Way is unvisited, continue the action;
 	say "When you get home, you open the X/O box. ";
@@ -505,7 +505,7 @@ when play begins:
 	if debug-state is true:
 		say "DEBUG NOTE: Maximum score is [maximum score].";
 		say "[if max-score of Odd Do is number of rows in table of last lousy points]LLPs = LLP table rows[else]Uh oh, [max-score of Odd Do] Odd Do points and [number of rows in table of last lousy points] LLP table rows. We need to fix this[end if].";
-	now right hand status line is "[if cur-score of mrlp < 10] [end if][cur-score of mrlp]/[max-score of mrlp] [if score < 10] [end if][score]/[min-win]-[maximum score]";
+	now right hand status line is "[if cur-score of mrlp < 10] [end if][cur-score of mrlp]/[max-score of mrlp] [if score < 10] [end if][score]/[if min-win < maximum score][min-win]-[end if][maximum score]";
 	now left hand status line is "[location of player] ([mrlp])[dir-summary]";
 	say "First, are you using a screen reader? Some of Ailihphilia's features, like the text map, don't work well with them.";
 	if the player no-consents:
