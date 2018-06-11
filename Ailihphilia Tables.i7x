@@ -900,6 +900,7 @@ randtxt
 table of Bond Nob bars
 randtxt
 "Bar Crab"
+"Brewer B"
 "Met [']Em"
 "MRA Farm"
 "Nigh Gin"
@@ -1170,6 +1171,7 @@ randtxt
 "Pal, rub burlap!"
 "A papa! A papa!"
 "ROB ALL LABOR!"
+"So-sos!"
 "Soros! Soros!"
 "Sue Me?! Us?!"
 "Wane? Naw!"
