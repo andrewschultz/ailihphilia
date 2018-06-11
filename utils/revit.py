@@ -1,15 +1,17 @@
 #
 #revit.py
-    #
+#
 # convert the walkthrough to test files for REV OVER
 #
 
+import i7
 import os
 import sys
 import re
 from collections import defaultdict
 
 what_skipped = defaultdict(str)
+destinations = defaultdict(str)
 
 orb_next = False
 line_nums = []
@@ -19,6 +21,27 @@ launch_first = launch_last = False
 
 def my_file(s, e):
     return "reg-ai-revthru-start-{:d}-end-{:d}.txt".format(s, e)
+
+def read_destinations():
+    count = 0
+    to_table = -1
+    idx = 0
+    with open("story.ni") as file:
+        for line in file:
+            if line.startswith('table of goodacts'):
+                to_table = 1
+                continue
+            if to_table == -1: continue
+            if to_table > 0:
+                to_table -= 1
+                continue
+            if '\t' not in line: return
+            ary = line.strip().split("\t")
+            print(len(ary), idx, len(line_nums), ary)
+            destinations[line_nums[idx]] = ary[9]
+            print(idx, line_nums[idx], ary[9])
+            idx += 1
+            if idx == max_stuff: return
 
 def make_wthru(start_num, end_num):
     rev_part = False
@@ -40,6 +63,7 @@ def make_wthru(start_num, end_num):
                     f.write(">rv {:d}\n#skipping point scoring command {:d}\n\n". format(1, start_num))
                 else:
                     f.write(">rv {:d}\n#skipping point scoring commands {:d} to {:d}\n\n". format(end_num - start_num + 1, start_num, end_num))
+                f.write("#{:d}\nDEBUG: going to {:s}\n\n".format(line_count, destinations[line_count]))
             line_mod = re.sub("\(\+1\) *", "", line)
             if '>' in line and not rev_part: f.write(line_mod + "\n")
             elif rev_part and line_count in line_nums: f.write("#{:s} (skipped)\n\n".format(what_skipped[line_count]))
@@ -88,6 +112,8 @@ if end_low > end_high:
 
 max_stuff = 0;
 
+i7.go_proj('ai')
+
 with open("walkthrough.txt") as file:
     cmd_count = 0
     for (line_count, line) in enumerate(file, 1):
@@ -124,6 +150,8 @@ if end_high > max_stuff:
     went_over = True
 
 if went_over: print("NOTE: One of your starting or ending values was too high, so I reduced everything to <=", max_stuff)
+
+read_destinations()
 
 if do_all:
     start_low = end_low = 0
