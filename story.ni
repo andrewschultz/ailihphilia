@@ -1419,6 +1419,7 @@ to decide what number is useprio of (th - a thing): [saving a lot of space for n
 	if th is a workable, decide on 20;
 	if th is DIFF ID, decide on 18;
 	if th is a person, decide on 15;
+	if th is Bro Orb, decide on 12;
 	if th is a tronpart, decide on 10;
 	if th is Ark of Okra, decide on 8;
 	if th is an ingredient, decide on 5;
@@ -1434,7 +1435,7 @@ to verify-done (ru - a rule):
 check useoning it with:
 	if noun is second noun, say "It's not productive to use something on itself, even with this game being full of palindromes." instead;
 	if noun is a workable and second noun is a workable, say "The machines are fixed in place. You can't use one on the other." instead;
-	if useprio of noun > useprio of second noun, try useoning second noun with noun instead;
+	if useprio of noun > useprio of second noun, try useoning second noun with noun instead; [e.g. machines in work row always go second]
 	if noun is a helpdoc or second noun is a helpdoc:
 		if noun is epicer recipe and second noun is a tronpart:
 			if number of off-stage tronparts is 1, say "You can't do too much with just [the second noun]." instead;
@@ -3001,14 +3002,17 @@ understand "bros" and "bros orb" as Bro Orb.
 check taking Bro Orb:
 	if player has Bro Orb, say "You already have it." instead;
 	if player does not have tenet, say "A voice in your head says 'WANT? NAW!'[paragraph break]You aren't sure you can handle the potentially corrupting power of the Bro Orb. [if player has sage gas]The sage gas helps you to understand how things could go wrong, but still, you're a bit worried[end if]. Maybe if you had some more balance to your thinking." instead;
-	say "You wonder if you should take the Bro Orb. If you deserve to. But you reread the tenet and whisper to yourself, 'Nag, ol['] slogan,' and feel balanced enough to take the Bro Orb and accept the responsibility for doing so.[paragraph break]And even to recognize that you don't always deserve points for doing the right thing, or knowing what to use on what. The tenet helped with that. Just having the Bro Orb will be enough. It will be useful somewhere.";
+	say "You wonder if you should take the Bro Orb. If you deserve to. But you reread the tenet and whisper to yourself, 'Nag, ol['] slogan,' and feel balanced enough to take the Bro Orb and accept the responsibility for doing so.[paragraph break]And even to recognize that you don't always deserve points for doing the right thing[if useon-tenet is true], or knowing what to use on what[end if]. The tenet helped with that. Just having the Bro Orb will be enough. It will be useful somewhere.";
 
 report taking Bro Orb:
 	moot tenet;
 	say "Taking the Bro Orb requires two hands. You watch the tenet flutter off beyond the Voodoo V. Oh, well. You carry the tenet's message in your mind and heart and stuff anyway, now.";
 	the rule succeeds;
 
+useon-tenet is a truth state that varies.
+
 check useoning tenet with Bro Orb:
+	now useon-tenet is true;
 	say "You don't need to wave the tenet around or anything to take the orb, but you focus on the tenet to make sure.[paragraph break]";
 	try taking Bro Orb instead;
 
