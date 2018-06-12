@@ -763,6 +763,7 @@ table of Moo Room animals	0	0	true	"Moo Room animals (LISTEN)"	--
 table of My Gym songs	0	0	false	"songs in My Gym (LISTEN)"	--
 table of noesies	0	0	true	"responses to NO"	--
 table of nothings	0	0	true	"responses to empty commands"	--
+table of rejected sidekicks	0	0	false	"the Diktat Kid's rejected sidekicks"	--
 table of Rob droning	0	0	false	"things Rob babbles about"	--
 table of singstuff	0	0	true	"responses to SINGing"	--
 table of snooty toon ads	0	0	true	"snooty toons ads"	--
@@ -1013,6 +1014,19 @@ randtxt
 "Verb! Rev!"
 "Ya, no! Nay!"
 "Yo! Coy?"
+
+table of rejected sidekicks
+randtxt
+"Able Melba"
+"Ammo Momma"
+"ASAP Asa"
+"Emil Slime"
+"Evil Clive"
+"Gory Rog"
+"Iller Elli"
+"Mad Adam"
+"Obese Bo"
+"Wolf Low"
 
 table of Rob droning
 randtxt

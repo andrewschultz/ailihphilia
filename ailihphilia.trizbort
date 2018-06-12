@@ -34,7 +34,7 @@ Initially sent to source code/repository November 2017.</history>
 			<objects>King Nik|Pat Sap|(Rift Fir)</objects>
 		</room>
 		<room id="10" name="My Gym" subtitle="" x="96" y="96" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects custom="yes" customRight="-16" customDown="0">DAVE|wash saw</objects>
+			<objects custom="yes" customRight="-28" customDown="0">    DAVE|wash saw</objects>
 		</room>
 		<line id="11" name="" description="" style="dashed">
 			<dock index="0" id="1" port="w" />
@@ -128,7 +128,7 @@ Initially sent to source code/repository November 2017.</history>
 			<objects custom="yes" customRight="-20" customDown="0">Slate Metals</objects>
 		</room>
 		<room id="43" name="Sneer Greens" subtitle="Et Tu Butte" x="-384" y="-288" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="yes" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects at="n" custom="yes" customRight="-52" customDown="0">Yuge Guy/Evil Clive|(Smirk Rims)</objects>
+			<objects at="n" custom="yes" customRight="-32" customDown="0">  Yuge Guy|(Smirk Rims)</objects>
 		</room>
 		<line id="40" name="" description="" style="dashed" midText="Lie Veil">
 			<dock index="0" id="39" port="n" />

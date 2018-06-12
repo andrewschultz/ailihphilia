@@ -402,7 +402,7 @@ check requesting the score:
 	say "Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do].";
 	if My Gym is visited or Evaded Ave is visited:
 		if number of guhthugs is not number of moot guhthugs, say "You currently disposed of [number of moot guhthugs] grunts blocking your way: [list of moot guhthugs].";
-	if Yuge Guy is moot, say "You've gotten rid of the Yuge Guy, Evil Clive.";
+	if Yuge Guy is moot, say "You've gotten rid of the Yuge Guy.";
 	if Madam is moot, say "You've gotten rid of the La Gal/Madam.";
 	if player has x-ite tix:
 		let Q be roving-LLP;
@@ -2101,7 +2101,7 @@ this is the kid-bye rule:
 	the rule succeeds;
 
 this is the kid-left rule:
-	if Verses Rev is moot and Knife Fink is moot, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with Mad Adam. ASAP Asa. Iller Elli. Emil Slime. Able Melba. Wolf Low. Ammo Momma. Gory Rog. Obese Bo.'";
+	if Verses Rev is moot and Knife Fink is moot, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with [next-rand-txt of table of rejected sidekicks]. Or [next-rand-txt of table of rejected sidekicks. Or...'";
 	the rule succeeds;
 
 this is the make-sag rule:
@@ -2553,7 +2553,7 @@ after examining the Darer Ad:
 
 chapter Set O Notes
 
-the Set O Notes is a helpdoc. description is "[b]OPPO[r] is printed at the top. There's vague advice about making a North-Tron to defeat the Diktat Kid, but first you'll have to defeat [b]Madam[r], as well as the [b]Yuge Guy, Evil Clive[r].[paragraph break]There's mention of a guh-thug in various places, and you'll have to do something special when you see one. [thug-report].[paragraph break]Also scribbled, in the center, is [b]FUN [']NUF[r] with [b]TRI-GIRT[r] below that. [paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
+the Set O Notes is a helpdoc. description is "[b]OPPO[r] is printed at the top. There's vague advice about making a North-Tron to defeat the Diktat Kid, but first you'll have to defeat [b]Madam[r], as well as the [b]Yuge Guy[r].[paragraph break]There's mention of a guh-thug in various places, and you'll have to do something special when you see one. [thug-report].[paragraph break]Also scribbled, in the center, is [b]FUN [']NUF[r] with [b]TRI-GIRT[r] below that. [paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
 
 understand "oppo" as set o notes.
 
@@ -2873,9 +2873,7 @@ check going east in Sneer Greens:
 
 chapter Yuge Guy
 
-Yuge Guy is a proper-named person in Sneer Greens. description is "Bilgy. Glib. He cries 'GAWK, WAG!' as you look at him.". "[one of]'BELIEVE ME! LOVE ME! BELIEVE!' yells someone Wow--he's a lot bigger than you.[paragraph break]'I am EVIL CLIVE! the Yuge Guy!' he drones on. After your initial shock, you see that while he is bigger than you, it's more horizontally than vertically, and he looks like the ME Totem, too.[or]The Yuge Guy continues carrying on about how the world stinks, except for him.[stopping]"
-
-understand "evil/clive" and "evil clive" as Yuge Guy.
+Yuge Guy is a proper-named person in Sneer Greens. description is "Bilgy. Glib. He cries 'GAWK, WAG!' as you look at him.". "[one of]'BELIEVE ME! LOVE ME! BELIEVE!' yells someone Wow--he's a lot bigger than you.[paragraph break]'I am Yuge Guy!' he drones on. After your initial shock, you see that while he is bigger than you, it's more horizontally than vertically, and he looks like the ME Totem, too.[or]The Yuge Guy continues carrying on about how the world stinks, except for him.[stopping]"
 
 chapter ME Totem
 
