@@ -124,11 +124,11 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 380. [-40 from max_verbs debug]
+use MAX_VERBS of 390. [-40 from max_verbs debug]
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 420. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 430. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 chapter kinds of things
 
@@ -223,6 +223,35 @@ Include (-
 ];
 
 -) instead of "Generate Multiple Actions" in "OrderOfPlay.i6t".
+
+section kAoS oAk NoNsEnSe
+
+Include (-
+
+Array kaos --> 7  11 1 15 19 15 1 11;
+
+[ kaosblab i j;
+  if ( (+ grammarg +) == 0) {
+    print "KAOS Oak";
+	rfalse;
+  }
+  j = (+ kaos-num +);
+  for (i = 1: i < 8: i++) {
+	print (char) (64 + kaos-->i + 32 * (j % 2));
+	if (i == 4) { print " "; }
+	j = j / 2;
+  }
+  rfalse;
+];
+
+-)
+
+to say kaoscaps:
+	(- kaosblab(); -)
+
+to kaos-adj: now kaos-num is the remainder after dividing (kaos-num + a random number between 1 and 127) by 128;
+
+kaos-num is a number that varies.
 
 volume parser simplification
 
@@ -1048,6 +1077,7 @@ carry out verbing:
 	say "[line break][b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
 	say "[line break][b]THINK gives general non-spoiler hints, including where you may wish to visit, or what is blocking you[if pyx is quicknear][b]X X[r] or [b]MAP[r] will let you examine the X/Y Pyx.";
 	say "[line break][b]AID[r] gives you hints for where you are. [b]SCORE[r] tracks the score. [b]ABOUT[r] and [b]CREDITS[r] tell about the game[if show-dev is true], and [b]DEV ED[r] shows technical details[end if].";
+	if player is in Fun Nuf and kaos oak is xed, say "[line break][b]GRAMMAR G[r] flips the [kaoscaps] around, which is purely cosmetic.";
 	if wr-short-note is true and in-work, say "[line break][b]REV[r], [b]ROT[r] and [b]REI[r] is shorthand to use an item on the reviver, rotator and reifier, respectively.";
 	if player has radar, say "[line break][b]RAD[r] is shorthand to use the radar on something.";
 	if beep-yet is true, say "[b]LO VOL[r] and [b]LOVE VOL[r] turn the pact cap's hints volume down and up, respectively.";
@@ -1374,7 +1404,7 @@ understand "use [something] with [something]" as useoning it with.
 to build-the-tron:
 	move north tron to Fun Nuf;
 	now all tronparts are in devreserved; [ic]
-	say "[if epicer recipe is nox]You're clueless how, at first. But then you take a look at the epicer recipe[else]You build the North-Tron with the instructions from[end if] the epicer recipe after a few 'How? OH!' moments. It points north and blasts a hole in the KAOS Oak with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break]Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
+	say "[if epicer recipe is nox]You're clueless how, at first. But then you take a look at the epicer recipe[else]You build the North-Tron with the instructions from[end if] the epicer recipe after a few 'How? OH!' moments. It points north and blasts a hole in the [kaoscaps] with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break]Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
 	moot epicer recipe;
 	moot kaos oak;
 	now Dirge Grid is mapped north of Fun Nuf;
@@ -1419,7 +1449,6 @@ to decide what number is useprio of (th - a thing): [saving a lot of space for n
 	if th is a workable, decide on 20;
 	if th is DIFF ID, decide on 18;
 	if th is a person, decide on 15;
-	if th is Bro Orb, decide on 12;
 	if th is a tronpart, decide on 10;
 	if th is Ark of Okra, decide on 8;
 	if th is an ingredient, decide on 5;
@@ -2101,7 +2130,7 @@ this is the kid-bye rule:
 	the rule succeeds;
 
 this is the kid-left rule:
-	if Verses Rev is moot and Knife Fink is moot, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with [next-rand-txt of table of rejected sidekicks]. Or [next-rand-txt of table of rejected sidekicks. Or...'";
+	if Verses Rev is moot and Knife Fink is moot, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with [next-rand-txt of table of rejected sidekicks]. Or [next-rand-txt of table of rejected sidekicks]. Or...'";
 	the rule succeeds;
 
 this is the make-sag rule:
@@ -2180,9 +2209,13 @@ this is the sod-to-cup rule:
 	the rule succeeds;
 
 this is the sword-rows-reveal rule:
+	say "1.";
 	move sword rows to Red Roses Order;
+	say "2.";
 	moot madam;
+	say "3.";
 	move E Divide to Red Roses Order;
+	say "4.";
 	the rule succeeds;
 
 this is the tag-later-wipe rule:
@@ -2273,7 +2306,7 @@ to blanket-reject (bj - a thing):
 
 table of periphery [xxper]
 itm	reject
-KAOS Oak	"The KAOS Oak is immune to poking. You'll need a powerful contraption indeed to dispel it!"
+KAOS Oak	"The [kaoscaps] is immune to poking. You'll need a powerful contraption indeed to dispel it!"
 bad dab	"Its message seems important, but it's not good for much except examining."
 Oh Who	"Oh Who is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting, but it's there."
 Name ME Man	"NAME ME MAN is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting, but it's there."
@@ -2363,7 +2396,7 @@ part Dim Mid region
 
 book Fun Nuf
 
-Fun Nuf is a room in Dim Mid. "[if elite tile is in Fun Nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what leads west and east[xit-ave][end if]. [if north tron is in Fun Nuf]Also, the North-Tron has carved a passage north where the Kaos Oak was. It's too big to, uh, repaper[else if flee elf is in Fun Nuf]An oak blocks the way north. It's a wide oak[else]The KAOS Oak blocks your way north[end if]."
+Fun Nuf is a room in Dim Mid. "[if elite tile is in Fun Nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what leads west and east[xit-ave][end if]. [if north tron is in Fun Nuf]Also, the North-Tron has carved a passage north where the [kaoscaps] was. It's too big to, uh, repaper[else if flee elf is in Fun Nuf]An oak blocks the way north. It's a wide oak[else]The [kaoscaps] blocks your way north[end if]."
 
 to say xit-ave:
 	say ". The [if tix exit is in Fun Nuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]"
@@ -2374,8 +2407,28 @@ instead of doing something with KAOS Oak when flee elf is in Fun Nuf: say "The F
 
 The KAOS Oak is peripheral scenery in Fun Nuf. "[if flee elf is in Fun Nuf]It's forbiddingly wide[else]It is much too sturdy. You'll need a wild, powerful contraption to deal with it[end if]."
 
-after examining the KAOS Oak for the first time:
-	say "One look and you find yourself mumbling 'Elp! A Maple!' Now that's (ch/k)aos!";
+after examining the KAOS Oak:
+	if kaos oak is not xed, say "One look and you find yourself mumbling 'Elp! A Maple!' Now that's (ch/k)aos!";
+	if grammarg is false, say "The [kaoscaps] changes [one of][or]again [stopping] as you look at it.";
+	if kaos oak is not xed, say "(NOTE: you can turn off this nonsense by saying GRAMMAR G.)[paragraph break]";
+	continue the action;
+
+chapter grammarging
+
+grammarg is a truth state that varies.
+
+grammarging is an action out of world.
+
+understand the command "grammar g" as something new.
+
+understand "grammar g" as grammarging when kaos oak is xed and player is in Fun Nuf.
+
+carry out grammarging:
+	if kaos oak is moot, say "Ordering around something that's not here? That's pretty chaotic!" instead;
+	say "'Grammar, G!' you moan at the [kaoscaps]. ";
+	now grammarg is whether or not grammarg is false;
+	say "While strictly speaking, grammar only pertains to sentence structure, the (now) [kaoscaps] being, well, its chaotic self results in a good deal of rumbling. The [kaoscaps] switches back to [if grammarg is true]relative normalcy[else]its old weird shifting self[end if]. It doesn't seem any more or less vulnerable, but you're just glad to have even a small amount of control over things.";
+	the rule succeeds;
 
 chapter north tron
 
@@ -2483,7 +2536,7 @@ understand "pack cap" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did." instead;
-	say "Yes, that's how to get the cap. You are ready to go! Hat, ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. 'Maybe later you'll find a way past the KAOS Oak to the Dirge Grid to defeat the Diktat Kid. But it's complicated.[paragraph break]The Flee Elf mumbles 'It's best I...' and salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
+	say "Yes, that's how to get the cap. You are ready to go! Hat, ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. 'Maybe later you'll find a way past the [kaos oak] to the Dirge Grid to defeat the Diktat Kid. But it's complicated.[paragraph break]The Flee Elf mumbles 'It's best I...' and salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
 	get-cap;
 	score-inc; [Dim Mid/pack cap]
 	verify-done rev-pack-cap rule;
@@ -3008,6 +3061,9 @@ report taking Bro Orb:
 	the rule succeeds;
 
 useon-tenet is a truth state that varies.
+
+check useoning Bro Orb with tenet:
+	try useoning tenet with Bro Orb instead; [ugh! I know. I just have to do this once.]
 
 check useoning tenet with Bro Orb:
 	now useon-tenet is true;
@@ -4706,7 +4762,7 @@ the tent net is a thing. description is "It's tagged as a 'Tent o['] Dot Net,' w
 
 chapter epicer recipe
 
-the epicer recipe is a helpdoc. description is "You've seen recipes before, but this is a big interesting one! It describes how to make a north-tron, which can blast through anything ... including the KAOS Oak![paragraph break][tronpartlist][run paragraph on]". importancy of the epicer recipe is 3.
+the epicer recipe is a helpdoc. description is "You've seen recipes before, but this is a big interesting one! It describes how to make a north-tron, which can blast through anything ... including the [kaos oak]![paragraph break][tronpartlist][run paragraph on]". importancy of the epicer recipe is 3.
 
 to say tronpartlist:
 	repeat with tp running through tronparts:
@@ -4835,7 +4891,7 @@ understand "not/baton" and "not a/baton" and "not a baton" as not-a-baton.
 
 chapter madam
 
-Madam is a proper-named female person in Red Roses Order. "[one of]Before you have time to gloat '[']N I'm In, you see MADAM standing[or]MADAM stands[stopping] here in defiance, holding the Gal Flag high and waving it.". description is "She obviously didn't get to her position of power by being some over-educated pantsuited fool who made a small mistake with an e-mail server once.[paragraph break]As she waves that Gal Flag. You should probably be grateful she doesn't have a girl rig, too. You need a way to neutralize the Gal Flag!"
+Madam is a proper-named female person in Red Roses Order. "[one of]Before you have time to gloat '[']N I'm In,' you see MADAM standing[or]MADAM stands[stopping] here in defiance, holding the Gal Flag high and waving it.". description is "She obviously didn't get to her position of power by being some over-educated pantsuited fool who made a small mistake with an e-mail server once.[paragraph break]As she waves that Gal Flag. You should probably be grateful she doesn't have a girl rig, too. You need a way to neutralize the Gal Flag!"
 
 Madam carries the Gal Flag. description of Gal Flag is "It's fluttering even without a breeze, and it reflects throughout the mirror rim to make you feel more than a little overwhelmed."
 
@@ -5098,7 +5154,7 @@ talk-text of Flee Elf is "[one of]'That cap. It's for you. Find the right way to
 talk-text of Gulf Lug is "'Ill, I...'".
 talk-text of Ian is "Ian sniffs. 'Why should I talk to someone not classy enough to BELONG here on Mont Nom?' He turns his head for a moment, as if doing something he's ashamed of.".
 talk-text of Kayo Yak is "It looks up a bit but then ignores you. Maybe there's an order it can respond to.".
-talk-text of King Nik is "'I am not a very good king! I tried to understand social forces and big picture issues and stuff on my trip abroad, but I got all muddled. Maybe you could help me?'".
+talk-text of King Nik is "'I am not a very good king! I've tried to understand social and economic forces and big picture issues and stuff. But it gets all muddled. I'm worried my kingdom will soon become Skint Nik's. Maybe you could help me?'".
 talk-text of Knife Fink is "The Knife Fink stops and looks over your possessions for a moment.".
 talk-text of Known Wonk is "'Say, as...' There is some awkward small talk. The Known Wonk's mind is elsewhere, but maybe you can help with practical matters.".
 talk-text of Madam is "She is raising the Gal Flag and incanting ... something. You're not sure what. But talking won't interrupt it.".
