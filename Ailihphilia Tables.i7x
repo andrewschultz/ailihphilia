@@ -974,6 +974,7 @@ randtxt
 "We Nab Anew"
 "Yet a Matey"
 "Yo, Beer Free, Boy"
+"YOLO'y"
 
 table of noesies
 randtxt
@@ -1018,6 +1019,7 @@ randtxt
 "[']Tis. Suss it!"
 "Boone?! Noob!"
 "EOF, Foe!"
+"If I wifi..."
 "More ROM!"
 "Piece IP?!"
 "Posts-op? POST, sop!"
@@ -1119,6 +1121,7 @@ randtxt
 "We nap anew."
 "Won't, Now."
 "Y'revery!"
+"Yon! Oy!"
 
 table of wordy drow laments
 randtxt
@@ -1152,11 +1155,13 @@ table of yuge taunts
 randtxt
 "A-lists? I? La!"
 "Ahahahahahaha!"
+"Ey, dye?!"
 "Gibe! Big!"
 "Hog, oh!"
 "Huge! Guh!"
 "I B FBI!"
 "Iz no Ponzi!"
+"KJU? J/k!"
 "Main, I am!"
 "ME!!!! Haw. Ahem."
 "Me: sees [']em!"
@@ -1166,11 +1171,14 @@ randtxt
 "Nil Appalin[']!"
 "Null [']un!"
 "Odd-*** Saddo!" [ignore]
+"Oh, BHO!"
 "Ooh...shoo!"
 "Pal! Clap!"
 "Pal, rub burlap!"
 "A papa! A papa!"
+"Re-sold LOSER!"
 "ROB ALL LABOR!"
+"Rug?! Ur..."
 "So-sos!"
 "Soros! Soros!"
 "Sue Me?! Us?!"
