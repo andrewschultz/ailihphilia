@@ -213,10 +213,10 @@ You need to have spent time in the Tao Boat for that to happen.
 It looks pretty hashed together, bumpy. Something could be in there.
 USE RADAR ON MADE DAM.
 This helps you locate something.
->>ALL-IVY VILLA
+>>UNEVEN U
 ?Why won't the Code Doc help me?
-Help the Code Doc make a full house.
-The all-ivy villa is not covered on top. If something went over it, it'd be complete.
+Help the Code Doc build at least part of Uneven U.
+It is not covered on top. If something went over it, it'd be a bit more complete.
 Maybe you have found a covering elsewhere?
 Like, in the Trapeze Part?
 USE TENT NET ON CODE DOC.
@@ -225,9 +225,6 @@ The code doc could help you decipher something.
 Do you have a document that almost, but doesn't quite, make sense?
 The spa maps, once you get them.
 USE SPA MAPS ON CODE DOC.
-?What's the deal with the name change?
-Well, it's not *all* ivy now that the tent net is on top, so it had to be changed.
-There is no practical difference. I hope you enjoy the name change.
 ?A porch crop sprouted up! How do I tame or trim it?
 Do you have any sharp item that worked before to cut something?
 The wash saw worked on the past sap.
@@ -244,7 +241,7 @@ USE SAGE GAS ON TAME MAT.
 ?What is the guru rug for?
 It hides an even greater secret.
 It's too esoteric, but maybe you could inject some emotion into it.
-Anything t hat might get you enthusiastic?
+Anything that might get you enthusiastic?
 USE SHARP RAHS ON GURU RUG.
 >>YACK CAY
 ?How do I get past the Known Wonk?

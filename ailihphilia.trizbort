@@ -125,7 +125,7 @@ Initially sent to source code/repository November 2017.</history>
 		</line>
 		<room id="39" name="Dumb Mud" subtitle="" x="-384" y="-32" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0" />
 		<room id="41" name="Scrap Arcs" subtitle="" x="416" y="224" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects custom="yes" customRight="-20" customDown="0">Slate Metals</objects>
+			<objects custom="yes" customRight="-32" customDown="0">Slate Metals|   (Girt Rig)</objects>
 		</room>
 		<room id="43" name="Sneer Greens" subtitle="Et Tu Butte" x="-384" y="-288" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="yes" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects at="n" custom="yes" customRight="-32" customDown="0">  Yuge Guy|(Smirk Rims)</objects>
@@ -154,8 +154,8 @@ Initially sent to source code/repository November 2017.</history>
 		<room id="51" name="Calcific Lac" subtitle="" x="-544" y="-288" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects at="n" custom="yes" customRight="-22" customDown="0">Tao Boat|Kayak</objects>
 		</room>
-		<room id="53" name="Den, Ivy-Vined" subtitle="All-Ivy Villa" x="-544" y="96" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects>Code Doc|(Birch Crib)</objects>
+		<room id="53" name="Uneven U" subtitle="" x="-544" y="96" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects>Code Doc|(All-Ivy Villa)|(Den, Ivy Vined)</objects>
 		</room>
 		<line id="54" name="" description="">
 			<dock index="0" id="49" port="s" />
@@ -176,7 +176,7 @@ Initially sent to source code/repository November 2017.</history>
 			<objects custom="yes" customRight="-24" customDown="0">Kayo Yak|Stamp Mats|(Stewy Wets)</objects>
 		</room>
 		<room id="57" name="Drawl Ward" subtitle="" x="256" y="224" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects custom="yes" customRight="-24" customDown="0">Bond Nob|(Girt Rig)</objects>
+			<objects custom="yes" customRight="-26" customDown="0"> Bond Nob|(Birch Crib)</objects>
 		</room>
 		<room id="58" name="Dopy Pod" subtitle="Dope Pod" x="96" y="224" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-12" customDown="0">Cassettes Sac|Demo Med</objects>

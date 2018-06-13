@@ -340,7 +340,7 @@ loc-num of Fun Nuf is 23.
 loc-num of Yawn Way is 24.
 loc-num of Emo Dome is 25.
 loc-num of Toll Lot is 26.
-loc-num of Den Ivy Vined is 30.
+loc-num of Uneven U is 30.
 loc-num of Mont Nom is 31.
 loc-num of Ooze Zoo is 32.
 loc-num of Worn Row is 33.
@@ -1189,10 +1189,14 @@ drink-warning is a truth state that varies.
 the block drinking rule is not listed in any rulebook.
 
 check drinking:
-	if noun is Elan Ale, say "No drinking on the job. Besides, with what you've done so far, you might be able to trade it for something more useful." instead;
-	if noun is Gorge Grog, say "One look at the grog, and you realize you're not up to such super-powered alcohol." instead;
-	if noun is murdered rum, say "The rum part is drinkable, but the murdered rum isn't." instead;
-	say "[if noun is drinkable]Pish! Sip?![else][']S not wet. Ew--TONS.[end if]";
+	if noun is Elan Ale:
+		say "No drinking on the job. Besides, with what you've done so far, you might be able to trade it for something more useful." instead;
+	else if noun is Gorge Grog:
+		say "One look at the grog, and you realize you're not up to such super-powered alcohol." instead;
+	else if noun is murdered rum:
+		say "The rum part is drinkable, but the murdered rum isn't." instead;
+	else:
+		say "[one of]Pish! Sip?![or][']S not wet. Ew--TONS.[in random order]";
 	if drink-warning is false, say "(You don't need to drink anything in this game. Liquids have other purposes. Besides, I didn't implement Pee Keep, Loo Pool or Lav Oval.)[paragraph break]";
 	now drink-warning is true instead;
 
@@ -1805,8 +1809,8 @@ NULL ILLUN	Known Wonk	--	--	bump-maws rule	true	true	false	Grebeberg	Yack Cay	fa
 el doodle	edits tide	spa maps	--	rahs-too rule	true	true	false	Grebeberg	Yack Cay	false	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps! And there is a bonus! It appears El Doodle was so jumbled, there were two things. Sharp rahs appear on another sheet of paper, as some sort of confused motivation, and you take them."
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	Calcific Lac	false	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where. You whisper 'Row, or' whenever you get tired. Then you see Elided Ile in the distance. So you stop off there. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and you are worthy to fight the vicious Bar Crab. It is no match for your elope pole. The citizens hand you a YOU BUOY to tell you they're glad you're you, asking only for the elope pole as a souvenir. Well, it was getting a bit awkward to carry.[paragraph break]They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Calcific Lac. As it gets near and bends away, you jump off, using the buoy to paddle and float back all the way."
 dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	Calcific Lac	false	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
-tent net	Code Doc	--	--	--	true	true	false	Grebeberg	Den Ivy Vined	false	"Together, you figure out what to do to make the tent net proper cover for the All-Ivy Villa. 'Tie it ... tie it ...'[paragraph break]Once the work is done, the Code Doc thanks you and offers to share some knowledge in return, whenever[if spa maps are preclued]. In fact, the Code Doc would probably be more receptive to helping you with the spa maps[end if]."
-spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	Den Ivy Vined	false	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my for-prof math tam for this one. One second, let's see--Aha! Oho...'[paragraph break]You each split an Ed-Ade to make sure the lesson is taught and remembered well. Despite a minor pupil slip-up, the Code Doc is never edu-rude. It soon makes complete sense to you."
+tent net	Code Doc	--	--	--	true	true	false	Grebeberg	Uneven U	false	"Together, you figure out what to do to make the tent net proper cover for at least part of Uneven U. 'Tie it ... tie it ...'[paragraph break]Once the work is done, the Code Doc thanks you and offers to share some knowledge in return, whenever[if spa maps are preclued]. In fact, the Code Doc would probably be more receptive to helping you with the spa maps[end if]."
+spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	Uneven U	false	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my for-prof math tam for this one. One second, let's see--Aha! Oho...'[paragraph break]You each split an Ed-Ade to make sure the lesson is taught and remembered well. Despite a minor pupil slip-up, the Code Doc is never edu-rude. It soon makes complete sense to you."
 spa maps	go-by bog	sage gas	maps-readable rule	gas-think-wipe rule	true	true	false	Grebeberg	Apse Spa	false	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	Moo Room	false	"You stick some strands of yahoo hay into the damaged end of the dork rod. It's now a moor broom!"
 --	--	--	rev-pace-cap rule	--	true	--	--	Dim Mid	Ooze Zoo	false
@@ -1817,9 +1821,9 @@ sharp rahs	guru rug	tenet	--	brag-garb-bye rule	true	true	true	Grebeberg	Motto B
 --	--	--	rev-nail-Ian rule	--	true	--	--	Grebeberg	Mont Nom	false
 --	--	--	rev-first-food-combo rule	--	true	--	--	Grebeberg	Mont Nom	false
 --	--	--	rev-second-food-combo rule	--	true	--	--	Grebeberg	Mont Nom	false
-Moor Broom	Tru Yurt	Exam Axe	--	bump-ivy rule	true	true	false	Grebeberg	Yack Cay	false	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! Then, back to the Tru-Yurt for the Wonk. They've done enough for you." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
+Moor Broom	Tru Yurt	Exam Axe	--	bump-uneven-u rule	true	true	false	Grebeberg	Yack Cay	false	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! Then, back to the Tru-Yurt for the Wonk. They've done enough for you." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
 --	--	--	rev-get-bro-orb rule	--	false	--	--	--	Le Babel	--
-wash saw	porch crop	balsa slab	--	--	true	true	false	Grebeberg	Den Ivy Vined	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods. You've done well. There's a balsa slab lying around. The Code doc offers it to you. Now, you ... do own wood!"
+wash saw	porch crop	balsa slab	--	--	true	true	false	Grebeberg	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods. You've done well. There's a balsa slab lying around. The Code doc offers it to you. Now, you ... do own wood!"
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	Dumb Mud	false	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
 DNA band	reifier	DNA hand	--	--	true	true	false	Yelpley	Worn Row	false	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand! It doesn't have any slime or blood leaking, and when you take it, it doesn't twitch too much."
 roto motor	DNA hand	Mr Arm	--	--	true	true	true	Yelpley	Worn Row	false	"Some of the stuffing inside the hand has to pop out to make space for the roto motor to fit in. There's enough to make a whole arm! The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on the arm (MR. ARM) and hand: BANG NAB. The arm will probably give the hand a bit more reach."
@@ -2069,12 +2073,6 @@ this is the bump-gulf rule:
 	shuffle-before Flu Gulf and Sneer Greens;
 	the rule succeeds;
 
-this is the bump-ivy rule:
-	shuffle-before Den Ivy Vined and Red Roses Order;
-	move porch crop to Den Ivy Vined;
-	moot Known Wonk;
-	the rule succeeds;
-
 this is the bump-maws rule:
 	moot mist sim;
 	shuffle-before Dumb Mud and Le Babel;
@@ -2083,6 +2081,12 @@ this is the bump-maws rule:
 
 this is the bump-pod rule:
 	shuffle-before Dopy Pod and Toll Lot;
+	the rule succeeds;
+
+this is the bump-uneven-u rule:
+	shuffle-before Uneven U and Red Roses Order;
+	move porch crop to Uneven U;
+	moot Known Wonk;
 	the rule succeeds;
 
 this is the chase-in-zoo rule:
@@ -2327,7 +2331,9 @@ mush sum	"The mush sum is too murky and unstable to deal with. And to break the 
 go fog	"The go fog is very dense. It pushes you back even as you look at it. As if to say, go away, and also, get going with what you want and need to do."
 past sap	"[if liar grail is moot]With the liar grail gone, you don't want to have to deal with the past sap again[else]The past sap might be useful, but you [how-take-sap][end if]."
 stewy wets	"The stewy wets are unchangeable."
-birch crib	"Each birch crib is private property."
+den ivy vined	[ivy-no]."
+all ivy villa	[ivy-no]."
+birch crib	"The birch crib is private property."
 Line Nil	"There's nothing you need behind the Line Nil security system. In fact, it's probably protecting you."
 be web	"The be web is--well, it's itself, and maybe there's a message here but you'll figure it out once you're finished adventuring. It's not important enough now."
 voodoo v	"You don't want or need to mess with the voodoo v."
@@ -2349,6 +2355,8 @@ Tru Hurt	"[rediv-instead of tru hurt]."
 Waster Fretsaw	"[rediv-instead of waster fretsaw]."
 saner arenas	"It's good the saner arenas are there, but you don't need to mess with them."
 [zzper]
+
+to say ivy-no: say "If you weren't good enough for RAW LEVEL WAR, you're definitely not good enough for the Ivies. That's you the character, not you the game-player"
 
 to say rediv-instead of (th - a thing):
 	say "While the [th] is worrisome, it's clearly not as dangerous as the Redivider"
@@ -2940,7 +2948,7 @@ to say cant-beat: say "What makes you think you can beat the [if Yuge Guy is in 
 
 chapter murdered rum
 
-some murdered rum is a drinkable thing. description is "It looks viscous, like oil. Perhaps it was only murk rum long ago, before it sat in the belly of the ME Totem for so long. It's ... well, you wouldn't want to get in contact with it. A lot more powerful than regular alcohol."
+some murdered rum is a drinkable thing. description is "It looks viscous, like oil. Perhaps it was only murk rum long ago, before it fermented in the belly of the ME Totem for so long. It has 'G! Nipping!' on it, but ... well, drinking it seems like a bad idea. It's quite possible more caustic than the Gorge Grog[if Gorge Grog is in Deft Fed] in [Deft Fed][end if]."
 
 book Dumb Mud
 
@@ -3063,7 +3071,7 @@ report taking Bro Orb:
 useon-tenet is a truth state that varies.
 
 check useoning Bro Orb with tenet:
-	try useoning tenet with Bro Orb instead; [ugh! I know. I just have to do this once.]
+	try useoning tenet with Bro Orb instead; [ugh! I know. I just have to do this hack once, though. ??]
 
 check useoning tenet with Bro Orb:
 	now useon-tenet is true;
@@ -3269,29 +3277,33 @@ chapter eroded ore
 
 some Eroded Ore is a thing. description is "You're no expert metallurgist, but it's dim and porous and probably not as potent as it could be."
 
-book Den Ivy Vined
+book Uneven U
 
-Den Ivy Vined is south of Swamp Maws. It is in Grebeberg. "This quasi-residence has a birch crib (slang for home, not a baby bed) west and east, but you can go north and south easily. [if tent net is moot]It feels nice and cozy now you helped the Code Doc add some furnishings[else]But it doesn't quite feel quite as comfortable as it should, yet. Having some sort of roof might make it even homier[end if][if-porch]."
+Uneven U is south of Swamp Maws. It is in Grebeberg. "This looks vaguely like a university campus, with an all-ivy villa blocking the way west and a den, ivy-vined, blocking the way east. You can go north and south easily, though. [if tent net is moot]It feels nice and cozy now you helped the Code Doc add some furnishings[else]But it feels terribly unfinished, even with the ivy ambience. Having some sort of roof might make it even homier[end if][if-porch]."
 
 understand "cribs" and "birch cribs" as birch crib.
 
 instead of entering birch crib, try going west instead;
 
-check going in den ivy vined: if noun is east or noun is west, say "Each birch crib is much more private and closed than the den." instead;
+check going in Uneven U: if noun is east or noun is west, say "Each birch crib is much more private and closed than the den." instead;
 
-printed name of Den Ivy Vined is "[if tent net is not moot]Den, Ivy-Vined[else]All-Ivy Villa[end if]".
+check going nowhere in Uneven U: say "You see no way into the [if noun is west]all-ivy villa[else]den, ivy-vined[end if], and you see no reason to enter it, either." instead;
 
-understand "all ivy villa" and "all ivy" and "all/ivy" and "all/ivy villa" as den ivy vined when tent net is not moot.
+section all ivy ville
 
-chapter birch crib
+the all ivy villa is peripheral scenery in Uneven U. "It's impressive looking, but you see no way to enter it."
 
-the birch crib is peripheral scenery in Den Ivy Vined. "It looks like a nice place to be, but you couldn't afford it[if player has cash sac], even with the cash sac[end if]."
+instead of entering all ivy villa, try going west instead;
 
-check going nowhere in den ivy vined: say "The Birch Crib is not somewhere you need to be." instead;
+section all ivy ville
+
+the den ivy vined is peripheral scenery in Uneven U. "It's impressive looking, but you see no way to enter it.". printed name of den ivy vined is "den, ivy-vined".
+
+instead of entering den ivy vined, try going east instead;
 
 chapter code doc
 
-Code Doc is a neuter person in Den Ivy Vined. "[one of]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket labeled DR A. CARD. Busy, but not too busy to help someone else."
+Code Doc is a neuter person in Uneven U. "[one of]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket labeled DR A. CARD. Busy, but not too busy to help someone else."
 
 understand "dr/card" and "dr card" as code doc.
 
@@ -3314,7 +3326,7 @@ chapter porch crop
 
 the porch crop is scenery. "[if wash saw is moot]It's been cleared up since you used the wash saw on it[else]It really sprawls. Maybe there is a way to trim it to help the Code Doc[end if]."
 
-to say if-porch: if porch crop is in Den Ivy Vined, say ". [if wash saw is moot]The porch crop is still trimmed back[else]Some porch crop has sprouted up, and it looks okay, but there's just too much of it[end if]";
+to say if-porch: if porch crop is in Uneven U, say ". [if wash saw is moot]The porch crop is still trimmed back[else]Some porch crop has sprouted up, and it looks okay, but there's just too much of it[end if]";
 
 chapter balsa slab
 
@@ -3322,7 +3334,7 @@ The Balsa Slab is a thing. description is "It appears grooved, as if someone has
 
 book Lair Trial
 
-Lair Trial is south of Den Ivy Vined. It is in Grebeberg. "Thick go-fog causes this passage to bend [if Motto Bottom is unvisited]back [end if]north and east[if ergot ogre is moot], and with the trial over, you're free to go either way[end if]."
+Lair Trial is south of Uneven U. It is in Grebeberg. "Thick go-fog causes this passage to bend [if Motto Bottom is unvisited]back [end if]north and east[if ergot ogre is moot], and with the trial over, you're free to go either way[end if]."
 
 printed name of Lair Trial is "[if ergot ogre is in Lair Trial]Lair Trial[else]Stride Dirts[end if]".
 
@@ -3632,7 +3644,7 @@ Fun Nuf	" FUN "	" NUF "
 Yawn Way	"YAWN "	" WAY "
 Emo Dome	"[if Diktat Kid is moot]DOME[else] EMO[end if] "	"[if Diktat Kid is moot] MOD[else]DOME[end if] "
 Toll Lot	"TOLL "	" LOT "
-Den Ivy Vined	" IVY "	"[if tent net is moot]VINED[else]VILLA[end if]"
+Uneven U	"UNEVE"	" N U "
 Mont Nom	"MONT "	" NOM "
 Ooze Zoo	"OOZE "	" ZOO "
 Worn Row	"WORN "	" ROW "
@@ -4974,15 +4986,19 @@ chapter Elan Ale
 
 the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, unsurprisingly. It's about the size of a pint nip."
 
-chapter girt rig
+chapter birch crib
 
-the girt rig is peripheral scenery in Drawl Ward. description is "It is too sturdy to climb or break down. Also, stuff like YA SAY? and YO BOY are scribbled in there so the Drawl Ward is still drawl-y with or without the Bond Nob."
+the birch crib is peripheral scenery in Drawl Ward. "It looks like a nice place to be, but you couldn't afford it[if player has cash sac], even with the cash sac[end if]. Plus there's no way in, and it's probably somebody's.[paragraph break]Stuff like YA SAY? and YO BOY are scribbled in there so the Drawl Ward [if Bond Nob is in Drawl Ward]is still[else]would still be[end if] drawl-y with or without the Bond Nob."
 
 book Scrap Arcs
 
-Scrap Arcs is east of Drawl Ward. It is in Yelpley. "You can't go any farther here--only back west. Some slate metals are lying around here[if stamp mats are moot]--you've probably already used what you need[else], and if you needed to use a bit, nobody would notice[end if]."
+Scrap Arcs is east of Drawl Ward. It is in Yelpley. "A girt rig blocks passage every way except back west. Some slate metals are lying around here[if stamp mats are moot]--you've probably already used what you need[else], and if you needed to use a bit, nobody would notice[end if]."
 
 understand "arc" and "scrap arc" as scrap arcs.
+
+chapter girt rig
+
+the girt rig is peripheral scenery in Scrap Arcs. description is "It is too sturdy and large to climb or break down or even walk around. I guess it has to be, to deal with all the scrap safely."
 
 chapter slate metals
 
@@ -5243,7 +5259,7 @@ carry out gotoing:
 
 a room can be eastpost, eastcond, westpost or unblockable. a room is usually unblockable.
 
-Yack Cay is westpost. Swamp Maws is westpost. Calcific Lac is westpost. Trial Lair is westpost. Den Ivy Vined is westpost. Trial Lair is westpost. Motto Bottom is westpost.
+Yack Cay is westpost. Swamp Maws is westpost. Calcific Lac is westpost. Trial Lair is westpost. Uneven U is westpost. Trial Lair is westpost. Motto Bottom is westpost.
 Red Roses Order is eastpost. Swept Pews is eastpost. Drawl Ward is eastpost. Dopy Pod is eastpost. Scrap Arcs is eastpost. Deft Fed is eastpost.
 Gross Org is eastcond. Pro Corp is eastcond.
 
@@ -5339,7 +5355,7 @@ this is the gate-gone rule:
 
 avail-rule of Swamp Maws is dung-gone rule.
 avail-rule of Yack Cay is dung-gone rule.
-avail-rule of Den Ivy Vined is dung-gone rule.
+avail-rule of Uneven U is dung-gone rule.
 avail-rule of Trial Lair is dung-gone rule.
 
 this is the dung-gone rule:
@@ -5828,7 +5844,7 @@ to hint-bump-worn:
 
 [this is the list of how I do things in the walkthrough.]
 
-L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Moo Room, Dumb Mud, Swamp Maws, Yack Cay, Calcific Lac, Den Ivy Vined, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
+L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Moo Room, Dumb Mud, Swamp Maws, Yack Cay, Calcific Lac, Uneven U, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
 
 [?? nothing game-critical to do here = if there is a LLP]
 
@@ -5858,7 +5874,6 @@ done-rule of Art Xtra is art-xtra rule.
 done-rule of Calcific Lac is calcific-lac rule.
 done-rule of Cold Loc is cold-loc rule.
 done-rule of Deft Fed is deft-fed rule.
-done-rule of Den Ivy Vined is den-ivy-vined rule.
 done-rule of Dirge Grid is dirge-grid rule.
 done-rule of Dopy Pod is dopy-pod rule.
 done-rule of Drawl Ward is drawl-ward rule.
@@ -5871,7 +5886,6 @@ done-rule of Fun Nuf is fun-nuf rule.
 done-rule of Gross Org is gross-org rule.
 done-rule of Lair Trial is lair-trial rule.
 done-rule of Le Babel is le-babel rule.
-done-rule of Swamp Maws is swamp-maws rule.
 done-rule of Mont Nom is mont-nom rule.
 done-rule of Moo Room is moo-room rule.
 done-rule of Motto Bottom is motto-bottom rule.
@@ -5882,11 +5896,13 @@ done-rule of Red Roses Order is red-roses-order rule.
 done-rule of Scrap Arcs is scrap-arcs rule.
 done-rule of Seer Trees is seer-trees rule.
 done-rule of Sneer Greens is sneer-greens rule.
-done-rule of Yack Cay is yack-cay rule.
+done-rule of Swamp Maws is swamp-maws rule.
 done-rule of Swept Pews is swept-pews rule.
 done-rule of Toll Lot is toll-lot rule.
 done-rule of Trapeze Part is trapeze-part rule.
+done-rule of Uneven U is uneven-u rule.
 done-rule of Worn Row is worn-row rule.
+done-rule of Yack Cay is yack-cay rule.
 done-rule of Yawn Way is yawn-way rule.
 done-rule of Yell Alley is yell-alley rule.
 
@@ -5900,13 +5916,13 @@ done-for-good rule of Art Xtra is art-xtra-complete rule.
 
 done-for-good rule of Cold Loc is cold-loc-complete rule.
 
-done-for-good rule of Den Ivy Vined is den-ivy-vined-complete rule.
-
 done-for-good rule of Fun Nuf is trivially false rule.
 
-done-for-good rule of Yack Cay is yack-cay-complete rule.
+done-for-good rule of Uneven U is uneven-u-complete rule.
 
 done-for-good rule of Worn Row is worn-row-complete rule.
+
+done-for-good rule of Yack Cay is yack-cay-complete rule.
 
 done-for-good rule of Yawn Way is yawn-way-complete rule.
 
@@ -5984,20 +6000,20 @@ this is the deft-fed-complete rule:
 	if Elan Ale is moot, the rule succeeds;
 	the rule fails;
 
-section Den Ivy Vined rule
+section Uneven U rule
 
-this is the den-ivy-vined rule:
+this is the uneven-u rule:
 	if wash saw is moot, continue the action;
 	if maps-explained is true, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if porch crop is in Den Ivy Vined, say "USE WASH SAW ON PORCH CROP." instead;
+	if porch crop is in Uneven U, say "USE WASH SAW ON PORCH CROP." instead;
 	if tent net is off-stage, say "To make the Code Doc happy, there's something [if Trapeze Part is visited]west of Evaded Ave[else] in Trapeze Part[end if] you can get." instead;
 	if player has tent net, say "USE TENT NET ON CODE DOC." instead;
 	if player does not have el doodle, say "There's something back in [Art Xtra] to pick up." instead;
 	if player does not have spa maps, say "You can change El Doodle into something the Code Doc can decipher." instead;
 	say "USE SPA MAPS ON CODE DOC." instead;
 
-this is the den-ivy-vined-complete rule:
+this is the uneven-u-complete rule:
 	if wash saw is moot, the rule succeeds;
 
 section Dirge Grid rule
