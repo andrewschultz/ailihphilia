@@ -20,7 +20,7 @@ understand "esp apse" as a mistake ("You don't see what to do next.[mis of 1]") 
 
 understand "pool sloop" as a mistake ("No boat appears to take you across the watery bits. [if sage gas is off-stage]You'll need another way through[else]You already got the sage gas, anyway[end if].[mis of 2]") when player is in Apse Spa.
 
-understand "spa caps" as a mistake ("But you already have your pace cap![mis of 3]") when player is in Apse Spa or spa maps are quicknear.
+understand "spa caps" as a mistake ("BUT YOU ALREADY HAVE YOUR PACE CAP![mis of 3]") when player is in Apse Spa or spa maps are quicknear.
 
 understand "spa gaps" as a mistake ("[if player is not in Apse Spa]No, you want the maps to be complete[else]The Apse Spa is too sturdy. You don't want it to collapse[end if].[mis of 4]") when player is in Apse Spa or spa maps are quicknear.
 
@@ -40,7 +40,7 @@ understand "art ecetra" as a mistake ("One silly misspelling does not beget anot
 
 chapter Ivy Villa
 
-understand "cods doc" as a mistake ("No way. It's nice to be around someone non-fishy, actually.[mis of 11]") when player is in Den Ivy Vined.
+understand "cods doc" as a mistake ("No way. It's nice to be around someone non-fishy, actually.[mis of 11]") when player is in Uneven U.
 
 chapter Calcific Lac
 
@@ -278,6 +278,8 @@ understand "fund nuf" as a mistake ("Nonsense! Adventure is its own reward![mis 
 
 understand "funk nuf" as a mistake ("No cool music plays, but at least it doesn't smell worse.[mis of 110]") when player is in Fun Nuf.
 
+understand "kaos soak" as a mistake ("The [kaoscaps] fails to collapse in a torrent of water.[mis of 251]") when kaos oak is quicknear.
+
 understand "till lit" as a mistake ("You possess no farm tools. And this would be pointless anyway.[mis of 111]") when player is in Fun Nuf.
 
 understand "tilt lit" as a mistake ("It's stuck into the ground.[mis of 112]") when player is in Fun Nuf.
@@ -351,7 +353,7 @@ understand "bron orb" as a mistake ("King James's orb is a basketball, and that'
 
 chapter Mont Nom
 
-understand "Ian ai" as a mistake ("Ian remains naturally sentient.[mis of 135]") when Ian is quicknear.
+understand "Ian ai" as a mistake ("Ian remains naturally sentient. Though it's quite possible that any intellectual posturing of his is fake.[mis of 135]") when Ian is quicknear.
 
 understand "krab ark" as a mistake ("You don't have the materials to climb the ark, and you don't need to.[mis of 136]") when player is in Mont Nom.
 
@@ -523,7 +525,7 @@ chapter Swamp Maws
 
 understand "swam maws" as a mistake ("Perhaps someone has, but you don't need to.[mis of 206]") when player is in Swamp Maws.
 
-understand "swami maws" and "swamy maws" as a mistake ("[if Yack Cay is visited and den ivy vined is visited]Aw, come on, you've already met TWO SMART PEOPLE nearby[else if Yack Cay is unvisited and den ivy vined is unvisited]There might be someone smart nearby[else]Aw, come on, you've already met someone smart nearby[end if].[mis of 207]") when player is in Swamp Maws.
+understand "swami maws" and "swamy maws" as a mistake ("[if Yack Cay is visited and Uneven U is visited]Aw, come on, you've already met TWO SMART PEOPLE nearby[else if Yack Cay is unvisited and Uneven U is unvisited]There might be someone smart nearby[else]Aw, come on, you've already met someone smart nearby[end if].[mis of 207]") when player is in Swamp Maws.
 
 section eroded ore
 
@@ -637,7 +639,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 

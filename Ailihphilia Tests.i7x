@@ -34,9 +34,9 @@ test gh7 with "work row/use stinky knits on rotator/gt pro corp/get all/use gorg
 
 test gh8 with "w/use radar on made dam/n/use null illun on known wonk/use el doodle on edits tide/n/use elope pole on kayak/use dork rod on tao boat/gt swamp maws/s/use tent net on code doc/use spa maps on code doc/gt apse spa/use spa maps on go-by bog".
 
-test gh9 with "gt moo room/use enact cane on yahoo hay/w/pace cap/use troll ort on brag garb/gt ivy/s/yak okay".
+test gh9 with "gt moo room/use enact cane on yahoo hay/w/pace cap/use troll ort on brag garb/gt uneven u/s/yak okay".
 
-test gh10 with "e/use sage gas on tame mat/use sharp rahs on guru rug/gt dumb mud/s/nail ian/use snack cans on ufo tofu/use gift fig on mayo yam/gt yack cay/use moor broom on tru yurt/gt ivy/use wash saw on porch crop/gt dumb mud/use exam axe on lie veil/n/muss opossum/get all/gt work row/use dna band on reifier/use roto motor on dna hand/use eroded ore on reviver/use you buoy on rotator/gt yell alley/use mr arm on bomb mob/get rep popper/gt flu gulf/use nat's tan on scorn rocs".
+test gh10 with "e/use sage gas on tame mat/use sharp rahs on guru rug/gt dumb mud/s/nail ian/use snack cans on ufo tofu/use gift fig on mayo yam/gt yack cay/use moor broom on tru yurt/gt uneven u/use wash saw on porch crop/gt dumb mud/use exam axe on lie veil/n/muss opossum/get all/gt work row/use dna band on reifier/use roto motor on dna hand/use eroded ore on reviver/use you buoy on rotator/gt yell alley/use mr arm on bomb mob/get rep popper/gt flu gulf/use nat's tan on scorn rocs".
 
 test gh11 with "w/use rep popper on me totem/gt emo dome/n/use bro orb on mirror rim/use balsa slab on sword rows/gt work row/use not-a-baton on reifier/use murdered rum on yard ray/emit noontime/use yard ray on test set/gt fun nuf/use tnt on ore zero/n/use me gem on knife fink/use taboo bat on verses rev/use yard ray on redivider/s/use x-ite tix on tix exit".
 

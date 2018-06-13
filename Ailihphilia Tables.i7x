@@ -450,7 +450,6 @@ person-name
 
 table of random palindrome lastfirst names
 person-name
-"Able, Melba"
 "Adelizzi, Leda"
 "Adels, Leda"
 "Ader, Freda"
@@ -574,7 +573,6 @@ person-name
 "Hnat, Anh"
 "Hsi, Tish"
 "Iburg, Rubi"
-"Iller, Elli"
 "Ilse, Lesli"
 "Iman, Ami"
 "Imoto, Tomi"
@@ -915,9 +913,9 @@ randtxt
 "Spike-Kip's"
 "Tipsy Spit"
 "Tope Depot"
-"Zara'Z"
+"Zara'z"
 "Zorro'z"
-"Zuzu'Z"
+"Zuzu'z"
 
 [this may be related to Yuge Guy taunts, but the Diktat Kid insults you. The Yuge Guy puffs himself up.]
 table of diktat taunts
@@ -928,6 +926,7 @@ randtxt
 "Duh, THUD!"
 "Mess [']em!"
 "Noose soon!"
+"Ok, TKO!"
 "Peewee, weep!"
 "Poorer! Oop!"
 "Rah! Thar!"
@@ -956,15 +955,18 @@ randtxt
 "Emote to Me"
 "Hat-stah"
 "Hook, Ooh"
+"Jesse J"
 "Kazoo Zak"
 "Krew Twerk"
 "Le BE Rebel"
+"Lulu L"
 "Major Pro Jam"
 "Me: Opt, Poem"
 "O, Got to Go"
 "O/T: Teh Ghetto"
 "Ode: Dude, DO"
 "Opera Repo"
+"Petite P"
 "Rap Spar"
 "See Lee's"
 "Set-a-Dates"
@@ -972,6 +974,7 @@ randtxt
 "Sum Us"
 "Sun on Us"
 "To Own: WOOT"
+"Wanna W"
 "We Nab Anew"
 "Yet a Matey"
 "Yo, Beer Free, Boy"
@@ -983,6 +986,7 @@ randtxt
 "Derided! Ired!"
 "Emo, me."
 "EVAR Grave?"
+"Fretter? F!"
 "Hm. SMH."
 "Moody? Doom!"
 "No way? Aw, ON!"
@@ -1023,9 +1027,17 @@ randtxt
 "Emil Slime"
 "Evil Clive"
 "Gory Rog"
+"Hat Ptah"
 "Iller Elli"
 "Mad Adam"
+"Mini-M" [ignore]
 "Obese Bo"
+"Peewee P"
+"Presser P"
+"Rocco R"
+"Rollo R"
+"Trekker T"
+"Weewee W"
 "Wolf Low"
 
 table of Rob droning
