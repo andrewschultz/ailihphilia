@@ -10,14 +10,40 @@ import sys
 import re
 from collections import defaultdict
 
+this_cmd = defaultdict(str)
 what_skipped = defaultdict(str)
 destinations = defaultdict(str)
 
-orb_next = False
-line_nums = []
 start_low = start_high = 0
 end_low = end_high = 0
 launch_first = launch_last = False
+
+line_nums = []
+
+def read_walkthrough_chunks():
+    orb_next = False
+    global line_nums
+    cur_cmd = ''
+    with open("walkthrough.txt") as file:
+        cmd_count = 0
+        for (line_count, line) in enumerate(file, 1):
+            if line.startswith("(+1)"):
+                line_nums.append(line_count)
+                cur_cmd += re.sub(".*> *", ">", line.strip())
+                cur_cmd = re.sub("\.", "\n>", cur_cmd)
+                print(line_count, cur_cmd)
+                skip_str = re.sub(".*> *", ">", line.strip())
+                this_cmd[line_count] = cur_cmd + skip_str
+                what_skipped[line_count] = re.sub("\n+>", ".", this_cmd[line_count])
+                cur_cmd = ''
+                if 'tnt on ore zero' in line.lower(): max_stuff = len(line_nums)
+            elif '>get all' in line.lower() and orb_next: # this is a hack for getting the orb, which doesn't give a point.
+                orb_next = False
+                line_nums.append(line_count)
+                cur_cmd = ''
+                what_skipped[line_count] = line.strip()
+            elif 'use tenet on bro orb' in line.lower(): orb_next = True
+            elif line.startswith(">"): cur_cmd += line
 
 def my_file(s, e):
     return "reg-ai-revthru-start-{:d}-end-{:d}.txt".format(s, e)
@@ -114,18 +140,7 @@ max_stuff = 0;
 
 i7.go_proj('ai')
 
-with open("walkthrough.txt") as file:
-    cmd_count = 0
-    for (line_count, line) in enumerate(file, 1):
-        if line.startswith("(+1)"):
-            line_nums.append(line_count)
-            what_skipped[line_count] = re.sub(".*> *", ">", line.strip())
-            if 'tnt on ore zero' in line.lower(): max_stuff = len(line_nums)
-        elif '>get all' in line.lower() and orb_next: # this is a hack for getting the orb, which doesn't give a point.
-            orb_next = False
-            line_nums.append(line_count)
-            what_skipped[line_count] = line.strip()
-        elif 'use tenet on bro orb' in line.lower(): orb_next = True
+read_walkthrough_chunks()
 
 for x in line_nums: print(x, what_skipped[x])
 
