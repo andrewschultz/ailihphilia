@@ -17,10 +17,45 @@ destinations = defaultdict(str)
 start_low = start_high = 0
 end_low = end_high = 0
 deep_low = deep_high = 0
+alt_low = alt_high = 0
 launch_first = launch_last = False
 create_deep_speed = False
 
+end_str = ">use ME gem on Knife Fink\nby one point\n\n>use taboo bat on Verses Rev\nby one point\n\n>use yard ray on redivider\nby one point\n\n>s\n\n>use x-ite tix on tix exit\nby one point\n\ns\n"
+
 line_nums = []
+
+def create_alt_speed(idx):
+    file_name = "reg-ai-altspeed-{:d}.txt".format(idx)
+    f = open(file_name, "w")
+    f.write("# reg-ai-altspeed-{:d}.txt\n\n** game: /home/andrew/prt/debug-ailihphilia.ulx\n** interpreter: /home/andrew/prt/glulxe -q\n\n* runthrough\n\n".format(idx))
+    buffer = ''
+    altpoint = False
+    ignorepoint = False
+    with open("reg-ai-alt-thru.txt") as file:
+        for (line_count, line) in enumerate(file, 1):
+            if not any_cmd_yet:
+                if not line.startswith(">"): next
+                any_cmd_yet = True
+            buffer += line
+            if line.startswith('#altpoint'):
+                altpoint = True
+                continue
+            if line.startswith('#ignorepoint'):
+                ignorepoint = True
+                continue
+            if 'by one point' in line:
+                if ignore_point:
+                    ignore_point = False
+                    continue
+                cmd_idx += 1
+                if cmd_idx > idx: break
+                f.write(buffer)
+                buffer = ''
+                continue
+            f.write(line)
+    f.write(end_str)
+    f.close()
 
 def create_speed(idx):
     file_name = "reg-ai-deepspeed-{:d}.txt".format(idx)
@@ -171,6 +206,22 @@ while count < len(sys.argv):
         else:
             deep_low = 0
             deep_high = -1
+    elif arg.startswith('ad'):
+        alt_deep_speed = True
+        arg2 = re.sub("^ad", "", arg)
+        if arg2:
+            try:
+                poss_array = sorted([int(x) for x in arg2.split(',')])
+            except:
+                sys.exit("Need integer value(s), if any, after d/ds")
+            if len(poss_array) == 1:
+                alt_low = alt_high = poss_array[0]
+            else:
+                alt_low = poss_array[0]
+                alt_high = poss_array[1]
+        else:
+            alt_low = 0
+            alt_high = -1
     count += 1
 
 if start_low > start_high:
@@ -211,7 +262,14 @@ if went_over: print("NOTE: One of your starting or ending values was too high, s
 
 read_destinations()
 
+if alt_deep_speed:
+    print("Working from ALT walkthrough file to create deep speed tests.")
+    if alt_high == -1: alt_high = max_stuff
+    for x in range(alt_low, alt_high + 1): create_alt_speed(x)
+    exit()
+
 if create_deep_speed:
+    print("Working from standard walkthrough to create deep speed tests.")
     if deep_high == -1: deep_high = max_stuff
     for x in range(deep_low, deep_high + 1): create_speed(x)
     exit()
