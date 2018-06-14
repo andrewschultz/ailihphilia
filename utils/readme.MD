@@ -16,6 +16,7 @@ Utils, alphabetically:
 * reguse.py = makes sure all USE X ON Y are written to a test file as well (reg-ail-thru-alt.txt)
 * rely.py = what relies on what to get through the game. Needs auxiliary file rely.txt
 * revit.py: automatically generates scripts for Zarf's regression testing base on my walkthrough file and (eventually, to send the player to the right place) the code in the table of gooduses
+* tcount.py = does table counts with arithmetic and geometric means. Not critical to the game, but written to see how much easier Python was than PERL (I used PERL for the Stale Tales Slate.) SPOILER: a lot easier.
 * utw.py = writes out scripts to regression test and AutoIt files based on code in table of rejects
 * sc2.py = does internal code verification of maximum score byregion. Also cross-checks invisiclues and trizbort flowchart.
     * Supersedes the weaker msc.py. msc.py did a much more trivial runthrough.

@@ -6,6 +6,7 @@
 
 * runthrough
 
+#altpoint
 >pack cap
 by one point
 
@@ -31,15 +32,19 @@ Dave worked hard to build these muscles. It'd be mean if you could wipe them out
 You suddenly have a brilliant idea for a Britcom featuring Edgar Allan Poe (a Poe-op?), but it slips away just as quickly.
 
 #not a mistake
+#altpoint
 >evade dave
+by one point
 
 >get all
 
 >w
 
+#altpoint
 >bore rob
 by one point
 
+#altpoint
 >word row
 by one point
 
@@ -315,6 +320,7 @@ WRONG
 >undo
 >undo
 
+#altpoint
 >work row
 
 >use Dirt Rid on reviver
@@ -355,6 +361,7 @@ by one point
 
 >n
 
+#altpoint
 >deny ned
 by one point
 
@@ -627,6 +634,7 @@ by one point
 >use troll ort on ergot ogre
 WRONG
 
+#altpoint
 >yak okay
 by one point
 
@@ -645,6 +653,7 @@ by one point
 
 >s
 
+#altpoint
 >nail ian
 by one point
 
@@ -818,6 +827,7 @@ WRONG
 >use murdered rum on yard ray
 by one point
 
+#altpoint
 >emit noontime
 by one point
 

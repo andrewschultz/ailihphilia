@@ -19,9 +19,10 @@ end_low = end_high = 0
 deep_low = deep_high = 0
 alt_low = alt_high = 0
 launch_first = launch_last = False
+alt_deep_speed = False
 create_deep_speed = False
 
-end_str = ">use ME gem on Knife Fink\nby one point\n\n>use taboo bat on Verses Rev\nby one point\n\n>use yard ray on redivider\nby one point\n\n>s\n\n>use x-ite tix on tix exit\nby one point\n\ns\n"
+end_str = ">use ME gem on Knife Fink\nby one point\n\n>use taboo bat on Verses Rev\nby one point\n\n>use yard ray on redivider\nby one point\n\n>s\n\n>use x-ite tix on tix exit\nby one point\n\n>s\n"
 
 line_nums = []
 
@@ -30,32 +31,40 @@ def create_alt_speed(idx):
     f = open(file_name, "w")
     f.write("# reg-ai-altspeed-{:d}.txt\n\n** game: /home/andrew/prt/debug-ailihphilia.ulx\n** interpreter: /home/andrew/prt/glulxe -q\n\n* runthrough\n\n".format(idx))
     buffer = ''
-    altpoint = False
-    ignorepoint = False
-    with open("reg-ai-alt-thru.txt") as file:
+    cmd_idx = 0
+    force_revit = False
+    ignore_point = False
+    any_cmd_yet = False
+    with open("reg-ai-thru-alt.txt") as file:
         for (line_count, line) in enumerate(file, 1):
             if not any_cmd_yet:
                 if not line.startswith(">"): next
                 any_cmd_yet = True
             buffer += line
-            if line.startswith('#altpoint'):
-                altpoint = True
+            if line.startswith('#force-revit-cmd'):
+                force_revit = True
                 continue
             if line.startswith('#ignorepoint'):
-                ignorepoint = True
+                ignore_point = True
                 continue
-            if 'by one point' in line:
+            if 'by one point' in line or force_revit:
+                force_revit = False
                 if ignore_point:
                     ignore_point = False
                     continue
                 cmd_idx += 1
                 if cmd_idx > idx: break
                 f.write(buffer)
+                print("====start")
+                print(buffer)
+                print("====end")
                 buffer = ''
                 continue
-            f.write(line)
+            #f.write(line)
+    f.write("\n>deep speed\n\n")
     f.write(end_str)
     f.close()
+    print("Wrote", file_name)
 
 def create_speed(idx):
     file_name = "reg-ai-deepspeed-{:d}.txt".format(idx)
@@ -187,7 +196,6 @@ while count < len(sys.argv):
         else:
             end_low = ary[0]
             end_high = ary[1]
-    elif arg[0] == 'a': do_all = True
     elif arg == 'l' or arg == 'l1': launch_first = True
     elif arg == 'll' or arg == 'l0': launch_last = True
     elif arg.startswith('d'):
@@ -222,6 +230,7 @@ while count < len(sys.argv):
         else:
             alt_low = 0
             alt_high = -1
+    elif arg[0] == 'a': do_all = True
     count += 1
 
 if start_low > start_high:
@@ -263,8 +272,8 @@ if went_over: print("NOTE: One of your starting or ending values was too high, s
 read_destinations()
 
 if alt_deep_speed:
-    print("Working from ALT walkthrough file to create deep speed tests.")
     if alt_high == -1: alt_high = max_stuff
+    print("Working from ALT walkthrough file to create deep speed tests:", ("only {:d}".format(alt_low) if alt_low == alt_high else "{:d} to {:d}".format(alt_low, alt_high)))
     for x in range(alt_low, alt_high + 1): create_alt_speed(x)
     exit()
 
