@@ -16,13 +16,35 @@ destinations = defaultdict(str)
 
 start_low = start_high = 0
 end_low = end_high = 0
+deep_low = deep_high = 0
 launch_first = launch_last = False
+create_deep_speed = False
 
 line_nums = []
 
-def read_walkthrough_chunks():
+def create_speed(idx):
+    file_name = "reg-ai-deepspeed-{:d}.txt".format(idx)
+    f = open(file_name, "w")
+    f.write("# reg-ai-deepspeed-{:d}.txt\n\n** game: /home/andrew/prt/debug-ailihphilia.ulx\n** interpreter: /home/andrew/prt/glulxe -q\n\n* runthrough\n\n".format(idx))
+    with open("walkthrough.txt") as file:
+        for (line_count, line) in enumerate(file, 1):
+            if line_count == line_nums[idx]:
+                f.write(">deep speed\n\n")
+                for x in range(max_stuff, len(line_nums)):
+                    f.write(this_cmd[line_nums[x]] + '\n')
+                f.write("Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through.\n")
+                f.close()
+                print("Wrote", file_name)
+                return
+            if '>' in line and not line.startswith("If you are"):
+                line = re.sub("^\(\+1\) *", "", line)
+                f.write(line + "\n")
+                continue
+
+def read_walkthrough_chunks(): # returns the number of walkthrough chunks
     orb_next = False
     global line_nums
+    retval = 0
     cur_cmd = ''
     with open("walkthrough.txt") as file:
         cmd_count = 0
@@ -31,12 +53,12 @@ def read_walkthrough_chunks():
                 line_nums.append(line_count)
                 cur_cmd += re.sub(".*> *", ">", line.strip())
                 cur_cmd = re.sub("\.", "\n>", cur_cmd)
-                print(line_count, cur_cmd)
+                # print(line_count, cur_cmd)
                 skip_str = re.sub(".*> *", ">", line.strip())
-                this_cmd[line_count] = cur_cmd + skip_str
+                this_cmd[line_count] = cur_cmd
                 what_skipped[line_count] = re.sub("\n+>", ".", this_cmd[line_count])
                 cur_cmd = ''
-                if 'tnt on ore zero' in line.lower(): max_stuff = len(line_nums)
+                if 'tnt on ore zero' in line.lower(): retval = len(line_nums) # everything before USE TNT ON ORE ZERO is useful.
             elif '>get all' in line.lower() and orb_next: # this is a hack for getting the orb, which doesn't give a point.
                 orb_next = False
                 line_nums.append(line_count)
@@ -44,14 +66,17 @@ def read_walkthrough_chunks():
                 what_skipped[line_count] = line.strip()
             elif 'use tenet on bro orb' in line.lower(): orb_next = True
             elif line.startswith(">"): cur_cmd += line
+    return retval
 
 def my_file(s, e):
     return "reg-ai-revthru-start-{:d}-end-{:d}.txt".format(s, e)
 
 def read_destinations():
+    global max_stuff
     count = 0
     to_table = -1
     idx = 0
+    # for i in range (0, len(line_nums)): print(i, line_nums[i])
     with open("story.ni") as file:
         for line in file:
             if line.startswith('table of goodacts'):
@@ -63,9 +88,10 @@ def read_destinations():
                 continue
             if '\t' not in line: return
             ary = line.strip().split("\t")
-            print(len(ary), idx, len(line_nums), ary)
+            # print(len(ary), idx, len(line_nums), ary)
+            destinations[line_nums[idx]] = 0
             destinations[line_nums[idx]] = ary[9]
-            print(idx, line_nums[idx], ary[9])
+            # print(idx, line_nums[idx], ary[9], max_stuff)
             idx += 1
             if idx == max_stuff: return
 
@@ -89,12 +115,15 @@ def make_wthru(start_num, end_num):
                     f.write(">rv {:d}\n#skipping point scoring command {:d}\n\n". format(1, start_num))
                 else:
                     f.write(">rv {:d}\n#skipping point scoring commands {:d} to {:d}\n\n". format(end_num - start_num + 1, start_num, end_num))
-                f.write("#{:d}\nDEBUG: going to {:s}\n\n".format(line_count, destinations[line_count]))
+                f.write("#{:d}/{:d}/{:d}\nDEBUG: going to {:s}\n\n".format(start_num, end_num, line_nums[end_num], destinations[line_nums[end_num]]))
             line_mod = re.sub("\(\+1\) *", "", line)
-            if '>' in line and not rev_part: f.write(line_mod + "\n")
+            if '>' in line and not rev_part:
+                if line_count in line_nums: f.write("#point-part {:d} line {:d}\n\n".format(line_nums.index(line_count), line_count))
+                f.write(line_mod + "\n")
             elif rev_part and line_count in line_nums: f.write("#{:s} (skipped)\n\n".format(what_skipped[line_count]))
             if line_count == line_nums[end_num]:
                 rev_part = False
+            if line_count == line_nums[max_stuff-1]: f.write("#endgame begins here\n\n")
     f.write("Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through.\n")
     f.close()
     print("Wrote", file_name)
@@ -126,6 +155,22 @@ while count < len(sys.argv):
     elif arg[0] == 'a': do_all = True
     elif arg == 'l' or arg == 'l1': launch_first = True
     elif arg == 'll' or arg == 'l0': launch_last = True
+    elif arg.startswith('d'):
+        create_deep_speed = True
+        arg2 = re.sub("^ds?", "", arg)
+        if arg2:
+            try:
+                poss_array = sorted([int(x) for x in arg2.split(',')])
+            except:
+                sys.exit("Need integer value(s), if any, after d/ds")
+            if len(poss_array) == 1:
+                deep_low = deep_high = poss_array[0]
+            else:
+                deep_low = poss_array[0]
+                deep_high = poss_array[1]
+        else:
+            deep_low = 0
+            deep_high = -1
     count += 1
 
 if start_low > start_high:
@@ -136,13 +181,11 @@ if end_low > end_high:
     (end_low, end_high) = (end_high, end_low)
     print("Flipping end-low and end-high.")
 
-max_stuff = 0;
-
 i7.go_proj('ai')
 
-read_walkthrough_chunks()
+max_stuff = read_walkthrough_chunks()
 
-for x in line_nums: print(x, what_skipped[x])
+# for x in line_nums: print(x, what_skipped[x])
 
 if start_low > end_high: sys.exit("Lowest start must be less than the highest end.")
 
@@ -167,6 +210,11 @@ if end_high > max_stuff:
 if went_over: print("NOTE: One of your starting or ending values was too high, so I reduced everything to <=", max_stuff)
 
 read_destinations()
+
+if create_deep_speed:
+    if deep_high == -1: deep_high = max_stuff
+    for x in range(deep_low, deep_high + 1): create_speed(x)
+    exit()
 
 if do_all:
     start_low = end_low = 0
