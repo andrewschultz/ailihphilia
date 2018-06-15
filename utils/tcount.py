@@ -10,9 +10,13 @@ import re
 import i7
 import sys
 
+# options
 biggest_first = True
 verbose = False
+zap_first = False
+zap_last = False
 
+# variables
 table_sizes = defaultdict(int)
 
 in_table = False
@@ -23,10 +27,14 @@ argcount = 1
 while argcount < len(sys.argv):
     arg = sys.argv[argcount]
     if arg[0] == '-': arg = arg[1:]
-    if arg[0] == 'v': verbose = True
-    elif arg[0] == 'nv': verbose = False
-    elif arg[0] == 'd': biggest_first = True
-    elif arg[0] == 'u': biggest_first = False
+    if arg == 'v': verbose = True
+    elif arg == 'nv': verbose = False
+    elif arg == 'd': biggest_first = True
+    elif arg == 'u': biggest_first = False
+    elif arg == 'zf': zap_first = True
+    elif arg == 'nzf' or arg == 'zfn': zap_first = False
+    elif arg == 'zl': zap_last = True
+    elif arg == 'nzl' or arg[0] == 'zln': zap_last = False
     argcount += 1
 
 with open(i7.tafi('ai')) as file:
@@ -59,6 +67,16 @@ with open('tcount.txt') as file:
                 table_sizes.pop(l2)
             else:
                 print("Tried to zap <{:s}>, but it's not a valid table key in tcount.txt.".format(l2))
+
+if zap_last:
+    q = min(table_sizes, key=table_sizes.get)
+    print("Zapping low value", q)
+    table_sizes.pop(q)
+
+if zap_first:
+    q = max(table_sizes, key=table_sizes.get)
+    print("Zapping high value", q)
+    table_sizes.pop(q)
 
 tsize = len(table_sizes.keys())
 
