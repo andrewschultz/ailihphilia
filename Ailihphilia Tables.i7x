@@ -651,7 +651,7 @@ person-name
 "Nuse, Sun"
 "Nush, Sun"
 "Nybo, Robyn"
-"Obama, Bo"
+"Obama, Bo" [ha ha ha no really it's the former White House dog]
 "Ord, Isidro"
 "Osawa, So"
 "Ott, Otto"
@@ -787,7 +787,7 @@ every turn (this is the notify cycling rule):
 					say "[if there is a cycle-note entry][cycle-note entry][else]You have cycled all the available random responses for an action or NPC's babble.[end if]";
 				else if tables-found is 2:
 					say "This is a further note to say you've done so more than once this turn, which is an impressive bit of timing, even if it doesn't get you any points.";
-		if tables-found is 0 and debug-state is true, say "This is a BUG--you should be notified of cycling.";
+		if tables-found is 0 and debug-state is true, say "This is a BUG--you should have been notified of random cycling in a table, but you weren't.";
 		the rule succeeds;
 
 section debugs
@@ -958,6 +958,7 @@ randtxt
 "Jesse J"
 "Kazoo Zak"
 "Krew Twerk"
+"LA's Reversal"
 "Le BE Rebel"
 "Lulu L"
 "Major Pro Jam"
@@ -1046,6 +1047,7 @@ randtxt
 "Boone?! Noob!"
 "EOF, Foe!"
 "If I wifi..."
+"Mod?! ODOM?!"
 "More ROM!"
 "Piece IP?!"
 "Posts-op? POST, sop!"

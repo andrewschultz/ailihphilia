@@ -5622,12 +5622,15 @@ to say recxcheck of (speedy - a truth state) :
 		say "[if speedy is true] (examining the epicer recipe first) [else]You examine the epicer recipe first. You haven't, yet.[paragraph break][end if]";
 		now epicer recipe is xed;
 
+i-sped is a truth state that varies.
+
 carry out deepspeeding:
 	abide by the rev-check rule;
 	now deep-speeding is true;
 	say "DEEP SPEEDing to near the end[recxcheck of true]...";
 	try revovering;
 	now deep-speeding is false;
+	now i-sped is true;
 	the rule succeeds;
 
 chapter revovering
@@ -5645,6 +5648,7 @@ score-cheat is a number that varies.
 revving-over is a truth state that varies.
 
 this is the rev-check rule:
+	if i-sped is true, say "You already sped up to the end." instead;
 	if being-chased is true, say "Oops, that's too much for me to do at once! Either escape or get caught by [the chase-person] first, then we can proceed." instead;
 	if player is in Dirge Grid, say "You're already at the Dirge Grid!" instead;
 	if Dirge Grid is visited, say "Too late! You've already been to the Dirge Grid." instead;
@@ -5660,7 +5664,9 @@ carry out revovering:
 	now revving-over is true;
 	repeat through table of goodacts:
 		increment count;
-		if there is a use1 entry and use1 entry is ME gem, break;
+		if there is a use1 entry and use1 entry is ME gem:
+			now i-sped is true;
+			break;
 		[say "Rows so far [count - 1], current score [score].";]
 		if there is no use1 entry:
 			consider the preproc entry;
