@@ -725,6 +725,7 @@ biz-name
 "Layaway Al"
 "Looks Skool"
 "Rife Kefir"
+"Shop O['] H's"
 "Skooby Books"
 "Tru-Go Yogurt"
 "We Sew"
@@ -756,13 +757,14 @@ table of altbooks	0	0	false	"extra books in the Tract Cart"	"You've read all the
 table of attackings	0	0	true	"responses to ATTACK"	--
 table of Bond Nob bars	0	0	false	"bars the Bond Nob visits"	-- [?? may cause a problem cycling talking to nob]
 table of burnies	0	0	true	"responses to BURN"	--
+table of businesses	0	0	true	"businesses in Day-Away Ad"	--
 table of diktat taunts	0	0	false	"Diktat Kid taunts"	--
 table of Moo Room animals	0	0	true	"Moo Room animals (LISTEN)"	--
 table of My Gym songs	0	0	false	"songs in My Gym (LISTEN)"	--
 table of noesies	0	0	true	"responses to NO"	--
 table of nothings	0	0	true	"responses to empty commands"	--
 table of rejected sidekicks	0	0	false	"the Diktat Kid's rejected sidekicks"	--
-table of Rob droning	0	0	false	"things Rob babbles about"	--
+table of Rob droning	0	0	false	"things Rob babbles about"	"Rob takes a moment to shape 'pah's again."
 table of singstuff	0	0	true	"responses to SINGing"	--
 table of snooty toon ads	0	0	true	"snooty toons ads"	--
 table of swearstuff	0	0	true	"responses to SWEARing"	--
@@ -895,6 +897,7 @@ randtxt
 "Burn! Rub!"
 "Igniting, I!"
 "Rah! Char!"
+"To hot?!"
 
 table of Bond Nob bars
 randtxt
@@ -1037,6 +1040,7 @@ randtxt
 "Presser P"
 "Rocco R"
 "Rollo R"
+"Tar Prat"
 "Trekker T"
 "Weewee W"
 "Wolf Low"
@@ -1194,6 +1198,7 @@ randtxt
 "ME!!!! Haw. Ahem."
 "Me: sees [']em!"
 "Misdeeds? I'm ..."
+"Moobs: BOOM!"
 "Name: HE-MAN!"
 "Nem O['] women!"
 "Nil Appalin[']!"

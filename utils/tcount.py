@@ -99,6 +99,6 @@ for x in sorted(table_sizes, key=table_sizes.get, reverse=biggest_first):
     count += 1
     print(count, x, table_sizes[x], gmtweak)
 
-print(amean, "arithmetic mean")
-print(gmean, "geometric mean")
-print(gmeanp, "geometric mean+")
+print("{:4f} arithmetic mean".format(amean))
+print("{:4f} geometric mean".format(gmean))
+print("{:4f} geometric mean (1 added each), delta={:4f}".format(gmeanp, gmeanp-gmean))
