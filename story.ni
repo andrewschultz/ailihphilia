@@ -1837,7 +1837,7 @@ Yard Ray	test set	--	ready-to-test rule	test-set-zapped rule	true	false	true	Dim
 --	--	--	rev-create-tron rule	--	true	--	--	Dim Mid	Fun Nuf	false
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	Dirge Grid	false	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, successfully bribed." [b4:use TNT on ore zero]
 taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	Dim Mid	Dirge Grid	false	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev senses the Taboo Bat's ancient untapped power. It's not particularly violent or lethal, but it is just perfect to scare an orthodoxy as warped as the Verses Rev's. Nothing to do but turn and run! Perhaps to the safety of ... a rev reserver."
-Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	Dirge Grid	false	"'Havoc, OVAH!' you should as you aim and fire the yard ray.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who goes running off. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid is going to check for that now, but with the Kid gone, you see saner arenas all around. Revel, clever! Revel, ever![paragraph break]You don't notice the redivider exploding. When you wake up, it's much later. And you note something beside you: some X-ITE TIX fell out of the redivider! Wow! Yo, joy! Wow!"
+Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	Dirge Grid	false	"'Havoc, OVAH!' you should as you aim and fire the yard ray.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who goes running off. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid is going to check for that now, but with the Kid gone, you see saner arenas all around. Revel, clever! Revel, ever![paragraph break]You don't notice the redivider exploding. When you wake up, it's much later. And you note something beside you: some X-ITE TIX fell out of the redivider! Wow! Yo, joy! Wow!"
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	Fun Nuf	false	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse] [zzgood]
 
@@ -2253,8 +2253,9 @@ this is the wear-garb rule:
 this is the you-win rule: [xxwin]
 	follow the notify score changes rule;
 	say "[line break]The Flee Elf greets you on the other side. 'Deified! [if cur-score of Odd Do is max-score of Odd Do]Decay?! ACED[else]Won enow[end if]! / Deified!' You ask hesitantly about the new adventures promised.[wfak-d]";
-	say "'The X-ITE TIX lead to A REAL WORLD THAT WILL BE MORE EXCITING AFTER YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a circular loop to 'back where you began' non-twist. Books like that always kind of annoyed you (well, okay, the first ones seemed profound,) but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand and pulls out a device. 'This RIDE-DIR will help you return to your own world. And here is an x/o box.'[wfak-d]";
-	say "The x/o box isn't much: nothing's inside, and it's engraved 'U Remem'er, U,' 'Done? NOD' and 'U Did U.' But if it were too obvious and gaudy, how would you explain it back home?[paragraph break]As you stare at it, you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered stuff you can't fix?[wfak-d]";
+	say "'The X-ITE TIX lead BACK TO THE REAL WORLD WHICH WILL FAR MORE EXCITING FOR YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a circular loop to 'back where you began' non-twist. Books like that always kind of annoyed you (well, okay, the first ones seemed profound,) but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand and pulls out a device. 'I'll need the pact cap back. It will go to our new museum.'[paragraph break]'What's it called?' you ask, despite yourself.[wfak-d]";
+	say "[paragraph break]'Well, there's still argument over We-I-View and Show-Ohs. You have a preference?' There's an awkward silence before you mention they both seem equally appropriate.[paragraph break]'Well, anyway. This RIDE-DIR will help you return to your own world. And here is an x/o box.'[wfak-d]";
+	say "The x/o box isn't much: nothing's inside, and it's engraved 'U Remem'er, U,' 'Done? NOD' and 'U Did U.' But if it were too obvious and gaudy, how would you explain it back home?[paragraph break]As you stare at it, you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered with stuff you can't fix?[wfak-d]";
 	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call your writing? NOW I WON and EL BIBLE are way too pompous, but some brainstorming gives SOME MEMOS, I SAW [']TWAS I, DRAWN INWARD, WENT NEW, SAGAS or SOLOS. Or--no, that's it. ELATE TALE.";
 	end the story finally saying "Darn! Rad!";
 	sort the table of last lousy points in finord order;
@@ -2520,7 +2521,16 @@ check going north in Fun Nuf:
 
 chapter Pact Cap
 
-The Pact Cap is a wearable thing in Fun Nuf. "A pact cap sits here. You need to find the right way to accept it to begin your quest.". description is "It's no stetson, and it's not as helpful as a ref-titfer, mate tam or math tam, but it is less messy than a tahini hat, and it [if player has pact cap]feels[else]looks[end if] serviceable enough."
+The Pact Cap is a wearable thing in Fun Nuf. "A pact cap sits here. You need to find the right way to accept it to begin your quest.". description is "Well, you can't see it, since it's on your head, and there are no mirrors. But thankfully, it's not too heavy. It didn't look THAT stupid back when the Flee Elf had you pack it. So that's something. You think[cap-beep-stuff]."
+
+to say cap-beep-stuff:
+	if cap-pace is true, say ".[paragraph break]It's currently set as a pace cap";
+	if beep-yet is false, continue the action;
+	say ". You can toggle its perception-volume with LO VOL[if cap-vol is false] (current setting)[end if]  or LOVE VOL[if cap-vol is true] (current setting)[end if]"
+
+check examining Pact Cap:
+	if player is in Red Roses Order and mirror rim is in Red Roses Order, say "Oh dear. Through the mirror, the pact cap does look sort of stupid on you right now. But you have deeper issues than sartorial elegance. Plus it's been so serviceable, who cares about looks?" instead;
+	if pact cap is in Fun Nuf, say "It's no stetson, and it's not as helpful as a ref-titfer, mate tam or math tam, but it is less messy than a tahini hat, and it [if player has pact cap]feels[else]looks[end if] serviceable enough." instead;
 
 check taking off the pact cap: say "No, you...uh, made a pact." instead;
 
@@ -4717,6 +4727,8 @@ carry out standing:
 book Evaded Ave
 
 Evaded Ave is north of Art Xtra. It is in Yelpley. "It's a bit sleazy in here. Passages lead east and west, [if tube but is in Evaded Ave]and north there's a tube, but ... [tbut][else]but the way north is blocked[end if]. You can go back south to [Art Xtra], too."
+
+dumb-Dave-joke-yet is a truth state that varies.
 
 after looking in Evaded Ave:
 	if Dave is moot and dumb-Dave-joke-yet is false:
