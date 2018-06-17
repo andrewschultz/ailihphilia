@@ -4,8 +4,11 @@
 # offers basic metrics on random table size
 #
 
+from datetime import datetime
+
 from collections import defaultdict
 import math
+import os
 import re
 import i7
 import sys
@@ -15,6 +18,7 @@ biggest_first = True
 verbose = False
 zap_first = False
 zap_last = False
+update_log_file = False
 
 # variables
 table_sizes = defaultdict(int)
@@ -29,8 +33,10 @@ while argcount < len(sys.argv):
     if arg[0] == '-': arg = arg[1:]
     if arg == 'v': verbose = True
     elif arg == 'nv': verbose = False
-    elif arg == 'd': biggest_first = True
-    elif arg == 'u': biggest_first = False
+    elif arg == 'b1': biggest_first = True
+    elif arg == 'bl': biggest_first = False
+    elif arg == 'u': update_log_file = True
+    elif arg == 'un' or arg == 'nu': update_log_file = False
     elif arg == 'zf': zap_first = True
     elif arg == 'nzf' or arg == 'zfn': zap_first = False
     elif arg == 'zl': zap_last = True
@@ -53,20 +59,29 @@ with open(i7.tafi('ai')) as file:
             table_sizes[table_name] = line_count - table_start
             if verbose: print(table_name, table_sizes[table_name], "rows")
 
+i7.go_proj('ai')
+
 amean = gmean = gmeanp = 0
 
-with open('tcount.txt') as file:
-    for line in file:
-        ll = line.lower().strip()
-        if ll.startswith(';'): break
-        if ll.startswith('#'): continue
-        if ll.startswith('-'):
-            l2 = ll[1:]
-            if l2 in table_sizes.keys():
-                if verbose: print(l2, "discounted.")
-                table_sizes.pop(l2)
-            else:
-                print("Tried to zap <{:s}>, but it's not a valid table key in tcount.txt.".format(l2))
+data_file = "tcount.txt"
+log_file = "tcount-log.txt"
+log_file_redo = "tcount-log-redo.txt"
+
+if os.path.exists(data_file):
+    with open(data_file) as file:
+        for line in file:
+            ll = line.lower().strip()
+            if ll.startswith(';'): break
+            if ll.startswith('#'): continue
+            if ll.startswith('-'):
+                l2 = ll[1:]
+                if l2 in table_sizes.keys():
+                    if verbose: print(l2, "discounted.")
+                    table_sizes.pop(l2)
+                else:
+                    print("Tried to zap <{:s}>, but it's not a valid table key in tcount.txt.".format(l2))
+else:
+    print("No", data_file, "so we won't do anything special.")
 
 if zap_last:
     q = min(table_sizes, key=table_sizes.get)
@@ -102,3 +117,51 @@ for x in sorted(table_sizes, key=table_sizes.get, reverse=biggest_first):
 print("{:4f} arithmetic mean".format(amean))
 print("{:4f} geometric mean".format(gmean))
 print("{:4f} geometric mean (1 added each), delta={:4f}".format(gmeanp, gmeanp-gmean))
+
+if update_log_file:
+    last_table_line = ''
+    last_num_line = ''
+    print("Looking if we can/should update...")
+    my_ary = [table_sizes[x] for x in sorted(table_sizes.keys())]
+    if os.path.exists(log_file) and os.stat(log_file).st_size:
+        table_check = defaultdict(bool)
+        changed_array = False
+        sts = sorted(table_sizes.keys())
+        for x in sts: table_check[x] = False
+        with open(log_file) as file:
+            for (line_count, line) in enumerate(file, 1):
+                l = line.lower().strip()
+                if l.startswith("#table"):
+                    last_table_line = l[1:]
+                    continue
+                if l and re.search("^[,0-9]+$", l):
+                    last_num_line = l
+                    continue
+        for x in last_table_line.split(','):
+            if x not in table_check.keys(): changed_array = True
+            table_check[x] = True
+        for x in table_check.keys():
+            if not table_check[x]: changed_array = True
+        a = [int(q) for q in last_num_line.split(",")]
+        got_dif = False
+        for j in range(0, len(my_ary)):
+            if my_ary[j] != a[j]: got_dif = True
+        if changed_array or got_dif:
+            flog = open(log_file, "w+")
+            flog.write("#{:s}\n".format(str(datetime.now())))
+            if changed_array: flog.write(','.join(sorted(sts)) + "\n")
+            if got_dif:
+                flog.write('#' + ','.join([str(a[q]-my_ary[q]) for q in (0, len(a))]) + "\n")
+                flog.write(','.join([str(x) for x in a]) + "\n")
+            print("Updated", log_file)
+            flog.close()
+        else:
+            print("No change, nothing new written.")
+    else:
+        flog = open(log_file, "w")
+        flog.write("#{:s}\n".format(str(datetime.now())))
+        flog.write("#")
+        flog.write(','.join(sorted(table_sizes.keys())))
+        flog.write("\n")
+        flog.write("#no changes to start\n{:s}\n".format(','.join([str(x) for x in my_ary]) + "\n"))
+        print("Created", log_file)
