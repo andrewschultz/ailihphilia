@@ -2528,9 +2528,14 @@ to say cap-beep-stuff:
 	if beep-yet is false, continue the action;
 	say ". You can toggle its perception-volume with LO VOL[if cap-vol is false] (current setting)[end if]  or LOVE VOL[if cap-vol is true] (current setting)[end if]"
 
+cap-dum is a truth state that varies.
+
+to say cap-dum-now: now cap-dum is true.
+
 check examining Pact Cap:
-	if player is in Red Roses Order and mirror rim is in Red Roses Order, say "Oh dear. Through the mirror, the pact cap does look sort of stupid on you right now. But you have deeper issues than sartorial elegance. Plus it's been so serviceable, who cares about looks?" instead;
-	if pact cap is in Fun Nuf, say "It's no stetson, and it's not as helpful as a ref-titfer, mate tam or math tam, but it is less messy than a tahini hat, and it [if player has pact cap]feels[else]looks[end if] serviceable enough." instead;
+	if player is in Red Roses Order and mirror rim is in Red Roses Order, say "[cap-dum-now]Oh dear. Through the mirror, the pact cap does look sort of stupid on you right now. But you have deeper issues than sartorial elegance. Plus it's been so serviceable, who cares about looks?" instead;
+	if cap-dum-now is true, say "You definitely feel more self-conscious about your pact cap now you saw it in the mirror rim, but what can you do?" instead;
+	if pact cap is in Fun Nuf, say "It's no stetson, and it's not as helpful as a ref-titfer, mate tam or math tam, but it is less messy than a tahini hat, and it looks serviceable enough." instead;
 
 check taking off the pact cap: say "No, you...uh, made a pact." instead;
 
@@ -2892,7 +2897,7 @@ Flu Gulf is north of Cold Loc. It is in Grebeberg. "North and east, it's, oh, to
 
 chapter mush sum
 
-the mush sum is peripheral scenery in Flu Gulf. "It looks deceptive and swampy."
+the mush sum is peripheral scenery in Flu Gulf. "It looks deceptive and swampy. Perhaps it is so deceptive, it is actually gosh-sog. Or not."
 
 chapter gulf lug
 
