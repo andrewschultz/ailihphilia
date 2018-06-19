@@ -506,7 +506,7 @@ this is the check palindrome turns rule: [this could be at the end but those are
 	say "When you get home, you open the X/O box. ";
 	if pal-turns is true:
 		if score is maximum score:
-			say "Inside is a spiffy CERT REC for being cosmically in tune and covering even the smallest details. Well done!";
+			say "Inside is a spiffy CERT REC for being cosmically in tune and covering even the smallest details. It is a rec indeed nicer. Well done!";
 			continue the action;
 		say "As you open it, you see some sort of certificate dissolve. You feel you did something weird right, somethng beyond finding everything, which you didn't [if score > 84]quite [end if]do.";
 	else:
@@ -1229,6 +1229,7 @@ instead of attacking:
 	if noun is made dam, say "You don't want to make it a ... maddened dam." instead;
 	if noun is eels, say "Eel emo melee?!" instead;
 	if noun is a workable, say "Bash?! Sab!" instead;
+	if noun is ergot ogre, say "The ogre could beat you up, but even if it couldn't, it'd do a pox-op or worse on you." instead;
 	if noun is player, say "PvP!" instead;
 	next-rand table of attackings;
 
@@ -1280,10 +1281,10 @@ check going (this is the new generic going reject rule):
 	if noun is inside, say "You don't ever need to use IN in the game. Just the four cardinal directions." instead;
 	if the room noun of location of player is nowhere:
 		let nvi be number of viable directions;
-		say "[chase-pass][if location of player is wally]Wall! Aw.[paragraph break][end if]You can [if nvi is 1]only [end if]go [if nvi is 1]back [else if nvi is 3]the other ways: [else if nvi is 2]both [end if][list of viable directions] here[up-down-check]." instead;
+		say "[chase-pass][if location of player is wally][one of][or]Hall, ah? [in random order]Wall! Aw.[paragraph break][end if]You can [if nvi is 1]only [end if]go [if nvi is 1]back [else if nvi is 3]the other ways: [else if nvi is 2]both [end if][list of viable directions] here[up-down-check]." instead;
 
 check going (this is the reject noncardinal directions rule):
-	if noun is diagonal, say "You don't need diagonal directions in this game." instead;
+	if noun is diagonal, say "Diagonal directions aren't used in this game." instead;
 	if noun is up or noun is down:
 		if the room noun of location of player is nowhere:
 			say "You never need to go up or down in this game, though sometimes they act as a backup to the main cardinal directions--for instance, up to or down from [if player is in Mont Nom]here[else if Mont Nom is visited]Mont Nom[else]a hill[end if].";
@@ -1312,6 +1313,8 @@ instead of smelling rotator: say "[if stinky knits are moot]It no longer smells 
 
 instead of smelling Yuge Guy, say "The Yuge Guy smells of an amoral aroma[if brag garb is not off-stage] even worse than the Turbo-Brut from the Brag Garb[end if]."
 
+instead of smelling ergot ogre, say "
+
 instead of smelling location of player:
 	if in-work and stinky knits are not moot, try smelling rotator instead;
 	if stinky knits are quicknear, try smelling stinky knits instead;
@@ -1322,11 +1325,11 @@ instead of smelling location of player:
 	if player is in Moo Room, say "Hay! Ah!" instead;
 	if player is in Deft Fed, say "Ham?! Ah!" instead;
 	if player is in Mont Nom, say "Everything smells delicious. Life is good[if Ian is in Mont Nom], even with Ian around[end if]." instead;
-	if player is in Red Roses Order or player is in Emo Dome, say "You smell roses. Weird." instead;
 	if player is in Pro Corp and butene tub is in Pro Corp, try smelling butene tub instead;
 	if player is in Sneer Greens and Yuge Guy is in Sneer Greens, try smelling Yuge Guy instead;
 	if player has dork rod, try smelling dork rod instead;
 	if troll ort is quicknear, try smelling troll ort instead;
+	if ergot ogre is quicknear, try smelling ergot ogre instead;
 	continue the action;
 
 instead of smelling an ingredient:
@@ -1637,7 +1640,7 @@ resale laser	"You can't just go vaporizing stuff willy-nilly. Plus, the laser on
 ark of okra	"While the ark inspires you to want to mix foods, you don't want to mix anything with IT. You don't know how long that okra's been there!"
 wordy drow	"The wordy drow moans 'Er ... eh ... there,' pointing to the Liar Grail."
 level net	"There's got to be a way to untangle the net on your own, so it doesn't get cut or destroyed."
-radar	"The radar detects nothing. It's probably most useful for finding hidden stuff."
+radar	"The radar detects no dark radon ... and nothing less harmful/more useful. But maybe there's something hidden elsewhere."
 tao boat	"The tao boat remains impassive. But surely something you can show it will prove your worth."
 enact cane	"The enact cane needs to be augmented, but not quite like that."
 sharp rahs	"The rahs need to be combined with some other motivational material."
@@ -1783,7 +1786,7 @@ puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-nob rule	true	true	true	Yelpley
 stamp mats	slate metals	Ye Key	--	--	true	true	false	Yelpley	Scrap Arcs	false	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY. You find it hard to pull the stamp mats out, and when you take YE KEY, the mats quickly morph into the slate metals. Eh, well. Less inventory to worry about."
 demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	Grebeberg	Flu Gulf	false	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' and looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	Toll Lot	false	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
-YOB ATTABOY	Sniffins	Dirt Rid	--	toons-to-den rule	true	true	false	Yelpley	Deft Fed	false	"Sniffins accepts your gift, with sniffs slowly changing from sadness to something more snooty. Your thanks for helping Sniffins be too good for you is a Dirt Rid. Sniffins shoos you back out to the Toll Lot. There is remodeling to be done! Sniffins will outdo Rentner, whoever that is! From the south, you hear frantic cries of 'Repaper! Repaper! Repaper!'"
+YOB ATTABOY	Sniffins	Dirt Rid	--	toons-to-den rule	true	true	false	Yelpley	Deft Fed	false	"Sniffins accepts your gift, with sniffs slowly changing from sadness to something more snooty. Your thanks for helping Sniffins be too good for you is a Dirt Rid. Sniffins shoos you back out to the Toll Lot: 'No, yob! Yon!' There is remodeling to be done! Sniffins will outdo Rentner, whoever that is! From the south, you hear frantic cries of 'Repaper! Repaper! Repaper!'"
 Elan Ale	Sniffins	Gorge Grog	--	--	true	true	false	Yelpley	Deft Fed	false	"Sniffins looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.' Hey, you're not one to say 'stuff free stuff.'" [af:stand nat's]
 --	--	--	rev-stand-nats rule	--	true	--	--	Yelpley	Deft Fed	false
 Dirt Rid	reviver	Cave Vac	--	--	true	true	false	Yelpley	Worn Row	false	"You watch as the Dirt Rid swirls and becomes shinier and much more powerful--and lighter, too, when you retrieve it. A Cave Vac! It will be capable of cleaning...well, somewhere."
@@ -1835,8 +1838,8 @@ murdered rum	yard ray	--	--	ray-beepy-now rule	true	true	false	Dim Mid	Fun Nuf	f
 --	--	--	rev-emit-noontime rule	--	true	--	--	Dim Mid	Fun Nuf	false
 Yard Ray	test set	--	ready-to-test rule	test-set-zapped rule	true	false	true	Dim Mid	Worn Row	false	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
 --	--	--	rev-create-tron rule	--	true	--	--	Dim Mid	Fun Nuf	false
-ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	Dirge Grid	false	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, successfully bribed." [b4:use TNT on ore zero]
-taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	Dim Mid	Dirge Grid	false	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev senses the Taboo Bat's ancient untapped power. It's not particularly violent or lethal, but it is just perfect to scare an orthodoxy as warped as the Verses Rev's. Nothing to do but turn and run! Perhaps to the safety of ... a rev reserver."
+ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	Dirge Grid	false	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, perhaps to create the Red Ronin Order." [b4:use TNT on ore zero]
+taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	Dim Mid	Dirge Grid	false	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev senses the Taboo Bat's ancient untapped power. It's not particularly violent or lethal, but it is just perfect to scare an orthodoxy as warped as the Verses Rev's, who mutters 'Rev, off, over' and stumbles away! Perhaps to the safety of ... a rev reserver."
 Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	Dirge Grid	false	"'Havoc, OVAH!' you should as you aim and fire the yard ray.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who goes running off. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid is going to check for that now, but with the Kid gone, you see saner arenas all around. Revel, clever! Revel, ever![paragraph break]You don't notice the redivider exploding. When you wake up, it's much later. And you note something beside you: some X-ITE TIX fell out of the redivider! Wow! Yo, joy! Wow!"
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	Fun Nuf	false	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse] [zzgood]
@@ -2761,7 +2764,7 @@ the leet steel is peripheral. description is "The Knife Fink is waving it around
 
 chapter Verses Rev
 
-the Verses Rev is a neuter person in Dirge Grid. "A Verses Rev wields a part strap here.". description of Verses Rev is "Looking pretty average in a par wrap, and not cool enough to wear Scold Locs, but the hate and brimstone the Rev intones at you is a different matter."
+the Verses Rev is a neuter person in Dirge Grid. "A Verses Rev wields a part strap here.". description of Verses Rev is "Too much gravitas to be a Rot-Cert Rector, despite the unshowy par wrap and lack of Scold Locs. The hate and brimstone the Rev (obviously no Rev Love Evolver) intones at you is a different matter."
 
 the Verses Rev wears the Par Wrap.
 
@@ -3341,7 +3344,7 @@ to say if-porch: if porch crop is in Uneven U, say ". [if wash saw is moot]The p
 
 chapter balsa slab
 
-The Balsa Slab is a thing. description is "It appears grooved, as if someone has labeled places to cut it to make it into something useful."
+The Balsa Slab is a thing. description is "It appears grooved, as if someone has labeled places to cut it to make it into something useful. It's not rad eco-cedar, but it's still pretty nice."
 
 book Lair Trial
 
@@ -3355,7 +3358,7 @@ check going nowhere in Lair Trial: say "[if ogre is in Lair Trial]You can't snea
 
 chapter ergot ogre
 
-the ergot ogre is a neuter person in Lair Trial. "An ergot ogre blocks the way east.". description is "It looks vicious, and you don't want it touching you, due to disease and possible dismemberment. You need to get the ogre out of the way, somehow.".
+the ergot ogre is a neuter person in Lair Trial. "An ergot ogre blocks the way east.". description is "It looks vicious, like a grue (eurg.) You don't want it touching you, due to disease and possible dismemberment. You need to get the ogre out of the way, somehow.".
 
 check going east in Lair Trial: if ergot ogre is in Lair Trial, say "Not with the ergot ogre guarding the way." instead;
 
@@ -3768,7 +3771,7 @@ instead of doing something with Dave:
 	if current action is evadeing, continue the action;
 	say "Looks like you'll need to do something special with, or to, Dave. Nothing destructive. But psych him out, somehow."
 
-check going west in My Gym when Dave is in My Gym: say "Dave says, 'I can't let you do that, Hal. Ah!' There must be a succinct, clever way to sneak around him!" instead;
+check going west in My Gym when Dave is in My Gym: say "Dave says, 'I can't let you do that, Hal. Ah!' In your shock at him either guessing your name or completely getting it wrong (especially if you happen to be female,) you reason there must be a succinct, clever way to sneak around him." instead;
 
 the stole lots is a thing in My Gym. "A container labeled STOLE LOTS is behind Dave.". description is "It looks like it'd be handy for carrying a lot of items around.".
 
@@ -3861,9 +3864,11 @@ the bad dab is peripheral scenery in Worn Row. description is "[if Rob is in Wor
 
 chapter test set
 
-The test set is a thing. "A test set lies here, looking convoluted and -- well, open to abuse.". description is "You're not sure what it's good for, but now that you worked through all the machines, maybe you just need it to, well, try stuff before your final confrontation.".
+The test set is a thing. "A test set lies here, looking convoluted and -- well, open to abuse.". description is "A mangled tin unit. You're not sure what it's good for, but now that you worked through all the machines, maybe you just need it to, well, try stuff before your final confrontation.".
 
 check taking the test set: say "It's too unwieldy. But it has to be useful for something." instead;
+
+understand "tin/unit" and "tin unit" as test set.
 
 chapter boreing
 
@@ -3898,7 +3903,7 @@ understand "machine" as a workable.
 [?? if the player's command includes "machine" and the player is in work row, say "You need to refer to it individually."]
 
 check examining a workable:
-	if useleft of item described is 0, say "It's broken now, but you got good use out of it." instead;
+	if useleft of item described is 0, say "The [noun] is broken now, but you got good use out of it." instead;
 
 after examining a workable: say "[if useleft of noun is 3]Oh, the word [printed name of item described in upper case] is printed on the front[else]Since you had success using [the item described], you feel more comfortable using it again[end if]."
 
@@ -3917,7 +3922,7 @@ rule for supplying a missing second noun when useoning:
 to wear-down (w - a workable):
 	decrement useleft of w;
 	if useleft of w is 0, say "[line break]You watch as [the w] sputters and dies. [if number of workedout workables is 2]Oh dear. That's the second one down[else]Well, you got a lot of good use out of it, and hopefully you won't need any more[end if].";
-	if useleft of w is 1, say "[line break]The [w] wheezes emphatically. Hopefully, you won't need to use it too much more.";
+	if useleft of w is 1, say "[line break]The [w] wheezes an emphatic 'FOOF.' Hopefully, you won't need to use it too much more.";
 	if machuses is 0:
 		hint-bump-worn;
 		say "[line break]With [the list of workables] all destroyed, Work Row shakes a bit more. The machines fall out from a wall, revealing something behind ... a test set. It's big and huge and you can't move it, but who knows what it'll be useful for later?";
@@ -4945,7 +4950,7 @@ the E Divide is peripheral scenery in Red Roses Order. "Madam crossed it, but yo
 
 book Swept Pews
 
-Swept Pews is south of Emo Dome. It is in Yelpley. "There is a wide passage back north to the Emo Dome in this tidy little area, unnamed but probably St. Emmet's. It's narrower south[if liar grail is moot], but with the liar grail and wordy drow gone, it should be no problem to go that way, either[end if]."
+Swept Pews is south of Emo Dome. It is in Yelpley. "There is a wide passage back north to the Emo Dome in this tidy little area lacking a rat-ladened altar. It's unnamed but probably St. Emmet's. It's narrower south[if liar grail is moot], but with the liar grail and wordy drow gone, it should be no problem to go that way, either[end if]."
 
 for printing a locale paragraph about a thing (called th) in Swept Pews:
 	if th is the player:
@@ -5003,7 +5008,7 @@ the Bond Nob is a neuter person in Drawl Ward. "[one of]'Hi! I'm the Bond Nob. I
 
 chapter Elan Ale
 
-the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, unsurprisingly. It's about the size of a pint nip."
+the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, unsurprisingly, unlike Red Ice Cider. It's about the size of a pint nip."
 
 chapter birch crib
 

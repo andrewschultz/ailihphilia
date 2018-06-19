@@ -818,6 +818,7 @@ randtxt
 "D'oh, Serene, Reshod"
 "D'oh, Temp Method"
 "Dad, Dad"
+"Denny [']N Ned"
 "Dew Onuses Unowed"
 "Dew, Awed"
 "Dew, Owed"
@@ -912,10 +913,12 @@ randtxt
 "Sara's"
 "Scene C's"
 "Senor One's"
+"Si's"
 "Soho's"
 "Soto's"
 "Spate-Taps"
 "Spike-Kip's"
+"Su's"
 "Tipsy Spit"
 "Tope Depot"
 "Zara'z"
@@ -925,11 +928,13 @@ randtxt
 [this may be related to Yuge Guy taunts, but the Diktat Kid insults you. The Yuge Guy puffs himself up.]
 table of diktat taunts
 randtxt
+"Ahahahahahaha!"
 "Da bad! Da BAD!! DA BAD!!!"
 "Dire! Rid!"
 "Dude(tte)! Dud!"
 "Duh, THUD!"
 "Hah!"
+"LOLOLOLOL!"
 "Mess [']em!"
 "Noogie! I, goon!"
 "Noose soon!"
@@ -944,11 +949,11 @@ randtxt
 
 table of Moo Room animals
 randtxt
-"an un-gnu"
 "a buck cub"
 "a go-here hog"
 "a pirana (RIP)"
 "a rat avatar"
+"a red darer adder"
 "sab mambas"
 "sewed ewes"
 "sewer ewes"
@@ -957,11 +962,12 @@ randtxt
 "smart rams"
 "sum emus"
 "a tart rat"
+"an un-gnu"
 
 table of My Gym songs
 randtxt
-"[']Allo, Dolla[']"
 "All Illa[']"
+"[']Allo, Dolla[']"
 "Do Mo['] Mod"
 "Emote to Me"
 "Hat-stah"
@@ -1062,7 +1068,6 @@ randtxt
 
 table of Rob droning
 randtxt
-"[']Tis. Suss it!"
 "Boone?! Noob!"
 "EOF, Foe!"
 "Hank? Nah."
@@ -1079,6 +1084,7 @@ randtxt
 "SETI sites!"
 "Signing is..."
 "Spidered IPs?!"
+"[']Tis. Suss it!"
 "To ban a bot..."
 "Y-array?!"
 
@@ -1095,6 +1101,7 @@ randtxt
 "Ay, a papaya"
 "Fee Beef"
 "Food ... oof"
+"Hep-met tempeh"
 "No revile-liver on"
 "Nom la salmon"
 "Risotto, Sir"
@@ -1116,6 +1123,7 @@ randtxt
 "Kook!"
 "Not on!"
 "Pah, chap!"
+"Red? No wonder!"
 "Redder... redder..."
 "Rep me, temper!"
 "Speel? Bleeps."
@@ -1133,7 +1141,6 @@ randtxt
 table of undoings
 randtxt
 "'Redo-coder! Redo-coder!'"
-"[']S poor. Oops!"
 "Ay, CYA."
 "Did. [']Nuff? Undid."
 "Did. Error? Redid."
@@ -1141,6 +1148,7 @@ randtxt
 "Nixin[']..."
 "Or, Perp, REPRO!"
 "Pah, simp! Mishap!"
+"[']S poor. Oops!"
 "Sod [']er! Redos!"
 "Time: remit."
 
@@ -1187,6 +1195,7 @@ randtxt
 "No Sin is On!"
 "Onan? A no!"
 "Sad as..."
+"Sin, I? Finis!"
 "Sob! Mild Limbos!"
 "Sog, Ebb, Egos!"
 "Want? Naw!"
@@ -1207,7 +1216,7 @@ randtxt
 table of yuge taunts
 randtxt
 "A-lists? I? La!"
-"Ahahahahahaha!"
+"Dig Id!"
 "Ey, dye?!"
 "Gibe! Big!"
 "Hog, oh!"
@@ -1220,12 +1229,14 @@ randtxt
 "Me: sees [']em!"
 "Misdeeds? I'm ..."
 "Moobs: BOOM!"
+"[']N I WIN!"
 "Name: HE-MAN!"
 "Nem O['] women!"
 "Nil Appalin[']!"
 "Null [']un!"
 "Odd-*** Saddo!" [ignore]
 "Oh, BHO!"
+"OK! Cis! Sicko!"
 "Ooh...shoo!"
 "Pal! Clap!"
 "Pal, rub burlap!"
@@ -1239,6 +1250,7 @@ randtxt
 "Tariff? I? Rat!"
 "Wane? Naw!"
 "Y'r Dry!"
+"Yen O['] Money!"
 "You! Oy!"
 
 Ailihphilia Tables ends here.
