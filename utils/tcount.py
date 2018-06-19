@@ -5,7 +5,7 @@
 #
 
 from datetime import datetime
-
+from shutil import copyfile
 from collections import defaultdict
 import math
 import os
@@ -19,6 +19,8 @@ verbose = False
 zap_first = False
 zap_last = False
 update_log_file = False
+test_log = False
+write_backup = True
 
 # variables
 table_sizes = defaultdict(int)
@@ -33,8 +35,10 @@ while argcount < len(sys.argv):
     if arg[0] == '-': arg = arg[1:]
     if arg == 'v': verbose = True
     elif arg == 'nv': verbose = False
-    elif arg == 'b1': biggest_first = True
-    elif arg == 'bl': biggest_first = False
+    elif arg == 'ba' or arg == 'b': write_backup = True
+    elif arg == 'tl' or arg == 'lt': test_log = True
+    elif arg == 'bf' or arg == 'fb': biggest_first = True
+    elif arg == 'bl' or arg == 'lb': biggest_first = False
     elif arg == 'u': update_log_file = True
     elif arg == 'un' or arg == 'nu': update_log_file = False
     elif arg == 'zf': zap_first = True
@@ -65,7 +69,8 @@ amean = gmean = gmeanp = 0
 
 data_file = "tcount.txt"
 log_file = "tcount-log.txt"
-log_file_redo = "tcount-log-redo.txt"
+log_back = "tcount-log-backup.txt"
+log_test_file = "tcount-log-test.txt"
 
 if os.path.exists(data_file):
     with open(data_file) as file:
@@ -124,6 +129,10 @@ if update_log_file:
     print("Looking if we can/should update...")
     my_ary = [table_sizes[x] for x in sorted(table_sizes.keys())]
     if os.path.exists(log_file) and os.stat(log_file).st_size:
+        out_file = log_test_file if test_log else log_file
+        if write_backup:
+            copyfile(log_file, log_back)
+            print("Copied to backup", log_back)
         table_check = defaultdict(bool)
         changed_array = False
         sts = sorted(table_sizes.keys())
@@ -142,17 +151,17 @@ if update_log_file:
             table_check[x] = True
         for x in table_check.keys():
             if not table_check[x]: changed_array = True
-        a = [int(q) for q in last_num_line.split(",")]
+        old_vals = [int(q) for q in last_num_line.split(",")]
         got_dif = False
         for j in range(0, len(my_ary)):
-            if my_ary[j] != a[j]: got_dif = True
+            if my_ary[j] != old_vals[j]: got_dif = True
         if changed_array or got_dif:
-            flog = open(log_file, "w+")
+            flog = open(out_file, "a")
             flog.write("#{:s}\n".format(str(datetime.now())))
-            if changed_array: flog.write(','.join(sorted(sts)) + "\n")
+            if changed_array: flog.write('#' + ','.join(sorted(sts)) + "\n")
             if got_dif:
-                flog.write('#' + ','.join([str(a[q]-my_ary[q]) for q in (0, len(a))]) + "\n")
-                flog.write(','.join([str(x) for x in a]) + "\n")
+                flog.write('#delta: ' + ','.join([str(my_ary[q] - old_vals[q]) for q in range(0, len(old_vals))]) + "\n")
+                flog.write(','.join([str(x) for x in my_ary]) + "\n")
             print("Updated", log_file)
             flog.close()
         else:
