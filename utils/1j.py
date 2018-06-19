@@ -23,6 +23,7 @@ tack_end_on_start = False
 print_standard_palindrome = True
 strict_reverse = False
 
+file_list = [ 'firsts', 'lasts', 'brit-1word' ]
 count = 1
 
 while count < len(sys.argv):
@@ -44,6 +45,11 @@ while count < len(sys.argv):
         strict_reverse = True
     elif arg == 'nsr' or arg == 'nrs':
         strict_reverse = False
+    elif re.search("^[flw]+$", arg):
+        file_list = []
+        if 'f' in arg: file_list.append('firsts')
+        if 'l' in arg: file_list.append('lasts')
+        if 'w' in arg: file_list.append('brit-1word')
     else:
         usage()
     count += 1
@@ -96,6 +102,4 @@ def one_pal(a):
             print(end_to_start[q].strip())
     print("start", count1, "end", count2, "for", a)
 
-one_pal("firsts")
-one_pal("lasts")
-one_pal("brit-1word")
+for fname in file_list: one_pal(fname)

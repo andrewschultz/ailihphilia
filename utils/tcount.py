@@ -20,7 +20,7 @@ zap_first = False
 zap_last = False
 update_log_file = False
 test_log = False
-write_backup = True
+write_backup = False
 
 # variables
 table_sizes = defaultdict(int)
@@ -38,7 +38,7 @@ while argcount < len(sys.argv):
     elif arg == 'ba' or arg == 'b': write_backup = True
     elif arg == 'tl' or arg == 'lt': test_log = True
     elif arg == 'bf' or arg == 'fb': biggest_first = True
-    elif arg == 'bl' or arg == 'lb': biggest_first = False
+    elif arg == 'bl' or arg == 'lb' or arg == 'b1' or arg == '1b': biggest_first = False
     elif arg == 'u': update_log_file = True
     elif arg == 'un' or arg == 'nu': update_log_file = False
     elif arg == 'zf': zap_first = True
