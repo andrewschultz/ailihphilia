@@ -1233,6 +1233,7 @@ table of yuge taunts
 randtxt
 "A-lists? I? La!"
 "Dig Id!"
+"Ere me, MERE!"
 "Ey, dye?!"
 "Gibe! Big!"
 "Hog, oh!"

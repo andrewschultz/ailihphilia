@@ -13,6 +13,18 @@ import re
 import i7
 import sys
 
+def print_geo_mean(a):
+    c = []
+    try:
+        c = [int(x) for x in a.split(",")]
+    except:
+        sys.exit("CSV in cmd line must separate numbers.")
+    lo = 0
+    for x in c: lo += math.log(x)
+    lo /= len(c)
+    sys.exit("Geometric mean of {:s} is {:.4f}".format(a, math.exp(lo)))
+
+
 # options
 biggest_first = True
 verbose = False
@@ -33,7 +45,8 @@ argcount = 1
 while argcount < len(sys.argv):
     arg = sys.argv[argcount]
     if arg[0] == '-': arg = arg[1:]
-    if arg == 'v': verbose = True
+    if ',' in arg: print_geo_mean(arg)
+    elif arg == 'v': verbose = True
     elif arg == 'nv': verbose = False
     elif arg == 'ba' or arg == 'b': write_backup = True
     elif arg == 'tl' or arg == 'lt': test_log = True
@@ -51,6 +64,7 @@ with open(i7.tafi('ai')) as file:
     for (line_count, line) in enumerate(file, 1):
         if get_header:
             get_header = False
+            if line.startswith('tabnam'): in_table = False
             continue
         if line.startswith('table') and '\t' not in line:
             # print(line_count, line)
