@@ -697,6 +697,7 @@ by one point
 
 >n
 
+#force-revit-cmd
 >get all
 
 >s
