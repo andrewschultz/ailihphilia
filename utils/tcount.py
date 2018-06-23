@@ -153,15 +153,16 @@ if update_log_file:
             if not table_check[x]: changed_array = True
         old_vals = [int(q) for q in last_num_line.split(",")]
         got_dif = False
-        for j in range(0, len(my_ary)):
-            if my_ary[j] != old_vals[j]: got_dif = True
+        if not changed_array:
+            for j in range(0, len(my_ary)):
+                if my_ary[j] != old_vals[j]: got_dif = True
         if changed_array or got_dif:
             flog = open(out_file, "a")
             flog.write("#{:s}\n".format(str(datetime.now())))
             if changed_array: flog.write('#' + ','.join(sorted(sts)) + "\n")
             if got_dif:
                 flog.write('#delta: ' + ','.join([str(my_ary[q] - old_vals[q]) for q in range(0, len(old_vals))]) + "\n")
-                flog.write(','.join([str(x) for x in my_ary]) + "\n")
+            flog.write(','.join([str(x) for x in my_ary]) + "\n")
             print("Updated", log_file)
             flog.close()
         else:

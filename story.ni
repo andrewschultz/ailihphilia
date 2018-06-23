@@ -738,6 +738,7 @@ instead of listening:
 	if player is in Mont Nom, say "The Ark of Okra is almost saying 'Nom on!' or 'C'mon! Nom!' or even 'Tum-Smut!'" instead;
 	if player is in Yack Cay and Known Wonk is in Yack Cay, say "The Known Wonk is just babbling on about stuff you aren't be interested in." instead;
 	if player is in Moo Room, say "You think you hear [next-rand-txt of table of Moo Room animals] in addition to the mooing." instead;
+	if player is in Le Babel, say "Freakish whisperings of the apocryphal [next-rand-txt of table of babel babble] swirl in the air." instead;
 	say "Noise lesion."
 
 chapter seebeesing
@@ -3029,7 +3030,7 @@ instead of talktoing lie veil, say "It's already messing with your mind. Probabl
 
 book Le Babel
 
-Le Babel is north of Dumb Mud. It is in Grebeberg. "This is a weird place. Nothing makes sense here. A voodoo v blocks passage--and sight--everywhere except back south."
+Le Babel is north of Dumb Mud. It is in Grebeberg. "Here space and time seem horribly warped. You can listen for apocryphal mumblings ... if you dare. A voodoo v blocks passage--and sight--everywhere except back south."
 
 chapter voodoo v
 

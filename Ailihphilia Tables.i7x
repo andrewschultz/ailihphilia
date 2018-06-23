@@ -754,6 +754,7 @@ to say next-rand-txt of (t - a table name):
 
 table of all randoms
 tabnam	tabidx	thru-yet	lbrk	desc	cycle-note
+able of babel babbles	0	0	true	"babbles if you LISTEN in Le Babel"	--
 table of altbooks	0	0	false	"extra books in the Tract Cart"	"You've read all the books on the tract cart. Hooray for curiosity!"
 table of attackings	0	0	true	"responses to ATTACK"	--
 table of Bond Nob bars	0	0	false	"bars the Bond Nob visits"	-- [?? may cause a problem cycling talking to nob]
@@ -900,6 +901,13 @@ randtxt
 "Igniting, I!"
 "Rah! Char!"
 "To hot?!"
+
+table of babel babbles
+randtxt
+"Gnomon G"
+"Hoodoo H"
+"Lotto L"
+"Tso St"
 
 table of Bond Nob bars
 randtxt
