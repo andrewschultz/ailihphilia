@@ -121,11 +121,13 @@ while count < len(sys.argv):
     elif arg == 'r' or arg == 'fr' or arg == 'f': reorder = True
     elif arg == 'nr' or arg == 'rn': reorder = False
     elif arg == 'mx': max_errs = -1
+    elif arg[:2] == 'm-': sys.exit("Instead of {:s}, try mx to disable rearrangement regardless of the number of errors.".format(arg))
     elif arg[0] == 'm':
         try:
-            max_errs = int(sys.argv[count+1])
+            if len(arg[0]) > 1: max_errs = int(arg[0][1:])
+            else: max_errs = int(sys.argv[count+1])
         except:
-            print("Need # argument after m, or mx to disable reshuffling.")
+            sys.exit("Need positive number argument after m, or mx (alone) to disable reshuffling.")
     else:
         usage()
     count += 1

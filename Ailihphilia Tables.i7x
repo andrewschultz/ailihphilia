@@ -942,12 +942,14 @@ randtxt
 table of diktat taunts
 randtxt
 "Ahahahahahaha!"
+"Be EW, dweeb!"
 "Da bad! Da BAD!! DA BAD!!!"
 "Dire! Rid!"
 "Dude(tte)! Dud!"
 "Duh, THUD!"
 "Hah!"
 "LOLOLOLOL!"
+"Medicide'm!"
 "Mess [']em!"
 "Noogie! I, goon!"
 "Noose soon!"
@@ -1127,6 +1129,7 @@ randtxt
 "Fee Beef"
 "Food ... oof"
 "Hep-met tempeh"
+"Mass assam"
 "No revile-liver on"
 "Nom la salmon"
 "Risotto, Sir"
@@ -1242,6 +1245,7 @@ randtxt
 table of yuge taunts
 randtxt
 "A-lists? I? La!"
+"Bilk-Lib!"
 "Dig Id!"
 "Ere me, MERE!"
 "Ey, dye?!"
