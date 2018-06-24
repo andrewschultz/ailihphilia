@@ -754,9 +754,9 @@ to say next-rand-txt of (t - a table name):
 
 table of all randoms
 tabnam	tabidx	thru-yet	lbrk	desc	cycle-note
-able of babel babbles	0	0	true	"babbles if you LISTEN in Le Babel"	--
 table of altbooks	0	0	false	"extra books in the Tract Cart"	"You've read all the books on the tract cart. Hooray for curiosity!"
 table of attackings	0	0	true	"responses to ATTACK"	--
+table of babel babbles	0	0	true	"babbles if you LISTEN in Le Babel"	--
 table of Bond Nob bars	0	0	false	"bars the Bond Nob visits"	-- [?? may cause a problem cycling talking to nob]
 table of burnies	0	0	true	"responses to BURN"	--
 table of businesses	0	0	true	"businesses in Day-Away Ad"	--
@@ -904,10 +904,15 @@ randtxt
 
 table of babel babbles
 randtxt
+"the day dyad"
+"Dresser D"
+"E Garage"
 "Gnomon G"
 "Hoodoo H"
 "Lotto L"
+"Muumuu M"
 "Tso St"
+"Were-W"
 
 table of Bond Nob bars
 randtxt
@@ -977,6 +982,7 @@ table of My Gym songs
 randtxt
 "All Illa[']"
 "[']Allo, Dolla[']"
+"Bebe B"
 "Do Mo['] Mod"
 "Emote to Me"
 "Er, AWARE"
@@ -998,6 +1004,7 @@ randtxt
 "Ode: Dude, DO"
 "Opera Repo"
 "Or BE, Bro"
+"Park Rap"
 "Petite P"
 "Rap Spar"
 "Rev [']Er"
@@ -1064,6 +1071,7 @@ randtxt
 "Boyd Yob"
 "Emil Slime"
 "Evil Clive"
+"G-Nixing"
 "Gory Rog"
 "Hat Ptah"
 "Iller Elli"
@@ -1073,6 +1081,7 @@ randtxt
 "Obese Bo"
 "Ol['] Flo"
 "Peewee P"
+"Potato P"
 "Presser P"
 "Rocco R"
 "Rollo R"
@@ -1133,6 +1142,7 @@ randtxt
 "Dark. Rad!"
 "Delivery: reviled!"
 "Guff! Ug!"
+"Harp! Rah!"
 "Hell, eh?"
 "Hoot! Ooh!"
 "Hot! Oh!"
