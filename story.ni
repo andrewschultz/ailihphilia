@@ -1826,7 +1826,7 @@ enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	Moo R
 troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	Grebeberg	Ooze Zoo	false	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the stinky knits, but still quite distinctive. The ort must've been covered by the dirt for a long time, because it disintegrates as its essence is leaked onto the brag garb." [b4:pace cap] [af:yak okay]
 --	--	--	rev-yak-okay rule	--	true	--	--	Grebeberg	Lair Trial	false
 sage gas	tame mat	guru rug	--	--	true	true	true	Grebeberg	Motto Bottom	false	"'Mix a maxim...' you mutter to yourself. The sage gas bubbles out under the tame mat, and the message changes. To something wiser. But perhaps a bit stuffy: a guru rug!"
-sharp rahs	guru rug	tenet	--	brag-garb-bye rule	true	true	true	Grebeberg	Motto Bottom	false	"The sharp rahs meld into the guru rug, which feels less weighted down by philosophy and floats away. Under it there's a tenet, which seems a bit corny at first, but it seems like it'll help you focus on who you are and what you need to do.[paragraph break]After reading it, you feel distinctly silly in your brag garb, which seems so gaudy now. Instinctively, you take it off and commit it to the Be Web. The brag garb floats away. You know you have done the right thing."
+sharp rahs	guru rug	stir writs	--	brag-garb-bye rule	true	true	true	Grebeberg	Motto Bottom	false	"The sharp rahs meld into the guru rug, which feels less weighted down by philosophy and floats away. Under it there are stir-writs, which seem oversimplified at first, but on re-reading, they strike just the right balance between emotional and intellectual stimulation.[paragraph break]After reading them, you feel distinctly silly in your brag garb, which seems so gaudy now. Instinctively, you take the garb off and commit it to the Be Web. As the brag garb floats away, you know you have done the right thing, but you need to do more."
 --	--	--	rev-nail-Ian rule	--	true	--	--	Grebeberg	Mont Nom	false
 --	--	--	rev-first-food-combo rule	--	true	--	--	Grebeberg	Mont Nom	false
 --	--	--	rev-second-food-combo rule	--	true	--	--	Grebeberg	Mont Nom	false
@@ -1894,7 +1894,7 @@ this is the rev-first-food-combo rule:
 
 this is the rev-get-bro-orb rule:
 	say "You get the Bro Orb from Le Babel.";
-	moot tenet;
+	moot stir writs;
 	now player has Bro Orb;
 	the rule succeeds;
 
@@ -3084,22 +3084,22 @@ understand "bros" and "bros orb" as Bro Orb.
 
 check taking Bro Orb:
 	if player has Bro Orb, say "You already have it." instead;
-	if player does not have tenet, say "A voice in your head says 'WANT? NAW!'[paragraph break]You aren't sure you can handle the potentially corrupting power of the Bro Orb. [if player has sage gas]The sage gas helps you to understand how things could go wrong, but still, you're a bit worried[end if]. Maybe if you had some more balance to your thinking." instead;
-	say "You wonder if you should take the Bro Orb. If you deserve to. But you reread the tenet and whisper to yourself, 'Nag, ol['] slogan,' and feel balanced enough to take the Bro Orb and accept the responsibility for doing so.[paragraph break]And even to recognize that you don't always deserve points for doing the right thing[if useon-tenet is true], or knowing what to use on what[end if]. The tenet helped with that. Just having the Bro Orb will be enough. It will be useful somewhere.";
+	if player does not have stir writs, say "A voice in your head says 'WANT? NAW!'[paragraph break]You aren't sure you can handle the potentially corrupting power of the Bro Orb. [if player has sage gas]The sage gas helps you to understand how things could go wrong, but still, you're a bit worried[end if]. Maybe if you had some more balance to your thinking." instead;
+	say "You wonder if you should take the Bro Orb. If you deserve to. But you reread the stir writs and whisper to yourself, 'Nag, ol['] slogan,' and feel balanced enough to take the Bro Orb and accept the responsibility for doing so.[paragraph break]And even to recognize that you don't always deserve points for doing the right thing[if useon-writs is true], or knowing what to use on what[end if]. The stir writs helped with that. Just having the Bro Orb will be enough. It will be useful somewhere.";
 
 report taking Bro Orb:
-	moot tenet;
-	say "Taking the Bro Orb requires two hands. You watch the tenet flutter off beyond the Voodoo V. Oh, well. You carry the tenet's message in your mind and heart and stuff anyway, now.";
+	moot stir writs;
+	say "Taking the Bro Orb requires two hands. You watch the stir writs flutter off beyond the Voodoo V. Oh, well. You carry the stir writs['] messages in your mind and heart and stuff anyway, now, and you'll continue to do so even when this adventure is done.";
 	the rule succeeds;
 
-useon-tenet is a truth state that varies.
+useon-writs is a truth state that varies.
 
-check useoning Bro Orb with tenet:
-	try useoning tenet with Bro Orb instead; [ugh! I know. I just have to do this hack once, though. ??]
+check useoning Bro Orb with stir writs:
+	try useoning stir writs with Bro Orb instead; [ugh! I know. I just have to do this hack once, though. ??]
 
-check useoning tenet with Bro Orb:
-	now useon-tenet is true;
-	say "You don't need to wave the tenet around or anything to take the orb, but you focus on the tenet to make sure.[paragraph break]";
+check useoning stir writs with Bro Orb:
+	now useon-writs is true;
+	say "You don't need to wave the stir writs around or anything to take the orb, but you focus on the stir writs to make sure.[paragraph break]";
 	try taking Bro Orb instead;
 
 book Mont Nom
@@ -3396,11 +3396,11 @@ The guru rug is a thing. "A guru rug lies here. You're not sure how impressed yo
 
 check taking guru rug: say "'Egad! Adage!' you think to yourself. You're not up to any great philosophy. Maybe something less heavy than the guru rug." instead;
 
-chapter tenet
+chapter stir writs
 
-The tenet is a thing. description is "It seems a bit too cliche, but you have the wisdom to get the encouragement you need from it."
+The stir writs are a plural-named thing. description is "It seems a bit too cliche, but you have the wisdom to get the encouragement you need from it."
 
-check useoning tenet with Bro Orb: try taking Bro Orb instead;
+check useoning stir writs with Bro Orb: try taking Bro Orb instead;
 
 book Yack Cay
 
@@ -6177,7 +6177,7 @@ section Le Babel rule
 this is the le-babel rule:
 	if Bro Orb is not in Le Babel, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if player does not have tenet, say "You need something to help you take the Bro Orb. It's in [if Motto Bottom is visited]a place you haven't visited yet[else]Motto Bottom[end if]." instead;
+	if player does not have stir writs, say "You need something to help you take the Bro Orb. It's in [if Motto Bottom is visited]a place you haven't visited yet[else]Motto Bottom[end if]." instead;
 	say "All you really have to do here is take the Bro Orb." instead;
 
 section Swamp Maws rule
@@ -6211,10 +6211,10 @@ this is the moo-room rule:
 section Motto Bottom rule
 
 this is the motto-bottom rule:
-	if tenet is moot or player has tenet, continue the action;
+	if stir writs is moot or player has stir writs, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if player does not have sage gas, say "You need to get something from Apse Spa." instead;
-	if player does not have tenet, say "USE SHARP RAHS ON GURU RUG." instead;
+	if player does not have stir writs, say "USE SHARP RAHS ON GURU RUG." instead;
 
 section My Gym rule
 
