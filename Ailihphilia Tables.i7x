@@ -758,12 +758,12 @@ table of all randoms
 tabnam	tabidx	thru-yet	lbrk	desc	cycle-note
 table of altbooks	0	0	false	"extra books in the Tract Cart"	"You've read all the books on the tract cart. Hooray for curiosity!"
 table of attackings	0	0	true	"responses to ATTACK"	--
-table of babel babbles	0	0	true	"babbles if you LISTEN in Le Babel"	--
+table of babel babble	0	0	true	"babbles if you LISTEN in Le Babel"	--
 table of Bond Nob bars	0	0	false	"bars the Bond Nob visits"	-- [?? may cause a problem cycling talking to nob]
 table of burnies	0	0	true	"responses to BURN"	--
 table of businesses	0	0	true	"businesses in Day-Away Ad"	--
 table of diktat taunts	0	0	false	"Diktat Kid taunts"	--
-table of Moo Room animals	0	0	true	"Moo Room animals (LISTEN)"	--
+table of Moo Room animals	0	0	false	"Moo Room animals (LISTEN)"	--
 table of My Gym songs	0	0	false	"songs in My Gym (LISTEN)"	--
 table of noesies	0	0	true	"responses to NO"	--
 table of nothings	0	0	true	"responses to empty commands"	--
@@ -904,7 +904,7 @@ randtxt
 "Rah! Char!"
 "To hot?!"
 
-table of babel babbles
+table of babel babble
 randtxt
 "the day dyad"
 "Dresser D"

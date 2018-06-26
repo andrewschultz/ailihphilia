@@ -124,11 +124,11 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 390. [-40 from max_verbs debug]
+use MAX_VERBS of 400. [-40 from max_verbs debug]
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 430. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 440. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 chapter kinds of things
 
@@ -413,7 +413,7 @@ volume the player
 description of player is "Flesh. Self.". initial appearance of player is "U R U".
 
 check dropping:
-	say "This game is not Pro-Drop. There is no met-ill item. In other words, you don't need to drop anything. You may wish to USE it instead." instead;
+	say "This game is not Pro-Drop. There is no met-ill item. In other words, you don't need to drop anything. Most items will disappear from your inventory once they're no longer useful." instead;
 
 to decide which region is mrlp:
 	decide on map region of location of player;
@@ -737,7 +737,7 @@ instead of listening:
 	if player is in Apse Spa, say "Surprisingly, no spa yaps." instead;
 	if player is in Mont Nom, say "The Ark of Okra is almost saying 'Nom on!' or 'C'mon! Nom!' or even 'Tum-Smut!'" instead;
 	if player is in Yack Cay and Known Wonk is in Yack Cay, say "The Known Wonk is just babbling on about stuff you aren't be interested in." instead;
-	if player is in Moo Room, say "You think you hear [next-rand-txt of table of Moo Room animals] in addition to the mooing." instead;
+	if player is in Moo Room, say "[if bees-seen is false]An ominous buzzing. Where is it coming from?[else]You think you hear [next-rand-txt of table of Moo Room animals] in addition to the mooing.[end if]" instead;
 	if player is in Le Babel, say "Freakish whisperings of the apocryphal [next-rand-txt of table of babel babble] swirl in the air." instead;
 	say "Noise lesion."
 
@@ -754,7 +754,7 @@ bees-seen is a truth state that varies.
 carry out seebeesing:
 	if bees-seen is true, say "You already saw the bees [if player is in Moo Room]here[else]in Moo Room[end if]." instead;
 	if player is not in Moo Room, say "There are no bees to see here." instead;
-	say "You look carefully and hear a soft buzzing. Yes, that's where the bees are. You can see them, and you're not afraid.";
+	say "You look carefully and hear a soft buzzing. Yes, that's where the bees are. You can see them, and you're not afraid. With the bees less fearsome, farmier noises become prominent.";
 	abide by the LLP rule; [SEE BEES]
 	now bees-seen is true;
 	the rule succeeds;
@@ -1070,20 +1070,29 @@ understand "verb" as verbing.
 understand "v" as verbing.
 understand "help" as verbing.
 
+to decide whether do-alt-commands:
+	if player has radar, yes;
+	if beep-yet is true, yes;
+	if chase-aware, yes;
+	no;
+
+to decide whether chase-aware:
+	if ever-chased is true and psi wisp is not moot and kayo yak is not moot, yes;
+	no;
+
 carry out verbing:
 	say "The four basic directions ([b]N, S, E, W[r]) are the main ones, along with [b]USE[r], in order to get through the game. Also, in some places, specific verbs will be needed. None are terribly long, and---well, there is a thematic pattern to them.";
 	say "[line break]Standard verbs like [b]X[r] ([b]EXAMINE[r]) and [b]LOOK[r] also work.";
 	say "[line break][b]GT[r] or [b]GO TO[r] lets you go to a room where you've been before.";
-	say "[line break][b]T[r] or [b]TALK TO[r] talks to someone. You don't need to, to win the game, but there you are.";
-	say "[line break][b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
-	say "[line break][b]THINK gives general non-spoiler hints, including where you may wish to visit, or what is blocking you[if pyx is quicknear][b]X X[r] or [b]MAP[r] will let you examine the X/Y Pyx.";
-	say "[line break][b]AID[r] gives you hints for where you are. [b]SCORE[r] tracks the score. [b]ABOUT[r] and [b]CREDITS[r] tell about the game[if show-dev is true], and [b]DEV ED[r] shows technical details[end if].";
-	if player is in Fun Nuf and kaos oak is xed, say "[line break][b]GRAMMAR G[r] flips the [kaoscaps] around, which is purely cosmetic.";
+	say "[b]T[r] or [b]TALK TO[r] talks to someone. You don't need to, to win the game, but there you are.";
+	say "[b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
+	say "[b]THINK gives general non-spoiler hints, including where you may wish to visit, or what is blocking you[if pyx is quicknear][b]X X[r] or [b]MAP[r] will let you examine the X/Y Pyx.";
+	say "[b]AID[r] gives you hints for where you are. [b]SCORE[r] tracks the score. [b]ABOUT[r] and [b]CREDITS[r] tell about the game[if show-dev is true], and [b]DEV ED[r] shows technical details[end if].";
+	if player is in Fun Nuf and kaos oak is xed, say "[b]GRAMMAR G[r] flips the [kaoscaps] around, which is purely cosmetic.";
 	if wr-short-note is true and in-work, say "[line break][b]REV[r], [b]ROT[r] and [b]REI[r] is shorthand to use an item on the reviver, rotator and reifier, respectively.";
-	if player has radar, say "[line break][b]RAD[r] is shorthand to use the radar on something.";
+	if player has radar, say "[b]RAD[r] is shorthand to use the radar on something.";
 	if beep-yet is true, say "[b]LO VOL[r] and [b]LOVE VOL[r] turn the pact cap's hints volume down and up, respectively.";
-	if ever-chased is true:
-		if psi wisp is not moot and kayo yak is not moot, say "[no-time-note].";
+	if chase-aware, say "[no-time-note].";
 	if in-beta is true:
 		say "[line break](start beta commands)";
 		say "[line break][b]RR[r] lets you try all three items in the Word Row machines. If one nets a point, it goes last.";
@@ -1809,7 +1818,7 @@ NULL ILLUN	Known Wonk	--	--	bump-maws rule	true	true	false	Grebeberg	Yack Cay	fa
 el doodle	edits tide	spa maps	--	rahs-too rule	true	true	false	Grebeberg	Yack Cay	false	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps! And there is a bonus! It appears El Doodle was so jumbled, there were two things. Sharp rahs appear on another sheet of paper, as some sort of confused motivation, and you take them."
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	Calcific Lac	false	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where. You whisper 'Row, or' whenever you get tired. Then you see Elided Ile in the distance. So you stop off there. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and you are worthy to fight the vicious Bar Crab. It is no match for your elope pole. The citizens hand you a YOU BUOY to tell you they're glad you're you, asking only for the elope pole as a souvenir. Well, it was getting a bit awkward to carry.[paragraph break]They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Calcific Lac. As it gets near and bends away, you jump off, using the buoy to paddle and float back all the way."
 dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	Calcific Lac	false	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
-tent net	Code Doc	--	--	--	true	true	false	Grebeberg	Uneven U	false	"Together, you figure out what to do to make the tent net proper cover for Uneven U. 'Tie it ... tie it ...' then 'Net: safe. fasten!'[paragraph break]Once the work is done, the Code Doc thanks you and offers to share some knowledge in return, whenever[if spa maps are preclued]. In fact, the Code Doc would probably be more receptive to helping you with the spa maps[end if]."
+tent net	Code Doc	--	--	--	true	true	false	Grebeberg	Uneven U	false	"Together, you figure out what to do to make the tent net proper cover for Uneven U. 'Tie it ... tie it ...' then 'Net: safe. fasten!'[paragraph break]Once the work is done, the Code Doc thanks you. 'Let me know if you need help learning ... well, anything. Oh, and call me Dr. D., if you'd like.'[paragraph break]How thoughtful! That could save a few keystrokes in the future[if spa maps are preclued]! Maybe the very near future, if you ask about the spa maps again[end if]."
 spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	Uneven U	false	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my for-prof math tam for this one. One second, let's see--Aha! Oho...'[paragraph break]You each split an Ed-Ade to make sure the lesson is taught and remembered well. Despite a minor pupil slip-up, the Code Doc is never edu-rude. It soon makes complete sense to you. You don't know how to say thanks. Everything seems too long-winded or said before, until ... 'Def ed!'"
 spa maps	go-by bog	sage gas	maps-readable rule	gas-think-wipe rule	true	true	false	Grebeberg	Apse Spa	false	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	Moo Room	false	"You stick some strands of yahoo hay into the damaged end of the dork rod. It's now a moor broom!"
@@ -3174,7 +3183,7 @@ chapter Stamp Mats
 stamp mats are a thing in Frush Surf. "Stamp mats lie here.". description is "The stamp mats are thin and appear to be engraved in order to cut a pattern out."
 
 report taking stamp mats:
-	say "The stamp mats are thin enough and don't weigh too much. Taken.";
+	say "The stamp mats are thin enough and thus not too heavy. You'll be able to carry them wherever with ease.";
 	the rule succeeds;
 
 after taking stamp mats:
@@ -3232,7 +3241,7 @@ check going east in Frush Surf when being-chased is true:
 
 book Moo Room
 
-Moo Room is east of Frush Surf. It is in Grebeberg. "You can't see any cows, but you occasionally hear them. From what you can see, the farm belongs to a Mr. A, who is not around. [if yahoo hay is in Moo Room]Yahoo hay is piled all around. [end if]The only way back is west."
+Moo Room is east of Frush Surf. It is in Grebeberg. "You can't see any cows, but you occasionally hear them[if bees-seen is false] and, also, an ominous buzzing it'd be nice to locate[end if]. From what you can see, the farm belongs to a Mr. A, who is not around. [if yahoo hay is in Moo Room]Yahoo hay is piled all around. [end if]The only way back is west."
 
 chapter poo coop
 
@@ -3318,9 +3327,9 @@ instead of entering den ivy vined, try going east instead;
 
 chapter code doc
 
-Code Doc is a neuter person in Uneven U. "[one of]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, before putting them back in an unused pocket labeled DR A. CARD. Busy, but not too busy to help someone else."
+Code Doc is a neuter person in Uneven U. "[one of]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, mumbling how it'd be nice to hire (new doctor). Busy, but not too busy to help someone else."
 
-understand "dr/card" and "dr card" as code doc.
+understand "dr/d" and "dr d" as code doc when tent net is moot.
 
 chapter Spa Maps
 
@@ -3799,7 +3808,7 @@ does the player mean evadeing Dave: it is very likely.
 carry out evadeing:
 	if noun is Dave:
 		if Dave is moot, say "You don't need to evade Dave again.";
-		say "You evade Dave! Deked! Deked![paragraph break]Dave, frustrated from spinning around trying to catch you, runs off.[paragraph break]Suspicious there are no actual weight machines, you find a passage to a hidden spate of Sperses-Reps machines with the motto 'Scepsis?! Pecs!' They help you bulk up a bit, so weight will not be a factor. But you don't want to waste too much time bulking up. You go back out and have a look at the Stole-Lots. You consider making it a STORE-lots, but then the 'rots' is not so good, so then you also check if the E and an L rub out quickly. They do, making it a Sto(['])-Lots. Bam! That solves a logistical AND a moral problem![paragraph break]Also, you notice a wash saw in the Stole/Sto-Lots. It seems worth taking along.";
+		say "You evade Dave! Deked! Deked![paragraph break]Dave, frustrated from spinning around trying to catch you, runs off.[paragraph break]Suspicious there are no actual weight machines, you find a passage to a hidden spate of Sperses-Reps machines with the motto 'Scepsis?! Pecs!' They help you bulk up a bit, so weight will not be a factor. But you don't want to waste too much time bulking up. You go back out and have a look at the Stole-Lots. You consider making it a STORE-lots, but then the 'rots' is not so good, so then you also check if the E and an L rub out quickly. They do, making it a Sto(['])-Lots. Bam! Logistical and moral problems: SOLVED![paragraph break]Also, you notice a wash saw in the Stole/Sto-Lots. It seems worth taking along.";
 		moot Dave;
 		now player has sto lots;
 		moot stole lots;
@@ -4087,7 +4096,7 @@ instead of givesubbing:
 			if number of npcish people in location of player > 1:
 				let rnpc be random npcish person in location of player;
 				try giving ti to rnpc instead;
-	continue the action;
+	try giving second noun to noun instead;
 
 definition: a person (called per) is npcish:
 	if per is the player, no;
@@ -5485,7 +5494,7 @@ definition: a thing (called th) is recoverable: [orphaned definition but potenti
 	yes;
 
 to say no-time-note:
-	say "When you are in a chase[if being-chased is true], like right now[end if], commands like X/EXAMINE and I/INVENTORY and even THINK/AID (if you must) will take no time"
+	say "When you are in a chase[if being-chased is true], like right now[end if], commands like X/EXAMINE, L/LOOK, I/INVENTORY and even THINK/AID (if you must) will take no time"
 
 every turn when being-chased is true:
 	if action is procedural:
@@ -6440,7 +6449,7 @@ carry out pooping:
 		now poop-boob-yet is true;
 		say "[line break][bracket]Your score has just gone up by 727 points.[close bracket]";
 		wfak;
-		say "Well, for the moment.[line break]";
+		say "[line break]Well, for the moment.[line break]";
 		wfak;
 		repeat with Q running from 1 to 6:
 			say "[line break][bracket][if Q is 1]Wait, no, y[else]Y[end if]our score has just gone down [if Q > 1]again [end if]by 121 points.[close bracket]";
