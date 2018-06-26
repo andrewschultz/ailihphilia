@@ -1190,6 +1190,26 @@ randtxt
 "Sod [']er! Redos!"
 "Time: remit."
 
+table of university targets
+randtxt
+"Dr. A. Card"
+"Dr. A. Fafard"
+"Dr. A. Gard"
+"Dr. A. Ward"
+"Dr. A. Wooward"
+"Dr. Aagaard"
+"Dr. Allard"
+"Dr. E. Herd"
+"Dr. Ellerd"
+"Dr. I. Bird"
+"Dr. O. Ford"
+"Dr. O. Lord"
+"Dr. Offord"
+"Dr. Ord"
+"Dr. U. Curd"
+"Dr. U. Hurd"
+"Dr. Y. Byrd"
+
 table of waittxt
 randtxt
 "Camp, mac!"

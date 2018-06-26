@@ -130,6 +130,8 @@ section debug compiler globals - not for release
 
 use MAX_VERBS of 440. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
+use MAX_VERBSPACE of 4200. [4096 = original max]
+
 chapter kinds of things
 
 section kinds of things
@@ -737,6 +739,7 @@ instead of listening:
 	if player is in Apse Spa, say "Surprisingly, no spa yaps." instead;
 	if player is in Mont Nom, say "The Ark of Okra is almost saying 'Nom on!' or 'C'mon! Nom!' or even 'Tum-Smut!'" instead;
 	if player is in Yack Cay and Known Wonk is in Yack Cay, say "The Known Wonk is just babbling on about stuff you aren't be interested in." instead;
+	if player is in Uneven U, say "The Code Doc mumbles [next-rand-txt of table of university targets] would make a good colleague.";
 	if player is in Moo Room, say "[if bees-seen is false]An ominous buzzing. Where is it coming from?[else]You think you hear [next-rand-txt of table of Moo Room animals] in addition to the mooing.[end if]" instead;
 	if player is in Le Babel, say "Freakish whisperings of the apocryphal [next-rand-txt of table of babel babble] swirl in the air." instead;
 	say "Noise lesion."
@@ -3286,11 +3289,8 @@ check going in Swamp Maws (this is the check yak speed rule):
 
 understand "swamp maw" and "maw" as swamp maws.
 
-crib-clue is a truth state that varies.
-
-after looking in Swamp Maws when player has exam axe:
-	say "You notice that the den to the south looks a bit different. Something's been growing there. Maybe you should check it out.";
-	now crib-clue is true;
+after looking in Swamp Maws when player has exam axe and balsa slab is off-stage:
+	say "[one of]'Oh, wow! A Dr. Award! This is big for the future of Uneven U!' you hear Dr. D, the Code Doc, boom from the south. Maybe you should check it out![or]You realize you haven't been south to congratulate Dr. D yet.[stopping]";
 	continue the action;
 
 chapter made dam
@@ -3327,7 +3327,7 @@ instead of entering den ivy vined, try going east instead;
 
 chapter code doc
 
-Code Doc is a neuter person in Uneven U. "[one of]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, mumbling how it'd be nice to hire (new doctor). Busy, but not too busy to help someone else."
+Code Doc is a neuter person in Uneven U. "[one of]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, mumbling about whom to hire to increase Uneven U's prestige. Busy, but not too busy to help someone else."
 
 understand "dr/d" and "dr d" as code doc when tent net is moot.
 
@@ -3398,7 +3398,7 @@ check taking guru rug: say "'Egad! Adage!' you think to yourself. You're not up 
 
 chapter stir writs
 
-The stir writs are a plural-named thing. description is "It seems a bit too cliche, but you have the wisdom to get the encouragement you need from it."
+The stir writs are a plural-named thing. description is "They balance emotional and intellectual considerations well, making you feel you can do things you'd put off before, both simple or complex."
 
 check useoning stir writs with Bro Orb: try taking Bro Orb instead;
 
@@ -5194,8 +5194,8 @@ section talk texts
 
 talk-text of the player is "'Me! Hi! Hem.'"
 
-talk-text of Bomb Mob is "You don't need a gang nag. Maybe you can sneak around them to get the TNT, though.".
-talk-text of Code Doc is "There is some awkward small talk. The Code Doc is more about understanding and explaining things.".
+talk-text of Bomb Mob is "You don't need a gang nag. Maybe you, or something you find or found, can sneak around them to get the TNT, though.".
+talk-text of Code Doc is "There is some awkward small talk. The Code Doc mentions how [next-rand-txt of table of university targets] would be a strong addition to Uneven U. [if maps-explained is true]You might not have much to talk about, now you've had help with the Spa Maps[else if spa maps are preclued]You need some way to help the Code Doc, so you can get help with the Spa Maps[else]Perhaps USEing something on the Code Doc might be more helpful to you[end if].".
 talk-text of Cross Orc is "'Yap?! Pay!'".
 talk-text of Dave is "Dave's here, man. And Dave's not chatty, man. He just seems to want to block you from doing anything.".
 talk-text of Diktat Kid is "Now's not the time for talk. Okay, the Diktat Kid might be bragging, but you won't get a word in. Maybe a stiff 'It's...'".
