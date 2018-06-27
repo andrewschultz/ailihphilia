@@ -508,11 +508,15 @@ this is the check palindrome turns rule: [this could be at the end but those are
 	say "When you get home, you open the X/O box. ";
 	if pal-turns is true:
 		if score is maximum score:
-			say "Inside is a spiffy CERT REC for being cosmically in tune and covering even the smallest details. It is a rec indeed nicer. Well done!";
+			say "Inside is a spiffy CERT REC for being cosmically in tune and covering even the smallest details. On the other side is an interesting tenet--an antimetabole that changes magically every day. It is a rec indeed nicer. Well done!";
 			continue the action;
-		say "As you open it, you see some sort of certificate dissolve. You feel you did something weird right, somethng beyond finding everything, which you didn't [if score > 84]quite [end if]do.";
+		say "[sox]. Yet you feel you did something weird right, beyond finding everything, which you didn't [if score > 84]quite [end if]do.";
+	else if score is 88:
+		say "Wow! You did everything you could, you think. [sox].[paragraph break]You have a vision of Grebeberg and Yelpley sliding back in a few years to where they were. Well, you'll still have your memories. But you can't shake the feeling you could've finished a bit differently and helped keep Yelpley and Grebeberg safe even longer.";
 	else:
-		say "You expected something nice inside the box--you think you did everything you could--but you open it to find nothing. You have a vision of Grebeberg and Yelpley sliding back in a few years to where they were. Well, you'll still have your memories. But you can't shake the feeling you could've done something weird, or done things weirdly, that might've kept Yelpley and Grebeberg safe even longer.";
+		say "[sox]. Well, you had a feeling you left a few things undone."
+
+to say sox: say "As you open it, you see a nice, spiffy tenet. An antimetabole (look it up) that somehow magically changes every day. It's nice, but it still feels a bit like getting socks for your birthday"
 
 the check palindrome turns rule is listed instead of the print final score rule in for printing the player's obituary.
 
@@ -2268,9 +2272,9 @@ this is the wear-garb rule:
 
 this is the you-win rule: [xxwin]
 	follow the notify score changes rule;
-	say "[line break]The Flee Elf greets you on the other side. 'Deified! [if cur-score of Odd Do is max-score of Odd Do]Decay?! ACED[else]Won enow[end if]! / Deified!' You ask hesitantly about the new adventures promised.[wfak-d]";
-	say "'The X-ITE TIX lead BACK TO THE REAL WORLD WHICH WILL FAR MORE EXCITING FOR YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a circular loop to 'back where you began' non-twist. Books like that always kind of annoyed you (well, okay, the first ones seemed profound,) but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand and pulls out a device. 'I'll need the pact cap back. It will go to our new museum.'[paragraph break]'What's it called?' you ask, despite yourself.[wfak-d]";
-	say "[paragraph break]'Well, there's still argument over We-I-View, Show-Ohs and Trofy Fort. You have a preference?' There's an awkward silence before you mention they all seem equally appropriate.[paragraph break]'Well, anyway. This RIDE-DIR will help you return to your own world. And here is an x/o box.'[wfak-d]";
+	say "[line break]The Flee Elf greets you on the other side. 'This, I h/t! [if cur-score of Odd Do is max-score of Odd Do]Decay?! ACED[else]Won enow[end if]!' You ask hesitantly about what's next. You don't want or need people chanting 'Deified! Deified! Deified!', but...[wfak-d]";
+	say "'The X-ITE TIX lead BACK TO THE REAL WORLD WHICH WILL BE FAR MORE EXCITING AND ILLUMINATING FOR YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a there-and-back-but-wiser summary. Books like that always kind of annoyed you once you figured the whole schtick out, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand says, 'I'll need the pact cap back. It will go to our new museum.'[paragraph break]'What's it called?' you ask, despite yourself.[wfak-d]";
+	say "[paragraph break]'Well, there's still argument over We-I-View, Show-Ohs and Trofy Fort.' (Trofee?) The Flee Elf asks which you prefer, and after an awkward silence, you mention they all seem equally appropriate.[paragraph break]'Well, anyway. This RIDE-DIR will help you return to your own world. And here is an x/o box.'[wfak-d]";
 	say "The x/o box isn't much: nothing's inside, and it's engraved 'U Remem'er, U,' 'Done? NOD' and 'U Did U.' But if it were too obvious and gaudy, how would you explain it back home?[paragraph break]As you stare at it, you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered with stuff you can't fix?[wfak-d]";
 	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar or maybe a TekCo Rocket, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call your writing? NOW I WON and EL BIBLE are way too pompous, but some brainstorming gives DARN RAD, SOME MEMOS, I SAW [']TWAS I, DRAWN INWARD, WENT NEW, SAGAS or SOLOS. Or--no, that's it. ELATE TALE.";
 	end the story finally saying "Roxor! Roxor! Roxor!";
@@ -2571,7 +2575,7 @@ understand "pack cap" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did." instead;
-	say "Yes, that's how to get the cap. You are ready to go! Hat, ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. 'Maybe later you'll find a way past the [kaos oak] to the Dirge Grid to defeat the Diktat Kid. But it's complicated.[paragraph break]The Flee Elf mumbles 'It's best I...' and salutes you before becoming, err, the FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
+	say "Yes, that's how to get the cap. You are ready to go! Hat, ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. 'Maybe later you'll find a way past the [kaos oak] to the Dirge Grid to defeat the Diktat Kid. But it's complicated.[paragraph break]The Flee Elf mumbles something about the risk of a partner-entrap, so you'll have to go it alone. With an 'It's best I...' it  becomes the, err, FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
 	get-cap;
 	score-inc; [Dim Mid/pack cap]
 	verify-done rev-pack-cap rule;
