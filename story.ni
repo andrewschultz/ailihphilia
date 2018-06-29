@@ -1784,7 +1784,7 @@ use1	use2 (an object)	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plu
 --	--	--	rev-evade-Dave rule	--	true	--	--	Yelpley	My Gym	false
 --	--	--	rev-bore-Rob rule	--	true	--	--	Yelpley	Worn Row	false
 --	--	--	rev-word-row rule	--	true	--	--	Yelpley	Worn Row	false
-TI	Door Frood	--	--	tube-to-ave rule	true	true	true	Yelpley	Evaded Ave	false	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. Some people are stupid. Good thing I obviously have too much self-awareness to be one of them. Funny stuff! I'd try to explain it to you, but either you don't need it explained to you, or you don't deserve it explained to you.' With uncontrollable laughter spasms, the Door Frood skulks away.[paragraph break]Behind the Door Frood is a tube ... but ..." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
+TI	Door Frood	--	--	tube-to-ave rule	true	true	true	Yelpley	Evaded Ave	false	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. Some people are stupid. Good thing I obviously have too much self-awareness to be one of them. Funny stuff! A cut above To Laff a Lot! I'd try to explain it to you, but either you don't need it explained to you, or you don't deserve it explained to you.' With uncontrollable laughter spasms, the Door Frood skulks away.[paragraph break]Behind the Door Frood is a tube ... but ..." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
 pity tip	eye	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	Yell Alley	false	"The eye scans the pity tip, and the navy van beeps and boops and spits out some snack cans, which roll on the ground. You take them. Then you hear a loud whisper: 'Dee? Weed?' The navy van then becomes a navi-van and whooshes off to leave for good. And there's something behind it! Apparently, a whole bomb mob! That's who was making all the noise!" [af:TEND NET/WORK ROW]
 --	--	--	rev-tend-net rule	--	true	--	--	Yelpley	Trapeze Part	false
 --	--	--	rev-work-row rule	--	true	--	--	Yelpley	Worn Row	false
@@ -4812,7 +4812,7 @@ the tent net is a thing. description is "It's tagged as a 'Tent o['] Dot Net,' w
 
 chapter epicer recipe
 
-the epicer recipe is a helpdoc. description is "You've seen recipes before, but this is a big interesting one! It describes how to make a north-tron, which can blast through anything ... including the [kaos oak]![paragraph break][tronpartlist][run paragraph on]". importancy of the epicer recipe is 3.
+the epicer recipe is a helpdoc. description is "You've seen recipes before, but this is a big interesting one! It's got instructions, not just for building some tike kit, but a north-tron, which can blast through anything ... including the [kaos oak]![paragraph break][tronpartlist][run paragraph on]". importancy of the epicer recipe is 3.
 
 to say tronpartlist:
 	repeat with tp running through tronparts:

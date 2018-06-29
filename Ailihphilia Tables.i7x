@@ -796,7 +796,19 @@ every turn (this is the notify cycling rule):
 		if tables-found is 0 and debug-state is true, say "This is a BUG--you should have been notified of random cycling in a table, but you weren't.";
 		the rule succeeds;
 
-section debugs
+chapter alllasting
+
+alllasting is an action applying to nothing.
+
+understand the command "alllast" as something new.
+
+understand "alllast" as alllasting.
+
+carry out alllasting:
+	say "Setting all tables to the last element.";
+	repeat through table of all randoms:
+		now thru-yet entry is number of rows in tabnam entry;
+	the rule succeeds;
 
 chapter troing
 
@@ -929,6 +941,7 @@ randtxt
 "Sara's"
 "Scene C's"
 "Senor One's"
+"Shakah's"
 "Si's"
 "Soho's"
 "Soto's"
@@ -964,6 +977,7 @@ randtxt
 "Rofl! For..."
 "Sux?! US?!"
 "A tarred errata!"
+"Tot!"
 "ZAP, spaz!"
 
 table of Moo Room animals
@@ -1098,6 +1112,7 @@ randtxt
 "Tim O['] Vomit"
 "Trekker T"
 "USA Su"
+"'Vests' Ev"
 "Weewee W"
 "Wolf Low"
 
@@ -1177,7 +1192,6 @@ randtxt
 
 table of undoings
 randtxt
-"'Redo-coder! Redo-coder!'"
 "Ay, CYA."
 "Did. [']Nuff? Undid."
 "Did. Error? Redid."
@@ -1186,6 +1200,7 @@ randtxt
 "Or, Perp, REPRO!"
 "Pah, simp! Mishap!"
 "Pre-derp..."
+"'Redo-coder! Redo-coder!'"
 "[']S poor. Oops!"
 "Sod [']er! Redos!"
 "Time: remit."
@@ -1290,6 +1305,7 @@ randtxt
 "Me: sees [']em!"
 "Misdeeds? I'm ..."
 "Moobs: BOOM!"
+"MSM?! MSM!"
 "[']N I WIN!"
 "Name: HE-MAN!"
 "Nem O['] women!"
