@@ -1,0 +1,80 @@
+# reg-ai-random-cycling.txt
+#
+# tests the end of random data
+# not attacked to the main walkthrough file
+
+** game: /home/andrew/prt/debug-ailihphilia.ulx
+** interpreter: /home/andrew/prt/glulxe -q
+
+* randthru
+
+>pack cap
+
+>alllast
+
+>no
+WRONG
+>yes
+>WRONG
+>shit
+WRONG
+>sing
+WRONG
+>burn
+WRONG
+>
+WRONG
+>z
+WRONG
+>attack tile lit
+WRONG
+>e
+>s
+>evade dave
+>listen
+WRONG
+>w
+WRONG
+>bore rob
+>word row
+>x cart
+WRONG
+>purloin epoch cope
+>purloin null illun
+>purloin yob attaboy
+>get ti
+>x cart
+WRONG
+
+>gonear babel
+>listen
+WRONG
+>gonear bond nob
+>talk to bond nob
+
+>gonear swept pews
+>z
+WRONG
+
+>gonear moo room
+>see bees
+>listen
+WRONG
+
+>purloin elan ale
+>gonear sniffins
+>use ale on sniffins
+>gonear sniffins
+>x snooty toons
+WRONG
+
+>gonear yuge guy
+>z
+WRONG
+
+>purloin day-away ad
+>x day-away ad
+WRONG
+
+# no way really to test table of rejected sidekicks, because you only have one chance to see a few
+# table of rejected sidekicks	0	0	false	"the Diktat Kid's rejected sidekicks"	--
