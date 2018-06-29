@@ -11,7 +11,7 @@ from collections import defaultdict
 in_source = defaultdict(int)
 in_unit = defaultdict(int)
 
-figure_out = True
+figure_out = figure_out_default = True
 compfile = "reg-ail-use-unit-tests.txt"
 
 in_use_table = False
@@ -19,9 +19,18 @@ header_next = False
 
 open_line_source = 0
 open_line_testfile = 0
-open_after = False
+open_after = open_after_default = False
 
 writestr = ""
+
+def usage(arg):
+    print("Invalid option", arg)
+    print()
+    print("Viable options below")
+    print("=" * 50)
+    print("-f/-w to figure or write out (mutually exclusive, -nf/-fn/-nw/-wn reverse the option). Default is currently {:s}".format(['WRITE/-W', 'FIGURE/-F'][figure_out_default]))
+    print("-l opens the first wrong line, or -nl/-ln disables this. Default is currently {:s}.".format(str(i7.oo[open_after_default])))
+    exit()
 
 def compare_unit_and_source():
     global open_line_source
@@ -58,8 +67,7 @@ while count < len(sys.argv):
     elif arg == 'f': figure_out = True
     elif arg == 'w': figure_out = False
     else:
-        print("Invalid option", arg)
-        sys.exit("There are only 2 options right now:\n-f/-w to figure or write out\n-l opens the first wrong line, or -nl/-ln disables this. Default is currently {:s}.".format(str(i7.oo[open_after])))
+        usage()
     count += 1
 
 if not figure_out:
@@ -93,11 +101,11 @@ with open("story.ni") as file:
             au3.write("send(\"{:s}{{enter}}\")\n\n".format(cmd))
             au3.write("sleep(500)\n\n".format(cmd))
 
-au3.close()
 
 if figure_out:
     compare_unit_and_source()
 else:
+    au3.close()
     print("Writing to raw-ai-use-unit-tests.txt")
     reg = open("raw-ai-use-unit-tests.txt", "w")
     reg.write(writestr)

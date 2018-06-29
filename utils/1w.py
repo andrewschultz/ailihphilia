@@ -24,6 +24,9 @@ check_possible = True
 only_stdin = False
 read_file = False
 
+get_firsts = True
+get_lasts = True
+
 every_cr = 4
 
 pals = []
@@ -59,22 +62,22 @@ def read_in(a):
             end_cand[ll[-1]][ll] = True
             start_cand[ll[0]][ll] = True
 
-def usage():
-    print(hdr + "USAGE")
+def usage(opt_err = ""):
+    print(opt_err + hdr + "USAGE")
     print()
-    print("Any word sent in is scoured for palindromes. CSV or space.")
+    print("Any word sent in is scoured for palindromes. CSV or space. Options require a dash.")
     print("-c checks possible palindromes for longer sentences. -nc forces it off. Default is", ["off", "on"][check_possible])
     print("-e checks errors in one word sequence.")
     print("(Capital) V means try all vowels e.g. bVg = big bag bog bug beg byg")
     print("(Capital) C means try all consonants e.g. bVg = big bag bog bug beg byg")
     print("-i uses stdin.")
     print("-m adjusts the maximum possible palindromes we check for.")
-    print("-f reads data from 1w.txt which has all the game critical stuff.")
+    print("-r reads data from 1w.txt which has all the game critical stuff.")
     print("-? shows this usage without telling you you wrote in a bad flag")
     print()
     print("PROTIP: sending several words on the command line at once can save time.")
     print("  That way, the program doesn't need to load the master word list.")
-    print("SAMPLE USAGE: 1w.py breC -nc / 1w.py fVt -m 40")
+    print("SAMPLE USAGE: 1w.py breC -nc / 1w.py rVt -m 40")
     exit()
 
 def palz(pals):
@@ -157,64 +160,56 @@ def palz(pals):
     end_time = time.time()
     print("Total time taken to extract", len(pals), "palindrome sets: {:.4f} seconds.".format(end_time - start_time))
 
-argcount = 0
+argcount = 1
 
-while argcount < len(sys.argv) - 1:
-    argcount += 1
+while argcount < len(sys.argv):
     xr = sys.argv[argcount]
     xl = xr.lower()
-    if xl == "-a":
-        file_array = [firstfile, lastfile, wordfile]
-        continue
-    if xl == "-f":
+    if xl == "-a": file_array = [firstfile, lastfile, wordfile]
+    elif xl[:2] == "-r":
         read_file = True
         check_possible = False
-        continue
-    if re.match("^-[wfl]+$", xl):
+    elif re.match("^-[wfl]+$", xl):
         file_array = []
         if 'f' in xl: file_array.append(firstfile)
         if 'l' in xl: file_array.append(lastfile)
         if 'w' in xl: file_array.append(wordfile)
-        continue
-    if xl == "-m":
+    elif xl == "-m":
         try:
             check_possible_max = int(sys.argv[argcount+1])
+            print("New max", check_possible_max)
             argcount += 1
         except:
-            print("Tried to change maximum # of listings but didn't give a valid number.")
-        continue
-    if xl == "-e":
+            sys.exit("Tried to change maximum # of listings but didn't give a valid number.")
+    elif xl == "-e":
         j = ''.join(sys.argv[argcount+1:]).lower()
         j = re.sub(r"[^a-z]", "", j, re.IGNORECASE)
         print("Palindrome check", "succeeded." if j == j[::-1] else "failed:\n  {:s}\n  {:s}\n  {:s}".format(j, j[::-1], wrong_letters(j)))
         exit()
-    if xl == "-c":
-        check_possible = True
-        continue
-    if xl == "-nc":
-        check_possible = False
-        continue
-    if xl == "-i":
-        only_stdin = True
-        continue
-    if xl == "-?" or xl == "?":
-        usage()
-        exit()
-    if not xl.replace(",", "").isalpha():
-        print("Invalid flag", xl)
-        usage()
-        exit()
-    for y in xr.split(","):
-        if "V" in y:
-            for z in ['a','e','i','o','u', 'y']:
-                temp = re.sub("V", z, y)
-                pals.append(temp)
-        elif 'C' in y:
-            for z in ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']:
-                temp = re.sub("C", z, y)
-                pals.append(temp)
-        else:
-            pals.append(y)
+    elif xl == "-c": check_possible = True
+    elif xl == "-nc": check_possible = False
+    elif xl == "-of":
+        get_last = False
+        get_first = True
+    elif xl == "-ol":
+        get_last = True
+        get_first = False
+    elif xl == "-i": only_stdin = True
+    elif xl == "-?" or xl == "?": usage()
+    elif not xl.replace(",", "").isalpha(): usage("Invalid flag {:s}\n\n".format(xl))
+    else:
+        for y in xr.split(","):
+            if "V" in y:
+                for z in ['a','e','i','o','u', 'y']:
+                    temp = re.sub("V", z, y)
+                    pals.append(temp)
+            elif 'C' in y:
+                for z in ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']:
+                    temp = re.sub("C", z, y)
+                    pals.append(temp)
+            else:
+                pals.append(y)
+    argcount += 1
 
 start_time = time.time()
 if read_file:
