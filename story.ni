@@ -1100,7 +1100,7 @@ carry out verbing:
 	say "The four basic directions ([b]N, S, E, W[r]) are the main ones, along with [b]USE[r], in order to get through the game. Also, in some places, specific verbs will be needed. None are terribly long, and---well, there is a thematic pattern to them.";
 	say "[line break]Standard verbs like [b]X[r] ([b]EXAMINE[r]) and [b]LOOK[r] also work.";
 	say "[line break][b]GT[r] or [b]GO TO[r] lets you go to a room where you've been before.";
-	say "[b]T[r] or [b]TALK TO[r] talks to someone. You don't need to, to win the game, but there you are.";
+	say "[b]T[r] or [b]TALK TO[r] or [b]GR[r] or [b]GREET[r] talks to someone. There's not much in the way of conversation in this game, but you may get some clues from basic chat.";
 	say "[b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
 	say "[b]THINK[r] gives general non-spoiler hints, including where you may wish to visit, or what is blocking you[if pyx is quicknear][b]X X[r] or [b]MAP[r] will let you examine the X/Y Pyx[end if].";
 	say "[b]AID[r] gives you hints for where you are. [b]SCORE[r] tracks the score. [b]ABOUT[r] and [b]CREDITS[r] tell about the game[if show-dev is true], and [b]DEV ED[r] shows technical details[end if].";
@@ -1187,10 +1187,14 @@ chapter ting
 talktoing is an action applying to one thing.
 
 understand the command "t" as something new.
+understand the command "gr" as something new.
+understand the command "greet" as something new.
 understand the command "talk" as something new.
 understand the command "talk to" as something new.
 
 understand "t [something]" as talktoing.
+understand "gr [something]" as talktoing.
+understand "greet [something]" as talktoing.
 understand "talk [something]" as talktoing.
 understand "talk to [something]" as talktoing.
 
