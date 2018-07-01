@@ -6,11 +6,13 @@
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
 
-* use_unit_test
+* _use_x_on_y_test
 
 # note to self: check for new ones every now and then
+# utw.py checks for this
 
 >z
+>pact cap
 
 >uu bro orb on madam
 As you lift the Bro Orb to throw at Madam, you see yourself in the Mirror Rim. You don't look so great or heroic. In fact, you feel unusually self-conscious. More than you deserve to, you think. Besides, the Bro Orb might dissolve her or something, but you're not out to kill anyone.
@@ -135,6 +137,15 @@ Maybe if the contents came from a bull and not a gnu, it would be appropriate (t
 >uu poo coop on yuge guy
 That could be fun, but he might be too normalised to the stuff in the coop to do damage.
 
+>uu radar on girt rig
+Still nothing.
+
+>uu radar on trap mart rampart
+You detect nothing to the east or west. Maybe other structures like the rampart will hide something, though.
+
+>uu troll ort on senile felines
+The senile felines sniff lazily at the troll ort, but despite its saying PINT-A-CATNIP, they do nothing. Perhaps they are just too inactive.
+
 >uu radar on go-by bog
 The radar detects nothing. So there is probably no horribly bogy gob. But there are plenty of other places you could slip and fall and disappear forever.
 >purloin sage gas
@@ -237,4 +248,122 @@ The Tru Hurt is dangerous, but maybe you should use the yard ray on something ev
 
 >uu yard ray on waster fretsaw
 The Waster Fretsaw is dangerous, but maybe you should use the yard ray on something even more harmful.
+
+* use_x_on_anything_test
+
+>z
+>pact cap
+
+>uux ark of okra
+While the ark inspires you to want to mix foods, you don't want to mix anything with IT. You don't know how long that okra's been there!
+>uuy ark of okra
+While the ark inspires you to want to mix foods, you don't want to mix anything with IT. You don't know how long that okra's been there!
+>uux bro orb
+Nothing physical seems to work on the orb. You need a psychological push, here.
+>uuy bro orb
+Nothing physical seems to work on the orb. You need a psychological push, here.
+>uux dave
+Dave's not useful, man.
+>uuy dave
+Dave's not useful, man.
+>uux dna band
+The DNA band is useless on its own. It probably needs some sort of jolt to become useful, or sentient.
+>uuy dna band
+The DNA band is useless on its own. It probably needs some sort of jolt to become useful, or sentient.
+>uuy enact cane
+The enact cane needs to be augmented, but not quite like that.
+>uux enact cane
+The enact cane needs to be augmented, but not quite like that.
+>uux ergot ogre
+The ogre can't be bribed or baited. At least, not by you. You're not fast or strong enough to outfox (or out-any other animal) it on your own. Plus, you worry anything that touches the ergot ogre might shrivel up. Maybe you need the services of someone or something that can beat up the ogre without touching its skin.
+>uuy ergot ogre
+The ogre can't be bribed or baited. At least, not by you. You're not fast or strong enough to outfox (or out-any other animal) it on your own. Plus, you worry anything that touches the ergot ogre might shrivel up. Maybe you need the services of someone or something that can beat up the ogre without touching its skin.
+>uux gorge grog
+The Gorge Grog is so concentrated, it's probably only good for chemical warfare.
+>uuy gorge grog
+The Gorge Grog is so concentrated, it's probably only good for chemical warfare.
+>uux ian
+Ian's worse than useless. You need to use your wit on him.
+>uuy ian
+Ian's worse than useless. You need to use your wit on him.
+>uux kayo yak
+The Kayo Yak grunts. Looks like you can't, or don't want to, use anything on it.
+>uuy kayo yak
+The Kayo Yak grunts. Looks like you can't, or don't want to, use anything on it.
+>uux level net
+There's got to be a way to untangle the net on your own, so it doesn't get cut or destroyed.
+>uuy level net
+There's got to be a way to untangle the net on your own, so it doesn't get cut or destroyed.
+>uux ned
+Ned wants a fight, and you need some other way around him. Bribery or violence doesn't seem sufficient. It might be simpler than you think. Ned's pretty ... basic.
+>uuy ned
+Ned wants a fight, and you need some other way around him. Bribery or violence doesn't seem sufficient. It might be simpler than you think. Ned's pretty ... basic.
+>uuy north tron
+The North-Tron's already done its job.
+>uux north tron
+The North-Tron's already done its job.
+>uuy pact cap
+Your pact cap is fine where it is, on your head.
+>uux pact cap
+Your pact cap is fine where it is, on your head.
+>uuy psi wisp
+The Psi Wisp is impervious to bribery or normal physical attacks. You need to outrun and outsmart it.
+>uux psi wisp
+The Psi Wisp is impervious to bribery or normal physical attacks. You need to outrun and outsmart it.
+>uuy radar
+The radar detects no dark radon ... and nothing less harmful/more useful. But maybe there's something hidden elsewhere.
+>uux radar
+The radar detects no dark radon ... and nothing less harmful/more useful. But maybe there's something hidden elsewhere.
+>uux redness ender
+The redness ender is good for destroying stuff. Probably evil stuff. You don't need to vaporize anything you're carrying.
+>uuy redness ender
+The redness ender is good for destroying stuff. Probably evil stuff. You don't need to vaporize anything you're carrying.
+>uuy resale laser
+You can't just go vaporizing stuff willy-nilly. Plus, the laser only has one use.
+>purloin epicer recipe
+>x epicer recipe
+>uux resale laser
+You can't just go vaporizing stuff willy-nilly. Plus, the laser only has one use, and you need it to blast north to reach the Diktat Kid.
+>uux rob
+Rob's not going to be obliging. You have to get rid of him, somehow.
+>uuy rob
+Rob's not going to be obliging. You have to get rid of him, somehow.
+>uuy sharp rahs
+The rahs need to be combined with some other motivational material.
+>uux sharp rahs
+The rahs need to be combined with some other motivational material.
+>uuy spur ups
+The Spur Ups can't physically levitate anything, but they make you want to do something for yourself, by yourself, to yourself, for a pick up or something like it. You're not sure what.
+>uux spur ups
+The Spur Ups can't physically levitate anything, but they make you want to do something for yourself, by yourself, to yourself, for a pick up or something like it. You're not sure what.
+>uux tao boat
+The tao boat remains impassive. But surely something you can show it will prove your worth.
+>uuy tao boat
+The tao boat remains impassive. But surely something you can show it will prove your worth.
+>uux test set
+You need to use something violent on the test set.
+>uuy test set
+You need to use something violent on the test set.
+>uux wordy drow
+The wordy drow moans "Er ... eh ... there," pointing to the Liar Grail.
+>uuy wordy drow
+The wordy drow moans "Er ... eh ... there," pointing to the Liar Grail.
+>uuy x-it stix
+They're just there to block you.
+>uux x-it stix
+They're just there to block you.
+
+#ignore-block
+>uux set o notes
+All the help literature you find is for review only.
+>uuy set o notes
+All the help literature you find is for review only.
+>uux epicer recipe
+All the help literature you find is for review only.
+>uuy epicer recipe
+All the help literature you find is for review only.
+>uux darer ad
+All the help literature you find is for review only.
+>uuy darer ad
+All the help literature you find is for review only.
 

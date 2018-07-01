@@ -1,6 +1,7 @@
 files=reg-ai-thru-min.txt,reg-ai-thru-all.txt,reg-ai-thru-mist.txt,reg-ai-thru-wrongway.txt,reg-ai-thru-gt.txt,reg-ai-thru-alt.txt
 dupefile=reg-ai-thru-dupe.txt
 ## *FILE
+## *FORK
 
 TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with all mistakes: t2.py checks it's ok	## walkthrough with wrong ways/running into walls or blocking NPCs	## walkthrough with GT when possible	## walkthrough with alternate verbs or nouns
 
@@ -268,10 +269,11 @@ You think back to everyone who has inspired you, past and present. It's life-aff
 You take stock of all you need to do--or at least, all you know you need to do. Or you think back to horrible repetitive exercises in math class, which were horrible whether you we
 re good at them or not.
 
+==t2
 #mistake test for mush sum
 >mush sum
 Dave worked hard to build these muscles. It'd be mean if you could wipe them out. And impractical--they might be slowing him down a bit, and that could help you.
-
+\\
 #mistake test for my pym
 >my pym
 You suddenly have a brilliant idea for a Britcom featuring Edgar Allan Poe (a Poe-op?), but it slips away just as quickly.
@@ -506,7 +508,7 @@ by one point
 by one point
 #lost pity tip
 
-===t2
+==t2
 #mistake test for nacelle can
 >nacelle can
 You don't need a huge engine.
@@ -935,7 +937,7 @@ The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses
 >undo
 >undo
 
-===t2
+==t2
 #mistake test for emo come
 >emo come
 You feel increased whininess inside.

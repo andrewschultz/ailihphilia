@@ -1,4 +1,5 @@
 ## reg-ai-thru-all.txt
+## GENERATOR FILE: rbr-ai-thru.txt
 
 ## walkthrough with all points
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
@@ -30,14 +31,6 @@ by one point
 >s
 
 >s
-
-#mistake test for mush sum
->mush sum
-Dave worked hard to build these muscles. It'd be mean if you could wipe them out. And impractical--they might be slowing him down a bit, and that could help you.
-
-#mistake test for my pym
->my pym
-You suddenly have a brilliant idea for a Britcom featuring Edgar Allan Poe (a Poe-op?), but it slips away just as quickly.
 
 #not a mistake
 >evade dave
@@ -77,8 +70,43 @@ by one point
 by one point
 #lost pity tip
 
+>w
+
+>w
+
+>tend net
+by one point
+#got elope pole
+
+>e
+
+>s
+
+>s
+
+>s
+
+>w
+
+>work row
+by one point
+
+>use trap art on reifier
+by one point
+
+>use bunk nub on reviver
+by one point
+
+>word row
+
+>get epoch cope
+
 >e
 >n
+>w
+
+>x recipe
+
 >w
 
 >use party trap on stark rats
@@ -128,10 +156,30 @@ by one point
 >pull up
 by one point
 
+>get puce cup
+
 >w
 >w
 >w
 >n
+
+>use wash saw on past sap
+by one point
+
+>use puce cup on past sap
+by one point
+
+>s
+
+>e
+
+>e
+
+>e
+
+>s
+
+>get troll ort
 
 >use puce cup on liar grail
 by one point

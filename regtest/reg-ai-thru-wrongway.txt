@@ -1,4 +1,5 @@
 ## reg-ai-thru-wrongway.txt
+## GENERATOR FILE: rbr-ai-thru.txt
 
 ## walkthrough with wrong ways/running into walls or blocking npcs
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
@@ -67,14 +68,6 @@ Wall! Aw.
 >e
 Wall! Aw.
 
-#mistake test for mush sum
->mush sum
-Dave worked hard to build these muscles. It'd be mean if you could wipe them out. And impractical--they might be slowing him down a bit, and that could help you.
-
-#mistake test for my pym
->my pym
-You suddenly have a brilliant idea for a Britcom featuring Edgar Allan Poe (a Poe-op?), but it slips away just as quickly.
-
 #not a mistake
 >evade dave
 
@@ -131,12 +124,43 @@ It probably gets even seedier behind the navy van. Best just to go back east.
 by one point
 #lost pity tip
 
+>w
+
+>w
+
 >n
 Since this is the Trapeze Part, you'd think there'd be a way to go to a place to WATCH it, but there isn't. You can only go back east.
 >w
 Since this is the Trapeze Part, you'd think there'd be a way to go to a place to WATCH it, but there isn't. You can only go back east.
 >s
 Since this is the Trapeze Part, you'd think there'd be a way to go to a place to WATCH it, but there isn't. You can only go back east.
+
+>tend net
+by one point
+#got elope pole
+
+>e
+
+>s
+
+>s
+
+>s
+
+>w
+
+>work row
+by one point
+
+>use trap art on reifier
+by one point
+
+>use bunk nub on reviver
+by one point
+
+>word row
+
+>get epoch cope
 
 >e
 >n
@@ -145,8 +169,12 @@ Since this is the Trapeze Part, you'd think there'd be a way to go to a place to
 >n
 You need to get there. But you have no clue what to build, or how. Hmm, maybe Xing the epicer recipe will help that.
 
+>x recipe
+
 >n
 Not until you've built the North-Tron.
+
+>w
 
 >n
 The stark rats block you from going anywhere. At least they are not banging stop pots.
@@ -248,10 +276,30 @@ The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses
 >undo
 >undo
 
+>get puce cup
+
 >w
 >w
 >w
 >n
+
+>use wash saw on past sap
+by one point
+
+>use puce cup on past sap
+by one point
+
+>s
+
+>e
+
+>e
+
+>e
+
+>s
+
+>get troll ort
 
 >w
 Wall! Aw.
