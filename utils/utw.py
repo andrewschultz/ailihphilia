@@ -10,7 +10,8 @@ from collections import defaultdict
 
 in_source = defaultdict(int)
 in_unit = defaultdict(int)
-in_unit_generic = defaultdict(int)
+in_unit_generic_x = defaultdict(int)
+in_unit_generic_y = defaultdict(int)
 use_mac = defaultdict(int)
 sug_txt = defaultdict(str)
 
@@ -24,6 +25,7 @@ header_next = False
 open_line_source = 0
 open_line_testfile = 0
 open_after = open_after_default = False
+print_err_lines = print_err_lines_default = True
 
 writestr = ""
 
@@ -32,8 +34,9 @@ def usage(arg):
     print()
     print("Viable options below")
     print("=" * 50)
+    print("-p prints error lines, -np/-pn erases them. Default is currently {:s}.".format(i7.oo[print_err_lines_default]))
     print("-f/-w to figure or write out (mutually exclusive, -nf/-fn/-nw/-wn reverse the option). Default is currently {:s}".format(['WRITE/-W', 'FIGURE/-F'][figure_out_default]))
-    print("-l opens the first wrong line, or -nl/-ln disables this. Default is currently {:s}.".format(str(i7.oo[open_after_default])))
+    print("-l opens the first wrong line, or -nl/-ln disables this. Default is currently {:s}.".format(i7.oo[open_after_default]))
     exit()
 
 def compare_unit_and_source():
@@ -42,33 +45,44 @@ def compare_unit_and_source():
     print('Comparing story.ni with', compfile)
     eu = 0
     mu = 0
+    ignore_block = False
     with open(compfile) as file:
         for (line_count, line) in enumerate(file, 1):
+            if 'ignore-block' in line: ignore_block = True
+            if ignore_block: continue
+            if not line.strip(): ignore_block = False
             if line.startswith('>uu '): in_unit[line.strip().lower()] = line_count
-            elif line.startswith('>uux '): in_unit_generic[line.strip().lower()] = line_count
+            elif line.startswith('>uux '): in_unit_generic_x[line.strip().lower()] = line_count
+            elif line.startswith('>uuy '): in_unit_generic_y[line.strip().lower()] = line_count
     ins = list(set(in_unit.keys()) | set(in_source.keys()))
     for x in ins:
         if x not in in_source.keys():
-            print("(line {:05d}) Errant unit test".format(in_unit[x]))
+            if print_err_lines: print("(line {:05d}) Errant unit test".format(in_unit[x]))
             print(x)
             if not open_line_testfile: open_line_testfile = in_unit[x]
             eu += 1
     for x in ins:
         if x not in in_unit.keys():
-            print("(line {:05d}) Missing unit test for command".format(in_source[x]))
+            if print_err_lines: print("(line {:05d}) Missing unit test for command".format(in_source[x]))
             print(x)
             if not open_line_source: open_line_source = in_source[x]
             mu += 1
-    ins = list(set(in_unit_generic.keys()) | set(use_mac.keys()))
+    ins = list(set(in_unit_generic_x.keys()) | set(in_unit_generic_y.keys()) | set(use_mac.keys()))
     for x in sorted(ins, key = lambda x: re.sub(">uu[a-z]+", "", x)):
-        if x not in in_unit_generic.keys():
-            print("(line {:05d}) Missing generic unit test for command".format(use_mac[x]))
+        if x not in in_unit_generic_x.keys() and 'uux' in x:
+            if print_err_lines: print("(line {:05d}) Missing generic unit test (uux) for command".format(use_mac[x]))
+            print(x)
+            if not open_line_testfile: open_line_testfile = use_mac[x]
+            print(sug_txt[x])
+            eu += 1
+        if x not in in_unit_generic_y.keys() and 'uuy' in x:
+            if print_err_lines: print("(line {:05d}) Missing generic unit test (uuy) for command".format(use_mac[x]))
             print(x)
             if not open_line_testfile: open_line_testfile = use_mac[x]
             print(sug_txt[x])
             eu += 1
         if x not in use_mac.keys():
-            print("(line {:05d}) Errant generic unit test".format(in_unit_generic[x]))
+            if print_err_lines: print("(line {:05d}) Errant generic unit test".format(in_unit_generic[x]))
             print(x)
             print(sug_txt[x])
             if not open_line_source: open_line_source = in_unit_generic[x]
@@ -82,6 +96,8 @@ while count < len(sys.argv):
     if arg[0] == '-': arg = arg[1:]
     if arg == 'l': open_after = True
     elif arg == 'nl' or arg == 'ln': open_after = False
+    elif arg == 'p': print_err_lines = True
+    elif arg == 'np' or arg == 'pn': print_err_lines = False
     elif arg == 'nf' or arg == 'fn': figure_out = False
     elif arg == 'nw' or arg == 'wn': figure_out = True
     elif arg == 'f': figure_out = True
