@@ -68,7 +68,7 @@ chapter thing properties
 
 a thing can be drinkable. a thing is usually not drinkable.
 
-a thing can be peripheral, semiperipheral or integral. a thing is usually integral.
+a thing can be peripheral, semiperipheral or integral. a thing is usually integral. [ semiperipheral allows for USE ON ]
 
 a thing can be ordinary, beepy or llpish. a thing is usually ordinary.
 
@@ -722,8 +722,17 @@ to decide whether the action is procedural: [aip]
 	if listening, yes;
 	no;
 
+[these are debug commands, but they need to be placed here so that we can compile and quickly unit-test the USEON command.]
+
+uuxing is an action applying to one visible thing.
+uuying is an action applying to one visible thing.
+uuing it on is an action applying to two visible things.
+
 to decide whether the action is pro-and-use: [aip2] [redefined in debug part]
 	if useoning, yes;
+	if uuxing, yes;
+	if uuying, yes;
+	if uuing, yes;
 	if the action is procedural, yes;
 	no;
 
@@ -1647,13 +1656,11 @@ Ned	"Ned wants a fight, and you need some other way around him. Bribery or viole
 ergot ogre	"The ogre can't be bribed or baited. At least, not by you. You're not fast or strong enough to outfox (or out-any other animal) it on your own. Plus, you worry anything that touches the ergot ogre might shrivel up. Maybe you need the services of someone or something that can beat up the ogre without touching its skin." [?? how to pick off duplicates in a table?]
 Pact Cap	"Your pact cap is fine where it is, on your head."
 Gorge Grog	"The Gorge Grog is so concentrated, it's probably only good for chemical warfare."
-epicer recipe	"The epicer recipe is meant for referral."
 DNA band	"The DNA band is useless on its own. It probably needs some sort of jolt to become useful, or sentient."
 Darer Ad	"The Darer Ad was only useful to sucker you into this mess."
-Set O Notes	"The Set-O-Notes is useful for an overview, but not for DOING anything."
 north tron	"The North-Tron's already done its job."
 x-it stix	"They're just there to block you."
-resale laser	"You can't just go vaporizing stuff willy-nilly. Plus, the laser only has one use[if resale laser is xed], and you need it to blast north to reach the Diktat Kid[end if]."
+resale laser	"You can't just go vaporizing stuff willy-nilly. Plus, the laser only has one use[if epicer recipe is xed], and you need it to blast north to reach the Diktat Kid[end if]."
 ark of okra	"While the ark inspires you to want to mix foods, you don't want to mix anything with IT. You don't know how long that okra's been there!"
 wordy drow	"The wordy drow moans 'Er ... eh ... there,' pointing to the Liar Grail."
 level net	"There's got to be a way to untangle the net on your own, so it doesn't get cut or destroyed."
@@ -3164,7 +3171,7 @@ check going south in Ooze Zoo: if sleep eels are in Ooze Zoo, say "There are too
 
 chapter trapmart rampart
 
-the trap mart rampart is peripheral scenery in Ooze Zoo. "It's sturdy and too high to climb."
+the trap mart rampart is semiperipheral scenery in Ooze Zoo. "It's sturdy and too high to climb."
 
 understand "trapmart rampart" and "trapmart" as trap mart rampart.
 
@@ -3259,7 +3266,7 @@ understand "gnu dung" and "gnu/dung" as poo coop when player has poo coop and gn
 
 chapter senile felines
 
-the senile felines are plural-named llpish peripheral things in Moo Room. "Senile felines swat at a late petal just a bit too high to reach. It might be fun to help them, but they probably can't help you. CATS!". description is "They are just lazing around, swatting at the late petal but never reaching it. You guess it must be fun for them.[paragraph break]Maybe it'd be fun to think of them as CATS."
+the senile felines are plural-named llpish semiperipheral things in Moo Room. "Senile felines swat at a late petal just a bit too high to reach. It might be fun to help them, but they probably can't help you. CATS!". description is "They are just lazing around, swatting at the late petal but never reaching it. You guess it must be fun for them.[paragraph break]Maybe it'd be fun to think of them as CATS."
 
 understand "cats" as senile felines.
 
@@ -3781,7 +3788,7 @@ chapter Dave
 Dave is a proper-named guhthug in My Gym. initial appearance is "[one of]A fellow walks over to you and booms 'I'm DAVE!' You freeze, and after a few seconds, he whispers, 'Dud.'[or]Dave is here, keeping an eye on you, guarding the passage west.[stopping]". description is "Dave is big and strong--quite a musc-sum, but maybe too beefy to be fully mobile. Maybe you can take advantage of that."
 
 instead of doing something with Dave:
-	if action is procedural, continue the action;
+	if action is pro-and-use, continue the action;
 	if current action is evadeing, continue the action;
 	say "Looks like you'll need to do something special with, or to, Dave. Nothing destructive. But psych him out, somehow."
 
@@ -3847,7 +3854,7 @@ to decide whether in-word:
 
 chapter redness ender
 
-the redness ender is a peripheral thing in Worn Row. "A redness ender sits here, looking lethal. Maybe it's part of why Worn Row is so worn--nobody wants to stick around enough to clean things up, or build anything. But maybe there is a simple way to get rid of it.". description is "It also seems to double as a redness SENDER, as when you get close to look at it, an ominous red dot appears on you. You back off.".
+the redness ender is a semiperipheral thing in Worn Row. "A redness ender sits here, looking lethal. Maybe it's part of why Worn Row is so worn--nobody wants to stick around enough to clean things up, or build anything. But maybe there is a simple way to get rid of it.". description is "It also seems to double as a redness SENDER, as when you get close to look at it, an ominous red dot appears on you. You back off.".
 
 chapter tract cart
 
@@ -4019,8 +4026,7 @@ to say hint-trace:
 	say "[if tract-trace is true]. But it also seems a bit too big for just carrying a few books. Maybe it holds a deeper secret[end if]"
 
 check examining tract cart:
-	if number of not necessary books in Worn Row is 0:
-		say "It's empty now[hint-trace]. Maybe some day, someone will write a book like [next-rand-txt of table of altbooks]. Maybe it could be you! But you don't have the time to read right now, really." instead;
+	unless any-books-left, say "It's empty now[hint-trace]. Maybe some day, someone will write a book like [next-rand-txt of table of altbooks]. Maybe it could be you! But you don't have the time to read right now, really." instead;
 
 a book is a kind of thing. a book is usually proper-named.
 
@@ -5036,7 +5042,7 @@ understand "arc" and "scrap arc" as scrap arcs.
 
 chapter girt rig
 
-the girt rig is peripheral scenery in Scrap Arcs. description is "It is too sturdy and large to climb or break down or even walk around. I guess it has to be, to deal with all the scrap safely."
+the girt rig is semiperipheral scenery in Scrap Arcs. description is "It is too sturdy and large to climb or break down or even walk around. I guess it has to be, to deal with all the scrap safely."
 
 chapter slate metals
 
@@ -5462,7 +5468,7 @@ after going when being-chased is true:
 	if x-it stix are in location of player, say "X-it Stix X out the way [if Fun Nuf is room east of location of player]east[else]west[end if]. It's probably bad for the [chase-person] to get loose in [if player is in Yawn Way]Grebeberg[else]Yelpley[end if].";
 	continue the action;
 
-x-it stix are peripheral scenery. "They look like the metal grating shops pull out over their doors and windows at closing time.[paragraph break]They are in an X, and while they don't allow an Xit, they do x out one way to go, which may help you figure how you need to get away from the [chase-person].[paragraph break]Of course, any wordplay adventurer worth their salt (like you--you're pretty far along, here) knows the difference between EXIT and X-IT. These things are telling you what you can't do!";
+x-it stix are semiperipheral scenery. "They look like the metal grating shops pull out over their doors and windows at closing time.[paragraph break]They are in an X, and while they don't allow an Xit, they do x out one way to go, which may help you figure how you need to get away from the [chase-person].[paragraph break]Of course, any wordplay adventurer worth their salt (like you--you're pretty far along, here) knows the difference between EXIT and X-IT. These things are telling you what you can't do!";
 
 being-chased is a truth state that varies.
 init-turn is a truth state that varies.
@@ -6335,8 +6341,7 @@ this is the worn-row rule:
 	if ever-workrow is false, say "You can change this place to WORK ROW." instead;
 	if Worn Row is worny, say "You can change Worn Row back to WORK ROW[if any-books-left] or WORD ROW[end if]." instead;
 	if Worn Row is wordy:
-		if number of necessary books in Worn Row > 0:
-			say "You'll need to use all the books eventually[if DWELT LEWD is not off-stage], except DWELT LEWD. [one of]AID again to see which book is probably next[or][stopping]." instead;
+		if any-books-left, say "You'll need to use all the books eventually[if DWELT LEWD is not off-stage], except DWELT LEWD. [one of]AID again to see which book is probably next[or][stopping]." instead;
 		say "You don't have anything more to do in Word Row. Change it back to Work Row." instead;
 	if rotator is in Worn Row, abide by the find-machine rule;
 	say "USE YARD RAY ON TEST SET." instead;
@@ -6813,13 +6818,29 @@ carry out tntting:
 	say "TNT test is now [on-off of TNT-test]. Best not to run a walkthrough while it's on.";
 	the rule succeeds;
 
-chapter uuing
+chapter uuxing
 
-uuing is an action applying to two visible things.
+the macguffin is a thing. description is "none necessary".
+
+understand the command "uux" as something new.
+
+understand "uux [any thing]" as uuxing.
+
+carry out uuxing: try uuing macguffin on noun instead;
+
+chapter uuying
+
+understand the command "uuy" as something new.
+
+understand "uuy [any thing]" as uuying.
+
+carry out uuying: try uuing noun on macguffin instead;
+
+chapter uuing
 
 understand the command "uu" as something new.
 
-understand "uu [any thing] on [any thing]" as uuing.
+understand "uu [any thing] on [any thing]" as uuing it on.
 
 carry out uuing:
 	let L1 be TempMet;
@@ -7110,6 +7131,8 @@ chapter worth a try
 to decide whether the action is pro-and-use: [aip2]
 	if useoning, yes;
 	if uuing, yes;
+	if uuxing, yes;
+	if uuying, yes;
 	if the action is procedural, yes;
 	no;
 
