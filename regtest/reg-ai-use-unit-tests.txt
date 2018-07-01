@@ -249,7 +249,7 @@ The Tru Hurt is dangerous, but maybe you should use the yard ray on something ev
 >uu yard ray on waster fretsaw
 The Waster Fretsaw is dangerous, but maybe you should use the yard ray on something even more harmful.
 
-* use_x_on_anything_test
+* _use_x_on_anything_test
 
 >z
 >pact cap
@@ -353,6 +353,8 @@ They're just there to block you.
 >uux x-it stix
 They're just there to block you.
 
+* _ignore-block
+
 #ignore-block
 >uux set o notes
 All the help literature you find is for review only.
@@ -367,3 +369,84 @@ All the help literature you find is for review only.
 >uuy darer ad
 All the help literature you find is for review only.
 
+* special_cases_not_in_tables
+
+>pack cap
+>e
+>s
+>evade dave
+>w
+>bore rob
+>work row
+
+>use reviver on reviver
+It's not productive to use something on itself, even with this game being full of palindromes.
+>use reviver on reifier
+The machines are fixed in place. You can't use one on the other.
+>use rotator on reifier
+The machines are fixed in place. You can't use one on the other.
+>use rotator on reviver
+The machines are fixed in place. You can't use one on the other.
+
+>purloin stinky knits
+>purloin gold log
+>purloin you buoy
+>purloin bunk nub
+>purloin dirt rid
+>purloin eroded ore
+>purloin trap art
+>purloin dna band
+>purloin baton
+
+>uux rotator
+Nothing happens at all. Maybe the macguffin doesn't need any sort of machine augmentation.
+>use stinky knits on reviver
+Nothing happens. And you felt optimistic there! Hmm.
+>use stinky knits on reifier
+Nothing happens. And you felt optimistic there! Hmm.
+>use stinky knits on rotator
+>uuy rotator
+Nothing happens at all. Maybe the macguffin doesn't need any sort of machine augmentation.
+>use gold log on rotator
+>uuy rotator
+Nothing happens at all. Maybe the macguffin doesn't need any sort of machine augmentation.
+>use you buoy on rotator
+>uux rotator
+No point. The rotator is broken.
+
+>uuy reviver
+Nothing happens at all. Maybe the macguffin doesn't need any sort of machine augmentation.
+>use bunk nub on reviver
+>uux reviver
+Nothing happens at all. Maybe the macguffin doesn't need any sort of machine augmentation.
+>use dirt rid on reviver
+>uuy reviver
+Nothing happens at all. Maybe the macguffin doesn't need any sort of machine augmentation.
+>use eroded ore on reviver
+>uux reviver
+No point. The reviver is broken.
+
+>uux reifier
+Drat. None of the machines worked for the macguffin. You may need to use it somewhere else.
+>use trap art on reifier
+
+>uuy reifier
+You already tried everything, and nothing worked.
+>use dna band on reifier
+
+>uuy reifier
+You already tried everything, and nothing worked.
+
+>use baton on reifier
+>uux reifier
+No point. The reifier is broken.
+>uuy reifier
+No point. The reifier is broken.
+
+#this is a bad hack but we want to test its "broken" text
+>abstract reifier to work row
+>use wash saw on reifier
+No point. The reifier is broken.
+>use reifier on wash saw
+No point. The reifier is broken.
+>moot reifier

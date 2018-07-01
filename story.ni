@@ -1059,7 +1059,7 @@ understand the command "deved" as something new.
 understand the command "dev ed" as something new.
 
 understand "deved" as deveding.
-understand "deved" as deveding.
+understand "dev ed" as deveding.
 
 show-dev is a truth state that varies.
 
@@ -1102,7 +1102,7 @@ carry out verbing:
 	say "[line break][b]GT[r] or [b]GO TO[r] lets you go to a room where you've been before.";
 	say "[b]T[r] or [b]TALK TO[r] talks to someone. You don't need to, to win the game, but there you are.";
 	say "[b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
-	say "[b]THINK gives general non-spoiler hints, including where you may wish to visit, or what is blocking you[if pyx is quicknear][b]X X[r] or [b]MAP[r] will let you examine the X/Y Pyx.";
+	say "[b]THINK[r] gives general non-spoiler hints, including where you may wish to visit, or what is blocking you[if pyx is quicknear][b]X X[r] or [b]MAP[r] will let you examine the X/Y Pyx[end if].";
 	say "[b]AID[r] gives you hints for where you are. [b]SCORE[r] tracks the score. [b]ABOUT[r] and [b]CREDITS[r] tell about the game[if show-dev is true], and [b]DEV ED[r] shows technical details[end if].";
 	if player is in Fun Nuf and kaos oak is xed, say "[b]GRAMMAR G[r] flips the [kaoscaps] around, which is purely cosmetic.";
 	if wr-short-note is true and in-work, say "[line break][b]REV[r], [b]ROT[r] and [b]REI[r] is shorthand to use an item on the reviver, rotator and reifier, respectively.";
@@ -1657,7 +1657,6 @@ ergot ogre	"The ogre can't be bribed or baited. At least, not by you. You're not
 Pact Cap	"Your pact cap is fine where it is, on your head."
 Gorge Grog	"The Gorge Grog is so concentrated, it's probably only good for chemical warfare."
 DNA band	"The DNA band is useless on its own. It probably needs some sort of jolt to become useful, or sentient."
-Darer Ad	"The Darer Ad was only useful to sucker you into this mess."
 north tron	"The North-Tron's already done its job."
 x-it stix	"They're just there to block you."
 resale laser	"You can't just go vaporizing stuff willy-nilly. Plus, the laser only has one use[if epicer recipe is xed], and you need it to blast north to reach the Diktat Kid[end if]."
