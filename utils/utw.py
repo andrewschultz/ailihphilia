@@ -10,9 +10,13 @@ from collections import defaultdict
 
 in_source = defaultdict(int)
 in_unit = defaultdict(int)
+in_unit_generic = defaultdict(int)
+use_mac = defaultdict(int)
+sug_txt = defaultdict(str)
 
 figure_out = figure_out_default = True
-compfile = "reg-ail-use-unit-tests.txt"
+compfile = "reg-ai-use-unit-tests.txt"
+rawfile = "raw-ai-use-unit-tests.txt"
 
 in_use_table = False
 header_next = False
@@ -40,18 +44,34 @@ def compare_unit_and_source():
     mu = 0
     with open(compfile) as file:
         for (line_count, line) in enumerate(file, 1):
-            if line.startswith('>uu'):
-                in_unit[line.strip().lower()] = line_count
+            if line.startswith('>uu '): in_unit[line.strip().lower()] = line_count
+            elif line.startswith('>uux '): in_unit_generic[line.strip().lower()] = line_count
     ins = list(set(in_unit.keys()) | set(in_source.keys()))
     for x in ins:
         if x not in in_source.keys():
-            print("(line {:05d}) Errant unit test".format(in_unit[x]), x)
+            print("(line {:05d}) Errant unit test".format(in_unit[x]))
+            print(x)
             if not open_line_testfile: open_line_testfile = in_unit[x]
             eu += 1
     for x in ins:
         if x not in in_unit.keys():
-            print("(line {:05d}) Missing unit test for command".format(in_source[x]), x)
+            print("(line {:05d}) Missing unit test for command".format(in_source[x]))
+            print(x)
             if not open_line_source: open_line_source = in_source[x]
+            mu += 1
+    ins = list(set(in_unit_generic.keys()) | set(use_mac.keys()))
+    for x in sorted(ins, key = lambda x: re.sub(">uu[a-z]+", "", x)):
+        if x not in in_unit_generic.keys():
+            print("(line {:05d}) Missing generic unit test for command".format(use_mac[x]))
+            print(x)
+            if not open_line_testfile: open_line_testfile = use_mac[x]
+            print(sug_txt[x])
+            eu += 1
+        if x not in use_mac.keys():
+            print("(line {:05d}) Errant generic unit test".format(in_unit_generic[x]))
+            print(x)
+            print(sug_txt[x])
+            if not open_line_source: open_line_source = in_unit_generic[x]
             mu += 1
     print(eu, 'errant')
     print(mu, 'missing')
@@ -75,21 +95,37 @@ if not figure_out:
     au3_header = "Opt(\"SendKeyDelay\", 0)\n\nOpt(\"WinTitleMatchMode\", -2)\nWinActivate(\"Ailihphilia.inform \")\nWinWaitActive(\"Ailihphilia.inform \")\n\nMouseMove(1640,972)\n\nSleep(500)\n\n";
     au3.write(au3_header)
 
+# this is the table of specific rejects
+
+in_cant = False
+
 with open("story.ni") as file:
     for (line_count, line) in enumerate(file, 1):
         if header_next:
             in_use_table = True
             header_next = False
+            la = line.lower().strip().split("\t")
+            babble_col = la.index('babble')
             continue
         if 'xxrej' in line:
             header_next = True
             continue
+        if 'xxcant' in line:
+            header_next = True
+            in_cant = True
+            continue
         if in_use_table:
             if not line.strip() or '\t' not in line:
                 in_use_table = False
+                in_cant = False
                 continue
             la = line.strip().split("\t")
-            if la[0] == '--': continue
+            if in_cant:
+                l1 = ">uux {:s}".format(la[0].lower())
+                l2 = ">uuy {:s}".format(la[0].lower())
+                use_mac[l1] = use_mac[l2] = line_count
+                sug_txt[l1] = sug_txt[l2] = re.sub("\"", "", la[babble_col])
+            if la[0] == '--' or in_cant: continue
             cmd = ">uu {:s} on {:s}".format(la[0].lower(), la[1].lower())
             if figure_out:
                 in_source[cmd] = line_count
@@ -101,13 +137,12 @@ with open("story.ni") as file:
             au3.write("send(\"{:s}{{enter}}\")\n\n".format(cmd))
             au3.write("sleep(500)\n\n".format(cmd))
 
-
 if figure_out:
     compare_unit_and_source()
 else:
     au3.close()
-    print("Writing to raw-ai-use-unit-tests.txt")
-    reg = open("raw-ai-use-unit-tests.txt", "w")
+    print("Writing to", rawfile)
+    reg = open(rawfile, "w")
     reg.write(writestr)
     reg.close()
 
