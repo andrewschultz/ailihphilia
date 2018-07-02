@@ -764,7 +764,7 @@ table of burnies	0	0	true	"responses to BURN"	--
 table of businesses	0	0	true	"businesses in Day-Away Ad"	--
 table of diktat taunts	0	0	false	"Diktat Kid taunts"	--
 table of Moo Room animals	0	0	false	"Moo Room animals (LISTEN)"	--
-table of My Gym songs	0	0	false	"songs in My Gym (LISTEN)"	--
+table of My Gym songs	0	0	false	"songs in My Gym (LISTEN)"	"All those tunes, and nothing by ABBA! Low class, low class."
 table of noesies	0	0	true	"responses to NO"	--
 table of nothings	0	0	true	"responses to empty commands"	--
 table of rejected sidekicks	0	0	false	"the Diktat Kid's rejected sidekicks"	--
@@ -807,7 +807,7 @@ understand "alllast" as alllasting.
 carry out alllasting:
 	say "Setting all tables to the last element.";
 	repeat through table of all randoms:
-		now thru-yet entry is number of rows in tabnam entry;
+		now tabidx entry is number of rows in tabnam entry;
 	the rule succeeds;
 
 chapter troing
@@ -1089,6 +1089,7 @@ randtxt
 "ASAP Asa"
 "Blank'n Alb"
 "Boyd Yob"
+"Bozo B"
 "Emil Slime"
 "Evil Clive"
 "G-Nixing"
