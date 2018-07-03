@@ -51,13 +51,13 @@ def mistake_check(reord):
     filre = ['fill', 'reorder']
     fout = open(mis2, "w", newline='\n')
     with open(mis) as file:
-        for line in file:
-            line_count += 1
+        for (line_count, line) in enumerate(file, 1):
             if 'volume old school' in line:
                 old_school_yet = True
                 print("Ignoring all past line", line_count)
             if old_school_yet is False:
                 if re.search("^understand.*as a mistake", line):
+                    if not re.search("\) +when", line): print("NEED-WHEN WARNING line", line_count, "needs conditional when.")
                     if re.search("mis of [0-9]+", line) and not re.search("mis of [0-9]+\]\"", line):
                         bail_after = True
                         print("ERROR: 'mis of' syntax needs quote after parenthesis in line", line_count)

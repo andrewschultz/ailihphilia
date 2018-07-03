@@ -46,13 +46,13 @@ understand "cods doc" as a mistake ("No way. It's nice to be around someone non-
 
 chapter Calcific Lac
 
-understand "calf lac" as a mistake ("There is [if moo room is not visited]another room with that, sort of[else]already the Moo Room. Let's not overdo it[end if]. Plus, cows can't swim.[mis of 12]")
+understand "calf lac" as a mistake ("There is [if Moo Room is not visited]another room with that, sort of[else]already the Moo Room. Let's not overdo it[end if]. Plus, cows can't swim.[mis of 12]") when player is in Calcific Lac.
 
-understand "calk lac" as a mistake ("It is not leaking.[mis of 13]")
+understand "calk lac" as a mistake ("It is not leaking.[mis of 13]") when player is in Calcific Lac.
 
-understand "call lac" as a mistake ("It does not respond.[mis of 14]")
+understand "call lac" as a mistake ("It does not respond.[mis of 14]") when player is in Calcific Lac.
 
-understand "calm lac" as a mistake ("It is calm enough.[mis of 15]")
+understand "calm lac" as a mistake ("It is calm enough.[mis of 15]") when player is in Calcific Lac.
 
 section moor broom
 
@@ -503,7 +503,7 @@ section golf log/dork rod
 
 understand "dorm rod" and "dorm" as a mistake ("You reveal no frat. Arf![mis of 196]") when dork rod is quicknear.
 
-understand "go log" as a mistake ("It's not particularly magical or motivational. But at least it can't become a go-loco log.[mis of 197]")
+understand "go log" as a mistake ("It's not particularly magical or motivational. But at least it can't become a go-loco log.[mis of 197]") when gold log is quicknear.
 
 understand "golf log" as a mistake ("There is no Par Trap or Tee Meet to navigate here, so you don't need to make a golf log.[mis of 198]") when gold log is quicknear.
 
@@ -561,7 +561,7 @@ to decide whether got-ore:
 
 understand "eros ore" as a mistake ("I don't even want to know what you're trying to do, there.[mis of 214]") when got-ore.
 
-understand "ore dero" as a mistake ("The ore can do more than just create some loafer with nothing better to do than play (or write) silly computer games. It can create something for social good![mis of 257]")
+understand "ore dero" as a mistake ("The ore can do more than just create some loafer with nothing better to do than play (or write) silly computer games. It can create something for social good![mis of 257]") when got-ire.
 
 understand "ore hero" as a mistake ("No! You do not need to craft a new hero. YOU ARE THE HERO![mis of 258]") when got-ore.
 
