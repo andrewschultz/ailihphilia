@@ -1801,7 +1801,7 @@ pity tip	eye	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	Yell Alley	
 trap art	reifier	party trap	--	--	true	true	false	Yelpley	Worn Row	false	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. You pull it out of the reifier and inspect it. It could probably capture more than one thing."
 bunk nub	reviver	stock cots	--	--	true	true	false	Yelpley	Worn Row	false	"After some crunching and slurping, the bunk nub is changed to a bunch of much smaller, but more comfortable looking, stock cots. You take them."
 party trap	stark rats	gift fig	--	oh-who-to rule	true	true	true	Grebeberg	Seer Trees	false	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit.[paragraph break]THUMP! They left you a present--good thing you were wearing that pact cap, because a book fell on your head. One glance reveals it to be [b]Oh, Who[r]--a phone book for Grebeberg, like [b]Name ME Man[r] for Yelpley.[paragraph break]You also find a gift fig, which you pick up."
-EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	Grebeberg	Cold Loc	false	"King Nik reads it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris told me I needed to one day. ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! Maybe I'll never be a Vic IV, Ivana VI, Ivette VI, Ivy Vi or Vin IV, but I can lead against the Rim Emir and his emir crime and emir grime!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...back to my vidette div. Gotta RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
+EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	Grebeberg	Cold Loc	false	"King Nik reads it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris told me I needed to one day. ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! Maybe I'll never be a Vic IV, Ivana VI, Ivette VI, Ivy VI, Vin IV or even Xiara IX, but I can lead against the Rim Emir and his emir crime and emir grime! The Mrifk Firm, too!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...back to my vidette div. Gotta RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	Ooze Zoo	false	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
 --	--	--	rev-puff-up rule	--	true	--	--	Yelpley	Yawn Way	false
 --	--	--	rev-pull-up rule	--	true	--	--	Yelpley	Emo Dome	false
@@ -1849,7 +1849,7 @@ sharp rahs	guru rug	stir writs	--	brag-garb-bye rule	true	true	true	Grebeberg	Mo
 --	--	--	rev-second-food-combo rule	--	true	--	--	Grebeberg	Mont Nom	false
 Moor Broom	Tru Yurt	Exam Axe	--	bump-ivy rule	true	true	false	Grebeberg	Yack Cay	false	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! Then, back to the Tru-Yurt for the Wonk. They've done enough for you." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
 --	--	--	rev-get-bro-orb rule	--	false	--	--	--	Le Babel	--
-wash saw	porch crop	balsa slab	--	--	true	true	false	Grebeberg	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods. You've done well. There's a balsa slab lying around. The Code doc offers it to you. Now, you ... do own wood!"
+wash saw	porch crop	balsa slab	--	--	true	true	false	Grebeberg	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods.[paragraph break]'Yes! Yes! This works! Uneven U needs a name change ... to UNEVEN U! How can I thank you?'[paragraph break]A balsa slab is lying under where the porch crop was. The Code Doc offers it to you. Now, you ... do own wood!"
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	Dumb Mud	false	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
 DNA band	reifier	DNA hand	--	--	true	true	false	Yelpley	Worn Row	false	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand! It doesn't have any slime or blood leaking, and when you take it, it doesn't twitch too much."
 roto motor	DNA hand	Mr Arm	--	--	true	true	true	Yelpley	Worn Row	false	"Some of the stuffing inside the hand has to pop out to make space for the roto motor to fit in. There's enough to make a whole arm! The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on the arm (MR. ARM) and hand: BANG NAB. The arm will probably give the hand a bit more reach."
@@ -2516,11 +2516,9 @@ check going in Fun Nuf:
 		else:
 			say "You have a few last lousy points to look around for, so why not poke around?";
 
-check going east in Fun Nuf:
-	if Diktat Kid is moot and east-LLP is 0, say "There's nothing more to do in Yelpley, not even a last lousy point, but you explore anyway...";
+check going east in Fun Nuf: if Diktat Kid is moot and east-LLP is 0, say "There's nothing more to do in Yelpley, not even a last lousy point, but you explore anyway...";
 
-check going west in Fun Nuf:
-	if Diktat Kid is moot and west-LLP is 0, say "There's nothing more to do in Grebeberg, not even a last lousy point, but you explore anyway...";
+check going west in Fun Nuf: if Diktat Kid is moot and west-LLP is 0, say "There's nothing more to do in Grebeberg, not even a last lousy point, but you explore anyway...";
 
 to decide which number is roving-LLP: [Not location dependent: DIAL AID, STATS, REFER, POOP, PEEP]
 	decide on west-LLP + east-LLP;
@@ -3303,8 +3301,16 @@ check going in Swamp Maws (this is the check yak speed rule):
 
 understand "swamp maw" and "maw" as swamp maws.
 
-after looking in Swamp Maws when player has exam axe and balsa slab is off-stage:
-	say "[one of]'Oh, wow! A Dr. Award! This is big for the future of Uneven U!' you hear Dr. D, the Code Doc, boom from the south. Maybe you should check it out![or]You realize you haven't been south to congratulate Dr. D yet.[stopping]";
+chapter hinting dr d again
+
+after looking in Swamp Maws when exam axe is not off-stage and revisited-u is false:
+	say "[one of]'Oh, wow! A Dr. Award! For all my hard work! Great news for Uneven U!' you hear Dr. D, the Code Doc, boom from the south. Maybe you should check it out![or]You realize you haven't been south to congratulate Dr. D yet.[stopping]";
+	continue the action;
+
+revisited-u is a truth state that varies.
+
+after going south in Swamp Maws when exam axe is not off-stage:
+	now revisited-u is true;
 	continue the action;
 
 chapter made dam
@@ -3319,13 +3325,17 @@ book Uneven U
 
 Uneven U is south of Swamp Maws. It is in Grebeberg. "This looks vaguely like a university campus, with an all-ivy villa blocking the way west and a den, ivy-vined, blocking the way east. You can go north and south easily, though. [if tent net is moot]It feels nice and cozy now you helped the Code Doc add some furnishings[else]But it feels terribly unfinished, even with the ivy ambience. Having some sort of roof might make it even homier[end if][if-porch]."
 
+printed name of Uneven U is "[if balsa slab is off-stage]Uneven[else]Unitin['][end if] U".
+
+understand "unitin/u" and "unitin u" as uneven u when balsa slab is not off-stage.
+
 understand "cribs" and "birch cribs" as birch crib.
 
 instead of entering birch crib, try going west instead;
 
-check going in Uneven U: if noun is east or noun is west, say "Each birch crib is much more private and closed than the den." instead;
+check going in Uneven U: if noun is east or noun is west, say "It would be rude to traipse around [Uneven U]." instead;
 
-check going nowhere in Uneven U: say "You see no way into the [if noun is west]all-ivy villa[else]den, ivy-vined[end if], and you see no reason to enter it, either." instead;
+check going nowhere in Uneven U: say "You see no way into the [if noun is west]all-ivy villa[else]den, ivy-vined[end if], and you see no reason to enter, either. You're not here for education!" instead;
 
 section all ivy villa
 
@@ -3341,7 +3351,7 @@ instead of entering den ivy vined, try going east instead;
 
 chapter code doc
 
-Code Doc is a neuter person in Uneven U. "[one of]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, mumbling about whom to hire to increase Uneven U's prestige. Busy, but not too busy to help someone else."
+Code Doc is a neuter person in Uneven U. "[one of]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, mumbling about whom to hire to increase [Uneven U]'s prestige. Busy, but not too busy to help someone else."
 
 understand "dr/d" and "dr d" as code doc when tent net is moot.
 
@@ -3364,7 +3374,7 @@ chapter porch crop
 
 the porch crop is scenery. "[if wash saw is moot]It's been cleared up since you used the wash saw on it[else]It really sprawls. Maybe there is a way to trim it to help the Code Doc[end if]."
 
-to say if-porch: if porch crop is in Uneven U, say ". [if wash saw is moot]The porch crop is still trimmed back[else]Some porch crop has sprouted up, and it looks okay, but there's just too much of it[end if]";
+to say if-porch: if porch crop is in Uneven U, say ". [if wash saw is moot]The porch crop is still trimmed back[else]Some porch crop has sprouted up, but there's just too much of it. It could use a trimming[end if]";
 
 chapter balsa slab
 
@@ -3682,7 +3692,7 @@ Fun Nuf	" FUN "	" NUF "
 Yawn Way	"YAWN "	" WAY "
 Emo Dome	"[if Diktat Kid is moot]DOME[else] EMO[end if] "	"[if Diktat Kid is moot] MOD[else]DOME[end if] "
 Toll Lot	"TOLL "	" LOT "
-Uneven U	" IVY "	"[if tent net is moot]VINED[else]VILLA[end if]"
+Uneven U	"UN[if balsa slab is off-stage]EVE[else]ITI[end if]"	" N U "
 Mont Nom	"MONT "	" NOM "
 Ooze Zoo	"OOZE "	" ZOO "
 Worn Row	"WORN "	" ROW "
@@ -6259,7 +6269,7 @@ this is the red-roses-order rule:
 	if taboo bat is not off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if madam is in Red Roses Order, say "USE BRO ORB ON MADAM." instead;
-	if player does not have balsa slab, say "You need to get the balsa slab from Frush Surf." instead;
+	if player does not have balsa slab, say "You need to get the balsa slab from south of Swamp Maws." instead;
 	say "USE BALSA SLAB ON SWORD ROWS." instead;
 
 section Scrap Arcs rule
