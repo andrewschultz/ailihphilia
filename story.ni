@@ -124,11 +124,11 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 400. [-40 from max_verbs debug]
+use MAX_VERBS of 410. [-40 from max_verbs debug]
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 440. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 450. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 use MAX_VERBSPACE of 4200. [4096 = original max]
 
@@ -1074,31 +1074,30 @@ carry out deveding:
 
 chapter verbing
 
-verbing is an action applying to nothing.
+verbing is an action out of world.
 
 understand the command "help" as something new.
 understand the command "v" as something new.
 understand the command "verb" as something new.
 understand the command "verbs" as something new.
 
-understand "verbs/verb brev" as verbing.
-understand "verbs" as verbing.
-understand "verb" as verbing.
-understand "v" as verbing.
-understand "help" as verbing.
+understand "verbs brev" and "verb brev" as verbing.
+understand "verbs" and "verb" and "v" and "help" as verbing.
 
 any-sit-cmd is a truth state that varies.
 
-to say got-sit: now any-sit-cmd is true.
+to say got-sit:
+	if any-sit-cmd is false, say "Location/situation-specific commands:[line break]";
+	now any-sit-cmd is true.
 
 this is the situational commands show rule:
 	now any-sit-cmd is false;
 	if player is in Fun Nuf and kaos oak is xed, say "[got-sit][b]GRAMMAR G[r] toggles the [kaoscaps] between chaotic to sane punctuation, which is purely cosmetic.";
-	if pyx is quicknear, say "[got-sit][b]X X[r] or [b]MAP[r] will let you examine the X/Y Pyx[end if].";
+	if pyx is quicknear, say "[got-sit][b]X X[r] or [b]MAP[r] will let you examine the X/Y Pyx.";
 	if wr-short-note is true and in-work, say "[got-sit][line break][b]REV[r], [b]ROT[r] and [b]REI[r] is shorthand to use an item on the reviver, rotator and reifier, respectively.";
 	if player has radar, say "[got-sit][b]RAD[r] is shorthand to use the radar on something.";
 	if chase-aware, say "[got-sit][no-time-note].";
-	if any-sit-cmd is false, say "There are currently no special situational verbs, but if there are, they will show up here.";
+	if any-sit-cmd is false, say "There are currently no special situational verbs, but when there are, they will show up here.";
 
 to decide whether chase-aware:
 	if ever-chased is true and psi wisp is not moot and kayo yak is not moot, yes;
@@ -1107,7 +1106,7 @@ to decide whether chase-aware:
 carry out verbing:
 	say "The four basic directions ([b]N, S, E, W[r]) are the main ones, along with [b]USE[r], in order to get through the game. Also, in some places, specific verbs will be needed. None are terribly long, and---well, there is a thematic pattern to them.";
 	say "[line break]Standard verbs like [b]X[r] ([b]EXAMINE[r]) and [b]LOOK[r] also work.";
-	say "[line break][b]GT[r] or [b]GO TO[r] lets you go to a room where you've been before.";
+	say "[b]GT[r] or [b]GO TO[r] lets you go to a room where you've been before.";
 	say "[b]T[r] or [b]TALK TO[r] or [b]GR[r] or [b]GREET[r] talks to someone. There's not much in the way of conversation in this game, but you may get some clues from basic chat.";
 	say "[b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
 	say "[b]THINK[r] gives general non-spoiler hints, including where you may wish to visit, or what is blocking you. [b]AID[r] gives you hints for where you are.";
@@ -1120,15 +1119,15 @@ carry out verbing:
 
 section meta
 
-metaing is an action out of world
+metaing is an action out of world.
 
 understand the command "meta" as something new.
 
-understand "meta" as metaing.
-understand "meta at em" as metaing.
+understand "meta" and "meta at em" as metaing.
 
-carrry out metaing:
+carry out metaing:
 	if beep-yet is true, say "[b]LO VOL[r] and [b]LOVE VOL[r] turn the pact cap's hints volume down and up, respectively.";
+	if beep-yet is true, say "[b]SHUTTUHS[r] shutters off areas you're done with. NOTE: if there are any LLPs, you'll still be blocked.";
 	say "[b]SCORE[r] tracks the score. [b]ABOUT[r] and [b]CREDITS[r] tell about the game[if show-dev is true], and [b]DEV ED[r] shows technical details[end if].";
 	if in-beta is true:
 		say "[line break](start beta commands)";
@@ -1140,6 +1139,68 @@ carrry out metaing:
 	the rule succeeds;
 
 wr-short-note is a truth state that varies.
+
+chapter shuttuhsing
+
+shuttuhs is a truth state that varies.
+
+shuttuhsing is an action out of world.
+
+understand the command "shuttuhs" as something new.
+
+understand "shuttuhs" as shuttuhsing.
+
+this is the cant-shuttuhs rule:
+	if being-chased is true, say "This is too distracting when you're in a chase. I want to help you focus, and it's totally not about me overlooking a possible tricky coding exception." instead;
+	if player is in Dirge Grid, say "Dispose of the Diktat Kid." instead;
+	continue the action;
+
+carry out shuttuhsing:
+	if shuttuhs is false:
+		consider the done-and-branches-rule of location of player;
+		if the rule succeeded, say "You're in an area you've completed. You'll need to go somewhere else to activate this.";
+	abide by the cant-shuttuhs rule;
+	now shuttuhs is whether or not shuttuhs is false;
+	say "The invisible shutters/shuttuhs blocking completed areas are now [on-off of shuttuhs].";
+	the rule succeeds;
+
+this is the shuttuhs-after-scoring rule:
+	consider the done-and-branches-rule of location of player;
+	if the rule succeeded, say "You hear the click of invisible shuttuhs/shutters. You imagine you can escape before they drop."
+
+section shuttuhs check
+
+check going when shuttuhs is true:
+	let Q be the room noun of location of player;
+	consider the done-and-branches-rule of Q;
+	if the rule succeeded, say "Invisible shuttuhs, err, shutters block you that way. You must be done there. If you want to revisit, toggle them with [b]SHUTTUHS[r]." instead;
+
+a room has a rule called the done-and-branches-rule. The done-and-branches-rule of a room is usually the trivially false rule.
+
+section checking what's shuttuhs-ed
+
+[?? need to do more here]
+[note that dead ends can use the already present "complete" rule but non dead ends must use the "branch" rule.]
+the done-and-branches-rule of Frush Surf is the frush-surf-branch rule.
+the done-and-branches-rule of Lair Trial is the lair-trial-branch rule.
+the done-and-branches-rule of Motto Bottom is the motto-bottom-complete rule.
+the done-and-branches-rule of Moo Room is the moo-room-complete rule. [this is a dead end, so there is no branch]
+the done-and-branches-rule of Pro Corp is the pro-corp-complete rule.
+the done-and-branches-rule of Trapeze Part is the trapeze-part-complete rule.
+
+this is the frush-surf-branch rule:
+	consider the frush-surf-complete rule;
+	if the rule failed, the rule fails;
+	consider the moo-room-complete rule;
+	if the rule failed, the rule fails;
+	the rule succeeds;
+
+this is the lair-trial-branch rule:
+	consider the lair-trial-complete rule;
+	if the rule failed, the rule fails;
+	consider the motto-bottom-complete rule;
+	if the rule failed, the rule fails;
+	the rule succeeds;
 
 chapter lovoling
 
@@ -1730,6 +1791,7 @@ ME gem	ME Totem	"The egotistical forces in the gem and totem repel each other. J
 ME gem	Yuge Guy	"That might make the Yuge Guy's ego too much to handle."
 Mr Arm	Yuge Guy	"Mr. Arm doesn't seem to want to move toward the Yuge Guy."
 NULL ILLUN	Revolt Lover	"'I guess we all could use it a little. But someone else might need it more than me. Um, I hope.'"
+NULL ILLUN	Door Frood	"'Like I need it! Other people do! And what's worse, some who read it become less easy to make fun of. Hmmph.'"
 Party Trap	Revolt Lover	"'Whoah! Neat! That's a lot more useful than my art.'"
 Rep Popper	Yuge Guy	"It seems like the Rep Popper should work, but it doesn't, quite. Maybe there is something that is giving the Yuge Guy all his rep?"
 TI	Revolt Lover	"'Hmm. A bit too mean for me. Maybe it's more someone else's speed.'"
@@ -1849,7 +1911,7 @@ gate tag	soot tattoos	state tats	--	tats-peripheral rule	true	true	true	Yelpley	
 poo coop	gnu dung	--	--	--	true	false	true	Grebeberg	Dumb Mud	false	"A heretofore hidden poos scoop pops out from the poo coop. It shovels and vacuumss the offending dung into the coop, forming a crass arc that seems to contain several times the volume of the coop itself. Whatever, you can now go south."
 poo coop	turf rut	--	coop-full rule	shift-dumb-mud rule	true	true	true	Grebeberg	Dumb Mud	false	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture.[paragraph break]A bold(ened) lob! The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
 radar	made dam	eroded ore	got-ore-yet rule	radar-blink rule	true	false	false	Grebeberg	Swamp Maws	false	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow. The radar plays a weird scale. Being close to the ore has damaged it somehow."
-NULL ILLUN	Known Wonk	--	--	bump-maws rule	true	true	false	Grebeberg	Yack Cay	false	"The Known Wonk begins to read. 'Old, lo! Too simple. It has to be beneath me. I mean, it's almost as bad as [i]EBB?! BE[r].' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. Rid a nadir. Rid ANY nadir! Wonk, now! Sometimes, simple stuff works.' As the Known Wonk babbles, the mist sim lifts, too. 'Wow!' But no, your acts deserve a better cheer than that. 'H/t! A path!'"
+NULL ILLUN	Known Wonk	--	--	bump-maws rule	true	true	false	Grebeberg	Yack Cay	false	"The Known Wonk begins to read. 'Old, lo! Too simple. It has to be beneath me. I mean, it's almost as bad as [i]EBB?! BE[r].' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. Rid a nadir. Rid ANY nadir! Tiny nit? Not on! Wonk, now! Sometimes, simple stuff works.' As the Known Wonk babbles, the mist sim lifts, too. 'Wow!' But no, your acts deserve a better cheer than that. 'H/t! A path!'"
 el doodle	edits tide	spa maps	--	rahs-too rule	true	true	false	Grebeberg	Yack Cay	false	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps! And there is a bonus! It appears El Doodle was so jumbled, there were two things. Sharp rahs appear on another sheet of paper, as some sort of confused motivation, and you take them."
 elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	Calcific Lac	false	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where. You whisper 'Row, or' whenever you get tired. Then you see Elided Ile in the distance. So you stop off there. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and you are worthy to fight the vicious Bar Crab. It is no match for your elope pole. The citizens hand you a YOU BUOY to tell you they're glad you're you, asking only for the elope pole as a souvenir. Well, it was getting a bit awkward to carry.[paragraph break]They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Calcific Lac. As it gets near and bends away, you jump off, using the buoy to paddle and float back all the way."
 dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	Calcific Lac	false	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
@@ -2572,7 +2634,7 @@ The Pact Cap is a wearable thing in Fun Nuf. "A pact cap sits here. You need to 
 to say cap-beep-stuff:
 	if cap-pace is true, say ".[paragraph break]It's currently set as a pace cap";
 	if beep-yet is false, continue the action;
-	say ". You can toggle its perception-volume with LO VOL[if cap-vol is false] (current setting)[end if]  or LOVE VOL[if cap-vol is true] (current setting)[end if]"
+	say ". You can toggle its perception volume with [b]LO VOL[r][if cap-vol is false] (current setting)[end if] or [b]LOVE VOL[r][if cap-vol is true] (current setting)[end if]"
 
 cap-dum is a truth state that varies.
 
@@ -2708,7 +2770,7 @@ to say trigirt:
 
 chapter tile lit
 
-the tile lit is scenery in Fun Nuf. "It's a rough compass, with GREBEBERG west by it, YELPLEY east, Evac Ave. south and Dirge Grid north. You can't seem to go [if flee elf is moot and diktat kid is not moot]south and [end if]north, though." [ic]
+the tile lit is scenery in Fun Nuf. "It's a rough compass, with GREBEBERG (LA RURAL) west by it, YELPLEY (TOWN, WOT) east, Evac Ave. south and Dirge Grid north. You can't seem to go [if flee elf is moot and diktat kid is not moot]south and [end if]north, though." [ic]
 
 check taking tile lit: say "It's sort of embedded into the ground. It looks nice there, anyway, and it's useful for information." instead;
 
@@ -3908,11 +3970,15 @@ chapter Rob
 Rob is a proper-named guhthug in Worn Row. "[one of]'Oh, hi! I'm Rob, it's pretty uninteresting here, so you'd sort of fit in, but I'm trying to make it better. So, bug off, okay?'[or]Rob is still here giving you the side-eye.[stopping]". description is "Rob sniffs and rolls his eyes as if he is too good for Worn Row."
 
 every turn when player is in Worn Row and Rob is in Worn Row:
-	say "Rob mumbles '[next-rand-txt of table of Rob droning]', looking over to see if you're impressed.";
+	say "Rob mumbles '[next-rand-txt of table of Rob droning]' before looking over to see if you're impressed.";
 
 chapter bad dab
 
 the bad dab is peripheral scenery in Worn Row. description is "[if Rob is in Worn Row]WORN ROW is written, somewhat dubiously[else if row-prog > 0]WOR- ROW is still here, faded now since you opened [Worn Row][else]WOR- ROW is here. Maybe there's more here than just Worn Row[end if]."
+
+after examining bad dab:
+	consider the cap-beep rules for the bad dab;
+	continue the action;
 
 chapter test set
 
@@ -5955,7 +6021,7 @@ done-rule of Art Xtra is art-xtra rule.
 done-rule of Calcific Lac is calcific-lac rule.
 done-rule of Cold Loc is cold-loc rule.
 done-rule of Deft Fed is deft-fed rule.
-done-rule of Uneven U is den-ivy-vined rule.
+done-rule of Uneven U is uneven-u rule.
 done-rule of Dirge Grid is dirge-grid rule.
 done-rule of Dopy Pod is dopy-pod rule.
 done-rule of Drawl Ward is drawl-ward rule.
@@ -5995,9 +6061,11 @@ done-for-good rule of Apse Spa is apse-spa-complete rule.
 
 done-for-good rule of Art Xtra is art-xtra-complete rule.
 
+done-for-good rule of Calcific Lac is calcific-lac-complete rule.
+
 done-for-good rule of Cold Loc is cold-loc-complete rule.
 
-done-for-good rule of Uneven U is den-ivy-vined-complete rule.
+done-for-good rule of Uneven U is uneven-u-complete rule.
 
 done-for-good rule of Fun Nuf is trivially false rule.
 
@@ -6046,10 +6114,15 @@ this is the art-xtra-complete rule:
 section Calcific Lac rule
 
 this is the calcific-lac rule:
-	if dork rod is moot, continue the action;
+	if dork rod is moot and elope pole is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if player has dork rod, say "USE DORK ROD ON TAO BOAT." instead;
-	say "You need to find an item somewhere else to feel the peace needed to enter the Tao Boat." instead;
+	if player has elope pole, say "USE DORK ROD ON TAO BOAT." instead;
+	say "You need to find an item somewhere else to feel the peace needed to enter the [if dork rod is moot]kayak[else if elope pole is moot]Tao Boat[else]kayak and Tao Boat[end if]." instead;
+
+this is the calcific-lac-complete rule:
+	if dork rod is moot and elope pole is moot, the rule succeeds;
+	the rule fails;
 
 section Cold Loc rule
 
@@ -6083,7 +6156,7 @@ this is the deft-fed-complete rule:
 
 section Uneven U rule
 
-this is the den-ivy-vined rule:
+this is the uneven-u rule:
 	if wash saw is moot, continue the action;
 	if maps-explained is true, continue the action;
 	if search-hint-room is true, the rule succeeds;
@@ -6094,7 +6167,7 @@ this is the den-ivy-vined rule:
 	if player does not have spa maps, say "You can change El Doodle into something the Code Doc can decipher." instead;
 	say "USE SPA MAPS ON CODE DOC." instead;
 
-this is the den-ivy-vined-complete rule:
+this is the uneven-u-complete rule:
 	if wash saw is moot, the rule succeeds;
 
 section Dirge Grid rule
@@ -6106,11 +6179,18 @@ this is the dirge-grid rule:
 	if Knife Fink is in Dirge Grid, say "Kill the Knife Fink." instead;
 	if Diktat Kid is in Dirge Grid, say "Kill the Diktat Kid." instead;
 
+this is the dirge-grid-complete rule:
+	if player has X-ITE TIX, continue the action;
+
 section Dopy Pod rule
 
 this is the dopy-pod rule:
 	if cassettes sac is moot and pill lip is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
+
+this is the dopy-pod-complete rule:
+	if cassettes sac is moot and pill lip is moot, the rule succeeds;
+	the rule fails;
 
 section Drawl Ward rule
 
@@ -6213,6 +6293,10 @@ this is the lair-trial rule:
 	if kayo yak is in Lair Trial, say "YAK OKAY." instead;
 	say "[one of]You need to bring something that can knock the ogre off. You can't do it yourself.[or]Get the kayo yak to chase you.[stopping]" instead;
 
+this is the lair-trial-complete rule:
+	if ergot ogre is moot, the rule succeeds;
+	the rule fails;
+
 section Le Babel rule
 
 this is the le-babel rule:
@@ -6249,6 +6333,10 @@ this is the moo-room rule:
 	if player has SOME DEMOS, say "USE SOME DEMOS ON YAHOO HAY." instead;
 	say "You need to use a book on the hay to make art." instead;
 
+this is the moo-room-complete rule:
+	if yahoo hay is moot, the rule succeeds;
+	the rule fails; [as a future note, getting rid of the yahoo hay requires the enact cane which you get from the tao boat. So just the one condition is sufficient.]
+
 section Motto Bottom rule
 
 this is the motto-bottom rule:
@@ -6256,6 +6344,10 @@ this is the motto-bottom rule:
 	if search-hint-room is true, the rule succeeds;
 	if player does not have sage gas, say "You need to get something from Apse Spa." instead;
 	if player does not have stir writs, say "USE SHARP RAHS ON GURU RUG." instead;
+
+this is the motto-bottom-complete rule:
+	if stir writs is moot or player has stir writs, the rule succeeds;
+	the rule fails;
 
 section My Gym rule
 
@@ -6280,6 +6372,10 @@ this is the pro-corp rule:
 	if gold log is in Pro Corp, say "Take the gold log." instead;
 	if Gorge Grog is off-stage, say "[one of]You need a liquid to pour down the butene tub. A caustic one.[or]Bon Snob has a liquid to pour down the tub.[stopping]" instead;
 	say "USE GORGE GROG ON BUTENE TUB." instead;
+
+this is the pro-corp-complete rule:
+	if resale laser is not off-stage and DNA band is not in Pro Corp and gold log is not in Pro Corp, the rule succeeds;
+	the rule fails;
 
 section Red Roses Order rule
 
@@ -6357,7 +6453,11 @@ section Trapeze Part rule
 this is the trapeze-part rule:
 	unless epicer recipe is off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	say "[one of]The net needs you to do something to it.[or]TEND NET.[stopping]" instead;
+	say "[one of]The ten level net needs you to do something to it.[or]TEND NET.[stopping]" instead;
+
+this is the trapeze-part-complete rule:
+	if epicer recipe is not off-stage, the rule succeeds;
+	the rule fails;
 
 section Worn Row rule
 
