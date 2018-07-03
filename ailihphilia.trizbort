@@ -151,8 +151,8 @@ Initially sent to source code/repository November 2017.</history>
 			<dock index="0" id="49" port="e" />
 			<dock index="1" id="39" port="w" />
 		</line>
-		<room id="51" name="Calcific Lac" subtitle="" x="-544" y="-288" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects at="n" custom="yes" customRight="-22" customDown="0">Tao Boat|Kayak</objects>
+		<room id="51" name="Lac Oft Focal" subtitle="Lac Old Local" x="-544" y="-288" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
+			<objects at="n" custom="yes" customRight="-28" customDown="0">Tao Boat|Kayak|(Calcific Lac)</objects>
 		</room>
 		<room id="53" name="Uneven U" subtitle="Unitin' U" x="-544" y="96" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
 			<objects>Code Doc|(All-Ivy Villa)|(Den, Ivy Vined)</objects>

@@ -321,7 +321,7 @@ chapter loc-num
 
 a room has a number called loc-num.
 
-loc-num of Calcific Lac is 00.
+loc-num of Lac Oft Focal is 00.
 loc-num of Sneer Greens is 01.
 loc-num of Flu Gulf is 02.
 loc-num of Trapeze Part is 03.
@@ -565,7 +565,7 @@ when play begins:
 	say "You fold the Darer Ad and start off to the store.[paragraph break]'[unicode 161]Aloha. Hola!' someone, or something, cries. 'Steer-greets! Steer-greets!'[paragraph break]You run in the general direction of the voice.  You look up, and you're no longer on the way to the store. You're somewhere else. Your smartphone starts blinking: LOAD AOL! You look up. Who is responsible for this? An elf, who sees you futzing with your smartphone. 'No El Google on?' You nod. Awkward silence. 'Poll op! Poll op!' the someone/something continues.[wfak-d]";
 	say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because you looked up the winning strategy on the Internet after it confused you. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers. Then 'Is reversi...?'";
 	say "After your fifth win in a row, the Flee Elf yells 'Put it up!' again. You freeze--well, until you're knocked to the ground.[wfak-d]";
-	say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Raw Level War or Mista-T Sim. You'll do for Yelpley, I guess.' The Flee Elf leads you away. 'The first thing to do is, figure how to take this cap.'[wfak-d]";
+	say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Raw Level War, Base Sab or Mista-T Sim. You'll do for Yelpley, I guess.' The Flee Elf leads you away. 'The first thing to do is, figure how to take this cap.'[wfak-d]";
 	do nothing; [debug information below here. I've had problems putting it in and not deleting it, so I want to make things clear.]
 
 [??mike kim nora maron Marge Pegram lee mcmeel]
@@ -1913,8 +1913,8 @@ poo coop	turf rut	--	coop-full rule	shift-dumb-mud rule	true	true	true	Grebeberg
 radar	made dam	eroded ore	got-ore-yet rule	radar-blink rule	true	false	false	Grebeberg	Swamp Maws	false	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow. The radar plays a weird scale. Being close to the ore has damaged it somehow."
 NULL ILLUN	Known Wonk	--	--	bump-maws rule	true	true	false	Grebeberg	Yack Cay	false	"The Known Wonk begins to read. 'Old, lo! Too simple. It has to be beneath me. I mean, it's almost as bad as [i]EBB?! BE[r].' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. Rid a nadir. Rid ANY nadir! Tiny nit? Not on! Wonk, now! Sometimes, simple stuff works.' As the Known Wonk babbles, the mist sim lifts, too. 'Wow!' But no, your acts deserve a better cheer than that. 'H/t! A path!'"
 el doodle	edits tide	spa maps	--	rahs-too rule	true	true	false	Grebeberg	Yack Cay	false	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps! And there is a bonus! It appears El Doodle was so jumbled, there were two things. Sharp rahs appear on another sheet of paper, as some sort of confused motivation, and you take them."
-elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	Calcific Lac	false	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where. You whisper 'Row, or' whenever you get tired. Then you see Elided Ile in the distance. So you stop off there. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and you are worthy to fight the vicious Bar Crab. It is no match for your elope pole. The citizens hand you a YOU BUOY to tell you they're glad you're you, asking only for the elope pole as a souvenir. Well, it was getting a bit awkward to carry.[paragraph break]They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Calcific Lac. As it gets near and bends away, you jump off, using the buoy to paddle and float back all the way."
-dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	Calcific Lac	false	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
+elope pole	kayak	you buoy	--	--	true	true	false	Grebeberg	Lac Oft Focal	false	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where. You whisper 'Row, or' whenever you get tired. Then you see Elided Ile in the distance. So you stop off there. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and you are worthy to fight the vicious Bar Crab. It is no match for your elope pole. The citizens hand you a YOU BUOY to tell you they're glad you're you, asking only for the elope pole as a souvenir. Well, it was getting a bit awkward to carry.[paragraph break]They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Lac Oft Focal. As it gets near and bends away, you jump off, using the buoy to paddle and float back all the way."
+dork rod	tao boat	enact cane	--	--	true	true	false	Grebeberg	Lac Oft Focal	false	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
 tent net	Code Doc	--	--	--	true	true	false	Grebeberg	Uneven U	false	"Together, you figure out what to do to make the tent net proper cover for Uneven U. 'Tie it ... tie it ...' then 'Net: safe. fasten!'[paragraph break]Once the work is done, the Code Doc thanks you. 'Let me know if you need help learning ... well, anything. Oh, and call me Dr. D., if you'd like.'[paragraph break]How thoughtful! That could save a few keystrokes in the future[if spa maps are preclued]! Maybe the very near future, if you ask about the spa maps again[end if]."
 spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	Uneven U	false	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my for-prof math tam for this one. One second, let's see--Aha! Oho...'[paragraph break]You each split an Ed-Ade to make sure the lesson is taught and remembered well. Despite a minor pupil slip-up, the Code Doc is never edu-rude. It soon makes complete sense to you. You don't know how to say thanks. Everything seems too long-winded or said before, until ... 'Def ed!'"
 spa maps	go-by bog	sage gas	maps-readable rule	gas-think-wipe rule	true	true	false	Grebeberg	Apse Spa	false	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
@@ -2441,6 +2441,7 @@ stewy wets	"The stewy wets are unchangeable."
 den ivy vined	"[ivy-no]."
 ivy villa	"[ivy-no]."
 birch crib	"The birch crib is private property."
+calcific lac	"There's nothing you need to do TO the calcific lac. You [if lac-score is 2]did enough[else if lac-score is 1]could maybe deal with the [kayak-boat][else]can't imagine the boat and kayak are useless, though[end if]."
 Line Nil	"There's nothing you need behind the Line Nil security system. In fact, it's probably protecting you."
 be web	"The be web is--well, it's itself, and maybe there's a message here but you'll figure it out once you're finished adventuring. It's not important enough now."
 voodoo v	"You don't want or need to mess with the voodoo v."
@@ -3558,13 +3559,28 @@ chapter sharp rahs
 
 the sharp rahs are a plural-named thing. "The sharp rahs get you enthused, but they're not enough by themselves. Perhaps they are a bit overdone, with stuff like ZEST SEZ. They need balance some way.". description is "Reading the rahs leaves you feeling more motivated for a bit, but not long, because you used all; your mental energy getting motivated. Perhaps they need to be balanced with something more cerebral." [??rahs on mat]
 
-book Calcific Lac
+book Lac Oft Focal
 
-Calcific Lac is north of Yack Cay. It is in Grebeberg. "[if dork rod is moot]The Tao Boat that helped you get at peace with things is here[else]A Tao Boat rests on the shore, here, with no clear entry[end if]. [if elope pole is moot]That kayak you took to Elided Ile is here, too[else]There's a kayak, too. [one of]And wait! If you look into the distance, you see something! Elided Ile! Just as the Known Wonk said it had to be somewhere! The Wonk's calculations and predictions were all right[or]You see Elided Ile in the distance. Maybe some day, you will get there[stopping][end if]. The only exit is back south to the [Yack Cay]."
+Lac Oft Focal is north of Yack Cay. It is in Grebeberg. "A calcific lac borders on all sides except south back to the [Yack Cay].[paragraph break][if dork rod is moot]The Tao Boat that helped you get at peace with things is here[else]A Tao Boat rests on the shore, here, with no clear entry[end if]. [if elope pole is moot]That kayak you took to Elided Ile is here, too[else]There's a kayak, too. [one of]And wait! If you look into the distance, you see something! Elided Ile! Just as the Known Wonk said it had to be somewhere! The Wonk's calculations and predictions were all right[or]You see Elided Ile in the distance. Maybe some day, you will get there[stopping][end if]."
+
+printed name of Lac Oft Focal is "[if kayak is moot and dork rod is moot]Lac Old Local[else]Lac Oft Focal[end if]".
+
+to decide which number is lac-score:
+	let temp be 0;
+	if kayak is moot, increment temp;
+	if tao boat is moot, increment temp;
+	decide temp;
+
+to say kayak-boat:
+	say "[if kayak is in Lac Oft Focal]kayak[else]Tao Boat[end if]"
+
+chapter calcific lac
+
+the calcific lac is peripheral scenery. "It's a very CALM lac (of course it is) but far too wide to cross without transportation."
 
 chapter kayak
 
-The kayak is scenery in Calcific Lac. "It's, well, just a kayak. It doesn't have anything to steer it with, though. Maybe you have something, or you could find something."
+The kayak is scenery in Lac Oft Focal. "It's, well, just a kayak. It doesn't have anything to steer it with, though. Maybe you have something, or you could find something."
 
 check taking kayak: say "You got strong in My Gym, but not that strong!" instead;
 
@@ -3576,7 +3592,7 @@ instead of doing something with kayak when elope pole is moot: [??use X on kayak
 
 chapter tao boat
 
-The Tao Boat is scenery in Calcific Lac. "It rocks gently on the waves, with no clear entry, just fine without anyone riding on it. You [unless dork rod is moot]wonder what it's like inside, if you're worthy[else]look back on your time inside with fondness. It has put you at peace with the job you have ahead[end if]. Just looking at it gives more inner peace than you'd get from any of the medicine or alcohol you've come across in the game."
+The Tao Boat is scenery in Lac Oft Focal. "It rocks gently on the waves, with no clear entry, just fine without anyone riding on it. You [unless dork rod is moot]wonder what it's like inside, if you're worthy[else]look back on your time inside with fondness. It has put you at peace with the job you have ahead[end if]. Just looking at it gives more inner peace than you'd get from any of the medicine or alcohol you've come across in the game."
 
 check entering tao boat: say "You see no clear entry. Perhaps you need to make some gesture, or show the boat an emblem of your worth or self-acceptance." instead;
 
@@ -3751,7 +3767,7 @@ to say map-so-far:
 
 table of pyxloc [xxpyx]
 rmname	uptxt	downtxt
-Calcific Lac	"CALCI"	" LAC "
+Lac Oft Focal	"CALCI"	" LAC "
 Sneer Greens	"[if Yuge Guy is moot]ET TU[else]SNEER[end if]"	"[if Yuge Guy is moot]BUTTE[else]GREEN[end if]"
 Flu Gulf	" FLU "	"GULF "
 Trapeze Part	"TRAPE"	"PART "
@@ -5306,7 +5322,7 @@ talk-text of Code Doc is "There is some awkward small talk. The Code Doc mention
 talk-text of Cross Orc is "'Yap?! Pay!'".
 talk-text of Dave is "Dave's here, man. And Dave's not chatty, man. He just seems to want to block you from doing anything.".
 talk-text of Diktat Kid is "Now's not the time for talk. Okay, the Diktat Kid might be bragging, but you won't get a word in. Maybe a stiff 'It's...'".
-talk-text of Ergot Ogre is "'Guh! Ug!'[paragraph break]Diplomacy won't get you by, here.".
+talk-text of Ergot Ogre is "'Guh! Ug!'[paragraph break]Diplomacy won't get you by, here, and you don't have the guts to boom 'Erg, OFF, ogre!'".
 talk-text of Flee Elf is "[one of]'That cap. It's for you. Find the right way to take it, and I'll leave you on your way. Ask me again for hints.'[or]'Well, there are only twenty-six ways to take the Pact Cap--um, okay, twenty-five, if you think about it. And don't overthink. Once you do, I'm on my way.'[stopping]".
 talk-text of Gulf Lug is "'Ill, I...'".
 talk-text of Ian is "Ian sniffs. 'Why should I talk to someone not classy enough to BELONG here on Mont Nom?' He turns his head for a moment, as if doing something he's ashamed of.".
@@ -5400,7 +5416,7 @@ carry out gotoing:
 
 a room can be eastpost, eastcond, westpost or unblockable. a room is usually unblockable.
 
-Yack Cay is westpost. Swamp Maws is westpost. Calcific Lac is westpost. Trial Lair is westpost. Uneven U is westpost. Trial Lair is westpost. Motto Bottom is westpost.
+Yack Cay is westpost. Swamp Maws is westpost. Lac Oft Focal is westpost. Trial Lair is westpost. Uneven U is westpost. Trial Lair is westpost. Motto Bottom is westpost.
 Red Roses Order is eastpost. Swept Pews is eastpost. Drawl Ward is eastpost. Dopy Pod is eastpost. Scrap Arcs is eastpost. Deft Fed is eastpost.
 Gross Org is eastcond. Pro Corp is eastcond.
 
@@ -5503,7 +5519,7 @@ this is the dung-gone rule:
 	if gnu dung is moot, the rule succeeds;
 	the rule fails;
 
-avail-rule of Calcific Lac is wonk-book rule.
+avail-rule of Lac Oft Focal is wonk-book rule.
 
 this is the wonk-book rule:
 	if NULL ILLUN is moot, the rule succeeds;
@@ -5677,7 +5693,7 @@ chase-block-rule of Moo Room is the block-moo-room rule.
 chase-block-rule of Flu Gulf is the block-flu-gulf rule.
 chase-block-rule of Apse Spa is the block-room-generically rule.
 chase-block-rule of Cold Loc is the block-cold-loc rule.
-chase-block-rule of Calcific Lac is the block-room-generically rule.
+chase-block-rule of Lac Oft Focal is the block-room-generically rule.
 chase-block-rule of Yack Cay is the block-yack-cay rule.
 
 this is the block-room-generically rule:
@@ -5701,8 +5717,8 @@ this is the block-cold-loc rule:
 	the rule fails;
 
 this is the block-yack-cay rule:
-	if Calcific Lac is chase-blocked:
-		say "There was nothing in Calcific Lac OR [Yack Cay] you saw that could slow the yak down more than you. Well, that's another place you can ignore next time.";
+	if Lac Oft Focal is chase-blocked:
+		say "There was nothing in [Lac Oft Focal] OR [Yack Cay] you saw that could slow the yak down more than you. Well, that's another place you can ignore next time.";
 		the rule succeeds;
 	the rule fails;
 
@@ -5991,7 +6007,7 @@ to hint-bump-worn:
 
 [this is the list of how I do things in the walkthrough.]
 
-L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Moo Room, Dumb Mud, Swamp Maws, Yack Cay, Calcific Lac, Uneven U, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
+L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Moo Room, Dumb Mud, Swamp Maws, Yack Cay, Lac Oft Focal, Uneven U, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
 
 [?? nothing game-critical to do here = if there is a LLP]
 
@@ -6018,7 +6034,7 @@ section bulk done-rule definitions
 
 done-rule of Apse Spa is apse-spa rule.
 done-rule of Art Xtra is art-xtra rule.
-done-rule of Calcific Lac is calcific-lac rule.
+done-rule of Lac Oft Focal is lac-oft-focal rule.
 done-rule of Cold Loc is cold-loc rule.
 done-rule of Deft Fed is deft-fed rule.
 done-rule of Uneven U is uneven-u rule.
@@ -6061,7 +6077,7 @@ done-for-good rule of Apse Spa is apse-spa-complete rule.
 
 done-for-good rule of Art Xtra is art-xtra-complete rule.
 
-done-for-good rule of Calcific Lac is calcific-lac-complete rule.
+done-for-good rule of Lac Oft Focal is lac-oft-focal-complete rule.
 
 done-for-good rule of Cold Loc is cold-loc-complete rule.
 
@@ -6111,16 +6127,16 @@ this is the art-xtra rule:
 this is the art-xtra-complete rule:
 	if soot tattoos are moot, the rule succeeds;
 
-section Calcific Lac rule
+section Lac Oft Focal rule
 
-this is the calcific-lac rule:
+this is the lac-oft-focal rule:
 	if dork rod is moot and elope pole is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if player has dork rod, say "USE DORK ROD ON TAO BOAT." instead;
 	if player has elope pole, say "USE DORK ROD ON TAO BOAT." instead;
 	say "You need to find an item somewhere else to feel the peace needed to enter the [if dork rod is moot]kayak[else if elope pole is moot]Tao Boat[else]kayak and Tao Boat[end if]." instead;
 
-this is the calcific-lac-complete rule:
+this is the lac-oft-focal-complete rule:
 	if dork rod is moot and elope pole is moot, the rule succeeds;
 	the rule fails;
 

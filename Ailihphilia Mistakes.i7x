@@ -44,34 +44,6 @@ chapter Ivy Villa
 
 understand "cods doc" as a mistake ("No way. It's nice to be around someone non-fishy, actually.[mis of 11]") when player is in Uneven U.
 
-chapter Calcific Lac
-
-understand "calf lac" as a mistake ("There is [if Moo Room is not visited]another room with that, sort of[else]already the Moo Room. Let's not overdo it[end if]. Plus, cows can't swim.[mis of 12]") when player is in Calcific Lac.
-
-understand "calk lac" as a mistake ("It is not leaking.[mis of 13]") when player is in Calcific Lac.
-
-understand "call lac" as a mistake ("It does not respond.[mis of 14]") when player is in Calcific Lac.
-
-understand "calm lac" as a mistake ("It is calm enough.[mis of 15]") when player is in Calcific Lac.
-
-section moor broom
-
-understand "moor groom" as a mistake ("There is no romance, here. Besides, I can't do anything with 'bride.'[mis of 16]") when player has moor broom.
-
-understand "moor vroom" as a mistake ("The moor broom is not equipped for transport. Some brooms are, but this isn't.[mis of 17]") when player has moor broom.
-
-section tao boat
-
-understand "tao coat" as a mistake ("You don't need protection from the weather here.[mis of 18]") when player is in Calcific Lac.
-
-understand "tao goat" as a mistake ("The goat wouldn't remain placid for long once it was plunged into water.[mis of 19]") when player is in Calcific Lac.
-
-understand "tao moat" as a mistake ("The lake is peaceful enough as-is.[mis of 20]") when player is in Calcific Lac.
-
-section ME gem
-
-understand "mega gem" as a mistake ("That'd be useful in Kingdom of Loathing, but not here.[mis of 21]") when ME gem is quicknear.
-
 chapter Cold Loc
 
 understand "cola loc" as a mistake ("You'd be better off with a warmer drink. Which isn't here.[mis of 22]") when player is in Cold Loc.
@@ -348,6 +320,34 @@ understand "groo org" as a mistake ("No slavering light-fearing beasts find it w
 understand "grot org" as a mistake ("Gross, grot ... same thing.[mis of 133]") when player is in Gross Org.
 
 understand "stinko knits" as a mistake ("AFTER cleaning up Yelpley and Grebeberg is when to get drunk. Nurd.[mis of 134]") when stinky knits are quicknear.
+
+chapter Lac Oft Focal
+
+understand "calf lac" as a mistake ("There is [if Moo Room is not visited]another room with that, sort of[else]already the Moo Room. Let's not overdo it[end if]. Plus, cows can't swim.[mis of 12]") when player is in Lac Oft Focal.
+
+understand "calk lac" as a mistake ("It is not leaking.[mis of 13]") when player is in Lac Oft Focal.
+
+understand "call lac" as a mistake ("It does not respond.[mis of 14]") when player is in Lac Oft Focal.
+
+understand "calm lac" as a mistake ("It is calm enough.[mis of 15]") when player is in Lac Oft Focal.
+
+section moor broom
+
+understand "moor groom" as a mistake ("There is no romance, here. Besides, I can't do anything with 'bride.'[mis of 16]") when player has moor broom.
+
+understand "moor vroom" as a mistake ("The moor broom is not equipped for transport. Some brooms are, but this isn't.[mis of 17]") when player has moor broom.
+
+section tao boat
+
+understand "tao coat" as a mistake ("You don't need protection from the weather here.[mis of 18]") when player is in Lac Oft Focal.
+
+understand "tao goat" as a mistake ("The goat wouldn't remain placid for long once it was plunged into water.[mis of 19]") when player is in Lac Oft Focal.
+
+understand "tao moat" as a mistake ("The lake is peaceful enough as-is.[mis of 20]") when player is in Lac Oft Focal.
+
+section ME gem
+
+understand "mega gem" as a mistake ("That'd be useful in Kingdom of Loathing, but not here.[mis of 21]") when ME gem is quicknear.
 
 chapter Lair Trial
 

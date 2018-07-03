@@ -15,6 +15,10 @@ But I hope you find my riffs on them interesting.
 ?Fake clues! Some people mentioned don't exist!
 The game picks a few people's names randomly on startup. There is one male and one female.
 None of this has any effect on the story. But I figured it was a decent way to combine (relative) gender balance with being able to show off a few of the cooler names I found.
+?Why did the location's name change?
+It usually means you're done with it.
+I hope that's an amusing reward.
+There's one occasion where that's not perfectly true, but this advice isn't critical to solving the game.
 >Dim Mid
 >>FUN 'NUF
 ?Why can't I leave?
@@ -254,7 +258,7 @@ USE EL DOODLE ON EDITS TIDE.
 ?Can I clean the Tru Yurt?
 The Dirt Rid doesn't quite do the trick. Not energetic enough.
 USE MOOR BROOM ON TRU YURT.
->>CALCIFIC LAC
+>>LAC OFT FOCAL
 ?What do I do with the Tao Boat?
 It won't let you in unless you have something that shows self-effacement.
 You'll know the item when you see it.
