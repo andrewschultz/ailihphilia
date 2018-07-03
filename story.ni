@@ -1081,16 +1081,24 @@ understand the command "v" as something new.
 understand the command "verb" as something new.
 understand the command "verbs" as something new.
 
+understand "verbs/verb brev" as verbing.
 understand "verbs" as verbing.
 understand "verb" as verbing.
 understand "v" as verbing.
 understand "help" as verbing.
 
-to decide whether do-alt-commands:
-	if player has radar, yes;
-	if beep-yet is true, yes;
-	if chase-aware, yes;
-	no;
+any-sit-cmd is a truth state that varies.
+
+to say got-sit: now any-sit-cmd is true.
+
+this is the situational commands show rule:
+	now any-sit-cmd is false;
+	if player is in Fun Nuf and kaos oak is xed, say "[got-sit][b]GRAMMAR G[r] toggles the [kaoscaps] between chaotic to sane punctuation, which is purely cosmetic.";
+	if pyx is quicknear, say "[got-sit][b]X X[r] or [b]MAP[r] will let you examine the X/Y Pyx[end if].";
+	if wr-short-note is true and in-work, say "[got-sit][line break][b]REV[r], [b]ROT[r] and [b]REI[r] is shorthand to use an item on the reviver, rotator and reifier, respectively.";
+	if player has radar, say "[got-sit][b]RAD[r] is shorthand to use the radar on something.";
+	if chase-aware, say "[got-sit][no-time-note].";
+	if any-sit-cmd is false, say "There are currently no special situational verbs, but if there are, they will show up here.";
 
 to decide whether chase-aware:
 	if ever-chased is true and psi wisp is not moot and kayo yak is not moot, yes;
@@ -1102,13 +1110,26 @@ carry out verbing:
 	say "[line break][b]GT[r] or [b]GO TO[r] lets you go to a room where you've been before.";
 	say "[b]T[r] or [b]TALK TO[r] or [b]GR[r] or [b]GREET[r] talks to someone. There's not much in the way of conversation in this game, but you may get some clues from basic chat.";
 	say "[b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
-	say "[b]THINK[r] gives general non-spoiler hints, including where you may wish to visit, or what is blocking you[if pyx is quicknear][b]X X[r] or [b]MAP[r] will let you examine the X/Y Pyx[end if].";
-	say "[b]AID[r] gives you hints for where you are. [b]SCORE[r] tracks the score. [b]ABOUT[r] and [b]CREDITS[r] tell about the game[if show-dev is true], and [b]DEV ED[r] shows technical details[end if].";
-	if player is in Fun Nuf and kaos oak is xed, say "[b]GRAMMAR G[r] flips the [kaoscaps] around, which is purely cosmetic.";
-	if wr-short-note is true and in-work, say "[line break][b]REV[r], [b]ROT[r] and [b]REI[r] is shorthand to use an item on the reviver, rotator and reifier, respectively.";
-	if player has radar, say "[b]RAD[r] is shorthand to use the radar on something.";
+	say "[b]THINK[r] gives general non-spoiler hints, including where you may wish to visit, or what is blocking you. [b]AID[r] gives you hints for where you are.";
+	if cur-score of Odd Do < max-score of Odd Do:
+		say "[line break]There are also a few guess-the-verb bonus points that are hidden. Some relate to objects or people that need help but can't help you, and some are riffs on standard commands. [if refer-bonus is false]There's a different way to revisit, rehash or recap this very command, for example[else]For instance, you got REFER as VERBS[end if]";
+	say "[line break]Also, many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy. If you miss them, you'll see the entire list at the end.";
+	say "[b]META[r] (or [b]META AT EM[r] has information on meta-verbs, which includes options (e.g. turning some minor hints on or off), scoring and information on how the game was created and who helped.";
+	if in-beta is true, say "META also gives beta tester comands.";
+	abide by the situational commands show rule;
+
+section meta
+
+metaing is an action out of world
+
+understand the command "meta" as something new.
+
+understand "meta" as metaing.
+understand "meta at em" as metaing.
+
+carrry out metaing:
 	if beep-yet is true, say "[b]LO VOL[r] and [b]LOVE VOL[r] turn the pact cap's hints volume down and up, respectively.";
-	if chase-aware, say "[no-time-note].";
+	say "[b]SCORE[r] tracks the score. [b]ABOUT[r] and [b]CREDITS[r] tell about the game[if show-dev is true], and [b]DEV ED[r] shows technical details[end if].";
 	if in-beta is true:
 		say "[line break](start beta commands)";
 		say "[line break][b]RR[r] lets you try all three items in the Word Row machines. If one nets a point, it goes last.";
@@ -1116,9 +1137,6 @@ carry out verbing:
 		say "[line break](end beta commands)";
 	if debug-state is true:
 		say "[line break]PROGRAMMER TESTING COMMANDS: WIN lets you win, PER describes peripheral things, and IA flags everything without an initial appearance.";
-	if cur-score of Odd Do < max-score of Odd Do:
-		say "[line break]There are also a few guess-the-verb bonus points that are hidden. Some relate to objects or people that need help but can't help you, and some are riffs on standard commands. [if refer-bonus is false]There's a different way to revisit, rehash or recap this very command, for example[else]For instance, you got REFER as VERBS[end if]";
-	say "[line break]Also, many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy. If you miss them, you'll see the entire list at the end.";
 	the rule succeeds;
 
 wr-short-note is a truth state that varies.
