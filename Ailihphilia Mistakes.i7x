@@ -130,7 +130,7 @@ understand "cash sac" as a mistake ("You look extra carefully at the sac. No, no
 
 understand "dir rid" as a mistake ("Rm -r is fewer keystrokes.[mis of 58]") when Dirt Rid is quicknear.
 
-understand "dire rid" as a mistake ("Your situationisn't that bad, but it doesn't get any better.[mis of 59]") when Dirt Rid is quicknear.
+understand "dire rid" as a mistake ("Your situation isn't that bad, but it doesn't get any better.[mis of 59]") when Dirt Rid is quicknear.
 
 understand "dirk rid" as a mistake ("If you had a dagger in your back, which you don't, that might be useful. But you don't.[mis of 60]") when Dirt Rid is quicknear.
 
@@ -561,7 +561,7 @@ to decide whether got-ore:
 
 understand "eros ore" as a mistake ("I don't even want to know what you're trying to do, there.[mis of 214]") when got-ore.
 
-understand "ore dero" as a mistake ("The ore can do more than just create some loafer with nothing better to do than play (or write) silly computer games. It can create something for social good![mis of 257]") when got-ire.
+understand "ore dero" as a mistake ("The ore can do more than just create some loafer with nothing better to do than play (or write) silly computer games. It can create something for social good![mis of 257]") when got-ore.
 
 understand "ore hero" as a mistake ("No! You do not need to craft a new hero. YOU ARE THE HERO![mis of 258]") when got-ore.
 

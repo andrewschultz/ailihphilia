@@ -39,39 +39,47 @@ The Flee Elf mentions there are really only 26 simple ways to pick up the cap, i
 !When you get home, you open the X/O box.
 >undo
 
-===2
+==t2
 #mistake test for evaded ave
 >evaded ave
 That'll appear later.
-
+\\
 #mistake test for till lit
 >till lit
 You possess no farm tools. And this would be pointless anyway.
-
+\\
 #mistake test for tilt lit
 >tilt lit
 It's stuck into the ground.
-
+\\
 #mistake test for fun enuf
 >fun enuf
 Still ungrammatical!
-
+\\
+#mistake test for fu nuf
+>fu nuf
+Any FU is too much FU in a (Zarfian) polite game like this. You found a better way to swear in this game.
+\\
 #mistake test for funk nuf
 >funk nuf
 No cool music plays, but at least it doesn't smell worse.
-
+\\
 #mistake test for fun snuf
 >fun snuf
 You vow to take saving fantasy worlds much more seriously. No more frivolity!
-
+\\
 #mistake test for fund nuf
 >fund nuf
 Nonsense! Adventure is its own reward!
-
+\\
+#mistake test for kaos soak
+>kaos soak
+The [kaoscaps] fails to collapse in a torrent of water.
+\\
 #mistake test for pac cap
 >pac cap
 You almost take the cap, but you fumble it slightly. The Flee Elf blinks. "You're almost there, but ... umm, well, you need to do a little more."
-
+\\
 #mistake test for paca cap/pacb cap/pacc cap/pacd cap/pacf cap/pacg cap/pach cap/paci cap/pacj cap/pacl cap/pacm cap/pacn cap/pacp cap/pacq cap/pacr cap/pacu cap/pacv cap/pacw cap/pacx cap/pacz cap
 >paca cap
 "Hmm, try again," grumps the Flee Elf.
@@ -113,47 +121,46 @@ You almost take the cap, but you fumble it slightly. The Flee Elf blinks. "You'r
 "Hmm, try again," grumps the Flee Elf.
 >pacz cap
 "Hmm, try again," grumps the Flee Elf.
-
+\\
 #mistake test for paco cap
 >paco cap
 The Flee Elf notes that's a pejorative term for policemen in Central America--not quite what you want, for decency or for practicality.
-
+\\
 #mistake test for pacs cap
 >pacs cap
 PACs aren't necessarily evil, but they aren't terribly heroic.
-
+\\
 #mistake test for pact cap
 >pact cap
 It already is!
-
+\\
 #mistake test for pa cap
 >pa cap
 The word DAD briefly flashes on the Pact Cap. Weird, but not really.
-
+\\
 #mistake test for flea elf/flea
 >flea elf
 The elf scratches for a bit, then looks embarrassed.
 >flea
 The elf scratches for a bit, then looks embarrassed.
-
+\\
 #mistake test for flen elf/flen
 >flen elf
 Dry ketchup is gross. Besides, the elf is one of the good guys.
 >flen
 Dry ketchup is gross. Besides, the elf is one of the good guys.
-
+\\
 #mistake test for flex elf/flex
 >flex elf
 The elf looks more flexible than you. It's the cap you want to concentrate on.
 >flex
 The elf looks more flexible than you. It's the cap you want to concentrate on.
-
+\\
 #mistake test for fleece elf/fleece
 >fleece elf
 There is much more fortune and glory in adventure! It's the cap you want to concentrate on.
 >fleece
 There is much more fortune and glory in adventure! It's the cap you want to concentrate on.
-===a
 
 >pack cap
 by one point
@@ -837,6 +844,18 @@ Good thing this isn't a cooking sim.
 >n
 
 ==t2
+#mistake test for purer up
+>purer up
+This game isn't about morality.
+\\
+#mistake test for spue ups
+>spue ups
+The Spur Ups fail to spit anything out.
+\\
+#mistake test for dirge me grid
+>dirge me grid
+Boy, if this game weren't polite on the Zarfian cruelty scale, you'd be in trouble now!
+\\
 #mistake test for put it up
 >put it up
 That's what the Spur Ups say, but you need to re-interpret it slightly, to help yourself.
@@ -899,9 +918,9 @@ The Spur Ups don't become potatoes or French fries or whatever.
 \\
 #mistake test for up [text]/ups [text]
 >up zozimus
-You need to do something UP with the spurs, but ... UP needs to come second. Or last. You can't do much with PU[or-ups].
+You need to do something UP with the spurs, but ... UP needs to come second. Or last. You can't do much with PU.
 >ups zozimus
-You need to do something UP with the spurs, but ... UP needs to come second. Or last. You can't do much with PU[or-ups].
+You need to do something UP with the spurs, but ... UP needs to come second. Or last. You can't do much with PU, much less spu.
 
 >puff up
 by one point
@@ -993,6 +1012,9 @@ This would send you on a long journey to Hadean Lands. One you might enjoy so mu
 #mistake test for trod ort
 >trod ort
 It looks run-down enough.
+#mistake test for trow ort
+>trow ort
+You wonder how the ort's potential stinkiness could work in your favor, somehow, somewhere.
 
 >get troll ort
 
@@ -1206,6 +1228,19 @@ Maybe there's a do-prefer pod somewhere, but it's off-limits to you.
 >get all
 #got dirt rid
 
+==t2
+#mistake test for dir rid
+>dir rid
+Rm -r is fewer keystrokes.
+\\
+#mistake test for dire rid
+>dire rid
+Your situation isn't that bad, but it doesn't get any better.
+\\
+#mistake test for dirk rid
+>dirk rid
+If you had a dagger in your back, which you don't, that might be useful. But you don't.
+
 >e
 
 >e
@@ -1320,50 +1355,53 @@ The cross orc stops you from going north. "GIVE VIG!" it booms.
 >s
 The cross orc stops you from going south. "GIVE VIG!" it booms.
 
-===2
+==t2
 #mistake test for told lot
 >told lot
 The cross orc isn't open to verbal negotiation.
-
+\\
 #mistake test for crop orc
 >crop orc
 That attack would boomerang, and not just because this is a palindrome-y game. The orc is lots, lots bigger than you.
 Also, there is no farm nearby.
-
+\\
+#mistake test for cron orc
+>cron orc
+The orc doesn't have many daily tasks to check off on.
+\\
 #mistake test for croc orc
 >croc orc
 The orc is fearsome enough without becoming a total genetic monstrosity.
-
+\\
 #mistake test for crow orc
 >crow orc
 The orc remains silent (yay) and flightless (boo).
-
+\\
 #mistake test for cram arc
 >cram arc
 Litterbug. Besides, you need pretty much everything you're carrying. And nothing would fit, anyway.
-
+\\
 #mistake test for cray arc
 >cray arc
 The arc doesn't need to change shape or become more volatile.
-
+\\
 #mistake test for crap arc
 >crap arc
 You might cause a mudslide, or worse.
-
+\\
 #mistake test for crass arc
 >crass arc
 The cross orc and crag arc don't fuse together. Rats.
-
+\\
 #mistake test for crab arc
 >crab arc
 That's just what you need, a giant crab coming after you, along with the cross orc.
-
+\\
 #mistake test for crac arc/crak arc
 >crac arc
 While there may be a correlation between bad spelling and extreme strength, there's no causation. Sorry.
 >crak arc
 While there may be a correlation between bad spelling and extreme strength, there's no causation. Sorry.
-===a
 
 ==t5
 >use troll ort on cross orc
@@ -1557,25 +1595,36 @@ The etage gate blocks you, and Ned would probably pull you back, too.
 Wall! Aw.
 You can only go back south here (up=north).
 
-===2
-#mistake test for grow org
->grow org
+==t2
+#mistake test for grob org
+>grob org
+Whoah! It's pretty crazy here, but not crazy enough to open a chess game with g4.
+\\
+#mistake test for grok org
+>grok org
+You achieve no transcendent consciousness, but you suddenly sort of realize why your English teacher yammered on excitedly about ... THAT book in the syllabus.
+\\
+#mistake test for groo org
+>groo org
+No slavering light-fearing beasts find it worthwhile to punish you for bad spelling.
+\\
+#mistake test for gro org/grow org
+>gro org
 This game is just a bunch of dumb jokes and silly wordplay mashed together, and any attempt at personal growth is severely frowned upon. So stop that!
 >grow org
 Your height does not change.
-
+\\
 #mistake test for stinko knits
 >stinko knits
 AFTER cleaning up Yelpley and Grebeberg is when to get drunk. Nurd.
-
+\\
 #mistake test for dent ned
 >dent Ned
 Less violence, more subtlety.
-
+\\
 #mistake test for grot org
 >grot org
 Gross, grot ... same thing.
-===a
 
 >deny ned
 by one point
@@ -1653,9 +1702,9 @@ WRONG
 >undo
 
 ==t2
-#mistake test for line nil
->line nil
-The Link Nil security system fails to turn into a line and vanish. That's pretty secure!
+#mistake test for go log
+>go log
+It's not particularly magical or motivational. But at least it can't become a go-loco log.
 \\
 #mistake test for dna land
 >dna land
@@ -1672,6 +1721,14 @@ That will happen with the passage of time.
 #mistake test for dna wand
 >dna wand
 No. You know TRUE MAGIC MUST COME FROM WITHIN.
+\\
+#mistake test for pro gorp
+>pro gorp
+You score no free trail mix, alas.
+\\
+#mistake test for pro vorp
+>pro vorp
+No stat junkies appear to drive you up the wall.
 
 >use Gorge Grog on butene tub
 by one point
@@ -2131,6 +2188,11 @@ by one point
 >use spa maps on code doc
 by one point
 
+==t2
+#mistake test for saga gas
+>saga gas
+You probably need wisdom more than description of someone else'e epic right now.
+
 ==t3
 >s
 >e
@@ -2287,6 +2349,23 @@ It's a guru rug. It's too good to be moved by such a cheap bailout.
 >use sharp rahs on guru rug
 by one point
 
+==t2
+#mistake test for stir brits
+>stir brits
+Alas, there are no spell-organized-with-an-'s' degenerates around TO stir.
+\\
+#mistake test for stir crits
+>stir crits
+The stir writs are not about doing critical damage. They are about critical self-awareness.
+\\
+#mistake test for stir grits
+>stir grits
+But the stir writs are nourishment for the SOUL.
+\\
+#mistake test for stir its
+>stir its
+You wait for a man to appear after a long journey, only to be crushed by a giant foot, but it doesn't happen.
+
 ==t4
 >gt dumb mud
 ==!
@@ -2305,7 +2384,7 @@ You can only go back north here (up=north).
 >e
 You can only go back north here (up=north).
 
-===2
+==t2
 #mistake test for nair ian
 >nair Ian
 That would be painful and embarrassing enough to chase him, or someone named Brian, off, but alas, you don't have anything to do the job. The bottle of Nat's Tan doesn't count.
@@ -2315,35 +2394,39 @@ That would be painful and embarrassing enough to chase him, or someone named Bri
 !The bottle of Nat's Tan doesn't count.
 >undo
 >undo
-
+\\
 #mistake test for naif ian
 >naif Ian
 Sadly, mind control is beyond your powers.
-
+\\
 #mistake test for nain ian
 >nain Ian
 Owning/pwning would embarrass Ian, but that is too archaic a synonym.
-
+\\
 #mistake test for mo nom
 >mo nom
 Greedy! There's enough food to find around here, really.
-
+\\
 #mistake test for mong nom
 >mong nom
 No 'interesting' brownies appear.
-
+\\
 #mistake test for monk nom
 >monk nom
 Cannibalism, or super sparse food, is not an option.
-
+\\
 #mistake test for mono nom
 >mono nom
 Planning to eat alone is kinda sad.
-
+\\
 #mistake test for krab ark
 >krab ark
 You don't have the materials to climb the ark, and you don't need to.
-===a
+\\
+#mistake test for Ian ai
+>Ian ai
+Ian remains naturally sentient. Though it's quite possible that any intellectual posturing of his is fake.
+
 
 >nail ian
 by one point
@@ -2441,26 +2524,38 @@ by one point
 >use DNA band on reifier
 by one point
 
+==t2
+#mistake test for hand nah
+>hand nah
+The hand isn't helpful enough in its present form, but that's no reason to dismiss it.
+
 >use roto motor on DNA hand
 by one point
 
-===2
+==t2
+#mistake test for bannon nab
+>bannon nab
+That's up to Muelle ... um, there's enough political references in the game with the Yuge Guy.
+\\
+#mistake test for mraz arm
+>mraz arm
+You don't need Mr. Arm singing 'I'm yours.' He is already in your inventory.
+\\
 #mistake test for band nab
 >band nab
 Mr. Arm tries to grip his own wrist but can't quite.
-
+\\
 #mistake test for bank nab
 >bank nab
 Whoah! You're one of the good guys, here.
-
+\\
 #mistake test for mra arm
 >mra arm
 No! Mr. Arm is on the side of social justice.
-
+\\
 #mistake test for rm mr
 >rm mr
 No, Mr. Arm will be helpful. (Spoiler: he'll leave for better things once he has helped, so happy endings all around. Yay!)
-===a
 
 >use eroded ore on reviver
 by one point
@@ -2524,6 +2619,11 @@ The Line Nil security system fails to break apart. That's pretty secure!
 by one point
 
 >w
+
+==t2
+#mistake test for guy ug
+>guy ug
+Your tame disgust fails to change the Yuge Guy.
 
 ==t3
 >s
@@ -2691,11 +2791,26 @@ No. It must be good for something.
 >undo
 >undo
 
-===2
+==t2
+#mistake test for ore dero
+>ore dero
+The ore can do more than just create some loafer with nothing better to do than play (or write) silly computer games. It can create something for social good!
+\\
+#mistake test for ore hero
+>ore hero
+No! You do not need to craft a new hero. YOU ARE THE HERO!
+\\
+#mistake test for ore nero
+>ore nero
+Maybe that ancient Roman emperor reincarnated would cancel out the Diktat Kid, maybe not. But in the meantime, they'd probably muck things up even worse together.
+\\
+#mistake test for ore torero
+>ore torero
+The ore fails to jump out of your hands.
+\\
 #mistake test for eros ore
 >eros ore
 I don't even want to know what you're trying to do, there.
-===a
 
 >use TNT on ore zero
 by one point
@@ -2727,19 +2842,31 @@ No running, no secret passages. You need to face down the Diktat Kid.
 >w
 No running, no secret passages. You need to face down the Diktat Kid.
 
-===2
+==t2
+#mistake test for verb rev
+>verb rev
+Oh, the Verses Rev is active enough.
+\\
+#mistake test for versus rev
+>versus rev
+The Verses Rev is already against you.
+\\
+#mistake test for very rev
+>very rev
+The Verses Rev fails to become extremely spiritual. But it was worth a try.
+\\
 #mistake test for dir grid
 >dir grid
 With only one way out, you don't need directions.
-
+\\
 #mistake test for par trap
 >par trap
 You aren't on a golf course.
-
+\\
 #mistake test for par crap
 >par crap
 Making fun of others' clothing isn't as evil as the Diktat Kid, but it's not what REAL heroes do!
-===a
+
 
 >use ME gem on Knife Fink
 by one point

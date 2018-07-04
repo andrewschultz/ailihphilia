@@ -30,7 +30,6 @@ by one point
 
 >refer
 !by one point
-
 >pack cap
 by one point
 
@@ -321,7 +320,6 @@ by one point
 >e
 >e
 
-
 >use cash sac on cross orc
 by one point
 
@@ -394,7 +392,6 @@ by one point
 #got ufo tofu
 
 >n
-
 
 >deny ned
 by one point
@@ -752,7 +749,6 @@ by one point
 >use roto motor on dna hand
 !by one point
 
-
 >use eroded ore on reviver
 by one point
 
@@ -854,7 +850,6 @@ by one point
 >e
 >n
 >w
-
 >use TNT on ore zero
 by one point
 
