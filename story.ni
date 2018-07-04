@@ -317,16 +317,13 @@ volume room specifications
 
 chapter room-dist and loc-num sorting out
 
-a room has a number called loc-num. loc-num of a room is usually -1. loc-num of Fun Nuf is 23.
+a room has a number called loc-num. loc-num of a room is usually -1. loc-num of Fun Nuf is 23. [loc num = 10 * south of lac + 1 * east of lac]
 
-a room has a number called room-dist. room-dist of a room is usually -1. room-dist of Fun Nuf is 0.
+a room has a number called room-dist. room-dist of a room is usually -1. room-dist of Fun Nuf is 0. [room-dist = # of rooms you are away from Fun 'Nuf]
 
 a direction has a number called locdelt. locdelt of a direction is usually -1. locdelt of west is -1. locdelt of east is 1. locdelt of north is -10. locdelt of south is 10.
 
-when play begins:
-	say "b4 assign.";
-	assign-room-dist-and-loc Fun Nuf;
-	say "af assign.";
+when play begins (this is the procedural room number assignments rule): assign-room-dist-and-loc Fun Nuf;
 
 to assign-room-dist-and-loc (j - a room):
 	let k be room-dist of j + 1;
@@ -410,6 +407,7 @@ chapter mostly scoring
 to score-inc:
 	if debug-state is true, say "DEBUG standard score-inc.";
 	reg-inc mrlp;
+	consider the shuttuhs-after-scoring rule;
 
 check requesting the score:
 	say "Your overall score so far is [score] of [maximum score] in [turn count] turn[unless turn count is 1]s[end if][if score < 4]. But don't worry, points pile up pretty quickly once you get going[end if]. [to-get-max].";
@@ -1125,6 +1123,10 @@ wr-short-note is a truth state that varies.
 
 chapter shuttuhsing
 
+after taking:
+	consider the shuttuhs-after-scoring rule;
+	continue the action;
+
 shuttuhs is a truth state that varies.
 
 shuttuhsing is an action out of world.
@@ -1151,22 +1153,30 @@ this is the shuttuhs-after-scoring rule:
 
 section shuttuhs check
 
+after going when shuttuhs is true:
+	let d2 be opposite of noun;
+	if d2 is up or d2 is down:
+		repeat with d3 running through maindir:
+			if the room d3 of location of player is the room d2 of location of player:
+				now d2 is d3;
+				break;
+	if the room d2 of location of player is shutted, say "You hear the shuttuhs/shutters click down behind you. You must be done to the [d2], now.";
+	continue the action;
+
 check going when shuttuhs is true:
 	let Q be the room noun of location of player;
-	if Q is shutted, say "Invisible shuttuhs, err, shutters block you that way. You must be done there. If you want to revisit, toggle them with [b]SHUTTUHS[r]." instead;
+	if Q is shutted, say "Invisible shuttuhs, err, shutters block you that way. You must be done in [Q]. You can still revisit [Q] if you toggle the shuttuhs with [b]SHUTTUHS[r]." instead;
 
 section checking what's shuttuhs-ed
 
-definition: a room (called r) is shutted:
-	consider the done-rule of r;
+definition: a room (called myr) is shutted:
+	consider the done-for-good rule of myr;
 	if the rule failed, no;
 	repeat with q running through maindir:
-		let qr be the room q of r;
+		let qr be the room q of myr;
 		if qr is nowhere, next;
-		if room-dist of qr < room-dist of r, next;
-		consider the done-for-good rule of qr;
-		if debug-state is true, say "Looking at [qr].";
-		if the rule failed, no;
+		if room-dist of qr < room-dist of myr, next;
+		if qr is not shutted, no;
 	yes;
 
 chapter lovoling
@@ -2286,13 +2296,9 @@ this is the sod-to-cup rule:
 	the rule succeeds;
 
 this is the sword-rows-reveal rule:
-	say "1.";
 	move sword rows to Red Roses Order;
-	say "2.";
 	moot madam;
-	say "3.";
 	move E Divide to Red Roses Order;
-	say "4.";
 	the rule succeeds;
 
 this is the tag-later-wipe rule:
@@ -4121,7 +4127,12 @@ to decide which book is rand-book:
 
 understand "book/books" as a book. [?? doesn't work long term]
 
+does the player mean givesubbing to a person: it is very likely.
 does the player mean doing something with a carried book: it is very likely.
+
+rule for supplying a missing second noun when giving:
+	if number of npcish people in location of player > 0:
+		now noun is a random npcish person in location of player.
 
 after examining a book:
 	if noun is not DWELT LEWD, say "The author is [auth-name of noun].";
@@ -4176,14 +4187,14 @@ carry out reading:
 
 section to workaround
 
-givesubbing is an action applying to two things.
+givesubbing it to is an action applying to two things.
 
-Understand "give [thing] [something preferably held]" as givesubbing (with nouns reversed)
+Understand "give [thing] [something preferably held]" as givesubbing it to (with nouns reversed)
 
 instead of givesubbing:
 	if player has ti:
 		if noun is ti and second noun is ti:
-			if number of npcish people in location of player > 1:
+			if number of npcish people in location of player > 0:
 				let rnpc be random npcish person in location of player;
 				try giving ti to rnpc instead;
 	try giving second noun to noun instead;
@@ -5395,6 +5406,7 @@ a room has a rule called avail-rule. avail-rule of a room is usually the trivial
 
 avail-rule of DevReserved is the trivially false rule.
 avail-rule of TempMet is the trivially false rule.
+avail-rule of DropOrd is the trivially false rule.
 
 avail-rule of Fun Nuf is trivially true rule. [described elsewhere]
 
@@ -6036,13 +6048,16 @@ done-rule of Yack Cay is yack-cay rule.
 done-rule of Yawn Way is yawn-way rule.
 done-rule of Yell Alley is yell-alley rule.
 
-section done-for-good rule definitions
-
-[these need to be undefined from the trivially true rule]
+section done-rule-check - not for release
 
 when play begins:
 	repeat with Q running through rooms:
+		if map region of Q is Odd Do, next;
 		if done-for-good rule of Q is trivially true rule, say "done-for-good rule of [q] is [q]-complete rule.";
+
+section done-for-good rule definitions
+
+[these need to be undefined from the trivially true rule]
 
 done-for-good rule of Apse Spa is apse-spa-complete rule.
 done-for-good rule of Art Xtra is art-xtra-complete rule.
@@ -6114,6 +6129,7 @@ this is the art-xtra rule:
 
 this is the art-xtra-complete rule:
 	if soot tattoos are moot, the rule succeeds;
+	the rule fails;
 
 section Lac Oft Focal rule
 
@@ -6173,6 +6189,7 @@ this is the uneven-u rule:
 
 this is the uneven-u-complete rule:
 	if wash saw is moot, the rule succeeds;
+	the rule fails;
 
 section Dirge Grid rule
 
@@ -6185,6 +6202,7 @@ this is the dirge-grid rule:
 
 this is the dirge-grid-complete rule:
 	if player has X-ITE TIX, continue the action;
+	the rule fails;
 
 section Dopy Pod rule
 
@@ -6489,6 +6507,7 @@ this is the yack-cay rule:
 
 this is the yack-cay-complete rule:
 	if moor broom is moot, the rule succeeds;
+	the rule fails;
 
 section Swept Pews rule
 
@@ -6581,6 +6600,7 @@ this is the find-machine rule:
 
 this is the worn-row-complete rule:
 	if test set is moot, the rule succeeds;
+	the rule fails;
 
 section Yawn Way rule
 
@@ -6598,12 +6618,13 @@ this is the yawn-way-complete rule:
 section Yell Alley rule
 
 this is the yell-alley rule:
-	if pity tip is moot and psi wisp is not moot, continue the action;
+	if pity tip is moot and psi wisp is not moot, continue the action; [?? this is not complete! Mr Arm needs to be clued]
 	if search-hint-room is true, the rule succeeds;
 	if pity tip is not moot, say "USE PITY TIP ON EYE (or NAVY VAN)." instead;
 
 this is the yell-alley-complete rule:
 	if player has TNT or TNT is moot, the rule succeeds;
+	the rule fails;
 
 chapter balmlabing
 
