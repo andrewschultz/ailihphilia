@@ -6001,10 +6001,8 @@ section bulk done-rule definitions
 
 done-rule of Apse Spa is apse-spa rule.
 done-rule of Art Xtra is art-xtra rule.
-done-rule of Lac Oft Focal is lac-oft-focal rule.
 done-rule of Cold Loc is cold-loc rule.
 done-rule of Deft Fed is deft-fed rule.
-done-rule of Uneven U is uneven-u rule.
 done-rule of Dirge Grid is dirge-grid rule.
 done-rule of Dopy Pod is dopy-pod rule.
 done-rule of Drawl Ward is drawl-ward rule.
@@ -6015,9 +6013,9 @@ done-rule of Flu Gulf is flu-gulf rule.
 done-rule of Frush Surf is frush-surf rule.
 done-rule of Fun Nuf is fun-nuf rule.
 done-rule of Gross Org is gross-org rule.
+done-rule of Lac Oft Focal is lac-oft-focal rule.
 done-rule of Lair Trial is lair-trial rule.
 done-rule of Le Babel is le-babel rule.
-done-rule of Swamp Maws is swamp-maws rule.
 done-rule of Mont Nom is mont-nom rule.
 done-rule of Moo Room is moo-room rule.
 done-rule of Motto Bottom is motto-bottom rule.
@@ -6028,11 +6026,13 @@ done-rule of Red Roses Order is red-roses-order rule.
 done-rule of Scrap Arcs is scrap-arcs rule.
 done-rule of Seer Trees is seer-trees rule.
 done-rule of Sneer Greens is sneer-greens rule.
-done-rule of Yack Cay is yack-cay rule.
+done-rule of Swamp Maws is swamp-maws rule.
 done-rule of Swept Pews is swept-pews rule.
 done-rule of Toll Lot is toll-lot rule.
 done-rule of Trapeze Part is trapeze-part rule.
+done-rule of Uneven U is uneven-u rule.
 done-rule of Worn Row is worn-row rule.
+done-rule of Yack Cay is yack-cay rule.
 done-rule of Yawn Way is yawn-way rule.
 done-rule of Yell Alley is yell-alley rule.
 
@@ -6042,38 +6042,43 @@ section done-for-good rule definitions
 
 when play begins:
 	repeat with Q running through rooms:
-		if done-for-good rule of Q is trivially true rule, say "Adjust done-for-good rule of [q].";
+		if done-for-good rule of Q is trivially true rule, say "done-for-good rule of [q] is [q]-complete rule.";
 
 done-for-good rule of Apse Spa is apse-spa-complete rule.
-
 done-for-good rule of Art Xtra is art-xtra-complete rule.
-
 done-for-good rule of Cold Loc is cold-loc-complete rule.
-
 done-for-good rule of Deft Fed is deft-fed-complete rule.
-
 done-for-good rule of Dirge Grid is deft-fed-complete rule.
-
+done-for-good rule of Dopy Pod is dopy-pod-complete rule.
 done-for-good rule of Drawl Ward is drawl-ward-complete rule.
-
 done-for-good rule of Dumb Mud is dumb-mud-complete rule.
-
+done-for-good rule of Emo Dome is emo-dome-complete rule.
+done-for-good rule of Evaded Ave is evaded-ave-complete rule.
+done-for-good rule of Flu Gulf is flu-gulf-complete rule.
+done-for-good rule of Frush Surf is frush-surf-complete rule.
 done-for-good rule of Fun Nuf is trivially false rule.
-
+done-for-good rule of Gross Org is gross-org-complete rule.
 done-for-good rule of Lac Oft Focal is lac-oft-focal-complete rule.
-
+done-for-good rule of Lair Trial is lair-trial-complete rule.
+done-for-good rule of Le Babel is le-babel-complete rule.
+done-for-good rule of Mont Nom is mont-nom-complete rule.
+done-for-good rule of Moo Room is moo-room-complete rule.
+done-for-good rule of Motto Bottom is motto-bottom-complete rule.
+done-for-good rule of My Gym is my-gym-complete rule.
+done-for-good rule of Ooze Zoo is ooze-zoo-complete rule.
+done-for-good rule of Pro Corp is pro-corp-complete rule.
+done-for-good rule of Red Roses Order is red-roses-order-complete rule.
+done-for-good rule of Scrap Arcs is scrap-arcs-complete rule.
+done-for-good rule of Seer Trees is seer-trees-complete rule.
+done-for-good rule of Sneer Greens is sneer-greens-complete rule.
+done-for-good rule of Swamp Maws is swamp-maws-complete rule.
+done-for-good rule of Swept Pews is swept-pews-complete rule.
 done-for-good rule of Toll Lot is toll-lot-complete rule.
-
 done-for-good rule of Trapeze Part is trapeze-part-complete rule.
-
 done-for-good rule of Uneven U is uneven-u-complete rule.
-
-done-for-good rule of Yack Cay is yack-cay-complete rule.
-
 done-for-good rule of Worn Row is worn-row-complete rule.
-
+done-for-good rule of Yack Cay is yack-cay-complete rule.
 done-for-good rule of Yawn Way is yawn-way-complete rule.
-
 done-for-good rule of Yell Alley is yell-alley-complete rule.
 
 section Apse Spa rule
@@ -6300,6 +6305,10 @@ this is the gross-org rule:
 	if stinky knits are in Gross Org, say "You need to take the stinky knits." instead;
 	say "[one of]You need to get rid of Ned.[or]Ned wants a fight, which you want to decline.[or]A better way to say it is, DENY NED.[stopping]" instead;
 
+this is the gross-org-complete rule:
+	if stinky knits are not in Gross Org and etage gate is not moot, the rule succeeds;
+	the rule fails;
+
 section Lair Trial rule
 
 this is the lair-trial rule:
@@ -6320,6 +6329,10 @@ this is the le-babel rule:
 	if player does not have stir writs, say "You need something to help you take the Bro Orb. It's in [if Motto Bottom is visited]a place you haven't visited yet[else]Motto Bottom[end if]." instead;
 	say "All you really have to do here is take the Bro Orb." instead;
 
+this is the le-babel-complete rule:
+	if Bro Orb is not in Le Babel, the rule succeeds;
+	the rule fails;
+
 section Swamp Maws rule
 
 this is the swamp-maws rule:
@@ -6327,6 +6340,10 @@ this is the swamp-maws rule:
 	if search-hint-room is true, the rule succeeds;
 	if player does not have radar, say "There's something important behind the made dam, but you don't have the tool to detect it, yet." instead;
 	say "[one of]There's something behind the made dam. How can you detect it?[or]You have one detection instrument.[or]The radar.[or]USE RADAR ON MADE DAM.[stopping]" instead;
+
+this is the swamp-maws-complete rule:
+	if eroded ore is not off-stage, the rule succeeds;
+	the rule fails;
 
 section Mont Nom rule
 
@@ -6336,6 +6353,10 @@ this is the mont-nom rule:
 	if Ian is in Mont Nom, say "NAIL IAN." instead;
 	if number of solid ingredients carried by player > 0 and number of liquid ingredients carried by player > 0, say "[one of]You can make some food here.[or]USE [printed name of random solid ingredient carried by player in upper case] ON [printed name of random liquid ingredient carried by player in upper case].[stopping]" instead;
 	say "You need to find some more food before using it here." instead;
+
+this is the mont-nom-complete rule:
+	if martini tram is not off-stage, the rule succeeds;
+	the rule fails;
 
 section Moo Room rule
 
@@ -6372,11 +6393,19 @@ this is the my-gym rule:
 	if wash saw is in My Gym and Dave is not in My Gym, say "Take the wash saw." instead;
 	say "[one of]Dave is in the way, but he doesn't quite fit in Yelpley.[or]How could you expose him, appropriate to the whole game?[or]You need to sneak by.[or]EVADE DAVE.[stopping]" instead;
 
+this is the my-gym-complete rule:
+	if wash saw is not in My Gym, the rule succeeds;
+	the rule fails;
+
 section Ooze Zoo rule
 
 this is the ooze-zoo rule:
 	if sleep eels are moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
+
+this is the ooze-zoo-complete rule:
+	if sleep eels are moot, the rule succeeds;
+	the rule fails.
 
 section Pro Corp rule
 
@@ -6401,6 +6430,10 @@ this is the red-roses-order rule:
 	if player does not have balsa slab, say "You need to get the balsa slab from south of Swamp Maws." instead;
 	say "USE BALSA SLAB ON SWORD ROWS." instead;
 
+this is the red-roses-order-complete rule:
+	if taboo bat is not off-stage, the rule succeeds;
+	the rule fails;
+
 section Scrap Arcs rule
 
 this is the scrap-arcs rule:
@@ -6411,6 +6444,10 @@ this is the scrap-arcs rule:
 
 to say trees-zoo:
 	say "[if Ooze Zoo is visited]Ooze Zoo[else]Seer Trees[end if]"
+
+this is the scrap-arcs-complete rule:
+	if Ye Key is not off-stage, the rule succeeds;
+	the rule fails;
 
 section Seer Trees rule
 
@@ -6423,6 +6460,10 @@ this is the seer-trees rule:
 	if Worn Row is visited, say "Worn Row is more than it seems[if ever-wordrow is true]. Yes, even more than Word Row[end if]." instead;
 	say "There's a room you haven't been to, [if My Gym is visited]past My Gym[else if Yawn Way is unvisited]east in Yelpley[else]south of Yawn Way[end if]. Have a look there." instead;
 
+this is the seer-trees-complete rule:
+	if stark rats are moot, the rule succeeds;
+	the rule fails;
+
 section Sneer Greens rule
 
 this is the sneer-greens rule:
@@ -6431,6 +6472,10 @@ this is the sneer-greens rule:
 	if player has rep popper, say "USE REP POPPER ON YUGE GUY." instead;
 	if dork rod is moot, say "You can take the item you need to defeat the Yuge Guy." instead;
 	if Yuge Guy is in Sneer Greens, say "[one of]You need something from elsewhere to defeat the Yuge Guy. AID again to see where[or]What you need to defeat the Yuge Guy is in Yell Alley[stopping]."
+
+this is the sneer-greens-complete rule:
+	if Yuge Guy is moot, the rule succeeds;
+	the rule fails;
 
 section Yack Cay rule
 
@@ -6454,6 +6499,10 @@ this is the swept-pews rule:
 	if player does not have puce cup, say "You need the puce cup to pour something in the liar grail." instead;
 	if puce cup is not sappy, say "[one of]You need to pour something [if puce cup is not empty]else [end if]in the puce cup.[or][if Cold Loc is unvisited]You haven't looked north of Seer Trees[else]Cold Loc has something. The past sap.[end if][stopping]" instead;
 	if liar grail is not moot, say "Get the puce cup and use it on the liar grail." instead;
+
+this is the swept-pews-complete rule:
+	if liar grail is moot and troll ort is not in Swept Pews, the rule succeeds;
+	the rule fails;
 
 section Toll Lot rule
 
