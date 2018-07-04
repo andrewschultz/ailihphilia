@@ -1140,50 +1140,34 @@ this is the cant-shuttuhs rule:
 
 carry out shuttuhsing:
 	if shuttuhs is false:
-		consider the done-and-branches-rule of location of player;
-		if the rule succeeded, say "You're in an area you've completed. You'll need to go somewhere else to activate this.";
+		if location of player is shutted, say "You're in an area you've completed. You'll need to go somewhere else to activate this." instead;
 	abide by the cant-shuttuhs rule;
 	now shuttuhs is whether or not shuttuhs is false;
 	say "The invisible shutters/shuttuhs blocking completed areas are now [on-off of shuttuhs].";
 	the rule succeeds;
 
 this is the shuttuhs-after-scoring rule:
-	consider the done-and-branches-rule of location of player;
-	if the rule succeeded, say "You hear the click of invisible shuttuhs/shutters. You imagine you can escape before they drop."
+	if shuttuhs is true and location of player is shutted, say "You hear the click of invisible shuttuhs/shutters. You imagine you can escape before they drop."
 
 section shuttuhs check
 
 check going when shuttuhs is true:
 	let Q be the room noun of location of player;
-	consider the done-and-branches-rule of Q;
-	if the rule succeeded, say "Invisible shuttuhs, err, shutters block you that way. You must be done there. If you want to revisit, toggle them with [b]SHUTTUHS[r]." instead;
-
-a room has a rule called the done-and-branches-rule. The done-and-branches-rule of a room is usually the trivially false rule.
+	if Q is shutted, say "Invisible shuttuhs, err, shutters block you that way. You must be done there. If you want to revisit, toggle them with [b]SHUTTUHS[r]." instead;
 
 section checking what's shuttuhs-ed
 
-[?? need to do more here]
-[note that dead ends can use the already present "complete" rule but non dead ends must use the "branch" rule.]
-the done-and-branches-rule of Frush Surf is the frush-surf-branch rule.
-the done-and-branches-rule of Lair Trial is the lair-trial-branch rule.
-the done-and-branches-rule of Motto Bottom is the motto-bottom-complete rule.
-the done-and-branches-rule of Moo Room is the moo-room-complete rule. [this is a dead end, so there is no branch]
-the done-and-branches-rule of Pro Corp is the pro-corp-complete rule.
-the done-and-branches-rule of Trapeze Part is the trapeze-part-complete rule.
-
-this is the frush-surf-branch rule:
-	consider the frush-surf-complete rule;
-	if the rule failed, the rule fails;
-	consider the moo-room-complete rule;
-	if the rule failed, the rule fails;
-	the rule succeeds;
-
-this is the lair-trial-branch rule:
-	consider the lair-trial-complete rule;
-	if the rule failed, the rule fails;
-	consider the motto-bottom-complete rule;
-	if the rule failed, the rule fails;
-	the rule succeeds;
+definition: a room (called r) is shutted:
+	consider the done-rule of r;
+	if the rule failed, no;
+	repeat with q running through maindir:
+		let qr be the room q of r;
+		if qr is nowhere, next;
+		if room-dist of qr < room-dist of r, next;
+		consider the done-for-good rule of qr;
+		if debug-state is true, say "Looking at [qr].";
+		if the rule failed, no;
+	yes;
 
 chapter lovoling
 
@@ -6054,19 +6038,35 @@ done-rule of Yell Alley is yell-alley rule.
 
 section done-for-good rule definitions
 
-[most of these will be the trivially right rule]
+[these need to be undefined from the trivially true rule]
+
+when play begins:
+	repeat with Q running through rooms:
+		if done-for-good rule of Q is trivially true rule, say "Adjust done-for-good rule of [q].";
 
 done-for-good rule of Apse Spa is apse-spa-complete rule.
 
 done-for-good rule of Art Xtra is art-xtra-complete rule.
 
-done-for-good rule of Lac Oft Focal is lac-oft-focal-complete rule.
-
 done-for-good rule of Cold Loc is cold-loc-complete rule.
 
-done-for-good rule of Uneven U is uneven-u-complete rule.
+done-for-good rule of Deft Fed is deft-fed-complete rule.
+
+done-for-good rule of Dirge Grid is deft-fed-complete rule.
+
+done-for-good rule of Drawl Ward is drawl-ward-complete rule.
+
+done-for-good rule of Dumb Mud is dumb-mud-complete rule.
 
 done-for-good rule of Fun Nuf is trivially false rule.
+
+done-for-good rule of Lac Oft Focal is lac-oft-focal-complete rule.
+
+done-for-good rule of Toll Lot is toll-lot-complete rule.
+
+done-for-good rule of Trapeze Part is trapeze-part-complete rule.
+
+done-for-good rule of Uneven U is uneven-u-complete rule.
 
 done-for-good rule of Yack Cay is yack-cay-complete rule.
 
@@ -6203,6 +6203,10 @@ to say psu:
 	let X be the printed name of Bond Nob;
 	say "[X in upper case]";
 
+this is the drawl-ward-complete rule:
+	if Bond Nob is moot, the rule succeeds;
+	the rule fails;
+
 section Dumb Mud rule
 
 this is the dumb-mud rule:
@@ -6213,6 +6217,10 @@ this is the dumb-mud rule:
 	if turf rut is in Dumb Mud, say "[one of]You need a way to fill up the turf rut.[or]You'd love to get rid of the poo coop.[or]USE POO COOP ON TURF RUT.[stopping]" instead;
 	say "[one of]You need something to cut the lie veil[or][if player has exam axe]USE EXAM AXE ON LIE VEIL[else]You will need an item you don't have yet for the Lie Veil[end if][stopping]." instead;
 
+this is the dumb-mud-complete rule:
+	if lie veil is moot and turf rut is moot, the rule succeeds;
+	the rule fails;
+
 section Emo Dome rule
 
 this is the emo-dome rule:
@@ -6220,6 +6228,10 @@ this is the emo-dome rule:
 	if search-hint-room is true, the rule succeeds;
 	if pulled-up is false, say "PULL UP." instead;
 	say "Take the puce cup." instead;
+
+this is the emo-dome-complete rule:
+	if puce cup is not in Emo Dome and pulled-up is true, the rule succeeds;
+	the rule fails;
 
 section Evaded Ave rule
 
@@ -6234,6 +6246,10 @@ this is the evaded-ave rule:
 		if player has TI, say "You have TI. Give it to the Door Frood." instead;
 		say "[one of]Word Row has some interesting books. Maybe one would please the Door Frood.[or]You need something daring and obnoxious.[or]Get TI from Word Row.[stopping]" instead;
 	say "You just need to take the bunk nub here." instead;
+
+this is the evaded-ave-complete rule:
+	if Door Frood is moot and bunk nub is not in Evaded Ave, the rule succeeds;
+	the rule fails;
 
 section Flu Gulf rule
 
@@ -6446,6 +6462,10 @@ this is the toll-lot rule:
 	if search-hint-room is true, the rule succeeds;
 	if cash sac is off-stage, say "[one of]You need to bribe the cross orc with something in Grebeberg.[or]If you help someone in Grebeberg, you will get paid, and you can give that to the cross orc.[or][if Flu Gulf is visited]The cash sac from the Gulf Lug in Flu Gulf works[else]Check north of Cold Loc for someone to help.[end if][stopping]" instead;
 	if cross orc is in Toll Lot, say "USE CASH SAC ON CROSS ORC." instead;
+
+this is the toll-lot-complete rule:
+	if cross orc is moot and UFO tofu is not off-stage, the rule succeeds;
+	the rule fails;
 
 section Trapeze Part rule
 
