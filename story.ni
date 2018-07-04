@@ -1170,7 +1170,7 @@ check going when shuttuhs is true:
 section checking what's shuttuhs-ed
 
 definition: a room (called myr) is shutted:
-	consider the done-for-good rule of myr;
+	consider the finished-rule of myr;
 	if the rule failed, no;
 	repeat with q running through maindir:
 		let qr be the room q of myr;
@@ -5922,15 +5922,15 @@ carry out aiding:
 			say "[one of]The kayo yak will keep chasing you. Maybe you can find someone else for it to knock over.[or]Someone guarding something?[or]The ergot ogre.[or]You'll need to do one more thing once you get to the Trial Lair.[stopping]" instead;
 		if player is in Worn Row, say "[one of]You have the Psi Wisp in the right place, but you can't do anything here in [Worn Row], yet.[or]You have to change it.[or]WORN ROW. The redness ender will take care of the psi wisp.[stopping]" instead;
 		say "[one of]The psi wisp is certainly red. Maybe there's something that could neutralize it.[or]Do you remember a room at the start?[or]It sort of isn't there any more.[or]Go to Word/Work row, first.[stopping]" instead;
-	abide by the done-rule of location of player;
-	consider the done-for-good rule of location of player;
+	abide by the hint-rule of location of player;
+	consider the finished-rule of location of player;
 	let all-done-here be whether or not the rule succeeded;
 	say "You're done here, for [if all-done-here is true]good[else]now[end if]. Would you like to be pointed to somewhere else relevant?"; [?? test case: remove Yuge Guy check in Sneer Greens but have him around. I should see an error]
 	unless the player yes-consents, say "Okay." instead;
 	now search-hint-room is true;
 	repeat with Q running through L:
 		if debug-verbose is true, say "Checking [Q] in order.[run paragraph on][line break]";
-		consider the done-rule of Q;
+		consider the hint-rule of Q;
 		if the rule succeeded:
 			if Q is location of player:
 				if debug-state is true, say "OOPS! This is a bug in the hints. The game thinks you're done here but the rule to tell you what to do missed a case.";
@@ -5942,7 +5942,7 @@ carry out aiding:
 			now search-hint-room is false;
 			if aid-detail is true:
 				say "DEBUG: Here's what the hint would be: ";
-				consider the done-rule of Q;
+				consider the hint-rule of Q;
 			break;
 	if search-hint-room is true:
 		now search-hint-room is false;
@@ -5969,9 +5969,9 @@ this is the trivially false rule: the rule fails;
 
 this is the trivially true rule: the rule succeeds;
 
-a room has a rule called done-rule. done-rule of a room is usually dunno-hint rule.
+a room has a rule called hint-rule. hint-rule of a room is usually dunno-hint rule.
 
-a room has a rule called done-for-good rule. done-for-good rule of a room is usually the trivially true rule.
+a room has a rule called finished-rule. finished-rule of a room is usually the trivially true rule.
 
 this is the dunno-hint rule: [I should never have to use this in the final release.]
 	say "I haven't determined hints for [location of player], yet.";
@@ -6007,96 +6007,97 @@ to shuffle-before (ra - a room) and (rb - a room):
 			continue the action;
 	if debug-verbose is true, say "WARNING [rb] was already before [ra]. No shifting.";
 
-section bulk done-rule definitions
+section bulk hint-rule definitions
 
-done-rule of Apse Spa is apse-spa rule.
-done-rule of Art Xtra is art-xtra rule.
-done-rule of Cold Loc is cold-loc rule.
-done-rule of Deft Fed is deft-fed rule.
-done-rule of Dirge Grid is dirge-grid rule.
-done-rule of Dopy Pod is dopy-pod rule.
-done-rule of Drawl Ward is drawl-ward rule.
-done-rule of Dumb Mud is dumb-mud rule.
-done-rule of Emo Dome is emo-dome rule.
-done-rule of Evaded Ave is evaded-ave rule.
-done-rule of Flu Gulf is flu-gulf rule.
-done-rule of Frush Surf is frush-surf rule.
-done-rule of Fun Nuf is fun-nuf rule.
-done-rule of Gross Org is gross-org rule.
-done-rule of Lac Oft Focal is lac-oft-focal rule.
-done-rule of Lair Trial is lair-trial rule.
-done-rule of Le Babel is le-babel rule.
-done-rule of Mont Nom is mont-nom rule.
-done-rule of Moo Room is moo-room rule.
-done-rule of Motto Bottom is motto-bottom rule.
-done-rule of My Gym is my-gym rule.
-done-rule of Ooze Zoo is ooze-zoo rule.
-done-rule of Pro Corp is pro-corp rule.
-done-rule of Red Roses Order is red-roses-order rule.
-done-rule of Scrap Arcs is scrap-arcs rule.
-done-rule of Seer Trees is seer-trees rule.
-done-rule of Sneer Greens is sneer-greens rule.
-done-rule of Swamp Maws is swamp-maws rule.
-done-rule of Swept Pews is swept-pews rule.
-done-rule of Toll Lot is toll-lot rule.
-done-rule of Trapeze Part is trapeze-part rule.
-done-rule of Uneven U is uneven-u rule.
-done-rule of Worn Row is worn-row rule.
-done-rule of Yack Cay is yack-cay rule.
-done-rule of Yawn Way is yawn-way rule.
-done-rule of Yell Alley is yell-alley rule.
+hint-rule of Apse Spa is apse-spa-hint rule.
+hint-rule of Art Xtra is art-xtra-hint rule.
+hint-rule of Cold Loc is cold-loc-hint rule.
+hint-rule of Deft Fed is deft-fed-hint rule.
+hint-rule of Dirge Grid is dirge-grid-hint rule.
+hint-rule of Dopy Pod is dopy-pod-hint rule.
+hint-rule of Drawl Ward is drawl-ward-hint rule.
+hint-rule of Dumb Mud is dumb-mud-hint rule.
+hint-rule of Emo Dome is emo-dome-hint rule.
+hint-rule of Evaded Ave is evaded-ave-hint rule.
+hint-rule of Flu Gulf is flu-gulf-hint rule.
+hint-rule of Frush Surf is frush-surf-hint rule.
+hint-rule of Fun Nuf is fun-nuf-hint rule.
+hint-rule of Gross Org is gross-org-hint rule.
+hint-rule of Lac Oft Focal is lac-oft-focal-hint rule.
+hint-rule of Lair Trial is lair-trial-hint rule.
+hint-rule of Le Babel is le-babel-hint rule.
+hint-rule of Mont Nom is mont-nom-hint rule.
+hint-rule of Moo Room is moo-room-hint rule.
+hint-rule of Motto Bottom is motto-bottom-hint rule.
+hint-rule of My Gym is my-gym-hint rule.
+hint-rule of Ooze Zoo is ooze-zoo-hint rule.
+hint-rule of Pro Corp is pro-corp-hint rule.
+hint-rule of Red Roses Order is red-roses-order-hint rule.
+hint-rule of Scrap Arcs is scrap-arcs-hint rule.
+hint-rule of Seer Trees is seer-trees-hint rule.
+hint-rule of Sneer Greens is sneer-greens-hint rule.
+hint-rule of Swamp Maws is swamp-maws-hint rule.
+hint-rule of Swept Pews is swept-pews-hint rule.
+hint-rule of Toll Lot is toll-lot-hint rule.
+hint-rule of Trapeze Part is trapeze-part-hint rule.
+hint-rule of Uneven U is uneven-u-hint rule.
+hint-rule of Worn Row is worn-row-hint rule.
+hint-rule of Yack Cay is yack-cay-hint rule.
+hint-rule of Yawn Way is yawn-way-hint rule.
+hint-rule of Yell Alley is yell-alley-hint rule.
 
-section done-rule-check - not for release
+section hint-rule-check - not for release
 
 when play begins:
 	repeat with Q running through rooms:
 		if map region of Q is Odd Do, next;
-		if done-for-good rule of Q is trivially true rule, say "done-for-good rule of [q] is [q]-complete rule.";
+		if finished-rule of Q is trivially true rule, say "finished-rule of [q] needs change from default.";
+		if hint-rule of Q is dunno-hint rule, say "hint-rule of [q] needs change from default.";
 
-section done-for-good rule definitions
+section finished-rule definitions
 
 [these need to be undefined from the trivially true rule]
 
-done-for-good rule of Apse Spa is apse-spa-complete rule.
-done-for-good rule of Art Xtra is art-xtra-complete rule.
-done-for-good rule of Cold Loc is cold-loc-complete rule.
-done-for-good rule of Deft Fed is deft-fed-complete rule.
-done-for-good rule of Dirge Grid is deft-fed-complete rule.
-done-for-good rule of Dopy Pod is dopy-pod-complete rule.
-done-for-good rule of Drawl Ward is drawl-ward-complete rule.
-done-for-good rule of Dumb Mud is dumb-mud-complete rule.
-done-for-good rule of Emo Dome is emo-dome-complete rule.
-done-for-good rule of Evaded Ave is evaded-ave-complete rule.
-done-for-good rule of Flu Gulf is flu-gulf-complete rule.
-done-for-good rule of Frush Surf is frush-surf-complete rule.
-done-for-good rule of Fun Nuf is trivially false rule.
-done-for-good rule of Gross Org is gross-org-complete rule.
-done-for-good rule of Lac Oft Focal is lac-oft-focal-complete rule.
-done-for-good rule of Lair Trial is lair-trial-complete rule.
-done-for-good rule of Le Babel is le-babel-complete rule.
-done-for-good rule of Mont Nom is mont-nom-complete rule.
-done-for-good rule of Moo Room is moo-room-complete rule.
-done-for-good rule of Motto Bottom is motto-bottom-complete rule.
-done-for-good rule of My Gym is my-gym-complete rule.
-done-for-good rule of Ooze Zoo is ooze-zoo-complete rule.
-done-for-good rule of Pro Corp is pro-corp-complete rule.
-done-for-good rule of Red Roses Order is red-roses-order-complete rule.
-done-for-good rule of Scrap Arcs is scrap-arcs-complete rule.
-done-for-good rule of Seer Trees is seer-trees-complete rule.
-done-for-good rule of Sneer Greens is sneer-greens-complete rule.
-done-for-good rule of Swamp Maws is swamp-maws-complete rule.
-done-for-good rule of Swept Pews is swept-pews-complete rule.
-done-for-good rule of Toll Lot is toll-lot-complete rule.
-done-for-good rule of Trapeze Part is trapeze-part-complete rule.
-done-for-good rule of Uneven U is uneven-u-complete rule.
-done-for-good rule of Worn Row is worn-row-complete rule.
-done-for-good rule of Yack Cay is yack-cay-complete rule.
-done-for-good rule of Yawn Way is yawn-way-complete rule.
-done-for-good rule of Yell Alley is yell-alley-complete rule.
+finished-rule of Apse Spa is apse-spa-complete rule.
+finished-rule of Art Xtra is art-xtra-complete rule.
+finished-rule of Cold Loc is cold-loc-complete rule.
+finished-rule of Deft Fed is deft-fed-complete rule.
+finished-rule of Dirge Grid is deft-fed-complete rule.
+finished-rule of Dopy Pod is dopy-pod-complete rule.
+finished-rule of Drawl Ward is drawl-ward-complete rule.
+finished-rule of Dumb Mud is dumb-mud-complete rule.
+finished-rule of Emo Dome is emo-dome-complete rule.
+finished-rule of Evaded Ave is evaded-ave-complete rule.
+finished-rule of Flu Gulf is flu-gulf-complete rule.
+finished-rule of Frush Surf is frush-surf-complete rule.
+finished-rule of Fun Nuf is trivially false rule.
+finished-rule of Gross Org is gross-org-complete rule.
+finished-rule of Lac Oft Focal is lac-oft-focal-complete rule.
+finished-rule of Lair Trial is lair-trial-complete rule.
+finished-rule of Le Babel is le-babel-complete rule.
+finished-rule of Mont Nom is mont-nom-complete rule.
+finished-rule of Moo Room is moo-room-complete rule.
+finished-rule of Motto Bottom is motto-bottom-complete rule.
+finished-rule of My Gym is my-gym-complete rule.
+finished-rule of Ooze Zoo is ooze-zoo-complete rule.
+finished-rule of Pro Corp is pro-corp-complete rule.
+finished-rule of Red Roses Order is red-roses-order-complete rule.
+finished-rule of Scrap Arcs is scrap-arcs-complete rule.
+finished-rule of Seer Trees is seer-trees-complete rule.
+finished-rule of Sneer Greens is sneer-greens-complete rule.
+finished-rule of Swamp Maws is swamp-maws-complete rule.
+finished-rule of Swept Pews is swept-pews-complete rule.
+finished-rule of Toll Lot is toll-lot-complete rule.
+finished-rule of Trapeze Part is trapeze-part-complete rule.
+finished-rule of Uneven U is uneven-u-complete rule.
+finished-rule of Worn Row is worn-row-complete rule.
+finished-rule of Yack Cay is yack-cay-complete rule.
+finished-rule of Yawn Way is yawn-way-complete rule.
+finished-rule of Yell Alley is yell-alley-complete rule.
 
 section Apse Spa rule
 
-this is the apse-spa rule:
+this is the apse-spa-hint rule:
 	if puce cup is soddy and Bond Nob is not moot, continue the action;
 	if sage gas is not off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
@@ -6114,7 +6115,7 @@ this is the apse-spa-complete rule:
 
 section Art Xtra rule
 
-this is the art-xtra rule:
+this is the art-xtra-hint rule:
 	if trap art is not in Art Xtra and stark rats are not moot, continue the action;
 	if state tats are not off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
@@ -6131,7 +6132,7 @@ this is the art-xtra-complete rule:
 
 section Lac Oft Focal rule
 
-this is the lac-oft-focal rule:
+this is the lac-oft-focal-hint rule:
 	if dork rod is moot and elope pole is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if player has dork rod, say "USE DORK ROD ON TAO BOAT." instead;
@@ -6144,7 +6145,7 @@ this is the lac-oft-focal-complete rule:
 
 section Cold Loc rule
 
-this is the cold-loc rule:
+this is the cold-loc-hint rule:
 	if King Nik is moot and puce cup is sappy, continue the action;
 	if pulled-up is false, continue the action;
 	if liar grail is moot, continue the action;
@@ -6161,7 +6162,7 @@ this is the cold-loc-complete rule:
 
 section Deft Fed rule
 
-this is the deft-fed rule:
+this is the deft-fed-hint rule:
 	if Elan Ale is moot, continue the action;
 	if Bond Nob is not moot and yob attaboy is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
@@ -6174,7 +6175,7 @@ this is the deft-fed-complete rule:
 
 section Uneven U rule
 
-this is the uneven-u rule:
+this is the uneven-u-hint rule:
 	if wash saw is moot, continue the action;
 	if maps-explained is true, continue the action;
 	if search-hint-room is true, the rule succeeds;
@@ -6191,7 +6192,7 @@ this is the uneven-u-complete rule:
 
 section Dirge Grid rule
 
-this is the dirge-grid rule:
+this is the dirge-grid-hint rule:
 	if player has the X-ITE TIX, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if Verses Rev is in Dirge Grid, say "Kill the Verses Rev." instead;
@@ -6204,7 +6205,7 @@ this is the dirge-grid-complete rule:
 
 section Dopy Pod rule
 
-this is the dopy-pod rule:
+this is the dopy-pod-hint rule:
 	if cassettes sac is moot and pill lip is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 
@@ -6214,7 +6215,7 @@ this is the dopy-pod-complete rule:
 
 section Drawl Ward rule
 
-this is the drawl-ward rule:
+this is the drawl-ward-hint rule:
 	if Bond Nob is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if puce cup is not soddy, say "[one of]You have the puce cup, but it needs to be filled with something other than the past sap/purist sirup that got you by the Liar Grail.[or]You need something healing.[or]If you navigated the Apse Spa, you'll see what's there.[or]Once you have the  dose sod from the Apse Spa, USE PUCE CUP ON [psu].[stopping]";
@@ -6230,7 +6231,7 @@ this is the drawl-ward-complete rule:
 
 section Dumb Mud rule
 
-this is the dumb-mud rule:
+this is the dumb-mud-hint rule:
 	if lie veil is moot and turf rut is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if Moo Room is unvisited, say "There's a part of southeast Grebeberg you haven't explored yet[if Ooze Zoo is visited and sleep eels are in Ooze Zoo]. You need to get past the sleep eels[end if]." instead;
@@ -6244,7 +6245,7 @@ this is the dumb-mud-complete rule:
 
 section Emo Dome rule
 
-this is the emo-dome rule:
+this is the emo-dome-hint rule:
 	if puce cup is not in Emo Dome and pulled-up is true, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if pulled-up is false, say "PULL UP." instead;
@@ -6256,7 +6257,7 @@ this is the emo-dome-complete rule:
 
 section Evaded Ave rule
 
-this is the evaded-ave rule:
+this is the evaded-ave-hint rule:
 	if Door Frood is moot and bunk nub is not in Evaded Ave, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if Door Frood is in Evaded Ave:
@@ -6274,7 +6275,7 @@ this is the evaded-ave-complete rule:
 
 section Flu Gulf rule
 
-this is the flu-gulf rule:
+this is the flu-gulf-hint rule:
 	if scorn rocs are moot, continue the action;
 	if Bond Nob is in Drawl Ward, continue the action;
 	if search-hint-room is true, the rule succeeds;
@@ -6286,7 +6287,7 @@ this is the flu-gulf-complete rule:
 
 section Frush Surf rule
 
-this is the frush-surf rule:
+this is the frush-surf-hint rule:
 	if kayo yak is moot, continue the action;
 	if player has stamp mats and gnu dung is in Dumb Mud, continue the action;
 	if search-hint-room is true, the rule succeeds;
@@ -6301,7 +6302,7 @@ this is the frush-surf-complete rule:
 
 section Fun Nuf rule
 
-this is the fun-nuf rule:
+this is the fun-nuf-hint rule:
 	now more-later is true; [ we will always have more to do here ]
 	if Dirge Grid is not mapped north of Fun Nuf and Flee Elf is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
@@ -6314,7 +6315,7 @@ this is the fun-nuf rule:
 
 section Gross Org rule
 
-this is the gross-org rule:
+this is the gross-org-hint rule:
 	if stinky knits are not in Gross Org, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if Ned is not moot, say "DENY NED." instead;
@@ -6327,7 +6328,7 @@ this is the gross-org-complete rule:
 
 section Lair Trial rule
 
-this is the lair-trial rule:
+this is the lair-trial-hint rule:
 	if ergot ogre is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if kayo yak is in Lair Trial, say "YAK OKAY." instead;
@@ -6339,7 +6340,7 @@ this is the lair-trial-complete rule:
 
 section Le Babel rule
 
-this is the le-babel rule:
+this is the le-babel-hint rule:
 	if Bro Orb is not in Le Babel, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if player does not have stir writs, say "You need something to help you take the Bro Orb. It's in [if Motto Bottom is visited]a place you haven't visited yet[else]Motto Bottom[end if]." instead;
@@ -6351,7 +6352,7 @@ this is the le-babel-complete rule:
 
 section Swamp Maws rule
 
-this is the swamp-maws rule:
+this is the swamp-maws-hint rule:
 	unless eroded ore is off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if player does not have radar, say "There's something important behind the made dam, but you don't have the tool to detect it, yet." instead;
@@ -6363,7 +6364,7 @@ this is the swamp-maws-complete rule:
 
 section Mont Nom rule
 
-this is the mont-nom rule:
+this is the mont-nom-hint rule:
 	unless martini tram is off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if Ian is in Mont Nom, say "NAIL IAN." instead;
@@ -6376,7 +6377,7 @@ this is the mont-nom-complete rule:
 
 section Moo Room rule
 
-this is the moo-room rule:
+this is the moo-room-hint rule:
 	if yahoo hay is moot, continue the action;
 	if art-free-warn is false:
 		if poo coop is not in Moo Room and straw arts are not off-stage, continue the action;
@@ -6391,7 +6392,7 @@ this is the moo-room-complete rule:
 
 section Motto Bottom rule
 
-this is the motto-bottom rule:
+this is the motto-bottom-hint rule:
 	if stir writs is moot or player has stir writs, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if player does not have sage gas, say "You need to get something from Apse Spa." instead;
@@ -6403,7 +6404,7 @@ this is the motto-bottom-complete rule:
 
 section My Gym rule
 
-this is the my-gym rule:
+this is the my-gym-hint rule:
 	if wash saw is not in My Gym, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if wash saw is in My Gym and Dave is not in My Gym, say "Take the wash saw." instead;
@@ -6415,7 +6416,7 @@ this is the my-gym-complete rule:
 
 section Ooze Zoo rule
 
-this is the ooze-zoo rule:
+this is the ooze-zoo-hint rule:
 	if sleep eels are moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 
@@ -6425,7 +6426,7 @@ this is the ooze-zoo-complete rule:
 
 section Pro Corp rule
 
-this is the pro-corp rule:
+this is the pro-corp-hint rule:
 	if resale laser is not off-stage and DNA band is not in Pro Corp and gold log is not in Pro Corp, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if DNA band is in Pro Corp, say "Take the DNA band." instead;
@@ -6439,7 +6440,7 @@ this is the pro-corp-complete rule:
 
 section Red Roses Order rule
 
-this is the red-roses-order rule:
+this is the red-roses-order-hint rule:
 	if taboo bat is not off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if madam is in Red Roses Order, say "USE BRO ORB ON MADAM." instead;
@@ -6452,7 +6453,7 @@ this is the red-roses-order-complete rule:
 
 section Scrap Arcs rule
 
-this is the scrap-arcs rule:
+this is the scrap-arcs-hint rule:
 	if Ye Key is not off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if player does not have stamp mats, say "[one of]You need something from Grebeberg to cut the slate metals.[or][if Frush Surf is visited]Get the stamp mats from Frush Surf.[else]Look south of [trees-zoo].[end if][stopping]";
@@ -6467,7 +6468,7 @@ this is the scrap-arcs-complete rule:
 
 section Seer Trees rule
 
-this is the seer-trees rule:
+this is the seer-trees-hint rule:
 	if stark rats are moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if player has party trap, say "USE the party trap on the stark rats." instead;
@@ -6482,7 +6483,7 @@ this is the seer-trees-complete rule:
 
 section Sneer Greens rule
 
-this is the sneer-greens rule:
+this is the sneer-greens-hint rule:
 	if Yuge Guy is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if player has rep popper, say "USE REP POPPER ON YUGE GUY." instead;
@@ -6495,7 +6496,7 @@ this is the sneer-greens-complete rule:
 
 section Yack Cay rule
 
-this is the yack-cay rule:
+this is the yack-cay-hint rule:
 	if dork rod is not moot and NULL ILLUN is moot, continue the action;
 	if moor broom is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
@@ -6509,7 +6510,7 @@ this is the yack-cay-complete rule:
 
 section Swept Pews rule
 
-this is the swept-pews rule:
+this is the swept-pews-hint rule:
 	if liar grail is moot and troll ort is not in Swept Pews, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if troll ort is in Swept Pews, say "Take the troll ort." instead;
@@ -6523,7 +6524,7 @@ this is the swept-pews-complete rule:
 
 section Toll Lot rule
 
-this is the toll-lot rule:
+this is the toll-lot-hint rule:
 	if cross orc is moot and UFO tofu is not off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if cash sac is off-stage, say "[one of]You need to bribe the cross orc with something in Grebeberg.[or]If you help someone in Grebeberg, you will get paid, and you can give that to the cross orc.[or][if Flu Gulf is visited]The cash sac from the Gulf Lug in Flu Gulf works[else]Check north of Cold Loc for someone to help.[end if][stopping]" instead;
@@ -6535,7 +6536,7 @@ this is the toll-lot-complete rule:
 
 section Trapeze Part rule
 
-this is the trapeze-part rule:
+this is the trapeze-part-hint rule:
 	unless epicer recipe is off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	say "[one of]The ten level net needs you to do something to it.[or]TEND NET.[stopping]" instead;
@@ -6546,7 +6547,7 @@ this is the trapeze-part-complete rule:
 
 section Worn Row rule
 
-this is the worn-row rule:
+this is the worn-row-hint rule:
 	if row-prog is 2:
 		consider the got-machine-fodder rule;
 		unless the rule succeeded, continue the action;
@@ -6602,7 +6603,7 @@ this is the worn-row-complete rule:
 
 section Yawn Way rule
 
-this is the yawn-way rule:
+this is the yawn-way-hint rule:
 	if stark rats are not moot, continue the action;
 	if puffed-up is true, continue the action; [this is a trivial rule, but in case I decide to add something, it may be a help.]
 	if search-hint-room is true, the rule succeeds;
@@ -6615,7 +6616,7 @@ this is the yawn-way-complete rule:
 
 section Yell Alley rule
 
-this is the yell-alley rule:
+this is the yell-alley-hint rule:
 	if pity tip is moot and psi wisp is not moot, continue the action; [?? this is not complete! Mr Arm needs to be clued]
 	if search-hint-room is true, the rule succeeds;
 	if pity tip is not moot, say "USE PITY TIP ON EYE (or NAVY VAN)." instead;
@@ -7121,9 +7122,9 @@ carry out ahing:
 	repeat with Q running through L:
 		if Q is in Odd Do, next;
 		if Q is unvisited, next;
-		consider the done-rule of Q;
+		consider the hint-rule of Q;
 		if the rule succeeded:
-			consider the done-for-good rule of Q;
+			consider the finished-rule of Q;
 			say "Q is done[unless the rule succeeded], but not[end if] for good.";
 	the rule succeeds;
 
