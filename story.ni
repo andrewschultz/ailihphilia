@@ -1723,6 +1723,8 @@ resale laser	"You can't just go vaporizing stuff willy-nilly. Plus, the laser on
 ark of okra	"While the ark inspires you to want to mix foods, you don't want to mix anything with IT. You don't know how long that okra's been there!"
 wordy drow	"The wordy drow moans 'Er ... eh ... there,' pointing to the Liar Grail."
 level net	"There's got to be a way to untangle the net on your own, so it doesn't get cut or destroyed."
+senile felines	"It might be more productive to use the felines on themselves, in a certain way."
+opossum	"The opossum isn't useful, but perhaps you could be nice and show it a way that it doesn't have to be."
 radar	"The radar detects no dark radon ... and nothing less harmful/more useful. But maybe there's something hidden elsewhere."
 tao boat	"The tao boat remains impassive. But surely something you can show it will prove your worth."
 enact cane	"The enact cane needs to be augmented, but not quite like that."
@@ -2360,8 +2362,6 @@ instead of doing something when second noun is a peripheral thing:
 
 instead of doing something with a peripheral thing:
 	if action is procedural, continue the action;
-	if current action is stacking and noun is senile felines, continue the action; [?? horrid hack for LLP here and below]
-	if current action is mussing and noun is opossum, continue the action;
 	if current action is taking and noun is pyx, continue the action;
 	blanket-reject noun instead;
 
@@ -2371,15 +2371,13 @@ instead of useoning something with a peripheral thing:
 
 instead of doing something when second noun is a semiperipheral thing:
 	if action is pro-and-use, continue the action;
+	if current action is stacking and noun is senile felines, continue the action; [?? horrid hack for LLP here and below]
+	if current action is mussing and noun is opossum, continue the action;
 	blanket-reject second noun instead;
 
 instead of doing something with a semiperipheral thing:
 	if action is pro-and-use, continue the action;
 	blanket-reject noun instead;
-
-instead of useoning something with a semiperipheral thing:
-	if action is pro-and-use, continue the action;
-	blanket-reject second noun instead;
 
 to blanket-reject (bj - a thing):
 	repeat through table of periphery:
@@ -2421,7 +2419,7 @@ voodoo v	"You don't want or need to mess with the voodoo v."
 leet steel	"You want to focus on the Knife Fink and not the leet steel."
 senile felines	"You don't have to do anything standard with the senile felines. In fact, you should think of them as cats."
 late petal	"You don't need to do anything with the late petal. Perhaps you could help the felines, uh, cats reach it?"
-opossum	"The opossum is just there to (optionally) be nice to, in a special way."
+opossum	"The opossum is just there to (optionally) be nice to, in a special, unusual way."
 part strap	"You want to focus on the Verses Rev and not the part strap."
 pool gloop	"Fortunately, you don't need to do anything special to or with the pool gloop."
 Sci Pics	"They are just there to [if Gorge Grog is moot]rehash what happened[else]spell out what happens[end if] if you go pouring random explosive liquids down the butene tub."
@@ -3116,7 +3114,7 @@ the voodoo v is peripheral scenery in Le Babel. "Maybe you could walk across it 
 
 chapter opossum
 
-the opossum is a llpish peripheral thing in Le Babel. "An opossum crouches here, looking scared. Maybe you can help it be less frozen by fear.". description is "Cute little thing, lovely fur, but it could use a friendly gesture."
+the opossum is a llpish semiperipheral thing in Le Babel. "An opossum crouches here, looking scared. Maybe you can help it be less frozen by fear.". description is "Cute little thing, lovely fur, but it could use a friendly gesture."
 
 instead of doing something with opossum:
 	if current action is taking, say "The opossum bounds away. Perhaps you can be less grabby." instead;
