@@ -315,47 +315,30 @@ instead of kissing, say "[one of]XOXOX[or]OXOXO[at random]!"
 
 volume room specifications
 
-chapter loc-num
+chapter room-dist and loc-num sorting out
 
-[originally for bang nab/mr arm]
+a room has a number called loc-num. loc-num of a room is usually -1. loc-num of Fun Nuf is 23.
 
-a room has a number called loc-num.
+a room has a number called room-dist. room-dist of a room is usually -1. room-dist of Fun Nuf is 0.
 
-loc-num of Lac Oft Focal is 00.
-loc-num of Sneer Greens is 01.
-loc-num of Flu Gulf is 02.
-loc-num of Trapeze Part is 03.
-loc-num of Evaded Ave is 04.
-loc-num of Yell Alley is 05.
-loc-num of Pro Corp is 06.
-loc-num of Yack Cay is 10.
-loc-num of Le Babel is 11.
-loc-num of Cold Loc is 12.
-loc-num of Apse Spa is 13.
-loc-num of Art Xtra is 14.
-loc-num of Red Roses Order is 15.
-loc-num of Gross Org is 16.
-loc-num of Swamp Maws is 20.
-loc-num of Dumb Mud is 21.
-loc-num of Seer Trees is 22.
-loc-num of Fun Nuf is 23.
-loc-num of Yawn Way is 24.
-loc-num of Emo Dome is 25.
-loc-num of Toll Lot is 26.
-loc-num of Uneven U is 30.
-loc-num of Mont Nom is 31.
-loc-num of Ooze Zoo is 32.
-loc-num of Worn Row is 33.
-loc-num of My Gym is 34.
-loc-num of Swept Pews is 35.
-loc-num of Deft Fed is 36.
-loc-num of Lair Trial is 40.
-loc-num of Motto Bottom is 41.
-loc-num of Frush Surf is 42.
-loc-num of Moo Room is 43.
-loc-num of Dopy Pod is 44.
-loc-num of Drawl Ward is 45.
-loc-num of Scrap Arcs is 46.
+a direction has a number called locdelt. locdelt of a direction is usually -1. locdelt of west is -1. locdelt of east is 1. locdelt of north is -10. locdelt of south is 10.
+
+when play begins:
+	say "b4 assign.";
+	assign-room-dist-and-loc Fun Nuf;
+	say "af assign.";
+
+to assign-room-dist-and-loc (j - a room):
+	let k be room-dist of j + 1;
+	[say "Sniffing out [j] room-dist [k - 1] locdelt [loc-num of j].";]
+	repeat with Q running through maindir:
+		let Q2 be room Q of j;
+		unless Q2 is nowhere or room-dist of Q2 > -1:
+			now room-dist of Q2 is k;
+			now loc-num of Q2 is loc-num of j + locdelt of Q;
+			assign-room-dist-and-loc Q2;
+[		else:
+			say "-->[Q] failed in [j]: to [Q2] [unless Q2 is nowhere]room-dist = [room-dist of Q2] locnum = [loc-num of Q2].";]
 
 chapter internal mapping
 
@@ -3569,7 +3552,7 @@ to decide which number is lac-score:
 	let temp be 0;
 	if kayak is moot, increment temp;
 	if tao boat is moot, increment temp;
-	decide temp;
+	decide on temp;
 
 to say kayak-boat:
 	say "[if kayak is in Lac Oft Focal]kayak[else]Tao Boat[end if]"
@@ -4017,7 +4000,7 @@ does the player mean boreing Rob: it is very likely.
 carry out boreing:
 	if noun is not a person, say "You should try to bore people, not things." instead;
 	if noun is not Rob, say "Wrong thing or person to bore." instead;
-	say "You bore Rob successfully. He begins pacing around, even grinding out the 'N' in the bad dab, leaving it as WOR- ROW, before wandering off mumbling how he is too hard core even for Dre Nerd and Nerd Ren. Perhaps to Ybor. He will certainly be submitting your dismal social performance to Mock.com, though! Or Mock-OK.com.";
+	say "You bore Rob successfully. He begins pacing around, even grinding out the 'N' in the bad dab, leaving it as WOR- ROW, before wandering off mumbling how he is too hard core even for Dre Nerd and Nerd Ren. Perhaps to Ybor. His last words: 'SUDO X-ODUS!' He will certainly be submitting your dismal social performance to Mock.com, though! Or Mock-OK.com.";
 	boot-Rob;
 	score-inc; [Yelpley/bore rob]
 	consider the cap-beep rules for Rob;
