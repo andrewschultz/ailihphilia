@@ -544,8 +544,9 @@ when play begins:
 	say "LIVE DEVIL![wfak-d]";
 	say "BOSSES! SOB![wfak-d]";
 	say "You fold the Darer Ad and start off to the store.[paragraph break]'[unicode 161]Aloha. Hola!' someone, or something, cries. 'Steer-greets! Steer-greets!'[paragraph break]You run in the general direction of the voice.  You look up, and you're no longer on the way to the store. You're somewhere else. Your smartphone starts blinking: LOAD AOL! You look up. Who is responsible for this? An elf, who sees you futzing with your smartphone. 'No El Google on?' You nod. Awkward silence. 'Poll op! Poll op!' the someone/something continues.[wfak-d]";
+	say "'Name, man? Eve? Pip? Otto? Anna? Bob? Nan? Aviva? Hannah? Elle? Ebbe?' You back away--it doesn't seem to care if you're male or female, but it's a persis-rep. It introduces itself as the Flee Elf. And you feel guilty YOU weren't paying attention to ITS gender.[wfak-d]";
 	say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because you looked up the winning strategy on the Internet after it confused you. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers. Then 'Is reversi...?'";
-	say "After your fifth win in a row, the Flee Elf yells 'Put it up!' again. You freeze--well, until you're knocked to the ground.[wfak-d]";
+	say "After your fifth win in a row, the Flee Elf yells 'GRAAAARG!' You stumble back and fall to the ground.[wfak-d]";
 	say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Raw Level War, Base Sab or Mista-T Sim. You'll do for Yelpley, I guess.' The Flee Elf leads you away. 'The first thing to do is, figure how to take this cap.'[wfak-d]";
 	do nothing; [debug information below here. I've had problems putting it in and not deleting it, so I want to make things clear.]
 
@@ -1860,7 +1861,7 @@ pity tip	eye	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	Yell Alley	
 trap art	reifier	party trap	--	--	true	true	false	Yelpley	Worn Row	false	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. You pull it out of the reifier and inspect it. It could probably capture more than one thing."
 bunk nub	reviver	stock cots	--	--	true	true	false	Yelpley	Worn Row	false	"After some crunching and slurping, the bunk nub is changed to a bunch of much smaller, but more comfortable looking, stock cots. You take them."
 party trap	stark rats	gift fig	--	oh-who-to rule	true	true	true	Grebeberg	Seer Trees	false	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit.[paragraph break]THUMP! They left you a present--good thing you were wearing that pact cap, because a book fell on your head. One glance reveals it to be [b]Oh, Who[r]--a phone book for Grebeberg, like [b]Name ME Man[r] for Yelpley.[paragraph break]You also find a gift fig, which you pick up."
-EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	Grebeberg	Cold Loc	false	"King Nik reads it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris told me I needed to one day. ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! Maybe I'll never be a Vic IV, Ivana VI, Ivette VI, Ivy VI, Vin IV or even Xiara IX, but I can lead against the Rim Emir and his emir crime and emir grime! The Mrifk Firm, too!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...back to my vidette div. Gotta RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
+EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	Grebeberg	Cold Loc	false	"King Nik reads it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris and Crisp Sir C told me I needed to one day. ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! Maybe I'll never be a Vic IV, Ivana VI, Ivette VI, Ivy VI, Vin IV or even Xiara IX, but I can lead against the Rim Emir and his emir crime and emir grime! The Mrifk Firm, too!' He hands you some Spur Ups in gratitude. 'Maybe this will give you the same boost you gave me. Now...back to my vidette div. Gotta RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	Ooze Zoo	false	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
 --	--	--	rev-puff-up rule	--	true	--	--	Yelpley	Yawn Way	false
 --	--	--	rev-pull-up rule	--	true	--	--	Yelpley	Emo Dome	false
@@ -2989,12 +2990,20 @@ the cash sac is a thing. description is "It's full of currency--currency which y
 
 chapter scorn rocs
 
-The scorn rocs are plural-named scenery in Flu Gulf. "While they're motionless, their stare drives you back. They're fiercely proud and shiny, white and clean."
+The scorn rocs are plural-named scenery in Flu Gulf. "While they're motionless, their stare drives you back. They're fiercely proud and shiny, white and clean.
+
+instead of talking to scorn rocs: say "They remain silent, but 'Gog a['] Magog' goes through your head. You are overcome with fear. You suspect that shortening 'and' to 'a' to fit in is the least of their evil indiscretions."
+
+Include (-
+	has transparent animate
+-) when defining scorn rocs.
+
+understand "gog magog" and "gog a/and magog" and "gog/magog" as scorn rocs.
 
 understand "roc" and "scorn roc" as scorn rocs.
 
 check going west in Flu Gulf:
-	if scorn rocs are in Flu Gulf, say "The scorn rocs remain motionless, but their gaze freezes you as you try to go west." instead;
+	if scorn rocs are in Flu Gulf, say "The scorn rocs remain motionless, but their gazes chock full of stone NOTS freeze you as you try to go west." instead;
 	if being-chased is true:
 		if Yuge Guy is moot, say "With the Yuge Guy defeated, you don't feel a need to go back to [Sneer Greens]." instead;
 		say "You don't want to face [if Sneer Greens is visited]the Yuge Guy[else]whatever's west[end if] while you're being chased, too." instead;
@@ -3020,8 +3029,7 @@ after looking in Sneer Greens for the first time:
 every turn when Yuge Guy is quicknear:
 	say "The Yuge Guy booms '[next-rand-txt of table of yuge taunts]'";
 
-check going east in Sneer Greens:
-	if Yuge Guy is in Sneer Greens, say "'LOW AWOL! TRAWL, WART! BOO, NOOB!' the Yuge Guy booms, as you run away."
+check going east in Sneer Greens: if Yuge Guy is in Sneer Greens, say "'[one of]Oft GTFO![or]LOW AWOL![or]TRAWL, WART![or]BOO, NOOB![in random order]' the Yuge Guy booms, as you run away."
 
 chapter Yuge Guy
 
@@ -3474,7 +3482,7 @@ check taking guru rug: say "'Egad! Adage!' you think to yourself. You're not up 
 
 chapter stir writs
 
-The stir writs are a plural-named thing. description is "They balance emotional and intellectual considerations well, making you feel you can do things you'd put off before, both simple or complex."
+The stir writs are a plural-named thing. description is "They balance emotional and intellectual considerations well, making you feel you can do things you'd put off before, both simple or complex.[paragraph break]They're probably safer for your help and give a more permanent boost than Stim-Its, too."
 
 check useoning stir writs with Bro Orb: try taking Bro Orb instead;
 
@@ -4616,7 +4624,7 @@ check going north in Emo Dome:
 	if Diktat Kid is moot, say "The Red Roses Order is being replaced by something more ... civic." instead;
 	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a bright no-go-gon and a voice from the DIFF-ID: 'Dim ID! Go jog!'[paragraph break]You think, hang? Nah." instead;
 	if Bro Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet." instead;
-	if balsa slab is moot, say "You did all you needed to there." instead;
+	if balsa slab is moot, say "The Teem-Civic Meet is going in full swing. They're throwing interesting ideas around, but you don't have anything to add. Lots of folks all 'Yep, ey?'" instead;
 	say "You make sure your state tats are visible for scanning. They are accepted with a 'YA MAY!'.[paragraph break][if madam is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the sword rows.[end if]";
 
 chapter DIFF ID
@@ -5019,6 +5027,9 @@ Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in Red Ros
 
 Red Roses Order is above Emo Dome.
 
+check going south in Red Roses Order:
+	say "You hear a crash behind you as the sword rows spin and wheeze from the exertion, then fall over. There's something ... no, someone ... behind the wall. 'How are you? I'm the Droll Lord! Don't worry, I kept myself entertained. Thanks for setting me free!' As people stream in, he outlines his vision for a more peaceful Yelpley. He is too old to govern, but so many people have come together to discuss ideas how not to let a Diktat Kid, Yuge Guy or Madam gain power again. 'We'd like you to stay, but we hear you have your own life to lead.' And he's right. You're not up to GOVERNING.[paragraph break]As you leave, you notice the Droll Lord scratch out the last bit calling this building the Red Roses Order, replacing it with TEEM CIVIC MEET.[paragraph break]It's slightly forced, but it gets the point across, and clear messaging is important in politics.";
+
 chapter Mirror Rim
 
 the Mirror Rim is scenery in Red Roses Order. "Looking in the Mirror Rim, you see ... well, you don't look terribly heroic. No wonder you were rejected for Raw Level War! In fact, you look kind of grouchy and upset. But it's not just that. You see and recall flaws you've forgotten, and you're pretty sure they're magnified beyond what they should be. But you feel half-obliged to keep looking at the Mirror Rim for an 'objective' amplification of all your tiny faults.[paragraph break]Oh, and the Pact Cap looks even sillier on you than you imagined it would. At least Madam has to see you wearing it!"
@@ -5055,7 +5066,7 @@ does the player mean useoning with the Set O Notes: it is unlikely.
 
 chapter E-Divide
 
-the E Divide is peripheral scenery in Red Roses Order. "Madam crossed it, but you don't need to follow her. It would probably be dangerous. And yes, it's too narrow to slip through the tines.". printed name of E Divide is "E-Divide". understand "e-divide" as e divide.
+the E Divide is peripheral scenery in Red Roses Order. "Madam crossed it, but you don't need to follow her. It would probably be dangerous. And yes, it's too narrow to slip through the tines. Maybe if you had an e-gage...but there's none in this game.". printed name of E Divide is "E-Divide". understand "e-divide" as e divide.
 
 book Swept Pews
 
@@ -5143,7 +5154,7 @@ Ye Key is a thing. description is "Engraved YE KEY, it clearly looks important. 
 
 book Dopy Pod
 
-Dopy Pod is west of Drawl Ward. It is in Yelpley. printed name of Dopy Pod is "[if cassettes sac is moot]Dope[else]Dopy[end if] Pod". "[if cassettes sac is moot]There's not much left here, but it was neat to get the radar. [else]There doesn't seem like there's much useful in here, but who knows? [end if]The only exit is back east."
+Dopy Pod is west of Drawl Ward. It is in Yelpley. printed name of Dopy Pod is "[if cassettes sac is moot]Dope[else]Dopy[end if] Pod". "[if cassettes sac is moot]There's not much left here, but it was neat to get the radar. [else]It's kind of stuffy here. No Cav-HVAC or even a naff fan. There doesn't seem like there's much useful in here, but who knows? [end if]The only exit is back east."
 
 check going nowhere in Dopy Pod: say "Maybe there's a do-prefer pod somewhere, but it's off-limits to you." instead;
 
@@ -7039,13 +7050,13 @@ carry out tntting:
 
 chapter uuxing
 
-the macguffin is a thing. description is "none necessary".
+the dud is a thing. description is "none necessary".
 
 understand the command "uux" as something new.
 
 understand "uux [any thing]" as uuxing.
 
-carry out uuxing: try uuing macguffin on noun instead;
+carry out uuxing: try uuing dud on noun instead;
 
 chapter uuying
 
@@ -7053,7 +7064,7 @@ understand the command "uuy" as something new.
 
 understand "uuy [any thing]" as uuying.
 
-carry out uuying: try uuing noun on macguffin instead;
+carry out uuying: try uuing noun on dud instead;
 
 chapter uuing
 
