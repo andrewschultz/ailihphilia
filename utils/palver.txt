@@ -4,10 +4,12 @@
 #
 # ignore-starts
 s:to say
+s:to kaos-
 s:[
 s:chase-block-rule of
 s:loc-num
 s:machineables
+s:macguffin
 s:understand
 s:does the player mean
 s:a room can be
@@ -44,7 +46,8 @@ s:the puce cup can be
 s:report
 s:a person can be
 s:worn row can be
-s:done-rule of
+s:finished-rule of
+s:hint-rule of
 s:a room has a rule
 s:walkthru-prio
 s:avail-rule

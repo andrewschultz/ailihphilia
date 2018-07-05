@@ -1215,3 +1215,14 @@ I didn't recognize that action. You can type VERB or VERBS to get a list of them
 >wave
 I didn't recognize that action. You can type VERB or VERBS to get a list of them.
 
+#mistake test for of ufo
+>of ufo
+I didn't recognize that action. You can type VERB or VERBS to get a list of them.
+\\
+#mistake test for ufo f u/ufo fu/ufofu
+>ufo f u
+I didn't recognize that action. You can type VERB or VERBS to get a list of them.
+>ufo fu
+I didn't recognize that action. You can type VERB or VERBS to get a list of them.
+>ufofu
+I didn't recognize that action. You can type VERB or VERBS to get a list of them.

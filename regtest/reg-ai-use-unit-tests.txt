@@ -399,35 +399,35 @@ The machines are fixed in place. You can't use one on the other.
 >purloin baton
 
 >uux rotator
-Nothing happens at all. Maybe the macguffin doesn't need any sort of machine augmentation.
+Nothing happens at all. Maybe the dud doesn't need any sort of machine augmentation.
 >use stinky knits on reviver
 Nothing happens. And you felt optimistic there! Hmm.
 >use stinky knits on reifier
 Nothing happens. And you felt optimistic there! Hmm.
 >use stinky knits on rotator
 >uuy rotator
-Nothing happens at all. Maybe the macguffin doesn't need any sort of machine augmentation.
+Nothing happens at all. Maybe the dud doesn't need any sort of machine augmentation.
 >use gold log on rotator
 >uuy rotator
-Nothing happens at all. Maybe the macguffin doesn't need any sort of machine augmentation.
+Nothing happens at all. Maybe the dud doesn't need any sort of machine augmentation.
 >use you buoy on rotator
 >uux rotator
 No point. The rotator is broken.
 
 >uuy reviver
-Nothing happens at all. Maybe the macguffin doesn't need any sort of machine augmentation.
+Nothing happens at all. Maybe the dud doesn't need any sort of machine augmentation.
 >use bunk nub on reviver
 >uux reviver
-Nothing happens at all. Maybe the macguffin doesn't need any sort of machine augmentation.
+Nothing happens at all. Maybe the dud doesn't need any sort of machine augmentation.
 >use dirt rid on reviver
 >uuy reviver
-Nothing happens at all. Maybe the macguffin doesn't need any sort of machine augmentation.
+Nothing happens at all. Maybe the dud doesn't need any sort of machine augmentation.
 >use eroded ore on reviver
 >uux reviver
 No point. The reviver is broken.
 
 >uux reifier
-Drat. None of the machines worked for the macguffin. You may need to use it somewhere else.
+Drat. None of the machines worked for the dud. You may need to use it somewhere else.
 >use trap art on reifier
 
 >uuy reifier

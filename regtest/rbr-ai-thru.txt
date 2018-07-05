@@ -1579,6 +1579,18 @@ by one point
 #got ufo tofu
 
 ==t2
+#mistake test for of ufo
+>of ufo
+You remind yourself that the UFO tofu came from a UFO. The circular reasoning seems appropriate to a palindrome world but is unhelpful.
+\\
+#mistake test for ufo f u/ufo fu/ufofu
+>ufo f u
+You feel [one of]a moment of annoyance the UFO dropped something on you[or]a little more anger at the UFO: A UFO MO['] FU moment, if you will[stopping], but it passes. You go on to consider what sort of martial arts the aliens in the UFO know.
+>ufo fu
+You feel a little more anger at the UFO: A UFO MO['] FU moment, if you will, but it passes. You go on to consider what sort of martial arts the aliens in the UFO know.
+>ufofu
+You feel a little more anger at the UFO: A UFO MO['] FU moment, if you will, but it passes. You go on to consider what sort of martial arts the aliens in the UFO know.
+\\
 #mistake retest for crac arc/crak arc
 >crac arc
 While there may be a correlation between bad spelling and extreme strength, there's no causation. Sorry. Besides, you got something, already.
