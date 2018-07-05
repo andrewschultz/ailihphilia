@@ -350,10 +350,6 @@ to say etg:
 	wfak;
 	say "[b][location of player][r][paragraph break]";
 
-section part of a puzzle but still floating
-
-[Otto is a person.]
-
 section helpdocs
 
 a helpdoc is a kind of thing. a helpdoc has a number called importancy. the indefinite article of a helpdoc is usually "the".
@@ -547,7 +543,7 @@ when play begins:
 	say "'Name, man? Eve? Pip? Otto? Anna? Bob? Nan? Aviva? Hannah? Elle? Ebbe?' You back away--it doesn't seem to care if you're male or female, but it's a persis-rep. It introduces itself as the Flee Elf. And you feel guilty YOU weren't paying attention to ITS gender.[wfak-d]";
 	say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because you looked up the winning strategy on the Internet after it confused you. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers. Then 'Is reversi...?'";
 	say "After your fifth win in a row, the Flee Elf yells 'GRAAAARG!' You stumble back and fall to the ground.[wfak-d]";
-	say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Raw Level War, Base Sab or Mista-T Sim. You'll do for Yelpley, I guess.' The Flee Elf leads you away. 'The first thing to do is, figure how to take this cap.'[wfak-d]";
+	say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Ares[']s Era, Raw Level War, Base Sab or Mista-T Sim. You'll do for Yelpley, I guess.' The Flee Elf leads you away. 'The first thing to do is, figure how to take this cap.'[wfak-d]";
 	do nothing; [debug information below here. I've had problems putting it in and not deleting it, so I want to make things clear.]
 
 [??mike kim nora maron Marge Pegram lee mcmeel]
@@ -1827,7 +1823,7 @@ wash saw	crag arc	"The crag arc is much too big to get anywhere[if UFO tofu is o
 wash saw	lie veil	"Not even the wash saw could clean off the lie veil. You need something much more brutal."
 wash saw	made dam	"The made dam is much too big to get anywhere[if eroded ore is off-stage]. Maybe there's a better way to find what's behind there[end if]."
 wash saw	stark rats	"You couldn't catch and hold a rat long enough to cut it with the wash saw."
-yard ray	Diktat Kid	"The Diktat Kid laughs as you point the yard ray. 'Destroy me, but my work will remain!'"
+yard ray	Diktat Kid	"The Diktat Kid laughs as you point the yard ray. 'Destroy me, but my work--my dezaz-ed--will remain!'"
 yard ray	Tru Hurt	"The Tru Hurt is dangerous, but maybe you should use the yard ray on something even more harmful."
 yard ray	Waster Fretsaw	"The Waster Fretsaw is dangerous, but maybe you should use the yard ray on something even more harmful."
 [zzrej] [zzfail]
@@ -1927,7 +1923,7 @@ Yard Ray	test set	--	ready-to-test rule	test-set-zapped rule	true	false	true	Dim
 --	--	--	rev-create-tron rule	--	true	--	--	Dim Mid	Fun Nuf	false
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	Dirge Grid	false	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, perhaps to create the Red Ronin Order." [b4:use TNT on ore zero]
 taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	Dim Mid	Dirge Grid	false	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev senses the Taboo Bat's ancient untapped power. It's not particularly violent or lethal, but it is just perfect to scare an orthodoxy as warped as the Verses Rev's, who mutters 'Rev, off, over' and stumbles away! Perhaps to the safety of ... a rev reserver."
-Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	Dirge Grid	false	"'Havoc, OVAH!' you should as you aim and fire the yard ray.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who goes running off. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid is going to check for that now, but with the Kid gone, you see saner arenas all around. Revel, clever! Revel, ever![paragraph break]You don't notice the redivider exploding. When you wake up, it's much later. And you note something beside you: some X-ITE TIX fell out of the redivider! Wow! Yo, joy! Wow!"
+Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	Dirge Grid	false	"'Havoc, OVAH!' you should as you aim and fire the yard ray. A direct hit! The redivider begins to fizzle.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who goes running off. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid grows redder ... redder ... and bolts! With the Kid gone, saner arenas pop up all around. Revel, clever! Revel, ever![paragraph break]You don't notice the redivider exploding. When you wake up, it's much later. And you note something beside you: some X-ITE TIX fell out of the redivider! Wow! Yo, joy! Wow!"
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	Fun Nuf	false	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse] [zzgood]
 
@@ -2338,7 +2334,7 @@ this is the wear-garb rule:
 
 this is the you-win rule: [xxwin]
 	follow the notify score changes rule;
-	say "[line break]The Flee Elf greets you on the other side. 'This, I h/t! [if cur-score of Odd Do is max-score of Odd Do]Decay?! ACED[else]Won enow[end if]!' You ask hesitantly about what's next. You don't want or need people chanting 'Deified! Deified! Deified!', but...[wfak-d]";
+	say "[line break]You wonder how you'll get back, but then you see the Flee Elf running towards you. 'Tardy, drat! ... 'This, I h/t! [if cur-score of Odd Do is max-score of Odd Do]Decay?! ACED[else]Won enow[end if]!' You ask hesitantly about what's next. You don't want or need people chanting 'Deified! Deified! Deified!', but...[wfak-d]";
 	say "'The X-ITE TIX lead BACK TO THE REAL WORLD WHICH WILL BE FAR MORE EXCITING AND ILLUMINATING FOR YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a there-and-back-but-wiser summary. Books like that always kind of annoyed you once you figured the whole schtick out, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand says, 'I'll need the pact cap back. It will go to our new museum.'[paragraph break]'What's it called?' you ask, despite yourself.[wfak-d]";
 	say "[paragraph break]'Well, there's still argument over We-I-View, Show-Ohs and Trofy Fort.' (Trofee?) The Flee Elf asks which you prefer, and after an awkward silence, you mention they all seem equally appropriate.[paragraph break]'Well, anyway. This RIDE-DIR will help you return to your own world. And here is an x/o box.'[wfak-d]";
 	say "The x/o box isn't much: nothing's inside, and it's engraved 'U Remem'er, U,' 'Done? NOD' and 'U Did U.' But if it were too obvious and gaudy, how would you explain it back home?[paragraph break]As you stare at it, you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered with stuff you can't fix?[wfak-d]";
@@ -2636,7 +2632,7 @@ understand "pack cap" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did." instead;
-	say "Yes, that's how to get the cap. You are ready to go! Hat, ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. 'Maybe later you'll find a way past the [kaos oak] to the Dirge Grid to defeat the Diktat Kid. But it's complicated.[paragraph break]The Flee Elf mumbles something about the risk of a partner-entrap, so you'll have to go it alone. With an 'It's best I...' it  becomes the, err, FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
+	say "Yes, that's how to get the cap. You are ready to go! Hat, ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. 'Maybe later you'll find a way past the [kaos oak] to the Dirge Grid to defeat the Diktat Kid. But it's complicated.[paragraph break]The Flee Elf mumbles something about the risk of a partner-entrap, so you'll have to go it alone. With a 'Rep us SUPER' and 'It's best I...' it  becomes the, err, FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
 	get-cap;
 	score-inc; [Dim Mid/pack cap]
 	verify-done rev-pack-cap rule;
@@ -2990,9 +2986,9 @@ the cash sac is a thing. description is "It's full of currency--currency which y
 
 chapter scorn rocs
 
-The scorn rocs are plural-named scenery in Flu Gulf. "While they're motionless, their stare drives you back. They're fiercely proud and shiny, white and clean.
+The scorn rocs are plural-named scenery in Flu Gulf. "While they're motionless, their stare drives you back. They're fiercely proud and shiny, white and clean."
 
-instead of talking to scorn rocs: say "They remain silent, but 'Gog a['] Magog' goes through your head. You are overcome with fear. You suspect that shortening 'and' to 'a' to fit in is the least of their evil indiscretions."
+instead of talking to scorn rocs: say "They remain silent, but 'Gog a['] Magog' goes through your head. Fear prevents you going west. You suspect that shortening 'and' to 'a' to fit in is the least of their evil indiscretions."
 
 Include (-
 	has transparent animate
@@ -3003,7 +2999,7 @@ understand "gog magog" and "gog a/and magog" and "gog/magog" as scorn rocs.
 understand "roc" and "scorn roc" as scorn rocs.
 
 check going west in Flu Gulf:
-	if scorn rocs are in Flu Gulf, say "The scorn rocs remain motionless, but their gazes chock full of stone NOTS freeze you as you try to go west." instead;
+	if scorn rocs are in Flu Gulf, say "The scorn rocs remain motionless, but their gazes chock full of stone NOTS freeze you as you try to go west. They're not mere starer-ats." instead;
 	if being-chased is true:
 		if Yuge Guy is moot, say "With the Yuge Guy defeated, you don't feel a need to go back to [Sneer Greens]." instead;
 		say "You don't want to face [if Sneer Greens is visited]the Yuge Guy[else]whatever's west[end if] while you're being chased, too." instead;
@@ -3029,7 +3025,7 @@ after looking in Sneer Greens for the first time:
 every turn when Yuge Guy is quicknear:
 	say "The Yuge Guy booms '[next-rand-txt of table of yuge taunts]'";
 
-check going east in Sneer Greens: if Yuge Guy is in Sneer Greens, say "'[one of]Oft GTFO![or]LOW AWOL![or]TRAWL, WART![or]BOO, NOOB![in random order]' the Yuge Guy booms, as you run away."
+check going east in Sneer Greens: if Yuge Guy is in Sneer Greens, say "'[one of]Oft GTFO![or]LOW AWOL![or]TRAWL, WART![or]EY, BYE![or]PEER?! CREEP![or]BOO, NOOB![in random order]' the Yuge Guy booms, as you run away."
 
 chapter Yuge Guy
 
@@ -5028,7 +5024,7 @@ Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in Red Ros
 Red Roses Order is above Emo Dome.
 
 check going south in Red Roses Order:
-	say "You hear a crash behind you as the sword rows spin and wheeze from the exertion, then fall over. There's something ... no, someone ... behind the wall. 'How are you? I'm the Droll Lord! Don't worry, I kept myself entertained. Thanks for setting me free!' As people stream in, he outlines his vision for a more peaceful Yelpley. He is too old to govern, but so many people have come together to discuss ideas how not to let a Diktat Kid, Yuge Guy or Madam gain power again. 'We'd like you to stay, but we hear you have your own life to lead.' And he's right. You're not up to GOVERNING.[paragraph break]As you leave, you notice the Droll Lord scratch out the last bit calling this building the Red Roses Order, replacing it with TEEM CIVIC MEET.[paragraph break]It's slightly forced, but it gets the point across, and clear messaging is important in politics.";
+	say "You hear a crash behind you as the sword rows spin and wheeze from the exertion, then fall over. There's something ... no, someone ... behind the wall. 'How are you? I'm the Droll Lord! Don't worry, I kept myself entertained. Thanks for setting me free!' As people stream in, he outlines his vision for a more peaceful Yelpley. He is too old to govern, but so many people have come together to discuss ideas how not to let a Diktat Kid, Yuge Guy or Madam gain power again. 'We'd like you to stay, but we hear you have your own life to lead.' And he's right. You're not up to GOVERNING.[paragraph break]As you leave, you notice the Droll Lord scratch out the last bit calling this building the Red Roses Order, replacing it with TEEM-CIVIC MEET.[paragraph break]It's slightly forced, but it's better han GRO-CIVIC ORG or EVA[']-CIVIC AVE and gets the point across. Clear messaging is important in politics.";
 
 chapter Mirror Rim
 
