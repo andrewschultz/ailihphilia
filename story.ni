@@ -3023,9 +3023,9 @@ after looking in Sneer Greens for the first time:
 	continue the action;
 
 every turn when Yuge Guy is quicknear:
-	say "The Yuge Guy booms '[next-rand-txt of table of yuge taunts]'";
+	say "The Yuge Guy booms '[next-rand-txt of table of yuge battle cries]'";
 
-check going east in Sneer Greens: if Yuge Guy is in Sneer Greens, say "'[one of]Oft GTFO![or]LOW AWOL![or]TRAWL, WART![or]EY, BYE![or]PEER?! CREEP![or]BOO, NOOB![in random order]' the Yuge Guy booms, as you run away."
+check going east in Sneer Greens: if Yuge Guy is in Sneer Greens, say "'[rand-txt of table of yuge baits]' the Yuge Guy booms, as you run away[one of]. He probably has a few of those trolls[or][stopping]."
 
 chapter Yuge Guy
 

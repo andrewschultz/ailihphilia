@@ -776,7 +776,8 @@ table of undoings	0	0	true	"UNDOing notifications"	--
 table of waittxt	0	0	true	"responses to WAITing"	--
 table of wordy drow laments	0	0	false	"Wordy Drow laments"	--
 table of yessies	0	0	true	"responses to YES"	--
-table of yuge taunts	0	0	true	"Yuge Guy taunts"	"Señor drones, you think you yourself, as the Yuge Guy winds up for another round of nonsense."
+table of yuge baits	0	0	true	"Yuge Guy bait if you run away"	--
+table of yuge battle cries	0	0	true	"Yuge Guy battle cries"	"Señor drones, you think you yourself, as the Yuge Guy winds up for another round of nonsense."
 
 rand-cycle is a truth state that varies.
 
@@ -895,7 +896,6 @@ randtxt
 "Hurt! Ruh!"
 "Knock! Conk!"
 "Nae mean."
-"Ole! Lo!"
 "Pah! Whap?"
 "Pal, SLAP?!"
 "Po['] bop!"
@@ -961,7 +961,7 @@ randtxt
 "Zorro'z"
 "Zuzu'z"
 
-[this may be related to Yuge Guy taunts, but the Diktat Kid insults you. The Yuge Guy puffs himself up.]
+[this may be related to Yuge battle cries, but the Diktat Kid insults you. The Yuge Guy puffs himself up.]
 table of diktat taunts
 randtxt
 "Ahahahahahaha!"
@@ -1314,7 +1314,17 @@ randtxt
 "Wahoo! Haw!"
 "Yay!"
 
-table of yuge taunts
+table of yuge baits
+randtxt
+"BOO, NOOB!"
+"EY, BYE!"
+"LOW AWOL!"
+"Oft GTFO!"
+"Ole! Lo!"
+"PEER?! CREEP!"
+"TRAWL, WART!"
+
+table of yuge battle cries
 randtxt
 "A-lists? I? La!"
 "Bilk-Lib!"
