@@ -14,20 +14,22 @@ import sys
 import re
 from collections import defaultdict
 
+files_to_run = defaultdict(str)
+
 this_cmd = defaultdict(str)
 what_skipped = defaultdict(str)
 destinations = defaultdict(str)
 
 first_line = "# created with the revit.py python tool\n"
 
+do_rev_over = False
+# starting range for do_rev_over
 start_low = start_high = 0
 end_low = end_high = 0
-deep_low = deep_high = 0
-alt_low = alt_high = 0
+
+speed_low = speed_high = 0
+
 launch_first = launch_last = False
-alt_deep_speed = False
-create_deep_speed = False
-do_revs = False
 
 end_str = ">n\n>use me gem on knife fink\n>use taboo bat on verses rev\n>use yard ray on redivider\n>s\n>use x-ite tix on tix exit\nYes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through.\n>s\nRoxor!\n"
 
@@ -186,11 +188,11 @@ while count < len(sys.argv):
     arg = sys.argv[count]
     if arg[0] == '-': arg = arg[1:]
     if arg[0].isdigit():
-        ary = [int(x) for x in re.split("[,-]", arg[1:])]
+        ary = [int(x) for x in re.split("[,-]", arg)]
         if len(ary) == 1: start_low = start_high = end_low = end_high = ary[0]
         else:
-            start_low = end_low = ary[0]
-            start_high = end_high = ary[1]
+            start_low = end_low = speed_low = ary[0]
+            start_high = end_high = speed_high = ary[1]
     elif arg[0] == 's':
         ary = [int(x) for x in re.split("[,-]", arg[1:])]
         if len(ary) == 1: start_low = start_high = ary[0]
@@ -205,41 +207,11 @@ while count < len(sys.argv):
             end_high = ary[1]
     elif arg == 'l' or arg == 'l1': launch_first = True
     elif arg == 'll' or arg == 'l0': launch_last = True
-    elif arg == 'r': do_revs = True
-    elif arg == 'nr' or arg == 'rb': do_revs = False
-    elif arg.startswith('d'):
-        create_deep_speed = True
-        arg2 = re.sub("^d(s?)", "", arg)
-        if arg2:
-            try:
-                poss_array = sorted([int(x) for x in arg2.split(',')])
-            except:
-                sys.exit("Need integer value(s), if any, after d/ds")
-            if len(poss_array) == 1:
-                deep_low = deep_high = poss_array[0]
-            else:
-                deep_low = poss_array[0]
-                deep_high = poss_array[1]
-        else:
-            deep_low = 0
-            deep_high = -1
-    elif arg.startswith('ad'):
-        alt_deep_speed = True
-        arg2 = re.sub("^ad", "", arg)
-        if arg2:
-            try:
-                poss_array = sorted([int(x) for x in arg2.split(',')])
-            except:
-                sys.exit("Need integer value(s), if any, after d/ds")
-            if len(poss_array) == 1:
-                alt_low = alt_high = poss_array[0]
-            else:
-                alt_low = poss_array[0]
-                alt_high = poss_array[1]
-        else:
-            alt_low = 0
-            alt_high = -1
-    elif arg[0] == 'a': do_all = True
+    elif arg == 'r': do_rev_over = True
+    elif arg == 'nr' or arg == 'rb': do_rev_over = False
+    elif arg == 'w': files_to_run["westfirst"] = True
+    elif arg == 'e': files_to_run["eastfirst"] = True
+    elif arg == 'm': files_to_run["min"] = True
     count += 1
 
 if start_low > start_high:
@@ -284,20 +256,17 @@ if do_all:
     start_low = end_low = 0
     start_high = end_high = max_stuff
 
-if alt_deep_speed:
-    if alt_high == -1 or alt_high > max_stuff: alt_high = max_stuff
-    print("Working from **ALT** regex test file to create deep speed tests:", ("only {:d}".format(alt_low) if alt_low == alt_high else "{:d} to {:d}".format(alt_low, alt_high)))
-    for x in range(alt_low, alt_high + 1): create_speed_thru("reg-ai-thru-alt.txt", "reg-ai-altspeed-{:d}.txt", x)
-
-if create_deep_speed:
-    print("Working from regular regex test file to create deep speed tests:", ("only {:d}".format(alt_low) if alt_low == alt_high else "{:d} to {:d}".format(alt_low, alt_high)))
-    if deep_high == -1 or deep_high > max_stuff: deep_high = max_stuff
-    for x in range(deep_low, deep_high + 1): create_speed_thru("reg-ai-thru-min.txt", "reg-ai-regspeed-{:d}.txt", x)
-
-if do_revs:
+if not do_rev_over:
+    if not len(files_to_run.keys()): sys.exit("Need to specify s/w/e for speed-testing.")
+    for q in sorted(files_to_run.keys()):
+        in_file = "reg-ai-thru-{:s}.txt".format(q)
+        out_format = "reg-ai-speed-{:s}-{{:d}}.txt".format(q)
+        for x in range(speed_low, speed_high + 1): create_speed_thru(in_file, out_format, x)
+else:
     for x in range (start_low, start_high + 1):
         for y in range (end_low, end_high + 1):
             if x > y: continue
         make_wthru(x, y)
-    if launch_first: os.system(my_file(start_low, end_low))
-    if launch_last: os.system(my_file(start_high, end_high))
+
+if launch_first: os.system(my_file(start_low, end_low))
+if launch_last: os.system(my_file(start_high, end_high))
