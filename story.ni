@@ -1490,7 +1490,10 @@ understand "use [something] with [something]" as useoning it with.
 to build-the-tron:
 	move north tron to Fun Nuf;
 	now all tronparts are in devreserved; [ic]
-	say "[if epicer recipe is nox]You're clueless how, at first. But then you take a look at the epicer recipe[else]You build the North-Tron with the instructions from[end if] the epicer recipe after a few 'How? OH!' moments. It points north and blasts a hole in the [kaoscaps] with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break]Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
+	if redact-postrule:
+		say "You use the epicer recipe you found in the Trapeze Part to build a north-tron that destroys the KOAS Oak to the north! And with that, your [if deep-speeding is true]DEEP SPEED[else]REV OVER[end if] journey ends, so close to saving Yelpley and Grebeberg.";
+	else:
+		say "[if epicer recipe is nox]You're clueless how, at first. But then you take a look at the epicer recipe[else]You build the North-Tron with the instructions from[end if] the epicer recipe after a few 'How? OH!' moments. It points north and blasts a hole in the [kaoscaps] with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break]Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
 	moot epicer recipe;
 	moot kaos oak;
 	now Dirge Grid is mapped north of Fun Nuf;
@@ -1911,7 +1914,7 @@ DNA band	reifier	DNA hand	--	--	true	true	false	Yelpley	Worn Row	false	"After co
 roto motor	DNA hand	Mr Arm	--	--	true	true	true	Yelpley	Worn Row	false	"Some of the stuffing inside the hand has to pop out to make space for the roto motor to fit in. There's enough to make a whole arm! The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on the arm (MR. ARM) and hand: BANG NAB. The arm will probably give the hand a bit more reach."
 Eroded Ore	reviver	Ore Zero	--	--	true	true	false	Yelpley	Worn Row	false	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
 you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	Worn Row	false	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. 'You BOFFO buoy!' you can't help shouting.[paragraph break]The gem's so tempting and beautiful, you grab it quickly, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
-Mr Arm	bomb mob	TNT	--	mob-bye rule	true	true	false	Yelpley	Yell Alley	false	"Mr. Arm walks on his index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. Being an arm, it/he has more leverage than just a DNA hand would've. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course. Perhaps Mr. Arm will find a Do-Bod or even an Evol-Glove to be truly complete. The bomb mob, for their part, becomes a poor troop once they see what they've lost."
+Mr Arm	bomb mob	TNT	--	mob-bye rule	true	true	true	Yelpley	Yell Alley	false	"Mr. Arm walks on his index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. Being an arm, it/he has more leverage than just a DNA hand would've. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course. Perhaps Mr. Arm will find a Do-Bod or even an Evol-Glove to be truly complete. The bomb mob, for their part, becomes a poor troop once they see what they've lost. They wander away"
 nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	Flu Gulf	false	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
 rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	Grebeberg	Sneer Greens	false	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'SOS! SOS!' he cries, making a male lam. From his babbling, he's apparently retreating to the glam-amalg (Loot Stool included) in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]'Pol? Flop!' you think to yourself, before the ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
 Bro Orb	Mirror Rim	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	Red Roses Order	false	"The Bro Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Madam has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, madam, live not on evil!' you boom, as the Orb does its work. Madam looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'My sub-level bus! You won't catch it! The E-Divide will block you!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
@@ -2313,7 +2316,7 @@ this is the test-set-zapped rule:
 	the rule succeeds;
 
 this is the toons-to-den rule:
-	unless redact-postrule, move player to Toll Lot;
+	unless redact-postrule, move-opt-show Toll Lot;
 	moot decal placed;
 	move snooty toons to Deft Fed;
 	now Sniffins-reintro is true;
@@ -2343,6 +2346,12 @@ this is the you-win rule: [xxwin]
 	sort the table of last lousy points in finord order;
 	the rule succeeds;
 [zzwin]
+
+to move-opt-show (rm - a room):
+	if deep-speeding is true:
+		move the player to rm, without printing a room description;
+	else:
+		move the player to rm;
 
 [zzpost]
 
@@ -2988,7 +2997,7 @@ chapter scorn rocs
 
 The scorn rocs are plural-named scenery in Flu Gulf. "While they're motionless, their stare drives you back. They're fiercely proud and shiny, white and clean."
 
-instead of talking to scorn rocs: say "They remain silent, but 'Gog a['] Magog' goes through your head. Fear prevents you going west. You suspect that shortening 'and' to 'a' to fit in is the least of their evil indiscretions."
+instead of talktoing scorn rocs: say "They remain silent, but 'Gog a['] Magog' goes through your head. Fear prevents you going west. You suspect that shortening 'and' to 'a' to fit in is the least of their evil indiscretions."
 
 Include (-
 	has transparent animate
@@ -3025,7 +3034,7 @@ after looking in Sneer Greens for the first time:
 every turn when Yuge Guy is quicknear:
 	say "The Yuge Guy booms '[next-rand-txt of table of yuge battle cries]'";
 
-check going east in Sneer Greens: if Yuge Guy is in Sneer Greens, say "'[rand-txt of table of yuge baits]' the Yuge Guy booms, as you run away[one of]. He probably has a few of those trolls[or][stopping]."
+check going east in Sneer Greens: if Yuge Guy is in Sneer Greens, say "'[next-rand-txt of table of yuge baits]' the Yuge Guy booms, as you run away[one of]. He probably has a few of those trolls[or][stopping]."
 
 chapter Yuge Guy
 
@@ -5749,6 +5758,7 @@ volume accelerator commands
 chapter deepspeeding
 
 to decide whether redact-postrule:
+	if deep-speeding is true, yes;
 	if deep-speeding is false and revving-over is true, yes;
 	no;
 
@@ -5800,6 +5810,21 @@ this is the rev-check rule:
 	if emitted is true and player has ME gem and player has taboo bat, say "You're already near the endgame." instead;
 	continue the action;
 
+definition: a thing (called th) is speedtakeable:
+	if th is a person, no;
+	if th is scenery, no;
+	if th is eye, no;
+	if th is tame mat, no;
+	if th is a workable, no;
+	if th is test set, no;
+	if th is bomb mob, no;
+	yes;
+
+definition: a thing (called th) is swipeable:
+	if th is Gorge Grog, yes;
+	if th is TNT, yes;
+	no;
+
 carry out revovering:
 	abide by the rev-check rule;
 	if deep-speeding is false, say "Attempting to REV OVER[recxcheck of true]...";
@@ -5818,7 +5843,7 @@ carry out revovering:
 			if the rule succeeded:
 				increment global-delay;
 				if sco entry is true:
-					if debug-state is true, say "(+1 [preproc entry])[line break]";
+					if debug-state is true, say "(DEBUG) (+1 [preproc entry])[line break]";
 					increment the score;
 					increment cur-score of reg-plus entry;
 					increment turns-to-add;
@@ -5829,23 +5854,24 @@ carry out revovering:
 				else:
 					break;
 			next;
-		if there is a getit entry and getit entry is not off-stage and getit entry is not Gorge Grog, next; [the Gorge Grog is already visible. Other items aren't.]
+		if there is a getit entry and getit entry is not off-stage:
+			if getit entry is not swipeable, next; [the Gorge Grog/TNT are already visible. Other items aren't.]
 		if use1 entry is moot or use2 entry is moot, next;
 		now done entry is true;
 		increment global-delay;
 		let u1a be false;
 		let u2a be false;
 		let g1a be false;
-		if the player does not have use1 entry and use1 entry is not a person and use1 entry is not scenery:
+		if the player does not have use1 entry and use1 entry is speedtakeable:
 			now u1a is true;
 			now player has use1 entry;
-		if the player does not have use2 entry and use2 entry is not a person and use2 entry is not scenery:
-			if use2 entry is not a workable and use2 entry is not test set and use2 entry is not tame mat: [?? needs a lot more checkoffs here. Otherwise there is inventory overload]
-				now u2a is true;
-				now player has use2 entry;
+		if the player does not have use2 entry and use2 entry is speedtakeable:
+			now u2a is true;
+			now player has use2 entry;
 		if deep-speeding is false, say "You [if u1a is true](acquire and) [end if]use [the use1 entry] on/with [if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if].";
+		increment turns-to-add;
 		if sco entry is true:
-			if debug-state is true, say "(+1 above)[line break]";
+			if debug-state is true and deep-speeding is false, say "*(DEBUG) (+1 above)[line break]";
 			increment the score;
 			increment cur-score of reg-plus entry;
 		if there is a getit entry, now player has getit entry; [?? guru rug shouldn't be take-able but code is tricky]
