@@ -1,0 +1,916 @@
+## reg-ai-thru-westfirst.txt
+
+## walkthrough with all points, but concentrating on the west side first
+
+** game: /home/andrew/prt/debug-ailihphilia.ulx
+** interpreter: /home/andrew/prt/glulxe -q
+
+* runthrough
+
+>pack cap
+by one point
+
+>e
+
+>n
+
+>get all
+
+>s
+
+>s
+
+>evade dave
+by one point
+
+>w
+
+>bore rob
+by one point
+
+>work row
+by one point
+
+>use art on reifier
+by one point
+
+>e
+
+>n
+
+>w
+
+>w
+
+>use trap on rats
+by one point
+
+>n
+
+>use wash saw on past sap
+by one point
+
+>s
+
+>e
+
+>e
+
+>s
+
+>w
+
+>word row
+by one point
+
+>get cope
+
+>e
+
+>n
+
+>w
+
+>w
+
+>n
+
+>use epoch cope on king nik
+by one point
+
+>s
+
+>e
+
+>e
+
+>s
+
+>w
+
+>get ti
+
+>e
+
+>n
+
+>n
+
+>n
+
+>use ti on frood
+by one point
+
+>get all
+
+>e
+
+>get all
+
+>w
+
+>s
+
+>s
+
+>s
+
+>w
+
+>get null illun
+by one point
+
+>work row
+by one point
+
+>use nub on reviver
+by one point
+
+>e
+
+>n
+
+>w
+
+>w
+
+>s
+
+>use cots on eels
+by one point
+
+>s
+
+>get all
+
+>e
+
+>get all
+
+>use some demos on yahoo hay
+by one point
+
+>w
+
+>n
+
+>n
+
+>w
+
+>use coop on dung
+by one point
+
+>use coop on rut
+by one point
+
+>w
+
+>n
+
+>use null illun on known wonk
+by one point
+
+>use doodle on tide
+by one point
+
+>s
+
+>e
+
+>e
+
+>e
+
+>e
+
+>puff up
+by one point
+
+>e
+
+>pull up
+by one point
+
+>get all
+
+>w
+
+>w
+
+>w
+
+>n
+
+>use saw on sap
+by one point
+
+>use puce cup on past sap
+by one point
+
+>s
+
+>e
+
+>e
+
+>e
+
+>s
+
+>use puce cup on liar grail
+by one point
+
+>get all
+
+>n
+
+>w
+
+>w
+
+>w
+
+>n
+
+>e
+
+>use puce cup on dose sod
+
+>w
+
+>s
+
+>e
+
+>e
+
+>e
+
+>s
+
+>s
+
+>use puce cup on bond nob
+by one point
+
+>w
+
+>w
+
+>get all
+
+>e
+
+>n
+
+>n
+
+>w
+
+>w
+
+>w
+
+>n
+
+>n
+
+>use med on lug
+by one point
+
+>s
+
+>s
+
+>e
+
+>e
+
+>s
+
+>w
+
+>word row
+
+>get yob attaboy
+
+>e
+
+>n
+
+>e
+
+>e
+
+>use sac on orc
+by one point
+
+>s
+
+>use yob attaboy on sniffins
+by one point
+
+>w
+
+>w
+
+>w
+
+>w
+
+>w
+
+>s
+
+>nail ian
+by one point
+
+>use fig on yam
+by one point
+
+>n
+
+>e
+
+>e
+
+>e
+
+>n
+
+>n
+
+>w
+
+>tend net
+by one point
+
+>e
+
+>s
+
+>s
+
+>w
+
+>w
+
+>w
+
+>w
+
+>s
+
+>use tent net on code doc
+by one point
+
+>use spa maps on code doc
+by one point
+
+>n
+
+>n
+
+>n
+
+>use elope pole on kayak
+by one point
+
+>s
+
+>s
+
+>e
+
+>e
+
+>n
+
+>e
+
+>use maps on bog
+by one point
+
+>w
+
+>s
+
+>e
+
+>e
+
+>e
+
+>e
+
+>n
+
+>deny ned
+by one point
+
+>get all
+
+>s
+
+>w
+
+>w
+
+>s
+
+>w
+
+>work row
+
+>use stinky knits on rotator
+by one point
+
+>e
+
+>n
+
+>w
+
+>w
+
+>s
+
+>s
+
+>pace cap
+by one point
+
+>use troll ort on brag garb
+by one point
+
+>n
+
+>n
+
+>w
+
+>w
+
+>s
+
+>s
+
+>yak okay
+by one point
+
+>e
+
+>use sage gas on tame mat
+by one point
+
+>use sharp rahs on guru rug
+by one point
+
+>w
+
+>n
+
+>n
+
+>e
+
+>e
+
+>e
+
+>e
+
+>e
+
+>s
+
+>s
+
+>e
+
+>use stamp mats on slate metals
+by one point
+
+>w
+
+>n
+
+>n
+
+>e
+
+>n
+
+>deny ned
+by one point
+
+>use ye key on etage gate
+by one point
+
+>n
+
+>s
+
+>s
+
+>w
+
+>w
+
+>s
+
+>w
+
+>worn row
+by one point
+
+>work row
+
+>e
+
+>n
+
+>e
+
+>e
+
+>n
+
+>n
+
+>get all
+
+>s
+
+>s
+
+>w
+
+>w
+
+>s
+
+>w
+
+>use gold log on rotator
+by one point
+
+>e
+
+>n
+
+>w
+
+>w
+
+>w
+
+>w
+
+>n
+
+>n
+
+>use dork rod on tao boat
+by one point
+
+>s
+
+>s
+
+>e
+
+>e
+
+>s
+
+>s
+
+>e
+
+>use enact cane on yahoo hay
+by one point
+
+>w
+
+>n
+
+>n
+
+>w
+
+>w
+
+>n
+
+>use moor broom on tru yurt
+by one point
+
+>s
+
+>e
+
+>use exam axe on lie veil
+by one point
+
+>n
+
+>get bro orb
+
+>s
+
+>w
+
+>s
+
+>use wash saw on porch crop
+by one point
+
+>n
+
+>e
+
+>e
+
+>e
+
+>e
+
+>e
+
+>e
+
+>s
+
+>stand nat's
+by one point
+
+>n
+
+>w
+
+>w
+
+>w
+
+>w
+
+>n
+
+>n
+
+>use nat's tan on scorn rocs
+by one point
+
+>s
+
+>s
+
+>e
+
+>e
+
+>s
+
+>w
+
+>use dirt rid on reviver
+by one point
+
+>e
+
+>n
+
+>e
+
+>s
+
+>s
+
+>w
+
+>use cave vac on cassettes sac
+by one point
+
+>get all
+
+>e
+
+>n
+
+>n
+
+>w
+
+>w
+
+>w
+
+>w
+
+>w
+
+>use radar on made dam
+by one point
+
+>e
+
+>e
+
+>e
+
+>e
+
+>e
+
+>e
+
+>use radar on crag arc
+by one point
+
+>w
+
+>w
+
+>n
+
+>n
+
+>e
+
+>use pity tip on eye
+by one point
+
+>w
+
+>s
+
+>s
+
+>w
+
+>w
+
+>w
+
+>s
+
+>use snack cans on ufo tofu
+by one point
+
+>e
+
+>s
+
+>w
+
+>use dna band on reifier
+by one point
+
+>use roto motor on dna hand
+by one point
+
+>e
+
+>n
+
+>n
+
+>n
+
+>e
+
+>use mr arm on bomb mob
+by one point
+
+>get rep popper
+
+>w
+
+>s
+
+>s
+
+>w
+
+>w
+
+>n
+
+>n
+
+>w
+
+>use rep popper on me totem
+by one point
+
+>e
+
+>s
+
+>s
+
+>e
+
+>e
+
+>s
+
+>w
+
+>use eroded ore on reviver
+by one point
+
+>use you buoy on rotator
+by one point
+
+>e
+
+>n
+
+>n
+
+>use straw arts on revolt lover
+
+>use gate tag on soot tattoos
+
+>s
+
+>e
+
+>e
+
+>s
+
+>use elan ale on sniffins
+
+>n
+
+>n
+
+>n
+
+>use gorge grog on butene tub
+
+>s
+
+>s
+
+>w
+
+>n
+
+>use bro orb on mirror rim
+
+>use balsa slab on sword rows
+
+>s
+
+>w
+
+>s
+
+>w
+
+>use not-a-baton on reifier
+by one point
+
+>use tnt on ore zero
+by one point
+
+>use murdered rum on yard ray
+by one point
+
+>emit noontime
+by one point
+
+>e
+
+>s
+
+>w
+
+>use yard ray on test set
+by one point
+
+>e
+
+>n
+
+>w
+
+>n
+
+>use taboo bat on verses rev
+by one point
+
+>use me gem on knife fink
+by one point
+
+>use yard ray on redivider
+by one point
+
+>s
+
+>use x-ite tix on tix exit

@@ -1,4 +1,2 @@
 reg-ail-*
-reg-ai-revthru-*
-reg-ai-deepspeed-*
-reg-ai-altspeed-*
+reg-ai-*speed*
