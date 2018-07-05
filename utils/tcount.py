@@ -40,6 +40,18 @@ table_sizes = defaultdict(int)
 in_table = False
 get_header = False
 
+def usage():
+    print("========COMMANDS (with or without dash)========")
+    print("-v/-nv = verbose on/off")
+    print("-ba/-b = write backup")
+    print("-lt/-tl = test log")
+    print("-bf/-fb = biggest first. -1b/-b1 = turns this off.")
+    print("zf/zl or nzl/nzf/zfn/zln zaps the first (size wise) of the tables or last (smallest)")
+    print()
+    print("In a pinch you can use CSV to get a geometric mean of that.")
+    print("-u = update log file = main option. -nu/-un = don't update")
+    exit()
+
 argcount = 1
 
 while argcount < len(sys.argv):
@@ -58,6 +70,10 @@ while argcount < len(sys.argv):
     elif arg == 'nzf' or arg == 'zfn': zap_first = False
     elif arg == 'zl': zap_last = True
     elif arg == 'nzl' or arg[0] == 'zln': zap_last = False
+    elif arg == '?': usage()
+    else:
+        print("Unknown command", sys.arg[argcount], "usage below:")
+        usage()
     argcount += 1
 
 with open(i7.tafi('ai')) as file:
