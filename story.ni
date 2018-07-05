@@ -1619,8 +1619,7 @@ check useoning it with:
 					set the pronoun it to getit entry;
 				else if use1 entry is moot and use2 entry is not moot:
 					set the pronoun it to use2 entry;
-				if second noun is a workable:
-					wear-down second noun;
+				if second noun is a workable, wear-down second noun;
 				the rule succeeds;
 			else if there is no use2 entry:
 				say "[babble entry][line break]";
@@ -1953,6 +1952,7 @@ this is the rev-deny-Ned rule:
 this is the rev-emit-noontime rule:
 	if emitted is true, the rule fails;
 	say "You EMIT NOONTIME with the Yard Ray.";
+	now emitted is true;
 	the rule succeeds;
 
 this is the rev-evade-Dave rule:
@@ -2123,7 +2123,7 @@ this is the orc-gone rule:
 this is the ready-to-test rule:
 	if emitted is true, the rule succeeds;
 	get-reject test set;
-	say "[if murdered rum is moot]The yard ray is empty[else]You aren't sure how the Yard Ray works, or what it needs to zap people with. Maybe you should review it to figure things out[end if].";
+	say "[if murdered rum is not moot]The yard ray is empty[else]You aren't sure how the Yard Ray works, or what it needs to zap people with. Maybe you should review it to figure things out[end if].";
 	the rule fails;
 
 this is the sap-in-cup rule:
@@ -2339,7 +2339,7 @@ this is the you-win rule: [xxwin]
 	follow the notify score changes rule;
 	say "[line break]You wonder how you'll get back, but then you see the Flee Elf running towards you. 'Tardy, drat! ... 'This, I h/t! [if cur-score of Odd Do is max-score of Odd Do]Decay?! ACED[else]Won enow[end if]!' You ask hesitantly about what's next. You don't want or need people chanting 'Deified! Deified! Deified!', but...[wfak-d]";
 	say "'The X-ITE TIX lead BACK TO THE REAL WORLD WHICH WILL BE FAR MORE EXCITING AND ILLUMINATING FOR YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a there-and-back-but-wiser summary. Books like that always kind of annoyed you once you figured the whole schtick out, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand says, 'I'll need the pact cap back. It will go to our new museum.'[paragraph break]'What's it called?' you ask, despite yourself.[wfak-d]";
-	say "[paragraph break]'Well, there's still argument over We-I-View, Show-Ohs and Trofy Fort.' (Trofee?) The Flee Elf asks which you prefer, and after an awkward silence, you mention they all seem equally appropriate.[paragraph break]'Well, anyway. This RIDE-DIR will help you return to your own world. And here is an x/o box.'[wfak-d]";
+	say "[paragraph break]'Well, there's still argument over We-I-View, Show-Ohs and Trofy Fort.' (Trofee?) The Flee Elf asks which you prefer, and after an awkward silence, you mention they all seem equally appropriate and unforced. Another awkward silence! How palindromic![paragraph break]'Well, anyway. This RIDE-DIR will help you return to your own world. And here is an x/o box.'[wfak-d]";
 	say "The x/o box isn't much: nothing's inside, and it's engraved 'U Remem'er, U,' 'Done? NOD' and 'U Did U.' But if it were too obvious and gaudy, how would you explain it back home?[paragraph break]As you stare at it, you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered with stuff you can't fix?[wfak-d]";
 	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar or maybe a TekCo Rocket, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call your writing? NOW I WON and EL BIBLE are way too pompous, but some brainstorming gives DARN RAD, SOME MEMOS, I SAW [']TWAS I, DRAWN INWARD, WENT NEW, SAGAS or SOLOS. Or--no, that's it. ELATE TALE.";
 	end the story finally saying "Roxor! Roxor! Roxor!";
@@ -4039,14 +4039,22 @@ rule for supplying a missing second noun when useoning:
 
 to wear-down (w - a workable):
 	decrement useleft of w;
-	if useleft of w is 0, say "[line break]You watch as [the w] sputters and dies. [if number of workedout workables is 2]Oh dear. That's the second one down[else]Well, you got a lot of good use out of it, and hopefully you won't need any more[end if].";
-	if useleft of w is 1, say "[line break]The [w] wheezes an emphatic 'FOOF.' Hopefully, you won't need to use it too much more.";
+	if useleft of w is 0 and deep-speeding is false:
+		if revving-over is false:
+			say "[line break]You watch as [the w] sputters and dies. [if number of workedout workables is 2]Oh dear. That's the second one down[else]Well, you got a lot of good use out of it, and hopefully you won't need any more[end if].";
+		else:
+			say "(BOOM! You took out the [w] in the process.)[line break]";
+	if useleft of w is 1 and revving-over is false and deep-speeding is false, say "[line break]The [w] wheezes an emphatic 'FOOF.' Hopefully, you won't need to use it too much more.";
 	if machuses is 0:
 		hint-bump-worn;
-		say "[line break]With [the list of workables] all destroyed, Work Row shakes a bit more. The machines fall out from a wall, revealing something behind ... a test set. It's big and huge and you can't move it, but who knows what it'll be useful for later?";
+		if deep-speeding is false:
+			if revving-over is false:
+				say "[line break]With [the list of workables] all destroyed, Work Row shakes a bit more. The machines fall out from a wall, revealing something behind ... a test set. It's big and huge and you can't move it, but who knows what it'll be useful for later?";
+			else:
+				say "(And that's all 3 machines in Word Row down.)[line break]";
 		move test set to Worn Row;
 		now all workables are in devreserved; [ic]
-		[?? how to moot all workables]
+		[?? trivial coding stuff: how to moot all workables]
 
 definition: a workable (called w) is workedout:
 	if useleft of w is 0, yes;
@@ -5843,7 +5851,7 @@ carry out revovering:
 			if the rule succeeded:
 				increment global-delay;
 				if sco entry is true:
-					if debug-state is true, say "(DEBUG) (+1 [preproc entry])[line break]";
+					if debug-state is true, say "(DEBUG: non-use point) (+1 [preproc entry])[line break]";
 					increment the score;
 					increment cur-score of reg-plus entry;
 					increment turns-to-add;
@@ -5869,9 +5877,10 @@ carry out revovering:
 			now u2a is true;
 			now player has use2 entry;
 		if deep-speeding is false, say "You [if u1a is true](acquire and) [end if]use [the use1 entry] on/with [if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if].";
+		if use2 entry is a workable, wear-down use2 entry;
 		increment turns-to-add;
 		if sco entry is true:
-			if debug-state is true and deep-speeding is false, say "*(DEBUG) (+1 above)[line break]";
+			if debug-state is true and deep-speeding is false, say "*(DEBUG: use point) (+1 above)[line break]";
 			increment the score;
 			increment cur-score of reg-plus entry;
 		if there is a getit entry, now player has getit entry; [?? guru rug shouldn't be take-able but code is tricky]
