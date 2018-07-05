@@ -3,6 +3,10 @@
 #
 # convert the walkthrough to test files for REV OVER
 #
+# sample usage
+#
+# revit.py -l0 -l1 d0,1 ad0,1
+#
 
 import i7
 import os
@@ -14,6 +18,8 @@ this_cmd = defaultdict(str)
 what_skipped = defaultdict(str)
 destinations = defaultdict(str)
 
+first_line = "# created with the revit.py python tool\n"
+
 start_low = start_high = 0
 end_low = end_high = 0
 deep_low = deep_high = 0
@@ -21,24 +27,27 @@ alt_low = alt_high = 0
 launch_first = launch_last = False
 alt_deep_speed = False
 create_deep_speed = False
+do_revs = False
 
-end_str = ">use ME gem on Knife Fink\nby one point\n\n>use taboo bat on Verses Rev\nby one point\n\n>use yard ray on redivider\nby one point\n\n>s\n\n>use x-ite tix on tix exit\nby one point\n\n>s\n"
+end_str = ">n\n>use me gem on knife fink\n>use taboo bat on verses rev\n>use yard ray on redivider\n>s\n>use x-ite tix on tix exit\nYes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through.\n>s\nRoxor!\n"
 
 line_nums = []
 
-def create_alt_speed(idx):
-    file_name = "reg-ai-altspeed-{:d}.txt".format(idx)
+def create_speed_thru(base_file, base_out_str, idx):
+    file_name = base_out_str.format(idx)
     f = open(file_name, "w")
-    f.write("# reg-ai-altspeed-{:d}.txt\n\n** game: /home/andrew/prt/debug-ailihphilia.ulx\n** interpreter: /home/andrew/prt/glulxe -q\n\n* runthrough\n\n".format(idx))
+    f.write(first_line)
+    f.write("# {:s}\n\n".format(file_name))
+    f.write("** game: /home/andrew/prt/debug-ailihphilia.ulx\n** interpreter: /home/andrew/prt/glulxe -q\n\n* runthrough\n\n".format(idx))
     buffer = ''
     cmd_idx = 0
     force_revit = False
     ignore_point = False
     any_cmd_yet = False
-    with open("reg-ai-thru-alt.txt") as file:
+    with open(base_file) as file:
         for (line_count, line) in enumerate(file, 1):
             if not any_cmd_yet:
-                if not line.startswith(">"): next
+                if not line.startswith(">"): continue
                 any_cmd_yet = True
             buffer += line
             if line.startswith('#force-revit-cmd'):
@@ -55,13 +64,10 @@ def create_alt_speed(idx):
                 cmd_idx += 1
                 if cmd_idx > idx: break
                 f.write(buffer)
-                print("====start")
-                print(buffer)
-                print("====end")
                 buffer = ''
                 continue
             #f.write(line)
-    f.write("\n>deep speed\n\n")
+    f.write(">deep speed\n\n")
     f.write(end_str)
     f.close()
     print("Wrote", file_name)
@@ -69,6 +75,7 @@ def create_alt_speed(idx):
 def create_speed(idx):
     file_name = "reg-ai-deepspeed-{:d}.txt".format(idx)
     f = open(file_name, "w")
+    f.write(first_line)
     f.write("# reg-ai-deepspeed-{:d}.txt\n\n** game: /home/andrew/prt/debug-ailihphilia.ulx\n** interpreter: /home/andrew/prt/glulxe -q\n\n* runthrough\n\n".format(idx))
     with open("walkthrough.txt") as file:
         for (line_count, line) in enumerate(file, 1):
@@ -198,9 +205,11 @@ while count < len(sys.argv):
             end_high = ary[1]
     elif arg == 'l' or arg == 'l1': launch_first = True
     elif arg == 'll' or arg == 'l0': launch_last = True
+    elif arg == 'r': do_revs = True
+    elif arg == 'nr' or arg == 'rb': do_revs = False
     elif arg.startswith('d'):
         create_deep_speed = True
-        arg2 = re.sub("^ds?", "", arg)
+        arg2 = re.sub("^d(s?)", "", arg)
         if arg2:
             try:
                 poss_array = sorted([int(x) for x in arg2.split(',')])
@@ -271,26 +280,24 @@ if went_over: print("NOTE: One of your starting or ending values was too high, s
 
 read_destinations()
 
-if alt_deep_speed:
-    if alt_high == -1: alt_high = max_stuff
-    print("Working from ALT walkthrough file to create deep speed tests:", ("only {:d}".format(alt_low) if alt_low == alt_high else "{:d} to {:d}".format(alt_low, alt_high)))
-    for x in range(alt_low, alt_high + 1): create_alt_speed(x)
-    exit()
-
-if create_deep_speed:
-    print("Working from standard walkthrough to create deep speed tests.")
-    if deep_high == -1: deep_high = max_stuff
-    for x in range(deep_low, deep_high + 1): create_speed(x)
-    exit()
-
 if do_all:
     start_low = end_low = 0
     start_high = end_high = max_stuff
 
-for x in range (start_low, start_high + 1):
-    for y in range (end_low, end_high + 1):
-        if x > y: continue
-    make_wthru(x, y)
+if alt_deep_speed:
+    if alt_high == -1 or alt_high > max_stuff: alt_high = max_stuff
+    print("Working from **ALT** regex test file to create deep speed tests:", ("only {:d}".format(alt_low) if alt_low == alt_high else "{:d} to {:d}".format(alt_low, alt_high)))
+    for x in range(alt_low, alt_high + 1): create_speed_thru("reg-ai-thru-alt.txt", "reg-ai-altspeed-{:d}.txt", x)
 
-if launch_first: os.system(my_file(start_low, end_low))
-if launch_last: os.system(my_file(start_high, end_high))
+if create_deep_speed:
+    print("Working from regular regex test file to create deep speed tests:", ("only {:d}".format(alt_low) if alt_low == alt_high else "{:d} to {:d}".format(alt_low, alt_high)))
+    if deep_high == -1 or deep_high > max_stuff: deep_high = max_stuff
+    for x in range(deep_low, deep_high + 1): create_speed_thru("reg-ai-thru-min.txt", "reg-ai-regspeed-{:d}.txt", x)
+
+if do_revs:
+    for x in range (start_low, start_high + 1):
+        for y in range (end_low, end_high + 1):
+            if x > y: continue
+        make_wthru(x, y)
+    if launch_first: os.system(my_file(start_low, end_low))
+    if launch_last: os.system(my_file(start_high, end_high))
