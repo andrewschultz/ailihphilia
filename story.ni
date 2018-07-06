@@ -130,7 +130,7 @@ section debug compiler globals - not for release
 
 use MAX_VERBS of 450. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
-use MAX_VERBSPACE of 4200. [4096 = original max]
+use MAX_VERBSPACE of 4400. [4096 = original max]
 
 chapter kinds of things
 
@@ -543,7 +543,7 @@ when play begins:
 	say "'Name, man? Eve? Pip? Otto? Anna? Bob? Nan? Aviva? Hannah? Elle? Ebbe?' You back away--it doesn't seem to care if you're male or female, but it's a persis-rep. It introduces itself as the Flee Elf. And you feel guilty YOU weren't paying attention to ITS gender.[wfak-d]";
 	say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because you looked up the winning strategy on the Internet after it confused you. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers. Then 'Is reversi...?'";
 	say "After your fifth win in a row, the Flee Elf yells 'GRAAAARG!' You stumble back and fall to the ground.[wfak-d]";
-	say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Ares[']s Era, Raw Level War, Base Sab or Mista-T Sim. You'll do for Yelpley, I guess.' The Flee Elf leads you away. 'The first thing to do is, figure how to take this cap.'[wfak-d]";
+	say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Ares[']s Era, Raw Level War, Base Sab or Mista-T Sim. You'll do for Yelpley, I guess.' The Flee Elf leads you away. 'Confused? Well, I'll quit bugging you once you figure how to take this-here cap.'[wfak-d]";
 	do nothing; [debug information below here. I've had problems putting it in and not deleting it, so I want to make things clear.]
 
 [??mike kim nora maron Marge Pegram lee mcmeel]
@@ -2377,12 +2377,12 @@ instead of useoning something with a peripheral thing:
 
 instead of doing something when second noun is a semiperipheral thing:
 	if action is pro-and-use, continue the action;
-	if current action is stacking and noun is senile felines, continue the action; [?? horrid hack for LLP here and below]
-	if current action is mussing and noun is opossum, continue the action;
 	blanket-reject second noun instead;
 
 instead of doing something with a semiperipheral thing:
 	if action is pro-and-use, continue the action;
+	if current action is stacking and noun is senile felines, continue the action; [?? horrid hack for LLP here and below]
+	if current action is mussing and noun is opossum, continue the action;
 	blanket-reject noun instead;
 
 to blanket-reject (bj - a thing):
@@ -2859,7 +2859,7 @@ the part strap is peripheral. description is "It's more for overzealous religiou
 
 chapter x-ite tix
 
-the x-ite tix are a plural-named thing. description is "A duo. Loud. They promise passage to an EVEN MORE EXCITING AND EXPANSIVE ADVENTURE THAN THE ONE YOU'VE JUST FINISHED.[paragraph break]The words 'WOW' and 'YAY' are also written about ten times on each ticket."
+the x-ite tix are a plural-named thing. description is "A duo. Loud. They promise passage to an EVEN MORE EXCITING AND EXPANSIVE ADVENTURE THAN THE ONE YOU'VE JUST FINISHED.[paragraph break]The words 'WOW' and 'YAY' are dotted all around, none overlapping the main 'TIX: I FIX IT' message."
 
 understand "xite" and "xite tix" as x-ite tix.
 
@@ -3818,7 +3818,7 @@ to say name-num of (n - a number) and (ph - a phonebook):
 			continue the action;
 
 after examining Oh Who for the first time:
-	if debug-state is true, say "Seed = [initseed of Oh Who].";
+	if debug-state is true, say "DEBUG Seed = [initseed of Oh Who].";
 	continue the action;
 
 after examining Name ME Man for the first time:
@@ -4904,7 +4904,7 @@ instead of entering tube but: try going north instead.
 
 tube-try is a truth state that varies.
 
-to say tbut: say "[if tube-try is false]you can't see where it goes[else]you already tried to follow the Door Frood, and nothing good happened.[end if]"
+to say tbut: say "[if tube-try is false]you can't see where it goes[else]you already tried to follow the Door Frood, and nothing good happened[end if]"
 
 check going north in Evaded Ave:
 	if tube but is in Evaded Ave, say "[if tube-try is true]The rood-y door behind the tube seemed extra fortified. Plus[else]You try to follow the Door Frood and enter the tube, but ... you hit your head on a rood-y door (which you maybe should've expected) in the passage as the tube turns. You hear the Door Frood laughing. At you or [b]TO IDIOT[r], you don't know. Eh, well[end if], you really don't want to see the Door Frood again.";
@@ -5794,6 +5794,26 @@ carry out deepspeeding:
 	try revovering;
 	now deep-speeding is false;
 	now i-sped is true;
+	the rule succeeds;
+
+section smitimsing - not for release
+
+smitimsing is an action out of world.
+
+understand the command "smitims" as something new.
+
+understand "smitims" as smitimsing.
+
+carry out smitimsing:
+	unless kaos oak is moot, say "Remove the [kaoscaps] first. DEEP SPEED may be handy." instead;
+	if Dirge Grid is visited, say "Too late for SMITIMS." instead;
+	if player is not in Fun Nuf, move the player to Fun Nuf, without printing a room description;
+	try going north;
+	if the player is not in Dirge Grid, say "Oops. Something went wrong. Check your inventory. Make sure the redivider is loaded, and you know how to use it. Remember, you can always DEEP SPEED." instead;
+	try useoning ME gem with Knife Fink;
+	try useoning taboo bat with Verses Rev;
+	try useoning yard ray with redivider;
+	try going south;
 	the rule succeeds;
 
 chapter revovering
@@ -6792,7 +6812,7 @@ part final questions
 Table of Final Question Options (continued)
 final question wording	only if victorious	topic	final response rule	final response activity
 "see responses to various commands (RAND 0 for list, RAND 1-[number of rows in table of all randoms] for specific table)"	true	"RAND [number]"	--	rling
-"see what you MISSED"	true	"MISSED"	what-missed rule	loafing
+"see [if LLP-hint-yet is false]hints for [end if]which LLP[if cur-score of Odd Do is not 10]s[end if] you MISSED"	true	"LLP/LLPS/MISSED"	what-missed rule	loafing
 --	true	"AMT"	amuse-toggle rule	loafing
 
 rling is an activity.
@@ -6806,7 +6826,8 @@ carry out randlisting:
 	if number understood is 0:
 		repeat through table of all randoms:
 			increment count;
-			say "[count]. [tabnam entry][line break]";
+			say "[count]. [desc entry][line break]";
+		say "[line break]This doesn't include the tables of names for each phone book. Those are both really long, and you'll probably want to see the source code (Ailihphilia Tables.i7x) if you're really interested.";
 		the rule succeeds;
 	if number understood < 0 or number understood > number of rows in table of all randoms, say "Need 1-[number of rows in table of all randoms]." instead;
 	choose row number understood in table of all randoms;
@@ -6835,30 +6856,36 @@ rule for amusing a victorious player:
 
 part what you missed (LLP)
 
+LLP-hint-yet is a truth state that varies.
+
 this is the what-missed rule:
 	let missed be 0;
 	repeat through table of last lousy points:
 		consider the dorule entry;
 		if the rule failed:
-			say "[funstuff entry]";
+			say "[if LLP-hint-yet is false][LLP-clue entry][else][LLP-spoil entry][end if]";
 			increment missed;
-	if missed is 0, say "You found all the points!"
+	if missed is 0:
+		say "You found all the points!";
+	else if LLP-hint-yet is false:
+		now LLP-hint-yet is true;
+		say "Type MISSED again to spoil the LLPs."
 
 chapter misses table
 
 table of last lousy points [xxllp]
-funstuff	mclu	finord	dorule	cluey
-"BOOB or POOP or PAP to swear 'right'"	false	1	pb-yet rule	"swear 'right'"
-"REFER instead of THINK"	false	2	refer-yet rule	"THINK, or recall, information differently"
-"DIAL AID instead of AID"	false	3	dial-yet rule	"ask for AID a bit more formally"
-"PEEP instead of looking"	false	4	peep-yet rule	"LOOK differently"
-"STATS to get the score"	false	5	stats-yet rule	"get the SCORE differently"
-"TRACE CART to find an 'extra' book"	false	6	cart-traced rule	"find an extra book in [if ever-wordrow is true]the tract cart[else]a cart containing books[end if]"
-"SLAM MAMMALS around the eels"	false	7	slam-yet rule	"apologize for mammals to [if Ooze Zoo is unvisited]some non-mammals[else]the eels[end if]"
-"STACK CATS to help the senile felines"	false	8	cats-stacked rule	"help the cats in [moo-room-vis]"
-"SEE BEES in Moo Room"	false	9	bees-seen rule	"notice the source of the buzzing in [moo-room-vis]"
-"BALM LAB in the Bald Lab"	false	10	balm-yet rule	"get one more item [if Pro Corp is unvisited]from the northeast room[else]from [Pro Corp][end if][if bald-lab is true] after looting it[end if]"
-"MUSS OPOSSUM to make a friend"	false	11	muss-yet rule	"be nice to [if Le Babel is unvisited]an opossum somewhere in the future[else]the opossum in Le Babel[end if]"
+LLP-clue	LLP-spoil	mclu	finord	dorule	cluey
+"Three ways to swear right, none over four letters"	"BOOB or POOP or PAP to swear 'right'"	false	1	pb-yet rule	"swear 'right'"
+"A five-letter way to think"	"REFER instead of THINK"	false	2	refer-yet rule	"THINK, or recall, information differently"
+"A different way to ask for AID"	"DIAL AID instead of AID"	false	3	dial-yet rule	"ask for AID a bit more formally"
+"A four-letter way to look"	"PEEP instead of looking"	false	4	peep-yet rule	"LOOK differently"
+"A five-letter way to get your score"	"STATS to get the score"	false	5	stats-yet rule	"get the SCORE differently"
+"Another way to examine the tract cart"	"TRACE CART to find an 'extra' book"	false	6	cart-traced rule	"find an extra book in [if ever-wordrow is true]the tract cart[else]a cart containing books[end if]"
+"Discuss mammals with the eels"	"SLAM MAMMALS around the eels"	false	7	slam-yet rule	"apologize for mammals to [if Ooze Zoo is unvisited]some non-mammals[else]the eels[end if]"
+"Help the felines, err, cats"	"STACK CATS to help the senile felines"	false	8	cats-stacked rule	"help the cats in [moo-room-vis]"
+"Find the source of the buzzing in Moo Room (3/4 letters)"	"SEE BEES in Moo Room"	false	9	bees-seen rule	"notice the source of the buzzing in [moo-room-vis]"
+"Find something healing in the Bald Lab"	"BALM LAB in the Bald Lab"	false	10	balm-yet rule	"get one more item [if Pro Corp is unvisited]from the northeast room[else]from [Pro Corp][end if][if bald-lab is true] after looting it[end if]"
+"Be nice to the opossum in Le Babel"	"MUSS OPOSSUM to make a friend"	false	11	muss-yet rule	"be nice to [if Le Babel is unvisited]an opossum somewhere in the future[else]the opossum in Le Babel[end if]"
 [zzllp]
 
 to say moo-room-vis:
