@@ -19,6 +19,7 @@ def un_palindrome(q):
     if q == q[::-1]: return False
     if q.startswith('an'): q = q[2:]
     elif q.startswith('a'): q = q[1:]
+    elif q.startswith('the thing called'): q = q[16:]
     elif q.startswith('the'): q = q[3:]
     if q == q[::-1]: return False
     if verbose: print("Oops couldn't palindrome", q)
@@ -45,7 +46,7 @@ def read_ignore_file():
                 regex_ignore_dict[q] = True
 
 def zap_prefix(x):
-    t2 = re.sub(r"^(the|a|an|some|there is a book called) ", "", x, 0, re.IGNORECASE)
+    t2 = re.sub(r"^(the thing called|the|a|an|some|there is a book called) ", "", x, 0, re.IGNORECASE)
     return t2
 
 def letonly(x):
@@ -76,8 +77,7 @@ def pal_ver(f):
     table_header = False
     print("Starting", f)
     with open(f) as file:
-        for line in file:
-            line_count += 1
+        for (line_count, line) in enumerate(file, 1):
             if line.startswith('[') and ']' not in line: # multi line comment check here and below
                 in_comment = line_count
                 continue
@@ -88,15 +88,15 @@ def pal_ver(f):
             if line.startswith("\t") or not line.strip():
                 in_table = ""
                 continue
-            if table_header:
-                table_header = False
-            if line.startswith("table of") and not '\t' in line:
+            if table_header: table_header = False
+            if line.lower().startswith("table of") and not '\t' in line:
                 in_table = line.lower().strip()
                 table_header = True
                 continue
             if in_table and line.startswith("\["):
                 in_table = "" # allow for comments at the end of a table, e.g. [xxuse] [zzuse] define start and end of table
                 continue
+            if in_table and 'amusements' in in_table: continue
             if in_table and line.startswith('"') and line.strip().endswith(']'):
                 if '[ignore]' in line: continue
                 line = re.sub("\[[^\[]*\]$", "", line)
@@ -105,7 +105,7 @@ def pal_ver(f):
                 if '"Ailihphilia" by' in line: continue # this is the title
                 if un_palindrome(q): # and '[ignore]' not in line and '[okdup]' not in line:
                     err_count += 1
-                    print("Bad line", line_count, "in", f, "--", line.strip())
+                    print("Bad line", line_count, "in", f, ("({:s})".format(in_table) if in_table else "") + "--", line.strip())
                 continue
             if ' is ' in line or ' are ' in line:
                 if in_table != "": continue
