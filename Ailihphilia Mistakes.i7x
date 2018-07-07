@@ -479,9 +479,9 @@ understand "mra arm" as a mistake ("No! Mr. Arm is on the side of social justice
 
 understand "mraz arm" as a mistake ("You don't need Mr. Arm singing 'I'm yours.' He is already in your inventory.[mis of 187]") when Mr Arm is quicknear.
 
-understand "pro gorp" as a mistake ("You score no free trail mix, alas.[mis of 263]") when player is in Pro Corp and bald-lab is false.
+understand "pro gorp" as a mistake ("You score no free trail mix, alas.[mis of 263]") when player is in Pro Corp and not bald-lab.
 
-understand "pro vorp" as a mistake ("No stat junkies appear to drive you up the wall.[mis of 264]") when player is in Pro Corp and bald-lab is false.
+understand "pro vorp" as a mistake ("No stat junkies appear to drive you up the wall.[mis of 264]") when player is in Pro Corp and not bald-lab.
 
 understand "psi lisp" as a mistake ("The Psi Wisp can't speak.[mis of 188]") when Psi Wisp is quicknear.
 
@@ -705,7 +705,7 @@ to say mis of (n - a number):
 					now mclu entry is true;
 					if mis-yet is false:
 						now mis-yet is true;
-						say "[line break]NOTE: THINK[if refer-bonus is true]/REFER[end if] will show you the LLPs clued so far that you haven't figured, yet.[run paragraph on][line break]";
+						say "[line break]NOTE: THINK[if refer-yet is true]/REFER[end if] will show you the LLPs clued so far that you haven't figured, yet.[run paragraph on][line break]";
 					continue the action;
 
 volume old school verbs

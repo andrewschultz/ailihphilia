@@ -2028,11 +2028,13 @@ this is the rev-tend-net rule:
 this is the rev-word-row rule:
 	if ever-wordrow is true, the rule fails;
 	say "You transform Worn Row into WORD ROW.";
+	now ever-wordrow is true;
 	the rule succeeds;
 
 this is the rev-work-row rule:
 	if ever-workrow is true, the rule fails;
 	say "You transform Worn Row into WORK ROW.";
+	now ever-workrow is true;
 	the rule succeeds;
 
 this is the rev-worn-row rule:
@@ -2227,7 +2229,7 @@ this is the kid-left rule:
 this is the make-sag rule:
 	move gash sag to Pro Corp;
 	unless redact-postrule, say "Soon after you take the resale laser, a small gash sag fills in the explosion you made. Technology! Also, you're not saddled with a bath-tab for the damage you did.";
-	consider the bald-lab rule;
+	unless redact-postrule, consider the notify bald lab rule;
 	the rule succeeds;
 
 this is the maps-explain rule:
@@ -3768,7 +3770,7 @@ Flu Gulf	" FLU "	"GULF "
 Trapeze Part	"TRAPE"	"PART "
 Evaded Ave	"EVADE"	" AVE "
 Yell Alley	"YELL "	"ALLEY"
-Pro Corp	"[if bald-lab is true]BALD[else] PRO[end if] "	"[if bald-lab is true]LAB [else]CORP[end if] "
+Pro Corp	"[if bald-lab]BALD[else] PRO[end if] "	"[if bald-lab]LAB [else]CORP[end if] "
 Yack Cay	"YACK "	" CAY "
 Le Babel	" LE  "	"BABEL"
 Cold Loc	"COLD "	" LOC "
@@ -5234,6 +5236,10 @@ book Pro Corp
 
 Pro Corp is north of Gross Org. It is in Yelpley. description is "This obscure lab is lit by an unseen blu-bulb. [if butene tub is in Pro Corp]A butene tub rests here. At least, that's what it says it is[else]Pro Corp is devoid of equipment now you blew up the butene tub[end if]. The only way out is back south. [if butene tub is moot]The Sci Pics you ignored while destroying[else]Sci Pics that seem to warn what NOT to do with[end if] the butene tub cover the walls."
 
+printed name of Pro Corp is "[if bald-lab]Bald Lab[else]Pro Corp[end if]".
+
+understand "bald/lab" and "bald lab" as Pro Corp when bald-lab.
+
 check going south in Pro Corp when being-chased is true:
 	mug-the-player;
 
@@ -5251,21 +5257,13 @@ instead of taking a thing when player is in Pro Corp and Psi Wisp is in Pro Corp
 		add Q to multiple object list;
 	say "OUCH! The psi wisp stings your hand before you can grab [the noun]." instead;
 
-report taking when player is in Pro Corp:
-	consider the bald-lab rule;
+after taking when player is in Pro Corp (this is the notify bald lab rule):
+	if bald-lab, say "Thanks to your actions, Pro Corp is now a bald lab.";
 	continue the action;
 
-this is the bald-lab rule:
-	if butene tub is moot and DNA band is not in Pro Corp and gold log is not in Pro Corp:
-		say "Thanks to your actions, Pro Corp is now a bald lab.";
-		now bald-lab is true;
-		now printed name of Pro Corp is "Bald Lab";
-	else:
-		continue the action;
-
-bald-lab is a truth state that varies.
-
-understand "bald/lab" and "bald lab" as Pro Corp when bald-lab is true.
+to decide whether bald-lab:
+	if butene tub is moot and DNA band is not in Pro Corp and gold log is not in Pro Corp, yes;
+	no;
 
 chapter Sci Pics
 
@@ -6380,7 +6378,9 @@ this is the fun-nuf-hint rule:
 	now more-later is true; [ we will always have more to do here ]
 	if Dirge Grid is not mapped north of Fun Nuf and Flee Elf is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if Dirge Grid is mapped north of Fun Nuf and Diktat Kid is in Dirge Grid, say "You will need to go north to face the Diktat Kid[unless player has ME gem and player has taboo bat and murdered rum is moot], but you are worried you're not quite prepared[end if]!" instead; [?? indicate that you may need to pick off the bosses as well]
+	if Dirge Grid is mapped north of Fun Nuf:
+		if Diktat Kid is in Dirge Grid, say "You will need to go north to face the Diktat Kid[unless player has ME gem and player has taboo bat and murdered rum is moot], but you are worried you're not quite prepared[end if]!" instead; [?? indicate that you may need to pick off the bosses as well]
+		say "You don't have much to do except go south through the Tix Exit." instead;
 	if Flee Elf is in Fun Nuf, say "[one of]The Flee Elf wants you to take the cap. But not take. A simile. To show you're in tune with this place.[or]PAC* CAP is the way to go.[or]PACK CAP.[stopping]" instead;
 	if epicer recipe is off-stage, say "There's a useful list of items in Yelpley that may help you figure a way north." instead;
 	say "You'll need to come back later to break open the North-Tron." instead;
@@ -6708,8 +6708,8 @@ balmlabing is an action applying to nothing.
 understand the command "balmlab" as something new.
 understand the command "balm lab" as something new.
 
-understand "balm lab" as balmlabing when player is in Pro Corp and bald-lab is true.
-understand "balmlab" as balmlabing when player is in Pro Corp and bald-lab is true.
+understand "balm lab" as balmlabing when player is in Pro Corp and bald-lab.
+understand "balmlab" as balmlabing when player is in Pro Corp and bald-lab.
 
 carry out balmlabing:
 	if balm-got is true, say "No double dipping." instead;
@@ -6896,7 +6896,7 @@ LLP-clue	LLP-spoil	mclu	finord	dorule	cluey
 "Discuss mammals with the eels"	"SLAM MAMMALS around the eels"	false	7	slam-yet rule	"apologize for mammals to [if Ooze Zoo is unvisited]some non-mammals[else]the eels[end if]"
 "Help the felines, err, cats"	"STACK CATS to help the senile felines"	false	8	cats-stacked rule	"help the cats in [moo-room-vis]"
 "Find the source of the buzzing in Moo Room (3/4 letters)"	"SEE BEES in Moo Room"	false	9	bees-seen rule	"notice the source of the buzzing in [moo-room-vis]"
-"Find something healing in the Bald Lab"	"BALM LAB in the Bald Lab"	false	10	balm-yet rule	"get one more item [if Pro Corp is unvisited]from the northeast room[else]from [Pro Corp][end if][if bald-lab is true] after looting it[end if]"
+"Find something healing in the Bald Lab"	"BALM LAB in the Bald Lab"	false	10	balm-yet rule	"get one more item [if Pro Corp is unvisited]from the northeast room[else]from [Pro Corp][end if][if bald-lab] after looting it[end if]"
 "Be nice to the opossum in Le Babel"	"MUSS OPOSSUM to make a friend"	false	11	muss-yet rule	"be nice to [if Le Babel is unvisited]an opossum somewhere in the future[else]the opossum in Le Babel[end if]"
 [zzllp]
 
@@ -6965,7 +6965,7 @@ understand "llpll" as llplling.
 
 carry out llplling:
 	repeat through table of last lousy points:
-		consider the do                         rule entry;
+		consider the dorule entry;
 		if the rule failed, say "[LLP-spoil entry]";
 	the rule succeeds;
 
