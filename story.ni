@@ -414,23 +414,25 @@ check requesting the score:
 	if Madam is moot, say "You've gotten rid of the La Gal/Madam.";
 	if player has x-ite tix:
 		let Q be roving-LLP;
+		let Q2 be fixed-LLP;
 		if Q is 0:
-			say "You may want to go back to Fun [']Nuf now and [if the score is maximum score - 1]use the tickets[else]try the other LLP command[plur-s of Q][end if].";
+			say "You may want to go back to Fun [']Nuf now and [if the score is maximum score - 1]use the tickets[else]try the other LLP command[plur-s of Q][end if]. ";
 		else:
-			say "You have [Q] roving last lousy point[unless Q is 1]s[end if] left."; [?? test roving LLPs]
+			say "You have [Q] roving last lousy point[unless Q is 1]s[end if] left. "; [?? test roving LLPs]
+		say "Also, you [if Q2 is 0]got all the non-roving LLPs[else]have [Q2] non-roving LLP[plur-s of Q2] left[end if].";
 	if player has epicer recipe and north tron is off-stage:
 		let ni be number of tronparts carried by the player;
 		if martini tram is in Fun Nuf, increment ni;
 		say "You also have [ni] of [number of tronparts] piece[if ni is not 1]s[end if] of the North-Tron, according to the epicer recipe.";
 	if mist-found > 0, say "[line break]You've also found [mist-found] of [number of entries in checkoffs] palindromes that were there but not critical to the story. [if mist-found * 2 > number of entries in checkoffs]Very impressive![else]Don't knock yourself out trying to find them all.[end if]";
-	if score-cheat > 0, say "[line break]Also, you used REV OVER to plow past [score-cheat] point puzzles, but I won't hold it against you.";
+	if score-cheat > 0, say "[line break]Also, you used REV OVER to plow past [score-cheat] point-giving activities, but I won't hold it against you. I'm glad you were motivated to try and see the end!";
 	the rule succeeds;
 
 to say to-get-max:
 	if cur-score of Odd Do is max-score of Odd Do:
 		say "You got all LLPs";
 	else:
-		say "You need at least [min-win] to win[if cur-score of Odd Do > 0], since you got [cur-score of Odd Do]bonus point[plur-s of cur-score of Odd Do][end if]"
+		say "You need at least [min-win] to win[if cur-score of Odd Do > 0], since you got [cur-score of Odd Do] bonus point[plur-s of cur-score of Odd Do][end if]"
 
 to decide which number is min-win:
 	decide on maximum score - max-score of Odd Do + cur-score of Odd Do;
@@ -1089,7 +1091,7 @@ carry out verbing:
 	say "[b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
 	say "[b]THINK[r] gives general non-spoiler hints, including where you may wish to visit, or what is blocking you. [b]AID[r] gives you hints for where you are.";
 	if cur-score of Odd Do < max-score of Odd Do:
-		say "[line break]There are also a few guess-the-verb bonus points that are hidden. Some relate to objects or people that need help but can't help you, and some are riffs on standard commands. [if refer-bonus is false]There's a different way to revisit, rehash or recap this very command, for example[else]For instance, you got REFER as VERBS[end if]";
+		say "[line break]There are also a few guess-the-verb bonus points that are hidden. Some relate to objects or people that need help but can't help you, and some are riffs on standard commands. [if refer-yet is false]There's a different way to revisit, rehash or recap this very command, for example[else]For instance, you got REFER as VERBS[end if]";
 	say "[line break]Also, many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy. If you miss them, you'll see the entire list at the end.";
 	say "[b]META[r] (or [b]META AT EM[r] has information on meta-verbs, which includes options (e.g. turning some minor hints on or off), scoring and information on how the game was created and who helped.";
 	if in-beta is true, say "META also gives beta tester comands.";
@@ -1218,7 +1220,7 @@ carry out lovevoling:
 
 chapter refering
 
-refer-bonus is a truth state that varies.
+refer-yet is a truth state that varies.
 
 refering is an action out of world.
 
@@ -1227,10 +1229,10 @@ understand the command "refer" as something new.
 understand "refer" as refering.
 
 carry out refering:
-	if refer-bonus is false:
+	if refer-yet is false:
 		say "Yes! That's a slightly more appropriate way to look at the verb list, here.";
 		abide by the LLP rule; [REFER]
-		now refer-bonus is true;
+		now refer-yet is true;
 	try verbing;
 	follow the notify score changes rule;
 	the rule succeeds;
@@ -2580,6 +2582,15 @@ check going west in Fun Nuf: if Diktat Kid is moot and west-LLP is 0, say "There
 
 to decide which number is roving-LLP: [Not location dependent: DIAL AID, STATS, REFER, POOP, PEEP]
 	decide on west-LLP + east-LLP;
+
+to decide which number is fixed-LLP:
+	let temp be 0;
+	if dial-yet is false, increment temp;
+	if refer-yet is false, increment temp;
+	if stats-yet is false, increment temp;
+	if peeped-yet is false, increment temp;
+	if poop-boob-yet is false, increment temp;
+	decide on temp;
 
 to decide which number is west-LLP:
 	let temp be 0;
@@ -5814,6 +5825,7 @@ carry out smitimsing:
 	try useoning taboo bat with Verses Rev;
 	try useoning yard ray with redivider;
 	try going south;
+	follow the notify score changes rule;
 	the rule succeeds;
 
 chapter revovering
@@ -6370,7 +6382,7 @@ this is the fun-nuf-hint rule:
 	if search-hint-room is true, the rule succeeds;
 	if Dirge Grid is mapped north of Fun Nuf and Diktat Kid is in Dirge Grid, say "You will need to go north to face the Diktat Kid[unless player has ME gem and player has taboo bat and murdered rum is moot], but you are worried you're not quite prepared[end if]!" instead; [?? indicate that you may need to pick off the bosses as well]
 	if Flee Elf is in Fun Nuf, say "[one of]The Flee Elf wants you to take the cap. But not take. A simile. To show you're in tune with this place.[or]PAC* CAP is the way to go.[or]PACK CAP.[stopping]" instead;
-	if player does not have epicer recipe, say "There's a useful list of items in Yelpley that may help you figure a way north." instead;
+	if epicer recipe is off-stage, say "There's a useful list of items in Yelpley that may help you figure a way north." instead;
 	say "You'll need to come back later to break open the North-Tron." instead;
 	if player has X-ITE TIX, say "USE TIX ON TIX EXIT." instead;
 	continue the action;
@@ -6924,7 +6936,7 @@ this is the peep-yet rule:
 	the rule fails;
 
 this is the refer-yet rule:
-	if refer-bonus is true, the rule succeeds;
+	if refer-yet is true, the rule succeeds;
 	the rule fails;
 
 this is the slam-yet rule:
@@ -6940,6 +6952,22 @@ volume beta testing - not for release
 when play begins:
 	now in-beta is true;
 	say "(DEBUG ONLY NOTE: in-beta is true.)[paragraph break]";
+
+section llplling - not for release
+
+[LLP laundry list]
+
+llplling is an action out of world.
+
+understand the command "llpll" as something new.
+
+understand "llpll" as llplling.
+
+carry out llplling:
+	repeat through table of last lousy points:
+		consider the do                         rule entry;
+		if the rule failed, say "[LLP-spoil entry]";
+	the rule succeeds;
 
 chapter llping
 
@@ -7363,9 +7391,9 @@ carry out tccing:
 	if turn count > 10000, say "Ulp! Can't help you!" instead;
 	let oldt be turn count;
 	if turn count < 1000:
+		let y be turn count / 100;
 		let x be the remainder after dividing turn count by 10;
 		now turn count is turn count - x;
-		let y be x / 100;
 		now turn count is turn count + y;
 	else:
 		let z be turn count / 1001;
