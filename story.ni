@@ -2383,52 +2383,53 @@ to blanket-reject (bj - a thing):
 	say "While [the noun] doesn't need any detailed futzing, I don't have a detailed message for why. I need to fix that. Sorry."
 
 table of periphery [xxper]
-itm	reject
-KAOS Oak	"The [kaoscaps] is immune to poking. You'll need a powerful contraption indeed to dispel it!"
-bad dab	"Its message seems important, but it's not good for much except examining."
-Oh Who	"Oh Who is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting, but it's there."
-Name ME Man	"NAME ME MAN is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting, but it's there."
-x y pyx	"The x/y pyx is a map, nothing more, nothing less. You can only [if player does not have x y pyx]take and [end if]examine it."
-sto lots	"You don't want to tinker with the STO LOTS more than it has to. It makes carrying stuff easier, and that's good enough."
-gash sag	"You don't want to mess with the gash sag. Destroying the butene tub is damage enough."
-x-it stix	"No way you're getting through the X-It Stix."
-mist sim	"You don't have anything that would dispel the mist sim."
-tube but	"The tube doesn't lead anywhere you want to go. You don't need to muck with it."
-trap mart rampart	"It's too sturdy to climb or blow up and too wide to go around. But maybe that will just help you focus on where you need to go."
-cassettes sac	"The cassettes sac is too messy to do anything with. You need to find a way to clean it up."
-girt rig	"The girt rig is too sturdy to move. But there's nothing behind it."
-redness ender	"You don't want to do anything crazy with the Redness Ender. You don't want to go near it. It's dangerous looking. You can picture it ambushing someone who doesn't expect it."
-decal placed	"The decal placed decal is just there to advertise the food. It's not critical to the story."
-snooty toons	"The snooty toons are just there for ambience. They're not critical to the story."
-pill lip	"The pill lip is just there to prevent the demo med from getting dirty on the ground."
+itm	reject [thus table is ordered west to east, north to south]
+calcific lac	"There's nothing you need to do TO the calcific lac. You [if lac-score is 2]did enough[else if lac-score is 1]could maybe deal with the [kayak-boat][else]can't imagine the boat and kayak are useless, though[end if]." [start lac often focal 0 0]
+smirk rims	"The smirk rims are only important if you let them be. In other words, they're not." [start Sneer Greens 1 0]
+ebola lobe	"The ebola lobe is impassable. You'd need some Nix-O-Toxin to get through, and there isn't any here." [start Flu Gulf 2 0]
 mush sum	"The mush sum is too murky and unstable to deal with. And to break the fourth wall, it's just there to provide a north border."
-go fog	"The go fog is very dense. It pushes you back even as you look at it. As if to say, go away, and also, get going with what you want and need to do."
-past sap	"[if liar grail is moot]With the liar grail gone, you don't want to have to deal with the past sap again[else]The past sap might be useful, but you [how-take-sap][end if]."
-stewy wets	"The stewy wets are unchangeable."
-den ivy vined	"[ivy-no]."
-ivy villa	"[ivy-no]."
-birch crib	"The birch crib is private property."
-calcific lac	"There's nothing you need to do TO the calcific lac. You [if lac-score is 2]did enough[else if lac-score is 1]could maybe deal with the [kayak-boat][else]can't imagine the boat and kayak are useless, though[end if]."
-Line Nil	"There's nothing you need behind the Line Nil security system. In fact, it's probably protecting you."
-be web	"The be web is--well, it's itself, and maybe there's a message here but you'll figure it out once you're finished adventuring. It's not important enough now."
-voodoo v	"You don't want or need to mess with the voodoo v."
-leet steel	"You want to focus on the Knife Fink and not the leet steel."
-senile felines	"You don't have to do anything standard with the senile felines. In fact, you should think of them as cats."
-late petal	"You don't need to do anything with the late petal. Perhaps you could help the felines, uh, cats reach it?"
-opossum	"The opossum is just there to (optionally) be nice to, in a special, unusual way."
-part strap	"You want to focus on the Verses Rev and not the part strap."
-pool gloop	"Fortunately, you don't need to do anything special to or with the pool gloop."
+tube but	"The tube doesn't lead anywhere you want to go. You don't need to muck with it." [start Evaded Ave 4 0]
+Line Nil	"There's nothing you need behind the Line Nil security system. In fact, it's probably protecting you." [start Yell Alley 5 0]
+gash sag	"You don't want to mess with the gash sag. Destroying the butene tub is damage enough." [start Pro Corp 6 0]
 Sci Pics	"They are just there to [if Gorge Grog is moot]rehash what happened[else]spell out what happens[end if] if you go pouring random explosive liquids down the butene tub."
-spa taps	"The spa taps can't do much. You're not a customer, anyway."
-smirk rims	"The smirk rims are only important if you let them be. In other words, they're not."
-state tats	"You don't need to do anything to or with the state tats, now that you're wearing them."
+mist sim	"You don't have anything that would dispel the mist sim." [start Yack Cay 0 1]
 storm rots	"Yuck. You don't want or need to touch the storm rots, or do anything with them. There's probably worse behind them."
-E Divide	"There's no way to dispel the E-Divide, but Madam isn't the main enemy here, any more."
-DIFF ID	"You don't have the skill to tinker with the DIFF-ID. You [if Red Roses Order is visited]already found[else]just need to find[end if] a way to identify yourself."
+opossum	"The opossum is just there to (optionally) be nice to, in a special, unusual way." [start Le Babel 1 1]
+voodoo v	"You don't want or need to mess with the voodoo v."
+past sap	"[if liar grail is moot]With the liar grail gone, you don't want to have to deal with the past sap again[else]The past sap might be useful, but you [how-take-sap][end if]." [start Cold Loc 2 1]
+pool gloop	"Fortunately, you don't need to do anything special to or with the pool gloop." [start Apse Spa 3 1]
+spa taps	"The spa taps can't do much. You're not a customer, anyway."
+state tats	"You don't need to do anything to or with the state tats, now that you're wearing them." [start traded art 4 1]
+E Divide	"There's no way to dispel the E-Divide, but Madam isn't the main enemy here, any more." [start Red Roses Order 5 1]
+Oh Who	"Oh Who is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting, but it's there." [start Seer Trees 2 2]
+x-it stix	"No way you're getting through the X-It Stix."
+KAOS Oak	"The [kaoscaps] is immune to poking. You'll need a powerful contraption indeed to dispel it!" [start Fun Nuf 3 2]
+Name ME Man	"NAME ME MAN is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting, but it's there." [start Yawn Way]
+x y pyx	"The x/y pyx is a map, nothing more, nothing less. You can only [if player does not have x y pyx]take and [end if]examine it."
+DIFF ID	"You don't have the skill to tinker with the DIFF-ID. You [if Red Roses Order is visited]already found[else]just need to find[end if] a way to identify yourself." [start Emo Dome 5 2]
+ivy villa	"[ivy-no]." [start uneven u 0 3]
+den ivy vined	"[ivy-no]."
+trap mart rampart	"It's too sturdy to climb or blow up and too wide to go around. But maybe that will just help you focus on where you need to go." [start Ooze Zoo 2 3]
+bad dab	"Its message seems important, but it's not good for much except examining." [start Worn Row 3 3]
+redness ender	"You don't want to do anything crazy with the Redness Ender. You don't want to go near it. It's dangerous looking. You can picture it ambushing someone who doesn't expect it."
+sto lots	"You don't want to tinker with the STO LOTS more than it has to. It makes carrying stuff easier, and that's good enough." [start My Gym 4 3]
+decal placed	"The decal placed decal is just there to advertise the food. It's not critical to the story." [start deli tiled 6 3]
+snooty toons	"The snooty toons are just there for ambience. They're not critical to the story."
+go fog	"The go fog is very dense. It pushes you back even as you look at it. As if to say, go away, and also, get going with what you want and need to do." [start Lair Trial 0 4]
+be web	"The be web is--well, it's itself, and maybe there's a message here but you'll figure it out once you're finished adventuring. It's not important enough now." [start Motto Bottom 1 4]
+stewy wets	"The stewy wets are unchangeable." [Frush Surf 2 4]
+senile felines	"You don't have to do anything standard with the senile felines. In fact, you should think of them as cats." [Moo Room 3 4]
+late petal	"You don't need to do anything with the late petal. Perhaps you could help the felines, uh, cats reach it?"
+cassettes sac	"The cassettes sac is too messy to do anything with. You need to find a way to clean it up." [start Dopy Pod 4 4]
+pill lip	"The pill lip is just there to prevent the demo med from getting dirty on the ground."
+birch crib	"The birch crib is private property." [start Drawl Ward 5 4]
+girt rig	"The girt rig is too sturdy to move. But there's nothing behind it." [start Scrap Arcs 6 4]
+leet steel	"You want to focus on the Knife Fink and not the leet steel." [start Dirge Grid x x]
 Par Wrap	"It's not the Verses Rev's clothes you need to worry about."
+part strap	"You want to focus on the Verses Rev and not the part strap."
+saner arenas	"It's good the saner arenas are there, but you don't need to mess with them."
 Tru Hurt	"[rediv-instead of tru hurt]."
 Waster Fretsaw	"[rediv-instead of waster fretsaw]."
-saner arenas	"It's good the saner arenas are there, but you don't need to mess with them."
 [zzper]
 
 to say ivy-no: say "If you weren't good enough for RAW LEVEL WAR, you're definitely not good enough for the Ivies. That's you the character, not you the game-player"
@@ -2710,7 +2711,7 @@ after examining the Darer Ad:
 
 chapter Set O Notes
 
-the Set O Notes is a helpdoc. description is "[b]OPPO[r] is printed at the top. There's vague advice about making a North-Tron to defeat the Diktat Kid, but first you'll have to defeat [b]Madam[r], as well as the [b]Yuge Guy[r].[paragraph break]There's mention of a guh-thug in various places, and you'll have to do something special when you see one. [thug-report].[paragraph break]Also scribbled, in the center, is [b]FUN [']NUF[r] with [b]TRI-GIRT[r] below that. [paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
+the Set O Notes is a helpdoc. description is "[b]OPPO[r] is printed at the top. There's vague advice about making a North-Tron to defeat the Diktat Kid, but first you'll have to defeat [b]Madam[r], as well as the [b]Yuge Guy[r].[paragraph break]There's mention of a guh-thug in various places, and you'll have to do something special when you see one. [thug-report].[paragraph break]Also scribbled, in the center, is [b]FUN [']NUF[r] with [b]TRI-GIRT[r] below that. There are other landmarks scribbled in, which [if number of visited rooms < 20]will help you identify new places and scenic barriers and such[else]have been helpful so far[end if].[paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
 
 understand "oppo" as set o notes.
 
@@ -2978,11 +2979,15 @@ instead of wearing spur ups, say "They would be too pointy for comfort. There ar
 
 book Flu Gulf
 
-Flu Gulf is north of Cold Loc. It is in Grebeberg. "North and east, it's, oh, too H2O. The passage is clear back south, but [if scorn rocs are in Flu Gulf]scorn rocs['] gaze blocks you going west[else]west past the scorn rocs seems a bit treacherous[end if]. No way you're getting through the mush sum to the north."
+Flu Gulf is north of Cold Loc. It is in Grebeberg. "North and east, it's, oh, too H2O. The passage is clear back south, but [if scorn rocs are in Flu Gulf]scorn rocs['] gaze blocks you going west[else]west past the scorn rocs seems a bit treacherous[end if]. No way you're getting through the mush sum to the north, and the ebola lobe to the east is likely to get through you."
 
 chapter mush sum
 
 the mush sum is peripheral scenery in Flu Gulf. "It looks deceptive and swampy. Perhaps it is so deceptive, it is actually gosh-sog. Or not."
+
+chapter ebola lobe
+
+the ebola lobe is peripheral scenery in Flu Gulf. "It doesn't look that awful, but the Set-O-Notes pretty clearly declaims it as Somewhere Not To Go."
 
 chapter gulf lug
 
@@ -3006,11 +3011,14 @@ understand "gog magog" and "gog a/and magog" and "gog/magog" as scorn rocs.
 
 understand "roc" and "scorn roc" as scorn rocs.
 
-check going west in Flu Gulf:
-	if scorn rocs are in Flu Gulf, say "The scorn rocs remain motionless, but their gazes chock full of stone NOTS freeze you as you try to go west. They're not mere starer-ats." instead;
-	if being-chased is true:
-		if Yuge Guy is moot, say "With the Yuge Guy defeated, you don't feel a need to go back to [Sneer Greens]." instead;
-		say "You don't want to face [if Sneer Greens is visited]the Yuge Guy[else]whatever's west[end if] while you're being chased, too." instead;
+check going in Flu Gulf:
+	if noun is east, say "You'd need some Nix-O-Toxin to survive the ebola lobe. There is none here in the game." instead;
+	if noun is north, say "You'd need some Nix-O-Toxin to survive the ebola lobe. There is none here in the game." instead;
+	if noun is west:
+		if scorn rocs are in Flu Gulf, say "The scorn rocs remain motionless, but their gazes chock full of stone NOTS freeze you as you try to go west. They're not mere starer-ats." instead;
+		if being-chased is true:
+			if Yuge Guy is moot, say "With the Yuge Guy defeated, you don't feel a need to go back to [Sneer Greens]." instead;
+			say "You don't want to face [if Sneer Greens is visited]the Yuge Guy[else]whatever's west[end if] while you're being chased, too." instead;
 
 book Sneer Greens
 
@@ -3128,11 +3136,7 @@ chapter opossum
 
 the opossum is a llpish semiperipheral thing in Le Babel. "An opossum crouches here, looking scared. Maybe you can help it be less frozen by fear.". description is "Cute little thing, lovely fur, but it could use a friendly gesture."
 
-instead of doing something with opossum:
-	if current action is taking, say "The opossum bounds away. Perhaps you can be less grabby." instead;
-	if action is procedural, continue the action;
-	if current action is mussing, continue the action;
-	say "You probably want to find a way to comfort the poor scared opossum."
+instead of taking opossum: say "The opossum bounds away. Perhaps you can be less grabby." instead;
 
 section mussing
 
@@ -3332,6 +3336,8 @@ understand "gnu dung" and "gnu/dung" as poo coop when player has poo coop and gn
 chapter senile felines
 
 the senile felines are plural-named llpish semiperipheral things in Moo Room. "Senile felines swat at a late petal just a bit too high to reach. It might be fun to help them, but they probably can't help you. CATS!". description is "They are just lazing around, swatting at the late petal but never reaching it. You guess it must be fun for them.[paragraph break]Maybe it'd be fun to think of them as CATS."
+
+instead of taking senile felines, say "It's hard enough to take ONE cat at a time, much less many."
 
 understand "cats" as senile felines.
 
@@ -5207,7 +5213,7 @@ carry out rading:
 
 chapter Demo Med
 
-a Demo Med is an edible thing in Dopy Pod. "The demo med that must not have worked for the Bond Nob sits here, on a pill lip.". description is "It appears to have a brand name that's scratched out: D--PE-S(I or Y)-."
+a Demo Med is an edible thing in Dopy Pod. "The demo med that must not have worked for the Bond Nob sits here, on a pill lip.". description is "It appears to have a brand name that's scratched out: D--PE-S(I or Y, you can't tell)-."
 
 understand "dispepsid" and "dyspepsyd" as demo med.
 
@@ -5256,7 +5262,7 @@ to decide whether bald-lab:
 chapter LLP hint
 
 after looking in Pro Corp when bald-lab and balm-LLP-yet is false:
-	say "You feel a bit itchy. Maybe it's the chemical reactions in here. Maybe something in here could help fix that, despite it being a bald lab."
+	say "You feel a bit itchy. Maybe it's the chemical reactions in here. Maybe something in here could help fix that, despite it being a bald lab.";
 	continue the action;
 
 chapter Sci Pics
@@ -6819,7 +6825,6 @@ Table of Final Question Options (continued)
 final question wording	only if victorious	topic	final response rule	final response activity
 "see responses to various commands (RAND 0 for list, RAND 1-[number of rows in table of all randoms] for specific table)"	true	"RAND [number]"	--	rling
 "see [if LLP-hint-yet is false]hints for [end if]which LLP[if cur-score of Odd Do is not 10]s[end if] you MISSED"	true	"LLP/LLPS/MISSED"	what-missed rule	loafing
---	true	"AMT"	amuse-toggle rule	loafing
 
 rling is an activity.
 
@@ -6856,9 +6861,14 @@ rule for amusing a victorious player:
 		say "[2da][amu entry]";
 
 table of amusements
+amu
 "A general sweeping note: the mistakes file ([gt] mistakes.i7x) should have all the possible palindrome tries you can make and the text they give. It should be included in the release or at [bb]."
 "Another sweeping note: the tables file ([gt] tables.i7x) in the same location(s) should have all the random texts."
 "Attacking yourself, the ergot ogre, the pact cap, the made dam, or the eels."
+"Asking for PCP in Evaded Ave or Yell Alley."
+"RM GNU around the gnu, or RM MR around Mr. Arm."
+"SMELL the gnu dung, butene tub or Yuge Guy."
+"Some USE X ON Y: you can look in the table of specific use rejects(xx[r]rej in the source) for them all."
 
 part what you missed (LLP)
 
@@ -6871,10 +6881,9 @@ this is the what-missed rule:
 		if the rule failed:
 			say "[if LLP-hint-yet is false][LLP-clue entry][else][LLP-spoil entry][end if]";
 			increment missed;
-	if missed is 0, say "You found all the points!";
-	else if LLP-hint-yet is false:
-		now LLP-hint-yet is true;
-		say "Type MISSED again to spoil the LLPs."
+	if missed is 0, say "You found all the points!" instead;
+	now LLP-hint-yet is true;
+	say "Type MISSED again to spoil the LLPs."
 
 chapter misses table
 
