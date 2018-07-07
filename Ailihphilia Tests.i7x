@@ -18,7 +18,7 @@ include Property Checking by Emily Short.
 
 chapter go walkthrough
 
-test gh1 with "pack cap/stats/peep/poop/dial aid/refer/e/n/get trap art/s/s/evade dave/get saw/w/bore rob/word row/trace cart/get to idiot/gt art xtra/n/use to idiot on door frood/get bunk nub/e/get all/use pity tip on eye/w/w/tend net/gt word row/work row/use trap art on reifier/use bunk nub on reviver".
+test gh1 with "pack cap/stats/peep/poop/dial aid/refer/e/n/get trap art/s/s/evade dave/w/bore rob/word row/trace cart/get to idiot/gt art xtra/n/use to idiot on door frood/get bunk nub/e/get all/use pity tip on eye/w/w/tend net/gt word row/work row/use trap art on reifier/use bunk nub on reviver".
 
 test gh2 with "word row/get epoch cope/gt fun nuf/w/use party trap on stark rats/n/use epoch cope on king nik/s/s/slam mammals/use stock cots on sleep eels/s/get stamp mats/e/get poo coop/gt word row/get yob attaboy/gt yawn way/puff up/e/pull up/get puce cup".
 
@@ -44,7 +44,7 @@ test ghs with "test gh1/test gh2/test gh3/test gh4/test gh5/test gh6/test gh7/te
 
 chapter main walkthrough
 
-test part1 with "pack cap/stats/peep/poop/dial aid/refer/e/n/get trap art/s/s/evade dave/get saw/w/bore rob/word row/trace cart/get to idiot/e/n/n/n/use to idiot on door frood/get bunk nub/e/get all/use pity tip on eye/w/w/tend net/e/s/s/s/w/work row/use trap art on reifier/use bunk nub on reviver".
+test part1 with "pack cap/stats/peep/poop/dial aid/refer/e/n/get trap art/s/s/evade dave/w/bore rob/word row/trace cart/get to idiot/e/n/n/n/use to idiot on door frood/get bunk nub/e/get all/use pity tip on eye/w/w/tend net/e/s/s/s/w/work row/use trap art on reifier/use bunk nub on reviver".
 
 test part2 with "word row/get epoch cope/e/n/w/w/use party trap on stark rats/n/use epoch cope on king nik/s/s/slam mammals/use stock cots on sleep eels/s/get stamp mats/e/get poo coop/w/n/n/e/e/s/w/get yob attaboy/e/n/puff up/e/pull up/get puce cup".
 
@@ -52,11 +52,11 @@ test part3 with "w/w/w/n/use wash saw on past sap/use puce cup on past sap/s/e/e
 
 test part4 with "w/get all/e/e/use stamp mats on slate metals/w/n/n/w/w/w/n/n/use demo med on gulf lug/s/s/e/e/e/e/use cash sac on cross orc".
 
-test part5 with "s/use yob attaboy on sniffins/s/use elan ale on sniffins/stand nat's/n/w/w/s/w/work row/use dirt rid on reviver/e/n/e/s/s/w/use cave vac on cassettes sac/e/n/n/e/use radar on crag arc/n/deny ned/get all/use ye key on etage gate".
+test part5 with "s/use yob attaboy on sniffins/s/use elan ale on sniffins/stand nat's/n/w/w/s/w/get null illun/work row/use dirt rid on reviver/e/n/e/s/s/w/use cave vac on cassettes sac/e/n/n/e/use radar on crag arc/n/deny ned/get all/use ye key on etage gate".
 
 test part6 with "n/s/s/w/w/s/w/worn row".
 
-test part7 with "work row/use stinky knits on rotator/e/n/e/e/n/n/get all/use gorge grog on butene tub/balm lab/s/s/w/w/s/w/use gold log on rotator/e/n/w/w/s/s/e/stack cats/see bees/use some demos on yahoo hay/w/n/n/e/e/n/use straw arts on revolt lover/use gate tag on soot tattoos/s/s/w/word row/get null illun/work row/e/n/w/w/w/use poo coop on gnu dung/use poo coop on turf rut".
+test part7 with "work row/use stinky knits on rotator/e/n/e/e/n/n/get all/use gorge grog on butene tub/balm lab/s/s/w/w/s/w/use gold log on rotator/e/n/w/w/s/s/e/stack cats/see bees/use some demos on yahoo hay/w/n/n/e/e/n/use straw arts on revolt lover/use gate tag on soot tattoos/s/s/w/work row/e/n/w/w/w/use poo coop on gnu dung/use poo coop on turf rut".
 
 test part8 with "w/use radar on made dam/n/use null illun on known wonk/use el doodle on edits tide/n/use elope pole on kayak/use dork rod on tao boat/s/s/s/use tent net on code doc/use spa maps on code doc/n/e/e/n/e/use spa maps on go-by bog".
 
@@ -76,7 +76,7 @@ test rollup with "test part1/test part2/test part3/test part4/test part5/test pa
 
 chapter duplicates walkthrough
 
-test dup1 with "pack cap/pack cap/stats/stats/peep/peep/poop/poop/dial aid/dial aid/refer/refer/e/n/get trap art/get trap art/s/s/evade dave/evade dave/get saw/get saw/w/bore rob/bore rob/word row/word row/trace cart/trace cart/get to idiot/get to idiot/e/n/n/n/use to idiot on door frood/use to idiot on door frood/get bunk nub/get bunk nub/e/get all/get all/use pity tip on eye/use pity tip on eye/w/w/tend net/tend net/e/s/s/s/w/work row/work row/use trap art on reifier/use trap art on reifier/use bunk nub on reviver/use bunk nub on reviver"
+test dup1 with "pack cap/pack cap/stats/stats/peep/peep/poop/poop/dial aid/dial aid/refer/refer/e/n/get trap art/get trap art/s/s/evade dave/evade dave/w/bore rob/bore rob/word row/word row/trace cart/trace cart/get to idiot/get to idiot/e/n/n/n/use to idiot on door frood/use to idiot on door frood/get bunk nub/get bunk nub/e/get all/get all/use pity tip on eye/use pity tip on eye/w/w/tend net/tend net/e/s/s/s/w/work row/work row/use trap art on reifier/use trap art on reifier/use bunk nub on reviver/use bunk nub on reviver"
 
 test dup2 with "word row/word row/get epoch cope/get epoch cope/e/n/w/w/use party trap on stark rats/use party trap on stark rats/n/use epoch cope on king nik/use epoch cope on king nik/s/s/slam mammals/slam mammals/use stock cots on sleep eels/use stock cots on sleep eels/s/get stamp mats/get stamp mats/e/get poo coop/get poo coop/w/n/n/e/e/s/w/get yob attaboy/get yob attaboy/e/n/puff up/puff up/e/pull up/pull up/get puce cup/get puce cup"
 

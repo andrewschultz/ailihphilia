@@ -322,6 +322,8 @@ by one point
 >s
 >w
 
+>get null illun
+
 >work row
 
 >use gold log on rotator
@@ -354,10 +356,6 @@ by one point
 >s
 >s
 >w
-
->word row
-
->get NULL ILLUN
 
 >work row
 

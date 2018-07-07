@@ -38,15 +38,21 @@ Now let's open up the part of Yelpley that lets you fiddle with the items you've
 
 >S.S
 
+So Dave won't let you go west. You need to do something to him. Something in the spirit of the game.
+
 (+1) >EVADE DAVE
 
->GET SAW.W
+>W
+
+Rob and Dave are two entirely different people, but the strategy is the same.
 
 (+1) >BORE ROB
 
-Now Worn Row isn't suitable for getting anything done, yet. It has that redness ender, but that looks kind of dangerous. How would you restore it as a place to BE and DO something constructive?
+Now Worn Row isn't suitable for getting anything done, yet. It has that redness ender, but that looks kind of dangerous. How would you restore it as a place to BE and DO something constructive? The Bad Dab is a hint.
 
 (+1) >WORD ROW
+
+Each book in the Tract Cart is useful for something. However, two are more immediately useful. Backtracking to Word Row shouldn't be too painful, because as you'll later see, there are other things to do here, too.
 
 >GET TO IDIOT
 
@@ -72,15 +78,19 @@ What to do with the ten-level net? It looks a bit shaky.
 
 (+1) >TEND NET
 
+You should probably examine the epicer recipe here. You may remember the TNT just back east in Yell Alley. It's the trickiest of the four parts of the North-Tron to pick up.
+
 >E.S.S.S.W
 
-We can do something else with Worn Row!
+We can do something else with Worn Row now!
 
 (+1) >WORK ROW
 
 Now, the trap art goes with one of the machines, but which one?
 
 (+1) >USE TRAP ART ON REIFIER
+
+Maybe the bunk nub could be refurbished, or ...
 
 (+1) >USE BUNK NUB ON REVIVER
 
@@ -90,13 +100,15 @@ Now let's get another book.
 
 >GET EPOCH COPE
 
-You can only pick up one book at a time, and I think this is the best to start with to open up more of the map.
+Now we can not only explore Grebeberg to the west but do a good deal there.
 
 >E.N.W.W
 
 (+1) >USE PARTY TRAP ON STARK RATS
 
 >N
+
+If you talk to King Nik, you'll find he's overwhelmed by the responsibility of governing. So...
 
 (+1) >USE EPOCH COPE ON KING NIK
 
@@ -110,15 +122,17 @@ How to get past the eels? They are sleeping but look a bit uncomfortable.
 
 >S
 
-The kayo yak is/was harmless, but it'll help you later. Where you'll have to make it a bit harmful.
+The kayo yak is/was harmless, but it'll help you later. Where you'll have to make it a bit harmful. Not so much to you as to someone, or something else. Meanwhile, more stuff to take.
 
 >GET STAMP MATS.E.GET POO COOP
+
+Time to refill on books!
 
 >W.N.N.E.E.S.W.GET YOB ATTABOY
 
 >E.N
 
-Now the Emo Dome pushes us back because it makes us feel ... down.
+Now the Emo Dome pushes us back because it makes us feel ... down. The Spur Ups can't be used on anything else, but they help you FEEL up.
 
 (+1) >PUFF UP
 
@@ -128,30 +142,35 @@ There you go! But you still run through the Emo Dome too fast. How to stop yours
 
 (+1) >PULL UP
 
-You now have access to a few more rooms. But let's go cover a few we've seen, sort of, first.
+You now have access to a few more rooms. But let's not cover them all at once. You can't do anything meaningful to the east, yet.
 
 >GET PUCE CUP
 
 >W.W.W.N
 
+Let's break us off some of that past sap.
+
 (+1) >USE WASH SAW ON PAST SAP
+
 (+1) >USE PUCE CUP ON PAST SAP
 
 >S.E.E.E.S.GET TROLL ORT
+
+How to rescue the Wordy Drow? Note the past sap has changed, now it's warm.
 
 (+1) >USE PUCE CUP ON LIAR GRAIL
 
 >N.W.W.W.N.E
 
-Trivia: you only get a point the first time you fill up the puce cup. So if you'd filled it with sod first, you'd have gotten a point for the sod.
-
 >USE PUCE CUP ON DOSE SOD
+
+Trivia time: you only get a point the first time you fill up the puce cup. So if you'd filled it with the dose sod first, you'd have gotten a point for the sod. Also, if you fill it with sap twice, you don't get an extra point.
 
 >W.S.E.E.E.S.S
 
 (+1) >USE PUCE CUP ON BOND NOB
 
-Let's loot what's behind the nob, now.
+Let's get busy with what's behind the nob, now. We can't do everything to the west, but there's enough.
 
 >W.GET ALL.E.E
 
@@ -165,7 +184,7 @@ And maybe we can help the Gulf Lug now.
 
 (+1) >USE DEMO MED ON GULF LUG
 
-A reward! We don't have much to buy, so...
+A reward! We don't have much to buy for ourselves, and there aren't any actual shops, so ... let's spread the wealth.
 
 >S.S.E.E.E.E
 
@@ -185,7 +204,9 @@ You're kicked out, but you can just go back in.
 
 (+1) >STAND NAT'S
 
->N.W.W.S.W
+>N.W.W.S.W.GET NULL ILLUN
+
+We won't be using Null Illun for a while, but why not save moves now?
 
 >WORK ROW
 
@@ -194,6 +215,8 @@ You're kicked out, but you can just go back in.
 >E.N.E.S.S.W
 
 (+1) >USE CAVE VAC ON CASSETTES SAC
+
+A radar can detect hidden things. What might be hiding something?
 
 >E.N.N.E
 
@@ -209,9 +232,11 @@ You're kicked out, but you can just go back in.
 
 >N
 
-Now begins a chase! How to get rid of the Psi Wisp? It's reddish--do you remember anything else sort of red?
+Now begins a chase! How to get rid of the Psi Wisp? It's reddish--do you remember anything else sort of red? Or something anti-red?
 
 >S.S.W.W.S.W
+
+The redness ender!
 
 (+1) >WORN ROW
 
@@ -225,9 +250,15 @@ Bam! There goes the Psi Wisp. Back to work. We have some stuff to convert, now, 
 
 >GET ALL
 
+The butene tub may or may not be chemically unstable. Do you have anything else chemically unstable?
+
 (+1) >USE GORGE GROG ON BUTENE TUB
 
+Science! And hey, a piece of the north-tron!
+
 >S.S.W.W.S.W
+
+Now the Gold Log is shiny, but it's not particularly useful, and it's not you. It seems to be rattling, as if it holds something inside, but you can't figure out how to open it.
 
 (+1) >USE GOLD LOG ON ROTATOR
 
@@ -241,31 +272,33 @@ Bam! There goes the Psi Wisp. Back to work. We have some stuff to convert, now, 
 
 (+1) >USE GATE TAG ON SOOT TATTOOS
 
->S.S.W.WORD ROW.GET NULL ILLUN.WORK ROW
-
-Now the Gold Log is shiny, but it's not particularly useful, and it's not you. It seems to be rattling, as if it holds something inside, but you can't figure out how to open it.
+>S.S.W.WORK ROW
 
 >E.N.W.W.W
 
-We can stop here to make passage to not one, but two, new places.
+We can stop here to make passage to not one, but two, new places. The third will have to wait.
 
 (+1) >USE POO COOP ON GNU DUNG
+
 (+1) >USE POO COOP ON TURF RUT
 
 >W
 
 (+1) >USE RADAR ON MADE DAM
 
+You can probably guess the eroded ore can be changed into Ore Zero, but that's a bit out of the way for an optimal walkthrough.
+
 >N
 
-We can help the Known Wonk out doubly, now, and even help ourselves a bit.
+We can help the Known Wonk out doubly, now, which helps us out, too.
 
 (+1) >USE NULL ILLUN ON KNOWN WONK
+
 (+1) >USE EL DOODLE ON EDITS TIDE
 
 >N
 
-And we can do a lot on the Lac Oft Focal, as you'd expect.
+And we can do a lot on the Lac Oft Focal, as you'd expect. First, the Kayak doesn't have any oars, but you have something that can help you get places.
 
 (+1) >USE ELOPE POLE ON KAYAK
 
@@ -278,6 +311,7 @@ How do you feel peaceful enough to not be disrupted by your enemies?
 And now we can do a bit of double duty with the Code Doc.
 
 (+1) >USE TENT NET ON CODE DOC
+
 (+1) >USE SPA MAPS ON CODE DOC
 
 The spa maps probably belong with ... the Apse Spa.
@@ -291,7 +325,9 @@ Now to get by the Ergot Ogre to the south of the Code Doc. You won't have seen t
 >W.S.S.S.E
 
 (+1) >USE ENACT CANE ON YAHOO HAY
+
 (+1) >PACE CAP
+
 (+1) >USE TROLL ORT ON BRAG GARB
 
 Now, run for your life!
@@ -306,17 +342,21 @@ How to get the yak to charge?
 
 (+1) >USE SAGE GAS ON TAME MAT
 
+The guru rug is still a bit too pie-in-the-sky. Maybe it would be great if you didn't need to fix things, but you do, so it isn't.
+
 (+1) >USE SHARP RAHS ON GURU RUG
 
 >W.N.N.E.S
 
-What do we do about Ian? Once we do something, we can mix foods.
+What do we do about Ian? Once we dispose of him, we can mix foods. But he is in the way!
 
 (+1) >NAIL IAN
+
 (+1) >USE SNACK CANS ON UFO TOFU
+
 (+1) >USE GIFT FIG ON MAYO YAM
 
-Now you have all the ingredients for the North-Tron, and you need to activate them. But it's a bit more efficient to do other things first.
+Okay. The Martini Tram is the second part of the North-Tron.
 
 >W.W.W.N
 
@@ -341,15 +381,20 @@ Now, you can USE STIR WRITS ON BRO ORB, or you can just save a few keystrokes (w
 Now with all the junk we have, we can make non-junk.
 
 (+1) >USE DNA BAND ON REIFIER
+
 (+1) >USE ROTO MOTOR ON DNA HAND
+
 (+1) >USE ERODED ORE ON REVIVER
+
+Three parts of the north-tron! The fourth is just a bit away.
+
 (+1) >USE YOU BUOY ON ROTATOR
 
 >E.N.N.N.E
 
 (+1) >USE MR ARM ON BOMB MOB
 
-You can use it/him on the TNT, too.
+You can use it/him on the TNT, too, to get the point.
 
 >GET REP POPPER
 
@@ -387,14 +432,20 @@ Let's practise our aim.
 
 >E.N.W
 
+Okay, let's build the North-Tron. Any command is acceptable here.
+
 (+1) >USE TNT ON ORE ZERO
 
 >N
 
-Now, carnage! And points! And so on.
+Now, carnage! And points! And so on. Either the Knife Fink or Verses Rev can go first, but both have to go before you deal with the Diktat Kid.
 
 (+1) >USE ME GEM ON KNIFE FINK
+
 (+1) >USE TABOO BAT ON VERSES REV
+
+If you try to shoot the Diktat Kid, that won't stop what the Kid's unleashed.
+
 (+1) >USE YARD RAY ON REDIVIDER
 
 >S
@@ -403,3 +454,4 @@ One last thing to do. It's not too tricky, I hope.
 
 (+1) >USE X-ITE TIX ON TIX EXIT
 
+There are slightly different endings, based on whether or not you found the LLP ... and, well, one other thing I'll let you work out so the X/O Box has something extra.

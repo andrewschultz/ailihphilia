@@ -1585,11 +1585,11 @@ You remind yourself that the UFO tofu came from a UFO. The circular reasoning se
 \\
 #mistake test for ufo f u/ufo fu/ufofu
 >ufo f u
-You feel [one of]a moment of annoyance the UFO dropped something on you[or]a little more anger at the UFO: A UFO MO['] FU moment, if you will[stopping], but it passes. You go on to consider what sort of martial arts the aliens in the UFO know.
+You feel a moment of annoyance the UFO dropped something on you, but it passes. You go on to consider what sort of martial arts the aliens in the UFO know.
 >ufo fu
-You feel a little more anger at the UFO: A UFO MO['] FU moment, if you will, but it passes. You go on to consider what sort of martial arts the aliens in the UFO know.
+You feel a little more anger at the UFO: A UFO MO' FU moment, if you will, but it passes. You go on to consider what sort of martial arts the aliens in the UFO know.
 >ufofu
-You feel a little more anger at the UFO: A UFO MO['] FU moment, if you will, but it passes. You go on to consider what sort of martial arts the aliens in the UFO know.
+You feel a little more anger at the UFO: A UFO MO' FU moment, if you will, but it passes. You go on to consider what sort of martial arts the aliens in the UFO know.
 \\
 #mistake retest for crac arc/crak arc
 >crac arc
@@ -1801,6 +1801,8 @@ There is no Par Trap or Tee Meet to navigate here, so you don't need to make a g
 >s
 >w
 
+>get null illun
+
 >work row
 
 >use gold log on rotator
@@ -1875,10 +1877,6 @@ by one point
 >s
 >s
 >w
-
->word row
-
->get NULL ILLUN
 
 >work row
 
