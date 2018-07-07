@@ -55,26 +55,21 @@ def check_detail_notes(s):
     source_files = [ "c:/games/inform/{:s}.inform/source/story.ni".format(s),
       "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/{:s} mistakes.i7x".format(re.sub("-", " ", s)),
       "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/{:s} tables.i7x".format(re.sub("-", " ", s)) ]
-    line_count = 0
     matches = defaultdict(list)
     with open(notes_file_to_read) as file:
-        for line in file:
-            line_count += 1
+        for (line, line_count) in enumerate(file, 1):
             if line.startswith('='): continue
             line = re.sub("-", "", line.lower().strip())
             line = re.sub("[^a-z ]", "", line)
             ary = line.split(" ")
-            if len(ary) == 2:
-                matches[line_count] = ary
+            if len(ary) == 2 or len(ary) == 3: matches[line_count] = ary
     dupe = 0
     poss = 0
     eq = "=" * 20
     for x in source_files:
         short = re.sub(".*[\\\/]", "", x)
         with open(x) as file:
-            line_count = 0
-            for line in file:
-                line_count += 1
+            for (line, line_count) in enumerate(file, 1):
                 ll = line.lower()
                 l2 = re.sub("[^a-z ]", "", ll)
                 for x in matches.keys():
@@ -119,14 +114,11 @@ def modify_notes(s):
             else:
                 f2.write(line)
     f2.close()
-    if filecmp.cmp(notetmp, notes_file_to_read):
-        print("No modification of possible cut/pasted lines for notes file.")
+    if filecmp.cmp(notetmp, notes_file_to_read): print("No modification of possible cut/pasted lines for notes file.")
     else:
         print(lines_changed, "lines changed scanning", notes_file_to_read)
         copy(notetmp, notes_file_to_read)
-    if modify_only:
-        print("Bailing.")
-        exit()
+    if modify_only: sys.exit("Bailing.")
 
 def usage():
     print("USAGE" + '=' * 40)
@@ -177,7 +169,6 @@ def check_notes(s):
     global colon_string
     open_line = 0
     pal_count = 0
-    line_count = 0
     dupes = 0
     xtranote = 0
     colons = 0
@@ -191,11 +182,9 @@ def check_notes(s):
     shorts = {}
     dupe_dict = defaultdict(bool)
     colon_ary = []
-    for x in source_files:
-        shorts[x] = re.sub(".*[\\\/]", "", x)
+    for x in source_files: shorts[x] = re.sub(".*[\\\/]", "", x)
     with open(notes_file_to_read) as file:
-        for line in file:
-            line_count += 1
+        for (line_count, line) in enumerate(file, 1):
             ll = line.strip()
             if ll.startswith("="):
                 this_section = ll
@@ -243,15 +232,17 @@ def check_notes(s):
         if verbose: print("Reading", s)
         with open(s) as file:
             table_name = ''
-            count = 0
-            for line in file:
+            for (line_count, line) in enumerate(file, 1):
                 if line.startswith('table of'):
                     table_name = line.lower().strip()
                 elif not line.strip() or line.startswith('['):
                     table_name = ''
-                count += 1
-                ll = re.sub("[\.\",!\?]", "", line.lower())
-                ll = re.sub("-", " ", line.lower())
+                ll = re.sub("['\.\",!\?]", "", line.lower())
+                ll = re.sub("-", " ", ll)
+                ll = re.sub("\[\]", " ", ll)
+                if line_count == 1278 and 'alert' in line.lower():
+                    print([x for x in pals.keys() if 'alert' in x.lower()])
+                    print(line)
                 for q in pals.keys():
                     if q in ll and (q not in twice.keys() or twice_okay):
                         if q == 'say as' and 'say "as' in line.lower():
@@ -259,7 +250,7 @@ def check_notes(s):
                         if ignore_word_bounds or re.search(r'\b{:s}\b'.format(q), ll):
                             # here "da bad" does not flag "Neda Baden" unless we tell the program to
                             line_short = re.sub(":.*", "", q)
-                            found_errs[pals[q]] = found_errs[pals[q]] + "Notes.txt line {:d} ({:s}) ~ {:s} line {:d}{:s}: {:s} {:s}\n".format(pals[q], line_short, shorts[s], count, '' if not table_name else ' ({:s})'.format(table_name), line.lower().strip(), ('' if not ignore_word_bounds else ' ~ ' + q))
+                            found_errs[pals[q]] += "Notes.txt line {:d} ({:s}) ~ {:s} line {:d}{:s}: {:s} {:s}\n".format(pals[q], line_short, shorts[s], line_count, '' if not table_name else ' ({:s})'.format(table_name), line.lower().strip(), ('' if not ignore_word_bounds else ' ~ ' + q))
                             if last_lines_first:
                                 if not open_line or pals[q] < open_line:
                                     open_line = pals[q]
@@ -286,18 +277,15 @@ def check_notes(s):
                     continue
                 f2.write(line)
         f2.close()
-        if bowdlerize_test:
-            print("Not copying", notes_file_backup, "back to", notes_file_to_read, "-- use -b and not -bt for that.")
+        if bowdlerize_test: print("Not copying", notes_file_backup, "back to", notes_file_to_read, "-- use -b and not -bt for that.")
         else:
             print("Copying", notes_file_backup, "back to", notes_file_to_read)
             copy(notes_file_backup, notes_file_to_read)
             print("Copying attempt complete.")
             os.remove(notes_file_backup)
             print("Deleted", notes_file_backup)
-    elif bowdlerize_notes:
-        print("Nothing to bowdlerize, so I am not recopying.")
-    if launch_after and open_line:
-        i7.npo(notes_file_to_read, open_line, True)
+    elif bowdlerize_notes: print("Nothing to bowdlerize, so I am not recopying.")
+    if launch_after and open_line: i7.npo(notes_file_to_read, open_line, True)
 
 count = 1
 modified_yet = False
