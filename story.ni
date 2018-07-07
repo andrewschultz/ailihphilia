@@ -511,8 +511,6 @@ to say dir-summary:
 	now Q is the room west of location of player;
 	if Q is not nowhere, say " W[run paragraph on][if Q is not available]-[else if Q is not visited]![run paragraph on][end if]";
 
-screen-reader is a truth state that varies.
-
 when play begins:
 	repeat with Q running through regions:
 		increase maximum score by max-score of Q;
@@ -521,9 +519,9 @@ when play begins:
 		say "[if max-score of Odd Do is number of rows in table of last lousy points]LLPs = LLP table rows[else]Uh oh, [max-score of Odd Do] Odd Do points and [number of rows in table of last lousy points] LLP table rows. We need to fix this[end if].";
 	now right hand status line is "[if cur-score of mrlp < 10] [end if][cur-score of mrlp]/[max-score of mrlp] [if score < 10] [end if][score]/[if min-win < maximum score][min-win]-[end if][maximum score]";
 	now left hand status line is "[location of player] ([mrlp])[dir-summary]";
+	now use-custom-screenread is true; [see the Trivial Niceties extension for details. This wipes the default nag question.]
 	say "First, are you using a screen reader? Some of Ailihphilia's features, like the text map, don't work well with them.";
-	if the player no-consents:
-		now screen-reader is false;
+	if the player no-consents, now screenread is false;
 	say "You can always toggle the screen reader with SCR.";
 	sort table of last lousy points in random order;
 	repeat through table of all randoms:
@@ -986,19 +984,6 @@ after printing the name of the radar while taking inventory:
 	if radar-used is 1, say " (damaged)";
 	if radar-used is 2, say " (BUG--should be destroyed)";
 
-chapter scring
-
-scring is an action out of world.
-
-understand the command "scr" as something new.
-
-understand "scr" as scring.
-
-carry out scring:
-	now screen-reader is whether or not screen-reader is false;
-	say "Screen reader mode is now [on-off of screen-reader].";
-	the rule succeeds;
-
 chapter abouting
 
 abouting is an action applying to nothing.
@@ -1311,6 +1296,7 @@ instead of saying no, next-rand table of noesies;
 chapter attacking
 
 instead of attacking:
+	if noun is pact cap, say "But it's decidedly a pacifi-cap!" instead;
 	if noun is made dam, say "You don't want to make it a ... maddened dam." instead;
 	if noun is eels, say "Eel emo melee?!" instead;
 	if noun is a workable, say "Bash?! Sab!" instead;
@@ -1917,7 +1903,7 @@ Eroded Ore	reviver	Ore Zero	--	--	true	true	false	Yelpley	Worn Row	false	"The re
 you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	Worn Row	false	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. 'You BOFFO buoy!' you can't help shouting.[paragraph break]The gem's so tempting and beautiful, you grab it quickly, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
 Mr Arm	bomb mob	TNT	--	mob-bye rule	true	true	true	Yelpley	Yell Alley	false	"Mr. Arm walks on his index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. Being an arm, it/he has more leverage than just a DNA hand would've. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course. Perhaps Mr. Arm will find a Do-Bod or even an Evol-Glove to be truly complete. The bomb mob, for their part, becomes a poor troop once they see what they've lost. They wander away"
 nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	Flu Gulf	false	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
-rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	Grebeberg	Sneer Greens	false	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'SOS! SOS!' he cries, making a male lam. From his babbling, he's apparently retreating to the glam-amalg (Loot Stool included) in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]'Pol? Flop!' you think to yourself, before the ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
+rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	Grebeberg	Sneer Greens	false	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Had, ah!' he cries, making a male lam. From his babbling, he's apparently retreating to the glam-amalg (Loot Stool included) in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]'Pol? Flop!' you think to yourself, before the ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
 Bro Orb	Mirror Rim	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	Red Roses Order	false	"The Bro Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Madam has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, madam, live not on evil!' you boom, as the Orb does its work. Madam looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'My sub-level bus! You won't catch it! The E-Divide will block you!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	Red Roses Order	false	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Madam."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	Worn Row	false	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
@@ -3438,7 +3424,7 @@ chapter Spa Maps
 Spa Maps are a plural-named thing. indefinite article of Spa Maps is "some". description is "[if sage gas is not off-stage]The maps seem old hat now you've gotten the sage gas[else if maps-explained is false]You can't quite make sense out of them. There's Gobs-Bog and Go-By Bog, and one is a lot safer than the other, but you're not sure which[else]The spa maps clearly demark Go-By Bog and Gobs Bog and even Goblin-Nil Bog, which probably contains a troll or two. And no hospitality[end if]."
 
 after examining spa maps for the first time:
-	say "[line break]Good thing they're not spa mini-maps. They'd be IMPOSSIBLE to read.";
+	say "[line break]They were, unsurprisingly, written by Pam. Good thing they're not spa mini-maps. They'd be IMPOSSIBLE to read.";
 
 understand "spa map" and "map" as spa maps when player has spa maps.
 
@@ -3691,8 +3677,8 @@ an X Y Pyx is a peripheral thing in Yawn Way. printed name of x y pyx is "X/Y Py
 
 understand "map" as pyx when player has pyx and player does not have spa maps.
 
-check examining pyx when screen-reader is true:
-	say "The text map doesn't play well with screen readers, so you can't examine it productively. Sorry. SRC toggles screen reader mode." instead;
+check examining pyx when screenread is true:
+	say "The large text map has a lot of special characters and doesn't play well with screen readers, so you can't examine it productively. Sorry. SCREEN or SRC toggles screen reader mode." instead;
 
 after examining pyx for the first time:
 	say "Notes for the future: X X or MAP will examine the pyx, to save keystrokes[if player does not have pyx]. Also, you can take the pyx, if you want[end if].";
@@ -6862,17 +6848,17 @@ loafing is an activity.
 
 part amusing the player
 
-ignore-done is a truth state that varies. [?? bring this back for really hidden stuff like RM GNU /RM MR]
-
-this is the amuse-toggle rule:
-	now ignore-done is whether or not ignore-done is false;
-	say "Ignoring done amusements is now [on-off of ignore-done].";
-
 to say gt: say "Ailihphilia";
 
 rule for amusing a victorious player:
-	let count be 0;
-	say "The mistakes file ([gt] mistakes.i7x) should have all the possible palindrome tries. You can read through there.[paragraph break]Similarly, the tables file ([gt] tables.i7x) should have all the random texts.";
+	say "Funny (I hope) things to try:[line break]";
+	repeat through table of amusements:
+		say "[2da][amu entry]";
+
+table of amusements
+"A general sweeping note: the mistakes file ([gt] mistakes.i7x) should have all the possible palindrome tries you can make and the text they give. It should be included in the release or at [bb]."
+"Another sweeping note: the tables file ([gt] tables.i7x) in the same location(s) should have all the random texts."
+"Attacking yourself, the ergot ogre, the pact cap, the made dam, or the eels."
 
 part what you missed (LLP)
 
@@ -6885,8 +6871,7 @@ this is the what-missed rule:
 		if the rule failed:
 			say "[if LLP-hint-yet is false][LLP-clue entry][else][LLP-spoil entry][end if]";
 			increment missed;
-	if missed is 0:
-		say "You found all the points!";
+	if missed is 0, say "You found all the points!";
 	else if LLP-hint-yet is false:
 		now LLP-hint-yet is true;
 		say "Type MISSED again to spoil the LLPs."
