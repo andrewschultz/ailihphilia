@@ -589,7 +589,7 @@ a dir-error rule for a room (called myr):
 	repeat with J running from 1 to number of words in X:
 		let Y be word number J in X;
 		if the player's command matches the text "[Y]", case insensitively:
-			say "It looks like you tried to do something with [if myr is location of player]this[else]an adjacent[end if] location. [row-clue], [if balm-got is true]and you got the sneaky obscure bonus point for doing so elsewhere[else]and while there's another place that gets an obscure bonus point, location names are generally just to describe unnecessary scenery[end if].";
+			say "It looks like you tried to do something with [if myr is location of player]this[else]an adjacent[end if] location. [row-clue], [if balm-LLP-yet is true]and you got the sneaky obscure bonus point for doing so elsewhere[else]and while there's another place that gets an obscure bonus point, location names are generally just to describe unnecessary scenery[end if].";
 			if gone-to is false, say "[line break]However, GO TO/GT (room) may be a nice shortcut to visit a previous location.";
 			the rule succeeds;
 	continue the action;
@@ -1871,7 +1871,7 @@ puce cup	liar grail	--	sap-in-cup rule	empty-grail rule	true	false	true	Yelpley	
 puce cup	dose sod	--	check-sod-cup rule	sod-to-cup rule	true	false	false	Grebeberg	Apse Spa	false	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough." [sc2-ignore]
 puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-nob rule	true	true	true	Yelpley	Drawl Ward	false	"You give the Bond Nob the puce cup. Gulp! Gulp! The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. So many places to visit: [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars]... well, everywhere except Soda Do's and Jo's OJ.'"
 stamp mats	slate metals	Ye Key	--	--	true	true	false	Yelpley	Scrap Arcs	false	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY. You find it hard to pull the stamp mats out, and when you take YE KEY, the mats quickly morph into the slate metals. Eh, well. Less inventory to worry about."
-demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	Grebeberg	Flu Gulf	false	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' and looks a lot better within a few seconds. 'Thank you so much!' he says, handing you a cash sac."
+demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	Grebeberg	Flu Gulf	false	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' and looks a lot better within a few seconds. 'Mute tum!' the Lug cries gratefully before handing you a cash sac and running away."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	Toll Lot	false	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
 YOB ATTABOY	Sniffins	Dirt Rid	--	toons-to-den rule	true	true	false	Yelpley	Deft Fed	false	"Sniffins accepts your gift, with sniffs slowly changing from sadness to something more snooty. Your thanks for helping Sniffins be too good for you is a Dirt Rid. Sniffins shoos you back out to the Toll Lot: 'No, yob! Yon!' There is remodeling to be done! Sniffins will outdo Rentner, whoever that is! From the south, you hear frantic cries of 'Repaper! Repaper! Repaper!'"
 Elan Ale	Sniffins	Gorge Grog	--	--	true	true	false	Yelpley	Deft Fed	false	"Sniffins looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.' Hey, you're not one to say 'stuff free stuff.'" [af:stand nat's]
@@ -2605,7 +2605,7 @@ to decide which number is west-LLP:
 to decide which number is east-LLP:
 	let temp be 0;
 	if DWELT LEWD is off-stage, increment temp;
-	if balm-got is false, increment temp;
+	if balm-LLP-yet is false, increment temp;
 	decide on temp;
 
 check going north in Fun Nuf:
@@ -3721,7 +3721,7 @@ definition: a room (called rm) is wayout:
 definition: a room (called rm) is ungoable:
 	if Diktat Kid is moot, no;
 	if rm is westpost or rm is eastpost, yes;
-	if rm is eastcond and balm-got is true, yes;
+	if rm is eastcond and balm-LLP-yet is true, yes;
 	no;
 
 to say map-so-far:
@@ -4733,7 +4733,7 @@ after looking in Toll Lot when pulled-up is false:
 check going in Toll Lot:
 	if Diktat Kid is moot:
 		if noun is south, say "There's a party at the Bon Snob, and it's so exclusive, even you aren't invited!" instead;
-		if noun is north and balm-got is true, say "You already did a little extra in the Bald Lab. You figure it's best to keep away--you guess people probably thought Madam ruined it, and why fill them in on the truth?" instead;
+		if noun is north and balm-LLP-yet is true, say "You already did a little extra in the Bald Lab. You figure it's best to keep away--you guess people probably thought Madam ruined it, and why fill them in on the truth?" instead;
 	if cross orc is in Toll Lot:
 		if noun is north or noun is south, say "The cross orc stops you from going [noun]. 'GIVE VIG!' it booms." instead;
 
@@ -5221,7 +5221,9 @@ carry out rading:
 
 chapter Demo Med
 
-a Demo Med is an edible thing in Dopy Pod. "The demo med that must not have worked for the Bond Nob sits here, on a pill lip.". description is "You're not sure what it could be. Xanax? You don't want to risk it, though, because you're not sick."
+a Demo Med is an edible thing in Dopy Pod. "The demo med that must not have worked for the Bond Nob sits here, on a pill lip.". description is "It appears to have a brand name that's scratched out: D--PE-S(I or Y)-."
+
+understand "dispepsid" and "dyspepsyd" as demo med.
 
 instead of eating demo med, say "That would only be a temporary reprieve from your troubles. Plus, what if it is a demon-o-med?"
 
@@ -5264,6 +5266,12 @@ after taking when player is in Pro Corp (this is the notify bald lab rule):
 to decide whether bald-lab:
 	if butene tub is moot and DNA band is not in Pro Corp and gold log is not in Pro Corp, yes;
 	no;
+
+chapter LLP hint
+
+after looking in Pro Corp when bald-lab and balm-LLP-yet is false:
+	say "You feel a bit itchy. Maybe it's the chemical reactions in here. Maybe something in here could help fix that, despite it being a bald lab."
+	continue the action;
 
 chapter Sci Pics
 
@@ -6701,7 +6709,7 @@ this is the yell-alley-complete rule:
 
 chapter balmlabing
 
-balm-got is a truth state that varies.
+balm-LLP-yet is a truth state that varies.
 
 balmlabing is an action applying to nothing.
 
@@ -6712,8 +6720,8 @@ understand "balm lab" as balmlabing when player is in Pro Corp and bald-lab.
 understand "balmlab" as balmlabing when player is in Pro Corp and bald-lab.
 
 carry out balmlabing:
-	if balm-got is true, say "No double dipping." instead;
-	now balm-got is true;
+	if balm-LLP-yet is true, say "No double dipping." instead;
+	now balm-LLP-yet is true;
 	abide by the LLP rule; [BALM LAB]
 	say "Some EOL Aloe squirts out of the butene tub. You rub it on yourself. You immediately quit running around in circles in your mind, and when a disturbing through pops back up, you sort of say EOL, and it disappears, and it doesn't feel cheesy. But then an enol cyclone blows you over, and when you wake up again, it's a bald lab." instead;
 
@@ -6904,7 +6912,7 @@ to say moo-room-vis:
 	say "[if Moo Room is visited]Moo Room[else]a barn-ish area you haven't seen yet[end if]"
 
 this is the balm-yet rule:
-	if balm-got is true, the rule succeeds;
+	if balm-LLP-yet is true, the rule succeeds;
 	the rule fails;
 
 this is the bees-seen rule:

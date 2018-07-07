@@ -455,7 +455,7 @@ understand "sleet eels" as a mistake ("They are alive. Turning them to metal wou
 
 chapter Pro Corp
 
-understand "balk lab" as a mistake ("There's not much to do or say here, for sure[if balm-got is false]![else]--well, maybe something that's not quite BALK.[end if][mis of 176]") when player is in Pro Corp.
+understand "balk lab" as a mistake ("There's not much to do or say here, for sure[if balm-LLP-yet is false]![else]--well, maybe something that's not quite BALK.[end if][mis of 176]") when player is in Pro Corp.
 
 understand "ball lab" as a mistake ("Nothing fun explodes out from the walls or ceiling.[mis of 177]") when player is in Pro Corp.
 
@@ -593,17 +593,21 @@ understand "troy ort" as a mistake ("There's enough to save here. You don't want
 
 chapter Toll Lot
 
-understand "crab arc" as a mistake ("That's just what you need, a giant crab coming after you[if cross orc is in Toll Lot], along with the cross orc[end if].[mis of 225]") when player is in Toll Lot.
+to decide whether either-arc:
+	if player is in Toll Lot or player is in Scrap Arcs, yes;
+	no;
 
-understand "crac arc" and "crak arc" as a mistake ("While there may be a correlation between bad spelling and extreme strength, there's no causation. Sorry[if UFO tofu is not off-stage and player is in Toll Lot]. Besides, you got something, already[end if].[mis of 226]") when player is in Toll Lot or player is in Scrap Arcs.
+understand "crab arc" as a mistake ("That's just what you need, a giant crab coming after you[if cross orc is in Toll Lot and player is in Toll Lot], along with the cross orc[end if].[mis of 225]") when either-arc.
 
-understand "cram arc" as a mistake ("Litterbug. Besides, you need pretty much everything you're carrying. And nothing would fit, anyway.[mis of 227]") when player is in Toll Lot.
+understand "crac arc" and "crak arc" as a mistake ("While there may be a correlation between bad spelling and extreme strength, there's no causation. Sorry[if UFO tofu is not off-stage and player is in Toll Lot]. Besides, you got something, already[end if].[mis of 226]") when either-arc.
 
-understand "crap arc" as a mistake ("You might cause a mudslide, or worse.[mis of 228]") when player is in Toll Lot or player is in Scrap Arcs.
+understand "cram arc" as a mistake ("Litterbug. Besides, you need pretty much everything you're carrying. And nothing would fit, anyway.[mis of 227]") when either-arc.
 
-understand "crass arc" as a mistake ("[if cross orc is in Toll Lot]The cross orc and crag arc don't fuse together. Rats[else]You spend a few seconds feeling deeply offended by the crag arc[end if].[mis of 229]") when player is in Toll Lot or player is in Scrap Arcs.
+understand "crap arc" as a mistake ("You might cause a mudslide, or worse.[mis of 228]") when either-arc.
 
-understand "cray arc" as a mistake ("The arc doesn't need to change shape or become more volatile.[mis of 230]") when player is in Toll Lot.
+understand "crass arc" as a mistake ("[if player is in Scrap Arcs]The Scrap Arcs remain tasteful and separate[else if cross orc is in Toll Lot]The cross orc and crag arc don't fuse together. Rats[else]You spend a few seconds feeling deeply offended by the crag arc[end if].[mis of 229]") when either-arc.
+
+understand "cray arc" as a mistake ("The arc doesn't need to change shape or become more volatile.[mis of 230]") when either-arc.
 
 understand "croc orc" as a mistake ("The orc is fearsome enough without becoming a total genetic monstrosity.[mis of 231]") when cross orc is quicknear.
 
