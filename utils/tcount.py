@@ -28,8 +28,8 @@ def print_geo_mean(a):
 # options
 biggest_first = True
 verbose = False
-zap_first = False
-zap_last = False
+zap_highest = 0
+zap_lowest = 0
 update_log_file = False
 test_log = False
 write_backup = False
@@ -46,7 +46,7 @@ def usage():
     print("-ba/-b = write backup")
     print("-lt/-tl = test log")
     print("-bf/-fb = biggest first. -1b/-b1 = turns this off.")
-    print("zf/zl or nzl/nzf/zfn/zln zaps the first (size wise) of the tables or last (smallest)")
+    print("zh/h = zap highest (#), nzh disables. nzl/zl/l does same for lowest.")
     print()
     print("In a pinch you can use CSV to get a geometric mean of that.")
     print("-u = update log file = main option. -nu/-un = don't update")
@@ -66,13 +66,15 @@ while argcount < len(sys.argv):
     elif arg == 'bl' or arg == 'lb' or arg == 'b1' or arg == '1b': biggest_first = False
     elif arg == 'u': update_log_file = True
     elif arg == 'un' or arg == 'nu': update_log_file = False
-    elif arg == 'zf': zap_first = True
-    elif arg == 'nzf' or arg == 'zfn': zap_first = False
-    elif arg == 'zl': zap_last = True
-    elif arg == 'nzl' or arg[0] == 'zln': zap_last = False
+    elif arg[:2] == 'zh': zap_highest = int(arg[2:])
+    elif arg[0] == 'h': zap_highest = int(arg[1:])
+    elif arg == 'nzh': zap_highest = 0
+    elif arg[:2] == 'zl': zap_lowest = int(arg[2:])
+    elif arg[0] == 'l': zap_lowest = int(arg[1:])
+    elif arg == 'nzl': zap_lowest = 0
     elif arg == '?': usage()
     else:
-        print("Unknown command", sys.arg[argcount], "usage below:")
+        print("Unknown command", sys.argv[argcount], "usage below:")
         usage()
     argcount += 1
 
@@ -90,7 +92,7 @@ with open(i7.tafi('ai')) as file:
             table_name = re.sub(" *\[.*", "", line.lower().strip())
         if in_table and not line.strip():
             in_table = False
-            table_sizes[table_name] = line_count - table_start
+            table_sizes[table_name] = line_count - table_start - 1
             if verbose: print(table_name, table_sizes[table_name], "rows")
 
 i7.go_proj('ai')
@@ -118,15 +120,17 @@ if os.path.exists(data_file):
 else:
     print("No", data_file, "so we won't do anything special.")
 
-if zap_last:
-    q = min(table_sizes, key=table_sizes.get)
-    print("Zapping low value", q)
-    table_sizes.pop(q)
+if zap_lowest:
+    print("Zapping", zap_lowest, "lowest values.")
+    for i in range (0, zap_lowest):
+        q = min(table_sizes, key=table_sizes.get)
+        table_sizes.pop(q)
 
-if zap_first:
-    q = max(table_sizes, key=table_sizes.get)
-    print("Zapping high value", q)
-    table_sizes.pop(q)
+if zap_highest:
+    print("Zapping", zap_highest, "highest values.")
+    for i in range (0, zap_highest):
+        q = max(table_sizes, key=table_sizes.get)
+        table_sizes.pop(q)
 
 tsize = len(table_sizes.keys())
 
