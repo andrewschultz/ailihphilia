@@ -166,15 +166,17 @@ chapter Dumb Mud
 
 understand "dump mud" as a mistake ("It's already kind of dumped here[if poo coop is not moot]. Maybe you could dump the mud into the rut for passage south, but it might take too long, and you don't have a shovel. You'd need something else[end if].[mis of 74]") when player is in Dumb Mud.
 
-understand "gnu bung" as a mistake ("There's no way to put the toothpaste back in the tube, as it were.[mis of 75]") when gnu dung is quicknear.
+understand "gnu bung" as a mistake ("There's no way to put the toothpaste back in the tube, as it were.[mis of 75]") when y-poopy.
 
-understand "gnu hung" as a mistake ("Uggh. It's good you're in a text adventure, I guess.[mis of 76]") when gnu dung is quicknear.
+understand "gnu hung" as a mistake ("Uggh. It's good you're in a text adventure, I guess.[mis of 76]") when y-poopy.
 
-understand "gnu lung" as a mistake ("The gnu dung smells bad enough without dropping more internal organs into the mix.[mis of 77]") when gnu dung is quicknear.
+understand "gnu lung" as a mistake ("The gnu dung smells bad enough without dropping more internal organs into the mix.[mis of 77]") when y-poopy.
 
-understand "gnu rung" as a mistake ("You want to move west from here, not up.[mis of 78]") when gnu dung is quicknear.
+understand "gnu rung" as a mistake ("You want to move west from here, not up.[mis of 78]") when y-poopy.
 
-understand "gnu sung" as a mistake ("You don't need to speculate what the gnu was doing.[mis of 79]") when gnu dung is quicknear.
+understand "gnu sung" as a mistake ("You don't need to speculate what the gnu was doing.[mis of 79]") when y-poopy.
+
+understand "sun gnus" as a mistake ("You try to shine a light on possible culprits, but to no avail.[mis of 272]") when y-poopy.
 
 understand "turd rut" as a mistake ("Hmm! Maybe you could fill the rut up with ... something ... to cross it.[mis of 80]") when player is in Dumb Mud and poo coop is not moot.
 
@@ -182,7 +184,7 @@ understand "turn rut" as a mistake ("It's too large to redirect[if poo coop is m
 
 understand "turnon rut" and "turn on rut" as a mistake ("No innuendo here! The gnu dung[if gnu dung is not in Dumb Mud] with the poo coop[end if] is about as close as you'll get to R-rated.[mis of 82]") when player is in Dumb Mud.
 
-understand "un gnu" as a mistake ("Eliminating the perpetrator won't eliminate what they've dung. Uh, dun. Er, done.[mis of 83]") when gnu dung is quicknear.
+understand "un gnu" as a mistake ("Eliminating the perpetrator won't eliminate what they've dung. Uh, dun. Er, done.[mis of 83]") when y-poopy.
 
 chapter Emo Dome
 
@@ -269,7 +271,7 @@ section cap abuse
 to say pace-clue-maybe:
 	say "[if pace-prev is true or cap-ever-pace is true]There's nothing else special to do with the pace cap[else]There may be one more thing to do other than PACK the cap, but that's not it[end if]"
 
-understand "pa cap" as a mistake ("The word DAD briefly flashes on the Pact Cap. Weird, but not really.[mis of 116]") when Pact Cap is quicknear.
+understand "pa cap" as a mistake ("[if flee elf is quicknear]The word DAD briefly flashes on the Pact Cap. Weird, but not really[else]Unfortunately, parental advice doesn't help, here[end if].[mis of 116]") when Pact Cap is quicknear.
 
 understand "pac cap" as a mistake ("You almost take the cap, but you fumble it slightly. The Flee Elf blinks. 'You're almost there, but ... umm, well, you need to do a little more.'[paragraph break]Also, PACs aren't necessarily evil, but they aren't terribly heroic.[mis of 117]") when Flee Elf is quicknear.
 
@@ -631,9 +633,13 @@ chapter Worn Row
 
 to say red-clue: if redness ender is not moot, say ", but who knows, that redness ender might help you some day"
 
+understand "bo Rob" as a mistake ("If he did suddenly smell worse, he probably wouldn't know it. It would just repel you a bit more.[mis of 236]") when Rob is quicknear.
+
 understand "borg Rob" as a mistake ("He is already assimilated.[mis of 236]") when Rob is quicknear.
 
 understand "bork Rob" as a mistake ("Maybe there is a more nonviolent way to get him to give up.[mis of 237]") when Rob is quicknear.
+
+understand "born Rob" as a mistake ("Rob's regular babble is bad enough. His life story would be truly enervating.[mis of 273]") when Rob is quicknear.
 
 understand "dwell lewd" as a mistake ("DWELT LEWD should NOT be read as an instruction manual. Well, it shouldn't be read at all, really.[mis of 238]") when DWELT LEWD is quicknear.
 
@@ -687,7 +693,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 

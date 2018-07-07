@@ -654,6 +654,10 @@ by one point
 #lost enact cane
 #got moor broom
 
+>pacy cap
+by one point
+>undo
+
 >pace cap
 by one point
 
@@ -904,3 +908,4 @@ by one point
 by one point
 
 #
+

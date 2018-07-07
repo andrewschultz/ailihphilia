@@ -1226,3 +1226,15 @@ I didn't recognize that action. You can type VERB or VERBS to get a list of them
 I didn't recognize that action. You can type VERB or VERBS to get a list of them.
 >ufofu
 I didn't recognize that action. You can type VERB or VERBS to get a list of them.
+
+#mistake test for sun gnus
+>sun gnus
+I didn't recognize that action. You can type VERB or VERBS to get a list of them.
+
+#mistake test for bo Rob
+>bo Rob
+I didn't recognize that action. You can type VERB or VERBS to get a list of them.
+
+#mistake test for born rob
+>born rob
+I didn't recognize that action. You can type VERB or VERBS to get a list of them.

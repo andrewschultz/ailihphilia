@@ -1,3 +1,9 @@
+#-- rbr-ai-thru.txt
+#-- main branch file for Ailihphilia walkthroughs
+#--
+#-- mist.py checks the mistake file
+#--
+
 files=reg-ai-thru-min.txt,reg-ai-thru-all.txt,reg-ai-thru-mist.txt,reg-ai-thru-wrongway.txt,reg-ai-thru-gt.txt,reg-ai-thru-alt.txt
 dupefile=reg-ai-thru-dupe.txt
 ## *FILE
@@ -74,7 +80,8 @@ Nonsense! Adventure is its own reward!
 \\
 #mistake test for kaos soak
 >kaos soak
-The [kaoscaps] fails to collapse in a torrent of water.
+#since the capitalization is random, I won't be super rigorous here.
+fails to collapse in a torrent of water.
 \\
 #mistake test for pac cap
 >pac cap
@@ -166,6 +173,9 @@ There is much more fortune and glory in adventure! It's the cap you want to conc
 by one point
 
 ==t2
+#mistake retest for pa cap
+>pa cap
+Unfortunately, parental advice doesn't help, here
 #mistake retest for pacv cap
 >pacv cap
 There may be one more thing to do other than PACK the cap, but that's not it.
@@ -328,6 +338,12 @@ You don't need the wash saw to turn into something that might sting you, especia
 >w
 
 ==t2
+#mistake test for bo rob
+>bo rob
+If he did suddenly smell worse, he probably wouldn't know it. It would just repel you a bit more.
+#mistake test for born rob
+>born rob
+Rob's regular babble is bad enough. His full life story would be truly enervating.
 #mistake test for borg rob
 >borg rob
 He is already assimilated.
@@ -1890,7 +1906,7 @@ by one point
 
 >w
 
-===2
+==t2
 #mistake test for rm gnu/dung/rm gnu dung
 >rm gnu
 You don't have the proper permissions. It is (wait for it) too root.
@@ -1907,48 +1923,53 @@ As you're about to touch the lie veil, you shake your head. No. You don't really
 >s
 The turf rut is too deep. You need a way to fill it in.
 
+==t2
 #mistake test for dump mud
 >dump mud
 It's already kind of dumped here. Maybe you could dump the mud into the rut for passage south, but it might take too long, and you don't have a shovel. You'd need something else.
-
+\\
 #mistake test for un gnu
 >un gnu
 Eliminating the perpetrator won't eliminate what they've dung. Uh, dun. Er, done.
-
+\\
 #mistake test for gnu bung
 >gnu bung
 There's no way to put the toothpaste back in the tube, as it were.
-
+\\
 #mistake test for gnu hung
 >gnu hung
 Uggh. It's good you're in a text adventure, I guess.
-
+\\
 #mistake test for gnu lung
 >gnu lung
 The gnu dung smells bad enough without dropping more internal organs into the mix.
-
+\\
 #mistake test for gnu rung
 >gnu rung
 You want to move west from here, not up.
-
+\\
 #mistake test for gnu sung
 >gnu sung
 You don't need to speculate what the gnu was doing.
-
+\\
+#mistake test for sun gnus
+>sun gnus
+You try to shine a light on possible culprits, but to no avail.
+\\
 #mistake test for turd rut
 >turd rut
 Hmm! Maybe you could fill the rut up with ... something ... to cross it.
-
+\\
 #mistake test for turn rut
 >turn rut
 It's too large to redirect.
-
+\\
 #mistake test for turnon rut/turn on rut
 >turnon rut
 No innuendo here! The gnu dung is about as close as you'll get to R-rated.
 >turn on rut
 No innuendo here! The gnu dung is about as close as you'll get to R-rated.
-===a
+
 
 ==t5
 >purloin cave vac
@@ -2290,6 +2311,11 @@ WRONg
 by one point
 #lost enact cane
 #got moor broom
+
+==t5
+>pacy cap
+by one point
+>undo
 
 >pace cap
 by one point
@@ -2913,7 +2939,7 @@ No need to go back.
 by one point
 
 #
-===0
+==t0
 >tcc
 >z
 >s
@@ -2926,10 +2952,11 @@ by one point
 >undo
 >stats
 >s
-===1,2
+
+==t1,2
 >tcc
 >s
 >undo
 >z
 >s
-===a
+

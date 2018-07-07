@@ -53,7 +53,8 @@ Nonsense! Adventure is its own reward!
 
 #mistake test for kaos soak
 >kaos soak
-The [kaoscaps] fails to collapse in a torrent of water.
+#since the capitalization is random, I won't be super rigorous here.
+fails to collapse in a torrent of water.
 
 #mistake test for pac cap
 >pac cap
@@ -144,6 +145,9 @@ There is much more fortune and glory in adventure! It's the cap you want to conc
 >pack cap
 by one point
 
+#mistake retest for pa cap
+>pa cap
+Unfortunately, parental advice doesn't help, here
 #mistake retest for pacv cap
 >pacv cap
 There may be one more thing to do other than PACK the cap, but that's not it.
@@ -258,6 +262,12 @@ You don't need the wash saw to turn into something that might sting you, especia
 
 >w
 
+#mistake test for bo rob
+>bo rob
+If he did suddenly smell worse, he probably wouldn't know it. It would just repel you a bit more.
+#mistake test for born rob
+>born rob
+Rob's regular babble is bad enough. His full life story would be truly enervating.
 #mistake test for borg rob
 >borg rob
 He is already assimilated.
@@ -1364,6 +1374,10 @@ You want to move west from here, not up.
 >gnu sung
 You don't need to speculate what the gnu was doing.
 
+#mistake test for sun gnus
+>sun gnus
+You try to shine a light on possible culprits, but to no avail.
+
 #mistake test for turd rut
 >turd rut
 Hmm! Maybe you could fill the rut up with ... something ... to cross it.
@@ -1921,8 +1935,10 @@ by one point
 by one point
 
 #
+
 >tcc
 >s
 >undo
 >z
 >s
+
