@@ -1476,7 +1476,7 @@ understand "use [something] on [something]" as useoning it with.
 understand "use [something] with [something]" as useoning it with.
 
 to build-the-tron:
-	move north tron to Fun Nuf;
+	moot north tron;
 	now all tronparts are in devreserved; [ic]
 	if redact-postrule:
 		say "You use the epicer recipe you found in the Trapeze Part to build a north-tron that destroys the KOAS Oak to the north! And with that, your [if deep-speeding is true]DEEP SPEED[else]REV OVER[end if] journey ends, so close to saving Yelpley and Grebeberg.";
@@ -2441,8 +2441,7 @@ chapter lateruses
 
 definition: a thing ( called th) is preclued:
 	repeat through table of lateruses:
-		if to-get entry is th:
-			if in-limbo entry is true, yes;
+		if to-get entry is th and in-limbo entry is true, yes;
 	no;
 
 table of lateruses [xxlat]
@@ -2480,10 +2479,10 @@ part Dim Mid region
 
 book Fun Nuf
 
-Fun Nuf is a room in Dim Mid. "[if elite tile is in Fun Nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what leads west and east[xit-ave][end if]. [if north tron is in Fun Nuf]Also, the North-Tron has carved a passage north where the [kaoscaps] was. It's too big to, uh, repaper[else if flee elf is in Fun Nuf]An oak blocks the way north. It's a wide oak[else]The [kaoscaps] blocks your way north[end if]."
+Fun Nuf is a room in Dim Mid. "[if elite tile is in Fun Nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what leads west and east[xit-ave][end if]. [if Diktat Kid is moot][Dirge Grid] is back north, not that you need to revisit[else if north tron is moot]Also, the North-Tron has carved a passage north where the [kaoscaps] was. It's too big to, uh, repaper[else if flee elf is in Fun Nuf]An oak blocks the way north. It's a wide oak[else]The [kaoscaps] blocks your way north[end if]."
 
 to say xit-ave:
-	say ". The [if tix exit is in Fun Nuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]"
+	say ". The [if player has x-ite tix]Tix Exit to the south is waiting for you to enter[else if tix exit is in Fun Nuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]"
 
 chapter kaos oak
 
@@ -2536,6 +2535,8 @@ instead of entering Evac Ave, try going south.
 elf-warn is a number that varies.
 
 the Tix Exit is scenery. "It's nothing particularly fancy, though it says TIX IF FIX-IT. I'm going to go out on a limb here and say it'll accept [if player has X-ITE TIX]your X-ITE TIX[else]X-ITE TIX, if you can find them[end if]."
+
+instead of entering tix exit, try going south instead;
 
 check going south in Fun Nuf:
 	if player has X-ITE TIX, try useoning X-ITE TIX with Tix Exit instead;
@@ -6822,14 +6823,35 @@ part final questions
 
 Table of Final Question Options (continued)
 final question wording	only if victorious	topic	final response rule	final response activity
-"see responses to various commands (RAND 0 for list, RAND 1-[number of rows in table of all randoms] for specific table)"	true	"RAND [number]"	--	rling
+"see responses to various commands (RAND 0 for list, RAND 1-[number of rows in table of all randoms] for specific table, RN 0 for next table)"	true	"RAND [number]"	--	rling
 "see [if LLP-hint-yet is false]hints for [end if]which LLP[if cur-score of Odd Do is not 10]s[end if] you MISSED"	true	"LLP/LLPS/MISSED"	what-missed rule	loafing
+--	true	"RN"	--	rlning
+--	true	"RAND"	--	rl0ing
+
+rlning is an activity.
+
+rule for rlning:
+	increment last-table-tried;
+	if last-table-tried > number of rows in table of all randoms:
+		say "(Cycling back to the first table)[paragraph break]";
+		now last-table-tried is 1;
+	try randlisting last-table-tried instead;
+
+rlming is an activity.
+
+rule for rlming: say "You need to type in a number instead of a table name." instead;
+
+rl0ing is an activity.
+
+rule for rl0ing: try randlisting number understood instead;
 
 rling is an activity.
 
 rule for rling: try randlisting number understood instead;
 
 randlisting is an action applying to one number.
+
+last-table-tried is a number that varies.
 
 carry out randlisting:
 	let count be 0;
@@ -6840,6 +6862,7 @@ carry out randlisting:
 		say "[line break]This doesn't include the tables of names for each phone book. Those are both really long, and you'll probably want to see the source code (Ailihphilia Tables.i7x) if you're really interested.";
 		the rule succeeds;
 	if number understood < 0 or number understood > number of rows in table of all randoms, say "Need 1-[number of rows in table of all randoms]." instead;
+	now last-table-tried is number understood;
 	choose row number understood in table of all randoms;
 	let mytab be tabnam entry;
 	now count is 0;
@@ -6849,6 +6872,24 @@ carry out randlisting:
 		say "[randtxt entry][line break]";
 
 loafing is an activity.
+
+chapter replace standard response to final question
+
+the nonstandard respond to final question rule is listed instead of the standard respond to final question rule in for handling the final question.
+
+This is the nonstandard respond to final question rule:
+	repeat through the Table of Final Question Options:
+		if the only if victorious entry is false or the story has ended finally:
+			if there is a final response rule entry
+				or the final response activity entry [activity] is not empty:
+				if the player's command matches the topic entry:
+					if there is a final response rule entry, abide by final response rule entry;
+					otherwise carry out the final response activity entry activity;
+					rule succeeds;
+	if the player's command includes "rand":
+		say "RAND requires a number after it.";
+		the rule succeeds;
+	issue miscellaneous library message number 8.
 
 part amusing the player
 
@@ -6882,7 +6923,7 @@ this is the what-missed rule:
 			increment missed;
 	if missed is 0, say "You found all the points!" instead;
 	now LLP-hint-yet is true;
-	say "Type MISSED again to spoil the LLPs."
+	say "[paragraph break]Type MISSED again to spoil the LLPs."
 
 chapter misses table
 
