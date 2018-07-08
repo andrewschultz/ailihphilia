@@ -31,7 +31,7 @@ speed_low = speed_high = 0
 
 launch_first = launch_last = False
 
-end_str = ">n\n>use me gem on knife fink\n>use taboo bat on verses rev\n>use yard ray on redivider\n>s\n>use x-ite tix on tix exit\nYes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through.\n>s\nRoxor!\n"
+end_str = ">n\n>use me gem on knife fink\n>use taboo bat on verses rev\n>use yard ray on redivider\n>s\n>use x-ite tix on tix exit\nYes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through.\nRoxor!\n"
 
 line_nums = []
 
@@ -52,6 +52,8 @@ def create_speed_thru(base_file, base_out_str, idx):
                 if not line.startswith(">"): continue
                 any_cmd_yet = True
             buffer += line
+            if 'gem' in line.lower() and 'fink' in line.lower(): break
+            if 'bat' in line.lower() and 'rev' in line.lower(): break
             if line.startswith('#force-revit-cmd'):
                 force_revit = True
                 continue
@@ -193,6 +195,9 @@ while count < len(sys.argv):
         else:
             start_low = end_low = speed_low = ary[0]
             start_high = end_high = speed_high = ary[1]
+    elif arg == 'w': files_to_run["westfirst"] = True
+    elif arg == 'e': files_to_run["eastfirst"] = True # must come before 'e' below
+    elif arg == 'm': files_to_run["min"] = True
     elif arg[0] == 's':
         ary = [int(x) for x in re.split("[,-]", arg[1:])]
         if len(ary) == 1: start_low = start_high = ary[0]
@@ -209,9 +214,6 @@ while count < len(sys.argv):
     elif arg == 'll' or arg == 'l0': launch_last = True
     elif arg == 'r': do_rev_over = True
     elif arg == 'nr' or arg == 'rb': do_rev_over = False
-    elif arg == 'w': files_to_run["westfirst"] = True
-    elif arg == 'e': files_to_run["eastfirst"] = True
-    elif arg == 'm': files_to_run["min"] = True
     count += 1
 
 if start_low > start_high:
@@ -232,35 +234,36 @@ if start_low > end_high: sys.exit("Lowest start must be less than the highest en
 
 went_over = False
 
-if start_low > max_stuff:
-    start_low = max_stuff
-    went_over = True
+def bound_it(x):
+    global went_over
+    if x > max_stuff:
+        x = max_stuff
+        went_over = True
+    if x < 0:
+        x = 0
+        went_over = True
+    return x
 
-if start_high > max_stuff:
-    start_high = max_stuff
-    went_over = True
+speed_high = bound_it(speed_high)
+speed_low = bound_it(speed_low)
+start_high = bound_it(start_high)
+start_low = bound_it(start_low)
+end_high = bound_it(end_high)
+end_low = bound_it(end_low)
 
-if end_low > max_stuff:
-    end_low = max_stuff
-    went_over = True
-
-if end_high > max_stuff:
-    end_high = max_stuff
-    went_over = True
-
-if went_over: print("NOTE: One of your starting or ending values was too high, so I reduced everything to <=", max_stuff)
+if went_over: print("NOTE: One of your starting or ending values was not between 0 and {:d}, so I reduced everything to that range.".format(max_stuff))
 
 read_destinations()
 
 if do_all:
-    start_low = end_low = 0
-    start_high = end_high = max_stuff
+    speed_low = start_low = end_low = 0
+    speed_high = start_high = end_high = max_stuff
 
 if not do_rev_over:
-    if not len(files_to_run.keys()): sys.exit("Need to specify s/w/e for speed-testing.")
+    if not len(files_to_run.keys()): sys.exit("Need to specify m(main min)/w(west first)/e(east first) for speed-testing.")
     for q in sorted(files_to_run.keys()):
         in_file = "reg-ai-thru-{:s}.txt".format(q)
-        out_format = "reg-ai-speed-{:s}-{{:d}}.txt".format(q)
+        out_format = "reg-ai-speed-{:s}-{{:02d}}.txt".format(q)
         for x in range(speed_low, speed_high + 1): create_speed_thru(in_file, out_format, x)
 else:
     for x in range (start_low, start_high + 1):
