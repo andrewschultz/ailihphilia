@@ -483,7 +483,7 @@ this is the check palindrome turns rule: [this could be at the end but those are
 		now cutnum is cutnum / 10;
 	let pal-turns be whether or not revnum is turn count;
 	say "Final stats (score/turn/maximum score): [score]/[turn count]/[maximum score].";
-	if Yawn Way is unvisited, continue the action;
+	if Yawn Way is unvisited, say "Because you zipped through the quest, you get impatient when you're unable to open it when you get home. You throw it in a dumpster and spend the rest of your life upset at the universe for not letting you save a more interesting, violent fantasy world." instead;
 	say "[line break]When you get home, you hear a click from the X/O box. Yes, you can open it now.[paragraph break]";
 	if pal-turns is true:
 		if score is maximum score:
@@ -5846,7 +5846,11 @@ this is the rev-check rule:
 	if being-chased is true, say "Oops, that's too much for me to do at once! Either escape or get caught by [the chase-person] first, then we can proceed." instead;
 	if player is in Dirge Grid, say "You're already at the Dirge Grid!" instead;
 	if Dirge Grid is visited, say "Too late! You've already been to the Dirge Grid." instead;
-	if emitted is true and player has ME gem and player has taboo bat and KAOS Oak is moot and test set is moot, say "You're already near the endgame." instead; [i can cut this down, because some of this is probably redundant, but I'd rather be too sure]
+	if emitted is true and player has ME gem and player has taboo bat and KAOS Oak is moot and test set is moot:
+		if player is in Fun Nuf, say "You're already near the endgame." instead; [i can cut this down, because some of this is probably redundant, but I'd rather be too sure]
+		say "You're pretty near the endgame. Would you like me to drop you off at [Fun Nuf]?";
+		if the player yes-consents, move player to Fun Nuf instead;
+		say "OK, but you don't have much else to do[if cur-score of Odd Do is max-score of Odd Do]--you got all the LLPs[else] except search for LLPs[end if]." instead;
 	continue the action;
 
 definition: a thing (called th) is speedtakeable:
@@ -6923,8 +6927,8 @@ this is the what-missed rule:
 			say "[if LLP-hint-yet is false][LLP-clue entry][else][LLP-spoil entry][end if]";
 			increment missed;
 	if missed is 0, say "You found all the points!" instead;
+	if LLP-hint-yet is false, say "[paragraph break]Type MISSED again to spoil the LLPs.";
 	now LLP-hint-yet is true;
-	say "[paragraph break]Type MISSED again to spoil the LLPs."
 
 chapter misses table
 

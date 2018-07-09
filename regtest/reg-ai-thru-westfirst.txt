@@ -824,8 +824,10 @@ by one point
 >n
 
 >use straw arts on revolt lover
+by one point
 
 >use gate tag on soot tattoos
+by one point
 
 >s
 
@@ -836,6 +838,7 @@ by one point
 >s
 
 >use elan ale on sniffins
+by one point
 
 >n
 
@@ -844,6 +847,7 @@ by one point
 >n
 
 >use gorge grog on butene tub
+by one point
 
 >s
 
@@ -854,8 +858,10 @@ by one point
 >n
 
 >use bro orb on mirror rim
+by one point
 
 >use balsa slab on sword rows
+by one point
 
 >s
 
