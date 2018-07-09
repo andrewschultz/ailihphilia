@@ -233,7 +233,7 @@ Include (-
 Array kaos --> 7  11 1 15 19 15 1 11;
 
 [ kaosblab i j;
-  if ( (+ grammarg +) == 0) {
+  if ( (+ grammarg +) == 1) {
     print "KAOS Oak";
 	rfalse;
   }
@@ -249,6 +249,10 @@ Array kaos --> 7  11 1 15 19 15 1 11;
 -)
 
 to say kaoscaps:
+	kaos-adj;
+	say "[kcb]";
+
+to say kcb:
 	(- kaosblab(); -)
 
 to kaos-adj: now kaos-num is the remainder after dividing (kaos-num + a random number between 1 and 127) by 128;
@@ -1057,11 +1061,11 @@ to say got-sit:
 
 this is the situational commands show rule:
 	now any-sit-cmd is false;
-	if player is in Fun Nuf and kaos oak is xed, say "[got-sit][b]GRAMMAR G[r] toggles the [kaoscaps] between chaotic to sane punctuation, which is purely cosmetic.";
-	if pyx is quicknear, say "[got-sit][b]X X[r] or [b]MAP[r] will let you examine the X/Y Pyx.";
-	if wr-short-note is true and in-work, say "[got-sit][line break][b]REV[r], [b]ROT[r] and [b]REI[r] is shorthand to use an item on the reviver, rotator and reifier, respectively.";
-	if player has radar, say "[got-sit][b]RAD[r] is shorthand to use the radar on something.";
-	if chase-aware, say "[got-sit][no-time-note].";
+	if player is in Fun Nuf and kaos oak is xed, say "[got-sit][2da][b]GRAMMAR G[r] toggles the [kaoscaps] between chaotic to sane punctuation, which is purely cosmetic.";
+	if pyx is quicknear, say "[got-sit][2da][b]X X[r] or [b]MAP[r] will let you examine the X/Y Pyx.";
+	if wr-short-note is true and in-work, say "[got-sit][line break][2da][b]REV[r], [b]ROT[r] and [b]REI[r] is shorthand to use an item on the reviver, rotator and reifier, respectively.";
+	if player has radar, say "[got-sit][2da][b]RAD[r] is shorthand to use the radar on something.";
+	if chase-aware, say "[got-sit][2da][no-time-note].";
 	if any-sit-cmd is false, say "There are currently no special situational verbs, but when there are, they will show up here.";
 
 to decide whether chase-aware:
@@ -1069,17 +1073,18 @@ to decide whether chase-aware:
 	no;
 
 carry out verbing:
-	say "The four basic directions ([b]N, S, E, W[r]) are the main ones, along with [b]USE[r], in order to get through the game. Also, in some places, specific verbs will be needed. None are terribly long, and---well, there is a thematic pattern to them.";
-	say "[line break]Standard verbs like [b]X[r] ([b]EXAMINE[r]) and [b]LOOK[r] also work.";
-	say "[b]GT[r] or [b]GO TO[r] lets you go to a room where you've been before.";
-	say "[b]T[r] or [b]TALK TO[r] or [b]GR[r] or [b]GREET[r] talks to someone. There's not much in the way of conversation in this game, but you may get some clues from basic chat.";
-	say "[b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
-	say "[b]THINK[r] gives general non-spoiler hints, including where you may wish to visit, or what is blocking you. [b]AID[r] gives you hints for where you are.";
+	say "[2da]The four basic directions ([b]N, S, E, W[r]) are the main ones, along with [b]USE[r], in order to get through the game. Also, in some places, specific verbs will be needed. None are terribly long, and---well, there is a thematic pattern to them.";
+	say "[line break][2da]Standard verbs like [b]X[r] ([b]EXAMINE[r]) and [b]LOOK[r] also work.";
+	say "[2da][b]GT[r] or [b]GO TO[r] lets you go to a room where you've been before.";
+	say "[2da][b]T[r] or [b]TALK TO[r] or [b]GR[r] or [b]GREET[r] talks to someone. There's not much in the way of conversation in this game, but you may get some clues from basic chat.";
+	say "[2da][b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
+	say "[2da][b]THINK[r] gives general non-spoiler hints, including where you may wish to visit, or what is blocking you. [b]AID[r] gives you hints for where you are.";
 	if cur-score of Odd Do < max-score of Odd Do:
 		say "[line break]There are also a few guess-the-verb bonus points that are hidden. Some relate to objects or people that need help but can't help you, and some are riffs on standard commands. [if refer-yet is false]There's a different way to revisit, rehash or recap this very command, for example[else]For instance, you got REFER as VERBS[end if]";
 	say "[line break]Also, many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy. If you miss them, you'll see the entire list at the end.";
-	say "[b]META[r] (or [b]META AT EM[r] has information on meta-verbs, which includes options (e.g. turning some minor hints on or off), scoring and information on how the game was created and who helped.";
+	say "[2da][b]META[r] (or [b]META AT EM[r] has information on meta-verbs, which includes options (e.g. turning some minor hints on or off), scoring and information on how the game was created and who helped.";
 	if in-beta is true, say "META also gives beta tester comands.";
+	if debug-state is true, say "[2da]SMITIMS = win after Deep Speed.[line break][2da]TCC/TCCC aligns move to palindrome or palindrome + 1.";
 	abide by the situational commands show rule;
 
 section meta
@@ -1091,13 +1096,13 @@ understand the command "meta" as something new.
 understand "meta" and "meta at em" as metaing.
 
 carry out metaing:
-	if beep-yet is true, say "[b]LO VOL[r] and [b]LOVE VOL[r] turn the pact cap's hints volume down and up, respectively.";
-	if beep-yet is true, say "[b]SHUTTUHS[r] shutters off areas you're done with. NOTE: if there are any LLPs, you'll still be blocked.";
+	if beep-yet is true, say "[2da][b]LO VOL[r] and [b]LOVE VOL[r] turn the pact cap's hints volume down and up, respectively.";
+	if beep-yet is true, say "[2da][b]SHUTTUHS[r] shutters off areas you're done with. NOTE: if there are any LLPs, you'll still be blocked.";
 	say "[b]SCORE[r] tracks the score. [b]ABOUT[r] and [b]CREDITS[r] tell about the game[if show-dev is true], and [b]DEV ED[r] shows technical details[end if].";
 	if in-beta is true:
 		say "[line break](start beta commands)";
-		say "[line break][b]RR[r] lets you try all three items in the Word Row machines. If one nets a point, it goes last.";
-		say "[line break][b]ENDGAME[r] kicks you to the endgame, where you have all the weapons to win the game, though you will be limited to Fun [']Nuf and the Dirge Grid. It will be superseded by REV OVER.";
+		say "[line break][2da][b]RR[r] lets you try all three items in the Word Row machines. If one nets a point, it goes last.";
+		say "[line break][2da][b]ENDGAME[r] kicks you to the endgame, where you have all the weapons to win the game, though you will be limited to Fun [']Nuf and the Dirge Grid. It will be superseded by REV OVER.";
 		say "[line break](end beta commands)";
 	if debug-state is true:
 		say "[line break]PROGRAMMER TESTING COMMANDS: WIN lets you win, PER describes peripheral things, and IA flags everything without an initial appearance.";
@@ -2493,7 +2498,7 @@ The KAOS Oak is peripheral scenery in Fun Nuf. "[if flee elf is in Fun Nuf]It's 
 
 after examining the KAOS Oak:
 	if kaos oak is not xed, say "One look and you find yourself mumbling 'Elp! A Maple!' Now that's (ch/k)aos!";
-	if grammarg is false, say "The [kaoscaps] changes [one of][or]again [stopping] as you look at it.";
+	if grammarg is false, say "The [kaoscaps] changes [one of][or]again [stopping]as you look at it.";
 	if kaos oak is not xed, say "(NOTE: you can turn off this nonsense by saying GRAMMAR G.)[paragraph break]";
 	continue the action;
 
@@ -2643,7 +2648,7 @@ understand "pack cap" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did." instead;
-	say "Yes, that's how to get the cap. You are ready to go! Hat, ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. 'Maybe later you'll find a way past the [kaos oak] to the Dirge Grid to defeat the Diktat Kid. But it's complicated.[paragraph break]The Flee Elf mumbles something about the risk of a partner-entrap, so you'll have to go it alone. With a 'Rep us SUPER' and 'It's best I...' it  becomes the, err, FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
+	say "Yes, that's how to get the cap. You are ready to go! Hat, ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. 'Maybe later you'll find a way past the [kaos oak] to the Dirge Grid to defeat the Diktat Kid. But it's complicated.'[paragraph break]The Flee Elf mumbles something about the risk of a partner-entrap, so you'll have to go it alone. With a 'Rep us SUPER' and 'It's best I...' it  becomes the, err, FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
 	get-cap;
 	score-inc; [Dim Mid/pack cap]
 	verify-done rev-pack-cap rule;
@@ -7428,6 +7433,18 @@ carry out scvering:
 			else:
 				say "Something odd happening with row [rows].";
 	the rule succeeds;
+
+chapter tccing
+
+tcccing is an action out of world.
+
+understand the command "tccc" as something new.
+
+understand "tccc" as tccing.
+
+carry out tcccing:
+	try tccing;
+	increment the turn count;
 
 chapter tccing
 
