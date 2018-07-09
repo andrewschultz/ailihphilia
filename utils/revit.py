@@ -22,6 +22,7 @@ destinations = defaultdict(str)
 
 first_line = "# created with the revit.py python tool\n"
 
+post_prt = False
 do_rev_over = False
 # starting range for do_rev_over
 start_low = start_high = 0
@@ -42,7 +43,9 @@ def usage():
     print("m/e/w=min/east/west")
     print("s# = start (CSV), e# = end (CSV) for REV OVER")
     print("l/l1 = launch first, ll/l0 = launch last")
-    print("r = rev-over on, nr/rn = rev-over off"
+    print("r = rev-over on, nr/rn = rev-over off")
+    print("p = run PRT post-revit")
+    print("j = just copy generated files")
     exit()
 
 def create_speed_thru(base_file, base_out_str, idx):
@@ -193,7 +196,7 @@ def make_wthru(start_num, end_num):
     f.close()
     print("Wrote", file_name)
 
-count = 0
+count = 1
 do_all = False
 
 while count < len(sys.argv):
@@ -227,6 +230,8 @@ while count < len(sys.argv):
     elif arg == 'll' or arg == 'l0': launch_last = True
     elif arg == 'r': do_rev_over = True
     elif arg == 'nr' or arg == 'rn': do_rev_over = False
+    elif arg == 'p': post_prt = True
+    elif arg == 'j': post_copy_just_this = True
     elif arg == '?': usage()
     else:
         print("Didn't understand the argument", sys.argv[count])
@@ -287,6 +292,13 @@ else:
         for y in range (end_low, end_high + 1):
             if x > y: continue
         make_wthru(x, y)
+
+if post_copy_just_this:
+    of2 = re.sub("\{.*.}", "*", out_format)
+    os.system("copy {:s} {:s}".format(of2, i7.prt))
+    sys.exit("{:s} copied to {:s}".format(of2, i7.prt))
+
+if post_prt: os.system("prt.pl")
 
 if launch_first: os.system(my_file(start_low, end_low))
 if launch_last: os.system(my_file(start_high, end_high))
