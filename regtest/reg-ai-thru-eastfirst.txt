@@ -370,6 +370,8 @@ by one point
 
 >w
 
+>work row
+
 >use gold log on rotator
 by one point
 
@@ -527,9 +529,6 @@ by one point
 >n
 
 >n
-
->use elope pole on kayak
-by one point
 
 >use dork rod on tao boat
 by one point

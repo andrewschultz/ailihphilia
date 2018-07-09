@@ -118,10 +118,8 @@ by one point
 >w
 
 >get null illun
-by one point
 
 >work row
-by one point
 
 >use nub on reviver
 by one point
@@ -201,9 +199,6 @@ by one point
 >w
 
 >n
-
->use saw on sap
-by one point
 
 >use puce cup on past sap
 by one point
@@ -501,9 +496,6 @@ by one point
 >e
 
 >n
-
->deny ned
-by one point
 
 >use ye key on etage gate
 by one point

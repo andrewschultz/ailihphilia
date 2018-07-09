@@ -35,6 +35,16 @@ end_str = ">n\n>use me gem on knife fink\n>use taboo bat on verses rev\n>use yar
 
 line_nums = []
 
+def usage():
+    print("List of arguments:")
+    print('=' * 40)
+    print("a = all (0..73)")
+    print("m/e/w=min/east/west")
+    print("s# = start (CSV), e# = end (CSV) for REV OVER")
+    print("l/l1 = launch first, ll/l0 = launch last")
+    print("r = rev-over on, nr/rn = rev-over off"
+    exit()
+
 def create_speed_thru(base_file, base_out_str, idx):
     file_name = base_out_str.format(idx)
     f = open(file_name, "w")
@@ -198,6 +208,9 @@ while count < len(sys.argv):
     elif arg == 'w': files_to_run["westfirst"] = True
     elif arg == 'e': files_to_run["eastfirst"] = True # must come before 'e' below
     elif arg == 'm': files_to_run["min"] = True
+    elif arg == 'a':
+        start_low = end_low = speed_low = 0
+        start_high = end_high = speed_high = 73
     elif arg[0] == 's':
         ary = [int(x) for x in re.split("[,-]", arg[1:])]
         if len(ary) == 1: start_low = start_high = ary[0]
@@ -213,7 +226,11 @@ while count < len(sys.argv):
     elif arg == 'l' or arg == 'l1': launch_first = True
     elif arg == 'll' or arg == 'l0': launch_last = True
     elif arg == 'r': do_rev_over = True
-    elif arg == 'nr' or arg == 'rb': do_rev_over = False
+    elif arg == 'nr' or arg == 'rn': do_rev_over = False
+    elif arg == '?': usage()
+    else:
+        print("Didn't understand the argument", sys.argv[count])
+        usage()
     count += 1
 
 if start_low > start_high:

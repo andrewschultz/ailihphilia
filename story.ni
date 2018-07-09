@@ -3431,6 +3431,7 @@ Spa Maps are a plural-named thing. indefinite article of Spa Maps is "some". des
 
 after examining spa maps for the first time:
 	say "[line break]They were, unsurprisingly, written by Pam. Good thing they're not spa mini-maps. They'd be IMPOSSIBLE to read.";
+	continue the action;
 
 understand "spa map" and "map" as spa maps when player has spa maps.
 
@@ -5845,7 +5846,7 @@ this is the rev-check rule:
 	if being-chased is true, say "Oops, that's too much for me to do at once! Either escape or get caught by [the chase-person] first, then we can proceed." instead;
 	if player is in Dirge Grid, say "You're already at the Dirge Grid!" instead;
 	if Dirge Grid is visited, say "Too late! You've already been to the Dirge Grid." instead;
-	if emitted is true and player has ME gem and player has taboo bat, say "You're already near the endgame." instead;
+	if emitted is true and player has ME gem and player has taboo bat and KAOS Oak is moot and test set is moot, say "You're already near the endgame." instead; [i can cut this down, because some of this is probably redundant, but I'd rather be too sure]
 	continue the action;
 
 definition: a thing (called th) is speedtakeable:
