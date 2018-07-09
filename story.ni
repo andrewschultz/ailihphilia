@@ -1125,8 +1125,7 @@ this is the cant-shuttuhs rule:
 	continue the action;
 
 carry out shuttuhsing:
-	if shuttuhs is false:
-		if location of player is shutted, say "You're in an area you've completed. You'll need to go somewhere else to activate this." instead;
+	if shuttuhs is false and location of player is shutted, say "You're in an area you've completed. You'll need to go somewhere else to activate this." instead;
 	abide by the cant-shuttuhs rule;
 	now shuttuhs is whether or not shuttuhs is false;
 	say "The invisible shutters/shuttuhs blocking completed areas are now [on-off of shuttuhs].";
@@ -1144,12 +1143,14 @@ after going when shuttuhs is true:
 			if the room d3 of location of player is the room d2 of location of player:
 				now d2 is d3;
 				break;
-	if the room d2 of location of player is shutted, say "You hear the shuttuhs/shutters click down behind you. You must be done to the [d2], now.";
+	let rd2 be the room d2 of location of player;
+	if rd2 is shutted, say "You hear the shuttuhs/shutters click down behind you. You must be [if exit-count of rd2 > 2]completely [end if]done to the [d2], now.";
 	continue the action;
 
 check going when shuttuhs is true:
 	let Q be the room noun of location of player;
-	if Q is shutted, say "Invisible shuttuhs, err, shutters block you that way. You must be done in [Q]. You can still revisit [Q] if you toggle the shuttuhs with [b]SHUTTUHS[r]." instead;
+	if location of player is shutted, continue the action; [without this, the player would get stuck in Dopy Pod or Scrap Arcs, as Drawl Ward would be shutted]
+	if Q is shutted, say "Invisible shuttuhs, err, shutters block passage [noun]. You must be done in [Q][if exit-count of Q > 2] and the room(s) behind it, but you can revisit if you toggle the shuttuhs with [b]SHUTTUHS[r]." instead;
 
 section checking what's shuttuhs-ed
 
@@ -3129,6 +3130,8 @@ book Le Babel
 
 Le Babel is north of Dumb Mud. It is in Grebeberg. "Here space and time seem horribly warped. You can listen for apocryphal mumblings ... if you dare. A voodoo v blocks passage--and sight--everywhere except back south."
 
+check going nowhere in Le Babel: say "You would surely get lost going anywhere other than back south." instead;
+
 chapter voodoo v
 
 the voodoo v is peripheral scenery in Le Babel. "Maybe you could walk across it without getting hurt, but you doubt it. It's there, and it's immovable. Things probably will get weirder beyond it."
@@ -3554,6 +3557,8 @@ book Lac Oft Focal
 Lac Oft Focal is north of Yack Cay. It is in Grebeberg. "A calcific lac borders on all sides except south back to the [Yack Cay].[paragraph break][if dork rod is moot]The Tao Boat that helped you get at peace with things is here[else]A Tao Boat rests on the shore, here, with no clear entry[end if]. [if elope pole is moot]That kayak you took to Elided Ile is here, too[else]There's a kayak, too. [one of]And wait! If you look into the distance, you see something! Elided Ile! Just as the Known Wonk said it had to be somewhere! The Wonk's calculations and predictions were all right[or]You see Elided Ile in the distance. Maybe some day, you will get there[stopping][end if]."
 
 printed name of Lac Oft Focal is "[if lac-score is 2]Lac Old Local[else]Lac Oft Focal[end if]".
+
+check going nowhere in Lac Oft Focal: say "You can't make it across the calcific lac by yourself[if lac-score is 2], and you don't need to any more[end if]." instead;
 
 to decide which number is lac-score:
 	let temp be 0;
