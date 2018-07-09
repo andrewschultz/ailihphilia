@@ -1,0 +1,184 @@
+# reg-ai-test-end-options.txt
+
+# this tests what happens at the end: all the possible
+** game: /home/andrew/prt/debug-ailihphilia.ulx
+** interpreter: /home/andrew/prt/glulxe -q
+
+* runthrough
+
+>pack cap
+# this needs to be in place below so the player can't just jump through.
+>e
+
+>deep speed
+>smitims
+
+>score
+Your overall score so far is 76 of 88
+
+>tcc
+>z
+>s
+When you get home, you hear a click from the X/O box. Yes, you can open it now.
+As you open it, you see a nice, spiffy tenet. An antimetabole (look it up) that somehow magically changes every day. It's nice, but it still feels a bit like getting socks for your birthday. Well, you had a feeling you left a few things undone.
+Roxor!
+
+>missed
+Three ways to swear right, none over four letters
+A five-letter way to think
+A different way to ask for AID
+A four-letter way to look
+A five-letter way to get your score
+Another way to examine the tract cart
+Discuss mammals with the eels
+Help the felines, err, cats
+Find the source of the buzzing in Moo Room (3/4 letters)
+Find something healing in the Bald Lab
+Be nice to the opossum in Le Babel
+Type MISSED again to spoil the LLPs.
+>missed
+BOOB or POOP or PAP to swear "right"
+REFER instead of THINK
+DIAL AID instead of AID
+PEEP instead of looking
+STATS to get the score
+TRACE CART to find an "extra" book
+SLAM MAMMALS around the eels
+STACK CATS to help the senile felines
+SEE BEES in Moo Room
+BALM LAB in the Bald Lab
+MUSS OPOSSUM to make a friend
+!Type MISSED again to spoil the LLPs.
+
+>undo
+>tcc
+>s
+As you open it, you see a nice, spiffy tenet. An antimetabole (look it up) that somehow magically changes every day. It's nice, but it still feels a bit like getting socks for your birthday. Yet you feel you did something weird right, beyond finding everything, which you didn't do.
+
+>undo
+
+>stats
+>s
+As you open it, you see a nice, spiffy tenet. An antimetabole (look it up) that somehow magically changes every day. It's nice, but it still feels a bit like getting socks for your birthday. Yet you feel you did something weird right, beyond finding everything, which you didn't do.
+
+>undo
+>undo
+
+>z
+>s
+As you open it, you see a nice, spiffy tenet. An antimetabole (look it up) that somehow magically changes every day. It's nice, but it still feels a bit like getting socks for your birthday. Well, you had a feeling you left a few things undone.
+>undo
+
+# we want to check the test case for all the non-roving LLPs first.
+# "score" is slightly different if you got them all but not all roving llps vs getting all llps.
+>stats
+>refer
+>dial aid
+>peep
+>poop
+>score
+You have 6 roving last lousy points left. Also, you got all the non-roving LLPs.
+>undo
+>undo
+>undo
+>undo
+>undo
+>undo
+
+>w
+>w
+>n
+>muss opossum
+>score
+You have 5 roving last lousy points left
+>s
+>e
+>s
+>slam mammals
+>score
+You have 4 roving last lousy points left.
+
+>s
+>e
+>see bees
+>score
+You have 3 roving last lousy points left.
+
+>stack cats
+>score
+You have 2 roving last lousy points left.
+
+>w
+>n
+>n
+>e
+>e
+>s
+>w
+>word row
+>trace cart
+>e
+>n
+>e
+>e
+>n
+>n
+>score
+You have 1 roving last lousy point left.
+
+>balm lab
+>score
+You may want to go back to Fun 'Nuf now and try the other LLP commands. Also, you have 5 non-roving LLPs left.
+
+# now clean up the non-roving LLPs
+>stats
+>score
+You may want to go back to Fun 'Nuf now and try the other LLP commands. Also, you have 4 non-roving LLPs left.
+>refer
+>score
+WRONG bad grammar below
+You may want to go back to Fun 'Nuf now and try the other LLP commands. Also, you have 3 non-roving LLPs left.
+>dial aid
+>score
+You may want to go back to Fun 'Nuf now and try the other LLP commands. Also, you have 2 non-roving LLPs left.
+>peep
+>score
+You may want to go back to Fun 'Nuf now and try the other LLP commands. Also, you have 1 non-roving LLP left.
+>poop
+>score
+You may want to go back to Fun 'Nuf now and use the tickets. Also, you got all the non-roving LLPs.
+>undo
+>undo
+
+>s
+>s
+>w
+>w
+>w
+>poop
+>score
+Now you're in Fun 'Nuf, you may just want to use the tickets.
+
+>tcc
+>s
+WRONG
+
+>undo
+>z
+>s
+You have a vision of Grebeberg and Yelpley sliding back in a few years to where they were. Well, you'll still have your memories. But you can't shake the feeling you could've finished a bit differently and helped keep Yelpley and Grebeberg safe even longer.
+
+>missed
+WRONG: get rid of this if you have everything?
+You found all the points!
+
+#first, check what is happening
+
+>rand 0
+1. extra books in the Tract Cart
+2. responses to ATTACK
+
+>rand 1
+
+>rand 2
+All random text for responses to ATTACK:

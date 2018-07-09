@@ -7447,7 +7447,7 @@ carry out tccing:
 		let w be the remainder after dividing z by 1001;
 		now w is 110 * (w / 110);
 		now turn count is (z * 1001) + w;
-	decrement turn count;
+	[decrement turn count;] [for some reason you don't take a turn going through the tix exit]
 	if turn count is oldt, say "No change in turn count." instead;
 	say "Change from [oldt] to [turn count].";
 	the rule succeeds;
