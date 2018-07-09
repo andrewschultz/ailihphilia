@@ -3553,7 +3553,7 @@ book Lac Oft Focal
 
 Lac Oft Focal is north of Yack Cay. It is in Grebeberg. "A calcific lac borders on all sides except south back to the [Yack Cay].[paragraph break][if dork rod is moot]The Tao Boat that helped you get at peace with things is here[else]A Tao Boat rests on the shore, here, with no clear entry[end if]. [if elope pole is moot]That kayak you took to Elided Ile is here, too[else]There's a kayak, too. [one of]And wait! If you look into the distance, you see something! Elided Ile! Just as the Known Wonk said it had to be somewhere! The Wonk's calculations and predictions were all right[or]You see Elided Ile in the distance. Maybe some day, you will get there[stopping][end if]."
 
-printed name of Lac Oft Focal is "[if kayak is moot and dork rod is moot]Lac Old Local[else]Lac Oft Focal[end if]".
+printed name of Lac Oft Focal is "[if lac-score is 2]Lac Old Local[else]Lac Oft Focal[end if]".
 
 to decide which number is lac-score:
 	let temp be 0;
@@ -3757,14 +3757,14 @@ to say map-so-far:
 
 table of pyxloc [xxpyx]
 rmname	uptxt	downtxt
-Lac Oft Focal	"CALCI"	" LAC "
+Lac Oft Focal	"L O[if lac-score is 2]LD[else]FT[end if]"	"[if lac-score is 2]L[else]F[end if]OCAL"
 Sneer Greens	"[if Yuge Guy is moot]ET TU[else]SNEER[end if]"	"[if Yuge Guy is moot]BUTTE[else]GREEN[end if]"
 Flu Gulf	" FLU "	"GULF "
 Trapeze Part	"TRAPE"	"PART "
 Evaded Ave	"EVADE"	" AVE "
 Yell Alley	"YELL "	"ALLEY"
 Pro Corp	"[if bald-lab]BALD[else] PRO[end if] "	"[if bald-lab]LAB [else]CORP[end if] "
-Yack Cay	"YACK "	" CAY "
+Yack Cay	"[if Known Wonk is moot]ROOMY[else]YACK [end if]"	"[if Known Wonk is moot]MOOR[else] CAY[end if] "
 Le Babel	" LE  "	"BABEL"
 Cold Loc	"COLD "	" LOC "
 Apse Spa	"APSE "	" SPA "
@@ -3781,11 +3781,11 @@ Toll Lot	"TOLL "	" LOT "
 Uneven U	"UN[if balsa slab is off-stage]EVE[else]ITI[end if]"	" N U "
 Mont Nom	"MONT "	" NOM "
 Ooze Zoo	"OOZE "	" ZOO "
-Worn Row	"WORN "	" ROW "
+Worn Row	"WOR[if Worn Row is wordy]D[else if Worn Row is worky]K[else]N[end if] "	" ROW "
 My Gym	" MY  "	" GYM "
 Swept Pews	"SWEPT"	"PEWS "
 Deft Fed	"[if yob attaboy is moot]BON [else]DEFT[end if] "	"[if yob attaboy is moot]SNOB[else] FED[end if] "
-Lair Trial	"LAIR "	"TRIAL"
+Lair Trial	"[if ergot ogre is moot]STRID[else]LAIR [end if]"	"[if ergot ogre is moot]STRID[else]TRIAL[end if]"
 Motto Bottom	"MOTTO"	"BOTTO"
 Frush Surf	"FRUSH"	"SURF "
 Moo Room	" MOO "	"ROOM "
