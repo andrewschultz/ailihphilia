@@ -117,7 +117,7 @@ Initially sent to source code/repository November 2017.</history>
 			<dock index="1" id="35" port="w" />
 		</line>
 		<room id="37" name="Flu Gulf" subtitle="" x="-224" y="-288" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSmallText="" ZOrder="0">
-			<objects at="n" custom="yes" customRight="-24" customDown="0">  Gulf Lug|(Mush Sum)</objects>
+			<objects at="n" custom="yes" customRight="-24" customDown="0">  Gulf Lug|(Mush Sum)|(Ebola Lobe)</objects>
 		</room>
 		<line id="38" name="" description="" style="dashed">
 			<dock index="0" id="9" port="n" />

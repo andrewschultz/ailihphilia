@@ -421,6 +421,12 @@ USE PUCE CUP ON BOND NOB.
 >>DOPY POD
 ?What do I do with the demo med?
 Just take it, for now.
+?What is the demo med's brand name? Is it important?
+It's not critical, and you don't get a point for guessing it, but it is a clue.
+D--PE-S(I or Y, you can't tell)- is what it says initially.
+But there are a lot of palindromes in this game.
+So if it's 9 letters, you come up with DYSPEPSYD or DISPEPSID.
+Since Dyspepsia is stomach troubles, this may help someone with stomach pains.
 ?How do I clean up the cassettes sac? Is it worth it?
 You need something powerful.
 The Dirt Rid isn't powerful enough.

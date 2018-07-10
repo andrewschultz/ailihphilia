@@ -132,6 +132,19 @@ use MAX_VERBS of 450. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 use MAX_VERBSPACE of 4400. [4096 = original max]
 
+chapter room utilities
+
+to decide which number is exit-count of (r1 - a room):
+	let ret be 0;
+	repeat with DR running through maindir:
+		if the room DR of r1 is not nothing, increment ret;
+	decide on ret;
+
+to decide which direction is exit-dir of (r1 - a room):
+	repeat with DR running through maindir:
+		if the room DR of r1 is not nothing, decide on DR;
+	decide on up;
+
 chapter kinds of things
 
 section kinds of things
@@ -628,6 +641,8 @@ to decide whether gtv:
 
 part after command
 
+dyspepsyd-known is a truth state that varies.
+
 after reading a command:
 	if in-beta is true and the player's command matches the regular expression "^<;\*>":
 		say "(Noted.)[paragraph break]";
@@ -644,6 +659,10 @@ after reading a command:
 			replace the regular expression "<^a-z, 0-9>" in XX with "";
 			change the text of the player's command to XX;
 			if debug-state is true, say "Changed to: [XX][line break]";
+	if the player has demo med and dyspsyd-known is false:
+		if the player's command contains "dyspepsyd" or the player's command contains "dispepsid":
+			now dyspepsyd-known is true;
+			say "Hm, yes, that's likely the brand name. You don't have any stomach problems right now, though."
 
 no-punc-flag is a truth state that varies.
 
@@ -1861,9 +1880,9 @@ wash saw	past sap	--	sap-not-cut-yet rule	sap-loose rule	true	false	false	Grebeb
 puce cup	past sap	--	check-sap-cup rule	sap-to-cup rule	true	false	false	Grebeberg	Cold Loc	false	"You pour some sap into the cup."
 puce cup	liar grail	--	sap-in-cup rule	empty-grail rule	true	false	true	Yelpley	Swept Pews	false	"You pour the purist sirup into the liar grail. As the sirup bubbles, the Wordy Drow slips away from it and ... yes! It breaks free! 'Wend new! Wend new!' it calls to you.[paragraph break]Thoughts flow into your head from the liar grail, but the purist sirup has mutated its complex manipulations into much simple cries of protestation: it just doesn't want you to go there! You shrug, no longer mystified by its sophistry, and the grail cracks and rolls away.[paragraph break]The passage south looks clear. You snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL! You look around, worried a nun will say 'Tut!' But all is still."
 puce cup	dose sod	--	check-sod-cup rule	sod-to-cup rule	true	false	false	Grebeberg	Apse Spa	false	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough." [sc2-ignore]
-puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-nob rule	true	true	true	Yelpley	Drawl Ward	false	"You give the Bond Nob the puce cup. Gulp! Gulp! The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. So many places to visit: [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars]... well, everywhere except Soda Do's and Jo's OJ.'"
-stamp mats	slate metals	Ye Key	--	--	true	true	false	Yelpley	Scrap Arcs	false	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY. You find it hard to pull the stamp mats out, and when you take YE KEY, the mats quickly morph into the slate metals. Eh, well. Less inventory to worry about."
-demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	Grebeberg	Flu Gulf	false	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' and looks a lot better within a few seconds. 'Mute tum!' the Lug cries gratefully before handing you a cash sac and running away."
+puce cup	Bond Nob	Elan Ale	sod-in-cup rule	empty-nob rule	true	true	true	Yelpley	Drawl Ward	false	"You give the Bond Nob the puce cup. Gulp! Gulp! The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Let's have a drink! Is Pepsi...? No, have a REAL drink!' The Bond Nob hands you something called Elan Ale before running off, blathering about so many places to visit: [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars]... well, everywhere except Soda Do's and Jo's OJ.'[paragraph break]Well, you can't be shamed into avoiding whatever's east and west now."
+stamp mats	slate metals	Ye Key	--	--	true	true	false	Yelpley	Scrap Arcs	false	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY. You find it hard to pull the stamp mats out, and when you take YE KEY, the mats quickly get sucked into the slate metals. Eh, well. Less inventory to worry about."
+demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	Grebeberg	Flu Gulf	false	"The Gulf Lug takes the demo med, inspects it, and says, 'Er, U Sure?' But the Gulf Lug, after inspecting the name on the demo med, nods and gobbles it down and looks a lot better within a few seconds. 'Mute tum!' the Gulf Lug cries gratefully before handing you a cash sac and running away."
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	Toll Lot	false	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
 YOB ATTABOY	Sniffins	Dirt Rid	--	toons-to-den rule	true	true	false	Yelpley	Deft Fed	false	"Sniffins accepts your gift, with sniffs slowly changing from sadness to something more snooty. Your thanks for helping Sniffins be too good for you is a Dirt Rid. Sniffins shoos you back out to the Toll Lot: 'No, yob! Yon!' There is remodeling to be done! Sniffins will outdo Rentner, whoever that is! From the south, you hear frantic cries of 'Repaper! Repaper! Repaper!'"
 Elan Ale	Sniffins	Gorge Grog	--	--	true	true	false	Yelpley	Deft Fed	false	"Sniffins looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.' Hey, you're not one to say 'stuff free stuff.'" [af:stand nat's]
@@ -5228,7 +5247,7 @@ a Demo Med is an edible thing in Dopy Pod. "The demo med that must not have work
 
 understand "dispepsid" and "dyspepsyd" as demo med.
 
-instead of eating demo med, say "That would only be a temporary reprieve from your troubles. Plus, what if it is a demon-o-med?"
+instead of eating demo med, say "[if dyspepsyd-known is true]You have no stomach troubles, so the Dyspepsyd/Dispepsid won't do much good.[else]You're not sure what it is. Plus, what if it's a demon-o-med?[end if]"
 
 the pill lip is peripheral scenery in Dopy Pod. "A Demo Med rests on the Pill Lip."
 
@@ -7161,6 +7180,7 @@ Verses Rev is blank-appear-okay.
 the debug tweaks rule is listed first in the when play begins rulebook.
 
 when play begins (this is the debug tweaks rule):
+	say "This should not be present in a Beta or Release version of Ailihphilia.";
 	now ignore-wait is true;
 	now debug-state is true;
 
@@ -7375,17 +7395,6 @@ definition: a room (called ro) is chaseable:
 	if ro is in Odd Do, no;
 	if ro is Dirge Grid, no;
 	yes;
-
-to decide which number is exit-count of (r1 - a room):
-	let ret be 0;
-	repeat with DR running through maindir:
-		if the room DR of r1 is not nothing, increment ret;
-	decide on ret;
-
-to decide which direction is exit-dir of (r1 - a room):
-	repeat with DR running through maindir:
-		if the room DR of r1 is not nothing, decide on DR;
-	decide on up;
 
 carry out dirvering:
 	let list-none be false;
