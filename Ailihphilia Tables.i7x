@@ -1240,8 +1240,9 @@ randtxt
 "Or, Perp, REPRO!"
 "Pah, simp! Mishap!"
 "Pre-derp..."
+"Re-deeder."
+"Redo'd [']er."
 "'Redo-coder! Redo-coder!'"
-"[']S poor. Oops!"
 "Sod [']er! Redos!"
 "Time: remit."
 
@@ -1347,6 +1348,7 @@ randtxt
 "EVAR crave!"
 "Ey, dye?!"
 "Gibe! Big!"
+"Guff? Ug!"
 "Hog, oh!"
 "Huge! Guh!"
 "I B FBI!"
