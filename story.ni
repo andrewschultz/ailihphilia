@@ -432,11 +432,12 @@ check requesting the score:
 	if player has x-ite tix:
 		let Q be roving-LLP;
 		let Q2 be fixed-LLP;
-		if Q is 0:
-			say "You may want to go back to Fun [']Nuf now and [if the score is maximum score - 1]use the tickets[else]try the other LLP command[plur-s of Q][end if]. ";
+		if Q is 0 and Q2 is 0:
+			say "Now you're in Fun [']Nuf and have all the points, there's seemingly not much to do but go south through the Tix Exit.";
+		else if Q is 0:
+			say "You've got all the roving LLPs. You have [Q2] non-roving LLP[plur-s of Q2] remaining to figure out before going [if player is not in Fun Nuf]back to Fun [']Nuf and [end if]south through the Tix Exit.";
 		else:
-			say "You have [Q] roving last lousy point[unless Q is 1]s[end if] left. "; [?? test roving LLPs]
-		say "Also, you [if Q2 is 0]got all the non-roving LLPs[else]have [Q2] non-roving LLP[plur-s of Q2] left[end if].";
+			say "You have [Q] roving last lousy point[plur-s of Q] left and [Q2] non-roving LLP[plur-s of Q2] left.";
 	if player has epicer recipe and north tron is off-stage:
 		let ni be number of tronparts carried by the player;
 		if martini tram is in Fun Nuf, increment ni;
@@ -632,6 +633,7 @@ Rule for printing a parser error when the latest parser error is can only do tha
 chapter unrecognized verb
 
 Rule for printing a parser error when the latest parser error is the didn't understand error or the latest parser error is the not a verb I recognise error:
+	if the player's command includes "n i win", try niwining instead;
 	if player has spur ups:
 		if the player's command includes "spur", say "You look at the spur ups, unsure how to use them. It's more that they're, well, Up than spurs." instead;
 		if number of words in the player's command > 1:
@@ -1139,7 +1141,6 @@ understand the command "niwin" as something new.
 
 understand "niwin" as niwining.
 understand "ni win" as niwining.
-understand "n i win" as niwining.
 
 carry out niwining:
 	say "WARNING! These may spoil the game if used too early.[paragraph break]";
@@ -5850,6 +5851,8 @@ carry out deepspeeding:
 	say "DEEP SPEEDing to near the end[recxcheck of true]...";
 	try revovering;
 	now deep-speeding is false;
+	now all rooms in Yelpley are visited;
+	now all rooms in Grebeberg are visited;
 	now i-sped is true;
 	the rule succeeds;
 
@@ -7072,7 +7075,7 @@ understand the command "LLP" as something new.
 understand "LLP" as llping.
 
 carry out llping:
-	now LLP-reject is whether or not LLP-reject is true;
+	now LLP-reject is whether or not LLP-reject is false;
 	say "LLP reject is now [on-off of LLP-reject].";
 	the rule succeeds;
 

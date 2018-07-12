@@ -77,7 +77,8 @@ As you open it, you see a nice, spiffy tenet. An antimetabole (look it up) that 
 >peep
 >poop
 >score
-You have 6 roving last lousy points left. Also, you got all the non-roving LLPs.
+You have 6 roving last lousy points left and 0 non-roving LLPs left.
+
 >undo
 >undo
 >undo
@@ -90,23 +91,23 @@ You have 6 roving last lousy points left. Also, you got all the non-roving LLPs.
 >n
 >muss opossum
 >score
-You have 5 roving last lousy points left
+You have 5 roving last lousy points left and 5 non-roving LLPs left.
 >s
 >e
 >s
 >slam mammals
 >score
-You have 4 roving last lousy points left.
+You have 4 roving last lousy points left and 5 non-roving LLPs left.
 
 >s
 >e
 >see bees
 >score
-You have 3 roving last lousy points left.
+You have 3 roving last lousy points left and 5 non-roving LLPs left.
 
 >stack cats
 >score
-You have 2 roving last lousy points left.
+You have 2 roving last lousy points left and 5 non-roving LLPs left.
 
 >w
 >n
@@ -124,29 +125,28 @@ You have 2 roving last lousy points left.
 >n
 >n
 >score
-You have 1 roving last lousy point left.
+You have 1 roving last lousy point left and 5 non-roving LLPs left.
 
 >balm lab
 >score
-You may want to go back to Fun 'Nuf now and try the other LLP commands. Also, you have 5 non-roving LLPs left.
+You've got all the roving LLPs. You have 5 non-roving LLPs remaining to figure out before going back to Fun 'Nuf and south through the Tix Exit.
 
 # now clean up the non-roving LLPs
 >stats
 >score
-You may want to go back to Fun 'Nuf now and try the other LLP commands. Also, you have 4 non-roving LLPs left.
+You've got all the roving LLPs. You have 4 non-roving LLPs remaining to figure out before going back to Fun 'Nuf and south through the Tix Exit.
 >refer
 >score
-WRONG bad grammar below
-You may want to go back to Fun 'Nuf now and try the other LLP commands. Also, you have 3 non-roving LLPs left.
+You've got all the roving LLPs. You have 3 non-roving LLPs remaining to figure out before going back to Fun 'Nuf and south through the Tix Exit.
 >dial aid
 >score
-You may want to go back to Fun 'Nuf now and try the other LLP commands. Also, you have 2 non-roving LLPs left.
+You've got all the roving LLPs. You have 2 non-roving LLPs remaining to figure out before going back to Fun 'Nuf and south through the Tix Exit.
 >peep
 >score
-You may want to go back to Fun 'Nuf now and try the other LLP commands. Also, you have 1 non-roving LLP left.
+You've got all the roving LLPs. You have 1 non-roving LLP remaining to figure out before going back to Fun 'Nuf and south through the Tix Exit.
 >poop
 >score
-You may want to go back to Fun 'Nuf now and use the tickets. Also, you got all the non-roving LLPs.
+Now you're in Fun 'Nuf and have all the points, there's seemingly not much to do but go south through the Tix Exit.
 >undo
 >undo
 
@@ -157,22 +157,20 @@ You may want to go back to Fun 'Nuf now and use the tickets. Also, you got all t
 >w
 >poop
 >score
-Now you're in Fun 'Nuf, you may just want to use the tickets.
+Now you're in Fun 'Nuf and have all the points, there's seemingly not much to do but go south through the Tix Exit.
 
 >tcc
 >s
-WRONG
+Inside is a spiffy CERT REC for being cosmically in tune and covering even the smallest details. On the other side is an interesting tenet--an antimetabole that changes magically every day. It is a rec indeed nicer. Well done!
+
+RN 0 for next table)?
+>missed
+Please give one of the answers above.
 
 >undo
 >z
 >s
 You have a vision of Grebeberg and Yelpley sliding back in a few years to where they were. Well, you'll still have your memories. But you can't shake the feeling you could've finished a bit differently and helped keep Yelpley and Grebeberg safe even longer.
-
->missed
-WRONG: get rid of this if you have everything?
-You found all the points!
-
-#first, check what is happening
 
 >rand 0
 1. extra books in the Tract Cart
