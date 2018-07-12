@@ -420,7 +420,6 @@ chapter mostly scoring
 to score-inc:
 	if debug-state is true, say "DEBUG standard score-inc.";
 	reg-inc mrlp;
-	consider the shuttuhs-after-scoring rule;
 
 check requesting the score:
 	say "Your overall score so far is [score] of [maximum score] in [turn count] turn[unless turn count is 1]s[end if][if score < 4]. But don't worry, points pile up pretty quickly once you get going[end if]. [to-get-max].";
@@ -474,7 +473,8 @@ to reg-inc (re - a region):
 		say "DEBUG TALLY: Grebeberg [cur-score of Grebeberg] Yelpley [cur-score of Yelpley] Dim Mid [cur-score of Dim Mid] Odd Do [cur-score of Odd Do].";
 		if cur-score of mrlp > max-score of mrlp, say "DEBUG WARNING: REGION SCORE TOO HIGH!";
 		if debug-state is true and score > maximum score, say "DEBUG WARNING: OVERALL SCORE TOO HIGH!";
-		if mrlp is not re and re is not Odd Do, say "DEBUG WARNING: potential region misdirected point!"
+		if mrlp is not re and re is not Odd Do, say "DEBUG WARNING: potential region misdirected point!";
+	consider the shuttuhs-after-scoring rule;
 
 to say regres of (re - a region):
 	say "[cur-score of re] of [max-score of re] ";
@@ -1192,8 +1192,8 @@ after going when shuttuhs is true:
 
 check going when shuttuhs is true:
 	let Q be the room noun of location of player;
-	if location of player is shutted, continue the action; [without this, the player would get stuck in Dopy Pod or Scrap Arcs, as Drawl Ward would be shutted]
-	if Q is shutted, say "Invisible shuttuhs, err, shutters block passage [noun]. You must be done in [Q][if exit-count of Q > 2] and the room(s) behind it, but you can revisit if you toggle the shuttuhs with [b]SHUTTUHS[r]." instead;
+	if location of player is shutted and room-dist of location of player > room-dist of Q, continue the action; [without this, the player would get stuck in Dopy Pod or Scrap Arcs, as Drawl Ward would be shutted. Also, you can go to the center but not away.]
+	if Q is shutted, say "Invisible shuttuhs, err, shutters block passage [noun]. You must be done in [Q][if exit-count of Q > 2] and the room(s) behind it[end if], so you'll need to toggle the shutters with [b]SHUTTUHS[r] to go back." instead;
 
 section checking what's shuttuhs-ed
 
@@ -1629,12 +1629,9 @@ check useoning it with:
 				if there is a preproc entry:
 					consider the preproc entry;
 					unless the rule succeeded, the rule succeeds;
-				if there is a getit entry:
-					now player has getit entry;
-				if d2 entry is true:
-					moot use2 entry;
-				if d1 entry is true:
-					moot use1 entry;
+				if there is a getit entry, now player has getit entry;
+				if d2 entry is true, moot use2 entry;
+				if d1 entry is true, moot use1 entry;
 				now done entry is true;
 				if sco entry is true:
 					if there is a reg-plus entry:
@@ -1643,20 +1640,20 @@ check useoning it with:
 						score-inc; [ignore]
 				else:
 					if debug-state is true, say "DEBUG: not giving point for [use1 entry]/[use2 entry] use.";
-				say "[babble entry][line break]";
 				if there is a postproc entry:
 					[if debug-state is true, say "(considering [postproc entry])[line break]";]
 					consider the postproc entry;
+					consider the shuttuhs-after-scoring rule;
+				if second noun is a workable, wear-down second noun;
+				say "[babble entry][line break]";
 				if there is a getit entry and player has getit entry: [try to let "it" be defined]
 					set the pronoun it to getit entry;
 				else if use1 entry is moot and use2 entry is not moot:
 					set the pronoun it to use2 entry;
-				if second noun is a workable, wear-down second noun;
 				the rule succeeds;
 			else if there is no use2 entry:
 				say "[babble entry][line break]";
-				if there is a postproc entry:
-					consider the postproc entry;
+				if there is a postproc entry, consider the postproc entry;
 				the rule succeeds;
 		if there is a use2 entry and second noun is use2 entry and there is no use1 entry:
 			say "[babble entry][line break]";
@@ -6452,7 +6449,7 @@ this is the gross-org-hint rule:
 	say "[one of]You need to get rid of Ned.[or]Ned wants a fight, which you want to decline.[or]A better way to say it is, DENY NED.[stopping]" instead;
 
 this is the gross-org-complete rule:
-	if stinky knits are not in Gross Org and etage gate is not moot, the rule succeeds;
+	if stinky knits are not in Gross Org and etage gate is moot, the rule succeeds;
 	the rule fails;
 
 section Lair Trial rule
@@ -7527,6 +7524,19 @@ carry out txing:
 	now turn count is number understood - 1;
 	say "Forced game to [number understood] turns.";
 	the rule succeeds.
+
+chapter allshuting
+
+allshuting is an action out of world.
+
+understand the command "allshut" as something new.
+
+understand "allshut" as allshuting.
+
+carry out allshuting:
+	say "YELPLEY: [list of shutted rooms in Yelpley].";
+	say "GREBEBERG: [list of shutted rooms in Grebeberg].";
+	the rule succeeds;
 
 chapter full monty extension
 

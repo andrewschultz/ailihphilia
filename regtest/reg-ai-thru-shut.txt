@@ -1,0 +1,739 @@
+## reg-ai-thru-shut.txt
+## GENERATOR FILE: rbr-ai-thru.txt
+
+** game: /home/andrew/prt/debug-ailihphilia.ulx
+** interpreter: /home/andrew/prt/glulxe -q
+
+* runthrough
+
+>shuttuhs
+
+>pack cap
+by one point
+
+>e
+
+>n
+
+>get trap art
+
+>s
+
+>s
+
+#not a mistake
+>evade dave
+
+>get all
+
+>w
+
+>bore rob
+by one point
+
+>word row
+by one point
+
+>get TO IDIOT
+
+>e
+>n
+>n
+
+>n
+
+>use TO IDIOT on Door Frood
+by one point
+
+>get bunk nub
+#got bunk nub
+
+>e
+
+>get all
+
+>use pity tip on eye
+by one point
+#lost pity tip
+
+>w
+
+>w
+
+>tend net
+by one point
+#got elope pole
+
+You hear the click of invisible shuttuhs/shutters
+
+>e
+
+You hear the shuttuhs/shutters click down behind you. You must be done to the west, now.
+>w
+Invisible shuttuhs, err, shutters block passage west. You must be done in Trapeze Part, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+>s
+
+>s
+
+>s
+
+>w
+
+>work row
+by one point
+
+>use trap art on reifier
+by one point
+
+>use bunk nub on reviver
+by one point
+
+>word row
+
+>get epoch cope
+
+>e
+>n
+>w
+
+>x recipe
+
+>w
+
+>use party trap on stark rats
+by one point
+
+>n
+
+>use epoch cope on King Nik
+by one point
+
+>s
+
+>s
+
+>use stock cots on sleep eels
+by one point
+
+>s
+
+>get stamp mats
+
+>e
+
+>get poo coop
+
+>w
+>n
+>n
+>e
+>e
+>s
+>w
+
+>get yob attaboy
+
+>e
+>n
+
+>puff up
+by one point
+
+>e
+
+>pull up
+by one point
+
+>get puce cup
+
+>w
+>w
+>w
+>n
+
+>use wash saw on past sap
+by one point
+
+>use puce cup on past sap
+by one point
+
+>s
+
+>e
+
+>e
+
+>e
+
+>s
+
+>get troll ort
+
+>use puce cup on liar grail
+by one point
+
+>n
+>w
+>w
+>w
+>n
+
+>e
+
+>use puce cup on dose sod
+!by one point
+
+>w
+>s
+>e
+>e
+>e
+>s
+
+>s
+
+>use puce cup on Bond Nob
+by one point
+
+>w
+
+>get all
+#got dirt rid
+
+>e
+
+>e
+
+>use stamp mats on slate metals
+by one point
+#lost stamp mats
+
+You hear the click of invisible shuttuhs/shutters
+
+>w
+
+You hear the shuttuhs/shutters click down behind you. You must be done to the east, now.
+>e
+Invisible shuttuhs, err, shutters block passage east. You must be done in Scrap Arcs, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+>n
+>n
+
+>w
+>w
+>w
+>n
+
+>n
+
+>use demo med on gulf lug
+by one point
+
+>s
+>s
+>e
+>e
+>e
+
+>e
+
+>use cash sac on cross orc
+by one point
+
+>s
+
+>use yob attaboy on Sniffins
+by one point
+
+>s
+
+>use Elan Ale on Sniffins
+by one point
+#got gorge grog
+
+You hear the click of invisible shuttuhs/shutters
+
+>stand nat's
+by one point
+#got nat's
+
+>n
+
+You hear the shuttuhs/shutters click down behind you. You must be done to the south, now.
+>s
+Invisible shuttuhs, err, shutters block passage south. You must be done in Bon Snob, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+>w
+>w
+>s
+>w
+
+>work row
+
+>use Dirt Rid on reviver
+by one point
+#got dirt rid
+
+>e
+>n
+>e
+>s
+>s
+
+>w
+
+>use cave vac on cassettes sac
+by one point
+#lost cave vac
+
+You hear the click of invisible shuttuhs/shutters
+
+>e
+
+You hear the shuttuhs/shutters click down behind you. You must be done to the west, now.
+>w
+Invisible shuttuhs, err, shutters block passage west
+
+>n
+>n
+>e
+
+>use radar on crag arc
+by one point
+#got ufo tofu
+
+>n
+
+>deny ned
+by one point
+
+>get all
+
+>use Ye Key on etage gate
+by one point
+
+>n
+
+>s
+>s
+>w
+>w
+>s
+>w
+
+>Worn Row
+by one point
+
+>work row
+
+>use stinky knits on rotator
+by one point
+
+>word row
+
+>e
+>n
+>e
+>e
+>n
+>n
+
+>get all
+
+>use Gorge Grog on butene tub
+by one point
+
+You hear the click of invisible shuttuhs/shutters
+
+>allshut
+
+>s
+
+You hear the shuttuhs/shutters click down behind you. You must be done to the north, now.
+>n
+Invisible shuttuhs, err, shutters block passage north. You must be done in Bald Lab, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+>s
+>w
+
+You hear the shuttuhs/shutters click down behind you. You must be completely done to the east, now.
+>e
+Invisible shuttuhs, err, shutters block passage east. You must be done in Toll Lot and the room(s) behind it, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+>w
+>s
+>w
+
+>get null illun
+
+>work row
+
+>use gold log on rotator
+by one point
+
+>e
+>n
+>w
+>w
+>s
+>s
+>e
+
+>use SOME DEMOS on yahoo hay
+by one point
+
+>w
+>n
+>n
+>e
+>e
+>n
+
+>use straw arts on Revolt Lover
+by one point
+
+>use gate tag on soot tattoos
+by one point
+
+>s
+>s
+>w
+
+>work row
+
+>e
+>n
+>w
+>w
+
+>w
+
+>use poo coop on gnu dung
+by one point
+
+>use poo coop on turf rut
+by one point
+
+>w
+
+>use radar on made dam
+by one point
+
+>n
+
+>use NULL ILLUN on Known Wonk
+by one point
+
+>use el doodle on edits tide
+by one point
+
+>n
+
+>use elope pole on kayak
+by one point
+
+>use dork rod on tao boat
+by one point
+#got enact cane
+
+>s
+
+>s
+
+>s
+
+>use tent net on code doc
+by one point
+
+>use spa maps on code doc
+by one point
+
+>n
+>e
+>e
+>n
+>e
+
+>use spa maps on go-by bog
+by one point
+
+You hear the click of invisible shuttuhs/shutters
+
+>w
+
+You hear the shuttuhs/shutters click down behind you. You must be done to the east, now.
+>e
+Invisible shuttuhs, err, shutters block passage east. You must be done in Apse Spa, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+>s
+>s
+>s
+
+>e
+
+>allshut
+
+>use enact cane on yahoo hay
+by one point
+#lost enact cane
+#got moor broom
+
+You hear the click of invisible shuttuhs/shutters
+>allshut
+
+>pace cap
+by one point
+
+>w
+>e
+Invisible shuttuhs, err, shutters block passage east. You must be done in Moo Room, so you'll need to toggle the shutters with SHUTTUHS to go back.
+>undo
+>undo
+
+>use troll ort on brag garb
+by one point
+
+>w
+
+You hear the shuttuhs/shutters click down behind you. You must be done to the east, now.
+>e
+That seems like a dead end. The yak would have you cornered.
+
+>n
+>n
+>w
+>w
+>s
+
+>s
+
+>yak okay
+by one point
+
+>e
+
+>use sage gas on tame mat
+by one point
+
+>use sharp rahs on guru rug
+by one point
+
+You hear the click of invisible shuttuhs/shutters
+
+>w
+
+You hear the shuttuhs/shutters click down behind you. You must be done to the east, now.
+>e
+Invisible shuttuhs, err, shutters block passage east. You must be done in Motto Bottom, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+>n
+
+>s
+Invisible shuttuhs, err, shutters block passage south. You must be done in Stride Dirts, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+>n
+>e
+
+>s
+
+>nail ian
+by one point
+
+>use snack cans on UFO tofu
+by one point
+
+>use gift fig on mayo yam
+by one point
+
+>w
+
+>s
+Invisible shuttuhs, err, shutters block passage south. You must be done in Ooze Zoo. You can still revisit Ooze Zoo if you toggle the shuttuhs with SHUTTUHS.
+
+>w
+
+>s
+Invisible shuttuhs, err, shutters block passage south. You must be done in Mont Nom. You can still revisit Mont Nom if you toggle the shuttuhs with SHUTTUHS.
+
+>w
+>n
+
+>use moor broom on tru yurt
+by one point
+
+You hear the click of invisible shuttuhs/shutters
+
+>s
+
+>n
+Invisible shuttuhs, err, shutters block passage north. You must be done in Roomy Moor. You can still revisit Roomy Moor if you toggle the shuttuhs with SHUTTUHS.
+
+>s
+
+>use wash saw on porch crop
+by one point
+
+You hear the click of invisible shuttuhs/shutters
+
+>n
+
+You hear the shuttuhs/shutters click down behind you. You must be done to the south, now.
+>s
+Invisible shuttuhs, err, shutters block passage south. You must be done in Unitin' U. You can still revisit Unitin' U if you toggle the shuttuhs with SHUTTUHS.
+
+>e
+
+You hear the shuttuhs/shutters click down behind you. You must be done to the west, now.
+>w
+Invisible shuttuhs, err, shutters block passage west. You must be done in Swamp Maws. You can still revisit Swamp Maws if you toggle the shuttuhs with SHUTTUHS.
+
+>use exam axe on lie veil
+by one point
+
+>n
+
+>get all
+
+You hear the click of invisible shuttuhs/shutters
+
+>s
+
+You hear the shuttuhs/shutters click down behind you. You must be done to the north, now.
+>n
+Invisible shuttuhs, err, shutters block passage north. You must be done in Le Babel. You can still revisit Le Babel if you toggle the shuttuhs with SHUTTUHS.
+
+>e
+
+You hear the shuttuhs/shutters click down behind you. You must be done to the west, now.
+>w
+Invisible shuttuhs, err, shutters block passage west. You must be done in Dumb Mud. You can still revisit Dumb Mud if you toggle the shuttuhs with SHUTTUHS.
+
+>e
+>e
+>s
+>w
+
+>use DNA band on reifier
+by one point
+
+>use roto motor on DNA hand
+by one point
+
+>use eroded ore on reviver
+by one point
+
+>use you buoy on rotator
+by one point
+#got me gem
+
+>e
+>n
+>n
+>n
+>e
+
+>use mr arm on bomb mob
+by one point
+
+You hear the click of invisible shuttuhs/shutters
+
+>get rep popper
+
+>w
+
+You hear the shuttuhs/shutters click down behind you. You must be done to the east, now.
+>e
+Invisible shuttuhs, err, shutters block passage west. You must be done in Yell Alley, which you can still revisit if you toggle the shuttuhs with SHUTTUHS.
+
+>s
+>s
+
+>n
+Invisible shuttuhs, err, shutters block passage west. You must be done in Traded Art, which you can still revisit if you toggle the shuttuhs with SHUTTUHS.
+
+>w
+>w
+>n
+>n
+
+>use nat's tan on scorn rocs
+by one point
+
+>w
+
+>use rep popper on me totem
+by one point
+
+You hear the click of invisible shuttuhs/shutters
+
+>e
+
+You hear the shuttuhs/shutters click down behind you. You must be done to the west, now.
+>w
+Invisible shuttuhs, err, shutters block passage west. You must be done in Et Tu Butte, but you can still revisit if you toggle the shuttuhs with SHUTTUHS.
+
+>s
+>s
+
+>n
+Invisible shuttuhs, err, shutters block passage west. You must be done in Cold Loc, but you can still revisit if you toggle the shuttuhs with SHUTTUHS.
+
+>e
+>e
+>e
+
+>n
+
+>use Bro Orb on mirror rim
+by one point
+
+>use balsa slab on sword rows
+by one point
+
+>s
+>w
+
+>e
+Invisible shuttuhs, err, shutters block passage west. You must be done in Emo Dome, which you can still revisit if you toggle the shuttuhs with SHUTTUHS.
+
+>s
+>w
+
+>use not-a-baton on reifier
+by one point
+
+>use murdered rum on yard ray
+by one point
+
+>emit noontime
+by one point
+
+>use yard ray on test set
+by one point
+
+>e
+>n
+>w
+
+>use TNT on ore zero
+by one point
+
+>n
+
+>use ME gem on Knife Fink
+by one point
+
+>use taboo bat on Verses Rev
+by one point
+
+>use yard ray on redivider
+by one point
+
+>s
+
+>use x-ite tix on tix exit
+by one point
+
+#
+
