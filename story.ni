@@ -492,6 +492,7 @@ every turn (this is the don't increment trivial turns rule):
 the don't increment trivial turns rule is listed first in the every turn rulebook.
 
 this is the check palindrome turns rule: [this could be at the end but those are item based rules]
+	if kaos oak is not moot, continue the action;
 	let revnum be 0;
 	let cutnum be turn count;
 	while cutnum > 0:
@@ -505,6 +506,8 @@ this is the check palindrome turns rule: [this could be at the end but those are
 	if pal-turns is true:
 		if score is maximum score:
 			say "Inside is a spiffy CERT REC for being cosmically in tune and covering even the smallest details. On the other side is an interesting tenet--an antimetabole that changes magically every day. It is a rec indeed nicer. Well done!";
+			choose row with final response activity of loafing in table of final question options;
+			blank out the whole row;
 			continue the action;
 		say "[sox]. Yet you feel you did something weird right, beyond finding everything, which you didn't [if score > 84]quite [end if]do.";
 	else if score is 88:
@@ -561,7 +564,7 @@ when play begins:
 	say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because you looked up the winning strategy on the Internet after it confused you. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers. Then 'Is reversi...?'";
 	say "After your fifth win in a row, the Flee Elf yells 'GRAAAARG!' You stumble back and fall to the ground.[wfak-d]";
 	say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Ares[']s Era, Raw Level War, Base Sab or Mista-T Sim. Mega-Tag [']Em?'[wfak-d]";
-	say "You chase the Flee Elf around a few minutes, failing to catch it. '[']S poor. Oops!' The Flee Elf thinks for a minute. 'Yelpley Yes, ey, Yelpley.'[wfak-d]";
+	say "You chase the Flee Elf around a few minutes, failing to catch it. '[']S poor. Oops!' The Flee Elf thinks for a minute. 'Yelpley. Yes, ey, Yelpley.'[wfak-d]";
 	say "The Flee Elf leads you away. 'Right. I'll quit bugging you once you figure how to take this-here cap.'[wfak-d]";
 	say "[paragraph break](NOTE: if you want to know more about Ailihphilia and the commands used, type ABOUT.)[paragraph break]";
 	do nothing; [debug information below here. I've had problems putting it in and not deleting it, so I want to make things clear.]
@@ -6970,7 +6973,7 @@ this is the what-missed rule:
 		if the rule failed:
 			say "[if LLP-hint-yet is false][LLP-clue entry][else][LLP-spoil entry][end if]";
 			increment missed;
-	if missed is 0, say "You found all the points!" instead;
+	if missed is 0, say "You found all the points, but something in your final results isn't fully in tune with the game...yet. It can't be too hard to change!" instead;
 	if LLP-hint-yet is false, say "[paragraph break]Type MISSED again to spoil the LLPs.";
 	now LLP-hint-yet is true;
 

@@ -731,6 +731,7 @@ biz-name
 "Looks Skool"
 "MRI Firm"
 "Pot Stop"
+"Potsdam Ad Stop"
 "Rife Kefir"
 "Shop O['] H's"
 "Skooby Books"
@@ -1043,6 +1044,7 @@ randtxt
 "Or BE, Bro"
 "Park Rap"
 "Petite P"
+"Playa LP"
 "Rap Spar"
 "Rev [']Er"
 "Rev [']Er Ever"
@@ -1298,6 +1300,7 @@ randtxt
 "Won't, Now."
 "Y'revery!" [ignore]
 "Yon! Oy!"
+"Zen? E-Z!"
 
 table of wordy drow laments
 randtxt
