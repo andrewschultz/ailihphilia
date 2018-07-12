@@ -150,18 +150,6 @@ understand "bony nob" as a mistake ("The Bond Nob's body weight is not an import
 
 understand "drawn ward" and "draws ward" as a mistake ("The room remains text-based.[mis of 67]") when player is in Drawl Ward.
 
-understand "gi rig" as a mistake ("You don't need anything military-grade here. Even if you got one, you wouldn't know how to operate it.[mis of 68]") when player is in Drawl Ward.
-
-understand "gird rig" as a mistake ("It is already substantial enough.[mis of 69]") when player is in Drawl Ward.
-
-understand "gire rig" as a mistake ("The rig fails to collapse. Even if it did, the hole it left would lead no way south.[mis of 70]") when player is in Drawl Ward.
-
-understand "girl rig" as a mistake ("I don't want to know why you thought this was a good idea.[mis of 71]") when player is in Drawl Ward.
-
-understand "girn rig" as a mistake ("It's sturdy enough.[mis of 72]") when player is in Drawl Ward.
-
-understand "giro rig" as a mistake ("No greasy sandwich appears.[mis of 73]") when player is in Drawl Ward.
-
 chapter Dumb Mud
 
 understand "dump mud" as a mistake ("It's already kind of dumped here[if poo coop is not moot]. Maybe you could dump the mud into the rut for passage south, but it might take too long, and you don't have a shovel. You'd need something else[end if].[mis of 74]") when player is in Dumb Mud.
@@ -522,6 +510,18 @@ understand "yarg ray" and "yarr ray" as a mistake ("Becoming a pirate at the end
 understand "yarn ray" as a mistake ("If you want more story, then sorry, this one's nearly at an end.[mis of 202]") when player has yard ray.
 
 chapter Scrap Arcs
+
+understand "gi rig" as a mistake ("You don't need anything military-grade here. Even if you got one, you wouldn't know how to operate it.[mis of 68]") when player is in Scrap Arcs.
+
+understand "gird rig" as a mistake ("It is already substantial enough.[mis of 69]") when player is in Scrap Arcs.
+
+understand "gire rig" as a mistake ("The rig fails to collapse. Even if it did, it might collapse on you.[mis of 70]") when player is in Scrap Arcs.
+
+understand "girl rig" as a mistake ("I don't want to know why you thought this was a good idea.[mis of 71]") when player is in Scrap Arcs.
+
+understand "girn rig" as a mistake ("It's sturdy enough.[mis of 72]") when player is in Scrap Arcs.
+
+understand "giro rig" as a mistake ("No greasy sandwich appears.[mis of 73]") when player is in Scrap Arcs.
 
 understand "scram arcs" as a mistake ("The arcs stay still, but you can just go back east if you want.[mis of 203]") when player is in Scrap Arcs.
 

@@ -633,7 +633,6 @@ Rule for printing a parser error when the latest parser error is can only do tha
 chapter unrecognized verb
 
 Rule for printing a parser error when the latest parser error is the didn't understand error or the latest parser error is the not a verb I recognise error:
-	if the player's command includes "n i win", try niwining instead;
 	if player has spur ups:
 		if the player's command includes "spur", say "You look at the spur ups, unsure how to use them. It's more that they're, well, Up than spurs." instead;
 		if number of words in the player's command > 1:
@@ -665,6 +664,7 @@ after reading a command:
 			replace the regular expression "<^a-z, 0-9>" in XX with "";
 			change the text of the player's command to XX;
 			if debug-state is true, say "Changed to: [XX][line break]";
+	if the player's command includes "n i win", try niwining instead;
 
 no-punc-flag is a truth state that varies.
 
@@ -1145,7 +1145,7 @@ understand "ni win" as niwining.
 carry out niwining:
 	say "WARNING! These may spoil the game if used too early.[paragraph break]";
 	say "[b]REV OVER[r] allows you to skip a few puzzles at a time.";
-	say "[b]DEEP SPEED[r] jumps you to where you have blown a hole in the Kaos Oak to the north of Fun 'Nuf and have the weaponry to take on the Diktat Kid.";
+	say "[b]DEEP SPEED[r] jumps you to where you have blown a hole in the Kaos Oak to the north of Fun [']Nuf and have the weaponry to take on the Diktat Kid.";
 	the rule succeeds;
 
 chapter shuttuhsing
