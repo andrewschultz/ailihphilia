@@ -7488,18 +7488,42 @@ carry out tccing:
 	let oldt be turn count;
 	if turn count < 1000:
 		let y be turn count / 100;
-		let x be the remainder after dividing turn count by 10;
-		now turn count is turn count - x;
-		now turn count is turn count + y;
+		let z be the remainder after dividing turn count by 100;
+		if z < y:
+			now turn count is 101 * z;
+		else:
+			let x be the remainder after dividing turn count by 10;
+			now turn count is turn count - x;
+			now turn count is turn count + y;
 	else:
 		let z be turn count / 1001;
-		let w be the remainder after dividing z by 1001;
-		now w is 110 * (w / 110);
-		now turn count is (z * 1001) + w;
+		let z2 be turn count / 1000;
+		let z3 be the remainder after dividing turn count by 1000;
+		if z3 < z2:
+			now turn count is z2 * 1001;
+		else:
+			let w be the remainder after dividing z by 1001;
+			now w is 110 * (w / 110);
+			now turn count is (z * 1001) + w;
 	[decrement turn count;] [for some reason you don't take a turn going through the tix exit]
 	if turn count is oldt, say "No change in turn count." instead;
 	say "Change from [oldt] to [turn count].";
 	the rule succeeds;
+
+chapter txing
+
+txing is an action applying to one number.
+
+understand the command "tx" as something new.
+
+understand "tx [number]" as txing.
+
+carry out txing:
+	if player does not have x-ite tix, say "You need to have the X-Ite Tix for this to work." instead;
+	if number understood < 100 or number understood > 10000, say "New turn count must be between 100 and 10000." instead;
+	now turn count is number understood - 1;
+	say "Forced game to [number understood] turns.";
+	the rule succeeds.
 
 chapter full monty extension
 
