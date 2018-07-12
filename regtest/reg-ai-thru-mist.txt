@@ -902,8 +902,10 @@ by one point
 #lost stamp mats
 
 >w
+
 >n
 >n
+
 >w
 >w
 >w
@@ -1067,6 +1069,7 @@ by one point
 #got nat's
 
 >n
+
 >w
 >w
 >s
@@ -1103,6 +1106,7 @@ But what sort of op?
 But what to do to it? How to change it?
 
 >e
+
 >n
 >n
 >e
@@ -1278,8 +1282,10 @@ Nothing fun explodes out from the walls or ceiling.
 There is no Par Trap or Tee Meet to navigate here, so you don't need to make a golf log.
 
 >s
+
 >s
 >w
+
 >w
 >s
 >w
@@ -1506,6 +1512,7 @@ by one point
 #got enact cane
 
 >s
+
 >s
 
 #mistake retest for swami maws
@@ -1542,6 +1549,7 @@ by one point
 No boat appears to take you across the watery bits. You already got the sage gas, anyway.
 
 >w
+
 >s
 >s
 >s
@@ -1605,7 +1613,7 @@ by one point
 
 #mistake test for stir brits
 >stir brits
-Alas, there are no spell-organized-with-an-'s' degenerates around TO stir.
+Alas, there are no spell-organized-with-an-"s" degenerates around TO stir.
 
 #mistake test for stir crits
 >stir crits
@@ -1620,7 +1628,9 @@ But the stir writs are nourishment for the SOUL.
 You wait for a man to appear after a long journey, only to be crushed by a giant foot, but it doesn't happen.
 
 >w
+
 >n
+
 >n
 >e
 
@@ -1678,7 +1688,9 @@ by one point
 by one point
 
 >w
+
 >w
+
 >w
 >n
 
@@ -1693,12 +1705,14 @@ The moor broom is not equipped for transport. Some brooms are, but this isn't.
 by one point
 
 >s
+
 >s
 
 >use wash saw on porch crop
 by one point
 
 >n
+
 >e
 
 >use exam axe on lie veil
@@ -1716,7 +1730,9 @@ by one point
 >get all
 
 >s
+
 >e
+
 >e
 >e
 >s
@@ -1787,8 +1803,10 @@ The Line Nil security system fails to break apart. That's pretty secure!
 >get rep popper
 
 >w
+
 >s
 >s
+
 >w
 >w
 >n
@@ -1807,8 +1825,10 @@ Your tame disgust fails to change the Yuge Guy.
 by one point
 
 >e
+
 >s
 >s
+
 >e
 >e
 >e
@@ -1843,6 +1863,7 @@ by one point
 
 >s
 >w
+
 >s
 >w
 

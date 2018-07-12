@@ -1187,13 +1187,13 @@ after going when shuttuhs is true:
 				now d2 is d3;
 				break;
 	let rd2 be the room d2 of location of player;
-	if rd2 is shutted, say "You hear the shuttuhs/shutters click down behind you. You must be [if exit-count of rd2 > 2]completely [end if]done to the [d2], now.";
+	if rd2 is shutted, say "You hear the shuttuhs/shutters click down behind you. You must be [if exit-count of rd2 > 1]completely [end if]done to the [d2], now.";
 	continue the action;
 
 check going when shuttuhs is true:
 	let Q be the room noun of location of player;
 	if location of player is shutted and room-dist of location of player > room-dist of Q, continue the action; [without this, the player would get stuck in Dopy Pod or Scrap Arcs, as Drawl Ward would be shutted. Also, you can go to the center but not away.]
-	if Q is shutted, say "Invisible shuttuhs, err, shutters block passage [noun]. You must be done in [Q][if exit-count of Q > 2] and the room(s) behind it[end if], so you'll need to toggle the shutters with [b]SHUTTUHS[r] to go back." instead;
+	if Q is shutted, say "Invisible shuttuhs, err, shutters block passage [noun]. You must be done in [Q][if exit-count of Q > 1] and the room(s) behind it[end if], so you'll need to toggle the shutters with [b]SHUTTUHS[r] to go back." instead;
 
 section checking what's shuttuhs-ed
 
@@ -6281,7 +6281,8 @@ this is the cold-loc-hint rule:
 	say "USE PUCE CUP ON PAST SAP." instead;
 
 this is the cold-loc-complete rule:
-	if King Nik is moot and puce cup is sappy, the rule succeeds;
+	if King Nik is moot:
+		if puce cup is sappy or liar grail is moot, the rule succeeds;
 	the rule fails;
 
 section Deft Fed rule
@@ -6574,7 +6575,7 @@ this is the red-roses-order-hint rule:
 	say "USE BALSA SLAB ON SWORD ROWS." instead;
 
 this is the red-roses-order-complete rule:
-	if taboo bat is not off-stage, the rule succeeds;
+	if not-a-baton is not off-stage, the rule succeeds;
 	the rule fails;
 
 section Scrap Arcs rule

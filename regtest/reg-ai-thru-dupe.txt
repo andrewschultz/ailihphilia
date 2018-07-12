@@ -661,7 +661,6 @@ by one point
 >use sage gas on tame mat
 !by one point
 
-
 >use sharp rahs on guru rug
 by one point
 
@@ -694,6 +693,7 @@ by one point
 !by one point
 
 >w
+
 >w
 >w
 >n
@@ -702,6 +702,7 @@ by one point
 
 >use moor broom on tru yurt
 !by one point
+
 
 >s
 >s

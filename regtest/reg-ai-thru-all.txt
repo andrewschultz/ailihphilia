@@ -221,8 +221,10 @@ by one point
 #lost stamp mats
 
 >w
+
 >n
 >n
+
 >w
 >w
 >w
@@ -260,6 +262,7 @@ by one point
 #got nat's
 
 >n
+
 >w
 >w
 >s
@@ -284,6 +287,7 @@ by one point
 #lost cave vac
 
 >e
+
 >n
 >n
 >e
@@ -337,8 +341,10 @@ by one point
 by one point
 
 >s
+
 >s
 >w
+
 >w
 >s
 >w
@@ -422,6 +428,7 @@ by one point
 #got enact cane
 
 >s
+
 >s
 
 >s
@@ -442,6 +449,7 @@ by one point
 by one point
 
 >w
+
 >s
 >s
 >s
@@ -481,7 +489,9 @@ by one point
 by one point
 
 >w
+
 >n
+
 >n
 >e
 
@@ -497,7 +507,9 @@ by one point
 by one point
 
 >w
+
 >w
+
 >w
 >n
 
@@ -505,12 +517,14 @@ by one point
 by one point
 
 >s
+
 >s
 
 >use wash saw on porch crop
 by one point
 
 >n
+
 >e
 
 >use exam axe on lie veil
@@ -524,7 +538,9 @@ by one point
 >get all
 
 >s
+
 >e
+
 >e
 >e
 >s
@@ -555,8 +571,10 @@ by one point
 >get rep popper
 
 >w
+
 >s
 >s
+
 >w
 >w
 >n
@@ -571,8 +589,10 @@ by one point
 by one point
 
 >e
+
 >s
 >s
+
 >e
 >e
 >e
@@ -587,6 +607,7 @@ by one point
 
 >s
 >w
+
 >s
 >w
 

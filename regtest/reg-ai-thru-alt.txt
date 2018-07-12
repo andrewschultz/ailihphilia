@@ -297,8 +297,10 @@ by one point
 #lost stamp mats
 
 >w
+
 >n
 >n
+
 >use ye key on diff id
 WRONG
 >w
@@ -352,6 +354,7 @@ by one point
 #got nat's
 
 >n
+
 >w
 >w
 >s
@@ -390,6 +393,7 @@ by one point
 WRONG
 
 >e
+
 >n
 >n
 >e
@@ -449,8 +453,10 @@ WRONG
 by one point
 
 >s
+
 >s
 >w
+
 >w
 >s
 >w
@@ -602,6 +608,7 @@ by one point
 #got enact cane
 
 >s
+
 >s
 
 >s
@@ -634,6 +641,7 @@ by one point
 WRONG
 
 >w
+
 >s
 >s
 >s
@@ -689,7 +697,9 @@ by one point
 by one point
 
 >w
+
 >n
+
 >n
 >e
 
@@ -705,7 +715,9 @@ by one point
 by one point
 
 >w
+
 >w
+
 >w
 >n
 
@@ -719,6 +731,7 @@ WRONG
 by one point
 
 >s
+
 >s
 
 >use exam axe on porch crop
@@ -731,6 +744,7 @@ by one point
 WRONG
 
 >n
+
 >e
 
 >use exam axe on lie veil
@@ -741,7 +755,9 @@ by one point
 >get all
 
 >s
+
 >e
+
 >e
 >e
 >s
@@ -768,7 +784,7 @@ by one point
 
 >use mr arm on tnt
 by one point
-undo
+>undo
 >purloin taboo bat
 >use taboo bat on bomb mob
 WRONG
@@ -781,8 +797,10 @@ by one point
 >get rep popper
 
 >w
+
 >s
 >s
+
 >w
 >w
 >n
@@ -833,8 +851,10 @@ WRONG
 by one point
 
 >e
+
 >s
 >s
+
 >e
 >e
 >e
@@ -853,6 +873,7 @@ by one point
 
 >s
 >w
+
 >s
 >w
 

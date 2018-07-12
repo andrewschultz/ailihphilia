@@ -4,7 +4,7 @@
 #-- mist.py checks the mistake file
 #--
 
-files=reg-ai-thru-min.txt,reg-ai-thru-all.txt,reg-ai-thru-mist.txt,reg-ai-thru-wrongway.txt,reg-ai-thru-gt.txt,reg-ai-thru-alt.txt
+files=reg-ai-thru-min.txt,reg-ai-thru-all.txt,reg-ai-thru-mist.txt,reg-ai-thru-wrongway.txt,reg-ai-thru-gt.txt,reg-ai-thru-alt.txt,reg-ai-thru-shut.txt
 dupefile=reg-ai-thru-dupe.txt
 ## *FILE
 ## *FORK
@@ -15,6 +15,9 @@ TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with al
 ** interpreter: /home/andrew/prt/glulxe -q
 
 * runthrough
+
+==t6
+>shuttuhs
 
 ==t1,2,4
 >stats
@@ -557,12 +560,20 @@ Nobody comes by to hand it to you. You're on the right track. Maybe you're overt
 by one point
 #got elope pole
 
+==t6
+You hear the click of invisible shuttuhs/shutters
+
 ==t2
 #mistake retest for tendered net
 >tendered net
 You already have it.
 
 >e
+
+==t6
+You hear the shuttuhs/shutters click down behind you. You must be done to the west, now.
+>w
+Invisible shuttuhs, err, shutters block passage west. You must be done in Trapeze Part, so you'll need to toggle the shutters with SHUTTUHS to go back.
 
 >s
 
@@ -1289,13 +1300,24 @@ WRONG
 by one point
 #lost stamp mats
 
+==t6
+You hear the click of invisible shuttuhs/shutters
+
 ==t4
 >gt cold loc
 ==!
 >w
+
+==t6
+You hear the shuttuhs/shutters click down behind you. You must be done to the east, now.
+>e
+Invisible shuttuhs, err, shutters block passage east. You must be done in Scrap Arcs, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+==t!4
 >n
 >n
-===5
+
+==t5
 >use ye key on diff id
 WRONG
 ==!4
@@ -1512,6 +1534,9 @@ WRONG
 by one point
 #got gorge grog
 
+==t6
+You hear the click of invisible shuttuhs/shutters
+
 >stand nat's
 by one point
 #got nat's
@@ -1520,6 +1545,13 @@ by one point
 >gt word row
 ==!
 >n
+
+==t6
+You hear the shuttuhs/shutters click down behind you. You must be done to the south, now.
+>s
+Invisible shuttuhs, err, shutters block passage south. You must be done in Bon Snob, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+==t!4
 >w
 >w
 >s
@@ -1564,6 +1596,9 @@ You look extra carefully at the sac. No, no secret compartments.
 by one point
 #lost cave vac
 
+==t6
+You hear the click of invisible shuttuhs/shutters
+
 ==t5
 >use demo med on elan ale
 WRONG
@@ -1582,6 +1617,13 @@ But what to do to it? How to change it?
 >gt toll lot
 ==!
 >e
+
+==t6
+You hear the shuttuhs/shutters click down behind you. You must be done to the west, now.
+>w
+Invisible shuttuhs, err, shutters block passage west
+
+==t!4
 >n
 >n
 >e
@@ -1761,6 +1803,9 @@ No stat junkies appear to drive you up the wall.
 >use Gorge Grog on butene tub
 by one point
 
+==t6
+You hear the click of invisible shuttuhs/shutters
+
 ==t2
 #mistake test for balk lab
 >balk lab
@@ -1811,8 +1856,22 @@ There is no Par Trap or Tee Meet to navigate here, so you don't need to make a g
 >gt word row
 ==!
 >s
+
+==t6
+You hear the shuttuhs/shutters click down behind you. You must be done to the north, now.
+>n
+Invisible shuttuhs, err, shutters block passage north. You must be done in Bald Lab, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+==t!4
 >s
 >w
+
+==t6
+You hear the shuttuhs/shutters click down behind you. You must be completely done to the east, now.
+>e
+Invisible shuttuhs, err, shutters block passage east. You must be done in Toll Lot and the room(s) behind it, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+==t!4
 >w
 >s
 >w
@@ -2191,6 +2250,8 @@ You can only go back south here.
 >gt swamp maws
 ==!
 >s
+
+==t!4
 >s
 
 ===2
@@ -2260,6 +2321,9 @@ WRONG
 >use spa maps on go-by bog
 by one point
 
+==t6
+You hear the click of invisible shuttuhs/shutters
+
 ==t2
 #mistake retest for pool sloop
 >pool sloop
@@ -2281,6 +2345,13 @@ You don't want or need to revisit the bog.
 >gt moo room
 ==!
 >w
+
+==t6
+You hear the shuttuhs/shutters click down behind you. You must be done to the east, now.
+>e
+Invisible shuttuhs, err, shutters block passage east. You must be done in Apse Spa, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+==t!4
 >s
 >s
 >s
@@ -2312,6 +2383,9 @@ by one point
 #lost enact cane
 #got moor broom
 
+==t6
+You hear the click of invisible shuttuhs/shutters
+
 ==t5
 >pacy cap
 by one point
@@ -2320,13 +2394,25 @@ by one point
 >pace cap
 by one point
 
+==t6
+>w
+>e
+Invisible shuttuhs, err, shutters block passage east. You must be done in Moo Room, so you'll need to toggle the shutters with SHUTTUHS to go back.
+>undo
+>undo
+
 >use troll ort on brag garb
 by one point
 
 >w
 
+==t6
+You hear the shuttuhs/shutters click down behind you. You must be done to the east, now.
+>e
+That seems like a dead end. The yak would have you cornered.
+
 ==t4
->gt ivy
+>gt unitin u
 ==!
 >n
 >n
@@ -2376,19 +2462,21 @@ It's already pretty beaten down.
 >use sage gas on tame mat
 by one point
 
-===2
+==t2
 #mistake test for gurn rug
 >gurn rug
 It's a guru rug. It's too good to be moved by such a cheap bailout.
-===a
 
 >use sharp rahs on guru rug
 by one point
 
+==t6
+You hear the click of invisible shuttuhs/shutters
+
 ==t2
 #mistake test for stir brits
 >stir brits
-Alas, there are no spell-organized-with-an-'s' degenerates around TO stir.
+Alas, there are no spell-organized-with-an-"s" degenerates around TO stir.
 \\
 #mistake test for stir crits
 >stir crits
@@ -2406,7 +2494,20 @@ You wait for a man to appear after a long journey, only to be crushed by a giant
 >gt dumb mud
 ==!
 >w
+
+==t6
+You hear the shuttuhs/shutters click down behind you. You must be done to the east, now.
+>e
+Invisible shuttuhs, err, shutters block passage east. You must be done in Motto Bottom, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+==t!4
 >n
+
+==t6
+>s
+Invisible shuttuhs, err, shutters block passage south. You must be done in Stride Dirts and the room(s) behind it, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+==t!4
 >n
 >e
 
@@ -2477,7 +2578,20 @@ by one point
 >gt yack cay
 ==!
 >w
+
+==t6
+>s
+Invisible shuttuhs, err, shutters block passage south. You must be done in Ooze Zoo and the room(s) behind it, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+
+==t!4
 >w
+
+==t6
+>s
+Invisible shuttuhs, err, shutters block passage south. You must be done in Mont Nom, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+==t!4
 >w
 >n
 
@@ -2499,10 +2613,20 @@ WRONG
 >use moor broom on tru yurt
 by one point
 
+==t6
+You hear the click of invisible shuttuhs/shutters
+
+
 ==t4
->gt ivy
+>gt unitin u
 ==!
 >s
+
+==t6
+>n
+Invisible shuttuhs, err, shutters block passage north. You must be done in Roomy Moor and the room(s) behind it, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+==t!4
 >s
 
 ==t5
@@ -2512,6 +2636,9 @@ WRONG
 >use wash saw on porch crop
 by one point
 
+==t6
+You hear the click of invisible shuttuhs/shutters
+
 ==t5
 >use exam axe on balsa slab
 WRONG
@@ -2520,7 +2647,19 @@ WRONG
 >gt dumb mud
 ==!
 >n
+
+==t6
+You hear the shuttuhs/shutters click down behind you. You must be completely done to the south, now.
+>s
+Invisible shuttuhs, err, shutters block passage south. You must be done in Unitin' U and the room(s) behind it, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+==t!4
 >e
+
+==t6
+You hear the shuttuhs/shutters click down behind you. You must be completely done to the west, now.
+>w
+Invisible shuttuhs, err, shutters block passage west. You must be done in Swamp Maws and the room(s) behind it, so you'll need to toggle the shutters with SHUTTUHS to go back.
 
 >use exam axe on lie veil
 by one point
@@ -2529,11 +2668,11 @@ by one point
 
 ==t3
 >n
-You can only go back south here.
+You would surely get lost going anywhere other than back south.
 >w
-You can only go back south here.
+You would surely get lost going anywhere other than back south.
 >e
-You can only go back south here.
+You would surely get lost going anywhere other than back south.
 
 ==t2
 #mistake test for bron orb
@@ -2547,11 +2686,28 @@ by one point
 ===a
 >get all
 
+==t6
+You hear the click of invisible shuttuhs/shutters
+
 ==t4
 >gt work row
 ==!
 >s
+
+==t6
+You hear the shuttuhs/shutters click down behind you. You must be done to the north, now.
+>n
+Invisible shuttuhs, err, shutters block passage north. You must be done in Le Babel, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+==t!4
 >e
+
+==t6
+You hear the shuttuhs/shutters click down behind you. You must be completely done to the west, now.
+>w
+Invisible shuttuhs, err, shutters block passage west. You must be done in Dumb Mud and the room(s) behind it, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+==t!4
 >e
 >e
 >s
@@ -2618,7 +2774,7 @@ That'd be useful in Kingdom of Loathing, but not here.
 ==t5
 >use mr arm on tnt
 by one point
-undo
+>undo
 >purloin taboo bat
 >use taboo bat on bomb mob
 WRONG
@@ -2633,6 +2789,9 @@ WRONG
 >use mr arm on bomb mob
 by one point
 
+==t6
+You hear the click of invisible shuttuhs/shutters
+
 ==t2
 #mistake retest for link nil
 >link nil
@@ -2644,8 +2803,21 @@ The Line Nil security system fails to break apart. That's pretty secure!
 >gt flu gulf
 ==!
 >w
+
+==t6
+You hear the shuttuhs/shutters click down behind you. You must be done to the east, now.
+>e
+Invisible shuttuhs, err, shutters block passage east. You must be done in Yell Alley, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+==t!4
 >s
 >s
+
+==t6
+>n
+Invisible shuttuhs, err, shutters block passage north. You must be done in Traded Art and the room(s) behind it, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+==t!4
 >w
 >w
 >n
@@ -2710,12 +2882,28 @@ WRONG
 >use rep popper on me totem
 by one point
 
+==t6
+You hear the click of invisible shuttuhs/shutters
+
 ==t4
 >gt emo dome
 ==!
 >e
+
+==t6
+You hear the shuttuhs/shutters click down behind you. You must be done to the west, now.
+>w
+Invisible shuttuhs, err, shutters block passage west. You must be done in Et Tu Butte, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+==t!4
 >s
 >s
+
+==t6
+>n
+Invisible shuttuhs, err, shutters block passage north. You must be done in Cold Loc and the room(s) behind it, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+==t!4
 >e
 >e
 >e
@@ -2784,6 +2972,12 @@ by one point
 You did all you needed to there.
 ==!4
 >w
+
+==t6
+>e
+Invisible shuttuhs, err, shutters block passage east. You must be done in Emo Dome and the room(s) behind it, so you'll need to toggle the shutters with SHUTTUHS to go back.
+
+==t!4
 >s
 >w
 

@@ -363,7 +363,7 @@ by one point
 
 >w
 
->gt ivy
+>gt unitin u
 
 >s
 
@@ -396,7 +396,7 @@ by one point
 >use moor broom on tru yurt
 by one point
 
->gt ivy
+>gt unitin u
 
 >use wash saw on porch crop
 by one point

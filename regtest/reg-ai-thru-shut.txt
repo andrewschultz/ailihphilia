@@ -346,8 +346,6 @@ by one point
 
 You hear the click of invisible shuttuhs/shutters
 
->allshut
-
 >s
 
 You hear the shuttuhs/shutters click down behind you. You must be done to the north, now.
@@ -472,15 +470,12 @@ Invisible shuttuhs, err, shutters block passage east. You must be done in Apse S
 
 >e
 
->allshut
-
 >use enact cane on yahoo hay
 by one point
 #lost enact cane
 #got moor broom
 
 You hear the click of invisible shuttuhs/shutters
->allshut
 
 >pace cap
 by one point
@@ -530,7 +525,7 @@ Invisible shuttuhs, err, shutters block passage east. You must be done in Motto 
 >n
 
 >s
-Invisible shuttuhs, err, shutters block passage south. You must be done in Stride Dirts, so you'll need to toggle the shutters with SHUTTUHS to go back.
+Invisible shuttuhs, err, shutters block passage south. You must be done in Stride Dirts and the room(s) behind it, so you'll need to toggle the shutters with SHUTTUHS to go back.
 
 >n
 >e
@@ -549,12 +544,12 @@ by one point
 >w
 
 >s
-Invisible shuttuhs, err, shutters block passage south. You must be done in Ooze Zoo. You can still revisit Ooze Zoo if you toggle the shuttuhs with SHUTTUHS.
+Invisible shuttuhs, err, shutters block passage south. You must be done in Ooze Zoo and the room(s) behind it, so you'll need to toggle the shutters with SHUTTUHS to go back.
 
 >w
 
 >s
-Invisible shuttuhs, err, shutters block passage south. You must be done in Mont Nom. You can still revisit Mont Nom if you toggle the shuttuhs with SHUTTUHS.
+Invisible shuttuhs, err, shutters block passage south. You must be done in Mont Nom, so you'll need to toggle the shutters with SHUTTUHS to go back.
 
 >w
 >n
@@ -567,7 +562,7 @@ You hear the click of invisible shuttuhs/shutters
 >s
 
 >n
-Invisible shuttuhs, err, shutters block passage north. You must be done in Roomy Moor. You can still revisit Roomy Moor if you toggle the shuttuhs with SHUTTUHS.
+Invisible shuttuhs, err, shutters block passage north. You must be done in Roomy Moor and the room(s) behind it, so you'll need to toggle the shutters with SHUTTUHS to go back.
 
 >s
 
@@ -578,15 +573,15 @@ You hear the click of invisible shuttuhs/shutters
 
 >n
 
-You hear the shuttuhs/shutters click down behind you. You must be done to the south, now.
+You hear the shuttuhs/shutters click down behind you. You must be completely done to the south, now.
 >s
-Invisible shuttuhs, err, shutters block passage south. You must be done in Unitin' U. You can still revisit Unitin' U if you toggle the shuttuhs with SHUTTUHS.
+Invisible shuttuhs, err, shutters block passage south. You must be done in Unitin' U and the room(s) behind it, so you'll need to toggle the shutters with SHUTTUHS to go back.
 
 >e
 
-You hear the shuttuhs/shutters click down behind you. You must be done to the west, now.
+You hear the shuttuhs/shutters click down behind you. You must be completely done to the west, now.
 >w
-Invisible shuttuhs, err, shutters block passage west. You must be done in Swamp Maws. You can still revisit Swamp Maws if you toggle the shuttuhs with SHUTTUHS.
+Invisible shuttuhs, err, shutters block passage west. You must be done in Swamp Maws and the room(s) behind it, so you'll need to toggle the shutters with SHUTTUHS to go back.
 
 >use exam axe on lie veil
 by one point
@@ -601,13 +596,13 @@ You hear the click of invisible shuttuhs/shutters
 
 You hear the shuttuhs/shutters click down behind you. You must be done to the north, now.
 >n
-Invisible shuttuhs, err, shutters block passage north. You must be done in Le Babel. You can still revisit Le Babel if you toggle the shuttuhs with SHUTTUHS.
+Invisible shuttuhs, err, shutters block passage north. You must be done in Le Babel, so you'll need to toggle the shutters with SHUTTUHS to go back.
 
 >e
 
-You hear the shuttuhs/shutters click down behind you. You must be done to the west, now.
+You hear the shuttuhs/shutters click down behind you. You must be completely done to the west, now.
 >w
-Invisible shuttuhs, err, shutters block passage west. You must be done in Dumb Mud. You can still revisit Dumb Mud if you toggle the shuttuhs with SHUTTUHS.
+Invisible shuttuhs, err, shutters block passage west. You must be done in Dumb Mud and the room(s) behind it, so you'll need to toggle the shutters with SHUTTUHS to go back.
 
 >e
 >e
@@ -644,13 +639,13 @@ You hear the click of invisible shuttuhs/shutters
 
 You hear the shuttuhs/shutters click down behind you. You must be done to the east, now.
 >e
-Invisible shuttuhs, err, shutters block passage west. You must be done in Yell Alley, which you can still revisit if you toggle the shuttuhs with SHUTTUHS.
+Invisible shuttuhs, err, shutters block passage east. You must be done in Yell Alley, so you'll need to toggle the shutters with SHUTTUHS to go back.
 
 >s
 >s
 
 >n
-Invisible shuttuhs, err, shutters block passage west. You must be done in Traded Art, which you can still revisit if you toggle the shuttuhs with SHUTTUHS.
+Invisible shuttuhs, err, shutters block passage north. You must be done in Traded Art and the room(s) behind it, so you'll need to toggle the shutters with SHUTTUHS to go back.
 
 >w
 >w
@@ -671,13 +666,13 @@ You hear the click of invisible shuttuhs/shutters
 
 You hear the shuttuhs/shutters click down behind you. You must be done to the west, now.
 >w
-Invisible shuttuhs, err, shutters block passage west. You must be done in Et Tu Butte, but you can still revisit if you toggle the shuttuhs with SHUTTUHS.
+Invisible shuttuhs, err, shutters block passage west. You must be done in Et Tu Butte, so you'll need to toggle the shutters with SHUTTUHS to go back.
 
 >s
 >s
 
 >n
-Invisible shuttuhs, err, shutters block passage west. You must be done in Cold Loc, but you can still revisit if you toggle the shuttuhs with SHUTTUHS.
+Invisible shuttuhs, err, shutters block passage north. You must be done in Cold Loc and the room(s) behind it, so you'll need to toggle the shutters with SHUTTUHS to go back.
 
 >e
 >e
@@ -695,7 +690,7 @@ by one point
 >w
 
 >e
-Invisible shuttuhs, err, shutters block passage west. You must be done in Emo Dome, which you can still revisit if you toggle the shuttuhs with SHUTTUHS.
+Invisible shuttuhs, err, shutters block passage east. You must be done in Emo Dome and the room(s) behind it, so you'll need to toggle the shutters with SHUTTUHS to go back.
 
 >s
 >w
