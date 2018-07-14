@@ -1038,6 +1038,7 @@ randtxt
 "Miss [']Im"
 "Mug [']Um"
 "Muh Chum"
+"No, hon"
 "O, Got to Go"
 "O/T: Teh Ghetto"
 "Ode: Dude, DO"
@@ -1369,10 +1370,12 @@ randtxt
 "Name: HE-MAN!"
 "Nem O['] women!"
 "Nil Appalin[']!"
+"No con, no con!"
 "Null [']un!"
 "Odd-*** Saddo!" [ignore]
 "Oh, BHO!"
 "OK! Cis! Sicko!"
+"One Garage? No!"
 "Ooh...shoo!"
 "Pal! Clap!"
 "Pal, rub burlap!"
@@ -1387,7 +1390,7 @@ randtxt
 "Taft?! FAT!"
 "Tariff? I? Rat!"
 "Wane? Naw!"
-"Y'r Dry!"
+"Y'r Dry!"h
 "Yen O['] Money!"
 "You! Oy!"
 

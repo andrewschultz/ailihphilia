@@ -422,7 +422,7 @@ to score-inc:
 	reg-inc mrlp;
 
 check requesting the score:
-	say "Your overall score so far is [score] of [maximum score] in [turn count] turn[unless turn count is 1]s[end if][if score < 4]. But don't worry, points pile up pretty quickly once you get going[end if]. [to-get-max].";
+	say "Your overall score so far is [score] of [maximum score] in [turn count] [if turn count is nontrivially-palindromic](!) [end if]turn[unless turn count is 1]s[end if][if score < 4]. But don't worry, points pile up pretty quickly once you get going[end if]. [to-get-max].";
 	say "Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do].";
 	if My Gym is visited or Evaded Ave is visited:
 		if number of guhthugs is not number of moot guhthugs, say "You currently disposed of [number of moot guhthugs] grunts blocking your way: [list of moot guhthugs].";
@@ -492,19 +492,24 @@ every turn (this is the don't increment trivial turns rule):
 
 the don't increment trivial turns rule is listed first in the every turn rulebook.
 
-this is the check palindrome turns rule: [this could be at the end but those are item based rules]
-	if kaos oak is not moot, continue the action;
-	let revnum be 0;
-	let cutnum be turn count;
+to determine whether (n - a number) is nontrivially-palindromic:
+	if n < 100, no;
+	let cutnum be n;
 	while cutnum > 0:
 		now revnum is revnum * 10;
 		increase revnum by the remainder after dividing cutnum by 10;
 		now cutnum is cutnum / 10;
-	let pal-turns be whether or not revnum is turn count;
+	if revnum is turn count, yes;
+	no;
+
+this is the check palindrome turns rule: [this could be at the end but those are item based rules]
+	if kaos oak is not moot, continue the action;
+	let revnum be 0;
+	let cutnum be turn count;
 	say "Final stats (score/turn/maximum score): [score]/[turn count]/[maximum score].";
 	if Yawn Way is unvisited, say "Because you zipped through the quest, you get impatient when you're unable to open it when you get home. You throw it in a dumpster and spend the rest of your life upset at the universe for not letting you save a more interesting, violent fantasy world." instead;
 	say "[line break]When you get home, you hear a click from the X/O box. Yes, you can open it now.[paragraph break]";
-	if pal-turns is true:
+	if turn count is nontrivially-palindromic:
 		if score is maximum score:
 			say "Inside is a spiffy CERT REC for being cosmically in tune and covering even the smallest details. On the other side is an interesting tenet--an antimetabole that changes magically every day. It is a rec indeed nicer. Well done!";
 			choose row with final response activity of loafing in table of final question options;
