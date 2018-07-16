@@ -492,9 +492,10 @@ every turn (this is the don't increment trivial turns rule):
 
 the don't increment trivial turns rule is listed first in the every turn rulebook.
 
-to determine whether (n - a number) is nontrivially-palindromic:
+definition: a number (called n) is nontrivially-palindromic:
 	if n < 100, no;
 	let cutnum be n;
+	let revnum be 0;
 	while cutnum > 0:
 		now revnum is revnum * 10;
 		increase revnum by the remainder after dividing cutnum by 10;
@@ -2251,7 +2252,9 @@ this is the hay-gone rule:
 this is the kid-bye rule:
 	move saner arenas to Dirge Grid;
 	move day away ad to Yawn Way;
+	moot nogo gon;
 	moot Diktat Kid;
+	if nogo gon is xed, say "The No-Go Gon having burned away, you're sort of curious how many sides it had. You miscount the first few times but eventually wind up counting [rand-pal]. Well, you sort of expected that.";
 	the rule succeeds;
 
 this is the kid-left rule:
@@ -2471,6 +2474,7 @@ pill lip	"The pill lip is just there to prevent the demo med from getting dirty 
 birch crib	"The birch crib is private property." [start Drawl Ward 5 4]
 girt rig	"The girt rig is too sturdy to move. But there's nothing behind it." [start Scrap Arcs 6 4]
 leet steel	"You want to focus on the Knife Fink and not the leet steel." [start Dirge Grid x x]
+nogo gon	"The No-Go Gon is there to prevent people from getting in. It would probably prevent you from getting out, too, if therer weren't other things to deal with."
 Par Wrap	"It's not the Verses Rev's clothes you need to worry about."
 part strap	"You want to focus on the Verses Rev and not the part strap."
 saner arenas	"It's good the saner arenas are there, but you don't need to mess with them."
@@ -2850,8 +2854,8 @@ for writing a paragraph about a person when player is in Dirge Grid:
 			say "The Diktat Kid yells and wonders why the Verses Rev and Knife Fink haven't disposed of you, yet.";
 
 check going in Dirge Grid:
-	if Diktat Kid is in Dirge Grid, say "No running, no secret passages. You need to face down the Diktat Kid." instead;
-	if noun is not south and noun is not outside, say "There's nothing more to do here with the Diktat Kid gone." instead;
+	if Diktat Kid is in Dirge Grid, say "Tripping the No-Go Gon would be unwise. If you even got there. There's [if henchmen-left is 0]still the waster fretsaw and Tru-Hurt[else]people who might catch you, anyway[end if]. You've got no choice but to finish things off, here." instead;
+	if noun is not south and noun is not outside, say "The saner arenas are nice, but they're not for you. With the Diktat Kid gone, it's probably best you get back home." instead;
 
 check going south in Dirge Grid: if Diktat Kid is in Dirge Grid, say "'Mom! SOS! LOL! SOS! Mom!' the Diktat Kid mocks you.[paragraph break]You can't chicken out. You must be close!" instead;
 
@@ -2861,8 +2865,22 @@ kid-moves is a number that varies.
 
 every turn when player is in Dirge Grid:
 	if advance-kid is true, increment kid-moves;
-	if kid-moves is 5:
-		say "Deport! Roped!"; [?? punch up]
+	if kid-moves is 7:
+		now kid-moves is 0;
+		say "'Deport! Roped!' a mechanical voice calls. You realize, even if you haven't [if henchmen-left is 2]struck a blow yet[else]completed things[end if] here, you haven't been wiped out. You need to keep thinking what to do.";
+
+chapter no go gon
+
+the nogo gon is peripheral scenery in Dirge Grid. "It is a huge regular glowing polygon that stretches out a way, though it's broken where the KAOS Oak was. With Diktat Kid to defeat, you don't have time to see how big it is."
+
+printed name of nogo gon is "No-Go Gon". understand "no/go gon" and "no go" and "no" and "go" as nogo gon when player is in Dirge Grid and nogo gon is in Dirge Grid.
+
+to say rand-pal:
+	let Q be a random number between 10 and 39;
+	let Q2 be (Q * 10) + (Q / 10);
+	let Q3 be Q * 10 + Q / 10;
+	say "[Q2]";
+	if debug-state is true, say " ([Q]) ([Q3])"
 
 chapter saner arenas
 
@@ -4695,7 +4713,7 @@ check going south in Emo Dome when Diktat Kid is moot:
 
 check going north in Emo Dome:
 	if Diktat Kid is moot, say "The Red Roses Order is being replaced by something more ... civic." instead;
-	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a bright no-go-gon and a voice from the DIFF-ID: 'Dim ID! Go jog!'[paragraph break]You think, hang? Nah." instead;
+	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. As you get close, you are intimidated by a very warn-raw voice from the DIFF-ID: 'Dim ID! Go jog!'[paragraph break]You think, hang? Nah." instead;
 	if Bro Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet." instead;
 	if balsa slab is moot, say "The Teem-Civic Meet is going in full swing. They're throwing interesting ideas around, but you don't have anything to add. Lots of folks all 'Yep, ey?'" instead;
 	say "You make sure your state tats are visible for scanning. They are accepted with a 'YA MAY!'.[paragraph break][if madam is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the sword rows.[end if]";
@@ -5876,8 +5894,12 @@ carry out smitimsing:
 	if player is not in Fun Nuf, move the player to Fun Nuf, without printing a room description;
 	try going north;
 	if the player is not in Dirge Grid, say "Oops. Something went wrong. Check your inventory. Make sure the redivider is loaded, and you know how to use it. Remember, you can always DEEP SPEED." instead;
-	try useoning ME gem with Knife Fink;
-	try useoning taboo bat with Verses Rev;
+	if a random chance of 1 in 2 succeeds:
+		try useoning ME gem with Knife Fink;
+		try useoning taboo bat with Verses Rev;
+	else:
+		try useoning taboo bat with Verses Rev;
+		try useoning ME gem with Knife Fink;
 	try useoning yard ray with redivider;
 	try going south;
 	follow the notify score changes rule;

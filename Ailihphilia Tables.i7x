@@ -1175,6 +1175,7 @@ randtxt
 "Hans? Nah."
 "Haw! ... Ah?"
 "Hemp? Meh!"
+"Idea-ed, I!"
 "If I wifi..."
 "Mod?! ODOM?!"
 "More ROM!"
@@ -1403,7 +1404,7 @@ randtxt
 "Taft?! FAT!"
 "Tariff? I? Rat!"
 "Wane? Naw!"
-"Y'r Dry!"h
+"Y'r Dry!"
 "Yen O['] Money!"
 "You! Oy!"
 

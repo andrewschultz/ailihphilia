@@ -187,7 +187,11 @@ if max_errs > -1 and errs > max_errs and not reorder:
     print("Forcing reorder since there are more than", max_errs, "numbering errors: to be precise,", errs)
     reorder = True
 
-if not reorder and errs > 0: print("Use -f to reorder fully. Only found", errs, "out of", max_errs, "errors necessary for automatic reorder.")
+if not reorder and errs > 0:
+    if max_errs > 0:
+        print("Use -f to reorder fully. Only found", errs, "out of", max_errs, "errors necessary for automatic reorder.")
+    else:
+        print("Use -f to reorder fully. There are", errs, "errors to reorder.")
 
 mistake_check(reorder)
 os.remove(mis2)

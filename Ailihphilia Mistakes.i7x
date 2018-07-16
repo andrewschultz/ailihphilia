@@ -222,7 +222,7 @@ understand "muse sum" as a mistake ("You think back to everyone who has inspired
 
 understand "musk sum" as a mistake ("[location of player] still smells the same.[mis of 100]") when player is in Flu Gulf or Dave is quicknear.
 
-understand "must sum" as a mistake ("[if Dave is quicknear]No, you don't NEED to guesstimate how strong Dave is[else]You do some random mental math, which gives you a headache, which is sort of appropriate for Flu Gulf ... but also totally useless.[mis of 277]") when player is in Flu Gulf or Dave is quicknear[end if].[mis of 277]") when player is in Flu Gulf or Dave is quicknear.
+understand "must sum" as a mistake ("[if Dave is quicknear]No, you don't NEED to guesstimate how strong Dave is[else]You do some random mental math, which gives you a headache, which is sort of appropriate for Flu Gulf ... but also totally useless.[mis of 277]") when player is in Flu Gulf or Dave is quicknear.
 
 understand "must sum" as a mistake ("You take stock of all you need to do--or at least, all you know you need to do. Or you think back to horrible repetitive exercises in math class, which were horrible whether you were good at them or not.[mis of 101]") when player is in Flu Gulf or Dave is quicknear.
 
