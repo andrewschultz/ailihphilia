@@ -136,6 +136,10 @@ understand "dirk rid" as a mistake ("If you had a dagger in your back, which you
 
 understand "do pod" as a mistake ("But what to do to it? How to change it?[mis of 61]") when player is in Dopy Pod.
 
+understand "pile lip" as a mistake ("Nothing really fits on the pill lip besides the demo med.[mis of 275]") when pill lip is quicknear.
+
+understand "pilf lip" as a mistake ("You don't need to take the pill lip like you took the pact cap.[mis of 276]") when pill lip is quicknear.
+
 understand "pod op" as a mistake ("But what sort of op?[mis of 62]") when player is in Dopy Pod.
 
 chapter Drawl Ward
@@ -217,6 +221,8 @@ understand "musc sum" as a mistake ("You don't need Dave to return.[mis of 98]")
 understand "muse sum" as a mistake ("You think back to everyone who has inspired you, past and present. It's life-affirming![mis of 99]") when player is in Flu Gulf or Dave is quicknear.
 
 understand "musk sum" as a mistake ("[location of player] still smells the same.[mis of 100]") when player is in Flu Gulf or Dave is quicknear.
+
+understand "must sum" as a mistake ("[if Dave is quicknear]No, you don't NEED to guesstimate how strong Dave is[else]You do some random mental math, which gives you a headache, which is sort of appropriate for Flu Gulf ... but also totally useless.[mis of 277]") when player is in Flu Gulf or Dave is quicknear[end if].[mis of 277]") when player is in Flu Gulf or Dave is quicknear.
 
 understand "must sum" as a mistake ("You take stock of all you need to do--or at least, all you know you need to do. Or you think back to horrible repetitive exercises in math class, which were horrible whether you were good at them or not.[mis of 101]") when player is in Flu Gulf or Dave is quicknear.
 
@@ -454,6 +460,8 @@ understand "band nab" as a mistake ("Mr. Arm tries to grip his own wrist but can
 understand "bank nab" as a mistake ("Whoah! You're one of the good guys, here.[mis of 179]") when Mr Arm is quicknear.
 
 understand "bannon nab" as a mistake ("That's up to Muelle ... um, there's enough political references in the game with the Yuge Guy.[mis of 180]") when Mr Arm is quicknear.
+
+understand "butt tub" as a mistake ("A smoked-down cigarette fails to appear in the tub. What? You expected something else?[mis of 274]") when butene tub is quicknear.
 
 understand "DNA hand" as a mistake ("Right idea, but you can't do it on your own. You need technology to help you.[mis of 181]") when DNA band is quicknear.
 
@@ -693,7 +701,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 
