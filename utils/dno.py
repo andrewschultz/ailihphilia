@@ -167,6 +167,7 @@ def pally(s):
 
 def check_notes(s):
     global colon_string
+    notes_list = []
     open_line = 0
     pal_count = 0
     dupes = 0
@@ -251,6 +252,7 @@ def check_notes(s):
                             # here "da bad" does not flag "Neda Baden" unless we tell the program to
                             line_short = re.sub(":.*", "", q)
                             found_errs[pals[q]] += "Notes.txt line {:d} ({:s}) ~ {:s} line {:d}{:s}: {:s} {:s}\n".format(pals[q], line_short, shorts[s], line_count, '' if not table_name else ' ({:s})'.format(table_name), line.lower().strip(), ('' if not ignore_word_bounds else ' ~ ' + q))
+                            notes_list.append(pals[q])
                             if last_lines_first:
                                 if not open_line or pals[q] < open_line:
                                     open_line = pals[q]
@@ -285,6 +287,8 @@ def check_notes(s):
             os.remove(notes_file_backup)
             print("Deleted", notes_file_backup)
     elif bowdlerize_notes: print("Nothing to bowdlerize, so I am not recopying.")
+    if len(notes_list) > 3: print('**** Notes in file:', ', '.join([str(x) for x in sorted(notes_list, reverse=True)]))
+    if len(dupe_dict.keys()) > 3: print('**** Duplicates to print:', ', '.join([str(x) for x in sorted(dupe_dict.keys(), reverse=True)]))
     if launch_after and open_line: i7.npo(notes_file_to_read, open_line, True)
 
 count = 1
