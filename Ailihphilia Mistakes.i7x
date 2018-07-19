@@ -16,6 +16,8 @@ to decide whether (mt - a thing) is/are quicknear:
 
 chapter Apse Spa
 
+understand "apse vespa" as a mistake ("No wasps come out to sting you.[mis of 278]") when player is in Apse Spa.
+
 understand "esp apse" as a mistake ("You don't see what to do next.[mis of 1]") when player is in Apse Spa.
 
 understand "pool sloop" as a mistake ("No boat appears to take you across the watery bits. [if sage gas is off-stage]You'll need another way through[else]You already got the sage gas, anyway[end if].[mis of 2]") when player is in Apse Spa.
@@ -455,7 +457,11 @@ understand "balk lab" as a mistake ("There's not much to do or say here, for sur
 
 understand "ball lab" as a mistake ("Nothing fun explodes out from the walls or ceiling.[mis of 177]") when player is in Pro Corp.
 
+understand "banana nab" as a mistake ("You're not hungry.[mis of 279]") when Mr Arm is quicknear.
+
 understand "band nab" as a mistake ("Mr. Arm tries to grip his own wrist but can't quite.[mis of 178]") when Mr Arm is quicknear.
+
+understand "bane nab" as a mistake ("It's usually death that grips YOU.[mis of 280]") when Mr Arm is quicknear.
 
 understand "bank nab" as a mistake ("Whoah! You're one of the good guys, here.[mis of 179]") when Mr Arm is quicknear.
 
@@ -643,6 +649,10 @@ to say red-clue: if redness ender is not moot, say ", but who knows, that rednes
 
 understand "bo Rob" as a mistake ("If he did suddenly smell worse, he probably wouldn't know it. It would just repel you a bit more.[mis of 236]") when Rob is quicknear.
 
+understand "bordered Rob" as a mistake ("Nothing sneaks up next to Rob to edge him out.[mis of 281]") when Rob is quicknear.
+
+understand "boree Rob" as a mistake ("Ooh! Close! How would you MAKE him a boree?[mis of 282]") when Rob is quicknear.
+
 understand "borg Rob" as a mistake ("He is already assimilated.[mis of 236]") when Rob is quicknear.
 
 understand "bork Rob" as a mistake ("Maybe there is a more nonviolent way to get him to give up.[mis of 237]") when Rob is quicknear.
@@ -701,7 +711,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 

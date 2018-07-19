@@ -19,6 +19,7 @@ person-name	can-m	can-f
 "Rhea Baehr"	false	true
 "Signe Kengis"	false	true
 "Blake DeKalb"	true	true
+"Corky Kroc"	true	true
 "Leigh Giel"	true	true
 "Adam Imada"	true	false
 "Eldon Odle"	true	false
@@ -581,7 +582,6 @@ person-name
 "Issacs, Cassi"
 "Kral, Clark"
 "Kramm, Mark"
-"LaBelle, Al"
 "Lahr, Hal"
 "Lama, Jamal"
 "Laman, Amal"
@@ -638,6 +638,7 @@ person-name
 "Neller, Ellen"
 "Nero, Loren"
 "Neve, Keven"
+"Newell, Ewen"
 "Niles, Elin"
 "No, Son"
 "Noda, Don"
@@ -952,6 +953,7 @@ randtxt
 "Nigh Gin"
 "Pat's Tap"
 "Pub UP"
+"Redic-U-Cider"
 "Sara's"
 "Scene C's"
 "Senor One's"
@@ -1020,12 +1022,14 @@ randtxt
 "All Illa[']"
 "[']Allo, Dolla[']"
 "Bebe B"
+"Diva David"
 "Do Mo['] Mod"
 "El Tootle"
 "Emote to Me"
 "Er, AWARE"
 "Hat-stah"
 "Hook, Ooh"
+"Hosts, Oh"
 "Jesse J"
 "Jojo J"
 "Khalilah K"
@@ -1035,6 +1039,7 @@ randtxt
 "Le BE Rebel"
 "Lulu L"
 "Major Pro Jam"
+"Maybe By AM"
 "Me: Opt, Poem"
 "Mikki M"
 "Miss [']Im"
@@ -1074,6 +1079,7 @@ table of noesies
 randtxt
 "Dash sad."
 "Derided! Ired!"
+"Doomy mood?"
 "Emo, me."
 "EVAR Grave?"
 "Fretter? F!"
@@ -1097,6 +1103,7 @@ randtxt
 "Hey! Eh?"
 "Huh?"
 "It? Nah, anti."
+"Lapses, pal?"
 "Line? Nil."
 "Meh. Ahem!"
 "Minim..."
@@ -1172,8 +1179,12 @@ randtxt
 
 table of Rob droning
 randtxt
+"Analyticity? Lana!"
 "Boone?! Noob!"
+"Cull Luc!"
 "Del fled!"
+"Draco?! Card."
+"Edit-IDE?"
 "Enos's one..."
 "EOF, Foe!"
 "Habit, I? Bah!"
@@ -1181,6 +1192,8 @@ randtxt
 "Hans? Nah."
 "Haw! ... Ah?"
 "Hemp? Meh!"
+"Hodad! Oh!"
+"Hoses! Oh!"
 "Idea-ed, I!"
 "If I wifi..."
 "Mod?! ODOM?!"
@@ -1255,6 +1268,7 @@ randtxt
 table of undoings
 randtxt
 "Ay, CYA."
+"Delete-Led!"
 "Did. [']Nuff? Undid."
 "Did. Error? Redid."
 "Eff a gaffe."
@@ -1296,6 +1310,7 @@ randtxt
 "Def['] faffed!"
 "Do, STAT, sod!"
 "Don't nod!"
+"Elapses. Pale."
 "Gall! Lag!"
 "GO, dog!"
 "A lag gala!"
