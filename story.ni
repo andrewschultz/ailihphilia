@@ -4275,10 +4275,14 @@ reading is an action applying to one thing.
 
 understand the command "read" as something new.
 
-understand "read" as reading.
+understand "read [something]" as reading.
+
+read-warn is a truth state that varies.
 
 carry out reading:
-	say "[if noun is a book]You don't have time to read all of it, so you go for a brief overview instead[else]Note: READ is functionally equivalent to X, for books or non-books[end if].[paragraph break]";
+	if noun is a book, say "Whoah! You don't have time to read all that text, right now. You're busy with much more active things. Still, you flip through for a general overview.";
+	if read-warn is false, say "[bracket]Note: READ is functionally equivalent to X, for books or non-books.[close bracket][paragraph break]";
+	now read-warn is true;
 	try examining the noun instead;
 	the rule succeeds;
 
