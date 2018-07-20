@@ -89,7 +89,9 @@ after examining a not ordinary thing:
 the cap-beep rules are an object-based rulebook.
 
 a cap-beep rule for a thing (called x):
-	if revving-over is false and cap-vol is true, say "You hear a [if x is llpish]soft [end if]BOO-WEE-WOOB from the Pact Cap after dealing with [the X].";
+	if revving-over is false:
+		if cap-vol is true, say "You hear a [if x is llpish]soft [end if]BOO-WEE-WOOB from the Pact Cap after dealing with [the X].[paragraph break]";
+		if X is a guhthug and number of moot guhthugs is number of guhthugs, say "That seems to be the lot of them. You take a moment to pause with relief you didn't have to do anything really violent, like TRUCK CURT or MASH SAM or SIT ON OTIS.";
 	the rule succeeds;
 
 section machine actions
@@ -124,11 +126,11 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 420. [-40 from max_verbs debug]
+use MAX_VERBS of 430. [-40 from max_verbs debug]
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 460. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 470. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 use MAX_VERBSPACE of 4400. [4096 = original max]
 
@@ -423,11 +425,12 @@ to score-inc:
 
 check requesting the score:
 	say "Your overall score so far is [score] of [maximum score] in [turn count] [if turn count is nontrivially-palindromic](!) [end if]turn[unless turn count is 1]s[end if][if score < 4]. But don't worry, points pile up pretty quickly once you get going[end if]. [to-get-max].";
-	say "Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do].";
+	say "[line break]Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do].";
 	if My Gym is visited or Evaded Ave is visited:
-		if number of guhthugs is not number of moot guhthugs, say "You currently disposed of [number of moot guhthugs] grunts blocking your way: [list of moot guhthugs].";
-	if Yuge Guy is moot, say "You've gotten rid of the Yuge Guy.";
-	if Madam is moot, say "You've gotten rid of the La Gal/Madam.";
+		let nmg be number of moot guhthugs;
+		if number of guhthugs is not nmg, say "[line break][if nmg is 0]You haven't gotten any guh-thugs out of the way yet[else]You currently disposed of [number of moot guhthugs] guh-thug[plur of nmg] blocking your way: [list of moot guhthugs][end if].";
+	if Yuge Guy is moot, say "[line break]You've gotten rid of the Yuge Guy.";
+	if Madam is moot, say "[line break]You've gotten rid of La Gal/Madam.";
 	if player has x-ite tix:
 		let Q be roving-LLP;
 		let Q2 be fixed-LLP;
@@ -443,6 +446,7 @@ check requesting the score:
 		say "You also have [ni] of [number of tronparts] piece[if ni is not 1]s[end if] of the North-Tron, according to the epicer recipe.";
 	if mist-found > 0, say "[line break]You've also found [mist-found] of [number of entries in checkoffs] palindromes that were there but not critical to the story. [if mist-found * 2 > number of entries in checkoffs]Very impressive![else]Don't knock yourself out trying to find them all.[end if]";
 	if score-cheat > 0, say "[line break]Also, you used REV OVER to plow past [score-cheat] point-giving activities, but I won't hold it against you. I'm glad you were motivated to try and see the end!";
+	if stats-yet is false, say "[line break]Also, there may be a more 'correct' way to request all the numbers above, and so forth. It's not critical, but you might get a style point.";
 	the rule succeeds;
 
 to say to-get-max:
@@ -487,7 +491,7 @@ chapter turn count
 
 every turn (this is the don't increment trivial turns rule):
 	if action is procedural or chase-mulligan is true:
-		if debug-state is true, say "DEBUG: no turn count added: [if chase-mulligan is true]Chase mulligan![else]Procedural action.[end if]";
+		if debug-state is true, say "DEBUG: no turn count added: [if chase-mulligan is true]Chase mulligan![else][current action] is a procedural action.[end if]";
 		decrement turn count;
 
 the don't increment trivial turns rule is listed first in the every turn rulebook.
@@ -643,7 +647,18 @@ Rule for printing a parser error when the latest parser error is the didn't unde
 		if the player's command includes "spur", say "You look at the spur ups, unsure how to use them. It's more that they're, well, Up than spurs." instead;
 		if number of words in the player's command > 1:
 			if word number 2 in the player's command is "ups", say "There is only one you, so you only need to be, or do something, UP." instead;
-	say "[if gtv]You do need a special verb here, but not that one. It may not be a standard one, but given the game's theme, I bet you can figure it out. If you want standard verbs, y[else]I didn't recognize that action. Y[end if]ou can type VERB or VERBS to get a list of them.";
+	say "[if gtv]You do need a special verb here, but not that one. It may not be a standard one, but given the game's theme, I bet you can figure it out. If you want standard verbs, y[else]I didn't recognize that action. Y[end if]ou can type VERB or VERBS to get a list of them[if cur-score of Odd Do < 11], and there are a few you can guess for bonus points[any-here][end if].";
+
+to say any-here: say "[if LLP-now], including one right here[else if fixed-LLP > 0], including [fixed-LLP in words] available anywhere[end if]"
+
+to decide whether LLP-now:
+	if player is in Moo Room:
+		if senile felines are in Moo Room or bees-seen is false, yes;
+	if player is in Ooze Zoo and slam-mam is false, yes;
+	if player is in Le Babel and opossum is in Le Babel, yes;
+	if player is in Worn Row and Worn Row is wordy and DWELT LEWD is off-stage, yes;
+	if player is in Pro Corp and balm-LLP-yet is false, yes;
+	no;
 
 to decide whether gtv:
 	if Ian is in location of player, yes;
@@ -2474,7 +2489,7 @@ pill lip	"The pill lip is just there to prevent the demo med from getting dirty 
 birch crib	"The birch crib is private property." [start Drawl Ward 5 4]
 girt rig	"The girt rig is too sturdy to move. But there's nothing behind it." [start Scrap Arcs 6 4]
 leet steel	"You want to focus on the Knife Fink and not the leet steel." [start Dirge Grid x x]
-nogo gon	"The No-Go Gon is there to prevent people from getting in. It would probably prevent you from getting out, too, if therer weren't other things to deal with."
+nogo gon	"The No-Go Gon is there to prevent people from getting in. It would probably prevent you from getting out, too, if there weren't other things to deal with."
 Par Wrap	"It's not the Verses Rev's clothes you need to worry about."
 part strap	"You want to focus on the Verses Rev and not the part strap."
 saner arenas	"It's good the saner arenas are there, but you don't need to mess with them."
