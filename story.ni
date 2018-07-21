@@ -576,7 +576,7 @@ when play begins:
 	say "After your fifth win in a row, the Flee Elf yells 'GRAAAARG!' You stumble back and fall to the ground.[wfak-d]";
 	say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Ares[']s Era, Raw Level War, Base Sab or Mista-T Sim. Mega-Tag [']Em?'[wfak-d]";
 	say "You chase the Flee Elf around a few minutes, failing to catch it. '[']S poor. Oops!' The Flee Elf thinks for a minute. 'Yelpley. Yes, ey, Yelpley.'[wfak-d]";
-	say "The Flee Elf leads you away. 'Right. I'll quit bugging you once you figure how to take this-here cap.'[wfak-d]";
+	say "The Flee Elf leads you away. 'Right. I'll quit bugging you once you figure how to take this-here cap. Well, it's not any cap. It's a pact cap. And you can't quite TAKE it.'[wfak-d]";
 	say "[paragraph break](NOTE: if you want to know more about Ailihphilia and the commands used, type ABOUT.)[paragraph break]";
 	do nothing; [debug information below here. I've had problems putting it in and not deleting it, so I want to make things clear.]
 
@@ -2019,6 +2019,7 @@ this is the rev-first-food-combo rule:
 	the rule succeeds;
 
 this is the rev-get-bro-orb rule:
+	if Bro Orb is not in Le Babel, the rule fails;
 	say "You get the Bro Orb from Le Babel.";
 	moot stir writs;
 	now player has Bro Orb;
@@ -2051,6 +2052,7 @@ this is the rev-pull-up rule:
 	if pulled-up is true, the rule fails;
 	say "You PULL UP in the Emo Dome.";
 	moot spur ups;
+	now pulled-up is true;
 	the rule succeeds;
 
 this is the rev-second-food-combo rule:
@@ -2062,13 +2064,13 @@ this is the rev-second-food-combo rule:
 	the rule succeeds;
 
 this is the rev-stand-nats rule:
-	showme nat's tan;
 	if nat's tan is moot or player carries Nat's tan, the rule fails;
 	say "You STAND NAT'S.";
 	now player has Nat's;
 	the rule succeeds;
 
 this is the rev-tend-net rule:
+	if epicer recipe is not off-stage, the rule fails;
 	say "You TEND NET in the Trapeze Part.";
 	get-tended-stuff;
 	the rule succeeds;
@@ -2673,7 +2675,7 @@ check going north in Fun Nuf:
 
 chapter Pact Cap
 
-The Pact Cap is a wearable thing in Fun Nuf. "A pact cap sits here. You need to find the right way to accept it to begin your quest.". description is "Well, you can't see it, since it's on your head, and there are no mirrors. But thankfully, it's not too heavy. It didn't look THAT stupid back when the Flee Elf had you pack it. So that's something. You think[cap-beep-stuff]."
+The Pact Cap is a wearable thing in Fun Nuf. "The pact cap the Flee Elf wants you to take (but not quite) sits here.". description is "Well, you can't see it, since it's on your head, and there are no mirrors. But thankfully, it's not too heavy. It didn't look THAT stupid back when the Flee Elf had you pack it. So that's something. You think[cap-beep-stuff]."
 
 to say cap-beep-stuff:
 	if cap-pace is true, say ".[paragraph break]It's currently set as a pace cap";
@@ -5928,13 +5930,17 @@ carry out smitimsing:
 
 section revab - not for release
 
-revlhing is an action applying to one number.
+understand the command "revab" as something new.
+
+understand "revab [number]" as revabing.
+
+revabing is an action applying to one number.
 
 rev-skips is a number that varies.
 
 rev-max is a number that varies. rev-max is 73.
 
-carry out revlhing:
+carry out revabing:
 	now rev-skips is number understood;
 	if rev-skips > rev-max:
 		say "[rev-max] is the maxumym possible number. Rounding down.";
@@ -5991,9 +5997,15 @@ carry out revovering:
 	now global-delay is 0;
 	let count be 0;
 	let turns-to-add be 0;
+	let move-room be location of player;
+	let spun-out-yet be false;
 	now revving-over is true;
 	repeat through table of goodacts:
 		increment count;
+		if rev-skips > 0 and global-delay is rev-skips:
+			if spun-out-yet is false and debug-state is true, say "DEBUG: spun out at row [count].";
+			now spun-out-yet is true;
+			next;
 		if there is a use1 entry and use1 entry is ME gem:
 			now i-sped is true;
 			break;
@@ -6001,6 +6013,9 @@ carry out revovering:
 		if there is no use1 entry:
 			consider the preproc entry;
 			if the rule succeeded:
+				if there is a room-to-go entry:
+					now move-room is room-to-go entry;
+					now room-to-go entry is visited;
 				increment global-delay;
 				if sco entry is true:
 					if debug-state is true, say "(DEBUG: non-use point) (+1 [preproc entry])[line break]";
@@ -6019,6 +6034,9 @@ carry out revovering:
 		if use1 entry is moot or use2 entry is moot, next;
 		now done entry is true;
 		increment global-delay;
+		if there is a room-to-go entry:
+			now move-room is room-to-go entry;
+			now room-to-go entry is visited;
 		let u1a be false;
 		let u2a be false;
 		let g1a be false;
@@ -6041,7 +6059,9 @@ carry out revovering:
 		if there is a postproc entry, follow the postproc entry;
 	if global-delay < rev-skips, say "rev-skips was too much by [rev-skips - global-delay].";
 	now revving-over is false;
-	say "Done.";
+	if rev-skips > 0 and move-room is not location of player:
+		say "(Moving you to [move-room])[paragraph break]";
+		move player to move-room, without printing a room description;
 	now turns-to-add is turns-to-add * 3;
 	if score > last notified score:
 		say "[bracket]I just gave you [score - last notified score] points to go with your quick trip, because I'm generous like that.[close bracket] ... also, I tacked on [turns-to-add] turns, as a guesstimate.[paragraph break]";
