@@ -90,8 +90,8 @@ the cap-beep rules are an object-based rulebook.
 
 a cap-beep rule for a thing (called x):
 	if revving-over is false:
-		if cap-vol is true, say "You hear a [if x is llpish]soft [end if]BOO-WEE-WOOB from the Pact Cap after dealing with [the X].[paragraph break]";
-		if X is a guhthug and number of moot guhthugs is number of guhthugs, say "That seems to be the lot of them. You take a moment to pause with relief you didn't have to do anything really violent, like TRUCK CURT or MASH SAM or SIT ON OTIS.";
+		if cap-vol is true, say "You hear a [if x is llpish]soft [end if]BOO-WEE-WOOB from the Pact Cap after dealing with [the X][one of]. Well, that jibes with what the Flee Elf said about how it makes weird noises when special actions are needed[or][stopping].[paragraph break]";
+		if X is a guhthug and number of moot guhthugs is 1, say "Whew! That was less violent than you worried. You'd hate to have to TRUCK CURT or MASH SAM or SIT ON OTIS or even DISS SID.";
 	the rule succeeds;
 
 section machine actions
@@ -410,7 +410,7 @@ volume the player
 description of player is "Flesh. Self.". initial appearance of player is "U R U".
 
 check dropping:
-	say "This game is not Pro-Drop. There is no met-ill item. In other words, you don't need to drop anything. Most items will disappear from your inventory once they're no longer useful." instead;
+	say "This game is not Pro-Drop. There is no met-ill item. In other words, you don't need to drop anything[if party trap is not moot], though it could be an alternative solution[end if]. Most items will disappear from your inventory once they're no longer useful." instead;
 
 to decide which region is mrlp:
 	decide on map region of location of player;
@@ -437,9 +437,9 @@ check requesting the score:
 		if Q is 0 and Q2 is 0:
 			say "Now you're in Fun [']Nuf and have all the points, there's seemingly not much to do but go south through the Tix Exit.";
 		else if Q is 0:
-			say "You've got all the roving LLPs. You have [Q2] non-roving LLP[plur-s of Q2] remaining to figure out before going [if player is not in Fun Nuf]back to Fun [']Nuf and [end if]south through the Tix Exit.";
+			say "You've got all the roving LLPs. You have [Q2] non-roving LLP[plur of Q2] remaining to figure out before going [if player is not in Fun Nuf]back to Fun [']Nuf and [end if]south through the Tix Exit.";
 		else:
-			say "You have [Q] roving last lousy point[plur-s of Q] left and [Q2] non-roving LLP[plur-s of Q2] left.";
+			say "You have [Q] roving last lousy point[plur of Q] left and [Q2] non-roving LLP[plur of Q2] left.";
 	if player has epicer recipe and north tron is off-stage:
 		let ni be number of tronparts carried by the player;
 		if martini tram is in Fun Nuf, increment ni;
@@ -453,13 +453,10 @@ to say to-get-max:
 	if cur-score of Odd Do is max-score of Odd Do:
 		say "You got all LLPs";
 	else:
-		say "You need at least [min-win] to win[if cur-score of Odd Do > 0], since you got [cur-score of Odd Do] bonus point[plur-s of cur-score of Odd Do][end if]"
+		say "You need at least [min-win] to win[if cur-score of Odd Do > 0], since you got [cur-score of Odd Do] bonus point[plur of cur-score of Odd Do][end if]"
 
 to decide which number is min-win:
 	decide on maximum score - max-score of Odd Do + cur-score of Odd Do;
-
-to say plur-s of (myn - a number):
-	unless myn is 1, say "s"
 
 this is the LLP rule:
 	if LLP-reject is true, the rule succeeds;
@@ -486,6 +483,18 @@ to say regres of (re - a region):
 		say "extra points";
 	else:
 		say "for [re][if mrlp is re] (current region)[end if]"
+
+section new weird score
+
+the LLP or normal score changes rule is listed instead of the notify score changes rule in the turn sequence rulebook.
+
+LLP-last is a number that varies.
+
+This is the LLP or normal score changes rule:
+	if the score is not the last notified score:
+		say "[bracket][if cur-score of odd-do > LLP-last]You found a Last Lousy Point![no line break][else]Your score has just gone up by one point.[no line break][close bracket][paragraph break]"
+		now the last notified score is the score;
+		now LLP-last is cur-score of odd-do;
 
 chapter turn count
 
@@ -570,13 +579,17 @@ when play begins:
 	say "EVIL'S LIVE![wfak-d]";
 	say "LIVE DEVIL![wfak-d]";
 	say "BOSSES! SOB![wfak-d]";
-	say "You fold the Darer Ad and start off to the store.[paragraph break]'[unicode 161]Aloha. Hola!' someone, or something, cries. 'Steer-greets! Steer-greets!'[paragraph break]You run in the general direction of the voice.  You look up, and you're no longer on the way to the store. You're somewhere else. Your smartphone starts blinking: LOAD AOL! You look up. Who is responsible for this? An elf, who sees you futzing with your smartphone. 'No El Google on?' You nod. Awkward silence. 'Poll op! Poll op!' the someone/something continues.[wfak-d]";
-	say "'Name, man? Eve? Pip? Otto? Anna? Bob? Nan? Aviva? Hannah? Elle? Ebbe?' You back away--it doesn't seem to care if you're male or female, but it's a persis-rep. It introduces itself as the Flee Elf. And you feel guilty YOU weren't paying attention to ITS gender.[wfak-d]";
-	say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because you looked up the winning strategy on the Internet after it confused you. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers. Then 'Is reversi...?'";
-	say "After your fifth win in a row, the Flee Elf yells 'GRAAAARG!' You stumble back and fall to the ground.[wfak-d]";
-	say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Ares[']s Era, Raw Level War, Base Sab or Mista-T Sim. Mega-Tag [']Em?'[wfak-d]";
-	say "You chase the Flee Elf around a few minutes, failing to catch it. '[']S poor. Oops!' The Flee Elf thinks for a minute. 'Yelpley. Yes, ey, Yelpley.'[wfak-d]";
-	say "The Flee Elf leads you away. 'Right. I'll quit bugging you once you figure how to take this-here cap. Well, it's not any cap. It's a pact cap. And you can't quite TAKE it.'[wfak-d]";
+	say "You fold the Darer Ad and start off to the store.[paragraph break]'[unicode 161]Aloha. Hola!' someone, or something, cries. 'Steer-greets! Steer-greets!'[paragraph break]You run in the general direction of the voice.  You look up, and you're no longer on the way to the store. You're somewhere else. Your smartphone starts blinking: LOAD AOL! You look up. Who is responsible for this? Someone/something who sees you futzing with your smartphone. 'No El Google on?' You nod. Awkward silence. 'Poll op! Poll op!' the someone/something continues.[wfak-d]";
+	say "'I'm the Flee Elf. Name, man? Eve? Pip? Otto? Anna? Bob? Nan? Aviva? Hannah? Elle? Ebbe?' You back away--it doesn't seem to care if you're male or female, but it's a persis-rep. And you feel realize YOU weren't paying attention to ITS gender.[wfak-d]";
+	say "There's a bit more of this narrative nonsense, if you're into that sort of thing. Would you like to see it? I won't be hurt if you say no.";
+	if the player yes-consents:
+		say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because you looked up the winning strategy on the Internet after it confused you. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers. Then 'Is reversi...?'";
+		say "After your fifth win in a row, the Flee Elf yells 'GRAAAARG!' You stumble back and fall to the ground.[wfak-d]";
+		say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Ares[']s Era, Raw Level War, Base Sab or Mista-T Sim. Mega-Tag [']Em?'[wfak-d]";
+		say "You chase the Flee Elf around a few minutes, failing to catch it. '[']S poor. Oops!' The Flee Elf thinks for a minute. 'Fun [']Nuf is open.'[wfak-d]";
+	else:
+		say "After more tedious palindrome riffing, the Flee Elf deems you most suitable (or least unsuitable) for the relatively obscure bunker called Fun [']Nuf.[wfak-d]";
+	say "The Flee Elf points to a cap. 'This here isn't any cap. It's a PACT cap. And you can't quite TAKE it. You have to do something else.'[wfak-d]";
 	say "[paragraph break](NOTE: if you want to know more about Ailihphilia and the commands used, type ABOUT.)[paragraph break]";
 	do nothing; [debug information below here. I've had problems putting it in and not deleting it, so I want to make things clear.]
 
@@ -3772,7 +3785,9 @@ chapter X/Y Pyx
 
 an X Y Pyx is a peripheral thing in Yawn Way. printed name of x y pyx is "X/Y Pyx". description of X Y Pyx is "[map-so-far]". "[one of]An X/Y pyx lies here. Closer inspection reveals that's just a fancy name for a map[or]The X/Y pyx still lies here[stopping]. It wouldn't be too cumbersome to take.". indefinite article of X Y Pyx is "an".
 
-understand "map" as pyx when player has pyx and player does not have spa maps.
+understand "map" as pyx when player has pyx.
+
+does the player mean doing something with pyx when player has doodle or player has spa maps: it is unlikely.
 
 check examining pyx when screenread is true:
 	say "The large text map has a lot of special characters and doesn't play well with screen readers, so you can't examine it productively. Sorry. SCREEN or SRC toggles screen reader mode." instead;
@@ -3981,7 +3996,7 @@ instead of doing something with Dave:
 	if current action is evadeing, continue the action;
 	say "Looks like you'll need to do something special with, or to, Dave. Nothing destructive. But psych him out, somehow."
 
-check going west in My Gym when Dave is in My Gym: say "Dave says, 'I can't let you do that, Hal. Ah!' In your shock at him either guessing your name or completely getting it wrong (especially if you happen to be female,) you reason there must be a succinct, clever way to sneak around him." instead;
+check going west in My Gym when Dave is in My Gym: say "Dave says, 'I can't let you do that, Hal. Ah!' Whether or not your name actually is Hal, you reason there must be a succinct, clever way to sneak around him." instead;
 
 the stole lots is a thing in My Gym. "A container labeled STOLE LOTS is behind Dave.". description is "It looks like it'd be handy for carrying a lot of items around.".
 
@@ -4221,7 +4236,7 @@ chapter books
 to decide what number is books-in-cart:
 	decide on number of sober books in Worn Row;
 
-the tract cart is scenery. "GREED-E? ERG is emblazoned on it, suggesting you should take only one book at a time. It carries [books-in-cart] book[plur-s of books-in-cart]: [list of sober books in Worn Row][hint-trace]."
+the tract cart is scenery. "'GREED-E? ERG!' is emblazoned on it, as a warning you should take only one book at a time. [if number of sober books in Worn Row is 0]You've looted it completely[else]It carries [books-in-cart] book[plur of books-in-cart]: [list of sober books in Worn Row][end if][hint-trace]."
 
 to say hint-trace:
 	say "[if tract-trace is true]. But it also seems a bit too big for just carrying a few books. Maybe it holds a deeper secret[end if]"
@@ -4394,7 +4409,7 @@ check taking a book:
 	else:
 		if number of lugged books > 0:
 			let myb be a random lugged book;
-			say "[one of]Your eyes run across GREED-E? ERG on the tract cart, and you flash back to that time you checked out too many library books and got a small fine when you couldn't finish them all.[paragraph break]Besides, nothing says 'adventure' less than schlepping around multiple books. Well, except maybe sitting in front of a computer playing some silly game. Or programming one.[or][stopping][paragraph break]You put [myb] back in the tract cart before taking [noun].";
+			say "[one of]Your eyes run across 'GREED-E? ERG' on the tract cart, and you flash back to that time you checked out too many library books and got a small fine when you couldn't finish them all.[paragraph break]Besides, nothing says 'adventure' less than schlepping around multiple books. Well, except maybe sitting in front of a computer playing some silly game. Or programming one.[paragraph break][or][stopping]You put [myb] back in the tract cart before taking [noun].";
 			now myb is in Worn Row;
 		else:
 			say "It's a bit unwieldy, but you manage to pick up [noun].";
