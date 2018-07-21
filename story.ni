@@ -2046,6 +2046,7 @@ this is the rev-pack-cap rule:
 this is the rev-puff-up rule:
 	if spur ups are moot, the rule fails;
 	say "You use the spur ups to PUFF UP.";
+	moot spur ups;
 	the rule succeeds;
 
 this is the rev-pull-up rule:
@@ -2105,18 +2106,18 @@ section pre-use rules [xxpre]
 
 this is the check-sap-cup rule:
 	if sap-takeable is false:
-		say "The sap is stuck to the tree.";
+		if revving-over is false, say "The sap is stuck to the tree.";
 		get-reject past sap;
 		the rule fails;
 	if liar grail is moot:
-		say "You doubt you will need the past sap again, since it got you by the Liar Grail[if puce cup is soddy]. In fact, the sod seems like a good thing to have[else]. But maybe something else[end if].";
+		if revving-over is false, say "You doubt you will need the past sap again, since it got you by the Liar Grail[if puce cup is soddy]. In fact, the sod seems like a good thing to have[else]. But maybe something else[end if].";
 		the rule fails;
 	if puce cup is sappy:
-		say "The puce cup already contains past sap.";
+		if revving-over is false, say "The puce cup already contains past sap.";
 		the rule fails;
 	later-wipe past sap;
 	if puce cup is soddy:
-		say "The puce cup already contains dose sod. Pour it out to get the past sap?";
+		if revving-over is false, say "The puce cup already contains dose sod. Pour it out to get the past sap?";
 		if the player yes-consents, the rule succeeds;
 		the rule fails;
 	the rule succeeds;
@@ -2124,7 +2125,7 @@ this is the check-sap-cup rule:
 this is the check-sod-cup rule:
 	later-wipe dose sod;
 	if puce cup is soddy:
-		say "The puce cup already contains dose sod.";
+		if revving-over is false, say "The puce cup already contains dose sod.";
 		the rule fails;
 	if puce cup is sappy:
 		say "The puce cup already contains past sap. Pour it out to get the dose sod?";
@@ -2188,7 +2189,7 @@ this is the sap-in-cup rule:
 
 this is the sap-not-cut-yet rule:
 	if sap-takeable is true:
-		say "You already hacked enough sap off.";
+		if revving-over is false, say "You already hacked enough sap off.";
 		the rule fails;
 	the rule succeeds;
 
@@ -5928,6 +5929,21 @@ carry out smitimsing:
 	follow the notify score changes rule;
 	the rule succeeds;
 
+section sdsing - not for release
+
+sdsing is an action out of world.
+
+understand the command "sds" as something new.
+
+understand "sds" as sdsing.
+
+carry out sdsing:
+	now say-despite-speeding is whether or not say-despite-speeding is false;
+	say "Say-despite-speeding now [on-off of say-despite-speeding].";
+	the rule succeeds;
+
+say-despite-speeding is a truth state that varies.
+
 section revab - not for release
 
 understand the command "revab" as something new.
@@ -6000,6 +6016,7 @@ carry out revovering:
 	let move-room be location of player;
 	let spun-out-yet be false;
 	now revving-over is true;
+	now basic-hint-yet is true;
 	repeat through table of goodacts:
 		increment count;
 		if rev-skips > 0 and global-delay is rev-skips:
@@ -6017,11 +6034,11 @@ carry out revovering:
 					now move-room is room-to-go entry;
 					now room-to-go entry is visited;
 				increment global-delay;
+				increment turns-to-add;
 				if sco entry is true:
 					if debug-state is true, say "(DEBUG: non-use point) (+1 [preproc entry])[line break]";
 					increment the score;
 					increment cur-score of reg-plus entry;
-					increment turns-to-add;
 					now done entry is true;
 			if the remainder after dividing global-delay by 5 is 0 and deep-speeding is false and rev-skips is 0:
 				if the player yes-consents:
@@ -6032,6 +6049,9 @@ carry out revovering:
 		if there is a getit entry and getit entry is not off-stage:
 			if getit entry is not swipeable, next; [the Gorge Grog/TNT are already visible. Other items aren't.]
 		if use1 entry is moot or use2 entry is moot, next;
+		if there is a preproc entry:
+			consider the preproc entry;
+			if the rule failed, next;
 		now done entry is true;
 		increment global-delay;
 		if there is a room-to-go entry:
@@ -6046,7 +6066,7 @@ carry out revovering:
 		if the player does not have use2 entry and use2 entry is speedtakeable:
 			now u2a is true;
 			now player has use2 entry;
-		if deep-speeding is false, say "You [if u1a is true](acquire and) [end if]use [the use1 entry] on/with [if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if].";
+		if deep-speeding is false or say-despite-speeding is true, say "You [if u1a is true](acquire and) [end if]use [the use1 entry] on/with [if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if].";
 		if use2 entry is a workable, wear-down use2 entry;
 		increment turns-to-add;
 		if sco entry is true:
@@ -6062,9 +6082,10 @@ carry out revovering:
 	if rev-skips > 0 and move-room is not location of player:
 		say "(Moving you to [move-room])[paragraph break]";
 		move player to move-room, without printing a room description;
-	now turns-to-add is turns-to-add * 3;
-	if score > last notified score:
-		say "[bracket]I just gave you [score - last notified score] points to go with your quick trip, because I'm generous like that.[close bracket] ... also, I tacked on [turns-to-add] turns, as a guesstimate.[paragraph break]";
+	now turns-to-add is turns-to-add * 4;
+	if turns-to-add > 0:
+		let delt be score - last notified score;
+		say "[bracket][if delt > 0]I just gave you [delt] point[plur of delt] to go with your quick trip, and I also[else]I[end if] tacked on [turns-to-add] turns, as a guesstimate.[close bracket][paragraph break]";
 		now score-cheat is score-cheat + score - last notified score;
 		now last notified score is score;
 		increase turn count by turns-to-add;
