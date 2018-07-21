@@ -5926,6 +5926,24 @@ carry out smitimsing:
 	follow the notify score changes rule;
 	the rule succeeds;
 
+section revab - not for release
+
+revlhing is an action applying to one number.
+
+rev-skips is a number that varies.
+
+rev-max is a number that varies. rev-max is 73.
+
+carry out revlhing:
+	now rev-skips is number understood;
+	if rev-skips > rev-max:
+		say "[rev-max] is the maxumym possible number. Rounding down.";
+		now rev-skips is rev-max;
+	if rev-skips < 1, say "I need a number between 1 and [rev-max] inclusive." instead;
+	try revovering;
+	now rev-skips is 0;
+	the rule succeeds;
+
 chapter revovering
 
 revovering is an action out of world.
@@ -5990,7 +6008,7 @@ carry out revovering:
 					increment cur-score of reg-plus entry;
 					increment turns-to-add;
 					now done entry is true;
-			if global-delay is 5 and deep-speeding is false:
+			if the remainder after dividing global-delay by 5 is 0 and deep-speeding is false and rev-skips is 0:
 				if the player yes-consents:
 					do nothing;
 				else:
@@ -6021,6 +6039,7 @@ carry out revovering:
 		if d1 entry is true, moot use1 entry;
 		if d2 entry is true, moot use2 entry;
 		if there is a postproc entry, follow the postproc entry;
+	if global-delay < rev-skips, say "rev-skips was too much by [rev-skips - global-delay].";
 	now revving-over is false;
 	say "Done.";
 	now turns-to-add is turns-to-add * 3;
