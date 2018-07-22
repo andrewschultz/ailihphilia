@@ -1,0 +1,445 @@
+## reg-ai-thru-as-needed.txt
+# I wish I could generate this, but since the overall walkthrough is stable, and it'd be tricky to add everything, let's not worry about it
+
+** game: /home/andrew/prt/debug-ailihphilia.ulx
+** interpreter: /home/andrew/prt/glulxe -q
+
+* walkthrough
+
+>pack cap
+by one point
+
+>e
+>s
+
+#not a mistake
+>evade dave
+by one point
+
+>get all
+>w
+>bore rob
+by one point
+>word row
+by one point
+
+>get TO IDIOT
+#got TO IDIOT
+
+>e
+>n
+>n
+>n
+
+>use TO IDIOT on Door Frood
+by one point
+
+
+>e
+
+>get all
+
+>use pity tip on eye
+by one point
+#lost pity tip
+
+>w
+
+>w
+
+>tend net
+by one point
+#got elope pole
+
+>gt word row
+
+>work row
+by one point
+
+>gt art xtra
+>get trap art
+>gt work row
+
+>use trap art on reifier
+by one point
+
+>gt evaded ave
+>get bunk nub
+>gt work row
+
+>use bunk nub on reviver
+by one point
+
+>gt fun
+>w
+
+>use party trap on stark rats
+by one point
+
+>gt work row
+
+>word row
+
+>get epoch cope
+
+>gt seer trees
+>n
+
+>use epoch cope on King Nik
+by one point
+
+>s
+>s
+
+>use stock cots on sleep eels
+by one point
+
+>gt yawn way
+
+>puff up
+by one point
+
+>e
+
+>pull up
+by one point
+
+>gt cold loc
+
+>use wash saw on past sap
+by one point
+
+>gt emo dome
+>get puce cup
+>gt cold loc
+>use puce cup on past sap
+by one point
+
+>gt emo dome
+>s
+>use puce cup on liar grail
+by one point
+
+>gt cold loc
+>e
+>use puce cup on dose sod
+#force-revit-cmd
+
+>gt swept pews
+>s
+
+>use puce cup on Bond Nob
+by one point
+
+>gt ooze zoo
+>s
+>get stamp mats
+>gt drawl ward
+>e
+
+>use stamp mats on slate metals
+by one point
+
+>w
+>w
+>get demo med
+>gt cold loc
+>n
+
+>use demo med on gulf lug
+by one point
+
+>gt emo dome
+>e
+
+>use cash sac on cross orc
+by one point
+
+>gt word row
+>get yob attaboy
+>gt toll lot
+>s
+
+>use yob attaboy on Sniffins
+by one point
+
+>s
+
+>use Elan Ale on Sniffins
+by one point
+#got gorge grog
+
+>stand nat's
+by one point
+#got nat's
+
+>gt word row
+>work row
+
+>use Dirt Rid on reviver
+by one point
+#got dirt rid
+
+>gt drawl ward
+>w
+
+>use cave vac on cassettes sac
+by one point
+
+>gt toll lot
+>use radar on crag arc
+by one point
+
+>n
+
+>deny ned
+by one point
+
+>use Ye Key on etage gate
+by one point
+
+>n
+>s
+>s
+>w
+>w
+>s
+>w
+>worn row
+by one point
+
+>gt gross org
+>get stinky knits
+>gt worn row
+>work row
+
+>use stinky knits on rotator
+by one point
+
+>gt pro corp
+
+>use Gorge Grog on butene tub
+by one point
+
+>get gold log
+>gt work row
+>use gold log on rotator
+by one point
+
+>gt frush surf
+>e
+>use some demos on yahoo hay
+by one point
+
+>gt art xtra
+>use straw arts on revolt lover
+by one point
+
+>use gate tag on soot tattoos
+by one point
+
+>gt moo room
+>get poo coop
+>gt seer trees
+>w
+
+>use poo coop on gnu dung
+by one point
+
+>use poo coop on turf rut
+by one point
+
+>w
+
+>use radar on made dam
+by one point
+
+>gt work row
+>word row
+>get NULL ILLUN
+>gt swamp maws
+>n
+
+>use NULL ILLUN on Known Wonk
+by one point
+
+>gt art xtra
+>get el doodle
+>gt yack cay
+
+>use el doodle on edits tide
+by one point
+
+>n
+
+>use elope pole on kayak
+by one point
+
+>use dork rod on tao boat
+by one point
+#got enact cane
+
+>gt swamp maws
+>s
+
+>use tent net on code doc
+by one point
+
+>use spa maps on code doc
+by one point
+
+>gt apse spa
+
+>use spa maps on go-by bog
+by one point
+
+>gt moo room
+
+>use enact cane on yahoo hay
+by one point
+#lost enact cane
+#got moor broom
+
+>pace cap
+by one point
+
+#unfortunately, for the grind-through walkthrough, we have to re-do the pace cap, as going to Yelpley switches it off.
+>gt swept pews
+>get troll ort
+>pace cap
+
+>use troll ort on brag garb
+by one point
+
+>w
+>n
+>n
+>w
+>w
+>s
+
+>yak okay
+by one point
+
+>e
+
+>use sage gas on tame mat
+by one point
+
+>use sharp rahs on guru rug
+by one point
+
+>gt dumb mud
+
+>nail ian
+by one point
+
+>gt yell alley
+>get mayo yam
+>gt mont nom
+
+>use snack cans on UFO tofu
+by one point
+
+>use gift fig on mayo yam
+by one point
+
+>gt yack cay
+
+>use moor broom on tru yurt
+by one point
+
+>gt uneven u
+
+>use wash saw on porch crop
+by one point
+
+>gt dumb mud
+
+>use exam axe on lie veil
+by one point
+
+>n
+
+>get all
+#force-revit-cmd
+
+>gt pro corp
+>get dna band
+>gt word row
+
+>work row
+>use DNA band on reifier
+by one point
+
+>use roto motor on DNA hand
+by one point
+
+>use eroded ore on reviver
+by one point
+
+>use you buoy on rotator
+by one point
+#got me gem
+
+>gt yell alley
+
+>use mr arm on bomb mob
+by one point
+
+>gt flu gulf
+
+>use nat's tan on scorn rocs
+by one point
+
+>gt yell alley
+>get rep popper
+>gt flu gulf
+>w
+
+>use rep popper on me totem
+by one point
+
+>gt emo dome
+>n
+
+>use Bro Orb on mirror rim
+by one point
+
+>use balsa slab on sword rows
+by one point
+
+>gt work row
+
+>use not-a-baton on reifier
+by one point
+
+>use murdered rum on yard ray
+by one point
+
+>emit noontime
+by one point
+
+>use yard ray on test set
+by one point
+
+>gt fun nuf
+
+>use TNT on ore zero
+by one point
+
+>n
+
+>use ME gem on Knife Fink
+by one point
+
+>use taboo bat on Verses Rev
+by one point
+
+>use yard ray on redivider
+by one point
+
+>s
+
+>use x-ite tix on tix exit
+by one point
