@@ -492,9 +492,9 @@ LLP-last is a number that varies.
 
 This is the LLP or normal score changes rule:
 	if the score is not the last notified score:
-		say "[bracket][if cur-score of odd-do > LLP-last]You found a Last Lousy Point![no line break][else]Your score has just gone up by one point.[no line break][close bracket][paragraph break]"
+		say "[bracket][if cur-score of Odd Do > LLP-last]You found a Last Lousy Point![no line break][else]Your score has just gone up by one point.[no line break][close bracket][paragraph break]";
 		now the last notified score is the score;
-		now LLP-last is cur-score of odd-do;
+		now LLP-last is cur-score of Odd Do;
 
 chapter turn count
 
@@ -1967,11 +1967,11 @@ sage gas	tame mat	guru rug	--	--	true	true	true	Grebeberg	Motto Bottom	false	"'M
 sharp rahs	guru rug	stir writs	--	brag-garb-bye rule	true	true	true	Grebeberg	Motto Bottom	false	"The sharp rahs meld into the guru rug, which feels less weighted down by philosophy and floats away. Under it there are stir-writs, which seem oversimplified at first, but on re-reading, they strike just the right balance between emotional and intellectual stimulation.[paragraph break]After reading them, you feel distinctly silly in your brag garb, which seems so gaudy now. Instinctively, you take the garb off and commit it to the Be Web. As the brag garb floats away, you know you have done the right thing, but you need to do more."
 --	--	--	rev-nail-Ian rule	--	true	--	--	Grebeberg	Mont Nom	false
 --	--	--	rev-first-food-combo rule	--	true	--	--	Grebeberg	Mont Nom	false
---	--	--	rev-second-food-combo rule	--	true	--	--	Grebeberg	Mont Nom	false
+--	--	--	rev-second-food-combo rule	--	true	--	--	Grebeberg	Fun Nuf	false
 Moor Broom	Tru Yurt	Exam Axe	--	bump-ivy rule	true	true	false	Grebeberg	Yack Cay	false	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! Then, back to the Tru-Yurt for the Wonk. They've done enough for you." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
---	--	--	rev-get-bro-orb rule	--	false	--	--	--	Le Babel	--
 wash saw	porch crop	balsa slab	--	--	true	true	false	Grebeberg	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods.[paragraph break]'Yes! Yes! This works! Uneven U needs a name change ... to UNEVEN U! How can I thank you?'[paragraph break]A balsa slab is lying under where the porch crop was. The Code Doc offers it to you. Now, you ... do own wood!"
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	Dumb Mud	false	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
+--	--	--	rev-get-bro-orb rule	--	false	--	--	--	Le Babel	--
 DNA band	reifier	DNA hand	--	--	true	true	false	Yelpley	Worn Row	false	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand! It doesn't have any slime or blood leaking, and when you take it, it doesn't twitch too much."
 roto motor	DNA hand	Mr Arm	--	--	true	true	true	Yelpley	Worn Row	false	"Some of the stuffing inside the hand has to pop out to make space for the roto motor to fit in. There's enough to make a whole arm! The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on the arm (MR. ARM) and hand: BANG NAB. The arm will probably give the hand a bit more reach."
 Eroded Ore	reviver	Ore Zero	--	--	true	true	false	Yelpley	Worn Row	false	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
@@ -2026,9 +2026,9 @@ this is the rev-evade-Dave rule:
 
 this is the rev-first-food-combo rule:
 	if number of moot ingredients >= 2, the rule fails;
-	say "You mix two ingredients together in Mont Nom.";
-	moot random not moot solid ingredient;
-	moot random not moot liquid ingredient;
+	say "You mix the snack cans and the UFO tofu together.";
+	moot snack cans;
+	moot UFO tofu;
 	the rule succeeds;
 
 this is the rev-get-bro-orb rule:
@@ -2071,9 +2071,9 @@ this is the rev-pull-up rule:
 
 this is the rev-second-food-combo rule:
 	if number of moot ingredients is 4, the rule fails;
-	say "You mix two more ingredients together in Mont Nom.";
-	moot random not moot solid ingredient;
-	moot random not moot liquid ingredient;
+	let si be random not moot solid ingredient;
+	let mi be random not moot liquid ingredient;
+	say "You mix the [si] and [mi] together in Mont Nom, causing a martini tray to roll out from the Ark of Okra all the way to Fum [']Nuf.";
 	move martini tram to Fun Nuf;
 	the rule succeeds;
 
@@ -2685,7 +2685,13 @@ check going north in Fun Nuf:
 	if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
 	if murdered rum is not moot, say "You have the yard ray, but it isn't, well, charged." instead;
 	if emitted is false, say "You don't know how to work the yard ray." instead;
-	if player does not have ME gem or player does not have Taboo Bat, say "As you go north, you hear three voices. 'Prep?! Erp!' you mutter.[paragraph break]Perhaps the yard ray would work okay at first, but ... you get the feeling you may need some other stuff to take out EVERYBODY.";
+	if grid-side-items < 2, say "As you go north, you hear three voices. 'Prep?! Erp!' you mutter.[paragraph break]Perhaps the yard ray would work okay at first, but ... you get the feeling you may need some other stuff to take out EVERYBODY.";
+
+to decide which number is grid-side-items:
+	let temp be 2;
+	if ME gem is off-stage, decrement temp;
+	if taboo bat is off-stage, decrement temp;
+	decide on temp;
 
 chapter Pact Cap
 
@@ -2857,32 +2863,25 @@ for writing a paragraph about a person when player is in Dirge Grid:
 	if Dirge Grid is unvisited:
 		say "You are greeted by someone who must be the Diktat Kid, who reminds you of a bully from high school. 'You did some weird things to get this far--but I've done some PRACTICAL things to make sure that's it! Knife Fink! Verses Rev!'[paragraph break]'We hew! Due: FEUD!'[paragraph break]Then the Diktat Kid gets all fancy. 'ENGAGE LE JEU QUE JE LE GAGNE!'[wfak-d]";
 		say "They both appear. And they are armed! The Knife Fink, with leet steel, and the Verses Rev, with a part strap.";
-		if player does not have ME gem and player does not have taboo bat:
+		if grid-side-items is 0:
 			say "Looking at your items, there's no way you have enough to take care of the Diktat Kid and the two henchmen. You back off.";
 			move player to Fun Nuf, without printing a room description;
 			continue the action;
-		if player does not have ME gem or player does not have taboo bat:
+		if grid-side-items is 1:
 			say "You feel like you aren't quite prepared enough to tackle the Diktat Kid's henchmen. You back off.";
 			move player to Fun Nuf, without printing a room description;
 			continue the action;
 		say "You sense a slight hesitation from your adversaries and unwisely boom 'Step, puppets!'[paragraph break]Uh oh. You'd better be able to back up your words, here.";
 	else:
-		if player does not have ME gem and player does not have taboo bat:
-			say "You're still overwhelmed by all three opponents.";
+		if grid-side-items is 0:
+			say "You're still overwhelmed by all three opponents! You run back to [Fun Nuf].";
 			move player to Fun Nuf, without printing a room description;
 			continue the action;
-		if player does not have ME gem and player does not have taboo bat:
-			say "You still don't feel confident of victory. You need just a little more.";
+		if grid-side-items is 1:
+			say "You still don't feel confident of victory. You probably need one more thing. You run back to [Fun Nuf].";
 			move player to Fun Nuf, without printing a room description;
 			continue the action;
-		else if Knife Fink is moot and Verses Rev is moot:
-			say "The Diktat Kid continues to rage at you. Two henchmen gone, but it's not over!";
-		else if Knife Fink is moot:
-			say "The Diktat Kid continues to yell at the Verses Rev to do something.";
-		else if Verses Rev is moot:
-			say "The Diktat Kid continues to yell at the Knife Fink to do something.";
-		else:
-			say "The Diktat Kid yells and wonders why the Verses Rev and Knife Fink haven't disposed of you, yet.";
+		say "[if Knife Fink is moot and Verses Rev is moot]The Diktat Kid continues to rage at you. Two henchmen gone, but it's not over![else if Knife Fink is moot]The Diktat Kid continues to yell at the Verses Rev to do something.[else if Verses Rev is moot]The Diktat Kid continues to yell at the Knife Fink to do something.[else]The Diktat Kid yells and wonders why the Verses Rev and Knife Fink haven't disposed of you, yet.[end if]";
 
 check going in Dirge Grid:
 	if Diktat Kid is in Dirge Grid, say "While the No-Go Gon is probably more for keeping people out, it would probably keep you back in even with [if henchmen-left is 0]the waster fretsaw and Tru-Hurt[else]enemies who might catch you[end if]. You've got no choice but to finish things off, here." instead;
@@ -3145,7 +3144,7 @@ check going east in Sneer Greens: if Yuge Guy is in Sneer Greens, say "'[next-ra
 
 chapter Yuge Guy
 
-Yuge Guy is a proper-named person in Sneer Greens. description is "Bilgy. Glib. He cries 'GAWK, WAG!' as you look at him.". "[one of]'BELIEVE ME! LOVE ME! BELIEVE!' yells someone Wow--he's a lot bigger than you.[paragraph break]'I am Yuge Guy!' he drones on. After your initial shock, you see that while he is bigger than you, it's more horizontally than vertically, and he looks like the ME Totem, too.[or]The Yuge Guy continues carrying on about how the world stinks, except for him.[stopping]"
+Yuge Guy is a proper-named person in Sneer Greens. description is "Bilgy. Glib. He cries 'GAWK, WAG!' as you look at him.". "[one of]'BELIEVE ME! LOVE ME! BELIEVE!' yells someone. Wow--he's a lot bigger than you.[paragraph break]'I am Yuge Guy!' he drones on. After your initial shock, you see that while he is bigger than you, it's more horizontally than vertically, and he looks like the ME Totem, too.[or]The Yuge Guy continues carrying on about how the world stinks, except for him.[stopping]"
 
 chapter ME Totem
 
@@ -3785,7 +3784,7 @@ chapter X/Y Pyx
 
 an X Y Pyx is a peripheral thing in Yawn Way. printed name of x y pyx is "X/Y Pyx". description of X Y Pyx is "[map-so-far]". "[one of]An X/Y pyx lies here. Closer inspection reveals that's just a fancy name for a map[or]The X/Y pyx still lies here[stopping]. It wouldn't be too cumbersome to take.". indefinite article of X Y Pyx is "an".
 
-understand "map" as pyx when player has pyx.
+understand "map" as pyx.
 
 does the player mean doing something with pyx when player has doodle or player has spa maps: it is unlikely.
 
@@ -4094,6 +4093,8 @@ after examining bad dab:
 chapter test set
 
 The test set is a thing. "A test set lies here, looking convoluted and -- well, open to abuse.". description is "A mangled tin unit. You're not sure what it's good for, but now that you worked through all the machines, maybe you just need it to, well, try stuff before your final confrontation.".
+
+does the player mean doing something with the test set: it is very likely.
 
 check taking the test set: say "It's too unwieldy. But it has to be useful for something." instead;
 
@@ -5511,9 +5512,6 @@ carry out gotoing:
 			the rule succeeds;
 		move the player to noun;
 		the rule succeeds;
-	if cap-pace is true and map region of location of noun is not Grebeberg:
-		now cap-pace is false;
-		say "Your pace cap slows down as you [if noun is Fun Nuf]enter[else]cross[end if] Fun [']Nuf..." instead;
 	unless goto-available, say "You're at a point in the game where goto isn't available." instead;
 	if Diktat Kid is moot:
 		if noun is Deft Fed, say "You can't crash the party. You weren't invited. It's REALLY exclusive." instead;
@@ -5526,6 +5524,9 @@ carry out gotoing:
 	if noun is unvisited, say "You can reach [noun], but you haven't visited there, yet. So I'm going to be a stickler and say you have to get there first." instead;
 	consider the unavail-rule of noun;
 	if the rule succeeded, say "[noun] is no longer worth going to. You don't want to go back. Onward!" instead;
+	if cap-pace is true and map region of location of noun is not Grebeberg:
+		now cap-pace is false;
+		say "Your pace cap slows down as you [if noun is Fun Nuf]enter[else]cross[end if] Fun [']Nuf...";
 	now gone-to is true;
 	move player to noun;
 	the rule succeeds;
@@ -5959,19 +5960,27 @@ carry out sdsing:
 
 say-despite-speeding is a truth state that varies.
 
-section revab - not for release
+section wrw - not for release
 
-understand the command "revab" as something new.
+[wrw is short for WARP RAW]
 
-understand "revab [number]" as revabing.
+understand the command "wrw" as something new.
 
-revabing is an action applying to one number.
+understand "wrw" as wrw1ing.
+
+understand "wrw [number]" as wrwing.
+
+wrw1ing is an action out of world.
+
+wrwing is an action applying to one number.
 
 rev-skips is a number that varies.
 
 rev-max is a number that varies. rev-max is 73.
 
-carry out revabing:
+carry out wrw1ing: try wrwing 1 instead;
+
+carry out wrwing:
 	now rev-skips is number understood;
 	if rev-skips > rev-max:
 		say "[rev-max] is the maxumym possible number. Rounding down.";
@@ -6015,6 +6024,9 @@ definition: a thing (called th) is speedtakeable:
 	if th is a workable, no;
 	if th is test set, no;
 	if th is bomb mob, no;
+	if th is stark rats, no;
+	if th is liar grail, no;
+	if th is cassettes sac, no;
 	yes;
 
 definition: a thing (called th) is swipeable:
