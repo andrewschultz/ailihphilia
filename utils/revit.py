@@ -22,6 +22,10 @@ destinations = defaultdict(str)
 
 first_line = "# created with the revit.py python tool\n"
 
+print_chunk_list = False
+chunk_list_to_file = False
+launch_chunk_list = False
+
 post_prt = False
 do_rev_over = False
 # starting range for do_rev_over
@@ -39,13 +43,14 @@ line_nums = []
 def usage():
     print("List of arguments:")
     print('=' * 40)
-    print("a = all (0..73)")
+    print("a = all (0..74)")
     print("m/e/w=min/east/west")
     print("s# = start (CSV), e# = end (CSV) for REV OVER")
     print("l/l1 = launch first, ll/l0 = launch last")
     print("r = rev-over on, nr/rn = rev-over off")
     print("p = run PRT post-revit")
     print("j = just copy generated files")
+    print("pc = print chunk list, cf = chunk list to file, cl = to file and launch")
     exit()
 
 def create_speed_thru(base_file, base_out_str, idx):
@@ -114,10 +119,11 @@ def read_walkthrough_chunks(): # returns the number of walkthrough chunks
     global line_nums
     retval = 0
     cur_cmd = ''
+    orb_ever = False
     with open("walkthrough.txt") as file:
         cmd_count = 0
         for (line_count, line) in enumerate(file, 1):
-            if line.startswith("(+1)"):
+            if line.startswith("(+1)") or 'use puce cup on liar grail' in line.lower():
                 line_nums.append(line_count)
                 cur_cmd += re.sub(".*> *", ">", line.strip())
                 cur_cmd = re.sub("\.", "\n>", cur_cmd)
@@ -132,8 +138,18 @@ def read_walkthrough_chunks(): # returns the number of walkthrough chunks
                 line_nums.append(line_count)
                 cur_cmd = ''
                 what_skipped[line_count] = line.strip()
-            elif 'use tenet on bro orb' in line.lower(): orb_next = True
+            elif 'use stir writs on bro orb' in line.lower(): orb_next = orb_ever = True
             elif line.startswith(">"): cur_cmd += line
+    if not orb_ever: print("Uh oh, we didn't have a division for getting the orb.")
+    if print_chunk_list or chunk_list_to_file:
+        if chunk_list_to_file: f = open("revit-chunk-list.txt", "w")
+        for x in range(0, retval):
+            this_segment = "{:s}{:d} (line {:d})\n{:s}\n".format('=' * 40, x, line_nums[x], this_cmd[line_nums[x]])
+            if chunk_list_to_file: f.write(this_segment)
+            if print_chunk_list: print(this_segment)
+        if chunk_list_to_file: f.close()
+        if launch_chunk_list: os.system("revit-chunk-list.txt")
+        exit()
     return retval
 
 def my_file(s, e):
@@ -213,7 +229,7 @@ while count < len(sys.argv):
     elif arg == 'm': files_to_run["min"] = True
     elif arg == 'a':
         start_low = end_low = speed_low = 0
-        start_high = end_high = speed_high = 73
+        start_high = end_high = speed_high = 74
     elif arg[0] == 's':
         ary = [int(x) for x in re.split("[,-]", arg[1:])]
         if len(ary) == 1: start_low = start_high = ary[0]
@@ -231,6 +247,9 @@ while count < len(sys.argv):
     elif arg == 'r': do_rev_over = True
     elif arg == 'nr' or arg == 'rn': do_rev_over = False
     elif arg == 'p': post_prt = True
+    elif arg == 'pc': print_chunk_list = True
+    elif arg == 'cf': chunk_list_to_file = True
+    elif arg == 'cl': launch_chunk_list = chunk_list_to_file = True
     elif arg == 'j': post_copy_just_this = True
     elif arg == '?': usage()
     else:
