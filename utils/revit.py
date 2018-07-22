@@ -25,6 +25,7 @@ first_line = "# created with the revit.py python tool\n"
 print_chunk_list = False
 chunk_list_to_file = False
 launch_chunk_list = False
+write_wrw = False
 
 post_prt = False
 do_rev_over = False
@@ -141,7 +142,19 @@ def read_walkthrough_chunks(): # returns the number of walkthrough chunks
             elif 'use stir writs on bro orb' in line.lower(): orb_next = orb_ever = True
             elif line.startswith(">"): cur_cmd += line
     if not orb_ever: print("Uh oh, we didn't have a division for getting the orb.")
-    if print_chunk_list or chunk_list_to_file:
+    if print_chunk_list or chunk_list_to_file or write_wrw:
+        if write_wrw:
+            for x in range (0, retval):
+                fname = "reg-ai-wrw-skip-step-{:02d}.txt".format(x)
+                print(x, fname)
+                f = open(fname, "w")
+                f.write("# {:s}\n#\n# unit tester for wrw skipping step {:d}\n#\n** game: /home/andrew/prt/debug-ailihphilia.ulx\n** interpreter: /home/andrew/prt/glulxe -q\n\n* warpthrough\n\n".format(fname, x))
+                for y in range (0, retval):
+                    if y == x: f.write(">wrw\n")
+                    else: f.write(this_cmd[line_nums[y]] + "\n")
+                f.write("Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!\n")
+                f.close()
+            exit()
         if chunk_list_to_file: f = open("revit-chunk-list.txt", "w")
         for x in range(0, retval):
             this_segment = "{:s}{:d} (line {:d})\n{:s}\n".format('=' * 40, x, line_nums[x], this_cmd[line_nums[x]])
@@ -250,6 +263,7 @@ while count < len(sys.argv):
     elif arg == 'pc': print_chunk_list = True
     elif arg == 'cf': chunk_list_to_file = True
     elif arg == 'cl': launch_chunk_list = chunk_list_to_file = True
+    elif arg == 'wr' or arg == 'rw' or arg == 'wrw': write_wrw = True
     elif arg == 'j': post_copy_just_this = True
     elif arg == '?': usage()
     else:
