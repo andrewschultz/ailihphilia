@@ -54,7 +54,33 @@ def usage():
     print("pc = print chunk list, cf = chunk list to file, cl = to file and launch")
     exit()
 
+def last_of(a):
+    b = a.strip().split("\n")
+    for j in b[::-1]:
+        if j.startswith('>'): return j + "\n"
+    return '(undefined command)'
+
+def write_single_wrw(start_val, end_val, block_dict, collapse_if_1):
+    if start_val == end_val and collapse_if_1:
+        fname = "reg-ai-wrw-skip-step-{:02d}.txt".format(start_val)
+    else:
+        fname = "reg-ai-wrw-skip-from-{:02d}-to-{:02d}.txt".format(start_val, end_val)
+    print('Writing', start_val, end_val, fname)
+    f = open(fname, "w")
+    f.write("# {:s}\n#\n# unit tester for wrw skipping step{:s} {:d}{:s}\n#\n** game: /home/andrew/prt/debug-ailihphilia.ulx\n** interpreter: /home/andrew/prt/glulxe -q\n\n* warpthrough\n\n".format(fname, 's' if start_val != end_val else '', start_val, '' if start_val == end_val else '-{:d}'.format(end_val)))
+    for y in range (0, len(block_dict)):
+        if y >= start_val and y <= end_val:
+            f.write("\n>wrw\n")
+            f.write("#replacement for ")
+            f.write(last_of(block_dict[y]))
+            if 'by one point' not in block_dict[y]: f.write("!")
+            f.write("1 point to go\n")
+        else: f.write(block_dict[y])
+    f.write("Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!\n" if y < len(block_dict) - 1 else "You're already near the endgame.")
+    f.close()
+
 def write_wrw_files():
+    only_one_wrw = (end_high == 0 and start_high == 0)
     as_n = "reg-ai-thru-as-needed.txt"
     wrw_blocks = []
     cmd_yet = False
@@ -69,16 +95,13 @@ def write_wrw_files():
                 cur_cmd = ''
             if '#endwrw' in cur_cmd: break
     if cur_cmd: wrw_blocks.append(cur_cmd)
-    for x in range (0, len(wrw_blocks)):
-        fname = "reg-ai-wrw-skip-step-{:02d}.txt".format(x)
-        print('Writing', x, fname)
-        f = open(fname, "w")
-        f.write("# {:s}\n#\n# unit tester for wrw skipping step {:d}\n#\n** game: /home/andrew/prt/debug-ailihphilia.ulx\n** interpreter: /home/andrew/prt/glulxe -q\n\n* warpthrough\n\n".format(fname, x))
-        for y in range (0, len(wrw_blocks)):
-            if y == x: f.write("\n>wrw\n")
-            else: f.write(wrw_blocks[y])
-        f.write("Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!\n" if x < len(wrw_blocks) - 1 else "You're already near the endgame.")
-        f.close()
+    if only_one_wrw:
+        for x in range(0, len(wrw_blocks)):
+            write_single_wrw(x, x, wrw_blocks, True)
+    else:
+        for st in range(start_low, start_high):
+            for en in range (end_low, end_high):
+                write_single_wrw(st, en, wrw_blocks, False)
     exit()
 
 def create_speed_thru(base_file, base_out_str, idx):
