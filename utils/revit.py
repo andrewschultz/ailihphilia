@@ -7,7 +7,12 @@
 #
 # revit.py -l0 -l1 d0,1 ad0,1
 #
+# revit.py -wr = tries one instance of WRW
+# revit.py -wr -s2,4 -e5,7 = creates 2-5, 2-6, 2-7, 3-5, 3-6, 3-7, 4-5, 4-6, 4-7
+# revit.py -wrr2 = creates 2 random skipping test files
 
+import glob
+import random
 import i7
 import os
 import sys
@@ -32,6 +37,8 @@ do_rev_over = False
 # starting range for do_rev_over
 start_low = start_high = 0
 end_low = end_high = 0
+
+random_wrw_to_write = 0
 
 speed_low = speed_high = 0
 
@@ -58,7 +65,9 @@ def last_of(a):
     b = a.strip().split("\n")
     for j in b[::-1]:
         if j.startswith('>'): return j + "\n"
-    return '(undefined command)'
+    if 'endwrw' in a:
+        return ">wrw\nendgame\n"
+    return "(undefined command: {:s})\n".format(a.strip())
 
 def write_single_wrw(start_val, end_val, block_dict, collapse_if_1):
     if start_val == end_val and collapse_if_1:
@@ -79,6 +88,30 @@ def write_single_wrw(start_val, end_val, block_dict, collapse_if_1):
     f.write("Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!\n" if y < len(block_dict) - 1 else "You're already near the endgame.")
     f.close()
 
+def write_random_wrw(blox, num_of):
+    for n in range (0, num_of):
+        file_string = "reg-ai-wrw-random-"
+        rand_ary = []
+        string_to_dump = ""
+        my_total = 0
+        for i in range (0, len(blox)-1):
+            to_add = random.randint(0,1)
+            my_total += to_add
+            rand_ary.append(to_add)
+            file_string += str(to_add)
+            if to_add: string_to_dump += last_of(blox[i])
+            else: string_to_dump += blox[i]
+            if 'by one point' not in blox[i]: string_to_dump += ("!")
+            string_to_dump += ("1 point to go\n")
+        string_to_dump += '>wrw\nendgame\n'
+        file_string += "-{:d}-skips.txt".format(my_total)
+        f = open(file_string, "w")
+        f.write("# {:s}\n#\n# randomly generated WRW tester** game: /home/andrew/prt/debug-ailihphilia.ulx\n** interpreter: /home/andrew/prt/glulxe -q\n\n* warpthrough\n\n".format(file_string))
+        f.write(string_to_dump)
+        f.close()
+        print("Wrote", file_string)
+    exit()
+
 def write_wrw_files():
     only_one_wrw = (end_high == 0 and start_high == 0)
     as_n = "reg-ai-thru-as-needed.txt"
@@ -95,7 +128,9 @@ def write_wrw_files():
                 cur_cmd = ''
             if '#endwrw' in cur_cmd: break
     if cur_cmd: wrw_blocks.append(cur_cmd)
-    if only_one_wrw:
+    if random_wrw_to_write:
+        write_random_wrw(wrw_blocks, random_wrw_to_write)
+    elif only_one_wrw:
         for x in range(0, len(wrw_blocks)):
             write_single_wrw(x, x, wrw_blocks, True)
     else:
@@ -301,6 +336,13 @@ while count < len(sys.argv):
     elif arg == 'pc': print_chunk_list = True
     elif arg == 'cf': chunk_list_to_file = True
     elif arg == 'cl': launch_chunk_list = chunk_list_to_file = True
+    elif arg == 'rd':
+        tary = glob.glob("reg-ai-wrw-random-*")
+        for q in tary: os.remove(q)
+        print("Removed", len(tary), "random files")
+    elif arg.startswith('wr') and arg[2:].isdigit():
+        random_wrw_to_write = int(arg[2:])
+        write_wrw = True
     elif arg == 'wr' or arg == 'rw' or arg == 'wrw': write_wrw = True
     elif arg == 'j': post_copy_just_this = True
     elif arg == '?': usage()
