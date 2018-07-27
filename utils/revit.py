@@ -54,6 +54,33 @@ def usage():
     print("pc = print chunk list, cf = chunk list to file, cl = to file and launch")
     exit()
 
+def write_wrw_files():
+    as_n = "reg-ai-thru-as-needed.txt"
+    wrw_blocks = []
+    cmd_yet = False
+    cur_cmd = ''
+    with open(as_n) as file:
+        for line in file:
+            if not cmd_yet and not line.startswith('>'): continue
+            if not cmd_yet: cmd_yet = True
+            cur_cmd += line
+            if 'by one point' in cur_cmd or '#force-revit-cmd' in cur_cmd:
+                wrw_blocks.append(cur_cmd)
+                cur_cmd = ''
+            if '#endwrw' in cur_cmd: break
+    if cur_cmd: wrw_blocks.append(cur_cmd)
+    for x in range (0, len(wrw_blocks)):
+        fname = "reg-ai-wrw-skip-step-{:02d}.txt".format(x)
+        print('Writing', x, fname)
+        f = open(fname, "w")
+        f.write("# {:s}\n#\n# unit tester for wrw skipping step {:d}\n#\n** game: /home/andrew/prt/debug-ailihphilia.ulx\n** interpreter: /home/andrew/prt/glulxe -q\n\n* warpthrough\n\n".format(fname, x))
+        for y in range (0, len(wrw_blocks)):
+            if y == x: f.write("\n>wrw\n")
+            else: f.write(wrw_blocks[y])
+        f.write("Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!\n" if x < len(wrw_blocks) - 1 else "You're already near the endgame.")
+        f.close()
+    exit()
+
 def create_speed_thru(base_file, base_out_str, idx):
     file_name = base_out_str.format(idx)
     f = open(file_name, "w")
@@ -142,19 +169,7 @@ def read_walkthrough_chunks(): # returns the number of walkthrough chunks
             elif 'use stir writs on bro orb' in line.lower(): orb_next = orb_ever = True
             elif line.startswith(">"): cur_cmd += line
     if not orb_ever: print("Uh oh, we didn't have a division for getting the orb.")
-    if print_chunk_list or chunk_list_to_file or write_wrw:
-        if write_wrw:
-            for x in range (0, retval):
-                fname = "reg-ai-wrw-skip-step-{:02d}.txt".format(x)
-                print(x, fname)
-                f = open(fname, "w")
-                f.write("# {:s}\n#\n# unit tester for wrw skipping step {:d}\n#\n** game: /home/andrew/prt/debug-ailihphilia.ulx\n** interpreter: /home/andrew/prt/glulxe -q\n\n* warpthrough\n\n".format(fname, x))
-                for y in range (0, retval):
-                    if y == x: f.write(">wrw\n")
-                    else: f.write(this_cmd[line_nums[y]] + "\n")
-                f.write("Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!\n")
-                f.close()
-            exit()
+    if print_chunk_list or chunk_list_to_file:
         if chunk_list_to_file: f = open("revit-chunk-list.txt", "w")
         for x in range(0, retval):
             this_segment = "{:s}{:d} (line {:d})\n{:s}\n".format('=' * 40, x, line_nums[x], this_cmd[line_nums[x]])
@@ -280,6 +295,8 @@ if end_low > end_high:
     print("Flipping end-low and end-high.")
 
 i7.go_proj('ai')
+
+if write_wrw: write_wrw_files()
 
 max_stuff = read_walkthrough_chunks()
 

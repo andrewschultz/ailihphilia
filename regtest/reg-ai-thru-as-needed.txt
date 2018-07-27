@@ -12,7 +12,6 @@ by one point
 >e
 >s
 
-#not a mistake
 >evade dave
 by one point
 
@@ -33,7 +32,6 @@ by one point
 
 >use TO IDIOT on Door Frood
 by one point
-
 
 >e
 
@@ -306,6 +304,7 @@ by one point
 #unfortunately, for the grind-through walkthrough, we have to re-do the pace cap, as going to Yelpley switches it off.
 >gt swept pews
 >get troll ort
+>gt moo room
 >pace cap
 
 >use troll ort on brag garb
@@ -316,6 +315,7 @@ by one point
 >n
 >w
 >w
+>s
 >s
 
 >yak okay
@@ -330,6 +330,7 @@ by one point
 by one point
 
 >gt dumb mud
+>s
 
 >nail ian
 by one point
@@ -427,6 +428,7 @@ by one point
 
 >use TNT on ore zero
 by one point
+#endwrw
 
 >n
 
