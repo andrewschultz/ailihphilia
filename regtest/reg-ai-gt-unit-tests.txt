@@ -1,0 +1,393 @@
+# reg-ai-gt-unit-tests.txt: runs through all possible ways to GT (rooms, things)
+
+** game: /home/andrew/prt/debug-ailihphilia.ulx
+** interpreter: /home/andrew/prt/glulxe -q
+
+* by room
+
+>deep speed
+
+>gt dirge grid
+You can reach Dirge Grid, but you haven't visited there, yet. So I'm going to be a stickler and say you have to get there first.
+
+>gt lac oft focal
+Lac Old Local
+>gt lac
+Already there!
+>gt oft
+Already there!
+>gt focal
+Already there!
+>gt lac oft
+Already there!
+>gt lac focal
+Already there!
+>gt oft focal
+Already there!
+
+>gt lac old local
+Already there!
+>gt lac
+Already there!
+>gt old
+Already there!
+>gt local
+Already there!
+>gt lac old
+Already there!
+>gt lac local
+Already there!
+>gt old local
+Already there!
+
+>gt sneer greens
+Et Tu Butte
+>gt sneer
+Already there!
+>gt greens
+Already there!
+
+>gt et tu butte
+Already there!
+>gt et
+Already there!
+>gt tu
+Already there!
+>gt butte
+Already there!
+>gt et tu
+Already there!
+>gt et butte
+Already there!
+>gt tu butte
+Already there!
+
+>gt flu gulf
+Flu Gulf
+>gt flu
+Already there!
+>gt gulf
+Already there!
+
+>gt trapeze part
+Trapeze Part
+>gt trapeze
+Already there!
+>gt part
+Already there!
+
+>gt evaded ave
+Evaded Ave
+>gt evaded
+Already there!
+>gt ave
+Already there!
+
+>gt yell alley
+Yell Alley
+>gt yell
+Already there!
+>gt alley
+Already there!
+
+>gt pro corp
+Pro Corp
+>gt pro
+Already there!
+>gt corp
+Already there!
+
+>gt bald lab
+Already there!
+>gt bald
+Already there!
+>gt lab
+Already there!
+
+>gt yack cay
+Roomy Moor
+>gt yack
+Already there!
+>gt cay
+Already there!
+
+>gt roomy moor
+Already there!
+>gt roomy
+Already there!
+>gt moor
+Already there!
+
+>gt le babel
+Le Babel
+>gt le
+Already there!
+>gt babel
+Already there!
+
+>gt cold loc
+Cold Loc
+>gt cold
+Already there!
+>gt loc
+Already there!
+
+>gt apse spa
+Apse Spa
+>gt apse
+Already there!
+>gt spa
+Already there!
+
+>gt art xtra
+Traded Art
+>gt art
+Already there!
+>gt xtra
+Already there!
+
+>gt traded art
+Already there!
+>gt traded
+Already there!
+>gt art
+Already there!
+
+>gt red roses order
+Red Roses Order
+>gt red
+Already there!
+>gt roses
+Already there!
+>gt order
+Already there!
+>gt red roses
+Already there!
+>gt red order
+Already there!
+>gt roses order
+Already there!
+
+>gt gross org
+Gross Org
+>gt gross
+Already there!
+>gt org
+Already there!
+
+>gt swamp maws
+Swamp Maws
+>gt swamp
+Already there!
+>gt maws
+Already there!
+
+>gt dumb mud
+Dumb Mud
+>gt dumb
+Already there!
+>gt mud
+Already there!
+
+>gt seer trees
+Seer Trees
+>gt seer
+Already there!
+>gt trees
+Already there!
+
+>gt fun nuf
+Fun 'Nuf
+>gt fun
+Already there!
+>gt nuf
+Already there!
+
+>gt yawn way
+Yawn Way
+>gt yawn
+Already there!
+>gt way
+Already there!
+
+>gt emo dome
+Emo Dome
+>gt emo
+Already there!
+>gt dome
+Already there!
+
+>gt toll lot
+Toll Lot
+>gt toll
+Already there!
+>gt lot
+Already there!
+
+>gt uneven u
+Unitin' U
+>gt uneven
+Already there!
+>gt u
+Already there!
+
+>gt unitin u
+Already there!
+>gt unitin
+Already there!
+>gt u
+Already there!
+
+>gt mont nom
+Mont Nom
+>gt mont
+Already there!
+>gt nom
+Already there!
+
+>gt ooze zoo
+Ooze Zoo
+>gt ooze
+Already there!
+>gt zoo
+Already there!
+
+>gt word row
+Word Row
+>gt word
+Already there!
+>gt row
+Already there!
+
+>gt worn row
+Already there!
+>gt worn
+Already there!
+>gt row
+Already there!
+
+>gt work row
+Already there!
+>gt work
+Already there!
+>gt row
+Already there!
+
+>gt my gym
+My Gym
+>gt my
+Already there!
+>gt gym
+Already there!
+
+>gt swept pews
+Swept Pews
+>gt swept
+Already there!
+>gt pews
+Already there!
+
+>gt deft fed
+Bon Snob
+>gt deft
+Already there!
+>gt fed
+Already there!
+
+>gt bon snob
+Already there!
+>gt bon
+Already there!
+>gt snob
+Already there!
+
+>gt lair trial
+Stride Dirts
+>gt lair
+Already there!
+>gt trial
+Already there!
+
+>gt stride dirts
+Already there!
+>gt stride
+Already there!
+>gt dirts
+Already there!
+
+>gt motto bottom
+Motto Bottom
+>gt motto
+Already there!
+>gt bottom
+Already there!
+
+>gt frush surf
+Frush Surf
+>gt frush
+Already there!
+>gt surf
+Already there!
+
+>gt moo room
+Moo Room
+>gt moo
+Already there!
+>gt room
+Already there!
+
+>gt dope pod
+Dope Pod
+>gt dope
+Already there!
+>gt pod
+Already there!
+
+>gt dopy pod
+Already there!
+>gt dopy
+Already there!
+>gt pod
+Already there!
+
+>gt drawl ward
+Drawl Ward
+>gt drawl
+Already there!
+>gt ward
+Already there!
+
+>gt scrap arcs
+Scrap Arcs
+>gt scrap
+Already there!
+>gt arcs
+Already there!
+
+>smitims
+
+>gt lac oft focal
+The Smarty Trams project
+
+>gt dome mod
+Dome, Mod
+>gt dome
+Already there!
+>gt mod
+Already there!
+
+
+>gt dirge grid
+Top Spot is no longer worth going to. You don't want to go back. Onward!
+>gt dirge
+Top Spot is no longer worth going to. You don't want to go back. Onward!
+>gt grid
+Top Spot is no longer worth going to. You don't want to go back. Onward!
+
+>gt top spot
+Top Spot is no longer worth going to. You don't want to go back. Onward!
+>gt spot
+Top Spot is no longer worth going to. You don't want to go back. Onward!
+>gt top
+Top Spot is no longer worth going to. You don't want to go back. Onward!
+

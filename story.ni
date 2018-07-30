@@ -2103,8 +2103,9 @@ this is the rev-work-row rule:
 
 this is the rev-worn-row rule:
 	if psi wisp is moot, the rule fails;
-	say "You lure the Psi Wisp back to Wor(k/d) row, changing it to Worn Row.";
+	say "You lure the Psi Wisp back to Wor(k/d) row, changing it to Worn Row, then back to Word Row.";
 	moot psi wisp;
+	word-row-open;
 	the rule succeeds;
 
 this is the rev-yak-okay rule:
@@ -2858,6 +2859,8 @@ check going to Dirge Grid: if test set is not moot, say "[if player does not hav
 
 printed name of Dirge Grid is "[if Diktat Kid is moot]Top Spot[else]Dirge Grid[end if]"
 
+understand "top/spot" and "top spot" as Dirge Grid when Diktat Kid is moot.
+
 for writing a paragraph about a person when player is in Dirge Grid:
 	now all people in Dirge Grid are mentioned;
 	if Dirge Grid is unvisited:
@@ -3123,15 +3126,13 @@ book Sneer Greens
 
 Sneer Greens is west of Flu Gulf. It is in Grebeberg. "[if Yuge Guy is in Sneer Greens]Despite the impressive view, the place has gone to pot.[else]Nicer with the Yuge Guy gone. Still, it's...[end if][paragraph break]You can only go back east. Smirk rims block every way back except east[if me totem is in Sneer Greens], and a ME Totem towers above you."
 
-understand "green" and "sneer greens" as seer trees.
-
 check going nowhere in Sneer Greens: say "The smirk rims push you back, but you really don't need to do anything [if Yuge Guy is moot]more here[else]with them, just the Yuge Guy[end if]." instead;
 
 Sneer Greens is above Flu Gulf.
 
 printed name of Sneer Greens is "[if Yuge Guy is in Sneer Greens]Sneer Greens[else]Et Tu Butte[end if]"
 
-understand "et tu butte" and "et/tu/butte" and "et tu" and "et/tu butte" as Sneer Greens when Yuge Guy is in Sneer Greens.
+understand "et tu butte" and "et/tu/butte" and "et tu" and "et/tu butte" as Sneer Greens when Yuge Guy is moot.
 
 after looking in Sneer Greens for the first time:
 	say "'Believe Me. Adore Me. Believe!' O gee, ego, you think to yourself.";
@@ -3655,12 +3656,14 @@ Lac Oft Focal is north of Yack Cay. It is in Grebeberg. "A calcific lac borders 
 
 printed name of Lac Oft Focal is "[if lac-score is 2]Lac Old Local[else]Lac Oft Focal[end if]".
 
+understand "old local" and "old/local" and "lac old/local" and "lac old local" as Lac Oft Focal when lac-score is 2.
+
 check going nowhere in Lac Oft Focal: say "You can't make it across the calcific lac by yourself[if lac-score is 2], and you don't need to any more[end if]." instead;
 
 to decide which number is lac-score:
 	let temp be 0;
-	if kayak is moot, increment temp;
-	if tao boat is moot, increment temp;
+	if elope pole is moot, increment temp;
+	if dork rod is moot, increment temp;
 	decide on temp;
 
 to say kayak-boat:
@@ -4467,7 +4470,6 @@ this is the wornrow-change rule:
 carry out workrowing:
 	abide by the wornrow-change rule;
 	if Worn Row is worky, say "You're already in Work Row." instead;
-	clear-worn-row;
 	now Worn Row is worky;
 	if ever-workrow is false:
 		say "VLABADABOOM! [Worn Row] shakes, and you're thrown to the ground. When you get up, things look different. There are three machines in front of you. One looks particularly odd, another is spinning like a washer or dryer, and the third--well, it looks like one of those cryogenic things to store frozen bodies for resurrection. A quick glance shows they are a rotator, reifier and reviver, in that order.";
@@ -4477,11 +4479,14 @@ carry out workrowing:
 		say "[Worn Row] returns once again to Work Row. It's a little less disorienting this time around. [if test set is off-stage]The reifier, reviver and rotator reappear[else if test set is in Worn Row]The test set re-appears[else]Work row is still barren, though[end if].";
 	now ever-workrow is true;
 	check-dab;
-	now all workables are in Worn Row;
+	the rule succeeds;
+
+to work-row-open:
+	if test set is off-stage, now all workables are in Worn Row;
 	now all books in Worn Row are in TempMet;
 	if redness ender is in Worn Row, now redness ender is in TempMet;
-	now tract cart is in TempMet;
-	the rule succeeds;
+	if tract cart is in Worn Row, now tract cart is in TempMet;
+	clear-worn-row;
 
 to check-dab:
 	if bad dab is in Worn Row:
@@ -4511,8 +4516,6 @@ definition: a book (called bo) is tractable:
 carry out wordrowing:
 	abide by the wornrow-change rule;
 	if Worn Row is wordy, say "You're already in Word Row." instead;
-	clear-worn-row;
-	now Worn Row is wordy;
 	if ever-wordrow is false:
 		hint-bump-worn;
 		score-inc; [Yelpley/word row]
@@ -4530,6 +4533,7 @@ to word-row-open:
 	move tract cart to Worn Row;
 	check-dab;
 	if pity tip is off-stage, now player has pity tip;
+	now Worn Row is wordy;
 
 chapter wornrowing
 
@@ -4713,6 +4717,8 @@ after looking in Emo Dome when pulled-up is false:
 	the rule succeeds;
 
 printed name of Emo Dome is "[if Diktat Kid is moot]Dome, Mod[else]Emo Dome[end if]"
+
+understand "dome mod" and "mod" as Emo Dome when Diktat Kid is moot.
 
 to say can-go-rro:
 	if Red Roses Order is unvisited:
@@ -4918,6 +4924,8 @@ book Deft Fed
 Deft Fed is south of Toll Lot. It is in Yelpley. description is "There's not much decor in this [unless yob attaboy is moot]deli, tiled, except for a decal placed[else]fancy eatery, except for some snooty toons[end if]. You can exit to the north."
 
 printed name of Deft Fed is "[if yob attaboy is moot]Bon Snob[else]Deft Fed[end if]".
+
+understand "bon/snob" and "bon snob" as Deft Fed when Yob Attaboy is moot.
 
 Sniffins-reintro is a truth state that varies.
 
@@ -5286,6 +5294,8 @@ Ye Key is a thing. description is "Engraved YE KEY, it clearly looks important. 
 book Dopy Pod
 
 Dopy Pod is west of Drawl Ward. It is in Yelpley. printed name of Dopy Pod is "[if cassettes sac is moot]Dope[else]Dopy[end if] Pod". "[if cassettes sac is moot]There's not much left here, but it was neat to get the radar. [else]It's kind of stuffy here. No Cav-HVAC or even a naff fan. There doesn't seem like there's much useful in here, but who knows? [end if]The only exit is back east."
+
+understand "dope pod" and "dope" as Dopy Pod when cassettes sac is moot.
 
 check going nowhere in Dopy Pod: say "Maybe there's a do-prefer pod somewhere, but it's off-limits to you." instead;
 
@@ -5675,7 +5685,7 @@ this is the rocs-gone rule:
 avail-rule of Red Roses Order is rose-tat rule.
 
 this is the rose-tat rule:
-	if soot tattoos are moot and player has Bro Orb, the rule succeeds;
+	if soot tattoos are moot and Bro Orb is not in Le Babel, the rule succeeds;
 	the rule fails;
 
 avail-rule of Dirge Grid is tron-done rule.
