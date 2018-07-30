@@ -585,7 +585,7 @@ when play begins:
 	if the player yes-consents:
 		say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because you looked up the winning strategy on the Internet after it confused you. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers. Then 'Is reversi...?'";
 		say "After your fifth win in a row, the Flee Elf yells 'GRAAAARG!' You stumble back and fall to the ground.[wfak-d]";
-		say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Ares[']s Era, Raw Level War, Base Sab or Mista-T Sim. Mega-Tag [']Em?'[wfak-d]";
+		say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Ares[']s Era, Raw Level War, Base Sab, (Wo)Men O['] Venom (Ow), Dragons O' Snogard or Mista-T Sim. Mega-Tag [']Em?'[wfak-d]";
 		say "You chase the Flee Elf around a few minutes, failing to catch it. '[']S poor. Oops!' The Flee Elf thinks for a minute. 'Fun [']Nuf is open.'[wfak-d]";
 	else:
 		say "After more tedious palindrome riffing, the Flee Elf deems you most suitable (or least unsuitable) for the relatively obscure bunker called Fun [']Nuf.[wfak-d]";
@@ -2871,7 +2871,7 @@ for writing a paragraph about a person when player is in Dirge Grid:
 			say "You feel like you aren't quite prepared enough to tackle the Diktat Kid's henchmen. You back off.";
 			move player to Fun Nuf, without printing a room description;
 			continue the action;
-		say "You sense a slight hesitation from your adversaries and unwisely boom 'Step, puppets!'[paragraph break]Uh oh. You'd better be able to back up your words, here.";
+		say "[one of]You sense a slight hesitation from your adversaries and unwisely boom 'Step, puppets!'[paragraph break]Uh oh. You'd better be able to back up your words[or]Thankfully, the Diktat Kid hasn't attacked you directly, so you have time to ... do something. You're pretty sure you have the firepower to win out[stopping], here.";
 	else:
 		if grid-side-items is 0:
 			say "You're still overwhelmed by all three opponents! You run back to [Fun Nuf].";
@@ -3262,7 +3262,7 @@ carry out mussing:
 
 chapter Bro Orb
 
-the Bro Orb is a thing in Le Babel. "[one of]An orb hovers in the air. You know it must be a Bro Orb[or]The Bro Orb still hovers in the air[stopping]. You would love to take it, but you're not sure if you're worthy.". description is "Looking into the Bro Orb, you think, 'Do orbs brood?' There is a brief vision of star frats, lacking star brats or prats. They all do community service, and if their heart isn't in the right place, it gets done. You start to understand social, subjective knowledge you assumed only jerks know. About how to be likable to others. Of course some go overboard, but these people know it better, but you realize you are cheating yourself if you don't learn it.".
+the Bro Orb is a thing in Le Babel. "[one of]An orb hovers in the air. You know it must be a Bro Orb[or]The Bro Orb still hovers in the air[stopping]. You would love to take it, but you're not sure if you're worthy.". description is "Looking into the Bro Orb, you think, 'Do orbs brood?' There is a brief vision of star frats, lacking star brats or prats. They all do community service, and if their heart isn't in the right place, it gets done. You start to understand social, subjective knowledge you assumed only jerks know. About how to be likable to others. Of course some go overboard, but these people know it better, but you realize you are cheating yourself if you don't learn it.[paragraph break]Oh yes. There's also a huge area marked off 'Sis' just to show it's not about guys.".
 
 understand "bros" and "bros orb" as Bro Orb.
 
@@ -4887,7 +4887,7 @@ check wearing the stinky knits: say "That's physically possible, but no. No way.
 
 chapter Brag Garb
 
-the brag garb is a thing. description is "You don't know fashion that well, but it's labeled STIFF FITS and seems way spiffier and more comfortable than the old stinky knits."
+the brag garb is a thing. description is "You don't know fashion that well, but it's labeled STIFF FITS and is emblazoned with a BMOC Comb. It's more comfortable than the stinky knits, too."
 
 after printing the name of brag garb while taking inventory: say " (smelling of [if troll ort is moot]the troll ort[else]Turbo Brut[end if])";
 

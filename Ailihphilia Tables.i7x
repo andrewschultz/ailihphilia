@@ -727,6 +727,7 @@ chapter random businesses
 
 table of businesses
 biz-name
+"Baher's Rehab"
 "Colby Bloc"
 "Dairy Myriad"
 "Derby Bred"
@@ -788,8 +789,8 @@ table of undoings	0	0	true	"UNDOing notifications"	--
 table of waittxt	0	0	true	"responses to WAITing"	--
 table of wordy drow laments	0	0	false	"Wordy Drow laments"	--
 table of yessies	0	0	true	"responses to YES"	--
-table of yuge baits	0	0	true	"Yuge Guy bait if you run away"	--
-table of yuge battle cries	0	0	true	"Yuge Guy battle cries"	"Señor drones, you think you yourself, as the Yuge Guy winds up for another round of nonsense."
+table of yuge baits	0	0	false	"Yuge Guy bait if you run away"	--
+table of yuge battle cries	0	0	false	"Yuge Guy battle cries"	"Señor drones, you think you yourself, as the Yuge Guy winds up for another round of nonsense."
 
 rand-cycle is a truth state that varies.
 
@@ -889,11 +890,12 @@ randtxt
 "My Nonacidic Anonym"
 "Neil's Lien"
 "O Bonobo"
+"On In, Nino"
 "Otter Amaretto"
 "Pa, OAP"
 "Re: Gallager"
 "Re: Karraker"
-"Rise Aesir"
+"Rise, Aesir"
 "Risk Sir"
 "Satire Veritas"
 "Solo Gigolos"
@@ -970,6 +972,7 @@ randtxt
 "Senor One's"
 "Shakah's"
 "Si's"
+"Slack Cal's"
 "Smote Tom's"
 "Soho's"
 "Soto's"
@@ -977,6 +980,7 @@ randtxt
 "Spike-Kip's"
 "Struck Curt's"
 "Su's"
+"Susana-Su's"
 "Tipsy Spit"
 "Tope Depot"
 "Vat Tav[']"
@@ -1033,6 +1037,7 @@ randtxt
 table of My Gym songs
 randtxt
 "Ail, Emelia!"
+"Air Aria"
 "All Illa[']"
 "[']Allo, Dolla[']"
 "Bebe B"
@@ -1078,10 +1083,12 @@ randtxt
 "See Lee's"
 "Set-a-Dates"
 "Set-a-Mates"
+"SOBs['] ASBOs"
 "Sum Us"
 "Sun Is in Us"
 "Sun on Us"
 "Tha H/T"
+"Tia, Wait"
 "To Own: WOOT"
 "Too Fab Afoot"
 "Wanna W"
@@ -1160,6 +1167,7 @@ randtxt
 "Best Seb"
 "Blank'n Alb"
 "Bloke Kolb"
+"Boca Jacob"
 "Booky Koob"
 "Boyd Yob"
 "Bozo B"
@@ -1192,6 +1200,7 @@ randtxt
 "'Gimme' Hemmig"
 "'Gnaw' Hwang"
 "'Gnaw' Kwang"
+"Gnawy Wang"
 "'Gorses' Rog"
 "Gory Rog"
 "Grammam Marg"
@@ -1216,6 +1225,7 @@ randtxt
 "Lesser Tressel"
 "'Lice' Cecil"
 "Liv EVIL"
+"Loopy Al Claypool"
 "Lost Sol"
 "'Lyre' Beryl"
 "Mad Adam"
@@ -1235,6 +1245,7 @@ randtxt
 "New Gwen"
 "New Owen"
 "Newer Ewen"
+"Nino Ronin"
 "Nitro-Hortin"
 "Noir Brion"
 "Nolo Rolon"
@@ -1284,6 +1295,7 @@ randtxt
 "'Treble' Delbert"
 "'Trebles' Elbert"
 "Trekker T"
+"Trever Pervert"
 "Ur-Dru"
 "USA Su"
 "'Vests' Ev"
@@ -1300,6 +1312,7 @@ randtxt
 table of Rob droning
 randtxt
 "Analyticity? Lana!"
+"Bah! Ahab?!"
 "Boone?! Noob!"
 "Can Gignac!"
 "Cull Luc!"
@@ -1331,10 +1344,12 @@ randtxt
 "Posy sysop!"
 "Prove VORP!"
 "Resume [']m, user!"
+"Servo-lovers?!"
 "SETI sites!"
 "Signing is..."
 "Spidered IPs?!"
 "Steve vets..."
+"SuSe? J****!"
 "[']Tis. Suss it!"
 "To ban a bot..."
 "Y-array?!"
@@ -1367,6 +1382,7 @@ randtxt
 "Bad? A dab!"
 "Dammit, I'm mad!"
 "Dark. Rad!"
+"Delivery: reviled!"
 "Delivery: reviled!"
 "Grunt'n! Urg!"
 "Guff! Ug!"
@@ -1473,12 +1489,14 @@ randtxt
 "Eh, Tithe!"
 "Guts, TUG!"
 "Id-egged, I"
+"Lama? Mal!"
 "No Sin is On!"
 "Onan? A no!"
 "Sad as..."
 "Sin, I? Finis!"
 "Sob! Mild Limbos!"
 "Sog, Ebb, Egos!"
+"Sue Zeus?!"
 "Want? Naw!"
 
 table of yessies
@@ -1511,6 +1529,7 @@ randtxt
 "Bilk-Lib!"
 "Bosh, SOB!"
 "Dig Id!"
+"Drat, O Dotard!"
 "El bannable!"
 "Ere me, MERE!"
 "EVAR crave!"
@@ -1527,6 +1546,7 @@ randtxt
 "ME!!!! Haw. Ahem."
 "Me: sees [']em!"
 "Misdeeds? I'm ..."
+"MLM! MLM! MLM!"
 "Moobs: BOOM!"
 "MSM?! MSM!"
 "[']N I WIN!"
@@ -1543,6 +1563,7 @@ randtxt
 "Pal! Clap!"
 "Pal, rub burlap!"
 "A papa! A papa!"
+"Rail, Liar!"
 "Re-sold LOSER!"
 "ROB ALL LABOR!"
 "Rug?! Ur..."
