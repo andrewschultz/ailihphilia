@@ -2026,7 +2026,7 @@ this is the rev-evade-Dave rule:
 
 this is the rev-first-food-combo rule:
 	if number of moot ingredients >= 2, the rule fails;
-	say "You mix the snack cans and the UFO tofu together.";
+	say "You mix the snack cans and the UFO tofu together in Mont Nom.";
 	moot snack cans;
 	moot UFO tofu;
 	the rule succeeds;
@@ -2073,8 +2073,10 @@ this is the rev-second-food-combo rule:
 	if number of moot ingredients is 4, the rule fails;
 	let si be random not moot solid ingredient;
 	let mi be random not moot liquid ingredient;
-	say "You mix the [si] and [mi] together in Mont Nom, causing a martini tray to roll out from the Ark of Okra all the way to Fum [']Nuf.";
+	say "You mix the [si] and [mi] together in Mont Nom, causing a martini tray to roll out from the Ark of Okra all the way to Fun [']Nuf.";
 	move martini tram to Fun Nuf;
+	moot si;
+	moot mi;
 	the rule succeeds;
 
 this is the rev-stand-nats rule:
@@ -2093,12 +2095,14 @@ this is the rev-word-row rule:
 	if ever-wordrow is true, the rule fails;
 	say "You transform Worn Row into WORD ROW.";
 	now ever-wordrow is true;
+	now Worn Row is wordy;
 	the rule succeeds;
 
 this is the rev-work-row rule:
 	if ever-workrow is true, the rule fails;
 	say "You transform Worn Row into WORK ROW.";
 	now ever-workrow is true;
+	now Worn Row is worky;
 	the rule succeeds;
 
 this is the rev-worn-row rule:

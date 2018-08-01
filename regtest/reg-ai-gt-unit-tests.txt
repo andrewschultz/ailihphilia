@@ -391,3 +391,8 @@ Top Spot is no longer worth going to. You don't want to go back. Onward!
 >gt top
 Top Spot is no longer worth going to. You don't want to go back. Onward!
 
+>gt gross org
+That area is now undergoing civic restoration, with the Diktat Kid gone.
+
+>gt deft fed
+You can't crash the party. You weren't invited. It's REALLY exclusive.

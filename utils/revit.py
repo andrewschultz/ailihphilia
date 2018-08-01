@@ -7,7 +7,9 @@
 #
 # revit.py -l0 -l1 d0,1 ad0,1
 #
-# revit.py -wr = tries one instance of WRW
+# revit.py -wr = tries one instance of WRW (creates skip-step files)
+# revit.py -e = recopies all the thru-east files
+# revit.py -w = recopies all the thru-east files
 # revit.py -wr -s2,4 -e5,7 = creates 2-5, 2-6, 2-7, 3-5, 3-6, 3-7, 4-5, 4-6, 4-7
 # revit.py -wrr2 = creates 2 random skipping test files
 
@@ -27,6 +29,7 @@ destinations = defaultdict(str)
 
 first_line = "# created with the revit.py python tool\n"
 
+post_copy_just_this = False
 print_chunk_list = False
 chunk_list_to_file = False
 launch_chunk_list = False

@@ -45,7 +45,7 @@ You TEND NET in the Trapeze Part.
 >wrw
 Attempting to REV OVER (examining the epicer recipe first) ...
 You transform Worn Row into WORK ROW.
-(Moving you to Worn Row)
+(Moving you to Work Row)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
@@ -57,7 +57,7 @@ You (acquire and) use the bunk nub on/with the reviver, acquiring the stock cots
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the party trap on/with (acquired) the stark rats, acquiring the gift fig.
+You use the party trap on/with the stark rats, acquiring the gift fig.
 (Moving you to Seer Trees)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
@@ -91,7 +91,7 @@ You (acquire and) use the Puce Cup on/with the past sap.
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the Puce Cup on/with (acquired) the Liar Grail.
+You use the Puce Cup on/with the Liar Grail.
 (Moving you to Swept Pews)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
@@ -135,11 +135,11 @@ You STAND NAT'S.
 >wrw
 Attempting to REV OVER...
 You use the Dirt Rid on/with the reviver, acquiring the cave vac.
-(Moving you to Worn Row)
+(Moving you to Work Row)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the cave vac on/with (acquired) the cassettes sac, acquiring the radar.
+You use the cave vac on/with the cassettes sac, acquiring the radar.
 (Moving you to Dope Pod)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
@@ -158,8 +158,8 @@ You use Ye Key on/with the etage gate, acquiring the Gate Tag.
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You lure the Psi Wisp back to Wor(k/d) row, changing it to Worn Row.
-(Moving you to Worn Row)
+You lure the Psi Wisp back to Wor(k/d) row, changing it to Worn Row, then back to Word Row.
+(Moving you to Word Row)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
@@ -173,7 +173,7 @@ You use Gorge Grog on/with the butene tub, acquiring the resale laser.
 >wrw
 Attempting to REV OVER...
 You (acquire and) use the gold log on/with the rotator, acquiring the dork rod.
-(Moving you to Worn Row)
+(Moving you to Word Row)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
@@ -271,22 +271,17 @@ You NAIL IAN to cast him from Mont Nom.
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You mix two ingredients together in Mont Nom.
+You mix the snack cans and the UFO tofu together in Mont Nom.
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You mix two more ingredients together in Mont Nom.
+You mix the gift fig and Mayo Yam together in Mont Nom, causing a martini tray to roll out from the Ark of Okra all the way to Fun 'Nuf.
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
 You use the moor broom on/with the Tru Yurt, acquiring the Exam Axe.
 (Moving you to Roomy Moor)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
->wrw
-Attempting to REV OVER...
-You get the Bro Orb from Le Babel.
-(Moving you to Le Babel)
-[I tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
 You use the wash saw on/with the porch crop, acquiring the Balsa Slab.
@@ -299,8 +294,13 @@ You use the Exam Axe on/with the lie veil.
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
+You get the Bro Orb from Le Babel.
+(Moving you to Le Babel)
+[I tacked on 4 turns, as a guesstimate.]
+>wrw
+Attempting to REV OVER...
 You (acquire and) use the DNA band on/with the reifier, acquiring the DNA hand.
-(Moving you to Worn Row)
+(Moving you to Word Row)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
@@ -344,7 +344,7 @@ You use the Balsa Slab on/with the sword rows, acquiring the not-a-baton.
 Attempting to REV OVER...
 You use the not-a-baton on/with the reifier, acquiring the taboo bat.
 (BOOM! You took out the reifier in the process.)
-(Moving you to Worn Row)
+(Moving you to Word Row)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
@@ -358,7 +358,7 @@ You EMIT NOONTIME with the Yard Ray.
 >wrw
 Attempting to REV OVER...
 You use the yard ray on/with the test set.
-(Moving you to Worn Row)
+(Moving you to Word Row)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 (Also moving you to Fun 'Nuf for the endgame)
 >wrw

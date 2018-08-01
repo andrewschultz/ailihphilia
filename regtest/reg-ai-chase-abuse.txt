@@ -1,3 +1,5 @@
+# reg-ai-chase-abuse.txt: runs through all possible ways to mess up the chase
+
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
 
@@ -122,6 +124,17 @@ WRONG
 >w
 >s
 Frush Surf
+
+#stuff that should fail
+>deep speed
+WRONG
+>gt seer trees
+WRONG
+>gt yawn way
+WRONG
+
+#now for the real stuff
+>s
 >e
 >get all
 You know the Moo Room is a dead end, and since you got the poo coop from here, it seems like you need the yak to chase you somewhere else.
@@ -235,6 +248,9 @@ No, you've already been there, and you found nothing to do.
 >s
 >yak okay
 by one point
+
+###################################now to psi wisp
+
 >n
 >n
 >e
@@ -356,4 +372,12 @@ WRONG
 >w
 >n
 >z
+WRONG
+#stuff that should fail
+>n
+>deep speed
+WRONG
+>gt seer trees
+WRONG
+>gt yawn way
 WRONG
