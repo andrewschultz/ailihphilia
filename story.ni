@@ -492,7 +492,7 @@ LLP-last is a number that varies.
 
 This is the LLP or normal score changes rule:
 	if the score is not the last notified score:
-		say "[bracket][if cur-score of Odd Do > LLP-last]You found a Last Lousy Point![no line break][else]Your score has just gone up by one point.[no line break][close bracket][paragraph break]";
+		say "[bracket][if cur-score of Odd Do > LLP-last]You found a Last Lousy Point![no line break][else]Your score has just gone up by one point.[no line break][end if][close bracket][paragraph break]";
 		now the last notified score is the score;
 		now LLP-last is cur-score of Odd Do;
 
@@ -1297,7 +1297,7 @@ carry out refering:
 		abide by the LLP rule; [REFER]
 		now refer-yet is true;
 	try verbing;
-	follow the notify score changes rule;
+	consider the LLP or normal score changes rule;
 	the rule succeeds;
 
 chapter ting
@@ -4537,10 +4537,6 @@ carry out wordrowing:
 	check-dab;
 	the rule succeeds;
 
-every turn when ever-wordrow is true:
-	repeat with Q running through books:
-		say "[Q]: [if Q is tractable]tractable[else]not tractable[end if].";
-
 to word-row-open:
 	clear-worn-row;
 	now ever-wordrow is true;
@@ -6248,7 +6244,7 @@ carry out aiding:
 		say "I'm out of ideas for rooms you've visited. Maybe look around the map a bit more.";
 	the rule succeeds;
 
-report aiding: follow the notify score changes rule;
+report aiding: consider the LLP or normal score changes rule;
 
 to describe-nearby (ro - a room):
 	repeat with dir running through maindir:
@@ -7042,7 +7038,7 @@ carry out statsing:
 		say "Extra style point for requesting the score 'correctly.'";
 		abide by the LLP rule; [STATS]
 		now stats-yet is true;
-	follow the notify score changes rule;
+	consider the LLP or normal score changes rule;
 	the rule succeeds;
 
 volume endgame stuff

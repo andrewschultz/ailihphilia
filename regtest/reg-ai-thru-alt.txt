@@ -17,7 +17,7 @@ by one point
 >get trap art
 
 >use trap art on revolt lover
-WRONG
+But the Revolt Lover gave it to you in the first place.
 
 >s
 
@@ -43,22 +43,22 @@ by one point
 >n
 
 >use to idiot on revolt lover
-WRONG
+"Hmm. A bit too mean for me. Maybe it's more someone else's speed."
 >purloin epoch cope
 >use epoch cope on revolt lover
-WRONG
+"Wish I could be interested in politics, but I'm not."
 >undo
 >undo
 >purloin null illun
 >use null illun on revolt lover
-WRONG
+"I guess we all could use it a little. But someone else might need it more than me. Um, I hope."
 >undo
 >undo
 
 >n
 
 >use pity tip on door frood
-WRONG
+The Door Frood is too good for a mere pity tip. Well, in the Door Frood's mind.
 >give TO IDIOT to Door Frood
 by one point
 >undo
@@ -71,7 +71,7 @@ by one point
 
 >gonear sleep eels
 >use bunk nub on sleep eels
-WRONG
+That -- well, it almost works. But the bunk nub isn't shaped right to house that many small animals. Maybe it could be changed.
 >undo
 >undo
 

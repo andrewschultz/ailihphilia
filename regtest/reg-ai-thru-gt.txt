@@ -8,16 +8,20 @@
 * runthrough
 
 >stats
-by one point
+You found a Last Lousy Point!
+!by one point
 >peep
-by one point
+You found a Last Lousy Point!
+!by one point
 >poop
 727
 121
 >dial aid
-by one point
+You found a Last Lousy Point!
+!by one point
 >refer
-by one point
+You found a Last Lousy Point!
+!by one point
 
 >pack cap
 by one point
@@ -363,7 +367,7 @@ by one point
 
 >w
 
->gt unitin u
+>gt uneven u
 
 >s
 
@@ -396,7 +400,7 @@ by one point
 >use moor broom on tru yurt
 by one point
 
->gt unitin u
+>gt uneven u
 
 >use wash saw on porch crop
 by one point

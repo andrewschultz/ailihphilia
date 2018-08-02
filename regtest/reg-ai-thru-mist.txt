@@ -8,16 +8,20 @@
 * runthrough
 
 >stats
-by one point
+You found a Last Lousy Point!
+!by one point
 >peep
-by one point
+You found a Last Lousy Point!
+!by one point
 >poop
 727
 121
 >dial aid
-by one point
+You found a Last Lousy Point!
+!by one point
 >refer
-by one point
+You found a Last Lousy Point!
+!by one point
 
 #mistake test for evaded ave
 >evaded ave
@@ -315,7 +319,8 @@ Word Row is not meant to be a garden. Maybe it would look nicer that way, but it
 >track cart
 Right idea, but the cart isn't going anywhere
 >trace cart
-by one point
+You found a Last Lousy Point!
+!by one point
 >trace cart
 Nothing new turns up.
 >track cart
@@ -513,7 +518,7 @@ by one point
 >s
 
 >slam mammals
-by one point
+You found a Last Lousy Point!
 
 #mistake test for eel flee
 >eel flee
@@ -1243,7 +1248,8 @@ by one point
 There's not much to do or say here, for sure!
 
 >balm lab
-by one point
+You found a Last Lousy Point!
+!by one point
 
 #mistake test for sci bics
 >sci bics
@@ -1306,10 +1312,12 @@ by one point
 >e
 
 >stack cats
-by one point
+You found a Last Lousy Point!
+!by one point
 
 >see bees
-by one point
+You found a Last Lousy Point!
+!by one point
 
 >use SOME DEMOS on yahoo hay
 by one point
@@ -1725,7 +1733,7 @@ by one point
 King James's orb is a basketball, and that's that.
 
 >muss opossum
-by one point
+You found a Last Lousy Point!
 
 >get all
 

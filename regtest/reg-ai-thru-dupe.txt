@@ -8,12 +8,14 @@
 * runthrough
 
 >stats
-by one point
+You found a Last Lousy Point!
+!by one point
 
 >stats
 !by one point
 >peep
-by one point
+You found a Last Lousy Point!
+!by one point
 
 >peep
 !by one point
@@ -21,12 +23,14 @@ by one point
 727
 121
 >dial aid
-by one point
+You found a Last Lousy Point!
+!by one point
 
 >dial aid
 !by one point
 >refer
-by one point
+You found a Last Lousy Point!
+!by one point
 
 >refer
 !by one point
@@ -66,10 +70,7 @@ by one point
 !by one point
 
 >trace cart
-by one point
-
->trace cart
-!by one point
+You found a Last Lousy Point!
 >get TO IDIOT
 
 >e
@@ -169,10 +170,7 @@ by one point
 >s
 
 >slam mammals
-by one point
-
->slam mammals
-!by one point
+You found a Last Lousy Point!
 
 
 >use stock cots on sleep eels
@@ -447,7 +445,8 @@ by one point
 !by one point
 
 >balm lab
-by one point
+You found a Last Lousy Point!
+!by one point
 
 >balm lab
 !by one point
@@ -475,13 +474,15 @@ by one point
 >s
 >e
 >stack cats
-by one point
+You found a Last Lousy Point!
+!by one point
 
 >stack cats
 !by one point
 
 >see bees
-by one point
+You found a Last Lousy Point!
+!by one point
 
 >see bees
 !by one point
@@ -723,10 +724,7 @@ by one point
 >n
 
 >muss opossum
-by one point
-
->muss opossum
-!by one point
+You found a Last Lousy Point!
 
 >get all
 

@@ -21,16 +21,20 @@ TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with al
 
 ==t1,2,4
 >stats
-by one point
+You found a Last Lousy Point!
+!by one point
 >peep
-by one point
+You found a Last Lousy Point!
+!by one point
 >poop
 727
 121
 >dial aid
-by one point
+You found a Last Lousy Point!
+!by one point
 >refer
-by one point
+You found a Last Lousy Point!
+!by one point
 
 ==t3
 >e
@@ -250,7 +254,7 @@ It's still quiet here.
 
 ==t5
 >use trap art on revolt lover
-WRONG
+But the Revolt Lover gave it to you in the first place.
 
 ==t3
 >w
@@ -406,7 +410,8 @@ Word Row is not meant to be a garden. Maybe it would look nicer that way, but it
 >track cart
 Right idea, but the cart isn't going anywhere
 >trace cart
-by one point
+You found a Last Lousy Point!
+!by one point
 >trace cart
 Nothing new turns up.
 >track cart
@@ -421,7 +426,7 @@ DWELT LEWD should NOT be read as an instruction manual. Well, it shouldn't be re
 
 ==t1
 >trace cart
-by one point
+You found a Last Lousy Point!
 
 >get TO IDIOT
 
@@ -442,15 +447,15 @@ It's already pretty pithy, and there's not enough material for a helmet.
 
 ==t5
 >use to idiot on revolt lover
-WRONG
+"Hmm. A bit too mean for me. Maybe it's more someone else's speed."
 >purloin epoch cope
 >use epoch cope on revolt lover
-WRONG
+"Wish I could be interested in politics, but I'm not."
 >undo
 >undo
 >purloin null illun
 >use null illun on revolt lover
-WRONG
+"I guess we all could use it a little. But someone else might need it more than me. Um, I hope."
 >undo
 >undo
 
@@ -486,7 +491,7 @@ Just one guardian is enough to deal with.
 
 ==t5
 >use pity tip on door frood
-WRONG
+The Door Frood is too good for a mere pity tip. Well, in the Door Frood's mind.
 >give TO IDIOT to Door Frood
 by one point
 >undo
@@ -500,7 +505,7 @@ by one point
 ==t5
 >gonear sleep eels
 >use bunk nub on sleep eels
-WRONG
+That -- well, it almost works. But the bunk nub isn't shaped right to house that many small animals. Maybe it could be changed.
 >undo
 >undo
 
@@ -754,7 +759,7 @@ You can only go north and south here.
 
 ===1,2
 >slam mammals
-by one point
+You found a Last Lousy Point!
 
 ===2
 #mistake test for eel flee
@@ -1813,7 +1818,8 @@ There's not much to do or say here, for sure!
 
 ==t1,2
 >balm lab
-by one point
+You found a Last Lousy Point!
+!by one point
 
 ==t2
 #mistake test for sci bics
@@ -1896,10 +1902,12 @@ by one point
 
 ===1,2
 >stack cats
-by one point
+You found a Last Lousy Point!
+!by one point
 
 >see bees
-by one point
+You found a Last Lousy Point!
+!by one point
 
 ===a
 >use SOME DEMOS on yahoo hay
@@ -2412,7 +2420,7 @@ You hear the shuttuhs/shutters click down behind you. You must be done to the ea
 That seems like a dead end. The yak would have you cornered.
 
 ==t4
->gt unitin u
+>gt uneven u
 ==!
 >n
 >n
@@ -2618,7 +2626,7 @@ You hear the click of invisible shuttuhs/shutters
 
 
 ==t4
->gt unitin u
+>gt uneven u
 ==!
 >s
 
@@ -2681,7 +2689,7 @@ King James's orb is a basketball, and that's that.
 
 ===1,2
 >muss opossum
-by one point
+You found a Last Lousy Point!
 
 ===a
 >get all
