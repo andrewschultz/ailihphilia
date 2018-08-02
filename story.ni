@@ -2021,7 +2021,8 @@ this is the rev-emit-noontime rule:
 this is the rev-evade-Dave rule:
 	if Dave is moot, the rule fails;
 	moot Dave;
-	say "You EVADE DAVE, and he leaves My Gym out of fear.";
+	say "You EVADE DAVE, and he leaves My Gym out of frustration. You loot a wash saw, too.";
+	now player has wash saw;
 	the rule succeeds;
 
 this is the rev-first-food-combo rule:
@@ -2093,22 +2094,21 @@ this is the rev-tend-net rule:
 
 this is the rev-word-row rule:
 	if ever-wordrow is true, the rule fails;
-	say "You transform Worn Row into WORD ROW.";
-	now ever-wordrow is true;
-	now Worn Row is wordy;
+	say "You transform [Worn Row] into WORD ROW.";
+	word-row-open;
 	the rule succeeds;
 
 this is the rev-work-row rule:
 	if ever-workrow is true, the rule fails;
-	say "You transform Worn Row into WORK ROW.";
-	now ever-workrow is true;
-	now Worn Row is worky;
+	say "You transform [Worn Row] into WORK ROW.";
+	work-row-open;
 	the rule succeeds;
 
 this is the rev-worn-row rule:
 	if psi wisp is moot, the rule fails;
 	say "You lure the Psi Wisp back to Wor(k/d) row, changing it to Worn Row, then back to Word Row.";
 	moot psi wisp;
+	now Pro Corp is visited;
 	word-row-open;
 	the rule succeeds;
 
@@ -2403,6 +2403,7 @@ this is the totem-out rule:
 	the rule succeeds;
 
 this is the tube-to-ave rule:
+	now Art Xtra is visited; [this is necessary for if the player tried WRW]
 	move tube but to Evaded Ave;
 	the rule succeeds;
 
@@ -4474,23 +4475,24 @@ this is the wornrow-change rule:
 carry out workrowing:
 	abide by the wornrow-change rule;
 	if Worn Row is worky, say "You're already in Work Row." instead;
-	now Worn Row is worky;
 	if ever-workrow is false:
 		say "VLABADABOOM! [Worn Row] shakes, and you're thrown to the ground. When you get up, things look different. There are three machines in front of you. One looks particularly odd, another is spinning like a washer or dryer, and the third--well, it looks like one of those cryogenic things to store frozen bodies for resurrection. A quick glance shows they are a rotator, reifier and reviver, in that order.";
 		score-inc; [Yelpley/work row]
 		verify-done rev-work-row rule;
 	else:
 		say "[Worn Row] returns once again to Work Row. It's a little less disorienting this time around. [if test set is off-stage]The reifier, reviver and rotator reappear[else if test set is in Worn Row]The test set re-appears[else]Work row is still barren, though[end if].";
-	now ever-workrow is true;
+	work-row-open;
 	check-dab;
 	the rule succeeds;
 
 to work-row-open:
+	clear-worn-row;
+	now ever-workrow is true;
+	now Worn Row is worky;
 	if test set is off-stage, now all workables are in Worn Row;
 	now all books in Worn Row are in TempMet;
 	if redness ender is in Worn Row, now redness ender is in TempMet;
 	if tract cart is in Worn Row, now tract cart is in TempMet;
-	clear-worn-row;
 
 to check-dab:
 	if bad dab is in Worn Row:
@@ -4528,6 +4530,7 @@ carry out wordrowing:
 	else:
 		say "The tract cart re-appears.";
 	word-row-open;
+	check-dab;
 	the rule succeeds;
 
 to word-row-open:
@@ -4535,7 +4538,6 @@ to word-row-open:
 	now ever-wordrow is true;
 	now all tractable books are in Worn Row;
 	move tract cart to Worn Row;
-	check-dab;
 	if pity tip is off-stage, now player has pity tip;
 	now Worn Row is wordy;
 
@@ -6087,6 +6089,7 @@ carry out revovering:
 				else:
 					break;
 			next;
+		let wr-flipped be false;
 		if there is a getit entry and getit entry is not off-stage:
 			if getit entry is not swipeable, next; [the Gorge Grog/TNT are already visible. Other items aren't.]
 		if use1 entry is moot or use2 entry is moot, next;
@@ -6107,8 +6110,14 @@ carry out revovering:
 		if the player does not have use2 entry and use2 entry is speedtakeable:
 			now u2a is true;
 			now player has use2 entry;
-		if deep-speeding is false or say-despite-speeding is true, say "You [if u1a is true](acquire and) [end if]use [the use1 entry] on/with [if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if].";
-		if use2 entry is a workable, wear-down use2 entry;
+		if use1 entry is a book:
+			if Worn Row is worky, now wr-flipped is true;
+			now Worn Row is wordy;
+		if use2 entry is a workable:
+			if Worn Row is wordy, now wr-flipped is true;
+			now Worn Row is worky;
+			wear-down use2 entry;
+		if deep-speeding is false or say-despite-speeding is true, say "You [if wr-flipped is true]toggle [Worn Row], then [end if][if u1a is true](acquire and) [end if]use [the use1 entry] on/with [if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if].";
 		increment turns-to-add;
 		if sco entry is true:
 			if debug-state is true and deep-speeding is false, say "*(DEBUG: use point) (+1 above)[line break]";

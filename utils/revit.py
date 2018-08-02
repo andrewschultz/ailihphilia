@@ -88,7 +88,7 @@ def write_single_wrw(start_val, end_val, block_dict, collapse_if_1):
             if 'by one point' not in block_dict[y]: f.write("!")
             f.write("1 point to go\n")
         else: f.write(block_dict[y])
-    f.write("Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!\n" if y < len(block_dict) - 1 else "You're already near the endgame.")
+    f.write("Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!\n" if y <= len(block_dict) - 1 else "You're already near the endgame.")
     f.close()
 
 def write_random_wrw(blox, num_of):
