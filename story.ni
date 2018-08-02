@@ -585,7 +585,7 @@ when play begins:
 	if the player yes-consents:
 		say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because you looked up the winning strategy on the Internet after it confused you. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers. Then 'Is reversi...?'";
 		say "After your fifth win in a row, the Flee Elf yells 'GRAAAARG!' You stumble back and fall to the ground.[wfak-d]";
-		say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Ares[']s Era, Raw Level War, Base Sab, (Wo)Men O['] Venom (Ow), Dragons O' Snogard or Mista-T Sim. Mega-Tag [']Em?'[wfak-d]";
+		say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Ares[']s Era, Raw Level War, Base Sab, (Wo)Men O['] Venom (Ow), Dragons O['] Snogard or Mista-T Sim. Mega-Tag [']Em?'[wfak-d]";
 		say "You chase the Flee Elf around a few minutes, failing to catch it. '[']S poor. Oops!' The Flee Elf thinks for a minute. 'Fun [']Nuf is open.'[wfak-d]";
 	else:
 		say "After more tedious palindrome riffing, the Flee Elf deems you most suitable (or least unsuitable) for the relatively obscure bunker called Fun [']Nuf.[wfak-d]";
@@ -1854,17 +1854,19 @@ elope pole	made dam	"The pole is for navigation, not for vaulting."
 enact cane	kayak	"The enact cane doesn't seem like the right tool to propel the kayak. It's more for chores."
 enact cane	rep popper	"But that might bust your own rep, since you are the nearest person."
 exam axe	balsa slab	"You're not sure what to cut the slab into, and you don't need firewood."
-exam axe	porch crop	"That might be overkill. The wash saw, on the other hand..."
+exam axe	porch crop	"That seems like the right idea, but the Code Doc is the person who should be giving out punishing exams, here. The wash saw, on the other hand..."
+exam axe	Code Doc	"The Code Doc declines your offer. Instruments of violence have no place at [uneven u]."
 gate tag	DIFF ID	"You wave the gate tag in front of the DIFF ID, which beeps for a second, then ... nothing. Maybe the gate tag (or its pattern) needs to be read a different way."
 gold log	kayak	"The gold log is too heavy to be an effective paddle."
 pity tip	Door Frood	"The Door Frood is too good for a mere pity tip. Well, in the Door Frood's mind."
-poo coop	Liar Grail	"Maybe if the contents came from a bull and not a gnu, it would be appropriate (this is not a palindrome 'joke.')"
+poo coop	Liar Grail	"[if gnu dung is in Dumb Mud]There's nothing inside the coop to empty into the liar grail.[else]Maybe if the contents came from a bull and not a gnu, it would be appropriate (this is not a palindrome 'joke.')[end if]"
+poo coop	Lie Veil	"The lie veil is only figuratively full of ... oh, wait, this is a family game."
 poo coop	Yuge Guy	"That could be fun, but he might be too normalised to the stuff in the coop to do damage."
 radar	girt rig	"Still nothing."
 radar	go-by bog	"The radar detects nothing. So there is probably no horribly bogy gob. But [if sage gas is off-stage]there are plenty of other places you could slip and fall and disappear forever[else]you got the sage gas, already[end if]."
 radar	trap mart rampart	"You detect nothing to the east or west. Maybe other structures like the rampart will hide something, though."
 radar	sleep eels	"A radar isn't supposed to work this way, but somehow, you detect some bitterness at mammals in general. But it's secondary to needing a more comfortable place to sleep."
-resale laser	made dam	"There might be something behind the dam. But you need to be subtler looking for it."
+resale laser	made dam	"[if eroded ore is off-stage]There might be something behind the dam. But you need to be subtler looking for it[else]You already got the eroded ore. Don't destroy part of Grebeberg looking for more[end if]."
 roto motor	kayak	"The kayak is not electrical, and besides, the roto motor is too small."
 roto motor	tao boat	"The tao boat is not electrical, and besides, the roto motor is too small."
 sage gas	sharp rahs	"Hmm! The contrast between the two...that should work. But maybe you need some sort of intermediary that could hold them both."
@@ -1874,9 +1876,9 @@ stamp mats	Tru Yurt	"The stamp mats aren't a home-y sort of mat."
 stamp mats	soot tattoos	"Hmm. If the soot tattoos had a pattern, that would be interesting. But they don't, yet."
 stamp mats	yahoo hay	"The mats don't quite work on the hay. They might work better on something with more surface area."
 state tats	DIFF ID	"You can just walk north to get through."
-taboo bat	ME Totem	"Violence isn't the answer. The ME Totem is not repelled by moral turpitude."
-taboo bat	Yuge Guy	"Violence isn't the answer. The Yuge Guy is not repelled by moral turpitude."
-taboo bat	bomb mob	"No way. You'd be outnumbered. You'd need stealth."
+taboo bat	ME Totem	"Violence isn't the answer. The ME Totem is not repelled by moral turpitude, anyway."
+taboo bat	Yuge Guy	"Violence isn't the answer. The Yuge Guy is not repelled by moral turpitude, anyway."
+taboo bat	bomb mob	"No way. You'd be outnumbered. You'll need stealth."
 taboo bat	test set	"This isn't cricket. You do, however, need to use SOME weapon on the test set."
 trap art	stark rats	"Whatever's planned on the trap art might work, but not the trap art itself."
 troll ort	cross orc	"The cross orc mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. But the way it looks at you, you suspect it'd forgive you if you gave the right gift."
@@ -1884,9 +1886,9 @@ troll ort	senile felines	"The senile felines sniff lazily at the troll ort, but 
 troll ort	ergot ogre	"The ergot ogre mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. Perhaps you need a more violent way to dispose of the ogre."
 troll ort	kayo yak	"As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up. The yak seems weirdly attracted to it."
 wash saw	cassettes sac	"The wash saw isn't big enough to clean up the cassettes sac. You need a more powerful cleaner."
-wash saw	crag arc	"The crag arc is much too big to get anywhere[if UFO tofu is off-stage]. Maybe there's a better way to find what's behind there[end if]."
+wash saw	crag arc	"The crag arc is much too big for the saw to get anywhere. [if UFO tofu is off-stage]Maybe there's a better way to find what's behind there[else]Besides, you found enough[end if]."
 wash saw	lie veil	"Not even the wash saw could clean off the lie veil. You need something much more brutal."
-wash saw	made dam	"The made dam is much too big to get anywhere[if eroded ore is off-stage]. Maybe there's a better way to find what's behind there[end if]."
+wash saw	made dam	"The made dam is much too big to get anywhere. [if eroded ore is off-stage]Maybe there's a better way to find what's behind there[else]Besides, you found enough[end if]."
 wash saw	stark rats	"You couldn't catch and hold a rat long enough to cut it with the wash saw."
 yard ray	Diktat Kid	"The Diktat Kid laughs as you point the yard ray. 'Destroy me, but my work--my dezaz-ed--will remain!'"
 yard ray	Tru Hurt	"The Tru Hurt is dangerous, but maybe you should use the yard ray on something even more harmful."
@@ -5916,6 +5918,8 @@ deepspeeding is an action out of world.
 
 deep-speeding is a truth state that varies.
 
+say-despite-speeding is a truth state that varies.
+
 understand the command "deepspeed" as something new.
 understand the command "deep speed" as something new.
 
@@ -5978,8 +5982,6 @@ carry out sdsing:
 	say "Say-despite-speeding now [on-off of say-despite-speeding].";
 	the rule succeeds;
 
-say-despite-speeding is a truth state that varies.
-
 section wrw - not for release
 
 [wrw is short for WARP RAW]
@@ -5993,8 +5995,6 @@ understand "wrw [number]" as wrwing.
 wrw1ing is an action out of world.
 
 wrwing is an action applying to one number.
-
-rev-skips is a number that varies.
 
 rev-max is a number that varies. rev-max is 73.
 
@@ -6023,6 +6023,8 @@ global-delay is a number that varies.
 score-cheat is a number that varies.
 
 revving-over is a truth state that varies.
+
+rev-skips is a number that varies.
 
 this is the rev-check rule:
 	if i-sped is true, say "You already sped up to the end." instead;
