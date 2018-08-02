@@ -1583,7 +1583,7 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 		moot i1;
 		moot i2;
 		score-inc; [Grebeberg/USE GIFT FIG ON MAYO YAM&USE SNACK CANS ON UFO TOFU]
-		if chef-yet is true:
+		if number of moot ingredients is 4:
 			verify-done rev-second-food-combo rule;
 			say "A martini tram rattles out from behind the Ark of Okra. Guess you need drinks with your, uh, food![paragraph break][if player does not have the epicer recipe]You're shocked to see it, and it rollls further down, over the turf rut to Dumb Mud, then back through the Seer Trees to Fun [']Nuf[else]But you're prepared for it, with your epicer recipe. You move it back to Fun [']Nuf, where it looks like a good base structure for your North-Tron[end if].";
 			move martini tram to Fun Nuf;
@@ -1960,8 +1960,8 @@ tent net	Code Doc	--	--	--	true	true	false	Grebeberg	Uneven U	false	"Together, y
 spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	Uneven U	false	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my for-prof math tam for this one. One second, let's see--Aha! Oho...'[paragraph break]You each split an Ed-Ade to make sure the lesson is taught and remembered well. Despite a minor pupil slip-up, the Code Doc is never edu-rude. It soon makes complete sense to you. You don't know how to say thanks. Everything seems too long-winded or said before, until ... 'Def ed!'"
 spa maps	go-by bog	sage gas	maps-readable rule	gas-think-wipe rule	true	true	false	Grebeberg	Apse Spa	false	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	Moo Room	false	"You stick some strands of yahoo hay into the damaged end of the dork rod. It's now a moor broom!"
---	--	--	rev-pace-cap rule	--	true	--	--	Dim Mid	Ooze Zoo	false
-troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	Grebeberg	Ooze Zoo	false	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the stinky knits, but still quite distinctive. The ort must've been covered by the dirt for a long time, because it disintegrates as its essence is leaked onto the brag garb." [b4:pace cap] [af:yak okay]
+--	--	--	rev-pace-cap rule	--	true	--	--	Dim Mid	--	false
+troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	Grebeberg	--	false	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the stinky knits, but still quite distinctive. The ort must've been covered by the dirt for a long time, because it disintegrates as its essence is leaked onto the brag garb." [b4:pace cap] [af:yak okay]
 --	--	--	rev-yak-okay rule	--	true	--	--	Grebeberg	Lair Trial	false
 sage gas	tame mat	guru rug	--	--	true	true	true	Grebeberg	Motto Bottom	false	"'Mix a maxim...' you mutter to yourself. The sage gas bubbles out under the tame mat, and the message changes. To something wiser. But perhaps a bit stuffy: a guru rug!"
 sharp rahs	guru rug	stir writs	--	brag-garb-bye rule	true	true	true	Grebeberg	Motto Bottom	false	"The sharp rahs meld into the guru rug, which feels less weighted down by philosophy and floats away. Under it there are stir-writs, which seem oversimplified at first, but on re-reading, they strike just the right balance between emotional and intellectual stimulation.[paragraph break]After reading them, you feel distinctly silly in your brag garb, which seems so gaudy now. Instinctively, you take the garb off and commit it to the Be Web. As the brag garb floats away, you know you have done the right thing, but you need to do more."
@@ -1982,8 +1982,8 @@ rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	Grebeberg	Snee
 Bro Orb	Mirror Rim	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	Red Roses Order	false	"The Bro Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Madam has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, madam, live not on evil!' you boom, as the Orb does its work. Madam looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'My sub-level bus! You won't catch it! The E-Divide will block you!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	Red Roses Order	false	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Madam."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	Worn Row	false	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
-murdered rum	yard ray	--	--	ray-beepy-now rule	true	true	false	Dim Mid	Fun Nuf	false	"The yard ray gleams with energy. It seems like it could do some damage now."
---	--	--	rev-emit-noontime rule	--	true	--	--	Dim Mid	Fun Nuf	false
+murdered rum	yard ray	--	--	ray-beepy-now rule	true	true	false	Dim Mid	--	false	"The yard ray gleams with energy. It seems like it could do some damage now."
+--	--	--	rev-emit-noontime rule	--	true	--	--	Dim Mid	--	false
 Yard Ray	test set	--	ready-to-test rule	test-set-zapped rule	true	false	true	Dim Mid	Worn Row	false	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
 --	--	--	rev-create-tron rule	--	true	--	--	Dim Mid	Fun Nuf	false
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	Dirge Grid	false	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, perhaps to create the Red Ronin Order." [b4:use TNT on ore zero]
@@ -2048,7 +2048,11 @@ this is the rev-nail-Ian rule:
 this is the rev-pace-cap rule:
 	if cap-ever-pace is true, the rule fails;
 	now cap-ever-pace is true;
-	say "You tweak your pact cap to a PACE CAP.";
+	say "You tweak your pact cap to a PACE CAP";
+	if mrlp is not Grebeberg:
+		move player to Seer Trees;
+		say ", moving to Seer Trees in Grebeberg when it doesn't seem right to run in Yelpley or [Fun Nuf]";
+	say ".";
 	the rule succeeds;
 
 this is the rev-pack-cap rule:
@@ -3533,7 +3537,7 @@ understand "dr/d" and "dr d" as code doc when tent net is moot.
 
 chapter Spa Maps
 
-Spa Maps are a plural-named thing. indefinite article of Spa Maps is "some". description is "[if sage gas is not off-stage]The maps seem old hat now you've gotten the sage gas[else if maps-explained is false]You can't quite make sense out of them. There's Gobs-Bog and Go-By Bog, and one is a lot safer than the other, but you're not sure which[else]The spa maps clearly demark Go-By Bog and Gobs Bog and even Goblin-Nil Bog, which probably contains a troll or two. And no hospitality[end if]."
+the Spa Maps are a plural-named thing. indefinite article of Spa Maps is "some". description is "[if sage gas is not off-stage]The maps seem old hat now you've gotten the sage gas[else if maps-explained is false]You can't quite make sense out of them. There's Gobs-Bog and Go-By Bog, and one is a lot safer than the other, but you're not sure which[else]The spa maps clearly demark Go-By Bog and Gobs Bog and even Goblin-Nil Bog, which probably contains a troll or two. And no hospitality[end if]."
 
 after examining spa maps for the first time:
 	say "[line break]They were, unsurprisingly, written by Pam. Good thing they're not spa mini-maps. They'd be IMPOSSIBLE to read.";
@@ -4302,7 +4306,7 @@ to define-author (bk - a book):
 
 chapter pity tip
 
-the pity tip is a thing. description of pity tip is "[if DWELT LEWD is off-stage]'You can do something neat and completely unnecessary with the cart! There are so many possibilities, of course.'[paragraph break]NOTE: document is[else]You figured what the tip about the tract cart was, but the tip is still[end if] good for free snack cans at Seedy Dee's."
+the pity tip is a thing. description of pity tip is "[if DWELT LEWD is off-stage]'You can do something neat and completely unnecessary with the cart! There are only so many possibilities, of course.'[paragraph break]NOTE: document is[else]You figured what the tip about the tract cart was, but the tip is still[end if] good for free snack cans at Seedy Dee's."
 
 chapter books in bookcase
 
@@ -4532,6 +4536,10 @@ carry out wordrowing:
 	word-row-open;
 	check-dab;
 	the rule succeeds;
+
+every turn when ever-wordrow is true:
+	repeat with Q running through books:
+		say "[Q]: [if Q is tractable]tractable[else]not tractable[end if].";
 
 to word-row-open:
 	clear-worn-row;
@@ -6104,20 +6112,25 @@ carry out revovering:
 		let u1a be false;
 		let u2a be false;
 		let g1a be false;
+		let demos-too be false;
 		if the player does not have use1 entry and use1 entry is speedtakeable:
+			if use1 entry is not off-stage and use1 entry is not in TempMet and use1 entry is not in devreserved, now location of use1 entry is visited; [this fixes a bug where you can "take" the stamp mats but REV OVER doesn't think you visited Frush Surf]
 			now u1a is true;
 			now player has use1 entry;
+			if use1 entry is a book and number of tractable books is 1:
+				now demos-too is true;
+				now player has SOME DEMOS;
 		if the player does not have use2 entry and use2 entry is speedtakeable:
 			now u2a is true;
 			now player has use2 entry;
 		if use1 entry is a book:
 			if Worn Row is worky, now wr-flipped is true;
-			now Worn Row is wordy;
+			word-row-open;
 		if use2 entry is a workable:
 			if Worn Row is wordy, now wr-flipped is true;
-			now Worn Row is worky;
+			work-row-open;
 			wear-down use2 entry;
-		if deep-speeding is false or say-despite-speeding is true, say "You [if wr-flipped is true]toggle [Worn Row], then [end if][if u1a is true](acquire and) [end if]use [the use1 entry] on/with [if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if].";
+		if deep-speeding is false or say-despite-speeding is true, say "You [if wr-flipped is true]toggle [Worn Row], then [end if][if u1a is true](acquire and) [end if]use [the use1 entry] on/with [if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if][if demos-too is true]--and scoring SOME DEMOS in the process[end if].";
 		increment turns-to-add;
 		if sco entry is true:
 			if debug-state is true and deep-speeding is false, say "*(DEBUG: use point) (+1 above)[line break]";

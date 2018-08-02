@@ -20,6 +20,8 @@ import os
 import sys
 import re
 from collections import defaultdict
+from filecmp import cmp
+from shutil import copy
 
 files_to_run = defaultdict(str)
 
@@ -47,6 +49,8 @@ speed_low = speed_high = 0
 
 launch_first = launch_last = False
 
+prt_over = prt_ignore = 0
+
 end_str = ">n\n>use me gem on knife fink\n>use taboo bat on verses rev\n>use yard ray on redivider\n>s\n>use x-ite tix on tix exit\nYes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through.\nRoxor!\n"
 
 line_nums = []
@@ -64,6 +68,10 @@ def usage():
     print("pc = print chunk list, cf = chunk list to file, cl = to file and launch")
     exit()
 
+def show_post_prt():
+    if post_prt: print(prt_over, "copied over, ", prt_ignore, "unchanged and ignoring")
+    exit()
+
 def last_of(a):
     b = a.strip().split("\n")
     for j in b[::-1]:
@@ -72,12 +80,17 @@ def last_of(a):
         return ">wrw\nendgame\n"
     return "(undefined command: {:s})\n".format(a.strip())
 
+def final_line(q, q2):
+    if q >= q2 - 1: return "You're already near the endgame."
+    if q == q2 - 2: return "You use the epicer recipe you found in the Trapeze Part to build a north-tron that destroys the KOAS Oak to the north! And with that, your REV OVER journey ends, so close to saving Yelpley and Grebeberg."
+    return "Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!"
+
 def write_single_wrw(start_val, end_val, block_dict, collapse_if_1):
     if start_val == end_val and collapse_if_1:
         fname = "reg-ai-wrw-skip-step-{:02d}.txt".format(start_val)
     else:
         fname = "reg-ai-wrw-skip-from-{:02d}-to-{:02d}.txt".format(start_val, end_val)
-    print('Writing', start_val, end_val, fname)
+    if not post_prt: print('Writing', start_val, end_val, fname)
     f = open(fname, "w")
     f.write("# {:s}\n#\n# unit tester for wrw skipping step{:s} {:d}{:s}\n#\n** game: /home/andrew/prt/debug-ailihphilia.ulx\n** interpreter: /home/andrew/prt/glulxe -q\n\n* warpthrough\n\n".format(fname, 's' if start_val != end_val else '', start_val, '' if start_val == end_val else '-{:d}'.format(end_val)))
     for y in range (0, len(block_dict)):
@@ -88,8 +101,19 @@ def write_single_wrw(start_val, end_val, block_dict, collapse_if_1):
             if 'by one point' not in block_dict[y]: f.write("!")
             f.write("1 point to go\n")
         else: f.write(block_dict[y])
-    f.write("Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!\n" if y <= len(block_dict) - 1 else "You're already near the endgame.")
+    f.write(final_line(end_val, len(block_dict)) + "\n")
     f.close()
+    if post_prt:
+        global prt_over
+        global prt_ignore
+        prt_name = os.path.join(i7.prt,fname)
+        if not cmp(fname, prt_name):
+            print("Copying", fname, "to", prt_name)
+            copy(fname, prt_name)
+            prt_over += 1
+        else:
+            print("No change in", fname, "/", prt_name)
+            prt_ignore += 1
 
 def write_random_wrw(blox, num_of):
     for n in range (0, num_of):
@@ -140,6 +164,7 @@ def write_wrw_files():
         for st in range(start_low, start_high):
             for en in range (end_low, end_high):
                 write_single_wrw(st, en, wrw_blocks, False)
+    if post_prt: show_post_prt()
     exit()
 
 def create_speed_thru(base_file, base_out_str, idx):
@@ -411,12 +436,12 @@ else:
             if x > y: continue
         make_wthru(x, y)
 
+if post_prt: show_post_prt()
+
 if post_copy_just_this:
     of2 = re.sub("\{.*.}", "*", out_format)
     os.system("copy {:s} {:s}".format(of2, i7.prt))
     sys.exit("{:s} copied to {:s}".format(of2, i7.prt))
-
-if post_prt: os.system("prt.pl")
 
 if launch_first: os.system(my_file(start_low, end_low))
 if launch_last: os.system(my_file(start_high, end_high))
