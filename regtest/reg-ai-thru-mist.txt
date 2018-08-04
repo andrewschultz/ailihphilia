@@ -269,15 +269,26 @@ You don't need the wash saw to turn into something that might sting you, especia
 #mistake test for bo rob
 >bo rob
 If he did suddenly smell worse, he probably wouldn't know it. It would just repel you a bit more.
+
 #mistake test for born rob
 >born rob
 Rob's regular babble is bad enough. His full life story would be truly enervating.
+
 #mistake test for borg rob
 >borg rob
 He is already assimilated.
+
 #mistake test for bork rob
 >bork rob
 Maybe there is a more nonviolent way to get him to give up.
+
+#mistake test for bordered Rob
+>bordered Rob
+Nothing sneaks up next to Rob to edge him out.
+
+#mistake test for boree Rob
+>boree Rob
+Ooh! Close! How would you MAKE him a boree?
 
 >bore rob
 by one point
@@ -782,6 +793,10 @@ by one point
 >use puce cup on dose sod
 !by one point
 
+#mistake test for apse vespa
+>apse vespa
+No wasps come out to sting you.
+
 #mistake test for esp apse
 >esp apse
 You don't see what to do next.
@@ -881,6 +896,14 @@ by one point
 
 >get all
 #got dirt rid
+
+#mistake test for pile lip
+>pile lip
+Nothing really fits on the pill lip besides the demo med.
+
+#mistake test for pilf lip
+>pilf lip
+You don't need to take the pill lip like you took the pact cap.
 
 #mistake test for dir rid
 >dir rid
@@ -1240,8 +1263,16 @@ You score no free trail mix, alas.
 >pro vorp
 No stat junkies appear to drive you up the wall.
 
+#mistake test for butt tub
+>butt tub
+A smoked-down cigarette fails to appear in the tub. What? You expected something else?
+
 >use Gorge Grog on butene tub
 by one point
+
+#mistake test for bale lab
+>bale lab
+Nothing happens. Hay, what's the deal?
 
 #mistake test for balk lab
 >balk lab
@@ -1755,6 +1786,14 @@ The hand isn't helpful enough in its present form, but that's no reason to dismi
 
 >use roto motor on DNA hand
 by one point
+
+#mistake test for banana nab
+>banana nab
+You're not hungry.
+
+#mistake test for bane nab
+>bane nab
+It's usually death that grips YOU.
 
 #mistake test for bannon nab
 >bannon nab
