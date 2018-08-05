@@ -22,7 +22,7 @@ understand "esp apse" as a mistake ("You don't see what to do next.[mis of 1]") 
 
 understand "pool sloop" as a mistake ("No boat appears to take you across the watery bits. [if sage gas is off-stage]You'll need another way through[else]You already got the sage gas, anyway[end if].[mis of 2]") when player is in Apse Spa.
 
-understand "saga gas" as a mistake ("You probably need wisdom more than description of someone else'e epic right now.[mis of 262]") when sage gas is quicknear.
+understand "saga gas" as a mistake ("You probably need wisdom more than description of someone else's epic right now.[mis of 262]") when sage gas is quicknear.
 
 understand "spa caps" as a mistake ("BUT YOU ALREADY HAVE YOUR PACE CAP![mis of 3]") when player is in Apse Spa or spa maps are quicknear.
 
@@ -222,11 +222,9 @@ understand "musc sum" as a mistake ("You don't need Dave to return.[mis of 98]")
 
 understand "muse sum" as a mistake ("You think back to everyone who has inspired you, past and present. It's life-affirming![mis of 99]") when player is in Flu Gulf or Dave is quicknear.
 
-understand "musk sum" as a mistake ("[location of player] still smells the same.[mis of 100]") when player is in Flu Gulf or Dave is quicknear.
+understand "musk sum" as a mistake ("[location of player] still smells the same. For better or worse.[mis of 100]") when player is in Flu Gulf or Dave is quicknear.
 
 understand "must sum" as a mistake ("[if Dave is quicknear]No, you don't NEED to guesstimate how strong Dave is[else]You do some random mental math, which gives you a headache, which is sort of appropriate for Flu Gulf ... but also totally useless.[mis of 277]") when player is in Flu Gulf or Dave is quicknear.
-
-understand "must sum" as a mistake ("You take stock of all you need to do--or at least, all you know you need to do. Or you think back to horrible repetitive exercises in math class, which were horrible whether you were good at them or not.[mis of 101]") when player is in Flu Gulf or Dave is quicknear. [okdup]
 
 section scorn rocs
 
@@ -659,7 +657,7 @@ understand "borg Rob" as a mistake ("He is already assimilated.[mis of 236]") wh
 
 understand "bork Rob" as a mistake ("Maybe there is a more nonviolent way to get him to give up.[mis of 237]") when Rob is quicknear.
 
-understand "born Rob" as a mistake ("Rob's regular babble is bad enough. His life story would be truly enervating.[mis of 273]") when Rob is quicknear.
+understand "born Rob" as a mistake ("Rob's regular babble is bad enough. His full life story would be truly enervating.[mis of 273]") when Rob is quicknear.
 
 understand "dwell lewd" as a mistake ("DWELT LEWD should NOT be read as an instruction manual. Well, it shouldn't be read at all, really.[mis of 238]") when DWELT LEWD is quicknear.
 

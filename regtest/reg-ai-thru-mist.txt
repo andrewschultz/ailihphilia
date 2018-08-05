@@ -1699,7 +1699,7 @@ Greedy! There's enough food to find around here, really.
 
 #mistake test for mong nom
 >mong nom
-No 'interesting' brownies appear.
+No "interesting" brownies appear.
 
 #mistake test for monk nom
 >monk nom
@@ -1801,7 +1801,7 @@ That's up to Muelle ... um, there's enough political references in the game with
 
 #mistake test for mraz arm
 >mraz arm
-You don't need Mr. Arm singing 'I'm yours.' He is already in your inventory.
+You don't need Mr. Arm singing "I'm yours." He is already in your inventory.
 
 #mistake test for band nab
 >band nab
