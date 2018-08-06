@@ -12,9 +12,17 @@ You found a Last Lousy Point!
 !by one point
 
 >stats
+!Last Lousy Point
+!by one point
+
+>stats
 !by one point
 >peep
 You found a Last Lousy Point!
+!by one point
+
+>peep
+!Last Lousy Point
 !by one point
 
 >peep
@@ -27,9 +35,17 @@ You found a Last Lousy Point!
 !by one point
 
 >dial aid
+!Last Lousy Point
+!by one point
+
+>dial aid
 !by one point
 >refer
 You found a Last Lousy Point!
+!by one point
+
+>refer
+!Last Lousy Point
 !by one point
 
 >refer
@@ -71,6 +87,10 @@ by one point
 
 >trace cart
 You found a Last Lousy Point!
+!by one point
+
+>trace cart
+!Last Lousy Point
 >get TO IDIOT
 
 >e
@@ -171,6 +191,10 @@ by one point
 
 >slam mammals
 You found a Last Lousy Point!
+!by one point
+
+>slam mammals
+!Last Lousy Point
 
 
 >use stock cots on sleep eels
@@ -449,6 +473,10 @@ You found a Last Lousy Point!
 !by one point
 
 >balm lab
+!Last Lousy Point
+!by one point
+
+>balm lab
 !by one point
 >s
 >s
@@ -478,10 +506,18 @@ You found a Last Lousy Point!
 !by one point
 
 >stack cats
+!Last Lousy Point
+!by one point
+
+>stack cats
 !by one point
 
 >see bees
 You found a Last Lousy Point!
+!by one point
+
+>see bees
+!Last Lousy Point
 !by one point
 
 >see bees
@@ -725,6 +761,10 @@ by one point
 
 >muss opossum
 You found a Last Lousy Point!
+!by one point
+
+>muss opossum
+!Last Lousy Point
 
 >get all
 

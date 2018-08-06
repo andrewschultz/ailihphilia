@@ -391,8 +391,25 @@ Top Spot is no longer worth going to. You don't want to go back. Onward!
 >gt top
 Top Spot is no longer worth going to. You don't want to go back. Onward!
 
+# check east ungoables
+>gt gross org
+Gross Org
+>balm lab
+Last Lousy
+>gt gross org
+WRONG
+>gt toll lot
 >gt gross org
 That area is now undergoing civic restoration, with the Diktat Kid gone.
+>gt pro corp
+That area is now undergoing civic restoration, with the Diktat Kid gone.
+#check west conditional ungoables
+>gt moo room
+>see bees
+>stack cats
+>gt frush surf
+>gt seer trees
+>gt frush surf
 
 >gt deft fed
 You can't crash the party. You weren't invited. It's REALLY exclusive.

@@ -49,6 +49,11 @@ use American dialect.
 
 volume definitions
 
+rule for printing a parser error:
+	say "[current action] [noun].";
+	if the player's command includes "verb rev", say "Yahtzee!" instead;
+	continue the action;
+
 definition: a thing is moot:
 	if it is in devreserved, yes; [ic]
 	no;
@@ -210,6 +215,7 @@ Include (-
                print "take inventory";
       'l//':   print "look";
       'x//':   print "examine";
+      'gt//':   print "go to";
       'rei//':   print "put in the reifier";
       'rot//':   print "put in the rotator";
       'rev//':   print "put in the reviver";
@@ -1139,7 +1145,7 @@ carry out verbing:
 		say "[line break]There are also a few guess-the-verb bonus points that are hidden. Some relate to objects or people that need help but can't help you, and some are riffs on standard commands. [if refer-yet is false]There's a different way to revisit, rehash or recap this very command, for example[else]For instance, you got REFER as VERBS[end if]";
 	say "[line break]Also, many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy. If you miss them, you'll see the entire list at the end.";
 	say "[2da][b]META[r] (or [b]META AT EM[r] has information on meta-verbs, which includes options (e.g. turning some minor hints on or off), cheat/warp commands for judges near the two-hour limit, scoring, and information on how the game was created and who helped.";
-	if in-beta is true, say "META also gives beta tester comands.";
+	if in-beta is true, say "META also gives beta tester commands.";
 	if debug-state is true, say "[2da]SMITIMS = win after Deep Speed.[line break][2da]TCC/TCCC aligns move to palindrome or palindrome + 1.";
 	abide by the situational commands show rule;
 
@@ -1479,6 +1485,7 @@ instead of smelling location of player:
 	if player has dork rod, try smelling dork rod instead;
 	if troll ort is quicknear, try smelling troll ort instead;
 	if ergot ogre is quicknear, try smelling ergot ogre instead;
+	if player is in My Gym, say "Well ... ew." instead;
 	continue the action;
 
 instead of smelling an ingredient:
@@ -1487,7 +1494,7 @@ instead of smelling an ingredient:
 	if noun is gift fig, say "Nice and fruity and not too young or ripe." instead;
 	say "It smells a bit better than it looks. Maybe it could be used as a condiment to spice up 'real' foods, in the right place."
 
-instead of smelling, say "Noses, on[one of]! (you don't need to smell anything in this game, thoiugh some specific items give silly text.)[or][stopping]!"
+instead of smelling, say "Noses, on[one of]! (you don't need to smell anything in this game, though some specific items give silly text.)[or][stopping]!"
 
 to decide whether y-poopy:
 	if gnu dung is quicknear, yes;
@@ -1557,7 +1564,7 @@ to build-the-tron:
 	moot north tron;
 	now all tronparts are in devreserved; [ic]
 	if redact-postrule:
-		say "You use the epicer recipe you found in the Trapeze Part to build a north-tron that destroys the KOAS Oak to the north! And with that, your [if deep-speeding is true]DEEP SPEED[else]REV OVER[end if] journey ends, so close to saving Yelpley and Grebeberg.";
+		say "You use the epicer recipe you found in the Trapeze Part to build a north-tron that destroys the KAOS Oak to the north! And with that, your [if deep-speeding is true]DEEP SPEED[else]REV OVER[end if] journey ends, so close to saving Yelpley and Grebeberg.";
 	else:
 		say "[if epicer recipe is nox]You're clueless how, at first. But then you take a look at the epicer recipe[else]You build the North-Tron with the instructions from[end if] the epicer recipe after a few 'How? OH!' moments. It points north and blasts a hole in the [kaoscaps] with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break]Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
 	moot epicer recipe;
@@ -1585,7 +1592,7 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 		score-inc; [Grebeberg/USE GIFT FIG ON MAYO YAM&USE SNACK CANS ON UFO TOFU]
 		if number of moot ingredients is 4:
 			verify-done rev-second-food-combo rule;
-			say "A martini tram rattles out from behind the Ark of Okra. Guess you need drinks with your, uh, food![paragraph break][if player does not have the epicer recipe]You're shocked to see it, and it rollls further down, over the turf rut to Dumb Mud, then back through the Seer Trees to Fun [']Nuf[else]But you're prepared for it, with your epicer recipe. You move it back to Fun [']Nuf, where it looks like a good base structure for your North-Tron[end if].";
+			say "A martini tram rattles out from behind the Ark of Okra. Guess you need drinks with your, uh, food![paragraph break][if player does not have the epicer recipe]You're shocked to see it, and it rolls further down, over the turf rut to Dumb Mud, then back through the Seer Trees to Fun [']Nuf[else]But you're prepared for it, with your epicer recipe. You move it back to Fun [']Nuf, where it looks like a good base structure for your North-Tron[end if].";
 			move martini tram to Fun Nuf;
 			move player to Fun Nuf, without printing a room description;
 			say "[b]Fun [']Nuf[r][paragraph break]After all that excitement, you realize that the martini tram could've been a KO wok. You feel relief at dodging something worse.";
@@ -2823,7 +2830,7 @@ to say thug-report:
 		continue the action;
 	else if GG is 0:
 		if GG2 is 0:
-			say "[if GG2 is 0]You haven't seen any yet, but apparently you'll kniw them when you see them";
+			say "[if GG2 is 0]You haven't seen any yet, but apparently you'll know them when you see them";
 		else:
 			say "[list of seenees guhthugs] may fit this description. Maybe you can get past [if GG2 is 1]him[else]them[end if]";
 	else:
@@ -3505,7 +3512,7 @@ some Eroded Ore is a thing. description is "You're no expert metallurgist, but i
 
 book Uneven U
 
-Uneven U is south of Swamp Maws. It is in Grebeberg. "This looks vaguely like a university campus, with an all-ivy villa blocking the way west and a den, ivy-vined, blocking the way east. You can go north and south easily, though. [if tent net is moot]It feels nice and cozy now you helped the Code Doc add some furnishings[else]But it feels terribly unfinished, even with the ivy ambience. Having some sort of roof might make it even homier[end if][if-porch]."
+Uneven U is south of Swamp Maws. It is in Grebeberg. "This looks vaguely like a university campus, with an all-ivy villa blocking the way west and a den, ivy-vined, blocking the way east. You can go north and south easily, though. [if tent net is moot]It feels nice and cozy now you helped the Code Doc add some furnishings[else]But it feels terribly unfinished, even with the ivy ambiance. Having some sort of roof might make it even homier[end if][if-porch]."
 
 printed name of Uneven U is "[if balsa slab is off-stage]Uneven[else]Unitin['][end if] U".
 
@@ -3833,6 +3840,7 @@ definition: a room (called rm) is ungoable:
 	if Diktat Kid is moot, no;
 	if rm is westpost or rm is eastpost, yes;
 	if rm is eastcond and balm-LLP-yet is true, yes;
+	if rm is westcond and felines are moot and bees-seen is true, yes;
 	no;
 
 to say map-so-far:
@@ -5083,7 +5091,7 @@ understand "tend [something]" as tending.
 carry out tending:
 	if noun is not level net, say "That doesn't need tending." instead;
 	if player has epicer recipe, say "You already did what you needed with the net." instead;
-	say "You adjust the ten level net. You're not sure how to make it work, but with some common sense, you make it. The set o['] notes gives surprising help. You climb and swing from the trapeze to the other side--falling into the ten level net about a hundred or so times--but the hundred and first bam! You notice an epic-er recipe under some superfluous steno-nets.[paragraph break]It's a clear step up from the set o['] notes. Yay! There's also something labeled an elope pole, which you suspect may help you get away if and when you need to. Part of the net falls off, too. It'd make a nice tent: a tent net. You gather up a nice haul: pole, net, recipe.";
+	say "You adjust the ten level net. You're not sure how to make it work, but with some common sense, you make it. The set o['] notes gives surprising help. You climb and swing from the trapeze to the other side--falling into the ten level net about a hundred or so times--but the hundred and first, BAM! You notice an epic-er recipe under some superfluous steno-nets.[paragraph break]It's a clear step up from the set o['] notes. Yay! There's also something labeled an elope pole, which you suspect may help you get away if and when you need to. Part of the net falls off, too. It'd make a nice tent: a tent net. You gather up a nice haul: pole, net, recipe.";
 	get-tended-stuff;
 	score-inc; [Yelpley/TEND NET]
 	verify-done rev-tend-net rule;
@@ -5179,7 +5187,7 @@ Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in Red Ros
 Red Roses Order is above Emo Dome.
 
 check going south in Red Roses Order:
-	say "You hear a crash behind you as the sword rows spin and wheeze from the exertion, then fall over. There's something ... no, someone ... behind the wall. 'How are you? I'm the Droll Lord! Thanks for setting me free! I kept myself entertained, but I was turning into the Dull Lud!' As people stream in, he outlines his vision for a more peaceful Yelpley. He is too old to govern, but so many people have come together to discuss ideas how not to let a Diktat Kid, Yuge Guy or Madam gain power again. 'We'd like you to stay, but we hear you have your own life to lead.' And he's right. You're not up to GOVERNING.[paragraph break]As you leave, you notice the Droll Lord scratch out the last bit calling this building the Red Roses Order, replacing it with TEEM-CIVIC MEET.[paragraph break]It's slightly forced, but it's better han GRO-CIVIC ORG or EVA[']-CIVIC AVE and gets the point across. Clear messaging is important in politics.";
+	say "You hear a crash behind you as the sword rows spin and wheeze from the exertion, then fall over. There's something ... no, someone ... behind the wall. 'How are you? I'm the Droll Lord! Thanks for setting me free! I kept myself entertained, but I was turning into the Dull Lud!' As people stream in, he outlines his vision for a more peaceful Yelpley. He is too old to govern, but so many people have come together to discuss ideas how not to let a Diktat Kid, Yuge Guy or Madam gain power again. 'We'd like you to stay, but we hear you have your own life to lead.' And he's right. You're not up to GOVERNING.[paragraph break]As you leave, you notice the Droll Lord scratch out the last bit calling this building the Red Roses Order, replacing it with TEEM-CIVIC MEET.[paragraph break]It's slightly forced, but it's better than GRO-CIVIC ORG or EVA[']-CIVIC AVE and gets the point across. Clear messaging is important in politics.";
 
 chapter Mirror Rim
 
@@ -5539,6 +5547,7 @@ carry out gotoing:
 		if noun is Deft Fed, say "You can't crash the party. You weren't invited. It's REALLY exclusive." instead;
 		if noun is westpost, say "The Smarty Trams project is underway there, now you've dealt with the Diktat Kid." instead;
 		if noun is eastpost, say "That area is now undergoing civic restoration, with the Diktat Kid gone." instead;
+		if noun is ungoable, say "You're pretty sure you've figured out all the secrets there or beyond." instead;
 	consider the avail-rule of noun;
 	if the rule failed:
 		if noun is Emo Dome and Emo Dome is visited, say "You'd run away from the Emo Dome too quickly. You need a plan of attack to deal with it." instead;
@@ -5558,9 +5567,10 @@ carry out gotoing:
 
 [??gt a person]
 
-a room can be eastpost, eastcond, westpost or unblockable. a room is usually unblockable.
+a room can be eastpost, eastcond, westpost, westcond or unblockable. a room is usually unblockable.
 
-Yack Cay is westpost. Swamp Maws is westpost. Lac Oft Focal is westpost. Trial Lair is westpost. Uneven U is westpost. Trial Lair is westpost. Motto Bottom is westpost.
+Yack Cay is westpost. Swamp Maws is westpost. Lac Oft Focal is westpost. Trial Lair is westpost. Uneven U is westpost. Trial Lair is westpost. Motto Bottom is westpost. Moo Room is westcond. Frush Surf is westcond.
+
 Red Roses Order is eastpost. Swept Pews is eastpost. Drawl Ward is eastpost. Dopy Pod is eastpost. Scrap Arcs is eastpost. Deft Fed is eastpost.
 Gross Org is eastcond. Pro Corp is eastcond.
 
@@ -5901,7 +5911,7 @@ this is the block-drawl-ward rule:
 	the rule fails;
 
 this is the block-swept-pews rule:
-		say "You cringe as you trhink of all the chaos you brought to the Swept Pews. There's nothing you see that could help you dispose of the Psi Wisp, which (un)fortunately isn't demoniac enough to be affected by such a holy place. Maybe you need something more physical or scientific.";
+		say "You cringe as you think of all the chaos you brought to the Swept Pews. There's nothing you see that could help you dispose of the Psi Wisp, which (un)fortunately isn't demoniac enough to be affected by such a holy place. Maybe you need something more physical or scientific.";
 		the rule succeeds;
 	the rule fails;
 
@@ -6800,7 +6810,7 @@ this is the yack-cay-hint rule:
 	if dork rod is not moot and NULL ILLUN is moot, continue the action;
 	if moor broom is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if NULL ILLUN is not moot, say "[if player has Known Wonk]USE NULL ILLUN ON KNOWN WONK[else]You need to give the Knowk Wonk a book[end if]." instead;
+	if NULL ILLUN is not moot, say "[if player has Known Wonk]USE NULL ILLUN ON KNOWN WONK[else]You need to give the Known Wonk a book[end if]." instead;
 	if player does not have moor broom, say "The enact cane can be combined to better purpose." instead;
 	say "USE MOOR BROOM ON TRU YURT." instead;
 

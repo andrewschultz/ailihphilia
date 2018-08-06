@@ -234,7 +234,7 @@ OUT or any synonym is never necessary in the game, though if there is only one e
 
 ==t2
 #mistake test for calf lac
->gonear calcific lac
+>gonear lac oft focal
 >calf lac
 There is another room with that, sort of. Plus, cows can't swim.
 >undo
@@ -290,8 +290,7 @@ My Gym still smells the same. For better or worse
 You think back to everyone who has inspired you, past and present. It's life-affirming!
 #mistake test for must sum
 >must sum
-You take stock of all you need to do--or at least, all you know you need to do. Or you think back to horrible repetitive exercises in math class, which were horrible whether you we
-re good at them or not.
+No, you don't NEED to guesstimate how strong Dave is.
 
 ==t2
 #mistake test for mush sum
@@ -348,15 +347,26 @@ You don't need the wash saw to turn into something that might sting you, especia
 #mistake test for bo rob
 >bo rob
 If he did suddenly smell worse, he probably wouldn't know it. It would just repel you a bit more.
+\\
 #mistake test for born rob
 >born rob
 Rob's regular babble is bad enough. His full life story would be truly enervating.
+\\
 #mistake test for borg rob
 >borg rob
 He is already assimilated.
+\\
 #mistake test for bork rob
 >bork rob
 Maybe there is a more nonviolent way to get him to give up.
+\\
+#mistake test for bordered Rob
+>bordered Rob
+Nothing sneaks up next to Rob to edge him out.
+\\
+#mistake test for boree Rob
+>boree Rob
+Ooh! Close! How would you MAKE him a boree?
 
 >bore rob
 by one point
@@ -383,7 +393,7 @@ Ugh! You don't need to make this place worse
 Worn Row is not meant to be a garden. Maybe it would look nicer that way, but it wouldn't be helpful to you.
 #mistake test for worf row
 >worf row
-No Enterprise security officer arrives to help you.
+No Enterprise security officer arrives to help or hinder you.
 
 >word row
 by one point
@@ -1137,38 +1147,42 @@ The bog is dangerous without guidance.
 !by one point
 
 ===2
+#mistake test for apse vespa
+>apse vespa
+No wasps come out to sting you.
+\\
 #mistake test for esp apse
 >esp apse
 You don't see what to do next.
-
+\\
 #mistake test for pool sloop
 >pool sloop
 No boat appears to take you across the watery bits. You'll need another way through.
-
+\\
 #mistake test for spa caps
 >spa caps
 But you already have your pace cap!
-
+\\
 #mistake test for spa gaps
 >spa gaps
 The Apse Spa is too sturdy. You don't want it to collapse.
-
+\\
 #mistake test for spa laps
 >spa laps
 You never need to swim anywhere in this game. Or drink anything.
-
+\\
 #mistake test for spa naps
 >spa naps
 No time to relax! There's adventuring to be had!
-
+\\
 #mistake test for spa raps
 >spa raps
 The spa is a place of peace. Stop that noise, and get off my lawn!
-
+\\
 #mistake test for spa saps
 >spa saps
 One day, with the Diktat Kid gone, plenty of people will waste money on a spa, but your job is to get things there.
-
+\\
 #mistake test for spa zaps
 >spa zaps
 You don't need a weapon.
@@ -1261,6 +1275,14 @@ Maybe there's a do-prefer pod somewhere, but it's off-limits to you.
 #got dirt rid
 
 ==t2
+#mistake test for pile lip
+>pile lip
+Nothing really fits on the pill lip besides the demo med.
+\\
+#mistake test for pilf lip
+>pilf lip
+You don't need to take the pill lip like you took the pact cap.
+\\
 #mistake test for dir rid
 >dir rid
 Rm -r is fewer keystrokes.
@@ -1361,6 +1383,10 @@ Cannibalism is wrong. Besides, you'd probably catch whatever the Gulf Lug has.
 #mistake test for musc sum
 >musc sum
 You don't need Dave to return.
+\\
+#mistake retest for must sum
+>must sum
+You do some random mental math, which gives you a headache, which is sort of appropriate for Flu Gulf ... but also totally useless.
 \\
 #mistake test for score rocs
 >score rocs
@@ -1807,6 +1833,10 @@ You score no free trail mix, alas.
 #mistake test for pro vorp
 >pro vorp
 No stat junkies appear to drive you up the wall.
+\\
+#mistake test for butt tub
+>butt tub
+A smoked-down cigarette fails to appear in the tub. What? You expected something else?
 
 >use Gorge Grog on butene tub
 by one point
@@ -1815,6 +1845,10 @@ by one point
 You hear the click of invisible shuttuhs/shutters
 
 ==t2
+#mistake test for bale lab
+>bale lab
+Nothing happens. Hay, what's the deal?
+\\
 #mistake test for balk lab
 >balk lab
 There's not much to do or say here, for sure!
@@ -2757,6 +2791,14 @@ The hand isn't helpful enough in its present form, but that's no reason to dismi
 by one point
 
 ==t2
+#mistake test for banana nab
+>banana nab
+You're not hungry.
+\\
+#mistake test for bane nab
+>bane nab
+It's usually death that grips YOU.
+\\
 #mistake test for bannon nab
 >bannon nab
 That's up to Muelle ... um, there's enough political references in the game with the Yuge Guy.
