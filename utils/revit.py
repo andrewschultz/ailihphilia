@@ -11,7 +11,7 @@
 # revit.py -e = recopies all the thru-east files
 # revit.py -w = recopies all the thru-east files
 # revit.py -wr -s2,4 -e5,7 = creates 2-5, 2-6, 2-7, 3-5, 3-6, 3-7, 4-5, 4-6, 4-7
-# revit.py -wrr2 = creates 2 random skipping test files
+# revit.py -wr2 = creates 2 random skipping test files
 
 import glob
 import random
@@ -31,6 +31,7 @@ destinations = defaultdict(str)
 
 first_line = "# created with the revit.py python tool\n"
 
+launch_wrw_after = False
 post_copy_just_this = False
 print_chunk_list = False
 chunk_list_to_file = False
@@ -116,6 +117,7 @@ def write_single_wrw(start_val, end_val, block_dict, collapse_if_1):
             prt_ignore += 1
 
 def write_random_wrw(blox, num_of):
+    global launch_wrw_after
     for n in range (0, num_of):
         file_string = "reg-ai-wrw-random-"
         rand_ary = []
@@ -126,10 +128,11 @@ def write_random_wrw(blox, num_of):
             my_total += to_add
             rand_ary.append(to_add)
             file_string += str(to_add)
-            if to_add: string_to_dump += last_of(blox[i])
+            if to_add:
+                string_to_dump += '>wrw\n' # last_of(blox[i])
+                if 'by one point' not in blox[i]: string_to_dump += ("!")
+                string_to_dump += ("1 point to go\n")
             else: string_to_dump += blox[i]
-            if 'by one point' not in blox[i]: string_to_dump += ("!")
-            string_to_dump += ("1 point to go\n")
         string_to_dump += '>wrw\nendgame\n'
         file_string += "-{:d}-skips.txt".format(my_total)
         f = open(file_string, "w")
@@ -137,6 +140,9 @@ def write_random_wrw(blox, num_of):
         f.write(string_to_dump)
         f.close()
         print("Wrote", file_string)
+        if n == 0 and launch_wrw_after:
+            print("Launching" + (" first file" if num_of > 1 else ""), file_string)
+            os.system(file_string)
     exit()
 
 def write_wrw_files():
@@ -155,15 +161,12 @@ def write_wrw_files():
                 cur_cmd = ''
             if '#endwrw' in cur_cmd: break
     if cur_cmd: wrw_blocks.append(cur_cmd)
-    if random_wrw_to_write:
-        write_random_wrw(wrw_blocks, random_wrw_to_write)
+    if random_wrw_to_write: write_random_wrw(wrw_blocks, random_wrw_to_write)
     elif only_one_wrw:
-        for x in range(0, len(wrw_blocks)):
-            write_single_wrw(x, x, wrw_blocks, True)
+        for x in range(0, len(wrw_blocks)): write_single_wrw(x, x, wrw_blocks, True)
     else:
         for st in range(start_low, start_high):
-            for en in range (end_low, end_high):
-                write_single_wrw(st, en, wrw_blocks, False)
+            for en in range (end_low, end_high): write_single_wrw(st, en, wrw_blocks, False)
     if post_prt: show_post_prt()
     exit()
 
@@ -368,10 +371,20 @@ while count < len(sys.argv):
         tary = glob.glob("reg-ai-wrw-random-*")
         for q in tary: os.remove(q)
         print("Removed", len(tary), "random files")
-    elif arg.startswith('wr') and arg[2:].isdigit():
-        random_wrw_to_write = int(arg[2:])
-        write_wrw = True
-    elif arg == 'wr' or arg == 'rw' or arg == 'wrw': write_wrw = True
+    elif (arg.startswith('wr') or arg.startswith('wl')) and arg[2:].isdigit():
+        try:
+            random_wrw_to_write = int(arg[2:])
+            write_wrw = True
+        except:
+            sys.exit("wr/rw/wrw needs a number after, with or without a space.")
+        launch_wrw_after = 'l' in arg
+    elif arg == 'wr' or arg == 'rw' or arg == 'wrw' or arg == 'wrl':
+        try:
+            random_wrw_to_write = int(sys.argv[count+1])
+            write_wrw = True
+        except:
+            sys.exit("wr/rw/wrw/wrl needs a number after, with or without a space.")
+        launch_wrw_after = 'l' in arg
     elif arg == 'j': post_copy_just_this = True
     elif arg == '?': usage()
     else:
