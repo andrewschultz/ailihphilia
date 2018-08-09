@@ -120,6 +120,7 @@ person-name
 "Gil Lellig"
 "Gina Hanig"
 "Gino Honig"
+"Gio Doig"
 "Gitte Rettig"
 "Glenn Elg"
 "Hal Olah"

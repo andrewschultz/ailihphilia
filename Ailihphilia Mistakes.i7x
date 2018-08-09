@@ -415,7 +415,7 @@ understand "poo woop" as a mistake ("How or why it excites you, I don't want to 
 
 chapter My Gym
 
-understand "evade dave" as a mistake ("Dave's not here, man![mis of 160]") when player is in My Gym and Dave is moot.
+understand "evade dave" as a mistake ("[if dave is moot]Dave's not here, man![else if my gym is visited and dave is in my gym]You already are. Maybe you should go back and do that directly.[else]If you ever find someone named Dave, that would be a good idea.[end if][mis of 160]").
 
 understand "mush sum" as a mistake ("Dave worked hard to build these muscles. It'd be mean if you could wipe them out. And impractical--they might be slowing him down a bit, and that could help you.[mis of 161]") when Dave is quicknear.
 
@@ -547,11 +547,13 @@ understand "seer frees" as a mistake ("[if stark rats are in Seer Trees]It won't
 
 section stark rats
 
-understand "star rats" as a mistake ("You would rather they didn't star in your adventure, here. Must be some way to dispose of them.[mis of 206]") when stark rats are quicknear.
+to say use-need: say ". Perhaps an action on its own isn't enough, and you need to use something on them to get them out of the way"
 
-understand "stare rats" as a mistake ("You try to win a blinking contest, and maybe you could with one, but not that many.[mis of 207]") when stark rats are quicknear.
+understand "star rats" as a mistake ("You would rather they didn't star in your adventure, here. Must be some way to dispose of them[use-need].[mis of 206]") when stark rats are quicknear.
 
-understand "start rats" as a mistake ("You sort of need to stop them, instead.[mis of 208]") when stark rats are quicknear.
+understand "stare rats" as a mistake ("You try to win a blinking contest, and maybe you could with one, but not that many[use-need].[mis of 207]") when stark rats are quicknear.
+
+understand "start rats" as a mistake ("You sort of need to stop them, instead[use-need].[mis of 208]") when stark rats are quicknear.
 
 section gift fig
 

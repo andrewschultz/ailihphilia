@@ -49,11 +49,6 @@ use American dialect.
 
 volume definitions
 
-rule for printing a parser error:
-	say "[current action] [noun].";
-	if the player's command includes "verb rev", say "Yahtzee!" instead;
-	continue the action;
-
 definition: a thing is moot:
 	if it is in devreserved, yes; [ic]
 	no;
@@ -381,6 +376,11 @@ a helpdoc is a kind of thing. a helpdoc has a number called importancy. the inde
 
 before printing the name of a helpdoc while taking inventory:
 	if Dave is off-stage, say "the ";
+	continue the action;
+
+after printing the name of a helpdoc while taking inventory:
+	if noun is not xed, say " [b](unread yet)[r]";
+	continue the action;
 
 to say other-docs:
 	let L be the list of still-useful helpdocs carried by player;
@@ -568,7 +568,7 @@ when play begins:
 	now use-custom-screenread is true; [see the Trivial Niceties extension for details. This wipes the default nag question.]
 	say "First, are you using a screen reader? Some of Ailihphilia's features, like the text map, don't work well with them.";
 	if the player no-consents, now screenread is false;
-	say "You can always toggle the screen reader with SCR.";
+	say "[paragraph break]You can always toggle the screen reader with SCR.";
 	sort table of last lousy points in random order;
 	repeat through table of all randoms:
 		sort tabnam entry in random order;
@@ -577,7 +577,7 @@ when play begins:
 	sort table of random authors in random order;
 	now initseed of Name ME Man is a random number between 0 and prime-constant / 2 - (number of rows in table of random palindrome lastfirst names);
 	now initseed of Oh Who is a random number between prime-constant / 2 + 1 and prime-constant - (number of rows in table of random palindrome firstlast names);
-	say "It's not the first dream you had about how awful high school was, but it's the worst in a while. A few 'favorite' classmates chanting 'Diary raid!' and passing it around as they mock 'Beefy? Feeb! Bony Nob!'[wfak-d]";
+	say "[line break]It's not the first dream you had about how awful high school was, but it's the worst in a while. A few 'favorite' classmates chanting 'Diary raid!' and passing it around as they mock 'Beefy? Feeb! Bony Nob!'[wfak-d]";
 	say "You check your mail as you go out to the grocery store. A junk magazine! It's been so long since you got one, you're almost intrigued.[wfak-d]";
 	say "It just says GAME MAG. But the cover isn't telling you to actually buy anything, so you look inside. You have a whole backlog of games, but you can just recycle it when you get to the store. No, not the erot-store![wfak-d]";
 	say "Nothing really catches your mind until you see a DARER AD. It's a bit vague, but it catches your eye.[wfak-d]";
@@ -697,7 +697,7 @@ after reading a command:
 		change the text of the player's command to "[XX in lower case]";
 	if the player's command matches the regular expression "<^a-z 0-9>":
 		if no-punc-flag is false:
-			say "(NOTE: you don't need to use anything but letters to get through the game. The parser simply strips out non-alphabetic characters.)[paragraph break]";
+			say "(NOTE: you don't need to use anything but letters to get through the game. Even commas for addressing NPCs aren't necessary. The parser simply strips out non-alphabetic characters.)[paragraph break]";
 			now no-punc-flag is true;
 			let XX be the player's command;
 			replace the regular expression "-" in XX with " ";
@@ -757,6 +757,7 @@ chapter procedurality
 
 to decide whether the action is procedural: [aip]
 	if examining, yes;
+	if reading, yes;
 	if attacking, yes;
 	if saying yes, yes;
 	if saying no, yes;
@@ -2500,10 +2501,10 @@ pool gloop	"Fortunately, you don't need to do anything special to or with the po
 spa taps	"The spa taps can't do much. You're not a customer, anyway."
 state tats	"You don't need to do anything to or with the state tats, now that you're wearing them." [start traded art 4 1]
 E Divide	"There's no way to dispel the E-Divide, but Madam isn't the main enemy here, any more." [start Red Roses Order 5 1]
-Oh Who	"Oh Who is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting, but it's there." [start Seer Trees 2 2]
+Oh Who	"[fonen-of of Oh Who]." [start Seer Trees 2 2]
 x-it stix	"No way you're getting through the X-It Stix."
 KAOS Oak	"The [kaoscaps] is immune to poking. You'll need a powerful contraption indeed to dispel it!" [start Fun Nuf 3 2]
-Name ME Man	"NAME ME MAN is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting, but it's there." [start Yawn Way]
+Name ME Man	"[fonen-of of Name ME Man]." [start Yawn Way]
 x y pyx	"The x/y pyx is a map, nothing more, nothing less. You can only [if player does not have x y pyx]take and [end if]examine it."
 DIFF ID	"You don't have the skill to tinker with the DIFF-ID. You [if Red Roses Order is visited]already found[else]just need to find[end if] a way to identify yourself." [start Emo Dome 5 2]
 ivy villa	"[ivy-no]." [start uneven u 0 3]
@@ -2531,6 +2532,8 @@ saner arenas	"It's good the saner arenas are there, but you don't need to mess w
 Tru Hurt	"[rediv-instead of tru hurt]."
 Waster Fretsaw	"[rediv-instead of waster fretsaw]."
 [zzper]
+
+to say fonen-of of (pb - a phonebook): say "[pb] is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting and would weigh down an adventurer[if player has sto lots] with or without the Sto-Lots[end if], but it's there"
 
 to say ivy-no: say "If you weren't good enough for RAW LEVEL WAR, you're definitely not good enough for the Ivies. That's you the character, not you the game-player"
 
@@ -2591,9 +2594,9 @@ instead of doing something with KAOS Oak when flee elf is in Fun Nuf: say "The F
 The KAOS Oak is peripheral scenery in Fun Nuf. "[if flee elf is in Fun Nuf]It's forbiddingly wide[else]It is much too sturdy. You'll need a wild, powerful contraption to deal with it[end if]."
 
 after examining the KAOS Oak:
-	if kaos oak is not xed, say "One look and you find yourself mumbling 'Elp! A Maple!' Now that's (ch/k)aos!";
+	if kaos oak is not xed, say "One look and you find yourself mumbling 'Elp! A Maple!' when you know it obviously isn't. Now that's (ch/k)aos![if grammarg is false] [end if]";
 	if grammarg is false, say "The [kaoscaps] changes [one of][or]again [stopping]as you look at it.";
-	if kaos oak is not xed, say "(NOTE: you can turn off this nonsense by saying GRAMMAR G.)[paragraph break]";
+	if kaos oak is not xed, say "[line break][i][bracket]NOTE: you can turn off this nonsense by saying GRAMMAR G.[close bracket][roman type][paragraph break]";
 	continue the action;
 
 chapter grammarging
@@ -2714,7 +2717,7 @@ to decide which number is grid-side-items:
 
 chapter Pact Cap
 
-The Pact Cap is a wearable thing in Fun Nuf. "The pact cap the Flee Elf wants you to take (but not quite) sits here.". description is "Well, you can't see it, since it's on your head, and there are no mirrors. But thankfully, it's not too heavy. It didn't look THAT stupid back when the Flee Elf had you pack it. So that's something. You think[cap-beep-stuff]."
+The Pact Cap is a wearable thing in Fun Nuf. "The pact cap the Flee Elf wants you to take (but not quite) sits here.". description is "It doesn't feel that heavy on your head, and you can't see it, because there are no mirrors. It didn't look THAT stupid back when the Flee Elf had you pack it. So that's something. You think[cap-beep-stuff]."
 
 to say cap-beep-stuff:
 	if cap-pace is true, say ".[paragraph break]It's currently set as a pace cap";
@@ -2730,7 +2733,7 @@ check examining Pact Cap:
 	if cap-dum is true, say "You definitely feel more self-conscious about your pact cap now you saw it in the mirror rim, but what can you do?" instead;
 	if pact cap is in Fun Nuf, say "It's no stetson, and it's not as helpful as a ref-titfer, mate tam or math tam, but it is less messy than a tahini hat, and it looks serviceable enough." instead;
 
-check taking off the pact cap: say "No, you...uh, made a pact." instead;
+check taking off the pact cap: say "No, you...uh, made a pact. It's not that uncomfortable, anyway." instead;
 
 cap-pace is a truth state that varies. cap-pace is false.
 
@@ -2748,7 +2751,7 @@ understand "pack cap" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did." instead;
-	say "Yes, that's how to get the cap. You are ready to go! Hat, ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. 'Maybe later you'll find a way past the [kaos oak] to the Dirge Grid to defeat the Diktat Kid. But it's complicated.'[paragraph break]The Flee Elf mumbles something about the risk of a partner-entrap, so you'll have to go it alone. With a 'Rep us SUPER' and 'It's best I...' it  becomes the, err, FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
+	say "Yes, that's how to get the cap. You are ready to go! Hat, ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. 'Maybe later you'll find a way past the [kaos oak] to the Dirge Grid to defeat the Diktat Kid. But it's complicated.'[paragraph break]The Flee Elf mumbles something about the risk of a partner-entrap, so you'll have to go it alone. With a 'Rep us SUPER' and 'It's best I...' it  becomes the, err, FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]It fits okay on your head, and there's no need to take it off. Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
 	get-cap;
 	score-inc; [Dim Mid/pack cap]
 	verify-done rev-pack-cap rule;
@@ -2842,8 +2845,9 @@ definition: a guhthug (called th) is seenees:
 	no;
 
 after examining Set O Notes:
-	if Set O Notes is not xed, say "Well, that was much more useful than the Darer Ad, but maybe you'll get something even more detailed than the Set-O-Notes later.[if player is in Worn Row][paragraph break]";
-	if player is in Worn Row, say "[trigirt].";
+	if Set O Notes is not xed, say "[if epicer recipe is xed]Well, maybe you should've read this before the epicer recipe, but at least you got around to reading both[else]Well, that was much more useful than the Darer Ad, but maybe you'll get something even more detailed than the Set-O-Notes later[end if].";
+	if player is in Worn Row, say "[if Set O Notes is not xed][paragraph break][end if][trigirt].";
+	continue the action;
 
 to say trigirt:
 	if row-prog > 1:
@@ -3923,7 +3927,7 @@ chapter Name ME Man
 
 does the player mean doing something with Name ME Man when player is in Yawn Way: it is likely.
 
-Name ME Man is a peripheral phonebook in Yawn Way. description is "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers of Yelpley residents:[line break][name-num of 5 and Name ME Man][variable letter spacing][run paragraph on]". "[one of]There's also something called NAME ME, MAN, which--well, it's really just a glorified phone book. Yawn[or]NAME ME, MAN waits for your perusal, if you have a great need to procrastinate[if Name ME Man is xed] some more[end if][stopping].". booktable of Name ME Man is table of random palindrome lastfirst names.
+Name ME Man is a peripheral phonebook in Yawn Way. description is "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers of Yelpley residents:[line break][name-num of 5 and Name ME Man][variable letter spacing][run paragraph on]". "[one of]There's also something called NAME ME, MAN, which--well, it's really just a glorified phone book. Yawn[or]NAME ME MAN waits for your perusal, if you have a great need to procrastinate[if Name ME Man is xed] some more[end if][stopping].". booktable of Name ME Man is table of random palindrome lastfirst names.
 
 printed name of Name ME Man is "NAME ME, MAN".
 
@@ -4006,7 +4010,7 @@ carry out puffuping:
 
 book My Gym
 
-My Gym is south of Yawn Way. It is in Yelpley. "You can go back out north to Yawn Way. There's also a way west[if Worn Row is visited] to [Worn Row][end if]. Or you can LISTEN to soak up 'energetic' beats."
+My Gym is south of Yawn Way. It is in Yelpley. "[if Dave is moot]Without Dave around, there's not much to do here. [end if]You can go back out north to Yawn Way. There's also a way west[if Worn Row is visited] to [Worn Row][else if Dave is in My Gym], though you'll probably have to get rid of Dave to explore it[end if]. Or you can LISTEN to soak up 'energetic' beats."
 
 chapter Dave
 
