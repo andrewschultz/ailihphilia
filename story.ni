@@ -2533,7 +2533,7 @@ Tru Hurt	"[rediv-instead of tru hurt]."
 Waster Fretsaw	"[rediv-instead of waster fretsaw]."
 [zzper]
 
-to say fonen-of of (pb - a phonebook): say "[pb] is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting and would weigh down an adventurer[if player has sto lots] with or without the Sto-Lots[end if], but it's there"
+to say fonen-of of (pb - a phonebook): say "[pb] is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting or useful for adventuring, but it's there, and it's harmless"
 
 to say ivy-no: say "If you weren't good enough for RAW LEVEL WAR, you're definitely not good enough for the Ivies. That's you the character, not you the game-player"
 
@@ -2594,9 +2594,7 @@ instead of doing something with KAOS Oak when flee elf is in Fun Nuf: say "The F
 The KAOS Oak is peripheral scenery in Fun Nuf. "[if flee elf is in Fun Nuf]It's forbiddingly wide[else]It is much too sturdy. You'll need a wild, powerful contraption to deal with it[end if]."
 
 after examining the KAOS Oak:
-	if kaos oak is not xed, say "One look and you find yourself mumbling 'Elp! A Maple!' when you know it obviously isn't. Now that's (ch/k)aos![if grammarg is false] [end if]";
-	if grammarg is false, say "The [kaoscaps] changes [one of][or]again [stopping]as you look at it.";
-	if kaos oak is not xed, say "[line break][i][bracket]NOTE: you can turn off this nonsense by saying GRAMMAR G.[close bracket][roman type][paragraph break]";
+	if kaos oak is not xed, say "One look and you find yourself mumbling 'Elp! A Maple!' when you know it obviously isn't. Now that's (ch/k)aos! [if grammarg is false]The [kaoscaps] changes [one of][or]again [stopping]as you look at it.[else][line break][end if][line break][i][bracket]NOTE: you can turn off this nonsense by saying GRAMMAR G.[close bracket][roman type][paragraph break]";
 	continue the action;
 
 chapter grammarging
@@ -3789,7 +3787,7 @@ after looking in Yawn Way for the first time:
 
 after looking in Yawn Way:
 	if Diktat Kid is moot and day away ad is off-stage:
-		say "Oh! There's something new next to Name Me, Man. It's ... a day-away ad! Of businesses that will repopulate Yelpley with the Diktat Kid gone!";
+		say "Oh! There's something new [if Name ME Man is in Yawn Way]next to Name ME Man[else]where Name ME Man was[end if]. It's ... a day-away ad! Of businesses that will repopulate Yelpley with the Diktat Kid gone!";
 		move day away ad to Yawn Way;
 	continue the action;
 
@@ -3809,7 +3807,7 @@ chapter X/Y Pyx
 
 an X Y Pyx is a peripheral thing in Yawn Way. printed name of x y pyx is "X/Y Pyx". description of X Y Pyx is "[map-so-far]". "[one of]An X/Y pyx lies here. Closer inspection reveals that's just a fancy name for a map[or]The X/Y pyx still lies here[stopping]. It wouldn't be too cumbersome to take.". indefinite article of X Y Pyx is "an".
 
-understand "map" as pyx.
+understand "map" as pyx when Yawn Way is visited.
 
 does the player mean doing something with pyx when player has doodle or player has spa maps: it is unlikely.
 
@@ -3925,11 +3923,11 @@ Scrap Arcs	"SCRAP"	"ARCS "
 
 chapter Name ME Man
 
+instead of taking a phonebook, say "That would weigh you down too pointlessly[if player has sto lots], even with your Sto['] Lots[end if]."
+
 does the player mean doing something with Name ME Man when player is in Yawn Way: it is likely.
 
-Name ME Man is a peripheral phonebook in Yawn Way. description is "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers of Yelpley residents:[line break][name-num of 5 and Name ME Man][variable letter spacing][run paragraph on]". "[one of]There's also something called NAME ME, MAN, which--well, it's really just a glorified phone book. Yawn[or]NAME ME MAN waits for your perusal, if you have a great need to procrastinate[if Name ME Man is xed] some more[end if][stopping].". booktable of Name ME Man is table of random palindrome lastfirst names.
-
-printed name of Name ME Man is "NAME ME, MAN".
+Name ME Man is a peripheral phonebook in Yawn Way. description is "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers of Yelpley residents:[line break][name-num of 5 and Name ME Man][variable letter spacing][run paragraph on]". "[one of]There's also something called Name ME Man, which--well, it's really just a glorified phone book. Yawn[or]Name ME Man waits for your perusal, if you have a great need to procrastinate[if Name ME Man is xed] some more[end if][stopping].". booktable of Name ME Man is table of random palindrome lastfirst names.
 
 understand "nm/mm/nmm/phone/book" and "phone book" as Name ME Man.
 

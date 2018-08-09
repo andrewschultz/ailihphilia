@@ -2,7 +2,6 @@
 #
 # add all mistakes: adds a number [mis of #] to each line that doesn't have it
 #
-# todo: alphabetize mistakes by room?
 
 import i7
 import sys
@@ -157,7 +156,7 @@ with open(mis) as file:
             this_mist = my_mistake(line)
             if nol - last_num_of != 1:
                 if nol:
-                    print("WARNING bad delta from", last_mist, last_num_of, "to", this_mist, nol)
+                    print("WARNING bad " + ("start at" if last_num_of == 0 else "delta from {:s} {:d} to".format(last_mist, last_num_of)), this_mist, nol)
                 else:
                     print("WARNING blank number for", this_mist, nol)
                 errs += 1
@@ -178,6 +177,7 @@ if len(got.keys()) > 0:
             if skips == 11:
                 print("Skipping all remaining notifications...")
             elif skips <= 10:
+                if skips == 1: print("LIST OF SKIPPED NUMBERED CUES IN FILE E.G. MIS OF ###")
                 print(skips, "Skipped", i, "in mistake cues.")
     print("maximum value of", x, "in mistake cues")
 else:
