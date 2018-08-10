@@ -132,7 +132,7 @@ section debug compiler globals - not for release
 
 use MAX_VERBS of 470. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
-use MAX_VERBSPACE of 4400. [4096 = original max]
+use MAX_VERBSPACE of 4700. [4096 = original max]
 
 chapter room utilities
 
@@ -210,12 +210,36 @@ Include (-
                print "take inventory";
       'l//':   print "look";
       'x//':   print "examine";
-      'gt//':   print "go to";
-      'rei//':   print "put in the reifier";
-      'rot//':   print "put in the rotator";
-      'rev//':   print "put in the reviver";
-      'rad//':   print "scan with the radar";
       'z//':   print "wait";
+	  'about':  print "see info about the game";
+	  'aid': "ask for AID";
+	  'balm lab', 'balmlab':  print "change a lab";
+	  'boob', 'pap', 'poop': print "swear palindromically";
+	  'credits': print "see the credits";
+	  'dial aid': "dial AID";
+	  'deep speed', 'deepspeed':  print "deep-speed through the game";
+	  'dev ed', 'deved':  print "read about development with DEV ED/DEVED";
+	  'grammar g':  print "toggle Kaos Oak grammar";
+      'gt', 'go to', 'goto':   print "go to";
+	  'help':  print "ask for HELP";
+	  'love vol', 'lo vol', 'lovol', 'lovevol':  print "tweak the pact cap";
+	  'niwin':  print "list game warping actions with NIWIN";
+	  'map':  print "look at the MAP";
+	  'meta':  print "read META commands";
+	  'pace cap', 'pacy cap':  print "toggle the pack cap";
+	  'pack cap':  print "pick up the pack cap";
+	  'puffup':  print "puff up";
+	  'pullup':  print "pull up";
+      'rad':   print "scan with the radar";
+      'rei':   print "put in the reifier";
+      'rot':   print "put in the rotator";
+      'rev':   print "put in the reviver";
+	  'shuttuhs':  print "toggle shuttuhs/shutters";
+	  'stats':  print "get stats/the score";
+	  'v//', 'verbs', 'verb':  print "see basic verbs";
+      'wordrow', 'wornrow', 'workrow', 'Worn Row', 'work row', 'word row': print "twiddle Worn Row";
+      'yakokay', 'yak okay': print "tell the kayo yak OKAY";
+	  'xyzzy', 'plugh': print "Say a silly spell";
       default: rfalse;
     }
     rtrue;
@@ -277,45 +301,23 @@ kaos-num is a number that varies.
 
 volume parser simplification
 
-Understand the command "slice" as something new.
-Understand the command "prune" as something new.
-Understand the command "chop" as something new.
-Understand the command "embrace" as something new.
-Understand the command "buy" as something new.
-Understand the command "purchase" as something new.
-understand the command "buy" as something new.
-understand the command "light" as something new.
-understand the command "hop" as something new.
-understand the command "skip" as something new.
-understand the command "sip" as something new.
-understand the command "swallow" as something new.
-Understand the command "shine" as something new.
-Understand the command "polish" as something new.
-Understand the command "sweep" as something new.
-Understand the command "clean" as something new.
-Understand the command "dust" as something new.
-Understand the command "wipe" as something new.
-Understand the command "scrub" as something new.
-Understand the command "fight" as something new.
-Understand the command "torture" as something new.
-Understand the command "wreck" as something new.
-Understand the command "crack" as something new.
-Understand the command "murder" as something new.
-Understand the command "kill" as something new.
-Understand the command "punch" as something new.
-understand the command "thump" as something new.
-understand the command "sorry" as something new.
-
 chapter oldschooling
+
+[lanv.py should ignore this]
 
 understand the command "slice/prune/chop/kiss/hug/embrace/buy/purchase/buy/light/jump/hop/skip/sip/swallow/shine/polish/sweep/clean/dust/wipe/scrub/fight/torture/wreck/crack/murder/kill/punch/thump/sorry" as something new.
 
-[oldschooling ??]
+understand "slice" and "prune" and "chop" and "kiss" and "hug" and "embrace" and "buy" and "purchase" and "buy" and "light" and "jump" and "hop" and "skip" and "sip" and "swallow" and "shine" and "polish" and "sweep" and "clean" and "dust" and "wipe" and "scrub" and "fight" and "torture" and "wreck" and "crack" and "murder" and "kill" and "punch" and "thump" and "sorry" as oldschooling.
+
+understand "slice [text]" and "prune [text]" and "chop [text]" and "kiss [text]" and "hug [text]" and "embrace [text]" and "buy [text]" and "purchase [text]" and "buy [text]" and "light [text]" and "jump [text]" and "hop [text]" and "skip [text]" and "sip [text]" and "swallow [text]" and "shine [text]" and "polish [text]" and "sweep [text]" and "clean [text]" and "dust [text]" and "wipe [text]" and "scrub [text]" and "fight [text]" and "torture [text]" and "wreck [text]" and "crack [text]" and "murder [text]" and "kill [text]" and "punch [text]" and "thump [text]" and "sorry [text]" as os2ing.
 
 oldschooling is an action out of world.
+os2ing is an action applying to one topic.
+
+carry out os2ing: try oldschooling instead;
 
 carry out oldschooling:
-	say "That's an old school very and won't be necessary in this game. See V/VERB/VERBS for what is used/useful." instead;
+	say "That's an old school verb and won't be necessary in this game. See V/VERB/VERBS for what is used/useful." instead;
 
 chapter hug/kiss why not
 
@@ -758,6 +760,7 @@ chapter procedurality
 to decide whether the action is procedural: [aip]
 	if examining, yes;
 	if reading, yes;
+	if os2ing, yes;
 	if attacking, yes;
 	if saying yes, yes;
 	if saying no, yes;
@@ -3988,7 +3991,6 @@ chapter puffuping
 puffuping is an action applying to nothing.
 
 understand the command "puffup" as something new.
-understand the command "putup" as something new.
 understand the command "puff up" as something new.
 
 understand "puffup" as puffuping.
@@ -4478,6 +4480,7 @@ chapter workrowing
 workrowing is an action applying to nothing.
 
 understand the command "workrow" as something new.
+understand the command "work row" as something new.
 
 understand "work row" and "workrow" as workrowing when player is in Worn Row.
 
@@ -4524,6 +4527,7 @@ chapter wordrowing
 wordrowing is an action applying to nothing.
 
 understand the command "wordrow" as something new.
+understand the command "word row" as something new.
 
 understand "word row" and "wordrow" as wordrowing when player is in Worn Row.
 
@@ -4562,10 +4566,10 @@ chapter wornrowing
 wornrowing is an action applying to nothing.
 
 understand the command "wornrow" as something new.
-understand the command "Worn Row" as something new.
+understand the command "worn row" as something new.
 
 understand "wornrow" as wornrowing when player is in Worn Row.
-understand "Worn Row" as wornrowing when player is in Worn Row.
+understand "worn row" as wornrowing when player is in Worn Row.
 
 carry out wornrowing:
 	if psi wisp is moot, say "You already used the redness ender to get rid of the Psi Wisp. You don't want to risk things." instead;
