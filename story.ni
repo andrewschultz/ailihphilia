@@ -237,9 +237,9 @@ Include (-
 	  'shuttuhs':  print "toggle shuttuhs/shutters";
 	  'stats':  print "get stats/the score";
 	  'v//', 'verbs', 'verb':  print "see basic verbs";
-      'wordrow', 'wornrow', 'workrow', 'Worn Row', 'work row', 'word row': print "twiddle Worn Row";
+      'wordrow', 'wornrow', 'workrow', 'worn row', 'work row', 'word row': print "twiddle Worn Row";
       'yakokay', 'yak okay': print "tell the kayo yak OKAY";
-	  'xyzzy', 'plugh': print "Say a silly spell";
+	  'xyzzy', 'plugh': print "say a silly spell";
       default: rfalse;
     }
     rtrue;
@@ -601,8 +601,6 @@ when play begins:
 	say "[paragraph break](NOTE: if you want to know more about Ailihphilia and the commands used, type ABOUT.)[paragraph break]";
 	do nothing; [debug information below here. I've had problems putting it in and not deleting it, so I want to make things clear.]
 
-[??mike kim nora maron Marge Pegram lee mcmeel]
-
 volume parser errors operations and death
 
 check saving the game: say "Eh, cache...";
@@ -624,8 +622,11 @@ Rule for printing a parser error when the latest parser error is the i beg your 
 Rule for printing a parser error when the latest parser error is the can't see any such thing error:
 	if bees-seen is false and player is in Moo Room:
 		if the player's command matches the regular expression "bee(s)?", case insensitively:
-			say "You can't [one of]spot[or]look at[or]view[in random order] anything like that here.";
+			say "You can't (quite) [one of]spot[or]look at[or]view[in random order] anything like that here.";
 			the rule succeeds;
+	if player is in worn row and worn row is worky and the player's command matches the text "machine":
+		say "You need to refere to each machine by its proper name.";
+		the rule succeeds;
 	abide by the dir-error rules for location of player; [check this room and any adjacent room descriptions]
 	repeat with Q running through maindir:
 		abide by the dir-error rules for room Q of location of player;
@@ -1778,7 +1779,7 @@ tao boat	"You sense that the tao boat requires more than just wordy knowledge. I
 
 table of cantuse [xxcant]
 use1	babble
-redness ender	"The redness ender is good for destroying stuff. Probably evil stuff. You don't need to vaporize anything you're carrying." [?? Rob]
+redness ender	"The redness ender is good for destroying stuff. Probably evil stuff. You don't need to vaporize anything you're carrying[if rob is in worn row]. Or even Rob[end if]."
 Spur Ups	"The Spur Ups can't physically levitate anything, but they make you want to do something for yourself, by yourself, to yourself, for a pick up or something like it. You're not sure what."
 Psi Wisp	"The Psi Wisp is impervious to bribery or normal physical attacks. You need to outrun and outsmart it."
 Kayo Yak	"The Kayo Yak grunts. Looks like you can't, or don't want to, use anything on it."
@@ -1816,14 +1817,14 @@ liar grail	"Attacking the grail doesn't seem on, but perhaps putting something i
 table of use redir [xxur]
 use1	person-reject	thing-reject
 nat's tan	"You are greeted with a look of revulsion."	--
+nat's tan	"You are greeted with a look of revulsion."	--
 party trap	"The trap can't work on a person. It's too small, and people are too smart."	"You need to use the party trap on something animate."
 wash saw	"The saw wasn't meant for violence."	"The saw is best used to trim things there's an excess of, not just to cut stuff down."
 el doodle	"They don't seem like the sort that can decipher things."	--
 pity tip	"You don't want to give it away! You [if navy van is xed]should maybe use it, yourself. Now where was Seedy Dee's?[else]have a feeling you can find Seedy Dee's, if you look hard enough.[end if]"	--
-ME gem	"They look a bit frightened by the power of the ME gem. It must only work on, or for, really bad people or things."
+poo coop	"Eww. Gross. Nobody deserves that."	"[if gnu dung is moot]No, you need to find the right thing to empty the poo coop into[else]The poo coop is only good for vacuuming up a certain kind of item[end if]."
+ME gem	"They look a bit frightened by the power of the ME gem. It must only work on, or for, really bad people or things."	--
 [zzur]
-
-[?? poo coop on, well, everything]
 
 section table of specific use rejects
 
@@ -1924,21 +1925,21 @@ section table of goodacts
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
 table of goodacts [xxuse] [xxgood]
 use1	use2 (an object)	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	room-to-go	done	babble
---	--	--	rev-pack-cap rule	--	true	--	--	Dim Mid	Fun Nuf	false
---	--	--	rev-evade-Dave rule	--	true	--	--	Yelpley	My Gym	false
---	--	--	rev-bore-Rob rule	--	true	--	--	Yelpley	Worn Row	false
---	--	--	rev-word-row rule	--	true	--	--	Yelpley	Worn Row	false
+--	--	--	rev-pack-cap rule	--	true	--	--	Dim Mid	Fun Nuf	false	--
+--	--	--	rev-evade-Dave rule	--	true	--	--	Yelpley	My Gym	false	--
+--	--	--	rev-bore-Rob rule	--	true	--	--	Yelpley	Worn Row	false	--
+--	--	--	rev-word-row rule	--	true	--	--	Yelpley	Worn Row	false	--
 TI	Door Frood	--	--	tube-to-ave rule	true	true	true	Yelpley	Evaded Ave	false	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. Some people are stupid. Good thing I obviously have too much self-awareness to be one of them. Funny stuff! A cut above To Laff a Lot! I'd try to explain it to you, but either you don't need it explained to you, or you don't deserve it explained to you.' With uncontrollable laughter spasms, the Door Frood skulks away.[paragraph break]Behind the Door Frood is a tube ... but ..." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
 pity tip	eye	snack cans	--	mob-to-alley rule	true	true	false	Yelpley	Yell Alley	false	"The eye scans the pity tip, and the navy van beeps and boops and spits out some snack cans, which roll on the ground. You take them. Then you hear a loud whisper: 'Dee? Weed?' The navy van then activates its VANS-NAV  and whooshes off to leave for good. And there's something behind it! Apparently, a whole bomb mob! That's who was making all the noise!" [af:TEND NET/WORK ROW]
---	--	--	rev-tend-net rule	--	true	--	--	Yelpley	Trapeze Part	false
---	--	--	rev-work-row rule	--	true	--	--	Yelpley	Worn Row	false
+--	--	--	rev-tend-net rule	--	true	--	--	Yelpley	Trapeze Part	false	--
+--	--	--	rev-work-row rule	--	true	--	--	Yelpley	Worn Row	false	--
 trap art	reifier	party trap	--	--	true	true	false	Yelpley	Worn Row	false	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. You pull it out of the reifier and inspect it. It could probably capture more than one thing."
 bunk nub	reviver	stock cots	--	--	true	true	false	Yelpley	Worn Row	false	"After some crunching and slurping, the bunk nub is changed to a bunch of much smaller, but more comfortable looking, stock cots. You take them."
 party trap	stark rats	gift fig	--	oh-who-to rule	true	true	true	Grebeberg	Seer Trees	false	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit.[paragraph break]THUMP! They left you a present--good thing you were wearing that pact cap, because a book fell on your head. One glance reveals it to be [b]Oh, Who[r]--a phone book for Grebeberg, like [b]Name ME Man[r] for Yelpley.[paragraph break]You also find a gift fig, which you pick up."
 EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	Grebeberg	Cold Loc	false	"King Nik reads it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris and Crisp Sir C told me I needed to one day from those other books: ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! Maybe I'll never be a Vic IV, Ivana VI, Ivette VI, Ivy VI, Vin IV or even Xiara IX, but I can lead against the Rim Emir and his emir-prime emir crime and emir grime! The Mrifk Firm, too! My rule will not be an EGAD age!' He hands you some Spur Ups in gratitude. 'These apparently give some people a nice boost. Now...back to my vidette div. Gotta RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
 stock cots	sleep eels	--	--	--	true	true	true	Grebeberg	Ooze Zoo	false	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
---	--	--	rev-puff-up rule	--	true	--	--	Yelpley	Yawn Way	false
---	--	--	rev-pull-up rule	--	true	--	--	Yelpley	Emo Dome	false
+--	--	--	rev-puff-up rule	--	true	--	--	Yelpley	Yawn Way	false	--
+--	--	--	rev-pull-up rule	--	true	--	--	Yelpley	Emo Dome	false	--
 wash saw	past sap	--	sap-not-cut-yet rule	sap-loose rule	true	false	false	Grebeberg	Cold Loc	false	"You hack away at the past sap with the wash saw, first squirting some loosening/thawing liquid. It's tricky, but the saw holds out, and with some perseverance, you're able to twist the sap off the rife fir."
 puce cup	past sap	--	check-sap-cup rule	sap-to-cup rule	true	false	false	Grebeberg	Cold Loc	false	"You pour some sap into the cup."
 puce cup	liar grail	--	sap-in-cup rule	empty-grail rule	true	false	true	Yelpley	Swept Pews	false	"You pour the purist sirup into the liar grail. As the sirup bubbles, the Wordy Drow slips away from it and ... yes! It breaks free! 'Wend new! Wend new!' it calls to you.[paragraph break]Thoughts flow into your head from the liar grail, but the purist sirup has mutated its complex manipulations into much simple cries of protestation: it just doesn't want you to go there! You shrug, no longer mystified by its sophistry, and the grail cracks and rolls away.[paragraph break]The passage south looks clear. You snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL! You look around, worried a nun will say 'Tut!' But all is still."
@@ -1949,13 +1950,13 @@ demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	Grebeberg	Flu Gulf	f
 cash sac	cross orc	--	--	--	true	true	true	Yelpley	Toll Lot	false	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
 YOB ATTABOY	Sniffins	Dirt Rid	--	toons-to-den rule	true	true	false	Yelpley	Deft Fed	false	"Sniffins accepts your gift, with sniffs slowly changing from sadness to something more snooty. Your thanks for helping Sniffins be too good for you is a Dirt Rid. Sniffins shoos you back out to the Toll Lot: 'No, yob! Yon!' There is remodeling to be done! Sniffins will outdo Rentner, whoever that is! From the south, you hear frantic cries of 'Repaper! Repaper! Repaper!'"
 Elan Ale	Sniffins	Gorge Grog	--	--	true	true	false	Yelpley	Deft Fed	false	"Sniffins looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.' Hey, you're not one to say 'stuff free stuff.'" [af:stand nat's]
---	--	--	rev-stand-nats rule	--	true	--	--	Yelpley	Deft Fed	false
+--	--	--	rev-stand-nats rule	--	true	--	--	Yelpley	Deft Fed	false	--
 Dirt Rid	reviver	Cave Vac	--	--	true	true	false	Yelpley	Worn Row	false	"You watch as the Dirt Rid swirls and becomes shinier and much more powerful--and lighter, too, when you retrieve it. A Cave Vac! It will be capable of cleaning...well, somewhere."
 Cave Vac	cassettes sac	radar	--	bump-pod rule	true	true	true	Yelpley	Dopy Pod	false	"The Cave Vac has the power to clean up the cassettes sac (and even clean up part of the floor to reveal 'DA PAD,') but it chokes and sputters at the end of the effort.[paragraph break]And while a lot of the cassettes are beyond repair, there's something at the very bottom.[paragraph break]Wow! Radar![paragraph break]You hear noises from the pod, as a hidden robot appears and whisks the garbage away. That's pretty slick! Looking back, the pod doesn't seem so dopy any more, between how the Demo Med already helped and how you're sure the radar will.[paragraph break](NOTE: You can RAD something to use the radar on it.)"
 radar	crag arc	UFO tofu	orc-gone rule	radar-crag rule	true	false	false	Yelpley	Toll Lot	false	"Beeeep... beeeep..... the radar has found something! Two small saucer arises from a hidden part of the crag. So Full UFOs! And splat! something weird and warm drops from them and lands on the radar, which fizzles a bit from the impact and wetness. It hardens quickly and weirdly into a cubic shape. What could it be? You think a minute, rejecting a profane acronym to shout at the departed UFO. The stuff must be UFO tofu. Fortunately, your Sto-Lots has a place where the UFO tofu can be kept dry." [af:deny Ned]
---	--	--	rev-deny-Ned rule	--	true	--	--	Yelpley	Gross Org	false
+--	--	--	rev-deny-Ned rule	--	true	--	--	Yelpley	Gross Org	false	--
 Ye Key	etage gate	gate tag	Ned-gone rule	tag-later-wipe rule	true	true	true	Yelpley	Gross Org	false	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'A hall! Aha! Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paragraph break]A gate tag falls off. You pick it up." [af:Worn Row]
---	--	--	rev-worn-row rule	--	true	--	--	Yelpley	Worn Row	false
+--	--	--	rev-worn-row rule	--	true	--	--	Yelpley	Worn Row	false	--
 stinky knits	rotator	brag garb	--	wear-garb rule	true	true	false	Yelpley	Worn Row	false	"The stinky knits fit into the rotator without stuffing them too much. After some spinning (and a smell of detergent--where'd that come from?) you look in again and--they're something much shinier now. Brag garb! You can't resist wearing your flashy new duds, though once you put them on, they do smell a bit ... intense. Looking at a hidden label, you note it has been liberally sloshed with Turbo-Brut."
 Gorge Grog	Butene Tub	resale laser	--	make-sag rule	true	true	true	Yelpley	Pro Corp	false	"The Gorge Grog starts fizzing as it pours down the tub, and nothing seems to happen, until you hear a FOOMP below and the tub starts shaking. There must've been an open spark below the tub, perhaps a noir ion. You find it best to hide, and that's the right thing to do, because the butene tub explodes into pieces. Under it is a resale laser! You figure the really good stuff is hidden way back for security reasons, and this is probably just an emergency gadget, but it's got to be good for something."
 gold log	rotator	dork rod	--	--	true	true	false	Yelpley	Worn Row	false	"The gold log begins spinning until it cracks open--leaving a dork rod! You wonder briefly if you deserve to take it, or if there's something wrong with you if you deserve to, but once you hold it, memories of past silliness come back, and they're easier to deal with, now. You have some perspective. You even feel sorry for people who pointed out you were a dork. They'd be barred from a cool adventure like this. So you keep the dork rod."
@@ -1973,18 +1974,18 @@ tent net	Code Doc	--	--	--	true	true	false	Grebeberg	Uneven U	false	"Together, y
 spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	Grebeberg	Uneven U	false	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my for-prof math tam for this one. One second, let's see--Aha! Oho...'[paragraph break]You each split an Ed-Ade to make sure the lesson is taught and remembered well. Despite a minor pupil slip-up, the Code Doc is never edu-rude. It soon makes complete sense to you. You don't know how to say thanks. Everything seems too long-winded or said before, until ... 'Def ed!'"
 spa maps	go-by bog	sage gas	maps-readable rule	gas-think-wipe rule	true	true	false	Grebeberg	Apse Spa	false	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	Grebeberg	Moo Room	false	"You stick some strands of yahoo hay into the damaged end of the dork rod. It's now a moor broom!"
---	--	--	rev-pace-cap rule	--	true	--	--	Dim Mid	--	false
+--	--	--	rev-pace-cap rule	--	true	--	--	Dim Mid	--	false	--
 troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	Grebeberg	--	false	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the stinky knits, but still quite distinctive. The ort must've been covered by the dirt for a long time, because it disintegrates as its essence is leaked onto the brag garb." [b4:pace cap] [af:yak okay]
---	--	--	rev-yak-okay rule	--	true	--	--	Grebeberg	Lair Trial	false
+--	--	--	rev-yak-okay rule	--	true	--	--	Grebeberg	Lair Trial	false	--
 sage gas	tame mat	guru rug	--	--	true	true	true	Grebeberg	Motto Bottom	false	"'Mix a maxim...' you mutter to yourself. The sage gas bubbles out under the tame mat, and the message changes. To something wiser. But perhaps a bit stuffy: a guru rug!"
 sharp rahs	guru rug	stir writs	--	brag-garb-bye rule	true	true	true	Grebeberg	Motto Bottom	false	"The sharp rahs meld into the guru rug, which feels less weighted down by philosophy and floats away. Under it there are stir-writs, which seem oversimplified at first, but on re-reading, they strike just the right balance between emotional and intellectual stimulation.[paragraph break]After reading them, you feel distinctly silly in your brag garb, which seems so gaudy now. Instinctively, you take the garb off and commit it to the Be Web. As the brag garb floats away, you know you have done the right thing, but you need to do more."
---	--	--	rev-nail-Ian rule	--	true	--	--	Grebeberg	Mont Nom	false
---	--	--	rev-first-food-combo rule	--	true	--	--	Grebeberg	Mont Nom	false
---	--	--	rev-second-food-combo rule	--	true	--	--	Grebeberg	Fun Nuf	false
+--	--	--	rev-nail-Ian rule	--	true	--	--	Grebeberg	Mont Nom	false	--
+--	--	--	rev-first-food-combo rule	--	true	--	--	Grebeberg	Mont Nom	false	--
+--	--	--	rev-second-food-combo rule	--	true	--	--	Grebeberg	Fun Nuf	false	--
 Moor Broom	Tru Yurt	Exam Axe	--	bump-ivy rule	true	true	false	Grebeberg	Yack Cay	false	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! Then, back to the Tru-Yurt for the Wonk. They've done enough for you." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
 wash saw	porch crop	balsa slab	--	--	true	true	false	Grebeberg	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods.[paragraph break]'Yes! Yes! This works! Uneven U needs a name change ... to UNEVEN U! How can I thank you?'[paragraph break]A balsa slab is lying under where the porch crop was. The Code Doc offers it to you. Now, you ... do own wood!"
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	Dumb Mud	false	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
---	--	--	rev-get-bro-orb rule	--	false	--	--	--	Le Babel	--
+--	--	--	rev-get-bro-orb rule	--	false	--	--	--	Le Babel	--	--
 DNA band	reifier	DNA hand	--	--	true	true	false	Yelpley	Worn Row	false	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand! It doesn't have any slime or blood leaking, and when you take it, it doesn't twitch too much."
 roto motor	DNA hand	Mr Arm	--	--	true	true	true	Yelpley	Worn Row	false	"Some of the stuffing inside the hand has to pop out to make space for the roto motor to fit in. There's enough to make a whole arm! The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on the arm (MR. ARM) and hand: BANG NAB. The arm will probably give the hand a bit more reach."
 Eroded Ore	reviver	Ore Zero	--	--	true	true	false	Yelpley	Worn Row	false	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
@@ -1996,9 +1997,9 @@ Bro Orb	Mirror Rim	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	Red
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	Red Roses Order	false	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Madam."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	Worn Row	false	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
 murdered rum	yard ray	--	--	ray-beepy-now rule	true	true	false	Dim Mid	--	false	"The yard ray gleams with energy. It seems like it could do some damage now."
---	--	--	rev-emit-noontime rule	--	true	--	--	Dim Mid	--	false
+--	--	--	rev-emit-noontime rule	--	true	--	--	Dim Mid	--	false	--
 Yard Ray	test set	--	ready-to-test rule	test-set-zapped rule	true	false	true	Dim Mid	Worn Row	false	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
---	--	--	rev-create-tron rule	--	true	--	--	Dim Mid	Fun Nuf	false
+--	--	--	rev-create-tron rule	--	true	--	--	Dim Mid	Fun Nuf	false	--
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	Dirge Grid	false	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, perhaps to create the Red Ronin Order." [b4:use TNT on ore zero]
 taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	Dim Mid	Dirge Grid	false	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev senses the Taboo Bat's ancient untapped power. It's not particularly violent or lethal, but it is just perfect to scare an orthodoxy as warped as the Verses Rev's, who mutters 'Rev, off, over' and stumbles away! Perhaps to the safety of ... a rev reserver."
 Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	Dirge Grid	false	"'Havoc, OVAH!' you should as you aim and fire the yard ray. A direct hit! The redivider begins to fizzle.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who screams 'Deleveled!' several times before breaking down into tears. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid grows redder ... redder ... and bolts! With the Kid gone, saner arenas pop up all around. Revel, clever! Revel, ever![paragraph break]You don't notice the redivider exploding. When you wake up, it's much later. And you note something beside you: some X-ITE TIX fell out of the redivider! Wow! Yo, joy! Wow!"
@@ -2474,7 +2475,7 @@ instead of doing something when second noun is a semiperipheral thing:
 
 instead of doing something with a semiperipheral thing:
 	if action is pro-and-use, continue the action;
-	if current action is stacking and noun is senile felines, continue the action; [?? horrid hack for LLP here and below]
+	if current action is stacking and noun is senile felines, continue the action; [add other exceptions here. This may be a horrid hack but it's the best I can do.]
 	if current action is mussing and noun is opossum, continue the action;
 	blanket-reject noun instead;
 
@@ -2562,8 +2563,6 @@ gate tag	false	"You [if Ned is moot]got[else]need to find a way to get[end if] r
 sage gas	false	"You [if maps-explained is false]need to[else]now can[end if] make sense of the spa maps to get by Go-By Bog in the Spa Apse."
 test set	false	"You [if emitted is false]need to find[else]now know[end if] how to work the yard ray."
 [zzlat]
-
-[?? take hash of capitalizations]
 
 to get-reject (th - a thing):
 	repeat through table of lateruses:
@@ -3704,8 +3703,11 @@ check taking kayak: say "You got strong in My Gym, but not that strong!" instead
 
 instead of entering kayak: say "[if elope pole is moot]Your elope pole is gone. There's no way to steer it[else]You need to find a way to steer it. Maybe there's no paddle, but something long and straight[end if]."
 
-instead of doing something with kayak when elope pole is moot: [??use X on kayak]
+instead of doing something with kayak when elope pole is moot:
 	if action is procedural, continue the action;
+	say "The kayak has served its purpose."
+
+instead of useoning with kayak when elope pole is moot:
 	say "The kayak has served its purpose."
 
 chapter tao boat
@@ -4064,8 +4066,6 @@ book Worn Row
 
 Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky]Three machines are here[else if Worn Row is wordy]A tract cart is here, [tract-status][else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if][if redness ender is in Worn Row]. There's also a redness ender here, but it looks dangerous to get too close to[end if]. The only way out is back east[if bad dab is in Worn Row]. A bad dab is splashed on the floor, too--a simple message[end if]."
 
-[?? tract cart is replaced ...]
-
 printed name of Worn Row is "[if Worn Row is wordy]Word[else if Worn Row is worky]Work[else]Worn[end if] Row"
 
 Worn Row can be worny, wordy or worky. Worn Row is worny.
@@ -4156,7 +4156,7 @@ a workable is a kind of thing. a workable has a number called useleft. useleft o
 
 understand "machine" as a workable.
 
-[?? if the player's command includes "machine" and the player is in work row, say "You need to refer to it individually."]
+does the player mean doing something with a workedout workable: it is very unlikely.
 
 check examining a workable:
 	if useleft of item described is 0, say "The [noun] is broken now, but you got good use out of it." instead;
@@ -4674,9 +4674,6 @@ understand "traded" and "traded art" as Art Xtra when el doodle is moot.
 
 art-free-warn is a truth state that varies.
 
-[??traded art]
-[??Revolt Lover likes the look of your pact cap]
-
 chapter trap art
 
 some trap art is a singular-named thing in Art Xtra. "Some trap art sits here. It's free. You might as well take it.". description is "The trap art depicts a bunch of nasty, dirty animals being trapped--it's not a real trap, but maybe it could become one.". the indefinite article of trap art is "some".
@@ -4722,7 +4719,7 @@ carry out traping:
 
 chapter Revolt Lover
 
-the Revolt Lover is a neuter person in Art Xtra. "[one of]'Hi! I'm the Revolt Lover. Business is slow here, but I still have a few freebies. If you're able to use them, I'd be willing to trade for more.'[or]The Revolt Lover [one of]smiles[or]nods[or]winks[at random] at you.[stopping]". description is "Artsy looking, but not pretentiously hipster-ish.".
+the Revolt Lover is a neuter person in Art Xtra. "[one of]'Hi! I'm the Revolt Lover. Business is slow here, but I still have a few freebies, especially for someone with a cool cap like yours. If you're able to use them, I'd be willing to trade for more.'[or]The Revolt Lover [one of]smiles[or]nods[or]winks[at random] at you.[stopping]". description is "Artsy looking, but not pretentiously hipster-ish.".
 
 chapter state tats
 

@@ -1,0 +1,165 @@
+## reg-ai-asfaras.txt
+## GENERATOR FILE: rbr-ai-thru.txt
+
+## checking "As far as" mistakes
+** game: /home/andrew/prt/debug-ailihphilia.ulx
+** interpreter: /home/andrew/prt/glulxe -q
+
+>about xtratxt
+I only understood you as far as wanting to see info about the game.
+
+>aid xtratxt
+DOESN'T APPEAR TO BE IN LANGUAGEVERB.
+
+>balm lab xtratxt
+I only understood you as far as wanting to change a lab.
+
+>balmlab xtratxt
+I only understood you as far as wanting to change a lab.
+
+>boob xtratxt
+I only understood you as far as wanting to swear palindromically.
+
+>credits xtratxt
+I only understood you as far as wanting to see the credits.
+
+>deep speed xtratxt
+I only understood you as far as wanting to deep-speed through the game.
+
+>deepspeed xtratxt
+I only understood you as far as wanting to deep-speed through the game.
+
+>dev ed xtratxt
+I only understood you as far as wanting to read about development with DEV ED/DEVED.
+
+>deved xtratxt
+I only understood you as far as wanting to read about development with DEV ED/DEVED.
+
+>dial aid xtratxt
+DOESN'T APPEAR TO BE IN LANGUAGEVERB.
+
+>go to xtratxt
+I only understood you as far as wanting to go to.
+
+>goto xtratxt
+I only understood you as far as wanting to go to.
+
+>grammar g xtratxt
+I only understood you as far as wanting to toggle Kaos Oak grammar.
+
+>gt xtratxt
+I only understood you as far as wanting to go to.
+
+>help xtratxt
+I only understood you as far as wanting to ask for HELP.
+
+>lo vol xtratxt
+I only understood you as far as wanting to tweak the pact cap.
+
+>love vol xtratxt
+I only understood you as far as wanting to tweak the pact cap.
+
+>lovevol xtratxt
+I only understood you as far as wanting to tweak the pact cap.
+
+>lovol xtratxt
+I only understood you as far as wanting to tweak the pact cap.
+
+>map xtratxt
+I only understood you as far as wanting to look at the MAP.
+
+>meta xtratxt
+I only understood you as far as wanting to read META commands.
+
+>niwin xtratxt
+I only understood you as far as wanting to list game warping actions with NIWIN.
+
+>pace cap xtratxt
+I only understood you as far as wanting to toggle the pack cap.
+
+>pack cap xtratxt
+I only understood you as far as wanting to pick up the pack cap.
+
+>pacy cap xtratxt
+I only understood you as far as wanting to toggle the pack cap.
+
+>pap xtratxt
+I only understood you as far as wanting to swear palindromically.
+
+>peep xtratxt
+DOESN'T APPEAR TO BE IN LANGUAGEVERB.
+
+>plugh xtratxt
+I only understood you as far as wanting to Say a silly spell.
+
+>poop xtratxt
+I only understood you as far as wanting to swear palindromically.
+
+>puffup xtratxt
+I only understood you as far as wanting to puff up.
+
+>pullup xtratxt
+I only understood you as far as wanting to pull up.
+
+>rad xtratxt
+I only understood you as far as wanting to scan with the radar.
+
+>refer xtratxt
+DOESN'T APPEAR TO BE IN LANGUAGEVERB.
+
+>rei xtratxt
+I only understood you as far as wanting to put in the reifier.
+
+>rev xtratxt
+I only understood you as far as wanting to put in the reviver.
+
+>rot xtratxt
+I only understood you as far as wanting to put in the rotator.
+
+>see bees xtratxt
+DOESN'T APPEAR TO BE IN LANGUAGEVERB.
+
+>shuttuhs xtratxt
+I only understood you as far as wanting to toggle shuttuhs/shutters.
+
+>slam mammals xtratxt
+DOESN'T APPEAR TO BE IN LANGUAGEVERB.
+
+>stats xtratxt
+I only understood you as far as wanting to get stats/the score.
+
+>v xtratxt
+I only understood you as far as wanting to see basic verbs.
+
+>verb xtratxt
+I only understood you as far as wanting to see basic verbs.
+
+>verbs xtratxt
+I only understood you as far as wanting to see basic verbs.
+
+>word row xtratxt
+I only understood you as far as wanting to twiddle Worn Row.
+
+>wordrow xtratxt
+I only understood you as far as wanting to twiddle Worn Row.
+
+>work row xtratxt
+I only understood you as far as wanting to twiddle Worn Row.
+
+>workrow xtratxt
+I only understood you as far as wanting to twiddle Worn Row.
+
+>worn row xtratxt
+I only understood you as far as wanting to twiddle Worn Row.
+
+>wornrow xtratxt
+I only understood you as far as wanting to twiddle Worn Row.
+
+>xyzzy xtratxt
+I only understood you as far as wanting to say a silly spell.
+
+>yak okay xtratxt
+I only understood you as far as wanting to tell the kayo yak OKAY.
+
+>yakokay xtratxt
+I only understood you as far as wanting to tell the kayo yak OKAY.
