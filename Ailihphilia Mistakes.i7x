@@ -70,7 +70,7 @@ understand "purr up" as a mistake ("The Spur Ups make you feel you can be anyone
 
 understand "puss up" as a mistake ("No cat appears.[mis of 32]") when player has spur ups.
 
-understand "put up" as a mistake ("The Spur Ups are for more than just getting by.[mis of 33]") when player has spur ups.
+understand "put up" and "put it up" as a mistake ("[if spur ups are moot]The Spur Ups taught you how to put up with nonsense, and you reflect on their lesson[else]The Spur Ups are for more than just getting by[else if pact cap is in fun nuf]You don't HAVE to put up. You could be a spoilsport and leave to the south[else]Yes, with the Flee Elf gone, you sort of have to[end if].[mis of 33]").
 
 understand "putt up" as a mistake ("The Spur Ups have no suitable flat edge with which to hit a golf ball.[mis of 34]") when player has spur ups.
 
@@ -120,7 +120,7 @@ understand "par crap" as a mistake ("Making fun of others['] clothing isn't as e
 
 understand "par trap" as a mistake ("You aren't on a golf course.[mis of 53]") when Verses Rev is quicknear.
 
-understand "verb rev" as a mistake ("Oh, the Verses Rev is active enough.[mis of 54]") when Verses Rev is quicknear.
+understand "verb rev" as a mistake ("[if verses rev is quicknear]Oh, the Verses Rev is active enough[else]The commands from VERBS flash through your head, too quick to read[end if].[mis of 54]").
 
 understand "versus rev" as a mistake ("The Verses Rev is already against you.[mis of 55]") when Verses Rev is quicknear.
 
@@ -158,6 +158,12 @@ understand "drawn ward" and "draws ward" as a mistake ("The room remains text-ba
 
 chapter Dumb Mud
 
+to say dung-w-coop: say "[if gnu dung is not in Dumb Mud] with the poo coop[end if]"
+
+to say rut-check: say "It's too large to redirect[if poo coop is moot], and besides, you already have a way across"
+
+to say self-help: say "You whisper some world-appropriate self-help"
+
 understand "dump mud" as a mistake ("It's already kind of dumped here[if poo coop is not moot]. Maybe you could dump the mud into the rut for passage south, but it might take too long, and you don't have a shovel. You'd need something else[end if].[mis of 74]") when player is in Dumb Mud.
 
 understand "gnu bung" as a mistake ("There's no way to put the toothpaste back in the tube, as it were.[mis of 75]") when y-poopy.
@@ -174,9 +180,9 @@ understand "sun gnus" as a mistake ("You try to shine a light on possible culpri
 
 understand "turd rut" as a mistake ("Hmm! Maybe you could fill the rut up with ... something ... to cross it.[mis of 80]") when player is in Dumb Mud and poo coop is not moot.
 
-understand "turn rut" as a mistake ("It's too large to redirect[if poo coop is moot], and besides, you already have a way across[end if].[mis of 81]") when player is in Dumb Mud.
+understand "turn rut" as a mistake ("[if player is in dumb mud][rut-check][else][self-help][end if].[mis of 81]").
 
-understand "turnon rut" and "turn on rut" as a mistake ("No innuendo here! The gnu dung[if gnu dung is not in Dumb Mud] with the poo coop[end if] is about as close as you'll get to R-rated.[mis of 82]") when player is in Dumb Mud.
+understand "turnon rut" and "turn on rut" as a mistake ("[if player is in dumb mud]No innuendo here! The gnu dung[dung-w-coop] is about as close as you'll get to R-rated[else][self-help][end if].[mis of 82]") when player is in Dumb Mud.
 
 understand "un gnu" as a mistake ("Eliminating the perpetrator won't eliminate what they've dung. Uh, dun. Er, done.[mis of 83]") when y-poopy.
 
@@ -232,7 +238,7 @@ understand "corn roc" as a mistake ("The scorn rocs remain plural and inorganic.
 
 understand "rocs cor" as a mistake ("Your flattery doesn't move the rocs.[mis of 103]") when scorn rocs are quicknear.
 
-understand "score rocs" as a mistake ("You don't have any witty way to score off them, or steal them, or whatever, and you don't need to.[mis of 104]") when scorn rocs are quicknear.
+understand "score rocs" as a mistake ("[if flu gulf is not visited]You don't need allies like that. But, spoiler: there are enemies like that[else if scorn rocs are not moot]0/10 would not pet. They're bad rocs, Brent ... but you'll get a point for getting rid of them[else]You already scored ON them[end if].[mis of 104]"). [if you didn't see the reference, it's WeRateDogs on twitter and "They're good dogs Brent"]
 
 chapter Frush Surf
 
@@ -507,7 +513,7 @@ section golf log/dork rod
 
 understand "dorm rod" and "dorm" as a mistake ("You reveal no frat. Arf![mis of 196]") when dork rod is quicknear.
 
-understand "go log" as a mistake ("It's not particularly magical or motivational. But at least it can't become a go-loco log.[mis of 197]") when gold log is quicknear.
+understand "go log" as a mistake ("[unless gold log is quicknear]You contemplate writing your memoirs after leaving Yelpley and Grebeberg[else]It's not particularly magical or motivational. But at least it can't become a go-loco log[end if].[mis of 197]").
 
 understand "golf log" as a mistake ("There is no Par Trap or Tee Meet to navigate here, so you don't need to make a golf log.[mis of 198]") when gold log is quicknear.
 
