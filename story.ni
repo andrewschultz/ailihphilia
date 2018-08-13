@@ -2005,7 +2005,7 @@ Yard Ray	test set	--	ready-to-test rule	test-set-zapped rule	true	false	true	Dim
 --	--	--	rev-create-tron rule	--	true	--	--	Dim Mid	Fun Nuf	false	--
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	Dirge Grid	false	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, perhaps to create the Red Ronin Order." [b4:use TNT on ore zero]
 taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	Dim Mid	Dirge Grid	false	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev senses the Taboo Bat's ancient untapped power. It's not particularly violent or lethal, but it is just perfect to scare an orthodoxy as warped as the Verses Rev's, who mutters 'Rev, off, over' and stumbles away! Perhaps to the safety of ... a rev reserver."
-Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	Dirge Grid	false	"'Havoc, OVAH!' you should as you aim and fire the yard ray. A direct hit! The redivider begins to fizzle.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who screams 'Deleveled!' several times before breaking down into tears. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid grows redder ... redder ... and bolts! With the Kid gone, saner arenas pop up all around. Revel, clever! Revel, ever![paragraph break]You don't notice the redivider exploding. When you wake up, it's much later. And you note something beside you: some X-ITE TIX fell out of the redivider! Wow! Yo, joy! Wow!"
+Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	Dirge Grid	false	"'Havoc, OVAH!' you should as you aim and fire the yard ray. A direct hit! The redivider begins to fizzle.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who screams 'Deleveled!' several times before breaking down into tears. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid grows redder ... redder ... and bolts! With the Kid gone, the Dirge Grid grows less dark, the no-go gon winks out, and saner arenas are revealed all around. Revel, clever! Revel, ever![paragraph break]You don't notice the redivider exploding. When you wake up, it's much later. And you note something beside you: some X-ITE TIX fell out of the redivider! Wow! Yo, joy! Wow!"
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	Fun Nuf	false	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse] [zzgood]
 
@@ -2860,6 +2860,10 @@ to say trigirt:
 	else:
 		say "You've made [location of player] Row, but the 'tri' makes you think there might be something else"
 
+after looking in Fun Nuf when player was in Dirge Grid:
+	say "You're filled with a desire for new adventure, now you beat the Diktat Kid.";
+	continue the action;
+
 chapter tile lit
 
 the tile lit is scenery in Fun Nuf. "It's a rough compass, with GREBEBERG (LA RURAL) west by it, YELPLEY (TOWN, WOT) east, Evac Ave. south and Dirge Grid north. You can't seem to go [if flee elf is moot and diktat kid is not moot]south and [end if]north, though." [ic]
@@ -2868,12 +2872,14 @@ check taking tile lit: say "It's sort of embedded into the ground. It looks nice
 
 chapter elite tile
 
-the elite tile is scenery. "Done? Nod![line break]Nif-T-Fin![line break]Trape! Depart![line break]Nu-Fun!".
+the elite tile is scenery. "Done? Nod![line break]Nif-T-Fin![line break]Trape! Depart!".
 
 check taking elite tile: say "It's a memento, not a souvenir." instead;
 
 after going to Fun Nuf when Diktat Kid is moot:
-	say "You notice the elite tile has changed slightly.";
+	say "You notice the tile lit has changed slightly. It's more shiny now. Elite tile, if you will.";
+	moot tile lit;
+	move elite tile to Fun Nuf;
 	continue the action;
 
 book Dirge Grid
@@ -5504,7 +5510,7 @@ talk-text of Yuge Guy is "'I'm ... ' / 'TMI!'"
 
 volume gotoing
 
-printed name of Fun Nuf is "Fun [']Nuf".
+printed name of Fun Nuf is "[if diktat kid is moot]NU FUN[else]Fun [']Nuf[end if]".
 
 chapter gotoing
 
