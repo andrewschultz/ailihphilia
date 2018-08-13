@@ -615,6 +615,10 @@ chapter nothing to say
 
 nothing-txt is a number that varies.
 
+Rule for printing a parser error when the latest parser error is the noun did not make sense in that context error:
+	if debug-state is true, say "[current action] [noun].";
+	say "The object didn't match the verb in that command."
+
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
 	next-rand table of nothings;
 	consider the notify cycling rule;
@@ -625,7 +629,7 @@ Rule for printing a parser error when the latest parser error is the can't see a
 			say "You can't (quite) [one of]spot[or]look at[or]view[in random order] anything like that here.";
 			the rule succeeds;
 	if player is in worn row and worn row is worky and the player's command matches the text "machine":
-		say "You need to refere to each machine by its proper name.";
+		say "You need to refer to each machine by its proper name.";
 		the rule succeeds;
 	abide by the dir-error rules for location of player; [check this room and any adjacent room descriptions]
 	repeat with Q running through maindir:
@@ -1447,7 +1451,7 @@ check going (this is the reject noncardinal directions rule):
 	if noun is diagonal, say "Diagonal directions aren't used in this game." instead;
 	if noun is up or noun is down:
 		if the room noun of location of player is nowhere:
-			say "You never need to go up or down in this game, though sometimes they act as a backup to the main cardinal directions--for instance, up to or down from [if player is in Mont Nom]here[else if Mont Nom is visited]Mont Nom[else]a hill[end if].";
+			say "You never need to go up or down in this game, though sometimes these directions act as a backup to the main cardinal directions--for instance, up to or down from [if player is in Mont Nom]here[else if Mont Nom is visited]Mont Nom[else]a hill[end if].";
 			if player has Spur Ups, say "[line break]You DO have to do something with the Spur Ups, though. Just not go.";
 			the rule succeeds;
 
@@ -1816,7 +1820,6 @@ liar grail	"Attacking the grail doesn't seem on, but perhaps putting something i
 
 table of use redir [xxur]
 use1	person-reject	thing-reject
-nat's tan	"You are greeted with a look of revulsion."	--
 nat's tan	"You are greeted with a look of revulsion."	--
 party trap	"The trap can't work on a person. It's too small, and people are too smart."	"You need to use the party trap on something animate."
 wash saw	"The saw wasn't meant for violence."	"The saw is best used to trim things there's an excess of, not just to cut stuff down."
@@ -5501,8 +5504,6 @@ talk-text of Yuge Guy is "'I'm ... ' / 'TMI!'"
 
 volume gotoing
 
-[?? rules for GT'ing a room]
-
 printed name of Fun Nuf is "Fun [']Nuf".
 
 chapter gotoing
@@ -7048,11 +7049,12 @@ understand the command "stats" as something new.
 understand "stats" as statsing.
 
 carry out statsing:
+	let stats-now be stats-yet;
+	now stats-yet is true;
 	try requesting the score;
-	if stats-yet is false:
+	if stats-now is false:
 		say "Extra style point for requesting the score 'correctly.'";
 		abide by the LLP rule; [STATS]
-		now stats-yet is true;
 	consider the LLP or normal score changes rule;
 	the rule succeeds;
 
