@@ -345,7 +345,14 @@ a room has a number called room-dist. room-dist of a room is usually -1. room-di
 
 a direction has a number called locdelt. locdelt of a direction is usually -1. locdelt of west is -1. locdelt of east is 1. locdelt of north is -10. locdelt of south is 10.
 
+a room has a direction called in-dir. in-dir of a room is usually down.
+
 when play begins (this is the procedural room number assignments rule): assign-room-dist-and-loc Fun Nuf;
+
+to visit-up-to (rm - a room):
+	if rm is visited or in-dir of rm is down, continue the action;
+	now rm is visited;
+	visit-up-to the room (in-dir of rm) of rm;
 
 to assign-room-dist-and-loc (j - a room):
 	let k be room-dist of j + 1;
@@ -355,6 +362,7 @@ to assign-room-dist-and-loc (j - a room):
 		unless Q2 is nowhere or room-dist of Q2 > -1:
 			now room-dist of Q2 is k;
 			now loc-num of Q2 is loc-num of j + locdelt of Q;
+			now in-dir of Q2 is Q;
 			assign-room-dist-and-loc Q2;
 [		else:
 			say "-->[Q] failed in [j]: to [Q2] [unless Q2 is nowhere]room-dist = [room-dist of Q2] locnum = [loc-num of Q2].";]
@@ -6101,7 +6109,7 @@ carry out revovering:
 			if the rule succeeded:
 				if there is a room-to-go entry:
 					now move-room is room-to-go entry;
-					now room-to-go entry is visited;
+					visit-up-to move-room;
 				increment global-delay;
 				increment turns-to-add;
 				if sco entry is true:
@@ -6126,7 +6134,7 @@ carry out revovering:
 		increment global-delay;
 		if there is a room-to-go entry:
 			now move-room is room-to-go entry;
-			now room-to-go entry is visited;
+			visit-up-to move-room;
 		let u1a be false;
 		let u2a be false;
 		let g1a be false;
