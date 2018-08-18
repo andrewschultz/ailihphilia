@@ -2013,7 +2013,7 @@ Yard Ray	test set	--	ready-to-test rule	test-set-zapped rule	true	false	true	Dim
 --	--	--	rev-create-tron rule	--	true	--	--	Dim Mid	Fun Nuf	false	--
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	Dirge Grid	false	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, perhaps to create the Red Ronin Order." [b4:use TNT on ore zero]
 taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	Dim Mid	Dirge Grid	false	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev senses the Taboo Bat's ancient untapped power. It's not particularly violent or lethal, but it is just perfect to scare an orthodoxy as warped as the Verses Rev's, who mutters 'Rev, off, over' and stumbles away! Perhaps to the safety of ... a rev reserver."
-Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	Dirge Grid	false	"'Havoc, OVAH!' you should as you aim and fire the yard ray. A direct hit! The redivider begins to fizzle.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The yard ray brightens the Dirge Grid and zaps the Diktat Kid, who screams 'Deleveled!' several times before breaking down into tears. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid grows redder ... redder ... and bolts! With the Kid gone, the Dirge Grid grows less dark, the no-go gon winks out, and saner arenas are revealed all around. Revel, clever! Revel, ever![paragraph break]You don't notice the redivider exploding. When you wake up, it's much later. And you note something beside you: some X-ITE TIX fell out of the redivider! Wow! Yo, joy! Wow!"
+Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	Dirge Grid	false	"'Havoc, OVAH!' you should as you aim and fire the yard ray. A direct hit! The redivider begins to fizzle.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The entire Dirge Grid brightens, and the yard ray hums and explodes. But it's too lade for the Diktat Kid to avoid an electro-shock. 'Deleveled!' the Kid screams several times, before breaking down into tears. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid grows redder ... redder ... and bolts! With the Kid gone, the Dirge Grid grows less dark, the no-go gon winks out, and saner arenas are revealed all around. Revel, clever! Revel, ever![paragraph break]You don't notice the redivider exploding. When you wake up, it's much later. And you note something beside you: some X-ITE TIX fell out of the redivider! Wow! Yo, joy! Wow!"
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	Fun Nuf	false	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse] [zzgood]
 
@@ -3030,18 +3030,17 @@ carry out emiting:
 	if murdered rum is not moot, say "The Yard Ray isn't charged enough to emit anything." instead;
 	if player is in location of Yuge Guy, say "No...the Yuge Guy needs to be defeated by other means." instead;
 	if Diktat Kid is moot, say "You already got rid of the Diktat Kid." instead;
+	if the topic understood matches "pooptime" or the topic understood matches "poop time", say "A hollow voice booms 'Loo? Fool!'" instead;
 	if emitted is true, say "You already figured how to use the Yard Ray." instead;
-	if the topic understood matches "noontime":
+	if the topic understood matches "noontime" or the topic understood matches "noon time":
 		say "FOOM! Oof! The yard ray emits so much light, you immediately have to switch it off. Well, that was a good start. Now you want to make sure you can aim it at something that can be destroyed.";
 		now emitted is true;
 		reg-inc Dim Mid; [EMIT NOONTIME]
 		consider the cap-beep rules for the yard ray;
 		verify-done rev-emit-noontime rule;
 		the rule succeeds;
-	if the topic understood matches "time":
-		say "Yes, but what sort of time? Something positive and cheery, you'd guess." instead;
-	if the topic understood includes "time":
-		say "Not that sort of time. But it must be SOME time. A good time." instead;
+	if the topic understood matches "time", say "Yes, but what sort of time? Something positive and cheery, you'd guess." instead;
+	if the topic understood includes "time", 	say "Not that sort of time. But it must be SOME time. A good time." instead;
 	say "No, that's not quite what to emit.";
 	the rule succeeds;
 
@@ -5239,7 +5238,13 @@ check going in Red Roses Order:
 
 chapter yard ray
 
-the yard ray is a thing. description is "It looks pretty lethal. It's no dinky resale laser![paragraph break]There are also has instructions: EMIT ********.[paragraph break]It's currently [if murdered rum is moot]loaded with energy from the murdered rum[else]empty of fuel[end if]."
+the yard ray is a thing. description is "It looks pretty lethal[if resale laser is not off-stage]--more powerful than the resale laser[end if].[paragraph break][yard-inst].[paragraph break]It's currently [if murdered rum is moot]loaded with energy from the murdered rum[else]empty of fuel[end if]."
+
+to say yard-inst:
+	if emitted is true:
+		say "You figured you need to EMIT NOONTIME with it, so the instructions are useless";
+	else:
+		say "There are also has instructions: EMIT [if screenread is true]8 asterisks, presumably a word to fill out[else]********[end if]"
 
 does the player mean useoning with the Set O Notes: it is unlikely.
 
@@ -5277,7 +5282,7 @@ every turn when player is in Swept Pews and wordy drow is in Swept Pews and word
 
 chapter wordy drow
 
-The wordy drow is a neuter person in Swept Pews. description is "Seemingly attached to the Liar Grail, looking sad and helpless--perhaps you can help release it from its self-pity and preaching.". "[one of]A[or]The[stopping] wordy drow moans admonishments and regrets here[one of]: '****! WHY?!' it cries[or][stopping]. It blocks the way south." [yhwh but of course that is unspeakable in some mythologies]
+The wordy drow is a neuter person in Swept Pews. description is "Seemingly attached to the Liar Grail, looking sad and helpless--perhaps you can help release it from its self-pity and preaching.". "[one of]A[or]The[stopping] wordy drow moans admonishments and regrets here[one of]: '[if screenread is true]4 asterisks[else]****[end if]! WHY?!' it cries[or][stopping]. It blocks the way south." [yhwh but of course that is unspeakable in some mythologies]
 
 chapter troll ort
 
@@ -7330,18 +7335,6 @@ carry out rring:
 	try useoning noun with reifier;
 	try useoning noun with rotator;
 	the rule succeeds.
-
-chapter wining
-
-wining is an action applying to nothing.
-
-understand the command "win" as something new.
-
-understand "win" as wining.
-
-carry out wining:
-	end the story finally;
-	the rule succeeds;
 
 chapter iaing
 
