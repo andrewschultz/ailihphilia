@@ -1175,8 +1175,8 @@ understand the command "meta" as something new.
 understand "meta" and "meta at em" as metaing.
 
 carry out metaing:
-	if beep-yet is true, say "[2da][b]LO VOL[r] and [b]LOVE VOL[r] turn the pact cap's hints volume down and up, respectively.";
-	if beep-yet is true, say "[2da][b]SHUTTUHS[r] shutters off areas you're done with. NOTE: if there are any LLPs, you'll still be blocked.";
+	if player wears pact cap, say "[2da][b]LO VOL[r] and [b]LOVE VOL[r] turn the pact cap's hints volume down and up, respectively.";
+	if shuttuhs-known is true, say "[2da][b]SHUTTUHS[r] toggles blocking off areas you're done with--currently [on-off of shuttuhs]. NOTE: if there are any LLPs, you'll still be blocked.";
 	say "[b]SCORE[r] tracks the score. [b]ABOUT[r] and [b]CREDITS[r] tell about the game[if show-dev is true], and [b]DEV ED[r] shows technical details[end if].";
 	say "If you wish to see commands that jump ahead and maybe spoil some puzzles (for instance, if you're near the 2-hour judging limit for IFComp,) [b]N I WIN[r] (no apostrophe) spoils them.";
 	if in-beta is true:
@@ -2733,7 +2733,7 @@ The Pact Cap is a wearable thing in Fun Nuf. "The pact cap the Flee Elf wants yo
 to say cap-beep-stuff:
 	if cap-pace is true, say ".[paragraph break]It's currently set as a pace cap";
 	if beep-yet is false, continue the action;
-	say ". You can toggle its perception volume with [b]LO VOL[r][if cap-vol is false] (current setting)[end if] or [b]LOVE VOL[r][if cap-vol is true] (current setting)[end if]"
+	say ". You can toggle its perception volume that clues if you need to do anything unusual with [b]LO VOL[r][if cap-vol is false] (current setting)[end if] or [b]LOVE VOL[r][if cap-vol is true] (current setting)[end if]"
 
 cap-dum is a truth state that varies.
 
@@ -2741,8 +2741,8 @@ to say cap-dum-now: now cap-dum is true.
 
 check examining Pact Cap:
 	if player is in Red Roses Order and mirror rim is in Red Roses Order, say "[cap-dum-now]Oh dear. Through the mirror, the pact cap does look sort of stupid on you right now. But you have deeper issues than sartorial elegance. Plus it's been so serviceable, who cares about looks?" instead;
+	if pact cap is in Fun Nuf, say "It's no stetson, and it's not as helpful as a ref-titfer, mate tam or math tam, but it is less messy than a tahini hat, and it looks serviceable enough. It appears to have LO VOL and LOVE VOL settings. Perhaps the Flee Elf will tell you what they are for, once you've successfully taken it." instead;
 	if cap-dum is true, say "You definitely feel more self-conscious about your pact cap now you saw it in the mirror rim, but what can you do?" instead;
-	if pact cap is in Fun Nuf, say "It's no stetson, and it's not as helpful as a ref-titfer, mate tam or math tam, but it is less messy than a tahini hat, and it looks serviceable enough." instead;
 
 check taking off the pact cap: say "No, you...uh, made a pact. It's not that uncomfortable, anyway." instead;
 
@@ -2762,7 +2762,7 @@ understand "pack cap" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did." instead;
-	say "Yes, that's how to get the cap. You are ready to go! Hat, ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. 'Maybe later you'll find a way past the [kaos oak] to the Dirge Grid to defeat the Diktat Kid. But it's complicated.'[paragraph break]The Flee Elf mumbles something about the risk of a partner-entrap, so you'll have to go it alone. With a 'Rep us SUPER' and 'It's best I...' it  becomes the, err, FLED Elf. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]It fits okay on your head, and there's no need to take it off. Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
+	say "Yes, that's how to get the cap. You are ready to go! Hat, ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. 'Maybe later you'll find a way past the [kaos oak] to the Dirge Grid to defeat the Diktat Kid. But it's complicated. Still, first things first. The LO VOL setting means you won't get any sounds hinting if you need to do something weird to something you find. LOVE VOL means you will.'[paragraph break]The Flee Elf then mumbles something about the risk of a partner-entrap, so you'll have to go it alone. With a 'Rep us SUPER' and 'It's best I...' it  becomes the, err, FLED Elf, pointing at the tile lit (which has a new line now) as you leave. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]It fits okay on your head, and there's no need to take it off. Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
 	get-cap;
 	score-inc; [Dim Mid/pack cap]
 	verify-done rev-pack-cap rule;
@@ -2874,7 +2874,11 @@ after looking in Fun Nuf when player was in Dirge Grid:
 
 chapter tile lit
 
-the tile lit is scenery in Fun Nuf. "It's a rough compass, with GREBEBERG (LA RURAL) west by it, YELPLEY (TOWN, WOT) east, Evac Ave. south and Dirge Grid north. You can't seem to go [if flee elf is moot and diktat kid is not moot]south and [end if]north, though." [ic]
+the tile lit is scenery in Fun Nuf. "It's a rough compass, with GREBEBERG (LA RURAL) west by it, YELPLEY (TOWN, WOT) east, Evac Ave. south and Dirge Grid north. You can't seem to go [if flee elf is moot and diktat kid is not moot]south and [end if]north, though[if flee elf is moot].[paragraph break]It also mentions you can toggle SHUTTUHS to block off areas you're done with[shut-known][end if]." [ic]
+
+shuttuhs-known is a truth state that varies.
+
+to say shut-known: now shuttuhs-known is true.
 
 check taking tile lit: say "It's sort of embedded into the ground. It looks nice there, anyway, and it's useful for information." instead;
 
@@ -3830,13 +3834,22 @@ an X Y Pyx is a peripheral thing in Yawn Way. printed name of x y pyx is "X/Y Py
 
 understand "map" as pyx when Yawn Way is visited.
 
+report taking pyx when screenread is true:
+	say "Taken, with the caveat that it's not readable in screenread mode.";
+
+screenwarn is a truth state that varies.
+
+report screening when player has pyx and screenread is true and screenwarn is false:
+	now screenwarn is true;
+	say "[line break]NOTE: this makes the X/Y Pyx you're carrying useless, since it relies on text images that play poorly with a screen reader.";
+
 does the player mean doing something with pyx when player has doodle or player has spa maps: it is unlikely.
 
 check examining pyx when screenread is true:
 	say "The large text map has a lot of special characters and doesn't play well with screen readers, so you can't examine it productively. Sorry. SCREEN or SRC toggles screen reader mode." instead;
 
 after examining pyx for the first time:
-	say "Notes for the future: X X or MAP will examine the pyx, to save keystrokes[if player does not have pyx]. Also, you can take the pyx, if you want[end if].";
+	say "Notes for the future[if screenread is true], if you turn screen reading off[end if]: X X or MAP will examine the pyx, to save keystrokes[if player does not have pyx]. Also, you can take the pyx, if you want[end if].";
 
 to decide whether eithervisit of (rm - a room) and (di - a direction):
 	if the room di of rm is nowhere, no;
