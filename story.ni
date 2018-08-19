@@ -361,7 +361,7 @@ to assign-room-dist-and-loc (j - a room):
 		unless Q2 is nowhere or room-dist of Q2 > -1:
 			now room-dist of Q2 is k;
 			now loc-num of Q2 is loc-num of j + locdelt of Q;
-			now in-dir of Q2 is Q;
+			now in-dir of Q2 is opposite of Q;
 			assign-room-dist-and-loc Q2;
 [		else:
 			say "-->[Q] failed in [j]: to [Q2] [unless Q2 is nowhere]room-dist = [room-dist of Q2] locnum = [loc-num of Q2].";]
@@ -635,7 +635,7 @@ Rule for printing a parser error when the latest parser error is the can't see a
 		if the player's command matches the regular expression "bee(s)?", case insensitively:
 			say "You can't (quite) [one of]spot[or]look at[or]view[in random order] anything like that here.";
 			the rule succeeds;
-	if player is in worn row and worn row is worky and the player's command matches the text "machine":
+	if player is in Worn Row and Worn Row is worky and the player's command matches the text "machine":
 		say "You need to refer to each machine by its proper name.";
 		the rule succeeds;
 	abide by the dir-error rules for location of player; [check this room and any adjacent room descriptions]
@@ -959,7 +959,7 @@ this is the flu-gulf-stuck rule:
 
 this is the fun-nuf-stuck rule:
 	if Dirge Grid is mapped north of Fun Nuf, the rule fails; [??not good enough -- need to make sure have weapons]
-	say "You need to get by the Kaos OAK north of [fun nuf], eventually.;
+	say "You need to get by the Kaos OAK north of [hn2 of Fun Nuf], eventually.";
 	the rule succeeds;
 
 this is the gross-org-stuck rule:
@@ -1482,6 +1482,8 @@ instead of smelling troll ort, say "The troll ort is too dusty to get a whiff of
 
 instead of smelling rotator: say "[if stinky knits are moot]It no longer smells of detergent. I guess it used it all on the stinky knits.[else]There's a whiff of detergent coming from the rotator. It probably has some way to know if something is dirty enough. Technology![end if]";
 
+instead of smelling poo coop, say "[if gnu dung is moot]You risk it, and ... it doesn't smell bad at all. Technology![else]If the poo coop's been used before, you can't smell the evidence."
+
 instead of smelling Yuge Guy, say "The Yuge Guy smells of an amoral aroma[if brag garb is not off-stage] even worse than the Turbo-Brut from the Brag Garb[end if]."
 
 instead of smelling ergot ogre, say "The ergot ogre smells of torn rot." instead;
@@ -1492,12 +1494,13 @@ instead of smelling location of player:
 	if player is in Flu Gulf, try smelling mush sum instead;
 	if player is in Emo Dome or player is in Red Roses Order, say "Roses ... or ..." instead;
 	if player is in Yack Cay or player is in Swamp Maws, say "A morass aroma." instead;
-	if y-poopy, say "Whew! The gnu dung [if gnu dung is moot]in the poo coop[end if] is worse than an emu fume!" instead;
+	if player is in Dumb Mud and gnu dung is in Dumb Mud, say "Whew! The gnu dung [if gnu dung is moot]in the poo coop[end if] is worse than an emu fume!" instead;
 	if player is in Moo Room, say "Hay! Ah!" instead;
 	if player is in Deft Fed, say "Ham?! Ah!" instead;
 	if player is in Mont Nom, say "Everything smells delicious. Life is good[if Ian is in Mont Nom], even with Ian around[end if]." instead;
 	if player is in Pro Corp and butene tub is in Pro Corp, try smelling butene tub instead;
 	if player is in Sneer Greens and Yuge Guy is in Sneer Greens, try smelling Yuge Guy instead;
+	if player has poo coop, try smelling poo coop instead;
 	if player has dork rod, try smelling dork rod instead;
 	if troll ort is quicknear, try smelling troll ort instead;
 	if ergot ogre is quicknear, try smelling ergot ogre instead;
@@ -1790,7 +1793,7 @@ tao boat	"You sense that the tao boat requires more than just wordy knowledge. I
 
 table of cantuse [xxcant]
 use1	babble
-redness ender	"The redness ender is good for destroying stuff. Probably evil stuff. You don't need to vaporize anything you're carrying[if rob is in worn row]. Or even Rob[end if]."
+redness ender	"The redness ender is good for destroying stuff. Probably evil stuff. You don't need to vaporize anything you're carrying[if Rob is in Worn Row]. Or even Rob[end if]."
 Spur Ups	"The Spur Ups can't physically levitate anything, but they make you want to do something for yourself, by yourself, to yourself, for a pick up or something like it. You're not sure what."
 Psi Wisp	"The Psi Wisp is impervious to bribery or normal physical attacks. You need to outrun and outsmart it."
 Kayo Yak	"The Kayo Yak grunts. Looks like you can't, or don't want to, use anything on it."
@@ -1799,7 +1802,7 @@ Ian	"Ian's worse than useless. You need to use your wit on him."
 Rob	"Rob's not going to be obliging. You have to get rid of him, somehow."
 Ned	"Ned wants a fight, and you need some other way around him. Bribery or violence doesn't seem sufficient. It might be simpler than you think. Ned's pretty ... basic."
 ergot ogre	"The ogre can't be bribed or baited. At least, not by you. You're not fast or strong enough to outfox (or out-any other animal) it on your own. Plus, you worry anything that touches the ergot ogre might shrivel up. Maybe you need the services of someone or something that can beat up the ogre without touching its skin." [?? how to pick off duplicates in a table?]
-Pact Cap	"Your pact cap is fine where it is, on your head[if action is useoning][cap-use][end if]."
+Pact Cap	"Your pact cap is fine where it is, on your head[if current action is useoning][cap-use][end if]."
 Gorge Grog	"The Gorge Grog is so concentrated, it's probably only good for chemical warfare."
 DNA band	"The DNA band is useless on its own. It probably needs some sort of jolt to become useful, or sentient."
 north tron	"The North-Tron's already done its job."
@@ -1997,7 +2000,7 @@ sharp rahs	guru rug	stir writs	--	brag-garb-bye rule	true	true	true	Grebeberg	Mo
 --	--	--	rev-first-food-combo rule	--	true	--	--	Grebeberg	Mont Nom	false	--
 --	--	--	rev-second-food-combo rule	--	true	--	--	Grebeberg	Fun Nuf	false	--
 Moor Broom	Tru Yurt	Exam Axe	--	bump-ivy rule	true	true	false	Grebeberg	Yack Cay	false	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! Then, back to the Tru-Yurt for the Wonk. They've done enough for you." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
-wash saw	porch crop	balsa slab	--	--	true	true	false	Grebeberg	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods.[paragraph break]'Yes! Yes! This works! Uneven U needs a name change ... to UNEVEN U! How can I thank you?'[paragraph break]A balsa slab is lying under where the porch crop was. The Code Doc offers it to you. Now, you ... do own wood!"
+wash saw	porch crop	balsa slab	--	--	true	true	false	Grebeberg	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods.[paragraph break]'Yes! Yes! We have achieved AIMED ACADEMIA! Uneven U needs a name change ... to UNEVEN U! How can I thank you?'[paragraph break]A balsa slab is lying under where the porch crop was. The Code Doc offers it to you. Now, you ... do own wood!"
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	Dumb Mud	false	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
 --	--	--	rev-get-bro-orb rule	--	false	--	--	--	Le Babel	--	--
 DNA band	reifier	DNA hand	--	--	true	true	false	Yelpley	Worn Row	false	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand! It doesn't have any slime or blood leaking, and when you take it, it doesn't twitch too much."
@@ -2051,6 +2054,7 @@ this is the rev-evade-Dave rule:
 	moot Dave;
 	say "You EVADE DAVE, and he leaves My Gym out of frustration. You loot a wash saw, too.";
 	now player has wash saw;
+	moot stole lots;
 	the rule succeeds;
 
 this is the rev-first-food-combo rule:
@@ -3160,7 +3164,7 @@ understand "roc" and "scorn roc" as scorn rocs.
 
 check going in Flu Gulf:
 	if noun is east, say "You'd need some Nix-O-Toxin to survive the ebola lobe. There is none here in the game." instead;
-	if noun is north, say "You'd need some Nix-O-Toxin to survive the ebola lobe. There is none here in the game." instead;
+	if noun is north, say "The mush sum would pull you down." instead;
 	if noun is west:
 		if scorn rocs are in Flu Gulf, say "The scorn rocs remain motionless, the stone NOTS you feel from their stern gaze freeze you as you even think of trying to go west. They're not mere starer-ats." instead;
 		if being-chased is true:
@@ -3250,7 +3254,9 @@ instead of eating gnu dung, say "Gag!";
 
 chapter turf rut
 
-The turf rut is scenery in Dumb Mud. "[if poo coop is moot]Since you filled it in, you can walk across it to the south[else]It's deep enough to prevent you going south. Maybe you could fill it in with something. Anything[end if]."
+The turf rut is scenery in Dumb Mud. "[if poo coop is moot]Since you filled it in, you can walk across it [turf-s]to the south. It even smells okay[else]It's deep enough to prevent you going south. Maybe you could fill it in with something. Anything[end if]."
+
+to say turf-s: say "[if Mont Nom is visited]again [end if]"
 
 check taking turf rut: say "You'd need a nab-rut turban to do that. There's no nab-rut turban in this game[if poo coop is moot]. Besides, you already [rut-made-go] across[end if]." instead;
 
@@ -3344,6 +3350,8 @@ after going to Mont Nom:
 	else if number of carried ingredients > 1:
 		say "The smells from your [list of carried ingredients] mix[one of] unexpectedly pleasantly[or] pleasantly, again,[stopping] here.";
 	continue the action:
+
+check going nowhere in Mont Nom: say "The Ark of Okra blocks progess any way except back down north." instead;
 
 chapter ark of okra
 
@@ -3519,7 +3527,7 @@ understand "swamp maw" and "maw" as swamp maws.
 
 chapter hinting dr d again
 
-after looking in Swamp Maws when exam axe is not off-stage and revisited-u is false:
+after looking in Swamp Maws when exam axe is not off-stage and revisited-u is false and balsa slab is off-stage:
 	say "[one of]'Oh, wow! A Dr. Award! For all my hard work! Great news for Uneven U!' you hear Dr. D, the Code Doc, boom from the south. Maybe you should check it out![or]You realize you haven't been south to congratulate Dr. D yet.[stopping]";
 	continue the action;
 
@@ -3567,7 +3575,7 @@ instead of entering den ivy vined, try going east instead;
 
 chapter code doc
 
-Code Doc is a neuter person in Uneven U. "[one of]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[or]The Code Doc paces back and forth here.[stopping]". description is "The Code Doc scribbles notes here, mumbling about whom to hire to increase [Uneven U]'s prestige. Busy, but not too busy to help someone else."
+Code Doc is a neuter person in Uneven U. "[if uneven u is unvisited]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[else]The Code Doc paces back and forth here.[end if]". description is "The Code Doc scribbles notes here, mumbling about whom to hire to increase [Uneven U]'s prestige. Busy, but not too busy to help someone else."
 
 understand "dr/d" and "dr d" as code doc when tent net is moot.
 
@@ -3621,6 +3629,8 @@ book Motto Bottom
 
 Motto Bottom is east of Lair Trial. It is in Grebeberg. "A be-web blocks passage every way except back west."
 
+check going nowhere in Motto Bottom: say "The Be-Web is full of wisdom on just existing, but you're in an adventure right now. So you can really only go back west." instead;
+
 chapter be web
 
 the be web is peripheral scenery in Motto Bottom. understand "beweb" as be web. "The be-web spans everywhere except back west. Perhaps if you were a lot cleverer, or sillier, you could find meaning in it, but as-is, it only blocks your way back west."
@@ -3649,7 +3659,7 @@ Yack Cay is north of Swamp Maws. It is in Grebeberg. "An edits tide blocks your 
 
 instead of entering tru yurt, say "A rebuke from the Known Wonk stops you: 'Ye so nosey!'"
 
-to say is-yurt-messy: if moor broom is moot, say ". It looks messy"
+to say is-yurt-messy: if moor broom is not moot, say ". It looks messy"
 
 printed name of Yack Cay is "[if Known Wonk is moot]Roomy Moor[else]Yack Cay[end if]".
 
@@ -3681,7 +3691,7 @@ The Exam Axe is a thing. description is "Just looking at the exam axe, you feel 
 
 chapter Tru Yurt
 
-The Tru Yurt is scenery in Yack Cay. "It looks really messy. The Known Wonk said it needed a good cleaning."
+The Tru Yurt is scenery in Yack Cay. "[if moor broom is moot]It's much cleaner now you took the moor broom to it[else]It looks really messy. The Known Wonk said it needed a good cleaning[end if]."
 
 check taking tru yurt: say "It's the Known Wonk's." instead;
 
@@ -3835,6 +3845,8 @@ chapter X/Y Pyx
 
 an X Y Pyx is a peripheral thing in Yawn Way. printed name of x y pyx is "X/Y Pyx". description of X Y Pyx is "[map-so-far]". "[one of]An X/Y pyx lies here. Closer inspection reveals that's just a fancy name for a map[or]The X/Y pyx still lies here[stopping]. It wouldn't be too cumbersome to take.". indefinite article of X Y Pyx is "an".
 
+check examining pyx when player is in Dirge Grid: say "You're sort of off the map, here, and you'll continue to be until you [unless Diktat Kid is moot]defeat the Diktat Kid and [end if]return south." instead;
+
 understand "map" as pyx when Yawn Way is visited.
 
 report taking pyx when screenread is true:
@@ -3876,7 +3888,7 @@ definition: a room (called rm) is wayout:
 	yes;
 
 definition: a room (called rm) is ungoable:
-	if Diktat Kid is moot, no;
+	unless Diktat Kid is moot, no;
 	if rm is westpost or rm is eastpost, yes;
 	if rm is eastcond and balm-LLP-yet is true, yes;
 	if rm is westcond and felines are moot and bees-seen is true, yes;
@@ -3891,26 +3903,21 @@ to say map-so-far:
 	while pyx-row < 35:
 		increment pyx-row;
 		choose row pyx-row in table of pyxloc;
-		if times-thru is 0:
-			if loc-num of rmname entry <= lastnum, say "WARNING pyxloc is out of order at [rmname entry].";
-			if rmname entry is wayout:
-				say "?????[run paragraph on]";
-			else if rmname entry is ungoable:
-				say "XXXXX";
-			else:
-				say "[if rmname entry is visited][uptxt entry][else]     [end if]";
-			now lastnum is loc-num of rmname entry;
+		if times-thru > 1:
+			say "  [if eithervisit of rmname entry and south]|[else] [end if]     ";
+		else if rmname entry is wayout:
+			say "?????[run paragraph on]";
+		else if rmname entry is ungoable:
+			say "XXXXX";
+		else if loc-num of rmname entry <= lastnum:
+			say "[if times-thru is 0]BADNUM[else][rmname entry][end if]";
+		else if times-thru is 0:
+			say "[if rmname entry is visited][uptxt entry][else]     [end if]";
 			say "[if eithervisit of rmname entry and east]===[else]   [end if]";
 		else if times-thru is 1:
-			if rmname entry is wayout:
-				say "?????[run paragraph on]";
-			else if rmname entry is ungoable:
-				say "XXXXX";
-			else:
-				say "[if rmname entry is visited][downtxt entry][else]     [end if]";
+			say "[if rmname entry is visited][downtxt entry][else]     [end if]";
 			say "   ";
-		else:
-			say "  [if eithervisit of rmname entry and south]|[else] [end if]     ";
+			now lastnum is loc-num of rmname entry;
 		if the remainder after dividing pyx-row by 7 is 0:
 			increment times-thru;
 			say "[if pyx-row is 35 and times-thru > 1][run paragraph on][else][line break][end if]";
@@ -4098,7 +4105,13 @@ carry out evadeing:
 
 book Worn Row
 
-Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky]Three machines are here[else if Worn Row is wordy]A tract cart is here, [tract-status][else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if][if redness ender is in Worn Row]. There's also a redness ender here, but it looks dangerous to get too close to[end if]. The only way out is back east[if bad dab is in Worn Row]. A bad dab is splashed on the floor, too, and it looks readable[end if]."
+Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky][what-machines][else if Worn Row is wordy]A tract cart is here, [tract-status][else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if][if redness ender is in Worn Row]. There's also a redness ender here, but it looks dangerous to get too close to[end if]. The only way out is back east[dab-notes]."
+
+to say what-machines: say "[if test set is off-stage]Three machines are here[else if test set is moot]Since you destroyed the test set, it's pretty empty here[else]It's more specious here with the re*er machines destroyed[end if]"
+
+to say dab-notes:
+	if row-prog >= 2, continue the action;
+	say ". A bad dab is splashed on the floor, too, and it looks [if row-prog is 1]a bit smudged now you changed Worn Row a bit[end if]readable"
 
 printed name of Worn Row is "[if Worn Row is wordy]Word[else if Worn Row is worky]Work[else]Worn[end if] Row"
 
@@ -4753,7 +4766,7 @@ carry out traping:
 
 chapter Revolt Lover
 
-the Revolt Lover is a neuter person in Art Xtra. "[one of]'Hi! I'm the Revolt Lover. Business is slow here, but I still have a few freebies, especially for someone with a cool cap like yours. If you're able to use them, I'd be willing to trade for more.'[or]The Revolt Lover [one of]smiles[or]nods[or]winks[at random] at you.[stopping]". description is "Artsy looking, but not pretentiously hipster-ish.".
+the Revolt Lover is a neuter person in Art Xtra. "[if Art Xtra is unvisited]'Hi! I'm the Revolt Lover. Business is slow here, but I still have a few freebies, especially for someone with a cool cap like yours. If you're able to use them, I'd be willing to trade for more.'[else]The Revolt Lover [one of]smiles[or]nods[or]winks[at random] at you.[end if]". description is "Artsy looking, but not pretentiously hipster-ish.".
 
 chapter state tats
 
@@ -4810,7 +4823,7 @@ check going to Emo Dome:
 		now emo-dir is noun;
 
 check going south in Emo Dome when Diktat Kid is moot:
-	say "The Swept Pews are closed for reconstruction. You've done all you could." instead;
+	say "The Swept Pews are closed for reconstruction. You've done all you could there." instead;
 
 check going north in Emo Dome:
 	if Diktat Kid is moot, say "The Red Roses Order is being replaced by something more ... civic." instead;
@@ -4993,7 +5006,7 @@ after looking in Deft Fed when Sniffins-reintro is false and yob attaboy is moot
 
 chapter Sniffins
 
-Sniffins is a neuter person in Deft Fed. "[one of]You hear a sniff, and the proprietor introduces themselves as Sniffins, apologizing for how lame the ambience and decor are, but there's just no INSPIRATION to do better[or][snismu] sniffs here[stopping].". description is "[if yob attaboy is moot]Sniffins/Smuggums looks down at you despite your help--what a posh sop[else]Sniffins is despondent and pleading for any sort of help[end if]."
+Sniffins is a neuter person in Deft Fed. "[if Deft Fed is unvisited]You hear a sniff, and the proprietor introduces themselves as Sniffins, apologizing for how lame the ambience and decor are, but there's just no INSPIRATION to do better[else][snismu] sniffs here[end if].". description is "[if yob attaboy is moot]Sniffins/Smuggums looks down at you despite your help--what a posh sop[else]Sniffins is despondent and pleading for any sort of help[end if]."
 
 to say snismu: say "Sniffins[if Sniffins-reintro is true]/Smuggums[end if]"
 
@@ -5054,7 +5067,7 @@ Evaded Ave is north of Art Xtra. It is in Yelpley. "It's a bit sleazy in here. P
 dumb-Dave-joke-yet is a truth state that varies.
 
 after looking in Evaded Ave:
-	if Dave is moot and dumb-Dave-joke-yet is false:
+	if Dave is moot and dumb-Dave-joke-yet is false and Door Frood is not moot:
 		now dumb-Dave-joke-yet is true;
 		say "You look around, wondering if Dave fled here. Whew! He's somewhere else.";
 		continue the action;
@@ -5541,7 +5554,7 @@ talk-text of Yuge Guy is "'I'm ... ' / 'TMI!'"
 
 volume gotoing
 
-printed name of Fun Nuf is "[if diktat kid is moot]NU FUN[else]Fun [']Nuf[end if]".
+printed name of Fun Nuf is "[if Diktat Kid is moot]NU FUN[else]Fun [']Nuf[end if]".
 
 chapter gotoing
 
