@@ -91,7 +91,6 @@ the cap-beep rules are an object-based rulebook.
 a cap-beep rule for a thing (called x):
 	if revving-over is false:
 		if cap-vol is true, say "You hear a [if x is llpish]soft [end if]BOO-WEE-WOOB from the Pact Cap after dealing with [the X][one of]. Well, that jibes with what the Flee Elf said about how it makes weird noises when special actions are needed[or][stopping].[paragraph break]";
-		if X is a guhthug and number of moot guhthugs is 1, say "Whew! That was less violent than you worried. You'd hate to have to TRUCK CURT or MASH SAM or SIT ON OTIS or even DISS SID.";
 	the rule succeeds;
 
 section machine actions
@@ -960,7 +959,7 @@ this is the flu-gulf-stuck rule:
 
 this is the fun-nuf-stuck rule:
 	if Dirge Grid is mapped north of Fun Nuf, the rule fails; [??not good enough -- need to make sure have weapons]
-	say "You need to figure what's north of [hn2 of Fun Nuf]...eventually.";
+	say "You need to get by the Kaos OAK north of [fun nuf], eventually.;
 	the rule succeeds;
 
 this is the gross-org-stuck rule:
@@ -1745,9 +1744,9 @@ check useoning it with:
 		repeat through table of bookrejects:
 			if second noun is use2 entry, say "[book-reject entry][line break]" instead;
 	repeat through table of cantuse:
-		if noun is use1 entry or second noun is use1 entry, say "[babble entry]" instead;
+		if noun is use1 entry or second noun is use1 entry, say "[babble entry][line break]" instead;
 	repeat through table of person specific rejects:
-		if noun is use1 entry or second noun is use1 entry, say "[babble entry]" instead;
+		if noun is use1 entry or second noun is use1 entry, say "[babble entry][line break]" instead;
 	say "You think of ways to do that productively, but nothing comes up." instead;
 
 The machine message rules are an object-based rulebook.
@@ -1800,7 +1799,7 @@ Ian	"Ian's worse than useless. You need to use your wit on him."
 Rob	"Rob's not going to be obliging. You have to get rid of him, somehow."
 Ned	"Ned wants a fight, and you need some other way around him. Bribery or violence doesn't seem sufficient. It might be simpler than you think. Ned's pretty ... basic."
 ergot ogre	"The ogre can't be bribed or baited. At least, not by you. You're not fast or strong enough to outfox (or out-any other animal) it on your own. Plus, you worry anything that touches the ergot ogre might shrivel up. Maybe you need the services of someone or something that can beat up the ogre without touching its skin." [?? how to pick off duplicates in a table?]
-Pact Cap	"Your pact cap is fine where it is, on your head."
+Pact Cap	"Your pact cap is fine where it is, on your head[if action is useoning][cap-use][end if]."
 Gorge Grog	"The Gorge Grog is so concentrated, it's probably only good for chemical warfare."
 DNA band	"The DNA band is useless on its own. It probably needs some sort of jolt to become useful, or sentient."
 north tron	"The North-Tron's already done its job."
@@ -1819,6 +1818,8 @@ Bro Orb	"Nothing physical seems to work on the orb. You need a psychological pus
 test set	"You need to use something violent on the test set."
 [zzcant]
 
+to say cap-use: say ". It doesn't need to be used with or on anything else[if kayo yak is not moot]. though it may help you in a pinch later on[end if]"
+
 table of person specific rejects [xxpsr]
 use1	babble
 Door Frood	"The Door Frood yawns. A gift would be nice, but THAT seems kind of boring."
@@ -1828,10 +1829,11 @@ liar grail	"Attacking the grail doesn't seem on, but perhaps putting something i
 
 table of use redir [xxur]
 use1	person-reject	thing-reject
+gift fig	"You don't want to share your food, here. There's not really enough of it, anyway."
 nat's tan	"You are greeted with a look of revulsion."	--
 party trap	"The trap can't work on a person. It's too small, and people are too smart."	"You need to use the party trap on something animate."
-wash saw	"The saw wasn't meant for violence."	"The saw is best used to trim things there's an excess of, not just to cut stuff down."
-el doodle	"They don't seem like the sort that can decipher things."	--
+wash saw	"The saw isn't built for gory violence."	"The saw is best used to trim things there's an excess of, not just to cut stuff down."
+el doodle	"[noun] doesn't seem up to deciphering things."	--
 pity tip	"You don't want to give it away! You [if navy van is xed]should maybe use it, yourself. Now where was Seedy Dee's?[else]have a feeling you can find Seedy Dee's, if you look hard enough.[end if]"	--
 poo coop	"Eww. Gross. Nobody deserves that."	"[if gnu dung is moot]No, you need to find the right thing to empty the poo coop into[else]The poo coop is only good for vacuuming up a certain kind of item[end if]."
 ME gem	"They look a bit frightened by the power of the ME gem. It must only work on, or for, really bad people or things."	--
@@ -1910,6 +1912,7 @@ troll ort	ergot ogre	"The ergot ogre mutters something unrepeatable about prejud
 troll ort	kayo yak	"As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up. The yak seems weirdly attracted to it."
 wash saw	cassettes sac	"The wash saw isn't big enough to clean up the cassettes sac. You need a more powerful cleaner."
 wash saw	crag arc	"The crag arc is much too big for the saw to get anywhere. [if UFO tofu is off-stage]Maybe there's a better way to find what's behind there[else]Besides, you found enough[end if]."
+wash saw	KAOS Oak	"The wash saw isn't big enough or sharp enough to take down the [kaos oak]. You need a much more powerful machine[if player has epicer recipe and epicer recipe is nox], and you notice the epicer recipe could help with that[else if epicer recipe is xed], which you can build if you follow the epicer recipe[end if]."
 wash saw	lie veil	"Not even the wash saw could clean off the lie veil. You need something much more brutal."
 wash saw	made dam	"The made dam is much too big to get anywhere. [if eroded ore is off-stage]Maybe there's a better way to find what's behind there[else]Besides, you found enough[end if]."
 wash saw	stark rats	"You couldn't catch and hold a rat long enough to cut it with the wash saw."
@@ -2382,7 +2385,7 @@ this is the sap-loose rule:
 	if player has puce cup:
 		unless redact-postrule, say "Hmm, the puce cup would be perfect to carry the past sap in[if cup is not empty], though you'd need to empty the cup, first[end if].";
 		the rule succeeds;
-	unless redact-postrule, say "You don't want to take the sap now--you don't have a container that would hold it in the sticky warmth. But you've cut enough off the tree.";
+	unless redact-postrule, say "You don't want to take the sap now--you don't have a container that would hold it in the sticky warmth. But you cut enough off the tree to pick up later.";
 	the rule succeeds;
 
 this is the sap-to-cup rule:
@@ -3084,7 +3087,7 @@ the gift fig is a solid ingredient. description is "It looks edible, but it's to
 
 chapter Oh Who
 
-Oh Who is a peripheral phonebook. booktable of Oh Who is table of random palindrome firstlast names. description is "You read several [one of][or]more [stopping]names and numbers of Grebeberg residents:[line break][name-num of 5 and Oh Who][variable letter spacing][run paragraph on]". "Oh Who rests here, safe from the stark rats you got rid of, but not particularly useful."
+Oh Who is a peripheral phonebook. booktable of Oh Who is table of random palindrome firstlast names. description is "You read several [one of][or]more [stopping]names and numbers of Grebeberg residents from Oh Who:[line break][name-num of 5 and Oh Who][variable letter spacing][run paragraph on]". "Oh Who rests here, safe from the stark rats you got rid of, but not particularly useful."
 
 book Cold Loc
 
@@ -3135,7 +3138,7 @@ the ebola lobe is peripheral scenery in Flu Gulf. "It doesn't look that awful, b
 
 chapter gulf lug
 
-the Gulf Lug is a person in Flu Gulf. "The Gulf Lug stands here, holding his stomach.". description is "He looks slightly ill. Maybe you could help him.".
+the Gulf Lug is a person in Flu Gulf. "The Gulf Lug stands here, holding his stomach.". description is "The Gulf Lug looks slightly ill. Maybe you could help fix that!".
 
 chapter cash sac
 
@@ -3159,7 +3162,7 @@ check going in Flu Gulf:
 	if noun is east, say "You'd need some Nix-O-Toxin to survive the ebola lobe. There is none here in the game." instead;
 	if noun is north, say "You'd need some Nix-O-Toxin to survive the ebola lobe. There is none here in the game." instead;
 	if noun is west:
-		if scorn rocs are in Flu Gulf, say "The scorn rocs remain motionless, but their gazes chock full of stone NOTS freeze you as you try to go west. They're not mere starer-ats." instead;
+		if scorn rocs are in Flu Gulf, say "The scorn rocs remain motionless, the stone NOTS you feel from their stern gaze freeze you as you even think of trying to go west. They're not mere starer-ats." instead;
 		if being-chased is true:
 			if Yuge Guy is moot, say "With the Yuge Guy defeated, you don't feel a need to go back to [Sneer Greens]." instead;
 			say "You don't want to face [if Sneer Greens is visited]the Yuge Guy[else]whatever's west[end if] while you're being chased, too." instead;
@@ -3841,7 +3844,7 @@ screenwarn is a truth state that varies.
 
 report screening when player has pyx and screenread is true and screenwarn is false:
 	now screenwarn is true;
-	say "[line break]NOTE: this makes the X/Y Pyx you're carrying useless, since it relies on text images that play poorly with a screen reader.";
+	say "[line break]NOTE: this makes the X/Y Pyx you're carrying useless, since it relies on text images that play poorly with a screen reader. The THINK command, however, can show you where you want or need to go.";
 
 does the player mean doing something with pyx when player has doodle or player has spa maps: it is unlikely.
 
@@ -3961,7 +3964,7 @@ instead of taking a phonebook, say "That would weigh you down too pointlessly[if
 
 does the player mean doing something with Name ME Man when player is in Yawn Way: it is likely.
 
-Name ME Man is a peripheral phonebook in Yawn Way. description is "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers of Yelpley residents:[line break][name-num of 5 and Name ME Man][variable letter spacing][run paragraph on]". "[one of]There's also something called Name ME Man, which--well, it's really just a glorified phone book. Yawn[or]Name ME Man waits for your perusal, if you have a great need to procrastinate[if Name ME Man is xed] some more[end if][stopping].". booktable of Name ME Man is table of random palindrome lastfirst names.
+Name ME Man is a peripheral phonebook in Yawn Way. description is "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers of Yelpley residents from Name ME Man:[line break][name-num of 5 and Name ME Man][variable letter spacing][run paragraph on]". "[one of]There's also something called Name ME Man, which--well, it's really just a glorified phone book. Yawn[or]Name ME Man waits for your perusal, if you have a great need to procrastinate[if Name ME Man is xed] some more[end if][stopping].". booktable of Name ME Man is table of random palindrome lastfirst names.
 
 understand "nm/mm/nmm/phone/book" and "phone book" as Name ME Man.
 
@@ -4079,7 +4082,9 @@ does the player mean evadeing Dave: it is very likely.
 carry out evadeing:
 	if noun is Dave:
 		if Dave is moot, say "You don't need to evade Dave again.";
-		say "You evade Dave! Deked! Deked![paragraph break]Dave, frustrated from spinning around trying to catch you, runs off.[paragraph break]Suspicious there are no actual weight machines, you find a passage to a hidden spate of Sperses-Reps machines with the motto 'Scepsis?! Pecs!' They help you bulk up a bit, so weight will not be a factor. But you don't want to waste too much time bulking up. You go back out and have a look at the Stole-Lots. You consider making it a STORE-lots, but then the 'rots' is not so good, so then you also check if the E and an L rub out quickly. They do, making it a Sto(['])-Lots. Bam! Logistical and moral problems: SOLVED![paragraph break]Also, you notice a wash saw in the Stole/Sto-Lots. It seems worth taking along.";
+		say "You evade Dave! Deked! Deked![paragraph break]Dave, frustrated from spinning around trying to catch you, trudges off, exhausted.[paragraph break]Whew! That was less violent than you worried. You'd hate to have to TRUCK CURT or MASH SAM or SIT ON OTIS or even DISS SID.";
+		wfak;
+		say "Suspicious there are no actual weight machines, you find a passage to a hidden spate of Sperses-Reps machines with the motto 'Scepsis?! Pecs!' They help you bulk up a bit, so item weight will not be a factor. But you don't want to waste too much time bulking up. You go back out and have a look at the Stole-Lots. You consider making it a STORE-lots, but then the 'rots' is not so good, so then you also check if the E and an L rub out quickly. They do, making it a Sto(['])-Lots. Bam! Logistical and moral problems: SOLVED![paragraph break]Also, you notice a wash saw in the Stole/Sto-Lots. It seems worth taking along.";
 		moot Dave;
 		now player has sto lots;
 		moot stole lots;
@@ -4093,7 +4098,7 @@ carry out evadeing:
 
 book Worn Row
 
-Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky]Three machines are here[else if Worn Row is wordy]A tract cart is here, [tract-status][else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if][if redness ender is in Worn Row]. There's also a redness ender here, but it looks dangerous to get too close to[end if]. The only way out is back east[if bad dab is in Worn Row]. A bad dab is splashed on the floor, too--a simple message[end if]."
+Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky]Three machines are here[else if Worn Row is wordy]A tract cart is here, [tract-status][else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if][if redness ender is in Worn Row]. There's also a redness ender here, but it looks dangerous to get too close to[end if]. The only way out is back east[if bad dab is in Worn Row]. A bad dab is splashed on the floor, too, and it looks readable[end if]."
 
 printed name of Worn Row is "[if Worn Row is wordy]Word[else if Worn Row is worky]Work[else]Worn[end if] Row"
 
@@ -4112,7 +4117,7 @@ to decide whether in-word:
 
 chapter redness ender
 
-the redness ender is a semiperipheral thing in Worn Row. "A redness ender sits here, looking lethal. Maybe it's part of why Worn Row is so worn--nobody wants to stick around enough to clean things up, or build anything. But maybe there is a simple way to get rid of it.". description is "It also seems to double as a redness SENDER, as when you get close to look at it, an ominous red dot appears on you. You back off.".
+the redness ender is a semiperipheral thing in Worn Row. "A redness ender sits here, looming large and lethal. Maybe it's part of why Worn Row is so worn--nobody wants to stick around enough to clean things up, or build anything. But maybe there is a simple way to get rid of it.". description is "It also seems to double as a redness SENDER, as when you get close to look at it, an ominous red dot appears on you. You back off.".
 
 chapter tract cart
 
