@@ -1763,6 +1763,8 @@ a machine message rule for a thing (called t):
 	if t is a tronpart, say "No, [the t] [if epicer recipe is xed]is[else]seems[end if] too important." instead;
 	if t is exhausted, say "You already tried everything, and nothing worked." instead;
 	if t is nat's tan, say "Nat's Tan is pretty much hopeless. You'll need to fob it off on someone or something." instead;
+	if t is pace cap, say "The pace cap has the VOL option, as well as [if ever-pace is false]another option[else]PACE[end if], but that's probably enough. It doesn't need drastic fixing." instead;
+	if t is el doodle, say "None of the machines seems equipped for deciphering. A person might be able to do it better." instead;
 	if t is listed in postmachines, say "The [second noun] hums ominously as you bring [the t] close. You already used a machine to make [the t]. Maybe you should do something else." instead;
 	if t is listed in premachines, say "Nothing happens. And you felt optimistic there! Hmm." instead;
 	if second noun is reifier, now t is reified;
@@ -1775,17 +1777,17 @@ section failed useons
 
 table of bookrejects [xxbr]
 use2 (an object)	book-reject
-cross orc	"The cross orc is not big on books."
-Madam	"Any simple book you could find would be beneath Madam."
-Yuge Guy	"The Yuge Guy doesn't bother with books--not even a ghostwritten, self-serving autobiography."
-Door Frood	"'Pfft, nah, not clever and edgy enough.'"
-Code Doc	"'That's probably a nice easy read, but I'd rather have something I can work through.'"
 Bond Nob	"The Bond Nob was probably too cool for school and is definitely too cool for reminders of school."
+Code Doc	"'That's probably a nice easy read, but I'd rather have something I can work through.'"
+cross orc	"The cross orc is not big on books."
+Door Frood	"'Pfft, nah, not clever and edgy enough.'"
+Ian	"'I'm a food snob, not a book snob. Geez!'"
 King Nik	"'Hm, maybe, but I need some serious policy discussions.'"
 Known Wonk	"'I have enough hard knowledge. I need something clever and fun.'"
-Ian	"'I'm a food snob, not a book snob. Geez!'"
+Madam	"Any simple book you could find would be beneath Madam."
 Sniffins	"'[if yob attaboy is moot]I'm too busy to read! I have a thriving business[else]That won't help my business thrive[end if]!'"
 tao boat	"You sense that the tao boat requires more than just wordy knowledge. It requires ... feeling."
+Yuge Guy	"The Yuge Guy doesn't bother with books--not even a ghostwritten, self-serving autobiography."
 [zzbr]
 
 [??table of generic fails for if an item has something that works with it]
@@ -1793,53 +1795,55 @@ tao boat	"You sense that the tao boat requires more than just wordy knowledge. I
 
 table of cantuse [xxcant]
 use1	babble
-redness ender	"The redness ender is good for destroying stuff. Probably evil stuff. You don't need to vaporize anything you're carrying[if Rob is in Worn Row]. Or even Rob[end if]."
-Spur Ups	"The Spur Ups can't physically levitate anything, but they make you want to do something for yourself, by yourself, to yourself, for a pick up or something like it. You're not sure what."
-Psi Wisp	"The Psi Wisp is impervious to bribery or normal physical attacks. You need to outrun and outsmart it."
-Kayo Yak	"The Kayo Yak grunts. Looks like you can't, or don't want to, use anything on it."
-Dave	"Dave's not useful, man."
-Ian	"Ian's worse than useless. You need to use your wit on him."
-Rob	"Rob's not going to be obliging. You have to get rid of him, somehow."
-Ned	"Ned wants a fight, and you need some other way around him. Bribery or violence doesn't seem sufficient. It might be simpler than you think. Ned's pretty ... basic."
-ergot ogre	"The ogre can't be bribed or baited. At least, not by you. You're not fast or strong enough to outfox (or out-any other animal) it on your own. Plus, you worry anything that touches the ergot ogre might shrivel up. Maybe you need the services of someone or something that can beat up the ogre without touching its skin." [?? how to pick off duplicates in a table?]
-Pact Cap	"Your pact cap is fine where it is, on your head[if current action is useoning][cap-use][end if]."
-Gorge Grog	"The Gorge Grog is so concentrated, it's probably only good for chemical warfare."
-DNA band	"The DNA band is useless on its own. It probably needs some sort of jolt to become useful, or sentient."
-north tron	"The North-Tron's already done its job."
-x-it stix	"They're just there to block you."
-resale laser	"You can't just go vaporizing stuff willy-nilly. Plus, the laser only has one use[if epicer recipe is xed], and you need it to blast north to reach the Diktat Kid[end if]."
 ark of okra	"While the ark inspires you to want to mix foods, you don't want to mix anything with IT. You don't know how long that okra's been there!"
-wordy drow	"The wordy drow moans 'Er ... eh ... there,' pointing to the Liar Grail."
-level net	"There's got to be a way to untangle the net on your own, so it doesn't get cut or destroyed."
-senile felines	"It might be more productive to use the felines on themselves, in a certain way."
-opossum	"The opossum isn't useful, but perhaps you could be nice and show it a way that it doesn't have to be."
-radar	"The radar detects no dark radon ... and nothing less harmful/more useful. But maybe there's something hidden elsewhere."
-tao boat	"The tao boat remains impassive. But surely something you can show it will prove your worth."
-enact cane	"The enact cane needs to be augmented, but not quite like that."
-sharp rahs	"The rahs need to be combined with some other motivational material."
 Bro Orb	"Nothing physical seems to work on the orb. You need a psychological push, here."
+Dave	"Dave's not useful, man."
+DNA band	"The DNA band is useless on its own. It probably needs some sort of jolt to become useful, or sentient."
+enact cane	"The enact cane needs to be augmented, but not quite like that."
+ergot ogre	"The ogre can't be bribed or baited. At least, not by you. You're not fast or strong enough to outfox (or out-any other animal) it on your own. Plus, you worry anything that touches the ergot ogre might shrivel up. Maybe you need the services of someone or something that can beat up the ogre without touching its skin." [?? how to pick off duplicates in a table?]
+gnu dung	"There's a lot of gnu dung. You'll need something tailored specific to it, to clean it up."
+Gorge Grog	"The Gorge Grog is so concentrated, it's probably only good for chemical warfare."
+Ian	"Ian's worse than useless. You need to use your wit on him."
+Kayo Yak	"The Kayo Yak grunts. Looks like you can't, or don't want to, use anything on it."
+level net	"There's got to be a way to untangle the net on your own, so it doesn't get cut or destroyed."
+Ned	"Ned wants a fight, and you need some other way around him. Bribery or violence doesn't seem sufficient. It might be simpler than you think. Ned's pretty ... basic."
+north tron	"The North-Tron's already done its job."
+opossum	"The opossum isn't useful, but perhaps you could be nice and show it a way that it doesn't have to be."
+Pact Cap	"Your pact cap is fine where it is, on your head[if current action is useoning][cap-use][end if]."
+Psi Wisp	"The Psi Wisp is impervious to bribery or normal physical attacks. You need to outrun and outsmart it."
+radar	"The radar detects no dark radon ... and nothing less harmful/more useful. But maybe there's something hidden elsewhere."
+redness ender	"The redness ender is good for destroying stuff. Probably evil stuff. You don't need to vaporize anything you're carrying[if Rob is in Worn Row]. Or even Rob[end if]."
+resale laser	"You can't just go vaporizing stuff willy-nilly. Plus, the laser only has one use[if epicer recipe is xed], and you need it to blast north to reach the Diktat Kid[end if]."
+Rob	"Rob's not going to be obliging. You have to get rid of him, somehow."
+senile felines	"It might be more productive to use the felines on themselves, in a certain way."
+sharp rahs	"The rahs need to be combined with some other motivational material."
+Spur Ups	"The Spur Ups can't physically levitate anything, but they make you want to do something for yourself, by yourself, to yourself, for a pick up or something like it. You're not sure what."
+tao boat	"The tao boat remains impassive. But surely something you can show it will prove your worth."
 test set	"You need to use something violent on the test set."
+turf rut	"[if poo coop is moot]You can walk across the tur(f/d) rut now, and that's more than good enough[else]Hmm. Not quite. You'd need a lot of material to fill the turf rut in[end if]."
+wordy drow	"The wordy drow moans 'Er ... eh ... there,' pointing to the Liar Grail."
+x-it stix	"They're just there to block you."
 [zzcant]
 
 to say cap-use: say ". It doesn't need to be used with or on anything else[if kayo yak is not moot]. though it may help you in a pinch later on[end if]"
 
 table of person specific rejects [xxpsr]
 use1	babble
-Door Frood	"The Door Frood yawns. A gift would be nice, but THAT seems kind of boring."
 cross orc	"The cross orc squints a bit. It doesn't seem big on culture or gifts for their own sake. You may have to be unsubtle, here."
+Door Frood	"The Door Frood yawns. A gift would be nice, but THAT seems kind of boring."
 liar grail	"Attacking the grail doesn't seem on, but perhaps putting something in it might cause a drastic act."
 [zzpsr]
 
 table of use redir [xxur]
 use1	person-reject	thing-reject
+el doodle	"[noun] doesn't seem up to deciphering things."	--
 gift fig	"You don't want to share your food, here. There's not really enough of it, anyway."
+ME gem	"They look a bit frightened by the power of the ME gem. It must only work on, or for, really bad people or things."	--
 nat's tan	"You are greeted with a look of revulsion."	--
 party trap	"The trap can't work on a person. It's too small, and people are too smart."	"You need to use the party trap on something animate."
-wash saw	"The saw isn't built for gory violence."	"The saw is best used to trim things there's an excess of, not just to cut stuff down."
-el doodle	"[noun] doesn't seem up to deciphering things."	--
 pity tip	"You don't want to give it away! You [if navy van is xed]should maybe use it, yourself. Now where was Seedy Dee's?[else]have a feeling you can find Seedy Dee's, if you look hard enough.[end if]"	--
 poo coop	"Eww. Gross. Nobody deserves that."	"[if gnu dung is moot]No, you need to find the right thing to empty the poo coop into[else]The poo coop is only good for vacuuming up a certain kind of item[end if]."
-ME gem	"They look a bit frightened by the power of the ME gem. It must only work on, or for, really bad people or things."	--
+wash saw	"The saw isn't built for gory violence."	"The saw is best used to trim things there's an excess of, not just to cut stuff down."
 [zzur]
 
 section table of specific use rejects
@@ -1847,72 +1851,75 @@ section table of specific use rejects
 table of specific use rejects [xxrej] [xxfail] [xxsur]
 use1	use2	babble
 Bro Orb	Madam	"As you lift the Bro Orb to throw at Madam, you see yourself in the Mirror Rim. You don't look so great or heroic. In fact, you feel unusually self-conscious. More than you deserve to, you think. Besides, the Bro Orb might dissolve her or something, but you're not out to kill anyone."
-Cave Vac	gnu dung	"The Cave Vac sputters. You may need something more specifically suited to the, uh, material to clean up."
-DNA hand	Yuge Guy	"The hand doesn't seem to want to move toward the Yuge Guy."
-Dirt Rid	cassettes sac	"The Dirt Rid wheezes but is unable to clean up the cassettes sac. You need something more powerful."
-Dirt Rid	gnu dung	"The Dirt Rid is ineffective. You may need something stronger."
-Dirt Rid	go-by bog	"The bog is too big for that."
-Epoch Cope	Revolt Lover	"'Wish I could be interested in politics, but I'm not.'"
-Gorge Grog	Yuge Guy	"The Yuge Guy doesn't drink, and neither does Johnny. Also, the Yuge Guy may or may not be a germaphobe."
-Gorge Grog	cassettes sac	"That'd clean up the cassettes sac, but it'd probably dissolve it, too."
-Gorge Grog	yard ray	"The Gorge Grog is pretty strong stuff, but you may need something even stronger."
-ME gem	ME Totem	"The egotistical forces in the gem and totem repel each other. Just as well. You don't know if you could survive if such insufferability synergized."
-ME gem	Yuge Guy	"That might make the Yuge Guy's ego too much to handle."
-Mr Arm	Yuge Guy	"Mr. Arm doesn't seem to want to move toward the Yuge Guy."
-NULL ILLUN	Revolt Lover	"'I guess we all could use it a little. But someone else might need it more than me. Um, I hope.'"
-NULL ILLUN	Door Frood	"'Like I need it! Other people do! And what's worse, some who read it become less easy to make fun of. Hmmph.'"
-Party Trap	Revolt Lover	"'Whoah! Neat! That's a lot more useful than my art.'"
-Rep Popper	Yuge Guy	"It seems like the Rep Popper should work, but it doesn't, quite. Maybe there is something that is giving the Yuge Guy all his rep?"
-TI	Revolt Lover	"'Hmm. A bit too mean for me. Maybe it's more someone else's speed.'"
-Trap Art	Revolt Lover	"But the Revolt Lover gave it to you in the first place."
-YE KEY	DIFF ID	"You wave Ye Key in front of the Diff ID. Nothing happens. The engraving on Ye Key seems to match up with what the Diff ID wants to see, but maybe you need something else."
 bunk nub	sleep eels	"That -- well, it almost works. But the bunk nub isn't shaped right to house that many small animals. Maybe it could be changed."
+Cave Vac	gnu dung	"The Cave Vac sputters. You may need something more specifically suited to the, uh, material to clean up."
 cave vac	go-by bog	"The bog is too big for that."
 demo med	Elan Ale	"No, combining alcohol and pills is a bad, bad idea."
 demo med	Gorge Grog	"No, combining alcohol and pills is a bad, bad idea."
+Dirt Rid	cassettes sac	"The Dirt Rid wheezes but is unable to clean up the cassettes sac. You need something more powerful."
+Dirt Rid	gnu dung	"The Dirt Rid is ineffective and too small. You may need something stronger."
+Dirt Rid	go-by bog	"The bog is too big for that."
+DNA hand	Yuge Guy	"The hand doesn't seem to want to move toward the Yuge Guy."
 dork rod	kayak	"The dork rod is too weak and wimpy to be an effective paddle."
+dose sod	pact cap	"[cap-is-not-cup]."
+el doodle	code doc	"'This isn't quite clear enough for me. If you could clean it up, though, I could help you.'"
 el doodle	Known Wonk	"The Known Wonk looks at El Doodle, thinks, and says 'Ugh, sorry, never could decipher these things. No good rules to. Maybe you could use the edits tide, though.'"
 el doodle	Revolt Lover	"But the Revolt Lover pretty much offered it to you in the first place."
-el doodle	code doc	"'This isn't quite clear enough for me. If you could clean it up, though, I could help you.'"
-elope pole	Tao Boat	"The Tao Boat is too big to control with the elope pole."
 elope pole	crag arc	"The pole is for navigation, not for vaulting."
 elope pole	go-by bog	"The bog is too wide for that."
 elope pole	lie veil	"The veil resists the pole. You need a more violent implement."
 elope pole	made dam	"The pole is for navigation, not for vaulting."
+elope pole	Tao Boat	"The Tao Boat is too big to control with the elope pole."
 enact cane	kayak	"The enact cane doesn't seem like the right tool to propel the kayak. It's more for chores."
 enact cane	rep popper	"But that might bust your own rep, since you are the nearest person."
+Epoch Cope	Revolt Lover	"'Wish I could be interested in politics, but I'm not.'"
 exam axe	balsa slab	"You're not sure what to cut the slab into, and you don't need firewood."
-exam axe	porch crop	"That seems like the right idea, but the Code Doc is the person who should be giving out punishing exams, here. The wash saw, on the other hand..."
 exam axe	Code Doc	"The Code Doc declines your offer. Instruments of violence have no place at [uneven u]."
+exam axe	porch crop	"That seems like the right idea, but the Code Doc is the person who should be giving out punishing exams, here. The wash saw, on the other hand..."
 gate tag	DIFF ID	"You wave the gate tag in front of the DIFF ID, which beeps for a second, then ... nothing. Maybe the gate tag (or its pattern) needs to be read a different way."
+gift fig	sleep eels	"It seems they want comfort and not food. Besides, it'd be a pain to split up fairly."
+gnu dung	turf rut	"That's a good idea, but you can't move the gnu dung onto the turf rut with your bare hands."
 gold log	kayak	"The gold log is too heavy to be an effective paddle."
+Gorge Grog	cassettes sac	"That'd clean up the cassettes sac, but it'd probably dissolve it, too."
+Gorge Grog	yard ray	"The Gorge Grog is pretty strong stuff, but you may need something even stronger."
+Gorge Grog	Yuge Guy	"The Yuge Guy doesn't drink, and neither does Johnny. Also, the Yuge Guy may or may not be a germaphobe."
+ME gem	ME Totem	"The egotistical forces in the gem and totem repel each other. Just as well. You don't know if you could survive if such insufferability synergized."
+ME gem	Yuge Guy	"That might make the Yuge Guy's ego too much to handle."
+Mr Arm	Yuge Guy	"Mr. Arm doesn't seem to want to move toward the Yuge Guy."
+NULL ILLUN	Door Frood	"'Like I need it! Other people do! And what's worse, some who read it become less easy to make fun of. Hmmph.'"
+NULL ILLUN	Revolt Lover	"'I guess we all could use it a little. But someone else might need it more than me. Um, I hope.'"
+Party Trap	Revolt Lover	"'Whoah! Neat! That's a lot more useful than my art.'"
+past sap	pact cap	"[cap-is-not-cup]."
 pity tip	Door Frood	"The Door Frood is too good for a mere pity tip. Well, in the Door Frood's mind."
 poo coop	Liar Grail	"[if gnu dung is in Dumb Mud]There's nothing inside the coop to empty into the liar grail.[else]Maybe if the contents came from a bull and not a gnu, it would be appropriate (this is not a palindrome 'joke.')[end if]"
 poo coop	Lie Veil	"The lie veil is only figuratively full of ... oh, wait, this is a family game."
 poo coop	Yuge Guy	"That could be fun, but he might be too normalised to the stuff in the coop to do damage."
 radar	girt rig	"Still nothing."
 radar	go-by bog	"The radar detects nothing. So there is probably no horribly bogy gob. But [if sage gas is off-stage]there are plenty of other places you could slip and fall and disappear forever[else]you got the sage gas, already[end if]."
-radar	trap mart rampart	"You detect nothing to the east or west. Maybe other structures like the rampart will hide something, though."
 radar	sleep eels	"A radar isn't supposed to work this way, but somehow, you detect some bitterness at mammals in general. But it's secondary to needing a more comfortable place to sleep."
+radar	trap mart rampart	"You detect nothing to the east or west. Maybe other structures like the rampart will hide something, though."
+Rep Popper	Yuge Guy	"It seems like the Rep Popper should work, but it doesn't, quite. Maybe there is something that is giving the Yuge Guy all his rep?"
 resale laser	made dam	"[if eroded ore is off-stage]There might be something behind the dam. But you need to be subtler looking for it[else]You already got the eroded ore. Don't destroy part of Grebeberg looking for more[end if]."
 roto motor	kayak	"The kayak is not electrical, and besides, the roto motor is too small."
 roto motor	tao boat	"The tao boat is not electrical, and besides, the roto motor is too small."
 sage gas	sharp rahs	"Hmm! The contrast between the two...that should work. But maybe you need some sort of intermediary that could hold them both."
 sharp rahs	Bro Orb	"You feel a shock--perhaps you approached the Bro Orb too eagerly! But it seems you were on the right track."
 soot tattoos	DIFF ID	"The Diff-ID doesn't respond. Maybe you need a way to put them on you, somehow."
-stamp mats	Tru Yurt	"The stamp mats aren't a home-y sort of mat."
 stamp mats	soot tattoos	"Hmm. If the soot tattoos had a pattern, that would be interesting. But they don't, yet."
+stamp mats	Tru Yurt	"The stamp mats aren't a home-y sort of mat."
 stamp mats	yahoo hay	"The mats don't quite work on the hay. They might work better on something with more surface area."
 state tats	DIFF ID	"You can just walk north to get through."
-taboo bat	ME Totem	"Violence isn't the answer. The ME Totem is not repelled by moral turpitude, anyway."
-taboo bat	Yuge Guy	"Violence isn't the answer. The Yuge Guy is not repelled by moral turpitude, anyway."
 taboo bat	bomb mob	"No way. You'd be outnumbered. You'll need stealth."
+taboo bat	ME Totem	"Violence isn't the answer. The ME Totem is not repelled by moral turpitude, anyway."
 taboo bat	test set	"This isn't cricket. You do, however, need to use SOME weapon on the test set."
+taboo bat	Yuge Guy	"Violence isn't the answer. The Yuge Guy is not repelled by moral turpitude, anyway."
+TI	Revolt Lover	"'Hmm. A bit too mean for me. Maybe it's more someone else's speed.'"
+Trap Art	Revolt Lover	"But the Revolt Lover gave it to you in the first place."
 trap art	stark rats	"Whatever's planned on the trap art might work, but not the trap art itself."
 troll ort	cross orc	"The cross orc mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. But the way it looks at you, you suspect it'd forgive you if you gave the right gift."
-troll ort	senile felines	"The senile felines sniff lazily at the troll ort, but despite its saying PINT-A-CATNIP, they do nothing. Perhaps they are just too inactive."
 troll ort	ergot ogre	"The ergot ogre mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. Perhaps you need a more violent way to dispose of the ogre."
 troll ort	kayo yak	"As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up. The yak seems weirdly attracted to it."
+troll ort	senile felines	"The senile felines sniff lazily at the troll ort, but despite its saying PINT-A-CATNIP, they do nothing. Perhaps they are just too inactive."
 wash saw	cassettes sac	"The wash saw isn't big enough to clean up the cassettes sac. You need a more powerful cleaner."
 wash saw	crag arc	"The crag arc is much too big for the saw to get anywhere. [if UFO tofu is off-stage]Maybe there's a better way to find what's behind there[else]Besides, you found enough[end if]."
 wash saw	KAOS Oak	"The wash saw isn't big enough or sharp enough to take down the [kaos oak]. You need a much more powerful machine[if player has epicer recipe and epicer recipe is nox], and you notice the epicer recipe could help with that[else if epicer recipe is xed], which you can build if you follow the epicer recipe[end if]."
@@ -1922,7 +1929,10 @@ wash saw	stark rats	"You couldn't catch and hold a rat long enough to cut it wit
 yard ray	Diktat Kid	"The Diktat Kid laughs as you point the yard ray. 'Destroy me, but my work--my dezaz-ed--will remain!'"
 yard ray	Tru Hurt	"The Tru Hurt is dangerous, but maybe you should use the yard ray on something even more harmful."
 yard ray	Waster Fretsaw	"The Waster Fretsaw is dangerous, but maybe you should use the yard ray on something even more harmful."
+YE KEY	DIFF ID	"You wave Ye Key in front of the Diff ID. Nothing happens. The engraving on Ye Key seems to match up with what the Diff ID wants to see, but maybe you need something else."
 [zzrej] [zzfail]
+
+to say cap-is-not-cup: say "That might short the pact cap out. [if player has puce cup]The puce cup is a better container[else]You need a more dedicated container[end if]"
 
 [below is something to cut and paste to the table of failed useons]
 [item1	item2	"[fill-in-here]"]
@@ -1933,8 +1943,8 @@ table of shiftables [xxshi]
 use1	use2	use3 [use 3, not 1, on 2]	use-text
 navy van	pity tip	eye	"Nothing happens until you wave the pity tip across the eye."
 rift fir	wash saw	past sap	--
-wordy drow	puce cup	liar grail	--
 TNT	Mr Arm	bomb mob	--
+wordy drow	puce cup	liar grail	--
 
 section table of goodacts
 
