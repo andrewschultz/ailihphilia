@@ -66,7 +66,7 @@ You possess no farm tools. And this would be pointless anyway.
 It's stuck into the ground.
 \\
 #mistake test for fun enuf
->fun enuf
+>fun nuf
 Still ungrammatical!
 \\
 #mistake test for fu nuf
@@ -641,7 +641,7 @@ by one point
 >get epoch cope
 
 ==t4
->gt fun nuf
+>gt fun enuf
 ==!
 >e
 >n
@@ -3079,7 +3079,7 @@ This isn't cricket. You do, however, need to use SOME weapon on the test set.
 by one point
 
 ==t4
->gt fun nuf
+>gt fun enuf
 ==!
 >e
 >n

@@ -8,7 +8,7 @@
 Initially sent to source code/repository November 2017.</history>
 	</info>
 	<map>
-		<room id="1" name="Fun 'Nuf" subtitle="" x="-64" y="0" w="96" h="32" region="Dim Mid" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isStartRoom="yes" description="changes to Nu Fun on beating Diktat Kid" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
+		<room id="1" name="Fun Enuf" subtitle="" x="-64" y="0" w="96" h="32" region="Dim Mid" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isStartRoom="yes" description="changes to Nu Fun on beating Diktat Kid" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-30" customDown="0">Tile Lit|Pact Cap|(KAOS Oak/Tix Exit)</objects>
 		</room>
 		<room id="2" name="Seer Trees" subtitle="" x="-224" y="-32" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">

@@ -10,7 +10,7 @@ Some particular spoilers, such as the general procedure for puzzles, may be enco
 
 Many point scoring commands will be palindromes. Most of the others are of the form USE X ON Y. You can shorten them by just using one word. In other words, to plagiarize from Kingdom of Loathing's Palindome, USE EVIL OLIVE ON TACO CAT can be shortened to USE OLIVE ON CAT. (I used the full names because I wrote a script to make sure the walkthrough and source were relatively synced, and I didn't want to cross up namespaces e.g. the Gulf Lug and Flu Gulf could both be GULF.)
 
-So! Fun 'Nuf is, well, not fun enough to start. And worse yet, you can't leave until you know what to do with the Pact Cap! Well, you can leave through the Tix Exit, but that's no fun, unless you like seeing bad ends.
+So! Fun Enuf is, well, not fun enough to start. And worse yet, you can't leave until you know what to do with the Pact Cap! Well, you can leave through the Tix Exit, but that's no fun, unless you like seeing bad ends.
 
 Flat out TAKEing the Pact Cap doesn't work. TAKE says maybe if it were a KAT. GET says "Get, e.g. ..."
 
@@ -24,7 +24,7 @@ Note if you examine it, you may be unhappy with it. You feel like it can do more
 
 You also get a set-o-notes to replace the darer ad. They're still a bit vague, so we'll see wheat we can do with them, later.
 
-That's all the points you can get for the Dim Mid region, for now. In fact, Fun Nuf is the only room in the Dim Mid...until the end.
+That's all the points you can get for the Dim Mid region, for now. In fact, Fun Enuf is the only room in the Dim Mid...until the end.
 
 Now you're kind of blocked at the Seer Trees in Grebeberg to the west, so maybe we can figure out how to get past the STARK RATS. We can explore a bit, too, first.
 

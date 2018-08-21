@@ -2,6 +2,9 @@
 #
 # mistake/clue revealing tester
 # not attacked to the main walkthrough file
+#
+# check it covers all cases with utw.py
+#
 
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
@@ -124,6 +127,9 @@ That might be overkill. The wash saw, on the other hand...
 
 >uu gate tag on diff id
 You wave the gate tag in front of the DIFF ID, which beeps for a second, then ... nothing. Maybe the gate tag (or its pattern) needs to be read a different way.
+
+>uu gift fig on sleep eels
+It seems they want comfort and not food. Besides, it'd be a pain to split up fairly.
 
 >uu gold log on kayak
 The gold log is too heavy to be an effective paddle.
@@ -249,6 +255,27 @@ The Tru Hurt is dangerous, but maybe you should use the yard ray on something ev
 >uu yard ray on waster fretsaw
 The Waster Fretsaw is dangerous, but maybe you should use the yard ray on something even more harmful.
 
+>uu gnu dung on turf rut
+That's a good idea, but you can't move the gnu dung onto the turf rut with your bare hands.
+
+>uu wash saw on kaos oak
+The wash saw isn't big enough or sharp enough to take down the
+You need a much more powerful machine.
+
+>uu null illun on door frood
+"Like I need it! Other people do! And what's worse, some who read it become less easy to make fun of. Hmmph."
+
+>uu exam axe on code doc
+The Code Doc declines your offer. Instruments of violence have no place at Uneven U.
+
+>uu poo coop on lie veil
+The lie veil is only figuratively full of ... oh, wait, this is a family game.
+
+>uu dose sod on pact cap
+That might short the pact cap out. You need a more dedicated container.
+>uu past sap on pact cap
+That might short the pact cap out. You need a more dedicated container.
+
 * _use_x_on_anything_test
 
 >z
@@ -353,6 +380,23 @@ They're just there to block you.
 >uux x-it stix
 They're just there to block you.
 
+>uuy gnu dung
+There's a lot of gnu dung. You'll need something tailored specific to it, to clean it up.
+>uux gnu dung
+There's a lot of gnu dung. You'll need something tailored specific to it, to clean it up.
+>uuy opossum
+The opossum isn't useful, but perhaps you could be nice and show it a way that it doesn't have to be.
+>uux opossum
+The opossum isn't useful, but perhaps you could be nice and show it a way that it doesn't have to be.
+>uuy senile felines
+It might be more productive to use the felines on themselves, in a certain way.
+>uux senile felines
+It might be more productive to use the felines on themselves, in a certain way.
+>uux turf rut
+Hmm. Not quite. You'd need a lot of material to fill the turf rut in.
+>uuy turf rut
+Hmm. Not quite. You'd need a lot of material to fill the turf rut in.
+
 * _ignore-block
 
 #ignore-block
@@ -387,6 +431,28 @@ The machines are fixed in place. You can't use one on the other.
 The machines are fixed in place. You can't use one on the other.
 >use rotator on reviver
 The machines are fixed in place. You can't use one on the other.
+
+# below we test x-on-machine-is-bad
+#ingredient
+>uu gift fig on reviver
+WRONG
+#tronpart
+>uu resale laser on reviver
+WRONG
+#already in machine + tronpart: which way?
+>uu ore zero on reviver
+WRONG
+#already used
+>uu dork rod on reviver
+WRONG
+>uu pact cap on reviver
+WRONG
+>uu el doodle on reviver
+WRONG
+>uu nat's tan on reviver
+WRONG
+
+# below we test "oops broken" text
 
 >purloin stinky knits
 >purloin gold log

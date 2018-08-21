@@ -20,7 +20,7 @@ chapter go walkthrough
 
 test gh1 with "pack cap/stats/peep/poop/dial aid/refer/e/n/get trap art/s/s/evade dave/w/bore rob/word row/trace cart/get to idiot/gt art xtra/n/use to idiot on door frood/get bunk nub/e/get all/use pity tip on eye/w/w/tend net/gt word row/work row/use trap art on reifier/use bunk nub on reviver".
 
-test gh2 with "word row/get epoch cope/gt fun nuf/w/use party trap on stark rats/n/use epoch cope on king nik/s/s/slam mammals/use stock cots on sleep eels/s/get stamp mats/e/get poo coop/gt word row/get yob attaboy/gt yawn way/puff up/e/pull up/get puce cup".
+test gh2 with "word row/get epoch cope/gt fun enuf/w/use party trap on stark rats/n/use epoch cope on king nik/s/s/slam mammals/use stock cots on sleep eels/s/get stamp mats/e/get poo coop/gt word row/get yob attaboy/gt yawn way/puff up/e/pull up/get puce cup".
 
 test gh3 with "gt cold loc/use wash saw on past sap/use puce cup on past sap/gt emo dome/s/get troll ort/use puce cup on liar grail/gt cold loc/e/use puce cup on dose sod/gt swept pews/s/use puce cup on bond nob".
 
@@ -38,7 +38,7 @@ test gh9 with "gt moo room/use enact cane on yahoo hay/w/pace cap/use troll ort 
 
 test gh10 with "e/use sage gas on tame mat/use sharp rahs on guru rug/gt dumb mud/s/nail ian/use snack cans on ufo tofu/use gift fig on mayo yam/gt yack cay/use moor broom on tru yurt/gt uneven u/use wash saw on porch crop/gt dumb mud/use exam axe on lie veil/n/muss opossum/get all/gt work row/use dna band on reifier/use roto motor on dna hand/use eroded ore on reviver/use you buoy on rotator/gt yell alley/use mr arm on bomb mob/get rep popper/gt flu gulf/use nat's tan on scorn rocs".
 
-test gh11 with "w/use rep popper on me totem/gt emo dome/n/use bro orb on mirror rim/use balsa slab on sword rows/gt work row/use not-a-baton on reifier/use murdered rum on yard ray/emit noontime/use yard ray on test set/gt fun nuf/use tnt on ore zero/n/use me gem on knife fink/use taboo bat on verses rev/use yard ray on redivider/s/use x-ite tix on tix exit".
+test gh11 with "w/use rep popper on me totem/gt emo dome/n/use bro orb on mirror rim/use balsa slab on sword rows/gt work row/use not-a-baton on reifier/use murdered rum on yard ray/emit noontime/use yard ray on test set/gt fun enuf/use tnt on ore zero/n/use me gem on knife fink/use taboo bat on verses rev/use yard ray on redivider/s/use x-ite tix on tix exit".
 
 test ghs with "test gh1/test gh2/test gh3/test gh4/test gh5/test gh6/test gh7/test gh8/test gh9/test gh10/test gh11"
 
@@ -65,7 +65,7 @@ test part9 with "w/s/s/s/e/use enact cane on yahoo hay/pace cap/use troll ort on
 test p9a with "w/s/s/s/e/use enact cane on yahoo hay/pace cap/use troll ort on brag garb/w".
 [this is to give the kayo yak another go]
 
-[ note I could probably save a move or two here by visiting mont nom just before going back east ... now that getting the martini tram moves you back to fun nuf ]
+[ note I could probably save a move or two here by visiting mont nom just before going back east ... now that getting the martini tram moves you back to fun enuf ]
 test part10 with "e/use sage gas on tame mat/use sharp rahs on guru rug/w/n/n/e/s/nail ian/use snack cans on ufo tofu/use gift fig on mayo yam/w/w/w/n/use moor broom on tru yurt/s/s/use wash saw on porch crop/n/e/use exam axe on lie veil/n/muss opossum/get all/s/e/e/e/s/w/use dna band on reifier/use roto motor on dna hand/use eroded ore on reviver/use you buoy on rotator/e/n/n/n/e/use mr arm on bomb mob/get rep popper/w/s/s/w/w/n/n/use nat's tan on scorn rocs".
 
 test part11 with "w/use rep popper on me totem/e/s/s/e/e/e/n/use bro orb on mirror rim/use balsa slab on sword rows/s/w/s/w/use not-a-baton on reifier/use murdered rum on yard ray/emit noontime/use yard ray on test set/e/n/w/use tnt on ore zero/n/use me gem on knife fink/use taboo bat on verses rev/use yard ray on redivider/s/use x-ite tix on tix exit".
@@ -196,7 +196,7 @@ chapter mistake quizzing
 
 test m0 with "refer/peep/poop/stats/dial aid".
 
-test m1 with "finord 3/flex elf/flea elf/fun enuf/funk nuf/fund nuf/fun snuf/paco cap/pack cap/e/yawn way/n/art ecetra".
+test m1 with "finord 3/flex elf/flea elf/fun nuf/funk nuf/fund nuf/fun snuf/paco cap/pack cap/e/yawn way/n/art ecetra".
 
 test m2 with "s/s/wasp saw/evade dave/w/bork rob/borg rob/bore rob/worm row/word row/get idiot/e/n/n/n/door brood/give idiot to frood/get all/e/use tip on van/get all/w/w/tend net/e/s/s/s/w/get epoch cope/work row/use trap art on reifier/w/w/seer brees/seer frees/stare rats/start rats/use trap on rats/s/use bunk nub on eels/s/get all/e/moo doom".
 

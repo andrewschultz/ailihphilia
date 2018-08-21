@@ -1,9 +1,10 @@
 ## reg-ai-asfaras.txt
-## GENERATOR FILE: rbr-ai-thru.txt
 
 ## checking "As far as" mistakes
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
+
+* walkthrough
 
 >about xtratxt
 I only understood you as far as wanting to see info about the game.

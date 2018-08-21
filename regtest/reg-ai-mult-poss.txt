@@ -106,7 +106,7 @@ That looks like the start of something. But you still need to find a couple thin
 >undo
 
 >purloin ore zero
->abstract martini tram to fun nuf
+>abstract martini tram to fun enuf
 >uu tnt on laser
 You're clueless how, at first. But then you take a look at
 >undo
@@ -134,7 +134,7 @@ That looks like the start of something. But you still need to find a couple thin
 >uu ore zero on martini tram
 That looks like the start of something. But you still need to find a couple things.
 
->abstract martini tram to fun nuf
+>abstract martini tram to fun enuf
 >purloin tnt
 >purloin ore zero
 >purloin resale laser
@@ -272,7 +272,7 @@ You see how everything fits--even the TNT
 >undo
 >undo
 
-# outside Fun Nuf
+# outside Fun Enuf
 
 >e
 >use ore on laser

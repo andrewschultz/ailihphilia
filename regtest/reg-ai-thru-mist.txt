@@ -36,7 +36,7 @@ You possess no farm tools. And this would be pointless anyway.
 It's stuck into the ground.
 
 #mistake test for fun enuf
->fun enuf
+>fun nuf
 Still ungrammatical!
 
 #mistake test for fu nuf
@@ -179,7 +179,7 @@ You need to figure out what that means. It seems to indicate a room south of Fun
 >e
 
 #mistake test for calf lac
->gonear calcific lac
+>gonear lac oft focal
 >calf lac
 There is another room with that, sort of. Plus, cows can't swim.
 >undo
@@ -215,8 +215,7 @@ My Gym still smells the same. For better or worse
 You think back to everyone who has inspired you, past and present. It's life-affirming!
 #mistake test for must sum
 >must sum
-You take stock of all you need to do--or at least, all you know you need to do. Or you think back to horrible repetitive exercises in math class, which were horrible whether you we
-re good at them or not.
+No, you don't NEED to guesstimate how strong Dave is.
 
 #mistake test for mush sum
 >mush sum
@@ -306,7 +305,7 @@ Ugh! You don't need to make this place worse
 Worn Row is not meant to be a garden. Maybe it would look nicer that way, but it wouldn't be helpful to you.
 #mistake test for worf row
 >worf row
-No Enterprise security officer arrives to help you.
+No Enterprise security officer arrives to help or hinder you.
 
 >word row
 by one point
@@ -960,6 +959,10 @@ Cannibalism is wrong. Besides, you'd probably catch whatever the Gulf Lug has.
 #mistake test for musc sum
 >musc sum
 You don't need Dave to return.
+
+#mistake retest for must sum
+>must sum
+You do some random mental math, which gives you a headache, which is sort of appropriate for Flu Gulf ... but also totally useless.
 
 #mistake test for score rocs
 >score rocs
@@ -1699,7 +1702,7 @@ Greedy! There's enough food to find around here, really.
 
 #mistake test for mong nom
 >mong nom
-No "interesting" brownies appear.
+No 'interesting' brownies appear.
 
 #mistake test for monk nom
 >monk nom
@@ -1801,7 +1804,7 @@ That's up to Muelle ... um, there's enough political references in the game with
 
 #mistake test for mraz arm
 >mraz arm
-You don't need Mr. Arm singing "I'm yours." He is already in your inventory.
+You don't need Mr. Arm singing 'I'm yours.' He is already in your inventory.
 
 #mistake test for band nab
 >band nab

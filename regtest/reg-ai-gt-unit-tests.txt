@@ -196,8 +196,8 @@ Already there!
 >gt trees
 Already there!
 
->gt fun nuf
-Fun 'Nuf
+>gt fun enuf
+Fun Enuf
 >gt fun
 Already there!
 >gt nuf

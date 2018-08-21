@@ -20,8 +20,8 @@ It usually means you're done with it.
 I hope that's an amusing reward.
 There's one occasion where that's not perfectly true, but this advice isn't critical to solving the game.
 >Dim Mid
->>FUN 'NUF
-?Why can't I leave?
+>>FUN ENUF
+?Why can't I leave east or west?
 You need to take the pact cap the right way, to show you're serious about things.
 TAKE CAP doesn't work.
 What's a theme of the game?
@@ -615,7 +615,7 @@ Lair Trial becomes Stride Dirts after disposing of the ergot ogre.
 Uneven U becomes Unitin' U after you acquire the balsa slab.
 Sneer Greens becomes Et Tu Butte after you beat the Yuge Guy.
 Dirge Grid becomes Top Spot after you beat the Diktat Kid.
-Fun 'Nuf becomes Nu Fun after you beat the Diktat Kid.
+Fun Enuf becomes Nu Fun after you beat the Diktat Kid.
 Emo Dome becomes Dome, Mod after you beat the Diktat Kid.
 ?What's an antimetabole?
 This is where I poke you to use Google. Oh, all RIGHT. I had to look up if there was a term like that, myself.

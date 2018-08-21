@@ -100,7 +100,7 @@ by one point
 
 >get epoch cope
 
->gt fun nuf
+>gt fun enuf
 
 >x recipe
 
@@ -470,7 +470,7 @@ by one point
 >use yard ray on test set
 by one point
 
->gt fun nuf
+>gt fun enuf
 
 >use TNT on ore zero
 by one point
