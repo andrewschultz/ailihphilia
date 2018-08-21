@@ -12,6 +12,7 @@
 # revit.py -w = recopies all the thru-east files
 # revit.py -wr -s2,4 -e5,7 = creates 2-5, 2-6, 2-7, 3-5, 3-6, 3-7, 4-5, 4-6, 4-7
 # revit.py -wr2 = creates 2 random skipping test files
+# revit.py -s1 = tests skip-by-one
 
 import glob
 import random
@@ -22,6 +23,7 @@ import re
 from collections import defaultdict
 from filecmp import cmp
 from shutil import copy
+import __main__ as main
 
 files_to_run = defaultdict(str)
 
@@ -31,6 +33,8 @@ destinations = defaultdict(str)
 
 first_line = "# created with the revit.py python tool\n"
 
+test_one_skip = False
+get_all = False
 launch_wrw_after = False
 post_copy_just_this = False
 print_chunk_list = False
@@ -56,6 +60,8 @@ end_str = ">n\n>use me gem on knife fink\n>use taboo bat on verses rev\n>use yar
 
 line_nums = []
 
+this_base = os.path.basename(main.__file__)
+
 def usage():
     print("List of arguments:")
     print('=' * 40)
@@ -68,6 +74,16 @@ def usage():
     print("j = just copy generated files")
     print("pc = print chunk list, cf = chunk list to file, cl = to file and launch")
     exit()
+
+def bound_it(x):
+    global went_over
+    if x > max_stuff:
+        x = max_stuff
+        went_over = True
+    if x < 0:
+        x = 0
+        went_over = True
+    return x
 
 def show_post_prt():
     if post_prt: print(prt_over, "copied over, ", prt_ignore, "unchanged and ignoring")
@@ -93,7 +109,7 @@ def write_single_wrw(start_val, end_val, block_dict, collapse_if_1):
         fname = "reg-ai-wrw-skip-from-{:02d}-to-{:02d}.txt".format(start_val, end_val)
     if not post_prt: print('Writing', start_val, end_val, fname)
     f = open(fname, "w")
-    f.write("# {:s}\n#\n# unit tester for wrw skipping step{:s} {:d}{:s}\n#\n** game: /home/andrew/prt/debug-ailihphilia.ulx\n** interpreter: /home/andrew/prt/glulxe -q\n\n* warpthrough\n\n".format(fname, 's' if start_val != end_val else '', start_val, '' if start_val == end_val else '-{:d}'.format(end_val)))
+    f.write("# {:s}\n#\n# unit tester for wrw skipping step{:s} {:d}{:s}\n#Created by {:s}\n#\n\n** game: /home/andrew/prt/debug-ailihphilia.ulx\n** interpreter: /home/andrew/prt/glulxe -q\n\n* warpthrough\n\n".format(fname, 's' if start_val != end_val else '', start_val, '' if start_val == end_val else '-{:d}'.format(end_val), this_base))
     for y in range (0, len(block_dict)):
         if y >= start_val and y <= end_val:
             f.write("\n>wrw\n")
@@ -136,7 +152,7 @@ def write_random_wrw(blox, num_of):
         string_to_dump += '>wrw\nendgame\n'
         file_string += "-{:d}-skips.txt".format(my_total)
         f = open(file_string, "w")
-        f.write("# {:s}\n#\n# randomly generated WRW tester** game: /home/andrew/prt/debug-ailihphilia.ulx\n** interpreter: /home/andrew/prt/glulxe -q\n\n* warpthrough\n\n".format(file_string))
+        f.write("# {:s}\n#\n# randomly generated WRW tester\n#Created by {:s}\n** game: /home/andrew/prt/debug-ailihphilia.ulx\n** interpreter: /home/andrew/prt/glulxe -q\n\n* warpthrough\n\n".format(file_string, this_base))
         f.write(string_to_dump)
         f.close()
         print("Wrote", file_string)
@@ -146,7 +162,6 @@ def write_random_wrw(blox, num_of):
     exit()
 
 def write_wrw_files():
-    only_one_wrw = (end_high == 0 and start_high == 0)
     as_n = "reg-ai-thru-as-needed.txt"
     wrw_blocks = []
     cmd_yet = False
@@ -161,9 +176,9 @@ def write_wrw_files():
                 cur_cmd = ''
             if '#endwrw' in cur_cmd: break
     if cur_cmd: wrw_blocks.append(cur_cmd)
-    if random_wrw_to_write: write_random_wrw(wrw_blocks, random_wrw_to_write)
-    elif only_one_wrw:
+    if test_one_skip:
         for x in range(0, len(wrw_blocks)): write_single_wrw(x, x, wrw_blocks, True)
+    elif random_wrw_to_write: write_random_wrw(wrw_blocks, random_wrw_to_write)
     else:
         for st in range(start_low, start_high):
             for en in range (end_low, end_high): write_single_wrw(st, en, wrw_blocks, False)
@@ -174,7 +189,7 @@ def create_speed_thru(base_file, base_out_str, idx):
     file_name = base_out_str.format(idx)
     f = open(file_name, "w")
     f.write(first_line)
-    f.write("# {:s}\n\n".format(file_name))
+    f.write("# {:s}\n#Created by {:s}\n\n".format(file_name, this_base))
     f.write("** game: /home/andrew/prt/debug-ailihphilia.ulx\n** interpreter: /home/andrew/prt/glulxe -q\n\n* runthrough\n\n".format(idx))
     buffer = ''
     cmd_idx = 0
@@ -344,9 +359,8 @@ while count < len(sys.argv):
     elif arg == 'w': files_to_run["westfirst"] = True
     elif arg == 'e': files_to_run["eastfirst"] = True # must come before 'e' below
     elif arg == 'm': files_to_run["min"] = True
-    elif arg == 'a':
-        start_low = end_low = speed_low = 0
-        start_high = end_high = speed_high = 74
+    elif arg == 'a': get_all = True
+    elif arg == 's1': test_one_skip = True
     elif arg[0] == 's':
         ary = [int(x) for x in re.split("[,-]", arg[1:])]
         if len(ary) == 1: start_low = start_high = ary[0]
@@ -402,25 +416,21 @@ if end_low > end_high:
 
 i7.go_proj('ai')
 
-if write_wrw: write_wrw_files()
-
 max_stuff = read_walkthrough_chunks()
+
+if get_all:
+    start_low = end_low = speed_low = 0
+    start_high = end_high = speed_high = max_stuff
+
+if test_one_skip: write_wrw_files()
+
+if write_wrw: write_wrw_files()
 
 # for x in line_nums: print(x, what_skipped[x])
 
-if start_low > end_high: sys.exit("Lowest start must be less than the highest end.")
+if start_low > end_high: sys.exit("Lowest start must be less than the highest end: {:d} vs {:d} now.".format(start_low, end_high))
 
 went_over = False
-
-def bound_it(x):
-    global went_over
-    if x > max_stuff:
-        x = max_stuff
-        went_over = True
-    if x < 0:
-        x = 0
-        went_over = True
-    return x
 
 speed_high = bound_it(speed_high)
 speed_low = bound_it(speed_low)

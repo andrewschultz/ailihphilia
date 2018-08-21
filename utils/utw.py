@@ -65,6 +65,7 @@ def compare_unit_and_source():
         if x not in in_unit.keys():
             if print_err_lines: print("(line {:05d}) Missing unit test for command".format(in_source[x]))
             print(x)
+            print(sug_txt[x])
             if not open_line_source: open_line_source = in_source[x]
             mu += 1
     ins = list(set(in_unit_generic_x.keys()) | set(in_unit_generic_y.keys()) | set(use_mac.keys()))
@@ -143,6 +144,8 @@ with open("story.ni") as file:
                 sug_txt[l1] = sug_txt[l2] = re.sub("\"", "", la[babble_col])
             if la[0] == '--' or in_cant: continue
             cmd = ">uu {:s} on {:s}".format(la[0].lower(), la[1].lower())
+            sug_txt[cmd] = re.sub("^\"", "", la[2])
+            sug_txt[cmd] = re.sub("\".*", "", sug_txt[cmd])
             if figure_out:
                 in_source[cmd] = line_count
                 continue
