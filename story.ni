@@ -117,7 +117,7 @@ understand "woman" as a person when the person is female.
 
 the player is neuter.
 
-Fun Nuf is a room. [just to be sure where the player starts]
+Fun Enuf is a room. [just to be sure where the player starts]
 
 section procedural rules
 
@@ -338,15 +338,15 @@ volume room specifications
 
 chapter room-dist and loc-num sorting out
 
-a room has a number called loc-num. loc-num of a room is usually -1. loc-num of Fun Nuf is 23. [loc num = 10 * south of lac + 1 * east of lac]
+a room has a number called loc-num. loc-num of a room is usually -1. loc-num of Fun Enuf is 23. [loc num = 10 * south of lac + 1 * east of lac]
 
-a room has a number called room-dist. room-dist of a room is usually -1. room-dist of Fun Nuf is 0. [room-dist = # of rooms you are away from Fun 'Nuf]
+a room has a number called room-dist. room-dist of a room is usually -1. room-dist of Fun Enuf is 0. [room-dist = # of rooms you are away from Fun 'Nuf]
 
 a direction has a number called locdelt. locdelt of a direction is usually -1. locdelt of west is -1. locdelt of east is 1. locdelt of north is -10. locdelt of south is 10.
 
 a room has a direction called in-dir. in-dir of a room is usually down.
 
-when play begins (this is the procedural room number assignments rule): assign-room-dist-and-loc Fun Nuf;
+when play begins (this is the procedural room number assignments rule): assign-room-dist-and-loc Fun Enuf;
 
 to visit-up-to (rm - a room):
 	if rm is visited or in-dir of rm is down, continue the action;
@@ -450,14 +450,14 @@ check requesting the score:
 		let Q be roving-LLP;
 		let Q2 be fixed-LLP;
 		if Q is 0 and Q2 is 0:
-			say "Now you're in Fun [']Nuf and have all the points, there's seemingly not much to do but go south through the Tix Exit.";
+			say "Now you're in [Fun Enuf] and have all the points, there's seemingly not much to do but go south through the Tix Exit.";
 		else if Q is 0:
-			say "You've got all the roving LLPs. You have [Q2] non-roving LLP[plur of Q2] remaining to figure out before going [if player is not in Fun Nuf]back to Fun [']Nuf and [end if]south through the Tix Exit.";
+			say "You've got all the roving LLPs. You have [Q2] non-roving LLP[plur of Q2] remaining to figure out before going [if player is not in Fun Enuf]back to [Fun Enuf] and [end if]south through the Tix Exit.";
 		else:
 			say "You have [Q] roving last lousy point[plur of Q] left and [Q2] non-roving LLP[plur of Q2] left.";
 	if player has epicer recipe and north tron is off-stage:
 		let ni be number of tronparts carried by the player;
-		if martini tram is in Fun Nuf, increment ni;
+		if martini tram is in Fun Enuf, increment ni;
 		say "You also have [ni] of [number of tronparts] piece[if ni is not 1]s[end if] of the North-Tron, according to the epicer recipe.";
 	if mist-found > 0, say "[line break]You've also found [mist-found] of [number of entries in checkoffs] palindromes that were there but not critical to the story. [if mist-found * 2 > number of entries in checkoffs]Very impressive![else]Don't knock yourself out trying to find them all.[end if]";
 	if score-cheat > 0, say "[line break]Also, you used REV OVER to plow past [score-cheat] point-giving activities, but I won't hold it against you. I'm glad you were motivated to try and see the end!";
@@ -477,7 +477,7 @@ this is the LLP rule:
 	if LLP-reject is true, the rule succeeds;
 	let prev-rov be roving-LLP;
 	reg-inc Odd Do;
-	if player has x-ite tix and prev-rov is 1 and roving-LLP is 0, say "You have all the roving LLPs. You can go back to Fun [']Nuf now.";
+	if player has x-ite tix and prev-rov is 1 and roving-LLP is 0, say "You have all the roving LLPs. You can go back to [Fun Enuf] now.";
 
 to reg-inc (re - a region):
 	now last-move-scored is turn count;
@@ -601,9 +601,9 @@ when play begins:
 		say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because you looked up the winning strategy on the Internet after it confused you. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers. Then 'Is reversi...?'";
 		say "After your fifth win in a row, the Flee Elf yells 'GRAAAARG!' You stumble back and fall to the ground.[wfak-d]";
 		say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Ares[']s Era, Raw Level War, Base Sab, (Wo)Men O['] Venom (Ow), Dragons O['] Snogard or Mista-T Sim. Mega-Tag [']Em?'[wfak-d]";
-		say "You chase the Flee Elf around a few minutes, failing to catch it. '[']S poor. Oops!' The Flee Elf thinks for a minute. 'Fun [']Nuf is open.'[wfak-d]";
+		say "You chase the Flee Elf around a few minutes, failing to catch it. '[']S poor. Oops!' The Flee Elf thinks for a minute. '[Fun Enuf] is open.'[wfak-d]";
 	else:
-		say "After more tedious palindrome riffing, the Flee Elf deems you most suitable (or least unsuitable) for the relatively obscure bunker called Fun [']Nuf.[wfak-d]";
+		say "After more tedious palindrome riffing, the Flee Elf deems you most suitable (or least unsuitable) for the relatively obscure bunker called [Fun Enuf].[wfak-d]";
 	say "The Flee Elf points to a cap. 'This here isn't any cap. It's a PACT cap. And you can't quite TAKE it. You have to do something else.'[wfak-d]";
 	say "[paragraph break](NOTE: if you want to know more about Ailihphilia and the commands used, type ABOUT.)[paragraph break]";
 	do nothing; [debug information below here. I've had problems putting it in and not deleting it, so I want to make things clear.]
@@ -907,7 +907,7 @@ stuck-rule of Dumb Mud is dumb-mud-stuck rule.
 stuck-rule of Emo Dome is emo-dome-stuck rule.
 stuck-rule of Evaded Ave is evaded-ave-stuck rule.
 stuck-rule of Flu Gulf is flu-gulf-stuck rule.
-stuck-rule of Fun Nuf is fun-nuf-stuck rule.
+stuck-rule of Fun Enuf is fun-enuf-stuck rule.
 stuck-rule of Gross Org is gross-org-stuck rule.
 stuck-rule of Lair Trial is lair-trial-stuck rule.
 stuck-rule of Ooze Zoo is ooze-zoo-stuck rule.
@@ -957,9 +957,9 @@ this is the flu-gulf-stuck rule:
 	say "You need a way by the scorn rocs [hn of Flu Gulf].";
 	the rule succeeds;
 
-this is the fun-nuf-stuck rule:
-	if Dirge Grid is mapped north of Fun Nuf, the rule fails; [??not good enough -- need to make sure have weapons]
-	say "You need to get by the Kaos OAK north of [hn2 of Fun Nuf], eventually.";
+this is the fun-enuf-stuck rule:
+	if Dirge Grid is mapped north of Fun Enuf, the rule fails; [??not good enough -- need to make sure have weapons]
+	say "You need to get by the Kaos OAK north of [hn2 of Fun Enuf], eventually.";
 	the rule succeeds;
 
 this is the gross-org-stuck rule:
@@ -1042,7 +1042,7 @@ check taking inventory when Dave is moot:
 		say "So far, you only have [the list of helpdocs carried by the player] as reference. More later, maybe?";
 	else:
 		say "AIDE MEDIA: While [b][the relevantest helpdoc carried by the player][r] seems useful as a guide, [other-docs] may shore up a few minor points.";
-	if number of tronparts carried by player > 0, say "North-tron parts found: [the list of tronparts carried by player][unless martini tram is off-stage]. The martini tram is in Fun [']Nuf, too[end if].";
+	if number of tronparts carried by player > 0, say "North-tron parts found: [the list of tronparts carried by player][unless martini tram is off-stage]. The martini tram is in [Fun Enuf], too[end if].";
 	if number of carried exhausted things > 0 and reviver is not moot, say "(x) = exhausted (tried all 3 machines in Work Row)[line break]";
 	the rule succeeds;
 
@@ -1139,7 +1139,7 @@ to say got-sit:
 
 this is the situational commands show rule:
 	now any-sit-cmd is false;
-	if player is in Fun Nuf and kaos oak is xed, say "[got-sit][2da][b]GRAMMAR G[r] toggles the [kaoscaps] between chaotic to sane punctuation, which is purely cosmetic.";
+	if player is in Fun Enuf and kaos oak is xed, say "[got-sit][2da][b]GRAMMAR G[r] toggles the [kaoscaps] between chaotic to sane punctuation, which is purely cosmetic.";
 	if pyx is quicknear, say "[got-sit][2da][b]X X[r] or [b]MAP[r] will let you examine the X/Y Pyx.";
 	if wr-short-note is true and in-work, say "[got-sit][line break][2da][b]REV[r], [b]ROT[r] and [b]REI[r] is shorthand to use an item on the reviver, rotator and reifier, respectively.";
 	if player has radar, say "[got-sit][2da][b]RAD[r] is shorthand to use the radar on something.";
@@ -1181,7 +1181,7 @@ carry out metaing:
 	if in-beta is true:
 		say "[line break](start beta commands)";
 		say "[line break][2da][b]RR[r] lets you try all three items in the Word Row machines. If one nets a point, it goes last.";
-		say "[line break][2da][b]ENDGAME[r] kicks you to the endgame, where you have all the weapons to win the game, though you will be limited to Fun [']Nuf and the Dirge Grid. It will be superseded by REV OVER.";
+		say "[line break][2da][b]ENDGAME[r] kicks you to the endgame, where you have all the weapons to win the game, though you will be limited to [Fun Enuf] and the Dirge Grid. It will be superseded by REV OVER.";
 		say "[line break](end beta commands)";
 	if debug-state is true:
 		say "[line break]PROGRAMMER TESTING COMMANDS: WIN lets you win, PER describes peripheral things, and IA flags everything without an initial appearance.";
@@ -1201,7 +1201,7 @@ understand "ni win" as niwining.
 carry out niwining:
 	say "WARNING! These may spoil the game if used too early.[paragraph break]";
 	say "[b]REV OVER[r] allows you to skip a few puzzles at a time.";
-	say "[b]DEEP SPEED[r] jumps you to where you have blown a hole in the Kaos Oak to the north of Fun [']Nuf and have the weaponry to take on the Diktat Kid.";
+	say "[b]DEEP SPEED[r] jumps you to where you have blown a hole in the Kaos Oak to the north of [Fun Enuf] and have the weaponry to take on the Diktat Kid.";
 	the rule succeeds;
 
 chapter shuttuhsing
@@ -1588,8 +1588,8 @@ to build-the-tron:
 		say "[if epicer recipe is nox]You're clueless how, at first. But then you take a look at the epicer recipe[else]You build the North-Tron with the instructions from[end if] the epicer recipe after a few 'How? OH!' moments. It points north and blasts a hole in the [kaoscaps] with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break]Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
 	moot epicer recipe;
 	moot kaos oak;
-	now Dirge Grid is mapped north of Fun Nuf;
-	now Fun Nuf is mapped south of Dirge Grid;
+	now Dirge Grid is mapped north of Fun Enuf;
+	now Fun Enuf is mapped south of Dirge Grid;
 
 chef-yet is a truth state that varies.
 
@@ -1611,10 +1611,10 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 		score-inc; [Grebeberg/USE GIFT FIG ON MAYO YAM&USE SNACK CANS ON UFO TOFU]
 		if number of moot ingredients is 4:
 			verify-done rev-second-food-combo rule;
-			say "A martini tram rattles out from behind the Ark of Okra. Guess you need drinks with your, uh, food![paragraph break][if player does not have the epicer recipe]You're shocked to see it, and it rolls further down, over the turf rut to Dumb Mud, then back through the Seer Trees to Fun [']Nuf[else]But you're prepared for it, with your epicer recipe. You move it back to Fun [']Nuf, where it looks like a good base structure for your North-Tron[end if].";
-			move martini tram to Fun Nuf;
-			move player to Fun Nuf, without printing a room description;
-			say "[b]Fun [']Nuf[r][paragraph break]After all that excitement, you realize that the martini tram could've been a KO wok. You feel relief at dodging something worse.";
+			say "A martini tram rattles out from behind the Ark of Okra. Guess you need drinks with your, uh, food![paragraph break][if player does not have the epicer recipe]You're shocked to see it, and it rolls further down, over the turf rut to Dumb Mud, then back through the Seer Trees to [Fun Enuf][else]But you're prepared for it, with your epicer recipe. You move it back to [Fun Enuf], where it looks like a good base structure for your North-Tron[end if].";
+			move martini tram to Fun Enuf;
+			move player to Fun Enuf, without printing a room description;
+			say "[b][Fun Enuf][r][paragraph break]After all that excitement, you realize that the martini tram could've been a KO wok. You feel relief at dodging something worse.";
 		else:
 			verify-done rev-first-food-combo rule;
 			say "You suspect something is behind there! Maybe you can find another combination, you'll see what.";
@@ -1672,11 +1672,11 @@ check useoning it with:
 			if player does not have epicer recipe, say "Those two things seem to go together, but you don't have detailed instructions." instead;
 			if number of notyet tronparts is 1, say "[recxcheck of false]You see how everything fits--even the [random notyet tronpart], which you don't have yet. Rats, so close!" instead;
 			if number of notyet tronparts is 2, say "[recxcheck of false]That looks like the start of something. But you still need to find a couple things." instead;
-			if player is not in Fun Nuf: [this could happen, since the martini tram only stays in Fun Nuf.]
+			if player is not in Fun Enuf: [this could happen, since the martini tram only stays in Fun Enuf.]
 				if madam is quicknear or Yuge Guy is quicknear, say "[recxcheck of false]But you'll need to deal with [if player is in Red Roses Order]Madam[else]the Yuge Guy[end if] first." instead;
-				say "[recxcheck of false]You might be better served using these things in Fun [']Nuf, where the martini tram is. Go there?";
+				say "[recxcheck of false]You might be better served using these things in [Fun Enuf], where the martini tram is. Go there?";
 				if the player no-consents, say "OK, but protip: that's where you need to assemble things." instead;
-				move player to Fun Nuf, without printing a room description;
+				move player to Fun Enuf, without printing a room description;
 			score-inc; [Dim Mid/USE TNT ON ORE ZERO]
 			build-the-tron instead;
 	repeat through table of goodacts:
@@ -1763,7 +1763,7 @@ a machine message rule for a thing (called t):
 	if t is a tronpart, say "No, [the t] [if epicer recipe is xed]is[else]seems[end if] too important." instead;
 	if t is exhausted, say "You already tried everything, and nothing worked." instead;
 	if t is nat's tan, say "Nat's Tan is pretty much hopeless. You'll need to fob it off on someone or something." instead;
-	if t is pace cap, say "The pace cap has the VOL option, as well as [if ever-pace is false]another option[else]PACE[end if], but that's probably enough. It doesn't need drastic fixing." instead;
+	if t is pact cap, say "The pace cap has the VOL option, as well as [if ever-pace is false]another option[else]PACE[end if], but that's probably enough. It doesn't need drastic fixing." instead;
 	if t is el doodle, say "None of the machines seems equipped for deciphering. A person might be able to do it better." instead;
 	if t is listed in postmachines, say "The [second noun] hums ominously as you bring [the t] close. You already used a machine to make [the t]. Maybe you should do something else." instead;
 	if t is listed in premachines, say "Nothing happens. And you felt optimistic there! Hmm." instead;
@@ -1952,7 +1952,7 @@ section table of goodacts
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
 table of goodacts [xxuse] [xxgood]
 use1	use2 (an object)	getit	preproc (a rule)	postproc (a rule)	sco	d1	d2	reg-plus	room-to-go	done	babble
---	--	--	rev-pack-cap rule	--	true	--	--	Dim Mid	Fun Nuf	false	--
+--	--	--	rev-pack-cap rule	--	true	--	--	Dim Mid	Fun Enuf	false	--
 --	--	--	rev-evade-Dave rule	--	true	--	--	Yelpley	My Gym	false	--
 --	--	--	rev-bore-Rob rule	--	true	--	--	Yelpley	Worn Row	false	--
 --	--	--	rev-word-row rule	--	true	--	--	Yelpley	Worn Row	false	--
@@ -2008,7 +2008,7 @@ sage gas	tame mat	guru rug	--	--	true	true	true	Grebeberg	Motto Bottom	false	"'M
 sharp rahs	guru rug	stir writs	--	brag-garb-bye rule	true	true	true	Grebeberg	Motto Bottom	false	"The sharp rahs meld into the guru rug, which feels less weighted down by philosophy and floats away. Under it there are stir-writs, which seem oversimplified at first, but on re-reading, they strike just the right balance between emotional and intellectual stimulation.[paragraph break]After reading them, you feel distinctly silly in your brag garb, which seems so gaudy now. Instinctively, you take the garb off and commit it to the Be Web. As the brag garb floats away, you know you have done the right thing, but you need to do more."
 --	--	--	rev-nail-Ian rule	--	true	--	--	Grebeberg	Mont Nom	false	--
 --	--	--	rev-first-food-combo rule	--	true	--	--	Grebeberg	Mont Nom	false	--
---	--	--	rev-second-food-combo rule	--	true	--	--	Grebeberg	Fun Nuf	false	--
+--	--	--	rev-second-food-combo rule	--	true	--	--	Grebeberg	Fun Enuf	false	--
 Moor Broom	Tru Yurt	Exam Axe	--	bump-ivy rule	true	true	false	Grebeberg	Yack Cay	false	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! Then, back to the Tru-Yurt for the Wonk. They've done enough for you." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
 wash saw	porch crop	balsa slab	--	--	true	true	false	Grebeberg	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods.[paragraph break]'Yes! Yes! We have achieved AIMED ACADEMIA! Uneven U needs a name change ... to UNEVEN U! How can I thank you?'[paragraph break]A balsa slab is lying under where the porch crop was. The Code Doc offers it to you. Now, you ... do own wood!"
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	Dumb Mud	false	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
@@ -2026,11 +2026,11 @@ not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	Worn Row	false	"The 
 murdered rum	yard ray	--	--	ray-beepy-now rule	true	true	false	Dim Mid	--	false	"The yard ray gleams with energy. It seems like it could do some damage now."
 --	--	--	rev-emit-noontime rule	--	true	--	--	Dim Mid	--	false	--
 Yard Ray	test set	--	ready-to-test rule	test-set-zapped rule	true	false	true	Dim Mid	Worn Row	false	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
---	--	--	rev-create-tron rule	--	true	--	--	Dim Mid	Fun Nuf	false	--
+--	--	--	rev-create-tron rule	--	true	--	--	Dim Mid	Fun Enuf	false	--
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	Dim Mid	Dirge Grid	false	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, perhaps to create the Red Ronin Order." [b4:use TNT on ore zero]
 taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	Dim Mid	Dirge Grid	false	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev senses the Taboo Bat's ancient untapped power. It's not particularly violent or lethal, but it is just perfect to scare an orthodoxy as warped as the Verses Rev's, who mutters 'Rev, off, over' and stumbles away! Perhaps to the safety of ... a rev reserver."
 Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	Dim Mid	Dirge Grid	false	"'Havoc, OVAH!' you should as you aim and fire the yard ray. A direct hit! The redivider begins to fizzle.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The entire Dirge Grid brightens, and the yard ray hums and explodes. But it's too lade for the Diktat Kid to avoid an electro-shock. 'Deleveled!' the Kid screams several times, before breaking down into tears. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid grows redder ... redder ... and bolts! With the Kid gone, the Dirge Grid grows less dark, the no-go gon winks out, and saner arenas are revealed all around. Revel, clever! Revel, ever![paragraph break]You don't notice the redivider exploding. When you wake up, it's much later. And you note something beside you: some X-ITE TIX fell out of the redivider! Wow! Yo, joy! Wow!"
-X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	Fun Nuf	false	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
+X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	Dim Mid	Fun Enuf	false	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse] [zzgood]
 
 [the 3 sections below are automatically sorted with sc2.py]
@@ -2093,7 +2093,7 @@ this is the rev-pace-cap rule:
 	say "You tweak your pact cap to a PACE CAP";
 	if mrlp is not Grebeberg:
 		move player to Seer Trees;
-		say ", moving to Seer Trees in Grebeberg when it doesn't seem right to run in Yelpley or [Fun Nuf]";
+		say ", moving to Seer Trees in Grebeberg when it doesn't seem right to run in Yelpley or [Fun Enuf]";
 	say ".";
 	the rule succeeds;
 
@@ -2120,8 +2120,8 @@ this is the rev-second-food-combo rule:
 	if number of moot ingredients is 4, the rule fails;
 	let si be random not moot solid ingredient;
 	let mi be random not moot liquid ingredient;
-	say "You mix the [si] and [mi] together in Mont Nom, causing a martini tray to roll out from the Ark of Okra all the way to Fun [']Nuf.";
-	move martini tram to Fun Nuf;
+	say "You mix the [si] and [mi] together in Mont Nom, causing a martini tray to roll out from the Ark of Okra all the way to [Fun Enuf].";
+	move martini tram to Fun Enuf;
 	moot si;
 	moot mi;
 	the rule succeeds;
@@ -2535,7 +2535,7 @@ state tats	"You don't need to do anything to or with the state tats, now that yo
 E Divide	"There's no way to dispel the E-Divide, but Madam isn't the main enemy here, any more." [start Red Roses Order 5 1]
 Oh Who	"[fonen-of of Oh Who]." [start Seer Trees 2 2]
 x-it stix	"No way you're getting through the X-It Stix."
-KAOS Oak	"The [kaoscaps] is immune to poking. You'll need a powerful contraption indeed to dispel it!" [start Fun Nuf 3 2]
+KAOS Oak	"The [kaoscaps] is immune to poking. You'll need a powerful contraption indeed to dispel it!" [start Fun Enuf 3 2]
 Name ME Man	"[fonen-of of Name ME Man]." [start Yawn Way]
 x y pyx	"The x/y pyx is a map, nothing more, nothing less. You can only [if player does not have x y pyx]take and [end if]examine it."
 DIFF ID	"You don't have the skill to tinker with the DIFF-ID. You [if Red Roses Order is visited]already found[else]just need to find[end if] a way to identify yourself." [start Emo Dome 5 2]
@@ -2610,18 +2610,18 @@ volume rooms
 
 part Dim Mid region
 
-book Fun Nuf
+book Fun Enuf
 
-Fun Nuf is a room in Dim Mid. "[if elite tile is in Fun Nuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what leads west and east[xit-ave][end if]. [if Diktat Kid is moot][Dirge Grid] is back north, not that you need to revisit[else if north tron is moot]Also, the North-Tron has carved a passage north where the [kaoscaps] was. It's too big to, uh, repaper[else if flee elf is in Fun Nuf]An oak blocks the way north. It's a wide oak[else]The [kaoscaps] blocks your way north[end if]."
+Fun Enuf is a room in Dim Mid. "[if elite tile is in Fun Enuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what leads west and east[xit-ave][end if]. [if Diktat Kid is moot][Dirge Grid] is back north, not that you need to revisit[else if north tron is moot]Also, the North-Tron has carved a passage north where the [kaoscaps] was. It's too big to, uh, repaper[else if flee elf is in Fun Enuf]An oak blocks the way north. It's a wide oak[else]The [kaoscaps] blocks your way north[end if]."
 
 to say xit-ave:
-	say ". The [if player has x-ite tix]Tix Exit to the south is waiting for you to enter[else if tix exit is in Fun Nuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]"
+	say ". The [if player has x-ite tix]Tix Exit to the south is waiting for you to enter[else if tix exit is in Fun Enuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]"
 
 chapter kaos oak
 
-instead of doing something with KAOS Oak when flee elf is in Fun Nuf: say "The Flee Elf directs your attention to the cap. 'First things first. The oak can wait for later. Much later.'" instead
+instead of doing something with KAOS Oak when flee elf is in Fun Enuf: say "The Flee Elf directs your attention to the cap. 'First things first. The oak can wait for later. Much later.'" instead
 
-The KAOS Oak is peripheral scenery in Fun Nuf. "[if flee elf is in Fun Nuf]It's forbiddingly wide[else]It is much too sturdy. You'll need a wild, powerful contraption to deal with it[end if]."
+The KAOS Oak is peripheral scenery in Fun Enuf. "[if flee elf is in Fun Enuf]It's forbiddingly wide[else]It is much too sturdy. You'll need a wild, powerful contraption to deal with it[end if]."
 
 after examining the KAOS Oak:
 	if kaos oak is not xed, say "One look and you find yourself mumbling 'Elp! A Maple!' when you know it obviously isn't. Now that's (ch/k)aos! [if grammarg is false]The [kaoscaps] changes [one of][or]again [stopping]as you look at it.[else][line break][end if][line break][i][bracket]NOTE: you can turn off this nonsense by saying GRAMMAR G.[close bracket][roman type][paragraph break]";
@@ -2635,7 +2635,7 @@ grammarging is an action out of world.
 
 understand the command "grammar g" as something new.
 
-understand "grammar g" as grammarging when kaos oak is xed and player is in Fun Nuf.
+understand "grammar g" as grammarging when kaos oak is xed and player is in Fun Enuf.
 
 carry out grammarging:
 	if kaos oak is moot, say "Ordering around something that's not here? That's pretty chaotic!" instead;
@@ -2646,20 +2646,20 @@ carry out grammarging:
 
 chapter north tron
 
-the north tron is scenery. "[if Dirge Grid is visited]The North-Tron is useless now.[else]It seems to have cracked open a passage north here in Fun [']Nuf. Do you have the guts to follow it to your destiny?[end if]"
+the north tron is scenery. "[if Dirge Grid is visited]The North-Tron is useless now.[else]It seems to have cracked open a passage north here in [Fun Enuf]. Do you have the guts to follow it to your destiny?[end if]"
 
 printed name of north tron is "North-Tron".
 
 chapter Flee Elf
 
-The Flee Elf is a neuter person in Fun Nuf. "A Flee Elf stands here, guarding Evac Ave to the south.". description is "Quite a pert rep. You'd expect to see the Flee Elf wearing a gateman nametag, but maybe that's in some other, even more insanely brilliant, wonderful and creative adventure."
+The Flee Elf is a neuter person in Fun Enuf. "A Flee Elf stands here, guarding Evac Ave to the south.". description is "Quite a pert rep. You'd expect to see the Flee Elf wearing a gateman nametag, but maybe that's in some other, even more insanely brilliant, wonderful and creative adventure."
 
 understand "pert/rep" and "pert rep" as Flee Elf.
 does the player mean doing something with rep popper: it is likely.
 
 chapter Evac Ave
 
-Evac Ave is scenery in Fun Nuf. "Evac Ave leads back to where you came, and your ordinary life--it goes on for a while, and you can't see the end."
+Evac Ave is scenery in Fun Enuf. "Evac Ave leads back to where you came, and your ordinary life--it goes on for a while, and you can't see the end."
 
 instead of entering Evac Ave, try going south.
 
@@ -2669,9 +2669,9 @@ the Tix Exit is scenery. "It's nothing particularly fancy, though it says TIX IF
 
 instead of entering tix exit, try going south instead;
 
-check going south in Fun Nuf:
+check going south in Fun Enuf:
 	if player has X-ITE TIX, try useoning X-ITE TIX with Tix Exit instead;
-	if Tix Exit is in Fun Nuf, say "The Tix Exit blocks your way to where Evac Ave was. You try to look for a way to bust through, but a voice booms 'EL BARRABLE!'[paragraph break]I guess you're stuck questing, here." instead;
+	if Tix Exit is in Fun Enuf, say "The Tix Exit blocks your way to where Evac Ave was. You try to look for a way to bust through, but a voice booms 'EL BARRABLE!'[paragraph break]I guess you're stuck questing, here." instead;
 	if elf-warn < 3, increment elf-warn;
 	say "[if elf-warn is 1]The Flee Elf encourages you to give taking the cap a shot--well, not quite TAKING it, but if you do take it, you'll be ready to go[else if elf-warn is 2]'Oy! Oy! Yo-yo!' The Flee Elf encourages you to find the right way to take--er, get--er, pick up the cap[else]The Flee Elf mentions there are really only 26 simple ways to pick up the cap, if you think about it, and why not just brute force? You're not busy with anything else[end if].";
 	if elf-warn < 3, the rule succeeds;
@@ -2682,9 +2682,9 @@ check going south in Fun Nuf:
 
 xite-warn is a truth state that varies.
 
-check going in Fun Nuf:
+check going in Fun Enuf:
 	if noun is west or noun is east:
-		if Flee Elf is in Fun Nuf, say "'Keen! Eek!' the Flee Elf stops you. 'You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley.'" instead;
+		if Flee Elf is in Fun Enuf, say "'Keen! Eek!' the Flee Elf stops you. 'You need to figure out the right way to take the Cap, for a place like Grebeberg or Yelpley.'" instead;
 		if endgame-test is true, say "Endgame testing is on. So you are restricted to the final combat." instead;
 	if player has x-ite tix and xite-warn is false:
 		now xite-warn is true;
@@ -2697,9 +2697,9 @@ check going in Fun Nuf:
 		else:
 			say "You have a few last lousy points to look around for, so why not poke around?";
 
-check going east in Fun Nuf: if Diktat Kid is moot and east-LLP is 0, say "There's nothing more to do in Yelpley, not even a last lousy point, but you explore anyway...";
+check going east in Fun Enuf: if Diktat Kid is moot and east-LLP is 0, say "There's nothing more to do in Yelpley, not even a last lousy point, but you explore anyway...";
 
-check going west in Fun Nuf: if Diktat Kid is moot and west-LLP is 0, say "There's nothing more to do in Grebeberg, not even a last lousy point, but you explore anyway...";
+check going west in Fun Enuf: if Diktat Kid is moot and west-LLP is 0, say "There's nothing more to do in Grebeberg, not even a last lousy point, but you explore anyway...";
 
 to decide which number is roving-LLP: [Not location dependent: DIAL AID, STATS, REFER, POOP, PEEP]
 	decide on west-LLP + east-LLP;
@@ -2727,9 +2727,9 @@ to decide which number is east-LLP:
 	if balm-LLP-yet is false, increment temp;
 	decide on temp;
 
-check going north in Fun Nuf:
+check going north in Fun Enuf:
 	if Diktat Kid is moot, say "No need to go back." instead;
-	if flee elf is in Fun Nuf, say "The flee elf sees you looking north but says 'First things first! Get the cap the right way, here.'" instead;
+	if flee elf is in Fun Enuf, say "The flee elf sees you looking north but says 'First things first! Get the cap the right way, here.'" instead;
 	if epicer recipe is not moot and epicer recipe is nox, say "You need to get there. But you have no clue what to build, or how[if number of carried ingredients > 2]--though some of your inventory looks useful for that[end if][if player has epicer recipe]. Hmm, maybe Xing the epicer recipe will help that[end if]." instead;
 	if north tron is off-stage, say "Not until you've built the North-Tron." instead;
 	if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
@@ -2745,7 +2745,7 @@ to decide which number is grid-side-items:
 
 chapter Pact Cap
 
-The Pact Cap is a wearable thing in Fun Nuf. "The pact cap the Flee Elf wants you to take (but not quite) sits here.". description is "It doesn't feel that heavy on your head, and you can't see it, because there are no mirrors. It didn't look THAT stupid back when the Flee Elf had you pack it. So that's something. You think[cap-beep-stuff]."
+The Pact Cap is a wearable thing in Fun Enuf. "The pact cap the Flee Elf wants you to take (but not quite) sits here.". description is "It doesn't feel that heavy on your head, and you can't see it, because there are no mirrors. It didn't look THAT stupid back when the Flee Elf had you pack it. So that's something. You think[cap-beep-stuff]."
 
 to say cap-beep-stuff:
 	if cap-pace is true, say ".[paragraph break]It's currently set as a pace cap";
@@ -2758,7 +2758,7 @@ to say cap-dum-now: now cap-dum is true.
 
 check examining Pact Cap:
 	if player is in Red Roses Order and mirror rim is in Red Roses Order, say "[cap-dum-now]Oh dear. Through the mirror, the pact cap does look sort of stupid on you right now. But you have deeper issues than sartorial elegance. Plus it's been so serviceable, who cares about looks?" instead;
-	if pact cap is in Fun Nuf, say "It's no stetson, and it's not as helpful as a ref-titfer, mate tam or math tam, but it is less messy than a tahini hat, and it looks serviceable enough. It appears to have LO VOL and LOVE VOL settings. Perhaps the Flee Elf will tell you what they are for, once you've successfully taken it." instead;
+	if pact cap is in Fun Enuf, say "It's no stetson, and it's not as helpful as a ref-titfer, mate tam or math tam, but it is less messy than a tahini hat, and it looks serviceable enough. It appears to have LO VOL and LOVE VOL settings. Perhaps the Flee Elf will tell you what they are for, once you've successfully taken it." instead;
 	if cap-dum is true, say "You definitely feel more self-conscious about your pact cap now you saw it in the mirror rim, but what can you do?" instead;
 
 check taking off the pact cap: say "No, you...uh, made a pact. It's not that uncomfortable, anyway." instead;
@@ -2787,7 +2787,7 @@ carry out packing:
 
 to get-cap:
 	moot flee elf;
-	now Tix Exit is in Fun Nuf;
+	now Tix Exit is in Fun Enuf;
 	now player has Set O Notes;
 	now player wears the cap;
 
@@ -2804,7 +2804,7 @@ pace-prev is a truth state that varies.
 
 carry out paceing:
 	if kayo yak is moot, say "You had enough high-speed fun for one game. If you want to zip around the map, though, GT is always an option." instead;
-	if pact cap is in Fun Nuf:
+	if pact cap is in Fun Enuf:
 		now pace-prev is true;
 		say "That'll work later, but you need something a little different to actually TAKE the pact cap." instead;
 	if cap-pace is true, say "It's already a pace cap." instead;
@@ -2826,7 +2826,7 @@ to say walk-law:
 to say pace-of:
 	say "[if cap-pace is true]full of deep speed[else]slower[end if]"
 
-check going to Fun Nuf:
+check going to Fun Enuf:
 	if cap-pace is true, say "From the east, a voice booms 'WALK: LAW.' You decide to be, um, civic. You adjust your pace cap back to a pact cap.";
 	now cap-pace is false;
 
@@ -2849,7 +2849,7 @@ after examining the Darer Ad:
 
 chapter Set O Notes
 
-the Set O Notes is a helpdoc. description is "[b]OPPO[r] is printed at the top. There's vague advice about making a North-Tron to defeat the Diktat Kid, but first you'll have to defeat [b]Madam[r], as well as the [b]Yuge Guy[r].[paragraph break]There's mention of a guh-thug in various places, and you'll have to do something special when you see one. [thug-report].[paragraph break]Also scribbled, in the center, is [b]FUN [']NUF[r] with [b]TRI-GIRT[r] below that. There are other landmarks scribbled in, which [if number of visited rooms < 20]will help you identify new places and scenic barriers and such[else]have been helpful so far[end if].[paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
+the Set O Notes is a helpdoc. description is "[b]OPPO[r] is printed at the top. There's vague advice about making a North-Tron to defeat the Diktat Kid, but first you'll have to defeat [b]Madam[r], as well as the [b]Yuge Guy[r].[paragraph break]There's mention of a guh-thug in various places, and you'll have to do something special when you see one. [thug-report].[paragraph break]Also scribbled, in the center, is [b][Fun Enuf][r] with [b]TRI-GIRT[r] below that. There are other landmarks scribbled in, which [if number of visited rooms < 20]will help you identify new places and scenic barriers and such[else]have been helpful so far[end if].[paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
 
 understand "oppo" as set o notes.
 
@@ -2885,13 +2885,13 @@ to say trigirt:
 	else:
 		say "You've made [location of player] Row, but the 'tri' makes you think there might be something else"
 
-after looking in Fun Nuf when player was in Dirge Grid:
+after looking in Fun Enuf when player was in Dirge Grid:
 	say "You're filled with a desire for new adventure, now you beat the Diktat Kid.";
 	continue the action;
 
 chapter tile lit
 
-the tile lit is scenery in Fun Nuf. "It's a rough compass, with GREBEBERG (LA RURAL) west by it, YELPLEY (TOWN, WOT) east, Evac Ave. south and Dirge Grid north. You can't seem to go [if flee elf is moot and diktat kid is not moot]south and [end if]north, though[if flee elf is moot].[paragraph break]It also mentions you can toggle SHUTTUHS to block off areas you're done with[shut-known][end if]." [ic]
+the tile lit is scenery in Fun Enuf. "It's a rough compass, with GREBEBERG (LA RURAL) west by it, YELPLEY (TOWN, WOT) east, Evac Ave. south and Dirge Grid north. You can't seem to go [if flee elf is moot and diktat kid is not moot]south and [end if]north, though[if flee elf is moot].[paragraph break]It also mentions you can toggle SHUTTUHS to block off areas you're done with[shut-known][end if]." [ic]
 
 shuttuhs-known is a truth state that varies.
 
@@ -2905,10 +2905,10 @@ the elite tile is scenery. "Done? Nod![line break]Nif-T-Fin![line break]Trape! D
 
 check taking elite tile: say "It's a memento, not a souvenir." instead;
 
-after going to Fun Nuf when Diktat Kid is moot:
+after going to Fun Enuf when Diktat Kid is moot:
 	say "You notice the tile lit has changed slightly. It's more shiny now. Elite tile, if you will.";
 	moot tile lit;
-	move elite tile to Fun Nuf;
+	move elite tile to Fun Enuf;
 	continue the action;
 
 book Dirge Grid
@@ -2928,21 +2928,25 @@ for writing a paragraph about a person when player is in Dirge Grid:
 		say "They both appear. And they are armed! The Knife Fink, with leet steel, and the Verses Rev, with a part strap.";
 		if grid-side-items is 0:
 			say "Looking at your items, there's no way you have enough to take care of the Diktat Kid and the two henchmen. You back off.";
-			move player to Fun Nuf, without printing a room description;
+			move player to Fun Enuf, without printing a room description;
 			continue the action;
 		if grid-side-items is 1:
 			say "You feel like you aren't quite prepared enough to tackle the Diktat Kid's henchmen. You back off.";
-			move player to Fun Nuf, without printing a room description;
+			move player to Fun Enuf, without printing a room description;
 			continue the action;
 		say "[one of]You sense a slight hesitation from your adversaries and unwisely boom 'Step, puppets!'[paragraph break]Uh oh. You'd better be able to back up your words[or]Thankfully, the Diktat Kid hasn't attacked you directly, so you have time to ... do something. You're pretty sure you have the firepower to win out[stopping], here.";
 	else:
 		if grid-side-items is 0:
-			say "You're still overwhelmed by all three opponents! You run back to [Fun Nuf].";
-			move player to Fun Nuf, without printing a room description;
+			say "You're still overwhelmed by all three opponents! You run back to [Fun Enuf].";
+			move player to Fun Enuf, without printing a room description;
 			continue the action;
 		if grid-side-items is 1:
-			say "You still don't feel confident of victory. You probably need one more thing. You run back to [Fun Nuf].";
-			move player to Fun Nuf, without printing a room description;
+			say "You feel you could do some damage, but nowhere near enough. You run back to [Fun Enuf].";
+			move player to Fun Enuf, without printing a room description;
+			continue the action;
+		if grid-side-items is 2:
+			say "You still don't feel confident of victory. You probably need one more thing. You run back to [Fun Enuf].";
+			move player to Fun Enuf, without printing a room description;
 			continue the action;
 		say "[if Knife Fink is moot and Verses Rev is moot]The Diktat Kid continues to rage at you. Two henchmen gone, but it's not over![else if Knife Fink is moot]The Diktat Kid continues to yell at the Verses Rev to do something.[else if Verses Rev is moot]The Diktat Kid continues to yell at the Knife Fink to do something.[else]The Diktat Kid yells and wonders why the Verses Rev and Knife Fink haven't disposed of you, yet.[end if]";
 
@@ -3069,7 +3073,7 @@ part Grebeberg region
 
 book Seer Trees
 
-Seer Trees is west of Fun Nuf. It is in Grebeberg. "East leads back to Fun [']Nuf[if Yawn Way is visited] and Yelpley[end if], but the other three directions lead to further rustic adventure[if stark rats are in Seer Trees], or will once you clear those stark rats[end if][seer-see].".
+Seer Trees is west of Fun Enuf. It is in Grebeberg. "East leads back to [Fun Enuf][if Yawn Way is visited] and Yelpley[end if], but the other three directions lead to further rustic adventure[if stark rats are in Seer Trees], or will once you clear those stark rats[end if][seer-see].".
 
 understand "tree" and "seer tree" as seer trees.
 
@@ -3827,7 +3831,7 @@ part Yelpley region
 
 book Yawn Way
 
-Yawn Way is east of Fun Nuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil Way, but you can go in all four directions, here: back west to Fun [']Nuf, north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]Emo Dome[else]a dome[end if][if day away ad is in Yawn Way][one of]. And wait! There's a day-away ad, trumpeting all the business that'll return to Yelpley now you defeated the Diktat Kid[or]. You can still read the day-away ad, if you want[stopping][end if]."
+Yawn Way is east of Fun Enuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil Way, but you can go in all four directions, here: back west to [Fun Enuf], north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]Emo Dome[else]a dome[end if][if day away ad is in Yawn Way][one of]. And wait! There's a day-away ad, trumpeting all the business that'll return to Yelpley now you defeated the Diktat Kid[or]. You can still read the day-away ad, if you want[stopping][end if]."
 
 after looking in Yawn Way for the first time:
 	say "Whew! You were worried you'd develop a city tic, but thankfully not.";
@@ -3937,6 +3941,7 @@ to say map-so-far:
 				now times-thru is 0;
 	say "[variable letter spacing]";
 
+[this is organized from left to right, up to down. It doesn't have to be, but it's easier to visualize the map this way.]
 table of pyxloc [xxpyx]
 rmname	uptxt	downtxt
 Lac Oft Focal	"L O[if lac-score is 2]LD[else]FT[end if]"	"[if lac-score is 2]L[else]F[end if]OCAL"
@@ -3956,7 +3961,7 @@ Gross Org	"GROSS"	" ORG "
 Swamp Maws	"SWAMP"	"MAWS "
 Dumb Mud	"DUMB "	" MUD "
 Seer Trees	"SEER "	"TREES"
-Fun Nuf	" FUN "	" NUF "
+Fun Enuf	" [if Diktat Kid is moot]FUN[else]NU [end if] "	" [if Diktat Kid is moot]FUN[else]NUF[end if] "
 Yawn Way	"YAWN "	" WAY "
 Emo Dome	"[if Diktat Kid is moot]DOME[else] EMO[end if] "	"[if Diktat Kid is moot] MOD[else]DOME[end if] "
 Toll Lot	"TOLL "	" LOT "
@@ -5138,7 +5143,7 @@ the epicer recipe is a helpdoc. description is "You've seen recipes before, but 
 
 to say tronpartlist:
 	repeat with tp running through tronparts:
-		say "--[tp][if player has tp or tp is in Fun Nuf] (got it!)[else][line break][end if]"
+		say "--[tp][if player has tp or tp is in Fun Enuf] (got it!)[else][line break][end if]"
 
 chapter tending
 
@@ -5564,7 +5569,7 @@ talk-text of Yuge Guy is "'I'm ... ' / 'TMI!'"
 
 volume gotoing
 
-printed name of Fun Nuf is "[if Diktat Kid is moot]NU FUN[else]Fun [']Nuf[end if]".
+printed name of Fun Enuf is "[if Diktat Kid is moot]NU FUN[else]Fun Enuf[end if]".
 
 chapter gotoing
 
@@ -5599,7 +5604,7 @@ carry out gotoing:
 			say "Before you can double back, [the chase-person] catches you and sends you spinning!";
 			reset-chase instead;
 		if mrlp is not map region of noun:
-			say "You run into some x-it stix that block your way to Fun [']Nuf.";
+			say "You run into some x-it stix that block your way to [Fun Enuf].";
 			if mrlp is Yelpley, move player to Yawn Way instead;
 			if mrlp is Grebeberg, move player to Seer Trees instead;
 			say "UH OH bad bug ... should be moved somewhere.";
@@ -5621,7 +5626,7 @@ carry out gotoing:
 	if the rule succeeded, say "[noun] is no longer worth going to. You don't want to go back. Onward!" instead;
 	if cap-pace is true and map region of location of noun is not Grebeberg:
 		now cap-pace is false;
-		say "Your pace cap slows down as you [if noun is Fun Nuf]enter[else]cross[end if] Fun [']Nuf...";
+		say "Your pace cap slows down as you [if noun is Fun Enuf]enter[else]cross[end if] [Fun Enuf]...";
 	now gone-to is true;
 	move player to noun;
 	the rule succeeds;
@@ -5648,7 +5653,7 @@ avail-rule of DevReserved is the trivially false rule.
 avail-rule of TempMet is the trivially false rule.
 avail-rule of DropOrd is the trivially false rule.
 
-avail-rule of Fun Nuf is trivially true rule. [described elsewhere]
+avail-rule of Fun Enuf is trivially true rule. [described elsewhere]
 
 avail-rule of Worn Row is Dave-gone rule.
 
@@ -5797,7 +5802,7 @@ a room can be chase-blocked. a room is usually not chase-blocked.
 check going to a chase-blocked room when being-chased is true: say "[chase-pass]No, you've already been there, and you found nothing to do." instead;
 
 after going when being-chased is true:
-	if x-it stix are in location of player, say "X-it Stix X out the way [if Fun Nuf is room east of location of player]east[else]west[end if]. It's probably bad for the [chase-person] to get loose in [if player is in Yawn Way]Grebeberg[else]Yelpley[end if].";
+	if x-it stix are in location of player, say "X-it Stix X out the way [if Fun Enuf is room east of location of player]east[else]west[end if]. It's probably bad for the [chase-person] to get loose in [if player is in Yawn Way]Grebeberg[else]Yelpley[end if].";
 	continue the action;
 
 x-it stix are semiperipheral scenery. "They look like the metal grating shops pull out over their doors and windows at closing time.[paragraph break]They are in an X, and while they don't allow an Xit, they do x out one way to go, which may help you figure how you need to get away from the [chase-person].[paragraph break]Of course, any wordplay adventurer worth their salt (like you--you're pretty far along, here) knows the difference between EXIT and X-IT. These things are telling you what you can't do!";
@@ -5887,7 +5892,7 @@ check going when being-chased is true (this is the block reverse and flatten dir
 		repeat with DR running through maindir:
 			if the room DR of location of player is the room noun of location of player, try going DR instead;
 
-check going to Fun Nuf when being-chased is true: say "[chase-pass]The X-It Stix block you." instead;
+check going to Fun Enuf when being-chased is true: say "[chase-pass]The X-It Stix block you." instead;
 
 the Psi Wisp is a chaser in Pro Corp. chase-room of Psi Wisp is Pro Corp. description is "The Psi Wisp is very red, and it pulses fervently. If it had feelings, you'd be pretty sure it didn't like you.". "[one of]A Psi Wisp pulses here before lurching alarmingly in your direction![or]The Psi Wisp is [if player is in Pro Corp]pulses again! Back to the chase.[else]still chasing you![end if][stopping]".
 
@@ -6029,7 +6034,7 @@ understand "smitims" as smitimsing.
 carry out smitimsing:
 	unless kaos oak is moot, say "Remove the [kaoscaps] first. DEEP SPEED may be handy." instead;
 	if Dirge Grid is visited, say "Too late for SMITIMS." instead;
-	if player is not in Fun Nuf, move the player to Fun Nuf, without printing a room description;
+	if player is not in Fun Enuf, move the player to Fun Enuf, without printing a room description;
 	try going north;
 	if the player is not in Dirge Grid, say "Oops. Something went wrong. Check your inventory. Make sure the redivider is loaded, and you know how to use it. Remember, you can always DEEP SPEED." instead;
 	if a random chance of 1 in 2 succeeds:
@@ -6106,9 +6111,9 @@ this is the rev-check rule:
 	if player is in Dirge Grid, say "You're already at the Dirge Grid!" instead;
 	if Dirge Grid is visited, say "Too late! You've already been to the Dirge Grid." instead;
 	if emitted is true and player has ME gem and player has taboo bat and KAOS Oak is moot and test set is moot:
-		if player is in Fun Nuf, say "You're already near the endgame." instead; [i can cut this down, because some of this is probably redundant, but I'd rather be too sure]
-		say "You're pretty near the endgame. Would you like me to drop you off at [Fun Nuf]?";
-		if the player yes-consents, move player to Fun Nuf instead;
+		if player is in Fun Enuf, say "You're already near the endgame." instead; [i can cut this down, because some of this is probably redundant, but I'd rather be too sure]
+		say "You're pretty near the endgame. Would you like me to drop you off at [Fun Enuf]?";
+		if the player yes-consents, move player to Fun Enuf instead;
 		say "OK, but you don't have much else to do[if cur-score of Odd Do is max-score of Odd Do]--you got all the LLPs[else] except search for LLPs[end if]." instead;
 	continue the action;
 
@@ -6227,9 +6232,9 @@ carry out revovering:
 	else:
 		say "There should've been a reject message, or there is a bug in the rev over/deep speed code. If you have a transcript, report the bug at my github site or email me.";
 	follow the notify score changes rule;
-	if test set is moot and player is not in Fun Nuf:
-		say "(Also moving you to Fun [']Nuf for the endgame)[paragraph break]";
-		move player to Fun Nuf, without printing a room description;
+	if test set is moot and player is not in Fun Enuf:
+		say "(Also moving you to [Fun Enuf] for the endgame)[paragraph break]";
+		move player to Fun Enuf, without printing a room description;
 	the rule succeeds;
 
 to say isco:
@@ -6328,7 +6333,7 @@ to describe-nearby (ro - a room):
 		if DR is visited:
 			say "Try looking [opposite of dir] [hn of DR]. You haven't, yet.";
 			continue the action;
-	if player is in Fun Nuf and ro is Art Xtra:
+	if player is in Fun Enuf and ro is Art Xtra:
 		say "Try exploring Yelpley to the east.";
 		continue the action;
 	say "There's a room you haven't visited with something to do, but it's pretty far away.";
@@ -6355,7 +6360,7 @@ to hint-bump-worn:
 
 [this is the list of how I do things in the walkthrough.]
 
-L is a list of rooms variable. L is { Fun Nuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Moo Room, Dumb Mud, Swamp Maws, Yack Cay, Lac Oft Focal, Uneven U, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
+L is a list of rooms variable. L is { Fun Enuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Moo Room, Dumb Mud, Swamp Maws, Yack Cay, Lac Oft Focal, Uneven U, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
 
 [?? nothing game-critical to do here = if there is a LLP]
 
@@ -6392,7 +6397,7 @@ hint-rule of Emo Dome is emo-dome-hint rule.
 hint-rule of Evaded Ave is evaded-ave-hint rule.
 hint-rule of Flu Gulf is flu-gulf-hint rule.
 hint-rule of Frush Surf is frush-surf-hint rule.
-hint-rule of Fun Nuf is fun-nuf-hint rule.
+hint-rule of Fun Enuf is fun-enuf-hint rule.
 hint-rule of Gross Org is gross-org-hint rule.
 hint-rule of Lac Oft Focal is lac-oft-focal-hint rule.
 hint-rule of Lair Trial is lair-trial-hint rule.
@@ -6441,7 +6446,7 @@ finished-rule of Emo Dome is emo-dome-complete rule.
 finished-rule of Evaded Ave is evaded-ave-complete rule.
 finished-rule of Flu Gulf is flu-gulf-complete rule.
 finished-rule of Frush Surf is frush-surf-complete rule.
-finished-rule of Fun Nuf is trivially false rule.
+finished-rule of Fun Enuf is trivially false rule.
 finished-rule of Gross Org is gross-org-complete rule.
 finished-rule of Lac Oft Focal is lac-oft-focal-complete rule.
 finished-rule of Lair Trial is lair-trial-complete rule.
@@ -6672,16 +6677,16 @@ this is the frush-surf-complete rule:
 	if kayo yak is moot, the rule succeeds;
 	the rule fails.
 
-section Fun Nuf rule
+section Fun Enuf rule
 
-this is the fun-nuf-hint rule:
+this is the fun-enuf-hint rule:
 	now more-later is true; [ we will always have more to do here ]
-	if Dirge Grid is not mapped north of Fun Nuf and Flee Elf is moot, continue the action;
+	if Dirge Grid is not mapped north of Fun Enuf and Flee Elf is moot, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if Dirge Grid is mapped north of Fun Nuf:
+	if Dirge Grid is mapped north of Fun Enuf:
 		if Diktat Kid is in Dirge Grid, say "You will need to go north to face the Diktat Kid[unless player has ME gem and player has taboo bat and murdered rum is moot], but you are worried you're not quite prepared[end if]!" instead; [?? indicate that you may need to pick off the bosses as well]
 		say "You don't have much to do except go south through the Tix Exit." instead;
-	if Flee Elf is in Fun Nuf, say "[one of]The Flee Elf wants you to take the cap. But not take. A simile. To show you're in tune with this place.[or]PAC* CAP is the way to go.[or]PACK CAP.[stopping]" instead;
+	if Flee Elf is in Fun Enuf, say "[one of]The Flee Elf wants you to take the cap. But not take. A simile. To show you're in tune with this place.[or]PAC* CAP is the way to go.[or]PACK CAP.[stopping]" instead;
 	if epicer recipe is off-stage, say "There's a useful list of items in Yelpley that may help you figure a way north." instead;
 	say "You'll need to come back later to break open the North-Tron." instead;
 	if player has X-ITE TIX, say "USE TIX ON TIX EXIT." instead;
@@ -7334,10 +7339,10 @@ understand the command "endgame" as something new.
 understand "endgame" as endgameing.
 
 carry out endgameing:
-	say "Giving you all the cool stuff to defeat the Diktat Kid. NOTE: Also moving the test set to Fun [']Nuf. It should be in work row, but it's easier this way.";
-	move test set to Fun Nuf;
+	say "Giving you all the cool stuff to defeat the Diktat Kid. NOTE: Also moving the test set to [Fun Enuf]. It should be in work row, but it's easier this way.";
+	move test set to Fun Enuf;
 	now player carries all tronparts;
-	now martini tram is in Fun Nuf;
+	now martini tram is in Fun Enuf;
 	now player carries murdered rum;
 	now player carries yard ray;
 	now player carries epicer recipe;
@@ -7347,8 +7352,8 @@ carry out endgameing:
 	now player has pact cap;
 	now player has taboo bat;
 	now player has ME gem;
-	now Tix Exit is in Fun Nuf;
-	if player is not in Fun Nuf, move player to Fun Nuf;
+	now Tix Exit is in Fun Enuf;
+	if player is not in Fun Enuf, move player to Fun Enuf;
 	now endgame-test is true;
 	the rule succeeds;
 
@@ -7719,7 +7724,7 @@ understand the command "tcc" as something new.
 understand "tcc" as tccing.
 
 carry out tccing:
-	unless player is in Fun Nuf and Diktat Kid is moot, say "This is only valid at game's end." instead;
+	unless player is in Fun Enuf and Diktat Kid is moot, say "This is only valid at game's end." instead;
 	if turn count < 100, say "No way you solved the game yet! Even with GT, you need at least 160 moves. I checked. It's too soon." instead;
 	if turn count > 10000, say "Ulp! Can't help you!" instead;
 	let oldt be turn count;

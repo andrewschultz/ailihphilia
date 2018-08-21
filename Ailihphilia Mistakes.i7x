@@ -70,7 +70,7 @@ understand "purr up" as a mistake ("The Spur Ups make you feel you can be anyone
 
 understand "puss up" as a mistake ("No cat appears.[mis of 32]") when player has spur ups.
 
-understand "put up" and "put it up" as a mistake ("[if spur ups are moot]The Spur Ups taught you how to put up with nonsense, and you reflect on their lesson[else]The Spur Ups are for more than just getting by[else if pact cap is in fun nuf]You don't HAVE to put up. You could be a spoilsport and leave to the south[else]Yes, with the Flee Elf gone, you sort of have to[end if].[mis of 33]"). [okall]
+understand "put up" and "put it up" as a mistake ("[if spur ups are moot]The Spur Ups taught you how to put up with nonsense, and you reflect on their lesson[else]The Spur Ups are for more than just getting by[else if pact cap is in Fun Enuf]You don't HAVE to put up. You could be a spoilsport and leave to the south[else]Yes, with the Flee Elf gone, you sort of have to[end if].[mis of 33]"). [okall]
 
 understand "putt up" as a mistake ("The Spur Ups have no suitable flat edge with which to hit a golf ball.[mis of 34]") when player has spur ups.
 
@@ -246,25 +246,25 @@ understand "slate petals" as a mistake ("The metals are for a didactic and not a
 
 understand "yak kay" as a mistake ("The yak perks its ears up slightly, then goes back to looking bored. Maybe you didn't quite say things right.[mis of 106]") when yak is quicknear.
 
-chapter Fun Nuf
+chapter Fun Enuf
 
-understand "evaded ave" as a mistake ("That'll appear later.[mis of 107]") when player is in Fun Nuf and Evaded Ave is unvisited.
+understand "evaded ave" as a mistake ("That'll appear later.[mis of 107]") when player is in Fun Enuf and Evaded Ave is unvisited.
 
-understand "fu nuf" as a mistake ("Any FU is too much FU in a (Zarfian) polite game like this. [if poop-boob-yet is true]You found a better[else]There's a more appropriate[end if] way to swear in this game.[mis of 108]") when player is in Fun Nuf.
+understand "fu nuf" as a mistake ("Any FU is too much FU in a (Zarfian) polite game like this. [if poop-boob-yet is true]You found a better[else]There's a more appropriate[end if] way to swear in this game.[mis of 108]") when player is in Fun Enuf.
 
-understand "fun enuf" as a mistake ("Still ungrammatical![mis of 109]") when player is in Fun Nuf.
+understand "fun nuf" as a mistake ("Still ungrammatical![mis of 109]") when player is in Fun Enuf.
 
-understand "fun snuf" as a mistake ("You vow to take saving fantasy worlds much more seriously. No more frivolity![mis of 110]") when player is in Fun Nuf.
+understand "fun snuf" as a mistake ("You vow to take saving fantasy worlds much more seriously. No more frivolity![mis of 110]") when player is in Fun Enuf.
 
-understand "fund nuf" as a mistake ("Nonsense! Adventure is its own reward![mis of 111]") when player is in Fun Nuf.
+understand "fund nuf" as a mistake ("Nonsense! Adventure is its own reward![mis of 111]") when player is in Fun Enuf.
 
-understand "funk nuf" as a mistake ("No cool music plays, but at least it doesn't smell worse.[mis of 112]") when player is in Fun Nuf.
+understand "funk nuf" as a mistake ("No cool music plays, but at least it doesn't smell worse.[mis of 112]") when player is in Fun Enuf.
 
 understand "kaos soak" as a mistake ("The [kaoscaps] fails to collapse in a torrent of water.[mis of 113]") when kaos oak is quicknear.
 
-understand "till lit" as a mistake ("You possess no farm tools. And this would be pointless anyway.[mis of 114]") when player is in Fun Nuf.
+understand "till lit" as a mistake ("You possess no farm tools. And this would be pointless anyway.[mis of 114]") when player is in Fun Enuf.
 
-understand "tilt lit" as a mistake ("It's stuck into the ground.[mis of 115]") when player is in Fun Nuf.
+understand "tilt lit" as a mistake ("It's stuck into the ground.[mis of 115]") when player is in Fun Enuf.
 
 section cap abuse
 
@@ -299,7 +299,7 @@ to say girt-clue:
 	if row-prog > 1:
 		say "Hmm. You seem to have found the three configurations for Worn Row[if psi wisp is not moot]. Maybe Worn Row will be useful in the future, maybe not[else], and you even used the Redness Ender[end if].";
 	else if row-prog is 0:
-		say "You need to figure out what that means. It seems to indicate [if Worn Row is visited][Worn Row][else]a room south of [Fun Nuf][end if]";
+		say "You need to figure out what that means. It seems to indicate [if Worn Row is visited][Worn Row][else]a room south of [Fun Enuf][end if]";
 	else:
 		say "Hmm. Tri indicates three. You've found two different configurations for Worn Row/[Worn Row]. What is the third, you wonder";
 
