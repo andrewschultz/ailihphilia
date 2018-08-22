@@ -27,7 +27,7 @@ table of all randoms
 tabnam	tabidx	thru-yet	lbrk	desc	cycle-note
 table of altbooks	0	0	false	"extra books in the Tract Cart"	"You've read all the books on the tract cart. Hooray for curiosity!"
 table of attackings	0	0	true	"responses to ATTACK"	--
-table of babel babble	0	0	true	"babbles if you LISTEN in Le Babel"	--
+table of babel babble	0	0	false	"babbles if you LISTEN in Le Babel"	--
 table of Bond Nob bars	0	0	false	"bars the Bond Nob visits"	-- [?? may cause a problem cycling talking to nob]
 table of burnies	0	0	true	"responses to BURN"	--
 table of businesses	0	0	true	"businesses in Day-Away Ad"	--
