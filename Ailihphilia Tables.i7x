@@ -1,8 +1,100 @@
 Version 1/171220 of Ailihphilia Tables by Andrew Schultz begins here.
 
-volume random names of people and places
+volume big random table
 
 [use dbh.py to generate debug table version of this file]
+
+part the code
+
+to next-rand (t - a table name):
+	choose row with tabnam of t in table of all randoms;
+	increment tabidx entry;
+	if tabidx entry > number of rows in tabnam entry:
+		if debug-state is true, say "(Cycling) ";
+		now tabidx entry is 1;
+		if thru-yet entry is 0:
+			now thru-yet entry is 1;
+			now rand-cycle is true;
+	let Q be tabidx entry;
+	let lb be lbrk entry;
+	choose row Q in tabnam entry;
+	say "[randtxt entry][if lb is true][line break][else][no line break][end if]";
+
+to say next-rand-txt of (t - a table name):
+	next-rand t;
+
+table of all randoms
+tabnam	tabidx	thru-yet	lbrk	desc	cycle-note
+table of altbooks	0	0	false	"extra books in the Tract Cart"	"You've read all the books on the tract cart. Hooray for curiosity!"
+table of attackings	0	0	true	"responses to ATTACK"	--
+table of babel babble	0	0	true	"babbles if you LISTEN in Le Babel"	--
+table of Bond Nob bars	0	0	false	"bars the Bond Nob visits"	-- [?? may cause a problem cycling talking to nob]
+table of burnies	0	0	true	"responses to BURN"	--
+table of businesses	0	0	true	"businesses in Day-Away Ad"	--
+table of diktat taunts	0	0	false	"Diktat Kid taunts"	--
+table of Moo Room animals	0	0	false	"Moo Room animals (LISTEN)"	--
+table of My Gym songs	0	0	false	"songs in My Gym (LISTEN)"	"All those tunes, and nothing by ABBA! Low class, low class."
+table of noesies	0	0	true	"responses to NO"	--
+table of nothings	0	0	true	"responses to empty commands"	--
+table of rejected sidekicks	0	0	false	"the Diktat Kid's rejected sidekicks"	--
+table of Rob droning	0	0	false	"things Rob babbles about"	"Rob takes a moment to shape 'pah's again."
+table of singstuff	0	0	true	"responses to SINGing"	"Won't be joining OctetCo with that voice."
+table of snooty toon ads	0	0	true	"snooty toons ads"	--
+table of swearstuff	0	0	true	"responses to SWEARing"	--
+table of undoings	0	0	true	"UNDOing notifications"	--
+table of university targets	0	0	true	"Dr. D/Code Doc's prospective colleagues"	--
+table of waittxt	0	0	true	"responses to WAITing"	--
+table of wordy drow laments	0	0	false	"Wordy Drow laments"	--
+table of yessies	0	0	true	"responses to YES"	--
+table of yuge baits	0	0	false	"Yuge Guy bait if you run away"	--
+table of yuge battle cries	0	0	false	"Yuge Guy battle cries"	"Señor drones, you think you yourself, as the Yuge Guy winds up for another round of nonsense."
+
+rand-cycle is a truth state that varies.
+
+every turn (this is the notify cycling rule):
+	if rand-cycle is true:
+		let tn be a table-name;
+		let tables-found be 0;
+		now rand-cycle is false;
+		repeat through table of all randoms:
+			if thru-yet entry is 1:
+				now thru-yet entry is 2;
+				increment tables-found;
+				if tables-found is 1:
+					say "[if there is a cycle-note entry][cycle-note entry][else]Whoah...that sounds familiar. You suspect things will loop again.[end if]";
+				else if tables-found is 2:
+					say "This is a further note to say you've done so more than once this turn, which is an impressive bit of timing, even if it doesn't get you any points.";
+		if tables-found is 0 and debug-state is true, say "This is a BUG--you should have been notified of random cycling in a table, but you weren't.";
+		the rule succeeds;
+
+chapter alllasting
+
+alllasting is an action applying to nothing.
+
+understand the command "alllast" as something new.
+
+understand "alllast" as alllasting.
+
+carry out alllasting:
+	say "Setting all tables to the last element.";
+	repeat through table of all randoms:
+		now tabidx entry is number of rows in tabnam entry;
+	the rule succeeds;
+
+chapter troing
+
+troing is an action out of world.
+
+understand the command "tro" as something new.
+
+understand "tro" as troing.
+
+carry out troing:
+	repeat through table of all randoms:
+		say "[tabnam entry] has [number of rows in tabnam entry] rows.";
+	the rule succeeds;
+
+volume random names of people and places
 
 chapter random names
 
@@ -747,95 +839,6 @@ biz-name
 
 volume random responses
 
-part the code
-
-to next-rand (t - a table name):
-	choose row with tabnam of t in table of all randoms;
-	increment tabidx entry;
-	if tabidx entry > number of rows in tabnam entry:
-		if debug-state is true, say "(Cycling) ";
-		now tabidx entry is 1;
-		if thru-yet entry is 0:
-			now thru-yet entry is 1;
-			now rand-cycle is true;
-	let Q be tabidx entry;
-	let lb be lbrk entry;
-	choose row Q in tabnam entry;
-	say "[randtxt entry][if lb is true][line break][else][no line break][end if]";
-
-to say next-rand-txt of (t - a table name):
-	next-rand t;
-
-table of all randoms
-tabnam	tabidx	thru-yet	lbrk	desc	cycle-note
-table of altbooks	0	0	false	"extra books in the Tract Cart"	"You've read all the books on the tract cart. Hooray for curiosity!"
-table of attackings	0	0	true	"responses to ATTACK"	--
-table of babel babble	0	0	true	"babbles if you LISTEN in Le Babel"	--
-table of Bond Nob bars	0	0	false	"bars the Bond Nob visits"	-- [?? may cause a problem cycling talking to nob]
-table of burnies	0	0	true	"responses to BURN"	--
-table of businesses	0	0	true	"businesses in Day-Away Ad"	--
-table of diktat taunts	0	0	false	"Diktat Kid taunts"	--
-table of Moo Room animals	0	0	false	"Moo Room animals (LISTEN)"	--
-table of My Gym songs	0	0	false	"songs in My Gym (LISTEN)"	"All those tunes, and nothing by ABBA! Low class, low class."
-table of noesies	0	0	true	"responses to NO"	--
-table of nothings	0	0	true	"responses to empty commands"	--
-table of rejected sidekicks	0	0	false	"the Diktat Kid's rejected sidekicks"	--
-table of Rob droning	0	0	false	"things Rob babbles about"	"Rob takes a moment to shape 'pah's again."
-table of singstuff	0	0	true	"responses to SINGing"	"Won't be joining OctetCo with that voice."
-table of snooty toon ads	0	0	true	"snooty toons ads"	--
-table of swearstuff	0	0	true	"responses to SWEARing"	--
-table of undoings	0	0	true	"UNDOing notifications"	--
-table of waittxt	0	0	true	"responses to WAITing"	--
-table of wordy drow laments	0	0	false	"Wordy Drow laments"	--
-table of yessies	0	0	true	"responses to YES"	--
-table of yuge baits	0	0	false	"Yuge Guy bait if you run away"	--
-table of yuge battle cries	0	0	false	"Yuge Guy battle cries"	"Señor drones, you think you yourself, as the Yuge Guy winds up for another round of nonsense."
-
-rand-cycle is a truth state that varies.
-
-every turn (this is the notify cycling rule):
-	if rand-cycle is true:
-		let tn be a table-name;
-		let tables-found be 0;
-		now rand-cycle is false;
-		repeat through table of all randoms:
-			if thru-yet entry is 1:
-				now thru-yet entry is 2;
-				increment tables-found;
-				if tables-found is 1:
-					say "[if there is a cycle-note entry][cycle-note entry][else]You have cycled all the available random responses for an action or NPC's babble.[end if]";
-				else if tables-found is 2:
-					say "This is a further note to say you've done so more than once this turn, which is an impressive bit of timing, even if it doesn't get you any points.";
-		if tables-found is 0 and debug-state is true, say "This is a BUG--you should have been notified of random cycling in a table, but you weren't.";
-		the rule succeeds;
-
-chapter alllasting
-
-alllasting is an action applying to nothing.
-
-understand the command "alllast" as something new.
-
-understand "alllast" as alllasting.
-
-carry out alllasting:
-	say "Setting all tables to the last element.";
-	repeat through table of all randoms:
-		now tabidx entry is number of rows in tabnam entry;
-	the rule succeeds;
-
-chapter troing
-
-troing is an action out of world.
-
-understand the command "tro" as something new.
-
-understand "tro" as troing.
-
-carry out troing:
-	repeat through table of all randoms:
-		say "[tabnam entry] has [number of rows in tabnam entry] rows.";
-	the rule succeeds;
-
 part the tables
 
 [arranged alphabetically]
@@ -1296,7 +1299,7 @@ randtxt
 "'Treble' Delbert"
 "'Trebles' Elbert"
 "Trekker T"
-"Trever Pervert"
+"Trev Re-Pervert"
 "Ur-Dru"
 "USA Su"
 "'Vests' Ev"
@@ -1345,12 +1348,11 @@ randtxt
 "Posy sysop!"
 "Prove VORP!"
 "Resume [']m, user!"
-"Servo-lovers?!"
 "SETI sites!"
 "Signing is..."
 "Spidered IPs?!"
 "Steve vets..."
-"SuSe? J****!"
+"SuSe? J****!" [ignore]
 "[']Tis. Suss it!"
 "To ban a bot..."
 "Y-array?!"

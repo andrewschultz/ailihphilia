@@ -353,6 +353,8 @@ understand "mega gem" as a mistake ("That'd be useful in Kingdom of Loathing, bu
 
 chapter Lair Trial
 
+understand "er go ogre" and "ogre er go" as a mistake ("You'll need to be much more aggressive than that around the ogre. But perhaps a command like that could help someone or something else to knock the ogre off.[mis of 288]") when ergot ogre is quicknear.
+
 understand "erg ogre" as a mistake ("The ogre would destroy you in a grunting match.[mis of 135]") when ergot ogre is quicknear.
 
 understand "ergo ogre" as a mistake ("You aren't going to impress it with your smarts.[mis of 136]") when ergot ogre is quicknear.
@@ -651,6 +653,8 @@ chapter Trapeze Part
 
 understand "tendered net" as a mistake ("[if player has tent net]You already have it[else]Nobody comes by to hand it to you. You're on the right track. Maybe you're overthinking things[end if].[mis of 235]") when level net is quicknear or tent net is quicknear.
 
+understand "trape part" as a mistake ("You mill around a bit, [if epicer recipe is off-stage]wondering if[else]pleased[end if] you could fix the ten-level net.[mis of 284]") when player is in Trapeze Part.
+
 chapter Worn Row
 
 to say red-clue: if redness ender is not moot, say ", but who knows, that redness ender might help you some day"
@@ -687,6 +691,10 @@ understand "wort row" as a mistake ("[Worn Row] is not meant to be a garden. May
 
 chapter Yack Cay
 
+understand "kno wonk" as a mistake ("The wonk would dismiss you as eny fule.[mis of 285]") when Known Wonk is quicknear.
+
+understand "know wonk" as a mistake ("The wonk is already known. Well, not REALLY, but then, this game isn't about existentially reaching people.[mis of 286]") when Known Wonk is quicknear.
+
 understand "shard rahs" as a mistake ("The rahs are on paper, and besides, they might be useful.[mis of 247]") when sharp rahs are quicknear.
 
 understand "share rahs" as a mistake ("You're on this quest by yourself.[mis of 248]") when sharp rahs are quicknear.
@@ -698,6 +706,8 @@ understand "store rots" as a mistake ("You don't need to buy anything in this ga
 understand "stork rots" as a mistake ("You don't want to know what sort of carcasses are buried in the swamp.[mis of 251]") when player is in Yack Cay.
 
 understand "story rots" as a mistake ("No, the storm rots help keep you focused on the story. They aren't blocking anything. Or good for anything.[mis of 252]") when player is in Yack Cay.
+
+understand "wonk now" as a mistake ("The wonk seems in no hurry to do anything.[mis of 287]") when Known Wonk is quicknear.
 
 chapter Yawn Way
 
@@ -719,7 +729,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 
