@@ -521,7 +521,7 @@ understand "golf log" as a mistake ("There is no Par Trap or Tee Meet to navigat
 
 chapter Red Roses Order
 
-understand "gal slag" as a mistake ("You managed to annoy Madam enough that she lashes out and conks you with a mortal blow with the Gal Flag. Okay, not really, but name calling won't help.[mis of 199]") when Madam is quicknear. [?? do fake death thing]
+understand "gal slag" as a mistake ("You managed to annoy Ms. Ism enough that she lashes out and conks you with a mortal blow with the Gal Flag. Okay, not really, but name calling won't help.[mis of 199]") when Ms Ism is quicknear. [?? do fake death thing]
 
 understand "sworn rows" and "swore rows" as a mistake ("The sword rows are inanimate and neutral. Unless you get too close to them.[mis of 200]") when sword rows are quicknear.
 

@@ -72,7 +72,7 @@ Initially sent to source code/repository November 2017.</history>
 			<objects at="n" custom="yes" customRight="-20" customDown="0">Bro Orb|(Voodoo V)</objects>
 		</room>
 		<room id="25" name="Red Roses Order" subtitle="" x="256" y="-160" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="yes" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="changes to Teem-Civic Meet (implied, can't go back) after using Sword Rows" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
-			<objects at="n" custom="yes" customRight="-44" customDown="0">  LA GAL/MADAM|(Mirror Rim/E Divide)</objects>
+			<objects at="n" custom="yes" customRight="-44" customDown="0">  LA GAL/MS. ISM|(Mirror Rim/E Divide)</objects>
 		</room>
 		<line id="26" name="" description="" style="dashed">
 			<dock index="0" id="25" port="s" />

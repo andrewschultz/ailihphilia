@@ -30,32 +30,40 @@ Palindromes.
 The command ?????? CAP needs to be a palindrome.
 How do you put a cap in inventory? Tuck it away?
 PACK CAP.
-?Why doesn't the cap seem perfectly satisfactory?
+?What are the settings the Flee Elf tells me about?
+LOVE VOL is the default, and it tells you when you need to do something weird.
+LO VOL turns off these clues, which makes the game harder.
+?What is the other thing the cap can do?
 You can do one other thing with the cap, to make yourself go faster.
 It must be some command like PAC? CAP.
 PACE CAP.
 Also, PACY CAP is accepted, too.
-?Which way do I go first?
-Well, one way, there's only one room you can explore.
-Also, there are no permadeaths.
-There's no penalty for guessing wrong.
-You'll want to start by going east.
-?Hey! Look! There's a way back south!
+You don't need to go faster for a long while, and you aren't allowed to go fast in Fun Enuf or Yelpley.
+?Which way do I go first? Are there any risks?
+There's no penalty for guessing wrong. Also, there are no permadeaths.
+However, to the west, there's only one room you can explore, and you need to go east to get what you need to deal with the rats.
+So you'll want to start by going east. There are four rooms open there, and a fifth should open pretty quickly.
+?Hey! Look! There's a way back south! Should I take it? Can I?
 The Tix Exit appears pretty soon, but it doesn't let you through.
 Unsurprisingly, you need tix of your own.
 You don't get them until the end.
 Once you defeat the Diktat Kid, you get X-ITE TIX. Wow!
 Which claim to lead you to a bigger adventure.
-Use the tix on the exit.
+Once you have them, just use the tix on the exit.
 Or, well, you can just go south.
 And you win the game!
-?How do I build the North-Tron?
+For various definitions of winning, depending on what-all you figured out
+?How do I blow up the KAOS OAK?
 It'll take a long time.
 Once you have all the ingredients, you'll know.
 USE TNT ON ORE ZERO.
 Well, it can be any ingredient on any ingredient.
-?I built the North-Tron. Why can't I go north?
-You need a weapon.
+?Why does the KAOS OAK's name keep shifting?
+Because it's full of KAOS.
+If you find this irritating, GRAMMAR G toggles the behavior.
+?I built the North-Tron, like the (item I find later) said. Why can't I go north?
+Well, you need to be fully prepared.
+First, you need a weapon.
 There is a Yard Ray located elsewhere.
 Also, you'll need to load the Yard Ray.
 With something suitably weird and energetic.
@@ -71,18 +79,36 @@ EMIT NOONTIME.
 ?I don't have confidence I can use the yard ray right! What can I do?
 Is there any item that can be destroyed, but it'd put up useful resistance?
 The test set in Work Row.
-?Now I defeated the Diktat Kid, how do I get out?
+?The three people are pushing me back! What do I do to take them out?
+You'll need items you find or create, scattered around. One for each henchman and one for the Diktat Kid.
+Big spoilers below.
+No, really, they're big enough, I'm throwing in an extra hint as a buffer.
+The Knife Fink is greedy, and the Verses Rev is religiously superstitious.
+Oh, one more buffer: these clues are duplicated somewhat in the Dirge Grid.
+First, you need to have destroyed the test set with the yard ray.
+Second, you need the Me Gem, which is probably the easier of the two items to get.
+Third, you need the Taboo Bat.
+What you use them on, I'll punt to the Dirge Grid hints.
+?Now that I defeated the Diktat Kid and came back, how do I get out?
 This one should be pretty simple.
 You got a new item in the Dirge Grid.
 It's similar to the Tix Exit.
 USE X-ITE TIX ON TIX EXIT.
+You can also go south.
 You win!
+?I didn't get the best ending. What gives?
+You need all the Last Lousy Points.
+You also need one other thing you may randomly get right, or you may not.
+Sorry. It's hidden. Any clue might blow it, and I'd like you to have the satisfaction of finding it on your own.
+But if you poke at the source code, you'll find it, and I hope you'll agree it's logical.
 >>DIRGE GRID
-?Help! Two henchmen are in the way!
-If you don't have the items to kill them, don't worry. The game kicks you to back where you were.
+?Why was I kicked back?
+You didn't have all the items prepared that you needed to.
+There are three baddies in the Dirge Grid.
 You need one item to dispose of each of them.
 ?Do I have to pick off one henchman first?
 No. Either way is okay.
+But you have to pick them both off before using the yard ray.
 ?What is the Knife Fink's weakness?
 The Knife Fink is a mercenary.
 Do you have anything shiny or valuable?
@@ -301,6 +327,12 @@ The book SOME DEMOS gives advice on making art...
 ...and the Yahoo Hay in the Moo Room gives some art and building materials.
 USE STRAW ARTS ON REVOLT LOVER.
 >>EVADED AVE
+?What is a Frood?
+It's a term coined by Douglas Adams in Hitchhiker's Guide to the Galaxy.
+It means "an amazingly together guy."
+Also, if you've examined the Door Frood, and you're wondering what hoopy means...
+...well, it's a noun and not an adjective...
+...and it means "a really together guy."
 ?Why won't the door frood let me go west or east?
 The door frood is a bit of a jerk.
 Maybe if you gave them a gift, they'd be happy.
@@ -310,17 +342,19 @@ USE TO IDIOT ON DOOR FROOD.
 ?What is the navy van for?
 It has a small eye you can scan something on.
 What sheets of paper could go in the navy van/on the eye?
-Most you find are just for you.
+Most reading material you've found is strictly informational, so the van doesn't need them.
 But one has a free something or other. Just, you can't redeem it by yourself.
+You need to have opened up the other configuration of Worn Row to find it.
 USE PITY TIP ON EYE.
 ?How do I get the TNT from the bomb mob?
 You need an agent to do it for you.
+If you're opening clues at the start of the game, be warned that this stretches well through the game.
 Do you have the DNA band or DNA hand?
 With the band, put it in the right machine.
 You need to mobilize the hand to get the TNT. It's small enough, the mob won't spot it.
 USE ROTO MOTOR ON DNA HAND.
 USE MR ARM ON BOMB MOB.
-Or the TNT.
+Or on the TNT.
 >>TRAPEZE PART
 ?How do I get across the trapeze?
 The net isn't quite stable yet.
@@ -494,7 +528,7 @@ You need to find Class Alc.
 Have you found the Elan Ale?
 USE ELAN ALE ON SNIFFINS.
 >>RED ROSES ORDER
-?How do I defeat Madam?
+?How do I defeat Ms. Ism?
 You can't get in if you don't have what you need.
 Something that's the opposite of her.
 But you can't use the orb on her. It wouldn't magnify enough.

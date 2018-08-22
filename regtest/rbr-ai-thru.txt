@@ -2987,7 +2987,7 @@ Invisible shuttuhs, err, shutters block passage north. You must be done in Cold 
 ===2
 #mistake test for gal slag
 >gal slag
-You managed to annoy Madam enough that she lashes out and conks you with a mortal blow with the Gal Flag. Okay, not really, but name calling won't help.
+You managed to annoy Ms. Ism enough that she lashes out and conks you with a mortal blow with the Gal Flag. Okay, not really, but name calling won't help.
 ===a
 
 ==t3
@@ -3001,8 +3001,8 @@ There are more effective ways to shatter the mirror rim than running into it.
 No way! You are locked in mortal combat! Plus, there's really only one thing to do, here.
 
 ==t5
->use Bro Orb on madam
-As you lift the Bro Orb to throw at Madam, you see yourself in the Mirror Rim. You don't look so great or heroic. In fact, you feel unusually self-conscious. More than you deserve to, you think. Besides, the Bro Orb might dissolve her or something, but you're not out to kill anyone.
+>use Bro Orb on ms ism
+As you lift the Bro Orb to throw at Ms. Ism, you see yourself in the Mirror Rim. You don't look so great or heroic. In fact, you feel unusually self-conscious. More than you deserve to, you think. Besides, the Bro Orb might dissolve her or something, but you're not out to kill anyone.
 >undo
 
 >use Bro Orb on mirror rim
@@ -3010,7 +3010,7 @@ by one point
 
 ==t3
 >n
-Whether or not the E-Divide could damage you, you don't need to follow Madam. You need to take down the Diktat Kid!
+Whether or not the E-Divide could damage you, you don't need to follow Ms. Ism. You need to take down the Diktat Kid!
 >e
 There are no secret passages east.
 >w

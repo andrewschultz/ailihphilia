@@ -893,7 +893,7 @@ No way! You are locked in mortal combat! Plus, there's really only one thing to 
 by one point
 
 >n
-Whether or not the E-Divide could damage you, you don't need to follow Madam. You need to take down the Diktat Kid!
+Whether or not the E-Divide could damage you, you don't need to follow Ms. Ism. You need to take down the Diktat Kid!
 >e
 There are no secret passages east.
 >w

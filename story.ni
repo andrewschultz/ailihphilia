@@ -445,7 +445,7 @@ check requesting the score:
 		let nmg be number of moot guhthugs;
 		if number of guhthugs is not nmg, say "[line break][if nmg is 0]You haven't gotten any guh-thugs out of the way yet[else]You currently disposed of [number of moot guhthugs] guh-thug[plur of nmg] blocking your way: [list of moot guhthugs][end if].";
 	if Yuge Guy is moot, say "[line break]You've gotten rid of the Yuge Guy.";
-	if Madam is moot, say "[line break]You've gotten rid of La Gal/Madam.";
+	if Ms Ism is moot, say "[line break]You've gotten rid of La Gal/Ms. Ism.";
 	if player has x-ite tix:
 		let Q be roving-LLP;
 		let Q2 be fixed-LLP;
@@ -1055,6 +1055,7 @@ check taking inventory when Dave is moot:
 	else:
 		say "AIDE MEDIA: While [b][the relevantest helpdoc carried by the player][r] seems useful as a guide, [other-docs] may shore up a few minor points.";
 	if number of tronparts carried by player > 0, say "North-tron parts found: [the list of tronparts carried by player][unless martini tram is off-stage]. The martini tram is in [Fun Enuf], too[end if].";
+	if player has state tats, say "You've also stamped yourself with state tats.";
 	if number of carried exhausted things > 0 and reviver is not moot, say "(x) = exhausted (tried all 3 machines in Work Row)[line break]";
 	the rule succeeds;
 
@@ -1688,7 +1689,7 @@ check useoning it with:
 			if number of notyet tronparts is 1, say "[recxcheck of false]You see how everything fits--even the [random notyet tronpart], which you don't have yet. Rats, so close!" instead;
 			if number of notyet tronparts is 2, say "[recxcheck of false]That looks like the start of something. But you still need to find a couple things." instead;
 			if player is not in Fun Enuf: [this could happen, since the martini tram only stays in Fun Enuf.]
-				if madam is quicknear or Yuge Guy is quicknear, say "[recxcheck of false]But you'll need to deal with [if player is in Red Roses Order]Madam[else]the Yuge Guy[end if] first." instead;
+				if Ms Ism is quicknear or Yuge Guy is quicknear, say "[recxcheck of false]But you'll need to deal with [if player is in Red Roses Order]Ms. Ism[else]the Yuge Guy[end if] first." instead;
 				say "[recxcheck of false]You might be better served using these things in [Fun Enuf], where the martini tram is. Go there?";
 				if the player no-consents, say "OK, but protip: that's where you need to assemble things." instead;
 				move player to Fun Enuf, without printing a room description;
@@ -1799,7 +1800,7 @@ Door Frood	"'Pfft, nah, not clever and edgy enough.'"
 Ian	"'I'm a food snob, not a book snob. Geez!'"
 King Nik	"'Hm, maybe, but I need some serious policy discussions.'"
 Known Wonk	"'I have enough hard knowledge. I need something clever and fun.'"
-Madam	"Any simple book you could find would be beneath Madam."
+Ms Ism	"Any simple book you could find would be beneath Ms. Ism."
 Sniffins	"'[if yob attaboy is moot]I'm too busy to read! I have a thriving business[else]That won't help my business thrive[end if]!'"
 tao boat	"You sense that the tao boat requires more than just wordy knowledge. It requires ... feeling."
 Yuge Guy	"The Yuge Guy doesn't bother with books--not even a ghostwritten, self-serving autobiography."
@@ -1816,7 +1817,7 @@ Dave	"Dave's not useful, man."
 DNA band	"The DNA band is useless on its own. It probably needs some sort of jolt to become useful, or sentient."
 enact cane	"The enact cane needs to be augmented, but not quite like that."
 ergot ogre	"The ogre can't be bribed or baited. At least, not by you. You're not fast or strong enough to outfox (or out-any other animal) it on your own. Plus, you worry anything that touches the ergot ogre might shrivel up. Maybe you need the services of someone or something that can beat up the ogre without touching its skin." [?? how to pick off duplicates in a table?]
-Gal Flag	"The Gal Flag seems like a distraction. You need some way to disarm Madam!"
+Gal Flag	"The Gal Flag seems like a distraction. You need some way to disarm Ms. Ism!"
 gnu dung	"There's a lot of gnu dung. You'll need something tailored specific to it, to clean it up."
 Gorge Grog	"The Gorge Grog is so concentrated, it's probably only good for chemical warfare."
 Ian	"Ian's worse than useless. You need to use your wit on him."
@@ -1868,7 +1869,7 @@ section table of specific use rejects
 
 table of specific use rejects [xxrej] [xxfail] [xxsur]
 use1	use2	babble
-Bro Orb	Madam	"As you lift the Bro Orb to throw at Madam, you see yourself in the Mirror Rim. You don't look so great or heroic. In fact, you feel unusually self-conscious. More than you deserve to, you think. The Bro Orb is really pulsing right now. Whatever you used it on, you'd likely destroy it, and you're not out to KILL anyone."
+Bro Orb	Ms Ism	"As you lift the Bro Orb to throw at Ms. Ism, you see yourself in the Mirror Rim. You don't look so great or heroic. In fact, you feel unusually self-conscious. More than you deserve to, you think. The Bro Orb is really pulsing right now. Whatever you used it on, you'd likely destroy it, and you're not out to KILL anyone."
 bunk nub	sleep eels	"That -- well, it almost works. But the bunk nub isn't shaped right to house that many small animals. Maybe it could be changed."
 Cave Vac	gnu dung	"The Cave Vac sputters. You may need something more specifically suited to the, uh, material to clean up."
 cave vac	go-by bog	"The bog is too big for that."
@@ -2043,7 +2044,7 @@ sharp rahs	guru rug	stir writs	--	brag-garb-bye rule	true	true	true	Grebeberg	Mo
 --	--	--	rev-first-food-combo rule	--	true	--	--	Grebeberg	Mont Nom	false	--
 --	--	--	rev-second-food-combo rule	--	true	--	--	Grebeberg	Fun Enuf	false	--
 Moor Broom	Tru Yurt	Exam Axe	--	bump-ivy rule	true	true	false	Grebeberg	Yack Cay	false	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! Then, back to the Tru-Yurt for the Wonk. They've done enough for you." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
-wash saw	porch crop	balsa slab	--	--	true	true	false	Grebeberg	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods.[paragraph break]'Yes! Yes! We have achieved AIMED ACADEMIA! Uneven U needs a name change ... to UNEVEN U! How can I thank you?'[paragraph break]A balsa slab is lying under where the porch crop was. The Code Doc offers it to you. Now, you ... do own wood!"
+wash saw	porch crop	balsa slab	--	--	true	true	false	Grebeberg	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods.[paragraph break]'Yes! Yes! We have achieved AIMED ACADEMIA! Uneven U needs a name change ... to UNITIN['] U! How can I thank you?'[paragraph break]A balsa slab is lying under where the porch crop was. The Code Doc offers it to you. Now, you ... do own wood!"
 Exam Axe	Lie Veil	--	--	--	true	true	true	Grebeberg	Dumb Mud	false	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
 --	--	--	rev-get-bro-orb rule	--	false	--	--	--	Le Babel	--	--
 DNA band	reifier	DNA hand	--	--	true	true	false	Yelpley	Worn Row	false	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand! It doesn't have any slime or blood leaking, and when you take it, it doesn't twitch too much."
@@ -2053,8 +2054,8 @@ you buoy	rotator	ME gem	--	--	true	true	false	Yelpley	Worn Row	false	"You hear a
 Mr Arm	bomb mob	TNT	--	mob-bye rule	true	true	true	Yelpley	Yell Alley	false	"Mr. Arm walks on his index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. Being an arm, it/he has more leverage than just a DNA hand would've. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course. Perhaps Mr. Arm will find a Do-Bod or even an Evol-Glove to be truly complete. The bomb mob, for their part, becomes a poor troop once they see what they've lost. They wander away."
 nat's tan	scorn rocs	--	--	--	true	true	true	Grebeberg	Flu Gulf	false	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
 rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	Grebeberg	Sneer Greens	false	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Had, ah!' he cries, making a male lam. From his babbling, he's apparently retreating to the glam-amalg (Loot Stool included) in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]'Pol? Flop!' you think to yourself, before the ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
-Bro Orb	Mirror Rim	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	Red Roses Order	false	"The Bro Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Madam has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, madam, live not on evil!' you boom, as the Orb does its work. Madam looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'My sub-level bus! You won't catch it! The E-Divide will block you!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
-balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	Red Roses Order	false	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Madam."
+Bro Orb	Mirror Rim	Yard Ray	--	sword-rows-reveal rule	true	true	true	Yelpley	Red Roses Order	false	"The Bro Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Ms. Ism has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, Ms. Ism, live not on evil!' you boom, as the Orb does its work. Ms. Ism looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'My sub-level bus! You won't catch it! The E-Divide will block you!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
+balsa slab	sword rows	not-a-baton	--	--	true	true	false	Yelpley	Red Roses Order	false	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Ms. Ism."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	Yelpley	Worn Row	false	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
 murdered rum	yard ray	--	--	ray-beepy-now rule	true	true	false	Dim Mid	--	false	"The yard ray gleams with energy. It seems like it could do some damage now."
 --	--	--	rev-emit-noontime rule	--	true	--	--	Dim Mid	--	false	--
@@ -2456,7 +2457,7 @@ this is the sod-to-cup rule:
 
 this is the sword-rows-reveal rule:
 	move sword rows to Red Roses Order;
-	moot madam;
+	moot Ms Ism;
 	move E Divide to Red Roses Order;
 	the rule succeeds;
 
@@ -2568,7 +2569,7 @@ past sap	"[if liar grail is moot]With the liar grail gone, you don't want to hav
 pool gloop	"Fortunately, you don't need to do anything special to or with the pool gloop." [start Apse Spa 3 1]
 spa taps	"The spa taps can't do much. You're not a customer, anyway."
 state tats	"You don't need to do anything to or with the state tats, now that you're wearing them." [start traded art 4 1]
-E Divide	"There's no way to dispel the E-Divide, but Madam isn't the main enemy here, any more." [start Red Roses Order 5 1]
+E Divide	"There's no way to dispel the E-Divide, but Ms. Ism isn't the main enemy here, any more." [start Red Roses Order 5 1]
 Oh Who	"[fonen-of of Oh Who]." [start Seer Trees 2 2]
 x-it stix	"No way you're getting through the X-It Stix."
 KAOS Oak	"The [kaoscaps] is immune to poking. You'll need a powerful contraption indeed to dispel it!" [start Fun Enuf 3 2]
@@ -2770,7 +2771,7 @@ check going north in Fun Enuf:
 	if north tron is off-stage, say "Not until you've built the North-Tron." instead;
 	if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
 	if murdered rum is not moot, say "You have the yard ray, but it isn't, well, charged." instead;
-	if emitted is false, say "You don't know how to work the yard ray[if yard ray is examined]. EMIT ********--hmm, what could those eight letters be?[else]. Maybe examine it for instructions.[end if]" instead;
+	if emitted is false, say "You don't know how to work the yard ray[if yard ray is xed]. EMIT ********--hmm, what could those eight letters be?[else]. Maybe examine it for instructions.[end if]" instead;
 	if grid-side-items < 2, say "As you go north, you hear three voices. 'Prep?! Erp!' you mutter.[paragraph break]Perhaps the yard ray would work okay at first, but ... you get the feeling you may need some other stuff to take out EVERYBODY.";
 
 to decide which number is grid-side-items:
@@ -2885,7 +2886,7 @@ after examining the Darer Ad:
 
 chapter Set O Notes
 
-the Set O Notes is a helpdoc. description is "[b]OPPO[r] is printed at the top. There's vague advice about making a North-Tron to defeat the Diktat Kid, but first you'll have to defeat [b]Madam[r], as well as the [b]Yuge Guy[r].[paragraph break]There's mention of a guh-thug in various places, and you'll have to do something special when you see one. [thug-report].[paragraph break]Also scribbled, in the center, is [b][Fun Enuf][r] with [b]TRI-GIRT[r] below that. There are other landmarks scribbled in, which [if number of visited rooms < 20]will help you identify new places and scenic barriers and such[else]have been helpful so far[end if].[paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
+the Set O Notes is a helpdoc. description is "[b]OPPO[r] is printed at the top. There's vague advice about making a North-Tron to defeat the Diktat Kid, but first you'll have to defeat [b]Ms. Ism[r], as well as the [b]Yuge Guy[r].[paragraph break]There's mention of a guh-thug in various places, and you'll have to do something special when you see one. [thug-report].[paragraph break]Also scribbled, in the center, is [b][Fun Enuf][r] with [b]TRI-GIRT[r] below that. There are other landmarks scribbled in, which [if number of visited rooms < 20]will help you identify new places and scenic barriers and such[else]have been helpful so far[end if].[paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
 
 understand "oppo" as set o notes.
 
@@ -4919,11 +4920,11 @@ check going south in Emo Dome when Diktat Kid is moot:
 	say "The Swept Pews are closed for reconstruction. You've done all you could there." instead;
 
 check going north in Emo Dome:
-	if Diktat Kid is moot, say "The Red Roses Order is being replaced by something more ... civic." instead;
-	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. Still, you try to pass by the DIFF-ID but hear a warn-raw voice: 'Dim ID! Go jog!'[paragraph break]You think, hang? Nah." instead;
+	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. Still, you try to pass by the DIFF-ID but hear a warn-raw voice: 'Dim ID! Go jog!'[paragraph break]You think, hang? Nah[if player has soot tattoos and player has gate tag]. Maybe you can hustle up an ID from your current possessions, though[else if player has soot tattoos or player has gate tag]Maybe you could find something to help you get by[end if]." instead;
 	if Bro Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet. You probably need some sort of cool protection, or weapon, or combination thereof." instead;
+	if Diktat Kid is moot, say "The Red Roses Order is being replaced by something more ... civic. The Teem-Civic Meet, to be precise." instead;
 	if balsa slab is moot, say "The Teem-Civic Meet is going in full swing. They're throwing interesting ideas around, but you don't have anything to add. Lots of folks all 'Yep, ey?'" instead;
-	say "[if Red Roses Order is visited]The Diff ID recognizes you as you re-enter[else]You make sure your state tats are visible for scanning. They are accepted with a 'YA MAY!' The Diff ID even zaps them--it will recognize you in the future[end if].[paragraph break][if madam is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the sword rows.[end if]";
+	say "You make sure your state tats are visible for scanning. They are accepted with a 'YA MAY!'.[paragraph break][if Ms Ism is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the sword rows.[end if]";
 
 chapter DIFF ID
 
@@ -5007,7 +5008,7 @@ after looking in Toll Lot when pulled-up is false:
 check going in Toll Lot:
 	if Diktat Kid is moot:
 		if noun is south, say "There's a party at the Bon Snob, and it's so exclusive, even you aren't invited!" instead;
-		if noun is north and balm-LLP-yet is true, say "You already did a little extra in the Bald Lab. You figure it's best to keep away--you guess people probably thought Madam ruined it, and why fill them in on the truth?" instead;
+		if noun is north and balm-LLP-yet is true, say "You already did a little extra in the Bald Lab. You figure it's best to keep away--you guess people probably thought Ms. Ism ruined it, and why fill them in on the truth?" instead;
 	if cross orc is in Toll Lot:
 		if noun is north or noun is south, say "The cross orc stops you from going [noun]. 'GIVE VIG!' it booms." instead;
 
@@ -5137,7 +5138,7 @@ the decal placed is peripheral scenery in Deft Fed. description is "It's an adve
 
 chapter snooty toons
 
-The snooty toons are peripheral scenery. "They certainly add ambience to the place. You're not sure whether you should feel obliged to laugh at them or not good enough to laugh at them. But they're not really hurting you, you guess. They're also advertising something: [next-rand-txt of table of snooty toon ads]."
+The snooty toons are peripheral scenery. "They certainly add ambience to the place. You're not sure whether you should feel obliged to laugh at them or not good enough to laugh at them. But they're not really hurting you, you guess. And they advertise the food here under text labeled UNE MENU. One item: [next-rand-txt of table of snooty toon ads]."
 
 chapter standing
 
@@ -5170,6 +5171,7 @@ after looking in Evaded Ave:
 
 the Door Frood is a neuter person in Evaded Ave. "[one of]Someone waving their fists and shouting at who-knows-what pauses as you walk by. 'I'm the Door Frood. Not, like, a physical door, but a doorperson.' They say you MIGHT deserve to visit west or east, but -- a clever gift would be appreciated[or]The Door Frood continues to pace back and forth here, making sure you don't sneak off any way but back south[stopping].". description is "Probably not angry enough to actually do anything besides block others from doing what they want."
 
+after examining the Door Frood for the first time: say "You think to yourself: 'Hoopy? Pooh!'"
 check going in Evaded Ave:
 	if Door Frood is in Evaded Ave:
 		if noun is west or noun is east, say "The Door Frood blocks you. 'Look, I'd like something cleverer to do than stop you from going where you want, but I don't HAVE anything. Yet.'[paragraph break]Maybe if you gave them something to keep them occupied, they'd be more generous." instead;
@@ -5329,13 +5331,13 @@ Line Nil is peripheral scenery in Yell Alley. "It's a thin looking red line you'
 
 book Red Roses Order
 
-Red Roses Order is north of Emo Dome. It is in Yelpley. "[if madam is in Red Roses Order]The only visible way back is south, with a Mirror Rim blocking the other directions and seeming very threatening and oppressive indeed, but you can't chicken out[else]Sword rows have been revealed once the Mirror Rim dispersed. The E-Divide flickers and guards the way north where Madam left. You can go back south[end if]."
+Red Roses Order is north of Emo Dome. It is in Yelpley. "[if Ms Ism is in Red Roses Order]The only visible way back is south, with a Mirror Rim blocking the other directions and seeming very threatening and oppressive indeed, but you can't chicken out[else]Sword rows have been revealed once the Mirror Rim dispersed. The E-Divide flickers and guards the way north where Ms. Ism left. You can go back south[end if]."
 
 Red Roses Order is above Emo Dome.
 
 chapter Mirror Rim
 
-the Mirror Rim is scenery in Red Roses Order. "Looking in the Mirror Rim, you see ... well, you don't look terribly heroic. No wonder you were rejected for Raw Level War! In fact, you look kind of grouchy and upset. But it's not just that. You see and recall flaws you've forgotten, and you're pretty sure they're magnified beyond what they should be. But you feel half-obliged to keep looking at the Mirror Rim for an 'objective' amplification of all your tiny faults.[paragraph break]Oh, and the Pact Cap looks even sillier on you than you imagined it would. At least Madam has to see you wearing it!"
+the Mirror Rim is scenery in Red Roses Order. "Looking in the Mirror Rim, you see ... well, you don't look terribly heroic. No wonder you were rejected for Raw Level War! In fact, you look kind of grouchy and upset. But it's not just that. You see and recall flaws you've forgotten, and you're pretty sure they're magnified beyond what they should be. But you feel half-obliged to keep looking at the Mirror Rim for an 'objective' amplification of all your tiny faults.[paragraph break]Oh, and the Pact Cap looks even sillier on you than you imagined it would. At least Ms. Ism has to see you wearing it!"
 
 chapter sword rows
 
@@ -5348,20 +5350,22 @@ The not-a-baton is a thing. description is "It is wood and round and long. It's 
 understand "not/baton" and "not a/baton" and "not a baton" as not-a-baton.
 [understand "not a baton"  as not-a-baton]
 
-chapter madam
+chapter Ms Ism
 
-Madam is a proper-named female person in Red Roses Order. "[one of]Before you have time to gloat '[']N I'm In,' you see MADAM standing[or]MADAM stands[stopping] here in defiance, holding the Gal Flag high and waving it.". description is "She obviously didn't get to her position of power by being some over-educated pantsuited fool who made a small mistake with an e-mail server once.[paragraph break]As she waves that Gal Flag, you should probably be grateful she doesn't have a girl rig, too. You need a way to neutralize the Gal Flag!"
+Ms Ism is a proper-named female person in Red Roses Order. printed name of Ms Ism is "Ms. Ism". "[one of]Before you have time to gloat '[']N I'm In,' you see Ms. Ism standing[or]Ms. Ism stands[stopping] here in defiance, holding the Gal Flag high and waving it.". description is "She obviously didn't get to her position of power by being some over-educated pantsuited fool who made a small mistake with an e-mail server once.[paragraph break]As she waves that Gal Flag, you should probably be grateful she doesn't have a girl rig, too. You need a way to neutralize the Gal Flag!"
 
-Madam carries the Gal Flag. description of Gal Flag is "It's fluttering even without a breeze, and it reflects throughout the mirror rim to make you feel more than a little overwhelmed."
+Ms Ism carries the Gal Flag. description of Gal Flag is "It's fluttering even without a breeze, and it reflects throughout the mirror rim to make you feel more than a little overwhelmed. On it is an image of ... Ms. Ism, surprisingly!"
 
-understand "la gal" and "la/gal" as Madam.
+understand "la gal" and "la/gal" as Ms Ism.
 
 check going in Red Roses Order:
-	if noun is south and Madam is in Red Roses Order, say "No way! You are locked in mortal combat! Plus, there's really only one thing to do, here." instead;
-	if noun is north and madam is moot, say "Whether or not the E-Divide could damage you, you don't need to follow Madam. You need to take down the Diktat Kid!" instead;
-	if noun is not south, say "[if madam is moot]There are no secret passages [noun][else]There are more effective ways to shatter the mirror rim than running into it[end if]." instead;
-	if balsa slab is moot: [e.g. you used it on the sword rows]
-		say "You hear a crash behind you as the sword rows spin and wheeze from the exertion, then fall over. There's something ... no, someone ... behind the wall. 'How are you? I'm the Droll Lord! Thanks for setting me free! I kept myself entertained, but I was turning into the Dull Lud!' As people stream in, he outlines his vision for a more peaceful Yelpley. He is too old to govern, but so many people have come together to discuss ideas how not to let a Diktat Kid, Yuge Guy or Madam gain power again. 'We'd like you to stay, but we hear you have your own life to lead.' And he's right. You're not up to GOVERNING.[paragraph break]As you leave, you notice the Droll Lord scratch out the last bit calling this building the Red Roses Order, replacing it with TEEM-CIVIC MEET.[paragraph break]It's slightly forced, but it's better than GRO-CIVIC ORG or EVA[']-CIVIC AVE and gets the point across. Clear messaging is important in politics.";
+	if noun is south and Ms Ism is in Red Roses Order, say "No way! You are locked in mortal combat! Plus, there's really only one thing to do, here." instead;
+	if noun is north and Ms Ism is moot, say "Whether or not the E-Divide could damage you, you don't need to follow Ms. Ism. You need to take down the Diktat Kid!" instead;
+	if noun is not south, say "[if Ms Ism is moot]There are no secret passages [noun][else]There are more effective ways to shatter the mirror rim than running into it[end if]." instead;
+	if sword rows are moot:
+		say "You hear a crash behind you as the sword rows spin and wheeze from the exertion, then fall over. There's something ... no, some PEOPLE ... behind the wall. They introduce themselves as the Droll Lord and Madam. They thank you profusely: they were close to becoming the Dull Lud and Dame Mad back there![paragraph break]The crash behind the sword rows must've reverberated. As people stream in, Madam and the Droll Lord outline their plans for a more peaceful Yelpley, despite their differences. They discuss ways to avoid letting a Diktat Kid, Yuge Guy or Ms. Ism gain power again. 'We'd like you to stay, but we hear you have your own life to lead.' And they're right. You're not up to GOVERNING.[paragraph break]As you leave, you notice them scratching out the last bit calling this building the Red Roses Order, replacing it with TEEM-CIVIC MEET.[paragraph break]It's slightly forced, but it's the best there is, better than GRO-CIVIC ORG or EVA[']-CIVIC AVE and gets the point across. Hey, politics is the art of the possible, of the best realistic option.";
+	else:
+		say "You look back at the sword rows. Perhaps they will be useful."
 
 chapter yard ray
 
@@ -5379,7 +5383,7 @@ does the player mean useoning with the Set O Notes: it is unlikely.
 
 chapter E-Divide
 
-the E Divide is peripheral scenery in Red Roses Order. "Madam crossed it, but you don't need to follow her. It would probably be dangerous. And yes, it's too narrow to slip through the tines. Maybe if you had an e-gage...but there's none in this game.". printed name of E Divide is "E-Divide". understand "e-divide" as e divide.
+the E Divide is peripheral scenery in Red Roses Order. "Ms. Ism crossed it, but you don't need to follow her. It would probably be dangerous. And yes, it's too narrow to slip through the tines. Maybe if you had an e-gage...but there's none in this game.". printed name of E Divide is "E-Divide". understand "e-divide" as e divide.
 
 book Swept Pews
 
@@ -5638,7 +5642,7 @@ talk-text of Kayo Yak is "It looks up a bit but then ignores you. Maybe there's 
 talk-text of King Nik is "'I am not a very good king! I've tried to understand social and economic forces and big picture issues and stuff. But it gets all muddled. I'm worried my kingdom will soon become Skint Nik's. Maybe you could help me?'".
 talk-text of Knife Fink is "The Knife Fink stops and looks over your possessions for a moment.".
 talk-text of Known Wonk is "'Say, as...' There is some awkward small talk. The Known Wonk's mind is elsewhere, but maybe you can help with practical matters.".
-talk-text of Madam is "She is raising the Gal Flag and incanting ... something. You're not sure what. But talking won't interrupt it.".
+talk-text of Ms Ism is "She is just full of isms as she waves her Gal Flag about. Obscurantism, denialism, revisionism, escapism, whataboutism, you name it!".
 talk-text of Revolt Lover is "'Did you find any Stray Arts? I can always use them.'".
 talk-text of Bond Nob is "'I ain't much for talking now I'm sick... no way I can visit [next-rand-txt of table of Bond Nob bars] or [next-rand-txt of table of Bond Nob bars] or any other cool bar with my pals...'".
 talk-text of Ned is "Ned's not in the mood for regular talk. He seems to want an argument or fight, but you don't.".
@@ -5671,7 +5675,7 @@ understand "go [any room]" as gotoing.
 
 to decide whether goto-available:
 	if Diktat Kid is quicknear, no;
-	if Madam is quicknear, no;
+	if Ms Ism is quicknear, no;
 	yes. [obviously we don't want this to be trivial once the game's complete, but we want the code in place.]
 
 gone-to is a truth state that varies.
@@ -6914,7 +6918,7 @@ section Red Roses Order rule
 this is the red-roses-order-hint rule:
 	if taboo bat is not off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if madam is in Red Roses Order, say "USE BRO ORB ON MADAM." instead;
+	if Ms Ism is in Red Roses Order, say "USE BRO ORB ON MS ISM." instead; [okperc]
 	if player does not have balsa slab, say "You need to get the balsa slab from south of Swamp Maws." instead;
 	say "USE BALSA SLAB ON SWORD ROWS." instead;
 
