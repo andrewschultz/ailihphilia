@@ -900,6 +900,7 @@ instead of thinking:
 					say "LAST LOUSY POINTS NOTES:[line break]";
 				say "[cluey entry].[line break]";
 	if player has epicer recipe and epicer recipe is xed, say "You have [tron-got] of [number of tronparts] pieces of the north tron.";
+	if revisited-u is false and revisit-clue is true, say "You may wish to visit the Code Doc again to see what the fuss was about.";
 	if LLP-yet is false, say "You don't have any last lousy points to figure that've been clued in-game."
 
 section stuck-rules
@@ -3585,8 +3586,11 @@ understand "swamp maw" and "maw" as swamp maws.
 
 chapter hinting dr d again
 
+revisit-clue is a truth state that varies.
+
 after looking in Swamp Maws (this is the uneven u revisit hint rule) :
 	if exam axe is not off-stage and revisited-u is false and balsa slab is off-stage:
+		now revisit-clue is true;
 		say "[one of]'Oh, wow! A Dr. Award! For all my hard work! Great news for Uneven U!' you hear Dr. D, the Code Doc, boom from the south. Maybe you should check it out![or]You realize you haven't been south to congratulate Dr. D yet.[stopping]";
 	continue the action;
 
@@ -5358,14 +5362,17 @@ Ms Ism carries the Gal Flag. description of Gal Flag is "It's fluttering even wi
 
 understand "la gal" and "la/gal" as Ms Ism.
 
-check going in Red Roses Order:
-	if noun is south and Ms Ism is in Red Roses Order, say "No way! You are locked in mortal combat! Plus, there's really only one thing to do, here." instead;
-	if noun is north and Ms Ism is moot, say "Whether or not the E-Divide could damage you, you don't need to follow Ms. Ism. You need to take down the Diktat Kid!" instead;
-	if noun is not south, say "[if Ms Ism is moot]There are no secret passages [noun][else]There are more effective ways to shatter the mirror rim than running into it[end if]." instead;
+check going south in Red Roses Order:
+	if Ms Ism is in Red Roses Order, say "No way! You are locked in mortal combat! Plus, there's really only one thing to do, here." instead;
 	if sword rows are moot:
-		say "You hear a crash behind you as the sword rows spin and wheeze from the exertion, then fall over. There's something ... no, some PEOPLE ... behind the wall. They introduce themselves as the Droll Lord and Madam. They thank you profusely: they were close to becoming the Dull Lud and Dame Mad back there![paragraph break]The crash behind the sword rows must've reverberated. As people stream in, Madam and the Droll Lord outline their plans for a more peaceful Yelpley, despite their differences. They discuss ways to avoid letting a Diktat Kid, Yuge Guy or Ms. Ism gain power again. 'We'd like you to stay, but we hear you have your own life to lead.' And they're right. You're not up to GOVERNING.[paragraph break]As you leave, you notice them scratching out the last bit calling this building the Red Roses Order, replacing it with TEEM-CIVIC MEET.[paragraph break]It's slightly forced, but it's the best there is, better than GRO-CIVIC ORG or EVA[']-CIVIC AVE and gets the point across. Hey, politics is the art of the possible, of the best realistic option.";
+		say "You hear a crash behind you as the sword rows spin and wheeze from the exertion, then fall over. There's something ... no, some PEOPLE ... behind the wall. They introduce themselves as the Droll Lord and Madam. They thank you profusely: they were close to becoming the Dull Lud and Dame Mad back there![paragraph break]The crash behind the sword rows must've reverberated. As people stream in, Madam and the Droll Lord outline their plans for a more peaceful Yelpley, despite their differences. They discuss ways to avoid letting a Diktat Kid, Yuge Guy or Ms. Ism gain power again. 'We'd like you to stay, but we hear you have your own life to lead.' And they're right. You're not up to GOVERNING.[paragraph break]As you leave, you notice them scratching out the last bit calling this building the Red Roses Order, replacing it with TEEM-CIVIC MEET.[paragraph break]It's slightly forced, but it's the best there is, better than GRO-CIVIC ORG or EVA[']-CIVIC AVE and gets the point across. Hey, politics is the art of the possible, of the best realistic option.[paragraph break]You rub your State Tats off. You won't be needing them.";
+		moot state tats;
 	else:
 		say "You look back at the sword rows. Perhaps they will be useful."
+
+check going in Red Roses Order:
+	if noun is north and Ms Ism is moot, say "Whether or not the E-Divide could damage you, you don't need to follow Ms. Ism. You need to take down the Diktat Kid!" instead;
+	say "[if Ms Ism is moot]There are no secret passages [noun][else]There are more effective ways to shatter the mirror rim than running into it[end if]." instead;
 
 chapter yard ray
 
