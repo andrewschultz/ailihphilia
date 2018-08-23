@@ -218,7 +218,7 @@ Include (-
 	  'dial aid': "dial AID";
 	  'deep speed', 'deepspeed':  print "deep-speed through the game";
 	  'dev ed', 'deved':  print "read about development with DEV ED/DEVED";
-	  'grammar g':  print "toggle Kaos Oak grammar";
+	  'grammar g':  print "toggle KAOS Oak grammar";
       'gt', 'go to', 'goto':   print "go to";
 	  'help':  print "ask for HELP";
 	  'love vol', 'lo vol', 'lovol', 'lovevol':  print "tweak the pact cap";
@@ -265,7 +265,7 @@ Include (-
 
 -) instead of "Generate Multiple Actions" in "OrderOfPlay.i6t".
 
-section kAoS oAk NoNsEnSe
+section KAOS Oak NoNsEnSe
 
 Include (-
 
@@ -535,7 +535,7 @@ definition: a number (called n) is nontrivially-palindromic:
 	no;
 
 this is the check palindrome turns rule: [this could be at the end but those are item based rules]
-	if kaos oak is not moot, continue the action;
+	if KAOS Oak is not moot, continue the action;
 	let revnum be 0;
 	let cutnum be turn count;
 	say "Final stats (score/turn/maximum score): [score]/[turn count]/[maximum score].";
@@ -901,9 +901,10 @@ instead of thinking:
 				say "[cluey entry].[line break]";
 	if player has epicer recipe and epicer recipe is xed, say "You have [tron-got] of [number of tronparts] pieces of the north tron.";
 	let nwe be number of worth-examining things;
-	if nwe > 0: say "You may want to examine [if nwe is 1]this item[else]these items[end if] you haven't, yet: [list of worth-examining things]";
+	if nwe > 0:
+		say "You may want to examine [if nwe is 1]this item[else]these items[end if] you haven't, yet: [list of worth-examining things]";
 	else:
-		say "You've examined all your carried items for clues"
+		say "You've examined all your carried items for clues";
 	say ". You can try SCE RECS to see scenery you haven't examined.";
 	if revisited-u is false and revisit-clue is true, say "You may wish to visit the Code Doc again to see what the fuss was about.";
 	if LLP-yet is false, say "You don't have any last lousy points to figure that've been clued in-game."
@@ -981,7 +982,7 @@ this is the flu-gulf-stuck rule:
 
 this is the fun-enuf-stuck rule:
 	if Dirge Grid is mapped north of Fun Enuf, the rule fails; [??not good enough -- need to make sure have weapons]
-	say "You need to blast through the [kaos oak] north of [hn2 of Fun Enuf], eventually.";
+	say "You need to blast through the [KAOS Oak] north of [hn2 of Fun Enuf], eventually.";
 	the rule succeeds;
 
 this is the gross-org-stuck rule:
@@ -1090,6 +1091,40 @@ after printing the name of the radar while taking inventory:
 	if radar-used is 1, say " (damaged)";
 	if radar-used is 2, say " (BUG--should be destroyed)";
 
+chapter scerecsing
+
+scerecsing is an action out of world.
+
+understand the command "scerecs" as something new.
+understand the command "sce recs" as something new.
+
+understand "scerecs" as scerecsing.
+understand "sce recs" as scerecsing.
+
+carry out scerecsing:
+	let count be 0;
+	repeat with SC running through xable scenery:
+		increment count;
+		if count is 11, break;
+		if count is 1, say "Scenery unexamined yet: ";
+		if count > 1, say ", ";
+		say "[SC][run paragraph on]";
+	say "[if count is 11] (there's more, but this is long enough.)[else if count is 0]You've examined all the scenery you could[any-open-rooms].[else].";
+	the rule succeeds;
+
+to decide whether any-unvisited:
+	if number of unvisited rooms > number of rooms in Odd Do, yes;
+	no;
+
+to say any-open-rooms: say "[if any-unvisited], at least for the rooms explored so far[end if]"
+
+definition: a thing (called sce) is xable:
+	unless sce is scenery, no;
+	if sce is xed, no;
+	if location of sce is ungoable, no;
+	if location of sce is available, yes;
+	no;
+
 chapter abouting
 
 abouting is an action applying to nothing.
@@ -1164,7 +1199,7 @@ to say got-sit:
 
 this is the situational commands show rule:
 	now any-sit-cmd is false;
-	if player is in Fun Enuf and kaos oak is xed, say "[got-sit][2da][b]GRAMMAR G[r] toggles the [kaoscaps] between chaotic to sane punctuation, which is purely cosmetic.";
+	if player is in Fun Enuf and KAOS Oak is xed, say "[got-sit][2da][b]GRAMMAR G[r] toggles the [kaoscaps] between chaotic to sane punctuation, which is purely cosmetic.";
 	if pyx is quicknear, say "[got-sit][2da][b]X X[r] or [b]MAP[r] will let you examine the X/Y Pyx.";
 	if wr-short-note is true and in-work, say "[got-sit][line break][2da][b]REV[r], [b]ROT[r] and [b]REI[r] is shorthand to use an item on the reviver, rotator and reifier, respectively.";
 	if player has radar, say "[got-sit][2da][b]RAD[r] is shorthand to use the radar on something.";
@@ -1181,7 +1216,7 @@ carry out verbing:
 	say "[2da][b]GT[r] or [b]GO TO[r] lets you go to a room where you've been before.";
 	say "[2da][b]T[r] or [b]TALK TO[r] or [b]GR[r] or [b]GREET[r] talks to someone. There's not much in the way of conversation in this game, but you may get some clues from basic chat.";
 	say "[2da][b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
-	say "[2da][b]THINK[r] gives general non-spoiler hints, including where you may wish to visit, or what is blocking you. [b]AID[r] gives you hints for where you are.";
+	say "[2da][b]THINK[r] gives general non-spoiler hints, including where you may wish to visit, or what is blocking you. [b]SCE RECS[r] clues scenery you haven't examined yet. [b]AID[r] gives you hints for where you are.";
 	if cur-score of Odd Do < max-score of Odd Do:
 		say "[line break]There are also a few guess-the-verb bonus points that are hidden. Some relate to objects or people that need help but can't help you, and some are riffs on standard commands. [if refer-yet is false]There's a different way to revisit, rehash or recap this very command, for example[else]For instance, you got REFER as VERBS[end if]";
 	say "[line break]Also, many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy. If you miss them, you'll see the entire list at the end.";
@@ -1226,7 +1261,7 @@ understand "ni win" as niwining.
 carry out niwining:
 	say "WARNING! These may spoil the game if used too early.[paragraph break]";
 	say "[b]REV OVER[r] allows you to skip a few puzzles at a time.";
-	say "[b]DEEP SPEED[r] jumps you to where you have blown a hole in the Kaos Oak to the north of [Fun Enuf] and have the weaponry to take on the Diktat Kid.";
+	say "[b]DEEP SPEED[r] jumps you to where you have blown a hole in the KAOS Oak to the north of [Fun Enuf] and have the weaponry to take on the Diktat Kid.";
 	the rule succeeds;
 
 chapter shuttuhsing
@@ -1611,7 +1646,7 @@ to build-the-tron:
 	else:
 		say "[if epicer recipe is nox]You're clueless how, at first. But then you take a look at the epicer recipe[else]You build the North-Tron with the instructions from[end if] the epicer recipe after a few 'How? OH!' moments. It points north and blasts a hole in the [kaoscaps] with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break]Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
 	moot epicer recipe;
-	moot kaos oak;
+	moot KAOS Oak;
 	now Dirge Grid is mapped north of Fun Enuf;
 	now Fun Enuf is mapped south of Dirge Grid;
 
@@ -1966,7 +2001,7 @@ troll ort	kayo yak	"As you hold the troll ort out, the Kayo Yak butts your hand!
 troll ort	senile felines	"The senile felines sniff lazily at the troll ort, but despite its saying PINT-A-CATNIP, they do nothing. Perhaps they are just too inactive."
 wash saw	cassettes sac	"The wash saw isn't big enough to clean up the cassettes sac. You need a more powerful cleaner."
 wash saw	crag arc	"The crag arc is much too big for the saw to get anywhere. [if UFO tofu is off-stage]Maybe there's a better way to find what's behind there[else]Besides, you found enough[end if]."
-wash saw	KAOS Oak	"The wash saw isn't big enough or sharp enough to take down the [kaos oak]. You need a much more powerful machine[if player has epicer recipe and epicer recipe is nox], and you notice the epicer recipe could help with that[else if epicer recipe is xed], which you can build if you follow the epicer recipe[end if]."
+wash saw	KAOS Oak	"The wash saw isn't big enough or sharp enough to take down the [KAOS Oak]. You need a much more powerful machine[if player has epicer recipe and epicer recipe is nox], and you notice the epicer recipe could help with that[else if epicer recipe is xed], which you can build if you follow the epicer recipe[end if]."
 wash saw	lie veil	"Not even the wash saw could clean off the lie veil. You need something much more brutal."
 wash saw	made dam	"The made dam is much too big to get anywhere. [if eroded ore is off-stage]Maybe there's a better way to find what's behind there[else]Besides, you found enough[end if]."
 wash saw	stark rats	"You couldn't catch and hold a rat long enough to cut it with the wash saw."
@@ -2665,14 +2700,14 @@ Fun Enuf is a room in Dim Mid. "[if elite tile is in Fun Enuf]Elite tile has rep
 to say xit-ave:
 	say ". The [if player has x-ite tix]Tix Exit to the south is waiting for you to enter[else if tix exit is in Fun Enuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]"
 
-chapter kaos oak
+chapter KAOS Oak
 
-instead of doing something with KAOS Oak when flee elf is in Fun Enuf: say "The Flee Elf directs your attention to the cap. 'First things first. The oak can wait for later. Much later.'" instead
+instead of doing something with KAOS Oak when flee elf is in Fun Enuf: say "The Flee Elf directs your attention to the cap. 'First things first. The oak can wait for later. Much later.'" instead;
 
 The KAOS Oak is peripheral scenery in Fun Enuf. "[if flee elf is in Fun Enuf]It's forbiddingly wide[else]It is much too sturdy. You'll need a wild, powerful contraption to deal with it[end if]."
 
 after examining the KAOS Oak:
-	if kaos oak is not xed, say "One look and you find yourself mumbling 'Elp! A Maple!' when you know it obviously isn't. Now that's (ch/k)aos! [if grammarg is false]The [kaoscaps] changes [one of][or]again [stopping]as you look at it.[else][line break][end if][line break][i][bracket]NOTE: you can turn off this random capitalization nonsense by saying GRAMMAR G.[close bracket][roman type][paragraph break]";
+	if KAOS Oak is not xed, say "One look and you find yourself mumbling 'Elp! A Maple!' when you know it obviously isn't. Now that's (ch/k)aos! [if grammarg is false]The [kaoscaps] changes [one of][or]again [stopping]as you look at it.[else][line break][end if][line break][i][bracket]NOTE: you can turn off this random capitalization nonsense by saying GRAMMAR G.[close bracket][roman type][paragraph break]";
 	continue the action;
 
 chapter grammarging
@@ -2683,10 +2718,10 @@ grammarging is an action out of world.
 
 understand the command "grammar g" as something new.
 
-understand "grammar g" as grammarging when kaos oak is xed and player is in Fun Enuf.
+understand "grammar g" as grammarging when KAOS Oak is xed and player is in Fun Enuf.
 
 carry out grammarging:
-	if kaos oak is moot, say "Ordering around something that's not here? That's pretty chaotic!" instead;
+	if KAOS Oak is moot, say "Ordering around something that's not here? That's pretty chaotic!" instead;
 	say "'Grammar, G!' you moan at the [kaoscaps]. ";
 	now grammarg is whether or not grammarg is false;
 	say "While strictly speaking, grammar only pertains to sentence structure, the (now) [kaoscaps] being, well, its chaotic self results in a good deal of rumbling. The [kaoscaps] switches back to [if grammarg is true]relative normalcy[else]its old weird shifting self[end if]. It doesn't seem any more or less vulnerable, but you're just glad to have even a small amount of control over things.";
@@ -2826,7 +2861,7 @@ understand "pack cap" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did." instead;
-	say "Yes, that's how to get the cap. You are ready to go! Hat, ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. 'Maybe later you'll find a way past the [kaos oak] to the Dirge Grid to defeat the Diktat Kid. But it's complicated. Still, first things first. The LO VOL setting means you won't get any sounds hinting if you need to do something weird to something you find. LOVE VOL means you will.'[paragraph break]The Flee Elf then mumbles something about the risk of a partner-entrap, so you'll have to go it alone. With a 'Rep us SUPER' and 'It's best I...' it  becomes the, err, FLED Elf, pointing at the tile lit (which has a new line now) as you leave. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]It fits okay on your head, and there's no need to take it off. Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
+	say "Yes, that's how to get the cap. You are ready to go! Hat, ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. 'Maybe later you'll find a way past the [KAOS Oak] to the Dirge Grid to defeat the Diktat Kid. But it's complicated. Still, first things first. The LO VOL setting means you won't get any sounds hinting if you need to do something weird to something you find. LOVE VOL means you will.'[paragraph break]The Flee Elf then mumbles something about the risk of a partner-entrap, so you'll have to go it alone. With a 'Rep us SUPER' and 'It's best I...' it  becomes the, err, FLED Elf, pointing at the tile lit (which has a new line now) as you leave. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]It fits okay on your head, and there's no need to take it off. Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
 	get-cap;
 	score-inc; [Dim Mid/pack cap]
 	verify-done rev-pack-cap rule;
@@ -5242,7 +5277,7 @@ the tent net is a thing. description is "It's tagged as a 'Tent o['] Dot Net,' w
 
 chapter epicer recipe
 
-the epicer recipe is a helpdoc. description is "You've seen recipes before, but this is a big interesting one! It's got instructions, not just for building some tike kit, but a north-tron, which can blast through anything ... including the [kaos oak]![paragraph break][tronpartlist][run paragraph on]". importancy of the epicer recipe is 3.
+the epicer recipe is a helpdoc. description is "You've seen recipes before, but this is a big interesting one! It's got instructions, not just for building some tike kit, but a north-tron, which can blast through anything ... including the [KAOS Oak]![paragraph break][tronpartlist][run paragraph on]". importancy of the epicer recipe is 3.
 
 to say tronpartlist:
 	repeat with tp running through tronparts:
@@ -6145,7 +6180,7 @@ understand the command "smitims" as something new.
 understand "smitims" as smitimsing.
 
 carry out smitimsing:
-	unless kaos oak is moot, say "Remove the [kaoscaps] first. DEEP SPEED may be handy." instead;
+	unless KAOS Oak is moot, say "Remove the [kaoscaps] first. DEEP SPEED may be handy." instead;
 	if Dirge Grid is visited, say "Too late for SMITIMS." instead;
 	if player is not in Fun Enuf, move the player to Fun Enuf, without printing a room description;
 	try going north;
