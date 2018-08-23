@@ -900,8 +900,19 @@ instead of thinking:
 					say "LAST LOUSY POINTS NOTES:[line break]";
 				say "[cluey entry].[line break]";
 	if player has epicer recipe and epicer recipe is xed, say "You have [tron-got] of [number of tronparts] pieces of the north tron.";
+	let nwe be number of worth-examining things;
+	if nwe > 0: say "You may want to examine [if nwe is 1]this item[else]these items[end if] you haven't, yet: [list of worth-examining things]";
+	else:
+		say "You've examined all your carried items for clues"
+	say ". You can try SCE RECS to see scenery you haven't examined.";
 	if revisited-u is false and revisit-clue is true, say "You may wish to visit the Code Doc again to see what the fuss was about.";
 	if LLP-yet is false, say "You don't have any last lousy points to figure that've been clued in-game."
+
+definition: a thing (called th) is worth-examining:
+	unless th is enclosed by the player, no;
+	if th is sto lots, no;
+	if th is pact cap, no;
+	if th is nox, yes;
 
 section stuck-rules
 
@@ -970,7 +981,7 @@ this is the flu-gulf-stuck rule:
 
 this is the fun-enuf-stuck rule:
 	if Dirge Grid is mapped north of Fun Enuf, the rule fails; [??not good enough -- need to make sure have weapons]
-	say "You need to blast through the Kaos OAK north of [hn2 of Fun Enuf], eventually.";
+	say "You need to blast through the [kaos oak] north of [hn2 of Fun Enuf], eventually.";
 	the rule succeeds;
 
 this is the gross-org-stuck rule:
@@ -1033,7 +1044,7 @@ definition: a book (called bk) is lugged:
 	if bk is carried by the player, yes;
 	no;
 
-check taking inventory when Dave is moot:
+check taking inventory when Dave is moot (this is the ailihphilia inventory rule) :
 	if being-chased is true:
 		now chase-mulligan is true;
 		say "You dropped everything out of surprise when [the chase-person] started chasing you! You're only wearing [list of worn things]. But hey, you can go faster." instead;
@@ -1307,9 +1318,6 @@ understand "love vol" as lovevoling.
 
 this is the cap-check rule:
 	if player does not have pact cap, say "You need to figure how to get the pact cap, first." instead;
-	if beep-yet is false:
-		say "(first finding how to adjust volume for the pace cap)[paragraph break]";
-		now beep-yet is true;
 
 carry out lovevoling:
 	abide by the cap-check rule;
@@ -2664,7 +2672,7 @@ instead of doing something with KAOS Oak when flee elf is in Fun Enuf: say "The 
 The KAOS Oak is peripheral scenery in Fun Enuf. "[if flee elf is in Fun Enuf]It's forbiddingly wide[else]It is much too sturdy. You'll need a wild, powerful contraption to deal with it[end if]."
 
 after examining the KAOS Oak:
-	if kaos oak is not xed, say "One look and you find yourself mumbling 'Elp! A Maple!' when you know it obviously isn't. Now that's (ch/k)aos! [if grammarg is false]The [kaoscaps] changes [one of][or]again [stopping]as you look at it.[else][line break][end if][line break][i][bracket]NOTE: you can turn off this nonsense by saying GRAMMAR G.[close bracket][roman type][paragraph break]";
+	if kaos oak is not xed, say "One look and you find yourself mumbling 'Elp! A Maple!' when you know it obviously isn't. Now that's (ch/k)aos! [if grammarg is false]The [kaoscaps] changes [one of][or]again [stopping]as you look at it.[else][line break][end if][line break][i][bracket]NOTE: you can turn off this random capitalization nonsense by saying GRAMMAR G.[close bracket][roman type][paragraph break]";
 	continue the action;
 
 chapter grammarging
@@ -2789,7 +2797,6 @@ The Pact Cap is a wearable thing in Fun Enuf. "The pact cap the Flee Elf wants y
 
 to say cap-beep-stuff:
 	if cap-pace is true, say ".[paragraph break]It's currently set as a pace cap";
-	if beep-yet is false, continue the action;
 	say ". You can toggle the action-perception the Flee Elf told you about with [b]LO VOL[r][if cap-vol is false] (current setting)[end if] or [b]LOVE VOL[r][if cap-vol is true] (current setting)[end if]"
 
 cap-dum is a truth state that varies.
