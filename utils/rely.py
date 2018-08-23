@@ -2,7 +2,12 @@
 #
 # this lists which items depend on what
 #
-# or which commands depend on what
+# or which command depends on what
+#
+# e.g. rep popper relies on mr arm
+#
+# stir writs rely on guru rug, sharp rahs
+# guru rug relies on sage gas, tame mat
 #
 # -i = items
 #
