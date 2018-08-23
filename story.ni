@@ -218,6 +218,7 @@ Include (-
 	  'dial aid': "dial AID";
 	  'deep speed', 'deepspeed':  print "deep-speed through the game";
 	  'dev ed', 'deved':  print "read about development with DEV ED/DEVED";
+	  'epi wipe', 'epiwipe':  print "wipe (epically) records of what you've examined";
 	  'grammar g':  print "toggle KAOS Oak grammar";
       'gt', 'go to', 'goto':   print "go to";
 	  'help':  print "ask for HELP";
@@ -233,6 +234,7 @@ Include (-
       'rei':   print "put in the reifier";
       'rot':   print "put in the rotator";
       'rev':   print "put in the reviver";
+	  'sce recs', 'scerecs':  print "see recommended unexamined scenery";
 	  'shuttuhs':  print "toggle shuttuhs/shutters";
 	  'stats':  print "get stats/the score";
 	  'v//', 'verbs', 'verb':  print "see basic verbs";
@@ -1091,6 +1093,21 @@ after printing the name of the radar while taking inventory:
 	if radar-used is 1, say " (damaged)";
 	if radar-used is 2, say " (BUG--should be destroyed)";
 
+chapter epiwipeing
+
+epiwipeing is an action out of world.
+
+understand the command "epiwipe" as something new.
+understand the command "epi wipe" as something new.
+
+understand "epiwipe" as epiwipeing.
+understand "epi wipe" as epiwipeing.
+
+carry out epiwipeing:
+	say "Epically wiping records of what you examined.";
+	now all things are nox;
+	the rule succeeds;
+
 chapter scerecsing
 
 scerecsing is an action out of world.
@@ -1216,7 +1233,7 @@ carry out verbing:
 	say "[2da][b]GT[r] or [b]GO TO[r] lets you go to a room where you've been before.";
 	say "[2da][b]T[r] or [b]TALK TO[r] or [b]GR[r] or [b]GREET[r] talks to someone. There's not much in the way of conversation in this game, but you may get some clues from basic chat.";
 	say "[2da][b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
-	say "[2da][b]THINK[r] gives general non-spoiler hints, including where you may wish to visit, or what is blocking you. [b]SCE RECS[r] clues scenery you haven't examined yet. [b]AID[r] gives you hints for where you are.";
+	say "[2da][b]THINK[r] gives general non-spoiler hints, including where you may wish to visit, what you haven't examined, or what is blocking you. [b]SCE RECS[r] clues scenery you haven't examined yet, and [b]EPI WIPE[r] resets the game's records on what you examined. [b]AID[r] gives you hints for where you are.";
 	if cur-score of Odd Do < max-score of Odd Do:
 		say "[line break]There are also a few guess-the-verb bonus points that are hidden. Some relate to objects or people that need help but can't help you, and some are riffs on standard commands. [if refer-yet is false]There's a different way to revisit, rehash or recap this very command, for example[else]For instance, you got REFER as VERBS[end if]";
 	say "[line break]Also, many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy. If you miss them, you'll see the entire list at the end.";
