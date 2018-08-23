@@ -5175,7 +5175,8 @@ after looking in Evaded Ave:
 
 the Door Frood is a neuter person in Evaded Ave. "[one of]Someone waving their fists and shouting at who-knows-what pauses as you walk by. 'I'm the Door Frood. Not, like, a physical door, but a doorperson.' They say you MIGHT deserve to visit west or east, but -- a clever gift would be appreciated[or]The Door Frood continues to pace back and forth here, making sure you don't sneak off any way but back south[stopping].". description is "Probably not angry enough to actually do anything besides block others from doing what they want."
 
-after examining the Door Frood for the first time: say "You think to yourself: 'Hoopy? Pooh!'"
+after examining the Door Frood for the first time: say "You think to yourself: 'Hoopy? Pooh!'";
+
 check going in Evaded Ave:
 	if Door Frood is in Evaded Ave:
 		if noun is west or noun is east, say "The Door Frood blocks you. 'Look, I'd like something cleverer to do than stop you from going where you want, but I don't HAVE anything. Yet.'[paragraph break]Maybe if you gave them something to keep them occupied, they'd be more generous." instead;

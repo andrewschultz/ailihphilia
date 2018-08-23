@@ -6,58 +6,95 @@
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
 
+# we need to check this for bad line breaks, too
+
 * randthru
 
 >pack cap
 
 >alllast
 
+>z
+#table of undoings
+>undo
+
+#table of noesies
 >no
 WRONG
+
+#table of yessies
 >yes
 >WRONG
+
+#table of swearstuff
 >shit
 WRONG
+
+#table of singstuff
 >sing
-WRONG
+Won't be joining OctetCo with that voice.
+
+#table of burnies
 >burn
 WRONG
+
+#table of nothings
 >
 WRONG
+
+#table of waittxt
 >z
 WRONG
+
+#table of attackings
 >attack tile lit
 WRONG
 >e
 >s
 >evade dave
+
+#table of My Gym songs
 >listen
-WRONG
+All those tunes, and nothing by ABBA! Low class, low class.
+
+#table of Rob droning
 >w
-WRONG
+Rob takes a moment to shape "pahs" again.
 >bore rob
 >word row
+
+#table of altbooks
 >x cart
 WRONG
 >purloin epoch cope
 >purloin null illun
 >purloin yob attaboy
 >get ti
+
+#table of altbooks
 >x cart
 WRONG
 
+#table of babel babble
 >gonear babel
 >listen
 WRONG
+
 >gonear bond nob
+#table of Bond Nob bars
 >talk to bond nob
+WRONG
 
 >gonear swept pews
+
+#table of wordy drow laments
 >z
 WRONG
 
 >gonear moo room
 >see bees
+
+#table of Moo Room animals
 >listen
 WRONG
 
@@ -65,16 +102,39 @@ WRONG
 >gonear sniffins
 >use ale on sniffins
 >gonear sniffins
+
+#table of snooty toon ads
 >x snooty toons
 WRONG
 
->gonear yuge guy
+>gonear code doc
+>talk to code doc
+#table of university targets
+
+#table of yuge battle cries
+>gonear scorn rocs
+>purloin tan
+>use tan on rocs
+>w
 >z
+Señor drones, you think you yourself, as the Yuge Guy winds up for another round of nonsense.
+
+>e
+#table of yuge baits
+WRONG
+
+>gonear dirge grid
+#table of diktat taunts
+>z
+
+# no way really to test table of rejected sidekicks, because you only have one chance to see a few
+# table of rejected sidekicks
+>purloin me gem
+>give me gem to knife fink
 WRONG
 
 >purloin day-away ad
+#table of businesses
 >x day-away ad
 WRONG
 
-# no way really to test table of rejected sidekicks, because you only have one chance to see a few
-# table of rejected sidekicks	0	0	false	"the Diktat Kid's rejected sidekicks"	--

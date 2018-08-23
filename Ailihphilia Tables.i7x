@@ -37,7 +37,7 @@ table of My Gym songs	0	0	false	"songs in My Gym (LISTEN)"	"All those tunes, and
 table of noesies	0	0	true	"responses to NO"	--
 table of nothings	0	0	true	"responses to empty commands"	--
 table of rejected sidekicks	0	0	false	"the Diktat Kid's rejected sidekicks"	--
-table of Rob droning	0	0	false	"things Rob babbles about"	"Rob takes a moment to shape 'pah's again."
+table of Rob droning	0	0	false	"things Rob babbles about"	"Rob takes a moment to shape 'pahs' again."
 table of singstuff	0	0	true	"responses to SINGing"	"Won't be joining OctetCo with that voice."
 table of snooty toon ads	0	0	true	"snooty toons ads"	--
 table of swearstuff	0	0	true	"responses to SWEARing"	--
@@ -61,38 +61,11 @@ every turn (this is the notify cycling rule):
 				now thru-yet entry is 2;
 				increment tables-found;
 				if tables-found is 1:
-					say "[if there is a cycle-note entry][cycle-note entry][else]Whoah...that sounds familiar. You suspect things will loop again.[end if]";
+					say "[if there is a cycle-note entry][cycle-note entry][line break][else]Whoah...that sounds familiar. You suspect things will loop again.[end if]";
 				else if tables-found is 2:
 					say "This is a further note to say you've done so more than once this turn, which is an impressive bit of timing, even if it doesn't get you any points.";
 		if tables-found is 0 and debug-state is true, say "This is a BUG--you should have been notified of random cycling in a table, but you weren't.";
 		the rule succeeds;
-
-chapter alllasting
-
-alllasting is an action applying to nothing.
-
-understand the command "alllast" as something new.
-
-understand "alllast" as alllasting.
-
-carry out alllasting:
-	say "Setting all tables to the last element.";
-	repeat through table of all randoms:
-		now tabidx entry is number of rows in tabnam entry;
-	the rule succeeds;
-
-chapter troing
-
-troing is an action out of world.
-
-understand the command "tro" as something new.
-
-understand "tro" as troing.
-
-carry out troing:
-	repeat through table of all randoms:
-		say "[tabnam entry] has [number of rows in tabnam entry] rows.";
-	the rule succeeds;
 
 volume random names of people and places
 

@@ -216,6 +216,40 @@ volume for indexing purposes
 
 test zz-wisp-56-yak-89 with "z".
 
+volume test verbs
+
+chapter alllasting
+
+[* reset everything to just before cycling]
+
+alllasting is an action out of world.
+
+understand the command "alllast" as something new.
+
+understand "alllast" as alllasting.
+
+carry out alllasting:
+	repeat through table of all randoms:
+		now thru-yet entry is 0;
+		now tabidx entry is number of rows in tabnam entry;
+	say "All tables reset to just before cycling for testing purposes.";
+	the rule succeeds;
+
+chapter troing
+
+[* test row counts]
+
+troing is an action out of world.
+
+understand the command "tro" as something new.
+
+understand "tro" as troing.
+
+carry out troing:
+	repeat through table of all randoms:
+		say "[tabnam entry] has [number of rows in tabnam entry] rows.";
+	the rule succeeds;
+
 Ailihphilia Tests ends here.
 
 ---- DOCUMENTATION ----
