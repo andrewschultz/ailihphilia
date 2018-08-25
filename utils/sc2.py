@@ -70,6 +70,8 @@ flow_region = defaultdict(str)
 llp_commands = defaultdict(int)
 ignore_points = defaultdict(int)
 
+col_names = defaultdict(str)
+
 test_ary = []
 test_order = defaultdict(int)
 walkthrough_order = defaultdict(int)
@@ -557,10 +559,9 @@ def get_stuff_from_source():
     need_true_score = False
     truth_array = [ 'false', 'true' ]
     source_cmd_count = 0
+    must_have = [ 'sco', 'd1', 'd2' ]
     with open(main_source) as file:
-        line_count = 0
-        for line in file:
-            line_count += 1
+        for (line_count, line) in enumerate(file, 1):
             ll = line.strip().lower()
             if ll:
                 func_list = func_list + line
@@ -625,6 +626,7 @@ def get_stuff_from_source():
                     print("WARNING", ll, "defines start of invalid region.")
             if line.startswith("table of goodacts"):
                 goodact_idx += 1
+                table_start = line_count
                 in_use_table = True
                 if 'continued' not in line:
                     need_true_score = True
@@ -636,34 +638,46 @@ def get_stuff_from_source():
                 need_true_score = False
                 continue
             if in_use_table:
-                x = ll.split("\t")
-                if len(x) < 6:
-                    if not (x[0] == '--' and x[1] == '--'):
-                        print("Bad line", line_count, ll)
+                x = [re.sub(" ?\(.*", "", q) for q in ll.split("\t")]
+                if line_count == table_start + 1:
+                    for x1 in range (0, len(x)): col_names[x[x1]] = x1
+                    for y in must_have:
+                        if y not in col_names.keys(): sys.exit("Need {:s} in column headers.".format(y))
+                    sco_col = col_names['sco']
+                    u1_col = col_names['use1']
+                    u2_col = col_names['use2']
+                    d1_col = col_names['d1']
+                    d2_col = col_names['d2']
+                    done_col = col_names['done']
+                    getit_col = col_names['getit']
+                    preproc_col = col_names['preproc']
+                    reg_col = col_names['reg-plus']
+                    header_line = line.strip()
+                    continue
+                if len(x) != len(col_names.keys()):
+                    print("ERROR: Line", line_count, "has the wrong # of tabs for use-table. Is {:d}, should be {:d}.".format(len(x), len(col_names.keys())))
+                    print(x)
+                    print(header_line)
+                    print(col_names.keys())
+                    exit()
                     continue # this should mean a rule
                 if x[0] in obj_name_hash.keys(): x[0] = obj_name_hash[x[0]]
-                if x[5] == 'sco': continue # this is the header.
                 if goodact_idx > 1:
-                    for idx in [5, 6, 7]:
+                    for idx in [ sco_col, d1_col, d2_col ]:
                         if x[idx] != 'false':
                             print("WARNING: Line", line_count, "must be false in non-scoring table of goodacts, column", (idx + 1))
-                if x[0] != '--' and x[1] != '--':
-                    if x[5] != 'true' and x[5] != 'false':
-                        print("WARNING: Line", line_count, "needs true/false in column 5.")
-                    if x[6] != 'true' and x[6] != 'false':
-                        print("WARNING: Line", line_count, "needs true/false in column 6.")
+                if x[u1_col] != '--' and x[u2_col] != '--':
+                    if x[d1_col] != 'true' and x[d1_col] != 'false': print("WARNING: Line", line_count, "needs true/false in column {:d}.".format(d1_col))
+                    if x[d2_col] != 'true' and x[d2_col] != 'false': print("WARNING: Line", line_count, "needs true/false in column {:d}.".format(d2_col))
+                    if x[done_col] != 'true' and x[done_col] != 'false': print("WARNING: Line", line_count, "needs true/false in column {:d}.".format(done_col))
                     warning_story_line = line_count
                 if use_ons:
-                    if len(x) < 6: continue
-                    if x[1] == 'reifier' or x[1] == 'reviver' or x[1] == 'rotator':
-                        machine_uses[x[1]] = machine_uses[x[1]] + 1
-                        machine_actions[x[1]] = machine_actions[x[1]] + "    {:s} -> {:s}\n".format(x[0], x[2])
-                    if len(x) != 12 and x[0] != '--':
-                        print("ERROR: Line", line_count, "has the wrong # of tabs for use-table.", len(x), "should be 11. Ignoring data in this line.")
-                        continue
+                    if x[u2_col] == 'reifier' or x[u2_col] == 'reviver' or x[u2_col] == 'rotator':
+                        machine_uses[x[u2_col]] = machine_uses[x[u2_col]] + 1
+                        machine_actions[x[u2_col]] = machine_actions[x[u2_col]] + "    {:s} -> {:s}\n".format(x[u1_col], x[getit_col])
                     cmd = ""
-                    if x[0] != '--' and x[1] != '--':
-                        cmd = "USE {:s} ON {:s}".format(x[0].upper(), x[1].upper())
+                    if x[u1_col] != '--' and x[u2_col] != '--':
+                        cmd = "USE {:s} ON {:s}".format(obj_name_hash[x[u1_col]] if x[u1_col] in obj_name_hash else x[u1_col].upper(), x[u2_col].upper())
                         new_cmd_ary = find_comment_cmds('b4', line)
                         new_cmd_ary.append(cmd)
                         new_cmd_ary = new_cmd_ary + find_comment_cmds('af', line)
@@ -673,17 +687,17 @@ def get_stuff_from_source():
                             source_cmd_order[temp_cmd] = source_cmd_count
                         use_in_source[cmd] = line_count # we only track line count for "use" commands and not unusual point gainers
                     else:
-                        cmd = x[3]
-                    if x[5] == 'false' or 'sc2-ignore' in ll:
+                        cmd = x[preproc_col]
+                    if x[sco_col] == 'false' or 'sc2-ignore' in ll:
                         ignore_points[cmd] = line_count
-                        print("Ignoring points for", '/'.join(x[0:2]) if x[0] != '--' else x[3])
-                    elif x[5] == 'true':
+                        print("Ignoring points for", '/'.join(x[u1_col:u1_col+2]) if x[u1_col] != '--' else x[preproc_col])
+                    elif x[sco_col] == 'true':
                         temp_region = ""
-                        if x[8] and x[8] != '--' and x[8] != 'reg-plus': # a bit hacky, but basically, check for 9th goodacts table entry being a proper region
-                            temp_region = x[8].lower()
+                        if x[reg_col] and x[reg_col] != '--' and x[reg_col] != 'reg-plus': # a bit hacky, but basically, check for 9th goodacts table entry being a proper region
+                            temp_region = x[reg_col].lower()
                         if temp_region:
                             table_totals[temp_region] += 1
-                            if x[0] != '--':
+                            if x[u1_col] != '--':
                                 directed_incs[temp_region] += 1
                                 source_region[cmd] = temp_region
                         else:
