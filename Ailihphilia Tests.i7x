@@ -188,6 +188,11 @@ chapter annoying bugs
 
 test bb25 with "pack cap/e/purloin ups/puff up/e/get all".
 
+chapter warp basics
+
+test hims with "guy ug/w/use popper on totem"
+test hers with "smh ms/n/use orb on mirror"
+
 chapter mistake quizzing
 
 [each one is 10 mistakes. I may cut this down or add to it based on what people find. m0 eliminates the everywhere LLPs, which are less likely to have bugs.]

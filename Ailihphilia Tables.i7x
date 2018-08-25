@@ -1290,6 +1290,7 @@ table of Rob droning
 randtxt
 "Analyticity? Lana!"
 "Bah! Ahab?!"
+"E-dude?!"
 "Boone?! Noob!"
 "Can Gignac!"
 "Cull Luc!"

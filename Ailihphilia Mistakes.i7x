@@ -260,7 +260,7 @@ understand "fund nuf" as a mistake ("Nonsense! Adventure is its own reward![mis 
 
 understand "funk nuf" as a mistake ("No cool music plays, but at least it doesn't smell worse.[mis of 112]") when player is in Fun Enuf.
 
-understand "kaos soak" as a mistake ("The [kaoscaps] fails to collapse in a torrent of water.[mis of 113]") when kaos oak is quicknear.
+understand "kaos soak" as a mistake ("The [kaoscaps] fails to collapse in a torrent of water.[mis of 113]") when KAOS Oak is quicknear.
 
 understand "till lit" as a mistake ("You possess no farm tools. And this would be pointless anyway.[mis of 114]") when player is in Fun Enuf.
 
@@ -287,9 +287,15 @@ section flee elf abuse
 
 understand "flea elf" and "flea" as a mistake("The elf scratches for a bit, then looks embarrassed.[mis of 122]") when Flee Elf is quicknear.
 
+understand "fled elf" and "fled" as a mistake("The elf will be, once you figure how to take the cap.[mis of 291]") when Flee Elf is quicknear.
+
 understand "fleece elf" and "fleece" as a mistake("There is much more fortune and glory in adventure! It's the cap you want to concentrate on.[mis of 123]") when Flee Elf is quicknear.
 
+understand "flem elf" and "fled" as a mistake("The elf coughs ickily and quickly lists pros and cons of whether words should by pronounced phonetically.[mis of 292]") when Flee Elf is quicknear.
+
 understand "flen elf" and "flen" as a mistake("Dry ketchup is gross. Besides, the elf is one of the good guys.[mis of 124]") when Flee Elf is quicknear.
+
+understand "flew elf" and "flew" as a mistake("The elf mumbles, apropos of nothing, 'Boy, are my arms tired!'[mis of 293]") when Flee Elf is quicknear.
 
 understand "flex elf" and "flex" as a mistake("The elf looks more flexible than you. It's the cap you want to concentrate on.[mis of 125]") when Flee Elf is quicknear.
 
@@ -459,7 +465,10 @@ understand "sleet eels" as a mistake ("They are alive. Turning them to metal wou
 
 chapter Pro Corp
 
-understand "bale lab" as a mistake ("Nothing happens. Hay, what's the deal?[mis of 283]") when player is in Pro Corp and bald-lab.
+to say is-was-hay:
+	say "[if yahoo hay is moot]was[else]is[end if]"
+
+understand "bale lab" as a mistake ("'Hay!' you whine to yourself after nothing happens. [if Moo Room is unvisited]Maybe there's another room with hay[else]There [is-was-hay] enough hay in the Moo Room, though[end if].[mis of 283]") when player is in Pro Corp and bald-lab.
 
 understand "balk lab" as a mistake ("There's not much to do or say here, for sure[if balm-LLP-yet is false]![else]--well, maybe something that's not quite BALK.[end if][mis of 176]") when player is in Pro Corp and bald-lab.
 
@@ -679,6 +688,10 @@ understand "pita tip" as a mistake ("Sorry, you're getting ambiguous snack cans 
 
 understand "pith tip" as a mistake ("It's already pretty pithy, and there's not enough material for a helmet.[mis of 241]") when pity tip is quicknear.
 
+understand "sd ads" as a mistake ("SOME DEMOS is delightfully ad-free. Best to keep it that way.[mis of 289]") when SOME DEMOS is quicknear.
+
+understand "sd ids" as a mistake ("Yes, SOME DEMOS IDs useful artistic techniques.[mis of 290]") when SOME DEMOS is quicknear.
+
 understand "track cart" as a mistake ("[if DWELT LEWD is off-stage]Right idea, but the cart isn't going anywhere[else]It's not going anywhere. You already unlocked a secret, anyway[end if].[mis of 242]") when tract cart is quicknear.
 
 understand "worf row" as a mistake ("No Enterprise security officer arrives to help or hinder you.[mis of 243]") when player is in Worn Row.
@@ -729,7 +742,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 
