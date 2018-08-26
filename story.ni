@@ -1030,7 +1030,7 @@ this is the toll-lot-stuck rule:
 	the rule succeeds;
 
 this is the yawn-way-stuck rule:
-	if spur ups are moot, the rule succeeds;
+	if puffed-up is true, the rule succeeds;
 	say "You need to figure how to get east [hn of Yawn Way].";
 	the rule succeeds;
 
@@ -2068,7 +2068,7 @@ pity tip	eye	snack cans	--	mob-to-alley rule	true	true	false	true	false	Yelpley	
 trap art	reifier	party trap	--	--	true	true	false	true	true	Yelpley	Worn Row	false	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. You pull it out of the reifier and inspect it. It could probably capture more than one thing."
 bunk nub	reviver	stock cots	--	--	true	true	false	true	true	Yelpley	Worn Row	false	"After some crunching and slurping, the bunk nub is changed to a bunch of much smaller, but more comfortable looking, stock cots. You take them."
 party trap	stark rats	gift fig	--	oh-who-to rule	true	true	true	true	true	Grebeberg	Seer Trees	false	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit.[paragraph break]THUMP! They left you a present--good thing you were wearing that pact cap, because a book fell on your head. One glance reveals it to be [b]Oh, Who[r]--a phone book for Grebeberg, like [b]Name ME Man[r] for Yelpley.[paragraph break]You also find a gift fig, which you pick up."
-EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	true	true	Grebeberg	Cold Loc	false	"King Nik reads it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris and Crisp Sir C told me I needed to one day from those other books: ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! Maybe I'll never be a Vic IV, Ivana VI, Ivette VI, Ivy VI, Vin IV or even Xiara IX, but I can lead against the Rim Emir and his emir-prime emir crime and emir grime! The Mrifk Firm, too! My rule will not be an EGAD age!' He hands you some Spur Ups in gratitude. 'These apparently give some people a nice boost. Now...back to my vidette div. Gotta RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
+EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	true	true	Grebeberg	Cold Loc	false	"King Nik reads it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris and Crisp Sir C told me I needed to one day from those other books: ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! Maybe I'll never be a Vic IV, Ivana VI, Ivette VI, Ivy VI, Vin IV or even Xiara IX, but I can lead against the Rim Emir and his emir-prime emir crime and emir grime! The Mrifk Firm, too! My rule will not be an EGAD age!' He hands you some Spur Ups in gratitude. 'These may give you an UP or two, when you are just scared or worried for no reason in general. Now...back to my vidette div. Gotta RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
 stock cots	sleep eels	--	--	--	true	true	true	true	true	Grebeberg	Ooze Zoo	false	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
 --	--	--	rev-puff-up rule	--	true	--	--	true	true	Yelpley	Yawn Way	false	--
 --	--	--	rev-pull-up rule	--	true	--	--	true	true	Yelpley	Emo Dome	false	--
@@ -2209,7 +2209,7 @@ this is the rev-pack-cap rule:
 	the rule succeeds;
 
 this is the rev-puff-up rule:
-	if spur ups are moot, the rule fails;
+	if puffed-up is false, the rule fails;
 	say "You use the spur ups to PUFF UP.";
 	moot spur ups;
 	the rule succeeds;
@@ -3253,7 +3253,7 @@ King Nik is a male person in Cold Loc. "[one of]A man sits here, shaking his hea
 
 chapter Spur Ups
 
-the Spur Ups are a plural-named beepy thing. description is "The words PUT IT UP are engraved on them. You're not sure what IT is. It feels abstract. But the Spur Ups sure make you want to do something[if puffed-up is true] else[end if] UP. The question is, what?"
+the Spur Ups are a plural-named beepy thing. description is "[if puffed-up is true]One burned out a bit once you puffed up to get to the Emo Dome, but the other may be useful. [end if]The words PUT IT UP are engraved on [if puffed-up is true]the remaining uncharred one[end if]them. You're not sure what (IT) is. But you remember how King Nik told you the SPUR UPS could help you feel, or be, UP twice. Nothing too complex[if puffed-up is true], and you already managed to PUFF UP in the Emo Dome[end if]. Nothing too complex. The question is, what[if puffed-up is true] else[end if]?"
 
 instead of wearing spur ups, say "They would be too pointy for comfort. There are no boots-too-b attached to and no West-Sew tailors to make them.";
 
@@ -4187,9 +4187,8 @@ carry out puffuping:
 	if puffed-up is true, say "You already did." instead;
 	let puff-put be whether or not word number 1 in the player's command is "puff";
 	if player does not have spur ups, say "You don't possess anything that would help you feel more up." instead;
-	say "As you hold the Spur-Ups, you think about how great you are and can and will be. Surprisingly, it works! It works so well, you figure you don't even need the spur-ups for a boost in the future.[paragraph break]Hardened! Rah![paragraph break]You feel more confident, more able to deal with sadness now.[paragraph break]Plus you have an idea for a motivational gizmo that could make you millions. Round Tuit(t), move over! It has to work!";
+	say "As you hold the Spur-Ups, you think about how great you are and can and will be and how you won't let anything small get in the way of where you want to go. Surprisingly, you feel a charge from them. It works! But as it does, one of the Spur-Ups corrodes to near-black.[paragraph break]Hardened! Rah![paragraph break]You feel more confident, more able to deal with sadness now.[paragraph break]Plus you have an idea for a motivational gizmo that could make you millions. Round Tuit(t), move over! It has to work! It's so intuitive, you don't bother to write it down, but after a few minutes daydreaming what you will do with too much money, you forget the idea. Eh well. There's still Yelpley and Grebeberg to save.";
 	now puffed-up is true;
-	moot Spur Ups;
 	score-inc; [Yelpley/puff up]
 	the rule succeeds;
 
@@ -4984,15 +4983,15 @@ instead of doing something in Emo Dome when pulled-up is false:
 		now emo-dir-adj is false;
 		continue the action;
 	if current action is taking or current action is dropping:
-		say "Possessions! What do they matter? Why does anything matter? In your current state, you can't be bothered to take the cup[paragraph break]";
-	say "You keep running [emo-dir], instead. It's too whiny in here. You just feel too, well, down.";
+		say "Possessions! What do they matter? Why does anything matter? In your current state, you can't be bothered to take the cup.[paragraph break]";
+	say "You keep running [emo-dir], instead. It's too whiny in here, even with your Spur Ups as security. Puffing up let you face your fears, but you're not up enough to stay and face them down.";
 	try going emo-dir instead;
 
 emo-dir is a direction that varies. emo-dir is west.
 
 check going to Emo Dome:
 	if Spur Ups are off-stage, say "It's too whiny to the east! You're just too, well, down to deal with it, yet. You back out." instead;
-	if Spur Ups are not moot, say "The Spur Ups make you feel a bit less down, but maybe they can help you feel a bit more up before entering the Emo Dome." instead;
+	if Spur Ups are not moot, say "The Spur Ups make you feel a bit less down (or more up,) but maybe they can help you feel a bit more up before entering the Emo Dome." instead;
 	if pulled-up is false:
 		now emo-dir is noun;
 
@@ -5030,8 +5029,9 @@ carry out pulluping:
 	if pulled-up is true, say "You already did." instead;
 	if Spur Ups are off-stage, say "Maybe you can be or do that sort of up, later." instead;
 	if player is in Emo Dome:
-		say "You manage to stop yourself. The whining isn't too bad. Yeah, you can hack it here.";
+		say "You pull out your Spur Ups for a bit of extra confidence, and you manage to stop yourself. The whining isn't too bad. Yeah, you can hack it here. You ball your fists nice and tight ... so tight, the Spur Ups crumble and blow away. Well, they did their job.";
 		now pulled-up is true;
+		moot spur ups;
 		score-inc; [Yelpley/pull up]
 		the rule succeeds;
 	say "This isn't the place[if Emo Dome is visited], but maybe you could do this in the Emo Dome[end if]." instead;
@@ -5895,7 +5895,7 @@ this is the grail-gone rule:
 avail-rule of Toll Lot is puffed-up-yet rule.
 
 this is the puffed-up-yet rule:
-	if Spur Ups are moot, the rule succeeds;
+	if puffed-up is true, the rule succeeds;
 	the rule fails;
 
 avail-rule of Deft Fed is orc-block rule.
@@ -6039,6 +6039,7 @@ every turn when being-chased is true:
 	else:
 		say "The [chase-person] [if chase-person is kayo yak]charges[else]pulses[end if] close behind.";
 		move chase-person to location of player;
+		if location of player is Lair Trial, say "The Kayo Yak slows down temporarily and makes a weird sound at the ergot ogre, as if it wants to attack, but it almost needs permission!"
 
 to recover-items:
 	now player has all things in DropOrd;
@@ -6048,14 +6049,15 @@ to reset-chase:
 	wfak;
 	move x-it stix to TempMet;
 	recover-items;
-	say "[b][if mrlp is Grebeberg]Ooze Zoo[else]Gross Org[end if][paragraph break]";
+	say "[b][if mrlp is Grebeberg]Ooze Zoo[else]Gross Org[end if][r][paragraph break]";
 	unless player was in Frush Surf or player was in Pro Corp, say "Well, all your items you dropped are still here, so that's something. You take them back, staying where the [chase-person] won't quite find you.";
 	now being-chased is false;
 	if debug-state is true, say "RULE TRACKER: [LP] ([chase-block-rule of LP]).";
 	consider chase-block-rule of LP;
 	if mrlp is Grebeberg, drop-player-at Ooze Zoo;
 	if mrlp is Yelpley, drop-player-at Gross Org;
-	move chase-person to chase-room of chase-person;
+	move chase-person to chase-room of chase-person, without printing a room description;
+	if LP is Lair Trial, say "The kayo yak didn't seem to want to attack you, but you just didn't know what to say. Maybe you can and should try again.";
 	if the rule succeeded, now LP is chase-blocked;
 
 after going when being-chased is true:
