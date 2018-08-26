@@ -910,7 +910,7 @@ instead of thinking:
 	if player has epicer recipe and epicer recipe is xed, say "You have [tron-got] of [number of tronparts] pieces of the north tron.";
 	let nwe be number of worth-examining things;
 	if nwe > 0:
-		say "You may want to examine [if nwe is 1]this item[else]these items[end if] you haven't, yet: [list of worth-examining things]";
+		say "You may want to examine [if nwe is 1]this item[else]these items[end if] you haven't, yet: [the list of worth-examining things]";
 	else:
 		say "You've examined all your carried items for clues";
 	say ". You can try SCE RECS to see scenery you haven't examined.";
@@ -922,6 +922,7 @@ definition: a thing (called th) is worth-examining:
 	if th is sto lots, no;
 	if th is pact cap, no;
 	if th is nox, yes;
+	no;
 
 section stuck-rules
 
@@ -1142,10 +1143,12 @@ to decide whether any-unvisited:
 to say any-open-rooms: say "[if any-unvisited], at least for the rooms explored so far[end if]"
 
 definition: a thing (called sce) is xable:
-	unless sce is scenery, no;
 	if sce is xed, no;
 	if location of sce is ungoable, no;
-	if location of sce is available, yes;
+	unless location of sce is available, no;
+	if sce is a phonebook, no;
+	if sce is scenery, yes;
+	if sce is a person, yes;
 	no;
 
 chapter abouting
@@ -1695,8 +1698,8 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 			verify-done rev-second-food-combo rule;
 			say "A martini tram rattles out from behind the Ark of Okra. Guess you need drinks with your, uh, food![paragraph break][if player does not have the epicer recipe]You're shocked to see it, and it rolls further down, over the turf rut to Dumb Mud, then back through the Seer Trees to [Fun Enuf][else]But you're prepared for it, with your epicer recipe. You move it back to [Fun Enuf], where it looks like a good base structure for your North-Tron[end if].";
 			move martini tram to Fun Enuf;
-			move player to Fun Enuf, without printing a room description;
-			say "[b][Fun Enuf][r][paragraph break]After all that excitement, you realize that the martini tram could've been a KO wok. You feel relief at dodging something worse.";
+			drop-player-at Fun Enuf;
+			say "After all that excitement, you realize that the martini tram could've been a KO wok. You feel relief at dodging something worse.";
 		else:
 			verify-done rev-first-food-combo rule;
 			say "You suspect something is behind there! Maybe you can find another combination, you'll see what.";
@@ -6048,8 +6051,8 @@ to reset-chase:
 	now being-chased is false;
 	if debug-state is true, say "RULE TRACKER: [LP] ([chase-block-rule of LP]).";
 	consider chase-block-rule of LP;
-	if mrlp is Grebeberg, move player to Ooze Zoo, without printing a room description;
-	if mrlp is Yelpley, move player to Gross Org, without printing a room description;
+	if mrlp is Grebeberg, drop-player-at Ooze Zoo;
+	if mrlp is Yelpley, drop-player-at Gross Org;
 	move chase-person to chase-room of chase-person;
 	if the rule succeeded, now LP is chase-blocked;
 
@@ -6280,7 +6283,8 @@ carry out smhmsing:
 	now in-ms-warp is true;
 	try revovering;
 	now in-ms-warp is false;
-	move player to Emo Dome, printing an abbreviated room description;
+	drop-player-at Emo Dome;
+	say "Ms. Ism awaits north.";
 	the rule succeeds;
 
 chapter guyuging
@@ -6304,7 +6308,8 @@ carry out guyuging:
 	now in-guy-warp is false;
 	if dork rod is not moot, say "Oops. Something that really shouldn't have happened, happened. You don't need to undo, but you may need to get the rep popper manually." instead;
 	now player has rep popper;
-	move player to Flu Gulf, printing an abbreviated room description;
+	drop-player-at Flu Gulf;
+	say "The Yuge Guy awaits west.";
 	the rule succeeds;
 
 chapter revovering
