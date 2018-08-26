@@ -1207,6 +1207,7 @@ randtxt
 "Lost Sol"
 "'Lyre' Beryl"
 "Mad Adam"
+"eBay Abe"
 "'Many' Bynam"
 "Melee Lem"
 "Melt-It Lem"

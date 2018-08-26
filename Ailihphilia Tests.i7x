@@ -190,8 +190,8 @@ test bb25 with "pack cap/e/purloin ups/puff up/e/get all".
 
 chapter warp basics
 
-test hims with "guy ug/w/use popper on totem"
-test hers with "smh ms/n/use orb on mirror"
+test hims with "guy ug/w/use popper on totem".
+test hers with "smh ms/n/use orb on mirror".
 
 chapter mistake quizzing
 

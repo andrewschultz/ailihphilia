@@ -130,24 +130,23 @@ def check_source_rule_order():
     extra_rules = 0
     current_table = ''
     with open(main_source) as file:
-        for line in file:
-            line_count += 1
+        for (line_count, line) in enumerate(file, 1):
             if line.startswith("table"):
                 current_table = line.strip()
                 in_table = True
                 continue
-            if not line.strip():
+            if not line.strip() or line.startswith("["):
                 in_table = False
                 continue
             lary = re.split("\t+", line.strip())
-            if in_table and 'goodacts' in current_table and lary[0] == '--' and lary[1] == '--':
-                if 'rule' in lary[3]:
-                    alfcheck['xxrr'][re.sub(" rule.*", "", lary[3].lower())] = True
-            if in_table and len(lary) > 5:
-                if 'rule' in lary[3]:
-                    alfcheck['xxpre'][re.sub(" rule.*", "", lary[3].lower())] = True
-                if 'rule' in lary[4]:
-                    alfcheck['xxpost'][re.sub(" rule.*", "", lary[4].lower())] = True
+            if in_table and 'goodacts' in current_table:
+                if lary[col_names['use1']] == '--' and lary[col_names['use2']] == '--':
+                    if 'rule' in lary[col_names['preproc']]:
+                        alfcheck['xxrr'][re.sub(" rule.*", "", lary[col_names['preproc']].lower())] = True
+                if 'rule' in lary[col_names['preproc']]:
+                    alfcheck['xxpre'][re.sub(" rule.*", "", lary[col_names['preproc']].lower())] = True
+                if 'rule' in lary[col_names['postproc']]:
+                    alfcheck['xxpost'][re.sub(" rule.*", "", lary[col_names['postproc']].lower())] = True
             if line.startswith("section"):
                 if 'post-use rules' in line or 'pre-use rules' in line or 'section rev rules' in line:
                     rule_search = True
@@ -661,7 +660,7 @@ def get_stuff_from_source():
                     print(col_names.keys())
                     exit()
                     continue # this should mean a rule
-                if x[0] in obj_name_hash.keys(): x[0] = obj_name_hash[x[0]]
+                if x[u1_col] in obj_name_hash.keys(): x[u1_col] = obj_name_hash[x[u1_col]]
                 if goodact_idx > 1:
                     for idx in [ sco_col, d1_col, d2_col ]:
                         if x[idx] != 'false':
