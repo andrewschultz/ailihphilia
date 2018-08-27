@@ -2454,10 +2454,9 @@ this is the kid-bye rule:
 
 this is the kid-left rule:
 	if Verses Rev is moot and Knife Fink is moot:
-		say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with [next-rand-txt of table of rejected
- kid sidekicks]. Or [next-rand-txt of table of rejected kid sidekicks]. Or...'";
+		say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with [next-rand-txt of table of rejected kid sidekicks]. Or [next-rand-txt of table of rejected kid sidekicks]. Or...'";
 	else:
-		say "The Diktat Kid mutters the [if Verses Rev is moot]Verses Rev[else]Knife Fink[end] was sorta flaky anyway. Shoulda gone with [next-rand-txt of table of rejected kid sidekicks].";
+		say "The Diktat Kid mutters the [if Verses Rev is moot]Verses Rev[else]Knife Fink[end if] was sorta flaky anyway. Shoulda gone with [next-rand-txt of table of rejected kid sidekicks].";
 	the rule succeeds;
 
 this is the make-sag rule:
@@ -5669,7 +5668,7 @@ the Sci Pics are plural-named peripheral scenery in Pro Corp. "They detail what 
 
 chapter butene tub
 
-the butene tub is scenery in Pro Corp. "It smells pretty nice. But it's been marked condemned, dangerously close to falling apart if you put too much weight on it. Who knows what sort of reactions could occur with the flammable butene if the tub collapsed to the dangerously sparky area below with special instruments and such? You can't just pour any old thing down![paragraph break]What sort of adventurer could ignore a warning like that? Especially in a game that's meant to be polite on the Zarfian cruelty scale, thus eliminating all risk and/or need to type UNDO if you mess up!"
+the butene tub is scenery in Pro Corp. "It smells pretty nice, so it's probably not a butyl-y tub. But it's been marked condemned, dangerously close to falling apart if you put too much weight on it. Who knows what sort of reactions could occur with the flammable butene if the tub collapsed to the dangerously sparky area below with special instruments and such? You can't just pour any old thing down![paragraph break]What sort of adventurer could ignore a warning like that? Especially in a game that's meant to be polite on the Zarfian cruelty scale, thus eliminating all risk and/or need to type UNDO if you mess up!"
 
 chapter gash sag
 
