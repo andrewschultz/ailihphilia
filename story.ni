@@ -125,19 +125,19 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 440. [-40 from max_verbs debug]
+use MAX_VERBS of 450. [-40 from max_verbs debug]
 
 use MAX_ACTIONS of 200.
 
-use MAX_VERBSPACE of 4400. [4096 = original max]
+use MAX_VERBSPACE of 4600. [-400 from max_verbspace debug]
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 490. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 500. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 use MAX_ACTIONS of 210. [+10?]
 
-use MAX_VERBSPACE of 4800. [4096 = original max]
+use MAX_VERBSPACE of 5000. [4096 = original max]
 
 chapter room utilities
 
@@ -243,6 +243,7 @@ Include (-
 	  'sce recs', 'scerecs':  print "see recommended unexamined scenery";
 	  'shuttuhs':  print "toggle shuttuhs/shutters";
 	  'stats':  print "get stats/the score";
+      'tip it', 'tipit': print "tip off one game progress activity";
 	  'v//', 'verbs', 'verb':  print "see basic verbs";
       'wordrow', 'wornrow', 'workrow', 'worn row', 'work row', 'word row': print "twiddle Worn Row";
       'yakokay', 'yak okay': print "tell the kayo yak OKAY";
@@ -2152,6 +2153,7 @@ this is the rev-bore-Rob rule:
 	the rule succeeds;
 
 this is the rev-create-tron rule:
+	if KAOS Oak is moot, the rule fails;
 	build-the-tron;
 	the rule succeeds;
 
@@ -2261,8 +2263,7 @@ this is the rev-work-row rule:
 this is the rev-worn-row rule:
 	if psi wisp is moot, the rule fails;
 	say "You lure the Psi Wisp back to Wor(k/d) row, changing it to Worn Row, then back to Word Row.";
-	moot psi wisp;
-	now Pro Corp is visited;
+	win-wisp-chase;
 	word-row-open;
 	the rule succeeds;
 
@@ -2453,10 +2454,11 @@ this is the kid-bye rule:
 	the rule succeeds;
 
 this is the kid-left rule:
-	if Verses Rev is moot and Knife Fink is moot:
-		say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with [next-rand-txt of table of rejected kid sidekicks]. Or [next-rand-txt of table of rejected kid sidekicks]. Or...'";
-	else:
-		say "The Diktat Kid mutters the [if Verses Rev is moot]Verses Rev[else]Knife Fink[end if] was sorta flaky anyway. Shoulda gone with [next-rand-txt of table of rejected kid sidekicks].";
+	unless redact-postrule:
+		if Verses Rev is moot and Knife Fink is moot:
+			say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with [next-rand-txt of table of rejected kid sidekicks]. Or [next-rand-txt of table of rejected kid sidekicks]. Or...'";
+		else:
+			say "The Diktat Kid mutters the [if Verses Rev is moot]Verses Rev[else]Knife Fink[end if] was sorta flaky anyway. Shoulda gone with [next-rand-txt of table of rejected kid sidekicks].";
 	the rule succeeds;
 
 this is the make-sag rule:
@@ -3592,11 +3594,10 @@ carry out yakokaying:
 		score-inc; [Grebeberg/YAK OKAY]
 		banish-ogre;
 		consider the cap-beep rules for the kayo yak;
-		recover-items;
 		the rule succeeds;
 	if yak is in location of player:
 		if being-chased is true, now chase-mulligan is true;
-		say "The yak paws the ground aggressively and runs in a circle before settling back. It seemed agitated, there, like it wanted to do more, but this wasn't the place." instead;
+		say "The yak paws the ground aggressively and runs in a circle before settling back. It seemed agitated, there, like it wanted to do more, but this wasn't the place. There's nothing or nobody obnoxious enough to charge at." instead;
 	say "There's no yak to say okay to." instead;
 	the rule succeeds;
 
@@ -3605,6 +3606,7 @@ to banish-ogre:
 	moot yak;
 	moot ergot ogre;
 	moot troll ort;
+	recover-items;
 	now being-chased is false;
 
 chapter blocking east
@@ -4803,6 +4805,11 @@ carry out wornrowing:
 	if psi wisp is not in Worn Row, say "You don't want to face the redness ender alone." instead;
 	clear-worn-row;
 	say "Worn Row rematerializes, along with the redness ender. Zap! Zot! It locks on the Psi Wisp, which explodes in a shower of rage. But somehow, the Psi Wisp connects enough to zap the redness ender back. Whew. You retreat to Gross Org to recover the items you dropped.";
+	win-wisp-chase;
+	score-inc; [Yelpley/WORN ROW]
+	the rule succeeds;
+
+to win-wisp-chase:
 	now being-chased is false;
 	verify-done rev-work-row rule;
 	clear-worn-row;
@@ -4810,8 +4817,6 @@ carry out wornrowing:
 	moot psi wisp;
 	moot redness ender;
 	recover-items;
-	score-inc; [Yelpley/WORN ROW]
-	the rule succeeds;
 
 chapter mytraceing
 
@@ -6268,7 +6273,7 @@ carry out wrw1ing: try wrwing 1 instead;
 carry out wrwing:
 	now rev-skips is number understood;
 	if rev-skips > rev-max:
-		say "[rev-max] is the maxumym possible number. Rounding down.";
+		say "[rev-max] is the maximum possible number. Rounding down.";
 		now rev-skips is rev-max;
 	if rev-skips < 1, say "I need a number between 1 and [rev-max] inclusive." instead;
 	try revovering;
@@ -6288,7 +6293,7 @@ understand "smh ms" as smhmsing.
 in-ms-warp is a truth state that varies.
 
 carry out smhmsing:
-	if being-chased is true, say "Sorry, I can't do this during a chase." instead;
+	abide by the chase-warp-check rule;
 	if Ms Ism is moot, say "You already beat Ms. Ism." instead;
 	unless Bro Orb is in Le Babel or soot tattoos are off-stage, say "You already have what you need to defeat Ms. Ism." instead;
 	now in-ms-warp is true;
@@ -6311,7 +6316,7 @@ understand "guy ug" as guyuging.
 in-guy-warp is a truth state that varies.
 
 carry out guyuging:
-	if being-chased is true, say "Sorry, I can't do this during a chase." instead;
+	abide by the chase-warp-check rule;
 	if Yuge Guy is moot, say "You already beat the Yuge Guy." instead;
 	if player has rep popper or rep popper is moot, say "You already have what you need to defeat the Yuge Guy." instead;
 	now in-guy-warp is true;
@@ -6323,7 +6328,30 @@ carry out guyuging:
 	say "The Yuge Guy awaits west.";
 	the rule succeeds;
 
+chapter tipiting
+
+tipiting is an action out of world.
+
+understand the command "tipit" as something new.
+understand the command "tip it" as something new.
+
+understand "tipit" as tipiting.
+understand "tip it" as tipiting.
+
+in-tip-it is a truth state that varies.
+
+carry out tipiting:
+	now in-tip-it is true;
+	now rev-skips is 1;
+	try revovering;
+	now in-tip-it is false;
+	now rev-skips is 0;
+	the rule succeeds;
+
 chapter revovering
+
+this is the chase-warp-check rule:
+	if being-chased is true, say "Sorry, I can't do this during a chase." instead;
 
 revovering is an action out of world.
 
@@ -6340,16 +6368,23 @@ revving-over is a truth state that varies.
 rev-skips is a number that varies.
 
 this is the rev-check rule:
-	if i-sped is true, say "You already sped up to the end." instead;
-	if being-chased is true, say "Oops, that's too much for me to do at once! Either escape or get caught by [the chase-person] first, then we can proceed." instead;
-	if player is in Dirge Grid, say "You're already at the Dirge Grid!" instead;
-	if Dirge Grid is visited, say "Too late! You've already been to the Dirge Grid." instead;
-	if emitted is true and player has ME gem and player has taboo bat and KAOS Oak is moot and test set is moot:
-		if player is in Fun Enuf, say "You're already near the endgame." instead; [i can cut this down, because some of this is probably redundant, but I'd rather be too sure]
+	if being-chased is true, say "Oops, that's too much for me to do at once! Either escape or get caught by [the chase-person] first, then we can proceed." instead; [?? I am almost ready to delete this]
+	if in-tip-it is false:
+		if i-sped is true, say "You already sped up to the end." instead;
+		if player is in Dirge Grid, say "You're already at the Dirge Grid!" instead;
+		if Dirge Grid is visited, say "Too late! You've already been to the Dirge Grid." instead;
+	if cant-tip-further:
+		if in-tip-it is true, say "You just need to use the X-ITE TIX, now." instead;
+		if player is in Fun Enuf, say "You're already near the endgame[if x-ite tix are off-stage]. TIP IT can take care of the rest[end if]." instead; [i can cut this down, because some of this is probably redundant, but I'd rather be too sure]
 		say "You're pretty near the endgame. Would you like me to drop you off at [Fun Enuf]?";
 		if the player yes-consents, move player to Fun Enuf instead;
 		say "OK, but you don't have much else to do[if cur-score of Odd Do is max-score of Odd Do]--you got all the LLPs[else] except search for LLPs[end if]." instead;
 	continue the action;
+
+to decide whether cant-tip-further:
+	if in-tip-it is false and emitted is true and player has ME gem and player has taboo bat and KAOS Oak is moot and test set is moot, yes;
+	if in-tip-it is true and X-ITE TIX are not off-stage, yes;
+	no;
 
 definition: a thing (called th) is speedtakeable:
 	if th is a person, no;
@@ -6375,6 +6410,8 @@ carry out revovering:
 		say "Warping to before Ms. Ism...";
 	else if in-guy-warp is true:
 		say "Warping to before Yuge Guy...";
+	else if in-tip-it is true:
+		say "Looking for the next thing to do...";
 	else if deep-speeding is false:
 		say "Attempting to REV OVER[recxcheck of true]...";
 	now global-delay is 0;
@@ -6392,9 +6429,12 @@ carry out revovering:
 			if spun-out-yet is false and debug-state is true, say "DEBUG: spun out at row [count].";
 			now spun-out-yet is true;
 			next;
-		if there is a use1 entry and use1 entry is ME gem:
+		if in-tip-it is false and there is a use1 entry and use1 entry is ME gem:
 			now i-sped is true;
 			break;
+		else:
+			if there is a use1 entry and use1 entry is X-ITE TIX:
+				break;
 		[say "Rows so far [count - 1], current score [score].";]
 		if there is no use1 entry:
 			consider the preproc entry;
@@ -6470,10 +6510,12 @@ carry out revovering:
 		now score-cheat is score-cheat + score - last notified score;
 		now last notified score is score;
 		increase turn count by turns-to-add;
+	else if in-tip-it is true:
+		say "[if x-ite tix are off-stage]I didn't find anything to do. This is a bug in the warp code. Apologies, and I'd be interested how this happened[else]You've got the X-ITE TIX. The last step, you need to do yourself[end if].";
 	else:
 		say "There should've been a reject message, or there is a bug in the rev over/deep speed code. If you have a transcript, report the bug at my github site or email me.";
 	follow the notify score changes rule;
-	if test set is moot and player is not in Fun Enuf:
+	if test set is moot and player is not in Fun Enuf and Dirge Grid is not visited:
 		say "(Also moving you to [Fun Enuf] for the endgame)[paragraph break]";
 		move player to Fun Enuf, without printing a room description;
 	the rule succeeds;
