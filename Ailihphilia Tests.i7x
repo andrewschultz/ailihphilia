@@ -192,6 +192,8 @@ chapter warp basics
 
 test hims with "guy ug/w/use popper on totem".
 test hers with "smh ms/n/use orb on mirror".
+test him-first with "test kill-him/test kill-her/deep speed/smitims".
+test her-first with "test kill-her/test kill-her/deep speed/smitims".
 
 chapter mistake quizzing
 

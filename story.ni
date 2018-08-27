@@ -1487,6 +1487,7 @@ instead of attacking:
 	if noun is a workable, say "Bash?! Sab!" instead;
 	if noun is ergot ogre, say "The ogre could beat you up, but even if it couldn't, it'd do a pox-op or worse on you." instead;
 	if noun is player, say "PvP!" instead;
+	if noun is ME Totem, say "The Yuge Guy, momentarily scared, calls 'Heh! Eh?' once he sees you're too weak to do any REAL damage." instead;
 	next-rand table of attackings;
 
 chapter going
@@ -1543,8 +1544,8 @@ check going (this is the reject noncardinal directions rule):
 	if noun is diagonal, say "Diagonal directions aren't used in this game." instead;
 	if noun is up or noun is down:
 		if the room noun of location of player is nowhere:
-			say "You never need to go up or down in this game, though sometimes these directions act as a backup to the main cardinal directions--for instance, up to or down from [if player is in Mont Nom]here[else if Mont Nom is visited]Mont Nom[else]a hill[end if].";
-			if player has Spur Ups, say "[line break]You DO have to do something with the Spur Ups, though. Just not go.";
+			say "You never need to go up or down in this game. It's pretty ... level. There is no Elavata'-Vale.[paragraph break]Though sometimes these directions act as a backup to the main cardinal directions--for instance, up to or down from [if player is in Mont Nom]here[else if Mont Nom is visited]Mont Nom[else]a hill[end if].";
+			if player has Spur Ups, say "[line break]You DO have to do something up-ish with the Spur Ups, though. Just not GOing.";
 			the rule succeeds;
 
 the reject noncardinal directions rule is listed first in the check going rulebook.
@@ -1572,6 +1573,8 @@ instead of smelling poo coop, say "[if gnu dung is moot]You risk it, and ... it 
 instead of smelling Yuge Guy, say "The Yuge Guy smells of an amoral aroma[if brag garb is not off-stage] even worse than the Turbo-Brut from the Brag Garb[end if]."
 
 instead of smelling ergot ogre, say "The ergot ogre smells of torn rot." instead;
+
+instead of smelling Sniffins, say "One whiff is proof enough [Sniffins] doesn't deserve an[if YOB ATTABOY is moot]other [end if]alternate name of Smellems."
 
 instead of smelling location of player:
 	if in-work and stinky knits are not moot, try smelling rotator instead;
@@ -2134,7 +2137,7 @@ Yard Ray	test set	--	ready-to-test rule	test-set-zapped rule	true	false	true	fal
 --	--	--	rev-create-tron rule	--	true	--	--	false	false	Dim Mid	Fun Enuf	false	--
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	false	false	Dim Mid	Dirge Grid	false	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, perhaps to create the Red Ronin Order." [b4:use TNT on ore zero]
 taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	false	false	Dim Mid	Dirge Grid	false	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev senses the Taboo Bat's ancient untapped power. It's not particularly violent or lethal, but it is just perfect to scare an orthodoxy as warped as the Verses Rev's, who mutters 'Rev, off, over' and stumbles away! Perhaps to the safety of ... a rev reserver."
-Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	false	false	Dim Mid	Dirge Grid	false	"'Havoc, OVAH!' you should as you aim and fire the yard ray. A direct hit! The redivider begins to fizzle.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The entire Dirge Grid brightens, and the yard ray hums and explodes. But it's too late for the Diktat Kid to avoid an electro-shock. 'Deleveled!' the Kid screams several times, before breaking down into tears. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid grows redder ... redder ... and suddenly the remains of the redivider hegin swirling, and they catch the Diktat Kid, who is whisked off ... who knows where![paragraph break]With the Kid gone, the Dirge Grid grows less dark, the no-go gon winks out, and saner arenas are revealed all around. The swirling remains of the redivider harden into what can only be an XILE helix.[paragraph break]Revel, clever! Revel, ever![paragraph break]You are so busy watching, you didn't notice something else fell out of the redivider: X-ITE TIX! You pick them up. Wow! Yo, joy! Wow!"
+Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	false	false	Dim Mid	Dirge Grid	false	"'Havoc, OVAH!' you should as you aim and fire the yard ray. A direct hit! The redivider begins to fizzle.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The entire Dirge Grid brightens, and the yard ray hums and explodes. But it's too late for the Diktat Kid to avoid an electro-shock. 'Deleveled!' the Kid screams several times, before breaking down into tears. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid grows redder ... redder ... and suddenly the remains of the redivider hegin swirling, and they catch the Diktat Kid, who moans 'Lo, a Goal' before being whisked off.[paragraph break]With the Kid gone, the Dirge Grid grows less dark, the no-go gon winks out, and saner arenas are revealed all around. The swirling remains of the redivider harden into what can only be an XILE helix.[paragraph break]Revel, clever! Revel, ever![paragraph break]You are so busy watching, you didn't notice something else fell out of the redivider: X-ITE TIX! You pick them up. Wow! Yo, joy! Wow!"
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	false	false	Dim Mid	Fun Enuf	false	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse] [zzgood]
 
@@ -2575,7 +2578,8 @@ this is the you-win rule: [xxwin]
 	say "'The X-ITE TIX lead BACK TO THE REAL WORLD WHICH WILL BE FAR MORE EXCITING AND ILLUMINATING FOR YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a there-and-back-but-wiser summary. Books like that always kind of annoyed you once you figured the whole schtick out, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand says, 'I'll need the pact cap back. It will go to our new museum.'[paragraph break]'What's it called?' you ask, despite yourself.[wfak-d]";
 	say "[paragraph break]'Well, there's still argument over We-I-View, Show-Ohs and Trofy Fort.' (Trofee?) The Flee Elf asks which you prefer, and after an awkward silence, you mention they all seem equally appropriate and unforced. Another awkward silence! How palindromic![paragraph break]'Well, anyway. This RIDE-DIR will help you return to your own world. And here is an x/o box.'[wfak-d]";
 	say "The x/o box isn't much. It's engraved 'U Remem'er, U,' 'Done? NOD' and 'U Did U.' You can't even open it! But if it were too obvious and gaudy, how would you explain it back home?[paragraph break]As you stare at it, you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Not-Dud-Ton? Not-Kook-Ton? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered with stuff you can't fix?[wfak-d]";
-	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar or maybe a TekCo Rocket, but it turns out it's just a Back Cab--a Toyota, too. 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call your writing? RECAP: ACER, NOW I WON and EL BIBLE are way too pompous, but some brainstorming gives DARN RAD, SOME MEMOS, I SAW [']TWAS I, DRAWN INWARD, WENT NEW, SAGAS or SOLOS. Or--no, that's it. ELATE TALE.";
+	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar or maybe a TekCo Rocket, but it turns out it's just a Back Cab labeled 'Redi-Rider
+.' (A Toyota would also have worked.) 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call your writing? RECAP: ACER, NOW I WON and EL BIBLE are way too pompous, but some brainstorming gives DARN RAD, SOME MEMOS, I SAW [']TWAS I, DRAWN INWARD, WENT NEW, SAGAS or SOLOS. Or--no, that's it. ELATE TALE.";
 	end the story finally saying "Roxor! Roxor! Roxor!";
 	sort the table of last lousy points in finord order;
 	the rule succeeds;
@@ -3257,7 +3261,7 @@ King Nik is a male person in Cold Loc. "[one of]A man sits here, shaking his hea
 
 chapter Spur Ups
 
-the Spur Ups are a plural-named beepy thing. description is "[if puffed-up is true]One burned out a bit once you puffed up to get to the Emo Dome, but the other may be useful. [end if]The words PUT IT UP are engraved on [if puffed-up is true]the remaining uncharred one[end if]them. You're not sure what (IT) is. But you remember how King Nik told you the SPUR UPS could help you feel, or be, UP twice. Nothing too complex[if puffed-up is true], and you already managed to PUFF UP in the Emo Dome[end if]. Nothing too complex. The question is, what[if puffed-up is true] else[end if]?"
+the Spur Ups are a plural-named beepy thing. description is "[if puffed-up is true]One burned out a bit once you puffed up to get to the Emo Dome, but the other may be useful. [end if]The words PUT IT UP are engraved on [if puffed-up is true]the remaining uncharred one[end if]them, with the UP particularly prominent. You're not sure what (IT) is. But you remember how King Nik told you the SPUR UPS could help you feel, or be, UP twice. Nothing too complex[if puffed-up is true], and you already managed to PUFF UP in the Emo Dome[end if]. Nothing too complex. The question is, what[if puffed-up is true] else[end if]?"
 
 instead of wearing spur ups, say "They would be too pointy for comfort. There are no boots-too-b attached to and no West-Sew tailors to make them.";
 
@@ -3279,7 +3283,7 @@ the Gulf Lug is a person in Flu Gulf. "The Gulf Lug stands here, holding his sto
 
 chapter cash sac
 
-the cash sac is a thing. description is "It's full of currency--currency which you don't know whether you can spend anywhere."
+the cash sac is a thing. description is "It's labeled Mt. ATM and full of currency--currency which you don't know whether you can spend anywhere."
 
 chapter scorn rocs
 
@@ -5003,7 +5007,7 @@ check going south in Emo Dome when Diktat Kid is moot:
 	say "The Swept Pews are closed for reconstruction. You've done all you could there." instead;
 
 check going north in Emo Dome:
-	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. Still, you try to pass by the DIFF-ID but hear a warn-raw voice: 'Dim ID! Go jog!'[paragraph break]You think, hang? Nah[if player has soot tattoos and player has gate tag]. Maybe you can hustle up an ID from your current possessions, though[else if player has soot tattoos or player has gate tag]Maybe you could find something to help you get by[end if]." instead;
+	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. Still, you try to pass by the DIFF-ID but hear a warn-raw voice: 'Dim ID! Go jog!'[paragraph break]You think, hang? Nah[if player has soot tattoos and player has gate tag]. Maybe you can hustle up an ID--a DIY ID, if you will--from your current possessions, though[else if player has soot tattoos or player has gate tag]Maybe you could find something to help you get by[end if]." instead;
 	if Bro Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet. You probably need some sort of cool protection, or weapon, or combination thereof." instead;
 	if Diktat Kid is moot, say "The Red Roses Order is being replaced by something more ... civic. The Teem-Civic Meet, to be precise." instead;
 	if balsa slab is moot, say "The Teem-Civic Meet is going in full swing. They're throwing interesting ideas around, but you don't have anything to add. Lots of folks all 'Yep, ey?'" instead;
@@ -5208,7 +5212,7 @@ check taking Gorge Grog when player does not have Gorge Grog: say "Sniffins chid
 
 chapter Nat's Tan
 
-Nat's Tan is a beepy thing in Deft Fed. "A container of something called NAT'S Tan is here.". description is "Ugh! Given that it advertises turning you orange with that Ol['] Glo, you're not sure you'd want that. Maybe there are some people or things much neater than you that would hate it even more. The NAT'S is disproportionately big compared to the 'tan' text.".
+Nat's Tan is a beepy thing in Deft Fed. "A container of something called NAT'S Tan is here.". description is "Ugh! Given that it marks itself as Le Gel turning you orange with that Ol['] Glo, you're not sure you'd want that. Maybe there are some people or things much neater than you that would hate it even more. The NAT'S is disproportionately big compared to the 'tan' text.".
 
 check taking nat's when nat's is in Deft Fed:
 	say "Ugh! It feels too gross to take. Maybe you need to prepare yourself to feel less squeamish about taking it.";
@@ -5286,7 +5290,7 @@ tube-try is a truth state that varies.
 to say tbut: say "[if tube-try is false]you can't see where it goes[else]you already tried to follow the Door Frood, and nothing good happened[end if]"
 
 check going north in Evaded Ave:
-	if tube but is in Evaded Ave, say "[if tube-try is true]The rood-y door behind the tube seemed extra fortified. Plus[else]You try to follow the Door Frood and enter the tube, but ... you hit your head on a rood-y door (which you maybe should've expected) in the passage as the tube turns. You hear the Door Frood laughing. At you or [b]TO IDIOT[r], you don't know. Eh, well[end if], you really don't want to see the Door Frood again.";
+	if tube but is in Evaded Ave, say "[if tube-try is true]The rood-y door behind the tube seemed extra fortified. Plus[else]You try to follow the Door Frood and enter the tube, but ... you hit your head on a rood-y door (which you maybe should've expected) in the passage as the tube turns. You hear the Door Frood say 'TUBE REBUT' and laughing. At you or [b]TO IDIOT[r], you don't know. Eh, well[end if], you really don't want to see the Door Frood again.";
 	now tube-try is true instead;
 
 book Trapeze Part
@@ -5369,7 +5373,7 @@ instead of inserting into the navy van: try useoning noun with navy van;
 
 chapter snack cans
 
-the snack cans are a plural-named solid ingredient. description is "They're labeled DEE FEED. You're not sure what's in them, but whatever it is--well, you're not hungry enough. Yet.".
+the snack cans are a plural-named solid ingredient. description is "They're labeled DEE FEED. You're not sure what's in them, but whatever it is--well, it seems almost as artificial as a nachoh can. You're not hungry enough. Yet.".
 
 instead of opening snack cans, say "You will open them when the time comes to use them." instead;
 
@@ -5721,7 +5725,7 @@ section talk texts
 talk-text of the player is "'Me! Hi! Hem.'"
 
 talk-text of Bomb Mob is "You don't need a gang nag. Maybe you, or something you find or found, can sneak around them to get the TNT, though.".
-talk-text of Code Doc is "There is some awkward small talk. The Code Doc mentions how [next-rand-txt of table of university targets] would be a strong addition to Uneven U. [if maps-explained is true]You might not have much to talk about, now you've had help with the Spa Maps[else if spa maps are preclued]You need some way to help the Code Doc, so you can get help with the Spa Maps[else]Perhaps USEing something on the Code Doc might be more helpful to you[end if].".
+talk-text of Code Doc is "There is some awkward small talk. The Code Doc mentions how [next-rand-txt of table of university targets] would be a strong addition to Uneven U as a co-doc. [if maps-explained is true]You might not have much to talk about, now you've had help with the Spa Maps[else if spa maps are preclued]You need some way to help the Code Doc, so you can get help with the Spa Maps[else]Perhaps USEing something on the Code Doc might be more helpful to you[end if].".
 talk-text of Cross Orc is "'Yap?! Pay!'".
 talk-text of Dave is "Dave's here, man. And Dave's not chatty, man. He just seems to want to block you from doing anything.".
 talk-text of Diktat Kid is "Now's not the time for talk. Okay, the Diktat Kid might be bragging, but you won't get a word in. Maybe a stiff 'It's...'".
