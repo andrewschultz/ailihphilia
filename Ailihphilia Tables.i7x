@@ -813,6 +813,8 @@ biz-name
 "Seller Elle's"
 "Shop O['] H's"
 "Skooby Books"
+"Stella['] Ballets"
+"Stella['] Wallets"
 "Tider Credit"
 "Tramp Mart"
 "Tru-Go Yogurt"
@@ -1393,6 +1395,7 @@ randtxt
 "Fee Beef"
 "Food ... oof"
 "Hep-met tempeh"
+"I/O Poi"
 "Mass assam"
 "No revile-liver on"
 "Nom la salmon"
@@ -1607,6 +1610,7 @@ randtxt
 "Wane? Naw!"
 "Y'r Dry!"
 "Ye no-money!" [okdup]
+"Yoink'n, I! Oy!"
 "You! Oy!"
 
 Ailihphilia Tables ends here.

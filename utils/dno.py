@@ -238,7 +238,8 @@ def check_notes(s):
                     table_name = line.lower().strip()
                 elif not line.strip() or line.startswith('['):
                     table_name = ''
-                ll = re.sub("['\.\",!\?]", "", line.lower())
+                ll = re.sub("\['\]", "", line.lower())
+                ll = re.sub("['\.\",!\?]", "", ll)
                 ll = re.sub("-", " ", ll)
                 ll = re.sub("\[\]", " ", ll)
                 if line_count == 1278 and 'alert' in line.lower():
