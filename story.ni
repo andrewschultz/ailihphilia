@@ -2450,7 +2450,11 @@ this is the kid-bye rule:
 	the rule succeeds;
 
 this is the kid-left rule:
-	if Verses Rev is moot and Knife Fink is moot, say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with [next-rand-txt of table of rejected sidekicks]. Or [next-rand-txt of table of rejected sidekicks]. Or...'";
+	if Verses Rev is moot and Knife Fink is moot:
+		say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with [next-rand-txt of table of rejected
+ kid sidekicks]. Or [next-rand-txt of table of rejected kid sidekicks]. Or...'";
+	else:
+		say "The Diktat Kid mutters the [if Verses Rev is moot]Verses Rev[else]Knife Fink[end] was sorta flaky anyway. Shoulda gone with [next-rand-txt of table of rejected kid sidekicks].";
 	the rule succeeds;
 
 this is the make-sag rule:
@@ -4991,7 +4995,7 @@ emo-dir is a direction that varies. emo-dir is west.
 
 check going to Emo Dome:
 	if Spur Ups are off-stage, say "It's too whiny to the east! You're just too, well, down to deal with it, yet. You back out." instead;
-	if Spur Ups are not moot, say "The Spur Ups make you feel a bit less down (or more up,) but maybe they can help you feel a bit more up before entering the Emo Dome." instead;
+	if puffed-up is false, say "The Spur Ups make you feel a bit less down (or more up,) but maybe they can help you feel a bit more up before entering the Emo Dome." instead;
 	if pulled-up is false:
 		now emo-dir is noun;
 
@@ -5450,7 +5454,7 @@ check going south in Red Roses Order:
 		say "You look back at the sword rows. Perhaps they will be useful."
 
 check going in Red Roses Order:
-	if noun is not south, continue the action;
+	if noun is south, continue the action;
 	if noun is north and Ms Ism is moot, say "Whether or not the E-Divide could damage you, you don't need to follow Ms. Ism. You need to take down the Diktat Kid!" instead;
 	say "[if Ms Ism is moot]There are no secret passages [noun][else]There are more effective ways to shatter the mirror rim than running into it[end if]." instead;
 
@@ -5729,7 +5733,7 @@ talk-text of Kayo Yak is "It looks up a bit but then ignores you. Maybe there's 
 talk-text of King Nik is "'I am not a very good king! I've tried to understand social and economic forces and big picture issues and stuff. But it gets all muddled. I'm worried my kingdom will soon become Skint Nik's. Maybe you could help me?'".
 talk-text of Knife Fink is "The Knife Fink stops and looks over your possessions for a moment.".
 talk-text of Known Wonk is "'Say, as...' There is some awkward small talk. The Known Wonk's mind is elsewhere, but maybe you can help with practical matters.".
-talk-text of Ms Ism is "She is just full of isms as she waves her Gal Flag about. Obscurantism, denialism, revisionism, escapism, whataboutism, you name it!".
+talk-text of Ms Ism is "She is just full of isms as she waves her Gal Flag about. Obscurantism, denialism, revisionism, escapism, whataboutism, you name it! She also upbraids the Mainstream Media for not paying attention to [next-rand-txt of table of Ms Ism pals].".
 talk-text of Revolt Lover is "'Did you find any Stray Arts? I can always use them.'".
 talk-text of Bond Nob is "'I ain't much for talking now I'm sick... no way I can visit [next-rand-txt of table of Bond Nob bars] or [next-rand-txt of table of Bond Nob bars] or any other cool bar with my pals...'".
 talk-text of Ned is "Ned's not in the mood for regular talk. He seems to want an argument or fight, but you don't.".

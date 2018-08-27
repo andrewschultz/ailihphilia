@@ -13,16 +13,35 @@ import re
 import i7
 import sys
 
+def gmd():
+    dont_gm_next = False
+    with open(log_file) as file:
+        for (line_count, line) in enumerate(file, 1):
+            if "#geometric mean" in line:
+                dont_gm_next = True
+                continue
+            if re.search("^[0-9,]+$", line):
+                if not dont_gm_next:
+                    my_ary = [ int(x) for x in line.strip().split(",") ]
+                    print("#geometric mean:{:4f}".format(the_geo_mean(my_ary)))
+                    print(line.strip())
+            dont_gm_next = False
+    exit()
+
+def the_geo_mean(a):
+    lo = 0
+    for x in a: lo += math.log(x)
+    lo /= len(a)
+    return math.exp(lo)
+
 def print_geo_mean(a):
     c = []
     try:
         c = [int(x) for x in a.split(",")]
     except:
         sys.exit("CSV in cmd line must separate numbers.")
-    lo = 0
-    for x in c: lo += math.log(x)
-    lo /= len(c)
-    sys.exit("Geometric mean of {:s} is {:.4f}".format(a, math.exp(lo)))
+    tgm = the_geo_mean(c)
+    sys.exit("Geometric mean of {:s} is {:.4f}".format(a, tgm))
 
 
 # options
@@ -62,6 +81,7 @@ while argcount < len(sys.argv):
     elif arg == 'nv': verbose = False
     elif arg == 'ba' or arg == 'b': write_backup = True
     elif arg == 'tl' or arg == 'lt': test_log = True
+    elif arg == 'gd' or arg == 'gmd': geometric_mean_derive = True
     elif arg == 'bf' or arg == 'fb': biggest_first = True
     elif arg == 'bl' or arg == 'lb' or arg == 'b1' or arg == '1b': biggest_first = False
     elif arg == 'u': update_log_file = True
@@ -105,6 +125,7 @@ log_back = "tcount-log-backup.txt"
 log_test_file = "tcount-log-test.txt"
 
 if os.path.exists(data_file):
+    if geometric_mean_derive: gmd()
     with open(data_file) as file:
         for line in file:
             ll = line.lower().strip()
@@ -196,6 +217,7 @@ if update_log_file:
             if changed_array: flog.write('#' + ','.join(sorted(sts)) + "\n")
             if got_dif:
                 flog.write('#delta: ' + ','.join([str(my_ary[q] - old_vals[q]) for q in range(0, len(old_vals))]) + "\n")
+                flog.write("#geometric mean: {:4f}\n".format(gmean))
             flog.write(','.join([str(x) for x in my_ary]) + "\n")
             print("Updated", log_file)
             flog.close()

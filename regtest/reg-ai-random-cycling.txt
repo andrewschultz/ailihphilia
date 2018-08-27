@@ -123,6 +123,10 @@ Señor drones, you think you yourself, as the Yuge Guy winds up for another round
 #table of yuge baits
 WRONG
 
+>gonear red roses order
+>talk to ms ism
+cycle
+
 >gonear dirge grid
 #table of diktat taunts
 >z
@@ -130,8 +134,11 @@ WRONG
 # no way really to test table of rejected sidekicks, because you only have one chance to see a few
 # table of rejected sidekicks
 >purloin me gem
+>purloin taboo bat
+>use bat on rev
+was sorta flaky anyway
 >give me gem to knife fink
-WRONG
+Meh, THEM! I should've gone with
 
 >purloin day-away ad
 #table of businesses
