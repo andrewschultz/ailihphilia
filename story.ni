@@ -1287,8 +1287,9 @@ understand "ni win" as niwining.
 
 carry out niwining:
 	say "WARNING! These may spoil the game if used too early.[paragraph break]";
+	say "[b]TIP IT[r] allows you to skip the next puzzle in the game's walkthrough/test order. It can be used up until the very end. It, however, neglects context beyond what items you use ahd what items appear.";
+	say "[b]DEEP SPEED[r] jumps you to where you have blown a hole in the [KAOS Oak] to the north of [Fun Enuf] and have the weaponry to take on the Diktat Kid. If the [KAOS Oak] is gone, it has no effect.";
 	say "[b]REV OVER[r] allows you to skip a few puzzles at a time.";
-	say "[b]DEEP SPEED[r] jumps you to where you have blown a hole in the KAOS Oak to the north of [Fun Enuf] and have the weaponry to take on the Diktat Kid.";
 	the rule succeeds;
 
 chapter shuttuhsing
@@ -2072,7 +2073,7 @@ pity tip	eye	snack cans	--	mob-to-alley rule	true	true	false	true	false	Yelpley	
 trap art	reifier	party trap	--	--	true	true	false	true	true	Yelpley	Worn Row	false	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. You pull it out of the reifier and inspect it. It could probably capture more than one thing."
 bunk nub	reviver	stock cots	--	--	true	true	false	true	true	Yelpley	Worn Row	false	"After some crunching and slurping, the bunk nub is changed to a bunch of much smaller, but more comfortable looking, stock cots. You take them."
 party trap	stark rats	gift fig	--	oh-who-to rule	true	true	true	true	true	Grebeberg	Seer Trees	false	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit.[paragraph break]THUMP! They left you a present--good thing you were wearing that pact cap, because a book fell on your head. One glance reveals it to be [b]Oh, Who[r]--a phone book for Grebeberg, like [b]Name ME Man[r] for Yelpley.[paragraph break]You also find a gift fig, which you pick up."
-EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	true	true	Grebeberg	Cold Loc	false	"King Nik reads it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris and Crisp Sir C told me I needed to one day from those other books: ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! Maybe I'll never be a Vic IV, Ivana VI, Ivette VI, Ivy VI, Vin IV or even Xiara IX, but I can lead against the Rim Emir and his emir-prime emir crime and emir grime! The Mrifk Firm, too! My rule will not be an EGAD age!' He hands you some Spur Ups in gratitude. 'These may give you an UP or two, when you are just scared or worried for no reason in general. Now...back to my vidette div. Gotta RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
+EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	true	true	Grebeberg	Cold Loc	false	"King Nik reads it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris and Crisp Sir C told me I needed to one day from those other books: ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! I can now lead against the Rim Emir and his emir-prime emir crime and emir grime! The Mrifk Firm, too! My rule will not be an EGAD age!' He hands you some Spur Ups in gratitude. 'These may give you an UP or two, when you are just scared or worried for no reason in general. Now...back to my vidette div. Gotta RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
 stock cots	sleep eels	--	--	--	true	true	true	true	true	Grebeberg	Ooze Zoo	false	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
 --	--	--	rev-puff-up rule	--	true	--	--	true	true	Yelpley	Yawn Way	false	--
 --	--	--	rev-pull-up rule	--	true	--	--	true	true	Yelpley	Emo Dome	false	--
@@ -5738,7 +5739,7 @@ talk-text of Flee Elf is "[one of]'That cap. It's for you. Find the right way to
 talk-text of Gulf Lug is "'Ill, I...' Then general disappointment how Eruct-Cure and Burp Rub will only cure the SYMPTOMS.".
 talk-text of Ian is "Ian sniffs. 'Why should I talk to someone not classy enough to BELONG here on Mont Nom?' He turns his head for a moment, as if doing something he's ashamed of.".
 talk-text of Kayo Yak is "It looks up a bit but then ignores you. Maybe there's an order it can respond to.".
-talk-text of King Nik is "'I am not a very good king! I've tried to understand social and economic forces and big picture issues and stuff. But it gets all muddled. I'm worried my kingdom will soon become Skint Nik's. Maybe you could help me?'".
+talk-text of King Nik is "'I am not a very good king! I've tried to understand social and economic forces and big picture issues and stuff. But it gets all muddled. I'm no [next-rand-txt of King Nik ancestors]. I'm worried my kingdom will soon become Skint Nik's. Maybe you could help me?'".
 talk-text of Knife Fink is "The Knife Fink stops and looks over your possessions for a moment.".
 talk-text of Known Wonk is "'Say, as...' There is some awkward small talk. The Known Wonk's mind is elsewhere, but maybe you can help with practical matters.".
 talk-text of Ms Ism is "She is just full of isms as she waves her Gal Flag about. Obscurantism, denialism, revisionism, escapism, whataboutism, you name it! She also upbraids the Mainstream Media for not paying attention to [next-rand-txt of table of Ms Ism pals].".

@@ -32,8 +32,9 @@ table of Bond Nob bars	0	0	false	"bars the Bond Nob visits"	-- [?? may cause a p
 table of burnies	0	0	true	"responses to BURN"	--
 table of businesses	0	0	true	"businesses in Day-Away Ad"	"Oh goody. You were worried an NRA barn might appear, but it didn't."
 table of diktat taunts	0	0	false	"Diktat Kid taunts"	--
+table of King Nik ancestors	0	0	false	"King Nik ancestors (TALK to King Nik)"
 table of Moo Room animals	0	0	false	"Moo Room animals (LISTEN)"	--
-table of Ms Ism pals	0	0	false	"Ms Ism's pals"	--
+table of Ms Ism pals	0	0	false	"Ms Ism's pals (TALK to Ms Ism)"	--
 table of My Gym songs	0	0	false	"songs in My Gym (LISTEN)"	"All those tunes, and nothing by ABBA! Low class, low class."
 table of noesies	0	0	true	"responses to NO"	--
 table of nothings	0	0	true	"responses to empty commands"	--
@@ -495,6 +496,7 @@ person-name
 "Su Titus"
 "Sue Reus"
 "Sy Pepys"
+"Tara Marat"
 "Telma Hamlet"
 "Tena Banet"
 "Tena Llanet"
@@ -1003,6 +1005,21 @@ randtxt
 "A tarred errata!"
 "Tot!"
 "ZAP, spaz!"
+
+table of King Nik ancestors
+randtxt
+"Iolo I"
+"Isais I"
+"Isis I"
+"Ivana VI"
+"Ivette VI"
+"Ivy VI"
+"Vi V"
+"Vi XIV"
+"Vic IV"
+"Vikki V"
+"Vin IV"
+"Xiara IX"
 
 table of Moo Room animals
 randtxt
