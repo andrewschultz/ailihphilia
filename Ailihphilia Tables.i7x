@@ -38,6 +38,9 @@ table of Ms Ism pals	0	0	false	"Ms Ism's pals (TALK to Ms Ism)"	--
 table of My Gym songs	0	0	false	"songs in My Gym (LISTEN)"	"All those tunes, and nothing by ABBA! Low class, low class."
 table of noesies	0	0	true	"responses to NO"	--
 table of nothings	0	0	true	"responses to empty commands"	--
+table of random authors	0	0	false	"random author names (ones I particularly liked)"	--
+table of random palindrome firstlast names	0	0	false	"First/last names in Name ME Man"	--
+table of random palindrome lastfirst names	0	0	false	"Last/first names in OH WHO"	--
 table of rejected kid sidekicks	0	0	false	"the Diktat Kid's rejected kid sidekicks"	--
 table of Rob droning	0	0	false	"things Rob babbles about"	"Rob takes a moment to shape 'pahs' again."
 table of singstuff	0	0	true	"responses to SINGing"	"Won't be joining OctetCo with that voice."
@@ -75,7 +78,7 @@ chapter random names
 
 [NOTE: can-m + can-f = a unisex name. False/False should never happen.]
 table of random authors
-person-name	can-m	can-f
+randtxt	can-m	can-f
 "Eliza Bazile"	false	true
 "Kera Marek"	false	true
 "Leta Patel"	false	true
@@ -98,7 +101,7 @@ person-name	can-m	can-f
 "Neil Klien"	true	false
 
 table of random palindrome firstlast names
-person-name
+randtxt
 "Abe Keba"
 "Agnus Unga"
 "Alena Panela"
@@ -528,7 +531,7 @@ person-name
 "Zula Luz"
 
 table of random palindrome lastfirst names
-person-name
+randtxt
 "Adelizzi, Leda"
 "Adels, Leda"
 "Ader, Freda"
@@ -1019,7 +1022,10 @@ randtxt
 "Vic IV"
 "Vikki V"
 "Vin IV"
+"Xene X"
+"Xia IX"
 "Xiara IX"
+"Xiu IX"
 
 table of Moo Room animals
 randtxt
@@ -1395,6 +1401,7 @@ randtxt
 "SuSe? J****!" [ignore]
 "[']Tis. Suss it!"
 "To ban a bot..."
+"Up, CPU!"
 "Y-array?!"
 "Yale? Delay!"
 
@@ -1562,6 +1569,7 @@ randtxt
 table of yuge baits
 randtxt
 "BOO, NOOB!"
+"Dim, I! Timid!"
 "EY, BYE!"
 "LOW AWOL!"
 "Oft GTFO!"
@@ -1587,6 +1595,7 @@ randtxt
 "Huge! Guh!"
 "I B FBI!"
 "I'm Too ... TMI!"
+"Imam, I!"
 "Iz no Ponzi!"
 "KJU? J/k!"
 "Maga'M!"

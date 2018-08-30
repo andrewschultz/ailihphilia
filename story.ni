@@ -593,9 +593,6 @@ when play begins:
 	sort table of last lousy points in random order;
 	repeat through table of all randoms:
 		sort tabnam entry in random order;
-	sort table of random palindrome firstlast names in random order;
-	sort table of random palindrome lastfirst names in random order;
-	sort table of random authors in random order;
 	now initseed of Name ME Man is a random number between 0 and prime-constant / 2 - (number of rows in table of random palindrome lastfirst names);
 	now initseed of Oh Who is a random number between prime-constant / 2 + 1 and prime-constant - (number of rows in table of random palindrome firstlast names);
 	say "[line break]It's not the first dream you had about how awful high school was, but it's the worst in a while. A few 'favorite' classmates chanting 'Diary raid!' and passing it around as they mock 'Beefy? Feeb! Bony Nob!'[wfak-d]";
@@ -4138,8 +4135,8 @@ to say name-num of (n - a number) and (ph - a phonebook):
 	repeat with x running from 1 to n:
 		increment curseed of ph;
 		choose row curseed of ph in booktable of ph;
-		say "[person-name entry]: ";
-		let A be number of characters in "[person-name entry]";
+		say "[randtxt entry]: ";
+		let A be number of characters in "[randtxt entry]";
 		if A < 16:
 			repeat with AA running from A to 15:
 				say " ";
@@ -4513,7 +4510,7 @@ after examining a book:
 to say auth-name of (mybk - a book):
 	define-author mybk;
 	choose row auth-row of mybk in table of random authors;
-	say "[person-name entry]";
+	say "[randtxt entry]";
 
 a book can be in-row or hidden. a book is usually in-row.
 
@@ -5739,7 +5736,7 @@ talk-text of Flee Elf is "[one of]'That cap. It's for you. Find the right way to
 talk-text of Gulf Lug is "'Ill, I...' Then general disappointment how Eruct-Cure and Burp Rub will only cure the SYMPTOMS.".
 talk-text of Ian is "Ian sniffs. 'Why should I talk to someone not classy enough to BELONG here on Mont Nom?' He turns his head for a moment, as if doing something he's ashamed of.".
 talk-text of Kayo Yak is "It looks up a bit but then ignores you. Maybe there's an order it can respond to.".
-talk-text of King Nik is "'I am not a very good king! I've tried to understand social and economic forces and big picture issues and stuff. But it gets all muddled. I'm no [next-rand-txt of King Nik ancestors]. I'm worried my kingdom will soon become Skint Nik's. Maybe you could help me?'".
+talk-text of King Nik is "'I am not a very good king! I've tried to understand social and economic forces and big picture issues and stuff. But it gets all muddled. I'm no [next-rand-txt of table of King Nik ancestors]. I'm worried my kingdom will soon become Skint Nik's. Maybe you could help me?'".
 talk-text of Knife Fink is "The Knife Fink stops and looks over your possessions for a moment.".
 talk-text of Known Wonk is "'Say, as...' There is some awkward small talk. The Known Wonk's mind is elsewhere, but maybe you can help with practical matters.".
 talk-text of Ms Ism is "She is just full of isms as she waves her Gal Flag about. Obscurantism, denialism, revisionism, escapism, whataboutism, you name it! She also upbraids the Mainstream Media for not paying attention to [next-rand-txt of table of Ms Ism pals].".
@@ -6438,7 +6435,7 @@ carry out revovering:
 		say "Warping to before Ms. Ism...";
 	else if in-guy-warp is true:
 		say "Warping to before Yuge Guy...";
-	else if in-loot-warp is true:
+	else if in-tool-warp is true:
 		say "Warping to before you destroy the KAOS Oak...";
 	else if in-tip-it is true:
 		say "Looking for the next thing to do...";
@@ -6454,7 +6451,7 @@ carry out revovering:
 	repeat through table of goodacts:
 		if in-ms-warp is true and ms-need entry is false, next;
 		if in-guy-warp is true and guy-need entry is false, next;
-		if in-loot-warp is true and tool-need entry is false, next;
+		if in-tool-warp is true and tool-need entry is false, next;
 		increment count;
 		if rev-skips > 0 and global-delay is rev-skips:
 			if spun-out-yet is false and debug-state is true, say "DEBUG: spun out at row [count].";
@@ -7449,10 +7446,11 @@ part final questions
 
 Table of Final Question Options (continued)
 final question wording	only if victorious	topic	final response rule	final response activity
-"see responses to various commands (RAND 0 for list, RAND 1-[number of rows in table of all randoms] for specific table, RN 0 for next table)"	true	"RAND [number]"	--	rling
+"see responses to various commands (RAND 0 for list, RAND 1-[number of rows in table of all randoms] for specific table, RN 0 for next table[if post-alf is false], ORDR O to alphabetize[end if])"	true	"RAND [number]"	--	rling
 "see [if LLP-hint-yet is false]hints for [end if]which LLP[if cur-score of Odd Do is not 10]s[end if] you MISSED"	true	"LLP/LLPS/MISSED"	what-missed rule	loafing
 --	true	"RN"	--	rlning
 --	true	"RAND"	--	rl0ing
+--	true	"ORDR O"	--	ordring
 
 rlning is an activity.
 
@@ -7498,6 +7496,17 @@ carry out randlisting:
 		say "[randtxt entry][line break]";
 
 loafing is an activity.
+
+ordring is an activity.
+
+post-alf is a truth state that varies.
+
+rule for ordring:
+	if post-alf is true, say "Already sorted all tables in alphabetical order." instead;
+	repeat through table of all randoms:
+		sort tabnam entry in randtxt order;
+	now post-alf is true;
+	say "Sorted all tables in alphabetical order.";
 
 chapter replace standard response to final question
 
