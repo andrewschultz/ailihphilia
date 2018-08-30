@@ -50,7 +50,12 @@ use American dialect.
 volume definitions
 
 definition: a thing is moot:
-	if it is in devreserved, yes; [ic]
+	if it is in DevReserved, yes; [ic]
+	no;
+
+definition: a thing is had-or-done:
+	if it is moot, yes;
+	if it is carried by the player, yes;
 	no;
 
 to moot (Q - a thing):
@@ -475,9 +480,10 @@ check requesting the score:
 	the rule succeeds;
 
 to decide which number is tron-got:
+	if KAOS Oak is moot, decide on number of tronparts;
 	let temp be number of tronparts carried by player;
 	if martini tram is in Fun Enuf, increment temp;
-	decide on tron-got;
+	decide on temp;
 
 to say to-get-max:
 	if cur-score of Odd Do is max-score of Odd Do:
@@ -798,6 +804,7 @@ to decide whether the action is procedural: [aip]
 	if dropping, yes;
 	if looking, yes;
 	if listening, yes;
+	if taking inventory, yes;
 	no;
 
 [these are debug commands, but they need to be placed here so that we can compile and quickly unit-test the USEON command.]
@@ -1291,6 +1298,7 @@ carry out niwining:
 	say "[b]TIP IT[r] allows you to skip the next puzzle in the game's walkthrough/test order. It can be used up until the very end. It, however, neglects context beyond what items you use ahd what items appear.";
 	say "[b]DEEP SPEED[r] jumps you to where you have blown a hole in the [KAOS Oak] to the north of [Fun Enuf] and have the weaponry to take on the Diktat Kid. If the [KAOS Oak] is gone, it has no effect.";
 	say "[b]REV OVER[r] allows you to skip a few puzzles at a time.";
+	say "There are also three commands that will warp you over major quests: [b]TOOLS LOOT[r] [if tron-got is 4](done) [end if]acquires all North-Tron parts[b]SMH MS[r] [if Bro Orb is had-or-done](done) [end if]gets you prepared for Ms. Ism. [b]GUY UG[r] [if rocs are moot and rep popper is had-or-done](done) [end if]gets you prepared for the Yuge Guy. Note these three commands overlap and also do not give you any of the items you need to defeat the Diktat Kid.";
 	the rule succeeds;
 
 chapter shuttuhsing
@@ -5426,7 +5434,7 @@ instead of doing something with TNT when bomb mob has TNT:
 
 chapter TNT
 
-TNT is a tronpart. description is "Well, it's not going to blow up in your hands.". the bomb mob carries the TNT.
+the TNT is a tronpart. description is "Well, it's not going to blow up in your hands.". the bomb mob carries the TNT.
 
 check taking TNT when bomb mob is quicknear: say "The bomb mob would say a bit more than 'Yank? Nay!' You'd be seen too easily." instead;
 
