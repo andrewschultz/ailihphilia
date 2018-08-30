@@ -242,6 +242,42 @@ carry out alllasting:
 	say "All tables reset to just before cycling for testing purposes.";
 	the rule succeeds;
 
+chapter warpchecking
+
+warpchecking is an action applying to one number
+
+understand the command "wc" as something new.
+
+understand "wc [number]" as warpchecking.
+
+carry out warpchecking:
+	let our-result be false;
+	let program-result be false;
+	let this-row be 0;
+	let oops be 0;
+	if the number understood < 1 or the number understood > 3:
+		say "1=GUY UG 2=SMH MS 3=TOOLS LOOT." instead;
+		repeat through table of goodacts:
+			increment this-row;
+			say "Row [this-row]: ";
+			if there is a preproc entry:
+				consider the preproc entry;
+				if the rule failed:
+					now our-result is false;
+				else:
+					now our-result is true;
+			if there is a use1 entry and there is a use2 entry:
+				if use1 entry is moot or use2 entry is moot:
+					now our-result is true;
+			if number understood is 1, now program-result is guy-need entry;
+			if number understood is 2, now program-result is ms-need entry;
+			if number understood is 3, now program-result is tool-need entry;
+			if program-result is not our-result:
+				say "Discrepancy at row [this-row]: code has [program-result] and us finishing is [our-result].";
+				increment oops;
+	say "[if oops is 0]Everything is OK![else]# of discrepancies = [oops].[end if]";
+	the rule succeeds.
+
 chapter troing
 
 [* test row counts]
