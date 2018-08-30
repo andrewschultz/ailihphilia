@@ -2064,7 +2064,7 @@ use1	use2 	getit	preproc 	postproc 	sco	d1	d2	guy-need	ms-need	tool-need	reg-plu
 --	--	--	rev-bore-Rob rule	--	true	--	--	true	true	true	Yelpley	Worn Row	false	--
 --	--	--	rev-word-row rule	--	true	--	--	true	true	true	Yelpley	Worn Row	false	--
 TI	Door Frood	--	--	tube-to-ave rule	true	true	true	true	true	true	Yelpley	Evaded Ave	false	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. Some people are stupid. Good thing I obviously have too much self-awareness to be one of them. Funny stuff! A cut above To Laff a Lot! I'd try to explain it to you, but either you don't need it explained to you, or you don't deserve it explained to you.' With uncontrollable laughter spasms, the Door Frood skulks away.[paragraph break]Behind the Door Frood is a tube ... but ..." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
-pity tip	eye	snack cans	--	mob-to-alley rule	true	true	false	true	false	true	Yelpley	Yell Alley	false	"The eye scans the pity tip, and the navy van beeps and boops and spits out some snack cans, which roll on the ground. You take them. Then you hear a loud whisper: 'Dee? Weed?' The navy van then activates its VANS-NAV  and whooshes off to leave for good. And there's something behind it! Apparently, a whole bomb mob! That's who was making all the noise!" [af:TEND NET/WORK ROW]
+pity tip	eye	snack cans	--	mob-to-alley rule	true	true	false	false	false	true	Yelpley	Yell Alley	false	"The eye scans the pity tip, and the navy van beeps and boops and spits out some snack cans, which roll on the ground. You take them. Then you hear a loud whisper: 'Dee? Weed?' The navy van then activates its VANS-NAV  and whooshes off to leave for good. And there's something behind it! Apparently, a whole bomb mob! That's who was making all the noise!" [af:TEND NET/WORK ROW]
 --	--	--	rev-tend-net rule	--	true	--	--	false	true	true	Yelpley	Trapeze Part	false	--
 --	--	--	rev-work-row rule	--	true	--	--	true	true	true	Yelpley	Worn Row	false	--
 trap art	reifier	party trap	--	--	true	true	false	true	true	true	Yelpley	Worn Row	false	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. You pull it out of the reifier and inspect it. It could probably capture more than one thing."
@@ -2097,10 +2097,10 @@ gold log	rotator	dork rod	--	--	true	true	false	true	true	false	Yelpley	Worn Row
 SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	true	false	false	true	false	Grebeberg	Moo Room	false	"With the help of SOME DEMOS, you (after several grunts of 'STRAIN! I! ARTS!') manage to rejig the hay into something more aesthetically pleasing: straw arts! You're so enthusiastic, you even fold a few pages of SOME DEMOS into it to create ... well, something."
 straw arts	Revolt Lover	soot tattoos	--	rebump-art-xtra rule	true	true	false	false	true	false	Yelpley	Art Xtra	false	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos.'"
 gate tag	soot tattoos	state tats	--	tats-peripheral rule	true	true	true	false	true	false	Yelpley	Art Xtra	false	"You stamp the gate tag into the soot tattoos, and they take on an official shape: tat, STAT! They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
-poo coop	gnu dung	--	--	--	true	false	true	false	true	true	Grebeberg	Dumb Mud	false	"A heretofore hidden poos scoop pops out from the poo coop. It shovels and vacuumss the offending dung into the coop, forming a crass arc that seems to contain several times the volume of the coop itself. Whatever, you can now go west."
+poo coop	gnu dung	--	--	--	true	false	true	true	true	true	Grebeberg	Dumb Mud	false	"A heretofore hidden poos scoop pops out from the poo coop. It shovels and vacuumss the offending dung into the coop, forming a crass arc that seems to contain several times the volume of the coop itself. Whatever, you can now go west."
 poo coop	turf rut	--	coop-full rule	shift-dumb-mud rule	true	true	true	false	false	true	Grebeberg	Dumb Mud	false	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture.[paragraph break]A bold(ened) lob! The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
 radar	made dam	eroded ore	got-ore-yet rule	radar-blink rule	true	false	false	false	false	true	Grebeberg	Swamp Maws	false	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow. The radar plays a weird scale. Being close to the ore has damaged it somehow."
-NULL ILLUN	Known Wonk	--	--	bump-maws rule	true	true	false	false	true	false	Grebeberg	Yack Cay	false	"The Known Wonk begins to read. 'Old, lo! Too simple. It has to be beneath me. I mean, it's almost as bad as [i]EBB?! BE[r].' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. Rid a nadir. Rid ANY nadir! Tiny nit? Not on! Wonk, now! Sometimes, simple stuff works.' As the Known Wonk babbles, the mist sim lifts, too. 'Wow!' But no, your acts deserve a better cheer than that. 'H/t! A path!'"
+NULL ILLUN	Known Wonk	--	--	bump-maws rule	true	true	true	true	true	false	Grebeberg	Yack Cay	false	"The Known Wonk begins to read. 'Old, lo! Too simple. It has to be beneath me. I mean, it's almost as bad as [i]EBB?! BE[r].' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. Rid a nadir. Rid ANY nadir! Tiny nit? Not on! Wonk, now! Sometimes, simple stuff works.' As the Known Wonk babbles, the mist sim lifts, too. 'Wow!' But no, your acts deserve a better cheer than that. 'H/t! A path!'"
 el doodle	edits tide	spa maps	--	rahs-too rule	true	true	false	false	true	false	Grebeberg	Yack Cay	false	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps! And there is a bonus! It appears El Doodle was so jumbled, there were two things. Sharp rahs appear on another sheet of paper, as some sort of confused motivation, and you take them."
 elope pole	kayak	you buoy	--	--	true	true	false	false	false	false	Grebeberg	Lac Oft Focal	false	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where. You whisper 'Row, or' whenever you get tired. Then you see Elided Ile in the distance. It can't be Elsif Isle, because there are no computers on the shore.[paragraph break]So you stop off there. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and you are worthy to fight the vicious Bar Crab. It is no match for your elope pole. The citizens hand you a YOU BUOY to tell you they're glad you're you, asking only for the elope pole as a souvenir. Well, it was getting a bit awkward to carry.[paragraph break]They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Lac Oft Focal. As it gets near and bends away, you jump off, using the buoy to paddle and float back all the way."
 dork rod	tao boat	enact cane	--	--	true	true	false	true	true	false	Grebeberg	Lac Oft Focal	false	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
@@ -2198,7 +2198,7 @@ this is the rev-nail-Ian rule:
 this is the rev-pace-cap rule:
 	if cap-ever-pace is true, the rule fails;
 	now cap-ever-pace is true;
-	say "You tweak your pact cap to a PACE CAP";
+	say "You tweak your pact cap to a PACE CAP.";
 	if mrlp is not Grebeberg:
 		move player to Seer Trees;
 		say ", moving to Seer Trees in Grebeberg when it doesn't seem right to run in Yelpley or [Fun Enuf]";
@@ -2212,7 +2212,7 @@ this is the rev-pack-cap rule:
 	the rule succeeds;
 
 this is the rev-puff-up rule:
-	if puffed-up is false, the rule fails;
+	if puffed-up is true, the rule fails;
 	say "You use the spur ups to PUFF UP.";
 	moot spur ups;
 	the rule succeeds;
@@ -3247,7 +3247,11 @@ check taking past sap: say "[if liar grail is moot]You probably don't need any m
 
 instead of taking the past sap: say "It'd get sticky on your fingers. You need some way to carry it."
 
+instead of sawing past sap, try useoning past sap with second noun instead;
+
 instead of useoning past sap with an ingredient, say "The past sap isn't edible by itself or with food."
+
+instead of inserting past sap into: try useoning past sap with second noun instead;
 
 to say how-take-sap:
 	say "might [if puce-ever is true]want to USE the cup to hold it[else]need something to carry it in. It's sticky[end if]"
@@ -3940,6 +3944,8 @@ the dose sod is scenery in Apse Spa. "It looks ucky, but given you're in an Apse
 check taking dose sod:
 	get-reject dose sod;
 	say "It's pretty slimy. Any curative properties would be canceled out by your germs carrying it. You need something to hold it in. In which to hold it." instead;
+
+instead of inserting dose sod into: try useoning dose sod with second noun instead;
 
 chapter go-by bog
 
@@ -4925,7 +4931,7 @@ understand "map" as doodle when doodle is quicknear.
 
 after looking in Art Xtra when El Doodle is off-stage:
 	if stark rats are moot:
-		say "You tell the Revolt Lover about how you got rid of the stark rats. the Revolt Lover, impressed, mentions there's something else for you. 'Someone left it here a while back. It's indecipherable. I can't use it, but maybe you can figure it out.'";
+		say "You tell the Revolt Lover about how you got rid of the stark rats. the Revolt Lover, impressed, mentions there's something else for you. 'Someone left it here a while back. It's indecipherable. I can't use it, but maybe you can figure it out.' It's labeled El Doodle. You take it.";
 		now player has El Doodle;
 	continue the action;
 
@@ -5009,7 +5015,7 @@ check going south in Emo Dome when Diktat Kid is moot:
 	say "The Swept Pews are closed for reconstruction. You've done all you could there." instead;
 
 check going north in Emo Dome:
-	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. Still, you try to pass by the DIFF-ID but hear a warn-raw voice: 'Dim ID! Go jog!'[paragraph break]You think, hang? Nah[if player has soot tattoos and player has gate tag]. Maybe you can hustle up an ID--a DIY ID, if you will--from your current possessions, though[else if player has soot tattoos or player has gate tag]Maybe you could find something to help you get by[end if]." instead;
+	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. Still, you try to pass by the DIFF-ID but hear a warn-raw voice: 'Dim ID! Go jog!'[paragraph break]You think, hang? Nah. Maybe you [if player has soot tattoos and player has gate tag]can hustle up an ID--a DIY ID, if you will--from your current possessions, though[else if player has soot tattoos or player has gate tag]could find something to help you get by[end if]." instead;
 	if Bro Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet. You probably need some sort of cool protection, or weapon, or combination thereof." instead;
 	if Diktat Kid is moot, say "The Red Roses Order is being replaced by something more ... civic. The Teem-Civic Meet, to be precise." instead;
 	if balsa slab is moot, say "The Teem-Civic Meet is going in full swing. They're throwing interesting ideas around, but you don't have anything to add. Lots of folks all 'Yep, ey?'" instead;
@@ -5808,7 +5814,7 @@ carry out gotoing:
 	if the rule failed:
 		if noun is Emo Dome and Emo Dome is visited, say "You'd run away from the Emo Dome too quickly. You need a plan of attack to deal with it." instead;
 		say "[noun] isn't available yet, so you can't go there." instead;
-	if noun is unvisited, say "You can reach [noun], but you haven't visited there, yet. So I'm going to be a stickler and say you have to get there first." instead;
+	if noun is unvisited, say "You can reach [noun], but you haven't visited there, yet. So I'm going to be a stickler and say you have to get there first." instead; [?? look for first in chain-back you have visited]
 	consider the unavail-rule of noun;
 	if the rule succeeded, say "[noun] is no longer worth going to. You don't want to go back. Onward!" instead;
 	if cap-pace is true and map region of location of noun is not Grebeberg:
