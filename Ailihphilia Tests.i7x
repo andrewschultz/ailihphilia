@@ -260,7 +260,9 @@ carry out warpchecking:
 		increment this-row;
 		now our-result is false;
 		if there is a use1 entry and there is a use2 entry:
-			if use1 entry is moot or use2 entry is moot:
+			if this-row is 16:
+				now our-result is sap-takeable; [this is a bad hack for saw/sap]
+			else if use1 entry is moot or use2 entry is moot:
 				now our-result is true;
 		else if there is a preproc entry:
 			consider the preproc entry;
@@ -272,7 +274,7 @@ carry out warpchecking:
 		if number understood is 2, now program-result is ms-need entry;
 		if number understood is 3, now program-result is tool-need entry;
 		if program-result is not our-result:
-			say "Discrepancy at row [this-row]: requirement for [warp-description of number understood] has [program-result] and our finish-result is [our-result]: [if there is a use1 entry][use1 entry]+[use2 entry][else][preproc entry][end if]: [program-result] vs [our-result].";
+			say "[b]WE DID [if program-result is false]EXTRA[else]TOO LITTLE[end if][r] at row [this-row]: requirement for [warp-description of number understood] has [program-result] and our finish-result is [our-result]: [if there is a use1 entry][use1 entry]+[use2 entry][else][preproc entry][end if]: [program-result] vs [our-result].";
 			increment oops;
 	say "Results for [warp-description of number understood]: ";
 	say "[if oops is 0]Everything is OK![else]# of discrepancies = [oops].[end if]";
