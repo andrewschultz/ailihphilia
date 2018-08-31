@@ -274,7 +274,7 @@ carry out warpchecking:
 		if number understood is 2, now program-result is ms-need entry;
 		if number understood is 3, now program-result is tool-need entry;
 		if program-result is not our-result:
-			say "[b]WE DID [if program-result is false]EXTRA[else]TOO LITTLE[end if][r] at row [this-row]: requirement for [warp-description of number understood] has [program-result] and our finish-result is [our-result]: [if there is a use1 entry][use1 entry]+[use2 entry][else][preproc entry][end if]: [program-result] vs [our-result].";
+			say "[b]WE DID [if program-result is false]EXTRA[else]TOO LITTLE[end if][r] at row [this-row]: [warp-description of number understood] requirement=[program-result] and we-did=[our-result]: [if there is a use1 entry][use1 entry]+[use2 entry][else][preproc entry][end if][if there is a getit entry]=[getit entry][end if]: [program-result] vs [our-result].";
 			increment oops;
 	say "Results for [warp-description of number understood]: ";
 	say "[if oops is 0]Everything is OK![else]# of discrepancies = [oops].[end if]";
