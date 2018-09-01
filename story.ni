@@ -1299,7 +1299,7 @@ carry out niwining:
 	say "[b]TIP IT[r] allows you to skip the next puzzle in the game's walkthrough/test order. It can be used up until the very end. It, however, neglects context beyond what items you use ahd what items appear.";
 	say "[b]DEEP SPEED[r] jumps you to where you have blown a hole in the [KAOS Oak] to the north of [Fun Enuf] and have the weaponry to take on the Diktat Kid. If the [KAOS Oak] is gone, it has no effect.";
 	say "[b]REV OVER[r] allows you to skip a few puzzles at a time.";
-	say "There are also three commands that will warp you over major quests: [b]TOOLS LOOT[r] [if tron-got is 4](done) [end if]acquires all North-Tron parts[b]SMH MS[r] [if Bro Orb is had-or-done](done) [end if]gets you prepared for Ms. Ism. [b]GUY UG[r] [if rocs are moot and rep popper is had-or-done](done) [end if]gets you prepared for the Yuge Guy. Note these three commands overlap and also do not give you any of the items you need to defeat the Diktat Kid.";
+	say "There are also three commands that will warp you over major quests: [b]TOOLS LOOT[r] [if tron-got is 4](done) [end if]acquires all North-Tron parts[b]SMH MS[r] [if Bros' Orb is had-or-done](done) [end if]gets you prepared for Ms. Ism. [b]GUY UG[r] [if rocs are moot and rep popper is had-or-done](done) [end if]gets you prepared for the Yuge Guy. Note these three commands overlap and also do not give you any of the items you need to defeat the Diktat Kid.";
 	the rule succeeds;
 
 chapter shuttuhsing
@@ -1897,7 +1897,7 @@ Yuge Guy	"The Yuge Guy doesn't bother with books--not even a ghostwritten, self-
 table of cantuse [xxcant]
 use1	babble
 ark of okra	"While the ark inspires you to want to mix foods, you don't want to mix anything with IT. You don't know how long that okra's been there!"
-Bro Orb	"Nothing physical seems to work on the orb. You need a psychological push, here."
+Bros' Orb	"Nothing physical seems to work on the orb. You need a psychological push, here."
 Dave	"Dave's not useful, man."
 DNA band	"The DNA band is useless on its own. It probably needs some sort of jolt to become useful, or sentient."
 enact cane	"The enact cane needs to be augmented, but not quite like that."
@@ -1955,7 +1955,7 @@ section table of specific use rejects
 
 table of specific use rejects [xxrej] [xxfail] [xxsur]
 use1	use2	babble
-Bro Orb	Ms Ism	"As you lift the Bro Orb to throw at Ms. Ism, you see yourself in the Mirror Rim. You don't look so great or heroic. In fact, you feel unusually self-conscious. More than you deserve to, you think. The Bro Orb is really pulsing right now. Whatever you used it on, you'd likely destroy it, and you're not out to KILL anyone."
+Bros' Orb	Ms Ism	"As you lift the Bros['] Orb to throw at Ms. Ism, you see yourself in the Mirror Rim. You don't look so great or heroic. In fact, you feel unusually self-conscious. More than you deserve to, you think. The Bros['] Orb is really pulsing right now. Whatever you used it on, you'd likely destroy it, and you're not out to KILL anyone."
 bunk nub	sleep eels	"That -- well, it almost works. But the bunk nub isn't shaped right to house that many small animals. Maybe it could be changed."
 Cave Vac	gnu dung	"The Cave Vac sputters. You may need something more specifically suited to the, uh, material to clean up."
 cave vac	go-by bog	"The bog is too big for that."
@@ -2024,7 +2024,7 @@ roto motor	ore zero	"The roto motor probably runs on some sort of battery. It se
 roto motor	tao boat	"The tao boat is not electrical, and besides, the roto motor is too small."
 sage gas	Dork Rod	"There's no place to squeeze gas into the Dork Rod. Sometimes, dorkiness is ready for wisdom, but not here and now. You'll need another receptacle."
 sage gas	sharp rahs	"Hmm! The contrast between the two...that should work. But maybe you need some sort of intermediary that could hold them both."
-sharp rahs	Bro Orb	"You feel a shock--perhaps you approached the Bro Orb too eagerly! But it seems you were on the right track."
+sharp rahs	Bros' Orb	"You feel a shock--perhaps you approached the Bros['] Orb too eagerly! But it seems you were on the right track."
 soot tattoos	DIFF ID	"The Diff-ID doesn't respond. Maybe you need a way to put them on you, somehow."
 spur ups	turf rut	"Unfortunately, the spur ups are about being mentally up, not physically up. So they don't work."
 stamp mats	Revolt Lover	"'Hmm. Those aren't art by themselves, but maybe with the right tools, they could make something interesting. Or useful.'"
@@ -2143,7 +2143,7 @@ you buoy	rotator	ME gem	--	--	true	true	false	false	false	false	Yelpley	Worn Row
 Mr Arm	bomb mob	TNT	--	mob-bye rule	true	true	true	false	false	true	Yelpley	Yell Alley	false	"Mr. Arm walks on his index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. Being an arm, it/he has more leverage than just a DNA hand would've. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course. Perhaps Mr. Arm will find a Do-Bod or even an Evol-Glove to be truly complete. The bomb mob, for their part, becomes a poor troop once they see what they've lost. They wander away."
 nat's tan	scorn rocs	--	--	--	true	true	true	true	false	false	Grebeberg	Flu Gulf	false	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
 rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	false	false	false	Grebeberg	Sneer Greens	false	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Had, ah!' he cries, making a male lam. From his babbling, he's apparently retreating to the glam-amalg (Loot Stool included) in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]'Pol? Flop!' you think to yourself, before the ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
-Bro Orb	Mirror Rim	Yard Ray	--	sword-rows-reveal rule	true	true	true	false	false	false	Yelpley	Red Roses Order	false	"The Bro Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Ms. Ism has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, Ms. Ism, live not on evil!' you boom, as the Orb does its work. Ms. Ism looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'My sub-level bus! You won't catch it! The E-Divide will block you!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
+Bros' Orb	Mirror Rim	Yard Ray	--	sword-rows-reveal rule	true	true	true	false	false	false	Yelpley	Red Roses Order	false	"The Bros['] Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Ms. Ism has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, Ms. Ism, live not on evil!' you boom, as the Orb does its work. Ms. Ism looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'My sub-level bus! You won't catch it! The E-Divide will block you!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	false	false	false	Yelpley	Red Roses Order	false	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Ms. Ism."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	false	false	false	Yelpley	Worn Row	false	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
 murdered rum	yard ray	--	--	ray-beepy-now rule	true	true	false	false	false	false	Dim Mid	--	false	"The yard ray gleams with energy. It seems like it could do some damage now."
@@ -2199,10 +2199,10 @@ this is the rev-first-food-combo rule:
 	the rule succeeds;
 
 this is the rev-get-bro-orb rule:
-	if Bro Orb is not in Le Babel, the rule fails;
-	say "You get the Bro Orb from Le Babel.";
+	if Bros' Orb is not in Le Babel, the rule fails;
+	say "You get the Bros['] Orb from Le Babel.";
 	moot stir writs;
-	now player has Bro Orb;
+	now player has Bros' Orb;
 	the rule succeeds;
 
 this is the rev-nail-Ian rule:
@@ -3469,34 +3469,34 @@ carry out mussing:
 	moot opossum;
 	the rule succeeds.
 
-chapter Bro Orb
+chapter Bros' Orb
 
-the Bro Orb is a thing in Le Babel. "[one of]An orb hovers in the air. You know it must be a Bro Orb[or]The Bro Orb still hovers in the air[stopping]. You would love to take it, but you're not sure if you're worthy.". description is "Looking into the Bro Orb, you think, 'Do orbs brood?' There is a brief vision of star frats, lacking star brats or prats. They all do community service, and if their heart isn't in the right place, it gets done. You start to understand social, subjective knowledge you assumed only jerks know. About how to be likable to others. Of course some go overboard, but any good thing can be abused that way. You realize you are cheating yourself if you don't learn the basics, here.[paragraph break]Oh yes. There's also a huge area marked off 'Sis' just to show it's not about guys.".
+the Bros' Orb is a thing in Le Babel. "[one of]An orb hovers in the air. You know it must be a Bros['] Orb[or]The Bros['] Orb still hovers in the air[stopping]. You would love to take it, but you're not sure if you're worthy.". description is "Looking into the Bros['] Orb, you think, 'Do orbs brood?' There is a brief vision of star frats, lacking star brats or prats. They all do community service, and if their heart isn't in the right place, it gets done. You start to understand social, subjective knowledge you assumed only jerks know. About how to be likable to others. Of course some go overboard, but any good thing can be abused that way. You realize you are cheating yourself if you don't learn the basics, here.[paragraph break]Oh yes. There's also a huge area marked off 'Sis' just to show it's not about guys.".
 
-after examining the Bro Orb when player is in Red Roses Order:
-	say "The Bro Orb is pulsing violently. It needs to let its energy out--but on whom? On what?"
+after examining the Bros' Orb when player is in Red Roses Order:
+	say "The Bros['] Orb is pulsing violently. It needs to let its energy out--but on whom? On what?"
 
-understand "bros" and "bros orb" as Bro Orb.
+understand "bros" and "bros orb" as Bros' Orb.
 
-check taking Bro Orb:
-	if player has Bro Orb, say "You already have it." instead;
-	if player does not have stir writs, say "A voice in your head says 'WANT? NAW!'[paragraph break]You aren't sure you can handle the potentially corrupting power of the Bro Orb. [if player has sage gas]The sage gas helps you to understand how things could go wrong, but still, you're a bit worried[end if]. Maybe if you had some more balance to your thinking." instead;
-	say "You wonder if you should take the Bro Orb. If you deserve to. But you reread the stir writs and whisper to yourself, 'Nag, ol['] slogan,' and feel balanced enough to take the Bro Orb and accept the responsibility for doing so.[paragraph break]And even to recognize that you don't always deserve points for doing the right thing[if useon-writs is true], or knowing what to use on what[end if]. The stir writs helped with that. Just having the Bro Orb will be enough. It will be useful somewhere.";
+check taking Bros' Orb:
+	if player has Bros' Orb, say "You already have it." instead;
+	if player does not have stir writs, say "A voice in your head says 'WANT? NAW!'[paragraph break]You aren't sure you can handle the potentially corrupting power of the Bros['] Orb. [if player has sage gas]The sage gas helps you to understand how things could go wrong, but still, you're a bit worried[end if]. Maybe if you had some more balance to your thinking." instead;
+	say "You wonder if you should take the Bros['] Orb. If you deserve to. But you reread the stir writs and whisper to yourself, 'Nag, ol['] slogan,' and feel balanced enough to take the Bros['] Orb and accept the responsibility for doing so.[paragraph break]And even to recognize that you don't always deserve points for doing the right thing[if useon-writs is true], or knowing what to use on what[end if]. The stir writs helped with that. Just having the Bros['] Orb will be enough. It will be useful somewhere.";
 
-report taking Bro Orb:
+report taking Bros' Orb:
 	moot stir writs;
-	say "Taking the Bro Orb requires two hands. You watch the stir writs flutter off beyond the Voodoo V. Oh, well. You carry the stir writs['] messages in your mind and heart and stuff anyway, now, and you'll continue to do so even when this adventure is done.";
+	say "Taking the Bros['] Orb requires two hands. You watch the stir writs flutter off beyond the Voodoo V. Oh, well. You carry the stir writs['] messages in your mind and heart and stuff anyway, now, and you'll continue to do so even when this adventure is done.";
 	the rule succeeds;
 
 useon-writs is a truth state that varies.
 
-check useoning Bro Orb with stir writs:
-	try useoning stir writs with Bro Orb instead; [ugh! I know. I just have to do this hack once, though. ??]
+check useoning Bros' Orb with stir writs:
+	try useoning stir writs with Bros' Orb instead; [ugh! I know. I just have to do this hack once, though. ??]
 
-check useoning stir writs with Bro Orb:
+check useoning stir writs with Bros' Orb:
 	now useon-writs is true;
 	say "You don't need to wave the stir writs around or anything to take the orb, but you focus on the stir writs to make sure.[paragraph break]";
-	try taking Bro Orb instead;
+	try taking Bros' Orb instead;
 
 book Mont Nom
 
@@ -3819,7 +3819,7 @@ chapter stir writs
 
 The stir writs are a plural-named thing. description is "They balance emotional and intellectual considerations well, making you feel you can do things you'd put off before, both simple or complex.[paragraph break]They're probably safer for your help and give a more permanent boost than Stim-Its, too."
 
-check useoning stir writs with Bro Orb: try taking Bro Orb instead;
+check useoning stir writs with Bros' Orb: try taking Bros' Orb instead;
 
 book Yack Cay
 
@@ -5046,7 +5046,7 @@ check going south in Emo Dome when Diktat Kid is moot:
 
 check going north in Emo Dome:
 	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. Still, you try to pass by the DIFF-ID but hear a warn-raw voice: 'Dim ID! Go jog!'[paragraph break]You think, hang? Nah. Maybe you [if player has soot tattoos and player has gate tag]can hustle up an ID--a DIY ID, if you will--from your current possessions, though[else if player has soot tattoos or player has gate tag]could find something to help you get by[end if]." instead;
-	if Bro Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet. You probably need some sort of cool protection, or weapon, or combination thereof." instead;
+	if Bros' Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet. You probably need some sort of cool protection, or weapon, or combination thereof." instead;
 	if Diktat Kid is moot, say "The Red Roses Order is being replaced by something more ... civic. The Teem-Civic Meet, to be precise." instead;
 	if balsa slab is moot, say "The Teem-Civic Meet is going in full swing. They're throwing interesting ideas around, but you don't have anything to add. Lots of folks all 'Yep, ey?'" instead;
 	say "You make sure your state tats are visible for scanning. They are accepted with a 'YA MAY!'.[paragraph break][if Ms Ism is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the sword rows.[end if]";
@@ -5999,7 +5999,7 @@ this is the rocs-gone rule:
 avail-rule of Red Roses Order is rose-tat rule.
 
 this is the rose-tat rule:
-	if soot tattoos are moot and Bro Orb is not in Le Babel, the rule succeeds;
+	if soot tattoos are moot and Bros' Orb is not in Le Babel, the rule succeeds;
 	the rule fails;
 
 avail-rule of Dirge Grid is tron-done rule.
@@ -6331,7 +6331,7 @@ carry out toolslooting:
 	abide by the chase-warp-check rule;
 	if KAOS Oak is moot, say "You already destroeyd the [KAOS Oak]." instead;
 	if tron-got is 4, say "You already have all the North Tron pieces the epicer recipe says you need." instead;
-	unless Bro Orb is in Le Babel or soot tattoos are off-stage, say "You already have what you need to defeat Ms. Ism." instead;
+	unless Bros' Orb is in Le Babel or soot tattoos are off-stage, say "You already have what you need to defeat Ms. Ism." instead;
 	now in-tool-warp is true;
 	try revovering;
 	now in-tool-warp is false;
@@ -6357,7 +6357,7 @@ in-ms-warp is a truth state that varies.
 carry out smhmsing:
 	abide by the chase-warp-check rule;
 	if Ms Ism is moot, say "You already beat Ms. Ism." instead;
-	unless Bro Orb is in Le Babel or soot tattoos are off-stage, say "You already have what you need to defeat Ms. Ism." instead;
+	unless Bros' Orb is in Le Babel or soot tattoos are off-stage, say "You already have what you need to defeat Ms. Ism." instead;
 	now in-ms-warp is true;
 	try revovering;
 	now in-ms-warp is false;
@@ -6961,14 +6961,14 @@ this is the dumb-mud-complete rule:
 section Emo Dome rule
 
 this is the emo-dome-hint rule:
-	if player has Bro Orb:
+	if player has Bros' Orb:
 		if player has state tats, continue the action;
 	else:
 		if puce cup is not in Emo Dome and pulled-up is true, continue the action;
 	if search-hint-room is true, the rule succeeds;
 	if pulled-up is false, say "[one of]You managed to PUFF UP with the spur ups, but it looks like they have one more use[or]PULL UP[stopping]." instead;
 	if puce cup is in Emo Dome, say "Take the puce cup." instead; [move Emo Dome just before Red Roses Order??]
-	if player has state tats and player does not have Bro Orb, say "You have ID, but you need an item that makes you feel brave enough. [if Le Babel is visited]The Bro Orb[else]It's in a place you haven't visitef yet[end if]." instead;
+	if player has state tats and player does not have Bros' Orb, say "You have ID, but you need an item that makes you feel brave enough. [if Le Babel is visited]The Bros['] Orb[else]It's in a place you haven't visitef yet[end if]." instead;
 	if id-pieces is 0, say "You need to get past the DIFF-ID by combining two items to create identification. They are found elsewhere." instead;
 	if id-pieces is 1, say "The [if player has gate tag]gate tag[else]soot tattoos[end if] will make up part of the state tats you need to pass the DIFF-ID." instead;
 	if id-pieces is 2, say "USE SOOT TATTOOS ON GATE TAG." instead;
@@ -7085,13 +7085,13 @@ this is the lair-trial-complete rule:
 section Le Babel rule
 
 this is the le-babel-hint rule:
-	if Bro Orb is not in Le Babel, continue the action;
+	if Bros' Orb is not in Le Babel, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if player does not have stir writs, say "You need something to help you take the Bro Orb. It's in [if Motto Bottom is visited]a place you haven't visited yet[else]Motto Bottom[end if]." instead;
-	say "All you really have to do here is take the Bro Orb." instead;
+	if player does not have stir writs, say "You need something to help you take the Bros['] Orb. It's in [if Motto Bottom is visited]a place you haven't visited yet[else]Motto Bottom[end if]." instead;
+	say "All you really have to do here is take the Bros['] Orb." instead;
 
 this is the le-babel-complete rule:
-	if Bro Orb is not in Le Babel, the rule succeeds;
+	if Bros' Orb is not in Le Babel, the rule succeeds;
 	the rule fails;
 
 section Mont Nom rule
@@ -7180,7 +7180,7 @@ section Red Roses Order rule
 this is the red-roses-order-hint rule:
 	if taboo bat is not off-stage, continue the action;
 	if search-hint-room is true, the rule succeeds;
-	if Ms Ism is in Red Roses Order, say "USE BRO ORB ON MIRROR RIM." instead; [okperc]
+	if Ms Ism is in Red Roses Order, say "USE BROS ORB ON MIRROR RIM." instead; [okperc]
 	if balsa slab is not had-or-done, say "You need to get the balsa slab from south of Swamp Maws." instead;
 	say "USE BALSA SLAB ON SWORD ROWS." instead;
 
