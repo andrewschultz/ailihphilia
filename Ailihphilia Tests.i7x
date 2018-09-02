@@ -38,7 +38,7 @@ test gh9 with "gt moo room/use enact cane on yahoo hay/w/pace cap/use troll ort 
 
 test gh10 with "e/use sage gas on tame mat/use sharp rahs on guru rug/gt dumb mud/s/nail ian/use snack cans on ufo tofu/use gift fig on mayo yam/gt yack cay/use moor broom on tru yurt/gt uneven u/use wash saw on porch crop/gt dumb mud/use exam axe on lie veil/n/muss opossum/get all/gt work row/use dna band on reifier/use roto motor on dna hand/use eroded ore on reviver/use you buoy on rotator/gt yell alley/use mr arm on bomb mob/get rep popper/gt flu gulf/use nat's tan on scorn rocs".
 
-test gh11 with "w/use rep popper on me totem/gt emo dome/n/use bro orb on mirror rim/use balsa slab on sword rows/gt work row/use not-a-baton on reifier/use murdered rum on yard ray/emit noontime/use yard ray on test set/gt fun enuf/use tnt on ore zero/n/use me gem on knife fink/use taboo bat on verses rev/use yard ray on redivider/s/use x-ite tix on tix exit".
+test gh11 with "w/use rep popper on me totem/gt emo dome/n/use bros orb on mirror rim/use balsa slab on sword rows/gt work row/use not-a-baton on reifier/use murdered rum on yard ray/emit noontime/use yard ray on test set/gt fun enuf/use tnt on ore zero/n/use me gem on knife fink/use taboo bat on verses rev/use yard ray on redivider/s/use x-ite tix on tix exit".
 
 test ghs with "test gh1/test gh2/test gh3/test gh4/test gh5/test gh6/test gh7/test gh8/test gh9/test gh10/test gh11"
 
@@ -68,7 +68,7 @@ test p9a with "w/s/s/s/e/use enact cane on yahoo hay/pace cap/use troll ort on b
 [ note I could probably save a move or two here by visiting mont nom just before going back east ... now that getting the martini tram moves you back to fun enuf ]
 test part10 with "e/use sage gas on tame mat/use sharp rahs on guru rug/w/n/n/e/s/nail ian/use snack cans on ufo tofu/use gift fig on mayo yam/w/w/w/n/use moor broom on tru yurt/s/s/use wash saw on porch crop/n/e/use exam axe on lie veil/n/muss opossum/get all/s/e/e/e/s/w/use dna band on reifier/use roto motor on dna hand/use eroded ore on reviver/use you buoy on rotator/e/n/n/n/e/use mr arm on bomb mob/get rep popper/w/s/s/w/w/n/n/use nat's tan on scorn rocs".
 
-test part11 with "w/use rep popper on me totem/e/s/s/e/e/e/n/use bro orb on mirror rim/use balsa slab on sword rows/s/w/s/w/use not-a-baton on reifier/use murdered rum on yard ray/emit noontime/use yard ray on test set/e/n/w/use tnt on ore zero/n/use me gem on knife fink/use taboo bat on verses rev/use yard ray on redivider/s/use x-ite tix on tix exit".
+test part11 with "w/use rep popper on me totem/e/s/s/e/e/e/n/use bros orb on mirror rim/use balsa slab on sword rows/s/w/s/w/use not-a-baton on reifier/use murdered rum on yard ray/emit noontime/use yard ray on test set/e/n/w/use tnt on ore zero/n/use me gem on knife fink/use taboo bat on verses rev/use yard ray on redivider/s/use x-ite tix on tix exit".
 
 [this is to get to the endgame before wiping out the baddies]
 
@@ -96,7 +96,7 @@ test dup9 with "w/s/s/s/e/use enact cane on yahoo hay/use enact cane on yahoo ha
 
 test dup10 with "e/use sage gas on tame mat/use sage gas on tame mat/use sharp rahs on guru rug/use sharp rahs on guru rug/w/n/n/e/s/nail ian/nail ian/use snack cans on ufo tofu/use snack cans on ufo tofu/use gift fig on mayo yam/use gift fig on mayo yam/w/w/w/n/use moor broom on tru yurt/use moor broom on tru yurt/s/s/use wash saw on porch crop/use wash saw on porch crop/n/e/use exam axe on lie veil/use exam axe on lie veil/n/muss opossum/muss opossum/get all/get all/s/e/e/e/s/w/use dna band on reifier/use dna band on reifier/use roto motor on dna hand/use roto motor on dna hand/use eroded ore on reviver/use eroded ore on reviver/use you buoy on rotator/use you buoy on rotator/e/n/n/n/e/use mr arm on bomb mob/use mr arm on bomb mob/get rep popper/get rep popper/w/s/s/w/w/n/n/use nat's tan on scorn rocs/use nat's tan on scorn rocs"
 
-test dup11 with "w/use rep popper on me totem/use rep popper on me totem/e/s/s/e/e/e/n/use bro orb on mirror rim/use bro orb on mirror rim/use balsa slab on sword rows/use balsa slab on sword rows/s/w/s/w/use not-a-baton on reifier/use not-a-baton on reifier/use murdered rum on yard ray/use murdered rum on yard ray/emit noontime/emit noontime/use yard ray on test set/use yard ray on test set/e/n/w/use tnt on ore zero/use tnt on ore zero/n/use me gem on knife fink/use me gem on knife fink/use taboo bat on verses rev/use taboo bat on verses rev/use yard ray on redivider/use yard ray on redivider/s/use x-ite tix on tix exit/use x-ite tix on tix exit"
+test dup11 with "w/use rep popper on me totem/use rep popper on me totem/e/s/s/e/e/e/n/use bros orb on mirror rim/use bros orb on mirror rim/use balsa slab on sword rows/use balsa slab on sword rows/s/w/s/w/use not-a-baton on reifier/use not-a-baton on reifier/use murdered rum on yard ray/use murdered rum on yard ray/emit noontime/emit noontime/use yard ray on test set/use yard ray on test set/e/n/w/use tnt on ore zero/use tnt on ore zero/n/use me gem on knife fink/use me gem on knife fink/use taboo bat on verses rev/use taboo bat on verses rev/use yard ray on redivider/use yard ray on redivider/s/use x-ite tix on tix exit/use x-ite tix on tix exit"
 
 test dups with "test dup1/test dup2/test dup3/test dup4/test dup5/test dup6/test dup7/test dup8/test dup9/test dup10/test dup11"
 
@@ -118,7 +118,7 @@ test east6 with "s/w/w/w/use poo coop on gnu dung/w/use radar on made dam/use ro
 
 test east7 with "e/n/w/w/w/w/n/n/use elope pole on kayak/use dork rod on tao boat/s/use el doodle on edits tide/s/s/use tent net on code doc/use spa maps on code doc/n/e/e/n/e/use spa maps on go-by bog/w/s/s/s/e/use enact cane on yahoo hay/w"
 
-test east8 with "pace cap/use troll ort on brag garb/n/n/w/w/s/s/yak okay/e/use sage gas on tame mat/use sharp rahs on guru rug/w/n/n/n/use moor broom on tru yurt/s/e/use exam axe on lie veil/n/get bro orb/s/e/e/e/e/n/use bro orb on mirror rim/s/w/w/w/w/w/s/use wash saw on porch crop/n/e/e/e/e/e/n/use balsa slab on sword rows"
+test east8 with "pace cap/use troll ort on brag garb/n/n/w/w/s/s/yak okay/e/use sage gas on tame mat/use sharp rahs on guru rug/w/n/n/n/use moor broom on tru yurt/s/e/use exam axe on lie veil/n/get bros orb/s/e/e/e/e/n/use bros orb on mirror rim/s/w/w/w/w/w/s/use wash saw on porch crop/n/e/e/e/e/e/n/use balsa slab on sword rows"
 
 test east9 with "s/w/s/w/use not-a-baton on reifier/e/n/n/n/e/get all/w/s/s/w/w/w/use poo coop on turf rut/s/nail ian/use snack cans on ufo tofu/use gift fig on mayo yam/w/n/n/use nat's tan on scorn rocs/w/use rep popper on me totem/e/s/s/e/use murdered rum on yard ray/emit noontime/e/s/w/use yard ray on test set/e/n/w/use tnt on ore zero/n/use me gem on knife fink/use taboo bat on verses rev/use yard ray on redivider/s/use x-ite tix on tix exit"
 
@@ -138,13 +138,13 @@ test west5 with "w/s/e/e/e/e/n/deny ned/get all/s/w/w/s/w/work row/use stinky kn
 
 test west6 with "w/n/n/e/e/e/e/e/s/s/e/use stamp mats on slate metals/w/n/n/e/n/deny ned/use ye key on etage gate/n/s/s/w/w/s/w/worn row/work row/e/n/e/e/n/n/get all/s/s/w/w/s/w/use gold log on rotator"
 
-test west7 with "e/n/w/w/w/w/n/n/use dork rod on tao boat/s/s/e/e/s/s/e/use enact cane on yahoo hay/w/n/n/w/w/n/use moor broom on tru yurt/s/e/use exam axe on lie veil/n/get bro orb/s/w/s/use wash saw on porch crop/n/e/e/e/e/e/e/s/stand nat's/n/w/w/w/w/n/n/use nat's tan on scorn rocs"
+test west7 with "e/n/w/w/w/w/n/n/use dork rod on tao boat/s/s/e/e/s/s/e/use enact cane on yahoo hay/w/n/n/w/w/n/use moor broom on tru yurt/s/e/use exam axe on lie veil/n/get bros orb/s/w/s/use wash saw on porch crop/n/e/e/e/e/e/e/s/stand nat's/n/w/w/w/w/n/n/use nat's tan on scorn rocs"
 
 test west8 with "s/s/e/e/s/w/use dirt rid on reviver/e/n/e/s/s/w/use cave vac on cassettes sac/get all/e/n/n/w/w/w/w/w/use radar on made dam/e/e/e/e/e/e/use radar on crag arc/w/w/n/n/e/use pity tip on eye/w/s/s/w/w/w/s/use snack cans on ufo tofu"
 
 test west9 with "e/s/w/use dna band on reifier/use roto motor on dna hand/e/n/n/n/e/use mr arm on bomb mob/get rep popper/w/s/s/w/w/n/n/w/use rep popper on me totem"
 
-test west10 with "e/s/s/e/e/s/w/use eroded ore on reviver/use you buoy on rotator/e/n/n/use straw arts on revolt lover/use gate tag on soot tattoos/s/e/e/s/use elan ale on sniffins/n/n/n/use gorge grog on butene tub/s/s/w/n/use bro orb on mirror rim/use balsa slab on sword rows/s/w/s/w/use not-a-baton on reifier/use tnt on ore zero"
+test west10 with "e/s/s/e/e/s/w/use eroded ore on reviver/use you buoy on rotator/e/n/n/use straw arts on revolt lover/use gate tag on soot tattoos/s/e/e/s/use elan ale on sniffins/n/n/n/use gorge grog on butene tub/s/s/w/n/use bros orb on mirror rim/use balsa slab on sword rows/s/w/s/w/use not-a-baton on reifier/use tnt on ore zero"
 
 test west11 with "use murdered rum on yard ray/emit noontime/e/s/w/use yard ray on test set/e/n/w/n/use taboo bat on verses rev/use me gem on knife fink/use yard ray on redivider/s/use x-ite tix on tix exit"
 

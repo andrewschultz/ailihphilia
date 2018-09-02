@@ -236,7 +236,7 @@ Only for maximum points.
 An affectionate gesture would go a long way.
 The opossum isn't a palindrome, but maybe the middle part...
 MUSS OPOSSUM.
-?Why can't I take the bro orb?
+?Why can't I take the bros' orb?
 You're not at peace with yourself.
 You need to have spent time in the Tao Boat for that to happen.
 >>SWAMP MAWS
@@ -532,7 +532,7 @@ USE ELAN ALE ON SNIFFINS.
 You can't get in if you don't have what you need.
 Something that's the opposite of her.
 But you can't use the orb on her. It wouldn't magnify enough.
-USE BRO ORB ON MIRROR RIM.
+USE BROS ORB ON MIRROR RIM.
 ?What are the sword rows for for?
 Well, there's one thing that needs to be carved.
 USE BALSA SLAB ON SWORD ROWS.
@@ -589,7 +589,7 @@ There are 37 total points in Yelpley.
 1 point if you USE ERODED ORE ON REVIVER.
 1 point if you USE YOU BUOY ON ROTATOR.
 1 point if you USE MR ARM ON BOMB MOB.
-1 point if you USE BRO ORB ON MIRROR RIM.
+1 point if you USE BROS ORB ON MIRROR RIM.
 1 point if you USE NOT-A-BATON ON REIFIER.
 1 point if you USE BALSA SLAB ON SWORD ROWS.
 ?How do I get all the points for Grebeberg?

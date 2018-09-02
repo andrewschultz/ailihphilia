@@ -2074,7 +2074,7 @@ section table of goodacts
 [the table of goodacts approximately follows not only the test commands but also the walkthrough]
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
 table of goodacts [xxuse] [xxgood]
-use1	use2 	getit	preproc 	postproc 	sco	d1	d2	guy-need	ms-need	tool-need	reg-plus	room-to-go	done	babble
+use1	use2 (thing)	getit	preproc (rule) 	postproc 	sco	d1	d2	guy-need	ms-need	tool-need	reg-plus	room-to-go	done	babble
 --	--	--	rev-pack-cap rule	--	true	--	--	true	true	true	Dim Mid	Fun Enuf	false	--
 --	--	--	rev-evade-Dave rule	--	true	--	--	true	true	true	Yelpley	My Gym	false	--
 --	--	--	rev-bore-Rob rule	--	true	--	--	true	true	true	Yelpley	Worn Row	false	--
@@ -2135,7 +2135,7 @@ sharp rahs	guru rug	stir writs	--	brag-garb-bye rule	true	true	true	false	true	f
 Moor Broom	Tru Yurt	Exam Axe	--	bump-ivy rule	true	true	false	false	true	false	Grebeberg	Yack Cay	false	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay. The Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! Then, back to the Tru-Yurt for the Wonk. They've done enough for you." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
 wash saw	porch crop	balsa slab	--	--	true	true	false	false	false	false	Grebeberg	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods.[paragraph break]'Yes! Yes! We have achieved AIMED ACADEMIA! Uneven U needs a name change ... to UNITIN['] U! How can I thank you?'[paragraph break]A balsa slab is lying under where the porch crop was. The Code Doc offers it to you. Now, you ... do own wood!"
 Exam Axe	Lie Veil	--	--	--	true	true	true	false	true	false	Grebeberg	Dumb Mud	false	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
---	--	--	rev-get-bro-orb rule	--	false	--	--	false	true	false	--	Le Babel	--	--
+--	--	--	rev-get-bros orb rule	--	false	--	--	false	true	false	--	Le Babel	--	--
 DNA band	reifier	DNA hand	--	--	true	true	false	false	false	true	Yelpley	Worn Row	false	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand! It doesn't have any slime or blood leaking, and when you take it, it doesn't twitch too much."
 roto motor	DNA hand	Mr Arm	--	--	true	true	true	false	false	true	Yelpley	Worn Row	false	"Some of the stuffing inside the hand has to pop out to make space for the roto motor to fit in. There's enough to make a whole arm! The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on the arm (MR. ARM) and hand: BANG NAB. The arm will probably give the hand a bit more reach."
 Eroded Ore	reviver	Ore Zero	--	--	true	true	false	false	false	true	Yelpley	Worn Row	false	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
@@ -2198,7 +2198,7 @@ this is the rev-first-food-combo rule:
 	moot UFO tofu;
 	the rule succeeds;
 
-this is the rev-get-bro-orb rule:
+this is the rev-get-bros orb rule:
 	if Bros' Orb is not in Le Babel, the rule fails;
 	say "You get the Bros['] Orb from Le Babel.";
 	moot stir writs;
@@ -3476,7 +3476,7 @@ the Bros' Orb is a thing in Le Babel. "[one of]An orb hovers in the air. You kno
 after examining the Bros' Orb when player is in Red Roses Order:
 	say "The Bros['] Orb is pulsing violently. It needs to let its energy out--but on whom? On what?"
 
-understand "bros" and "bros orb" as Bros' Orb.
+understand "bro" and "bro orb" as Bros' Orb.
 
 check taking Bros' Orb:
 	if player has Bros' Orb, say "You already have it." instead;

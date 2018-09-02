@@ -372,7 +372,7 @@ Okay. The Martini Tram is the second part of the North-Tron.
 
 >N
 
-Now, you can USE STIR WRITS ON BRO ORB, or you can just save a few keystrokes (which doesn't cost you a point for avoiding the "USE" construction) ...
+Now, you can USE STIR WRITS ON BROS ORB, or you can just save a few keystrokes (which doesn't cost you a point for avoiding the "USE" construction) ...
 
 >GET ALL
 
@@ -408,7 +408,7 @@ You can use it/him on the TNT, too, to get the point.
 
 >E.S.S.E.E.E.N
 
-(+1) >USE BRO ORB ON MIRROR RIM
+(+1) >USE BROS ORB ON MIRROR RIM
 
 (+1) >USE BALSA SLAB ON SWORD ROWS
 

@@ -1381,6 +1381,7 @@ randtxt
 "I: CMD MC, I!"
 "Idea-ed, I!"
 "If I wifi..."
+"J****, EJ!"
 "Mail Lilliam..."
 "Mod?! ODOM?!"
 "More ROM!"
@@ -1616,6 +1617,7 @@ randtxt
 "Odd-*** Saddo!" [ignore]
 "Oh, BHO!"
 "OK! Cis! Sicko!"
+"On U! Y U no..."
 "One Garage? No!"
 "Ooh...shoo!"
 "Pal! Clap!"

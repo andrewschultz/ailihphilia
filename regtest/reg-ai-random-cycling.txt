@@ -66,10 +66,10 @@ Rob takes a moment to shape "pahs" again.
 #table of altbooks
 >x cart
 WRONG
+>get ti
 >purloin epoch cope
 >purloin null illun
 >purloin yob attaboy
->get ti
 
 #table of altbooks
 >x cart
@@ -80,10 +80,16 @@ WRONG
 >listen
 WRONG
 
->gonear bond nob
+>gonear drawl ward
 #table of Bond Nob bars
 >talk to bond nob
 WRONG
+
+>gonear cold loc
+#table of king nik bars
+>talk to king nik
+WRONG
+
 
 >gonear swept pews
 
@@ -124,6 +130,7 @@ Señor drones, you think you yourself, as the Yuge Guy winds up for another round
 WRONG
 
 >gonear red roses order
+#table of ms ism stuff
 >talk to ms ism
 cycle
 

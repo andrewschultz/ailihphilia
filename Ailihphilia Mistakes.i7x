@@ -42,10 +42,6 @@ chapter Art Xtra
 
 understand "art ecetra" as a mistake ("One silly misspelling does not beget another.[mis of 10]") when player is in Art Xtra.
 
-chapter Ivy Villa
-
-understand "cods doc" as a mistake ("No way. It's nice to be around someone non-fishy, actually.[mis of 11]") when player is in Uneven U.
-
 chapter Cold Loc
 
 understand "cola loc" as a mistake ("You'd be better off with a warmer drink. Which isn't here.[mis of 22]") when player is in Cold Loc.
@@ -136,7 +132,9 @@ understand "dire rid" as a mistake ("Your situation isn't that bad, but it doesn
 
 understand "dirk rid" as a mistake ("If you had a dagger in your back, which you don't, that might be useful. But you don't.[mis of 60]") when Dirt Rid is quicknear.
 
-understand "do pod" as a mistake ("But what to do to it? How to change it?[mis of 61]") when player is in Dopy Pod.
+understand "do pod" as a mistake ("[if cassettes sac is moot]You've done enough here.[else]But what to do to it? How to change it?[end if][mis of 61]") when player is in Dopy Pod.
+
+understand "pi lip" as a mistake ("No digits starting 3.14 appear on the lip, which is all for the best. Memorization doesn't seem necessary here.[mis of 300]") when pill lip is quicknear.
 
 understand "pile lip" as a mistake ("Nothing really fits on the pill lip besides the demo med.[mis of 275]") when pill lip is quicknear.
 
@@ -369,7 +367,11 @@ understand "ergo ogre" as a mistake ("You aren't going to impress it with your s
 
 chapter Le Babel
 
-understand "bron orb" as a mistake ("King James's orb is a basketball, and that's that.[mis of 137]") when Bro Orb is quicknear.
+understand "broc orb" as a mistake ("The orb sprouts no broccoli.[mis of 137]") when Bros' Orb is quicknear.
+
+understand "bron orb" as a mistake ("King James's orb is a basketball, and that's that.[mis of 137]") when Bros' Orb is quicknear.
+
+understand "brow orb" as a mistake ("The orb fails to develop facial features.[mis of 137]") when Bros' Orb is quicknear.
 
 chapter Mont Nom
 
@@ -678,6 +680,8 @@ understand "coda doc" as a mistake ("The Code Doc has a whole career of research
 
 understand "codene doc" as a mistake ("That's just wrong, and I don't mean the spelling, or labeling the Code Doc as an MD and not a PDN.[mis of 296]") when player is in Uneven U.
 
+understand "cods doc" as a mistake ("No way. It's nice to be around someone non-fishy, actually.[mis of 11]") when player is in Uneven U.
+
 chapter Worn Row
 
 to say red-clue: if redness ender is not moot, say ", but who knows, that redness ender might help you some day"
@@ -756,7 +760,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 
