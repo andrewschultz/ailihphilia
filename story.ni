@@ -1141,7 +1141,7 @@ carry out scerecsing:
 		if count is 11, break;
 		if count is 1, say "Scenery unexamined yet: ";
 		if count > 1, say ", ";
-		say "[SC][run paragraph on]";
+		say "[SC] in [location of SC][run paragraph on]";
 	say "[if count is 11] (there's more, but this is long enough.)[else if count is 0]You've examined all the scenery you could[any-open-rooms].[else].";
 	the rule succeeds;
 
@@ -1153,9 +1153,11 @@ to say any-open-rooms: say "[if any-unvisited], at least for the rooms explored 
 
 definition: a thing (called sce) is xable:
 	if sce is xed, no;
+	if location of sce is unvisited, no;
 	if location of sce is ungoable, no;
 	unless location of sce is available, no;
 	if sce is a phonebook, no;
+	if sce is Evac Ave, no;
 	if sce is scenery, yes;
 	if sce is a person, yes;
 	no;
@@ -1941,15 +1943,20 @@ liar grail	"Attacking the grail doesn't seem on, but perhaps putting something i
 
 table of use redir [xxur]
 use1	person-reject	thing-reject
-el doodle	"[noun] doesn't seem up to deciphering things."	--
-gift fig	"You don't want to share your food, here. There's not really enough of it, anyway."
+el doodle	"[second noun] doesn't seem up to deciphering things."	--
+gift fig	"[no-food-share]."
+mayo yam	"[no-food-share]."
 ME gem	"They look a bit frightened by the power of the ME gem. It must only work on, or for, really bad people or things."	--
 nat's tan	"You are greeted with a look of revulsion."	--
 party trap	"The trap can't work on a person. It's too small, and people are too smart."	"You need to use the party trap on something animate."
 pity tip	"You don't want to give it away! You [if navy van is xed]should maybe use it, yourself. Now where was Seedy Dee's?[else]have a feeling you can find Seedy Dee's, if you look hard enough.[end if]"	--
 poo coop	"Eww. Gross. Nobody deserves that."	"[if gnu dung is moot]No, you need to find the right thing to empty the poo coop into[else]The poo coop is only good for vacuuming up a certain kind of item[end if]."
+snack cans	"[no-food-share]."
+UFO tofu	"[no-food-share]."
 wash saw	"The saw isn't built for gory violence."	"The saw is best used to trim things there's an excess of, not just to cut stuff down."
 [zzur]
+
+to say no-food-share: say "There's not really enough of to share, and anyway, most people here need help or comeuppance, not food."
 
 section table of specific use rejects
 
@@ -2074,7 +2081,7 @@ section table of goodacts
 [the table of goodacts approximately follows not only the test commands but also the walkthrough]
 [getit = item you get, d1/d2 = use1/use2 disappear(?) pre/post = rule to check, or rule to execute post-happening]
 table of goodacts [xxuse] [xxgood]
-use1	use2 (thing)	getit	preproc (rule) 	postproc 	sco	d1	d2	guy-need	ms-need	tool-need	reg-plus	room-to-go	done	babble
+use1	use2	getit	preproc	postproc	sco	d1	d2	guy-need	ms-need	tool-need	reg-plus	room-to-go	done	babble
 --	--	--	rev-pack-cap rule	--	true	--	--	true	true	true	Dim Mid	Fun Enuf	false	--
 --	--	--	rev-evade-Dave rule	--	true	--	--	true	true	true	Yelpley	My Gym	false	--
 --	--	--	rev-bore-Rob rule	--	true	--	--	true	true	true	Yelpley	Worn Row	false	--
@@ -2674,7 +2681,7 @@ DIFF ID	"You don't have the skill to tinker with the DIFF-ID. You [if Red Roses 
 ivy villa	"[ivy-no]." [start uneven u 0 3]
 den ivy vined	"[ivy-no]."
 trap mart rampart	"It's too sturdy to climb or blow up and too wide to go around. But maybe that will just help you focus on where you need to go." [start Ooze Zoo 2 3]
-bad dab	"Its message seems important, but it's not good for much except examining." [start Worn Row 3 3]
+bad dab	"The bad dab's message seems important, but it's not good for much except examining." [start Worn Row 3 3]
 redness ender	"You don't want to do anything crazy with the Redness Ender. You don't want to go near it. It's dangerous looking. You can picture it ambushing someone who doesn't expect it."
 sto lots	"You don't want to tinker with the STO LOTS more than it has to. It makes carrying stuff easier, and that's good enough." [start My Gym 4 3]
 decal placed	"The decal placed decal is just there to advertise the food. It's not critical to the story." [start deli tiled 6 3]
@@ -2698,7 +2705,7 @@ Tru Hurt	"[rediv-instead of tru hurt]."
 Waster Fretsaw	"[rediv-instead of waster fretsaw]."
 [zzper]
 
-to say fonen-of of (pb - a phonebook): say "[pb] is just there to list all the people you may be helping. Like most phone books, it's not terribly exciting or useful for adventuring, but it's there, and it's harmless"
+to say fonen-of of (pb - a phonebook): say "[pb] is just there to list all the people you may be helping. Like most phone books (well, of places other than Cleveland,) it's not terribly exciting or useful for adventuring, but it's there, and it's harmless"
 
 to say ivy-no: say "If you weren't good enough for RAW LEVEL WAR, you're definitely not good enough for the Ivies. That's you the character, not you the game-player"
 
@@ -2718,6 +2725,7 @@ UFO tofu	false	"You [if cross orc is in Toll Lot]need to get rid of the cross or
 Spa Maps	false	"You [if tent net is not moot]need to do something so the Code Doc is willing[else]can now ask the Code Doc[end if] to decipher the Spa Maps the spa maps deciphered."
 past sap	false	"You [if player has wash saw]may now have[else]need to find[end if] something that can cut the past sap off the rift fir."
 liar grail	false	"You didn't have the right stuff to pour in the Liar Grail from the Puce Cup last time."
+past sap	false	"You didn't have anything to take the past sap with in Cold Loc."
 dose sod	false	"You didn't have anything to take the dose sod with in Apse Spa."
 Bond Nob	false	"You didn't have the right stuff to give the Bond Nob from the Puce Cup last time."
 gate tag	false	"You [if Ned is moot]got[else]need to find a way to get[end if] rid of Ned, so you can use Ye Key on the etage gate in peace."
@@ -2810,7 +2818,7 @@ check going south in Fun Enuf:
 	if elf-warn < 3, the rule succeeds;
 	say "[line break]Do you still wish to go through Evac Ave and turn your back on adventure?";
 	if the player yes-consents:
-		say "The Flee Elf cries 'Fool! Aloof!' as you walk south past Evac Ave through the Elim-Mile, which removes all your memories of your brief time adventuring.";
+		say "The Flee Elf cries 'Fool! Aloof!' as you walk south past Evac Ave through the Elim-Mile, which removes all your memories of your brief time adventuring. The next morning, you wake up, saying 'Dud!' repeatedly. You eventually shake it off, but you go through life feeling you missed something, somewhere, somehow.";
 		end the story saying "NOWT WON";
 
 xite-warn is a truth state that varies.
@@ -2972,7 +2980,7 @@ description of Darer Ad is "Gig, gig, gig![paragraph break]No LOL on? SEE, REFER
 
 after examining the Darer Ad:
 	if Darer Ad is not xed and Set O Notes is xed:
-		say "Well! It was worth reading the Set-O-Notes first.";
+		say "Well! That was a bit silly. It was worth reading the Set-O-Notes first.";
 	else if Set O Notes is not xed:
 		say "Well, you need something with a bit more concrete advice. [if player has Set O Notes]Like the Set-O-Notes[else]Maybe you'll find it quickly enough[end if].";
 	else:
@@ -3023,7 +3031,7 @@ after looking in Fun Enuf when player was in Dirge Grid:
 
 chapter tile lit
 
-the tile lit is scenery in Fun Enuf. "It's a rough compass, with GREBEBERG (LA RURAL) west by it, YELPLEY (TOWN, WOT) east, Evac Ave. south and Dirge Grid north. You can't seem to go [if flee elf is moot and diktat kid is not moot]south and [end if]north, though[if flee elf is moot].[paragraph break]It also mentions you can toggle SHUTTUHS to block off areas you're done with[shut-known][end if]." [ic]
+the tile lit is scenery in Fun Enuf. "It's a rough compass, with GREBEBERG (LA RURAL) west by it, YELPLEY (TOWN, WOT) east, Evac Ave. south and Dirge Grid north. You can't seem to go [if flee elf is moot and diktat kid is not moot]south and [end if]north, though[if flee elf is moot].[paragraph break]It also mentions you can toggle SHUTTUHS to block off areas you're done with, if you want guidance without spoilers[shut-known][end if]." [ic]
 
 shuttuhs-known is a truth state that varies.
 
@@ -3244,7 +3252,7 @@ the gift fig is a solid ingredient. description is "It looks edible, but it's to
 
 chapter Oh Who
 
-Oh Who is a peripheral phonebook. booktable of Oh Who is table of random palindrome firstlast names. description is "You read several [one of][or]more [stopping]names and numbers of Grebeberg residents from Oh Who:[line break][name-num of 5 and Oh Who][variable letter spacing][run paragraph on]". "Oh Who rests here, safe from the stark rats you got rid of, but not particularly useful."
+Oh Who is a peripheral phonebook. booktable of Oh Who is table of random palindrome firstlast names. description is "You read several [one of][or]more [stopping]names and numbers of Grebeberg residents from Oh Who, even though you have no phone to call them with:[line break][name-num of 5 and Oh Who][variable letter spacing][run paragraph on]". "Oh Who rests here, safe from the stark rats you got rid of, but not particularly useful."
 
 book Cold Loc
 
@@ -3262,7 +3270,9 @@ the past sap is semiperipheral scenery in Cold Loc. "[if sap-takeable is true]A 
 
 check taking past sap: say "[if liar grail is moot]You probably don't need any more past sap, now that you used it to dispose of the Liar Grail.[else]It's too sticky to carry around by itself. Maybe have a container carrying it?[end if]"
 
-instead of taking the past sap: say "It'd get sticky on your fingers. You need some way to carry it."
+instead of taking the past sap:
+	say "It'd get sticky on your fingers. You need some way to carry it."
+	get-reject past sap;
 
 instead of sawing past sap, try useoning past sap with wash saw instead;
 
@@ -3299,7 +3309,7 @@ the ebola lobe is peripheral scenery in Flu Gulf. "It doesn't look that awful, b
 
 chapter gulf lug
 
-the Gulf Lug is a person in Flu Gulf. "The Gulf Lug stands here, holding his stomach.". description is "The Gulf Lug looks slightly ill. Maybe you could help fix that!".
+the Gulf Lug is a person in Flu Gulf. "The Gulf Lug stands here, bent partially over with abdominal pain.". description is "The Gulf Lug looks slightly ill. Maybe you could help fix that!".
 
 chapter cash sac
 
@@ -3471,10 +3481,11 @@ carry out mussing:
 
 chapter Bros' Orb
 
-the Bros' Orb is a thing in Le Babel. "[one of]An orb hovers in the air. You know it must be a Bros['] Orb[or]The Bros['] Orb still hovers in the air[stopping]. You would love to take it, but you're not sure if you're worthy.". description is "Looking into the Bros['] Orb, you think, 'Do orbs brood?' There is a brief vision of star frats, lacking star brats or prats. They all do community service, and if their heart isn't in the right place, it gets done. You start to understand social, subjective knowledge you assumed only jerks know. About how to be likable to others. Of course some go overboard, but any good thing can be abused that way. You realize you are cheating yourself if you don't learn the basics, here.[paragraph break]Oh yes. There's also a huge area marked off 'Sis' just to show it's not about guys.".
+the Bros' Orb is a thing in Le Babel. "[one of]An orb hovers in the air. You know it must be a Bros['] Orb[or]The Bros['] Orb still hovers in the air[stopping]. [if player has stir writs]You look at the stir writs in your hand, and you feel confident you can just take the orb now[else]You would love to take the orb, but you're not sure if you're worthy.". description is "Looking into the Bros['] Orb, you think, 'Do orbs brood?' There is a brief vision of star frats, lacking star brats or prats. They all do community service, and if their heart isn't in the right place, it gets done. You start to understand social, subjective knowledge you assumed only jerks know. About how to be likable to others. Of course some go overboard, but any good thing can be abused that way. You realize you are cheating yourself if you don't learn the basics, here.[paragraph break]Oh yes. There's also a huge area marked off 'Sis' just to show it's not about guys.[paragraph break][if player has stir writs]You are awed but not overpowered[else]It all seems a bit too much to process up close, though[end if].".
 
 after examining the Bros' Orb when player is in Red Roses Order:
-	say "The Bros['] Orb is pulsing violently. It needs to let its energy out--but on whom? On what?"
+	say "The Bros['] Orb is pulsing violently. It needs to let its energy out--but on whom? On what?";
+	continue the action;
 
 understand "bro" and "bro orb" as Bros' Orb.
 
@@ -3551,6 +3562,8 @@ book Ooze Zoo
 Ooze Zoo is south of Seer Trees. It is in Grebeberg. "[if sleep eels are in Ooze Zoo]Sleep eels block passage south, but you can still go back north[else]With the sleep eels gone, you can go north, or south to [s-dray][end if]. [one of]A rampart (branded TrapMart, which seems wrong until you think about it for a second)[or]The TrapMart Rampart[stopping] blocks your way west and east."
 
 check going south in Ooze Zoo: if sleep eels are in Ooze Zoo, say "There are too many eels. It would be inhumane to step on one. Maybe you can give them somewhere else to sleep, or something to sleep on." instead;
+
+check going nowhere in Ooze Zoo: say "The TrapMart Rampart restricts you to traveling north or south." instead;
 
 chapter trapmart rampart
 
@@ -3817,7 +3830,7 @@ check taking guru rug: say "'Egad! Adage!' you think to yourself. You're not up 
 
 chapter stir writs
 
-The stir writs are a plural-named thing. description is "They balance emotional and intellectual considerations well, making you feel you can do things you'd put off before, both simple or complex.[paragraph break]They're probably safer for your help and give a more permanent boost than Stim-Its, too."
+The stir writs are a plural-named thing. description is "They balance emotional and intellectual considerations well, making you feel you can do things you'd put off before, both simple or complex, and maybe you don't need permission to do or deserve big things.[paragraph break]They're probably safer for your help and give a more permanent boost than Stim-Its, too."
 
 check useoning stir writs with Bros' Orb: try taking Bros' Orb instead;
 
@@ -4039,6 +4052,7 @@ check examining pyx when screenread is true:
 
 after examining pyx for the first time:
 	say "Notes for the future[if screenread is true], if you turn screen reading off[end if]: X X or MAP will examine the pyx, to save keystrokes[if player does not have pyx]. Also, you can take the pyx, if you want[end if].";
+	continue the action;
 
 to decide whether eithervisit of (rm - a room) and (di - a direction):
 	if the room di of rm is nowhere, no;
@@ -4081,19 +4095,11 @@ to say map-so-far:
 		choose row pyx-row in table of pyxloc;
 		if times-thru > 1:
 			say "  [if eithervisit of rmname entry and south]|[else] [end if]     ";
-		else if rmname entry is wayout:
-			say "?????[run paragraph on]";
-		else if rmname entry is ungoable:
-			say "XXXXX";
 		else if loc-num of rmname entry <= lastnum:
-			say "[if times-thru is 0]BADNUM[else][rmname entry][end if]";
-		else if times-thru is 0:
-			say "[if rmname entry is visited][uptxt entry][else]     [end if]";
-			say "[if eithervisit of rmname entry and east]===[else]   [end if]";
-		else if times-thru is 1:
-			say "[if rmname entry is visited][downtxt entry][else]     [end if]";
-			say "   ";
-			now lastnum is loc-num of rmname entry;
+			say "[if times-thru is 0]BAD##[else][rmname entry][end if]";
+		else:
+			say "[if rmname entry is ungoable]XXXXX[else if rmname entry is unvisited]?????[run paragraph on][else if times-thru is 0][uptxt entry][else][downtxt entry][end if]";
+			say "[if times-thru is 0 and eithervisit of rmname entry and east]===[else]   [end if]";
 		if the remainder after dividing pyx-row by 7 is 0:
 			increment times-thru;
 			say "[if pyx-row is 35 and times-thru > 1][run paragraph on][else][line break][end if]";
@@ -4123,7 +4129,7 @@ Gross Org	"GROSS"	" ORG "
 Swamp Maws	"SWAMP"	"MAWS "
 Dumb Mud	"DUMB "	" MUD "
 Seer Trees	"SEER "	"TREES"
-Fun Enuf	" [if Diktat Kid is moot]FUN[else]NU [end if] "	"[if Diktat Kid is moot] FUN[else]ENUF[end if] "
+Fun Enuf	" [if Diktat Kid is moot]FUN[else]NU [end if] "	"[if Diktat Kid is moot]ENUF[else] FUN[end if] "
 Yawn Way	"YAWN "	" WAY "
 Emo Dome	"[if Diktat Kid is moot]DOME[else] EMO[end if] "	"[if Diktat Kid is moot] MOD[else]DOME[end if] "
 Toll Lot	"TOLL "	" LOT "
@@ -4147,8 +4153,9 @@ chapter Name ME Man
 instead of taking a phonebook, say "That would weigh you down too pointlessly[if player has sto lots], even with your Sto['] Lots[end if]."
 
 does the player mean doing something with Name ME Man when player is in Yawn Way: it is likely.
+does the player mean examining the player when Name ME Man is quicknear: it is likely.
 
-Name ME Man is a peripheral phonebook in Yawn Way. description is "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers of Yelpley residents from Name ME Man:[line break][name-num of 5 and Name ME Man][variable letter spacing][run paragraph on]". "[one of]There's also something called Name ME Man, which--well, it's really just a glorified phone book. Yawn[or]Name ME Man waits for your perusal, if you have a great need to procrastinate[if Name ME Man is xed] some more[end if][stopping].". booktable of Name ME Man is table of random palindrome lastfirst names.
+Name ME Man is a peripheral phonebook in Yawn Way. description is "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers of Yelpley residents from Name ME Man, even though you have no phone to call them with:[line break][name-num of 5 and Name ME Man][variable letter spacing][run paragraph on]". "[one of]There's also something called Name ME Man, which--well, it's really just a glorified phone book. Yawn[or]Name ME Man waits for your perusal, if you have a great need to procrastinate[if Name ME Man is xed] some more[end if][stopping].". booktable of Name ME Man is table of random palindrome lastfirst names.
 
 understand "nm/mm/nmm/phone/book" and "phone book" as Name ME Man.
 
@@ -4177,7 +4184,7 @@ after examining Oh Who for the first time:
 	continue the action;
 
 after examining Name ME Man for the first time:
-	if debug-state is true, say "Seed = [initseed of Name ME Man].";
+	if debug-state is true, say "DEBUG Seed = [initseed of Name ME Man].";
 	say "(If you want, you can abbreviate Name ME Man as NM or MM or even NMM.)[paragraph break]";
 	continue the action;
 
@@ -4231,7 +4238,7 @@ My Gym is south of Yawn Way. It is in Yelpley. "[if Dave is moot]Without Dave ar
 
 chapter Dave
 
-Dave is a proper-named guhthug in My Gym. initial appearance is "[one of]A fellow walks over to you and booms 'I'm DAVE!' You freeze, and after a few seconds, he whispers, 'Dud.'[or]Dave is here, keeping an eye on you, guarding the passage west.[stopping]". description is "Dave is big and strong--quite a musc(ilic)-sum, but maybe too beefy to be fully mobile. Maybe you can take advantage of that."
+Dave is a proper-named guhthug in My Gym. initial appearance is "[one of]A fellow walks over to you and booms 'DAVE!' You freeze, and after a few seconds, he continues 'HUGE! GUH!'[or]Dave is here, keeping an eye on you, guarding the passage west.[stopping]". description is "Dave is big and strong--quite a musc(ilic)-sum, but maybe too beefy to be fully mobile. Maybe you can take advantage of that."
 
 instead of doing something with Dave:
 	if action is pro-and-use, continue the action;
@@ -4280,9 +4287,9 @@ does the player mean evadeing Dave: it is very likely.
 carry out evadeing:
 	if noun is Dave:
 		if Dave is moot, say "You don't need to evade Dave again.";
-		say "You evade Dave! Deked! Deked![paragraph break]Dave, frustrated from spinning around trying to catch you, trudges off, exhausted.[paragraph break]Whew! That was less violent than you worried. You'd hate to have to TRUCK CURT or MASH SAM or SIT ON OTIS or even DISS SID.";
+		say "You evade Dave! Deked! Deked![paragraph break]After spinning fruitlessly around for a while, Dave trudges off, exhausted, emitting a huge 'GUH!'[paragraph break]Whew! Consulting the Set O Notes[if Set O Notes is xed] again[end if], you notice there may be at least one more guh thug, but nothing too violent. That's good. You'd hate to have to TRUCK CURT or MASH SAM or SIT ON OTIS or even DISS SID.";
 		wfak;
-		say "Suspicious there are no actual weight machines, you find a passage to a hidden spate of Sperses-Reps machines with the motto 'Scepsis?! Pecs!' They help you bulk up a bit, so item weight will not be a factor. But you don't want to waste too much time bulking up. You go back out and have a look at the Stole-Lots. You consider making it a STORE-lots, but then the 'rots' is not so good, so then you also check if the E and an L rub out quickly. They do, making it a Sto(['])-Lots. Bam! Logistical and moral problems: SOLVED![paragraph break]Also, you notice a wash saw in the Stole/Sto-Lots. It seems worth taking along.";
+		say "Suspicious there are no actual weight machines, you find a passage to a hidden spate of Sperses-Reps machines with the motto 'Scepsis?! Pecs!' They help you bulk up a bit, so item weight will not be a factor. But you don't want to waste too much time bulking up. You go back out and have a look at the Stole-Lots. You consider making it a STORE-lots, but then the 'rots' is not so good, so then you also check if the E and an L rub out quickly. They do, making it a Sto(['])-Lots. Bam! Logistical and moral problems: SOLVED![paragraph break]Also, you notice a wash saw in the Stole/Sto-Lots. It seems worth taking along, so you do.";
 		moot Dave;
 		now player has sto lots;
 		moot stole lots;
@@ -4377,7 +4384,7 @@ does the player mean boreing Rob: it is very likely.
 carry out boreing:
 	if noun is not a person, say "You should try to bore people, not things." instead;
 	if noun is not Rob, say "Wrong thing or person to bore." instead;
-	say "You bore Rob successfully. He begins pacing around, even grinding out the 'N' in the bad dab, leaving it as WOR- ROW, before wandering off mumbling how he is too hard core even for Dre Nerd and Nerd Ren. Perhaps to Ybor. His last words: 'SUDO X-ODUS!' He will certainly be submitting your dismal social performance to Mock.com, though! Or Mock-OK.com.";
+	say "Rob grabs his head and shakes it until he is unable to repress a huge 'GUH!' similar to Dave. He paces around, grinding out the 'N' in the bad dab, leaving it as WOR- ROW, before wandering off mumbling how he is too hard core even for Dre Nerd and Nerd Ren. Perhaps to Ybor. His last words: 'SUDO X-ODUS!' He will certainly be submitting your dismal social performance to Mock.com, though! Or Mock-OK.com.";
 	boot-Rob;
 	score-inc; [Yelpley/bore rob]
 	consider the cap-beep rules for Rob;
@@ -4391,6 +4398,8 @@ to boot-Rob:
 chapter workables
 
 a workable is a kind of thing. a workable has a number called useleft. useleft of a workable is usually 3.
+
+instead of entering a workable: say "[if noun is workedout]It's not dangerous now it's broken, but it's not useful, either[else]You can't fit in the [noun], but things you carry can[end if]."
 
 understand "machine" as a workable.
 
@@ -5297,7 +5306,9 @@ after looking in Evaded Ave:
 
 the Door Frood is a neuter person in Evaded Ave. "[one of]Someone waving their fists and shouting at who-knows-what pauses as you walk by. 'I'm the Door Frood. Not, like, a physical door, but a doorperson.' They say you MIGHT deserve to visit west or east, but -- a clever gift would be appreciated[or]The Door Frood continues to pace back and forth here, making sure you don't sneak off any way but back south[stopping].". description is "Probably not angry enough to actually do anything besides block others from doing what they want."
 
-after examining the Door Frood for the first time: say "Seeing the Doorou think to yourself: 'Hoopy? Pooh!'";
+after examining the Door Frood for the first time:
+	say "Seeing the Door Frood, you think to yourself: 'Hoopy? Pooh!'";
+	continue the action;
 
 check going in Evaded Ave:
 	if Door Frood is in Evaded Ave:
@@ -5328,8 +5339,10 @@ tube-try is a truth state that varies.
 to say tbut: say "[if tube-try is false]you can't see where it goes[else]you already tried to follow the Door Frood, and nothing good happened[end if]"
 
 check going north in Evaded Ave:
-	if tube but is in Evaded Ave, say "[if tube-try is true]The rood-y door behind the tube seemed extra fortified. Plus[else]You try to follow the Door Frood and enter the tube, but ... you hit your head on a rood-y door (which you maybe should've expected) in the passage as the tube turns. You hear the Door Frood say 'TUBE REBUT' and laughing. At you or [b]TO IDIOT[r], you don't know. Eh, well[end if], you really don't want to see the Door Frood again.";
-	now tube-try is true instead;
+	if tube but is in Evaded Ave:
+		say "[if tube-try is true]The rood-y door behind the tube seemed extra fortified. Plus[else]You try to follow the Door Frood and enter the tube, but ... you hit your head on a rood-y door (which you maybe should've expected) in the passage as the tube turns. You hear the Door Frood say 'TUBE REBUT' and laughing. At you or [b]TO IDIOT[r], you don't know. Eh, well[end if], you really don't want to see the Door Frood again.";
+		now tube-try is true instead;
+	say "The Door Frood chuckles a bit. Why would you run into a wall?" instead;
 
 book Trapeze Part
 
@@ -5780,7 +5793,7 @@ talk-text of Revolt Lover is "'Did you find any Stray Arts? I can always use the
 talk-text of Bond Nob is "'I ain't much for talking now I'm sick... no way I can visit [next-rand-txt of table of Bond Nob bars] or [next-rand-txt of table of Bond Nob bars] or any other cool bar with my pals...'".
 talk-text of Ned is "Ned's not in the mood for regular talk. He seems to want an argument or fight, but you don't.".
 talk-text of Psi Wisp is "It has nothing to say. It just pulses.".
-talk-text of Door Frood is "The Door Frood launches into how everyone is really stupid and at fault, and you can't really do anything except snark about it.".
+talk-text of Door Frood is "The Door Frood launches into how mostly everyone is really stupid and at fault, and those who aren't can't really do anything except snark about it. And sad thing is, the Door Frood is out of new creative snark! For the moment.".
 talk-text of Rob is "Rob yawns. He doesn't find you very interesting. Maybe there's a way to take advantage of that.".
 talk-text of sleep eels is "Maybe they are sending some sort of electric message you could detect with the right instrument, but they're not talking. You're more struck, though, by how uncomfortable they look while sleeping--wriggling about.".
 talk-text of Sniffins is "[if YOB ATTABOY is not moot]'Tony? Not! Poor lower class me is a failure! If only I had some success manual!'[else]'Oh. It's you again. If you were REALLY smart, you'd have taken the advice in that book you gave me.'[end if]".

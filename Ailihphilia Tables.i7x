@@ -44,7 +44,7 @@ table of random palindrome lastfirst names	0	0	false	"Last/first names in OH WHO
 table of rejected kid sidekicks	0	0	false	"the Diktat Kid's rejected kid sidekicks"	--
 table of Rob droning	0	0	false	"things Rob babbles about"	"Rob takes a moment to shape 'pahs' again."
 table of singstuff	0	0	true	"responses to SINGing"	"Won't be joining OctetCo with that voice."
-table of snooty toon ads	0	0	true	"snooty toons ads"	--
+table of snooty toon ads	0	0	true	"snooty toons ads"	"At the end is La Usual, because of course."
 table of swearstuff	0	0	true	"responses to SWEARing"	--
 table of undoings	0	0	true	"UNDOing notifications"	--
 table of university targets	0	0	true	"Dr. D/Code Doc's prospective colleagues"	--
@@ -933,11 +933,13 @@ randtxt
 
 table of babel babble
 randtxt
+"App A"
 "the day dyad"
 "Dresser D"
 "E Garage"
 "Gnomon G"
 "the gomorro-mog"
+"H tooth"
 "Hoodoo H" [ignore]
 "Lotto L"
 "Mojo M"
@@ -1054,6 +1056,7 @@ randtxt
 "[']Allo, Dolla[']"
 "Bebe B"
 "Belle B"
+"Darin['], I, RAD"
 "Diana, I'd"
 "Diva David"
 "Do Mo['] Mod"
@@ -1074,6 +1077,7 @@ randtxt
 "Koko K"
 "Krew Twerk"
 "LA's Reversal"
+"Lana L"
 "Le BE Rebel"
 "LFO ROFL"
 "Lulu L"
@@ -1251,6 +1255,8 @@ randtxt
 "Flag Alf"
 "Flak Alf"
 "Flan Alf"
+"Flat Alf"
+"Flax Alf"
 "G-Nixing"
 "Gaga G"
 "Gazza G"
@@ -1371,6 +1377,9 @@ randtxt
 "EOF, Foe!"
 "Erase Cesare!"
 "Field Leif!"
+"Flag Alf!"
+"Flay Alf!"
+"H/t Emeth!"
 "Habit, I? Bah!"
 "Hank? Nah."
 "Hans? Nah."
@@ -1395,6 +1404,7 @@ randtxt
 "Posy sysop!"
 "Prove VORP!"
 "Resume [']m, user!"
+"Segard? Rages!"
 "SETI sites!"
 "Signing is..."
 "Spidered IPs?!"
@@ -1466,6 +1476,7 @@ randtxt
 "Delete-Led!"
 "Did. [']Nuff? Undid."
 "Did. Error? Redid."
+"Dur. Crud."
 "Eff a gaffe."
 "It: Revert, I!"
 "Nixin[']..."
@@ -1623,6 +1634,7 @@ randtxt
 "Pal! Clap!"
 "Pal, rub burlap!"
 "A papa! A papa!"
+"Perform'r of REP!"
 "Rail, Liar!"
 "Re-sold LOSER!"
 "ROB ALL LABOR!"
