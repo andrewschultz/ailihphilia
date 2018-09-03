@@ -1534,6 +1534,7 @@ instead of attacking:
 	if noun is a workable, say "Bash?! Sab!" instead;
 	if noun is ergot ogre, say "The ogre could beat you up, but even if it couldn't, it'd do a pox-op or worse on you." instead;
 	if noun is player, say "PvP!" instead;
+	if noun is senile felines, say "You don't want to hear them go RWOWR." instead;
 	if noun is ME Totem, say "The Yuge Guy, momentarily scared, calls 'Heh! Eh?' once he sees you're too weak to do any REAL damage." instead;
 	next-rand table of attackings;
 
@@ -2443,7 +2444,7 @@ this is the Sniffins-successful rule:
 this is the sod-in-cup rule:
 	if puce cup is soddy, the rule succeeds;
 	get-reject Bond Nob;
-	say "[if puce cup is sappy]The Bond Nob makes a face at the sap in the cup. Maybe something less unpalatable would help her[else]The puce cup is empty. It wouldn't help the Bond Nob[end if].";
+	say "[if puce cup is sappy]The Bond Nob makes a face at the sap in the cup. Maybe something less unpalatable would help, here[else]The puce cup is empty. It wouldn't help the Bond Nob[end if].";
 	the rule fails;
 
 [zzpre]
@@ -3416,7 +3417,7 @@ the ME Totem is scenery in Sneer Greens. description is "It's a more favorable v
 
 chapter smirk rims
 
-the smirk rims are peripheral scenery in Sneer Greens. description is "They look at you as if to say, '[if Diktat Kid is moot]Why haven't you gotten on with your life, now you beat the Diktat Kid[else][cant-beat][end if]?'"
+the smirk rims are peripheral scenery in Sneer Greens. description is "They look at you as if to say, '[if Diktat Kid is moot]Why haven't you gotten on with your life, now you beat the Diktat Kid[else][cant-beat][end if]?'[paragraph break]You're a bit worried there may be smack-cams behind them, too, waiting for you to do something stupid."
 
 to say cant-beat: say "What makes you think you can beat the [if Yuge Guy is in Sneer Greens]Yuge Guy[else]Diktat Kid[end if]"
 
@@ -5498,7 +5499,7 @@ instead of doing something with TNT when bomb mob has TNT:
 
 chapter TNT
 
-the TNT is a tronpart. description is "Well, it's not going to blow up in your hands.". the bomb mob carries the TNT.
+the TNT is a tronpart. description is "From what you remember, TNT's molecular structure isn't symmetrical, but you don't suspect anyone's going to call you on this. Anyway, it's stacked together in one of those spiffy hexagons of cylinders with a stick in the middle, so it has to be legit!". the bomb mob carries the TNT.
 
 check taking TNT when bomb mob is quicknear: say "The bomb mob would say a bit more than 'Yank? Nay!' You'd be seen too easily." instead;
 
