@@ -28,7 +28,7 @@ tabnam	tabidx	thru-yet	lbrk	desc	cycle-note
 table of altbooks	0	0	false	"extra books in the Tract Cart"	"You've read all the books on the tract cart. Hooray for curiosity!"
 table of attackings	0	0	true	"responses to ATTACK"	--
 table of babel babble	0	0	false	"babbles if you LISTEN in Le Babel"	--
-table of Bond Nob bars	0	0	false	"bars the Bond Nob visits"	-- [?? may cause a problem cycling talking to nob]
+table of Bond Nob bars	0	0	false	"bars the Bond Nob visits"	--
 table of burnies	0	0	true	"responses to BURN"	--
 table of businesses	0	0	true	"businesses in Day-Away Ad"	"Oh goody. You were worried an NRA barn might appear, but it didn't."
 table of diktat taunts	0	0	false	"Diktat Kid taunts"	--
@@ -1445,10 +1445,8 @@ randtxt
 "Salad (alas)"
 "Sup Opus"
 
-[?? tafl.py sort so parentheses as well as a/an/the don't affect alphabetization]
 table of swearstuff
 randtxt
-"(R)rude! Dur(r)!"
 "Bad? A dab!"
 "Dammit, I'm mad!"
 "Dark. Rad!"
@@ -1465,6 +1463,7 @@ randtxt
 "Red? No wonder!"
 "Redder... redder..."
 "Rep me, temper!"
+"(R)rude! Dur(r)!"
 "Speel? Bleeps."
 "Tact, cat!"
 "Tic? Illicit."
@@ -1611,6 +1610,7 @@ randtxt
 "EVAR crave!"
 "Ey, dye?!"
 "Gibe! Big!"
+"Haiti? Ah!"
 "Hog, oh!"
 "Huge! Guh!"
 "I B FBI!"

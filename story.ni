@@ -446,7 +446,7 @@ does the player mean dropping the trap art: it is likely;
 does the player mean dropping the party trap: it is likely;
 
 check dropping:
-	say "This game is not Pro-Drop. There is no met-ill item. In other words, you don't need to drop anything[if party trap is not moot], though it could be an alternative solution[end if]. Most items will disappear from your inventory once they're no longer useful." instead;
+	say "An unseen voice whispers 'Keep! Eek!' There is no met-ill item in this game. In other words, you don't need to drop anything[if party trap is not moot], though dropping is an alternative solution in one puzzle[end if]. Most items will disappear from your inventory once they're no longer useful." instead;
 
 to decide which region is mrlp:
 	decide on map region of location of player;
@@ -1909,8 +1909,11 @@ check useoning it with:
 The machine message rules are an object-based rulebook.
 
 definition: a thing (called t) is exhausted:
-	if t is reified and t is rotated and t is revived, yes;
-	no;
+	unless test set is off-stage, no;
+	unless t is reified or reifier is workedout, no;
+	unless t is rotated or rotator is workedout, no;
+	unless t is revived or reviver is workedout, no;
+	yes;
 
 a machine message rule for a thing (called t):
 	if t is an ingredient, say "The only machine you should put food in is a microwave. Or, maybe, a BAKE-KAB. Or a heata['], eh?" instead;
@@ -3926,8 +3929,10 @@ The Exam Axe is a thing. description is "Just looking at the exam axe, you feel 
 
 chapter Tru Yurt
 
-The Tru Yurt is scenery in Yack Cay. "[if moor broom is moot]It's much cleaner now you took the moor broom to it[else]It looks really messy. The Known Wonk said it needed a good cleaning[end if]."
+The Tru Yurt is scenery in Yack Cay. "[if moor broom is moot]It's much cleaner now you took the moor broom to it[else][peek-eep]. You didn't see much, but it looks really messy, and stuff like cleaning can't be the Known Wonk's forte[end if]."
 
+to say peek-eep:
+	say "'Peek? Eep!' [if mist sim is moot]you hear from the Tru Yurt[else]the Known Wonk exclaims[end if]
 check taking tru yurt: say "It's the Known Wonk's." instead;
 
 check entering yurt: say "No, that's where the Known Wonk lives. [if exam axe is off-stage]Maybe you could clean it up, by using the right item[else]You already helped clean it up, and that's enough[end if]." instead;
@@ -6325,6 +6330,8 @@ carry out deepspeeding:
 
 section smitimsing - not for release
 
+[ * this wins the Dirge Grid if you have cleared the KAOS Oak ]
+
 smitimsing is an action out of world.
 
 understand the command "smitims" as something new.
@@ -6350,6 +6357,8 @@ carry out smitimsing:
 
 section sdsing - not for release
 
+[ * say-despite-speeding flag toggle for full verbosity with DEEP SPEED ]
+
 sdsing is an action out of world.
 
 understand the command "sds" as something new.
@@ -6363,7 +6372,7 @@ carry out sdsing:
 
 section wrw - not for release
 
-[wrw is short for WARP RAW]
+[ * wrw is short for WARP RAW. It is superseded by TIP IT for the most part. ]
 
 understand the command "wrw" as something new.
 
@@ -6686,9 +6695,13 @@ DropOrd is a privately-named room in Odd Do. "Bug." [for items dropped during th
 
 section debug helps - not for release
 
-understand "zr/zero/DevReserved/ll/lll/DevReserved" as DevReserved. [DevReserved is my default for other games. So why not.]
+[ * this is just reassigning convenient abbreviated names to the meta-rooms ]
 
-understand "tm/TempMet" as TempMet.
+understand "zr/zero/devreserved/ll/lll/dev" as DevReserved. [DevReserved is my default for other games. So why not.]
+
+understand "tm/tempmet/temp/met" and "temp met" as TempMet.
+
+understand "dod/ord" and "drop ord" as Drop Ord.
 
 volume bonus points and odd verbs
 
@@ -6859,6 +6872,8 @@ hint-rule of Yawn Way is yawn-way-hint rule.
 hint-rule of Yell Alley is yell-alley-hint rule.
 
 section hint-rule-check - not for release
+
+[ * this is something that checks to make sure all rooms have a nontrivial hint rule. Perhaps it should be schlepped to Finished Code. ]
 
 when play begins:
 	repeat with Q running through rooms:
@@ -7795,7 +7810,7 @@ when play begins:
 
 section llplling - not for release
 
-[LLP laundry list]
+[ * LLP laundry list]
 
 llplling is an action out of world.
 
@@ -8197,6 +8212,8 @@ carry out scvering:
 
 chapter tccing
 
+[ * this is turn count checking for end of game, but ensuring you have a non-palindrome ]
+
 tcccing is an action out of world.
 
 understand the command "tccc" as something new.
@@ -8208,6 +8225,8 @@ carry out tcccing:
 	increment the turn count;
 
 chapter tccing
+
+[ * this is turn count checking for end of game, but ensuring you have a palindrome ]
 
 tccing is an action out of world.
 
