@@ -134,7 +134,7 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 450. [-40 from max_verbs debug]
+use MAX_VERBS of 460. [-40 from max_verbs debug]
 
 use MAX_ACTIONS of 200.
 
@@ -142,7 +142,7 @@ use MAX_VERBSPACE of 4600. [-400 from max_verbspace debug]
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 500. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 510. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 use MAX_ACTIONS of 210. [+10?]
 
@@ -629,6 +629,10 @@ when play begins:
 	say "The Flee Elf points to a cap. 'This here isn't any cap. It's a PACT cap. And you can't quite TAKE it. You have to do something else.'[wfak-d]";
 	say "[paragraph break](NOTE: if you want to know more about Ailihphilia and the commands used, type ABOUT.)[paragraph break]";
 	do nothing; [debug information below here. I've had problems putting it in and not deleting it, so I want to make things clear.]
+
+section when play begins - not for release
+
+[diagnostic stuff I don't want to reveal to the player]
 
 volume parser errors operations and death
 
@@ -5882,7 +5886,7 @@ carry out gotoing:
 			the rule succeeds;
 		move the player to noun;
 		the rule succeeds;
-	unless goto-available, say "You're at a point in the game where goto isn't available." instead;
+	unless goto-available, say "You're at a (critical) point in the game where goto isn't available." instead;
 	if Diktat Kid is moot:
 		if noun is Deft Fed, say "You can't crash the party. You weren't invited. It's REALLY exclusive." instead;
 		if noun is westpost, say "The Smarty Trams project is underway there, now you've dealt with the Diktat Kid." instead;
@@ -5913,6 +5917,26 @@ Yack Cay is westpost. Swamp Maws is westpost. Lac Oft Focal is westpost. Trial L
 
 Red Roses Order is eastpost. Swept Pews is eastpost. Drawl Ward is eastpost. Dopy Pod is eastpost. Scrap Arcs is eastpost. Deft Fed is eastpost.
 Gross Org is eastcond. Pro Corp is eastcond.
+
+section gotothinging
+
+gotothinging is an action applying to one visible thing.
+
+does the player mean gotothinging a moot thing: it is very unlikely.
+does the player mean gotothinging an off-stage thing: it is very unlikely.
+does the player mean gotothinging a thing carried by the player: it is unlikely.
+does the player mean gotothinging Tru Hurt when player has X-Ite Tix: it is unlikely.
+
+understand "go to [any thing]" as gotothinging.
+understand "goto [any thing]" as gotothinging.
+understand "gt [any thing]" as gotothinging.
+understand "go [any thing]" as gotothinging.
+
+carry out gotothinging:
+	let Q be location of noun;
+	if Q is in Odd Do, say "Unfortunately, [the noun] is [if Q is devreserved]out of this game[else]in an in-between state[end if] right now." instead;
+	if noun is off-stage, say "Unfortunately, you accessed something that wasn't introduced to the game world yet." instead;
+	try gotoing Q instead;
 
 section available rules
 
