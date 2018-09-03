@@ -8,6 +8,7 @@ Utils, alphabetically:
 * 3w.py = 3 word combo checker. Takes a while. Can skip uneven first/last palindromes e.g. stab bat.
 * aam.py = adjust all mistakes. This syncs the mistakes file so new "mistake" verbs contribute toward a hint.
 * bnam.py = best names.py. Takes 2 arguments: min length and if you need unique lettering
+* curpal.py etects what current palindromes we have
 * dnm.py = searches the table file for names that are reused in the source. Not palindrome specific, as it is used for (possible 2nd IFComp game name redacted) too.
 * dno.py = searches the notes file for names and concepts that are reused in the source. Split by slashes, or anything right of a colon is deleted. Potentially not palindrome specific: we could use ! to start a line to say it's something we want to look at, since (redacted theme of possible 2nd IFComp game) aren't as obvious.
 * fu.py = find-use, where we find if/when an item can be manipulated with the USE command.
