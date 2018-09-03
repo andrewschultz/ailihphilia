@@ -3365,7 +3365,7 @@ the Gulf Lug is a person in Flu Gulf. "The Gulf Lug stands here, bent partially 
 
 chapter cash sac
 
-the cash sac is a thing. description is "It's labeled Mt. ATM and full of currency--currency which you don't know whether you can spend anywhere."
+the cash sac is a thing. description is "It's labeled Mt. ATM and full of currency--currency which you don't know whether you can spend anywhere. Perhaps it was once Cassini's, but there's no way to tell."
 
 chapter scorn rocs
 
@@ -4358,13 +4358,15 @@ carry out evadeing:
 
 book Worn Row
 
-Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky][what-machines][else if Worn Row is wordy]A tract cart is here, [tract-status][else]It's pretty empty here, but maybe you could make it a bit more active and cheery[end if]. The only way out is back east[dab-notes]."
+Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky][what-machines][else if Worn Row is wordy]A tract cart is here, [tract-status][else]It's pretty empty here[ender-note], but maybe you could make it a bit more active and cheery[end if].[paragraph break][dab-notes]The only way out is back east."
 
-to say what-machines: say "[if test set is off-stage]Three machines are here[else if test set is moot]Since you destroyed the test set, it's pretty empty here[else]It's more specious here with the re*er machines destroyed[end if]"
+to say ender-note: if redness ender is in Worn Row, say ", not counting a big lumpy Redness Ender that makes Worn Row feel even more worn"
+
+to say what-machines: say "[if test set is off-stage]A cold and sterile, but safe, place[else if test set is moot]Since you destroyed the test set, it's pretty empty here[else]It's more specious here with the re*er machines destroyed[end if]"
 
 to say dab-notes:
 	if row-prog >= 2, continue the action;
-	say ". A bad dab is splashed on the floor, too, and it looks [if row-prog is 1]a bit smudged now you changed Worn Row a bit[end if]readable"
+	say "[if row-prog is 1]The bad dab splashed on the floor looks smudged now you changed Worn Row[else]A bad dab is splashed on the floor, too, and it looks readable[end if]. "
 
 printed name of Worn Row is "[if Worn Row is wordy]Word[else if Worn Row is worky]Work[else]Worn[end if] Row"
 
@@ -4383,7 +4385,7 @@ to decide whether in-word:
 
 chapter redness ender
 
-the redness ender is a semiperipheral thing in Worn Row. "A redness ender sits here, looming large and lethal. Maybe it's part of why Worn Row is so worn--nobody wants to stick around enough to clean things up, or build anything. But maybe there is a simple way to get rid of it.". description is "It also seems to double as a redness SENDER, as when you get close to look at it, an ominous red dot appears on you. You back off.".
+the redness ender is semiperipheral scenery in Worn Row. description is "It also seems to double as a redness SENDER, as when you get close to look at it, an ominous red dot appears on you. You back off.".
 
 chapter tract cart
 
@@ -4410,7 +4412,7 @@ every turn when player is in Worn Row and Rob is in Worn Row:
 
 chapter bad dab
 
-the bad dab is peripheral scenery in Worn Row. description is "[if Rob is in Worn Row]WORN ROW is written, somewhat dubiously[else if row-prog > 0]WOR- ROW is still here, faded now since you opened [Worn Row][else]WOR- ROW is here. Maybe there's more here than just Worn Row[end if]."
+the bad dab is peripheral scenery in Worn Row. description is "[if Rob is in Worn Row]WORN ROW is written, somewhat dubiously[else if row-prog > 0]WOR- ROW is still here, faded a bit since you opened [Worn Row]. Maybe there's still something more Worn Row could be[else]The bad dab spells out WOR- ROW. Maybe there's more here than just Worn Row[end if]."
 
 after examining bad dab:
 	consider the cap-beep rules for the bad dab;
@@ -4477,12 +4479,11 @@ rule for supplying a missing second noun when useoning:
 		reject the player's command;
 	continue the action;
 
-rule for printing a locale paragraph about a workable:
-	say "The reifier, reviver and rotator sit here[if number of workedout workables > 0][workables-broken][end if].";
-	now all workables are mentioned;
-
-to say workables-broken:
-	say "[if number of workedout workables is 1]. The [random workedout workable] is broken[else]. Only the [random not workedout workable] is still usable[end if]";
+rule for printing a locale paragraph about a workable (called th):
+	if th is not mentioned, say "The reifier, reviver and rotator sit here. [if number of workedout workables is 1]The [random workedout workable] is broken, though[else if number of workedout workables is 2]However, only the [random not workedout workable] is still usable[else]They all seem in pretty good shape[end if].";
+	now reifier is mentioned;
+	now reviver is mentioned;
+	now rotator is mentioned;
 
 to wear-down (w - a workable):
 	decrement useleft of w;
@@ -4884,7 +4885,8 @@ understand "wornrow" as wornrowing when player is in Worn Row.
 understand "worn row" as wornrowing when player is in Worn Row.
 
 carry out wornrowing:
-	if psi wisp is moot, say "You already used the redness ender to get rid of the Psi Wisp. You don't want to risk things." instead;
+	if psi wisp is moot, say "Now that the redness ender and Psi Wisp destroyed each other, Worn Row really holds nothing else for you." instead;
+	unless ever-wordrow is true or ever-workrow is true, say "It is Worn Row. But maybe it can become something else." instead;
 	if psi wisp is not in Worn Row, say "You don't want to face the redness ender alone." instead;
 	clear-worn-row;
 	say "Worn Row rematerializes, along with the redness ender. Zap! Zot! It locks on the Psi Wisp, which explodes in a shower of rage. But somehow, the Psi Wisp connects enough to zap the redness ender back. Whew. You retreat to Gross Org to recover the items you dropped.";
