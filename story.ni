@@ -98,8 +98,7 @@ after examining a not ordinary thing:
 the cap-beep rules are an object-based rulebook.
 
 a cap-beep rule for a thing (called x):
-	if revving-over is false:
-		if cap-vol is true, say "You hear a [if x is llpish]soft [end if]BOO-WEE-WOOB from the Pact Cap after dealing with [the X][one of]. Well, that jibes with what the Flee Elf said about how it makes weird noises when special actions are needed[or][stopping].[paragraph break]";
+	if revving-over is false and cap-vol is true, say "You hear a [if x is llpish]bizarre WOO-WAA-WOOW[else]BOO-WEE-WOOB[end if] from the Pact Cap after dealing with [the X][one of]. Well, that jibes with what the Flee Elf said about how it makes weird noises when special actions are needed[or][stopping].[paragraph break]";
 	the rule succeeds;
 
 section machine actions
@@ -142,7 +141,7 @@ use MAX_VERBSPACE of 4600. [-400 from max_verbspace debug]
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 510. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 520. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 use MAX_ACTIONS of 210. [+10?]
 
@@ -687,7 +686,7 @@ a dir-error rule for a room (called myr):
 		let Y be word number J in X;
 		if the player's command matches the text "[Y]", case insensitively:
 			say "It looks like you tried to do something with [if myr is location of player]this[else]an adjacent[end if] location. [row-clue], [if balm-LLP-yet is true]and you got the sneaky obscure bonus point for doing so elsewhere[else]and while there's another place that gets an obscure bonus point, location names are generally just to describe unnecessary scenery[end if].";
-			if gone-to is false, say "[line break]However, GO TO/GT (room) may be a nice shortcut to visit a previous location.";
+			if gone-to is false, say "[line break]However, GO TO/GT (room or thing) may be a nice shortcut to visit a previous location.";
 			the rule succeeds;
 	continue the action;
 
@@ -700,9 +699,7 @@ to say row-clue:
 		say "You've half twiddled [Worn Row]";
 
 Rule for printing a parser error when the latest parser error is can only do that to something animate error:
-	if debug-state is true:
-		say "[noun] [second noun].";
-		if noun is ti or second noun is ti, say "OK, got one!";
+	if debug-state is true, say "DEBUG: [noun] [second noun][if noun is ti or second noun is ti]--OK, got one[end if].";
 	continue the action;
 
 chapter unrecognized verb
@@ -1273,7 +1270,7 @@ to decide whether chase-aware:
 carry out verbing:
 	say "[2da]The four basic directions ([b]N, S, E, W[r]) are the main ones, along with [b]USE[r], in order to get through the game. Also, in some places, specific verbs will be needed. None are terribly long, and---well, there is a thematic pattern to them.";
 	say "[line break][2da]Standard verbs like [b]X[r] ([b]EXAMINE[r]) and [b]LOOK[r] also work.";
-	say "[2da][b]GT[r] or [b]GO TO[r] lets you go to a room where you've been before.";
+	say "[2da][b]GT[r] or [b]GO TO[r] lets you go to a room, thing or person you've seen before. It fails if the person has been removed from the game.";
 	say "[2da][b]T[r] or [b]TALK TO[r] or [b]GR[r] or [b]GREET[r] talks to someone. There's not much in the way of conversation in this game, but you may get some clues from basic chat.";
 	say "[2da][b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
 	say "[2da][b]THINK[r] gives general non-spoiler hints, including where you may wish to visit, what you haven't examined, or what is blocking you. [b]AID[r] gives you spoiler hints for where you are, though it may indicate you need to visit other places first.";
@@ -1747,7 +1744,7 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 		say "You're not in the right place to mix food together.";
 		continue the action;
 	if Ian is in Mont Nom:
-		say "Not with Ian around.";
+		say "Hey! That's an idea. But not with Ian around.";
 		continue the action;
 	if i1 is liquid and i2 is liquid:
 		say "Those are both too liquid to go together.";
@@ -1804,7 +1801,7 @@ check useoning it with:
 		if noun is epicer recipe and second noun is a tronpart:
 			if number of off-stage tronparts is 1, say "You can't do too much with just [the second noun]." instead;
 		else:
-			say "All the help literature you find is for review only." instead;
+			say "[if second noun is code doc]The basic instructional materials you find don't need the Code Doc to decipher them[else]All the help literature you find is for review only[end if]." instead;
 	if second noun is the player:
 		if noun is soot tattoos, say "That'll work, when you find a way to make a pattern of the soot tattoos. They're too plain, now." instead;
 		say "You never need to use anything explicitly on yourself." instead;
@@ -3459,7 +3456,7 @@ check going south in Dumb Mud:
 	if Mont Nom is unvisited, say "With the turf rut filled in, the way across remains stable, and it even smells okay! Bonus! You climb up to...";
 
 check going north in Dumb Mud:
-	if lie veil is in Dumb Mud, say "As you're about to touch the lie veil, you shake your head. No. You don't really want or need to explore north. Surely there's some better place to be? Perhaps you're not 100% prepared for the lie veil's thought provoking paradoxes, and it's doing you a favor pushing you back? Plus what if it hides a hidden booby trap? You try to walk further north, but somehow you wind up walking back south." instead;
+	if lie veil is in Dumb Mud, say "As you're about to touch the lie veil, you shake your head. No. You don't really want or need to explore north. Surely there's some better place to be? Perhaps you're not 100% prepared for the lie veil's thought provoking paradoxes, and it's doing you a favor pushing you back? Plus what if it hides a hidden booby trap? You try to walk further north, but somehow you wind up walking back south.[paragraph break]YouOnce you're away from the Lie Veil, you forget its weird arguments. There's got to be a way to cut through its sophistry." instead;
 	if being-chased is true:
 		say "It's just too weird ahead to the north. You freeze up and are unable to avoid the kayo yak further.";
 		reset-chase instead;
@@ -3568,7 +3565,7 @@ Mont Nom is south of Dumb Mud. It is in Grebeberg. "An ark of okra blocks passag
 
 Mont Nom is above Dumb Mud.
 
-after going to Mont Nom:
+after looking in Mont Nom:
 	if number of carried ingredients is 1:
 		say "Your [random carried ingredient] smells a bit nicer, here.";
 	else if number of carried ingredients > 1:
@@ -3606,7 +3603,7 @@ understand "nail [something]" as nailing when player is in Mont Nom and Ian is i
 carry out nailing:
 	if Ian is moot, say "There's nobody named Elian to nail later in the game, so this isn't an action you need to take any more." instead;
 	if noun is not Ian, say "You'll know what or whom to nail, and [if noun is a person]noun[else]that[end if]'s not it." instead;
-	say "You wait and hide. After a while, you catch Ian picking his nose absent-mindedly. You call him on it! In the presence of food, no less! Ian mumbles he was doing it ironically, but you point out he was still doing it. Ian hurries away in shame across the Turf Rut. He takes one look at the, um, bridge and realizes that if he hadn't DONE anything gross, he wouldn't have to CROSS anything gross.";
+	say "You wait and hide. After a while, you catch Ian picking his nose absent-mindedly. You call him on it! In the presence of food, no less! Ian mumbles he was doing so ironically, but you point out he was still doing it.[paragraph break]Ian hurries away in shame across the Turf Rut. He takes one look at the, um, bridge and realizes that if he hadn't DONE anything gross, he wouldn't have to CROSS anything gross.";
 	moot Ian;
 	score-inc; [Grebeberg/nail ian]
 	consider the cap-beep rules for Ian;
@@ -3932,8 +3929,9 @@ chapter Tru Yurt
 The Tru Yurt is scenery in Yack Cay. "[if moor broom is moot]It's much cleaner now you took the moor broom to it[else][peek-eep]. You didn't see much, but it looks really messy, and stuff like cleaning can't be the Known Wonk's forte[end if]."
 
 to say peek-eep:
-	say "'Peek? Eep!' [if mist sim is moot]you hear from the Tru Yurt[else]the Known Wonk exclaims[end if]
-check taking tru yurt: say "It's the Known Wonk's." instead;
+	say "'Peek? Eep!' [if mist sim is moot]you hear from the Tru Yurt[else]the Known Wonk exclaims[end if]"
+
+check taking tru yurt: say "It's the Known Wonk's. You don't need a home base, anyway." instead;
 
 check entering yurt: say "No, that's where the Known Wonk lives. [if exam axe is off-stage]Maybe you could clean it up, by using the right item[else]You already helped clean it up, and that's enough[end if]." instead;
 
@@ -4666,8 +4664,8 @@ understand "read [something]" as reading.
 read-warn is a truth state that varies.
 
 carry out reading:
-	if noun is a book, say "Whoah! You don't have time to read all that text, right now. You're busy with much more active things. Still, you flip through for a general overview.";
-	if read-warn is false, say "[bracket]Note: READ is functionally equivalent to X, for books or non-books.[close bracket][paragraph break]";
+	say "[if noun is DWELT LEWD]You read [one of]a bit[or]on[stopping], despite your better instincts...[else]Whoah! You don't have time to read all that text, right now. You're busy with much more active things. Still, you flip through for a general overview.[end if]";
+	if read-warn is false, say "[bracket]Note: READ is functionally equivalent to X/EXAMINE, for books or non-books.[close bracket][paragraph break]";
 	now read-warn is true;
 	try examining the noun instead;
 	the rule succeeds;
@@ -4721,7 +4719,7 @@ to say lewd-details:
 		say "[if X is not lelt],[end if] [entry X of dwelt-last]";
 	say " Sinned.";
 	if lewd-chap is number of entries in dwelt-first + 1 and lewd-read is false:
-		say "[line break]Whew! You've finished DWELT LEWD. Apparently there are sequels, including [rand-txt of table of trashy books] and [rand-txt of table of trashy books]. Reading the summary, you realize you've forgotten the plot [one of]already[or]yet again[stopping], if there was one. Sicko. (Hey, don't look that way at me! I just wrote the abstract code for the 'book' as a purely intellectual exercise.)";
+		say "[line break]Whew! You've finished DWELT LEWD. Apparently there are sequels, including [next-rand-txt of table of trashy books] and [next-rand-txt of table of trashy books]. Reading the summary, you realize you've forgotten the plot [one of]already[or]yet again[stopping], if there was one. Sicko. (Hey, don't look that way at me! I just wrote the abstract code for the 'book' as a purely intellectual exercise.)";
 		now lewd-chap is 0;
 		now lewd-read is true;
 
@@ -4838,7 +4836,7 @@ to check-dab:
 			say "[line break]The WOR- ROW text of the bad dab fades out of sight.";
 			moot bad dab;
 		else:
-			say "The bad dab saying WOR- ROW fades slightly."
+			say "The bad dab saying WOR- ROW fades slightly. Maybe there's something else beside [Worn Row]."
 
 chapter wordrowing
 
@@ -4892,7 +4890,7 @@ understand "worn row" as wornrowing when player is in Worn Row.
 carry out wornrowing:
 	if psi wisp is moot, say "Now that the redness ender and Psi Wisp destroyed each other, Worn Row really holds nothing else for you." instead;
 	unless ever-wordrow is true or ever-workrow is true, say "It is Worn Row. But maybe it can become something else." instead;
-	if psi wisp is not in Worn Row, say "You don't want to face the redness ender alone." instead;
+	if psi wisp is not in Worn Row, say "[if ever-wordrow is false or ever-workrow is false]The bad dab seems to indicate there's more here than [Worn Row], but you don't just want to go back to Worn Row. [end if]You don't want to face the redness ender alone. It's probably looking for something to shoot down." instead;
 	clear-worn-row;
 	say "Worn Row rematerializes, along with the redness ender. Zap! Zot! It locks on the Psi Wisp, which explodes in a shower of rage. But somehow, the Psi Wisp connects enough to zap the redness ender back. Whew. You retreat to Gross Org to recover the items you dropped.";
 	win-wisp-chase;
@@ -5427,7 +5425,7 @@ understand "tend [something]" as tending.
 carry out tending:
 	if noun is not level net, say "That doesn't need tending." instead;
 	if player has epicer recipe, say "You already did what you needed with the net." instead;
-	say "You adjust the ten level net. You're not sure how to make it work, but with some common sense, you make it. The set o['] notes gives surprising help. You climb and swing from the trapeze to the other side--falling into the ten level net about a hundred or so times--but the hundred and first, BAM! You notice an epic-er recipe under some superfluous steno-nets.[paragraph break]It's a clear step up from the set o['] notes. Yay! There's also something labeled an elope pole, which you suspect may help you get away if and when you need to. Part of the net falls off, too. It'd make a nice tent: a tent net. You gather up a nice haul: pole, net, recipe.";
+	say "You adjust the ten level net. You're not sure how to make it work, but with some common sense, you make it. You climb and swing from the trapeze to the other side--falling into the ten level net about a hundred or so times--but the hundred and first, BAM! You notice an epic-er recipe under some superfluous steno-nets.[paragraph break]A quick glance indicates it has much more detailed information than the set o['] notes. Yay! There's also something labeled an elope pole, which you suspect may help you get away if and when you need to. Part of the net falls off, too. It'd make a nice tent: a tent net. You gather up a nice haul: pole, net, recipe.";
 	get-tended-stuff;
 	score-inc; [Yelpley/TEND NET]
 	verify-done rev-tend-net rule;
@@ -5451,7 +5449,7 @@ to say alley-e-block:
 	say "[if navy van is in Yell Alley]navy van... you're not sure[else]bomb mob... so that's[end if]"
 
 check going nowhere in Yell Alley:
-	say "It probably gets even seedier [if navy van is in Yell Alley]behind the navy van[else if bomb mob is in Yell Alley]behind the bomb mob[else]past Line Nil[end if]. Best just to go back east." instead;
+	say "It probably gets even seedier [if navy van is in Yell Alley]behind the navy van[else if bomb mob is in Yell Alley]behind the bomb mob[else]past Line Nil[end if]. Best just to go back west." instead;
 
 chapter navy van
 
@@ -5563,7 +5561,7 @@ check going in Red Roses Order:
 
 chapter yard ray
 
-the yard ray is a thing. description is "It looks pretty lethal[if resale laser is not off-stage]--more powerful than the resale laser[end if].[paragraph break][yard-inst].[paragraph break]It's currently [if murdered rum is moot]loaded with energy from the murdered rum[else]out of of fuel[end if]."
+the yard ray is a beepy thing. description is "It looks pretty lethal[if resale laser is not off-stage]--more powerful than the resale laser[end if].[paragraph break][yard-inst].[paragraph break]It's currently [if murdered rum is moot]loaded with energy from the murdered rum[else]out of of fuel[end if]."
 
 instead of inserting into yard ray: try useoning noun with yard ray
 
@@ -6701,7 +6699,7 @@ understand "zr/zero/devreserved/ll/lll/dev" as DevReserved. [DevReserved is my d
 
 understand "tm/tempmet/temp/met" and "temp met" as TempMet.
 
-understand "dod/ord" and "drop ord" as Drop Ord.
+understand "dod/ord" and "drop ord" as DropOrd.
 
 volume bonus points and odd verbs
 
@@ -7578,6 +7576,7 @@ carry out slammammalsing:
 	unless player is in Ooze Zoo, say "You have no sympathetic audience." instead;
 	say "You babble some rubbish about the deer creed of a deer breed being deer greed. The sleep eels wake from their slumber [if bunk nub is moot]just out of sight [end if]briefly to squirm. They telepathically project their pleasure [if sleep eels are moot]from their stock cots [end if]before dozing off. They seem to have appreciated your sleep speels. You've ... done something, I guess? And hopefully without too much whataboutism?";
 	now slam-mam is true;
+	consider the cap-beep rules for the opossum;
 	abide by the LLP rule; [SLAM MAMMALS]
 	the rule succeeds;
 
@@ -7592,9 +7591,10 @@ understand "stack [something]" as stacking.
 carry out stacking:
 	if noun is not senile felines, say "Not worth stacking." instead;
 	unless the player's command matches the text "cats", say "Refer to the felines by a simpler synonym, and you've got it." instead;
-	say "You stack the cats so there's a suitable pet-step to reach the late petal, but once you do, the top one bats it and it falls. They walk away, disinterested. But they still seemed to have fun. Well, cats are like that.";
+	say "You stack the cats so there's a suitable pet-step to reach the late petal, but once you do, the top one bats it, and it falls out of sight. They walk away, disinterested. But they still seemed to have fun. Well, cats are like that.";
 	moot senile felines;
 	moot late petal;
+	consider the cap-beep rules for the senile felines;
 	abide by the LLP rule; [STACK CATS]
 	the rule succeeds;
 
@@ -7613,7 +7613,7 @@ carry out statsing:
 	now stats-yet is true;
 	try requesting the score;
 	if stats-now is false:
-		say "Extra style point for requesting the score 'correctly.'";
+		say "Nice job! Have an extra style point for requesting the score 'correctly.'";
 		abide by the LLP rule; [STATS]
 	consider the LLP or normal score changes rule;
 	the rule succeeds;
