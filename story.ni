@@ -69,6 +69,10 @@ to say gh: say "https://github.com/andrews[hc]ultz/ailihphilia"
 
 to say email: say "blurglecrun[hc]eon@gmail.com"
 
+chapter person stuff
+
+a person can be talked-yet. A person is usually not talked-yet.
+
 definition: a person (called per) is npcish:
 	if per is the player, no;
 	yes;
@@ -362,6 +366,14 @@ a room has a number called room-dist. room-dist of a room is usually -1. room-di
 a direction has a number called locdelt. locdelt of a direction is usually -1. locdelt of west is -1. locdelt of east is 1. locdelt of north is -10. locdelt of south is 10.
 
 a room has a direction called in-dir. in-dir of a room is usually down.
+
+to decide which direction is out-dir of (rm - a room):
+	decide on opposite of in-dir of rm;
+
+to decide which room is in-room of (rm - a room):
+	if rm is in Odd Do or rm is in Dim Mid, decide on rm;
+	let idr be in-dir of rm;
+	decide on the room idr of rm;
 
 when play begins (this is the procedural room number assignments rule): assign-room-dist-and-loc Fun Enuf;
 
@@ -907,25 +919,31 @@ instead of thinking:
 	let got-later-use be false;
 	now thought-yet is true;
 	repeat through table of lateruses:
-		if in-limbo entry is true:
+		if in-limbo entry is false:
+			if there is no combo-rule entry, next;
+			consider the combo-rule entry;
+			if the rule failed, next;
 			if got-later-use is false, say "Stuff you've half figured out:[line break]";
 			say "[remind-msg entry][line break]";
 			now got-later-use is true;
 	if got-later-use is false, say "You don't have anything you figured out but didn't quite have the items for.";
 	if number of beep-think things > 0, say "You need to do something weird to deal with [the list of beep-think things].";
 	let wayoutrooms be 0;
-	repeat with Q running through available rooms:
-		if Q is unvisited and Q is not in Odd Do:
-			let q-connect be false;
-			repeat with QDIR running through maindir:
-				if the room QDIR of Q is visited:
-					now q-connect is true;
-					say "You haven't looked [opposite of QDIR] of [room QDIR of Q].[run paragraph on][line break]";
-					break;
-			if q-connect is false:
-				increment wayoutrooms;
-				[if debug-state is true, say "DEBUG: (can visit [Q]).";]
-	if wayoutrooms > 0, say "You'll want to visit [wayoutrooms in words] place[if wayoutrooms > 1]s[end if] more than move away from everywhere you've currently explored. I won't spoil them, but they're available.";
+	let wv be number of worth-visiting rooms;
+	let wv-got be 0;
+	if wv > 0:
+		repeat with Q running through worth-visiting rooms:
+			increment wv-got;
+			if wv-got is 1, say "You may wish to visit";
+			if wv-got > 1 and wv-got < wv, say ",";
+			if wv-got is wv and wv > 1, say " and";
+			let od be opposite of in-dir of Q;
+			let ir be in-dir of Q;
+			say " [od] of [the room ir of Q][run paragraph on]";
+		say ".";
+	if wayoutrooms > 0:
+		say "You'll want to visit [number of way-out rooms] place[if wayoutrooms > 1]s[end if] more than one move away from everywhere you've currently explored. I won't spoil them, but they're available.";
+		if debug-state is true, say "WAY OUT: [list of way-out rooms].";
 	repeat with Q running through visited rooms:
 		process stuck-rule of Q;
 	repeat through table of last lousy points:
@@ -945,6 +963,20 @@ instead of thinking:
 	say ". You can try SCE RECS to see scenery you haven't examined.";
 	if revisited-u is false and revisit-clue is true, say "You may wish to visit the Code Doc again to see what the fuss was about.";
 	if LLP-yet is false, say "You don't have any last lousy points to figure that've been clued in-game."
+
+definition: a room (called rm) is worth-visiting:
+	if rm is visited, no;
+	if rm is not available, no;
+	let idr be in-dir of rm;
+	if the room idr of rm is visited, yes;
+	no;
+
+definition: a room (called rm) is way-out:
+	if rm is visited, no;
+	if rm is not available, no;
+	let idr be in-dir of rm;
+	if the room idr of rm is visited, no;
+	no;
 
 definition: a thing (called th) is worth-examining:
 	unless th is enclosed by the player, no;
@@ -1142,6 +1174,7 @@ understand "epi wipe" as epiwipeing.
 carry out epiwipeing:
 	say "Epically wiping records of what you examined.";
 	now all things are nox;
+	now all people are not talked-yet;
 	the rule succeeds;
 
 chapter scerecsing
@@ -1159,10 +1192,17 @@ carry out scerecsing:
 	repeat with SC running through xable scenery:
 		increment count;
 		if count is 11, break;
-		if count is 1, say "Scenery unexamined yet: ";
+		if count is 1, say "[one of][b]NOTE: most scenery doesn't need to be examined, so this is just a non-spoiler command to make sure you;ve checked everything.[r][or][stopping]Scenery unexamined yet: ";
 		if count > 1, say ", ";
 		say "[SC] in [location of SC][run paragraph on]";
 	say "[if count is 11] (there's more, but this is long enough.)[else if count is 0]You've examined all the scenery you could[any-open-rooms].[else].";
+	now count is 0;
+	repeat with SC running through xable people:
+		increment count;
+		if count is 1, say "People unexamined/talked to yet: ";
+		if count > 1, say ", ";
+		say "[SC] [if SC is talked-yet](examine)[else if SC is xed](talk to)[else](talk/examine)[end if] in [location of SC][run paragraph on]";
+	say "[if count is 0]You've examined all the scenery you could[any-open-rooms][end if].";
 	the rule succeeds;
 
 to decide whether any-unvisited:
@@ -1172,14 +1212,16 @@ to decide whether any-unvisited:
 to say any-open-rooms: say "[if any-unvisited], at least for the rooms explored so far[end if]"
 
 definition: a thing (called sce) is xable:
-	if sce is xed, no;
+	if sce is not a person and sce is xed, no;
 	if location of sce is unvisited, no;
 	if location of sce is ungoable, no;
 	unless location of sce is available, no;
 	if sce is a phonebook, no;
 	if sce is Evac Ave, no;
 	if sce is scenery, yes;
-	if sce is a person, yes;
+	if sce is a person:
+		if sce is the player, no;
+		if sce is nox or sce is not talked-yet, yes;
 	no;
 
 chapter abouting
@@ -1274,7 +1316,7 @@ carry out verbing:
 	say "[2da][b]T[r] or [b]TALK TO[r] or [b]GR[r] or [b]GREET[r] talks to someone. There's not much in the way of conversation in this game, but you may get some clues from basic chat.";
 	say "[2da][b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
 	say "[2da][b]THINK[r] gives general non-spoiler hints, including where you may wish to visit, what you haven't examined, or what is blocking you. [b]AID[r] gives you spoiler hints for where you are, though it may indicate you need to visit other places first.";
-	say " [2da]sub-commands of THINK: [b]SCE RECS[r] clues scenery you haven't examined yet, and [b]EPI WIPE[r] resets the game's records on what you examined.";
+	say " [2da]sub-commands of THINK: [b]SCE RECS[r] clues scenery you haven't examined yet, and [b]EPI WIPE[r] resets the game's records on things and scenery you examined.";
 	if cur-score of Odd Do < max-score of Odd Do:
 		say "[line break]There are also a few guess-the-verb bonus points that are hidden. Some relate to objects or people that need help but can't help you, and some are riffs on standard commands. [if refer-yet is false]There's a different way to revisit, rehash or recap this very command, for example[else]For instance, you got REFER as VERBS[end if]";
 	say "[line break]Also, many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy. If you miss them, you'll see the entire list at the end.";
@@ -1458,8 +1500,8 @@ understand "talk to [something]" as talktoing.
 carry out talktoing:
 	if noun is scorn rocs, say "The rocs do not let up their scornful gaze." instead;
 	if noun is not a person, say "Talking to people or, at least, animals is your best bet." instead;
-	if talk-text of noun is empty:
-		say "Nothing. (change this)" instead;
+	now noun is talked-yet;
+	if talk-text of noun is empty, say "Nothing. (change this)" instead;
 	say "[talk-text of noun][line break]" instead;
 	the rule succeeds. [see volume dialogue for all the specifics]
 
@@ -2595,6 +2637,7 @@ this is the sap-loose rule:
 this is the sap-to-cup rule:
 	now puce cup is sappy;
 	now puce-ever is true;
+	now sap-with-hands is false;
 	no-extra-cup-points;
 	the rule succeeds;
 
@@ -2605,6 +2648,7 @@ this is the shift-dumb-mud rule:
 this is the sod-to-cup rule:
 	now puce cup is soddy;
 	now puce-ever is true;
+	now sap-with-hands is false;
 	no-extra-cup-points;
 	the rule succeeds;
 
@@ -2768,22 +2812,30 @@ chapter lateruses
 
 definition: a thing ( called th) is preclued:
 	repeat through table of lateruses:
-		if to-get entry is th and in-limbo entry is true, yes;
+		if there is a to-get entry and to-get entry is th and in-limbo entry is true, yes;
 	no;
 
 table of lateruses [xxlat]
-to-get	in-limbo	remind-msg
-UFO tofu	false	"You [if cross orc is in Toll Lot]need to get rid of the cross orc to[else]can now[end if] use the radar on the crag arc."
-Spa Maps	false	"You [if tent net is not moot]need to do something so the Code Doc is willing[else]can now ask the Code Doc[end if] to decipher the Spa Maps the spa maps deciphered."
-past sap	false	"You [if player has wash saw]may now have[else]need to find[end if] something that can cut the past sap off the rift fir."
-liar grail	false	"You didn't have the right stuff to pour in the Liar Grail from the Puce Cup last time."
-past sap	false	"You didn't have anything to take the past sap with in Cold Loc."
-dose sod	false	"You didn't have anything to take the dose sod with in Apse Spa."
-Bond Nob	false	"You didn't have the right stuff to give the Bond Nob from the Puce Cup last time."
-gate tag	false	"You [if Ned is moot]got[else]need to find a way to get[end if] rid of Ned, so you can use Ye Key on the etage gate in peace."
-sage gas	false	"You [if maps-explained is false]need to[else]now can[end if] make sense of the spa maps to get by Go-By Bog in the Spa Apse."
-test set	false	"You [if emitted is false]need to find[else]now know[end if] how to work the yard ray."
+to-get	in-limbo	combo-rule	remind-msg
+UFO tofu	false	--	"You [if cross orc is in Toll Lot]need to get rid of the cross orc to[else]can now[end if] use the radar on the crag arc."
+Spa Maps	false	--	"You [if tent net is not moot]need to do something so the Code Doc is willing[else]can now ask the Code Doc[end if] to decipher the Spa Maps the spa maps deciphered."
+liar grail	false	--	"You didn't have the right stuff to pour in the Liar Grail from the Puce Cup last time."
+--	false	sap-uncut rule	"You need something to cut the past sap with [hn2 of Cold Loc]."
+--	false	need-cup rule	"You didn't have anything to take [if sap-with-hands is false]the past sap with in Cold Loc[end if][if sap-with-hands is true and sod-with-hands is true]or [end if][if sod-with-hands is true]the dose sod in Apse Spa[end if]."
+Bond Nob	false	--	"You didn't have the right stuff to give the Bond Nob from the Puce Cup last time."
+gate tag	false	--	"You [if Ned is moot]got[else]need to find a way to get[end if] rid of Ned, so you can use Ye Key on the etage gate in peace."
+sage gas	false	--	"You [if maps-explained is false]need to[else]now can[end if] make sense of the spa maps to get by Go-By Bog in the Spa Apse."
+test set	false	--	"You [if emitted is false]need to find[else]now know[end if] how to work the yard ray."
 [zzlat]
+
+this is the sap-uncut rule:
+	if sap-takeable is false, the rule succeeds;
+	the rule fails;
+
+this is the need-cup rule:
+	if puce-ever is true, the rule fails;
+	if sap-with-hands is true or sod-with-hands is true, the rule succeeds;
+	the rule fails;
 
 to get-reject (th - a thing):
 	repeat through table of lateruses:
@@ -2794,7 +2846,7 @@ to get-reject (th - a thing):
 
 to later-wipe (th - a thing):
 	repeat through table of lateruses:
-		if to-get entry is th:
+		if there is a to-get entry and to-get entry is th:
 			now in-limbo entry is false;
 			continue the action;
 	say "NONCRITICAL bug: I tried to erase an item from the 'do it later' list, but it was never in there. This doesn't affect the game, but I'd like to know about it."
@@ -3320,11 +3372,16 @@ chapter past sap
 
 the past sap is semiperipheral scenery in Cold Loc. "[if sap-takeable is true]A good chunk of it is lumped on the ground[else]It's stuck to the rift fir, but with the right tool, maybe you could pry it off[end if]."
 
-check taking past sap: say "[if liar grail is moot]You probably don't need any more past sap, now that you used it to dispose of the Liar Grail.[else]It's too sticky to carry around by itself. Maybe have a container carrying it?[end if]"
+sap-with-hands is a truth state that varies.
 
 instead of taking the past sap:
-	say "It'd get sticky on your fingers. You need some way to carry it.";
-	get-reject past sap;
+	if player has puce cup:
+		if liar grail is moot, say "You probably don't need any more past sap, now that you used it to dispose of the Liar Grail." instead;
+		say "The puce cup is handier than your hands. You use it.";
+		try useoning past sap with puce cup instead;
+	if sap-takeable is false, say "You need a way to cut it from the rift fir." instead;
+	say "The sap would get sticky on your fingers. You need some way to carry it.";
+	now sap-with-hands is true;
 
 instead of sawing past sap, try useoning past sap with wash saw instead;
 
@@ -4029,8 +4086,10 @@ chapter dose sod
 
 the dose sod is scenery in Apse Spa. "It looks ucky, but given you're in an Apse Spa, it may have health benefits for those that need them."
 
+sod-with-hands is a truth state that varies.
+
 check taking dose sod:
-	get-reject dose sod;
+	now sod-with-hands is true;
 	say "It's pretty slimy. Any curative properties would be canceled out by your germs carrying it. You need something to hold it in. In which to hold it." instead;
 
 instead of inserting dose sod into: try useoning dose sod with second noun instead;
@@ -5075,6 +5134,9 @@ emo-dir-adj is a truth state that varies.
 instead of doing something in Emo Dome when pulled-up is false:
 	if current action is puffuping, say "That was then. The old tricks won't work. You need something new!" instead;
 	if current action is pulluping, continue the action;
+	if current action is thinking or requesting the score or aiding:
+		say "You take a second to catch your breath.";
+		continue the action;
 	if current action is going:
 		if noun is not west and noun is not east:
 			say "You're scared whatever's [if noun is north or noun is south][noun][else]that way[end if] would be even worse. You keep running [emo-dir] instead.";
@@ -5084,8 +5146,8 @@ instead of doing something in Emo Dome when pulled-up is false:
 		now emo-dir-adj is false;
 		continue the action;
 	if current action is taking or current action is dropping:
-		say "Possessions! What do they matter? Why does anything matter? In your current state, you can't be bothered to take the cup.[paragraph break]";
-	say "You keep running [emo-dir], instead. It's too whiny in here, even with your Spur Ups as security. Puffing up let you face your fears, but you're not up enough to stay and face them down.";
+		say "Possessions! What do they matter? Why does anything matter? In your current state, you can't be bothered to take the cup. Or even litter.[paragraph break]";
+	say "You keep running [emo-dir], instead. It's too whiny in here, even with your Spur Ups as security. Puffing up let you face your most obvious fears from a distance, but up close, you aren't 'up' enough to stay and face them down.";
 	try going emo-dir instead;
 
 emo-dir is a direction that varies. emo-dir is west.
@@ -5842,7 +5904,7 @@ talk-text of Rob is "Rob yawns. He doesn't find you very interesting. Maybe ther
 talk-text of sleep eels is "Maybe they are sending some sort of electric message you could detect with the right instrument, but they're not talking. You're more struck, though, by how uncomfortable they look while sleeping--wriggling about.".
 talk-text of Sniffins is "[if YOB ATTABOY is not moot]'Tony? Not! Poor lower class me is a failure! If only I had some success manual!'[else]'Oh. It's you again. If you were REALLY smart, you'd have taken the advice in that book you gave me.'[end if]".
 talk-text of Verses Rev is "The Verses Rev booms 'Erupt! Pure!' then piously intones how weirdos not in line with the Diktat Kid's values need to be eradicated.".
-talk-text of Wordy Drow is "It moans and points at the Liar Grail. They're forced together, somehow, but maybe you can change that.".
+talk-text of Wordy Drow is "It moans and points at the Liar Grail. They're forced together, somehow, but maybe you can change that. But you'll have to do more than shout 'Ye go, bogey!'".
 talk-text of Yuge Guy is "'I'm ... ' / 'TMI!'"
 [zztalk]
 
