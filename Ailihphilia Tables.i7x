@@ -46,6 +46,7 @@ table of Rob droning	0	0	false	"things Rob babbles about"	"Rob takes a moment to
 table of singstuff	0	0	true	"responses to SINGing"	"Won't be joining OctetCo with that voice."
 table of snooty toon ads	0	0	true	"snooty toons ads"	"At the end is La Usual, because of course."
 table of swearstuff	0	0	true	"responses to SWEARing"	--
+table of trashy books	0	0	false	"other 'art' [if DWELT LEWD is off-stage]a book hidden in the Tract Cart[else]DWELT LEWD[end if] promotes"	--
 table of undoings	0	0	true	"UNDOing notifications"	--
 table of university targets	0	0	true	"Dr. D/Code Doc's prospective colleagues"	--
 table of waittxt	0	0	true	"responses to WAITing"	--
@@ -872,7 +873,6 @@ randtxt
 "Emacs Came"
 "Eponymy? Nope"
 "Fit, O Motif"
-"Gigolo Gig"
 "If I Had a Hi-Fi"
 "A Mardy Drama"
 "Me, Lo, Golem"
@@ -891,7 +891,6 @@ randtxt
 "Rise, Aesir"
 "Risk Sir"
 "Satire Veritas"
-"Solo Gigolos"
 "Sore Heros"
 "Sore Zeros"
 "To Oldened Loot"
@@ -1032,6 +1031,7 @@ randtxt
 
 table of Moo Room animals
 randtxt
+"any myna"
 "a buck cub"
 "a go-here hog"
 "a pirana (RIP)"
@@ -1496,6 +1496,19 @@ randtxt
 "Sod [']er! Redos!"
 "Time: remit."
 
+table of trashy books
+randtxt
+"Den O['] BONED"
+"Diva Vid"
+"Emu Love Volume"
+"Gigolo Gig"
+"Leer Reel"
+"Moobs: BOOM"
+"Much ***" [ignore]
+"Onan, O"
+"[']S SENSUOUSNESS"
+"Solo Gigolos"
+
 table of university targets
 randtxt
 "Dr. A. Card"
@@ -1587,6 +1600,7 @@ randtxt
 
 table of yuge baits
 randtxt
+"Avoided I? Ova[']!"
 "BOO, NOOB!"
 "Dim, I! Timid!"
 "EY, BYE!"
