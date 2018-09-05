@@ -3201,7 +3201,7 @@ for writing a paragraph about a person when player is in Dirge Grid:
 
 check going in Dirge Grid:
 	if Diktat Kid is in Dirge Grid, say "While the No-Go Gon is probably more for keeping people out, it would probably keep you back in even with [if henchmen-left is 0]the waster fretsaw and Tru-Hurt[else]enemies who might catch you[end if]. You've got no choice but to finish things off, here." instead;
-	if noun is not south and noun is not outside, say "The saner arenas are nice, but they're not for you. With the Diktat Kid gone, it's probably best you get back home." instead;
+	if noun is not south and noun is not outside, say "The saner arenas are nice, but they're not interesting enough to be stop-spots yet. With the Diktat Kid gone, it's probably best you get back home." instead;
 
 check going south in Dirge Grid: if Diktat Kid is in Dirge Grid, say "'Mom! SOS! LOL! SOS! Mom!' the Diktat Kid mocks you.[paragraph break]You can't chicken out. You must be close!" instead;
 
@@ -3698,7 +3698,7 @@ book Frush Surf
 
 Frush Surf is south of Ooze Zoo. "The land curves here. Stewy wets thrash to the south and west, but you can go north or east.". It is in Grebeberg.
 
-check going south in Frush Surf: say "You barely step in, and the water's a bit hot. You're worried you might run into some scorch crocs." instead;
+check going south in Frush Surf: say "You barely step in, and the water's a bit hot. You're worried you might run into some scorch crocs or worse, lava (naval.)" instead;
 
 check going north in Frush Surf when being-chased is true: mug-the-player;
 
@@ -4013,7 +4013,7 @@ printed name of Lac Oft Focal is "[if lac-score is 2]Lac Old Local[else]Lac Oft 
 
 understand "old local" and "old/local" and "lac old/local" and "lac old local" as Lac Oft Focal when lac-score is 2.
 
-check going nowhere in Lac Oft Focal: say "You can't make it across the calcific lac by yourself[if lac-score is 2], and you don't need to any more[end if]." instead;
+check going nowhere in Lac Oft Focal: say "You can't make it across the calcific lac by yourself[if lac-score is 2], and you don't need to any more[end if]. You can't really expect a bunch of sprats['] tarps to appear." instead;
 
 to decide which number is lac-score:
 	let temp be 0;
@@ -4409,7 +4409,7 @@ does the player mean evadeing Dave: it is very likely.
 carry out evadeing:
 	if noun is Dave:
 		if Dave is moot, say "You don't need to evade Dave again.";
-		say "You evade Dave! Deked! Deked![paragraph break]After spinning fruitlessly around for a while, Dave trudges off, exhausted, emitting a huge 'GUH!'[paragraph break]Whew! Consulting the Set O Notes[if Set O Notes is xed] again[end if], you notice there may be at least one more guh thug, but nothing too violent. That's good. You'd hate to have to TRUCK CURT or MASH SAM or SIT ON OTIS or even DISS SID.";
+		say "You evade Dave! Deked! Deked![paragraph break]After spinning fruitlessly around for a while, Dave trudges off, exhausted, emitting a huge 'GUH!'[paragraph break]Whew! Consulting the Set O Notes[if Set O Notes is xed] again[end if], you notice there may be at least one more guh thug, but nothing too violent. That's good. You'd hate to have to TRUCK CURT, MASH SAM, RAM OMAR, SIT ON OTIS or even DISS SID.";
 		wfak;
 		say "Suspicious there are no actual weight machines, you find a passage to a hidden spate of Sperses-Reps machines with the motto 'Scepsis?! Pecs!' They help you bulk up a bit, so item weight will not be a factor. But you don't want to waste too much time bulking up. You go back out and have a look at the Stole-Lots. You consider making it a STORE-lots, but then the 'rots' is not so good, so then you also check if the E and an L rub out quickly. They do, making it a Sto(['])-Lots. Bam! Logistical and moral problems: SOLVED![paragraph break]Also, you notice a wash saw in the Stole/Sto-Lots. It seems worth taking along, so you do.";
 		moot Dave;
@@ -4706,10 +4706,14 @@ chapter pity tip
 
 the pity tip is a thing. description of pity tip is "[if DWELT LEWD is off-stage]'You can do something neat and completely unnecessary with the cart! There are only so many possibilities, of course.'[paragraph break]NOTE: document is[else]You figured what the tip about the tract cart was, but the tip is still[end if] good for free snack cans at Seedy Dee's."
 
+after examining the pity tip for the first time:
+	say "It doesn't seem like a very good tip, but if you got another, maybe they'd be spite tips that were actively wrong or misleading.";
+	continue the action;
+
 chapter books in bookcase
 
 TI is a book. printed name of TI is "TO IDIOT (TI)". understand "to idiot" and "idiot" as ti. description is "It's full of hot takes and 'clever' put-downs based on assuming the recipient isn't as smart as they think they are. You remember laughing at this sort of thing when you were really bored or grouchy, and you sort of regret it now. Still, it keeps some people busy.". [Door Frood]
-NULL ILLUN is a book. printed name of NULL ILLUN is "NULL ILLUN (NI)". understand "ni" as NULL ILLUN. description is "Surprisingly wise advice about how to achieve happiness and shake annoyances you can't dispel with just logic. It discusses how to flex your SCEPSIS-PECS so you don't just know a lot of stuff you aren't sure what to do with.". [Known Wonk]
+NULL ILLUN is a book. printed name of NULL ILLUN is "NULL ILLUN (NI)". understand "ni" as NULL ILLUN. description is "Surprisingly wise advice about how to achieve happiness and shake annoyances you can't dispel with just logic. It discusses how to flex your SCEPSIS-PECS so you don't just know a lot of stuff you aren't sure what to do with. It even advertises a not-yet-published companion book on emotional intelligence: SLANGISH SIGNALS.". [Known Wonk]
 EPOCH COPE is a book. printed name of EPOCH COPE is "EPOCH: COPE (EC)". understand "ec" as EPOCH COPE. description is "All sorts of present-day political and social musings for shahs and other leaders, with the catch phrase '[']S civics!' It's surprisingly accessible, though you don't have time to read it.". [King Nik]
 YOB ATTABOY is a book. printed name of YOB ATTABOY is "YOB ATTABOY (YA)". understand "ya" as YOB ATTABOY. description is "All about picking yourself up by your bootstraps and not feeling sorry for yourself or being too jealous of what others know or can do--SHED EH'S is repeated in big bold letters.". [Sniffins]
 
@@ -4783,9 +4787,11 @@ to say lewd-details:
 		say "[if X is not lelt],[end if] [entry X of dwelt-last]";
 	say " Sinned.";
 	if lewd-chap is number of entries in dwelt-first + 1 and lewd-read is false:
-		say "[line break]Whew! You've finished DWELT LEWD. Apparently there are sequels, including [next-rand-txt of table of trashy books] and [next-rand-txt of table of trashy books]. Reading the summary, you realize you've forgotten the plot [one of]already[or]yet again[stopping], if there was one. Sicko. (Hey, don't look that way at me! I just wrote the abstract code for the 'book' as a purely intellectual exercise.)";
-		now lewd-chap is 0;
+		say "[line break]Whew! You've finished DWELT LEWD. Apparently there is 'related' material, including [next-rand-txt of table of trashy art]. [one of]Who thinks this junk up? (Hey, don't look that way at me! I just wrote the abstract code for the 'book' as a purely intellectual exercise.)[or]You feel guilty having looked for more desipte knowing better.[stopping]";
+		decrement lewd-chap;
 		now lewd-read is true;
+
+to say lewd-true: now lewd-read is true; [this is for the tables code to signify we want to go back to reading DL]
 
 check taking DWELT LEWD: say "No, you'd be embarrassed to be seen with it. It can't be useful anywhere. You hope not, anyway." instead;
 
