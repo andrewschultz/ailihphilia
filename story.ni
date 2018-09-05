@@ -488,14 +488,16 @@ check requesting the score:
 		else:
 			say "You have [Q] roving last lousy point[plur of Q] left and [Q2] non-roving LLP[plur of Q2] left.";
 	if player has epicer recipe and north tron is off-stage:
-		say "You also have [tron-got] piece[if tron-got is not 1]s[end if] of [number of tronparts] you need for the North-Tron, according to the epicer recipe.";
+		say "[if epicer recipe is nox]You realize a score is only an abstract indicator of how well you're doing, and maybe that epicer recipe would help you figure what's what. So you read it, and you note y[else]Y[end if]"
+		say "ou [if tron-got is 0]don't have any of the [number of tronparts in words][else]also have [tron-got] piece[if tron-got is not 1]s[end if] of [number of tronparts][end if] North-Tron pieces you need to destroy the [KAOS Oak], according to the epicer recipe[hint-tron].";
+		now epicer recipe is xed;
 	if mist-found > 0, say "[line break]You've also found [mist-found] of [number of entries in checkoffs] palindromes that were there but not critical to the story. [if mist-found * 2 > number of entries in checkoffs]Very impressive![else]Don't knock yourself out trying to find them all.[end if]";
 	if score-cheat > 0, say "[line break]Also, you used a warp command or commands to plow past [score-cheat] point-giving activities, but I won't hold it against you. I'm glad you were motivated to try and see the end!";
 	if stats-yet is false, say "[line break]In addition, there may be a more 'correct' way to request all the numbers above, and so forth. It's not critical, but you might get a style point.";
 	the rule succeeds;
 
 to decide which number is tron-got:
-	if KAOS Oak is moot, decide on number of tronparts;
+	if KAOS Oak is moot, decide on number of tronparts + 1;
 	let temp be number of tronparts carried by player;
 	if martini tram is in Fun Enuf, increment temp;
 	decide on temp;
@@ -863,9 +865,7 @@ chapter listening
 
 instead of listening:
 	if player is in My Gym:
-		say "[if Dave is in My Gym]Behind Dave's grunts, y[else]Y[end if]ou hear ";
-		next-rand table of My Gym songs;
-		say "[one of], or at least, that's what repeats in the chorus[or][stopping]." instead;
+		say "[if debug-state is true]DEBUG NOTE RANDOM SONG: [end if][if Dave is in My Gym]Behind Dave's grunts, y[else]Y[end if]ou [one of]tolerate[or]can't escape[or]dread a casual conversation containing the lyrics of[or]imagine the marketers earned their keep promoting[or]feel guilty liking the beats but loathing the words of[or]realize you're going to forget something important but remember the lyrics of[or]feel glad it's the low-volume version of[or]hate yourself for not completely loathing[or]hope nobody got paid too much for writing[or]guess the title from the repeated words of[or]hear, and guess some people are inspired by,[in random order] [next-rand-txt of table of My Gym songs]." instead;
 	if player is in Apse Spa, say "Surprisingly, no spa yaps." instead;
 	if player is in Mont Nom, say "The Ark of Okra is almost saying 'Nom on!' or 'C'mon! Nom!' or even 'Tum-Smut!'" instead;
 	if player is in Yack Cay and Known Wonk is in Yack Cay, say "The Known Wonk is just babbling on about stuff you aren't be interested in." instead;
@@ -954,7 +954,8 @@ instead of thinking:
 					now LLP-yet is true;
 					say "LAST LOUSY POINTS NOTES:[line break]";
 				say "[cluey entry].[line break]";
-	if player has epicer recipe and epicer recipe is xed, say "You have [tron-got] of [number of tronparts] pieces of the north tron.";
+	if player has epicer recipe and epicer recipe is xed:
+		say "You have [tron-got] of [number of tronparts] pieces of the north tron[hint-tron].";
 	let nwe be number of worth-examining things;
 	if nwe > 0:
 		say "You may want to examine [if nwe is 1]this item[else]these items[end if] you haven't, yet: [the list of worth-examining things]";
@@ -984,6 +985,9 @@ definition: a thing (called th) is worth-examining:
 	if th is pact cap, no;
 	if th is nox, yes;
 	no;
+
+to say hint-tron:
+	if tron-got is 4, say ". You probably want to [if player is not in fun enuf]go back to Fun Enuf and[end if] USE one North-Tron part on another";
 
 section stuck-rules
 
@@ -1137,7 +1141,7 @@ check taking inventory when Dave is moot (this is the ailihphilia inventory rule
 		say "So far, you only have [the list of helpdocs carried by the player] as reference. More later, maybe?";
 	else:
 		say "AIDE MEDIA: While [b][the relevantest helpdoc carried by the player][r] seems useful as a guide, [other-docs] may shore up a few minor points.";
-	if number of tronparts carried by player > 0, say "North-tron parts found: [the list of tronparts carried by player][unless martini tram is off-stage]. The martini tram is in [Fun Enuf], too[end if].";
+	if number of tronparts carried by player > 0, say "North-tron parts found: [the list of tronparts carried by player][unless martini tram is off-stage]. The martini tram is in [Fun Enuf], too[end if][hint-tron].";
 	if player has state tats, say "You've also stamped yourself with state tats.";
 	if number of carried exhausted things > 0 and reviver is not moot, say "(x) = exhausted (tried all 3 machines in Work Row)[line break]";
 	the rule succeeds;
@@ -3093,7 +3097,7 @@ after examining the Darer Ad:
 
 chapter Set O Notes
 
-the Set O Notes is a helpdoc. description is "[b]OPPO[r] is printed at the top. There's vague advice about making a North-Tron to defeat the Diktat Kid, but first you'll have to defeat [b]Ms. Ism[r], as well as the [b]Yuge Guy[r].[paragraph break]There's mention of a guh-thug in various places, and you'll have to do something special when you see one. [thug-report].[paragraph break]Also scribbled, in the center, is [b][Fun Enuf][r] with [b]TRI-GIRT[r] below that. There are other landmarks scribbled in, which [if number of visited rooms < 20]will help you identify new places and scenic barriers and such[else]have been helpful so far[end if].[paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
+the Set O Notes is a helpdoc. description is "[b]OPPO[r] is printed at the top. There's vague advice about making a North-Tron to reach and defeat the Diktat Kid, but first you'll have to defeat [b]Ms. Ism[r], as well as the [b]Yuge Guy[r].[paragraph break]There's mention of a guh-thug in various places, and you'll have to do something special when you see one. [thug-report].[paragraph break]Also scribbled, in the center, is [b][Fun Enuf][r] with [b]TRI-GIRT[r] below that. There are other landmarks scribbled in, which [if number of visited rooms < 20]will help you identify new places and scenic barriers and such[else]have been helpful so far[end if].[paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
 
 understand "tri girt" and "trigirt" as set o notes.
 understand "oppo" as set o notes.
@@ -3940,7 +3944,7 @@ check taking guru rug: say "'Egad! Adage!' you think to yourself. You're not up 
 
 chapter stir writs
 
-The stir writs are a plural-named thing. description is "They balance emotional and intellectual considerations well, making you feel you can do things you'd put off before, both simple or complex, and maybe you don't need permission to do or deserve big things.[paragraph break]They're probably safer for your help and give a more permanent boost than Stim-Its, too."
+The stir writs are a plural-named thing. description is "They balance emotional and intellectual considerations well, making you feel you can do things you'd put off before, both simple or complex, and maybe you don't need permission to do or deserve big things.[paragraph break]They're probably safer for your help and give a more permanent boost than Stim-Its or a Vig-IV, too."
 
 check useoning stir writs with Bros' Orb: try taking Bros' Orb instead;
 
@@ -5473,6 +5477,10 @@ chapter epicer recipe
 
 the epicer recipe is a helpdoc. description is "You've seen recipes before, but this is a big interesting one! It's got instructions, not just for building some tike kit, but a north-tron, which can blast through anything ... including the [KAOS Oak]![paragraph break][tronpartlist][run paragraph on]". importancy of the epicer recipe is 3.
 
+after examining epicer recipe:
+	if tron-got is 4, say "Well, You've got everything[hint-tron].";
+	continue the action;
+
 to say tronpartlist:
 	repeat with tp running through tronparts:
 		say "--[tp][if player has tp or tp is in Fun Enuf] (got it!)[else][line break][end if]"
@@ -5512,7 +5520,7 @@ to say alley-e-block:
 	say "[if navy van is in Yell Alley]navy van... you're not sure[else]bomb mob... so that's[end if]"
 
 check going nowhere in Yell Alley:
-	say "It probably gets even seedier [if navy van is in Yell Alley]behind the navy van[else if bomb mob is in Yell Alley]behind the bomb mob[else]past Line Nil[end if]. Best just to go back west." instead;
+	say "[if navy van is in Yell Alley]It probably gets even seedier behind the navy van[else if bomb mob is in Yell Alley]It probably gets even seedier behind the bomb mob. Best just to go back west[else]Trust me. The Line Nil is protecting you from the perils of No-Trekker-Ton. You don't want to visit No-Trekker-Ton[end if]." instead;
 
 chapter navy van
 
@@ -7188,7 +7196,7 @@ this is the fun-enuf-hint rule:
 	if Flee Elf is in Fun Enuf, say "[one of]The Flee Elf wants you to take the cap. But not take. A synonym. To show you're in tune with this place.[or]PAC* CAP is the way to go.[or]PACK CAP.[stopping]" instead;
 	if epicer recipe is off-stage, say "There's a useful list of items in Yelpley that may help you figure a way north." instead;
 	if tron-got < 4, say "You'll need to come back later to break open the North-Tron." instead;
-	if KAOS Oak is in fun enuf, say "USE any tron-part on another tron-part." instead;
+	if KAOS Oak is in fun enuf, say "USE any part of the North-Tron on another." instead;
 	if grid-side-items < 3, say "You need three items to defeat the Diktat Kid north and have [grid-side-items in words]." instead;
 	if player has X-ITE TIX, say "USE TIX ON TIX EXIT." instead;
 	continue the action;

@@ -38,7 +38,7 @@ table of Ms Ism pals	0	0	false	"Ms Ism's pals (TALK to Ms Ism)"	--
 table of My Gym songs	0	0	false	"songs in My Gym (LISTEN)"	"All those tunes, and nothing by ABBA! Low class, low class."
 table of noesies	0	0	true	"responses to NO"	--
 table of nothings	0	0	true	"responses to empty commands"	--
-table of npc mistakes	0	0	false	"CALL/PHONE random NPC text"	"It'll be even less informative next time around."
+table of npc mistakes	0	0	false	"CALL/PHONE random NPC text"	"That's all there is. You [if dial-aid is false]can't help wondering if there's something better to dial[else]find this all less fruitful than when you decided to DIAL AID[end if]."
 table of random authors	0	0	false	"random author names (ones I particularly liked)"	--
 table of random palindrome firstlast names	0	0	false	"First/last names in Name ME Man"	--
 table of random palindrome lastfirst names	0	0	false	"Last/first names in OH WHO"	--
@@ -890,6 +890,7 @@ randtxt
 "Posada's Op"
 "Re: Gallager"
 "Re: Karraker"
+"Ren, Old Loner"
 "Rise, Aesir"
 "Risk Sir"
 "Satire Veritas"
@@ -961,6 +962,7 @@ randtxt
 "MRA Farm"
 "Nigh Gin"
 "Pat's Tap"
+"Potsy Stop"
 "Pub UP"
 "Redic-U-Cider"
 "Sara's"
@@ -1073,6 +1075,7 @@ randtxt
 "H/T Fifth"
 "H/T Ninth"
 "Hat-stah"
+"Hollas All, Oh"
 "Honor On, Oh"
 "Hook, Ooh"
 "Hosts, Oh"
@@ -1303,6 +1306,7 @@ randtxt
 "Lass Sal"
 "Lax Al"
 "Led Adel"
+"Lee, Hobo Heel"
 "'Leer' Creel"
 "Legal Slagel"
 "Legit Igel"
@@ -1358,6 +1362,10 @@ randtxt
 "Reliant Nailer"
 "Rely-Tyler"
 "'Remarks' Kramer"
+"Ren 'Rage' Garner"
+"Ren Evilness-Enlivener"
+"Ren Naff-Fanner"
+"Ren Rube-Burner"
 "'Renege' Wegener"
 "'Rental' Platner"
 "Revel Clever"
@@ -1433,6 +1441,8 @@ randtxt
 "Posts-op? POST, sop!"
 "Posy sysop!"
 "Prove VORP!"
+"Ren? Woe Owner!"
+"Ren? Wordy Drowner!"
 "Resume [']m, user!"
 "Segard? Rages!"
 "SETI sites!"
@@ -1509,6 +1519,7 @@ randtxt
 "Eff a gaffe."
 "It: Revert, I!"
 "Nixin[']..."
+"Not. Revert. On!"
 "Or, Perp, REPRO!"
 "Pah, simp! Mishap!"
 "Pre-derp..."

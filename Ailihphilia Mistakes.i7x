@@ -793,7 +793,9 @@ checkoffs is a list of truth states variable. checkoffs is { false, false, false
 hint-every-x is a number that varies. hint-every-x is 5.
 
 to say mis of (n - a number):
+	consider the notify cycling rule;
 	let Q be entry N in checkoffs;
+	if being-chased is true, now chase-mulligan is true;
 	if Q is false:
 		now entry N in checkoffs is true;
 		increment mist-found;
