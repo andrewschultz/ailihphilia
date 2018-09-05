@@ -3,16 +3,14 @@
 # finds (prospective) palindromes that build on one word
 #
 
+import i7
 import time
 import sys
 import re
 from collections import defaultdict
+from string import ascii_lowercase
 
-wordfile = "c:/writing/dict/brit-1word.txt"
-firstfile = "c:/writing/dict/firsts.txt"
-lastfile = "c:/writing/dict/lasts.txt"
-
-file_array = [ wordfile ]
+file_array = [ i7.f_dic ]
 
 found = defaultdict(int)
 last_found = defaultdict(int)
@@ -26,6 +24,7 @@ read_file = False
 
 get_firsts = True
 get_lasts = True
+print_possible = True
 
 every_cr = 4
 
@@ -97,50 +96,52 @@ def palz(pals):
         loc_start[st] = sorted(start_cand[st[-1]].keys())
     for st in sorted(pals):
         count = 0
-        for l in sorted(loc_end[st], key=lambda x: (len(x), x)):
-            x = st + l
-            if x == x[::-1]:
-                found[st] += 1
-                if found[st] == 1:
-                    pal_list[st] = "FIRST"
-                elif found[st] % every_cr == 1:
-                    pal_list[st] = pal_list[st] + "\n  "
-                else:
-                    pal_list[st] = pal_list[st] + " /"
-                pal_list[st] = pal_list[st] + " *{:s}* + {:s} = {:s}".format(st, l, x)
-                continue
-                # print("Added", st, l)
-            if check_possible:
-                if count <= check_possible_max and l.endswith(st[::-1]):
-                    if count < check_possible_max:
-                        possible_starts[st] = possible_starts[st] + " " + l
+        if get_firsts:
+            for l in sorted(loc_end[st], key=lambda x: (len(x), x)):
+                x = st + l
+                if x == x[::-1]:
+                    found[st] += 1
+                    if found[st] == 1:
+                        pal_list[st] = "FIRST"
+                    elif found[st] % every_cr == 1:
+                        pal_list[st] = pal_list[st] + "\n  "
                     else:
-                        can_increase = True
-                    count += 1
+                        pal_list[st] = pal_list[st] + " /"
+                    pal_list[st] = pal_list[st] + " *{:s}* + {:s} = {:s}".format(st, l, x)
+                    continue
+                    # print("Added", st, l)
+                if check_possible:
+                    if count <= check_possible_max and l.endswith(st[::-1]):
+                        if count < check_possible_max:
+                            possible_starts[st] = possible_starts[st] + " " + l
+                        else:
+                            can_increase = True
+                        count += 1
         count = 0
-        for l in sorted(loc_start[st], key=lambda x: (len(x), x)):
-            y = l + st
-            if y == y[::-1]:
-                last_found[st] += 1
-                if last_found[st] == 1:
-                    if found[st]:
-                        pal_list[st] = pal_list[st] + "\n"
-                    pal_list[st] = pal_list[st] + "LAST"
-                elif last_found[st] % every_cr == 1:
-                    pal_list[st] = pal_list[st] + "\n  "
-                else:
-                    pal_list[st] = pal_list[st] + " /"
-                pal_list[st] = pal_list[st] + " {:s} + *{:s}* = {:s}".format(l, st, y)
-                found[st] += 1
-                # print("Added", l, st)
-                continue
-            if check_possible:
-                if count <= check_possible_max and l.startswith(st[::-1]):
-                    if count < check_possible_max:
-                        possible_ends[st] = possible_ends[st] + " " + l
+        if get_lasts:
+            for l in sorted(loc_start[st], key=lambda x: (len(x), x)):
+                y = l + st
+                if y == y[::-1]:
+                    last_found[st] += 1
+                    if last_found[st] == 1:
+                        if found[st]:
+                            pal_list[st] = pal_list[st] + "\n"
+                        pal_list[st] = pal_list[st] + "LAST"
+                    elif last_found[st] % every_cr == 1:
+                        pal_list[st] = pal_list[st] + "\n  "
                     else:
-                        can_increase = True
-                    count += 1
+                        pal_list[st] = pal_list[st] + " /"
+                    pal_list[st] = pal_list[st] + " {:s} + *{:s}* = {:s}".format(l, st, y)
+                    found[st] += 1
+                    # print("Added", l, st)
+                    continue
+                if check_possible:
+                    if count <= check_possible_max and l.startswith(st[::-1]):
+                        if count < check_possible_max:
+                            possible_ends[st] = possible_ends[st] + " " + l
+                        else:
+                            can_increase = True
+                        count += 1
     for x in sorted(found.keys()):
         got_something = False
         if found[x] or possible_ends[x] or possible_starts[x]:
@@ -148,10 +149,11 @@ def palz(pals):
             print(hdr, x, hdr)
             if found[x]:
                 print(pal_list[x])
-            if possible_ends[x]:
-                print("Words allowing {:s} at end of long palindrome:{:s}".format(x, possible_ends[x]))
-            if possible_starts[x]:
-                print("Words at end of long palindrome starting with {:s}:{:s}".format(x, possible_starts[x]))
+            if print_possible:
+                if possible_ends[x]:
+                    print("Words allowing {:s} at end of long palindrome:{:s}".format(x, possible_ends[x]))
+                if possible_starts[x]:
+                    print("Words at end of long palindrome starting with {:s}:{:s}".format(x, possible_starts[x]))
         if not found[x]:
             print("No direct palindromes for", x)
         elif not got_something:
@@ -165,15 +167,15 @@ argcount = 1
 while argcount < len(sys.argv):
     xr = sys.argv[argcount]
     xl = xr.lower()
-    if xl == "-a": file_array = [firstfile, lastfile, wordfile]
+    if xl == "-a": file_array = [i7.f_f, i7.f_l, i7.f_dic]
     elif xl[:2] == "-r":
         read_file = True
         check_possible = False
     elif re.match("^-[wfl]+$", xl):
         file_array = []
-        if 'f' in xl: file_array.append(firstfile)
-        if 'l' in xl: file_array.append(lastfile)
-        if 'w' in xl: file_array.append(wordfile)
+        if 'f' in xl: file_array.append(i7.f_f)
+        if 'l' in xl: file_array.append(i7.f_l)
+        if 'w' in xl: file_array.append(i7.f_dic)
     elif xl == "-m":
         try:
             check_possible_max = int(sys.argv[argcount+1])
@@ -189,11 +191,12 @@ while argcount < len(sys.argv):
     elif xl == "-c": check_possible = True
     elif xl == "-nc": check_possible = False
     elif xl == "-of":
-        get_last = False
-        get_first = True
+        get_lasts = False
+        get_firsts = True
     elif xl == "-ol":
-        get_last = True
-        get_first = False
+        get_lasts = True
+        get_firsts = False
+    elif xl == "-np": print_possible = False
     elif xl == "-i": only_stdin = True
     elif xl == "-?" or xl == "?": usage()
     elif not xl.replace(",", "").isalpha(): usage("Invalid flag {:s}\n\n".format(xl))
@@ -206,6 +209,10 @@ while argcount < len(sys.argv):
             elif 'C' in y:
                 for z in ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']:
                     temp = re.sub("C", z, y)
+                    pals.append(temp)
+            elif 'A' in y:
+                for z in ascii_lowercase:
+                    temp = re.sub("A", z, y)
                     pals.append(temp)
             else:
                 pals.append(y)
