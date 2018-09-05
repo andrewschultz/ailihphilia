@@ -38,6 +38,7 @@ table of Ms Ism pals	0	0	false	"Ms Ism's pals (TALK to Ms Ism)"	--
 table of My Gym songs	0	0	false	"songs in My Gym (LISTEN)"	"All those tunes, and nothing by ABBA! Low class, low class."
 table of noesies	0	0	true	"responses to NO"	--
 table of nothings	0	0	true	"responses to empty commands"	--
+table of npc mistakes	0	0	false	"CALL/PHONE random NPC text"	"It'll be even less informative next time around."
 table of random authors	0	0	false	"random author names (ones I particularly liked)"	--
 table of random palindrome firstlast names	0	0	false	"First/last names in Name ME Man"	--
 table of random palindrome lastfirst names	0	0	false	"Last/first names in OH WHO"	--
@@ -874,6 +875,7 @@ randtxt
 "Eponymy? Nope"
 "Fit, O Motif"
 "If I Had a Hi-Fi"
+"Lug, O Mogul"
 "A Mardy Drama"
 "Me, Lo, Golem"
 "Miss a Passim"
@@ -1066,6 +1068,7 @@ randtxt
 "Emote to Me"
 "Er, AWARE"
 "Ghosts, Oh, G"
+"Goad a OG"
 "Gots To, G"
 "H/T Fifth"
 "H/T Ninth"
@@ -1082,6 +1085,7 @@ randtxt
 "Lana L"
 "Le BE Rebel"
 "LFO ROFL"
+"Lit Null Until"
 "Lulu L"
 "Major Pro Jam"
 "Manic in AM"
@@ -1115,6 +1119,8 @@ randtxt
 "Set-a-Mates"
 "So-BS ASBOS"
 "SOBs['] ASBOs"
+"Spark Raps"
+"Stan-Ats"
 "Sum Us"
 "Sun Is in Us"
 "Sun on Us"
@@ -1181,6 +1187,19 @@ randtxt
 "Verb! Rev!"
 "Ya, no! Nay!"
 "Yo! Coy?"
+
+table of npc mistakes
+randtxt
+"Allo? Holla[']"
+"Da Sad"
+"Guv, ug"
+"Ha. Boo. Bah"
+"I, Ha, ... Hi"
+"Plead: a [']elp"
+"Rep [']er"
+"Suss us"
+"[']Tis it"
+"We mew"
 
 table of Ms Ism pals
 randtxt
@@ -1350,6 +1369,7 @@ randtxt
 "'Tabu' Kubat"
 "Tannin['] Nat"
 "Tar Prat"
+"Taxa['] T"
 "'Teepee' Peet"
 "Tim O['] Vomit"
 "Toilless Elliot"
@@ -1399,7 +1419,9 @@ randtxt
 "Idea-ed, I!"
 "If I wifi..."
 "J****, EJ!"
+"Mac, see? Scam!"
 "Mail Lilliam..."
+"Mod Less Seldom!"
 "Mod?! ODOM?!"
 "More ROM!"
 "Nail Elian"
@@ -1491,6 +1513,7 @@ randtxt
 "Pah, simp! Mishap!"
 "Pre-derp..."
 "Re-deeder."
+"Redid [']er."
 "Redo'd [']er."
 "'Redo-coder! Redo-coder!'"
 "Returnin['] rut, er..."
@@ -1509,6 +1532,7 @@ randtxt
 "Onan, O"
 "[']S SENSUOUSNESS"
 "Solo Gigolos"
+"A Vow, Ova[']"
 
 table of university targets
 randtxt
@@ -1633,6 +1657,7 @@ randtxt
 "Imam, I!"
 "Iz no Ponzi!"
 "KJU? J/k!"
+"Mad-Eyed, Am!"
 "Maga'M!"
 "Main, I am!"
 "ME!!!! Haw. Ahem."

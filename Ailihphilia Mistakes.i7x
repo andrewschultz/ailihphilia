@@ -829,6 +829,8 @@ to decide whether thug-near:
 
 to say or-ups: if word number 1 in the player's command is "ups", say ", much less spu";
 
+understand "call [text]" and "phone [text]" as a mistake ("Like your average random NPC, anyone you tried to call from [b][if player is in Yawn Way]Name ME, Man[else]Oh Who[end if][r] would probably just have random general useless things to say like '[next-rand-txt of table of npc mistakes]!'") when Name ME Man is quicknear or Oh Who is quicknear.
+
 understand "gift fig" as a mistake ("It already is one. And you don't need to pass it on.") when gift fig is quicknear.
 
 understand "guh" and "thug" and "guh thug" as a mistake ("That's what [random visible guhthug] is, but you need to figure how to get rid of him.") when thug-near.

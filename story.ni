@@ -137,7 +137,7 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 460. [-40 from max_verbs debug]
+use MAX_VERBS of 480. [-40 from max_verbs debug]
 
 use MAX_ACTIONS of 200.
 
@@ -3095,6 +3095,7 @@ chapter Set O Notes
 
 the Set O Notes is a helpdoc. description is "[b]OPPO[r] is printed at the top. There's vague advice about making a North-Tron to defeat the Diktat Kid, but first you'll have to defeat [b]Ms. Ism[r], as well as the [b]Yuge Guy[r].[paragraph break]There's mention of a guh-thug in various places, and you'll have to do something special when you see one. [thug-report].[paragraph break]Also scribbled, in the center, is [b][Fun Enuf][r] with [b]TRI-GIRT[r] below that. There are other landmarks scribbled in, which [if number of visited rooms < 20]will help you identify new places and scenic barriers and such[else]have been helpful so far[end if].[paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
 
+understand "tri girt" and "trigirt" as set o notes.
 understand "oppo" as set o notes.
 
 to say thug-report:
