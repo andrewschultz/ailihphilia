@@ -59,8 +59,11 @@ track_run_total = False
 word_dict = defaultdict(bool)
 caps_dict = defaultdict(bool)
 twolist = []
-ends = {}
-starts = {}
+ends = defaultdict(lambda: defaultdict(bool))
+starts = defaultdict(lambda: defaultdict(bool))
+
+get_start_of_pal = defaultdict(lambda: defaultdict(lambda: defaultdict(bool)))
+get_end_of_pal = defaultdict(lambda: defaultdict(lambda: defaultdict(bool)))
 
 mid_string = ''
 begin_string = ''
@@ -138,20 +141,20 @@ def get_words(a, add_start = True, add_end = True, use_caps = False):
             l = line.strip().lower()
             word_dict[l] = True
             caps_dict[l] = use_caps
-            if add_start:
-                start_words[l] = True
-                if twosies:
-                    starts[l[:2]][l] = True
-                else:
-                    v = l[:1]
-                    starts[v][l] = True
-            if add_end:
-                end_words[l] = True
-                if twosies:
-                    ends[l[-2:]][l] = True
-                    u = l[-1:]
-                else:
-                    ends[u][l] = True
+            ll = len(l)
+            for x in range (0, ll):
+                if add_start:
+                    flipstr = l[x:]
+                    if flipstr == flipstr[::-1]:
+                        l2 = l[:x][::-1]
+                        get_end_of_pal[x][l2][l] = True
+                        #print(l2, 'tacked on to the start of', l, 'makes a palindrome.')
+                if add_end:
+                    flipstr = l[:x]
+                    if flipstr == flipstr[::-1]:
+                        l2 = l[x:][::-1]
+                        get_start_of_pal[ll-x][l2][l] = True
+                        #print(l2, 'tacked on to the end of', l, 'makes a palindrome.')
     print("Done with", a)
 
 def all_at_once():
@@ -189,6 +192,24 @@ def pal_to_edit(a):
         print("Copied", a, "to", x)
     else:
         print("No", a, "to copy to", x)
+
+def get_the_stuff(a, b, ps):
+    la = len(a)
+    lb = len(b)
+    if la == lb:
+        if a == b[::-1]: print(a, b, "already a palindrome")
+        return
+    lc = len(b) - len(a)
+    if lc < 0: lc = - lc
+    if la > lb:
+        if not a.startswith(b[::-1]): return
+        if a[lb:] in get_start_of_pal[lc].keys():
+            print("(start with",  a[lb:], ")", ps, "have", ', '.join(get_start_of_pal[lc][a[lb:]].keys()), lc, get_start_of_pal[lc][a[lb:]].keys())
+        return
+    if la < lb:
+        if not b.startswith(a[::-1]): return
+        if b[la:] in get_end_of_pal[lc].keys():
+            print("(end with", b[la], ")", ps, "have", ', '.join(get_end_of_pal[lc][b[la:]].keys()), lc, get_end_of_pal[lc][b[la:]].keys())
 
 def one_at_a_time(newfile=True, my_string = ''):
     global begin_string
@@ -246,38 +267,9 @@ def one_at_a_time(newfile=True, my_string = ''):
         my_stuff = list(ascii_lowercase)
     start = time.time()
     run_total = [0, 0]
-    for l in my_stuff:
-        l2 = l[::-1]
-        poss_combos = len(starts[l].keys()) * len(ends[l2].keys())
-        if track_run_total:
-            run_total[0] = run_total[0] + len(starts[l].keys())
-            run_total[1] = run_total[1] + len(ends[l2].keys())
-            print('total', run_total[0], run_total[1])
-        if not suppress_progress:
-            if show_zeros or (len(starts[l].keys()) and len(ends[l2].keys())):
-                stderr_string = '{:s} ({:>5d}) < START END > {:s} ({:>5d}) combos = {:>10d}.\n'.format(l, len(starts[l].keys()), l2, len(ends[l2].keys()), poss_combos)
-                sys.stderr.write(stderr_string)
-        totals = totals + poss_combos
-        for x in (starts[l].keys() if sort_output is False else sorted(starts[l].keys())):
-            for y in (ends[l2].keys() if sort_output is False else sorted(ends[l2].keys())):
-                z = begin_string + x + mid_string + y
-                if z == z[::-1]:
-                    ana = (x == y[::-1])
-                    this_line = '{:>5d} {:s} + {:s} ~ {:s}.'.format(ana_count if ana else pal_count,
-                    (begin_string + ' + ' if begin_string != '' else '') + optcaps(x),
-                    (mid_string + ' + ' if mid_string != '' else '') + optcaps(y),
-                    ('WORDY ' if z in words else '') + ('ANAGRAM' if ana else 'PALINDROME'))
-                    if to_file:
-                        if ana:
-                            fouta.write(this_line + '\n')
-                            ana_count = ana_count + 1
-                        else:
-                            fout.write(this_line +'\n')
-                            pal_count = pal_count + 1
-                    else:
-                        print(this_line)
-    poss_found_1 = str(pal_count) + ' possible palindromes found.'
-    poss_found_2 = str(ana_count) + ' possible palindromes found.'
+    for l in sorted(word_dict.keys()):
+        get_the_stuff(begin_string + l + mid_string, end_string, "{:s} + {:s} + {:s} + ... + {:s}".format(begin_string, l, mid_string, end_string))
+    exit()
     if fout:
         fout.write(poss_found_1 + '\n')
     else:
