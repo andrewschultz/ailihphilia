@@ -86,9 +86,12 @@ No, really, they're big enough, I'm throwing in an extra hint as a buffer.
 The Knife Fink is greedy, and the Verses Rev is religiously superstitious.
 Oh, one more buffer: these clues are duplicated somewhat in the Dirge Grid.
 First, you need to have destroyed the test set with the yard ray.
-Second, you need the Me Gem, which is probably the easier of the two items to get.
+If you haven't done so, you can't possibly get the remaining two items, since the only way the test set appears is if you destroyed the Work Row machines.
+Second, you need the Me Gem, which is probably the easier of the two remaining items to get.
+It is inside the You Buoy.
 Third, you need the Taboo Bat.
-What you use them on, I'll punt to the Dirge Grid hints.
+It is created from the Not-a-Baton.
+What you use them on, I'll punt to the Dirge Grid hints. But trial and error should suffice there.
 ?Now that I defeated the Diktat Kid and came back, how do I get out?
 This one should be pretty simple.
 You got a new item in the Dirge Grid.
@@ -99,14 +102,16 @@ You win!
 ?I didn't get the best ending. What gives?
 You need all the Last Lousy Points.
 You also need one other thing you may randomly get right, or you may not.
-Sorry. It's hidden. Any clue might blow it, and I'd like you to have the satisfaction of finding it on your own.
-But if you poke at the source code, you'll find it, and I hope you'll agree it's logical.
+Sorry. It's hidden. Any outright clue might blow it, and I'd like you to have the satisfaction of finding it on your own.
+Maybe it isn't quite as clever as The Ascot, but I still like it. Go play The Ascot now, if you haven't. It's relatively simple. OR IS IT.
+Okay. If you poke at the source code, you'll find what to do, and I hope you'll agree it's logical.
+That's my final word on the matter. Well, in this document, anyway.
 >>DIRGE GRID
 ?Why was I kicked back?
 You didn't have all the items prepared that you needed to.
 There are three baddies in the Dirge Grid.
 You need one item to dispose of each of them.
-?Do I have to pick off one henchman first?
+?Is it better/necessary to pick off a certain henchman first?
 No. Either way is okay.
 But you have to pick them both off before using the yard ray.
 ?What is the Knife Fink's weakness?
@@ -532,7 +537,7 @@ USE ELAN ALE ON SNIFFINS.
 You can't get in if you don't have what you need.
 Something that's the opposite of her.
 But you can't use the orb on her. It wouldn't magnify enough.
-USE BROS ORB ON MIRROR RIM.
+USE BROS' ORB ON MIRROR RIM.
 ?What are the sword rows for for?
 Well, there's one thing that needs to be carved.
 USE BALSA SLAB ON SWORD ROWS.
@@ -589,7 +594,7 @@ There are 37 total points in Yelpley.
 1 point if you USE ERODED ORE ON REVIVER.
 1 point if you USE YOU BUOY ON ROTATOR.
 1 point if you USE MR ARM ON BOMB MOB.
-1 point if you USE BROS ORB ON MIRROR RIM.
+1 point if you USE BROS' ORB ON MIRROR RIM.
 1 point if you USE NOT-A-BATON ON REIFIER.
 1 point if you USE BALSA SLAB ON SWORD ROWS.
 ?How do I get all the points for Grebeberg?

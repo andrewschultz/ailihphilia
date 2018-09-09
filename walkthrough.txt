@@ -4,11 +4,15 @@ I didn't intend this game to be overly difficult or to have any weird profound m
 
 There should be no way to die or be locked out of a win in Ailihphilia.
 
-If you are technically inclined, you can grep -i "^>" walkthrough.txt | sed "s/.*>//" to plow through. But if you're technically inclined, you likely won't need the walkthrough. Still, if you want the quick way without comments, there it is. (Okay, it could be quicker, turn-wise, with the GT command. But you might not save keystrokes.)
+Ailihphilia is also decidedly nonlinear. This creates some problems with a plain text document. I doubt that you proceeded in the way I organized the puzzles for my main tests, so you may wind up skipping around a bit. I can only recommend the Invisiclues-style HTML hints that come with the build, if you want a more thorough approach to the game. It is room-based, so it may not be perfect, but you should be able to tell if something is blocking you.
+
+The best way to look for what you need is to search for something that is blocking you. For instance, if you are stuck by the s-c-o-r-n r-o-c-s, you could search for either word (without the dashes).
+
+If you are technically inclined, you can grep -i "^>" walkthrough.txt | sed "s/.*>//" to plow through. Or grep -i ">.*(item name)" to see what to do with a specific item. So, if you want the quick way without comments, there it is. (Okay, it could be quicker, turn-wise, with the GT command. I've gotten under 200. But you might not save keystrokes.)
 
 Some particular spoilers, such as the general procedure for puzzles, may be encoded in ROT13. You'll know them, because they look like gibberish. Copy and paste them to Rot13.com to see what happens.
 
-Many point scoring commands will be palindromes. Most of the others are of the form USE X ON Y. You can shorten them by just using one word. In other words, to plagiarize from Kingdom of Loathing's Palindome, USE EVIL OLIVE ON TACO CAT can be shortened to USE OLIVE ON CAT. (I used the full names because I wrote a script to make sure the walkthrough and source were relatively synced, and I didn't want to cross up namespaces e.g. the Gulf Lug and Flu Gulf could both be GULF.)
+Many point scoring commands will be palindromes. Most of the others are of the form USE X ON Y. You can shorten them by just using one word. In other words, to bowdlerize from Kingdom of Loathing's Palindome, USE EVIL OLIVE ON TACO CAT could be shortened to USE OLIVE ON CAT. (I used the full names because I wrote a script to make sure the walkthrough and source were relatively synced, and I didn't want to cross up namespaces e.g. the Gulf Lug and Flu Gulf could both be GULF.)
 
 So! Fun Enuf is, well, not fun enough to start. And worse yet, you can't leave until you know what to do with the Pact Cap! Well, you can leave through the Tix Exit, but that's no fun, unless you like seeing bad ends.
 
@@ -152,6 +156,8 @@ Let's break us off some of that past sap.
 
 (+1) >USE WASH SAW ON PAST SAP
 
+Now put the sap somewhere its stickiness doesn't matter.
+
 (+1) >USE PUCE CUP ON PAST SAP
 
 >S.E.E.E.S.GET TROLL ORT
@@ -201,6 +207,8 @@ You're kicked out, but you can just go back in.
 >S
 
 (+1) >USE ELAN ALE ON SNIFFINS
+
+You didn't need to give Sniffins anything to get the Nat's, but you still need Nat's much later.
 
 (+1) >STAND NAT'S
 
@@ -270,6 +278,8 @@ Now the Gold Log is shiny, but it's not particularly useful, and it's not you. I
 
 (+1) >USE STRAW ARTS ON REVOLT LOVER
 
+You could cut a design out of the soot tattoos, but with what?
+
 (+1) >USE GATE TAG ON SOOT TATTOOS
 
 >S.S.W.WORK ROW
@@ -280,37 +290,47 @@ We can stop here to make passage to not one, but two, new places. The third will
 
 (+1) >USE POO COOP ON GNU DUNG
 
+Recycling time!
+
 (+1) >USE POO COOP ON TURF RUT
 
 >W
 
+The made dam may or may not be hiding something.
+
 (+1) >USE RADAR ON MADE DAM
 
-You can probably guess the eroded ore can be changed into Ore Zero, but that's a bit out of the way for an optimal walkthrough.
+You can probably guess the eroded ore can be changed into Ore Zero, but getting it now is a bit out of the way for an optimal walkthrough. Let's wait until we have other stuff for the machines.
 
 >N
 
-We can help the Known Wonk out doubly, now, which helps us out, too.
+We can help the Known Wonk out, now, which helps us out, too.
 
 (+1) >USE NULL ILLUN ON KNOWN WONK
 
+We can go north!
+
 (+1) >USE EL DOODLE ON EDITS TIDE
+
+The map is useful later, but first, we can do good work north in Lac Oft Focal.
 
 >N
 
-And we can do a lot on the Lac Oft Focal, as you'd expect. First, the Kayak doesn't have any oars, but you have something that can help you get places.
+First, the Kayak doesn't have any oars, but you have something that can help you get places.
 
 (+1) >USE ELOPE POLE ON KAYAK
 
-How do you feel peaceful enough to not be disrupted by your enemies?
+How do you feel peaceful enough to not be disrupted by your enemies, or this quest not being super intense?
 
 (+1) >USE DORK ROD ON TAO BOAT
 
 >S.S.S
 
-And now we can do a bit of double duty with the Code Doc.
+And now we can do a bit of double duty with the Code Doc. First, help the Code Doc...
 
 (+1) >USE TENT NET ON CODE DOC
+
+...and the Code Doc will help you!
 
 (+1) >USE SPA MAPS ON CODE DOC
 
@@ -324,9 +344,15 @@ Now to get by the Ergot Ogre to the south of the Code Doc. You won't have seen t
 
 >W.S.S.S.E
 
+Pick up something for later in Moo Room.
+
 (+1) >USE ENACT CANE ON YAHOO HAY
 
+You'll clean up somewhere else, but first, let's clean up Grebeberg of a certain hooligan.
+
 (+1) >PACE CAP
+
+This makes you go faster.
 
 (+1) >USE TROLL ORT ON BRAG GARB
 
@@ -338,6 +364,8 @@ How to get the yak to charge?
 
 (+1) >YAK OKAY
 
+Bye bye, ogre. Happy trails, yak.
+
 >E
 
 (+1) >USE SAGE GAS ON TAME MAT
@@ -346,13 +374,19 @@ The guru rug is still a bit too pie-in-the-sky. Maybe it would be great if you d
 
 (+1) >USE SHARP RAHS ON GURU RUG
 
+There we go! You feel more competent now.
+
 >W.N.N.E.S
 
 What do we do about Ian? Once we dispose of him, we can mix foods. But he is in the way!
 
 (+1) >NAIL IAN
 
+Without Ian, we can experiment some. Mont Nom is about food.
+
 (+1) >USE SNACK CANS ON UFO TOFU
+
+And experiment some more.
 
 (+1) >USE GIFT FIG ON MAYO YAM
 
@@ -364,7 +398,11 @@ Okay. The Martini Tram is the second part of the North-Tron.
 
 >S.S
 
+We heard some chatter from the south, and now Dr. D needs a bit more help!
+
 (+1) >USE WASH SAW ON PORCH CROP
+
+The balsa slab will be useful for later.
 
 >N.E
 
@@ -372,7 +410,7 @@ Okay. The Martini Tram is the second part of the North-Tron.
 
 >N
 
-Now, you can USE STIR WRITS ON BROS ORB, or you can just save a few keystrokes (which doesn't cost you a point for avoiding the "USE" construction) ...
+The stir writs encourage you to take the Bro Orb. So you can USE STIR WRITS ON BROS ORB, or you can just save a few keystrokes (which doesn't cost you a point for avoiding the "USE" construction) ...
 
 >GET ALL
 
@@ -382,33 +420,49 @@ Now with all the junk we have, we can make non-junk.
 
 (+1) >USE DNA BAND ON REIFIER
 
+The DNA hand isn't quite alive ... yet.
+
 (+1) >USE ROTO MOTOR ON DNA HAND
+
+How very grabby!
 
 (+1) >USE ERODED ORE ON REVIVER
 
-Three parts of the north-tron! The fourth is just a bit away.
+Three parts of the north-tron! The fourth is just a bit away. But first, let's see if the machines throw out anything.
 
 (+1) >USE YOU BUOY ON ROTATOR
+
+Treasure! Cool. You don't need it, but maybe you can use it to negotiate.
 
 >E.N.N.N.E
 
 (+1) >USE MR ARM ON BOMB MOB
 
-You can use it/him on the TNT, too, to get the point.
+You can use Mr Arm on the TNT, too, to get the point. But the way I programmed things, I checked if I should send each used item to the great yonder, so it was easier this way for me. A few keystrokes harder for you.
 
 >GET REP POPPER
 
+You could also have taken the rep popper after visiting the Tao Boat, but it wasn't super easy to swing by until now.
+
 >W.S.S.W.W.N.N
+
+The rocs are proudly shiny, but ...
 
 (+1) >USE NAT'S TAN ON SCORN ROCS
 
 >W
 
+How to cut the Yuge Guy down to size? It's not him, but the idea of him that is intimidating or impressing people.
+
 (+1) >USE REP POPPER ON ME TOTEM
 
 >E.S.S.E.E.E.N
 
-(+1) >USE BROS ORB ON MIRROR RIM
+Now another enemy to deal with ... not directly, though. Again, they seem bigger than they are due to amplifiers.
+
+(+1) >USE BROS' ORB ON MIRROR RIM
+
+The sword rows--what are they useful for?
 
 (+1) >USE BALSA SLAB ON SWORD ROWS
 
@@ -418,11 +472,13 @@ The not-a-baton could use a boost.
 
 (+1) >USE NOT-A-BATON ON REIFIER
 
-Boom go the machines! Now you have a weapon to take out the Diktat Kid! But it's not loaded.
+Boom go the machines! Well, the final machine. Now you have a weapon to take out the Diktat Kid! But it's not loaded.
 
 (+1) >USE MURDERED RUM ON YARD RAY
 
-How do you turn it on?
+How do you turn it on? EMIT ********.
+
+The last four letters are TIME, because palindromes. You need something bright.
 
 (+1) >EMIT NOONTIME
 
@@ -432,7 +488,7 @@ Let's practise our aim.
 
 >E.N.W
 
-Okay, let's build the North-Tron. Any command is acceptable here.
+Okay, let's build the North-Tron. Twenty commands are acceptable here: choose two from the ingredients and epicer recipe.
 
 (+1) >USE TNT ON ORE ZERO
 
@@ -440,7 +496,11 @@ Okay, let's build the North-Tron. Any command is acceptable here.
 
 Now, carnage! And points! And so on. Either the Knife Fink or Verses Rev can go first, but both have to go before you deal with the Diktat Kid.
 
+The Knife Fink looks a bit greedy.
+
 (+1) >USE ME GEM ON KNIFE FINK
+
+The verses rev is given to silly moral outrage.
 
 (+1) >USE TABOO BAT ON VERSES REV
 
@@ -454,4 +514,4 @@ One last thing to do. It's not too tricky, I hope.
 
 (+1) >USE X-ITE TIX ON TIX EXIT
 
-There are slightly different endings, based on whether or not you found the LLP ... and, well, one other thing I'll let you work out so the X/O Box has something extra.
+There are slightly different endings, based on whether or not you found all the LLPs ... and, well, one other thing I'll let you work out so the X/O Box has something extra. If you're really curious, you can look through the source. But I don't want to spoil it in a standard walkthrough. I think it's appropriately thematic, though.

@@ -29,7 +29,10 @@ triz_flow = "c:/games/inform/triz/mine/ailihphilia-flow.trizbort"
 invis_raw = "c:/writing/scripts/invis/ai.txt"
 test_file = "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/Ailihphilia Tests.i7x"
 
-obj_name_hash = { "ti": "TO IDIOT" }
+obj_name_hash = {
+  "ti": "TO IDIOT",
+  "go by bog": "GO-BY BOG",
+}
 
 reg_to_border = { "yelpley": "dash", "dim mid": "solid", "grebeberg": "dot" }
 
@@ -460,7 +463,7 @@ def source_vs_trizbort_flow():
                     floreg = re.sub(".*region=\"", "", line.strip().lower())
                     floreg = re.sub("\".*", "", floreg)
                     if floreg != source_region[rn]:
-                        print("Oops mismatched source/flow regions for", rn, "/", floreg, "/", source_region[rn])
+                        print("Oops mismatched source/flow regions for {:s} flow={:s} source={:s}".format(rn, floreg if floreg else "NONE", source_region[rn] if source_region[rn] else "NONE"))
                         flo_region_errs += 1
             # print("Adding", rn)
     if flo_region_errs > 0:
@@ -676,7 +679,8 @@ def get_stuff_from_source():
                         machine_actions[x[u2_col]] = machine_actions[x[u2_col]] + "    {:s} -> {:s}\n".format(x[u1_col], x[getit_col])
                     cmd = ""
                     if x[u1_col] != '--' and x[u2_col] != '--':
-                        cmd = "USE {:s} ON {:s}".format(obj_name_hash[x[u1_col]] if x[u1_col] in obj_name_hash else x[u1_col].upper(), x[u2_col].upper())
+                        cmd = "USE {:s} ON {:s}".format(obj_name_hash[x[u1_col]] if x[u1_col] in obj_name_hash else x[u1_col].upper(),
+                            obj_name_hash[x[u2_col]] if x[u2_col] in obj_name_hash else x[u2_col].upper())
                         new_cmd_ary = find_comment_cmds('b4', line)
                         new_cmd_ary.append(cmd)
                         new_cmd_ary = new_cmd_ary + find_comment_cmds('af', line)
