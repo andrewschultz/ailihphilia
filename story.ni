@@ -149,7 +149,7 @@ use MAX_VERBS of 520. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 use MAX_ACTIONS of 210. [+10?]
 
-use MAX_VERBSPACE of 5000. [4096 = original max]
+use MAX_VERBSPACE of 5100. [4096 = original max]
 
 chapter room utilities
 
@@ -353,7 +353,7 @@ carry out huging:
 	say "Hug? Uh...";
 	the rule succeeds.
 
-instead of kissing, say "[one of]XOXOX[or]OXOXO[at random]!"
+instead of kissing, say "[one of]XOXOX[or]OXOXO[or]Hug? Uh[at random]!"
 
 volume room specifications
 
@@ -471,7 +471,7 @@ to score-inc:
 	reg-inc mrlp;
 
 check requesting the score:
-	say "Your overall score so far is [score] of [maximum score] in [turn count] [if turn count is nontrivially-palindromic](!) [end if]turn[unless turn count is 1]s[end if][if score < 4]. But don't worry, points pile up pretty quickly once you get going[end if]. [to-get-max].";
+	say "Your overall score so far is [score] of [maximum score] in [turn count] [if turn count is nontrivially-palindromic](!) [end if]turn[plur of turn count][if score < 4]. But don't worry, points pile up pretty quickly once you get going[end if]. [to-get-max].";
 	say "[line break]Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do].";
 	if My Gym is visited or Evaded Ave is visited:
 		let nmg be number of moot guhthugs;
@@ -488,8 +488,8 @@ check requesting the score:
 		else:
 			say "You have [Q] roving last lousy point[plur of Q] left and [Q2] non-roving LLP[plur of Q2] left.";
 	if player has epicer recipe and north tron is off-stage:
-		say "[if epicer recipe is nox]You realize a score is only an abstract indicator of how well you're doing, and maybe that epicer recipe would help you figure what's what. So you read it, and you note y[else]Y[end if]"
-		say "ou [if tron-got is 0]don't have any of the [number of tronparts in words][else]also have [tron-got] piece[if tron-got is not 1]s[end if] of [number of tronparts][end if] North-Tron pieces you need to destroy the [KAOS Oak], according to the epicer recipe[hint-tron].";
+		say "[if epicer recipe is nox]You realize a score is only an abstract indicator of how well you're doing, and maybe that epicer recipe would help you figure what's what. So you read it, and you note y[else]Y[end if]";
+		say "ou [if tron-got is 0]don't have any of the [number of tronparts in words][else]also have [tron-got] piece[plur of tron-got] of [number of tronparts][end if] North-Tron pieces you need to destroy the [KAOS Oak], according to the epicer recipe[hint-tron].";
 		now epicer recipe is xed;
 	if mist-found > 0, say "[line break]You've also found [mist-found] of [number of entries in checkoffs] palindromes that were there but not critical to the story. [if mist-found * 2 > number of entries in checkoffs]Very impressive![else]Don't knock yourself out trying to find them all.[end if]";
 	if score-cheat > 0, say "[line break]Also, you used a warp command or commands to plow past [score-cheat] point-giving activities, but I won't hold it against you. I'm glad you were motivated to try and see the end!";
@@ -942,7 +942,7 @@ instead of thinking:
 			say " [od] of [the room ir of Q][run paragraph on]";
 		say ".";
 	if wayoutrooms > 0:
-		say "You'll want to visit [number of way-out rooms] place[if wayoutrooms > 1]s[end if] more than one move away from everywhere you've currently explored. I won't spoil them, but they're available.";
+		say "You'll want to visit [number of way-out rooms] place[plur of wayoutrooms] more than one move away from everywhere you've currently explored. I won't spoil them, but they're available.";
 		if debug-state is true, say "WAY OUT: [list of way-out rooms].";
 	repeat with Q running through visited rooms:
 		process stuck-rule of Q;
@@ -1714,7 +1714,9 @@ to decide whether y-poopy:
 
 chapter singing
 
-instead of singing, next-rand table of singstuff;
+instead of singing:
+	if player is in Deft Fed or Bond Nob is quicknear, say "[if player is in Deft Fed]The Bond Nob[else][Sniffins][end if] tells you not to sing unless you've had your fill of Regale-Lager.[paragraph break]There is none in this game." instead;
+	next-rand table of singstuff;
 
 chapter silly swearing
 
@@ -2576,7 +2578,7 @@ this is the kid-bye rule:
 this is the kid-left rule:
 	unless redact-postrule:
 		if Verses Rev is moot and Knife Fink is moot:
-			say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'Meh, THEM! I should've gone with [next-rand-txt of table of rejected kid sidekicks]. Or [next-rand-txt of table of rejected kid sidekicks]. Or...'";
+			say "Two-nowt, you muse to yourself. The Diktat Kid, clearly angry, mutters 'OW! TWO?! Meh, THEM! I should've gone with [next-rand-txt of table of rejected kid sidekicks]. Or [next-rand-txt of table of rejected kid sidekicks]. Or...'";
 		else:
 			say "The Diktat Kid mutters the [if Verses Rev is moot]Verses Rev[else]Knife Fink[end if] was sorta flaky anyway. Shoulda gone with [next-rand-txt of table of rejected kid sidekicks].";
 	the rule succeeds;
@@ -3027,7 +3029,9 @@ understand "pack cap" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did." instead;
-	say "Yes, that's how to get the cap. You are ready to go! Hat, ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. 'Maybe later you'll find a way past the [KAOS Oak] to the Dirge Grid to defeat the Diktat Kid. But it's complicated. Still, first things first. The LO VOL setting means you won't get any sounds hinting if you need to do something weird to something you find. LOVE VOL means you will.'[paragraph break]The Flee Elf then mumbles something about the risk of a partner-entrap, so you'll have to go it alone. With a 'Rep us SUPER' and 'It's best I...' it  becomes the, err, FLED Elf, pointing at the tile lit (which has a new line now) as you leave. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]It fits okay on your head, and there's no need to take it off. Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
+	say "An unseen voice booms 'Rec [']er!' as you take the hat. Ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,', the flee Elf says. 'I have faith you'll find a way past the [KAOS Oak] to north to defeat the Diktat Kid in the Dirge Grid. But it's complicated.[paragraph break];Still, first things first. The LO VOL setting means you won't get any sounds hinting if you need to do something weird to something you find. LOVE VOL means you will.'";
+	wfak;
+	say "[paragraph break]The Flee Elf then mumbles something about the risk of a partner-entrap, so you'll have to go it alone. With a 'Rep us SUPER' and 'It's best I...' it  becomes the, err, FLED Elf, pointing at the tile lit (which has a new line now) as you leave. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]It fits okay on your head, and there's no need to take it off. Perhaps it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
 	get-cap;
 	score-inc; [Dim Mid/pack cap]
 	verify-done rev-pack-cap rule;
@@ -3423,7 +3427,7 @@ the ebola lobe is peripheral scenery in Flu Gulf. "It doesn't look that awful, b
 
 chapter gulf lug
 
-the Gulf Lug is a person in Flu Gulf. "The Gulf Lug stands here, bent partially over with abdominal pain.". description is "The Gulf Lug looks slightly ill. Maybe you could help fix that!".
+the Gulf Lug is a person in Flu Gulf. "The Gulf Lug stands here, bent partially over with abdominal pain.". description is "The Gulf Lug looks slightly ill. Probably with Ulf's Flu. Maybe you could help fix that!".
 
 chapter cash sac
 
@@ -4071,7 +4075,7 @@ check opening you buoy: say "You can't find an opening. Sadly, this is slightly 
 
 chapter ME gem
 
-the ME gem is a thing. description is "You feel a strong urge to keep this and not share it, because of all the crazy things you did to get it, but you know that's not quite right. You wonder of its origin--perhaps it was chipped off from Le We Jewel, or it was originally engraved in the Ring O['] Zognir. Or was it the Ring of Ufogrin?[paragraph break]Also, it looks nothing at all like the emerald in Zork I, which was also in a buoy, so stop thinking that.[paragraph break]It doesn't feel destructive, so it's not a gem o['] omega, or anything."
+the ME gem is a thing. description is "You feel a strong urge to keep this and not share it, because of all the crazy things you did to get it, but you know that's not quite right. You wonder of its origin--perhaps it was chipped off from Le We Jewel, or it was originally engraved in the Ring O['] Zognir. Or was it the Ring of Ufogrin?[paragraph break]Also, it looks nothing at all like the emerald in Zork I, which was also in a buoy, so stop thinking that.[paragraph break]It doesn't feel destructive, so it's not a gem of omega, or anything."
 
 book Apse Spa
 
@@ -4139,15 +4143,7 @@ after looking in Yawn Way:
 
 chapter day away ad
 
-the day away ad is scenery. printed name of day away ad is "Day-Away Ad". "The Day-Away Ad describes businesses soon to open in the new improved Yelpley, including [two-ads]."
-
-to say two-ads:
-	next-rand table of businesses;
-	choose row with tabnam of table of businesses in table of all randoms;
-	if tabidx entry < number of rows in table of businesses:
-		say " and [next-rand-txt of table of businesses]";
-	if tabidx entry is number of rows in table of businesses:
-		say " ... and wait! There'll even be a new Deft Fed, owned by a salt-of-the-earth type named Treffert, now that Sniffins/Smuggums totally sold out"
+the day away ad is scenery. printed name of day away ad is "Day-Away Ad". "The Day-Away Ad describes businesses soon to open in the new improved Yelpley, including [next-rand-txt of table of businesses] and [next-rand-txt of table of businesses]."
 
 chapter X/Y Pyx
 
@@ -5174,7 +5170,7 @@ check going south in Emo Dome when Diktat Kid is moot:
 
 check going north in Emo Dome:
 	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. Still, you try to pass by the DIFF-ID but hear a warn-raw voice: 'Dim ID! Go jog!'[paragraph break]You think, hang? Nah. Maybe you [if player has soot tattoos and player has gate tag]can hustle up an ID--a DIY ID, if you will--from your current possessions, though[else if player has soot tattoos or player has gate tag]could find something to help you get by[end if]." instead;
-	if Bros' Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet. You don't feel you have any companionship, or family, or ... something." instead;
+	if Bros' Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet. You don't need someone else, but you need something that makes you feel someone else is, well, there." instead;
 	if Diktat Kid is moot, say "The Red Roses Order is being replaced by something more ... civic. The Teem-Civic Meet, to be precise. It'll take a while. Positive politics often does. Perhaps there should be a 'SLO POLS' sign." instead;
 	if balsa slab is moot, say "The Teem-Civic Meet is going in full swing. They're throwing interesting ideas around, but you don't have anything to add. Lots of folks all 'Yep, ey?'" instead;
 	say "You make sure your state tats are visible for scanning. They are accepted with a 'YA MAY!'.[paragraph break][if Ms Ism is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the sword rows.[end if]";
@@ -5618,7 +5614,7 @@ chapter Ms Ism
 
 Ms Ism is a proper-named female person in Red Roses Order. printed name of Ms Ism is "Ms. Ism". "[one of]Before you have time to gloat '[']N I'm In,' you see Ms. Ism standing[or]Ms. Ism stands[stopping] here in defiance, holding the Gal Flag high and waving it.". description is "She obviously didn't get to her position of power by being some over-educated pantsuited fool who made a small mistake with an e-mail server once.[paragraph break]As she waves that Gal Flag, you should probably be grateful she doesn't have a girl rig, too. You need a way to neutralize the Gal Flag!"
 
-Ms Ism carries the Gal Flag. description of Gal Flag is "It's fluttering even without a breeze, and it reflects throughout the mirror rim to make you feel more than a little overwhelmed. On it is an image of ... Ms. Ism, surprisingly!"
+Ms Ism carries the Gal Flag. description of Gal Flag is "It's fluttering even without a breeze, and it reflects throughout the mirror rim to make you feel more than a little overwhelmed. On it are several images of Ms. Ism doing all kinds of superhuman things."
 
 understand "la gal" and "la/gal" as Ms Ism.
 
@@ -5917,7 +5913,7 @@ talk-text of Psi Wisp is "It has nothing to say. It just pulses.".
 talk-text of Door Frood is "The Door Frood launches into how mostly everyone is really stupid and at fault, and those who aren't can't really do anything except snark about it. And sad thing is, the Door Frood is out of new creative snark! For the moment.".
 talk-text of Rob is "Rob yawns. He doesn't find you very interesting. Maybe there's a way to take advantage of that.".
 talk-text of sleep eels is "Maybe they are sending some sort of electric message you could detect with the right instrument, but they're not talking. You're more struck, though, by how uncomfortable they look while sleeping--wriggling about.".
-talk-text of Sniffins is "[if YOB ATTABOY is not moot]'Tony? Not! Poor lower class me is a failure! If only I had some success manual!'[else]'Oh. It's you again. If you were REALLY smart, you'd have taken the advice in that book you gave me.'[end if]".
+talk-text of Sniffins is "[if YOB ATTABOY is not moot]'Tony? Not! People call food lower class than even N-E-Mart Ramen! If only I had some success manual !'[else]'Oh. It's you again. If you were REALLY smart, you'd have taken the advice in that book you gave me. Too late now! Guess you'll never do anything with your life.'[end if]".
 talk-text of Verses Rev is "The Verses Rev booms 'Erupt! Pure!' then piously intones how weirdos not in line with the Diktat Kid's values need to be eradicated.".
 talk-text of Wordy Drow is "It moans and points at the Liar Grail. They're forced together, somehow, but maybe you can change that. But you'll have to do more than shout 'Ye go, bogey!'".
 talk-text of Yuge Guy is "'I'm ... ' / 'TMI!'"

@@ -272,6 +272,10 @@ chapter Fun Enuf
 
 understand "evaded ave" as a mistake ("That'll appear later.[mis of 107]") when player is in Fun Enuf and Evaded Ave is unvisited.
 
+understand "eval ave" as a mistake ("[if player has pact cap]You've already been[else]You're currently being[end if] evaluated.[mis of 317]") when player is in Fun Enuf.
+
+understand "evar ave" as a mistake ("Evac Ave seems pretty timeless.[mis of 318]") when player is in Fun Enuf.
+
 understand "fu nuf" as a mistake ("Any FU is too much FU in a (Zarfian) polite game like this. [if poop-boob-yet is true]You found a better[else]There's a more appropriate[end if] way to swear in this game.[mis of 108]") when player is in Fun Enuf.
 
 understand "fun nuf" as a mistake ("Still ungrammatical![mis of 109]") when player is in Fun Enuf.
@@ -304,6 +308,8 @@ understand "paco cap" as a mistake ("[if player has pact cap][pace-clue-maybe][e
 understand "pacs cap" as a mistake ("PACs aren't necessarily evil, but they aren't terribly heroic.[mis of 120]") when Pact Cap is quicknear.
 
 understand "pact cap" as a mistake ("It already is![mis of 121]") when Pact Cap is quicknear.
+
+understand "perk rep" as a mistake ("The Flee Elf is already awake.[mis of 319]") when Flee Elf is quicknear.
 
 understand "space caps" as a mistake ("Really, you only need one. Who do you think you are, Bartholomew Cubbins? Zaphod Beeblebrox?[mis of 316]") when Pact Cap is quicknear.
 
@@ -524,6 +530,8 @@ understand "DNA sand" as a mistake ("That will happen with the passage of time.[
 
 understand "dna wand" as a mistake ("No. You know TRUE MAGIC MUST COME FROM WITHIN.[mis of 184]") when DNA band is quicknear or DNA hand is quicknear.
 
+understand "gasp sap" as a mistake ("It's not big enough to be impressed by.[mis of 320]") when gash sag is quicknear.
+
 understand "hand nah" as a mistake ("The hand isn't helpful enough in its present form, but that's no reason to dismiss it.[mis of 185]") when DNA hand is quicknear.
 
 understand "mr erm" as a mistake ("Mr. Arm doesn't need to speak--or be indecisive.[mis of 301]") when Mr Arm is quicknear.
@@ -562,7 +570,9 @@ understand "golf log" as a mistake ("There is no Par Trap or Tee Meet to navigat
 
 chapter Red Roses Order
 
-understand "gal slag" as a mistake ("You managed to annoy Ms. Ism enough that she lashes out and conks you with a mortal blow with the Gal Flag. Okay, not really, but name calling won't help.[mis of 199]") when Ms Ism is quicknear. [?? do fake death thing]
+understand "gal blag" as a mistake ("You don't need to steal the flag from Ms. Ism.[mis of 321]") when Ms Ism is quicknear.
+
+understand "gal slag" as a mistake ("You managed to annoy Ms. Ism enough that she lashes out and conks you with a mortal blow with the Gal Flag.[etg][mis of 199]") when Ms Ism is quicknear.
 
 understand "sworn rows" and "swore rows" as a mistake ("The sword rows are inanimate and neutral. Unless you get too close to them.[mis of 200]") when sword rows are quicknear.
 
@@ -792,7 +802,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 

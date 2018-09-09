@@ -27,18 +27,18 @@ table of all randoms
 tabnam	tabidx	thru-yet	lbrk	desc	cycle-note
 table of altbooks	0	0	false	"extra books in the Tract Cart"	"You've read all the books on the tract cart. Hooray for curiosity!"
 table of attackings	0	0	true	"responses to ATTACK"	--
-table of babel babble	0	0	false	"babbles if you LISTEN in Le Babel"	--
+table of babel babble	0	0	false	"babbles if you LISTEN in Le Babel"	"the most horrid whisper of all is of the NRA Barn. Ghastly!"
 table of Bond Nob bars	0	0	false	"bars the Bond Nob visits"	--
 table of burnies	0	0	true	"responses to BURN"	--
-table of businesses	0	0	true	"businesses in Day-Away Ad"	"Oh goody. You were worried an NRA barn might appear, but it didn't."
-table of diktat taunts	0	0	false	"Diktat Kid taunts"	--
+table of businesses	0	0	true	"businesses in Day-Away Ad"	"... and wait! There'll even be a new Deft Fed, owned by a salt-of-the-earth type named Treffert, now that Sniffins/Smuggums totally sold out"
+table of diktat taunts	0	0	false	"Diktat Kid taunts"	"'BOSS SOB!' the Diktat Kid yells, finally free from the shackles of political correctness."
 table of King Nik ancestors	0	0	false	"King Nik ancestors (TALK to King Nik)"
 table of Moo Room animals	0	0	false	"Moo Room animals (LISTEN)"	--
 table of Ms Ism pals	0	0	false	"Ms Ism's pals (TALK to Ms Ism)"	--
 table of My Gym songs	0	0	false	"songs in My Gym (LISTEN)"	"All those tunes, and nothing by ABBA! Low class, low class."
-table of noesies	0	0	true	"responses to NO"	--
+table of noesies	0	0	true	"responses to NO"	"An epony-NOPE rings through your ears to push back against your negativity in grand fashion."
 table of nothings	0	0	true	"responses to empty commands"	--
-table of npc mistakes	0	0	false	"CALL/PHONE random NPC text"	"That's all there is. You [if dial-aid is false]can't help wondering if there's something better to dial[else]find this all less fruitful than when you decided to DIAL AID[end if]."
+table of npc mistakes	0	0	false	"CALL/PHONE random NPC text"	"That's all there is. You [if dial-yet is false]can't help wondering if there's something better to dial[else]find this all less fruitful than when you decided to DIAL AID[end if]."
 table of random authors	0	0	false	"random author names (ones I particularly liked)"	--
 table of random palindrome firstlast names	0	0	false	"First/last names in Name ME Man"	--
 table of random palindrome lastfirst names	0	0	false	"Last/first names in OH WHO"	--
@@ -53,8 +53,8 @@ table of university targets	0	0	true	"Dr. D/Code Doc's prospective colleagues"	-
 table of waittxt	0	0	true	"responses to WAITing"	--
 table of wordy drow laments	0	0	false	"Wordy Drow laments"	--
 table of yessies	0	0	true	"responses to YES"	--
-table of yuge baits	0	0	false	"Yuge Guy bait if you run away"	"The Yuge Guy emits a side-dis you probably weren't meant to hear fuly. can't quite hear, and you are enraged enough to go back."
-table of yuge battle cries	0	0	false	"Yuge Guy battle cries"	"'BOSS! SOB!' the Yuge Guy cries, finally free from the shackles of political correctness. Señor drones, you think you yourself, as he winds up for a repeat round of nonsense."
+table of yuge baits	0	0	false	"Yuge Guy bait if you run away"	"The Yuge Guy emits a side-dis you probably weren't meant to hear fully. can't quite hear, and you are enraged enough to go back."
+table of yuge battle cries	0	0	false	"Yuge Guy battle cries"	"'Dad?! Dad!!! Dad?!' the Yuge Guy yells, in a mixture of rage and supplication. Geez, he's got some issues. Señor drones, you think you yourself, as he winds up for a repeat round of nonsense."
 
 rand-cycle is a truth state that varies.
 
@@ -498,6 +498,7 @@ randtxt
 "Sona Danos"
 "Sona Llanos"
 "Soraya Ros"
+"Stu Luts"
 "Su Titus"
 "Sue Reus"
 "Sy Pepys"
@@ -521,6 +522,7 @@ randtxt
 "Tressie Weissert"
 "Troy Ort"
 "Wade Daw"
+"Walt Law"
 "Yetta Battey"
 "Yetta Mattey"
 "Yevette Vey"
@@ -826,6 +828,7 @@ biz-name
 "Tramp Mart"
 "Tru-Go Yogurt"
 "We Sew"
+"Yost Soy"
 
 volume random responses
 
@@ -837,6 +840,7 @@ table of altbooks
 randtxt
 "Aiding Nidia"
 "Allay Alla"
+"Am I, Ma?"
 "Ape Pa"
 "Apollo, Pa"
 "Ares's Era"
@@ -874,6 +878,7 @@ randtxt
 "Emacs Came"
 "Eponymy? Nope"
 "Fit, O Motif"
+"Gnostic, It: Song"
 "If I Had a Hi-Fi"
 "Lug, O Mogul"
 "A Mardy Drama"
@@ -893,12 +898,14 @@ randtxt
 "Ren, Old Loner"
 "Rise, Aesir"
 "Risk Sir"
+"Roy, a Mayor"
 "Satire Veritas"
 "Seminal Animes"
 "Snorting Ignitrons"
 "Sore Heros"
 "Sore Zeros"
 "Spoof: Oops"
+"Stem, O Comets"
 "To Oldened Loot"
 "Torsos, ROT"
 "We Few"
@@ -914,6 +921,7 @@ randtxt
 "Harm! Rah!"
 "Hood! Ooh!"
 "Hurt! Ruh!"
+"Hut! Uh..."
 "Knock! Conk!"
 "Nae mean."
 "Pah! Whap?"
@@ -1060,6 +1068,8 @@ randtxt
 "ska yaks"
 "smarm rams"
 "smart rams"
+"so-bonobos"
+"so-dodos"
 "so-OK cuckoos"
 "sob mambos"
 "sum emus"
@@ -1068,6 +1078,7 @@ randtxt
 
 table of My Gym songs
 randtxt
+"Age Mo' Mega"
 "Ai, Tia"
 "Ail, Emelia"
 "Air Aria"
@@ -1108,6 +1119,7 @@ randtxt
 "Manic in AM"
 "Maybe By AM"
 "Me: Opt, Poem"
+"Miami, Maim"
 "Miff [']Im"
 "Mikki M"
 "Miss [']Im"
@@ -1144,6 +1156,9 @@ randtxt
 "Tae Beat"
 "Tae Heat"
 "Tha H/T"
+"Theme, H/T"
+"There, H/T"
+"These, H/T"
 "Thoro['] H/T"
 "Tia, Wait"
 "To Own: WOOT"
@@ -1178,6 +1193,7 @@ randtxt
 "Oo! Noo!"
 "Poor droop."
 "Too 'boohoo?' Boot!"
+"Wan? Aw."
 "Woe meow."
 "Ye po['] mopey!"
 "Ye Po['] Nopey."
@@ -1196,6 +1212,7 @@ randtxt
 "Minim..."
 "Mum?"
 "No peep on?"
+"Oi, Dio!"
 "One mime? NO!"
 "Peep?!"
 "POST, sop!"
@@ -1224,6 +1241,9 @@ table of Ms Ism pals
 randtxt
 "Able Melba"
 "Aglow Olga"
+"AI Mia"
+"AI Pia"
+"AI Zia"
 "Akin Anika"
 "'Alerts' Estrela"
 "Alleging Nigella"
@@ -1296,6 +1316,7 @@ randtxt
 "'Egresses' Serge"
 "Emil Slime"
 "Evan Knave"
+"EVAR Knave"
 "Evil Clive"
 "Flak Alf"
 "Flan Alf"
@@ -1602,6 +1623,7 @@ randtxt
 "Pas ASAP!"
 "Porer-op!"
 "A rests era!"
+"Rests? Er..."
 "Resume, muser!" [okdup]
 "Rev, O Rover!"
 "Sod dos."
@@ -1639,6 +1661,7 @@ randtxt
 
 table of yessies
 randtxt
+"Hoooooooh!"
 "Hosannas, Oh!"
 "Laud-ual!"
 "Mirth? Trim!"
@@ -1649,6 +1672,7 @@ randtxt
 "Plus? Ulp."
 "Too woot!"
 "Wahoo! Haw!"
+"Wooooooow!"
 "Yay!"
 
 table of yuge baits
@@ -1656,6 +1680,7 @@ randtxt
 "Avoided I? Ova[']!"
 "BOO, NOOB!"
 "Dim, I! Timid!"
+"Evar brave!"
 "EY, BYE!"
 "LOW AWOL!"
 "Oft GTFO!"
@@ -1698,6 +1723,7 @@ randtxt
 "MSM?! MSM!"
 "[']N I WIN!"
 "Name: HE-MAN!"
+"NASA's an..."
 "Nem O['] women!"
 "Nil Appalin[']!"
 "No con, no con!"
@@ -1724,6 +1750,7 @@ randtxt
 "Tariff? I? Rat!"
 "Tases at..."
 "Tawt?! WAT?!"
+"Titan, AT IT!"
 "Wane? Naw!"
 "Y'r Dry!"
 "Ye no-money!" [okdup]
