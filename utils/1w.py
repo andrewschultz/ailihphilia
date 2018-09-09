@@ -36,6 +36,27 @@ start_cand = defaultdict(lambda: defaultdict(bool))
 
 hdr = "=" * 30
 
+def character_range(a, b, inclusive=True):
+    back = chr
+    # if isinstance(a,unicode) or isinstance(b,unicode): back = unicode
+    for c in range(ord(a), ord(b) + int(bool(inclusive))): yield back(c)
+
+def alph_dash_string_to_list(q):
+    if re.search("[^a-z-]", q): sys.exit(q + " cannot contain anything besides letters or a dash.")
+    qd = q
+    ary = []
+    while "-" in qd:
+        qf = qd.find('-')
+        if qf == 0 or qf == len(qd) - 1: sys.exit(q + " Cannot end or begin with a dash. Or have -a-.")
+        if qd[qf-1] == '-' or qd[qf+1] == '-': sys.exit("Cannot have 2 dashes in a row.")
+        for qr in character_range (qd[qf-1], qd[qf+1]):
+            ary.append(qr)
+        qd = re.sub(".-.", "", qd, 1)
+    for a in qd: ary.append(a)
+    return sorted(list(set(ary)))
+
+sys.exit(alph_dash_string_to_list("a-ce-h"))
+
 def wrong_letters(a):
     l = len(a) - 1
     retval = ""
@@ -170,6 +191,8 @@ while argcount < len(sys.argv):
     xr = sys.argv[argcount]
     xl = xr.lower()
     if xl == "-a": file_array = [i7.f_f, i7.f_l, i7.f_dic]
+    elif xl[:2] == "d=":
+        defined_letter_array = alph_dash_string_to_list(xl[2:])
     elif xl[:2] == "-r":
         read_file = True
         check_possible = False
@@ -215,6 +238,11 @@ while argcount < len(sys.argv):
             elif 'A' in y:
                 for z in ascii_lowercase:
                     temp = re.sub("A", z, y)
+                    pals.append(temp)
+            elif 'D' in y:
+                if not defined_letter_array: sys.exit("need to define custom letter array first ... for now.")
+                for z in defined_letter_array:
+                    temp = re.sub("D", z, y)
                     pals.append(temp)
             else:
                 pals.append(y)
