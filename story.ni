@@ -137,7 +137,7 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 480. [-40 from max_verbs debug]
+use MAX_VERBS of 490. [-40 from max_verbs debug]
 
 use MAX_ACTIONS of 200.
 
@@ -145,7 +145,7 @@ use MAX_VERBSPACE of 4600. [-400 from max_verbspace debug]
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 520. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 530. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 use MAX_ACTIONS of 210. [+10?]
 
@@ -2319,6 +2319,11 @@ this is the rev-nail-Ian rule:
 	the rule succeeds;
 
 this is the rev-pace-cap rule:
+	if in-sos is true:
+		unless tried-yak, the rule fails;
+		if cap-pace is true, the rule fails;
+		say "[one of]You need to do something with/to the pact cap.[or]The pact cap can help you go faster, longer, so the Kayo Yak doesn't catch you.[or]It can also become a PAC* CAP (2 letters.)[or]PACY CAP or PACE CAP.[stopping]";
+		the rule succeeds;
 	if cap-ever-pace is true, the rule fails;
 	now cap-ever-pace is true;
 	say "You tweak your pact cap to a PACE CAP";
@@ -2331,8 +2336,12 @@ this is the rev-pace-cap rule:
 
 this is the rev-pack-cap rule:
 	if flee elf is moot, the rule fails;
-	say "You PACK CAP to please the flee elf.";
-	get-cap;
+	if in-sos is true:
+		say "[one of]You need to do something with the Pack Cap[or]The palindromic nature of the game suggesra PA CAP, PAC CAP, or PAC* CAP[or]PACK CAP to please the flee elf[stopping].";
+		the rule succeeds;
+	else:
+		say "You PACK CAP to please the flee elf.";
+		get-cap;
 	the rule succeeds;
 
 this is the rev-puff-up rule:
@@ -2401,7 +2410,10 @@ section pre-use rules [xxpre]
 
 this is the check-sap-cup rule:
 	if sap-takeable is false:
-		if revving-over is false, say "The sap is stuck to the tree.";
+		if in-sos is true:
+			say "[one of]You need to cut the sap off[or]USE SAW ON SAP[stopping].";
+			the rule succeeds;
+		if revving-over is false, say "The sap is stuck to the rife fir.";
 		get-reject past sap;
 		the rule fails;
 	if liar grail is moot:
@@ -6189,12 +6201,16 @@ chase-person is a person that varies.
 last-chase-direction is a direction that varies.
 
 ever-chased is a truth state that varies.
+ever-chased-wisp is a truth state that varies.
+ever-chased-yak is a truth state that varies.
 
 to start-chase (guy - a person):
 	move x-it stix to stix-room of guy;
 	now chase-person is guy;
 	now last-chase-direction is southwest;
 	now init-turn is false;
+	if guy is yak, now ever-chased-yak is true;
+	if guy is wisp, now ever-chased-wisp is true;
 	if ever-chased is false:
 		now ever-chased is true;
 		say "(NOTE: [no-time-note].)[paragraph break]";
@@ -6282,6 +6298,16 @@ after looking when being-chased is false (this is the start-chase-in-case rule):
 		say "The Kayo Yak bounds after you[one of][or] again[stopping]!";
 		continue the action;
 	continue the action;
+
+to decide whether tried-yak:
+	if ever-chased-yak is false, no;
+	if kayo yak is moot, no;
+	yes;
+
+to decide whether tried-wisp:
+	if ever-chased-wisp is false, no;
+	if psi wisp is moot, no;
+	yes;
 
 chapter chase block rules
 
@@ -6775,6 +6801,52 @@ understand "tm/tempmet/temp/met" and "temp met" as TempMet.
 understand "dod/ord" and "drop ord" as DropOrd.
 
 volume bonus points and odd verbs
+
+chapter sosing
+
+sosing is an action out of world.
+
+understand the command "sos" as something new.
+
+understand "sos" as sosing.
+
+[use1	use2	getit	preproc	postproc	sco	d1	d2	guy-need	ms-need	tool-need	reg-plus	room-to-go	done	babble]
+
+in-sos is a truth state that varies.
+
+carry out sosing:
+	now in-sos is true;
+	if debug-state is true, say "First pass through goodacts.";
+	let count be 0;
+	repeat through table of goodacts:
+		if there is a room-to-go entry and room-to-go entry is not location of player, next;
+		if there is a use1 entry:
+			if use1 entry is quicknear and use2 entry is quicknear:
+				if there is a preproc entry:
+					consider the preproc entry;
+					if the rule failed, next;
+				say "USE [use1 entry] ON [use2 entry].";
+				now in-sos is false;
+				the rule succeeds;
+		if there is a preproc entry:
+			consider the preproc entry;
+			if the rule succeeded, continue the action;
+	if debug-state is true, say "Second pass through goodacts.";
+	repeat through table of goodacts:
+		if there is a use1 entry:
+			if use1 entry is quicknear and use2 entry is quicknear:
+				if there is a preproc entry:
+					consider the preproc entry;
+					if the rule failed, next;
+				say "USE [use1 entry] ON [use2 entry].";
+				now in-sos is false;
+				the rule succeeds;
+		if there is a preproc entry:
+			consider the preproc entry;
+			if the rule succeeded, continue the action;
+	say "Uh oh, I couldn't find a hint.";
+	now in-sos is false;
+	the rule succeeds;
 
 chapter aiding
 
