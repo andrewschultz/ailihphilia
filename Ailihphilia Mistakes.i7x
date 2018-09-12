@@ -92,15 +92,15 @@ understand "defy fed" as a mistake ("[if yob attaboy is moot]Way to go! Keep tha
 
 understand "deli filed" as a mistake ("You are not a government bureaucrat.[mis of 43]") when player is in Deft Fed.
 
-understand "stan nats" and "stan nat's" as a mistake ("Well, Nat's must have its stans, but you don't want to be one.[mis of 44]") when nat's tan is quicknear.
+understand "stan nats" and "stan nat's" as a mistake ("Well, Nat's must have its stans, but you don't want to be one.[mis of 44]") when Nat's Tan is quicknear.
 
-understand "stank nats" and "stank nat's" as a mistake ("Yes, it's pretty awful.[mis of 45]") when nat's tan is quicknear.
+understand "stank nats" and "stank nat's" as a mistake ("Yes, it's pretty awful.[mis of 45]") when Nat's Tan is quicknear.
 
-understand "tang nat" as a mistake ("It's probably already too tangy.[mis of 46]") when nat's tan is quicknear.
+understand "tang nat" as a mistake ("It's probably already too tangy.[mis of 46]") when Nat's Tan is quicknear.
 
-understand "tank nat" as a mistake ("No, even a small amount of Nat's is enough.[mis of 47]") when nat's tan is quicknear.
+understand "tank nat" as a mistake ("No, even a small amount of Nat's is enough.[mis of 47]") when Nat's Tan is quicknear.
 
-understand "tannin nat" as a mistake ("It probably has enough weird, horrible ingredients.[mis of 48]") when nat's tan is quicknear.
+understand "tannin nat" as a mistake ("It probably has enough weird, horrible ingredients.[mis of 48]") when Nat's Tan is quicknear.
 
 section Bon Snob
 
@@ -425,7 +425,7 @@ understand "naif Ian" as a mistake ("Sadly, mind control is beyond your powers.[
 
 understand "nain Ian" as a mistake ("Owning/pwning would embarrass Ian, but that is too archaic a synonym.[mis of 146]") when Ian is quicknear.
 
-understand "nair Ian" as a mistake ("That would be painful and embarrassing enough to chase him, or someone named Brian, off, but alas, you don't have anything to do the job[if player has nat's tan]. The bottle of Nat's Tan doesn't count[end if].[mis of 147]") when Ian is quicknear.
+understand "nair Ian" as a mistake ("That would be painful and embarrassing enough to chase him, or someone named Brian, off, but alas, you don't have anything to do the job[if player has Nat's Tan]. The bottle of Nat's Tan doesn't count[end if].[mis of 147]") when Ian is quicknear.
 
 chapter Motto Bottom
 
@@ -708,13 +708,19 @@ understand "ufo f u" and "ufo fu" and "ufofu" as a mistake ("You feel [one of]a 
 
 chapter Trapeze Part
 
-understand "tendered net" as a mistake ("[if player has tent net]You already have it[else]Nobody comes by to hand it to you. You're on the right track. Maybe you're overthinking things[end if].[mis of 235]") when level net is quicknear or tent net is quicknear.
+understand "tendered net" as a mistake ("[if player has tent net]You already have the tent[else]Nobody comes by to hand anything to you. You're on the right track. Maybe you're overthinking things with that big long word[end if].[mis of 235]") when level net is quicknear or tent net is quicknear.
+
+understand "tenet" as a mistake ("That's too abstract. [unless tent net is quicknear]You need some sort of action[else]The tent net could be useful to someone[end if].[mis of 322]") when level net is quicknear or tent net is quicknear.
+
+understand "tenses net" as a mistake ("The net was [unless tent net is off-stage][hn of Trapeze Part], is in your Sto-Lots[else]here, is here[end if], and will be until you figure [if level net is quicknear]how to fix it[else]who or what could use it[end if].[mis of 323]") when level net is quicknear or tent net is quicknear.
+
+understand "tent net" as a mistake ("Hmm. Even if you were able to tent the net, it'd be less wide overall. You get the feeling you're on the right track, though.[mis of 324]") when level net is quicknear and tent net is off-stage.
 
 understand "trape part" as a mistake ("You mill around a bit, [if epicer recipe is off-stage]wondering if[else]pleased[end if] you could fix the ten-level net.[mis of 284]") when player is in Trapeze Part.
 
 chapter Uneven U
 
-understand "co doc" as a mistake ("It would take too long to apply for an adjunct professorship. Or to get an advanced degree.[mis of 294]") when player is in Uneven U.
+understand "co doc" and "codoc" as a mistake ("It would take too long to apply for an adjunct professorship. Or to get an advanced degree.[mis of 294]") when player is in Uneven U.
 
 understand "coda doc" as a mistake ("The Code Doc has a whole career of research ahead. Don't shorten it.[mis of 295]") when player is in Uneven U.
 
@@ -802,7 +808,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 
@@ -845,7 +851,7 @@ to decide whether thug-near:
 
 to say or-ups: if word number 1 in the player's command is "ups", say ", much less spu";
 
-understand "call [text]" and "phone [text]" as a mistake ("Like your average random NPC, anyone you tried to call from [b][if player is in Yawn Way]Name ME, Man[else]Oh Who[end if][r] would probably just have random general useless things to say like '[next-rand-txt of table of npc mistakes]!'") when Name ME Man is quicknear or Oh Who is quicknear.
+understand "call [text]" and "phone [text]" and "[number]-[number]" as a mistake ("Like your average random NPC, anyone you tried to call from [b][if player is in Yawn Way]Name ME, Man[else]Oh Who[end if][r] would probably just have random general useless things to say like '[next-rand-txt of table of npc mistakes]!'") when Name ME Man is quicknear or Oh Who is quicknear.
 
 understand "gift fig" as a mistake ("It already is one. And you don't need to pass it on.") when gift fig is quicknear.
 
@@ -855,7 +861,9 @@ understand "put it up" as a mistake ("That's what the Spur Ups say, but you need
 
 understand "rm gnu/dung" and "rm gnu dung" as a mistake ("You don't have the proper permissions. It is (wait for it) too root.") when dung-near.
 
-understand "rub [text]" as a mistake ("There's no one named Burt or Babbur or Liwilbur anything like that in this game, so you don't have to rub anyone or anything.")
+understand "rub [text]" as a mistake ("[no-burt].")
+
+understand "shed eh" and "shed ehs" as a mistake ("It doesn't do you much good. Maybe it could help someone further in the dumps than you, though.") when yob attaboy is quicknear and yob attaboy is xed.
 
 understand "tap at [text]" as a mistake ("That's in the spirit of the game, but sadly, I couldn't find a way to make it useful. Sorry!")
 

@@ -1322,8 +1322,8 @@ to decide whether chase-aware:
 carry out verbing:
 	say "[2da]The four basic directions ([b]N, S, E, W[r]) are the main ones, along with [b]USE[r], in order to get through the game. Also, in some places, specific verbs will be needed. None are terribly long, and---well, there is a thematic pattern to them.";
 	say "[line break][2da]Standard verbs like [b]X[r] ([b]EXAMINE[r]) and [b]LOOK[r] also work.";
-	say "[2da][b]GT[r] or [b]GO TO[r] lets you go to a room, thing or person you've seen before. It fails if the person has been removed from the game.";
-	say "[2da][b]T[r], [b]TALK TO[r], or [b]GREET[r] talks to someone. There's not much in the way of conversation in this game, but you may get some clues from basic chat.";
+	say "[2da][b]GT[r] or [b]GO TO[r] lets you go to a room, thing or person you've seen before. It fails if the person or thing has been removed from the game. You can also use [b]GR[r] for rooms only, or [b]GI[r] for individuals or items only.";
+	say "[2da][b]T[r], [b]TA[r], [b]TALK TO[r], or [b]GREET[r] talks to someone. There's not much in the way of conversation in this game, but you may get some clues from basic chat.";
 	say "[2da][b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
 	say "[2da][b]THINK[r] gives general non-spoiler hints, including where you may wish to visit, what you haven't examined, or what is blocking you. [b]AID[r] gives you spoiler hints for where you are, though it may indicate you need to visit other places first.";
 	say " [2da]sub-commands of THINK: [b]SCE RECS[r] clues scenery you haven't examined yet, and [b]EPI WIPE[r] resets the game's records on things and scenery you examined.";
@@ -1496,11 +1496,13 @@ chapter ting
 talktoing is an action applying to one thing.
 
 understand the command "t" as something new.
+understand the command "ta" as something new.
 understand the command "greet" as something new.
 understand the command "talk" as something new.
 understand the command "talk to" as something new.
 
 understand "t [something]" as talktoing.
+understand "ta [something]" as talktoing.
 understand "greet [something]" as talktoing.
 understand "talk [something]" as talktoing.
 understand "talk to [something]" as talktoing.
@@ -3145,7 +3147,7 @@ to decide which number is east-LLP:
 check going north in Fun Enuf:
 	if Diktat Kid is moot, say "No need to go back." instead;
 	if flee elf is in Fun Enuf, say "The flee elf sees you looking north but says 'First things first! Get the cap the right way, here.'" instead;
-	unless epicer recipe is xed, say "You don't have a way through the [KAOS Oak], [if epicer recipe is off-stage]or anything that would show you one[else]but maybe there's something you could read right now to get an idea[end if]." instead;
+	unless epicer recipe is xed or KAOS Oak is moot, say "You don't have a way through the [KAOS Oak], [if epicer recipe is off-stage]or anything that would show you one[else]but maybe there's something you could read right now to get an idea[end if]." instead;
 	if epicer recipe is not moot and epicer recipe is nox, say "You need to get there. But you have no clue what to build, or how[if number of carried ingredients > 2]--though some of your inventory looks useful for that[end if][if player has epicer recipe]. Hmm, maybe Xing the epicer recipe will help that[end if]." instead;
 	if north tron is off-stage, say "You can't go north with the [KAOS Oak] in the way. You need to build the North-Tron to destroy the oak[if tron-got is 4]. In fact, you probably can just use any of the parts you have on each other to build it, now[else]. You currently have [tron-got] piece[plur of tron-got][end if]." instead;
 	if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
@@ -3701,7 +3703,6 @@ chapter gnu dung
 the gnu dung is scenery in Dumb Mud. description is "You're not an expert in this sort of biology, but given what you've seen so far, it's probably from a gnu. It's too icky and wide to cross, but it's not too deep."
 
 instead of doing something with gnu dung:
-	if debug-state is true, say "[current action].";
 	if current action is pushing, say "Hm. Moving the gnu dung could work, with the right implement." instead;
 	if current action is pushing to:
 		if second noun is south:
@@ -6138,6 +6139,7 @@ understand the command "go to" as something new.
 understand "go to [any room]" as gotoing.
 understand "goto [any room]" as gotoing.
 understand "gt [any room]" as gotoing.
+understand "gr [any room]" as gotoing.
 understand "go [any room]" as gotoing.
 
 to decide whether goto-available:
@@ -6212,6 +6214,7 @@ does the player mean gotothinging Tru Hurt when player has X-Ite Tix: it is unli
 understand "go to [any thing]" as gotothinging.
 understand "goto [any thing]" as gotothinging.
 understand "gt [any thing]" as gotothinging.
+understand "gi [any thing]" as gotothinging.
 understand "go [any thing]" as gotothinging.
 
 carry out gotothinging:
