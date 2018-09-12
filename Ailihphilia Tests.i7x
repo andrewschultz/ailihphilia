@@ -297,6 +297,27 @@ carry out troing:
 		say "[tabnam entry] has [number of rows in tabnam entry] rows.";
 	the rule succeeds;
 
+chapter meaning
+
+meaning is an action out of world.
+
+understand the command "mean" as something new.
+
+understand "mean" as meaning.
+
+carry out meaning:
+	now mean-testing is whether or not mean-testing is false;
+	say "Mean testing (auto bail on first parser error) is now on.";
+	the rule succeeds;
+
+mean-testing is a truth state that varies.
+
+rule for printing a parser error when mean-testing is true (this is the test bail rule):
+	say "BAILING AT FIRST MISTAKE.";
+	end the story;
+
+the test bail rule is listed first in the for printing a parser error rules.
+
 Ailihphilia Tests ends here.
 
 ---- DOCUMENTATION ----
