@@ -77,6 +77,8 @@ definition: a person (called per) is npcish:
 	if per is the player, no;
 	yes;
 
+the player is neuter. the player is female.
+
 chapter thing properties
 
 a thing can be drinkable. a thing is usually not drinkable.
@@ -141,7 +143,7 @@ use MAX_VERBS of 490. [-40 from max_verbs debug]
 
 use MAX_ACTIONS of 200.
 
-use MAX_VERBSPACE of 4600. [-400 from max_verbspace debug]
+use MAX_VERBSPACE of 4700. [-400 from max_verbspace debug]
 
 section debug compiler globals - not for release
 
@@ -149,7 +151,7 @@ use MAX_VERBS of 530. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 use MAX_ACTIONS of 210. [+10?]
 
-use MAX_VERBSPACE of 5100. [4096 = original max]
+use MAX_VERBSPACE of 5200. [4096 = original max]
 
 chapter room utilities
 
@@ -913,6 +915,9 @@ definition: a thing (called x) is beep-think:
 	if x is beepy and x is beeped, yes;
 	no;
 
+understand "t" as thinking.
+understand "th" as thinking.
+
 instead of thinking:
 	if thought-yet is false, say "A knihtg (sic) appears and taps you on the shoulder, and you suddenly recall big-picture things.";
 	let LLP-yet be false;
@@ -1141,7 +1146,7 @@ check taking inventory when Dave is moot (this is the ailihphilia inventory rule
 	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
 	if number of lugged books > 0, say "Currently lugging (oof) [list of lugged books].";
 	if player has SOME DEMOS, say "You've [if number of lugged books is 0]still[else]also[end if] got that small book, [SOME DEMOS].";
-	if number of ingredients carried by player > 0, say "Food found[if chef-yet is true] (not including what you mixed in Mont Nom): [a list of ingredients carried by player].";
+	if number of ingredients carried by player > 0, say "Food found[if chef-yet is true] (not including what you mixed in Mont Nom)[end if]: [a list of ingredients carried by player].";
 	if number of things worn by player > 0, say "You are wearing: [a list of things worn by player][if player has state tats], in addition to state tats[end if].";
 	if number of helpdocs carried by the player is 1:
 		say "So far, you only have [the list of helpdocs carried by the player] as reference. More later, maybe?";
@@ -1202,7 +1207,7 @@ carry out scerecsing:
 	repeat with SC running through xable scenery:
 		increment count;
 		if count is 11, break;
-		if count is 1, say "[one of][b]NOTE: most scenery doesn't need to be examined, so this is just a non-spoiler command to make sure you;ve checked everything.[r][or][stopping]Scenery unexamined yet: ";
+		if count is 1, say "[one of][b]NOTE: most scenery doesn't need to be examined, so this is just a non-spoiler command to make sure you've checked everything.[r][or][stopping]Scenery unexamined yet: ";
 		if count > 1, say ", ";
 		say "[SC] in [location of SC][run paragraph on]";
 	say "[if count is 11] (there's more, but this is long enough.)[else if count is 0]You've examined all the scenery you could[any-open-rooms].[else].";
@@ -1325,7 +1330,7 @@ carry out verbing:
 	say "[2da][b]GT[r] or [b]GO TO[r] lets you go to a room, thing or person you've seen before. It fails if the person or thing has been removed from the game. You can also use [b]GR[r] for rooms only, or [b]GI[r] for individuals or items only.";
 	say "[2da][b]T[r], [b]TA[r], [b]TALK TO[r], or [b]GREET[r] talks to someone. There's not much in the way of conversation in this game, but you may get some clues from basic chat.";
 	say "[2da][b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
-	say "[2da][b]THINK[r] gives general non-spoiler hints, including where you may wish to visit, what you haven't examined, or what is blocking you. [b]AID[r] gives you spoiler hints for where you are, though it may indicate you need to visit other places first.";
+	say "[2da][b]THINK[r]/TH/T gives general non-spoiler hints, including where you may wish to visit, what you haven't examined, or what is blocking you. [b]AID[r] gives you spoiler hints for where you are, though it may indicate you need to visit other places first.";
 	say " [2da]sub-commands of THINK: [b]SCE RECS[r] clues scenery you haven't examined yet, and [b]EPI WIPE[r] resets the game's records on things and scenery you examined.";
 	if cur-score of Odd Do < max-score of Odd Do:
 		say "[line break]There are also a few guess-the-verb bonus points that are hidden. Some relate to objects or people that need help but can't help you, and some are riffs on standard commands. [if refer-yet is false]There's a different way to revisit, rehash or recap this very command, for example[else]For instance, you got REFER as VERBS[end if]";
@@ -2564,7 +2569,9 @@ this is the check-sap-cup rule:
 	later-wipe past sap;
 	if puce cup is soddy:
 		if revving-over is false, say "The puce cup already contains dose sod. Pour it out to get the past sap?";
-		if the player yes-consents, the rule succeeds;
+		if the player yes-consents:
+			say "The sod dissolves into the ground.";
+			the rule succeeds;
 		the rule fails;
 	the rule succeeds;
 
@@ -2575,7 +2582,9 @@ this is the check-sod-cup rule:
 		the rule fails;
 	if puce cup is sappy:
 		say "The puce cup already contains past sap. Pour it out to get the dose sod?";
-		if the player yes-consents, the rule succeeds;
+		if the player yes-consents:
+			say "The purist sirup, formerly the past sap, oozes out and soaks into the ground.";
+			the rule succeeds;
 		the rule fails;
 	the rule succeeds;
 
@@ -3054,11 +3063,17 @@ understand the command "grammar g" as something new.
 
 understand "grammar g" as grammarging when KAOS Oak is xed and player is in Fun Enuf.
 
+ever-gram is a truth state that varies.
+
 carry out grammarging:
 	if KAOS Oak is moot, say "Ordering around something that's not here? That's pretty chaotic!" instead;
 	say "'Grammar, G!' you moan at the [kaoscaps]. ";
 	now grammarg is whether or not grammarg is false;
-	say "While strictly speaking, grammar only pertains to sentence structure, the (now) [kaoscaps] being, well, its chaotic self results in a good deal of rumbling. The [kaoscaps] switches back to [if grammarg is true]relative normalcy[else]its old weird shifting self[end if]. It doesn't seem any more or less vulnerable, but you're just glad to have even a small amount of control over things.";
+	if ever-gram is false:
+		say "While strictly speaking, grammar only pertains to sentence structure, the (now) [kaoscaps] being, well, its chaotic self results in a good deal of rumbling. The [kaoscaps] switches back to [if grammarg is true]relative normalcy[else]its old weird shifting self[end if]. It doesn't seem any more or less vulnerable, but you're just glad to have even a small amount of control over things.";
+		now ever-gram is true;
+	else:
+		say "Now the [kaoscaps] is [if grammarg is true]less[else]more[end if] chaotic.";
 	the rule succeeds;
 
 chapter north tron
@@ -3164,6 +3179,11 @@ to decide which number is grid-side-items:
 chapter Pact Cap
 
 The Pact Cap is a wearable thing in Fun Enuf. "The pact cap the Flee Elf wants you to take (but not quite) sits here.". description is "It doesn't feel that heavy on your head, and you can't see it, because there are no mirrors. It didn't look THAT stupid back when the Flee Elf had you pack it. So that's something. You think[cap-beep-stuff]."
+
+instead of inserting into pact cap:
+	say "The cap needs to stay on your head[if noun is carried]. You don't need any special place to put things[insert-cap-lots][end if]."
+
+to say insert-cap-lots: if player has sto lots, say ", as the sto-lots is good enough"
 
 after examining pact cap when cap-ever-pace is false:
 	say "You also remember the Flee Elf saying it could be something else and might need to be, down the line.";
@@ -3554,6 +3574,8 @@ the past sap is semiperipheral scenery in Cold Loc. "[if sap-takeable is true]A 
 
 sap-with-hands is a truth state that varies.
 
+instead of drinking past sap: say "Too thick."
+
 instead of taking the past sap:
 	if player has puce cup:
 		if liar grail is moot, say "You probably don't need any more past sap, now that you used it to dispose of the Liar Grail." instead;
@@ -3693,7 +3715,7 @@ check going south in Dumb Mud:
 	if Mont Nom is unvisited, say "With the turf rut filled in, the way across remains stable, and it even smells okay! Bonus! You climb up to...";
 
 check going north in Dumb Mud:
-	if lie veil is in Dumb Mud, say "As you're about to touch the lie veil, you shake your head. No. You don't really want or need to explore north. Surely there's some better place to be? Perhaps you're not 100% prepared for the lie veil's thought provoking paradoxes, and it's doing you a favor pushing you back? Plus what if it hides a hidden booby trap? You try to walk further north, but somehow you wind up walking back south.[paragraph break]YouOnce you're away from the Lie Veil, you forget its weird arguments. There's got to be a way to cut through its sophistry." instead;
+	if lie veil is in Dumb Mud, say "As you're about to touch the lie veil, you shake your head. No. You don't really want or need to explore north. Surely there's some better place to be? Perhaps you're not 100% prepared for the lie veil's thought provoking paradoxes, and it's doing you a favor pushing you back? Plus what if it hides a hidden booby trap? You try to walk further north, but somehow you wind up walking back south.[paragraph break]Once you're away from the Lie Veil, you forget its weird arguments. There's got to be a way to cut through its sophistry." instead;
 	if being-chased is true:
 		say "It's just too weird ahead to the north. You freeze up and are unable to avoid the kayo yak further.";
 		reset-chase instead;
@@ -4274,13 +4296,15 @@ chapter dose sod
 
 the dose sod is scenery in Apse Spa. "It looks ucky, but given you're in an Apse Spa, it may have health benefits for those that need them."
 
+instead of drinking dose sod: say "You're not sick."
+
 rule for deciding whether all includes the dose sod when taking: it does;
 
 sod-with-hands is a truth state that varies.
 
 check taking dose sod:
 	now sod-with-hands is true;
-	say "It's pretty slimy. Any curative properties would be canceled out by your germs carrying it. You need something to hold it in. Or, if dangling prepositions hack you off, in which to hold it." instead;
+	say "It's pretty slimy. Any curative properties would be canceled out by your germs carrying it. You need something to hold it in. Or 'in which to hold it,' if ending a sentence with a preposition hacks you off." instead;
 
 instead of inserting dose sod into: try useoning dose sod with second noun instead;
 
@@ -4549,6 +4573,13 @@ instead of doing something with Dave:
 check going west in My Gym when Dave is in My Gym: say "Dave says, 'I can't let you do that, Hal. Ah!' Whether or not your name actually is Hal, you reason there must be a succinct, clever way to sneak around him." instead;
 
 the stole lots is a thing in My Gym. "A container labeled STOLE LOTS is behind Dave.". description is "It looks like it'd be handy for carrying a lot of items around. Maybe it has something in it--you can't see where it's open.[paragraph break]And it's not too bulky, either. But Dave's keeping an eye on it.".
+
+instead of inserting into sto lots:
+	if number of entries in multiple object list > 1:
+		alter the multiple object list to { };
+		add noun to multiple object list;
+	if noun is sto lots, say "You don't need to make a sto-lots-to-lots or anything like that. The Sto Lots has enough space." instead;
+	say "The sto lots is already carrying what it can and needs to."
 
 chapter wash saw
 
@@ -4827,7 +4858,7 @@ chapter books
 to decide what number is books-in-cart:
 	decide on number of sober books in Worn Row;
 
-the tract cart is scenery. "'GREED-E? ERG!' is emblazoned on it, as a warning you should take only one book at a time. [if number of sober books in Worn Row is 0]You've looted it completely[else]It carries [books-in-cart] book[plur of books-in-cart]: [list of sober books in Worn Row][end if][hint-trace]."
+the tract cart is scenery. "'GREED-E? ERG!' is emblazoned on it, as a warning you should take only one book at a time. [if number of sober books in Worn Row is 0]You've looted it completely[else]It carries [books-in-cart] book[plur of books-in-cart]: [list of sober books in Worn Row][end if][hint-trace][one of]. It's not actually rideable, though. It just holds stuff[or][stopping]."
 
 instead of taking the tract cart, say "It's not small enough to fit in your sto-lots, and it's not mobile, either."
 
@@ -4925,7 +4956,10 @@ understand "read [something]" as reading.
 read-warn is a truth state that varies.
 
 carry out reading:
-	say "[if noun is DWELT LEWD]You read [one of]a bit[or]on[stopping], despite your better instincts...[else]Whoah! You don't have time to read all that text, right now. You're busy with much more active things. Still, you flip through for a general overview.[end if]";
+	if noun is a book:
+		say "[if noun is DWELT LEWD]You read [one of]a bit[or]on[stopping], despite your better instincts...[else]Whoah! You don't have time to read all that text, right now. You're busy with much more active things. Still, you flip through for a general overview.[end if]";
+	else if noun is a helpdoc:
+		say "It's only a page long.";
 	if read-warn is false, say "[bracket]Note: READ is functionally equivalent to X/EXAMINE, for books or non-books.[close bracket][paragraph break]";
 	now read-warn is true;
 	try examining the noun instead;
@@ -5185,7 +5219,7 @@ understand "trace [something]" as mytraceing.
 carry out mytraceing:
 	if noun is not tract cart, say "That's not something to trace." instead;
 	if DWELT LEWD is not off-stage, say "Nothing new turns up." instead;
-	say "Yes, something about the tract cart seems off. There's a bit more space than the books would need...while fiddling with the cart, a new book pops out. It's called DWELT LEWD. You can imagine why it was hidden. Nothing's forcing you to read it, and it's probably not critical, but there it is.";
+	say "Yes, something about the tract cart seems off. There's a bit more space than the books would need...while fiddling with the cart, a new book pops out. It's called DWELT LEWD. You can imagine why it was hidden. Nothing's forcing you to read it, and it's probably not critical, but there it is[if player has pity tip]. You glance at the pity tip--it looks like it still has some advice beyond looking into the tract cart[end if].";
 	abide by the LLP rule; [TRACE CART]
 	now DWELT LEWD is in Worn Row;
 	now DWELT LEWD is in-row;
@@ -5412,6 +5446,10 @@ chapter puce cup
 The Puce Cup is a thing in Emo Dome. "Someone has left a puce cup here.". description is "It's, well, puce, and it seems sturdy enough. It's currently [if puce cup is empty]empty[else if puce cup is sappy]full of [sap-sirup] from the rift fir in Cold Loc[else]full of Dose Sod from the Apse Spa[end if]."
 
 understand "dose/sod" and "dose sod" as Puce Cup when puce cup is soddy and player is not in Apse Spa.
+
+instead of drinking puce cup:
+	if puce cup is empty, say "There's nothing to drink in the puce cup." instead;
+	say "Ugh. The [if puce cup is soddy]sod[else if player is in Cold Loc]sirup[else]sap[end if] looks unpalatable, unless you had a good reason. You don't."
 
 to say sap-sirup:
 	say "[if location of player is not Cold Loc]Past Sap[else]Purist Sirup[end if]"
@@ -6132,6 +6170,8 @@ chapter gotoing
 
 gotoing is an action applying to one visible thing.
 
+understand the command "gi" as something new.
+understand the command "gr" as something new.
 understand the command "gt" as something new.
 understand the command "goto" as something new.
 understand the command "go to" as something new.
