@@ -55,8 +55,6 @@ def alph_dash_string_to_list(q):
     for a in qd: ary.append(a)
     return sorted(list(set(ary)))
 
-sys.exit(alph_dash_string_to_list("a-ce-h"))
-
 def wrong_letters(a):
     l = len(a) - 1
     retval = ""

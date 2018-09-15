@@ -17,6 +17,7 @@ cmdline = defaultdict(int)
 got = defaultdict(bool)
 i1 = defaultdict(str)
 i2 = defaultdict(str)
+usages = defaultdict(lambda: defaultdict(int))
 
 count = 1
 while count < len(sys.argv):
@@ -43,7 +44,7 @@ def right_table_start(x):
 in_table = False
 
 with open("story.ni") as file:
-    for line in file:
+    for (line_count, line) in enumerate(file, 1):
         line_count = line_count + 1
         if line.startswith('table') and not in_table:
             table_name = right_table_start(line.strip())
@@ -65,6 +66,10 @@ with open("story.ni") as file:
             table_name = ""
             continue
         tc = [expa(x) for x in line.lower().strip().split('\t')]
+        if len(tc) < 2: continue
+        if tc[0] in usages[tc[1]].keys():
+            print(line_count, "Warning, ", tc[0], tc[1], "is a reverse of", line_count, usages[tc[1]][tc[0]])
+        if tc[0] != '--' and tc[1] != '--': usages[tc[0]][tc[1]] = line_count
         if table_name == 'table of specific use rejects':
             my_cmd = '>use {:s} on {:s}'.format(tc[0], tc[1])
             i1[my_cmd] = tc[0]
@@ -87,7 +92,7 @@ with open("story.ni") as file:
 next_needs_content = False
 last_line = ()
 
-with open("rbr-ail-thru.txt") as file:
+with open("rbr-ai-thru.txt") as file:
     for (lc, line) in enumerate(file, 1):
         ll = line.strip().lower()
         if next_needs_content and (ll.startswith('use') or not ll): print("Line", lc, "should not be blank/new command:", last_line)
