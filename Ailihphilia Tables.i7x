@@ -30,7 +30,7 @@ table of attackings	0	0	true	"responses to ATTACK"	--
 table of babel babble	0	0	false	"babbles if you LISTEN in Le Babel"	"the most horrid whisper of all is of the NRA Barn. Ghastly!"
 table of Bond Nob bars	0	0	false	"bars the Bond Nob visits"	--
 table of burnies	0	0	true	"responses to BURN"	--
-table of businesses	0	0	true	"businesses in Day-Away Ad"	"... and wait! There'll even be a new Deft Fed, owned by a salt-of-the-earth type named Treffert, now that Sniffins/Smuggums totally sold out"
+table of businesses	0	0	false	"businesses in Day-Away Ad"	"... and wait! There'll even be a new Deft Fed, owned by a salt-of-the-earth type named Treffert, now that Sniffins/Smuggums totally sold out"
 table of diktat taunts	0	0	false	"Diktat Kid taunts"	"'BOSS SOB!' the Diktat Kid yells, finally free from the shackles of political correctness."
 table of King Nik ancestors	0	0	false	"King Nik ancestors (TALK to King Nik)"
 table of Moo Room animals	0	0	false	"Moo Room animals (LISTEN)"	--
@@ -45,7 +45,7 @@ table of random palindrome lastfirst names	0	0	false	"Last/first names in OH WHO
 table of rejected kid sidekicks	0	0	false	"the Diktat Kid's rejected kid sidekicks"	--
 table of Rob droning	0	0	false	"things Rob babbles about"	"Rob takes a moment to shape 'pahs' again."
 table of singstuff	0	0	true	"responses to SINGing"	"Won't be joining OctetCo with that voice."
-table of snooty toon ads	0	0	true	"snooty toons ads"	"At the end is La Usual, because of course."
+table of snooty toon ads	0	0	false	"snooty toons ads"	"At the end is La Usual, because of course."
 table of swearstuff	0	0	true	"responses to SWEARing"	--
 table of trashy art	0	0	false	"other 'art' [if DWELT LEWD is off-stage]a book hidden in the Tract Cart[else]DWELT LEWD[end if] promotes"	"That's all. Your intellectual (I hope) curiosity sated, you look for more constructive tasks[lewd-true], not worried (again, I hope) you've forgotten the plot of DWELT LEWD by now."
 table of undoings	0	0	true	"UNDOing notifications"	--

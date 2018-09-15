@@ -2,6 +2,8 @@ Hello, and welcome to the walkthrough for Ailihphilia, an IFComp 2018 game by An
 
 I didn't intend this game to be overly difficult or to have any weird profound meanings, but I had good laughs putting the puzzles together, and I hope you have fun solving them, even if you see what is going on and how there aren't THAT many possibilities to solve them. It may be a bit on the long side for two hours, and so I don't mind if you need to look for a walkthrough, or if I may lose scoring for that. Just one thing...REV OVER is a useful command to help push you through.
 
+If you are wondering about how certain
+
 There should be no way to die or be locked out of a win in Ailihphilia.
 
 Ailihphilia is also decidedly nonlinear. This creates some problems with a plain text document. I doubt that you proceeded in the way I organized the puzzles for my main tests, so you may wind up skipping around a bit. I can only recommend the Invisiclues-style HTML hints that come with the build, if you want a more thorough approach to the game. It is room-based, so it may not be perfect, but you should be able to tell if something is blocking you.
@@ -334,13 +336,13 @@ And now we can do a bit of double duty with the Code Doc. First, help the Code D
 
 (+1) >USE SPA MAPS ON CODE DOC
 
-The spa maps probably belong with ... the Apse Spa.
+The spa maps probably can be used on ... the Apse Spa.
 
 >N.E.E.N.E
 
 (+1) >USE SPA MAPS ON GO-BY BOG
 
-Now to get by the Ergot Ogre to the south of the Code Doc. You won't have seen the ogre if you just blindly followed this walkthrough, but trust me, it's there!
+This gets you the Sage Gas, which you can't use right away. Now to get by the Ergot Ogre to the south of the Code Doc. You won't have seen the ogre if you just blindly followed this walkthrough, but trust me, it's there!
 
 >W.S.S.S.E
 
@@ -348,7 +350,7 @@ Pick up something for later in Moo Room.
 
 (+1) >USE ENACT CANE ON YAHOO HAY
 
-You'll clean up somewhere else, but first, let's clean up Grebeberg of a certain hooligan.
+You'll clean up somewhere else with the moor broom, but first, let's clean up Grebeberg of a certain hooligan.
 
 (+1) >PACE CAP
 
@@ -390,7 +392,7 @@ And experiment some more.
 
 (+1) >USE GIFT FIG ON MAYO YAM
 
-Okay. The Martini Tram is the second part of the North-Tron.
+Okay. The Martini Tram is the second part of the North-Tron. But note chasing it sent you back to Fun Enuf.
 
 >W.W.W.N
 
@@ -424,7 +426,7 @@ The DNA hand isn't quite alive ... yet.
 
 (+1) >USE ROTO MOTOR ON DNA HAND
 
-How very grabby!
+How very grabby! Mr. Arm is a lot less visible than you are and probably can get in places you can't.
 
 (+1) >USE ERODED ORE ON REVIVER
 
@@ -482,7 +484,7 @@ The last four letters are TIME, because palindromes. You need something bright.
 
 (+1) >EMIT NOONTIME
 
-Let's practise our aim.
+Let's practice our aim.
 
 (+1) >USE YARD RAY ON TEST SET
 
