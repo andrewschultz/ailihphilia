@@ -49,7 +49,7 @@ table of snooty toon ads	0	0	true	"snooty toons ads"	"At the end is La Usual, be
 table of swearstuff	0	0	true	"responses to SWEARing"	--
 table of trashy art	0	0	false	"other 'art' [if DWELT LEWD is off-stage]a book hidden in the Tract Cart[else]DWELT LEWD[end if] promotes"	"That's all. Your intellectual (I hope) curiosity sated, you look for more constructive tasks[lewd-true], not worried (again, I hope) you've forgotten the plot of DWELT LEWD by now."
 table of undoings	0	0	true	"UNDOing notifications"	--
-table of university targets	0	0	true	"Dr. D/Code Doc's prospective colleagues"	--
+table of university targets	0	0	false	"Dr. D/Code Doc's prospective colleagues"	--
 table of waittxt	0	0	true	"responses to WAITing"	--
 table of wordy drow laments	0	0	false	"Wordy Drow laments"	--
 table of yessies	0	0	true	"responses to YES"	--
