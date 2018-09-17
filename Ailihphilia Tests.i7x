@@ -179,6 +179,10 @@ test e9 with "test part9/test part10/test part11".
 test e10 with "test part10/test part11".
 test e11 with "test part11".
 
+chapter quick start
+
+test qs with "pack cap/e/s/evade dave/w/bore rob/work row"
+
 chapter quickgo
 
 test ro with "rev over/use gem on fink/use bat on rev/use ray on redivider".

@@ -56,9 +56,9 @@ understand "pua up" as a mistake ("That's completely the wrong way to gain confi
 
 understand "pub up" as a mistake ("Alcohol is not the answer.[mis of 27]") when player has spur ups.
 
-understand "pug up" and "pup up" as a mistake ("You don't need a dog.[mis of 28]") when player has spur ups.
-
 understand "pun up" as a mistake ("No time for lame jokes! Well, on your end, anyway.[mis of 29]") when player has spur ups.
+
+understand "pup" and "pug up" and "pup up" as a mistake ("You don't need a dog to help you feel braver. You need something inside you, to help you feel up.[mis of 28]") when player has spur ups.
 
 understand "purer up" as a mistake ("This game isn't about morality.[mis of 30]") when player has spur ups.
 
@@ -439,12 +439,13 @@ understand "stir crits" as a mistake ("The stir writs are not about doing critic
 
 understand "stir grits" as a mistake ("But the stir writs are nourishment for the SOUL.[mis of 268]") when player has stir writs.
 
-understand "stir its" as a mistake ("You wait for a man to appear after a long journey, only to be crushed by a giant foot, but it doesn't happen.[mis of 269]") when player has stir writs.
+understand "stir its" as a mistake ("You wait for a man to appear after a long journey, only to be crushed by a giant foot, but it doesn't happen. No point waiting for something completely different.[mis of 269]") when player has stir writs.
 
 understand "ta mat" as a mistake ("You give cursory thanks for the mat's over-general advice.[mis of 149]") when player is in Motto Bottom and tame mat is in Motto Bottom.
-understand "tamp mat" as a mistake ("It's already pretty beaten down.[mis of 149]") when player is in Motto Bottom and tame mat is in Motto Bottom.
 
 understand "tame mat" as a mistake ("Interesting, but this is a palindrome game, not a homonym game. Also, the mat's already harmless. You need to make it more interesting.[mis of 149]") when player is in Motto Bottom and tame mat is in Motto Bottom.
+
+understand "tamp mat" as a mistake ("It's already pretty beaten down.[mis of 149]") when player is in Motto Bottom and tame mat is in Motto Bottom.
 
 chapter Moo Room
 

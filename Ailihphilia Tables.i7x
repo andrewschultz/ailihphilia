@@ -1695,6 +1695,7 @@ randtxt
 
 table of yuge battle cries
 randtxt
+"A-Lago gala!"
 "A-lists? I? La!"
 "At a Hata[']!"
 "Bilk-Lib!"
