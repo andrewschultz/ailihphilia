@@ -1224,6 +1224,7 @@ randtxt
 "Too moot."
 "Verb! Rev!"
 "Ya, no! Nay!"
+"Yep, a gapey..."
 "Yo! Coy?"
 
 table of npc mistakes
@@ -1310,6 +1311,7 @@ randtxt
 "DETH Ted"
 "'Die' Reid"
 "'Diss' Sid"
+"Djinni JD"
 "'Dragnet' Engard"
 "Drone Nord"
 "Dubya-y Bud"

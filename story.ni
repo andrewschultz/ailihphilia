@@ -614,8 +614,10 @@ when play begins:
 		say "[if max-score of Odd Do is number of rows in table of last lousy points]LLPs = LLP table rows[else]Uh oh, [max-score of Odd Do] Odd Do points and [number of rows in table of last lousy points] LLP table rows. We need to fix this[end if].";
 	now right hand status line is "[if cur-score of mrlp < 10] [end if][cur-score of mrlp]/[max-score of mrlp] [if score < 10] [end if][score]/[if min-win < maximum score][min-win]-[end if][maximum score]";
 	now left hand status line is "[location of player] ([mrlp])[dir-summary]";
-	now use-custom-screenread is true; [see the Trivial Niceties extension for details. This wipes the default nag question.]
-	say "First, are you using a screen reader? Some of Ailihphilia's features, like the text map, don't work well with them.";
+	say "First, would you like to restore a previous game and skip the introduction?";
+	if the player no-consents, try restoring the game;
+	now use-custom-screenread is true; [see the Trivial Niceties extension for details. This wipes TN's default generic nag question.]
+	say "Next, are you using a screen reader? Some of Ailihphilia's features, like the text map, don't work well with them.";
 	if the player no-consents, now screenread is false;
 	say "[paragraph break]You can always toggle the screen reader with SCR.";
 	sort table of last lousy points in random order;
@@ -3155,7 +3157,7 @@ to later-wipe (th - a thing):
 			if debug-state is true and in-limbo entry is true, say "DEBUG: Removed [to-get entry] from table of lateruses.";
 			now in-limbo entry is false;
 			now changed-limbo is true;
-		if in-limbo entry is true:
+		if in-limbo entry is true and there is a combo-rule entry:
 			consider the combo-rule entry;
 			if the rule failed:
 				now in-limbo entry is false;
@@ -4805,9 +4807,10 @@ carry out evadeing:
 
 book Worn Row
 
-Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky][what-machines][else if Worn Row is wordy]A tract cart is here, [tract-status][else]It's pretty empty here[ender-note], but maybe you could make it a bit more active and cheery[end if].[paragraph break][dab-notes]The only way out is back east."
+Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky][what-machines][else if Worn Row is wordy]A tract cart is here, [tract-status][else]It's pretty empty here, [worn-scen][end if].[paragraph break][dab-notes]The only way out is back east."
 
-to say ender-note: if redness ender is in Worn Row, say ", not counting a big lumpy Redness Ender that makes Worn Row feel even more worn"
+to say worn-scen:
+	say "[if redness ender is in Worn Row]not counting a big lumpy Redness Ender that makes Worn Row feel even more worn[else]and with the redness ender gone, you might as well just change things back to Work Row or Word Row"
 
 to say what-machines: say "[if test set is off-stage]A cold and sterile, but safe, place[else if test set is moot]Since you destroyed the test set, it's pretty empty here[else]It's more specious here with the re*er machines destroyed[end if]"
 
@@ -5290,7 +5293,7 @@ carry out workrowing:
 	abide by the wornrow-change rule;
 	if Worn Row is worky, say "You're already in Work Row." instead;
 	if ever-workrow is false:
-		say "[Worn Row] shakes, and with a [i]MAL[r] 'Blam,' you're thrown to the ground. When you get up, things look different. There are three machines in front of you. One looks particularly odd, another is spinning like a washer or dryer, and the third--well, it looks like one of those cryogenic things to store frozen bodies for resurrection. A quick glance shows they are a rotator, reifier and reviver, in that order.";
+		say "[Worn Row] shakes, and with a [i]MAL[r] 'Blam' and clicks and whirs, you watch as the [if ever-wordrow is true]tract cart[else]redness ender[end if] retreats into the wall, maybe for later. After more whirring, three machines pop out of another wall. One looks particularly odd, another is spinning like a washer or dryer, and the third--well, it looks like one of those cryogenic things to store frozen bodies for resurrection. A quick glance shows they labeled ROTATOR, REIFIER and REVIVER, in that order.";
 		score-inc; [Yelpley/work row]
 		verify-done rev-work-row rule;
 	else:
@@ -5336,16 +5339,21 @@ definition: a book (called bo) is tractable:
 carry out wordrowing:
 	abide by the wornrow-change rule;
 	if Worn Row is wordy, say "You're already in Word Row." instead;
+	notify-row-change;
 	if ever-wordrow is false:
 		hint-bump-worn;
 		score-inc; [Yelpley/word row]
 		verify-done rev-word-row rule;
 		say "A tract cart appears, full of odd books. A pity tip also flutters down. You take the tip.";
 	else:
-		say "[Worn Row] turns back to Word Row. The tract cart re-appears.";
+		say "With further whirring, the tract cart pops back out from the wall, and [Worn Row] turns back into Word Row.";
 	word-row-open;
 	check-dab;
 	the rule succeeds;
+
+to notify-row-change:
+	if Worn Row is wordy, say "The tract cart sinks into the wall, and after some whirring, [Worn Row] changes a bit.";
+	if Worn Row is worky, say "The [if number of moot workables is not 2]machines retract[else]remaining machine retracts[end if] into the wall, and after some whirring, the tract cart reappears."
 
 to word-row-open:
 	clear-worn-row;
@@ -5370,7 +5378,7 @@ carry out wornrowing:
 	unless ever-wordrow is true or ever-workrow is true, say "It is Worn Row. But maybe it can become something else." instead;
 	if psi wisp is not in Worn Row, say "[if ever-wordrow is false or ever-workrow is false]The bad dab seems to indicate there's more here than [Worn Row], but y[else]Y[end if]ou don't want to face the redness ender alone back in Worn Row. You're not very red, but it seemed like it might just shoot any old thing." instead;
 	clear-worn-row;
-	say "Worn Row rematerializes, along with the redness ender. Zap! Zot! It locks on the Psi Wisp, which explodes in a shower of rage. But somehow, the Psi Wisp connects enough to zap the redness ender back. Whew. You retreat to Gross Org to recover the items you dropped.";
+	say "A buzz and a whirr makes the Psi Wisp pause. The [if Worn Row is worky]machines snap[else]tract cart snaps[end if] back into a wall, and the redness ender pops out of another. It locks on the Psi Wisp, which is very red indeed. Zap! Zot! The Psi Wisp becomes even redder before exploding. As its last act, the Psi Wisp channels that energy back into the redness ender, which also explodes. You managed to get out of the way during all this to pick up the items you dropped in Gross Org.";
 	win-wisp-chase;
 	score-inc; [Yelpley/WORN ROW]
 	the rule succeeds;
