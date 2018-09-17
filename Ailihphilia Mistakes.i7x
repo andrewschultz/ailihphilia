@@ -42,6 +42,16 @@ chapter Art Xtra
 
 understand "art ecetra" as a mistake ("One silly misspelling does not beget another.[mis of 10]") when player is in Art Xtra.
 
+understand "part trap" as a mistake ("[if player has party trap]That'd ruin it[else]There's got to be a way to make the full trap[end if][mis of 328]") when trap art is quicknear or player has party trap.
+
+understand "trad art" as a mistake ("You need something practical and forward-thinking for adventure. Traditional art would not do that.[mis of 329]") when trap art is quicknear.
+
+understand "trak art" as a mistake ("You don't need trains or anything right now.[mis of 330]") when trap art is quicknear.
+
+understand "tram art" as a mistake ("Public transport is the least of Grebeberg/Yelpley's issues at the moment.[mis of 331]") when trap art is quicknear.
+
+understand "tray art" as a mistake ("There is no restaurant nearby.[mis of 332]") when trap art is quicknear.
+
 chapter Cold Loc
 
 understand "cola loc" as a mistake ("You'd be better off with a warmer drink. Which isn't here.[mis of 22]") when player is in Cold Loc.
@@ -51,6 +61,10 @@ understand "colt loc" as a mistake ("No gandered nag appears. Or gun(ug).[mis of
 understand "kin nik" and "kine nik" as a mistake ("Sorry. You're not related, and that's that.[mis of 24]") when King Nik is quicknear.
 
 understand "kind nik" as a mistake ("He already seems pretty nice. His deficiencies are more ... administrative.[mis of 25]") when King Nik is quicknear.
+
+understand "kink nik" as a mistake ("He's already bent out of shape over his country's problems.[mis of 333]") when King Nik is quicknear.
+
+understand "kino nik" as a mistake ("He doesn't need to be distracted with gambling.[mis of 334]") when King Nik is quicknear.
 
 understand "pua up" as a mistake ("That's completely the wrong way to gain confidence.[mis of 26]") when player has spur ups.
 
@@ -180,9 +194,13 @@ understand "sun gnus" as a mistake ("You try to shine a light on possible culpri
 
 understand "turd rut" as a mistake ("Hmm! Maybe you could fill the rut up with ... something ... to cross it.[mis of 80]") when player is in Dumb Mud and poo coop is not moot.
 
+understand "turk rut" as a mistake ("Maybe there's a teleport to distant lands in the rut, but you don't want to risk it.[mis of 335]") when player is in Dumb Mud and poo coop is not moot.
+
 understand "turn rut" as a mistake ("[if player is in dumb mud][rut-check][else][self-help][end if].[mis of 81]"). [okall]
 
 understand "turnon rut" and "turn on rut" as a mistake ("[if player is in Dumb Mud]No innuendo here! The gnu dung[dung-w-coop] is about as close as you'll get to R-rated[else][self-help][end if].[mis of 82]") when player is in Dumb Mud.
+
+understand "turp rut" as a mistake ("Adding either turpitude or turpentine to the rut could not possibly help things.[mis of 336]") when player is in Dumb Mud and poo coop is not moot.
 
 understand "un gnu" as a mistake ("Eliminating the perpetrator won't eliminate what they've dung. Uh, dun. Er, done.[mis of 83]") when y-poopy.
 
@@ -224,11 +242,11 @@ understand "bun nub" and "buns nub" as a mistake ("No free food. Boo.[mis of 89]
 
 understand "bung nub" as a mistake ("The bunk nub is in bad enough shape as-is.[mis of 90]") when bunk nub is quicknear.
 
-understand "bunt nub" as a mistake ("Baseball references are a bit too Zork 2.[mis of 91]") when bunk nub is quicknear.
+understand "bunt nub" as a mistake ("Baseball references are a bit too Zork 2[one of]. Strike one![or]. Strike two![or]. Your third foul bunt is a strikeout Sorry, them's the rules![etg][stopping][mis of 91]") when bunk nub is quicknear.
 
 understand "door brood" as a mistake ("Just one guardian is enough to deal with.[mis of 92]") when Door Frood is quicknear.
 
-understand "pcp" as a mistake ("While searching for a boost, you're apprehended by a crank narc! I'm very disappointed in you. Not the whole drugs bit, but that this game didn't alter reality ENOUGH for you.[etg][mis of 93]") when player is in Yell Alley or player is in Evaded Ave.
+understand "pcp" as a mistake ("While searching for a boost, or maybe hoping for a Last Lousy Point, you're apprehended by a crank narc! I'm very disappointed in you. Not the whole drugs bit, but that this game didn't alter reality ENOUGH for you.[etg][mis of 93]") when player is in Yell Alley or player is in Evaded Ave.
 
 understand "tube debut" as a mistake ("It already did.[mis of 297]") when tube but is quicknear.
 
@@ -269,6 +287,8 @@ understand "slate petals" as a mistake ("The metals are for a didactic and not a
 understand "yak kay" and "kay yak" as a mistake ("The yak perks its ears up slightly, then goes back to looking bored. Maybe you didn't quite say things right.[mis of 106]") when yak is quicknear.
 
 chapter Fun Enuf
+
+understand "dare rad" as a mistake ("You try to gain inspiration from the Darer Ad, but it's a bit too silly.[mis of 337]") when Darer Ad is carried.
 
 understand "evaded ave" as a mistake ("That'll appear later.[mis of 107]") when player is in Fun Enuf and Evaded Ave is unvisited.
 
@@ -443,8 +463,6 @@ understand "stir its" as a mistake ("You wait for a man to appear after a long j
 
 understand "ta mat" as a mistake ("You give cursory thanks for the mat's over-general advice.[mis of 149]") when player is in Motto Bottom and tame mat is in Motto Bottom.
 
-understand "tame mat" as a mistake ("Interesting, but this is a palindrome game, not a homonym game. Also, the mat's already harmless. You need to make it more interesting.[mis of 149]") when player is in Motto Bottom and tame mat is in Motto Bottom.
-
 understand "tamp mat" as a mistake ("It's already pretty beaten down.[mis of 149]") when player is in Motto Bottom and tame mat is in Motto Bottom.
 
 chapter Moo Room
@@ -618,17 +636,17 @@ section stark rats
 
 to say use-need: say ". Perhaps an action on its own isn't enough, and you need to use something on them to get them out of the way"
 
-understand "star rats" as a mistake ("You would rather they didn't star in your adventure, here. Must be some way to dispose of them[use-need].[mis of 206]") when stark rats are quicknear.
+understand "star rats" and "star" as a mistake ("You would rather they didn't star in your adventure, here. Must be some way to dispose of them[use-need].[mis of 206]") when stark rats are quicknear.
 
-understand "stare rats" as a mistake ("You try to win a blinking contest, and maybe you could with one, but not that many[use-need].[mis of 207]") when stark rats are quicknear.
+understand "stare rats" and "stare" as a mistake ("You try to win a blinking contest, and maybe you could with one, but not that many[use-need].[mis of 207]") when stark rats are quicknear.
 
-understand "start rats" as a mistake ("You sort of need to stop them, instead[use-need].[mis of 208]") when stark rats are quicknear.
+understand "start rats" and "start"  as a mistake ("You sort of need to stop them, instead[use-need].[mis of 208]") when stark rats are quicknear.
 
 section gift fig
 
 understand "gi fig" as a mistake ("Hard to imagine how to weaponize the fig.[mis of 209]") when gift fig is quicknear.
 
-understand "gif fig" and "fig gif" as a mistake ("The fig remains firmly text-based. Eh, it's more edible that way.[mis of 210]") when gift fig is quicknear.
+understand "gif fig" and "fig gif" and "gifs fig" as a mistake ("The fig remains firmly text-based. Eh, it's more edible that way.[mis of 210]") when gift fig is quicknear.
 
 chapter Sneer Greens
 
@@ -764,11 +782,15 @@ understand "pita tip" as a mistake ("Sorry, you're getting ambiguous snack cans 
 
 understand "pith tip" as a mistake ("It's already pretty pithy, and there's not enough material for a helmet.[mis of 241]") when pity tip is quicknear.
 
+understand "row or" as a mistake ("[if row-prog is 3]You've flipped Worn Row all the ways you can.[else if row-prog is 2]Worn Row can't become anything else.[else if row-prog is 1]Hmm. Maybe [Worn Row] can become something else.[else]There are lots of possibilities what Worn Row can become! Why not try a few?[end if][mis of 338]") when player is in Worn Row.
+
 understand "sd ads" as a mistake ("SOME DEMOS is delightfully ad-free. Best to keep it that way.[mis of 289]") when SOME DEMOS is quicknear.
 
 understand "sd ids" as a mistake ("Yes, SOME DEMOS IDs useful artistic techniques.[mis of 290]") when SOME DEMOS is quicknear.
 
 understand "track cart" as a mistake ("[if DWELT LEWD is off-stage]Right idea, but the cart isn't going anywhere[else]It's not going anywhere. You already unlocked a secret, anyway[end if].[mis of 242]") when tract cart is quicknear.
+
+understand "word drow" as a mistake ("You'll get to see the drow later.[mis of 339]") when player is in Worn Row and Swept Pews are unvisited.
 
 understand "worf row" as a mistake ("No Enterprise security officer arrives to help or hinder you.[mis of 243]") when player is in Worn Row.
 
@@ -818,7 +840,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 
@@ -830,7 +852,7 @@ to say mis of (n - a number):
 		now entry N in checkoffs is true;
 		increment mist-found;
 		if mist-found is 1:
-			say "[paragraph break](NOTE: this was a specific reject for a good try. For the most part, you don't need to riff on any item after the pact cap, but enough good guesses will tell you how to get secret points.)[run paragraph on][line break]";
+			say "[paragraph break](NOTE: this was a specific reject for a good try. For the most part, the pact cap will tell you what else you need to riff on, but enough good guesses such as what you tried will tell you how to get secret points.)[run paragraph on][line break]";
 			continue the action;
 		if the remainder after dividing mist-found by hint-every-x is 0:
 			while cur-LLP-hint-row < number of rows in table of last lousy points:
@@ -861,11 +883,13 @@ to decide whether thug-near:
 
 to say or-ups: if word number 1 in the player's command is "ups", say ", much less spu";
 
-understand "dial [text]" and "call [text]" and "phone [text]" and "[number]-[number]" as a mistake ("Like your average random NPC, anyone you tried to call from [b][if player is in Yawn Way]Name ME, Man[else]Oh Who[end if][r] would probably just have random general useless things to say like '[next-rand-txt of table of npc mistakes]!'") when Name ME Man is quicknear or Oh Who is quicknear.
+understand "dial [text]" and "call [text]" and "phone [text]" and "[number]" as a mistake ("Like your average random NPC, anyone you tried to call from [b][if player is in Yawn Way]Name ME, Man[else]Oh Who[end if][r] would probably just have random general useless things to say like '[next-rand-txt of table of npc mistakes]!'") when Name ME Man is quicknear or Oh Who is quicknear.
 
 understand "gift fig" as a mistake ("It already is one. And you don't need to pass it on.") when gift fig is quicknear.
 
 understand "guh" and "thug" and "guh thug" as a mistake ("That's what [random visible guhthug] is, but you need to figure how to get rid of him.") when thug-near.
+
+understand "look kool" as a mistake ("[if peeped-yet is true]You already managed to PEEP for an LLP. This would be double dipping[else]There's a way to look differently, but it's just one word. Four letters[end if].")
 
 understand "put it up" as a mistake ("That's what the Spur Ups say, but you need to re-interpret it slightly, to help yourself.") when player has spur ups.
 
@@ -873,9 +897,15 @@ understand "rm gnu/dung" and "rm gnu dung" as a mistake ("You don't have the pro
 
 understand "rub [text]" as a mistake ("[no-burt].")
 
+understand "sees" as a mistake ("[if peeped-yet is true]You already managed to PEEP for an LLP. This would be double dipping[else]There's a way to look differently, and it's a four letter word, but not this one[end if].")
+
 understand "shed eh" and "shed ehs" as a mistake ("It doesn't do you much good. Maybe it could help someone further in the dumps than you, though.") when yob attaboy is quicknear and yob attaboy is xed.
 
+understand "tame mat" as a mistake ("Interesting, but this is a palindrome game, not a homonym game. Also, the mat's already harmless. You need to make it more interesting.") when player is in Motto Bottom and tame mat is in Motto Bottom.
+
 understand "tap at [text]" as a mistake ("That's in the spirit of the game, but sadly, I couldn't find a way to make it useful. Sorry!")
+
+understand "trap art" as a mistake ("Interesting, but this is a palindrome game, not a homonym game. Also, you [if player has trap art]already took[else]can just take[end if] the art. You need to make it more interesting.") when trap art is quicknear.
 
 understand "up [text]" and "ups [text]" as a mistake ("You need to do something UP with the spurs, but ... UP needs to come second. Or last. You can't do much with PU[or-ups].") when player has spur ups.
 
