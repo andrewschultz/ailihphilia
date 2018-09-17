@@ -623,7 +623,7 @@ when play begins:
 	now initseed of Name ME Man is a random number between 0 and prime-constant / 2 - (number of rows in table of random palindrome lastfirst names);
 	now initseed of Oh Who is a random number between prime-constant / 2 + 1 and prime-constant - (number of rows in table of random palindrome firstlast names);
 	say "[line break]It's not the first dream you had about how awful high school was, but it's the worst in a while. A few 'favorite' classmates chanting 'Diary raid!' and passing it around as they mock 'Beefy? Feeb! Bony Nob!'[wfak-d]";
-	say "You check your mail as you go out to the grocery store. A junk magazine! It's been so long since you got one, you're almost intrigued.[wfak-d]";
+	say "You check your mail as you go out to the grocery store. A junk-mail magazine! It's been so long since you got one, you're almost intrigued.[wfak-d]";
 	say "It just says GAME MAG. But the cover isn't telling you to actually buy anything, so you look inside. You have a whole backlog of games, but you can just recycle it when you get to the store. No, not the erot-store![wfak-d]";
 	say "Nothing really catches your mind until you see a DARER AD. It's a bit vague, but it catches your eye.[wfak-d]";
 	say "(MA'AM)/ SIR, TETRIS?![wfak-d]";
@@ -891,6 +891,7 @@ instead of listening:
 	if player is in Uneven U, say "The Code Doc mumbles [next-rand-txt of table of university targets] would make a good colleague.";
 	if player is in Moo Room, say "[if bees-seen is false]An ominous buzzing. Where is it coming from? Bees sure can hide![else]You think you hear [next-rand-txt of table of Moo Room animals] in addition to the mooing.[end if]" instead;
 	if player is in Le Babel, say "Freakish whisperings of the apocryphal [next-rand-txt of table of babel babble] swirl in the air." instead;
+	if player is in Sneer Greens and Yuge Guy is moot, say "You still hear the Yuge Guy utter 'Et Tu?' He has a weird sense of loyalty." instead;
 	say "Noise lesion."
 
 chapter seebeesing
@@ -1146,7 +1147,7 @@ this is the take what you got rule:
 
 after printing the name of a book (called bk) while taking inventory: say " (by [auth-name of bk])"
 
-after printing the name of the troll ort while taking inventory: say " (smelling of [if troll ort is moot]the troll ort[else]Turbo-Brut[end if])"
+after printing the name of the brag garb while taking inventory: say " (smelling of [if troll ort is moot]the troll ort[else]Turbo-Brut[end if])"
 
 after printing the name of the poo coop while taking inventory: if gnu dung is moot, say " (full of gnu dung)"
 
@@ -1182,7 +1183,10 @@ check taking inventory when Dave is moot (this is the ailihphilia inventory rule
 	if number of tronparts carried by player > 0, say "North-tron parts found: [the list of tronparts carried by player][unless martini tram is off-stage]. The martini tram is in [Fun Enuf], too[end if][hint-tron].";
 	if player has state tats, say "You've also stamped yourself with state tats.";
 	if number of carried exhausted things > 0 and reviver is not moot, say "(x) = exhausted (tried all 3 machines in Work Row)[line break]";
+	if being-chased is true and number of things in DropOrd is 0, say "Once this chase is done, you'll be able to find your dropped items in .";
 	the rule succeeds;
+
+to say drop-room: say "[if chase-person is psi wisp][Gross Org][else]Ooze Zoo[end if]"
 
 after printing the name of an exhausted thing while taking inventory: say " (x)";
 
@@ -1299,7 +1303,7 @@ showed-sites is a truth state that varies.
 
 carry out creditsing:
 	now show-dev is true;
-	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in alphabetical order: Anssi Raissanen, Brian Rushton, Mike Spivey, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and gave positive suggestions. If you want to join this elite club, and you find a bug, write me at [email].[paragraph break]IFComp organizers past and present. Without them, I wouldn't have started and kept going. Whether that's good for gaming is up for debate, but it's been good for me.[paragraph break]Various Python communities, especially StackOverflow, helped me to organize source control and write utilities that helped not only to extract palindromes but also to tune up Inform code (obligatory thanks to all past and current Inform developers, from whom I've stolen game code and/or used extensions) and run simple tests.[paragraph break]I also found some websites useful. DEV ED or DEVED will show which helped me and how.";
+	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in alphabetical order: Wade Clarke, Anssi Raissanen, Brian Rushton, Mike Spivey, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and gave positive suggestions. If you want to join this elite club, and you find a bug, write me at [email].[paragraph break]IFComp organizers past and present. Without them, I wouldn't have started and kept going. Whether that's good for gaming is up for debate, but it's been good for me.[paragraph break]Various Python communities, especially StackOverflow, helped me to organize source control and write utilities that helped not only to extract palindromes but also to tune up Inform code (obligatory thanks to all past and current Inform developers, from whom I've stolen game code and/or used extensions) and run simple tests.[paragraph break]I also found some websites useful. DEV ED or DEVED will show which helped me and how.";
 
 chapter deveding
 
@@ -2337,7 +2341,7 @@ Eroded Ore	reviver	Ore Zero	--	--	true	true	false	false	false	true	Yelpley	Worn 
 you buoy	rotator	ME gem	--	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. 'You BOFFO buoy!' you can't help shouting.[paragraph break]The gem's so tempting and beautiful, you grab it quickly, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
 Mr Arm	bomb mob	TNT	--	mob-bye rule	true	true	true	false	false	true	Yelpley	Yell Alley	Yell Alley	false	"Mr. Arm walks on his index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. Being an arm, it/he has more leverage than just a DNA hand would've. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course. Perhaps Mr. Arm will find a Do-Bod or even an Evol-Glove to be truly complete. The bomb mob, for their part, becomes a poor troop once they see what they've lost. They wander away."
 Nat's Tan	scorn rocs	--	--	--	true	true	true	true	false	false	Grebeberg	Flu Gulf	Flu Gulf	false	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
-rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	false	false	false	Grebeberg	Sneer Greens	Sneer Greens	false	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Had, ah!' he cries, making a male lam. From his babbling, he's apparently retreating to a glam-amalg (Loot Stool included) or ego loge in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]'Pol? Flop!' you think to yourself, before the ME Totem, sliced several ways, collapses and sinks into the ground. There's some murdered rum inside. Powerful stuff! You pick it up carefully."
+rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	false	false	false	Grebeberg	Sneer Greens	Sneer Greens	false	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Had, ah!' he cries, making a male lam. From his babbling, he's apparently retreating to a glam-amalg (Loot Stool included) or ego loge in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]'Pol? Flop!' you think to yourself, before the ME Totem, sliced several ways, collapses and sinks into the ground. As it does, you hear the Yuge Guy's voice utter 'There's some murdered rum inside. Powerful stuff! You pick it up carefully."
 Bros' Orb	Mirror Rim	Yard Ray	--	sword-rows-reveal rule	true	true	true	false	false	false	Yelpley	Red Roses Order	Red Roses Order	false	"The Bros['] Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Ms. Ism has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, Ms. Ism, live not on evil!' you boom, as the Orb does its work. Ms. Ism looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'My sub-level bus! You won't catch it! The E-Divide will block you!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	false	false	false	Yelpley	Red Roses Order	Red Roses Order	false	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Ms. Ism."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
@@ -3153,7 +3157,7 @@ grammarging is an action out of world.
 
 understand the command "grammar g" as something new.
 
-understand "grammar g" as grammarging when KAOS Oak is xed and player is in Fun Enuf.
+understand "grammar g" as grammarging when player is in Fun Enuf.
 
 ever-gram is a truth state that varies.
 
@@ -3741,7 +3745,7 @@ check going in Flu Gulf:
 
 book Sneer Greens
 
-Sneer Greens is west of Flu Gulf. It is in Grebeberg. "[if Yuge Guy is in Sneer Greens]Despite the impressive view, the place has gone to pot.[else]Nicer with the Yuge Guy gone. Still, it's...[end if][paragraph break]You can only go back east. Smirk rims block every way back except east[if me totem is in Sneer Greens], and a ME Totem towers above you."
+Sneer Greens is west of Flu Gulf. It is in Grebeberg. "[if Yuge Guy is in Sneer Greens]Despite the impressive view, the place has gone to pot[else]Nicer and quieter with the Yuge Guy gone. Still, it's... not completely silent[end if].[paragraph break]You can only go back east. Smirk rims block every way back except east[if me totem is in Sneer Greens], and a ME Totem towers above you[end if]."
 
 check going nowhere in Sneer Greens: say "The smirk rims push you back, but you really don't need to do anything [if Yuge Guy is moot]more here[else]with them, just the Yuge Guy[end if]." instead;
 
@@ -6607,8 +6611,8 @@ definition: a thing (called th) is keepable:
 	no;
 
 to mug-the-player:
-	now all things carried by the player are in DropOrd;
 	say "You drop all your possessions (except [the list of keepable things]) as you flee[one of][or] again[stopping]! That will make you a bit faster, but it looks like you'll need your own wit and quick actions to escape, here[one of].[wfak-d][or].[stopping]";
+	now all things carried by the player are in DropOrd;
 
 to say no-time-note:
 	say "When you are in a chase[if being-chased is true], like right now[end if], commands like X/EXAMINE, L/LOOK, I/INVENTORY and even THINK/AID (if you must) will take no time"
@@ -7190,6 +7194,57 @@ understand "tm/tempmet/temp/met" and "temp met" as TempMet.
 understand "dod/ord" and "drop ord" as DropOrd.
 
 volume bonus points and odd verbs
+
+chapter meming
+
+definition: a thing (called th) is memorable:
+	if th is off-stage, no;
+	if th is moot, no;
+	if th is x-it stix, no;
+	if location of th is unvisited, no;
+	if th is in location of player, no;
+	if th is carried or th is worn, no;
+	if th is scorn rocs, yes;
+	if th is KAOS Oak, yes;
+	if th is a phonebook, no;
+	if th is scenery, no;
+	yes;
+
+definition: a thing (called th) is thingmemorable:
+	if th is a person, no;
+	if th is memorable, yes;
+	no;
+
+meming is an action applying to nothing.
+
+understand the command "mem" as something new.
+
+understand "mem" as meming.
+
+carry out meming:
+	if number of things in TempMet > 0, say "Stuff temporarily out of play: [list of things in TempMet].";
+	if number of things in dropord > 0, say "Stuff you'll find in [drop-room] after this chase: [list of things in dropord].";
+	let Q be number of memorable people;
+	let count be 0;
+	if Q > 0:
+		say "Memorable people:";
+		repeat with QQ running through memorable people:
+			say "[if count > 0], [end if][QQ] ([location of QQ])";
+			increment count;
+		say ".";
+	else:
+		say "I can't find any memorable people outside of here.";
+	now Q is number of thingmemorable things;
+	let count be 0;
+	if Q > 0:
+		say "Memorable things:";
+		repeat with QQ running through thingmemorable things:
+			say "[if count > 0], [end if][QQ] ([location of QQ])";
+			increment count;
+		say ".";
+	else:
+		say "I can't find any memorable things outside of here.";
+	the rule succeeds;
 
 chapter sosing
 
@@ -8412,16 +8467,17 @@ understand "rr [something]" as rring.
 
 carry out rring:
 	repeat through table of goodacts: [It would be simpler to use an if statement but things could get shuffled in the table of goodacts. This assures that we try all possible machines before an item vanishes permanently.]
-		if use2 entry is reviver and use1 entry is noun:
-			try useoning use1 entry with reifier;
-			try useoning use1 entry with rotator;
-			try useoning use1 entry with reviver;
-			the rule succeeds;
-		if use2 entry is reifier and use1 entry is noun:
-			try useoning use1 entry with rotator;
-			try useoning use1 entry with reviver;
-			try useoning use1 entry with reifier;
-			the rule succeeds;
+		if there is a use1 entry:
+			if use2 entry is reviver and use1 entry is noun:
+				try useoning use1 entry with reifier;
+				try useoning use1 entry with rotator;
+				try useoning use1 entry with reviver;
+				the rule succeeds;
+			if use2 entry is reifier and use1 entry is noun:
+				try useoning use1 entry with rotator;
+				try useoning use1 entry with reviver;
+				try useoning use1 entry with reifier;
+				the rule succeeds;
 	try useoning noun with reviver;
 	try useoning noun with reifier;
 	try useoning noun with rotator;
