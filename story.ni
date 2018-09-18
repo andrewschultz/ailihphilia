@@ -140,19 +140,19 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 510. [-40 from max_verbs debug]
+use MAX_VERBS of 520. [-40 from max_verbs debug]
 
 use MAX_ACTIONS of 200.
 
-use MAX_VERBSPACE of 4900. [-400 from max_verbspace debug]
+use MAX_VERBSPACE of 5000. [-400 from max_verbspace debug]
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 550. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 560. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 use MAX_ACTIONS of 210. [+10?]
 
-use MAX_VERBSPACE of 5300. [4096 = original max]
+use MAX_VERBSPACE of 5400. [4096 = original max]
 
 use MAX_SYMBOLS of 21000. [20000 = release, for now]
 
@@ -1226,6 +1226,8 @@ carry out epiwipeing:
 	say "Epically wiping records of what you examined.";
 	now all things are nox;
 	now all people are not talked-yet;
+	repeat through table of readables:
+		now read-yet entry is false;
 	the rule succeeds;
 
 chapter scerecsing
@@ -1239,23 +1241,36 @@ understand the command "sce rec" as something new.
 understand "scerecs" as scerecsing.
 understand "sce recs" and "sce rec" as scerecsing.
 
+sce-warn is a truth state that varies.
+
 carry out scerecsing:
 	let count be 0;
+	if sce-warn is false:
+		now sce-warn is true;
+		say "[b]NOTE: most scenery doesn't need to be examined, so this is just a non-spoiler command to make sure you've checked everything.[r][line break]";
 	repeat with SC running through xable scenery:
 		increment count;
 		if count is 11, break;
-		if count is 1, say "[one of][b]NOTE: most scenery doesn't need to be examined, so this is just a non-spoiler command to make sure you've checked everything.[r][or][stopping]Scenery unexamined yet: ";
+		if count is 1, say "Scenery unexamined yet: ";
 		if count > 1, say ", ";
 		say "[SC] in [location of SC][run paragraph on]";
 	say "[if count is 11] (there's more, but this is long enough.)[else if count is 0]You've examined all the scenery you could[any-open-rooms].[else].";
-	say "[if count is 0]You've examined all the scenery you could[any-open-rooms][end if].";
 	now count is 0;
+	let XP be number of xable people;
 	repeat with SC running through xable people:
 		increment count;
-		if count is 1, say "People unexamined/talked to yet: ";
+		if count is 1, say "[if xp is 1]One person[else]People[end if] unexamined/talked to yet: ";
 		if count > 1, say ", ";
 		say "[SC] [if SC is talked-yet](examine)[else if SC is xed](talk to)[else](talk/examine)[end if] in [location of SC][run paragraph on]";
 	say "[if count is 0]You've examined/talked to all the people you could[any-open-rooms][end if].";
+	now XP is number of need-read things;
+	repeat with SC running through need-read things:
+		increment count;
+		if count is 1, say "[if XP is 1]Something[else]Things[end if] to READ: ";
+		if count > 1 and count < XP, say ", ";
+		if count is XP and count < 1, say "and";
+		say "[SC]";
+	if XP > 0, say ".";
 	the rule succeeds;
 
 to decide whether any-unvisited:
@@ -4643,8 +4658,8 @@ chapter Name ME Man
 instead of taking a phonebook, say "That would weigh you down too pointlessly[if player has sto lots], even with your Sto['] Lots[end if]."
 
 does the player mean doing something with Name ME Man when player is in Yawn Way:
-	if the player's command contains "me", it is unlikely;
-	if the player's command contains "man", it is likely;
+	if the player's command includes "me", it is unlikely;
+	if the player's command includes "man", it is likely;
 	it is likely;
 
 does the player mean useoning with Name ME Man: it is unlikely.
@@ -5131,6 +5146,15 @@ understand the command "read" as something new.
 
 understand "read [something]" as reading.
 
+definition: a thing (called th) is need-read:
+	if th is off-stage or th is moot, no;
+	if location of th is unvisited, no;
+	repeat through table of readables:
+		if th is read-cand entry:
+			if read-yet entry is false, yes;
+			if read-yet entry is true, no;
+	no;
+
 read-warn is a truth state that varies.
 
 carry out reading:
@@ -5146,10 +5170,10 @@ carry out reading:
 	the rule succeeds;
 
 table of readables
-read-cand	read-msg
-Set O Notes	"You scrunch your eyes to read the random miscellany at the edges of the Set O Notes. Apparently, there can only be one questor, to avoid a partner-entrap. The Flee Elf also wrote in 'REP US SUPER' to motivate you.[paragraph break]Um, yeah. The main notes are a lot more useful."
-enact cane	"You squint carefully. KARE RAK is written. But then where are/were the prongs? How would you restore the Enact Cane into something even more useful?"
-moor broom	"It still has the KARE RAK written on it that the enact cane did."
+read-cand	read-yet	read-msg
+Set O Notes	false	"You scrunch your eyes to read the random miscellany at the edges of the Set O Notes. Apparently, there can only be one questor, to avoid a partner-entrap. The Flee Elf also wrote in 'REP US SUPER' to motivate you.[paragraph break]Um, yeah. The main notes are a lot more useful."
+enact cane	false	"You squint carefully. KARE RAK is written. But then where are/were the prongs? How would you restore the Enact Cane into something even more useful?"
+moor broom	false	"It still has the KARE RAK written on it that the enact cane did."
 
 section show-warning
 
