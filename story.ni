@@ -833,7 +833,7 @@ give-warn is a truth state that varies.
 instead of giving to a person:
 	if give-warn is false:
 		now give-warn is true;
-		say "(NOTE: USE X ON Y is the preferred syntax, though GIVE/TO should work too and sometimes gives rejects.)[paragraph break]";
+		say "(NOTE: USE X ON Y is the preferred syntax, though GIVE/TO should work too and sometimes gives separate rejects.)[paragraph break]";
 	if noun is wash saw or noun is cave vac or noun is Dirt Rid, say "If there's any manual work to be done, you need to do it yourself." instead;
 	if noun is gift fig, say "Hmm. It was a gift FOR you. You need to figure what to do with it." instead; [?? send to USE ON ??]
 	if noun is snack cans, say "A nice gesture, but you're convinced the snack cans have some deeper purpose. If only by this text I just wrote, here." instead;
@@ -991,8 +991,9 @@ instead of thinking:
 				say "[cluey entry].[line break]";
 				now got-LLP-notes is true;
 	if got-LLP-notes is true, say "[line break]";
+	skip upcoming rulebook break;
 	if player has epicer recipe and epicer recipe is xed, say "You have [tron-got] of [number of tronparts] pieces of the north tron[hint-tron].";
-	say "[line break][if nwe > 0]You may want to examine [this-these of nwe] item[plur of nwe] you haven't, yet: [list of worth-examining things][else]You've examined all your carried items for clues[end if][if sce-to-see]. You can try SCE RECS to see scenery you haven't examined[end if].";
+	say "[line break][if nwe > 0]You may want to examine [this-these of nwe] item[plur of nwe] you haven't, yet: [list of worth-examining things][else]You've examined all your carried items for clues[end if][if sce-to-see]. You can also try SCE RECS to see scenery you haven't examined[end if].";
 	if revisited-u is false and revisit-clue is true, say "You may wish to visit the Code Doc again in [uneven u] to see what the fuss was about.";
 	if LLP-yet is false, say "You don't have any last lousy points to figure that've been clued in-game."
 
@@ -1307,7 +1308,7 @@ showed-sites is a truth state that varies.
 
 carry out creditsing:
 	now show-dev is true;
-	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in alphabetical order: Wade Clarke, Anssi Raissanen, Brian Rushton, Mike Spivey, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and gave positive suggestions. If you want to join this elite club, and you find a bug, write me at [email].[paragraph break]IFComp organizers past and present. Without them, I wouldn't have started and kept going. Whether that's good for gaming is up for debate, but it's been good for me.[paragraph break]Various Python communities, especially StackOverflow, helped me to organize source control and write utilities that helped not only to extract palindromes but also to tune up Inform code (obligatory thanks to all past and current Inform developers, from whom I've stolen game code and/or used extensions) and run simple tests.[paragraph break]I also found some websites useful. DEV ED or DEVED will show which helped me and how.";
+	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in alphabetical order: Mike Carletta, Wade Clarke, Anssi Raissanen, Brian Rushton, Mike Spivey, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and gave positive suggestions. If you want to join this elite club, and you find a bug, write me at [email].[paragraph break]IFComp organizers past and present. Without them, I wouldn't have started and kept going. Whether that's good for gaming is up for debate, but it's been good for me.[paragraph break]Various Python communities, especially StackOverflow, helped me to organize source control and write utilities that helped not only to extract palindromes but also to tune up Inform code (obligatory thanks to all past and current Inform developers, from whom I've stolen game code and/or used extensions) and run simple tests.[paragraph break]I also found some websites useful. DEV ED or DEVED will show which helped me and how.";
 
 chapter deveding
 
@@ -1950,8 +1951,8 @@ check useoning it with (this is the main useon function rule):
 			build-the-tron instead;
 	repeat through table of goodacts:
 		if there is no use1 entry, next;
-		if there is no use2 entry and debug-state is true:
-			say "WARNING: there is a blank use2 entry with use1 of [use1 entry].";
+		if there is no use2 entry:
+			if debug-state is true, say "WARNING: there is a blank use2 entry with use1 of [use1 entry].";
 			next;
 		if noun is use1 entry: [I would like to get rid of this ... the table of cantuse should take care of this, but I need to check things]
 			if second noun is use2 entry:
@@ -2120,7 +2121,7 @@ table of use redir [xxur]
 use1	person-reject	thing-reject
 cave vac	"You need to clean out some bad people figuratively, not clean them up literally."
 Dirt Rid	"You need to clean out some bad people figuratively, not clean them up literally."
-el doodle	"[second noun] doesn't seem up to deciphering things."	"You'd probably need a person to help you decipher El Doodle."
+el doodle	"[if second noun is not proper-named]The [end if][second noun] doesn't seem up to deciphering things."	"You'd probably need a person to help you decipher El Doodle."
 gift fig	"[no-food-share]."
 mayo yam	"[no-food-share]."
 ME gem	"[if second noun is not proper-named]The [end if][second noun] looks a bit frightened by the power of the ME gem. It must only work on, or for, really bad people or things."	--
@@ -2978,8 +2979,7 @@ this is the you-win rule: [xxwin]
 	say "'The X-ITE TIX lead BACK TO THE REAL WORLD WHICH WILL BE FAR MORE EXCITING AND ILLUMINATING FOR YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a there-and-back-but-wiser summary. Books like that always kind of annoyed you once you figured the whole schtick out, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand says, 'I'll need the pact cap back. It will go to our new museum.'[paragraph break]'What's it called?' you ask, despite yourself.[wfak-d]";
 	say "[paragraph break]'Well, there's still argument over We-I-View, Show-Ohs and Trofy Fort.' (Trofee?) The Flee Elf asks which you prefer, and after an awkward silence, you mention they all seem equally appropriate and unforced. Another awkward silence! How palindromic![paragraph break]'Well, anyway. This RIDE-DIR will help you return to your own world. And here is an x/o box.'[wfak-d]";
 	say "The x/o box isn't much. It's engraved 'U Remem'er, U,' 'Done? NOD' and 'U Did U.' You can't even open it! But if it were too obvious and gaudy, how would you explain it back home?[paragraph break]As you stare at it, you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Not-Dud-Ton? Not-Kook-Ton? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered with stuff you can't fix?[wfak-d]";
-	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar or maybe a TekCo Rocket, but it turns out it's just a Back Cab labeled 'Redi-Rider
-.' (A Toyota would also have worked.) 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call your writing? RECAP: ACER, NOW I WON and EL BIBLE are way too pompous, but some brainstorming gives DARN RAD, SOME MEMOS, I SAW [']TWAS I, DRAWN INWARD, WENT NEW, SAGAS or SOLOS. Or--no, that's it. ELATE TALE.";
+	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar or maybe a TekCo Rocket, but it turns out it's just a Back Cab labeled 'Redi-Rider.' (A Toyota would also have worked.) 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call your writing? RECAP: ACER, NOW I WON and EL BIBLE are way too pompous, but some brainstorming gives DARN RAD, SOME MEMOS, I SAW [']TWAS I, DRAWN INWARD, WENT NEW, SAGAS or SOLOS. Or--no, that's it. ELATE TALE.";
 	end the story finally saying "Roxor! Roxor! Roxor!";
 	sort the table of last lousy points in finord order;
 	the rule succeeds;
@@ -3355,9 +3355,9 @@ understand "pack cap" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did." instead;
-	say "An unseen voice booms 'Rec [']er!' as you take the hat. Ah![paragraph break]'Good job! Here's a set o['] notes to help with that Darer Ad,' the Flee Elf says. 'I have faith you'll find a way past the [KAOS Oak] to north to defeat the Diktat Kid in the Dirge Grid. But it's complicated.[paragraph break]'Still, first things first. The LO VOL setting means you won't get any sounds hinting if you need to do something weird to something you find. LOVE VOL means you will.'";
+	say "'Rec [']er!' shouts the Flee Elf. 'Hat! Ah!'[paragraph break]The Flee Elf hands you a Set O Notes and explains you need to find a way to destroy the [KAOS Oak] to the north. Also, the Flee Elf notes the LOVE VOL and LO VOL settings on the pact cap: LO VOL means the cap is quiet and won't make a weird noise if you look at things that need a weird action. LOVE VOL means you will. It's best I...' and with that, the Flee Elf becomes a FLED elf, pointing at the tile lit (slightly altered). You notice a TIX EXIT to the south, but you don't have any tickets.";
 	wfak;
-	say "[line break]The Flee Elf then mumbles something about the risk of a partner-entrap, so you'll have to go it alone. With a 'Rep us SUPER' and 'It's best I...' it becomes the, err, FLED Elf, pointing at the tile lit (which has a new line now) as you leave. Where the elf went, a big TIX EXIT sprouts up. You don't have any tickets or anything, though, so you'll have to worry about that later.[paragraph break]The cap fits okay. No need to take it off your head. Maybe it's not the most stylish thing ever, but at least they didn't make you wear a bib.";
+	say "[line break]You put the cap on. It fits okay. It can stay all quest. Not the most stylish, but sure beats wearing a bib.";
 	get-cap;
 	score-inc; [Dim Mid/pack cap]
 	verify-done rev-pack-cap rule;
@@ -3427,7 +3427,7 @@ after examining the Darer Ad:
 
 chapter Set O Notes
 
-the Set O Notes is a helpdoc. description is "[b]OPPO[r] is printed at the top. There's vague advice about making a North-Tron to reach and defeat the Diktat Kid, but first you'll have to defeat [b]Ms. Ism[r], as well as the [b]Yuge Guy[r].[paragraph break]There's mention of a guh-thug in various places, and you'll have to do something special when you see one. [thug-report].[paragraph break]Also scribbled, in the center, is [b][Fun Enuf][r] with [b]TRI-GIRT[r] below that. There are other landmarks scribbled in, which [if number of visited rooms < 20]will help you identify new places and scenic barriers and such[else]have been helpful so far[end if].[paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that.". importancy of the Set O Notes is 2.
+the Set O Notes is a helpdoc. description is "[b]OPPO[r] is printed at the top. There's vague advice about making a North-Tron to reach and defeat the Diktat Kid, but first you'll have to defeat [b]Ms. Ism[r], as well as the [b]Yuge Guy[r].[paragraph break]There's mention of a guh-thug in various places, and you'll have to do something special when you see one. [thug-report].[paragraph break]Also scribbled, in the center, is [b][Fun Enuf][r] with [b]TRI-GIRT[r] below that. There are other landmarks scribbled in, which [if number of visited rooms < 20]will help you identify new places and scenic barriers and such[else]have been helpful so far[end if].[paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that. Oh, there are some weird notes you can READ, too.". importancy of the Set O Notes is 2.
 
 understand "tri-girt" and "tri girt" and "trigirt" as set o notes.
 understand "oppo" as set o notes.
@@ -4312,7 +4312,7 @@ book Yack Cay
 
 Yack Cay is north of Swamp Maws. It is in Grebeberg. "An edits tide blocks your way west, and storm rots block your way east. [if mist sim is moot]You can go north or south here with ease[else]Mist sim hovers to the north, but there's no blocking back south[end if][if mist sim is moot]. The Known Wonk's Tru-Yurt is here[is-yurt-messy][end if]."
 
-instead of entering tru yurt, say "A rebuke from the Known Wonk stops you: 'Ye so nosey!'"
+instead of entering tru yurt, say "A rebuke from the Known Wonk stops you: 'Ye so nosey!' Nip in? Not on!"
 
 to say is-yurt-messy: if moor broom is not moot, say ". It looks messy[if wonk is moot], and from the inside, you hear the Known Wonk whining about it[end if]"
 
@@ -4544,9 +4544,13 @@ to decide whether eithervisit of (rm - a room) and (di - a direction):
 	if the room di of rm is visited, yes;
 	no;
 
+understand the command "m" as something new.
+understand the command "ma" as something new.
 understand the command "map" as something new.
 understand the command "xx" as something new.
 
+understand "m" as xpyxing when pyx is quicknear or pyx is in DropOrd.
+understand "ma" as xpyxing when pyx is quicknear or pyx is in DropOrd.
 understand "map" as xpyxing when pyx is quicknear or pyx is in DropOrd.
 understand "xx" as xpyxing when pyx is quicknear or pyx is in DropOrd.
 
@@ -4639,7 +4643,8 @@ chapter Name ME Man
 instead of taking a phonebook, say "That would weigh you down too pointlessly[if player has sto lots], even with your Sto['] Lots[end if]."
 
 does the player mean doing something with Name ME Man when player is in Yawn Way:
-	if current action is examining, it is unlikely;
+	if the player's command contains "me", it is unlikely;
+	if the player's command contains "man", it is likely;
 	it is likely;
 
 does the player mean useoning with Name ME Man: it is unlikely.
@@ -5135,13 +5140,14 @@ carry out reading:
 		say "[if noun is DWELT LEWD]You read [one of]a bit[or]on[stopping], despite your better instincts...[else]Whoah! You don't have time to read all that text, right now. You're busy with much more active things. Still, you flip through for a general overview.[end if]";
 	else if noun is a helpdoc:
 		say "It's only a page long.";
-	if read-warn is false, say "[bracket]Note: unless you're specifically informed, READ is functionally equivalent to X/EXAMINE, for books or non-books.[close bracket][paragraph break]";
+	if read-warn is false, say "[bracket]Note: unless you're specifically informed otherwise, READ is functionally equivalent to X/EXAMINE, for books or non-books.[close bracket][paragraph break]";
 	now read-warn is true;
 	try examining the noun instead;
 	the rule succeeds;
 
 table of readables
 read-cand	read-msg
+Set O Notes	"You scrunch your eyes to read the random miscellany at the edges of the Set O Notes. Apparently, there can only be one questor, to avoid a partner-entrap. The Flee Elf also wrote in 'REP US SUPER' to motivate you.[paragraph break]Um, yeah. The main notes are a lot more useful."
 enact cane	"You squint carefully. KARE RAK is written. But then where are/were the prongs? How would you restore the Enact Cane into something even more useful?"
 moor broom	"It still has the KARE RAK written on it that the enact cane did."
 
@@ -5675,7 +5681,7 @@ to no-extra-cup-points:
 	if cup-nerf is true, continue the action;
 	repeat through table of goodacts:
 		if there is a use1 entry:
-			if use1 entry is puce cup:
+			if use1 entry is puce cup and there is a use2 entry:
 				if use2 entry is dose sod or use2 entry is past sap, now sco entry is false;
 	now cup-nerf is true;
 
@@ -5865,7 +5871,7 @@ after examining the Door Frood for the first time:
 
 check going in Evaded Ave:
 	if Door Frood is in Evaded Ave:
-		if noun is west or noun is east, say "The Door Frood blocks you. 'Look, I'd like something cleverer to do than stop you from going where you want, but I don't HAVE anything. Yet.'[paragraph break]Maybe if you gave them something to keep them occupied, they'd be more generous." instead;
+		if noun is west or noun is east, say "The Door Frood blocks you. 'Look, I'd like something cleverer to do than stop you from going where you want, but I don't HAVE anything. Yet.'[paragraph break]Maybe if you gave the Frood something to stay occupied, they'd ignore you." instead;
 		if noun is north, say "The Door Frood would enjoy laughing at you for running into a wall, but you might not join in." instead;
 
 chapter bunk nub
@@ -6113,7 +6119,7 @@ check going south in Swept Pews: if Liar Grail in Swept Pews, say "'No yon! No y
 
 chapter liar grail
 
-The Liar Grail is a thing in Swept Pews. description is "It's carved with 'NIP IN? NOT ON! NIL IN!' Looking into it, your mind feels fogged with ambiguities. You recall being suckered by half-truths because you sort of wanted to believe them, or you'd feel dumb not believing them if they were actually true, whether or not they sounded intuitive. And while on some level you know the grail probably won't stop you and isn't, well, you're filled with rage and worried about an ignominious death if you go south. I mean, what if this game isn't REALLY polite on the Zarfian scale? How dumb you'd feel!". "A liar grail is to the south."
+The Liar Grail is a thing in Swept Pews. description is "It's carved inside with the phrase Y'R DRY, which is kind of odd, because it's a lot drier than you. But real live liars often accuse others of their deficiencies. It's empty, but looking at it, you feel fogged by ambiguities and half-truths explicitly meant to sucker you because you sort of wanted to believe them, or you'd feel dumb not believing them if they were actually true, whether or not they sounded intuitive.[paragraph break]Perhaps there is some way to make the liar grail's arguments so extreme they can be laughed off.". "A liar grail is to the south."
 
 check taking liar grail: say "A small voice cries 'Da cad! Da cad!' You probably don't want the liar grail corrupting you." instead;
 
@@ -8813,7 +8819,7 @@ carry out percing:
 			increment count;
 	repeat with pthi running through peripheral things:
 		if pthi is not an itm listed in table of periphery:
-			say "Need periphery entry for [pthi].";
+			say "Need itm entry in table of periphery for [pthi].";
 			increment count;
 	say "[if count is 0]Yay! Periphery succeeds![else][count] periphery errors.[end if]";
 	the rule succeeds;

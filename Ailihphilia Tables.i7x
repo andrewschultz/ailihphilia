@@ -881,6 +881,7 @@ randtxt
 "Fit, O Motif"
 "Gnostic, It: Song"
 "If I Had a Hi-Fi"
+"In Mutual Autumn, I"
 "Lug, O Mogul"
 "Mad at Adam"
 "A Mardy Drama"
@@ -1699,6 +1700,7 @@ table of yuge battle cries
 randtxt
 "A-Lago gala!"
 "A-lists? I? La!"
+"Alibi! La!"
 "At a Hata[']!"
 "Bilk-Lib!"
 "Bosh, SOB!"
