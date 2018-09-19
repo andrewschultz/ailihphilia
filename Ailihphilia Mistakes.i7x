@@ -26,6 +26,8 @@ understand "pool sloop" as a mistake ("No boat appears to take you across the wa
 
 understand "saga gas" as a mistake ("You probably need wisdom more than description of someone else's epic right now.[mis of 262]") when sage gas is quicknear.
 
+understand "sago gas" as a mistake ("The sage gas fails to become an edible powder. Perhaps it is better as FOOD FOR THE MIND.[mis of 341]") when sage gas is quicknear.
+
 understand "spa caps" as a mistake ("BUT YOU ALREADY HAVE YOUR PACE CAP![mis of 3]") when player is in Apse Spa or spa maps are quicknear.
 
 understand "spa gaps" as a mistake ("[if player is not in Apse Spa]No, you want the maps to be complete[else]The Apse Spa is too sturdy. You don't want it to collapse[end if].[mis of 4]") when player is in Apse Spa or spa maps are quicknear.
@@ -38,7 +40,11 @@ understand "spa raps" as a mistake ("The spa is a place of peace. Stop that nois
 
 understand "spa saps" as a mistake ("One day, with the Diktat Kid gone, plenty of people will waste money on a spa, but your job is to get things there.[mis of 8]") when player is in Apse Spa or spa maps are quicknear.
 
+understand "spa yaps" as a mistake ("The spa taps reveal no hints or small talk.[mis of 342]") when player is in Apse Spa or spa maps are quicknear.
+
 understand "spa zaps" as a mistake ("You don't need a weapon.[mis of 9]") when player is in Apse Spa or spa maps are quicknear.
+
+understand "spat taps" as a mistake ("You don't need to get in an argument with something inanimate right now.[mis of 9]") when player is in Apse Spa or spa maps are quicknear.
 
 chapter Art Xtra
 
@@ -244,7 +250,7 @@ understand "bun nub" and "buns nub" as a mistake ("No free food. Boo.[mis of 89]
 
 understand "bung nub" as a mistake ("The bunk nub is in bad enough shape as-is.[mis of 90]") when bunk nub is quicknear.
 
-understand "bunt nub" and "bunt at nub" as a mistake ("Baseball references are a bit too Zork 2[one of]. Strike one![or]. Strike two![or]. Your third foul bunt is a strikeout Sorry, them's the rules![etg][stopping][mis of 91]") when bunk nub is quicknear.
+understand "bunt nub" and "bunt at nub" as a mistake ("Baseball references are a bit too Zork 2[one of]. Strike one![or]. Strike two![or]. Your third foul bunt is a strikeout. Sorry, them's the rules![etg][stopping][mis of 91]") when bunk nub is quicknear.
 
 understand "door brood" as a mistake ("Just one guardian is enough to deal with.[mis of 92]") when Door Frood is quicknear.
 
@@ -283,6 +289,8 @@ understand "rocs cor" as a mistake ("Your flattery doesn't move the rocs.[mis of
 understand "score rocs" as a mistake ("[if flu gulf is not visited]You don't need allies like that. But, spoiler: there are enemies like that[else if scorn rocs are not moot]0/10 would not pet. They're bad rocs, Brent ... but you'll get a point for getting rid of them[else]You already scored ON them[end if].[mis of 104]"). [if you didn't see the reference, it's WeRateDogs on twitter and "They're good dogs Brent"] [okall]
 
 chapter Frush Surf
+
+understand "kayak" and "kayak a yak" as a mistake ("[if kayak is moot]You already used the kayak[else if Lac Oft Focal is visited]One kayak is enough for this game[else]Spoiler: there's a kayak you haven't found yet[end if].[mis of 343]") when yak is quicknear.
 
 understand "slate petals" as a mistake ("The metals are for a didactic and not an aesthetic purpose.[mis of 105]") when slate metals are quicknear.
 
@@ -327,6 +335,8 @@ understand "pac cap" as a mistake ("You almost take the cap, but you fumble it s
 
 understand "paca cap" and "pacb cap" and "pacc cap" and "pacd cap" and "pacf cap" and "pacg cap" and "pach cap" and "paci cap" and "pacj cap" and "pacl cap" and "pacm cap" and "pacn cap" and "pacp cap" and "pacq cap" and "pacr cap" and "pacu cap" and "pacv cap" and "pacw cap" and "pacx cap" and "pacz cap" as a mistake ("[if player has pact cap][pace-clue-maybe][else]'Hmm, try again,' grumps the Flee Elf[end if].[mis of 118]") when Pact Cap is quicknear. [this should be trivially true, but just in case...]
 
+understand "pace recap" as a mistake ("You run in place briefly to make sure you've still got that extra burst of speed.[mis of 344]") when player has pact cap and cap-pace is true.
+
 understand "paco cap" as a mistake ("[if player has pact cap][pace-clue-maybe][else]The Flee Elf notes that's a pejorative term for policemen in Central America--not quite what you want, for decency or for practicality[end if].[mis of 119]") when Pact Cap is quicknear.
 
 understand "pacs cap" as a mistake ("PACs aren't necessarily evil, but they aren't terribly heroic.[mis of 120]") when Pact Cap is quicknear.
@@ -357,7 +367,7 @@ section Set O Notes abuse
 
 to say girt-clue:
 	if row-prog > 1:
-		say "Hmm. You seem to have found the three configurations for Worn Row[if psi wisp is not moot]. Maybe Worn Row will be useful in the future, maybe not[else], and you even used the Redness Ender[end if].";
+		say "Hmm. You seem to have found the three configurations for Worn Row[if psi wisp is not moot]. Maybe Worn Row will be useful in the future, maybe not[else], and you even used the Redness Ender[end if]";
 	else if row-prog is 0:
 		say "You need to figure out what that means. It seems to indicate [if Worn Row is visited][Worn Row][else]a room south of [Fun Enuf][end if]";
 	else:
@@ -372,6 +382,7 @@ understand "bra garb" as a mistake ("I've tried to keep this game gender neutral
 understand "den ozoned" as a mistake ("You smell cut grass for a second.[mis of 313]") when player is in Gross Org and Ned is moot.
 
 understand "dent Ned" as a mistake ("Less violence, more subtlety.[mis of 128]") when Ned is quicknear.
+understand "denses Ned" as a mistake ("Maybe if you and ten other people held hands and danced around in a circle chanting 'Dense's Ned,' repeatedly, he'd flee. But there's only one of you, and Ned probably doesn't like having his intelligence insulted.[mis of 128]") when Ned is quicknear.
 
 understand "gro org" and "grow org" as a mistake ("[one of]This game is just a bunch of dumb jokes and silly wordplay mashed together, and any attempt at personal growth is severely frowned upon. So stop that![or]Your height does not change.[stopping][mis of 129]") when player is in Gross Org.
 
@@ -382,6 +393,8 @@ understand "grok org" as a mistake ("You achieve no transcendent consciousness, 
 understand "groo org" as a mistake ("No slavering light-fearing beasts find it worthwhile to punish you for bad spelling.[mis of 132]") when player is in Gross Org.
 
 understand "grot org" as a mistake ("Gross, grot ... same thing.[mis of 133]") when player is in Gross Org.
+
+understand "Ned eden" as a mistake ("Mythology or Bible thumping may cause other people to flee, but not Ned. It would probably make him madder. Gotta calm him down.[mis of 345]") when Ned is quicknear.
 
 understand "stinko knits" as a mistake ("AFTER cleaning up Yelpley and Grebeberg is when to get drunk. Nurd.[mis of 134]") when stinky knits are quicknear.
 
@@ -434,6 +447,8 @@ chapter Mont Nom
 understand "Ian ai" as a mistake ("Ian remains naturally sentient. Though it's quite possible that any intellectual posturing of his is fake.[mis of 138]") when Ian is quicknear.
 
 understand "krab ark" as a mistake ("You don't have the materials to climb the ark, and you don't need to.[mis of 139]") when player is in Mont Nom.
+
+understand "kram ark" as a mistake ("You don't need to stuff litter or anything in the Ark of Okra.[mis of 346]") when player is in Mont Nom.
 
 understand "mar tram" as a mistake ("No. [if epicer recipe is xed]You need it to build the north-tron[else]It must be good for something[end if].[mis of 140]") when martini tram is quicknear.
 
@@ -630,7 +645,7 @@ understand "scram arcs" as a mistake ("The arcs stay still, but you can just go 
 
 chapter Seer Trees
 
-understand "seer brees" as a mistake ("[one of]A man in black and gold throws a football at you from 50 yards away, and it drills you right in the chest. Accurate![or]The man doesn't appear again. He probably has better things to do than schlep around in some text adventure. Perhaps he is off eating at a QB BBQ.[stopping][mis of 204]") when player is in Seer Trees.
+understand "seer brees" as a mistake ("[one of]A man in black and gold throws a football at you from 50 yards away, and it drills you right in the chest, leaving no doubt he saw you. Accurate![or]The man doesn't appear again. He probably has better things to do than schlep around in some text adventure. Perhaps he is off eating at a QB BBQ.[stopping][mis of 204]") when player is in Seer Trees.
 
 understand "seer frees" as a mistake ("[if stark rats are in Seer Trees]It won't be THAT easy[else]You already feel free enough here[end if].[mis of 205]") when player is in Seer Trees.
 
@@ -738,6 +753,8 @@ understand "ufo f u" and "ufo fu" and "ufofu" as a mistake ("You feel [one of]a 
 
 chapter Trapeze Part
 
+understand "pole lop" as a mistake ("The pole is compact enough as-is.[mis of 347]") when player has elope pole.
+
 understand "tendered net" as a mistake ("[if player has tent net]You already have the tent[else]Nobody comes by to hand anything to you. You're on the right track. Maybe you're overthinking things with that big long word[end if].[mis of 235]") when level net is quicknear or tent net is quicknear.
 
 understand "tenet" as a mistake ("That's too abstract. [unless tent net is quicknear]You need some sort of action[else]The tent net could be useful to someone[end if].[mis of 322]") when level net is quicknear or tent net is quicknear.
@@ -751,6 +768,8 @@ understand "trape part" as a mistake ("You mill around a bit, [if epicer recipe 
 chapter Uneven U
 
 understand "co doc" and "codoc" as a mistake ("It would take too long to apply for an adjunct professorship. Or to get an advanced degree.[mis of 294]") when player is in Uneven U.
+
+understand "cod doc" and "doc cod" and "doc a cod" as a mistake ("The Code Doc suddenly mumbles something about needing to hire someone with a strong marine biology background.[mis of 349]") when player is in Uneven U.
 
 understand "coda doc" as a mistake ("The Code Doc has a whole career of research ahead. Don't shorten it.[mis of 295]") when player is in Uneven U.
 
@@ -806,7 +825,9 @@ chapter Yack Cay
 
 understand "kno wonk" as a mistake ("The wonk would dismiss you as eny fule.[mis of 285]") when Known Wonk is quicknear.
 
-understand "know wonk" as a mistake ("The wonk is already known. Well, not REALLY, but then, this game isn't about existentially reaching people.[mis of 286]") when Known Wonk is quicknear.
+understand "know wonk" and "know a wonk" and "wonk know" as a mistake ("The wonk is already known. Well, not REALLY, but then, this game isn't about existentially reaching people.[mis of 286]") when Known Wonk is quicknear.
+
+understand "miss sim" as a mistake ("The Known Wonk moans 'It's not that easy! Of course it's not!' And it isn't[if cap-vol is true], especially since the pact cap didn't make any noise[end if]. You'll need to use something on the Known Wonk--or the mist sim.[mis of 348]") when Known Wonk is quicknear.
 
 understand "shard rahs" as a mistake ("The rahs are on paper, and besides, they might be useful.[mis of 247]") when sharp rahs are quicknear.
 
@@ -842,7 +863,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 
@@ -910,6 +931,8 @@ understand "tap at [text]" as a mistake ("That's in the spirit of the game, but 
 understand "trap art" as a mistake ("Interesting, but this is a palindrome game, not a homonym game. Also, you [if player has trap art]already took[else]can just take[end if] the art. You need to make it more interesting.") when trap art is quicknear.
 
 understand "up [text]" and "ups [text]" as a mistake ("You need to do something UP with the spurs, but ... UP needs to come second. Or last. You can't do much with PU[or-ups].") when player has spur ups.
+
+understand "wash [text]" as a mistake ("The wash saw only has enough liquid to loosen something up for cutting. It can't clean anything.") when player has wash saw.
 
 understand "wave" as a mistake ("Nobody named Eva is beyond the fourth wall.")
 

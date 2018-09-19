@@ -181,7 +181,7 @@ test e11 with "test part11".
 
 chapter quick start
 
-test qs with "pack cap/e/s/evade dave/w/bore rob/work row"
+test qs with "pack cap/e/n/get all/s/s/evade dave/w/bore rob/work row"
 
 chapter quickgo
 
