@@ -130,8 +130,6 @@ understand "man" as a person when the person is male.
 understand "man/woman" as a person when the person is neuter.
 understand "woman" as a person when the person is female.
 
-the player is neuter.
-
 Fun Enuf is a room. [just to be sure where the player starts]
 
 section procedural rules
@@ -457,6 +455,10 @@ description of player is "Flesh. Self.". initial appearance of player is "U R U"
 
 does the player mean dropping the trap art: it is likely;
 does the player mean dropping the party trap: it is likely;
+
+rule for supplying a missing noun when dropping:
+	if player has trap art, now noun is trap art;
+	if player has party trap, now noun is party trap;
 
 check dropping:
 	say "An unseen voice whispers 'Keep! Eek!' There is no met-ill item in this game. In other words, you don't need to drop anything[if party trap is not moot], though dropping is an alternative solution in one puzzle[end if]. Most items will disappear from your inventory once they're no longer useful." instead;
@@ -954,9 +956,13 @@ instead of thinking:
 			if there is no combo-rule entry, next;
 			consider the combo-rule entry;
 			if the rule failed, next;
-			if got-later-use is false, say "Stuff you've half figured out:[line break]";
-			say "[remind-msg entry][line break]";
+			if got-later-use is false:
+				say "Stuff you've partially figured out:[line break]";
+			else:
+				skip upcoming rulebook break;
+			say "[remind-msg entry]";
 			now got-later-use is true;
+	say "[if got-later-use is true][paragraph break][else][line break][end if]";
 	if cap-ever-pace is true and kayo yak is not moot, say "You need to figure [if yak-lair is true]what to say to the yak to get rid of the ogre[else if cap-during-yak is true]where to end up when you run with the pact/pace cap[else]when to make the pact cap a pace cap[end if].";
 	if got-later-use is false, say "As far as you know, there are no challenges where you were pretty sure what to do, but you didn't have the right item yet.";
 	if number of beep-think things > 0, say "You need to do something weird to deal with [the list of beep-think things].";
@@ -1028,13 +1034,15 @@ to say hint-tron:
 
 section stuck-rules
 
+[honly = here only. Hn-in = here or "in room x." Hn = here or room x.]
+
 to say honly of (rm - a room):
 	say "[if player is in rm] here[end if]"
 
-to say hn of (rm - a room):
+to say hn-in of (rm - a room):
 	say "[if player is in rm]here[else]in [rm][end if]"
 
-to say hn2 of (rm - a room):
+to say hn of (rm - a room):
 	say "[if player is in rm]here[else][rm][end if]"
 
 a room has a rule called stuck-rule. stuck-rule of room is usually the trivially false rule.
@@ -1056,7 +1064,7 @@ stuck-rule of Yawn Way is yawn-way-stuck rule.
 
 this is the drawl-ward-stuck rule:
 	if Bond Nob is moot, the rule fails;
-	say "You need to find a way to help the Bond Nob [hn of Drawl Ward].";
+	say "You need to find a way to help the Bond Nob [hn-in of Drawl Ward].";
 	the rule succeeds;
 
 this is the dumb-mud-stuck rule:
@@ -1076,67 +1084,67 @@ this is the dumb-mud-stuck rule:
 			say " / ";
 			now any-yet is true;
 		say "the lie veil (north)";
-	say " [hn of Dumb Mud].";
+	say " [hn-in of Dumb Mud].";
 	the rule succeeds;
 
 this is the emo-dome-stuck rule:
 	if Red Roses Order is visited, the rule succeeds;
-	say "[if pulled-up is false]You need to figure a way to slow down in [else]You need to figure a way north from [end if][hn2 of Emo Dome].";
+	say "[if pulled-up is false]You need to figure a way to slow down in [else]You need to figure a way north from [end if][hn of Emo Dome].";
 	the rule succeeds;
 
 this is the evaded-ave-stuck rule:
 	if Door Frood is moot, the rule fails;
-	say "You need a way by the Door Frood [hn of Evaded Ave].";
+	say "You need a way by the Door Frood [hn-in of Evaded Ave].";
 	the rule succeeds;
 
 this is the flu-gulf-stuck rule:
 	if scorn rocs are moot, the rule fails;
-	say "You need a way by the scorn rocs [hn of Flu Gulf].";
+	say "You need a way by the scorn rocs [hn-in of Flu Gulf].";
 	the rule succeeds;
 
 this is the fun-enuf-stuck rule:
 	if Dirge Grid is mapped north of Fun Enuf, the rule fails; [??not good enough -- need to make sure have weapons]
-	say "You need to blast through the [KAOS Oak] north of [hn2 of Fun Enuf], eventually.";
+	say "You need to blast through the [KAOS Oak] north of [hn of Fun Enuf], eventually.";
 	the rule succeeds;
 
 this is the gross-org-stuck rule:
 	if etage gate is moot, the rule fails;
-	say "You need to [if Ned is in Gross Org]get rid of Ned and [end if]unlock the etage gate [hn of Gross Org].";
+	say "You need to [if Ned is in Gross Org]get rid of Ned and [end if]unlock the etage gate [hn-in of Gross Org].";
 	the rule succeeds;
 
 this is the lair-trial-stuck rule:
 	if ergot ogre is moot, the rule fails;
-	say "You need to get by the ergot ogre [hn of Lair Trial].";
+	say "You need to get by the ergot ogre [hn-in of Lair Trial].";
 	the rule succeeds;
 
 this is the ooze-zoo-stuck rule:
 	if sleep eels are moot, the rule fails;
-	say "You need to get by the sleep eels [hn of Ooze Zoo].";
+	say "You need to get by the sleep eels [hn-in of Ooze Zoo].";
 	the rule succeeds;
 
 this is the seer-trees-stuck rule:
 	if stark rats are moot, the rule fails;
-	say "You need a way past the stark rats [hn of Seer Trees].";
+	say "You need a way past the stark rats [hn-in of Seer Trees].";
 	the rule succeeds;
 
 this is the yack-cay-stuck rule:
 	if NULL ILLUN is moot, the rule succeeds;
-	say "You need to figure a way to get by the mist-sim [hn of Yack Cay]. The Known Wonk is also a bit of a nuisance.";
+	say "You need to figure a way to get by the mist-sim [hn-in of Yack Cay]. The Known Wonk is also a bit of a nuisance.";
 	the rule succeeds;
 
 this is the swept-pews-stuck rule:
 	if liar grail is moot, the rule succeeds;
-	say "You need to figure how to get past the Liar Grail and release the Wordy Drow [hn of Swept Pews].";
+	say "You need to figure how to get past the Liar Grail and release the Wordy Drow [hn-in of Swept Pews].";
 	the rule succeeds;
 
 this is the toll-lot-stuck rule:
 	if cash sac is moot, the rule succeeds;
-	say "You need to figure a way past the cross orc [hn of Toll Lot].";
+	say "You need to figure a way past the cross orc [hn-in of Toll Lot].";
 	the rule succeeds;
 
 this is the yawn-way-stuck rule:
 	if puffed-up is true, the rule succeeds;
-	say "You need to figure how to get east [hn of Yawn Way].";
+	say "You need to figure how to get east [hn-in of Yawn Way].";
 	the rule succeeds;
 
 volume irregular verbs
@@ -1247,7 +1255,7 @@ carry out scerecsing:
 	let count be 0;
 	if sce-warn is false:
 		now sce-warn is true;
-		say "[b]NOTE: most scenery doesn't need to be examined, so this is just a non-spoiler command to make sure you've checked everything.[r][line break]";
+		say "[b]NOTE: most scenery doesn't need to be examined, so this is just a non-spoiler command to make sure you've checked everything.[r]";
 	repeat with SC running through xable scenery:
 		increment count;
 		if count is 11, break;
@@ -1264,6 +1272,7 @@ carry out scerecsing:
 		say "[SC] [if SC is talked-yet](examine)[else if SC is xed](talk to)[else](talk/examine)[end if] in [location of SC][run paragraph on]";
 	say "[if count is 0]You've examined/talked to all the people you could[any-open-rooms][end if].";
 	now XP is number of need-read things;
+	let count be 0;
 	repeat with SC running through need-read things:
 		increment count;
 		if count is 1, say "[if XP is 1]Something[else]Things[end if] to READ: ";
@@ -1615,7 +1624,7 @@ chapter eating
 
 eat-warning is a truth state that varies.
 
-instead of eating a book, say "There's no real information for you to devour, but who knows, maybe someone else."
+instead of eating a book, say "There's no real information for you to devour, but who knows, maybe someone else can. Figuratively, at least."
 
 instead of eating SOME DEMOS, say "You haven't used [i]SOME DEMOS[r] yet, so you devour its essence. Something ordinary could become...well, ART."
 
@@ -2170,7 +2179,7 @@ demo med	Gorge Grog	"No, combining alcohol and pills is a bad, bad idea."
 Dirt Rid	cassettes sac	"[get-rej of cassettes sac]The Dirt Rid wheezes but is unable to clean up the cassettes sac. You need something more powerful."
 Dirt Rid	gnu dung	"The Dirt Rid is ineffective and too small. You may need something stronger."
 Dirt Rid	go by bog	"The bog is too big for that."
-Dirt Rid	stinky knits	"The smell is crusted into the stinky knits. You need a heavy duty way to get clean them up."
+Dirt Rid	stinky knits	"The smell is crusted into the stinky knits. You need an even heavier duty tool than the Dirt Rid to get clean them up."
 Dirt Rid	troll ort	"The troll ort is crusted over enough that the Dirt Rid wouldn't really clean it."
 DNA hand	bomb mob	"The hand isn't mobile enough."
 DNA hand	Diff ID	"The Diff ID doesn't even seem to recognize the DNA hand. Apparently, it is not alive enough."
@@ -2418,7 +2427,7 @@ this is the hint-party-trap rule:
 	else if ever-wordrow is false:
 		say "You need to change [Worn Row].";
 	else:
-		say "[one of]You can use the trap art on one of the machines [hn of Worn Row][or]Use the trap art on the reifier[stopping].";
+		say "[one of]You can use the trap art on one of the machines [hn-in of Worn Row][or]Use the trap art on the reifier[stopping].";
 	the rule fails;
 
 this is the hint-stark-rats rule:
@@ -2431,7 +2440,7 @@ this is the hint-stark-rats rule:
 	else if player has party trap:
 		say "[one of]You have the item you need to catch the stark rats[or]USE PARTY TRAP ON STARK RATS[stopping].";
 	else:
-		say "[one of]The stark rats [hn of Seer Trees] are tough to catch[or]You need an item that will catch the stark rats[or]The trap art [hn of Art Xtra] will get you started[stopping].";
+		say "[one of]The stark rats [hn-in of Seer Trees] are tough to catch[or]You need an item that will catch the stark rats[or]The trap art [hn-in of Art Xtra] will get you started[stopping].";
 	the rule fails;
 
 [the 3 sections below are automatically sorted with sc2.py]
@@ -2568,7 +2577,7 @@ this is the rev-puff-up rule:
 	if in-sos is true:
 		if Dave is not moot, the rule fails;
 		if Worn Row is unvisited:
-			say "You need to visit west of [hn2 of My Gym].";
+			say "You need to visit west of [hn of My Gym].";
 		else if ever-workrow is false:
 			say "You need to change [Worn Row].";
 		else if stark rats are in Seer Trees:
@@ -2598,7 +2607,7 @@ this is the rev-second-food-combo rule:
 	let mi be random not moot liquid ingredient;
 	if in-sos is true:
 		if number of carried ingredients is 2:
-			say "Mix the [si] and [mi] together [hn of Mont Nom], just like you did the [list of moot ingredients].";
+			say "Mix the [si] and [mi] together [hn-in of Mont Nom], just like you did the [list of moot ingredients].";
 		else if pity tip is not moot:
 			say "The pity tip will get you some food, if you know where to look.";
 		else if player does not have mayo yam:
@@ -2614,7 +2623,7 @@ this is the rev-second-food-combo rule:
 this is the rev-stand-nats rule:
 	if Nat's Tan is moot or player carries Nat's Tan, the rule fails; [?? capitalize Nat's?]
 	if in-sos is true:
-		say "[one of]The Nat's Tan [hn of Deft Fed] will be useful. You need to take it[or]TAKE NAT'S doesn't work[or]***** NAT'S, maybe[or]STAND NAT'S[stopping].";
+		say "[one of]The Nat's Tan [hn-in of Deft Fed] will be useful. You need to take it[or]TAKE NAT'S doesn't work[or]***** NAT'S, maybe[or]STAND NAT'S[stopping].";
 		the rule succeeds;
 	say "You STAND NAT'S.";
 	now player has Nat's;
@@ -2624,7 +2633,7 @@ this is the rev-tend-net rule:
 	if epicer recipe is not off-stage, the rule fails;
 	if in-sos is true:
 		if Door Frood is in Evaded Ave, the rule fails;
-		say "[one of]You'll want to deal with the ten-level net [hn of Trapeze Part].[or]What can you do with the net to check it's okay?[or]TEN* NET.[or]TEND NET.[stopping]";
+		say "[one of]You'll want to deal with the ten-level net [hn-in of Trapeze Part].[or]What can you do with the net to check it's okay?[or]TEN* NET.[or]TEND NET.[stopping]";
 		the rule succeeds;
 	say "You TEND NET in the Trapeze Part.";
 	get-tended-stuff;
@@ -2924,6 +2933,7 @@ this is the sap-loose rule:
 	if player has puce cup:
 		unless redact-postrule, say "Hmm, the puce cup would be perfect to carry the past sap in[if cup is not empty], though you'd need to empty the cup, first[end if].";
 		the rule succeeds;
+	later-wipe past sap;
 	the rule succeeds;
 
 this is the sap-to-cup rule:
@@ -3119,6 +3129,8 @@ definition: a thing ( called th) is preclued:
 		if there is a to-get entry and to-get entry is th and in-limbo entry is true, yes;
 	no;
 
+[It'd be programatically more elegant to divide the table below in two, but I also want some game-order to all this, so one table it is.]
+
 table of lateruses [xxlat]
 to-get	in-limbo	combo-rule	remind-msg
 UFO tofu	false	--	"You [if cross orc is in Toll Lot]need to get rid of the cross orc to[else]can now[end if] use the radar on the crag arc."
@@ -3126,7 +3138,7 @@ Spa Maps	false	--	"You [if tent net is not moot]need to do something so the Code
 liar grail	false	--	"You didn't have the right stuff to pour in the Liar Grail from the Puce Cup last time."
 --	false	pull-known rule	"You need to find where to pull up."
 --	false	puff-known rule	"You need to find where to puff up."
---	false	sap-uncut rule	"You need something to cut the past sap with [hn2 of Cold Loc]."
+--	false	sap-uncut rule	"You need (and might already have) something to cut the past sap with [hn-in of Cold Loc]."
 --	false	need-cup rule	"You didn't have anything to take [if sap-with-hands is true]the past sap with in Cold Loc[end if][if sap-with-hands is true and sod-with-hands is true] or [end if][if sod-with-hands is true]the dose sod in Apse Spa[end if]."
 Bond Nob	false	--	"You didn't have the right stuff to give the Bond Nob from the Puce Cup last time."
 gnu dung	false	--	"You [if player has poo coop]need[else]may have[end if] a sanitary container to pick up the gnu dung to push it south."
@@ -3146,6 +3158,7 @@ this is the puff-known rule:
 	the rule fails;
 
 this is the sap-uncut rule:
+	if sap-takeable is true, the rule fails;
 	if sap-with-hands is true, the rule succeeds;
 	the rule fails;
 
@@ -3174,8 +3187,7 @@ to later-wipe (th - a thing):
 			now changed-limbo is true;
 		if in-limbo entry is true and there is a combo-rule entry:
 			consider the combo-rule entry;
-			if the rule failed:
-				now in-limbo entry is false;
+			if the rule succeeded:
 				now changed-limbo is true;
 	if need-change-limbo is true and changed-limbo is false, say "NONCRITICAL bug: I tried to erase something from an internal 'do it later' table, but it was never in there. This doesn't affect the game, but I'd like to know about it."
 
@@ -3729,9 +3741,8 @@ instead of taking the past sap:
 		try useoning past sap with puce cup instead;
 	if sap-takeable is false:
 		now sap-with-hands is true;
-		say "You need a way to cut it from the rift fir." instead;
-	say "The sap would get sticky on your fingers. You need some way to carry it.";
-	now sap-with-hands is true;
+		say "The sap would get sticky on your fingers. You need some way to carry it." instead;
+	say "You need to cut the sticky sap from the rift fir. Maybe you have something that will work." instead;
 
 instead of sawing past sap, try useoning past sap with wash saw instead;
 
@@ -4133,7 +4144,7 @@ Moo Room is east of Frush Surf. It is in Grebeberg. "You can't see any cows, but
 
 chapter poo coop
 
-the poo coop is in Moo Room. "A poo coop sits here. Thankfully, it looks empty.". description is "While it's 1/4 too small to be a pooch coop, it's 1) [if gnu dung is moot]full of gnu dung[else]empty[end if] and 2) somehow bigger on the inside than the outside. [if gnu dung is moot]It would be nice to get rid of the gnu dung[else]Maybe it can clean up a dirty area. Well, a less dirty area than [hn of Moo Room] where you found it[end if]."
+the poo coop is in Moo Room. "A poo coop sits here. Thankfully, it looks empty.". description is "While it's 1/4 too small to be a pooch coop, it's 1) [if gnu dung is moot]full of gnu dung[else]empty[end if] and 2) somehow bigger on the inside than the outside. [if gnu dung is moot]It would be nice to get rid of the gnu dung[else]Maybe it can clean up a dirty area. Well, a less dirty area than [hn-in of Moo Room] where you found it[end if]."
 
 understand "poos scoop" and "poos/scoop" as poo coop.
 understand "gnu dung" and "gnu/dung" as poo coop when player has poo coop and gnu dung is moot.
@@ -4658,8 +4669,8 @@ chapter Name ME Man
 instead of taking a phonebook, say "That would weigh you down too pointlessly[if player has sto lots], even with your Sto['] Lots[end if]."
 
 does the player mean doing something with Name ME Man when player is in Yawn Way:
-	if the player's command includes "me", it is unlikely;
 	if the player's command includes "man", it is likely;
+	if the player's command includes "me", it is unlikely;
 	it is likely;
 
 does the player mean useoning with Name ME Man: it is unlikely.
@@ -5666,7 +5677,7 @@ carry out pulluping:
 
 chapter puce cup
 
-The Puce Cup is a thing in Emo Dome. "Someone has left a puce cup here.". description is "It's, well, puce, and it seems sturdy enough. It's currently [if puce cup is empty]empty[else if puce cup is sappy]full of [sap-sirup] from the rift fir [hn of Cold Loc][else]full of Dose Sod from the Apse Spa[end if]."
+The Puce Cup is a thing in Emo Dome. "Someone has left a puce cup here.". description is "It's, well, puce, and it seems sturdy enough. It's currently [if puce cup is empty]empty[else if puce cup is sappy]full of [sap-sirup] from the rift fir [hn-in of Cold Loc][else]full of Dose Sod from the Apse Spa[end if]."
 
 understand "dose/sod" and "dose sod" as Puce Cup when puce cup is soddy and player is not in Apse Spa.
 
@@ -7461,7 +7472,7 @@ to describe-nearby (ro - a room):
 	repeat with dir running through maindir:
 		let DR be the room dir of ro;
 		if DR is visited:
-			say "Try looking [opposite of dir] [hn of DR]. You haven't, yet[one of]. [b]NOTE: for future reference, AID first looks for rooms you can, but haven't, visited, if you request it in a room that's cleared for now. This is meant as a final buffer against hints you don't want, but it may point you away from a nearby puzzle[r][or][stopping].";
+			say "Try looking [opposite of dir] [hn-in of DR]. You haven't, yet[one of]. [b]NOTE: for future reference, AID first looks for rooms you can, but haven't, visited, if you request it in a room that's cleared for now. This is meant as a final buffer against hints you don't want, but it may point you away from a nearby puzzle[r][or][stopping].";
 			continue the action;
 	if player is in Fun Enuf and ro is Art Xtra:
 		say "Try exploring Yelpley to the east.";
@@ -8403,8 +8414,10 @@ amu
 "Another sweeping note: the tables file ([gt] tables.i7x) in the same location(s) should have all the random texts."
 "Attacking yourself, the ergot ogre, the pact cap, the made dam, or the eels."
 "Asking for PCP in Evaded Ave or Yell Alley."
+"Trying to BUNT NUB three times."
 "RM GNU around the gnu, or RM MR around Mr. Arm."
 "SMELL the gnu dung, butene tub or Yuge Guy."
+"XYZZY."
 "Some USE X ON Y: you can look in the table of specific use rejects (xx[r]rej in the story.ni file) for them all." [ the R is there so I can search the source]
 
 part what you missed (LLP)
