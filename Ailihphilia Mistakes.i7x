@@ -815,6 +815,8 @@ understand "track cart" as a mistake ("[if DWELT LEWD is off-stage]Right idea, b
 
 understand "word drow" as a mistake ("You'll get to see the drow later.[mis of 339]") when player is in Worn Row and Swept Pews are unvisited.
 
+understand "wore row" as a mistake ("No second-hand clothing shop appears. You don't know what you'd do if one appeared, anyway.[mis of 243]") when player is in Worn Row.
+
 understand "worf row" as a mistake ("No Enterprise security officer arrives to help or hinder you.[mis of 243]") when player is in Worn Row.
 
 understand "worm row" as a mistake ("[if Worn Row is worny]Ugh! You don't need to make this place worse[else]You already upgraded Worn Row. No need to make it worse than it was[red-clue][end if].[mis of 244]") when player is in Worn Row.

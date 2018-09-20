@@ -787,7 +787,11 @@ after reading a command:
 		let XX be the player's command;
 		replace the regular expression "dr\. ?d" in XX with "dr d";
 		change the text of the player's command to XX;
-	if player has ti:
+	if ti is quicknear:
+		if the player's command matches the regular expression "to$":
+			replace the regular expression "to$" in XX with "ti";
+			change the text of the player's command to XX;
+			if debug-state is true, say "(TO -> TI) Changed to: [XX].";
 		if the player's command matches the text "to idiot":
 			let XX be the player's command;
 			replace the text "to idiot" in XX with "ti";
@@ -1955,7 +1959,8 @@ definition: a thing (called th) is notyet:
 
 to decide what number is useprio of (th - a thing): [saving a lot of space for numbers. The higher the number, the more likely it is to be a 2nd item and one whose "reject" text trumps the first. High priority is given to blocker items. The player is highest, because that gives an automatic reject.]
 	if th is the player, decide on 25;
-	if th is resale laser, decide on 24; [resale laser should always be just above everything else, because shooting stuff up shouldn't work.]
+	if th is stole lots or th is sto lots, decide on 24; [stole lots is only there briefly, and you want to reject sto lots ASAP]
+	if th is resale laser, decide on 23; [resale laser should always be just above everything else, because shooting stuff up shouldn't work.]
 	if th is lie veil, decide on 21;
 	if th is scorn rocs, decide on 21;
 	if th is a workable, decide on 20;
@@ -2168,6 +2173,8 @@ senile felines	"It might be more productive to use the felines on themselves, in
 sharp rahs	"The rahs need to be combined (USEd) with some other motivational material. Something less, well, rah-rah."
 SOME DEMOS	"Paging through SOME DEMOS again, you get the feeling it's really un-serious and can't help you except with unpractical items. It must be good with something, but not that."
 Spur Ups	"The Spur Ups can't physically levitate anything, but they make you want to do something for yourself, by yourself, to yourself, for a pick up or something like it. You're not sure what."
+sto lots	"You don't need to do anything with the sto lots. It carries what you need to."
+stole lots	"The Stole Lots is not a Tax-At. In other words, bribing Dave to get by won't work. You need to outsmart him."
 tao boat	"The tao boat remains impassive. But surely something you can show it will prove your worth. Probably something with only spiritual value, though."
 test set	"You need to use something violent on the test set."
 tract cart	"You don't need to do much with the tract cart except take books from it."
@@ -3151,7 +3158,7 @@ state tats	"You don't need to do anything to or with the state tats, now that yo
 E Divide	"There's no way to dispel the E-Divide, but Ms. Ism isn't the main enemy here, any more." [start Red Roses Order 5 1]
 Oh Who	"[fonen-of of Oh Who]." [start Seer Trees 2 2]
 x-it stix	"No way you're getting through the X-It Stix."
-KAOS Oak	"The [kaoscaps] is immune to poking. You'll need a powerful contraption indeed to dispel it!" [start Fun Enuf 3 2]
+KAOS Oak	"The [kaoscaps] is immune to ordinary manipulation. You'll need a powerful contraption indeed to dispel it!" [start Fun Enuf 3 2]
 Name ME Man	"[fonen-of of Name ME Man]." [start Yawn Way]
 x y pyx	"The x/y pyx is a map, nothing more, nothing less. You can only [if player does not have x y pyx]take and [end if]examine it."
 DIFF ID	"You don't have the skill to tinker with the DIFF-ID. You [if Red Roses Order is visited]already found[else]just need to find[end if] a way to identify yourself." [start Emo Dome 5 2]
@@ -3455,9 +3462,9 @@ understand "pack" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did." instead;
-	say "'Rec [']er!' shouts the Flee Elf. 'Hat! Ah!'[paragraph break]The Flee Elf hands you a Set O Notes and explains you need to find a way to destroy the [KAOS Oak] to the north. Also, the Flee Elf notes the LOVE VOL and LO VOL settings on the pact cap: LO VOL means the cap is quiet and won't make a weird noise if you look at things that need a weird action. LOVE VOL means you will. It's best I...' and with that, the Flee Elf becomes a FLED elf, pointing at the tile lit (slightly altered). You notice a TIX EXIT to the south, but you don't have any tickets.";
+	say "'Rec [']er!' shouts the Flee Elf. 'Hat! Ah!'[paragraph break]The Flee Elf hands you a Set O Notes and explains you need to find a way to destroy the [KAOS Oak] to the north. Also, the Flee Elf notes the LOVE VOL and LO VOL settings on the pact cap: LO VOL means the cap is quiet and won't make a weird noise if you look at things that need a weird action. LOVE VOL means you will. 'It's best I...' and with that, the Flee Elf becomes a FLED elf, pointing at the tile lit (slightly altered). You notice a TIX EXIT to the south, but you don't have any tickets.";
 	wfak;
-	say "[line break]You put the cap on. It fits okay. It can stay all quest. Not the most stylish, but sure beats wearing a bib.";
+	say "[line break]You put the cap on. It fits okay. It can stay all quest. Not very stylish, but it sure beats wearing a bib.";
 	get-cap;
 	score-inc; [Dim Mid/pack cap]
 	verify-done rev-pack-cap rule;
@@ -4725,7 +4732,7 @@ Lac Oft Focal	"L O[if lac-score is 2]LD[else]FT[end if]"	"[if lac-score is 2]L[e
 Sneer Greens	"[if Yuge Guy is moot]ET TU[else]SNEER[end if]"	"[if Yuge Guy is moot]BUTTE[else]GREEN[end if]"
 Flu Gulf	" FLU "	"GULF "
 Trapeze Part	"TRAPE"	"PART "
-Evaded Ave	"EVADE"	"[if Dave is moot]D AVE[else] AVE [end if]"
+Evaded Ave	"EVADE"	"D [if Dave is moot]AVE[else]...[end if]"
 Yell Alley	"YELL "	"ALLEY"
 Pro Corp	"[if bald-lab]BALD[else] PRO[end if] "	"[if bald-lab]LAB [else]CORP[end if] "
 Yack Cay	"[if Known Wonk is moot]ROOMY[else]YACK [end if]"	"[if Known Wonk is moot]MOOR[else] CAY[end if] "
@@ -4870,6 +4877,11 @@ instead of doing something with Dave:
 check going west in My Gym when Dave is in My Gym: say "Dave says, 'I can't let you do that, Hal. Ah!' Whether or not your name actually is Hal, you reason there must be a succinct, clever way to sneak around him." instead;
 
 the stole lots is a thing in My Gym. "A container labeled STOLE LOTS is behind Dave.". description is "It looks like it'd be handy for carrying a lot of items around. Maybe it has something in it, but right now it looks closed.[paragraph break]You'd love to see what's inside, but Dave is guarding it.".
+
+understand "container" as stole lots.
+
+instead of inserting into stole lots:
+	try using noun on stole lots instead.
 
 instead of inserting into sto lots:
 	if number of entries in multiple object list > 1:
@@ -5249,12 +5261,18 @@ after examining the pity tip for the first time:
 chapter books in bookcase
 
 TI is a book. printed name of TI is "TO IDIOT (TI)". understand "to idiot" and "idiot" as ti. description is "It's full of hot takes and 'clever' put-downs based on assuming the recipient isn't as smart as they think they are. You remember laughing at this sort of thing when you were really bored or grouchy, and you sort of regret it now. Still, it keeps some people busy.". [Door Frood]
+
 NULL ILLUN is a book. printed name of NULL ILLUN is "NULL ILLUN (NI)". understand "ni" as NULL ILLUN. description is "Surprisingly wise advice about how to achieve happiness and shake annoyances you can't dispel with just logic. It discusses how to flex your SCEPSIS-PECS so you don't just know a lot of stuff you aren't sure what to do with. It even advertises a not-yet-published companion book on emotional intelligence: SLANGISH SIGNALS.". [Known Wonk]
+
 EPOCH COPE is a book. printed name of EPOCH COPE is "EPOCH: COPE (EC)". understand "ec" as EPOCH COPE. description is "All sorts of present-day political and social musings for shahs and other leaders, with the catch phrase '[']S civics!' It's surprisingly accessible, though you don't have time to read it.". [King Nik]
+
 YOB ATTABOY is a book. printed name of YOB ATTABOY is "YOB ATTABOY (YA)". understand "ya" as YOB ATTABOY. description is "All about picking yourself up by your bootstraps and not feeling sorry for yourself or being too jealous of what others know or can do--SHED EH'S is repeated in big bold letters.". [Sniffins]
 
-after taking ti for the first time:
-	say "NOTE: Referring to TO IDIOT as 'to' may confuse the parser for verbs with TO, though you may use IDIOT or TO IDIOT or TI.";
+ti-to is a truth state that varies
+
+after doing something with ti when ti-to is false:
+	now ti-to is true;
+	say "NOTE: referring to 'To Idiot' as 'to' gives the parser more problems than I was able to squash, so if you want to abbreviate it, you may wish to refer to it as TI."
 	continue the action;
 
 section reading
