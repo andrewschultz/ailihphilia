@@ -19,7 +19,7 @@ def usage():
     print("-d  / -nd             = show differences / don't, default =", on_off[difs])
     print("-co / -do / -oc / -od = only copy/show differences, not both")
     print("-f  / -fr / -rf       = fill and reorder, trumps other options (-nr/-rn turns it off)", on_off[reorder])
-    print("-m(#)                 = maximum number of errors to ignore before reassigning numbers to mistakes. Default = {:d}".format(max_errs))
+    print("-m(#)                 = maximum number of errors to ignore before reassigning numbers to mistakes. mn = max notify. Default = {:d}".format(max_errs))
     print("                        0 = always reassign, -1 (or x) = never")
     exit()
 
@@ -99,6 +99,7 @@ count = 1
 reorder = False
 max_err_default = 5
 max_errs = max_err_default
+max_errs_not = 20
 
 while count < len(sys.argv):
     arg = sys.argv[count]
@@ -121,6 +122,7 @@ while count < len(sys.argv):
     elif arg == 'nr' or arg == 'rn': reorder = False
     elif arg == 'mx': max_errs = -1
     elif arg[:2] == 'm-': sys.exit("Instead of {:s}, try mx to disable rearrangement regardless of the number of errors.".format(arg))
+    elif arg[:2] == 'mn': max_errs_not = int(arg[2:])
     elif arg[0] == 'm':
         try:
             if len(arg[0]) > 1: max_errs = int(arg[0][1:])
@@ -155,10 +157,11 @@ with open(mis) as file:
             got[nol] = True
             this_mist = my_mistake(line)
             if nol - last_num_of != 1:
-                if nol:
-                    print("WARNING bad " + ("start at" if last_num_of == 0 else "delta from {:s} {:d} to".format(last_mist, last_num_of)), this_mist, nol)
-                else:
-                    print("WARNING blank number for", this_mist, nol)
+                if (errs <= max_errs_not or max_errs_not == 0):
+                    if nol:
+                        print("WARNING bad " + ("start at" if last_num_of == 0 else "delta from {:s} {:d} to".format(last_mist, last_num_of)), this_mist, nol)
+                    else:
+                        print("WARNING blank number for", this_mist, nol)
                 errs += 1
             last_num_of = nol
             last_mist = this_mist
@@ -186,6 +189,8 @@ else:
 if max_errs > -1 and errs > max_errs and not reorder:
     print("Forcing reorder since there are more than", max_errs, "numbering errors: to be precise,", errs)
     reorder = True
+
+if max_errs_not and errs > max_errs_not: print("Got", errs, "errors but only listed", max_errs_not)
 
 if not reorder and errs > 0:
     if max_errs > 0:
