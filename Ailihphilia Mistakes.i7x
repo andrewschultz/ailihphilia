@@ -908,9 +908,11 @@ to decide whether thug-near:
 
 to say hom-gm: say "Worth a try, but this is a palindrome game, not a homonym game. "
 
+to say no-calls: say "Like your average random NPC, anyone you tried to call from [b][if player is in Yawn Way]Name ME, Man[else]Oh Who[end if][r] would probably just have random general useless things to say like '[next-rand-txt of table of npc mistakes]"
+
 to say or-ups: if word number 1 in the player's command is "ups", say ", much less spu";
 
-understand "dial [text]" and "call [text]" and "phone [text]" and "[number]" as a mistake ("Like your average random NPC, anyone you tried to call from [b][if player is in Yawn Way]Name ME, Man[else]Oh Who[end if][r] would probably just have random general useless things to say like '[next-rand-txt of table of npc mistakes]!'") when Name ME Man is quicknear or Oh Who is quicknear.
+understand "dial [text]" and "call [text]" and "phone [text]" as a mistake ("[no-calls]!'") when phonebook-near.
 
 understand "gift fig" as a mistake ("It already is one. And you don't need to pass it on.") when gift fig is quicknear.
 

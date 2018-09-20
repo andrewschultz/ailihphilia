@@ -793,6 +793,10 @@ after reading a command:
 			replace the text "to idiot" in XX with "ti";
 			change the text of the player's command to XX;
 			if debug-state is true, say "(TO IDIOT -> TI) Changed to: [XX].";
+	if phonebook-near:
+		if the player's command matches the regular expression "<0-9>-<0-9>" or the player's command matches the regular expression "<0-9>{7}":
+			say "(assuming you're trying to make a phone call)[paragraph break][no-calls]!'";
+			reject the player's command;
 	if the player's command matches the text "-":
 		let XX be the player's command;
 		replace the regular expression "-" in XX with " ";
@@ -918,7 +922,7 @@ instead of listening:
 	if player is in Apse Spa, say "Surprisingly, no spa yaps." instead;
 	if player is in Mont Nom, say "The Ark of Okra is almost saying 'Nom on!' or 'C'mon! Nom!' or even 'Tum-Smut!'" instead;
 	if player is in Yack Cay and moor broom is not moot, say "[if Known Wonk is not moot]The Known Wonk is just babbling on about stuff you aren't be interested in[else]The Known Wonk, from inside the Tru-Yurt, complains about how messy it is[end if]." instead;
-	if player is in Uneven U, say "The Code Doc mumbles [next-rand-txt of table of university targets] would make a good colleague.";
+	if player is in Uneven U, say "The Code Doc mumbles [next-rand-txt of table of university primary targets] or [next-rand-txt of table of university secondary targets] would make a good colleague.";
 	if player is in Moo Room, say "[if bees-seen is false]An ominous buzzing. Where is it coming from? Bees sure can hide![else]You think you hear [next-rand-txt of table of Moo Room animals] in addition to the mooing.[end if]" instead;
 	if player is in Le Babel, say "Freakish whisperings of the apocryphal [next-rand-txt of table of babel babble] swirl in the air." instead;
 	if player is in Sneer Greens and Yuge Guy is moot, say "You still hear the Yuge Guy utter 'Et Tu?' He has a weird sense of loyalty." instead;
@@ -2385,7 +2389,7 @@ den ivy vined	tent net	code doc	"[tent-to-doc]."
 ivy villa	tent net	code doc	"[tent-to-doc]."
 mist sim	NULL ILLUN	Known Wonk	"You hold out [NULL ILLUN], point to the mist, and point to the Known Wonk."
 navy van	pity tip	eye	"Nothing happens until you wave the pity tip across the eye."
-pool gloop	spa maps	go-by bog	"The maps seem to be meant more for the bog than the gloop, so you try the bog."
+pool gloop	spa maps	go by bog	"The maps seem to be meant more for the bog than the gloop, so you try the bog."
 rift fir	wash saw	past sap	--
 TNT	Mr Arm	bomb mob	--
 wordy drow	puce cup	liar grail	--
@@ -4755,6 +4759,11 @@ Scrap Arcs	"SCRAP"	"ARCS "
 
 chapter Name ME Man
 
+to decide whether phonebook-near:
+	if player is in Yawn Way, yes;
+	if player is in Seer Trees and Oh Who is in Seer Trees, yes;
+	no;
+
 instead of taking a phonebook, say "That would weigh you down too pointlessly[if player has sto lots], even with your Sto['] Lots[end if]."
 
 does the player mean doing something with Name ME Man when player is in Yawn Way:
@@ -4767,8 +4776,6 @@ does the player mean useoning with Name ME Man: it is unlikely.
 Name ME Man is a peripheral phonebook in Yawn Way. description is "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers of Yelpley residents from Name ME Man, even though you have no phone to call them with:[line break][name-num of 5 and Name ME Man][variable letter spacing][run paragraph on]". "[one of]There's also something called Name ME Man, which--well, it's really just a glorified phone book. Yawn[or]Name ME Man waits for your perusal, if you have a great need to procrastinate[if Name ME Man is xed] some more[end if][stopping].". booktable of Name ME Man is table of random palindrome lastfirst names.
 
 understand "nm/mm/nmm/phone/book" and "phone book" as Name ME Man.
-
-does the player mean doing something with Name ME Man: it is unlikely.
 
 to say name-num of (n - a number) and (ph - a phonebook):
 	let numrow be number of rows in booktable of ph;
@@ -6496,7 +6503,7 @@ to say maps-if-solved: say "[if spa maps are preclued]the spa maps now[else]some
 talk-text of the player is "'Me! Hi! Hem.'"
 
 talk-text of Bomb Mob is "You don't need a gang nag. Maybe you, or something you find or found, can sneak around them to get the TNT, though.".
-talk-text of Code Doc is "After some desultory chatter, the Code Doc mentions how [next-rand-txt of table of university targets] would be a strong addition to Uneven U as a co-doc. [if maps-explained is true]You might not have much to talk about, now you've had help with the Spa Maps[else if spa maps are preclued]You need some way to help the Code Doc, so you can get help with the Spa Maps[else]Perhaps USEing [maps-if-solved] on the Code Doc might be more helpful to you[end if].".
+talk-text of Code Doc is "After some desultory chatter, the Code Doc mentions how [next-rand-txt of table of university primary targets] or [next-rand-txt of table of university secondary targets] would be a strong addition to Uneven U as a co-doc. [if maps-explained is true]You might not have much to talk about, now you've had help with the Spa Maps[else if spa maps are preclued]You need some way to help the Code Doc, so you can get help with the Spa Maps[else]Perhaps USEing [maps-if-solved] on the Code Doc might be more helpful to you[end if].".
 talk-text of Cross Orc is "'Yap?! Pay!'".
 talk-text of Dave is "Dave's here, man. And Dave's not chatty, man. He just seems to want to block you from doing anything.".
 talk-text of Diktat Kid is "Now's not the time for talk. Okay, the Diktat Kid might be bragging, but you won't get a word in. Maybe a stiff 'It's...'".
