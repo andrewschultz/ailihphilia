@@ -632,7 +632,7 @@ when play begins:
 		sort tabnam entry in random order;
 	now initseed of Name ME Man is a random number between 0 and prime-constant / 2 - (number of rows in table of random palindrome lastfirst names);
 	now initseed of Oh Who is a random number between prime-constant / 2 + 1 and prime-constant - (number of rows in table of random palindrome firstlast names);
-	say "[line break]It's not the first dream you had about how awful high school was, but it's the worst in a while. A few 'favorite' classmates chanting 'Diary raid!' and passing it around as they mock 'Beefy? Feeb! Bony Nob!'[wfak-d]";
+	say "[line break]It's not your first dream about how awful high school was, but it's the worst in a while. A few 'favorite' classmates chanting 'Diary raid!' and passing it around as they mock 'Beefy? Feeb! Bony Nob!' Of course, you never HAD a diary in high school, but that doesn't matter.[wfak-d]";
 	say "You check your mail as you go out to the grocery store. A junk-mail magazine! It's been so long since you got one, you're almost intrigued.[wfak-d]";
 	say "It just says GAME MAG. But the cover isn't telling you to actually buy anything, so you look inside. You have a whole backlog of games, but you can just recycle it when you get to the store. No, not the erot-store![wfak-d]";
 	say "Nothing really catches your mind until you see a DARER AD. It's a bit vague, but it catches your eye.[wfak-d]";
@@ -1298,9 +1298,9 @@ carry out scerecsing:
 	let XP be number of xable people;
 	repeat with SC running through xable people:
 		increment count;
-		if count is 1, say "[if xp is 1]One person[else]People[end if] unexamined/talked to yet: ";
+		if count is 1, say "[if xp is 1]One person/animal[else]People/animals[end if] unexamined/talked to yet: ";
 		if count > 1, say ", ";
-		say "[SC] [if SC is talked-yet](examine)[else if SC is xed](talk to)[else](talk/examine)[end if] in [location of SC][run paragraph on]";
+		say "[SC] [if SC is nox and SC is need-talk](talk/examine)[else if SC is nox](examine)[else](talk to)[else][end if] in [location of SC][run paragraph on]";
 	say "[if count is 0]You've examined/talked to all the people you could[any-open-rooms][end if].";
 	now XP is number of need-read things;
 	let count be 0;
@@ -1319,6 +1319,13 @@ to decide whether any-unvisited:
 
 to say any-open-rooms: say "[if any-unvisited], at least for the rooms explored so far[end if]"
 
+definition: a person (called ani) is need-talk:
+	if ani is talked-yet, no;
+	if ani is sleep eels or ani is kayo yak, no;
+	if ani is opossum or ani is felines, no;
+	if ani is psi wisp, yes;
+	no;
+
 definition: a thing (called sce) is xable:
 	if sce is not a person and sce is xed, no;
 	if location of sce is unvisited, no;
@@ -1329,7 +1336,8 @@ definition: a thing (called sce) is xable:
 	if sce is scenery, yes;
 	if sce is a person:
 		if sce is the player, no;
-		if sce is nox or sce is not talked-yet, yes;
+		if sce is nox, yes;
+		if sce is need-talk, yes;
 	no;
 
 chapter abouting
@@ -2328,9 +2336,7 @@ taboo bat	bomb mob	"No way. You'd be outnumbered. You'll need stealth."
 taboo bat	ME Totem	"Violence isn't the answer. The ME Totem is not repelled by moral turpitude, anyway."
 taboo bat	test set	"This isn't cricket. You do, however, need to use SOME weapon on the test set."
 taboo bat	Yuge Guy	"Violence isn't the answer. The Yuge Guy is not repelled by moral turpitude, anyway."
-tent net	den ivy vined	"The den, ivy-vined looks complete. It doesn't need a tent net. You look over to the Code Doc, who seems to be looking at your tent net."
 tent net	eels	"The tent net might catch thicker fish--but what would you do with the eels? They'd start shocking you and stuff before you got anywhere. Better to try and make them happy."
-tent net	ivy villa	"The all-ivy villa looks complete. It doesn't need a tent net. You look over to the Code Doc, who seems to be looking at your tent net."
 ti	liar grail	"The liar grail would twist the words of [TI] so badly, you'd be worse for the experience."
 TI	Revolt Lover	"'Hmm. A bit too mean for me. Maybe it's more someone else's speed.'"
 Trap Art	Revolt Lover	"But the Revolt Lover gave it to you in the first place."
@@ -2375,11 +2381,16 @@ section table of shiftables
 
 table of shiftables [xxshi]
 use1	use2	use3 [use 3, not 1, on 2]	use-text
+den ivy vined	tent net	code doc	"[tent-to-doc]."
+ivy villa	tent net	code doc	"[tent-to-doc]."
 mist sim	NULL ILLUN	Known Wonk	"You hold out [NULL ILLUN], point to the mist, and point to the Known Wonk."
 navy van	pity tip	eye	"Nothing happens until you wave the pity tip across the eye."
+pool gloop	spa maps	go-by bog	"The maps seem to be meant more for the bog than the gloop, so you try the bog."
 rift fir	wash saw	past sap	--
 TNT	Mr Arm	bomb mob	--
 wordy drow	puce cup	liar grail	--
+
+to say tent-to-doc: say "The [if noun is tent net][second noun][else][noun][end if] looks complete. It doesn't need a tent net. You look over to the Code Doc, who looks back awkwardly. You decide the Code Doc could find a better use for the tent net"
 
 section table of goodacts
 
@@ -3929,6 +3940,7 @@ check going west in Dumb Mud:
 	if gnu dung is in Dumb Mud, say "Not through the gnu dung you aren't[if being-chased is true]...perhaps there's a way behind it, and you may need it, to get away from the kayo yak[end if]." instead;
 
 check going south in Dumb Mud:
+	if Diktat Kid is moot, say "With the Diktat Kid gone, plans are underway to take the essence of Mont Nom and the Ark of Okra and put them into a big chain of bland fast-food restaurants called Monopo-Nom. Well, you couldn't fix everything." instead;
 	if poo coop is not moot, say "The turf rut is too deep. You need a way to fill it in." instead;
 	if being-chased is true:
 		say "The slog uphill is too much for you, but the kayo yak traverses it easily and bumps you before you can make it up all the way.";
@@ -6479,10 +6491,12 @@ section talk texts
 [xxtalk]
 [organized alphabetically, why not ... this doesn't need to be here, strictly, but I'd rather define talk text AFTER defining people]
 
+to say maps-if-solved: say "[if spa maps are preclued]the spa maps now[else]something[end if]"
+
 talk-text of the player is "'Me! Hi! Hem.'"
 
 talk-text of Bomb Mob is "You don't need a gang nag. Maybe you, or something you find or found, can sneak around them to get the TNT, though.".
-talk-text of Code Doc is "After some desultory chatter, the Code Doc mentions how [next-rand-txt of table of university targets] would be a strong addition to Uneven U as a co-doc. [if maps-explained is true]You might not have much to talk about, now you've had help with the Spa Maps[else if spa maps are preclued]You need some way to help the Code Doc, so you can get help with the Spa Maps[else]Perhaps USEing something on the Code Doc might be more helpful to you[end if].".
+talk-text of Code Doc is "After some desultory chatter, the Code Doc mentions how [next-rand-txt of table of university targets] would be a strong addition to Uneven U as a co-doc. [if maps-explained is true]You might not have much to talk about, now you've had help with the Spa Maps[else if spa maps are preclued]You need some way to help the Code Doc, so you can get help with the Spa Maps[else]Perhaps USEing [maps-if-solved] on the Code Doc might be more helpful to you[end if].".
 talk-text of Cross Orc is "'Yap?! Pay!'".
 talk-text of Dave is "Dave's here, man. And Dave's not chatty, man. He just seems to want to block you from doing anything.".
 talk-text of Diktat Kid is "Now's not the time for talk. Okay, the Diktat Kid might be bragging, but you won't get a word in. Maybe a stiff 'It's...'".
@@ -6583,7 +6597,7 @@ carry out gotoing:
 
 a room can be eastpost, eastcond, westpost, westcond or unblockable. a room is usually unblockable.
 
-Yack Cay is westpost. Swamp Maws is westpost. Lac Oft Focal is westpost. Trial Lair is westpost. Uneven U is westpost. Trial Lair is westpost. Motto Bottom is westpost. Moo Room is westcond. Frush Surf is westcond.
+Yack Cay is westpost. Swamp Maws is westpost. Lac Oft Focal is westpost. Trial Lair is westpost. Uneven U is westpost. Trial Lair is westpost. Motto Bottom is westpost. Mont Nom is westpost. Moo Room is westcond. Frush Surf is westcond.
 
 Red Roses Order is eastpost. Swept Pews is eastpost. Drawl Ward is eastpost. Dopy Pod is eastpost. Scrap Arcs is eastpost. Deft Fed is eastpost.
 Gross Org is eastcond. Pro Corp is eastcond.
