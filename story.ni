@@ -101,6 +101,7 @@ after examining a not ordinary thing:
 		say "[line break]Hmm. That wasn't very loud. Maybe you don't need to deal with [the noun], but it'd be nice.";
 		now beep-LLP-yet is true;
 	now beep-yet is true;
+	continue the action;
 
 the cap-beep rules are an object-based rulebook.
 
@@ -142,7 +143,7 @@ use MAX_VERBS of 530. [-40 from max_verbs debug]
 
 use MAX_ACTIONS of 200.
 
-use MAX_VERBSPACE of 5000. [-400 from max_verbspace debug]
+use MAX_VERBSPACE of 5200. [-400 from max_verbspace debug]
 
 section debug compiler globals - not for release
 
@@ -150,9 +151,9 @@ use MAX_VERBS of 570. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 use MAX_ACTIONS of 210. [+10?]
 
-use MAX_VERBSPACE of 5400. [4096 = original max]
+use MAX_VERBSPACE of 5600. [4096 = original max]
 
-use MAX_SYMBOLS of 21000. [20000 = release, for now]
+use MAX_SYMBOLS of 22000. [20000 = release, for now]
 
 chapter room utilities
 
@@ -331,7 +332,7 @@ chapter oldschooling
 
 understand the command "slice/prune/chop/kiss/hug/embrace/buy/purchase/buy/light/jump/hop/skip/sip/swallow/shine/polish/sweep/clean/dust/wipe/scrub/fight/torture/wreck/crack/murder/kill/punch/thump/sorry" as something new.
 
-understand "slice" and "prune" and "chop" and "kiss" and "hug" and "embrace" and "buy" and "purchase" and "buy" and "light" and "jump" and "hop" and "skip" and "sip" and "swallow" and "shine" and "polish" and "sweep" and "clean" and "dust" and "wipe" and "scrub" and "fight" and "torture" and "wreck" and "crack" and "murder" and "kill" and "punch" and "thump" and "sorry" as oldschooling.
+understand "slice" and "prune" and "chop" and "kiss" and "hug" and "embrace" and "buy" and "purchase" and "buy" and "light" and "jump" and "hop" and "skip" and "sip" and "swallow" and "shine" and "polish" and "sweep" and "wipe" and "scrub" and "fight" and "torture" and "wreck" and "crack" and "murder" and "kill" and "punch" and "thump" and "sorry" as oldschooling.
 
 understand "slice [text]" and "prune [text]" and "chop [text]" and "kiss [text]" and "hug [text]" and "embrace [text]" and "buy [text]" and "purchase [text]" and "buy [text]" and "light [text]" and "jump [text]" and "hop [text]" and "skip [text]" and "sip [text]" and "swallow [text]" and "shine [text]" and "polish [text]" and "sweep [text]" and "clean [text]" and "dust [text]" and "wipe [text]" and "scrub [text]" and "fight [text]" and "torture [text]" and "wreck [text]" and "crack [text]" and "murder [text]" and "kill [text]" and "punch [text]" and "thump [text]" and "sorry [text]" as os2ing.
 
@@ -341,7 +342,7 @@ os2ing is an action applying to one topic.
 carry out os2ing: try oldschooling instead;
 
 carry out oldschooling:
-	say "That's an old school verb and won't be necessary in this game. See V/VERB/VERBS for what is used/useful." instead;
+	say "An old school verb like [word number 1 in the player's command] isn't strictly necessary in this game. See [b]V/VERB/VERBS[r] for what is used/useful." instead;
 
 chapter hug/kiss why not
 
@@ -499,7 +500,7 @@ check requesting the score:
 		say "[if epicer recipe is nox]You realize a score is only an abstract indicator of how well you're doing, and maybe that epicer recipe would help you figure what's what. So you read it, and you note y[else]Y[end if]";
 		say "ou [if tron-got is 0]don't have any of the [number of tronparts in words][else]also have [tron-got] piece[plur of tron-got] of [number of tronparts][end if] North-Tron pieces you need to destroy the [KAOS Oak], according to the epicer recipe[hint-tron].";
 		now epicer recipe is xed;
-	if mist-found > 0, say "[line break]You've also found [mist-found] of [number of entries in checkoffs] palindromes that were there but not critical to the story. [if mist-found * 2 > number of entries in checkoffs]Very impressive![else]Don't knock yourself out trying to find them all.[end if]";
+	if mist-found > 0, say "[line break]You've also found [mist-found] of [number of entries in checkoffs] palindromes that were there but not critical to the story. [if mist-found * 2 > number of entries in checkoffs]Very impressive! You've earned whatever hints you've gotten or used[else]This won't affect the ending in any way, but the more you find, the more clues you can get, so hopefully it will be fun[end if].";
 	if score-cheat > 0, say "[line break]Also, you used a warp command or commands to plow past [score-cheat] point-giving activities, but I won't hold it against you. I'm glad you were motivated to try and see the end!";
 	if stats-yet is false, say "[line break]In addition, there may be a more 'correct' five-letter way to request all the numbers above, and so forth. It's not critical, but you might get a style point.";
 	the rule succeeds;
@@ -687,7 +688,8 @@ Rule for printing a parser error when the latest parser error is the i beg your 
 
 Rule for printing a parser error when the latest parser error is the can't see any such thing error:
 	if player is in Worn Row:
-		if ever-wordrow is true or ever-workrow is true, say "You can't see any such thing--but you don't see why you couldn't call back anything from [if ever-wordrow is true and Worn Row is worky]Word Row[else if ever-workrow is true and Worn Row is wordy]Work Row[else]Worn Row[end if]." instead;
+		if the player's command includes "cart" and Worn Row is worky, say "You need to summon Word Row back before doing anything with the cart." instead;
+		if ever-wordrow is true or ever-workrow is true, say "You can't see any such thing--but in case you're looking for something from another configuration of Worn Row, you don't see why you couldn't call back [if ever-wordrow is true and Worn Row is worky]Word Row[else if ever-workrow is true and Worn Row is wordy]Work Row[else]Worn Row[end if]." instead;
 	if bees-seen is false and player is in Moo Room:
 		if the player's command matches the regular expression "bee(s)?", case insensitively:
 			say "You can't (quite) [one of]spot[or]look at[or]view[in random order] anything like that here.";
@@ -758,6 +760,7 @@ to decide whether gtv:
 part after command
 
 period-warn is a truth state that varies.
+say-warn is a truth state that varies.
 
 after reading a command:
 	if period-warn is false:
@@ -772,10 +775,18 @@ after reading a command:
 		let XX be the player's command;
 		change the text of the player's command to "[XX in lower case]";
 		if debug-state is true, say "(LOWERCASING) [XX][line break]";
+	if the player's command matches the regular expression "^say ":
+		if say-warn is false:
+			now say-warn is true;
+			say "NOTE: you never need to SAY anything. Just type it in. In other words, WHOAH is the same as SAY WHOAH. Ailihphilia will cut SAY off of the start of all commands.";
+			let XX be the player's command;
+			replace the regular expression "^say " in XX with "";
+			change the text of the player's command to XX;
 	if player is in uneven u and the player's command matches the regular expression "dr\. ?d":
 		say "(replacing the period in Dr. D)[paragraph break]";
 		let XX be the player's command;
-		replace the regular expression "dr\. ?d" in the player's command with "dr d";
+		replace the regular expression "dr\. ?d" in XX with "dr d";
+		change the text of the player's command to XX;
 	if player has ti:
 		if the player's command matches the text "to idiot":
 			let XX be the player's command;
@@ -888,6 +899,7 @@ to decide whether the action is pro-and-use: [aip2] [redefined in debug part]
 	if uuxing, yes;
 	if uuying, yes;
 	if uuing, yes;
+	if gotothinging, yes;
 	if the action is procedural, yes;
 	no;
 
@@ -1161,6 +1173,10 @@ this is the yawn-way-stuck rule:
 
 volume irregular verbs
 
+instead of looking under:
+	if noun is tame mat or noun is guru rug, say "No secret passages." instead;
+	say "You never need to look under anything in Ailihphilia."
+
 chapter inventory
 
 the take what you got rule is listed instead of the can't take what's already taken rule in the check taking rulebook.
@@ -1254,12 +1270,14 @@ chapter scerecsing
 
 scerecsing is an action out of world.
 
+understand the command "sce" as something new.
 understand the command "scerecs" as something new.
 understand the command "sce recs" as something new.
 understand the command "sce rec" as something new.
 
 understand "scerecs" as scerecsing.
 understand "sce recs" and "sce rec" as scerecsing.
+understand "sce" as scerecsing when sce-warn is true.
 
 sce-warn is a truth state that varies.
 
@@ -1267,7 +1285,7 @@ carry out scerecsing:
 	let count be 0;
 	if sce-warn is false:
 		now sce-warn is true;
-		say "[b]NOTE: most scenery doesn't need to be examined, so this is just a non-spoiler command to make sure you've checked everything.[r]";
+		say "[b]NOTE: most scenery doesn't need to be examined, so this is just a non-spoiler command to make sure you've checked everything. Also, you can abbreviate this with SCE in the future.[r]";
 	repeat with SC running through xable scenery:
 		increment count;
 		if count is 11, break;
@@ -1276,6 +1294,7 @@ carry out scerecsing:
 		say "[SC] in [location of SC][run paragraph on]";
 	say "[if count is 11] (there's more, but this is long enough.)[else if count is 0]You've examined all the scenery you could[any-open-rooms].[else].";
 	now count is 0;
+	skip upcoming rulebook break;
 	let XP be number of xable people;
 	repeat with SC running through xable people:
 		increment count;
@@ -2134,7 +2153,7 @@ resale laser	"The resale laser is super powerful and limited. You should probabl
 Rob	"Rob's not going to be obliging. You have to get rid of him, somehow."
 scorn rocs	"The scorn rocs are unfazed by much. Even violence doesn't seem to affect them. They sit, looking dignified, or at least superior. Maybe you can change that."
 senile felines	"It might be more productive to use the felines on themselves, in a certain way."
-sharp rahs	"The rahs need to be combined with some other motivational material."
+sharp rahs	"The rahs need to be combined (USEd) with some other motivational material. Something less, well, rah-rah."
 SOME DEMOS	"Paging through SOME DEMOS again, you get the feeling it's really un-serious and can't help you except with unpractical items. It must be good with something, but not that."
 Spur Ups	"The Spur Ups can't physically levitate anything, but they make you want to do something for yourself, by yourself, to yourself, for a pick up or something like it. You're not sure what."
 tao boat	"The tao boat remains impassive. But surely something you can show it will prove your worth. Probably something with only spiritual value, though."
@@ -2159,7 +2178,7 @@ table of use redir [xxur]
 use1	person-reject	thing-reject
 cave vac	"You need to clean out some bad people figuratively, not clean them up literally."
 Dirt Rid	"You need to clean out some bad people figuratively, not clean them up literally."
-el doodle	"[if second noun is not proper-named]The [end if][second noun] doesn't seem up to deciphering things."	"You'd probably need a person to help you decipher El Doodle."
+el doodle	"[if second noun is not proper-named]The [end if][second noun] do[unless second noun is plural-named]es[end if]n't seem up to deciphering things."	"You'd probably need a person to help you decipher El Doodle." [?? x on el doodle]
 gift fig	"[no-food-share]."
 mayo yam	"[no-food-share]."
 ME gem	"[if second noun is not proper-named]The [end if][second noun] looks a bit frightened by the power of the ME gem. It must only work on, or for, really bad people or things."	--
@@ -2174,7 +2193,7 @@ wash saw	"The saw isn't built for gory violence."	"The saw is best used to trim 
 yard ray	"Shooting any person would be too violent."	"You can't go shooting stuff up at random. You need to [if test set is not moot]at least test it first[else]find what it can destroy[end if]."
 [zzur]
 
-to say no-food-share: say "There's not really enough of to share, and anyway, most people here need help or comeuppance, not food."
+to say no-food-share: say "There's not really enough of [if noun is an ingredient][the noun][else if second noun is not nothing][second noun][else]that[end if] to share, and anyway, most people here need help or comeuppance, not food."
 
 section table of specific use rejects
 
@@ -2244,6 +2263,7 @@ Mr Arm	Yuge Guy	"Mr. Arm doesn't seem to want to move toward the Yuge Guy."
 NULL ILLUN	Door Frood	"'Like I need it! Other people do! And what's worse, some who read it become less easy to make fun of. Hmmph.'"
 NULL ILLUN	liar grail	"The liar grail would twist the words of NULL ILLUN so badly, you'd be worse for the experience."
 NULL ILLUN	Revolt Lover	"'I guess we all could use it a little. But someone else might need it more than me. Um, I hope.'"
+pact cap	kayo yak	"The yak already looks faster than you. You might want to use the cap to get away, if the yak started chasing you [if chased-yet of yak is true]again[else]for whatever reason[end if]."
 Party Trap	Revolt Lover	"'Whoah! Neat! That's a lot more useful than my art.'"
 past sap	pact cap	"[cap-is-not-cup]."
 pity tip	DIFF ID	"Nothing happens. The Diff ID seems to be guarding something important, and while the pity tip can be scanned, it probably helps with something simpler."
@@ -2289,6 +2309,7 @@ sharp rahs	King Nik	"King Nik needs more than just platitudes. Something rigorou
 sharp rahs	Known Wonk	"[wonk-sage]."
 sharp rahs	rep popper	"The popper would surely ruin the incisiveness of the rahs."
 sharp rahs	Tao Boat	"[too-boast]."
+sharp rahs	Yob Attaboy	"Yob Attaboy is, um, direct enough."
 snack cans	diff id	"The Diff ID is not a grocery scanner."
 SOME DEMOS	Revolt Lover	"[one of]The Revolt Lover nods slightly. 'An excellent book! I have a copy, myself. It's helped me make art out of just about ANYTHING. The best stuff is, you know, boring and interesting at the same time.' You make a note of the Revolt Lover's words[or]The Revolt Lover already mentioned you should find something both boring and interesting at the same time[stopping]."
 soot tattoos	DIFF ID	"The Diff-ID doesn't respond. Maybe you need a way to put them on you, somehow."
@@ -2377,7 +2398,7 @@ pity tip	eye	snack cans	--	mob-to-alley rule	true	true	false	false	false	true	Ye
 trap art	reifier	party trap	hint-party-trap rule	--	true	true	false	true	true	true	Yelpley	Worn Row	Worn Row	false	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. You pull it out of the reifier and inspect it. It could probably capture more than one thing."
 bunk nub	reviver	stock cots	--	--	true	true	false	true	true	true	Yelpley	Worn Row	Worn Row	false	"After some crunching and slurping, the bunk nub is changed to a bunch of much smaller, but more comfortable looking, stock cots. You take them."
 party trap	stark rats	gift fig	hint-stark-rats rule	oh-who-to rule	true	true	true	true	true	true	Grebeberg	Seer Trees	Seer Trees	false	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit.[paragraph break]THUMP! They left you a present--good thing you were wearing that pact cap, because a book fell on your head. One glance reveals it to be [b]Oh, Who[r]--a phone book for Grebeberg, like [b]Name ME Man[r] for Yelpley.[paragraph break]You also find a gift fig, which you pick up."
-EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	true	true	true	Grebeberg	Cold Loc	Cold Loc	false	"King Nik reads it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris and Crisp Sir C told me I needed to one day from those other books: ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! I can now lead against the Rim Emir and his emir-prime emir crime and emir grime! The Mrifk Firm, too! My rule will not be an EGAD age!' He hands you some Spur Ups in gratitude. 'These may give you an UP or two, when you are just scared or worried for no reason in general. Now...back to my vidette div. Gotta RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
+EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	true	true	true	Grebeberg	Cold Loc	Cold Loc	false	"King Nik takes it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris and Crisp Sir C told me I needed to one day from those other books: ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! Now I can make sure the Rim Emir and his emir crim and emir grime do not become Emir Prime! I will defeat the Mrifk Firm, too! My rule will not be an EGAD age!' He hands you some Spur Ups in gratitude. 'These may give you an UP or two, when you are just scared or worried for no reason in general. Now...back to my vidette div. Gotta RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
 stock cots	sleep eels	--	--	--	true	true	true	true	true	true	Grebeberg	Ooze Zoo	Ooze Zoo	false	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
 --	--	--	rev-puff-up rule	--	true	--	--	true	true	true	Yelpley	Yawn Way	Yawn Way	false	--
 --	--	--	rev-pull-up rule	--	true	--	--	true	true	true	Yelpley	Emo Dome	Emo Dome	false	--
@@ -3124,7 +3145,7 @@ den ivy vined	"[ivy-no]."
 trap mart rampart	"It's too sturdy to climb or blow up and too wide to go around. But maybe that will just help you focus on where you need to go." [start Ooze Zoo 2 3]
 bad dab	"The bad dab's message seems important, but it's not good for much except examining." [start Worn Row 3 3]
 redness ender	"You don't want to do anything crazy with the Redness Ender. You don't want to go near it. It's dangerous looking. You can picture it ambushing someone who doesn't expect it."
-sto lots	"You don't want to tinker with the STO LOTS more than it has to. It makes carrying stuff easier, and that's good enough." [start My Gym 4 3]
+sto lots	"You don't want to tinker with the STO LOTS more than you have to. It makes carrying stuff easier, and that's good enough." [start My Gym 4 3]
 decal placed	"The decal placed decal is just there to advertise the food. It's not critical to the story." [start deli tiled 6 3]
 snooty toons	"The snooty toons are just there for ambience. They're not critical to the story."
 go fog	"The go fog is very dense. It pushes you back even as you look at it. As if to say, go away, and also, get going with what you want and need to do." [start Lair Trial 0 4]
@@ -3443,6 +3464,8 @@ understand the command "pacy" as something new.
 understand the command "pace" as something new.
 
 understand "pace cap" and "pacy cap" and "pace" and "pacy" as paceing.
+
+understand "pace cap" as pact cap when cap-ever-pace is true.
 
 pace-prev is a truth state that varies.
 
@@ -3936,7 +3959,11 @@ chapter turf rut
 
 The turf rut is scenery in Dumb Mud. "[if poo coop is moot]Since you filled it in, you can walk across it [turf-s]to the south. It even smells okay[else]It's deep enough to prevent you going south. Maybe you could fill it in with something. Anything[end if]."
 
-instead of inserting into rut: say "Placing any one item in the rut manually won't fill it, but maybe you can use a tool to do so.";
+instead of inserting into rut:
+	if noun is poo coop:
+		say "Eh, why not just empty it totally, you think.";
+		try useoning poo coop with turf rut instead;
+	say "Placing any one item in the rut manually won't fill it, but maybe you can use a tool to do so.";
 
 instead of putting on rut: say "Placing any one item in the rut manually won't fill it, but maybe you can use a tool to do so.";
 
@@ -4103,6 +4130,8 @@ chapter sleep eels
 
 the sleep eels are plural-named people in Ooze Zoo. "The sleep eels look slightly uncomfortable where they are. Maybe you can give them better sleeping quarters.". description is "The sleep eels squirm. Maybe there's a humane way to move them out."
 
+understand "sleep eel" and "eel" as sleep eels.
+
 check taking sleep eels: say "There are too many, and they'd slip through your fingers." instead;
 
 to say s-dray:
@@ -4132,6 +4161,8 @@ after taking stamp mats:
 	continue the action;
 
 chapter Kayo Yak
+
+a chaser has a truth state called chased-yet.
 
 The Kayo Yak is a beepy chaser in Frush Surf. chase-room of Kayo Yak is Frush Surf. "[one of]A tough looking animal paces around here! It rushes after a few imaginary targets. It looks like a yak. That would make it ... a kayo yak. [or][stopping][if player is in Lair Trial]The kayo yak has slowed down temporarily. It seems to be looking back and forth between you and the Ergot Ogre[else if being-chased is true]The kayo yak has an aggressive look in its eyes! It's snorting, and you're the only thing worth chasing[else if kayo yak was not in location of player]The kayo yak [yak-smell][else]The kayo yak, having sniffed at you, is just pacing around now[end if].". description is "[if being-chased is true]The Kayo Yak is really rumbling around, here[else]The Kayo Yak looks alert, ready for more than just standing around[end if].". stix-room of Kayo Yak is Seer Trees.
 
@@ -4481,7 +4512,7 @@ instead of useoning with kayak when elope pole is moot:
 
 chapter tao boat
 
-The Tao Boat is scenery in Lac Oft Focal. "It rocks gently on the waves, with no clear entry, just fine without anyone riding on it. You [unless dork rod is moot]wonder what it's like inside, if you're worthy[else]look back on your time inside with fondness. It has put you at peace with the job you have ahead[end if]. Just looking at it gives more inner peace than you'd get from any of the medicine or alcohol you've come across in the game[unless dork rod is moot], but perhaps you need to show it a sign of appropriate humility to enter[end if]."
+The Tao Boat is scenery in Lac Oft Focal. "It rocks gently on the waves, with no clear entry, just fine without anyone riding on it. You [unless dork rod is moot]wonder what it's like inside, if you're worthy[else]look back on your time inside with fondness. It has put you at peace with the job you have ahead[end if]. Just looking at it gives more inner peace than you'd get from any of the medicine or alcohol you've come across in the game[unless dork rod is moot], but perhaps you need to show it a certification of appropriate humility to enter. Perhaps an item that seems useless elsewhere[end if]."
 
 check entering tao boat: say "You see no clear entry. Perhaps you need to make some gesture, or show the boat an emblem of your worth or self-acceptance." instead;
 
@@ -4535,7 +4566,7 @@ sod-with-hands is a truth state that varies.
 
 check taking dose sod:
 	now sod-with-hands is true;
-	say "It's pretty slimy. Any curative properties would be canceled out by your germs carrying it. You need something to hold it in. Or 'in which to hold it,' if ending a sentence with a preposition hacks you off." instead;
+	say "The sod is pretty slimy. Any curative properties would be canceled out by your germs carrying it. You need something to hold it in. Or 'in which to hold it,' if ending a sentence with a preposition hacks you off." instead;
 
 instead of inserting dose sod into: try useoning dose sod with second noun instead;
 
@@ -5006,7 +5037,7 @@ the reifier is a workable. useleft is 3. understand "rei" as reifier. descriptio
 
 the reviver is a workable. useleft is 3. understand "rev" as reviver. description of reviver is "It reads FIX IF OLD, LO! Sounds like beaten-up items could go here.". verb-abbrev is "REV".
 
-the rotator is a workable. useleft is 3. understand "rot" as rotator. understand "ro" as rotator. description of rotator is "It is circular, like a washing machine. It can probably can shake up items you can't. Maybe split them open to find neat things[if stinky knits are not moot]. Or, maybe, it could make something smell a bit nicer[end if].". verb-abbrev is "ROT".
+the rotator is a workable. useleft is 3. understand "rot" as rotator. understand "ro" as rotator. description of rotator is "It is circular, like a washing machine. It can probably shake up items you can't. Maybe split them open to find neat things[if stinky knits are not moot]. Or, maybe, it could make something smell a bit nicer[end if].". verb-abbrev is "ROT".
 
 rule for supplying a missing second noun when useoning:
 	if noun is a workable:
@@ -5061,6 +5092,18 @@ instead of switching on a workable, say "You need to USE something with [the nou
 
 instead of taking a workable, say "Too heavy. But you can USE something on it.";
 
+the r-shortcut rules are an object-based rulebook.
+
+an r-shortcut rule for a thing (called x):
+	if x is moot, say "Alas, the [x] is destroyed." instead;
+	if psi wisp is in Worn Row, say "[chase-pass]Not with the psi wisp around!" instead;
+	if x is in TempMet:
+		say "You need to bring back Work Row first. Do so?";
+		if the player yes-consents:
+			now Worn Row is Worky;
+		else:
+			the rule succeeds;
+
 section reiing
 
 reiing is an action applying to one thing.
@@ -5072,7 +5115,7 @@ understand "rei [something]" as reiing when player is in Worn Row and reifier is
 understand "reify [something]" as reiing when player is in Worn Row and reifier is not off-stage and ever-workrow is true.
 
 carry out reiing:
-	if reifier is not in Worn Row, say "You need to bring back Work Row." instead;
+	follow the r-shortcut rules for the reifier;
 	try useoning noun with reifier instead;
 
 section reving
@@ -5086,7 +5129,7 @@ understand "rev [something]" as reving when player is in Worn Row and reviver is
 understand "revive [something]" as reving when player is in Worn Row and reviver is not off-stage and ever-workrow is true.
 
 carry out reving:
-	if reviver is not in Worn Row, say "You need to bring back Work Row." instead;
+	follow the r-shortcut rules for the reviver;
 	try useoning noun with reviver instead;
 
 section roting
@@ -5100,7 +5143,7 @@ understand "rot [something]" as roting when player is in Worn Row and rotator is
 understand "rotate [something]" as roting when player is in Worn Row and rotator is not off-stage and ever-workrow is true.
 
 carry out roting:
-	if reifier is not in Worn Row, say "You need to bring back Word Row." instead;
+	follow the r-shortcut rules for the rotator;
 	try useoning noun with rotator instead;
 
 chapter books
@@ -5258,7 +5301,7 @@ after examining a book:
 
 chapter DWELT LEWD
 
-DWELT LEWD is a proper-named not necessary hidden book. printed name of DWELT LEWD is "DWELT LEWD (DL)".
+DWELT LEWD is a proper-named not necessary hidden book. printed name of DWELT LEWD is "DWELT LEWD (DL)". understand "dl" as DWELT LEWD.
 
 dwelt-first is a list of text variable. dwelt-first is { "Nell, Edna", "Leon", "Nedra", "Anita", "Rolf", "Nora", "Alice", "Carol", "Leo", "Jane", "Reed", "Dena" }.
 dwelt-last is a list of text variable. dwelt-last is { "Ned", "Dee", "Rena", "Joel", "Lora", "Cecil", "Aaron", "Flora", "Tina", "Arden", "Noel", "and Ellen" }
@@ -5369,7 +5412,7 @@ workrowing is an action applying to nothing.
 understand the command "workrow" as something new.
 understand the command "work row" as something new.
 
-understand "work row" and "workrow" as workrowing when player is in Worn Row.
+understand "work" and "work row" and "workrow" as workrowing when player is in Worn Row.
 
 ever-workrow is a truth state that varies.
 
@@ -5415,7 +5458,7 @@ wordrowing is an action applying to nothing.
 understand the command "wordrow" as something new.
 understand the command "word row" as something new.
 
-understand "word row" and "wordrow" as wordrowing when player is in Worn Row.
+understand "word" and "word row" and "wordrow" as wordrowing when player is in Worn Row.
 
 ever-wordrow is a truth state that varies.
 
@@ -5459,8 +5502,7 @@ wornrowing is an action applying to nothing.
 understand the command "wornrow" as something new.
 understand the command "worn row" as something new.
 
-understand "wornrow" as wornrowing when player is in Worn Row.
-understand "worn row" as wornrowing when player is in Worn Row.
+understand "wornrow" and "worn" and "worn row" as wornrowing when player is in Worn Row.
 
 carry out wornrowing:
 	if psi wisp is moot, say "Now that the redness ender and Psi Wisp destroyed each other, Worn Row really holds nothing else for you." instead;
@@ -5983,7 +6025,7 @@ to say tbut: say "[if tube-try is false]you can't see where it goes[else]you alr
 
 check going north in Evaded Ave:
 	if tube but is in Evaded Ave:
-		say "[if tube-try is true]The rood-y door behind the tube seemed extra fortified. Plus[else]You try to follow the Door Frood and enter the tube, but ... you hit your head on a rood-y door (which you maybe should've expected) in the passage as the tube turns. You hear the Door Frood say 'TUBE REBUT' and laughing. At you or [b]TO IDIOT[r], you don't know. Eh, well[end if], you really don't want to see the Door Frood again.";
+		say "[if tube-try is true]The rood-y door behind the tube seemed extra fortified. Plus[else]You try to follow the Door Frood and enter the tube, but ... you hit your head on a rood-y door (which you maybe should've expected) in the passage as the tube turns. You hear the Door Frood say 'TUBE REBUT' and laugh. At you or [b]TO IDIOT[r], you don't know. Eh, well[end if], you really don't want to see the Door Frood again.";
 		now tube-try is true instead;
 	say "The Door Frood chuckles a bit. Why would you run into a wall?" instead;
 
@@ -6002,6 +6044,8 @@ check taking the level net: say "But then you couldn't get across it without ser
 chapter tent net
 
 the tent net is a thing. description is "It's tagged as a 'Tent o['] Dot Net,' which seems to be overdoing the trendy-to-techies angle, but at least it's not advertised as a Net, Torn, Rotten.[paragraph break]Though it can't make a structure on its own, it could probably let just the right amount of light in a home that needs a roof."
+
+does the player mean taking the tent net when the player is in Trapeze Part: it is unlikely.
 
 chapter epicer recipe
 
@@ -6562,7 +6606,12 @@ understand "go [any thing]" as gotothinging.
 
 carry out gotothinging:
 	let Q be location of noun;
-	if Q is in Odd Do, say "Unfortunately, [the noun] is [if Q is devreserved]out of this game[else]in an in-between state[end if] right now." instead;
+	let odd-mulligan be false;
+	if Q is TempMet:
+		if noun is tract cart or noun is a workable or noun is a book:
+			say "Right now [the noun] is in a different configuration of [Worn Row][if player is in Worn Row]. Just say which configuration you want in order to see [the noun] again[end if].";
+			now odd-mulligan is true;
+	if odd-mulligan is false and Q is in Odd Do, say "Unfortunately, [the noun] [if noun is plural-named]are[else]is[end if] [if Q is devreserved]out of this game[else]in an in-between state[end if] right now." instead;
 	if noun is off-stage, say "Unfortunately, you accessed something that wasn't introduced to the game world yet." instead;
 	try gotoing Q instead;
 
@@ -6745,6 +6794,7 @@ ever-chased-wisp is a truth state that varies.
 ever-chased-yak is a truth state that varies.
 
 to start-chase (guy - a person):
+	now chased-yet of guy is true;
 	move x-it stix to stix-room of guy;
 	now chase-person is guy;
 	now last-chase-direction is southwest;

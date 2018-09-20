@@ -300,6 +300,8 @@ chapter Fun Enuf
 
 understand "dare rad" as a mistake ("You try to gain inspiration from the Darer Ad, but it's a bit too silly.[mis of 337]") when Darer Ad is carried.
 
+understand "dood" as a mistake ("[if player has El Doodle]You exclaim 'dood' at El Doodle, hoping to simplify a bit of it, but it needs some serious editing. [end if][if poop-boob-yet is false]Whoah! That was dangerously close to getting a LLP for cussing 'appropriately' for this game.[else]You already got a point for cussing 'appropriately.'[end if][mis of 350]")
+
 understand "evaded ave" as a mistake ("That'll appear later.[mis of 107]") when player is in Fun Enuf and Evaded Ave is unvisited.
 
 understand "eval ave" as a mistake ("[if player has pact cap]You've already been[else]You're currently being[end if] evaluated.[mis of 317]") when player is in Fun Enuf.
@@ -538,7 +540,7 @@ understand "eel glee" as a mistake ("The eels squirm a bit. I bet they're having
 
 understand "sleek eels" as a mistake ("The eels don't need dexterity. They need comfort. They are slippery enough.[mis of 174]") when sleep eels are quicknear.
 
-understand "sleet eels" as a mistake ("They are alive. Turning them to metal would be cruel.[mis of 175]") when sleep eels are quicknear.
+understand "sleet eels" as a mistake ("Eels are cold-blooded, but turning them to ice would be going way too far. They don't need the BIG sleep, just a good one.[mis of 175]") when sleep eels are quicknear.
 
 chapter Pro Corp
 
@@ -863,7 +865,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 
@@ -904,6 +906,8 @@ to decide whether thug-near:
 		if Z is quicknear, yes;
 	no;
 
+to say hom-gm: say "Worth a try, but this is a palindrome game, not a homonym game. "
+
 to say or-ups: if word number 1 in the player's command is "ups", say ", much less spu";
 
 understand "dial [text]" and "call [text]" and "phone [text]" and "[number]" as a mistake ("Like your average random NPC, anyone you tried to call from [b][if player is in Yawn Way]Name ME, Man[else]Oh Who[end if][r] would probably just have random general useless things to say like '[next-rand-txt of table of npc mistakes]!'") when Name ME Man is quicknear or Oh Who is quicknear.
@@ -920,15 +924,17 @@ understand "rm gnu/dung" and "rm gnu dung" as a mistake ("You don't have the pro
 
 understand "rub [text]" as a mistake ("[no-burt].")
 
+understand "scorn rocs" as a mistake ("[hom-gm]They out-scorn you easily. But that's okay. If you were too good at scorning, you wouldn't be one of the good guys. You need to do something more drastic.") when player is in Motto Bottom and tame mat is in Motto Bottom.
+
 understand "sees" as a mistake ("[if peeped-yet is true]You already managed to PEEP for an LLP. This would be double dipping[else]There's a way to look differently, and it's a four letter word, but not this one[end if].")
 
 understand "shed eh" and "shed ehs" as a mistake ("It doesn't do you much good. Maybe it could help someone further in the dumps than you, though.") when yob attaboy is quicknear and yob attaboy is xed.
 
-understand "tame mat" as a mistake ("Interesting, but this is a palindrome game, not a homonym game. Also, the mat's already harmless. You need to make it more interesting.") when player is in Motto Bottom and tame mat is in Motto Bottom.
+understand "tame mat" as a mistake ("[hom-gm]Also, the mat's already harmless. You need to make it more interesting.") when player is in Motto Bottom and tame mat is in Motto Bottom.
 
 understand "tap at [text]" as a mistake ("That's in the spirit of the game, but sadly, I couldn't find a way to make it useful. Sorry!")
 
-understand "trap art" as a mistake ("Interesting, but this is a palindrome game, not a homonym game. Also, you [if player has trap art]already took[else]can just take[end if] the art. You need to make it more interesting.") when trap art is quicknear.
+understand "trap art" as a mistake ("[hom-gm]Also, you [if player has trap art]already took[else]can just take[end if] the art. You need to make it more interesting.") when trap art is quicknear.
 
 understand "up [text]" and "ups [text]" as a mistake ("You need to do something UP with the spurs, but ... UP needs to come second. Or last. You can't do much with PU[or-ups].") when player has spur ups.
 
