@@ -542,6 +542,23 @@ understand "sleek eels" as a mistake ("The eels don't need dexterity. They need 
 
 understand "sleet eels" as a mistake ("Eels are cold-blooded, but turning them to ice would be going way too far. They don't need the BIG sleep, just a good one.[mis of 175]") when sleep eels are quicknear.
 
+understand "zoo dooz" as a mistake ("This zoo is free to visit! Yippee![mis of 351]") when player is in Ooze Zoo.
+
+understand "zoo hooz" as a mistake ("The eels [if eels are moot]were[else]are[end if] the only visible occupants of this zoo.[mis of 352]") when player is in Ooze Zoo.
+
+understand "zoo looz" as a mistake ("There are no bathrooms in this zoo, but there don't need to be.[mis of 353]") when player is in Ooze Zoo.
+
+understand "zoo mooz" as a mistake ("That's [if Moo Room is unvisited]a bit further on[else]south and east, as you found[end if].[mis of 354]") when player is in Ooze Zoo.
+understand "zoo pooz" as a mistake ("[if Moo Room is unvisited]It's icky enough[else if poo coop is moot]The poo coop had another use[else]The poo coop has another use[end if].[mis of 355]") when player is in Ooze Zoo.
+
+understand "zoo nooz" as a mistake ("[if eels are moot]You made some news. The eels are gone[else]The eels wouldn't be able to tell you the latest[end if].[mis of 356]") when player is in Ooze Zoo.
+
+understand "zoo rooz" as a mistake ("Caught between feeling sad and playing tricks, you wind up doing neither.[mis of 357]") when player is in Ooze Zoo.
+
+understand "zoo tooz" as a mistake ("I know it's not a VERY good zoo, but it's the only one in this game, and that's that.[mis of 358]") when player is in Ooze Zoo.
+
+understand "zoo wooz" as a mistake ("You recall the thrill of visiting your first zoo.[mis of 359]") when player is in Ooze Zoo.
+
 chapter Pro Corp
 
 to say is-was-hay:
@@ -867,7 +884,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 
@@ -922,7 +939,7 @@ understand "guh" and "thug" and "guh thug" as a mistake ("That's what [random vi
 
 understand "look kool" as a mistake ("[if peeped-yet is true]You already managed to PEEP for an LLP. This would be double dipping[else]There's a way to look differently, but it's just one word. Four letters[end if].")
 
-understand "put it up" as a mistake ("That's what the Spur Ups say, but you need to re-interpret it slightly, to help yourself.") when player has spur ups.
+understand "put it up" as a mistake ("That's what the Spur Ups say, but you need to re-interpret it slightly, to help yourself. What else UP could you do?") when player has spur ups.
 
 understand "rm gnu/dung" and "rm gnu dung" as a mistake ("You don't have the proper permissions. It is (wait for it) too root.") when dung-near.
 
