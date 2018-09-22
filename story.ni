@@ -61,7 +61,7 @@ definition: a thing is had-or-done:
 	no;
 
 to moot (Q - a thing):
-	if Q is moot and debug-state is true, say "Oops! Mooting [Q], but it is already in DevReserved.";
+	if Q is moot and debug-state is true, say "DEBUG NOTE: Oops! Mooting [Q], but it is already in DevReserved.";
 	move Q to DevReserved; [ic]
 
 to say hc: say "ch"
@@ -336,9 +336,11 @@ chapter oldschooling
 
 understand the command "wave" as something new. understand "wave" as waving hands. [wave (thing) is not waving hands, and we want to delete it.]
 
-understand the command "slice/prune/chop/kiss/hug/embrace/buy/purchase/buy/light/jump/hop/skip/sip/swallow/shine/polish/sweep/clean/dust/wipe/scrub/fight/torture/wreck/crack/murder/kill/punch/thump/sorry" as something new.
+understand the command "slice/prune/chop/kiss/hug/embrace/buy/purchase/buy/light/jump/hop/skip/sip/swallow/shine/polish/sweep/clean/dust/wipe/scrub/fight/torture/wreck/crack/murder/kill/punch/thump/sorry/taste" as something new.
 
 understand "slice" and "prune" and "chop" and "kiss" and "hug" and "embrace" and "buy" and "purchase" and "buy" and "light" and "jump" and "hop" and "skip" and "sip" and "swallow" and "shine" and "polish" and "sweep" and "wipe" and "scrub" and "fight" and "torture" and "wreck" and "crack" and "murder" and "kill" and "punch" and "thump" and "sorry" as oldschooling.
+
+understand "taste [thing]" as eating.
 
 understand "slice [text]" and "prune [text]" and "chop [text]" and "kiss [text]" and "hug [text]" and "embrace [text]" and "buy [text]" and "purchase [text]" and "buy [text]" and "light [text]" and "jump [text]" and "hop [text]" and "skip [text]" and "sip [text]" and "swallow [text]" and "shine [text]" and "polish [text]" and "sweep [text]" and "clean [text]" and "dust [text]" and "wipe [text]" and "scrub [text]" and "fight [text]" and "torture [text]" and "wreck [text]" and "crack [text]" and "murder [text]" and "kill [text]" and "punch [text]" and "thump [text]" and "sorry [text]" as os2ing.
 
@@ -619,7 +621,7 @@ to say dir-summary:
 	now Q is the room west of location of player;
 	if Q is not nowhere, say " W[run paragraph on][if Q is not available]-[else if Q is not visited]![run paragraph on][end if]";
 
-when play begins:
+when play begins (this is the begin ailihphilia for reals rule):
 	repeat with Q running through regions:
 		increase maximum score by max-score of Q;
 	if debug-state is true:
@@ -642,10 +644,7 @@ when play begins:
 	say "You check your mail as you go out to the grocery store. A junk-mail magazine! It's been so long since you got one, you're almost intrigued.[wfak-d]";
 	say "It just says GAME MAG. But the cover isn't telling you to actually buy anything, so you look inside. You have a whole backlog of games, but you can just recycle it when you get to the store. No, not the erot-store![wfak-d]";
 	say "Nothing really catches your mind until you see a DARER AD. It's a bit vague, but it catches your eye.[wfak-d]";
-	say "(MA'AM)/ SIR, TETRIS?![wfak-d]";
-	say "EVIL'S LIVE![wfak-d]";
-	say "LIVE DEVIL![wfak-d]";
-	say "BOSSES! SOB![wfak-d]";
+	say "[fixed letter spacing](MA'AM)/ SIR, TETRIS?!                    EVIL'S LIVE![line break]LIVE DEVIL!                               BOSSES! SOB![roman type][line break][wfak-d]";
 	say "You fold the Darer Ad and start off to the store.[paragraph break]'[unicode 161]Aloha. Hola!' someone, or something, cries. 'Steer-greets! Steer-greets!'[paragraph break]You run in the general direction of the voice. You look up, and you're no longer on the way to the store. You're somewhere else. Your smartphone starts blinking: LOAD AOL! You look up. Who is responsible for this? Someone/something who sees you futzing with your smartphone. 'No El Google on?' You nod. Awkward silence. 'Poll op! Poll op!' the someone/something continues.[wfak-d]";
 	say "'I'm the Flee Elf. Name, man? Eve? Pip? Otto? Anna? Bob? Nan? Aviva? Hannah? Elle? Ebbe?' You back away--it doesn't seem to care if you're male or female, but it's a persis-rep. And you realize YOU weren't paying attention to ITS gender.[wfak-d]";
 	say "There's a bit more of this narrative nonsense, if you're into that sort of thing. Would you like to see it? I won't be hurt if you say no.";
@@ -2014,13 +2013,13 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 		say "Those are both too solid to go together.";
 	else:
 		now chef-gen-clue is false;
-		say "You mix [the i1] with [the i2] in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.[paragraph break]";
+		say "You mix [the i1] with [the i2] in front of the Ark of Okra. You hear a distant rumble as the mixture is swept from your hands and through the Ark of Okra, which shakes visibly.[paragraph break]";
 		moot i1;
 		moot i2;
 		score-inc; [Grebeberg/USE GIFT FIG ON MAYO YAM&USE SNACK CANS ON UFO TOFU]
 		if number of moot ingredients is 4:
 			verify-done rev-second-food-combo rule;
-			say "A martini tram rattles out from behind the Ark of Okra. Guess you need drinks with your, uh, food![paragraph break][if player does not have the epicer recipe]You're shocked to see it, and it rolls further down, over the turf rut to Dumb Mud, then back through the Seer Trees to [Fun Enuf][else]But you're prepared for it, with your epicer recipe. You move it back to [Fun Enuf], where it looks like a good base structure for your North-Tron[end if].";
+			say "A martini tram rattles out from behind the Ark of Okra. Guess you need drinks with your, uh, food![paragraph break][if player does not have the epicer recipe]You're shocked to see it, and it rolls further down, over the turf rut to Dumb Mud, then back through the Seer Trees to [Fun Enuf], and you follow[else]But you're prepared for it, with your epicer recipe. You move it back to [Fun Enuf], where it looks like a good base structure for your North-Tron[end if].";
 			move martini tram to Fun Enuf;
 			drop-player-at Fun Enuf;
 			say "After all that excitement, you realize that the martini tram could've been a KO wok. You feel relief at dodging something worse.";
@@ -2183,13 +2182,20 @@ a machine message rule for a thing (called t):
 	if t is pact cap, say "The pace cap has the VOL option, as well as [if cap-ever-pace is false]another option[else]PACE[end if], but that's probably enough. It doesn't need drastic fixing." instead;
 	if t is el doodle, say "None of the machines seems equipped for deciphering. A person might be able to do it better." instead;
 	if t is radar, say "The radar is pretty intricate. There's no way to [if radar-used is 2]super[else]re[end if]charge it." instead;
-	if t is listed in postmachines, say "The [second noun] hums ominously as you bring [the t] close. You already used a machine to make [the t]. Maybe you should do something else." instead;
+	if t is listed in postmachines, say "The [second noun] hums ominously as you bring [the t] close. You already used the [prem of t] to make [the t]. Maybe you should do something else." instead;
 	if t is listed in premachines, say "Nothing happens. And you felt optimistic there! Hmm." instead;
 	if second noun is reifier, now t is reified;
 	if second noun is rotator, now t is rotated;
 	if second noun is reviver, now t is revived;
 	if t is exhausted, say "Drat. None of the machines worked for [the t]. You may need to use it somewhere else." instead;
 	say "Nothing happens at all. Maybe [the t] do[unless t is plural-named]es[end if]n't need any sort of machine augmentation." instead;
+
+to say prem of (th - a thing):
+	repeat through table of goodacts:
+		if there is a getit entry and getit entry is th:
+			say "[if there is a use2 entry]the [use2 entry][else]a machine[end if]";
+			the rule succeeds;
+	say "a machine";
 
 section failed useons
 
@@ -2297,7 +2303,7 @@ to say ray-rej:
 	else:
 		say "That doesn't charge the yard ray"
 
-to say no-food-share: say "There's not really enough of [if noun is an ingredient][the noun][else if second noun is not nothing][second noun][else]that[end if] to share, and anyway, most people here need help or comeuppance, not food."
+to say no-food-share: say "There's not really enough of [if noun is an ingredient][the noun][else if second noun is not nothing][second noun][else]that[end if] to share, and anyway, most people here need help or comeuppance, not food"
 
 section table of specific use rejects
 
@@ -2467,7 +2473,7 @@ wash saw	crag arc	"The crag arc is much too big for the saw to get anywhere. [if
 wash saw	el doodle	"The doodle is a mess all over. Besides, cutting it down might lose valuable information once you clean it up."
 wash saw	KAOS Oak	"The wash saw isn't big enough or sharp enough to take down the [KAOS Oak]. You need a much more powerful machine[if player has epicer recipe and epicer recipe is nox], and you notice the epicer recipe could help with that[else if epicer recipe is xed], which you can build if you follow the epicer recipe[end if]."
 wash saw	lie veil	"Not even the wash saw could clean off the lie veil. You need something much more brutal."
-wash saw	made dam	"The made dam is much too big to get anywhere. [if eroded ore is off-stage]Maybe there's a better way to find what's behind there[else]Besides, you found enough[end if]."
+wash saw	made dam	"The made dam is much too big for the saw to get anywhere. [if eroded ore is off-stage]Maybe there's a better way to find what's behind there[else]Besides, you found enough[end if]."
 wash saw	scorn rocs	"The rocs are too big and solid for the wash saw to vandalize them."
 wash saw	stark rats	"You couldn't catch and hold a rat long enough to cut it with the wash saw."
 wash saw	stock cots	"That'd undo the reviver's work on the cots."
@@ -2526,8 +2532,8 @@ bunk nub	reviver	stock cots	--	--	true	true	false	true	true	true	Yelpley	Worn Ro
 party trap	stark rats	gift fig	hint-stark-rats rule	oh-who-to rule	true	true	true	true	true	true	Grebeberg	Seer Trees	Seer Trees	false	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit.[paragraph break]THUMP! They left you a present--good thing you were wearing that pact cap, because a book fell on your head. One glance reveals it to be [b]Oh, Who[r]--a phone book for Grebeberg, like [b]Name ME Man[r] for Yelpley.[paragraph break]You also find a gift fig, which you pick up."
 EPOCH COPE	King Nik	Spur Ups	--	cold-loc-hint-bump rule	true	true	true	true	true	true	Grebeberg	Cold Loc	Cold Loc	false	"King Nik takes it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris and Crisp Sir C told me I needed to one day from those other books: ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! Now I can make sure the Rim Emir and his emir crim and emir grime do not become Emir Prime! I will defeat the Mrifk Firm, too! My rule will not be an EGAD age!' He hands you some Spur Ups in gratitude. 'These may not spur you, but they can give you an UP or two, when you are just scared or worried for no reason in general. Now...back to my vidette div. Gotta RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
 stock cots	sleep eels	--	--	--	true	true	true	true	true	true	Grebeberg	Ooze Zoo	Ooze Zoo	false	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
---	--	--	rev-puff-up rule	--	true	--	--	true	true	true	Yelpley	Yawn Way	Yawn Way	false	--
---	--	--	rev-pull-up rule	--	true	--	--	true	true	true	Yelpley	Emo Dome	Emo Dome	false	--
+--	--	--	rev-puff-up rule	post-puff-up rule	true	--	--	true	true	true	Yelpley	Yawn Way	Yawn Way	false	--
+--	--	--	rev-pull-up rule	post-pull-up rule	true	--	--	true	true	true	Yelpley	Emo Dome	Emo Dome	false	--
 wash saw	past sap	--	sap-not-cut-yet rule	sap-loose rule	true	false	false	true	true	true	Grebeberg	Cold Loc	Cold Loc	false	"You hack away at the past sap with the wash saw, first squirting some loosening/thawing liquid. It's tricky, but the saw holds out, and with some perseverance, you're able to twist the sap off the rife fir[if player does not have puce cup]. You don't have anything to put the sap in, but it's there for later[end if]."
 puce cup	past sap	--	check-sap-cup rule	sap-to-cup rule	true	false	false	true	true	true	Grebeberg	Cold Loc	Cold Loc	false	"You pour some sap into the cup."
 puce cup	liar grail	--	sap-in-cup rule	empty-grail rule	true	false	true	true	true	true	Yelpley	Swept Pews	Swept Pews	false	"You pour the purist sirup into the liar grail. As the sirup bubbles, the Wordy Drow slips away from it and ... yes! It breaks free! 'Wend new! Wend new!' it calls to you.[paragraph break]Thoughts flow into your head from the liar grail, but the purist sirup has mutated its complex manipulations into much simple cries of protestation: it just doesn't want you to go there! You shrug, no longer mystified by its sophistry, and the grail cracks and rolls away.[paragraph break]The passage south looks clear. You snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL! You look around, worried a nun will say 'Tut!' But all is still."
@@ -2734,7 +2740,10 @@ this is the rev-pace-cap rule:
 	say "You tweak your pact cap to a PACE CAP";
 	if mrlp is not Grebeberg:
 		say ", moving to Seer Trees in Grebeberg when it doesn't seem right to run in Yelpley or [Fun Enuf].";
-		move player to Seer Trees;
+		if in-warp-command:
+			move player to Seer Trees, without printing a room description;
+		else:
+			move player to Seer Trees;
 	else:
 		say ".";
 	the rule succeeds;
@@ -2765,7 +2774,7 @@ this is the rev-puff-up rule:
 			say "[one of]King Nik's Spur Ups are handy here[or]Each one will help you do something UP[or]You need to feel better about yourself[or]PU* UP turns up nothing, though PUT UP seems promising, but...[or]PU** UP has possibilities[or]PUFF UP to gain access east of Yawn Way[stopping].";
 		the rule succeeds;
 	say "You use the spur ups to PUFF UP.";
-	moot spur ups;
+	now puffed-up is true;
 	the rule succeeds;
 
 this is the rev-pull-up rule:
@@ -3043,6 +3052,7 @@ this is the hay-gone rule:
 this is the kid-bye rule:
 	move saner arenas to Dirge Grid;
 	move day away ad to Yawn Way;
+	move XILE helix to Dirge Grid;
 	moot nogo gon;
 	moot Diktat Kid;
 	if nogo gon is xed, say "The No-Go Gon having burned away, you're sort of curious how many sides it had. You miscount the first few times but eventually wind up counting [rand-pal]. Well, you sort of expected that.";
@@ -3078,6 +3088,14 @@ this is the mob-to-alley rule:
 
 this is the oh-who-to rule:
 	now Oh Who is in Seer Trees;
+	the rule succeeds;
+
+this is the post-puff-up rule:
+	now puffed-up is true;
+	the rule succeeds;
+
+this is the post-pull-up rule:
+	now pulled-up is true;
 	the rule succeeds;
 
 this is the radar-blink rule:
@@ -3788,7 +3806,7 @@ saner arenas are peripheral plural-named scenery. "They're a sign that Grebeberg
 
 chapter XILE helix
 
-the XILE helix is peripheral scenery. "The XILE helix is a reminder of the evil the Diktat Kid wrought on Grebeberg and Yelpley."
+the XILE helix is peripheral scenery. "The XILE helix is a reminder of the evil the Diktat Kid wrought on Grebeberg and Yelpley. It even features the name of a sidekick you didn't need to dispatch: [next-rand-txt of table of rejected kid sidekicks]."
 
 instead of entering XILE helix: say "You deserve a more heroic exit than that."
 
@@ -3867,6 +3885,10 @@ to clue-noon: say ", though once it is, you know to EMIT NOONTIME"
 emit-guesses is a number that varies.
 
 carry out emiting:
+	if player does not have yard ray, say "You have nothing that emits, yet." instead;
+	if yard ray is nox:
+		now yard ray is xed;
+		say "Looking at the yard ray for the first time, you notice it wants you to EMIT something...";
 	if the topic understood matches "noontime" or the topic understood matches "noon time":
 		get-reject yard ray;
 		now noontime-found is true;
@@ -3896,11 +3918,13 @@ carry out emiting:
 
 to say clue-noon: say ", but NOONTIME seems right for what to emit"
 
+to say also-4: say ". Also, given what's on the Yard Ray, it's four letters"
+
 table of good emit guesses
 guess-topic (a topic)	guessed-yet	guess-result
-"dudtime" or "dud time"	false	"A heel turn this late in the game? Nah."
-"yaytime" or "yay time"	false	"That's for after you've conquered the Dirge Grid north of [hn of Fun Enuf]."
-"dadtime" or "dad time"	false	"I'm sorry you haven't uncovered enough groan-inducing jokes in the course of this game. I tried my best, honest I did."
+"dudtime" or "dud time"	false	"A heel turn this late in the game? Nah[also-4]."
+"yaytime" or "yay time"	false	"That's for after you've conquered the Dirge Grid north of [hn of Fun Enuf][also-4]."
+"dadtime" or "dad time"	false	"I'm sorry you haven't uncovered enough groan-inducing jokes in the course of this game. I tried my best, honest I did[also-4]."
 "pooptime" or "poop time"	false	"A hollow voice booms 'Loo? Fool!'[paragraph break]You want to get your opponent on the run, not get them the runs."
 "time"	true	"Yes, but what sort of time? Something positive and cheery, you'd guess." [this is true because it is semi-trivial to figure out]
 
@@ -4282,7 +4306,11 @@ check going nowhere in Ooze Zoo: say "[chase-pass]The TrapMart Rampart restricts
 
 chapter trapmart rampart
 
+[the programmatic name has a space, but the printed name doesn't, because it's easier to write 'understand' that way]
+
 the trap mart rampart is semiperipheral scenery in Ooze Zoo. "It's sturdy and too high to climb."
+
+printed name of trap mart rampart is "TrapMart Rampart".
 
 understand "trapmart rampart" and "trapmart" as trap mart rampart.
 
@@ -4308,7 +4336,7 @@ check going north in Frush Surf when being-chased is true: mug-the-player;
 
 chapter Stamp Mats
 
-stamp mats are a thing in Frush Surf. "Stamp mats lie here.". description is "The stamp mats are thin and appear to be engraved in a sort of bas-relief pattern. They feel sharp enough, you could use them to cut most any material."
+the stamp mats are a thing in Frush Surf. "Stamp mats lie here.". description is "The stamp mats are thin and appear to be engraved in a sort of bas-relief pattern. They feel sharp enough, you could use them to cut most any material."
 
 understand "stamps" as stamp mats.
 
@@ -5248,19 +5276,18 @@ rule for printing a locale paragraph about a workable (called th):
 
 to wear-down (w - a workable):
 	decrement useleft of w;
-	if useleft of w is 0 and deep-speeding is false:
-		if revving-over is false:
+	if useleft of w is 0:
+		if revving-over is false and deep-speeding is false:
 			say "[line break]You watch as [the w] sputters and dies. [if number of workedout workables is 2]Oh dear. That's the second one down[else]Well, you got a lot of good use out of it, and hopefully you won't need any more[end if].";
 		else:
 			say "(BOOM! You took out the [w] in the process.)[line break]";
 	if useleft of w is 1 and revving-over is false and deep-speeding is false, say "[line break]The [w] wheezes an emphatic 'FOOF.' Hopefully, you won't need to use it too much more.[line break]";
 	if machuses is 0:
 		hint-bump-worn;
-		if deep-speeding is false:
-			if revving-over is false:
-				say "[line break]With [the list of workables] all destroyed, Work Row shakes a bit more. The machines fall out from a wall, revealing something behind ... a test set. It's big and huge and you can't move it, but who knows what it'll be useful for later?";
-			else:
-				say "(And that's all 3 machines in Word Row down.)[line break]";
+		if deep-speeding is false and revving-over is false:
+			say "[line break]With [the list of workables] all destroyed, Work Row shakes a bit more. The machines fall out from a wall, revealing something behind ... a test set. It's big and huge and you can't move it, but who knows what it'll be useful for later?";
+		else:
+			say "(And that's all 3 machines in Word Row down. They are replaced with a test set.)[line break]";
 		move test set to Worn Row;
 		now all workables are in devreserved; [ic]
 		[?? trivial coding stuff: how to moot all workables]
@@ -5290,6 +5317,8 @@ an r-shortcut rule for a thing (called x):
 			now Worn Row is Worky;
 		else:
 			the rule succeeds;
+	if wr-short-note is false, say "NOTE: you guessed one verb abbreviation to use on the [x], but for future reference, the other two are [if x is reifier][b]REV[r] and [b]ROT[r][else if x is reviver][b]REI[r] and [b]ROT[r][else][b]REI[r] and [b]REV[r][end if].";
+	now wr-short-note is true;
 
 section reiing
 
@@ -6514,7 +6543,7 @@ the girt rig is semiperipheral scenery in Scrap Arcs. description is "It is too 
 
 chapter slate metals
 
-slate metals are scenery in Scrap Arcs. "You could probably carve something out of them, with the right implement(s). Maybe not steel fleets--they seems a bit flimsy, which is probably why they wound up here. But something useful for a humbler and less violent task."
+the slate metals are scenery in Scrap Arcs. "You could probably carve something out of them, with the right implement(s). Maybe not steel fleets--they seems a bit flimsy, which is probably why they wound up here. But something useful for a humbler and less violent task."
 
 understand "slate metal" and "metal" as slate metals.
 
@@ -7188,6 +7217,15 @@ this is the block-swept-pews rule:
 
 volume accelerator commands
 
+to decide whether in-warp-command:
+	if in-ms-warp is true, yes;
+	if in-guy-warp is true, yes;
+	if in-tool-warp is true, yes;
+	if in-tip-it is true, yes;
+	if deep-speeding is true, yes;
+	if revving-over is true, yes;
+	no;
+
 chapter deepspeeding
 
 to decide whether redact-postrule:
@@ -7529,11 +7567,11 @@ carry out revovering:
 		if use1 entry is a book:
 			if Worn Row is worky, now wr-flipped is true;
 			word-row-open;
+		if deep-speeding is false or say-despite-speeding is true, say "You [if wr-flipped is true]toggle [Worn Row], then [end if][if u1a is true](acquire and) [end if]use [the use1 entry] on/with [if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if][if demos-too is true]--and scoring SOME DEMOS in the process[end if].";
 		if use2 entry is a workable:
 			if Worn Row is wordy, now wr-flipped is true;
 			work-row-open;
 			wear-down use2 entry;
-		if deep-speeding is false or say-despite-speeding is true, say "You [if wr-flipped is true]toggle [Worn Row], then [end if][if u1a is true](acquire and) [end if]use [the use1 entry] on/with [if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if][if demos-too is true]--and scoring SOME DEMOS in the process[end if].";
 		increment turns-to-add;
 		if sco entry is true:
 			if debug-state is true and deep-speeding is false, say "*(DEBUG: use point) (+1 above)[line break]";
