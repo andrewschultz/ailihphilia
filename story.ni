@@ -856,7 +856,7 @@ instead of putting on:
 	if second noun is put-to-use, try useoning noun with second noun instead;
 	continue the action;
 
-definition: a thing is put-to-use:
+definition: a thing (called th) is put-to-use:
 	if th is a workable, yes;
 	if th is sword rows, yes;
 	if th is tract cart, yes;
@@ -1290,7 +1290,7 @@ check taking inventory when Dave is moot (this is the ailihphilia inventory rule
 	if number of tronparts carried by player > 0:
 		say "North-tron parts found: [the list of tronparts carried by player][unless martini tram is off-stage]. The martini tram is in [Fun Enuf], too[end if][hint-tron].";
 	else if martini tram is in fun enuf:
-		say "You aren't carrying it, but the martini tram[if epicer recipe is xed] listed on the epicer recipe[else], which must be good for something,[end if] is in Fun Enuf.
+		say "You aren't carrying it, but the martini tram[if epicer recipe is xed] listed on the epicer recipe[else], which must be good for something,[end if] is in Fun Enuf.";
 	if player has state tats, say "You've also stamped yourself with state tats.";
 	if number of carried exhausted things > 0 and reviver is not moot, say "(x) = exhausted (tried all 3 machines in Work Row)[line break]";
 	if being-chased is true and number of things in DropOrd is 0, say "Once this chase is done, you'll be able to find your dropped items in .";
@@ -2274,7 +2274,7 @@ use1	person-reject	thing-reject
 cave vac	"You need to clean out some bad people figuratively, not clean them up literally."
 Dirt Rid	"You need to clean out some bad people figuratively, not clean them up literally."
 el doodle	"[if second noun is not proper-named]The [end if][second noun] do[unless second noun is plural-named]es[end if]n't seem up to deciphering things."	"You'd probably need a person to help you decipher El Doodle." [?? x on el doodle]
-enact cane	"That could be painful for [if second noun is not proper-named]the [end if][second noun].";
+enact cane	"That could be painful for [if second noun is not proper-named]the [end if][second noun]."
 gift fig	"[no-food-share]."
 mayo yam	"[no-food-share]."
 ME gem	"[if second noun is not proper-named]The [end if][second noun] looks a bit frightened by the power of the ME gem. It must only work on, or for, really bad people or things."	--
@@ -3854,14 +3854,24 @@ noontime-found is a truth state that varies.
 
 to clue-noon: say ", though once it is, you know to EMIT NOONTIME"
 
+emit-guesses is a number that varies.
+
 carry out emiting:
 	if the topic understood matches "noontime" or the topic understood matches "noon time":
 		get-reject yard ray;
 		now noontime-found is true;
+	if the player's command includes "time":
+		repeat through table of good emit guesses:
+			if the topic understood matches guess-topic entry:
+				if guessed-yet entry is false:
+					now guessed-yet entry is true;
+					increment emit-guesses;
+					say "[guess-result entry][line break]" instead;
+		let guesschar be number of characters in the player's command - 8;
+		say "Not that sort of time. But it must be SOME time. A positive time[if yard ray is xed and guesschar is not 4]. A time with four letters in, not [guesschar in words][else if yard ray is not xed]. The yard ray may have a clue[end if]." instead;
 	if murdered rum is not moot, say "The Yard Ray isn't charged enough to emit anything[clue-noon]." instead;
 	if player is in location of Yuge Guy, say "No...the Yuge Guy needs to be defeated by other means." instead;
 	if Diktat Kid is moot, say "You already got rid of the Diktat Kid." instead;
-	if the topic understood matches "pooptime" or the topic understood matches "poop time", say "A hollow voice booms 'Loo? Fool!'" instead;
 	if emitted is true, say "You already figured how to use the Yard Ray." instead;
 	if the topic understood matches "noontime" or the topic understood matches "noon time":
 		say "FOOM! Oof! The yard ray emits so much light, you immediately have to switch it off. Well, that was a good start. Now you want to make sure you can aim it at something that can be destroyed.";
@@ -3871,10 +3881,18 @@ carry out emiting:
 		consider the cap-beep rules for the yard ray;
 		verify-done rev-emit-noontime rule;
 		the rule succeeds;
-	if the topic understood matches "time", say "Yes, but what sort of time? Something positive and cheery, you'd guess." instead;
-	if the topic understood includes "time", say "Not that sort of time. But it must be SOME time. A good time." instead;
-	say "No, that's not quite what to emit.";
+	say "No, that's not quite it[clue-noon].";
 	the rule succeeds;
+
+to say clue-noon: say ", but NOONTIME seems right for what to emit"
+
+table of good emit guesses
+guess-topic (a topic)	guessed-yet	guess-result
+"dudtime" or "dud time"	false	"A heel turn this late in the game? Nah."
+"yaytime" or "yay time"	false	"That's for after you've conquered the Dirge Grid north of [hn of Fun Enuf]."
+"dadtime" or "dad time"	false	"I'm sorry you haven't uncovered enough groan-inducing jokes in the course of this game. I tried my best, honest I did."
+"pooptime" or "poop time"	false	"A hollow voice booms 'Loo? Fool!'[paragraph break]You want to get your opponent on the run, not get them the runs."
+"time"	true	"Yes, but what sort of time? Something positive and cheery, you'd guess." [this is true because it is semi-trivial to figure out]
 
 part Grebeberg region
 
@@ -5862,6 +5880,8 @@ chapter DIFF ID
 [?? if you have the tattoos and tried going north, we should check those cases]
 
 the DIFF ID is semiperipheral scenery in Emo Dome. "You can't really look directly into it too much, but it seems like one of those scanners that could pop up a force field, or make a really annoying noise, if you tried to cross it. REBUFF-UBER is written on it, just to discourage anyone with any ideas of running through."
+
+id-knows-tats is a truth state that varies.
 
 after examining DIFF ID when player has state tats:
 	now id-knows-tats is true;
