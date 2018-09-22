@@ -45,6 +45,8 @@ include Ailihphilia Mistakes by Andrew Schultz.
 
 include Undo Output Control by Erik Temple.
 
+include Glulx Text Effects - New by Emily Short.
+
 use American dialect.
 
 volume definitions
@@ -145,6 +147,8 @@ use MAX_ACTIONS of 200.
 
 use MAX_VERBSPACE of 5200. [-400 from max_verbspace debug]
 
+use MAX_SYMBOLS of 21000.
+
 section debug compiler globals - not for release
 
 use MAX_VERBS of 580. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
@@ -153,7 +157,7 @@ use MAX_ACTIONS of 210. [+10?]
 
 use MAX_VERBSPACE of 5600. [4096 = original max]
 
-use MAX_SYMBOLS of 22000. [20000 = release, for now]
+use MAX_SYMBOLS of 22000. [-1000 for release]
 
 chapter room utilities
 
@@ -2098,7 +2102,6 @@ check useoning it with (this is the main useon function rule):
 				move player to Fun Enuf, without printing a room description;
 			score-inc; [Dim Mid/USE TNT ON ORE ZERO]
 			build-the-tron instead;
-	say "1.";
 	let got-any be false;
 	repeat through table of goodacts:
 		if there is no use1 entry:
@@ -4837,6 +4840,29 @@ definition: a room (called rm) is ungoable:
 	if rm is westcond and felines are moot and bees-seen is true, yes;
 	no;
 
+to say redstar: say "[first custom style]*[fixed letter spacing]"
+
+to say star-ast of (myr - a room) and (nu - a number):
+	if nu is 2 and player is in myr:
+		say "[redstar][redstar]";
+	else if nu is 3 and player is in room south of myr:
+		say "[redstar][redstar]";
+	else:
+		say "  "
+
+to say star-vert of (myr - a room) and (nu - a number):
+	if room south of myr is nothing:
+		if nu is 2 and player is in myr:
+			say "[redstar]";
+		else if nu is 3 and player is in room south of myr:
+			say "[redstar]";
+		else:
+			say " ";
+	else if myr is unvisited and room south of myr is unvisited:
+		say " ";
+	else:
+		say "|"
+
 to say map-so-far:
 	let lastnum be -1;
 	let pyx-row be 0;
@@ -4847,11 +4873,11 @@ to say map-so-far:
 		increment pyx-row;
 		choose row pyx-row in table of pyxloc;
 		if times-thru > 1:
-			say "  [if eithervisit of rmname entry and south]|[else] [end if][if remainder after dividing pyx-row by 7 > 0]     [end if]";
+			say "[star-ast of rmname entry and times-thru][star-vert of rmname entry and times-thru][star-ast of rmname entry and times-thru][if remainder after dividing pyx-row by 7 > 0]   [else][end if]";
 		else if loc-num of rmname entry <= lastnum:
 			say "[if times-thru is 0]BAD##[else][rmname entry][end if]";
 		else:
-			say "[if player is in rmname entry][b][end if][if rmname entry is ungoable]XXXXX[else if rmname entry is unvisited]?????[run paragraph on][else if times-thru is 0][uptxt entry][else][downtxt entry][end if][if player is in rmname entry][fixed letter spacing]";
+			say "[if player is in rmname entry][first custom style][else][fixed letter spacing][end if][if rmname entry is ungoable]XXXXX[else if rmname entry is unvisited]?????[run paragraph on][else if times-thru is 0][uptxt entry][else][downtxt entry][end if][if player is in rmname entry][fixed letter spacing][end if]";
 			say "[if times-thru is 0 and eithervisit of rmname entry and east]===[else if remainder after dividing pyx-row by 7 > 0]   [end if]";
 		if the remainder after dividing pyx-row by 7 is 0:
 			increment times-thru;
@@ -4861,6 +4887,14 @@ to say map-so-far:
 			else:
 				now times-thru is 0;
 	say "[variable letter spacing]";
+
+Table of User Styles (continued)
+style name	justification	obliquity	indentation	first-line indentation	boldness	fixed width	relative size	glulx color
+special-style-1	left-justified	no-obliquity	0	0	--	fixed-width-font	0	g-red
+
+Table of Common Color Values (continued)
+glulx color value	assigned number
+g-red	16711680		[== $ff0000]
 
 [this is organized from left to right, up to down. It doesn't have to be, but it's easier to visualize the map this way.]
 table of pyxloc [xxpyx]
@@ -4913,6 +4947,7 @@ instead of taking a phonebook, say "That would weigh you down too pointlessly[if
 does the player mean doing something with Name ME Man when player is in Yawn Way:
 	if the player's command includes "man", it is likely;
 	if the player's command includes "me", it is unlikely;
+	if current action is taking, it is very unlikely;
 	it is likely;
 
 does the player mean useoning with Name ME Man: it is unlikely.
@@ -5803,6 +5838,8 @@ section traping
 traping is an action applying to one thing.
 
 understand "trap [something]" as traping when player has party trap or player has trap art.
+
+does the player mean traping the stark rats: it is very likely.
 
 carry out traping:
 	if player has trap art, try useoning trap art with noun instead;
