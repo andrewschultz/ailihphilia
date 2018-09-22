@@ -1608,10 +1608,15 @@ after going when shuttuhs is true:
 	if rd2 is shutted, say "You hear the shuttuhs/shutters click down behind you. You must be [if exit-count of rd2 > 1]completely [end if]done to the [d2], now.";
 	continue the action;
 
+to decide whether LLP-hunting:
+	unless player has x-ite tix, no;
+	if score < maximum score - 1, no;
+	yes;
+
 check going when shuttuhs is true:
 	let Q be the room noun of location of player;
 	if location of player is shutted and room-dist of location of player > room-dist of Q, continue the action; [without this, the player would get stuck in Dopy Pod or Scrap Arcs, as Drawl Ward would be shutted. Also, you can go to the center but not away.]
-	if Q is shutted, say "Invisible shuttuhs, err, shutters block passage [noun]. You must be done in [Q][if exit-count of Q > 1] and the room(s) behind it[end if], so you'll need to toggle the shutters with [b]SHUTTUHS[r] to go back." instead;
+	if Q is shutted, say "Invisible shuttuhs, err, shutters block passage [noun]. You must be done in [Q][if exit-count of Q > 1] and the room(s) behind it[end if], so you'll need to toggle the shutters with [b]SHUTTUHS[r] to go back[if LLP-hunting]. If you are hunting for LLPs, you may need to toggle SHUTTUHS[end if]." instead;
 
 section checking what's shuttuhs-ed
 
@@ -2053,7 +2058,9 @@ to verify-done (ru - a rule):
 check useoning it with (this is the main useon function rule):
 	if noun is second noun, say "It's not productive to use something on itself, even with this game being full of palindromes." instead;
 	if noun is a workable and second noun is a workable, say "The machines are fixed in place. You can't use one on the other." instead;
-	if useprio of noun > useprio of second noun, try useoning second noun with noun instead; [e.g. machines in work row always go second]
+	if useprio of noun > useprio of second noun:
+		if debug-state is true, say "[noun] [useprio of noun] [second noun] [useprio of second noun].";
+		try useoning second noun with noun instead; [e.g. machines in work row always go second]
 	if second noun is tract cart:
 		if noun is SOME DEMOS, say "No, [i]SOME DEMOS[r] is yours, now." instead;
 		say "Very thoughtful, but you [if any-books-left]can just take books one at a time[else]don't need to replace [noun] if you don't know what to do with it yet[end if]." instead;
@@ -2091,51 +2098,43 @@ check useoning it with (this is the main useon function rule):
 				move player to Fun Enuf, without printing a room description;
 			score-inc; [Dim Mid/USE TNT ON ORE ZERO]
 			build-the-tron instead;
+	say "1.";
+	let got-any be false;
 	repeat through table of goodacts:
-		if there is no use1 entry, next;
+		if there is no use1 entry:
+			if debug-state is true and there is a use2 entry, say "WARNING: there is a blank use1 entry with use2 of [use2 entry].";
+			next;
 		if there is no use2 entry:
 			if debug-state is true, say "WARNING: there is a blank use2 entry with use1 of [use1 entry].";
 			next;
-		if noun is use1 entry: [I would like to get rid of this ... the table of cantuse should take care of this, but I need to check things]
-			if second noun is use2 entry:
-				if there is a preproc entry:
-					consider the preproc entry;
-					unless the rule succeeded, the rule succeeds;
-				if there is a getit entry, now player has getit entry;
-				if d2 entry is true, moot use2 entry;
-				if d1 entry is true, moot use1 entry;
-				now done entry is true;
-				if sco entry is true:
-					if there is a reg-plus entry:
-						reg-inc reg-plus entry;
-					else:
-						score-inc; [ignore]
+		if noun is use1 entry and second noun is use2 entry, now got-any is true;
+		if noun is use2 entry and second noun is use1 entry, now got-any is true;
+		if got-any is true:
+			if there is a preproc entry:
+				consider the preproc entry;
+				unless the rule succeeded, the rule succeeds;
+			if there is a getit entry, now player has getit entry;
+			if d2 entry is true, moot use2 entry;
+			if d1 entry is true, moot use1 entry;
+			now done entry is true;
+			if sco entry is true:
+				if there is a reg-plus entry:
+					reg-inc reg-plus entry;
 				else:
-					if debug-state is true, say "DEBUG: not giving point for [use1 entry]/[use2 entry] use.";
-				say "[babble entry][line break]";
-				if there is a postproc entry:
-					[if debug-state is true, say "(considering [postproc entry])[line break]";]
-					consider the postproc entry;
-					consider the shuttuhs-after-scoring rule;
-				if second noun is a workable, wear-down second noun;
-				if there is a getit entry and player has getit entry: [try to let "it" be defined]
-					set the pronoun it to getit entry;
-				else if use1 entry is moot and use2 entry is not moot:
-					set the pronoun it to use2 entry;
-				the rule succeeds;
-			else if there is no use2 entry:
-				say "[babble entry][line break]";
-				if there is a postproc entry, consider the postproc entry;
-				the rule succeeds;
-		if there is a use2 entry and second noun is use2 entry and there is no use1 entry:
+					score-inc; [ignore]
+			else:
+				if debug-state is true, say "DEBUG: not giving point for [use1 entry]/[use2 entry] use.";
 			say "[babble entry][line break]";
 			if there is a postproc entry:
+				[if debug-state is true, say "(considering [postproc entry])[line break]";]
 				consider the postproc entry;
+				consider the shuttuhs-after-scoring rule;
+			if second noun is a workable, wear-down second noun;
+			if there is a getit entry and player has getit entry: [try to let "it" be defined]
+				set the pronoun it to getit entry;
+			else if use1 entry is moot and use2 entry is not moot:
+				set the pronoun it to use2 entry;
 			the rule succeeds;
-		if there is a use1 entry and second noun is use1 entry:
-			if there is a use2 entry and noun is use2 entry:
-				try useoning second noun with noun;
-				the rule succeeds;
 	repeat through table of specific use rejects:
 		if noun is use1 entry and second noun is use2 entry, say "[babble entry][line break]" instead;
 		if noun is use2 entry and second noun is use1 entry, say "[babble entry][line break]" instead;
@@ -2368,6 +2367,7 @@ Gorge Grog	Yuge Guy	"The Yuge Guy doesn't drink, and neither does Johnny. Also, 
 ME gem	cross orc	"The ME gem causes the cross orc to moan and shield its eyes for a bit. Perhaps it is too much even for the orc's greed. Something more straightforward may work better."
 ME gem	ME Totem	"The egotistical forces in the gem and totem repel each other. Just as well. You don't know if you could survive if such insufferability synergized."
 ME gem	Tao Boat	"The tao boat lurches uncontrollably, and a gust of wind blows you back ten feet. It seems like the ME gem is about the worst thing you could possibly have shown to impress it, but on the other hand, that's a potential hint. You need something that's the opposite of the ME gem."
+ME gem	Verses Rev	"The Verses Rev sniffs and waves away the ME gem with disdain. Perhaps it could entice less spiritual types."
 ME gem	Yuge Guy	"That might make the Yuge Guy's ego too much to handle."
 mr arm	bros' orb	"Mr. Arm seems intimidated by the Bros['] Orb[if orb is not carried], too. You need mental assistance[end if]."
 mr arm	Gal Flag	"This isn't capture the flag."
@@ -2443,6 +2443,7 @@ state tats	DIFF ID	"The DIFF ID emits a soft tone. Looks like you can just walk 
 stinky knits	kayo yak	"The yak sniffs at the knits for a while but loses interest after a bit. Maybe something else will interest the yak longer."
 stir writs	tao boat	"[too-boast]."
 taboo bat	bomb mob	"No way. You'd be outnumbered. You'll need stealth."
+taboo bat	Knife Fink	"The Knife Fink probably doesn't care about taboos."
 taboo bat	ME Totem	"Violence isn't the answer. The ME Totem is not repelled by moral turpitude, anyway."
 taboo bat	test set	"This isn't cricket. You do, however, need to use SOME weapon on the test set."
 taboo bat	Yuge Guy	"Violence isn't the answer. The Yuge Guy is not repelled by moral turpitude, anyway."
@@ -2581,12 +2582,12 @@ Bros' Orb	Mirror Rim	Yard Ray	--	sword-rows-reveal rule	true	true	true	false	fal
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	false	false	false	Yelpley	Red Roses Order	Red Roses Order	false	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Ms. Ism."
 not-a-baton	reifier	taboo bat	--	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
 murdered rum	yard ray	--	--	ray-beepy-now rule	true	true	false	false	false	false	Dim Mid	--	--	false	"The yard ray gleams with energy. It seems like it could do some damage now."
---	--	--	rev-emit-noontime rule	--	true	--	--	false	false	false	Dim Mid	--	--	false	--
+--	--	--	rev-emit-noontime rule	ray-not-beepy-now rule	true	--	--	false	false	false	Dim Mid	--	--	false	--
 Yard Ray	test set	--	ready-to-test rule	test-set-zapped rule	true	false	true	false	false	false	Dim Mid	Worn Row	Worn Row	false	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
 --	--	--	rev-create-tron rule	--	true	--	--	false	false	false	Dim Mid	Fun Enuf	Fun Enuf	false	--
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, perhaps to create the Red Ronin Order." [b4:use TNT on ore zero]
 taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev senses the Taboo Bat's ancient untapped power. It's not particularly violent or lethal, but it is just perfect to scare an orthodoxy as warped as the Verses Rev's, who mutters 'Rev, off, over' and stumbles away! Perhaps to the safety of ... a rev reserver."
-Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"'Havoc, OVAH!' you should as you aim and fire the yard ray. A direct hit! The redivider begins to fizzle.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The entire Dirge Grid brightens, and the yard ray hums and explodes. But it's too late for the Diktat Kid to avoid an electro-shock. 'Deleveled!' the Kid screams several times, before breaking down into tears. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid grows redder ... redder ... and suddenly the remains of the redivider begin swirling, and they catch the Diktat Kid, who moans 'Lo, a Goal' before being whisked off.[paragraph break]With the Kid gone, the Dirge Grid grows less dark, the no-go gon winks out, and saner arenas are revealed all around. The swirling remains of the redivider harden into what can only be an XILE helix.[paragraph break]Revel, clever! Revel, ever![paragraph break]You are so busy watching, you didn't notice something else fell out of the redivider: X-ITE TIX! You pick them up. Wow! Yo, joy! Wow!"
+Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"'Havoc, OVAH!' you should as you aim and fire the yard ray. A direct hit! The redivider begins to fizzle.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The entire Dirge Grid brightens, and the yard ray hums and explodes. But it's too late for the Diktat Kid to avoid an electro-shock. 'Deleveled!' the Kid screams several times, before breaking down into tears. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid grows redder ... redder ... and suddenly the remains of the redivider begin swirling, and they catch the Diktat Kid, who moans 'Lo, a Gaol' before being whisked off.[paragraph break]With the Kid gone, the Dirge Grid grows less dark, the no-go gon winks out, and saner arenas are revealed all around. The swirling remains of the redivider harden into what can only be an XILE helix.[paragraph break]Revel, clever! Revel, ever![paragraph break]You are so busy watching, you didn't notice something else fell out of the redivider: X-ITE TIX! You pick them up. Wow! Yo, joy! Wow!"
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	false	false	false	Dim Mid	Fun Enuf	Fun Enuf	false	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse] [zzgood]
 
@@ -3098,6 +3099,10 @@ this is the ray-beepy-now rule:
 	now yard ray is beepy;
 	the rule succeeds;
 
+this is the ray-not-beepy-now rule:
+	now yard ray is ordinary;
+	the rule succeeds;
+
 this is the rebump-art-xtra rule:
 	shuffle-before Art Xtra and Red Roses Order;
 	the rule succeeds;
@@ -3385,7 +3390,9 @@ part Dim Mid region
 
 book Fun Enuf
 
-Fun Enuf is a room in Dim Mid. "[if elite tile is in Fun Enuf]Elite tile has replaced the old tile lit. Probably all that's left to do is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what leads west and east[xit-ave][end if]. [if Diktat Kid is moot][Dirge Grid] is back north, not that you need to revisit[else if north tron is moot]Also, the North-Tron has carved a passage north where the [kaoscaps] was. It's too big to, uh, repaper[else if flee elf is in Fun Enuf]An oak blocks the way north. It's a wide oak[else]The [kaoscaps] blocks your way north[end if]."
+to say if-not-LLP: if LLP-hunting, say ", other than poke around for last lousy points,"
+
+Fun Enuf is a room in Dim Mid. "[if elite tile is in Fun Enuf]Elite tile has replaced the old tile lit. Probably all that's left to do[if-not-LLP] is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what leads west and east[xit-ave][end if]. [if Diktat Kid is moot][Dirge Grid] is back north, not that you need to revisit[else if north tron is moot]Also, the North-Tron has carved a passage north where the [kaoscaps] was. It's too big to, uh, repaper[else if flee elf is in Fun Enuf]An oak blocks the way north. It's a wide oak[else]The [kaoscaps] blocks your way north[end if]."
 
 to say xit-ave:
 	say ". The [if player has x-ite tix]Tix Exit to the south is waiting for you to enter[else if tix exit is in Fun Enuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]"
@@ -8511,6 +8518,7 @@ carry out pooping:
 			wfak;
 		abide by the LLP rule; [POOP]
 		now the last notified score is the score;
+		say "[line break]";
 	else:
 		say "[line break]X2?[paragraph break]...X!";
 	follow the notify score changes rule;
@@ -8693,7 +8701,7 @@ this is the what-missed rule:
 			say "[if LLP-hint-yet is false][LLP-clue entry][else][LLP-spoil entry][end if]";
 			increment missed;
 	if missed is 0, say "You found all the points, but something in your final results isn't fully in tune with the game...yet. It can't be too hard to change!" instead;
-	if LLP-hint-yet is false, say "[paragraph break]Type MISSED again to spoil the LLPs.";
+	if LLP-hint-yet is false, say "[paragraph break]Type MISSED again to spoil the LLPs. While the X-Ite Tix allow you through the Tix Exit, there's no restriction on wandering around after.";
 	now LLP-hint-yet is true;
 
 chapter misses table
