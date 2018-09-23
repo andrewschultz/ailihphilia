@@ -2523,8 +2523,8 @@ use1	use2	getit	preproc	postproc	sco	d1	d2	guy-need	ms-need	tool-need	reg-plus	r
 --	--	--	rev-evade-Dave rule	--	true	--	--	true	true	true	Yelpley	My Gym	My Gym	false	--
 --	--	--	rev-bore-Rob rule	--	true	--	--	true	true	true	Yelpley	Worn Row	Worn Row	false	--
 --	--	--	rev-word-row rule	--	true	--	--	true	true	true	Yelpley	Worn Row	Worn Row	false	--
-TI	Door Frood	--	--	tube-to-ave rule	true	true	true	true	true	true	Yelpley	Evaded Ave	Evaded Ave	false	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. Some people are stupid. Good thing I obviously have too much self-awareness to be one of them. Funny stuff! A cut above [i]To Laff a Lot[r]! I'd try to explain it to you, but either you don't need it explained to you, or you don't deserve it explained to you.' With uncontrollable laughter spasms, the Door Frood skulks away.[paragraph break]Behind the Door Frood is a tube ... but ..." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
-pity tip	eye	snack cans	--	mob-to-alley rule	true	true	false	false	false	true	Yelpley	Yell Alley	Yell Alley	false	"The eye scans the pity tip, and the navy van beeps and boops and spits out some snack cans, which roll on the ground. You take them. Then you hear a loud whisper: 'Dee? Weed?' The navy van then activates its VANS-NAV and whooshes off to leave for good. And there's something behind it! Apparently, a whole bomb mob! That's who was making all the noise!" [af:TEND NET/WORK ROW]
+TI	Door Frood	--	hint-door-frood rule	tube-to-ave rule	true	true	true	true	true	true	Yelpley	Evaded Ave	Evaded Ave	false	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. Some people are stupid. Good thing I obviously have too much self-awareness to be one of them. Funny stuff! A cut above [i]To Laff a Lot[r]! I'd try to explain it to you, but either you don't need it explained to you, or you don't deserve it explained to you.' With uncontrollable laughter spasms, the Door Frood skulks away.[paragraph break]Behind the Door Frood is a tube ... but ..." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
+pity tip	eye	snack cans	hint-pity-tip rule	mob-to-alley rule	true	true	false	false	false	true	Yelpley	Yell Alley	Yell Alley	false	"The eye scans the pity tip, and the navy van beeps and boops and spits out some snack cans, which roll on the ground. You take them. Then you hear a loud whisper: 'Dee? Weed?' The navy van then activates its VANS-NAV and whooshes off to leave for good. And there's something behind it! Apparently, a whole bomb mob! That's who was making all the noise!" [af:TEND NET/WORK ROW]
 --	--	--	rev-tend-net rule	--	true	--	--	false	true	true	Yelpley	Trapeze Part	Trapeze Part	false	--
 --	--	--	rev-work-row rule	--	true	--	--	true	true	true	Yelpley	Worn Row	Worn Row	false	--
 trap art	reifier	party trap	hint-party-trap rule	--	true	true	false	true	true	true	Yelpley	Worn Row	Worn Row	false	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. You pull it out of the reifier and inspect it. It could probably capture more than one thing."
@@ -2600,32 +2600,6 @@ Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	false	false	false	Di
 X-ITE TIX	TIX EXIT	--	--	you-win rule	true	false	false	false	false	false	Dim Mid	Fun Enuf	Fun Enuf	false	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse] [zzgood]
 
-section hint rules [xxhr]
-
-this is the hint-party-trap rule:
-	if in-sos is false, the rule succeeds;
-	if party trap is moot, the rule succeeds;
-	if trap art is in Art Xtra:
-		say "Go to Traded Art to get the trap art.";
-	else if ever-wordrow is false:
-		say "You need to change [Worn Row].";
-	else:
-		say "[one of]You can use the trap art on one of the machines [hn-in of Worn Row][or]Use the trap art on the reifier[stopping].";
-	the rule fails;
-
-this is the hint-stark-rats rule:
-	if in-sos is false, the rule succeeds;
-	if stark rats are moot, the rule succeeds;
-	if Seer Trees is unvisited:
-		say "You should visit west of Fun Enuf.";
-	else if player has trap art:
-		say "[one of]The trap art is not enough to catch the stark rats, but it's a good plan[or][if Worn Row is unvisited]You haven't found the place to change the trap art, yet[else if Worn Row is not worky]You need to change [Worn Row] to something else[else][one of]You need to use the trap art on one of the machines[or]USE TRAP ART ON REIFIER in Word Row[stopping][end if][stopping].";
-	else if player has party trap:
-		say "[one of]You have the item you need to catch the stark rats[or]USE PARTY TRAP ON STARK RATS[stopping].";
-	else:
-		say "[one of]The stark rats [hn-in of Seer Trees] are tough to catch[or]You need an item that will catch the stark rats[or]The trap art [hn-in of Art Xtra] will get you started[stopping].";
-	the rule fails;
-
 [the 3 sections below are automatically sorted with sc2.py]
 
 section rev rules [xxrr]
@@ -2636,7 +2610,7 @@ this is the rev-bore-Rob rule:
 	if Rob is moot, the rule fails;
 	if in-sos is true:
 		if Worn Row is unvisited:
-			say "You should visit [Worn Row] west of My Gym.";
+			say "You should visit [Worn Row] west of [hn of My Gym].";
 		else:
 			say "[one of]You need to get rid of Rob[or]He sure does like to talk about himself, and you probably can't talk over him.[or]An action to subterfuge Rob will help[or]The pact cap gives you a hint that you need to do a palindrome-ish action[or]BOR* ROB[or]Bore Rob[stopping].";
 		the rule succeeds;
@@ -2682,7 +2656,7 @@ this is the rev-evade-Dave rule:
 	if Dave is moot, the rule fails;
 	if in-sos is true:
 		if My Gym is unvisited:
-			say "Try looking around [if Yawn Way is unvisited]south and east of [hn of fun enuf][else]south of [hn of Yawn Way][end if].";
+			say "Try looking around [if Yawn Way is unvisited]east and south of [hn of fun enuf][else]south of [hn of Yawn Way][end if].";
 		else if player is not in My Gym:
 			say "Go to My Gym to deal with Dave.";
 		else:
@@ -2800,8 +2774,10 @@ this is the rev-second-food-combo rule:
 			say "You can just take the mayo yam from Yell Alley.";
 		else if UFO tofu is not carried:
 			say "One food is hidden. You need the radar to find it.";
+		the rule succeeds;
 	say "You mix the [si] and [mi] together in Mont Nom, causing a martini tray to roll out from the Ark of Okra all the way to [Fun Enuf].";
 	move martini tram to Fun Enuf;
+	move player to Fun Enuf;
 	moot si;
 	moot mi;
 	the rule succeeds;
@@ -5314,7 +5290,7 @@ an r-shortcut rule for a thing (called x):
 	if x is in TempMet:
 		say "You need to bring back Work Row first. Do so?";
 		if the player yes-consents:
-			now Worn Row is Worky;
+			try workrowing;
 		else:
 			the rule succeeds;
 	if wr-short-note is false, say "NOTE: you guessed one verb abbreviation to use on the [x], but for future reference, the other two are [if x is reifier][b]REV[r] and [b]ROT[r][else if x is reviver][b]REI[r] and [b]ROT[r][else][b]REI[r] and [b]REV[r][end if].";
@@ -7707,6 +7683,21 @@ to decide whether (u1 - a thing) and (u2 - a thing) are mixable:
 	no;
 
 carry out sosing:
+	let take-clues be 0;
+	if debug-state is true, say "Checking what you can just take.";
+	repeat through table of just take it:
+		if to-take entry is in where-is entry and where-is entry is visited:
+			if there is no take-check entry:
+				increment take-clues;
+				say "[if take-clues is 1]Y[else]Also, y[end if]ou can just take [the to-take entry] [hn-in of where-is entry].";
+			else:
+				process the take-check entry;
+				if the rule succeeded:
+					increment take-clues;
+					say "[if take-clues is 1]Y[else]Also, y[end if]ou can just take [the to-take entry] [hn-in of where-is entry].";
+	if take-clues > 0:
+		say "NOTE: This poke to take something may be a distraction from more rigorous puzzles, but I'd rather point you to something you overlooked first than spoil something.";
+		the rule succeeds;
 	now in-sos is true;
 	if debug-state is true, say "First pass through goodacts.";
 	let count be 0;
@@ -7715,14 +7706,26 @@ carry out sosing:
 		if there is a use1 entry:
 			if use1 entry and use2 entry are mixable:
 				if there is a preproc entry:
+					if debug-state is true, say "Checking [preproc entry].";
 					consider the preproc entry;
 					if the rule failed, next;
+					if the rule succeeded:
+						the rule succeeds;
 				say "[if use2 entry is a workable and Worn Row is not worky]Change to WORK ROW, then [end if]USE [printed name of use1 entry in upper case] ON [printed name of use2 entry in upper case].";
 				now in-sos is false;
 				the rule succeeds;
 		if there is a preproc entry:
 			consider the preproc entry;
 			if the rule succeeded, continue the action;
+	if debug-state is true, say "Checking unvisited but available rooms.";
+	repeat with Q running through available rooms:
+		if debug-state is true, say "Checking [Q] if it is visited.";
+		if Q is unvisited:
+			let oiq be in-dir of q;
+			say "[Q] unvisited, checking [oiq] of [Q] or [room oiq of q].";
+			if the room oiq of q is unvisited, next;
+			say "GENERAL HINT: the room [oiq] of [hn of the room oiq of q] is available, but you haven't visited there yet.";
+			the rule succeeds;
 	if debug-state is true, say "Second pass through goodacts.";
 	repeat through table of goodacts:
 		if there is a use1 entry:
@@ -7738,6 +7741,80 @@ carry out sosing:
 			if the rule succeeded, continue the action;
 	say "Uh oh, I couldn't find a hint.";
 	now in-sos is false;
+	the rule succeeds;
+
+section hint rules just take it table [xxoga]
+
+table of just take it [xxjti]
+to-take	where-is	take-check
+trap art	Art Xtra	a rule
+puce cup	Emo Dome	cup-take rule
+troll ort	Swept Pews	--
+stamp mats	Frush Surf	--
+pill lip	Dopy Pod	--
+
+this is the cup-take rule:
+	if pulled-up is true, the rule succeeds;
+	the rule fails;
+		say "You should take the puce cup [hn-in of Emo Dome].";
+		the rule succeeds;
+	the rule fails;
+
+section hint rules [xxhr]
+
+to say once-work: say "[if Worn Row is not worky], once you change to Work Row[end if]"
+
+to say once-word: say "[if Worn Row is not wordy], once you change to Word Row[end if]"
+
+this is the hint-party-trap rule:
+	if in-sos is false, the rule succeeds;
+	if trap art is moot, the rule fails;
+	if ever-wordrow is false:
+		say "You need to change [Worn Row].";
+	else if Art Xtra is unvisited:
+		say "Look north of Yawn Way. You haven't been there yet.";
+	else:
+		say "[one of]You can use the trap art on one of the machines [hn-in of Worn Row][or]Use the trap art on the reifier[stopping][once-work].";
+	the rule succeeds;
+
+this is the hint-stark-rats rule:
+	if in-sos is false, the rule succeeds;
+	if stark rats are moot, the rule fails;
+	if Seer Trees is unvisited:
+		say "You should visit west of Fun Enuf.";
+	else if player has trap art:
+		say "[one of]The trap art is not enough to catch the stark rats, but it's a good plan[or][if Worn Row is unvisited]You haven't found the place to change the trap art, yet[else if Worn Row is not worky]You need to change [Worn Row] to something else[else][one of]You need to use the trap art on one of the machines[or]USE TRAP ART ON REIFIER in Word Row[stopping][end if][stopping].";
+	else if player has party trap:
+		say "[one of]You have the item you need to catch the stark rats[or]USE PARTY TRAP ON STARK RATS[stopping].";
+	else:
+		say "[one of]The stark rats [hn-in of Seer Trees] are tough to catch[or]You need an item that will catch the stark rats[or]The trap art [hn-in of Art Xtra] will get you started[stopping].";
+	the rule succeeds;
+
+this is the hint-door-frood rule:
+	if in-sos is false, the rule succeeds;
+	if Door Frood is moot, the rule fails;
+	if Evaded Ave is unvisited, the rule fails;
+	if Worn Row is unvisited:
+		say "[one of]The Door Frood requires something from a location you haven't been yet[or][if My Gym is visited]You need to go west of My Gym[else]You need to go south and west of Yawn Way[end if][stopping].";
+	else if ever-wordrow is false:
+		say "You need something from [Worn Row], but not in a configuration you've discovered yet. Go there.";
+	else if player has TI:
+		say "[one of]You have what the Door Frood wants[or]USE TI ON DOOR FROOD[stopping].";
+	else if Worn Row is worky:
+		say "You need something from Word Row, but currently it's [Worn Row].";
+	else:
+		say "[one of]You need a book from [Worn Row], but there is more than one[or]The Door Frood likes to look down on people[or]TO IDIOT (TI) is the book the Door Frood would like[or]Once you get TO IDIOT from Word Row, USE TI ON DOOR FROOD[stopping].";
+	the rule succeeds;
+
+this is the hint-pity-tip rule:
+	if in-sos is false, the rule succeeds;
+	if pity tip is moot, the rule fails;
+	if Worn Row is unvisited:
+		say "[one of]The Door Frood requires something from a location you haven't been yet[or][if My Gym is visited]You need to go west of My Gym[else]You need to go south and west of Yawn Way[end if][stopping].";
+	else if ever-wordrow is false:
+		say "You need something from [Worn Row], but not in a configuration you've discovered yet. Go there.";
+	else:
+		say "[one of]The eye needs to scan something. You have an item that points you to the eye and van[or]The van is named Seedy Dee's[or]The pity tip offers a free sample at Seedy Dee's[or]USE PITY TIP ON VAN (or eye)[stopping].";
 	the rule succeeds;
 
 chapter aiding
@@ -8849,6 +8926,49 @@ when play begins:
 	now in-beta is true;
 	say "(DEBUG ONLY NOTE: in-beta is true.)[paragraph break]";
 
+section llpqing
+
+llpqing is an action out of world.
+
+understand the command "llpq" as something new.
+
+understand "llpq" as llpqing.
+
+carry out llpqing:
+	if cur-score of Odd Do is 11, say "You got all the LLPs." instead;
+	say "Note: this command may have stray text.";
+	say "=====FIXED LLPs[line break]";
+	if balm-LLP-yet is false:
+		say "Hacking BALM LAM LLP.";
+		now balm-LLP-yet is true;
+		consider the LLP rule;
+	if dial-yet is false:
+		say "Hacking DIAL AID LLP.";
+		now dial-yet is true;
+		consider the LLP rule;
+	if poop-boob-yet is false, try pooping;
+	if stats-yet is false, try statsing;
+	if refer-yet is false, try refering;
+	if peeped-yet is false, try peeping;
+	say "=====ROVING LLPs[line break]";
+	if slam-mam is false:
+		move player to Ooze Zoo;
+		try slammammalsing;
+	if DWELT LEWD is off-stage:
+		move player to Worn Row;
+		now Worn Row is wordy;
+		try mytraceing tract cart;
+	unless balm-LLP-yet is true:
+		move player to Pro Corp;
+		try balmlabing;
+	unless senile felines are moot:
+		move player to Moo Room;
+		try stacking felines;
+	unless opossum is moot:
+		move player to Le Babel;
+		try opmussing;
+	the rule succeeds;
+
 section llplling - not for release
 
 [ * LLP laundry list]
@@ -9354,7 +9474,9 @@ table of monties (continued)
 montopic (topic)	on-off	test-title (text)	test-action	topic-as-text (text)
 "aid"	false	"AIDING"	try-aid rule	"aid"
 "xlist"	false	"DIRING"	show-dirs rule	"showing directions"
-"sos"	false	"SOSING"	show-dirs rule	"sos new hint"
+"sos"	false	"SOSING"	sos-it rule	"sos new hint"
+
+this is the sos-it rule: try sosing;
 
 this is the show-dirs rule: say "Header = [location of player] ([mrlp])[dir-summary]."
 

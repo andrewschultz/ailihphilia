@@ -512,6 +512,8 @@ understand "poo woop" as a mistake ("How or why it excites you, I don't want to 
 
 chapter My Gym
 
+understand "eva Dave" as a mistake ("Dave isn't distracted by women or slang.[mis of 163]") when Dave is quicknear.
+
 understand "evade dave" as a mistake ("[if dave is moot]Dave's not here, man![else if my gym is visited and dave is in my gym]You already are. Maybe you should go back and do that directly.[else]If you ever find someone named Dave, that would be a good idea.[end if][mis of 160]"). [okall]
 
 understand "mush sum" as a mistake ("Dave worked hard to build these muscles. It'd be mean if you could wipe them out. And impractical--they might be slowing him down a bit, and that could help you.[mis of 161]") when Dave is quicknear.
