@@ -2542,21 +2542,21 @@ puce cup	past sap	--	pre-cup-on-sap rule	sap-to-cup rule	true	false	false	true	t
 puce cup	liar grail	--	pre-cup-on-grail rule	empty-grail rule	true	false	true	true	true	true	Yelpley	Swept Pews	Swept Pews	false	"You pour the purist sirup into the liar grail. As the sirup bubbles, the Wordy Drow slips away from it and ... yes! It breaks free! 'Wend new! Wend new!' it calls to you.[paragraph break]Thoughts flow into your head from the liar grail, but the purist sirup has mutated its complex manipulations into much simple cries of protestation: it just doesn't want you to go there! You shrug, no longer mystified by its sophistry, and the grail cracks and rolls away.[paragraph break]The passage south looks clear. You snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL! You look around, worried a nun will say 'Tut!' But all is still."
 puce cup	dose sod	--	pre-cup-on-sod rule	sod-to-cup rule	true	false	false	true	true	true	Grebeberg	Apse Spa	Apse Spa	false	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough." [sc2-ignore]
 puce cup	Bond Nob	Elan Ale	pre-cup-on-nob rule	empty-nob rule	true	true	true	true	true	true	Yelpley	Drawl Ward	Drawl Ward	false	"You give the Bond Nob the puce cup. Gulp! Gulp! The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. So many places to visit: [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars]... well, everywhere except Bar Drab or Soda Do's or Jo's OJ.' The Bond Nob proceeds to regale lager while vanishing north."
-stamp mats	slate metals	Ye Key	--	--	true	true	false	true	true	true	Yelpley	Scrap Arcs	Scrap Arcs	false	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY. You find it hard to pull the stamp mats out, and when you take YE KEY, the mats quickly morph into the slate metals. Eh, well. Less inventory to worry about."
-demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	true	true	true	Grebeberg	Flu Gulf	Flu Gulf	false	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' and looks a lot better within a few seconds. 'Mute tum!' the Lug cries gratefully before handing you a cash sac and running away."
-cash sac	cross orc	--	--	--	true	true	true	true	true	true	Yelpley	Toll Lot	Toll Lot	false	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
-YOB ATTABOY	Sniffins	Dirt Rid	--	toons-to-den rule	true	true	false	false	false	true	Yelpley	Deft Fed	Deft Fed	false	"Sniffins accepts your gift, with sniffs slowly changing from sadness to something more snooty. Your thanks for helping Sniffins be too good for you is a Dirt Rid. Sniffins shoos you back out to the Toll Lot: 'No, yob! Yon!' There is remodeling to be done! Sniffins will outdo Rentner, whoever that is! From the south, you hear frantic cries of 'Repaper! Repaper! Repaper!'[paragraph break][b]Toll Lot[r]"
+stamp mats	slate metals	Ye Key	pre-mats-on-metals rule	--	true	true	false	true	true	true	Yelpley	Scrap Arcs	Scrap Arcs	false	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY. You find it hard to pull the stamp mats out, and when you take YE KEY, the mats quickly morph into the slate metals. Eh, well. Less inventory to worry about."
+demo med	gulf lug	cash sac	pre-med-on-lug rule	bump-gulf rule	true	true	true	true	true	true	Grebeberg	Flu Gulf	Flu Gulf	false	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' and looks a lot better within a few seconds. 'Mute tum!' the Lug cries gratefully before handing you a cash sac and running away."
+cash sac	cross orc	--	pre-sac-on-orc rule	--	true	true	true	true	true	true	Yelpley	Toll Lot	Toll Lot	false	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
+YOB ATTABOY	Sniffins	Dirt Rid	pre-attaboy-on-Sniffins rule	toons-to-den rule	true	true	false	false	false	true	Yelpley	Deft Fed	Deft Fed	false	"Sniffins accepts your gift, with sniffs slowly changing from sadness to something more snooty. Your thanks for helping Sniffins be too good for you is a Dirt Rid. Sniffins shoos you back out to the Toll Lot: 'No, yob! Yon!' There is remodeling to be done! Sniffins will outdo Rentner, whoever that is! From the south, you hear frantic cries of 'Repaper! Repaper! Repaper!'[paragraph break][b]Toll Lot[r]"
 Elan Ale	Sniffins	Gorge Grog	pre-ale-on-Sniffins rule	--	true	true	false	false	false	true	Yelpley	Deft Fed	Deft Fed	false	"Smuggums looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.' Hey, you're not one to say 'stuff free stuff.'" [af:stand nat's]
 --	--	--	rev-stand-nats rule	--	true	--	--	true	false	false	Yelpley	Deft Fed	Deft Fed	false	--
-Dirt Rid	reviver	Cave Vac	--	--	true	true	false	false	false	true	Yelpley	Worn Row	Worn Row	false	"You watch as the Dirt Rid swirls and becomes shinier and much more powerful--and lighter, too, when you retrieve it. A Cave Vac! It will be capable of cleaning...well, somewhere."
+Dirt Rid	reviver	Cave Vac	pre-rid-on-reviver rule	--	true	true	false	false	false	true	Yelpley	Worn Row	Worn Row	false	"You watch as the Dirt Rid swirls and becomes shinier and much more powerful--and lighter, too, when you retrieve it. A Cave Vac! It will be capable of cleaning...well, somewhere."
 Cave Vac	cassettes sac	radar	--	bump-pod rule	true	true	true	false	false	true	Yelpley	Dopy Pod	Dopy Pod	false	"The Cave Vac has the power to clean up the cassettes sac (and even clean up part of the floor to reveal 'DA PAD,') but it chokes and sputters at the end of the effort.[paragraph break]And while a lot of the cassettes are beyond repair, there's something at the very bottom.[paragraph break]Wow! Radar![paragraph break]You hear noises from the pod, as a hidden robot appears and whisks the garbage away. That's pretty slick! Looking back, the pod doesn't seem so dopy any more, between how the Demo Med already helped and how you're sure the radar will.[paragraph break](NOTE: You can RAD something to use the radar on it.)"
 radar	crag arc	UFO tofu	pre-radar-on-arc rule	radar-crag rule	true	false	false	false	false	true	Yelpley	Toll Lot	Toll Lot	false	"Beeeep... beeeep..... the radar has found something! Two small saucer arises from a hidden part of the crag. So Full UFOs! And splat! something weird and warm drops from them and lands on the radar, which fizzles a bit from the impact and wetness. It hardens quickly and weirdly into a cubic shape. What could it be? You think a minute, rejecting a profane acronym to shout at the departed UFO. The stuff must be UFO tofu.[paragraph break]Fortunately, your Sto-Lots has a handy sealed place where the UFO tofu can be kept dry. You put it there." [af:deny Ned]
 --	--	--	rev-deny-Ned rule	--	true	--	--	true	true	true	Yelpley	Gross Org	Gross Org	false	--
 Ye Key	etage gate	gate tag	pre-key-on-gate rule	tag-later-wipe rule	true	true	true	true	true	true	Yelpley	Gross Org	Gross Org	false	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'A hall! Aha! Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paragraph break]A gate tag falls off. You pick it up." [af:Worn Row]
 --	--	--	rev-worn-row rule	--	true	--	--	true	true	true	Yelpley	Worn Row	Worn Row	false	--
-stinky knits	rotator	brag garb	--	wear-garb rule	true	true	false	false	true	false	Yelpley	Worn Row	Worn Row	false	"The stinky knits fit into the rotator without stuffing them too much. After some spinning (and a smell of detergent--where'd that come from?) you look in again and--they're something much shinier now. Brag garb! You can't resist wearing your flashy new duds, though once you put them on, they do smell a bit ... intense. Looking at a hidden label, you note it has been liberally sloshed with Turbo-Brut."
+stinky knits	rotator	brag garb	pre-knits-on-rotator rule	wear-garb rule	true	true	false	false	true	false	Yelpley	Worn Row	Worn Row	false	"The stinky knits fit into the rotator without stuffing them too much. After some spinning (and a smell of detergent--where'd that come from?) you look in again and--they're something much shinier now. Brag garb! You can't resist wearing your flashy new duds, though once you put them on, they do smell a bit ... intense. Looking at a hidden label, you note it has been liberally sloshed with Turbo-Brut."
 Gorge Grog	Butene Tub	resale laser	--	make-sag rule	true	true	true	false	false	true	Yelpley	Pro Corp	Pro Corp	false	"The Gorge Grog starts fizzing as it pours down the tub, and nothing seems to happen, until you hear a FOOMP below and the tub starts shaking. There must've been an open spark below the tub, perhaps a noir ion. You find it best to hide, and that's the right thing to do, because the butene tub explodes into pieces. Under it is a resale laser! You figure the really good stuff is hidden way back for security reasons, and this is probably just an emergency gadget, but it's got to be good for something.[paragraph break]Soon after you take the resale laser, a small gash sag fills in the explosion you made. Technology! Also, you're not saddled with a bath-tab for the damage you did."
-gold log	rotator	dork rod	--	--	true	true	false	true	true	false	Yelpley	Worn Row	Worn Row	false	"The gold log begins spinning until it cracks open--leaving a dork rod! You wonder briefly if you deserve to take it, or if there's something wrong with you if you deserve to, but once you hold it, memories of past silliness come back, and they're easier to deal with, now. You have some perspective. You even feel sorry for people who pointed out you were a dork. They'd be barred from a cool adventure like this. So you keep the dork rod."
+gold log	rotator	dork rod	pre-log-on-rotator rule	--	true	true	false	true	true	false	Yelpley	Worn Row	Worn Row	false	"The gold log begins spinning until it cracks open--leaving a dork rod! You wonder briefly if you deserve to take it, or if there's something wrong with you if you deserve to, but once you hold it, memories of past silliness come back, and they're easier to deal with, now. You have some perspective. You even feel sorry for people who pointed out you were a dork. They'd be barred from a cool adventure like this. So you keep the dork rod."
 SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	true	false	false	true	false	Grebeberg	Moo Room	Moo Room	false	"With the help of SOME DEMOS, you (after several grunts of 'STRAIN! I! ARTS!') manage to rejig and bend and snap the hay into something more aesthetically pleasing: straw arts! You're so enthusiastic, you even tear up SOME DEMOS and garnish your new straw arts. It just feels right."
 straw arts	Revolt Lover	soot tattoos	--	rebump-art-xtra rule	true	true	false	false	true	false	Yelpley	Art Xtra	Art Xtra	false	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos. They seem pretty plain, but if you can make something out of hay and an old pamphlet, I'm sure you'll be able to work with them.'"
 gate tag	soot tattoos	state tats	--	tats-peripheral rule	true	true	true	false	true	false	Yelpley	Art Xtra	Art Xtra	false	"You stamp the gate tag into the soot tattoos, and they take on an official shape: tat, STAT! They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
@@ -2583,16 +2583,16 @@ Moor Broom	Tru Yurt	Exam Axe	--	bump-ivy rule	true	true	false	false	true	false	G
 wash saw	porch crop	balsa slab	--	--	true	true	false	false	false	false	Grebeberg	Uneven U	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods.[paragraph break]'Yes! Yes! We have achieved AIMED ACADEMIA! Uneven U needs a name change ... to UNITIN['] U! How can I thank you?'[paragraph break]A balsa slab is lying under where the porch crop was. The Code Doc offers it to you. Now, you ... do own wood!"
 Exam Axe	Lie Veil	--	--	--	true	true	true	false	true	false	Grebeberg	Dumb Mud	Dumb Mud	false	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
 --	--	--	rev-get-bros orb rule	--	false	--	--	false	true	false	--	Le Babel	Le Babel	--	--
-DNA band	reifier	DNA hand	--	--	true	true	false	false	false	true	Yelpley	Worn Row	Worn Row	false	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand! It doesn't have any slime or blood leaking, and when you take it, it doesn't twitch too much."
+DNA band	reifier	DNA hand	pre-band-on-reifier rule	--	true	true	false	false	false	true	Yelpley	Worn Row	Worn Row	false	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand! It doesn't have any slime or blood leaking, and when you take it, it doesn't twitch too much."
 roto motor	DNA hand	Mr Arm	--	--	true	true	true	false	false	true	Yelpley	Worn Row	Worn Row	false	"Some of the stuffing inside the hand has to pop out to make space for the roto motor to fit in. There's enough to make a whole arm! The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on the arm (MR. ARM) and hand: BANG NAB. The arm will probably give the hand a bit more reach."
-Eroded Ore	reviver	Ore Zero	--	--	true	true	false	false	false	true	Yelpley	Worn Row	Worn Row	false	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
-you buoy	rotator	ME gem	--	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. 'You BOFFO buoy!' you can't help shouting.[paragraph break]The gem's so tempting and beautiful, you grab it quickly, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
+Eroded Ore	reviver	Ore Zero	pre-ore-on-reviver rule	--	true	true	false	false	false	true	Yelpley	Worn Row	Worn Row	false	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
+you buoy	rotator	ME gem	pre-buoy-on-rotator rule	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. 'You BOFFO buoy!' you can't help shouting.[paragraph break]The gem's so tempting and beautiful, you grab it quickly, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
 Mr Arm	bomb mob	TNT	--	mob-bye rule	true	true	true	false	false	true	Yelpley	Yell Alley	Yell Alley	false	"Mr. Arm walks on his index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. Being an arm, it/he has more leverage than just a DNA hand would've. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course. Perhaps Mr. Arm will find a Do-Bod or even an Evol-Glove to be truly complete. The bomb mob, for their part, becomes a poor troop once they see what they've lost. They wander away."
 Nat's Tan	scorn rocs	--	--	--	true	true	true	true	false	false	Grebeberg	Flu Gulf	Flu Gulf	false	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
 rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	false	false	false	Grebeberg	Sneer Greens	Sneer Greens	false	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Had, ah!' he cries, making a male lam. From his babbling, he's apparently retreating to a glam-amalg (Loot Stool included) or ego loge in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]'Pol? Flop!' you think to yourself, before the ME Totem, sliced several ways, collapses and sinks into the ground. As it does, you hear the Yuge Guy's voice utter 'There's some murdered rum inside. Powerful stuff! You pick it up carefully."
 Bros' Orb	Mirror Rim	Yard Ray	--	sword-rows-reveal rule	true	true	true	false	false	false	Yelpley	Red Roses Order	Red Roses Order	false	"The Bros['] Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Ms. Ism has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, Ms. Ism, live not on evil!' you boom, as the Orb does its work. Ms. Ism looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'My sub-level bus! You won't catch it! The E-Divide will block you!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	false	false	false	Yelpley	Red Roses Order	Red Roses Order	false	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Ms. Ism."
-not-a-baton	reifier	taboo bat	--	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
+not-a-baton	reifier	taboo bat	pre-not-a-baton-on-reifier rule	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
 murdered rum	yard ray	--	--	ray-beepy-now rule	true	true	false	false	false	false	Dim Mid	--	--	false	"The yard ray gleams with energy. It seems like it could do some damage now."
 --	--	--	rev-emit-noontime rule	ray-not-beepy-now rule	true	--	--	false	false	false	Dim Mid	--	--	false	--
 Yard Ray	test set	--	pre-ray-on-set rule	test-set-zapped rule	true	false	true	false	false	false	Dim Mid	Worn Row	Worn Row	false	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
@@ -2975,7 +2975,7 @@ this is the pre-cup-on-sod rule:
 
 this is the pre-key-on-gate rule:
 	if in-sos is true:
-		if Ned is moot, the rule fails;
+		if Ye Key is moot, the rule fails;
 		if player has Ye Key:
 			say "[one of]You have the item you need to open the etage gate[or]USE YE KEY ON ETAGE GATE[stopping].";
 		else:
@@ -7916,10 +7916,12 @@ section hint rules just take it table [xxoga]
 table of just take it [xxjti]
 to-take	where-is	take-check
 trap art	Art Xtra	a rule
+mayo yam	Yell Alley	--
+poo coop	Moo Room	--
 puce cup	Emo Dome	cup-take rule
 troll ort	Swept Pews	--
+demo med	Dopy Pod	--
 stamp mats	Frush Surf	--
-pill lip	Dopy Pod	--
 stinky knits	Gross Org	knits-take rule
 gold log	Pro Corp	--
 DNA band	Pro Corp	--
@@ -7942,6 +7944,84 @@ section hint rules [xxhr]
 to say once-work: say "[if Worn Row is not worky], once you change to Work Row[end if]"
 
 to say once-word: say "[if Worn Row is not wordy], once you change to Word Row[end if]"
+
+this is the pre-ore-on-reviver rule:
+	if in-sos is true:
+		if eroded ore is moot or eroded ore is off-stage, the rule fails;
+		say "[one of]The eroded ore could use an upgrade[or]One of the three machines can fix the eroded ore[or]USE ERODED ORE ON REVIVER[once-work][stopping].";
+	the rule succeeds;
+
+this is the pre-band-on-reifier rule:
+	if in-sos is true:
+		if DNA band is moot or DNA band is off-stage, the rule fails;
+		say "[one of]The DNA band isn't much by itself[or]You should use machines to augment the DNA band[or]There's a question as to which Work Row machine would help the DNA band become something real and living[or]USE DNA BAND ON REIFIER[once-work][stopping].";
+	the rule succeeds;
+
+this is the pre-not-a-baton-on-reifier rule:
+	if in-sos is true:
+		if not-a-baton is moot or not-a-baton is off-stage, the rule fails;
+		say "[one of]The not-a-baton isn't useful as-is[or]One more time with a machine should fix the not-a-baton[or]You may or may not have knocked out a lot of machines so far, so there may be only one left that works on the not-a-baton[or]The not-a-baton needs to be defined by what it is, not what it isn't[or]USE REIFIER ON NOT-A-BATON[once-work][stopping].";
+	the rule succeeds;
+
+this is the pre-knits-on-rotator rule:
+	if in-sos is true:
+		if stinky knits are moot or stinky knits are off-stage, the rule fails;
+		say "[one of]Phew! Those stinky knits could use a washing[or]There's no washing machine in the game, but there's something close enough, the knits might get clean[or]USE STINKY KNITS ON ROTATOR[once-work][stopping].";
+	the rule succeeds;
+
+this is the pre-log-on-rotator rule:
+	if in-sos is true:
+		if gold log is moot or gold log is off-stage, the rule fails;
+		say "[one of]The gold log would be valuable in a treasure hunt, but not here.[or]There's something inside the gold log. It's hollow. What sort of machine would shake it out?[or]USE GOLD LOG ON ROTATOR[once-work].[stopping]";
+	the rule succeeds;
+
+this is the pre-buoy-on-rotator rule:
+	if in-sos is true:
+		if you buoy is moot, the rule fails;
+		say "[one of]The you buoy would be valuable in a treasure hunt, but not here.[or]There's something inside the you buoy. It's hollow. What sort of machine would shake it out?[or]USE YOU BUOY ON ROTATOR[once-work].[stopping]";
+	the rule succeeds;
+
+this is the pre-med-on-lug rule:
+	if in-sos is true:
+		if demo med is moot, the rule fails;
+		if player has demo med:
+			say "[one of]The demo med could help someone[or]The demo med's brand is DYSPEPSYD. Think of someone who might have stomach troubles[or]USE DEMO MED ON GULF LUG[hn-in-blank of Flu Gulf][stopping].";
+		else:
+			say "You don't have what you need to help the Gulf Lug, yet. You need to get beyond Drawl Ward.";
+	the rule succeeds;
+
+this is the pre-sac-on-orc rule:
+	if in-sos is true:
+		if cash sac is moot, the rule fails;
+		if player has cash sac:
+			say "[one of]You have what you need to bribe the cross orc[or]USE CASH SAC ON CROSS ORC[stopping].";
+		else:
+			say "[one of]To pay the orc, you need someone to get you valuables. Preferably, money[or]To get cash for the orc, you may need to help someone who can offer money in exchange for help[or][if Flu Gulf is visited]If you help the Gulf Lug, you can get past the cross orc[else]You haven't found anyone with money yet, but once you get some, you can use it on the cross orc[end if][stopping].";
+	the rule succeeds;
+
+this is the pre-rid-on-reviver rule:
+	if in-sos is true:
+		if Dirt Rid is moot, the rule fails;
+		say "[one of]The Dirt Rid could use an upgrade[or]The Dirt Rid's already real enough, and spinning it might cause its parts to get even more discombobulated[or]USE DIRT RID ON REVIVER[once-work][stopping].";
+	the rule succeeds;
+
+this is the pre-mats-on-metals rule:
+	if in-sos is true:
+		unless Ye Key is off-stage, the rule fails;
+		if player is in Scrap Arcs:
+			say "[one of]You have everything you need here[or]Maybe you can cut something out of the slate metals[or]USE STAMP MATS ON SLATE METALS[stopping].";
+		else:
+			say "[one of]The stamp mats must be good for something[or]They could maybe create a pattern on the right sort of material--material nobody else would use[or]Scrap Arcs has spare stuff[or]USE STAMP MATS ON SLATE METALS[stopping].";
+	the rule succeeds;
+
+this is the pre-attaboy-on-Sniffins rule:
+	if in-sos is true:
+		if yob attaboy is moot, the rule fails;
+		if player has yob attaboy:
+			say "[one of]Sniffins needs help. Maybe you have something[or]USE YOB ATTABOY ON SNIFFINS[stopping].";
+		else:
+			say "[one of]Sniffins could use support[or]Maybe give Sniffins something to read[or]Maybe a book in Word Row would improve Sniffins's social standing[or]GET YOB ATTABOY[once-word][stopping].";
+	the rule succeeds;
 
 this is the pre-art-on-reifier rule:
 	if in-sos is false, the rule succeeds;
