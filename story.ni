@@ -324,7 +324,7 @@ to say kaoscaps:
 to say kcb:
 	(- kaosblab(); -)
 
-to kaos-adj: now kaos-num is the remainder after dividing (kaos-num + a random number between 1 and 127) by 128;
+to kaos-adj: now kaos-num is 1 + the remainder after dividing (kaos-num + a random number between 1 and 126) by 127;
 
 kaos-num is a number that varies.
 
@@ -506,7 +506,7 @@ check requesting the score:
 			say "You have [Q] roving last lousy point[plur of Q] left and [Q2] non-roving LLP[plur of Q2] left.";
 	if player has epicer recipe and north tron is off-stage:
 		say "[if epicer recipe is nox]You realize a score is only an abstract indicator of how well you're doing, and maybe that epicer recipe would help you figure what's what. So you read it, and you note y[else]Y[end if]";
-		say "ou [if tron-got is 0]don't have any of the [number of tronparts in words][else]also have [tron-got] piece[plur of tron-got] of [number of tronparts][end if] North-Tron pieces you need to destroy the [KAOS Oak], according to the epicer recipe[hint-tron].";
+		say "ou [if tron-got is 0]don't have any of the [number of tronparts in words][else]also have [tron-got] piece[plur of tron-got] of [number of tronparts][end if] North-Tron pieces you need to destroy the [kaoscaps], according to the epicer recipe[hint-tron].";
 		now epicer recipe is xed;
 	if mist-found > 0, say "[line break]You've also found [mist-found] of [number of entries in checkoffs] palindromes that were there but not critical to the story. [if mist-found * 2 > number of entries in checkoffs]Very impressive! You've earned whatever hints you've gotten or used[else]This won't affect the ending in any way, but the more you find, the more clues you can get, so hopefully it will be fun[end if].";
 	if score-cheat > 0, say "[line break]Also, you used a warp command or commands to plow past [score-cheat] point-giving activities, but I won't hold it against you. I'm glad you were motivated to try and see the end!";
@@ -1200,7 +1200,7 @@ this is the flu-gulf-stuck rule:
 
 this is the fun-enuf-stuck rule:
 	if Dirge Grid is mapped north of Fun Enuf, the rule fails; [??not good enough -- need to make sure have weapons]
-	say "You need to blast through the [KAOS Oak] north of [hn of Fun Enuf], eventually.";
+	say "You need to blast through the [kaoscaps] north of [hn of Fun Enuf], eventually.";
 	the rule succeeds;
 
 this is the gross-org-stuck rule:
@@ -1567,7 +1567,7 @@ understand "ni win" as niwining.
 carry out niwining:
 	say "WARNING! These may spoil the game if used too early.[paragraph break]";
 	say "[b]TIP IT[r] allows you to skip the next puzzle in the game's walkthrough/test order. It can be used up until the very end. It, however, neglects context beyond what items you use and what items appear.";
-	say "[b]DEEP SPEED[r] jumps you to where you have blown a hole in the [KAOS Oak] to the north of [Fun Enuf] and have the weaponry to take on the Diktat Kid. If the [KAOS Oak] is gone, it has no effect.";
+	say "[b]DEEP SPEED[r] jumps you to where you have blown a hole in the [kaoscaps] to the north of [Fun Enuf] and have the weaponry to take on the Diktat Kid. If the [kaoscaps] is gone, it has no effect.";
 	say "[b]REV OVER[r] allows you to skip a few puzzles at a time.";
 	say "There are also three commands that will warp you over major quests: [b]TOOLS LOOT[r] [if tron-got is 4](done) [end if]acquires all North-Tron parts[b]SMH MS[r] [if Bros' Orb is had-or-done](done) [end if]gets you prepared for Ms. Ism. [b]GUY UG[r] [if rocs are moot and rep popper is had-or-done](done) [end if]gets you prepared for the Yuge Guy. Note these three commands overlap and also do not give you any of the items you need to defeat the Diktat Kid.";
 	the rule succeeds;
@@ -2474,7 +2474,7 @@ wash saw	bunk nub	"The bunk nub is small enough."
 wash saw	cassettes sac	"The wash saw doesn't have enough fluid to clean up the cassettes sac. It'd probably cut whatever's in the sac, too. You need a more powerful, dedicated cleaner."
 wash saw	crag arc	"The crag arc is much too big for the saw to get anywhere. [if UFO tofu is off-stage]Maybe there's a better way to find what's behind there[else]Besides, you found enough[end if]."
 wash saw	el doodle	"The doodle is a mess all over. Besides, cutting it down might lose valuable information once you clean it up."
-wash saw	KAOS Oak	"The wash saw isn't big enough or sharp enough to take down the [KAOS Oak]. You need a much more powerful machine[if player has epicer recipe and epicer recipe is nox], and you notice the epicer recipe could help with that[else if epicer recipe is xed], which you can build if you follow the epicer recipe[end if]."
+wash saw	KAOS Oak	"The wash saw isn't big enough or sharp enough to take down the [kaoscaps]. You need a much more powerful machine[if player has epicer recipe and epicer recipe is nox], and you notice the epicer recipe could help with that[else if epicer recipe is xed], which you can build if you follow the epicer recipe[end if]."
 wash saw	lie veil	"Not even the wash saw could clean off the lie veil. You need something much more brutal."
 wash saw	made dam	"The made dam is much too big for the saw to get anywhere. [if eroded ore is off-stage]Maybe there's a better way to find what's behind there[else]Besides, you found enough[end if]."
 wash saw	scorn rocs	"The rocs are too big and solid for the wash saw to vandalize them."
@@ -2559,8 +2559,8 @@ Gorge Grog	Butene Tub	resale laser	--	make-sag rule	true	true	true	false	false	t
 gold log	rotator	dork rod	pre-log-on-rotator rule	--	true	true	false	true	true	false	Yelpley	Worn Row	Worn Row	false	"The gold log begins spinning until it cracks open--leaving a dork rod! You wonder briefly if you deserve to take it, or if there's something wrong with you if you deserve to, but once you hold it, memories of past silliness come back, and they're easier to deal with, now. You have some perspective. You even feel sorry for people who pointed out you were a dork. They'd be barred from a cool adventure like this. So you keep the dork rod."
 SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	true	false	false	true	false	Grebeberg	Moo Room	Moo Room	false	"With the help of SOME DEMOS, you (after several grunts of 'STRAIN! I! ARTS!') manage to rejig and bend and snap the hay into something more aesthetically pleasing: straw arts! You're so enthusiastic, you even tear up SOME DEMOS and garnish your new straw arts. It just feels right."
 straw arts	Revolt Lover	soot tattoos	--	rebump-art-xtra rule	true	true	false	false	true	false	Yelpley	Art Xtra	Art Xtra	false	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos. They seem pretty plain, but if you can make something out of hay and an old pamphlet, I'm sure you'll be able to work with them.'"
-gate tag	soot tattoos	state tats	--	tats-peripheral rule	true	true	true	false	true	false	Yelpley	Art Xtra	Art Xtra	false	"You stamp the gate tag into the soot tattoos, and they take on an official shape: tat, STAT! They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
-poo coop	gnu dung	--	--	unlimbo-coop rule	true	false	true	true	true	true	Grebeberg	Dumb Mud	Dumb Mud	false	"A heretofore hidden poos scoop pops out from the poo coop. It shovels and vacuums the offending dung into the coop, forming a crass arc that seems to contain several times the volume of the coop itself. Whatever, you can now go west."
+gate tag	soot tattoos	state tats	pre-tag-on-tattoos rule	tats-peripheral rule	true	true	true	false	true	false	Yelpley	Art Xtra	Art Xtra	false	"You stamp the gate tag into the soot tattoos, and they take on an official shape: tat, STAT! They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
+poo coop	gnu dung	--	pre-coop-on-dung rule	unlimbo-coop rule	true	false	true	true	true	true	Grebeberg	Dumb Mud	Dumb Mud	false	"A heretofore hidden poos scoop pops out from the poo coop. It shovels and vacuums the offending dung into the coop, forming a crass arc that seems to contain several times the volume of the coop itself. Whatever, you can now go west."
 poo coop	turf rut	--	pre-coop-on-rut rule	shift-dumb-mud rule	true	true	true	false	false	true	Grebeberg	Dumb Mud	Dumb Mud	false	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture.[paragraph break]A bold(ened) lob! The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
 radar	made dam	eroded ore	pre-radar-on-dam rule	radar-blink rule	true	false	false	false	false	true	Grebeberg	Swamp Maws	Swamp Maws	false	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow. The radar plays a weird scale. Being close to the ore has damaged it somehow."
 NULL ILLUN	Known Wonk	--	--	bump-maws rule	true	true	true	true	true	false	Grebeberg	Yack Cay	Yack Cay	false	"The Known Wonk begins to read. 'Old, lo! Too simple. It has to be beneath me. I mean, it's almost as bad as [i]EBB?! BE[r].' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. Rid a nadir. Rid ANY nadir! Tiny nit? Not on! Wonk, now! Sometimes, simple stuff works.' As the Known Wonk babbles, the mist sim lifts, too. 'Wow!' But no, your acts deserve a better cheer than that. 'H/t! A path!'"
@@ -2581,25 +2581,25 @@ sharp rahs	guru rug	stir writs	--	brag-garb-bye rule	true	true	true	false	true	f
 --	--	--	rev-second-food-combo rule	--	true	--	--	false	false	true	Grebeberg	Mont Nom	Fun Enuf	false	--
 Moor Broom	Tru Yurt	Exam Axe	--	bump-ivy rule	true	true	false	false	true	false	Grebeberg	Yack Cay	Yack Cay	false	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay.[paragraph break]In gratitude, the Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! You trade the moor broom for it. Then, back to the Tru-Yurt for the Wonk. They've done enough for you." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
 wash saw	porch crop	balsa slab	--	--	true	true	false	false	false	false	Grebeberg	Uneven U	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods.[paragraph break]'Yes! Yes! We have achieved AIMED ACADEMIA! Uneven U needs a name change ... to UNITIN['] U! How can I thank you?'[paragraph break]A balsa slab is lying under where the porch crop was. The Code Doc offers it to you. Now, you ... do own wood!"
-Exam Axe	Lie Veil	--	--	--	true	true	true	false	true	false	Grebeberg	Dumb Mud	Dumb Mud	false	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
+Exam Axe	Lie Veil	--	pre-axe-on-veil rule	--	true	true	true	false	true	false	Grebeberg	Dumb Mud	Dumb Mud	false	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
 --	--	--	rev-get-bros orb rule	--	false	--	--	false	true	false	--	Le Babel	Le Babel	--	--
 DNA band	reifier	DNA hand	pre-band-on-reifier rule	--	true	true	false	false	false	true	Yelpley	Worn Row	Worn Row	false	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand! It doesn't have any slime or blood leaking, and when you take it, it doesn't twitch too much."
 roto motor	DNA hand	Mr Arm	--	--	true	true	true	false	false	true	Yelpley	Worn Row	Worn Row	false	"Some of the stuffing inside the hand has to pop out to make space for the roto motor to fit in. There's enough to make a whole arm! The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on the arm (MR. ARM) and hand: BANG NAB. The arm will probably give the hand a bit more reach."
 Eroded Ore	reviver	Ore Zero	pre-ore-on-reviver rule	--	true	true	false	false	false	true	Yelpley	Worn Row	Worn Row	false	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
 you buoy	rotator	ME gem	pre-buoy-on-rotator rule	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. 'You BOFFO buoy!' you can't help shouting.[paragraph break]The gem's so tempting and beautiful, you grab it quickly, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
 Mr Arm	bomb mob	TNT	--	mob-bye rule	true	true	true	false	false	true	Yelpley	Yell Alley	Yell Alley	false	"Mr. Arm walks on his index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. Being an arm, it/he has more leverage than just a DNA hand would've. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course. Perhaps Mr. Arm will find a Do-Bod or even an Evol-Glove to be truly complete. The bomb mob, for their part, becomes a poor troop once they see what they've lost. They wander away."
-Nat's Tan	scorn rocs	--	--	--	true	true	true	true	false	false	Grebeberg	Flu Gulf	Flu Gulf	false	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
+Nat's Tan	scorn rocs	--	pre-tan-on-rocs rule	--	true	true	true	true	false	false	Grebeberg	Flu Gulf	Flu Gulf	false	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
 rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	false	false	false	Grebeberg	Sneer Greens	Sneer Greens	false	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Had, ah!' he cries, making a male lam. From his babbling, he's apparently retreating to a glam-amalg (Loot Stool included) or ego loge in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]'Pol? Flop!' you think to yourself, before the ME Totem, sliced several ways, collapses and sinks into the ground. As it does, you hear the Yuge Guy's voice utter 'There's some murdered rum inside. Powerful stuff! You pick it up carefully."
-Bros' Orb	Mirror Rim	Yard Ray	--	sword-rows-reveal rule	true	true	true	false	false	false	Yelpley	Red Roses Order	Red Roses Order	false	"The Bros['] Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Ms. Ism has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, Ms. Ism, live not on evil!' you boom, as the Orb does its work. Ms. Ism looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'My sub-level bus! You won't catch it! The E-Divide will block you!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
+Bros' Orb	Mirror Rim	Yard Ray	pre-orb-on-rim rule	sword-rows-reveal rule	true	true	true	false	false	false	Yelpley	Red Roses Order	Red Roses Order	false	"The Bros['] Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Ms. Ism has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, Ms. Ism, live not on evil!' you boom, as the Orb does its work. Ms. Ism looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'My sub-level bus! You won't catch it! The E-Divide will block you!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	--	--	true	true	false	false	false	false	Yelpley	Red Roses Order	Red Roses Order	false	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Ms. Ism."
 not-a-baton	reifier	taboo bat	pre-not-a-baton-on-reifier rule	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
 murdered rum	yard ray	--	--	ray-beepy-now rule	true	true	false	false	false	false	Dim Mid	--	--	false	"The yard ray gleams with energy. It seems like it could do some damage now."
 --	--	--	rev-emit-noontime rule	ray-not-beepy-now rule	true	--	--	false	false	false	Dim Mid	--	--	false	--
 Yard Ray	test set	--	pre-ray-on-set rule	test-set-zapped rule	true	false	true	false	false	false	Dim Mid	Worn Row	Worn Row	false	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
 --	--	--	rev-create-tron rule	--	true	--	--	false	false	false	Dim Mid	Fun Enuf	Fun Enuf	false	--
-ME gem	Knife Fink	--	--	kid-left rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, perhaps to create the Red Ronin Order." [b4:use TNT on ore zero]
-taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev senses the Taboo Bat's ancient untapped power. It's not particularly violent or lethal, but it is just perfect to scare an orthodoxy as warped as the Verses Rev's, who mutters 'Rev, off, over' and stumbles away! Perhaps to the safety of ... a rev reserver."
-Yard Ray	redivider	X-ITE TIX	--	kid-bye rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"'Havoc, OVAH!' you should as you aim and fire the yard ray. A direct hit! The redivider begins to fizzle.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The entire Dirge Grid brightens, and the yard ray hums and explodes. But it's too late for the Diktat Kid to avoid an electro-shock. 'Deleveled!' the Kid screams several times, before breaking down into tears. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid grows redder ... redder ... and suddenly the remains of the redivider begin swirling, and they catch the Diktat Kid, who moans 'Lo, a Gaol' before being whisked off.[paragraph break]With the Kid gone, the Dirge Grid grows less dark, the no-go gon winks out, and saner arenas are revealed all around. The swirling remains of the redivider harden into what can only be an XILE helix.[paragraph break]Revel, clever! Revel, ever![paragraph break]You are so busy watching, you didn't notice something else fell out of the redivider: X-ITE TIX! You pick them up. Wow! Yo, joy! Wow!"
+ME gem	Knife Fink	--	pre-gem-on-fink rule	kid-left rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, perhaps to create the Red Ronin Order." [b4:use TNT on ore zero]
+taboo bat	Verses Rev	--	pre-bat-on-rev rule	kid-left rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev senses the Taboo Bat's ancient untapped power. It's not particularly violent or lethal, but it is just perfect to scare an orthodoxy as warped as the Verses Rev's, who mutters 'Rev, off, over' and stumbles away! Perhaps to the safety of ... a rev reserver."
+Yard Ray	redivider	X-ITE TIX	pre-ray-on-redivider rule	kid-bye rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"'Havoc, OVAH!' you should as you aim and fire the yard ray. A direct hit! The redivider begins to fizzle.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The entire Dirge Grid brightens, and the yard ray hums and explodes. But it's too late for the Diktat Kid to avoid an electro-shock. 'Deleveled!' the Kid screams several times, before breaking down into tears. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid grows redder ... redder ... and suddenly the remains of the redivider begin swirling, and they catch the Diktat Kid, who moans 'Lo, a Gaol' before being whisked off.[paragraph break]With the Kid gone, the Dirge Grid grows less dark, the no-go gon winks out, and saner arenas are revealed all around. The swirling remains of the redivider harden into what can only be an XILE helix.[paragraph break]Revel, clever! Revel, ever![paragraph break]You are so busy watching, you didn't notice something else fell out of the redivider: X-ITE TIX! You pick them up. Wow! Yo, joy! Wow!"
 X-ITE TIX	TIX EXIT	--	pre-tix-on-exit rule	you-win rule	true	false	false	false	false	false	Dim Mid	Fun Enuf	Fun Enuf	false	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse] [zzgood]
 
@@ -2625,7 +2625,7 @@ this is the rev-create-tron rule:
 	if KAOS Oak is moot, the rule fails;
 	if in-sos is true:
 		if tron-got is not 4, the rule fails;
-		say "Use any piece of the North-Tron (or the epicer recipe) with any other piece, or the recipe, to break through the [KAOS Oak].";
+		say "Use any piece of the North-Tron (or the epicer recipe) with any other piece, or the recipe, to break through the [kaoscaps].";
 		the rule succeeds;
 	build-the-tron;
 	the rule succeeds;
@@ -2862,6 +2862,25 @@ this is the pre-ale-on-Sniffins rule:
 	say "Sniffins is too distraught to conduct any business. Perhaps a gift of self-help would be more appropriate right now.";
 	the rule fails;
 
+this is the pre-axe-on-veil rule:
+	if in-sos is true:
+		if exam axe is off-stage, the rule fails;
+		say "[one of]You need something that can really cut through the lie veil[or]USE EXAM AXE ON LIE VEIL[stopping].";
+		the rule succeeds;
+	the rule succeeds;
+
+this is the pre-bat-on-rev rule:
+	if in-sos is true:
+		if taboo bat is moot or player is not in Dirge Grid, the rule fails;
+		say "[one of]The Verses Rev is very orthodox and opposed to unusual things. Maybe you can shock the Rev[or]You have something outlandish[or]USE TABOO BAT ON VERSES REV[stopping].";
+	the rule succeeds;
+
+this is the pre-coop-on-dung rule:
+	if in-sos is true:
+		if dung is moot, the rule fails;
+		say "[one of]You need some implement to get rid of the gnu dung[or]There is something that is specifically meant to take care of dung-ish stuff[or]The poo coop [hn-in of Moo Room] can handle the gnu dung[or]USE POO COOP ON GNU DUNG[stopping].";
+	the rule succeeds;
+
 this is the pre-coop-on-rut rule:
 	if in-sos is true:
 		if poo coop is moot, the rule fails;
@@ -2973,6 +2992,12 @@ this is the pre-cup-on-sod rule:
 		the rule fails;
 	the rule succeeds;
 
+this is the pre-gem-on-fink rule:
+	if in-sos is true:
+		if ME gem is moot or player is not in Dirge Grid, the rule fails;
+		say "[one of]The Knife Fink is pretty mercenary. Maybe you can use bribery[or]You have something valuable that even other bad guys didn't like, but the Knife Fink might[or]USE ME GEM ON KNIFE FINK[stopping].";
+	the rule succeeds;
+
 this is the pre-key-on-gate rule:
 	if in-sos is true:
 		if Ye Key is moot, the rule fails;
@@ -3028,6 +3053,12 @@ this is the pre-nub-on-reviver rule:
 			say "[one of]The bunk nub is worn out and no longer good for sleeping on[or]It would be nice to make the bunk nub a bit better to sleep on[or]You could breathe life into the bunk nub with some machine action[or]USE BUNK NUB ON REVIVER[stopping].";
 	the rule succeeds;
 
+this is the pre-orb-on-rim rule:
+	if in-sos is true:
+		if player is not in Red Roses Order or Ms Ism is not in Red Roses Order, the rule fails;
+		say "[one of]The Bros['] Orb got you in, and it seems extra powerful and reflectivee, but it's not clear what to use it on[or]Trial and error can tell what to use the Orb on, but you may notice one thing is good at showing your faults[or]The mirror rim shows how silly your cap looks on you[or]USE BROS ORB ON MIRROR RIM to shatter the mirror[stopping].";
+	the rule succeeds;
+
 this is the pre-radar-on-arc rule:
 	if in-sos is true:
 		if UFO tofu is not off-stage, the rule fails;
@@ -3060,6 +3091,12 @@ this is the pre-radar-on-dam rule:
 		the rule fails;
 	the rule succeeds;
 
+this is the pre-ray-on-redivider rule:
+	if in-sos is true:
+		if yard ray is moot or player is not in Dirge Grid, the rule fails;
+		say "[one of]You've got one shot with the Yard Ray, but what to use it on?[or]Killing the Diktat Kid won't stop the other machines from working.[or]The purely violent machines aren't critical, either.[or]USE YARD RAY ON REDIVIDER[stopping].";
+	the rule succeeds;
+
 this is the pre-ray-on-set rule:
 	if in-sos is true:
 		if test set is moot, the rule fails;
@@ -3085,6 +3122,21 @@ this is the pre-saw-on-sap rule:
 	if sap-takeable is true:
 		if revving-over is false, say "You already hacked enough sap off.";
 		the rule fails;
+	the rule succeeds;
+
+this is the pre-tag-on-tattoos rule:
+	if in-sos is true:
+		if player does not have tag or player does not have tattoos, the rule fails;
+		say "[one of]You can make the ID you need to get past the DIFF-ID[or]You may notice the patterns of roses, or ... throughout the game[or]The gate tag has the pattern to get by the DIFF ID[or]The soot tattoos can be used to press the pattern on your skin[or]USE GATE TAG ON SOOT TATTOOS[stopping].";
+	the rule succeeds;
+
+this is the pre-tan-on-rocs rule:
+	if in-sos is true:
+		if rocs are moot, the rule fails;
+		if player does not have tan:
+			say "[one of]You need to get something gross to deface the scorn rocs and ruin their shininess.[or]What is gross and discolored in Yelpley?[or]Nat's Tan in [Deft Fed] is weird and orange[or]Find a way to get Nat's Tan and then use it on the scorn rocs[stopping].";
+		else:
+			say "[one of]You have what you need to vandalize the rocs and dent their pride[or]USE NAT'S TAN ON SCORN ROCS[stopping].";
 	the rule succeeds;
 
 this is the pre-tix-on-exit rule:
@@ -3537,6 +3589,8 @@ instead of doing something with KAOS Oak when flee elf is in Fun Enuf: say "The 
 
 The KAOS Oak is peripheral scenery in Fun Enuf. "[if flee elf is in Fun Enuf]It's forbiddingly wide[else]It is much too sturdy. You'll need a wild, powerful contraption to deal with it[end if]."
 
+printed name of KAOS Oak is "[kaoscaps]".
+
 after examining the KAOS Oak:
 	if KAOS Oak is not xed, say "One look and you find yourself mumbling 'Elp! A Maple!' when you know it obviously isn't. You feel dumb, then take a second to get smart. Now that's (ch/k)aos! ";
 	if grammarg is false, say "The [kaoscaps] changes [one of][or]again [stopping]as you look at it. ";
@@ -3653,9 +3707,9 @@ to decide which number is east-LLP:
 check going north in Fun Enuf:
 	if Diktat Kid is moot, say "No need to revisit the scene of your victory. On to ... NU FUN!" instead;
 	if flee elf is in Fun Enuf, say "The flee elf sees you looking north but says 'First things first! Get the cap the right way, here.'" instead;
-	unless epicer recipe is xed or KAOS Oak is moot, say "You don't have a way through the [KAOS Oak], [if epicer recipe is off-stage]or anything that would show you one[else]but maybe there's something you could read right now to get an idea[end if]." instead;
+	unless epicer recipe is xed or KAOS Oak is moot, say "You don't have a way through the [kaoscaps], [if epicer recipe is off-stage]or anything that would show you one[else]but maybe there's something you could read right now to get an idea[end if]." instead;
 	if epicer recipe is not moot and epicer recipe is nox, say "You need to get there. But you have no clue what to build, or how[if number of carried ingredients > 2]--though some of your inventory looks useful for that[end if][if player has epicer recipe]. Hmm, maybe Xing the epicer recipe will help that[end if]." instead;
-	if north tron is off-stage, say "You can't go north with the [KAOS Oak] in the way. You need to build the North-Tron to destroy the oak[if tron-got is 4]. In fact, you probably can just use any of the parts you have on each other to build it, now[else]. You currently have [tron-got] piece[plur of tron-got][end if]." instead;
+	if north tron is off-stage, say "You can't go north with the [kaoscaps] in the way. You need to build the North-Tron to destroy the oak[if tron-got is 4]. In fact, you probably can just use any of the parts you have on each other to build it, now[else]. You currently have [tron-got] piece[plur of tron-got][end if]." instead;
 	if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
 	if murdered rum is not moot, say "You have the yard ray, but it isn't, well, charged." instead;
 	if emitted is false, say "You don't know how to work the yard ray[if yard ray is xed]. EMIT ********--hmm, what could those eight letters be?[else]. Maybe examine it for instructions.[end if]" instead;
@@ -3710,7 +3764,7 @@ understand "pack" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did." instead;
-	say "'Rec [']er!' shouts the Flee Elf. 'Hat! Ah!'[paragraph break]The Flee Elf hands you a Set O Notes and explains you need to find a way to destroy the [KAOS Oak] to the north. Also, the Flee Elf notes the LOVE VOL and LO VOL settings on the pact cap: LO VOL means the cap is quiet and won't make a weird noise if you look at things that need a weird action. LOVE VOL means you will. 'It's best I...' and with that, the Flee Elf becomes a FLED elf, pointing at the tile lit (slightly altered). You notice a TIX EXIT to the south, but you don't have any tickets.";
+	say "'Rec [']er!' shouts the Flee Elf. 'Hat! Ah!'[paragraph break]The Flee Elf hands you a Set O Notes and explains you need to find a way to destroy the [kaoscaps] to the north. Also, the Flee Elf notes the LOVE VOL and LO VOL settings on the pact cap: LO VOL means the cap is quiet and won't make a weird noise if you look at things that need a weird action. LOVE VOL means you will. 'It's best I...' and with that, the Flee Elf becomes a FLED elf, pointing at the tile lit (slightly altered). You notice a TIX EXIT to the south, but you don't have any tickets.";
 	wfak;
 	say "[line break]You put the cap on. It fits okay. It can stay all quest. Not very stylish, but it sure beats wearing a bib.";
 	get-cap;
@@ -6402,7 +6456,7 @@ does the player mean taking the tent net when the player is in Trapeze Part: it 
 
 chapter epicer recipe
 
-the epicer recipe is a helpdoc. description is "[one of]You've seen recipes before, but this is a big interesting one! It's got instructions, not just for building some tike kit, but a north-tron, which can blast through anything ... including the [KAOS Oak]! But first there's a list of parts[or]You focus on the parts to build the north-tron[stopping].[paragraph break][tronpartlist][run paragraph on]". importancy of the epicer recipe is 3.
+the epicer recipe is a helpdoc. description is "[one of]You've seen recipes before, but this is a big interesting one! It's got instructions, not just for building some tike kit, but a north-tron, which can blast through anything ... including the [kaoscaps]! But first there's a list of parts[or]You focus on the parts to build the north-tron[stopping].[paragraph break][tronpartlist][run paragraph on]". importancy of the epicer recipe is 3.
 
 after examining epicer recipe:
 	if tron-got is 4, say "Well, You've got everything[hint-tron].";
@@ -7464,14 +7518,14 @@ in-tool-warp is a truth state that varies.
 
 carry out toolslooting:
 	abide by the chase-warp-check rule;
-	if KAOS Oak is moot, say "You already destroeyd the [KAOS Oak]." instead;
+	if KAOS Oak is moot, say "You already destroyed the [kaoscaps]." instead;
 	if tron-got is 4, say "You already have all the North Tron pieces the epicer recipe says you need." instead;
 	unless Bros' Orb is in Le Babel or soot tattoos are off-stage, say "You already have what you need to defeat Ms. Ism." instead;
 	now in-tool-warp is true;
 	try revovering;
 	now in-tool-warp is false;
 	drop-player-at Fun Enuf;
-	say "You're ready to put the North-Tron together[if main-score < 73]. You may have other things to do before visiting the Diktat Kid, but you're ready to destroy the [KAOS Oak] now[end if].";
+	say "You're ready to put the North-Tron together[if main-score < 73]. You may have other things to do before visiting the Diktat Kid, but you're ready to destroy the [kaoscaps] now[end if].";
 	the rule succeeds;
 
 to decide which number is main-score:
