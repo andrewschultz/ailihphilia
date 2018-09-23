@@ -1135,6 +1135,9 @@ to say honly of (rm - a room):
 to say hn-in of (rm - a room):
 	say "[if player is in rm]here[else]in [rm][end if]"
 
+to say hn-in-blank of (rm - a room):
+	say "[if player is not in rm]in [rm] [end if]"
+
 to say hn of (rm - a room):
 	say "[if player is in rm]here[else][rm][end if]"
 
@@ -2543,7 +2546,7 @@ stamp mats	slate metals	Ye Key	--	--	true	true	false	true	true	true	Yelpley	Scra
 demo med	gulf lug	cash sac	--	bump-gulf rule	true	true	true	true	true	true	Grebeberg	Flu Gulf	Flu Gulf	false	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' and looks a lot better within a few seconds. 'Mute tum!' the Lug cries gratefully before handing you a cash sac and running away."
 cash sac	cross orc	--	--	--	true	true	true	true	true	true	Yelpley	Toll Lot	Toll Lot	false	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
 YOB ATTABOY	Sniffins	Dirt Rid	--	toons-to-den rule	true	true	false	false	false	true	Yelpley	Deft Fed	Deft Fed	false	"Sniffins accepts your gift, with sniffs slowly changing from sadness to something more snooty. Your thanks for helping Sniffins be too good for you is a Dirt Rid. Sniffins shoos you back out to the Toll Lot: 'No, yob! Yon!' There is remodeling to be done! Sniffins will outdo Rentner, whoever that is! From the south, you hear frantic cries of 'Repaper! Repaper! Repaper!'[paragraph break][b]Toll Lot[r]"
-Elan Ale	Sniffins	Gorge Grog	Sniffins-successful rule	--	true	true	false	false	false	true	Yelpley	Deft Fed	Deft Fed	false	"Smuggums looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.' Hey, you're not one to say 'stuff free stuff.'" [af:stand nat's]
+Elan Ale	Sniffins	Gorge Grog	is-Sniffins-smuggums rule	--	true	true	false	false	false	true	Yelpley	Deft Fed	Deft Fed	false	"Smuggums looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.' Hey, you're not one to say 'stuff free stuff.'" [af:stand nat's]
 --	--	--	rev-stand-nats rule	--	true	--	--	true	false	false	Yelpley	Deft Fed	Deft Fed	false	--
 Dirt Rid	reviver	Cave Vac	--	--	true	true	false	false	false	true	Yelpley	Worn Row	Worn Row	false	"You watch as the Dirt Rid swirls and becomes shinier and much more powerful--and lighter, too, when you retrieve it. A Cave Vac! It will be capable of cleaning...well, somewhere."
 Cave Vac	cassettes sac	radar	--	bump-pod rule	true	true	true	false	false	true	Yelpley	Dopy Pod	Dopy Pod	false	"The Cave Vac has the power to clean up the cassettes sac (and even clean up part of the floor to reveal 'DA PAD,') but it chokes and sputters at the end of the effort.[paragraph break]And while a lot of the cassettes are beyond repair, there's something at the very bottom.[paragraph break]Wow! Radar![paragraph break]You hear noises from the pod, as a hidden robot appears and whisks the garbage away. That's pretty slick! Looking back, the pod doesn't seem so dopy any more, between how the Demo Med already helped and how you're sure the radar will.[paragraph break](NOTE: You can RAD something to use the radar on it.)"
@@ -2558,15 +2561,15 @@ SOME DEMOS	yahoo hay	straw arts	--	hay-gone rule	true	true	false	false	true	fals
 straw arts	Revolt Lover	soot tattoos	--	rebump-art-xtra rule	true	true	false	false	true	false	Yelpley	Art Xtra	Art Xtra	false	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos. They seem pretty plain, but if you can make something out of hay and an old pamphlet, I'm sure you'll be able to work with them.'"
 gate tag	soot tattoos	state tats	--	tats-peripheral rule	true	true	true	false	true	false	Yelpley	Art Xtra	Art Xtra	false	"You stamp the gate tag into the soot tattoos, and they take on an official shape: tat, STAT! They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
 poo coop	gnu dung	--	--	unlimbo-coop rule	true	false	true	true	true	true	Grebeberg	Dumb Mud	Dumb Mud	false	"A heretofore hidden poos scoop pops out from the poo coop. It shovels and vacuums the offending dung into the coop, forming a crass arc that seems to contain several times the volume of the coop itself. Whatever, you can now go west."
-poo coop	turf rut	--	coop-full rule	shift-dumb-mud rule	true	true	true	false	false	true	Grebeberg	Dumb Mud	Dumb Mud	false	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture.[paragraph break]A bold(ened) lob! The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
-radar	made dam	eroded ore	got-ore-yet rule	radar-blink rule	true	false	false	false	false	true	Grebeberg	Swamp Maws	Swamp Maws	false	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow. The radar plays a weird scale. Being close to the ore has damaged it somehow."
+poo coop	turf rut	--	pre-coop-on-rut rule	shift-dumb-mud rule	true	true	true	false	false	true	Grebeberg	Dumb Mud	Dumb Mud	false	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture.[paragraph break]A bold(ened) lob! The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
+radar	made dam	eroded ore	pre-radar-on-dam rule	radar-blink rule	true	false	false	false	false	true	Grebeberg	Swamp Maws	Swamp Maws	false	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow. The radar plays a weird scale. Being close to the ore has damaged it somehow."
 NULL ILLUN	Known Wonk	--	--	bump-maws rule	true	true	true	true	true	false	Grebeberg	Yack Cay	Yack Cay	false	"The Known Wonk begins to read. 'Old, lo! Too simple. It has to be beneath me. I mean, it's almost as bad as [i]EBB?! BE[r].' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. Rid a nadir. Rid ANY nadir! Tiny nit? Not on! Wonk, now! Sometimes, simple stuff works.' As the Known Wonk babbles, the mist sim lifts, too. 'Wow!' But no, your acts deserve a better cheer than that. 'H/t! A path!'"
 el doodle	edits tide	spa maps	--	rahs-too rule	true	true	false	false	true	false	Grebeberg	Yack Cay	Yack Cay	false	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps! And there is a bonus! It appears El Doodle was so jumbled, there were two things. Sharp rahs appear on another sheet of paper, as some sort of confused motivation, and you take them."
 elope pole	kayak	you buoy	--	--	true	true	false	false	false	false	Grebeberg	Lac Oft Focal	Lac Oft Focal	false	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where. You whisper 'Row, or' whenever you get tired. Then you see Elided Ile in the distance. It can't be Elsif Isle, because there are no computers on the shore.[paragraph break]So you stop off there. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and you are worthy to fight the vicious Bar Crab. It is no match for your elope pole. The citizens hand you a YOU BUOY to tell you they're glad you're you, asking only for the elope pole as a souvenir. Well, it was getting a bit awkward to carry.[paragraph break]They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Lac Oft Focal. As it gets near and bends away, you jump off, using the buoy to paddle and float back all the way."
 dork rod	tao boat	enact cane	--	--	true	true	false	true	true	false	Grebeberg	Lac Oft Focal	Lac Oft Focal	false	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
 tent net	Code Doc	--	--	--	true	true	false	false	true	false	Grebeberg	Uneven U	Uneven U	false	"Together, you figure out what to do to make the tent net proper cover for Uneven U. 'Tie it ... tie it ...' then 'Net: safe. fasten!'[paragraph break]Once the work is done, the Code Doc thanks you. 'Let me know if you need help learning ... well, anything. Oh, and call me Dr. D., if you'd like.'[paragraph break]How thoughtful! That could save a few keystrokes in the future[if spa maps are preclued]! Maybe the very near future, if you ask about the spa maps again[end if]."
-spa maps	Code Doc	--	maps-still-confusing rule	maps-explain rule	true	false	false	false	true	false	Grebeberg	Uneven U	Uneven U	false	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my for-prof math tam for this one. One second, let's see--Aha! Oho...'[paragraph break]You each split an Ed-Ade to make sure the lesson is taught and remembered well. Despite a minor pupil slip-up, the Code Doc is never edu-rude. It soon makes complete sense to you. You don't know how to say thanks. Everything seems too long-winded or said before, until ... 'Def ed!'"
-spa maps	go by bog	sage gas	maps-readable rule	gas-think-wipe rule	true	true	false	false	true	false	Grebeberg	Apse Spa	Apse Spa	false	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
+spa maps	Code Doc	--	pre-maps-on-doc rule	maps-explain rule	true	false	false	false	true	false	Grebeberg	Uneven U	Uneven U	false	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my for-prof math tam for this one. One second, let's see--Aha! Oho...'[paragraph break]You each split an Ed-Ade to make sure the lesson is taught and remembered well. Despite a minor pupil slip-up, the Code Doc is never edu-rude. It soon makes complete sense to you. You don't know how to say thanks. Everything seems too long-winded or said before, until ... 'Def ed!'"
+spa maps	go by bog	sage gas	pre-maps-on-bog rule	gas-think-wipe rule	true	true	false	false	true	false	Grebeberg	Apse Spa	Apse Spa	false	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
 enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	false	true	false	Grebeberg	Moo Room	Moo Room	false	"You stick some strands of yahoo hay into the damaged end of the enact cane. It's now a moor broom!"
 --	--	--	rev-pace-cap rule	--	true	--	--	false	true	false	Dim Mid	--	--	false	--
 troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	false	true	false	Grebeberg	--	--	false	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the stinky knits, but still quite distinctive. The ort must've been covered by the dirt for a long time, because it disintegrates as its essence is leaked onto the brag garb." [b4:pace cap] [af:yak okay]
@@ -2592,7 +2595,7 @@ balsa slab	sword rows	not-a-baton	--	--	true	true	false	false	false	false	Yelple
 not-a-baton	reifier	taboo bat	--	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
 murdered rum	yard ray	--	--	ray-beepy-now rule	true	true	false	false	false	false	Dim Mid	--	--	false	"The yard ray gleams with energy. It seems like it could do some damage now."
 --	--	--	rev-emit-noontime rule	ray-not-beepy-now rule	true	--	--	false	false	false	Dim Mid	--	--	false	--
-Yard Ray	test set	--	ready-to-test rule	test-set-zapped rule	true	false	true	false	false	false	Dim Mid	Worn Row	Worn Row	false	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
+Yard Ray	test set	--	pre-ray-on-set rule	test-set-zapped rule	true	false	true	false	false	false	Dim Mid	Worn Row	Worn Row	false	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
 --	--	--	rev-create-tron rule	--	true	--	--	false	false	false	Dim Mid	Fun Enuf	Fun Enuf	false	--
 ME gem	Knife Fink	--	--	kid-left rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, perhaps to create the Red Ronin Order." [b4:use TNT on ore zero]
 taboo bat	Verses Rev	--	--	kid-left rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev senses the Taboo Bat's ancient untapped power. It's not particularly violent or lethal, but it is just perfect to scare an orthodoxy as warped as the Verses Rev's, who mutters 'Rev, off, over' and stumbles away! Perhaps to the safety of ... a rev reserver."
@@ -2741,9 +2744,9 @@ this is the rev-puff-up rule:
 		else if ever-workrow is false:
 			say "You need to change [Worn Row].";
 		else if stark rats are in Seer Trees:
-			say "You need to clear a way west beyond Seer Trees.";
+			say "To go east, you first need to clear a way west beyond [if Seer Trees is visited]Seer Trees[else]Fun Enuf[end if].";
 		else if player does not have Spur Ups:
-			say "[if Cold Loc is not visited]You need to visit 1W 1N of Fun Enuf[else]King Nik in Cold Loc has an item you need, if you help him.[end if]."; [?? clues still bounce you around a bit]
+			say "[if Cold Loc is not visited]You need to visit [vague-dir of Cold Loc][else]King Nik in Cold Loc has an item you need, if you help him.[end if]."; [?? clues still bounce you around a bit]
 		else:
 			say "[one of]King Nik's Spur Ups are handy here[or]Each one will help you do something UP[or]You need to feel better about yourself[or]PU* UP turns up nothing, though PUT UP seems promising, but...[or]PU** UP has possibilities[or]PUFF UP to gain access east of Yawn Way[stopping].";
 		the rule succeeds;
@@ -2844,6 +2847,12 @@ this is the rev-yak-okay rule:
 section pre-use rules [xxpre]
 
 this is the check-sap-cup rule:
+	if liar grail is moot:
+		if revving-over is false and in-sos is false, say "You doubt you will need the past sap again, since it got you by the Liar Grail[if puce cup is soddy]. In fact, the sod seems like a good thing to have[else]. But maybe something else[end if].";
+		the rule fails;
+	if puce cup is sappy:
+		if revving-over is false and in-sos is false, say "The puce cup already contains past sap.";
+		the rule fails;
 	if sap-takeable is false:
 		if in-sos is true:
 			say "[one of]You need to cut the sap off[or]USE SAW ON SAP[stopping].";
@@ -2851,27 +2860,36 @@ this is the check-sap-cup rule:
 		if revving-over is false, say "The sap is stuck to the rife fir.";
 		get-reject past sap;
 		the rule fails;
-	if liar grail is moot:
-		if revving-over is false, say "You doubt you will need the past sap again, since it got you by the Liar Grail[if puce cup is soddy]. In fact, the sod seems like a good thing to have[else]. But maybe something else[end if].";
-		the rule fails;
-	if puce cup is sappy:
-		if revving-over is false, say "The puce cup already contains past sap.";
-		the rule fails;
+	if in-sos is true:
+		if liar grail is moot, the rule fails;
+		if puce cup is sappy, the rule fails;
+		say "You need to USE the sap on the puce cup.";
+		the rule succeeds;
 	later-wipe past sap;
 	if puce cup is soddy:
-		if revving-over is false, say "The puce cup already contains dose sod. Pour it out to get the past sap?";
-		if the player yes-consents:
-			say "The sod dissolves into the ground.";
+		if revving-over is false and in-sos is false:
+			say "The puce cup already contains dose sod. Apse Spa had enough, you could get more sod later. Pour it out to get the past sap?";
+			if the player yes-consents:
+				say "The sod dissolves into the ground.";
+				the rule succeeds;
+			say "Maybe later, then.";
+		if in-sos is true:
+			say "You may wish to replace the dose sod with past sap.";
 			the rule succeeds;
 		the rule fails;
 	the rule succeeds;
 
 this is the check-sod-cup rule:
 	later-wipe dose sod;
+	if in-sos is true:
+		if puce cup is moot, the rule fails;
 	if puce cup is soddy:
-		if revving-over is false, say "The puce cup already contains dose sod.";
+		if revving-over is false and in-sos is false, say "The puce cup already contains dose sod.";
 		the rule fails;
 	if puce cup is sappy:
+		if in-sos is true:
+			say "You need to replace the past sap with dose sod.";
+			the rule succeeds;
 		say "The puce cup already contains past sap. Pour it out to get the dose sod?";
 		if the player yes-consents:
 			say "The purist sirup, formerly the past sap, oozes out and soaks into the ground.";
@@ -2879,24 +2897,89 @@ this is the check-sod-cup rule:
 		the rule fails;
 	the rule succeeds;
 
-this is the coop-full rule:
+this is the is-Sniffins-smuggums rule:
+	if in-sos is true:
+		if Elan Ale is moot, the rule fails;
+		if player does not have yob attaboy:
+			say "[one of]Sniffins [hn-in-blank of Deft Fed]needs some help[or]Sniffins doesn't need financial help but motivational help. A confidence booster[or]Perhaps a book from Word Row could help Sniffins[or]TAKE YOB ATTABOY [hn-in of Worn Row][stopping].";
+		else if player has yob attaboy:
+			say "[one of]You have something Sniffins could use for motivation[or]That book you have won't help you, but it will help Sniffins[or]USE YOB ATTABOY ON SNIFFINS[stopping].";
+		else if player does not have Elan Ale:
+			say "You need classier alcohol to trade for the Gorge Grog.";
+		else:
+			say "[one of]You have something Sniffins wants. An upgrade from the Gorge Grog[or]Look in your inventory for alcohol[or]USE ELAN ALE ON SMUGGUMS[stopping].";
+		the rule succeeds;
+	if yob attaboy is moot, the rule succeeds;
+	say "Sniffins is too distraught to conduct any business. Perhaps a gift of self-help would be more appropriate right now.";
+	the rule fails;
+
+this is the Ned-gone rule:
+	if in-sos is true:
+		if Ned is moot, the rule fails;
+		if player has Ye Key:
+			say "[one of]You have the item you need to open the etage gate[or]USE YE KEY ON ETAGE GATE[stopping].";
+		else:
+			say "[one of]You may wish to explore some areas and their scenery more carefully to make a key[or]The stamp mats can work with something[or]Look around in Yelpley for materials the stamp mats could go with[or]The missing key part is in Scrap Arcs in the southeast[or]USE STAMP MATS ON SLATE METALS[stopping].";
+		the rule succeeds;
+	if Ned is moot, the rule succeeds;
+	say "Good idea, but not with Ned around.";
+	get-reject gate tag;
+	the rule fails;
+
+this is the orc-gone rule:
+	if in-sos is true:
+		if UFO tofu is not off-stage, the rule fails;
+		if cross orc is not moot:
+			say "You need to bribe the cross orc to leave [hn of Toll Lot].";
+		else if radar is off-stage:
+			say "You need to clean up the [Dopy Pod] for a useful item.";
+		else:
+			say "[one of]The crag arc is more than just scenery[or]Something might be hidden behind the crag arc[or]You need an item to find what's behind the crag arc[or]The radar will detect something behind the crag arc[stopping].";
+		the rule succeeds;
+	if UFO tofu is not off-stage:
+		say "You already scanned the crag arc successfully.";
+		the rule fails;
+	if orc is not in Toll Lot, the rule succeeds;
+	say "The cross orc prevents you from trying anything possibly constructive. Maybe with the orc gone, you should try it again.";
+	get-reject UFO tofu;
+	the rule fails;
+
+this is the pre-coop-on-rut rule:
+	if in-sos is true:
+		if poo coop is moot, the rule fails;
+		if gnu dung is not moot:
+			say "[one of]Since you've got the coop, what you need to fill in the rut is right nearby[or]You need to use the coop on the dung first[stopping].";
+		else:
+			say "[one of]You want to fill in the rut with something.[or]Do you have anything that is expendable, or that you want to get rid of, that could fill in the rut?[or]It would be nice to dispose of the coop's contents.[or]USE COOP ON RUT.[stopping]";
+		the rule succeeds;
 	if gnu dung is moot, the rule succeeds;
 	say "The poo coop is empty, but if it wasn't, that could work.";
 	the rule fails;
 
-this is the got-ore-yet rule:
-	if eroded ore is not off-stage:
-		say "You already scanned the made dam successfully.";
-		the rule fails;
-	the rule succeeds;
-
-this is the maps-readable rule:
+this is the pre-maps-on-bog rule:
+	if in-sos is true:
+		if spa maps are moot, the rule fails;
+		if maps-explained is false:
+			if uneven u is unvisited:
+				say "You haven't found anyone who could help you with the maps yet.";
+			else:
+				say "[one of]You need someone smart to help you with the maps. Someone who knows how to do things[or]The Code Doc can help you with the maps[stopping].";
+		else:
+			say "[one of]The spa maps may be tough to follow, but you can guess where they might help you[or]You should go to the Apse Spa with the spa maps[or]USE SPA MAPS ON APSE SPA[stopping].";
+		the rule succeeds;
 	if maps-explained is true, the rule succeeds;
 	say "Hmm. Maybe if the maps were a bit clearer to you, that would work. But not now.";
 	get-reject sage gas;
 	the rule fails;
 
-this is the maps-still-confusing rule:
+this is the pre-maps-on-doc rule:
+	if in-sos is true:
+		if maps-explained is true, the rule fails;
+		if uneven u is unvisited:
+			say "You haven't found anyone who could help you with the maps yet.";
+		else:
+			say "[one of]You need someone smart to help you with the maps. Someone who knows how to do things[or]The Code Doc can help you with the maps[stopping].";
+		the rule succeeds;
 	if maps-explained is true:
 		say "You already got the Code Doc to decipher the spa maps.";
 		the rule fails;
@@ -2906,50 +2989,68 @@ this is the maps-still-confusing rule:
 		the rule fails;
 	the rule succeeds;
 
-this is the Ned-gone rule:
-	if Ned is moot, the rule succeeds;
-	say "Good idea, but not with Ned around.";
-	get-reject gate tag;
-	the rule fails;
-
-this is the orc-gone rule:
-	if UFO tofu is not off-stage:
-		say "You already scanned the crag arc successfully.";
-		the rule fails;
-	if orc is not in Toll Lot, the rule succeeds;
-	say "The cross orc prevents you from trying anything possibly constructive. Maybe with the orc gone, you should try it again.";
-	get-reject UFO tofu;
-	the rule fails;
-
-this is the ready-to-test rule:
-	if emitted is true, the rule succeeds;
+this is the pre-radar-on-dam rule:
 	if in-sos is true:
-		if yard ray is off-stage, the rule fails;
+		if eroded ore is off-stage:
+			if player does not have radar:
+				say "[one of]You'll need something to scan the made dam[or]The something to scan the made dam is back in Yelpley[or][if Dopy Pod is visited]The item you want is under the cassettes sac[else]You haven't visited the place in Yelpley to get the item to scan the dam yet[end if][stopping].";
+			else:
+				say "[one of]There's something behind the dam, but you can't just see it. If only you had an item to sense such things[or]USE RADAR ON MADE DAM[stopping].";
+			the rule succeeds;
+		the rule fails;
+	if eroded ore is not off-stage:
+		say "You already scanned the made dam successfully.";
+		the rule fails;
+	the rule succeeds;
+
+this is the pre-ray-on-set rule:
+	if in-sos is true:
+		if test set is moot, the rule fails;
 		if murdered rum is off-stage:
 			say "You need to find ammo for the Yard Ray.";
-		the rule fails;
+		else if player has murdered rum:
+			say "[one of]You'll need something powerful as ammo for the yard ray[or]The murdered rum should work as ammo for the yard ray[or]USE RUM ON RAY[stopping].";
+		else if emitted is false:
+			say "[one of]From examining the yard ray, you can see EMIT ********. You need to figure what the eight letters are[or]TIME is the last four letters of what to emit. You need something bright with four letters[or]EMIT NOONTIME[stopping].";
+		else:
+			say "[one of]You need practice with the yard ray[or]You need to USE YARD RAY ON TEST SET[stopping].";
+		the rule succeeds;
+	if emitted is true, the rule succeeds;
 	get-reject test set;
 	say "[if murdered rum is not moot]The yard ray is empty[else]You aren't sure how the Yard Ray works, or what it needs to zap people with. Maybe you should review it to figure things out[end if].";
 	the rule fails;
 
 this is the sap-in-cup rule:
+	if in-sos is true:
+		if player does not have puce cup, the rule fails;
+		if liar grail is moot, the rule fails;
+		if puce cup is soddy:
+			say "You don't need the dose sod in the past sap until later.";
+		else if puce cup is not sappy:
+			say "[one of]You need to find the right place for the cup with the [sir-sap-long][or]Another place has a receptacle for the [sir-sap-long][or]The Liar Grail [hn-in of Swept Pews][or]USE CUP ON GRAIL [hn-in of Swept Pews][stopping].";
+		else:
+			say "[one of]The puce cup needs to be filled with two things. First, something you've already seen[or]Use some liquid-ish thing on the cup[or]USE PAST SAP ON CUP[stopping].";
+		the rule succeeds;
 	if puce cup is sappy, the rule succeeds;
 	get-reject liar grail;
 	say "[if puce cup is soddy]The sod doesn't seem to belong in the Liar Grail, but maybe something else does[else]The puce cup is empty[end if].";
 	the rule fails;
 
 this is the sap-not-cut-yet rule:
+	if in-sos is true:
+		if sap-takeable is true, the rule fails;
+		say "[one of]You can hack off some of the sap here. You already have the item for it[or]USE SAW ON SAP[stopping].";
+		the rule succeeds;
 	if sap-takeable is true:
 		if revving-over is false, say "You already hacked enough sap off.";
 		the rule fails;
 	the rule succeeds;
 
-this is the Sniffins-successful rule:
-	if yob attaboy is moot, the rule succeeds;
-	say "Sniffins is too distraught to conduct any business. Perhaps a gift of self-help would be more appropriate right now.";
-	the rule fails;
-
 this is the sod-in-cup rule:
+	if in-sos is true:
+		if puce cup is moot, the rule fails;
+		if puce cup is not soddy, say "You need to put the dose sod in the puce cup.";
+		the rule succeeds;
 	if puce cup is soddy, the rule succeeds;
 	get-reject Bond Nob;
 	say "[if puce cup is sappy]The Bond Nob makes a face at the sap in the cup. Maybe something less unpalatable would help, here[else]The puce cup is empty. It wouldn't help the Bond Nob[end if].";
@@ -5976,9 +6077,13 @@ The Puce Cup is a thing in Emo Dome. "Someone has left a puce cup here.". descri
 
 understand "dose/sod" and "dose sod" as Puce Cup when puce cup is soddy and player is not in Apse Spa.
 
+to say sir-sap: say "[if player is in Cold Loc]sirup[else]sap[end if]".
+
+to say sir-sap-long: say "[if player is in Cold Loc]purist sirup[else]past sap[end if]".
+
 instead of drinking puce cup:
 	if puce cup is empty, say "There's nothing to drink in the puce cup." instead;
-	say "Ugh. The [if puce cup is soddy]sod[else if player is in Cold Loc]sirup[else]sap[end if] looks unpalatable, unless you had a good reason. You don't."
+	say "Ugh. The [if puce cup is soddy]sod[else][sir-sap][end if] looks unpalatable, unless you had a good reason. You don't."
 
 to say sap-sirup:
 	say "[if location of player is Cold Loc]Past Sap[else]Purist Sirup[end if]"
@@ -7677,14 +7782,24 @@ understand "sos" as sosing.
 
 in-sos is a truth state that varies.
 
+definition: a thing (called th) is in-play:
+	if th is off-stage, no;
+	if map region of location of th is Odd Do, no;
+	yes;
+
+definition: a thing (called th) is in-known:
+	if th is off-stage, no;
+	if map region of location of th is Odd Do, no;
+	if location of th is unvisited, no;
+	yes;
+
 to decide whether (u1 - a thing) and (u2 - a thing) are mixable:
-	if u1 is quicknear and u2 is quicknear, yes;
-	if u1 is quicknear and player is in Worn Row and u2 is a workable, yes;
+	if u1 is in-known and u2 is in-known, yes;
+	if u1 is in-known and player is in Worn Row and ever-workrow is true and u2 is a workable, yes;
 	no;
 
 carry out sosing:
 	let take-clues be 0;
-	if debug-state is true, say "Checking what you can just take.";
 	repeat through table of just take it:
 		if to-take entry is in where-is entry and where-is entry is visited:
 			if there is no take-check entry:
@@ -7699,7 +7814,7 @@ carry out sosing:
 		say "NOTE: This poke to take something may be a distraction from more rigorous puzzles, but I'd rather point you to something you overlooked first than spoil something.";
 		the rule succeeds;
 	now in-sos is true;
-	if debug-state is true, say "First pass through goodacts.";
+	if debug-state is true, say "(1) ";
 	let count be 0;
 	repeat through table of goodacts:
 		if there is a room-to-go entry and room-to-go entry is not location of player, next;
@@ -7710,6 +7825,7 @@ carry out sosing:
 					consider the preproc entry;
 					if the rule failed, next;
 					if the rule succeeded:
+						say "[preproc entry] succeeded!";
 						the rule succeeds;
 				say "[if use2 entry is a workable and Worn Row is not worky]Change to WORK ROW, then [end if]USE [printed name of use1 entry in upper case] ON [printed name of use2 entry in upper case].";
 				now in-sos is false;
@@ -7717,16 +7833,7 @@ carry out sosing:
 		if there is a preproc entry:
 			consider the preproc entry;
 			if the rule succeeded, continue the action;
-	if debug-state is true, say "Checking unvisited but available rooms.";
-	repeat with Q running through available rooms:
-		if debug-state is true, say "Checking [Q] if it is visited.";
-		if Q is unvisited:
-			let oiq be in-dir of q;
-			say "[Q] unvisited, checking [oiq] of [Q] or [room oiq of q].";
-			if the room oiq of q is unvisited, next;
-			say "GENERAL HINT: the room [oiq] of [hn of the room oiq of q] is available, but you haven't visited there yet.";
-			the rule succeeds;
-	if debug-state is true, say "Second pass through goodacts.";
+	if debug-state is true, say "(2) ";
 	repeat through table of goodacts:
 		if there is a use1 entry:
 			if use1 entry and use2 entry are mixable:
@@ -7738,10 +7845,32 @@ carry out sosing:
 				the rule succeeds;
 		if there is a preproc entry:
 			consider the preproc entry;
-			if the rule succeeded, continue the action;
+			if the rule succeeded:
+				if debug-state is true:
+					say "[preproc entry] succeeded!";
+					continue the action;
+	repeat with Q running through available rooms:
+		if Q is unvisited:
+			let oiq be in-dir of q;
+			if the room oiq of q is unvisited, next;
+			say "GENERAL HINT: the room [opposite of oiq] of [hn of the room oiq of q] is available, but you haven't visited there yet.";
+			the rule succeeds;
 	say "Uh oh, I couldn't find a hint.";
 	now in-sos is false;
 	the rule succeeds;
+
+to say vague-dir of (rm - a room):
+	let r2 be rm;
+	let away be 0;
+	while r2 is unvisited:
+		increment away;
+		let id be in-dir of r2;
+		let r2 be the room id of r2;
+		if away is 10:
+			say "a room at ([the remainder after dividing loc-num of rm by 10], [loc-num of rm / 10]) from the northeast of the map";
+			continue the action;
+	let oid be opposite of in-dir of r2;
+	say "a room [oid] of [hn of r2][if away > 1], and then some[end if]";
 
 section hint rules just take it table [xxoga]
 
@@ -7752,12 +7881,21 @@ puce cup	Emo Dome	cup-take rule
 troll ort	Swept Pews	--
 stamp mats	Frush Surf	--
 pill lip	Dopy Pod	--
+stinky knits	Gross Org	knits-take rule
+gold log	Pro Corp	--
+DNA band	Pro Corp	--
+Bros' Orb	Le Babel	orb-take rule
 
 this is the cup-take rule:
 	if pulled-up is true, the rule succeeds;
 	the rule fails;
-		say "You should take the puce cup [hn-in of Emo Dome].";
-		the rule succeeds;
+
+this is the knits-take rule:
+	if Ned is moot, the rule succeeds;
+	the rule fails;
+
+this is the orb-take rule:
+	if player has stir writs, the rule succeeds;
 	the rule fails;
 
 section hint rules [xxhr]
@@ -7785,7 +7923,7 @@ this is the hint-stark-rats rule:
 	else if player has trap art:
 		say "[one of]The trap art is not enough to catch the stark rats, but it's a good plan[or][if Worn Row is unvisited]You haven't found the place to change the trap art, yet[else if Worn Row is not worky]You need to change [Worn Row] to something else[else][one of]You need to use the trap art on one of the machines[or]USE TRAP ART ON REIFIER in Word Row[stopping][end if][stopping].";
 	else if player has party trap:
-		say "[one of]You have the item you need to catch the stark rats[or]USE PARTY TRAP ON STARK RATS[stopping].";
+		say "[one of]You have the item you need to catch the stark rats[or]Many verbs work to catch the rats[or]DROP TRAP, TRAP RATS, or USE PARTY TRAP ON STARK RATS[stopping].";
 	else:
 		say "[one of]The stark rats [hn-in of Seer Trees] are tough to catch[or]You need an item that will catch the stark rats[or]The trap art [hn-in of Art Xtra] will get you started[stopping].";
 	the rule succeeds;
@@ -7809,6 +7947,7 @@ this is the hint-door-frood rule:
 this is the hint-pity-tip rule:
 	if in-sos is false, the rule succeeds;
 	if pity tip is moot, the rule fails;
+	if Evaded Ave is unvisited, the rule fails;
 	if Worn Row is unvisited:
 		say "[one of]The Door Frood requires something from a location you haven't been yet[or][if My Gym is visited]You need to go west of My Gym[else]You need to go south and west of Yawn Way[end if][stopping].";
 	else if ever-wordrow is false:
@@ -9518,11 +9657,11 @@ to decide whether the action is pro-and-use: [aip2]
 
 chapter stuff we can comment out
 
-Include Room Description Verification by Andrew Schultz.
+[Include Room Description Verification by Andrew Schultz.
 
 when play begins:
 	now Seer Trees is check-immune;
 	now Emo Dome is check-immune;
-	consider the check-room-descriptions rule;
+	consider the check-room-descriptions rule;]
 
 [?? test to see about any person/place/scenery that is in table of rejects or useons but not both]
