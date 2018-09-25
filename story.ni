@@ -153,7 +153,7 @@ section debug compiler globals - not for release
 
 use MAX_VERBS of 580. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
-use MAX_ACTIONS of 210. [+10?]
+use MAX_ACTIONS of 220. [+10?]
 
 use MAX_VERBSPACE of 5600. [4096 = original max]
 
@@ -211,6 +211,8 @@ chapter for (beta) testers
 [these are variables that are not used in the final release, but often, they have to be defined in the release, because major verbs use them for debugging purposes.]
 
 LLP-reject is a truth state that varies. [for my own tests: walkthrough with LLPs and without]
+
+LLP-quick is a truth state that varies.
 
 endgame-test is a truth state that varies.
 
@@ -562,9 +564,11 @@ LLP-last is a number that varies.
 
 This is the LLP or normal score changes rule:
 	if the score is not the last notified score:
-		say "[bracket][if cur-score of Odd Do > LLP-last]You found a Last Lousy Point![no line break][else]Your score has just gone up by one point.[no line break][end if][close bracket][paragraph break]";
+		say "[bracket][if cur-score of Odd Do > LLP-last]You found [a-verylast] Last Lousy Point![no line break][else]Your score has just gone up by one point.[no line break][end if][close bracket][paragraph break]";
 		now the last notified score is the score;
 		now LLP-last is cur-score of Odd Do;
+
+to say a-verylast: say "[if cur-score of Odd Do is max-score of Odd Do]the very last[else]a[end if]"
 
 chapter turn count
 
@@ -633,7 +637,7 @@ when play begins (this is the begin ailihphilia for reals rule):
 	if the player no-consents, try restoring the game;
 	now use-custom-screenread is true; [see the Trivial Niceties extension for details. This wipes TN's default generic nag question.]
 	say "Next, are you using a screen reader? Some of Ailihphilia's features, like the text map, don't work well with them.";
-	if the player no-consents, now screenread is false;
+	if the player no-consents, now screenread is true;
 	say "[paragraph break]You can always toggle the screen reader with SCR.";
 	sort table of last lousy points in random order;
 	repeat through table of all randoms:
@@ -2566,32 +2570,32 @@ radar	made dam	eroded ore	pre-radar-on-dam rule	radar-blink rule	true	false	fals
 NULL ILLUN	Known Wonk	--	pre-illun-on-wonk rule	bump-maws rule	true	true	true	true	true	false	Grebeberg	Yack Cay	Yack Cay	false	"The Known Wonk begins to read. 'Old, lo! Too simple. It has to be beneath me. I mean, it's almost as bad as [i]EBB?! BE[r].' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. Rid a nadir. Rid ANY nadir! Tiny nit? Not on! Wonk, now! Sometimes, simple stuff works.' As the Known Wonk babbles, the mist sim lifts, too. 'Wow!' But no, your acts deserve a better cheer than that. 'H/t! A path!'"
 el doodle	edits tide	spa maps	pre-doodle-on-tide rule	rahs-too rule	true	true	false	false	true	false	Grebeberg	Yack Cay	Yack Cay	false	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps! And there is a bonus! It appears El Doodle was so jumbled, there were two things. Sharp rahs appear on another sheet of paper, as some sort of confused motivation, and you take them."
 elope pole	kayak	you buoy	pre-pole-on-kayak rule	--	true	true	false	false	false	false	Grebeberg	Lac Oft Focal	Lac Oft Focal	false	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where. You whisper 'Row, or' whenever you get tired. Then you see Elided Ile in the distance. It can't be Elsif Isle, because there are no computers on the shore.[paragraph break]So you stop off there. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining means you passed some sort of test, and you are worthy to fight the vicious Bar Crab. It is no match for your elope pole. The citizens hand you a YOU BUOY to tell you they're glad you're you, asking only for the elope pole as a souvenir. Well, it was getting a bit awkward to carry.[paragraph break]They mention it may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Lac Oft Focal. As it gets near and bends away, you jump off, using the buoy to paddle and float back all the way."
-dork rod	tao boat	enact cane	--	--	true	true	false	true	true	false	Grebeberg	Lac Oft Focal	Lac Oft Focal	false	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
-tent net	Code Doc	--	--	--	true	true	false	false	true	false	Grebeberg	Uneven U	Uneven U	false	"Together, you figure out what to do to make the tent net proper cover for Uneven U. 'Tie it ... tie it ...' then 'Net: safe. fasten!'[paragraph break]Once the work is done, the Code Doc thanks you. 'Let me know if you need help learning ... well, anything. Oh, and call me Dr. D., if you'd like.'[paragraph break]How thoughtful! That could save a few keystrokes in the future[if spa maps are preclued]! Maybe the very near future, if you ask about the spa maps again[end if]."
+dork rod	tao boat	enact cane	pre-rod-on-boat rule	--	true	true	false	true	true	false	Grebeberg	Lac Oft Focal	Lac Oft Focal	false	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
+tent net	Code Doc	--	pre-net-on-doc rule	--	true	true	false	false	true	false	Grebeberg	Uneven U	Uneven U	false	"Together, you figure out what to do to make the tent net proper cover for Uneven U. 'Tie it ... tie it ...' then 'Net: safe. fasten!'[paragraph break]Once the work is done, the Code Doc thanks you. 'Let me know if you need help learning ... well, anything. Oh, and call me Dr. D., if you'd like.'[paragraph break]How thoughtful! That could save a few keystrokes in the future[if spa maps are preclued]! Maybe the very near future, if you ask about the spa maps again[end if]."
 spa maps	Code Doc	--	pre-maps-on-doc rule	maps-explain rule	true	false	false	false	true	false	Grebeberg	Uneven U	Uneven U	false	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my for-prof math tam for this one. One second, let's see--Aha! Oho...'[paragraph break]You each split an Ed-Ade to make sure the lesson is taught and remembered well. Despite a minor pupil slip-up, the Code Doc is never edu-rude. It soon makes complete sense to you. You don't know how to say thanks. Everything seems too long-winded or said before, until ... 'Def ed!'"
 spa maps	go by bog	sage gas	pre-maps-on-bog rule	gas-think-wipe rule	true	true	false	false	true	false	Grebeberg	Apse Spa	Apse Spa	false	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. The Spa Maps are surprisingly sturdy, and you're able to reformat them into a receptacle for the sage gas. Lucky you! Or maybe being around that sage gas made you smart enough to figure the science out, there.[paragraph break]As you return to the Apse Spa, the Spa Maps turn into a salt atlas and crumble away."
-enact cane	yahoo hay	moor broom	--	hay-gone rule	true	true	false	false	true	false	Grebeberg	Moo Room	Moo Room	false	"You stick some strands of yahoo hay into the damaged end of the enact cane. It's now a moor broom!"
+enact cane	yahoo hay	moor broom	pre-cane-on-hay rule	hay-gone rule	true	true	false	false	true	false	Grebeberg	Moo Room	Moo Room	false	"You stick some strands of yahoo hay into the damaged end of the enact cane. It's now a moor broom!"
 --	--	--	rev-pace-cap rule	--	true	--	--	false	true	false	Dim Mid	--	--	false	--
-troll ort	brag garb	--	--	chase-in-zoo rule	true	true	false	false	true	false	Grebeberg	--	--	false	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the stinky knits, but still quite distinctive. The ort must've been covered by the dirt for a long time, because it disintegrates as its essence is leaked onto the brag garb." [b4:pace cap] [af:yak okay]
+troll ort	brag garb	--	pre-ort-on-garb rule	chase-in-zoo rule	true	true	false	false	true	false	Grebeberg	--	--	false	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the stinky knits, but still quite distinctive. The ort must've been covered by the dirt for a long time, because it disintegrates as its essence is leaked onto the brag garb." [b4:pace cap] [af:yak okay]
 --	--	--	rev-yak-okay rule	--	true	--	--	false	true	false	Grebeberg	Lair Trial	Lair Trial	false	--
-sage gas	tame mat	guru rug	--	--	true	true	true	false	true	false	Grebeberg	Motto Bottom	Motto Bottom	false	"'Mix a maxim...' you mutter to yourself. The sage gas bubbles out under the tame mat, and the message changes. To something wiser. But perhaps a bit stuffy: a guru rug!"
-sharp rahs	guru rug	stir writs	--	brag-garb-bye rule	true	true	true	false	true	false	Grebeberg	Motto Bottom	Motto Bottom	false	"The sharp rahs meld into the guru rug, which feels less weighted down by philosophy and floats away. Under it there are stir-writs, which seem oversimplified at first, but on re-reading, they strike just the right balance between emotional and intellectual stimulation.[paragraph break]After reading them, you feel distinctly silly in your brag garb, which seems so gaudy now. Instinctively, you take the garb off and commit it to the Be Web. As the brag garb floats away, you know you have done the right thing, but you need to do more."
+sage gas	tame mat	guru rug	pre-gas-on-mat rule	--	true	true	true	false	true	false	Grebeberg	Motto Bottom	Motto Bottom	false	"'Mix a maxim...' you mutter to yourself. The sage gas bubbles out under the tame mat, and the message changes. To something wiser. But perhaps a bit stuffy: a guru rug!"
+sharp rahs	guru rug	stir writs	pre-rahs-on-rug rule	brag-garb-bye rule	true	true	true	false	true	false	Grebeberg	Motto Bottom	Motto Bottom	false	"The sharp rahs meld into the guru rug, which feels less weighted down by philosophy and floats away. Under it there are stir-writs, which seem oversimplified at first, but on re-reading, they strike just the right balance between emotional and intellectual stimulation.[paragraph break]After reading them, you feel distinctly silly in your brag garb, which seems so gaudy now. Instinctively, you take the garb off and commit it to the Be Web. As the brag garb floats away, you know you have done the right thing, but you need to do more."
 --	--	--	rev-nail-Ian rule	--	true	--	--	false	false	true	Grebeberg	Mont Nom	Mont Nom	false	--
 --	--	--	rev-first-food-combo rule	--	true	--	--	false	false	true	Grebeberg	Mont Nom	Mont Nom	false	--
 --	--	--	rev-second-food-combo rule	--	true	--	--	false	false	true	Grebeberg	Mont Nom	Fun Enuf	false	--
-Moor Broom	Tru Yurt	Exam Axe	--	bump-ivy rule	true	true	false	false	true	false	Grebeberg	Yack Cay	Yack Cay	false	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay.[paragraph break]In gratitude, the Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! You trade the moor broom for it. Then, back to the Tru-Yurt for the Wonk. They've done enough for you." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
-wash saw	porch crop	balsa slab	--	--	true	true	false	false	false	false	Grebeberg	Uneven U	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods.[paragraph break]'Yes! Yes! We have achieved AIMED ACADEMIA! Uneven U needs a name change ... to UNITIN['] U! How can I thank you?'[paragraph break]A balsa slab is lying under where the porch crop was. The Code Doc offers it to you. Now, you ... do own wood!"
+Moor Broom	Tru Yurt	Exam Axe	pre-broom-on-yurt rule	bump-ivy rule	true	true	false	false	true	false	Grebeberg	Yack Cay	Yack Cay	false	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay.[paragraph break]In gratitude, the Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! You trade the moor broom for it. Then, back to the Tru-Yurt for the Wonk. They've done enough for you." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
+wash saw	porch crop	balsa slab	pre-saw-on-crop rule	--	true	true	false	false	false	false	Grebeberg	Uneven U	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods.[paragraph break]'Yes! Yes! We have achieved AIMED ACADEMIA! Uneven U needs a name change ... to UNITIN['] U! How can I thank you?'[paragraph break]A balsa slab is lying under where the porch crop was. The Code Doc offers it to you. Now, you ... do own wood!"
 Exam Axe	Lie Veil	--	pre-axe-on-veil rule	--	true	true	true	false	true	false	Grebeberg	Dumb Mud	Dumb Mud	false	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
 --	--	--	rev-get-bros orb rule	--	false	--	--	false	true	false	--	Le Babel	Le Babel	--	--
 DNA band	reifier	DNA hand	pre-band-on-reifier rule	--	true	true	false	false	false	true	Yelpley	Worn Row	Worn Row	false	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand! It doesn't have any slime or blood leaking, and when you take it, it doesn't twitch too much."
-roto motor	DNA hand	Mr Arm	--	--	true	true	true	false	false	true	Yelpley	Worn Row	Worn Row	false	"Some of the stuffing inside the hand has to pop out to make space for the roto motor to fit in. There's enough to make a whole arm! The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on the arm (MR. ARM) and hand: BANG NAB. The arm will probably give the hand a bit more reach."
+roto motor	DNA hand	Mr Arm	pre-motor-on-hand rule	--	true	true	true	false	false	true	Yelpley	Worn Row	Worn Row	false	"Some of the stuffing inside the hand has to pop out to make space for the roto motor to fit in. There's enough to make a whole arm! The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on the arm (MR. ARM) and hand: BANG NAB. The arm will probably give the hand a bit more reach."
 Eroded Ore	reviver	Ore Zero	pre-ore-on-reviver rule	--	true	true	false	false	false	true	Yelpley	Worn Row	Worn Row	false	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
 you buoy	rotator	ME gem	pre-buoy-on-rotator rule	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. 'You BOFFO buoy!' you can't help shouting.[paragraph break]The gem's so tempting and beautiful, you grab it quickly, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
-Mr Arm	bomb mob	TNT	--	mob-bye rule	true	true	true	false	false	true	Yelpley	Yell Alley	Yell Alley	false	"Mr. Arm walks on his index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. Being an arm, it/he has more leverage than just a DNA hand would've. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course. Perhaps Mr. Arm will find a Do-Bod or even an Evol-Glove to be truly complete. The bomb mob, for their part, becomes a poor troop once they see what they've lost. They wander away."
+Mr Arm	bomb mob	TNT	pre-arm-on-mob rule	mob-bye rule	true	true	true	false	false	true	Yelpley	Yell Alley	Yell Alley	false	"Mr. Arm walks on his index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. Being an arm, it/he has more leverage than just a DNA hand would've. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course. Perhaps Mr. Arm will find a Do-Bod or even an Evol-Glove to be truly complete. The bomb mob, for their part, becomes a poor troop once they see what they've lost. They wander away."
 Nat's Tan	scorn rocs	--	pre-tan-on-rocs rule	--	true	true	true	true	false	false	Grebeberg	Flu Gulf	Flu Gulf	false	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
-rep popper	ME Totem	murdered rum	--	totem-out rule	true	true	true	false	false	false	Grebeberg	Sneer Greens	Sneer Greens	false	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Had, ah!' he cries, making a male lam. From his babbling, he's apparently retreating to a glam-amalg (Loot Stool included) or ego loge in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]'Pol? Flop!' you think to yourself, before the ME Totem, sliced several ways, collapses and sinks into the ground. As it does, you hear the Yuge Guy's voice utter 'There's some murdered rum inside. Powerful stuff! You pick it up carefully."
+rep popper	ME Totem	murdered rum	pre-popper-on-totem rule	totem-out rule	true	true	true	false	false	false	Grebeberg	Sneer Greens	Sneer Greens	false	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Had, ah!' he cries, making a male lam. From his babbling, he's apparently retreating to a glam-amalg (Loot Stool included) or ego loge in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]'Pol? Flop!' you think to yourself, before the ME Totem, sliced several ways, collapses and sinks into the ground. As it does, you hear the Yuge Guy's voice utter 'There's some murdered rum inside. Powerful stuff! You pick it up carefully."
 Bros' Orb	Mirror Rim	Yard Ray	pre-orb-on-rim rule	sword-rows-reveal rule	true	true	true	false	false	false	Yelpley	Red Roses Order	Red Roses Order	false	"The Bros['] Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Ms. Ism has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, Ms. Ism, live not on evil!' you boom, as the Orb does its work. Ms. Ism looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'My sub-level bus! You won't catch it! The E-Divide will block you!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
-balsa slab	sword rows	not-a-baton	--	--	true	true	false	false	false	false	Yelpley	Red Roses Order	Red Roses Order	false	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Ms. Ism."
+balsa slab	sword rows	not-a-baton	pre-slab-on-rows rule	--	true	true	false	false	false	false	Yelpley	Red Roses Order	Red Roses Order	false	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Ms. Ism."
 not-a-baton	reifier	taboo bat	pre-not-a-baton-on-reifier rule	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
 murdered rum	yard ray	--	pre-rum-on-ray rule	ray-beepy-now rule	true	true	false	false	false	false	Dim Mid	--	--	false	"The yard ray gleams with energy. It seems like it could do some damage now."
 --	--	--	rev-emit-noontime rule	ray-not-beepy-now rule	true	--	--	false	false	false	Dim Mid	--	--	false	--
@@ -2862,6 +2866,12 @@ this is the pre-ale-on-Sniffins rule:
 	say "Sniffins is too distraught to conduct any business. Perhaps a gift of self-help would be more appropriate right now.";
 	the rule fails;
 
+this is the pre-arm-on-mob rule:
+	if in-sos is true:
+		if TNT is moot or player does not carry mr arm, the rule fails;
+		say "[one of]If you examine Mr. Arm, he is pointing somewhere[or]If you go to several different locations, Mr. Arm points at different angles[or]Find rooms where Mr. Arm points west or north or east or south, then draw lines to find where they intersect[or]Mr. Arm is pointing to Yell Alley[or]USE MR ARM ON TNT in Yell Alley[stopping].";
+	the rule succeeds;
+
 this is the pre-arts-on-lover rule:
 	if in-sos is true:
 		if player does not have straw arts, the rule fails;
@@ -2879,6 +2889,24 @@ this is the pre-bat-on-rev rule:
 	if in-sos is true:
 		if taboo bat is moot or player is not in Dirge Grid, the rule fails;
 		say "[one of]The Verses Rev is very orthodox and opposed to unusual things. Maybe you can shock the Rev[or]You have something outlandish[or]USE TABOO BAT ON VERSES REV[stopping].";
+	the rule succeeds;
+
+this is the pre-broom-on-yurt rule:
+	if in-sos is true:
+		if moor broom is moot, the rule fails;
+		if NULL ILLUN is not moot, the rule fails;
+		if player has moor broom:
+			say "[one of]The Tru Yurt still needs cleaning, and you've got something that'll work[or]USE MOOR BROOM ON TRU YURT[stopping].";
+		else if player has enact cane:
+			say "You're close to having something that will clean out the Tru Yurt, but you're not there yet.";
+		else:
+			say "It'll take a while before you're able to clear out the Tru Yurt here.";
+	the rule succeeds;
+
+this is the pre-cane-on-hay rule:
+	if in-sos is true:
+		if enact cane is moot or enact cane is off-stage, the rule fails;
+		say "[one of]There's still a bit more you can do with the yahoo hay. Only coarse bits are left.[or]Did you notice something that might have some prongs missing?[or]The enact cane may have been a KARE-RAK(E) once.[or]USE ENACT CANE ON YAHOO HAY.[stopping]";
 	the rule succeeds;
 
 this is the pre-coop-on-dung rule:
@@ -3010,6 +3038,12 @@ this is the pre-doodle-on-tide rule:
 		say "[one of]The doodle needs modification, but it doesn't seem like anyone can do it[or]The machines in Work Row don't help with the doodle, either[or]Look carefully for scenery which could change something[or][if Yack Cay is unvisited]You haven't yet been to the place where you can chance the doodle[else]USE DOODLE ON TIDE in Yack Cay[end if][stopping].";
 	the rule succeeds;
 
+this is the pre-gas-on-mat rule:
+	if in-sos is true:
+		if sage gas is moot, the rule fails;
+		say "[one of]The tame mat needs a stronger, smarter message[or]You may have something that can make things smarter[or]USE SAGE GAS ON TAME MAT[stopping].";
+	the rule succeeds;
+
 this is the pre-gem-on-fink rule:
 	if in-sos is true:
 		if ME gem is moot or player is not in Dirge Grid, the rule fails;
@@ -3080,6 +3114,23 @@ this is the pre-maps-on-doc rule:
 		the rule fails;
 	the rule succeeds;
 
+this is the pre-motor-on-hand rule:
+	if in-sos is true:
+		if player does not have roto motor, the rule fails;
+		if player has DNA band:
+			say "Look for ways to improve the DNA band.";
+		else if DNA band is in Pro Corp:
+			say "You need to get the DNA band in Pro Corp.";
+		else:
+			say "[one of]The roto motor can bring something else alive[or]What the roto motor works with has already been boosted slightly[or]USE ROTO MOTOR ON DNA HAND[stopping].";
+	the rule succeeds;
+
+this is the pre-net-on-doc rule:
+	if in-sos is true:
+		if player does not have tent net, the rule fails;
+		say "[one of]The Code Doc needs a few more materials to build Uneven U[or]You have something that could help the Code Doc[or]You don't have much you could do with a tent net[or]USE TENT NET ON CODE DOC[stopping].";
+	the rule succeeds;
+
 this is the pre-nub-on-reviver rule:
 	if in-sos is true:
 		if bunk nub is moot, the rule fails;
@@ -3095,6 +3146,12 @@ this is the pre-orb-on-rim rule:
 		say "[one of]The Bros['] Orb got you in, and it seems extra powerful and reflectivee, but it's not clear what to use it on[or]Trial and error can tell what to use the Orb on, but you may notice one thing is good at showing your faults[or]The mirror rim shows how silly your cap looks on you[or]USE BROS ORB ON MIRROR RIM to shatter the mirror[stopping].";
 	the rule succeeds;
 
+this is the pre-ort-on-garb rule:
+	if in-sos is true:
+		if troll ort is moot, the rule fails;
+		say "[one of]The brag garb is a bit too strong-smelling. You may have noticed it causes a weird reaction from the kayo yak.[or]Perhaps it smells differently.[or]Do you have any other item that smells funny? More appealing?[or]The troll ort is apparently PINT-A-CATNIP.[or]USE TROLL ORT ON BRAG GARB.[stopping]";
+	the rule succeeds;
+
 this is the pre-pole-on-kayak rule:
 	if in-sos is true:
 		if kayak is moot, the rule fails;
@@ -3102,6 +3159,15 @@ this is the pre-pole-on-kayak rule:
 			say "There's something in Yelpley that could steer the kayak.";
 		else if player has elope pole:
 			say "[one of]You need a kind of paddle to steer the kayak[or]You have something that could act like a kayak paddle. It's long enough, at least[or]USE ELOPE POLE ON KAYAK[stopping].";
+	the rule succeeds;
+
+this is the pre-popper-on-totem rule:
+	if in-sos is true:
+		if me totem is moot, the rule fails;
+		if rep popper is in Yell Alley:
+			say "You don't yet have the item you need to defeat the Yuge Guy.";
+		else:
+			say "[one of]The Yuge Guy is intimidating, but it's the ME TOTEM that amplifies his obnoxiousness.[or]You could say the ME TOTEM inflates the Yuge Guy's public perception...[or]...or the totem increases the Yuge Guy's Rep.[or]USE REP POPPER ON ME TOTEM.[stopping]";
 	the rule succeeds;
 
 this is the pre-radar-on-arc rule:
@@ -3136,6 +3202,12 @@ this is the pre-radar-on-dam rule:
 		the rule fails;
 	the rule succeeds;
 
+this is the pre-rahs-on-rug rule:
+	if in-sos is true:
+		if sharp rahs are moot, the rule fails;
+		say "[one of]The guru rug is now a bit too esoteric compared to the tame mat. Maybe some other odd item, a bit more down-to-earth, could change that[or]Something that mixes emotion with the guru rug could help[or]USE SHARP RAHS ON GURU RUG[stopping].";
+	the rule succeeds;
+
 this is the pre-ray-on-redivider rule:
 	if in-sos is true:
 		if yard ray is moot or player is not in Dirge Grid, the rule fails;
@@ -3159,6 +3231,11 @@ this is the pre-ray-on-set rule:
 	say "[if murdered rum is not moot]The yard ray is empty[else]You aren't sure how the Yard Ray works, or what it needs to zap people with. Maybe you should review it to figure things out[end if].";
 	the rule fails;
 
+this is the pre-rod-on-boat rule:
+	if in-sos is true:
+		if dork rod is moot, the rule fails;
+	the rule succeeds;
+
 this is the pre-rum-on-ray rule:
 	if in-sos is true:
 		if player does not have yard ray, the rule fails;
@@ -3169,6 +3246,16 @@ this is the pre-rum-on-ray rule:
 			say "[one of]You need something to fill the yard ray with[or]The murdered rum is strong enough[or]USE MURDERED RUM ON YARD RAY[stopping].";
 	the rule succeeds;
 
+this is the pre-saw-on-crop rule:
+	if in-sos is true:
+		if porch crop is moot, the rule fails;
+		if moor broom is not moot, the rule fails;
+		if porch crop is not in uneven u:
+			say "Try visiting Uneven U.";
+		else:
+			say "[one of]You'd like to trim the porch crop [hn-in of uneven u][or]You have an item that can cut stuff down. It did, much earlier in the game[or]USE WASH SAW ON PORCH CROP[stopping].";
+	the rule succeeds;
+
 this is the pre-saw-on-sap rule:
 	if in-sos is true:
 		if sap-takeable is true, the rule fails;
@@ -3177,6 +3264,15 @@ this is the pre-saw-on-sap rule:
 	if sap-takeable is true:
 		if revving-over is false, say "You already hacked enough sap off.";
 		the rule fails;
+	the rule succeeds;
+
+this is the pre-slab-on-rows rule:
+	if in-sos is true:
+		if sword rows are moot, the rule fails;
+		if player does not have balsa slab:
+			say "You don't have anything the sword rows can cut right now.";
+		else:
+			say "[one of]The sword rows can cut through something, but what?[or]You may have an inventory item that can be carved into something more artistic[or]The sword rows would work well on a soft wood item[or]USE BALSA SLAB ON SWORD ROWS[stopping].";
 	the rule succeeds;
 
 this is the pre-tag-on-tattoos rule:
@@ -4432,7 +4528,7 @@ understand the command "muss" as something new.
 
 understand "ruff fur" as opmussing when opossum is quicknear.
 
-instead of opmussing, try mussing opossum instead.
+check opmussing: try mussing opossum instead.
 
 understand "muss [something]" as mussing.
 
@@ -9087,7 +9183,7 @@ understand "stack [something]" as stacking.
 
 carry out stacking:
 	if noun is not senile felines, say "Not worth stacking." instead;
-	unless the player's command matches the text "cats", say "Refer to the felines by a simpler synonym, and you've got it." instead;
+	unless the player's command matches the text "cats" or LLP-quick is true,  say "Refer to the felines by a simpler synonym, and you've got it." instead;
 	say "You stack the cats so there's a suitable pet-step to reach the late petal, but once you do, the top one bats it, and it falls out of sight. They walk away, disinterested. But they still seemed to have fun. Well, cats are like that.";
 	moot senile felines;
 	moot late petal;
@@ -9317,38 +9413,46 @@ understand the command "llpq" as something new.
 understand "llpq" as llpqing.
 
 carry out llpqing:
+	now LLP-quick is true;
 	if cur-score of Odd Do is 11, say "You got all the LLPs." instead;
 	say "Note: this command may have stray text.";
-	say "=====FIXED LLPs[line break]";
-	if balm-LLP-yet is false:
-		say "Hacking BALM LAM LLP.";
-		now balm-LLP-yet is true;
-		consider the LLP rule;
+	say "=====DO-ANYWHERE LLPs[line break]";
 	if dial-yet is false:
 		say "Hacking DIAL AID LLP.";
 		now dial-yet is true;
 		consider the LLP rule;
+		consider the LLP or normal score changes rule;
 	if poop-boob-yet is false, try pooping;
 	if stats-yet is false, try statsing;
 	if refer-yet is false, try refering;
 	if peeped-yet is false, try peeping;
-	say "=====ROVING LLPs[line break]";
+	say "=====SPECIFIC AREA LLPs[line break]";
 	if slam-mam is false:
 		move player to Ooze Zoo;
 		try slammammalsing;
+		consider the LLP or normal score changes rule;
 	if DWELT LEWD is off-stage:
 		move player to Worn Row;
 		now Worn Row is wordy;
 		try mytraceing tract cart;
+		consider the LLP or normal score changes rule;
 	unless balm-LLP-yet is true:
 		move player to Pro Corp;
 		try balmlabing;
+		consider the LLP or normal score changes rule;
 	unless senile felines are moot:
 		move player to Moo Room;
 		try stacking felines;
+		consider the LLP or normal score changes rule;
+	if bees-seen is false:
+		move player to Moo Room;
+		try seebeesing;
+		consider the LLP or normal score changes rule;
 	unless opossum is moot:
 		move player to Le Babel;
 		try opmussing;
+		consider the LLP or normal score changes rule;
+	now LLP-quick is false;
 	the rule succeeds;
 
 section llplling - not for release
