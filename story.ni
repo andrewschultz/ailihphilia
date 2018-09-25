@@ -626,6 +626,7 @@ to say dir-summary:
 	if Q is not nowhere, say " W[run paragraph on][if Q is not available]-[else if Q is not visited]![run paragraph on][end if]";
 
 when play begins (this is the begin ailihphilia for reals rule):
+	now eyespoil of tix exit is number of rows in table of goodacts; [the flee elf gives you the clue right off the bat]
 	repeat with Q running through regions:
 		increase maximum score by max-score of Q;
 	if debug-state is true:
@@ -1103,13 +1104,14 @@ instead of thinking:
 	let Q be the list of eyed things;
 	if number of entries in Q > 0:
 		sort Q in eyespoil order;
-		say "[line break][b]Things eyed:[r][line break]";
+		say "[line break][b]Things eyed (tix exit is 79):[r][line break]";
 		repeat with Q2 running through Q:
 			say "[Q2] ([if player has Q2]carried)[else][hn of location of Q2][end if]): [eyespoil of Q2][if eyespoil of Q2 <= score + 1] (hmm, worth looking into)[end if][line break]";
 	if eye-charges > 0, say "[line break][pip-charges].";
 
 definition: a thing (called th) is eyed:
 	if th is moot, no;
+	if th is tix exit, no;
 	if eyespoil of th > 0, yes;
 	no;
 
@@ -3386,7 +3388,7 @@ this is the gas-think-wipe rule:
 
 this is the hay-gone rule:
 	if SOME DEMOS is moot and enact cane is moot:
-		unless redact-postrule, say "You used up all the hay.";
+		unless redact-postrule, say "You used up all the hay! You're sad it's gone but excited you could be so efficient with it. Yahoo!";
 		moot yahoo hay;
 	else:
 		get-reject yahoo hay;
@@ -3943,7 +3945,7 @@ understand "pack" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did." instead;
-	say "'Rec [']er!' shouts the Flee Elf. 'Hat! Ah!'[paragraph break]The Flee Elf hands you a Set O Notes and explains you need to find a way to destroy the [kaoscaps] to the north. Also, the Flee Elf notes the LOVE VOL and LO VOL settings on the pact cap: LO VOL means the cap is quiet and won't make a weird noise if you look at things that need a weird action. LOVE VOL means you will.[paragraph break]The Flee Elf also mentions a pip on the cap shows whether you may be able to [b]EYE[r] items later to determine how far along they are in your quest--if you make enough good guesses. You ask what this means.[paragraph break]'It's best I...' and with that, the Flee Elf becomes a FLED elf, pointing at the tile lit (slightly altered). You notice a TIX EXIT to the south, but you don't have any tickets.";
+	say "'Rec [']er!' shouts the Flee Elf. 'Hat! Ah!'[paragraph break]The Flee Elf hands you a Set O Notes and explains you need to find a way to destroy the [kaoscaps] to the north. Also, the Flee Elf notes the LOVE VOL and LO VOL settings on the pact cap: LO VOL means the cap is quiet and won't make a weird noise if you look at things that need a weird action. LOVE VOL means you will.[paragraph break]The Flee Elf also mentions a pip on the cap shows whether you may be able to [b]EYE[r] items later to determine approximately how far along they are in your quest--if you make enough good guesses. You ask what this means. The Flee Elf point you to the Tix Exit, which reads 79, presumably the last thing you'll need to operate.[paragraph break]'It's best I...' and with that, the Flee Elf becomes a FLED elf, pointing at the tile lit (slightly altered). You notice a TIX EXIT to the south, but you don't have any tickets.";
 	wfak;
 	say "[line break]You put the cap on. It fits okay. It can stay all quest. Not very stylish, but it sure beats wearing a bib.";
 	get-cap;
@@ -5916,6 +5918,8 @@ chapter book verbs
 books-carried-yet is a truth state that varies.
 
 a thing has a number called take-order. the take-order of a thing is usually 1.
+
+a thing has a number called eyespoil. eyespoil of a thing is usually 0.
 
 take-order of DWELT LEWD is 2.
 
@@ -8017,48 +8021,60 @@ understand "ecce [something]" as eyeing.
 
 to decide which number is rowcount of (th - a thing):
 	let res be 0;
+	if th is ergot ogre or th is kayo yak, decide on rowcount of pact cap + 1;
 	repeat through table of goodacts:
 		increment res;
 		if there is no use1 entry:
 			if preproc entry is rev-evade-Dave rule and th is Dave, decide on res;
 			if preproc entry is rev-create-tron rule:
-				if noun is a tronpart or noun is epicer recipe, decide on res;
+				if th is a tronpart or th is epicer recipe, decide on res;
 			if preproc entry is rev-bore-Rob rule and th is Rob, decide on res;
 			if preproc entry is rev-word-row rule and th is bad dab and ever-wordrow is false, decide on res;
 			if preproc entry is rev-work-row rule and th is bad dab and ever-workrow is false, decide on res;
 			if preproc entry is rev-tend-net rule and th is level net, decide on res;
 			if preproc entry is rev-puff-up rule and th is spur ups and puffed-up is false, decide on res;
 			if preproc entry is rev-pull-up rule and th is spur ups and pulled-up is false, decide on res;
-			if preproc entry is rev-stand-nats rule and th is nat's, decide on res;
+			if preproc entry is rev-stand-nats rule and th is nat's and Nat's Tan is had-or-done, decide on res;
 			if preproc entry is rev-deny-Ned rule and th is Ned, decide on res;
 			if preproc entry is rev-worn-row rule and th is Psi Wisp, decide on res;
-			if preproc entry is rev-pace-cap rule and th is pact cap and cap-ever-pace is false, decide on res;
+			if preproc entry is rev-pace-cap rule and th is pact cap:
+				if kayo yak is not moot, decide on res;
 			if preproc entry is rev-yak-okay rule:
-				if noun is yak or noun is ogre, decide on res;
+				if th is yak or th is ogre, decide on res;
 			if preproc entry is rev-nail-Ian rule and th is Ian, decide on res;
 			if preproc entry is rev-first-food-combo rule and th is an ingredient and number of moot ingredients < 2, decide on res;
 			if preproc entry is rev-second-food-combo rule and th is an ingredient, decide on res;
 			if preproc entry is rev-get-bros orb rule:
-				if noun is bros' orb or noun is stir writs, decide on res;
-			if preproc entry is rev-emit-noontime rule and th is yard ray, decide on res;
+				if th is bros' orb or th is stir writs, decide on res;
+			if preproc entry is rev-emit-noontime rule and th is yard ray and emitted is false, decide on res;
 			next;
 		if there is a use3 entry and use3 entry is moot, next;
 		if use1 entry is th:
+			if nextable of use1 entry and use2 entry, next;
 			if there is a use2 entry and use2 entry is not moot:
 				if there is no use3 entry or use3 entry is off-stage, decide on res;
 		if use2 entry is th:
+			if nextable of use1 entry and use2 entry, next;
 			if there is a use1 entry and use1 entry is not moot:
 				if there is no use3 entry or use3 entry is off-stage, decide on res;
 	decide on -1;
 
-a thing has a number called eyespoil. eyespoil of a thing is usually 0.
+to decide whether nextable of (u1 - a thing) and (u2 - a thing):
+	if u2 is puce cup and u1 is past sap:
+		if puce cup is sappy or liar grail is moot, yes;
+	if u2 is puce cup and u1 is dose sod:
+		if puce cup is soddy, yes;
+	if u1 is wash saw and u2 is past sap and sap-takeable is true, yes;
+	if u1 is radar and u2 is crag arc and UFO tofu is not off-stage, yes;
+	if u1 is spa maps and u2 is code doc and maps-explained is true, yes;
+	no;
 
 carry out eyeing:
 	if player does not have pact cap, say "You need the pact cap to [b]EYE[r] things." instead;
 	if eyespoil of noun > 0, say "You already got a number of [eyespoil of noun] for [the noun]." instead;
 	if noun is the player, say "You are always important. Always! Are you?" instead;
 	if noun is the pyx, say "It probbly doesn't solve any puzzles, but I bet it'll help you get around easier." instead;
-	if noun is a helpdoc, say "The [noun] is just for reading." instead;
+	if noun is a helpdoc and noun is not epicer recipe, say "The [noun] is just for reading." instead;
 	if eye-charges is 0, say "You don't feel able to see into anything right now[if ever-pip is true]. Maybe you should look into more[end if]." instead;
 	let Q be rowcount of noun;
 	if Q is -1, say "You see nothing special. Well, that's one less thing you need to manipulate." instead;
@@ -8077,10 +8093,22 @@ understand the command "ea" as something new.
 understand "ea" as eaing.
 
 carry out eaing:
+	let minuses be { pact cap };
+	now minuses is { };
+	let cluables be { pact cap };
+	now cluables is { };
 	repeat with X running through things:
 		if X is the player, next;
 		if X is not quicknear, next;
-		say "[X]: eye value = [rowcount of X].";
+		now eyespoil of X is rowcount of X;
+		if rowcount of X is -1:
+			add X to minuses;
+		else:
+			add X to cluables;
+	sort cluables in eyespoil order;
+	if number of entries in minuses > 0, say "Un-eyeable: [minuses].";
+	repeat with Y running through cluables:
+		say "[Y]: [eyespoil of Y].";
 	the rule succeeds;
 
 chapter meming
