@@ -1,22 +1,26 @@
 Hello, and welcome to the walkthrough for Ailihphilia, an IFComp 2018 game by Andrew Schultz.
 
-I didn't intend this game to be overly difficult or to have any weird profound meanings, but I had good laughs putting the puzzles together, and I hope you have fun solving them, even if you see what is going on and how there aren't THAT many possibilities to solve them. It may be a bit on the long side for two hours, and so I don't mind if you need to look for a walkthrough, or if I may lose scoring for that. Just one thing...REV OVER is a useful command to help push you through.
+I didn't intend this game to be overly difficult or to have any weird profound meanings, but I had good laughs putting the puzzles together, and I hope you have fun solving them, even if you see what is going on and how there aren't THAT many possibilities to solve them.
 
-If you are wondering about how certain
+It may be a bit on the long side for two hours, and so I don't mind if you need to look for a walkthrough, or if I may lose scoring for that. Just one thing...TIP IT is a useful command to help push you through, and if you look through the VERBS, you will find other warp commands.
 
 There should be no way to die or be locked out of a win in Ailihphilia.
 
-Ailihphilia is also decidedly nonlinear. This creates some problems with a plain text document. I doubt that you proceeded in the way I organized the puzzles for my main tests, so you may wind up skipping around a bit. I can only recommend the Invisiclues-style HTML hints that come with the build, if you want a more thorough approach to the game. It is room-based, so it may not be perfect, but you should be able to tell if something is blocking you.
+Ailihphilia is also decidedly nonlinear. This creates some problems with a plain text document. I doubt that you proceeded in the way I organized the puzzles for my main tests, so you may wind up skipping around a bit. I can only recommend the Invisiclues-style HTML hints that come with the build, if you want a more thorough approach to the game. It is room-based, so it may not be perfect, but you should be able to tell if something is blocking you. The in-game hints should work as well.
 
-The best way to look for what you need is to search for something that is blocking you. For instance, if you are stuck by the s-c-o-r-n r-o-c-s, you could search for either word (without the dashes).
+This walkthrough is designed to be turn-saving in the extreme. In other words, using this walkthrough, you will get stuff to help Person X before visiting Person X. I've tried to describe what's going on, so you can see a bit of detail if you want to.
 
-If you are technically inclined, you can grep -i "^>" walkthrough.txt | sed "s/.*>//" to plow through. Or grep -i ">.*(item name)" to see what to do with a specific item. So, if you want the quick way without comments, there it is. (Okay, it could be quicker, turn-wise, with the GT command. I've gotten under 200. But you might not save keystrokes.)
+The best way to look for what you need is to search for something that is blocking you. For instance, if you are stuck by the s-c-o-r-n r-o-c-s, you could search for either word. Without the dashes, of course.
+
+If you are technically inclined, you can grep -i "^>" walkthrough.txt | sed "s/.*>//" to plow through. Or grep -i ">.*(item name)" to see what to do with a specific item. So, if you want the quick way without comments, there it is. While it could be quicker, turn-wise, with the GT command--I've gotten under 200--you might not actually save keystrokes.
 
 Some particular spoilers, such as the general procedure for puzzles, may be encoded in ROT13. You'll know them, because they look like gibberish. Copy and paste them to Rot13.com to see what happens.
 
 Many point scoring commands will be palindromes. Most of the others are of the form USE X ON Y. You can shorten them by just using one word. In other words, to bowdlerize from Kingdom of Loathing's Palindome, USE EVIL OLIVE ON TACO CAT could be shortened to USE OLIVE ON CAT. (I used the full names because I wrote a script to make sure the walkthrough and source were relatively synced, and I didn't want to cross up namespaces e.g. the Gulf Lug and Flu Gulf could both be GULF.)
 
-So! Fun Enuf is, well, not fun enough to start. And worse yet, you can't leave until you know what to do with the Pact Cap! Well, you can leave through the Tix Exit, but that's no fun, unless you like seeing bad ends.
+So let\s get started.
+
+Fun Enuf is, well, not fun enough to start. And worse yet, you can't leave until you know what to do with the Pact Cap! Well, you can leave through the Tix Exit, but that's no fun, unless you like seeing bad ends.
 
 Flat out TAKEing the Pact Cap doesn't work. TAKE says maybe if it were a KAT. GET says "Get, e.g. ..."
 
@@ -36,33 +40,41 @@ Now you're kind of blocked at the Seer Trees in Grebeberg to the west, so maybe 
 
 >E.N
 
-The Revolt Lover says the trap art is a useless design that didn't quite work. Maybe it'll work for you.
+The Revolt Lover says the trap art is a useless design that didn't quite work. Maybe it'll work for you. It's not nailed down, so take it.
 
 >GET TRAP ART
 
-Now let's open up the part of Yelpley that lets you fiddle with the items you've got.
+Now let's open up the part of Yelpley that lets you fiddle with the items you've got. Note you can go north so you can use GT later, or you can just GT LOVER once you reach a dead end,
+
+By the way, the X/Y Pyx to the south is not critical, and you won't need it if you stick to this walkthrough, but it's helpful.
 
 >S.S
 
-So Dave won't let you go west. You need to do something to him. Something in the spirit of the game.
+So Dave won't let you go west. You need to do something to him. Something in the spirit of the game. If you examine Dave with the Pact Cap set to Love Vol, you hear a noise which means you need to do something weird.
 
 (+1) >EVADE DAVE
 
 >W
 
-Rob and Dave are two entirely different people, but the strategy is the same.
+Rob and Dave are two entirely different people, but the strategy is the same. Again, the noise.
 
 (+1) >BORE ROB
 
-Now Worn Row isn't suitable for getting anything done, yet. It has that redness ender, but that looks kind of dangerous. How would you restore it as a place to BE and DO something constructive? The Bad Dab is a hint.
+Now Worn Row isn't suitable for getting anything done, yet. It has that redness ender, but that looks kind of dangerous. How would you restore it as a place to BE and DO something constructive? The Bad Dab is a hint. There are two ways, but I'll go with the one that saves a few turns.
 
 (+1) >WORD ROW
 
-Each book in the Tract Cart is useful for something. However, two are more immediately useful. Backtracking to Word Row shouldn't be too painful, because as you'll later see, there are other things to do here, too.
+Each book in the Tract Cart is useful for something, except for the one you find that gets you an LLP. However, two are more immediately useful. Backtracking to Word Row shouldn't be too painful, because as you'll later see, there are other things to do here, too.
 
 >GET TO IDIOT
 
+Note: I had trouble with the parser on typing GET TO or whatever. So "GET TI" or "GET TO IDIOT" is recommended.
+
+To Idiot is a book about laughing at people. The Revolt Lover might not like it, but someone else does.
+
 >E.N.N.N
+
+The Door Frood seems to laugh at people a lot. Aha!
 
 (+1) >USE TO IDIOT ON DOOR FROOD
 
@@ -70,33 +82,39 @@ Each book in the Tract Cart is useful for something. However, two are more immed
 
 >E
 
+The Mayo Yam isn't critical until later, but take it, because hooray free stuff.
+
 >GET ALL
 
 Note you can't get EVERYTHING. But the pity tip also gives a small clue...
 
 (+1) >USE PITY TIP ON EYE
 
-We'll deal with the snack cans (much) later.
+The snack cans, like the mayo yam, can be dealt with much later.
+
+The rep popper and bomb mob/TNT are way down the line.
 
 >W.W
 
-What to do with the ten-level net? It looks a bit shaky.
+What to do with the ten-level net? It looks a bit shaky. Examining with the pact cap on confirms something special needs to be done.
 
 (+1) >TEND NET
 
-You should probably examine the epicer recipe here. You may remember the TNT just back east in Yell Alley. It's the trickiest of the four parts of the North-Tron to pick up.
+You should probably examine the epicer recipe here. You may remember the TNT just back east in Yell Alley. It's the trickiest of the four parts of the North-Tron to pick up. Not that any one is easy. Let's go back to Worn/Word Row.
 
 >E.S.S.S.W
 
-We can do something else with Worn Row now!
-
 (+1) >WORK ROW
 
-Now, the trap art goes with one of the machines, but which one?
+Hopefully the goings-on make it clear that you can get Word Row back whenever you need.
+
+The three machines have possibilities. The trap art is a nice design, but it's not the real thing.
+
+What if we put it in a machine? There's no penalty for guessing wrong.
 
 (+1) >USE TRAP ART ON REIFIER
 
-Maybe the bunk nub could be refurbished, or ...
+Maybe the bunk nub could be refurbished, too. It's not quite something anyone can sleep on.
 
 (+1) >USE BUNK NUB ON REVIVER
 
@@ -109,6 +127,8 @@ Now let's get another book.
 Now we can not only explore Grebeberg to the west but do a good deal there.
 
 >E.N.W.W
+
+The rats are in the way. There's a lot of ways to get rid of them, some shorter than this command, but I'm using the full one so this walkthrough is indexed. For instance, DROP works.
 
 (+1) >USE PARTY TRAP ON STARK RATS
 
@@ -132,7 +152,7 @@ The kayo yak is/was harmless, but it'll help you later. Where you'll have to mak
 
 >GET STAMP MATS.E.GET POO COOP
 
-Time to refill on books!
+Time to refill on books! GT might be useful here.
 
 >W.N.N.E.E.S.W.GET YOB ATTABOY
 
@@ -144,11 +164,11 @@ Now the Emo Dome pushes us back because it makes us feel ... down. The Spur Ups 
 
 >E
 
-There you go! But you still run through the Emo Dome too fast. How to stop yourself?
+There you go! But you still run through the Emo Dome too fast. How to stop yourself? The Spur Ups are half-used.
 
 (+1) >PULL UP
 
-You now have access to a few more rooms. But let's not cover them all at once. You can't do anything meaningful to the east, yet.
+You now have access to a few more rooms. But let's not cover them all at once. You can't do anything meaningful to the east, yet. The cross orc blocks you. And Red Roses Order to the north is a long way away. You need to fool the DIFF ID.
 
 >GET PUCE CUP
 
@@ -162,63 +182,87 @@ Now put the sap somewhere its stickiness doesn't matter.
 
 (+1) >USE PUCE CUP ON PAST SAP
 
->S.E.E.E.S.GET TROLL ORT
+You'll notice that the past sap changes to purist sirup if you move away.
 
-How to rescue the Wordy Drow? Note the past sap has changed, now it's warm.
+>S.E.E.E.S
+
+Always take random stuff lying around!
+
+>GET TROLL ORT
+
+How to rescue the Wordy Drow? Note the past sap has changed, now it's warm. Also note the Liar Grail leaves you feeling twisted by paradoxes, etc.
 
 (+1) >USE PUCE CUP ON LIAR GRAIL
 
+If you go south, you'll notice the Bond Nob, who is sick and needs medicine. But you don't have to, to save moves.
+
 >N.W.W.W.N.E
+
+The dose sod can't be handled by itself. The go-by bog can't be dealt with until you know a way through. Also, if you go north of Cold Loc, you'll see someone who needs your help.
 
 >USE PUCE CUP ON DOSE SOD
 
-Trivia time: you only get a point the first time you fill up the puce cup. So if you'd filled it with the dose sod first, you'd have gotten a point for the sod. Also, if you fill it with sap twice, you don't get an extra point.
+Trivia time: you only get a point the first time you fill up the puce cup. So if you'd filled it with the dose sod first, you'd have gotten a point for the sod. Also, if you fill it with sap or sod twice, you don't get an extra point.
 
 >W.S.E.E.E.S.S
 
 (+1) >USE PUCE CUP ON BOND NOB
 
-Let's get busy with what's behind the nob, now. We can't do everything to the west, but there's enough.
+You can't use the Elan Ale, but maybe someone else can, a bit later. Someone who wants to be posh.
+
+Let's get busy with what's behind the nob, now. We can't do get the cassettes sac to the west, but the Demo Med is enough for now.
 
 >W.GET ALL.E.E
+
+Hmm. The scrap metals are useless without something that can design them.
 
 (+1) >USE STAMP MATS ON SLATE METALS
 
 Ooh, a key! Not just any key, but YE KEY!
 
-And maybe we can help the Gulf Lug now.
+And maybe we can help the Gulf Lug in Flu Gulf, north of Cold Loc, now.
 
 >W.N.N.W.W.W.N.N
 
 (+1) >USE DEMO MED ON GULF LUG
 
-A reward! We don't have much to buy for ourselves, and there aren't any actual shops, so ... let's spread the wealth.
+A reward! We don't have much to buy for ourselves, and there aren't any actual shops, so ... let's spread the wealth to someone who cares.
 
 >S.S.E.E.E.E
 
 (+1) >USE CASH SAC ON CROSS ORC
 
+Now we can go north or south!
+
 >S
 
-We can do a bit of the work in Deli, Tiled. Even change it.
+We can do a bit of the work in Deft Fed. Even change it. Or help Sniffins change it.
 
 (+1) >USE YOB ATTABOY ON SNIFFINS
 
-You're kicked out, but you can just go back in.
+You're kicked out, but you can just go back in. The Dirt Rid is not useful in its present state, but maybe you can guess what to do with it.
 
 >S
 
+You may notice the location name is different. This means nothing other than that I had some really good location names but not enough locations. I hope it's a nice side perk in addition to just scoring points.
+
+How can we class up the joint? Sniffins won't give us the Gorge Grog.
+
 (+1) >USE ELAN ALE ON SNIFFINS
 
-You didn't need to give Sniffins anything to get the Nat's, but you still need Nat's much later.
+You didn't need to give Sniffins anything to get the Nat's, but you still need Nat's much later. Let's take care of it now, so we won't have to visit Deli, Tiled again.
 
 (+1) >STAND NAT'S
 
+With another book fobbed off on an NPC, let's get the final one. Okay, there will be Some Demos, too. But that's for something else.
+
+We won't be using the last book for a while, but why not take it now?
+
 >N.W.W.S.W.GET NULL ILLUN
 
-We won't be using Null Illun for a while, but why not save moves now?
-
 >WORK ROW
+
+The Cave Vac is simple not powerful enough to clean anything. But once it is, you may know what to clean.
 
 (+1) >USE DIRT RID ON REVIVER
 
@@ -226,31 +270,47 @@ We won't be using Null Illun for a while, but why not save moves now?
 
 (+1) >USE CAVE VAC ON CASSETTES SAC
 
-A radar can detect hidden things. What might be hiding something?
+A radar can detect hidden things. What might be hiding something? You may wish to scan random scenery before finding the answer below.
 
 >E.N.N.E
 
 (+1) >USE RADAR ON CRAG ARC
 
+That's four food items you have, now.  You may wish to combine them to see what happens or doesn't.
+
+Also, let's see what's to the north. If you are using the pyx, you'll notice there are just three rooms left in Yelpley, and the Red Roses Order is probably the last one you'll see.
+
 >N
+
+Ned wants a fight! The pact cap says you need to do something unusual. You can't fight, so denting him is out.
 
 (+1) >DENY NED
 
 >GET ALL
 
+The stinky knits are, again, not useful as-is. But they are free!
+
+That gate, though. What generally opens a gate?
+
 (+1) >USE YE KEY ON ETAGE GATE
+
+You may or may not have seen the roses, or ... pattern before.
 
 >N
 
 Now begins a chase! How to get rid of the Psi Wisp? It's reddish--do you remember anything else sort of red? Or something anti-red?
 
+You will be able to remove rooms by process of elimination. But you need a really powerful room to get rid of the wisp.
+
 >S.S.W.W.S.W
+
+The tract cart doesn't seem powerful enough. The RE*ER machines--well, the wisp won't be obliging enough to fit. What does that leave?
 
 The redness ender!
 
 (+1) >WORN ROW
 
-Bam! There goes the Psi Wisp. Back to work. We have some stuff to convert, now, before going back to Pro Corp.
+Bam! There goes the Psi Wisp. Back to work. We have something to convert, now, before going back to Pro Corp. The Stinky Knits could use sprucing up.
 
 >WORK ROW
 
@@ -266,11 +326,15 @@ The butene tub may or may not be chemically unstable. Do you have anything else 
 
 Science! And hey, a piece of the north-tron!
 
+Maybe you can do something else with the junk you have. The gold log is treasure, but you don't need it, and the DNA Band ... well, you can upgrade it now, but it's part of a longer later puzzle.
+
 >S.S.W.W.S.W
 
-Now the Gold Log is shiny, but it's not particularly useful, and it's not you. It seems to be rattling, as if it holds something inside, but you can't figure out how to open it.
+The Gold Log is shiny, but it's not particularly useful, and it's not you. It seems to be rattling, as if it holds something inside, but you can't figure out how to open it.
 
 (+1) >USE GOLD LOG ON ROTATOR
+
+The dork rod is a bit more your speed. You can use it somewhere else, but again, there are places along the way.
 
 >E.N.W.W.S.S.E
 
@@ -286,9 +350,11 @@ You could cut a design out of the soot tattoos, but with what?
 
 >S.S.W.WORK ROW
 
+* note to testers: this looks like wasted moves, the 3 before and 2 after! I'm not sure why I did this. Perhaps it's an artifact from a less efficient previous walkthrough version. Can you confirm?
+
 >E.N.W.W.W
 
-We can stop here to make passage to not one, but two, new places. The third will have to wait.
+We can stop here to make passage to not one, but two, new places. The third will have to wait. The lie veil is too tricky right now. But the gnu dung and turf rut--too much matter in one, not enough in another.
 
 (+1) >USE POO COOP ON GNU DUNG
 
@@ -298,29 +364,35 @@ Recycling time!
 
 >W
 
-The made dam may or may not be hiding something.
+The made dam may or may not be hiding something. It's made of all sorts of odd materials, some it probably doesn't need.
 
 (+1) >USE RADAR ON MADE DAM
 
-You can probably guess the eroded ore can be changed into Ore Zero, but getting it now is a bit out of the way for an optimal walkthrough. Let's wait until we have other stuff for the machines.
+You can probably guess the eroded ore can be changed into Ore Zero, but getting it now is a bit out of the way for an optimal walkthrough. Let's wait until we have other stuff for the machines, then do it all at once.
 
 >N
 
-We can help the Known Wonk out, now, which helps us out, too.
+The sim mist blocking the way to the north is annoying. So is the Known Wonk, who says we can't pass it. Not out of malice but out of fear.
+
+We can help the Known Wonk out, now, and that helps us out in return.
 
 (+1) >USE NULL ILLUN ON KNOWN WONK
 
-We can go north!
+We can see what's behind the mist sim, but ... the edits tide is an odd sort of scenery. Maybe we can do something with it.
 
 (+1) >USE EL DOODLE ON EDITS TIDE
 
-The map is useful later, but first, we can do good work north in Lac Oft Focal.
+The spa maps will be useful later once someone helps you decipher them fully, but first, we can do good work north in Lac Oft Focal.
 
 >N
 
-First, the Kayak doesn't have any oars, but you have something that can help you get places.
+Now, the Kayak doesn't have any oars, but you have something that can help you get places.
 
 (+1) >USE ELOPE POLE ON KAYAK
+
+The you buoy isn't useful as-is, as you have no more travels over water.
+
+The Tao Boat, on the other hand, wants you to show it something. How would you show it you're happy with who you are and what you're doing?
 
 How do you feel peaceful enough to not be disrupted by your enemies, or this quest not being super intense?
 
@@ -332,25 +404,27 @@ And now we can do a bit of double duty with the Code Doc. First, help the Code D
 
 (+1) >USE TENT NET ON CODE DOC
 
-...and the Code Doc will help you!
+...and the Code Doc will help you! Do you have any inventory items that might be confusing to you, still?
 
 (+1) >USE SPA MAPS ON CODE DOC
 
-The spa maps probably can be used on ... the Apse Spa.
+The spa maps probably can be used on ... scenery in the Apse Spa. Let's go there.
 
 >N.E.E.N.E
 
 (+1) >USE SPA MAPS ON GO-BY BOG
 
-This gets you the Sage Gas, which you can't use right away. Now to get by the Ergot Ogre to the south of the Code Doc. You won't have seen the ogre if you just blindly followed this walkthrough, but trust me, it's there!
+This gets you the Sage Gas, which you can't use right away. Now to get by the Ergot Ogre to the south of the Code Doc. You won't have seen the ogre if you just followed this walkthrough without digressing, but trust me, it's there!
+
+First, though, a detour to the Moo Room.
 
 >W.S.S.S.E
 
-Pick up something for later in Moo Room.
+There's still some hay left, but it's not soft and artsy.
 
 (+1) >USE ENACT CANE ON YAHOO HAY
 
-You'll clean up somewhere else with the moor broom, but first, let's clean up Grebeberg of a certain hooligan.
+You'll clean up somewhere else with the moor broom, but first, let's clean up Grebeberg of a certain blight. You will need the yak's assistance, but the yak can outrun you.
 
 (+1) >PACE CAP
 
@@ -358,11 +432,15 @@ This makes you go faster.
 
 (+1) >USE TROLL ORT ON BRAG GARB
 
-Now, run for your life!
+Now, run for your life! Okay, not for your life, but run and keep ahead of the yak.
 
 >W.N.N.W.W.S.S
 
+The ogre is intimidating but seems scared of the yak.
+
 How to get the yak to charge?
+
+A special command works here.
 
 (+1) >YAK OKAY
 
@@ -370,13 +448,18 @@ Bye bye, ogre. Happy trails, yak.
 
 >E
 
+The tame mat doesn't really say anything, and you will want to fix that.
 (+1) >USE SAGE GAS ON TAME MAT
 
-The guru rug is still a bit too pie-in-the-sky. Maybe it would be great if you didn't need to fix things, but you do, so it isn't.
+Oops! You have the opposite problem, now. The guru rug is still a bit too pie-in-the-sky. Maybe it would be perfect if you didn't need to fix things, but you do, so it isn't.
+
+You need something that brings actions to the ideals of the guru rug.
 
 (+1) >USE SHARP RAHS ON GURU RUG
 
-There we go! You feel more competent now.
+There we go! You feel more competent now. More worthy of being able to do things. The stir writs will give you confidence.
+
+There is still one place we haven't looked at which is open. Siuth of Dumb Mud.
 
 >W.N.N.E.S
 
@@ -384,7 +467,7 @@ What do we do about Ian? Once we dispose of him, we can mix foods. But he is in 
 
 (+1) >NAIL IAN
 
-Without Ian, we can experiment some. Mont Nom is about food.
+Without Ian, we can experiment some. Mont Nom is about food. Some combinations don't work.
 
 (+1) >USE SNACK CANS ON UFO TOFU
 
@@ -392,7 +475,9 @@ And experiment some more.
 
 (+1) >USE GIFT FIG ON MAYO YAM
 
-Okay. The Martini Tram is the second part of the North-Tron. But note chasing it sent you back to Fun Enuf.
+In case you're curious, you need to mix a liquid with a solid. The tofu and yam are considered liquid, or soft. The snack cans and gift fig are considered solid, or hard.
+
+After your creations, the Martini Tram is the second part of the North-Tron. But note chasing it sent you back to Fun Enuf.
 
 >W.W.W.N
 
