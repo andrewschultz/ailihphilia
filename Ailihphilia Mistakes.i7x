@@ -6,7 +6,7 @@ volume Mistakes
 
 [programmer's note: the utility aam.py adds or sorts the 'mis' numbers. Mist.py makes sure each mistake is in the appropriate rbr-* or reg-* test file.]
 
-to decide whether (mt - a thing) is/are quicknear:
+definition: a thing (called mt) is quicknear:
 	if mt is in location of player, yes;
 	if player carries mt, yes;
 	if player wears mt, yes;
@@ -816,9 +816,11 @@ understand "bordered Rob" as a mistake ("Nothing sneaks up next to Rob to edge h
 
 understand "boree Rob" as a mistake ("Ooh! Close! How would you MAKE him a boree?[mis of 282]") when Rob is quicknear.
 
+understand "borf Rob" as a mistake ("No laser-disc-graphic quality space alien appears in a UFO to kidnap Rob. Well, it probably would've done something awful to you, too.[mis of 365]") when Rob is quicknear.
+
 understand "borg Rob" as a mistake ("He is already assimilated.[mis of 236]") when Rob is quicknear.
 
-understand "bork Rob" as a mistake ("Maybe there is a more nonviolent way to get him to give up.[mis of 237]") when Rob is quicknear.
+understand "bork Rob" as a mistake ("Maybe there is a more nonviolent way to get him to give up. Or less political, if you're old enough.[mis of 237]") when Rob is quicknear.
 
 understand "born Rob" as a mistake ("Rob's regular babble is bad enough. His full life story would be truly enervating.[mis of 273]") when Rob is quicknear.
 
@@ -874,6 +876,8 @@ understand "wonk now" as a mistake ("The wonk seems in no hurry to do anything.[
 
 chapter Yawn Way
 
+understand "way aw" as a mistake ("You take a moment to feel bummed about how quiet it is here.[mis of 253]") when player is in Yawn Way.
+
 understand "yawp way" and "yawl way" as a mistake ("It's still quiet here.[mis of 253]") when player is in Yawn Way.
 
 chapter Yell Alley
@@ -896,7 +900,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 
@@ -921,7 +925,10 @@ to say mis of (n - a number):
 					if mis-yet is false:
 						now mis-yet is true;
 						say "[line break]NOTE: THINK[if refer-yet is true]/REFER[end if] will show you the LLPs clued so far that you haven't figured, yet.[run paragraph on][line break]";
-					continue the action;
+					break;
+			say "[line break]The pip in your pact cap [if eye-charges > 1]brightens further[else if ever-pip is false]lights up! You'll be able to EYE something, now[else]lights back up[end if].";
+			now ever-pip is true;
+			increment eye-charges;
 
 volume old school verbs
 

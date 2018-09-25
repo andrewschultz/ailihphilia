@@ -141,7 +141,7 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 540. [-40 from max_verbs debug]
+use MAX_VERBS of 540. [-40/50 from max_verbs debug]
 
 use MAX_ACTIONS of 200.
 
@@ -151,7 +151,7 @@ use MAX_SYMBOLS of 22000.
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 580. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 590. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 use MAX_ACTIONS of 220. [+10?]
 
@@ -954,6 +954,7 @@ to decide whether the action is procedural: [aip]
 	if listening, yes;
 	if rading, yes;
 	if gotothinging, yes;
+	if eyeing, yes;
 	if useoning:
 		if noun is radar or second noun is radar, yes;
 	if taking inventory, yes;
@@ -1099,6 +1100,18 @@ instead of thinking:
 	if revisited-u is false and revisit-clue is true, say "You may wish to visit the Code Doc again in [uneven u] to see what the fuss was about.";
 	if LLP-yet is false, say "You don't have any last lousy points to figure that've been clued in-game.";
 	if player has yard ray and murdered rum is not moot, say "You need to figure how to charge the yard ray.";
+	let Q be the list of eyed things;
+	if number of entries in Q > 0:
+		sort Q in eyespoil order;
+		say "[line break][b]Things eyed:[r][line break]";
+		repeat with Q2 running through Q:
+			say "[Q2] ([if player has Q2]carried)[else][hn of location of Q2][end if]): [eyespoil of Q2][if eyespoil of Q2 <= score + 1] (hmm, worth looking into)[end if][line break]";
+	if eye-charges > 0, say "[line break][pip-charges].";
+
+definition: a thing (called th) is eyed:
+	if th is moot, no;
+	if eyespoil of th > 0, yes;
+	no;
 
 to decide whether sce-to-see:
 	repeat with q running through xable things:
@@ -1314,6 +1327,8 @@ after printing the name of an exhausted thing while taking inventory: say " (x)"
 
 after printing the name of pact cap while taking inventory: if cap-pace is true, say " (bent slightly to be a PACE cap too)".
 
+after printing the name of pact cap while taking inventory: if eye-charges > 0, say " ([eye-charges] pip charge[plur of eye-charges])".
+
 after printing the name of yard ray while taking inventory: say " ([unless murdered rum is moot]un[end if]charged)".
 
 after printing the name of spa maps while taking inventory: say " ([if maps-explained is true]deciphered[else]indecipherable[end if])".
@@ -1519,18 +1534,21 @@ to decide whether chase-aware:
 	if ever-chased is true and psi wisp is not moot and kayo yak is not moot, yes;
 	no;
 
+to say eye-v-note: if eye-charges is 0, say ", once you recharge the pip with some good guesses"
+
 carry out verbing:
 	say "[2da]The four basic directions ([b]N, S, E, W[r]) are the main ones, along with [b]USE[r], in order to get through the game. Also, in some places, specific verbs will be needed. None are terribly long, and---well, there is a thematic pattern to them[if Dave is moot], as you've already seen with Dave[end if].";
 	say "[line break][2da]Standard verbs like [b]X[r] ([b]EXAMINE[r]) and [b]LOOK[r] also work.";
 	say "[2da][b]GT[r] or [b]GO TO[r] lets you go to a room, thing or person you've seen before. It fails if the person or thing has been removed from the game. You can also use [b]GR[r] for rooms only, or [b]GI[r] for individuals or items only.";
 	say "[2da][b]T[r], [b]TA[r], [b]TALK TO[r], or [b]GREET[r] talks to someone. There's not much in the way of conversation in this game, but you may get some clues from basic chat. You usually won't need an object, since there's usually no more than one person per room.";
 	say "[2da][b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
-	say "[2da][b]THINK[r]/[b]TH[r] gives general non-spoiler hints, including where you may wish to visit, what you haven't examined, or what is blocking you. [b]AID[r] gives you spoiler hints for where you are, though it may indicate you need to visit other places first. [b]MEM[r] pinpoints where useful people and things are.";
+	say "[2da][b]THINK[r]/[b]TH[r] gives general non-spoiler hints, including where you may wish to visit, what you haven't examined, or what is blocking you[if ever-pip is true][b]EYE[r] lets you look at something to see if it is useful to your quest, and when[eye-v-note][end if].";
+	say "[2da][b]AID[r] gives you spoiler hints for where you are, though it may indicate you need to visit other places first. [b]MEM[r] pinpoints where useful people and things are.";
 	say " [2da]sub-commands of THINK: [b]SCE RECS[r] clues scenery you haven't examined yet, and [b]EPI WIPE[r] resets the game's records on things and scenery you examined.";
 	if cur-score of Odd Do < max-score of Odd Do:
 		say "[line break]There are also a few guess-the-verb bonus points that are hidden. Some relate to objects or people that need help but can't help you, and some are riffs on standard commands. [if refer-yet is false]There's a different way to revisit, rehash or recap this very command, for example[else]For instance, you got REFER as VERBS[end if]";
 	say "[line break]Also, many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy. If you miss them, you'll see the entire list at the end.";
-	say "[2da][b]META[r] (or [b]META AT EM[r] has information on meta-verbs, which includes options (e.g. turning some minor hints on or off), cheat/warp commands for judges near the two-hour limit, scoring, and information on how the game was created and who helped.";
+	say "[2da][b]META[r] (or [b]META AT EM[r]) has information on meta-verbs, which includes options (e.g. turning some minor hints on or off), cheat/warp commands for judges near the two-hour limit, scoring, and information on how the game was created and who helped.";
 	if in-beta is true, say "META also gives beta tester commands.";
 	if debug-state is true, say "[2da]SMITIMS = win after Deep Speed.[line break][2da]TCC/TCCC aligns move to palindrome or palindrome + 1.";
 	abide by the situational commands show rule;
@@ -3925,7 +3943,7 @@ understand "pack" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did." instead;
-	say "'Rec [']er!' shouts the Flee Elf. 'Hat! Ah!'[paragraph break]The Flee Elf hands you a Set O Notes and explains you need to find a way to destroy the [kaoscaps] to the north. Also, the Flee Elf notes the LOVE VOL and LO VOL settings on the pact cap: LO VOL means the cap is quiet and won't make a weird noise if you look at things that need a weird action. LOVE VOL means you will. 'It's best I...' and with that, the Flee Elf becomes a FLED elf, pointing at the tile lit (slightly altered). You notice a TIX EXIT to the south, but you don't have any tickets.";
+	say "'Rec [']er!' shouts the Flee Elf. 'Hat! Ah!'[paragraph break]The Flee Elf hands you a Set O Notes and explains you need to find a way to destroy the [kaoscaps] to the north. Also, the Flee Elf notes the LOVE VOL and LO VOL settings on the pact cap: LO VOL means the cap is quiet and won't make a weird noise if you look at things that need a weird action. LOVE VOL means you will.[paragraph break]The Flee Elf also mentions a pip on the cap shows whether you may be able to [b]EYE[r] items later to determine how far along they are in your quest--if you make enough good guesses. You ask what this means.[paragraph break]'It's best I...' and with that, the Flee Elf becomes a FLED elf, pointing at the tile lit (slightly altered). You notice a TIX EXIT to the south, but you don't have any tickets.";
 	wfak;
 	say "[line break]You put the cap on. It fits okay. It can stay all quest. Not very stylish, but it sure beats wearing a bib.";
 	get-cap;
@@ -3938,6 +3956,21 @@ to get-cap:
 	now Tix Exit is in Fun Enuf;
 	now player has Set O Notes;
 	now player wears the cap;
+
+chapter pip
+
+ever-pip is a truth state that varies.
+
+the pip is part of the cap. the pip is peripheral. "[pip-charges]."
+
+eye-charges is a number that varies.
+
+to say pip-charges:
+	say "The pip on the pact cap is currently ";
+	if eye-charges is 0:
+		say "dark[if ever-pip is true], but maybe more good guesses could recharge it[end if]";
+	else:
+		say "lit[if eye-charges > 1], and not just lit, but it separates into [pip-charges] parts if you stare too hard[end if]";
 
 chapter pace cap
 
@@ -7972,6 +8005,84 @@ understand "dod/ord" and "drop ord" as DropOrd.
 
 volume bonus points and odd verbs
 
+chapter eyeing
+
+eyeing is an action applying to one thing.
+
+understand the command "eye" as something new.
+understand the command "ecce" as something new.
+
+understand "eye [something]" as eyeing.
+understand "ecce [something]" as eyeing.
+
+to decide which number is rowcount of (th - a thing):
+	let res be 0;
+	repeat through table of goodacts:
+		increment res;
+		if there is no use1 entry:
+			if preproc entry is rev-evade-Dave rule and th is Dave, decide on res;
+			if preproc entry is rev-create-tron rule:
+				if noun is a tronpart or noun is epicer recipe, decide on res;
+			if preproc entry is rev-bore-Rob rule and th is Rob, decide on res;
+			if preproc entry is rev-word-row rule and th is bad dab and ever-wordrow is false, decide on res;
+			if preproc entry is rev-work-row rule and th is bad dab and ever-workrow is false, decide on res;
+			if preproc entry is rev-tend-net rule and th is level net, decide on res;
+			if preproc entry is rev-puff-up rule and th is spur ups and puffed-up is false, decide on res;
+			if preproc entry is rev-pull-up rule and th is spur ups and pulled-up is false, decide on res;
+			if preproc entry is rev-stand-nats rule and th is nat's, decide on res;
+			if preproc entry is rev-deny-Ned rule and th is Ned, decide on res;
+			if preproc entry is rev-worn-row rule and th is Psi Wisp, decide on res;
+			if preproc entry is rev-pace-cap rule and th is pact cap and cap-ever-pace is false, decide on res;
+			if preproc entry is rev-yak-okay rule:
+				if noun is yak or noun is ogre, decide on res;
+			if preproc entry is rev-nail-Ian rule and th is Ian, decide on res;
+			if preproc entry is rev-first-food-combo rule and th is an ingredient and number of moot ingredients < 2, decide on res;
+			if preproc entry is rev-second-food-combo rule and th is an ingredient, decide on res;
+			if preproc entry is rev-get-bros orb rule:
+				if noun is bros' orb or noun is stir writs, decide on res;
+			if preproc entry is rev-emit-noontime rule and th is yard ray, decide on res;
+			next;
+		if there is a use3 entry and use3 entry is moot, next;
+		if use1 entry is th:
+			if there is a use2 entry and use2 entry is not moot:
+				if there is no use3 entry or use3 entry is off-stage, decide on res;
+		if use2 entry is th:
+			if there is a use1 entry and use1 entry is not moot:
+				if there is no use3 entry or use3 entry is off-stage, decide on res;
+	decide on -1;
+
+a thing has a number called eyespoil. eyespoil of a thing is usually 0.
+
+carry out eyeing:
+	if player does not have pact cap, say "You need the pact cap to [b]EYE[r] things." instead;
+	if eyespoil of noun > 0, say "You already got a number of [eyespoil of noun] for [the noun]." instead;
+	if noun is the player, say "You are always important. Always! Are you?" instead;
+	if noun is the pyx, say "It probbly doesn't solve any puzzles, but I bet it'll help you get around easier." instead;
+	if noun is a helpdoc, say "The [noun] is just for reading." instead;
+	if eye-charges is 0, say "You don't feel able to see into anything right now[if ever-pip is true]. Maybe you should look into more[end if]." instead;
+	let Q be rowcount of noun;
+	if Q is -1, say "You see nothing special. Well, that's one less thing you need to manipulate." instead;
+	say "On eyeing [the noun], you notice the pact cap registers the number [Q][one of]. You can recall this with THINK[stopping].";
+	now eyespoil of noun is Q;
+	decrement eye-charges;
+	if eye-charges is 0, say "[line break]The pip in the pact cap winks out. You may need more good guesses to bring it back.";
+	the rule succeeds.
+
+chapter eaing - not for release
+
+eaing is an action out of world.
+
+understand the command "ea" as something new.
+
+understand "ea" as eaing.
+
+carry out eaing:
+	repeat with X running through things:
+		if X is the player, next;
+		if X is not quicknear, next;
+		say "[X]: eye value = [rowcount of X].";
+	the rule succeeds;
+
 chapter meming
 
 definition: a thing (called th) is memorable:
@@ -9961,6 +10072,8 @@ montopic (topic)	on-off	test-title (text)	test-action	topic-as-text (text)
 "aid"	false	"AIDING"	try-aid rule	"aid"
 "xlist"	false	"DIRING"	show-dirs rule	"showing directions"
 "sos"	false	"SOSING"	sos-it rule	"sos new hint"
+"mem"	false	"MEMING"	mem-it rule	"mem it all"
+"eye"	false	"EYEING everything"	eye-it rule	"eye it all"
 
 this is the sos-it rule: try sosing;
 
@@ -9975,6 +10088,12 @@ carry out exitsing:
 
 this is the try-aid rule:
 	try aiding;
+
+this is the eye-it rule:
+	try eaing;
+
+this is the mem-it rule:
+	try meming;
 
 chapter noxing
 
