@@ -1031,7 +1031,7 @@ chapter listening
 
 instead of listening:
 	if noun is pact cap, say "The pact cap will make noise when needed[if cap-vol is false], though you may want to turn it back on with LOVE VOL first[end if]." instead;
-	if noun is bomb mob or mount is navy van, say "Yell-ey." instead;
+	if noun is bomb mob or noun is navy van, say "Yell-ey." instead;
 	if player is in My Gym:
 		say "[if debug-state is true]DEBUG NOTE RANDOM SONG: [end if][if Dave is in My Gym]Behind Dave's grunts, y[else]Y[end if]ou [one of]tolerate[or]imagine your favorite English teacher giving you a D+ for a poem with the lyrics of[or]are inspired to move, but not in the intended way, by[or]can't escape[or]dread a casual conversation containing the lyrics of[or]imagine the marketers earned their keep promoting[or]feel guilty liking the beats but loathing the words of[or]realize you're going to forget something important but remember the lyrics of[or]feel glad it's the low-volume version of[or]hate yourself for not completely loathing[or]hope nobody got paid too much for writing[or]guess the title from the repeated words of[or]hear, and guess some people are inspired by,[in random order] [next-rand-txt of table of My Gym songs]." instead;
 	if player is in Apse Spa, say "Surprisingly, no spa yaps." instead;
@@ -5357,21 +5357,26 @@ to say star-vert of (myr - a room) and (nu - a number):
 	else:
 		say "|"
 
+to write-top-bottom-edge:
+	let temp be 0;
+	let loc-rem be remainder after dividing loc-num of location of player by 10;
+	say "[fixed letter spacing]";
+	while temp < 7:
+		if temp is loc-rem:
+			say "[first custom style]*****[fixed letter spacing]";
+			break;
+		increment temp;
+		say "        ";
+
 to say map-so-far:
 	let lastnum be -1;
 	let pyx-row be 0;
 	let thru-once be false;
 	let times-thru be 0;
+	if loc-num of location of player < 10:
+		write-top-bottom-edge;
+		say "[line break]";
 	say "[fixed letter spacing]";
-	let temp be 0;
-	if loc-num of location of player < 10 or loc-num of location of player >= 40: [put stars on the top and bottom]
-		let loc-rem be remainder after dividing loc-num of location of player by 10;
-		while temp < 7:
-			if temp is loc-num of location of player:
-				say "[first custom style]*****[fixed letter spacing][line break]";
-				break;
-			increment temp;
-			say "        ";
 	while pyx-row < 28 or times-thru < 2:
 		increment pyx-row;
 		choose row pyx-row in table of pyxloc;
@@ -5389,6 +5394,9 @@ to say map-so-far:
 				now pyx-row is pyx-row - 7;
 			else:
 				now times-thru is 0;
+	if loc-num of location of player >= 40:
+		say "[line break]";
+		write-top-bottom-edge;
 	say "[variable letter spacing]";
 
 Table of User Styles (continued)
@@ -8049,7 +8057,8 @@ carry out revovering:
 					increment the score;
 					increment cur-score of reg-plus entry;
 					now done entry is true;
-			if the remainder after dividing global-delay by 5 is 0 and deep-speeding is false and rev-skips is 0:
+			if the remainder after dividing global-delay by 5 is 0 and deep-speeding is false and rev-skips is 0 and score < min-win - 4:
+				say "Okay, do you want to try to do more?";
 				if the player yes-consents:
 					do nothing;
 				else:
@@ -8098,7 +8107,13 @@ carry out revovering:
 		if d1 entry is true, moot use1 entry;
 		if d2 entry is true, moot use2 entry;
 		if there is a postproc entry, follow the postproc entry;
-	if global-delay < rev-skips, say "rev-skips was too much by [rev-skips - global-delay].";
+		if global-delay < rev-skips, say "rev-skips was too much by [rev-skips - global-delay].";
+		if the remainder after dividing global-delay by 5 is 0 and deep-speeding is false and rev-skips is 0 and score < min-win - 4:
+			say "Okay, do you want to try to do more?";
+			if the player yes-consents:
+				do nothing;
+			else:
+				break;
 	now revving-over is false;
 	if rev-skips > 0 and move-room is not location of player:
 		skip upcoming rulebook break;
@@ -8109,7 +8124,7 @@ carry out revovering:
 	if turns-to-add > 0:
 		let delt be score - last notified score;
 		skip upcoming rulebook break;
-		if delt > 2 and score is 73, say "[line break]Thus ends your [if deep-speeding is true]DEEP SPEED [else if revving-over is true]REV OVER [else]accelerated [end if]journey, so close to saying Grebeberg and Yelpley.";
+		if delt > 2 and score is 73, say "[line break]Thus ends your [if deep-speeding is true]DEEP SPEED [else if revving-over is true]REV OVER [else]accelerated [end if]journey, so close to saving Grebeberg and Yelpley.";
 		say "[line break][bracket][if delt > 0]I just gave you [delt] point[plur of delt] to go with your quick trip, and I also[else]I[end if] tacked on [turns-to-add] turns, as a guesstimate.[close bracket][paragraph break]";
 		now score-cheat is score-cheat + score - last notified score;
 		now last notified score is score;
