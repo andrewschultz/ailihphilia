@@ -254,6 +254,7 @@ Include (-
 	  'love vol', 'lo vol', 'lovol', 'lovevol':  print "tweak the pact cap";
 	  'niwin':  print "list game warping actions with NIWIN";
 	  'map':  print "look at the MAP";
+	  'mem':  print "MEMory recall some things";
 	  'meta':  print "read META commands";
 	  'pace cap', 'pacy cap':  print "toggle the pack cap";
 	  'pack cap':  print "pick up the pack cap";
@@ -682,15 +683,45 @@ chapter nothing to say
 
 nothing-txt is a number that varies.
 
-Rule for printing a parser error when the latest parser error is the noun did not make sense in that context error:
-	if debug-state is true, say "[current action] [noun].";
-	say "The object didn't match the verb in that command."
+parser error flag is a truth state that varies.
+
+the last-command is indexed text that varies.
 
 Rule for printing a parser error when the latest parser error is the noun did not make sense in that context error:
 	if word number 1 in the player's command is "go" or word number 1 in the player's command is "gt":
 		say "I didn't recognize the room, and unfortunately, I don't recognize GO TO (item or person)[if screenread is false]. You may wish to use the Pyx for that[end if].";
 		the rule succeeds;
-	say "The object didn't mix well with the verb, there. I wish I could give more help, but you're likely trying something more obscure than you need to."
+	say "The object didn't mix well with the verbin your command. I wish I could give more help, but you're likely trying something more obscure than you need to."
+
+Rule for printing a parser error when the latest parser error is the only understood as far as error:
+	let nw be number of words in the player's command - 1;
+	if nw > 6:
+		now nw is 6;
+	say "That command seemed like it was longer than it needed to be, or maybe the last word was a typo [one of](e.g. Set O Notes vs. Set o Totes.) [or]. [stopping]You may wish to cut a word or two down. Push 1 to retry [word number 1 in the player's command in upper case][if nw > 1], or a higher number to re-try only the first [nw] words of your command, or 9 to cut off the final word[end if]. Or just push any other key to pass and try another command.";
+	let Q be the chosen letter;
+	if Q is 57 and nw > 1, now Q is nw + 47;
+	if Q >= 49 and Q <= 48 + nw: [since it's ascii, 49 = the number 1]
+		now parser error flag is true;
+		now the last-command is "[word number 1 in the player's command]";
+		let temp be 50;
+		while temp <= Q:
+			now the last-command is "[the last-command] [word number temp - 48 in the player's command]";
+			increment temp;
+		say "OK, new command: [the last-command in upper case].";
+		the rule succeeds;
+	else:
+		say "OK. If you change your mind, you can up-arrow and backspace to erase the last word.";
+	the rule succeeds;
+
+to cut-command-down:
+	say "[line break]";
+	now parser error flag is true;
+	now the last-command is "[word number 1 in the player's command]";
+
+Rule for reading a command when the parser error flag is true:
+	d "Reading [last-command].";
+	now the parser error flag is false;
+	change the text of the player's command to the last-command.
 
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
 	next-rand table of nothings;
@@ -991,7 +1022,7 @@ chapter listening
 instead of listening:
 	if noun is pact cap, say "The pact cap will make noise when needed[if cap-vol is false], though you may want to turn it back on with LOVE VOL first[end if]." instead;
 	if player is in My Gym:
-		say "[if debug-state is true]DEBUG NOTE RANDOM SONG: [end if][if Dave is in My Gym]Behind Dave's grunts, y[else]Y[end if]ou [one of]tolerate[or]imagine your favorite English teacher giving you a D+ for a poem with the lyrics of[or]can't escape[or]dread a casual conversation containing the lyrics of[or]imagine the marketers earned their keep promoting[or]feel guilty liking the beats but loathing the words of[or]realize you're going to forget something important but remember the lyrics of[or]feel glad it's the low-volume version of[or]hate yourself for not completely loathing[or]hope nobody got paid too much for writing[or]guess the title from the repeated words of[or]hear, and guess some people are inspired by,[in random order] [next-rand-txt of table of My Gym songs]." instead;
+		say "[if debug-state is true]DEBUG NOTE RANDOM SONG: [end if][if Dave is in My Gym]Behind Dave's grunts, y[else]Y[end if]ou [one of]tolerate[or]imagine your favorite English teacher giving you a D+ for a poem with the lyrics of[or]are inspired to move, but not in the intended way, by[or]can't escape[or]dread a casual conversation containing the lyrics of[or]imagine the marketers earned their keep promoting[or]feel guilty liking the beats but loathing the words of[or]realize you're going to forget something important but remember the lyrics of[or]feel glad it's the low-volume version of[or]hate yourself for not completely loathing[or]hope nobody got paid too much for writing[or]guess the title from the repeated words of[or]hear, and guess some people are inspired by,[in random order] [next-rand-txt of table of My Gym songs]." instead;
 	if player is in Apse Spa, say "Surprisingly, no spa yaps." instead;
 	if player is in Mont Nom, say "The Ark of Okra is almost saying 'Nom on!' or 'C'mon! Nom!' or even 'Tum-Smut!'" instead;
 	if player is in Yack Cay and moor broom is not moot, say "[if Known Wonk is not moot]The Known Wonk is just babbling on about stuff you aren't be interested in[else]The Known Wonk, from inside the Tru-Yurt, complains about how messy it is[end if]." instead;
@@ -2363,6 +2394,7 @@ bros' orb	Gal Flag	"The Gal Flag flutters backwards a bit but remains steady. Th
 Bros' Orb	Ms Ism	"As you lift the Bros['] Orb to throw at Ms. Ism, you see yourself in the Mirror Rim. You don't look so great or heroic. In fact, you feel unusually self-conscious. More than you deserve to, you think. The Bros['] Orb is really pulsing right now. Whatever you used it on, you'd likely destroy it, and you're not out to KILL anyone."
 bros' orb	tao boat	"[too-boast]."
 bunk nub	sleep eels	"That -- well, it almost works. But the bunk nub isn't shaped right to house that many small animals. Maybe it could be changed."
+bunk nub	stark rats	"The rats don't need to sleep, and the bunk nub won't make them feel drowsy. You need to get rid of the rats."
 Cave Vac	gnu dung	"The Cave Vac sputters. You may need something more specifically suited to the, uh, material to clean up."
 cave vac	go by bog	"The bog is too big for that."
 cave vac	stinky knits	"The smell is crusted into the stinky knits. The cave vac would work better than the Dirt Rid, but it would only make the stinky knits look a bit better."
@@ -2499,6 +2531,7 @@ stamp mats	yahoo hay	"The mats don't quite work on the hay. They might work bett
 state tats	DIFF ID	"The DIFF ID emits a soft tone. Looks like you can just walk [if Red Roses Order is visited]back [end if]north to get through."
 stinky knits	kayo yak	"The yak sniffs at the knits for a while but loses interest after a bit. Maybe something else will interest the yak longer."
 stir writs	tao boat	"[too-boast]."
+stock cots	stark rats	"The rats don't need to sleep, and the stock cots won't make them feel drowsy. You need to get rid of the rats."
 taboo bat	bomb mob	"No way. You'd be outnumbered. You'll need stealth."
 taboo bat	Knife Fink	"The Knife Fink probably doesn't care about taboos."
 taboo bat	ME Totem	"Violence isn't the answer. The ME Totem is not repelled by moral turpitude, anyway."
@@ -3928,6 +3961,10 @@ to decide which number is grid-side-items:
 chapter Pact Cap
 
 The Pact Cap is a wearable thing in Fun Enuf. "The pact cap the Flee Elf wants you to take (but not quite) sits here.". description is "It doesn't feel that heavy on your head, and you can't see it, because there are no mirrors. It didn't look THAT stupid back when the Flee Elf had you pack it. So that's something. You think[cap-beep-stuff]."
+
+procedural rule while wearing the pact cap: ignore the can't wear what's not held rule;
+
+check wearing pact cap: say "[if player has pact cap]You already are[else]The flee elf explains you can't wear the pact cap until you take it right[end if]." instead;
 
 to say insert-cap-lots: if player has sto lots, say ", as the sto-lots is good enough"
 
@@ -5877,7 +5914,7 @@ table of readables
 read-cand	read-yet	read-msg
 Set O Notes	false	"You scrunch your eyes to read the random miscellany at the edges of the Set O Notes. Apparently, there can only be one questor, to avoid a partner-entrap. The Flee Elf also wrote in 'REP US SUPER' to motivate you.[paragraph break]Um, yeah. The main notes are a lot more useful."
 enact cane	false	"You squint carefully. KARE RAK is written. But then where are/were the prongs? How would you restore the Enact Cane into something even more useful?"
-moor broom	false	"It still has the KARE RAK written on it that the enact cane did."
+moor broom	false	"The moor broom still has the KARE RAK written on it that the enact cane did."
 
 section show-warning
 
@@ -6496,7 +6533,7 @@ the stinky knits are a plural-named thing in Gross Org. description is "The insi
 
 understand "daft/fad" and "daft fad" and "knit" and "stinky knit" as stinky knits.
 
-check wearing the stinky knits: say "That's physically possible, but no. No way. Not in their current state[if knits are not carried by the player]. You could take them, though[end if]." instead;
+check wearing the stinky knits: say "Wear a ...? Ew. That's physically possible, but no. No way. Not in their current state[if knits are not carried by the player]. You could take them, though[end if]." instead;
 
 chapter Brag Garb
 
@@ -6718,7 +6755,7 @@ The elope pole is a thing. description is "You wonder what wild places the elope
 
 book Yell Alley
 
-Yell Alley is east of Evaded Ave. It is in Yelpley. "[if Line Nil is in Yell Alley]Line Nil security blocks every way except back[else]The only way back is[end if] west[if bomb mob is not moot]. The way east is blocked by a [alley-e-block] where the yelling is from. Maybe if you got rid of the navy van, you could find out[end if]."
+Yell Alley is east of Evaded Ave. It is in Yelpley. "[if Line Nil is in Yell Alley]Line Nil security blocks every way except back[else]The only way back is[end if] west[if bomb mob is not moot]. The way east is blocked by a [alley-e-block] where the yelling is from[end if][if navy van is not moot]. Maybe if you got rid of the navy van, you could find out[end if]."
 
 to say alley-e-block:
 	say "[if navy van is in Yell Alley]navy van... you're not sure[else]bomb mob... so that's[end if]"
