@@ -640,7 +640,7 @@ when play begins (this is the begin ailihphilia for reals rule):
 	now use-custom-screenread is true; [see the Trivial Niceties extension for details. This wipes TN's default generic nag question.]
 	say "Next, are you using a screen reader? Some of Ailihphilia's features, like the text map, don't work well with them.";
 	if the player no-consents, now screenread is true;
-	say "[paragraph break]You can always toggle the screen reader with SCR.";
+	say "[line break]You can always toggle the screen reader with SCR.";
 	sort table of last lousy points in random order;
 	repeat through table of all randoms:
 		sort tabnam entry in random order;
@@ -1634,10 +1634,10 @@ understand "ni win" as niwining.
 
 carry out niwining:
 	say "WARNING! These may spoil the game if used too early.[paragraph break]";
-	say "[b]TIP IT[r] allows you to skip the next puzzle in the game's walkthrough/test order. It can be used up until the very end. It, however, neglects context beyond what items you use and what items appear.";
-	say "[b]DEEP SPEED[r] jumps you to where you have blown a hole in the [kaoscaps] to the north of [Fun Enuf] and have the weaponry to take on the Diktat Kid. If the [kaoscaps] is gone, it has no effect.";
-	say "[b]REV OVER[r] allows you to skip a few puzzles at a time.";
-	say "There are also three commands that will warp you over major quests: [b]TOOLS LOOT[r] [if tron-got is 4](done) [end if]acquires all North-Tron parts. [b]SMH MS[r] [if Bros' Orb is had-or-done](done) [end if]gets you prepared for Ms. Ism. [b]GUY UG[r] [if rocs are moot and rep popper is had-or-done](done) [end if]gets you prepared for the Yuge Guy. Note these three warp commands have puzzles in common to solve, and also, using them all does not quite give you any of the finished items you need to defeat the Diktat Kid. But they get you close.";
+	say "[2da][b]TIP IT[r] allows you to skip the next puzzle in the game's walkthrough/test order. It can be used up until the very end. It, however, neglects context beyond what items you use and what items appear.";
+	say "[2da][b]DEEP SPEED[r] jumps you to where you have blown a hole in the [kaoscaps] to the north of [Fun Enuf] and have the weaponry to take on the Diktat Kid. If the [kaoscaps] and the Diktat Kid's two lieutenants are gone, it has no effect. DEEP SPEED does not tell you what you've done.";
+	say "[2da][b]REV OVER[r] allows you to skip a few puzzles at a time. Unlike [b]DEEP SPEED[r], [b]REV OVER[r] shows what you've done in details, so it may spoil puzzles you want to solve later.";
+	say "[line break]There are also three commands that will warp you over major quests: [b]TOOLS LOOT[r] [if tron-got is 4](done) [end if]acquires all North-Tron parts. [b]SMH MS[r] [if Bros' Orb is had-or-done](done) [end if]gets you prepared for Ms. Ism. [b]GUY UG[r] [if rocs are moot and rep popper is had-or-done](done) [end if]gets you prepared for the Yuge Guy. Note these three warp commands have puzzles in common to solve, and also, using them all does not quite give you any of the finished items you need to defeat the Diktat Kid. But they get you close.";
 	the rule succeeds;
 
 chapter shuttuhsing
@@ -2068,7 +2068,7 @@ to build-the-tron:
 	moot north tron;
 	now all tronparts are in devreserved; [ic]
 	if redact-postrule:
-		say "You use the epicer recipe you found in the Trapeze Part to build a north-tron that destroys the KAOS Oak to the north! And with that, your [if deep-speeding is true]DEEP SPEED[else]REV OVER[end if] journey ends, so close to saving Yelpley and Grebeberg.";
+		say "You use the epicer recipe you found in the Trapeze Part to build a north-tron that destroys the KAOS Oak to the north of Fun Enuf!";
 	else:
 		say "[if epicer recipe is nox]You're clueless how, at first. But then you take a look at the epicer recipe[else]You build the North-Tron with the instructions from[end if] the epicer recipe after a few 'How? OH!' moments. It points north and blasts a hole in the [kaoscaps] with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break]Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
 	moot epicer recipe;
@@ -2693,7 +2693,7 @@ Mr Arm	bomb mob	TNT	pre-arm-on-mob rule	mob-bye rule	true	true	true	false	false	
 Nat's Tan	scorn rocs	--	pre-tan-on-rocs rule	--	true	true	true	true	false	false	Grebeberg	Flu Gulf	Flu Gulf	false	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
 rep popper	ME Totem	murdered rum	pre-popper-on-totem rule	totem-out rule	true	true	true	false	false	false	Grebeberg	Sneer Greens	Sneer Greens	false	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Had, ah!' he cries, making a male lam. From his babbling, he's apparently retreating to a glam-amalg (Loot Stool included) or ego loge in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]'Pol? Flop!' you think to yourself, before the ME Totem, sliced several ways, collapses and sinks into the ground. As it does, you hear the Yuge Guy's voice utter 'There's some murdered rum inside. Powerful stuff! You pick it up carefully."
 Bros' Orb	Mirror Rim	Yard Ray	pre-orb-on-rim rule	sword-rows-reveal rule	true	true	true	false	false	false	Yelpley	Red Roses Order	Red Roses Order	false	"The Bros['] Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Ms. Ism has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, Ms. Ism, live not on evil!' you boom, as the Orb does its work. Ms. Ism looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'My sub-level bus! You won't catch it! The E-Divide will block you!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
-balsa slab	sword rows	not-a-baton	pre-slab-on-rows rule	--	true	true	false	false	false	false	Yelpley	Red Roses Order	Red Roses Order	false	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Ms. Ism."
+balsa slab	sword rows	not-a-baton	pre-slab-on-rows rule	moot-rows-and-tats rule	true	true	false	false	false	false	Yelpley	Red Roses Order	Emo Dome	false	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Ms. Ism."
 not-a-baton	reifier	taboo bat	pre-not-a-baton-on-reifier rule	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
 murdered rum	yard ray	--	pre-rum-on-ray rule	ray-beepy-now rule	true	true	false	false	false	false	Dim Mid	--	--	false	"The yard ray gleams with energy. It seems like it could do some damage now."
 --	--	--	rev-emit-noontime rule	ray-not-beepy-now rule	true	--	--	false	false	false	Dim Mid	--	--	false	--
@@ -2719,7 +2719,7 @@ this is the rev-bore-Rob rule:
 		else:
 			say "[one of]You need to get rid of Rob[or]He sure does like to talk about himself, and you probably can't talk over him.[or]An action to subterfuge Rob will help[or]The pact cap gives you a hint that you need to do a palindrome-ish action[or]BOR* ROB[or]Bore Rob[stopping].";
 		the rule succeeds;
-	say "You BORE ROB, and he leaves Worn Row out of boredom.";
+	if say-unless-speed, say "You BORE ROB, and he leaves Worn Row out of boredom.";
 	boot-Rob;
 	the rule succeeds;
 
@@ -2742,7 +2742,7 @@ this is the rev-deny-Ned rule:
 		else:
 			say "Ned in Gross Org may be next to deal with now.";
 		the rule succeeds;
-	say "You DENY NED a chance at fighting.";
+	if say-unless-speed, say "You DENY NED a chance at fighting.";
 	moot Ned;
 	the rule succeeds;
 
@@ -2753,7 +2753,7 @@ this is the rev-emit-noontime rule:
 			say "[one of]The Yard Ray needs to emit something[or]An eight tletter word.[or]The last four are ****TIME.[or]Something bright.[or]EMIT NOONTIME to practice with the Yard Ray.[stopping]";
 			the rule succeeds;
 		the rule fails;
-	say "You EMIT NOONTIME with the Yard Ray.";
+	if say-unless-speed, say "You EMIT NOONTIME with the Yard Ray.";
 	now emitted is true;
 	the rule succeeds;
 
@@ -2768,7 +2768,7 @@ this is the rev-evade-Dave rule:
 			say "[one of]Dave is big and strong but slow. Fighting is out, but maybe you can outfox him[or]The pact cap gives a hint you need to do something odd[or]EVA DAVE is out[or]EVAD* DAVE, maybe[or]EVADE DAVE until he gets exhausted[stopping].";
 		the rule succeeds;
 	moot Dave;
-	say "You EVADE DAVE, and he leaves My Gym out of frustration. You loot a wash saw, too.";
+	if say-unless-speed, say "You EVADE DAVE, and he leaves My Gym out of frustration. You loot a wash saw, too.";
 	now player has wash saw;
 	moot stole lots;
 	the rule succeeds;
@@ -2781,7 +2781,7 @@ this is the rev-first-food-combo rule:
 		else: [you must have the gift fig by now]
 			say "You may need to look elsewhere for food to go with the gift fig. The easy one to find is the mayo yam [if Yell Alley is visited]in Yell Alley[else]east of Evaded Ave[end if].";
 		the rule succeeds;
-	say "You mix the snack cans and the UFO tofu together in Mont Nom.";
+	if say-unless-speed, say "You mix the snack cans and the UFO tofu together in Mont Nom.";
 	moot snack cans;
 	moot UFO tofu;
 	the rule succeeds;
@@ -2791,7 +2791,7 @@ this is the rev-get-bros orb rule:
 	if in-sos is true:
 		say "You can just [if player is not in Le Babel]go to Le Babel and [end if]take the Bros['] Orb.";
 		the rule succeeds;
-	say "You get the Bros['] Orb from Le Babel.";
+	if say-unless-speed, say "You get the Bros['] Orb from Le Babel.";
 	moot stir writs;
 	now player has Bros' Orb;
 	the rule succeeds;
@@ -2801,7 +2801,7 @@ this is the rev-nail-Ian rule:
 	if in-sos is true:
 		say "[one of]Ian is a lot like Rob, according to the pact cap.[or]What action can you take against Ian to bring him down a peg?[or]He seems to be hiding something.[or]NAI* IAN -- there are a few wrong ones.[or]NAIL IAN to remove him.[stopping]";
 		the rule succeeds;
-	say "You NAIL IAN to cast him from Mont Nom.";
+	if say-unless-speed, say "You NAIL IAN to cast him from Mont Nom.";
 	moot Ian;
 	the rule succeeds;
 
@@ -2816,9 +2816,9 @@ this is the rev-pace-cap rule:
 		the rule succeeds;
 	if cap-ever-pace is true, the rule fails;
 	now cap-ever-pace is true;
-	say "You tweak your pact cap to a PACE CAP";
+	if say-unless-speed, say "You tweak your pact cap to a PACE CAP";
 	if mrlp is not Grebeberg:
-		say ", moving to Seer Trees in Grebeberg when it doesn't seem right to run in Yelpley or [Fun Enuf].";
+		if say-unless-speed, say ", moving to Seer Trees in Grebeberg when it doesn't seem right to run in Yelpley or [Fun Enuf].";
 		if in-warp-command: [??warp-player-to function instead]
 			move player to Seer Trees, without printing a room description;
 		else:
@@ -2833,7 +2833,7 @@ this is the rev-pack-cap rule:
 		say "[one of]You need to do something with the Pact Cap[or]The palindromic nature of the game suggesra PA CAP, PAC CAP, or PAC* CAP[or]PACK CAP to please the flee elf[stopping].";
 		the rule succeeds;
 	else:
-		say "You PACK CAP to please the flee elf.";
+		if say-unless-speed, say "You PACK CAP to please the flee elf.";
 		get-cap;
 	the rule succeeds;
 
@@ -2852,7 +2852,7 @@ this is the rev-puff-up rule:
 		else:
 			say "[one of]King Nik's Spur Ups are handy here[or]Each one will help you do something UP[or]You need to feel better about yourself[or]PU* UP turns up nothing, though PUT UP seems promising, but...[or]PU** UP has possibilities[or]PUFF UP to gain access east of Yawn Way[stopping].";
 		the rule succeeds;
-	say "You use the spur ups to PUFF UP.";
+	if say-unless-speed, say "You use the spur ups to PUFF UP.";
 	now puffed-up is true;
 	the rule succeeds;
 
@@ -2861,7 +2861,7 @@ this is the rev-pull-up rule:
 	if in-sos is true:
 		say "[one of]Now you can go through the Emo Dome, it would be nice to stop[or]You can run past your fears but not stay still to face them[or]The Spur Ups have one more use[or]PU* UP, again, gives nothing[or]PU** UP again has something worthwhile[or]You can PULL UP in Emo Dome to stay and bear things[stopping].";
 		the rule succeeds;
-	say "You PULL UP in the Emo Dome.";
+	if say-unless-speed, say "You PULL UP in the Emo Dome.";
 	moot spur ups;
 	now pulled-up is true;
 	the rule succeeds;
@@ -2880,7 +2880,7 @@ this is the rev-second-food-combo rule:
 		else if UFO tofu is not carried:
 			say "One food is hidden. You need the radar to find it.";
 		the rule succeeds;
-	say "You mix the [si] and [mi] together in Mont Nom, causing a martini tray to roll out from the Ark of Okra all the way to [Fun Enuf].";
+	if say-unless-speed, say "You mix the [si] and [mi] together in Mont Nom, causing a martini tray to roll out from the Ark of Okra all the way to [Fun Enuf].";
 	move martini tram to Fun Enuf;
 	if in-warp-command:
 		move player to Fun Enuf, without printing a room description;
@@ -2895,7 +2895,7 @@ this is the rev-stand-nats rule:
 	if in-sos is true:
 		say "[one of]The Nat's Tan [hn-in of Deft Fed] will be useful. You need to take it[or]TAKE NAT'S doesn't work[or]***** NAT'S, maybe[or]STAND NAT'S[stopping].";
 		the rule succeeds;
-	say "You STAND NAT'S.";
+	if say-unless-speed, say "You STAND NAT'S in [Deft Fed].";
 	now player has Nat's;
 	the rule succeeds;
 
@@ -2905,7 +2905,7 @@ this is the rev-tend-net rule:
 		if Door Frood is in Evaded Ave, the rule fails;
 		say "[one of]You'll want to deal with the ten-level net [hn-in of Trapeze Part].[or]What can you do with the net to check it's okay?[or]TEN* NET.[or]TEND NET.[stopping]";
 		the rule succeeds;
-	say "You TEND NET in the Trapeze Part.";
+	if say-unless-speed, say "You TEND NET in the Trapeze Part.";
 	get-tended-stuff;
 	the rule succeeds;
 
@@ -2914,7 +2914,7 @@ this is the rev-word-row rule:
 	if in-sos is true:
 		say "[one of][Worn Row] can be changed into something else[or]You may need to do a bit of guesswork what to change it into, but there are only twenty-odd possibilities[or][Worn Row] can become WORD ROW[stopping].";
 		the rule succeeds;
-	say "You transform [Worn Row] into WORD ROW.";
+	if say-unless-speed, say "You transform [Worn Row] into WORD ROW.";
 	word-row-open;
 	the rule succeeds;
 
@@ -2923,7 +2923,7 @@ this is the rev-work-row rule:
 	if in-sos is true:
 		say "[one of][Worn Row] can be changed into something else[or]You may need to do a bit of guesswork what to change it into, but there are only twenty-odd possibilities[or][Worn Row] can become WORK ROW[stopping].";
 		the rule succeeds;
-	say "You transform [Worn Row] into WORK ROW.";
+	if say-unless-speed, say "You transform [Worn Row] into WORK ROW.";
 	work-row-open;
 	the rule succeeds;
 
@@ -2933,7 +2933,7 @@ this is the rev-worn-row rule:
 		if Pro Corp is unvisited, the rule fails;
 		say "You need to lure the Psi Wisp back to [Worn Row], then change it back to Worn Row.";
 		the rule succeeds;
-	say "You lure the Psi Wisp back to Wor(k/d) row, changing it to Worn Row, then back to Word Row.";
+	if say-unless-speed, say "You lure the Psi Wisp back to Wor(k/d) row, changing it to Worn Row, then back to Word Row.";
 	win-wisp-chase;
 	word-row-open;
 	the rule succeeds;
@@ -2943,7 +2943,7 @@ this is the rev-yak-okay rule:
 	if in-sos is true:
 		say "[one of]You need to give the kayo yak an order to knock off the Ergot Ogre[or]YAK OKAY (no comma) does the trick[stopping].";
 		the rule succeeds;
-	say "You say YAK OKAY to dispose of the Ergot Ogre.";
+	if say-unless-speed, say "You say YAK OKAY to dispose of the Ergot Ogre.";
 	banish-ogre;
 	the rule succeeds;
 
@@ -3513,6 +3513,12 @@ this is the mob-to-alley rule:
 	shuffle-before Yell Alley and Sneer Greens;
 	the rule succeeds;
 
+this is the moot-rows-and-tats rule:
+	if in-warp-command:
+		moot-tats-and-rows;
+		move player to Emo Dome, without printing a room description;
+	the rule succeeds;
+
 this is the oh-who-to rule:
 	now Oh Who is in Seer Trees;
 	the rule succeeds;
@@ -3582,6 +3588,7 @@ this is the sod-to-cup rule:
 	the rule succeeds;
 
 this is the sword-rows-reveal rule:
+	if not say-unless-speed, say "You defeat Ms. Ism in the Red Roses Order.";
 	move sword rows to Red Roses Order;
 	moot Ms Ism;
 	move E Divide to Red Roses Order;
@@ -3607,6 +3614,7 @@ this is the toons-to-den rule:
 	the rule succeeds;
 
 this is the totem-out rule:
+	unless say-unless-speed, say "You defeat the Yuge Guy in Sneer Greens.";
 	moot ME Totem;
 	moot Yuge Guy;
 	the rule succeeds;
@@ -5280,7 +5288,7 @@ report screening when player has pyx and screenread is true and screenwarn is fa
 does the player mean doing something with pyx when player has doodle or player has spa maps: it is unlikely.
 
 check examining pyx when screenread is true:
-	say "The large text map has a lot of special characters and doesn't play well with screen readers, so you can't examine it productively. Sorry. SCREEN or SRC toggles screen reader mode." instead;
+	say "The large text map has a lot of special characters and doesn't play well with screen readers, so you can't examine it productively. Sorry. SCREEN or SCR toggles screen reader mode." instead;
 
 after examining pyx for the first time:
 	say "Notes for the future[if screenread is true], if you turn screen reading off[end if]: [b]X X[r] or [b]XX[r] or [b]MAP[r] will examine the pyx, to save keystrokes[if player does not have pyx]. Also, you can take the pyx, if you want[end if].";
@@ -5327,7 +5335,7 @@ to say redstar: say "[first custom style]*[fixed letter spacing]"
 to say star-ast of (myr - a room) and (nu - a number):
 	if nu is 2 and player is in myr:
 		say "[redstar][redstar]";
-	else if nu is 3 and player is in room south of myr:
+	else if nu is 3 and loc-num of location of player - loc-num of myr is 10:
 		say "[redstar][redstar]";
 	else:
 		say "  "
@@ -5336,7 +5344,7 @@ to say star-vert of (myr - a room) and (nu - a number):
 	if room south of myr is nothing:
 		if nu is 2 and player is in myr:
 			say "[redstar]";
-		else if nu is 3 and player is in room south of myr:
+		else if nu is 3 and loc-num of location of player - loc-num of myr is 10:
 			say "[redstar]";
 		else:
 			say " ";
@@ -5728,12 +5736,16 @@ rule for printing a locale paragraph about a workable (called th):
 	now reviver is mentioned;
 	now rotator is mentioned;
 
+to decide whether say-unless-speed:
+	if deep-speeding is false or say-despite-speeding is true, yes;
+	no;
+
 to wear-down (w - a workable):
 	decrement useleft of w;
 	if useleft of w is 0:
 		if revving-over is false and deep-speeding is false:
 			say "[line break]You watch as [the w] sputters and dies. [if number of workedout workables is 2]Oh dear. That's the second one down[else]Well, you got a lot of good use out of it, and hopefully you won't need any more[end if].";
-		else:
+		else if say-unless-speed:
 			say "(BOOM! You took out the [w] in the process.)[line break]";
 	if useleft of w is 1 and revving-over is false and deep-speeding is false, say "[line break]The [w] wheezes an emphatic 'FOOF.' Hopefully, you won't need to use it too much more.[line break]";
 	if machuses is 0:
@@ -5741,7 +5753,7 @@ to wear-down (w - a workable):
 		if deep-speeding is false and revving-over is false:
 			say "[line break]With [the list of workables] all destroyed, Work Row shakes a bit more. The machines fall out from a wall, revealing something behind ... a test set. It's big and huge and you can't move it, but who knows what it'll be useful for later?";
 		else:
-			say "(And that's all 3 machines in Word Row down. They are replaced with a test set.)[line break]";
+			if say-unless-speed, say "(And that's all 3 machines in Word Row down. They are replaced with a test set.)[line break]";
 		move test set to Worn Row;
 		now all workables are in devreserved; [ic]
 		[?? trivial coding stuff: how to moot all workables]
@@ -6892,10 +6904,13 @@ check going south in Red Roses Order:
 	if Ms Ism is in Red Roses Order, say "No way! You are locked in mortal combat! Plus, there's really only one thing to do, here." instead;
 	if balsa slab is moot:
 		say "You hear a crash behind you as the sword rows spin and wheeze from the exertion, then fall over. There's something ... no, some PEOPLE ... behind the wall. They introduce themselves as the Droll Lord and Madam. They thank you profusely: they were close to becoming the Dull Lud and Dame Mad back there![paragraph break]The crash behind the sword rows must've reverberated. As people stream in, Madam and the Droll Lord outline their plans for a more peaceful Yelpley, despite their differences. They discuss ways to avoid letting a Diktat Kid, Yuge Guy or Ms. Ism gain power again. 'We'd like you to stay, but we hear you have your own life to lead.' And they're right. You're not up to GOVERNING.[paragraph break]As you leave, you notice them scratching out the last bit calling this building the Red Roses Order, replacing it with TEEM-CIVIC MEET.[paragraph break]It's slightly forced, but it's the best there is, better than GRO-CIVIC ORG or EVA[']-CIVIC AVE and gets the point across. Hey, politics is the art of the possible, of the best realistic option.[paragraph break]You rub your State Tats off. You won't be needing them.";
-		moot state tats;
-		moot sword rows;
+		moot-tats-and-rows;
 	else:
 		say "You look back at the sword rows. Perhaps they will be useful."
+
+to moot-tats-and-rows:
+	moot state tats;
+	moot sword rows;
 
 check going in Red Roses Order:
 	if noun is south, continue the action;
@@ -7290,9 +7305,9 @@ carry out gotoing:
 	if my-dist is 1:
 		say "You walk over one room...";
 	else if my-dist < 4:
-		say "You speed by, ignoring the scenery...";
+		say "'Go, jog,' you exhort yourself, for the moderate journey...";
 	else:
-		say "You take a nice big long run...";
+		say "'Run, ur...' you push yourself, for the long journey...";
 	move player to noun;
 	the rule succeeds;
 
@@ -7986,6 +8001,7 @@ carry out revovering:
 	now global-delay is 0;
 	let count be 0;
 	let turns-to-add be 0;
+	let bonus-turns be 0;
 	let move-room be location of player;
 	let spun-out-yet be false;
 	now revving-over is true;
@@ -8014,6 +8030,7 @@ carry out revovering:
 					visit-up-to move-room;
 				increment global-delay;
 				increment turns-to-add;
+				if preproc entry is rev-worn-row rule or preproc entry is rev-yak-okay rule, increase bonus-turns by 5; [a hack to guess the right number of turns]
 				if sco entry is true:
 					if debug-state is true, say "(DEBUG: non-use point) (+1 [preproc entry])[line break]";
 					increment the score;
@@ -8054,7 +8071,7 @@ carry out revovering:
 		if use1 entry is a book:
 			if Worn Row is worky, now wr-flipped is true;
 			word-row-open;
-		if deep-speeding is false or say-despite-speeding is true, say "You [if wr-flipped is true]toggle [Worn Row], then [end if][if u1a is true](acquire and) [end if]use [the use1 entry] with [if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if][if demos-too is true]--and scoring SOME DEMOS in the process[end if].";
+		if say-unless-speed, say "You [if wr-flipped is true]toggle [Worn Row], then [end if][if u1a is true](acquire and) [end if]use [the use1 entry] with [if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if][if demos-too is true]--and scoring SOME DEMOS in the process[else if use1 entry is balsa slab]. Then you leave the Red Roses Order to people who can rebuild Yelpley[end if].";
 		if use2 entry is a workable:
 			if Worn Row is wordy, now wr-flipped is true;
 			work-row-open;
@@ -8072,12 +8089,14 @@ carry out revovering:
 	now revving-over is false;
 	if rev-skips > 0 and move-room is not location of player:
 		skip upcoming rulebook break;
-		say "(Moving you to [move-room])[paragraph break]";
+		say "(Moving you to [move-room])";
 		move player to move-room, without printing a room description;
 	now turns-to-add is turns-to-add * 4;
+	increase turns-to-add by bonus-turns;
 	if turns-to-add > 0:
 		let delt be score - last notified score;
 		skip upcoming rulebook break;
+		if delt > 2 and score is 73, say "[line break]Thus ends your [if deep-speeding is true]DEEP SPEED [else if revving-over is true]REV OVER [else]accelerated [end if]journey, so close to saying Grebeberg and Yelpley.";
 		say "[line break][bracket][if delt > 0]I just gave you [delt] point[plur of delt] to go with your quick trip, and I also[else]I[end if] tacked on [turns-to-add] turns, as a guesstimate.[close bracket][paragraph break]";
 		now score-cheat is score-cheat + score - last notified score;
 		now last notified score is score;
