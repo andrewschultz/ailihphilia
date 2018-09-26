@@ -290,7 +290,7 @@ understand "score rocs" as a mistake ("[if flu gulf is not visited]You don't nee
 
 chapter Frush Surf
 
-understand "kayak" and "kayak a yak" as a mistake ("[if kayak is moot]You already used the kayak[else if Lac Oft Focal is visited]One kayak is enough for this game[else]Spoiler: there's a kayak you haven't found yet[end if].[mis of 120]") when yak is quicknear.
+understand "kayak a yak" as a mistake ("[if kayak is quicknear and yak is quicknear]You've got the right idea, sort of, but the wrong place[else if kayak is moot]You already used the kayak[else if yak is moot]The yak has done its job[else if Frush Surf is unvisited]There's a yak around, just not here[else if Lac Oft Focal is unvisited]There's a kayak around, just not here[else]You don't need to bring the yak and kayak together[end if].[mis of 376]") when yak is quicknear or kayak is quicknear.
 
 understand "slate petals" as a mistake ("The metals are for a didactic and not an aesthetic purpose.[mis of 121]") when slate metals are quicknear.
 
@@ -355,23 +355,23 @@ understand "space caps" as a mistake ("Really, you only need one. Who do you thi
 
 section flee elf abuse
 
-to say elf-note: now tried-flex is true;
+to say elf-note: now tried-elf is true;
 
 tried-elf is a truth state that varies.
 
-understand "flea elf" and "flea" as a mistake("[flex-note]The elf scratches for a bit, then looks embarrassed.[mis of 148]") when Flee Elf is quicknear.
+understand "flea elf" and "flea" as a mistake("[elf-note]The elf scratches for a bit, then looks embarrassed.[mis of 148]") when Flee Elf is quicknear.
 
-understand "fled elf" and "fled" as a mistake("[flex-note]The elf will be, once you figure how to take the cap.[mis of 149]") when Flee Elf is quicknear.
+understand "fled elf" and "fled" as a mistake("[elf-note]The elf will be, once you figure how to take the cap.[mis of 149]") when Flee Elf is quicknear.
 
-understand "fleece elf" and "fleece" as a mistake("[flex-note]There is much more fortune and glory in adventure! It's the cap you want to concentrate on.[mis of 150]") when Flee Elf is quicknear.
+understand "fleece elf" and "fleece" as a mistake("[elf-note]There is much more fortune and glory in adventure! It's the cap you want to concentrate on.[mis of 150]") when Flee Elf is quicknear.
 
-understand "flem elf" and "fled" as a mistake("[flex-note]The elf coughs ickily and quickly lists pros and cons of whether words should by pronounced phonetically.[mis of 151]") when Flee Elf is quicknear.
+understand "flem elf" and "fled" as a mistake("[elf-note]The elf coughs ickily and quickly lists pros and cons of whether words should by pronounced phonetically.[mis of 151]") when Flee Elf is quicknear.
 
-understand "flen elf" and "flen" as a mistake("[flex-note]Dry ketchup is gross. Besides, the elf is one of the good guys.[mis of 152]") when Flee Elf is quicknear.
+understand "flen elf" and "flen" as a mistake("[elf-note]Dry ketchup is gross. Besides, the elf is one of the good guys.[mis of 152]") when Flee Elf is quicknear.
 
-understand "flew elf" and "flew" as a mistake("[flex-note]The elf mumbles, apropos of nothing, 'Boy, are my arms tired!'[mis of 153]") when Flee Elf is quicknear.
+understand "flew elf" and "flew" as a mistake("[elf-note]The elf mumbles, apropos of nothing, 'Boy, are my arms tired!'[mis of 153]") when Flee Elf is quicknear.
 
-understand "flex elf" and "flex" as a mistake("[flex-note]The elf looks more flexible than you. It's the cap you want to concentrate on.[mis of 154]") when Flee Elf is quicknear.
+understand "flex elf" and "flex" as a mistake("[elf-note]The elf looks more flexible than you. It's the cap you want to concentrate on.[mis of 154]") when Flee Elf is quicknear.
 
 section Set O Notes abuse
 
@@ -908,7 +908,7 @@ mis-yet is a truth state that varies.
 
 cur-LLP-hint-row is a number that varies. cur-LLP-hint-row is 0.
 
-checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
+checkoffs is a list of truth states variable. checkoffs is { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false }.
 
 hint-every-x is a number that varies. hint-every-x is 5.
 

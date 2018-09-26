@@ -847,6 +847,7 @@ randtxt
 "Apollo, Pa"
 "Ares's Era"
 "Beware [']Er: a Web"
+"Cindy [']N Nic"
 "Co-Data Doc"
 "D'oh, Serene, Reshod"
 "D'oh, Temp Method"

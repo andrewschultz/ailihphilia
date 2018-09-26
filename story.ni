@@ -95,7 +95,7 @@ a thing can be beeped. a thing is usually not beeped.
 beep-yet is a truth state that varies.
 beep-LLP-yet is a truth state that varies.
 
-after examining a not ordinary thing:
+after examining a not ordinary thing (this is the bee-boo-beeb rule):
 	if cap-vol is false, continue the action;
 	say "You hear [if beep-yet is false]an odd[else]that weird[end if] [if noun is llpish]but very quiet [end if]BEE-BOO-BEEB from [if beep-yet is false]somewhere. It seems like [end if]the inside of your pac[if cap-pace is true]e[else]t[end if] cap[if beep-yet is true] again[end if].";
 	now noun is beeped;
@@ -871,6 +871,7 @@ to-reject	mytxt	longer-desc
 trap art	"trap art"	"Also, you [if player has trap art]already took[else]can just take[end if] the art. You need to make it more interesting"
 scorn rocs	"scorn rocs"	"They'd out-scorn you easily. But that's okay. If you were too good at scorning, you wouldn't be one of the good guys. You need to do something more drastic"
 tame mat	"tame mat"	"Also, the mat's already harmless. You need to make it more interesting"
+kayak	"kayak"	"[if kayak is moot]Plus, you already used the kayak[else if Lac Oft Focal is visited]Besides, one kayak is enough for this game[else]Spoiler: there's a kayak you haven't found yet[end if]"
 
 part dying
 
@@ -909,6 +910,7 @@ definition: a thing (called th) is put-to-use:
 	if th is a workable, yes;
 	if th is sword rows, yes;
 	if th is tract cart, yes;
+	if th is me totem, yes;
 	no;
 
 chapter inserting into
@@ -942,6 +944,7 @@ definition: a thing (called th) is insert-to-use:
 	if noun is yard ray, yes;
 	if noun is butene tub, yes;
 	if noun is sword rows, yes;
+	if noun is me totem, yes;
 	no;
 
 instead of inserting into (this is the convert insert to useon when sensible rule):
@@ -1000,6 +1003,7 @@ to decide whether the action is procedural: [aip]
 	if rading, yes;
 	if gotothinging, yes;
 	if eyeing, yes;
+	if xpyxing, yes;
 	if useoning:
 		if noun is radar or second noun is radar, yes;
 	if taking inventory, yes;
@@ -1791,6 +1795,22 @@ carry out talktoing:
 
 a person has text called talk-text.
 
+after doing something when noun is a person (this is the let player assume gender rule):
+	if noun is not Ms Ism:
+		set the pronoun him to the noun;
+		set the pronoun her to the noun;
+	continue the action;
+
+after doing something when second noun is a person (this is the let player assume second noun gender rule):
+	if noun is not Ms Ism:
+		set the pronoun him to the noun;
+		set the pronoun her to the noun;
+	continue the action;
+
+after talktoing:
+	consider the bee-boo-beeb rule;
+	continue the action;
+
 instead of asking someone about:
 	say "You don't ever need to ask about specific subjects. ASKing about redirects to TALKing TO a person... which itself only gives minimal clues. If you want to give or use something, USE X ON Y.";
 	try talktoing the noun instead;
@@ -1802,7 +1822,7 @@ drink-warning is a truth state that varies.
 the block drinking rule is not listed in any rulebook.
 
 check drinking:
-	if noun is Elan Ale, say "No drinking on the job. Besides, with what you've done so far, you might be able to trade it for something more useful." instead;
+	if noun is Elan Ale, say "No drinking on the job. Besides, you've already done enough swapping to realize you might be able to trade it for something more useful." instead;
 	if noun is Gorge Grog, say "One look at the grog, and you realize you're not up to such super-powered alcohol." instead;
 	if noun is murdered rum, say "The rum part is drinkable, but the murdered rum isn't." instead;
 	say "[if noun is drinkable]Pish! Sip?![else][']S not wet. Ew--TONS.[end if]";
@@ -2312,8 +2332,10 @@ use1	babble
 ark of okra	"While the ark inspires you to want to mix foods, you don't want to mix anything with IT. You don't know how long that okra's been there!"
 Bros' Orb	"Nothing physical seems to work on the orb. You need a psychological push, here."
 cassettes sac	"You need something powerful to clean up the cassettes sac."
+cave vac	"The Cave Vac doesn't seem like it could clean [the noun] productively."
 Dave	"Dave's not useful, man."
 DIFF ID	"The DIFF ID remains impassive. [if player has state tats]You look at your state tats, which seem like they'd work better[else]Perhaps you need to find something that could identify you better[end if]."
+Dirt Rid	"The Dirt Rid doesn't seem like it could clean [the noun] productively."
 DNA band	"The DNA band is useless on its own. It probably needs some sort of jolt to become useful, or sentient."
 DNA hand	"The DNA hand remains motionless. It needs mobility, somehow, to be useful to you."
 dork rod	"You sense the dork rod doesn't need changing. Just holding it makes you a bit more comfortable with your own faults, big or small."
@@ -2343,7 +2365,7 @@ redness ender	"The redness ender is good for destroying stuff. Probably evil stu
 rep popper	"[if player does not have popper and dork rod is moot]Hmm. You get the feeling you don't have to do anything fancy. Just TAKE the popper[else if player does not have popper]When the time comes, you may be able to just TAKE the popper. Now, it's a bit too intimidating[else]The rep popper needs to attack something with, well, REP. Something that needs taking down a peg[end if]."
 resale laser	"The resale laser is super powerful and limited. You should probably use it to [if epicer recipe is xed]make the north tron[else]some greater purpose than zapping someone or something[end if]."
 Rob	"Rob's not going to be obliging. You have to get rid of him, somehow."
-scorn rocs	"The scorn rocs are unfazed by much. Even violence doesn't seem to affect them. They sit, looking dignified, or at least superior. Maybe you can change that."
+scorn rocs	"The scorn rocs are unfazed by much. Even violence doesn't seem to affect them. They sit, looking dignified, or at least superior. You'll need something special and weird to displace them."
 senile felines	"It might be more productive to use the felines on themselves, in a certain way."
 sharp rahs	"The rahs need to be combined (USEd) with some other motivational material. Something less, well, rah-rah."
 SOME DEMOS	"Paging through SOME DEMOS again, you get the feeling it's really un-serious and can't help you except with unpractical or self-contradictory items. It must be good with something, but not that."
@@ -2439,6 +2461,7 @@ el doodle	Known Wonk	"The Known Wonk looks at El Doodle, thinks, and says 'Ugh, 
 el doodle	Revolt Lover	"But the Revolt Lover pretty much offered it to you in the first place."
 Elan Ale	cassettes sac	"The Elan Ale isn't high-proof enough to peel any dirt off the cassettes sac."
 Elan Ale	DIFF ID	"No electrical wiring is exposed, so you can't short the DIFF ID out."
+Elan Ale	Revolt Lover	"'I can't drink on the job, here!'"
 elope pole	code doc	"'[if tent net is moot]I bet you could go neat places with that[else]That might help build something, but I need something that's more a roof[end if].'"
 elope pole	crag arc	"The pole is for navigation, not for vaulting. Also, the crag art is too high, even for AK Bubka, Sergei's little-known but even more athletic cousin."
 elope pole	go by bog	"The bog is too wide for that."
@@ -2468,6 +2491,7 @@ gold log	kayak	"The gold log is too heavy to be an effective paddle."
 Gorge Grog	bomb mob	"There isn't enough for everyone, so that would probably make them even more unruly."
 Gorge Grog	cassettes sac	"That'd clean up the cassettes sac, but it'd probably dissolve it, too."
 Gorge Grog	DIFF ID	"No electrical wiring is exposed, so you can't short the DIFF ID out."
+Gorge Grog	Revolt Lover	"'I can't drink on the job, here!'"
 Gorge Grog	yard ray	"The Gorge Grog is pretty strong stuff, but you may need something even stronger."
 Gorge Grog	Yuge Guy	"The Yuge Guy doesn't drink, and neither does Johnny. Also, the Yuge Guy may or may not be a germaphobe."
 ME gem	cross orc	"The ME gem causes the cross orc to moan and shield its eyes for a bit. Perhaps it is too much even for the orc's greed. Something more straightforward may work better."
@@ -2543,12 +2567,14 @@ spa maps	spa taps	"The spa taps don't expand far enough to need mapping. Go-By B
 spur ups	tao boat	"The spur ups are meant to bring you up. You probably need them for Yawn Way and east."
 spur ups	turf rut	"Unfortunately, the spur ups are about being mentally up, not physically up. So they don't work."
 stamp mats	lie veil	"They wouldn't make a big enough hole in the lie veil to matter. You need something more brutal."
+stamp mats	made dam	"The stamp mats would barely make a dent in the made dam, and if they did, making the dam to burst could not be a good thing."
 stamp mats	Revolt Lover	"'Hmm. Those aren't art by themselves, but maybe with the right tools, they could make something interesting. Or useful.'"
 stamp mats	soot tattoos	"Hmm. If the soot tattoos had a pattern, that would be interesting. But they don't, yet."
 stamp mats	Tru Yurt	"The stamp mats aren't a home-y sort of mat."
 stamp mats	yahoo hay	"The mats don't quite work on the hay. They might work better on something with more surface area."
 state tats	DIFF ID	"The DIFF ID emits a soft tone. Looks like you can just walk [if Red Roses Order is visited]back [end if]north to get through."
 stinky knits	kayo yak	"The yak sniffs at the knits for a while but loses interest after a bit. Maybe something else will interest the yak longer."
+stinky knits	scorn rocs	"The knits are only one thing, so only one roc could wear it. But the knits don't seem to fit. Rats.[paragraph break]There's got to be some other way to make the rocs look bad, though."
 stir writs	tao boat	"[too-boast]."
 stock cots	stark rats	"The rats don't need to sleep, and the stock cots won't make them feel drowsy. You need to get rid of the rats."
 taboo bat	bomb mob	"No way. You'd be outnumbered. You'll need stealth."
@@ -2630,7 +2656,7 @@ use1	use2	getit	preproc	postproc	sco	d1	d2	guy-need	ms-need	tool-need	reg-plus	r
 --	--	--	rev-evade-Dave rule	--	true	--	--	true	true	true	Yelpley	My Gym	My Gym	false	--
 --	--	--	rev-bore-Rob rule	--	true	--	--	true	true	true	Yelpley	Worn Row	Worn Row	false	--
 --	--	--	rev-word-row rule	--	true	--	--	true	true	true	Yelpley	Worn Row	Worn Row	false	--
-TI	Door Frood	--	pre-ti-on-frood rule	tube-to-ave rule	true	true	true	true	true	true	Yelpley	Evaded Ave	Evaded Ave	false	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. Some people are stupid. Good thing I obviously have too much self-awareness to be one of them. Funny stuff! A cut above [i]To Laff a Lot[r]! I'd try to explain it to you, but either you don't need it explained to you, or you don't deserve it explained to you.' With uncontrollable laughter spasms, the Door Frood skulks away.[paragraph break]Behind the Door Frood is a tube ... but ..." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
+TI	Door Frood	--	pre-ti-on-frood rule	tube-to-ave rule	true	true	true	true	true	true	Yelpley	Evaded Ave	Evaded Ave	false	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. Some people are stupid. Good thing I obviously have too much self-awareness to be one of them. Funny stuff! A cut above [i]To Laff a Lot[r]! I'd try to explain it to you, but either you don't need it explained to you, or you don't deserve it explained to you.'[paragraph break]With uncontrollable laughter spasms, the Door Frood skulks away, through a tube ... but ... it's probably useless to follow." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
 pity tip	eye	snack cans	pre-tip-on-eye rule	mob-to-alley rule	true	true	false	false	false	true	Yelpley	Yell Alley	Yell Alley	false	"The eye scans the pity tip, and the navy van beeps and boops and spits out some snack cans, which roll on the ground. You take them. Then you hear a loud whisper: 'Dee? Weed?' The navy van then activates its VANS-NAV and whooshes off to leave for good. And there's something behind it! Apparently, a whole bomb mob! That's who was making all the noise!" [af:TEND NET/WORK ROW]
 --	--	--	rev-tend-net rule	--	true	--	--	false	true	true	Yelpley	Trapeze Part	Trapeze Part	false	--
 --	--	--	rev-work-row rule	--	true	--	--	true	true	true	Yelpley	Worn Row	Worn Row	false	--
@@ -2643,18 +2669,18 @@ stock cots	sleep eels	--	pre-cots-on-eels rule	--	true	true	true	true	true	true	
 --	--	--	rev-pull-up rule	post-pull-up rule	true	--	--	true	true	true	Yelpley	Emo Dome	Emo Dome	false	--
 wash saw	past sap	--	pre-saw-on-sap rule	sap-loose rule	true	false	false	true	true	true	Grebeberg	Cold Loc	Cold Loc	false	"You hack away at the past sap with the wash saw, first squirting some loosening/thawing liquid. It's tricky, but the saw holds out, and with some perseverance, you're able to twist the sap off the rife fir[if player does not have puce cup]. You don't have anything to put the sap in, but it's there for later[end if]."
 puce cup	past sap	--	pre-cup-on-sap rule	sap-to-cup rule	true	false	false	true	true	true	Grebeberg	Cold Loc	Cold Loc	false	"You pour some sap into the cup."
-puce cup	liar grail	--	pre-cup-on-grail rule	empty-grail rule	true	false	true	true	true	true	Yelpley	Swept Pews	Swept Pews	false	"You pour the purist sirup into the liar grail. As the sirup bubbles, the Wordy Drow slips away from it and ... yes! It breaks free! 'Wend new! Wend new!' it calls to you.[paragraph break]Thoughts flow into your head from the liar grail, but the purist sirup has mutated its complex manipulations into much simple cries of protestation: it just doesn't want you to go there! You shrug, no longer mystified by its sophistry, and the grail cracks and rolls away.[paragraph break]The passage south looks clear. You snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL! You look around, worried a nun will say 'Tut!' But all is still."
+puce cup	liar grail	--	pre-cup-on-grail rule	empty-grail rule	true	false	true	true	true	true	Yelpley	Swept Pews	Swept Pews	false	"You pour the purist sirup into the liar grail. As the sirup bubbles, the Wordy Drow slips away from it and ... yes! It breaks free! 'Wend new! Wend new!' it calls to you.[paragraph break]Thoughts flow into your head from the liar grail, but the purist sirup has mutated its complex manipulations into much simpler cries of protestation: it just doesn't want you to go there! You shrug, no longer mystified by its sophistry, and the grail cracks and rolls away.[paragraph break]The passage south looks clear. You snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL! You look around, worried a nun will say 'Tut!' But all is still."
 puce cup	dose sod	--	pre-cup-on-sod rule	sod-to-cup rule	true	false	false	true	true	true	Grebeberg	Apse Spa	Apse Spa	false	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough." [sc2-ignore]
 puce cup	Bond Nob	Elan Ale	pre-cup-on-nob rule	empty-nob rule	true	true	true	true	true	true	Yelpley	Drawl Ward	Drawl Ward	false	"You give the Bond Nob the puce cup. Gulp! Gulp! The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. So many places to visit: [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars]... well, everywhere except Bar Drab or Soda Do's or Jo's OJ.' The Bond Nob proceeds to regale lager while vanishing north."
 stamp mats	slate metals	Ye Key	pre-mats-on-metals rule	--	true	true	false	true	true	true	Yelpley	Scrap Arcs	Scrap Arcs	false	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY. You find it hard to pull the stamp mats out, and when you take YE KEY, the mats quickly morph into the slate metals. Eh, well. Less inventory to worry about."
 demo med	gulf lug	cash sac	pre-med-on-lug rule	bump-gulf rule	true	true	true	true	true	true	Grebeberg	Flu Gulf	Flu Gulf	false	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' and looks a lot better within a few seconds. 'Mute tum!' the Lug cries gratefully before handing you a cash sac and running away."
-cash sac	cross orc	--	pre-sac-on-orc rule	--	true	true	true	true	true	true	Yelpley	Toll Lot	Toll Lot	false	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But you convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
+cash sac	cross orc	--	pre-sac-on-orc rule	--	true	true	true	true	true	true	Yelpley	Toll Lot	Toll Lot	false	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But it hasn't been taking its Negot-O-Gen! You convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
 YOB ATTABOY	Sniffins	Dirt Rid	pre-attaboy-on-Sniffins rule	toons-to-den rule	true	true	false	false	false	true	Yelpley	Deft Fed	Deft Fed	false	"Sniffins accepts your gift, with sniffs slowly changing from sadness to something more snooty. Your thanks for helping Sniffins be too good for you is a Dirt Rid. Sniffins shoos you back out to the Toll Lot: 'No, yob! Yon!' There is remodeling to be done! Sniffins will outdo Rentner, whoever that is! From the south, you hear frantic cries of 'Repaper! Repaper! Repaper!'[paragraph break][b]Toll Lot[r]"
 Elan Ale	Sniffins	Gorge Grog	pre-ale-on-Sniffins rule	--	true	true	false	false	false	true	Yelpley	Deft Fed	Deft Fed	false	"Smuggums looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.' Hey, you're not one to say 'stuff free stuff.'" [af:stand nat's]
 --	--	--	rev-stand-nats rule	--	true	--	--	true	false	false	Yelpley	Deft Fed	Deft Fed	false	--
 Dirt Rid	reviver	Cave Vac	pre-rid-on-reviver rule	--	true	true	false	false	false	true	Yelpley	Worn Row	Worn Row	false	"You watch as the Dirt Rid swirls and becomes shinier and much more powerful--and lighter, too, when you retrieve it. A Cave Vac! It will be capable of cleaning...well, somewhere."
 Cave Vac	cassettes sac	radar	pre-vac-on-sac rule	bump-pod rule	true	true	true	false	false	true	Yelpley	Dopy Pod	Dopy Pod	false	"The Cave Vac has the power to clean up the cassettes sac (and even clean up part of the floor to reveal 'DA PAD,') but it chokes and sputters at the end of the effort.[paragraph break]And while a lot of the cassettes are beyond repair, there's something at the very bottom.[paragraph break]Wow! Radar![paragraph break]You hear noises from the pod, as a hidden robot appears and whisks the garbage away. That's pretty slick! Looking back, the pod doesn't seem so dopy any more, between how the Demo Med already helped and how you're sure the radar will.[paragraph break](NOTE: You can RAD something to use the radar on it.)"
-radar	crag arc	UFO tofu	pre-radar-on-arc rule	radar-crag rule	true	false	false	false	false	true	Yelpley	Toll Lot	Toll Lot	false	"Beeeep... beeeep..... the radar has found something! Two small saucer arises from a hidden part of the crag. So Full UFOs! And splat! something weird and warm drops from them and lands on the radar, which fizzles a bit from the impact and wetness. It hardens quickly and weirdly into a cubic shape. What could it be? You think a minute, rejecting a profane acronym to shout at the departed UFO. The stuff must be UFO tofu.[paragraph break]Fortunately, your Sto-Lots has a handy sealed place where the UFO tofu can be kept dry. You put it there." [af:deny Ned]
+radar	crag arc	UFO tofu	pre-radar-on-arc rule	radar-crag rule	true	false	false	false	false	true	Yelpley	Toll Lot	Toll Lot	false	"Beeeep... beeeep..... the radar has found something! Two small saucers arise from a hidden part of the crag. So Full UFOs! And splat! something weird and warm drops from them and lands on the radar, which fizzles a bit from the impact and wetness. It hardens quickly and weirdly into a cubic shape. What could it be? You think a minute, rejecting a profane acronym to shout at the departed UFO. The stuff must be UFO tofu.[paragraph break]Fortunately, your Sto-Lots has a handy sealed place where the UFO tofu can be kept dry. You put it there." [af:deny Ned]
 --	--	--	rev-deny-Ned rule	--	true	--	--	true	true	true	Yelpley	Gross Org	Gross Org	false	--
 Ye Key	etage gate	gate tag	pre-key-on-gate rule	tag-later-wipe rule	true	true	true	true	true	true	Yelpley	Gross Org	Gross Org	false	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'A hall! Aha! Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paragraph break]A gate tag falls off. You pick it up." [af:Worn Row]
 --	--	--	rev-worn-row rule	--	true	--	--	true	true	true	Yelpley	Worn Row	Worn Row	false	--
@@ -3089,8 +3115,8 @@ this is the pre-cup-on-sap rule:
 		if in-sos is true:
 			say "[one of]You need to cut the sap off[or]USE SAW ON SAP[stopping].";
 			the rule succeeds;
-		if revving-over is false, say "The sap is stuck to the rife fir.";
-		get-reject past sap;
+		if revving-over is false, say "The sap is stuck to the rift fir. You can't just take it with your hands.";
+		now sap-with-hands is true;
 		the rule fails;
 	if in-sos is true:
 		if liar grail is moot, the rule fails;
@@ -3772,25 +3798,25 @@ definition: a thing ( called th) is preclued:
 
 table of lateruses [xxlat]
 to-get	in-limbo	combo-rule	remind-msg
-UFO tofu	false	--	"You [if cross orc is in Toll Lot]need to get rid of the cross orc to[else]can now[end if] use the radar on the crag arc."
-Spa Maps	false	--	"You [if tent net is not moot]need to do something so the Code Doc is willing[else]can now ask the Code Doc[end if] to decipher the Spa Maps the spa maps deciphered."
-liar grail	false	--	"You didn't have the right stuff to pour in the Liar Grail from the Puce Cup last time."
---	false	pull-known rule	"You need to find where to pull up."
---	false	puff-known rule	"You need to find where to puff up."
---	false	sap-uncut rule	"You need (and might already have) something to cut the past sap with [hn-in of Cold Loc]."
---	false	need-cup rule	"You didn't have anything to take [if sap-with-hands is true]the past sap with in Cold Loc[end if][if sap-with-hands is true and sod-with-hands is true] or [end if][if sod-with-hands is true]the dose sod in Apse Spa[end if]."
-Bond Nob	false	--	"You didn't have the right stuff to give the Bond Nob from the Puce Cup last time."
-gnu dung	false	--	"You [if player has poo coop]need[else]may have[end if] a sanitary container to pick up the gnu dung to push it south."
-poo coop	false	--	"You tried pushing the gnu dung south before, but with the poo coop, it'd be much easier to fill the turf rut."
-el doodle	false	--	"The Code Doc couldn't quite read El Doodle as-is. You [if sharp rahs are off-stage]haven't found a way to clean it up yet[else]cleaned it in the edits tide, though, which should help[end if]."
-cassettes sac	false	--	"You [if player has cave vac]may now have[else]need[end if] something more powerful than the Dirt Rid to clean the cassettes sac."
-gate tag	false	--	"You [if Ned is moot]got[else]need to find a way to get[end if] rid of Ned, so you can use Ye Key on the etage gate in peace."
-yahoo hay	false	--	"There's still some yahoo hay left in Moo Room. The coarser, more practical stuff."
-kayo yak	false	--	"You [if Frush Surf is unvisited]may find a good time to say YAK OKAY once you find a yak[else]figured YAK OKAY might be worth telling the yak at the right moment, but it hasn't found an outlet for its aggression[end if]."
-sage gas	false	--	"You [if maps-explained is false]need to[else]now can[end if] make sense of the spa maps to get by Go-By Bog in the Spa Apse."
 --	false	can-chef rule	"You wanted to mix two foods together, but [if Ian is not moot and chef-Ian-clue is true]Ian was in the way[else]you did so on the wrong place[end if]."
-yard ray	false	--	"You know to EMIT NOONTIME with the yard ray, but you don't have the ammunition."
+--	false	need-cup rule	"You didn't have anything to take [if sap-with-hands is true]the past sap with in Cold Loc[end if][if sap-with-hands is true and sod-with-hands is true] or [end if][if sod-with-hands is true]the dose sod in Apse Spa[end if]."
+--	false	puff-known rule	"You need to find where to puff up."
+--	false	pull-known rule	"You need to find where to pull up."
+--	false	sap-uncut rule	"You need (and might already have) something to cut the past sap with [hn-in of Cold Loc]."
+Bond Nob	false	--	"You didn't have the right stuff to give the Bond Nob from the Puce Cup last time."
+cassettes sac	false	--	"You [if player has cave vac]may now have[else]need[end if] something more powerful than the Dirt Rid to clean the cassettes sac."
+el doodle	false	--	"The Code Doc couldn't quite read El Doodle as-is. You [if sharp rahs are off-stage]haven't found a way to clean it up yet[else]cleaned it in the edits tide, though, which should help[end if]."
+gate tag	false	--	"You [if Ned is moot]got[else]need to find a way to get[end if] rid of Ned, so you can use Ye Key on the etage gate in peace."
+gnu dung	false	--	"You [if player has poo coop]need[else]may have[end if] a sanitary container to pick up the gnu dung to push it south."
+kayo yak	false	--	"You [if Frush Surf is unvisited]may find a good time to say YAK OKAY once you find a yak[else]figured YAK OKAY might be worth telling the yak at the right moment, but it hasn't found an outlet for its aggression[end if]."
+liar grail	false	--	"You didn't have the right stuff to pour in the Liar Grail from the Puce Cup last time."
+poo coop	false	--	"You tried pushing the gnu dung south before, but with the poo coop, it'd be much easier to fill the turf rut."
+sage gas	false	--	"You [if maps-explained is false]need to[else]now can[end if] make sense of the spa maps to get by Go-By Bog in the Spa Apse."
+Spa Maps	false	--	"You [if tent net is not moot]need to do something so the Code Doc is willing[else]can now ask the Code Doc[end if] to decipher the Spa Maps the spa maps deciphered."
 test set	false	--	"You [if emitted is false]need to find[else]now know[end if] how to aim the yard ray."
+UFO tofu	false	--	"You [if cross orc is in Toll Lot]need to get rid of the cross orc to[else]can now[end if] use the radar on the crag arc."
+yahoo hay	false	--	"There's still some yahoo hay left in Moo Room. The coarser, more practical stuff."
+yard ray	false	--	"You know to EMIT NOONTIME with the yard ray, but you don't have the ammunition."
 [zzlat]
 
 this is the can-chef rule:
@@ -3825,7 +3851,7 @@ to get-reject (th - a thing):
 		if there is a to-get entry and to-get entry is th:
 			now in-limbo entry is true;
 			continue the action;
-	say "NONCRITICAL bug: I should've rejected getting [the th], but I didn't. This loophole may make the game slightly shorter, but I'd like to know how it happened."
+	say "NONCRITICAL bug: I should've rejected getting [the th], but I didn't. This loophole will probably just cause oddities in THINK, but I'd like to know how it happened."
 
 to later-wipe (th - a thing):
 	let changed-limbo be false;
@@ -4397,7 +4423,13 @@ part Grebeberg region
 
 book Seer Trees
 
-Seer Trees is west of Fun Enuf. It is in Grebeberg. "East leads back to [Fun Enuf][if Yawn Way is visited] and Yelpley[end if], but the other three directions lead to further rustic adventure[if stark rats are in Seer Trees], or will once you clear those stark rats[end if][seer-see].".
+Seer Trees is west of Fun Enuf. It is in Grebeberg. "[trees-stix], but the other three directions lead to further rustic adventure[if stark rats are in Seer Trees], or will once you clear those stark rats[end if][seer-see].".
+
+to say trees-stix:
+	if x-it stix are in Seer Trees:
+		say "X-It Stix block the way east";
+	else:
+		say "East leads back to [Fun Enuf][if Yawn Way is visited] and Yelpley[end if]";
 
 understand "tree" and "seer tree" as seer trees.
 
@@ -4740,7 +4772,7 @@ chapter martini tram
 
 the martini tram is a tronpart. "That martini tram that rolled all the way from Mont Nom still rests here.". description is "[if player has epicer recipe]The martini tram looks like it'll provide a handy base for the future North-Tron the epicer recipe described[else]You're not sure what it is for, but it seems sturdy[end if].". [?? "examined" as a property]
 
-check taking martini tram: say "It'd be awkward to push around. Besides, it [if epicer recipe is xed]seems like it needs to be here, to build the north-tron[else]doesn't have anywhere better to go[end if]."
+check taking martini tram: say "It'd be awkward to push around. Besides, it [if epicer recipe is xed]seems like it needs to be here, to build the north-tron[else]doesn't have anywhere better to go[end if]." instead;
 
 chapter Ian
 
@@ -4881,7 +4913,7 @@ Moo Room is east of Frush Surf. It is in Grebeberg. "You can't see any cows, but
 
 chapter poo coop
 
-the poo coop is in Moo Room. "A poo coop sits here. Thankfully, it looks empty.". description is "While it's 1/4 too small to be a pooch coop, it's 1) [if gnu dung is moot]full of gnu dung[else]empty[end if] and 2) somehow bigger on the inside than the outside. [if gnu dung is moot]It would be nice to get rid of the gnu dung[else]Maybe it can clean up a dirty area. Well, a less dirty area than [hn-in of Moo Room] where you found it[end if]."
+the poo coop is in Moo Room. "A poo coop sits here. Thankfully, it looks empty.". description is "While it's 1/4 too small to be a pooch coop, the coop is 1) [if gnu dung is moot]full of gnu dung[else]empty[end if] and 2) somehow bigger on the inside than the outside. [if gnu dung is moot]It would be nice to get rid of the gnu dung[else]Maybe it can clean up a dirty area. Well, a less dirty area than [hn-in of Moo Room] where you found it[end if]."
 
 understand "poos scoop" and "poos/scoop" as poo coop.
 understand "gnu dung" and "gnu/dung" as poo coop when player has poo coop and gnu dung is moot.
@@ -4959,7 +4991,7 @@ Some Ore Zero is a tronpart. description is "It gleams dully. Hopefully it's not
 
 book Uneven U
 
-Uneven U is south of Swamp Maws. It is in Grebeberg. "This looks vaguely like a university campus, with an all-ivy villa blocking the way west and a den, ivy-vined, blocking the way east. You can go north and south easily, though. [if tent net is moot]It feels nice and cozy now you helped the Code Doc add some furnishings[else]But it feels terribly unfinished, even with the ivy ambiance. Having some sort of roof might make it even homier[end if][if-porch]."
+Uneven U is south of Swamp Maws. It is in Grebeberg. "This looks vaguely like a university campus, with an all-ivy villa blocking the way west and a den, ivy-vined, blocking the way east. You can go north and south easily, though. [if tent net is moot]It feels nice and cozy now you helped the Code Doc add some furnishings[else]But it feels terribly unfinished, even with the ivy ambiance. It needs just a bit more cover. Cover that might still let in a bit of light[end if][if-porch]."
 
 printed name of Uneven U is "[if balsa slab is off-stage]Uneven[else]Unitin['][end if] U".
 
@@ -4998,6 +5030,8 @@ understand "dr/d" and "dr d" as code doc.
 chapter Spa Maps
 
 the Spa Maps are a plural-named thing. indefinite article of Spa Maps is "some". description is "[if sage gas is not off-stage]The maps seem old hat now you've gotten the sage gas[else if maps-explained is false]You can't quite make sense out of them. There's Gobs-Bog and Go-By Bog, and one is a lot safer than the other, but you're not sure which[else]The spa maps clearly demark Go-By Bog and Gobs Bog and even Goblin-Nil Bog, which probably contains a troll or two. And no hospitality[end if]."
+
+does the player mean useoning Spa Maps with go by bog: it is very likely.
 
 after examining spa maps for the first time:
 	say "[line break]They were, unsurprisingly, written by Pam. Good thing they're not spa mini-maps. They'd be IMPOSSIBLE to read.";
@@ -5149,7 +5183,7 @@ to say kayak-boat:
 
 chapter Elided Ile
 
-Elided Ile is peripheral scenery in Lac Oft Focal. "It's so far away, you can't see much. [if kayak is moot]But you remember it and the good times you had there. That's enough.[else]Maybe one day you'll get there![end if]"
+Elided Ile is peripheral scenery in Lac Oft Focal. "Elided Ile is so far away, you can't see much. [if kayak is moot]But you remember it and the good times you had there. That's enough.[else]Maybe one day you'll get there![end if]"
 
 chapter calcific lac
 
@@ -5159,7 +5193,7 @@ chapter kayak
 
 The kayak is scenery in Lac Oft Focal. "It's, well, just a kayak. It doesn't have anything to steer it with, though. Maybe you have something, or you could find something."
 
-check taking kayak: say "You got strong in My Gym, but not that strong!" instead;
+check taking kayak: say "You got strong in My Gym, but not that strong! [if elope pole is moot]Besides, you already took it somewhere[else]Maybe you could USE the right item to take it somewhere[end if]." instead;
 
 instead of entering kayak: say "[if elope pole is moot]Your elope pole is gone. There's no way to steer it[else]You need to find a way to steer it. Maybe there's no paddle, but something long and straight[end if]."
 
@@ -5254,7 +5288,10 @@ part Yelpley region
 
 book Yawn Way
 
-Yawn Way is east of Fun Enuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil Way, but you can go in all four directions, here: back west to [Fun Enuf], north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]Emo Dome[else]a dome[end if][if day away ad is in Yawn Way][one of]. And wait! There's a day-away ad, trumpeting all the business that'll return to Yelpley now you defeated the Diktat Kid[or]. You can still read the day-away ad, if you want[stopping][end if]."
+Yawn Way is east of Fun Enuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil Way, but you can go [yawn-stix] north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]Emo Dome[else]a dome[end if][if day away ad is in Yawn Way][one of]. And wait! There's a day-away ad, trumpeting all the business that'll return to Yelpley now you defeated the Diktat Kid[or]. You can still read the day-away ad, if you want[stopping][end if]."
+
+to say yawn-stix:
+	say "[if stix are in Yawn Way]all but west, where the X-It Stix block you:[else]in all four directions, here: back west to [Fun Enuf],[end if]"
 
 after looking in Yawn Way for the first time:
 	say "Whew! You were worried you'd develop a city tic, looking around, but thankfully not.";
@@ -5624,16 +5661,16 @@ carry out evadeing:
 
 book Worn Row
 
-Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky][what-machines][else if Worn Row is wordy]A tract cart is here, [tract-status][else]It's pretty empty here, [worn-scen][end if].[paragraph break][dab-notes]The only way out is back east."
+Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky][what-machines][else if Worn Row is wordy]A tract cart is here, [tract-status][else]It's pretty empty here, [worn-scen][end if][if ever-wordrow is true and Worn Row is worky]. You could also summon Work Row back if you wanted[end if].[paragraph break][dab-notes]The only way out is back east."
 
 to say worn-scen:
 	say "[if redness ender is in Worn Row]not counting a big lumpy Redness Ender that makes Worn Row feel even more worn[else]and with the redness ender gone, you might as well just change things back to Work Row or Word Row"
 
-to say what-machines: say "[if test set is off-stage]A cold and sterile, but safe, place[else if test set is moot]Since you destroyed the test set, it's pretty empty here[else]It's more specious here with the re*er machines destroyed[end if]"
+to say what-machines: say "[if test set is off-stage]A cold and sterile, but safe, place[else if test set is moot]Since you destroyed the test set, it's pretty empty here[else]It's more spacious here with the re*er machines destroyed[end if][if ever-workrow is true and Worn Row is wordy]. You could also summon Word Row back if you wanted[end if]"
 
 to say dab-notes:
-	if row-prog >= 2, continue the action;
-	say "[if row-prog is 1]The bad dab splashed on the floor looks smudged now you changed Worn Row[else]A bad dab is splashed on the floor, too, and it looks readable[end if]. "
+	if row-prog >= 3, continue the action;
+	say "[if row-prog is 2]The bad dab splashed on the floor looks even more smudged than when you first saw it[else if row-prog is 1]The bad dab splashed on the floor looks smudged now you changed Worn Row[else]A bad dab is splashed on the floor, too, and it looks readable[end if]. "
 
 printed name of Worn Row is "[if Worn Row is wordy]Word[else if Worn Row is worky]Work[else]Worn[end if] Row"
 
@@ -5679,7 +5716,7 @@ every turn when player is in Worn Row and Rob is in Worn Row:
 
 chapter bad dab
 
-the bad dab is peripheral scenery in Worn Row. description is "[if Rob is in Worn Row]WORN ROW is written, somewhat dubiously[else if row-prog > 0]WOR- ROW is still here, faded a bit since you opened [Worn Row]. Maybe there's still something more Worn Row could be[else]The bad dab spells out WOR- ROW. Maybe there's more here than just Worn Row[end if]."
+the bad dab is peripheral scenery in Worn Row. description is "[if Rob is in Worn Row]WORN ROW is written, somewhat dubiously[else if row-prog > 2]WOR* ROW is here, reminding you [Worn Row] can be switched around at will[else if row-prog > 0]WOR- ROW is still here, a bit blotchier than when you opened [Worn Row]. Maybe there's still something more Worn Row could be[else]The bad dab spells out WOR- ROW. Maybe there's more here than just Worn Row[end if]."
 
 understand "wor" and "wor row" as the bad dab when bad dab is quicknear.
 
@@ -6135,12 +6172,13 @@ this is the wornrow-change rule:
 carry out workrowing:
 	abide by the wornrow-change rule;
 	if Worn Row is worky, say "You're already in Work Row." instead;
+	notify-row-change;
 	if ever-workrow is false:
 		say "[Worn Row] shakes, and with a [i]MAL[r] 'Blam' and clicks and whirs, you watch as the [if ever-wordrow is true]tract cart[else]redness ender[end if] retreats into the wall, maybe for later. After more whirring, three machines pop out of another wall. One looks particularly odd, another is spinning like a washer or dryer, and the third--well, it looks like one of those cryogenic things to store frozen bodies for resurrection. A quick glance shows they labeled ROTATOR, REIFIER and REVIVER, in that order.";
 		score-inc; [Yelpley/work row]
 		verify-done rev-work-row rule;
 	else:
-		say "[Worn Row] returns once again to Work Row. It's a little less disorienting this time around. [if test set is off-stage]The reifier, reviver and rotator reappear[else if test set is in Worn Row]The test set re-appears[else]Work row is still barren, though[end if].";
+		say "[line break][if test set is off-stage]The reifier, reviver and rotator reappear[else if test set is in Worn Row]The test set re-appears[else]Work row is still barren, though,, now you destroyed everything here[end if].";
 	work-row-open;
 	check-dab;
 	the rule succeeds;
@@ -6156,11 +6194,12 @@ to work-row-open:
 
 to check-dab:
 	if bad dab is in Worn Row:
-		if row-prog > 1:
+		if row-prog > 2:
 			say "[line break]The WOR- ROW text of the bad dab fades out of sight.";
-			moot bad dab;
+		if row-prog > 1:
+			say "[line break]The middle dash in WOR- ROW bleeds into an asterisk. Odd.";
 		else:
-			say "The bad dab saying WOR- ROW fades slightly. Maybe there's something else beside [Worn Row]."
+			say "The bad dab saying WOR- ROW gets blotchier. Maybe there's something else beside [Worn Row]."
 
 chapter wordrowing
 
@@ -6188,8 +6227,6 @@ carry out wordrowing:
 		score-inc; [Yelpley/word row]
 		verify-done rev-word-row rule;
 		say "A tract cart appears, full of odd books. A pity tip also flutters down. You take the tip.";
-	else:
-		say "With further whirring, the tract cart pops back out from the wall, and [Worn Row] turns back into Word Row.";
 	word-row-open;
 	check-dab;
 	the rule succeeds;
@@ -6222,6 +6259,7 @@ carry out wornrowing:
 	clear-worn-row;
 	say "A buzz and a whirr makes the Psi Wisp pause. The [if Worn Row is worky]machines snap[else]tract cart snaps[end if] back into a wall, and the redness ender pops out of another. It locks on the Psi Wisp, which is very red indeed. Zap! Zot! The Psi Wisp becomes even redder before exploding. As its last act, the Psi Wisp channels that energy back into the redness ender, which also explodes. You managed to get out of the way during all this to pick up the items you dropped in Gross Org.";
 	win-wisp-chase;
+	check-dab;
 	score-inc; [Yelpley/WORN ROW]
 	the rule succeeds;
 
@@ -6233,6 +6271,7 @@ to win-wisp-chase:
 	now Worn Row is worny;
 	moot psi wisp;
 	moot redness ender;
+	moot bad dab;
 	recover-items;
 
 chapter mytraceing
@@ -6580,6 +6619,12 @@ check taking when player is in Gross Org and Ned is in Gross Org:
 
 the etage gate is scenery in Gross Org. "It is locked and too strong to force out of the way, but at least it's not a set-a-gates. It's engraved with...hmm, roses, or..."
 
+instead of unlocking etage gate with Ye Key:
+	if player has Ye Key, try useoning Ye Key with etage gate instead;
+	try going north;
+
+does the player mean unlocking etage gate with Ye Key: it is likely.
+
 instead of opening etage gate:
 	if player has Ye Key, try useoning Ye Key with etage gate instead;
 	try going north;
@@ -6702,6 +6747,8 @@ understand "stand [something]" as standing.
 carry out standing:
 	if player has Nat's Tan, say "You already did. And you still do. Barely. Best not do anything to upset that." instead;
 	if noun is Nat's Tan:
+		if the player's command does not include "nat":
+			say "I'm going to be super pedantic and make you say it palindromically, but yes, that's the basic idea." instead;
 		say "It's tough, but you manage to stand the icky Nat's Tan enough to pick it up--it's for the good of your adventure. Maybe you can dump it on someone or something who finds it even ickier than you do.";
 		score-inc; [Yelpley/stand nat's]
 		now player has Nat's Tan;
@@ -6984,7 +7031,7 @@ check going south in Swept Pews: if Liar Grail in Swept Pews, say "'No yon! No y
 
 chapter liar grail
 
-The Liar Grail is a thing in Swept Pews. description is "It's carved inside with the phrase Y'R DRY, which is kind of odd, because it's a lot drier than you. But real live liars often accuse others of their deficiencies. It's empty, but looking at it, you feel fogged by ambiguities and half-truths explicitly meant to sucker you because you sort of wanted to believe them, or you'd feel dumb not believing them if they were actually true, whether or not they sounded intuitive.[paragraph break]Perhaps there is some way to make the liar grail's arguments so extreme they can be laughed off.". "A liar grail is to the south."
+The Liar Grail is a thing in Swept Pews. description is "It's carved inside with the phrase Y'R DRY, which is kind of odd, because it's a lot drier than you. But real live liars often accuse others of their deficiencies. It's empty, but looking at it, you feel fogged by ambiguities and half-truths explicitly meant to sucker you because you sort of wanted to believe them, or you'd feel dumb not believing them if they were actually true, whether or not they sounded intuitive. Or maybe you'd even feel dumb admitting you believed such silly lies for so long.[paragraph break]Perhaps there is some way to make the liar grail's arguments so extreme they can be laughed off.". "A liar grail is to the south."
 
 check taking liar grail: say "A small voice cries 'Da cad! Da cad!' You probably don't want the liar grail corrupting you." instead;
 
@@ -7046,6 +7093,9 @@ the girt rig is semiperipheral scenery in Scrap Arcs. description is "It is too 
 chapter slate metals
 
 the slate metals are scenery in Scrap Arcs. "You could probably carve something out of them, with the right implement(s). Maybe not steel fleets--they seems a bit flimsy, which is probably why they wound up here. But something useful for a humbler and less violent task."
+
+check taking slate metals:
+	say "[if stamp mats are moot]You already made something from the slate metals[else]Youmight be able to use part of them to make something, but you couldn't carry ALL the metals, even with your Sto-Lots[end if]." instead;
 
 understand "slate metal" and "metal" as slate metals.
 
@@ -7109,7 +7159,7 @@ understand "dispepsid" and "dyspepsyd" as demo med.
 the pill lip is peripheral scenery in Dopy Pod. "A Demo Med rests on the Pill Lip."
 
 report taking demo med:
-	say "The pill lip retracts as you take the demo med.";
+	say "The pill lip retracts with no trace as you take the demo med.";
 	moot pill lip;
 	the rule succeeds;
 
@@ -7239,7 +7289,7 @@ talk-text of Psi Wisp is "It has nothing to say. It just pulses.".
 talk-text of Door Frood is "The Door Frood launches into how mostly everyone is really stupid and at fault, and those who aren't can't really do anything except snark about it. And sad thing is, the Door Frood is out of new creative snark! For the moment.".
 talk-text of Rob is "Rob yawns. He doesn't find you very interesting. Maybe there's a way to take advantage of that.".
 talk-text of sleep eels is "Maybe they are sending some sort of electric message you could detect with the right instrument, but they're not talking. You're more struck, though, by how uncomfortable they look while sleeping--wriggling about.".
-talk-text of Sniffins is "[if YOB ATTABOY is not moot]'Tony? Not! People call food lower class than even N-E-Mart Ramen! If only I had some success manual !'[else]'Oh. It's you again. If you were REALLY smart, you'd have taken the advice in that book you gave me. Too late now! Guess you'll never do anything with your life.'[end if]".
+talk-text of Sniffins is "[if YOB ATTABOY is not moot]'Tony? Not! People call my food lower class than even N-E-Mart Ramen! If only I had some success manual!'[else]'Oh. It's YOU again. If you were REALLY smart, you'd have taken the advice in that book you gave me. Too late now! Guess you'll never do anything with your life.'[end if]".
 talk-text of Verses Rev is "The Verses Rev booms 'Erupt! Pure!' then piously intones how weirdos not in line with the Diktat Kid's values need to be eradicated.".
 talk-text of Wordy Drow is "It moans and points at the Liar Grail. They're forced together, somehow, but maybe you can change that. But you'll have to do more than shout 'Ye go, bogey!'".
 talk-text of Yuge Guy is "'I'm ... ' / 'TMI!'"
@@ -7536,7 +7586,7 @@ a room can be chase-blocked. a room is usually not chase-blocked.
 check going to a chase-blocked room when being-chased is true: say "[chase-pass]No, you've already been there, and you found nothing to do." instead;
 
 after going when being-chased is true:
-	if x-it stix are in location of player, say "X-it Stix X out the way [if Fun Enuf is room east of location of player]east[else]west[end if]. It's probably bad for the [chase-person] to get loose in [if player is in Yawn Way]Grebeberg[else]Yelpley[end if].";
+	if x-it stix are in location of player, say "As you run furher [noun], you notice X-it Stix X out the way [if Fun Enuf is room east of location of player]east[else]west[end if]. It's probably bad for the [chase-person] to get loose in [if player is in Yawn Way]Grebeberg[else]Yelpley[end if].";
 	continue the action;
 
 x-it stix are semiperipheral scenery. "They look like the metal grating shops pull out over their doors and windows at closing time.[paragraph break]They are in an X, and while they don't allow an Xit, they do x out one way to go, which may help you figure how you need to get away from the [chase-person].[paragraph break]Of course, any wordplay adventurer worth their salt (like you--you're pretty far along, here) knows the difference between EXIT and X-IT. These things are telling you what you can't do!";
@@ -7618,13 +7668,13 @@ to reset-chase:
 	wfak;
 	move x-it stix to TempMet;
 	recover-items;
-	unless player was in Frush Surf or player was in Pro Corp, say "Well, all your items you dropped are still here, so that's something. You take them back, staying where the [chase-person] won't quite find you.";
 	now being-chased is false;
 	now chase-mulligan is false;
 	if debug-state is true, say "RULE TRACKER: [LP] ([chase-block-rule of LP]).";
 	consider chase-block-rule of LP;
 	if mrlp is Grebeberg, drop-player-at Ooze Zoo;
 	if mrlp is Yelpley, drop-player-at Gross Org;
+	unless player was in Frush Surf or player was in Pro Corp, say "Well, all your items you dropped are still here, so that's something. You take them back, staying where the [chase-person] won't quite find you.";
 	move chase-person to chase-room of chase-person, without printing a room description;
 	if LP is Lair Trial, say "The kayo yak didn't seem to want to attack you, but you just didn't know what to say. Maybe you can and should try again.";
 	if the rule succeeded, now LP is chase-blocked;
