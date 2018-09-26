@@ -699,7 +699,7 @@ Rule for printing a parser error when the latest parser error is the only unders
 		now nw is 6;
 	say "That command seemed like it was longer than it needed to be, or maybe the last word was a typo [one of](e.g. Set O Notes vs. Set o Totes.) [or]. [stopping]You may wish to cut a word or two down. Push 1 to retry [word number 1 in the player's command in upper case][if nw > 1], or a higher number to re-try only the first [nw] words of your command, or 9 to cut off the final word[end if]. Or just push any other key to pass and try another command.";
 	let Q be the chosen letter;
-	if Q is 57 and nw > 1, now Q is nw + 47;
+	if Q is 57 and nw > 1, now Q is nw + 47; [9 = special case]
 	if Q >= 49 and Q <= 48 + nw: [since it's ascii, 49 = the number 1]
 		now parser error flag is true;
 		now the last-command is "[word number 1 in the player's command]";
@@ -856,11 +856,21 @@ after reading a command:
 		replace the regular expression "<^-\.a-z 0-9>" in XX with "";
 		change the text of the player's command to XX;
 		if debug-state is true, say "(PUNCTUATION REMOVAL) Changed to: [XX][line break]";
+	repeat through table of homonym rejects:
+		if to-reject entry is quicknear and the player's command exactly matches the text "[mytxt entry]":
+			say "A homonym is a good try, but you need to do something more active with [the to-reject entry][if there is a longer-desc entry]. [longer-desc entry][end if].";
+			reject the player's command;
 	if the player's command includes "n i win", try niwining instead;
 	if player is in Le Babel and opossum is in Le Babel and the player's command matches the regular expression "\bpossum\b":
 		say "You feel as though you are misssing something calling the opossum just a possum. Something non-critical, but something nonetheless.";
 
 no-punc-flag is a truth state that varies.
+
+table of homonym rejects
+to-reject	mytxt	longer-desc
+trap art	"trap art"	"Also, you [if player has trap art]already took[else]can just take[end if] the art. You need to make it more interesting"
+scorn rocs	"scorn rocs"	"They'd out-scorn you easily. But that's okay. If you were too good at scorning, you wouldn't be one of the good guys. You need to do something more drastic"
+tame mat	"tame mat"	"Also, the mat's already harmless. You need to make it more interesting"
 
 part dying
 
@@ -1601,7 +1611,7 @@ carry out metaing:
 	if player wears pact cap, say "[2da][b]LO VOL[r] and [b]LOVE VOL[r] turn the pact cap's hints volume down and up, respectively.";
 	if shuttuhs-known is true, say "[2da][b]SHUTTUHS[r] toggles blocking off areas you're done with--currently [on-off of shuttuhs]. NOTE: if there are any LLPs, you'll still be blocked.";
 	say "[b]SCORE[r] tracks the score. [b]ABOUT[r] and [b]CREDITS[r] tell about the game[if show-dev is true], and [b]DEV ED[r] shows technical details[end if].";
-	say "If you wish to see commands that jump ahead and maybe spoil some puzzles (for instance, if you're near the 2-hour judging limit for IFComp,) [b]N I WIN[r] (no apostrophe) spoils them.";
+	say "If you wish to see commands that jump ahead and maybe spoil some puzzles (for instance, if you're near the 2-hour judging limit for IFComp,) [b]N I WIN[r] (no apostrophe) will show you several warp commands. This may be useful if you are near the end of IFComp judging.";
 	if in-beta is true:
 		say "[line break](start beta commands)";
 		say "[line break][2da][b]RR[r] lets you try all three items in the Word Row machines. If one nets a point, it goes last.";
@@ -1627,7 +1637,7 @@ carry out niwining:
 	say "[b]TIP IT[r] allows you to skip the next puzzle in the game's walkthrough/test order. It can be used up until the very end. It, however, neglects context beyond what items you use and what items appear.";
 	say "[b]DEEP SPEED[r] jumps you to where you have blown a hole in the [kaoscaps] to the north of [Fun Enuf] and have the weaponry to take on the Diktat Kid. If the [kaoscaps] is gone, it has no effect.";
 	say "[b]REV OVER[r] allows you to skip a few puzzles at a time.";
-	say "There are also three commands that will warp you over major quests: [b]TOOLS LOOT[r] [if tron-got is 4](done) [end if]acquires all North-Tron parts[b]SMH MS[r] [if Bros' Orb is had-or-done](done) [end if]gets you prepared for Ms. Ism. [b]GUY UG[r] [if rocs are moot and rep popper is had-or-done](done) [end if]gets you prepared for the Yuge Guy. Note these three commands overlap and also do not give you any of the items you need to defeat the Diktat Kid.";
+	say "There are also three commands that will warp you over major quests: [b]TOOLS LOOT[r] [if tron-got is 4](done) [end if]acquires all North-Tron parts. [b]SMH MS[r] [if Bros' Orb is had-or-done](done) [end if]gets you prepared for Ms. Ism. [b]GUY UG[r] [if rocs are moot and rep popper is had-or-done](done) [end if]gets you prepared for the Yuge Guy. Note these three warp commands have puzzles in common to solve, and also, using them all does not quite give you any of the finished items you need to defeat the Diktat Kid. But they get you close.";
 	the rule succeeds;
 
 chapter shuttuhsing
@@ -1881,9 +1891,9 @@ to say up-down-check:
 	unless the room down from location of player is nowhere, increment xud;
 	if xud is 0, continue the action;
 	say " (";
-	unless the room up from the location of player is nowhere, say "up=[othdir of up]";
+	unless the room up from the location of player is nowhere, say "up=[othdir of up] here";
 	if xud is 2, say ", ";
-	unless the room down from the location of player is nowhere, say "up=[othdir of down]";
+	unless the room down from the location of player is nowhere, say "down=[othdir of down] here";
 	say ")"
 
 maindir is a list of directions variable. maindir is { north, west, south, east }
@@ -1920,7 +1930,7 @@ check going (this is the reject noncardinal directions rule):
 	if noun is diagonal, say "Diagonal directions aren't used in this game." instead;
 	if noun is up or noun is down:
 		if the room noun of location of player is nowhere:
-			say "You never need to go up or down in this game. It's pretty ... level. There is no Elavata'-Vale.[paragraph break]Though sometimes these directions act as a backup to the main cardinal directions--for instance, up to or down from [if player is in Mont Nom]here[else if Mont Nom is visited]Mont Nom[else]a hill[end if].";
+			say "You never need to go up or down in this game. It's pretty ... level. There is no Elavata[']-Vale.[paragraph break]Though sometimes these directions act as a backup to the main cardinal directions--for instance, up to or down from [if player is in Mont Nom]here[else if Mont Nom is visited]Mont Nom[else]a hill[end if].";
 			if player has Spur Ups, say "[line break]You DO have to do something up-ish with the Spur Ups, though. Just not GOing.";
 			the rule succeeds;
 
@@ -2132,7 +2142,12 @@ to verify-done (ru - a rule):
 			continue the action;
 	if debug-state is true, say "DEBUG: Couldn't find [ru] in table of goodacts.";
 
+noun-person-note is a truth state that varies.
+
 check useoning it with (this is the main useon function rule):
+	if noun is a person and noun-person-note is false:
+		now noun-person-note is true;
+		say "NOTE: it's semantic, but usually, you'll want to use something ON a person. The game should flip the nouns appropriately.";
 	if noun is second noun, say "It's not productive to use something on itself, even with this game being full of palindromes." instead;
 	if noun is a workable and second noun is a workable, say "The machines are fixed in place. You can't use one on the other." instead;
 	if useprio of noun > useprio of second noun:
@@ -2162,7 +2177,6 @@ check useoning it with (this is the main useon function rule):
 			chef noun and second noun;
 			the rule succeeds;
 		if second noun is ark of okra, say "No--the okra doesn't seem to mix with anything. But you feel like you could mix other foods together, here." instead;
-	if noun is a person, say "[one of]You're not any good at using other people. In fact, if you tried, they'd wind up using YOU. Plus you don't want to be, really. There's another way. So, no[or]Using people is out[stopping]. Maybe you could use something on a person, though." instead;
 	if noun is a tronpart or noun is epicer recipe:
 		if second noun is a tronpart or noun is epicer recipe:
 			if player does not have epicer recipe, say "Those two things seem to go together, but you don't have detailed instructions." instead;
@@ -2387,6 +2401,8 @@ section table of specific use rejects
 
 to say not-thing of (nt - a thing): say "[if nt is noun][second noun][else][noun][end if]"
 
+to say henchy-list: say " to the Diktat Kid, but you can't get close enough, with [the list of henchy people] in the way"
+
 table of specific use rejects [xxrej] [xxfail] [xxsur]
 use1	use2	babble
 brag garb	tao boat	"[too-boast]."
@@ -2453,6 +2469,7 @@ Gorge Grog	DIFF ID	"No electrical wiring is exposed, so you can't short the DIFF
 Gorge Grog	yard ray	"The Gorge Grog is pretty strong stuff, but you may need something even stronger."
 Gorge Grog	Yuge Guy	"The Yuge Guy doesn't drink, and neither does Johnny. Also, the Yuge Guy may or may not be a germaphobe."
 ME gem	cross orc	"The ME gem causes the cross orc to moan and shield its eyes for a bit. Perhaps it is too much even for the orc's greed. Something more straightforward may work better."
+ME gem	Diktat Kid	"The ME gem would be appealing[henchy-list]."
 ME gem	ME Totem	"The egotistical forces in the gem and totem repel each other. Just as well. You don't know if you could survive if such insufferability synergized."
 ME gem	Tao Boat	"The tao boat lurches uncontrollably, and a gust of wind blows you back ten feet. It seems like the ME gem is about the worst thing you could possibly have shown to impress it, but on the other hand, that's a potential hint. You need something that's the opposite of the ME gem."
 ME gem	Verses Rev	"The Verses Rev sniffs and waves away the ME gem with disdain. Perhaps it could entice less spiritual types."
@@ -2533,6 +2550,7 @@ stinky knits	kayo yak	"The yak sniffs at the knits for a while but loses interes
 stir writs	tao boat	"[too-boast]."
 stock cots	stark rats	"The rats don't need to sleep, and the stock cots won't make them feel drowsy. You need to get rid of the rats."
 taboo bat	bomb mob	"No way. You'd be outnumbered. You'll need stealth."
+taboo bat	Diktat Kid	"The taboo bat could be dangerous[henchy-list]."
 taboo bat	Knife Fink	"The Knife Fink probably doesn't care about taboos."
 taboo bat	ME Totem	"Violence isn't the answer. The ME Totem is not repelled by moral turpitude, anyway."
 taboo bat	test set	"This isn't cricket. You do, however, need to use SOME weapon on the test set."
@@ -2561,7 +2579,9 @@ wash saw	stark rats	"You couldn't catch and hold a rat long enough to cut it wit
 wash saw	stock cots	"That'd undo the reviver's work on the cots."
 wash saw	you buoy	"The buoy would break the saw."
 yard ray	Diktat Kid	"The Diktat Kid laughs as you point the yard ray. 'Destroy me, but my work--my dezaz-ed--will remain!'"
+yard ray	Knife Fink	"[yard-hench]."
 yard ray	Tru Hurt	"The Tru Hurt is dangerous, but maybe you should use the yard ray on something even more harmful."
+yard ray	Verses Rev	"[yard-hench]."
 yard ray	Waster Fretsaw	"The Waster Fretsaw is dangerous, but maybe you should use the yard ray on something even more harmful."
 YE KEY	DIFF ID	"You wave Ye Key in front of the DIFF ID. Nothing happens. The engraving on Ye Key seems to match up with what the DIFF ID wants to see, but maybe you need something else."
 yob attaboy	bomb mob	"The bomb mob is past redemption. Maybe the book can motivate someone else, though."
@@ -2569,6 +2589,8 @@ yob attaboy	Ian	"Ian is too much of a food snob to be interested."
 yob attaboy	King Nik	"King Nik is no yob, and he needs more concrete information than that."
 yob attaboy	Ned	"Ned's a fighter, not a reader. A book won't change that."
 [zzrej] [zzfail]
+
+to say yard-hench: say "The [not-thing of yard ray] isn't quite an important enough target. You may not need such a drastic solution"
 
 to say wonk-sage: say "Even if the [noun] could help the Wonk, the Wonk would figure a reason it wouldn't ... and be right! You need a gift in line with the Wonk's values"
 
@@ -2679,7 +2701,7 @@ Yard Ray	test set	--	pre-ray-on-set rule	test-set-zapped rule	true	false	true	fa
 --	--	--	rev-create-tron rule	--	true	--	--	false	false	false	Dim Mid	Fun Enuf	Fun Enuf	false	--
 ME gem	Knife Fink	--	pre-gem-on-fink rule	kid-left rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, perhaps to create the Red Ronin Order." [b4:use TNT on ore zero]
 taboo bat	Verses Rev	--	pre-bat-on-rev rule	kid-left rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev senses the Taboo Bat's ancient untapped power. It's not particularly violent or lethal, but it is just perfect to scare an orthodoxy as warped as the Verses Rev's, who mutters 'Rev, off, over' and stumbles away! Perhaps to the safety of ... a rev reserver."
-Yard Ray	redivider	X-ITE TIX	pre-ray-on-redivider rule	kid-bye rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"'Havoc, OVAH!' you should as you aim and fire the yard ray. A direct hit! The redivider begins to fizzle.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The entire Dirge Grid brightens, and the yard ray hums and explodes. But it's too late for the Diktat Kid to avoid an electro-shock. 'Deleveled!' the Kid screams several times, before breaking down into tears. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid grows redder ... redder ... and suddenly the remains of the redivider begin swirling, and they catch the Diktat Kid, who moans 'Lo, a Gaol' before being whisked off.[paragraph break]With the Kid gone, the Dirge Grid grows less dark, the no-go gon winks out, and saner arenas are revealed all around. The swirling remains of the redivider harden into what can only be an XILE helix.[paragraph break]Revel, clever! Revel, ever![paragraph break]You are so busy watching, you didn't notice something else fell out of the redivider: X-ITE TIX! You pick them up. Wow! Yo, joy! Wow!"
+Yard Ray	redivider	X-ITE TIX	pre-ray-on-redivider rule	kid-bye rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"'Havoc, OVAH!' you should as you aim and fire the yard ray. A direct hit! The redivider begins to fizzle.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The entire Dirge Grid brightens, and the yard ray hums and explodes. But it's too late for the Diktat Kid to avoid an electro-shock. 'Deleveled!' the Kid screams several times, before breaking down into tears. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'PUT, UH, SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid grows redder ... redder ... and suddenly the remains of the redivider begin swirling, and they catch the Diktat Kid, who moans 'Lo, a Gaol' before being whisked off.[paragraph break]With the Kid gone, the Dirge Grid grows less dark, the no-go gon winks out, and saner arenas are revealed all around. The swirling remains of the redivider harden into what can only be an XILE helix.[paragraph break]Revel, clever! Revel, ever![paragraph break]You are so busy watching, you didn't notice something else fell out of the redivider: X-ITE TIX! You pick them up. Wow! Yo, joy! Wow!"
 X-ITE TIX	TIX EXIT	--	pre-tix-on-exit rule	you-win rule	true	false	false	false	false	false	Dim Mid	Fun Enuf	Fun Enuf	false	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse] [zzgood]
 
@@ -2797,7 +2819,7 @@ this is the rev-pace-cap rule:
 	say "You tweak your pact cap to a PACE CAP";
 	if mrlp is not Grebeberg:
 		say ", moving to Seer Trees in Grebeberg when it doesn't seem right to run in Yelpley or [Fun Enuf].";
-		if in-warp-command:
+		if in-warp-command: [??warp-player-to function instead]
 			move player to Seer Trees, without printing a room description;
 		else:
 			move player to Seer Trees;
@@ -2860,7 +2882,10 @@ this is the rev-second-food-combo rule:
 		the rule succeeds;
 	say "You mix the [si] and [mi] together in Mont Nom, causing a martini tray to roll out from the Ark of Okra all the way to [Fun Enuf].";
 	move martini tram to Fun Enuf;
-	move player to Fun Enuf;
+	if in-warp-command:
+		move player to Fun Enuf, without printing a room description;
+	else:
+		move player to fun enuf;
 	moot si;
 	moot mi;
 	the rule succeeds;
@@ -4240,6 +4265,10 @@ The Diktat Kid is a person in Dirge Grid. description is "The Diktat Kid [if hen
 to say hl of (ts - a truth state):
 	say "[if ts is whether or not Verses Rev is moot]Knife Fink[else]Verses Rev[end if]"
 
+definition: a person (called p) is henchy:
+	if p is Verses Rev or p is Knife Fink, yes;
+	no;
+
 to decide which number is henchmen-left:
 	let count be 0;
 	if Knife Fink is in Dirge Grid, increment count;
@@ -4271,7 +4300,7 @@ the part strap is peripheral. description is "It's more for overzealous religiou
 
 chapter x-ite tix
 
-the x-ite tix are a plural-named thing. description is "A duo. Loud. You're glad there're not XI--too much to keep track of.[paragraph break]They promise passage to an EVEN MORE EXCITING AND EXPANSIVE ADVENTURE THAN THE ONE YOU'VE JUST FINISHED.[paragraph break]The words 'WOW' and 'YAY' are dotted all around, none overlapping the main 'TIX: I FIX IT' message."
+the x-ite tix are a plural-named thing. description is "A duo. Loud. Just the right number. If you had XI, that'd be too many to keep track of.[paragraph break]They promise passage to an EVEN MORE EXCITING AND EXPANSIVE ADVENTURE THAN THE ONE YOU'VE JUST FINISHED.[paragraph break]The words 'WOW' and 'YAY' are dotted all around, none overlapping the main 'TIX: I FIX IT' message."
 
 understand "xite" and "x ite" and "xite tix" and "x ite tix" as x-ite tix.
 
@@ -4327,7 +4356,7 @@ carry out emiting:
 	if murdered rum is not moot, say "The Yard Ray isn't charged enough to emit anything[clue-noon]." instead;
 	if player is in location of Yuge Guy, say "No...the Yuge Guy needs to be defeated by other means." instead;
 	if Diktat Kid is moot, say "You already got rid of the Diktat Kid." instead;
-	if emitted is true, say "You already figured how to use the Yard Ray." instead;
+	if emitted is true, say "You already figured how to use the Yard Ray. Now you need to figure who or what to use it on." instead;
 	if the topic understood matches "noontime" or the topic understood matches "noon time":
 		say "FOOM! Oof! The yard ray emits so much light, you immediately have to switch it off. Well, that was a good start. Now you want to make sure you can aim it at something that can be destroyed.";
 		now emitted is true;
@@ -4981,7 +5010,7 @@ The Balsa Slab is a thing. description is "It appears grooved, as if someone has
 
 book Lair Trial
 
-Lair Trial is south of Uneven U. It is in Grebeberg. "Thick go-fog causes this passage to bend [if Motto Bottom is unvisited]back [end if]north and east[if ergot ogre is moot], and with the trial over, you're free to go either way[end if]."
+Lair Trial is south of Uneven U. It is in Grebeberg. "Thick go-fog bounds this passage to the south and west[if ergot ogre is moot], and with the trial over, you're free to go either way[end if]."
 
 printed name of Lair Trial is "[if ergot ogre is in Lair Trial]Lair Trial[else]Stride Dirts[end if]".
 
@@ -5146,7 +5175,7 @@ The Enact Cane is a thing. description is "Just holding it makes you feel snazzi
 
 chapter taboo bat
 
-The taboo bat is a thing. description is "You feel rebellious just holding this thing. One look, and visions of chances taken and authority bucked in your youth, sensible or not, swirl at you for a bit."
+The taboo bat is a thing. description is "You feel rebellious just holding this thing. One look, and visions of chances taken and authority bucked in your youth, sensible or not, swirl at you for a bit. It--well, it almost feels foamish, but it's decorated so that if I described it in full, this game would still probably be PG, but I don't want to risk it. Sorry about that!"
 
 chapter you buoy
 
@@ -5405,7 +5434,7 @@ does the player mean doing something with Name ME Man when player is in Yawn Way
 
 does the player mean useoning with Name ME Man: it is unlikely.
 
-Name ME Man is a peripheral phonebook in Yawn Way. description is "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers of Yelpley residents from Name ME Man, even though you have no phone to call them with:[line break][name-num of 5 and Name ME Man][variable letter spacing][run paragraph on]". "[one of]There's also something called Name ME Man, which--well, it's really just a glorified phone book. Yawn[or]Name ME Man waits for your perusal, if you have a great need to procrastinate[if Name ME Man is xed] some more[end if][stopping].". booktable of Name ME Man is table of random palindrome lastfirst names.
+Name ME Man is a peripheral phonebook in Yawn Way. description is "[one of]It's really just a phone book. You read several[or]You read several more[stopping] names and numbers of Yelpley residents from Name ME Man, even though you have no phone to call them with:[line break][name-num of 5 and Name ME Man][variable letter spacing][run paragraph on]". "[one of]There's also something called Name ME Man, which, with a cursory glance, seems to be just a glorified phone book. Yawn[or]Name ME Man waits for your perusal, if you have a great need to procrastinate[if Name ME Man is xed] some more[end if][stopping].". booktable of Name ME Man is table of random palindrome lastfirst names.
 
 understand "nm/mm/nmm/phone/book" and "phone book" as Name ME Man.
 
@@ -6372,7 +6401,7 @@ check going north in Emo Dome:
 	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. Still, you try to pass by the DIFF-ID but hear a warn-raw voice: 'Dim ID! Go jog!'[paragraph break]You think, hang? Nah. Maybe you [if player has soot tattoos and player has gate tag]can hustle up an ID--a DIY ID, if you will--from your current possessions, though[else if player has soot tattoos or player has gate tag]could find something to help you get by[end if]." instead;
 	if Bros' Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet. You don't need someone else, but you need something that makes you feel someone else is, well, there." instead;
 	if Diktat Kid is moot, say "The Red Roses Order is being replaced by something more ... civic. The Teem-Civic Meet, to be precise. It'll take a while. Positive politics often does. Perhaps there should be a 'SLO POLS' sign." instead;
-	if balsa slab is moot, say "The Teem-Civic Meet is going in full swing. They're throwing interesting ideas around, but you don't have anything to add. Lots of folks all 'Yep, ey?'" instead;
+	if balsa slab is moot, say "With Ms. Ism defeated, the Teem-Civic Meet is going in full swing. They're throwing interesting ideas around, but you don't have anything to add. Lots of folks all 'Yep, ey?'[paragraph break]You've done all you could in the Red Roses Order." instead;
 	say "You make sure your state tats are visible for scanning. They are accepted with a 'YA MAY!'.[paragraph break][if Ms Ism is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the sword rows.[end if]";
 
 chapter DIFF ID
@@ -7180,6 +7209,24 @@ printed name of Fun Enuf is "[if Diktat Kid is moot]NU FUN[else]Fun Enuf[end if]
 
 chapter gotoing
 
+to decide which number is gtdist of (r1 - a room) and (r2 - a room):
+	if r1 is fun enuf, decide on room-dist of r2;
+	if r2 is fun enuf, decide on room-dist of r1;
+	if map region of r1 is not map region of r2, decide on room-dist of r1 + room-dist of r2;
+	if room-dist of r1 > room-dist of r2, decide on gtdist of r2 and r1;
+	let temp be 0;
+	let r2t be r2;
+	while room-dist of r2t > room-dist of r1:
+		increment temp;
+		now r2t is in-room of r2t;
+	let r1t be r1;
+	while r1t is not r2t:
+		increment temp;
+		now r1t is in-room of r1t;
+		now r2t is in-room of r2t;
+		if temp > 15, decide on 15;
+	decide on temp;
+
 gotoing is an action applying to one visible thing.
 
 understand the command "gi" as something new.
@@ -7239,6 +7286,13 @@ carry out gotoing:
 		now cap-pace is false;
 		say "Your pace cap slows down as you [if noun is Fun Enuf]enter[else]cross[end if] [Fun Enuf]...";
 	now gone-to is true;
+	let my-dist be gtdist of noun and location of player;
+	if my-dist is 1:
+		say "You walk over one room...";
+	else if my-dist < 4:
+		say "You speed by, ignoring the scenery...";
+	else:
+		say "You take a nice big long run...";
 	move player to noun;
 	the rule succeeds;
 
@@ -7684,6 +7738,7 @@ to say recxcheck of (speedy - a truth state) :
 i-sped is a truth state that varies.
 
 carry out deepspeeding:
+	let gsi be grid-side-items;
 	abide by the rev-check rule;
 	now deep-speeding is true;
 	say "DEEP SPEEDing to near the end[recxcheck of true]...";
@@ -7692,6 +7747,7 @@ carry out deepspeeding:
 	now all rooms in Yelpley are visited;
 	now all rooms in Grebeberg are visited;
 	now i-sped is true;
+	if gsi < 3, say "You may wish to check your inventory. You will have what you need to beat the Diktat Kid.";
 	the rule succeeds;
 
 section smitimsing - not for release
@@ -7998,7 +8054,7 @@ carry out revovering:
 		if use1 entry is a book:
 			if Worn Row is worky, now wr-flipped is true;
 			word-row-open;
-		if deep-speeding is false or say-despite-speeding is true, say "You [if wr-flipped is true]toggle [Worn Row], then [end if][if u1a is true](acquire and) [end if]use [the use1 entry] on/with [if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if][if demos-too is true]--and scoring SOME DEMOS in the process[end if].";
+		if deep-speeding is false or say-despite-speeding is true, say "You [if wr-flipped is true]toggle [Worn Row], then [end if][if u1a is true](acquire and) [end if]use [the use1 entry] with [if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if][if demos-too is true]--and scoring SOME DEMOS in the process[end if].";
 		if use2 entry is a workable:
 			if Worn Row is wordy, now wr-flipped is true;
 			work-row-open;
@@ -8015,12 +8071,14 @@ carry out revovering:
 	if global-delay < rev-skips, say "rev-skips was too much by [rev-skips - global-delay].";
 	now revving-over is false;
 	if rev-skips > 0 and move-room is not location of player:
+		skip upcoming rulebook break;
 		say "(Moving you to [move-room])[paragraph break]";
 		move player to move-room, without printing a room description;
 	now turns-to-add is turns-to-add * 4;
 	if turns-to-add > 0:
 		let delt be score - last notified score;
-		say "[bracket][if delt > 0]I just gave you [delt] point[plur of delt] to go with your quick trip, and I also[else]I[end if] tacked on [turns-to-add] turns, as a guesstimate.[close bracket][paragraph break]";
+		skip upcoming rulebook break;
+		say "[line break][bracket][if delt > 0]I just gave you [delt] point[plur of delt] to go with your quick trip, and I also[else]I[end if] tacked on [turns-to-add] turns, as a guesstimate.[close bracket][paragraph break]";
 		now score-cheat is score-cheat + score - last notified score;
 		now last notified score is score;
 		increase turn count by turns-to-add;
@@ -9619,45 +9677,61 @@ understand "llpq" as llpqing.
 
 carry out llpqing:
 	now LLP-quick is true;
+	let orm be location of player;
 	if cur-score of Odd Do is 11, say "You got all the LLPs." instead;
 	say "Note: this command may have stray text.";
 	say "=====DO-ANYWHERE LLPs[line break]";
 	if dial-yet is false:
-		say "Hacking DIAL AID LLP.";
+		say "DIAL AIDing.";
 		now dial-yet is true;
 		consider the LLP rule;
 		consider the LLP or normal score changes rule;
-	if poop-boob-yet is false, try pooping;
-	if stats-yet is false, try statsing;
-	if refer-yet is false, try refering;
-	if peeped-yet is false, try peeping;
+	if poop-boob-yet is false:
+		say "Using a naughty, but not too naughty, four letter word...";
+		try pooping;
+	if stats-yet is false:
+		say "STATSing...";
+		try statsing;
+	if refer-yet is false:
+		say "REFERing...";
+		try refering;
+	if peeped-yet is false:
+		say "PEEPing...";
+		try peeping;
 	say "=====SPECIFIC AREA LLPs[line break]";
+	say "SLAMming mammals in Ooze Zoo...";
 	if slam-mam is false:
 		move player to Ooze Zoo;
 		try slammammalsing;
 		consider the LLP or normal score changes rule;
+	say "TRACEing the cart...";
 	if DWELT LEWD is off-stage:
 		move player to Worn Row;
 		now Worn Row is wordy;
 		try mytraceing tract cart;
 		consider the LLP or normal score changes rule;
+	say "BALM LAB in Pro Corp/Bald Lab...";
 	unless balm-LLP-yet is true:
 		move player to Pro Corp;
 		try balmlabing;
 		consider the LLP or normal score changes rule;
+	say "STACKing the cats...";
 	unless senile felines are moot:
 		move player to Moo Room;
 		try stacking felines;
 		consider the LLP or normal score changes rule;
+	say "SEEing the bees...";
 	if bees-seen is false:
 		move player to Moo Room;
 		try seebeesing;
 		consider the LLP or normal score changes rule;
+	say "MUSSing the opossum...";
 	unless opossum is moot:
 		move player to Le Babel;
 		try opmussing;
 		consider the LLP or normal score changes rule;
 	now LLP-quick is false;
+	if orm is not Le Babel, move player to orm;
 	the rule succeeds;
 
 section llplling - not for release

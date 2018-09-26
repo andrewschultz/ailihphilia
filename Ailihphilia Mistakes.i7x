@@ -944,8 +944,6 @@ to decide whether thug-near:
 		if Z is quicknear, yes;
 	no;
 
-to say hom-gm: say "Worth a try, but this is a palindrome game, not a homonym game. "
-
 to say no-calls: say "Like your average random NPC, anyone you tried to call from [b][if player is in Yawn Way]Name ME, Man[else]Oh Who[end if][r] would probably just have random general useless things to say like '[next-rand-txt of table of npc mistakes]"
 
 to say or-ups: if word number 1 in the player's command is "ups", say ", much less spu";
@@ -964,17 +962,11 @@ understand "rm gnu/dung" and "rm gnu dung" as a mistake ("You don't have the pro
 
 understand "rub [text]" as a mistake ("[no-burt].")
 
-understand "scorn rocs" as a mistake ("[hom-gm]They out-scorn you easily. But that's okay. If you were too good at scorning, you wouldn't be one of the good guys. You need to do something more drastic.") when player is in Motto Bottom and tame mat is in Motto Bottom.
-
 understand "sees" as a mistake ("[if peeped-yet is true]You already managed to PEEP for an LLP. This would be double dipping[else]There's a way to look differently, and it's a four letter word, but not this one[end if].")
 
 understand "shed eh" and "shed ehs" as a mistake ("It doesn't do you much good. Maybe it could help someone further in the dumps than you, though.") when yob attaboy is quicknear and yob attaboy is xed.
 
-understand "tame mat" as a mistake ("[hom-gm]Also, the mat's already harmless. You need to make it more interesting.") when player is in Motto Bottom and tame mat is in Motto Bottom.
-
 understand "tap at [text]" as a mistake ("That's in the spirit of the game, but sadly, I couldn't find a way to make it useful. Sorry!")
-
-understand "trap art" as a mistake ("[hom-gm]Also, you [if player has trap art]already took[else]can just take[end if] the art. You need to make it more interesting.") when trap art is quicknear.
 
 understand "up [text]" and "ups [text]" as a mistake ("You need to do something UP with the spurs, but ... UP needs to come second. Or last. You can't do much with PU[or-ups].") when player has spur ups.
 
