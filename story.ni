@@ -1327,8 +1327,6 @@ this is the take what you got rule:
 
 after printing the name of a book (called bk) while taking inventory: say " (by [auth-name of bk])"
 
-after printing the name of the brag garb while taking inventory: say " (smelling of [if troll ort is moot]the troll ort[else]Turbo-Brut[end if])"
-
 after printing the name of the poo coop while taking inventory: if gnu dung is moot, say " (full of gnu dung)"
 
 definition: a book (called bk) is lugged:
@@ -2591,7 +2589,7 @@ trap art	stark rats	"The plans on the trap art are interesting, but they're only
 troll ort	cross orc	"The cross orc mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. But the way it looks at you, you suspect it'd forgive you if you gave the right gift."
 troll ort	ergot ogre	"The ergot ogre mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. Perhaps you need a less coercive way to dispose of the ogre."
 troll ort	gulf lug	"You need something to make the Gulf Lug better, not worse."
-troll ort	kayo yak	"As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up. The yak seems weirdly attracted to it. Like it's the animal form of hate click bait."
+troll ort	kayo yak	"As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up. The yak seems weirdly attracted to it. Like it's the animal form of hate click bait. But it might be too much for the yak to hack all in one crack. Jack."
 troll ort	Known Wonk	"The Known Wonk launches into an overly detailed explanation about how its weird smell could attract certain animals and make them playful and minimally violent."
 troll ort	senile felines	"The senile felines sniff lazily at the troll ort, but despite its saying PINT-A-CATNIP, they do nothing. Perhaps they are just too inactive."
 wash saw	bunk nub	"The bunk nub is small enough."
@@ -4853,7 +4851,7 @@ a chaser has a truth state called chased-yet.
 
 The Kayo Yak is a beepy chaser in Frush Surf. chase-room of Kayo Yak is Frush Surf. "[one of]A tough looking animal paces around here! It rushes after a few imaginary targets. It looks like a yak. That would make it ... a kayo yak. [or][stopping][if player is in Lair Trial]The kayo yak has slowed down temporarily. It seems to be looking back and forth between you and the Ergot Ogre[else if being-chased is true]The kayo yak has an aggressive look in its eyes! It's snorting, and you're the only thing worth chasing[else if kayo yak was not in location of player]The kayo yak [yak-smell][else]The kayo yak, having sniffed at you, is just pacing around now[end if].". description is "[if being-chased is true]The Kayo Yak is really rumbling around, here[else]The Kayo Yak looks alert, ready for more than just standing around[end if].". stix-room of Kayo Yak is Seer Trees.
 
-to say yak-smell: say "[if player wears stinky knits]bounds up to you and gives a sniff. It seems interested in your stinky knits, but not enough to really do anything[else if player wears brag garb and troll ort is not moot]walks up, takes a whiff of your brag garb, and runs away howling. Hmm, the brag garb's scent is a bit too much for you, too[else if player wears brag garb]smells the troll ort on you[one of][or] again[stopping] and makes a weird noise[else]plods up to you and gives a cursory sniff but seems to find nothing too repellent or attractive. You feel almost blown off by this[end if]";
+to say yak-smell: say "[if player wears stinky knits]bounds up to you and gives a sniff. It seems interested in your stinky knits, but not enough to really do anything[else if player wears brag garb and troll ort is not moot]walks up, takes a whiff of your brag garb, and backs up, howling. Hmm, the brag garb's scent is a bit too much for you, too[else if player wears brag garb]smells the troll ort on you[one of][or] again[stopping] and makes a weird noise[else]plods up to you and gives a cursory sniff but seems to find nothing too repellent or attractive. You feel almost blown off by this[end if]";
 
 chapter stewy wets
 
@@ -7208,7 +7206,7 @@ the Sci Pics are plural-named peripheral scenery in Pro Corp. "They detail what 
 
 chapter butene tub
 
-the butene tub is scenery in Pro Corp. "It smells pretty nice, so it's probably not a butyl-y tub. But it's been marked condemned, dangerously close to falling apart if you put too much weight on it. Who knows what sort of reactions could occur with the flammable butene if the tub collapsed to the dangerously sparky area below with special instruments and such? You can't just pour any old thing down![paragraph break]What sort of adventurer could ignore a warning like that? Especially in a game that's meant to be polite on the Zarfian cruelty scale, thus eliminating all risk and/or need to type UNDO if you mess up!"
+the butene tub is scenery in Pro Corp. "It smells pretty nice, so it's probably not a butyl-y tub. But it's been marked condemned, dangerously close to falling apart if you put too much weight on it. Who knows what sort of reactions could occur with the flammable butene if the tub collapsed from a big chemical bang and fell to the dangerously sparky area below with special instruments and such? You can't just pour any old thing down![paragraph break]What sort of adventurer could ignore a warning like that? Especially in a game that's meant to be polite on the Zarfian cruelty scale, thus eliminating all risk and/or need to type UNDO if you mess up!"
 
 instead of entering butene tub:
 	say "[if psi wisp is in Pro Corp][chase-pass]That's no way to hide from the psi wisp[else]You're clean enough, really[end if]."
@@ -7223,11 +7221,17 @@ The resale laser is a tronpart. "It has a big red 1 sketched on it in LCD. Perha
 
 chapter gold log
 
-the gold log is a thing in Pro Corp. description is "It's cylindrical and closed but feels hollow, not a ton, lighter than it should. Maybe if it were shaped a bit differently, it would be a golf log you could use to putt up, but as-is, it's not too useful."
+the gold log is a thing in Pro Corp. description is "Maybe if it were shaped a bit differently, it would be a golf log you could use to putt up, but as-is, it's not too useful.[paragraph break]It feels hollow, though. Lighter than it should. You remember how it rattled when you picked it up."
+
+instead of opening gold log: say "You can't find an opening."
+
+report taking gold log: say "It feels light. Not a ton. It rattles as you pick it up.";
 
 chapter DNA band and hand and what's after
 
 The DNA band is a thing in Pro Corp. "A DNA band sits here, nice and tidy and helical.". description is "The DNA band seems like it could come to life, but you'd need some weird science to do so.".
+
+instead of wearing DNA band, say "You can't wear it. It's helical, not a headband."
 
 The DNA hand is a thing. description is "It's motionless, but it looks lifelike enough. There must be a way to bring it to life!"
 
@@ -8504,10 +8508,14 @@ troll ort	Swept Pews	--
 demo med	Dopy Pod	--
 stamp mats	Frush Surf	--
 stinky knits	Gross Org	knits-take rule
-gold log	Pro Corp	--
-DNA band	Pro Corp	--
+gold log	Pro Corp	corp-take rule
+DNA band	Pro Corp	corp-take rule
 Bros' Orb	Le Babel	orb-take rule
 rep popper	Yell Alley	popper-take rule
+
+this is the corp-take rule:
+	if psi wisp is moot, the rule succeeds;
+	the rule fails;
 
 this is the popper-take rule:
 	if dork rod is moot, the rule succeeds;
@@ -9386,19 +9394,17 @@ to decide which book is cur-book:
 	if YOB ATTABOY is not moot, decide on YOB ATTABOY;
 	decide on NULL ILLUN;
 
-machineables is a list of things variable. machineables is {stinky knits, gold log, you buoy, bunk nub, Dirt Rid, eroded ore, trap art, DNA band, not-a-baton}. [?? if we use this a lot maybe we should make a property]
-
 postmachines is a list of things variable. postmachines is { brag garb, dork rod, ME gem, stock cots, cave vac, ore zero, party trap, DNA hand, taboo bat }.
 
-premachines is a list of things variable. premachines is { bunk nub, Dirt Rid, eroded ore, gold log, not-a-baton, stinky knits, straw arts, trap art, you buoy }.
+premachines is a list of things variable. premachines is { bunk nub, DNA band, Dirt Rid, eroded ore, gold log, not-a-baton, stinky knits, trap art, you buoy }.
 
 this is the got-machine-fodder rule:
-	repeat with Q running through machineables:
+	repeat with Q running through premachines:
 		if player has Q, the rule succeeds;
 	the rule fails;
 
 this is the find-machine rule:
-	repeat with Q running through machineables:
+	repeat with Q running through premachines:
 		if player has Q:
 			repeat through table of goodacts:
 				if there is a use1 entry and use1 entry is Q:
