@@ -1033,7 +1033,7 @@ instead of listening:
 	if noun is pact cap, say "The pact cap will make noise when needed[if cap-vol is false], though you may want to turn it back on with LOVE VOL first[end if]." instead;
 	if noun is bomb mob or noun is navy van, say "Yell-ey." instead;
 	if player is in My Gym:
-		say "[if debug-state is true]DEBUG NOTE RANDOM SONG: [end if][if Dave is in My Gym]Behind Dave's grunts, y[else]Y[end if]ou [one of]tolerate[or]imagine your favorite English teacher giving you a D+ for a poem with the lyrics of[or]are inspired to move, but not in the intended way, by[or]can't escape[or]dread a casual conversation containing the lyrics of[or]imagine the marketers earned their keep promoting[or]feel guilty liking the beats but loathing the words of[or]realize you're going to forget something important but remember the lyrics of[or]feel glad it's the low-volume version of[or]hate yourself for not completely loathing[or]hope nobody got paid too much for writing[or]guess the title from the repeated words of[or]hear, and guess some people are inspired by,[in random order] [next-rand-txt of table of My Gym songs]." instead;
+		say "[if debug-state is true]DEBUG NOTE RANDOM SONG: [end if][if Dave is in My Gym]Behind Dave's grunts, y[else]Y[end if]ou [one of]tolerate[or]imagine your favorite English teacher giving you a D+ for a poem with the lyrics of[or]are inspired to move, but not in the intended way, by[or]can't escape[or]dread a casual conversation containing the lyrics of[or]imagine the marketers earned their keep promoting[or]feel guilty liking the beats but loathing the words of[or]have a great idea what to do next, but it's interrupted by[or]realize you're going to forget something important someday when remembering the lyrics of[or]feel glad it's the low-volume version of[or]hate yourself for not completely loathing[or]hope nobody got paid too much for writing[or]guess the title from the repeated words of[or]hear, and guess some people are inspired by,[in random order] [next-rand-txt of table of My Gym songs]." instead;
 	if player is in Apse Spa, say "Surprisingly, no spa yaps." instead;
 	if player is in Mont Nom, say "The Ark of Okra is almost saying 'Nom on!' or 'C'mon! Nom!' or even 'Tum-Smut!'" instead;
 	if player is in Yack Cay and moor broom is not moot, say "[if Known Wonk is not moot]The Known Wonk is just babbling on about stuff you aren't be interested in[else]The Known Wonk, from inside the Tru-Yurt, complains about how messy it is[end if]." instead;
@@ -1739,7 +1739,7 @@ this is the cap-check rule:
 
 carry out lovevoling:
 	abide by the cap-check rule;
-	say "The pact cap's volume is [if cap-vol is true]already[else]now[end if] on, so it won't make a noise when you examine stuff that requires a weird action.";
+	say "The pact cap's volume is [if cap-vol is true]already[else]now[end if] on, so it will make a noise when you examine stuff that requires a weird action.";
 	now cap-vol is true;
 	the rule succeeds;
 
@@ -4040,7 +4040,7 @@ understand "pack" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did." instead;
-	say "'Rec [']er!' shouts the Flee Elf. 'Hat! Ah!'[paragraph break]The Flee Elf hands you a Set O Notes and explains you need to find a way to destroy the [kaoscaps] to the north. Also, the Flee Elf notes the LOVE VOL and LO VOL settings on the pact cap: LO VOL means the cap is quiet and won't make a weird noise if you look at things that need a weird action. LOVE VOL means you will.[paragraph break]The Flee Elf also mentions a pip on the cap shows whether you may be able to [b]EYE[r] items later to determine approximately how far along they are in your quest--if you make enough good guesses. You ask what this means. The Flee Elf point you to the Tix Exit, which reads 79, presumably the last thing you'll need to operate.[paragraph break]'It's best I...' and with that, the Flee Elf becomes a FLED elf, pointing at the tile lit (slightly altered). You notice a TIX EXIT to the south, but you don't have any tickets.";
+	say "'Rec [']er!' shouts the Flee Elf. 'Hat! Ah!'[paragraph break]The Flee Elf hands you a Set O Notes and explains you need to find a way to destroy the [kaoscaps] to the north. Also, the Flee Elf points out the LOVE VOL and LO VOL settings on the pact cap: LO VOL means the cap is quiet and won't make a weird noise if you look at things that need a weird action. LOVE VOL means you will.[paragraph break]The Flee Elf also shows you a pip on the cap shows whether you may be able to [b]EYE[r] items later to determine approximately how far along they are in your quest--if you make enough good guesses. You ask what this means. The Flee Elf says 'like [if tried-elf is true]if[else]when[end if] you tried to made me something else[if eye-charges > 0]. You've done so much, you already got a charge[end if],' and points you to the Tix Exit, which reads 79, presumably the last thing you'll need to operate.[paragraph break]'It's best I...' and with that, the Flee Elf becomes a FLED elf, pointing at the tile lit (slightly altered). You notice a TIX EXIT to the south, but you don't have any tickets.";
 	wfak;
 	say "[line break]You put the cap on. It fits okay. It can stay all quest. Not very stylish, but it sure beats wearing a bib.";
 	get-cap;
@@ -4055,6 +4055,9 @@ to get-cap:
 	now player wears the cap;
 
 chapter pip
+
+instead of doing something with pip when flee elf is not moot:
+	say "The flee elf mentions you'll learn more about the pip once you take the pact cap the right way."
 
 ever-pip is a truth state that varies.
 
@@ -4131,7 +4134,7 @@ after examining the Darer Ad:
 
 chapter Set O Notes
 
-the Set O Notes is a helpdoc. description is "[b]OPPO[r] is printed at the top. There's vague advice about making a North-Tron to reach and defeat the Diktat Kid, but first you'll have to defeat [b]Ms. Ism[r], as well as the [b]Yuge Guy[r].[paragraph break]There's mention of a guh-thug in various places, and you'll have to do something special when you see one. [thug-report].[paragraph break]Also scribbled, in the center, is [b][Fun Enuf][r] with [b]TRI-GIRT[r] below that. There are other landmarks scribbled in, which [if number of visited rooms < 20]will help you identify new places and scenic barriers and such[else]have been helpful so far[end if].[paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that. Oh, there are some weird notes you can READ, too.". importancy of the Set O Notes is 2.
+the Set O Notes is a helpdoc. description is "[b]OPPO[r] is printed at the top. There's vague advice about making a North-Tron to reach and defeat the Diktat Kid, but first you'll have to defeat [b]Ms. Ism[r], as well as the [b]Yuge Guy[r].[paragraph break]There's mention of a guh-thug in various places, and you'll have to do something special when you see one. [thug-report].[paragraph break]Also scribbled, in the center, is [b][Fun Enuf][r] with [b]TRI-GIRT[r] below that. There are other landmarks scribbled in, which [if number of visited rooms < 20]will help you identify new places and scenic barriers and such[else]have been helpful so far[end if].[paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that. Oh, there are some weird notes you can READ, too, but they seem a bit esoteric.". importancy of the Set O Notes is 2.
 
 understand "tri-girt" and "tri girt" and "trigirt" as set o notes.
 understand "oppo" as set o notes.
@@ -5678,6 +5681,8 @@ chapter bad dab
 
 the bad dab is peripheral scenery in Worn Row. description is "[if Rob is in Worn Row]WORN ROW is written, somewhat dubiously[else if row-prog > 0]WOR- ROW is still here, faded a bit since you opened [Worn Row]. Maybe there's still something more Worn Row could be[else]The bad dab spells out WOR- ROW. Maybe there's more here than just Worn Row[end if]."
 
+understand "wor" and "wor row" as the bad dab when bad dab is quicknear.
+
 instead of rubbing bad dab: say "No. It looks like a clue."
 
 instead of rubbing: say "[no-burt]."
@@ -5730,7 +5735,7 @@ a workable has text called verb-abbrev.
 
 instead of entering a workable: say "[if noun is workedout]It's not dangerous now it's broken, but it's not useful, either[else]You can't fit in the [noun], but things you carry can[end if]."
 
-understand "machine" as a workable.
+understand "machine" and "machines" as a workable.
 
 does the player mean doing something with a workedout workable: it is very unlikely.
 
@@ -5961,8 +5966,9 @@ definition: a thing (called th) is need-read:
 read-warn is a truth state that varies.
 
 carry out reading:
-	repeat through table of readables:
-		if noun is read-cand entry, say "[read-msg entry][line break]" instead;
+	unless noun is Set O Notes and noun is nox:
+		repeat through table of readables:
+			if noun is read-cand entry, say "[read-msg entry][line break]" instead;
 	if noun is a book:
 		say "[if noun is DWELT LEWD]You read [one of]a bit[or]on[stopping], despite your better instincts...[else]Whoah! You don't have time to read all that text, right now. You're busy with much more active things. Still, you flip through for a general overview.[end if]";
 	else if noun is a helpdoc:
@@ -5974,7 +5980,7 @@ carry out reading:
 
 table of readables
 read-cand	read-yet	read-msg
-Set O Notes	false	"You scrunch your eyes to read the random miscellany at the edges of the Set O Notes. Apparently, there can only be one questor, to avoid a partner-entrap. The Flee Elf also wrote in 'REP US SUPER' to motivate you.[paragraph break]Um, yeah. The main notes are a lot more useful."
+Set O Notes	false	"You scrunch your eyes to read the random miscellany at the edges of the Set O Notes. Apparently, there can only be one questor, to avoid a partner-entrap. The Flee Elf also wrote in 'REP US SUPER' to motivate you.[paragraph break]Um, yeah. The Set O Notes's main page seems a lot more useful, describing your enemies and some of the scenery and all, but hey, it didn't hurt to read closer."
 enact cane	false	"You squint carefully. KARE RAK is written. But then where are/were the prongs? How would you restore the Enact Cane into something even more useful?"
 moor broom	false	"The moor broom still has the KARE RAK written on it that the enact cane did."
 
@@ -9853,8 +9859,8 @@ to mach-try (a1 - a thing) and (a2 - a thing):
 one-mach-warn is a truth state that varies.
 
 carry out rring:
-	if player is not in Worn Row, say "You need to be in Word Row for this to work." instead;
-	if Worn Row is not wordy, say "You need to change back to Word Row to do this." instead;
+	if player is not in Worn Row, say "You need to be in Work Row for this to work." instead;
+	if Worn Row is not worky, say "You need to change back to Work Row to do this." instead;
 	if number of moot workables is 3, say "The RR command is not valid now you destroyed all the machines." instead;
 	if number of moot workables is 2 and one-mach-warn is false:
 		now one-mach-warn is true;

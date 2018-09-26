@@ -355,19 +355,23 @@ understand "space caps" as a mistake ("Really, you only need one. Who do you thi
 
 section flee elf abuse
 
-understand "flea elf" and "flea" as a mistake("The elf scratches for a bit, then looks embarrassed.[mis of 148]") when Flee Elf is quicknear.
+to say elf-note: now tried-flex is true;
 
-understand "fled elf" and "fled" as a mistake("The elf will be, once you figure how to take the cap.[mis of 149]") when Flee Elf is quicknear.
+tried-elf is a truth state that varies.
 
-understand "fleece elf" and "fleece" as a mistake("There is much more fortune and glory in adventure! It's the cap you want to concentrate on.[mis of 150]") when Flee Elf is quicknear.
+understand "flea elf" and "flea" as a mistake("[flex-note]The elf scratches for a bit, then looks embarrassed.[mis of 148]") when Flee Elf is quicknear.
 
-understand "flem elf" and "fled" as a mistake("The elf coughs ickily and quickly lists pros and cons of whether words should by pronounced phonetically.[mis of 151]") when Flee Elf is quicknear.
+understand "fled elf" and "fled" as a mistake("[flex-note]The elf will be, once you figure how to take the cap.[mis of 149]") when Flee Elf is quicknear.
 
-understand "flen elf" and "flen" as a mistake("Dry ketchup is gross. Besides, the elf is one of the good guys.[mis of 152]") when Flee Elf is quicknear.
+understand "fleece elf" and "fleece" as a mistake("[flex-note]There is much more fortune and glory in adventure! It's the cap you want to concentrate on.[mis of 150]") when Flee Elf is quicknear.
 
-understand "flew elf" and "flew" as a mistake("The elf mumbles, apropos of nothing, 'Boy, are my arms tired!'[mis of 153]") when Flee Elf is quicknear.
+understand "flem elf" and "fled" as a mistake("[flex-note]The elf coughs ickily and quickly lists pros and cons of whether words should by pronounced phonetically.[mis of 151]") when Flee Elf is quicknear.
 
-understand "flex elf" and "flex" as a mistake("The elf looks more flexible than you. It's the cap you want to concentrate on.[mis of 154]") when Flee Elf is quicknear.
+understand "flen elf" and "flen" as a mistake("[flex-note]Dry ketchup is gross. Besides, the elf is one of the good guys.[mis of 152]") when Flee Elf is quicknear.
+
+understand "flew elf" and "flew" as a mistake("[flex-note]The elf mumbles, apropos of nothing, 'Boy, are my arms tired!'[mis of 153]") when Flee Elf is quicknear.
+
+understand "flex elf" and "flex" as a mistake("[flex-note]The elf looks more flexible than you. It's the cap you want to concentrate on.[mis of 154]") when Flee Elf is quicknear.
 
 section Set O Notes abuse
 
@@ -916,7 +920,7 @@ to say mis of (n - a number):
 		now entry N in checkoffs is true;
 		increment mist-found;
 		if mist-found is 1:
-			say "[paragraph break](NOTE: this was a specific reject for a good try. For the most part, the pact cap will tell you what else you need to riff on, but enough good guesses such as what you tried will tell you how to get secret points.)[run paragraph on][line break]";
+			say "[paragraph break](NOTE: this was a specific reject for a good try. For the most part, the pact cap[if flee elf is not moot], once you get it,[end if] will tell you what else you need to riff on, but enough good guesses such as what you tried will tell you how to get secret points.)[run paragraph on][line break]";
 			continue the action;
 		if the remainder after dividing mist-found by hint-every-x is 0:
 			while cur-LLP-hint-row < number of rows in table of last lousy points:
@@ -930,7 +934,7 @@ to say mis of (n - a number):
 						now mis-yet is true;
 						say "[line break]NOTE: THINK[if refer-yet is true]/REFER[end if] will show you the LLPs clued so far that you haven't figured, yet.[run paragraph on][line break]";
 					break;
-			say "[line break]The pip in your pact cap [if eye-charges > 1]brightens further[else if ever-pip is false]lights up! You'll be able to EYE something, now[else]lights back up[end if].";
+			say "[line break][if flee elf is not moot]A pip in the [else]The pip in your[end if] pact cap [if eye-charges > 1]brightens further[else if ever-pip is false]lights up! You'll be able to EYE something, now[else]lights back up[end if].";
 			now ever-pip is true;
 			increment eye-charges;
 
