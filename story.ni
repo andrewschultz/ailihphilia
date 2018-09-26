@@ -1031,12 +1031,14 @@ chapter listening
 
 instead of listening:
 	if noun is pact cap, say "The pact cap will make noise when needed[if cap-vol is false], though you may want to turn it back on with LOVE VOL first[end if]." instead;
+	if noun is bomb mob or mount is navy van, say "Yell-ey." instead;
 	if player is in My Gym:
 		say "[if debug-state is true]DEBUG NOTE RANDOM SONG: [end if][if Dave is in My Gym]Behind Dave's grunts, y[else]Y[end if]ou [one of]tolerate[or]imagine your favorite English teacher giving you a D+ for a poem with the lyrics of[or]are inspired to move, but not in the intended way, by[or]can't escape[or]dread a casual conversation containing the lyrics of[or]imagine the marketers earned their keep promoting[or]feel guilty liking the beats but loathing the words of[or]realize you're going to forget something important but remember the lyrics of[or]feel glad it's the low-volume version of[or]hate yourself for not completely loathing[or]hope nobody got paid too much for writing[or]guess the title from the repeated words of[or]hear, and guess some people are inspired by,[in random order] [next-rand-txt of table of My Gym songs]." instead;
 	if player is in Apse Spa, say "Surprisingly, no spa yaps." instead;
 	if player is in Mont Nom, say "The Ark of Okra is almost saying 'Nom on!' or 'C'mon! Nom!' or even 'Tum-Smut!'" instead;
 	if player is in Yack Cay and moor broom is not moot, say "[if Known Wonk is not moot]The Known Wonk is just babbling on about stuff you aren't be interested in[else]The Known Wonk, from inside the Tru-Yurt, complains about how messy it is[end if]." instead;
 	if player is in Uneven U, say "The Code Doc mumbles [next-rand-txt of table of university primary targets] or [next-rand-txt of table of university secondary targets] would make a good colleague.";
+	if player is in Yell Alley and bomb mob is in Yell Alley, try listening to bomb mob instead;
 	if player is in Moo Room, say "[if bees-seen is false]An ominous buzzing. Where is it coming from? Bees sure can hide![else]You think you hear [next-rand-txt of table of Moo Room animals] in addition to the mooing.[end if]" instead;
 	if player is in Le Babel, say "Freakish whisperings of the apocryphal [next-rand-txt of table of babel babble] swirl in the air." instead;
 	if player is in Sneer Greens and Yuge Guy is moot, say "You still hear the Yuge Guy utter 'Et Tu?' He has a weird sense of loyalty." instead;
@@ -5301,11 +5303,13 @@ to decide whether eithervisit of (rm - a room) and (di - a direction):
 	no;
 
 understand the command "m" as something new.
+understand the command "mm" as something new.
 understand the command "ma" as something new.
 understand the command "map" as something new.
 understand the command "xx" as something new.
 
 understand "m" as xpyxing when pyx is quicknear or pyx is in DropOrd.
+understand "mm" as xpyxing when pyx is quicknear or pyx is in DropOrd.
 understand "ma" as xpyxing when pyx is quicknear or pyx is in DropOrd.
 understand "map" as xpyxing when pyx is quicknear or pyx is in DropOrd.
 understand "xx" as xpyxing when pyx is quicknear or pyx is in DropOrd.
@@ -5359,6 +5363,15 @@ to say map-so-far:
 	let thru-once be false;
 	let times-thru be 0;
 	say "[fixed letter spacing]";
+	let temp be 0;
+	if loc-num of location of player < 10 or loc-num of location of player >= 40: [put stars on the top and bottom]
+		let loc-rem be remainder after dividing loc-num of location of player by 10;
+		while temp < 7:
+			if temp is loc-num of location of player:
+				say "[first custom style]*****[fixed letter spacing][line break]";
+				break;
+			increment temp;
+			say "        ";
 	while pyx-row < 28 or times-thru < 2:
 		increment pyx-row;
 		choose row pyx-row in table of pyxloc;
