@@ -183,6 +183,10 @@ chapter quick start
 
 test qs with "pack cap/e/get pyx/n/get all/s/s/evade dave/w/bore rob/work row/get ec/e/n/w/w"
 
+chapter miscwarp
+
+test t10 with "tip it/tip it/tip it/tip it/tip it/tip it/tip it/tip it/tip it/tip it"
+
 chapter quickgo
 
 test ro with "rev over/use gem on fink/use bat on rev/use ray on redivider".
