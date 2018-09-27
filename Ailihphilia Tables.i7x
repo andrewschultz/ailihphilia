@@ -38,7 +38,7 @@ table of Ms Ism pals	0	0	false	"Ms Ism's pals (TALK to Ms Ism)"	--
 table of My Gym songs	0	0	false	"songs in My Gym (LISTEN)"	"All those tunes, and nothing by ABBA! Low class, low class."
 table of noesies	0	0	true	"responses to NO"	"An epony-NOPE rings through your ears to push back against your negativity in grand fashion."
 table of nothings	0	0	true	"responses to empty commands"	--
-table of npc mistakes	0	0	false	"CALL/PHONE random NPC text"	"That's all there is. You [if dial-yet is false]can't help wondering if there's something better to dial[else]find this all less fruitful than when you decided to DIAL AID[end if]."
+table of npc mistakes	0	0	false	"CALL/PHONE random NPC text"	"That's all there is. You [if aid-LLP-yet is false]can't help wondering if there's something better to dial for help, or a hint, or something[else]find this all less fruitful than when you decided to DIAL AID[end if]."
 table of random authors	0	0	false	"random author names (ones I particularly liked)"	--
 table of random palindrome firstlast names	0	0	false	"First/last names in Name ME Man"	--
 table of random palindrome lastfirst names	0	0	false	"Last/first names in OH WHO"	--

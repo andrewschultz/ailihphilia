@@ -664,9 +664,9 @@ this is the check palindrome turns rule: [this could be at the end but those are
 			choose row with final response activity of loafing in table of final question options;
 			blank out the whole row;
 			continue the action;
-		say "[sox]. Yet you feel you did something weird right, beyond finding everything, which you didn't [if score > 84]quite [end if]do.";
+		say "[sox]. Yet you feel you did something weird right, beyond fixing every small thing in Yelpley and Grebeberg, which you didn't [if score > 84]quite [end if]do.";
 	else if score is 88:
-		say "Wow! You did everything you could, you think. [sox].[paragraph break]You have a vision of Grebeberg and Yelpley sliding back in a few years to where they were. Well, you'll still have your memories. But you can't shake the feeling you could've finished a bit differently and helped keep Yelpley and Grebeberg safe even longer.";
+		say "Wow! You did everything you could, you think. [sox].[paragraph break]You have a vision of Grebeberg and Yelpley being, well, not quite perfect as they could be years down the line. You probably missed out on some sort of style points. Well, it's too late now. And maybe someone else will have fun fixing them up.";
 	else:
 		say "[sox]. Well, you had a feeling you left a few things undone."
 
@@ -2593,7 +2593,7 @@ ME gem	cross orc	"The ME gem causes the cross orc to moan and shield its eyes fo
 ME gem	Diktat Kid	"The ME gem would be appealing[henchy-list]."
 ME gem	ME Totem	"The egotistical forces in the gem and totem repel each other. Just as well. You don't know if you could survive if such insufferability synergized."
 ME gem	Tao Boat	"The tao boat lurches uncontrollably, and a gust of wind blows you back ten feet. It seems like the ME gem is about the worst thing you could possibly have shown to impress it, but on the other hand, that's a potential hint. You need something that's the opposite of the ME gem."
-ME gem	Verses Rev	"The Verses Rev sniffs and waves away the ME gem with disdain. Perhaps it could entice less spiritual types."
+ME gem	Verses Rev	"The Verses Rev sniffs and waves away the ME gem. Perhaps it could entice less spiritual types, but not the Verses Rev!"
 ME gem	Yuge Guy	"That might make the Yuge Guy's ego too much to handle."
 mr arm	bros' orb	"Mr. Arm seems intimidated by the Bros['] Orb[if orb is not carried], too. You need mental assistance[end if]."
 mr arm	Gal Flag	"This isn't capture the flag."
@@ -4096,7 +4096,7 @@ to decide which number is roving-LLP: [Not location dependent: DIAL AID, STATS, 
 
 to decide which number is fixed-LLP:
 	let temp be 0;
-	if dial-yet is false, increment temp;
+	if aid-LLP-yet is false, increment temp;
 	if refer-yet is false, increment temp;
 	if stats-yet is false, increment temp;
 	if peeped-yet is false, increment temp;
@@ -7587,7 +7587,11 @@ carry out gotothinging:
 		if noun is tract cart or noun is a workable or noun is a book:
 			say "Right now [the noun] is in a different configuration of [Worn Row][if player is in Worn Row]. Just say which configuration you want in order to see [the noun] again[end if].";
 			now odd-mulligan is true;
-	if odd-mulligan is false and Q is in Odd Do, say "Unfortunately, [the noun] [if noun is plural-named]are[else]is[end if] [if Q is devreserved]out of this game[else]in an in-between state[end if] right now." instead;
+	if odd-mulligan is false and Q is in Odd Do:
+		if Q is eels:
+			say "You remember where the eels were.";
+			try gotoing Ooze Zoo;
+		say "Unfortunately, [the noun] [if noun is plural-named]are[else]is[end if] [if Q is devreserved]out of this game[else]in an in-between state[end if] right now." instead;
 	if noun is off-stage, say "Unfortunately, you accessed something that wasn't introduced to the game world yet." instead;
 	try gotoing Q instead;
 
@@ -8530,9 +8534,18 @@ chapter sosing
 
 sosing is an action out of world.
 
+aidllping is an action out of world.
+
 understand the command "sos" as something new.
 
-understand "sos" as sosing.
+understand "sos" as aidllping.
+
+carry out aidllping:
+	if aid-LLP-yet is false:
+		say "Your 'correct' way of asking for aid nets a last lousy point. You even throw in a 'Plea! Elp!' just to make sure.[paragraph break]Yay![paragraph break]";
+		abide by the LLP rule; [DIAL AID]
+		now aid-LLP-yet is true;
+	try sosing instead;
 
 in-sos is a truth state that varies.
 
@@ -8553,6 +8566,9 @@ to decide whether (u1 - a thing) and (u2 - a thing) are mixable:
 	no;
 
 carry out sosing:
+	if hint-yet is false and word number 1 in the player's command is "hint":
+		say "There are more harmonious ways to ask for a hint, if you want a bonus point. But it's not critical.";
+		now hint-yet is true;
 	let take-clues be 0;
 	repeat through table of just take it:
 		if to-take entry is in where-is entry and where-is entry is visited:
@@ -8810,25 +8826,16 @@ understand the command "dial aid" as something new.
 understand the command "aid" as something new.
 understand the command "hint" as something new.
 
-understand "aid" as aiding.
-understand "dial aid" as aiding.
-understand "hint" as aiding.
+understand "aid" as sosing.
+understand "dial aid" as aidllping.
+understand "hint" as sosing.
 
-dial-yet is a truth state that varies.
+aid-LLP-yet is a truth state that varies.
 
 more-later is a truth state that varies.
 hint-yet is a truth state that varies.
 
 carry out aiding:
-	if hint-yet is false and word number 1 in the player's command is "hint":
-		say "AID is a more flexible way to ask for help, but it doesn't really matter...";
-		now hint-yet is true;
-	else if dial-yet is false and word number 1 in the player's command is "dial":
-		say "Your 'correct' way of asking for aid nets a last lousy point. You even throw in a 'Plea! Elp!' just to make sure.[paragraph break]Yay![paragraph break]";
-		abide by the LLP rule; [DIAL AID]
-		now dial-yet is true;
-	if dial-yet is false:
-		say "Aid... aid...[paragraph break]";
 	if being-chased is true:
 		if chase-person is kayo yak:
 			if cap-pace is false, say "[one of]You're not quite fast enough to outrun the yak on your own. An item you have can help.[or]The pact cap.[or]The pact cap can become a PACE cap.[stopping]" instead;
@@ -9634,15 +9641,15 @@ chapter pooping
 
 pooping is an action out of world.
 
-understand the commands "boob" and "poop" and "pap" as something new.
+understand the commands "boob" and "poop" and "pap" and "tit" as something new.
 
-understand "boob" and "poop" and "pap" as pooping.
+understand "boob" and "poop" and "pap" and "tit" as pooping.
 
 poop-boob-yet is a truth state that varies.
 
 carry out pooping:
-	say "Oath tao!";
 	if poop-boob-yet is false:
+		say "Oath tao!";
 		now poop-boob-yet is true;
 		say "[line break][bracket]Your score has just gone up by 727 points.[close bracket]";
 		wfak;
@@ -9653,9 +9660,9 @@ carry out pooping:
 			wfak;
 		abide by the LLP rule; [POOP]
 		now the last notified score is the score;
-		say "[line break]";
+		say "[line break]NOTE: there are three other 'proper' ways to swear, but I don't want to encourage bad behavior too much, here.";
 	else:
-		say "[line break]X2?[paragraph break]...X!";
+		say "Ah! Cussin['] is such a...[paragraph break]X2?[paragraph break]...X!";
 	follow the notify score changes rule;
 	the rule succeeds;
 
@@ -9845,11 +9852,11 @@ table of last lousy points [xxllp]
 LLP-clue	LLP-spoil	mclu	finord	dorule	cluey
 "Three ways to swear right, none over four letters"	"BOOB or POOP or PAP to swear 'right'"	false	1	pb-yet rule	"Swear 'right'"
 "A five-letter way to think"	"REFER instead of THINK"	false	2	refer-yet rule	"THINK, or recall, information differently"
-"A different way to ask for AID"	"DIAL AID instead of AID"	false	3	dial-yet rule	"Ask for AID a bit more formally"
+"A different way to ask for AID"	"DIAL AID instead of AID"	false	3	aid-LLP-yet rule	"Ask for AID a bit more formally"
 "A four-letter way to look"	"PEEP instead of looking"	false	4	peep-yet rule	"LOOK differently"
 "A five-letter way to get your score"	"STATS to get the score"	false	5	stats-yet rule	"Get the SCORE differently"
 "Another way to examine the tract cart"	"TRACE CART to find an 'extra' book"	false	6	cart-traced rule	"Find an extra book in [if ever-wordrow is true]the tract cart[else]a cart containing books[end if]"
-"Discuss mammals with the eels"	"SLAM MAMMALS around the eels"	false	7	slam-yet rule	"Apologize for mammals to [if Ooze Zoo is unvisited]some non-mammals[else]the eels[end if]"
+"Discuss mammals with the eels[if eels are moot], even though they're gone--they'll still hear you[end if]"	"SLAM MAMMALS around the eels"	false	7	slam-yet rule	"Apologize for mammals to [if Ooze Zoo is unvisited]some non-mammals[else]the eels[end if]"
 "Help the felines, err, cats"	"STACK CATS to help the senile felines"	false	8	cats-stacked rule	"Help the cats in [moo-room-vis]"
 "Find the source of the buzzing in Moo Room (3/4 letters)"	"SEE BEES in Moo Room"	false	9	bees-seen rule	"Notice the source of the buzzing in [moo-room-vis]"
 "Find something healing in the Bald Lab"	"BALM LAB in the Bald Lab"	false	10	balm-yet rule	"Get a semi-hidden item [if Pro Corp is unvisited]from the northeast room[else]from [Pro Corp][end if][if bald-lab] after looting it[end if]"
@@ -9875,8 +9882,8 @@ this is the cats-stacked rule:
 	if senile felines are moot, the rule succeeds;
 	the rule fails;
 
-this is the dial-yet rule:
-	if dial-yet is true, the rule succeeds;
+this is the aid-LLP-yet rule:
+	if aid-LLP-yet is true, the rule succeeds;
 	the rule fails;
 
 this is the muss-yet rule:
@@ -9923,9 +9930,9 @@ carry out llpqing:
 	if cur-score of Odd Do is 11, say "You got all the LLPs." instead;
 	say "Note: this command may have stray text.";
 	say "=====DO-ANYWHERE LLPs[line break]";
-	if dial-yet is false:
-		say "DIAL AIDing.";
-		now dial-yet is true;
+	if aid-LLP-yet is false:
+		say "DIAL AIDing/SOSing.";
+		now aid-LLP-yet is true;
 		consider the LLP rule;
 		consider the LLP or normal score changes rule;
 	if poop-boob-yet is false:
