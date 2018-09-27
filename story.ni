@@ -144,7 +144,7 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 540. [-40/50 from max_verbs debug]
+use MAX_VERBS of 550. [-40/50 from max_verbs debug]
 
 use MAX_ACTIONS of 200.
 
@@ -154,7 +154,7 @@ use MAX_SYMBOLS of 23000.
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 590. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 600. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 use MAX_ACTIONS of 220. [+10?]
 
@@ -1742,10 +1742,10 @@ understand "niwin" as niwining.
 understand "ni win" as niwining.
 
 carry out niwining:
-	say "WARNING! These may spoil the game if used too early.[paragraph break]";
-	say "[2da][b]TIP IT[r] allows you to skip the next puzzle in the game's walkthrough/test order. It can be used up until the very end. It, however, neglects context beyond what items you use and what items appear.";
-	say "[2da][b]DEEP SPEED[r] jumps you to where you have blown a hole in the [kaoscaps] to the north of [Fun Enuf] and have the weaponry to take on the Diktat Kid. If the [kaoscaps] and the Diktat Kid's two lieutenants are gone, it has no effect. DEEP SPEED does not tell you what you've done.";
-	say "[2da][b]REV OVER[r] allows you to skip a few puzzles at a time. Unlike [b]DEEP SPEED[r], [b]REV OVER[r] shows what you've done in details, so it may spoil puzzles you want to solve later.";
+	say "WARNING! These may spoil the game if used too early. Their use is primarily for IFComp judges who are close to the two-hour limit and want to see the game's end or ending scenes.[paragraph break]";
+	say "[2da][b]DEEP SPEED[r] jumps you to where you have blown a hole in the [kaoscaps] so you can go north of [Fun Enuf]. You will have the weaponry to take on the Diktat Kid. If the [kaoscaps] and the Diktat Kid's two lieutenants are gone, it has no effect. DEEP SPEED does not tell you what you've done, so it does not spoil puzzles for later. It, like [b]REV OVER[r] below, stops at the Dirge Grid so the player can work through the finale, which was meant to be fun and not too taxing.";
+	say "[2da][b]REV OVER[r] allows you to skip five puzzles at a time. It stops when you have the weapons to defeat the Diktat Kid, but unlike [b]DEEP SPEED[r], [b]REV OVER[r] details each step, so it may spoil puzzles you want to solve later.";
+	say "[2da][b]TIP IT[r] allows you to skip the next puzzle in the game's walkthrough/test order. It can even be used for the final fight in the Dirge Grid, where [b]DEEP SPEED[r] and [b]REV OVER[r] won't work. Like [b]REV OVER[r], it also details each step you take.";
 	say "[line break]There are also three commands that will warp you over major quests: [b]TOOLS LOOT[r] [if tron-got is 4](done) [end if]acquires all North-Tron parts. [b]SMH MS[r] [if Bros' Orb is had-or-done](done) [end if]gets you prepared for Ms. Ism. [b]GUY UG[r] [if rocs are moot and rep popper is had-or-done](done) [end if]gets you prepared for the Yuge Guy. Note these three warp commands have puzzles in common to solve, and also, using them all does not quite give you any of the finished items you need to defeat the Diktat Kid. But they get you close.";
 	the rule succeeds;
 
@@ -2743,13 +2743,13 @@ yob attaboy	King Nik	"King Nik is no yob, and he needs more concrete information
 yob attaboy	Ned	"Ned's a fighter, not a reader. A book won't change that."
 [zzrej] [zzfail]
 
-to say man-lab: say "Nothing happens. [hand-broom] doesn't seem suited for manual labor. But it must be useful to grab SOMETHING""
+to say man-lab: say "Nothing happens. [hand-broom] doesn't seem suited for manual labor. But it must be useful to grab SOMETHING"
 
 to say hand-broom: say "[if noun is DNA hand or second noun is DNA hand]The DNA hand[else]Mr. Arm[end if]"
 
 rah-gas-tried is a truth state that varies.
 
-to say rah-gas: now rah-gas-tried is true;
+to say rah-gas: now rah-gas-tried is true
 
 to say henchy-list: say " to the Diktat Kid, but you can't get close enough, with [the list of henchy people] in the way"
 
@@ -8045,7 +8045,7 @@ carry out deepspeeding:
 	now all rooms in Yelpley are visited;
 	now all rooms in Grebeberg are visited;
 	now i-sped is true;
-	if gsi < 3, say "You may wish to check your inventory. You will have what you need to beat the Diktat Kid.";
+	if gsi < 3, say "You may wish to check your inventory. You will have what you need to beat the Diktat Kid. I hope you enjoy the final confrontation, but if you want to get to the end right away, TIP IT three times.";
 	the rule succeeds;
 
 section smitimsing - not for release
@@ -8235,12 +8235,13 @@ rev-skips is a number that varies.
 this is the rev-check rule:
 	if being-chased is true, say "Oops, that's too much for me to do at once! Either escape or get caught by [the chase-person] first, then we can proceed." instead; [?? I am almost ready to delete this]
 	if in-tip-it is false:
-		if i-sped is true, say "You already sped up to the end." instead;
+		if i-sped is true, say "You already sped up to just before the Dirge Grid fight[if x-ite tix are off-stage]. TIP IT is the only command left[end if]." instead;
 		if player is in Dirge Grid, say "You're already at the Dirge Grid!" instead;
 		if Dirge Grid is visited, say "Too late! You've already been to the Dirge Grid." instead;
 	if cant-tip-further:
 		if in-tip-it is true, say "You just need to use the X-ITE TIX, now." instead;
-		if player is in Fun Enuf, say "You're already near the endgame[if x-ite tix are off-stage]. TIP IT can take care of the rest[end if]." instead; [i can cut this down, because some of this is probably redundant, but I'd rather be too sure]
+		if player is in Dirge Grid, say "You need to fight through the Dirge Grid or use TIP IT." instead;
+		if player is in Fun Enuf, say "You've already gone as far as REV OVER or Dirge Grid will take you[if x-ite tix are off-stage]. TIP IT can take care of the rest[end if]." instead; [i can cut this down, because some of this is probably redundant, but I'd rather be too sure]
 		say "You're pretty near the endgame. Would you like me to drop you off at [Fun Enuf]?";
 		if the player yes-consents, move player to Fun Enuf instead;
 		say "OK, but you don't have much else to do[if cur-score of Odd Do is max-score of Odd Do]--you got all the LLPs[else] except search for LLPs[end if]." instead;
@@ -8384,7 +8385,6 @@ carry out revovering:
 				do nothing;
 			else:
 				break;
-	now revving-over is false;
 	if rev-skips > 0 and move-room is not location of player:
 		skip upcoming rulebook break;
 		say "(Moving you to [move-room])";
@@ -8394,7 +8394,7 @@ carry out revovering:
 	if turns-to-add > 0:
 		let delt be score - last notified score;
 		skip upcoming rulebook break;
-		if delt > 2 and score is 73, say "[line break]Thus ends your [if deep-speeding is true]DEEP SPEED [else if revving-over is true]REV OVER [else]accelerated [end if]journey, leaving you very close to saving Grebeberg and Yelpley.";
+		if delt > 2 and score is 73, say "[line break]Thus ends your [if deep-speeding is true]DEEP SPEED [else if revving-over is true]REV OVER [else]accelerated [end if]journey, leaving you very close to saving Grebeberg and Yelpley[if deep-speeding is false and in-tip-it is false]. The final confrontation should be relatively quick and fun, but if you want, you can use TIP IT three times to run through[end if].";
 		say "[line break][bracket][if delt > 0]I just gave you [delt] point[plur of delt] to go with your quick trip, and I also[else]I[end if] tacked on [turns-to-add] turns, as a guesstimate.[close bracket][paragraph break]";
 		now score-cheat is score-cheat + score - last notified score;
 		now last notified score is score;
@@ -8407,6 +8407,7 @@ carry out revovering:
 	if test set is moot and player is not in Fun Enuf and Dirge Grid is not visited:
 		say "(Also moving you to [Fun Enuf] for the endgame)[paragraph break]";
 		move player to Fun Enuf, without printing a room description;
+	now revving-over is false;
 	the rule succeeds;
 
 to say isco:
