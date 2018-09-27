@@ -342,6 +342,8 @@ chapter oldschooling
 
 understand the command "wave" as something new. understand "wave" as waving hands. [wave (thing) is not waving hands, and we want to delete it.]
 
+understand the command "attach" as something new.
+
 understand the command "slice" as something new.
 understand the command "prune" as something new.
 understand the command "chop" as something new.
@@ -562,7 +564,7 @@ check requesting the score:
 		let Q be roving-LLP;
 		let Q2 be fixed-LLP;
 		if Q is 0 and Q2 is 0:
-			say "Now you're in [Fun Enuf] and have all the points, there's seemingly not much to do but go south through the Tix Exit.";
+			say "[line break]Now you're in [Fun Enuf] and have all the points, there's seemingly not much to do but go south through the Tix Exit.";
 		else if Q is 0:
 			say "You've got all the roving LLPs. You have [Q2] non-roving LLP[plur of Q2] remaining to figure out before going [if player is not in Fun Enuf]back to [Fun Enuf] and [end if]south through the Tix Exit.";
 		else:
@@ -999,6 +1001,7 @@ definition: a thing (called th) is put-to-use:
 	if th is tract cart, yes;
 	if th is me totem, yes;
 	if th is liar grail, yes;
+	if th is DNA hand, yes;
 	no;
 
 chapter inserting into
@@ -1034,9 +1037,11 @@ definition: a thing (called th) is insert-to-use:
 	if th is sword rows, yes;
 	if th is me totem, yes;
 	if th is liar grail, yes;
+	if th is DNA hand, yes;
 	no;
 
 instead of inserting into (this is the convert insert to useon when sensible rule):
+	if noun is moot or second noun is moot, stop the action;
 	if noun is insertable-to-use, try useoning noun with second noun instead;
 	if second noun is insert-to-use, try useoning noun with second noun instead;
 	if noun is eels:
@@ -1100,6 +1105,7 @@ to decide whether the action is procedural: [aip]
 	if gotothinging, yes;
 	if eyeing, yes;
 	if xpyxing, yes;
+	if thinking, yes;
 	if useoning:
 		if noun is radar or second noun is radar, yes;
 	if taking inventory, yes;
@@ -1240,6 +1246,7 @@ instead of thinking:
 				say "[cluey entry].[line break]";
 				now got-LLP-notes is true;
 	skip upcoming rulebook break;
+	if LLP-yet is true, say "[line break]";
 	let nsb be number of sober books in devreserved;
 	if nsb < 4 and ever-wordrow is true, say "[if nsb is 0]Those books in Word Row seemed useful--if not for you, for someone else[else]You managed to help someone with a book from Word Row. Perhaps you can help someone else[end if].";
 	if player has epicer recipe and epicer recipe is xed, say "You have [tron-got] of [number of tronparts] pieces of the north tron[hint-tron].";
@@ -1550,7 +1557,7 @@ carry out scerecsing:
 		increment count;
 		if count is 1, say "[if XP is 1]Something[else]Things[end if] to READ: ";
 		if count > 1 and count < XP, say ", ";
-		if count is XP and count < 1, say "and";
+		if count is XP and count > 1, say " and ";
 		say "[SC]";
 	if XP > 0, say ".";
 	the rule succeeds;
@@ -2067,7 +2074,7 @@ instead of smelling gnu dung, say "Gag!";
 
 instead of smelling stinky knits, say "The stinky knits take over your senses and smell of stunk-nuts."
 
-instead of smelling brag garb, say "It smells almost too perfumed. It's a bit choking, and maybe you could use something to mitigate or eliminate the smell."
+instead of smelling brag garb, say "[if troll ort is moot]IT smells odd, now. It makes you both mad and happy at the same time[else]It smells almost too perfumed. It's a bit choking, and maybe you could use something to mitigate or eliminate the smell[end if]."
 
 instead of smelling dork rod, say "You might expect a rod odor, but there isn't one. OR MAYBE IT IS SO INGRAINED IN YOU, YOU NO LONGER SMELL IT."
 
@@ -2075,7 +2082,7 @@ instead of smelling butene tub, say "The butene tub smells kind of nice. You wer
 
 instead of smelling mush sum, say "Unsurprisingly, the mush sum emits an unavoidable musk sum."
 
-instead of smelling troll ort, say "The troll ort is too dusty to get a whiff of, for better or worse. You could probably USE it on something to make its smell change."
+instead of smelling troll ort, say "The troll ort is too dusty to get a whiff of, at least for your relatively insensitive human nose. Maybe you could probably USE it on something to bring its smell out. But it LOOKS like it should smell weird."
 
 instead of smelling rotator: say "[if stinky knits are moot]It no longer smells of detergent. I guess it used it all on the stinky knits.[else]There's a whiff of detergent coming from the rotator. It probably has some way to know if something is dirty enough. Technology![end if]";
 
@@ -2276,7 +2283,7 @@ check useoning it with (this is the main useon function rule):
 	if noun is second noun, say "It's not productive to use something on itself, even with this game being full of palindromes." instead;
 	if noun is a workable and second noun is a workable, say "The machines are fixed in place. You can't use one on the other." instead;
 	if useprio of noun > useprio of second noun:
-		if debug-state is true, say "[noun] [useprio of noun] [second noun] [useprio of second noun].";
+		if debug-state is true, say "DEBUG switching X on Y to Y on X: [noun] [useprio of noun] [second noun] [useprio of second noun].";
 		try useoning second noun with noun instead; [e.g. machines in work row always go second]
 	if second noun is tract cart:
 		if noun is SOME DEMOS, say "No, [i]SOME DEMOS[r] is yours, now." instead;
@@ -2433,7 +2440,8 @@ Yuge Guy	"The Yuge Guy doesn't bother with books--not even a ghostwritten, self-
 table of cantuse [xxcant]
 use1	babble
 ark of okra	"While the ark inspires you to want to mix foods, you don't want to mix anything with IT. You don't know how long that okra's been there!"
-Bros' Orb	"Nothing physical seems to work on the orb. You need a psychological push, here."
+balsa slab	"You'll probably need to make something out of the balsa slab, but not like that."
+Bros' Orb	"[if orb is in voodoo v]Nothing physical seems to work on the orb. You need a psychological push, here[else]The orb needs something to shine its light on, something to reveal a truth[end if]."
 cassettes sac	"You need something powerful to clean up the cassettes sac."
 cave vac	"The Cave Vac doesn't seem like it could clean [the noun] productively."
 Dave	"Dave's not useful, man."
@@ -2455,6 +2463,7 @@ Kayo Yak	"The Kayo Yak grunts. Looks like you can't, or don't want to, use anyth
 King Nik	"King Nik scratches his head and shrugs. He needs a confidence booster."
 level net	"There's got to be a way to untangle the net on your own, so it doesn't get cut or destroyed."
 lie veil	"The lie veil remains undisturbed. It's as if it's pretending you're not even trying. Maybe you'll have to be really violent."
+martini tram	"The martini tram is a good base to build [if epicer recipe is xed]the north-tron[else]something big[end if]. Putting random items on it won't help."
 mist sim	"Anything used on the mist sim might disappear into it."
 Nat's Tan	"[if player does not have Nat's Tan]You may need to steel yourself to take the Nat's Tan, somehow[else]No, you need to look for something that would be utterly disgusted by having Nat's Tan squirted on it[end if]."
 Ned	"Ned wants a fight, and you need some other way around him. Bribery or violence doesn't seem sufficient. It might be simpler than you think. Ned's pretty ... basic."
@@ -2480,6 +2489,7 @@ tame mat	"The tame mat stays, uh, tame. Perhaps you need to enhance it metaphysi
 tao boat	"The tao boat remains impassive. But surely something you can show it will prove your worth. Probably something with only spiritual value, though."
 test set	"You need to use something violent on the test set."
 tract cart	"You don't need to do much with the tract cart except take books from it."
+tru yurt	"[if Known Wonk is in Yack Cay]Probably best not to mess with the yurt while the Known Wonk doesn't trust you[else]The yurt needs a good cleaning, but that won't help[end if]."
 turf rut	"[if poo coop is moot]You can walk across the tur(f/d) rut now, and that's more than good enough[else]Hmm. Not quite. You'd need a lot of material to fill the turf rut in[end if]."
 wordy drow	"The wordy drow moans 'Er ... eh ... there,' pointing to the Liar Grail. The wordy drow must be too incorporeal to accept anything."
 x-it stix	"They're just there to block you."
@@ -2505,7 +2515,7 @@ enact cane	"That could be painful for [if second noun is not proper-named]the [e
 gift fig	"[no-food-share]."
 mayo yam	"[no-food-share]."
 ME gem	"[if second noun is not proper-named]The [end if][second noun] looks a bit frightened by the power of the ME gem. It must only work on, or for, really bad people or things."	--
-murdered rum	"Oof. Brutal. The rum is NOT for drinking."
+murdered rum	"Oof. Brutal. The rum is NOT for drinking. Or poisoning people, good or bad."
 Nat's Tan	"You are greeted with a look of revulsion."	--
 party trap	"The trap can't work on a person. It's too small, and people are too smart."	"You need to use the party trap on something animate."
 pity tip	"You don't want to give it away! You [if navy van is xed]should maybe use it, yourself. Now where was Seedy Dee's?[else]have a feeling you can find Seedy Dee's, if you look hard enough.[end if]"	--
@@ -2530,10 +2540,13 @@ to say not-thing of (nt - a thing): say "[if nt is noun][second noun][else][noun
 
 table of specific use rejects [xxrej] [xxfail] [xxsur]
 use1	use2	babble
+brag garb	butene tub	"The brag garb is clean enough, and it's not a washtub."
 brag garb	tao boat	"[too-boast]."
 bros' orb	Gal Flag	"The Gal Flag flutters backwards a bit but remains steady. The Bros['] Orb must work on something!"
+bros' orb	ME Totem	"The Bros['] Orb's light bounces off the ME Totem! It seems logically like that should have worked, but the Yuge Guy subverts standard definitions of decency and community."
 Bros' Orb	Ms Ism	"As you lift the Bros['] Orb to throw at Ms. Ism, you see yourself in the Mirror Rim. You don't look so great or heroic. In fact, you feel unusually self-conscious. More than you deserve to, you think. The Bros['] Orb is really pulsing right now. Whatever you used it on, you'd likely destroy it, and you're not out to KILL anyone."
 bros' orb	tao boat	"[too-boast]."
+bros' orb	Yuge Guy	"The Bros['] Orb's light bounces off the Yuge Guy! It seems logically like that should have worked, but the Yuge Guy subverts standard definitions of decency and community."
 bunk nub	sleep eels	"That -- well, it almost works. But the bunk nub isn't shaped right to house that many small animals. Maybe it could be changed."
 bunk nub	stark rats	"The rats don't need to sleep, and the bunk nub won't make them feel drowsy. You need to get rid of the rats."
 Cave Vac	gnu dung	"The Cave Vac sputters. You may need something more specifically suited to the, uh, material to clean up."
@@ -2549,7 +2562,9 @@ Dirt Rid	stinky knits	"The smell is crusted into the stinky knits. You need a he
 Dirt Rid	troll ort	"The troll ort is crusted over enough that the Dirt Rid wouldn't really clean it."
 DNA hand	bomb mob	"The hand isn't mobile enough."
 DNA hand	DIFF ID	"The DIFF ID doesn't even seem to recognize the DNA hand. Apparently, it is not alive enough."
+DNA hand	enact cane	"[man-lab]."
 DNA hand	gate tag	"That would mark up the DNA hand, but it might be painful. Perhaps the tag should be impressed on something else."
+DNA hand	moor broom	"[man-lab]."
 DNA hand	soot tattoos	"The DNA hand doesn't need augmentation, and besides, the soot tattoos are sort of generic. Maybe there's a way to make a pattern of them."
 DNA hand	Yuge Guy	"The hand doesn't seem to willing or able to move toward the Yuge Guy."
 dork rod	DIFF ID	"You sense using the dork rod to identify yourself would be especially unhelpful. Well, here, at least."
@@ -2597,16 +2612,21 @@ Gorge Grog	yard ray	"The Gorge Grog is pretty strong stuff, but you may need som
 Gorge Grog	Yuge Guy	"The Yuge Guy doesn't drink, and neither does Johnny. Also, the Yuge Guy may or may not be a germaphobe."
 ME gem	cross orc	"The ME gem causes the cross orc to moan and shield its eyes for a bit. Perhaps the ME gem is too much even for the orc's greed. Something more straightforward may work better."
 ME gem	Diktat Kid	"The ME gem would be appealing[henchy-list]."
+ME gem	lie veil	"Two wrongs don't make a right way through here. The ME gem is about greed. You need force, here."
 ME gem	ME Totem	"The egotistical forces in the gem and totem repel each other. Just as well. You don't know if you could survive if such insufferability synergized."
 ME gem	Tao Boat	"The tao boat lurches uncontrollably, and a gust of wind blows you back ten feet. It seems like the ME gem is about the worst thing you could possibly have shown to impress it, but on the other hand, that's a potential hint. You need something that's the opposite of the ME gem."
 ME gem	Verses Rev	"The Verses Rev sniffs and waves away the ME gem. Perhaps it could entice less spiritual types, but not the Verses Rev!"
 ME gem	Yuge Guy	"That might make the Yuge Guy's ego too much to handle."
 mr arm	bros' orb	"Mr. Arm seems intimidated by the Bros['] Orb[if orb is not carried], too. You need mental assistance[end if]."
+mr arm	enact cane	"[man-lab]."
 mr arm	Gal Flag	"This isn't capture the flag."
 Mr Arm	gate tag	"Mr. Arm doesn't seem markable."
+mr arm	moor broom	"[man-lab]."
 mr arm	Ms Ism	"That might be creepier than even Ms. Ism deserves."
 Mr Arm	soot tattoos	"The tattoos wouldn't stay on someone/something as metallic as Mr. Arm."
 Mr Arm	Yuge Guy	"Mr. Arm doesn't seem to want to move toward the Yuge Guy."
+murdered rum	butene tub	"You tremble at the thought of opening the murdered rum. It's spooky beyond having a high alcohol content. Maybe you can use something less drastic on, or in, the tub."
+murdered rum	test set	"Chemical experiments are not your thing. The murdered rum's pretty caustic, but perhaps it can act as fuel for something else."
 NULL ILLUN	Door Frood	"'Like I need it! Other people do! And what's worse, some who read it become less easy to make fun of. Hmmph.'"
 NULL ILLUN	King Nik	"'That would help me feel better about failure. But, and I feel kinda guilty for asking, you got any book that would help me avoid failure in the first place?'"
 NULL ILLUN	liar grail	"The liar grail would twist the words of NULL ILLUN so badly, you'd be worse for the experience."
@@ -2676,6 +2696,7 @@ stamp mats	soot tattoos	"Hmm. If the soot tattoos had a pattern, that would be i
 stamp mats	Tru Yurt	"The stamp mats aren't a home-y sort of mat."
 stamp mats	yahoo hay	"The mats don't quite work on the hay. They might work better on something with more surface area."
 state tats	DIFF ID	"The DIFF ID emits a soft tone. Looks like you can just walk [if Red Roses Order is visited]back [end if]north to get through."
+stinky knits	butene tub	"The stinky knits need something stronger than a washtub, which the butene tub is not."
 stinky knits	kayo yak	"The yak sniffs at the knits for a while but loses interest after a bit. Maybe something else will interest the yak longer."
 stinky knits	scorn rocs	"The knits are only one thing, so only one roc could wear it. But the knits don't seem to fit. Rats.[paragraph break]There's got to be some other way to make the rocs look bad, though."
 stir writs	tao boat	"[too-boast]."
@@ -2706,6 +2727,7 @@ wash saw	KAOS Oak	"The wash saw isn't big enough or sharp enough to take down th
 wash saw	lie veil	"Not even the wash saw could clean off the lie veil. You need something much more brutal."
 wash saw	made dam	"The made dam is much too big for the saw to get anywhere. [if eroded ore is off-stage]Maybe there's a better way to find what's behind there[else]Besides, you found enough[end if]."
 wash saw	scorn rocs	"The rocs are too big and solid for the wash saw to vandalize them."
+wash saw	slate metals	"The wash saw is nowhere near sharp enough to cut the metals. [if stamp mats are not moot]Maybe there's something else[else]You got Ye Key from the metals, and that's enough[end if]."
 wash saw	stark rats	"You couldn't catch and hold a rat long enough to cut it with the wash saw."
 wash saw	stock cots	"That'd undo the reviver's work on the cots."
 wash saw	you buoy	"The buoy would break the saw."
@@ -2720,6 +2742,10 @@ yob attaboy	Ian	"Ian is too much of a food snob to be interested."
 yob attaboy	King Nik	"King Nik is no yob, and he needs more concrete information than that."
 yob attaboy	Ned	"Ned's a fighter, not a reader. A book won't change that."
 [zzrej] [zzfail]
+
+to say man-lab: say "Nothing happens. [hand-broom] doesn't seem suited for manual labor. But it must be useful to grab SOMETHING""
+
+to say hand-broom: say "[if noun is DNA hand or second noun is DNA hand]The DNA hand[else]Mr. Arm[end if]"
 
 rah-gas-tried is a truth state that varies.
 
@@ -2813,14 +2839,14 @@ spa maps	go by bog	sage gas	pre-maps-on-bog rule	gas-think-wipe rule	true	true	f
 enact cane	yahoo hay	moor broom	pre-cane-on-hay rule	hay-gone rule	true	true	false	false	true	false	Grebeberg	Moo Room	Moo Room	false	"You stick some strands of yahoo hay into the damaged end of the enact cane. It's now a moor broom!"
 --	--	--	rev-pace-cap rule	--	true	--	--	false	true	false	Dim Mid	--	--	false	--
 troll ort	brag garb	--	pre-ort-on-garb rule	chase-in-zoo rule	true	true	false	false	true	false	Grebeberg	--	--	false	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the stinky knits, but still quite distinctive. The ort must've been covered by the dirt for a long time, because it disintegrates as its essence is leaked onto the brag garb." [b4:pace cap] [af:yak okay]
---	--	--	rev-yak-okay rule	--	true	--	--	false	true	false	Grebeberg	Lair Trial	Lair Trial	false	--
+--	--	--	rev-yak-okay rule	brag-garb-bye rule	true	--	--	false	true	false	Grebeberg	Lair Trial	Lair Trial	false	--
 sage gas	tame mat	guru rug	pre-gas-on-mat rule	--	true	true	true	false	true	false	Grebeberg	Motto Bottom	Motto Bottom	false	"'Mix a maxim...' you mutter to yourself. The sage gas bubbles out under the tame mat, and the message changes. To something wiser. But perhaps a bit stuffy: a guru rug!"
-sharp rahs	guru rug	stir writs	pre-rahs-on-rug rule	brag-garb-bye rule	true	true	true	false	true	false	Grebeberg	Motto Bottom	Motto Bottom	false	"The sharp rahs meld into the guru rug, which feels less weighted down by philosophy and floats away. Under it there are stir-writs, which seem oversimplified at first, but on re-reading, they strike just the right balance between emotional and intellectual stimulation.[paragraph break]After reading them, you feel distinctly silly in your brag garb, which seems so gaudy now. Instinctively, you take the garb off and commit it to the Be Web. As the brag garb floats away, you know you have done the right thing, but you need to do more."
+sharp rahs	guru rug	stir writs	pre-rahs-on-rug rule	--	true	true	true	false	true	false	Grebeberg	Motto Bottom	Motto Bottom	false	"The sharp rahs meld into the guru rug, which feels less weighted down by philosophy and floats away. Under it there are stir-writs, which seem oversimplified at first, but on re-reading, they strike just the right balance between emotional and intellectual stimulation."
 --	--	--	rev-nail-Ian rule	--	true	--	--	false	false	true	Grebeberg	Mont Nom	Mont Nom	false	--
 --	--	--	rev-first-food-combo rule	--	true	--	--	false	false	true	Grebeberg	Mont Nom	Mont Nom	false	--
 --	--	--	rev-second-food-combo rule	--	true	--	--	false	false	true	Grebeberg	Mont Nom	Fun Enuf	false	--
 Moor Broom	Tru Yurt	Exam Axe	pre-broom-on-yurt rule	bump-ivy rule	true	true	false	false	true	false	Grebeberg	Yack Cay	Yack Cay	false	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay.[paragraph break]In gratitude, the Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! You trade the moor broom for it. Then, back to the Tru-Yurt for the Wonk. They've done enough for you." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
-wash saw	porch crop	balsa slab	pre-saw-on-crop rule	--	true	true	false	false	false	false	Grebeberg	Uneven U	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods.[paragraph break]'Yes! Yes! We have achieved AIMED ACADEMIA! Uneven U needs a name change ... to UNITIN['] U! How can I thank you?'[paragraph break]A balsa slab is lying under where the porch crop was. The Code Doc offers it to you. Now, you ... do own wood!"
+wash saw	porch crop	balsa slab	pre-saw-on-crop rule	--	true	true	false	false	false	false	Grebeberg	Uneven U	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods.[paragraph break]'Yes! Yes! We have achieved AIMED ACADEMIA! Uneven U needs a name change ... to UNITIN['] U! How can I thank you?'[paragraph break]You see the wash saw became dull while you sawed, and you've no way to sharpen it. The Code Doc should be able to before the porch crop grows back. So when you notice a balsa slab is lying under where the porch crop was, you propose a trade. The Code Doc accepts. Now, you ... do own wood!"
 Exam Axe	Lie Veil	--	pre-axe-on-veil rule	--	true	true	true	false	true	false	Grebeberg	Dumb Mud	Dumb Mud	false	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
 --	--	--	rev-get-bros orb rule	--	false	--	--	false	true	false	--	Le Babel	Le Babel	--	--
 DNA band	reifier	DNA hand	pre-band-on-reifier rule	--	true	true	false	false	false	true	Yelpley	Worn Row	Worn Row	false	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand! It doesn't have any slime or blood leaking, and when you take it, it doesn't twitch too much."
@@ -2829,7 +2855,7 @@ Eroded Ore	reviver	Ore Zero	pre-ore-on-reviver rule	--	true	true	false	false	fal
 you buoy	rotator	ME gem	pre-buoy-on-rotator rule	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. 'You BOFFO buoy!' you can't help shouting.[paragraph break]The gem's so tempting and beautiful, you grab it quickly, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
 Mr Arm	bomb mob	TNT	pre-arm-on-mob rule	mob-bye rule	true	true	true	false	false	true	Yelpley	Yell Alley	Yell Alley	false	"Mr. Arm walks on his index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. Being an arm, it/he has more leverage than just a DNA hand would've. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course. Perhaps Mr. Arm will find a Do-Bod or even an Evol-Glove to be truly complete. The bomb mob, for their part, becomes a poor troop once they see what they've lost. They wander away."
 Nat's Tan	scorn rocs	--	pre-tan-on-rocs rule	--	true	true	true	true	false	false	Grebeberg	Flu Gulf	Flu Gulf	false	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
-rep popper	ME Totem	murdered rum	pre-popper-on-totem rule	totem-out rule	true	true	true	false	false	false	Grebeberg	Sneer Greens	Sneer Greens	false	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Had, ah!' he cries, making a male lam. From his babbling, he's apparently retreating to a glam-amalg (Loot Stool included) or ego loge in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]'Pol? Flop!' you think to yourself, before the ME Totem, sliced several ways, collapses and sinks into the ground. As it does, you hear the Yuge Guy's voice utter 'There's some murdered rum inside. Powerful stuff! You pick it up carefully."
+rep popper	ME Totem	murdered rum	pre-popper-on-totem rule	totem-out rule	true	true	true	false	false	false	Grebeberg	Sneer Greens	Sneer Greens	false	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Had, ah!' he cries, making a male lam. From his babbling, he's apparently retreating to a glam-amalg (Loot Stool included) or ego loge in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]'Pol? Flop!' you think to yourself, before the ME Totem, sliced several ways, collapses and sinks into the ground. As it does, something rolls out ... some murdered rum! It looks powerful. You pick it up carefully."
 Bros' Orb	Mirror Rim	Yard Ray	pre-orb-on-rim rule	sword-rows-reveal rule	true	true	true	false	false	false	Yelpley	Red Roses Order	Red Roses Order	false	"The Bros['] Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Ms. Ism has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, Ms. Ism, live not on evil!' you boom, as the Orb does its work. Ms. Ism looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'My sub-level bus! You won't catch it! The E-Divide will block you!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	pre-slab-on-rows rule	moot-rows-and-tats rule	true	true	false	false	false	false	Yelpley	Red Roses Order	Emo Dome	false	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Ms. Ism."
 not-a-baton	reifier	taboo bat	pre-not-a-baton-on-reifier rule	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
@@ -2839,7 +2865,7 @@ Yard Ray	test set	--	pre-ray-on-set rule	test-set-zapped rule	true	false	true	fa
 --	--	--	rev-create-tron rule	--	true	--	--	false	false	false	Dim Mid	Fun Enuf	Fun Enuf	false	--
 ME gem	Knife Fink	--	pre-gem-on-fink rule	kid-left rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, perhaps to create the Red Ronin Order." [b4:use TNT on ore zero]
 taboo bat	Verses Rev	--	pre-bat-on-rev rule	kid-left rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev senses the Taboo Bat's ancient untapped power. It's not particularly violent or lethal, but it is just perfect to scare an orthodoxy as warped as the Verses Rev's, who mutters 'Rev, off, over' and stumbles away! Perhaps to the safety of ... a rev reserver."
-Yard Ray	redivider	X-ITE TIX	pre-ray-on-redivider rule	kid-bye rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"'Havoc, OVAH!' you should as you aim and fire the yard ray. A direct hit! The redivider begins to fizzle.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The entire Dirge Grid brightens, and the yard ray hums and explodes. But it's too late for the Diktat Kid to avoid an electro-shock. 'Deleveled!' the Kid screams several times, before breaking down into tears. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'PUT, UH, SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid grows redder ... redder ... and suddenly the remains of the redivider begin swirling, and they catch the Diktat Kid, who moans 'Lo, a Gaol' before being whisked off.[paragraph break]With the Kid gone, the Dirge Grid grows less dark, the no-go gon winks out, and saner arenas are revealed all around. The swirling remains of the redivider harden into what can only be an XILE helix.[paragraph break]Revel, clever! Revel, ever![paragraph break]You are so busy watching, you didn't notice something else fell out of the redivider: X-ITE TIX! You pick them up. Wow! Yo, joy! Wow!"
+Yard Ray	redivider	X-ITE TIX	pre-ray-on-redivider rule	kid-bye rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"'Havoc, OVAH!' you shout as you aim and fire the yard ray. A direct hit! The redivider begins to fizzle.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The entire Dirge Grid brightens, and the yard ray hums and explodes. But it's too late for the Diktat Kid to avoid an electro-shock. 'Deleveled!' the Kid screams several times, before breaking down into tears. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'PUT, UH, SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid grows redder ... redder ... and suddenly the remains of the redivider begin swirling, and they catch the Diktat Kid, who moans 'Lo, a Gaol' before being whisked off.[paragraph break]With the Kid gone, the Dirge Grid grows less dark, the no-go gon winks out, and saner arenas are revealed all around. The swirling remains of the redivider harden into what can only be an XILE helix.[paragraph break]Revel, clever! Revel, ever![paragraph break]You are so busy watching, you didn't notice something else fell out of the redivider: X-ITE TIX! You pick them up. Wow! Yo, joy! Wow!"
 X-ITE TIX	TIX EXIT	--	pre-tix-on-exit rule	you-win rule	true	false	false	false	false	false	Dim Mid	Fun Enuf	Fun Enuf	false	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse] [zzgood]
 
@@ -3451,6 +3477,9 @@ this is the pre-ray-on-redivider rule:
 	if in-sos is true:
 		if yard ray is moot or player is not in Dirge Grid, the rule fails;
 		say "[one of]You've got one shot with the Yard Ray, but what to use it on?[or]Killing the Diktat Kid won't stop the other machines from working.[or]The purely violent machines aren't critical, either.[or]USE YARD RAY ON REDIVIDER[stopping].";
+	if Knife Fink is in Dirge Grid or Verses Rev is in Dirge Grid:
+		say "You can't get a clear shot with [the list of henchy people] in the way.";
+		the rule fails;
 	the rule succeeds;
 
 this is the pre-ray-on-set rule:
@@ -3467,7 +3496,7 @@ this is the pre-ray-on-set rule:
 		the rule succeeds;
 	if emitted is true, the rule succeeds;
 	get-reject test set;
-	say "[if murdered rum is not moot]The yard ray is empty[else]You aren't sure how the Yard Ray works, or what it needs to zap people with. Maybe you should review it to figure things out[end if].";
+	say "[if murdered rum is not moot]The yard ray is empty, but maybe you could load it with something[else]You aren't sure how the Yard Ray works, or what it needs to zap people with. Maybe you should review it to figure things out[end if].";
 	the rule fails;
 
 this is the pre-rod-on-boat rule:
@@ -4000,7 +4029,7 @@ to say if-not-LLP: if LLP-hunting, say ", other than poke around for last lousy 
 Fun Enuf is a room in Dim Mid. "[if elite tile is in Fun Enuf]Elite tile has replaced the old tile lit. Probably all that's left to do[if-not-LLP] is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what leads west and east[xit-ave][end if]. [if Diktat Kid is moot][Dirge Grid] is back north, not that you need to revisit[else if north tron is moot]Also, the North-Tron has carved a passage north where the [kaoscaps] was. It's too big to, uh, repaper[else if flee elf is in Fun Enuf]An oak blocks the way north. It's a wide oak[else]The [kaoscaps] blocks your way north[end if]."
 
 to say xit-ave:
-	say ". The [if player has x-ite tix]Tix Exit to the south is waiting for you to enter[else if tix exit is in Fun Enuf]Tix Exit prevents passage back south[else]Evac Ave is south, if you want to chicken out[end if]"
+	say ". The [if player has x-ite tix]Tix Exit to the south is waiting for you to enter[else if tix exit is in Fun Enuf]Tix Exit to the south prevents passage back home through Evac Ave[else]Evac Ave is south, if you want to chicken out[end if]"
 
 chapter KAOS Oak
 
@@ -5004,9 +5033,10 @@ kayo-known is a truth state that varies.
 carry out yakokaying:
 	if ergot ogre is moot, say "[if yak is in location of player]The yak has served you well. It deserves a rest.[else]You relive past glories. Why not?[end if]" instead;
 	if yak is in location of player and ergot ogre is in location of player:
-		say "The kayo yak surges at the ergot ogre and knocks it over with a few ... smart rams! The ergot won't spread to the yak's horns, so that's good. The ogre dusts itself off and walks away, damp, mad. The yak, for its part, looks relaxed--almost like a tao goat--and seems to be begging. You toss it the troll ort, which it eats. It must be hungry after all that running! And tired, too. It heads off, not to the Frush Surf, but somewhere calmer.[paragraph break]You think you hear an elk cackle in the distance.[paragraph break]Whew! That's enough exercise. You readjust your pace cap back to a pact cap, and you retreat back to Ooze Zoo to collect your items.";
+		say "The kayo yak surges at the ergot ogre and knocks it over with a few ... smart rams! The ergot won't spread to the yak's horns, so that's good. The ogre dusts itself off and walks away, damp, mad. The yak, for its part, looks relaxed--almost like a tao goat--and seems to be begging. You toss it the brag garb, which it has no end of fun mauling further. It heads off, not to the Frush Surf, but somewhere calmer.[paragraph break]You think you hear an elk cackle in the distance.[paragraph break]Whew! That's enough exercise. You readjust your pace cap back to a pact cap, and you retreat back to Ooze Zoo to collect your items.";
 		score-inc; [Grebeberg/YAK OKAY]
 		banish-ogre;
+		moot brag garb;
 		consider the cap-beep rules for the kayo yak;
 		the rule succeeds;
 	now kayo-known is true;
@@ -5073,7 +5103,7 @@ the straw arts are a plural-named thing. description is "Whatever they are, you 
 
 chapter moor broom
 
-the moor broom is a thing. description is "It's made of that enact cane amd the yahoo hay, and just looking at it, you feel almost excited about cleaning. It's more practical than a pomp mop, for sure."
+the moor broom is a thing. description is "It's made of that enact cane and the yahoo hay, and just looking at it, you feel almost excited about cleaning. It's more practical than a pomp mop, for sure."
 
 book Swamp Maws
 
@@ -5211,7 +5241,7 @@ check going nowhere in Motto Bottom: say "The Be-Web is full of wisdom on just e
 
 chapter be web
 
-the be web is peripheral scenery in Motto Bottom. understand "beweb" as be web. "The be-web spans everywhere except back west. Perhaps if you were a lot cleverer, or sillier, you could find meaning in it, but as-is, it only blocks your way back west."
+the be web is peripheral scenery in Motto Bottom. understand "beweb" as be web. "The be-web spans everywhere except back west. Perhaps if you were a lot cleverer, or sillier, you could find meaning in it, but as-is, it's just there to nudge you back east."
 
 chapter tame mat
 
@@ -6294,7 +6324,7 @@ ever-workrow is a truth state that varies.
 
 this is the wornrow-change rule:
 	if Rob is in Worn Row, say "That'll work when Rob is gone." instead;
-	if Psi Wisp is in Worn Row, say "Right idea, wrong room to change to." instead;
+	if Psi Wisp is in Worn Row, say "[chase-pass]Right idea, wrong room to change to." instead;
 	continue the action;
 
 carry out workrowing:
@@ -6762,7 +6792,7 @@ the etage gate is scenery in Gross Org. "It is locked and too strong to force ou
 understand "roses" and "roses or" as etage gate when etage gate is quicknear.
 understand "roses" and "roses or" as gate tag when gate tag is quicknear.
 understand "roses" and "roses or" as DIFF ID when DIFF ID is quicknear.
-understand "roses" and "roses or" as state tats when state tats is quicknear.
+understand "roses" and "roses or" as state tats when state tats are quicknear.
 
 instead of unlocking etage gate with Ye Key:
 	if player has Ye Key, try useoning Ye Key with etage gate instead;
@@ -7391,7 +7421,9 @@ the gold log is a thing in Pro Corp. description is "Maybe if it were shaped a b
 
 instead of opening gold log: say "You can't find an opening."
 
-report taking gold log: say "It feels light. Not a ton. It rattles as you pick it up.";
+report taking gold log:
+	say "It feels light. Not a ton. It rattles as you pick it up.";
+	the rule succeeds;
 
 chapter DNA band and hand and what's after
 
@@ -7399,7 +7431,7 @@ The DNA band is a thing in Pro Corp. "A DNA band sits here, nice and tidy and he
 
 instead of wearing DNA band, say "You can't wear it. It's helical, not a headband."
 
-The DNA hand is a thing. description is "It's motionless, but it looks lifelike enough. There must be a way to bring it to life!"
+The DNA hand is a thing. description is "It's motionless, but it looks lifelike enough, despite being recessed. The right item could bring it to life!"
 
 Mr Arm is a proper-named thing. description is "Wow! It's really evolved from a DNA band! The BANG NAB written on it indicates it's more than a measly banana nab. It's sturdy. If it had eyes, it'd be looking for something to steal and run--umm, that's not quite right--off with. You're not sure why it hasn't run off with anything in your inventory. Is all this stuff you piled up worthless? Perhaps Mr. Arm is just grateful and wants to steal something for you.[paragraph break][one of]Mr. Arm seems about to point somewhere. If you examine him again, you can see where[or]Mr. Arm [arm-dir][stopping]."
 
@@ -7763,7 +7795,7 @@ after going when being-chased is true:
 	if x-it stix are in location of player, say "As you run furher [noun], you notice X-it Stix X out the way [if Fun Enuf is room east of location of player]east[else]west[end if]. It's probably bad for the [chase-person] to get loose in [if player is in Yawn Way]Grebeberg[else]Yelpley[end if].";
 	continue the action;
 
-x-it stix are semiperipheral scenery. "They look like the metal grating shops pull out over their doors and windows at closing time.[paragraph break]They are in an X, and while they don't allow an Xit, they do x out one way to go, which may help you figure how you need to get away from the [chase-person].[paragraph break]Of course, any wordplay adventurer worth their salt (like you--you're pretty far along, here) knows the difference between EXIT and X-IT. These things are telling you what you can't do!";
+x-it stix are semiperipheral scenery. "They look like the metal grating shops pull out over their doors and windows at closing time.[paragraph break]They are in an X, and while they don't allow an Xit, they do x out one way to go, which may help you figure how you need to get away from the [chase-person].[paragraph break]Of course, any wordplay adventurer worth their salt (like you--you're pretty far along, here) knows the difference between EXIT and X-IT. These things are X-ing out an option, here!";
 
 understand "xit stix" and "x it stix" and "x/it stix" and "x it" as x-it stix.
 
@@ -9631,7 +9663,7 @@ carry out balmlabing:
 	if balm-LLP-yet is true, say "No double dipping." instead;
 	now balm-LLP-yet is true;
 	abide by the LLP rule; [BALM LAB]
-	say "Some EOL Aloe squirts out of the butene tub. You rub it on yourself. You immediately quit running around in circles in your mind, and when a disturbing through pops back up, you sort of say EOL, and it disappears, and it doesn't feel cheesy. But then an enol cyclone blows you over, and when you wake up again, it's a bald lab." instead;
+	say "Some EOL Aloe (O, La) squirts out of the butene tub. You rub it on yourself. You immediately quit running around in circles in your mind, and when a disturbing thought pops back up, you sort of say Lo, EOL, to ward it off. But then an enol cyclone blows you over, and when you wake up again, it's a bald lab." instead;
 
 chapter peeping
 
