@@ -686,6 +686,8 @@ to say dir-summary:
 	now Q is the room west of location of player;
 	if Q is not nowhere, say " W[run paragraph on][if Q is not available]-[else if Q is not visited]![run paragraph on][end if]";
 
+read-intro is a truth state that varies.
+
 when play begins (this is the begin ailihphilia for reals rule):
 	now eyespoil of tix exit is number of rows in table of goodacts; [the flee elf gives you the clue right off the bat]
 	repeat with Q running through regions:
@@ -696,7 +698,7 @@ when play begins (this is the begin ailihphilia for reals rule):
 	now right hand status line is "[if cur-score of mrlp < 10] [end if][cur-score of mrlp]/[max-score of mrlp] [if score < 10] [end if][score]/[if min-win < maximum score][min-win]-[end if][maximum score]";
 	now left hand status line is "[location of player] ([mrlp])[dir-summary]";
 	say "First, would you like to see the introduction (I), restore a previous game (R), or skip the introduction (S)?";
-	let read-intro be true;
+	now read-intro is true;
 	if debug-state is false:
 		let got-good-key be false;
 		while got-good-key is false:
@@ -704,12 +706,13 @@ when play begins (this is the begin ailihphilia for reals rule):
 			if Q is 73 or Q is 105:
 				now read-intro is true;
 				now got-good-key is true;
-			else if Q is 81 or Q is 113:
-				try restoring the game;
-				say "Restore failed. Let's try again.";
 			else if Q is 82 or Q is 114:
+				say "Restoring...";
+				try restoring the game;
+			else if Q is 83 or Q is 115:
 				now read-intro is false;
 				now got-good-key is true;
+			if got-good-key is false, say "[line break][if q is 82 or q is 114]Restore failed. Let's try again[else]I didn't recognize that[end if]. Would you like to see the introduction (I), restore a previous game (R), or skip the introduction (S)?";
 	now use-custom-screenread is true; [see the Trivial Niceties extension for details. This wipes TN's default generic nag question.]
 	say "Next, are you using a screen reader? Some of Ailihphilia's features, like the text map, don't work well with them.";
 	if the player no-consents, now screenread is true;
@@ -717,11 +720,9 @@ when play begins (this is the begin ailihphilia for reals rule):
 	sort table of last lousy points in random order;
 	repeat through table of all randoms:
 		sort tabnam entry in random order;
-	if read-intro is false:
-		say "[line break]I am dumping you in Fun Enuf. If you need a refresher on commands, use [b]ABOUT[r] or [b]VERBS[r].";
-		continue the action;
 	now initseed of Name ME Man is a random number between 0 and prime-constant / 2 - (number of rows in table of random palindrome lastfirst names);
 	now initseed of Oh Who is a random number between prime-constant / 2 + 1 and prime-constant - (number of rows in table of random palindrome firstlast names);
+	if read-intro is false, continue the action;
 	say "[line break]It's not your first dream about how awful high school was, but it's the worst in a while. A few 'favorite' classmates chanting 'Diary raid!' and passing it around as they mock 'Beefy? Feeb! Bony Nob!' Of course, you never HAD a diary in high school, but that doesn't matter.[wfak-d]";
 	say "You check your mail as you go out to the grocery store. A junk-mail magazine! It's been so long since you got one, you're almost intrigued.[wfak-d]";
 	say "It just says GAME MAG. But the cover isn't telling you to actually buy anything, so you look inside. You have a whole backlog of games, but you can just recycle it when you get to the store. No, not the erot-store![wfak-d]";
@@ -740,6 +741,11 @@ when play begins (this is the begin ailihphilia for reals rule):
 	say "The Flee Elf points to a cap. 'This here isn't any cap. It's a PACT cap. And you can't quite TAKE it. You have to do something else.'[wfak-d]";
 	say "[paragraph break](NOTE: if you want to know more about Ailihphilia and the commands used, type ABOUT.)[paragraph break]";
 	do nothing; [debug information below here. I've had problems putting it in and not deleting it, so I want to make things clear.]
+
+after looking in Fun Enuf for the first time:
+	if read-intro is false:
+		say "[bracket][b]NOTE: though you opted to skip the introduction, you may still wish for ABOUT or VERBS as a refresher.[close bracket][r][line break]";
+		continue the action;
 
 section when play begins - not for release
 
@@ -4510,7 +4516,7 @@ carry out emiting:
 	if murdered rum is not moot, say "The Yard Ray isn't charged enough to emit anything[clue-noon]." instead;
 	if player is in location of Yuge Guy, say "No...the Yuge Guy needs to be defeated by other means." instead;
 	if Diktat Kid is moot, say "You already got rid of the Diktat Kid." instead;
-	if emitted is true, say "You already figured how to use the Yard Ray. Now you need to figure who or what to use it on." instead;
+	if emitted is true, say "You already figured how to use the Yard Ray. Now you need to figure whom, or what, to use it on." instead;
 	if the topic understood matches "noontime" or the topic understood matches "noon time":
 		say "FOOM! Oof! The yard ray emits so much light, you immediately have to switch it off. Well, that was a good start. Now you want to make sure you can aim it at something that can be destroyed.";
 		now emitted is true;
@@ -8231,6 +8237,14 @@ definition: a thing (called th) is swipeable:
 	if th is TNT, yes;
 	no;
 
+to decide whether need-rev-check:
+	if in-ms-warp is true, no;
+	if in-guy-warp is true, no;
+	if in-tool-warp is true, no;
+	if in-tip-it is true, no;
+	if deep-speeding is true, no;
+	yes;
+
 carry out revovering:
 	abide by the rev-check rule;
 	if in-ms-warp is true:
@@ -8281,7 +8295,7 @@ carry out revovering:
 					increment the score;
 					increment cur-score of reg-plus entry;
 					now done entry is true;
-			if global-delay > 0 and the remainder after dividing global-delay by 5 is 0 and deep-speeding is false and rev-skips is 0 and score < min-win - 4:
+			if need-rev-check and global-delay > 0 and the remainder after dividing global-delay by 5 is 0 and rev-skips is 0 and score < min-win - 4:
 				say "Okay, do you want to try to do more?";
 				if the player yes-consents:
 					do nothing;
@@ -8332,7 +8346,7 @@ carry out revovering:
 		if d2 entry is true, moot use2 entry;
 		if there is a postproc entry, follow the postproc entry;
 		if global-delay < rev-skips, say "rev-skips was too much by [rev-skips - global-delay].";
-		if the remainder after dividing global-delay by 5 is 0 and deep-speeding is false and rev-skips is 0 and score < min-win - 4:
+		if need-rev-check and the remainder after dividing global-delay by 5 is 0 and rev-skips is 0 and score < min-win - 4:
 			say "Okay, do you want to try to do more?";
 			if the player yes-consents:
 				do nothing;
