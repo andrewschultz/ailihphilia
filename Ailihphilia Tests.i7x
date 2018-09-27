@@ -181,7 +181,7 @@ test e11 with "test part11".
 
 chapter quick start
 
-test qs with "pack cap/e/get pyx/n/get all/s/s/evade dave/w/bore rob/work row/get ec/e/n/w/w"
+test qs with "pack cap/e/get pyx/n/get all/s/s/evade dave/w/bore rob/word row/get ec/work row/use nub on reviver/rei trap art/e/n/w/w"
 
 chapter miscwarp
 

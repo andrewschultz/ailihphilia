@@ -921,7 +921,7 @@ to say mis of (n - a number):
 		if N > 0, now entry N in checkoffs is true;
 		increment mist-found;
 		if mist-found is 1:
-			say "[paragraph break](NOTE: this was a specific reject for a good try. For the most part, the pact cap[if flee elf is not moot], once you get it,[end if] will tell you what else you need to riff on, but enough good guesses such as what you tried will tell you how to get secret points.)[run paragraph on][line break]";
+			say "[paragraph break](NOTE: this was a specific reject for a good try. For the most part, the pact cap[if flee elf is not moot], once you get it,[end if] will tell you what else you need to riff on, but enough good guesses such as what you tried will not only give better clues how to get secret points but also let you EYE items for approximately how far along in the game you might use them[unless player has pact cap] once you have the pact cap[end if].)[run paragraph on][line break]";
 			continue the action;
 		if the remainder after dividing mist-found by hint-every-x is 0:
 			while cur-LLP-hint-row < number of rows in table of last lousy points:

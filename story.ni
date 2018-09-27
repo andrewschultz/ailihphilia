@@ -701,6 +701,9 @@ nothing-txt is a number that varies.
 
 parser error flag is a truth state that varies.
 
+Rule for printing a parser error when the latest parser error is the nothing to do error:
+	say "It looks like you tried a command like TAKE ALL, but nothing registered as something you could take. While the game individually rejects take individual scenery, ALL only looks at what you can realistically take."
+
 the last-command is indexed text that varies.
 
 Rule for printing a parser error when the latest parser error is the noun did not make sense in that context error:
@@ -952,15 +955,15 @@ definition: a thing (called th) is insertable-to-use:
 	no;
 
 definition: a thing (called th) is insert-to-use:
-	if noun is a workable, yes;
-	if noun is tract cart, yes;
-	if noun is eye, yes;
-	if noun is navy van, yes;
-	if noun is stole lots, yes;
-	if noun is yard ray, yes;
-	if noun is butene tub, yes;
-	if noun is sword rows, yes;
-	if noun is me totem, yes;
+	if th is a workable, yes;
+	if th is tract cart, yes;
+	if th is eye, yes;
+	if th is navy van, yes;
+	if th is stole lots, yes;
+	if th is yard ray, yes;
+	if th is butene tub, yes;
+	if th is sword rows, yes;
+	if th is me totem, yes;
 	no;
 
 instead of inserting into (this is the convert insert to useon when sensible rule):
@@ -1009,7 +1012,7 @@ chapter taking people
 the can't take other people rule is not listed in any rulebook.
 
 check taking a person:
-	say "While you need to 'take' some people metaphorically, doing so physically is impossible and useless. You need to specify how to get around or defeat someone." instead;
+	say "While you need to 'take' some people metaphorically, doing so physically is unrealistic, even in a weird world filled with silly palindromes. So you need to specify how to get around, defeat or help someone." instead;
 
 chapter procedurality
 
@@ -1132,8 +1135,8 @@ instead of thinking:
 				skip upcoming rulebook break;
 			say "[remind-msg entry]";
 			now got-later-use is true;
-	say "[if got-later-use is true][paragraph break][else][line break][end if]";
 	if cap-ever-pace is true and kayo yak is not moot, say "You need to figure [if yak-lair is true]what to say to the yak to get rid of the ogre[else if cap-during-yak is true]where to end up when you run with the pact/pace cap[else]when to make the pact cap a pace cap[end if].";
+	if got-later-use is true, say "[paragraph break]";
 	if got-later-use is false, say "As far as you know, there are no challenges where you were pretty sure what to do, but you didn't have the right item yet.";
 	if number of beep-think things > 0, say "You need to do something weird to deal with [the list of beep-think things].";
 	let wayoutrooms be 0;
@@ -1369,6 +1372,7 @@ check taking inventory when Dave is moot (this is the ailihphilia inventory rule
 	now all helpdocs are unmarked for listing;
 	now all things worn by the player are unmarked for listing;
 	now state tats are unmarked for listing;
+	now x y pyx is unmarked for listing;
 	now sto lots is unmarked for listing;
 	now all books are unmarked for listing;
 	say "'Met item' list[if number of things carried by player > 7]--man, your STO-LOTS can hold a lot[else if player has sto lots] in your sto-lots[end if]:[line break]";
@@ -1377,6 +1381,7 @@ check taking inventory when Dave is moot (this is the ailihphilia inventory rule
 	if player has SOME DEMOS, say "You've [if number of lugged books is 0]still[else]also[end if] got that small book, [SOME DEMOS].";
 	if number of ingredients carried by player > 0, say "Food found[if chef-yet is true] (not including what you mixed in Mont Nom)[end if]: [a list of ingredients carried by player].";
 	if number of things worn by player > 0, say "You are wearing: [a list of things worn by player].";
+	if player carries x y pyx, say "The X/Y pyx you're carrying will let you see a MAP anywhere.";
 	if number of helpdocs carried by the player is 1:
 		say "So far, you only have [the list of helpdocs carried by the player] as reference, and it's not very useful. More later, maybe?";
 	else:
@@ -3830,6 +3835,7 @@ to-get	in-limbo	combo-rule	remind-msg
 --	false	puff-known rule	"You need to find where to puff up."
 --	false	pull-known rule	"You need to find where to pull up."
 --	false	sap-uncut rule	"You need (and might already have) something to cut the past sap with [hn-in of Cold Loc]."
+--	false	worn-clued rule	"There might be a good time to switch back to Worn Row."
 Bond Nob	false	--	"You didn't have the right stuff to give the Bond Nob from the Puce Cup last time."
 cassettes sac	false	--	"You [if player has cave vac]may now have[else]need[end if] something more powerful than the Dirt Rid to clean the cassettes sac."
 el doodle	false	--	"The Code Doc couldn't quite read El Doodle as-is. You [if sharp rahs are off-stage]haven't found a way to clean it up yet[else]cleaned it in the edits tide, though, which should help[end if]."
@@ -3845,6 +3851,10 @@ UFO tofu	false	--	"You [if cross orc is in Toll Lot]need to get rid of the cross
 yahoo hay	false	--	"There's still some yahoo hay left in Moo Room. The coarser, more practical stuff."
 yard ray	false	--	"You know to EMIT NOONTIME with the yard ray, but you don't have the ammunition."
 [zzlat]
+
+this is the worn-clued rule:
+	if psi wisp is not moot and worn-tried is true, the rule succeeds;
+	the rule fails.
 
 this is the can-chef rule:
 	if chef-Ian-clue is true and Ian is not moot, the rule succeeds;
@@ -3912,7 +3922,7 @@ chapter KAOS Oak
 
 instead of doing something with KAOS Oak when flee elf is in Fun Enuf: say "The Flee Elf directs your attention to the cap. 'First things first. The oak can wait for later. Much later.'" instead;
 
-The KAOS Oak is peripheral scenery in Fun Enuf. "[if flee elf is in Fun Enuf]It's forbiddingly wide[else]It is much too sturdy. You'll need a wild, powerful contraption to deal with it[end if]."
+The KAOS Oak is peripheral scenery in Fun Enuf. "[if flee elf is in Fun Enuf]It's forbiddingly wide[else]It's incredibly sturdy and very wide. You'll need a wild, powerful contraption to deal with it[end if]."
 
 printed name of KAOS Oak is "[kaoscaps]".
 
@@ -5745,7 +5755,7 @@ every turn when player is in Worn Row and Rob is in Worn Row:
 
 chapter bad dab
 
-the bad dab is peripheral scenery in Worn Row. description is "[if Rob is in Worn Row]WORN ROW is written, somewhat dubiously[else if row-prog > 2]WOR* ROW is here, reminding you [Worn Row] can be switched around at will[else if row-prog > 0]WOR- ROW is still here, a bit blotchier than when you opened [Worn Row]. Maybe there's still something more Worn Row could be[else]The bad dab spells out WOR- ROW. Maybe there's more here than just Worn Row[end if]."
+the bad dab is peripheral scenery in Worn Row. description is "[if Rob is in Worn Row]WORN ROW is written, somewhat dubiously[else if row-prog > 2]WOR* ROW is here, reminding you [Worn Row] can be switched around at will[else if row-prog > 0]WOR+ ROW is still here, a bit blotchier than when you opened [Worn Row]. Maybe there's still something more Worn Row could be[else]The bad dab spells out WOR- ROW. Maybe there's more here than just Worn Row[end if]."
 
 understand "wor" and "wor row" as the bad dab when bad dab is quicknear.
 
@@ -6261,8 +6271,12 @@ carry out wordrowing:
 	the rule succeeds;
 
 to notify-row-change:
-	if Worn Row is wordy, say "The tract cart sinks into the wall, and after some whirring, [Worn Row] changes a bit.";
-	if Worn Row is worky, say "The [if number of moot workables is not 2]machines retract[else]remaining machine retracts[end if] into the wall, and after some whirring, the tract cart reappears."
+	if Worn Row is wordy:
+		say "You hear a whirring behind the wall as the tract cart sinks into it.";
+	else if Worn Row is worky:
+		say "[if test set is moot]Even though there's nothing to remove from Work Row any more, you still hear whirring[else if test set is in Worn Row]The wall whirs as the test set spins back in[else]The machines spin back into the wall with an efficient whirr[end if].";
+	else:
+		say "The redness ender retracts. Who knows if you'll see it again?"
 
 to word-row-open:
 	clear-worn-row;
@@ -6281,12 +6295,16 @@ understand the command "worn row" as something new.
 
 understand "wornrow" and "worn" and "worn row" as wornrowing when player is in Worn Row.
 
+worn-tried is a truth state that varies.
+
 carry out wornrowing:
 	if psi wisp is moot, say "Now that the redness ender and Psi Wisp destroyed each other, Worn Row really holds nothing else for you." instead;
 	unless ever-wordrow is true or ever-workrow is true, say "It is Worn Row. But maybe it can become something else." instead;
-	if psi wisp is not in Worn Row, say "[if ever-wordrow is false or ever-workrow is false]The bad dab seems to indicate there's more here than [Worn Row], but y[else]Y[end if]ou don't want to face the redness ender alone back in Worn Row. You're not very red, but it seemed like it might just shoot any old thing." instead;
+	if psi wisp is not in Worn Row:
+		now worn-tried is true;
+		say "[if ever-wordrow is false or ever-workrow is false]The bad dab seems to indicate there's more here than [Worn Row], and there's no reason you can't go back to Worn Row, but y[else]Y[end if]ou don't want to face the redness ender alone back in Worn Row. You're not very red, but it seemed like it might just shoot any old thing." instead;
 	clear-worn-row;
-	say "A buzz and a whirr makes the Psi Wisp pause. The [if Worn Row is worky]machines snap[else]tract cart snaps[end if] back into a wall, and the redness ender pops out of another. It locks on the Psi Wisp, which is very red indeed. Zap! Zot! The Psi Wisp becomes even redder before exploding. As its last act, the Psi Wisp channels that energy back into the redness ender, which also explodes. You managed to get out of the way during all this to pick up the items you dropped in Gross Org.";
+	say "A buzz and a whirr makes the Psi Wisp pause. The [if Worn Row is worky]machines snap[else]tract cart snaps[end if] back into a wall, and the redness ender pops out of another. It locks on the Psi Wisp, which is very red indeed. Zap! Zot! The Psi Wisp becomes even redder before exploding. As its last act, the Psi Wisp channels that energy back into the redness ender, which also explodes. Some of the debris drops onto the bad dab, wiping it out. You managed to get out of the way during all this to pick up the items you dropped in Gross Org.";
 	win-wisp-chase;
 	check-dab;
 	score-inc; [Yelpley/WORN ROW]
@@ -7312,7 +7330,7 @@ talk-text of Ergot Ogre is "'Guh! Ug!'[paragraph break]Diplomacy won't get you b
 talk-text of Flee Elf is "[one of]'That cap. It's for you. Find the right way to take it, and I'll leave you on your way. Ask me again for hints.'[or]'Well, there are only twenty-six ways to take the Pact Cap--um, okay, twenty-five, if you think about it. And don't overthink. Once you do, I'm on my way.'[stopping]".
 talk-text of Gulf Lug is "'Ill, I...' Then general disappointment how Eruct-Cure and Burp Rub will only cure the SYMPTOMS.".
 talk-text of Ian is "Ian sniffs. 'Why should I talk to someone not classy enough to BELONG here on Mont Nom?' He turns his head for a moment, as if doing something he's ashamed of.".
-talk-text of Kayo Yak is "It looks up a bit but then ignores you. Maybe there's an order it can respond to.".
+talk-text of Kayo Yak is "It looks up a bit but then ignores you. Well, it is a yak, not a yack, after all. Maybe there's an order it can respond to.".
 talk-text of King Nik is "'I am not a very good king! I've tried to understand social and economic forces and big picture issues and stuff. But it gets all muddled. I'm no [next-rand-txt of table of King Nik ancestors]. I'm worried my kingdom will soon become Skint Nik's. Maybe you could help me?'".
 talk-text of Knife Fink is "The Knife Fink stops and looks over your possessions for a moment.".
 talk-text of Known Wonk is "'Say, as...' There is some awkward small talk. The Known Wonk's mind is elsewhere, but maybe you can help with practical matters.".
@@ -8223,7 +8241,7 @@ carry out revovering:
 	else if in-tip-it is true:
 		say "[if x-ite tix are off-stage]I didn't find anything to do. This is a bug in the warp code. Apologies, and I'd be interested how this happened[else]You've got the X-ITE TIX. The last step, you need to do yourself[end if].";
 	else:
-		say "There should've been a reject message, or there is a bug in the rev over/deep speed code. If you have a transcript, report the bug at my github site or email me.";
+		say "Uh oh. There should've been a message saying you can't warp any more and only have the Dirge Grid left. It's likely there is a bug in the rev over/deep speed code. Continually using TIP IT, however, should work. If you have a transcript, report the bug at my github site or email me.";
 	follow the notify score changes rule;
 	if test set is moot and player is not in Fun Enuf and Dirge Grid is not visited:
 		say "(Also moving you to [Fun Enuf] for the endgame)[paragraph break]";
