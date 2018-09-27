@@ -635,8 +635,21 @@ when play begins (this is the begin ailihphilia for reals rule):
 		say "[if max-score of Odd Do is number of rows in table of last lousy points]LLPs = LLP table rows[else]Uh oh, [max-score of Odd Do] Odd Do points and [number of rows in table of last lousy points] LLP table rows. We need to fix this[end if].";
 	now right hand status line is "[if cur-score of mrlp < 10] [end if][cur-score of mrlp]/[max-score of mrlp] [if score < 10] [end if][score]/[if min-win < maximum score][min-win]-[end if][maximum score]";
 	now left hand status line is "[location of player] ([mrlp])[dir-summary]";
-	say "First, would you like to restore a previous game and skip the introduction?";
-	if the player no-consents, try restoring the game;
+	say "First, would you like to see the introduction (I), restore a previous game (R), or skip the introduction (S)?";
+	let read-intro be true;
+	if debug-state is false:
+		let got-good-key be false;
+		while got-good-key is false:
+			let Q be the chosen letter;
+			if Q is 73 or Q is 105:
+				now read-intro is true;
+				now got-good-key is true;
+			else if Q is 81 or Q is 113:
+				try restoring the game;
+				say "Restore failed. Let's try again.";
+			else if Q is 82 or Q is 114:
+				now read-intro is false;
+				now got-good-key is true;
 	now use-custom-screenread is true; [see the Trivial Niceties extension for details. This wipes TN's default generic nag question.]
 	say "Next, are you using a screen reader? Some of Ailihphilia's features, like the text map, don't work well with them.";
 	if the player no-consents, now screenread is true;
@@ -644,6 +657,9 @@ when play begins (this is the begin ailihphilia for reals rule):
 	sort table of last lousy points in random order;
 	repeat through table of all randoms:
 		sort tabnam entry in random order;
+	if read-intro is false:
+		say "[line break]I am dumping you in Fun Enuf. If you need a refresher on commands, use [b]ABOUT[r] or [b]VERBS[r].";
+		continue the action;
 	now initseed of Name ME Man is a random number between 0 and prime-constant / 2 - (number of rows in table of random palindrome lastfirst names);
 	now initseed of Oh Who is a random number between prime-constant / 2 + 1 and prime-constant - (number of rows in table of random palindrome firstlast names);
 	say "[line break]It's not your first dream about how awful high school was, but it's the worst in a while. A few 'favorite' classmates chanting 'Diary raid!' and passing it around as they mock 'Beefy? Feeb! Bony Nob!' Of course, you never HAD a diary in high school, but that doesn't matter.[wfak-d]";
@@ -987,6 +1003,13 @@ report undoing an action:
 	next-rand table of undoings;
 	consider the notify cycling rule;
 	the rule succeeds;
+
+chapter taking people
+
+the can't take other people rule is not listed in any rulebook.
+
+check taking a person:
+	say "While you need to 'take' some people metaphorically, doing so physically is impossible and useless. You need to specify how to get around or defeat someone." instead;
 
 chapter procedurality
 
@@ -1847,7 +1870,7 @@ instead of eating demo med, say "That would only be a temporary reprieve from yo
 
 instead of eating:
 	say "[if noun is Demo Med]You're not sick enough to risk it. Maybe someone in much worse shape than you...[else if noun is edible]Food? Oof![else]You contemplate a wan gnaw, but no voice says 'Naw. G'wan!'[end if]";
-	if eat-warning is false, say "(You don't need to eat anything to win. Food may be more useful in other ways.)[paragraph break]";
+	if eat-warning is false, say "(You don't need to eat anything to win. [if martini tram is off-stage]Food may be more useful in other ways[else]You already worked with food enough in Mont Nom[end if].)[paragraph break]";
 	now eat-warning is true instead;
 
 chapter jumping
@@ -1894,6 +1917,12 @@ instead of attacking:
 	if noun is player, say "PvP!" instead;
 	if noun is senile felines, say "You don't want to hear them go RWOWR." instead;
 	if noun is ME Totem, say "The Yuge Guy, momentarily scared, calls 'Heh! Eh?' once he sees you're too weak to do any REAL damage." instead;
+	if player is in Dirge Grid:
+		if noun is a person, say "You're up against more than physical force could solve[if player has taboo bat]. Plus, you have two weapons: the taboo bat and the yard ray[end if]." instead;
+		if taboo bat is moot:
+			say "You really only have one weapon, the yard ray.";
+			try useoning yard ray with noun instead;
+		say "You need to specify your weapon with USE." instead;
 	next-rand table of attackings;
 
 chapter going
@@ -4064,7 +4093,7 @@ understand "pack" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did." instead;
-	say "'Rec [']er!' shouts the Flee Elf. 'Hat! Ah!'[paragraph break]The Flee Elf hands you a Set O Notes and explains you need to find a way to destroy the [kaoscaps] to the north. Also, the Flee Elf points out the LOVE VOL and LO VOL settings on the pact cap: LO VOL means the cap is quiet and won't make a weird noise if you look at things that need a weird action. LOVE VOL means you will.[paragraph break]The Flee Elf also shows you a pip on the cap shows whether you may be able to [b]EYE[r] items later to determine approximately how far along they are in your quest--if you make enough good guesses. You ask what this means. The Flee Elf says 'like [if tried-elf is true]if[else]when[end if] you tried to made me something else[if eye-charges > 0]. You've done so much, you already got a charge[end if],' and points you to the Tix Exit, which reads 79, presumably the last thing you'll need to operate.[paragraph break]'It's best I...' and with that, the Flee Elf becomes a FLED elf, pointing at the tile lit (slightly altered). You notice a TIX EXIT to the south, but you don't have any tickets.";
+	say "'Rec [']er!' shouts the Flee Elf. 'Hat! Ah!'[paragraph break]The Flee Elf hands you a Set O Notes and explains you need to find a way to destroy the [kaoscaps] to the north. Also, the Flee Elf points out the LOVE VOL and LO VOL settings on the pact cap: LO VOL means the cap is quiet and won't make a weird noise if you look at things that need a weird action. LOVE VOL means you will.[paragraph break]The Flee Elf also shows you [if eye-charges > 0]the lit[else][end if]a pip on the cap, which tells whether you may be able to [b]EYE[r] items to determine approximately how far along they are in your quest--if you make enough good guesses. You ask what this means. The Flee Elf says 'like [if tried-elf is true]if[else]when[end if] you tried to made me something else[if eye-charges > 0]. You've done so much, you already got a charge[end if],' and points you to the Tix Exit, which reads 79, presumably the last thing you'll need to operate.[paragraph break]'It's best I...' and with that, the Flee Elf becomes a FLED elf, pointing at the tile lit (slightly altered). You notice a TIX EXIT to the south, but you don't have any tickets.";
 	wfak;
 	say "[line break]You put the cap on. It fits okay. It can stay all quest. Not very stylish, but it sure beats wearing a bib.";
 	get-cap;
@@ -5323,7 +5352,7 @@ screenwarn is a truth state that varies.
 
 report screening when player has pyx and screenread is true and screenwarn is false:
 	now screenwarn is true;
-	say "[line break]NOTE: this makes the X/Y Pyx you're carrying useless, since it relies on text images that play poorly with a screen reader. The THINK command, however, can show you where you want or need to go.";
+	say "[i][bracket]NOTE: this makes the X/Y Pyx you're carrying useless, since it relies on text images that play poorly with a screen reader. The THINK command, however, can show you where you want or need to go.[close bracket][r]";
 
 does the player mean doing something with pyx when player has doodle or player has spa maps: it is unlikely.
 
@@ -5346,16 +5375,18 @@ understand the command "ma" as something new.
 understand the command "map" as something new.
 understand the command "xx" as something new.
 
-understand "m" as xpyxing when pyx is quicknear or pyx is in DropOrd.
-understand "mm" as xpyxing when pyx is quicknear or pyx is in DropOrd.
-understand "ma" as xpyxing when pyx is quicknear or pyx is in DropOrd.
-understand "map" as xpyxing when pyx is quicknear or pyx is in DropOrd.
-understand "xx" as xpyxing when pyx is quicknear or pyx is in DropOrd.
+understand "m" as xpyxing.
+understand "mm" as xpyxing.
+understand "ma" as xpyxing.
+understand "map" as xpyxing.
+understand "xx" as xpyxing.
 
 xpyxing is an action applying to nothing.
 
 carry out xpyxing:
-	if pyx is in TempMet, say "[chase-pass]You lost the pyx when the [chase-person] started chasing you. You'll have to see things out before you go to retrieve it." instead;
+	if Yawn Way is unvisited, say "You haven't found the map yet, so this map command doesn't work." instead;
+	if pyx is in Yawn Way and player is not in Yawn Way, say "The Pyx is in Yawn Way, so you can't reference it right now." instead;
+	if pyx is in DropOrd, say "You dropped the pyx when the [chase-person] started chasing you, but you remember it well enough...";
 	try examining the pyx instead;
 
 definition: a room (called rm) is wayout:
@@ -6724,7 +6755,7 @@ check taking nat's when nat's is in Deft Fed:
 	say "Ugh! It feels too gross to take. Maybe you need to prepare yourself to feel less squeamish about taking it.";
 	consider the cap-beep rules for nat's instead;
 
-understand "nats" and "nats tan" as nat's tan.
+understand "nats/nat" and "nats/nat tan" as nat's tan.
 
 chapter placed decal
 
@@ -6745,8 +6776,8 @@ understand "stand [something]" as standing.
 carry out standing:
 	if player has Nat's Tan, say "You already did. And you still do. Barely. Best not do anything to upset that." instead;
 	if noun is Nat's Tan:
-		if the player's command does not include "nat":
-			say "I'm going to be super pedantic and make you say it palindromically, but yes, that's the basic idea." instead;
+		if the player's command does not include "nats":
+			say "[the player's command]: I'm going to be super pedantic and make you say it palindromically, but yes, that's the basic idea." instead;
 		say "It's tough, but you manage to stand the icky Nat's Tan enough to pick it up--it's for the good of your adventure. Maybe you can dump it on someone or something who finds it even ickier than you do.";
 		score-inc; [Yelpley/stand nat's]
 		now player has Nat's Tan;
@@ -7206,7 +7237,7 @@ the Sci Pics are plural-named peripheral scenery in Pro Corp. "They detail what 
 
 chapter butene tub
 
-the butene tub is scenery in Pro Corp. "It smells pretty nice, so it's probably not a butyl-y tub. But it's been marked condemned, dangerously close to falling apart if you put too much weight on it. Who knows what sort of reactions could occur with the flammable butene if the tub collapsed from a big chemical bang and fell to the dangerously sparky area below with special instruments and such? You can't just pour any old thing down![paragraph break]What sort of adventurer could ignore a warning like that? Especially in a game that's meant to be polite on the Zarfian cruelty scale, thus eliminating all risk and/or need to type UNDO if you mess up!"
+the butene tub is scenery in Pro Corp. "It smells pretty nice, so it's probably not a butyl-y tub. But it's been marked condemned, dangerously close to falling apart. It looks sturdy enough, but who knows what sort of reactions could occur with the flammable butene if the tub collapsed from a big chemical bang and fell to the dangerously sparky area below with special instruments and such? You can't just pour any old thing down![paragraph break]What sort of adventurer could ignore a warning like that? Especially in a game that's meant to be polite on the Zarfian cruelty scale, thus eliminating all risk and/or need to type UNDO if you mess up!"
 
 instead of entering butene tub:
 	say "[if psi wisp is in Pro Corp][chase-pass]That's no way to hide from the psi wisp[else]You're clean enough, really[end if]."
@@ -7217,7 +7248,7 @@ the gash sag is peripheral scenery. "It has covered up your destruction of the b
 
 chapter resale laser
 
-The resale laser is a tronpart. "It has a big red 1 sketched on it in LCD. Perhaps it only has one use left, and you need to make it count. I mean, things are bad in Yelpley and Grebeberg, but not bad enough that any fool can get their hands on something that can kill repeatedly and quickly."
+The resale laser is a tronpart. description is "It has a big red 1 sketched on it in LCD. Perhaps it only has one use left, and you need to make it count. I mean, things are bad in Yelpley and Grebeberg, but not bad enough that any fool can get their hands on something that can kill repeatedly and quickly."
 
 chapter gold log
 
@@ -8117,7 +8148,7 @@ carry out revovering:
 					increment the score;
 					increment cur-score of reg-plus entry;
 					now done entry is true;
-			if the remainder after dividing global-delay by 5 is 0 and deep-speeding is false and rev-skips is 0 and score < min-win - 4:
+			if global-delay > 0 and the remainder after dividing global-delay by 5 is 0 and deep-speeding is false and rev-skips is 0 and score < min-win - 4:
 				say "Okay, do you want to try to do more?";
 				if the player yes-consents:
 					do nothing;
@@ -8153,7 +8184,7 @@ carry out revovering:
 		if use1 entry is a book:
 			if Worn Row is worky, now wr-flipped is true;
 			word-row-open;
-		if say-unless-speed, say "You [if wr-flipped is true]toggle [Worn Row], then [end if][if u1a is true](acquire and) [end if]use [the use1 entry] with [if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if][if demos-too is true]--and scoring SOME DEMOS in the process[else if use1 entry is balsa slab]. Then you leave the Red Roses Order to people who can rebuild Yelpley[end if].";
+		if say-unless-speed, say "You [if wr-flipped is true]toggle [Worn Row], then [end if][if u1a is true]acquire and [end if]use [the use1 entry] with [if u2a is true and u1a is true](also acquired) [else if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if][if demos-too is true]--and scoring SOME DEMOS in the process[else if use1 entry is balsa slab]. Then you leave the Red Roses Order to people who can rebuild Yelpley[end if].";
 		if use2 entry is a workable:
 			if Worn Row is wordy, now wr-flipped is true;
 			work-row-open;
@@ -8184,7 +8215,7 @@ carry out revovering:
 	if turns-to-add > 0:
 		let delt be score - last notified score;
 		skip upcoming rulebook break;
-		if delt > 2 and score is 73, say "[line break]Thus ends your [if deep-speeding is true]DEEP SPEED [else if revving-over is true]REV OVER [else]accelerated [end if]journey, so close to saving Grebeberg and Yelpley.";
+		if delt > 2 and score is 73, say "[line break]Thus ends your [if deep-speeding is true]DEEP SPEED [else if revving-over is true]REV OVER [else]accelerated [end if]journey, leaving you very close to saving Grebeberg and Yelpley.";
 		say "[line break][bracket][if delt > 0]I just gave you [delt] point[plur of delt] to go with your quick trip, and I also[else]I[end if] tacked on [turns-to-add] turns, as a guesstimate.[close bracket][paragraph break]";
 		now score-cheat is score-cheat + score - last notified score;
 		now last notified score is score;
@@ -8309,38 +8340,11 @@ carry out eyeing:
 		say "Your eye wanders from [the use1 entry] to [the use3 entry]...";
 	let Q be rowcount of n1;
 	if Q is -1, say "You see nothing special. Well, that's one less thing you need to manipulate." instead;
-	say "On eyeing [the n1], you notice the pact cap registers the number [Q][one of]. You can recall this with THINK[stopping].";
+	say "On eyeing [the n1], you notice the pact cap registers the number [Q][one of]. You can recall this information later with THINK[stopping].";
 	now eyespoil of n1 is Q;
 	decrement eye-charges;
 	if eye-charges is 0, say "[line break]The pip in the pact cap winks out. You may need more good guesses to bring it back.";
 	the rule succeeds.
-
-chapter eaing - not for release
-
-eaing is an action out of world.
-
-understand the command "ea" as something new.
-
-understand "ea" as eaing.
-
-carry out eaing:
-	let minuses be { pact cap };
-	now minuses is { };
-	let cluables be { pact cap };
-	now cluables is { };
-	repeat with X running through things:
-		if X is the player, next;
-		if X is not quicknear, next;
-		now eyespoil of X is rowcount of X;
-		if rowcount of X is -1:
-			add X to minuses;
-		else:
-			add X to cluables;
-	sort cluables in eyespoil order;
-	if number of entries in minuses > 0, say "Un-eyeable: [minuses].";
-	repeat with Y running through cluables:
-		say "[Y]: [eyespoil of Y].";
-	the rule succeeds;
 
 chapter meming
 
@@ -9842,6 +9846,61 @@ carry out llpqing:
 	now LLP-quick is false;
 	if orm is not Le Babel, move player to orm;
 	the rule succeeds;
+
+chapter eaing
+
+eaing is an action out of world.
+
+understand the command "ea" as something new.
+
+understand "ea" as eaing.
+
+carry out eaing:
+	let minuses be { pact cap };
+	now minuses is { };
+	let cluables be { pact cap };
+	now cluables is { };
+	repeat with X running through things:
+		if X is the player, next;
+		if X is not quicknear, next;
+		now eyespoil of X is rowcount of X;
+		if rowcount of X is -1:
+			add X to minuses;
+		else:
+			add X to cluables;
+	sort cluables in eyespoil order;
+	if number of entries in minuses > 0, say "Un-eyeable: [minuses].";
+	repeat with Y running through cluables:
+		say "[Y]: [eyespoil of Y].";
+	the rule succeeds;
+
+chapter euing
+
+[ * EU adds a charge to the pip ]
+
+euing is an action out of world.
+
+understand the command "eu" as something new.
+
+understand "eu" as euing.
+
+carry out euing:
+	increment eye-charges;
+	say "[eye-charges] eye charges now.";
+	the rule succeeds;
+
+chapter eming
+
+[ * EM fakes a mistake ]
+
+eming is an action out of world.
+
+understand the command "em" as something new.
+
+understand "em" as eming.
+
+carry out eming:
+	say "This simulates a good guess. You should get a pip charge after every 5 good guesses, real or fake.[mis of 0]";
 
 section llplling - not for release
 

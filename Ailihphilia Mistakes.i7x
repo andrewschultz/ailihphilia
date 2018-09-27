@@ -914,10 +914,11 @@ hint-every-x is a number that varies. hint-every-x is 5.
 
 to say mis of (n - a number):
 	consider the notify cycling rule;
-	let Q be entry N in checkoffs;
+	let Q be false;
+	if N > 0, now Q is entry N in checkoffs;
 	if being-chased is true, now chase-mulligan is true;
 	if Q is false:
-		now entry N in checkoffs is true;
+		if N > 0, now entry N in checkoffs is true;
 		increment mist-found;
 		if mist-found is 1:
 			say "[paragraph break](NOTE: this was a specific reject for a good try. For the most part, the pact cap[if flee elf is not moot], once you get it,[end if] will tell you what else you need to riff on, but enough good guesses such as what you tried will tell you how to get secret points.)[run paragraph on][line break]";
@@ -934,9 +935,11 @@ to say mis of (n - a number):
 						now mis-yet is true;
 						say "[line break]NOTE: THINK[if refer-yet is true]/REFER[end if] will show you the LLPs clued so far that you haven't figured, yet.[run paragraph on][line break]";
 					break;
-			say "[line break][if flee elf is not moot]A pip in the [else]The pip in your[end if] pact cap [if eye-charges > 1]brightens further[else if ever-pip is false]lights up! You'll be able to EYE something, now[else]lights back up[end if].";
+			say "[line break][if flee elf is not moot]A pip in the[else]The pip in your[end if] pact cap [if eye-charges > 0]brightens further[else if ever-pip is false]lights up! [now-cap][else]lights back up[end if].";
 			now ever-pip is true;
 			increment eye-charges;
+
+to say now-cap: say "[if flee elf is moot]You'll be able to EYE something, now[else]Maybe when you get the pact cap, the Flee Elf will explain what that's about[end if]"
 
 volume old school verbs
 

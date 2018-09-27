@@ -68,8 +68,9 @@ every turn (this is the notify cycling rule):
 			if thru-yet entry is 1:
 				now thru-yet entry is 2;
 				increment tables-found;
+				if debug-state is true, say "[tabnam entry].";
 				if tables-found is 1:
-					say "[if there is a cycle-note entry][cycle-note entry][line break][else]Whoah...that sounds familiar. You suspect things will loop again.[end if]";
+					say "[line break][if there is a cycle-note entry][cycle-note entry][line break][else]Whoah...that sounds familiar. You suspect the dialogue will loop again.[end if]";
 				else if tables-found is 2:
 					say "This is a further note to say you've done so more than once this turn, which is an impressive bit of timing, even if it doesn't get you any points.";
 		if tables-found is 0 and debug-state is true, say "This is a BUG--you should have been notified of random cycling in a table, but you weren't.";
