@@ -554,7 +554,7 @@ to score-inc:
 
 check requesting the score:
 	say "Your overall score so far is [score] of [maximum score] in [turn count] [if turn count is nontrivially-palindromic](!) [end if]turn[plur of turn count][if score < 4]. But don't worry, points pile up pretty quickly once you get going[end if]. [to-get-max].";
-	say "[line break]Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do].";
+	say "[line break]Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do]. Note some acts you can perform in one region may be scored for another.";
 	if My Gym is visited or Evaded Ave is visited:
 		let nmg be number of moot guhthugs;
 		if number of guhthugs is not nmg, say "[line break][if nmg is 0]You haven't gotten any guh-thugs out of the way yet[else]You currently disposed of [number of moot guhthugs] guh-thug[plur of nmg] blocking your way: [list of moot guhthugs][end if].";
@@ -627,7 +627,7 @@ LLP-last is a number that varies.
 
 This is the LLP or normal score changes rule:
 	if the score is not the last notified score:
-		say "[bracket][if cur-score of Odd Do > LLP-last]You found [a-verylast] Last Lousy Point![no line break][else]Your score has just gone up by one point.[no line break][end if][close bracket][paragraph break]";
+		say "[bracket][if cur-score of Odd Do > LLP-last]You found [a-verylast] Last Lousy Point![close bracket][else]Your score has just gone up by one point.[close bracket][end if][paragraph break]";
 		now the last notified score is the score;
 		now LLP-last is cur-score of Odd Do;
 
@@ -1620,7 +1620,7 @@ showed-sites is a truth state that varies.
 
 carry out creditsing:
 	now show-dev is true;
-	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in alphabetical order: Mike Carletta, Wade Clarke, Arthur DiBianca, Viv Dunstan, Anssi Raissanen, Brian Rushton, Mike Spivey, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and still gave positive suggestions about cluing and so forth. If you want to join this elite club, and you find a bug, write me at [email].[paragraph break]IFComp organizers past and present. Without them, I wouldn't have started and kept going. Whether that's good for gaming is up for debate, but it's been good for me.[paragraph break]Various Python communities, especially StackOverflow, helped me to organize source control and write utilities that helped not only to extract palindromes but also to tune up Inform code (obligatory thanks to all past and current Inform developers, from whom I've stolen game code and/or used extensions) and run simple tests.[paragraph break]I also found some websites useful. DEV ED or DEVED will show which helped me and how.";
+	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in alphabetical order: Marnix Van Den Bos, Mike Carletta, Wade Clarke, Arthur DiBianca, Viv Dunstan, Anssi Raissanen, Brian Rushton, Mike Spivey, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and still gave positive suggestions about cluing and so forth. If you want to join this elite club, and you find a bug, write me at [email].[paragraph break]IFComp organizers past and present. Without them, I wouldn't have started and kept going. Whether that's good for gaming is up for debate, but it's been good for me.[paragraph break]Various Python communities, especially StackOverflow, helped me to organize source control and write utilities that helped not only to extract palindromes but also to tune up Inform code (obligatory thanks to all past and current Inform developers, from whom I've stolen game code and/or used extensions) and run simple tests.[paragraph break]I also found some websites useful. DEV ED or DEVED will show which helped me and how.";
 
 chapter deveding
 
@@ -1694,8 +1694,8 @@ to say eye-v-note: if eye-charges is 0, say ", once you recharge the pip with so
 carry out verbing:
 	say "[2da]The four basic directions ([b]N, S, E, W[r]) are the main ones, along with [b]USE[r], in order to get through the game. Also, in some places, specific verbs will be needed. None are terribly long, and---well, there is a thematic pattern to them[if Dave is moot], as you've already seen with Dave[end if].";
 	say "[line break][2da]Standard verbs like [b]X[r] ([b]EXAMINE[r]) and [b]LOOK[r] also work.";
-	say "[2da][b]GT[r] or [b]GO TO[r] lets you go to a room, thing or person you've seen before. It fails if the person or thing has been removed from the game. You can also use [b]GR[r] for rooms only, or [b]GI[r] for individuals or items only.";
-	say "[2da][b]T[r], [b]TA[r], [b]TALK TO[r], or [b]GREET[r] talks to someone. There's not much in the way of conversation in this game, but you may get some clues from basic chat. You usually won't need an object, since there's usually no more than one person per room.";
+	say "[2da][b]GT[r] or [b]GO TO[r] lets you go to a room, thing or person you've seen before. It fails if the person or thing has been removed from the game. You can also use [b]GR[r] for rooms only, or [b]GI[r] for individuals or items only. It's meant to save thought, keystrokes and even turn count.";
+	say "[2da][b]T[r], [b]TA[r], [b]TALK TO[r], or [b]GREET[r] talks to someone. There's not much in the way of conversation in this game, but basic chat may be helpful or even amusing. You usually won't need an object with this verb, since there's usually no more than one person per room.";
 	say "[2da][b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
 	say "[2da][b]THINK[r]/[b]TH[r] gives general non-spoiler hints, including where you may wish to visit, what you haven't examined, or what is blocking you[if ever-pip is true][b]EYE[r] lets you look at something to see if it is useful to your quest, and when[eye-v-note][end if].";
 	say "[2da][b]AID[r] gives you spoiler hints for where you are, though it may indicate you need to visit other places first. [b]MEM[r] pinpoints where useful people and things are.";
@@ -2859,7 +2859,7 @@ rep popper	ME Totem	murdered rum	pre-popper-on-totem rule	totem-out rule	true	tr
 Bros' Orb	Mirror Rim	Yard Ray	pre-orb-on-rim rule	sword-rows-reveal rule	true	true	true	false	false	false	Yelpley	Red Roses Order	Red Roses Order	false	"The Bros['] Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Ms. Ism has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, Ms. Ism, live not on evil!' you boom, as the Orb does its work. Ms. Ism looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'My sub-level bus! You won't catch it! The E-Divide will block you!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	pre-slab-on-rows rule	moot-rows-and-tats rule	true	true	false	false	false	false	Yelpley	Red Roses Order	Emo Dome	false	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Ms. Ism."
 not-a-baton	reifier	taboo bat	pre-not-a-baton-on-reifier rule	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
-murdered rum	yard ray	--	pre-rum-on-ray rule	ray-beepy-now rule	true	true	false	false	false	false	Dim Mid	--	--	false	"The yard ray gleams with energy. It seems like it could do some damage now."
+murdered rum	yard ray	--	pre-rum-on-ray rule	ray-beepy-now rule	true	true	false	false	false	false	Dim Mid	--	--	false	"As you combine the spoils from the Yuge Guy and Ms. Ism, the yard ray gleams with energy. It seems like it could do some damage now somewhere even more important than [Sneer Greens] or [Red Roses Order]. Maybe somewhere right between them."
 --	--	--	rev-emit-noontime rule	ray-not-beepy-now rule	true	--	--	false	false	false	Dim Mid	--	--	false	--
 Yard Ray	test set	--	pre-ray-on-set rule	test-set-zapped rule	true	false	true	false	false	false	Dim Mid	Worn Row	Worn Row	false	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
 --	--	--	rev-create-tron rule	--	true	--	--	false	false	false	Dim Mid	Fun Enuf	Fun Enuf	false	--
@@ -3413,7 +3413,8 @@ this is the pre-orb-on-rim rule:
 
 this is the pre-ort-on-garb rule:
 	if in-sos is true:
-		if troll ort is moot, the rule fails;
+		if troll ort is not quicknear, the rule fails;
+		if brag garb is not carried and brag garb is not worn, the rule fails;
 		say "[one of]The brag garb is a bit too strong-smelling. You may have noticed it causes a weird reaction from the kayo yak.[or]Perhaps it smells differently.[or]Do you have any other item that smells funny? More appealing?[or]The troll ort is apparently PINT-A-CATNIP.[or]USE TROLL ORT ON BRAG GARB.[stopping]";
 	the rule succeeds;
 
@@ -3476,7 +3477,7 @@ this is the pre-rahs-on-rug rule:
 this is the pre-ray-on-redivider rule:
 	if in-sos is true:
 		if yard ray is moot or player is not in Dirge Grid, the rule fails;
-		say "[one of]You've got one shot with the Yard Ray, but what to use it on?[or]Killing the Diktat Kid won't stop the other machines from working.[or]The purely violent machines aren't critical, either.[or]USE YARD RAY ON REDIVIDER[stopping].";
+		say "[one of]You've got one shot with the Yard Ray, but what to use it on?[or]Killing the Diktat Kid won't stop the other machines from working.[or]The purely violent machines aren't critical, either.[or]USE YARD RAY ON REDIVIDER.[stopping]";
 	if Knife Fink is in Dirge Grid or Verses Rev is in Dirge Grid:
 		say "You can't get a clear shot with [the list of henchy people] in the way.";
 		the rule fails;
@@ -3560,6 +3561,7 @@ this is the pre-tan-on-rocs rule:
 
 this is the pre-tix-on-exit rule:
 	if in-sos is true:
+		if x-ite tix are off-stage, the rule fails;
 		say "[if player is in Dirge Grid]You just need to go back south with the Tix[else if player is not in fun enuf]You can win by going back to Fun Enuf[else]You just need to use the X-Ite Tix on the Tix Exit here[end if][if cur-score of Odd Do < 11], though you can keep hunting for LLPs if you want[end if].";
 	the rule succeeds;
 
@@ -5033,7 +5035,7 @@ kayo-known is a truth state that varies.
 carry out yakokaying:
 	if ergot ogre is moot, say "[if yak is in location of player]The yak has served you well. It deserves a rest.[else]You relive past glories. Why not?[end if]" instead;
 	if yak is in location of player and ergot ogre is in location of player:
-		say "The kayo yak surges at the ergot ogre and knocks it over with a few ... smart rams! The ergot won't spread to the yak's horns, so that's good. The ogre dusts itself off and walks away, damp, mad. The yak, for its part, looks relaxed--almost like a tao goat--and seems to be begging. You toss it the brag garb, which it has no end of fun mauling further. It heads off, not to the Frush Surf, but somewhere calmer.[paragraph break]You think you hear an elk cackle in the distance.[paragraph break]Whew! That's enough exercise. You readjust your pace cap back to a pact cap, and you retreat back to Ooze Zoo to collect your items.";
+		say "The kayo yak surges at the ergot ogre and knocks it over with a few ... smart rams! The ergot won't spread to the yak's horns, so that's good. The ogre dusts itself off and walks away, damp, mad. The yak, for its part, looks relaxed--almost like a tao goat--and seems to be begging for something. You toss it the brag garb, which it has no end of fun mauling further as it runs off in the distance where you can't follow.[paragraph break]You run back to Ooze Zoo to collect what you dropped, then back to the Lair Trial. But it isn't really a Lair Trial any more with the ergot ogre gone. Just plain old stride dirts.";
 		score-inc; [Grebeberg/YAK OKAY]
 		banish-ogre;
 		moot brag garb;
@@ -5179,7 +5181,7 @@ instead of entering den ivy vined, try going east instead;
 
 chapter code doc
 
-Code Doc is a neuter person in Uneven U. "[if uneven u is unvisited]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[else]The Code Doc paces back and forth here.[end if]". description is "The Code Doc scribbles notes here, mumbling about whom to hire to increase [Uneven U]'s prestige. Busy, but not too busy to help someone else."
+Code Doc is a neuter person in Uneven U. "[if uneven u is unvisited]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[else]The Code Doc paces back and forth here.[end if]". description is "The Code Doc hand-waves and mumbling about whom to hire to increase [Uneven U]'s prestige. [if wash saw is moot]You've had a good working relationship with the Code Doc, but you both need to move on to even bigger things[else]Busy, but not too busy to help or work with someone else[end if]."
 
 understand "dr/d" and "dr d" as code doc.
 
@@ -5489,7 +5491,8 @@ check examining pyx when screenread is true:
 	say "The large text map has a lot of special characters and doesn't play well with screen readers, so you can't examine it productively. Sorry. SCREEN or SCR toggles screen reader mode." instead;
 
 after examining pyx for the first time:
-	say "Notes for the future[if screenread is true], if you turn screen reading off[end if]: [b]X X[r] or [b]XX[r] or [b]MAP[r] will examine the pyx, to save keystrokes[if player does not have pyx]. Also, you can take the pyx, if you want[end if].";
+	say "Notes for the future[if screenread is true], if you turn screen reading off[end if]: [b]X X[r] or [b]XX[r] or [b]MAP[r] will examine the pyx, to save keystrokes.";
+	if player does not have pyx, say "[line break]Also, you take the pyx for future reference, because it's lightweight enough.";
 	continue the action;
 
 to decide whether eithervisit of (rm - a room) and (di - a direction):
@@ -6423,7 +6426,7 @@ carry out wornrowing:
 		now worn-tried is true;
 		say "[if ever-wordrow is false or ever-workrow is false]The bad dab seems to indicate there's more here than [Worn Row], and there's no reason you can't go back to Worn Row, but y[else]Y[end if]ou don't want to face the redness ender alone back in Worn Row. You're not very red, but it seemed like it might just shoot any old thing." instead;
 	clear-worn-row;
-	say "A buzz and a whirr makes the Psi Wisp pause. The [if Worn Row is worky]machines snap[else]tract cart snaps[end if] back into a wall, and the redness ender pops out of another. It locks on the Psi Wisp, which is very red indeed. Zap! Zot! The Psi Wisp becomes even redder before exploding. As its last act, the Psi Wisp channels that energy back into the redness ender, which also explodes. Some of the debris drops onto the bad dab, wiping it out. You managed to get out of the way during all this to pick up the items you dropped in Gross Org.";
+	say "A buzz and a whirr makes the Psi Wisp pause. The [if Worn Row is worky]machines snap[else]tract cart snaps[end if] back into a wall, and the redness ender pops out of another. It locks on the Psi Wisp, which is very red indeed. Zap! Zot! The Psi Wisp becomes even redder before exploding. As its last act, the Psi Wisp channels that energy back into the redness ender, which also explodes. Some of the debris drops onto the bad dab, wiping it out. And somehow, the walls whir some more and drop all the items you left near Pro Corp at your feet. You take them all. That saved a trip back, you think, until you remember Pro Corp held a couple things worth picking up anyway.";
 	win-wisp-chase;
 	check-dab;
 	score-inc; [Yelpley/WORN ROW]
@@ -8588,11 +8591,12 @@ understand the command "sos" as something new.
 understand "sos" as aidllping.
 
 carry out aidllping:
+	try sosing;
 	if aid-LLP-yet is false:
-		say "Your 'correct' way of asking for aid nets a last lousy point. You even throw in a 'Plea! Elp!' just to make sure.[paragraph break]Yay![paragraph break]";
-		abide by the LLP rule; [DIAL AID]
 		now aid-LLP-yet is true;
-	try sosing instead;
+		say "Your 'correct' way of asking for aid nets a last lousy point. You didn't even need to throw in a 'Plea! Elp!' to make sure![paragraph break]Yay![paragraph break]";
+		abide by the LLP rule; [DIAL AID]
+		consider the LLP or normal score changes rule;
 
 in-sos is a truth state that varies.
 
@@ -8628,8 +8632,8 @@ carry out sosing:
 					increment take-clues;
 					say "[if take-clues is 1]Y[else]Also, y[end if]ou can just take [the to-take entry] [hn-in of where-is entry].";
 	if take-clues > 0:
-		say "NOTE: This poke to take something may be a distraction from more rigorous puzzles, but I'd rather point you to something you overlooked first than spoil something.";
-		the rule succeeds;
+		say "NOTE: This poke to take something may be a distraction from more rigorous and immediate puzzles, but I'd rather first point you to something you overlooked but may be able to use before spoiling a puzzle.";
+		if debug-state is false, the rule succeeds;
 	now in-sos is true;
 	if debug-state is true, say "(1) ";
 	let count be 0;
@@ -8791,7 +8795,7 @@ this is the pre-sac-on-orc rule:
 
 this is the pre-rid-on-reviver rule:
 	if in-sos is true:
-		if Dirt Rid is moot, the rule fails;
+		if Dirt Rid is moot or Dirt Rid is off-stage, the rule fails;
 		say "[one of]The Dirt Rid could use an upgrade[or]The Dirt Rid's already real enough, and spinning it might cause its parts to get even more discombobulated[or]USE DIRT RID ON REVIVER[once-work][stopping].";
 	the rule succeeds;
 

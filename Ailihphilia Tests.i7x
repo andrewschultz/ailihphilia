@@ -56,7 +56,7 @@ test part5 with "s/use yob attaboy on sniffins/s/use elan ale on sniffins/stand 
 
 test part6 with "n/s/s/w/w/s/w/worn row".
 
-test part7 with "work row/use stinky knits on rotator/e/n/e/e/n/n/get all/use gorge grog on butene tub/balm lab/s/s/w/w/s/w/use gold log on rotator/e/n/w/w/s/s/e/stack cats/see bees/use some demos on yahoo hay/w/n/n/e/e/n/use straw arts on revolt lover/use gate tag on soot tattoos/s/s/w/work row/e/n/w/w/w/use poo coop on gnu dung/use poo coop on turf rut".
+test part7 with "work row/use stinky knits on rotator/e/n/e/e/n/n/get all/use gorge grog on butene tub/balm lab/s/s/w/w/s/w/use gold log on rotator/e/n/w/w/s/s/e/stack cats/see bees/use some demos on yahoo hay/w/n/n/e/e/n/use straw arts on revolt lover/use gate tag on soot tattoos/s/w/w/w/use poo coop on gnu dung/use poo coop on turf rut".
 
 test part8 with "w/use radar on made dam/n/use null illun on known wonk/use el doodle on edits tide/n/use elope pole on kayak/use dork rod on tao boat/s/s/s/use tent net on code doc/use spa maps on code doc/n/e/e/n/e/use spa maps on go-by bog".
 

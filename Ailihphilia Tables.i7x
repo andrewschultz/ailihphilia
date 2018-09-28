@@ -1066,6 +1066,7 @@ table of Moo Room animals
 randtxt
 "any myna"
 "a buck cub"
+"an elk cackle"
 "a go-here hog"
 "a pirana (RIP)"
 "a rat avatar"
