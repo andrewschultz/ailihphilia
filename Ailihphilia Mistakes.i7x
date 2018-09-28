@@ -980,8 +980,6 @@ understand "guh" and "thug" and "guh thug" as a mistake ("That's what [random vi
 
 understand "look kool" as a mistake ("[if peeped-yet is true]You already managed to PEEP for an LLP. This would be double dipping[else]There's a way to look differently, but it's just one word. Four letters[end if].")
 
-understand "put it up" as a mistake ("That's what the Spur Ups say, but you need to re-interpret it slightly, to help yourself. What else UP could you do?") when player has spur ups.
-
 understand "rm gnu/dung" and "rm gnu dung" as a mistake ("You don't have the proper permissions. It is (wait for it) too root.") when dung-near.
 
 understand "rub [text]" as a mistake ("[no-burt].")

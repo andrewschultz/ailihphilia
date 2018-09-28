@@ -18,7 +18,7 @@ include Property Checking by Emily Short.
 
 chapter go walkthrough
 
-test gh1 with "pack cap/stats/peep/poop/dial aid/refer/e/n/get trap art/s/s/evade dave/w/bore rob/word row/trace cart/get to idiot/gt art xtra/n/use to idiot on door frood/get bunk nub/e/get all/use pity tip on eye/w/w/tend net/gt word row/work row/use trap art on reifier/use bunk nub on reviver".
+test gh1 with "pack cap/stats/peep/poop/dial aid/refer/e/n/get trap art/s/s/evade dave/w/bore rob/word row/trace cart/get to idiot/gt art xtra/n/use to idiot on door frood/e/get all/use pity tip on eye/w/w/tend net/gt word row/work row/use trap art on reifier/use bunk nub on reviver".
 
 test gh2 with "word row/get epoch cope/gt fun enuf/w/use party trap on stark rats/n/use epoch cope on king nik/s/s/slam mammals/use stock cots on sleep eels/s/get stamp mats/e/get poo coop/gt word row/get yob attaboy/gt yawn way/puff up/e/pull up/get puce cup".
 
@@ -44,7 +44,7 @@ test ghs with "test gh1/test gh2/test gh3/test gh4/test gh5/test gh6/test gh7/te
 
 chapter main walkthrough
 
-test part1 with "pack cap/stats/peep/poop/dial aid/refer/e/n/get trap art/s/s/evade dave/w/bore rob/word row/trace cart/get to idiot/e/n/n/n/use to idiot on door frood/get bunk nub/e/get all/use pity tip on eye/w/w/tend net/e/s/s/s/w/work row/use trap art on reifier/use bunk nub on reviver".
+test part1 with "pack cap/stats/peep/poop/dial aid/refer/e/n/get trap art/s/s/evade dave/w/bore rob/word row/trace cart/get to idiot/e/n/n/n/use to idiot on door frood/e/get all/use pity tip on eye/w/w/tend net/e/s/s/s/w/work row/use trap art on reifier/use bunk nub on reviver".
 
 test part2 with "word row/get epoch cope/e/n/w/w/use party trap on stark rats/n/use epoch cope on king nik/s/s/slam mammals/use stock cots on sleep eels/s/get stamp mats/e/get poo coop/w/n/n/e/e/s/w/get yob attaboy/e/n/puff up/e/pull up/get puce cup".
 
@@ -76,7 +76,7 @@ test rollup with "test part1/test part2/test part3/test part4/test part5/test pa
 
 chapter duplicates walkthrough
 
-test dup1 with "pack cap/pack cap/stats/stats/peep/peep/poop/poop/dial aid/dial aid/refer/refer/e/n/get trap art/get trap art/s/s/evade dave/evade dave/w/bore rob/bore rob/word row/word row/trace cart/trace cart/get to idiot/get to idiot/e/n/n/n/use to idiot on door frood/use to idiot on door frood/get bunk nub/get bunk nub/e/get all/get all/use pity tip on eye/use pity tip on eye/w/w/tend net/tend net/e/s/s/s/w/work row/work row/use trap art on reifier/use trap art on reifier/use bunk nub on reviver/use bunk nub on reviver"
+test dup1 with "pack cap/pack cap/stats/stats/peep/peep/poop/poop/dial aid/dial aid/refer/refer/e/n/get trap art/get trap art/s/s/evade dave/evade dave/w/bore rob/bore rob/word row/word row/trace cart/trace cart/get to idiot/get to idiot/e/n/n/n/use to idiot on door frood/use to idiot on door frood/e/get all/get all/use pity tip on eye/use pity tip on eye/w/w/tend net/tend net/e/s/s/s/w/work row/work row/use trap art on reifier/use trap art on reifier/use bunk nub on reviver/use bunk nub on reviver"
 
 test dup2 with "word row/word row/get epoch cope/get epoch cope/e/n/w/w/use party trap on stark rats/use party trap on stark rats/n/use epoch cope on king nik/use epoch cope on king nik/s/s/slam mammals/slam mammals/use stock cots on sleep eels/use stock cots on sleep eels/s/get stamp mats/get stamp mats/e/get poo coop/get poo coop/w/n/n/e/e/s/w/get yob attaboy/get yob attaboy/e/n/puff up/puff up/e/pull up/pull up/get puce cup/get puce cup"
 
@@ -178,6 +178,24 @@ test e8 with "test part8/test part9/test part10/test part11".
 test e9 with "test part9/test part10/test part11".
 test e10 with "test part10/test part11".
 test e11 with "test part11".
+
+chapter clue-through
+
+test cluthru with "test ct1/test ct2/test ct3/test ct4/test ct5/test ct6/test ct7"
+
+test ct1 with "pack cap/e/n/get all/s/s/evade dave/w/bore rob/word row/get ti/e/n/n/n/use ti on frood/e/use tip on eye/get all/w/w/tend net/e/s/s/s/w/work row/use trap art on reifier/use bunk nub on reviver/e/n/w/w/use trap on rats"
+
+test ct2 with "e/e/s/w/word row/get epoch cope/e/n/w/w/n/use ec on nik/s/s/use cots on eels/n/e/e/puff up/e/pull up/get cup/s/get troll ort/n/w/w/w/n/cut sap/put sap in cup/s/e/e/e/s/use cup on grail/n/w/w/w/n/e/use cup on sod/w/s/e/e/e/s/s/use cup on nob/n/n/w/w/w/s/s/get mats/n/n/e/e/e/s/s/e/use mats on metals"
+
+test ct3 with "w/w/get all/e/n/n/w/w/w/n/n/use med on lug/s/s/e/e/e/e/use sac on orc/w/w/s/w/word row/get ya/e/n/e/e/s/use ya on sniffins/s/use ale on sniffins/stand nat's/n/w/w/s/w/work row/use dirt rid on reviver/e/n/e/s/s/w/use cave vac on sac/e/n/n/e/use radar on arc"
+
+test ct4 with "n/deny ned/get all/use key on gate/n/s/s/w/w/s/w/worn row/work row/use knits on rotator/e/n/e/e/n/n/get all/use grog on tub/s/s/w/w/s/w/use log on rotator/e/n/w/w/s/s/e/get poo coop/use demos on hay/w/n/n/e/e/n/use straw arts on lover/use gate tag on soot tattoos/s/w/w/w/use coop on dung/use coop on rut/w/use radar on dam/e/e/e/e/s/w/word row/get ni/work row/e/n/w/w/w/w/n/use ni on wonk/use doodle on tide/n/use elope pole on kayak/use dork rod on tao boat"
+
+test ct5 with "s/s/s/use tent net on code doc/use spa maps on code doc/n/e/e/n/e/use spa maps on bog/w/s/s/s/e/use cane on hay/w/pace cap/use ort on garb/n/n/w/w/w/s/s/yak okay/e/use gas on mat/use rahs on rug/w/n/n/e/s/nail ian/use tofu on cans/use mayo on fig"
+
+test ct6 with "w/w/w/n/use broom on yurt/s/s/use saw on crop/n/e/n/use axe on veil/n/get all/s/e/e/e/s/w/use band on reifier/use motor on hand/use ore on reviver/use buoy on rotator/e/n/n/n/e/use arm on mob/get all"
+
+test ct7 with "w/s/s/w/w/n/n/use tan on rocs/w/use popper on totem/e/s/s/e/e/e/n/use orb on rim/use slab on rows/s/w/s/w/use baton on reifier/use rum on ray/emit noontime/use ray on set/e/n/w/use tnt on ore/n/use gem on fink/use bat on rev/use ray on redivider/s/s"
 
 chapter quick start
 
@@ -327,5 +345,25 @@ rule for printing a parser error when mean-testing is true (this is the test bai
 the test bail rule is listed first in the for printing a parser error rules.
 
 Ailihphilia Tests ends here.
+
+chapter inkning
+
+inkning is an action out of world.
+
+understand the command "inkn" as something new.
+
+understand "inkn" as inkning.
+
+carry out inkning:
+	repeat with Q running through things:
+		if Q is off-stage, next;
+		if Q is in-known:
+			say "[Q] in [location of Q] is in-known.";
+	say "========================[line break]";
+	repeat with Q running through things:
+		if Q is off-stage, next;
+		if map region of location of Q is not Odd Do:
+			say "[Q] in [location of Q] is not in-known.";
+	the rule succeeds;
 
 ---- DOCUMENTATION ----

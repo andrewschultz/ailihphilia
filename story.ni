@@ -700,7 +700,7 @@ when play begins (this is the begin ailihphilia for reals rule):
 	now right hand status line is "[if cur-score of mrlp < 10] [end if][cur-score of mrlp]/[max-score of mrlp] [if score < 10] [end if][score]/[if min-win < maximum score][min-win]-[end if][maximum score]";
 	now left hand status line is "[location of player] ([mrlp])[dir-summary]";
 	say "First, would you like to see the introduction (I), restore a previous game (R), or skip the introduction (S)?";
-	now read-intro is true;
+	intro-restore-skip;
 	if debug-state is false:
 		let got-good-key be false;
 		while got-good-key is false:
@@ -1301,11 +1301,21 @@ section stuck-rules
 
 [honly = here only. Hn-in = here or "in room x." Hn = here or room x.]
 
+to say itm-place of (th - a thing): say "[th][if th is not in location of player] in [location of th]"
+
+to say in-not-here of (rm - a room): if player is not in rm, say " in [rm]"
+
 to say honly of (rm - a room):
 	say "[if player is in rm] here[end if]"
 
 to say hn-in of (rm - a room):
 	say "[if player is in rm]here[else]in [rm][end if]"
+
+to say hn-of of (rm - a room):
+	say "[if player is in rm]here[else]of [rm][end if]"
+
+to say hn-the of (rm - a room):
+	say "[if player is in rm]here[else]the [rm][end if]"
 
 to say hn-in-blank of (rm - a room):
 	say "[if player is not in rm]in [rm] [end if]"
@@ -2792,7 +2802,7 @@ use1	use2	getit	preproc	postproc	sco	d1	d2	guy-need	ms-need	tool-need	reg-plus	r
 --	--	--	rev-evade-Dave rule	--	true	--	--	true	true	true	Yelpley	My Gym	My Gym	false	--
 --	--	--	rev-bore-Rob rule	--	true	--	--	true	true	true	Yelpley	Worn Row	Worn Row	false	--
 --	--	--	rev-word-row rule	--	true	--	--	true	true	true	Yelpley	Worn Row	Worn Row	false	--
-TI	Door Frood	--	pre-ti-on-frood rule	tube-to-ave rule	true	true	true	true	true	true	Yelpley	Evaded Ave	Evaded Ave	false	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. Some people are stupid. Good thing I obviously have too much self-awareness to be one of them. Funny stuff! A cut above [i]To Laff a Lot[r]! I'd try to explain it to you, but either you don't need it explained to you, or you don't deserve it explained to you.'[paragraph break]With uncontrollable laughter spasms, the Door Frood skulks away, through a tube ... but ... it's probably useless to follow." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
+TI	Door Frood	--	pre-ti-on-frood rule	tube-to-ave rule	true	true	true	true	true	true	Yelpley	Evaded Ave	Evaded Ave	false	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. Some people are stupid. Good thing I obviously have too much self-awareness to be one of them. Funny stuff! A cut above [i]To Laff a Lot[r]! I'd try to explain it to you, but either you don't need it explained to you, or you don't deserve it explained to you.'[paragraph break]With uncontrollable laughter spasms, the Door Frood skulks away, through a tube ... but ... it's probably useless to follow. Instead, you pick up the bunk nub. Might as well." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
 pity tip	eye	snack cans	pre-tip-on-eye rule	mob-to-alley rule	true	true	false	false	false	true	Yelpley	Yell Alley	Yell Alley	false	"The eye scans the pity tip, and the navy van beeps and boops and spits out some snack cans, which roll on the ground. You take them. Then you hear a loud whisper: 'Dee? Weed?' The navy van then activates its VANS-NAV and whooshes off to leave for good. And there's something behind it! Apparently, a whole bomb mob! That's who was making all the noise!" [af:TEND NET/WORK ROW]
 --	--	--	rev-tend-net rule	--	true	--	--	false	true	true	Yelpley	Trapeze Part	Trapeze Part	false	--
 --	--	--	rev-work-row rule	--	true	--	--	true	true	true	Yelpley	Worn Row	Worn Row	false	--
@@ -2845,7 +2855,7 @@ sharp rahs	guru rug	stir writs	pre-rahs-on-rug rule	--	true	true	true	false	true
 --	--	--	rev-nail-Ian rule	--	true	--	--	false	false	true	Grebeberg	Mont Nom	Mont Nom	false	--
 --	--	--	rev-first-food-combo rule	--	true	--	--	false	false	true	Grebeberg	Mont Nom	Mont Nom	false	--
 --	--	--	rev-second-food-combo rule	--	true	--	--	false	false	true	Grebeberg	Mont Nom	Fun Enuf	false	--
-Moor Broom	Tru Yurt	Exam Axe	pre-broom-on-yurt rule	bump-ivy rule	true	true	false	false	true	false	Grebeberg	Yack Cay	Yack Cay	false	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how your simple advice works. You're pretty shocked, too, given how you've never been GREAT at cleaning stuff, but you realize you do okay.[paragraph break]In gratitude, the Known Wonk hands you something unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! You trade the moor broom for it. Then, back to the Tru-Yurt for the Wonk. They've done enough for you." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
+Moor Broom	Tru Yurt	Exam Axe	pre-broom-on-yurt rule	bump-ivy rule	true	true	false	false	true	false	Grebeberg	Yack Cay	Yack Cay	false	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how a clean space frees one's mind for ideas and how your simple advice works. You're pretty shocked, but you're even more shocked when the Known Wonk bolts out and yells 'Wait a second!'[paragraph break]After a bit, the Known Wonk returns, babbling about FINALLY impressing the Code Doc. In gratitude, the Known Wonk hands you something long-hidden and unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! You trade the moor broom for it, now that the Known Wonk is committed to cleanliness." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
 wash saw	porch crop	balsa slab	pre-saw-on-crop rule	--	true	true	false	false	false	false	Grebeberg	Uneven U	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods.[paragraph break]'Yes! Yes! We have achieved AIMED ACADEMIA! Uneven U needs a name change ... to UNITIN['] U! How can I thank you?'[paragraph break]You see the wash saw became dull while you sawed, and you've no way to sharpen it. The Code Doc should be able to before the porch crop grows back. So when you notice a balsa slab is lying under where the porch crop was, you propose a trade. The Code Doc accepts. Now, you ... do own wood!"
 Exam Axe	Lie Veil	--	pre-axe-on-veil rule	--	true	true	true	false	true	false	Grebeberg	Dumb Mud	Dumb Mud	false	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
 --	--	--	rev-get-bros orb rule	--	false	--	--	false	true	false	--	Le Babel	Le Babel	--	--
@@ -2900,7 +2910,7 @@ this is the rev-deny-Ned rule:
 	if Ned is moot, the rule fails;
 	if in-sos is true:
 		if player is in Gross Org:
-			say "[one of]Ned wants a fight! But you're not equipped for fighting.[or]You need to do something to Ned.[or]DENT NED is too violent. Grind him down with passive resistance[or]DENY NED[stopping].";
+			say "[one of]Ned wants a fight! But you're not equipped for fighting[or]You need to do something to Ned.[or]DENT NED is too violent. Grind him down with passive resistance[or]DENY NED[stopping].";
 		else if Gross Org is unvisited:
 			say "You will want to visit [if Toll Lot is visited]the room north of [hn of Toll Lot][else]the east a bit more[end if].";
 		else:
@@ -3008,13 +3018,13 @@ this is the rev-puff-up rule:
 		if Worn Row is unvisited:
 			say "You need to visit west of [hn of My Gym].";
 		else if ever-workrow is false:
-			say "You need to change [Worn Row].";
+			say "The main puzzle [hn-in of Yawn Way] is how to get east. You need to change [Worn Row], to start.";
 		else if stark rats are in Seer Trees:
 			say "To go east, you first need to clear a way west beyond [if Seer Trees is visited]Seer Trees[else]Fun Enuf[end if].";
 		else if player does not have Spur Ups:
 			say "[if Cold Loc is not visited]You need to visit [vague-dir of Cold Loc][else]King Nik in Cold Loc has an item you need, if you help him.[end if]."; [?? clues still bounce you around a bit]
 		else:
-			say "[one of]King Nik's Spur Ups are handy here[or]Each one will help you do something UP[or]You need to feel better about yourself[or]PU* UP turns up nothing, though PUT UP seems promising, but...[or]PU** UP has possibilities[or]PUFF UP to gain access east of Yawn Way[stopping].";
+			say "[one of]King Nik's Spur Ups are handy to go east of [hn of Yawn Way].[or]Each Spur of King Nik's will help you do something else UP.[or]You need to feel more confident in yourself [hn-in of Emo Dome].[or]PU* UP turns up nothing, though PUT UP seems promising, but...[or]PU** UP has possibilities.[or]PUFF UP in Yawn Way to gain access to the east.[stopping]";
 		the rule succeeds;
 	if say-unless-speed, say "You use the spur ups to PUFF UP.";
 	now puffed-up is true;
@@ -3023,7 +3033,7 @@ this is the rev-puff-up rule:
 this is the rev-pull-up rule:
 	if pulled-up is true, the rule fails;
 	if in-sos is true:
-		say "[one of]Now you can go through the Emo Dome, it would be nice to stop[or]You can run past your fears but not stay still to face them[or]The Spur Ups have one more use[or]PU* UP, again, gives nothing[or]PU** UP again has something worthwhile[or]You can PULL UP in Emo Dome to stay and bear things[stopping].";
+		say "[one of]Now you can stand it in [hn-the of Emo Dome], it would be nice to stop[or]You can run past your fears but not stay still to face them[or]The Spur Ups have one more use[or]PU* UP, again, gives nothing[or]PU** UP again has something worthwhile[or]You can PULL UP in Emo Dome to stay and bear things[stopping].";
 		the rule succeeds;
 	if say-unless-speed, say "You PULL UP in the Emo Dome.";
 	moot spur ups;
@@ -3055,7 +3065,7 @@ this is the rev-second-food-combo rule:
 	the rule succeeds;
 
 this is the rev-stand-nats rule:
-	if Nat's Tan is moot or player carries Nat's Tan, the rule fails; [?? capitalize Nat's?]
+	if Nat's Tan is moot or player carries Nat's Tan or Deft Fed is unvisited, the rule fails; [?? capitalize Nat's?]
 	if in-sos is true:
 		say "[one of]The Nat's Tan [hn-in of Deft Fed] will be useful. You need to take it[or]TAKE NAT'S doesn't work[or]***** NAT'S, maybe[or]STAND NAT'S[stopping].";
 		the rule succeeds;
@@ -3085,7 +3095,7 @@ this is the rev-word-row rule:
 this is the rev-work-row rule:
 	if ever-workrow is true, the rule fails;
 	if in-sos is true:
-		say "[one of][Worn Row] can be changed into something else[or]You may need to do a bit of guesswork what to change it into, but there are only twenty-odd possibilities[or][Worn Row] can become WORK ROW[stopping].";
+		say "[one of][Worn Row] can be changed into something else[or]You may need to do a bit of guesswork what to change it into, but there are only twenty-odd possibilities[or][Worn Row] can become WORK ROW[if number of carried books is 0], though you may wish to take a book from the tract cart first[end if][stopping].";
 		the rule succeeds;
 	if say-unless-speed, say "You transform [Worn Row] into WORK ROW.";
 	work-row-open;
@@ -3118,14 +3128,14 @@ section pre-use rules [xxpre]
 this is the pre-ale-on-Sniffins rule:
 	if in-sos is true:
 		if Elan Ale is moot, the rule fails;
-		if player does not have yob attaboy:
+		if player does not have yob attaboy and yob attaboy is not moot:
 			say "[one of]Sniffins [hn-in-blank of Deft Fed]needs some help[or]Sniffins doesn't need financial help but motivational help. A confidence booster[or]Perhaps a book from Word Row could help Sniffins[or]TAKE YOB ATTABOY [hn-in of Worn Row][stopping].";
 		else if player has yob attaboy:
 			say "[one of]You have something Sniffins could use for motivation[or]That book you have won't help you, but it will help Sniffins[or]USE YOB ATTABOY ON SNIFFINS[stopping].";
 		else if player does not have Elan Ale:
 			say "You need classier alcohol to trade for the Gorge Grog.";
 		else:
-			say "[one of]You have something Sniffins wants. An upgrade from the Gorge Grog[or]Look in your inventory for alcohol[or]USE ELAN ALE ON SMUGGUMS[stopping].";
+			say "[one of]You have something [Sniffins] wants. An upgrade from the Gorge Grog[or]Look in your inventory for alcohol[or]USE ELAN ALE ON SMUGGUMS[stopping].";
 		the rule succeeds;
 	if yob attaboy is moot, the rule succeeds;
 	say "Sniffins is too distraught to conduct any business. Perhaps a gift of self-help would be more appropriate right now.";
@@ -3219,8 +3229,8 @@ this is the pre-cup-on-grail rule:
 		if player does not have puce cup, the rule fails;
 		if liar grail is moot, the rule fails;
 		if puce cup is soddy:
-			say "You don't need the dose sod in the past sap until later.";
-		else if puce cup is not sappy:
+			say "[one of]You don't need the dose sod in the puce cup until later. Something else belongs in the puce cup, first[or]USE PAST SAP ON PUCE CUP to replace the dose sod, for now[stopping].";
+		else if puce cup is sappy:
 			say "[one of]You need to find the right place for the cup with the [sir-sap-long][or]Another place has a receptacle for the [sir-sap-long][or]The Liar Grail [hn-in of Swept Pews][or]USE CUP ON GRAIL [hn-in of Swept Pews][stopping].";
 		else:
 			say "[one of]The puce cup needs to be filled with two things. First, something you've already seen[or]Use some liquid-ish thing on the cup[or]USE PAST SAP ON CUP[stopping].";
@@ -3233,7 +3243,10 @@ this is the pre-cup-on-grail rule:
 this is the pre-cup-on-nob rule:
 	if in-sos is true:
 		if puce cup is moot, the rule fails;
-		if puce cup is not soddy, say "You need to put the dose sod in the puce cup.";
+		if puce cup is not soddy:
+			say "You need to put the dose sod in the puce cup.";
+			the rule succeeds;
+		say "[one of]The dose sod in the puce cup can help someone, but whom?[or]The dose sod doesn't help the Gulf Lug north of Cold Loc.[or]However, the dose sod can help the Bond Nob [hn-in of Drawl Ward].[stopping]";
 		the rule succeeds;
 	if puce cup is soddy, the rule succeeds;
 	get-reject Bond Nob;
@@ -3249,7 +3262,7 @@ this is the pre-cup-on-sap rule:
 		the rule fails;
 	if sap-takeable is false:
 		if in-sos is true:
-			say "[one of]You need to cut the sap off[or]USE SAW ON SAP[stopping].";
+			say "[one of]You need to cut the sap off[or]USE SAW ON SAP [in-not-here of Cold Loc][stopping].";
 			the rule succeeds;
 		if revving-over is false, say "The sap is stuck to the rift fir. You can't just take it with your hands.";
 		now sap-with-hands is true;
@@ -3274,12 +3287,16 @@ this is the pre-cup-on-sap rule:
 	the rule succeeds;
 
 this is the pre-cup-on-sod rule:
-	later-wipe dose sod;
 	if in-sos is true:
 		if puce cup is moot, the rule fails;
+		if liar grail is not moot, the rule fails;
+		if puce cup is soddy, the rule fails;
+		say "[one of]One thing besides the past sap can go in the puce cup[or]You will find something else [hn-in of Apse Spa] that you can't take bare-handed[or]USE DOSE SOD ON PUCE CUP[stopping].";
+		the rule succeeds;
 	if puce cup is soddy:
 		if revving-over is false and in-sos is false, say "The puce cup already contains dose sod.";
 		the rule fails;
+	later-wipe dose sod;
 	if puce cup is sappy:
 		if in-sos is true:
 			say "You need to replace the past sap with dose sod.";
@@ -3294,7 +3311,7 @@ this is the pre-cup-on-sod rule:
 this is the pre-demos-on-hay rule:
 	if in-sos is true:
 		if player does not have SOME DEMOS, the rule fails;
-		say "[one of]SOME DEMOS talks about making art with contradictory items[or]There is one item that is contradictory enough for SOME DEMOS to apply[or]The item SOME DEMOS can be used with is both exciting and boring[or]USE SOME DEMOS ON YAHOO HAY in Moo Room[stopping].";
+		say "[one of]SOME DEMOS talks about making art with contradictory items[or]There is one item that is contradictory enough for SOME DEMOS to apply[or]The item SOME DEMOS can be used with is both exciting and boring[or]USE SOME DEMOS ON YAHOO HAY[in-not-here of Moo Room][stopping].";
 	the rule succeeds;
 
 this is the pre-doodle-on-tide rule:
@@ -3307,12 +3324,14 @@ this is the pre-gas-on-mat rule:
 	if in-sos is true:
 		if sage gas is moot, the rule fails;
 		say "[one of]The tame mat needs a stronger, smarter message[or]You may have something that can make things smarter[or]USE SAGE GAS ON TAME MAT[stopping].";
+		the rule succeeds;
 	the rule succeeds;
 
 this is the pre-gem-on-fink rule:
 	if in-sos is true:
 		if ME gem is moot or player is not in Dirge Grid, the rule fails;
 		say "[one of]The Knife Fink is pretty mercenary. Maybe you can use bribery[or]You have something valuable that even other bad guys didn't like, but the Knife Fink might[or]USE ME GEM ON KNIFE FINK[stopping].";
+		the rule succeeds;
 	the rule succeeds;
 
 this is the pre-grog-on-tub rule:
@@ -3322,15 +3341,18 @@ this is the pre-grog-on-tub rule:
 			say "You need to get rid of the psi wisp before tackling the butene tub.";
 		else if player does not have Gorge Grog:
 			say "[one of]The warning on the butene tub is too prominent to ignore. It would be fun to blow up[or]You need something powerful to blow up the butene tub[or]There's nothing too explosive, except for [if navy van is moot]the TNT[else]something[end if] in Yell Alley, which is useful elsewhere[or]The Gorge Grog is 100+ proof. It's pretty flammable[or][if player does not have Gorge Grog]After trading Sniffins for the Gorge Grog, [end if]USE GORGE GROG ON BUTENE TUB[stopping].";
+		else:
+			say "[one of]You have what you need to destroy the butene tub[or]Some powerful or concentrated chemical will work to destroy the butene tub[or]USE GORGE GROG ON BUTENE TUB[stopping][in-not-here of Pro Corp].";
+		the rule succeeds;
 	the rule succeeds;
 
 this is the pre-illun-on-wonk rule:
 	if in-sos is true:
 		if wonk is moot, the rule fails;
 		if player has NULL ILLUN:
-			say "[one of]You have what the Known Wonk needs, to feel clearer[or]USE NULL ILLUN ON KNOWN WONK[stopping].";
+			say "[one of]You have what the [itm-place of Known Wonk] needs, to feel clearer[or]USE NULL ILLUN ON KNOWN WONK[in-not-here of Yack Cay][stopping].";
 		else:
-			say "[one of]The Known Wonk probably likes books, but which one from [hn of Worn Row]?[or]The Known Wonk overthinks things and may not be high on emotional intelligence[or]USE NULL ILLUN ON KNOWN WONK[stopping].";
+			say "[one of]The [itm-place of Known Wonk] probably likes books, but which one from [hn of Worn Row]?[or]The [itm-place of Known Wonk] overthinks things and may not be high on emotional intelligence[or]USE NULL ILLUN ON KNOWN WONK[in-not-here of Yack Cay][stopping].";
 	the rule succeeds;
 
 this is the pre-key-on-gate rule:
@@ -3355,7 +3377,7 @@ this is the pre-maps-on-bog rule:
 			else:
 				say "[one of]You need someone smart to help you with the maps. Someone who knows how to do things[or]The Code Doc can help you with the maps[stopping].";
 		else:
-			say "[one of]The spa maps may be tough to follow, but you can guess where they might help you[or]You should go to the Apse Spa with the spa maps[or]USE SPA MAPS ON APSE SPA[stopping].";
+			say "[one of]The spa maps may be tough to follow, but you can guess where they might help you[or]You should go to the Apse Spa with the spa maps[or]USE SPA MAPS ON BOG[in-not-here of Apse Spa][stopping].";
 		the rule succeeds;
 	if maps-explained is true, the rule succeeds;
 	say "Hmm. Maybe if the maps were a bit clearer to you, that would work. But not now.";
@@ -3385,7 +3407,7 @@ this is the pre-motor-on-hand rule:
 		if player has DNA band:
 			say "Look for ways to improve the DNA band.";
 		else if DNA band is in Pro Corp:
-			say "You need to get the DNA band in Pro Corp.";
+			say "You need to get the DNA band[in-not-here of Pro Corp].";
 		else:
 			say "[one of]The roto motor can bring something else alive[or]What the roto motor works with has already been boosted slightly[or]USE ROTO MOTOR ON DNA HAND[stopping].";
 	the rule succeeds;
@@ -3393,7 +3415,7 @@ this is the pre-motor-on-hand rule:
 this is the pre-net-on-doc rule:
 	if in-sos is true:
 		if player does not have tent net, the rule fails;
-		say "[one of]The Code Doc needs a few more materials to build Uneven U[or]You have something that could help the Code Doc[or]You don't have much you could do with a tent net[or]USE TENT NET ON CODE DOC[stopping].";
+		say "[one of]The Code Doc needs a few more materials to build Uneven U[or]You have something that could help the Code Doc[or]You don't have much you could do with a tent net[or]USE TENT NET ON CODE DOC[in-not-here of uneven u][stopping].";
 	the rule succeeds;
 
 this is the pre-nub-on-reviver rule:
@@ -3424,7 +3446,7 @@ this is the pre-pole-on-kayak rule:
 		if elope pole is off-stage:
 			say "There's something in Yelpley that could steer the kayak.";
 		else if player has elope pole:
-			say "[one of]You need a kind of paddle to steer the kayak[or]You have something that could act like a kayak paddle. It's long enough, at least[or]USE ELOPE POLE ON KAYAK[stopping].";
+			say "[one of]You need a kind of paddle to steer the kayak[or]You have something that could act like a kayak paddle. It's long enough, at least[or]USE ELOPE POLE ON KAYAK[in-not-here of Lac Oft Focal][stopping].";
 	the rule succeeds;
 
 this is the pre-popper-on-totem rule:
@@ -3433,7 +3455,7 @@ this is the pre-popper-on-totem rule:
 		if rep popper is in Yell Alley:
 			say "You don't yet have the item you need to defeat the Yuge Guy.";
 		else:
-			say "[one of]The Yuge Guy is intimidating, but it's the ME TOTEM that amplifies his obnoxiousness.[or]You could say the ME TOTEM inflates the Yuge Guy's public perception...[or]...or the totem increases the Yuge Guy's Rep.[or]USE REP POPPER ON ME TOTEM.[stopping]";
+			say "[one of]The Yuge Guy is intimidating, but it's the ME TOTEM[in-not-here of Sneer Greens] that amplifies his obnoxiousness.[or]You could say the ME TOTEM inflates the Yuge Guy's public perception...[or]...or the totem increases the Yuge Guy's Rep.[or]USE REP POPPER ON ME TOTEM[in-not-here of Sneer Greens].[stopping]";
 	the rule succeeds;
 
 this is the pre-radar-on-arc rule:
@@ -3460,7 +3482,7 @@ this is the pre-radar-on-dam rule:
 			if player does not have radar:
 				say "[one of]You'll need something to scan the made dam[or]The something to scan the made dam is back in Yelpley[or][if Dopy Pod is visited]The item you want is under the cassettes sac[else]You haven't visited the place in Yelpley to get the item to scan the dam yet[end if][stopping].";
 			else:
-				say "[one of]There's something behind the dam, but you can't just see it. If only you had an item to sense such things[or]USE RADAR ON MADE DAM[stopping].";
+				say "[one of]There's something behind the [itm-place of made dam], but you can't just see it. If only you had an item to sense such things[or]USE RADAR ON MADE DAM[in-not-here of Swamp Maws][stopping].";
 			the rule succeeds;
 		the rule fails;
 	if eroded ore is not off-stage:
@@ -3493,7 +3515,7 @@ this is the pre-ray-on-set rule:
 		else if emitted is false:
 			say "[one of]From examining the yard ray, you can see EMIT ********. You need to figure what the eight letters are[or]TIME is the last four letters of what to emit. You need something bright with four letters[or]EMIT NOONTIME[stopping].";
 		else:
-			say "[one of]You need practice with the yard ray[or]You need to USE YARD RAY ON TEST SET[stopping].";
+			say "[one of]You need practice with the yard ray[or]You need to USE YARD RAY ON TEST SET[if player is not in Worn Row or Worn Row is not worky] in Work Row[end if][stopping].";
 		the rule succeeds;
 	if emitted is true, the rule succeeds;
 	get-reject test set;
@@ -3503,6 +3525,7 @@ this is the pre-ray-on-set rule:
 this is the pre-rod-on-boat rule:
 	if in-sos is true:
 		if dork rod is moot, the rule fails;
+		say "[one of]The Tao Boat[in-not-here of Lac Oft Focal] seems to be a sort of test[or]The Tao Boat is not impressed by showings of wealth, only by self-acceptance[or]An item that seems useless but may be slightly self-effacing would please the Tao Boat[in-not-here of Lac Oft Focal][or]USE DORK ROD ON TAO BOAT[in-not-here of Lac Oft Focal][stopping].";
 	the rule succeeds;
 
 this is the pre-rum-on-ray rule:
@@ -3512,23 +3535,24 @@ this is the pre-rum-on-ray rule:
 		if murdered rum is off-stage:
 			say "You need to defeat the Yuge Guy to get what you need to load the yard ray.";
 		else:
-			say "[one of]You need something to fill the yard ray with[or]The murdered rum is strong enough[or]USE MURDERED RUM ON YARD RAY[stopping].";
+			say "[one of]You need something to fill the yard ray with[or]The murdered rum is strong enough[or]USE MURDERED RUM ON YARD RAY anywhere[stopping].";
 	the rule succeeds;
 
 this is the pre-saw-on-crop rule:
 	if in-sos is true:
 		if porch crop is moot, the rule fails;
 		if moor broom is not moot, the rule fails;
-		if porch crop is not in uneven u:
+		if porch crop is in uneven u and revisit-clue is false:
 			say "Try visiting Uneven U.";
 		else:
-			say "[one of]You'd like to trim the porch crop [hn-in of uneven u][or]You have an item that can cut stuff down. It did, much earlier in the game[or]USE WASH SAW ON PORCH CROP[stopping].";
+			say "[one of]You'd like to trim the [itm-place of porch crop][or]You have an item that can cut stuff down. It did, much earlier in the game[or]USE WASH SAW ON PORCH CROP[in-not-here of Uneven U][stopping].";
 	the rule succeeds;
 
 this is the pre-saw-on-sap rule:
 	if in-sos is true:
+		if Cold Loc is unvisited, the rule fails;
 		if sap-takeable is true, the rule fails;
-		say "[one of]You can hack off some of the sap here. You already have the item for it[or]USE SAW ON SAP[stopping].";
+		say "[one of]You can hack off some of the sap [hn of Cold Loc]. You already have the item for it[or]USE SAW ON SAP[in-not-here of Cold Loc][stopping].";
 		the rule succeeds;
 	if sap-takeable is true:
 		if revving-over is false, say "You already hacked enough sap off.";
@@ -3541,28 +3565,29 @@ this is the pre-slab-on-rows rule:
 		if player does not have balsa slab:
 			say "You don't have anything the sword rows can cut right now.";
 		else:
-			say "[one of]The sword rows can cut through something, but what?[or]You may have an inventory item that can be carved into something more artistic[or]The sword rows would work well on a soft wood item[or]USE BALSA SLAB ON SWORD ROWS[stopping].";
+			say "[one of]The [itm-place of sword rows] can cut through something, but what?[or]You may have an inventory item that can be carved into something more artistic by the [itm-place of sword rows][or]The [itm-place of sword rows] would work well on a soft wood item[or]USE BALSA SLAB ON SWORD ROWS[stopping].";
 	the rule succeeds;
 
 this is the pre-tag-on-tattoos rule:
 	if in-sos is true:
 		if player does not have tag or player does not have tattoos, the rule fails;
-		say "[one of]You can make the ID you need to get past the DIFF-ID[or]You may notice the patterns of roses, or ... throughout the game[or]The gate tag has the pattern to get by the DIFF ID[or]The soot tattoos can be used to press the pattern on your skin[or]USE GATE TAG ON SOOT TATTOOS[stopping].";
+		say "[one of]You can make the ID you need to get past the DIFF-ID[or]You may notice the patterns of roses, or ... throughout the game[or]The gate tag has the pattern to get by the DIFF ID[or]The soot tattoos can be used to press the pattern on your skin[or]USE GATE TAG ON SOOT TATTOOS anywhere[stopping].";
 	the rule succeeds;
 
 this is the pre-tan-on-rocs rule:
 	if in-sos is true:
 		if rocs are moot, the rule fails;
 		if player does not have tan:
-			say "[one of]You need to get something gross to deface the scorn rocs and ruin their shininess.[or]What is gross and discolored in Yelpley?[or]Nat's Tan in [Deft Fed] is weird and orange[or]Find a way to get Nat's Tan and then use it on the scorn rocs[stopping].";
+			say "[one of]You need to get something gross to deface the scorn rocs and ruin their shininess[or]What is gross and discolored in Yelpley?[or]Nat's Tan in [Deft Fed] is weird and orange[or]Find a way to get Nat's Tan and then use it on the scorn rocs[stopping].";
 		else:
-			say "[one of]You have what you need to vandalize the rocs and dent their pride[or]USE NAT'S TAN ON SCORN ROCS[stopping].";
+			say "[one of]You have what you need to vandalize the rocs and dent their pride[or]USE NAT'S TAN ON SCORN ROCS[in-not-here of Flu Gulf][stopping].";
 	the rule succeeds;
 
 this is the pre-tix-on-exit rule:
 	if in-sos is true:
 		if x-ite tix are off-stage, the rule fails;
 		say "[if player is in Dirge Grid]You just need to go back south with the Tix[else if player is not in fun enuf]You can win by going back to Fun Enuf[else]You just need to use the X-Ite Tix on the Tix Exit here[end if][if cur-score of Odd Do < 11], though you can keep hunting for LLPs if you want[end if].";
+		the rule succeeds;
 	the rule succeeds;
 
 this is the pre-vac-on-sac rule:
@@ -3572,7 +3597,10 @@ this is the pre-vac-on-sac rule:
 		if player has Dirt Rid:
 			say "You'd like to clean up the cassettes sac, but you need something stronger than the Dirt Rid.";
 		else if player has cave vac:
-			say "[one of]You have what you need to clean the cassettes sac[or]USE CAVE VAC ON CASSETTES SAC[stopping].";
+			say "[one of]You have what you need to clean the cassettes sac[or]USE CAVE VAC ON CASSETTES SAC[stopping][in-not-here of Dopy Pod].";
+		else:
+			say "[one of]You need a cleaning tool. You can trade for one elsewhere[or]Look south of Toll Lot to get started on how to clean the cassettes sac[stopping].";
+		the rule succeeds;
 	the rule succeeds;
 
 [zzpre]
@@ -3789,6 +3817,7 @@ this is the totem-out rule:
 	the rule succeeds;
 
 this is the tube-to-ave rule:
+	now player has the bunk nub;
 	now Art Xtra is visited; [this is necessary for if the player tried WRW]
 	move tube but to Evaded Ave;
 	the rule succeeds;
@@ -4659,7 +4688,7 @@ King Nik is a male person in Cold Loc. "[one of]A man sits here, shaking his hea
 
 chapter Spur Ups
 
-the Spur Ups are a plural-named beepy thing. description is "King Nik told you it was much more important they were UP than spurs. [if puffed-up is true]One burned out a bit once you puffed up to get to the Emo Dome, but the other may be useful. [end if]The words PUT IT UP are engraved on [if puffed-up is true]the remaining uncharred one[end if]them, with the UP particularly prominent. You're not sure what (IT) is. But you remember how King Nik told you the SPUR UPS could help you feel, or be, UP twice[if puffed-up is true], and you already managed to PUFF UP in the Emo Dome[end if]. Nothing too complex. The question is, how[if puffed-up is true] else[end if]?"
+the Spur Ups are a plural-named beepy thing. description is "King Nik told you it was much more important they were UP than spurs. [if puffed-up is true]One burned out a bit once you puffed up to get to the Emo Dome, but the other may be useful. [end if]You can READ them if you want. You remember how King Nik told you the SPUR UPS could help you feel, or be, UP twice[if puffed-up is true], and you already managed to PUFF UP in the Emo Dome[end if]. Nothing too complex. The question is, how[if puffed-up is true] else[end if]?"
 
 after examining Spur Ups when player is in Yawn Way and puffed-up is false:
 	say "The Spur Ups make the way east feel less intimidating. Maybe you could use them to do something UP enough to be able to hack the Emo Dome.";
@@ -5126,7 +5155,7 @@ revisit-clue is a truth state that varies.
 after looking in Swamp Maws (this is the uneven u revisit hint rule) :
 	if exam axe is not off-stage and revisited-u is false and balsa slab is off-stage:
 		now revisit-clue is true;
-		say "[one of]'Oh, wow! A Dr. Award! For all my hard work! Great news for Uneven U!' you hear Dr. D, the Code Doc, boom from the south. Maybe you should check it out![or]You realize you haven't been south to congratulate Dr. D yet.[stopping]";
+		say "[one of]'Oh, wow! A Dr. Award! For all my hard work! Great news for Uneven U!' you hear Dr. D, the Code Doc, boom from the south. Maybe the Known Wonk really did help the Code Doc! You should check it out![or]You realize you haven't been south to congratulate Dr. D yet.[stopping]";
 	continue the action;
 
 revisited-u is a truth state that varies.
@@ -6178,6 +6207,7 @@ carry out reading:
 
 table of readables
 read-cand	read-yet	read-msg
+Spur Ups	false	"Hmm, that's interesting. Each has P, U and an asterisk in a triangle[if puffed-up is true], even the charred one."
 Set O Notes	false	"You scrunch your eyes to read the random miscellany at the edges of the Set O Notes. Apparently, there can only be one questor, to avoid a partner-entrap. The Flee Elf also wrote in 'REP US SUPER' to motivate you.[paragraph break]Um, yeah. The Set O Notes's main page seems a lot more useful, describing your enemies and some of the scenery and all, but hey, it didn't hurt to read closer."
 enact cane	false	"You squint carefully. KARE RAK is written. But then where are/were the prongs? How would you restore the Enact Cane into something even more useful?"
 moor broom	false	"The moor broom still has the KARE RAK written on it that the enact cane did."
@@ -6620,7 +6650,7 @@ emo-dir-adj is a truth state that varies.
 instead of doing something in Emo Dome when pulled-up is false:
 	if current action is puffuping, say "That was then. The old tricks won't work. You need something new! Maybe very similar, but new." instead;
 	if current action is pulluping, continue the action;
-	if current action is thinking or requesting the score or aiding:
+	if current action is thinking or requesting the score or aiding or sosing:
 		say "You take a second to catch your breath.";
 		continue the action;
 	if current action is going:
@@ -6963,8 +6993,7 @@ the bunk nub is a thing in Evaded Ave. "A small bunk nub lies [if Door Frood is 
 
 understand "noo/cocoon" and "noo cocoon" as bunk nub.
 
-check taking bunk nub:
-	if Door Frood is in Evaded Ave, say "The Door Frood blocks you. 'Well, maybe, if you get something interesting for me, first...'" instead;
+check taking bunk nub: if Door Frood is in Evaded Ave, say "The Door Frood blocks you. 'Hey! That's mine. It's worthless to me, but it's the principle, here. But maybe if you got me something interesting...'" instead;
 
 the stock cots are a plural-named thing. description is "The stock cots are cut cleverly from the remains of the bunk nub. They'll make a great place to sleep for any number of small animals."
 
@@ -8620,6 +8649,13 @@ carry out sosing:
 	if hint-yet is false and word number 1 in the player's command is "hint":
 		say "There are more harmonious ways to ask for a hint, if you want a bonus point. But it's not critical.";
 		now hint-yet is true;
+	if being-chased is true:
+		if chase-person is kayo yak:
+			if cap-pace is false, say "[one of]You're not quite fast enough to outrun the yak on your own. An item you have can help.[or]The pact cap.[or]The pact cap can become a PACE cap.[stopping]" instead;
+			if player is in trial lair, say "[one of]The kayo yak can take out the ergot ogre[or]You just need to give the right command to the kayo yak.[or]YAK ???? [or]YAK OKAY (no comma)[stopping]." instead;
+			say "[one of]The kayo yak will keep chasing you. Maybe you can find someone else for it to knock over.[or]Someone guarding something?[or]The ergot ogre.[or]You'll need to do one more thing once you get to the Trial Lair.[stopping]" instead;
+		if player is in Worn Row, say "[one of]You have the Psi Wisp in the right place, but you can't do anything here in [Worn Row], yet.[or]You have to change it.[or]WORN ROW. The redness ender will take care of the psi wisp.[stopping]" instead;
+		say "[one of]The psi wisp is certainly red. Maybe there's something that could neutralize it.[or]Do you remember a room at the start?[or]It sort of isn't there any more.[or]Go to Word/Work Row, first.[stopping]" instead;
 	let take-clues be 0;
 	repeat through table of just take it:
 		if to-take entry is in where-is entry and where-is entry is visited:
@@ -8647,15 +8683,19 @@ carry out sosing:
 					if the rule failed, next;
 					if the rule succeeded:
 						if debug-state is true, say "[preproc entry] succeeded!";
+						now in-sos is false;
 						the rule succeeds;
 				say "[if debug-state is true](DEFAULT-1) [end if][if use2 entry is a workable and Worn Row is not worky]Change to WORK ROW, then [end if]USE [printed name of use1 entry in upper case] ON [printed name of use2 entry in upper case].";
 				now in-sos is false;
 				the rule succeeds;
-		if there is a preproc entry:
+		else if there is a preproc entry:
 			consider the preproc entry;
-			if the rule succeeded, continue the action;
-	if debug-state is true, say "(2) ";
+			if the rule succeeded:
+				now in-sos is false;
+				the rule succeeds;
+	say "I can't find anything specific to do here right now. So let's look more generally.";
 	repeat through table of goodacts:
+		if there is a room-to-go entry and room-to-go entry is unvisited, next;
 		if there is a use1 entry:
 			if use1 entry and use2 entry are mixable:
 				if there is a preproc entry:
@@ -8663,37 +8703,43 @@ carry out sosing:
 					if the rule failed, next;
 					if the rule succeeded:
 						if debug-state is true, say "[preproc entry] succeeded!";
+						now in-sos is false;
 						the rule succeeds;
 				say "[if debug-state is true](DEFAULT-2) [end if][if use2 entry is a workable and Worn Row is not worky]Change to WORK ROW, then [end if]USE [printed name of use1 entry in upper case] ON [printed name of use2 entry in upper case].";
 				now in-sos is false;
 				the rule succeeds;
-		if there is a preproc entry:
+		else if there is a preproc entry:
 			consider the preproc entry;
 			if the rule succeeded:
 				if debug-state is true:
 					say "[preproc entry] succeeded!";
-					continue the action;
-	repeat with Q running through available rooms:
-		if Q is unvisited:
-			let oiq be in-dir of q;
-			if the room oiq of q is unvisited, next;
-			say "GENERAL HINT: the room [opposite of oiq] of [hn of the room oiq of q] is available, but you haven't visited there yet.";
+					now in-sos is false;
+					the rule succeeds;
+	repeat through table of goodacts:
+		if there is a room-to-go entry and room-to-go entry is unvisited:
+			let oiq be in-dir of room-to-go entry;
+			say "GENERAL HINT: the room [opposite of oiq] of [in-room of room-to-go entry] is available, but you haven't visited there yet.";
+			now in-sos is false;
 			the rule succeeds;
 	say "Uh oh, I couldn't find a hint.";
 	now in-sos is false;
 	the rule succeeds;
 
+report sosing: now in-sos is false;
+
 to say vague-dir of (rm - a room):
 	let r2 be rm;
 	let away be 0;
+	let idr be north;
 	while r2 is unvisited:
 		increment away;
-		let id be in-dir of r2;
-		let r2 be the room id of r2;
+		let idr be in-dir of r2;
+		let r2 be the room idr of r2;
 		if away is 10:
 			say "a room at ([the remainder after dividing loc-num of rm by 10], [loc-num of rm / 10]) from the northeast of the map";
+			let idr be in-dir of r2;
 			continue the action;
-	let oid be opposite of in-dir of r2;
+	let oid be opposite of idr;
 	say "a room [oid] of [hn of r2][if away > 1], and then some[end if]";
 
 section hint rules just take it table [xxoga]
@@ -8747,7 +8793,7 @@ this is the pre-ore-on-reviver rule:
 
 this is the pre-band-on-reifier rule:
 	if in-sos is true:
-		if DNA band is moot or DNA band is off-stage, the rule fails;
+		if DNA band is in Pro Corp or DNA band is off-stage, the rule fails;
 		say "[one of]The DNA band isn't much by itself[or]You should use machines to augment the DNA band[or]There's a question as to which Work Row machine would help the DNA band become something real and living[or]USE DNA BAND ON REIFIER[once-work][stopping].";
 	the rule succeeds;
 
@@ -8759,19 +8805,19 @@ this is the pre-not-a-baton-on-reifier rule:
 
 this is the pre-knits-on-rotator rule:
 	if in-sos is true:
-		if stinky knits are moot or stinky knits are off-stage, the rule fails;
+		unless stinky knits are carried by the player, the rule fails;
 		say "[one of]Phew! Those stinky knits could use a washing[or]There's no washing machine in the game, but there's something close enough, the knits might get clean[or]USE STINKY KNITS ON ROTATOR[once-work][stopping].";
 	the rule succeeds;
 
 this is the pre-log-on-rotator rule:
 	if in-sos is true:
-		if gold log is moot or gold log is off-stage, the rule fails;
+		if gold log is moot or gold log is in Pro Corp, the rule fails;
 		say "[one of]The gold log would be valuable in a treasure hunt, but not here.[or]There's something inside the gold log. It's hollow. What sort of machine would shake it out?[or]USE GOLD LOG ON ROTATOR[once-work].[stopping]";
 	the rule succeeds;
 
 this is the pre-buoy-on-rotator rule:
 	if in-sos is true:
-		if you buoy is moot, the rule fails;
+		if you buoy is moot or you buoy is off-stage, the rule fails;
 		say "[one of]The you buoy would be valuable in a treasure hunt, but not here.[or]There's something inside the you buoy. It's hollow. What sort of machine would shake it out?[or]USE YOU BUOY ON ROTATOR[once-work].[stopping]";
 	the rule succeeds;
 
@@ -8779,16 +8825,17 @@ this is the pre-med-on-lug rule:
 	if in-sos is true:
 		if demo med is moot, the rule fails;
 		if player has demo med:
-			say "[one of]The demo med could help someone[or]The demo med's brand is DYSPEPSYD. Think of someone who might have stomach troubles[or]USE DEMO MED ON GULF LUG[hn-in-blank of Flu Gulf][stopping].";
+			say "[one of]The demo med could help someone[or]The demo med's brand is DYSPEPSYD. Think of someone who might have stomach troubles[or]USE DEMO MED ON GULF LUG [hn-in-blank of Flu Gulf][stopping].";
 		else:
 			say "You don't have what you need to help the Gulf Lug, yet. You need to get beyond Drawl Ward.";
+		the rule succeeds;
 	the rule succeeds;
 
 this is the pre-sac-on-orc rule:
 	if in-sos is true:
 		if cash sac is moot, the rule fails;
 		if player has cash sac:
-			say "[one of]You have what you need to bribe the cross orc[or]USE CASH SAC ON CROSS ORC[stopping].";
+			say "[one of]You have what you need to bribe the cross orc[or]USE CASH SAC ON CROSS ORC [hn-in of Toll Lot][stopping].";
 		else:
 			say "[one of]To pay the orc, you need someone to get you valuables. Preferably, money[or]To get cash for the orc, you may need to help someone who can offer money in exchange for help[or][if Flu Gulf is visited]If you help the Gulf Lug, you can get past the cross orc[else]You haven't found anyone with money yet, but once you get some, you can use it on the cross orc[end if][stopping].";
 	the rule succeeds;
@@ -8819,7 +8866,7 @@ this is the pre-attaboy-on-Sniffins rule:
 
 this is the pre-art-on-reifier rule:
 	if in-sos is false, the rule succeeds;
-	if trap art is moot, the rule fails;
+	if trap art is moot or player does not have trap art, the rule fails;
 	if ever-wordrow is false:
 		say "You need to change [Worn Row].";
 	else if Art Xtra is unvisited:
@@ -8865,8 +8912,10 @@ this is the pre-tip-on-eye rule:
 		say "[one of]The Door Frood requires something from a location you haven't been yet[or][if My Gym is visited]You need to go west of My Gym[else]You need to go south and west of Yawn Way[end if][stopping].";
 	else if ever-wordrow is false:
 		say "You need something from [Worn Row], but not in a configuration you've discovered yet. Go there.";
+	else if Yell Alley is unvisited:
+		say "You need to visit east of [hn of Evaded Ave].";
 	else:
-		say "[one of]The eye needs to scan something. You have an item that points you to the eye and van[or]The van is named Seedy Dee's[or]The pity tip offers a free sample at Seedy Dee's[or]USE PITY TIP ON VAN (or eye)[stopping].";
+		say "[one of]The eye on the van needs to scan something. You have an item that clues this[or]The van is named Seedy Dee's[or]The pity tip offers a free sample at Seedy Dee's[or]USE PITY TIP ON VAN (or eye)[stopping].";
 	the rule succeeds;
 
 chapter aiding
@@ -8935,7 +8984,7 @@ to describe-nearby (ro - a room):
 	repeat with dir running through maindir:
 		let DR be the room dir of ro;
 		if DR is visited:
-			say "Try looking [opposite of dir] [hn-in of DR]. You haven't, yet[one of]. [b]NOTE: for future reference, AID first looks for rooms you can, but haven't, visited, if you request it in a room that's cleared for now. This is meant as a final buffer against hints you don't want, but it may point you away from a nearby puzzle[r][or][stopping].";
+			say "Try looking [opposite of dir] [hn-of of DR]. You haven't, yet[one of]. [b]NOTE: for future reference, AID first looks for rooms you can, but haven't, visited, if you request it in a room that's cleared for now. This is meant as a final buffer against hints you don't want, but it may point you away from a nearby puzzle[r][or][stopping].";
 			continue the action;
 	if player is in Fun Enuf and ro is Art Xtra:
 		say "Try exploring Yelpley to the east.";
@@ -10592,7 +10641,6 @@ include Full Monty Testing by Andrew Schultz.
 
 table of monties (continued)
 montopic (topic)	on-off	test-title (text)	test-action	topic-as-text (text)
-"aid"	false	"AIDING"	try-aid rule	"aid"
 "xlist"	false	"DIRING"	show-dirs rule	"showing directions"
 "sos"	false	"SOSING"	sos-it rule	"sos new hint"
 "mem"	false	"MEMING"	mem-it rule	"mem it all"
@@ -10609,14 +10657,9 @@ carry out exitsing:
 		let Q2 be the room Q of location of player;
 		if Q2 is not nowhere, say "[Q2] is [Q] of [location of player].";
 
-this is the try-aid rule:
-	try aiding;
+this is the eye-it rule: try eaing;
 
-this is the eye-it rule:
-	try eaing;
-
-this is the mem-it rule:
-	try meming;
+this is the mem-it rule: try meming;
 
 chapter noxing
 
