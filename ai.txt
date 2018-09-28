@@ -602,7 +602,7 @@ There are 30 total points in Grebeberg.
 1 point if you USE PARTY TRAP ON STARK RATS.
 1 point if you USE EPOCH COPE ON KING NIK.
 1 point if you USE STOCK COTS ON SLEEP EELS.
-1 point if you USE WASH SAW ON PAST SAP. [?? use it on the fir too]
+1 point if you USE WASH SAW ON PAST SAP. (or on the fir)
 1 point if you USE PUCE CUP ON PAST SAP. (well, the first of the past sap and dose sod)
 1 point if you USE DEMO MED ON GULF LUG.
 1 point if you USE SOME DEMOS ON YAHOO HAY.
@@ -642,7 +642,13 @@ There are 11 total points in Odd Do.
 1 point if you STACK CATS in the Moo Room.
 1 point if you SEE BEES in the Moo Room.
 1 point if you TRACE CART in Word Row.
-?Which rooms change naems, when?
+?Why do some points get scored in some regions?
+Sometimes it's to avoid spoilers. Sometimes it's because you can combine items anywhere.
+Using the murdered rum gets a Dim Mid point because it and the yard ray are from opposite areas, and you ultimately use the yard ray in the Dirge Grid. EMIT NOONTIME follows the same logic.
+Similarly, the troll with the ort is in grebeberg, since it largely affects Grebeberg.
+PACE CAP gets a Dim Mid point because the cap is from Fun Enuf. You could argue it should be a Grebeberg point as well, but the Flee Elf initially tells you the cap has more than one alignment.
+USE GATE TAG ON SOOT TATTOOS also can be done in Grebeberg, but the tag and tattoos are from Yelpley, and the state tats are useful in Yelpley.
+?Which rooms change names, when?
 There are minor spoilers here, so I'll note that room name changes are listed in approximate quest order.
 Art Xtra becomes Traded Art after you pick up El Doodle.
 Deft Fed becomes Bon Snob after you give Sniffins Yob Attaboy.

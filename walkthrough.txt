@@ -10,6 +10,8 @@ Ailihphilia is also decidedly nonlinear. This creates some problems with a plain
 
 This walkthrough is designed to be turn-saving in the extreme. In other words, using this walkthrough, you will get stuff to help Person X before visiting Person X. I've tried to describe what's going on, so you can see a bit of detail if you want to.
 
+Also, this game does not cover any of the eleven unnecessary points, nor does it cover how to get the very best ending once you have all those points. If you want, you can poke at the source code to see the final puzzle's solution. I don't mind.
+
 The best way to look for what you need is to search for something that is blocking you. For instance, if you are stuck by the s-c-o-r-n r-o-c-s, you could search for either word. Without the dashes, of course.
 
 If you are technically inclined, you can grep -i "^>" walkthrough.txt | sed "s/.*>//" to plow through. Or grep -i ">.*(item name)" to see what to do with a specific item. So, if you want the quick way without comments, there it is. While it could be quicker, turn-wise, with the GT command--I've gotten under 200--you might not actually save keystrokes.
@@ -18,7 +20,7 @@ Some particular spoilers, such as the general procedure for puzzles, may be enco
 
 Many point scoring commands will be palindromes. Most of the others are of the form USE X ON Y. You can shorten them by just using one word. In other words, to bowdlerize from Kingdom of Loathing's Palindome, USE EVIL OLIVE ON TACO CAT could be shortened to USE OLIVE ON CAT. (I used the full names because I wrote a script to make sure the walkthrough and source were relatively synced, and I didn't want to cross up namespaces e.g. the Gulf Lug and Flu Gulf could both be GULF.)
 
-So let\s get started.
+So let's get started.
 
 Fun Enuf is, well, not fun enough to start. And worse yet, you can't leave until you know what to do with the Pact Cap! Well, you can leave through the Tix Exit, but that's no fun, unless you like seeing bad ends.
 
@@ -100,7 +102,7 @@ What to do with the ten-level net? It looks a bit shaky. Examining with the pact
 
 (+1) >TEND NET
 
-You should probably examine the epicer recipe here. You may remember the TNT just back east in Yell Alley. It's the trickiest of the four parts of the North-Tron to pick up. Not that any one is easy. Let's go back to Worn/Word Row.
+You should probably examine the epicer recipe here. You may remember the TNT just back east in Yell Alley. It's the trickiest of the four parts of the North-Tron to pick up, even though it's the first you found. Not that any one is easy. Let's go back to Worn/Word Row.
 
 >E.S.S.S.W
 
@@ -348,11 +350,7 @@ You could cut a design out of the soot tattoos, but with what?
 
 (+1) >USE GATE TAG ON SOOT TATTOOS
 
->S.S.W.WORK ROW
-
-* note to testers: this looks like wasted moves, the 3 before and 2 after! I'm not sure why I did this. Perhaps it's an artifact from a less efficient previous walkthrough version. Can you confirm?
-
->E.N.W.W.W
+>S.W.W.W
 
 We can stop here to make passage to not one, but two, new places. The third will have to wait. The lie veil is too tricky right now. But the gnu dung and turf rut--too much matter in one, not enough in another.
 
@@ -398,6 +396,10 @@ How do you feel peaceful enough to not be disrupted by your enemies, or this que
 
 (+1) >USE DORK ROD ON TAO BOAT
 
+This also allows you to do something I flag much later in the walkthrough, but it's out of the way right now. So we'll avoid it. But I'll note it in rot13, because it allows you to kill one of the mini-bosses.
+
+Lbh pna tb gb Lryy Nyyrl naq gnxr gur cbccre, naq lbh pna hfr gur gna ba gur ebpf, gura hfr gur cbccre ba gur gbgrz.
+
 >S.S.S
 
 And now we can do a bit of double duty with the Code Doc. First, help the Code Doc...
@@ -414,7 +416,7 @@ The spa maps probably can be used on ... scenery in the Apse Spa. Let's go there
 
 (+1) >USE SPA MAPS ON GO-BY BOG
 
-This gets you the Sage Gas, which you can't use right away. Now to get by the Ergot Ogre to the south of the Code Doc. You won't have seen the ogre if you just followed this walkthrough without digressing, but trust me, it's there!
+This gets you the Sage Gas, which you can't use right away. Now to get by the Ergot Ogre to the south of the Code Doc. You won't have seen the ogre if you just followed this walkthrough without digressing, but trust me, it's there, and it's in the way!
 
 First, though, a detour to the Moo Room.
 
@@ -449,6 +451,7 @@ Bye bye, ogre. Happy trails, yak.
 >E
 
 The tame mat doesn't really say anything, and you will want to fix that.
+
 (+1) >USE SAGE GAS ON TAME MAT
 
 Oops! You have the opposite problem, now. The guru rug is still a bit too pie-in-the-sky. Maybe it would be perfect if you didn't need to fix things, but you do, so it isn't.
@@ -459,7 +462,7 @@ You need something that brings actions to the ideals of the guru rug.
 
 There we go! You feel more competent now. More worthy of being able to do things. The stir writs will give you confidence.
 
-There is still one place we haven't looked at which is open. Siuth of Dumb Mud.
+There is still one place we haven't looked at which is open. South of Dumb Mud.
 
 >W.N.N.E.S
 
@@ -481,11 +484,19 @@ After your creations, the Martini Tram is the second part of the North-Tron. But
 
 >W.W.W.N
 
+The Tru Yurt is messy. You need something that can clean it.
+
 (+1) >USE MOOR BROOM ON TRU YURT
+
+The Known Wonk suddenly realizes something! Something that could help Dr. D! Let's go visit...
+
+Now, the Exam Axe is useful for something cool, but again, turn saving.
 
 >S.S
 
-We heard some chatter from the south, and now Dr. D needs a bit more help!
+The porch crop is new. But there is too much of it. Do we have something that has trimmed other things?
+
+Maybe even something that trimmed something before?
 
 (+1) >USE WASH SAW ON PORCH CROP
 
@@ -497,13 +508,17 @@ The balsa slab will be useful for later.
 
 >N
 
-The stir writs encourage you to take the Bro Orb. So you can USE STIR WRITS ON BROS ORB, or you can just save a few keystrokes (which doesn't cost you a point for avoiding the "USE" construction) ...
+The stir writs encourage you to take the Bros' Orb. So you can USE STIR WRITS ON BROS ORB, or you can just save a few keystrokes. Either way, you don't get a point, mostly because I wanted to the game to end with 77 or 88 points, and this was the easiest to avoid rewarding.
 
 >GET ALL
 
+You can now take down either mini-boss, but that's not quite turn-efficient.
+
 >S.E.E.E.S.W
 
-Now with all the junk we have, we can make non-junk.
+Now with all the junk we've accumulated, we can make non-junk.
+
+The DNA band in particular can be upgraded.
 
 (+1) >USE DNA BAND ON REIFIER
 
@@ -511,21 +526,23 @@ The DNA hand isn't quite alive ... yet.
 
 (+1) >USE ROTO MOTOR ON DNA HAND
 
-How very grabby! Mr. Arm is a lot less visible than you are and probably can get in places you can't.
+How very grabby! Mr. Arm is a lot less visible than you are and probably can get in places you can't. Mr. Arm also gives some nice clues as to what is where if you examine him.
+
+But there's more. That eroded ore has potential...
 
 (+1) >USE ERODED ORE ON REVIVER
 
-Three parts of the north-tron! The fourth is just a bit away. But first, let's see if the machines throw out anything.
+Three parts of the north-tron! The fourth is just a bit away. It's the TNT, in case you forgot. But first, let's see if the machines throw out anything else.
 
 (+1) >USE YOU BUOY ON ROTATOR
 
-Treasure! Cool. You don't need it, but maybe you can use it to negotiate.
+Treasure! Cool. You don't need the Me Gem, but maybe you can use it on someone extra selfish.
 
 >E.N.N.N.E
 
 (+1) >USE MR ARM ON BOMB MOB
 
-You can use Mr Arm on the TNT, too, to get the point. But the way I programmed things, I checked if I should send each used item to the great yonder, so it was easier this way for me. A few keystrokes harder for you.
+You can use Mr Arm on the TNT, too, to get the point. But the way I programmed things, I checked if I should send each used item to the great yonder, so it was easier this way for me. A few keystrokes harder for you if you just copy things down.
 
 >GET REP POPPER
 
@@ -533,29 +550,35 @@ You could also have taken the rep popper after visiting the Tao Boat, but it was
 
 >W.S.S.W.W.N.N
 
-The rocs are proudly shiny, but ...
+Those rocs are proud and shiny and hard to get by!
+
+Is there any way to deface them? Anything that could make them less purely white?
 
 (+1) >USE NAT'S TAN ON SCORN ROCS
 
 >W
 
-How to cut the Yuge Guy down to size? It's not him, but the idea of him that is intimidating or impressing people.
+Okay, the Yuge Guy is here, with his Me Totem.
+
+You need to cut the Yuge Guy down to size, but nothing seems to work. That's because it's not him, but the idea of him that is intimidating or impressing people.
 
 (+1) >USE REP POPPER ON ME TOTEM
 
+That does it! Now for Ms. Ism.
+
 >E.S.S.E.E.E.N
 
-Now another enemy to deal with ... not directly, though. Again, they seem bigger than they are due to amplifiers.
+Again, dealing with Ms. Ism doesn't work directly. Is there something else that amplifies things? Try looking at the mirror rim. It shows how silly your pact cap looks.
 
 (+1) >USE BROS' ORB ON MIRROR RIM
 
-The sword rows--what are they useful for?
+The sword rows--what are they useful for? Cutting something up. Nothing too hard.
 
 (+1) >USE BALSA SLAB ON SWORD ROWS
 
 >S.W.S.W
 
-The not-a-baton could use a boost.
+The not-a-baton could use a boost. It isn't anything, and it needs to become something.
 
 (+1) >USE NOT-A-BATON ON REIFIER
 
@@ -565,17 +588,17 @@ Boom go the machines! Well, the final machine. Now you have a weapon to take out
 
 How do you turn it on? EMIT ********.
 
-The last four letters are TIME, because palindromes. You need something bright.
+The last four letters are TIME, because palindromes are kind of a theme here. You need something bright and happy and positive--oh, and four letters long.
 
 (+1) >EMIT NOONTIME
 
-Let's practice our aim.
+Now we need to practice our aim. We've destroyed most everything, but there's one thing we haven't, and it's not too useful.
 
 (+1) >USE YARD RAY ON TEST SET
 
 >E.N.W
 
-Okay, let's build the North-Tron. Twenty commands are acceptable here: choose two from the ingredients and epicer recipe.
+We now have all pieces of the North-Tron. There's no one right way to build it. In fact, there are twenty: you can use any of the epicer recipe and the four north-tron parts with any other.
 
 (+1) >USE TNT ON ORE ZERO
 
@@ -583,15 +606,19 @@ Okay, let's build the North-Tron. Twenty commands are acceptable here: choose tw
 
 Now, carnage! And points! And so on. Either the Knife Fink or Verses Rev can go first, but both have to go before you deal with the Diktat Kid.
 
+You don't have many items left, now, so trial and error may work. Or you can guess who might like what.
+
 The Knife Fink looks a bit greedy.
 
 (+1) >USE ME GEM ON KNIFE FINK
 
-The verses rev is given to silly moral outrage.
+The Verses Rev is given to silly, overdone moral outrage.
 
 (+1) >USE TABOO BAT ON VERSES REV
 
-If you try to shoot the Diktat Kid, that won't stop what the Kid's unleashed.
+Similar to the Yuge Guy and Ms. Ism, being direct doesn't work here. If you try to shoot the Diktat Kid, that won't stop what the Kid's unleashed.
+
+Disabling one of the side weapons also don't work. You only have one shot.
 
 (+1) >USE YARD RAY ON REDIVIDER
 
@@ -599,6 +626,10 @@ If you try to shoot the Diktat Kid, that won't stop what the Kid's unleashed.
 
 One last thing to do. It's not too tricky, I hope.
 
+You can spend time looking for last lousy points you didn't get, or you can wrap things up.
+
 (+1) >USE X-ITE TIX ON TIX EXIT
 
 There are slightly different endings, based on whether or not you found all the LLPs ... and, well, one other thing I'll let you work out so the X/O Box has something extra. If you're really curious, you can look through the source. But I don't want to spoil it in a standard walkthrough. I think it's appropriately thematic, though.
+
+And I hope you enjoyed Ailihphilia, no matter how much you used the walkthrough.
