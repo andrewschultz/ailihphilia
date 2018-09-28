@@ -152,7 +152,7 @@ use MAX_VERBS of 550. [-40/50 from max_verbs debug]
 
 use MAX_ACTIONS of 200.
 
-use MAX_VERBSPACE of 5200. [-400 from max_verbspace debug]
+use MAX_VERBSPACE of 5300. [-400 from max_verbspace debug]
 
 use MAX_SYMBOLS of 23000.
 
@@ -162,7 +162,7 @@ use MAX_VERBS of 600. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 use MAX_ACTIONS of 220. [+10?]
 
-use MAX_VERBSPACE of 5600. [4096 = original max]
+use MAX_VERBSPACE of 5700. [4096 = original max]
 
 use MAX_SYMBOLS of 24000. [-1000 for release]
 
@@ -672,7 +672,7 @@ this is the check palindrome turns rule: [this could be at the end but those are
 			continue the action;
 		say "[sox]. Yet you feel you did something weird right, beyond fixing every small thing in Yelpley and Grebeberg, which you didn't [if score > 84]quite [end if]do.";
 	else if score is 88:
-		say "Wow! You did everything you could, you think. [sox].[paragraph break]You have a vision of Grebeberg and Yelpley being, well, not quite perfect as they could be years down the line. You probably missed out on some sort of style points. Well, it's too late now. And maybe someone else will have fun fixing them up.";
+		say "Wow! You did everything you could, you think. [sox].[paragraph break]You have a vision of Grebeberg and Yelpley being, well, not quite perfect as they could be years down the line. You probably missed out on some sort of style points. Well, it's too late now. And maybe someone else will have fun going there and fixing things back up.";
 	else:
 		say "[sox]. Well, you had a feeling you left a few things undone."
 
@@ -1643,7 +1643,7 @@ showed-sites is a truth state that varies.
 
 carry out creditsing:
 	now show-dev is true;
-	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in alphabetical order: Marnix Van Den Bos, Mike Carletta, Wade Clarke, Arthur DiBianca, Viv Dunstan, Anssi Raissanen, Brian Rushton, Mike Spivey, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and still gave positive suggestions about cluing and so forth. If you want to join this elite club, and you find a bug, write me at [email].[paragraph break]IFComp organizers past and present. Without them, I wouldn't have started and kept going. Whether that's good for gaming is up for debate, but it's been good for me.[paragraph break]Various Python communities, especially StackOverflow, helped me to organize source control and write utilities that helped not only to extract palindromes but also to tune up Inform code (obligatory thanks to all past and current Inform developers, from whom I've stolen game code and/or used extensions) and run simple tests.[paragraph break]I also found some websites useful. DEV ED or DEVED will show which helped me and how.";
+	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in alphabetical order: Marnix Van Den Bos, Mike Carletta, Wade Clarke, Arthur DiBianca, Viv Dunstan, Anssi Raissanen, Brian Rushton, Mike Spivey, Brian Stovall, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and still gave positive suggestions about cluing and so forth. If you want to join this elite club, and you find a bug, write me at [email].[paragraph break]IFComp organizers past and present. Without them, I wouldn't have started and kept going. Whether that's good for gaming is up for debate, but it's been good for me.[paragraph break]Various Python communities, especially StackOverflow, helped me to organize source control and write utilities that helped not only to extract palindromes but also to tune up Inform code (obligatory thanks to all past and current Inform developers, from whom I've stolen game code and/or used extensions) and run simple tests.[paragraph break]I also found some websites useful. DEV ED or DEVED will show which helped me and how.";
 
 chapter deveding
 
@@ -2585,38 +2585,50 @@ bunk nub	sleep eels	"That -- well, it almost works. But the bunk nub isn't shape
 bunk nub	stark rats	"The rats don't need to sleep, and the bunk nub won't make them feel drowsy. You need to get rid of the rats."
 Cave Vac	gnu dung	"The Cave Vac sputters. You may need something more specifically suited to the, uh, material to clean up."
 cave vac	go by bog	"The bog is too big for that."
+cave vac	guru rug	"The guru rug's message is clean. It's just overblown."
 cave vac	lie veil	"The Cave Vac doesn't work on morally dirty tricks."
+cave vac	soot tattoos	"No, the soot tattoos are good for something. No need to wipe them out."
 cave vac	stinky knits	"The smell is crusted into the stinky knits. The cave vac would work better than the Dirt Rid, but it would only make the stinky knits look a bit better."
 cave vac	tame mat	"The tame mat's message is clean. It's just not inspiring."
-cave vac	tame mat	"The guru rug's message is clean. It's just overblown."
 cave vac	troll ort	"The troll ort is crusted over enough that the cave vac wouldn't really clean it."
+cave vac	Yuge Guy	"That won't clean up all his dirty tricks."
 demo med	Elan Ale	"No, combining alcohol and pills is a bad, bad idea."
 demo med	Gorge Grog	"No, combining alcohol and pills is a bad, bad idea."
 Dirt Rid	cassettes sac	"[get-rej of cassettes sac]The Dirt Rid wheezes but is unable to clean up the cassettes sac. You need something more powerful."
 Dirt Rid	gnu dung	"The Dirt Rid is ineffective and too small. You may need something stronger."
 Dirt Rid	go by bog	"The bog is too big for that."
+Dirt Rid	guru rug	"The guru rug's message is clean. It's just overblown."
 Dirt Rid	lie veil	"The Dirt Rid doesn't work on morally dirty tricks."
+Dirt Rid	soot tattoos	"No, the soot tattoos are good for something. No need to wipe them out."
 Dirt Rid	stinky knits	"The smell is crusted into the stinky knits. You need a heavier duty tool than the Dirt Rid to clean them up."
 Dirt Rid	tame mat	"The tame mat's message is clean. It's just not inspiring."
-Dirt Rid	tame mat	"The guru rug's message is clean. It's just overblown."
 Dirt Rid	troll ort	"The troll ort is crusted over enough that the Dirt Rid wouldn't really clean it."
-DNA hand	bomb mob	"The hand isn't mobile enough."
+Dirt Rid	Yuge Guy	"That won't clean up all his dirty tricks."
+DNA band	Code Doc	"You don't know what the Code Doc's degree is in, but you doubt you have to do anything TOO sophisticated with the DNA."
+DNA hand	Bomb Mob	"If only the hand were alive, maybe it could steal the TNT from the bomb mob!"
+DNA hand	Code Doc	"You don't know what the Code Doc's degree is in, but you doubt you have to do anything TOO sophisticated with the DNA."
 DNA hand	DIFF ID	"The DIFF ID doesn't even seem to recognize the DNA hand. Apparently, it is not alive enough."
 DNA hand	enact cane	"[man-lab]."
 DNA hand	gate tag	"That would mark up the DNA hand, but it might be painful. Perhaps the tag should be impressed on something else."
 DNA hand	moor broom	"[man-lab]."
 DNA hand	soot tattoos	"The DNA hand doesn't need augmentation, and besides, the soot tattoos are sort of generic. Maybe there's a way to make a pattern of them."
+DNA hand	TNT	"If only the hand were alive, maybe it could steal the TNT from the bomb mob!"
 DNA hand	Yuge Guy	"The hand doesn't seem to willing or able to move toward the Yuge Guy."
+dork rod	Code Doc	"The Code Doc may or may not have gotten picked on in high school for wanting to learn things, so the gift of a dork rod might be upsetting."
 dork rod	DIFF ID	"You sense using the dork rod to identify yourself would be especially unhelpful. Well, here, at least."
+dork rod	DNA band	"The dork rod remains inert. You gain no brilliant biochemical insight."
+dork rod	DNA hand	"The dork rod remains inert. You gain no brilliant biochemical insight." [?? hand/band]
 dork rod	kayak	"The dork rod is too weak and wimpy to be an effective paddle."
-dork rod	lie veil	"Unfortunately, dorkiness often sees the opposition is lying but is powerful to stop it. You're going to need something more violent to dispel the lie veil."
+dork rod	lie veil	"Unfortunately, dorkiness often sees the opposition is lying but is powerless to stop it. You're going to need something more violent to dispel the lie veil."
 dork rod	rep popper	"The rep popper would probably make quick work of the dork rod, which must be useful for SOMETHING. So you decide against it."
+dork rod	Yuge Guy	"Unfortunately, the dork rod doesn't change people into dorks. Though in the Yuge Guy's case, that'd be an improvement."
 dose sod	pact cap	"[cap-is-not-cup]."
 el doodle	code doc	"'[get-rej of El Doodle]This isn't quite clear enough for me. If you could clean it up, though, I could help you.'"
 el doodle	Known Wonk	"The Known Wonk looks at El Doodle, thinks, and says 'Ugh, sorry, never could decipher these things. No good rules to. Maybe you could use the edits tide, though.'"
 el doodle	Revolt Lover	"But the Revolt Lover pretty much offered it to you in the first place."
 Elan Ale	cassettes sac	"The Elan Ale isn't high-proof enough to peel any dirt off the cassettes sac."
 Elan Ale	DIFF ID	"No electrical wiring is exposed, so you can't short the DIFF ID out."
+Elan Ale	el doodle	"There's mp invisible ink here. That'd make El Doodle even more messy." [?? use alcohol on]
 Elan Ale	Gulf Lug	"Alcohol is not effective medicine."
 Elan Ale	Revolt Lover	"'I can't drink on the job, here!'"
 elope pole	code doc	"'[if tent net is moot]I bet you could go neat places with that[else]That might help build something, but I need something that's more a roof[end if].'"
@@ -2648,6 +2660,7 @@ gold log	kayak	"The gold log is too heavy to be an effective paddle."
 Gorge Grog	bomb mob	"There isn't enough for everyone, so that would probably make them even more unruly."
 Gorge Grog	cassettes sac	"That'd clean up the cassettes sac, but it'd probably dissolve it, too."
 Gorge Grog	DIFF ID	"No electrical wiring is exposed, so you can't short the DIFF ID out."
+Gorge Grog	el doodle	"There's mp invisible ink here. That'd make El Doodle even more messy."
 Gorge Grog	Gulf Lug	"Alcohol is not effective medicine."
 Gorge Grog	Revolt Lover	"'I can't drink on the job, here!'"
 Gorge Grog	yard ray	"The Gorge Grog is pretty strong stuff, but you may need something even stronger."
@@ -2666,9 +2679,11 @@ mr arm	Gal Flag	"This isn't capture the flag."
 Mr Arm	gate tag	"Mr. Arm doesn't seem markable."
 mr arm	moor broom	"[man-lab]."
 mr arm	Ms Ism	"That might be creepier than even Ms. Ism deserves."
+mr arm	rep popper	"Having Mr. Arm as an intermediary won't affect whether you can hold on to the rep popper. Maybe Mr. Arm is better suited to steal something else."
 Mr Arm	soot tattoos	"The tattoos wouldn't stay on someone/something as metallic as Mr. Arm."
 Mr Arm	Yuge Guy	"Mr. Arm doesn't seem to want to move toward the Yuge Guy."
 murdered rum	butene tub	"You tremble at the thought of opening the murdered rum. It's spooky beyond having a high alcohol content. Maybe you can use something less drastic on, or in, the tub."
+murdered rum	el doodle	"There's mp invisible ink here. That'd make El Doodle even more messy."
 murdered rum	test set	"Chemical experiments are not your thing. The murdered rum's pretty caustic, but perhaps it can act as fuel for something else."
 NULL ILLUN	Door Frood	"'Like I need it! Other people do! And what's worse, some who read it become less easy to make fun of. Hmmph.'"
 NULL ILLUN	King Nik	"'That would help me feel better about failure. But, and I feel kinda guilty for asking, you got any book that would help me avoid failure in the first place?'"
@@ -2729,6 +2744,7 @@ snack cans	DIFF ID	"The DIFF ID is not a grocery scanner."
 SOME DEMOS	Revolt Lover	"[one of]The Revolt Lover nods slightly. 'An excellent book! I have a copy, myself. It's helped me make art out of just about ANYTHING. The best stuff is, you know, boring and interesting at the same time.' You make a note of the Revolt Lover's words[or]The Revolt Lover already mentioned you should find something both boring and interesting at the same time[stopping]."
 soot tattoos	DIFF ID	"The Diff-ID doesn't respond. Maybe you need a way to put them on you, somehow."
 soot tattoos	etage gate	"The etage gate pattern is interesting and distinctive. Maybe if you had something similar that was not just a drawing, you could rub the pattern off on the tattoos."
+soot tattoos	Revolt Lover	"But the Revolt Lover pretty much offered them to you in the first place."
 spa maps	pool gloop	"The pool gloop doesn't expand far enough to need mapping. Go-By Bog, on the other hand..."
 spa maps	spa taps	"The spa taps don't expand far enough to need mapping. Go-By Bog, on the other hand..."
 spur ups	lie veil	"The Lie Veil flaps a bit but soon returns to stability. You remember King Nik saying the Spur Ups made for a metaphorical up. You need to do something UP with them."
@@ -2766,6 +2782,7 @@ troll ort	kayo yak	"As you hold the troll ort out, the Kayo Yak butts your hand!
 troll ort	Known Wonk	"The Known Wonk launches into an overly detailed explanation about how its weird smell could attract certain animals and make them playful and minimally violent."
 troll ort	senile felines	"The senile felines sniff lazily at the troll ort, but despite its saying PINT-A-CATNIP, they do nothing. Perhaps they are just too inactive."
 wash saw	Bond Nob	"Alas, you are not a surgeon."
+wash saw	bros' orb	"But the Bros['] Orb is about unity. Cutting it in half would be counterproductive."
 wash saw	bunk nub	"The bunk nub is small enough."
 wash saw	cassettes sac	"The wash saw doesn't have enough fluid to clean up the cassettes sac. It'd probably cut whatever's in the sac, too. You need a more powerful, dedicated cleaner."
 wash saw	crag arc	"The crag arc is much too big for the saw to get anywhere. [if UFO tofu is off-stage]Maybe there's a better way to find what's behind there[else]Besides, you found enough[end if]."
@@ -2891,14 +2908,14 @@ enact cane	yahoo hay	moor broom	pre-cane-on-hay rule	hay-gone rule	true	true	fal
 --	--	--	rev-pace-cap rule	--	true	--	--	false	true	false	Dim Mid	--	--	false	--
 troll ort	brag garb	--	pre-ort-on-garb rule	chase-in-zoo rule	true	true	false	false	true	false	Grebeberg	--	--	false	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the stinky knits, but still quite distinctive. The ort must've been covered by the dirt for a long time, because it disintegrates as its essence is leaked onto the brag garb." [b4:pace cap] [af:yak okay]
 --	--	--	rev-yak-okay rule	brag-garb-bye rule	true	--	--	false	true	false	Grebeberg	Lair Trial	Lair Trial	false	--
-sage gas	tame mat	guru rug	pre-gas-on-mat rule	--	true	true	true	false	true	false	Grebeberg	Motto Bottom	Motto Bottom	false	"'Mix a maxim...' you mutter to yourself. The sage gas bubbles out under the tame mat, and the message changes. To something wiser. But perhaps a bit stuffy: a guru rug!"
+sage gas	tame mat	guru rug	pre-gas-on-mat rule	rug-to-bottom rule	true	true	true	false	true	false	Grebeberg	Motto Bottom	Motto Bottom	false	"'Mix a maxim...' you mutter to yourself. The sage gas bubbles out under the tame mat, and the message changes. To something wiser. But perhaps a bit stuffy: a guru rug!"
 sharp rahs	guru rug	stir writs	pre-rahs-on-rug rule	--	true	true	true	false	true	false	Grebeberg	Motto Bottom	Motto Bottom	false	"The sharp rahs meld into the guru rug, which feels less weighted down by philosophy and floats away. Under it there are stir-writs, which seem oversimplified at first, but on re-reading, they strike just the right balance between emotional and intellectual stimulation."
 --	--	--	rev-nail-Ian rule	--	true	--	--	false	false	true	Grebeberg	Mont Nom	Mont Nom	false	--
 --	--	--	rev-first-food-combo rule	--	true	--	--	false	false	true	Grebeberg	Mont Nom	Mont Nom	false	--
 --	--	--	rev-second-food-combo rule	--	true	--	--	false	false	true	Grebeberg	Mont Nom	Fun Enuf	false	--
 Moor Broom	Tru Yurt	Exam Axe	pre-broom-on-yurt rule	bump-ivy rule	true	true	false	false	true	false	Grebeberg	Yack Cay	Yack Cay	false	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how a clean space frees one's mind for ideas and how your simple advice works. You're pretty shocked, but you're even more shocked when the Known Wonk bolts out and yells 'Wait a second!'[paragraph break]After a bit, the Known Wonk returns, babbling about FINALLY impressing the Code Doc. In gratitude, the Known Wonk hands you something long-hidden and unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! You trade the moor broom for it, now that the Known Wonk is committed to cleanliness." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
 wash saw	porch crop	balsa slab	pre-saw-on-crop rule	--	true	true	false	false	false	false	Grebeberg	Uneven U	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods.[paragraph break]'Yes! Yes! We have achieved AIMED ACADEMIA! Uneven U needs a name change ... to UNITIN['] U! How can I thank you?'[paragraph break]You see the wash saw became dull while you sawed, and you've no way to sharpen it. The Code Doc should be able to before the porch crop grows back. So when you notice a balsa slab is lying under where the porch crop was, you propose a trade. The Code Doc accepts. Now, you ... do own wood!"
-Exam Axe	Lie Veil	--	pre-axe-on-veil rule	--	true	true	true	false	true	false	Grebeberg	Dumb Mud	Dumb Mud	false	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and turning into, well, an ex-axe. You can go north now."
+Exam Axe	Lie Veil	--	pre-axe-on-veil rule	--	true	true	true	false	true	false	Grebeberg	Dumb Mud	Dumb Mud	false	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and swirling and vanishing. I guess now it's an ex-axe. You can go north now."
 --	--	--	rev-get-bros orb rule	--	false	--	--	false	true	false	--	Le Babel	Le Babel	--	--
 DNA band	reifier	DNA hand	pre-band-on-reifier rule	--	true	true	false	false	false	true	Yelpley	Worn Row	Worn Row	false	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand! It doesn't have any slime or blood leaking, and when you take it, it doesn't twitch too much."
 roto motor	DNA hand	Mr Arm	pre-motor-on-hand rule	--	true	true	true	false	false	true	Yelpley	Worn Row	Worn Row	false	"Some of the stuffing inside the hand has to pop out to make space for the roto motor to fit in. There's enough to make a whole arm! The hand glows a bit and wiggles its fingers nimbly and even pinches you before you can react. You notice something inscribed on the arm (MR. ARM) and hand: BANG NAB. The arm will probably give the hand a bit more reach."
@@ -3799,6 +3816,10 @@ this is the rebump-art-xtra rule:
 	shuffle-before Art Xtra and Red Roses Order;
 	the rule succeeds;
 
+this is the rug-to-bottom rule:
+	now guru rug is in Motto Bottom;
+	the rule succeeds;
+
 this is the sap-loose rule:
 	now sap-takeable is true;
 	if player has puce cup:
@@ -3950,7 +3971,7 @@ mush sum	"The mush sum is too murky and unstable to deal with. And to break the 
 tube but	"The tube doesn't lead anywhere you want to go. You don't need to muck with it." [start Evaded Ave 4 0]
 Line Nil	"There's nothing you need behind the Line Nil security system. In fact, it's probably protecting you." [start Yell Alley 5 0]
 gash sag	"You don't want to mess with the gash sag. Destroying the butene tub is damage enough." [start Pro Corp 6 0]
-Sci Pics	"They are just there to [if Gorge Grog is moot]rehash what happened[else]spell out what happens[end if] if you go pouring random explosive liquids down the butene tub."
+Sci Pics	"The Sci Pics are just there to [if Gorge Grog is moot]rehash what happened[else]spell out what happens[end if] if you go pouring random explosive liquids down the butene tub."
 mist sim	"You don't have anything that would dispel the mist sim." [start Yack Cay 0 1]
 storm rots	"Yuck. You don't want or need to touch the storm rots, or do anything with them. There's probably worse behind them."
 opossum	"The opossum is just there to (optionally) be nice to, in a special, unusual way." [start Le Babel 1 1]
@@ -3973,7 +3994,7 @@ trap mart rampart	"It's too sturdy to climb or blow up and too wide to go around
 bad dab	"The bad dab's message seems important, but it's not good for much except examining." [start Worn Row 3 3]
 redness ender	"You don't want to do anything crazy with the Redness Ender. You don't want to go near it. It's dangerous looking. You can picture it ambushing someone who doesn't expect it."
 sto lots	"You don't want to tinker with the STO LOTS more than you have to. It makes carrying stuff easier, and that's good enough." [start My Gym 4 3]
-decal placed	"The decal placed decal is just there to advertise the food. It's not critical to the story." [start deli tiled 6 3]
+decal placed	"The decal placed is just there to advertise the food. It's not critical to the story." [start deli tiled 6 3]
 snooty toons	"The snooty toons are just there for ambience. They're not critical to the story."
 go fog	"The go fog is very dense. It pushes you back even as you look at it. As if to say, go away, and also, get going with what you want and need to do." [start Lair Trial 0 4]
 be web	"The be web is--well, it's itself, and maybe there's a message here but you'll figure it out once you're finished adventuring. It's not important enough now." [start Motto Bottom 1 4]
@@ -4836,6 +4857,8 @@ book Dumb Mud
 
 Dumb Mud is west of Seer Trees. It is in Grebeberg. "Mud! Um...[paragraph break]A turf rut to the south is [if poo coop is moot]filled in enough[else]too deep[end if] to cross. The way west is [if gnu dung is moot]free[else]blocked by gnu dung[end if]. [if lie veil is in Dumb Mud]A lie veil (nowhere near small enough to wear) blocks your way[else]With the lie veil removed, you can go[end if] north. [mud-go] back east.".
 
+understand "dum mud" and "dum" as dumb mud.
+
 to say mud-go:
 	let DS be 0;
 	if gnu dung is moot, increment DS;
@@ -4957,7 +4980,7 @@ understand "bro/bros" and "bro/bros orb" as Bros' Orb.
 
 check taking Bros' Orb:
 	if player has Bros' Orb, say "You already have it." instead;
-	if player does not have stir writs, say "A voice in your head says 'WANT? NAW!'[paragraph break]You aren't sure you can handle the potentially corrupting power of the Bros['] Orb. [if player has sage gas]The sage gas helps you to understand how things could go wrong, but still, you're a bit worried[end if]. Maybe if you had some more balance to your thinking." instead;
+	if player does not have stir writs, say "A voice in your head says 'WANT? NAW!'[paragraph break]You aren't sure you can handle the potentially corrupting power of the Bros['] Orb[if player has sage gas]. The sage gas helps you to understand how things could go wrong, but still, you're a bit worried[end if]. Maybe if you had some more balance to your thinking." instead;
 	say "You wonder if you should take the Bros['] Orb. If you deserve to. But you reread the stir writs and whisper to yourself, 'Nag, ol['] slogan,' and feel balanced enough to take the Bros['] Orb and accept the responsibility for doing so.[paragraph break]And even to recognize that you don't always deserve points for doing the right thing[if useon-writs is true], or knowing what to use on what[end if]. The stir writs helped with that. Just having the Bros['] Orb will be enough. It will be useful somewhere.";
 
 report taking Bros' Orb:
@@ -7481,7 +7504,7 @@ to decide whether bald-lab:
 chapter LLP hint
 
 after looking in Pro Corp when bald-lab and balm-LLP-yet is false:
-	say "You feel a bit itchy. Maybe it's the chemical reactions in here. Maybe something in here could help fix that, despite it being a bald lab.";
+	say "You feel a bit itchy. Maybe it's the chemical reactions in here. Maybe something in here could help fix that, despite it being a bald lab. Not necessary to, but ... a small nice thing.";
 	continue the action;
 
 chapter Sci Pics
