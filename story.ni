@@ -32,6 +32,8 @@ the story headline is "A *GASP* SAGA!"
 
 the release number is 1.
 
+Release along with cover art.
+
 include Trivial Niceties by Andrew Schultz.
 
 include Basic Screen Effects by Emily Short.
@@ -5521,7 +5523,9 @@ check examining pyx when screenread is true:
 
 after examining pyx for the first time:
 	say "Notes for the future[if screenread is true], if you turn screen reading off[end if]: [b]X X[r] or [b]XX[r] or [b]MAP[r] will examine the pyx, to save keystrokes.";
-	if player does not have pyx, say "[line break]Also, you take the pyx for future reference, because it's lightweight enough.";
+	if player does not have pyx:
+		say "[line break]Also, you take the pyx for future reference, because it's lightweight enough.";
+		now player has pyx;
 	continue the action;
 
 to decide whether eithervisit of (rm - a room) and (di - a direction):
