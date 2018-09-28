@@ -104,7 +104,7 @@ understand "spud ups" as a mistake ("The Spur Ups don't become potatoes or Frenc
 
 understand "spue ups" as a mistake ("The Spur Ups fail to spit anything out.[mis of 41]") when player has spur ups.
 
-understand "spun ups" as a mistake ("The Spur Ups fail to rotate.[mis of 42]") when player has spur ups.
+understand "spun ups" as a mistake ("One of the Spur Ups rotates slightly. Maybe it needs to be UP, not UPS.[mis of 42]") when player has spur ups.
 
 understand "up apu" as a mistake ("Apu would have some helpful advice, but he'd have to leave Springfield.[mis of 43]") when player has spur ups.
 
@@ -823,6 +823,9 @@ understand "cods doc" as a mistake ("No way. It's nice to be around someone non-
 
 chapter Worn Row
 
+to say maybe-hint-other-wr:
+	say "[if ever-wordrow is false and ever-workrow is false]. There HAS to be more than just Worn Row, though[else if ever-workrow is false or ever-wordrow is false]. You wonder if you could still change things a bit, though[end if]"
+
 to say red-clue: if redness ender is not moot, say ", but who knows, that redness ender might help you some day"
 
 understand "bade dab" as a mistake ("You didn't bring it here. It appeared all by itself.[mis of 336]") when bad dab is quicknear.
@@ -859,17 +862,17 @@ understand "sd ids" as a mistake ("Yes, SOME DEMOS IDs useful artistic technique
 
 understand "track cart" as a mistake ("[if DWELT LEWD is off-stage]Right idea, but the cart isn't going anywhere[else]It's not going anywhere. You already unlocked a secret, anyway[end if].[mis of 351]") when tract cart is quicknear.
 
-understand "word drow" as a mistake ("You'll get to see the drow later.[mis of 352]") when player is in Worn Row and Swept Pews are unvisited.
+understand "word drow" as a mistake ("You'll get to see the drow later[maybe-hint-other-wr].[mis of 352]") when player is in Worn Row and Swept Pews are unvisited.
 
-understand "wore row" as a mistake ("No second-hand clothing shop appears. You don't know what you'd do if one appeared, anyway.[mis of 353]") when player is in Worn Row.
+understand "wore row" as a mistake ("No second-hand clothing shop appears. You don't know what you'd do if one appeared, anyway[maybe-hint-other-wr].[mis of 353]") when player is in Worn Row.
 
-understand "worf row" as a mistake ("No Enterprise security officer arrives to help or hinder you.[mis of 354]") when player is in Worn Row.
+understand "worf row" as a mistake ("No Enterprise security officer arrives to help or hinder you[maybe-hint-other-wr].[mis of 354]") when player is in Worn Row.
 
-understand "worm row" as a mistake ("[if Worn Row is worny]Ugh! You don't need to make this place worse[else]You already upgraded Worn Row. No need to make it worse than it was[red-clue][end if].[mis of 355]") when player is in Worn Row.
+understand "worm row" as a mistake ("[if Worn Row is worny]Ugh! You don't need to make this place worse[else]You already upgraded Worn Row. No need to make it worse than it was[red-clue][end if][maybe-hint-other-wr].[mis of 355]") when player is in Worn Row.
 
-understand "worsts row" and "worses row" as a mistake ("It [if Worn Row is worny]is[else]was[end if] bad enough already.[mis of 356]") when player is in Worn Row.
+understand "worsts row" and "worses row" as a mistake ("It [if Worn Row is worny]is[else]was[end if] bad enough already[maybe-hint-other-wr].[mis of 356]") when player is in Worn Row.
 
-understand "wort row" as a mistake ("[Worn Row] is not meant to be a garden. Maybe it would look nicer that way, but it wouldn't be helpful to you.[mis of 357]") when player is in Worn Row.
+understand "wort row" as a mistake ("[Worn Row] is not meant to be a garden. Maybe it would look nicer that way, but it wouldn't be helpful to you[maybe-hint-other-wr].[mis of 357]") when player is in Worn Row.
 
 chapter Yack Cay
 
