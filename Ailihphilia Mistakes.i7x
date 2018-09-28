@@ -671,7 +671,7 @@ section yard ray misuse
 
 understand "yar gray" as a mistake ("Quite the opposite! The yard ray is there to bring light back![mis of 272]") when player has yard ray.
 
-understand "yar pray" as a mistake ("That's an effective battle cry, but maybe not quite approprioate for a good guy.[mis of 273]") when player has yard ray.
+understand "yar pray" as a mistake ("That's an effective battle cry, but maybe not quite appropriate for a good guy.[mis of 273]") when player has yard ray.
 
 understand "yar ray" and "yarg ray" and "yarr ray" as a mistake ("Becoming a pirate at the end? A clever heel turn! Especially since Talk like a Pirate Day is 9/19, and that's a palindrome ... wait, but pirates don't have such advanced technology. Never mind.[mis of 274]") when player has yard ray.
 

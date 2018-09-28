@@ -784,7 +784,7 @@ Rule for printing a parser error when the latest parser error is the noun did no
 		the rule succeeds;
 	if the player's command includes "yak" and yak is quicknear:
 		say "[if being-chased is true]The yak blinks. Perhaps a different command would work[else]The yak seems lazy. Maybe it needs to be prodded right, first[end if]." instead;
-	say "The object didn't mix well with the verbin your command. I wish I could give more help, but you're likely trying something more obscure than you need to."
+	say "The object didn't mix well with the verb in your command. I wish I could give more help, but you're likely trying something more obscure than you need to."
 
 Rule for printing a parser error when the latest parser error is the only understood as far as error:
 	let nw be number of words in the player's command - 1;
@@ -959,7 +959,7 @@ after reading a command:
 			reject the player's command;
 	if the player's command includes "n i win", try niwining instead;
 	if player is in Le Babel and opossum is in Le Babel and the player's command matches the regular expression "\bpossum\b":
-		say "You feel as though you are misssing something calling the opossum just a possum. Something non-critical, but something nonetheless.";
+		say "You feel as though you are missing something calling the opossum just a possum. Something non-critical, but something nonetheless.";
 
 no-punc-flag is a truth state that varies.
 
@@ -1625,7 +1625,7 @@ carry out abouting:
 	say "Ailihphilia was originally written for IFComp 2018. It was conceived in October 2017 as 'Put It Up' (and a side part of a bigger game) before I realized there was an actual word for, well, liking palindromes. I started coding in November.";
 	say "[line break]Like many of my games, I got the idea from [i]Nord and Bert Couldn't Make Head or Tail of It[r], at least partially. Another game that gave me ideas was Nick Montfort's [i]I Palindrome I[r], part of the Apollo 18+20 collection Kevin Jackson-Mead organized back in 2012. I felt there could be more that could be done with palindromes, but I didn't know what, and I didn't know how much.[paragraph break]Also, the Palindome in Kingdom of Loathing prompted my curiosity back in 2010. I would still be playing it today, if it hadn't inspired me to try to write my own games, which left less time for KoL (spoiler: I still ascended over 100 times.) I tried to avoid palindromes it already considered, though the Dumb Mud from the special Heavy Rains was too good to pass up. It's an item there but a location here, so I can't claim to copycat too much.";
 	say "[line break]In my continuing quest to nail down my Python knowledge, I realized that even if I didn't get MANY palindromes on my own, a few scripts could print things out. I had word and name lists from my anagram games Shuffling Around and A Roiling Original, so I had the raw materials--but at the same time, I needed to weed out overlaps. There wound up being more material to work with than I thought. I hope there is quality as well as quantity.";
-	say "[line break]The result of all my work is some guess-the-verb, but hopefully with the game's general idea, you'll see what's going on. Ailihphilia is meant to be polite on the Zarfian cruelty scale, although I hope you enjoy some of the impolite jokes and even the deliberate misspellings to force palindromes, as well as the room name-changes that occur (for esthetic effect only) as you solve puzzles.";
+	say "[line break]The result of all my work is some guess-the-verb, but hopefully with the game's general idea, you'll see what's going on. Ailihphilia is meant to be polite on the Zarfian cruelty scale, although I hope you enjoy some of the impolite jokes and even the deliberate misspellings to force palindromes, as well as the room name-changes that occur (for aesthetic effect only) as you solve puzzles.";
 	say "[line break]So Ailihphilia doesn't have any deep philosophy, but I hope you enjoy it. If you write games yourself, I hope it inspires you to go through with anything unusual you weren't sure if you should try, even if Ailihphilia rubs you the wrong way. (Spoiler: you should write that game! Just start early and take all the notes you can, but don't think the first draft needs to be perfect!)[paragraph break]";
 	say "I'm at [email] if you have suggestions for bug fixes, etc. Or you can report a bug in a repository. DEV ED is the command to see that.[paragraph break]";
 	say "If you're confused what to do or type, VERBS will give an outline of the basic verbs you need to get through Ailihphilia.";
@@ -1661,8 +1661,8 @@ carry out deveding:
 	say "Websites that helped with this game:[paragraph break]";
 	say "  --http://www.angelfire.com/in2/sedavis/palindromes.html STOP LAUGHING ANGELFIRE WAS COOL WHEN IT FIRST CAME OUT ANYWAY GEOCITIES WAS MORE MY BEAT[line break]";
 	say "  --https://www.reddit.com/r/AskReddit/comments/4z899e/whats_your_favorite_palindrome/";
-	say "[paragraph break]From a technical standpoint, Bitbucket helped me get started, and Github is/will be used for the post-release.";
-	say "  --Github: [gh][line break]";
+	say "[paragraph break]From a technical standpoint, BitBucket helped me get started, and GitHub is/will be used for the post-release.";
+	say "  --GitHub: [gh][line break]";
 	say "  --BitBucket: [bb][line break]";
 	the rule succeeds;
 
@@ -2653,7 +2653,7 @@ exam axe	balsa slab	"You're not sure what to cut the slab into, and you don't ne
 exam axe	Code Doc	"The Code Doc declines your offer. Instruments of violence have no place at [uneven u]."
 exam axe	porch crop	"That seems like the right idea, but the Code Doc is the person who should be giving out punishing exams, here. The wash saw, on the other hand..."
 gate tag	DIFF ID	"You wave the gate tag in front of the DIFF ID, which beeps for a second, then ... nothing. Maybe the gate tag (or its pattern) needs to be read a different way."
-gift fig	cross orc	"[if cross orc is talked-yet]'FIG?! FIG?! VIG! VIG!'[else]That's about the least valuable thing you could give. I suppose, if you're open to spelling abuse, it'd make the orc the crossess['] orc.[end if]"
+gift fig	cross orc	"[if cross orc is talked-yet]'FIG?! FIG?! VIG! VIG!'[else]That's about the least valuable thing you could give. I suppose, if you're open to spelling abuse (and I am,) it'd make the orc the crossess['] orc.[end if]"
 gift fig	sleep eels	"It seems they want comfort and not food. Besides, it'd be a pain to split up fairly."
 gnu dung	turf rut	"That's a good idea, but you can't move the gnu dung onto the turf rut with your bare hands."
 gold log	kayak	"The gold log is too heavy to be an effective paddle."
@@ -2903,7 +2903,7 @@ elope pole	kayak	you buoy	pre-pole-on-kayak rule	--	true	true	false	false	false	
 dork rod	tao boat	enact cane	pre-rod-on-boat rule	--	true	true	false	true	true	false	Grebeberg	Lac Oft Focal	Lac Oft Focal	false	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
 tent net	Code Doc	--	pre-net-on-doc rule	--	true	true	false	false	true	false	Grebeberg	Uneven U	Uneven U	false	"Together, you figure out what to do to make the tent net proper cover for Uneven U. 'Tie it ... tie it ...' then 'Net: safe. fasten!'[paragraph break]Once the work is done, the Code Doc thanks you. 'Let me know if you need help learning ... well, anything. Oh, and call me Dr. D., if you'd like.'[paragraph break]How thoughtful! That could save a few keystrokes in the future[if spa maps are preclued]! Maybe the very near future, if you ask about the spa maps again[end if]."
 spa maps	Code Doc	--	pre-maps-on-doc rule	maps-explain rule	true	false	false	false	true	false	Grebeberg	Uneven U	Uneven U	false	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my for-prof math tam for this one. One second, let's see--Aha! Oho...'[paragraph break]You each split an Ed-Ade to make sure the lesson is taught and remembered well. Despite a minor pupil slip-up, the Code Doc is never edu-rude. It soon makes complete sense to you. You don't know how to say thanks. Everything seems too long-winded or said before, until ... 'Def ed!'"
-spa maps	go by bog	sage gas	pre-maps-on-bog rule	gas-think-wipe rule	true	true	false	false	true	false	Grebeberg	Apse Spa	Apse Spa	false	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. But how to carry it? Voila, a pouch in the Sto Lots you hadn't seen before is just the thing. Perhaps the sage gas helpe you find it! As you fiddle with it, though, you drop the Spa Maps, which get hopelessly muddy.[paragraph break]You reach to pick them up, but somehow, bizarrely, the Spa Maps turn into a salt atlas and crumble away. Hooray, biodegradability!"
+spa maps	go by bog	sage gas	pre-maps-on-bog rule	gas-think-wipe rule	true	true	false	false	true	false	Grebeberg	Apse Spa	Apse Spa	false	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. But how to carry it? Voila, a pouch in the Sto Lots you hadn't seen before is just the thing. Perhaps the sage gas helped you find it! As you fiddle with it, though, you drop the Spa Maps, which get hopelessly muddy.[paragraph break]You reach to pick them up, but somehow, bizarrely, the Spa Maps turn into a salt atlas and crumble away. Hooray, biodegradability!"
 enact cane	yahoo hay	moor broom	pre-cane-on-hay rule	hay-gone rule	true	true	false	false	true	false	Grebeberg	Moo Room	Moo Room	false	"You stick some strands of yahoo hay into the damaged end of the enact cane. It's now a moor broom!"
 --	--	--	rev-pace-cap rule	--	true	--	--	false	true	false	Dim Mid	--	--	false	--
 troll ort	brag garb	--	pre-ort-on-garb rule	chase-in-zoo rule	true	true	false	false	true	false	Grebeberg	--	--	false	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the stinky knits, but still quite distinctive. The ort must've been covered by the dirt for a long time, because it disintegrates as its essence is leaked onto the brag garb." [b4:pace cap] [af:yak okay]
@@ -2982,7 +2982,7 @@ this is the rev-emit-noontime rule:
 	if emitted is true, the rule fails;
 	if in-sos is true:
 		if emitted is false and player has yard ray and murdered rum is moot:
-			say "[one of]The Yard Ray needs to emit something[or]An eight tletter word.[or]The last four are ****TIME.[or]Something bright.[or]EMIT NOONTIME to practice with the Yard Ray.[stopping]";
+			say "[one of]The Yard Ray needs to emit something[or]An eight letter word.[or]The last four are ****TIME.[or]Something bright.[or]EMIT NOONTIME to practice with the Yard Ray.[stopping]";
 			the rule succeeds;
 		the rule fails;
 	if say-unless-speed, say "You EMIT NOONTIME with the Yard Ray.";
@@ -3042,7 +3042,7 @@ this is the rev-pace-cap rule:
 		unless tried-yak, the rule fails;
 		if cap-pace is true, the rule fails;
 		if cap-ever-pace is true:
-			say "You managed tp make a PACE CAP before. Now is the time to do it again.";
+			say "You managed to make a PACE CAP before. Now is the time to do it again.";
 		else:
 			say "[one of]You need to do something with/to the pact cap.[or]The pact cap can help you go faster, longer, so the Kayo Yak doesn't catch you.[or]It can also become a PAC* CAP (2 letters.)[or]PACY CAP or PACE CAP.[stopping]";
 		the rule succeeds;
@@ -3062,7 +3062,7 @@ this is the rev-pace-cap rule:
 this is the rev-pack-cap rule:
 	if flee elf is moot, the rule fails;
 	if in-sos is true:
-		say "[one of]You need to do something with the Pact Cap[or]The palindromic nature of the game suggesra PA CAP, PAC CAP, or PAC* CAP[or]PACK CAP to please the flee elf[stopping].";
+		say "[one of]You need to do something with the Pact Cap[or]The palindromic nature of the game suggests PA CAP, PAC CAP, or PAC* CAP[or]PACK CAP to please the flee elf[stopping].";
 		the rule succeeds;
 	else:
 		if say-unless-speed, say "You PACK CAP to please the flee elf.";
@@ -3264,7 +3264,7 @@ this is the pre-cope-on-nik rule:
 	if in-sos is true:
 		if epoch cope is moot, the rule fails;
 		if ever-wordrow is false:
-			say "[one of]King Nik needs a book[or]There's (sort of) a location you gaven't found yet that holds books[or][Worn Row] can become one more thing. Go back there to check it out[stopping].";
+			say "[one of]King Nik needs a book[or]There's (sort of) a location you haven't found yet that holds books[or][Worn Row] can become one more thing. Go back there to check it out[stopping].";
 		else if player does not have epoch cope:
 			say "[one of]King Nik needs a book[or]Word Row has the tract cart, which can hold books[or]King Nik needs a book to help him with ruling[or]Epoch Cope is the best book for King Nik[or][if Worn Row is not wordy]WORD ROW in [Worn Row]. [end if]Get Epoch Cope [hn-in-blank of Worn Row]. USE EPOCH COPE ON KING NIK[stopping].";
 		else:
@@ -3488,7 +3488,7 @@ this is the pre-nub-on-reviver rule:
 this is the pre-orb-on-rim rule:
 	if in-sos is true:
 		if player is not in Red Roses Order or Ms Ism is not in Red Roses Order, the rule fails;
-		say "[one of]The Bros['] Orb got you in, and it seems extra powerful and reflectivee, but it's not clear what to use it on[or]Trial and error can tell what to use the Orb on, but you may notice one thing is good at showing your faults[or]The mirror rim shows how silly your cap looks on you[or]USE BROS ORB ON MIRROR RIM to shatter the mirror[stopping].";
+		say "[one of]The Bros['] Orb got you in, and it seems extra powerful and reflective, but it's not clear what to use it on[or]Trial and error can tell what to use the Orb on, but you may notice one thing is good at showing your faults[or]The mirror rim shows how silly your cap looks on you[or]USE BROS ORB ON MIRROR RIM to shatter the mirror[stopping].";
 	the rule succeeds;
 
 this is the pre-ort-on-garb rule:
@@ -3966,7 +3966,7 @@ itm	reject [thus table is ordered west to east, north to south]
 calcific lac	"There's nothing you need to do TO the calcific lac. You [if lac-score is 2]did enough[else if lac-score is 1]could maybe deal with the [kayak-boat][else]can't imagine the boat and kayak are useless, though[end if]." [start lac often focal 0 0]
 Elided Ile	"You don't need to do anything to Elided Ile [if kayak is moot]now you've been[else]except maybe get[end if] there."
 smirk rims	"The smirk rims are only important if you let them be. In other words, they're not." [start Sneer Greens 1 0]
-ebola lobe	"The ebola lobe is impassable. You'd need some Nix-O-Toxin to get through, and there isn't any here." [start Flu Gulf 2 0]
+Ebola Lobe	"The Ebola Lobe is impassable. You'd need some Nix-O-Toxin to get through, and there isn't any here." [start Flu Gulf 2 0]
 mush sum	"The mush sum is too murky and unstable to deal with. And to break the fourth wall, it's just there to provide a north border."
 tube but	"The tube doesn't lead anywhere you want to go. You don't need to muck with it." [start Evaded Ave 4 0]
 Line Nil	"There's nothing you need behind the Line Nil security system. In fact, it's probably protecting you." [start Yell Alley 5 0]
@@ -3995,7 +3995,7 @@ bad dab	"The bad dab's message seems important, but it's not good for much excep
 redness ender	"You don't want to do anything crazy with the Redness Ender. You don't want to go near it. It's dangerous looking. You can picture it ambushing someone who doesn't expect it."
 sto lots	"You don't want to tinker with the STO LOTS more than you have to. It makes carrying stuff easier, and that's good enough." [start My Gym 4 3]
 decal placed	"The decal placed is just there to advertise the food. It's not critical to the story." [start deli tiled 6 3]
-snooty toons	"The snooty toons are just there for ambience. They're not critical to the story."
+snooty toons	"The snooty toons are just there for ambiance. They're not critical to the story."
 go fog	"The go fog is very dense. It pushes you back even as you look at it. As if to say, go away, and also, get going with what you want and need to do." [start Lair Trial 0 4]
 be web	"The be web is--well, it's itself, and maybe there's a message here but you'll figure it out once you're finished adventuring. It's not important enough now." [start Motto Bottom 1 4]
 stewy wets	"The stewy wets are unchangeable." [Frush Surf 2 4]
@@ -4037,7 +4037,7 @@ to-get	in-limbo	combo-rule	remind-msg
 --	false	need-cup rule	"You didn't have anything to take [if sap-with-hands is true]the past sap with in Cold Loc[end if][if sap-with-hands is true and sod-with-hands is true] or [end if][if sod-with-hands is true]the dose sod in Apse Spa[end if]."
 --	false	puff-known rule	"You need to find where to puff up."
 --	false	pull-known rule	"You need to find where to pull up."
---	false	rah-gas-clue rule	"[if sage gas is moot]You used the sage gas on the tame mat. Maybe the sharp rahs, whiich you used with the gas earlier, can counter it[else]You need an intermediary for the sharp rahs and sage gas[end if]."
+--	false	rah-gas-clue rule	"[if sage gas is moot]You used the sage gas on the tame mat. Maybe the sharp rahs, which you used with the gas earlier, can counter it[else]You need an intermediary for the sharp rahs and sage gas[end if]."
 --	false	sap-uncut rule	"You need (and might already have) something to cut the past sap with [hn-in of Cold Loc]."
 --	false	worn-clued rule	"There might be a good time to switch back to Worn Row."
 Bond Nob	false	--	"You didn't have the right stuff to give the Bond Nob from the Puce Cup last time."
@@ -4771,15 +4771,15 @@ instead of wearing spur ups, say "They would be too pointy for comfort. There ar
 
 book Flu Gulf
 
-Flu Gulf is north of Cold Loc. It is in Grebeberg. "North and east, it's, oh, too H2O. The passage is clear back south, but [if scorn rocs are in Flu Gulf]scorn rocs['] gaze blocks you going west[else]west past the scorn rocs seems a bit treacherous[end if]. No way you're getting through the mush sum to the north, and the ebola lobe to the east is likely to get through you."
+Flu Gulf is north of Cold Loc. It is in Grebeberg. "North and east, it's, oh, too H2O. The passage is clear back south, but [if scorn rocs are in Flu Gulf]scorn rocs['] gaze blocks you going west[else]west past the scorn rocs seems a bit treacherous[end if]. No way you're getting through the mush sum to the north, and the Ebola Lobe to the east is likely to get through you."
 
 chapter mush sum
 
 the mush sum is peripheral scenery in Flu Gulf. "It looks deceptive and swampy. Perhaps it is so deceptive, it is actually gosh-sog. Or not."
 
-chapter ebola lobe
+chapter Ebola Lobe
 
-the ebola lobe is peripheral scenery in Flu Gulf. "It doesn't look that awful, but the Set-O-Notes pretty clearly declaims it as Somewhere Not To Go."
+the Ebola Lobe is peripheral scenery in Flu Gulf. "It doesn't look that awful, but the Set-O-Notes pretty clearly declaims it as Somewhere Not To Go."
 
 chapter gulf lug
 
@@ -4806,7 +4806,7 @@ understand "gog magog" and "gog a/and magog" and "gog/magog" as scorn rocs.
 understand "roc" and "scorn roc" as scorn rocs.
 
 check going in Flu Gulf:
-	if noun is east, say "You'd need some Nix-O-Toxin to survive the ebola lobe. There is none here in the game." instead;
+	if noun is east, say "You'd need some Nix-O-Toxin to survive the Ebola Lobe. There is none here in the game." instead;
 	if noun is north, say "The mush sum would pull you down." instead;
 	if noun is west:
 		if scorn rocs are in Flu Gulf, say "The scorn rocs remain motionless, the stone NOTS you feel from their stern gaze freeze you as you even think of trying to go west. They're not mere starer-ats.[paragraph break]Maybe if they were less imperious, less shiny, less aesthetically perfect, they'd be less intimidating." instead;
@@ -5014,7 +5014,7 @@ after looking in Mont Nom:
 		say "The smells from your [list of carried ingredients] mix[one of] unexpectedly pleasantly[or] pleasantly, again,[stopping] here.";
 	continue the action:
 
-check going nowhere in Mont Nom: say "The Ark of Okra blocks progess any way except back down north." instead;
+check going nowhere in Mont Nom: say "The Ark of Okra blocks progress any way except back down north." instead;
 
 chapter ark of okra
 
@@ -6342,7 +6342,7 @@ to say lewd-details:
 		say "[if X is not lelt],[end if] [entry X of dwelt-last]";
 	say " Sinned.";
 	if lewd-chap is number of entries in dwelt-first + 1 and lewd-read is false:
-		say "[line break]Whew! You've finished DWELT LEWD. Apparently there is 'related' material, including [next-rand-txt of table of trashy art]. [one of]Who thinks this junk up? (Hey, don't look that way at me! I just wrote the abstract code for the 'book' as a purely intellectual exercise.)[or]You feel guilty having looked for more desipte knowing better.[stopping]";
+		say "[line break]Whew! You've finished DWELT LEWD. Apparently there is 'related' material, including [next-rand-txt of table of trashy art]. [one of]Who thinks this junk up? (Hey, don't look that way at me! I just wrote the abstract code for the 'book' as a purely intellectual exercise.)[or]You feel guilty having looked for more despite knowing better.[stopping]";
 		decrement lewd-chap;
 		now lewd-read is true;
 
@@ -6983,7 +6983,7 @@ after looking in Deft Fed when Sniffins-reintro is false and yob attaboy is moot
 
 chapter Sniffins
 
-Sniffins is a neuter person in Deft Fed. "[if Deft Fed is unvisited]You hear a sniff, and the proprietor introduces themselves as Sniffins, apologizing for how lame the ambience and decor are, but there's just no INSPIRATION to do better[else][snismu] sniffs here[end if].". description is "[if yob attaboy is moot]Sniffins/Smuggums looks down at you despite your help--what a posh sop[else]Sniffins is despondent and pleading for any sort of help[end if]."
+Sniffins is a neuter person in Deft Fed. "[if Deft Fed is unvisited]You hear a sniff, and the proprietor introduces themselves as Sniffins, apologizing for how lame the ambiance and decor are, but there's just no INSPIRATION to do better[else][snismu] sniffs here[end if].". description is "[if yob attaboy is moot]Sniffins/Smuggums looks down at you despite your help--what a posh sop[else]Sniffins is despondent and pleading for any sort of help[end if]."
 
 to say snismu: say "Sniffins[if Sniffins-reintro is true]/Smuggums[end if]"
 
@@ -7020,7 +7020,7 @@ the decal placed is peripheral scenery in Deft Fed. description is "It's an adve
 
 chapter snooty toons
 
-The snooty toons are peripheral scenery. "They certainly add ambience to the place. You're not sure whether you should feel obliged to laugh at them or not good enough to laugh at them. But they're not really hurting you, you guess. And they advertise the food here under text labeled UNE MENU. One item: [next-rand-txt of table of snooty toon ads]."
+The snooty toons are peripheral scenery. "They certainly add ambiance to the place. You're not sure whether you should feel obliged to laugh at them or not good enough to laugh at them. But they're not really hurting you, you guess. And they advertise the food here under text labeled UNE MENU. One item: [next-rand-txt of table of snooty toon ads]."
 
 chapter standing
 
@@ -7400,7 +7400,7 @@ chapter slate metals
 the slate metals are scenery in Scrap Arcs. "You could probably carve something out of them, with the right implement(s). Maybe not steel fleets--they seems a bit flimsy, which is probably why they wound up here. But something useful for a humbler and less violent task."
 
 check taking slate metals:
-	say "[if stamp mats are moot]You already made something from the slate metals[else]Youmight be able to use part of them to make something, but you couldn't carry ALL the metals, even with your Sto-Lots[end if]." instead;
+	say "[if stamp mats are moot]You already made something from the slate metals[else]You might be able to use part of them to make something, but you couldn't carry ALL the metals, even with your Sto-Lots[end if]." instead;
 
 understand "slate metal" and "metal" as slate metals.
 
@@ -7903,7 +7903,7 @@ a room can be chase-blocked. a room is usually not chase-blocked.
 check going to a chase-blocked room when being-chased is true: say "[chase-pass]No, you've already been there, and you found nothing to do." instead;
 
 after going when being-chased is true:
-	if x-it stix are in location of player, say "As you run furher [noun], you notice X-it Stix X out the way [if Fun Enuf is room east of location of player]east[else]west[end if]. It's probably bad for the [chase-person] to get loose in [if player is in Yawn Way]Grebeberg[else]Yelpley[end if].";
+	if x-it stix are in location of player, say "As you run further [noun], you notice X-it Stix X out the way [if Fun Enuf is room east of location of player]east[else]west[end if]. It's probably bad for the [chase-person] to get loose in [if player is in Yawn Way]Grebeberg[else]Yelpley[end if].";
 	continue the action;
 
 x-it stix are semiperipheral scenery. "They look like the metal grating shops pull out over their doors and windows at closing time.[paragraph break]They are in an X, and while they don't allow an Xit, they do x out one way to go, which may help you figure how you need to get away from the [chase-person].[paragraph break]Of course, any wordplay adventurer worth their salt (like you--you're pretty far along, here) knows the difference between EXIT and X-IT. These things are X-ing out an option, here!";
@@ -8513,7 +8513,7 @@ carry out revovering:
 	else if in-tip-it is true:
 		say "[if x-ite tix are off-stage]I didn't find anything to do. This is a bug in the warp code. Apologies, and I'd be interested how this happened[else]You've got the X-ITE TIX. The last step, you need to do yourself[end if].";
 	else:
-		say "Uh oh. There should've been a message saying you can't warp any more and only have the Dirge Grid left. It's likely there is a bug in the rev over/deep speed code. Continually using TIP IT, however, should work. If you have a transcript, report the bug at my github site or email me.";
+		say "Uh oh. There should've been a message saying you can't warp any more and only have the Dirge Grid left. It's likely there is a bug in the rev over/deep speed code. Continually using TIP IT, however, should work. If you have a transcript, report the bug at my GitHub site or email me.";
 	follow the notify score changes rule;
 	if test set is moot and player is not in Fun Enuf and Dirge Grid is not visited:
 		say "(Also moving you to [Fun Enuf] for the endgame)[paragraph break]";
@@ -8622,7 +8622,7 @@ carry out eyeing:
 	if player does not have pact cap, say "You need the pact cap to [b]EYE[r] things." instead;
 	if eyespoil of noun > 0, say "You already got a number of [eyespoil of noun] for [the noun]." instead;
 	if noun is the player, say "You are always important. Always! Are you?" instead;
-	if noun is the pyx, say "It probbly doesn't solve any puzzles, but I bet it'll help you get around easier." instead;
+	if noun is the pyx, say "It probably doesn't solve any puzzles, but I bet it'll help you get around easier." instead;
 	if noun is a helpdoc and noun is not epicer recipe, say "The [noun] is just for reading." instead;
 	if eye-charges is 0, say "You don't feel able to see into anything right now[if ever-pip is true]. Maybe you should look into more[end if]." instead;
 	let n1 be noun;
@@ -9340,7 +9340,7 @@ this is the emo-dome-hint rule:
 	if search-hint-room is true, the rule succeeds;
 	if pulled-up is false, say "[one of]You managed to PUFF UP with the spur ups, but it looks like they have one more use[or]PULL UP[stopping]." instead;
 	if puce cup is in Emo Dome, say "Take the puce cup." instead; [move Emo Dome just before Red Roses Order??]
-	if player has state tats and player does not have Bros' Orb, say "You have ID, but you need an item that makes you feel brave enough. [if Le Babel is visited]The Bros['] Orb[else]It's in a place you haven't visitef yet[end if]." instead;
+	if player has state tats and player does not have Bros' Orb, say "You have ID, but you need an item that makes you feel brave enough. [if Le Babel is visited]The Bros['] Orb[else]It's in a place you haven't visited yet[end if]." instead;
 	if id-pieces is 0, say "You need to get past the DIFF-ID by combining two items to create identification. They are found elsewhere." instead;
 	if id-pieces is 1, say "The [if player has gate tag]gate tag[else]soot tattoos[end if] will make up part of the state tats you need to pass the DIFF-ID." instead;
 	if id-pieces is 2, say "USE SOOT TATTOOS ON GATE TAG." instead;
