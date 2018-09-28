@@ -875,6 +875,7 @@ Rule for printing a parser error when the latest parser error is the didn't unde
 		if the player's command includes "spur", say "You look at the spur ups, unsure how to use them. It's more that they're, well, UP than SPURs." instead;
 		if number of words in the player's command > 1:
 			if word number 2 in the player's command is "ups", say "There is only one you, so you only need to be, or do something, UP." instead;
+			if word number 2 in the player's command is "up", say "Hmm, not the right way to be or do UP, but something must work." instead;
 	if flee elf is in fun enuf and the player's command includes "cap":
 		say "The Flee Elf cocks its head. 'Y'r try ... not quite. Do something with the cap, though.'" instead;
 	say "[if gtv]You do need a special verb here to deal with [random guhthug in location of player], but not that one. It may not be a standard one, but given the game's theme, I bet you can figure it out. If you want standard verbs, y[else]I didn't recognize that action. Y[end if]ou can type VERB or VERBS to get a list of them[if cur-score of Odd Do < 11], and there are a few you can guess for bonus points[any-here][end if].";
@@ -2512,7 +2513,7 @@ scorn rocs	"The scorn rocs are unfazed by much. Even violence doesn't seem to af
 senile felines	"It might be more productive to use the felines on themselves, in a certain way."
 sharp rahs	"The rahs need to be combined (USEd) with some other motivational material. Something less, well, rah-rah."
 SOME DEMOS	"Paging through SOME DEMOS again, you get the feeling it's really un-serious and can't help you except with unpractical or self-contradictory items. It must be good with something, but not that."
-Spur Ups	"The Spur Ups can't physically levitate anything, but they make you want to do something for yourself, by yourself, to yourself, for a pick up or something like it. You're not sure what."
+Spur Ups	"The Spur Ups can't physically levitate anything, but they make you want to do something for yourself, by yourself, to yourself, for a pick up or something like it. You're not sure what, but something-or-other UP."
 stinky knits	"The stinky knits remain stinky."
 sto lots	"You don't need to do anything with the sto lots. It carries what you need to."
 stole lots	"The Stole Lots is not a Tax-At. In other words, bribing Dave to get by won't work. You need to outsmart him."
@@ -2584,14 +2585,20 @@ bunk nub	sleep eels	"That -- well, it almost works. But the bunk nub isn't shape
 bunk nub	stark rats	"The rats don't need to sleep, and the bunk nub won't make them feel drowsy. You need to get rid of the rats."
 Cave Vac	gnu dung	"The Cave Vac sputters. You may need something more specifically suited to the, uh, material to clean up."
 cave vac	go by bog	"The bog is too big for that."
+cave vac	lie veil	"The Cave Vac doesn't work on morally dirty tricks."
 cave vac	stinky knits	"The smell is crusted into the stinky knits. The cave vac would work better than the Dirt Rid, but it would only make the stinky knits look a bit better."
+cave vac	tame mat	"The tame mat's message is clean. It's just not inspiring."
+cave vac	tame mat	"The guru rug's message is clean. It's just overblown."
 cave vac	troll ort	"The troll ort is crusted over enough that the cave vac wouldn't really clean it."
 demo med	Elan Ale	"No, combining alcohol and pills is a bad, bad idea."
 demo med	Gorge Grog	"No, combining alcohol and pills is a bad, bad idea."
 Dirt Rid	cassettes sac	"[get-rej of cassettes sac]The Dirt Rid wheezes but is unable to clean up the cassettes sac. You need something more powerful."
 Dirt Rid	gnu dung	"The Dirt Rid is ineffective and too small. You may need something stronger."
 Dirt Rid	go by bog	"The bog is too big for that."
+Dirt Rid	lie veil	"The Dirt Rid doesn't work on morally dirty tricks."
 Dirt Rid	stinky knits	"The smell is crusted into the stinky knits. You need a heavier duty tool than the Dirt Rid to clean them up."
+Dirt Rid	tame mat	"The tame mat's message is clean. It's just not inspiring."
+Dirt Rid	tame mat	"The guru rug's message is clean. It's just overblown."
 Dirt Rid	troll ort	"The troll ort is crusted over enough that the Dirt Rid wouldn't really clean it."
 DNA hand	bomb mob	"The hand isn't mobile enough."
 DNA hand	DIFF ID	"The DIFF ID doesn't even seem to recognize the DNA hand. Apparently, it is not alive enough."
@@ -2610,6 +2617,7 @@ el doodle	Known Wonk	"The Known Wonk looks at El Doodle, thinks, and says 'Ugh, 
 el doodle	Revolt Lover	"But the Revolt Lover pretty much offered it to you in the first place."
 Elan Ale	cassettes sac	"The Elan Ale isn't high-proof enough to peel any dirt off the cassettes sac."
 Elan Ale	DIFF ID	"No electrical wiring is exposed, so you can't short the DIFF ID out."
+Elan Ale	Gulf Lug	"Alcohol is not effective medicine."
 Elan Ale	Revolt Lover	"'I can't drink on the job, here!'"
 elope pole	code doc	"'[if tent net is moot]I bet you could go neat places with that[else]That might help build something, but I need something that's more a roof[end if].'"
 elope pole	crag arc	"The pole is for navigation, not for vaulting. Also, the crag art is too high, even for AK Bubka, Sergei's little-known but even more athletic cousin."
@@ -2640,11 +2648,13 @@ gold log	kayak	"The gold log is too heavy to be an effective paddle."
 Gorge Grog	bomb mob	"There isn't enough for everyone, so that would probably make them even more unruly."
 Gorge Grog	cassettes sac	"That'd clean up the cassettes sac, but it'd probably dissolve it, too."
 Gorge Grog	DIFF ID	"No electrical wiring is exposed, so you can't short the DIFF ID out."
+Gorge Grog	Gulf Lug	"Alcohol is not effective medicine."
 Gorge Grog	Revolt Lover	"'I can't drink on the job, here!'"
 Gorge Grog	yard ray	"The Gorge Grog is pretty strong stuff, but you may need something even stronger."
 Gorge Grog	Yuge Guy	"The Yuge Guy doesn't drink, and neither does Johnny. Also, the Yuge Guy may or may not be a germaphobe."
 ME gem	cross orc	"The ME gem causes the cross orc to moan and shield its eyes for a bit. Perhaps the ME gem is too much even for the orc's greed. Something more straightforward may work better."
 ME gem	Diktat Kid	"The ME gem would be appealing[henchy-list]."
+ME gem	Liar Grail	"That might make the liar grail's lies TOO grandiose."
 ME gem	lie veil	"Two wrongs don't make a right way through here. The ME gem is about greed. You need force, here."
 ME gem	ME Totem	"The egotistical forces in the gem and totem repel each other. Just as well. You don't know if you could survive if such insufferability synergized."
 ME gem	Tao Boat	"The tao boat lurches uncontrollably, and a gust of wind blows you back ten feet. It seems like the ME gem is about the worst thing you could possibly have shown to impress it, but on the other hand, that's a potential hint. You need something that's the opposite of the ME gem."
@@ -2721,6 +2731,7 @@ soot tattoos	DIFF ID	"The Diff-ID doesn't respond. Maybe you need a way to put t
 soot tattoos	etage gate	"The etage gate pattern is interesting and distinctive. Maybe if you had something similar that was not just a drawing, you could rub the pattern off on the tattoos."
 spa maps	pool gloop	"The pool gloop doesn't expand far enough to need mapping. Go-By Bog, on the other hand..."
 spa maps	spa taps	"The spa taps don't expand far enough to need mapping. Go-By Bog, on the other hand..."
+spur ups	lie veil	"The Lie Veil flaps a bit but soon returns to stability. You remember King Nik saying the Spur Ups made for a metaphorical up. You need to do something UP with them."
 spur ups	tao boat	"The spur ups are meant to bring you up. You probably need them for Yawn Way and east."
 spur ups	turf rut	"Unfortunately, the spur ups are about being mentally up, not physically up. So they don't work."
 stamp mats	lie veil	"They wouldn't make a big enough hole in the lie veil to matter. You need something more brutal."
@@ -2759,6 +2770,7 @@ wash saw	bunk nub	"The bunk nub is small enough."
 wash saw	cassettes sac	"The wash saw doesn't have enough fluid to clean up the cassettes sac. It'd probably cut whatever's in the sac, too. You need a more powerful, dedicated cleaner."
 wash saw	crag arc	"The crag arc is much too big for the saw to get anywhere. [if UFO tofu is off-stage]Maybe there's a better way to find what's behind there[else]Besides, you found enough[end if]."
 wash saw	el doodle	"The doodle is a mess all over. Besides, cutting it down might lose valuable information once you clean it up."
+wash saw	etage gate	"Ooh! Breaking and entering! Unfortunately, it's the wash saw that'd break. Looks like you'll need a good old-fashioned key."
 wash saw	gold log	"The log would break the saw."
 wash saw	gulf lug	"Alas, you are not a surgeon."
 wash saw	KAOS Oak	"The wash saw isn't big enough or sharp enough to take down the [kaoscaps]. You need a much more powerful machine[if player has epicer recipe and epicer recipe is nox], and you notice the epicer recipe could help with that[else if epicer recipe is xed], which you can build if you follow the epicer recipe[end if]."
@@ -4724,7 +4736,11 @@ chapter Spur Ups
 
 the Spur Ups are a plural-named beepy thing. description is "King Nik told you it was much more important they were UP than spurs. [if puffed-up is true]One burned out a bit once you puffed up to get to the Emo Dome, but the other may be useful. [end if]You can READ them if you want. You remember how King Nik told you the SPUR UPS could help you feel, or be, UP twice[if puffed-up is true], and you already managed to PUFF UP in the Emo Dome[end if]. Nothing too complex. The question is, how[if puffed-up is true] else[end if]?"
 
-understand "up" and "spur up" as spur ups when player has spur ups.
+after useoning with:
+	if noun is spur ups or second noun is spur ups, beep-if-vol spur ups;
+	continue the action;
+
+understand "up" and "spur up" and "spurs" as spur ups when player has spur ups.
 
 after examining Spur Ups when player is in Yawn Way and puffed-up is false:
 	say "The Spur Ups make the way east feel less intimidating. Maybe you could use them to do something UP enough to be able to hack the Emo Dome.";
@@ -4755,6 +4771,8 @@ the cash sac is a thing. description is "It's labeled Mt. ATM and full of curren
 chapter scorn rocs
 
 The scorn rocs are plural-named scenery in Flu Gulf. "While they're motionless, their stare drives you back--and you know something simple like closing your eyes won't fool them. They're fiercely proud and shiny, white and clean."
+
+check useoning a book with scorn rocs: say "They've got the staring bit down, but they won't process anything." instead; [?? move to gen-book-reject]
 
 instead of talktoing scorn rocs: say "They remain silent, but 'Gog a['] Magog' goes through your head. Fear prevents you going west. You suspect that shortening 'and' to 'a' to fit in is the least of their evil indiscretions."
 
@@ -6658,6 +6676,8 @@ the state tats are a plural-named thing. description is "They say OMG MO['] and 
 chapter soot tattoos
 
 the soot tattoos are a plural-named thing. description is "They're blank now, but maybe if something cut them into the right shape, they could help your image, somehow. Maybe you could imprint something on them, to give them shape and texture."
+
+understand "soot" and "soot tattoo" as soot tattoos.
 
 instead of wearing soot tattoos, say "Right idea, but you need a way to press them onto your skin.";
 
