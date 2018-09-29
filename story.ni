@@ -1692,7 +1692,6 @@ to say verb-mach-abbrevs:
 this is the situational commands show rule:
 	now any-sit-cmd is false;
 	if player is in Fun Enuf and KAOS Oak is xed, say "[got-sit][2da][b]GRAMMAR G[r] toggles the [kaoscaps] between chaotic to sane punctuation, which is purely cosmetic.";
-	if pyx is quicknear, say "[got-sit][2da][b]X X[r] or [b]XX[r] or [b]MAP[r] will let you examine the X/Y Pyx.";
 	if wr-short-note is true and in-work and number of moot workables < 3, say "[got-sit][line break][2da][verb-mach-abbrevs][if number of moot workables < 2]. [b]RR[r] goes through them [work-both-all][end if].";
 	if player has radar, say "[got-sit][2da][b]RAD[r] is shorthand to use the radar on something. [b]SCAN[r] or [b]RDR[r] works too.";
 	if chase-aware, say "[got-sit][2da][no-time-note].";
@@ -4563,6 +4562,12 @@ chapter Verses Rev
 
 the Verses Rev is a neuter person in Dirge Grid. "A Verses Rev wields a part strap here.". description of Verses Rev is "Too much gravitas to be a Rot-Cert Rector, despite the unshowy par wrap and lack of Scold Locs. The hate and brimstone the Rev (obviously no Rev Love Evolver) intones at you is a different matter."
 
+after examining Verses Rev for the first time:
+	say "The Verses Rev, being against just about everything, is also a Versus Rev. In general, but more importantly right now, against YOU.";
+	continue the action;
+
+understand "versus" and "versus rev" as verses rev.
+
 the Verses Rev wears the Par Wrap.
 
 the Par Wrap is peripheral. description is "It's your average religious-person clothing.".
@@ -5589,11 +5594,17 @@ check examining pyx when screenread is true:
 to say pyx-x:
 	say "[b]X X[r], [b]XX[r], [b]M[r] or [b]MAP[r]"
 
-after examining pyx for the first time:
-	say "Notes for the future[if screenread is true], if you turn screen reading off[end if]: [pyx-x] will examine the pyx, to save keystrokes.";
-	if player does not have pyx:
-		say "[line break]Also, you take the pyx for future reference, because it's lightweight enough.";
-		now player has pyx;
+pyx-warn-yet is a truth state that varies.
+
+after examining pyx:
+	if pyx is not xed:
+		say "Notes for the future[if screenread is true], if you turn screen reading off[end if]: [pyx-x] will examine the pyx, to save keystrokes.";
+		if player does not have pyx:
+			say "[line break]Also, you take the pyx for future reference, because it's lightweight enough.";
+			now player has pyx;
+	if screenread is false and pyx-warn-yet is false:
+		say "[if pyx is not xed][line break]If your current room above looks slightly misaligned and you are playing in a web browser, you may wish to type [b]FF[r] to force/fix fonts.";
+		now pyx-warn-yet is false;
 	continue the action;
 
 to decide whether eithervisit of (rm - a room) and (di - a direction):
@@ -5636,7 +5647,9 @@ definition: a room (called rm) is ungoable:
 	if rm is westcond and felines are moot and bees-seen is true, yes;
 	no;
 
-to say redstar: say "[first custom style]*[fixed letter spacing]"
+to say fcs: if fixed-force is false, say "[first custom style]"
+
+to say redstar: say "[fcs]*[fixed letter spacing]"
 
 to say star-ast of (myr - a room) and (nu - a number):
 	if nu is 2 and player is in myr:
@@ -5665,7 +5678,7 @@ to write-top-bottom-edge:
 	say "[fixed letter spacing]";
 	while temp < 7:
 		if temp is loc-rem:
-			say "[first custom style]*****[fixed letter spacing]";
+			say "[fcs]*****[fixed letter spacing]";
 			break;
 		increment temp;
 		say "        ";
@@ -5687,7 +5700,7 @@ to say map-so-far:
 		else if loc-num of rmname entry <= lastnum:
 			say "[if times-thru is 0]BAD##[else][rmname entry][end if]";
 		else:
-			say "[if player is in rmname entry][first custom style][else][fixed letter spacing][end if][if rmname entry is ungoable]XXXXX[else if rmname entry is unvisited]?????[run paragraph on][else if times-thru is 0][uptxt entry][else][downtxt entry][end if][if player is in rmname entry][fixed letter spacing][end if]";
+			say "[if player is in rmname entry][fcs][else][fixed letter spacing][end if][if rmname entry is ungoable]XXXXX[else if rmname entry is unvisited]?????[run paragraph on][else if times-thru is 0][uptxt entry][else][downtxt entry][end if][if player is in rmname entry][fixed letter spacing][end if]";
 			say "[if times-thru is 0 and eithervisit of rmname entry and east]===[else if remainder after dividing pyx-row by 7 > 0]   [end if]";
 		if the remainder after dividing pyx-row by 7 is 0:
 			increment times-thru;
@@ -5747,6 +5760,23 @@ Moo Room	" MOO "	"ROOM "
 Dopy Pod	"DOPY "	" POD "
 Drawl Ward	"DRAWL"	"WARD "
 Scrap Arcs	"SCRAP"	"ARCS "
+
+chapter ffing
+
+ffing is an action out of world.
+
+understand the command "ff" as something new.
+understand the command "fff" as something new.
+
+understand "ff" as ffing.
+understand "fff" as ffing.
+
+fixed-force is a truth state that varies.
+
+carry out ffing:
+	now fixed-force is whether or not fixed-force is false;
+	say "Forcing fixed font for the map in web browsers is now [on-off of fixed-force][if screenread is true], though this doesn't immediately apply with screen reader mode on[end if].";
+	the rule succeeds;
 
 chapter Name ME Man
 

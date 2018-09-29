@@ -264,7 +264,7 @@ We won't be using the last book for a while, but why not take it now?
 
 >WORK ROW
 
-The Cave Vac is simple not powerful enough to clean anything. But once it is, you may know what to clean.
+The Cave Vac is simply not powerful enough to clean anything. But once it is, you may know what to clean.
 
 (+1) >USE DIRT RID ON REVIVER
 
@@ -370,9 +370,9 @@ You can probably guess the eroded ore can be changed into Ore Zero, but getting 
 
 >N
 
-The sim mist blocking the way to the north is annoying. So is the Known Wonk, who says we can't pass it. Not out of malice but out of fear.
+The sim mist blocking the way to the north is annoying. So is the Known Wonk, who says we can't pass it. They're not being rude, just scared.
 
-We can help the Known Wonk out, now, and that helps us out in return.
+But if we help the Known Wonk out, now, that helps us out in return.
 
 (+1) >USE NULL ILLUN ON KNOWN WONK
 
@@ -384,7 +384,7 @@ The spa maps will be useful later once someone helps you decipher them fully, bu
 
 >N
 
-Now, the Kayak doesn't have any oars, but you have something that can help you get places.
+Now, the kayak doesn't have any oars, but you have a good enough substitute. Something made to help people escape for a bit.
 
 (+1) >USE ELOPE POLE ON KAYAK
 
@@ -392,7 +392,7 @@ The you buoy isn't useful as-is, as you have no more travels over water.
 
 The Tao Boat, on the other hand, wants you to show it something. How would you show it you're happy with who you are and what you're doing?
 
-How do you feel peaceful enough to not be disrupted by your enemies, or this quest not being super intense?
+How do you feel peaceful enough to not be disrupted by your enemies, or this quest not having tons of special effects and life-threatening excitement?
 
 (+1) >USE DORK ROD ON TAO BOAT
 
@@ -430,7 +430,7 @@ You'll clean up somewhere else with the moor broom, but first, let's clean up Gr
 
 (+1) >PACE CAP
 
-This makes you go faster.
+This makes you go faster. Otherwise, you run out of gas in Swamp Maws.
 
 (+1) >USE TROLL ORT ON BRAG GARB
 
@@ -454,7 +454,7 @@ The tame mat doesn't really say anything, and you will want to fix that.
 
 (+1) >USE SAGE GAS ON TAME MAT
 
-Oops! You have the opposite problem, now. The guru rug is still a bit too pie-in-the-sky. Maybe it would be perfect if you didn't need to fix things, but you do, so it isn't.
+Oops! You have the opposite problem, now. The guru rug is still a bit too pie-in-the-sky. Maybe it would be swell with the Diktat Kid gone, but the Kid's still here, , so it isn't.
 
 You need something that brings actions to the ideals of the guru rug.
 
@@ -470,11 +470,13 @@ What do we do about Ian? Once we dispose of him, we can mix foods. But he is in 
 
 (+1) >NAIL IAN
 
-Without Ian, we can experiment some. Mont Nom is about food. Some combinations don't work.
+Without Ian, we can experiment some. Mont Nom is about food. You have four food items.
+
+Four of the combinations between them work. Other than that, how you pair them together doesn't matter.
 
 (+1) >USE SNACK CANS ON UFO TOFU
 
-And experiment some more.
+Whatever you do first leaves only one option for the second combination.
 
 (+1) >USE GIFT FIG ON MAYO YAM
 
@@ -490,11 +492,11 @@ The Tru Yurt is messy. You need something that can clean it.
 
 The Known Wonk suddenly realizes something! Something that could help Dr. D! Let's go visit...
 
-Now, the Exam Axe is useful for something cool, but again, turn saving.
+You may guess what the Exam Axe is useful for, but again, this walkthrough focuses on turn saving.
 
 >S.S
 
-The porch crop is new. But there is too much of it. Do we have something that has trimmed other things?
+The porch crop that sprouted up in Uneven U is new. But there is too much of it. Do we have something that has trimmed other things?
 
 Maybe even something that trimmed something before?
 
@@ -503,6 +505,8 @@ Maybe even something that trimmed something before?
 The balsa slab will be useful for later.
 
 >N.E
+
+Finally you can cut through the lie(s)!
 
 (+1) >USE EXAM AXE ON LIE VEIL
 
@@ -532,7 +536,7 @@ But there's more. That eroded ore has potential...
 
 (+1) >USE ERODED ORE ON REVIVER
 
-Three parts of the north-tron! The fourth is just a bit away. It's the TNT, in case you forgot. But first, let's see if the machines throw out anything else.
+Three parts of the north-tron! The fourth is just a bit away. It's the TNT, in case you forgot. But first, let's see what else the machines have to throw out.
 
 (+1) >USE YOU BUOY ON ROTATOR
 
@@ -542,11 +546,11 @@ Treasure! Cool. You don't need the Me Gem, but maybe you can use it on someone e
 
 (+1) >USE MR ARM ON BOMB MOB
 
-You can use Mr Arm on the TNT, too, to get the point. But the way I programmed things, I checked if I should send each used item to the great yonder, so it was easier this way for me. A few keystrokes harder for you if you just copy things down.
+You can use Mr Arm on the TNT, too, to get the point. And that's probably more intuitive. But long story short: I synced my walkthrough with the code, and the Bomb Mob was an easier default to put in the table of game-advancing acts, since the TNT was in the "what you take" column. Anyway.
 
 >GET REP POPPER
 
-You could also have taken the rep popper after visiting the Tao Boat, but it wasn't super easy to swing by until now.
+You could also have taken the rep popper after visiting the Tao Boat, but it wasn't really convenient to swing by until now.
 
 >W.S.S.W.W.N.N
 
@@ -570,19 +574,23 @@ That does it! Now for Ms. Ism.
 
 Again, dealing with Ms. Ism doesn't work directly. Is there something else that amplifies things? Try looking at the mirror rim. It shows how silly your pact cap looks.
 
+Do you have anything else that gives a vision?
+
 (+1) >USE BROS' ORB ON MIRROR RIM
 
-The sword rows--what are they useful for? Cutting something up. Nothing too hard.
+Now you have a weapon to take out the Diktat Kid! But it's not loaded. Let's clean some other things up first.
+
+The sword rows--what are they useful for? Cutting something up. Nothing too hard. Perhaps you can even use process of elimination at this point.
 
 (+1) >USE BALSA SLAB ON SWORD ROWS
 
 >S.W.S.W
 
-The not-a-baton could use a boost. It isn't anything, and it needs to become something.
+The not-a-baton could use a boost. It isn't anything, and it needs to become something. And there's only one machine left. Again, process of elimination.
 
 (+1) >USE NOT-A-BATON ON REIFIER
 
-Boom go the machines! Well, the final machine. Now you have a weapon to take out the Diktat Kid! But it's not loaded.
+Boom go the machines! Well, the final machine. Now what's this test set for? It's disposable junk, sort of.
 
 (+1) >USE MURDERED RUM ON YARD RAY
 
@@ -598,15 +606,15 @@ Now we need to practice our aim. We've destroyed most everything, but there's on
 
 >E.N.W
 
-We now have all pieces of the North-Tron. There's no one right way to build it. In fact, there are twenty: you can use any of the epicer recipe and the four north-tron parts with any other.
+We now have all pieces of the North-Tron. There's no one right way to build it. In fact, there are twenty: you can use any of the epicer recipe and the four north-tron parts with any other. Okay, ten if you count combinations and not permutations. That's still enough, I hope. Oh, and no one way is better than the others. There's no hidden clever text.
 
 (+1) >USE TNT ON ORE ZERO
 
 >N
 
-Now, carnage! And points! And so on. Either the Knife Fink or Verses Rev can go first, but both have to go before you deal with the Diktat Kid.
+Now, the grand finale! Conflict! And so on. Either the Knife Fink or Verses Rev can go first, but both have to go before you deal with the Diktat Kid.
 
-You don't have many items left, now, so trial and error may work. Or you can guess who might like what.
+Trial and error may work. Or you can guess who might like what and also guess the henchmen need to go first.
 
 The Knife Fink looks a bit greedy.
 
@@ -630,6 +638,6 @@ You can spend time looking for last lousy points you didn't get, or you can wrap
 
 (+1) >USE X-ITE TIX ON TIX EXIT
 
-There are slightly different endings, based on whether or not you found all the LLPs ... and, well, one other thing I'll let you work out so the X/O Box has something extra. If you're really curious, you can look through the source. But I don't want to spoil it in a standard walkthrough. I think it's appropriately thematic, though.
+There are slightly different endings, based on whether or not you found all the LLPs, as well as one other thing I'll let you work out. If you figure it, the X/O Box has something extra. If you're really curious, you can look through the source. But I don't want to spoil it in a standard walkthrough. I think it's appropriately thematic, though.
 
 And I hope you enjoyed Ailihphilia, no matter how much you used the walkthrough.
