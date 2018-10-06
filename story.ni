@@ -926,10 +926,13 @@ after reading a command:
 			say "(assuming you're trying to make a phone call)[paragraph break][no-calls]!'";
 			reject the player's command;
 	if the player's command matches the text "-":
-		let XX be the player's command;
-		replace the regular expression "-" in XX with " ";
-		change the text of the player's command to XX;
-		if debug-state is true, say "(DASH TO SPACE) Changed to: [XX].";
+		if debug-state is true and word number 1 in the player's command is "test":
+			do nothing;
+		else:
+			let XX be the player's command;
+			replace the regular expression "-" in XX with " ";
+			change the text of the player's command to XX;
+			if debug-state is true, say "(DASH TO SPACE) Changed to: [XX].";
 	if the player's command matches the regular expression "<^-\.a-z 0-9>":
 		if no-punc-flag is false:
 			say "(NOTE: you don't need to use anything but letters to get through the game. Even commas for addressing NPCs aren't necessary. The parser simply strips out non-alphabetic characters.)[paragraph break]";
@@ -2197,7 +2200,10 @@ understand the command "xyzzy" as something new.
 understand "xyzzy" as xyzzying.
 
 carry out xyzzying:
-	say "...[paragraph break]...[paragraph break]X." instead;
+	if screen-read is true:
+		say "XYZZZY.[paragraph break]X.";
+	else:
+		say "...[paragraph break]...[paragraph break][fixed letter spacing]\   /[line break] \ /[line break]  X[line break] / \[line break]/   \[line break]" instead;
 
 chapter useing
 
@@ -2913,7 +2919,7 @@ roto motor	DNA hand	Mr Arm	pre-motor-on-hand rule	--	true	true	true	false	false	
 Eroded Ore	reviver	Ore Zero	pre-ore-on-reviver rule	--	true	true	false	false	false	true	Yelpley	Worn Row	Worn Row	false	"The reviver whirs as you drop the eroded ore in, and ... out pops some shiny Ore Zero!"
 you buoy	rotator	ME gem	pre-buoy-on-rotator rule	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. 'You BOFFO buoy!' you can't help shouting.[paragraph break]The gem's so tempting and beautiful, you grab it quickly, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
 Mr Arm	bomb mob	TNT	pre-arm-on-mob rule	mob-bye rule	true	true	true	false	false	true	Yelpley	Yell Alley	Yell Alley	false	"Mr. Arm walks on his index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. Being an arm, it/he has more leverage than just a DNA hand would've. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course. Perhaps Mr. Arm will find a Do-Bod or even an Evol-Glove to be truly complete. The bomb mob, for their part, becomes a poor troop once they see what they've lost. They wander away."
-Nat's Tan	scorn rocs	--	pre-tan-on-rocs rule	--	true	true	true	true	false	false	Grebeberg	Flu Gulf	Flu Gulf	false	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
+Nat's Tan	scorn rocs	--	pre-tan-on-rocs rule	post-tan-on-rocs rule	true	true	true	true	false	false	Grebeberg	Flu Gulf	Flu Gulf	false	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
 rep popper	ME Totem	murdered rum	pre-popper-on-totem rule	totem-out rule	true	true	true	false	false	false	Grebeberg	Sneer Greens	Sneer Greens	false	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Had, ah!' he cries, making a male lam. From his babbling, he's apparently retreating to a glam-amalg (Loot Stool included) or ego loge in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]'Pol? Flop!' you think to yourself, before the ME Totem, sliced several ways, collapses and sinks into the ground. As it does, something rolls out ... some murdered rum! It looks powerful. You pick it up carefully."
 Bros' Orb	Mirror Rim	Yard Ray	pre-orb-on-rim rule	sword-rows-reveal rule	true	true	true	false	false	false	Yelpley	Red Roses Order	Red Roses Order	false	"The Bros['] Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Ms. Ism has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, Ms. Ism, live not on evil!' you boom, as the Orb does its work. Ms. Ism looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'My sub-level bus! You won't catch it! The E-Divide will block you!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	pre-slab-on-rows rule	moot-rows-and-tats rule	true	true	false	false	false	false	Yelpley	Red Roses Order	Emo Dome	false	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Ms. Ism."
@@ -3674,6 +3680,7 @@ this is the bump-ivy rule:
 
 this is the bump-maws rule:
 	moot mist sim;
+	now Yack Cay is not chase-blocked;
 	shuffle-before Dumb Mud and Le Babel;
 	shuffle-before Yack Cay and Dumb Mud;
 	the rule succeeds;
@@ -3775,6 +3782,11 @@ this is the post-puff-up rule:
 
 this is the post-pull-up rule:
 	now pulled-up is true;
+	the rule succeeds;
+
+this is the post-tan-on-rocs rule:
+	if debug-state is true and Flu Gulf is chase-blocked, say "Un-chase-blocking Flu Gulf.";
+	now Flu Gulf is not chase-blocked;
 	the rule succeeds;
 
 this is the radar-blink rule:
@@ -4713,7 +4725,7 @@ book Cold Loc
 
 Cold Loc is north of Seer Trees. It is in Grebeberg. "It's kind of dewed, here, but at least it's not the Snow-Ons. A rift fir blocks a steep drop west, but it's clear to the north, south and east. [if sap-takeable is true]The past sap you cut from it is lumped on the ground[else]Some past sap clings to it[end if]."
 
-check going west in Cold Loc: say "The rift fir blocks the way to much more dangerous places, maybe Red Locs Colder or the Splat Alps. Perhaps ski oiks or even site yetis await." instead;
+check going west in Cold Loc: say "[chase-pass]The rift fir blocks the way to much more dangerous places, maybe Red Locs Colder or the Splat Alps. Perhaps ski oiks or even site yetis await[if being-chased is true]. All told, it'd be safer for the more sure-footed yak than you[end if]." instead;
 
 chapter rift fir
 
@@ -4806,10 +4818,11 @@ check going in Flu Gulf:
 	if noun is east, say "You'd need some Nix-O-Toxin to survive the Ebola Lobe. There is none here in the game." instead;
 	if noun is north, say "The mush sum would pull you down." instead;
 	if noun is west:
-		if scorn rocs are in Flu Gulf, say "The scorn rocs remain motionless, the stone NOTS you feel from their stern gaze freeze you as you even think of trying to go west. They're not mere starer-ats.[paragraph break]Maybe if they were less imperious, less shiny, less aesthetically perfect, they'd be less intimidating." instead;
+		if scorn rocs are in Flu Gulf, say "The scorn rocs remain motionless, the stone NOTS you feel from their stern gaze freeze you as you even think of trying to go west. They're not mere starer-ats.[paragraph break]Maybe if they were less imperious, less shiny, less aesthetically perfect, they'd be less intimidating[if being-chased is true].[paragraph break]As you think of a way past them, you lose track of the Kayo Yak[end if]." instead;
 		if being-chased is true:
-			if Yuge Guy is moot, say "With the Yuge Guy defeated, you don't feel a need to go back to [Sneer Greens]." instead;
-			say "You don't want to face [if Sneer Greens is visited]the Yuge Guy[else]whatever's west[end if] while you're being chased, too." instead;
+			if Yuge Guy is moot, say "[chase-pass]With the Yuge Guy defeated, you don't feel a need to go back to [Sneer Greens]." instead;
+			if Sneer Greens is unvisited, say "The invective from the west gives you pause. Between that and being chased by the Kayo Yak, you are dazed just long enough..." instead;
+			say "The Kayo Yak, with a burst of energy, runs in front of you before you can make it [if Sneer Greens are unvisited]west[else]to [Sneer Greens][end if]. Weird! It's like the Yak was scared enough of [if Sneer Greens is visited]the Yuge Guy and the ME Totem[else]whatever's west[end if] to try and protect you. A well-meaning gesture, but perhaps the yak would rather tackle something less fearsome and horrid." instead;
 
 book Sneer Greens
 
@@ -4883,7 +4896,7 @@ check going north in Dumb Mud:
 	if lie veil is in Dumb Mud:
 		if player has exam axe, say "The lie veil doesn't seem as intimidating as before. Maybe it's you, or something you have." instead;
 		say "[one of]As you're about to touch the lie veil, you shake your head. No. You don't really want or need to explore north. Surely there's some better place to be? Perhaps you're not 100% prepared for the lie veil's 'thought-provoking' paradoxes, and it's doing you a favor pushing you back? Plus what if it hides a hidden booby trap? You try to walk further north, but somehow you wind up walking back south.[paragraph break]Once you're away from the Lie Veil, you forget its weird arguments. There's got to be a way, or weapon, to cut brutally through its sophistry[or]The Lie Veil still rejects and confuses you. You need something decisive and brutal to cut through it[stopping][if score < 30 and player does not have exam axe]. But finding the right weapon or implement may have to wait a bit[end if]." instead;
-	if being-chased is true, say "[chase-pass]It's just too weird ahead to the north." instead;
+	if being-chased is true, say "[chase-pass]It's just too weird and chaotic ahead to the north. Maybe without the yak chasing you..." instead;
 
 chapter gnu dung
 
@@ -5146,6 +5159,10 @@ carry out yakokaying:
 		the rule succeeds;
 	now kayo-known is true;
 	if yak is in location of player:
+		if player is in Moo Room:
+			say "[get-rej of kayo yak]The kayo yak storms around the barn in circles! But it does not find anything worth really destroying[if yahoo hay is in Moo Room], not even the yahoo hay[end if]. You're exhausted watching it--perhaps the aggression from your KAYO YAK would be useful elsewhere." instead;
+		if player is in Flu Gulf and scorn rocs are in Flu Gulf:
+			say "[get-rej of kayo yak]The yak charges briefly at the scorn rocs but pulls up quickly. Maybe YAK OKAY could help the yak tackle something less fearsome." instead;
 		if being-chased is true, now chase-mulligan is true;
 		say "[get-rej of kayo yak]The yak paws the ground aggressively and runs in a circle before settling back. It seemed agitated, there, like it wanted to do more.[paragraph break]'YAK OKAY' seemed to make sense, though. You file it away for some other time and place." instead;
 	say "[get-rej of kayo yak]There's no yak around to say okay to, but that could be handy somewhere." instead;
@@ -5163,18 +5180,19 @@ to banish-ogre:
 chapter blocking east
 
 check going east in Frush Surf when being-chased is true:
+	if Moo Room is chase-blocked, continue the action;
 	if poo coop is in Moo Room:
 		say "That seems like a dead end, but who knows, maybe you [if Moo Room is visited]missed[else]might find[end if] something valuable there.";
 		continue the action;
-	say "[chase-pass]That seems like a dead end. The yak would have you cornered." instead;
+	say "[chase-pass]That seems like a dead end. The yak would have you cornered. But hey, why not.";
 
 book Moo Room
 
-Moo Room is east of Frush Surf. It is in Grebeberg. "You can't see any cows, but you occasionally hear them[if bees-seen is false] and, also, an ominous buzzing it'd be nice to locate[end if]. You can't see any farm as you'd expect to, but it's probably the private property of one Mr. A. [if yahoo hay is in Moo Room]Yahoo hay is piled all around. [end if]The only way back is west."
+Moo Room is east of Frush Surf. It is in Grebeberg. "You can't see any cows, but you occasionally hear them[if bees-seen is false] and, also, an ominous buzzing it'd be nice to locate[end if]. You can't see any farm as you'd expect to, but that's probably the private property of one Mr. A. [if yahoo hay is in Moo Room]Yahoo hay is piled all around. [end if]The only way back is west."
 
 chapter poo coop
 
-the poo coop is in Moo Room. "A poo coop sits here. Thankfully, it looks empty.". description is "While it's 1/4 too small to be a pooch coop, the coop is 1) [if gnu dung is moot]full of gnu dung[else]empty[end if] and 2) somehow bigger on the inside than the outside. [if gnu dung is moot]It would be nice to get rid of the gnu dung[else]Maybe it can clean up a something dirty or worse[end if]."
+the poo coop is in Moo Room. "A poo coop sits here. Thankfully, it looks empty[if kayo yak is in Moo Room] and small enough to take before the kayo yak charges you[one of][or]. Hint, hint[stopping][end if].". description is "While it's 1/4 too small to be a pooch coop, the coop is 1) [if gnu dung is moot]full of gnu dung[else]empty[end if] and 2) somehow bigger on the inside than the outside. [if gnu dung is moot]It would be nice to get rid of the gnu dung[else]Maybe it can clean up a something dirty or worse[end if]."
 
 understand "poos scoop" and "poos/scoop" as poo coop.
 understand "gnu dung" and "gnu/dung" as poo coop when player has poo coop and gnu dung is moot.
@@ -5324,7 +5342,7 @@ printed name of Lair Trial is "[if ergot ogre is in Lair Trial]Lair Trial[else]S
 
 understand "stride dirts" and "stride/dirts" as Lair Trial when ergot ogre is moot.
 
-check going nowhere in Lair Trial: say "[if ogre is in Lair Trial]You can't sneak around the ergot ogre. You need to get rid of it[else]There's nothing in the fog[end if]." instead;
+check going nowhere in Lair Trial: say "[chase-pass][if ogre is in Lair Trial]You can't sneak around the ergot ogre. You need to get rid of it[else]There's nothing in the fog[end if]." instead;
 
 chapter ergot ogre
 
@@ -7384,7 +7402,8 @@ report taking troll ort:
 
 book Drawl Ward
 
-Drawl Ward is south of Swept Pews. It is in Yelpley. "This passage is a T (well, a [unicode 9524]), walled off to the south by a birch crib. It looks homier to the west and a bit barren to the east, but you can always go back north through the Swept Pews." [?? can only go n w e here = slightly wrong]
+[unicode 9524 ?? on some interpreters]
+Drawl Ward is south of Swept Pews. It is in Yelpley. "This passage is a T (well, a _l_), walled off to the south by a birch crib. It looks homier to the west and a bit barren to the east, but you can always go back north through the Swept Pews."
 
 check going in Drawl Ward:
 	if Bond Nob is in Drawl Ward:
@@ -7700,6 +7719,7 @@ carry out gotoing:
 			if mrlp is Grebeberg, move player to Seer Trees instead;
 			say "UH OH bad bug ... should be moved somewhere.";
 			the rule succeeds;
+		if shuttuhs is true and noun is shutted, say "[chase-pass][noun] is shuttered right now." instead;
 		move the player to noun;
 		the rule succeeds;
 	unless goto-available, say "You're at a (critical) point in the game where goto isn't available." instead;
@@ -7928,7 +7948,26 @@ volume chases
 
 a room can be chase-blocked. a room is usually not chase-blocked.
 
-check going to a chase-blocked room when being-chased is true: say "[chase-pass]No, you've already been there, and you found nothing to do." instead;
+check going to a chase-blocked room when being-chased is true: say "[chase-pass]No, you've already been there[xtra-txt of room noun of location of player]." instead;
+
+to say xtra-txt of (rm - a room):
+	if exit-count of rm < 2:
+		say ", but it was a dead end with nothing to do";
+		continue the action;
+	else if all-visited-beyond of rm:
+		say ", and everywhere beyond, with nothing to do";
+	else:
+		say ", and though there are rooms beyond you didn't explore, maybe you should stick with places you know for now"
+
+to decide whether all-visited-beyond of (rm - a room):
+	if rm is unvisited, no;
+	if exit-count of rm is 1, yes;
+	repeat with Q running through maindir:
+		say "trying [Q] of [rm].";
+		if Q is in-dir of rm, next;
+		if the room Q of rm is nowhere, next;
+		unless all-visited-beyond of the room Q of rm, no;
+	yes;
 
 after going when being-chased is true:
 	if x-it stix are in location of player, say "As you run furher [noun], you notice X-it Stix X out the way [if Fun Enuf is room east of location of player]east[else]west[end if]. It's probably bad for the [chase-person] to get loose in [if player is in Yawn Way]Grebeberg[else]Yelpley[end if].";
@@ -7981,14 +8020,14 @@ yak-lair is a truth state that varies.
 
 every turn when being-chased is true:
 	if action is procedural:
-		if debug-state is true, say "[current action].";
+		if debug-state is true, say "DEBUG TEXT: [current action].";
+		now chase-mulligan is false;
 		continue the action;
 	if init-turn is false:
 		say "You'd better get a move on. The [chase-person] looks pretty agitated.";
 		now init-turn is true;
 		now chase-mulligan is false;
 		continue the action;
-	if action is procedural, continue the action;
 	if chase-mulligan is true:
 		now chase-mulligan is false;
 		continue the action;
@@ -8017,12 +8056,14 @@ to reset-chase:
 	now chase-mulligan is false;
 	if debug-state is true, say "RULE TRACKER: [LP] ([chase-block-rule of LP]).";
 	consider chase-block-rule of LP;
+	if the rule succeeded:
+		if debug-state is true, say "Now [LP] is chase-blocked.";
+		now LP is chase-blocked;
 	if mrlp is Grebeberg, drop-player-at Ooze Zoo;
 	if mrlp is Yelpley, drop-player-at Gross Org;
 	unless player was in Frush Surf or player was in Pro Corp, say "Well, all your items you dropped are still here, so that's something. You take them back, staying where the [chase-person] won't quite find you.";
 	move chase-person to chase-room of chase-person, without printing a room description;
 	if LP is Lair Trial, say "The kayo yak didn't seem to want to attack you, but you just didn't know what to say. Maybe you can and should try again.";
-	if the rule succeeded, now LP is chase-blocked;
 
 after going when being-chased is true:
 	now last-chase-direction is noun;
@@ -8046,7 +8087,7 @@ after looking when being-chased is false (this is the start-chase-in-case rule):
 		continue the action;
 	if troll ort is moot and player is in Frush Surf and kayo yak is in Frush Surf:
 		start-chase Kayo Yak;
-		say "The Kayo Yak bounds after you[one of][or] again[stopping]!";
+		say "The Kayo Yak scuffs its hooves, ready to bound after you[one of][or] again[stopping]!";
 		continue the action;
 	continue the action;
 
@@ -8082,7 +8123,7 @@ this is the block-flu-gulf rule:
 	the rule succeeds;
 
 this is the block-moo-room rule:
-	if poo coop is not in Moo Room:
+	if poo coop is had-or-done:
 		say "You know the Moo Room is a dead end, and since you got the poo coop from here, it seems like you need the yak to chase you somewhere else.";
 		the rule succeeds;
 	the rule fails;
@@ -8094,6 +8135,9 @@ this is the block-cold-loc rule:
 	the rule fails;
 
 this is the block-yack-cay rule:
+	if mist sim is in Yack Cay:
+		say "It's unlikely something is behind the mist sim, and you found nothing in Yack Cay.";
+		the rule succeeds;
 	if Lac Oft Focal is chase-blocked:
 		say "There was nothing in [Lac Oft Focal] OR [Yack Cay] you saw that could slow the yak down more than you. Well, that's another place you can ignore next time.";
 		the rule succeeds;
@@ -9806,8 +9850,9 @@ this is the yell-alley-hint rule:
 	say "USE MR ARM ON TNT." instead;
 
 this is the yell-alley-complete rule:
-	if player has TNT or TNT is moot, the rule succeeds;
-	the rule fails;
+	unless TNT is handled, the rule fails;
+	unless mayo yam is handles, the rule fails;
+	the rule succeeds;
 
 chapter balmlabing
 
