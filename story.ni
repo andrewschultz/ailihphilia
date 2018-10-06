@@ -760,7 +760,7 @@ nothing-txt is a number that varies.
 parser error flag is a truth state that varies.
 
 Rule for printing a parser error when the latest parser error is the nothing to do error:
-	say "It looks like you tried a command like TAKE ALL, but nothing registered as something you could take. While the game individually rejects take individual scenery, ALL only looks at what you can realistically take."
+	say "It looks like you tried a command like TAKE ALL, but nothing registered as something you could take. While the game individually rejects taking individual scenery, ALL only looks at what you can realistically take."
 
 the last-command is indexed text that varies.
 
@@ -1781,7 +1781,7 @@ this is the cant-shuttuhs rule:
 	continue the action;
 
 carry out shuttuhsing:
-	if shuttuhs is false and location of player is shutted, say "You're in an area you've completed. You'll need to go somewhere else to activate this." instead;
+	if shuttuhs is false and location of player is shutted, say "CLICK! The shuttuhs come down. You should be able to go back inwards okay, but you probably can't come back.";
 	abide by the cant-shuttuhs rule;
 	now shuttuhs is whether or not shuttuhs is false;
 	say "The invisible shutters/shuttuhs blocking completed areas are now [on-off of shuttuhs].";
@@ -1800,6 +1800,7 @@ after going when shuttuhs is true:
 				now d2 is d3;
 				break;
 	let rd2 be the room d2 of location of player;
+	if rd2 is nowhere, continue the action; [this should never happen but just in case]
 	if rd2 is shutted, say "You hear the shuttuhs/shutters click down behind you. You must be [if exit-count of rd2 > 1]completely [end if]done to the [d2], now.";
 	continue the action;
 
@@ -1810,6 +1811,7 @@ to decide whether LLP-hunting:
 
 check going when shuttuhs is true:
 	let Q be the room noun of location of player;
+	if Q is nowhere, continue the action;
 	if location of player is shutted and room-dist of location of player > room-dist of Q, continue the action; [without this, the player would get stuck in Dopy Pod or Scrap Arcs, as Drawl Ward would be shutted. Also, you can go to the center but not away.]
 	if Q is shutted, say "Invisible shuttuhs, err, shutters block passage [noun]. You must be done in [Q][if exit-count of Q > 1] and the room(s) behind it[end if], so you'll need to toggle the shutters with [b]SHUTTUHS[r] to go back[if LLP-hunting]. If you are hunting for LLPs, you may need to toggle SHUTTUHS[end if]." instead;
 
@@ -2855,7 +2857,7 @@ pity tip	eye	snack cans	pre-tip-on-eye rule	mob-to-alley rule	true	true	false	fa
 --	--	--	rev-work-row rule	--	true	--	--	true	true	true	Yelpley	Worn Row	Worn Row	false	--
 trap art	reifier	party trap	pre-art-on-reifier rule	--	true	true	false	true	true	true	Yelpley	Worn Row	Worn Row	false	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. You pull it out of the reifier and inspect it. It could probably capture more than one thing."
 bunk nub	reviver	stock cots	pre-nub-on-reviver rule	--	true	true	false	true	true	true	Yelpley	Worn Row	Worn Row	false	"After some crunching and slurping, the bunk nub is changed to a bunch of much smaller, but more comfortable looking, stock cots. You take them."
-party trap	stark rats	gift fig	pre-trap-on-rats rule	oh-who-to rule	true	true	true	true	true	true	Grebeberg	Seer Trees	Seer Trees	false	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately all the trap-stuff is gone. The Seer Trees seem to nod a bit.[paragraph break]THUMP! They left you a present--good thing you were wearing that pact cap, because a book fell on your head. One glance reveals it to be [b]Oh, Who[r]--a phone book for Grebeberg, like [b]Name ME Man[r] for Yelpley.[paragraph break]You also find a gift fig, which you pick up."
+party trap	stark rats	gift fig	pre-trap-on-rats rule	oh-who-to rule	true	true	true	true	true	true	Grebeberg	Seer Trees	Seer Trees	false	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately none of it gets over you. The Seer Trees seem to nod a bit.[paragraph break]THUMP! They left you a present--good thing you were wearing that pact cap, because a book fell on your head. One glance reveals it to be [b]Oh, Who[r]--a phone book for Grebeberg, like [b]Name ME Man[r] for Yelpley.[paragraph break]You also find a gift fig, which you pick up."
 EPOCH COPE	King Nik	Spur Ups	pre-cope-on-nik rule	cold-loc-hint-bump rule	true	true	true	true	true	true	Grebeberg	Cold Loc	Cold Loc	false	"King Nik takes it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris and Crisp Sir C told me I needed to one day from those other books: ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! Now I can make sure the Rim Emir and his emir crim and emir grime do not become Emir Prime! I will defeat the Mrifk Firm, too! My rule will not be an EGAD age!' He hands you some Spur Ups in gratitude. 'These may not spur you, but they can give you an UP or two, when you are just scared or worried for no reason in general. Now...back to my vidette div. Gotta RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
 stock cots	sleep eels	--	pre-cots-on-eels rule	--	true	true	true	true	true	true	Grebeberg	Ooze Zoo	Ooze Zoo	false	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
 --	--	--	rev-puff-up rule	post-puff-up rule	true	--	--	true	true	true	Yelpley	Yawn Way	Yawn Way	false	--
@@ -2892,7 +2894,7 @@ elope pole	kayak	you buoy	pre-pole-on-kayak rule	--	true	true	false	false	false	
 dork rod	tao boat	enact cane	pre-rod-on-boat rule	--	true	true	false	true	true	false	Grebeberg	Lac Oft Focal	Lac Oft Focal	false	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
 tent net	Code Doc	--	pre-net-on-doc rule	--	true	true	false	false	true	false	Grebeberg	Uneven U	Uneven U	false	"Together, you figure out what to do to make the tent net proper cover for Uneven U. 'Tie it ... tie it ...' then 'Net: safe. fasten!'[paragraph break]Once the work is done, the Code Doc thanks you. 'Let me know if you need help learning ... well, anything. Oh, and call me Dr. D., if you'd like.'[paragraph break]How thoughtful! That could save a few keystrokes in the future[if spa maps are preclued]! Maybe the very near future, if you ask about the spa maps again[end if]."
 spa maps	Code Doc	--	pre-maps-on-doc rule	maps-explain rule	true	false	false	false	true	false	Grebeberg	Uneven U	Uneven U	false	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my for-prof math tam for this one. One second, let's see--Aha! Oho...'[paragraph break]You each split an Ed-Ade to make sure the lesson is taught and remembered well. Despite a minor pupil slip-up, the Code Doc is never edu-rude. It soon makes complete sense to you. You don't know how to say thanks. Everything seems too long-winded or said before, until ... 'Def ed!'"
-spa maps	go by bog	sage gas	pre-maps-on-bog rule	gas-think-wipe rule	true	true	false	false	true	false	Grebeberg	Apse Spa	Apse Spa	false	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. But how to carry it? Voila, a pouch in the Sto Lots you hadn't seen before is just the thing. Perhaps the sage gas helpe you find it! As you fiddle with it, though, you drop the Spa Maps, which get hopelessly muddy.[paragraph break]You reach to pick them up, but somehow, bizarrely, the Spa Maps turn into a salt atlas and crumble away. Hooray, biodegradability!"
+spa maps	go by bog	sage gas	pre-maps-on-bog rule	gas-think-wipe rule	true	true	false	false	true	false	Grebeberg	Apse Spa	Apse Spa	false	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. But how to carry it? Voila, a pouch in the Sto Lots you hadn't seen before is just the thing. Perhaps the sage gas helped you find it! As you fiddle with it, though, you drop the Spa Maps, which get hopelessly muddy.[paragraph break]You reach to pick them up, but somehow, bizarrely, the Spa Maps turn into a salt atlas and crumble away. Hooray, biodegradability!"
 enact cane	yahoo hay	moor broom	pre-cane-on-hay rule	hay-gone rule	true	true	false	false	true	false	Grebeberg	Moo Room	Moo Room	false	"You stick some strands of yahoo hay into the damaged end of the enact cane. It's now a moor broom!"
 --	--	--	rev-pace-cap rule	--	true	--	--	false	true	false	Dim Mid	--	--	false	--
 troll ort	brag garb	--	pre-ort-on-garb rule	chase-in-zoo rule	true	true	false	false	true	false	Grebeberg	--	--	false	"You rub the troll ort on the Brag Garb. Whew! Somehow the ort mixed with the garb's materials to make a really strong odor. It's an entirely different smell from the stinky knits, but still quite distinctive. The ort must've been covered by the dirt for a long time, because it disintegrates as its essence is leaked onto the brag garb." [b4:pace cap] [af:yak okay]
@@ -3067,11 +3069,11 @@ this is the rev-puff-up rule:
 		else if ever-workrow is false:
 			say "The main puzzle [hn-in of Yawn Way] is how to get east. You need to change [Worn Row], to start.";
 		else if stark rats are in Seer Trees:
-			say "To go east, you first need to clear a way west beyond [if Seer Trees is visited]Seer Trees[else]Fun Enuf[end if].";
+			say "To go east [hn of Yawn Way], you first need to clear a way west beyond [if Seer Trees is visited]Seer Trees[else]Fun Enuf[end if].";
 		else if player does not have Spur Ups:
 			say "[if Cold Loc is not visited]You need to visit [vague-dir of Cold Loc][else]King Nik in Cold Loc has an item you need, if you help him.[end if]."; [?? clues still bounce you around a bit]
 		else:
-			say "[one of]King Nik's Spur Ups are handy to go east of [hn of Yawn Way].[or]Each Spur of King Nik's will help you do something else UP.[or]You need to feel more confident in yourself [hn-in of Emo Dome].[or]PU* UP turns up nothing, though PUT UP seems promising, but...[or]PU** UP has possibilities.[or]PUFF UP in Yawn Way to gain access to the east.[stopping]";
+			say "[one of]King Nik's Spur Ups are handy to go east of [hn of Yawn Way].[or]Each Spur of King Nik's will help you do something else UP.[or]You need to feel more confident in yourself [hn-in of Emo Dome].[or]PU* UP turns up nothing, though PUT UP seems promising, but...[or]PU** UP has possibilities.[or]PUFF UP [hn-in of Yawn Way] to gain access to the east.[stopping]";
 		the rule succeeds;
 	if say-unless-speed, say "You use the spur ups to PUFF UP.";
 	now puffed-up is true;
@@ -5953,7 +5955,9 @@ carry out evadeing:
 
 book Worn Row
 
-Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky][what-machines][else if Worn Row is wordy]A tract cart is here, [tract-status][else]It's pretty empty here, [worn-scen][end if][if ever-wordrow is true and Worn Row is worky]. You could also summon Work Row back if you wanted[end if].[paragraph break][dab-notes]The only way out is back east."
+Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky][what-machines][else if Worn Row is wordy]A tract cart is here, [tract-status][else]It's pretty empty here, [worn-scen][end if][wrow].[paragraph break][dab-notes]The only way out is back east."
+
+to say wrow: if row-prog is 2, say ". You could also summon [if Worn Row is worky]Word[else]Work[end if] Row back if you wanted";
 
 to say worn-scen:
 	say "[if redness ender is in Worn Row]not counting a big lumpy Redness Ender that makes Worn Row feel even more worn[else]and with the redness ender gone, you might as well just change things back to Work Row or Word Row"
@@ -6488,11 +6492,11 @@ to work-row-open:
 to check-dab:
 	if bad dab is in Worn Row:
 		if row-prog > 2:
-			say "[line break]The WOR- ROW text of the bad dab fades out of sight.";
+			say "[line break]The WOR* ROW text of the bad dab fades out of sight.";
 		if row-prog > 1:
-			say "[line break]The middle dash in WOR- ROW bleeds into an asterisk. Odd.";
+			say "[line break]The [one of]asterisk in WOR* ROW pulses a bit[or]plus in WOR+ ROW bleeds into an asterisk[stopping]. Odd.";
 		else:
-			say "The bad dab saying WOR- ROW gets blotchier. Maybe there's something else beside [Worn Row]."
+			say "The bad dab saying WOR- ROW morphs slightly into, well, WOR+ ROW. Maybe there's something else beside [Worn Row]."
 
 chapter wordrowing
 
@@ -6530,7 +6534,7 @@ to notify-row-change:
 	else if Worn Row is worky:
 		say "[if test set is moot]Even though there's nothing to remove from Work Row any more, you still hear whirring[else if test set is in Worn Row]The wall whirs as the test set spins back in[else]The machines spin back into the wall with an efficient whirr[end if].";
 	else:
-		say "The redness ender retracts. Who knows if you'll see it again?"
+		say "[if psi wisp is moot]The wall opens and retracts, even without any redness ender to hide.[else]The redness ender retracts. Who knows if you'll see it again?[end if]"
 
 to word-row-open:
 	clear-worn-row;
@@ -7022,7 +7026,7 @@ the cave vac is a thing. description is "It looks a lot more powerful than the D
 
 chapter Gorge Grog
 
-the Gorge Grog is in Deft Fed. "Some Gorge Grog is here. It looks out of place in the Bon Snob, but Sniffins probably won't give it to you for free.". description is "Unsurprisingly, it is a product of Grog-Org. It's considerably more than four pruof. Err, foor proof."
+some Gorge Grog is in Deft Fed. "Some Gorge Grog is here. It looks out of place in the Bon Snob, but Sniffins probably won't give it to you for free.". description is "Unsurprisingly, it is a product of Grog-Org. It's considerably more than four pruof. Err, foor proof."
 
 check taking Gorge Grog when player does not have Gorge Grog: say "Sniffins chides you. 'It's worthless to us, but if there's anything tackier than bad alcohol, it's people who want to steal it!'[paragraph break]Maybe you could trade something for it." instead;
 
@@ -7385,6 +7389,7 @@ Drawl Ward is south of Swept Pews. It is in Yelpley. "This passage is a T (well,
 check going in Drawl Ward:
 	if Bond Nob is in Drawl Ward:
 		if noun is west or noun is east, say "You hear the Bond Nob groaning and think it wouldn't be nice to pass by. They'll let you by once you help them with whatever sickness they have." instead;
+	if noun is south, say "The birch crib is a private home, but you don't need to go there." instead;
 
 rig-yet is a truth state that varies.
 
@@ -8753,7 +8758,7 @@ carry out sosing:
 	if being-chased is true:
 		if chase-person is kayo yak:
 			if cap-pace is false, say "[one of]You're not quite fast enough to outrun the yak on your own. An item you have can help.[or]The pact cap.[or]The pact cap can become a PACE cap.[stopping]" instead;
-			if player is in trial lair, say "[one of]The kayo yak can take out the ergot ogre[or]You just need to give the right command to the kayo yak.[or]YAK ???? [or]YAK OKAY (no comma)[stopping]." instead;
+			if player is in trial lair, say "[one of]The kayo yak can take out the ergot ogre.[or]You just need to give the right command to the kayo yak.[or]YAK ???? will do it.[or]YAK OKAY (no comma.)[stopping]" instead;
 			say "[one of]The kayo yak will keep chasing you. Maybe you can find someone else for it to knock over.[or]Someone guarding something?[or]The ergot ogre.[or]You'll need to do one more thing once you get to the Trial Lair.[stopping]" instead;
 		if player is in Worn Row, say "[one of]You have the Psi Wisp in the right place, but you can't do anything here in [Worn Row], yet.[or]You have to change it.[or]WORN ROW. The redness ender will take care of the psi wisp.[stopping]" instead;
 		say "[one of]The psi wisp is certainly red. Maybe there's something that could neutralize it.[or]Do you remember a room at the start?[or]It sort of isn't there any more.[or]Go to Word/Work Row, first.[stopping]" instead;
@@ -8770,9 +8775,11 @@ carry out sosing:
 					say "[if take-clues is 1]Y[else]Also, y[end if]ou can just take [the to-take entry] [hn-in of where-is entry].";
 	if take-clues > 0:
 		say "NOTE: This poke to take something may be a distraction from more rigorous and immediate puzzles, but I'd rather first point you to something you overlooked but may be able to use before spoiling a puzzle.";
-		if debug-state is false, the rule succeeds;
+		if debug-state is true:
+			say "Falling through to see what hints I would've gotten, for debug purposes. This should not be in the release version.[paragraph break]";
+		else:
+			the rule succeeds;
 	now in-sos is true;
-	if debug-state is true, say "(1) ";
 	let count be 0;
 	repeat through table of goodacts:
 		if there is a room-to-go entry and room-to-go entry is not location of player, next;
@@ -9292,7 +9299,7 @@ this is the deft-fed-hint rule:
 	say "USE ELAN ALE ON SNIFFINS." instead;
 
 this is the deft-fed-complete rule:
-	if Elan Ale is moot, the rule succeeds;
+	if Elan Ale is moot and Nat's Tan is had-or-done, the rule succeeds;
 	the rule fails;
 
 section Dirge Grid rule
