@@ -4570,7 +4570,7 @@ understand "versus" and "versus rev" as verses rev.
 
 the Verses Rev wears the Par Wrap.
 
-the Par Wrap is peripheral. description is "It's your average religious-person clothing.".
+the Par Wrap is peripheral. description is "The Par Wrap is nothing special, but the Verses Rev is the sort of person who's stridently versus Certain Immoral Things, so they'd want to make sure any game they were in mentioned they were clothed.[paragraph break]I decided to respect that, but still, I'm hoping you lay a most righteous, if largely metaphorical, smackdown on the the Rev.".
 
 the Verses Rev carries the part strap.
 
@@ -8268,7 +8268,6 @@ carry out toolslooting:
 	abide by the chase-warp-check rule;
 	if KAOS Oak is moot, say "You already destroyed the [kaoscaps]." instead;
 	if tron-got is 4, say "You already have all the North Tron pieces the epicer recipe says you need." instead;
-	unless Bros' Orb is in Le Babel or soot tattoos are off-stage, say "You already have what you need to defeat Ms. Ism." instead;
 	now in-tool-warp is true;
 	try revovering;
 	now in-tool-warp is false;
