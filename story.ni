@@ -1320,7 +1320,7 @@ to say hn-the of (rm - a room):
 	say "[if player is in rm]here[else]the [rm][end if]"
 
 to say hn-in-blank of (rm - a room):
-	say "[if player is not in rm]in [rm] [end if]"
+	say "[if player is not in rm] in [rm][end if]"
 
 to say hn of (rm - a room):
 	say "[if player is in rm]here[else][rm][end if]"
@@ -2690,7 +2690,7 @@ murdered rum	el doodle	"There's mp invisible ink here. That'd make El Doodle eve
 murdered rum	test set	"Chemical experiments are not your thing. The murdered rum's pretty caustic, but perhaps it can act as fuel for something else."
 NULL ILLUN	Door Frood	"'Like I need it! Other people do! And what's worse, some who read it become less easy to make fun of. Hmmph.'"
 NULL ILLUN	King Nik	"'That would help me feel better about failure. But, and I feel kinda guilty for asking, you got any book that would help me avoid failure in the first place?'"
-NULL ILLUN	liar grail	"The liar grail would twist the words of NULL ILLUN so badly, you'd be worse for the experience."
+NULL ILLUN	liar grail	"The liar grail would twist the words of [i]NULL ILLUN[r] so badly, you'd be worse for the experience."
 NULL ILLUN	Revolt Lover	"'I guess we all could use it a little. But someone else might need it more than me. Um, I hope.'"
 pact cap	kayo yak	"The yak already looks faster than you. You might want to use the cap to get away, if the yak started chasing you [if chased-yet of yak is true]again[else]for whatever reason[end if]."
 Party Trap	Revolt Lover	"'Whoah! Neat! That's a lot more useful than my art.'"
@@ -2742,7 +2742,7 @@ sharp rahs	King Nik	"King Nik needs more than just platitudes. Something rigorou
 sharp rahs	Known Wonk	"[wonk-sage]."
 sharp rahs	rep popper	"The popper would surely ruin the incisiveness of the rahs."
 sharp rahs	Tao Boat	"[too-boast]."
-sharp rahs	Yob Attaboy	"Yob Attaboy is, um, direct enough."
+sharp rahs	Yob Attaboy	"[i]YOB ATTABOY[r] is, um, direct enough."
 snack cans	DIFF ID	"The DIFF ID is not a grocery scanner."
 SOME DEMOS	Revolt Lover	"[one of]The Revolt Lover nods slightly. 'An excellent book! I have a copy, myself. It's helped me make art out of just about ANYTHING. The best stuff is, you know, boring and interesting at the same time.' You make a note of the Revolt Lover's words[or]The Revolt Lover already mentioned you should find something both boring and interesting at the same time[stopping]."
 soot tattoos	DIFF ID	"The Diff-ID doesn't respond. Maybe you need a way to put them on you, somehow."
@@ -2843,7 +2843,7 @@ table of shiftables [xxshi]
 use1	use2	use3 [use 3, not 1, on 2]	use-text
 den ivy vined	tent net	code doc	"[tent-to-doc]."
 ivy villa	tent net	code doc	"[tent-to-doc]."
-mist sim	NULL ILLUN	Known Wonk	"You hold out [NULL ILLUN], point to the mist, and point to the Known Wonk."
+mist sim	NULL ILLUN	Known Wonk	"You hold out [i]NULL ILLUN[r], point to the mist, and point to the Known Wonk."
 navy van	pity tip	eye	"Nothing happens until you wave the pity tip across the eye."
 pool gloop	spa maps	go by bog	"The maps seem to be meant more for the bog than the gloop, so you try the bog."
 rift fir	wash saw	past sap	--
@@ -3081,7 +3081,7 @@ this is the rev-puff-up rule:
 		else if ever-workrow is false:
 			say "The main puzzle [hn-in of Yawn Way] is how to get east. You need to change [Worn Row], to start.";
 		else if stark rats are in Seer Trees:
-			say "To go east [hn of Yawn Way], you first need to clear a way west beyond [if Seer Trees is visited]Seer Trees[else]Fun Enuf[end if].";
+			say "To go east [hn-in of Yawn Way], you first need to clear a way west beyond [if Seer Trees is visited]Seer Trees[else]Fun Enuf[end if].";
 		else if player does not have Spur Ups:
 			say "[if Cold Loc is not visited]You need to visit [vague-dir of Cold Loc][else]King Nik in Cold Loc has an item you need, if you help him.[end if]."; [?? clues still bounce you around a bit]
 		else:
@@ -3190,7 +3190,7 @@ this is the pre-ale-on-Sniffins rule:
 	if in-sos is true:
 		if Elan Ale is moot, the rule fails;
 		if player does not have yob attaboy and yob attaboy is not moot:
-			say "[one of]Sniffins [hn-in-blank of Deft Fed]needs some help[or]Sniffins doesn't need financial help but motivational help. A confidence booster[or]Perhaps a book from Word Row could help Sniffins[or]TAKE YOB ATTABOY [hn-in of Worn Row][stopping].";
+			say "[one of]Sniffins[hn-in-blank of Deft Fed] needs some help[or]Sniffins doesn't need financial help but motivational help. A confidence booster[or]Perhaps a book from Word Row could help Sniffins[or]TAKE YOB ATTABOY [hn-in of Worn Row][stopping].";
 		else if player has yob attaboy:
 			say "[one of]You have something Sniffins could use for motivation[or]That book you have won't help you, but it will help Sniffins[or]USE YOB ATTABOY ON SNIFFINS[stopping].";
 		else if player does not have Elan Ale:
@@ -3269,7 +3269,7 @@ this is the pre-cope-on-nik rule:
 		if ever-wordrow is false:
 			say "[one of]King Nik needs a book[or]There's (sort of) a location you gaven't found yet that holds books[or][Worn Row] can become one more thing. Go back there to check it out[stopping].";
 		else if player does not have epoch cope:
-			say "[one of]King Nik needs a book[or]Word Row has the tract cart, which can hold books[or]King Nik needs a book to help him with ruling[or]Epoch Cope is the best book for King Nik[or][if Worn Row is not wordy]WORD ROW in [Worn Row]. [end if]Get Epoch Cope [hn-in-blank of Worn Row]. USE EPOCH COPE ON KING NIK[stopping].";
+			say "[one of]King Nik needs a book[or]Word Row has the tract cart, which can hold books[or]King Nik needs a book to help him with ruling[or][i]EPOCH: COPE[r] is the best book for King Nik[or][if Worn Row is not wordy]WORD ROW in [Worn Row]. [end if]Get [i]EPOCH: COPE[r][hn-in-blank of Worn Row]. USE EPOCH COPE ON KING NIK[stopping].";
 		else:
 			say "[one of]You have what King Nik needs[or]USE EPOCH COPE ON KING NIK[stopping].";
 	the rule succeeds;
@@ -6289,13 +6289,13 @@ after examining the pity tip for the first time:
 
 chapter books in bookcase
 
-TI is a book. printed name of TI is "TO IDIOT (TI)". understand "to idiot" and "idiot" as ti. description is "It's full of hot takes and 'clever' put-downs based on assuming the recipient isn't as smart as they think they are. You remember laughing at this sort of thing when you were really bored or grouchy, and you sort of regret it now. Still, it keeps some people busy.". [Door Frood]
+TI is a book. printed name of TI is "[i]TO IDIOT[r] (TI)". understand "to idiot" and "idiot" as ti. description is "It's full of hot takes and 'clever' put-downs based on assuming the recipient isn't as smart as they think they are. You remember laughing at this sort of thing when you were really bored or grouchy, and you sort of regret it now. Still, it keeps some people busy.". [Door Frood]
 
-NULL ILLUN is a book. printed name of NULL ILLUN is "NULL ILLUN (NI)". understand "ni" as NULL ILLUN. description is "Surprisingly wise advice about how to achieve happiness and shake annoyances you can't dispel with just logic. It discusses how to flex your SCEPSIS-PECS so you don't just know a lot of stuff you aren't sure what to do with. It even advertises a not-yet-published companion book on emotional intelligence: SLANGISH SIGNALS.". [Known Wonk]
+NULL ILLUN is a book. printed name of NULL ILLUN is "[i]NULL ILLUN[r] (NI)". understand "ni" as NULL ILLUN. description is "Surprisingly wise advice about how to achieve happiness and shake annoyances you can't dispel with just logic. It discusses how to flex your SCEPSIS-PECS so you don't just know a lot of stuff you aren't sure what to do with. It even advertises a not-yet-published companion book on emotional intelligence: SLANGISH SIGNALS.". [Known Wonk]
 
-EPOCH COPE is a book. printed name of EPOCH COPE is "EPOCH: COPE (EC)". understand "ec" as EPOCH COPE. description is "All sorts of present-day political and social musings for shahs and other leaders, with the catch phrase '[']S civics!' It's surprisingly accessible, though you don't have time to read it.". [King Nik]
+EPOCH COPE is a book. printed name of EPOCH COPE is "[i]EPOCH: COPE[r] (EC)". understand "ec" as EPOCH COPE. description is "All sorts of present-day political and social musings for shahs and other leaders, with the catch phrase '[']S civics!' It's surprisingly accessible, though you don't have time to read it.". [King Nik]
 
-YOB ATTABOY is a book. printed name of YOB ATTABOY is "YOB ATTABOY (YA)". understand "ya" as YOB ATTABOY. description is "All about picking yourself up by your bootstraps and not feeling sorry for yourself or being too jealous of what others know or can do--SHED EH'S is repeated in big bold letters.". [Sniffins]
+YOB ATTABOY is a book. printed name of YOB ATTABOY is "[i]YOB ATTABOY[r] (YA)". understand "ya" as YOB ATTABOY. description is "All about picking yourself up by your bootstraps and not feeling sorry for yourself or being too jealous of what others know or can do--SHED EH'S is repeated in big bold letters.". [Sniffins]
 
 ti-to is a truth state that varies
 
@@ -6519,7 +6519,7 @@ to check-dab:
 		if row-prog > 2:
 			say "[line break]The WOR* ROW text of the bad dab fades out of sight.";
 		if row-prog > 1:
-			say "[line break]The [one of]asterisk in WOR* ROW pulses a bit[or]plus in WOR+ ROW bleeds into an asterisk[stopping]. Odd.";
+			say "[line break]The [one of]plus in WOR+ ROW bleeds into an asterisk[or]asterisk in WOR* ROW pulses a bit[stopping]. Odd.";
 		else:
 			say "The bad dab saying WOR- ROW morphs slightly into, well, WOR+ ROW. Maybe there's something else beside [Worn Row]."
 
@@ -6802,7 +6802,7 @@ instead of doing something in Emo Dome when pulled-up is false:
 emo-dir is a direction that varies. emo-dir is west.
 
 check going to Emo Dome:
-	if Spur Ups are off-stage, say "It's too whiny to the east! You're just too, well, down to deal with it, yet. You back out[if NULL ILLUN is xed or NULL ILLUN is carried]. Even NULL ILLUN didn't help. Maybe you need something more gut-level[end if]." instead;
+	if Spur Ups are off-stage, say "It's too whiny to the east! You're just too, well, down to deal with it, yet. You back out[if NULL ILLUN is xed or NULL ILLUN is carried]. Even [i]NULL ILLUN[r] didn't help. Maybe you need something more gut-level[end if]." instead;
 	if puffed-up is false, say "The Spur Ups make you feel a bit less down, but not up enough to enter the Emo Dome. Having a talisman isn't enough. You'll need an action that can help you be UP." instead;
 	if pulled-up is false:
 		now emo-dir is noun;
@@ -7142,7 +7142,7 @@ to say tbut: say "[if tube-try is false]you can't see where it goes[else]you alr
 
 check going north in Evaded Ave:
 	if tube but is in Evaded Ave:
-		say "[if tube-try is true]The rood-y door behind the tube seemed extra fortified. Plus[else]You try to follow the Door Frood and enter the tube, but ... you hit your head on a rood-y door (which you maybe should've expected) in the passage as the tube turns. You hear the Door Frood say 'TUBE REBUT' and laugh. At you or [b]TO IDIOT[r], you don't know. Eh, well[end if], you really don't want to see the Door Frood again.";
+		say "[if tube-try is true]The rood-y door behind the tube seemed extra fortified. Plus[else]You try to follow the Door Frood and enter the tube, but ... you hit your head on a rood-y door (which you maybe should've expected) in the passage as the tube turns. You hear the Door Frood say 'TUBE REBUT' and laugh. At you or [i]TO IDIOT[r], you don't know. Eh, well[end if], you really don't want to see the Door Frood again.";
 		now tube-try is true instead;
 	say "The Door Frood chuckles a bit. Why would you run into a wall?" instead;
 
@@ -8984,7 +8984,7 @@ this is the pre-med-on-lug rule:
 	if in-sos is true:
 		if demo med is moot, the rule fails;
 		if player has demo med:
-			say "[one of]The demo med could help someone[or]The demo med's brand is DYSPEPSYD. Think of someone who might have stomach troubles[or]USE DEMO MED ON GULF LUG [hn-in-blank of Flu Gulf][stopping].";
+			say "[one of]The demo med could help someone[or]The demo med's brand is DYSPEPSYD. Think of someone who might have stomach troubles[or]USE DEMO MED ON GULF LUG[hn-in-blank of Flu Gulf][stopping].";
 		else:
 			say "You don't have what you need to help the Gulf Lug, yet. You need to get beyond Drawl Ward.";
 		the rule succeeds;
@@ -9060,7 +9060,7 @@ this is the pre-ti-on-frood rule:
 	else if Worn Row is worky:
 		say "You need something from Word Row, but currently it's [Worn Row].";
 	else:
-		say "[one of]You need a book from [Worn Row], but there is more than one[or]The Door Frood likes to look down on people[or]TO IDIOT (TI) is the book the Door Frood would like[or]Once you get TO IDIOT from Word Row, USE TI ON DOOR FROOD[stopping].";
+		say "[one of]You need a book from [Worn Row], but there is more than one[or]The Door Frood likes to look down on people[or][TO IDIOT] is the book the Door Frood would like[or]Once you get [i]TO IDIOT[r] from Word Row, USE TI ON DOOR FROOD[stopping].";
 	the rule succeeds;
 
 this is the pre-tip-on-eye rule:
