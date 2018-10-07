@@ -59,7 +59,7 @@ definition: a thing is moot:
 	if it is in DevReserved, yes; [ic]
 	no;
 
-definition: a thing is had-or-done:
+definition: a thing is had-or-done: [I'd like to use the "handled" property here, but unfortunately, if you warp through the game, the Note Object Acquisitions Rule doesn't fire. It's easier to do things this way than to search through all the code to drop that rule in.]
 	if it is moot, yes;
 	if it is carried by the player, yes;
 	no;
@@ -1138,7 +1138,7 @@ instead of climbing, say "You haven't drunk enough Klimb-Milk. Err, Climb-Milc. 
 chapter listening
 
 instead of listening:
-	if noun is pact cap, say "The pact cap will make noise when needed[if cap-vol is false], though you may want to turn it back on with LOVE VOL first[end if]." instead;
+	if noun is pact cap, say "The pact cap will make noise when needed[if cap-vol is false], though you may want to turn it back on with [b]LOVE VOL[r] first[end if]." instead;
 	if noun is bomb mob or noun is navy van, say "Yell-ey." instead;
 	if player is in My Gym:
 		say "[if debug-state is true]DEBUG NOTE RANDOM SONG: [end if][if Dave is in My Gym]Behind Dave's grunts, y[else]Y[end if]ou [one of]tolerate[or]imagine your favorite English teacher giving you a D+ for a poem with the lyrics of[or]are inspired to move, but not in the intended way, by[or]can't escape[or]dread a casual conversation containing the lyrics of[or]imagine the marketers earned their keep promoting[or]feel guilty liking the beats but loathing the words of[or]have a great idea what to do next, but it's interrupted by[or]realize you're going to forget something important someday when remembering the lyrics of[or]feel glad it's the low-volume version of[or]hate yourself for not completely loathing[or]hope nobody got paid too much for writing[or]guess the title from the repeated words of[or]hear, and guess some people are inspired by,[in random order] [next-rand-txt of table of My Gym songs]." instead;
@@ -1178,7 +1178,7 @@ thought-yet is a truth state that varies.
 
 every turn when basic-hint-yet is false:
 	if turn count - last-move-scored is 20 and score > 0:
-		say "You've gone without any point scoring for a while. So I'd like to break the fourth wall and [if thought-yet is true]remind[else]tell[end if] you that THINK can give you a general overview of where you've been and what places are blocked. This nag won't appear again, but I want to give you less chance of feeling lost and frustrated.";
+		say "You've gone without any point scoring for a while. So I'd like to break the fourth wall and [if thought-yet is true]remind[else]tell[end if] you that [b]THINK[r] can give you a general overview of where you've been and what places are blocked. This nag won't appear again, but I want to give you less chance of feeling lost and frustrated.";
 		now basic-hint-yet is true;
 
 definition: a room (called rm) is available: [?? mix this with viable directions so 'cant go that way' makes more sense]
@@ -1620,7 +1620,7 @@ carry out abouting:
 	say "[line break]In my continuing quest to nail down my Python knowledge, I realized that even if I didn't get MANY palindromes on my own, a few scripts could print things out. I had word and name lists from my anagram games Shuffling Around and A Roiling Original, so I had the raw materials--but at the same time, I needed to weed out overlaps. There wound up being more material to work with than I thought. I hope there is quality as well as quantity.";
 	say "[line break]The result of all my work is some guess-the-verb, but hopefully with the game's general idea, you'll see what's going on. Ailihphilia is meant to be polite on the Zarfian cruelty scale, although I hope you enjoy some of the impolite jokes and even the deliberate misspellings to force palindromes, as well as the room name-changes that occur (for esthetic effect only) as you solve puzzles.";
 	say "[line break]So Ailihphilia doesn't have any deep philosophy, but I hope you enjoy it. If you write games yourself, I hope it inspires you to go through with anything unusual you weren't sure if you should try, even if Ailihphilia rubs you the wrong way. (Spoiler: you should write that game! Just start early and take all the notes you can, but don't think the first draft needs to be perfect!)[paragraph break]";
-	say "I'm at [email] if you have suggestions for bug fixes, etc. Or you can report a bug in a repository. DEV ED is the command to see that.[paragraph break]";
+	say "I'm at [email] if you have suggestions for bug fixes, etc. Or you can report a bug in a repository. [b]DEV ED[r] is the command to see that.[paragraph break]";
 	say "If you're confused what to do or type, VERBS will give an outline of the basic verbs you need to get through Ailihphilia.";
 	the rule succeeds;
 
@@ -1636,7 +1636,8 @@ showed-sites is a truth state that varies.
 
 carry out creditsing:
 	now show-dev is true;
-	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in alphabetical order: Marnix Van Den Bos, Mike Carletta, Wade Clarke, Arthur DiBianca, Viv Dunstan, Anssi Raissanen, Brian Rushton, Mike Spivey, Brian Stovall, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and still gave positive suggestions about cluing and so forth. If you want to join this elite club, and you find a bug, write me at [email].[paragraph break]IFComp organizers past and present. Without them, I wouldn't have started and kept going. Whether that's good for gaming is up for debate, but it's been good for me.[paragraph break]Various Python communities, especially StackOverflow, helped me to organize source control and write utilities that helped not only to extract palindromes but also to tune up Inform code (obligatory thanks to all past and current Inform developers, from whom I've stolen game code and/or used extensions) and run simple tests.[paragraph break]I also found some websites useful. DEV ED or DEVED will show which helped me and how.";
+	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in alphabetical order: Marnix Van Den Bos, Mike Carletta, Wade Clarke, Arthur DiBianca, Viv Dunstan, Anssi Raissanen, Brian Rushton, Mike Spivey, Brian Stovall, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and still gave positive suggestions about cluing and so forth. In-comp, Victor Gijsbers, a fellow competitor in IFComp 2018, helped point me to some tricky bugs.";
+	say "[line break]If you want to join this elite club, and you find a bug, write me at [email].[paragraph break]IFComp organizers past and present. Without them, I wouldn't have started and kept going. Whether that's good for gaming is up for debate, but it's been good for me.[paragraph break]Various Python communities, especially StackOverflow, helped me to organize source control and write utilities that helped not only to extract palindromes but also to tune up Inform code (obligatory thanks to all past and current Inform developers, from whom I've stolen game code and/or used extensions) and run simple tests.[paragraph break]I also found some websites useful. [b]DEV ED[r] or [b]DEVED[r] will show which helped me and how.";
 
 chapter deveding
 
@@ -1714,12 +1715,12 @@ carry out verbing:
 	say "[2da][b]USE (item) ON (item)[r] is frequently used. It replaces a lot of verbs like [b]GIVE[r] or [b]THROW[r].";
 	say "[2da][b]THINK[r]/[b]TH[r] gives general non-spoiler hints, including where you may wish to visit, what you haven't examined, or what is blocking you[if ever-pip is true][b]EYE[r] lets you look at something to see if it is useful to your quest, and when[eye-v-note][end if].";
 	say "[2da][b]AID[r] gives you spoiler hints for where you are, though it may indicate you need to visit other places first. [b]MEM[r] pinpoints where useful people and things are[if pyx is quicknear]. [pyx-x] give a game map[end if].";
-	say "[2da]sub-commands of THINK: [b]SCE RECS[r] clues scenery you haven't examined yet, and [b]EPI WIPE[r] resets the game's records on things and scenery you examined.";
+	say "[2da]sub-commands of [b]THINK[r]: [b]SCE RECS[r] clues scenery you haven't examined yet, and [b]EPI WIPE[r] resets the game's records on things and scenery you examined.";
 	if cur-score of Odd Do < max-score of Odd Do:
 		say "[line break]There are also a few guess-the-verb bonus points that are hidden. Some relate to objects or people that need help but can't help you, and some are riffs on standard commands. [if refer-yet is false]There's a different way to revisit, rehash or recap this very command, for example[else]For instance, you got REFER as VERBS[end if]";
 	say "[line break]Also, many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy. If you miss them, you'll see the entire list at the end.";
 	say "[2da][b]META[r] (or [b]META AT EM[r]) has information on meta-verbs, which includes options (e.g. turning some minor hints on or off), cheat/warp commands for judges near the two-hour limit, scoring, and information on how the game was created and who helped.";
-	if in-beta is true, say "META also gives beta tester commands.";
+	if in-beta is true, say "[b]META[r] also gives beta tester commands.";
 	if debug-state is true, say "[2da]SMITIMS = win after Deep Speed.[line break][2da]TCC/TCCC aligns move to palindrome or palindrome + 1.";
 	abide by the situational commands show rule;
 
@@ -1739,7 +1740,7 @@ carry out metaing:
 	if in-beta is true:
 		say "[line break](start beta commands)";
 		say "[line break][2da][b]RR[r] lets you try all three items in the Word Row machines. If one nets a point, it goes last.";
-		say "[line break][2da][b]ENDGAME[r] kicks you to the endgame, where you have all the weapons to win the game, though you will be limited to [Fun Enuf] and the Dirge Grid. It will be superseded by REV OVER.";
+		say "[line break][2da][b]ENDGAME[r] kicks you to the endgame, where you have all the weapons to win the game, though you will be limited to [Fun Enuf] and the Dirge Grid. It's different from [b]DEEP SPEED[r] because you need to shoot up the test set, too.";
 		say "[line break](end beta commands)";
 	if debug-state is true:
 		say "[line break]PROGRAMMER TESTING COMMANDS: WIN lets you win, PER describes peripheral things, and IA flags everything without an initial appearance.";
@@ -1756,12 +1757,17 @@ understand the command "niwin" as something new.
 understand "niwin" as niwining.
 understand "ni win" as niwining.
 
+to say LLP-if-want: say "[if cur-score of Odd Do < max-score of Odd Do]. You can search for LLPs if you want, though[end if]"
+
 carry out niwining:
+	if score is min-win - 1, say "The only thing to do to win the game is to go south through the Tix Exit[in-not-here of Fun Enuf][LLP-if-want]." instead;
+	if score >= min-win - 4, say "The only warp command that is helpful now is [b]TIP IT[r]. The others are for getting to the point where you can face the Dirge Grid[LLP-if-want]." instead;
 	say "WARNING! These may spoil the game if used too early. Their use is primarily for IFComp judges who are close to the two-hour limit and want to see the game's end or ending scenes.[paragraph break]";
-	say "[2da][b]DEEP SPEED[r] jumps you to where you have blown a hole in the [kaoscaps] so you can go north of [Fun Enuf]. You will have the weaponry to take on the Diktat Kid. If the [kaoscaps] and the Diktat Kid's two lieutenants are gone, it has no effect. DEEP SPEED does not tell you what you've done, so it does not spoil puzzles for later. It, like [b]REV OVER[r] below, stops at the Dirge Grid so the player can work through the finale, which was meant to be fun and not too taxing.";
-	say "[2da][b]REV OVER[r] allows you to skip five puzzles at a time. It stops when you have the weapons to defeat the Diktat Kid, but unlike [b]DEEP SPEED[r], [b]REV OVER[r] details each step, so it may spoil puzzles you want to solve later.";
+	say "[2da][b]DEEP SPEED[r] jumps you to where you have blown a hole in the [kaoscaps] so you can go north of [Fun Enuf]. You will have the weaponry to take on the Diktat Kid. If the [kaoscaps] and the Diktat Kid's two lieutenants are gone, it has no effect. [b]DEEP SPEED[r] does not tell you what you've done, so it does not spoil puzzles for later. It, like [b]REV OVER[r] below, stops at the Dirge Grid so the player can work through the finale, which was meant to be fun and not too taxing.";
+	say "[2da][b]REV OVER[r] allows you to skip five puzzles at a time. It stops when you have the weapons to defeat the Diktat Kid, but unlike [b]DEEP SPEED[r], [b]REV OVER[r] details each step, providing a narrative but maybe spoil puzzles you'll want to solve later.";
 	say "[2da][b]TIP IT[r] allows you to skip the next puzzle in the game's walkthrough/test order. It can even be used for the final fight in the Dirge Grid, where [b]DEEP SPEED[r] and [b]REV OVER[r] won't work. Like [b]REV OVER[r], it also details each step you take.";
-	say "[line break]There are also three commands that will warp you over major quests: [b]TOOLS LOOT[r] [if tron-got is 4](done) [end if]acquires all North-Tron parts. [b]SMH MS[r] [if Bros' Orb is had-or-done](done) [end if]gets you prepared for Ms. Ism. [b]GUY UG[r] [if rocs are moot and rep popper is had-or-done](done) [end if]gets you prepared for the Yuge Guy. Note these three warp commands have puzzles in common to solve, and also, using them all does not quite give you any of the finished items you need to defeat the Diktat Kid. But they get you close.";
+	say "[line break]There are also three commands that will warp you over major quests: [b]TOOLS LOOT[r] [if tron-got >= 4](done) [end if]acquires all North-Tron parts. [b]SMH MS[r] [if Bros' Orb is had-or-done](done) [end if]gets you prepared for Ms. Ism. [b]GUY UG[r] [if rocs are moot and rep popper is had-or-done](done) [end if]gets you prepared for the Yuge Guy. Note these three warp commands have puzzles in common to solve, and also, using them all does not quite give you any of the finished items you need to defeat the Diktat Kid. But they get you close.";
+	if cur-score of Odd Do < max-score of Odd Do, say "[line break]Also, warping does not help you with any remaining optional points.";
 	the rule succeeds;
 
 chapter shuttuhsing
@@ -1816,7 +1822,7 @@ check going when shuttuhs is true:
 	let Q be the room noun of location of player;
 	if Q is nowhere, continue the action;
 	if location of player is shutted and room-dist of location of player > room-dist of Q, continue the action; [without this, the player would get stuck in Dopy Pod or Scrap Arcs, as Drawl Ward would be shutted. Also, you can go to the center but not away.]
-	if Q is shutted, say "Invisible shuttuhs, err, shutters block passage [noun]. You must be done in [Q][if exit-count of Q > 1] and the room(s) behind it[end if], so you'll need to toggle the shutters with [b]SHUTTUHS[r] to go back[if LLP-hunting]. If you are hunting for LLPs, you may need to toggle SHUTTUHS[end if]." instead;
+	if Q is shutted, say "Invisible shuttuhs, err, shutters block passage [noun]. You must be done in [Q][if exit-count of Q > 1] and the room(s) behind it[end if], so you'll need to toggle the shutters with [b]SHUTTUHS[r] to go back[if LLP-hunting]. If you are hunting for LLPs, you may need to toggle [b]SHUTTUHS[r][end if]." instead;
 
 section checking what's shuttuhs-ed
 
@@ -2200,7 +2206,7 @@ understand the command "xyzzy" as something new.
 understand "xyzzy" as xyzzying.
 
 carry out xyzzying:
-	if screen-read is true:
+	if screenread is true:
 		say "XYZZZY.[paragraph break]X.";
 	else:
 		say "...[paragraph break]...[paragraph break][fixed letter spacing]\   /[line break] \ /[line break]  X[line break] / \[line break]/   \[line break]" instead;
@@ -4099,7 +4105,7 @@ to get-reject (th - a thing):
 		if there is a to-get entry and to-get entry is th:
 			now in-limbo entry is true;
 			continue the action;
-	say "NONCRITICAL bug: I should've rejected getting [the th], but I didn't. This loophole will probably just cause oddities in THINK, but I'd like to know how it happened."
+	say "NONCRITICAL bug: I should've rejected getting [the th], but I didn't. This loophole will probably just cause oddities in [b]THINK[r], but I'd like to know how it happened."
 
 to later-wipe (th - a thing):
 	let changed-limbo be false;
@@ -4290,7 +4296,7 @@ to say cap-dum-now: now cap-dum is true.
 
 check examining Pact Cap:
 	if player is in Red Roses Order and mirror rim is in Red Roses Order, say "[cap-dum-now]Oh dear. Through the mirror, the pact cap does look sort of stupid on you right now. But you have deeper issues than sartorial elegance. Plus it's been so serviceable, who cares about looks?" instead;
-	if pact cap is in Fun Enuf, say "It's no stetson, and it's not as helpful as a ref-titfer, mate tam or math tam, but it is less messy than a tahini hat, and it looks serviceable enough. It appears to have LO VOL and LOVE VOL settings. Perhaps the Flee Elf will tell you what they are for, once you've successfully taken it." instead;
+	if pact cap is in Fun Enuf, say "It's no stetson, and it's not as helpful as a ref-titfer, mate tam or math tam, but it is less messy than a tahini hat, and it looks serviceable enough. It appears to have [b]LO VOL[r] and [b]LOVE VOL[r] settings. Perhaps the Flee Elf will tell you what they are for, once you've successfully taken it." instead;
 	if cap-dum is true, say "You definitely feel more self-conscious about your pact cap now you saw it in the mirror rim, but what can you do?" instead;
 
 check taking off the pact cap: say "No, you...uh, made a pact. It's not that uncomfortable, anyway." instead;
@@ -4313,7 +4319,7 @@ understand "pack" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did." instead;
-	say "'Rec [']er!' shouts the Flee Elf. 'Hat! Ah!'[paragraph break]The Flee Elf hands you a Set O Notes and explains you need to find a way to destroy the [kaoscaps] to the north. Also, the Flee Elf points out the LOVE VOL and LO VOL settings on the pact cap: LO VOL means the cap is quiet and won't make a weird noise if you look at things that need a weird action. LOVE VOL means you will.[paragraph break]The Flee Elf also shows you [if eye-charges > 0]the lit[else][end if]a pip on the cap, which tells whether you may be able to [b]EYE[r] items to determine approximately how far along they are in your quest--if you make enough good guesses. You ask what this means. The Flee Elf says 'like [if tried-elf is true]if[else]when[end if] you tried to made me something else[if eye-charges > 0]. You've done so much, you already got a charge[end if],' and points you to the Tix Exit, which reads 79, presumably the last thing you'll need to operate.[paragraph break]'It's best I...' and with that, the Flee Elf becomes a FLED elf, pointing at the tile lit (slightly altered). You notice a TIX EXIT to the south, but you don't have any tickets.";
+	say "'Rec [']er!' shouts the Flee Elf. 'Hat! Ah!'[paragraph break]The Flee Elf hands you a Set O Notes and explains you need to find a way to destroy the [kaoscaps] to the north. Also, the Flee Elf points out the [b]LOVE VOL[r] and [b]LO VOL[r] settings on the pact cap: [b]LO VOL[r] means the cap is quiet and won't make a weird noise if you look at things that need a weird action. [b]LOVE VOL[r] means you will.[paragraph break]The Flee Elf also shows you [if eye-charges > 0]the lit[else][end if]a pip on the cap, which tells whether you may be able to [b]EYE[r] items to determine approximately how far along they are in your quest--if you make enough good guesses. You ask what this means. The Flee Elf says 'like [if tried-elf is true]if[else]when[end if] you tried to made me something else[if eye-charges > 0]. You've done so much, you already got a charge[end if],' and points you to the Tix Exit, which reads 79, presumably the last thing you'll need to operate.[paragraph break]'It's best I...' and with that, the Flee Elf becomes a FLED elf, pointing at the tile lit (slightly altered). You notice a TIX EXIT to the south, but you don't have any tickets.";
 	wfak;
 	say "[line break]You put the cap on. It fits okay. It can stay all quest. Not very stylish, but it sure beats wearing a bib.";
 	get-cap;
@@ -4450,7 +4456,7 @@ after looking in Fun Enuf when player was in Dirge Grid:
 
 chapter tile lit
 
-the tile lit is scenery in Fun Enuf. "It's a rough compass, with GREBEBERG (LA RURAL) west by it, YELPLEY (TOWN, WOT) east, Evac Ave. south and Dirge Grid north. [if flee elf is in dirge grid]Evac Ave. and Dirge Grid are faded a bit now, though[else if kaos oak is moot]Dirge Grid is no longer faded[else]Dirge Grid is faded a bit, though[end if].[paragraph break]It also mentions you can toggle SHUTTUHS to block off areas you're done with, if you want guidance without spoilers[shut-known]." [ic]
+the tile lit is scenery in Fun Enuf. "It's a rough compass, with GREBEBERG (LA RURAL) west by it, YELPLEY (TOWN, WOT) east, Evac Ave. south and Dirge Grid north. [if flee elf is in dirge grid]Evac Ave. and Dirge Grid are faded a bit now, though[else if kaos oak is moot]Dirge Grid is no longer faded[else]Dirge Grid is faded a bit, though[end if].[paragraph break]It also mentions you can toggle [b]SHUTTUHS[r] to block off areas you're done with, if you want guidance without spoilers[shut-known]." [ic]
 
 shuttuhs-known is a truth state that varies.
 
@@ -4667,6 +4673,7 @@ to say also-4: say ". Also, given what's on the Yard Ray, it's four letters"
 table of good emit guesses
 guess-topic (a topic)	guessed-yet	guess-result
 "dudtime" or "dud time"	false	"A heel turn this late in the game? Nah[also-4]."
+"onotime" or "ono time" or "sos time" or "sostime"	false	"Something positive and brighter[also-4]."
 "yaytime" or "yay time"	false	"That's for after you've conquered the Dirge Grid north of [hn of Fun Enuf][also-4]."
 "dadtime" or "dad time"	false	"I'm sorry you haven't uncovered enough groan-inducing jokes in the course of this game. I tried my best, honest I did[also-4]."
 "pooptime" or "poop time"	false	"A hollow voice booms 'Loo? Fool!'[paragraph break]You want to get your opponent on the run, not get them the runs."
@@ -5604,7 +5611,7 @@ screenwarn is a truth state that varies.
 
 report screening when player has pyx and screenread is true and screenwarn is false:
 	now screenwarn is true;
-	say "[i][bracket]NOTE: this makes the X/Y Pyx you're carrying useless, since it relies on text images that play poorly with a screen reader. The THINK command, however, can show you where you want or need to go.[close bracket][r]";
+	say "[i][bracket]NOTE: this makes the X/Y Pyx you're carrying useless, since it relies on text images that play poorly with a screen reader. The [b]THINK[r] command, however, can show you where you want or need to go.[close bracket][r]";
 
 does the player mean doing something with pyx when player has doodle or player has spa maps: it is unlikely.
 
@@ -8012,7 +8019,7 @@ to mug-the-player:
 	now all things carried by the player are in DropOrd;
 
 to say no-time-note:
-	say "When you are in a chase[if being-chased is true], like right now[end if], commands like X/EXAMINE, L/LOOK, I/INVENTORY and even THINK/AID (if you must) will take no time"
+	say "When you are in a chase[if being-chased is true], like right now[end if], commands like [b]X/EXAMINE[r], [b]L/LOOK[r], [b]I/INVENTORY[r], [b]THINK[r] and even [b]AID[r] (if you must) will take no time"
 
 cap-during-yak is a truth state that varies.
 
@@ -8228,7 +8235,7 @@ carry out deepspeeding:
 	now all rooms in Yelpley are visited;
 	now all rooms in Grebeberg are visited;
 	now i-sped is true;
-	if gsi < 3, say "You may wish to check your inventory. You will have what you need to beat the Diktat Kid. I hope you enjoy the final confrontation, but if you want to get to the end right away, TIP IT three times.";
+	if gsi < 3, say "You may wish to check your inventory. You will have what you need to beat the Diktat Kid. I hope you enjoy the final confrontation, but if you want to get to the end right away, [b]TIP IT[r] three times.";
 	the rule succeeds;
 
 section smitimsing - not for release
@@ -8242,11 +8249,11 @@ understand the command "smitims" as something new.
 understand "smitims" as smitimsing.
 
 carry out smitimsing:
-	unless KAOS Oak is moot, say "Remove the [kaoscaps] first. DEEP SPEED may be handy." instead;
-	if Dirge Grid is visited, say "Too late for SMITIMS." instead;
+	unless KAOS Oak is moot, say "Remove the [kaoscaps] first. [b]DEEP SPEED[r] may be handy." instead;
+	if Dirge Grid is visited, say "Too late for [b]SMITIMS[r]." instead;
 	if player is not in Fun Enuf, move the player to Fun Enuf, without printing a room description;
 	try going north;
-	if the player is not in Dirge Grid, say "Oops. Something went wrong. Check your inventory. Make sure the redivider is loaded, and you know how to use it. Remember, you can always DEEP SPEED." instead;
+	if the player is not in Dirge Grid, say "Oops. Something went wrong. Check your inventory. Make sure the redivider is loaded, and you know how to use it. Remember, you can always [b]DEEP SPEED[r]." instead;
 	if a random chance of 1 in 2 succeeds:
 		try useoning ME gem with Knife Fink;
 		try useoning taboo bat with Verses Rev;
@@ -8417,13 +8424,13 @@ rev-skips is a number that varies.
 this is the rev-check rule:
 	if being-chased is true, say "Oops, that's too much for me to do at once! Either escape or get caught by [the chase-person] first, then we can proceed." instead; [?? I am almost ready to delete this]
 	if in-tip-it is false:
-		if i-sped is true, say "You already sped up to just before the Dirge Grid fight[if x-ite tix are off-stage]. TIP IT is the only command left[end if]." instead;
+		if i-sped is true, say "You already sped up to just before the Dirge Grid fight[if x-ite tix are off-stage]. [b]TIP IT[r] is the only command left[end if]." instead;
 		if player is in Dirge Grid, say "You're already at the Dirge Grid!" instead;
 		if Dirge Grid is visited, say "Too late! You've already been to the Dirge Grid." instead;
 	if cant-tip-further:
 		if in-tip-it is true, say "You just need to use the X-ITE TIX, now." instead;
-		if player is in Dirge Grid, say "You need to fight through the Dirge Grid or use TIP IT." instead;
-		if player is in Fun Enuf, say "You've already gone as far as REV OVER or Dirge Grid will take you[if x-ite tix are off-stage]. TIP IT can take care of the rest[end if]." instead; [i can cut this down, because some of this is probably redundant, but I'd rather be too sure]
+		if player is in Dirge Grid, say "You need to fight through the Dirge Grid or use [b]TIP IT[r]." instead;
+		if player is in Fun Enuf, say "You've already gone as far as [b]REV OVER[r] or Dirge Grid will take you[if x-ite tix are off-stage]. [b]TIP IT[r] can take care of the rest[end if]." instead; [i can cut this down, because some of this is probably redundant, but I'd rather be too sure]
 		say "You're pretty near the endgame. Would you like me to drop you off at [Fun Enuf]?";
 		if the player yes-consents, move player to Fun Enuf instead;
 		say "OK, but you don't have much else to do[if cur-score of Odd Do is max-score of Odd Do]--you got all the LLPs[else] except search for LLPs[end if]." instead;
@@ -8471,7 +8478,7 @@ carry out revovering:
 	else if in-tip-it is true:
 		say "Looking for the next thing to do...";
 	else if deep-speeding is false:
-		say "Attempting to REV OVER[recxcheck of true]...";
+		say "Attempting to [b]REV OVER[r][recxcheck of true]...";
 	now global-delay is 0;
 	let count be 0;
 	let turns-to-add be 0;
@@ -8576,7 +8583,7 @@ carry out revovering:
 	if turns-to-add > 0:
 		let delt be score - last notified score;
 		skip upcoming rulebook break;
-		if delt > 2 and score is 73, say "[line break]Thus ends your [if deep-speeding is true]DEEP SPEED [else if revving-over is true]REV OVER [else]accelerated [end if]journey, leaving you very close to saving Grebeberg and Yelpley[if deep-speeding is false and in-tip-it is false]. The final confrontation should be relatively quick and fun, but if you want, you can use TIP IT three times to run through[end if].";
+		if delt > 2 and score is 73, say "[line break]Thus ends your [if deep-speeding is true][b]DEEP SPEED[r] [else if revving-over is true][b]REV OVER[r] [else]accelerated [end if]journey, leaving you very close to saving Grebeberg and Yelpley[if deep-speeding is false and in-tip-it is false]. The final confrontation should be relatively quick and fun, but if you want, you can use [b]TIP IT[r] three times to run through[end if].";
 		say "[line break][bracket][if delt > 0]I just gave you [delt] point[plur of delt] to go with your quick trip, and I also[else]I[end if] tacked on [turns-to-add] turns, as a guesstimate.[close bracket][paragraph break]";
 		now score-cheat is score-cheat + score - last notified score;
 		now last notified score is score;
@@ -8584,7 +8591,7 @@ carry out revovering:
 	else if in-tip-it is true:
 		say "[if x-ite tix are off-stage]I didn't find anything to do. This is a bug in the warp code. Apologies, and I'd be interested how this happened[else]You've got the X-ITE TIX. The last step, you need to do yourself[end if].";
 	else:
-		say "Uh oh. There should've been a message saying you can't warp any more and only have the Dirge Grid left. It's likely there is a bug in the rev over/deep speed code. Continually using TIP IT, however, should work. If you have a transcript, report the bug at my github site or email me.";
+		say "Uh oh. There should've been a message saying you can't warp any more and only have the Dirge Grid left. It's likely there is a bug in the rev over/deep speed code. Continually using [b]TIP IT[r], however, should work. If you have a transcript, report the bug at my github site or email me.";
 	follow the notify score changes rule;
 	if test set is moot and player is not in Fun Enuf and Dirge Grid is not visited:
 		say "(Also moving you to [Fun Enuf] for the endgame)[paragraph break]";
@@ -8599,7 +8606,7 @@ to say isco:
 
 this is the delay-or-bail rule:
 	if global-delay > 0 and remainder after dividing global-delay by 5 is 0:
-		say "REV OVER more?";
+		say "[b]REV OVER[r] more?";
 		if the player yes-consents, continue the action;
 		stop the action;
 
@@ -8702,7 +8709,7 @@ carry out eyeing:
 		say "Your eye wanders from [the use1 entry] to [the use3 entry]...";
 	let Q be rowcount of n1;
 	if Q is -1, say "You see nothing special. Well, that's one less thing you need to manipulate." instead;
-	say "On eyeing [the n1], you notice the pact cap registers the number [Q][one of]. You can recall this information later with THINK[stopping].";
+	say "On eyeing [the n1], you notice the pact cap registers the number [Q][one of]. You can recall this information later with [b]THINK[r][stopping].";
 	now eyespoil of n1 is Q;
 	decrement eye-charges;
 	if eye-charges is 0, say "[line break]The pip in the pact cap winks out. You may need more good guesses to bring it back.";
@@ -9850,8 +9857,8 @@ this is the yell-alley-hint rule:
 	say "USE MR ARM ON TNT." instead;
 
 this is the yell-alley-complete rule:
-	unless TNT is handled, the rule fails;
-	unless mayo yam is handles, the rule fails;
+	unless TNT is had-or-done, the rule fails;
+	unless mayo yam is had-or-done, the rule fails;
 	the rule succeeds;
 
 chapter balmlabing
@@ -9913,7 +9920,7 @@ carry out pooping:
 			wfak;
 		abide by the LLP rule; [POOP]
 		now the last notified score is the score;
-		say "[line break]NOTE: there are three other 'proper' ways to swear, but I don't want to encourage bad behavior too much, here.";
+		say "[line break]NOTE: there are three other 'proper' ways to swear, but I don't want to encourage bad behavior too much, here. So this is the only bonus point you'll get!";
 	else:
 		say "Ah! Cussin['] is such a...[paragraph break]X2?[paragraph break]...X!";
 	follow the notify score changes rule;
@@ -10104,7 +10111,7 @@ chapter misses table
 table of last lousy points [xxllp]
 LLP-clue	LLP-spoil	mclu	finord	dorule	cluey
 "Three ways to swear right, none over four letters"	"BOOB or POOP or PAP to swear 'right'"	false	1	pb-yet rule	"Swear 'right'"
-"A five-letter way to think"	"REFER instead of THINK"	false	2	refer-yet rule	"THINK, or recall, information differently"
+"A five-letter way to think"	"[b]REFER[r] instead of [b]THINK[r]"	false	2	refer-yet rule	"[b]THINK[r], or recall, information differently"
 "A different way to ask for AID"	"DIAL AID instead of AID"	false	3	aid-LLP-yet rule	"Ask for AID a bit more formally"
 "A four-letter way to look"	"PEEP instead of looking"	false	4	peep-yet rule	"LOOK differently"
 "A five-letter way to get your score"	"STATS to get the score"	false	5	stats-yet rule	"Get the SCORE differently"
