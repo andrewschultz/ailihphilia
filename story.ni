@@ -38,6 +38,8 @@ Release along with cover art.
 
 include Trivial Niceties by Andrew Schultz.
 
+include Old School Verb Carnage by Andrew Schultz.
+
 include Basic Screen Effects by Emily Short.
 
 [this may be toggled for debug depending on how much space is left--or if I want to force unit tests to make sure that, say, waiting text cycles after only 2 entries. If I add a random wait response, for instance, that would be one more bit of text to account for. For which to account.]
@@ -84,7 +86,7 @@ definition: a person (called per) is npcish:
 	if per is the player, no;
 	yes;
 
-the player is neuter. the player is female.
+the player is neuter. the player is female. [I wanted full neutrality but female/male is binary and I want to avoid collisions with NAME ME MAN]
 
 chapter thing properties
 
@@ -342,87 +344,13 @@ volume parser simplification
 
 chapter oldschooling
 
-[lanv.py should ignore this]
-
-understand the command "wave" as something new. understand "wave" as waving hands. [wave (thing) is not waving hands, and we want to delete it.]
-
-understand the command "slice" as something new.
-understand the command "prune" as something new.
-understand the command "chop" as something new.
-understand the command "kiss" as something new.
-understand the command "hug" as something new.
-understand the command "embrace" as something new.
-understand the command "buy" as something new.
-understand the command "purchase" as something new.
-understand the command "light" as something new.
-understand the command "jump" as something new.
-understand the command "hop" as something new.
-understand the command "skip" as something new.
-understand the command "sip" as something new.
-understand the command "swallow" as something new.
-understand the command "shine" as something new.
-understand the command "polish" as something new.
-understand the command "sweep" as something new.
-understand the command "wipe" as something new.
-understand the command "scrub" as something new.
-understand the command "fight" as something new.
-understand the command "torture" as something new.
-understand the command "wreck" as something new.
-understand the command "crack" as something new.
-understand the command "murder" as something new.
-understand the command "kill" as something new.
-understand the command "punch" as something new.
-understand the command "thump" as something new.
-understand the command "sorry" as something new.
-understand the command "touch" as something new.
-understand the command "attach" as something new.
-understand the command "tie" as something new.
-
-understand "slice" as oldschooling. [this must be placed up here. SLICE is an arbitrary verb to choose, but I meant to pick an old school verb the programmer would not want to save.]
-
-understand the command "prune" as "slice".
-understand the command "chop" as "slice".
-understand the command "kiss" as "slice".
-understand the command "hug" as "slice".
-understand the command "embrace" as "slice".
-understand the command "buy" as "slice".
-understand the command "purchase" as "slice".
-understand the command "light" as "slice".
-understand the command "jump" as "slice".
-understand the command "hop" as "slice".
-understand the command "skip" as "slice".
-understand the command "sip" as "slice".
-understand the command "swallow" as "slice".
-understand the command "shine" as "slice".
-understand the command "polish" as "slice".
-understand the command "sweep" as "slice".
-understand the command "wipe" as "slice".
-understand the command "scrub" as "slice".
-understand the command "fight" as "slice".
-understand the command "torture" as "slice".
-understand the command "wreck" as "slice".
-understand the command "crack" as "slice".
-understand the command "murder" as "slice".
-understand the command "kill" as "slice".
-understand the command "punch" as "slice".
-understand the command "thump" as "slice".
-understand the command "sorry" as "slice".
-understand the command "touch" as "slice".
-understand the command "attach" as "slice".
-understand the command "tie" as "slice".
-
-understand "slice [text]" as os2ing. [this brings together all the other understand ... as commands above]
-
-oldschooling is an action out of world.
-os2ing is an action applying to one topic.
+understand "taste" as eating.
+understand "taste [thing]" as eating.
 
 carry out os2ing: try oldschooling instead;
 
 carry out oldschooling:
 	say "[chase-pass]An old school verb like [word number 1 in the player's command] isn't strictly necessary in this game. See [verb-suggest] for what is used/useful." instead;
-
-understand "taste" as eating.
-understand "taste [thing]" as eating.
 
 chapter hug/kiss why not
 
@@ -4231,7 +4159,7 @@ check going south in Fun Enuf:
 	if elf-warn < 3, the rule succeeds;
 	say "[line break]Do you still wish to go through Evac Ave and turn your back on adventure?";
 	if the player yes-consents:
-		say "The Flee Elf cries 'Fool! Aloof!' as you walk south past Evac Ave through the Elim-Mile, which removes all your memories of your brief time adventuring. You have persistent nightmares of some weird elf yelling 'Dud!' at you, but at least they replaced the really awful ones from high school. That's a step up, but you still go through life feeling you missed something, somewhere, somehow.";
+		say "The Flee Elf cries 'Fool! Aloof!' as you walk south past Evac Ave through the Elim-Mile. You don't have to walk all the way, though. You're given a vehicle: EL CYCLE. It's not a very good one, certainly no PEDAL-ADEP[']. It's long and exhausting, and once back in the 'real' world, you crash out and forget your brief time in Fun Enuf. You have persistent nightmares of some weird elf yelling 'Dud, Bub, Dud!' at you, but at least they replaced the really awful ones from high school. You even take up bicycling and lose (and keep off) those five extra pounds.[paragraph break]That's a step up, but you still go through life feeling you missed something, somewhere, somehow.";
 		end the story saying "NOWT WON";
 
 xite-warn is a truth state that varies.
