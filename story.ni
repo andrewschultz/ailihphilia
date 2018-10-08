@@ -346,8 +346,6 @@ chapter oldschooling
 
 understand the command "wave" as something new. understand "wave" as waving hands. [wave (thing) is not waving hands, and we want to delete it.]
 
-understand the command "attach" as something new.
-
 understand the command "slice" as something new.
 understand the command "prune" as something new.
 understand the command "chop" as something new.
@@ -377,8 +375,11 @@ understand the command "punch" as something new.
 understand the command "thump" as something new.
 understand the command "sorry" as something new.
 understand the command "touch" as something new.
+understand the command "attach" as something new.
+understand the command "tie" as something new.
 
-understand "slice" as oldschooling.
+understand "slice" as oldschooling. [this must be placed up here. SLICE is an arbitrary verb to choose, but I meant to pick an old school verb the programmer would not want to save.]
+
 understand the command "prune" as "slice".
 understand the command "chop" as "slice".
 understand the command "kiss" as "slice".
@@ -407,8 +408,10 @@ understand the command "punch" as "slice".
 understand the command "thump" as "slice".
 understand the command "sorry" as "slice".
 understand the command "touch" as "slice".
+understand the command "attach" as "slice".
+understand the command "tie" as "slice".
 
-understand "slice [text]" and "prune [text]" and "chop [text]" and "kiss [text]" and "hug [text]" and "embrace [text]" and "buy [text]" and "purchase [text]" and "buy [text]" and "light [text]" and "jump [text]" and "hop [text]" and "skip [text]" and "sip [text]" and "swallow [text]" and "shine [text]" and "polish [text]" and "sweep [text]" and "clean [text]" and "dust [text]" and "wipe [text]" and "scrub [text]" and "fight [text]" and "torture [text]" and "wreck [text]" and "crack [text]" and "murder [text]" and "kill [text]" and "punch [text]" and "thump [text]" and "sorry [text]" and "touch [text]" as os2ing.
+understand "slice [text]" as os2ing. [this brings together all the other understand ... as commands above]
 
 oldschooling is an action out of world.
 os2ing is an action applying to one topic.
@@ -416,7 +419,7 @@ os2ing is an action applying to one topic.
 carry out os2ing: try oldschooling instead;
 
 carry out oldschooling:
-	say "[chase-pass]An old school verb like [word number 1 in the player's command] isn't strictly necessary in this game. See [b]V/VERB/VERBS[r] for what is used/useful." instead;
+	say "[chase-pass]An old school verb like [word number 1 in the player's command] isn't strictly necessary in this game. See [verb-suggest] for what is used/useful." instead;
 
 understand "taste" as eating.
 understand "taste [thing]" as eating.
@@ -731,12 +734,12 @@ when play begins (this is the begin ailihphilia for reals rule):
 	else:
 		say "After more tedious palindrome riffing, the Flee Elf deems you most suitable (or least unsuitable) for the relatively obscure bunker called [Fun Enuf].[wfak-d]";
 	say "The Flee Elf points to a cap. 'This here isn't any cap. It's a PACT cap. And you can't quite TAKE it. You have to do something else.'[wfak-d]";
-	say "[paragraph break](NOTE: if you want to know more about Ailihphilia and the commands used, type ABOUT.)[paragraph break]";
+	say "[paragraph break]([b]NOTE[r]: if you want to know more about Ailihphilia and the commands used, type [b]ABOUT[r].)[paragraph break]";
 	do nothing; [debug information below here. I've had problems putting it in and not deleting it, so I want to make things clear.]
 
 after looking in Fun Enuf for the first time:
 	if read-intro is false:
-		say "[bracket][b]NOTE: though you opted to skip the introduction, you may still wish for ABOUT or VERBS as a refresher.[close bracket][r][line break]";
+		say "[bracket][b]NOTE[r]: though you opted to skip the introduction, you may still wish for [b]ABOUT[r] or [b]VERBS[r] as a refresher.[close bracket][line break]";
 		continue the action;
 
 section when play begins - not for release
@@ -853,6 +856,8 @@ Rule for printing a parser error when the latest parser error is can only do tha
 
 chapter unrecognized verb
 
+to say verb-suggest: say "[b]V[r]/[b]VERB[r]/[b]VERBS[r]"
+
 Rule for printing a parser error when the latest parser error is the didn't understand error or the latest parser error is the not a verb I recognise error:
 	if player is in Lair Trial and kayo yak is in trial lair:
 		if the player's command includes "yak" or the player's command includes "kay":
@@ -864,7 +869,7 @@ Rule for printing a parser error when the latest parser error is the didn't unde
 			if word number 2 in the player's command is "up", say "Hmm, not the right way to be or do UP, but something must work." instead;
 	if flee elf is in fun enuf and the player's command includes "cap":
 		say "The Flee Elf cocks its head. 'Y'r try ... not quite. Do something with the cap, though.'" instead;
-	say "[if gtv]You do need a special verb here to deal with [random guhthug in location of player], but not that one. It may not be a standard one, but given the game's theme, I bet you can figure it out. If you want standard verbs, y[else]I didn't recognize that action. Y[end if]ou can type VERB or VERBS to get a list of them[if cur-score of Odd Do < 11], and there are a few you can guess for bonus points[any-here][end if].";
+	say "[if gtv]You do need a special verb here to deal with [random guhthug in location of player], but not that one. It may not be a standard one, but given the game's theme, I bet you can figure it out. If you want standard verbs, y[else]I didn't recognize that action. Y[end if]ou can type [verb-suggest] to get a list of them[if cur-score of Odd Do < 11], and there are a few you can guess for bonus points[any-here][end if].";
 
 to say any-here: say "[if LLP-now], including one right here[else if fixed-LLP > 0], including [fixed-LLP in words] available anywhere[end if]"
 
@@ -1006,6 +1011,26 @@ definition: a thing (called th) is put-to-use:
 	if th is DNA hand, yes;
 	no;
 
+chapter opening / closing
+
+instead of closing, say "You never need to close anything in this game."
+
+instead of opening:
+	if noun is a book, try examining the noun instead;
+	if noun is a workable, say "[if noun is workedout]It's broken. You can't constructively put anything in it[else]Just [b]USE[r] something on it, or [verb-abbrev of noun][end if]." instead;
+	if noun is bros' orb, say "The Bros['] Orb would be destroyed, its virtue gone, if you tried to force its secrets out." instead;
+	if noun is etage gate:
+		if player has Ye Key, try useoning Ye Key with etage gate instead;
+		try going north;
+	if noun is gold log, say "You can't find an opening." instead;
+	if noun is lie veil, say "It's not that easy. You need to be forceful." instead;
+	if noun is mayo yam, say "That's not something you want to open." instead;
+	if noun is snack cans, say "[if player is in Mont Nom]You wonder if they might go better with something else[else]You will open the snack cans when the time comes to use them[end if]." instead;
+	if noun is sto lots, say "You can automatically open it when you need to." instead;
+	if noun is stole lots, say "You can't get to the STOLE LOTS with Dave around." instead;
+	if noun is yard ray, say "You just need to know how to fire it, not its inner workings." instead;
+	if noun is you buoy, say "You can't find an opening. Sadly, this is slightly trickier than Zork I. Slightly." instead;
+
 chapter inserting into
 
 instead of inserting into pact cap:
@@ -1097,6 +1122,7 @@ to decide whether the action is procedural: [aip]
 	if examining, yes;
 	if reading, yes;
 	if os2ing, yes;
+	if oldschooling, yes;
 	if attacking, yes;
 	if saying yes, yes;
 	if saying no, yes;
@@ -1621,7 +1647,7 @@ carry out abouting:
 	say "[line break]The result of all my work is some guess-the-verb, but hopefully with the game's general idea, you'll see what's going on. Ailihphilia is meant to be polite on the Zarfian cruelty scale, although I hope you enjoy some of the impolite jokes and even the deliberate misspellings to force palindromes, as well as the room name-changes that occur (for esthetic effect only) as you solve puzzles.";
 	say "[line break]So Ailihphilia doesn't have any deep philosophy, but I hope you enjoy it. If you write games yourself, I hope it inspires you to go through with anything unusual you weren't sure if you should try, even if Ailihphilia rubs you the wrong way. (Spoiler: you should write that game! Just start early and take all the notes you can, but don't think the first draft needs to be perfect!)[paragraph break]";
 	say "I'm at [email] if you have suggestions for bug fixes, etc. Or you can report a bug in a repository. [b]DEV ED[r] is the command to see that.[paragraph break]";
-	say "If you're confused what to do or type, VERBS will give an outline of the basic verbs you need to get through Ailihphilia.";
+	say "If you're confused what to do or type, [b]VERBS[r] will give an outline of the basic verbs you need to get through Ailihphilia.";
 	the rule succeeds;
 
 chapter creditsing
@@ -1717,7 +1743,7 @@ carry out verbing:
 	say "[2da][b]AID[r] gives you spoiler hints for where you are, though it may indicate you need to visit other places first. [b]MEM[r] pinpoints where useful people and things are[if pyx is quicknear]. [pyx-x] give a game map[end if].";
 	say "[2da]sub-commands of [b]THINK[r]: [b]SCE RECS[r] clues scenery you haven't examined yet, and [b]EPI WIPE[r] resets the game's records on things and scenery you examined.";
 	if cur-score of Odd Do < max-score of Odd Do:
-		say "[line break]There are also a few guess-the-verb bonus points that are hidden. Some relate to objects or people that need help but can't help you, and some are riffs on standard commands. [if refer-yet is false]There's a different way to revisit, rehash or recap this very command, for example[else]For instance, you got REFER as VERBS[end if]";
+		say "[line break]There are also a few guess-the-verb bonus points that are hidden. Some relate to objects or people that need help but can't help you, and some are riffs on standard commands. [if refer-yet is false]There's a different way to revisit, rehash or recap this very command, for example[else]For instance, you got [b]REFER[r] as [b]VERBS[r][end if]";
 	say "[line break]Also, many verbs that are standard for earlier text adventures give random reject text I hope you will enjoy. If you miss them, you'll see the entire list at the end.";
 	say "[2da][b]META[r] (or [b]META AT EM[r]) has information on meta-verbs, which includes options (e.g. turning some minor hints on or off), cheat/warp commands for judges near the two-hour limit, scoring, and information on how the game was created and who helped.";
 	if in-beta is true, say "[b]META[r] also gives beta tester commands.";
@@ -2334,11 +2360,11 @@ check useoning it with (this is the main useon function rule):
 		say "You never need to use anything explicitly on yourself." instead;
 	if noun is a workable or second noun is a workable: [may not need "noun is a workable" with useprio now but want to make sure of it]
 		if wr-short-note is false:
-			say "(NOTE: You can abbreviate this command with ROT, REI and REV for the respective machines, later.)[paragraph break]";
+			say "(NOTE: You can abbreviate this command with [b]ROT[r], [b]REI[r] and [b]REV[r] for the respective machines, later.)[paragraph break]";
 			now wr-short-note is true;
 	if noun is a book and second noun is a workable:
 		say "You can't alter what's in a book. You don't need to[if noun is not SOME DEMOS]. Someone may appreciate it as it is[end if]." instead;
-	if second noun is a workable and useleft of second noun is 0, say "No point. The [second noun] is broken." instead;
+	if second noun is a workable and second noun is workedout, say "No point. The [second noun] is broken." instead;
 	if noun is an ingredient:
 		if second noun is an ingredient:
 			chef noun and second noun;
@@ -4146,7 +4172,7 @@ printed name of KAOS Oak is "[kaoscaps]".
 after examining the KAOS Oak:
 	if KAOS Oak is not xed, say "One look and you find yourself mumbling 'Elp! A Maple!' when you know it obviously isn't. You feel dumb, then take a second to get smart. Now that's (ch/k)aos! ";
 	if grammarg is false, say "The [kaoscaps] changes [one of][or]again [stopping]as you look at it. ";
-	say "[one of][paragraph break][i][bracket]NOTE: you can turn off this random capitalization nonsense by saying GRAMMAR G.[close bracket][roman type][or][stopping]";
+	say "[one of][paragraph break][i][bracket]NOTE: [r][b]GRAMMAR G[r][i] can turn off this random capitalization nonsense.[close bracket][r][or][stopping]";
 	continue the action;
 
 chapter grammarging
@@ -4938,8 +4964,6 @@ The lie veil is scenery in Dumb Mud. "It covers the way north. It looks flimsy, 
 
 instead of wearing veil: say "I don't want to know what would happen if you could, and probably, neither would you."
 
-instead of opening lie veil, say "It's not that easy. You need to be forceful."
-
 Include (-
 	has transparent animate
 -) when defining lie veil.
@@ -5514,8 +5538,6 @@ chapter you buoy
 
 the you buoy is a thing. description is "It's really plain, now you look at it. Also, as you look it over, it rattles a bit. It feels too sturdy to break open by yourself, though."
 
-check opening you buoy: say "You can't find an opening. Sadly, this is slightly trickier than Zork I. Slightly." instead;
-
 chapter ME gem
 
 the ME gem is a thing. description is "You feel a strong urge to keep this and not share it, because of all the crazy things you did to get it, but you know that's not quite right. You wonder of its origin--perhaps it was chipped off from Le We Jewel, or it was originally engraved in the Ring O['] Zognir. Or was it the Ring of Ufognir?[paragraph break]Also, it looks nothing at all like the emerald in Zork I, which was also in a buoy, so stop thinking that.[paragraph break]It doesn't feel destructive, so it's not a gem of omega, or anything."
@@ -5850,7 +5872,7 @@ after examining Oh Who for the first time:
 
 after examining Name ME Man for the first time:
 	if debug-state is true, say "DEBUG Seed = [initseed of Name ME Man].";
-	say "(If you want, you can abbreviate Name ME Man as NM or MM or even NMM.)[paragraph break]";
+	say "(If you want, you can abbreviate Name ME Man as [b]NM[r] or [b]MM[r] or even [b]NMM[r].)[paragraph break]";
 	continue the action;
 
 nevev is a truth state that varies.
@@ -6098,7 +6120,7 @@ understand "machine" and "machines" as a workable.
 does the player mean doing something with a workedout workable: it is very unlikely.
 
 check examining a workable:
-	if useleft of item described is 0, say "The [noun] is broken now, but you got good use out of it." instead;
+	if noun is workedout, say "The [noun] is broken now, but you got good use out of it." instead;
 
 after examining a workable: say "[if useleft of noun is 3]Oh, the word [printed name of item described in upper case] is printed on the front[else]Since you had success using [the item described], you feel more comfortable using it again[end if]."
 
@@ -6110,7 +6132,7 @@ the rotator is a workable. useleft is 3. understand "rot" as rotator. understand
 
 rule for supplying a missing second noun when useoning:
 	if noun is a workable:
-		say "You need to USE something on the [noun]. Or you can just [if noun is reifier]REI[else if noun is reviver]REV[else]ROT[end if] a thing, for shorthand.";
+		say "You need to USE something on the [noun]. Or you can just [b][verb-abbrev of noun][r] something, for shorthand.";
 		reject the player's command;
 	continue the action;
 
@@ -6126,7 +6148,7 @@ to decide whether say-unless-speed:
 
 to wear-down (w - a workable):
 	decrement useleft of w;
-	if useleft of w is 0:
+	if w is workedout:
 		if revving-over is false and deep-speeding is false:
 			say "[line break]You watch as [the w] sputters and dies. [if number of workedout workables is 2]Oh dear. That's the second one down[else]Well, you got a lot of good use out of it, and hopefully you won't need any more[end if].";
 		else if say-unless-speed:
@@ -6234,8 +6256,6 @@ check examining tract cart:
 a book is a kind of thing. a book is usually proper-named.
 
 does the player mean useoning a book with a NPCish person: it is very likely.
-
-instead of opening a book: try examining the noun instead;
 
 check examining a book:
 	if description of noun is empty, say "It [if player carries the item described]is[else]looks[end if] really heavy and incomprehensible to you."
@@ -6966,10 +6986,6 @@ instead of unlocking etage gate with Ye Key:
 
 does the player mean unlocking etage gate with Ye Key: it is likely.
 
-instead of opening etage gate:
-	if player has Ye Key, try useoning Ye Key with etage gate instead;
-	try going north;
-
 [instead of unlocking etage gate:
 	try going north;]
 
@@ -7236,15 +7252,11 @@ the snack cans are a plural-named solid ingredient. description is "They're labe
 
 understand "snack can" and "can" as snack cans.
 
-instead of opening snack cans, say "You will open them when the time comes to use them." instead;
-
 understand "dee feed" and "dee/feed" as snack cans.
 
 chapter Mayo Yam
 
 the Mayo Yam is a liquid ingredient in Yell Alley. "A gross looking -- something -- is here. It's a mayo yam! It's a bit on the slimy side, and it's probably worse inside.". description is "Fortunately, the mayo yam's skin is sturdy enough to avoid being burst and making a mess. But you can still smell the mayo inside it, and it's all globby on the outside. It doesn't look, well, muy yum."
-
-instead of opening mayo yam, say "That's not something you want to open."
 
 chapter rep popper
 
@@ -7583,8 +7595,6 @@ The resale laser is a tronpart. description is "It has a big red 1 sketched on i
 chapter gold log
 
 the gold log is a thing in Pro Corp. description is "Maybe if it were shaped a bit differently, it would be a golf log you could use to putt up, but as-is, it's not too useful.[paragraph break]It feels hollow, though. Lighter than it should. You remember how it rattled when you picked it up."
-
-instead of opening gold log: say "You can't find an opening."
 
 report taking gold log:
 	say "It feels light. Not a ton. It rattles as you pick it up.";
@@ -9060,7 +9070,7 @@ this is the pre-ti-on-frood rule:
 	else if Worn Row is worky:
 		say "You need something from Word Row, but currently it's [Worn Row].";
 	else:
-		say "[one of]You need a book from [Worn Row], but there is more than one[or]The Door Frood likes to look down on people[or][TO IDIOT] is the book the Door Frood would like[or]Once you get [i]TO IDIOT[r] from Word Row, USE TI ON DOOR FROOD[stopping].";
+		say "[one of]You need a book from [Worn Row], but there is more than one[or]The Door Frood likes to look down on people[or][TI] is the book the Door Frood would like[or]Once you get [i]TO IDIOT[r] from Word Row, USE TI ON DOOR FROOD[stopping].";
 	the rule succeeds;
 
 this is the pre-tip-on-eye rule:
@@ -10084,12 +10094,12 @@ amu
 "A general sweeping note: the mistakes file ([gt] mistakes.i7x) should have all the possible palindrome tries you can make and the text they give. It should be included in the release or at [bb]."
 "Another sweeping note: the tables file ([gt] tables.i7x) in the same location(s) should have all the random texts."
 "Attacking yourself, the ergot ogre, the pact cap, the made dam, or the eels."
-"Asking for PCP in Evaded Ave or Yell Alley."
-"Trying to BUNT NUB three times."
-"RM GNU around the gnu, or RM MR around Mr. Arm."
-"SMELL the gnu dung, butene tub or Yuge Guy."
-"XYZZY."
-"Some USE X ON Y: you can look in the table of specific use rejects (xx[r]rej in the story.ni file) for them all." [ the R is there so I can search the source]
+"Asking for [b]PCP[r] in Evaded Ave or Yell Alley."
+"Trying to [b]BUNT NUB[r] three times."
+"[b]RM GNU[r] around the gnu, or RM MR around Mr. Arm."
+"[b]SMELL[r] the gnu dung, butene tub or Yuge Guy."
+"[b]XYZZY[r]."
+"Some USE X ON Y: you can look in the table of specific use rejects (xx[i][r]rej in the story.ni file) for them all." [ the R is there so I can search the source]
 
 part what you missed (LLP)
 
@@ -10375,7 +10385,7 @@ carry out rring:
 	if number of moot workables is 3, say "The RR command is not valid now you destroyed all the machines." instead;
 	if number of moot workables is 2 and one-mach-warn is false:
 		now one-mach-warn is true;
-		say "NOTE: the RR command is really just the same as [if reifier is in Worn Row]REI[else if rotator is in Worn Row]ROT[else]REV[end if] now you destroyed all the machines, but since RR saves a keystroke, why not?[paragraph break]";
+		say "NOTE: the RR command is really just the same as [b][verb-abbrev of random not workedout workable in Worn Row][r] now you destroyed two of the machines, but since RR saves a keystroke, why not?[paragraph break]";
 	repeat through table of goodacts: [It would be simpler to use an if statement but things could get shuffled in the table of goodacts. This assures that we try all possible machines before an item vanishes permanently, but no more.]
 		if there is a use1 entry:
 			if use2 entry is reviver and use1 entry is noun:
