@@ -2383,6 +2383,10 @@ definition: a thing (called t) is exhausted:
 	unless t is revived or reviver is workedout, no;
 	yes;
 
+postmachines is a list of things variable. postmachines is { brag garb, dork rod, ME gem, stock cots, cave vac, ore zero, party trap, DNA hand, taboo bat }.
+
+premachines is a list of things variable. premachines is { bunk nub, DNA band, Dirt Rid, eroded ore, gold log, not-a-baton, stinky knits, trap art, you buoy }.
+
 a machine message rule for a thing (called t):
 	if t is an ingredient, say "The only machine you should put food in is a microwave. Or, maybe, a BAKE-KAB. Or a heata['], eh?" instead;
 	if t is a tronpart, say "No, [the t] [if epicer recipe is xed]is[else]seems[end if] too important." instead;
@@ -2824,7 +2828,7 @@ pity tip	eye	snack cans	pre-tip-on-eye rule	mob-to-alley rule	true	true	false	fa
 trap art	reifier	party trap	pre-art-on-reifier rule	--	true	true	false	true	true	true	Yelpley	Worn Row	Worn Row	false	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. You pull it out of the reifier and inspect it. It could probably capture more than one thing."
 bunk nub	reviver	stock cots	pre-nub-on-reviver rule	--	true	true	false	true	true	true	Yelpley	Worn Row	Worn Row	false	"After some crunching and slurping, the bunk nub is changed to a bunch of much smaller, but more comfortable looking, stock cots. You take them."
 party trap	stark rats	gift fig	pre-trap-on-rats rule	oh-who-to rule	true	true	true	true	true	true	Grebeberg	Seer Trees	Seer Trees	false	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately none of it gets over you. The Seer Trees seem to nod a bit.[paragraph break]THUMP! They left you a present--good thing you were wearing that pact cap, because a book fell on your head. One glance reveals it to be [b]Oh, Who[r]--a phone book for Grebeberg, like [b]Name ME Man[r] for Yelpley.[paragraph break]You also find a gift fig, which you pick up."
-EPOCH COPE	King Nik	Spur Ups	pre-cope-on-nik rule	cold-loc-hint-bump rule	true	true	true	true	true	true	Grebeberg	Cold Loc	Cold Loc	false	"King Nik takes it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris and Crisp Sir C told me I needed to one day from those other books: ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! Now I can make sure the Rim Emir and his emir crim and emir grime do not become Emir Prime! I will defeat the Mrifk Firm, too! My rule will not be an EGAD age!' He hands you some Spur Ups in gratitude. 'These may not spur you, but they can give you an UP or two, when you are just scared or worried for no reason in general. Now...back to my vidette div. Gotta RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
+EPOCH COPE	King Nik	Spur Ups	pre-cope-on-nik rule	--	true	true	true	true	true	true	Grebeberg	Cold Loc	Cold Loc	false	"King Nik takes it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris and Crisp Sir C told me I needed to one day from those other books: ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! Now I can make sure the Rim Emir and his emir crim and emir grime do not become Emir Prime! I will defeat the Mrifk Firm, too! My rule will not be an EGAD age!' He hands you some Spur Ups in gratitude. 'These may not spur you, but they can give you an UP or two, when you are just scared or worried for no reason in general. Now...back to my vidette div. Gotta RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
 stock cots	sleep eels	--	pre-cots-on-eels rule	--	true	true	true	true	true	true	Grebeberg	Ooze Zoo	Ooze Zoo	false	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
 --	--	--	rev-puff-up rule	post-puff-up rule	true	--	--	true	true	true	Yelpley	Yawn Way	Yawn Way	false	--
 --	--	--	rev-pull-up rule	post-pull-up rule	true	--	--	true	true	true	Yelpley	Emo Dome	Emo Dome	false	--
@@ -2834,7 +2838,7 @@ puce cup	liar grail	--	pre-cup-on-grail rule	empty-grail rule	true	false	true	tr
 puce cup	dose sod	--	pre-cup-on-sod rule	sod-to-cup rule	true	false	false	true	true	true	Grebeberg	Apse Spa	Apse Spa	false	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough." [sc2-ignore]
 puce cup	Bond Nob	Elan Ale	pre-cup-on-nob rule	empty-nob rule	true	true	true	true	true	true	Yelpley	Drawl Ward	Drawl Ward	false	"You give the Bond Nob the puce cup. Gulp! Gulp! The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. So many places to visit: [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars]... well, everywhere except Bar Drab or Soda Do's or Jo's OJ.' The Bond Nob proceeds to regale lager while vanishing north."
 stamp mats	slate metals	Ye Key	pre-mats-on-metals rule	--	true	true	false	true	true	true	Yelpley	Scrap Arcs	Scrap Arcs	false	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY. You find it hard to pull the stamp mats out, and when you take YE KEY, the mats quickly morph into the slate metals. Eh, well. Less inventory to worry about."
-demo med	gulf lug	cash sac	pre-med-on-lug rule	bump-gulf rule	true	true	true	true	true	true	Grebeberg	Flu Gulf	Flu Gulf	false	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' and looks a lot better within a few seconds. 'Mute tum!' the Lug cries gratefully before handing you a cash sac and running away."
+demo med	gulf lug	cash sac	pre-med-on-lug rule	--	true	true	true	true	true	true	Grebeberg	Flu Gulf	Flu Gulf	false	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' and looks a lot better within a few seconds. 'Mute tum!' the Lug cries gratefully before handing you a cash sac and running away."
 cash sac	cross orc	--	pre-sac-on-orc rule	--	true	true	true	true	true	true	Yelpley	Toll Lot	Toll Lot	false	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But it hasn't been taking its Negot-O-Gen! You convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
 YOB ATTABOY	Sniffins	Dirt Rid	pre-attaboy-on-Sniffins rule	toons-to-den rule	true	true	false	false	false	true	Yelpley	Deft Fed	Deft Fed	false	"Sniffins accepts your gift, with sniffs slowly changing from sadness to something more snooty. Your thanks for helping Sniffins be too good for you is a Dirt Rid. Sniffins shoos you back out to the Toll Lot: 'No, yob! Yon!' There is remodeling to be done! Sniffins will outdo Rentner, whoever that is! From the south, you hear frantic cries of 'Repaper! Repaper! Repaper!'[paragraph break][b]Toll Lot[r]"
 Elan Ale	Sniffins	Gorge Grog	pre-ale-on-Sniffins rule	--	true	true	false	false	false	true	Yelpley	Deft Fed	Deft Fed	false	"Smuggums looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.' Hey, you're not one to say 'stuff free stuff.'" [af:stand nat's]
@@ -2849,10 +2853,10 @@ stinky knits	rotator	brag garb	pre-knits-on-rotator rule	wear-garb rule	true	tru
 Gorge Grog	Butene Tub	resale laser	pre-grog-on-tub rule	make-sag rule	true	true	true	false	false	true	Yelpley	Pro Corp	Pro Corp	false	"The Gorge Grog starts fizzing as it pours down the tub, and nothing seems to happen, until you hear a FOOMP below and the tub starts shaking. There must've been an open spark below the tub, perhaps a noir ion. You find it best to hide, and that's the right thing to do, because the butene tub explodes into pieces. Under it is a resale laser! You figure the really good stuff is hidden way back for security reasons, and this is probably just an emergency gadget, but it's got to be good for something.[paragraph break]Soon after you take the resale laser, a small gash sag fills in the explosion you made. Technology! Also, you're not saddled with a bath-tab for the damage you did."
 gold log	rotator	dork rod	pre-log-on-rotator rule	--	true	true	false	true	true	false	Yelpley	Worn Row	Worn Row	false	"The gold log begins spinning until it cracks open--leaving a dork rod! You wonder briefly if you deserve to take it, or if there's something wrong with you if you deserve to, but once you hold it, memories of past silliness come back, and they're easier to deal with, now. You have some perspective. You even feel sorry for people who pointed out you were a dork. They'd be barred from a cool adventure like this. So you keep the dork rod."
 SOME DEMOS	yahoo hay	straw arts	pre-demos-on-hay rule	hay-gone rule	true	true	false	false	true	false	Grebeberg	Moo Room	Moo Room	false	"With the help of SOME DEMOS, you (after several grunts of 'STRAIN! I! ARTS!') manage to rejig and bend and snap the hay into something more aesthetically pleasing: straw arts! You're so enthusiastic, you even tear up SOME DEMOS and garnish your new straw arts. It just feels right."
-straw arts	Revolt Lover	soot tattoos	pre-arts-on-lover rule	rebump-art-xtra rule	true	true	false	false	true	false	Yelpley	Art Xtra	Art Xtra	false	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos. They seem pretty plain, but if you can make something out of hay and an old pamphlet, I'm sure you'll be able to work with them.'"
+straw arts	Revolt Lover	soot tattoos	pre-arts-on-lover rule	--	true	true	false	false	true	false	Yelpley	Art Xtra	Art Xtra	false	"'Brilliant! Brilliant! Such expressive art! Subversive, yet straightforward! I ... I'd like to sell it on commission. I'd also like to see what else you can do. Here, have these soot tattoos. They seem pretty plain, but if you can make something out of hay and an old pamphlet, I'm sure you'll be able to work with them.'"
 gate tag	soot tattoos	state tats	pre-tag-on-tattoos rule	tats-peripheral rule	true	true	true	false	true	false	Yelpley	Art Xtra	Art Xtra	false	"You stamp the gate tag into the soot tattoos, and they take on an official shape: tat, STAT! They look like official State Tats, which you can slap on if you ever need to impersonate an official goon, or something. Way to go!"
 poo coop	gnu dung	--	pre-coop-on-dung rule	unlimbo-coop rule	true	false	true	true	true	true	Grebeberg	Dumb Mud	Dumb Mud	false	"A heretofore hidden poos scoop pops out from the poo coop. It shovels and vacuums the offending dung into the coop, forming a crass arc that seems to contain several times the volume of the coop itself. Whatever, you can now go west."
-poo coop	turf rut	--	pre-coop-on-rut rule	shift-dumb-mud rule	true	true	true	false	false	true	Grebeberg	Dumb Mud	Dumb Mud	false	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture.[paragraph break]A bold(ened) lob! The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
+poo coop	turf rut	--	pre-coop-on-rut rule	--	true	true	true	false	false	true	Grebeberg	Dumb Mud	Dumb Mud	false	"The poo coop releases its contents into the turf rut but explodes as the last bit oozes out. You dump it into the hardening mixture.[paragraph break]A bold(ened) lob! The rut isn't filled, but you have clear passage across, and the ... bridge ... hardens visibly and quickly. You poke it with your foot to make sure. I guess you could call the turf rut something else, now, but I'm trying to keep this game PG."
 radar	made dam	eroded ore	pre-radar-on-dam rule	radar-blink rule	true	false	false	false	false	true	Grebeberg	Swamp Maws	Swamp Maws	false	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a few pings. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow. The radar plays a weird scale. Being close to the ore has damaged it somehow."
 NULL ILLUN	Known Wonk	--	pre-illun-on-wonk rule	bump-maws rule	true	true	true	true	true	false	Grebeberg	Yack Cay	Yack Cay	false	"The Known Wonk begins to read. 'Old, lo! Too simple. It has to be beneath me. I mean, it's almost as bad as [i]EBB?! BE[r].' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. Rid a nadir. Rid ANY nadir! Tiny nit? Not on! Wonk, now! Sometimes, simple stuff works.' As the Known Wonk babbles, the mist sim lifts, too. 'Wow!' But no, your acts deserve a better cheer than that. 'H/t! A path!'[paragraph break]What could lie to the north?"
 el doodle	edits tide	spa maps	pre-doodle-on-tide rule	rahs-too rule	true	true	false	false	true	false	Grebeberg	Yack Cay	Yack Cay	false	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps! And there is a bonus! It appears El Doodle was so jumbled, there were two things. Sharp rahs appear on another sheet of paper, as some sort of confused motivation, and you take them."
@@ -3628,12 +3632,7 @@ this is the brag-garb-bye rule:
 	moot brag garb;
 	the rule succeeds;
 
-this is the bump-gulf rule:
-	shuffle-before Flu Gulf and Sneer Greens;
-	the rule succeeds;
-
 this is the bump-ivy rule:
-	shuffle-before Uneven U and Red Roses Order;
 	move porch crop to Uneven U;
 	moot Known Wonk;
 	the rule succeeds;
@@ -3641,26 +3640,14 @@ this is the bump-ivy rule:
 this is the bump-maws rule:
 	moot mist sim;
 	now Yack Cay is not chase-blocked;
-	shuffle-before Dumb Mud and Le Babel;
-	shuffle-before Yack Cay and Dumb Mud;
 	the rule succeeds;
 
 this is the bump-pod rule:
-	shuffle-before Dopy Pod and Toll Lot;
 	later-wipe cassettes sac;
 	the rule succeeds;
 
 this is the chase-in-zoo rule:
 	if location of player is Frush Surf, start-chase Kayo Yak;
-	the rule succeeds;
-
-this is the cold-loc-hint-bump rule:
-	shuffle-before Cold Loc and Emo Dome;
-	the rule succeeds;
-
-this is the empty-cup rule: [ignore rule check]
-	moot puce cup;
-	shuffle-before Apse Spa and Motto Bottom;
 	the rule succeeds;
 
 this is the empty-grail rule:
@@ -3671,7 +3658,7 @@ this is the empty-grail rule:
 
 this is the empty-nob rule:
 	later-wipe Bond Nob;
-	consider the empty-cup rule;
+	moot puce cup; [?? this doesn't seem necessary so I need to check what happens]
 	choose row with tabnam of table of Bond Nob bars in table of all randoms;
 	if thru-yet entry is 0, now thru-yet entry is 1; [to make sure a weird 'cycling' message is not printed]
 	the rule succeeds;
@@ -3723,7 +3710,6 @@ this is the mob-to-alley rule:
 	moot navy van;
 	now Line Nil is in Yell Alley;
 	now bomb mob is in Yell Alley;
-	shuffle-before Yell Alley and Sneer Greens;
 	the rule succeeds;
 
 this is the moot-rows-and-tats rule:
@@ -3775,10 +3761,6 @@ this is the ray-not-beepy-now rule:
 	now yard ray is ordinary;
 	the rule succeeds;
 
-this is the rebump-art-xtra rule:
-	shuffle-before Art Xtra and Red Roses Order;
-	the rule succeeds;
-
 this is the rug-to-bottom rule:
 	now guru rug is in Motto Bottom;
 	the rule succeeds;
@@ -3796,10 +3778,6 @@ this is the sap-to-cup rule:
 	now puce-ever is true;
 	now sap-with-hands is false;
 	no-extra-cup-points;
-	the rule succeeds;
-
-this is the shift-dumb-mud rule:
-	shuffle-before Dumb Mud and Le Babel;
 	the rule succeeds;
 
 this is the sod-to-cup rule:
@@ -5075,10 +5053,6 @@ report taking stamp mats:
 	say "The stamp mats are thin enough and thus not too heavy. They line the Sto-Lots nicely, and they don't even slip to the bottom where they'll be hard to find.";
 	the rule succeeds;
 
-after taking stamp mats:
-	shuffle-before Frush Surf and Trial Lair;
-	continue the action;
-
 chapter Kayo Yak
 
 a chaser has a truth state called chased-yet.
@@ -6083,7 +6057,6 @@ to wear-down (w - a workable):
 			say "(BOOM! You took out the [w] in the process.)[line break]";
 	if useleft of w is 1 and revving-over is false and deep-speeding is false, say "[line break]The [w] wheezes an emphatic 'FOOF.' Hopefully, you won't need to use it too much more.[line break]";
 	if machuses is 0:
-		hint-bump-worn;
 		if deep-speeding is false and revving-over is false:
 			say "[line break]With [the list of workables] all destroyed, Work Row shakes a bit more. The machines fall out from a wall, revealing something behind ... a test set. It's big and huge and you can't move it, but who knows what it'll be useful for later?";
 		else:
@@ -6217,6 +6190,8 @@ a book can be return-after-chase. a book is usually not return-after-chase.
 
 a book has a number called auth-row. auth-row of a book is usually 0.
 
+a book has text called abbr-text.
+
 auth-ind is a number that varies.
 
 check examining a book (this is the assign a book to a random table rule):
@@ -6317,7 +6292,7 @@ after examining a book:
 
 chapter DWELT LEWD
 
-DWELT LEWD is a proper-named not necessary hidden book. printed name of DWELT LEWD is "DWELT LEWD (DL)". understand "dl" as DWELT LEWD.
+DWELT LEWD is a proper-named not necessary hidden book. abbr-text of DWELT LEWD is "DL". understand "dl" as DWELT LEWD.
 
 dwelt-first is a list of text variable. dwelt-first is { "Nell, Edna", "Leon", "Nedra", "Anita", "Rolf", "Nora", "Alice", "Carol", "Leo", "Jane", "Reed", "Dena" }.
 dwelt-last is a list of text variable. dwelt-last is { "Ned", "Dee", "Rena", "Joel", "Lora", "Cecil", "Aaron", "Flora", "Tina", "Arden", "Noel", "and Ellen" }
@@ -6493,7 +6468,6 @@ carry out wordrowing:
 	if Worn Row is wordy, say "You're already in Word Row." instead;
 	notify-row-change;
 	if ever-wordrow is false:
-		hint-bump-worn;
 		score-inc; [Yelpley/word row]
 		verify-done rev-word-row rule;
 		say "A tract cart appears, full of odd books. A pity tip also flutters down. You take the tip.";
@@ -6645,14 +6619,9 @@ chapter trap art
 
 some trap art is a singular-named thing in Art Xtra. "Some trap art sits here. It's free. You might as well take it.". description is "The trap art depicts a bunch of nasty, dirty animals being trapped. It's not a real trap, but it seems like a realistic depiction.". the indefinite article of trap art is "some".
 
-after taking trap art:
-	shuffle-before Art Xtra and Yack Cay;
-	continue the action;
-
 chapter el doodle
 
 after taking El Doodle:
-	shuffle-before Art Xtra and Red Roses Order;
 	if straw arts is not moot, say "The Revolt Lover lets you know that there's some other art, more powerful stuff, but ... they need to know that you have an artsy side, too, and you won't just be the new tyrant replacing the old tyrant, here.";
 	continue the action;
 
@@ -6782,6 +6751,12 @@ after examining DIFF ID when player has state tats:
 instead of talktoing DIFF ID: say "No response. Looks like you may need something to show it."
 
 understand "rebuff/uber" and "rebuff uber" as DIFF ID.
+
+to decide which number is id-pieces:
+	let temp be 0;
+	if player has soot tattoos, increment temp;
+	if player has gate tag, increment temp;
+	decide on temp;
 
 chapter pulluping
 
@@ -8740,6 +8715,25 @@ to decide whether (u1 - a thing) and (u2 - a thing) are mixable:
 	if u1 is in-known and player is in Worn Row and ever-workrow is true and u2 is a workable, yes;
 	no;
 
+this is the worn-row-triage rule:
+	if worn row is worny and redness ender is moot, say "The most immediate thing to do is to change Worn Row back to [if any-books-left]Word Row or [end if]Work Row." instead;
+	if worn row is wordy:
+		if number of necessary books in worn row is 0, say "You don't have any more books to pick off in [Worn Row]. From now on, Work Row [if redness ender is moot]is[else]will probably be[end if] most useful for you." instead;
+		let nb be cur-book;
+		if player carries nb, say "[nb] is a good book to have right now. You can do something with it." instead;
+		if cur-book is in worn row and cur-book is not DWELT LEWD, say "You may wish to take [cur-book]. There's no wrong order to do things in, but [cur-book] is most likely to solve a puzzle and open up new ones[if number of lugged books is 1]. You can always use [random lugged book] later[end if].";
+
+to decide whether any-books-left:
+	if number of necessary books in Worn Row > 0, yes;
+	no;
+
+to decide which book is cur-book:
+	if Door Frood is not moot, decide on TI;
+	if King Nik is not moot, decide on EPOCH COPE;
+	if cross orc is not moot and gnu dung is moot, decide on NULL ILLUN;
+	if YOB ATTABOY is not moot, decide on YOB ATTABOY;
+	decide on DWELT LEWD; [this should never happen]
+
 carry out sosing:
 	if hint-yet is false and word number 1 in the player's command is "hint":
 		say "There are more harmonious ways to ask for a hint, if you want a bonus point. But it's not critical.";
@@ -8768,6 +8762,8 @@ carry out sosing:
 			say "Falling through to see what hints I would've gotten, for debug purposes. This should not be in the release version.[paragraph break]";
 		else:
 			the rule succeeds;
+	if player is in worn row:
+		abide by the worn-row-triage rule;
 	now in-sos is true;
 	let count be 0;
 	repeat through table of goodacts:
@@ -9032,43 +9028,6 @@ aid-LLP-yet is a truth state that varies.
 more-later is a truth state that varies.
 hint-yet is a truth state that varies.
 
-carry out aiding:
-	if being-chased is true:
-		if chase-person is kayo yak:
-			if cap-pace is false, say "[one of]You're not quite fast enough to outrun the yak on your own. An item you have can help.[or]The pact cap.[or]The pact cap can become a PACE cap.[stopping]" instead;
-			if player is in trial lair, say "[one of]The kayo yak can take out the ergot ogre.[or]You just need to give the right command to the kayo yak.[or]YAK ???? [or]YAK OKAY (no comma)[stopping]." instead;
-			say "[one of]The kayo yak will keep chasing you. Maybe you can find someone else for it to knock over.[or]Someone guarding something?[or]The ergot ogre.[or]You'll need to do one more thing once you get to the Trial Lair.[stopping]" instead;
-		if player is in Worn Row, say "[one of]You have the Psi Wisp in the right place, but you can't do anything here in [Worn Row], yet.[or]You have to change it.[or]WORN ROW. The redness ender will take care of the psi wisp.[stopping]" instead;
-		say "[one of]The psi wisp is certainly red. Maybe there's something that could neutralize it.[or]Do you remember a room at the start?[or]It sort of isn't there any more.[or]Go to Word/Work row, first.[stopping]" instead;
-	abide by the hint-rule of location of player;
-	consider the finished-rule of location of player;
-	let all-done-here be whether or not the rule succeeded;
-	say "You're done here, for [if all-done-here is true]good[else]now[end if][if row-prog > 1 and row-prog-warn is false][but-row][end if]. Would you like to be pointed to somewhere else relevant?"; [?? test case: remove Yuge Guy check in Sneer Greens but have him around. I should see an error] [?? what about going north in Emo Dome]
-	unless the player yes-consents, say "Okay." instead;
-	now search-hint-room is true;
-	repeat with Q running through L:
-		if debug-verbose is true, say "Checking [Q] in order.[run paragraph on][line break]";
-		consider the avail-rule of Q;
-		unless the rule succeeded, next;
-		consider the hint-rule of Q;
-		if the rule succeeded:
-			if Q is location of player:
-				if debug-state is true, say "OOPS! This is a bug in the hints. The game thinks you're done here but the rule to tell you what to do missed a case.";
-				next;
-			if Q is visited:
-				say "As a general hint, [Q] might be a good place to look.";
-			else:
-				describe-nearby Q;
-			now search-hint-room is false;
-			if aid-detail is true:
-				say "DEBUG: Here's what the hint would be: ";
-				consider the hint-rule of Q;
-			break;
-	if search-hint-room is true:
-		now search-hint-room is false;
-		say "I'm out of ideas for rooms you've visited. Maybe look around the map a bit more.";
-	the rule succeeds;
-
 row-prog-warn is a truth state that varies.
 
 to say but-row:
@@ -9095,92 +9054,7 @@ this is the trivially false rule: the rule fails;
 
 this is the trivially true rule: the rule succeeds;
 
-a room has a rule called hint-rule. hint-rule of a room is usually dunno-hint rule.
-
 a room has a rule called finished-rule. finished-rule of a room is usually the trivially true rule.
-
-this is the dunno-hint rule: [I should never have to use this in the final release.]
-	say "I haven't determined hints for [location of player], yet.";
-	the rule succeeds;
-
-section shuffling and room clue order
-
-to hint-bump-worn:
-	shuffle-before Worn Row and Dirge Grid;
-
-[this is the list of how I do things in the walkthrough.]
-
-L is a list of rooms variable. L is { Fun Enuf, Art Xtra, My Gym, Worn Row, Evaded Ave, Yell Alley, Trapeze Part, Seer Trees, Cold Loc, Yawn Way, Ooze Zoo, Frush Surf, Emo Dome, Swept Pews, Apse Spa, Drawl Ward, Dopy Pod, Scrap Arcs, Flu Gulf, Toll Lot, Deft Fed, Gross Org, Pro Corp, Moo Room, Dumb Mud, Swamp Maws, Yack Cay, Lac Oft Focal, Uneven U, Trial Lair, Motto Bottom, Mont Nom, Le Babel, Sneer Greens, Red Roses Order, Dirge Grid }
-
-[?? nothing game-critical to do here = if there is a LLP]
-
-[LATER: establish partially done room rules as opposed to completely done, for a room]
-
-to shuffle-before (ra - a room) and (rb - a room):
-	let x1 be 0;
-	let LE be number of entries in L;
-	repeat with x running from 1 to LE:
-		if entry x of L is ra:
-			now x1 is x;
-			break;
-	if x1 is 0, continue the action;
-	repeat with x2 running from x1 to LE:
-		if entry x2 of L is rb:
-			if debug-state is true, say "(DEBUG: Swapping room walkthrough order for [ra] and [rb])";
-			add ra at entry x2 in L;
-			remove entry x1 from L;
-			if debug-verbose is true, say "DEBUG NEW LIST:[L].";
-			continue the action;
-	if debug-verbose is true, say "WARNING [rb] was already before [ra]. No shifting.";
-
-section bulk hint-rule definitions
-
-hint-rule of Apse Spa is apse-spa-hint rule.
-hint-rule of Art Xtra is art-xtra-hint rule.
-hint-rule of Cold Loc is cold-loc-hint rule.
-hint-rule of Deft Fed is deft-fed-hint rule.
-hint-rule of Dirge Grid is dirge-grid-hint rule.
-hint-rule of Dopy Pod is dopy-pod-hint rule.
-hint-rule of Drawl Ward is drawl-ward-hint rule.
-hint-rule of Dumb Mud is dumb-mud-hint rule.
-hint-rule of Emo Dome is emo-dome-hint rule.
-hint-rule of Evaded Ave is evaded-ave-hint rule.
-hint-rule of Flu Gulf is flu-gulf-hint rule.
-hint-rule of Frush Surf is frush-surf-hint rule.
-hint-rule of Fun Enuf is fun-enuf-hint rule.
-hint-rule of Gross Org is gross-org-hint rule.
-hint-rule of Lac Oft Focal is lac-oft-focal-hint rule.
-hint-rule of Lair Trial is lair-trial-hint rule.
-hint-rule of Le Babel is le-babel-hint rule.
-hint-rule of Mont Nom is mont-nom-hint rule.
-hint-rule of Moo Room is moo-room-hint rule.
-hint-rule of Motto Bottom is motto-bottom-hint rule.
-hint-rule of My Gym is my-gym-hint rule.
-hint-rule of Ooze Zoo is ooze-zoo-hint rule.
-hint-rule of Pro Corp is pro-corp-hint rule.
-hint-rule of Red Roses Order is red-roses-order-hint rule.
-hint-rule of Scrap Arcs is scrap-arcs-hint rule.
-hint-rule of Seer Trees is seer-trees-hint rule.
-hint-rule of Sneer Greens is sneer-greens-hint rule.
-hint-rule of Swamp Maws is swamp-maws-hint rule.
-hint-rule of Swept Pews is swept-pews-hint rule.
-hint-rule of Toll Lot is toll-lot-hint rule.
-hint-rule of Trapeze Part is trapeze-part-hint rule.
-hint-rule of Uneven U is uneven-u-hint rule.
-hint-rule of Worn Row is worn-row-hint rule.
-hint-rule of Yack Cay is yack-cay-hint rule.
-hint-rule of Yawn Way is yawn-way-hint rule.
-hint-rule of Yell Alley is yell-alley-hint rule.
-
-section hint-rule-check - not for release
-
-[ * this is something that checks to make sure all rooms have a nontrivial hint rule. Perhaps it should be schlepped to Finished Code. ]
-
-when play begins:
-	repeat with Q running through rooms:
-		if map region of Q is Odd Do, next;
-		if finished-rule of Q is trivially true rule, say "finished-rule of [q] needs change from default.";
-		if hint-rule of Q is dunno-hint rule, say "hint-rule of [q] needs change from default.";
 
 section finished-rule definitions
 
@@ -9225,53 +9099,17 @@ finished-rule of Yell Alley is yell-alley-complete rule.
 
 section Apse Spa rule
 
-this is the apse-spa-hint rule:
-	if puce cup is soddy and Bond Nob is not moot, continue the action;
-	if sage gas is not off-stage, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if Bond Nob is not moot:
-		if player has puce cup, say "You need to USE the puce cup on the dose sod." instead;
-		say "You need something to carry the dose sod with." instead;
-	if maps-explained is true, say "USE MAPS ON BOG." instead;
-	if player has spa maps, say "You need to find someone who can decipher the maps." instead;
-	if player has el doodle, say "You have something that could become maps, but you need to find where to clear it up." instead;
-	say "You need to find or develop maps to get through Go-By Bog." instead;
-
 this is the apse-spa-complete rule:
 	if sage gas is not off-stage, the rule succeeds;
 	the rule fails;
 
 section Art Xtra rule
 
-this is the art-xtra-hint rule:
-	if trap art is not in Art Xtra and stark rats are not moot, continue the action;
-	if soot tattoos are not off-stage, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if trap art is in Art Xtra, say "The trap art will be useful, with a change." instead;
-	if el doodle is in Art Xtra, say "El doodle will be useful, with a change." instead;
-	if straw arts is off-stage, say "You need to make some art for the Revolt Lover." instead;
-	if player has straw arts, say "USE STRAW ARTS ON REVOLT LOVER." instead;
-	say "Eep! There's a lot to do here, and I messed things up." instead;
-
 this is the art-xtra-complete rule:
 	if soot tattoos are moot, the rule succeeds;
 	the rule fails;
 
 section Cold Loc rule
-
-this is the cold-loc-hint rule:
-	if King Nik is moot and puce cup is sappy, continue the action;
-	if King Nik is moot and puffed-up is false, continue the action;
-	if liar grail is moot, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if King Nik is in Cold Loc:
-		if ever-wordrow is false, say "Work Row can still be changed into something else." instead;
-		if player does not have Epoch Cope, say "[one of]You need a[if number of lugged books > 0]nother[end if] book to help King Nik[or]Epoch Cope (EC) from Word Row will help King Nik[stopping]." instead;
-		say "USE EPOCH COPE ON KING NIK." instead;
-	if wash saw is off-stage, say "Get the wash saw from My Gym." instead;
-	if sap-takeable is false, say "USE WASH SAW ON PAST SAP." instead;
-	if player does not have puce cup, say "You need the puce cup from the Emo Dome." instead;
-	say "USE PUCE CUP ON PAST SAP." instead;
 
 this is the cold-loc-complete rule:
 	if King Nik is moot:
@@ -9280,25 +9118,11 @@ this is the cold-loc-complete rule:
 
 section Deft Fed rule
 
-this is the deft-fed-hint rule:
-	if Elan Ale is moot, continue the action;
-	if Bond Nob is not moot and yob attaboy is moot, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if yob attaboy is not moot, say "USE YOB ATTABOY ON SNIFFINS." instead;
-	say "USE ELAN ALE ON SNIFFINS." instead;
-
 this is the deft-fed-complete rule:
 	if Elan Ale is moot and Nat's Tan is had-or-done, the rule succeeds;
 	the rule fails;
 
 section Dirge Grid rule
-
-this is the dirge-grid-hint rule:
-	if player has the X-ITE TIX, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if Verses Rev is in Dirge Grid, say "[one of]You need to dispose of the Verses Rev[or]USE TABOO BAT ON VERSES REV[stopping]." instead;
-	if Knife Fink is in Dirge Grid, say "[one of]You need to dispose of the Knife Fink[or]USE ME GEM ON KNIFE FINK[stopping]." instead;
-	say "[one of]You need to dispose of the Diktat Kid, but you can't attack the Kid directly[or]USE YARD RAY ON REDIVIDER[stopping]." instead;
 
 this is the dirge-grid-complete rule:
 	if player has X-ITE TIX, continue the action;
@@ -9306,29 +9130,11 @@ this is the dirge-grid-complete rule:
 
 section Dopy Pod rule
 
-this is the dopy-pod-hint rule:
-	if cassettes sac is moot and pill lip is moot, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if demo med is in Dopy Pod, say "Take the demo med." instead;
-	if cave vac is off-stage, say "You need to come back once you have something that can clean the Dopy Pod." instead;
-	if Dirt Rid is off-stage, say "You need to come back once you have converted the cave vac to something more powerful." instead;
-	say "USE CAVE VAC ON CASSETTES SAC." instead;
-
 this is the dopy-pod-complete rule:
 	if cassettes sac is moot and pill lip is moot, the rule succeeds;
 	the rule fails;
 
 section Drawl Ward rule
-
-this is the drawl-ward-hint rule:
-	if Bond Nob is moot, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if puce cup is not soddy, say "[one of]You have the puce cup, but it needs to be filled with something other than the past sap/purist sirup that got you by the Liar Grail.[or]You need something healing.[or]If you navigated the Apse Spa, you'll see what's there.[or]Once you have the dose sod from the Apse Spa, USE PUCE CUP ON [psu].[stopping]" instead;
-	say "USE PUCE CUP ON [psu]." instead;
-
-to say psu:
-	let X be the printed name of Bond Nob;
-	say "[X in upper case]";
 
 this is the drawl-ward-complete rule:
 	if Bond Nob is moot, the rule succeeds;
@@ -9336,38 +9142,11 @@ this is the drawl-ward-complete rule:
 
 section Dumb Mud rule
 
-this is the dumb-mud-hint rule:
-	if lie veil is moot and turf rut is moot, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if Moo Room is unvisited, say "There's a part of southeast Grebeberg you haven't explored yet[if Ooze Zoo is visited and sleep eels are in Ooze Zoo]. You need to get past the sleep eels[end if]." instead;
-	if gnu dung is in Dumb Mud, say "[one of]You need a way to get rid of the gnu dung so you can go west.[or][if player does not have poo coop]The poo coop in the Moo Room will help you[else]USE POO COOP ON GNU DUNG[end if].[stopping]" instead;
-	if turf rut is in Dumb Mud, say "[one of]You need a way to fill up the turf rut.[or]You'd love to get rid of the poo coop.[or]USE POO COOP ON TURF RUT.[stopping]" instead;
-	say "[one of]You need something to cut the lie veil[or][if player has exam axe]USE EXAM AXE ON LIE VEIL[else]You will need an item you don't have yet for the Lie Veil[end if][stopping]." instead;
-
 this is the dumb-mud-complete rule:
 	if lie veil is moot and turf rut is moot, the rule succeeds;
 	the rule fails;
 
 section Emo Dome rule
-
-this is the emo-dome-hint rule:
-	if player has Bros' Orb:
-		if player has state tats, continue the action;
-	else:
-		if puce cup is not in Emo Dome and pulled-up is true, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if pulled-up is false, say "[one of]You managed to PUFF UP with the spur ups, but it looks like they have one more use[or]PULL UP[stopping]." instead;
-	if puce cup is in Emo Dome, say "Take the puce cup." instead; [move Emo Dome just before Red Roses Order??]
-	if player has state tats and player does not have Bros' Orb, say "You have ID, but you need an item that makes you feel brave enough. [if Le Babel is visited]The Bros['] Orb[else]It's in a place you haven't visitef yet[end if]." instead;
-	if id-pieces is 0, say "You need to get past the DIFF-ID by combining two items to create identification. They are found elsewhere." instead;
-	if id-pieces is 1, say "The [if player has gate tag]gate tag[else]soot tattoos[end if] will make up part of the state tats you need to pass the DIFF-ID." instead;
-	if id-pieces is 2, say "USE SOOT TATTOOS ON GATE TAG." instead;
-
-to decide which number is id-pieces:
-	let temp be 0;
-	if player has soot tattoos, increment temp;
-	if player has gate tag, increment temp;
-	decide on temp;
 
 this is the emo-dome-complete rule:
 	if state tats are not off-stage, the rule succeeds;
@@ -9375,30 +9154,11 @@ this is the emo-dome-complete rule:
 
 section Evaded Ave rule
 
-this is the evaded-ave-hint rule:
-	if Door Frood is moot and bunk nub is not in Evaded Ave, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if Door Frood is in Evaded Ave:
-		if My Gym is unvisited, say "Visit south of Yawn Way a bit." instead;
-		if Worn Row is unvisited, say "See about west of My Gym." instead;
-		if row-prog is 0, say "Worn Row can become something else. A couple other things, actually." instead;
-		if row-prog is 1, say "You changed [Worn Row] from Worn Row, but it can become something else." instead;
-		if player has TI, say "[one of]You have a book the Door Frood wants[or]USE TO IDIOT ON DOOR FROOD[stopping]." instead;
-		say "[one of]Word Row has some interesting books. Maybe one would please the Door Frood.[or]You need something daring and obnoxious.[or]Get TI from Word Row.[stopping]" instead;
-	say "You just need to take the bunk nub here." instead;
-
 this is the evaded-ave-complete rule:
 	if Door Frood is moot and bunk nub is not in Evaded Ave, the rule succeeds;
 	the rule fails;
 
 section Flu Gulf rule
-
-this is the flu-gulf-hint rule:
-	if scorn rocs are moot, continue the action;
-	if Bond Nob is in Drawl Ward, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if gulf lug is not moot, say "The gulf lug needs medicine. [if Bond Nob is not moot]You haven't opened the location that has it[else if Dopy Pod is not visited]It's west of the Drawl Ward[else if player does not have demo med]It's the demo med[else]USE DEMO MED ON GULF LUG[end if]." instead;
-	say "[one of]The scorn rocs can be repelled by something that would stain them.[or][if player has Nat's Tan]USE TAN ON ROCS[else]You need to get the Nat's Tan from [Deft Fed][end if].[stopping]" instead;
 
 this is the flu-gulf-complete rule:
 	if scorn rocs are moot, the rule succeeds;
@@ -9406,42 +9166,16 @@ this is the flu-gulf-complete rule:
 
 section Frush Surf rule
 
-this is the frush-surf-hint rule:
-	if kayo yak is moot, continue the action;
-	if player has stamp mats and gnu dung is in Dumb Mud, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if stamp mats are in Frush Surf, say "Take the stamp mats." instead;
-	if cap-pace is false, say "You need to make the pact cap a PACE CAP." instead;
-	if player does not have brag garb, say "You need some [if player has stinky knits]cooler [end if]clothes." instead;
-	say "USE TROLL ORT ON BRAG GARB." instead;
-
 this is the frush-surf-complete rule:
 	if kayo yak is moot, the rule succeeds;
 	the rule fails.
 
 section Fun Enuf rule
 
-this is the fun-enuf-hint rule:
-	now more-later is true; [ we will always have more to do here ]
-	if Dirge Grid is not mapped north of Fun Enuf and Flee Elf is moot, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if Flee Elf is in Fun Enuf, say "[one of]The Flee Elf wants you to take the cap. But not take. A synonym. To show you're in tune with this place.[or]PAC* CAP is the way to go.[or]PACK CAP.[stopping]" instead;
-	if epicer recipe is off-stage, say "There's a useful list of items in Yelpley that may help you figure a way north." instead;
-	if tron-got < 4, say "You'll need to come back later to break open the North-Tron." instead;
-	if KAOS Oak is in fun enuf, say "USE any part of the North-Tron on another." instead;
-	if grid-side-items < 3, say "You need three items to defeat the Diktat Kid north and have [grid-side-items in words]." instead;
-	if player has X-ITE TIX, say "USE TIX ON TIX EXIT." instead;
-	continue the action;
+this is the fun-enuf-complete rule: [technically fun enuf is never complete]
+	the rule fails;
 
 section Gross Org rule
-
-this is the gross-org-hint rule:
-	if etage gate is not in Gross Org, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if Ned is not moot, say "DENY NED." instead;
-	if stinky knits are in Gross Org, say "You need to take the stinky knits." instead;
-	if player does not have Ye Key, say "You need to create a key for the Etage Gate." instead;
-	say "USE YE KEY ON ETAGE GATE." instead;
 
 this is the gross-org-complete rule:
 	if stinky knits are not in Gross Org and etage gate is moot, the rule succeeds;
@@ -9449,24 +9183,11 @@ this is the gross-org-complete rule:
 
 section Lac Oft Focal rule
 
-this is the lac-oft-focal-hint rule:
-	if dork rod is moot and elope pole is moot, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if player has dork rod, say "USE DORK ROD ON TAO BOAT." instead;
-	if player has elope pole, say "USE ELOPE POLE ON KAYAK." instead;
-	say "You need to find an item somewhere else to [if dork rod is moot]navigate the kayak[else if elope pole is moot]feel the peace needed to enter the Tao Boat[else]make use of the kayak and Tao Boat[end if]." instead;
-
 this is the lac-oft-focal-complete rule:
 	if dork rod is moot and elope pole is moot, the rule succeeds;
 	the rule fails;
 
 section Lair Trial rule
-
-this is the lair-trial-hint rule:
-	if ergot ogre is moot, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if kayo yak is in Lair Trial, say "YAK OKAY." instead;
-	say "[one of]You need to bring something that can knock the ogre off. You can't do it yourself.[or]Get the kayo yak to chase you.[stopping]" instead;
 
 this is the lair-trial-complete rule:
 	if ergot ogre is moot, the rule succeeds;
@@ -9474,24 +9195,11 @@ this is the lair-trial-complete rule:
 
 section Le Babel rule
 
-this is the le-babel-hint rule:
-	if Bros' Orb is not in Le Babel, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if player does not have stir writs, say "You need something to help you take the Bros['] Orb. It's in [if Motto Bottom is unvisited]a place you haven't visited yet[else]Motto Bottom[end if]." instead;
-	say "All you really have to do here is take the Bros['] Orb." instead;
-
 this is the le-babel-complete rule:
 	if Bros' Orb is not in Le Babel, the rule succeeds;
 	the rule fails;
 
 section Mont Nom rule
-
-this is the mont-nom-hint rule:
-	unless martini tram is off-stage, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if Ian is in Mont Nom, say "NAIL IAN." instead;
-	if number of solid ingredients carried by player > 0 and number of liquid ingredients carried by player > 0, say "[one of]You can make some food here.[or]USE [printed name of random solid ingredient carried by player in upper case] ON [printed name of random liquid ingredient carried by player in upper case].[stopping]" instead;
-	say "You need to find some more food before using it here." instead;
 
 this is the mont-nom-complete rule:
 	if martini tram is not off-stage, the rule succeeds;
@@ -9499,28 +9207,11 @@ this is the mont-nom-complete rule:
 
 section Moo Room rule
 
-this is the moo-room-hint rule:
-	if yahoo hay is moot, continue the action;
-	if art-free-warn is false:
-		if poo coop is not in Moo Room and straw arts are not off-stage, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if poo coop is in Moo Room, say "Take the poo coop." instead;
-	if player has SOME DEMOS, say "USE SOME DEMOS ON YAHOO HAY." instead;
-	if player has enact cane, say "USE ENACT CANE ON YAHOO HAY." instead;
-	say "[one of]You need to use a book from Word Row to make art[or][if player has SOME DEMOS]USE SOME DEMOS ON YAHOO HAY[else]There's a book that doesn't fall from the tract cart until you've taken three others and successfully used two[end if][stopping]." instead;
-
 this is the moo-room-complete rule:
 	if yahoo hay is moot, the rule succeeds;
 	the rule fails; [as a future note, getting rid of the yahoo hay requires the enact cane which you get from the tao boat. So just the one condition is sufficient.]
 
 section Motto Bottom rule
-
-this is the motto-bottom-hint rule:
-	if stir writs are not had-or-done and sage gas is not had-or-done, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if sage gas is not had-or-done, say "You need to get something from Apse Spa." instead;
-	if player has sage gas, say "USE SAGE GAS ON TAME MAT." instead;
-	say "USE SHARP RAHS ON GURU RUG." instead;
 
 this is the motto-bottom-complete rule:
 	if stir writs is moot or player has stir writs, the rule succeeds;
@@ -9528,24 +9219,11 @@ this is the motto-bottom-complete rule:
 
 section My Gym rule
 
-this is the my-gym-hint rule:
-	if Dave is not in My Gym, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if wash saw is in My Gym and Dave is not in My Gym, say "Take the wash saw." instead;
-	say "[one of]Dave is in the way, but he doesn't quite fit in Yelpley.[or]How could you expose him, appropriate to the whole game?[or]You need to sneak by.[or]EVADE DAVE.[stopping]" instead;
-
 this is the my-gym-complete rule:
 	if wash saw is not in My Gym, the rule succeeds;
 	the rule fails;
 
 section Ooze Zoo rule
-
-this is the ooze-zoo-hint rule:
-	if sleep eels are moot, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if bunk nub is in Yell Alley, say "You need to get rid of the sleep eels without harming them. You don't have anything remotely sleep-sounding." instead;
-	if player has bunk nub, say "The bunk nub isn't quite enough to give the sleep eels a good rest. Maybe you can improve it, like you did the trap art." instead;
-	say "USE STOCK COTS ON SLEEP EELS." instead;
 
 this is the ooze-zoo-complete rule:
 	if sleep eels are moot, the rule succeeds;
@@ -9553,38 +9231,17 @@ this is the ooze-zoo-complete rule:
 
 section Pro Corp rule
 
-this is the pro-corp-hint rule:
-	if resale laser is not off-stage and DNA band is not in Pro Corp and gold log is not in Pro Corp, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if DNA band is in Pro Corp, say "Take the DNA band." instead;
-	if gold log is in Pro Corp, say "Take the gold log." instead;
-	if Gorge Grog is off-stage, say "[one of]You need a liquid to pour down the butene tub. A caustic one.[or]Bon Snob has a liquid to pour down the tub.[stopping]" instead;
-	say "USE GORGE GROG ON BUTENE TUB." instead;
-
 this is the pro-corp-complete rule:
 	if resale laser is not off-stage and DNA band is not in Pro Corp and gold log is not in Pro Corp, the rule succeeds;
 	the rule fails;
 
 section Red Roses Order rule
 
-this is the red-roses-order-hint rule:
-	if taboo bat is not off-stage, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if Ms Ism is in Red Roses Order, say "USE BROS ORB ON MIRROR RIM." instead; [okperc]
-	if balsa slab is not had-or-done, say "You need to get the balsa slab from south of Swamp Maws." instead;
-	say "USE BALSA SLAB ON SWORD ROWS." instead;
-
 this is the red-roses-order-complete rule:
 	if not-a-baton is not off-stage, the rule succeeds;
 	the rule fails;
 
 section Scrap Arcs rule
-
-this is the scrap-arcs-hint rule:
-	if Ye Key is not off-stage, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if player does not have stamp mats, say "[one of]You need something from Grebeberg to cut the slate metals.[or][if Frush Surf is visited]Get the stamp mats from Frush Surf.[else]Look south of [trees-zoo].[end if][stopping]";
-	say "USE STAMP MATS ON SLATE METALS." instead;
 
 to say trees-zoo:
 	say "[if Ooze Zoo is visited]Ooze Zoo[else]Seer Trees[end if]"
@@ -9595,27 +9252,11 @@ this is the scrap-arcs-complete rule:
 
 section Seer Trees rule
 
-this is the seer-trees-hint rule:
-	if stark rats are moot, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if player has party trap, say "USE the party trap on the stark rats. Or DROP it, to save keystrokes." instead;
-	if player has trap art, say "The trap art can be made into something bigger. ";
-	if ever-workrow is true, say "[one of]One of the machines in Work Row works.[or]USE TRAP ART ON REIFIER.[stopping]" instead;
-	if Worn Row is visited, say "Worn Row is more than it seems[if ever-wordrow is true]. Yes, even more than Word Row[end if]." instead;
-	say "There's a room you haven't been to, [if My Gym is visited]past My Gym[else if Yawn Way is unvisited]east in Yelpley[else]south of Yawn Way[end if]. Have a look there." instead;
-
 this is the seer-trees-complete rule:
 	if stark rats are moot, the rule succeeds;
 	the rule fails;
 
 section Sneer Greens rule
-
-this is the sneer-greens-hint rule:
-	if Yuge Guy is moot, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if player has rep popper, say "USE REP POPPER ON ME TOTEM." instead;
-	if dork rod is moot, say "You can take the item you need to defeat the Yuge Guy." instead;
-	if Yuge Guy is in Sneer Greens, say "[one of]You need something from elsewhere to defeat the Yuge Guy. AID again to see where[or]What you need to defeat the Yuge Guy is in Yell Alley[stopping]."
 
 this is the sneer-greens-complete rule:
 	if Yuge Guy is moot, the rule succeeds;
@@ -9623,25 +9264,11 @@ this is the sneer-greens-complete rule:
 
 section Swamp Maws rule
 
-this is the swamp-maws-hint rule:
-	unless eroded ore is off-stage, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if player does not have radar, say "There's something important behind the made dam, but you don't have the tool to detect it, yet." instead;
-	say "[one of]There's something behind the made dam. How can you detect it?[or]You have one detection instrument.[or]The radar.[or]USE RADAR ON MADE DAM.[stopping]" instead;
-
 this is the swamp-maws-complete rule:
 	if eroded ore is not off-stage, the rule succeeds;
 	the rule fails;
 
 section Swept Pews rule
-
-this is the swept-pews-hint rule:
-	if liar grail is moot and troll ort is not in Swept Pews, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if troll ort is in Swept Pews, say "Take the troll ort." instead;
-	if player does not have puce cup, say "You need the puce cup to pour something in the liar grail." instead;
-	if puce cup is not sappy, say "[one of]You need to pour something [if puce cup is not empty]else [end if]in the puce cup.[or][if Cold Loc is unvisited]You haven't looked north of Seer Trees[else]Cold Loc has something. The past sap.[end if][stopping]" instead;
-	say "USE PUCE CUP ON LIAR GRAIL." instead;
 
 this is the swept-pews-complete rule:
 	if liar grail is moot and troll ort is not in Swept Pews, the rule succeeds;
@@ -9649,23 +9276,11 @@ this is the swept-pews-complete rule:
 
 section Toll Lot rule
 
-this is the toll-lot-hint rule:
-	if cross orc is moot and UFO tofu is not off-stage, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if cash sac is off-stage, say "[one of]You need to bribe the cross orc with something in Grebeberg.[or]If you help someone in Grebeberg, you will get paid, and you can give that to the cross orc.[or][if Flu Gulf is visited]The cash sac from the Gulf Lug in Flu Gulf works[else]Check north of Cold Loc for someone to help[end if].[stopping]" instead;
-	if cross orc is in Toll Lot, say "USE CASH SAC ON CROSS ORC." instead;
-	say "USE RADAR ON CRAG ARC." instead;
-
 this is the toll-lot-complete rule:
 	if cross orc is moot and UFO tofu is not off-stage, the rule succeeds;
 	the rule fails;
 
 section Trapeze Part rule
-
-this is the trapeze-part-hint rule:
-	unless epicer recipe is off-stage, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	say "[one of]The ten level net needs you to do something to it.[or]TEND NET.[stopping]" instead;
 
 this is the trapeze-part-complete rule:
 	if epicer recipe is not off-stage, the rule succeeds;
@@ -9673,81 +9288,11 @@ this is the trapeze-part-complete rule:
 
 section Uneven U rule
 
-this is the uneven-u-hint rule:
-	if wash saw is moot, continue the action;
-	if maps-explained is true and porch crop is off-stage, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if porch crop is in Uneven U, say "USE WASH SAW ON PORCH CROP." instead;
-	if tent net is off-stage, say "To make the Code Doc happy, there's something [if Trapeze Part is visited]west of Evaded Ave[else] in Trapeze Part[end if] you can get." instead;
-	if player has tent net, say "[one of]If you help the Code Doc, the Code Doc will help you[or]USE TENT NET ON CODE DOC[stopping]." instead;
-	if el doodle is not had-or-done, say "There's something back in [Art Xtra] to pick up." instead;
-	if spa maps are off-stage, say "You can change El Doodle into something the Code Doc can decipher." instead;
-	say "USE SPA MAPS ON CODE DOC." instead;
-
 this is the uneven-u-complete rule:
 	if wash saw is moot, the rule succeeds;
 	the rule fails;
 
 section Worn Row rule
-
-this is the worn-row-hint rule:
-	if test set is moot, continue the action;
-	if row-prog is 2:
-		if Worn Row is wordy and any-books-left and number of lugged books is 0:
-			do nothing;
-		else:
-			consider the got-machine-fodder rule;
-			unless the rule succeeded, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if Psi Wisp is in Worn Row, say "WORN ROW will get rid of the Psi Wisp." instead;
-	if Rob is in Worn Row, say "[one of]Boy, Rob sure likes to hear himself talk. He's too exciting for you. Like Dave, you can get rid of him with the right action[or]BORE ROB[stopping]." instead;
-	if ever-wordrow is false, say "You can change this place to WORD ROW." instead;
-	if ever-workrow is false, say "You can change this place to WORK ROW." instead;
-	if Worn Row is worny, say "You can change Worn Row back to WORK ROW[if any-books-left] or WORD ROW[end if]." instead;
-	if Worn Row is wordy:
-		if any-books-left:
-			repeat with bk running through bkorder:
-				if bk is not moot, say "[if number of necessary books in Worn Row is 1]You should take [bk], since it's the only book left[else]While there's no fixed order for using the books, [bk] is a good choice next[end if]." instead;
-		say "You don't have anything more to do in Word Row. Change it back to Work Row." instead;
-	if rotator is in Worn Row, abide by the find-machine rule;
-	if player does not have murdered rum, say "You will get something useful on defeating the Yuge Guy." instead;
-	if emitted is false, say "Test the yard ray with EMIT NOONTIME." instead;
-	if player has murdered rum, say "USE MURDERED RUM ON YARD RAY." instead;
-	say "USE YARD RAY ON TEST SET." instead;
-
-bkorder is a list of things variable. bkorder is { TI, Epoch Cope, NULL ILLUN, Yob Attaboy }.
-
-to say book-hint:
-	say "[if player carries cur-book]You are carrying a good book to use[else]There's no strict order, but I'd suggest going with [cur-book]"
-
-to decide whether any-books-left:
-	if number of necessary books in Worn Row > 0, yes;
-	no;
-
-to decide which book is cur-book:
-	if Door Frood is not moot, decide on TI;
-	if King Nik is not moot, decide on EPOCH COPE;
-	if cross orc is not moot and gnu dung is moot, decide on NULL ILLUN;
-	if YOB ATTABOY is not moot, decide on YOB ATTABOY;
-	decide on NULL ILLUN;
-
-postmachines is a list of things variable. postmachines is { brag garb, dork rod, ME gem, stock cots, cave vac, ore zero, party trap, DNA hand, taboo bat }.
-
-premachines is a list of things variable. premachines is { bunk nub, DNA band, Dirt Rid, eroded ore, gold log, not-a-baton, stinky knits, trap art, you buoy }.
-
-this is the got-machine-fodder rule:
-	repeat with Q running through premachines:
-		if player has Q, the rule succeeds;
-	the rule fails;
-
-this is the find-machine rule:
-	repeat with Q running through premachines:
-		if player has Q:
-			repeat through table of goodacts:
-				if there is a use1 entry and use1 entry is Q:
-					say "USE [printed name of use1 entry in upper case] ON [printed name of use2 entry in upper case].";
-					the rule succeeds;
-	say "You don't have anything you could use on a machine at the moment." instead;
 
 this is the worn-row-complete rule:
 	if test set is moot, the rule succeeds;
@@ -9755,44 +9300,17 @@ this is the worn-row-complete rule:
 
 section Yack Cay rule
 
-this is the yack-cay-hint rule:
-	unless player has el doodle or NULL ILLUN is not moot or moor broom is not moot, continue the action;
-	if search-hint-room is true, the rule succeeds;
-	if ever-wordrow is false, say "You may want to change Work Row to something else, first." instead;
-	if player has el doodle, say "USE EL DOODLE ON EDITS TIDE." instead;
-	if NULL ILLUN is not moot, say "[if player has Known Wonk]USE NULL ILLUN ON KNOWN WONK[else][one of]You need to give the Known Wonk a book[or]Get NULL ILLUN from back in Word Row[stopping][end if]." instead;
-	if player does not have moor broom, say "The enact cane can be combined to better purpose." instead;
-	say "USE MOOR BROOM ON TRU YURT." instead;
-
 this is the yack-cay-complete rule:
 	if moor broom is moot, the rule succeeds;
 	the rule fails;
 
 section Yawn Way rule
 
-this is the yawn-way-hint rule:
-	if puffed-up is true, continue the action; [this is a trivial rule, but in case I decide to add something, it may be a help.]
-	if search-hint-room is true, the rule succeeds;
-	if Seer Trees is unvisited, say "You need to visit west of Fun Enuf." instead;
-	if stark rats are not moot, say "You need to deal with the stark rats to see more of Grebeberg to help you go east." instead;
-	if player does not have Spur Ups, say "You may need to visit Cold Loc to receive an item to help you go east." instead;
-	say "[one of]The spur ups can make you feel, if not go, UP. But how should you get more UP?[or]PUFF UP.[stopping]" instead;
-
 this is the yawn-way-complete rule:
-	if puffed-up is true, the rule succeeds; [this is a trivial rule, but in case I decide to add something, it may be a help.]
+	if puffed-up is true, the rule succeeds;
 	the rule fails;
 
 section Yell Alley rule
-
-this is the yell-alley-hint rule:
-	if mayo yam is had-or-done and pity tip is moot and psi wisp is not moot and mr arm is not moot, continue the action; [?? this is not complete! Mr Arm needs to be clued]
-	if search-hint-room is true, the rule succeeds;
-	if mayo yam is in Yell Alley, say "TAKE MAYO YAM." instead;
-	if pity tip is not moot, say "USE PITY TIP ON EYE (or NAVY VAN)." instead;
-	if DNA band is not had-or-done, say "You may need to look in [if Pro Corp is visited]the northeast room[else][Pro Corp][end if] to get started here.";
-	if DNA hand is not had-or-done, say "You need to do something to the DNA band in Work Row." instead;
-	if player does not have Mr Arm, say "You need to combine the DNA hand with [if roto motor is off-stage]an item you don't have yet[else]the roto motor[end if]." instead;
-	say "USE MR ARM ON TNT." instead;
 
 this is the yell-alley-complete rule:
 	unless TNT is had-or-done, the rule fails;
@@ -10491,25 +10009,6 @@ carry out dving:
 	the rule succeeds;
 
 [below can be commented out.]
-
-chapter ahing
-
-ahing is an action out of world.
-
-understand the command "ah" as something new.
-
-understand "ah" as ahing.
-
-carry out ahing:
-	say "Order list: [L].";
-	repeat with Q running through L:
-		if Q is in Odd Do, next;
-		if Q is unvisited, next;
-		consider the hint-rule of Q;
-		if the rule succeeded:
-			consider the finished-rule of Q;
-			say "Q is done[unless the rule succeeded], but not[end if] for good.";
-	the rule succeeds;
 
 chapter finording
 
