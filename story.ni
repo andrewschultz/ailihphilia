@@ -1051,6 +1051,7 @@ to decide whether the action is procedural: [aip]
 	if reading, yes;
 	if os2ing, yes;
 	if oldschooling, yes;
+	if itmhinting, yes;
 	if attacking, yes;
 	if saying yes, yes;
 	if saying no, yes;
@@ -2906,7 +2907,7 @@ section rev rules [xxrr]
 
 this is the rev-bore-Rob rule:
 	if Rob is moot, the rule fails;
-	if in-sos is true:
+	if in-aid is true:
 		if Worn Row is unvisited:
 			say "You should visit [Worn Row] west of [hn of My Gym].";
 		else:
@@ -2918,7 +2919,7 @@ this is the rev-bore-Rob rule:
 
 this is the rev-create-tron rule:
 	if KAOS Oak is moot, the rule fails;
-	if in-sos is true:
+	if in-aid is true:
 		if tron-got is not 4, the rule fails;
 		say "Use any piece of the North-Tron (or the epicer recipe) with any other piece, or the recipe, to break through the [kaoscaps].";
 		the rule succeeds;
@@ -2927,7 +2928,7 @@ this is the rev-create-tron rule:
 
 this is the rev-deny-Ned rule:
 	if Ned is moot, the rule fails;
-	if in-sos is true:
+	if in-aid is true:
 		if player is in Gross Org:
 			say "[one of]Ned wants a fight! But you're not equipped for fighting[or]You need to do something to Ned.[or]DENT NED is too violent. Grind him down with passive resistance[or]DENY NED[stopping].";
 		else if Gross Org is unvisited:
@@ -2941,7 +2942,7 @@ this is the rev-deny-Ned rule:
 
 this is the rev-emit-noontime rule:
 	if emitted is true, the rule fails;
-	if in-sos is true:
+	if in-aid is true:
 		if emitted is false and player has yard ray and murdered rum is moot:
 			say "[one of]The Yard Ray needs to emit something[or]An eight tletter word.[or]The last four are ****TIME.[or]Something bright.[or]EMIT NOONTIME to practice with the Yard Ray.[stopping]";
 			the rule succeeds;
@@ -2952,7 +2953,7 @@ this is the rev-emit-noontime rule:
 
 this is the rev-evade-Dave rule:
 	if Dave is moot, the rule fails;
-	if in-sos is true:
+	if in-aid is true:
 		if My Gym is unvisited:
 			say "Try looking around [if Yawn Way is unvisited]east and south of [hn of fun enuf][else]south of [hn of Yawn Way][end if].";
 		else if player is not in My Gym:
@@ -2968,7 +2969,7 @@ this is the rev-evade-Dave rule:
 
 this is the rev-first-food-combo rule:
 	if number of moot ingredients >= 2, the rule fails;
-	if in-sos is true:
+	if in-aid is true:
 		if number of carried ingredients is 2:
 			say "You can mix [random carried liquid ingredient] with [random carried solid ingredient] by USEing one on the other.";
 		else: [you must have the gift fig by now]
@@ -2981,7 +2982,7 @@ this is the rev-first-food-combo rule:
 
 this is the rev-get-bros orb rule:
 	if Bros' Orb is not in Le Babel, the rule fails;
-	if in-sos is true:
+	if in-aid is true:
 		say "You can just [if player is not in Le Babel]go to Le Babel and [end if]take the Bros['] Orb.";
 		the rule succeeds;
 	if say-unless-speed, say "You get the Bros['] Orb from Le Babel.";
@@ -2991,7 +2992,7 @@ this is the rev-get-bros orb rule:
 
 this is the rev-nail-Ian rule:
 	if Ian is moot, the rule fails;
-	if in-sos is true:
+	if in-aid is true:
 		say "[one of]Ian is a lot like Rob, according to the pact cap.[or]What action can you take against Ian to bring him down a peg?[or]He seems to be hiding something.[or]NAI* IAN -- there are a few wrong ones.[or]NAIL IAN to remove him.[stopping]";
 		the rule succeeds;
 	if say-unless-speed, say "You NAIL IAN to cast him from Mont Nom.";
@@ -2999,7 +3000,7 @@ this is the rev-nail-Ian rule:
 	the rule succeeds;
 
 this is the rev-pace-cap rule:
-	if in-sos is true:
+	if in-aid is true:
 		unless tried-yak, the rule fails;
 		if cap-pace is true, the rule fails;
 		if cap-ever-pace is true:
@@ -3022,7 +3023,7 @@ this is the rev-pace-cap rule:
 
 this is the rev-pack-cap rule:
 	if flee elf is moot, the rule fails;
-	if in-sos is true:
+	if in-aid is true:
 		say "[one of]You need to do something with the Pact Cap[or]The palindromic nature of the game suggesra PA CAP, PAC CAP, or PAC* CAP[or]PACK CAP to please the flee elf[stopping].";
 		the rule succeeds;
 	else:
@@ -3032,7 +3033,7 @@ this is the rev-pack-cap rule:
 
 this is the rev-puff-up rule:
 	if puffed-up is true, the rule fails;
-	if in-sos is true:
+	if in-aid is true:
 		if Dave is not moot, the rule fails;
 		if Worn Row is unvisited:
 			say "You need to visit west of [hn of My Gym].";
@@ -3051,7 +3052,7 @@ this is the rev-puff-up rule:
 
 this is the rev-pull-up rule:
 	if pulled-up is true, the rule fails;
-	if in-sos is true:
+	if in-aid is true:
 		say "[one of]Now you can stand it in [hn-the of Emo Dome], it would be nice to stop[or]You can run past your fears but not stay still to face them[or]The Spur Ups have one more use[or]PU* UP, again, gives nothing[or]PU** UP again has something worthwhile[or]You can PULL UP in Emo Dome to stay and bear things[stopping].";
 		the rule succeeds;
 	if say-unless-speed, say "You PULL UP in the Emo Dome.";
@@ -3063,7 +3064,7 @@ this is the rev-second-food-combo rule:
 	if number of moot ingredients is 4, the rule fails;
 	let si be random not moot solid ingredient;
 	let mi be random not moot liquid ingredient;
-	if in-sos is true:
+	if in-aid is true:
 		if number of carried ingredients is 2:
 			say "Mix the [si] and [mi] together [hn-in of Mont Nom], just like you did the [list of moot ingredients].";
 		else if pity tip is not moot:
@@ -3085,7 +3086,7 @@ this is the rev-second-food-combo rule:
 
 this is the rev-stand-nats rule:
 	if Nat's Tan is moot or player carries Nat's Tan or Deft Fed is unvisited, the rule fails; [?? capitalize Nat's?]
-	if in-sos is true:
+	if in-aid is true:
 		say "[one of]The Nat's Tan [hn-in of Deft Fed] will be useful. You need to take it[or]TAKE NAT'S doesn't work[or]***** NAT'S, maybe[or]STAND NAT'S[stopping].";
 		the rule succeeds;
 	if say-unless-speed, say "You STAND NAT'S in [Deft Fed].";
@@ -3094,7 +3095,7 @@ this is the rev-stand-nats rule:
 
 this is the rev-tend-net rule:
 	if epicer recipe is not off-stage, the rule fails;
-	if in-sos is true:
+	if in-aid is true:
 		if Door Frood is in Evaded Ave, the rule fails;
 		say "[one of]You'll want to deal with the ten-level net [hn-in of Trapeze Part].[or]What can you do with the net to check it's okay?[or]TEN* NET.[or]TEND NET.[stopping]";
 		the rule succeeds;
@@ -3104,7 +3105,7 @@ this is the rev-tend-net rule:
 
 this is the rev-word-row rule:
 	if ever-wordrow is true, the rule fails;
-	if in-sos is true:
+	if in-aid is true:
 		say "[one of][Worn Row] can be changed into something else[or]You may need to do a bit of guesswork what to change it into, but there are only twenty-odd possibilities[or][Worn Row] can become WORD ROW[stopping].";
 		the rule succeeds;
 	if say-unless-speed, say "You transform [Worn Row] into WORD ROW.";
@@ -3113,7 +3114,7 @@ this is the rev-word-row rule:
 
 this is the rev-work-row rule:
 	if ever-workrow is true, the rule fails;
-	if in-sos is true:
+	if in-aid is true:
 		say "[one of][Worn Row] can be changed into something else[or]You may need to do a bit of guesswork what to change it into, but there are only twenty-odd possibilities[or][Worn Row] can become WORK ROW[if number of carried books is 0], though you may wish to take a book from the tract cart first[end if][stopping].";
 		the rule succeeds;
 	if say-unless-speed, say "You transform [Worn Row] into WORK ROW.";
@@ -3122,7 +3123,7 @@ this is the rev-work-row rule:
 
 this is the rev-worn-row rule:
 	if psi wisp is moot, the rule fails;
-	if in-sos is true:
+	if in-aid is true:
 		if Pro Corp is unvisited, the rule fails;
 		say "You need to lure the Psi Wisp back to [Worn Row], then change it back to Worn Row.";
 		the rule succeeds;
@@ -3133,7 +3134,7 @@ this is the rev-worn-row rule:
 
 this is the rev-yak-okay rule:
 	if yak is moot, the rule fails;
-	if in-sos is true:
+	if in-aid is true:
 		say "[one of]You need to give the kayo yak an order to knock off the Ergot Ogre[or]YAK OKAY (no comma) does the trick[stopping].";
 		the rule succeeds;
 	if say-unless-speed, say "You say YAK OKAY to dispose of the Ergot Ogre.";
@@ -3145,7 +3146,7 @@ this is the rev-yak-okay rule:
 section pre-use rules [xxpre]
 
 this is the pre-ale-on-Sniffins rule:
-	if in-sos is true:
+	if in-aid is true:
 		if Elan Ale is moot, the rule fails;
 		if player does not have yob attaboy and yob attaboy is not moot:
 			say "[one of]Sniffins[hn-in-blank of Deft Fed] needs some help[or]Sniffins doesn't need financial help but motivational help. A confidence booster[or]Perhaps a book from Word Row could help Sniffins[or]TAKE YOB ATTABOY [hn-in of Worn Row][stopping].";
@@ -3161,32 +3162,32 @@ this is the pre-ale-on-Sniffins rule:
 	the rule fails;
 
 this is the pre-arm-on-mob rule:
-	if in-sos is true:
+	if in-aid is true:
 		if TNT is moot or player does not carry mr arm, the rule fails;
 		say "[one of]If you examine Mr. Arm, he is pointing somewhere[or]If you go to several different locations, Mr. Arm points at different angles[or]Find rooms where Mr. Arm points west or north or east or south, then draw lines to find where they intersect[or]Mr. Arm is pointing to Yell Alley[or]USE MR ARM ON TNT in Yell Alley[stopping].";
 	the rule succeeds;
 
 this is the pre-arts-on-lover rule:
-	if in-sos is true:
+	if in-aid is true:
 		if player does not have straw arts, the rule fails;
 		say "[one of]You don't have a use for the straw arts, but someone else does[or]The Revolt Lover could use more art[or]USE STRAW ARTS ON REVOLT LOVER[stopping].";
 	the rule succeeds;
 
 this is the pre-axe-on-veil rule:
-	if in-sos is true:
+	if in-aid is true:
 		if exam axe is off-stage, the rule fails;
 		say "[one of]You need something that can really cut through the lie veil[or]USE EXAM AXE ON LIE VEIL[stopping].";
 		the rule succeeds;
 	the rule succeeds;
 
 this is the pre-bat-on-rev rule:
-	if in-sos is true:
+	if in-aid is true:
 		if taboo bat is moot or player is not in Dirge Grid, the rule fails;
 		say "[one of]The Verses Rev is very orthodox and opposed to unusual things. Maybe you can shock the Rev[or]You have something outlandish[or]USE TABOO BAT ON VERSES REV[stopping].";
 	the rule succeeds;
 
 this is the pre-broom-on-yurt rule:
-	if in-sos is true:
+	if in-aid is true:
 		if moor broom is moot, the rule fails;
 		if NULL ILLUN is not moot, the rule fails;
 		if player has moor broom:
@@ -3198,19 +3199,19 @@ this is the pre-broom-on-yurt rule:
 	the rule succeeds;
 
 this is the pre-cane-on-hay rule:
-	if in-sos is true:
+	if in-aid is true:
 		if enact cane is moot or enact cane is off-stage, the rule fails;
 		say "[one of]There's still a bit more you can do with the yahoo hay. Only coarse bits are left.[or]Did you notice something that might have some prongs missing?[or]The enact cane may have been a KARE-RAK(E) once.[or]USE ENACT CANE ON YAHOO HAY.[stopping]";
 	the rule succeeds;
 
 this is the pre-coop-on-dung rule:
-	if in-sos is true:
+	if in-aid is true:
 		if dung is moot, the rule fails;
 		say "[one of]You need some implement to get rid of the gnu dung[or]There is something that is specifically meant to take care of dung-ish stuff[or]The poo coop [hn-in of Moo Room] can handle the gnu dung[or]USE POO COOP ON GNU DUNG[stopping].";
 	the rule succeeds;
 
 this is the pre-coop-on-rut rule:
-	if in-sos is true:
+	if in-aid is true:
 		if poo coop is moot, the rule fails;
 		if gnu dung is not moot:
 			say "[one of]Since you've got the coop, what you need to fill in the rut is right nearby[or]You need to use the coop on the dung first[stopping].";
@@ -3222,7 +3223,7 @@ this is the pre-coop-on-rut rule:
 	the rule fails;
 
 this is the pre-cope-on-nik rule:
-	if in-sos is true:
+	if in-aid is true:
 		if epoch cope is moot, the rule fails;
 		if ever-wordrow is false:
 			say "[one of]King Nik needs a book[or]There's (sort of) a location you gaven't found yet that holds books[or][Worn Row] can become one more thing. Go back there to check it out[stopping].";
@@ -3233,7 +3234,7 @@ this is the pre-cope-on-nik rule:
 	the rule succeeds;
 
 this is the pre-cots-on-eels rule:
-	if in-sos is true:
+	if in-aid is true:
 		if stock cots are moot, the rule fails;
 		if player has bunk nub:
 			say "You'll want to use the reviver on the bunk nub.";
@@ -3244,7 +3245,7 @@ this is the pre-cots-on-eels rule:
 	the rule succeeds;
 
 this is the pre-cup-on-grail rule:
-	if in-sos is true:
+	if in-aid is true:
 		if player does not have puce cup, the rule fails;
 		if liar grail is moot, the rule fails;
 		if puce cup is soddy:
@@ -3260,7 +3261,7 @@ this is the pre-cup-on-grail rule:
 	the rule fails;
 
 this is the pre-cup-on-nob rule:
-	if in-sos is true:
+	if in-aid is true:
 		if puce cup is moot, the rule fails;
 		if puce cup is not soddy:
 			say "You need to put the dose sod in the puce cup.";
@@ -3274,50 +3275,50 @@ this is the pre-cup-on-nob rule:
 
 this is the pre-cup-on-sap rule:
 	if liar grail is moot:
-		if revving-over is false and in-sos is false, say "You doubt you will need the past sap again, since it got you by the Liar Grail[if puce cup is soddy]. In fact, the sod seems like a good thing to have[else]. But maybe something else[end if].";
+		if revving-over is false and in-aid is false, say "You doubt you will need the past sap again, since it got you by the Liar Grail[if puce cup is soddy]. In fact, the sod seems like a good thing to have[else]. But maybe something else[end if].";
 		the rule fails;
 	if puce cup is sappy:
-		if revving-over is false and in-sos is false, say "The puce cup already contains past sap.";
+		if revving-over is false and in-aid is false, say "The puce cup already contains past sap.";
 		the rule fails;
 	if sap-takeable is false:
-		if in-sos is true:
+		if in-aid is true:
 			say "[one of]You need to cut the sap off[or]USE SAW ON SAP [in-not-here of Cold Loc][stopping].";
 			the rule succeeds;
 		if revving-over is false, say "The sap is stuck to the rift fir. You can't just take it with your hands.";
 		now sap-with-hands is true;
 		the rule fails;
-	if in-sos is true:
+	if in-aid is true:
 		if liar grail is moot, the rule fails;
 		if puce cup is sappy, the rule fails;
 		say "You need to USE the sap on the puce cup.";
 		the rule succeeds;
 	later-wipe past sap;
 	if puce cup is soddy:
-		if revving-over is false and in-sos is false:
+		if revving-over is false and in-aid is false:
 			say "The puce cup already contains dose sod. Apse Spa had enough, you could get more sod later. Pour it out to get the past sap?";
 			if the player yes-consents:
 				say "The sod dissolves into the ground.";
 				the rule succeeds;
 			say "Maybe later, then.";
-		if in-sos is true:
+		if in-aid is true:
 			say "You may wish to replace the dose sod with past sap.";
 			the rule succeeds;
 		the rule fails;
 	the rule succeeds;
 
 this is the pre-cup-on-sod rule:
-	if in-sos is true:
+	if in-aid is true:
 		if puce cup is moot, the rule fails;
 		if liar grail is not moot, the rule fails;
 		if puce cup is soddy, the rule fails;
 		say "[one of]One thing besides the past sap can go in the puce cup[or]You will find something else [hn-in of Apse Spa] that you can't take bare-handed[or]USE DOSE SOD ON PUCE CUP[stopping].";
 		the rule succeeds;
 	if puce cup is soddy:
-		if revving-over is false and in-sos is false, say "The puce cup already contains dose sod.";
+		if revving-over is false and in-aid is false, say "The puce cup already contains dose sod.";
 		the rule fails;
 	later-wipe dose sod;
 	if puce cup is sappy:
-		if in-sos is true:
+		if in-aid is true:
 			say "You need to replace the past sap with dose sod.";
 			the rule succeeds;
 		say "The puce cup already contains past sap. Pour it out to get the dose sod?";
@@ -3328,33 +3329,33 @@ this is the pre-cup-on-sod rule:
 	the rule succeeds;
 
 this is the pre-demos-on-hay rule:
-	if in-sos is true:
+	if in-aid is true:
 		if player does not have SOME DEMOS, the rule fails;
 		say "[one of]SOME DEMOS talks about making art with contradictory items[or]There is one item that is contradictory enough for SOME DEMOS to apply[or]The item SOME DEMOS can be used with is both exciting and boring[or]USE SOME DEMOS ON YAHOO HAY[in-not-here of Moo Room][stopping].";
 	the rule succeeds;
 
 this is the pre-doodle-on-tide rule:
-	if in-sos is true:
+	if in-aid is true:
 		if player does not have el doodle, the rule fails;
 		say "[one of]The doodle needs modification, but it doesn't seem like anyone can do it[or]The machines in Work Row don't help with the doodle, either[or]Look carefully for scenery which could change something[or][if Yack Cay is unvisited]You haven't yet been to the place where you can chance the doodle[else]USE DOODLE ON TIDE in Yack Cay[end if][stopping].";
 	the rule succeeds;
 
 this is the pre-gas-on-mat rule:
-	if in-sos is true:
+	if in-aid is true:
 		if sage gas is moot, the rule fails;
 		say "[one of]The tame mat needs a stronger, smarter message[or]You may have something that can make things smarter[or]USE SAGE GAS ON TAME MAT[stopping].";
 		the rule succeeds;
 	the rule succeeds;
 
 this is the pre-gem-on-fink rule:
-	if in-sos is true:
+	if in-aid is true:
 		if ME gem is moot or player is not in Dirge Grid, the rule fails;
 		say "[one of]The Knife Fink is pretty mercenary. Maybe you can use bribery[or]You have something valuable that even other bad guys didn't like, but the Knife Fink might[or]USE ME GEM ON KNIFE FINK[stopping].";
 		the rule succeeds;
 	the rule succeeds;
 
 this is the pre-grog-on-tub rule:
-	if in-sos is true:
+	if in-aid is true:
 		if butene tub is moot, the rule fails;
 		if psi wisp is not moot:
 			say "You need to get rid of the psi wisp before tackling the butene tub.";
@@ -3366,7 +3367,7 @@ this is the pre-grog-on-tub rule:
 	the rule succeeds;
 
 this is the pre-illun-on-wonk rule:
-	if in-sos is true:
+	if in-aid is true:
 		if wonk is moot, the rule fails;
 		if player has NULL ILLUN:
 			say "[one of]You have what the [itm-place of Known Wonk] needs, to feel clearer[or]USE NULL ILLUN ON KNOWN WONK[in-not-here of Yack Cay][stopping].";
@@ -3375,7 +3376,7 @@ this is the pre-illun-on-wonk rule:
 	the rule succeeds;
 
 this is the pre-key-on-gate rule:
-	if in-sos is true:
+	if in-aid is true:
 		if Ye Key is moot, the rule fails;
 		if player has Ye Key:
 			say "[one of]You have the item you need to open the etage gate[or]USE YE KEY ON ETAGE GATE[stopping].";
@@ -3388,7 +3389,7 @@ this is the pre-key-on-gate rule:
 	the rule fails;
 
 this is the pre-maps-on-bog rule:
-	if in-sos is true:
+	if in-aid is true:
 		if spa maps are moot, the rule fails;
 		if maps-explained is false:
 			if uneven u is unvisited:
@@ -3404,7 +3405,7 @@ this is the pre-maps-on-bog rule:
 	the rule fails;
 
 this is the pre-maps-on-doc rule:
-	if in-sos is true:
+	if in-aid is true:
 		if maps-explained is true, the rule fails;
 		if uneven u is unvisited:
 			say "You haven't found anyone who could help you with the maps yet.";
@@ -3421,7 +3422,7 @@ this is the pre-maps-on-doc rule:
 	the rule succeeds;
 
 this is the pre-motor-on-hand rule:
-	if in-sos is true:
+	if in-aid is true:
 		if player does not have roto motor, the rule fails;
 		if player has DNA band:
 			say "Look for ways to improve the DNA band.";
@@ -3432,13 +3433,13 @@ this is the pre-motor-on-hand rule:
 	the rule succeeds;
 
 this is the pre-net-on-doc rule:
-	if in-sos is true:
+	if in-aid is true:
 		if player does not have tent net, the rule fails;
 		say "[one of]The Code Doc needs a few more materials to build Uneven U[or]You have something that could help the Code Doc[or]You don't have much you could do with a tent net[or]USE TENT NET ON CODE DOC[in-not-here of uneven u][stopping].";
 	the rule succeeds;
 
 this is the pre-nub-on-reviver rule:
-	if in-sos is true:
+	if in-aid is true:
 		if bunk nub is moot, the rule fails;
 		if bunk nub is in Evaded Ave:
 			say "You'll need to find a way to get the bunk nub from the Door Frood in Evaded Ave.";
@@ -3447,20 +3448,20 @@ this is the pre-nub-on-reviver rule:
 	the rule succeeds;
 
 this is the pre-orb-on-rim rule:
-	if in-sos is true:
+	if in-aid is true:
 		if player is not in Red Roses Order or Ms Ism is not in Red Roses Order, the rule fails;
 		say "[one of]The Bros['] Orb got you in, and it seems extra powerful and reflectivee, but it's not clear what to use it on[or]Trial and error can tell what to use the Orb on, but you may notice one thing is good at showing your faults[or]The mirror rim shows how silly your cap looks on you[or]USE BROS ORB ON MIRROR RIM to shatter the mirror[stopping].";
 	the rule succeeds;
 
 this is the pre-ort-on-garb rule:
-	if in-sos is true:
+	if in-aid is true:
 		if troll ort is not quicknear, the rule fails;
 		if brag garb is not carried and brag garb is not worn, the rule fails;
 		say "[one of]The brag garb is a bit too strong-smelling. You may have noticed it causes a weird reaction from the kayo yak.[or]Perhaps it smells differently.[or]Do you have any other item that smells funny? More appealing?[or]The troll ort is apparently PINT-A-CATNIP.[or]USE TROLL ORT ON BRAG GARB.[stopping]";
 	the rule succeeds;
 
 this is the pre-pole-on-kayak rule:
-	if in-sos is true:
+	if in-aid is true:
 		if kayak is moot, the rule fails;
 		if elope pole is off-stage:
 			say "There's something in Yelpley that could steer the kayak.";
@@ -3469,7 +3470,7 @@ this is the pre-pole-on-kayak rule:
 	the rule succeeds;
 
 this is the pre-popper-on-totem rule:
-	if in-sos is true:
+	if in-aid is true:
 		if me totem is moot, the rule fails;
 		if rep popper is in Yell Alley:
 			say "You don't yet have the item you need to defeat the Yuge Guy.";
@@ -3478,7 +3479,7 @@ this is the pre-popper-on-totem rule:
 	the rule succeeds;
 
 this is the pre-radar-on-arc rule:
-	if in-sos is true:
+	if in-aid is true:
 		if UFO tofu is not off-stage, the rule fails;
 		if cross orc is not moot:
 			say "You need to bribe the cross orc to leave [hn of Toll Lot].";
@@ -3496,7 +3497,7 @@ this is the pre-radar-on-arc rule:
 	the rule fails;
 
 this is the pre-radar-on-dam rule:
-	if in-sos is true:
+	if in-aid is true:
 		if eroded ore is off-stage:
 			if player does not have radar:
 				say "[one of]You'll need something to scan the made dam[or]The something to scan the made dam is back in Yelpley[or][if Dopy Pod is visited]The item you want is under the cassettes sac[else]You haven't visited the place in Yelpley to get the item to scan the dam yet[end if][stopping].";
@@ -3510,13 +3511,13 @@ this is the pre-radar-on-dam rule:
 	the rule succeeds;
 
 this is the pre-rahs-on-rug rule:
-	if in-sos is true:
+	if in-aid is true:
 		if sharp rahs are moot, the rule fails;
 		say "[one of]The guru rug is now a bit too esoteric compared to the tame mat. Maybe some other odd item, a bit more down-to-earth, could change that[or]Something that mixes emotion with the guru rug could help[or]USE SHARP RAHS ON GURU RUG[stopping].";
 	the rule succeeds;
 
 this is the pre-ray-on-redivider rule:
-	if in-sos is true:
+	if in-aid is true:
 		if yard ray is moot or player is not in Dirge Grid, the rule fails;
 		say "[one of]You've got one shot with the Yard Ray, but what to use it on?[or]Killing the Diktat Kid won't stop the other machines from working.[or]The purely violent machines aren't critical, either.[or]USE YARD RAY ON REDIVIDER.[stopping]";
 	if Knife Fink is in Dirge Grid or Verses Rev is in Dirge Grid:
@@ -3525,7 +3526,7 @@ this is the pre-ray-on-redivider rule:
 	the rule succeeds;
 
 this is the pre-ray-on-set rule:
-	if in-sos is true:
+	if in-aid is true:
 		if test set is moot, the rule fails;
 		if murdered rum is off-stage:
 			say "You need to find ammo for the Yard Ray.";
@@ -3542,13 +3543,13 @@ this is the pre-ray-on-set rule:
 	the rule fails;
 
 this is the pre-rod-on-boat rule:
-	if in-sos is true:
+	if in-aid is true:
 		if dork rod is moot, the rule fails;
 		say "[one of]The Tao Boat[in-not-here of Lac Oft Focal] seems to be a sort of test[or]The Tao Boat is not impressed by showings of wealth, only by self-acceptance[or]An item that seems useless but may be slightly self-effacing would please the Tao Boat[in-not-here of Lac Oft Focal][or]USE DORK ROD ON TAO BOAT[in-not-here of Lac Oft Focal][stopping].";
 	the rule succeeds;
 
 this is the pre-rum-on-ray rule:
-	if in-sos is true:
+	if in-aid is true:
 		if player does not have yard ray, the rule fails;
 		if murdered rum is moot, the rule fails;
 		if murdered rum is off-stage:
@@ -3558,7 +3559,7 @@ this is the pre-rum-on-ray rule:
 	the rule succeeds;
 
 this is the pre-saw-on-crop rule:
-	if in-sos is true:
+	if in-aid is true:
 		if porch crop is moot, the rule fails;
 		if moor broom is not moot, the rule fails;
 		if porch crop is in uneven u and revisit-clue is false:
@@ -3568,7 +3569,7 @@ this is the pre-saw-on-crop rule:
 	the rule succeeds;
 
 this is the pre-saw-on-sap rule:
-	if in-sos is true:
+	if in-aid is true:
 		if Cold Loc is unvisited, the rule fails;
 		if sap-takeable is true, the rule fails;
 		say "[one of]You can hack off some of the sap [hn of Cold Loc]. You already have the item for it[or]USE SAW ON SAP[in-not-here of Cold Loc][stopping].";
@@ -3579,7 +3580,7 @@ this is the pre-saw-on-sap rule:
 	the rule succeeds;
 
 this is the pre-slab-on-rows rule:
-	if in-sos is true:
+	if in-aid is true:
 		if sword rows are moot, the rule fails;
 		if player does not have balsa slab:
 			say "You don't have anything the sword rows can cut right now.";
@@ -3588,13 +3589,13 @@ this is the pre-slab-on-rows rule:
 	the rule succeeds;
 
 this is the pre-tag-on-tattoos rule:
-	if in-sos is true:
+	if in-aid is true:
 		if player does not have tag or player does not have tattoos, the rule fails;
 		say "[one of]You can make the ID you need to get past the DIFF-ID[or]You may notice the patterns of roses, or ... throughout the game[or]The gate tag has the pattern to get by the DIFF ID[or]The soot tattoos can be used to press the pattern on your skin[or]USE GATE TAG ON SOOT TATTOOS anywhere[stopping].";
 	the rule succeeds;
 
 this is the pre-tan-on-rocs rule:
-	if in-sos is true:
+	if in-aid is true:
 		if rocs are moot, the rule fails;
 		if player does not have tan:
 			say "[one of]You need to get something gross to deface the scorn rocs and ruin their shininess[or]What is gross and discolored in Yelpley?[or]Nat's Tan in [Deft Fed] is weird and orange[or]Find a way to get Nat's Tan and then use it on the scorn rocs[stopping].";
@@ -3603,14 +3604,14 @@ this is the pre-tan-on-rocs rule:
 	the rule succeeds;
 
 this is the pre-tix-on-exit rule:
-	if in-sos is true:
+	if in-aid is true:
 		if x-ite tix are off-stage, the rule fails;
 		say "[if player is in Dirge Grid]You just need to go back south with the Tix[else if player is not in fun enuf]You can win by going back to Fun Enuf[else]You just need to use the X-Ite Tix on the Tix Exit here[end if][if cur-score of Odd Do < 11], though you can keep hunting for LLPs if you want[end if].";
 		the rule succeeds;
 	the rule succeeds;
 
 this is the pre-vac-on-sac rule:
-	if in-sos is true:
+	if in-aid is true:
 		if cassettes sac is moot, the rule fails;
 		if Dopy Pod is not visited, the rule fails;
 		if player has Dirt Rid:
@@ -8679,15 +8680,29 @@ carry out meming:
 		say "I can't find any memorable things outside of here.";
 	the rule succeeds;
 
-chapter sosing
+chapter aiding/sosing/aidllping
 
-sosing is an action out of world.
+section aiding definitions
 
-aidllping is an action out of world.
+aiding is an action out of world.
 
+understand the command "aid" as something new.
+understand the command "dial aid" as something new.
+understand the command "hint" as something new.
 understand the command "sos" as something new.
 
+understand "aid" as aiding.
+understand "dial aid" as aidllping.
+understand "hint" as aiding.
 understand "sos" as aidllping.
+
+aid-LLP-yet is a truth state that varies.
+
+report aiding: consider the LLP or normal score changes rule;
+
+section aid llp definition
+
+aidllping is an action out of world.
 
 carry out aidllping:
 	try sosing;
@@ -8697,7 +8712,9 @@ carry out aidllping:
 		abide by the LLP rule; [DIAL AID]
 		consider the LLP or normal score changes rule;
 
-in-sos is a truth state that varies.
+in-aid is a truth state that varies.
+
+section hinting stubs
 
 definition: a thing (called th) is in-play:
 	if th is off-stage, no;
@@ -8734,7 +8751,9 @@ to decide which book is cur-book:
 	if YOB ATTABOY is not moot, decide on YOB ATTABOY;
 	decide on DWELT LEWD; [this should never happen]
 
-carry out sosing:
+section main aiding rule
+
+carry out aiding:
 	if hint-yet is false and word number 1 in the player's command is "hint":
 		say "There are more harmonious ways to ask for a hint, if you want a bonus point. But it's not critical.";
 		now hint-yet is true;
@@ -8764,7 +8783,7 @@ carry out sosing:
 			the rule succeeds;
 	if player is in worn row:
 		abide by the worn-row-triage rule;
-	now in-sos is true;
+	now in-aid is true;
 	let count be 0;
 	repeat through table of goodacts:
 		if there is a room-to-go entry and room-to-go entry is not location of player, next;
@@ -8776,15 +8795,15 @@ carry out sosing:
 					if the rule failed, next;
 					if the rule succeeded:
 						if debug-state is true, say "[preproc entry] succeeded!";
-						now in-sos is false;
+						now in-aid is false;
 						the rule succeeds;
 				say "[if debug-state is true](DEFAULT-1) [end if][if use2 entry is a workable and Worn Row is not worky]Change to WORK ROW, then [end if]USE [printed name of use1 entry in upper case] ON [printed name of use2 entry in upper case].";
-				now in-sos is false;
+				now in-aid is false;
 				the rule succeeds;
 		else if there is a preproc entry:
 			consider the preproc entry;
 			if the rule succeeded:
-				now in-sos is false;
+				now in-aid is false;
 				the rule succeeds;
 	say "I can't find anything specific to do here right now. So let's look more generally.";
 	repeat through table of goodacts:
@@ -8796,29 +8815,29 @@ carry out sosing:
 					if the rule failed, next;
 					if the rule succeeded:
 						if debug-state is true, say "[preproc entry] succeeded!";
-						now in-sos is false;
+						now in-aid is false;
 						the rule succeeds;
 				say "[if debug-state is true](DEFAULT-2) [end if][if use2 entry is a workable and Worn Row is not worky]Change to WORK ROW, then [end if]USE [printed name of use1 entry in upper case] ON [printed name of use2 entry in upper case].";
-				now in-sos is false;
+				now in-aid is false;
 				the rule succeeds;
 		else if there is a preproc entry:
 			consider the preproc entry;
 			if the rule succeeded:
 				if debug-state is true:
 					say "[preproc entry] succeeded!";
-					now in-sos is false;
+					now in-aid is false;
 					the rule succeeds;
 	repeat through table of goodacts:
 		if there is a room-to-go entry and room-to-go entry is unvisited:
 			let oiq be in-dir of room-to-go entry;
 			say "GENERAL HINT: the room [opposite of oiq] of [in-room of room-to-go entry] is available, but you haven't visited there yet.";
-			now in-sos is false;
+			now in-aid is false;
 			the rule succeeds;
 	say "Uh oh, I couldn't find a hint.";
-	now in-sos is false;
+	now in-aid is false;
 	the rule succeeds;
 
-report sosing: now in-sos is false;
+report aiding: now in-aid is false;
 
 to say vague-dir of (rm - a room):
 	let r2 be rm;
@@ -8879,43 +8898,43 @@ to say once-work: say "[if Worn Row is not worky], once you change to Work Row[e
 to say once-word: say "[if Worn Row is not wordy], once you change to Word Row[end if]"
 
 this is the pre-ore-on-reviver rule:
-	if in-sos is true:
+	if in-aid is true:
 		if eroded ore is moot or eroded ore is off-stage, the rule fails;
 		say "[one of]The eroded ore could use an upgrade[or]One of the three machines can fix the eroded ore[or]USE ERODED ORE ON REVIVER[once-work][stopping].";
 	the rule succeeds;
 
 this is the pre-band-on-reifier rule:
-	if in-sos is true:
+	if in-aid is true:
 		if DNA band is in Pro Corp or DNA band is off-stage, the rule fails;
 		say "[one of]The DNA band isn't much by itself[or]You should use machines to augment the DNA band[or]There's a question as to which Work Row machine would help the DNA band become something real and living[or]USE DNA BAND ON REIFIER[once-work][stopping].";
 	the rule succeeds;
 
 this is the pre-not-a-baton-on-reifier rule:
-	if in-sos is true:
+	if in-aid is true:
 		if not-a-baton is moot or not-a-baton is off-stage, the rule fails;
 		say "[one of]The not-a-baton isn't useful as-is[or]One more time with a machine should fix the not-a-baton[or]You may or may not have knocked out a lot of machines so far, so there may be only one left that works on the not-a-baton[or]The not-a-baton needs to be defined by what it is, not what it isn't[or]USE REIFIER ON NOT-A-BATON[once-work][stopping].";
 	the rule succeeds;
 
 this is the pre-knits-on-rotator rule:
-	if in-sos is true:
+	if in-aid is true:
 		unless stinky knits are carried by the player, the rule fails;
 		say "[one of]Phew! Those stinky knits could use a washing[or]There's no washing machine in the game, but there's something close enough, the knits might get clean[or]USE STINKY KNITS ON ROTATOR[once-work][stopping].";
 	the rule succeeds;
 
 this is the pre-log-on-rotator rule:
-	if in-sos is true:
+	if in-aid is true:
 		if gold log is moot or gold log is in Pro Corp, the rule fails;
 		say "[one of]The gold log would be valuable in a treasure hunt, but not here.[or]There's something inside the gold log. It's hollow. What sort of machine would shake it out?[or]USE GOLD LOG ON ROTATOR[once-work].[stopping]";
 	the rule succeeds;
 
 this is the pre-buoy-on-rotator rule:
-	if in-sos is true:
+	if in-aid is true:
 		if you buoy is moot or you buoy is off-stage, the rule fails;
 		say "[one of]The you buoy would be valuable in a treasure hunt, but not here.[or]There's something inside the you buoy. It's hollow. What sort of machine would shake it out?[or]USE YOU BUOY ON ROTATOR[once-work].[stopping]";
 	the rule succeeds;
 
 this is the pre-med-on-lug rule:
-	if in-sos is true:
+	if in-aid is true:
 		if demo med is moot, the rule fails;
 		if player has demo med:
 			say "[one of]The demo med could help someone[or]The demo med's brand is DYSPEPSYD. Think of someone who might have stomach troubles[or]USE DEMO MED ON GULF LUG[hn-in-blank of Flu Gulf][stopping].";
@@ -8925,7 +8944,7 @@ this is the pre-med-on-lug rule:
 	the rule succeeds;
 
 this is the pre-sac-on-orc rule:
-	if in-sos is true:
+	if in-aid is true:
 		if cash sac is moot, the rule fails;
 		if player has cash sac:
 			say "[one of]You have what you need to bribe the cross orc[or]USE CASH SAC ON CROSS ORC [hn-in of Toll Lot][stopping].";
@@ -8934,13 +8953,13 @@ this is the pre-sac-on-orc rule:
 	the rule succeeds;
 
 this is the pre-rid-on-reviver rule:
-	if in-sos is true:
+	if in-aid is true:
 		if Dirt Rid is moot or Dirt Rid is off-stage, the rule fails;
 		say "[one of]The Dirt Rid could use an upgrade[or]The Dirt Rid's already real enough, and spinning it might cause its parts to get even more discombobulated[or]USE DIRT RID ON REVIVER[once-work][stopping].";
 	the rule succeeds;
 
 this is the pre-mats-on-metals rule:
-	if in-sos is true:
+	if in-aid is true:
 		unless Ye Key is off-stage, the rule fails;
 		if player is in Scrap Arcs:
 			say "[one of]You have everything you need here[or]Maybe you can cut something out of the slate metals[or]USE STAMP MATS ON SLATE METALS[stopping].";
@@ -8949,7 +8968,7 @@ this is the pre-mats-on-metals rule:
 	the rule succeeds;
 
 this is the pre-attaboy-on-Sniffins rule:
-	if in-sos is true:
+	if in-aid is true:
 		if yob attaboy is moot, the rule fails;
 		if player has yob attaboy:
 			say "[one of]Sniffins needs help. Maybe you have something[or]USE YOB ATTABOY ON SNIFFINS[stopping].";
@@ -8958,7 +8977,7 @@ this is the pre-attaboy-on-Sniffins rule:
 	the rule succeeds;
 
 this is the pre-art-on-reifier rule:
-	if in-sos is false, the rule succeeds;
+	if in-aid is false, the rule succeeds;
 	if trap art is moot or player does not have trap art, the rule fails;
 	if ever-wordrow is false:
 		say "You need to change [Worn Row].";
@@ -8969,7 +8988,7 @@ this is the pre-art-on-reifier rule:
 	the rule succeeds;
 
 this is the pre-trap-on-rats rule:
-	if in-sos is false, the rule succeeds;
+	if in-aid is false, the rule succeeds;
 	if stark rats are moot, the rule fails;
 	if Seer Trees is unvisited:
 		say "You should visit west of Fun Enuf.";
@@ -8982,7 +9001,7 @@ this is the pre-trap-on-rats rule:
 	the rule succeeds;
 
 this is the pre-ti-on-frood rule:
-	if in-sos is false, the rule succeeds;
+	if in-aid is false, the rule succeeds;
 	if Door Frood is moot, the rule fails;
 	if Evaded Ave is unvisited, the rule fails;
 	if Worn Row is unvisited:
@@ -8998,7 +9017,7 @@ this is the pre-ti-on-frood rule:
 	the rule succeeds;
 
 this is the pre-tip-on-eye rule:
-	if in-sos is false, the rule succeeds;
+	if in-aid is false, the rule succeeds;
 	if pity tip is moot, the rule fails;
 	if Evaded Ave is unvisited, the rule fails;
 	if Worn Row is unvisited:
@@ -9011,19 +9030,7 @@ this is the pre-tip-on-eye rule:
 		say "[one of]The eye on the van needs to scan something. You have an item that clues this[or]The van is named Seedy Dee's[or]The pity tip offers a free sample at Seedy Dee's[or]USE PITY TIP ON VAN (or eye)[stopping].";
 	the rule succeeds;
 
-chapter aiding
-
-aiding is an action out of world.
-
-understand the command "dial aid" as something new.
-understand the command "aid" as something new.
-understand the command "hint" as something new.
-
-understand "aid" as sosing.
-understand "dial aid" as aidllping.
-understand "hint" as sosing.
-
-aid-LLP-yet is a truth state that varies.
+chapter looking elsewhere for hints
 
 more-later is a truth state that varies.
 hint-yet is a truth state that varies.
@@ -9033,8 +9040,6 @@ row-prog-warn is a truth state that varies.
 to say but-row:
 	now row-prog-warn is true;
 	say ", but I may note something in [if Worn Row is wordy]Work[else if Worn Row is worky]Word[else]Worn/Work[end if] Row if you switch back there"
-
-report aiding: consider the LLP or normal score changes rule;
 
 to describe-nearby (ro - a room):
 	repeat with dir running through maindir:
@@ -9316,6 +9321,50 @@ this is the yell-alley-complete rule:
 	unless TNT is had-or-done, the rule fails;
 	unless mayo yam is had-or-done, the rule fails;
 	the rule succeeds;
+
+chapter hinting a specific item
+
+itmhinting is an action applying to one visible thing.
+itmhinting is an action applying to one visible thing.
+
+does the player mean itmhinting a visible thing: it is very likely.
+does the player mean itmhinting a moot thing: it is unlikely.
+does the player mean itmhinting an off-stage thing: it is very unlikely.
+
+understand "hint [any thing]" as itmhinting.
+understand "aid [any thing]" as itmhinting.
+understand "sos [any thing]" as itmhinting.
+understand "dial aid [any thing]" as itmhinting.
+
+carry out itmhinting:
+	if being-chased is true, now chase-mulligan is true;
+	if noun is off-stage:
+		if noun is a tronpart, say "You probably want to search for stuff that will turn up [the noun] instead." instead;
+		say "You aren't supposed to know about [the noun] yet." instead;
+	if noun is a helpdoc, say "There's no hidden meaning. It's just for reading." instead;
+	repeat through table of itmhints:
+		if noun is to-hint entry:
+			if there is a sim-hint entry:
+				now ignore-offstage is true;
+				try itmhinting sim-hint entry;
+				now ignore-offstage is false;
+				continue the action;
+			if there is a hint-rule entry, follow the hint-rule entry;
+	if noun is scenery and noun is peripheral, say "You don't have to do anything with [the noun]. It's probably there just to make an entertaining boundary." instead;
+	say "BUG I need to be able to create a hint here." instead;
+
+table of itmhints
+to-hint	sim-hint	hint-rule
+mayo yam	--	ingred-help rule
+gift fig	--	ingred-help rule
+ufo tofu	--	ingred-help rule
+snack cans	--	ingred-help rule
+ark of okra	--	ingred-help rule
+
+this is the ingred-help rule:
+	if mont nom is unvisited, say "You haven't found the place to deal with [the noun], yet." instead;
+	if number of carried ingredients is 1, say "You'll need something to combine [the noun] with in Mont Nom." instead;
+	if number of moot ingredients is 2, say "You'll want to combine another couple ingredients." instead;
 
 chapter balmlabing
 
