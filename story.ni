@@ -166,7 +166,7 @@ use MAX_ACTIONS of 220. [+10?]
 
 use MAX_VERBSPACE of 5700. [4096 = original max]
 
-use MAX_SYMBOLS of 24000. [-1000 for release]
+use MAX_SYMBOLS of 25000. [-1000 for release]
 
 chapter room utilities
 
@@ -9460,6 +9460,12 @@ section Pro Corp hints 6 0
 item-hint-rule of dna band is dna-band-hint rule.
 item-hint-rule of gold log is gold-log-hint rule.
 item-hint-rule of psi wisp is psi-wisp-hint rule.
+item-hint-rule of butene tub is butene-tub-hint rule.
+
+this is the butene-tub-hint rule:
+	if player does not have gorge grog, say "[one of]The sci-pics seem to indicate something would happen if you combined the butene tub with a voliatile chemical, but you don't have one.[or][if deft fed is unvisited]You haven't visited somewhere useful yet[else][one of]Where have you found something that is potentially flammable?[or]The Gorge Grog in [deft fed] is potentially explosive and can be combined with the butene tub.[stopping][end if][stopping]" instead;
+	say "[one of]You may have something that causes a violent reaction with the butene tub[or]The gorge grog is very high proof, and it's flammable[or]USE GORGE GROG ON BUTENE TUB[stopping].";
+	
 
 this is the wisp-gone rule:
 	if psi wisp is not moot, say "You need to dispose of the Psi Wisp before taking [the noun]." instead;
@@ -9479,6 +9485,13 @@ this is the psi-wisp-hint rule:
 	say "[one of]The psi wisp is certainly red. Maybe there's something that could neutralize it.[or]Do you remember a room at the start?[or]It sort of isn't there any more.[or]Go to Word/Work Row, first.[stopping]" instead;
 
 section Yack Cay hints 0 1
+
+item-hint-rule of known wonk is known-wonk-hint rule.
+item-hint-rule of mist sim is known-wonk-hint rule.
+
+this is the known-wonk-hint rule:
+	say "[one of]The Known Wonk is a bit bookish and won't let you by the mist sim. Maybe the Wonk needs the right sort of book. [or][stopping]";
+	say "[one of]A self-help book would help the Known Wonk stop bugging you about the mist sim[or]You already used [TI] to get rid of the Door Frood, but you need something more positive for the Wonk[or][NULL ILLUN][if player does not have NULL ILLUN] from the tract cart[end if] will do the trick. USE NULL ILLUN ON KNOWN WONK. The Wonk's fears will be less relevant[stopping]." instead;
 
 section Le Babel hints 1 1
 
@@ -9502,6 +9515,13 @@ section Apse Spa hints 3 1
 section Art Xtra hints 4 1
 
 item-hint-rule of Revolt Lover is revolt-lover-hint rule.
+
+item-hint-rule of trap art is trap-art-hint rule.
+
+this is the trap-art-hint rule:
+	if player does not have trap art, say "Take the trap art. It won't hurt you." instead;
+	if ever-workrow is false, say "You don't have access to anything or anyone that can help you change the trap art. Yet. [if worn row is visited]Worn Row is worth looking around, though[else if my gym is visited]See what's behind My Gym[else]Check south of Yawn Way[end if]." instead;
+	say "[one of]One of the machines in Work Row could help you convert the trap art successfully[or]There are three machines to use the trap art on, and nothing bad happens if you mess up[or]USE TRAP ART ON REIFIER[stopping].";
 
 this is the revolt-lover-hint rule:
 	if player does not have el doodle, say "The Revolt Lover will have something for you once you've used the trap art effectively." instead;
@@ -9676,6 +9696,13 @@ this is the puce-cup-hint rule:
 section Toll Lot hints 6 2
 
 item-hint-rule of crag arc is crag-arc-hint rule.
+item-hint-rule of cross orc is cross-orc-hint rule.
+
+this is the cross-orc-hint rule:
+	if king nik is not moot, say "The cross orc needs something valuable or monetary, but you haven't found anyone with anything remotely valuable yet." instead;
+	if flu gulf is not visited, say "The cross orc wants a fee, but you haven't looked around enough to find anyone who might give you something." instead;
+	if player has cash sac, say "[one of]You have something that might interest the cross orc[or]USE CASH SAC ON CROSS ORC[stopping]." instead;
+	say "[one of]You can get some money, or something resembling it, for helping someone who is sick[or]The Gulf Lug is a good option[or]Once you figure out how to help the Gulf Lug, you can use the reward to bribe the cross orc[stopping].";
 
 this is the crag-arc-hint rule:
 	unless ufo tofu is off-stage, say "You found what was behind the crag arc." instead;
@@ -9691,6 +9718,10 @@ this is the porch-crop-hint rule: say "[one of]You need to figure a way to clean
 section Mont Nom item hints 1 3
 
 item-hint-rule of ark of okra is ingred-help rule.
+item-hint-rule of ian is ian-hint rule.
+
+this is the ian-hint rule:
+	say "[one of]If you look at Ian with [b]LOVE VOL[r], you'll get a beep. That suggests a weird action[or]Ian seems to have a lot of gotchas about being classier than you[or]Maybe you could embarrass Ian back[or]**** IAN[or]NAIL IAN and he will slink away in embarrassment[stopping].";
 
 section Ooze Zoo hints 2 3
 
@@ -9706,6 +9737,11 @@ item-hint-rule of redness ender is redness-ender-hint rule.
 
 item-hint-rule of pity tip is pity-tip-hint rule.
 
+item-hint-rule of rob is rob-hint rule.
+
+this is the rob-hint rule:
+	say "[one of]Looking at rob with the pact cap's VOL on indicates you have to do something to Rob[or]Rob sure thinks he's exciting! Maybe you could dampen his enthusiasm[or]**** ROB[or]BORE ROB[stopping]."
+
 this is the pity-tip-hint rule:
 	say "[one of]The pity tip, if you read it, indicates you can redeem it at Seedy Dee's[or][if evaded ave is not visited]You haven't found anywhere remotely seedy yet[else if door frood is not moot]You don't have access to anywhere seedy yet, though Evaded Ave isn't totally on the up-and-up[else if yell alley is unvisited]Try looking around now that the Door Frood is gone[else][one of]Yell Alley has something quite suspicious[or]The Navy Van has a business name.[or]The Navy Van is Seedy Dee's. USE PITY TIP ON NAVY VAN[stopping][end if][stopping]."
 
@@ -9715,9 +9751,50 @@ this is the redness-ender-hint rule:
 
 section My Gym hints 4 3
 
+item-hint-rule of dave is dave-hint rule.
+item-hint-rule of sto lots is sto-lots-hint rule.
+item-hint-rule of stole lots is stole-lots-hint rule.
+
+this is the sto-lots-hint rule: say "The Sto Lots will do its job without you needing to do anything. It makes sure there's no cap on your inventory.";
+	
+this is the stole-lots-hint rule: say "You can't reach the Stole Lots until you've got rid of Dave, which requires a special action.";
+
+this is the dave-hint rule: say "[one of]If you look at Dave with the pact cap's volume on, you get a noise. That suggests a weird action[or]Dave likes chasing you, but perhaps there is a way that you can tire Dave out[or]***** DAVE[or]EVADE DAVE[stopping].";
+
 section Swept Pews hints 5 3
 
+item-hint-rule of liar grail is liar-grail-hint rule.
+
+item-hint-rule of wordy drow is wordy-drow-hint rule.
+
+this is the liar-grail-hint rule:
+	do nothing;
+
+this is the wordy-drow-hint rule:
+	say "[one of]The wordy drow is tied up with the liar grail, so we'll look at the liar grail.[paragraph break][or][stopping]";
+	follow the liar-grail-hint rule;
+
 section Deft Fed hints 6 3
+
+item-hint-rule of gorge grog is gorge-grog-hint rule.
+item-hint-rule of sniffins is sniffins-hint rule.
+item-hint-rule of nat's tan is nats-tan-hint rule.
+
+this is the gorge-grog-hint rule:
+	if yob attaboy is not moot, say "You can't get the Gorge Grog until you help Sniffins regain confidence." instead;
+	say "[one of][Sniffins] won't give you the Gorge Grog for free[or]Perhaps you can barter some more suitable alcohol with [Sniffins][or]Someone gave you some classier alcohol earlier on[or]USE ELAN ALE ON SNIFFINS[stopping].";
+
+this is the sniffins-hint rule:
+	if yob attaboy is not moot, say "[one of]Sniffins could use some motivation. Nothing too fancy.[or]Have you seen a slapdash motivational book somewhere?[or][if player has YOB ATTABOY]You have it, in fact. YOB ATTABOY.[else]The tract cart contains one.[end if][or]USE YOB ATTABOY ON SNIFFINS.[stopping]" instead;
+	if gorge grog is in deft fed:
+		say "[one of]The next thing to do with Sniffins is trade for the Gorge Grog. [or][stopping]";
+		follow the gorge-grog-hint rule instead;
+	say "You don't need to deal with [Sniffins] any more.";
+
+this is the nats-tan-hint rule:
+	if player has nat's tan, say "[one of]The Nat's Tan can't have any healthy uses, but maybe it can vandalize something[or]You've come across something that is spotless and sparkly and almost deserves to be ruined by Nat's Tan[or]You can vandalize the scorn rocs with the Nat's Tan[stopping]." instead;
+	say "[one of]The pact cap indicates Nat's Tan has a special thing you need to do. You can't just take the Nat's, or the Tan, because it's too repulsive[or]This is a bit tricky, because Nat's or Tan could both work[or]Surprisingly, **** TAN doesn't turn up anything[or]However, you can find NAT'S bearable if you do something mental[or]***** NAT'S[or]STAND NAT'S[stopping].";
+
 
 section Lair Trial hints 0 4
 
