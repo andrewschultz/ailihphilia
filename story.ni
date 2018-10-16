@@ -8846,7 +8846,6 @@ carry out aiding:
 
 report aiding: now in-aid is false;
 
-
 to say vague-dir of (rm - a room):
 	if rm is visited:
 		say "[rm]";
@@ -9379,9 +9378,21 @@ item-hint-rule of a helpdoc is usually helpdoc-hint rule.
 
 this is the helpdoc-hint rule: say "There's no hidden meaning. You can only just read [the noun]." instead;
 
+item-hint-rule of a tronpart is usually tronpart-hint rule.
+
+this is the tronpart-hint rule:
+	if noun is TNT and noun is in yell alley, follow the bomb-mob-hint rule instead;
+	if player does not have epicer recipe, say "While [the noun] is important, somehow you've managed not to get the recipe that tells how to use it, yet. Fortunately, that part is a lot easier. [if player is in trapeze part]You have something to do right here[else]Try exploring Yelpley[end if]." instead;
+	if epicer recipe is nox, say "Examine the epicer recipe." instead;
+	say "[if tron-got is 4]Now[else]Once[end if] you have all four parts of the north-tron as dictated by the epicer recipe, you can use any of those parts (or the recipe) on any of the other parts, or the recipe.";
+
 section Lac Oft Focal hints 0 0
 
 item-hint-rule of kayak is kayak-hint rule.
+item-hint-rule of enact cane is enact-cane-hint rule.
+
+this is the enact-cane-hint rule:
+	say "[one of]The enact cane has a hole in it. Maybe you could stuff something in there[or]The KLENS'N ELK text suggests it is useful to clean stuff, but a stick alone can't clean anything[or]A rake or broom might be more helpful[or]You could make a makeshift rake/broom with some raw material found elsewhere[or]USE ENACT CANE ON YAHOO HAY[stopping]."
 
 this is the kayak-hint rule:
 	if player has elope pole, say "[one of]You have what you need to steer the kayak[or]The elope pole will work on the kayak. USE it on the kayak[stopping]." instead;
@@ -9413,6 +9424,11 @@ section Flu Gulf hints 2 0
 
 item-hint-rule of gulf lug is gulf-lug-hint rule.
 item-hint-rule of scorn rocs is scorn-rocs-hint rule.
+item-hint-rule of cash sac is cash-sac-hint rule.
+
+this is the cash-sac-hint rule:
+	if toll lot is unvisited, say "You haven't met anyone greedy enough to want or need money yet." instead;
+	say "[one of]Have you met anyone greedy yet?[or]Anyone who might be blocking your way?[or]The cross orc in the toll lot is a prime candidate.[or]USE CASH SAC ON CROSS ORC.[stopping]" instead;
 
 this is the scorn-rocs-hint rule:
 	if pulled-up is false, say "You have a way to go before you can get past the scorn rocs. They don't need to be dealt with right away." instead;
@@ -9450,6 +9466,21 @@ section Yell Alley hints 5 0
 
 item-hint-rule of eye is eye-hint rule.
 item-hint-rule of navy van is eye-hint rule.
+item-hint-rule of rep popper is rep-popper-hint rule.
+item-hint-rule of bomb mob is bomb-mob-hint rule.
+
+this is the bomb-mob-hint rule:
+	if dna hand is off-stage, say "You're a long way from fooling the bomb mob. You'll need an accomplice." instead;
+	if player has dna hand and player does not have roto motor, say "The DNA hand might be able to sneak the TNT away, but it is not mobile. You'll need to find some way to activate it." instead;
+	if player has dna hand:
+		say "[one of]The DNA hand has signs of life, but it's not mobile yet[or]Maybe you could play mad scientist and bring the DNA hand to life[or]USE ROTO MOTOR ON DNA HAND[stopping]." instead;
+	say "[one of]The bomb mob would notice you if you tried to take the TNT, but not something smaller[or]You have something that is just itching to walk around and create mischief[or]USE MR ARM ON BOMB MOB[stopping].";
+
+this is the rep-popper-hint rule:
+	if dork rod is off-stage or mist sim is in yack cay, say "You aren't close enough to dealing with the rep popper, yet." instead;
+	if dork rod is moot, say "You should be able to take the rep popper after your session with the tao boat." instead;
+	if lac oft focal is unvisited, say "Look around. You haven't been somewhere you can go, yet." instead;
+	say "[one of]You are close to being able to take the rep popper.[or]Have you seen any item or place that might make you worry less about things?[or]The tao boat may help you relax and worry about things that don't matter.[or]The tao boat requires an item that shows some degree of humility.[or]USE DORK ROD ON TAO BOAT.[stopping]";
 
 this is the eye-hint rule:
 	if player does not have pity tip, say "You haven't found what to scan with the eye yet. Look around to the south." instead;
@@ -9465,12 +9496,11 @@ item-hint-rule of butene tub is butene-tub-hint rule.
 this is the butene-tub-hint rule:
 	if player does not have gorge grog, say "[one of]The sci-pics seem to indicate something would happen if you combined the butene tub with a voliatile chemical, but you don't have one.[or][if deft fed is unvisited]You haven't visited somewhere useful yet[else][one of]Where have you found something that is potentially flammable?[or]The Gorge Grog in [deft fed] is potentially explosive and can be combined with the butene tub.[stopping][end if][stopping]" instead;
 	say "[one of]You may have something that causes a violent reaction with the butene tub[or]The gorge grog is very high proof, and it's flammable[or]USE GORGE GROG ON BUTENE TUB[stopping].";
-	
 
 this is the wisp-gone rule:
 	if psi wisp is not moot, say "You need to dispose of the Psi Wisp before taking [the noun]." instead;
 	if player does not have noun, say "Now that the Psi Wisp is gone, you can just take [the noun]." instead;
-	
+
 this is the dna-band-hint rule:
 	follow the wisp-gone rule;
 	say "[one of]The DNA band can get an upgrade.[or]Which machine to use in Work Row?[or]The Reifier will make the DNA band come alive. USE BAND ON REIFIER[in-work-row].[stopping]";
@@ -9488,6 +9518,20 @@ section Yack Cay hints 0 1
 
 item-hint-rule of known wonk is known-wonk-hint rule.
 item-hint-rule of mist sim is known-wonk-hint rule.
+item-hint-rule of edits tide is edits-tide-hint rule.
+item-hint-rule of tru yurt is tru-yurt-hint rule.
+
+this is the tru-yurt-hint rule:
+	unless exam axe is off-stage, say "You cleaned up the Tru Yurt and got your reward." instead;
+	if mist sim is in yack cay or moo room is unvisited or SOME DEMOS is off-stage, say "You're a long way from cleaning the Tru Yurt up." instead;
+	if player does not have enact cane, say "You're still a way from having anything that can clean the Tru Yurt up." instead;
+	if player has moor broom, say "[one of]You have something that can clean up a home[or]USE MOOR BROOM ON TRU YURT[stopping]." instead;
+	follow the enact-cane-hint rule instead;
+
+this is the edits-tide-hint rule:
+	if el doodle is moot, say "The edits tide is no longer useful to you, now you cleared up El Doodle." instead;
+	if el doodle is off-stage, say "The edits tide can help with something messy, but you don't have it yet." instead;
+	say "[one of]The edits tide can clean up something potentially useful that is a mess[or]Any of the help literature you got can't be helped, but something else could[or]Someone gave you something they couldn't decipher[or]USE EL DOODLE ON EDITS TIDE[stopping].";
 
 this is the known-wonk-hint rule:
 	say "[one of]The Known Wonk is a bit bookish and won't let you by the mist sim. Maybe the Wonk needs the right sort of book. [or][stopping]";
@@ -9510,13 +9554,50 @@ this is the bro-orb-hint rule:
 
 section Cold Loc hints 2 1
 
+item-hint-rule of king nik is king-nik-hint rule.
+item-hint-rule of rift fir is rift-fir-hint rule.
+item-hint-rule of past sap is past-sap-hint rule.
+
+this is the rift-fir-hint rule:
+	if sap-takeable is true, say "Now you've cut the sap from the fir, you don't need to deal with the fir." instead;
+	say "[one of]It would be nice to cut a chunk of sap from the rift fir[or]A straight blade won't cut the fir, but maybe if you could oil things up a bit, that would work[or]USE WASH SAW ON RIFT FIR[stopping].";
+
+this is the past-sap-hint rule:
+	if liar grail is moot, say "You're done with the past sap." instead;
+	if sap-takeable is false:
+		say "[one of]You need to cut the sap from the rift fir. [or][stopping]";
+		follow the rift-fir-hint rule instead;
+	if puce cup is sappy, say "You already have sap in the puce cup." instead;
+	if puce-ever is true, say "You figured you need to use the puce cup on the sap, so that will work." instead;
+	say "[one of]You need a receptacle for the past sap. Then you can USE it on the sap[or][if pulled-up is true]The puce cup from the emo dome will work[else if emo dome is visited]You need to figure how to slow down in the Emo Dome to get the puce cup[else]You need to explore a bit more[end if][stopping]."
+
+this is the king-nik-hint rule:
+	say "[one of]King Nik looks lost, and he needs more than just encouragement[or]You need to find some practical knowledge. Maybe a book or something[or][if ever-wordrow is false]If you can find a place with books, that will help you help King Nik[else][one of]The tract cart has a few books, but only one deals with leadership[or]EPOCH: COPE is the one you want[or]USE EPOCH COPE ON KING NIK[stopping][end if][stopping]."
+
 section Apse Spa hints 3 1
+
+item-hint-rule of dose sod is dose-sod-hint rule.
+item-hint-rule of go by bog is go-by-bog-hint rule.
+
+this is the go-by-bog-hint rule:
+	unless sage gas is off-stage, say "You're done with Go-By Bog." instead;
+	say "[one of]You'll need directions through the bog.[or]What sort of document generally gives directions?[or]A map. Have you found a map anywhere?[or][if spa maps are off-stage]You need a good map to get through the bog[else if maps-explained is false]You need to make sense of the spa maps[else]The maps will get you through the bog if you USE them[end if].[stopping]"
+
+this is the dose-sod-hint rule:
+	if puce cup is soddy, say "You may wish to hint the puce cup instead." instead;
+	if player does not have puce cup, say "You can take the dose sod, but you need something to carry it in." instead;
+	say "[one of]You can't handle the dose sod directly[or]If you had a receptacle, the dose sod would be okay[or]USE PUCE CUP ON DOSE SOD[stopping].";
 
 section Art Xtra hints 4 1
 
 item-hint-rule of Revolt Lover is revolt-lover-hint rule.
 
 item-hint-rule of trap art is trap-art-hint rule.
+item-hint-rule of el doodle is el-doodle-hint rule.
+
+this is the el-doodle-hint rule:
+	if gnu dung is in dumb mud, say "There's no place or person to help sort out El Doodle, yet." instead;
+	say "[one of]While most scenery is not so useful, paying attention to it will help you to sort out what to do with El Doodle[or][if yack cay is unvisited]You need to look for scenery likely to change something for the better. Explore a bit more[else][one of]You've run across scenery that can change things for the better[or]The edits tide[hn-in of Yack Cay][or]USE EL DOODLE ON EDITS TIDE[stopping][end if][stopping].";
 
 this is the trap-art-hint rule:
 	if player does not have trap art, say "Take the trap art. It won't hurt you." instead;
@@ -9553,7 +9634,7 @@ item-hint-rule of etage gate is etage-gate-hint rule.
 
 this is the ned-hint rule:
 	say "[one of]You need to do something to Ned. He wants a fight[or]Perhaps you could frustrate Ned by deliberately denying him a fight[or]DEN* NED[or]DENY NED[stopping].";
-	
+
 this is the stinky-knits-hint rule:
 	if ned is in gross org, say "You need to get rid of Ned to get the stinky knits." instead;
 	if stinky knits are in gross org, say "You can just take the stinky knits." instead;
@@ -9586,7 +9667,7 @@ this is the made-dam-hint rule:
 
 this is the need-radar rule:
 	if player does not have radar, say "There's something behind [the noun], but you can't detect it with what you have." instead;
-	
+
 section dumb mud hints 1 2
 
 item-hint-rule of gnu dung is gnu-dung-hint rule.
@@ -9622,14 +9703,18 @@ this is the stark-rats-hint rule:
 section Fun Enuf item hints 3 2
 
 item-hint-rule of the player is player-itm-hint rule.
-
 item-hint-rule of the pip is pip-hint rule.
-
 item-hint-rule of the tile lit is tile-lit-hint rule.
-
 item-hint-rule of flee elf is flee-elf-hint rule.
-
 item-hint-rule of pact cap is pact-cap-hint rule.
+item-hint-rule of tix exit is tix-exit-hint rule.
+item-hint-rule of x-it stix is x-it-stix-hint rule.
+
+this is the x-it-stix-hint rule: say "You can't do anything with the X-It Stix. They're there to block you from switching regions during a chase."
+
+this is the tix-exit-hint rule:
+	if player has x-ite tix, follow the x-ite-tix rule instead;
+	say "You'll be able to leave the Tix Exit once you have the right tix. Err, tickets."
 
 this is the player-itm-hint rule: say "I can't help you with internal stuff."
 
@@ -9662,6 +9747,9 @@ this is the pact-cap-hint rule:
 section Yawn Way item hints 4 2
 
 item-hint-rule of pyx is pyx-hint rule.
+item-hint-rule of day away ad is day-away-ad-hint rule.
+
+this is the day-away-ad-hint rule: say "The Day-Away Ad is just there for entertainment."
 
 this is the pyx-hint rule: say "The X/Y Pyx can show you a game map as you access more places, but it can't directly help with puzzles.";
 
@@ -9712,6 +9800,16 @@ this is the crag-arc-hint rule:
 section Uneven U hints 0 3
 
 item-hint-rule of porch crop is porch-crop-hint rule.
+item-hint-rule of code doc is code-doc-hint rule.
+
+this is the code-doc-hint rule:
+	if porch crop is moot, say "You've done enough business with the Code Doc." instead;
+	if tent net is off-stage, say "The code doc needs help building Uneven U, but you don't have anything, yet." instead;
+	if player has tent net, say "[one of]The code doc will return the favor if you help. Uneven U isn't fully constructed yet. How to change that?[or]You have an item that could help build other things.[or]USE TENT NET ON CODE DOC.[stopping]" instead;
+	if spa maps are off-stage, say "You haven't found an item the code doc can help you with, yet." instead;
+	if maps-explained is false, say "[one of]Now you helped the Code Doc, the Code Doc can help you with something that is still confusing[or]You've already cleaned up one thing, but you can't quite decipher it[or]USE SPA MAPS ON CODE DOC[stopping]." instead;
+	if porch crop is off-stage, say "You will want to help the code doc one last time, but that's in the future." instead;
+	if porch crop is in Uneven U, follow the porch-crop-hint rule instead;
 
 this is the porch-crop-hint rule: say "[one of]You need to figure a way to clean up the porch crop[or]An item you've had since nearly the beginning has one more use[or]USE WASH SAW ON PORCH CROP[stopping].";
 
@@ -9733,11 +9831,43 @@ this is the sleep-eels-hint rule:
 
 section Worn Row hints 3 3
 
+mach-hint-yet is a truth state that varies.
+
 item-hint-rule of redness ender is redness-ender-hint rule.
-
 item-hint-rule of pity tip is pity-tip-hint rule.
-
 item-hint-rule of rob is rob-hint rule.
+item-hint-rule of reviver is reviver-hint rule.
+item-hint-rule of rotator is rotator-hint rule.
+item-hint-rule of reifier is reifier-hint rule.
+item-hint-rule of tract cart is tract-cart-hint rule.
+item-hint-rule of dwelt lewd is dwelt-lewd-hint rule.
+
+to mach-hint (x - a workable):
+	if x is workedout:
+		say "The [x] is broken.";
+		continue the action;
+	if mach-hint-yet is false:
+		say "WARNING! Hinting a machine will tell you what item to use on it. It's a bit more spoilery than most HINT (THING) commands, so I wanted to check before doing this.";
+		now mach-hint-yet is true;
+		continue the action;
+	repeat through table of goodacts:
+		if there is a use2 entry and use2 entry is x:
+			if there is a use1 entry and player carries use1 entry:
+				say "You can use [the use1 entry] on [the use2 entry].";
+				continue the action;
+	say "You can't use anything on [the x] right now.";
+
+this is the tract-cart-hint rule:
+	say "The tract cart is used for holding books. It's not useful on its own, except for [if tract-trace is true]that LLP you found[else]an LLP[end if].";
+
+this is the reviver-hint rule:
+	mach-hint reviver;
+
+this is the rotator-hint rule:
+	mach-hint rotator;
+
+this is the reifier-hint rule:
+	mach-hint reifier;
 
 this is the rob-hint rule:
 	say "[one of]Looking at rob with the pact cap's VOL on indicates you have to do something to Rob[or]Rob sure thinks he's exciting! Maybe you could dampen his enthusiasm[or]**** ROB[or]BORE ROB[stopping]."
@@ -9749,14 +9879,25 @@ this is the redness-ender-hint rule:
 	if being-chased is true and chase-person is Psi Wisp, say "Hmm. The redness ender might be useful right now." instead;
 	say "The redness ender will be useful later, even if you can't bring Worn Row back right away.";
 
+this is the dwelt-lewd-hint rule: say "[DWELT LEWD] is just there for a slightly off-color joke."
+
 section My Gym hints 4 3
 
 item-hint-rule of dave is dave-hint rule.
 item-hint-rule of sto lots is sto-lots-hint rule.
 item-hint-rule of stole lots is stole-lots-hint rule.
+item-hint-rule of wash saw is wash-saw-hint rule.
+
+this is the wash-saw-hint rule:
+	if stark rats are in seer trees, say "The wash saw isn't useful yet." instead;
+	if cold loc is unvisited, say "You need to find a place with stuff that can be sawed." instead;
+	if sap-takeable is false, say "[one of]The wash saw could be good for cutting vegetation that's not too thick[or]USE WASH SAW ON PAST SAP[hn-in of Cold Loc][stopping].";
+	if exam axe is off-stage, say "The rift fir didn't destroy the wash saw, but it'll be a while between uses for the saw." instead;
+	if revisited-u is false, say "You may need to double back and visit somewhere that's changed a bit." instead;
+	say "[one of]The saw was useful for trimming vegetation before, but now some new stuff has sprouted up[or]Check out [Uneven U][or]USE WASH SAW ON PORCH CROP[stopping]."
 
 this is the sto-lots-hint rule: say "The Sto Lots will do its job without you needing to do anything. It makes sure there's no cap on your inventory.";
-	
+
 this is the stole-lots-hint rule: say "You can't reach the Stole Lots until you've got rid of Dave, which requires a special action.";
 
 this is the dave-hint rule: say "[one of]If you look at Dave with the pact cap's volume on, you get a noise. That suggests a weird action[or]Dave likes chasing you, but perhaps there is a way that you can tire Dave out[or]***** DAVE[or]EVADE DAVE[stopping].";
@@ -9764,11 +9905,18 @@ this is the dave-hint rule: say "[one of]If you look at Dave with the pact cap's
 section Swept Pews hints 5 3
 
 item-hint-rule of liar grail is liar-grail-hint rule.
-
 item-hint-rule of wordy drow is wordy-drow-hint rule.
+item-hint-rule of troll ort is troll-ort-hint rule.
+
+this is the troll-ort-hint rule:
+	if player does not have troll ort, say "Just take the troll ort." instead;
+	if player does not have brag garb or player does not have stinky knits, say "The troll ort has a strong smell, at least once you break it open, and you can USE it to transfer it to something else." instead;
+	say "[one of]The troll ort has a smell once you break it open, but you need to use it on the right thing.[or]Do you have anything with an overpowering smell?[or][if brag garb is off-stage]The stinky knits don't quite work, but they can be augmented[else]USE TROLL ORT ON BRAG GARB[end if][stopping].";
 
 this is the liar-grail-hint rule:
-	do nothing;
+	if player does not have puce cup, say "Get the puce cup first. You need to pour something in the liar grail." instead;
+	if puce cup is sappy, say "[one of]You're very close. The liar grail needs something poured in it[or]USE PUCE CUP ON LIAR GRAIL[stopping]." instead;
+	say "[one of]The grail is taunting you, saying you're dry, even though it's dry. It's putting half-truths into your head[or]Maybe you can clear things up a bit by pouring something into the grail[or]You haven't found any liquid, but something might become liquid in warmer climates[or]USE PUCE CUP ON PAST SAP[or]With the past sap in the puce cup, note the sap changes to sirup, and then you can USE PUCE CUP ON LIAR GRAIL[stopping].";
 
 this is the wordy-drow-hint rule:
 	say "[one of]The wordy drow is tied up with the liar grail, so we'll look at the liar grail.[paragraph break][or][stopping]";
@@ -9795,7 +9943,6 @@ this is the nats-tan-hint rule:
 	if player has nat's tan, say "[one of]The Nat's Tan can't have any healthy uses, but maybe it can vandalize something[or]You've come across something that is spotless and sparkly and almost deserves to be ruined by Nat's Tan[or]You can vandalize the scorn rocs with the Nat's Tan[stopping]." instead;
 	say "[one of]The pact cap indicates Nat's Tan has a special thing you need to do. You can't just take the Nat's, or the Tan, because it's too repulsive[or]This is a bit tricky, because Nat's or Tan could both work[or]Surprisingly, **** TAN doesn't turn up anything[or]However, you can find NAT'S bearable if you do something mental[or]***** NAT'S[or]STAND NAT'S[stopping].";
 
-
 section Lair Trial hints 0 4
 
 item-hint-rule of ergot ogre is ergot-ogre-hint rule.
@@ -9805,6 +9952,23 @@ this is the ergot-ogre-hint rule:
 	follow the yak-ogre-lair rule;
 
 section Motto Bottom hints 1 4
+
+item-hint-rule of tame mat is tame-mat-hint rule.
+item-hint-rule of guru rug is guru-rug-hint rule.
+item-hint-rule of stir writs is stir-writs-hint rule.
+
+this is the tame-mat-hint rule:
+	if spa maps are off-stage, say "You're still a good way from finding something you can use on the tame mat." instead;
+	if sage gas is off-stage, say "You need something to combine with the tame mat, but you don't have it yet." instead;
+	say "[one of]The tame mat is not very thoughtful or clever. Maybe you have something that could make it more so[or]The sage gas may help make the tame mat smarter[or]USE SAGE GAS ON TAME MAT[stopping]."
+
+this is the guru-rug-hint rule:
+	say "[one of]The guru rug is a bit too esoteric, but you can figure a way to make it a little more emotional[or]You got something that seemed a bit too unsubtle. It was an item that popped out with something else[or]The sharp rahs may help bring the guru rug's message to life[or]USE SHARP RAHS ON GURU RUG[stopping].";
+
+this is the stir-writs-hint rule:
+	say "[one of]The stir writs don't need to be used on anything. [or][stopping]";
+	if lie veil is not moot, say "[one of]Unfortunately, you haven't found a place where the stir writs will boost your confidence enough. Hint the writs again to see where that place would be[or]You need to get beyond the lie veil to use the stir writs[stopping]." instead;
+	say "[one of]The stir writs will boost your confidence enough to take something[or][if le babel is unvisited]See what's beyond the lie veil[else]You can take the Bros['] Orb now you have the stir writs[end if][stopping]." instead;
 
 section Frush Surf hints 2 4
 
@@ -9819,7 +9983,7 @@ item-hint-rule of kayo yak is kayo-yak-hint rule.
 this is the kayo-yak-hint rule:
 	follow the yak-ogre-lair rule;
 	say "[one of]The kayo yak will keep chasing you. Maybe you can find someone else for it to knock over.[or]Someone guarding something?[or]The ergot ogre.[or]You'll need to do one more thing once you get to the Trial Lair.[stopping]" instead;
-	
+
 this is the yak-ogre-lair rule:
 	if cap-pace is false, say "[one of]You're not quite fast enough to outrun the yak on your own. An item you have can help[or]The pact cap[or]The pact cap can become a PACE CAP[stopping]." instead;
 	if player is in trial lair, say "[one of]The kayo yak can take out the ergot ogre.[or]You just need to give the right command to the kayo yak.[or]YAK ???? will do it.[or]YAK OKAY (no comma.)[stopping]" instead;
@@ -9870,6 +10034,12 @@ this is the radar-hint rule:
 
 section Drawl Ward hints 5 4
 
+item-hint-rule of bond nob is bond-nob-hint rule.
+
+this is the bond-nob-hint rule:
+	if puce cup is soddy, say "[one of]You may already be close to helping the bond nob. You don't have any pills, but you have a form of medicine[or]Since the puce cup is full of dose sod, USE PUCE CUP ON BOND NOB[stopping]." instead;
+	say "[one of]The bond nob could use some medicine. You haven't found any pills lying around, but maybe there's something therapeutic and organic[or][if apse spa is unvisited]You need to look around Grebeberg a bit more[else][one of]One area is all about therapy. Some of the vegetation may be helpful, too[or]There is dose sod in the apse spa, but you can't take it[or]USE PUCE UP ON DOSE SOD first[or]With the cup full of sod, USE PUCE CUP ON BOND NOB[stopping][end if][stopping]."
+
 section Scrap Arcs hints 6 4
 
 item-hint-rule of slate metals is slate-metals-hint rule.
@@ -9892,6 +10062,9 @@ item-hint-rule of knife fink is knife-fink-hint rule.
 item-hint-rule of verses rev is verses-rev-hint rule.
 
 item-hint-rule of redivider is redivider-hint rule.
+item-hint-rule of x-ite tix is x-ite-tix rule.
+
+this is the x-ite-tix rule: say "You can just put the X-ITE TIX in the Tix Exit to finish the game." instead;
 
 this is the grid-not-main-hint rule: say "While [the noun] looks pretty vicious, it's not as important as the redivider." instead;
 
@@ -10855,7 +11028,7 @@ definition: a thing (called sd) is so-done:
 	if sd is a helpdoc and sd is xed, yes;
 	if sd is yourself, yes;
 	no;
-	
+
 this is the aid-all rule:
 	let BLANKLIST be a list of things;
 	now BLANKLIST is {};
@@ -10875,7 +11048,7 @@ understand the command "iht" as something new.
 
 understand "iht" as ihting.
 
-after printing the name of a thing (called iht) when print-found-thing is true: if iht is not a backdrop and iht is not off-stage, say " ([if location of iht is location of player][b][end if][location of iht][if location of iht is location of player][r][end if])"
+after printing the name of a thing (called iht) when print-found-thing is true: if iht is not a backdrop, say " ([if iht is off-stage][init-room of iht][else][location of iht][end if])"
 
 a room has a number called found-it. found-it of a room is usually 0.
 
@@ -10891,7 +11064,15 @@ definition: a thing (called th) is unhinted-yet:
 	if item-hint-rule of th is item-bug-hint rule, yes;
 	no;
 
-after printing the name of a room (called rm) when print-found-rm is true: say " ([found-it of rm]/[list of unhinted-yet things in rm])";
+to say unhinted-list of (rm - a room):
+	let X be a list of things;
+	repeat with XX running through unhinted-yet things:
+		if init-room of XX is rm or XX is in rm, add XX to X;
+	say "[X]";
+
+after printing the name of a room (called rm) when print-found-rm is true: say " ([found-it of rm]/[unhinted-list of rm])";
+
+init-room of elite tile is fun enuf. init-room of spur ups is cold loc. init-room of murdered rum is sneer greens. init-room of straw arts is moo room. init-room of moor broom is moo room. init-room of spa maps is uneven u. init-room of balsa slab is uneven u. init-room of exam axe is yack cay. init-room of sharp rahs is yack cay. init-room of dork rod is pro corp. init-room of enact cane is lac oft focal. init-room of taboo bat is red roses order. init-room of you buoy is lac oft focal. init-room of me gem is lac oft focal. init-room of sage gas is apse spa. init-room of a book is usually worn row. init-room of wash saw is my gym. init-room of test set is worn row. init-room of party trap is art xtra. init-room of soot tattoos is art xtra. init-room of state tats is art xtra. init-room of gate tag is gross org. init-room of brag garb is gross org. init-room of dirt rid is deft fed. init-room of cave vac is deft fed. init-room of stock cots is evaded ave. init-room of tent net is trapeze part. init-room of elope pole is trapeze part. init-room of not-a-baton is red roses order. init-room of yard ray is red roses order. init-room of elan ale is drawl ward. init-room of ye key is scrap arcs. init-room of roto motor is swamp maws. init-room of DNA Hand is pro corp. init-room of Mr Arm is pro corp.
 
 print-found-rm is a truth state that varies.
 print-found-thing is a truth state that varies.
@@ -10917,12 +11098,14 @@ carry out ihting:
 					add QQ to blank-hints;
 					increment found-it of init-room of QQ;
 				else:
+					if QQ is dud, next;
+					if QQ is north tron, next;
 					add QQ to unsorted-hints;
 	now print-found-thing is true;
 	say "[b]Blank hints[r] ([number of entries in blank-hints]) : [blank-hints].";
 	now print-found-thing is false;
 	say "[b]Unsorted hints[r] ([number of entries in unsorted-hints]) : [unsorted-hints].";
-	say "[b]Blank semiperipheral[r] ([number of entries in blank-semi]) : [blank-hints].";
+	say "[b]Blank semiperipheral[r] ([number of entries in blank-semi]) : [blank-semi].";
 	say "[b]Blank scenery[r] ([number of entries in blank-sce]) : [blank-sce].";
 	let LNF be list of need-find rooms;
 	sort LNF in loc-num order;
