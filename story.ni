@@ -9377,6 +9377,53 @@ this is the tronpart-hint rule:
 	if epicer recipe is nox, say "Examine the epicer recipe." instead;
 	say "[if tron-got is 4]Now[else]Once[end if] you have all four parts of the north-tron as dictated by the epicer recipe, you can use any of those parts (or the recipe) on any of the other parts, or the recipe.";
 
+section scenery hints
+
+this is the bounding-scenery-hint rule: say "You don't need to do anything with [the noun]. [if noun is plural-named]It's[else]They're[end if] just there to provide an interesting boundary.";
+
+this is the funny-scary-item-hint rule: say "You don't need to do anything with [the noun]. It's just there to provide an amusing bit of color." instead;
+
+this is the rand-txt-hint rule: say "You don't need to do anything with [the noun]. It's just there to provide random palindrome text." instead;
+
+item-hint-rule of voodoo v is rand-txt-hint rule.
+item-hint-rule of snooty toons is rand-txt-hint rule.
+
+item-hint-rule of Trap Mart Rampart is bounding-scenery-hint rule.
+item-hint-rule of den ivy vined is bounding-scenery-hint rule.
+item-hint-rule of all ivy villa is bounding-scenery-hint rule.
+item-hint-rule of girt rig is bounding-scenery-hint rule.
+item-hint-rule of birch crib is bounding-scenery-hint rule.
+item-hint-rule of mush sum is bounding-scenery-hint rule.
+item-hint-rule of Ebola Lobe is bounding-scenery-hint rule.
+item-hint-rule of go fog is bounding-scenery-hint rule.
+item-hint-rule of storm rots is bounding-scenery-hint rule.
+item-hint-rule of nogo gon is bounding-scenery-hint rule.
+item-hint-rule of saner arenas is bounding-scenery-hint rule.
+item-hint-rule of smirk rims is bounding-scenery-hint rule.
+item-hint-rule of stewy wets is bounding-scenery-hint rule.
+item-hint-rule of be web is bounding-scenery-hint rule.
+item-hint-rule of calcific lac is bounding-scenery-hint rule.
+item-hint-rule of tube but is bounding-scenery-hint rule.
+item-hint-rule of line nil is bounding-scenery-hint rule.
+item-hint-rule of e divide is bounding-scenery-hint rule.
+
+item-hint-rule of spa taps is funny-scary-item-hint rule.
+item-hint-rule of pool gloop is funny-scary-item-hint rule.
+item-hint-rule of leet steel is funny-scary-item-hint rule.
+item-hint-rule of par wrap is funny-scary-item-hint rule.
+item-hint-rule of part strap is funny-scary-item-hint rule.
+item-hint-rule of decal placed is funny-scary-item-hint rule.
+item-hint-rule of gal flag is funny-scary-item-hint rule.
+item-hint-rule of gash sag is funny-scary-item-hint rule.
+
+item-hint-rule of elided ile is elided-ile-hint rule.
+
+this is the elided-ile-hint rule: say "You don't have to do anything with Elided Ile. You [if kayak is moot]already got there[else]just need to get there[end if].";
+
+item-hint-rule of sci pics is sci-pics-hint rule.
+
+this is the sci-pics-hint rule: say "While you don't have to do anything with the sci pics, they indicate you need[if butene tub is moot]ed[end if] to do something to mess with the butene tub.";
+
 section Lac Oft Focal hints 0 0
 
 item-hint-rule of kayak is kayak-hint rule.
