@@ -9525,6 +9525,11 @@ item-hint-rule of dna band is dna-band-hint rule.
 item-hint-rule of gold log is gold-log-hint rule.
 item-hint-rule of psi wisp is psi-wisp-hint rule.
 item-hint-rule of butene tub is butene-tub-hint rule.
+item-hint-rule of dna hand is dna-hand-hint rule.
+
+this is the dna-hand-hint rule:
+	follow the roto-motor-hint rule;
+	say "[one of]The DNA hand is lifelike, but it needs something to help it come to life[or]You need to look for something mechanical to combine with the DNA hand. It then might be able to perform a task you can't[stopping].";
 
 this is the butene-tub-hint rule:
 	if player does not have gorge grog, say "[one of]The sci-pics seem to indicate something would happen if you combined the butene tub with a voliatile chemical, but you don't have one.[or][if deft fed is unvisited]You haven't visited somewhere useful yet[else][one of]Where have you found something that is potentially flammable?[or]The Gorge Grog in [deft fed] is potentially explosive and can be combined with the butene tub.[stopping][end if][stopping]" instead;
@@ -9555,6 +9560,15 @@ item-hint-rule of edits tide is edits-tide-hint rule.
 item-hint-rule of tru yurt is tru-yurt-hint rule.
 item-hint-rule of dork rod is dork-rod-hint rule.
 item-hint-rule of spa maps is spa-maps-hint rule.
+item-hint-rule of sharp rahs is sharp-rahs-hint rule.
+
+this is the sharp-rahs-hint rule:
+	follow the rahs-gas-reject rule;
+	if sage gas is not moot, say "[one of]The sharp rahs can be used for motivation[or]There's something that's motivational but not very good[or]You need to do something in Motto Bottom, but you don't have everything, yet. You need to do something to the tame mat, first[stopping]." instead;
+	say "[one of]The sharp rahs bring enthusiasm to something that might be too esoteric[or]You've created something that's a bit esoteric[or]The guru rug leaves you thoughtful but not motivated[or]USE SHARP RAHS ON GURU RUG[stopping].";
+
+this is the rahs-gas-reject rule:
+	if motto bottom is unvisited, say "You can't do anything with [the noun] right now[if ergot ogre is moot], but you haven't visited everywhere you can[end if]." instead;
 
 this is the spa-maps-hint rule:
 	if uneven u is unvisited, say "Look around a bit more first." instead;
@@ -9637,6 +9651,11 @@ section Apse Spa hints 3 1
 
 item-hint-rule of dose sod is dose-sod-hint rule.
 item-hint-rule of go by bog is go-by-bog-hint rule.
+item-hint-rule of sage gas is sage-gas-hint rule.
+
+this is the sage-gas-hint rule:
+	follow the rahs-gas-reject rule;
+	say "[one of]The sage gas could be used to punch up something that seems a bit dopey and listless.[or]Have you seen anything that seems like it doesn't have any punch?[or]Tame, perhaps?[or]USE SAGE GAS ON MOTTO BOTTOM[hn-in-blank of motto bottom].[stopping]"
 
 this is the go-by-bog-hint rule:
 	unless sage gas is off-stage, say "You're done with Go-By Bog." instead;
@@ -9654,6 +9673,11 @@ item-hint-rule of trap art is trap-art-hint rule.
 item-hint-rule of el doodle is el-doodle-hint rule.
 item-hint-rule of party trap is party-trap-hint rule.
 item-hint-rule of state tats is state-tats-hint rule.
+item-hint-rule of soot tattoos is soot-tattoos-hint rule.
+
+this is the soot-tattoos-hint rule:
+	follow the tag-tattoos-together rule;
+	say "[one of]The soot tattoos are blank. They could use a pattern[or]You may have seen the roses, or ... pattern around a few places[or]Eventually, you will get an item with that pattern[or]Once you do, use it with the soot tattoos. This identification will help you visit a new location[stopping].";
 
 this is the state-tats-hint rule:
 	if red roses order is visited, say "The state tats have served their purpose." instead;
@@ -9706,10 +9730,21 @@ this is the mirror-rim-hint rule: say "[one of]The game railroads you a bit here
 section Gross Org hints 6 1
 
 item-hint-rule of Ned is ned-hint rule.
-
 item-hint-rule of stinky knits is stinky-knits-hint rule.
-
 item-hint-rule of etage gate is etage-gate-hint rule.
+item-hint-rule of brag garb is brag-garb-hint rule.
+item-hint-rule of gate tag is gate-tag-hint rule.
+
+this is the tag-tattoos-together rule:
+	if player has soot tattoos and player has gate tag, say "[one of]You can create a makeshift ID with two items you have[or]A pattern plus something inky could go on your skin[or][if noun is soot tattoos]The pattern is the gate tag[else]The something inky is the soot tattoos[end if][or]USE GATE TAG ON SOOT TATTOOS[stopping]."
+
+this is the gate-tag-hint rule:
+	follow the tag-tattoos-together rule;
+	say "[one of]The gate tag's pattern of roses, or ... mimics something else[or]The entrance north of the Diff ID has the same pattern as the gate tag[or]If you find what to combine with the gate tag, this identification will help you visit a new location[stopping].";
+
+this is the brag-garb-hint rule:
+	if troll ort is moot, say "You used the troll ort on the brag garb, and that's all you need to do." instead;
+	say "[one of]The brag garb smells all wrong. You're not sure why, but it does[or]You may notice your brag garb gets a reaction [if frush surf is unvisited][vague-dir of frush surf][else]from the kayo yak in Frush Surf[end if][or]You may notice that it has a note saying, combining its smell with another may cause odd behavior in animals[or][if player does not have troll ort]After going back to Swept Pews for the troll ort, [end if]USE TROLL ORT ON KAYO YAK[stopping]."; [?? put into main source]
 
 this is the ned-hint rule:
 	say "[one of]You need to do something to Ned. He wants a fight[or]Perhaps you could frustrate Ned by deliberately denying him a fight[or]DEN* NED[or]DENY NED[stopping].";
@@ -9733,8 +9768,15 @@ this is the etage-gate-hint rule:
 section Swamp Maws hints 0 2
 
 item-hint-rule of made dam is made-dam-hint rule.
-
 item-hint-rule of eroded ore is eroded-ore-hint rule.
+item-hint-rule of roto motor is roto-motor-hint rule.
+
+this is the make-mr-arm rule:
+	if player has roto motor and player has dna hand, say "[one of]You have the materials to create a makeshift cyborg[or]You don't need any separate machines, just what's in your inventory[or]You have [the noun], so you need something [if noun is roto motor]life[else]machine[end if]-like[or]USE ROTO MOTOR ON DNA HAND[stopping]." instead;
+
+this is the roto-motor-hint rule:
+	follow the make-mr-arm rule;
+	say "The roto-motor fits with something to create a makeshift cyborg, but you haven't found it yet[if player has dna hand or psi wisp is moot]. You may have found something you can convert to it, though[end if]." instead;
 
 this is the eroded-ore-hint rule:
 	say "[one of]The eroded ore seems powerless now.[or]What sort of machine could give it more vitality?[or]USE ERODED ORE ON REVIVER.[stopping]";
