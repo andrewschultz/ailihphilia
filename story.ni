@@ -504,7 +504,7 @@ check requesting the score:
 			say "You've got all the roving LLPs. You have [Q2] non-roving LLP[plur of Q2] remaining to figure out before going [if player is not in Fun Enuf]back to [Fun Enuf] and [end if]south through the Tix Exit.";
 		else:
 			say "You have [Q] roving last lousy point[plur of Q] left and [Q2] non-roving LLP[plur of Q2] left.";
-	if player has epicer recipe and north tron is off-stage:
+	if player has epicer recipe and kaos oak is not moot:
 		say "[if epicer recipe is nox]You realize a score is only an abstract indicator of how well you're doing, and maybe that epicer recipe would help you figure what's what. So you read it, and you note y[else]Y[end if]";
 		say "ou [if tron-got is 0]don't have any of the [number of tronparts in words][else]also have [tron-got] piece[plur of tron-got] of [number of tronparts][end if] North-Tron pieces you need to destroy the [kaoscaps], according to the epicer recipe[hint-tron].";
 		now epicer recipe is xed;
@@ -1205,7 +1205,7 @@ instead of thinking:
 	if LLP-yet is true, say "[line break]";
 	let nsb be number of sober books in devreserved;
 	if nsb < 4 and ever-wordrow is true, say "[if nsb is 0]Those books in Word Row seemed useful--if not for you, for someone else[else]You managed to help someone with a book from Word Row. Perhaps you can help someone else[end if].";
-	if player has epicer recipe and epicer recipe is xed, say "You have [tron-got] of [number of tronparts] pieces of the north tron[hint-tron].";
+	if player has epicer recipe and epicer recipe is xed, say "You have [tron-got] of [number of tronparts] pieces of the North-Tron[hint-tron].";
 	say "[line break][if nwe > 0]You may want to examine [this-these of nwe] item[plur of nwe] you haven't, yet: [the list of worth-examining things][else]You've examined all your carried items for clues[end if][if sce-to-see]. You can also try SCE RECS to see scenery you haven't examined[end if].";
 	if revisited-u is false and revisit-clue is true, say "You may wish to visit the Code Doc again in [uneven u] to see what the fuss was about.";
 	if LLP-yet is false, say "You don't have any last lousy points to figure that've been clued in-game.";
@@ -2177,7 +2177,6 @@ understand "use [something] on [something]" as useoning it with.
 understand "use [something] with [something]" as useoning it with.
 
 to build-the-tron:
-	moot north tron;
 	now all tronparts are in devreserved; [ic]
 	if redact-postrule:
 		say "You use the epicer recipe you found in the Trapeze Part to build a north-tron that destroys the KAOS Oak to the north of Fun Enuf!";
@@ -2265,15 +2264,19 @@ definition: a person (called per) is dialoguey:
 	if per is scorn rocs, no;
 	yes;
 
+noun-flip is a truth state that varies.
+
 check useoning it with (this is the main useon function rule):
-	if noun is a person and noun-person-note is false:
+	if noun is a person and noun-person-note is false and noun-flip is false:
 		now noun-person-note is true;
 		say "NOTE: it's semantic, but usually, you'll want to use something ON a person. The game should flip the nouns appropriately.";
-	if noun is second noun, say "It's not productive to use something on itself, even with this game being full of palindromes." instead;
-	if noun is a workable and second noun is a workable, say "The machines are fixed in place. You can't use one on the other." instead;
+	now noun-flip is false;
 	if useprio of noun > useprio of second noun:
 		if debug-state is true, say "DEBUG switching X on Y to Y on X: [noun] [useprio of noun] [second noun] [useprio of second noun].";
+		now noun-flip is true;
 		try useoning second noun with noun instead; [e.g. machines in work row always go second]
+	if noun is second noun, say "It's not productive to use something on itself, even with this game being full of palindromes." instead;
+	if noun is a workable and second noun is a workable, say "The machines are fixed in place. You can't use one on the other." instead;
 	if second noun is tract cart:
 		if noun is SOME DEMOS, say "No, [i]SOME DEMOS[r] is yours, now." instead;
 		say "Very thoughtful, but you [if any-books-left]can just take books one at a time[else]don't need to replace [noun] if you don't know what to do with it yet[end if]." instead;
@@ -2442,7 +2445,6 @@ dork rod	"You sense the dork rod doesn't need changing. Just holding it makes yo
 el doodle	"El doodle definitely needs a cleaning. But that doesn't seem to work."
 enact cane	"The enact cane needs to be augmented, but not quite like that."
 ergot ogre	"The ogre can't be bribed or baited. At least, not by you. You're not fast or strong enough to outfox (or out-any other animal) it on your own. Plus, you worry anything that touches the ergot ogre might shrivel up. Maybe you need the services of someone or something that can beat up the ogre without touching its skin." [?? how to pick off duplicates in a table?]
-Gal Flag	"The Gal Flag seems like a distraction. You need some way to disarm Ms. Ism!"
 gnu dung	"There's a lot of gnu dung. You'll need something tailored specifically to it, to clean it up."
 Gorge Grog	"The Gorge Grog is so concentrated, it's probably only good for chemical warfare."
 Gulf Lug	"The Gulf Lug groans. You probably need to find some sort of treatment. It might not have to be fancy."
@@ -2456,7 +2458,6 @@ martini tram	"The martini tram is a good base to build [if epicer recipe is xed]
 mist sim	"Anything used on the mist sim might disappear into it."
 Nat's Tan	"[if player does not have Nat's Tan]You may need to steel yourself to take the Nat's Tan, somehow[else]No, you need to look for something that would be utterly disgusted by having Nat's Tan squirted on it[end if]."
 Ned	"Ned wants a fight, and you need some other way around him. Bribery or violence doesn't seem sufficient. It might be simpler than you think. Ned's pretty ... basic."
-north tron	"The North-Tron's already done its job."
 opossum	"The opossum isn't useful, but perhaps you could be nice and show it a way that it doesn't have to be. A simple gesture."
 Pact Cap	"Your pact cap is fine where it is, on your head[if current action is useoning][cap-use][end if]."
 past sap	"The past sap needs an appropriate container to hold it when it liquefies in warmer areas."
@@ -2464,7 +2465,7 @@ Psi Wisp	"The Psi Wisp is impervious to bribery or normal physical attacks. You 
 radar	"The radar detects no dark radon ... and nothing less harmful/more useful. But maybe there's something hidden elsewhere."
 redness ender	"The redness ender is good for destroying stuff. Probably evil stuff. You don't need to vaporize anything you're carrying[if Rob is in Worn Row]. Or even Rob[end if]."
 rep popper	"[if player does not have popper and dork rod is moot]Hmm. You get the feeling you don't have to do anything fancy. Just TAKE the popper[else if player does not have popper]When the time comes, you may be able to just TAKE the popper. Now, it's a bit too intimidating[else]The rep popper needs to attack something with, well, REP. Something that needs taking down a peg[end if]."
-resale laser	"The resale laser is super powerful and limited. You should probably use it to [if epicer recipe is xed]make the north tron[else]some greater purpose than zapping someone or something[end if]."
+resale laser	"The resale laser is super powerful and limited. You should probably use it to [if epicer recipe is xed]make the North-Tron[else]some greater purpose than zapping someone or something[end if]."
 Rob	"Rob's not going to be obliging. You have to get rid of him, somehow."
 scorn rocs	"The scorn rocs are unfazed by much. Even violence doesn't seem to affect them. They sit, looking dignified, or at least superior. You'll need something special and weird to displace them."
 senile felines	"It might be more productive to use the felines on themselves, in a certain way."
@@ -2562,6 +2563,7 @@ Dirt Rid	tame mat	"The tame mat's message is clean. It's just not inspiring."
 Dirt Rid	troll ort	"The troll ort is crusted over enough that the Dirt Rid wouldn't really clean it."
 Dirt Rid	Yuge Guy	"That won't clean up all his dirty tricks."
 DNA band	Code Doc	"You don't know what the Code Doc's degree is in, but you doubt you have to do anything TOO sophisticated with the DNA."
+mr arm	navy van	"Mr. Arm shakes his/its fist at the navy van, as if the van is in the way of something more important."
 DNA hand	Bomb Mob	"If only the hand were alive, maybe it could steal the TNT from the bomb mob!"
 DNA hand	Code Doc	"You don't know what the Code Doc's degree is in, but you doubt you have to do anything TOO sophisticated with the DNA."
 DNA hand	DIFF ID	"The DIFF ID doesn't even seem to recognize the DNA hand. Apparently, it is not alive enough."
@@ -2682,6 +2684,9 @@ roto motor	tao boat	"The tao boat is not electrical, and besides, the roto motor
 sage gas	bomb mob	"Using the sage gas on the bomb mob might wisen them up to you, which would be unpleasant."
 sage gas	Bond Nob	"The Bond Nob could use a little wisdom, but more immediately, a bit of medical attention would help."
 sage gas	butene tub	"The sage gas needs to work with something more metaphysical."
+sage gas	code doc	"The Code Doc needs no artificial intelligence or wisdom boost."
+sage gas	Sniffins	"[Sniffins] needs something more practical."
+sage gas	yuge guy	"The sage gas would be wasted on the Yuge Guy, who seems all about dumbing things--and other people--down."
 sage gas	Dork Rod	"There's no place to squeeze gas into the Dork Rod. Sometimes, dorkiness is ready for wisdom, but not here and now. You'll need another receptacle."
 sage gas	gulf lug	"The gulf lug needs a physical boost, not a mental one."
 sage gas	King Nik	"[nik-self]."
@@ -2845,7 +2850,7 @@ radar	crag arc	UFO tofu	pre-radar-on-arc rule	radar-crag rule	true	false	false	f
 --	--	--	rev-deny-Ned rule	--	true	--	--	true	true	true	Yelpley	Gross Org	Gross Org	false	--
 Ye Key	etage gate	gate tag	pre-key-on-gate rule	tag-later-wipe rule	true	true	true	true	true	true	Yelpley	Gross Org	Gross Org	false	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'A hall! Aha! Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paragraph break]A gate tag falls off. You pick it up." [af:Worn Row]
 --	--	--	rev-worn-row rule	--	true	--	--	true	true	true	Yelpley	Worn Row	Worn Row	false	--
-stinky knits	rotator	brag garb	pre-knits-on-rotator rule	wear-garb rule	true	true	false	false	true	false	Yelpley	Worn Row	Worn Row	false	"The stinky knits fit into the rotator without stuffing them too much. After some spinning (and a smell of detergent--where'd that come from?) you look in again and--they're something much shinier now. Brag garb! You can't resist wearing your flashy new duds, though once you put them on, they do smell a bit ... intense. Looking at a hidden label, you note it has been liberally sloshed with Turbo-Brut."
+stinky knits	rotator	brag garb	pre-knits-on-rotator rule	wear-garb rule	true	true	false	false	true	false	Yelpley	Worn Row	Worn Row	false	"The stinky knits fit into the rotator without stuffing them too much. After some spinning (and a smell of detergent--where'd that come from?) you look in again and--they're something much shinier now. Brag garb! If this were an RPG, it'd give some neato armor class. You can't resist wearing your flashy new duds, though once you put them on, they do smell a bit ... intense. Looking at a hidden label, you note it has been liberally sloshed with Turbo-Brut."
 Gorge Grog	Butene Tub	resale laser	pre-grog-on-tub rule	make-sag rule	true	true	true	false	false	true	Yelpley	Pro Corp	Pro Corp	false	"The Gorge Grog starts fizzing as it pours down the tub, and nothing seems to happen, until you hear a FOOMP below and the tub starts shaking. There must've been an open spark below the tub, perhaps a noir ion. You find it best to hide, and that's the right thing to do, because the butene tub explodes into pieces. Under it is a resale laser! You figure the really good stuff is hidden way back for security reasons, and this is probably just an emergency gadget, but it's got to be good for something.[paragraph break]Soon after you take the resale laser, a small gash sag fills in the explosion you made. Technology! Also, you're not saddled with a bath-tab for the damage you did."
 gold log	rotator	dork rod	pre-log-on-rotator rule	--	true	true	false	true	true	false	Yelpley	Worn Row	Worn Row	false	"The gold log begins spinning until it cracks open--leaving a dork rod! You wonder briefly if you deserve to take it, or if there's something wrong with you if you deserve to, but once you hold it, memories of past silliness come back, and they're easier to deal with, now. You have some perspective. You even feel sorry for people who pointed out you were a dork. They'd be barred from a cool adventure like this. So you keep the dork rod."
 SOME DEMOS	yahoo hay	straw arts	pre-demos-on-hay rule	hay-gone rule	true	true	false	false	true	false	Grebeberg	Moo Room	Moo Room	false	"With the help of SOME DEMOS, you (after several grunts of 'STRAIN! I! ARTS!') manage to rejig and bend and snap the hay into something more aesthetically pleasing: straw arts! You're so enthusiastic, you even tear up SOME DEMOS and garnish your new straw arts. It just feels right."
@@ -3944,6 +3949,7 @@ pool gloop	"Fortunately, you don't need to do anything special to or with the po
 spa taps	"The spa taps can't do much. You're not a customer, anyway."
 state tats	"You don't need to do anything to or with the state tats, now that you're wearing them." [start traded art 4 1]
 E Divide	"There's no way to dispel the E-Divide, but Ms. Ism isn't the main enemy here, any more." [start Red Roses Order 5 1]
+Gal Flag	"The Gal Flag seems like a distraction. You need some way to disarm Ms. Ism!"
 Oh Who	"[fonen-of of Oh Who]." [start Seer Trees 2 2]
 x-it stix	"No way you're getting through the X-It Stix."
 KAOS Oak	"The [kaoscaps] is immune to ordinary manipulation. You'll need a powerful contraption indeed to dispel it!" [start Fun Enuf 3 2]
@@ -4084,7 +4090,7 @@ book Fun Enuf
 
 to say if-not-LLP: if LLP-hunting, say ", other than poke around for last lousy points,"
 
-Fun Enuf is a room in Dim Mid. "[if elite tile is in Fun Enuf]Elite tile has replaced the old tile lit. Probably all that's left to do[if-not-LLP] is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what leads west and east[xit-ave][end if]. [if Diktat Kid is moot][Dirge Grid] is back north, not that you need to revisit[else if north tron is moot]Also, the North-Tron has carved a passage north where the [kaoscaps] was. It's too big to, uh, repaper[else if flee elf is in Fun Enuf]An oak blocks the way north. It's a wide oak[else]The [kaoscaps] blocks your way north[end if]."
+Fun Enuf is a room in Dim Mid. "[if elite tile is in Fun Enuf]Elite tile has replaced the old tile lit. Probably all that's left to do[if-not-LLP] is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what leads west and east[xit-ave][end if]. [if Diktat Kid is moot][Dirge Grid] is back north, not that you need to revisit[else if kaos oak is moot]Also, the North-Tron has carved a passage north where the [kaoscaps] was. It's too big to, uh, repaper[else if flee elf is in Fun Enuf]An oak blocks the way north. It's a wide oak[else]The [kaoscaps] blocks your way north[end if]."
 
 to say xit-ave:
 	say ". The [if player has x-ite tix]Tix Exit to the south is waiting for you to enter[else if tix exit is in Fun Enuf]Tix Exit to the south prevents passage back home through Evac Ave[else]Evac Ave is south, if you want to chicken out[end if]"
@@ -4125,12 +4131,6 @@ carry out grammarging:
 	else:
 		say "Now the [kaoscaps] is [if grammarg is true]less[else]more[end if] chaotic.";
 	the rule succeeds;
-
-chapter north tron
-
-the north tron is scenery. "[if Dirge Grid is visited]The North-Tron is useless now.[else]It seems to have cracked open a passage north here in [Fun Enuf]. Do you have the guts to follow it to your destiny?[end if]"
-
-printed name of north tron is "North-Tron".
 
 chapter Flee Elf
 
@@ -4214,7 +4214,7 @@ check going north in Fun Enuf:
 	if flee elf is in Fun Enuf, say "The flee elf sees you looking north but says 'First things first! Get the cap the right way, here.'" instead;
 	unless epicer recipe is xed or KAOS Oak is moot, say "You don't have a way through the [kaoscaps], [if epicer recipe is off-stage]or anything that would show you one[else]but maybe there's something you could read right now to get an idea[end if]." instead;
 	if epicer recipe is not moot and epicer recipe is nox, say "You need to get there. But you have no clue what to build, or how[if number of carried ingredients > 2]--though some of your inventory looks useful for that[end if][if player has epicer recipe]. Hmm, maybe Xing the epicer recipe will help that[end if]." instead;
-	if north tron is off-stage, say "You can't go north with the [kaoscaps] in the way. You need to build the North-Tron to destroy the oak[if tron-got is 4]. In fact, you probably can just use any of the parts you have on each other to build it, now[else]. You currently have [tron-got] piece[plur of tron-got][end if]." instead;
+	if kaos oak is not moot, say "You can't go north with the [kaoscaps] in the way. You need to build the North-Tron to destroy the oak[if tron-got is 4]. In fact, you probably can just use any of the parts you have on each other to build it, now[else]. You currently have [tron-got] piece[plur of tron-got][end if]." instead;
 	if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
 	if murdered rum is not moot, say "You have the yard ray, but it isn't, well, charged." instead;
 	if emitted is false, say "You don't know how to work the yard ray[if yard ray is xed]. EMIT ********--hmm, what could those eight letters be?[else]. Maybe examine it for instructions.[end if]" instead;
@@ -4595,15 +4595,20 @@ carry out emiting:
 		say "Looking at the yard ray for the first time, you notice it wants you to EMIT something...";
 	if the topic understood matches "noontime" or the topic understood matches "noon time":
 		get-reject yard ray;
-		now noontime-found is true;
-	if the player's command includes "time":
+		now noontime-found is true; [awkward to write this code in twice but the alternative is worse]
+	else if the player's command matches the regular expression "time":
 		repeat through table of good emit guesses:
 			if the topic understood matches guess-topic entry:
 				if guessed-yet entry is false:
 					now guessed-yet entry is true;
 					increment emit-guesses;
 					say "[guess-result entry][line break]" instead;
-		let guesschar be number of characters in the player's command - 8;
+				else:
+					say "You already tried that. There must be something else relatively simple that works." instead;
+		let XX be indexed text;
+		let XX be the player's command;
+		replace the text " " in XX with "";
+		let guesschar be number of characters in XX - 8;
 		say "Not that sort of time. But it must be SOME time. A positive time[if yard ray is xed and guesschar is not 4]. A time with four letters in, not [guesschar in words][else if yard ray is not xed]. The yard ray may have a clue[end if]." instead;
 	if murdered rum is not moot, say "The Yard Ray isn't charged enough to emit anything[clue-noon]." instead;
 	if player is in location of Yuge Guy, say "No...the Yuge Guy needs to be defeated by other means." instead;
@@ -4620,15 +4625,16 @@ carry out emiting:
 	say "No, that's not quite it[clue-noon].";
 	the rule succeeds;
 
-to say clue-noon: say ", but NOONTIME seems right for what to emit"
+to say clue-noon: if noontime-found is true, say ", but NOONTIME, which you guessed before, seems right for what to emit"
 
 to say also-4: say ". Also, given what's on the Yard Ray, it's four letters"
 
 table of good emit guesses
 guess-topic (a topic)	guessed-yet	guess-result
+"time"	false	"You can emit time without a fancy yard ray. It must be some sort of time[also-4]."
 "dudtime" or "dud time"	false	"A heel turn this late in the game? Nah[also-4]."
 "onotime" or "ono time" or "sos time" or "sostime"	false	"Something positive and brighter[also-4]."
-"yaytime" or "yay time"	false	"That's for after you've conquered the Dirge Grid north of [hn of Fun Enuf][also-4]."
+"yaytime" or "yay time"	false	"That's positive and bright, but it's better saved for after you've conquered the Dirge Grid north of [hn of Fun Enuf][also-4]."
 "dadtime" or "dad time"	false	"I'm sorry you haven't uncovered enough groan-inducing jokes in the course of this game. I tried my best, honest I did[also-4]."
 "pooptime" or "poop time"	false	"A hollow voice booms 'Loo? Fool!'[paragraph break]You want to get your opponent on the run, not get them the runs."
 "time"	true	"Yes, but what sort of time? Something positive and cheery, you'd guess." [this is true because it is semi-trivial to figure out]
@@ -5175,7 +5181,7 @@ instead of taking late petal, say "That'd be cheating, to actually give the cats
 
 chapter yahoo hay
 
-the yahoo hay is scenery in Moo Room. "The yahoo hay, unlike normal hay, makes you feel inexplicably cheery. Like it can be used to build even cooler stuff.[paragraph break][if SOME DEMOS is moot]It's mostly the coarser, unbendable stuff that's remaining, now you built the straw arts. Maybe you could make something practical[else]Half the hay appears to coarser, stronger and more practical to build something useful with. The other half looks more suitable for stuffing, or bending into all kinds of things. NOTE: you don't have to refer to either half in a command[end if]."
+the yahoo hay is scenery in Moo Room. "The yahoo hay, unlike normal hay, makes you feel inexplicably cheery. Like it can be used to build even cooler stuff.[paragraph break][if SOME DEMOS is moot]It's mostly the coarser, unbendable stuff that's remaining, now you built the straw arts. Maybe you could make something practical[else if enact cane is moot]The remains from building the moor broom look suitable for stuffing or bending. Nothing practical, but maybe something fun[else]Half the hay appears to coarser, stronger and more practical to build something useful with. The other half looks more suitable for stuffing, or bending into all kinds of things. NOTE: you don't have to refer to either half in a command[end if]."
 
 instead of entering hay: say "There's not enough hay to jump on or into. Besides, this game is obviously far too serious for such frivolity!"
 
@@ -7267,7 +7273,7 @@ chapter Ms Ism
 
 Ms Ism is a proper-named female person in Red Roses Order. printed name of Ms Ism is "Ms. Ism". "[one of]Before you have time to gloat '[']N I'm In,' you see Ms. Ism standing[or]Ms. Ism stands[stopping] here in defiance, holding the Gal Flag high and waving it.". description is "She obviously didn't get to her position of power by being some over-educated pantsuited fool who made a small mistake with an e-mail server once.[paragraph break]As she waves that Gal Flag, you should probably be grateful she doesn't have a girl rig, too. You need a way to neutralize the Gal Flag!"
 
-Ms Ism carries the Gal Flag. description of Gal Flag is "It's fluttering even without a breeze, and it reflects throughout the mirror rim to make you feel more than a little overwhelmed. On it are several images of Ms. Ism doing all kinds of superhuman things."
+Ms Ism carries the Gal Flag. description of Gal Flag is "It's fluttering even without a breeze, and it reflects throughout the mirror rim to make you feel more than a little overwhelmed. On it are several images of Ms. Ism doing all kinds of superhuman things.". the Gal Flag is peripheral.
 
 understand "la gal" and "la/gal" as Ms Ism.
 
@@ -7536,7 +7542,7 @@ instead of wearing DNA band, say "You can't wear it. It's helical, not a headban
 
 The DNA hand is a thing. description is "It's motionless, but it looks lifelike enough, despite being recessed. The right item could bring it to life!"
 
-Mr Arm is a proper-named thing. description is "Wow! It's really evolved from a DNA band! The BANG NAB written on it indicates it's more than a measly banana nab. It's sturdy. If it had eyes, it'd be looking for something to steal and run--umm, that's not quite right--off with. You're not sure why it hasn't run off with anything in your inventory. Is all this stuff you piled up worthless? Perhaps Mr. Arm is just grateful and wants to steal something for you.[paragraph break][one of]Mr. Arm seems about to point somewhere. If you examine him again, you can see where[or]Mr. Arm [arm-dir][stopping]."
+Mr Arm is a proper-named thing. description is "Wow! It's really evolved from a DNA band! The BANG NAB written on it indicates it's more than a measly banana nab. It's sturdy. If it had eyes, it'd be looking for something to steal and run--umm, that's not quite right--off with. You're not sure why it hasn't run off with anything in your inventory. Is all this stuff you piled up worthless? Perhaps Mr. Arm is just grateful and wants to steal something for you.[paragraph break][one of]Mr. Arm seems about to point somewhere. If you examine him again, you can see where.[or]Mr. Arm [arm-dir][stopping]"
 
 printed name of Mr Arm is "Mr. Arm".
 
@@ -7544,7 +7550,7 @@ understand "bang/nab" and "bang nab" as Mr Arm.
 
 to say arm-dir:
 	if location of player is Yell Alley:
-		say "is waving around frantically!";
+		say "is [if navy van is in Yell Alley]shaking a fist at the navy van[else]waving around frantically[end if]![no line break]";
 		continue the action;
 	say "points ";
 	let Horz be (remainder after dividing loc-num of location of player by 10) - (remainder after dividing loc-num of Yell Alley by 10);
@@ -7561,6 +7567,7 @@ to say arm-dir:
 		say "[if Vert > Horz]north[else]west[end if]-northwestish";
 	else:
 		say "[if Vert + Horz > 0]north[else]east[end if]-northeastish";
+	say ".[no line break]"
 
 volume dialogue
 
@@ -7915,7 +7922,7 @@ to decide whether all-visited-beyond of (rm - a room):
 	yes;
 
 after going when being-chased is true:
-	if x-it stix are in location of player, say "As you run furher [noun], you notice X-it Stix X out the way [if Fun Enuf is room east of location of player]east[else]west[end if]. It's probably bad for the [chase-person] to get loose in [if player is in Yawn Way]Grebeberg[else]Yelpley[end if].";
+	if x-it stix are in location of player, say "As you run further [noun], you notice X-it Stix X out the way [if Fun Enuf is room east of location of player]east[else]west[end if]. It's probably bad for the [chase-person] to get loose in [if player is in Yawn Way]Grebeberg[else]Yelpley[end if].";
 	continue the action;
 
 x-it stix are semiperipheral scenery. "They look like the metal grating shops pull out over their doors and windows at closing time.[paragraph break]They are in an X, and while they don't allow an Xit, they do x out one way to go, which may help you figure how you need to get away from the [chase-person].[paragraph break]Of course, any wordplay adventurer worth their salt (like you--you're pretty far along, here) knows the difference between EXIT and X-IT. These things are X-ing out an option, here!";
@@ -8261,7 +8268,7 @@ in-tool-warp is a truth state that varies.
 carry out toolslooting:
 	abide by the chase-warp-check rule;
 	if KAOS Oak is moot, say "You already destroyed the [kaoscaps]." instead;
-	if tron-got is 4, say "You already have all the North Tron pieces the epicer recipe says you need." instead;
+	if tron-got is 4, say "You already have all the North-Tron pieces the epicer recipe says you need." instead;
 	now in-tool-warp is true;
 	try revovering;
 	now in-tool-warp is false;
@@ -10549,7 +10556,7 @@ understand the command "raytest" as something new.
 understand "raytest [number]" as raytesting.
 
 carry out raytesting:
-	if north tron is off-stage, say "The north tron must be on stage before running this test." instead;
+	if kaos oak is not moot, say "The North-Tron must be created before running this test." instead;
 	let nu be the number understood;
 	if nu < 1 or nu > 5, say "1-5 please." instead;
 	now yard ray is off-stage;
