@@ -1062,6 +1062,9 @@ to decide whether the action is procedural: [aip]
 	if eyeing, yes;
 	if xpyxing, yes;
 	if thinking, yes;
+	if reving, yes;
+	if roting, yes;
+	if reiing, yes;
 	if useoning:
 		if noun is radar or second noun is radar, yes;
 	if taking inventory, yes;
@@ -2231,13 +2234,13 @@ to decide what number is useprio of (th - a thing): [saving a lot of space for n
 	if th is the player, decide on 30;
 	if th is test set, decide on 29;
 	if th is yard ray, decide on 28;
+	if th is resale laser, decide on 27; [resale laser/yard ray etc. should always be just above everything else, because shooting stuff up shouldn't work.]
+	if th is a workable, decide on 25; [workables need to be pretty high up]
 	if th is stole lots or th is sto lots, decide on 24; [stole lots is only there briefly, and you want to reject sto lots ASAP]
-	if th is resale laser, decide on 23; [resale laser should always be just above everything else, because shooting stuff up shouldn't work.]
-	if th is Gal Flag, decide on 22;
-	if th is lie veil, decide on 21;
-	if th is scorn rocs, decide on 21;
-	if th is wash saw, decide on 21;
-	if th is a workable, decide on 20;
+	if th is lie veil, decide on 22;
+	if th is scorn rocs, decide on 22;
+	if th is wash saw, decide on 22;
+	if th is Gal Flag, decide on 21;
 	if th is tract cart, decide on 20;
 	if th is DIFF ID, decide on 18;
 	if th is a person, decide on 15;
@@ -2389,17 +2392,18 @@ definition: a thing (called t) is exhausted:
 a machine message rule for a thing (called t):
 	if t is an ingredient, say "The only machine you should put food in is a microwave. Or, maybe, a BAKE-KAB. Or a heata['], eh?" instead;
 	if t is a tronpart, say "No, [the t] [if epicer recipe is xed]is[else]seems[end if] too important." instead;
-	if t is exhausted, say "You already tried everything, and nothing worked." instead;
-	if t is Nat's Tan, say "Nat's Tan is pretty much hopeless. You'll need to fob it off on someone or something." instead;
-	if t is pact cap, say "The pace cap has the VOL option, as well as [if cap-ever-pace is false]another option[else]PACE[end if], but that's probably enough. It doesn't need drastic fixing." instead;
-	if t is el doodle, say "None of the machines seems equipped for deciphering. A person might be able to do it better." instead;
-	if t is radar, say "The radar is pretty intricate. There's no way to [if radar-used is 2]super[else]re[end if]charge it." instead;
-	if t is listed in postmachines, say "The [second noun] hums ominously as you bring [the t] close. You already used the [prem of t] to make or reveal [the t]. Maybe you should do something else." instead;
-	if t is listed in premachines, say "Nothing happens. And you felt optimistic there! Hmm." instead;
+	if t is exhausted, say "Drat. None of the machines worked for [the t]. You may need to use it somewhere else." instead;
 	if second noun is reifier, now t is reified;
 	if second noun is rotator, now t is rotated;
 	if second noun is reviver, now t is revived;
-	if t is exhausted, say "Drat. None of the machines worked for [the t]. You may need to use it somewhere else." instead;
+	if t is Nat's Tan, say "Ugh. Nat's Tan is hopelessly awful. You'll need to fob it off on someone or something." instead;
+	if t is pact cap, say "The pace cap has the VOL option, as well as [if cap-ever-pace is false]another option[else]PACE[end if], but that's probably enough. It doesn't need drastic fixing." instead;
+	if t is el doodle, say "None of the machines seems equipped for deciphering. A person might be able to do it better." instead;
+	if t is radar, say "The radar is pretty intricate. There's no way to [if radar-used is 2]super[else]re[end if]charge it." instead;
+	if t is wash saw, say "Nothing happens when you put the wash saw in [the second noun]. The saw also isn't sharp enough to cut [the second noun] either, not that that would be productive." instead;
+	if t is psi wisp, say "[chase-pass]Alas, the psi wisp isn't just going to fit in there willingly. Maybe another machine, though..." instead;
+	if t is listed in postmachines, say "The [second noun] hums ominously as you bring [the t] close. You already used the [prem of t] to make or reveal [the t]. Maybe you should do something else." instead;
+	if t is listed in premachines, say "Nothing happens. And you felt optimistic there! Hmm." instead;
 	say "Nothing happens at all. Maybe [the t] do[unless t is plural-named]es[end if]n't need any sort of machine augmentation." instead;
 
 to say prem of (th - a thing):
@@ -2834,7 +2838,7 @@ stock cots	sleep eels	--	pre-cots-on-eels rule	--	true	true	true	true	true	true	
 --	--	--	rev-puff-up rule	post-puff-up rule	true	--	--	true	true	true	Yelpley	Yawn Way	Yawn Way	false	--
 --	--	--	rev-pull-up rule	post-pull-up rule	true	--	--	true	true	true	Yelpley	Emo Dome	Emo Dome	false	--
 wash saw	past sap	--	pre-saw-on-sap rule	sap-loose rule	true	false	false	true	true	true	Grebeberg	Cold Loc	Cold Loc	false	"You hack away at the past sap with the wash saw, first squirting some loosening/thawing liquid. It's tricky, but the saw holds out, and with some perseverance, you're able to twist the sap off the rife fir[if player does not have puce cup]. You don't have anything to put the sap in, but it's there for later[end if]."
-puce cup	past sap	--	pre-cup-on-sap rule	sap-to-cup rule	true	false	false	true	true	true	Grebeberg	Cold Loc	Cold Loc	false	"You pour some sap into the cup."
+puce cup	past sap	--	pre-cup-on-sap rule	sap-to-cup rule	true	false	false	true	true	true	Grebeberg	Cold Loc	Cold Loc	false	"You pour some sap into the cup. There's still plenty left over, if you ever wind up needing more."
 puce cup	liar grail	--	pre-cup-on-grail rule	empty-grail rule	true	false	true	true	true	true	Yelpley	Swept Pews	Swept Pews	false	"You pour the purist sirup into the liar grail. As the sirup bubbles, the Wordy Drow slips away from it and ... yes! It breaks free! 'Wend new! Wend new!' it calls to you.[paragraph break]Thoughts flow into your head from the liar grail, but the purist sirup has mutated its complex manipulations into much simpler cries of protestation: it just doesn't want you to go there! You shrug, no longer mystified by its sophistry, and the grail cracks and rolls away.[paragraph break]The passage south looks clear. You snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL! You look around, worried a nun will say 'Tut!' But all is still."
 puce cup	dose sod	--	pre-cup-on-sod rule	sod-to-cup rule	true	false	false	true	true	true	Grebeberg	Apse Spa	Apse Spa	false	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough." [sc2-ignore]
 puce cup	Bond Nob	Elan Ale	pre-cup-on-nob rule	empty-nob rule	true	true	true	true	true	true	Yelpley	Drawl Ward	Drawl Ward	false	"You give the Bond Nob the puce cup. Gulp! Gulp! The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. So many places to visit: [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars]... well, everywhere except Bar Drab or Soda Do's or Jo's OJ.' The Bond Nob proceeds to regale lager while vanishing north."
@@ -3575,7 +3579,7 @@ this is the pre-saw-on-sap rule:
 		say "[one of]You can hack off some of the sap [hn of Cold Loc]. You already have the item for it[or]USE SAW ON SAP[in-not-here of Cold Loc][stopping].";
 		the rule succeeds;
 	if sap-takeable is true:
-		if revving-over is false, say "You already hacked enough sap off.";
+		if revving-over is false, say "You already hacked more than enough sap off.";
 		the rule fails;
 	the rule succeeds;
 
@@ -3799,6 +3803,7 @@ this is the sap-loose rule:
 this is the sap-to-cup rule:
 	now puce cup is sappy;
 	now puce-ever is true;
+	now sap-ever-in-cup is true;
 	now sap-with-hands is false;
 	no-extra-cup-points;
 	the rule succeeds;
@@ -4700,7 +4705,9 @@ A rift fir is scenery in Cold Loc. "It sure is a rife fir. You're not getting pa
 
 chapter past sap
 
-the past sap is semiperipheral scenery in Cold Loc. "[if sap-takeable is true]A good chunk of it is lumped on the ground[else]It's stuck to the rift fir, but with the right tool, maybe you could pry it off[end if]."
+the past sap is semiperipheral scenery in Cold Loc. "[if liar grail is moot]There's still a chunk remaining, but you probably don't need any more now that you got rid of the liar grail[else if sap-ever-in-cup is true]While you took some of it, there's still enough remaining if you need more[else if sap-takeable is true]A good chunk of it is lumped on the ground[else]It's stuck to the rift fir, but with the right tool, maybe you could pry it off[end if]."
+
+sap-ever-in-cup is a truth state that varies.
 
 sap-with-hands is a truth state that varies.
 
@@ -4709,7 +4716,7 @@ instead of drinking past sap: say "Too thick."
 instead of taking the past sap:
 	if liar grail is moot, say "You probably don't need any more past sap, now that you used it to dispose of the Liar Grail." instead;
 	if player has puce cup:
-		say "The puce cup is handier than your hands to take the sap, so you use it instead.";
+		say "The puce cup is handier than your hands to take the sap, so you use it instead[if sap-untakeable is true]. Unfortunately...[else].[end if]";
 		try useoning past sap with puce cup instead;
 	if sap-takeable is false:
 		now sap-with-hands is true;
@@ -4996,7 +5003,7 @@ chapter ark of okra
 The ark of okra is scenery in Mont Nom. "You always found okra, or the idea, icky, but the ark is beautiful enough, you sort of wonder how it'd taste--well, if it hadn't been sitting out for goodness knows how long. Here you can see DO OFT FOOD inscribed on it. Maybe if you LISTEN you'll hear an equally weird and vaguely useful message[if martini tram is off-stage]. You bet something cool is behind it. Maybe a tahini hat. You really want to make a sup opus here[end if]."
 
 after examining ark of okra:
-	if martini tram is off-stage:
+	if martini tram is moot:
 		say "The ark of okra is cracked from where the martini tram rolled through, but you don't see any secret passage behind it.";
 	else:
 		if chef-yet is true, say "It appears slightly cracked now you combined [the list of ingredients in devreserved].";
