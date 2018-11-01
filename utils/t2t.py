@@ -1,6 +1,7 @@
 # t2t.py = transcript to test
 #
 
+import sys
 import re
 
 from os import listdir
@@ -23,6 +24,8 @@ au3 = open("t2t.au3", "w")
 au3_header = "Opt(\"SendKeyDelay\", 0)\n\nOpt(\"WinTitleMatchMode\", -2)\nWinActivate(\"Ailihphilia.inform \")\nWinWaitActive(\"Ailihphilia.inform \")\n\nMouseMove(1640,972)\n\nSleep(500)\n\n";
 
 au3.write(au3_header)
+
+long_of = { "rei":"reifier", "rev":"reviver", "rot":"rotator" }
 
 def read_point_matches():
     next_header = False
@@ -86,24 +89,28 @@ def space_check(x, line_in):
     if x in single.keys(): return
     if x in one_to_two_maps.keys(): return
     if x in may_need_space.keys(): return
-    print(x, line_in.strip())
+    #print(x, line_in.strip())
     may_need_space[x] = True
 
 def expanded_name(x):
     if x in one_to_two_maps.keys(): return one_to_two_maps[x]
     return x
 
+def abbr_to_full(match):
+    x = "use " + long_of[match.group(2)] + " on " #+ " !! " + match.group(1) + " !! " + match.group(2) + " !! " + match.group(3) + "."
+    #x = "use {:s} on {:s}".format(long_of[match.group(1)], match.group(3))
+    return x
+
 def add_to_use_hash(file_name):
     this_time = defaultdict(lambda: defaultdict(bool))
     line_count = 0
-    long_of = { "rei":"reifier", "rev":"reviver", "rot":"rotator" }
     with open(file_name) as file:
         for line in file:
             line_count += 1
             l2 = ''
             ll = line.strip().lower()
             if re.search("> *(rei|rev|rot) +", line, re.IGNORECASE):
-                l2 = re.sub(r'> *(r..) +(.*)', r'use {:s} on {:s}', ll, re.IGNORECASE)
+                l2 = re.sub(r'(> *)(r..)( +)', abbr_to_full, ll, re.IGNORECASE)
             if re.search("> *use +", line, re.IGNORECASE):
                 l2 = re.sub("> *use *", "", line.strip().lower())
                 l2 = re.sub("-", " ", l2)

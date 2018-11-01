@@ -21,6 +21,7 @@ Utils, alphabetically:
 * utw.py = writes out scripts to regression test and AutoIt files based on code in table of rejects
 * sc2.py = does internal code verification of maximum score byregion. Also cross-checks invisiclues and trizbort flowchart.
     * Supersedes the weaker msc.py. msc.py did a much more trivial runthrough.
+* t2t.py looks for "use x on y" and incorporates all uses into an AutoIt script, prioritizing the good tries used most
 
 Hooks: (not officially built into GIT, but run before I commit)
 
