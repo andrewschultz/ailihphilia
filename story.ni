@@ -4,11 +4,16 @@
 
 [blurb: It is what you think, you. What, is it? Warning: not recommended for those with aibohphobia.]
 
-[there are things you can search for to make the source more navigable.
+[Here are tips on navigating the source code.
 
-First, Ailihphilia tables.i7x contains all the random responses.
-Second, Ailihphilia tables.i7x contains responses to mistakes e.g. palindrome verbs/phrases that don't advance the game but are good tries.
-Put an x or two before each of these to find the beginning of a table, ZZ for the end:
+First, Ailihphilia Tables.i7x contains all the random responses. It doesn't contain tables for using one item on another. I suppose I could divide things into "random tables" and "tables," but that'd be in the future.
+Second, Ailihphilia Tables.i7x contains responses to mistakes e.g. palindrome verbs/phrases that don't advance the game but are good tries.
+Third, good tries are all located in Ailihphilia Mistakes.i7x.
+There is also Ailihphilia Tests.i7x, but that is probably only of interest to programmers.
+
+There may be tables you want to look at. But searching for them is not so easy. If you want to find the table of big fun, for instance, what will happen is that you'll probably find several lines referencing the table of big fun first. This is slightly inconvenient!
+
+So, my solution was to put an x or two before each of these to find the beginning of a table, ZZ for the end:
 START XX/ZZ DIR
 CANT for can't-use default messages
 USE / GOOD for the table of goodacts (USE X ON Y gives a point, or other things in REV OVER)
@@ -42,7 +47,7 @@ include Old School Verb Carnage by Andrew Schultz.
 
 include Basic Screen Effects by Emily Short.
 
-[this may be toggled for debug depending on how much space is left--or if I want to force unit tests to make sure that, say, waiting text cycles after only 2 entries. If I add a random wait response, for instance, that would be one more bit of text to account for. For which to account.]
+[The debug tables were an old file that only listed 2 entries per random text, to make it easier to test the looping case. They're a bit obsolete now that I wrote a function to set random text to just before the looping case, but maybe you'll find the idea useful.]
 
 include Ailihphilia Tables by Andrew Schultz.
 [include Ailihphilia Debug Tables by Andrew Schultz.]
@@ -504,7 +509,7 @@ check requesting the score:
 			say "You've got all the roving LLPs. You have [Q2] non-roving LLP[plur of Q2] remaining to figure out before going [if player is not in Fun Enuf]back to [Fun Enuf] and [end if]south through the Tix Exit.";
 		else:
 			say "You have [Q] roving last lousy point[plur of Q] left and [Q2] non-roving LLP[plur of Q2] left.";
-	if player has epicer recipe and kaos oak is not moot:
+	if player has epicer recipe and KAOS Oak is not moot:
 		say "[if epicer recipe is nox]You realize a score is only an abstract indicator of how well you're doing, and maybe that epicer recipe would help you figure what's what. So you read it, and you note y[else]Y[end if]";
 		say "ou [if tron-got is 0]don't have any of the [number of tronparts in words][else]also have [tron-got] piece[plur of tron-got] of [number of tronparts][end if] North-Tron pieces you need to destroy the [kaoscaps], according to the epicer recipe[hint-tron].";
 		now epicer recipe is xed;
@@ -2127,7 +2132,9 @@ instead of swearing mildly, try swearing obscenely instead;
 
 swearies is a number that varies.
 
-instead of swearing obscenely, next-rand table of swearstuff;
+instead of swearing obscenely:
+	if poop-boob-yet is true, say "[one of]Despite having found the right way to swear here, you reaffirm your respect for the classics. How thoughtful! Anyway...[paragraph break][or][stopping]";
+	next-rand table of swearstuff;
 
 chapter sleeping
 
@@ -2690,7 +2697,7 @@ sage gas	Bond Nob	"The Bond Nob could use a little wisdom, but more immediately,
 sage gas	butene tub	"The sage gas needs to work with something more metaphysical."
 sage gas	code doc	"The Code Doc needs no artificial intelligence or wisdom boost."
 sage gas	Sniffins	"[Sniffins] needs something more practical."
-sage gas	yuge guy	"The sage gas would be wasted on the Yuge Guy, who seems all about dumbing things--and other people--down."
+sage gas	Yuge Guy	"The sage gas would be wasted on the Yuge Guy, who seems all about dumbing things--and other people--down."
 sage gas	Dork Rod	"There's no place to squeeze gas into the Dork Rod. Sometimes, dorkiness is ready for wisdom, but not here and now. You'll need another receptacle."
 sage gas	gulf lug	"The gulf lug needs a physical boost, not a mental one."
 sage gas	King Nik	"[nik-self]."
@@ -2890,7 +2897,7 @@ you buoy	rotator	ME gem	pre-buoy-on-rotator rule	--	true	true	false	false	false	
 Mr Arm	bomb mob	TNT	pre-arm-on-mob rule	mob-bye rule	true	true	true	false	false	true	Yelpley	Yell Alley	Yell Alley	false	"Mr. Arm walks on his index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. Being an arm, it/he has more leverage than just a DNA hand would've. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course. Perhaps Mr. Arm will find a Do-Bod or even an Evol-Glove to be truly complete. The bomb mob, for their part, becomes a poor troop once they see what they've lost. They wander away."
 Nat's Tan	scorn rocs	--	pre-tan-on-rocs rule	post-tan-on-rocs rule	true	true	true	true	false	false	Grebeberg	Flu Gulf	Flu Gulf	false	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
 rep popper	ME Totem	murdered rum	pre-popper-on-totem rule	totem-out rule	true	true	true	false	false	false	Grebeberg	Sneer Greens	Sneer Greens	false	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Had, ah!' he cries, making a male lam. From his babbling, he's apparently retreating to a glam-amalg (Loot Stool included) or ego loge in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]'Pol? Flop!' you think to yourself, before the ME Totem, sliced several ways, collapses and sinks into the ground. As it does, something rolls out ... some murdered rum! It looks powerful. You pick it up carefully."
-Bros' Orb	Mirror Rim	Yard Ray	pre-orb-on-rim rule	sword-rows-reveal rule	true	true	true	false	false	false	Yelpley	Red Roses Order	Red Roses Order	false	"The Bros['] Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Ms. Ism has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, Ms. Ism, live not on evil!' you boom, as the Orb does its work. Ms. Ism looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'My sub-level bus! You won't catch it! The E-Divide will block you!' The Yard Ray is left unguarded. You take it. You also wipe off your state tats--you won't need them any more."
+Bros' Orb	Mirror Rim	Yard Ray	pre-orb-on-rim rule	sword-rows-reveal rule	true	true	true	false	false	false	Yelpley	Red Roses Order	Red Roses Order	false	"The Bros['] Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Ms. Ism has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, Ms. Ism, live not on evil!' you boom, as the Orb does its work. Ms. Ism looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'Mom! Mom! Mom!' An E-Divide shimmers and pops up, blocking you from following.[paragraph break]Behind the Mirror Rim is a Yard Ray, which looks useful and destructive. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	pre-slab-on-rows rule	moot-rows-and-tats rule	true	true	false	false	false	false	Yelpley	Red Roses Order	Emo Dome	false	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Ms. Ism."
 not-a-baton	reifier	taboo bat	pre-not-a-baton-on-reifier rule	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
 murdered rum	yard ray	--	pre-rum-on-ray rule	ray-beepy-now rule	true	true	false	false	false	false	Dim Mid	--	--	false	"As you combine the spoils from the Yuge Guy and Ms. Ism, the yard ray gleams with energy. It seems like it could do some damage now somewhere even more important than [Sneer Greens] or [Red Roses Order]. Maybe somewhere right between them."
@@ -3288,8 +3295,8 @@ this is the pre-cup-on-sap rule:
 		if in-sos is true:
 			say "[one of]You need to cut the sap off[or]USE SAW ON SAP [in-not-here of Cold Loc][stopping].";
 			the rule succeeds;
-		if revving-over is false, say "The sap is stuck to the rift fir. You can't just take it with your hands.";
-		now sap-with-hands is true;
+		if revving-over is false, say "The sap is stuck to the rift fir. You can't [if player has puce cup]quite lump it in the puce cup[else]just take it with your hands[end if].";
+		unless player has puce cup, now sap-with-hands is true;
 		the rule fails;
 	if in-sos is true:
 		if liar grail is moot, the rule fails;
@@ -4095,7 +4102,7 @@ book Fun Enuf
 
 to say if-not-LLP: if LLP-hunting, say ", other than poke around for last lousy points,"
 
-Fun Enuf is a room in Dim Mid. "[if elite tile is in Fun Enuf]Elite tile has replaced the old tile lit. Probably all that's left to do[if-not-LLP] is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what leads west and east[xit-ave][end if]. [if Diktat Kid is moot][Dirge Grid] is back north, not that you need to revisit[else if kaos oak is moot]Also, the North-Tron has carved a passage north where the [kaoscaps] was. It's too big to, uh, repaper[else if flee elf is in Fun Enuf]An oak blocks the way north. It's a wide oak[else]The [kaoscaps] blocks your way north[end if]."
+Fun Enuf is a room in Dim Mid. "[if elite tile is in Fun Enuf]Elite tile has replaced the old tile lit. Probably all that's left to do[if-not-LLP] is to read it, or just go back south through the Tix Exit[else]Some tile lit is carved out here, describing what leads west and east[xit-ave][end if]. [if Diktat Kid is moot][Dirge Grid] is back north, not that you need to revisit[else if KAOS Oak is moot]Also, the North-Tron has carved a passage north where the [kaoscaps] was. It's too big to, uh, repaper[else if flee elf is in Fun Enuf]An oak blocks the way north. It's a wide oak[else]The [kaoscaps] blocks your way north[end if]."
 
 to say xit-ave:
 	say ". The [if player has x-ite tix]Tix Exit to the south is waiting for you to enter[else if tix exit is in Fun Enuf]Tix Exit to the south prevents passage back home through Evac Ave[else]Evac Ave is south, if you want to chicken out[end if]"
@@ -4219,7 +4226,7 @@ check going north in Fun Enuf:
 	if flee elf is in Fun Enuf, say "The flee elf sees you looking north but says 'First things first! Get the cap the right way, here.'" instead;
 	unless epicer recipe is xed or KAOS Oak is moot, say "You don't have a way through the [kaoscaps], [if epicer recipe is off-stage]or anything that would show you one[else]but maybe there's something you could read right now to get an idea[end if]." instead;
 	if epicer recipe is not moot and epicer recipe is nox, say "You need to get there. But you have no clue what to build, or how[if number of carried ingredients > 2]--though some of your inventory looks useful for that[end if][if player has epicer recipe]. Hmm, maybe Xing the epicer recipe will help that[end if]." instead;
-	if kaos oak is not moot, say "You can't go north with the [kaoscaps] in the way. You need to build the North-Tron to destroy the oak[if tron-got is 4]. In fact, you probably can just use any of the parts you have on each other to build it, now[else]. You currently have [tron-got] piece[plur of tron-got][end if]." instead;
+	if KAOS Oak is not moot, say "You can't go north with the [kaoscaps] in the way. You need to build the North-Tron to destroy the oak[if tron-got is 4]. In fact, you probably can just use any of the parts you have on each other to build it, now[else]. You currently have [tron-got] piece[plur of tron-got][end if]." instead;
 	if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
 	if murdered rum is not moot, say "You have the yard ray, but it isn't, well, charged." instead;
 	if emitted is false, say "You don't know how to work the yard ray[if yard ray is xed]. EMIT ********--hmm, what could those eight letters be?[else]. Maybe examine it for instructions.[end if]" instead;
@@ -4716,7 +4723,7 @@ instead of drinking past sap: say "Too thick."
 instead of taking the past sap:
 	if liar grail is moot, say "You probably don't need any more past sap, now that you used it to dispose of the Liar Grail." instead;
 	if player has puce cup:
-		say "The puce cup is handier than your hands to take the sap, so you use it instead[if sap-untakeable is true]. Unfortunately...[else].[end if]";
+		say "The puce cup is handier than your hands to take the sap, so you use it instead[if sap-takeable is false]. Unfortunately...[else].[end if]";
 		try useoning past sap with puce cup instead;
 	if sap-takeable is false:
 		now sap-with-hands is true;
@@ -5370,7 +5377,7 @@ understand "roomy/moor" and "roomy moor" as Yack Cay when Known Wonk is moot.
 
 check going north in Yack Cay when mist sim is in Yack Cay: say "The Known Wonk pushes you back. 'You don't know how weird it is to the north, especially beyond that mist sim! It's potentially WORSE than normal mist! But I know a thing or two about adventuring... well, adventuring theory. And I can tell you, boy oh boy, there are risks.'[paragraph break]The Known Wonk lists a few. You don't know if the Known Wonk believes all this. But you can't refute it, and you do have a nagging worry." instead;
 
-check going west in Yack Cay: say "The edits tide [if el doodle is moot]was more useful to help reconfigure El Doodle[else]is probably better for something edit-able[end if]." instead;
+check going west in Yack Cay: say "The edits tide [if el doodle is moot]was more useful to help reconfigure El Doodle[else]is probably better for something edit-able[end if]. Besides, there might be scuba bucs waiting beyond." instead;
 
 check going east in Yack Cay: say "You don't want or need to have anything to do with the storm rots." instead;
 
@@ -6301,8 +6308,8 @@ table of readables
 read-cand	read-yet	read-msg
 Spur Ups	false	"Hmm, that's interesting. Each has P, U and an asterisk in a triangle[if puffed-up is true], even the charred one."
 Set O Notes	false	"You scrunch your eyes to read the random miscellany at the edges of the Set O Notes. Apparently, there can only be one questor, to avoid a partner-entrap. The Flee Elf also wrote in 'REP US SUPER' to motivate you.[paragraph break]Um, yeah. The Set O Notes's main page seems a lot more useful, describing your enemies and some of the scenery and all, but hey, it didn't hurt to read closer."
-enact cane	false	"You squint carefully. KARE RAK is written. But then where are/were the prongs? How would you restore the Enact Cane into something even more useful?"
-moor broom	false	"The moor broom still has the KARE RAK written on it that the enact cane did."
+enact cane	false	"You squint carefully. KLENS'N ELK is written. But how would you restore the Enact Cane into something that could actually clean stuff? And who has something that needs cleaning?"
+moor broom	false	"The moor broom still has the KLENS'N ELK written on it that the enact cane did."
 
 section show-warning
 
@@ -7315,7 +7322,7 @@ does the player mean useoning with the Set O Notes: it is unlikely.
 
 chapter E-Divide
 
-the E Divide is peripheral scenery in Red Roses Order. "Ms. Ism crossed it, but you don't need to follow her. It would probably be dangerous. And yes, it's too narrow to slip through the tines. Maybe if you had an e-gage...but there's none in this game.". printed name of E Divide is "E-Divide". understand "e-divide" as e divide.
+the E Divide is peripheral scenery in Red Roses Order. "Ms. Ism crossed it, but you don't need to follow her. It would probably be dangerous. Besides, she probably caught a sub-level bus to go far, far away.". printed name of E Divide is "E-Divide". understand "e-divide" as e divide.
 
 book Swept Pews
 
@@ -10563,7 +10570,7 @@ understand the command "raytest" as something new.
 understand "raytest [number]" as raytesting.
 
 carry out raytesting:
-	if kaos oak is not moot, say "The North-Tron must be created before running this test." instead;
+	if KAOS Oak is not moot, say "The North-Tron must be created before running this test." instead;
 	let nu be the number understood;
 	if nu < 1 or nu > 5, say "1-5 please." instead;
 	now yard ray is off-stage;
