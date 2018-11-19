@@ -4614,7 +4614,9 @@ carry out emiting:
 				if guessed-yet entry is false:
 					now guessed-yet entry is true;
 					increment emit-guesses;
-					say "[guess-result entry][line break]" instead;
+					say "[guess-result entry][line break]";
+					say "[line break]Hmm, you've had some good tries. The right thing to emit will come to light soon enough.";
+					the rule succeeds;
 				else:
 					say "You already tried that. There must be something else relatively simple that works." instead;
 		let XX be indexed text;
@@ -4643,13 +4645,12 @@ to say also-4: say ". Also, given what's on the Yard Ray, it's four letters"
 
 table of good emit guesses
 guess-topic (a topic)	guessed-yet	guess-result
-"time"	false	"You can emit time without a fancy yard ray. It must be some sort of time[also-4]."
 "dudtime" or "dud time"	false	"A heel turn this late in the game? Nah[also-4]."
 "onotime" or "ono time" or "sos time" or "sostime"	false	"Something positive and brighter[also-4]."
 "yaytime" or "yay time"	false	"That's positive and bright, but it's better saved for after you've conquered the Dirge Grid north of [hn of Fun Enuf][also-4]."
 "dadtime" or "dad time"	false	"I'm sorry you haven't uncovered enough groan-inducing jokes in the course of this game. I tried my best, honest I did[also-4]."
 "pooptime" or "poop time"	false	"A hollow voice booms 'Loo? Fool!'[paragraph break]You want to get your opponent on the run, not get them the runs."
-"time"	true	"Yes, but what sort of time? Something positive and cheery, you'd guess." [this is true because it is semi-trivial to figure out]
+"time"	true	"You can emit time without a fancy yard ray. It must be some sort of time. Something positive and cheery, you'd guess." [guessed-yet is true here because it is semi-trivial to figure out]
 
 part Grebeberg region
 
@@ -7975,7 +7976,7 @@ definition: a thing (called th) is keepable:
 
 to mug-the-player:
 	say "You drop all your possessions (except [the list of keepable things]) as you flee[one of][or] again[stopping]! That will make you a bit faster, but it looks like you'll need your own wit and quick actions to escape, here[one of].[wfak-d][or].[stopping]";
-	now all things carried by the player are in DropOrd;
+	now all not keepable things carried by the player are in DropOrd;
 
 to say no-time-note:
 	say "When you are in a chase[if being-chased is true], like right now[end if], commands like [b]X/EXAMINE[r], [b]L/LOOK[r], [b]I/INVENTORY[r], [b]THINK[r] and even [b]AID[r] (if you must) will take no time"
