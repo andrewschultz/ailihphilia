@@ -957,7 +957,7 @@ to say mis of (n - a number):
 						now mis-yet is true;
 						say "[line break]NOTE: THINK[if refer-yet is true]/REFER[end if] will show you the LLPs clued so far that you haven't figured, yet.[run paragraph on][line break]";
 					break;
-			say "[line break][if flee elf is not moot]A pip in the[else]The pip in your[end if] pact cap [if eye-charges > 0]brightens further[else if ever-pip is false]lights up! [now-cap][else]lights back up[end if].";
+			say "[line break][if flee elf is not moot]A pip in the[else]The pip in your[end if] pact cap [if eye-charges > 0]brightens further[else if ever-pip is false]lights up! [now-cap][else]lights back up[end if].[no line break]";
 			now ever-pip is true;
 			increment eye-charges;
 

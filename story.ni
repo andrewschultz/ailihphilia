@@ -4315,7 +4315,7 @@ to say pip-charges:
 	if eye-charges is 0:
 		say "dark[if ever-pip is true], but maybe more good guesses could recharge it[end if]";
 	else:
-		say "lit[if eye-charges > 1], and not just lit, but it separates into [pip-charges] parts if you stare too hard[end if]";
+		say "lit[if eye-charges > 1], and not just lit, but it separates into [eye-charges in words] parts if you stare too hard[end if]";
 
 chapter pace cap
 
@@ -8665,8 +8665,9 @@ carry out eyeing:
 	if eye-charges is 0, say "You don't feel able to see into anything right now[if ever-pip is true]. Maybe you should look into more[end if]." instead;
 	let n1 be noun;
 	repeat through table of shiftables:
-		if use1 entry is n1, now n1 is use3 entry;
-		say "Your eye wanders from [the use1 entry] to [the use3 entry]...";
+		if use1 entry is n1:
+			now n1 is use3 entry;
+			say "Your eye wanders from [the use1 entry] to [the use3 entry]...";
 	let Q be rowcount of n1;
 	if Q is -1, say "You see nothing special. Well, that's one less thing you need to manipulate." instead;
 	say "On eyeing [the n1], you notice the pact cap registers the number [Q][one of]. You can recall this information later with [b]THINK[r][stopping].";
