@@ -843,6 +843,8 @@ table of altbooks
 randtxt
 "Aiding Nidia"
 "Allay Alla"
+"O, Had I Idaho"
+"Ganymede, My Nag"
 "Am I, Ma?"
 "Ape Pa"
 "Apollo, Pa"
@@ -1020,6 +1022,7 @@ randtxt
 [this may be related to Yuge battle cries, but the Diktat Kid insults you. The Yuge Guy puffs himself up.]
 table of diktat taunts
 randtxt
+"At's-a BASTA!"
 "Ahahahahahaha!"
 "Be EW, dweeb!"
 "Da bad! Da BAD!! DA BAD!!!"
@@ -1088,6 +1091,7 @@ randtxt
 
 table of My Gym songs
 randtxt
+"To Hos So Hot"
 "Age Mo' Mega"
 "Ai, Tia"
 "Ail, Emelia"
@@ -1118,6 +1122,7 @@ randtxt
 "Jog, OJ"
 "Jojo J"
 "Khalilah K"
+"Kiki K"
 "Koko K"
 "Krew Twerk"
 "LA's Reversal"
@@ -1296,6 +1301,8 @@ randtxt
 "Abler Elba"
 "Accorded Rocca"
 "ACDC A"
+"Jaded AJ"
+"'Jazz' AJ"
 "ADHD A"
 "Anon A"
 "Arid Ira"
@@ -1441,6 +1448,9 @@ randtxt
 "Tru Burt"
 "Ur-Dru"
 "'Vests' Ev"
+"Bobbo B"
+"Doggo D"
+"Robbo R"
 "Walla Walla W"
 "Wazza W"
 "Weewee W"
@@ -1453,7 +1463,9 @@ randtxt
 table of Rob droning
 randtxt
 "Analyticity? Lana!"
+"D-N-D! D-N-D!"
 "Bah! Ahab?!"
+"X on Knox!"
 "Boone?! Noob!"
 "Can Gignac!"
 "Cull Luc!"
@@ -1571,6 +1583,7 @@ randtxt
 "Dur. Crud."
 "Eff a gaffe."
 "It: Revert, I!"
+"Ho! ... D'oh!"
 "Nixin[']..."
 "Not. Revert. On!"
 "Or, Perp, REPRO!"
@@ -1796,9 +1809,12 @@ randtxt
 table of yuge baits
 randtxt
 "Avoided I? Ova[']!"
+"Pivot, O, VIP!"
+"K, ****!"
 "BOO, NOOB!"
 "Dim, I! Timid!"
 "Evar brave!"
+"GOP: O. G.!"
 "EY, BYE!"
 "LOW AWOL!"
 "Oft GTFO!"
@@ -1810,8 +1826,11 @@ randtxt
 table of yuge battle cries
 randtxt
 "A-Lago gala!"
+"A game?! MAGA!"
 "A-lists? I? La!"
 "Alibi! La!"
+"Heft, Feh!"
+"No: I, Zion!"
 "At a Hata[']!"
 "Bilk-Lib!"
 "Bosh, SOB!"

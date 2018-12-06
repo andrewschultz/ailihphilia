@@ -35,7 +35,7 @@ to search for an item, look for chapter [item].
 
 the story headline is "A *GASP* SAGA!"
 
-the release number is 1.
+the release number is 2.
 
 Release along with an interpreter.
 
@@ -1214,7 +1214,7 @@ instead of thinking:
 	let nsb be number of sober books in devreserved;
 	if nsb < 4 and ever-wordrow is true, say "[if nsb is 0]Those books in Word Row seemed useful--if not for you, for someone else[else]You managed to help someone with a book from Word Row. Perhaps you can help someone else[end if].";
 	if player has epicer recipe and epicer recipe is xed, say "You have [tron-got] of [number of tronparts] pieces of the North-Tron[hint-tron].";
-	say "[line break][if nwe > 0]You may want to examine [this-these of nwe] item[plur of nwe] you haven't, yet: [the list of worth-examining things][else]You've examined all your carried items for clues[end if][if sce-to-see]. You can also try SCE RECS to see scenery you haven't examined[end if].";
+	say "[line break][if nwe > 0]You may want to examine [this-these of nwe] item[plur of nwe] you haven't, yet: [the list of worth-examining things][else]You've examined all your carried items for clues[end if][if sce-to-see]. You can also try [b]SCE RECS[r] to see scenery you haven't examined[end if].";
 	if revisited-u is false and revisit-clue is true, say "You may wish to visit the Code Doc again in [uneven u] to see what the fuss was about.";
 	if LLP-yet is false, say "You don't have any last lousy points to figure that've been clued in-game.";
 	if player has yard ray and murdered rum is not moot, say "You need to figure how to charge the yard ray.";
@@ -1223,8 +1223,11 @@ instead of thinking:
 		sort Q in eyespoil order;
 		say "[line break][b]Things eyed (tix exit is 79):[r][line break]";
 		repeat with Q2 running through Q:
-			say "[Q2] ([if player has Q2]carried)[else][hn of location of Q2][end if]): [eyespoil of Q2][if eyespoil of Q2 <= score + 1] (hmm, worth looking into)[end if][line break]";
+			say "[Q2] ([if player has Q2]carried[else][hn-ext of location of Q2[end if]): [eyespoil of Q2][if eyespoil of Q2 <= score + 1] (hmm, worth looking into)[end if][line break]";
 	if eye-charges > 0, say "[line break][pip-charges].";
+
+to say hn-ext of (rm - a room):
+	say "[if rm is dropord]dropped during the chase[else if rm is devreserved]done with--should not happen[else]hn of rm[end if]";
 
 definition: a thing (called th) is eyed:
 	if th is moot, no;
@@ -1401,6 +1404,8 @@ the take what you got rule is listed instead of the can't take what's already ta
 
 this is the take what you got rule:
 	if noun is enclosed by the player, say "You shuffle [the noun] listlessly from one hand to another, which is in the spirit of the game, even if it doesn't do anything." instead;
+
+after printing the name of spur ups while taking inventory: if puffed-up is true, say " (tarnished slightly)";
 
 after printing the name of pact cap while taking inventory: say ", set to LO[if cap-vol is true]VE[end if] VOL";
 
@@ -1598,7 +1603,7 @@ showed-sites is a truth state that varies.
 
 carry out creditsing:
 	now show-dev is true;
-	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in alphabetical order: Marnix Van Den Bos, Mike Carletta, Wade Clarke, Arthur DiBianca, Viv Dunstan, Anssi Raissanen, Brian Rushton, Mike Spivey, Brian Stovall, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and still gave positive suggestions about cluing and so forth. In-comp, Victor Gijsbers, a fellow competitor in IFComp 2018, helped point me to some tricky bugs.";
+	say "I'd like to thank my testers for finding so much that left me free to think up more weirdness. They are, in alphabetical order: Marnix Van Den Bos, Mike Carletta, Wade Clarke, Arthur DiBianca, Viv Dunstan, Anssi Raissanen, Brian Rushton, Mike Spivey, Brian Stovall, and Jack Welch. While I made an effort to run tests to minimize silly errors, they found a lot and still gave positive suggestions about cluing and so forth. In-comp, Victor Gijsbers, a fellow competitor in IFComp 2018, helped point me to some tricky bugs. Post-comp, David Welbourn pointed me to another handful of bugs.";
 	say "[line break]If you want to join this elite club, and you find a bug, write me at [email].[paragraph break]IFComp organizers past and present. Without them, I wouldn't have started and kept going. Whether that's good for gaming is up for debate, but it's been good for me.[paragraph break]Various Python communities, especially StackOverflow, helped me to organize source control and write utilities that helped not only to extract palindromes but also to tune up Inform code (obligatory thanks to all past and current Inform developers, from whom I've stolen game code and/or used extensions) and run simple tests.[paragraph break]I also found some websites useful. [b]DEV ED[r] or [b]DEVED[r] will show which helped me and how.";
 
 chapter deveding
@@ -2896,7 +2901,7 @@ Eroded Ore	reviver	Ore Zero	pre-ore-on-reviver rule	--	true	true	false	false	fal
 you buoy	rotator	ME gem	pre-buoy-on-rotator rule	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. 'You BOFFO buoy!' you can't help shouting.[paragraph break]The gem's so tempting and beautiful, you grab it quickly, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
 Mr Arm	bomb mob	TNT	pre-arm-on-mob rule	mob-bye rule	true	true	true	false	false	true	Yelpley	Yell Alley	Yell Alley	false	"Mr. Arm walks on his index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. Being an arm, it/he has more leverage than just a DNA hand would've. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course. Perhaps Mr. Arm will find a Do-Bod or even an Evol-Glove to be truly complete. The bomb mob, for their part, becomes a poor troop once they see what they've lost. They wander away."
 Nat's Tan	scorn rocs	--	pre-tan-on-rocs rule	post-tan-on-rocs rule	true	true	true	true	false	false	Grebeberg	Flu Gulf	Flu Gulf	false	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
-rep popper	ME Totem	murdered rum	pre-popper-on-totem rule	totem-out rule	true	true	true	false	false	false	Grebeberg	Sneer Greens	Sneer Greens	false	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Had, ah!' he cries, making a male lam. From his babbling, he's apparently retreating to a glam-amalg (Loot Stool included) or ego loge in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]'Pol? Flop!' you think to yourself, before the ME Totem, sliced several ways, collapses and sinks into the ground. As it does, something rolls out ... some murdered rum! It looks powerful. You pick it up carefully."
+rep popper	ME Totem	murdered rum	pre-popper-on-totem rule	totem-out rule	true	true	true	false	false	false	Grebeberg	Sneer Greens	Sneer Greens	false	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Had, ah!' he cries. 'On U! Y U No ... ?' From his babbling, he's apparently retreating to a glam-amalg (Loot Stool included) or ego loge in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]'Pol? Flop!' you think to yourself, before the ME Totem, sliced several ways, collapses and sinks into the ground. As it does, something rolls out ... some murdered rum! It looks powerful. You pick it up carefully."
 Bros' Orb	Mirror Rim	Yard Ray	pre-orb-on-rim rule	sword-rows-reveal rule	true	true	true	false	false	false	Yelpley	Red Roses Order	Red Roses Order	false	"The Bros['] Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Ms. Ism has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, Ms. Ism, live not on evil!' you boom, as the Orb does its work. Ms. Ism looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'Mom! Mom! Mom!' An E-Divide shimmers and pops up, blocking you from following.[paragraph break]Behind the Mirror Rim is a Yard Ray, which looks useful and destructive. You take it. You also wipe off your state tats--you won't need them any more."
 balsa slab	sword rows	not-a-baton	pre-slab-on-rows rule	moot-rows-and-tats rule	true	true	false	false	false	false	Yelpley	Red Roses Order	Emo Dome	false	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Ms. Ism."
 not-a-baton	reifier	taboo bat	pre-not-a-baton-on-reifier rule	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
@@ -3805,6 +3810,7 @@ this is the sap-loose rule:
 		unless redact-postrule, say "Hmm, the puce cup would be perfect to carry the past sap in[if cup is not empty], though you'd need to empty the cup, first[end if].";
 		the rule succeeds;
 	later-wipe past sap;
+	if eyespoil of wash saw > 0, now eyespoil of wash saw is rowcount of wash saw; [?? this looks really hacky. I should have a more general rule to track the rowcount/eyespoil of a thing.]
 	the rule succeeds;
 
 this is the sap-to-cup rule:
