@@ -3972,7 +3972,7 @@ Oh Who	"[fonen-of of Oh Who]." [start Seer Trees 2 2]
 x-it stix	"No way you're getting through the X-It Stix."
 KAOS Oak	"The [kaoscaps] is immune to ordinary manipulation. You'll need a powerful contraption indeed to dispel it!" [start Fun Enuf 3 2]
 pip	"The pip is just there as a guide to see if you can EYE anything. You don't need to do anything with it."
-Name ME Man	"[fonen-of of Name ME Man]." [start Yawn Way]
+Name ME Man	"[fonen-of of Name ME Man]." [start Yawn Way 4 2]
 x y pyx	"The x/y pyx is a map, nothing more, nothing less. You can only [if player does not have x y pyx]take and [end if]examine it."
 DIFF ID	"You don't have the skill to tinker with the DIFF-ID. You [if Red Roses Order is visited]already found[else]just need to find[end if] a way to identify yourself." [start Emo Dome 5 2]
 ivy villa	"[ivy-no]." [start uneven u 0 3]
@@ -3980,7 +3980,8 @@ den ivy vined	"[ivy-no]."
 trap mart rampart	"It's too sturdy to climb or blow up and too wide to go around. But maybe that will just help you focus on where you need to go." [start Ooze Zoo 2 3]
 bad dab	"The bad dab's message seems important, but it's not good for much except examining." [start Worn Row 3 3]
 redness ender	"You don't want to do anything crazy with the Redness Ender. You don't want to go near it. It's dangerous looking. You can picture it ambushing someone who doesn't expect it."
-sto lots	"You don't want to tinker with the STO LOTS more than you have to. It makes carrying stuff easier, and that's good enough." [start My Gym 4 3]
+Buff-U-B	"The Buff-U-B would be useful if you were in the sort of adventure where you needed to worry about strength and constitution and dexterity and so forth, instead of one where you need to guess a few verbs and see what items to mash together."
+sto lots	"You don't want to tinker with the STO LOTS more than you have to. It makes carrying stuff easier, and that's good enough."
 decal placed	"The decal placed is just there to advertise the food. It's not critical to the story." [start deli tiled 6 3]
 snooty toons	"The snooty toons are just there for ambience. They're not critical to the story."
 go fog	"The go fog is very dense. It pushes you back even as you look at it. As if to say, go away, and also, get going with what you want and need to do." [start Lair Trial 0 4]
@@ -5884,7 +5885,7 @@ carry out puffuping:
 
 book My Gym
 
-My Gym is south of Yawn Way. It is in Yelpley. "[if Dave is moot]Now Dave's gone and you looted the sto(le) lots, there's not much to do here. [end if]You can go back out north to Yawn Way. There's also a way west[if Worn Row is visited] to [Worn Row][else if Dave is in My Gym], though you'll probably have to get rid of Dave to explore it[end if]. Or you can LISTEN to soak up 'energetic' beats."
+My Gym is south of Yawn Way. It is in Yelpley. "[if Dave is moot]Now Dave's gone and you looted the sto(le) lots, there's not much to do here. [end if]You can go back out north to Yawn Way. There's also a way west[if Worn Row is visited] to [Worn Row][else if Dave is in My Gym], though you'll probably have to get rid of Dave to explore it[end if]. Or you can LISTEN to soak up 'energetic' beats. A large BUFF-U-B machine lies in the corner, useless for your goals in this game."
 
 chapter Dave
 
@@ -5954,6 +5955,14 @@ carry out evadeing:
 	else:
 		say "There's only one person you need to evade in this game.";
 	the rule succeeds.
+
+chapter Buff-U-B
+
+the Buff-U-B is peripheral scenery in My Gym. printed name is "Buff-U-B". "The Buff-U-B is a complex machine that can, presumably, bulk up any of your muscle groups, not just the stomach ones like (presumably) an Ab Mamba."
+
+understand "large/machine" and "large machine" as buff-u-b when the player is in My Gym.
+
+understand "buff" and "buff u" and "buff u b" and "u b" and "b" as buff-u-b.
 
 book Worn Row
 
