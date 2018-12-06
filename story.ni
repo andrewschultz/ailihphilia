@@ -2039,7 +2039,7 @@ the new generic going reject rule is listed before the can't go that way rule in
 
 instead of exiting, try going outside;
 
-check going (this is the new generic going reject rule):
+check going (this is the new generic going reject rule): [check going nowhere]
 	if noun is outside:
 		if number of viable directions is 1, try going a random viable direction instead;
 		say "OUT or any synonym is never necessary in the game, though if there is only one exit direction, you'll go that way." instead;
@@ -3954,6 +3954,7 @@ Elided Ile	"You don't need to do anything to Elided Ile [if kayak is moot]now yo
 smirk rims	"The smirk rims are only important if you let them be. In other words, they're not." [start Sneer Greens 1 0]
 Ebola Lobe	"The Ebola Lobe is impassable. You'd need some Nix-O-Toxin to get through, and there isn't any here." [start Flu Gulf 2 0]
 mush sum	"The mush sum is too murky and unstable to deal with. And to break the fourth wall, it's just there to provide a north border."
+e-pipe	"You don't need or want to tinker with the e-pipe. In fact, it's kind of nice to have a boundary as impassable as the e-pipe, so you don't have to wonder if there's anything beyond the Trapeze Part." [start Trapeze Part 3 0]
 tube but	"The tube doesn't lead anywhere you want to go. You don't need to muck with it." [start Evaded Ave 4 0]
 Line Nil	"There's nothing you need behind the Line Nil security system. In fact, it's probably protecting you." [start Yell Alley 5 0]
 gash sag	"You don't want to mess with the gash sag. Destroying the butene tub is damage enough." [start Pro Corp 6 0]
@@ -7128,9 +7129,15 @@ check going north in Evaded Ave:
 
 book Trapeze Part
 
-Trapeze Part is west of Evaded Ave. It is in Yelpley. "[if epicer recipe is off-stage]There's a ten level net on the floor, here. It could protect you from a long fall. You're convinced there must be something at the far end, but it's probably not safe to use the trapeze to get over until, well, you've done safety checks[else]The ten level net still sits here, and it'd be handy if there was anything else on the other side of it, but there isn't[end if]. You can only go back east."
+Trapeze Part is west of Evaded Ave. It is in Yelpley. "[if epicer recipe is off-stage]There's a ten level net on the floor, here. It could protect you from a long fall. You're convinced there must be something at the far end, but it's probably not safe to use the trapeze to get over until, well, you've done safety checks[else]The ten level net still sits here, and it'd be handy if there was anything else on the other side of it, but there isn't[end if]. A large e-pipe blocks you from going anywhere except back east."
 
-check going nowhere in Trapeze Part: say "Since this is the Trapeze Part, you'd think there'd be a way to go to a place to WATCH it, but there isn't. You can only go back east." instead;
+check going nowhere in Trapeze Part: say "The e-pipe is not only shaped like an e, but it's positioned so you're pretty much forced to go back e. Err, east." instead;
+
+chapter e pipe
+
+the e-pipe is peripheral scenery in Trapeze Part. "The e-pipe is cylindrical and too slippery to climb, and the middle prong of the e is far shorter than the other two.
+
+understand "pipe" and "e pipe" as e-pipe.
 
 chapter ten level net
 
