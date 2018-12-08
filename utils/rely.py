@@ -14,6 +14,7 @@
 # -c = commands
 #
 
+import re
 import os
 import sys
 from collections import defaultdict
@@ -24,9 +25,13 @@ do_items = True
 do_commands = False
 print_warning = True
 print_requirements = True
+standard_input = False
 
 depends = defaultdict(lambda: defaultdict(bool))
+depend_rev = defaultdict(lambda: defaultdict(bool))
 need_all = defaultdict(bool)
+starter_items = defaultdict(bool)
+commands = defaultdict(bool)
 
 item_file = "rely-items.txt"
 command_file = "rely-cmds.txt"
@@ -38,9 +43,14 @@ def usage():
     print("-v = verbose")
     print("-r/-rn/-nr = print requirements or not")
     print("-w/-wn/-nw = print warnings or not")
+    print("-s = standard input, -ns/-sn = no standard input")
     exit()
 
+def cmdx(a):
+    return "{:s}-V".format(a.upper()) if a in commands.keys() else a
+
 def items_from_depends():
+    print("Getting dependency information from source.")
     header_next = False
     in_table = False
     with open("story.ni") as file:
@@ -74,9 +84,19 @@ def plow_through(file_name):
         for (line_count, line) in enumerate(file, 1):
             if line.startswith(";"): break
             if line.startswith("#"): continue
-            if line.startswith("needall"):
+            if line.startswith("needall:"):
                 need_all[line[8:].strip()] = True
                 continue
+            if line.startswith("commands"):
+                cmd = line[9:].strip().lower().split(",")
+                for x in cmd:
+                    commands[x] = True
+            if line.startswith("starter:"):
+                start_array = line[8:].strip().lower().split(",")
+                for x in start_array:
+                    if x in depends.keys():
+                        print("WARNING", x, "defined as depending on something but also a starter item.")
+                    starter_items[x] = True
             if '/' not in line:
                 print("Warning line", line_count, "needs slash")
                 continue
@@ -95,7 +115,7 @@ def plow_through(file_name):
         if len(depends[x].keys()):
             totals = totals + len(depends[x].keys())
             if print_requirements:
-                print(x, "requires", len(depends[x].keys()), ":", ', '.join(sorted(depends[x].keys())))
+                print(x, "requires", len(depends[x].keys()), ":", ', '.join([cmdx(a) for a in sorted(depends[x].keys())]))
         else:
             if verbose:
                 print(x, "has no requirements")
@@ -109,7 +129,7 @@ def plow_through(file_name):
 
 def depends_add(result, needed, line=-1):
     if print_warning:
-        if needed not in depends.keys(): print("Warning: line", line, needed.upper(), "is not previously referred to.")
+        # if needed not in depends.keys() and needed.lower() != "bros' orb": print("Warning: line", line, needed.upper(), "is not previously referred to.")
         if needed in depends[result].keys(): print("Warning: line", line, result.upper(), "already flagged (recursively) as needing", needed.upper())
     depends[result][needed] = True
     if result in depends[needed].keys():
@@ -145,9 +165,36 @@ while count < len(sys.argv):
     elif arg == 'nr' or arg == 'rn': print_requirements = False
     elif arg == 'w': print_warnings = True
     elif arg == 'nw' or arg == 'wn': print_warnings = False
+    elif arg == 's': standard_input = True
+    elif arg == 'ns' or arg == 'sn': standard_input = False
     elif arg == 'ic' or arg == 'ci': do_items = do_commands = True
     else: usage()
     count += 1
 
 if do_items: plow_through(item_file)
 if do_commands: plow_through(command_file)
+
+count = 0
+for q in depends.keys():
+    if len(depends[q].keys()) == 0:
+        if q in starter_items.keys(): continue
+        count += 1
+        print(count, q, "does not depend on anything. We might want to look at this.")
+        continue
+    for j in depends[q].keys():
+        depend_rev[j][q] = True
+
+if standard_input:
+    while True:
+        mystr = input("Item to search for:")
+        mystr = mystr.strip().lower()
+        got_one = False
+        for q in depends.keys():
+            if re.search(r'\b{:s}\b'.format(mystr), q):
+                got_one = True
+                print(q, 'REQUIRES', ', '.join(sorted(depends[q].keys())))
+        for q in depend_rev.keys():
+            if re.search(r'\b{:s}\b'.format(mystr), q):
+                got_one = True
+                print(q, 'NEEDED FOR', ', '.join(sorted(depend_rev[q].keys())))
+        if not got_one: print("Couldn't find anything for", mystr)
