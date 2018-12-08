@@ -1223,7 +1223,7 @@ instead of thinking:
 		sort Q in eyespoil order;
 		say "[line break][b]Things eyed (tix exit is 79):[r][line break]";
 		repeat with Q2 running through Q:
-			say "[Q2] ([if player has Q2]carried[else][hn-ext of location of Q2[end if]): [eyespoil of Q2][if eyespoil of Q2 <= score + 1] (hmm, worth looking into)[end if][line break]";
+			say "[Q2] ([if player has Q2]carried[else][hn-ext of location of Q2][end if]): [eyespoil of Q2][if eyespoil of Q2 <= score + 1] (hmm, worth looking into)[end if][line break]";
 	if eye-charges > 0, say "[line break][pip-charges].";
 
 to say hn-ext of (rm - a room):
@@ -1663,7 +1663,7 @@ to say verb-mach-abbrevs:
 this is the situational commands show rule:
 	now any-sit-cmd is false;
 	if player is in Fun Enuf and KAOS Oak is xed, say "[got-sit][2da][b]GRAMMAR G[r] toggles the [kaoscaps] between chaotic to sane punctuation, which is purely cosmetic.";
-	if wr-short-note is true and in-work and number of moot workables < 3, say "[got-sit][line break][2da][verb-mach-abbrevs][if number of moot workables < 2]. [b]RR[r] goes through them [work-both-all][end if].";
+	if wr-short-note is true and in-work and number of moot workables < 3, say "[got-sit][line break][2da][verb-mach-abbrevs][if rr-available is true and number of moot workables < 2]. [b]RR[r] goes through them [work-both-all][end if].";
 	if player has radar, say "[got-sit][2da][b]RAD[r] is shorthand to use the radar on something. [b]SCAN[r] or [b]RDR[r] works too.";
 	if chase-aware, say "[got-sit][2da][no-time-note].";
 	if any-sit-cmd is false, say "There are currently no special situational verbs, but when there are, they will show up here.";
@@ -2838,7 +2838,7 @@ use1	use2	getit	preproc	postproc	sco	d1	d2	guy-need	ms-need	tool-need	reg-plus	r
 --	--	--	rev-evade-Dave rule	--	true	--	--	true	true	true	Yelpley	My Gym	My Gym	false	--
 --	--	--	rev-bore-Rob rule	--	true	--	--	true	true	true	Yelpley	Worn Row	Worn Row	false	--
 --	--	--	rev-word-row rule	--	true	--	--	true	true	true	Yelpley	Worn Row	Worn Row	false	--
-TI	Door Frood	--	pre-ti-on-frood rule	tube-to-ave rule	true	true	true	true	true	true	Yelpley	Evaded Ave	Evaded Ave	false	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. Some people are stupid. Good thing I obviously have too much self-awareness to be one of them. Funny stuff! A cut above [i]To Laff a Lot[r]! I'd try to explain it to you, but either you don't need it explained to you, or you don't deserve it explained to you.'[paragraph break]With uncontrollable laughter spasms, the Door Frood skulks away, through a tube ... but ... it's probably useless to follow. Instead, you pick up the bunk nub. Might as well." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
+TI	Door Frood	bunk nub	pre-ti-on-frood rule	tube-to-ave rule	true	true	true	true	true	true	Yelpley	Evaded Ave	Evaded Ave	false	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. Some people are stupid. Good thing I obviously have too much self-awareness to be one of them. Funny stuff! A cut above [i]To Laff a Lot[r]! I'd try to explain it to you, but either you don't need it explained to you, or you don't deserve it explained to you.'[paragraph break]With uncontrollable laughter spasms, the Door Frood skulks away, through a tube ... but ... it's probably useless to follow. Instead, you pick up the bunk nub. Might as well." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
 pity tip	eye	snack cans	pre-tip-on-eye rule	mob-to-alley rule	true	true	false	false	false	true	Yelpley	Yell Alley	Yell Alley	false	"The eye scans the pity tip, and the navy van beeps and boops and spits out some snack cans, which roll on the ground. You take them. Then you hear a loud whisper: 'Dee? Weed?' The navy van then activates its VANS-NAV and whooshes off to leave for good. And there's something behind it! Apparently, a whole bomb mob! That's who was making all the noise!" [af:TEND NET/WORK ROW]
 --	--	--	rev-tend-net rule	--	true	--	--	false	true	true	Yelpley	Trapeze Part	Trapeze Part	false	--
 --	--	--	rev-work-row rule	--	true	--	--	true	true	true	Yelpley	Worn Row	Worn Row	false	--
@@ -2866,7 +2866,7 @@ radar	crag arc	UFO tofu	pre-radar-on-arc rule	radar-crag rule	true	false	false	f
 --	--	--	rev-deny-Ned rule	--	true	--	--	true	true	true	Yelpley	Gross Org	Gross Org	false	--
 Ye Key	etage gate	gate tag	pre-key-on-gate rule	tag-later-wipe rule	true	true	true	true	true	true	Yelpley	Gross Org	Gross Org	false	"Ye Key fits perfectly into the Etage Gate.[paragraph break]'A hall! Aha! Etage-gate? More like Etage-NEGATE!' you brag, not noticing the gate retracting, Ye Key with it. Well, you can't imagine needing it again.[paragraph break]A gate tag falls off. You pick it up." [af:Worn Row]
 --	--	--	rev-worn-row rule	--	true	--	--	true	true	true	Yelpley	Worn Row	Worn Row	false	--
-stinky knits	rotator	brag garb	pre-knits-on-rotator rule	wear-garb rule	true	true	false	false	true	false	Yelpley	Worn Row	Worn Row	false	"The stinky knits fit into the rotator without stuffing them too much. After some spinning (and a smell of detergent--where'd that come from?) you look in again and--they're something much shinier now. Brag garb! If this were an RPG, it'd give some neato armor class. You can't resist wearing your flashy new duds, though once you put them on, they do smell a bit ... intense. Looking at a hidden label, you note it has been liberally sloshed with Turbo-Brut."
+stinky knits	rotator	brag garb	pre-knits-on-rotator rule	wear-garb rule	true	true	false	false	true	false	Yelpley	Worn Row	Worn Row	false	"The stinky knits fit into the rotator without stuffing them too much. After some spinning (and a smell of Soapa-Os detergent--where'd that come from?) you look in again and--they're something much shinier now. Brag garb! If this were an RPG, it'd give some neato armor class. You can't resist wearing your flashy new duds, though once you put them on, they do smell a bit ... intense. Looking at a hidden label, you note it has been liberally sloshed with Turbo-Brut."
 Gorge Grog	Butene Tub	resale laser	pre-grog-on-tub rule	make-sag rule	true	true	true	false	false	true	Yelpley	Pro Corp	Pro Corp	false	"The Gorge Grog starts fizzing as it pours down the tub, and nothing seems to happen, until you hear a FOOMP below and the tub starts shaking. There must've been an open spark below the tub, perhaps a noir ion. You find it best to hide, and that's the right thing to do, because the butene tub explodes into pieces. Under it is a resale laser! You figure the really good stuff is hidden way back for security reasons, and this is probably just an emergency gadget, but it's got to be good for something.[paragraph break]Soon after you take the resale laser, a small gash sag fills in the explosion you made. Technology! Also, you're not saddled with a bath-tab for the damage you did."
 gold log	rotator	dork rod	pre-log-on-rotator rule	--	true	true	false	true	true	false	Yelpley	Worn Row	Worn Row	false	"The gold log begins spinning until it cracks open--leaving a dork rod! You wonder briefly if you deserve to take it, or if there's something wrong with you if you deserve to, but once you hold it, memories of past silliness come back, and they're easier to deal with, now. You have some perspective. You even feel sorry for people who pointed out you were a dork. They'd be barred from a cool adventure like this. So you keep the dork rod."
 SOME DEMOS	yahoo hay	straw arts	pre-demos-on-hay rule	hay-gone rule	true	true	false	false	true	false	Grebeberg	Moo Room	Moo Room	false	"With the help of SOME DEMOS, you (after several grunts of 'STRAIN! I! ARTS!') manage to rejig and bend and snap the hay into something more aesthetically pleasing: straw arts! You're so enthusiastic, you even tear up SOME DEMOS and garnish your new straw arts. It just feels right."
@@ -3865,7 +3865,6 @@ this is the totem-out rule:
 	the rule succeeds;
 
 this is the tube-to-ave rule:
-	now player has the bunk nub;
 	now Art Xtra is visited; [this is necessary for if the player tried WRW]
 	move tube but to Evaded Ave;
 	the rule succeeds;
@@ -6128,6 +6127,14 @@ to wear-down (w - a workable):
 		move test set to Worn Row;
 		now all workables are in devreserved; [ic]
 		[?? trivial coding stuff: how to moot all workables]
+	else if can-implement-rr:
+		if deep-speeding is false and revving-over is false:
+			say "[line break]You've had enough experience twiddling the Work Row machines. You can now, if you wish, use a shortcut to try all the machines with [b]RR[r].";
+			now rr-available is true;
+
+to decide whether can-implement-rr:
+	if rr-available is false and machuses <= 6, yes;
+	no;
 
 definition: a workable (called w) is workedout:
 	if useleft of w is 0, yes;
@@ -7135,7 +7142,7 @@ check going nowhere in Trapeze Part: say "The e-pipe is not only shaped like an 
 
 chapter e pipe
 
-the e-pipe is peripheral scenery in Trapeze Part. "The e-pipe is cylindrical and too slippery to climb, and the middle prong of the e is far shorter than the other two.
+the e-pipe is peripheral scenery in Trapeze Part. "The e-pipe is cylindrical and too slippery to climb, and the middle prong of the e is far shorter than the other two."
 
 understand "pipe" and "e pipe" as e-pipe.
 
@@ -10157,7 +10164,8 @@ volume beta testing - not for release
 
 when play begins:
 	now in-beta is true;
-	say "(DEBUG ONLY NOTE: in-beta is true.)[paragraph break]";
+	now rr-available is true;
+	say "(DEBUG ONLY NOTE: in-beta is true. The RR command may save time for the three machines.)[paragraph break]";
 
 section llpqing
 
@@ -10345,6 +10353,8 @@ understand the command "rr" as something new.
 
 understand "rr [something]" as rring when ever-wordrow is true.
 
+rr-available is a truth state that varies.
+
 to mach-try (a1 - a thing) and (a2 - a thing):
 	if a2 is moot, continue the action;
 	if a1 is moot, continue the action;
@@ -10356,6 +10366,9 @@ carry out rring:
 	if player is not in Worn Row, say "You need to be in Work Row for this to work." instead;
 	if Worn Row is not worky, say "You need to change back to Work Row to do this." instead;
 	if number of moot workables is 3, say "The RR command is not valid now you destroyed all the machines." instead;
+	if rr-available is false:
+		say "You may have indirectly discovered a verb to plow through all three machines. Just so you know, in case you want to undo.[line break]";
+		now rr-available is true;
 	if number of moot workables is 2 and one-mach-warn is false:
 		now one-mach-warn is true;
 		say "NOTE: the RR command is really just the same as [b][verb-abbrev of random not workedout workable in Worn Row][r] now you destroyed two of the machines, but since RR saves a keystroke, why not?[paragraph break]";
