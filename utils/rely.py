@@ -14,6 +14,7 @@
 # -c = commands
 #
 
+import i7
 import re
 import os
 import sys
@@ -26,7 +27,7 @@ do_commands = False
 print_warning = True
 print_requirements = True
 standard_input = False
-do_combo = True
+do_deluxe = True
 
 sort_by_importance = False
 show_verbs = False
@@ -39,16 +40,18 @@ commands = defaultdict(bool)
 
 item_file = "rely-items.txt"
 command_file = "rely-cmds.txt"
-combo_file = "rely-combo.txt"
+deluxe_file = "rely-deluxe.txt"
 
 def usage():
-    print("-c = commands")
-    print("-i = commands")
-    print("-ic/-ci = both")
+    print("-(c/i/both) = don't use default deluxe but items/commands")
+    print("-derive = derive basic dependencies for deluxe file")
+    print("-e /c/d/i/s = cmds deluxe items or source")
     print("-v = verbose")
     print("-r/-rn/-nr = print requirements or not")
     print("-w/-wn/-nw = print warnings or not")
     print("-s = standard input, -ns/-sn = no standard input")
+    print("-si = sort by importance, not alphabetically")
+    print("-sv = show verbs (default off)")
     exit()
 
 def cmdx(a):
@@ -187,7 +190,7 @@ while count < len(sys.argv):
     arg = sys.argv[count].lower()
     if arg[0] == '-': arg = arg[1:]
     if re.search("^[ci]+", arg):
-        do_combo = False
+        do_deluxe = False
         do_items = 'i' in arg
         do_commands = 'c' in arg
     elif arg == 'derive':
@@ -195,19 +198,26 @@ while count < len(sys.argv):
         exit()
     elif arg == 'v': verbose = True
     elif arg == 'nv': verbose = False
+    elif arg == 'e' or arg == 'es': i7.npo("rely.py")
+    elif arg == 'ec': i7.npo(command_file)
+    elif arg == 'ei': i7.npo(item_file)
+    elif arg == 'ed': i7.npo(deluxe_file)
     elif arg == 'r': print_requirements = True
     elif arg == 'nr' or arg == 'rn': print_requirements = False
     elif arg == 'w': print_warnings = True
     elif arg == 'nw' or arg == 'wn': print_warnings = False
     elif arg == 's': standard_input = True
     elif arg == 'si': sort_by_importance = True
-    elif arg == 'si': show_verbs = True
+    elif arg == 'sv': show_verbs = True
     elif arg == 'ns' or arg == 'sn': standard_input = False
-    else: usage()
+    else:
+        print("Didn't recognize command line argument", arg)
+        print("=" * 50)
+        usage()
     count += 1
 
-if do_combo:
-    plow_through(combo_file)
+if do_deluxe:
+    plow_through(deluxe_file)
     exit()
 else:
     if do_items: plow_through(item_file)
