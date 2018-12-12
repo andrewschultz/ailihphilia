@@ -84,6 +84,7 @@ chapter random names
 table of random authors
 randtxt	can-m	can-f
 "Eliza Bazile"	false	true
+"Imogene Gomi"	false	true
 "Kera Marek"	false	true
 "Leta Patel"	false	true
 "Marge Pegram"	false	true
@@ -760,6 +761,7 @@ randtxt
 "Rona, Eleanor"
 "Rover, Trevor"
 "Sailer, Elias"
+"Salkind, Niklas"
 "Sallade, Dallas"
 "Samo, Tomas"
 "Sano, Jonas"
@@ -793,6 +795,7 @@ randtxt
 "Truby, Burt"
 "Truka, Kurt"
 "Tyo, Hoyt"
+"Vereker, Ev"
 "Yamada, May"
 "Yeo, Joey"
 "Yero, Corey"
@@ -852,6 +855,7 @@ randtxt
 "Bruno [']N Urb"
 "Cindy [']N Nic"
 "Co-Data Doc"
+"Curate Taruc"
 "D'oh, Serene, Reshod"
 "D'oh, Temp Method"
 "Da Ennead"
@@ -899,11 +903,13 @@ randtxt
 "My Nonacidic Anonym"
 "Needed, E'en"
 "Neil's Lien"
+"A Next Xena"
 "O Bonobo"
 "O, Had I Idaho"
 "On In, Nino"
 "Otter Amaretto"
 "Pa, OAP"
+"Panama Nap"
 "Posada's Op"
 "Re: Gallager"
 "Re: Karraker"
@@ -923,6 +929,7 @@ randtxt
 "Torsos, ROT"
 "We Few"
 "Wedded Dew"
+"Wondered Now"
 "Yo Banana Boy"
 "Zot: A to Z"
 
@@ -1122,6 +1129,7 @@ randtxt
 "Honor On, Oh"
 "Hook, Ooh"
 "Hosts, Oh"
+"It is Ignitin is It I"
 "Jesse J"
 "Jog, OJ"
 "Jojo J"
@@ -1181,10 +1189,12 @@ randtxt
 "These, H/T"
 "Thoro['] H/T"
 "Tia, Wait"
+"[']Tis Igniting, is It?"
 "To Hos So Hot"
 "To Own: WOOT"
 "To Sap a Sot"
 "Too Fab Afoot"
+"Via IV"
 "Waikiki, Aw"
 "Wanna W"
 "We Nab Anew"
@@ -1474,6 +1484,7 @@ randtxt
 "Cull Luc!"
 "D-N-D! D-N-D!"
 "Del fled!"
+"Disgusts, ug, Sid!"
 "Draco?! Card."
 "E-dude?!"
 "Edit-IDE?"
@@ -1513,6 +1524,8 @@ randtxt
 "Ren? Woe Owner!"
 "Ren? Wordy Drowner!"
 "Resume [']m, user!"
+"Retract Carter!"
+"[']S BS!!!!!"
 "Segard? Rages!"
 "SETI sites!"
 "Signing is..."
