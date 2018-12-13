@@ -6224,6 +6224,7 @@ to say hint-trace:
 	say "[if tract-trace is false]. But it also seems a bit too big for just carrying a few books. Maybe it holds a deeper secret[end if]"
 
 check examining tract cart:
+	if diktat kid is moot, say "The relate taler is more interesting." instead;
 	unless any-books-left, say "It's empty now[hint-trace]. Maybe some day, someone will write a book like [next-rand-txt of table of altbooks]. Maybe it could be you! But you don't have the time to read right now, really." instead;
 
 a book is a kind of thing. a book is usually proper-named.
@@ -6271,6 +6272,10 @@ to define-author (bk - a book):
 	if auth-row of bk is 0:
 		increment auth-ind;
 		now auth-row of bk is auth-ind;
+
+section relate taler
+
+the relate taler is peripheral scenery. description is "With the tract cart gone, the relate taler has more artsy books left. One is [next-rand-txt of table of altbooks]."
 
 chapter pity tip
 
@@ -6480,6 +6485,7 @@ understand "work" and "work row" and "workrow" as workrowing when player is in W
 ever-workrow is a truth state that varies.
 
 this is the wornrow-change rule:
+	if Diktat Kid is moot, say "You're stuck with Word Row, which is really more pleasant than the alternatives."
 	if Rob is in Worn Row, say "That'll work when Rob is gone." instead;
 	if Psi Wisp is in Worn Row, say "[chase-pass]Right idea, wrong room to change to." instead;
 	continue the action;
@@ -6574,6 +6580,7 @@ understand "wornrow" and "worn" and "worn row" as wornrowing when player is in W
 worn-tried is a truth state that varies.
 
 carry out wornrowing:
+	if diktat kid is moot, say "No need to go that far back." instead;
 	if psi wisp is moot, say "Now that the redness ender and Psi Wisp destroyed each other, Worn Row really holds nothing else for you." instead;
 	unless ever-wordrow is true or ever-workrow is true, say "It is Worn Row. But maybe it can become something else." instead;
 	if psi wisp is not in Worn Row:
