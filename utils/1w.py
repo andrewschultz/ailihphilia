@@ -2,6 +2,10 @@
 #
 # finds (prospective) palindromes that build on one word
 #
+# usage: 1w.py bVn = ban bin ben bon bun
+# -of = only first
+# -ol = only last
+# -(wfl)+ = words/firsts/lasts any combo
 
 import i7
 import time
@@ -22,9 +26,13 @@ check_possible = True
 only_stdin = False
 read_file = False
 
+max_mult_checks = 4000
+
 get_firsts = True
 get_lasts = True
 print_possible = True
+
+macro_letter = { 'V': 'aeiouy', 'C': 'bcdfghjklmnpqrstvwxyz', 'A': 'abcdefghijklmnopqrstuvwxyz' }
 
 every_cr = 4
 
@@ -41,6 +49,32 @@ def character_range(a, b, inclusive=True):
     # if isinstance(a,unicode) or isinstance(b,unicode): back = unicode
     for c in range(ord(a), ord(b) + int(bool(inclusive))): yield back(c)
 
+def let_group_count(a, b, exponent=True):
+    s = len(re.findall(r'[{:s}]'.format(a), b))
+    if exponent: return len(a) ** s
+    return s
+
+def branch_from(x):
+    my_ary = []
+    got_one = False
+    for g in macro_letter.keys():
+        if g in x:
+            got_one = True
+            for q in macro_letter[g]:
+                temp = re.sub(g, q, x, 1)
+                my_ary += branch_from(temp)
+    if got_one: return my_ary
+    return [x]
+
+def num_checks(x):
+    retval = 1
+    for g in macro_letter.keys():
+        if g in x:
+            retval *= len(macro_letter[g]) ** x.count(g)
+    retval *= let_group_count("bcdfghjklmnpqrstvwxyz", x, True)
+    retval *= let_group_count("abcdefghijklmnopqrstuvwxyz", x, True)
+    return retval
+    
 def alph_dash_string_to_list(q):
     if re.search("[^a-z-]", q): sys.exit(q + " cannot contain anything besides letters or a dash.")
     qd = q
@@ -225,6 +259,13 @@ while argcount < len(sys.argv):
     elif not xl.replace(",", "").isalpha(): usage("Invalid flag {:s}\n\n".format(xl))
     else:
         for y in xr.split(","):
+            ncy = num_checks(y)
+            if  ncy > max_mult_checks:
+                print(y, "has too many checks--", ncy, "to be specific.")
+                continue
+            elif ncy > 1:
+                print(y, "has", ncy, "branches.")
+            pals += branch_from(y)
             if "V" in y:
                 for z in ['a','e','i','o','u', 'y']:
                     temp = re.sub("V", z, y)
