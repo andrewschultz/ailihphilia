@@ -19,7 +19,7 @@ file_array = [ i7.f_dic ]
 found = defaultdict(int)
 last_found = defaultdict(int)
 
-pal_list = defaultdict(str)
+pal_list = defaultdict(lambda: defaultdict(str))
 
 check_possible_max = 25
 check_possible = True
@@ -71,8 +71,6 @@ def num_checks(x):
     for g in macro_letter.keys():
         if g in x:
             retval *= len(macro_letter[g]) ** x.count(g)
-    retval *= let_group_count("bcdfghjklmnpqrstvwxyz", x, True)
-    retval *= let_group_count("abcdefghijklmnopqrstuvwxyz", x, True)
     return retval
     
 def alph_dash_string_to_list(q):
@@ -120,8 +118,7 @@ def usage(opt_err = ""):
     print("Any word sent in is scoured for palindromes. CSV or space. Options require a dash.")
     print("-c checks possible palindromes for longer sentences. -nc forces it off. Default is", ["off", "on"][check_possible])
     print("-e checks errors in one word sequence.")
-    print("(Capital) V means try all vowels e.g. bVg = big bag bog bug beg byg")
-    print("(Capital) C means try all consonants e.g. bVg = bbg bcg bdg bbfg ... bxg byg bzy. A = C + V e.g. all..")
+    print("V=try all vowels+y, C=try all consonants+y, A=C+V, D= defines a custom set of letters.")
     print("-i uses stdin.")
     print("-m adjusts the maximum possible palindromes we check for.")
     print("-r reads data from 1w.txt which has all the game critical stuff.")
@@ -156,13 +153,12 @@ def palz(pals):
                 x = st + l
                 if x == x[::-1]:
                     found[st] += 1
-                    if found[st] == 1:
-                        pal_list[st] = "FIRST"
-                    elif found[st] % every_cr == 1:
-                        pal_list[st] = pal_list[st] + "\n  "
+                    found[st + "FIRST"] += 1
+                    if found[st] % every_cr == 1 and found[st + "FIRST"] > 1:
+                        pal_list["FIRST"][st] = pal_list["FIRST"][st] + "\n  "
                     else:
-                        pal_list[st] = pal_list[st] + " /"
-                    pal_list[st] = pal_list[st] + " *{:s}* + {:s} = {:s}".format(st, l, x)
+                        pal_list["FIRST"][st] = pal_list["FIRST"][st] + " /"
+                    pal_list["FIRST"][st] = pal_list["FIRST"][st] + " *{:s}* + {:s} = {:s}".format(st, l, x)
                     continue
                     # print("Added", st, l)
                 if check_possible:
@@ -177,17 +173,13 @@ def palz(pals):
             for l in sorted(loc_start[st], key=lambda x: (len(x), x)):
                 y = l + st
                 if y == y[::-1]:
-                    last_found[st] += 1
-                    if last_found[st] == 1:
-                        if found[st]:
-                            pal_list[st] = pal_list[st] + "\n"
-                        pal_list[st] = pal_list[st] + "LAST"
-                    elif last_found[st] % every_cr == 1:
-                        pal_list[st] = pal_list[st] + "\n  "
-                    else:
-                        pal_list[st] = pal_list[st] + " /"
-                    pal_list[st] = pal_list[st] + " {:s} + *{:s}* = {:s}".format(l, st, y)
                     found[st] += 1
+                    found[st + "LAST"] += 1
+                    if found[st + "LAST"] % every_cr == 1 and found[st + "LAST"] > 1:
+                        pal_list["LAST"][st] = pal_list["LAST"][st] + "\n  "
+                    else:
+                        pal_list["LAST"][st] = pal_list["LAST"][st] + " /"
+                    pal_list["LAST"][st] = pal_list["LAST"][st] + " {:s} + *{:s}* = {:s}".format(l, st, y)
                     # print("Added", l, st)
                     continue
                 if check_possible:
@@ -198,12 +190,15 @@ def palz(pals):
                             can_increase = True
                         count += 1
     for x in sorted(found.keys()):
+        if 'T' in x: continue
         got_something = False
         if found[x] or possible_ends[x] or possible_starts[x]:
             got_something = True
             print(hdr, x, hdr)
-            if found[x]:
-                print(pal_list[x])
+            if x in pal_list["FIRST"].keys():
+                print("FIRST" + pal_list["FIRST"][x])
+            if x in pal_list["LAST"].keys():
+                print("LAST" + pal_list["LAST"][x])
             if print_possible:
                 if possible_ends[x]:
                     print("Words allowing {:s} at end of long palindrome:{:s}".format(x, possible_ends[x]))
@@ -224,7 +219,8 @@ while argcount < len(sys.argv):
     xl = xr.lower()
     if xl == "-a": file_array = [i7.f_f, i7.f_l, i7.f_dic]
     elif xl[:2] == "d=":
-        defined_letter_array = alph_dash_string_to_list(xl[2:])
+        if "D" in macro_letter.keys(): sys.exit("Custom letters (D/user defined) defined twice on command line.")
+        macro_letter["D"] = alph_dash_string_to_list(xl[2:])
     elif xl[:2] == "-r":
         read_file = True
         check_possible = False
@@ -265,26 +261,8 @@ while argcount < len(sys.argv):
                 continue
             elif ncy > 1:
                 print(y, "has", ncy, "branches.")
+            if 'D' in y and 'D' not in macro_letter.keys(): sys.exit("You need to define a custom array before using D.")
             pals += branch_from(y)
-            if "V" in y:
-                for z in ['a','e','i','o','u', 'y']:
-                    temp = re.sub("V", z, y)
-                    pals.append(temp)
-            elif 'C' in y:
-                for z in ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']:
-                    temp = re.sub("C", z, y)
-                    pals.append(temp)
-            elif 'A' in y:
-                for z in ascii_lowercase:
-                    temp = re.sub("A", z, y)
-                    pals.append(temp)
-            elif 'D' in y:
-                if not defined_letter_array: sys.exit("need to define custom letter array first ... for now.")
-                for z in defined_letter_array:
-                    temp = re.sub("D", z, y)
-                    pals.append(temp)
-            else:
-                pals.append(y)
     argcount += 1
 
 start_time = time.time()
