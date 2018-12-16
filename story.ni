@@ -3715,6 +3715,8 @@ this is the kid-bye rule:
 	move saner arenas to Dirge Grid;
 	move day away ad to Yawn Way;
 	move XILE helix to Dirge Grid;
+	move relate taler to worn row;
+	now worn row is wordy;
 	moot nogo gon;
 	moot Diktat Kid;
 	if nogo gon is xed, say "The No-Go Gon having burned away, you're sort of curious how many sides it had. You miscount the first few times but eventually wind up counting [rand-pal]. Well, you sort of expected that.";
@@ -5967,7 +5969,7 @@ understand "buff" and "buff u" and "buff u b" and "u b" and "b" as buff-u-b.
 
 book Worn Row
 
-Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky][what-machines][else if Worn Row is wordy]A tract cart is here, [tract-status][else]It's pretty empty here, [worn-scen][end if][wrow].[paragraph break][dab-notes]The only way out is back east."
+Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky][what-machines][else if Worn Row is wordy][else]It's pretty empty here, [worn-scen][end if][wrow].[paragraph break][dab-notes]The only way out is back east."
 
 to say wrow: if row-prog is 2, say ". You could also summon [if Worn Row is worky]Word[else]Work[end if] Row back if you wanted";
 
@@ -6004,7 +6006,10 @@ chapter tract cart
 tract-trace is a truth state that varies.
 
 to say tract-status:
-	say "[if number of necessary books in Worn Row is 1]almost empty[else if number of necessary books in Worn Row is 0]holding no books[else]holding a few books[end if]"
+	if relate taler is in worn row:
+		say "[one of]A relate taler is now beside the tract cart. It looks like it has a better and more literary selection than the tract cart did, though you doubt you have time to read them all. Still, you inspired them all. Yay[or]The relate taler sits next to the tract cart that was useful for so long[stopping]";
+	else:
+		say "A tract cart is here, [if number of necessary books in Worn Row is 1]almost empty[else if number of necessary books in Worn Row is 0]holding no books[else]holding a few books[end if]"
 
 definition: a book (called bo) is sober:
 	if bo is DWELT LEWD, no;
@@ -6224,7 +6229,7 @@ to say hint-trace:
 	say "[if tract-trace is false]. But it also seems a bit too big for just carrying a few books. Maybe it holds a deeper secret[end if]"
 
 check examining tract cart:
-	if diktat kid is moot, say "The relate taler is more interesting." instead;
+	if diktat kid is moot, say "The tract cart was useful, but the relate taler is more interesting." instead;
 	unless any-books-left, say "It's empty now[hint-trace]. Maybe some day, someone will write a book like [next-rand-txt of table of altbooks]. Maybe it could be you! But you don't have the time to read right now, really." instead;
 
 a book is a kind of thing. a book is usually proper-named.
@@ -6485,14 +6490,14 @@ understand "work" and "work row" and "workrow" as workrowing when player is in W
 ever-workrow is a truth state that varies.
 
 this is the wornrow-change rule:
-	if Diktat Kid is moot, say "You're stuck with Word Row, which is really more pleasant than the alternatives."
+	if Diktat Kid is moot, say "You're stuck with Word Row, which is really more pleasant than the alternatives." instead;
 	if Rob is in Worn Row, say "That'll work when Rob is gone." instead;
 	if Psi Wisp is in Worn Row, say "[chase-pass]Right idea, wrong room to change to." instead;
 	continue the action;
 
 carry out workrowing:
-	abide by the wornrow-change rule;
 	if Worn Row is worky, say "You're already in Work Row." instead;
+	abide by the wornrow-change rule;
 	notify-row-change;
 	if ever-workrow is false:
 		say "[Worn Row] shakes, and with a [i]MAL[r] 'Blam' and clicks and whirs, you watch as the [if ever-wordrow is true]tract cart[else]redness ender[end if] retreats into the wall, maybe for later. After more whirring, three machines pop out of another wall. One looks particularly odd, another is spinning like a washer or dryer, and the third--well, it looks like one of those cryogenic things to store frozen bodies for resurrection. A quick glance shows they labeled ROTATOR, REIFIER and REVIVER, in that order.";
@@ -6540,8 +6545,8 @@ definition: a book (called bo) is tractable:
 	yes;
 
 carry out wordrowing:
-	abide by the wornrow-change rule;
 	if Worn Row is wordy, say "You're already in Word Row." instead;
+	abide by the wornrow-change rule;
 	notify-row-change;
 	if ever-wordrow is false:
 		hint-bump-worn;
@@ -6585,7 +6590,7 @@ carry out wornrowing:
 	unless ever-wordrow is true or ever-workrow is true, say "It is Worn Row. But maybe it can become something else." instead;
 	if psi wisp is not in Worn Row:
 		now worn-tried is true;
-		say "[if ever-wordrow is false or ever-workrow is false]The bad dab seems to indicate there's more here than [Worn Row], and there's no reason you can't go back to Worn Row, but y[else]Y[end if]ou don't want to face the redness ender alone back in Worn Row. You're not very red, but it seemed like it might just shoot any old thing." instead;
+		say "[if ever-wordrow is false or ever-workrow is false]The bad dab seems to indicate there's more here than [Worn Row], and there's no reason you can't go back to Worn Row, but y[else]Y[end if]ou don't want to face the redness ender alone back in Worn Row. You're not very red, but it seemed like it might just shoot any old thing. That could be handy, if you were under attack." instead;
 	clear-worn-row;
 	say "A buzz and a whirr makes the Psi Wisp pause. The [if Worn Row is worky]machines snap[else]tract cart snaps[end if] back into a wall, and the redness ender pops out of another. It locks on the Psi Wisp, which is very red indeed. Zap! Zot! The Psi Wisp becomes even redder before exploding. As its last act, the Psi Wisp channels that energy back into the redness ender, which also explodes. Some of the debris drops onto the bad dab, wiping it out. And somehow, the walls whir some more and drop all the items you left near Pro Corp at your feet. You take them all. That saved a trip back, you think, until you remember Pro Corp held a couple things worth picking up anyway.";
 	win-wisp-chase;
@@ -8233,6 +8238,7 @@ carry out deepspeeding:
 	now all rooms in Grebeberg are visited;
 	now i-sped is true;
 	if gsi < 3, say "You may wish to check your inventory. You will have what you need to beat the Diktat Kid. I hope you enjoy the final confrontation, but if you want to get to the end right away, [b]TIP IT[r] three times.";
+	if score is not min-win - 4, say "[line break]Uh oh. There is a bug in the scoring. You can still win the game, but you should have [min-win] points and only have [score].";
 	the rule succeeds;
 
 section smitimsing - not for release
@@ -8454,6 +8460,7 @@ definition: a thing (called th) is speedtakeable:
 definition: a thing (called th) is swipeable:
 	if th is Gorge Grog, yes;
 	if th is TNT, yes;
+	if th is bunk nub, yes;
 	no;
 
 to decide whether need-rev-check:
@@ -8489,6 +8496,7 @@ carry out revovering:
 		if in-guy-warp is true and guy-need entry is false, next;
 		if in-tool-warp is true and tool-need entry is false, next;
 		increment count;
+		if debug-state is true, say "Row [count], score [score].";
 		if rev-skips > 0 and global-delay is rev-skips:
 			if spun-out-yet is false and debug-state is true, say "DEBUG: spun out at row [count].";
 			now spun-out-yet is true;
@@ -8523,7 +8531,7 @@ carry out revovering:
 			next;
 		let wr-flipped be false;
 		if there is a getit entry and getit entry is not off-stage:
-			if getit entry is not swipeable, next; [the Gorge Grog/TNT are already visible. Other items aren't.]
+			if getit entry is not swipeable, next; [the Gorge Grog/TNT/bunk nub are already visible. Other items aren't.]
 		if use1 entry is moot or use2 entry is moot, next;
 		if there is a preproc entry:
 			consider the preproc entry;
