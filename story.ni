@@ -492,8 +492,29 @@ to score-inc:
 	if debug-state is true, say "DEBUG standard score-inc.";
 	reg-inc mrlp;
 
+to say give-rank:
+	say ", giving you a (nonsensical) rank of "
+	repeat through table of silly stupid ranks:
+		if max-sco entry >= main-score:
+			say "[the-rank entry]";
+			continue the action;
+	say "(BUG)";
+
+table of silly stupid ranks
+max-sco	the-rank
+0	"ebohphobe"
+10	"de-ug-no-tongued"
+20	"cainamaniac"
+30	"cilohaholic"
+40	"c-it's-a-[']tastic"
+50	"ruenerpreneur"
+60	"resists-iser"
+70	"de-lytse-styled"
+76	"eilihphile"
+999	"tsilihphilist"
+
 check requesting the score:
-	say "Your overall score so far is [score] of [maximum score] in [turn count] [if turn count is nontrivially-palindromic](!) [end if]turn[plur of turn count][if score < 4]. But don't worry, points pile up pretty quickly once you get going[end if]. [to-get-max].";
+	say "Your overall score so far is [score] of [maximum score] in [turn count] [if turn count is nontrivially-palindromic](!) [end if]turn[plur of turn count][if score < 4][give-rank]. But don't worry, points pile up pretty quickly once you get going[end if]. [to-get-max].";
 	say "[line break]Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do]. Note some acts you can perform in one region may be scored for another.";
 	if My Gym is visited or Evaded Ave is visited:
 		let nmg be number of moot guhthugs;
