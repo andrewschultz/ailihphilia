@@ -25,6 +25,7 @@ check_possible_max = 25
 check_possible = True
 only_stdin = False
 read_file = False
+generate_palindromes = False
 
 max_mult_checks = 4000
 
@@ -43,6 +44,19 @@ end_cand = defaultdict(lambda: defaultdict(bool))
 start_cand = defaultdict(lambda: defaultdict(bool))
 
 hdr = "=" * 30
+
+def to_poss_pal(x, y):
+    if y == True:
+        next_pal = 0
+        for j in range(1, len(x)):
+            if x[:j] == x[:j][::-1]: next_pal = j
+        return x[next_pal:][::-1] + x
+    else:
+        next_pal = len(x) - 1
+        for j in range(len(x)-1, -1, -1):
+            if x[j:] == x[j:][::-1]: next_pal = j
+        return x + x[:next_pal][::-1]
+    return "Hastur hastur hastur"
 
 def character_range(a, b, inclusive=True):
     back = chr
@@ -250,6 +264,7 @@ while argcount < len(sys.argv):
         get_lasts = True
         get_firsts = False
     elif xl == "-np": print_possible = False
+    elif xl == "-g": generate_palindromes = True
     elif xl == "-i": only_stdin = True
     elif xl == "-?" or xl == "?": usage()
     elif not xl.replace(",", "").isalpha(): usage("Invalid flag {:s}\n\n".format(xl))
@@ -264,6 +279,14 @@ while argcount < len(sys.argv):
             if 'D' in y and 'D' not in macro_letter.keys(): sys.exit("You need to define a custom array before using D.")
             pals += branch_from(y)
     argcount += 1
+
+if generate_palindromes:
+    while True:
+        finish = input("Palindrome stuff here:")
+        if not finish.strip(): break
+        for q in re.split("[ ,]+", finish):
+            print(q, 'start', to_poss_pal(q, True), 'last', to_poss_pal(q, False))
+    sys.exit("Bye!")
 
 start_time = time.time()
 if read_file:
