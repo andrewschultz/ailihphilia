@@ -493,25 +493,45 @@ to score-inc:
 	reg-inc mrlp;
 
 to say give-rank:
-	say ", giving you a (nonsensical) rank of "
+	say ", giving you a (nonsensical) rank of ";
+	if main-score is 0:
+		say "ebohphobe";
+	else if main-score is min-win:
+		say "tsilihphilist";
+	else if main-score >= min-win - 4:
+		say "eilihphile";
+	else:
+		repeat through table of silly stupid ranks:
+			if max-sco entry >= main-score:
+				say "[the-rank entry]";
+				continue the action;
+	say "(guuu... buuug)";
+
+when play begins:
+	let rank-count be 0;
+	let rank-score be 0;
+	sort table of silly stupid ranks in random order;
+	sort table of silly stupid ranks in pre-prio order;
 	repeat through table of silly stupid ranks:
-		if max-sco entry >= main-score:
-			say "[the-rank entry]";
-			continue the action;
-	say "(BUG)";
+		increment rank-count;
+		now rank-score is ((min-win - 5) * rank-count) / (number of rows in table of silly stupid ranks);
+		increment rank-score;
+		now max-sco entry is rank-score;
+		[say "[rank-count] [max-sco entry].";]
 
 table of silly stupid ranks
-max-sco	the-rank
-0	"ebohphobe"
-10	"de-ug-no-tongued"
-20	"cainamaniac"
-30	"cilohaholic"
-40	"c-it's-a-[']tastic"
-50	"ruenerpreneur"
-60	"resists-iser"
-70	"de-lytse-styled"
-76	"eilihphile"
-999	"tsilihphilist"
+pre-prio	max-sco	the-rank [pre-prio exact numbers aren't important. It's just that there should be ones at the end.]
+-10	0	"de-ug-no-tongue'd"
+0	--	"rednifinder"
+0	--	"tsigologist"
+0	--	"cainamaniac"
+0	--	"rekampmaker"
+0	--	"cilohaholic"
+0	--	"res. opposer"
+7	--	"c-it's-a-[']tastic"
+8	--	"ruenerpreneur"
+9	--	"resists-iser"
+10	--	"de-lytse-styled" [delights ... geddit?]
 
 check requesting the score:
 	say "Your overall score so far is [score] of [maximum score] in [turn count] [if turn count is nontrivially-palindromic](!) [end if]turn[plur of turn count][if score < 4][give-rank]. But don't worry, points pile up pretty quickly once you get going[end if]. [to-get-max].";
@@ -3907,8 +3927,8 @@ this is the you-win rule: [xxwin]
 	say "[line break]You wonder how you'll get back, but then you see the Flee Elf running towards you. 'Tardy, drat! ... 'This, I h/t! [if cur-score of Odd Do is max-score of Odd Do]Decay?! ACED[else]Won enow[end if]!' You ask hesitantly about what's next. You don't want or need people chanting 'Deified! Deified! Deified!', but...[wfak-d]";
 	say "'The X-ITE TIX lead BACK TO THE REAL WORLD WHICH WILL BE FAR MORE EXCITING AND ILLUMINATING FOR YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a there-and-back-but-wiser summary. Books like that always kind of annoyed you once you figured the whole schtick out, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand says, 'I'll need the pact cap back. It will go to our new museum.'[paragraph break]'What's it called?' you ask, despite yourself.[wfak-d]";
 	say "[paragraph break]'Well, there's still argument over We-I-View, Show-Ohs and Trofy Fort.' (Trofee?) The Flee Elf asks which you prefer, and after an awkward silence, you mention they all seem equally appropriate and unforced. Another awkward silence! How palindromic![paragraph break]'Well, anyway. This RIDE-DIR will help you return to your own world. And here is an x/o box.'[wfak-d]";
-	say "The x/o box isn't much. It's engraved 'U Remem'er, U,' 'Done? NOD' and 'U Did U.' You can't even open it! But if it were too obvious and gaudy, how would you explain it back home?[paragraph break]As you stare at it, you hear arguments over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Not-Dud-Ton? Not-Kook-Ton? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered with stuff you can't fix?[wfak-d]";
-	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar or maybe a TekCo Rocket, but it turns out it's just a Back Cab labeled 'Redi-Rider.' (A Toyota would also have worked.) 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You're disappointed you didn't get a DVD as a gift, but to remember this, you'd like ... to jot. What to call your writing? RECAP: ACER, NOW I WON and EL BIBLE are way too pompous, but some brainstorming gives DARN RAD, SOME MEMOS, I SAW [']TWAS I, DRAWN INWARD, WENT NEW, WENDED NEW, SAGAS or SOLOS. Or--no, that's it. ELATE TALE.";
+	say "The x/o box isn't much. It's engraved 'U Remem'er, U,' 'Done? NOD' and 'U Did U.' You can't even open it! But if it were too obvious and gaudy, how would you explain it back home?[paragraph break]Soon after you blurt out 'Oh, t/y! My, tho['],' arguments begin over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Not-Dud-Ton? Not-Kook-Ton? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered with stuff you can't fix?[wfak-d]";
+	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar or maybe a TekCo Rocket, but it turns out it's just a Back Cab labeled 'Redi-Rider.' (A Toyota would also have worked.) 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You don't have the tech savvy to make a DVD, so to remember this, you'd like ... to jot. What to call your writing? RECAP: ACER, NOW I WON and EL BIBLE are way too pompous, but some brainstorming gives DARN RAD, SOME MEMOS, I SAW [']TWAS I, DRAWN INWARD, WENT NEW, WENDED NEW, SAGAS or SOLOS. Or--no, that's it. ELATE TALE.";
 	end the story finally saying "Roxor! Roxor! Roxor!";
 	sort the table of last lousy points in finord order;
 	the rule succeeds;
@@ -6087,7 +6107,7 @@ does the player mean boreing Rob: it is very likely.
 carry out boreing:
 	if noun is not a person, say "You should try to bore people, not things." instead;
 	if noun is not Rob, say "Wrong thing or person to bore." instead;
-	say "You pull out your 'greatest' conversational hits from years gone by: stuff you now can't believe you thought would impress others. Stuff they subsequently castigated you for. Stuff you have trouble admitting is still kind of important to you, but you still don't know how to express it right. It's cathartic for you but not so fun for Rob.[paragraph break]Rob grabs his head and shakes it until he is unable to repress a huge 'GUH!' similar to Dave. He paces around, grinding out the 'N' in the bad dab, leaving it as WOR- ROW, before wandering off, perhaps to Ybor, mumbling how he is too hard core even for Dre Nerd and Nerd Ren.[paragraph break]As he leaves, you hear him yell 'SUDO X-ODUS!' before loud-whispering plans to submit your dismal social performance to Mock.com and/or Mock-OK.com.";
+	say "You pull out your 'greatest' conversational hits from years gone by: stuff you now can't believe you thought would impress others. Stuff they subsequently castigated you for. Stuff you have trouble admitting is still kind of important to you, but you still don't know how to express it right. It's cathartic for you but not so fun for Rob.[paragraph break]Rob grabs his head and shakes it until he is unable to repress a huge 'GUH!' similar to Dave. He paces around, grinding out the 'N' in the bad dab, leaving it as WOR- ROW, before wandering off, perhaps to Ybor, mumbling how he is too hard core even for Dre Nerd and Nerd Ren.[paragraph break]As he leaves, you hear him yell 'SUDO X-ODUS!' before loud-whispering plans to submit your dismal social performance to Pizzazz-IP, Mock.com and/or Mock-OK.com.";
 	boot-Rob;
 	score-inc; [Yelpley/bore rob]
 	consider the cap-beep rules for Rob;
