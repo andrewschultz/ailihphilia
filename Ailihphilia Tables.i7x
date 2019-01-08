@@ -33,7 +33,7 @@ table of burnies	0	0	true	"responses to BURN"	--
 table of businesses	0	0	false	"businesses in Day-Away Ad"	"... and wait! There'll even be a new Deft Fed, owned by a salt-of-the-earth type named Treffert, now that Sniffins/Smuggums totally sold out"
 table of diktat taunts	0	0	false	"Diktat Kid taunts"	"'BOSS SOB!' the Diktat Kid yells, finally free from the shackles of political correctness."
 table of King Nik ancestors	0	0	false	"King Nik ancestors (TALK to King Nik)"
-table of Moo Room animals	0	0	false	"Moo Room animals (LISTEN)"	--
+table of Moo Room animals	0	0	false	"Moo Room animals (LISTEN)"	"Finally, you hear a single ewe, which you're surprised you didn't hear earlier.
 table of Ms Ism pals	0	0	false	"Ms Ism's pals (TALK to Ms Ism)"	--
 table of My Gym songs	0	0	false	"songs in My Gym (LISTEN)"	"All those tunes, and nothing by ABBA! Low class, low class."
 table of noesies	0	0	true	"responses to NO"	"An epony-NOPE rings through your ears to push back against your negativity in grand fashion."
@@ -1036,6 +1036,7 @@ table of diktat taunts
 randtxt
 "Ahahahahahaha!"
 "At's-a BASTA!"
+"Decided: ICED!"
 "Be EW, dweeb!"
 "Da bad! Da BAD!! DA BAD!!!"
 "Dire! Rid!"
@@ -1080,6 +1081,7 @@ randtxt
 table of Moo Room animals
 randtxt
 "any myna"
+"a leet eel"
 "a buck cub"
 "an elk cackle"
 "a go-here hog"
@@ -1106,6 +1108,7 @@ randtxt
 "Age Mo' Mega"
 "Ai, Tia"
 "Ail, Emelia"
+"Jenine J"
 "Air Aria"
 "All Illa[']"
 "[']Allo, Dolla[']"
@@ -1114,7 +1117,7 @@ randtxt
 "Belle B"
 "Both to B"
 "Darin['], I, RAD"
-"Diana, I'd"
+"Diana, I'd" [okdup]
 "Diva David"
 "Do Mo['] Mod"
 "El Tootle"
@@ -1176,7 +1179,7 @@ randtxt
 "Set-a-Dates"
 "Set-a-Mates"
 "So-BS ASBOS"
-"SOBs['] ASBOs"
+"SOBs['] ASBOs" [okdup]
 "Spark Raps"
 "Stan-Ats"
 "Sum Us"
@@ -1318,6 +1321,7 @@ randtxt
 "Abler Elba"
 "Accorded Rocca"
 "ACDC A"
+"Raffa R"
 "ADHD A"
 "Anon A"
 "Arid Ira"
@@ -1469,11 +1473,10 @@ randtxt
 "Tru Burt"
 "Ur-Dru"
 "'Vests' Ev"
-"Walla Walla W"
+"Walla Walla W" [this is a personal favorite]
 "Wazza W"
 "Weewee W"
 "Wolf Low"
-"X Essex"
 "Yellow Swolley"
 "Yelper Epley"
 "'Yelps' Aspley"
@@ -1482,6 +1485,7 @@ table of Rob droning
 randtxt
 "Analyticity? Lana!"
 "Bah! Ahab?!"
+"Marc, Scram!"
 "Boone?! Noob!"
 "Can Gignac!"
 "Cull Luc!"
@@ -1527,6 +1531,7 @@ randtxt
 "Posts-op? POST, sop!"
 "Posy sysop!"
 "Prove VORP!"
+"Provided, I: VORP!"
 "Ren? Woe Owner!"
 "Ren? Wordy Drowner!"
 "Resume [']m, user!"
@@ -1667,7 +1672,7 @@ randtxt
 "A. Gallaga"
 "A. Kamaka"
 "A. Loyola"
-"A. Mellema"
+"A. Mellema" [okdup]
 "A. Rivira"
 "A. Takata"
 "A. Tata"
@@ -1726,7 +1731,7 @@ randtxt
 "O. Ilalio"
 "O. Kiko"
 "O. Nagano"
-"O. Nakano"
+"O. Nakano" [okdup]
 "P. Popp"
 "R. Agar"
 "R. Eber"
@@ -1798,7 +1803,7 @@ table of wordy drow laments
 randtxt
 "Deity...tied!"
 "Die, id!"
-"Direr id!"
+"Direr id!" [okdup]
 "Ebb? Be!"
 "Eh, Tithe!"
 "Foul, U Of..."

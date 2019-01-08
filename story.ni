@@ -1,4 +1,4 @@
-"Ailihphilia" by "N. Y. Llewellyn"
+	"Ailihphilia" by "N. Y. Llewellyn"
 
 [blurb for comp = Fit IF: A *GASP* SAGA]
 
@@ -507,7 +507,7 @@ to say give-rank:
 				continue the action;
 	say "(guuu... buuug)";
 
-when play begins:
+to sort-random-ranks:
 	let rank-count be 0;
 	let rank-score be 0;
 	sort table of silly stupid ranks in random order;
@@ -686,6 +686,7 @@ when play begins (this is the begin ailihphilia for reals rule):
 	say "Next, are you using a screen reader? Some of Ailihphilia's features, like the text map, don't work well with them.";
 	if the player no-consents, now screenread is true;
 	say "[line break]You can always toggle the screen reader with SCR.";
+	sort-random-ranks; [this is a bit tricky, since the random ranks are
 	sort table of last lousy points in random order;
 	repeat through table of all randoms:
 		sort tabnam entry in random order;
@@ -4313,7 +4314,7 @@ to say cap-dum-now: now cap-dum is true.
 
 check examining Pact Cap:
 	if player is in Red Roses Order and mirror rim is in Red Roses Order, say "[cap-dum-now]Oh dear. Through the mirror, the pact cap does look sort of stupid on you right now. But you have deeper issues than sartorial elegance. Plus it's been so serviceable, who cares about looks?" instead;
-	if pact cap is in Fun Enuf, say "It's no stetson, and it's not as helpful as a ref-titfer, mate tam or math tam, but it is less messy than a tahini hat, and it looks serviceable enough. It appears to have [b]LO VOL[r] and [b]LOVE VOL[r] settings. Perhaps the Flee Elf will tell you what they are for, once you've successfully taken it." instead;
+	if pact cap is in Fun Enuf, say "It's no stetson, and it's not as helpful as a ref-titfer, mate tam or math tam, but it is less messy than a tahini hat, and it looks serviceable enough. 'Ygolology' is written on it, and it appears to have [b]LO VOL[r] and [b]LOVE VOL[r] settings. Perhaps the Flee Elf will tell you what they are for, once you've successfully taken it." instead;
 	if cap-dum is true, say "You definitely feel more self-conscious about your pact cap now you saw it in the mirror rim, but what can you do?" instead;
 
 check taking off the pact cap: say "No, you...uh, made a pact. It's not that uncomfortable, anyway." instead;
@@ -6161,7 +6162,7 @@ to wear-down (w - a workable):
 	decrement useleft of w;
 	if w is workedout:
 		if revving-over is false and deep-speeding is false:
-			say "[line break]You watch as [the w] sputters and dies. [if number of workedout workables is 2]Oh dear. That's the second one down[else]Well, you got a lot of good use out of it, and hopefully you won't need any more[end if].";
+			say "[line break]You watch as [the w] sputters and dies. [if number of workedout workables is 3]You expected that, though, after the first two wore out[else if number of workedout workables is 2]Oh dear. That's the second one down[else]Well, it probably reached the end of its, uh, yutilituy[end if].";
 		else if say-unless-speed:
 			say "(BOOM! You took out the [w] in the process.)[line break]";
 	if useleft of w is 1 and revving-over is false and deep-speeding is false, say "[line break]The [w] wheezes an emphatic 'FOOF.' Hopefully, you won't need to use it too much more.[line break]";
