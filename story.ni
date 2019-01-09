@@ -507,7 +507,7 @@ to say give-rank:
 				continue the action;
 	say "(guuu... buuug)";
 
-to sort-random-ranks:
+when play begins:
 	let rank-count be 0;
 	let rank-score be 0;
 	sort table of silly stupid ranks in random order;
@@ -686,7 +686,6 @@ when play begins (this is the begin ailihphilia for reals rule):
 	say "Next, are you using a screen reader? Some of Ailihphilia's features, like the text map, don't work well with them.";
 	if the player no-consents, now screenread is true;
 	say "[line break]You can always toggle the screen reader with SCR.";
-	sort-random-ranks; [this is a bit tricky, since the random ranks are
 	sort table of last lousy points in random order;
 	repeat through table of all randoms:
 		sort tabnam entry in random order;
@@ -4314,7 +4313,7 @@ to say cap-dum-now: now cap-dum is true.
 
 check examining Pact Cap:
 	if player is in Red Roses Order and mirror rim is in Red Roses Order, say "[cap-dum-now]Oh dear. Through the mirror, the pact cap does look sort of stupid on you right now. But you have deeper issues than sartorial elegance. Plus it's been so serviceable, who cares about looks?" instead;
-	if pact cap is in Fun Enuf, say "It's no stetson, and it's not as helpful as a ref-titfer, mate tam or math tam, but it is less messy than a tahini hat, and it looks serviceable enough. 'Ygolology' is written on it, and it appears to have [b]LO VOL[r] and [b]LOVE VOL[r] settings. Perhaps the Flee Elf will tell you what they are for, once you've successfully taken it." instead;
+	if pact cap is in Fun Enuf, say "It's no stetson, and it's not as helpful as a ref-titfer, mate tam or math tam, but it is less messy than a tahini hat, and it looks serviceable enough. It appears to have [b]LO VOL[r] and [b]LOVE VOL[r] settings. Perhaps the Flee Elf will tell you what they are for, once you've successfully taken it." instead;
 	if cap-dum is true, say "You definitely feel more self-conscious about your pact cap now you saw it in the mirror rim, but what can you do?" instead;
 
 check taking off the pact cap: say "No, you...uh, made a pact. It's not that uncomfortable, anyway." instead;
@@ -6162,7 +6161,7 @@ to wear-down (w - a workable):
 	decrement useleft of w;
 	if w is workedout:
 		if revving-over is false and deep-speeding is false:
-			say "[line break]You watch as [the w] sputters and dies. [if number of workedout workables is 3]You expected that, though, after the first two wore out[else if number of workedout workables is 2]Oh dear. That's the second one down[else]Well, it probably reached the end of its, uh, yutilituy[end if].";
+			say "[line break]You watch as [the w] sputters and dies. [if number of workedout workables is 2]Oh dear. That's the second one down[else]Well, you got a lot of good use out of it, and hopefully you won't need any more[end if].";
 		else if say-unless-speed:
 			say "(BOOM! You took out the [w] in the process.)[line break]";
 	if useleft of w is 1 and revving-over is false and deep-speeding is false, say "[line break]The [w] wheezes an emphatic 'FOOF.' Hopefully, you won't need to use it too much more.[line break]";
@@ -10037,6 +10036,7 @@ part final questions
 
 Table of Final Question Options (continued)
 final question wording	only if victorious	topic	final response rule	final response activity
+"see RANKS"	true	"RANK/RANKS"	--	rankseeing
 "see responses to various commands (RAND 0 for list, RAND 1-[number of rows in table of all randoms] for specific table, RN 0 for next table[if post-alf is false], ORDR O to alphabetize[end if])"	true	"RAND [number]"	--	rling
 "see [if LLP-hint-yet is false]hints for [end if]which LLP[if cur-score of Odd Do is not 10]s[end if] you MISSED"	true	"LLP/LLPS/MISSED"	what-missed rule	loafing
 --	true	"RN"	--	rlning
@@ -10098,6 +10098,16 @@ rule for ordring:
 		sort tabnam entry in randtxt order;
 	now post-alf is true;
 	say "Sorted all tables in alphabetical order.";
+
+rankseeing is an activity.
+
+rule for rankseeing:
+	say "Some ranks are fixed: for instance, you are an ebohphobe if you have no points, a tsilihphilist once you beat the Diktat Kid, and an elihphile once you destroy the [kaos oak]. Last Lousy Points have no effect on your rank.";
+	say "Here are the ranks, in order:";
+	repeat through table of silly ranks:
+		if pre-prio entry is not 0, say " (fixed)";
+		say "[the-rank] ([max-sco entry])";
+	say ".";
 
 chapter replace standard response to final question
 
