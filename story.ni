@@ -1,4 +1,4 @@
-	"Ailihphilia" by "N. Y. Llewellyn"
+"Ailihphilia" by "N. Y. Llewellyn"
 
 [blurb for comp = Fit IF: A *GASP* SAGA]
 
@@ -157,7 +157,7 @@ section compiler constants
 
 use MAX_VERBS of 550. [-40/50 from max_verbs debug]
 
-use MAX_ACTIONS of 200.
+use MAX_ACTIONS of 210.
 
 use MAX_VERBSPACE of 5300. [-400 from max_verbspace debug]
 
@@ -167,7 +167,7 @@ section debug compiler globals - not for release
 
 use MAX_VERBS of 600. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
-use MAX_ACTIONS of 220. [+10?]
+use MAX_ACTIONS of 230. [+10?]
 
 use MAX_VERBSPACE of 5700. [4096 = original max]
 
@@ -492,6 +492,8 @@ to score-inc:
 	if debug-state is true, say "DEBUG standard score-inc.";
 	reg-inc mrlp;
 
+rank-track-note is a truth state that varies.
+
 to say give-rank:
 	say ", giving you a (nonsensical) rank of ";
 	if main-score is 0:
@@ -501,25 +503,28 @@ to say give-rank:
 	else if main-score >= min-win - 4:
 		say "eilihphile";
 	else:
-		repeat through table of silly stupid ranks:
+		repeat through table of silly ranks:
 			if max-sco entry >= main-score:
 				say "[the-rank entry]";
+				if rank-track-note is false:
+					now rank-track-note is true;
+					say " (rank changes can be tracked with [b]SCO DOCS[r], or you can see them all at game's end)";
 				continue the action;
-	say "(guuu... buuug)";
+		say "(guuu... buuug)";
 
 when play begins:
 	let rank-count be 0;
 	let rank-score be 0;
-	sort table of silly stupid ranks in random order;
-	sort table of silly stupid ranks in pre-prio order;
-	repeat through table of silly stupid ranks:
+	sort table of silly ranks in random order;
+	sort table of silly ranks in pre-prio order;
+	repeat through table of silly ranks:
 		increment rank-count;
-		now rank-score is ((min-win - 5) * rank-count) / (number of rows in table of silly stupid ranks);
+		now rank-score is ((min-win - 5) * rank-count) / (number of rows in table of silly ranks);
 		increment rank-score;
 		now max-sco entry is rank-score;
-		[say "[rank-count] [max-sco entry].";]
+		if debug-state is true, say "[rank-count] gives up to [max-sco entry].";
 
-table of silly stupid ranks
+table of silly ranks
 pre-prio	max-sco	the-rank [pre-prio exact numbers aren't important. It's just that there should be ones at the end.]
 -10	0	"de-ug-no-tongue'd"
 0	--	"rednifinder"
@@ -534,7 +539,7 @@ pre-prio	max-sco	the-rank [pre-prio exact numbers aren't important. It's just th
 10	--	"de-lytse-styled" [delights ... geddit?]
 
 check requesting the score:
-	say "Your overall score so far is [score] of [maximum score] in [turn count] [if turn count is nontrivially-palindromic](!) [end if]turn[plur of turn count][if score < 4][give-rank]. But don't worry, points pile up pretty quickly once you get going[end if]. [to-get-max].";
+	say "Your overall score so far is [score] of [maximum score] in [turn count] [if turn count is nontrivially-palindromic](!) [end if]turn[plur of turn count][give-rank][if score < 4]. But don't worry, points pile up pretty quickly once you get going[end if]. [to-get-max].";
 	say "[line break]Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do]. Note some acts you can perform in one region may be scored for another.";
 	if My Gym is visited or Evaded Ave is visited:
 		let nmg be number of moot guhthugs;
@@ -608,11 +613,38 @@ LLP-last is a number that varies.
 
 This is the LLP or normal score changes rule:
 	if the score is not the last notified score:
-		say "[bracket][if cur-score of Odd Do > LLP-last]You found [a-verylast] Last Lousy Point![close bracket][else]Your score has just gone up by one point.[close bracket][end if][paragraph break]";
+		say "[bracket][if cur-score of Odd Do > LLP-last]You found [a-verylast] Last Lousy Point![close bracket][else]Your score has just gone up by one point[notify-rank-bump].[close bracket][end if][paragraph break]";
 		now the last notified score is the score;
 		now LLP-last is cur-score of Odd Do;
 
+to say notify-rank-bump:
+	let got-main be whether or not LLP-last is cur-score of Odd Do;
+	if got-main is false or rank-track is false, continue the action;
+	if score is min-win or score is min-win - 4 or score is 1:
+		say " (and you gained a rank, too)";
+		continue the action;
+	repeat through table of silly ranks:
+		if main-score is max-sco entry + 1, say " (and you gained a rank, too)";
+		the rule succeeds;
+
 to say a-verylast: say "[if cur-score of Odd Do is max-score of Odd Do]the very last[else]a[end if]"
+
+section scodocsing
+
+rank-track is a truth state that varies.
+
+scodocsing is an action applying to nothing.
+
+understand the command "sco docs" as something new.
+understand the command "scodocs" as something new.
+
+understand "scodocs" and "sco docs" as scodocsing.
+
+carry out scodocsing:
+	now rank-track is whether or not rank-track is false;
+	say "Documenting score ranks is now [on-off of rank-track].";
+	now rank-track-note is true;
+	the rule succeeds.
 
 chapter turn count
 
@@ -1743,7 +1775,7 @@ understand "meta" and "meta at em" as metaing.
 carry out metaing:
 	if player wears pact cap, say "[2da][b]LO VOL[r] and [b]LOVE VOL[r] turn the pact cap's hints volume down and up, respectively.";
 	if shuttuhs-known is true, say "[2da][b]SHUTTUHS[r] toggles blocking off areas you're done with--currently [on-off of shuttuhs]. NOTE: if there are any LLPs, you'll still be blocked.";
-	say "[b]SCORE[r] tracks the score. [b]ABOUT[r] and [b]CREDITS[r] tell about the game[if show-dev is true], and [b]DEV ED[r] shows technical details[end if].";
+	say "[b]SCORE[r] tracks the score[if rank-track-note is true], and [b]SCO DOCS[r] toggles tracking the nonsense ranks[end if]. [b]ABOUT[r] and [b]CREDITS[r] tell about the game[if show-dev is true], and [b]DEV ED[r] shows technical details[end if].";
 	say "If you wish to see commands that jump ahead and maybe spoil some puzzles (for instance, if you're near the 2-hour judging limit for IFComp,) [b]N I WIN[r] (no apostrophe) will show you several warp commands. This may be useful if you are near the end of IFComp judging.";
 	if in-beta is true:
 		say "[line break](start beta commands)";
@@ -7237,7 +7269,7 @@ understand "tend [something]" as tending.
 carry out tending:
 	if noun is not level net, say "That doesn't need tending." instead;
 	if player has epicer recipe, say "You already did what you needed with the net." instead;
-	say "You adjust the ten level net. You're not sure how to make it work, but with some common sense, you make it. You climb and swing from the trapeze to the other side--falling into the ten level net about a hundred or so times--but the hundred and first, BAM! You notice an epic-er recipe under some superfluous steno-nets.[paragraph break]A quick glance indicates it has much more detailed information than the set o['] notes. Yay! There's also something labeled an elope pole, which you suspect may help you get away if and when you need to. Part of the net falls off, too. It'd make a nice tent: a tent net. You gather up a nice haul: pole, net, recipe.";
+	say "You adjust the ten level net. You're not sure how to make it work, but what with the palindromes you've seen thus far, you keep it symmetrical, until it looks sturdy. You climb and swing from the trapeze to the other side--falling into the ten level net about a hundred or so times--but the hundred and first, BAM! You notice an epic-er recipe under some superfluous steno-nets.[paragraph break]A quick glance indicates it has much more detailed information than the set o['] notes. Yay! There's also something labeled an elope pole, which you suspect may help you get away if and when you need to. Part of the net falls off, too. It'd make a nice tent: a tent net. You gather up a nice haul: pole, net, recipe.";
 	get-tended-stuff;
 	score-inc; [Yelpley/TEND NET]
 	verify-done rev-tend-net rule;
@@ -10106,7 +10138,7 @@ rule for rankseeing:
 	say "Here are the ranks, in order:";
 	repeat through table of silly ranks:
 		if pre-prio entry is not 0, say " (fixed)";
-		say "[the-rank] ([max-sco entry])";
+		say "[the-rank entry] ([max-sco entry])";
 	say ".";
 
 chapter replace standard response to final question

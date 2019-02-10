@@ -33,7 +33,7 @@ table of burnies	0	0	true	"responses to BURN"	--
 table of businesses	0	0	false	"businesses in Day-Away Ad"	"... and wait! There'll even be a new Deft Fed, owned by a salt-of-the-earth type named Treffert, now that Sniffins/Smuggums totally sold out"
 table of diktat taunts	0	0	false	"Diktat Kid taunts"	"'BOSS SOB!' the Diktat Kid yells, finally free from the shackles of political correctness."
 table of King Nik ancestors	0	0	false	"King Nik ancestors (TALK to King Nik)"
-table of Moo Room animals	0	0	false	"Moo Room animals (LISTEN)"	"Finally, you hear a single ewe, which you're surprised you didn't hear earlier.
+table of Moo Room animals	0	0	false	"Moo Room animals (LISTEN)"	"Finally, you hear a single ewe, which you're surprised you didn't hear earlier."
 table of Ms Ism pals	0	0	false	"Ms Ism's pals (TALK to Ms Ism)"	--
 table of My Gym songs	0	0	false	"songs in My Gym (LISTEN)"	"All those tunes, and nothing by ABBA! Low class, low class."
 table of noesies	0	0	true	"responses to NO"	"An epony-NOPE rings through your ears to push back against your negativity in grand fashion."
@@ -741,6 +741,7 @@ randtxt
 "Nush, Sun"
 "Nybo, Robyn"
 "Obama, Bo" [ha ha ha no really it's the former White House dog]
+"Isuzu, Si"
 "Ord, Isidro"
 "Osawa, So"
 "Ott, Otto"
@@ -848,6 +849,7 @@ randtxt
 "Aiding Nidia"
 "Allay Alla"
 "Am I, Ma?"
+"Waikiki? Aw"
 "Ape Pa"
 "Apollo, Pa"
 "Ares's Era"
@@ -1107,6 +1109,7 @@ table of My Gym songs
 randtxt
 "Age Mo' Mega"
 "Ai, Tia"
+"Honk'n, Oh"
 "Ail, Emelia"
 "Jenine J"
 "Air Aria"
@@ -1319,8 +1322,10 @@ randtxt
 table of rejected kid sidekicks
 randtxt
 "Abler Elba"
+"Kimono Mik"
 "Accorded Rocca"
 "ACDC A"
+"Omaha Mo"
 "Raffa R"
 "ADHD A"
 "Anon A"
@@ -1474,6 +1479,7 @@ randtxt
 "Ur-Dru"
 "'Vests' Ev"
 "Walla Walla W" [this is a personal favorite]
+"Bama B"
 "Wazza W"
 "Weewee W"
 "Wolf Low"

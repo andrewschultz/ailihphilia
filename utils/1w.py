@@ -86,7 +86,7 @@ def num_checks(x):
         if g in x:
             retval *= len(macro_letter[g]) ** x.count(g)
     return retval
-    
+
 def alph_dash_string_to_list(q):
     if re.search("[^a-z-]", q): sys.exit(q + " cannot contain anything besides letters or a dash.")
     qd = q
@@ -132,6 +132,7 @@ def usage(opt_err = ""):
     print("Any word sent in is scoured for palindromes. CSV or space. Options require a dash.")
     print("-c checks possible palindromes for longer sentences. -nc forces it off. Default is", ["off", "on"][check_possible])
     print("-e checks errors in one word sequence.")
+    print("-g generates palindromes.")
     print("V=try all vowels+y, C=try all consonants+y, A=C+V, D= defines a custom set of letters.")
     print("-i uses stdin.")
     print("-m adjusts the maximum possible palindromes we check for.")
