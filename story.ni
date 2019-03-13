@@ -29,6 +29,7 @@ PRE for pre-rules in the table of goodacts
 POST for post-rules in the table of goodacts
 LLP for last lousy points
 SHI for table of shiftables
+TSR for table of silly ranks
 
 to search for an item, look for chapter [item].
 ]
@@ -161,7 +162,7 @@ use MAX_ACTIONS of 210.
 
 use MAX_VERBSPACE of 5300. [-400 from max_verbspace debug]
 
-use MAX_SYMBOLS of 23000.
+use MAX_SYMBOLS of 24000.
 
 section debug compiler globals - not for release
 
@@ -171,7 +172,7 @@ use MAX_ACTIONS of 230. [+10?]
 
 use MAX_VERBSPACE of 5700. [4096 = original max]
 
-use MAX_SYMBOLS of 24000. [-1000 for release]
+use MAX_SYMBOLS of 25000. [-1000 for release]
 
 chapter room utilities
 
@@ -492,15 +493,37 @@ to score-inc:
 	if debug-state is true, say "DEBUG standard score-inc.";
 	reg-inc mrlp;
 
+when play begins:
+	let rank-count be 0;
+	let rank-score be 0;
+	sort table of silly ranks in random order;
+	sort table of silly ranks in pre-prio order;
+	repeat through table of silly ranks:
+		increment rank-count;
+		now rank-score is ((min-win - 5) * rank-count) / (number of rows in table of silly ranks);
+		increment rank-score;
+		now max-sco entry is rank-score;
+		if debug-state is true, say "[rank-count] ([the-rank entry]) is your rank up to [max-sco entry].";
+
 rank-track-note is a truth state that varies.
+rank-track is a truth state that varies.
+
+to decide which number is rank-row:
+	if main-score is 0, decide on 0;
+	let temp be 0;
+	repeat through table of silly ranks:
+		increment temp;
+		if max-sco entry >= main-score, decide on temp;
+	if main-score is min-win, decide on temp + 1;
+	decide on temp;
 
 to say give-rank:
-	say ", giving you a (nonsensical) rank of ";
+	say ". You've found [main-score] necessary points, giving you a (nonsensical) rank of ";
 	if main-score is 0:
-		say "ebohphobe";
-	else if main-score is min-win:
+		say "ebohphobe[if score > 0] (but not completely)[end if]";
+	else if main-score >= min-nec - 1:
 		say "tsilihphilist";
-	else if main-score >= min-win - 4:
+	else if main-score >= min-nec - 4:
 		say "eilihphile";
 	else:
 		repeat through table of silly ranks:
@@ -512,23 +535,13 @@ to say give-rank:
 				continue the action;
 		say "(guuu... buuug)";
 
-when play begins:
-	let rank-count be 0;
-	let rank-score be 0;
-	sort table of silly ranks in random order;
-	sort table of silly ranks in pre-prio order;
-	repeat through table of silly ranks:
-		increment rank-count;
-		now rank-score is ((min-win - 5) * rank-count) / (number of rows in table of silly ranks);
-		increment rank-score;
-		now max-sco entry is rank-score;
-		if debug-state is true, say "[rank-count] gives up to [max-sco entry].";
-
-table of silly ranks
-pre-prio	max-sco	the-rank [pre-prio exact numbers aren't important. It's just that there should be ones at the end.]
+table of silly ranks [xxtsr]
+pre-prio	max-sco	the-rank [pre-prio exact numbers aren't important. It's just that there should be certain ones at the end for the second sort-through.]
 -10	0	"de-ug-no-tongue'd"
 0	--	"rednifinder"
 0	--	"tsigologist"
+0	--	"revitalativer"
+0	--	"rezippuppizer"
 0	--	"cainamaniac"
 0	--	"rekampmaker"
 0	--	"cilohaholic"
@@ -539,7 +552,7 @@ pre-prio	max-sco	the-rank [pre-prio exact numbers aren't important. It's just th
 10	--	"de-lytse-styled" [delights ... geddit?]
 
 check requesting the score:
-	say "Your overall score so far is [score] of [maximum score] in [turn count] [if turn count is nontrivially-palindromic](!) [end if]turn[plur of turn count][give-rank][if score < 4]. But don't worry, points pile up pretty quickly once you get going[end if]. [to-get-max].";
+	say "Your overall score so far is [score] of [maximum score] in [turn count] [if turn count is nontrivially-palindromic](!) [end if]turn[plur of turn count][if score < 4]. But don't worry, points pile up pretty quickly once you get going[end if]. [to-get-max][give-rank].";
 	say "[line break]Broken down by regions, you have [regres of Dim Mid], [regres of Grebeberg], [regres of Yelpley] and [regres of Odd Do]. Note some acts you can perform in one region may be scored for another.";
 	if My Gym is visited or Evaded Ave is visited:
 		let nmg be number of moot guhthugs;
@@ -579,6 +592,9 @@ to say to-get-max:
 to decide which number is min-win:
 	decide on maximum score - max-score of Odd Do + cur-score of Odd Do;
 
+to decide which number is min-nec:
+	decide on maximum score - max-score of Odd Do;
+
 this is the LLP rule:
 	if LLP-reject is true, the rule succeeds;
 	let prev-rov be roving-LLP;
@@ -617,15 +633,13 @@ This is the LLP or normal score changes rule:
 		now the last notified score is the score;
 		now LLP-last is cur-score of Odd Do;
 
+prev-rank-row is a number that varies.
+
 to say notify-rank-bump:
 	let got-main be whether or not LLP-last is cur-score of Odd Do;
-	if got-main is false or rank-track is false, continue the action;
-	if score is min-win or score is min-win - 4 or score is 1:
-		say " (and you gained a rank, too)";
-		continue the action;
-	repeat through table of silly ranks:
-		if main-score is max-sco entry + 1, say " (and you gained a rank, too)";
-		the rule succeeds;
+	if rank-row > prev-rank-row and got-main is true and rank-track is true:
+		say ", and you gained a rank, too";
+		now prev-rank-row is rank-row;
 
 to say a-verylast: say "[if cur-score of Odd Do is max-score of Odd Do]the very last[else]a[end if]"
 
@@ -643,7 +657,6 @@ understand "scodocs" and "sco docs" as scodocsing.
 carry out scodocsing:
 	now rank-track is whether or not rank-track is false;
 	say "Documenting score ranks is now [on-off of rank-track].";
-	now rank-track-note is true;
 	the rule succeeds.
 
 chapter turn count
@@ -926,12 +939,12 @@ after reading a command:
 		if the player's command matches the regular expression "to$":
 			replace the regular expression "to$" in XX with "ti";
 			change the text of the player's command to XX;
-			if debug-state is true, say "(TO -> TI) Changed to: [XX].";
+			if debug-state is true, say "(DEBUG NOTE) (TO -> TI) Changed to: [XX].";
 		if the player's command matches the text "to idiot":
 			let XX be the player's command;
 			replace the text "to idiot" in XX with "ti";
 			change the text of the player's command to XX;
-			if debug-state is true, say "(TO IDIOT -> TI) Changed to: [XX].";
+			if debug-state is true, say "(DEBUG NOTE) (TO IDIOT -> TI) Changed to: [XX].";
 	if phonebook-near:
 		if the player's command matches the regular expression "<0-9>-<0-9>" or the player's command matches the regular expression "<0-9>{7}":
 			say "(assuming you're trying to make a phone call)[paragraph break][no-calls]!'";
@@ -2058,6 +2071,7 @@ instead of attacking:
 	if noun is made dam, say "You don't want to make it a ... maddened dam." instead;
 	if noun is eels, say "Eel emo melee?!" instead;
 	if noun is a workable, say "Bash?! Sab!" instead;
+	if noun is kaos oak, say "Would you believe ... you did no damage? Sorry about that, chief." instead;
 	if noun is ergot ogre, say "The ogre could beat you up, but even if it couldn't, it'd do a pox-op or worse on you." instead;
 	if noun is player, say "PvP!" instead;
 	if noun is senile felines, say "You don't want to hear them go RWOWR." instead;
@@ -2966,7 +2980,7 @@ sharp rahs	guru rug	stir writs	pre-rahs-on-rug rule	--	true	true	true	false	true
 --	--	--	rev-first-food-combo rule	--	true	--	--	false	false	true	Grebeberg	Mont Nom	Mont Nom	false	--
 --	--	--	rev-second-food-combo rule	--	true	--	--	false	false	true	Grebeberg	Mont Nom	Fun Enuf	false	--
 Moor Broom	Tru Yurt	Exam Axe	pre-broom-on-yurt rule	bump-ivy rule	true	true	false	false	true	false	Grebeberg	Yack Cay	Yack Cay	false	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how a clean space frees one's mind for ideas and how your simple advice works. You're pretty shocked, but you're even more shocked when the Known Wonk bolts out and yells 'Wait a second!'[paragraph break]After a bit, the Known Wonk returns, babbling about FINALLY impressing the Code Doc. In gratitude, the Known Wonk hands you something long-hidden and unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! You trade the moor broom for it, now that the Known Wonk is committed to cleanliness." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
-wash saw	porch crop	balsa slab	pre-saw-on-crop rule	--	true	true	false	false	false	false	Grebeberg	Uneven U	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods.[paragraph break]'Yes! Yes! We have achieved AIMED ACADEMIA! Uneven U needs a name change ... to UNITIN['] U! How can I thank you?'[paragraph break]You see the wash saw became dull while you sawed, and you've no way to sharpen it. The Code Doc should be able to before the porch crop grows back. So when you notice a balsa slab is lying under where the porch crop was, you propose a trade. The Code Doc accepts. Now, you ... do own wood!"
+wash saw	porch crop	balsa slab	pre-saw-on-crop rule	--	true	true	false	false	false	false	Grebeberg	Uneven U	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods.[paragraph break]'Yes! Yes! We have achieved AIMED ACADEMIA! It is time for a name chanege, but to what? ... Idea-ed, I! UNITIN['] U! How can I thank you?'[paragraph break]You see the wash saw became dull while you sawed, and you've no way to sharpen it. The Code Doc should be able to before the porch crop grows back. So when you notice a balsa slab is lying under where the porch crop was, you propose a trade. The Code Doc accepts. Now, you ... do own wood!"
 Exam Axe	Lie Veil	--	pre-axe-on-veil rule	--	true	true	true	false	true	false	Grebeberg	Dumb Mud	Dumb Mud	false	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and swirling and vanishing. I guess now it's an ex-axe. You can go north now."
 --	--	--	rev-get-bros orb rule	--	false	--	--	false	true	false	--	Le Babel	Le Babel	--	--
 DNA band	reifier	DNA hand	pre-band-on-reifier rule	--	true	true	false	false	false	true	Yelpley	Worn Row	Worn Row	false	"After considerable gooping and whooshing, the reifier pops open to reveal something more lifelike than a DNA band: a DNA hand! It doesn't have any slime or blood leaking, and when you take it, it doesn't twitch too much."
@@ -3959,7 +3973,7 @@ this is the you-win rule: [xxwin]
 	say "[line break]You wonder how you'll get back, but then you see the Flee Elf running towards you. 'Tardy, drat! ... 'This, I h/t! [if cur-score of Odd Do is max-score of Odd Do]Decay?! ACED[else]Won enow[end if]!' You ask hesitantly about what's next. You don't want or need people chanting 'Deified! Deified! Deified!', but...[wfak-d]";
 	say "'The X-ITE TIX lead BACK TO THE REAL WORLD WHICH WILL BE FAR MORE EXCITING AND ILLUMINATING FOR YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a there-and-back-but-wiser summary. Books like that always kind of annoyed you once you figured the whole schtick out, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand says, 'I'll need the pact cap back. It will go to our new museum.'[paragraph break]'What's it called?' you ask, despite yourself.[wfak-d]";
 	say "[paragraph break]'Well, there's still argument over We-I-View, Show-Ohs and Trofy Fort.' (Trofee?) The Flee Elf asks which you prefer, and after an awkward silence, you mention they all seem equally appropriate and unforced. Another awkward silence! How palindromic![paragraph break]'Well, anyway. This RIDE-DIR will help you return to your own world. And here is an x/o box.'[wfak-d]";
-	say "The x/o box isn't much. It's engraved 'U Remem'er, U,' 'Done? NOD' and 'U Did U.' You can't even open it! But if it were too obvious and gaudy, how would you explain it back home?[paragraph break]Soon after you blurt out 'Oh, t/y! My, tho['],' arguments begin over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Not-Dud-Ton? Not-Kook-Ton? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered with stuff you can't fix?[wfak-d]";
+	say "The x/o box isn't much. It's engraved 'U Remem'er, U,' 'Done? NOD' and 'U Did U.' You can't even open it! But if it were too obvious and gaudy, how would you explain it back home?[paragraph break]Soon after you blurt out 'Oh, t/y! My, tho['],' arguments begin nearby over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Not-Dud-Ton? Not-Kook-Ton? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered with stuff you can't fix?[wfak-d]";
 	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar or maybe a TekCo Rocket, but it turns out it's just a Back Cab labeled 'Redi-Rider.' (A Toyota would also have worked.) 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You don't have the tech savvy to make a DVD, so to remember this, you'd like ... to jot. What to call your writing? RECAP: ACER, NOW I WON and EL BIBLE are way too pompous, but some brainstorming gives DARN RAD, SOME MEMOS, I SAW [']TWAS I, DRAWN INWARD, WENT NEW, WENDED NEW, SAGAS or SOLOS. Or--no, that's it. ELATE TALE.";
 	end the story finally saying "Roxor! Roxor! Roxor!";
 	sort the table of last lousy points in finord order;
@@ -4199,7 +4213,7 @@ The KAOS Oak is peripheral scenery in Fun Enuf. "[if flee elf is in Fun Enuf]It'
 printed name of KAOS Oak is "[kaoscaps]".
 
 after examining the KAOS Oak:
-	if KAOS Oak is not xed, say "One look and you find yourself mumbling 'Elp! A Maple!' when you know it obviously isn't. You feel dumb, then take a second to get smart. Now that's (ch/k)aos! ";
+	if KAOS Oak is not xed, say "One look and you find yourself mumbling 'Elp! A Maple!' before remembering the truth. You whisper 'Missed it by THAT much,' then take a second to get smart. Now that's (ch/k)aos! ";
 	if grammarg is false, say "The [kaoscaps] changes [one of][or]again [stopping]as you look at it. ";
 	say "[one of][paragraph break][i][bracket]NOTE: [r][b]GRAMMAR G[r][i] can turn off this random capitalization nonsense.[close bracket][r][or][stopping]";
 	continue the action;
@@ -7711,7 +7725,7 @@ to say maps-if-solved: say "[if spa maps are preclued]the spa maps now[else]some
 talk-text of the player is "'Me! Hi! Hem.'"
 
 talk-text of Bomb Mob is "You don't need a gang nag. Maybe you, or something you find or found, can sneak around them to get the TNT, though.".
-talk-text of Code Doc is "After some desultory chatter, the Code Doc mentions how [next-rand-txt of table of university primary targets] or [next-rand-txt of table of university secondary targets] would be a strong addition to Uneven U as a co-doc. [if maps-explained is true]You might not have much to talk about, now you've had help with the Spa Maps[else if spa maps are preclued]You need some way to help the Code Doc, so you can get help with the Spa Maps[else]Perhaps USEing [maps-if-solved] on the Code Doc might be more helpful to you[end if].".
+talk-text of Code Doc is "After some desultory chatter, the Code Doc mentions how[one of], to avoid Uneven U becoming Y-Me'd Academy,[stopping] [next-rand-txt of table of university primary targets] or [next-rand-txt of table of university secondary targets] would be a strong addition to Uneven U as a co-doc. [if maps-explained is true]You might not have much to talk about, now you've had help with the Spa Maps[else if spa maps are preclued]You need some way to help the Code Doc, so you can get help with the Spa Maps[else]Perhaps USEing [maps-if-solved] on the Code Doc might be more helpful to you[end if].".
 talk-text of Cross Orc is "'Yap?! Pay!'".
 talk-text of Dave is "Dave's here, man. And Dave's not chatty, man. He just seems to want to block you from doing anything.".
 talk-text of Diktat Kid is "Now's not the time for talk. Okay, the Diktat Kid might be bragging, but you won't get a word in. Maybe a stiff 'It's...'".
@@ -8859,7 +8873,7 @@ carry out aidllping:
 	try sosing;
 	if aid-LLP-yet is false:
 		now aid-LLP-yet is true;
-		say "Your 'correct' way of asking for aid nets a last lousy point. You didn't even need to throw in a 'Plea! Elp!' to make sure![paragraph break]Yay![paragraph break]";
+		say "Your 'correct' way of asking for aid nets a last lousy point. You didn't even need to throw in a 'Plea! [']Elp!' to make sure![paragraph break]Yay![paragraph break]";
 		abide by the LLP rule; [DIAL AID]
 		consider the LLP or normal score changes rule;
 
@@ -10134,11 +10148,16 @@ rule for ordring:
 rankseeing is an activity.
 
 rule for rankseeing:
-	say "Some ranks are fixed: for instance, you are an ebohphobe if you have no points, a tsilihphilist once you beat the Diktat Kid, and an elihphile once you destroy the [kaos oak]. Last Lousy Points have no effect on your rank.";
-	say "Here are the ranks, in order:";
+	say "Some ranks are fixed: for instance, you are an ebohphobe if you have no points, an elihphile once you destroy the [kaos oak], and a tsilihphilist once you beat the Diktat Kid. Last Lousy Points have no effect on your rank.";
+	say "Here are the maximum points for each rank, in order: ";
+	let count be 0;
+	let tsrr be number of rows in table of silly ranks;
 	repeat through table of silly ranks:
-		if pre-prio entry is not 0, say " (fixed)";
+		increment count;
+		if count is tsrr, say " and ";
+		if pre-prio entry is not 0, say "(fixed) ";
 		say "[the-rank entry] ([max-sco entry])";
+		if count < tsrr - 1, say ", ";
 	say ".";
 
 chapter replace standard response to final question
