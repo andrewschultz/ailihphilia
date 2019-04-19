@@ -39,6 +39,7 @@ read_last = 0
 comments_too = False
 list_sections = False
 do_detail = False
+compare_temp = False
 
 notes_array = []
 
@@ -183,10 +184,14 @@ def check_notes(s):
     shorts = {}
     dupe_dict = defaultdict(bool)
     colon_ary = []
+    maybe_delete = defaultdict(int)
     for x in source_files: shorts[x] = re.sub(".*[\\\/]", "", x)
     with open(notes_file_to_read) as file:
         for (line_count, line) in enumerate(file, 1):
             ll = line.strip()
+            if ll.startswith("<from"):
+                print("WARNING spare dgrab.py line {:d} in {:s}.".format(line_count, notes_file_to_read))
+                continue
             if ll.startswith("="):
                 this_section = ll
                 continue
@@ -217,6 +222,7 @@ def check_notes(s):
                             open_line = pals[q] if open_first else line_count
                         dupes += 1
                         dupe_dict[line_count] = True
+                        maybe_delete[line_count] = True # delete the duplicate not the original
                     else:
                         q2 = q.strip()
                         q2 = re.sub("-", " ", q2, 0, re.IGNORECASE)
@@ -229,6 +235,7 @@ def check_notes(s):
     if seen < colons:
         colon_string = colon_string + "(saw {:d} of {:d}, increase or remove colons_max/colons_start to see more...)".format(seen, colons)
     found_errs = defaultdict(str)
+    count = 0
     for s in source_files:
         if verbose: print("Reading", s)
         with open(s) as file:
@@ -242,9 +249,6 @@ def check_notes(s):
                 ll = re.sub("['\.\",!\?]", "", ll)
                 ll = re.sub("-", " ", ll)
                 ll = re.sub("\[\]", " ", ll)
-                if line_count == 1278 and 'alert' in line.lower():
-                    print([x for x in pals.keys() if 'alert' in x.lower()])
-                    print(line)
                 for q in pals.keys():
                     if q in ll and (q not in twice.keys() or twice_okay):
                         if q == 'say as' and 'say "as' in line.lower():
@@ -253,6 +257,8 @@ def check_notes(s):
                             # here "da bad" does not flag "Neda Baden" unless we tell the program to
                             line_short = re.sub(":.*", "", q)
                             found_errs[pals[q]] += "Notes.txt line {:d} ({:s}) ~ {:s} line {:d}{:s}: {:s} {:s}\n".format(pals[q], line_short, shorts[s], line_count, '' if not table_name else ' ({:s})'.format(table_name), line.lower().strip(), ('' if not ignore_word_bounds else ' ~ ' + q))
+                            maybe_delete[pals[q]] = True # delete the line where we were in the original notes file
+                            if verbose: print("{:s} {:d} {:s} {:d} {:s}".format(os.path.basename(s), line_count, q, pals[q], line.strip()))
                             notes_list.append(pals[q])
                             if last_lines_first:
                                 if not open_line or pals[q] < open_line:
@@ -261,7 +267,8 @@ def check_notes(s):
                                 open_line = pals[q]
                             twice[q] = True
                             xtranote += 1
-            if verbose: print(count, "total lines")
+                            count += 1
+            if verbose: print("{:d} total lines for {:s}".format(count, os.path.basename(s)))
     if len(found_errs) > 0:
         for x in sorted(found_errs.keys(), reverse=last_lines_first):
             print(found_errs[x].strip())
@@ -289,7 +296,17 @@ def check_notes(s):
             print("Deleted", notes_file_backup)
     elif bowdlerize_notes: print("Nothing to bowdlerize, so I am not recopying.")
     if len(notes_list) > 3: print('**** Notes in file:', ', '.join([str(x) for x in sorted(notes_list, reverse=True)]))
-    if len(dupe_dict.keys()) > 3: print('**** Duplicates to print:', ', '.join([str(x) for x in sorted(dupe_dict.keys(), reverse=True)]))
+    if len(dupe_dict) > 3: print('**** Duplicates to print:', ', '.join([str(x) for x in sorted(dupe_dict.keys(), reverse=True)]))
+    if compare_temp and len(maybe_delete) > 0:
+        f3 = open("notes-bak.txt", "w")
+        with open("notes.txt") as file:
+            for (line_count, line) in enumerate(file, 1):
+                if line_count in maybe_delete.keys(): continue
+                f3.write(line)
+        f3.close()
+        i7.wm("notes.txt", "notes-bak.txt")
+        os.remove("notes-bak.txt")
+        exit()
     if launch_after and open_line: i7.npo(notes_file_to_read, open_line, True)
 
 count = 1
@@ -306,6 +323,8 @@ while count < len(sys.argv):
         launch_after = True
     elif l == 'ln' or l == 'nl':
         launch_after = False
+    elif l == 'ct':
+        compare_temp = True
     elif l == 'm' or l == 'mo':
         modify_only = (l == 'mo')
         if modified_yet:
