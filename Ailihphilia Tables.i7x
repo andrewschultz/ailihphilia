@@ -812,6 +812,7 @@ chapter random businesses
 table of businesses
 biz-name
 "Baher's Rehab"
+"Suede Us"
 "Colby Bloc"
 "Dairy Myriad"
 "Derby Bred"
@@ -846,6 +847,12 @@ part the tables
 table of altbooks
 randtxt
 "Aegea"
+"X: a minimax"
+"Fan-izin['] AF"
+"Era We Beware"
+"Mussolini: Loss, Um"
+"Rio Noir"
+"Rio Memoir"
 "Aiding Nidia"
 "Allay Alla"
 "Am I, Ma?"
@@ -990,6 +997,8 @@ randtxt
 table of Bond Nob bars
 randtxt
 "Bar Crab"
+"Safari Rafa's"
+"Shaka H's"
 "Brewer B"
 "Clan ALC"
 "Met [']Em"
@@ -1083,6 +1092,7 @@ randtxt
 table of Moo Room animals
 randtxt
 "any myna"
+"a xerosis-o-rex"
 "a leet eel"
 "a buck cub"
 "an elk cackle"
@@ -1108,7 +1118,9 @@ randtxt
 table of My Gym songs
 randtxt
 "Age Mo' Mega"
+"Y/N Oh Po['] Cacophony"
 "Ai, Tia"
+"Own W/O"
 "Honk'n, Oh"
 "Ail, Emelia"
 "Jenine J"
@@ -1191,6 +1203,8 @@ randtxt
 "Tae Beat"
 "Tae Heat"
 "Tha H/T"
+"The H/T"
+"Thy H/T"
 "Theme, H/T"
 "There, H/T"
 "These, H/T"
@@ -1281,6 +1295,7 @@ randtxt
 table of Ms Ism pals
 randtxt
 "Able Melba"
+"Alluded Ulla"
 "Aglow Olga"
 "AI Mia"
 "AI Pia"
@@ -1322,6 +1337,7 @@ randtxt
 table of rejected kid sidekicks
 randtxt
 "Abler Elba"
+"Hamma['] H"
 "Kimono Mik"
 "Accorded Rocca"
 "ACDC A"
@@ -1392,6 +1408,7 @@ randtxt
 "Lamin['] Animal"
 "Lass Sal"
 "Lax Al"
+"Ladened Al"
 "Led Adel"
 "Lee, Hobo Heel"
 "'Leer' Creel"
@@ -1479,6 +1496,7 @@ randtxt
 "Ur-Dru"
 "'Vests' Ev"
 "Walla Walla W" [this is a personal favorite]
+"Suede Deus"
 "Bama B"
 "Wazza W"
 "Weewee W"
@@ -1555,6 +1573,7 @@ randtxt
 "X on Knox!"
 "Y-array?!"
 "Yale? Delay!"
+"Yo, Roy!"
 
 table of singstuff
 randtxt
@@ -1613,6 +1632,7 @@ table of undoings
 randtxt
 "Ay, CYA."
 "Delete-Led!"
+"X! I fix!"
 "Did. [']Nuff? Undid."
 "Did. Error? Redid."
 "Dur. Crud."
@@ -1807,6 +1827,7 @@ randtxt
 
 table of wordy drow laments
 randtxt
+"Bardo...drab!"
 "Deity...tied!"
 "Die, id!"
 "Direr id!" [okdup]

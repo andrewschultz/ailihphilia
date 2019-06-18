@@ -148,6 +148,8 @@ understand "par crap" as a mistake ("Making fun of others['] clothing isn't as e
 
 understand "par trap" as a mistake ("You aren't on a golf course.[mis of 56]") when Verses Rev is quicknear.
 
+understand "po top" as a mistake ("No, it's better like this") when player is in Dirge Grid and Diktat Kid is moot.
+
 understand "verb rev" as a mistake ("[if verses rev is quicknear]Oh, the Verses Rev is active enough[else]The commands from VERBS flash through your head, too quick to read[end if].[mis of 57]"). [okall]
 
 understand "versus rev" as a mistake ("The Verses Rev is already against you.[mis of 58]") when Verses Rev is quicknear.
@@ -719,6 +721,8 @@ chapter Sneer Greens
 
 understand "guy ug" as a mistake ("Your tame disgust fails to change the Yuge Guy.[mis of 290]") when Yuge Guy is quicknear.
 
+understand "y u guy" as a mistake ("The Yuge Guy isn't interested in metaphysics.[mis of 290]") when Yuge Guy is quicknear.
+
 chapter Swamp Maws
 
 understand "damn mad" as a mistake ("You don't have any hulk powers to smash the dam and travel behind it. You don't need them[if ore zero is off-stage], but maybe there's a way to detect something. Well, if anything is there[end if].[mis of 291]") when player is in Swamp Maws.
@@ -904,6 +908,8 @@ understand "wonk now" as a mistake ("The wonk seems in no hurry to do anything.[
 
 chapter Yawn Way
 
+understand "yaw away" as a mistake ("Well, you can go pretty much any way, and you probably don't want [Yawn Way] to tilt.") when player is in Yawn Way.
+
 understand "way aw" as a mistake ("You take a moment to feel bummed about how quiet it is here.[mis of 368]") when player is in Yawn Way.
 
 understand "yawp way" and "yawl way" as a mistake ("It's still quiet here.[mis of 369]") when player is in Yawn Way.
@@ -981,6 +987,8 @@ to say no-calls: say "Like your average random NPC, anyone you tried to call fro
 
 to say or-ups: if word number 1 in the player's command is "ups", say ", much less spu";
 
+understand "buy [text]" as a mistake ("A voice booms Y U BUY? then BUY? U B... You don't need to buy anything, but USEing an item can trade it.")
+
 understand "dial [text]" and "call [text]" and "phone [text]" as a mistake ("[no-calls]!'") when phonebook-near.
 
 understand "gift fig" as a mistake ("It already is one. And you don't need to pass it on.") when gift fig is quicknear.
@@ -998,6 +1006,8 @@ understand "sees" as a mistake ("[if peeped-yet is true]You already managed to P
 understand "shed eh" and "shed ehs" as a mistake ("It doesn't do you much good. Maybe it could help someone further in the dumps than you, though.") when yob attaboy is quicknear and yob attaboy is xed.
 
 understand "tap at [text]" as a mistake ("That's in the spirit of the game, but sadly, I couldn't find a way to make it useful. Sorry!")
+
+understand "tar at [text]" as a mistake ("That's in the spirit of the game, but sadly, I couldn't find a way to make it useful. Sorry!")
 
 understand "up [text]" and "ups [text]" as a mistake ("You need to do something UP with the spurs, but ... UP needs to come second. Or last. You can't do much with PU[or-ups].") when player has spur ups.
 
