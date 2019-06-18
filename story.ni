@@ -355,7 +355,7 @@ understand "taste [thing]" as eating.
 
 carry out os2ing: try oldschooling instead;
 
-carry out oldschooling:
+check oldschooling:
 	say "[chase-pass]An old school verb like [word number 1 in the player's command] isn't strictly necessary in this game. See [verb-suggest] for what is used/useful." instead;
 
 chapter hug/kiss why not
@@ -1098,7 +1098,7 @@ chapter search replacement
 
 search-warn is a truth state that varies.
 
-instead of searching:
+check searching:
 	if search-warn is false:
 		say "You never need to search something. Nothing is hidden in this game. Examining (X/EXAMINE) serves the same purpose.";
 		now search-warn is true;
@@ -1111,7 +1111,7 @@ give-warn is a truth state that varies.
 Understand "show [someone] [something preferably held]" as giving it to (with nouns reversed).
 Understand "show [something preferably held] to [someone]" as giving it to.
 
-instead of giving to a person:
+check giving to a person:
 	if give-warn is false:
 		now give-warn is true;
 		say "(NOTE: USE X ON Y is the preferred syntax, though (SHOW/GIVE) TO should work too and sometimes gives separate rejects.)[paragraph break]";
@@ -1119,7 +1119,7 @@ instead of giving to a person:
 	if noun is gift fig, say "Hmm. It was a gift FOR you. You need to figure what to do with it." instead; [?? send to USE ON ??]
 	if noun is snack cans, say "A nice gesture, but you're convinced the snack cans have some deeper purpose. If only by this text I just wrote, here." instead;
 	if noun is an ingredient, say "Alas, [the noun] would not be a very nice gift for [the second noun]." instead;
-	try useoning noun with second noun;
+	try useoning noun with second noun instead;
 
 chapter undoing
 
@@ -1181,24 +1181,24 @@ chapter climbing
 
 the block climbing rule is not listed in any rulebook.
 
-instead of climbing, say "You haven't drunk enough Klimb-Milk. Err, Climb-Milc. Whichever. You don't need to climb to win the game."
+check climbing: say "You haven't drunk enough Klimb-Milk. Err, Climb-Milc. Whichever. You don't need to climb to win the game." instead;
 
 chapter listening
 
-instead of listening:
+check listening:
 	if noun is pact cap, say "The pact cap will make noise when needed[if cap-vol is false], though you may want to turn it back on with [b]LOVE VOL[r] first[end if]." instead;
 	if noun is bomb mob or noun is navy van, say "Yell-ey." instead;
 	if player is in My Gym:
 		say "[if debug-state is true]DEBUG NOTE RANDOM SONG: [end if][if Dave is in My Gym]Behind Dave's grunts, y[else]Y[end if]ou [one of]tolerate[or]imagine your favorite English teacher giving you a D+ for a poem with the lyrics of[or]are inspired to move, but not in the intended way, by[or]can't escape[or]dread a casual conversation containing the lyrics of[or]imagine the marketers earned their keep promoting[or]feel guilty liking the beats but loathing the words of[or]have a great idea what to do next, but it's interrupted by[or]realize you're going to forget something important someday when remembering the lyrics of[or]feel glad it's the low-volume version of[or]hate yourself for not completely loathing[or]hope nobody got paid too much for writing[or]guess the title from the repeated words of[or]hear, and guess some people are inspired by,[in random order] [next-rand-txt of table of My Gym songs]." instead;
 	if player is in Apse Spa, say "Surprisingly, no spa yaps." instead;
-	if player is in Mont Nom, say "The Ark of Okra is almost saying 'Nom on!' or 'C'mon! Nom!' or even 'Tum-Smut!'" instead;
+	if player is in Mont Nom, say "The Ark of Okra is almost saying 'Nom on!' or 'Nom! C'mon!' or even 'Tum-Smut!'" instead;
 	if player is in Yack Cay and moor broom is not moot, say "[if Known Wonk is not moot]The Known Wonk is just babbling on about stuff you aren't be interested in[else]The Known Wonk, from inside the Tru-Yurt, complains about how messy it is[end if]." instead;
 	if player is in Uneven U, say "The Code Doc mumbles [next-rand-txt of table of university primary targets] or [next-rand-txt of table of university secondary targets] would make a good colleague.";
 	if player is in Yell Alley and bomb mob is in Yell Alley, try listening to bomb mob instead;
 	if player is in Moo Room, say "[if bees-seen is false]An ominous buzzing. Where is it coming from? Bees sure can hide![else]You think you hear [next-rand-txt of table of Moo Room animals] in addition to the mooing.[end if]" instead;
 	if player is in Le Babel, say "Freakish whisperings of the apocryphal [next-rand-txt of table of babel babble] swirl in the air." instead;
 	if player is in Sneer Greens and Yuge Guy is moot, say "You still hear the Yuge Guy utter 'Et Tu?' He has a weird sense of loyalty." instead;
-	say "Noise lesion."
+	say "Noise lesion." instead;
 
 chapter seebeesing
 
@@ -1243,7 +1243,9 @@ definition: a thing (called x) is beep-think:
 understand "th" as thinking.
 understand "thin" as thinking.
 
-instead of thinking:
+the block thinking rule is not listed in any rulebook.
+
+check thinking:
 	now last-move-scored is turn count;
 	if thought-yet is false, say "A knihtg (sic) appears and taps you on the shoulder, and you suddenly recall big-picture things.";
 	let LLP-yet be false;
@@ -1311,6 +1313,7 @@ instead of thinking:
 		repeat with Q2 running through Q:
 			say "[Q2] ([if player has Q2]carried[else][hn-ext of location of Q2][end if]): [eyespoil of Q2][if eyespoil of Q2 <= score + 1] (hmm, worth looking into)[end if][line break]";
 	if eye-charges > 0, say "[line break][pip-charges].";
+	the rule succeeds;
 
 to say hn-ext of (rm - a room):
 	say "[if rm is dropord]dropped during the chase[else if rm is devreserved]done with--should not happen[else]hn of rm[end if]";
@@ -1480,9 +1483,9 @@ this is the yawn-way-stuck rule:
 
 volume irregular verbs
 
-instead of looking under:
+check looking under:
 	if noun is tame mat or noun is guru rug, say "No secret passages." instead;
-	say "You never need to look under anything in Ailihphilia."
+	say "You never need to look under anything in Ailihphilia." instead;
 
 chapter inventory
 
@@ -1990,7 +1993,7 @@ after talktoing:
 	beep-if-vol the noun;
 	continue the action;
 
-instead of asking someone about:
+check asking someone about:
 	say "You don't ever need to ask about specific subjects. ASKing about redirects to TALKing TO a person... which itself only gives minimal clues. If you want to give or use something, USE X ON Y.";
 	try talktoing the noun instead;
 
@@ -2012,30 +2015,25 @@ chapter eating
 
 eat-warning is a truth state that varies.
 
-instead of eating a book, say "There's no real information for you to devour, but who knows, maybe someone else can. Figuratively, at least."
-
-instead of eating SOME DEMOS, say "You haven't used [i]SOME DEMOS[r] yet, so you devour its essence. Something ordinary could become...well, ART."
-
-instead of eating DWELT LEWD, say "I really don't want to know."
-
-instead of eating a helpdoc, say "This is not a spy game. If it were, [the noun] would already have self-destructed."
-
-instead of eating gnu dung, say "Gag!";
-
-instead of eating ark of okra: say "You don't know how long it's been out here. It's probably, like, the vegetable version of wax fruit[if number of carried ingredients > 0]. But after staring at the ark, the food in your inventory looks more delicious[end if]."
-
-instead of eating demo med, say "That would only be a temporary reprieve from your troubles. Plus, what if it is a demon-o-med?"
-
-instead of eating:
-	say "[if noun is Demo Med]You're not sick enough to risk it. Maybe someone in much worse shape than you...[else if noun is edible]Food? Oof![else]You contemplate a wan gnaw, but no voice says 'Naw. G'wan!'[end if]";
-	if eat-warning is false, say "(You don't need to eat anything to win. [if martini tram is off-stage]Food may be more useful in other ways[else]You already worked with food enough in Mont Nom[end if].)[paragraph break]";
+check eating:
+	if noun is SOME DEMOS, say "You haven't used [i]SOME DEMOS[r] yet, so you devour its essence. Something ordinary could become...well, ART." instead;
+	if noun is DWELT LEWD, say "I really don't want to know." instead;
+	if noun is a book, say "There's no real information for you to devour, but who knows, maybe someone else can. Figuratively, at least." instead;
+	if noun is a helpdoc, say "This is not a spy game. If it were, [the noun] would already have self-destructed." instead;
+	if noun is gnu dung, say "Gag!" instead;
+	if noun is ark of okra: say "You don't know how long it's been out here. It's probably, like, the vegetable version of wax fruit[if number of carried ingredients > 0]. But after staring at the ark, the food in your inventory looks more delicious[end if]." instead;
+	if noun is demo med, say "That would only be a temporary reprieve from your troubles. Plus, what if it is a demon-o-med?" instead;
+	say "[if noun is edible]Food? Oof![else]You contemplate a wan gnaw, but no voice says 'Naw. G'wan!'[end if]";
+	if eat-warning is false, say "[line break](You don't need to eat anything to win. [if martini tram is off-stage]Food may be more useful in other ways[else]You already worked with food enough in Mont Nom[end if].)[paragraph break]";
 	now eat-warning is true instead;
 
 chapter jumping
 
-instead of jumping:
+the block jumping rule is not listed in any rulebook.
+
+check jumping:
 	if player is in Trapeze Part, say "While bouncing up and down is sort of palindromic in its own way, it won't help you in the game. [if epicer recipe is off-stage]Or help you to fix[else]You already fixed[end if] the ten-level net." instead;
-	say "You only manage a po['] hop (you don't need to jump in this game).";
+	say "You only manage a po['] hop (you don't need to jump in this game)." instead;
 
 chapter burning
 
@@ -2047,31 +2045,35 @@ to say ynret: say "[line break]NOTE: if the game asks you a question, and the us
 
 yes-yet is a truth state that varies.
 
-instead of saying yes:
+the block saying yes rule is not listed in any rulebook.
+
+check saying yes:
 	next-rand table of yessies;
 	if yes-yet is false:
 		now yes-yet is true;
 		say "[ynret].";
+	the rule succeeds;
 
 chapter saying no
 
 no-yet is a truth state that varies.
 
-instead of saying no:
+check saying no:
 	next-rand table of noesies;
 	if no-yet is false:
 		now no-yet is true;
 		say "[ynret].";
+	the rule succeeds;
 
 chapter attacking
 
-instead of attacking:
+check attacking:
 	if noun is trap mart rampart, say "You'd suffer zoo boobooz if you tried." instead;
 	if noun is pact cap, say "But it's decidedly a pacifi-cap!" instead;
 	if noun is made dam, say "You don't want to make it a ... maddened dam." instead;
 	if noun is eels, say "Eel emo melee?!" instead;
 	if noun is a workable, say "Bash?! Sab!" instead;
-	if noun is kaos oak, say "Would you believe ... you did no damage? Sorry about that, chief." instead;
+	if noun is KAOS Oak, say "Would you believe ... you did no damage? Sorry about that, chief." instead;
 	if noun is ergot ogre, say "The ogre could beat you up, but even if it couldn't, it'd do a pox-op or worse on you." instead;
 	if noun is player, say "PvP!" instead;
 	if noun is senile felines, say "You don't want to hear them go RWOWR." instead;
@@ -2085,6 +2087,7 @@ instead of attacking:
 			try useoning yard ray with noun instead;
 		say "You need to specify your weapon with USE." instead;
 	next-rand table of attackings;
+	the rule succeeds;
 
 chapter going
 
@@ -2940,7 +2943,7 @@ stock cots	sleep eels	--	pre-cots-on-eels rule	--	true	true	true	true	true	true	
 wash saw	past sap	--	pre-saw-on-sap rule	sap-loose rule	true	false	false	true	true	true	Grebeberg	Cold Loc	Cold Loc	false	"You hack away at the past sap with the wash saw, first squirting some loosening/thawing liquid. It's tricky, but the saw holds out, and with some perseverance, you're able to twist the sap off the rife fir[if player does not have puce cup]. You don't have anything to put the sap in, but it's there for later[end if]."
 puce cup	past sap	--	pre-cup-on-sap rule	sap-to-cup rule	true	false	false	true	true	true	Grebeberg	Cold Loc	Cold Loc	false	"You pour some sap into the cup. There's still plenty left over, if you ever wind up needing more."
 puce cup	liar grail	--	pre-cup-on-grail rule	empty-grail rule	true	false	true	true	true	true	Yelpley	Swept Pews	Swept Pews	false	"You pour the purist sirup into the liar grail. As the sirup bubbles, the Wordy Drow slips away from it and ... yes! It breaks free! 'Wend new! Wend new!' it calls to you.[paragraph break]Thoughts flow into your head from the liar grail, but the purist sirup has mutated its complex manipulations into much simpler cries of protestation: it just doesn't want you to go there! You shrug, no longer mystified by its sophistry, and the grail cracks and rolls away.[paragraph break]The passage south looks clear. You snicker to yourself. Liar grail? More like Liar FRAIL! Or Liar TRAIL! You look around, worried a nun will say 'Tut!' But all is still."
-puce cup	dose sod	--	pre-cup-on-sod rule	sod-to-cup rule	true	false	false	true	true	true	Grebeberg	Apse Spa	Apse Spa	false	"You funnel the dose sod into the puce cup. It will keep the sod fresh enough." [sc2-ignore]
+puce cup	dose sod	--	pre-cup-on-sod rule	sod-to-cup rule	true	false	false	true	true	true	Grebeberg	Apse Spa	Apse Spa	false	"You funnel the dose sod (not enough for a doses OD) into the puce cup. It will keep the sod fresh enough." [sc2-ignore]
 puce cup	Bond Nob	Elan Ale	pre-cup-on-nob rule	empty-nob rule	true	true	true	true	true	true	Yelpley	Drawl Ward	Drawl Ward	false	"You give the Bond Nob the puce cup. Gulp! Gulp! The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. So many places to visit: [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars]... well, everywhere except Bar Drab or Soda Do's or Jo's OJ.' The Bond Nob proceeds to regale lager while vanishing north."
 stamp mats	slate metals	Ye Key	pre-mats-on-metals rule	--	true	true	false	true	true	true	Yelpley	Scrap Arcs	Scrap Arcs	false	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY. You find it hard to pull the stamp mats out, and when you take YE KEY, the mats quickly morph into the slate metals. Eh, well. Less inventory to worry about."
 demo med	gulf lug	cash sac	pre-med-on-lug rule	bump-gulf rule	true	true	true	true	true	true	Grebeberg	Flu Gulf	Flu Gulf	false	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' and looks a lot better within a few seconds. 'Mute tum!' the Lug cries gratefully before handing you a cash sac and running away."
@@ -3802,8 +3805,8 @@ this is the kid-bye rule:
 	move saner arenas to Dirge Grid;
 	move day away ad to Yawn Way;
 	move XILE helix to Dirge Grid;
-	move relate taler to worn row;
-	now worn row is wordy;
+	move relate taler to Worn Row;
+	now Worn Row is wordy;
 	moot nogo gon;
 	moot Diktat Kid;
 	if nogo gon is xed, say "The No-Go Gon having burned away, you're sort of curious how many sides it had. You miscount the first few times but eventually wind up counting [rand-pal]. Well, you sort of expected that.";
@@ -4534,7 +4537,7 @@ the elite tile is scenery. "Done? Nod![line break]Nif-T-Fin![line break]Trape! D
 check taking elite tile: say "It's a memento, not a souvenir." instead;
 
 after going to Fun Enuf when Diktat Kid is moot:
-	say "You notice the tile lit has changed slightly. It's more shiny now. Elite tile, if you will.";
+	say "You hear a thud to the east! Perhaps Yawn Way is not so boring any more. Then you look down and notice the tile lit has changed slightly. It's more shiny now. Elite tile, if you will. And it says something different.";
 	moot tile lit;
 	move elite tile to Fun Enuf;
 	continue the action;
@@ -5642,7 +5645,17 @@ part Yelpley region
 
 book Yawn Way
 
-Yawn Way is east of Fun Enuf. It is in Yelpley. "Not much to do here, and it's quiet enough it could be Yawling-Nil Way, but you can go [yawn-stix] north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]Emo Dome[else]a dome[end if][if day away ad is in Yawn Way][one of]. And wait! There's a day-away ad, trumpeting all the business that'll return to Yelpley now you defeated the Diktat Kid[or]. You can still read the day-away ad, if you want[stopping][end if]."
+Yawn Way is east of Fun Enuf. It is in Yelpley. "[yawn-desc]."
+
+understand "palapa" as Yawn Way when elite tile is in fun enuf.
+
+to say yawn-desc:
+	if elite tile is in fun enuf:
+		say "A palapa has replaced boring old Yawn Way. It's relaxing now without being boring[if day away ad is in Yawn Way][one of]. And wait! There's a day-away ad, trumpeting all the business that'll return to Yelpley now you defeated the Diktat Kid[or]. You can still read the day-away ad, if you want[stopping][end if]. You can still go in all four directions";
+	else:
+		say "Not much to do here, and it's quiet enough it could be Yawling-Nil Way, but you can go [yawn-stix] north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]Emo Dome[else]a dome[end if]"
+
+printed name of Yawn Way is "[if elite tile is in fun enuf]A Palala[else]Yawn Way[end if]".
 
 to say yawn-stix:
 	say "[if stix are in Yawn Way]all but west, where the X-It Stix block you:[else]in all four directions, here: back west to [Fun Enuf],[end if]"
@@ -6093,7 +6106,7 @@ chapter tract cart
 tract-trace is a truth state that varies.
 
 to say tract-status:
-	if relate taler is in worn row:
+	if relate taler is in Worn Row:
 		say "[one of]A relate taler is now beside the tract cart. It looks like it has a better and more literary selection than the tract cart did, though you doubt you have time to read them all. Still, you inspired them all. Yay[or]The relate taler sits next to the tract cart that was useful for so long[stopping]";
 	else:
 		say "A tract cart is here, [if number of necessary books in Worn Row is 1]almost empty[else if number of necessary books in Worn Row is 0]holding no books[else]holding a few books[end if]"
@@ -6316,7 +6329,7 @@ to say hint-trace:
 	say "[if tract-trace is false]. But it also seems a bit too big for just carrying a few books. Maybe it holds a deeper secret[end if]"
 
 check examining tract cart:
-	if diktat kid is moot, say "The tract cart was useful, but the relate taler is more interesting." instead;
+	if Diktat Kid is moot, say "The tract cart was useful, but the relate taler is more interesting." instead;
 	unless any-books-left, say "It's empty now[hint-trace]. Maybe some day, someone will write a book like [next-rand-txt of table of altbooks]. Maybe it could be you! But you don't have the time to read right now, really." instead;
 
 a book is a kind of thing. a book is usually proper-named.
@@ -6672,7 +6685,7 @@ understand "wornrow" and "worn" and "worn row" as wornrowing when player is in W
 worn-tried is a truth state that varies.
 
 carry out wornrowing:
-	if diktat kid is moot, say "No need to go that far back." instead;
+	if Diktat Kid is moot, say "No need to go that far back." instead;
 	if psi wisp is moot, say "Now that the redness ender and Psi Wisp destroyed each other, Worn Row really holds nothing else for you." instead;
 	unless ever-wordrow is true or ever-workrow is true, say "It is Worn Row. But maybe it can become something else." instead;
 	if psi wisp is not in Worn Row:
@@ -7653,7 +7666,7 @@ after looking in Pro Corp when bald-lab and balm-LLP-yet is false:
 
 chapter Sci Pics
 
-the Sci Pics are plural-named peripheral scenery in Pro Corp. "They detail what happen[if Gorge Grog is moot]ed when you poured[else] if you pour[end if] a potentially explosive liquid down the butene tub."
+the Sci Pics are plural-named peripheral scenery in Pro Corp. "They detail what happen[if Gorge Grog is moot]ed when you poured[else] if you pour[end if] a potentially explosive liquid down the butene tub. How many are there? You count: XI pix, of course."
 
 chapter butene tub
 
@@ -10148,7 +10161,7 @@ rule for ordring:
 rankseeing is an activity.
 
 rule for rankseeing:
-	say "Some ranks are fixed: for instance, you are an ebohphobe if you have no points, an elihphile once you destroy the [kaos oak], and a tsilihphilist once you beat the Diktat Kid. Last Lousy Points have no effect on your rank.";
+	say "Some ranks are fixed: for instance, you are an ebohphobe if you have no points, an elihphile once you destroy the [KAOS Oak], and a tsilihphilist once you beat the Diktat Kid. Last Lousy Points have no effect on your rank.";
 	say "Here are the maximum points for each rank, in order: ";
 	let count be 0;
 	let tsrr be number of rows in table of silly ranks;
@@ -10924,13 +10937,6 @@ montopic (topic)	on-off	test-title (text)	test-action	topic-as-text (text)
 this is the sos-it rule: try sosing;
 
 this is the show-dirs rule: say "Header = [location of player] ([mrlp])[dir-summary]."
-
-exitsing is an action out of world.
-
-carry out exitsing:
-	repeat with Q running through maindir:
-		let Q2 be the room Q of location of player;
-		if Q2 is not nowhere, say "[Q2] is [Q] of [location of player].";
 
 this is the eye-it rule: try eaing;
 
