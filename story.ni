@@ -156,7 +156,7 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 550. [-40/50 from max_verbs debug]
+use MAX_VERBS of 560. [-40/50 from max_verbs debug]
 
 use MAX_ACTIONS of 210.
 
@@ -166,7 +166,7 @@ use MAX_SYMBOLS of 24000.
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 600. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 610. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 use MAX_ACTIONS of 230. [+10?]
 
@@ -253,40 +253,40 @@ Include (-
       'l//':   print "look";
       'x//':   print "examine";
       'z//':   print "wait";
-	  'about':  print "see info about the game";
-	  'aid': "ask for AID";
-	  'balm lab', 'balmlab':  print "change a lab";
-	  'boob', 'pap', 'poop': print "swear palindromically";
-	  'credits': print "see the credits";
-	  'dial aid': "dial AID";
-	  'deep speed', 'deepspeed':  print "deep-speed through the game";
-	  'dev ed', 'deved':  print "read about development with DEV ED/DEVED";
-	  'epi wipe', 'epiwipe':  print "wipe (epically) records of what you've examined";
-	  'grammar g':  print "toggle KAOS Oak grammar";
-	  't', 'greet', 'ta', 'talk': print "talk to";
+	 'about':  print "see info about the game";
+	 'aid': "ask for AID";
+	 'balm lab', 'balmlab':  print "change a lab";
+	 'boob', 'pap', 'poop': print "swear palindromically";
+	 'credits': print "see the credits";
+	 'dial aid': "dial AID";
+	 'deep speed', 'deepspeed':  print "deep-speed through the game";
+	 'dev ed', 'deved':  print "read about development with DEV ED/DEVED";
+	 'epi wipe', 'epiwipe':  print "wipe (epically) records of what you've examined";
+	 'grammar g':  print "toggle KAOS Oak grammar";
+	 't', 'greet', 'ta', 'talk': print "talk to";
       'gt', 'go to', 'goto':   print "go to";
-	  'help':  print "ask for HELP";
-	  'love vol', 'lo vol', 'lovol', 'lovevol':  print "tweak the pact cap";
-	  'niwin':  print "list game warping actions with NIWIN";
-	  'map':  print "look at the MAP";
-	  'mem':  print "MEMory recall some things";
-	  'meta':  print "read META commands";
-	  'pace cap', 'pacy cap':  print "toggle the pack cap";
-	  'pack cap':  print "pick up the pack cap";
-	  'puffup':  print "puff up";
-	  'pullup':  print "pull up";
+	 'help':  print "ask for HELP";
+	 'love vol', 'lo vol', 'lovol', 'lovevol':  print "tweak the pact cap";
+	 'niwin':  print "list game warping actions with NIWIN";
+	 'map':  print "look at the MAP";
+	 'mem':  print "MEMory recall some things";
+	 'meta':  print "read META commands";
+	 'pace cap', 'pacy cap':  print "toggle the pack cap";
+	 'pack cap':  print "pick up the pack cap";
+	 'puffup':  print "puff up";
+	 'pullup':  print "pull up";
       'rad':   print "scan with the radar";
       'rei':   print "put in the reifier";
       'rot':   print "put in the rotator";
       'rev':   print "put in the reviver";
-	  'sce recs', 'scerecs':  print "see recommended unexamined scenery";
-	  'shuttuhs':  print "toggle shuttuhs/shutters";
-	  'stats':  print "get stats/the score";
+	 'sce recs', 'scerecs':  print "see recommended unexamined scenery";
+	 'shuttuhs':  print "toggle shuttuhs/shutters";
+	 'stats':  print "get stats/the score";
       'tip it', 'tipit': print "tip off one game progress activity";
-	  'v//', 'verbs', 'verb':  print "see basic verbs";
+	 'v//', 'verbs', 'verb':  print "see basic verbs";
       'wordrow', 'wornrow', 'workrow', 'worn row', 'work row', 'word row': print "twiddle Worn Row";
       'yakokay', 'yak okay': print "tell the kayo yak OKAY";
-	  'xyzzy', 'plugh': print "say a silly spell";
+	 'xyzzy', 'plugh': print "say a silly spell";
       default: rfalse;
     }
     rtrue;
@@ -737,22 +737,22 @@ when play begins (this is the begin ailihphilia for reals rule):
 	now initseed of Name ME Man is a random number between 0 and prime-constant / 2 - (number of rows in table of random palindrome lastfirst names);
 	now initseed of Oh Who is a random number between prime-constant / 2 + 1 and prime-constant - (number of rows in table of random palindrome firstlast names);
 	if read-intro is false, continue the action;
-	say "[line break]It's not your first dream about how awful high school was, but it's the worst in a while. A few 'favorite' classmates chanting 'Diary raid!' and passing it around as they mock 'Beefy? Feeb! Bony Nob!' Of course, you never HAD a diary in high school, but that doesn't matter.[wfak-d]";
-	say "You check your mail as you go out to the grocery store. A junk-mail magazine! It's been so long since you got one, you're almost intrigued.[wfak-d]";
-	say "It just says GAME MAG. But the cover isn't telling you to actually buy anything, so you look inside. You have a whole backlog of games, but you can just recycle it when you get to the store. No, not the erot-store![wfak-d]";
-	say "Nothing really catches your mind until you see a DARER AD. It's a bit vague, but it catches your eye.[wfak-d]";
-	say "[fixed letter spacing](MA'AM)/ SIR, TETRIS?!                    EVIL'S LIVE![line break]LIVE DEVIL!                               BOSSES! SOB![roman type][line break][wfak-d]";
-	say "You fold the Darer Ad and start off to the store.[paragraph break]'[unicode 161]Aloha. Hola!' someone, or something, cries. 'Steer-greets! Steer-greets!'[paragraph break]You run in the general direction of the voice. You look up, and you're no longer on the way to the store. You're somewhere else. Your smartphone starts blinking: LOAD AOL! You look up. Who is responsible for this? Someone/something who sees you futzing with your smartphone. 'No El Google on?' You nod. Awkward silence. 'Poll op! Poll op!' the someone/something continues.[wfak-d]";
-	say "'I'm the Flee Elf. Name, man? Eve? Pip? Otto? Anna? Bob? Nan? Aviva? Hannah? Elle? Ebbe?' You back away--it doesn't seem to care if you're male or female, but it's a persis-rep. And you realize YOU weren't paying attention to ITS gender.[wfak-d]";
+	say "[line break]It's not your first dream about how awful high school was, but it's the worst in a while. A few 'favorite' classmates chanting 'Diary raid!' and passing it around as they mock 'Beefy? Feeb! Bony Nob!' Of course, you never HAD a diary in high school, but that doesn't matter.[wfak]";
+	say "You check your mail as you go out to the grocery store. A junk-mail magazine! It's been so long since you got one, you're almost intrigued.[wfak]";
+	say "It just says GAME MAG. But the cover isn't telling you to actually buy anything, so you look inside. You have a whole backlog of games, but you can just recycle it when you get to the store. No, not the erot-store![wfak]";
+	say "Nothing really catches your mind until you see a DARER AD. It's a bit vague, but it catches your eye.[wfak]";
+	say "[fixed letter spacing](MA'AM)/ SIR, TETRIS?!                    EVIL'S LIVE![line break]LIVE DEVIL!                               BOSSES! SOB![roman type][line break][wfak]";
+	say "You fold the Darer Ad and start off to the store.[paragraph break]'[unicode 161]Aloha. Hola!' someone, or something, cries. 'Steer-greets! Steer-greets!'[paragraph break]You run in the general direction of the voice. You look up, and you're no longer on the way to the store. You're somewhere else. Your smartphone starts blinking: LOAD AOL! You look up. Who is responsible for this? Someone/something who sees you futzing with your smartphone. 'No El Google on?' You nod. Awkward silence. 'Poll op! Poll op!' the someone/something continues.[wfak]";
+	say "'I'm the Flee Elf. Name, man? Eve? Pip? Otto? Anna? Bob? Nan? Aviva? Hannah? Elle? Ebbe?' You back away--it doesn't seem to care if you're male or female, but it's a persis-rep. And you realize YOU weren't paying attention to ITS gender.[wfak]";
 	say "There's a bit more of this narrative nonsense, if you're into that sort of thing. Would you like to see it? I won't be hurt if you say no.";
 	if the player yes-consents:
 		say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because you looked up the winning strategy on the Internet after it confused you. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers. Then 'Is reversi...?'";
-		say "After your fifth win in a row, the Flee Elf yells 'GRAAAARG!' You stumble back and fall to the ground.[wfak-d]";
-		say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Ares[']s Era, Raw Level War, Base Sab, (Wo)Men O['] Venom (Ow), Dragons O['] Snogard or Mista-T Sim. Mega-Tag [']Em?'[wfak-d]";
-		say "You chase the Flee Elf around a few minutes, failing to catch it. '[']S poor. Oops!' The Flee Elf thinks for a minute. '[Fun Enuf] is open.'[wfak-d]";
+		say "After your fifth win in a row, the Flee Elf yells 'GRAAAARG!' You stumble back and fall to the ground.[wfak]";
+		say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Ares[']s Era, Raw Level War, Base Sab, (Wo)Men O['] Venom (Ow), Dragons O['] Snogard or Mista-T Sim. Mega-Tag [']Em?'[wfak]";
+		say "You chase the Flee Elf around a few minutes, failing to catch it. '[']S poor. Oops!' The Flee Elf thinks for a minute. '[Fun Enuf] is open.'[wfak]";
 	else:
-		say "After more tedious palindrome riffing, the Flee Elf deems you most suitable (or least unsuitable) for the relatively obscure bunker called [Fun Enuf].[wfak-d]";
-	say "The Flee Elf points to a cap. 'This here isn't any cap. It's a PACT cap. And you can't quite TAKE it. You have to do something else.'[wfak-d]";
+		say "After more tedious palindrome riffing, the Flee Elf deems you most suitable (or least unsuitable) for the relatively obscure bunker called [Fun Enuf].[wfak]";
+	say "The Flee Elf points to a cap. 'This here isn't any cap. It's a PACT cap. And you can't quite TAKE it. You have to do something else.'[wfak]";
 	say "[paragraph break]([b]NOTE[r]: if you want to know more about Ailihphilia and the commands used, type [b]ABOUT[r].)[paragraph break]";
 	do nothing; [debug information below here. I've had problems putting it in and not deleting it, so I want to make things clear.]
 
@@ -2004,11 +2004,16 @@ drink-warning is a truth state that varies.
 the block drinking rule is not listed in any rulebook.
 
 check drinking:
+	if noun is past sap, say "Too thick." instead;
+	if noun is dose sod, say "You're not sick." instead;
+	if noun is puce cup:
+		if puce cup is empty, say "There's nothing to drink in the puce cup." instead;
+		say "Ugh. The [if puce cup is soddy]sod[else][sir-sap][end if] looks unpalatable, unless you had a good reason. You don't." instead;
 	if noun is Elan Ale, say "No drinking on the job. Besides, you've already done enough swapping to realize you might be able to trade it for something more useful." instead;
 	if noun is Gorge Grog, say "One look at the grog, and you realize you're not up to such super-powered alcohol." instead;
 	if noun is murdered rum, say "The rum part is drinkable, but the murdered rum isn't." instead;
 	say "[if noun is drinkable]Pish! Sip?![else][']S not wet. Ew--TONS.[end if]";
-	if drink-warning is false, say "(You don't need to drink anything in this game. Liquids have other purposes. Besides, I didn't implement Pee Keep, Loo Pool or Lav Oval.)[paragraph break]";
+	if drink-warning is false, say "(You don't need to drink anything in this game. Liquids have other purposes. Be glad I didn't implement Pee Keep, Loo Pool or Lav Oval.)[paragraph break]";
 	now drink-warning is true instead;
 
 chapter eating
@@ -2021,7 +2026,7 @@ check eating:
 	if noun is a book, say "There's no real information for you to devour, but who knows, maybe someone else can. Figuratively, at least." instead;
 	if noun is a helpdoc, say "This is not a spy game. If it were, [the noun] would already have self-destructed." instead;
 	if noun is gnu dung, say "Gag!" instead;
-	if noun is ark of okra: say "You don't know how long it's been out here. It's probably, like, the vegetable version of wax fruit[if number of carried ingredients > 0]. But after staring at the ark, the food in your inventory looks more delicious[end if]." instead;
+	if noun is ark of okra, say "You don't know how long it's been out here. It's probably, like, the vegetable version of wax fruit[if number of carried ingredients > 0]. But after staring at the ark, the food in your inventory looks more delicious[end if]." instead;
 	if noun is demo med, say "That would only be a temporary reprieve from your troubles. Plus, what if it is a demon-o-med?" instead;
 	say "[if noun is edible]Food? Oof![else]You contemplate a wan gnaw, but no voice says 'Naw. G'wan!'[end if]";
 	if eat-warning is false, say "[line break](You don't need to eat anything to win. [if martini tram is off-stage]Food may be more useful in other ways[else]You already worked with food enough in Mont Nom[end if].)[paragraph break]";
@@ -2033,6 +2038,7 @@ the block jumping rule is not listed in any rulebook.
 
 check jumping:
 	if player is in Trapeze Part, say "While bouncing up and down is sort of palindromic in its own way, it won't help you in the game. [if epicer recipe is off-stage]Or help you to fix[else]You already fixed[end if] the ten-level net." instead;
+	if player is in moo room and hay is not moot, say "There's not enough hay to jump on or into. Besides, this game is obviously far too serious for such frivolity!" instead;
 	say "You only manage a po['] hop (you don't need to jump in this game)." instead;
 
 chapter burning
@@ -2151,76 +2157,62 @@ the reject noncardinal directions rule is listed first in the check going rulebo
 
 chapter smelling
 
-instead of smelling gnu dung, say "Gag!";
-
-instead of smelling stinky knits, say "The stinky knits take over your senses and smell of stunk-nuts."
-
-instead of smelling brag garb, say "[if troll ort is moot]IT smells odd, now. It makes you both mad and happy at the same time[else]It smells almost too perfumed. It's a bit choking, and maybe you could use something to mitigate or eliminate the smell[end if]."
-
-instead of smelling dork rod, say "You might expect a rod odor, but there isn't one. OR MAYBE IT IS SO INGRAINED IN YOU, YOU NO LONGER SMELL IT."
-
-instead of smelling butene tub, say "The butene tub smells kind of nice. You were a bit worried there, because around here, a tub COULD smell really nasty, if you think about it."
-
-instead of smelling mush sum, say "Unsurprisingly, the mush sum emits an unavoidable musk sum."
-
-instead of smelling troll ort, say "The troll ort is too dusty to get a whiff of, at least for your relatively insensitive human nose. Maybe you could probably USE it on something to bring its smell out. But it LOOKS like it should smell weird."
-
-instead of smelling rotator: say "[if stinky knits are moot]It no longer smells of detergent. I guess it used it all on the stinky knits.[else]There's a whiff of detergent coming from the rotator. It probably has some way to know if something is dirty enough. Technology![end if]";
-
-instead of smelling poo coop, say "[if gnu dung is moot]You risk it, and ... it doesn't smell bad at all. Technology![else]If the poo coop's been used before, you can't smell the evidence."
-
-instead of smelling Yuge Guy, say "The Yuge Guy smells of an amoral aroma[if brag garb is not off-stage] even worse than the Turbo-Brut from the Brag Garb[end if]."
-
-instead of smelling ergot ogre, say "The ergot ogre smells of torn rot." instead;
-
-instead of smelling Sniffins, say "One whiff is proof enough [Sniffins] doesn't deserve an[if YOB ATTABOY is moot]other [end if]alternate name of Smellems."
-
-instead of smelling cross orc, say "If a sentient being could, the cross orc would smell of desperate get-rich-quick schemes." instead;
-
-instead of smelling a person:
-	if noun is a guhthug, say "[noun] is only morally dirty, I guess. You'll need another action to get rid of him." instead;
-	if player is in Dirge Grid, say "You'd need some smelling salts after if you got close enough." instead;
-	say "That'd be a bit rude, even to people who ARE in your way." instead;
-
-instead of smelling Ark of Okra, say "[if martini tram is off-stage]You think you vaguely smell alcohol[else]It smells just like okra with the martini tram gone[end if]."
-
-instead of smelling location of player:
+check smelling when noun is the location:
+	say "[one of]NOTE: smelling with no argument will most likely smell the location, not anything in your inventory.[or][stopping]";
 	if in-work and stinky knits are not moot, try smelling rotator instead;
-	if stinky knits are quicknear, try smelling stinky knits instead;
-	if player is in Flu Gulf, try smelling mush sum instead;
+	if stinky knits are quicknear, now noun is stinky knits;
+	if y-poopy, try smelling gnu dung instead;
+	if player is in Flu Gulf, now noun is mush sum;
 	if player is in Emo Dome or player is in Red Roses Order, say "Roses ... or ..." instead;
 	if player is in Yack Cay or player is in Swamp Maws, say "A morass aroma." instead;
-	if player is in Dumb Mud and gnu dung is in Dumb Mud, say "Whew! The gnu dung [if gnu dung is moot]in the poo coop[end if] is worse than an emu fume!" instead;
 	if player is in Moo Room, say "Hay! Ah!" instead;
 	if player is in Deft Fed, say "Ham?! Ah!" instead;
 	if player is in Mont Nom, say "Everything smells delicious. Life is good[if Ian is in Mont Nom], even with Ian around[end if][if martini tram is off-stage]. And there's a smell from the Ark of Okra. Hmm[end if]." instead;
-	if player is in Pro Corp and butene tub is in Pro Corp, try smelling butene tub instead;
-	if player is in Sneer Greens and Yuge Guy is in Sneer Greens, try smelling Yuge Guy instead;
-	if player has poo coop, try smelling poo coop instead;
-	if player has dork rod, try smelling dork rod instead;
-	if troll ort is quicknear, try smelling troll ort instead;
-	if ergot ogre is quicknear, try smelling ergot ogre instead;
 	if player is in My Gym, say "Well ... ew." instead;
+	if butene tub is quicknear, try smelling butene tub instead;
+	if Yuge Guy is quicknear, try smelling Yuge Guy instead;
 	continue the action;
 
-instead of smelling an ingredient:
-	say "You didn't expect [the noun] would smell this nice, but maybe that is the magic of Mont Nom. You are feeling a bit hungry." instead;
+check smelling an ingredient:
+	if player is in Mont Nom, say "You didn't expect [the noun] would smell this nice, but maybe that is the magic of Mont Nom. You are feeling a bit hungry." instead;
 	if noun is snack cans, say "Delicious, if not nutritious." instead;
 	if noun is gift fig, say "Nice and fruity and not too young or ripe." instead;
-	say "It smells a bit better than it looks. Maybe it could be used as a condiment to spice up 'real' foods, in the right place."
+	say "It smells a bit better than it looks. Maybe it could be used as a condiment to spice up 'real' foods, in the right place." instead;
 
-instead of smelling, say "Noses, on[one of]! (you don't need to smell anything in this game, though some specific items give silly text.)[or]![stopping]"
+check smelling:
+	if noun is gnu dung, say "Gag! The gnu dung [if gnu dung is moot]in the poo coop[end if] is worse than an emu fume!" instead;
+	if noun is stinky knits, say "The stinky knits take over your senses and smell of stunk-nuts." instead;
+	if noun is brag garb, say "[if troll ort is moot]IT smells odd, now. It makes you both mad and happy at the same time[else]It smells almost too perfumed. It's a bit choking, and maybe you could use something to mitigate or eliminate the smell[end if]." instead;
+	if noun is dork rod, say "You might expect a rod odor, but there isn't one. OR MAYBE IT IS SO INGRAINED IN YOU, YOU NO LONGER SMELL IT." instead;
+	if noun is butene tub, say "The butene tub smells kind of nice. You were a bit worried there, because around here, a tub COULD smell really nasty, if you think about it." instead;
+	if noun is mush sum, say "Unsurprisingly, the mush sum emits an unavoidable musk sum." instead;
+	if noun is troll ort, say "The troll ort is too dusty to get a whiff of, at least for your relatively insensitive human nose. Maybe you could probably USE it on something to bring its smell out. But it LOOKS like it should smell weird." instead;
+	if noun is rotator, say "[if stinky knits are moot]It no longer smells of detergent. I guess it used it all on the stinky knits.[else]There's a whiff of detergent coming from the rotator. It probably has some way to know if something is dirty enough. Technology![end if]" instead;
+	if noun is poo coop, say "[if gnu dung is moot]You risk it, and ... it doesn't smell bad at all. Technology![else]If the poo coop's been used before, you can't smell the evidence." instead;
+	if noun is Yuge Guy, say "The Yuge Guy smells of an amoral aroma[if brag garb is not off-stage] even worse than the Turbo-Brut from the Brag Garb[end if]." instead;
+	if noun is ergot ogre, say "The ergot ogre smells of torn rot." instead;
+	if noun is Sniffins, say "One whiff is proof enough [Sniffins] doesn't deserve an[if YOB ATTABOY is moot]other [end if]alternate name of Smellems." instead;
+	if noun is cross orc, say "If a sentient being could, the cross orc would smell of desperate get-rich-quick schemes." instead;
+	if noun is a person:
+		if noun is a guhthug, say "[noun] is only morally dirty, I guess. You'll need another action to get rid of him." instead;
+		if player is in Dirge Grid, say "You'd need some smelling salts after if you got close enough." instead;
+	if noun is Ark of Okra, say "[if martini tram is off-stage]You think you vaguely smell alcohol[else]It smells just like okra with the martini tram gone[end if]." instead;
+	if noun is a person, say "That'd be a bit rude, even to people who ARE in your way." instead;
+	say "Noses, on[one of]! (you don't need to smell anything in this game, though some specific items give silly text.)[or]![stopping]" instead;
 
-to decide whether y-poopy:
+to decide whether y-poopy: [also used in mistakes file]
 	if gnu dung is quicknear, yes;
-	if player has poo coop and gnu dung is moot, yes;
+	if player has poo coop and gnu dung is not moot, yes;
 	no;
 
 chapter singing
 
-instead of singing:
+the block singing rule is not listed in any rulebook.
+
+check singing:
 	if player is in Deft Fed or Bond Nob is quicknear, say "[if player is in Deft Fed]The Bond Nob[else][Sniffins][end if] tells you not to sing unless you've had your fill of Regale-Lager.[paragraph break]There is none in this game." instead;
 	next-rand table of singstuff;
+	the rule succeeds;
 
 chapter silly swearing
 
@@ -3973,10 +3965,10 @@ this is the wear-garb rule:
 
 this is the you-win rule: [xxwin]
 	follow the notify score changes rule;
-	say "[line break]You wonder how you'll get back, but then you see the Flee Elf running towards you. 'Tardy, drat! ... 'This, I h/t! [if cur-score of Odd Do is max-score of Odd Do]Decay?! ACED[else]Won enow[end if]!' You ask hesitantly about what's next. You don't want or need people chanting 'Deified! Deified! Deified!', but...[wfak-d]";
-	say "'The X-ITE TIX lead BACK TO THE REAL WORLD WHICH WILL BE FAR MORE EXCITING AND ILLUMINATING FOR YOUR EXPERIENCE HERE!'[wfak-d]Well, given all the palindromes you dealt with, you probably should've expected a there-and-back-but-wiser summary. Books like that always kind of annoyed you once you figured the whole schtick out, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand says, 'I'll need the pact cap back. It will go to our new museum.'[paragraph break]'What's it called?' you ask, despite yourself.[wfak-d]";
-	say "[paragraph break]'Well, there's still argument over We-I-View, Show-Ohs and Trofy Fort.' (Trofee?) The Flee Elf asks which you prefer, and after an awkward silence, you mention they all seem equally appropriate and unforced. Another awkward silence! How palindromic![paragraph break]'Well, anyway. This RIDE-DIR will help you return to your own world. And here is an x/o box.'[wfak-d]";
-	say "The x/o box isn't much. It's engraved 'U Remem'er, U,' 'Done? NOD' and 'U Did U.' You can't even open it! But if it were too obvious and gaudy, how would you explain it back home?[paragraph break]Soon after you blurt out 'Oh, t/y! My, tho['],' arguments begin nearby over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Not-Dud-Ton? Not-Kook-Ton? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered with stuff you can't fix?[wfak-d]";
+	say "[line break]You wonder how you'll get back, but then you see the Flee Elf running towards you. 'Tardy, drat! ... 'This, I h/t! [if cur-score of Odd Do is max-score of Odd Do]Decay?! ACED[else]Won enow[end if]!' You ask hesitantly about what's next. You don't want or need people chanting 'Deified! Deified! Deified!', but...[wfak]";
+	say "'The X-ITE TIX lead BACK TO THE REAL WORLD WHICH WILL BE FAR MORE EXCITING AND ILLUMINATING FOR YOUR EXPERIENCE HERE!'[wfak]Well, given all the palindromes you dealt with, you probably should've expected a there-and-back-but-wiser summary. Books like that always kind of annoyed you once you figured the whole schtick out, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand says, 'I'll need the pact cap back. It will go to our new museum.'[paragraph break]'What's it called?' you ask, despite yourself.[wfak]";
+	say "[paragraph break]'Well, there's still argument over We-I-View, Show-Ohs and Trofy Fort.' (Trofee?) The Flee Elf asks which you prefer, and after an awkward silence, you mention they all seem equally appropriate and unforced. Another awkward silence! How palindromic![paragraph break]'Well, anyway. This RIDE-DIR will help you return to your own world. And here is an x/o box.'[wfak]";
+	say "The x/o box isn't much. It's engraved 'U Remem'er, U,' 'Done? NOD' and 'U Did U.' You can't even open it! But if it were too obvious and gaudy, how would you explain it back home?[paragraph break]Soon after you blurt out 'Oh, t/y! My, tho['],' arguments begin nearby over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Grub Burg? Not-Dud-Ton? Not-Kook-Ton? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered with stuff you can't fix?[wfak]";
 	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar or maybe a TekCo Rocket, but it turns out it's just a Back Cab labeled 'Redi-Rider.' (A Toyota would also have worked.) 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You don't have the tech savvy to make a DVD, so to remember this, you'd like ... to jot. What to call your writing? RECAP: ACER, NOW I WON and EL BIBLE are way too pompous, but some brainstorming gives DARN RAD, SOME MEMOS, I SAW [']TWAS I, DRAWN INWARD, WENT NEW, WENDED NEW, SAGAS or SOLOS. Or--no, that's it. ELATE TALE.";
 	end the story finally saying "Roxor! Roxor! Roxor!";
 	sort the table of last lousy points in finord order;
@@ -4255,13 +4247,13 @@ chapter Evac Ave
 
 Evac Ave is scenery in Fun Enuf. "Evac Ave leads back to where you came, and your ordinary life--it goes on for a while, and you can't see the end."
 
-instead of entering Evac Ave, try going south.
+check entering Evac Ave: try going south instead; [??]
 
 elf-warn is a number that varies.
 
 the Tix Exit is scenery. "It's nothing particularly fancy, though it says TIX IF FIX-IT. I'm going to go out on a limb here and say it'll accept [if player has X-ITE TIX]your X-ITE TIX[else]X-ITE TIX, if you can find them[end if]."
 
-instead of entering tix exit, try going south instead;
+check entering tix exit: try going south instead;
 
 check going south in Fun Enuf:
 	if player has X-ITE TIX, try useoning X-ITE TIX with Tix Exit instead;
@@ -4555,7 +4547,7 @@ understand "top/spot" and "top spot" as Dirge Grid when Diktat Kid is moot.
 for writing a paragraph about a person when player is in Dirge Grid:
 	now all people in Dirge Grid are mentioned;
 	if Dirge Grid is unvisited:
-		say "You are greeted by someone who must be the Diktat Kid, who reminds you of a bully from high school. 'You did some weird things to get this far--but I've done some PRACTICAL things to make sure that's it! Knife Fink! Verses Rev!'[paragraph break]'We hew! Due: FEUD!'[paragraph break]Then the Diktat Kid gets all fancy. 'ENGAGE LE JEU QUE JE LE GAGNE!'[wfak-d]";
+		say "You are greeted by someone who must be the Diktat Kid, who reminds you of a bully from high school. 'You did some weird things to get this far--but I've done some PRACTICAL things to make sure that's it! Knife Fink! Verses Rev!'[paragraph break]'We hew! Due: FEUD!'[paragraph break]Then the Diktat Kid gets all fancy. 'ENGAGE LE JEU QUE JE LE GAGNE!'[wfak]";
 		say "They both appear. And they are armed! The Knife Fink, with leet steel, and the Verses Rev, with a part strap.";
 		if grid-side-items is 0:
 			say "Looking at your items, there's no way you have enough to take care of the Diktat Kid and the two henchmen. You back off.";
@@ -4614,7 +4606,7 @@ chapter XILE helix
 
 the XILE helix is peripheral scenery. "The XILE helix is a reminder of the evil the Diktat Kid wrought on Grebeberg and Yelpley. It even features the name of a sidekick you didn't need to dispatch: [next-rand-txt of table of rejected kid sidekicks]."
 
-instead of entering XILE helix: say "You deserve a more heroic exit than that."
+check entering XILE helix: say "You deserve a more heroic exit than that." instead;
 
 chapter Diktat Kid
 
@@ -4818,8 +4810,6 @@ the past sap is semiperipheral scenery in Cold Loc. "[if liar grail is moot]Ther
 sap-ever-in-cup is a truth state that varies.
 
 sap-with-hands is a truth state that varies.
-
-instead of drinking past sap: say "Too thick."
 
 instead of taking the past sap:
 	if liar grail is moot, say "You probably don't need any more past sap, now that you used it to dispose of the Liar Grail." instead;
@@ -5298,8 +5288,6 @@ chapter yahoo hay
 
 the yahoo hay is scenery in Moo Room. "The yahoo hay, unlike normal hay, makes you feel inexplicably cheery. Like it can be used to build even cooler stuff.[paragraph break][if SOME DEMOS is moot]It's mostly the coarser, unbendable stuff that's remaining, now you built the straw arts. Maybe you could make something practical[else if enact cane is moot]The remains from building the moor broom look suitable for stuffing or bending. Nothing practical, but maybe something fun[else]Half the hay appears to coarser, stronger and more practical to build something useful with. The other half looks more suitable for stuffing, or bending into all kinds of things. NOTE: you don't have to refer to either half in a command[end if]."
 
-instead of entering hay: say "There's not enough hay to jump on or into. Besides, this game is obviously far too serious for such frivolity!"
-
 chapter straw arts
 
 the straw arts are a plural-named thing. description is "Whatever they are, you made them, and you hope it expresses something or other."
@@ -5358,7 +5346,7 @@ understand "unitin/u" and "unitin u" as uneven u when balsa slab is not off-stag
 
 understand "cribs" and "birch cribs" as birch crib.
 
-instead of entering birch crib, try going west instead;
+check entering birch crib: try going west instead;
 
 check going in Uneven U: if noun is east or noun is west, say "It would be rude to traipse around [Uneven U]." instead;
 
@@ -5370,7 +5358,7 @@ does the player mean doing something with ivy villa: it is likely.
 
 the thing called all ivy villa is semiperipheral scenery in Uneven U. "[ivy-desc]."
 
-instead of entering ivy villa, try going west instead;
+check entering ivy villa: try going west instead;
 
 to say ivy-desc: say "It's impressive looking[if tent net is not moot] and much more finished than the rest of Uneven U[end if], but you see no way to enter it"
 
@@ -5378,7 +5366,7 @@ section den ivy vined
 
 the den ivy vined is semiperipheral scenery in Uneven U. "[ivy-desc].". printed name of den ivy vined is "den, ivy-vined".
 
-instead of entering den ivy vined, try going east instead;
+check entering den ivy vined: try going east instead;
 
 chapter code doc
 
@@ -5468,7 +5456,7 @@ book Yack Cay
 
 Yack Cay is north of Swamp Maws. It is in Grebeberg. "An edits tide blocks your way west, and storm rots block your way east. [if mist sim is moot]You can go north or south here with ease[else]Mist sim hovers to the north, but there's no blocking back south[end if][if mist sim is moot]. The Known Wonk's Tru-Yurt is here[is-yurt-messy][end if]."
 
-instead of entering tru yurt, say "A rebuke from the Known Wonk stops you: 'Ye so nosey!' Nip in? Not on!"
+check entering tru yurt: say "A rebuke from the Known Wonk stops you: 'Ye so nosey!' Nip in? Not on!" instead;
 
 to say is-yurt-messy: if moor broom is not moot, say ". It looks messy[if wonk is moot], and from the inside, you hear the Known Wonk whining about it[end if]"
 
@@ -5482,7 +5470,7 @@ check going west in Yack Cay: say "The edits tide [if el doodle is moot]was more
 
 check going east in Yack Cay: say "You don't want or need to have anything to do with the storm rots." instead;
 
-instead of entering edits tide, try going west instead;
+check entering edits tide: try going west instead;
 
 chapter Known Wonk
 
@@ -5554,7 +5542,7 @@ The kayak is scenery in Lac Oft Focal. "It's, well, just a kayak. It doesn't hav
 
 check taking kayak: say "You got strong in My Gym, but not that strong! [if elope pole is moot]Besides, you already took it somewhere[else]Maybe you could USE the right item to take it somewhere[end if]." instead;
 
-instead of entering kayak: say "[if elope pole is moot]Your elope pole is gone. There's no way to steer it[else]You need to find a way to steer it. Maybe there's no paddle, but something long and straight[end if]."
+check entering kayak: say "[if elope pole is moot]Your elope pole is gone. There's no way to steer it[else]You need to find a way to steer it. Maybe there's no paddle, but something long and straight[end if]." instead;
 
 instead of doing something with kayak when elope pole is moot:
 	if action is procedural, continue the action;
@@ -5608,8 +5596,6 @@ check going in Apse Spa:
 chapter dose sod
 
 the dose sod is scenery in Apse Spa. "It looks ucky, but given you're in an Apse Spa, it may have health benefits for those that need them."
-
-instead of drinking dose sod: say "You're not sick."
 
 rule for deciding whether all includes the dose sod when taking: it does;
 
@@ -6183,7 +6169,7 @@ a workable is a kind of thing. a workable has a number called useleft. useleft o
 
 a workable has text called verb-abbrev.
 
-instead of entering a workable: say "[if noun is workedout]It's not dangerous now it's broken, but it's not useful, either[else]You can't fit in the [noun], but things you carry can[end if]."
+check entering a workable: say "[if noun is workedout]It's not dangerous now it's broken, but it's not useful, either[else]You can't fit in the [noun], but things you carry can[end if]." instead;
 
 understand "machine" and "machines" as a workable.
 
@@ -6979,12 +6965,7 @@ to say sir-sap: say "[if player is in Cold Loc]sirup[else]sap[end if]".
 
 to say sir-sap-long: say "[if player is in Cold Loc]purist sirup[else]past sap[end if]".
 
-instead of drinking puce cup:
-	if puce cup is empty, say "There's nothing to drink in the puce cup." instead;
-	say "Ugh. The [if puce cup is soddy]sod[else][sir-sap][end if] looks unpalatable, unless you had a good reason. You don't."
-
-to say sap-sirup:
-	say "[if location of player is Cold Loc]Past Sap[else]Purist Sirup[end if]"
+to say sap-sirup: say "[if location of player is Cold Loc]Past Sap[else]Purist Sirup[end if]"
 
 report taking puce cup:
 	say "Emo swag! Awesome!";
@@ -7235,7 +7216,7 @@ chapter tube but
 
 the tube but is peripheral scenery. "It's dark enough to make you think, 'Grue! Urg!' [if tube-try is true]You don't see where it leads. It bends out of sight, but then, you probably don't want to see the Door Frood again[else]You already know it's a dead end. Not worth a re-try[end if]."
 
-instead of entering tube but: try going north instead.
+check entering tube but: try going north instead;
 
 tube-try is a truth state that varies.
 
@@ -7672,8 +7653,7 @@ chapter butene tub
 
 the butene tub is scenery in Pro Corp. "It smells pretty nice, so it's probably not a butyl-y tub. But it's been marked condemned, dangerously close to falling apart. It looks sturdy enough, but who knows what sort of reactions could occur with the flammable butene if the tub collapsed from a big chemical bang and fell to the dangerously sparky area below with special instruments and such? You can't just pour any old thing down![paragraph break]What sort of adventurer could ignore a warning like that? Especially in a game that's meant to be polite on the Zarfian cruelty scale, thus eliminating all risk and/or need to type UNDO if you mess up!"
 
-instead of entering butene tub:
-	say "[if psi wisp is in Pro Corp][chase-pass]That's no way to hide from the psi wisp[else]You're clean enough, really[end if]."
+check entering butene tub: say "[if psi wisp is in Pro Corp][chase-pass]That's no way to hide from the psi wisp[else]You're clean enough, really[end if]." instead;
 
 chapter gash sag
 
@@ -8117,7 +8097,7 @@ definition: a thing (called th) is keepable:
 	no;
 
 to mug-the-player:
-	say "You drop all your possessions (except [the list of keepable things]) as you flee[one of][or] again[stopping]! That will make you a bit faster, but it looks like you'll need your own wit and quick actions to escape, here[one of].[wfak-d][or].[stopping]";
+	say "You drop all your possessions (except [the list of keepable things]) as you flee[one of][or] again[stopping]! That will make you a bit faster, but it looks like you'll need your own wit and quick actions to escape, here[one of].[wfak][or].[stopping]";
 	now all not keepable things carried by the player are in DropOrd;
 
 to say no-time-note:
