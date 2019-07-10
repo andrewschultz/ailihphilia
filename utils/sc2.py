@@ -720,9 +720,7 @@ def think_look_check():
     wipe_track = defaultdict(int)
     table_track = defaultdict(int)
     with open(main_source) as file:
-        line_count = 0
-        for line in file:
-            line_count += 1
+        for (line_count, line) in enumerate(file, 1):
             if skip_header:
                 skip_header = False
                 continue
@@ -735,8 +733,14 @@ def think_look_check():
                 if len(ll) < 2:
                     in_main_table = False
                     continue
+                if ll[0] == '--': continue
                 table_track[ll[0]] = line_count
                 continue
+            if 'get-rej of ' in line:
+                if line.startswith("to say get-rej of"): continue
+                ll = re.sub(".*get-rej of ", "", line.lower().strip())
+                ll = re.sub("\].*", "", ll)
+                reject_track[ll] = line_count
             if '\tget-reject' in line:
                 ll = re.sub(".*get-reject ", "", line.lower().strip())
                 ll = re.sub(";.*", "", ll)
@@ -746,17 +750,27 @@ def think_look_check():
                 ll = re.sub(";.*", "", ll)
                 wipe_track[ll] = line_count
     think_check = 0
+    wipes = laters = getrej = ""
+    delete = defaultdict(bool)
+    for x in wipe_track.keys():
+        if x not in table_track and x not in reject_track:
+            print(x, "has a later-wipe but is never in get-reject or table-track.")
+            delete[x] = True
+    for x in delete: wipe_track.pop(x)
     for x in sorted(list(set(wipe_track.keys()) | set(table_track.keys()) | set(reject_track.keys()))):
         # print(x, "===================")
         if x not in wipe_track.keys():
-            print(x, "needs to have a later-wipe line.")
+            wipes += "{0} needs to have a later-wipe line.\n".format(x)
             think_check += 1
         if x not in table_track.keys():
-            print(x, "needs to have a table of lateruses line.")
+            laters += "{0} needs to have a table of lateruses line.\n".format(x)
             think_check += 1
         if x not in reject_track.keys():
-            print(x, "needs to have a get-reject line.")
+            getrej += "{0} needs to have a get-reject line.\n".format(x)
             think_check += 1
+    if wipes: print(wipes.rstrip())
+    if laters: print(laters.rstrip())
+    if getrej: print(getrej.rstrip())
     if think_check == 0:
         print("Think check (get-reject/later-wipe/table of later uses) passed")
     else:
