@@ -850,7 +850,12 @@ part the tables
 table of altbooks
 randtxt
 "Aegea"
+"Diademed Aid"
+"Mall Lam"
+"Natively, Levitan"
+"Prawn, Warp"
 "Aiding Nidia"
+"Mo['] Idiom, Mo['] Idiom"
 "Allay Alla"
 "Am I, Ma?"
 "Ape Pa"
@@ -962,6 +967,7 @@ randtxt
 "Dude! Dud."
 "Goon! Oog!"
 "Harm! Rah!"
+"Hun! Uh..."
 "Hood! Ooh!"
 "Hurt! Ruh!"
 "Hut! Uh..."
@@ -987,6 +993,7 @@ randtxt
 "Igniting, I!"
 "Rah! Char!"
 "To hot?!"
+"Tiki kit?!"
 
 table of babel babble
 randtxt
@@ -1009,6 +1016,9 @@ randtxt
 
 table of Bond Nob bars
 randtxt
+"Shelleh's"
+"Screwer C's"
+"Scala C's"
 "Bar Crab"
 "Brewer B"
 "Clan ALC"
@@ -1105,6 +1115,7 @@ randtxt
 
 table of Moo Room animals
 randtxt
+"a koala, ok"
 "any myna"
 "a buck cub"
 "an elk cackle"
@@ -1132,7 +1143,16 @@ randtxt
 table of My Gym songs
 randtxt
 "Age Mo' Mega"
+"A six is a six is a"
+"Reno Loner"
+"Plebe LP"
+"Plaza LP"
 "Ai, Tia"
+"M I Him"
+"M I Dim"
+"H/t Nth"
+"H/t Ninth"
+"H/t Fifth"
 "Ail, Emelia"
 "Air Aria"
 "All Illa[']"
@@ -1268,6 +1288,8 @@ randtxt
 
 table of nothings
 randtxt
+"Re-mimer!"
+"La! Minimal!"
 "Drown, word!"
 "Dud!"
 "Eh, the..."
@@ -1512,6 +1534,7 @@ randtxt
 "Tru Burt"
 "Ur-Dru"
 "'Vests' Ev"
+"Blotto LB"
 "Walla Walla W" [this is a personal favorite]
 "Wazza W"
 "Weewee W"
@@ -1523,6 +1546,10 @@ randtxt
 table of Rob droning
 randtxt
 "Analyticity? Lana!"
+"Eva Gave..."
+"Si? Dis!"
+"Iso Si!"
+"Reb! UBER!"
 "Bah! Ahab?!"
 "Boone?! Noob!"
 "Can Gignac!"
@@ -1620,7 +1647,13 @@ randtxt
 
 table of swearstuff
 randtxt
+"Oo, coo-coo!"
+"Dood! DOOD!"
+"Oo, doo-doo!"
+"Oo, poo!"
+"Oo! Too..."
 "Bad? A dab!"
+"Fa, oaf!"
 "Dammit, I'm mad!"
 "Dark. Rad!"
 "Delivery: reviled!"
@@ -1811,11 +1844,20 @@ randtxt
 "Z. Nanz"
 "Z. Oz"
 "Z. Teetz"
+"Sr. Eggers"
+"Sr. Ayars"
+"Sr. Evers"
+"Sr. Ewers"
+"Sr. Ebbers"
+"Sr. Ellers"
+"Sr. Etters"
 
 table of waittxt
 randtxt
+"No, it can! Action!"
 "Camp, mac!"
 "Deed, deed, deed!"
+"ETA, Mate?"
 "Def['] faffed!"
 "Do, STAT, sod!"
 "Don't nod!"
@@ -1854,6 +1896,7 @@ randtxt
 "Deity...tied!"
 "Die, id!"
 "Direr id!" [okdup]
+"Imp, M I?"
 "Ebb? Be!"
 "Eh, Tithe!"
 "Foul, U Of..."
@@ -1873,6 +1916,8 @@ randtxt
 table of yessies
 randtxt
 "Hoooooooh!"
+"Mmhmm!"
+"Zest's E-Z!"
 "Hosannas, Oh!"
 "Laud-ual!"
 "Mirth? Trim!"
@@ -1903,12 +1948,21 @@ randtxt
 "Pivot, O, VIP!"
 "TRAWL, WART!"
 "Y'lily!"
+"[']N u Run!"
+"[']N u Re-run!"
+"Timid? I'm it"
 
 table of yuge battle cries
 randtxt
 "A-Lago gala!"
+"Iou?! OI!"
+"Big, I B!"
+"PR, usurp!"
+"E.U.?! Sue!"
+"BO! Yob!"
 "A-lists? I? La!"
 "Alibi! La!"
+"Faded AF!"
 "At a Hata[']!"
 "Bilk-Lib!"
 "Bosh, SOB!"

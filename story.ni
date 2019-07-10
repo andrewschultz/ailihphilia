@@ -253,40 +253,40 @@ Include (-
       'l//':   print "look";
       'x//':   print "examine";
       'z//':   print "wait";
-	'about':  print "see info about the game";
-	'aid': "ask for AID";
-	'balm lab', 'balmlab':  print "change a lab";
-	'boob', 'pap', 'poop': print "swear palindromically";
-	'credits': print "see the credits";
-	'dial aid': "dial AID";
-	'deep speed', 'deepspeed':  print "deep-speed through the game";
-	'dev ed', 'deved':  print "read about development with DEV ED/DEVED";
-	'epi wipe', 'epiwipe':  print "wipe (epically) records of what you've examined";
-	'grammar g':  print "toggle KAOS Oak grammar";
-	't', 'greet', 'ta', 'talk': print "talk to";
+	 'about':  print "see info about the game";
+	 'aid': "ask for AID";
+	 'balm lab', 'balmlab':  print "change a lab";
+	 'boob', 'pap', 'poop': print "swear palindromically";
+	 'credits': print "see the credits";
+	 'dial aid': "dial AID";
+	 'deep speed', 'deepspeed':  print "deep-speed through the game";
+	 'dev ed', 'deved':  print "read about development with DEV ED/DEVED";
+	 'epi wipe', 'epiwipe':  print "wipe (epically) records of what you've examined";
+	 'grammar g':  print "toggle KAOS Oak grammar";
+	 't', 'greet', 'ta', 'talk': print "talk to";
       'gt', 'go to', 'goto':   print "go to";
-	'help':  print "ask for HELP";
-	'love vol', 'lo vol', 'lovol', 'lovevol':  print "tweak the pact cap";
-	'niwin':  print "list game warping actions with NIWIN";
-	'map':  print "look at the MAP";
-	'mem':  print "MEMory recall some things";
-	'meta':  print "read META commands";
-	'pace cap', 'pacy cap':  print "toggle the pack cap";
-	'pack cap':  print "pick up the pack cap";
-	'puffup':  print "puff up";
-	'pullup':  print "pull up";
+	 'help':  print "ask for HELP";
+	 'love vol', 'lo vol', 'lovol', 'lovevol':  print "tweak the pact cap";
+	 'niwin':  print "list game warping actions with NIWIN";
+	 'map':  print "look at the MAP";
+	 'mem':  print "MEMory recall some things";
+	 'meta':  print "read META commands";
+	 'pace cap', 'pacy cap':  print "toggle the pack cap";
+	 'pack cap':  print "pick up the pack cap";
+	 'puffup':  print "puff up";
+	 'pullup':  print "pull up";
       'rad':   print "scan with the radar";
       'rei':   print "put in the reifier";
       'rot':   print "put in the rotator";
       'rev':   print "put in the reviver";
-	'sce recs', 'scerecs':  print "see recommended unexamined scenery";
-	'shuttuhs':  print "toggle shuttuhs/shutters";
-	'stats':  print "get stats/the score";
+	 'sce recs', 'scerecs':  print "see recommended unexamined scenery";
+	 'shuttuhs':  print "toggle shuttuhs/shutters";
+	 'stats':  print "get stats/the score";
       'tip it', 'tipit': print "tip off one game progress activity";
-	'v//', 'verbs', 'verb':  print "see basic verbs";
+	 'v//', 'verbs', 'verb':  print "see basic verbs";
       'wordrow', 'wornrow', 'workrow', 'worn row', 'work row', 'word row': print "twiddle Worn Row";
       'yakokay', 'yak okay': print "tell the kayo yak OKAY";
-	'xyzzy', 'plugh': print "say a silly spell";
+	 'xyzzy', 'plugh': print "say a silly spell";
       default: rfalse;
     }
     rtrue;
@@ -743,7 +743,7 @@ when play begins (this is the begin ailihphilia for reals rule):
 	say "Nothing really catches your mind until you see a DARER AD. It's a bit vague, but it catches your eye.[wfak]";
 	say "[fixed letter spacing](MA'AM)/ SIR, TETRIS?!                    EVIL'S LIVE![line break]LIVE DEVIL!                               BOSSES! SOB![roman type][line break][wfak]";
 	say "You fold the Darer Ad and start off to the store.[paragraph break]'[unicode 161]Aloha. Hola!' someone, or something, cries. 'Steer-greets! Steer-greets!'[paragraph break]You run in the general direction of the voice. You look up, and you're no longer on the way to the store. You're somewhere else. Your smartphone starts blinking: LOAD AOL! You look up. Who is responsible for this? Someone/something who sees you futzing with your smartphone. 'No El Google on?' You nod. Awkward silence. 'Poll op! Poll op!' the someone/something continues.[wfak]";
-	say "'I'm the Flee Elf. Name, man? Eve? Pip? Otto? Anna? Bob? Nan? Aviva? Hannah? Elle? Ebbe?' You back away--it doesn't seem to care if you're male or female, but it's a persis-rep. And you realize YOU weren't paying attention to ITS gender.[wfak]";
+	say "'I'm the Flee Elf. Name, man? Eve? Pip? Otto? Anna? Bob? Nan? Aviva? Hannah? Elle? Ebbe?' The elf grows more desperate. 'Reinier? Lieseil?' You back away--it doesn't seem to care if you're male or female, but it's a persis-rep. And you realize YOU weren't paying attention to ITS gender.[wfak]";
 	say "There's a bit more of this narrative nonsense, if you're into that sort of thing. Would you like to see it? I won't be hurt if you say no.";
 	if the player yes-consents:
 		say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because you looked up the winning strategy on the Internet after it confused you. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers. Then 'Is reversi...?'";
@@ -1008,9 +1008,17 @@ the can't pull people rule is not listed in any rulebook.
 
 the can't push unpushable things rule is not listed in any rulebook.
 
-check pushing: say "Push?! [']Sup?! [one of](You never need to push anything in Ailihphilia.)[or][line break][stopping]" instead;
+this is the generic-push-pull rule:
+	if noun is cart, say "For a cart, it's not mobile." instead;
+	if noun is martini tram, say "It'd just roll back down here. It probably should be here." instead;
 
-check pulling: say "You never need to pull anything in Ailihphilia. Well, nothing concrete, [if pulled-up is false]but maybe you can figure what or how to pull[else]and you already pulled up in the Emo Dome[end if]." instead;
+check pushing:
+	abide by the generic-push-pull rule;
+	say "Push?! [']Sup?! [one of](You never need to push anything in Ailihphilia.)[or][line break][stopping]" instead;
+
+check pulling:
+	abide by the generic-push-pull rule;
+	say "You never need to pull anything in Ailihphilia. Well, nothing concrete, [if pulled-up is false]but maybe you can figure what or how to pull[else]and you already pulled up in the Emo Dome[end if]." instead;
 
 chapter putting on
 
@@ -1032,9 +1040,9 @@ definition: a thing (called th) is put-to-use:
 
 chapter opening / closing
 
-instead of closing, say "You never need to close anything in this game."
+check closing, say "You never need to close anything in this game." instead;
 
-instead of opening:
+check opening: [??]
 	if noun is a book, try examining the noun instead;
 	if noun is a workable, say "[if noun is workedout]It's broken. You can't constructively put anything in it[else]Just [b]USE[r] something on it, or [verb-abbrev of noun][end if]." instead;
 	if noun is bros' orb, say "The Bros['] Orb would be destroyed, its virtue gone, if you tried to force its secrets out." instead;
@@ -1044,11 +1052,13 @@ instead of opening:
 	if noun is gold log, say "You can't find an opening." instead;
 	if noun is lie veil, say "It's not that easy. You need to be forceful." instead;
 	if noun is mayo yam, say "That's not something you want to open." instead;
+	if noun is poo coop, say "And get doo-doo'd?" instead;
 	if noun is snack cans, say "[if player is in Mont Nom]You wonder if they might go better with something else[else]You will open the snack cans when the time comes to use them[end if]." instead;
 	if noun is sto lots, say "You can automatically open it when you need to." instead;
 	if noun is stole lots, say "You can't get to the STOLE LOTS with Dave around." instead;
 	if noun is yard ray, say "You just need to know how to fire it, not its inner workings." instead;
 	if noun is you buoy, say "You can't find an opening. Sadly, this is slightly trickier than Zork I. Slightly." instead;
+	say "You never need to open anything in this game.";
 
 chapter inserting into
 
@@ -2038,12 +2048,14 @@ the block jumping rule is not listed in any rulebook.
 
 check jumping:
 	if player is in Trapeze Part, say "While bouncing up and down is sort of palindromic in its own way, it won't help you in the game. [if epicer recipe is off-stage]Or help you to fix[else]You already fixed[end if] the ten-level net." instead;
-	if player is in moo room and hay is not moot, say "There's not enough hay to jump on or into. Besides, this game is obviously far too serious for such frivolity!" instead;
+	if player is in Moo Room and hay is not moot, say "There's not enough hay to jump on or into. Besides, this game is obviously far too serious for such frivolity!" instead;
 	say "You only manage a po['] hop (you don't need to jump in this game)." instead;
 
 chapter burning
 
-instead of burning, next-rand table of burnies;
+the block burning rule is not listed in any rulebook.
+
+check burning: next-rand table of burnies instead;
 
 chapter saying yes
 
@@ -2134,9 +2146,9 @@ section rules to be shuffled
 
 the new generic going reject rule is listed before the can't go that way rule in the check going rules.
 
-instead of exiting, try going outside;
+check exiting: try going outside instead;
 
-check going (this is the new generic going reject rule): [check going nowhere]
+check going (this is the new generic going reject rule): [check going nowhere rules are listed individually by room, so they come first]
 	if noun is outside:
 		if number of viable directions is 1, try going a random viable direction instead;
 		say "OUT or any synonym is never necessary in the game, though if there is only one exit direction, you'll go that way." instead;
@@ -2216,19 +2228,24 @@ check singing:
 
 chapter silly swearing
 
-instead of swearing mildly, try swearing obscenely instead;
+the block swearing mildly rule is not listed in any rulebook.
+the block swearing obscenely rule is not listed in any rulebook.
+
+check swearing mildly, try swearing obscenely instead;
 
 swearies is a number that varies.
 
-instead of swearing obscenely:
+check swearing obscenely:
 	if poop-boob-yet is true, say "[one of]Despite having found the right way to swear here, you reaffirm your respect for the classics. How thoughtful! Anyway...[paragraph break][or][stopping]";
-	next-rand table of swearstuff;
+	next-rand table of swearstuff instead;
 
 chapter sleeping
 
 slept-yet is a truth state that varies.
 
-instead of sleeping:
+the block sleeping rule is not listed in any rulebook.
+
+check sleeping:
 	if slept-yet is false:
 		now slept-yet is true;
 		say "Zzz.[paragraph break]Wait, no. That's cheating...[paragraph break]To cot?[paragraph break]No, that's a bit forced.[paragraph break]Let's pretend you're waiting, instead.[paragraph break]";
@@ -2236,7 +2253,7 @@ instead of sleeping:
 
 chapter waiting
 
-instead of waiting, next-rand table of waittxt;
+check waiting: next-rand table of waittxt instead;
 
 chapter plughing
 
@@ -2246,8 +2263,7 @@ understand the command "plugh" as something new.
 
 understand "plugh" as plughing.
 
-carry out plughing:
-	say "GULP." instead;
+carry out plughing: say "GULP." instead;
 
 chapter xyzzying
 
@@ -2311,7 +2327,7 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 		score-inc; [Grebeberg/USE GIFT FIG ON MAYO YAM&USE SNACK CANS ON UFO TOFU]
 		if number of moot ingredients is 4:
 			verify-done rev-second-food-combo rule;
-			say "A martini tram rattles out from behind the Ark of Okra. Guess you need drinks with your, uh, food![paragraph break][if player does not have the epicer recipe]You're shocked to see it, and it rolls further down, over the turf rut to Dumb Mud, then back through the Seer Trees to [Fun Enuf], and you follow[else]But you're prepared for it, with your epicer recipe. You move it back to [Fun Enuf], where it looks like a good base structure for your North-Tron[end if].";
+			say "A martini tram rattles out, de-garaged, from behind the Ark of Okra. Guess you need drinks with your, uh, food![paragraph break][if player does not have the epicer recipe]You're shocked to see it, and it rolls further down, over the turf rut to Dumb Mud, then back through the Seer Trees to [Fun Enuf], and you follow[else]But you're prepared for it, with your epicer recipe. You move it back to [Fun Enuf], where it looks like a good base structure for your North-Tron[end if].";
 			move martini tram to Fun Enuf;
 			drop-player-at Fun Enuf;
 			say "After all that excitement, you realize that the martini tram could've been a KO wok. You feel relief at dodging something worse.";
@@ -2928,7 +2944,7 @@ pity tip	eye	snack cans	pre-tip-on-eye rule	mob-to-alley rule	true	true	false	fa
 trap art	reifier	party trap	pre-art-on-reifier rule	--	true	true	false	true	true	true	Yelpley	Worn Row	Worn Row	false	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. You pull it out of the reifier and inspect it. It could probably capture more than one thing."
 bunk nub	reviver	stock cots	pre-nub-on-reviver rule	--	true	true	false	true	true	true	Yelpley	Worn Row	Worn Row	false	"After some crunching and slurping, the bunk nub is changed to a bunch of much smaller, but more comfortable looking, stock cots. You take them."
 party trap	stark rats	gift fig	pre-trap-on-rats rule	oh-who-to rule	true	true	true	true	true	true	Grebeberg	Seer Trees	Seer Trees	false	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately none of it gets over you. The Seer Trees seem to nod a bit.[paragraph break]THUMP! They left you a present--good thing you were wearing that pact cap, because a book fell on your head. One glance reveals it to be [b]Oh, Who[r]--a phone book for Grebeberg, like [b]Name ME Man[r] for Yelpley.[paragraph break]You also find a gift fig, which you pick up."
-EPOCH COPE	King Nik	Spur Ups	pre-cope-on-nik rule	cold-loc-hint-bump rule	true	true	true	true	true	true	Grebeberg	Cold Loc	Cold Loc	false	"King Nik takes it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris and Crisp Sir C told me I needed to one day from those other books: ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! Now I can make sure the Rim Emir and his emir crim and emir grime do not become Emir Prime! I will defeat the Mrifk Firm, too! My rule will not be an EGAD age!' He hands you some Spur Ups in gratitude. 'These may not spur you, but they can give you an UP or two, when you are just scared or worried for no reason in general. Now...back to my vidette div. Gotta RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
+EPOCH COPE	King Nik	Spur Ups	pre-cope-on-nik rule	cold-loc-hint-bump rule	true	true	true	true	true	true	Grebeberg	Cold Loc	Cold Loc	false	"King Nik takes it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris and Crisp Sir C told me I needed to one day from those other books: ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! Now I can make sure the Rim Emir and his emir crim and emir grime do not become Emir Prime! I will defeat the Mrifk Firm, too, and be a regal ager! My rule will not be an EGAD age!' He hands you some Spur Ups in gratitude. 'These may not spur you, but they can give you an UP or two, when you are just scared or worried for no reason in general. Now...back to my vidette div. Gotta RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
 stock cots	sleep eels	--	pre-cots-on-eels rule	--	true	true	true	true	true	true	Grebeberg	Ooze Zoo	Ooze Zoo	false	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow. You can now go south!" [af:puff up/pull up]
 --	--	--	rev-puff-up rule	post-puff-up rule	true	--	--	true	true	true	Yelpley	Yawn Way	Yawn Way	false	--
 --	--	--	rev-pull-up rule	post-pull-up rule	true	--	--	true	true	true	Yelpley	Emo Dome	Emo Dome	false	--
@@ -2984,8 +3000,8 @@ Eroded Ore	reviver	Ore Zero	pre-ore-on-reviver rule	--	true	true	false	false	fal
 you buoy	rotator	ME gem	pre-buoy-on-rotator rule	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"You hear a clunking as the rotator speeds up. When you open the rotator, the you buoy is in shreds, but a shiny ME gem appears. 'You BOFFO buoy!' you can't help shouting.[paragraph break]The gem's so tempting and beautiful, you grab it quickly, but you know it's not the main point of your quest. Maybe it can distract someone greedy."
 Mr Arm	bomb mob	TNT	pre-arm-on-mob rule	mob-bye rule	true	true	true	false	false	true	Yelpley	Yell Alley	Yell Alley	false	"Mr. Arm walks on his index and middle finger to the TNT, then nudges it away as the Bomb Mob isn't watching. Being an arm, it/he has more leverage than just a DNA hand would've. It flicks the TNT over your way, then quickly skedaddles off to its old home: DNA Land, of course. Perhaps Mr. Arm will find a Do-Bod or even an Evol-Glove to be truly complete. The bomb mob, for their part, becomes a poor troop once they see what they've lost. They wander away."
 Nat's Tan	scorn rocs	--	pre-tan-on-rocs rule	post-tan-on-rocs rule	true	true	true	true	false	false	Grebeberg	Flu Gulf	Flu Gulf	false	"The Nat's Tan burns into the scorn rocs, who were once pridefully spotless. Their fur turns an embarrassing shade of orange. You hear a bellow from the west."
-rep popper	ME Totem	murdered rum	pre-popper-on-totem rule	totem-out rule	true	true	true	false	false	false	Grebeberg	Sneer Greens	Sneer Greens	false	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Had, ah!' he cries. 'On U! Y U No ... ?' From his babbling, he's apparently retreating to a glam-amalg (Loot Stool included) or ego loge in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]'Pol? Flop!' you think to yourself, before the ME Totem, sliced several ways, collapses and sinks into the ground. As it does, something rolls out ... some murdered rum! It looks powerful. You pick it up carefully."
-Bros' Orb	Mirror Rim	Yard Ray	pre-orb-on-rim rule	sword-rows-reveal rule	true	true	true	false	false	false	Yelpley	Red Roses Order	Red Roses Order	false	"The Bros['] Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Ms. Ism has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, Ms. Ism, live not on evil!' you boom, as the Orb does its work. Ms. Ism looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'Mom! Mom! Mom!' An E-Divide shimmers and pops up, blocking you from following.[paragraph break]Behind the Mirror Rim is a Yard Ray, which looks useful and destructive. You take it. You also wipe off your state tats--you won't need them any more."
+rep popper	ME Totem	murdered rum	pre-popper-on-totem rule	totem-out rule	true	true	true	false	false	false	Grebeberg	Sneer Greens	Sneer Greens	false	"'BOO! NOOB!' the Yuge Guy booms, but his face has turned derp-red. You hold the rep popper at the Yuge Guy until he ducks behind the ME Totem, but by now, the popper is charged, and it splits the totem in half. The Yuge Guy deflates like a balloon and whooshes out over the smirk rims. 'Had, ah!' he cries. 'On U! Y U No ... ?' From his babbling, he's apparently retreating to a glam-amalg (Loot Stool included) or ego loge in his residence, the Exult-Luxe. Sounds horrendously gaudy![paragraph break]'Pol? Flop!' you think to yourself, before the ME Totem, sliced several ways, collapses and sinks into the ground. As it does, something rolls out ... some murdered rum! It looks powerful. You can't resist a 'He? Meh!' before picking the rum up carefully."
+Bros' Orb	Mirror Rim	Yard Ray	pre-orb-on-rim rule	sword-rows-reveal rule	true	true	true	false	false	false	Yelpley	Red Roses Order	Red Roses Order	false	"The Bros['] Orb shines and blinks. The Mirror Rim dissipates under the brutal light, revealing Sci-Pics (hard and soft science) that detail how Ms. Ism has been in cahoots with the Yuge Guy and the Diktat Kid. 'Live not on evil, Ms. Ism, live not on evil!' you boom, as the Orb does its work. Ms. Ism looks much less intimidating now. 'Does it mean...? It does!' She runs away, sobbing. 'Mom! Mom! Mom!' An E-Divide shimmers and pops up, blocking you from following.[paragraph break]Behind the Mirror Rim is a Yard Ray, which looks useful and destructive. You take it. Mumbling 'Eh, she...' you also wipe off your state tats. You won't need them any more."
 balsa slab	sword rows	not-a-baton	pre-slab-on-rows rule	moot-rows-and-tats rule	true	true	false	false	false	false	Yelpley	Red Roses Order	Emo Dome	false	"The sword rows hum and rotate as the balsa slab approaches. They whir and grind as they cut through it, carving and honing it into something that almost seems like a weapon. It's pretty generic, and you wonder what it is, but you notice NOT-A-BATON carved into it. It seems kind of cool if you need self-defense, but you bet it could be so much more, since violence hasn't really been important so far, even to dispose of Ms. Ism."
 not-a-baton	reifier	taboo bat	pre-not-a-baton-on-reifier rule	--	true	true	false	false	false	false	Yelpley	Worn Row	Worn Row	false	"The reifier coughs and spits out something even more counter culture than the dork rod: a taboo bat! You practice swatting some imaginary enemies. One of these will be able to smite a bad-faith pearl-clutcher for sure."
 murdered rum	yard ray	--	pre-rum-on-ray rule	ray-beepy-now rule	true	true	false	false	false	false	Dim Mid	--	--	false	"As you combine the spoils from the Yuge Guy and Ms. Ism, the yard ray gleams with energy. It seems like it could do some damage now somewhere even more important than [Sneer Greens] or [Red Roses Order]. Maybe somewhere right between them."
@@ -2993,8 +3009,8 @@ murdered rum	yard ray	--	pre-rum-on-ray rule	ray-beepy-now rule	true	true	false	
 Yard Ray	test set	--	pre-ray-on-set rule	test-set-zapped rule	true	false	true	false	false	false	Dim Mid	Worn Row	Worn Row	false	"Fzzt! Zap! The test set goes up in smoke. Okay, you had something to practice on. Now for the final battle." [b4:emit noontime]
 --	--	--	rev-create-tron rule	--	true	--	--	false	false	false	Dim Mid	Fun Enuf	Fun Enuf	false	--
 ME gem	Knife Fink	--	pre-gem-on-fink rule	kid-left rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"The Knife Fink pauses, dazzled by the gem's brightness. 'Wow! It must be valuable!' [if Verses Rev is in Dirge Grid]The Verses Rev stops to tut-tut the Knife Fink, who ignores that.[end if] The Knife Fink grabs the gem and runs off, perhaps to create the Red Ronin Order." [b4:use TNT on ore zero]
-taboo bat	Verses Rev	--	pre-bat-on-rev rule	kid-left rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev senses the Taboo Bat's ancient untapped power. It's not particularly violent or lethal, but it is just perfect to scare an orthodoxy as warped as the Verses Rev's, who mutters 'Rev, off, over' and stumbles away! Perhaps to the safety of ... a rev reserver."
-Yard Ray	redivider	X-ITE TIX	pre-ray-on-redivider rule	kid-bye rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"'Havoc, OVAH!' you shout as you aim and fire the yard ray. A direct hit! The redivider begins to fizzle.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The entire Dirge Grid brightens, and the yard ray hums and explodes. But it's too late for the Diktat Kid to avoid an electro-shock. 'Deleveled!' the Kid screams several times, before breaking down into tears. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'PUT, UH, SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid grows redder ... redder ... and suddenly the remains of the redivider begin swirling, and they catch the Diktat Kid, who moans 'Lo, a Gaol' before being whisked off.[paragraph break]With the Kid gone, the Dirge Grid grows less dark, the no-go gon winks out, and saner arenas are revealed all around. The swirling remains of the redivider harden into what can only be an XILE helix.[paragraph break]Revel, clever! Revel, ever![paragraph break]You are so busy watching, you didn't notice something else fell out of the redivider: X-ITE TIX! You pick them up. Wow! Yo, joy! Wow!"
+taboo bat	Verses Rev	--	pre-bat-on-rev rule	kid-left rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"You raise the Taboo Bat, yelling 'El Bat-Able,' (and ignoring the actual archaic meaning) and suddenly the Verses Rev senses the Taboo Bat's ancient untapped power. It's not particularly violent or lethal, but it is just perfect to scare an orthodoxy as warped as the Verses Rev's, who mutters 'Rev, off, over' and stumbles away! Perhaps to the safety of ... a rev reserver. Whatever. Someone's de-revered."
+Yard Ray	redivider	X-ITE TIX	pre-ray-on-redivider rule	kid-bye rule	true	true	true	false	false	false	Dim Mid	Dirge Grid	Dirge Grid	false	"'Havoc, OVAH!' you shout as you aim and fire the yard ray. A direct hit! The redivider begins to fizzle.[paragraph break]'Bub?!' the Diktat Kid asks.[paragraph break]Fzzt! Zap! The entire Dirge Grid brightens, and the yard ray hums and explodes. But it's too late for the Diktat Kid to avoid an electro-shock. 'Deleveled!' the Kid screams several times, before breaking down into tears. 'You haven't won for good! You think everyone's living in harmony, but I will build my ...[paragraph break]'... RETRO PORTER! It will make things as before you came!'[paragraph break]'What if it moves things to before YOU came?' you taunt.[paragraph break]'PUT, UH, SHUT UP!'[paragraph break]You wonder if you should've said that. The Kid grows redder ... redder ... and suddenly the remains of the redivider begin swirling, and they catch the Diktat Kid, who moans 'Lo, a Gaol' before being whisked off.[paragraph break]With the Kid gone, the Dirge Grid grows less dark, the no-go gon winks out, and saner arenas are revealed all around. The swirling remains of the redivider harden into what can only be an XILE helix.[paragraph break]Revel, clever! Revel, ever![paragraph break]You close your eyes and boom 'DE-DIVIDED! DE-SUFFUSED!' When you open them, you notice something else fell out of the redivider: X-ITE TIX! You pick them up. Wow! Yo, joy! Wow!"
 X-ITE TIX	TIX EXIT	--	pre-tix-on-exit rule	you-win rule	true	false	false	false	false	false	Dim Mid	Fun Enuf	Fun Enuf	false	"Yes, it's time to go. You put the X-Ite Tix in the Tix Exit and walk through."
 [zzuse] [zzgood]
 
@@ -3788,6 +3804,7 @@ this is the hay-gone rule:
 	if SOME DEMOS is moot and enact cane is moot:
 		unless redact-postrule, say "You used up all the hay! You're sad it's gone but excited you could be so efficient with it. Yahoo!";
 		moot yahoo hay;
+		later-wipe yahoo hay;
 	else:
 		get-reject yahoo hay;
 		unless redact-postrule, say "There's still some hay (yah!) left over for another creative project.";
@@ -3814,7 +3831,7 @@ this is the kid-left rule:
 
 this is the make-sag rule:
 	move gash sag to Pro Corp;
-	unless redact-postrule, consider the notify bald lab rule;
+	unless redact-postrule, consider the notify Bald Lab rule;
 	the rule succeeds;
 
 this is the maps-explain rule:
@@ -3871,6 +3888,7 @@ this is the radar-crag rule:
 
 this is the rahs-too rule:
 	now player has the sharp rahs;
+	later-wipe el doodle;
 	the rule succeeds;
 
 this is the ray-beepy-now rule:
@@ -3908,6 +3926,7 @@ this is the sap-to-cup rule:
 
 this is the shift-dumb-mud rule:
 	shuffle-before Dumb Mud and Le Babel;
+	later-wipe poo coop;
 	the rule succeeds;
 
 this is the sod-to-cup rule:
@@ -4263,7 +4282,7 @@ check going south in Fun Enuf:
 	if elf-warn < 3, the rule succeeds;
 	say "[line break]Do you still wish to go through Evac Ave and turn your back on adventure?";
 	if the player yes-consents:
-		say "The Flee Elf cries 'Fool! Aloof!' as you walk south past Evac Ave through the Elim-Mile. You don't have to walk all the way, though. You're given a vehicle: EL CYCLE. It's not a very good one, certainly no PEDAL-ADEP[']. It's long and exhausting, and once back in the 'real' world, you crash out and forget your brief time in Fun Enuf. You have persistent nightmares of some weird elf yelling 'Dud, Bub, Dud!' at you, but at least they replaced the really awful ones from high school. You even take up bicycling and lose (and keep off) those five extra pounds.[paragraph break]That's a step up, but you still go through life feeling you missed something, somewhere, somehow.";
+		say "'Tireder, it ...' you grumble.[paragraph break]The Flee Elf cries 'Fool! Aloof!' as you walk south past Evac Ave through the Elim-Mile. You don't have to walk all the way, though. You're given a vehicle: EL CYCLE. It's not a very good one, certainly no PEDAL-ADEP[']. It's long and exhausting, and once back in the 'real' world, you crash out and forget your brief time in Fun Enuf. You have persistent nightmares of some weird elf yelling 'Dud, Bub, Dud!' at you, but at least they replaced the really awful ones from high school. You even take up bicycling and lose (and keep off) those five extra pounds.[paragraph break]That's a step up, but you still go through life feeling you missed something, somewhere, somehow.";
 		end the story saying "NOWT WON";
 
 xite-warn is a truth state that varies.
@@ -4322,7 +4341,8 @@ check going north in Fun Enuf:
 	if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
 	if murdered rum is not moot, say "You have the yard ray, but it isn't, well, charged." instead;
 	if emitted is false, say "You don't know how to work the yard ray[if yard ray is xed]. EMIT ********--hmm, what could those eight letters be?[else]. Maybe examine it for instructions.[end if]" instead;
-	if grid-side-items < 2, say "As you go north, you hear three voices. 'Prep?! Erp!' you mutter.[paragraph break]Perhaps the yard ray would work okay at first, but ... you get the feeling you may need some other stuff to take out EVERYBODY.";
+	if grid-side-items < 2, say "As you go north, you hear three voices. 'Prep?! Erp!' you mutter.[paragraph break]Perhaps the yard ray would work okay at first, but ... you get the feeling you may need some other stuff to take out EVERYBODY." instead;
+	say "You think you have enough. You hope you won't need a redi-aider. Here goes!"
 
 to decide which number is grid-side-items:
 	let temp be 2;
@@ -4529,14 +4549,14 @@ the elite tile is scenery. "Done? Nod![line break]Nif-T-Fin![line break]Trape! D
 check taking elite tile: say "It's a memento, not a souvenir." instead;
 
 after going to Fun Enuf when Diktat Kid is moot:
-	say "You hear a thud to the east! Perhaps Yawn Way is not so boring any more. Then you look down and notice the tile lit has changed slightly. It's more shiny now. Elite tile, if you will. And it says something different.";
+	say "You hear chants of 'Hew, Eh' then a thud to the east! Perhaps Yawn Way is not so boring any more. Then you look down and notice the tile lit has changed slightly. It's more shiny now. Elite tile, if you will. And it says something different.";
 	moot tile lit;
 	move elite tile to Fun Enuf;
 	continue the action;
 
 book Dirge Grid
 
-Dirge Grid is a room in Dim Mid. "The only way back is south[if Diktat Kid is in Dirge Grid], but you can't really run away from the Diktat Kid. A Tru Hurt is pointed at you, and that redivider looks extra imposing, but if you deal with the Kid, that won't matter[else], and you might as well go that way, now you've vanquished the Diktat Kid. Saner Arenas surround the XILE helix that stands where the redivider used to be[end if]."
+Dirge Grid is a room in Dim Mid. "The only way back is south[if Diktat Kid is in Dirge Grid], but you can't really run away from the Diktat Kid. A Tru Hurt is pointed at you, and that redivider looks extra imposing, but if you deal with the Kid, that won't matter[else], and you might as well go that way, now you've vanquished the Diktat Kid. No need for further spot ops[paragraph break]Saner Arenas surround the XILE helix that stands where the redivider used to be[end if]."
 
 check going to Dirge Grid: if test set is not moot, say "[if player does not have yard ray]You don't have an adequate weapon[else]You need to get some practice with the Yard Ray before going north[end if]." instead;
 
@@ -4900,7 +4920,7 @@ check going in Flu Gulf:
 
 book Sneer Greens
 
-Sneer Greens is west of Flu Gulf. It is in Grebeberg. "[if Yuge Guy is in Sneer Greens]Despite the impressive view, the place has gone to pot[else]Nicer and quieter with the Yuge Guy gone. Still, it's... not completely silent[end if].[paragraph break]You can only go back east. Smirk rims block every way back except east[if me totem is in Sneer Greens], and a ME Totem towers above you[end if]."
+Sneer Greens is west of Flu Gulf. It is in Grebeberg. "[if Yuge Guy is in Sneer Greens]Despite the impressive view, the place has gone to pot[else]Nicer and quieter with the Yuge Guy gone. Still, it's... not completely silent, but safe enough[end if].[paragraph break]You can only go back east. Smirk rims block every way back except east[if me totem is in Sneer Greens], and a ME Totem towers above you[end if]."
 
 check going nowhere in Sneer Greens: say "The smirk rims push you back, but you really don't need to do anything [if Yuge Guy is moot]more here[else]with them, just the Yuge Guy[end if]." instead;
 
@@ -5015,7 +5035,7 @@ book Le Babel
 
 Le Babel is north of Dumb Mud. It is in Grebeberg. "Here space and time seem horribly warped. You can listen for apocryphal mumblings ... if you dare. A voodoo v blocks passage--and sight--everywhere except back south."
 
-check going nowhere in Le Babel: say "You would surely get lost going anywhere other than back south." instead;
+check going nowhere in Le Babel: say "You would surely get lost going anywhere other than back south, your last words perhaps being 'Haboob! Ah!'" instead;
 
 chapter voodoo v
 
@@ -5242,7 +5262,8 @@ carry out yakokaying:
 
 to banish-ogre:
 	now cap-pace is false;
-	moot yak;
+	moot kayo yak;
+	later-wipe kayo yak;
 	moot ergot ogre;
 	moot troll ort;
 	recover-items;
@@ -5434,7 +5455,7 @@ check going nowhere in Motto Bottom: say "The Be-Web is full of wisdom on just e
 
 chapter tips pit
 
-the tips pit is peripheral scenetry in motto bottom. understand "tips pit" and "tip pit" and "tipspit" as tips pit. "The tips pit is--man, it's deep. Well, physically, at least. Maybe there's some life advice down at the bottom, but to get there you'd probably have to fall, and you wouldn't have much life left."
+the tips pit is peripheral scenetry in Motto Bottom. understand "tips pit" and "tip pit" and "tipspit" as tips pit. "The tips pit is--man, it's deep. Well, physically, at least. Maybe there's some life advice down at the bottom, but to get there you'd probably have to fall, and you wouldn't have much life left."
 
 chapter be web
 
@@ -5454,7 +5475,7 @@ check taking guru rug: say "'Egad! Adage!' you think to yourself. You're not up 
 
 chapter stir writs
 
-The stir writs are a plural-named thing. description is "They balance emotional and intellectual considerations well, making you feel you can do things you'd put off before, both simple or complex, and maybe you don't need permission to do or deserve big things.[paragraph break]They're probably safer for your help and give a more permanent boost than Stim-Its or a Vig-IV, too."
+The stir writs are a plural-named thing. description is "E.g. adage. They balance emotional and intellectual considerations well, making you feel you can do things you'd put off before, both simple or complex, and maybe you don't need permission to do or deserve big things.[paragraph break]They're probably safer for your help and give a more permanent boost than Stim-Its or a Vig-IV, too."
 
 check useoning stir writs with Bros' Orb: try taking Bros' Orb instead;
 
@@ -5540,7 +5561,7 @@ Elided Ile is peripheral scenery in Lac Oft Focal. "Elided Ile is so far away, y
 
 chapter calcific lac
 
-the calcific lac is peripheral scenery in Lac Oft Focal. "It's a very CALM lac (of course it is) but far too wide to cross without transportation."
+the calcific lac is peripheral scenery in Lac Oft Focal. "You C A lac. It's a very CALM lac (of course it is) but far too wide to cross without transportation."
 
 chapter kayak
 
@@ -5593,7 +5614,7 @@ check entering go by bog:
 	if spa maps are moot, say "You don't want or need to revisit the bog." instead;
 	if maps-explained is true, try useoning spa maps with go by bog instead;
 	if word number 1 in the player's command is "go" and word number 2 in the player's command is "bog":
-		say "In the true palindrome spirit, you take one step in the bog, then reverse direction before it gets dangerous. You probably need some sort of guide to navigate safely." instead;
+		say "In the true palindrome spirit, you take one step in the bog, then reverse direction before it gets dangerous. You suspect there are plenty of sap-spas and no E-Z Ooze if you misstep, so you probably need some sort of guide to navigate safely." instead;
 	say "The bog is dangerous without guidance." instead;
 
 check going in Apse Spa:
@@ -6037,7 +6058,7 @@ does the player mean evadeing Dave: it is very likely.
 carry out evadeing:
 	if noun is Dave:
 		if Dave is moot, say "You don't need to evade Dave again.";
-		say "You evade Dave! Deked! Deked![paragraph break]After spinning fruitlessly around for a while, Dave trudges off, exhausted, emitting a huge 'GUH!'[paragraph break]Whew! Consulting the Set O Notes[if Set O Notes is xed] again[end if], you notice there may be at least one more guh thug, but nothing too violent. That's good. You'd hate to have to TRUCK CURT, MASH SAM, RAM OMAR, SIT ON OTIS or even DISS SID.";
+		say "You evade Dave! Deked! Deked![paragraph break]After spinning fruitlessly around for a while and putting up with your 'E.g. dodge' and 'El Ole' taunts, Dave trudges off, exhausted, emitting a huge 'GUH!'[paragraph break]Whew! Consulting the Set O Notes[if Set O Notes is xed] again[end if], you notice there may be at least one more guh thug, but nothing too violent. That's good. You'd hate to have to TRUCK CURT, MASH SAM, RAM OMAR, SIT ON OTIS or even DISS SID. And it would be awkward to tell SAL ALAS.";
 		wfak;
 		say "Suspicious there are no actual weight machines, you find a passage to a hidden spate of Sperses-Reps machines with the motto 'Scepsis?! Pecs!' They help you bulk up a bit, so item weight will not be a factor. But you don't want to waste too much time bulking up. You go back out and have a look at the Stole-Lots. You consider making it a STORE-lots, but then the 'rots' is not so good, so then you also check if the E and an L rub out quickly. They do, making it a Sto(['])-Lots. Bam! Logistical and moral problems: SOLVED![paragraph break]Also, you notice a wash saw in the (now) Sto Lots. They both seem worth taking along, so you do.";
 		moot Dave;
@@ -6125,11 +6146,11 @@ the bad dab is peripheral scenery in Worn Row. description is "[if Rob is in Wor
 
 understand "wor" and "wor row" as the bad dab when bad dab is quicknear.
 
-instead of rubbing bad dab: say "No. It looks like a clue."
+check rubbing: #changed from instead rule
+	if noun is bad dab, say "No. It looks like a clue." instead;
+	say "[no-burt]." instead;
 
-instead of rubbing: say "[no-burt]."
-
-to say no-burt: say "There's no one named Burt or Babbur or Liwilbur anything like that in this game, so you don't have to rub anyone or anything"
+to say no-burt: say "There's no one named Burt or Babbur or Liwilbur anything like that in this game, so you don't have to rub anyone or anything. Plus, it might be a burdened rub anyway."
 
 after examining bad dab:
 	consider the cap-beep rules for the bad dab;
@@ -6244,9 +6265,9 @@ to decide which number is machuses:
 		increase retval by useleft of Q;
 	decide on retval;
 
-instead of switching on a workable, say "You need to USE something with [the noun]."
+check switching on a workable, say "You need to USE something with [the noun]." instead;
 
-instead of taking a workable, say "Too heavy. But you can USE something on it.";
+check taking a workable, say "Too heavy. But you can USE something on it." instead;
 
 the r-shortcut rules are an object-based rulebook.
 
@@ -6311,11 +6332,7 @@ to decide what number is books-in-cart:
 
 the tract cart is scenery. "'GREED-E? ERG!' is emblazoned on it, as a warning you should take only one book at a time. [if number of sober books in Worn Row is 0]You've looted it completely[else]It carries [books-in-cart] book[plur of books-in-cart]: [list of sober books in Worn Row][end if][hint-trace][one of]. It's not actually rideable, though. It just holds stuff[or][stopping]."
 
-instead of taking the tract cart, say "It's not small enough to fit in your sto-lots, and it's not mobile, either."
-
-instead of pushing the tract cart, say "For a cart, it's not mobile."
-
-instead of pulling the tract cart, say "For a cart, it's not mobile."
+check taking the tract cart, say "It's not small enough to fit in your sto-lots, and it's not mobile, either." instead;
 
 to say hint-trace:
 	say "[if tract-trace is false]. But it also seems a bit too big for just carrying a few books. Maybe it holds a deeper secret[end if]"
@@ -6911,7 +6928,7 @@ check going north in Emo Dome:
 	say "[chase-pass]";
 	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. Still, you try to pass by the DIFF-ID but hear a warn-raw voice: 'Dim ID! Go jog!'[paragraph break]You think, hang? Nah. Maybe you [if player has soot tattoos and player has gate tag]can hustle up an ID--a DIY ID, if you will--from your current possessions, though[else if player has soot tattoos or player has gate tag]could find something to help you get by[end if]." instead;
 	if Bros' Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet. You don't need someone else, but you need something that makes you feel someone else is, well, there." instead;
-	if Diktat Kid is moot, say "The Red Roses Order is being replaced by something more ... civic. The Teem-Civic Meet, to be precise. It'll take a while. Positive politics often does. Perhaps there should be a 'SLO POLS' sign." instead;
+	if Diktat Kid is moot, say "The Red Roses Order is being replaced by something more ... civic. The Teem-Civic Meet, to be precise. They're formulating something called Vogue-U-Gov, which will take more time than you can spend here, even with so many dynamos. Perhaps there should be a 'SLO POLS' sign." instead;
 	if balsa slab is moot, say "With Ms. Ism defeated, the Teem-Civic Meet is going in full swing. They're throwing interesting ideas around, but you don't have anything to add. Lots of folks all 'Yep, ey?'[paragraph break]You've done all you could in the Red Roses Order." instead;
 	say "You make sure your state tats are visible for scanning. They are accepted with a 'YA MAY!'.[paragraph break][if Ms Ism is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the sword rows.[end if]";
 
@@ -7262,7 +7279,7 @@ does the player mean taking the tent net when the player is in Trapeze Part: it 
 
 chapter epicer recipe
 
-the epicer recipe is a helpdoc. description is "[one of]You've seen recipes before, but this is a big interesting one! It's got instructions, not just for building some tike kit, but a north-tron, which can blast through anything ... including the [kaoscaps]! But first there's a list of parts[or]You focus on the parts to build the north-tron[stopping].[paragraph break][tronpartlist][run paragraph on]". importancy of the epicer recipe is 3.
+the epicer recipe is a helpdoc. description is "[one of]You've seen recipes before, but this is a big interesting one, written by E-Z Amaze corp! It's got instructions, not just for building some tike kit, but a north-tron, which can blast through anything ... including the [kaoscaps]! But first there's a list of parts[or]You focus on the parts to build the north-tron[stopping].[paragraph break][tronpartlist][run paragraph on]". importancy of the epicer recipe is 3.
 
 after examining epicer recipe:
 	if tron-got is 4, say "Well, You've got everything[hint-tron].";
@@ -7306,8 +7323,7 @@ Yell Alley is east of Evaded Ave. It is in Yelpley. "[if Line Nil is in Yell All
 to say alley-e-block:
 	say "[if navy van is in Yell Alley]navy van... you're not sure[else]bomb mob... so that's[end if]"
 
-check going nowhere in Yell Alley:
-	say "[if navy van is in Yell Alley]It probably gets even seedier behind the navy van[else if bomb mob is in Yell Alley]It probably gets even seedier behind the bomb mob. Best just to go back west[else]Trust me. The Line Nil is protecting you from the perils of No-Trekker-Ton. You don't want to visit No-Trekker-Ton[end if]." instead;
+check going nowhere in Yell Alley: say "[if navy van is in Yell Alley]It probably gets even seedier behind the navy van[else if bomb mob is in Yell Alley]It probably gets even seedier behind the bomb mob. Best just to go back west[else]Trust me. The Line Nil is protecting you from the perils of No-Trekker-Ton and Dart-strad. You don't want to visit No-Trekker-Ton or Dart-strad[end if]." instead;
 
 chapter navy van
 
@@ -7525,7 +7541,7 @@ the Elan Ale is a drinkable thing. description is "It's labeled as CLASS Alc, un
 
 chapter birch crib
 
-the birch crib is peripheral scenery in Drawl Ward. "It's a crib in the slang sense, not the baby sense. It looks like a nice place to be, but you couldn't afford it[if player has cash sac], even with the cash sac[end if]. Plus there's no way in, and it's probably somebody's.[paragraph break]Stuff like YA SAY? and YO BOY are scribbled in there so the Drawl Ward [if Bond Nob is in Drawl Ward]is still[else]would still be[end if] drawl-y with or without the Bond Nob."
+the birch crib is peripheral scenery in Drawl Ward. "It's a crib in the slang sense, not the baby sense. It looks like a nice place to be, but you couldn't afford it[if player has cash sac], even with the cash sac[end if]. Plus there's no way in, and it's probably somebody's.[paragraph break]Stuff like YA SAY? and YO BOY and HOUSES U?! OH?! are scribbled in there so the Drawl Ward [if Bond Nob is in Drawl Ward]is still[else]would still be[end if] drawl-y with or without the Bond Nob."
 
 instead of taking birch crib, say "It's a whole big house! Anyway, you couldn't do anything with a regular crib."
 
@@ -7641,8 +7657,8 @@ instead of taking a thing when player is in Pro Corp and Psi Wisp is in Pro Corp
 		add Q to multiple object list;
 	say "OUCH! The psi wisp stings your hand before you can grab [the noun]." instead;
 
-after taking when player is in Pro Corp (this is the notify bald lab rule):
-	if bald-lab, say "Thanks to your actions, Pro Corp is now a bald lab.";
+after taking when player is in Pro Corp (this is the notify Bald Lab rule):
+	if bald-lab, say "Thanks to your actions, Pro Corp is now a Bald Lab.";
 	continue the action;
 
 to decide whether bald-lab:
@@ -7652,7 +7668,7 @@ to decide whether bald-lab:
 chapter LLP hint
 
 after looking in Pro Corp when bald-lab and balm-LLP-yet is false:
-	say "You feel a bit itchy. Maybe it's the chemical reactions in here. Maybe something in here could help fix that, despite it being a bald lab. Not necessary to, but ... a small nice thing.";
+	say "You feel a bit itchy. Maybe it's the chemical reactions in here. Maybe something in here could help fix that, despite it being a Bald Lab. Not necessary to, but ... a small nice thing.";
 	continue the action;
 
 chapter Sci Pics
@@ -9973,7 +9989,7 @@ carry out balmlabing:
 	if balm-LLP-yet is true, say "No double dipping." instead;
 	now balm-LLP-yet is true;
 	abide by the LLP rule; [BALM LAB]
-	say "Some EOL Aloe (O, La) squirts out of the butene tub. You rub it on yourself. You immediately quit running around in circles in your mind, and when a disturbing thought pops back up, you sort of say Lo, EOL, to ward it off. But then an enol cyclone blows you over, and when you wake up again, it's a bald lab." instead;
+	say "Some EOL Aloe (O, La) squirts out of the butene tub. You rub it on yourself. You immediately quit running around in circles in your mind, and when a disturbing thought pops back up, you sort of say Lo, EOL, to ward it off. But then an enol cyclone blows you over, and when you wake up again, it's a Bald Lab." instead;
 
 chapter peeping
 

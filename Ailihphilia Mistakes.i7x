@@ -375,6 +375,8 @@ to say elf-note: now tried-elf is true;
 
 tried-elf is a truth state that varies.
 
+understand "elf i rifle" as a mistake ("The elf is on your side, and this is a nonviolent game.") when flee elf is quicknear.
+
 understand "flea elf" and "flea" as a mistake("[elf-note]The elf scratches for a bit, then looks embarrassed.[mis of 148]") when Flee Elf is quicknear.
 
 understand "fled elf" and "fled" as a mistake("[elf-note]The elf will be, once you figure how to take the cap.[mis of 149]") when Flee Elf is quicknear.
@@ -402,6 +404,8 @@ to say girt-clue:
 understand "tri girt" as a mistake ("[girt-clue].[mis of 155]") when player has Set O Notes.
 
 chapter Gross Org
+
+understand "de ned" and dened" as a mistake ("It's not that easy to get rid of Ned. Okay, it's almost that easy, but you can't just vanish him.") when Ned is quicknear.
 
 understand "bra garb" as a mistake ("I've tried to keep this game gender neutral.[mis of 156]") when brag garb is quicknear.
 
@@ -661,6 +665,8 @@ section golf log/dork rod
 
 understand "dorm rod" and "dorm" as a mistake ("You reveal no frat. Arf![mis of 266]") when dork rod is quicknear.
 
+understand "do rod" as a mistake ("You need to do something with the rod, or use something on it.") when dork rod is quicknear.
+
 understand "go log" as a mistake ("[unless gold log is quicknear]You contemplate writing your memoirs after leaving Yelpley and Grebeberg[else]It's not particularly magical or motivational. But at least it can't become a go-loco log[end if].[mis of 267]"). [okall]
 
 understand "golf log" as a mistake ("There is no Par Trap or Tee Meet to navigate here, so you don't need to make a golf log.[mis of 268]") when gold log is quicknear.
@@ -812,6 +818,8 @@ understand "told lot" as a mistake ("[if cross orc is in Toll Lot]The cross orc 
 understand "ufo f u" and "ufo fu" and "ufofu" as a mistake ("You feel [one of]a moment of annoyance the UFO dropped something on you[or]a little more anger at the UFO: A UFO MO['] FU moment, if you will[stopping], but it passes. You go on to consider what sort of martial arts the aliens in the UFO know.[mis of 323]") when UFO tofu is quicknear.
 
 chapter Trapeze Part
+
+understand "depiped" and "de piped" as a mistake ("Clever, but you can't get rid of the pipe like that. And you don't need to.") when player is in Trapeze Part.
 
 understand "pole lop" as a mistake ("The pole is compact enough as-is.[mis of 324]") when player has elope pole.
 
