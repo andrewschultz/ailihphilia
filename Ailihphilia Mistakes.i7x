@@ -100,6 +100,8 @@ understand "rife fir" as a mistake ("It's already big enough.[mis of 38]") when 
 
 understand "riff fir" as a mistake ("It's rife enough to block passage west and to provide past sap.[mis of 39]") when player is in Cold Loc.
 
+understand "scold locs" and "scolded locs" as a mistake ("You don't have time for extended arguing, here. You[if Diktat Kid is moot] managed[else]'re trying[end if] to unite Yelpley and Grebeberg.") when player is in Cold Loc.
+
 understand "spud ups" as a mistake ("The Spur Ups don't become potatoes or French fries or whatever.[mis of 40]") when player has spur ups.
 
 understand "spue ups" as a mistake ("The Spur Ups fail to spit anything out.[mis of 41]") when player has spur ups.
@@ -118,15 +120,15 @@ understand "deli filed" as a mistake ("You are not a government bureaucrat.[mis 
 
 understand "nato tan" as a mistake ("No alliance of nations appears to save the day. Guess it's just you.[mis of 383]") when Nat's Tan is quicknear.
 
+understand "smeggems" as a mistake ("Smuggums isn't THAT insufferable. You don't want to MAKE Smuggums that insufferable.") when player is in Deft Fed and Sniffins-reintro is true.
+
 understand "stan gnats" as a mistake ("Clever, but nobody's a fan of gnats[if player has Nat's Tan]. You did what you could to get it[else]focus on what to do with Nat's[end if].[mis of 377]") when Nat's Tan is quicknear.
 
 understand "stan nats" and "stan nat's" as a mistake ("Well, Nat's must have its stans, but you don't want to be one.[mis of 47]") when Nat's Tan is quicknear.
 
 understand "stank nats" and "stank nat's" as a mistake ("Yes, it's pretty awful.[mis of 48]") when Nat's Tan is quicknear.
 
-understand "tang nat" as a mistake ("It's probably already too tangy.[mis of 49]") when Nat's Tan is quicknear.
-
-understand "tang nat" as a mistake ("The orange-ish goop fails to turn into orange-ish powder.[mis of 384]") when Nat's Tan is quicknear.
+understand "tang nat" as a mistake ("The orange-ish goop fails to turn into orange-ish drink-mix powder.[mis of 384]") when Nat's Tan is quicknear.
 
 understand "tank nat" as a mistake ("No, even a small amount of Nat's is enough.[mis of 50]") when Nat's Tan is quicknear.
 
@@ -276,6 +278,8 @@ to decide whether either-sac:
 	if cassettes sac is quicknear or player has cash sac, yes;
 	no;
 
+understand "casava sac" as a mistke ("You are hungry for adventure, not phyiscally hungry.") when either-sac.
+
 understand "case sac" as a mistake ("You look extra carefully at the sac. No, no secret compartments.[mis of 109]") when either-sac.
 
 understand "cast sac" as a mistake ("No need to fling stuff around, and no need for magic, either.[mis of 110]") when either-sac.
@@ -377,7 +381,7 @@ understand "fled elf" and "fled" as a mistake("[elf-note]The elf will be, once y
 
 understand "fleece elf" and "fleece" as a mistake("[elf-note]There is much more fortune and glory in adventure! It's the cap you want to concentrate on.[mis of 150]") when Flee Elf is quicknear.
 
-understand "flem elf" and "fled" as a mistake("[elf-note]The elf coughs ickily and quickly lists pros and cons of whether words should by pronounced phonetically.[mis of 151]") when Flee Elf is quicknear.
+understand "flem elf" and "flem" as a mistake("[elf-note]The elf coughs ickily and quickly lists pros and cons of whether words should by pronounced phonetically.[mis of 151]") when Flee Elf is quicknear.
 
 understand "flen elf" and "flen" as a mistake("[elf-note]Dry ketchup is gross. Besides, the elf is one of the good guys.[mis of 152]") when Flee Elf is quicknear.
 
@@ -667,6 +671,8 @@ understand "gal blag" as a mistake ("You don't need to steal the flag from Ms. I
 
 understand "gal slag" as a mistake ("You managed to annoy Ms. Ism enough that she lashes out and conks you with a mortal blow with the Gal Flag.[etg][mis of 270]") when Ms Ism is quicknear.
 
+understand "ms fsm" as a mistake ("Ms. Ism does not grow tentacles and form a Flying Spaghetti Monster.") when Ms Ism is quicknear.
+
 understand "sworn rows" and "swore rows" as a mistake ("The sword rows are inanimate and neutral. Unless you get too close to them.[mis of 271]") when sword rows are quicknear.
 
 section yard ray misuse
@@ -908,9 +914,9 @@ understand "wonk now" as a mistake ("The wonk seems in no hurry to do anything.[
 
 chapter Yawn Way
 
-understand "yaw away" as a mistake ("Well, you can go pretty much any way, and you probably don't want [Yawn Way] to tilt.") when player is in Yawn Way.
-
 understand "way aw" as a mistake ("You take a moment to feel bummed about how quiet it is here.[mis of 368]") when player is in Yawn Way.
+
+understand "yaw away" as a mistake ("Well, you can go pretty much any way, and you probably don't want [Yawn Way] to tilt.") when player is in Yawn Way.
 
 understand "yawp way" and "yawl way" as a mistake ("It's still quiet here.[mis of 369]") when player is in Yawn Way.
 

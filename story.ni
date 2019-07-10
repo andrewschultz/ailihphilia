@@ -1,4 +1,4 @@
-"Ailihphilia" by "N. Y. Llewellyn"
+"Ailihphilia" by "N. Y. Llewellyn and Sir Apollo Paris"
 
 [blurb for comp = Fit IF: A *GASP* SAGA]
 
@@ -253,40 +253,40 @@ Include (-
       'l//':   print "look";
       'x//':   print "examine";
       'z//':   print "wait";
-	 'about':  print "see info about the game";
-	 'aid': "ask for AID";
-	 'balm lab', 'balmlab':  print "change a lab";
-	 'boob', 'pap', 'poop': print "swear palindromically";
-	 'credits': print "see the credits";
-	 'dial aid': "dial AID";
-	 'deep speed', 'deepspeed':  print "deep-speed through the game";
-	 'dev ed', 'deved':  print "read about development with DEV ED/DEVED";
-	 'epi wipe', 'epiwipe':  print "wipe (epically) records of what you've examined";
-	 'grammar g':  print "toggle KAOS Oak grammar";
-	 't', 'greet', 'ta', 'talk': print "talk to";
+	'about':  print "see info about the game";
+	'aid': "ask for AID";
+	'balm lab', 'balmlab':  print "change a lab";
+	'boob', 'pap', 'poop': print "swear palindromically";
+	'credits': print "see the credits";
+	'dial aid': "dial AID";
+	'deep speed', 'deepspeed':  print "deep-speed through the game";
+	'dev ed', 'deved':  print "read about development with DEV ED/DEVED";
+	'epi wipe', 'epiwipe':  print "wipe (epically) records of what you've examined";
+	'grammar g':  print "toggle KAOS Oak grammar";
+	't', 'greet', 'ta', 'talk': print "talk to";
       'gt', 'go to', 'goto':   print "go to";
-	 'help':  print "ask for HELP";
-	 'love vol', 'lo vol', 'lovol', 'lovevol':  print "tweak the pact cap";
-	 'niwin':  print "list game warping actions with NIWIN";
-	 'map':  print "look at the MAP";
-	 'mem':  print "MEMory recall some things";
-	 'meta':  print "read META commands";
-	 'pace cap', 'pacy cap':  print "toggle the pack cap";
-	 'pack cap':  print "pick up the pack cap";
-	 'puffup':  print "puff up";
-	 'pullup':  print "pull up";
+	'help':  print "ask for HELP";
+	'love vol', 'lo vol', 'lovol', 'lovevol':  print "tweak the pact cap";
+	'niwin':  print "list game warping actions with NIWIN";
+	'map':  print "look at the MAP";
+	'mem':  print "MEMory recall some things";
+	'meta':  print "read META commands";
+	'pace cap', 'pacy cap':  print "toggle the pack cap";
+	'pack cap':  print "pick up the pack cap";
+	'puffup':  print "puff up";
+	'pullup':  print "pull up";
       'rad':   print "scan with the radar";
       'rei':   print "put in the reifier";
       'rot':   print "put in the rotator";
       'rev':   print "put in the reviver";
-	 'sce recs', 'scerecs':  print "see recommended unexamined scenery";
-	 'shuttuhs':  print "toggle shuttuhs/shutters";
-	 'stats':  print "get stats/the score";
+	'sce recs', 'scerecs':  print "see recommended unexamined scenery";
+	'shuttuhs':  print "toggle shuttuhs/shutters";
+	'stats':  print "get stats/the score";
       'tip it', 'tipit': print "tip off one game progress activity";
-	 'v//', 'verbs', 'verb':  print "see basic verbs";
+	'v//', 'verbs', 'verb':  print "see basic verbs";
       'wordrow', 'wornrow', 'workrow', 'worn row', 'work row', 'word row': print "twiddle Worn Row";
       'yakokay', 'yak okay': print "tell the kayo yak OKAY";
-	 'xyzzy', 'plugh': print "say a silly spell";
+	'xyzzy', 'plugh': print "say a silly spell";
       default: rfalse;
     }
     rtrue;
@@ -748,7 +748,7 @@ when play begins (this is the begin ailihphilia for reals rule):
 	if the player yes-consents:
 		say "'Mind Nim?' You shrug. 'Put it up.' You win several games in a row, because you looked up the winning strategy on the Internet after it confused you. 'Hanoi? On, ah!' the Flee Elf says. You quickly shuffle five-high towers. Then 'Is reversi...?'";
 		say "After your fifth win in a row, the Flee Elf yells 'GRAAAARG!' You stumble back and fall to the ground.[wfak]";
-		say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Ares[']s Era, Raw Level War, Base Sab, (Wo)Men O['] Venom (Ow), Dragons O['] Snogard or Mista-T Sim. Mega-Tag [']Em?'[wfak]";
+		say "The Flee Elf gives a mournful headshake. 'Lame? Mal. Not physical enough for Ares[']s Era, Raw Level War, Rebus: Uber, Base Sab, (Wo)Men O['] Venom (Ow), Dragons O['] Snogard or Mista-T Sim. Mega-Tag [']Em?'[wfak]";
 		say "You chase the Flee Elf around a few minutes, failing to catch it. '[']S poor. Oops!' The Flee Elf thinks for a minute. '[Fun Enuf] is open.'[wfak]";
 	else:
 		say "After more tedious palindrome riffing, the Flee Elf deems you most suitable (or least unsuitable) for the relatively obscure bunker called [Fun Enuf].[wfak]";
@@ -4648,7 +4648,7 @@ understand "versus" and "versus rev" as verses rev.
 
 the Verses Rev wears the Par Wrap.
 
-the Par Wrap is peripheral. description is "The Par Wrap is nothing special, but the Verses Rev is the sort of person who's stridently versus Certain Immoral Things, so they'd want to make sure any game they were in mentioned they were clothed.[paragraph break]I decided to respect that, but still, I'm hoping you lay a most righteous, if largely metaphorical, smackdown on the the Rev.".
+the Par Wrap is peripheral. description is "The Par Wrap is nothing special, but the Verses Rev is the sort of person who's stridently versus Certain Immoral Things, so they'd want to make sure any game they were in mentioned they were clothed.[paragraph break]I decided to respect that, but still, I'm hoping you lay a most righteous, if largely metaphorical, smackdown on the the Rev.[paragraph break]Also, VERY REV is stitched into it, because of course.".
 
 the Verses Rev carries the part strap.
 
@@ -4869,6 +4869,8 @@ the Gulf Lug is a person in Flu Gulf. "The Gulf Lug stands here, bent partially 
 chapter cash sac
 
 the cash sac is a thing. description is "It's labeled Mt. ATM and full of currency--currency which you don't know whether you can spend anywhere. Perhaps it was once Cassini's, but there's no way to tell."
+
+after examining cash sac for the first time: say "[whose-sac].";
 
 chapter scorn rocs
 
@@ -5424,11 +5426,15 @@ the go fog is peripheral scenery in Trial Lair. understand "gofog" and "go-fog" 
 
 book Motto Bottom
 
-Motto Bottom is east of Lair Trial. It is in Grebeberg. "A be-web blocks passage every way except back west."
+Motto Bottom is east of Lair Trial. It is in Grebeberg. "A be-web blocks passage every way except back west. There's also a tips pit you don't want to fall into."
 
 understand "motto botto" and "botto" as Motto Bottom when Motto Bottom is visited.
 
 check going nowhere in Motto Bottom: say "The Be-Web is full of wisdom on just existing happily and doing small meaningful everyday nice things for their own sake, but you're in an adventure right now. That's useful for after this whole mess, but right now, you can really only go back west." instead;
+
+chapter tips pit
+
+the tips pit is peripheral scenetry in motto bottom. understand "tips pit" and "tip pit" and "tipspit" as tips pit. "The tips pit is--man, it's deep. Well, physically, at least. Maybe there's some life advice down at the bottom, but to get there you'd probably have to fall, and you wouldn't have much life left."
 
 chapter be web
 
@@ -7557,6 +7563,10 @@ check going nowhere in Dopy Pod: say "Maybe there's a do-prefer pod somewhere, b
 chapter cassettes sac
 
 the cassettes sac is a semiperipheral thing in Dopy Pod. "A rather large cassettes sac sits here. It's too dirty to pick up.". description is "Phew! It's too dirty to look at too closely."
+
+report taking cassettes sac: say "[whose-sac].";
+
+to say whose-sac: say "You wonder who owned it before. Perhaps it was [one of]Cassini[or]Cassaza[in random order]'s Sac, though that doesn't really matter"
 
 understand "casette/casete/cassette/cassetes sac" and "casette/casete/cassette/cassetes" as cassettes sac. [1 is technically not an anagram but it's a plausible misspelling, so we should allow it.]
 
