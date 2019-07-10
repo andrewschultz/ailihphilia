@@ -21,6 +21,7 @@ twice = defaultdict(bool)
 on_off = [ "off", "on" ]
 
 # options
+copy_double_comments = False
 notes_file_order = False
 notes_file_reverse = False
 modify_notes = True
@@ -45,6 +46,28 @@ notes_array = []
 
 # variables
 colon_string = ""
+
+def copy_to_backup(pro):
+    notes_in = os.path.join(i7.proj2dir(pro), "notes.txt")
+    notes_out = os.path.join(i7.proj2dir(pro), "notes-old.txt")
+    notes_temp = os.path.join(i7.proj2dir(pro), "notes-temp.txt")
+    no = open(notes_out, "a")
+    nt = open(notes_temp, "w")
+    got_one = 0
+    with open(notes_in) as file:
+        for (line_count, line) in enumerate(file, 1):
+            if line.startswith("##"):
+                got_one += 1
+                no.write(line)
+            else: nt.write(line)
+    no.close()
+    nt.close()
+    if got_one:
+        print(got_one, "lines zapped from notes.")
+        copy(notes_temp, notes_in)
+    else:
+        print("No ##'s found")
+    os.remove(notes_temp)
 
 def notes_file_sort(x):
     y = re.sub(".*Notes line ", "", x, 0, re.IGNORECASE)
@@ -319,6 +342,8 @@ while count < len(sys.argv):
         twice_okay = False
     if l == '2' or l == '-2':
         twice_okay = True
+    elif l == 'cc':
+        copy_double_comments = True
     elif l == 'l':
         launch_after = True
     elif l == 'ln' or l == 'nl':
@@ -387,6 +412,10 @@ while count < len(sys.argv):
         print("Unknown option", l)
         usage()
     count += 1
+
+if copy_double_comments:
+    copy_to_backup("ailihphilia")
+    sys.exit()
 
 if do_detail:
     check_detail_notes("ailihphilia")
