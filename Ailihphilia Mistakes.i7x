@@ -14,6 +14,8 @@ definition: a thing (called mt) is quicknear:
 
 [todo: (programming exercise) write script that can automatically change when player is in x and (y) is in x to when (y) is quicknear)]
 
+to say no-oronyms: say "Oronyms are cool, but they aren't part of this game"
+
 chapter Apse Spa
 
 to decide whether spa-ish:
@@ -61,13 +63,13 @@ understand "part trap" as a mistake ("[if player has party trap]That'd ruin it[e
 
 understand "trad art" as a mistake ("You need something practical and forward-thinking for adventure. Traditional art would not do that.[mis of 18]") when trap art is quicknear.
 
+understand "trade dart" as a mistake ("[no-oronyms].") whem player is in Art Xtra and el doodle is not off-stage.
+
 understand "trak art" as a mistake ("You don't need trains or anything right now.[mis of 19]") when trap art is quicknear.
 
 understand "tram art" as a mistake ("Public transport is the least of Grebeberg/Yelpley's issues at the moment.[mis of 20]") when trap art is quicknear.
 
 understand "tray art" as a mistake ("There is no restaurant nearby.[mis of 21]") when trap art is quicknear.
-
-understand "trade dart" as a mistake ("Oronyms are cool, but they aren't part of this game.") whem player is in Art Xtra and el doodle is not off-stage.
 
 chapter Cold Loc
 
@@ -187,13 +189,17 @@ understand "pilf lip" as a mistake ("You don't need to take the pill lip like yo
 
 understand "pod op" as a mistake ("But what sort of op?[mis of 68]") when player is in Dopy Pod.
 
+understand "xanax" as a mistake ("No, any medicine in this game is for physical ills.") when demo med is quicknear or gulf lug is quicknear or Bond Nob is quicknear.
+
 chapter Drawl Ward
 
 understand "bone nob" as a mistake ("Out of your league.[paragraph break]I mean, the Bond Nob has an active social life that revolves around bars, and you ... well, you're just a text adventure. That's barely a step above people who program text adventures![mis of 69]") when Bond Nob is quicknear.
 
 understand "bong nob" as a mistake ("The Bond Nob probably knows someone but prefers alcohol.[mis of 70]") when Bond Nob is quicknear.
 
-understand "bonk nob" as a mistake ("That'd let you get west ... until the nob woke up and called a few friends.[mis of 71]") when Bond Nob is quicknear.
+understand "bonk nob" as a mistake ("That'd let you get west ... until the nob woke up and called a few less-sick friends.[mis of 71]") when Bond Nob is quicknear.
+
+understand "bono nob" as a mistake ("The Bond Nob blinks but still hasn't found what they're looking for. Like, er, a cure for their condition. You haven't, either. Hint, hint.") when Bond Nob is quicknear.
 
 understand "bony nob" as a mistake ("The Bond Nob's body weight is not an important issue, here.[mis of 72]") when Bond Nob is quicknear.
 
@@ -211,11 +217,11 @@ understand "dump mud" as a mistake ("It's already kind of dumped here[if poo coo
 
 understand "gnu bung" as a mistake ("There's no way to put the toothpaste back in the tube, as it were.[mis of 75]") when y-poopy.
 
-understand "gnu ng" as a mistake ("It won't do to chastise the gnu now. What's done is done.") when y-poopy.
-
 understand "gnu hung" as a mistake ("Uggh. It's good you're in a text adventure, I guess.[mis of 76]") when y-poopy.
 
 understand "gnu lung" as a mistake ("The gnu dung smells bad enough without dropping more internal organs into the mix.[mis of 77]") when y-poopy.
+
+understand "gnu ng" as a mistake ("It won't do to chastise the gnu now. What's done is done.") when y-poopy.
 
 understand "gnu rung" as a mistake ("You want to move west from here, not up.[mis of 78]") when y-poopy.
 
@@ -289,7 +295,7 @@ to decide whether either-sac:
 	if cassettes sac is quicknear or player has cash sac, yes;
 	no;
 
-understand "casava sac" as a mistke ("You are hungry for adventure, not phyiscally hungry.") when either-sac.
+understand "casaba sac" and "casava sac" as a mistke ("You are hungry for adventure, not phyiscally hungry.") when either-sac.
 
 understand "case sac" as a mistake ("You look extra carefully at the sac. No, no secret compartments.[mis of 109]") when either-sac.
 
@@ -418,7 +424,9 @@ chapter Gross Org
 
 understand "bra garb" as a mistake ("I've tried to keep this game gender neutral.[mis of 156]") when brag garb is quicknear.
 
-understand "de ned" and dened" as a mistake ("It's not that easy to get rid of Ned. Okay, it's almost that easy, but you can't just vanish him.") when Ned is quicknear.
+understand "de ned" and "dened" as a mistake ("It's not that easy to get rid of Ned. Okay, it's almost that easy, but you can't just vanish him.") when Ned is quicknear.
+
+understand "den ed" as a mistake ("There isn't much to learn about Ned's Den, and you don't want to bring in someone named Ed.") when player is in Gross Org.
 
 understand "den ozoned" as a mistake ("You smell cut grass for a second.[mis of 157]") when player is in Gross Org and Ned is moot.
 
@@ -451,6 +459,8 @@ understand "calk lac" as a mistake ("It is not leaking.[mis of 168]") when playe
 understand "call lac" as a mistake ("It does not respond.[mis of 169]") when player is in Lac Oft Focal.
 
 understand "calm lac" as a mistake ("It is calm enough.[mis of 170]") when player is in Lac Oft Focal.
+
+understand "k no wonk" as a mistake ("The wonk doesn't need snarky smackdowns.") when Known Wonk is quicknear.
 
 section moor broom
 
@@ -555,6 +565,8 @@ understand "poo soop" as a mistake ("Good thing this isn't a cooking sim.[mis of
 understand "poo woop" as a mistake ("How or why it excites you, I don't want to know.[mis of 210]") when poo coop is quicknear.
 
 chapter My Gym
+
+understand "bull u b" and "bum u b" and "bud u b" and "bux u b" and "buy u b" and "bus u b" and "buzz u b" and "bug u b" and "butt u b" and "busks u b" and "busts u b" as a mistake ("The Buff-U-B is unimportant, but yes, there are many other things it could be.") when Buff-U-B is quicknear.
 
 understand "eva Dave" as a mistake ("Dave isn't distracted by women or slang.[mis of 211]") when Dave is quicknear.
 
@@ -692,6 +704,10 @@ understand "ms fsm" as a mistake ("Ms. Ism does not grow tentacles and form a Fl
 
 understand "sworn rows" and "swore rows" as a mistake ("The sword rows are inanimate and neutral. Unless you get too close to them.[mis of 271]") when sword rows are quicknear.
 
+understand "yar dray" as a mistake ("[no-oronyms].") when player has yard ray.
+
+understand "yar xray" as a mistake ("The yard ray is powerful enough as-is.") when player has yard ray.
+
 section yard ray misuse
 
 understand "yar gray" as a mistake ("Quite the opposite! The yard ray is there to bring light back![mis of 272]") when player has yard ray.
@@ -764,9 +780,9 @@ to decide whether got-ore:
 	if player has ore zero or player has eroded ore, yes;
 	no;
 
-understand "ore cicero" as a mistake ("The ore fails to acquire oratorical powers.") when got-ore.
-
 understand "eros ore" as a mistake ("I don't even want to know what you're trying to do, there.[mis of 296]") when got-ore.
+
+understand "ore cicero" as a mistake ("The ore fails to acquire oratorical powers.") when got-ore.
 
 understand "ore dero" as a mistake ("The ore can do more than just create some loafer with nothing better to do than play (or write) silly computer games. It can create something for social good![mis of 297]") when got-ore.
 
@@ -778,13 +794,13 @@ understand "ore torero" as a mistake ("The ore fails to jump out of your hands.[
 
 chapter Swept Pews
 
-understand "nun" as a mistake ("Alas, you have missed the mass (a.m.) to see a religious leader.") when player is in Swept Pews.
-
 understand "fra barf" as a mistake ("Don't dirty up the pews![mis of 301]") when player is in Swept Pews.
 
 understand "fra zarf" as a mistake ("This would send you on a long journey to Hadean Lands. One you might enjoy so much, you'll forget about Yelpley![mis of 302]") when player is in Swept Pews.
 
 understand "liar frail" and "liar trail" as a mistake ("The grail remains in your way to the south. But it was worth a try.[mis of 303]") when liar grail is quicknear.
+
+understand "nun" as a mistake ("Alas, you have missed the mass (a.m.) to see a religious leader.") when player is in Swept Pews.
 
 understand "trod ort" as a mistake ("[if player has troll ort]Nah, you should keep it[else]It looks run-down enough[end if].[mis of 304]") when troll ort is quicknear.
 
@@ -821,6 +837,10 @@ understand "cray arc" as a mistake ("The arc doesn't need to change shape or bec
 understand "croc orc" as a mistake ("The orc is fearsome enough without becoming a total genetic monstrosity.[mis of 317]") when cross orc is quicknear.
 
 understand "cron orc" as a mistake ("The orc doesn't have many daily tasks to check off on.[mis of 318]") when cross orc is quicknear.
+
+understand "crook o orc" as a mistake ("Hey, just because you like being bribed doesn't make you a crook!") when cross orc is quicknear.
+
+understand "croon o orc" as a mistake ("The orc is not artistic.") when cross orc is quicknear.
 
 understand "crop orc" as a mistake ("That attack would boomerang, and not just because this is a palindrome-y game. The orc is lots, lots bigger than you.[paragraph break]Also, there is no farm nearby.[mis of 319]") when cross orc is quicknear.
 
@@ -886,6 +906,10 @@ understand "born Rob" as a mistake ("Rob's regular babble is bad enough. His ful
 understand "dl old" as a mistake ("You dismiss DWELT LEWD as beneath you, also dismissing the urge to make sure it's still beneath you by scanning a few pages.[mis of 335]") when DWELT LEWD is quicknear.
 
 understand "dwell lewd" as a mistake ("DWELT LEWD should NOT be read as an instruction manual. Well, it shouldn't be read at all, really.[mis of 344]") when DWELT LEWD is quicknear.
+
+understand "indeed ni" as a mistake("You nod knowingly at the copious life wisdom enclosed by [NULL ILLUN]. Some of it seems obvious, but then again, there is thinking, and there is doing.") when NULL ILLUN is quicknear.
+
+understand "indexed ni" as a mistake ("You check that [NULL ILLUN] has an index. Like most good nonfiction, it does. Well, if it didn't, that would be kind of illun['].") when NULL ILLUN is quicknear.
 
 understand "pi tip" as a mistake ("4/1 - 4/3 + 4/5 - 4/7 + 4/9 - 4/11 ... wait, no, that's a bit slow.[paragraph break]3 + 4/(2*3*4) - 4/(4*5*6) + 4/(6*7*8) - 4/(8*9*10) + 4/(10*11*12) - 4/(12*13*14) ...[mis of 345]") when pity tip is quicknear.
 
