@@ -16,6 +16,11 @@ definition: a thing (called mt) is quicknear:
 
 chapter Apse Spa
 
+to decide whether spa-ish:
+	if player is in Apse Spa, yes;
+	if spa maps are quicknear, yes;
+	no;
+
 understand "apse vespa" as a mistake ("No wasps come out to sting you.[mis of 1]") when player is in Apse Spa.
 
 understand "esp apse" as a mistake ("You don't see what to do next.[mis of 2]") when player is in Apse Spa.
@@ -28,21 +33,23 @@ understand "saga gas" as a mistake ("You probably need wisdom more than descript
 
 understand "sago gas" as a mistake ("The sage gas fails to become an edible powder. Perhaps it is better as FOOD FOR THE MIND.[mis of 6]") when sage gas is quicknear.
 
-understand "spa caps" as a mistake ("BUT YOU ALREADY HAVE YOUR PACE CAP![mis of 7]") when player is in Apse Spa or spa maps are quicknear.
+understand "spa caps" as a mistake ("BUT YOU ALREADY HAVE YOUR PACE CAP![mis of 7]") when spa-ish.
 
-understand "spa gaps" as a mistake ("[if player is not in Apse Spa]No, you want the maps to be complete[else]The Apse Spa is too sturdy. You don't want it to collapse[end if].[mis of 8]") when player is in Apse Spa or spa maps are quicknear.
+understand "spa faps" as a mistake ("Some spas are for that, but not this one. Ailihphilia's jokes may be cheap, but they're not that crude. I hope.") when spa-ish.
 
-understand "spa laps" as a mistake ("You never need to swim anywhere in this game. Or drink anything.[mis of 9]") when player is in Apse Spa or spa maps are quicknear.
+understand "spa gaps" as a mistake ("[if player is not in Apse Spa]No, you want the maps to be complete[else]The Apse Spa is too sturdy. You don't want it to collapse[end if].[mis of 8]") when spa-ish.
 
-understand "spa naps" as a mistake ("No time to relax! There's adventuring to be had![mis of 10]") when player is in Apse Spa or spa maps are quicknear.
+understand "spa laps" as a mistake ("You never need to swim anywhere in this game. Or drink anything.[mis of 9]") when spa-ish.
 
-understand "spa raps" as a mistake ("The spa is a place of peace. Stop that noise, and get off my lawn![mis of 11]") when player is in Apse Spa or spa maps are quicknear.
+understand "spa naps" as a mistake ("No time to relax! There's adventuring to be had![mis of 10]") when spa-ish.
 
-understand "spa saps" as a mistake ("One day, with the Diktat Kid gone, plenty of people will waste money on a spa, but your job is to get things there.[mis of 12]") when player is in Apse Spa or spa maps are quicknear.
+understand "spa raps" as a mistake ("The spa is a place of peace. Stop that infernal beatboxing, and get off my lawn![mis of 11]") when spa-ish.
 
-understand "spa yaps" as a mistake ("The spa taps reveal no hints or small talk.[mis of 13]") when player is in Apse Spa or spa maps are quicknear.
+understand "spa saps" as a mistake ("One day, with the Diktat Kid gone, plenty of people will waste money on a spa, but your job is to get things there.[mis of 12]") whem spa-ish.
 
-understand "spa zaps" as a mistake ("You don't need a weapon.[mis of 14]") when player is in Apse Spa or spa maps are quicknear.
+understand "spa yaps" as a mistake ("The spa taps reveal no hints or small talk.[mis of 13]") when spa-ish.
+
+understand "spa zaps" as a mistake ("You don't need a weapon.[mis of 14]") when spa-ish.
 
 understand "spat taps" as a mistake ("You don't need to get in an argument with something inanimate right now.[mis of 15]") when player is in Apse Spa or spa maps are quicknear.
 
@@ -59,6 +66,8 @@ understand "trak art" as a mistake ("You don't need trains or anything right now
 understand "tram art" as a mistake ("Public transport is the least of Grebeberg/Yelpley's issues at the moment.[mis of 20]") when trap art is quicknear.
 
 understand "tray art" as a mistake ("There is no restaurant nearby.[mis of 21]") when trap art is quicknear.
+
+understand "trade dart" as a mistake ("Oronyms are cool, but they aren't part of this game.") whem player is in Art Xtra and el doodle is not off-stage.
 
 chapter Cold Loc
 
@@ -201,6 +210,8 @@ to say self-help: say "You whisper some world-appropriate self-help"
 understand "dump mud" as a mistake ("It's already kind of dumped here[if poo coop is not moot]. Maybe you could dump the mud into the rut for passage south, but it might take too long, and you don't have a shovel. You'd need something else[end if].[mis of 74]") when player is in Dumb Mud.
 
 understand "gnu bung" as a mistake ("There's no way to put the toothpaste back in the tube, as it were.[mis of 75]") when y-poopy.
+
+understand "gnu ng" as a mistake ("It won't do to chastise the gnu now. What's done is done.") when y-poopy.
 
 understand "gnu hung" as a mistake ("Uggh. It's good you're in a text adventure, I guess.[mis of 76]") when y-poopy.
 
@@ -405,9 +416,9 @@ understand "tri girt" as a mistake ("[girt-clue].[mis of 155]") when player has 
 
 chapter Gross Org
 
-understand "de ned" and dened" as a mistake ("It's not that easy to get rid of Ned. Okay, it's almost that easy, but you can't just vanish him.") when Ned is quicknear.
-
 understand "bra garb" as a mistake ("I've tried to keep this game gender neutral.[mis of 156]") when brag garb is quicknear.
+
+understand "de ned" and dened" as a mistake ("It's not that easy to get rid of Ned. Okay, it's almost that easy, but you can't just vanish him.") when Ned is quicknear.
 
 understand "den ozoned" as a mistake ("You smell cut grass for a second.[mis of 157]") when player is in Gross Org and Ned is moot.
 
@@ -663,9 +674,9 @@ understand "sci tics" as a mistake ("You laugh at how silly the sci pics are, th
 
 section golf log/dork rod
 
-understand "dorm rod" and "dorm" as a mistake ("You reveal no frat. Arf![mis of 266]") when dork rod is quicknear.
-
 understand "do rod" as a mistake ("You need to do something with the rod, or use something on it.") when dork rod is quicknear.
+
+understand "dorm rod" and "dorm" as a mistake ("You reveal no frat. Arf![mis of 266]") when dork rod is quicknear.
 
 understand "go log" as a mistake ("[unless gold log is quicknear]You contemplate writing your memoirs after leaving Yelpley and Grebeberg[else]It's not particularly magical or motivational. But at least it can't become a go-loco log[end if].[mis of 267]"). [okall]
 
@@ -753,6 +764,8 @@ to decide whether got-ore:
 	if player has ore zero or player has eroded ore, yes;
 	no;
 
+understand "ore cicero" as a mistake ("The ore fails to acquire oratorical powers.") when got-ore.
+
 understand "eros ore" as a mistake ("I don't even want to know what you're trying to do, there.[mis of 296]") when got-ore.
 
 understand "ore dero" as a mistake ("The ore can do more than just create some loafer with nothing better to do than play (or write) silly computer games. It can create something for social good![mis of 297]") when got-ore.
@@ -764,6 +777,8 @@ understand "ore nero" as a mistake ("Maybe that ancient Roman emperor reincarnat
 understand "ore torero" as a mistake ("The ore fails to jump out of your hands.[mis of 300]") when got-ore.
 
 chapter Swept Pews
+
+understand "nun" as a mistake ("Alas, you have missed the mass (a.m.) to see a religious leader.") when player is in Swept Pews.
 
 understand "fra barf" as a mistake ("Don't dirty up the pews![mis of 301]") when player is in Swept Pews.
 
@@ -938,7 +953,7 @@ understand "lint nil" as a mistake ("The Line Nil security system, sadly, can't 
 
 understand "may yam" as a mistake ("You don't want the yam to age. It would probably start to smell bad.[mis of 374]") when mayo yam is quicknear.
 
-understand "mob om" as a mistake ("The bomb mob fails to find inner peace.[mis of 370]") when Bomb Mob is quicknear.
+understand "mob om" as a mistake ("The bomb mob fails to find inner peace. I guess that's not their sort of chant.[mis of 370]") when Bomb Mob is quicknear.
 
 understand "nacelle can" as a mistake ("You don't need a huge engine.[mis of 375]") when player has snack cans.
 
