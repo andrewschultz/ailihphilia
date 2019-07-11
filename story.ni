@@ -7329,7 +7329,7 @@ Yell Alley is east of Evaded Ave. It is in Yelpley. "[if Line Nil is in Yell All
 to say alley-e-block:
 	say "[if navy van is in Yell Alley]navy van... you're not sure[else]bomb mob... so that's[end if]"
 
-check going nowhere in Yell Alley: say "[if navy van is in Yell Alley]It probably gets even seedier behind the navy van[else if bomb mob is in Yell Alley]It probably gets even seedier behind the bomb mob. Best just to go back west[else]Trust me. The Line Nil is protecting you from the perils of No-Trekker-Ton and Dart-strad. You don't want to visit No-Trekker-Ton or Dart-strad[end if]." instead; [?? drag gard / dat-so-stad / not-kook-ton dir-as-arid Grub Burg Not-Dud-Ton Acidica Ya-Boo Bay Trop-Pap-Port ]
+check going nowhere in Yell Alley: say "[if navy van is in Yell Alley]It probably gets even seedier behind the navy van[else if bomb mob is in Yell Alley]It probably gets even seedier behind the bomb mob. Best just to go back west[else]Trust me. The Line Nil is protecting you from the perils of [next-rand-txt of table of bad places]. You don't want to visit [same-rand-txt of table of bad places][end if]." instead;
 
 chapter navy van
 
@@ -7555,7 +7555,7 @@ book Scrap Arcs
 
 Scrap Arcs is east of Drawl Ward. It is in Yelpley. "A girt rig blocks passage every way except back west. Some slate metals are lying around here[if stamp mats are moot]--you've probably already used what you need[else], and if you needed to use a bit, nobody would notice[end if]."
 
-check going nowhere in scrap arcs: say "Maybe there is a dray yard beyond the girt rig, but nothing useful. You can really only go back west." instead;
+check going nowhere in Scrap Arcs: say "Maybe there is a Dray Yard beyond the girt rig, but nothing useful. You can really only go back west." instead;
 
 understand "arc" and "scrap arc" as scrap arcs.
 
@@ -9215,7 +9215,7 @@ more-later is a truth state that varies.
 hint-yet is a truth state that varies.
 
 carry out aiding:
-	if diktat kid is moot, say "You don't really need any more help in general. You can just leave with the X-Ite Tix." instead;
+	if Diktat Kid is moot, say "You don't really need any more help in general. You can just leave with the X-Ite Tix." instead;
 	if being-chased is true:
 		if chase-person is kayo yak:
 			if cap-pace is false, say "[one of]You're not quite fast enough to outrun the yak on your own. An item you have can help.[or]The pact cap.[or]The pact cap can become a PACE cap.[stopping]" instead;

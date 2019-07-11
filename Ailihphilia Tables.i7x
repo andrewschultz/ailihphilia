@@ -6,11 +6,15 @@ volume big random table
 
 part the code
 
+table-freeze is a truth state that varies.
+
 to next-rand (t - a table name):
 	choose row with tabnam of t in table of all randoms;
-	increment tabidx entry;
+	if table-freeze is true:
+		increment tabidx entry;
+		now table-freeze is true;
 	if tabidx entry > number of rows in tabnam entry:
-		if debug-state is true, say "(Cycling) ";
+		if debug-state is true, say "(Cycling--debug note) ";
 		now tabidx entry is 1;
 		if thru-yet entry is 0:
 			now thru-yet entry is 1;
@@ -23,11 +27,16 @@ to next-rand (t - a table name):
 to say next-rand-txt of (t - a table name):
 	next-rand t;
 
+to say same-rand-txt of (t - a table name):
+	now table-freeze is true;
+	next-rand t;
+
 table of all randoms
 tabnam	tabidx	thru-yet	lbrk	desc	cycle-note
 table of altbooks	0	0	false	"extra books in the Tract Cart"	"You've read all the books on the tract cart. Hooray for curiosity!"
 table of attackings	0	0	true	"responses to ATTACK"	--
 table of babel babble	0	0	false	"babbles if you LISTEN in Le Babel"	"the most horrid whisper of all is of the NRA Barn. Ghastly!"
+table of bad places	0	0	false	"places beyond Yell Alley"	--
 table of Bond Nob bars	0	0	false	"bars the Bond Nob visits"	--
 table of burnies	0	0	true	"responses to BURN"	--
 table of businesses	0	0	false	"businesses in Day-Away Ad"	"... and wait! There'll even be a new Deft Fed, owned by a salt-of-the-earth type named Treffert, now that Sniffins/Smuggums totally sold out"
@@ -1057,6 +1066,20 @@ randtxt
 "Tonk? Not."
 "Ye KO? Pokey!"
 "Yob! Boy."
+
+table of bad places
+randtxt
+"No-Trekker-Ton"
+"Dart-Strad"
+"Drag-gard"
+"Dat-So-Stad"
+"Not-Kook-Ton"
+"Dir-as-Arid
+"Grub-Burg"
+"Not-Dud-Ton"
+"Acidica"
+"Ya-Boo Bay"
+"Trop-Pap-Port"
 
 table of burnies [xxburn]
 randtxt
