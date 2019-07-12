@@ -114,7 +114,7 @@ def copy_smart_ideas(pro, hdr_type = "ta"):
                 left_bit = re.sub(":.*", "", line.lower().strip())
                 uh = unique_header(left_bit, markers)
                 if uh:
-                    new_text = re.sub("^[a-zA-Z]+:", "", line.rstrip())
+                    new_text = re.sub("^[a-zA-Z]+:", "", line.rstrip()).strip()
                     if not new_text.startswith("\""): new_text = "\"" + new_text
                     if not new_text.endswith("\""): new_text = new_text + "\""
                     print_this_line = False
@@ -127,26 +127,30 @@ def copy_smart_ideas(pro, hdr_type = "ta"):
             if print_this_line: out_stream.write(line)
     out_stream.close()
     print(uniques, "uniques found to send to header.")
-    print_after_next = False
-    out_stream = open(hdr_tmp, "w", newline="\n")
-    last_blank = False
-    with open(hdr_to_change) as file:
-        for (line_count, line) in enumerate(file, 1):
-            if last_blank and not line.strip(): continue
-            out_stream.write(line)
-            last_blank = not line.strip()
-            if line.startswith("table of") and "\t" not in line:
-                x = re.findall("\[([^\]]*)\]", line)
-                print_after_next = True
-                continue
-            if print_after_next:
-                print_after_next = False
-                if len(x):
-                    for j in x:
-                        if j in to_insert:
-                            out_stream.write(to_insert[j])
-                            to_insert.pop(j)
-    out_stream.close()
+    if uniques:
+        print_after_next = False
+        out_stream = open(hdr_tmp, "w", newline="\n")
+        last_blank = False
+        with open(hdr_to_change) as file:
+            for (line_count, line) in enumerate(file, 1):
+                if last_blank and not line.strip(): continue
+                out_stream.write(line)
+                last_blank = not line.strip()
+                if line.startswith("table of") and "\t" not in line:
+                    x = re.findall("\[([^\]]*)\]", line)
+                    print_after_next = True
+                    continue
+                if print_after_next:
+                    print_after_next = False
+                    if len(x):
+                        for j in x:
+                            if j in to_insert:
+                                out_stream.write(to_insert[j])
+                                to_insert.pop(j)
+        out_stream.close()
+    else:
+        print("No commands to shuffle table rows over.")
+        return
     if len(to_insert):
         print("Uh oh! We didn't clear everything.", to_insert)
     if display_changes:
@@ -167,9 +171,13 @@ def move_old_ideas(pro):
     nt = open(notes_temp, "w")
     got_one = 0
     blanks = 0
+    last_blank = False
     with open(notes_in) as file:
         for (line_count, line) in enumerate(file, 1):
-            if not line.strip: blanks += 1
+            if not line.strip():
+                blanks += 1
+                if last_blank: continue
+            last_blank = not line.strip()
             if line.startswith("##"):
                 got_one += 1
                 no.write(line)
@@ -178,8 +186,10 @@ def move_old_ideas(pro):
     no.close()
     nt.close()
     if got_one:
-        print(got_one, "lines zapped from notes.")
-        copy(notes_temp, notes_in)
+        if display_changes: i7.wm(notes_in, notes_temp)
+        else:
+            print(got_one, "lines zapped from notes.")
+            copy(notes_temp, notes_in)
     else:
         print("No ##'s found")
     os.remove(notes_temp)

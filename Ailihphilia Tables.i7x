@@ -54,7 +54,7 @@ table of random palindrome lastfirst names	0	0	false	"Last/first names in OH WHO
 table of rejected kid sidekicks	0	0	false	"the Diktat Kid's rejected kid sidekicks"	--
 table of Rob droning	0	0	false	"things Rob babbles about"	"Rob takes a moment to shape 'pahs' again."
 table of singstuff	0	0	true	"responses to SINGing"	"Won't be joining OctetCo with that voice."
-table of snooty toon ads	0	0	false	"snooty toons ads"	"At the end is La Usual, because of course."
+table of snooty toon ads	0	0	false	"snooty toons ads"	"At the end is La Usual, because of course. Everything else is doofy food."
 table of swearstuff	0	0	true	"responses to SWEARing"	--
 table of trashy art	0	0	false	"other 'art' [if DWELT LEWD is off-stage]a book hidden in the Tract Cart[else]DWELT LEWD[end if] promotes"	"That's all. Your intellectual (I hope) curiosity sated, you look for more constructive tasks[lewd-true], not worried (again, I hope) you've forgotten the plot of DWELT LEWD by now."
 table of undoings	0	0	true	"UNDOing notifications"	--
@@ -116,6 +116,23 @@ randtxt	can-m	can-f
 
 table of random palindrome firstlast names [xxfirst]
 randtxt
+"Silla Wallis"
+"Ulf Lu"
+"Ilana Li"
+"Si Dodis"
+"adam amada"
+"alie keila"
+"nora daron"
+"Miko Kim"
+"regina niger"
+"Riza Nazir"
+"Riza Wazir"
+"Nino Bonin"
+"Marv Avram"
+"Troy Ort"
+"Lex Axel"
+"Nate Tan"
+"Nedgor Ogden"
 "Abe Keba"
 "Agnus Unga"
 "Alena Panela"
@@ -558,6 +575,31 @@ randtxt
 
 table of random palindrome lastfirst names [xxlast]
 randtxt
+"Marcelle Cram"
+"Amis, Ima"
+"araki kara"
+"Arond, Nora"
+"Bede, Deb"
+"Deere, Reed"
+"Dorf, Rod"
+"Dornan, Rod"
+"Earp, Rae"
+"Grams, Marg"
+"Koor, Brook"
+"Lamar, Amal"
+"Lanagan al"
+"Lau ,Al"
+"LaValla, Val"
+"LaVere, Val"
+"lea yael"
+"lemere mel"
+"Lena, Janel"
+"madan, adam"
+"mahar, graham"
+"Masaya, Sam"
+"mote tom"
+"Okimoto, Tomiko"
+"Diaz, Zaid"
 "Adelizzi, Leda"
 "Adels, Leda"
 "Ader, Freda"
@@ -831,6 +873,23 @@ chapter random businesses
 
 table of businesses [xxbus] [xxbiz]
 biz-name
+"Staffa T's"
+"Set-Arcana Crates"
+"Set, Add Dates"
+"Of Fobs Boffo"
+"Or Fab Afro"
+"We'd Lime Mildew"
+"TekCo Docket"
+"San Ana Bananas"
+"Set-a-Dates"
+"Sleepy-Peels"
+"Sorbo Bros"
+"Sole Helos"
+"Regal Lager"
+"Sporer Ops"
+"Swen's News"
+"Ox.Edu Tuxedo"
+"Li Oil"
 "Baher's Rehab"
 "Colby Bloc"
 "Dairy Myriad"
@@ -882,6 +941,92 @@ part the tables
 
 table of altbooks [xxbooks]
 randtxt
+"emulo-volume"
+"Nae, Meds Demean"
+"Gardened rag"
+"Fer a Ref"
+"deets, teed"
+"Parses: Rap"
+"Recluse's Ulcer"
+"Ted, Ace Cadet"
+"To Grey Ergot"
+"welsh slew"
+"werewolf flower? Ew"
+"To Banana Bot"
+"To Tax a Tot"
+"Mop, Mop, Pompom"
+"Rot, Corpses Proctor"
+"Sag, Emo Omegas"
+"Sir Ever is"
+"Sis Is"
+"So Ate Taos"
+"Rev, Ol['] Plover"
+"Note Tons? No, Teton"
+"Is Eli Miles I"
+"Edu [']til, O, Solitude!"
+"DeWener, Renewed"
+"Not Ruby Borton"
+"Of Nil Info"
+"Soil of Folios"
+"On Ropy Porno"
+"On, Nag, Anno"
+"Or Boohoo, Bro"
+"Or Cleve Velcro"
+"Or Terror Retro"
+"Red Apse Spader"
+"Red Doc, Odder"
+"Red Loss, Older"
+"Rev, I, Liver"
+"So Pace Capos"
+"Sun Off On Us"
+"Tie: Cede Deceit"
+"Til Era Relit"
+"Til Null Unlit"
+"Til Psi Split"
+"GI, Big"
+"Rawer Pre-war"
+"Regular, a Luger"
+"Report, roper"
+"remanded namer"
+"Regress, serger"
+"Relived Eviler"
+"Sarge DeGras"
+"A Rode Fedora"
+"Seres"
+"Semi Times"
+"Sexist Sixes"
+"Sexism Sixes"
+"Six at Axis"
+"skee geeks"
+"Slade Pedals"
+"Sore Duderos"
+"soppy gyppos"
+"Odd-Eyed Do"
+"Set-Age Gates"
+"So Bold :obos"
+"Sow Twos"
+"sub main iambus"
+"TIL Saga, Gaslit"
+"Fer a Ref"
+"Trope Report"
+"Nod? No, London"
+"Doll OD"
+"Cite Me TIC"
+"Pace, Recap"
+" Bronze sez Norb"
+" civil, i, vic"
+"I, a Rum, a Samurai"
+" NW Orb, Brown"
+" EG Never's revenge"
+"Tell a wallet"
+" Lab Inna Cannibal"
+"Tuna, Epee, Peanut"
+"S. Levin Snivels"
+"Yalp, Dr. O: Wordplay"
+"Stutz Tuts"
+"No Sad a Son"
+"Tressa's Assert"
+"To Pass a Pot"
 "Admirer, I'm Da"
 "Aegea"
 "Aiding Nidia"
@@ -1042,6 +1187,7 @@ randtxt
 
 table of attackings [xxatt]
 randtxt
+"Mal Slam"
 "D00d!"
 "Dude! Dud."
 "Fray! Arf!"
@@ -1067,14 +1213,29 @@ randtxt
 "Ye KO? Pokey!"
 "Yob! Boy."
 
-table of bad places
+table of bad places [xxcity] [xxplaces]
 randtxt
+"the Stall-Ats"
+"Nae-Cod Ocean"
+"Par Terre-Trap"
+"Skrump Murks"
+"Rot-Cesses Sector"
+"Rue Carte Traceur"
+"Noted-Rude-Ton"
+"Sort-[']Em Metros"
+"Rat Romp Mortar"
+"Retchohcter"
+"Rob-Rat Arbor"
+"Rue Craft-Farceur"
+"Skeer-creeks"
+"Sliver-evils"
+"not-civic-ton"
 "No-Trekker-Ton"
 "Dart-Strad"
 "Drag-gard"
 "Dat-So-Stad"
 "Not-Kook-Ton"
-"Dir-as-Arid
+"Dir-as-Arid"
 "Grub-Burg"
 "Not-Dud-Ton"
 "Acidica"
@@ -1091,6 +1252,8 @@ randtxt
 
 table of babel babble [xxbab]
 randtxt
+"No-mongo gnomon"
+"an only pylon"
 "App A"
 "the day dyad"
 "Dresser D"
@@ -1110,6 +1273,14 @@ randtxt
 
 table of Bond Nob bars [xxbar] [xxbond]
 randtxt
+"Senora Rone's"
+"Sip-a-Tap-Is"
+"Pink Nip"
+"Sage Vega's"
+"Set-Up Ute's"
+"'Secrets' Terces"
+"Silent Neli's"
+"Sargent Negra's"
 "Bar Crab"
 "Brewer B"
 "Clan ALC"
@@ -1163,6 +1334,11 @@ randtxt
 [this may be related to Yuge battle cries, but the Diktat Kid insults you. The Yuge Guy puffs himself up.]
 table of diktat taunts [xxdik] [xxkid]
 randtxt
+"Nutso! Stun!"
+"Ooh, cad! Achoo!"
+"Pansy! Snap!"
+"Tar! Boohoo, brat!"
+"war dagga[']: draw!"
 "Ahahahahahaha!"
 "At's-a BASTA!"
 "Ax a..."
@@ -1222,6 +1398,9 @@ randtxt
 
 table of Moo Room animals [xxanimals]
 randtxt
+"naw-see swan"
+"a rip-at tapir"
+"flown wolf"
 "any myna"
 "a buck cub"
 "an elk cackle"
@@ -1258,6 +1437,10 @@ randtxt
 
 table of My Gym songs [xxgym] [xxmy] [xxsong]
 randtxt
+"Nose Me, Son"
+"GI Gig"
+"Rep More, Romper"
+"Major O['] JAM"
 "Age Mo' Mega"
 "Ai, Tia"
 "Ail, Emelia"
@@ -1389,6 +1572,8 @@ randtxt
 
 table of noesies [xxno]
 randtxt
+"shoo, 'pooh's."
+"Wah? Thaw"
 "Dash sad."
 "Derided! Ired!"
 "Doomy mood?"
@@ -1441,6 +1626,7 @@ randtxt
 
 table of npc mistakes [xxnpc] [xxtalk]
 randtxt
+"Sub us! Sub us!"
 "Allo? Holla[']"
 "Da Sad"
 "Guv, ug"
@@ -1457,6 +1643,10 @@ randtxt
 
 table of Ms Ism pals [xxism] [xxms]
 randtxt
+"Anno-Donna"
+"Lava Val"
+"Frau Arf"
+"Hammered-er Emma H"
 "Able Melba"
 "Aglow Olga"
 "AI Mia"
@@ -1503,6 +1693,27 @@ randtxt
 
 table of rejected kid sidekicks [xxsid] [xxrej] [xxbad]
 randtxt
+"Wm. BMW"
+"Sirrah Harris"
+"Well Lew"
+"ailey elia"
+"Rex, a Taxer"
+"Rex, Indexed Nixer"
+"Ode-Lots Toledo"
+"Ole Gnat Tangelo"
+"Ole Putz Tupelo"
+"Ref-Lord Rolfer"
+"Reg Naff-Anger"
+"Reg Nab-Anger"
+"Perp Rep"
+"Sr. Edd adders"
+"Rex, Axer"
+"Gnaw (ha) Hwang"
+"Boogles, El Goob"
+"Nervy Vern"
+"Solomon O['] Mo['] Los"
+"Roja Major"
+"Bulgy Glub"
 "Abler Elba"
 "Accorded Rocca"
 "ACDC A"
@@ -1696,6 +1907,34 @@ randtxt
 
 table of Rob droning [xxrob]
 randtxt
+"Site? 'Tis!"
+"Fran? Snarf!"
+"De-QED"
+"Ope['], epo!"
+"Last?! Sal?!"
+"Lie, Neil!"
+"S. P.? Mumps!"
+"Or Camp? Macro!"
+"Or Prefer Pro"
+"Puh, Same Mashup!"
+"Rap? Bust! Subpar!"
+"Rep, mate! Tamper!"
+"Red lo-fi folder?!"
+"GI? Pig!"
+"Put Eli?! Let up!"
+"Ruses? Ur..."
+"rodney: end, or...?"
+"Tom? I vomit"
+"'Yanno' Annoys!"
+"[']S Brittany [']N attribs"
+" Boris, I so rib..."
+"Dias Said"
+"Gnome? Mo' N. G.!"
+"Howard? Raw, oh!"
+"Sir, O! Boris?!"
+"Trav? Rat!"
+"Trope?! Deport!"
+"Boy, BYOB!"
 "Analyticity? Lana!"
 "Bah! Ahab?!"
 "Boone?! Noob!"
@@ -1807,8 +2046,12 @@ randtxt
 "Tune nut!"
 "Yodeled? Oy!"
 
-table of snooty toon ads [xxtoon] [xxads] [xxfood]
+table of snooty toon ads [xxtoon] [xxads] [xxfood] [xxeat]
 randtxt
+"oil olio"
+"soya-mayos"
+"salami, dim, alas"
+"Mahi Ham"
 "Ay, a papaya"
 "dessert stressed"
 "Fee Beef"
@@ -1828,6 +2071,8 @@ randtxt
 
 table of swearstuff [xxswear] [xxcuss]
 randtxt
+"Too coocoo, coot!"
+"Revile?! Deliver"
 "Bad? A dab!"
 "Dammit, I'm mad!"
 "Dark. Rad!"
@@ -1867,6 +2112,9 @@ randtxt
 
 table of undoings [xxundo]
 randtxt
+"Ret. All Later"
+"A ret['], e-cetera"
+"Ret['], sister!"
 "Ay, CYA."
 "Delete-Led!"
 "Did. Error? Redid."
@@ -1897,6 +2145,28 @@ randtxt
 
 table of trashy art [xxart]
 randtxt
+"Lap, Opal"
+"Nae, Wanna Wean"
+"Sado-Codas"
+"vamp-m av"
+"Twats Tawt"
+"Womb Mow"
+"To Prefer Pot"
+"Sedu-Dudes"
+"Sex O['] Foxes"
+"Sex, Eff Exes"
+"Sex-I-Fixes"
+"On Nude? Dunno"
+"One pipe? No"
+"Red, Well, Lewder"
+"Re-Film, Lifer"
+"Re-Mate, Tamer"
+"sameness enemas"
+"Servile Livres"
+"Sorell, Eros"
+"Poon Snoop"
+"vuln-luv"
+"Anal Alana"
 "AM Enema"
 "Burt, Rub"
 "Den O['] BONED"
@@ -2055,8 +2325,10 @@ randtxt
 "Z. Oz"
 "Z. Teetz"
 
-table of waittxt
+table of waittxt [xxwait] [xxzs]
 randtxt
+"Y-go-logy"
+"La! Rut: a natural!"
 "Camp, mac!"
 "Deed, deed, deed!"
 "Def['] faffed!"
@@ -2095,6 +2367,11 @@ randtxt
 
 table of wordy drow laments [xxdrow] [xxwordy]
 randtxt
+"Worth: trow."
+"To Rot"
+"In, Imp, Mini"
+"Nom, Rest, Sermon"
+"Sun: I, MINUS!"
 "Bardo...drab!"
 "Deity...tied!"
 "Die, id!"
@@ -2120,6 +2397,7 @@ randtxt
 
 table of yessies [xxyes]
 randtxt
+"Too Wanna-Woot"
 "Heheh"
 "Hoooooooh!"
 "Hosannas, Oh!"
@@ -2139,6 +2417,12 @@ randtxt
 
 table of yuge baits [xxbait]
 randtxt
+"Warded, raw..."
+"nary ran"
+"Go, Drawn War-Dog"
+"Fie! If..."
+"Res BS'er"
+"Poof! Oop!"
 "Avoided I? Ova[']!"
 "Boo! Goob!"
 "BOO, NOOB!"
@@ -2167,6 +2451,21 @@ randtxt
 
 table of yuge battle cries [xxyuge] [xxguy]
 randtxt
+"Fop of..."
+"Sore toreros!"
+"Opinin[']: I, Po[']"
+"To Old Loot"
+"God, [ale lapdog"
+"Mod? Naff: Fandom"
+"Set aha-hates!"
+"Laff?! Offal!"
+"Nor a Baron!"
+"Ooh, chaff! Ahchoo!"
+"So Rued, Euros"
+"Tar comedy?! Democrat!"
+"Grass?! Arg!"
+"Wobley Elbow!"
+"Spoil, I: Ops!"
 "A-Lago gala!"
 "A-lists? I? La!"
 "Ai! [']Til I, Militia!"

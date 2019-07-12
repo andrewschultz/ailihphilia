@@ -700,7 +700,11 @@ understand "gal blag" as a mistake ("You don't need to steal the flag from Ms. I
 
 understand "gal slag" as a mistake ("You managed to annoy Ms. Ism enough that she lashes out and conks you with a mortal blow with the Gal Flag.[etg][mis of 270]") when Ms Ism is quicknear.
 
+understand "mire rim" as a mistake ("It would be nice to get rid of the mirror rim, but a mire rim would cause problems.") when mirror rim is quicknear.
+
 understand "ms fsm" as a mistake ("Ms. Ism does not grow tentacles and form a Flying Spaghetti Monster.") when Ms Ism is quicknear.
+
+understand "red rod order" as a mistake ("You don't need to worry what the order is, precisely. You have bigger things to do." when player is in Red Roses Order.
 
 understand "sworn rows" and "swore rows" as a mistake ("The sword rows are inanimate and neutral. Unless you get too close to them.[mis of 271]") when sword rows are quicknear.
 
