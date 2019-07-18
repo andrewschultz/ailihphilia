@@ -114,7 +114,7 @@ def copy_smart_ideas(pro, hdr_type = "ta"):
                 left_bit = re.sub(":.*", "", line.lower().strip())
                 uh = unique_header(left_bit, markers)
                 if uh:
-                    new_text = re.sub("^[a-zA-Z]+:", "", line.rstrip()).strip()
+                    new_text = re.sub("^[a-zA-Z0-9]+:", "", line.rstrip()).strip()
                     if not new_text.startswith("\""): new_text = "\"" + new_text
                     if not new_text.endswith("\""): new_text = new_text + "\""
                     print_this_line = False

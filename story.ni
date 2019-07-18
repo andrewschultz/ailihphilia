@@ -1206,7 +1206,7 @@ check listening:
 	if player is in Yack Cay and moor broom is not moot, say "[if Known Wonk is not moot]The Known Wonk is just babbling on about stuff you aren't be interested in[else]The Known Wonk, from inside the Tru-Yurt, complains about how messy it is[end if]." instead;
 	if player is in Uneven U, say "The Code Doc mumbles [next-rand-txt of table of university primary targets] or [next-rand-txt of table of university secondary targets] would make a good colleague.";
 	if player is in Yell Alley and bomb mob is in Yell Alley, try listening to bomb mob instead;
-	if player is in Moo Room, say "[if bees-seen is false]An ominous buzzing. Where is it coming from? Bees sure can hide![else]You think you hear [next-rand-txt of table of Moo Room animals] in addition to the mooing.[end if]" instead;
+	if player is in Moo Room, say "[if bees-seen is false]An ominous buzzing. Where is it coming from? Bees sure can hide![else]You think you hear a too-here hoot: [next-rand-txt of table of Moo Room animals] in addition to the mooing.[end if]" instead;
 	if player is in Le Babel, say "A too hoodoo hoot regarding the apocryphal [next-rand-txt of table of babel babble] swirl in the air." instead;
 	if player is in Sneer Greens and Yuge Guy is moot, say "You still hear the Yuge Guy utter 'Et Tu?' He has a weird sense of loyalty." instead;
 	say "Noise lesion." instead;
@@ -1224,7 +1224,7 @@ bees-seen is a truth state that varies.
 carry out seebeesing:
 	if bees-seen is true, say "You already saw the bees [if player is in Moo Room]here[else]in Moo Room[end if]." instead;
 	if player is not in Moo Room, say "There are no bees to see here." instead;
-	say "You look carefully around until you see what could be causing the soft buzzing. Bees are difficult to see, without too much light, but you focus, and now you know where they are, you're not afraid. With the bees less fearsome, you can zone out their buzzing and hear many different farm-related noises, if you're interested.";
+	say "You look carefully around until you see what could be causing the soft buzzing. Bees are difficult to see, without too much light, but you focus, and now you know where they are, you're not afraid. Why, it's even interesting to taxonomize them! Belle, Boffo, Bozo, Brr, Brewer and Banana.[paragraph break]With the bees less fearsome, you can zone out their buzzing and hear many different farm-related noises, if you're interested.";
 	abide by the LLP rule; [SEE BEES]
 	now bees-seen is true;
 	the rule succeeds;
@@ -4959,7 +4959,7 @@ the ME Totem is scenery in Sneer Greens. description is "It's a more favorable v
 
 chapter Ear Brae
 
-Ear Brae is peripheral scenery in Sneer Greens. description is "Ear Brae seems to be listening for the dumbest things you could say, to amplify to [if yuge guy is moot]whoever will follow [end if]the Yuge Guy."
+Ear Brae is peripheral scenery in Sneer Greens. description is "Ear Brae seems to be listening for the dumbest things you could say, to amplify to [if Yuge Guy is moot]whoever will follow [end if]the Yuge Guy."
 
 chapter smirk rims
 
@@ -5544,7 +5544,7 @@ check entering yurt: say "No, that's where the Known Wonk lives. [if exam axe is
 
 chapter Edits Tide
 
-The Edits Tide is scenery in Yack Cay. "Just looking into the tide, you remember things that confused you in the past and relatively easy ways you found to work around them. A voice from the edits tide seems to say [if spa maps are off-stage]that you could use its proofreading skills[else]it has labored enough for you[end if]."
+The Edits Tide is scenery in Yack Cay. "Just looking into the tide, you remember things that confused you in the past and relatively easy ways you found to work around them. A voice from the edits tide seems to say [if spa maps are off-stage]that you could use its proofreading skills[else]it been enough of a rot-idea editor for you[end if]."
 
 chapter sharp rahs
 
