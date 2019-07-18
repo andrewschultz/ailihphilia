@@ -878,6 +878,7 @@ part the tables
 table of altbooks [xxbooks]
 randtxt
 "Emulo-Volume"
+"Sage Vs. Vegas"
 "Nae, Meds Demean"
 "Gardened Rag"
 "Fer a Ref"
@@ -1092,7 +1093,6 @@ randtxt
 "Roy, a Mayor"
 "Satire Veritas"
 "Seminal Animes"
-"Senile Pipelines"
 "She Hoodoo-Hehs"
 "Sis Emend Nemesis"
 "Slay, O Royals"
@@ -1149,7 +1149,7 @@ randtxt
 "Ye KO? Pokey!"
 "Yob! Boy."
 
-table of babel babble [xxbab]
+table of babel babble [xxbabel]
 randtxt
 "No-Mongo Gnomon"
 "an only pylon" [p]
@@ -1313,7 +1313,6 @@ biz-name
 "Saint Nia's"
 "Sci-Fi C's"
 "Seller Elle's"
-"Senile Pipelines"
 "Shop O['] H's"
 "Skooby Books"
 "SockCos"
@@ -2070,6 +2069,7 @@ table of swearstuff [xxswear] [xxcuss]
 randtxt
 "Too coocoo, coot!"
 "Revile?! Deliver!"
+"Tons-o-Snot!"
 "Bad? A dab!"
 "Dammit, I'm mad!"
 "Dark. Rad!"

@@ -66,15 +66,16 @@ def unique_header(a, b):
     return temp_ret
 
 def show_nonblanks(file_name):
-    total = comments = comments_to_shift = blanks = ideas = 0
+    total = comments = comments_to_shift = blanks = ideas = ready_to = 0
     with open(file_name) as file:
         for (line_count, line) in enumerate(file, 1):
             total += 1
             if line.startswith("##"): comments_to_shift += 1
             elif line.startswith("#"): comments += 1
+            elif re.search("^[a-z0-9]+:[a-z]", line, re.IGNORECASE): ready_to += 1
             elif not line.strip(): blanks += 1
             else: ideas += 1
-    print("Ideas:", ideas, "Comments to shift:", comments_to_shift, "Comments:", comments, "Blanks:", blanks, "Total:", total)
+    print("Ideas:", ideas, "Comments to shift:", comments_to_shift, "Comments:", comments, "Blanks:", blanks, "Ready to shift:", ready_to, "Total:", total)
 
 def copy_smart_ideas(pro, hdr_type = "ta"):
     notes_in = os.path.join(i7.proj2dir(pro), "notes.txt")
@@ -289,6 +290,7 @@ def usage():
     print("-a = count all lines with colons, even commented")
     print("-ls/-sl = list sections, -ln/-nl = don't, default =", on_off[list_sections])
     print("-?/-u = this usage statement")
+    print("-co = copy to old-notes, -cs = copy-smart to tables, -ca = both")
     exit()
 
 def pally(s):
