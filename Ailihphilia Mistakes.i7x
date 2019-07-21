@@ -51,7 +51,7 @@ understand "spa naps" as a mistake ("No time to relax! There's adventuring to be
 
 understand "spa raps" as a mistake ("The spa is a place of peace. Stop that infernal beatboxing, and get off my lawn![mis of 11]") when spa-ish.
 
-understand "spa saps" as a mistake ("One day, with the Diktat Kid gone, plenty of people will waste money on a spa, but your job is to get things there.[mis of 12]") whem spa-ish.
+understand "spa saps" as a mistake ("One day, with the Diktat Kid gone, plenty of people will waste money on a spa, but your job is to get things there.[mis of 12]") when spa-ish.
 
 understand "spa yaps" as a mistake ("The spa taps reveal no hints or small talk.[mis of 13]") when spa-ish.
 
@@ -67,7 +67,7 @@ understand "part trap" as a mistake ("[if player has party trap]That'd ruin it[e
 
 understand "trad art" as a mistake ("You need something practical and forward-thinking for adventure. Traditional art would not do that.[mis of 18]") when trap art is quicknear.
 
-understand "trade dart" as a mistake ("[no-oronyms].") whem player is in Art Xtra and el doodle is not off-stage.
+understand "trade dart" as a mistake ("[no-oronyms].") when player is in Art Xtra and el doodle is not off-stage.
 
 understand "trak art" as a mistake ("You don't need trains or anything right now.[mis of 19]") when trap art is quicknear.
 
@@ -311,7 +311,7 @@ to decide whether either-sac:
 	if cassettes sac is quicknear or player has cash sac, yes;
 	no;
 
-understand "casaba sac" and "casava sac" as a mistke ("You are hungry for adventure, not phyiscally hungry.") when either-sac.
+understand "casaba sac" and "casava sac" as a mistake ("You are hungry for adventure, not phyiscally hungry.") when either-sac.
 
 understand "case sac" as a mistake ("You look extra carefully at the sac. No, no secret compartments.[mis of 109]") when either-sac.
 
@@ -452,6 +452,8 @@ understand "denses Ned" as a mistake ("Maybe if you and ten other people held ha
 
 understand "dent Ned" as a mistake ("Less violence, more subtlety.[mis of 158]") when Ned is quicknear.
 
+understand "eta gate" as a mistake ("The gate reveals no time it will magically spring open. Guess that's up to you.")
+
 understand "gro org" and "grow org" as a mistake ("[one of]This game is just a bunch of dumb jokes and silly wordplay mashed together, and any attempt at personal growth is severely frowned upon. So stop that![or]Your height does not change.[stopping][mis of 160]") when player is in Gross Org.
 
 understand "grob org" as a mistake ("Whoah! It's pretty crazy here, but not crazy enough to open a chess game with g4.[mis of 161]") when player is in Gross Org.
@@ -584,7 +586,7 @@ understand "poo woop" as a mistake ("How or why it excites you, I don't want to 
 
 chapter My Gym
 
-understand "bull u b" and "bum u b" and "bud u b" and "bux u b" and "buy u b" and "bus u b" and "buzz u b" and "bug u b" and "butt u b" and "busks u b" and "busts u b" as a mistake ("The Buff-U-B is unimportant, but yes, there are many other things it could be.") when Buff-U-B is quicknear.
+understand "bull u b" and "bum u b" and "bud u b" and "bux u b" and "buy u b" and "bus u b" and "buzz u b" and "bug u b" and "butt u b" and "busks u b" and "busts u b" as a mistake ("The Buff-U-B is unimportant, but yes, there are many other things it could be.") when Buff U B is quicknear.
 
 understand "eva Dave" as a mistake ("Dave isn't distracted by women or slang.[mis of 211]") when Dave is quicknear.
 
@@ -727,7 +729,7 @@ understand "mire rim" as a mistake ("It would be nice to get rid of the mirror r
 
 understand "ms fsm" as a mistake ("Ms. Ism does not grow tentacles and form a Flying Spaghetti Monster.") when Ms Ism is quicknear.
 
-understand "red rod order" as a mistake ("You don't need to worry what the order is, precisely. You have bigger things to do." when player is in Red Roses Order.
+understand "red rod order" as a mistake ("You don't need to worry what the order is, precisely. You have bigger things to do.") when player is in Red Roses Order.
 
 understand "sworn rows" and "swore rows" as a mistake ("The sword rows are inanimate and neutral. Unless you get too close to them.[mis of 271]") when sword rows are quicknear.
 

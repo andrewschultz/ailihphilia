@@ -156,23 +156,25 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 560. [-40/50 from max_verbs debug]
+use MAX_VERBS of 600. [-40/50 from max_verbs debug]
 
 use MAX_ACTIONS of 210.
 
-use MAX_VERBSPACE of 5300. [-400 from max_verbspace debug]
+use MAX_VERBSPACE of 5800. [-400 from max_verbspace debug]
 
-use MAX_SYMBOLS of 24000.
+use MAX_SYMBOLS of 25000.
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 610. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 650. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 use MAX_ACTIONS of 230. [+10?]
 
-use MAX_VERBSPACE of 5700. [4096 = original max]
+use MAX_VERBSPACE of 6200. [4096 = original max]
 
-use MAX_SYMBOLS of 25000. [-1000 for release]
+use MAX_SYMBOLS of 26000. [-1000 for release]
+
+use MAX_STATIC_DATA of 190000.
 
 chapter room utilities
 
@@ -544,6 +546,7 @@ pre-prio	max-sco	the-rank [pre-prio exact numbers aren't important. It's just th
 0	--	"revitalativer"
 0	--	"rezippuppizer"
 0	--	"cainamaniac"
+0	--	"regen-eger"
 0	--	"rekampmaker"
 0	--	"cilohaholic"
 0	--	"res. opposer"
@@ -630,9 +633,11 @@ LLP-last is a number that varies.
 
 This is the LLP or normal score changes rule:
 	if the score is not the last notified score:
-		say "[bracket][if cur-score of Odd Do > LLP-last]You found [a-verylast] Last Lousy Point![close bracket][else]Your score has just gone up by one point[notify-rank-bump].[if current score is maximum score] NOW NULL UNWON[end if][close bracket][end if][paragraph break]";
+		say "[bracket][if cur-score of Odd Do > LLP-last]You found [a-verylast] Last Lousy Point![close bracket][else]Your score has just gone up by one point[notify-rank-bump].[close bracket][end if][paragraph break]";
 		now the last notified score is the score;
 		now LLP-last is cur-score of Odd Do;
+
+to say is-null-unwon: if score is maximum score, say " NOW NULL UNWON"
 
 prev-rank-row is a number that varies.
 
@@ -1041,7 +1046,7 @@ definition: a thing (called th) is put-to-use:
 
 chapter opening / closing
 
-check closing, say "You never need to close anything in this game." instead;
+check closing: say "You never need to close anything in this game." instead;
 
 check opening: [??]
 	if noun is a book, try examining the noun instead;
@@ -1200,7 +1205,7 @@ check listening:
 	if noun is pact cap, say "The pact cap will make noise when needed[if cap-vol is false], though you may want to turn it back on with [b]LOVE VOL[r] first[end if]." instead;
 	if noun is bomb mob or noun is navy van, say "Yell-ey." instead;
 	if player is in My Gym:
-		say "[if debug-state is true]DEBUG NOTE RANDOM SONG: [end if][if Dave is in My Gym]Behind Dave's grunts, y[else]Y[end if]ou [one of]tolerate[or]imagine your favorite English teacher giving you a D+ for a poem with the lyrics of[or]are inspired to move, but not in the intended way, by[or]can't escape[or]dread a casual conversation containing the lyrics of[or]imagine the marketers earned their keep promoting[or]feel guilty liking the beats but loathing the words of[or]have a great idea what to do next, but it's interrupted by[or]realize you're going to forget something important someday when remembering the lyrics of[or]feel glad it's the low-volume version of[or]hate yourself for not completely loathing[or]hope nobody got paid too much for writing[or]guess the title from the repeated words of[or]hear, and guess some people are inspired by,[in random order] [next-rand-txt of table of My Gym songs]." instead;
+		say "[if debug-state is true]DEBUG NOTE RANDOM SONG: [end if][if Dave is in My Gym]Behind Dave's grunts, y[else]Y[end if]ou [one of]tolerate[or]imagine your favorite English teacher giving you a D+ for a poem with the lyrics of[or]are inspired to move, but not in the intended way, by[or]can't escape[or]dread a casual conversation containing the lyrics of[or]imagine the marketers earned their keep promoting[or]feel guilty liking the beats but loathing the words of[or]have a great idea what to do next, but it's interrupted by[or]realize you're going to forget something important someday when remembering the lyrics of[or]feel glad it's the low-volume version of[or]hate yourself for not completely loathing[or]hope nobody got paid too much for writing[or]guess the title from the repeated words of[or]hear, and guess some people are inspired by,[in random order] [i][next-rand-txt of table of My Gym songs][r]." instead;
 	if player is in Apse Spa, say "Surprisingly, no spa yaps." instead;
 	if player is in Mont Nom, say "The Ark of Okra is almost saying 'Nom on!' or 'Nom! C'mon!' or even 'Tum-Smut!'" instead;
 	if player is in Yack Cay and moor broom is not moot, say "[if Known Wonk is not moot]The Known Wonk is just babbling on about stuff you aren't be interested in[else]The Known Wonk, from inside the Tru-Yurt, complains about how messy it is[end if]." instead;
@@ -2058,7 +2063,7 @@ the block burning rule is not listed in any rulebook.
 
 check burning: next-rand table of burnies instead;
 
-chapter buying:
+chapter buying
 
 understand "buy [something]" as buying.
 
@@ -2101,6 +2106,7 @@ check attacking:
 	if noun is KAOS Oak, say "Would you believe ... you did no damage? Sorry about that, chief." instead;
 	if noun is ergot ogre, say "The ogre could beat you up, but even if it couldn't, it'd do a pox-op or worse on you." instead;
 	if noun is player, say "PvP!" instead;
+	if noun is stinky knits, say "It'd just need a tinkers['] reknit." instead;
 	if noun is Bros' Orb, say "You manage a half-hearted 'Tar, frat,' but -- the Bros['] Orb must have some good." instead;
 	if noun is senile felines, say "You don't want to hear them go RWOWR." instead;
 	if noun is kayo yak, say "Maybe there is a less violent way to motivate the yak to [if being-chased is true]move as you want or need it to[else]get moving[end if]." instead;
@@ -2239,7 +2245,7 @@ chapter silly swearing
 the block swearing mildly rule is not listed in any rulebook.
 the block swearing obscenely rule is not listed in any rulebook.
 
-check swearing mildly, try swearing obscenely instead;
+check swearing mildly: try swearing obscenely instead;
 
 swearies is a number that varies.
 
@@ -2954,7 +2960,7 @@ trap art	reifier	party trap	pre-art-on-reifier rule	--	true	true	false	true	true
 bunk nub	reviver	stock cots	pre-nub-on-reviver rule	--	true	true	false	true	true	true	Yelpley	Worn Row	Worn Row	false	"After some crunching and slurping, the bunk nub is changed to a bunch of much smaller, but more comfortable looking, stock cots. You take them."
 party trap	stark rats	gift fig	pre-trap-on-rats rule	oh-who-to rule	true	true	true	true	true	true	Grebeberg	Seer Trees	Seer Trees	false	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately none of it gets over you. The Seer Trees seem to nod a bit.[paragraph break]THUMP! They left you a present--good thing you were wearing that pact cap, because a book fell on your head. One glance reveals it to be [b]Oh, Who[r]--a phone book for Grebeberg, like [b]Name ME Man[r] for Yelpley.[paragraph break]You also find a gift fig, which you pick up."
 EPOCH COPE	King Nik	Spur Ups	pre-cope-on-nik rule	cold-loc-hint-bump rule	true	true	true	true	true	true	Grebeberg	Cold Loc	Cold Loc	false	"King Nik takes it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris and Crisp Sir C told me I needed to one day from those other books: ERA FARE, Era Care, Era Ware ... and maybe even Era Dare! Thank you! Now I can make sure the Rim Emir and his emir crim and emir grime do not become Emir Prime! I will defeat the Mrifk Firm, too, and be a regal ager! My rule will not be an EGAD age!' He hands you some Spur Ups in gratitude. 'These may not spur you, but they can give you an UP or two, when you are just scared or worried for no reason in general. Now...back to my vidette div. Gotta RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
-stock cots	sleep eels	--	pre-cots-on-eels rule	--	true	true	true	true	true	true	Grebeberg	Ooze Zoo	Ooze Zoo	false	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels follow, for a long nap-span. You can now go south!" [af:puff up/pull up]
+stock cots	sleep eels	--	pre-cots-on-eels rule	--	true	true	true	true	true	true	Grebeberg	Ooze Zoo	Ooze Zoo	false	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels go, err, to-cot, for a long nap-span. You can now go south!" [af:puff up/pull up]
 --	--	--	rev-puff-up rule	post-puff-up rule	true	--	--	true	true	true	Yelpley	Yawn Way	Yawn Way	false	--
 --	--	--	rev-pull-up rule	post-pull-up rule	true	--	--	true	true	true	Yelpley	Emo Dome	Emo Dome	false	--
 wash saw	past sap	--	pre-saw-on-sap rule	sap-loose rule	true	false	false	true	true	true	Grebeberg	Cold Loc	Cold Loc	false	"You hack away at the past sap with the wash saw, first squirting some loosening/thawing liquid. It's tricky, but the saw holds out, and with some perseverance, you're able to twist the sap off the rife fir[if player does not have puce cup]. You don't have anything to put the sap in, but it's there for later[end if]."
@@ -3996,7 +4002,7 @@ this is the you-win rule: [xxwin]
 	say "[line break]You wonder how you'll get back, but then you see the Flee Elf running towards you. 'Tardy, drat! ... 'This, I h/t! [if cur-score of Odd Do is max-score of Odd Do]Decay?! ACED[else]Won enow[end if]!' You ask hesitantly about what's next. You don't want or need people chanting 'Deified! Deified! Deified!', but...[wfak]";
 	say "'The X-ITE TIX lead BACK TO THE REAL WORLD WHICH WILL BE FAR MORE EXCITING AND ILLUMINATING FOR YOUR EXPERIENCE HERE!'[wfak]Well, given all the palindromes you dealt with, you probably should've expected a there-and-back-but-wiser summary. Books like that always kind of annoyed you once you figured the whole schtick out, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand says, 'I'll need the pact cap back. It will go to our new museum.'[paragraph break]'What's it called?' you ask, despite yourself.[wfak]";
 	say "[paragraph break]'Well, there's still argument over We-I-View, Show-Ohs and Trofy Fort.' (Trofee?) The Flee Elf asks which you prefer, and after an awkward silence, you mention they all seem equally appropriate and unforced. Another awkward silence! How palindromic![paragraph break]'Well, anyway. This RIDE-DIR will help you return to your own world. But first, draw an award! Draw an award!'[wfak]";
-	say "It's an x/o box. It doesn't look like much. It's engraved [if current score is maximum score]'Rec, Acer,' [end if]'U Remem'er, U,' 'Done? NOD' and 'U Did U.' You can't even open it! But if it were too obvious and gaudy, how would you explain it back home?[paragraph break]Soon after you blurt out 'Oh, t/y! My, tho['],' arguments begin nearby over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered with stuff you can't fix?[wfak]";
+	say "It's an x/o box. It doesn't look like much. It's engraved [if score is maximum score]'Rec, Acer,' [end if]'U Remem'er, U,' 'Done? NOD' and 'U Did U.' You can't even open it! But if it were too obvious and gaudy, how would you explain it back home?[paragraph break]Soon after you blurt out 'Oh, t/y! My, tho['],' arguments begin nearby over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered with stuff you can't fix?[wfak]";
 	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar or maybe a TekCo Rocket, but it turns out it's just a Back Cab labeled 'Redi-Rider.' (A Toyota would also have worked.) 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You don't have the tech savvy to make a DVD, so to remember this, you'd like ... to jot. What to call your writing? RECAP: ACER, NOW I WON and EL BIBLE are way too pompous, but some brainstorming gives DARN RAD, SOME MEMOS, I SAW [']TWAS I, DRAWN INWARD, WENT NEW, WENDED NEW, SAGAS or SOLOS. Or--no, that's it. ELATE TALE.";
 	end the story finally saying "Roxor! Roxor! Roxor!";
 	sort the table of last lousy points in finord order;
@@ -4084,7 +4090,7 @@ E Divide	"There's no way to dispel the E-Divide, but Ms. Ism isn't the main enem
 Gal Flag	"The Gal Flag seems like a distraction. You need some way to disarm Ms. Ism!"
 Oh Who	"[fonen-of of Oh Who]." [start Seer Trees 2 2]
 x-it stix	"No way you're getting through the X-It Stix."
-KAOS Oak	"The [kaoscaps] is immune to ordinary manipulation. You'll need a powerful contraption indeed to dispel it!" [start Fun Enuf 3 2]
+KAOS Oak	"[if flee elf is in fun enuf]The Flee Elf directs your attention to the cap. 'First things first. The oak can wait for later. Much later.'[else]The [kaoscaps] is immune to ordinary manipulation. You'll need a powerful contraption indeed to dispel it![end if]" [start Fun Enuf 3 2]
 pip	"The pip is just there as a guide to see if you can EYE anything. You don't need to do anything with it."
 Name ME Man	"[fonen-of of Name ME Man]." [start Yawn Way 4 2]
 x y pyx	"The x/y pyx is a map, nothing more, nothing less. You can only [if player does not have x y pyx]take and [end if]examine it."
@@ -4094,7 +4100,7 @@ den ivy vined	"[ivy-no]."
 trap mart rampart	"It's too sturdy to climb or blow up and too wide to go around. But maybe that will just help you focus on where you need to go." [start Ooze Zoo 2 3]
 bad dab	"The bad dab's message seems important, but it's not good for much except examining." [start Worn Row 3 3]
 redness ender	"You don't want to do anything crazy with the Redness Ender. You don't want to go near it. It's dangerous looking. You can picture it ambushing someone who doesn't expect it."
-Buff-U-B	"The Buff-U-B would be useful if you were in the sort of adventure where you needed to worry about strength and constitution and dexterity and so forth, instead of one where you need to guess a few verbs and see what items to mash together."
+Buff U B	"The Buff-U-B would be useful if you were in the sort of adventure where you needed to worry about strength and constitution and dexterity and so forth, instead of one where you need to guess a few verbs and see what items to mash together."
 sto lots	"You don't want to tinker with the STO LOTS more than you have to. It makes carrying stuff easier, and that's good enough."
 decal placed	"The decal placed is just there to advertise the food. It's not critical to the story." [start deli tiled 6 3]
 snooty toons	"The snooty toons are just there for ambience. They're not critical to the story."
@@ -4229,8 +4235,6 @@ to say xit-ave:
 	say ". The [if player has x-ite tix]Tix Exit to the south is waiting for you to enter[else if tix exit is in Fun Enuf]Tix Exit to the south prevents passage back home through Evac Ave[else]Evac Ave is south, if you want to chicken out[end if]"
 
 chapter KAOS Oak
-
-instead of doing something with KAOS Oak when flee elf is in Fun Enuf: say "The Flee Elf directs your attention to the cap. 'First things first. The oak can wait for later. Much later.'" instead;
 
 The KAOS Oak is peripheral scenery in Fun Enuf. "[if flee elf is in Fun Enuf]It's forbiddingly wide[else]It's incredibly sturdy and very wide. You'll need a wild, powerful contraption to deal with it[end if]."
 
@@ -4473,7 +4477,7 @@ carry out paceing:
 	the rule succeeds;
 
 to say walk-law:
-	say "As you flip the cap, a voice booms 'WALK: LAW.' You decide to be, um, civic. Perhaps you need to change it in a slower area"
+	say "As you flip the cap, a voice booms 'Go jog? WALK: LAW.' You decide to be, um, civic. Perhaps you need to change it in a slower area"
 
 to say pace-of:
 	say "[if cap-pace is true]full of deep speed[else]slower[end if]"
@@ -4555,6 +4559,12 @@ check taking tile lit: say "It's sort of embedded into the ground. It looks nice
 chapter elite tile
 
 the elite tile is scenery. "Done? Nod![line break]Nif-T-Fin![line break]Trape! Depart![paragraph break]Wow! Are you off to somewhere even cooler?".
+
+eliter-quip is a truth state that varies.
+
+check examining elite tile when diktat kid is moot:
+	if eliter-quip is false, say "The elite tile has been retiled, eliter. It looks brighter, too: a tile, relit.[paragraph break]";
+	now eliter-quip is true;
 
 check taking elite tile: say "It's a memento, not a souvenir." instead;
 
@@ -4886,7 +4896,7 @@ Flu Gulf is north of Cold Loc. It is in Grebeberg. "North and east, it's, oh, to
 
 chapter mush sum
 
-the mush sum is peripheral scenery in Flu Gulf. "It looks deceptive and swampy. Perhaps it is so deceptive, it is actually gosh-sog. Or not."
+the mush sum is peripheral scenery in Flu Gulf. "It looks deceptive and swampy. Perhaps it is so deceptive, it is actually gosh-sog. Or not. It is too icky to be go-sog, though."
 
 chapter Ebola Lobe
 
@@ -5043,7 +5053,7 @@ Include (-
 	has transparent animate
 -) when defining lie veil.
 
-check talktoing lie veil, say "It's already messing with your mind. It's no relieve-veiler. Probably a good thing it can't talk.";
+check talktoing lie veil: say "It's already messing with your mind. It's no relieve-veiler. Probably a good thing it can't talk.";
 
 book Le Babel
 
@@ -5469,7 +5479,7 @@ check going nowhere in Motto Bottom: say "The Be-Web is full of wisdom on just e
 
 chapter tips pit
 
-the tips pit is peripheral scenetry in Motto Bottom. understand "tips pit" and "tip pit" and "tipspit" as tips pit. "The tips pit is--man, it's deep. Well, physically, at least. Maybe there's some life advice down at the bottom, but to get there you'd probably have to fall, and you wouldn't have much life left."
+the tips pit is peripheral scenery in Motto Bottom. understand "tips pit" and "tip pit" and "tipspit" as tips pit. "The tips pit is--man, it's deep. Well, physically, at least. Maybe there's some life advice down at the bottom, but to get there you'd probably have to fall, and you wouldn't have much life left."
 
 chapter be web
 
@@ -6088,11 +6098,9 @@ carry out evadeing:
 
 chapter Buff-U-B
 
-the Buff-U-B is peripheral scenery in My Gym. printed name is "Buff-U-B". "The Buff-U-B is a complex machine that can, presumably, bulk up any of your muscle groups, not just the stomach ones like (presumably) an Ab Mamba."
+the Buff U B is peripheral scenery in My Gym. printed name is "Buff-U-B". "The Buff-U-B is a complex machine that can, presumably, bulk up any of your muscle groups, not just the stomach ones like (presumably) an Ab Mamba."
 
-understand "large/machine" and "large machine" as buff-u-b when the player is in My Gym.
-
-understand "buff" and "buff u" and "buff u b" and "u b" and "b" as buff-u-b.
+understand "large/machine" and "large machine" as Buff U B when the player is in My Gym.
 
 book Worn Row
 
@@ -6160,7 +6168,7 @@ the bad dab is peripheral scenery in Worn Row. description is "[if Rob is in Wor
 
 understand "wor" and "wor row" as the bad dab when bad dab is quicknear.
 
-check rubbing: #changed from instead rule
+check rubbing: [?? changed from instead rule]
 	if noun is bad dab, say "No. It looks like a clue." instead;
 	say "[no-burt]." instead;
 
@@ -6279,9 +6287,9 @@ to decide which number is machuses:
 		increase retval by useleft of Q;
 	decide on retval;
 
-check switching on a workable, say "You need to USE something with [the noun]." instead;
+check switching on a workable: say "You need to USE something with [the noun]." instead;
 
-check taking a workable, say "Too heavy. But you can USE something on it." instead;
+check taking a workable: say "Too heavy. But you can USE something on it." instead;
 
 the r-shortcut rules are an object-based rulebook.
 
@@ -6346,7 +6354,7 @@ to decide what number is books-in-cart:
 
 the tract cart is scenery. "'GREED-E? ERG!' is emblazoned on it, as a warning you should take only one book at a time. [if number of sober books in Worn Row is 0]You've looted it completely[else]It carries [books-in-cart] book[plur of books-in-cart]: [list of sober books in Worn Row][end if][hint-trace][one of]. It's not actually rideable, though. It just holds stuff[or][stopping]."
 
-check taking the tract cart, say "It's not small enough to fit in your sto-lots, and it's not mobile, either." instead;
+check taking the tract cart: say "It's not small enough to fit in your sto-lots, and it's not mobile, either." instead;
 
 to say hint-trace:
 	say "[if tract-trace is false]. But it also seems a bit too big for just carrying a few books. Maybe it holds a deeper secret[end if]"
@@ -6404,6 +6412,8 @@ to define-author (bk - a book):
 section relate taler
 
 the relate taler is peripheral scenery. description is "Boy! The tract cart was useful, but it's fun even to browse through the covers of the books in the relate taler. One is [next-rand-txt of table of altbooks]."
+
+check taking relate taler: say "Greedy. You don't need to be picking up items now that you've saved Yelpley and Grebeberg." instead;
 
 chapter pity tip
 
@@ -6942,8 +6952,8 @@ check going north in Emo Dome:
 	say "[chase-pass]";
 	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. Still, you try to pass by the DIFF-ID but hear a warn-raw voice: 'Dim ID! Go jog!'[paragraph break]You think, hang? Nah. Maybe you [if player has soot tattoos and player has gate tag]can hustle up an ID--a DIY ID, if you will--from your current possessions, though[else if player has soot tattoos or player has gate tag]could find something to help you get by[end if]." instead;
 	if Bros' Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet. You don't need someone else, but you need something that makes you feel someone else is, well, there." instead;
-	if Diktat Kid is moot, say "The Red Roses Order is being replaced by something more ... civic. The Teem-Civic Meet, to be precise. With occasional bursts of 'Rise to vote, Sir!' and 'Re-file, lifer' and 'Repping, nipper!' they're formulating something called Vogue-U-Gov, which will take more time than you can spend here, even with so many dynamos. Perhaps there should be a 'SLO POLS' sign." instead;
-	if balsa slab is moot, say "With Ms. Ism defeated, the Teem-Civic Meet is going in full swing. They're throwing interesting ideas around, but you don't have anything to add. Lots of folks all 'Yep, ey?'[paragraph break]You've done all you could in the Red Roses Order." instead;
+	if Diktat Kid is moot, say "The Red Roses Order is being replaced by something more ... civic. There are big discussions going on, ones you daren't disturb. The current buzz-phrase is [next-rand-txt of table of political stuff] or something." instead;
+	if balsa slab is moot, say "With Ms. Ism defeated, the Teem-Civic Meet is going in full swing. They're throwing interesting ideas around, but you don't have anything to add.[paragraph break]You've done all you could in the Red Roses Order. You still have a bit of heroing to do elsewheere" instead;
 	say "You make sure your state tats are visible for scanning. They are accepted with a 'YA MAY!'.[paragraph break][if Ms Ism is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the sword rows.[end if]";
 
 chapter DIFF ID
@@ -7128,9 +7138,9 @@ does the player mean denying Ned: it is likely.
 
 carry out denying:
 	if noun is Ned:
-		say "Ned wants to get in an argument or fight, so you get in an argument over whether it's really necessary, and then you say, that wasn't so great, see? He slinks off, defeated.";
+		say "Ned wants to get in an argument or fight, so you get in an argument over whether it's really necessary, and then you say, that wasn't so great, see? He slinks off, defeated. You think, a second too late, you could've shouted 'Ned, de-redden' before feeling guilty thinking of taunting him. Eh, well. He is gone, now.";
 		if take-after-deny is true:
-			say "Without Ned, it seems perfectly safe, if slightly unappealing, to take the stinky knits. So you do.";
+			say "[line break]Without Ned, it seems perfectly safe, if slightly unappealing, to take the stinky knits. So you do.";
 			now player has stinky knits;
 		moot Ned;
 		score-inc; [Yelpley/deny Ned]
@@ -7557,7 +7567,7 @@ chapter birch crib
 
 the birch crib is peripheral scenery in Drawl Ward. "It's a crib in the slang sense, not the baby sense. It looks like a nice place to be, but you couldn't afford it[if player has cash sac], even with the cash sac[end if]. Plus there's no way in, and it's probably somebody's.[paragraph break]Stuff like YA SAY? and YO BOY and HOUSES U?! OH?! are scribbled in there so the Drawl Ward [if Bond Nob is in Drawl Ward]is still[else]would still be[end if] drawl-y with or without the Bond Nob."
 
-instead of taking birch crib, say "It's a whole big house! Anyway, you couldn't do anything with a regular crib."
+check taking birch crib: say "It's a whole big house! Anyway, you couldn't do anything with a regular crib." instead;
 
 book Scrap Arcs
 
