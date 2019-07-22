@@ -4562,7 +4562,7 @@ the elite tile is scenery. "Done? Nod![line break]Nif-T-Fin![line break]Trape! D
 
 eliter-quip is a truth state that varies.
 
-check examining elite tile when diktat kid is moot:
+check examining elite tile when Diktat Kid is moot:
 	if eliter-quip is false, say "The elite tile has been retiled, eliter. It looks brighter, too: a tile, relit.[paragraph break]";
 	now eliter-quip is true;
 
