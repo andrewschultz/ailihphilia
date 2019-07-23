@@ -185,6 +185,8 @@ chapter Dopy Pod
 
 understand "cash sac" as a mistake ("You look extra carefully at the sac. No, no secret compartments.[mis of 60]") when cassettes sac is quicknear and player does not have cash sac.
 
+understand "demi med" as a mistake ("You don't need to split up the demo med.") when demo med is quicknear.
+
 understand "dir rid" as a mistake ("Rm -r is fewer keystrokes.[mis of 61]") when Dirt Rid is quicknear.
 
 understand "dire rid" as a mistake ("Your situation isn't that bad, but it doesn't get any better.[mis of 62]") when Dirt Rid is quicknear.
@@ -454,6 +456,8 @@ understand "dent Ned" as a mistake ("Less violence, more subtlety.[mis of 158]")
 
 understand "eta gate" as a mistake ("The gate reveals no time it will magically spring open. Guess that's up to you.")
 
+understand "gro borg" as a mistake ("You don't need any more adversaries than you have.") when player is in Gross Org.
+
 understand "gro org" and "grow org" as a mistake ("[one of]This game is just a bunch of dumb jokes and silly wordplay mashed together, and any attempt at personal growth is severely frowned upon. So stop that![or]Your height does not change.[stopping][mis of 160]") when player is in Gross Org.
 
 understand "grob org" as a mistake ("Whoah! It's pretty crazy here, but not crazy enough to open a chess game with g4.[mis of 161]") when player is in Gross Org.
@@ -463,6 +467,8 @@ understand "grok org" as a mistake ("You achieve no transcendent consciousness, 
 understand "groo org" as a mistake ("No slavering light-fearing beasts find it worthwhile to punish you for bad spelling.[mis of 163]") when player is in Gross Org.
 
 understand "grot org" as a mistake ("Gross, grot ... same thing.[mis of 164]") when player is in Gross Org.
+
+understand "knit ink" as a mistake ("No, the knits can be rehabilitated.") when stinky knits are quicknear.
 
 understand "Ned eden" as a mistake ("Mythology or Bible thumping may cause other people to flee, but not Ned. It would probably make him madder. Gotta calm him down.[mis of 165]") when Ned is quicknear.
 
