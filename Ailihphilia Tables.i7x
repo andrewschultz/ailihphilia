@@ -1588,6 +1588,20 @@ randtxt
 "Xiara IX"
 "Xiu IX"
 
+table of machines [xxmachines]
+randtxt
+"re-peeper"
+"re-reverer"
+"re-toter"
+"rec-anon-acer"
+"rec artery retracer"
+"recall lacer"
+"red ROFL forder"
+"remanded namer"
+"rotary gyrator"
+"rotative levitator"
+"roting ignitor"
+
 table of Moo Room animals [xxanimals]
 randtxt
 "an align-gila"

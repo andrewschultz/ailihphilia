@@ -6114,7 +6114,7 @@ to say wrow: if row-prog is 2, say ". You could also summon [if Worn Row is work
 to say worn-scen:
 	say "[if redness ender is in Worn Row]not counting a big lumpy Redness Ender that makes Worn Row feel even more worn[else]and with the redness ender gone, you might as well just change things back to Work Row or Word Row"
 
-to say what-machines: say "[if test set is off-stage]A cold and sterile, but safe, place[else if test set is moot]Since you destroyed the test set, it's pretty empty here[else]It's more spacious here with the re*er machines destroyed[end if][if ever-workrow is true and Worn Row is wordy]. You could also summon Word Row back if you wanted[end if]"
+to say what-machines: say "[if test set is off-stage]A cold and sterile, but safe, place[else if test set is moot]Since you destroyed the test set, it's pretty empty here. Not even a [next-rand-txt of table of machines][else]It's more spacious here with the re*er machines destroyed[end if][if ever-workrow is true and Worn Row is wordy]. You could also summon Word Row back if you wanted[end if]"
 
 to say dab-notes:
 	if row-prog >= 3, continue the action;
