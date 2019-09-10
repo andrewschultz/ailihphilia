@@ -44,6 +44,8 @@ Release along with cover art.
 
 include Trivial Niceties by Andrew Schultz.
 
+include Intro Restore Skip by Andrew Schultz.
+
 include Old School Verb Carnage by Andrew Schultz.
 
 include Basic Screen Effects by Emily Short.
@@ -156,7 +158,7 @@ Procedural rule while eating something: ignore the carrying requirements rule.
 
 section compiler constants
 
-use MAX_VERBS of 600. [-40/50 from max_verbs debug]
+use MAX_VERBS of 620. [-40/50 from max_verbs debug]
 
 use MAX_ACTIONS of 210.
 
@@ -166,7 +168,7 @@ use MAX_SYMBOLS of 25000.
 
 section debug compiler globals - not for release
 
-use MAX_VERBS of 650. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
+use MAX_VERBS of 660. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
 
 use MAX_ACTIONS of 230. [+10?]
 
@@ -733,7 +735,7 @@ when play begins (this is the begin ailihphilia for reals rule):
 	now right hand status line is "[if cur-score of mrlp < 10] [end if][cur-score of mrlp]/[max-score of mrlp] [if score < 10] [end if][score]/[if min-win < maximum score][min-win]-[end if][maximum score]";
 	now left hand status line is "[location of player] ([mrlp])[dir-summary]";
 	say "First, would you like to see the introduction (I), restore a previous game (R), or skip the introduction (S)?";
-	intro-restore-skip;
+	anonymously abide by the check-skip-intro rule;
 	now use-custom-screenread is true; [see the Trivial Niceties extension for details. This wipes TN's default generic nag question.]
 	say "Next, are you using a screen reader? Some of Ailihphilia's features, like the text map, don't work well with them.";
 	if the player no-consents, now screenread is true;
@@ -799,7 +801,7 @@ Rule for printing a parser error when the latest parser error is the noun did no
 		the rule succeeds;
 	if the player's command includes "yak" and yak is quicknear:
 		say "[if being-chased is true]The yak blinks. Perhaps a different command would work[else]The yak seems lazy. Maybe it needs to be prodded right, first[end if]." instead;
-	say "The object didn't mix well with the verbin your command. I wish I could give more help, but you're likely trying something more obscure than you need to."
+	say "The object didn't mix well with the verb in your command. I wish I could give more help, but you're likely trying something more obscure than you need to."
 
 Rule for printing a parser error when the latest parser error is the only understood as far as error:
 	let nw be number of words in the player's command - 1;
@@ -807,6 +809,8 @@ Rule for printing a parser error when the latest parser error is the only unders
 		now nw is 6;
 	say "That command seemed like it was longer than it needed to be, or maybe the last word was a typo [one of](e.g. Set O Notes vs. Set o Totes.) [or]. [stopping]You may wish to cut a word or two down. Push 1 to retry [word number 1 in the player's command in upper case][if nw > 1], or a higher number to re-try only the first [nw] words of your command, or 9 to cut off the final word[end if]. Or just push any other key to pass and try another command.";
 	let Q be the chosen letter;
+	if verses rev is touchable and the player's command matches "verb rev", continue the action;
+	if debug-state is true, the rule succeeds;
 	if Q is 57 and nw > 1, now Q is nw + 47; [9 = special case]
 	if Q >= 49 and Q <= 48 + nw: [since it's ascii, 49 = the number 1]
 		now parser error flag is true;
@@ -983,7 +987,7 @@ after reading a command:
 			reject the player's command;
 	if the player's command includes "n i win", try niwining instead;
 	if player is in Le Babel and opossum is in Le Babel and the player's command matches the regular expression "\bpossum\b":
-		say "You feel as though you are misssing something calling the opossum just a possum. Something non-critical, but something nonetheless.";
+		say "You feel as though you are missing something calling the opossum just a possum. Something non-critical, but something nonetheless.";
 
 no-punc-flag is a truth state that varies.
 
@@ -1870,7 +1874,7 @@ carry out shuttuhsing:
 	the rule succeeds;
 
 this is the shuttuhs-after-scoring rule:
-	if shuttuhs is true and location of player is shutted, say "You hear the click of invisible shuttuhs/shutters. You imagine you can escape before they drop."
+	if shuttuhs is true and location of player is shutted, say "You hear the click of invisible shuttuhs/shutters. You imagine you can escape before they drop.[paragraph break]"
 
 section shuttuhs check
 
@@ -2114,6 +2118,7 @@ check attacking:
 	if noun is kayo yak, say "Maybe there is a less violent way to motivate the yak to [if being-chased is true]move as you want or need it to[else]get moving[end if]." instead;
 	if noun is cross orc, say "It's not a Cro Magnon-Am Orc, but it's also not an orc-imp (micro,) so you'd still lose badly." instead;
 	if noun is ME Totem, say "The Yuge Guy, momentarily scared, calls 'Heh! Eh?' once he sees you're too weak to do any REAL damage." instead;
+	if noun is Ms Ism, say "She might become a Smoke-KO Ms. That'd be bad for you." instead;
 	if player is in Dirge Grid:
 		if noun is a person, say "You're up against more than physical force could solve[if player has taboo bat]. Plus, you have two weapons: the taboo bat and the yard ray[end if]." instead;
 		if taboo bat is moot:
@@ -2164,6 +2169,8 @@ the new generic going reject rule is listed before the can't go that way rule in
 
 check exiting: try going outside instead;
 
+the can't exit when not inside anything rule is not listed in any rulebook.
+
 check going (this is the new generic going reject rule): [check going nowhere rules are listed individually by room, so they come first]
 	if noun is outside:
 		if number of viable directions is 1, try going a random viable direction instead;
@@ -2171,7 +2178,7 @@ check going (this is the new generic going reject rule): [check going nowhere ru
 	if noun is inside, say "You don't ever need to use IN in the game. Just the four cardinal directions." instead;
 	if the room noun of location of player is nowhere:
 		let nvi be number of viable directions;
-		say "[chase-pass][if location of player is wally][one of][or]Hall, ah? [in random order]Wall! Aw.[paragraph break][end if]You can [if nvi is 1]only [end if]go [if nvi is 1]back [else if nvi is 3]the other ways: [else if nvi is 2]both [end if][list of viable directions] here[up-down-check]." instead;
+		say "[chase-pass][if location of player is wally][one of][or]Hall, ah? [in random order]Wall! Aw.[paragraph break][end if]You can [if nvi is 1]only[else]still[end if] go [if nvi is 1]back [else if nvi is 3]the other ways: [else if nvi is 2]both [end if][list of viable directions] here[up-down-check]." instead;
 
 check going (this is the reject noncardinal directions rule):
 	if noun is diagonal, say "Diagonal directions aren't used in this game." instead;
@@ -5143,7 +5150,7 @@ after looking in Mont Nom:
 		say "The smells from your [list of carried ingredients] mix[one of] unexpectedly pleasantly[or] pleasantly, again,[stopping] here.";
 	continue the action:
 
-check going nowhere in Mont Nom: say "The Ark of Okra blocks progess any way except back down north." instead;
+check going nowhere in Mont Nom: say "The Ark of Okra blocks progress any way except back down north." instead;
 
 chapter ark of okra
 
@@ -5351,6 +5358,7 @@ book Swamp Maws
 Swamp Maws is west of Dumb Mud. It is in Grebeberg. "A made dam blocks your way west. You can go north, south and east here."
 
 check going in Swamp Maws (this is the check yak speed rule):
+	if noun is west, say "[chase-pass]No point running into the Made Dam." instead;
 	if being-chased is true and cap-pace is false:
 		say "You have to pause to catch your breath. As you do, the kayo yak bumps you! If only you could've found a way to go a bit faster...[paragraph break]";
 		reset-chase;
@@ -5571,7 +5579,9 @@ printed name of Lac Oft Focal is "[if lac-score is 2]Lac Old Local[else]Lac Oft 
 
 understand "old local" and "old/local" and "lac old/local" and "lac old local" as Lac Oft Focal when lac-score is 2.
 
-check going nowhere in Lac Oft Focal: say "'Wade? D'aw,' you think. You can't make it across the calcific lac by yourself[if lac-score is 2], and you don't need to any more[end if]. You can't really expect a bunch of sprats['] tarps to appear." instead;
+check going nowhere in Lac Oft Focal: say "'Wade? D'aw,' you think. You can't make it across the calcific lac by yourself[across-lac][if elope pole is not moot]. You can't really expect a bunch of sprats['] tarps to appear[end if]." instead;
+
+to say across-lac: if elope pole is moot, say ", [if dork rod is moot]and you don't need to any more[else]but maybe there's a way to be allowed into the tao boat[end if]"
 
 to decide which number is lac-score:
 	let temp be 0;
@@ -6957,7 +6967,7 @@ check going north in Emo Dome:
 	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. Still, you try to pass by the DIFF-ID but hear a warn-raw voice: 'Dim ID! Go jog!'[paragraph break]You think, hang? Nah. Maybe you [if player has soot tattoos and player has gate tag]can hustle up an ID--a DIY ID, if you will--from your current possessions, though[else if player has soot tattoos or player has gate tag]could find something to help you get by[end if]." instead;
 	if Bros' Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet. You don't need someone else, but you need something that makes you feel someone else is, well, there." instead;
 	if Diktat Kid is moot, say "The Red Roses Order is being replaced by something more ... civic. There are big discussions going on, ones you daren't disturb. The current buzz-phrase is [next-rand-txt of table of political stuff] or something." instead;
-	if balsa slab is moot, say "With Ms. Ism defeated, the Teem-Civic Meet is going in full swing. They're throwing interesting ideas around, but you don't have anything to add.[paragraph break]You've done all you could in the Red Roses Order. You still have a bit of heroing to do elsewheere" instead;
+	if balsa slab is moot, say "With Ms. Ism defeated, the Teem-Civic Meet is going in full swing. They're throwing interesting ideas around, but you don't have anything to add.[paragraph break]In other words, you've done all you could in the Red Roses Order. You still have a bit of heroing to do elsewhere." instead;
 	say "You make sure your state tats are visible for scanning. They are accepted with a 'YA MAY!'.[paragraph break][if Ms Ism is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the sword rows.[end if]";
 
 chapter DIFF ID
@@ -7053,6 +7063,8 @@ to no-extra-cup-points:
 book Toll Lot
 
 Toll Lot is east of Emo Dome. It is in Yelpley. "[if cross orc is in Toll Lot]While it's easy enough to go back west to the Emo Dome, that cross orc doesn't seem to want to let you go north or south[else]You can go north or south with the cross orc gone or, well, back west, too[end if]. A crag arc rises to the east[if UFO tofu is off-stage]--maybe it is hiding something[end if]."
+
+check going east in Toll Lot: say "You'd crash into the crag arc. [if cross orc is moot]North, south and e[else]E[end if]ast could work, though." instead;
 
 [??snuff funs]
 
@@ -7224,6 +7236,7 @@ carry out standing:
 		score-inc; [Yelpley/stand nat's]
 		now player has Nat's Tan;
 		now Nat's Tan is ordinary;
+		consider the shuttuhs-after-scoring rule;
 	the rule succeeds.
 
 book Evaded Ave
@@ -7351,7 +7364,7 @@ Yell Alley is east of Evaded Ave. It is in Yelpley. "[if Line Nil is in Yell All
 to say alley-e-block:
 	say "[if navy van is in Yell Alley]navy van... you're not sure[else]bomb mob... so that's[end if]"
 
-check going nowhere in Yell Alley: say "[if navy van is in Yell Alley]It probably gets even seedier behind the navy van[else if bomb mob is in Yell Alley]It probably gets even seedier behind the bomb mob. Best just to go back west[else]Trust me. The Line Nil is protecting you from the perils of [next-rand-txt of table of bad places]. You don't want to visit [same-rand-txt of table of bad places][end if]." instead;
+check going nowhere in Yell Alley: say "[if navy van is in Yell Alley]It probably gets even seedier behind the navy van. Maybe you can get rid of the van and find HOW seedy[else if bomb mob is in Yell Alley]It probably gets even seedier behind the bomb mob. Best just to go back west[else]Trust me. The Line Nil is protecting you from the perils of [next-rand-txt of table of bad places]. You don't want to visit [same-rand-txt of table of bad places][end if]." instead;
 
 chapter navy van
 
@@ -7590,7 +7603,7 @@ chapter slate metals
 the slate metals are scenery in Scrap Arcs. "You could probably carve something out of them, with the right implement(s). Maybe not steel fleets--they seems a bit flimsy, which is probably why they wound up here. But something useful for a humbler and less violent task."
 
 check taking slate metals:
-	say "[if stamp mats are moot]You already made something from the slate metals[else]Youmight be able to use part of them to make something, but you couldn't carry ALL the metals, even with your Sto-Lots[end if]." instead;
+	say "[if stamp mats are moot]You already made something from the slate metals[else]You might be able to use part of them to make something, but you couldn't carry ALL the metals, even with your Sto-Lots[end if]." instead;
 
 understand "slate metal" and "metal" as slate metals.
 
