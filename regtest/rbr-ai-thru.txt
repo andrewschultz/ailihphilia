@@ -598,7 +598,7 @@ Invisible shuttuhs, err, shutters block passage west. You must be done in Trapez
 >w
 >w
 >use trap art on stark rats
-Whatever's planned on the trap art might work, but not the trap art itself.
+The plans on the trap art are interesting, but they're only an idea. Whatever they are supposed to make might be effective, though.
 >undo
 >undo
 >undo
@@ -1346,7 +1346,7 @@ Invisible shuttuhs, err, shutters block passage east. You must be done in Scrap 
 
 ==t5
 >use ye key on diff id
-You wave Ye Key in front of the Diff ID. Nothing happens. The engraving on Ye Key seems to match up with what the Diff ID wants to see, but maybe you need something else.
+You wave Ye Key in front of the DIFF ID. Nothing happens. The engraving on Ye Key seems to match up with what the DIFF ID wants to see, but maybe you need something else.
 ==!4
 >w
 >w
@@ -1619,7 +1619,7 @@ by one point
 >use gorge grog on cassettes sac
 That'd clean up the cassettes sac, but it'd probably dissolve it, too.
 >use wash saw on cassettes sac
-The wash saw isn't big enough to clean up the cassettes sac. You need a more powerful cleaner.
+The wash saw doesn't have enough fluid to clean up the cassettes sac. It'd probably cut whatever's in the sac, too. You need a more powerful, dedicated cleaner.
 
 ==t2
 #mistake test for cash sac
@@ -2084,13 +2084,13 @@ The Cave Vac sputters. You may need something more specifically suited to the, u
 >undo
 >purloin dirt rid
 >use dirt rid on gnu dung
-The Dirt Rid is ineffective. You may need something stronger.
+The Dirt Rid is ineffective and too small. You may need something stronger.
 >undo
 >undo
 >use poo coop on lie veil
 The lie veil is only figuratively full of ... oh, wait, this is a family game.
 >use elope pole on lie veil
-The veil resists the pole. You need a more violent implement.
+The veil resists the pole easily. You need a more violent implement.
 >use wash saw on lie veil
 Not even the wash saw could clean off the lie veil. You need something much more brutal.
 
@@ -2141,7 +2141,7 @@ Perhaps someone has, but you don't need to.
 >use elope pole on made dam
 The pole is for navigation, not for vaulting.
 >use wash saw on made dam
-The made dam is much too big to get anywhere. Maybe there's a better way to find what's behind there.
+The made dam is much too big for the saw to get anywhere. Maybe there's a better way to find what's behind there.
 >purloin resale laser
 >use resale laser on made dam
 There might be something behind the dam. But you need to be subtler looking for it.
@@ -2187,12 +2187,12 @@ You don't want to know what sort of carcasses are buried in the swamp.
 You don't need to buy anything in this game, and any store wouldn't sell anything good.
 ===a
 
->use NULL ILLUN on Known Wonk
-by one point
-
 ==t5
 >use el doodle on known wonk
 The Known Wonk looks at El Doodle, thinks, and says "Ugh, sorry, never could decipher these things. No good rules to. Maybe you could use the edits tide, though."
+
+>use NULL ILLUN on Known Wonk
+by one point
 
 >use el doodle on edits tide
 by one point
@@ -2200,7 +2200,7 @@ by one point
 ==t5
 >gonear bro orb
 >use sharp rahs on bro orb
-You feel a shock--perhaps you approached the Bro Orb too eagerly! But it seems you were on the right track.
+You feel a shock--perhaps you approached the Bros' Orb too eagerly! But it seems you were on the right track.
 >undo
 >undo
 
@@ -2433,7 +2433,7 @@ The metals are for a didactic and not an aesthetic purpose.
 As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up. The yak seems weirdly attracted to it.
 >gonear lair trial
 >use troll ort on ergot ogre
-The ergot ogre mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. Perhaps you need a more violent way to dispose of the ogre.
+The ergot ogre mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. Perhaps you need a less coercive way to dispose of the ogre.
 >undo
 >undo
 
@@ -2442,7 +2442,7 @@ The ergot ogre mutters something unrepeatable about prejudiced people who can't 
 ==t5
 >gonear rep popper
 >use enact cane on rep popper
-But that might bust your own rep, since you are the nearest person.
+You need to get the rep popper before you can do anything with it.
 >undo
 >undo
 
@@ -2747,7 +2747,7 @@ King James's orb is a basketball, and that's that.
 
 ===1,2
 >muss opossum
-You found a Last Lousy Point!
+You found the very last Last Lousy Point!
 
 ===a
 >get all
@@ -2918,7 +2918,7 @@ The smirk rims push you back, but you really don't need to do anything with them
 ==t5
 >purloin dna hand
 >use dna hand on yuge guy
-The hand doesn't seem to want to move toward the Yuge Guy.
+The hand doesn't seem to willing or able to move toward the Yuge Guy.
 >undo
 >undo
 >purloin gorge grog
@@ -3002,7 +3002,7 @@ No way! You are locked in mortal combat! Plus, there's really only one thing to 
 
 ==t5
 >use Bro Orb on ms ism
-As you lift the Bro Orb to throw at Ms. Ism, you see yourself in the Mirror Rim. You don't look so great or heroic. In fact, you feel unusually self-conscious. More than you deserve to, you think. Besides, the Bro Orb might dissolve her or something, but you're not out to kill anyone.
+As you lift the Bros' Orb to throw at Ms. Ism, you see yourself in the Mirror Rim. You don't look so great or heroic. In fact, you feel unusually self-conscious. More than you deserve to, you think. The Bros' Orb is really pulsing right now. Whatever you used it on, you'd likely destroy it, and you're not out to KILL anyone.
 >undo
 
 >use Bro Orb on mirror rim

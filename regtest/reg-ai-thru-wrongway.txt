@@ -26,21 +26,24 @@ The Flee Elf mentions there are really only 26 simple ways to pick up the cap, i
 by one point
 
 >n
-You need to get there. But you have no clue what to build, or how.
+You don't have a way through the
+, or anything that would show you one.
 >s
 The Tix Exit blocks your way to where Evac Ave was. You try to look for a way to bust through, but a voice booms "EL BARRABLE!"
 >nw
-You don't need diagonal directions in this game.
+Diagonal directions aren't used in this game.
 >ne
-You don't need diagonal directions in this game.
+Diagonal directions aren't used in this game.
 >sw
-You don't need diagonal directions in this game.
+Diagonal directions aren't used in this game.
 >se
-You don't need diagonal directions in this game.
+Diagonal directions aren't used in this game.
 >u
-You never need to go up or down in this game, though sometimes they act as a backup to the main cardinal directions--for instance, up to or down from a hill.
+You never need to go up or down in this game. It's pretty ... level. There is no Elavata'-Vale.
+Though sometimes these directions act as a backup to the main cardinal directions--for instance, up to or down from a hill.
 >d
-You never need to go up or down in this game, though sometimes they act as a backup to the main cardinal directions--for instance, up to or down from a hill.
+You never need to go up or down in this game. It's pretty ... level. There is no Elavata'-Vale.
+Though sometimes these directions act as a backup to the main cardinal directions--for instance, up to or down from a hill.
 >in
 You don't ever need to use IN in the game. Just the four cardinal directions.
 >out
@@ -62,7 +65,8 @@ Wall! Aw.
 >s
 
 >w
-Dave says, "I can't let you do that, Hal. Ah!" There must be a succinct, clever way to sneak around him!
+Dave says, "I can't let you do that, Hal. Ah!" Whether or not your name actually is Hal, you reason there must be a succinct, clever way to sneak around him.
+
 >s
 Wall! Aw.
 >e
@@ -97,11 +101,11 @@ by one point
 >n
 
 >w
-The Door Frood blocks you. Maybe if you gave them something to keep them occupied, they'd be more generous.
+The Door Frood blocks you. "Look, I'd like something cleverer to do than stop you from going where you want, but I don't HAVE anything. Yet."
 >e
-The Door Frood blocks you. Maybe if you gave them something to keep them occupied, they'd be more generous.
+The Door Frood blocks you. "Look, I'd like something cleverer to do than stop you from going where you want, but I don't HAVE anything. Yet."
 >n
-The Door Frood would enjoy laughing at you for running into a wall, but you might not join in.
+The Door Frood chuckles a bit. Why would you run into a wall?
 
 >use TO IDIOT on Door Frood
 by one point
@@ -114,11 +118,11 @@ by one point
 >get all
 
 >n
-It probably gets even seedier behind the navy van. Best just to go back east.
+It probably gets even seedier behind the navy van. Maybe you can get rid of the van and find HOW seedy.
 >e
-It probably gets even seedier behind the navy van. Best just to go back east.
+It probably gets even seedier behind the navy van. Maybe you can get rid of the van and find HOW seedy.
 >s
-It probably gets even seedier behind the navy van. Best just to go back east.
+It probably gets even seedier behind the navy van. Maybe you can get rid of the van and find HOW seedy.
 
 >use pity tip on eye
 by one point
@@ -129,11 +133,11 @@ by one point
 >w
 
 >n
-Since this is the Trapeze Part, you'd think there'd be a way to go to a place to WATCH it, but there isn't. You can only go back east.
+The e-pipe is not only shaped like an e, but it's positioned so you're pretty much forced to go back e. Err, east.
 >w
-Since this is the Trapeze Part, you'd think there'd be a way to go to a place to WATCH it, but there isn't. You can only go back east.
+The e-pipe is not only shaped like an e, but it's positioned so you're pretty much forced to go back e. Err, east.
 >s
-Since this is the Trapeze Part, you'd think there'd be a way to go to a place to WATCH it, but there isn't. You can only go back east.
+The e-pipe is not only shaped like an e, but it's positioned so you're pretty much forced to go back e. Err, east.
 
 >tend net
 by one point
@@ -167,12 +171,14 @@ by one point
 >w
 
 >n
-You need to get there. But you have no clue what to build, or how. Hmm, maybe Xing the epicer recipe will help that.
+You don't have a way through the
+, but maybe there's something you could read right now to get an idea.
 
 >x recipe
 
 >n
-Not until you've built the North-Tron.
+You can't go north with the
+in the way. You need to build the North-Tron to destroy the oak. You currently have 0 pieces.
 
 >w
 
@@ -189,7 +195,7 @@ by one point
 >n
 
 >w
-The rift fir blocks the way to much more dangerous places, maybe Red Locs Colder or the Splat Alps. Perhaps ski oiks await.
+The rift fir blocks the way to much more dangerous places, maybe Red Locs Colder or the Splat Alps. Perhaps ski oiks, sno-mons, sno-gons or even site yetis await.
 
 >use epoch cope on King Nik
 by one point
@@ -201,9 +207,9 @@ by one point
 >s
 There are too many eels. It would be inhumane to step on one. Maybe you can give them somewhere else to sleep, or something to sleep on.
 >e
-You can only go north and south here.
+The TrapMart Rampart restricts you to traveling north or south.
 >w
-You can only go north and south here.
+The TrapMart Rampart restricts you to traveling north or south.
 
 >use stock cots on sleep eels
 by one point
@@ -211,9 +217,9 @@ by one point
 >s
 
 >w
-You can only go north and east here.
+You barely step in, and the water's a bit hot. You're worried you might run into some scorch crocs or worse, lava (naval.)
 >s
-You barely step in, and the water's a bit hot. You're worried you might run into some scorch crocs.
+You barely step in, and the water's a bit hot. You're worried you might run into some scorch crocs or worse, lava (naval.)
 
 >get stamp mats
 
@@ -303,12 +309,12 @@ by one point
 
 >w
 Wall! Aw.
-You can only go north and south here.
+You can still go both north and south here.
 >e
 Wall! Aw.
-You can only go north and south here.
+You can still go both north and south here.
 >s
-"No yon! No yon!" moans the wordy drow.
+"No yon! No yon!" moans the wordy drow,
 
 >use puce cup on liar grail
 by one point
@@ -345,8 +351,7 @@ You hear the Bond Nob groaning and think it wouldn't be nice to pass by. They'll
 >e
 You hear the Bond Nob groaning and think it wouldn't be nice to pass by. They'll let you by once you help them with whatever sickness they have.
 >s
-Wall! Aw.
-You can only go north, east and west here.
+The birch crib is a private home, but you don't need to go there.
 
 >use puce cup on Bond Nob
 by one point
@@ -368,14 +373,11 @@ Maybe there's a do-prefer pod somewhere, but it's off-limits to you.
 >e
 
 >e
-Wall! Aw.
-You can only go back west here.
+Maybe there is a Dray Yard beyond the girt rig, but nothing useful. You can really only go back west.
 >n
-Wall! Aw.
-You can only go back west here.
+Maybe there is a Dray Yard beyond the girt rig, but nothing useful. You can really only go back west.
 >s
-Wall! Aw.
-You can only go back west here.
+Maybe there is a Dray Yard beyond the girt rig, but nothing useful. You can really only go back west.
 
 >use stamp mats on slate metals
 by one point
@@ -394,11 +396,13 @@ by one point
 >n
 
 >w
-The scorn rocs remain motionless, but their gaze freezes you as you try to go west.
+The scorn rocs remain motionless, the stone NOTS you feel from their stern gaze freeze you as you even think of trying to go west. They're not mere starer-ats.
+Maybe if they were less imperious, less shiny, less aesthetically perfect, they'd be less intimidating.
+
 >n
-You can only go south and west here (up=west).
+The mush sum would pull you down.
 >e
-You can only go south and west here (up=west).
+You'd need some Nix-O-Toxin to survive the Ebola Lobe. There is none here in the game.
 
 >use demo med on gulf lug
 by one point
@@ -412,8 +416,7 @@ by one point
 >e
 
 >e
-Wall! Aw.
-You can only go north, south and west here.
+You'd crash into the crag arc. East could work, though.
 >n
 The cross orc stops you from going north. "GIVE VIG!" it booms.
 >s
@@ -421,6 +424,9 @@ The cross orc stops you from going south. "GIVE VIG!" it booms.
 
 >use cash sac on cross orc
 by one point
+
+>e
+You'd crash into the crag arc. North, south and east could work, though.
 
 >s
 
@@ -486,12 +492,12 @@ by one point
 
 >w
 Wall! Aw.
-You can only go back south here (up=north).
+You can only go back south here (up=north here).
 >n
 The etage gate blocks you, and Ned would probably pull you back, too.
 >e
 Wall! Aw.
-You can only go back south here (up=north).
+You can only go back south here (up=north here).
 
 >deny ned
 by one point
@@ -508,13 +514,13 @@ by one point
 
 >w
 Wall! Aw.
-You can only go back south here (up=south).
+You can only go back south here (down=south here).
 >n
 Wall! Aw.
-You can only go back south here (up=south).
+You can only go back south here (down=south here).
 >e
 Wall! Aw.
-You can only go back south here (up=south).
+You can only go back south here (down=south here).
 
 >s
 >s
@@ -601,7 +607,10 @@ by one point
 >w
 Not through the gnu dung you aren't.
 >n
-As you're about to touch the lie veil, you shake your head. No. You don't really want or need to explore north. Surely there's some better place to be? Perhaps you're not 100% prepared for the lie veil's thought provoking paradoxes, and it's doing you a favor pushing you back? Plus what if it hides a hidden booby trap? You try to walk further north, but somehow you wind up walking back south.
+As you're about to touch the lie veil, you shake your head. No. You don't really want or need to explore north. Surely there's some better place to be? Perhaps you're not 100% prepared for the lie veil's "thought-provoking" paradoxes, and it's doing you a favor pushing you back? Plus what if it hides a hidden booby trap? You try to walk further north, but somehow you wind up walking back south.
+
+Once you're away from the Lie Veil, you forget its weird arguments. There's got to be a way, or weapon, to cut brutally through its sophistry.
+
 >s
 The turf rut is too deep. You need a way to fill it in.
 
@@ -614,7 +623,7 @@ by one point
 >w
 
 >w
-You can only go north, south and east here.
+No point running into the Made Dam.
 
 >use radar on made dam
 by one point
@@ -637,18 +646,19 @@ by one point
 >n
 
 >w
-You can only go back south here.
+"Wade? D'aw," you think. You can't make it across the calcific lac by yourself. You can't really expect a bunch of sprats' tarps to appear.
 >n
-You can only go back south here.
+"Wade? D'aw," you think. You can't make it across the calcific lac by yourself. You can't really expect a bunch of sprats' tarps to appear.
 >e
-You can only go back south here.
+"Wade? D'aw," you think. You can't make it across the calcific lac by yourself. You can't really expect a bunch of sprats' tarps to appear.
 
 >use elope pole on kayak
 by one point
 
 #maybe delete this if it's not relevant
 >n
-You can only go back south here.
+"Wade? D'aw," you think. You can't make it across the calcific lac by yourself, but maybe there's a way to be allowed into the tao boat.
+!You can't really expect a bunch of sprats' tarps to appear.
 
 >use dork rod on tao boat
 by one point
@@ -656,7 +666,8 @@ by one point
 
 #maybe delete this if it's not relevant
 >n
-You can only go back south here.
+"Wade? D'aw," you think. You can't make it across the calcific lac by yourself, and you don't need to any more.
+!You can't really expect a bunch of sprats' tarps to appear.
 
 >s
 
@@ -665,9 +676,9 @@ You can only go back south here.
 >s
 
 >w
-You can only go north and south here.
+You see no way into the all-ivy villa, and you see no reason to enter, either. You're not here for education!
 >e
-You can only go north and south here.
+You see no way into the den, ivy-vined, and you see no reason to enter, either. You're not here for education!
 
 >use tent net on code doc
 by one point
@@ -739,11 +750,11 @@ There's nothing in the fog.
 >e
 
 >s
-You can only go back west here.
+The Be-Web is full of wisdom on just existing happily and doing small meaningful everyday nice things for their own sake, but you're in an adventure right now. That's useful for after this whole mess, but right now, you can really only go back west.
 >e
-You can only go back west here.
+The Be-Web is full of wisdom on just existing happily and doing small meaningful everyday nice things for their own sake, but you're in an adventure right now. That's useful for after this whole mess, but right now, you can really only go back west.
 >n
-You can only go back west here.
+The Be-Web is full of wisdom on just existing happily and doing small meaningful everyday nice things for their own sake, but you're in an adventure right now. That's useful for after this whole mess, but right now, you can really only go back west.
 
 >use sage gas on tame mat
 by one point
@@ -761,11 +772,11 @@ by one point
 >s
 
 >s
-You can only go back north here (up=north).
+The Ark of Okra blocks progress any way except back down north.
 >w
-You can only go back north here (up=north).
+The Ark of Okra blocks progress any way except back down north.
 >e
-You can only go back north here (up=north).
+The Ark of Okra blocks progress any way except back down north.
 
 >nail ian
 by one point
@@ -803,11 +814,11 @@ by one point
 >n
 
 >n
-You would surely get lost going anywhere other than back south.
+You would surely get lost going anywhere other than back south, your last words perhaps being "Haboob! Ah!"
 >w
-You would surely get lost going anywhere other than back south.
+You would surely get lost going anywhere other than back south, your last words perhaps being "Haboob! Ah!"
 >e
-You would surely get lost going anywhere other than back south.
+You would surely get lost going anywhere other than back south, your last words perhaps being "Haboob! Ah!"
 
 >get all
 
@@ -904,7 +915,9 @@ by one point
 
 >s
 >n
-You did all you needed to there.
+With Ms. Ism defeated, the Teem-Civic Meet is going in full swing. They're throwing interesting ideas around, but you don't have anything to add.
+
+In other words, you've done all you could in the Red Roses Order. You still have a bit of heroing to do elsewhere.
 >w
 
 >s
@@ -936,23 +949,32 @@ You don't have a weapon to take down the Diktat Kid.
 You don't know how to work the yard ray.
 >undo
 >raytest 3
-Looking at your items, there's no way you have enough to take care of the Diktat Kid and the two henchmen. You back off.
+As you go north, you hear three voices. "Prep?! Erp!" you mutter.
+
+Perhaps the yard ray would work okay at first, but ... you get the feeling you may need some other stuff to take out EVERYBODY.
+
 >undo
 >raytest 4
-As you go north, you hear three voices. Perhaps the yard ray would work okay at first, but ... you get the feeling you may need some other stuff to take out EVERYBODY.
+As you go north, you hear three voices. "Prep?! Erp!" you mutter.
+
+Perhaps the yard ray would work okay at first, but ... you get the feeling you may need some other stuff to take out EVERYBODY.
+
 >undo
 >raytest 5
-As you go north, you hear three voices. Perhaps the yard ray would work okay at first, but ... you get the feeling you may need some other stuff to take out EVERYBODY.
+As you go north, you hear three voices. "Prep?! Erp!" you mutter.
+
+Perhaps the yard ray would work okay at first, but ... you get the feeling you may need some other stuff to take out EVERYBODY.
+
 >undo
 
 >n
 
 >n
-No running, no secret passages. You need to face down the Diktat Kid.
+While the No-Go Gon is probably more for keeping people out, it would probably keep you back in even with enemies who might catch you. You've got no choice but to finish things off, here.
 >e
-No running, no secret passages. You need to face down the Diktat Kid.
+While the No-Go Gon is probably more for keeping people out, it would probably keep you back in even with enemies who might catch you. You've got no choice but to finish things off, here.
 >w
-No running, no secret passages. You need to face down the Diktat Kid.
+While the No-Go Gon is probably more for keeping people out, it would probably keep you back in even with enemies who might catch you. You've got no choice but to finish things off, here.
 
 >use ME gem on Knife Fink
 by one point
@@ -964,16 +986,16 @@ by one point
 by one point
 
 >n
-There's nothing more to do here with the Diktat Kid gone.
+The saner arenas are nice, but they're not interesting enough to be stop-spots yet. With the Diktat Kid gone, it's probably best you get back home.
 >e
-There's nothing more to do here with the Diktat Kid gone.
+The saner arenas are nice, but they're not interesting enough to be stop-spots yet. With the Diktat Kid gone, it's probably best you get back home.
 >w
-There's nothing more to do here with the Diktat Kid gone.
+The saner arenas are nice, but they're not interesting enough to be stop-spots yet. With the Diktat Kid gone, it's probably best you get back home.
 
 >s
 
 >n
-No need to go back.
+No need to revisit the scene of your victory. On to ... NU FUN!
 
 >use x-ite tix on tix exit
 by one point

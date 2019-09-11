@@ -173,7 +173,7 @@ understand "par crap" as a mistake ("Making fun of others['] clothing isn't as e
 
 understand "par trap" as a mistake ("You aren't on a golf course.[mis of 56]") when Verses Rev is quicknear.
 
-understand "po top" as a mistake ("No, it's better like this") when player is in Dirge Grid and Diktat Kid is moot.
+understand "po top" as a mistake ("No, it's better like this.") when player is in Dirge Grid and Diktat Kid is moot.
 
 understand "verb rev" as a mistake ("[if verses rev is quicknear]Oh, the Verses Rev is active enough[else]The commands from VERBS flash through your head, too quick to read[end if].[mis of 57]"). [okall]
 
@@ -313,7 +313,7 @@ to decide whether either-sac:
 	if cassettes sac is quicknear or player has cash sac, yes;
 	no;
 
-understand "casaba sac" and "casava sac" as a mistake ("You are hungry for adventure, not phyiscally hungry.") when either-sac.
+understand "casaba sac" and "casava sac" as a mistake ("You are hungry for adventure, not physically hungry.") when either-sac.
 
 understand "case sac" as a mistake ("You look extra carefully at the sac. No, no secret compartments.[mis of 109]") when either-sac.
 
@@ -956,7 +956,7 @@ understand "pita tip" as a mistake ("Sorry, you're getting ambiguous snack cans 
 
 understand "pith tip" as a mistake ("It's already pretty pithy, and there's not enough material for a helmet.[mis of 347]") when pity tip is quicknear.
 
-understand "pits tip" as a mistake ("It's not a very good tip, but why pake it worse?") when pity tip is quicknear.
+understand "pits tip" as a mistake ("It's not a very good tip, but why make it worse?") when pity tip is quicknear.
 
 understand "row or" as a mistake ("[if row-prog is 3]You've flipped Worn Row all the ways you can.[else if row-prog is 2]Worn Row can't become anything else.[else if row-prog is 1]Hmm. Maybe [Worn Row] can become something else.[else]There are lots of possibilities what Worn Row can become! Why not try a few?[end if][mis of 348]") when player is in Worn Row.
 
