@@ -86,11 +86,12 @@ def items_from_depends():
                 if ary[2] != ary[0]:
                     depends_add(ary[2], ary[0], line_count)
 
-def plow_through(file_name):
+def plow_through(file_name, get_items_from_depends = False):
     depends.clear()
     need_all.clear()
     totals = 0
     if file_name == item_file: items_from_depends()
+    if not os.path.exists(file_name): sys.exit("Oops! No file {}.".format(file_name))
     with open(file_name) as file:
         for (line_count, line) in enumerate(file, 1):
             if line.startswith(";"): break
@@ -142,7 +143,7 @@ def plow_through(file_name):
             if y != x and y not in depends[x].keys():
                 need_count += 1
                 print("Need-all command/item", x, "needs", y, "({:d})".format(need_count))
-    print(totals, "total dependencies in", file_name, "for", len([x for x in depends.keys() if not x.startswith("(")]), "items")
+    print(totals, "total dependencies in", file_name, "for", len([x for x in depends.keys() if not x.startswith("(")]), "items" if "items" in file_name else "commands" if "cmds" in file_name else "items/commands")
 
 def depends_add(result, needed, line=-1):
     if print_warning:
@@ -164,7 +165,7 @@ def depends_add(result, needed, line=-1):
                     print("Oops (complex) circular loop for what item needs what:", result, "<=>", x, "/", y, "via", needed, "at line", line)
                     exit()
                 depends[x][y] = True
-                
+
 def derive_basic_dependencies():
     in_table = 0
     with open("story.ni") as file:
@@ -220,7 +221,7 @@ if do_deluxe:
     plow_through(deluxe_file)
     exit()
 else:
-    if do_items: plow_through(item_file)
+    if do_items: plow_through(item_file, 'ailihphilia' in os.getcwd())
     if do_commands: plow_through(command_file)
 
 count = 0

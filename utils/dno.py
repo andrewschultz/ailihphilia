@@ -10,9 +10,10 @@ import sys
 import i7
 import os
 import re
-import filecmp
 from collections import defaultdict
+import filecmp
 from shutil import copy
+import mytools
 
 pals = defaultdict(int)
 twice = defaultdict(bool)
@@ -23,7 +24,6 @@ pro="ailihphilia"
 on_off = [ "off", "on" ]
 
 # options
-display_changes = False
 notes_file_order = False
 notes_file_reverse = False
 modify_notes = True
@@ -43,6 +43,7 @@ comments_too = False
 list_sections = False
 do_detail = False
 compare_temp = False
+check_inner = True
 
 copy_smart = False
 copy_to_old = False
@@ -52,153 +53,48 @@ notes_array = []
 # variables
 colon_string = ""
 
-def unique_header(a, b):
-    for x in b:
-        if a == x: return x
-        if 'xx' + a == x: return x
-    temp_ret = ""
-    for x in b:
-        if x.startswith(a) or x.startswith('xx' + a):
-            if temp_ret:
-                print("Uh oh, {0} is ambiguous. It could be {1} or {2}.")
-                return ""
-            temp_ret = x
-    return temp_ret
-
-def show_nonblanks(file_name):
-    total = comments = comments_to_shift = blanks = ideas = ready_to = 0
-    with open(file_name) as file:
-        for (line_count, line) in enumerate(file, 1):
-            total += 1
-            if line.startswith("##"): comments_to_shift += 1
-            elif line.startswith("#"): comments += 1
-            elif re.search("^[a-z0-9]+:[a-z]", line, re.IGNORECASE): ready_to += 1
-            elif not line.strip(): blanks += 1
-            else: ideas += 1
-    print("Ideas:", ideas, "Comments to shift:", comments_to_shift, "Comments:", comments, "Blanks:", blanks, "Ready to shift:", ready_to, "Total:", total)
-
-def copy_smart_ideas(pro, hdr_type = "ta"):
-    notes_in = os.path.join(i7.proj2dir(pro), "notes.txt")
-    notes_out = os.path.join(i7.proj2dir(pro), "notes-temp.txt")
-    hdr_tmp = os.path.join(i7.extdir, "temp.i7x")
-    hdr_to_change = i7.hdr(pro, hdr_type)
-    markers = defaultdict(int)
-    bail = False
-    to_insert = defaultdict(str)
-    with open(hdr_to_change) as file:
-        for (line_count, line) in enumerate(file, 1):
-            if line.startswith("table of") and "[" in line and "\t" not in line:
-                x = re.findall("\[([^\]]*)\]", line)
-                for y in x:
-                    y = re.sub("[\[\]]", "", y)
-                    if y in markers:
-                        bail = True
-                        print("Uh oh double definition of {0}, lines {1} and {2}.".format(y, markers[y], line_count))
-                    else:
-                        markers[y] = line_count
-    if bail: sys.exit()
-    msort = sorted(markers)
-    for y in range(0, len(msort)):
-        for z in range(y+1, len(msort)):
-            n1 = msort[y]
-            n2 = msort[z]
-            if n1.startswith(n2) or n2.startswith(n1):
-                bail = True
-                print("Uh oh overlapping {0} {1} {2} {3}.".format(n1, markers[n1], n2, markers[n2]))
-    if bail: sys.exit()
-    out_stream = open(notes_out, "w")
-    uniques = 0
-    with open(notes_in) as file:
-        for (line_count, line) in enumerate(file, 1):
-            print_this_line = True
-            if re.search("^[a-zA-Z0-9]+:", line):
-                left_bit = re.sub(":.*", "", line.lower().strip())
-                uh = unique_header(left_bit, markers)
-                if uh:
-                    new_text = re.sub("^[a-zA-Z0-9]+:", "", line.rstrip()).strip()
-                    if not new_text.startswith("\""): new_text = "\"" + new_text
-                    if not new_text.endswith("\""): new_text = new_text + "\""
-                    print_this_line = False
-                    to_insert[uh] += new_text + "\n"
-                    uniques += 1
-                else:
-                    if "#idea" not in line.lower():
-                        print("Unrecognized colon starting with", left_bit, "at line", line_count, "full(er) text", line.strip()[:50])
-                # print("Looking for uniques in {0}({1}): {2}".format(line.strip(), uh, print_this_line))
-            if print_this_line: out_stream.write(line)
-    out_stream.close()
-    print(uniques, "uniques found to send to header.")
-    if uniques:
-        print_after_next = False
-        out_stream = open(hdr_tmp, "w", newline="\n")
-        last_blank = False
-        with open(hdr_to_change) as file:
-            for (line_count, line) in enumerate(file, 1):
-                if last_blank and not line.strip(): continue
-                out_stream.write(line)
-                last_blank = not line.strip()
-                if line.startswith("table of") and "\t" not in line:
-                    x = re.findall("\[([^\]]*)\]", line)
-                    print_after_next = True
-                    continue
-                if print_after_next:
-                    print_after_next = False
-                    if len(x):
-                        for j in x:
-                            if j in to_insert:
-                                out_stream.write(to_insert[j])
-                                to_insert.pop(j)
-        out_stream.close()
-    else:
-        print("No commands to shuffle table rows over.")
-        return
-    if len(to_insert):
-        print("Uh oh! We didn't clear everything.", to_insert)
-    if display_changes:
-        i7.wm(notes_in, notes_out)
-        i7.wm(hdr_to_change, hdr_tmp)
-    else:
-        copy(notes_out, notes_in)
-        copy(hdr_tmp, hdr_to_change)
-    os.remove(notes_out)
-    os.remove(hdr_tmp)
-    if display_changes: sys.exit()
-
-def move_old_ideas(pro):
-    notes_in = os.path.join(i7.proj2dir(pro), "notes.txt")
-    notes_out = os.path.join(i7.proj2dir(pro), "notes-old.txt")
-    notes_temp = os.path.join(i7.proj2dir(pro), "notes-temp.txt")
-    no = open(notes_out, "a")
-    nt = open(notes_temp, "w")
-    got_one = 0
-    blanks = 0
-    last_blank = False
-    with open(notes_in) as file:
-        for (line_count, line) in enumerate(file, 1):
-            if not line.strip():
-                blanks += 1
-                if last_blank: continue
-            last_blank = not line.strip()
-            if line.startswith("##"):
-                got_one += 1
-                no.write(line)
-            else: nt.write(line)
-    print(blanks, "of", line_count, "total blank lines.")
-    no.close()
-    nt.close()
-    if got_one:
-        if display_changes: i7.wm(notes_in, notes_temp)
-        else:
-            print(got_one, "lines zapped from notes.")
-            copy(notes_temp, notes_in)
-    else:
-        print("No ##'s found")
-    os.remove(notes_temp)
-
 def notes_file_sort(x):
     y = re.sub(".*Notes line ", "", x, 0, re.IGNORECASE)
     y = re.sub(" .*", "", y)
     return(int(y))
+
+def check_source_dup(s):
+    # source_files = [ i7.hdr(s, "ta"), i7.hdr(s, "mi") ]
+    source_files = [ i7.hdr(s, "ta") ]
+    internal_dupe = defaultdict(str)
+    internal_line = defaultdict(int)
+    internal_table = defaultdict(str)
+    table_name = ""
+    count = 0
+    for s in source_files:
+        sb = os.path.basename(s)
+        with open(s) as file:
+            get_table_entry = 'tables' in s.lower()
+            get_understand = 'mistakes' in s.lower()
+            for (line_count, line) in enumerate(file, 1):
+                if get_table_entry and line.startswith("table"):
+                    table_name = re.sub(" \[.*", "", line.lower().strip())
+                if get_table_entry and line.startswith("\""):
+                    temp = re.sub("\".*", "", line[1:].lower().strip())
+                    temp = temp.replace("-", " ")
+                    temp = re.sub("[^a-z ]", "", temp, 0, re.IGNORECASE)
+                    ary = [temp]
+                elif get_understand and line.startswith("understand"):
+                    l2 = re.sub(" as a mistake.*", "", line.lower().strip())
+                    ary = l2.split("\"")[1::2]
+                else: continue
+                for q in ary:
+                    if q in internal_dupe:
+                        count += 1
+                        print(count, "{0} ({1} line {2} table {3})".format(q, internal_dupe[q], internal_line[q], internal_table[q]), "duplicated at {0} line {1} table {2}.".format(sb, line_count, table_name))
+                        if line_count - internal_line[q] == 1 and sb == internal_dupe[q]:
+                            print("    one-off in table")
+                        mytools.add_postopen_file_line(s, line_count)
+                    else:
+                        internal_dupe[q] = sb
+                        internal_line[q] = line_count
+                        internal_table[q] = table_name
+    mytools.postopen_files()
 
 def check_detail_notes(s):
     notes_file_to_read = "c:/games/inform/{:s}.inform/source/notes.txt".format(s)
@@ -207,7 +103,7 @@ def check_detail_notes(s):
       "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/{:s} tables.i7x".format(re.sub("-", " ", s)) ]
     matches = defaultdict(list)
     with open(notes_file_to_read) as file:
-        for (line, line_count) in enumerate(file, 1):
+        for (line_count, line) in enumerate(file, 1):
             if line.startswith('='): continue
             line = re.sub("-", "", line.lower().strip())
             line = re.sub("[^a-z ]", "", line)
@@ -219,7 +115,7 @@ def check_detail_notes(s):
     for x in source_files:
         short = re.sub(".*[\\\/]", "", x)
         with open(x) as file:
-            for (line, line_count) in enumerate(file, 1):
+            for (line_count, line) in enumerate(file, 1):
                 ll = line.lower()
                 l2 = re.sub("[^a-z ]", "", ll)
                 for x in matches.keys():
@@ -275,7 +171,7 @@ def usage():
     print("-v = verbose")
     print("-m = modify notes file before starting, -mo = modify only")
     print("-d = do detailed search e.g. anything with 2 words is searched")
-    print("-2 = report appearance of notes.txt stirng in story.ni/ailihphilia tables.i7x more than once.")
+    print("-2 = report appearance of notes.txt string in story.ni/ailihphilia tables.i7x more than once.")
     print("    -2n/-n2 = negation. Default = off.")
     print("-l = launch after.")
     print("    -ln/-nl = don't. Default = on.")
@@ -469,13 +365,8 @@ while count < len(sys.argv):
         twice_okay = False
     if l == '2' or l == '-2':
         twice_okay = True
-    elif l == 'co':
-        copy_to_old = True
-    elif l == 'cs' or l == 'sc':
-        copy_smart = True
-    elif l == 'ca' or l == 'ac' or l == 'bc' or l == 'cb':
-        copy_smart = True
-        copy_to_old = True
+    elif l == 'co' or l == 'cs' or l == 'sc' or l == 'ca' or l == 'ac' or l == 'bc' or l == 'cb':
+        sys.exit("This is deprecated for dno.py. Try nso.py (notes sorter) instead.")
     elif l == 'l':
         launch_after = True
     elif l == 'ln' or l == 'nl':
@@ -494,8 +385,6 @@ while count < len(sys.argv):
         verbose = True
     elif l == 'd':
         do_detail = True
-    elif l == 'dc':
-        display_changes = True
     elif l == 'f':
         open_first = True
     elif l == 'ls' or l == 'sl':
@@ -547,17 +436,13 @@ while count < len(sys.argv):
         usage()
     count += 1
 
-if copy_smart or copy_to_old:
-    print(copy_smart, copy_to_old)
-    if copy_smart: copy_smart_ideas(pro)
-    if copy_to_old: move_old_ideas(pro)
-    show_nonblanks(os.path.join(i7.proj2dir(pro), "notes.txt"))
-    sys.exit()
-
 if do_detail:
     check_detail_notes("ailihphilia")
 else:
     check_notes("ailihphilia")
+
+if check_inner:
+    check_source_dup("ailihphilia")
 
 if colon_string:
     print(colon_string.strip())
