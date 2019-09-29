@@ -1,0 +1,82 @@
+commands:pack cap,evade dave,bore rob,work row,word row,worn row,tend net,stand nat's,pull up,puff up,nail ian,pace cap,yak okay,emit noontime
+tix exit,pact cap/pack cap
+evade dave/pact cap
+bore rob/evade dave
+work row/bore rob
+word row/bore rob
+to idiot,yob attaboy,some demos,null illun,epoch cope/word row
+reifier,reviver,rotator/work row
+bunk nub,(remove-frood)/to idiot,door frood
+snack cans/pity tip,eye
+epicer recipe,elope pole,tent net/tend net,(remove-frood)
+party trap/trap art,reifier
+(remove-rats)/party trap
+el doodle/party trap #technically you need to get rid of rats
+stock cots/bunk nub,reviver
+gift fig/party trap,stark rats
+spur ups/epoch cope,king nik
+(remove-eels)/stock cots,sleep eels,(remove-rats)
+puff up,spur ups
+pull up,puff up
+(cut-sap)/wash saw,past sap,(remove-rats)
+(sap-cup)/puce cup,past sap,(cut-sap)
+(remove-drow)/puce cup,liar grail,(sap-cup)
+(sod-cup)/puce cup,dose sod
+elan ale/puce cup,bond nob,(sod-cup)
+ye key/stamp mats,slate metals
+cash sac/demo med,gulf lug
+(remove-orc)/cash sac,cross orc
+dirt rid/yob attaboy,sniffins,(remove-orc)
+gorge grog/elan ale,sniffins,(remove-orc)
+nat's tan/stand nat's,(remove-orc)
+cave vac/dirt rid,reviver
+radar/cave vac,cassettes sac
+ufo tofu/radar,crag arc,(remove-orc)
+etage gate,stinky knits/deny ned,(remove-orc)
+gate tag/ye key,etage gate
+butene tub,dna band,gold lod/worn row
+brag garb/stinky knits,rotator
+resale laser/gorge grog,butene tub
+dork rod/gold log,rotator
+straw arts/some demos,yahoo hay
+soot tattoos/straw arts,revolt lover
+state tats/gate tag,soot tattoos
+(remove-dung)/poo coop,gnu dung
+(remove-rut)/poo coop,turf rut
+eroded ore/radar,made dam,(remove-dung)
+(lac-available)/null illun,known wonk,(remove-dung)
+spa maps/el doodle,edits tide
+you buoy/elope pole,kayak,(lac-available)
+enact cane/dork rod,tao boat,(lac-available)
+(doc-helps)/tent net,code doc
+(maps-explained)/spa maps,code doc,(doc-helps)
+sage gas/spa maps,go by bog,(maps-explained)
+moor broom/enact cane,yahoo hay
+pace cap/pact cap
+(remove-ogre)/troll ort,brag garb,pace cap,(remove-eels)
+guru rug/sage gas,tame mat
+stir writs/sharp rahs,guru rug
+nail ian/poo coop,turf rut,(remove-rut)
+martini tram/mayo yam,snack cans,ufo tofu,nail ian
+exam axe/moor broom,tru yurt
+balsa slab/wash saw,porch crop
+(remove-veil)/exam axe,lie veil
+bros' orb/(remove-veil),stir writs
+dna hand/dna band,reifier
+mr arm/roto motor,dna hand
+ore zero/eroded ore,reviver
+me gem/you buoy,rotator
+tnt/mr arm,bomb mob
+(remove-rocs)/nat's tan,scorn rocs
+murdered rum/rep popper,me totem,(remove-rocs)
+yard ray/bros' orb,mirror rim,state tats
+not-a-baton/balsa slab,sword rows
+taboo bat/not-a-baton,reifier
+emit noontime/murdered rum,yard ray
+(ray-practice)/yard ray,test set
+(north-tron)/epicer recipe,ore zero,resale laser,martini tram
+(dirge-grid)/(ray-practice),(north-tron)
+(first-guy)/me gem,knife fink
+(second-guy)/taboo bat,verses rev
+x-ite tix/yard ray,redivider,(first-guy),(second-guy),(dirge-grid)
+x-ite tix,tix exit

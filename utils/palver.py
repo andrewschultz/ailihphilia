@@ -3,6 +3,7 @@
 # palindrome verification: make sure any names aren't fake palindromes e.g. resto poster
 #
 
+import mytools
 import i7
 import re
 
@@ -11,6 +12,8 @@ from collections import defaultdict
 start_ignore_dict = defaultdict(bool)
 include_ignore_dict = defaultdict(bool)
 regex_ignore_dict = defaultdict(bool)
+
+post_open = True
 
 quiet = False
 verbose = False
@@ -106,6 +109,7 @@ def pal_ver(f):
                 if un_palindrome(q): # and '[ignore]' not in line and '[okdup]' not in line:
                     err_count += 1
                     print("Bad line", line_count, "in", f, ("({:s})".format(in_table) if in_table else "") + "--", line.strip())
+                    mytools.add_postopen_file_line(f, line_count)
                 continue
             if ' is ' in line or ' are ' in line:
                 if in_table != "": continue
@@ -130,3 +134,6 @@ read_ignore_file()
 
 for x in i7.i7f["ailihphilia"]:
     pal_ver(x)
+
+if post_open:
+    mytools.postopen_files()

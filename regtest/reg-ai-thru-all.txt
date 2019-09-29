@@ -540,7 +540,7 @@ by one point
 >n
 
 >muss opossum
-You found a Last Lousy Point!
+You found the very last Last Lousy Point!
 
 >get all
 

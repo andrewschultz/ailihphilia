@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<trizbort version="1.7.0.0">
+<trizbort version="1.7.1.0">
 	<info>
 		<title>Ailihphilia map</title>
 		<author>Andrew Schultz</author>
@@ -14,7 +14,7 @@ Initially sent to source code/repository November 2017.</history>
 		<room id="2" name="Seer Trees" subtitle="" x="-224" y="-32" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
 			<objects>Stark Rats</objects>
 		</room>
-		<room id="3" name="Yawn Way" subtitle="" x="96" y="-32" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="3" name="Yawn Way" subtitle="" x="96" y="-32" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="changes to A Palapa once Dirge Grid is completed" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<room id="4" name="Art Xtra" subtitle="" x="96" y="-160" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="changes to Traded Art on part-completion" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
 			<objects>Revolt Lover|Trap Art|(El Doodle)|State Tats</objects>
 		</room>
@@ -34,7 +34,7 @@ Initially sent to source code/repository November 2017.</history>
 			<objects>King Nik|Pat Sap|(Rift Fir)</objects>
 		</room>
 		<room id="10" name="My Gym" subtitle="" x="96" y="96" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
-			<objects custom="yes" customRight="-28" customDown="0">    DAVE|wash saw</objects>
+			<objects custom="yes" customRight="-28" customDown="0">    DAVE|wash saw|(Buff U B)</objects>
 		</room>
 		<line id="11" name="" description="" style="dashed">
 			<dock index="0" id="1" port="w" />
@@ -185,7 +185,7 @@ Initially sent to source code/repository November 2017.</history>
 			<objects custom="yes" customRight="-24" customDown="0">Guru Rug|(Be Web)</objects>
 		</room>
 		<room id="60" name="Trapeze Part" subtitle="" x="-64" y="-288" w="96" h="64" region="Yelpley" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
-			<objects at="n" custom="yes" customRight="-34" customDown="0">Ten Level Net|Epicer Recipe</objects>
+			<objects at="n" custom="yes" customRight="-34" customDown="0">Ten Level Net|Epicer Recipe|     (E-Pipe)</objects>
 		</room>
 		<room id="61" name="Lair Trial" subtitle="" x="-544" y="224" w="96" h="64" region="Grebeberg" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="changes to Stride Dirts on completion" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
 			<objects custom="yes" customRight="-20" customDown="0">Ergot Ogre| (Go Fog)</objects>

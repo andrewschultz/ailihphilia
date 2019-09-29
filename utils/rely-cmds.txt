@@ -1,6 +1,14 @@
+starter:pack cap
+commands:pack cap,pace cap,evade dave,bore rob,word row,work row,tend net,pull up,puff up,emit noontime
+################above is stuff captured in commands that we can't quite automate
+################below is stuff where we use a command to get an item.
+pact cap/pack cap
+wash saw/evade dave
+################below is stuff that is automatically derived from the file
 evade dave/pack cap
 bore rob/evade dave
 word row/bore rob
+null illun,epoch cope,yob attaboy,to idiot/word row
 use to idiot on door frood/word row
 use pity tip on eye/use to idiot on door frood
 tend net/use to idiot on door frood
@@ -66,11 +74,11 @@ use you buoy on rotator/use elope pole on kayak
 use mr arm on bomb mob/use roto motor on dna hand,use to idiot on door frood
 use nat's tan on scorn rocs/use yob attaboy on sniffins,use party trap on stark rats,stand nat's
 use rep popper on me totem/use dork rod on tao boat,use nat's tan on scorn rocs
-use tenet on bro orb/use sharp rahs on guru rug,use exam axe on lie veil
-use bro orb on mirror rim/use gate tag on soot tattoos,use tenet on bro orb
-use balsa slab on sword rows/use bro orb on mirror rim,use wash saw on porch crop
+use tenet on bros' orb/use sharp rahs on guru rug,use exam axe on lie veil
+use bros' orb on mirror rim/use gate tag on soot tattoos,use tenet on bros' orb
+use balsa slab on sword rows/use bros' orb on mirror rim,use wash saw on porch crop
 use not-a-baton on reifier/use balsa slab on sword rows
-use murdered rum on yard ray/use bro orb on mirror rim,use rep popper on me totem
+use murdered rum on yard ray/use bros' orb on mirror rim,use rep popper on me totem
 emit noontime/use murdered rum on yard ray
 use yard ray on test set/emit noontime
 use tnt on ore zero/use snack cans on ufo tofu,use gift fig on mayo yam,use eroded ore on reviver,use mr arm on bomb mob,use gorge grog on butene tub,use yard ray on test set
@@ -135,7 +143,7 @@ USE YOU BUOY ON ROTATOR
 USE MR ARM ON BOMB MOB
 USE NAT'S TAN ON SCORN ROCS
 USE REP POPPER ON ME TOTEM
-USE BRO ORB ON MIRROR RIM
+USE bros' orb ON MIRROR RIM
 USE BALSA SLAB ON SWORD ROWS
 USE NOT-A-BATON ON REIFIER
 USE MURDERED RUM ON YARD RAY

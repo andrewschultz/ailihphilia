@@ -344,8 +344,6 @@ rule for printing a parser error when mean-testing is true (this is the test bai
 
 the test bail rule is listed first in the for printing a parser error rules.
 
-Ailihphilia Tests ends here.
-
 chapter inkning
 
 inkning is an action out of world.
@@ -365,5 +363,25 @@ carry out inkning:
 		if map region of location of Q is not Odd Do:
 			say "[Q] in [location of Q] is not in-known.";
 	the rule succeeds;
+
+chapter alcluing
+
+chapter alcluing
+
+alcluing is an action applying to nothing.
+
+understand the command "alclu" as something new.
+
+understand "alclu" as alcluing.
+
+objhinting is an action applying to one thing.
+
+carry out alcluing:
+	repeat with T running through touchable things:
+		say "=======================[T]=======================[line break]";
+		try objhinting T;
+	the rule succeeds.
+
+Ailihphilia Tests ends here.
 
 ---- DOCUMENTATION ----

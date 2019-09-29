@@ -22,6 +22,8 @@ Many point scoring commands will be palindromes. Most of the others are of the f
 
 So let's get started.
 
+First of all, this walkthrough is brought to you by KLU-BULK ... wait, no it isn't, but I couldn't help myself.
+
 Fun Enuf is, well, not fun enough to start. And worse yet, you can't leave until you know what to do with the Pact Cap! Well, you can leave through the Tix Exit, but that's no fun, unless you like seeing bad ends.
 
 Flat out TAKEing the Pact Cap doesn't work. TAKE says maybe if it were a KAT. GET says "Get, e.g. ..."

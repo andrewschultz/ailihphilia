@@ -10,12 +10,15 @@ import sys
 import i7
 import os
 import re
-import filecmp
 from collections import defaultdict
+import filecmp
 from shutil import copy
+import mytools
 
 pals = defaultdict(int)
 twice = defaultdict(bool)
+
+pro="ailihphilia"
 
 # constants
 on_off = [ "off", "on" ]
@@ -39,6 +42,11 @@ read_last = 0
 comments_too = False
 list_sections = False
 do_detail = False
+compare_temp = False
+check_inner = True
+
+copy_smart = False
+copy_to_old = False
 
 notes_array = []
 
@@ -50,6 +58,44 @@ def notes_file_sort(x):
     y = re.sub(" .*", "", y)
     return(int(y))
 
+def check_source_dup(s):
+    # source_files = [ i7.hdr(s, "ta"), i7.hdr(s, "mi") ]
+    source_files = [ i7.hdr(s, "ta") ]
+    internal_dupe = defaultdict(str)
+    internal_line = defaultdict(int)
+    internal_table = defaultdict(str)
+    table_name = ""
+    count = 0
+    for s in source_files:
+        sb = os.path.basename(s)
+        with open(s) as file:
+            get_table_entry = 'tables' in s.lower()
+            get_understand = 'mistakes' in s.lower()
+            for (line_count, line) in enumerate(file, 1):
+                if get_table_entry and line.startswith("table"):
+                    table_name = re.sub(" \[.*", "", line.lower().strip())
+                if get_table_entry and line.startswith("\""):
+                    temp = re.sub("\".*", "", line[1:].lower().strip())
+                    temp = temp.replace("-", " ")
+                    temp = re.sub("[^a-z ]", "", temp, 0, re.IGNORECASE)
+                    ary = [temp]
+                elif get_understand and line.startswith("understand"):
+                    l2 = re.sub(" as a mistake.*", "", line.lower().strip())
+                    ary = l2.split("\"")[1::2]
+                else: continue
+                for q in ary:
+                    if q in internal_dupe:
+                        count += 1
+                        print(count, "{0} ({1} line {2} table {3})".format(q, internal_dupe[q], internal_line[q], internal_table[q]), "duplicated at {0} line {1} table {2}.".format(sb, line_count, table_name))
+                        if line_count - internal_line[q] == 1 and sb == internal_dupe[q]:
+                            print("    one-off in table")
+                        mytools.add_postopen_file_line(s, line_count)
+                    else:
+                        internal_dupe[q] = sb
+                        internal_line[q] = line_count
+                        internal_table[q] = table_name
+    mytools.postopen_files()
+
 def check_detail_notes(s):
     notes_file_to_read = "c:/games/inform/{:s}.inform/source/notes.txt".format(s)
     source_files = [ "c:/games/inform/{:s}.inform/source/story.ni".format(s),
@@ -57,7 +103,7 @@ def check_detail_notes(s):
       "c:/Program Files (x86)/Inform 7/Inform7/Extensions/Andrew Schultz/{:s} tables.i7x".format(re.sub("-", " ", s)) ]
     matches = defaultdict(list)
     with open(notes_file_to_read) as file:
-        for (line, line_count) in enumerate(file, 1):
+        for (line_count, line) in enumerate(file, 1):
             if line.startswith('='): continue
             line = re.sub("-", "", line.lower().strip())
             line = re.sub("[^a-z ]", "", line)
@@ -69,7 +115,7 @@ def check_detail_notes(s):
     for x in source_files:
         short = re.sub(".*[\\\/]", "", x)
         with open(x) as file:
-            for (line, line_count) in enumerate(file, 1):
+            for (line_count, line) in enumerate(file, 1):
                 ll = line.lower()
                 l2 = re.sub("[^a-z ]", "", ll)
                 for x in matches.keys():
@@ -125,7 +171,7 @@ def usage():
     print("-v = verbose")
     print("-m = modify notes file before starting, -mo = modify only")
     print("-d = do detailed search e.g. anything with 2 words is searched")
-    print("-2 = report appearance of notes.txt stirng in story.ni/ailihphilia tables.i7x more than once.")
+    print("-2 = report appearance of notes.txt string in story.ni/ailihphilia tables.i7x more than once.")
     print("    -2n/-n2 = negation. Default = off.")
     print("-l = launch after.")
     print("    -ln/-nl = don't. Default = on.")
@@ -140,6 +186,7 @@ def usage():
     print("-a = count all lines with colons, even commented")
     print("-ls/-sl = list sections, -ln/-nl = don't, default =", on_off[list_sections])
     print("-?/-u = this usage statement")
+    print("-co = copy to old-notes, -cs = copy-smart to tables, -ca = both")
     exit()
 
 def pally(s):
@@ -183,10 +230,14 @@ def check_notes(s):
     shorts = {}
     dupe_dict = defaultdict(bool)
     colon_ary = []
+    maybe_delete = defaultdict(int)
     for x in source_files: shorts[x] = re.sub(".*[\\\/]", "", x)
     with open(notes_file_to_read) as file:
         for (line_count, line) in enumerate(file, 1):
             ll = line.strip()
+            if ll.startswith("<from"):
+                print("WARNING spare dgrab.py line {:d} in {:s}.".format(line_count, notes_file_to_read))
+                continue
             if ll.startswith("="):
                 this_section = ll
                 continue
@@ -217,6 +268,7 @@ def check_notes(s):
                             open_line = pals[q] if open_first else line_count
                         dupes += 1
                         dupe_dict[line_count] = True
+                        maybe_delete[line_count] = True # delete the duplicate not the original
                     else:
                         q2 = q.strip()
                         q2 = re.sub("-", " ", q2, 0, re.IGNORECASE)
@@ -229,6 +281,7 @@ def check_notes(s):
     if seen < colons:
         colon_string = colon_string + "(saw {:d} of {:d}, increase or remove colons_max/colons_start to see more...)".format(seen, colons)
     found_errs = defaultdict(str)
+    count = 0
     for s in source_files:
         if verbose: print("Reading", s)
         with open(s) as file:
@@ -242,9 +295,6 @@ def check_notes(s):
                 ll = re.sub("['\.\",!\?]", "", ll)
                 ll = re.sub("-", " ", ll)
                 ll = re.sub("\[\]", " ", ll)
-                if line_count == 1278 and 'alert' in line.lower():
-                    print([x for x in pals.keys() if 'alert' in x.lower()])
-                    print(line)
                 for q in pals.keys():
                     if q in ll and (q not in twice.keys() or twice_okay):
                         if q == 'say as' and 'say "as' in line.lower():
@@ -253,6 +303,8 @@ def check_notes(s):
                             # here "da bad" does not flag "Neda Baden" unless we tell the program to
                             line_short = re.sub(":.*", "", q)
                             found_errs[pals[q]] += "Notes.txt line {:d} ({:s}) ~ {:s} line {:d}{:s}: {:s} {:s}\n".format(pals[q], line_short, shorts[s], line_count, '' if not table_name else ' ({:s})'.format(table_name), line.lower().strip(), ('' if not ignore_word_bounds else ' ~ ' + q))
+                            maybe_delete[pals[q]] = True # delete the line where we were in the original notes file
+                            if verbose: print("{:s} {:d} {:s} {:d} {:s}".format(os.path.basename(s), line_count, q, pals[q], line.strip()))
                             notes_list.append(pals[q])
                             if last_lines_first:
                                 if not open_line or pals[q] < open_line:
@@ -261,7 +313,8 @@ def check_notes(s):
                                 open_line = pals[q]
                             twice[q] = True
                             xtranote += 1
-            if verbose: print(count, "total lines")
+                            count += 1
+            if verbose: print("{:d} total lines for {:s}".format(count, os.path.basename(s)))
     if len(found_errs) > 0:
         for x in sorted(found_errs.keys(), reverse=last_lines_first):
             print(found_errs[x].strip())
@@ -289,7 +342,17 @@ def check_notes(s):
             print("Deleted", notes_file_backup)
     elif bowdlerize_notes: print("Nothing to bowdlerize, so I am not recopying.")
     if len(notes_list) > 3: print('**** Notes in file:', ', '.join([str(x) for x in sorted(notes_list, reverse=True)]))
-    if len(dupe_dict.keys()) > 3: print('**** Duplicates to print:', ', '.join([str(x) for x in sorted(dupe_dict.keys(), reverse=True)]))
+    if len(dupe_dict) > 3: print('**** Duplicates to print:', ', '.join([str(x) for x in sorted(dupe_dict.keys(), reverse=True)]))
+    if compare_temp and len(maybe_delete) > 0:
+        f3 = open("notes-bak.txt", "w")
+        with open("notes.txt") as file:
+            for (line_count, line) in enumerate(file, 1):
+                if line_count in maybe_delete.keys(): continue
+                f3.write(line)
+        f3.close()
+        i7.wm("notes.txt", "notes-bak.txt")
+        os.remove("notes-bak.txt")
+        exit()
     if launch_after and open_line: i7.npo(notes_file_to_read, open_line, True)
 
 count = 1
@@ -302,10 +365,14 @@ while count < len(sys.argv):
         twice_okay = False
     if l == '2' or l == '-2':
         twice_okay = True
+    elif l == 'co' or l == 'cs' or l == 'sc' or l == 'ca' or l == 'ac' or l == 'bc' or l == 'cb':
+        sys.exit("This is deprecated for dno.py. Try nso.py (notes sorter) instead.")
     elif l == 'l':
         launch_after = True
     elif l == 'ln' or l == 'nl':
         launch_after = False
+    elif l == 'ct':
+        compare_temp = True
     elif l == 'm' or l == 'mo':
         modify_only = (l == 'mo')
         if modified_yet:
@@ -373,6 +440,9 @@ if do_detail:
     check_detail_notes("ailihphilia")
 else:
     check_notes("ailihphilia")
+
+if check_inner:
+    check_source_dup("ailihphilia")
 
 if colon_string:
     print(colon_string.strip())

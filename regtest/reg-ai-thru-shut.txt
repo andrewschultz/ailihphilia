@@ -252,11 +252,10 @@ by one point
 by one point
 #got gorge grog
 
-You hear the click of invisible shuttuhs/shutters
-
 >stand nat's
 by one point
 #got nat's
+You hear the click of invisible shuttuhs/shutters
 
 >n
 
