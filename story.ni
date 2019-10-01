@@ -164,7 +164,7 @@ use MAX_ACTIONS of 210.
 
 use MAX_VERBSPACE of 5800. [-400 from max_verbspace debug]
 
-use MAX_SYMBOLS of 25000.
+use MAX_SYMBOLS of 26000.
 
 section debug compiler globals - not for release
 
@@ -174,7 +174,7 @@ use MAX_ACTIONS of 230. [+10?]
 
 use MAX_VERBSPACE of 6200. [4096 = original max]
 
-use MAX_SYMBOLS of 26000. [-1000 for release]
+use MAX_SYMBOLS of 27000. [-1000 for release]
 
 use MAX_STATIC_DATA of 190000.
 
@@ -2103,6 +2103,8 @@ check saying no:
 
 chapter attacking
 
+the block attacking rule is not listed in any rulebook.
+
 check attacking:
 	if noun is trap mart rampart, say "You'd suffer zoo boobooz if you tried." instead;
 	if noun is pact cap, say "But it's decidedly a pacifi-cap!" instead;
@@ -2971,10 +2973,10 @@ TI	Door Frood	bunk nub	pre-ti-on-frood rule	tube-to-ave rule	true	true	true	true
 pity tip	eye	snack cans	pre-tip-on-eye rule	mob-to-alley rule	true	true	false	false	false	true	Yelpley	Yell Alley	Yell Alley	false	"The eye scans the pity tip, and the navy van beeps and boops and spits out some snack cans, which roll on the ground. You take them. Then you hear a loud whisper: 'Dee? Weed?' The navy van then activates its VANS-NAV and whooshes off to leave for good. And there's something behind it! Apparently, a whole bomb mob! That's who was making all the noise!" [af:TEND NET/WORK ROW]
 --	--	--	rev-tend-net rule	--	true	--	--	false	true	true	Yelpley	Trapeze Part	Trapeze Part	false	--
 --	--	--	rev-work-row rule	--	true	--	--	true	true	true	Yelpley	Worn Row	Worn Row	false	--
-trap art	reifier	party trap	pre-art-on-reifier rule	--	true	true	false	true	true	true	Yelpley	Worn Row	Worn Row	false	"The trap art crunches inside the reifier, then -- bam! Out comes what the trap art was imagined to be: a party trap. You pull it out of the reifier and inspect it. It could probably capture more than one thing."
+trap art	reifier	party trap	pre-art-on-reifier rule	--	true	true	false	true	true	true	Yelpley	Worn Row	Worn Row	false	"The trap art crunches inside the reifier, then -- bam! Out pops what the trap art was imagined to be: a party trap. It looks like it coud capture a whole crowd of small nuisances."
 bunk nub	reviver	stock cots	pre-nub-on-reviver rule	--	true	true	false	true	true	true	Yelpley	Worn Row	Worn Row	false	"After some crunching and slurping, the bunk nub is changed to a bunch of much smaller, but more comfortable looking, stock cots. You take them."
 party trap	stark rats	gift fig	pre-trap-on-rats rule	oh-who-to rule	true	true	true	true	true	true	Grebeberg	Seer Trees	Seer Trees	false	"The rats all try to enter the trap, and SNAP! SNAP! SNAP! The party trap explodes as the last rat enters, but fortunately none of it gets over you. The Seer Trees seem to nod a bit.[paragraph break]THUMP! They left you a present--good thing you were wearing that pact cap, because a book fell on your head. One glance reveals it to be [b]Oh, Who[r]--a phone book for Grebeberg, like [b]Name ME Man[r] for Yelpley.[paragraph break]You also find a gift fig, which you pick up."
-EPOCH COPE	King Nik	Spur Ups	pre-cope-on-nik rule	--	true	true	true	true	true	true	Grebeberg	Cold Loc	Cold Loc	false	"King Nik takes it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris and Crisp Sir C told me I needed to one day from those other books: ERA FARE, Era Care, Era Pare, Era We Beware ... and maybe even Era Dare! Thank you! Now I can make sure the Rim Emir and his emir crime and emir grime do not become Emir Prime! I will defeat the Mrifk Firm, too, and be a regal ager! My rule will not be an EGAD age but an Era, Rare!' He hands you some Spur Ups in gratitude. 'These may not spur you, but they can give you an UP or two, when you are just scared or worried for no reason in general. Now...back to my vidette div. Gotta RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
+EPOCH COPE	King Nik	Spur Ups	pre-cope-on-nik rule	--	true	true	true	true	true	true	Grebeberg	Cold Loc	Cold Loc	false	"King Nik takes it, nods sagely, and reads. 'Wow! It makes a lot more sense now. I feel like I can understand the more in-depth stuff Sir Kris and Crisp Sir C told me I needed to one day from those other books: ERA FARE, Era Care, Era Pare, Era We Beware ... and maybe even Era Dare! Thank you! Now I can make sure the Rim Emir and his emir crime and emir grime do not become Emir Prime! I will defeat the Mrifk Firm, too, and be a regal ager! My rule will not be an EGAD age but an Era, Rare!'[paragraph break]He hands you some Spur Ups in gratitude. 'These may not spur you, but they can give you an UP or two, when you are just scared or worried for no reason in general. Now...back to my vidette div. Gotta RAFT FAR back to Dragon-o-gard. If you ever stop by there, well... Nik's kin!'"
 stock cots	sleep eels	--	pre-cots-on-eels rule	--	true	true	true	true	true	true	Grebeberg	Ooze Zoo	Ooze Zoo	false	"The sleep eels seem intrigued by the upgrade in relaxation resources. You put the stock cots down and roll them out of the way. The eels go, err, to-cot, for a long nap-span. You can now go south!" [af:puff up/pull up]
 --	--	--	rev-puff-up rule	post-puff-up rule	true	--	--	true	true	true	Yelpley	Yawn Way	Yawn Way	false	--
 --	--	--	rev-pull-up rule	post-pull-up rule	true	--	--	true	true	true	Yelpley	Emo Dome	Emo Dome	false	--
@@ -3058,7 +3060,7 @@ this is the rev-bore-Rob rule:
 		if Worn Row is unvisited:
 			say "You should visit [Worn Row] west of [hn of My Gym].";
 		else:
-			say "[one of]You need to get rid of Rob[or]He sure does like to talk about himself, and you probably can't talk over him.[or]An action to subterfuge Rob will help[or]The pact cap gives you a hint that you need to do a palindrome-ish action[or]BOR* ROB[or]Bore Rob[stopping].";
+			say "[one of]You need to get rid of Rob[or]He sure does like to talk about himself, and you probably can't talk over him[or]An action to subterfuge Rob will help[or]The pact cap gives you a hint that you need to do a palindrome-ish action[or]BOR* ROB[or]Bore Rob[stopping].";
 		the rule succeeds;
 	if say-unless-speed, say "You BORE ROB, and he leaves Worn Row out of boredom.";
 	boot-Rob;
@@ -3182,7 +3184,7 @@ this is the rev-puff-up rule:
 	if puffed-up is true, the rule fails;
 	if in-aid is true:
 		if Dave is not moot, the rule fails;
-		follow the spur-ups-hint rule;
+		process the spur-ups-hint rule;
 		the rule succeeds;
 	if say-unless-speed, say "You use the spur ups to PUFF UP.";
 	now puffed-up is true;
@@ -3191,7 +3193,7 @@ this is the rev-puff-up rule:
 this is the rev-pull-up rule:
 	if pulled-up is true, the rule fails;
 	if in-aid is true:
-		follow the spur-ups-hint rule;
+		process the spur-ups-hint rule;
 		the rule succeeds;
 	if say-unless-speed, say "You PULL UP in the Emo Dome.";
 	moot spur ups;
@@ -3428,7 +3430,7 @@ this is the pre-cup-on-sap rule:
 	if in-aid is true:
 		if liar grail is moot, the rule fails;
 		if puce cup is sappy, the rule fails;
-		say "You need to USE the sap on the puce cup.";
+		say "Now that you used the wash saw to get the past sap loose, you need to USE the sap on the puce cup.";
 		the rule succeeds;
 	later-wipe past sap;
 	if puce cup is soddy:
@@ -3979,7 +3981,7 @@ this is the wear-garb rule:
 	the rule succeeds;
 
 this is the you-win rule: [xxwin]
-	follow the notify score changes rule;
+	process the notify score changes rule;
 	say "[line break]You wonder how you'll get back, but then you see the Flee Elf running towards you. 'Tardy, drat! ... 'This, I h/t! [if cur-score of Odd Do is max-score of Odd Do]Decay?! ACED[else]Won enow[end if]!' You ask hesitantly about what's next. You don't want or need people chanting 'Deified! Deified! Deified!', but...[wfak]";
 	say "'The X-ITE TIX lead BACK TO THE REAL WORLD WHICH WILL BE FAR MORE EXCITING AND ILLUMINATING FOR YOUR EXPERIENCE HERE!'[wfak]Well, given all the palindromes you dealt with, you probably should've expected a there-and-back-but-wiser summary. Books like that always kind of annoyed you once you figured the whole schtick out, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand says, 'I'll need the pact cap back. It will go to our new museum.'[paragraph break]'What's it called?' you ask, despite yourself.[wfak]";
 	say "[paragraph break]'Well, there's still argument over We-I-View, Show-Ohs and Trofy Fort.' (Trofee?) The Flee Elf asks which you prefer, and after an awkward silence, you mention they all seem equally appropriate and unforced. Another awkward silence! How palindromic![paragraph break]'Well, anyway. This RIDE-DIR will help you return to your own world. But first, draw an award! Draw an award!'[wfak]";
@@ -4461,7 +4463,7 @@ carry out paceing:
 		say "[if mrlp is not Grebeberg][walk-law].[else]You suddenly feel [pace-of]![end if]";
 	else:
 		say "[if mrlp is not Grebeberg][walk-law]. Like Grebeberg to the west?[else]You suddenly feel [pace-of].[end if]";
-	follow the notify score changes rule;
+	process the notify score changes rule;
 	the rule succeeds;
 
 to say walk-law:
@@ -6308,7 +6310,7 @@ understand "rei [something]" as reiing when player is in Worn Row and reifier is
 understand "reify [something]" as reiing when player is in Worn Row and reifier is not off-stage and ever-workrow is true.
 
 carry out reiing:
-	follow the r-shortcut rules for the reifier;
+	process the r-shortcut rules for the reifier;
 	try useoning noun with reifier instead;
 
 section reving
@@ -6322,7 +6324,7 @@ understand "rev [something]" as reving when player is in Worn Row and reviver is
 understand "revive [something]" as reving when player is in Worn Row and reviver is not off-stage and ever-workrow is true.
 
 carry out reving:
-	follow the r-shortcut rules for the reviver;
+	process the r-shortcut rules for the reviver;
 	try useoning noun with reviver instead;
 
 section roting
@@ -6336,7 +6338,7 @@ understand "rot [something]" as roting when player is in Worn Row and rotator is
 understand "rotate [something]" as roting when player is in Worn Row and rotator is not off-stage and ever-workrow is true.
 
 carry out roting:
-	follow the r-shortcut rules for the rotator;
+	process the r-shortcut rules for the rotator;
 	try useoning noun with rotator instead;
 
 chapter books
@@ -8395,7 +8397,7 @@ carry out smitimsing:
 		try useoning ME gem with Knife Fink;
 	try useoning yard ray with redivider;
 	try going south;
-	follow the notify score changes rule;
+	process the notify score changes rule;
 	the rule succeeds;
 
 section sdsing - not for release
@@ -8701,7 +8703,7 @@ carry out revovering:
 		if there is a getit entry, now player has getit entry; [?? guru rug shouldn't be take-able but code is tricky]
 		if d1 entry is true, moot use1 entry;
 		if d2 entry is true, moot use2 entry;
-		if there is a postproc entry, follow the postproc entry;
+		if there is a postproc entry, process the postproc entry;
 		if global-delay < rev-skips, say "rev-skips was too much by [rev-skips - global-delay].";
 		if need-rev-check and the remainder after dividing global-delay by 5 is 0 and rev-skips is 0 and score < min-win - 4: [gklobal-delay can't be 0]
 			say "Okay, do you want to try to do more?";
@@ -8724,7 +8726,7 @@ carry out revovering:
 		say "[if x-ite tix are off-stage]I didn't find anything to do. This is a bug in the warp code. Apologies, and I'd be interested how this happened[else]You've got the X-ITE TIX. The last step, you need to do yourself[end if].";
 	else:
 		say "Uh oh. There should've been a message saying you can't warp any more and only have the Dirge Grid left. It's likely there is a bug in the rev over/deep speed code. Continually using [b]TIP IT[r], however, should work. If you have a transcript, report the bug at my github site or email me.";
-	follow the notify score changes rule;
+	process the notify score changes rule;
 	if test set is moot and player is not in Fun Enuf and Dirge Grid is not visited:
 		say "(Also moving you to [Fun Enuf] for the endgame)[paragraph break]";
 		move player to Fun Enuf, without printing a room description;
@@ -9006,10 +9008,10 @@ carry out aiding:
 			if use1 entry and use2 entry are mixable:
 				if there is a preproc entry:
 					if debug-state is true, say "Checking [preproc entry].";
-					consider the preproc entry;
+					process the preproc entry;
 					if the rule failed, next;
 					if the rule succeeded:
-						if debug-state is true, say "[preproc entry] succeeded!";
+						if debug-state is true, say "DEBUG: item hint entry [preproc entry] succeeded!";
 						now in-aid is false;
 						the rule succeeds;
 				say "[if debug-state is true](DEFAULT-1) [end if][if use2 entry is a workable and Worn Row is not worky]Change to WORK ROW, then [end if]USE [printed name of use1 entry in upper case] ON [printed name of use2 entry in upper case].";
@@ -9020,7 +9022,7 @@ carry out aiding:
 			if the rule succeeded:
 				now in-aid is false;
 				the rule succeeds;
-	say "I can't find anything specific to do here right now. So let's look more generally.";
+	say "I can't find anything specific to do here right now. So let's look at your inventory and the general area.";
 	repeat through table of goodacts:
 		if there is a room-to-go entry and room-to-go entry is unvisited, next;
 		if there is a use1 entry:
@@ -9045,7 +9047,7 @@ carry out aiding:
 	repeat through table of goodacts:
 		if there is a room-to-go entry and room-to-go entry is unvisited:
 			let oiq be in-dir of room-to-go entry;
-			say "GENERAL HINT: the room [opposite of oiq] of [in-room of room-to-go entry] is available, but you haven't visited there yet.";
+			say "GENERAL HINT: the room [opposite of oiq] of [hn-of of in-room of room-to-go entry] is available, but you haven't visited there yet.";
 			now in-aid is false;
 			the rule succeeds;
 	say "Uh oh, I couldn't find a hint.";
@@ -9564,7 +9566,7 @@ carry out itmhinting:
 		if noun is a tronpart, say "You probably want to search for stuff that will turn up [the noun] instead." instead;
 		say "You aren't supposed to know about [the noun] yet." instead;
 	if noun is scenery and noun is peripheral, say "[if debug-state is true][b]DEBUG NOTE ([item-hint-rule of noun])[r] [end if]You don't have to do anything with [the noun]. It's probably there just to make an entertaining boundary." instead;
-	follow the item-hint-rule of noun instead;
+	process the item-hint-rule of noun instead;
 
 a thing has a rule called item-hint-rule. item-hint-rule of a thing is usually item-bug-hint rule.
 
@@ -9591,7 +9593,7 @@ this is the helpdoc-hint rule: say "There's no hidden meaning. You can only just
 item-hint-rule of a tronpart is usually tronpart-hint rule.
 
 this is the tronpart-hint rule:
-	if noun is TNT and noun is in yell alley, follow the bomb-mob-hint rule instead;
+	if noun is TNT and noun is in yell alley, process the bomb-mob-hint rule instead;
 	if player does not have epicer recipe, say "While [the noun] is important, somehow you've managed not to get the recipe that tells how to use it, yet. Fortunately, that part is a lot easier. [if player is in trapeze part]You have something to do right here[else]Try exploring Yelpley[end if]." instead;
 	if epicer recipe is nox, say "Examine the epicer recipe." instead;
 	say "[if tron-got is 4]Now[else]Once[end if] you have all four parts of the north-tron as dictated by the epicer recipe, you can use any of those parts (or the recipe) on any of the other parts, or the recipe.";
@@ -9794,7 +9796,7 @@ item-hint-rule of butene tub is butene-tub-hint rule.
 item-hint-rule of dna hand is dna-hand-hint rule.
 
 this is the dna-hand-hint rule:
-	follow the roto-motor-hint rule;
+	process the roto-motor-hint rule;
 	say "[one of]The DNA hand is lifelike, but it needs something to help it come to life[or]You need to look for something mechanical to combine with the DNA hand. It then might be able to perform a task you can't[stopping].";
 
 this is the butene-tub-hint rule:
@@ -9806,11 +9808,11 @@ this is the wisp-gone rule:
 	if player does not have noun, say "Now that the Psi Wisp is gone, you can just take [the noun]." instead;
 
 this is the dna-band-hint rule:
-	follow the wisp-gone rule;
+	process the wisp-gone rule;
 	say "[one of]The DNA band can get an upgrade.[or]Which machine to use in Work Row?[or]The Reifier will make the DNA band come alive. USE BAND ON REIFIER[in-work-row].[stopping]";
 
 this is the gold-log-hint rule:
-	follow the wisp-gone rule;
+	process the wisp-gone rule;
 	say "[one of]There's something inside the gold log.[or]Have you found anything that can shake out what is inside an item?[or]USE GOLD LOG ON ROTATOR[in-work-row].[stopping]";
 
 this is the psi-wisp-hint rule:
@@ -9829,7 +9831,7 @@ item-hint-rule of spa maps is spa-maps-hint rule.
 item-hint-rule of sharp rahs is sharp-rahs-hint rule.
 
 this is the sharp-rahs-hint rule:
-	follow the rahs-gas-reject rule;
+	process the rahs-gas-reject rule;
 	if sage gas is not moot, say "[one of]The sharp rahs can be used for motivation[or]There's something that's motivational but not very good[or]You need to do something in Motto Bottom, but you don't have everything, yet. You need to do something to the tame mat, first[stopping]." instead;
 	say "[one of]The sharp rahs bring enthusiasm to something that might be too esoteric[or]You've created something that's a bit esoteric[or]The guru rug leaves you thoughtful but not motivated[or]USE SHARP RAHS ON GURU RUG[stopping].";
 
@@ -9851,7 +9853,7 @@ this is the tru-yurt-hint rule:
 	if mist sim is in yack cay or moo room is unvisited or SOME DEMOS is off-stage, say "You're a long way from cleaning the Tru Yurt up." instead;
 	if player does not have enact cane, say "You're still a way from having anything that can clean the Tru Yurt up." instead;
 	if player has moor broom, say "[one of]You have something that can clean up a home[or]USE MOOR BROOM ON TRU YURT[stopping]." instead;
-	follow the enact-cane-hint rule instead;
+	process the enact-cane-hint rule instead;
 
 this is the edits-tide-hint rule:
 	if el doodle is moot, say "The edits tide is no longer useful to you, now you cleared up El Doodle." instead;
@@ -9884,18 +9886,20 @@ item-hint-rule of rift fir is rift-fir-hint rule.
 item-hint-rule of past sap is past-sap-hint rule.
 item-hint-rule of spur ups is spur-ups-hint rule.
 
+to say dome-if-vis: say "[if emo dome is unvisited]east of Yawn Way[else][hn-the of Emo Dome]"
+
 this is the spur-ups-hint rule:
-	if puffed-up is true, say "[one of]Now you can stand it in [hn-the of Emo Dome], it would be nice to stop[or]You can run past your fears but not stay still to face them[or]The Spur Ups have one more use[or]PU* UP, again, gives nothing[or]PU** UP again has something worthwhile[or]You can PULL UP in Emo Dome to stay and bear things[stopping]." instead;
+	if puffed-up is true, say "[one of]Now you can stand it in , it would be nice to stop[or]You can run past your fears but not stay still to face them[or]The Spur Ups have one more use[or]PU* UP, again, gives nothing[or]PU** UP again has something worthwhile[or]You can PULL UP in Emo Dome to stay and bear things[stopping]." instead;
 	if Worn Row is unvisited:
 		say "You need to visit west of [hn of My Gym].";
 	else if ever-workrow is false:
 		say "The main puzzle [hn-in of Yawn Way] is how to get east. You need to change [Worn Row], to start.";
 	else if stark rats are in Seer Trees:
-		say "To go east [hn-in of Yawn Way], you first need to clear a way west beyond [if Seer Trees is visited]Seer Trees[else]Fun Enuf[end if].";
+		say "To go east [hn-in of Yawn Way], you first need to clear a way west beyond [if Seer Trees is visited]Seer Trees[else]Fun Enuf[end if]. There aren't too many rooms to explore, but you might not be able to do a lot here.";
 	else if player does not have Spur Ups:
 		say "[if Cold Loc is not visited]You need to visit [vague-dir of Cold Loc][else]King Nik in Cold Loc has an item you need, if you help him.[end if]."; [?? clues still bounce you around a bit]
 	else:
-		say "[one of]King Nik's Spur Ups are handy to go east of [hn of Yawn Way].[or]Each Spur of King Nik's will help you do something else UP.[or]You need to feel more confident in yourself [hn-in of Emo Dome].[or]PU* UP turns up nothing, though PUT UP seems promising, but...[or]PU** UP has possibilities.[or]PUFF UP [hn-in of Yawn Way] to gain access to the east.[stopping]";
+		say "[one of]King Nik's Spur Ups are handy to go east of [hn of Yawn Way].[or]Each Spur of King Nik's will help you do something else UP.[or]You need to feel more confident in yourself [dome-if-vis][end if].[or]PU* UP turns up nothing, though PUT UP seems promising, but...[or]PU** UP has possibilities.[or]PUFF UP [hn-in of Yawn Way] to gain access to the east.[stopping]";
 
 this is the rift-fir-hint rule:
 	if sap-takeable is true, say "Now you've cut the sap from the fir, you don't need to deal with the fir." instead;
@@ -9905,7 +9909,7 @@ this is the past-sap-hint rule:
 	if liar grail is moot, say "You're done with the past sap." instead;
 	if sap-takeable is false:
 		say "[one of]You need to cut the sap from the rift fir. [or][stopping]";
-		follow the rift-fir-hint rule instead;
+		process the rift-fir-hint rule instead;
 	if puce cup is sappy, say "You already have sap in the puce cup." instead;
 	if puce-ever is true, say "You figured you need to use the puce cup on the sap, so that will work." instead;
 	say "[one of]You need a receptacle for the past sap. Then you can USE it on the sap[or][if pulled-up is true]The puce cup from the emo dome will work[else if emo dome is visited]You need to figure how to slow down in the Emo Dome to get the puce cup[else]You need to explore a bit more[end if][stopping]."
@@ -9920,7 +9924,7 @@ item-hint-rule of go by bog is go-by-bog-hint rule.
 item-hint-rule of sage gas is sage-gas-hint rule.
 
 this is the sage-gas-hint rule:
-	follow the rahs-gas-reject rule;
+	process the rahs-gas-reject rule;
 	say "[one of]The sage gas could be used to punch up something that seems a bit dopey and listless.[or]Have you seen anything that seems like it doesn't have any punch?[or]Tame, perhaps?[or]USE SAGE GAS ON MOTTO BOTTOM[hn-in-blank of motto bottom].[stopping]"
 
 this is the go-by-bog-hint rule:
@@ -9942,7 +9946,7 @@ item-hint-rule of state tats is state-tats-hint rule.
 item-hint-rule of soot tattoos is soot-tattoos-hint rule.
 
 this is the soot-tattoos-hint rule:
-	follow the tag-tattoos-together rule;
+	process the tag-tattoos-together rule;
 	say "[one of]The soot tattoos are blank. They could use a pattern[or]You may have seen the roses, or ... pattern around a few places[or]Eventually, you will get an item with that pattern[or]Once you do, use it with the soot tattoos. This identification will help you visit a new location[stopping].";
 
 this is the state-tats-hint rule:
@@ -10005,7 +10009,7 @@ this is the tag-tattoos-together rule:
 	if player has soot tattoos and player has gate tag, say "[one of]You can create a makeshift ID with two items you have[or]A pattern plus something inky could go on your skin[or][if noun is soot tattoos]The pattern is the gate tag[else]The something inky is the soot tattoos[end if][or]USE GATE TAG ON SOOT TATTOOS[stopping]."
 
 this is the gate-tag-hint rule:
-	follow the tag-tattoos-together rule;
+	process the tag-tattoos-together rule;
 	say "[one of]The gate tag's pattern of roses, or ... mimics something else[or]The entrance north of the Diff ID has the same pattern as the gate tag[or]If you find what to combine with the gate tag, this identification will help you visit a new location[stopping].";
 
 this is the brag-garb-hint rule:
@@ -10041,7 +10045,7 @@ this is the make-mr-arm rule:
 	if player has roto motor and player has dna hand, say "[one of]You have the materials to create a makeshift cyborg[or]You don't need any separate machines, just what's in your inventory[or]You have [the noun], so you need something [if noun is roto motor]life[else]machine[end if]-like[or]USE ROTO MOTOR ON DNA HAND[stopping]." instead;
 
 this is the roto-motor-hint rule:
-	follow the make-mr-arm rule;
+	process the make-mr-arm rule;
 	say "The roto-motor fits with something to create a makeshift cyborg, but you haven't found it yet[if player has dna hand or psi wisp is moot]. You may have found something you can convert to it, though[end if]." instead;
 
 this is the eroded-ore-hint rule:
@@ -10049,7 +10053,7 @@ this is the eroded-ore-hint rule:
 
 this is the made-dam-hint rule:
 	unless eroded ore is off-stage, say "You already found the eroded ore behind the made dam." instead;
-	follow the need-radar rule;
+	process the need-radar rule;
 	say "[one of]There's something behind the made dam, and you need a way to detect it.[or]Do you have any detection items in your inventory?[or]The radar can detect things in hidden areas.[or]USE RADAR ON MADE DAM.[stopping]";
 
 this is the need-radar rule:
@@ -10069,7 +10073,7 @@ this is the gnu-dung-hint rule:
 	if gnu dung is in dumb mud, say "[one of]You need a sanitary way to get rid of all that gnu dung[or]Maybe you have something that could vacuum it all up[or]You do! USE POO COOP ON GNU DUNG[stopping].";
 
 this is the turf-rut-hint rule:
-	follow the gnu-dung-hint rule;
+	process the gnu-dung-hint rule;
 	say "[one of]You need something to fill in the turf rut. Something you have a lot of[or]Maybe something that'd be useful or that would impede you elsewhere would fill in the rut[or]The poo coop has cleaned up the gnu dung pretty nicely[or]USE POO COOP ON TURF RUT[stopping]."
 
 this is the lie-veil-hint rule:
@@ -10103,7 +10107,7 @@ this is the elite-tile-hint rule: say "The elite tile is just there to help you 
 this is the x-it-stix-hint rule: say "You can't do anything with the X-It Stix. They're there to block you from switching regions during a chase."
 
 this is the tix-exit-hint rule:
-	if player has x-ite tix, follow the x-ite-tix rule instead;
+	if player has x-ite tix, process the x-ite-tix rule instead;
 	say "You'll be able to leave the Tix Exit once you have the right tix. Err, tickets."
 
 this is the player-itm-hint rule: say "I can't help you with internal stuff."
@@ -10121,7 +10125,7 @@ this is the evac-ave-hint rule: say "Evac Ave is the way back home. You don't ne
 this is the flee-elf-hint rule: say "[one of]The Flee Elf wants you to do something specific with the cap. This is a guess the verb puzzle. But you may not have to guess out of the blue[or]There are a lot of palindromes in the game, so **** CAP may be suitable. You will be able to figure out most of the palindrome[or]PAC* CAP is next[or]A synonym for TAKE starting PAC* is what you need[or]PACK CAP[stopping]." instead;
 
 this is the pact-cap-hint rule:
-	if flee elf is in fun enuf, follow the flee-elf-hint rule instead;
+	if flee elf is in fun enuf, process the flee-elf-hint rule instead;
 	if kayo yak is moot, say "You don't need to change the pact cap again." instead;
 	if cap-ever-pace is false, say "[one of]The flee elf mentioned there is one more thing you can do with the pact cap[or]PAC* CAP is still a possibility[or]The only meaningful words going PAC* both work about the same[or]PACY CAP or PACE CAP will help you go faster in the right place[stopping]." instead;
 	if troll ort is not moot, say "You will need to make the PACE CAP some time to run faster, but you're not in a chase yet." instead;
@@ -10184,7 +10188,7 @@ this is the cross-orc-hint rule:
 
 this is the crag-arc-hint rule:
 	unless ufo tofu is off-stage, say "You found what was behind the crag arc." instead;
-	follow the need-radar rule;
+	process the need-radar rule;
 	say "[one of]There's something behind the crag arc, but you can't see it. You'll have to detect it[or]You have an item that detects things that aren't visible[or]The radar. USE RADAR ON CRAG ARC[stopping].";
 
 section Uneven U hints 0 3
@@ -10203,7 +10207,7 @@ this is the code-doc-hint rule:
 	if spa maps are off-stage, say "You haven't found an item the code doc can help you with, yet." instead;
 	if maps-explained is false, say "[one of]Now you helped the Code Doc, the Code Doc can help you with something that is still confusing[or]You've already cleaned up one thing, but you can't quite decipher it[or]USE SPA MAPS ON CODE DOC[stopping]." instead;
 	if porch crop is off-stage, say "You will want to help the code doc one last time, but that's in the future." instead;
-	if porch crop is in Uneven U, follow the porch-crop-hint rule instead;
+	if porch crop is in Uneven U, process the porch-crop-hint rule instead;
 
 this is the porch-crop-hint rule: say "[one of]You need to figure a way to clean up the porch crop[or]An item you've had since nearly the beginning has one more use[or]USE WASH SAW ON PORCH CROP[stopping].";
 
@@ -10340,8 +10344,8 @@ this is the liar-grail-hint rule:
 	say "[one of]The grail is taunting you, saying you're dry, even though it's dry. It's putting half-truths into your head[or]Maybe you can clear things up a bit by pouring something into the grail[or]You haven't found any liquid, but something might become liquid in warmer climates[or]USE PUCE CUP ON PAST SAP[or]With the past sap in the puce cup, note the sap changes to sirup, and then you can USE PUCE CUP ON LIAR GRAIL[stopping].";
 
 this is the wordy-drow-hint rule:
-	say "[one of]The wordy drow is tied up with the liar grail, so we'll look at the liar grail.[paragraph break][or][stopping]";
-	follow the liar-grail-hint rule;
+	say "[one of]The wordy drow is tied up with the liar grail, so we'll look at the liar grail.[line break][or][stopping]";
+	process the liar-grail-hint rule;
 
 section Deft Fed hints 6 3
 
@@ -10367,7 +10371,7 @@ this is the sniffins-hint rule:
 	if yob attaboy is not moot, say "[one of]Sniffins could use some motivation. Nothing too fancy.[or]Have you seen a slapdash motivational book somewhere?[or][if player has YOB ATTABOY]You have it, in fact. YOB ATTABOY.[else]The tract cart contains one.[end if][or]USE YOB ATTABOY ON SNIFFINS.[stopping]" instead;
 	if gorge grog is in deft fed:
 		say "[one of]The next thing to do with Sniffins is trade for the Gorge Grog. [or][stopping]";
-		follow the gorge-grog-hint rule instead;
+		process the gorge-grog-hint rule instead;
 	say "You don't need to deal with [Sniffins] any more.";
 
 this is the nats-tan-hint rule:
@@ -10380,7 +10384,7 @@ item-hint-rule of ergot ogre is ergot-ogre-hint rule.
 
 this is the ergot-ogre-hint rule:
 	if chased-yet of kayo yak is false, say "[one of]You'll need someone or something to help you deal with the ergot ogre. Something that can touch the ogre without touching its skin[or]You need to figure how to get the kayo yak [hn-in of frush surf]to chase you[stopping]." instead;
-	follow the yak-ogre-lair rule;
+	process the yak-ogre-lair rule;
 
 section Motto Bottom hints 1 4
 
@@ -10412,7 +10416,7 @@ this is the stamp-mats-hint rule:
 item-hint-rule of kayo yak is kayo-yak-hint rule.
 
 this is the kayo-yak-hint rule:
-	follow the yak-ogre-lair rule;
+	process the yak-ogre-lair rule;
 	say "[one of]The kayo yak will keep chasing you. Maybe you can find someone else for it to knock over.[or]Someone guarding something?[or]The ergot ogre.[or]You'll need to do one more thing once you get to the Trial Lair.[stopping]" instead;
 
 this is the yak-ogre-lair rule:
@@ -10591,7 +10595,7 @@ carry out pooping:
 		say "[line break]NOTE: there are three other 'proper' ways to swear, but I don't want to encourage bad behavior too much, here. So this is the only bonus point you'll get!";
 	else:
 		say "Ah! Cussin['] is such a...[paragraph break]X2?[paragraph break]...X!";
-	follow the notify score changes rule;
+	process the notify score changes rule;
 	the rule succeeds;
 
 chapter slammammalsing
@@ -11389,7 +11393,7 @@ carry out scvering:
 			if there is a use1 entry:
 				say "Row [rows]: didn't get [use1 entry] + [use2 entry] = [if there is a getit entry][getit entry][else](nothing)[end if].";
 			else if there is a preproc entry:
-				say "Row [rows]: didn't follow the [preproc entry].";
+				say "Row [rows]: didn't process the [preproc entry].";
 			else:
 				say "Something odd happening with row [rows].";
 	the rule succeeds;
@@ -11571,7 +11575,6 @@ carry out ihting:
 					increment found-it of init-room of QQ;
 				else:
 					if QQ is dud, next;
-					if QQ is north tron, next;
 					add QQ to unsorted-hints;
 	now print-found-thing is true;
 	say "[b]Blank hints[r] ([number of entries in blank-hints]) : [blank-hints].";
