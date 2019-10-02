@@ -249,6 +249,45 @@ volume for indexing purposes
 
 test zz-wisp-56-yak-89 with "z".
 
+volume test monties
+
+chapter full monty extension
+
+include Full Monty Testing by Andrew Schultz.
+
+table of monties (continued)
+montopic (topic)	on-off	test-title (text)	test-action	topic-as-text (text)
+"xlist"	false	"DIRING"	show-dirs rule	"showing directions"
+"aid/hint/h"	false	"AIDING"	aid-it rule	"aid new hint (hint/h)"
+"aidall/hintall/ha"	false	"AIDALLING"	aid-all rule	"aid all visibles (hintall/ha)"
+"mem"	false	"MEMING"	mem-it rule	"mem it all"
+"eye"	false	"EYEING everything"	eye-it rule	"eye it all"
+
+this is the aid-it rule: try aiding;
+
+this is the show-dirs rule: say "Header = [location of player] ([mrlp])[dir-summary]."
+
+this is the eye-it rule: try eaing;
+
+this is the mem-it rule: try meming;
+
+definition: a thing (called sd) is so-done:
+	unless pact cap is moot, no;
+	if sd is a helpdoc and sd is xed, yes;
+	if sd is yourself, yes;
+	no;
+
+this is the aid-all rule:
+	let BLANKLIST be a list of things;
+	now BLANKLIST is {};
+	repeat with QQ running through all visible things:
+		if QQ is so-done, next;
+		if item-hint-rule of QQ is item-bug-hint rule, add QQ to BLANKLIST;
+		say "=========== [QQ] ===========[line break]";
+		try itmhinting QQ;
+		say "=========== [QQ] ===========[line break]";
+	if number of entries in BLANKLIST > 0, say "No item hint rule: [BLANKLIST].";
+
 volume test verbs
 
 chapter alllasting
