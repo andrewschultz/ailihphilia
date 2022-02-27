@@ -6323,6 +6323,50 @@ carry out roting:
 	consider the r-shortcut rules for the rotator;
 	try useoning noun with rotator instead;
 
+chapter rring
+
+rring is an action applying to one thing.
+
+understand the command "rr" as something new.
+
+understand "rr [something]" as rring when ever-wordrow is true.
+
+rr-available is a truth state that varies.
+
+to mach-try (a1 - a thing) and (a2 - a thing):
+	if a2 is moot, continue the action;
+	if a1 is moot, continue the action;
+	try useoning a1 with a2;
+
+one-mach-warn is a truth state that varies.
+
+carry out rring:
+	if player is not in Worn Row, say "You need to be in Work Row for this to work." instead;
+	if Worn Row is not worky, say "You need to change back to Work Row to do this." instead;
+	if number of moot workables is 3, say "The RR command is not valid now you destroyed all the machines." instead;
+	if rr-available is false:
+		say "You may have indirectly discovered a verb to plow through all three machines. Just so you know, in case you want to undo.[line break]";
+		now rr-available is true;
+	if number of moot workables is 2 and one-mach-warn is false:
+		now one-mach-warn is true;
+		say "NOTE: the RR command is really just the same as [b][verb-abbrev of random not workedout workable in Worn Row][r] now you destroyed two of the machines, but since RR saves a keystroke, why not?[paragraph break]";
+	repeat through table of goodacts: [It would be simpler to use an if statement but things could get shuffled in the table of goodacts. This assures that we try all possible machines before an item vanishes permanently, but no more.]
+		if there is a use1 entry:
+			if use2 entry is reviver and use1 entry is noun:
+				mach-try use1 entry and reifier;
+				mach-try use1 entry and rotator;
+				mach-try use1 entry and reviver;
+				the rule succeeds;
+			if use2 entry is reifier and use1 entry is noun:
+				mach-try use1 entry and rotator;
+				mach-try use1 entry and reviver;
+				mach-try use1 entry and reifier;
+				the rule succeeds;
+	mach-try noun and reviver;
+	mach-try noun and reifier;
+	mach-try noun and rotator;
+	the rule succeeds.
+
 chapter books
 
 to decide what number is books-in-cart:
@@ -11339,50 +11383,6 @@ carry out endgameing:
 	if player is not in Fun Enuf, move player to Fun Enuf;
 	now endgame-test is true;
 	the rule succeeds;
-
-chapter rring
-
-rring is an action applying to one thing.
-
-understand the command "rr" as something new.
-
-understand "rr [something]" as rring when ever-wordrow is true.
-
-rr-available is a truth state that varies.
-
-to mach-try (a1 - a thing) and (a2 - a thing):
-	if a2 is moot, continue the action;
-	if a1 is moot, continue the action;
-	try useoning a1 with a2;
-
-one-mach-warn is a truth state that varies.
-
-carry out rring:
-	if player is not in Worn Row, say "You need to be in Work Row for this to work." instead;
-	if Worn Row is not worky, say "You need to change back to Work Row to do this." instead;
-	if number of moot workables is 3, say "The RR command is not valid now you destroyed all the machines." instead;
-	if rr-available is false:
-		say "You may have indirectly discovered a verb to plow through all three machines. Just so you know, in case you want to undo.[line break]";
-		now rr-available is true;
-	if number of moot workables is 2 and one-mach-warn is false:
-		now one-mach-warn is true;
-		say "NOTE: the RR command is really just the same as [b][verb-abbrev of random not workedout workable in Worn Row][r] now you destroyed two of the machines, but since RR saves a keystroke, why not?[paragraph break]";
-	repeat through table of goodacts: [It would be simpler to use an if statement but things could get shuffled in the table of goodacts. This assures that we try all possible machines before an item vanishes permanently, but no more.]
-		if there is a use1 entry:
-			if use2 entry is reviver and use1 entry is noun:
-				mach-try use1 entry and reifier;
-				mach-try use1 entry and rotator;
-				mach-try use1 entry and reviver;
-				the rule succeeds;
-			if use2 entry is reifier and use1 entry is noun:
-				mach-try use1 entry and rotator;
-				mach-try use1 entry and reviver;
-				mach-try use1 entry and reifier;
-				the rule succeeds;
-	mach-try noun and reviver;
-	mach-try noun and reifier;
-	mach-try noun and rotator;
-	the rule succeeds.
 
 chapter iaing
 
