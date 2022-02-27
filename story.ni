@@ -10998,8 +10998,8 @@ final question wording	only if victorious	topic	final response rule	final respon
 "see [if LLP-hint-yet is false]hints for [end if]which LLP[if cur-score of Odd Do is not 10]s[end if] you MISSED"	true	"LLP/LLPS/MISSED"	what-missed rule	loafing
 --	true	"RN"	--	rlning
 --	true	"RAND"	--	rl0ing
---	true	"ORDR O"	--	ordring
-"SPOT OPS for changes after beating the Diktat Kid"	true	"SPOT OPS"	--	spotopsing
+--	true	"ORDR O" or "ORDR/O"	--	ordring
+"SPOT OPS for changes after beating the Diktat Kid"	true	"SPOT OPS" or "SPOT/OPS"	--	spotopsing
 
 spotopsing is an activity.
 
@@ -11017,10 +11017,6 @@ rule for rlning:
 		say "(Cycling back to the first table)[paragraph break]";
 		now last-table-tried is 1;
 	try randlisting last-table-tried instead;
-
-rlming is an activity.
-
-rule for rlming: say "You need to type in a number instead of a table name." instead;
 
 rl0ing is an activity.
 
@@ -11042,7 +11038,7 @@ carry out randlisting:
 			say "[count]. [desc entry][line break]";
 		say "[line break]This doesn't include the tables of names for each phone book. Those are both really long, and you'll probably want to see the source code (Ailihphilia Tables.i7x) if you're really interested.";
 		the rule succeeds;
-	if number understood < 0 or number understood > number of rows in table of all randoms, say "Need 1-[number of rows in table of all randoms]." instead;
+	if number understood < 0 or number understood > number of rows in table of all randoms, say "You need 1-[number of rows in table of all randoms] after RAND." instead;
 	now last-table-tried is number understood;
 	choose row number understood in table of all randoms;
 	let mytab be tabnam entry;
@@ -11051,6 +11047,7 @@ carry out randlisting:
 	repeat through mytab:
 		increment count;
 		say "[randtxt entry][line break]";
+		if the remainder after dividing count by 20 is 0, wfak;
 
 loafing is an activity.
 
@@ -11093,8 +11090,12 @@ This is the nonstandard respond to final question rule:
 					if there is a final response rule entry, abide by final response rule entry;
 					otherwise carry out the final response activity entry activity;
 					rule succeeds;
-	if the player's command includes "rand":
+	let w1 be word number 1 in the player's command;
+	if w1 is "rand":
 		say "RAND requires a number after it.";
+		the rule succeeds;
+	if w1 is "rn" or w1 is "rank" or w1 is "ranks" or w1 is "llp" or w1 is "llps" or w1 is "missed":
+		say "You only need the first word.";
 		the rule succeeds;
 	issue miscellaneous library message number 8.
 
