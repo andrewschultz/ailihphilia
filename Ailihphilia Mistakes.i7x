@@ -4,7 +4,7 @@ volume Mistakes
 
 [the rooms here are arranged alphabetically. When an item triggers the mistake, the room will be the one where you first find the item. If there are two places, we go with the first: for instance, (partial spoiler) the roto motor appears in the west of the two locations where it can turn up.]
 
-[programmer's note: the utility aam.py adds or sorts the 'mis' numbers. Mist.py makes sure each mistake is in the appropriate rbr-* or reg-* test file.]
+[programmer's note: the utility aam.py adds or sorts the 'mis' numbers. This was probably a bad idea, but I did it anyway, because it seemed organizational at the time. Now it just throws way too many changes into git. Mist.py makes sure each mistake is in the appropriate rbr-* or reg-* test file.]
 
 definition: a thing (called mt) is quicknear:
 	if mt is in location of player, yes;
@@ -341,11 +341,15 @@ understand "rocs cor" as a mistake ("Your flattery doesn't move the rocs.[mis of
 
 understand "score rocs" as a mistake ("[if flu gulf is not visited]You don't need allies like that. But, spoiler: there are enemies like that[else if scorn rocs are not moot]0/10 would not pet. They're bad rocs, Brent ... but you'll get a point for getting rid of them[else]You already scored ON them[end if].[mis of 119]"). [if you didn't see the reference, it's WeRateDogs on twitter and "They're good dogs Brent"] [okall]
 
+understand "scornin rocs" as a mistake ("Yes, they are that, too.")
+
 chapter Frush Surf
 
 understand "fresh serf" as a mistake ("Nobody appears to do your work for you.") when player is in Frush Surf.
 
 understand "kayak a yak" and "kayak ayak" and "kayak yak" as a mistake ("[if kayak is quicknear and yak is quicknear]You've got the right idea, sort of, but the wrong place[else if kayak is moot]You already used the kayak[else if yak is moot]The yak has done its job[else if Frush Surf is unvisited]There's a yak around, just not here[else if Lac Oft Focal is unvisited]There's a kayak around, just not here[else]You don't need to bring the yak and kayak together[end if].[mis of 376]") when yak is quicknear or kayak is quicknear.
+
+understand "late metal" as a mistake ("The [slate metals] should only disappear after they've served their purpose.[mis of 121]") when slate metals are quicknear.
 
 understand "slate petals" as a mistake ("The metals are for a didactic and not an aesthetic purpose.[mis of 121]") when slate metals are quicknear.
 
@@ -523,6 +527,8 @@ chapter Le Babel
 understand "broc orb" as a mistake ("The orb sprouts no broccoli.[mis of 180]") when Bros' Orb is quicknear.
 
 understand "bron orb" as a mistake ("King James's orb is a basketball, and that's that.[mis of 181]") when Bros' Orb is quicknear.
+
+understand "brosnans orb" as a mistake ("Let's not bring any Hollywood actors into this.[mis of 377]") when Bros' Orb is quicknear.
 
 understand "brow orb" as a mistake ("The orb fails to develop facial features.[mis of 182]") when Bros' Orb is quicknear.
 
@@ -1032,7 +1038,7 @@ understand "mob om" as a mistake ("The bomb mob fails to find inner peace. I gue
 
 understand "nacelle can" as a mistake ("You don't need a huge engine.[mis of 375]") when player has snack cans.
 
-understand "navette van" as a mistake ("The navy van is seedy enough. It doesn't need to be selling gems, too.") when navy van is quicknear.
+understand "navette van" as a mistake ("The navy van is seedy enough. It doesn't need to be selling gems, too.[mis of 376]") when navy van is quicknear.
 
 volume checking off mistakes from the player
 
