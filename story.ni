@@ -356,7 +356,7 @@ carry out huging:
 
 the block kissing rule is not listed in any rulebook.
 
-check kissing: say "[one of]XOXOX[or]OXOXO[or]Hug? Uh[at random]!" instead;
+check kissing: say "[one of]XOXOX[or]OXOXO[or]Hug? Uh[or]No voice says 'Kiss is [']k!'[or]XO? Pox![at random]!" instead;
 
 volume room specifications
 
@@ -2241,6 +2241,7 @@ swearies is a number that varies.
 
 check swearing obscenely:
 	if player is in Swept Pews, say "/sends player to Tsk St. for such language here, of all places." instead;
+	if scorn rocs are touchable, say "You feel no roc-cuss-succor." instead;
 	if poop-boob-yet is true, say "[one of]Despite having found the right way to swear here, you reaffirm your respect for the classics. How thoughtful! Anyway...[paragraph break][or][stopping]";
 	next-rand table of swearstuff instead;
 
@@ -2253,7 +2254,9 @@ the block sleeping rule is not listed in any rulebook.
 check sleeping:
 	if slept-yet is false:
 		now slept-yet is true;
-		say "Zzz.[paragraph break]Wait, no. That's cheating...[paragraph break]To (call a) cot?[paragraph break]No, that's a bit forced.[paragraph break]Let's pretend you're waiting, instead.[paragraph break]";
+		say "Zzz.[paragraph break]Wait, no. That's cheating...[paragraph break]To (call a) cot?[paragraph break]No, that's a bit forced.[paragraph break]";
+	else:
+		say "De-bed! De-bed! Let's pretend you're waiting, instead.";
 	try waiting instead;
 
 chapter waiting
@@ -9305,10 +9308,6 @@ to describe-nearby (ro - a room):
 
 search-hint-room is a truth state that varies.
 
-this is the trivially false rule: the rule fails;
-
-this is the trivially true rule: the rule succeeds;
-
 a room has a rule called finished-rule. finished-rule of a room is usually the trivially true rule.
 
 section finished-rule definitions
@@ -11435,6 +11434,8 @@ carry out pering:
 volume internal testing - not for release
 
 include Ailihphilia Tests by Andrew Schultz. [must come first so blank-appear-okay is accepted]
+
+a person can be blank-appear-okay. a person is usually not blank-appear-okay.
 
 Diktat Kid is blank-appear-okay.
 Knife Fink is blank-appear-okay.
