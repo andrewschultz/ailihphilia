@@ -280,7 +280,7 @@ definition: a thing (called sd) is so-done:
 this is the aid-all rule:
 	let BLANKLIST be a list of things;
 	now BLANKLIST is {};
-	repeat with QQ running through all visible things:
+	repeat with QQ running through all touchable things:
 		if QQ is so-done, next;
 		if item-hint-rule of QQ is item-bug-hint rule, add QQ to BLANKLIST;
 		say "=========== [QQ] ===========[line break]";

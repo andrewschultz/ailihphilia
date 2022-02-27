@@ -4,7 +4,8 @@ volume big random table
 
 [use dbh.py to generate debug table version of this file]
 [use palver.py to verify palindromes]
-[use dno.py to detect duplicates]
+[use dno.py to detect duplicates in notes]
+[use duptab.py to weed out duplicates in the table file proper]
 
 part the code
 
@@ -127,6 +128,7 @@ randtxt
 "Abe Keba"
 "Adam Amada"
 "Adina Canida"
+"Ira Bari"
 "Agnus Unga"
 "Aida Madia"
 "Ailene Lia"
@@ -337,7 +339,7 @@ randtxt
 "Leda Fadel"
 "Leda Nadel"
 "Lee Keel"
-"Lee Mcmeel"
+"Lee McMeel"
 "Lee Neel"
 "Lee Peel"
 "Leena Neel"
@@ -438,7 +440,7 @@ randtxt
 "Neida Dien"
 "Nella Gallen"
 "Nella Mallen"
-"Nelle Mcmellen"
+"Nelle McMellen"
 "Nelle Yellen"
 "Neoma Moen"
 "Neomi Moen"
@@ -448,7 +450,7 @@ randtxt
 "Nevada Daven"
 "Nia Cain"
 "Nia Fain"
-"Nia Mcmain"
+"Nia McMain"
 "Nia Pain"
 "Nida Jadin"
 "Nida Sadin"
@@ -605,12 +607,12 @@ randtxt
 "Si Dodis"
 "Si Tatis"
 "Sid Edis"
-"Sid Odis"
+"Sid Odis" [okdup]
 "Silla Wallis"
 "Sim Amis"
 "Sim Aramis"
 "Sima Damis"
-"Sina Mcmanis"
+"Sina McManis"
 "Sirena Neris"
 "Sol Abalos"
 "Sol Avalos"
@@ -952,7 +954,7 @@ randtxt
 "Traut, Stuart"
 "Truby, Burt"
 "Truka, Kurt"
-"Tyo, Hoyt"
+"Tyo, Hoyt" [okdup]
 "Vereker, Ev"
 "Yamada, May"
 "Yeo, Joey"
@@ -978,15 +980,16 @@ randtxt
 "Aiding Nidia"
 "Ail, Glia"
 "Allay Alla"
+"Alluded Ulla"
 "Am I, Ma"
 "Ape Pa"
 "Apollo, Pa"
 "Ares's Era"
-"Beware [']Er: a Web"
+"Beware [']Er: a Web" [capsok]
 "Bronze Sez Norb"
 "Bruno [']N Urb"
-"Career: a C"
-"Cindy [']N Nic"
+"Career: a C" [capsok]
+"Cindy, Syd, Nic"
 "Cite Me TIC"
 "Civil, I, Vic"
 "Co-Data Doc"
@@ -997,7 +1000,7 @@ randtxt
 "Dad, Dad"
 "Dahl Had"
 "Dale, Lad"
-"Danae: an Ad"
+"Danae: an Ad" [capsok]
 "Debuts Tubed"
 "Deets, Teed"
 "Denny [']N Ned"
@@ -1052,7 +1055,7 @@ randtxt
 "Ere Manna, Mere"
 "Ere Mojo Mere"
 "Et Effete"
-"Fan-izin['] AF" [p]
+"Fan-izin['] AF" [capsok]
 "Fer a Ref"
 "Fit, O Motif"
 "Flo D. Adolf"
@@ -1061,18 +1064,18 @@ randtxt
 "Gardened Rag"
 "GI, Big"
 "Gnostic, It: Song"
-"Go, Gaily, Agog"
 "A Houdini Duo, Ha"
 "Husks, Uh"
 "I, a Rum, a Samurai"
 "I, Lara Li"
 "If I Had a Hi-Fi"
-"IGTNT, GI"
+"IGTNT, GI" [capsok]
 "In Mutual Autumn, I"
 "Is Eli Miles I"
 "It, Eye, Yeti"
 "KC Attack"
 "La, Pa, Papal"
+"La, Pegasus Age Pal"
 "Lab Inna Cannibal"
 "Lad, Navy Vandal"
 "Lay, O Royal"
@@ -1108,7 +1111,7 @@ randtxt
 "Nag Old Logan"
 "Name: Garageman"
 "Natively, Levitan"
-"Needed, E'en"
+"Needed, E'en" [capsok]
 "Neil's Lien"
 "Nemo's Omen"
 "A Next Xena"
@@ -1117,7 +1120,7 @@ randtxt
 "No Dibs Bid On"
 "No Eon: One? No, No Eon"
 "No Gray Argon"
-"No It-PM Exemption"
+"No It-PM Exemption" [capsok]
 "No Last Salon"
 "No Moliere I, Lo, Mon"
 "No Obsesses Boon"
@@ -1125,7 +1128,7 @@ randtxt
 "No Same Mason"
 "Nod? No, London"
 "Non-Ace Canon"
-"Not Ruby Borton"
+"Not Ruby Burton"
 "Note Tons? No, Teton"
 "Now Ere Rewon"
 "NW Orb, Brown"
@@ -1141,7 +1144,8 @@ randtxt
 "Or Boohoo, Bro"
 "Or Cleve Velcro"
 "Or Terror Retro"
-"Orc: A Macro / Amp Micro"
+"Orc: A Macro"
+"Orc: I'm Micro"
 "Otter Amaretto"
 "Pa, OAP"
 "Pace, Recap"
@@ -1150,12 +1154,12 @@ randtxt
 "Pansy's Nap"
 "Parses: Rap"
 "A Pegasus Age, Pa"
-"Pizazz: a ZIP"
+"Pizazz: a ZIP" [capsok]
 "Pocono Cop"
 "Posada's Op"
 "Prawn, Warp"
 "Pretended Net, Erp"
-"QB BBQ"
+"QB BBQ" [capsok]
 "Rats, Popstar"
 "Rawer Pre-War"
 "Re: Gallager"
@@ -1182,7 +1186,8 @@ randtxt
 "Roy, a Mayor"
 "S. Levin Snivels"
 "Sag, Emo Omegas"
-"Sage Vs. Vegas"
+"Sage Vs. Vegas" [capsok]
+"Saladin, I[']d, Alas"
 "Sarge DeGras"
 "Satire Veritas"
 "See, Referees"
@@ -1218,13 +1223,13 @@ randtxt
 "Spacers['] Recaps"
 "Specific EPs"
 "Spoof: Oops"
-"St. Sil, Cyclist"
+"St. Sil, Cyclists"
 "Stem, O Comets"
 "Stress Asserts"
 "Stutz Tuts"
 "Sub Main Iambus"
 "Sumac, Camus"
-"Sun Off On Us"
+"Sun Off On Us" [capsok]
 "Supremer P.U.'s"
 "T-Rex, Exert"
 "Tab Mock Combat"
@@ -1248,6 +1253,7 @@ randtxt
 "To Pass a Pot"
 "To Rate Tarot"
 "To Tax a Tot"
+"Too, Ms. Smoot"
 "Torsos, ROT"
 "Trail: I, Art"
 "Train, I: Art"
@@ -1264,7 +1270,7 @@ randtxt
 "Werewolf Flower? Ew"
 "Won Snow"
 "Wondered Now"
-"X: a Minimax"
+"X: a Minimax" [capsok]
 "Yalp, Dr. O: Wordplay"
 "Yaw, Dim Midway"
 "Yes Mimsey"
@@ -1305,6 +1311,7 @@ randtxt
 "App A"
 "Banana B"
 "the Blub-Bulb"
+"the BOFA Fob"
 "the C-I Mimic"
 "Da Doodad"
 "the Day Dyad"
@@ -1315,13 +1322,12 @@ randtxt
 "the Gomorro-Mog"
 "the Gulps-Plug"
 "H Tooth"
-"Hoodoo H" [ignore]
+"Hoodoo H" [okdup]
 "the It-Cacti"
 "Lotto L"
 "Mojo M"
 "Muumuu M"
 "No-Mongo Gnomon"
-"an only pylon" [p]
 "the Scoff-Focs"
 "the Ton Knot"
 "the Tsetses Test"
@@ -1334,6 +1340,7 @@ randtxt
 table of bad places [xxcity] [xxplaces]
 randtxt
 "Acidica"
+"Balling-Nil Lab"
 "Dart-Strad"
 "Dat-So-Stad"
 "Dir-as-Arid"
@@ -1343,14 +1350,14 @@ randtxt
 "Grub-Burg"
 "Loopypool"
 "Mire-Rim"
-"Moory By-Room"
+"Moory By-Room" [capsok]
 "Nae-Cod Ocean"
 "Neva-Haven"
 "No-Trekker-Ton"
 "Not-Civic-Ton"
 "Not-Dud-Ton"
 "Not-Kook-Ton"
-"Noted-Rude-Ton"
+"Noted-U=Rude-Ton"
 "Par Terre-Trap"
 "Rat Romp Mortar"
 "Retchohcter"
@@ -1366,7 +1373,7 @@ randtxt
 "Sort-[']Em Metros"
 "Spar-Traps"
 "Speedy Deeps"
-"the Stall-Ats"
+"the Stall-Ats" [capsok]
 "Still-Lits"
 "Swarm-Raws"
 "Trop-Pap-Port"
@@ -1413,7 +1420,7 @@ randtxt
 "Senora Rone's"
 "Set-Up Ute's"
 "Shaka H's"
-"Shakah's"
+"Shakah's" [okdup]
 "Shala H'S"
 "Shanna H'S"
 "Shara H'S"
@@ -1447,10 +1454,12 @@ table of businesses [xxbus] [xxbiz] [xxshop]
 randtxt
 "Art Sastra"
 "Ate Beta"
-"Ate By Beta"
+"Ate By Beta" [capsok]
 "Ate Feta"
 "Baher's Rehab"
 "Bill-Lib"
+"Bruce[']s Use Curb"
+"Burma Sam Rub"
 "Castro-Ports AC"
 "Colby Bloc"
 "Color-Pro Loc"
@@ -1469,7 +1478,7 @@ randtxt
 "Lager Ever Egal"
 "Layaway Al"
 "Le DO-Model"
-"Le To-Hotel"
+"Le To-Hotel" [capsok]
 "Let Race Cartel"
 "Li Oil"
 "Lit-Up Util"
@@ -1483,13 +1492,13 @@ randtxt
 "Oba Keeps Peekabo"
 "OCDCo"
 "Of Fobs Boffo"
+"On-Is-Ace Casino"
 "Or Fab Afro"
-"Ox.Edu Tuxedo"
 "Photo HP"
 "Pot Stop"
 "Potsdam Ad Stop"
 "Rec Organa Grocer"
-"Regal Lager"
+"Regal Lager" [okdup]
 "Rep/Push Supper"
 "Rife Kefir"
 "Sabrer BA's"
@@ -1521,6 +1530,7 @@ randtxt
 "Swen's News"
 "TekCo Docket"
 "Tider Credit"
+"Toledo Node Lot"
 "Tramp Mart"
 "Tru-Go Yogurt"
 "We, Serene, Re-Sew"
@@ -1543,7 +1553,7 @@ randtxt
 "Cur! U C!"
 "Da bad! Da BAD!! DA BAD!!!"
 "Decide! Diced!"
-"Decided: ICED!"
+"Decided: ICED!" [okdup]
 "Dire! Rid!"
 "Dude(tte)! Dud!"
 "Duh, THUD!"
@@ -1558,7 +1568,7 @@ randtxt
 "Looters! Re-tool!"
 "Medicide'm!"
 "Mess [']em!"
-"Mix 'im!"
+"Mix [']im!"
 "Net foe, often!"
 "Nil Merge, Gremlin!"
 "No romp, moron!"
@@ -1568,7 +1578,7 @@ randtxt
 "Ok, TKO!"
 "Ok to TKO!"
 "Ooh, cad! Achoo!"
-"Pansy! Snap!"
+"Pansy! Snap!" [okdup]
 "Peewee, weep!"
 "Poorer! Oop!"
 "Rah! Thar!"
@@ -1610,7 +1620,9 @@ randtxt
 
 table of machines [xxmachines]
 randtxt
+"re-deeder"
 "re-life-filer"
+"re-memer"
 "re-peeper"
 "re-reverer"
 "re-toter"
@@ -1624,12 +1636,15 @@ randtxt
 "rotary gyrator"
 "rotative levitator"
 "roting ignitor"
+"ruder-edu-r"
 
 table of Moo Room animals [xxanimals]
 randtxt
 "an align-gila"
 "any myna"
 "a buck-cub"
+"a cross orca"
+"a deer, freed"
 "an elk cackle"
 "er, a hoodoo hare"
 "er, a mare"
@@ -1648,6 +1663,7 @@ randtxt
 "naw-see swan"
 "a neva['] raven"
 "no ill lion"
+"Pirana (RIP)"
 "a pirana (RIP)"
 "a PSA wasp"
 "a pug nipping up"
@@ -1656,7 +1672,7 @@ randtxt
 "a red darer adder"
 "reedy deer"
 "a rip-at tapir"
-"a rum elk-emur"
+"a rum elk-lemur"
 "sab mambas"
 "sewed ewes"
 "sewer ewes"
@@ -1697,16 +1713,16 @@ randtxt
 "E-Babe"
 "El Tootle"
 "Emote to Me"
-"Er, AWARE"
+"Er, AWARE" [okdup]
 "Ghosts, Oh, G"
 "GI Gig"
 "GI Jig"
 "Goad a OG"
 "Gots To, G"
 "The H/T"
-"H/t Fifth"
-"H/t Ninth"
-"H/t Nth"
+"H/T Fifth"
+"H/T Ninth"
+"H/T Nth" [capsok]
 "Ha, Doo-Dah"
 "Hat-Stah"
 "Hollas All, Oh"
@@ -1714,7 +1730,7 @@ randtxt
 "Honor On, Oh"
 "Hook, Ooh"
 "Hosts, Oh"
-"It is Ignitin is It I"
+"It is Ignitin['], G: Is It I?" [puncok] [capsok]
 "Jenine J"
 "Jesse J"
 "Jimmi J"
@@ -1728,7 +1744,7 @@ randtxt
 "Lana L"
 "Lay, Oldened Loyal"
 "Le BE Rebel"
-"LFO ROFL"
+"LFO ROFL" [capsok]
 "Lit Null Until"
 "Lob My Symbol"
 "Lulu L"
@@ -1737,7 +1753,7 @@ randtxt
 "Major O['] JAM"
 "Major Pro Jam"
 "Manic in AM"
-"Maybe By AM"
+"Maybe By AM" [capsok]
 "Me: Opt, Poem"
 "Miami, Maim"
 "Miff [']Im"
@@ -1747,7 +1763,7 @@ randtxt
 "Mug [']Um"
 "Muh Chum"
 "No, Hon"
-"No Mo' Po', Mon"
+"No Mo['] Po['], Mon"
 "No One Noon"
 "No Orcs Croon"
 "No Purer Upon"
@@ -1777,8 +1793,9 @@ randtxt
 "See Lee's"
 "Set-a-Mates"
 "Sex Imp Mixes"
-"A Six is a Six is A"
-"So-BS ASBOS"
+"A Six Is a Six Is A"
+"Sled O['] Yodels"
+"So-BS ASBOS" [capsok]
 "So Here Hos"
 "So Lost Solos"
 "SOBs['] ASBOs" [okdup]
@@ -1798,7 +1815,7 @@ randtxt
 "Thoro['] H/T"
 "Thy H/T"
 "Tia, Wait"
-"[']Tis Igniting, is It"
+"[']Tis Igniting, Is It"
 "To Dot"
 "To Hos So Hot"
 "To Own: WOOT"
@@ -1841,7 +1858,7 @@ randtxt
 "One no."
 "Oo! Noo!"
 "Poor droop."
-"Shoo, 'Pooh's." [p]
+"Shoo, 'Pooh's." [aposok]
 "To NOT!"
 "Too 'boohoo?' Boot!"
 "Wah? Thaw!"
@@ -1909,7 +1926,6 @@ randtxt
 "Akin Anika"
 "'Alerts' Estrela"
 "Alleging Nigella"
-"Alluded Ulla"
 "Ally Dylla"
 "Amiss Ima"
 "Ammo Momma"
@@ -1927,7 +1943,7 @@ randtxt
 "Frau Arf"
 "Gemini Meg"
 "Grammam Marg"
-"Hammered-er Emma H" [p]
+"Hammered-er Emma H" [capsok]
 "Iller Elli"
 "Irate Tari"
 "'Ire' Geri"
@@ -1938,7 +1954,7 @@ randtxt
 "Lava Val"
 "Liv EVIL"
 "'Lyre' Beryl"
-"Maeve A.M." [p]
+"Maeve A.M." [puncok]
 "Nedra, Warden"
 "New Gwen"
 "Ol['] Flo"
@@ -1948,6 +1964,7 @@ randtxt
 "Tacy Cat"
 "USA Su"
 "Vile Liv"
+"Xanadu Dana X"
 "Yenta Oatney"
 "Yvette-Vy"
 "Zen Inez"
@@ -1968,7 +1985,7 @@ randtxt
 "'of feds? Deffo'"
 "Process E Corp"
 "'Re-file, lifer'"
-"'Rep met a temper"
+"'Rep met a temper!'"
 "a repping nipper"
 "'Rise to vote, Sir!'"
 "'Sen., ozones?!'"
@@ -1987,16 +2004,19 @@ randtxt
 "tae solo seat"
 "the Teem-Civic Meet"
 "Vogue-U-Gov"
-"'Weed? Eew!"
+"'Weed? Eew!'"
 "'Yep, ey?'"
 "'YMCA, Mac! My!'"
 
 table of rejected kid sidekicks [xxsid] [xxrej] [xxbad]
 randtxt
+"gayo, voyager"
+"solitary rat? I, loser"
 "Abler Elba"
 "Accorded Rocca"
-"ACDC A"
-"ADHD A"
+"ACDC A" [capsok]
+"Ada Cicada"
+"ADHD A" [capsok]
 "Ailey Elia"
 "AJ Ninja"
 "Andy DNA"
@@ -2036,7 +2056,7 @@ randtxt
 "Drone Nord"
 "Dronin['] Ord"
 "Dry Fyrd"
-"Dubya-y Bud" [p]
+"Dubya-y Bud" [capsok]
 "eBay Abe" [p]
 "Eel Klee"
 "Eelworm Rowlee"
@@ -2046,7 +2066,6 @@ randtxt
 "Eric Ire"
 "Etna Dante"
 "Evan Knave"
-"EVAR Knave"
 "Evil Clive"
 "Flak Alf"
 "Flan Alf"
@@ -2058,7 +2077,7 @@ randtxt
 "Gazza G"
 "'Gimme' Hemmig"
 "Glass Alg"
-"Gnaw (ha) Hwang"
+"Gnaw (ha) Hwang" [capsok]
 "'Gnaw' Hwang"
 "'Gnaw' Kwang"
 "Gnawy Wang"
@@ -2110,6 +2129,7 @@ randtxt
 "Nappa N"
 "Nash-San"
 "Nasty Tsan"
+"Navidad Ivan"
 "Nay'r Bryan"
 "Needy Deen"
 "Nervy Vern"
@@ -2150,8 +2170,9 @@ randtxt
 "Presser P"
 "Raffa R"
 "Raving Nivar"
-"Recluse Sulcer"
+"Recluse Sulcer" [okdup]
 "Ref-Lord Rolfer"
+"Reg Da Badger"
 "Reg Nab-Anger"
 "Reg Naff-Anger"
 "Regal Slager"
@@ -2216,6 +2237,7 @@ randtxt
 "Yelper Epley"
 "'Yelps' Aspley"
 "Yob Ops Po['] Boy"
+"'Zepo' Lopez"
 
 table of Rob droning [xxrob]
 randtxt
@@ -2224,7 +2246,7 @@ randtxt
 "BA? Fab!"
 "Bah! Ahab?!"
 "Boone?! Noob!"
-"Boris, I so rib..."
+"Boris is I, ROB?!"
 "Boy, BYOB!"
 "Can Gignac!"
 "Cigar? Tragic!"
@@ -2252,6 +2274,7 @@ randtxt
 "Flag Alf!"
 "Flay Alf!"
 "Fran? Snarf!"
+"Geniuses['] UI? Neg!"
 "GI? Pig!"
 "Gnome? Mo['] N. G.!"
 "Gord? A cad? Rog?!"
@@ -2300,11 +2323,15 @@ randtxt
 "No ROMs, moron!"
 "No Swahili? Haw, son!"
 "Norm? Ron?"
+"Nos to Dotson!"
 "Not To Cotton..."
 "NRA: warn!"
+"Nuh-uh! Un..." [okdup]
 "Ope['], epo!"
+"Optimum, it? Po[']!"
 "Or Camp? Macro!"
 "Or Prefer Pro!"
+"Params Is Ma Rap!"
 "Parthenon, eh? Trap!"
 "Phat? STAHP!"
 "Piece IP?!"
@@ -2328,7 +2355,6 @@ randtxt
 "Retract Carter!"
 "Rodney: end, or...?"
 "Ruses? Ur..."
-"[']S Brittany [']n attribs."
 "[']S BS!!!!!"
 "S. P.? Mumps!"
 "Sad! No Hondas!"
@@ -2338,7 +2364,7 @@ randtxt
 "Segard? Rages!"
 "SETI cites."
 "SETI sites!"
-"Si? Dis!"
+"Si? Dis!" [okdup]
 "Signing is..."
 "Sir, O! Boris?!"
 "Site? [']Tis!"
@@ -2348,16 +2374,16 @@ randtxt
 "Spidered IPs?!"
 "Steve vets..."
 "Sun obsesses? Bonus!"
-"SuSe? J****!" [ignore]
+"SuSe? J****!"
 "Sy? A ways!"
+"Tim? O, vomit!" [okdup]
 "[']Tis. Suss it!"
 "To ban a bot..."
 "To rot! To rot!"
 "Toby?! Bot!"
-"Tom? I vomit!"
 "Too rococo root."
 "TP? Apt!"
-"Trav? Rat!"
+"Taran? A rat!"
 "Trope?! Deport!"
 "Up, CPU!"
 "Vernon, REV!"
@@ -2372,6 +2398,7 @@ randtxt
 
 table of sci pics subjects [xxsci] [xxpics] [xxcorp] [xxlab]
 randtxt
+"h/t ethics"
 "an enol alone"
 "a lab ace cabal"
 "loner enol"
@@ -2437,7 +2464,7 @@ randtxt
 "Bad? A dab!"
 "Dammit, I'm mad!"
 "Dark. Rad!"
-"Delivery: reviled!"
+"Delivery: Reviled!"
 "Dood! DOOD!"
 "Fa, oaf!"
 "Grunt'n! Urg!"
@@ -2472,7 +2499,7 @@ randtxt
 "Well, EW!"
 "Y'booby!"
 "Y'kooky?"
-"Yap? Ay!"
+"Yap? Ay!" [okdup]
 
 table of undoings [xxundo]
 randtxt
@@ -2490,13 +2517,12 @@ randtxt
 "Or, Perp, REPRO!"
 "Pah, simp! Mishap!"
 "Pre-derp..."
-"Re-deed [']er!"
-"Re-deeder."
+"Re-deed [']er!" [okdup]
 "Recall acer!"
 "Redact, cad! Er..."
 "Redid [']er."
 "Redo'd [']er."
-"Renege'n [']er!"
+"Renege'n [']er!" [okdup]
 "Ret. All later."
 "A ret['], e-cetera."
 "Ret['], sister!"
@@ -2524,6 +2550,8 @@ randtxt
 "Lap, Opal"
 "Leer Reel"
 "Liane, Re-Nail"
+"Minimum in [']Im"
+"Ms. A Groan an['] a Orgasm" [capsok]
 "Much ***" [ignore]
 "Nae, Wanna Wean"
 "Nail Elian"
@@ -2538,8 +2566,8 @@ randtxt
 "Re-Film, Lifer"
 "Re-Mate, Tamer"
 "Red, Well, Lewder"
-"[']S BOOBS"
-"[']S SENSUOUSNESS"
+"[']S BOOBS" [capsok]
+"[']S SENSUOUSNESS" [capsok]
 "Sado-Codas"
 "Sameness Enemas"
 "Sedu-Dudes"
@@ -2622,10 +2650,11 @@ randtxt
 "E. Pope"
 "E. Revere"
 "E. Senese"
+"E. Tate" [how the hell did I miss this one at first? RIP, Emory Tate.]
 "F. Assaf"
-"G. Illing"
 "G. Nang"
 "G. Ng"
+"G. Nilling"
 "Greer, G"
 "H. Allah"
 "H. Cech"
@@ -2647,13 +2676,13 @@ randtxt
 "Kreger, K"
 "Kremer K"
 "L. Appal"
-"L. Atall"
+"L. Atal"
 "L. Emmel"
 "L. Ettel"
 "L. Exel"
 "L. Lawall"
 "L. Levell"
-"Laxalt, L"
+"T. Laxalt"
 "Lippi, L"
 "M. Hahm"
 "M. Odom"
@@ -2664,7 +2693,7 @@ randtxt
 "N. Eggen"
 "N. Ellen"
 "N. Essen"
-"N. Eweb"
+"N. Ewen"
 "N. Hahn"
 "O. Cavaco"
 "O. Ilalio"
@@ -2724,6 +2753,7 @@ randtxt
 "ETA, Mate?"
 "Gall! Lag!"
 "GO, dog!"
+"Keep up, eek!"
 "La! Rut: a natural!"
 "A lag gala!"
 "Mull! Um..."
@@ -2802,7 +2832,7 @@ randtxt
 "Ooh, aye! Yahoo!"
 "Pep!"
 "Pip, pip!"
-"Plus? Ulp."
+"Plus? Ulp." [okdup]
 "Too Wanna-Woot!"
 "Too woot!"
 "Wahoo! Haw!"
@@ -2884,6 +2914,7 @@ randtxt
 "Hah, solo shah!"
 "Haiti? Ah!"
 "Heft, Feh!"
+"Heists, I?!?! Eh..."
 "Hog, oh!"
 "Hoo! Preyer? Pooh!"
 "Hoops? Pooh!"
@@ -2902,6 +2933,7 @@ randtxt
 "Maga'M!"
 "Main, I am!"
 "Me, DEM?!" [okdup]
+"Me: FWIW, F em!"
 "ME!!!! Haw. Ahem."
 "Me, nem[']!"
 "Me: sees [']em!"
@@ -2921,7 +2953,7 @@ randtxt
 "No: I, Zion!"
 "No Naff Anon!"
 "No, old loon!"
-"Nor a Baron!"
+"Nor a Baron!" [okdup]
 "Null [']un!"
 "O, rehab a hero!"
 "Odd-*** Saddo!" [ignore]
@@ -2954,7 +2986,7 @@ randtxt
 "So Rued, Euros."
 "So-sos!"
 "Sod! No Condos?"
-"Sore toreros!"
+"Sorer, o toreros!"
 "Soros! Soros!"
 "Spoil, I: Ops!"
 "Sue Me?! Us?!"
@@ -2967,12 +2999,14 @@ randtxt
 "Tiara it!"
 "Titan, AT IT!"
 "To Old Loot!"
+"Torah? Ha! Rot!"
 "Tuck, Cut..."
 "Wane? Naw!"
 "Wobley Elbow!"
 "Y M Enemy?"
 "Y'r Dry!"
 "Ye no-money!" [okdup]
+"Yer PREY!"
 "Yoink'n, I! Oy!"
 "You! Oy!"
 

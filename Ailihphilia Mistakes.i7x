@@ -233,6 +233,8 @@ understand "gnu bung" as a mistake ("There's no way to put the toothpaste back i
 
 understand "gnu hung" as a mistake ("Uggh. It's good you're in a text adventure, I guess.[mis of 76]") when y-poopy.
 
+understand "gnu jung" as a mistake ("The gnu fails to bring forth the spirit of a famous psychiatrist from the collective unconscious.") when y-poopy.
+
 understand "gnu lung" as a mistake ("The gnu dung smells bad enough without dropping more internal organs into the mix.[mis of 77]") when y-poopy.
 
 understand "gnu ng" as a mistake ("It won't do to chastise the gnu now. What's done is done.") when y-poopy.
@@ -340,6 +342,8 @@ understand "rocs cor" as a mistake ("Your flattery doesn't move the rocs.[mis of
 understand "score rocs" as a mistake ("[if flu gulf is not visited]You don't need allies like that. But, spoiler: there are enemies like that[else if scorn rocs are not moot]0/10 would not pet. They're bad rocs, Brent ... but you'll get a point for getting rid of them[else]You already scored ON them[end if].[mis of 119]"). [if you didn't see the reference, it's WeRateDogs on twitter and "They're good dogs Brent"] [okall]
 
 chapter Frush Surf
+
+understand "fresh serf" as a mistake ("Nobody appears to do your work for you.") when player is in Frush Surf.
 
 understand "kayak a yak" and "kayak ayak" and "kayak yak" as a mistake ("[if kayak is quicknear and yak is quicknear]You've got the right idea, sort of, but the wrong place[else if kayak is moot]You already used the kayak[else if yak is moot]The yak has done its job[else if Frush Surf is unvisited]There's a yak around, just not here[else if Lac Oft Focal is unvisited]There's a kayak around, just not here[else]You don't need to bring the yak and kayak together[end if].[mis of 376]") when yak is quicknear or kayak is quicknear.
 
@@ -800,6 +804,8 @@ understand "sneer preens" as a mistake ("Enough of that here with the smirk rims
 understand "sneer treens" as a mistake ("There's no room for cookware here.") when Yuge Guy is quicknear.
 
 understand "y u guy" as a mistake ("The Yuge Guy isn't interested in metaphysics.[mis of 290]") when Yuge Guy is quicknear.
+
+understand "yugo guy" as a mistake ("No cheap car arrives to drive the Yuge Guy away to eastern Europe.") when Yuge Guy is quicknear.
 
 chapter Swamp Maws
 
