@@ -1,154 +1,793 @@
-# reg-ai-random-cycling.txt
-#
-# tests the end of random data
-# not attacked to the main walkthrough file
+## reg-ai-random-cycling.txt
 
+## cycling testing
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
 
-# we need to check this for bad line breaks, too
+#DEBUG: will be cycling table of undoings.
 
-* randthru
+* runthrough
 
 >pack cap
+by one point
 
 >alllast
 
 >z
 #table of undoings
 >undo
+This is just a note that you've seen all the current command's random responses, and they'll loop after this. Thanks for poking around so much.
 
 #table of noesies
 >no
-WRONG
+DEBUG: will be cycling table of noesies.
+An epony-NOPE rings through your ears to push back against your negativity in grand fashion.
 
 #table of yessies
 >yes
->WRONG
+This is just a note that you've seen all the current command's random responses, and they'll loop after this. Thanks for poking around so much.
+DEBUG: will be cycling table of yessies.
 
 #table of swearstuff
 >shit
-WRONG
+DEBUG: will be cycling table of swearstuff.
+Okay, you've had enough attention, I hope. I'm out of shocked responses to your language.
 
 #table of singstuff
 >sing
 Won't be joining OctetCo with that voice.
+DEBUG: will be cycling table of singstuff.
 
 #table of burnies
 >burn
-WRONG
+I'm all burned out of clever random responses now. Ha ha.
+DEBUG: will be cycling table of burnies.
 
 #table of nothings
 >
-WRONG
+This is just a note that you've seen all the current command's random responses, and they'll loop after this. Thanks for poking around so much.
+DEBUG: will be cycling table of nothings
 
 #table of waittxt
 >z
-WRONG
+This is just a note that you've seen all the current command's random responses, and they'll loop after this. Thanks for poking around so much.
+DEBUG: will be cycling table of waittxt
 
 #table of attackings
 >attack tile lit
-WRONG
+This is just a note that you've seen all the current command's random responses, and they'll loop after this. Thanks for poking around so much.
+DEBUG: will be cycling table of attackings
+
 >e
+
+>n
+
+>get trap art
+
 >s
+
+>s
+
+#not a mistake
 >evade dave
+
+>get all
 
 #table of My Gym songs
 >listen
-All those tunes, and nothing by ABBA! Low class, low class.
+The final tune as the set abates is surprisingly catchy: 'S ADIDAS. As it fades, you also realize you heard nothing by ABBA! Low class, low class.
+DEBUG: will be cycling table of My Gym songs.
 
 #table of Rob droning
 >w
 Rob takes a moment to shape "pahs" again.
+DEBUG: will be cycling table of Rob droning.
+
 >bore rob
 >word row
 
 #table of altbooks
 >x cart
-WRONG
->get ti
->purloin epoch cope
->purloin null illun
->purloin yob attaboy
+DEBUG: will be cycling table of altbooks.
+You've read all the books on the Relate Taler. Well, except for Lives As Evil. You'll skip that one.
+
+>get TO IDIOT
+
+>e
+>n
+>n
+
+>n
+
+>use TO IDIOT on Door Frood
+by one point
+
+>get bunk nub
+#got bunk nub
+
+>e
+
+>get all
+
+>use pity tip on eye
+by one point
+#lost pity tip
+
+>w
+
+>w
+
+>tend net
+by one point
+#got elope pole
+
+>e
+
+>s
+
+>s
+
+>s
+
+>w
+
+>work row
+by one point
+
+>use trap art on reifier
+by one point
+
+>use bunk nub on reviver
+by one point
+
+>word row
+
+>get epoch cope
+
+>e
+>n
+>w
+
+>x recipe
+
+>w
+
+>use party trap on stark rats
+by one point
+
+#table of random palindrome lastfirst names [xxlastname]
+>x oh who
+Impressive! You made it through the phone book.
+DEBUG: will be cycling table of random palindrome lastfirst names.
+
+>n
+
+#table of king nik ancestors
+>talk to king nik
+DEBUG: will be cycling table of King Nik ancestors.
+So much to live up to for King Nik. Listening's good, but maybe you can take action.
+
+
+>use epoch cope on King Nik
+by one point
+
+>s
+
+>s
+
+>use stock cots on sleep eels
+by one point
+
+>s
+
+>get stamp mats
+
+>e
+
+>get poo coop
+
+>w
+>n
+>n
+>e
+>e
+>s
+>w
 
 #table of altbooks
->x cart
-WRONG
+>trace cart
+>x dwelt lewd
+That's all. Your intellectual (I hope) curiosity sated, you look for more constructive tasks[lewd-true], not worried (again, I hope) you've forgotten the plot of DWELT LEWD by now.
+DEBUG: will be cycling table of altbooks.
 
-#table of babel babble
->gonear babel
->listen
-WRONG
 
->gonear drawl ward
+>get yob attaboy
+
+>e
+>n
+
+#table of random palindrome firstlast names [xxfirstname]
+>x name me man
+Impressive! You made it through the phone book.
+DEBUG: will be cycling table of random palindrome firstlast names.
+
+#table of npc mistakes [xxnpc] [xxtalk]
+>call 8675309
+That's all there is. You [if aid-LLP-yet is false]can't help wondering if there's something better to dial for help, or a hint, or something[else]find this all less fruitful than when you decided to DIAL AID[end if].
+DEBUG: will be cycling table of npc mistakes.
+
+>puff up
+by one point
+
+>e
+
+>pull up
+by one point
+
+>get puce cup
+
+>w
+>w
+>w
+>n
+
+>use wash saw on past sap
+by one point
+
+>use puce cup on past sap
+by one point
+
+>s
+
+>e
+
+>e
+
+>e
+
+>s
+#table of wordy drow laments
+The Wordy Drow has an eternity to repeat itself, but you don't. What could you do to get past it and the liar grail?
+DEBUG: will be cycling table of wordy drow laments.
+
+>get troll ort
+
+>use puce cup on liar grail
+by one point
+
+>n
+>w
+>w
+>w
+>n
+
+>e
+
+>use puce cup on dose sod
+!by one point
+
+>w
+>s
+>e
+>e
+>e
+>s
+
+>s
+
 #table of Bond Nob bars
 >talk to bond nob
-WRONG
+DEBUG: will be cycling table of Bond Nob bars
+Your head reels from everywhere the Bond Nob's been.
 
->gonear cold loc
-#table of king nik bars
->talk to king nik
-WRONG
+>use puce cup on Bond Nob
+by one point
 
+>w
 
->gonear swept pews
+>get all
+#got dirt rid
 
-#table of wordy drow laments
->z
-WRONG
+>e
 
->gonear moo room
->see bees
+>e
 
-#table of Moo Room animals
->listen
-WRONG
+>use stamp mats on slate metals
+by one point
+#lost stamp mats
 
->purloin elan ale
->gonear sniffins
->use ale on sniffins
->gonear sniffins
+>w
+
+>n
+>n
+
+>w
+>w
+>w
+>n
+
+>n
+
+>use demo med on gulf lug
+by one point
+
+>s
+>s
+>e
+>e
+>e
+
+>e
+
+>use cash sac on cross orc
+by one point
+
+>s
+
+>use yob attaboy on Sniffins
+by one point
+
+>s
+
+>use Elan Ale on Sniffins
+by one point
+#got gorge grog
 
 #table of snooty toon ads
 >x snooty toons
-WRONG
+At the end is La Usual, because of course. Everything else is doofy food.
+DEBUG: will be cycling table of snooty toon ads.
 
->gonear code doc
->talk to code doc
-#table of university targets
+>stand nat's
+by one point
+#got nat's
 
-#table of yuge battle cries
->gonear scorn rocs
->purloin tan
->use tan on rocs
+>n
+
 >w
+>w
+>s
+>w
+
+>work row
+
+>use Dirt Rid on reviver
+by one point
+#got dirt rid
+
+>e
+>n
+>e
+>s
+>s
+
+>w
+
+>use cave vac on cassettes sac
+by one point
+#lost cave vac
+
+>e
+
+>n
+>n
+>e
+
+>use radar on crag arc
+by one point
+#got ufo tofu
+
+>n
+
+>deny ned
+by one point
+
+>get all
+
+>use Ye Key on etage gate
+by one point
+
+>n
+
+>s
+>s
+>w
+>w
+>s
+>w
+
+>Worn Row
+by one point
+
+>work row
+
+>use stinky knits on rotator
+by one point
+
+>word row
+
+>e
+>n
+>e
+>e
+>n
+>n
+
+>get all
+
+#table of sci pics subjects
+>x sci pics
+DEBUG: will be cycling table of sci pics subjects.
+That's all the education the sci pics offer, but you can read again, if you want.
+
+>use Gorge Grog on butene tub
+by one point
+
+>s
+
+>s
+>w
+
+>w
+>s
+>w
+
+>get null illun
+
+>work row
+
+>use gold log on rotator
+by one point
+
+>e
+>n
+>w
+>w
+>s
+>s
+>e
+
+>use SOME DEMOS on yahoo hay
+by one point
+
+#table of Moo Room animals
+>see bees
+>listen
+DEBUG: will be cycling table of Moo Room animals.
+Finally, you hear a single ewe, which you're surprised you didn't hear earlier.
+
+>w
+>n
+>n
+>e
+>e
+>n
+
+>use straw arts on Revolt Lover
+by one point
+
+>use gate tag on soot tattoos
+by one point
+
+>s
+>s
+>w
+
+>work row
+
+>e
+>n
+>w
+>w
+
+>w
+
+>use poo coop on gnu dung
+by one point
+
+>use poo coop on turf rut
+by one point
+
+>w
+
+>use radar on made dam
+by one point
+
+>n
+
+>use NULL ILLUN on Known Wonk
+by one point
+
+>use el doodle on edits tide
+by one point
+
+>n
+
+>use elope pole on kayak
+by one point
+
+>use dork rod on tao boat
+by one point
+#got enact cane
+
+>s
+
+>s
+
+>s
+
+>use tent net on code doc
+by one point
+
+>use spa maps on code doc
+by one point
+
+>talk to code doc
+#table of university primary targets
+#table of university secondary targets
+DEBUG: will be cycling table of university primary targets.
+DEBUG: will be cycling table of university secondary targets.
+Well, that's the formal doctors repeating. Or starting to.
+And now the untitled colleagues are repeating. Still, it took a while. The Code Doc has big plans!
+
+>n
+>e
+>e
+>n
+>e
+
+>use spa maps on go-by bog
+by one point
+
+>w
+
+>s
+>s
+>s
+
+>e
+
+>use enact cane on yahoo hay
+by one point
+#lost enact cane
+#got moor broom
+
+>pace cap
+by one point
+
+>use troll ort on brag garb
+by one point
+
+>w
+
+>n
+>n
+>w
+>w
+>s
+
+>s
+
+>yak okay
+by one point
+
+>e
+
+>use sage gas on tame mat
+by one point
+
+>use sharp rahs on guru rug
+by one point
+
+>w
+
+>n
+
+>n
+>e
+
+>s
+
+>nail ian
+by one point
+
+>use snack cans on UFO tofu
+by one point
+
+>use gift fig on mayo yam
+by one point
+
+>w
+
+>w
+
+>w
+>n
+
+>use moor broom on tru yurt
+by one point
+
+>s
+
+>s
+
+>use wash saw on porch crop
+by one point
+
+>n
+
+>e
+
+>use exam axe on lie veil
+by one point
+
+>n
+
+#table of babel babble
+>listen
+The most horrid whisper of all is of the NRA Barn. Ghastly!
+DEBUG: will be cycling table of babel babble.
+
+>get all
+
+>s
+
+>e
+
+>e
+>e
+>s
+>w
+
+>use DNA band on reifier
+by one point
+
+>use roto motor on DNA hand
+by one point
+
+>use eroded ore on reviver
+by one point
+
+>use you buoy on rotator
+by one point
+#got me gem
+
+>e
+>n
+>n
+>n
+>e
+
+>use mr arm on bomb mob
+by one point
+
+>get rep popper
+
+#table of bad places [xxcity] [xxplaces]
+>n
+That has to be the last one. Boy, all that seediness!
+DEBUG: will be cycling table of bad places
+
+>w
+
+>s
+>s
+
+>w
+>w
+>n
+>n
+
+>use nat's tan on scorn rocs
+by one point
+
+>w
+
 >z
-Señor drones, you think you yourself, as the Yuge Guy winds up for another round of nonsense.
+or drones, you think you yourself, as the Yuge Guy winds up for another round of nonsense.
 
 >e
 #table of yuge baits
-WRONG
+DEBUG: will be cycling table of yuge baits.
+The Yuge Guy emits a side-dis you probably weren't meant to hear fully. can't quite hear, and you are enraged enough to want to go back and deal with him later.
 
->gonear red roses order
-#table of ms ism stuff
+>undo
+
+>use rep popper on me totem
+by one point
+
+>e
+
+>s
+>s
+
+>e
+>e
+>e
+
+>n
+
+#table of ms ism pals
 >talk to ms ism
-cycle
+DEBUG: will be cycling table of Ms Ism pals.
+Whoah! She's had a lot to say, and she's going to say it again. Surely there must be a way to deal with her.
 
->gonear dirge grid
+>use Bro Orb on mirror rim
+by one point
+
+>use balsa slab on sword rows
+by one point
+
+>s
+>w
+
+>s
+>w
+
+>use not-a-baton on reifier
+by one point
+
+>use murdered rum on yard ray
+by one point
+
+>emit noontime
+by one point
+
+>use yard ray on test set
+by one point
+
+#table of machines
+>l
+DEBUG: will be cycling table of machines.
+You stop and think a moment. None of those machines were as useful as the original three.
+
+>e
+>n
+>w
+
+>use TNT on ore zero
+by one point
+
+>n
+
 #table of diktat taunts
 >z
 
-# no way really to test table of rejected sidekicks, because you only have one chance to see a few
-# table of rejected sidekicks
->purloin me gem
->purloin taboo bat
->use bat on rev
+>use ME gem on Knife Fink
+by one point
 was sorta flaky anyway
->give me gem to knife fink
+
+>use taboo bat on Verses Rev
+by one point
 Meh, THEM! I should've gone with
 
->purloin day-away ad
-#table of businesses
->x day-away ad
-WRONG
+>use yard ray on redivider
+by one point
 
+>s
+
+>e
+#table of businesses
+>x day away ad
+... and wait! There'll even be a new Deft Fed, owned by a salt-of-the-earth type named Treffert, now that Sniffins/Smuggums totally sold out!
+DEBUG: will be cycling table of businesses.
+
+>e
+#table of political stuff
+>n
+DEBUG: will be cycling table of political stuff.
+"Slo pols," you muse to yourself, as the debates re-rage, only moving fractionally forward.
+
+>e
+>x yall
+Wow! Some of many posh names:
+>x yall
+More posh names:
+
+>w
+>w
+>s
+
+>use x-ite tix on tix exit
+
+Roxor!
