@@ -46,7 +46,7 @@ include Trivial Niceties by Andrew Schultz.
 
 include Intro Restore Skip by Andrew Schultz.
 
-include Old School Verb Carnage by Andrew Schultz.
+include Old School Verb Total Carnage by Andrew Schultz.
 
 include Basic Screen Effects by Emily Short.
 
@@ -155,28 +155,6 @@ Fun Enuf is a room. [just to be sure where the player starts]
 section procedural rules
 
 Procedural rule while eating something: ignore the carrying requirements rule.
-
-section compiler constants
-
-use MAX_VERBS of 620. [-40/50 from max_verbs debug]
-
-use MAX_ACTIONS of 210.
-
-use MAX_VERBSPACE of 5800. [-400 from max_verbspace debug]
-
-use MAX_SYMBOLS of 26000.
-
-section debug compiler globals - not for release
-
-use MAX_VERBS of 660. [290 for 125 mistakes, so, gap of 165 as of 3/10/18]
-
-use MAX_ACTIONS of 230. [+10?]
-
-use MAX_VERBSPACE of 6200. [4096 = original max]
-
-use MAX_SYMBOLS of 27000. [-1000 for release]
-
-use MAX_STATIC_DATA of 190000.
 
 chapter room utilities
 
