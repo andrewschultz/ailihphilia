@@ -2335,7 +2335,7 @@ to chef (i1 - an ingredient) and (i2 - an ingredient):
 		score-inc; [Grebeberg/USE GIFT FIG ON MAYO YAM&USE SNACK CANS ON UFO TOFU]
 		if number of moot ingredients is 4:
 			verify-done rev-second-food-combo rule;
-			say "A martini tram rattles out, de-garaged, from behind the Ark of Okra. Guess you need drinks with your, uh, food![paragraph break][if player does not have the epicer recipe]You're shocked to see it, and it rolls further down, over the turf rut to Dumb Mud, then back through the Seer Trees to [Fun Enuf], and you follow[else]But you're prepared for it, with your epicer recipe. You move it back to [Fun Enuf], where it looks like a good base structure for your North-Tron[end if].";
+			say "'[']K, Can Snack!' a loud voice booms.[paragraph break]A martini tram rattles out, de-garaged, from behind the Ark of Okra. Wow! Drinks with your, um, food! Or not, since the bumpy ride spills all the liquid, and whatever you mixed has long since disappeared[paragraph break][if player does not have the epicer recipe]You're shocked to see martini tram, which rolls further down, over the turf rut to Dumb Mud, then back through the Seer Trees to [Fun Enuf], and you follow[else]But your epicer recipe prepared you for such an appearance. You catch the martini tram and move it back to [Fun Enuf], where it will make a fine base structure for your North-Tron[end if].";
 			move martini tram to Fun Enuf;
 			drop-player-at Fun Enuf;
 			say "After all that excitement, you realize that the martini tram could've been a KO wok. You feel relief at dodging something worse.";
@@ -2950,7 +2950,7 @@ use1	use2	getit	preproc	postproc	sco	d1	d2	guy-need	ms-need	tool-need	reg-plus	r
 --	--	--	rev-evade-Dave rule	--	true	--	--	true	true	true	Yelpley	My Gym	My Gym	false	--
 --	--	--	rev-bore-Rob rule	--	true	--	--	true	true	true	Yelpley	Worn Row	Worn Row	false	--
 --	--	--	rev-word-row rule	--	true	--	--	true	true	true	Yelpley	Worn Row	Worn Row	false	--
-TI	Door Frood	bunk nub	pre-ti-on-frood rule	tube-to-ave rule	true	true	true	true	true	true	Yelpley	Evaded Ave	Evaded Ave	false	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. Some people are stupid. Good thing I obviously have too much self-awareness to be one of them. Funny stuff! A cut above [i]To Laff a Lot[r]! I'd try to explain it to you, but either you don't need it explained to you, or you don't deserve it explained to you.'[paragraph break]With uncontrollable laughter spasms, the Door Frood skulks away, through a tube ... but ... it's probably useless to follow. Instead, you pick up the bunk nub. Might as well." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
+TI	Door Frood	bunk nub	pre-ti-on-frood rule	tube-to-ave rule	true	true	true	true	true	true	Yelpley	Evaded Ave	Evaded Ave	false	"The Door Frood begins to read and starts chuckling. Then keeps chuckling. 'Oh my goodness. Some people are stupid. Good thing I obviously have too much self-awareness to be one of them. Funny stuff! A cut above [i]To Laff a Lot[r]! I'd try to explain it to you, but either you don't need it explained to you, or you don't deserve it explained to you.'[paragraph break]With uncontrollable laughter spasms and outbursts of 'TIC! Illicit!' the Door Frood skulks away, through a tube ... but ... it's probably useless to follow. Instead, you pick up the bunk nub. Might as well." [b4:PACK CAP/EVADE DAVE/BORE ROB/WORD ROW]
 pity tip	eye	snack cans	pre-tip-on-eye rule	mob-to-alley rule	true	true	false	false	false	true	Yelpley	Yell Alley	Yell Alley	false	"The eye scans the pity tip, and the navy van beeps and boops and spits out some snack cans, which roll on the ground. You take them. Then you hear a loud whisper: 'Dee? Weed?' The navy van then activates its VANS-NAV and whooshes off to leave for good. And there's something behind it! Apparently, a whole bomb mob! That's who was making all the noise!" [af:TEND NET/WORK ROW]
 --	--	--	rev-tend-net rule	--	true	--	--	false	true	true	Yelpley	Trapeze Part	Trapeze Part	false	--
 --	--	--	rev-work-row rule	--	true	--	--	true	true	true	Yelpley	Worn Row	Worn Row	false	--
@@ -2967,10 +2967,8 @@ puce cup	liar grail	--	pre-cup-on-grail rule	empty-grail rule	true	false	true	tr
 puce cup	dose sod	--	pre-cup-on-sod rule	sod-to-cup rule	true	false	false	true	true	true	Grebeberg	Apse Spa	Apse Spa	false	"You funnel the dose sod (not enough for a doses OD) into the puce cup. It will keep the sod fresh enough." [sc2-ignore]
 puce cup	Bond Nob	Elan Ale	pre-cup-on-nob rule	empty-nob rule	true	true	true	true	true	true	Yelpley	Drawl Ward	Drawl Ward	false	"You give the Bond Nob the puce cup. Gulp! Gulp! The Bond Nob smashes the Puce Cup and looks embarrassed. 'Oops! Maybe you could still have used that...or not. Please accept some Elan Ale with my apologies. Oh, and enjoy my digs to the west. So many places to visit: [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars], [next-rand-txt of table of Bond Nob bars]... well, everywhere except Bar Drab or Soda Do's or Jo's OJ.' The Bond Nob vanishes north, to regale lager and maybe become a refill lifer."
 stamp mats	slate metals	Ye Key	pre-mats-on-metals rule	--	true	true	false	true	true	true	Yelpley	Scrap Arcs	Scrap Arcs	false	"Impressing the stamp mats on the slate metals, a design pops out! A key! An important looking one emblazoned ... YE KEY. You find it hard to pull the stamp mats out, and when you take YE KEY, the mats quickly morph into the slate metals. Eh, well. Less inventory to worry about."
-demo med	gulf lug	cash sac	pre-med-on-lug rule	--	true	true	true	true	true	true	Grebeberg	Flu Gulf	Flu Gulf	false	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' and looks a lot better within a few seconds. 'Mute tum!' the Lug cries gratefully before handing you a cash sac and running away."
-cash sac	cross orc	--	pre-sac-on-orc rule	--	true	true	true	true	true	true	Yelpley	Toll Lot	Toll Lot	false	"The cross orc looks at the cash sac suspiciously. It's not sure if the sac is enough. But it hasn't been taking its Negot-O-Gen! You convince the orc that money isn't any good if you don't get out there and spend it, and ... with a payee yap, the orc goes off, mumbling how to show off its wealth to those snooty scroll orcs."
-demo med	gulf lug	cash sac	pre-med-on-lug rule	--	true	true	true	true	true	true	Grebeberg	Flu Gulf	Flu Gulf	false	"The Gulf Lug takes the demo med, inspects it, and says, 'Eh, why not...' and looks a lot better within a few seconds. 'Mute tum!' the Lug cries gratefully before handing you a cash sac and running away."
-cash sac	cross orc	--	pre-sac-on-orc rule	--	true	true	true	true	true	true	Yelpley	Toll Lot	Toll Lot	false	"The cross orc looks at the cash sac suspiciously. Maybe the sac isn't enough. But it hasn't been taking its Negot-O-Gen! You say 'Invests! Ev'n I...' and your folksiness convinces the cross orc that, well, ANYONE can get rich investing. With a payee yap, the orc goes off, mumbling how it will eclipse those snooty scroll orcs. It shall be as rich as ... CROESUS E. ORC!"
+demo med	gulf lug	cash sac	pre-med-on-lug rule	--	true	true	true	true	true	true	Grebeberg	Flu Gulf	Flu Gulf	false	"The Gulf Lug takes the demo med, inspects it, and says, 'Ah, sure, rush a...' and looks a lot better within a few seconds. 'Mute tum!' the Lug cries gratefully before handing you a cash sac and running away."
+cash sac	cross orc	--	pre-sac-on-orc rule	--	true	true	true	true	true	true	Yelpley	Toll Lot	Toll Lot	false	"The cross orc looks at the cash sac suspiciously. Maybe the sac isn't enough. But it hasn't been taking its Negot-O-Gen! Your folksy 'Invests! Ev'n I...' convinces the cross orc , well, ANYONE can get rich investing. With a payee yap, the orc goes off, mumbling how it will eclipse those snooty scroll orcs. It shall be as rich as ... CROESUS E. ORC!"
 YOB ATTABOY	Sniffins	Dirt Rid	pre-attaboy-on-Sniffins rule	toons-to-den rule	true	true	false	false	false	true	Yelpley	Deft Fed	Deft Fed	false	"Sniffins accepts your gift, with sniffs slowly changing from sadness to something more snooty. Your thanks for helping Sniffins be too good for you is a Dirt Rid. Sniffins shoos you back out to the Toll Lot: 'No, yob! Yon!' There is remodeling to be done! Sniffins will outdo Rentner, whoever that is! From the south, you hear frantic cries of 'Repaper! Repaper! Repaper!'[paragraph break][b]Toll Lot[r]"
 Elan Ale	Sniffins	Gorge Grog	pre-ale-on-Sniffins rule	--	true	true	false	false	false	true	Yelpley	Deft Fed	Deft Fed	false	"Smuggums looks the Elan Ale up and down, sniffs and...well, okay. It will do. 'Now take that Gorge Grog and get it out of here.' Hey, you're not one to say 'stuff free stuff.'" [af:stand nat's]
 --	--	--	rev-stand-nats rule	--	true	--	--	true	false	false	Yelpley	Deft Fed	Deft Fed	false	--
@@ -2991,8 +2989,8 @@ poo coop	turf rut	--	pre-coop-on-rut rule	--	true	true	true	false	false	true	Gre
 radar	made dam	eroded ore	pre-radar-on-dam rule	radar-blink rule	true	false	false	false	false	true	Grebeberg	Swamp Maws	Swamp Maws	false	"You place the radar against the made dam and move back and forth. Suddenly--yes! You hear a ping nip. There's something behind. You discover some eroded ore, which you take. It's not much in its current state, but maybe you can regenerate it somehow. The radar plays a weird scale. Being close to the ore has damaged it somehow."
 NULL ILLUN	Known Wonk	--	pre-illun-on-wonk rule	bump-maws rule	true	true	true	true	true	false	Grebeberg	Yack Cay	Yack Cay	false	"The Known Wonk begins to read. 'Old, lo! Too simple. It has to be beneath me. I mean, it's almost as bad as [i]EBB?! BE[r].' But the more the Wonk reads, the more it's clear...they have overlooked stuff. 'Hey. That makes sense. Rid a nadir. Rid ANY nadir! Tiny nit? Not on! Wonk, now! Sometimes, simple stuff works.' As the Known Wonk babbles, the mist sim lifts, too. 'Wow!' But no, your acts deserve a better cheer than that. 'H/t! A path!'[paragraph break]What could lie to the north?"
 el doodle	edits tide	spa maps	pre-doodle-on-tide rule	rahs-too rule	true	true	false	false	true	false	Grebeberg	Yack Cay	Yack Cay	false	"The edits tide washes away enough of El Doodle to reveal maps...and not just any maps, but spa maps! And there is a bonus! It appears El Doodle was so jumbled, there were two things. Sharp rahs appear on another sheet of paper, as some sort of confused motivation, and you take them."
-elope pole	kayak	you buoy	pre-pole-on-kayak rule	--	true	true	false	false	false	false	Grebeberg	Lac Oft Focal	Lac Oft Focal	false	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where. You whisper 'Row, or' whenever you get tired. Then you see Elided Ile in the distance. It can't be Elsif Isle, because there are no computers on the shore.[paragraph break]So you stop off there. You are invited to Nevah-Haven, where everyone is happy all the time, but ... it seems too good to be true. Apparently your declining to stay means you passed some sort of test, and you are worthy to fight the vicious Bar Crab and Doctor Rot-Cod and even the sub-dewed bus. They are no match for your elope pole. After breaking ground on a Palm Lap, The citizens hand you a YOU BUOY to tell you they're glad you're you, asking only for the elope pole as a souvenir. Well, it was getting a bit awkward to carry.[paragraph break]They mention the YOU BUOY may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Lac Oft Focal. It is called the Sail Alias, because of course it is. When you're near the lac, you jump off and use the buoy to doggy-paddle and float back to shore."
-dork rod	tao boat	enact cane	pre-rod-on-boat rule	--	true	true	false	true	true	false	Grebeberg	Lac Oft Focal	Lac Oft Focal	false	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
+elope pole	kayak	you buoy	pre-pole-on-kayak rule	--	true	true	false	false	false	false	Grebeberg	Lac Oft Focal	Lac Oft Focal	false	"You unfold the elope pole into two oars. And you take a journey ... well, you're not sure where. You whisper 'Row, or' whenever you get tired. Then you see Elided Ile in the distance. It can't be Elsif Isle, because there are no computers on the shore.[paragraph break]Then a voice: 'Wave! Rev! Aw...' You are de-kayaked, with no hope of becoming a re-kayaker.[paragraph break]Fortunately you swim to shore and are welcomed to Nevah-Haven, where everyone is happy all the time, or at least acts that way, but ... it seems too good to be true. Apparently your declining to stay means you passed some sort of test, and you are worthy to fight the vicious Bar Crab and Doctor Rot-Cod and even the sub-dewed bus. They are no match for your elope pole. After breaking ground on a Palm Lap, The citizens hand you a YOU BUOY to tell you they're glad you're you, asking only for the elope pole as a souvenir. Well, it was getting a bit awkward to carry.[paragraph break]They mention the YOU BUOY may hold great treasures within, ones that will help you complete your quest. 'Barge! Grab!' they call as one speeds past, in the direction of Lac Oft Focal. It is called the Sail Alias, because of course it is. When you're near the lac, you jump off and use the buoy to doggy-paddle and float back to shore."
+dork rod	tao boat	enact cane	pre-rod-on-boat rule	--	true	true	false	true	true	false	Grebeberg	Lac Oft Focal	Lac Oft Focal	false	"The dork rod vibrates and causes the Tao Boat to open. You step aboard. Inside are stave vats. You put the dork rod in them, and it shimmers and pops back out as ... an enact-cane. 'Koan? A-ok!' you think. You could stay here forever...but then a voice calls 'Re-rise, desirer!'[paragraph break]You think back to the rep popper in the alley. Suddenly, you don't feel as though you'd feel silly holding it. You're sure you need it, though for what, you can't say."
 tent net	Code Doc	--	pre-net-on-doc rule	--	true	true	false	false	true	false	Grebeberg	Uneven U	Uneven U	false	"Together, you figure out what to do to make the tent net proper cover for Uneven U. 'Tie it ... tie it ...' then 'Net: safe. fasten!'[paragraph break]Once the work is done, the Code Doc thanks you. 'It will be a net for often. Let me know if you need help learning ... well, anything. Oh, and call me Dr. D., if you'd like.'[paragraph break]How thoughtful! That could save a few keystrokes in the future[if spa maps are preclued]! Maybe the very near future, if you ask about the spa maps again[end if]."
 spa maps	Code Doc	--	pre-maps-on-doc rule	maps-explain rule	true	false	false	false	true	false	Grebeberg	Uneven U	Uneven U	false	"The Code Doc looks at the maps. 'Hmm. I learned a few tricks from Edu-Dude. But I'll need my for-prof math tam for this one. One second, let's see--Aha! Oho...'[paragraph break]You each split an Ed-Ade to make sure the lesson is taught and remembered well. Despite a minor pupil slip-up, the Code Doc is never edu-rude. It soon makes complete sense to you. You don't know how to say thanks. Everything seems too long-winded or said before, until ... 'Def ed!'"
 spa maps	go by bog	sage gas	pre-maps-on-bog rule	gas-think-wipe rule	true	true	false	false	true	false	Grebeberg	Apse Spa	Apse Spa	false	"Everything clicks now! You see Go-By Bog, Gobs Bog, and how to pass through each of them. It's not a total breeze, but when you get through, you find sage gas all around. But how to carry it? Voila, a pouch in the Sto Lots you hadn't seen before is just the thing. Perhaps the sage gas helped you find it! As you fiddle with it, though, you drop the Spa Maps, which get hopelessly muddy.[paragraph break]You reach to pick them up, but somehow, bizarrely, the Spa Maps turn into a salt atlas and crumble away. Hooray, biodegradability!"
@@ -3005,7 +3003,7 @@ sharp rahs	guru rug	stir writs	pre-rahs-on-rug rule	--	true	true	true	false	true
 --	--	--	rev-nail-Ian rule	--	true	--	--	false	false	true	Grebeberg	Mont Nom	Mont Nom	false	--
 --	--	--	rev-first-food-combo rule	--	true	--	--	false	false	true	Grebeberg	Mont Nom	Mont Nom	false	--
 --	--	--	rev-second-food-combo rule	--	true	--	--	false	false	true	Grebeberg	Mont Nom	Fun Enuf	false	--
-Moor Broom	Tru Yurt	Exam Axe	pre-broom-on-yurt rule	bump-ivy rule	true	true	false	false	true	false	Grebeberg	Yack Cay	Yack Cay	false	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how a clean space frees one's mind for ideas (or even a tepee pet) and how your simple advice works. You're pretty shocked, but you're even more shocked when the Known Wonk bolts out and yells 'Wait a second!'[paragraph break]After a bit, the Known Wonk returns, babbling about FINALLY impressing the Code Doc. In gratitude, the Known Wonk hands you something long-hidden and unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! You trade the moor broom for it, now that the Known Wonk is committed to cleanliness." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
+Moor Broom	Tru Yurt	Exam Axe	pre-broom-on-yurt rule	bump-ivy rule	true	true	false	false	true	false	Grebeberg	Yack Cay	Yack Cay	false	"You begin to clean the Known Wonk's Tru Yurt, and as you do, all sorts of things turn up. The moor broom even shifts into a pomp mop when you need it to, for a bit. The Known Wonk looks shocked at how a clean space frees one's mind for ideas (or even a tepee pet) and how your simple advice works. They've learned a lot, so much, they rename their Tru-Yurt Dojo D![paragraph break]You're pretty shocked, but you're even more shocked when the Known Wonk bolts out and yells 'Wait a second!'[paragraph break]After a bit, the Known Wonk returns, babbling about FINALLY impressing the Code Doc. In gratitude, the Known Wonk hands you something long-hidden and unusable for an intellectual, but maybe you will find it handy ... an Exam Axe! You trade the moor broom for it, now that the Known Wonk is committed to cleanliness." [b4:nail ian/use snack cans on UFO tofu/use gift fig on mayo yam]
 wash saw	porch crop	balsa slab	pre-saw-on-crop rule	--	true	true	false	false	false	false	Grebeberg	Uneven U	Uneven U	false	"You start hacking away with the wash saw, and the whole operation is fun...almost a mirth trim. The Code Doc frowns briefly: 'Bonsai! ... A snob?' before you counter with 'Hep, eh?' The Code Doc nods.[paragraph break]'Yes! Yes! We have achieved AIMED ACADEMIA! It is time for a name chanege, but to what? ... Idea-ed, I! UNITIN['] U! How can I thank you?'[paragraph break]You see the wash saw became dull while you sawed, and you've no way to sharpen it. The Code Doc should be able to before the porch crop grows back. So when you notice a balsa slab is lying under where the porch crop was, you propose a trade. The Code Doc accepts. Now, you ... do own wood!"
 Exam Axe	Lie Veil	--	pre-axe-on-veil rule	--	true	true	true	false	true	false	Grebeberg	Dumb Mud	Dumb Mud	false	"The Exam Axe cuts through the Lie Veil easily. As it does so, it shortens--oh, about 28.57%--before glowing and swirling and vanishing. I guess now it's an ex-axe. You can go north now."
 --	--	--	rev-get-bros orb rule	--	false	--	--	false	true	false	--	Le Babel	Le Babel	--	--
@@ -3051,7 +3049,7 @@ this is the rev-create-tron rule:
 	if KAOS Oak is moot, the rule fails;
 	if in-aid is true:
 		if tron-got is not 4, the rule fails;
-		say "Use any piece of the North-Tron (or the epicer recipe) with any other piece, or the recipe, to break through the [kaoscaps].";
+		say "Use any piece of the North-Tron (or the epicer recipe) with any other piece, or the recipe, to break through the [kaoscaps][in-not-here of fun enuf].";
 		the rule succeeds;
 	build-the-tron;
 	the rule succeeds;
@@ -3074,7 +3072,7 @@ this is the rev-emit-noontime rule:
 	if emitted is true, the rule fails;
 	if in-aid is true:
 		if emitted is false and player has yard ray and murdered rum is moot:
-			say "[one of]The Yard Ray needs to emit something[or]An eight tletter word.[or]The last four are ****TIME.[or]Something bright.[or]EMIT NOONTIME to practice with the Yard Ray.[stopping]";
+			say "[one of]The Yard Ray needs to emit something[or]An eight letter word[or]The last four are ****TIME[or]Something bright[or]EMIT NOONTIME to practice with the Yard Ray[stopping].";
 			the rule succeeds;
 		the rule fails;
 	if say-unless-speed, say "You EMIT NOONTIME with the Yard Ray.";
@@ -3102,12 +3100,16 @@ this is the rev-first-food-combo rule:
 	if in-aid is true:
 		if number of carried ingredients is 2:
 			say "You can mix [random carried liquid ingredient] with [random carried solid ingredient] by USEing one on the other.";
-		else: [you must have the gift fig by now]
-			say "You may need to look elsewhere for food to go with the gift fig. The easy one to find is the mayo yam [if Yell Alley is visited]in Yell Alley[else]east of Evaded Ave[end if].";
+		else if number of carried ingredients is 1: [you must have the gift fig by now]
+			say "You may need to look elsewhere for food to go with [the random carried ingredient]. Search Yell Alley [if Yell Alley is visited]some more[else]east of Evaded Ave[end if].";
+		else:
+			say "You may wish to search Yell Alley [if Yell Alley is visited]some more[else]east of Evaded Ave[end if] to find ingredients to mix together.";
 		the rule succeeds;
-	if say-unless-speed, say "You mix the snack cans and the UFO tofu together in Mont Nom.";
-	moot snack cans;
-	moot UFO tofu;
+	let si be random carried solid ingredient;
+	let li be random carried liquid ingredient;
+	if say-unless-speed, say "You mix [the li] and [the si] together in Mont Nom.";
+	moot si;
+	moot li;
 	the rule succeeds;
 
 this is the rev-get-bros orb rule:
@@ -3134,7 +3136,7 @@ this is the rev-pace-cap rule:
 		unless tried-yak, the rule fails;
 		if cap-pace is true, the rule fails;
 		if cap-ever-pace is true:
-			say "You managed tp make a PACE CAP before. Now is the time to do it again.";
+			say "You managed tp make a PACE CAP before. Now is the time to do it again[if mrlp is not grebeberg]--well, once you've crossed over to Grebeberg[end if].";
 		else:
 			say "[one of]You need to do something with/to the pact cap.[or]The pact cap can help you go faster, longer, so the Kayo Yak doesn't catch you.[or]It can also become a PAC* CAP (2 letters.)[or]PACY CAP or PACE CAP.[stopping]";
 		the rule succeeds;
@@ -3372,7 +3374,7 @@ this is the pre-cup-on-grail rule:
 		if puce cup is soddy:
 			say "[one of]You don't need the dose sod in the puce cup until later. Something else belongs in the puce cup, first[or]USE PAST SAP ON PUCE CUP to replace the dose sod, for now[stopping].";
 		else if puce cup is sappy:
-			say "[one of]You need to find the right place for the cup with the [sir-sap-long][or]Another place has a receptacle for the [sir-sap-long][or]The Liar Grail [hn-in of Swept Pews][or]USE CUP ON GRAIL [hn-in of Swept Pews][stopping].";
+			say "[one of]You need to find the right place for the cup with the [sir-sap-long][or]There is a different receptacle for the [sir-sap-long][or]The Liar Grail [hn-in of Swept Pews][or]USE CUP ON GRAIL [hn-in of Swept Pews][stopping].";
 		else:
 			say "[one of]The puce cup needs to be filled with two things. First, something you've already seen[or]Use some liquid-ish thing on the cup[or]USE PAST SAP ON CUP[stopping].";
 		the rule succeeds;
@@ -3452,6 +3454,7 @@ this is the pre-cup-on-sod rule:
 this is the pre-demos-on-hay rule:
 	if in-aid is true:
 		if player does not have SOME DEMOS, the rule fails;
+		if moo room is not visited, the rule fails;
 		say "[one of]SOME DEMOS talks about making art with contradictory items[or]There is one item that is contradictory enough for SOME DEMOS to apply[or]The item SOME DEMOS can be used with is both exciting and boring[or]USE SOME DEMOS ON YAHOO HAY[in-not-here of Moo Room][stopping].";
 	the rule succeeds;
 
@@ -3607,7 +3610,7 @@ this is the pre-radar-on-arc rule:
 		else if radar is off-stage:
 			say "You need to clean up the [Dopy Pod] for a useful item.";
 		else:
-			say "[one of]The crag arc is more than just scenery[or]Something might be hidden behind the crag arc[or]You need an item to find what's behind the crag arc[or]The radar will detect something behind the crag arc[stopping].";
+			say "[one of]The crag arc is more than just scenery[or]Something might be hidden behind the crag arc[or]You need an item to find what's behind the crag arc[or]The radar will detect something behind the crag arc[or]USE RADAR ON CRAG ARC[stopping].";
 		the rule succeeds;
 	if UFO tofu is not off-stage:
 		say "You already scanned the crag arc successfully.";
@@ -5511,7 +5514,9 @@ The Exam Axe is a thing. description is "Just looking at the exam axe, you feel 
 
 chapter Tru Yurt
 
-The Tru Yurt is scenery in Yack Cay. "[if moor broom is moot]It's much cleaner now you took the moor broom to it[else][peek-eep]. You didn't see much, but it looks really messy, and stuff like cleaning can't be the Known Wonk's forte[end if]."
+The Tru Yurt is scenery in Yack Cay. "[if moor broom is moot]It's much cleaner now you took the moor broom to it. The [wonk] has even labeled it DOJO D[else][peek-eep]. You didn't see much, but it looks really messy, and stuff like cleaning can't be the Known Wonk's forte[end if]."
+
+understand "dojo d" and "dojo/d" as Tru Yurt when moor broom is moot.
 
 to say peek-eep:
 	say "'Peek? Eep!' [if mist sim is moot]you hear from the Tru Yurt[else]the Known Wonk exclaims, shocked at your nosiness[end if]"
@@ -5680,6 +5685,8 @@ after looking in Yawn Way:
 chapter day away ad
 
 the day away ad is scenery. printed name of day away ad is "Day-Away Ad". "The Day-Away Ad describes businesses soon to open in the new improved Yelpley, including [next-rand-txt of table of businesses] and [next-rand-txt of table of businesses]."
+
+does the player mean doing something with the day away ad: it is very likely.
 
 chapter X/Y Pyx
 
@@ -6052,7 +6059,7 @@ does the player mean evadeing Dave: it is very likely.
 carry out evadeing:
 	if noun is Dave:
 		if Dave is moot, say "You don't need to evade Dave again.";
-		say "You evade Dave! Deked! Deked![paragraph break]After spinning fruitlessly around for a while and putting up with your 'E.g. dodge' and 'El Ole' taunts, Dave trudges off, exhausted, emitting a huge 'GUH!'[paragraph break]Whew! Consulting the Set O Notes[if Set O Notes is xed] again[end if], you notice there may be at least one more guh thug, but nothing too violent. That's good. You'd hate to have to CRAMP MARC, TRUCK CURT, MASH SAM, MELT LEM, RAM OMAR, SIT ON OTIS or even DISS SID. And it would be awkward to tell SAL ALAS or say NO, DON or LIAM, AIL.";
+		say "You evade Dave! Deked! Deked![paragraph break]After spinning fruitlessly around, Dave trudges off, exhausted, emitting a huge 'GUH!' Perhaps he was more bugged with your constant 'E.g. dodge,' 'Olé, lo' and 'El Olé' taunts, but you're glad he's gone.[paragraph break]Whew! Consulting the Set O Notes[if Set O Notes is xed] again[end if], you notice there may be at least one more guh thug, but you won't need to do anything aggressive. That's good. You'd hate to have to CRAMP MARC, TRUCK CURT, DECK CED, MASH SAM, MELT LEM, RAM OMAR, SIT ON OTIS or even DISS SID. And it would be awkward to tell SAL ALAS or say NO, DON or LIAM, AIL and downright creepy to have to HARASS SARAH.";
 		wfak;
 		say "Suspicious there are no actual weight machines, you find a passage to a hidden spate of Sperses-Reps machines with the motto 'Scepsis?! Pecs!' They help you bulk up a bit, so item weight will not be a factor. But you don't want to waste too much time bulking up. You go back out and have a look at the Stole-Lots. You consider making it a STORE-lots, but then the 'rots' is not so good, so then you also check if the E and an L rub out quickly. They do, making it a Sto(['])-Lots. Bam! Logistical and moral problems: SOLVED![paragraph break]Also, you notice a wash saw in the (now) Sto Lots. They both seem worth taking along, so you do.";
 		moot Dave;
@@ -6943,6 +6950,7 @@ instead of doing something in Emo Dome when pulled-up is false:
 	if current action is thinking or requesting the score or aiding:
 		say "You take a second to catch your breath.";
 		continue the action;
+	if action is procedural, continue the action;
 	if current action is going:
 		if noun is not west and noun is not east:
 			say "You're scared whatever's [if noun is north or noun is south][noun][else]that way[end if] would be even worse. You keep running [emo-dir] instead. You managed to PUFF UP to face your fears, but that only goes so far.";
@@ -7074,7 +7082,14 @@ to no-extra-cup-points:
 
 book Toll Lot
 
-Toll Lot is east of Emo Dome. It is in Yelpley. "[if cross orc is in Toll Lot]While it's easy enough to go back west to the Emo Dome, that cross orc doesn't seem to want to let you go north or south[else]You can go north or south with the cross orc gone or, well, back west, too[end if]. A crag arc rises to the east[if UFO tofu is off-stage]--maybe it is hiding something[end if]."
+Toll Lot is east of Emo Dome. It is in Yelpley. "[if cross orc is in Toll Lot]While it's easy enough to go back west to the Emo Dome, that cross orc doesn't seem to want to let you go north or south[else][dir-post-orc][end if]. A crag arc rises to the east[if UFO tofu is off-stage]--maybe it is hiding something[end if]."
+
+to say dir-post-orc:
+	if diktat kid is not moot:
+		say "You can go north or south with the cross orc gone or, well, back west, too";
+	else:
+		say "There's a private party to the south, apparently. Too exclusive for you. So north and west it is. [one of]A visitor's sheet called [yall] has the names of attendees[or][yall] lists who can attend. Not you[stopping]";
+		if yall ay is off-stage, move yall ay to Toll Lot;
 
 check going east in Toll Lot: say "You'd crash into the crag arc. [if cross orc is moot]North, south and e[else]E[end if]ast could work, though." instead;
 
@@ -7089,7 +7104,7 @@ check going in Toll Lot:
 		if noun is south, say "There's a party at the Bon Snob, and it's so exclusive, even you aren't invited!" instead;
 		if noun is north and balm-LLP-yet is true, say "You already did a little extra in the Bald Lab. You figure it's best to keep away--you guess people probably thought Ms. Ism ruined it, and why fill them in on the truth?" instead;
 	if cross orc is in Toll Lot:
-		if noun is north or noun is south, say "The cross orc stops you from going [noun]. 'GIVE VIG!' it booms. More effective and natural than 'Ee! Fee!'" instead;
+		if noun is north or noun is south, say "The cross orc stops you from going [noun]. 'GIVE VIG!' it booms. 'GIVE ME VIG!'[paragraph break]More effective and natural than 'Ee! Fee!'" instead;
 
 chapter cross orc
 
@@ -7102,6 +7117,10 @@ the crag arc is scenery in Toll Lot. "It soars high and is too dangerous to clim
 chapter UFO tofu
 
 some UFO tofu is a liquid ingredient. description is "It's a disturbingly squishy, yet impenetrable, block, with OF UFO scratched into one side, in case you forget where it came from.[paragraph break]Since it didn't fall apart when the UFOs dropped it on you, I guess it has enough preservatives it won't go bad too soon. I mean, more bad than tofu itself is.[paragraph break][if player is in Mont Nom]And yet, here on Mont Nom, it looks a lot better than when it dropped on you[else]It'd take a special place indeed to make this schlop more edible[end if]."
+
+chapter Y'All Ay
+
+Yall Ay is scenery. printed name of Yall Ay is "Y'All, Ay". description is "[one of]Wow! Some of many[or]More[stopping] posh names:[line break]--[next-rand-txt of table of yall people]--[next-rand-txt of table of yall people]--[next-rand-txt of table of yall people]--[next-rand-txt of table of yall people]."
 
 book Gross Org
 
@@ -8200,7 +8219,7 @@ every turn when being-chased is true:
 		continue the action;
 	if chase-mulligan is true:
 		now chase-mulligan is false;
-		continue the action;
+		if chase-person is in location of player, continue the action;
 	if chase-person is in location of player:
 		say "You've been caught! Stung! Nuts! [if chase-person is kayo yak]A quick butt, nothing violent (it's no lamin['] animal,) but just to show you who's boss leaves[else]Sting-nits, a lot, leave[end if] you dazed and confused, you [if player is in Ooze Zoo or player is in Gross Org]run around in circles a bit[else]stagger back to[end if]...";
 		reset-chase instead;
@@ -9005,28 +9024,33 @@ to decide which book is cur-book:
 
 section main aiding rule
 
+ever-take-clue-warn is a truth state that varies.
+
 carry out aiding:
 	if hint-yet is false and word number 1 in the player's command is "hint":
 		say "There are more harmonious ways to ask for a hint, if you want a bonus point. But it's not critical.";
 		now hint-yet is true;
 	if being-chased is true:
-		if chase-person is kayo yak, try itmhinting kayo yak instead;
+		if chase-person is kayo yak:
+			if player is in Lair Trial, try itmhinting Ergot Ogre instead;
+			try itmhinting kayo yak instead;
 		try itmhinting psi wisp instead;
 	let take-clues be 0;
 	repeat through table of just take it:
 		if to-take entry is in where-is entry and where-is entry is visited:
 			if there is no take-check entry:
 				increment take-clues;
-				say "[if take-clues is 1]Y[else]Also, y[end if]ou can just take [the to-take entry] [hn-in of where-is entry].";
+				say "[if take-clues is 1]Y[else][line break]Also, y[end if]ou can just take [the to-take entry] [hn-in of where-is entry].";
 			else:
 				process the take-check entry;
 				if the rule succeeded:
 					increment take-clues;
 					say "[if take-clues is 1]Y[else]Also, y[end if]ou can just take [the to-take entry] [hn-in of where-is entry].";
-	if take-clues > 0:
-		say "NOTE: This poke to take something may be a distraction from more rigorous and immediate puzzles, but I'd rather first point you to something you overlooked but may be able to use before spoiling a puzzle.";
+	if take-clues > 0 and ever-take-clue-warn is false:
+		now ever-take-clue-warn is true;
+		say "[line break]NOTE: This poke to take something may be a distraction from more rigorous and immediate puzzles, but I'd rather first point you to something you overlooked but may be able to use before spoiling a puzzle.";
 		if debug-state is true:
-			say "Falling through to see what hints I would've gotten, for debug purposes. This should not be in the release version.[paragraph break]";
+			say "[line break]Falling through to see what hints I would've gotten, for debug purposes. This should not be in the release version.[paragraph break]";
 		else:
 			the rule succeeds;
 	if player is in Worn Row:
@@ -9038,7 +9062,7 @@ carry out aiding:
 		if there is a use1 entry:
 			if use1 entry and use2 entry are mixable:
 				if there is a preproc entry:
-					if debug-state is true, say "Checking [preproc entry].";
+					if debug-state is true, say "DEBUG: Checking [preproc entry].";
 					process the preproc entry;
 					if the rule failed, next;
 					if the rule succeeded:
@@ -9062,7 +9086,7 @@ carry out aiding:
 					consider the preproc entry;
 					if the rule failed, next;
 					if the rule succeeded:
-						if debug-state is true, say "[preproc entry] succeeded!";
+						if debug-state is true, say "DEBUG: [preproc entry] succeeded!";
 						now in-aid is false;
 						the rule succeeds;
 				say "[if debug-state is true](DEFAULT-2) [end if][if use2 entry is a workable and Worn Row is not worky]Change to WORK ROW, then [end if]USE [printed name of use1 entry in upper case] ON [printed name of use2 entry in upper case].";
@@ -9072,13 +9096,13 @@ carry out aiding:
 			consider the preproc entry;
 			if the rule succeeded:
 				if debug-state is true:
-					say "[preproc entry] succeeded!";
+					say "DEBUG: [preproc entry] succeeded!";
 					now in-aid is false;
 					the rule succeeds;
 	repeat through table of goodacts:
 		if there is a room-to-go entry and room-to-go entry is unvisited:
 			let oiq be in-dir of room-to-go entry;
-			say "GENERAL HINT: the room [opposite of oiq] of [hn-of of in-room of room-to-go entry] is available, but you haven't visited there yet.";
+			say "GENERAL HINT: [if in-room of room-to-go entry is unvisited]you have a lot of places to visit. A good try would be [vague-dir of room-to-go entry][else]the room [opposite of oiq] of [hn-of of in-room of room-to-go entry] is available, but you haven't visited there yet[end if].";
 			now in-aid is false;
 			the rule succeeds;
 	say "Uh oh, I couldn't find a hint.";
@@ -9144,9 +9168,9 @@ this is the orb-take rule:
 
 section hint rules [xxhr]
 
-to say once-work: say "[if Worn Row is not worky], once you change to Work Row[end if]"
+to say once-work: say "[in-not-here of Worn Row][if Worn Row is not worky], once you change to Work Row[end if]"
 
-to say once-word: say "[if Worn Row is not wordy], once you change to Word Row[end if]"
+to say once-word: say "[in-not-here of Worn Row][if Worn Row is not wordy], once you change to Word Row[end if]"
 
 this is the pre-ore-on-reviver rule:
 	if in-aid is true:
@@ -9211,9 +9235,10 @@ this is the pre-rid-on-reviver rule:
 
 this is the pre-mats-on-metals rule:
 	if in-aid is true:
+		if scrap arcs is unvisited, the rule fails;
 		unless Ye Key is off-stage, the rule fails;
 		if player is in Scrap Arcs:
-			say "[one of]You have everything you need here[or]Maybe you can cut something out of the slate metals[or]USE STAMP MATS ON SLATE METALS[stopping].";
+			say "[one of]You have everything you need to work with the scrap metals heree[or]Maybe you can cut something out of the slate metals[or]USE STAMP MATS ON SLATE METALS[stopping].";
 		else:
 			say "[one of]The stamp mats must be good for something[or]They could maybe create a pattern on the right sort of material--material nobody else would use[or]Scrap Arcs has spare stuff[or]USE STAMP MATS ON SLATE METALS[stopping].";
 	the rule succeeds;
@@ -9994,7 +10019,7 @@ this is the opossum-hint rule: say "The opossum is a last lousy point. You need 
 
 this is the bro-orb-hint rule:
 	if bros' orb is in Le Babel:
-		if player has stir writs, say "You can just take the Bros['] Orb now you have the stir writs." instead;
+		if player has stir writs, say "The stir writs let you just take the Bros['] Orb." instead;
 		if ergot ogre is not moot or sage gas is off-stage, say "You still have quite a few puzzles to solve before you have the confidence to take the Bros['] Orb." instead;
 		say "Try poking around [vague-dir of Motto Bottom]." instead;
 	if player is in Emo Dome and Red Roses Order is unvisited, try itmhinting DIFF ID instead;
@@ -10017,7 +10042,7 @@ item-hint-rule of spur ups is spur-ups-hint rule.
 to say dome-if-vis: say "[if Emo Dome is unvisited]east of Yawn Way[else][hn-the of Emo Dome]"
 
 this is the spur-ups-hint rule:
-	if puffed-up is true, say "[one of]Now you can stand it in , it would be nice to stop[or]You can run past your fears but not stay still to face them[or]The Spur Ups have one more use[or]PU* UP, again, gives nothing[or]PU** UP again has something worthwhile[or]You can PULL UP in Emo Dome to stay and bear things[stopping]." instead;
+	if puffed-up is true, say "[one of]Now you can stand it in [dome-if-vis], it would be nice to stop[or]You can run past your fears but not stay still to face them[or]The Spur Ups have one more use[or]PU* UP, again, gives nothing[or]PU** UP again has something worthwhile[or]You can PULL UP in Emo Dome to stay and bear things[stopping]." instead;
 	if Worn Row is unvisited:
 		say "You need to visit west of [hn of My Gym].";
 	else if ever-workrow is false:
@@ -10138,8 +10163,8 @@ this is the yard-ray-hint rule:
 	if murdered rum is not moot, say "[one of]You can USE something to load the yard ray. Something violent[or]USE MURDERED RUM ON YARD RAY[stopping]." instead;
 	if test set is off-stage, say "You should try out the yard ray one something expendable when it appears. It hasn't, yet." instead;
 	if test set is not moot, say "[one of]The yard ray should have a trial run to make sure you can fire it[or]USE YARD RAY ON TEST SET[stopping]." instead;
-	if player is not in dirge grid, say "You haven't met the Yard Ray's target yet. The Yard Ray will help with the final battle." instead;
-	say "[one of]The yard ray can be used for destroying something bad[or][if diktat kid is moot]Now[else]Once[end if] the Diktat Kid's gone, USE YARD RAY ON REDIVIDER[stopping].";
+	if player is not in Dirge Grid, say "You haven't met the Yard Ray's target yet. The Yard Ray will help with the final battle." instead;
+	say "[one of]The yard ray can be used for destroying something bad[or][if Diktat Kid is moot]Now[else]Once[end if] the Diktat Kid's gone, USE YARD RAY ON REDIVIDER[stopping].";
 
 this is the taboo-bat-hint rule:
 	if player is not in Dirge Grid, say "The taboo bat can't help you win any fights, but it may have shock value for the right person. Someone you haven't met yet." instead;
@@ -10573,7 +10598,7 @@ item-hint-rule of wash saw is wash-saw-hint rule.
 this is the wash-saw-hint rule:
 	if stark rats are in Seer Trees, say "The wash saw isn't useful yet." instead;
 	if Cold Loc is unvisited, say "You need to find a place with stuff that can be sawed." instead;
-	if sap-takeable is false, say "[one of]The wash saw could be good for cutting vegetation that's not too thick[or]USE WASH SAW ON PAST SAP[hn-in of Cold Loc][stopping].";
+	if sap-takeable is false, say "[one of]The wash saw could be good for cutting vegetation that's not too thick[or]USE WASH SAW ON PAST SAP[honly of Cold Loc][stopping]." instead;
 	if exam axe is off-stage, say "The rift fir didn't destroy the wash saw, but it'll be a while between uses for the saw." instead;
 	if revisited-u is false, say "You may need to double back and visit somewhere that's changed a bit." instead;
 	say "[one of]The saw was useful for trimming vegetation before, but now some new stuff has sprouted up[or]Check out [Uneven U][or]USE WASH SAW ON PORCH CROP[stopping]."
@@ -10714,11 +10739,15 @@ item-hint-rule of kayo yak is kayo-yak-hint rule.
 
 this is the kayo-yak-hint rule:
 	process the yak-ogre-lair rule;
-	say "[one of]The kayo yak will keep chasing you. Maybe you can find someone else for it to knock over.[or]Someone guarding something?[or]The ergot ogre.[or]You'll need to do one more thing once you get to the Trial Lair.[stopping]" instead;
+	say "[one of]The kayo yak will keep chasing you. Maybe you can find someone else for it to knock over.[or]Someone guarding something?[or][if lair trial is unvisited]You need to check out the west edge of Grebeberg[else]The ergot ogre[end if].[or]You'll need to do one more thing once you get to the [if lair trial is unvisited]southwest corner. You can hint the guardian blocking you, there[else]Trial Lair. You can hint the Ergot Ogre to find what[end if][stopping]" instead;
 
 this is the yak-ogre-lair rule:
-	if cap-pace is false, say "[one of]You're not quite fast enough to outrun the yak on your own. An item you have can help[or]The pact cap[or]The pact cap can become a PACE CAP[stopping]." instead;
-	if player is in trial lair, say "[one of]The kayo yak can take out the ergot ogre.[or]You just need to give the right command to the kayo yak.[or]YAK ???? will do it.[or]YAK OKAY (no comma.)[stopping]" instead;
+	if cap-pace is false:
+		say "[one of]You're not quite fast enough to outrun the yak on your own. An item you have can help[or]The pact cap[or]The pact cap can become a PACE CAP[stopping].";
+		the rule succeeds;
+	if player is in trial lair:
+		say "[one of]The kayo yak can take out the ergot ogre.[or]You just need to give the right command to the kayo yak.[or]YAK ???? will do it.[or]YAK OKAY (no comma.)[stopping]";
+		the rule succeeds;
 
 [zz24rul]
 
