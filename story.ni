@@ -36,7 +36,7 @@ to search for an item, look for chapter [item].
 
 the story headline is "A *GASP* SAGA!"
 
-the release number is 3.
+the release number is 4.
 
 Release along with an interpreter.
 

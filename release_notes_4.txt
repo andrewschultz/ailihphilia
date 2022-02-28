@@ -1,0 +1,11 @@
+Release 4 of Ailihphilia was distributed on February 28, 2022. 2/28/22 -- a palindrome, get it?
+
+Its main concern is better cluing, though there are some new features.
+
+-- game now freezes out dead ends during chases
+-- exclusive dinner at Deft Fed/Bon Snob (list of random names)
+-- more specific parser errors if the first word works
+-- item-based hinting
+-- Word Row descriptions were blank in some cases, and Tract Cart disappeared occasionally
+
+There may be one more release on 3/2/23, or 3/20-29/23. It would likely just add flavor text and testing for "mistake" syntax e.g. good guesses.
