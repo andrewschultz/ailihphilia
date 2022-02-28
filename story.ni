@@ -7187,7 +7187,7 @@ chapter Ned
 
 check going north in Gross Org: if etage gate is in Gross Org, say "The etage gate blocks you[if Ned is in Gross Org], and Ned would probably pull you back, too[end if]." instead;
 
-understand "evened" and "den evened" as Gross Org when stinky knits are not in Gross Org.
+understand "den" and "evened" and "den evened" as Gross Org when stinky knits are not in Gross Org.
 
 Ned is a proper-named guhthug in Gross Org. "'Ned's Den!' someone booms. You're guessing their name must be Ned.". description is "Ned is sort of wildly flailing about, looking for a verbal or physical altercation, but that's not really your thing.".
 
@@ -7902,7 +7902,6 @@ to decide which number is gtdist of (r1 - a room) and (r2 - a room):
 
 gotoing is an action applying to one visible thing.
 
-understand the command "gi" as something new.
 understand the command "gr" as something new.
 understand the command "gt" as something new.
 understand the command "goto" as something new.
@@ -7995,7 +7994,6 @@ does the player mean gotothinging Tru Hurt when player has X-Ite Tix: it is unli
 understand "go to [any thing]" as gotothinging.
 understand "goto [any thing]" as gotothinging.
 understand "gt [any thing]" as gotothinging.
-understand "gi [any thing]" as gotothinging.
 understand "go [any thing]" as gotothinging.
 
 carry out gotothinging:
@@ -8651,8 +8649,9 @@ this is the chase-warp-check rule:
 revovering is an action out of world.
 
 understand the command "rev over" as something new.
+understand the command "revover" as something new.
 
-understand "rev over" as revovering.
+understand "revover" as revovering.
 
 global-delay is a number that varies.
 
@@ -8708,6 +8707,8 @@ to decide whether need-rev-check:
 	if in-tip-it is true, no;
 	if deep-speeding is true, no;
 	yes;
+
+orig-loc is a room that varies.
 
 carry out revovering:
 	abide by the rev-check rule;
