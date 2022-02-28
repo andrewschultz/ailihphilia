@@ -2663,7 +2663,7 @@ Dirt Rid	"You need to clean out some bad people figuratively, not clean them up 
 el doodle	"[if second noun is not proper-named]The [end if][second noun] do[unless second noun is plural-named]es[end if]n't seem up to deciphering things."	"You'd probably need a person to help you decipher El Doodle." [?? x on el doodle]
 enact cane	"That could be painful for [if second noun is not proper-named]the [end if][second noun]."
 gift fig	"[no-food-share]."
-mayo yam	"[no-food-share]."
+Mayo Yam	"[no-food-share]."
 ME gem	"[if second noun is not proper-named]The [end if][second noun] looks a bit frightened by the power of the ME gem. It must only work on, or for, really bad people or things."	--
 murdered rum	"Oof. Brutal. The rum is NOT for drinking. Or poisoning people, good or bad."
 Nat's Tan	"You are greeted with a look of revulsion."	--
@@ -3839,7 +3839,7 @@ this is the kid-bye rule:
 	move day away ad to Yawn Way;
 	move XILE helix to Dirge Grid;
 	move relate taler to Worn Row;
-	now Worn Row is wordy;
+	word-row-open;
 	moot nogo gon;
 	moot Diktat Kid;
 	if nogo gon is xed, say "The No-Go Gon having burned away, you're sort of curious how many sides it had. You miscount the first few times but eventually wind up counting [rand-pal]. Well, you sort of expected that.";
@@ -6114,7 +6114,10 @@ understand "large/machine" and "large machine" as Buff U B when the player is in
 
 book Worn Row
 
-Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky][what-machines][else if Worn Row is wordy][else]It's pretty empty here, [worn-scen][end if][wrow].[paragraph break][dab-notes]The only way out is back east."
+Worn Row is west of My Gym. It is in Yelpley. "[if Worn Row is worky][what-machines][else if Worn Row is wordy][what-word][else]It's pretty empty here, [worn-scen][end if][wrow].[paragraph break][dab-notes]The only way out is back east."
+
+to say what-word:
+	say "The main scenery here is [one of]a[or]the[stopping] tract cart, meant to hold books"
 
 [ there's no other good way to do this that I can find. hn-in works for separate rooms, but work/word row aren't separate rooms, and it'd be more work than this. ]
 
@@ -8781,6 +8784,8 @@ carry out revovering:
 		if there is a room-to-go entry: [to-go != room-after. In this case, to-go is more likely to be visited than room-after.]
 			now move-room is room-to-go entry;
 			visit-up-to move-room;
+		if preproc entry is rev-second-food-combo rule:
+			now move-room is Fun Enuf; [ bad hack but eh ]
 		let u1a be false;
 		let u2a be false;
 		let g1a be false;
@@ -8796,10 +8801,14 @@ carry out revovering:
 			now u2a is true;
 			now player has use2 entry;
 		if use1 entry is a book:
-			if Worn Row is worky, now wr-flipped is true;
+			if Worn Row is worky:
+				now wr-flipped is true;
+				now Worn Row is wordy;
 			word-row-open;
 		if use2 entry is a workable:
-			if Worn Row is wordy, now wr-flipped is true;
+			if Worn Row is wordy:
+				now wr-flipped is true;
+				now Worn Row is worky;
 			work-row-open;
 			wear-down use2 entry;
 		if say-unless-speed, say "You [if wr-flipped is true]toggle [Worn Row], then [end if][if u1a is true]acquire and [end if]use [the use1 entry] with [if u2a is true and u1a is true](also acquired) [else if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if][if demos-too is true]--and scoring SOME DEMOS in the process[else if use1 entry is balsa slab]. Then you leave the Red Roses Order to people who can rebuild Yelpley[end if].";
