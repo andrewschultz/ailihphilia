@@ -786,6 +786,9 @@ Rule for printing a parser error when the latest parser error is the only unders
 	if nw > 6:
 		now nw is 6;
 	say "That command seemed like it was longer than it needed to be, or maybe the last word was a typo [one of](e.g. Set O Notes vs. Set o Totes.) [or]. [stopping]You may wish to cut a word or two down. Push 1 to retry [word number 1 in the player's command in upper case][if nw > 1], or a higher number to re-try only the first [nw] words of your command, or 9 to cut off the final word[end if]. Or just push any other key to pass and try another command.";
+	if debug-state is true:
+		say "Skipping for debug mode.";
+		the rule succeeds;
 	let Q be the chosen letter;
 	if Verses Rev is touchable and the player's command matches "verb rev", continue the action;
 	if debug-state is true, the rule succeeds;
@@ -1185,6 +1188,8 @@ check climbing: say "You haven't drunk enough Klimb-Milk. Err, Climb-Milc. Which
 
 chapter listening
 
+the block listening rule is not listed in any rulebook.
+
 check listening:
 	if noun is pact cap, say "The pact cap will make noise when needed[if cap-vol is false], though you may want to turn it back on with [b]LOVE VOL[r] first[end if]." instead;
 	if noun is bomb mob or noun is navy van, say "Yell-ey." instead;
@@ -1316,7 +1321,7 @@ check thinking:
 	the rule succeeds;
 
 to say hn-ext of (rm - a room):
-	say "[if rm is dropord]dropped during the chase[else if rm is devreserved]done with--should not happen[else]hn of rm[end if]";
+	say "[if rm is dropord]dropped during the chase[else if rm is devreserved]done with--should not happen[else][hn of rm][end if]";
 
 definition: a thing (called th) is eyed:
 	if th is moot, no;
@@ -2045,6 +2050,8 @@ chapter burning
 
 the block burning rule is not listed in any rulebook.
 
+does the player mean burning the player: it is very likely.
+
 check burning: next-rand table of burnies instead;
 
 chapter buying
@@ -2060,6 +2067,7 @@ to say ynret: say "[line break]NOTE: if the game asks you a question, and the us
 yes-yet is a truth state that varies.
 
 the block saying yes rule is not listed in any rulebook.
+the block saying no rule is not listed in any rulebook.
 
 check saying yes:
 	next-rand table of yessies;
@@ -3136,7 +3144,7 @@ this is the rev-pace-cap rule:
 		unless tried-yak, the rule fails;
 		if cap-pace is true, the rule fails;
 		if cap-ever-pace is true:
-			say "You managed tp make a PACE CAP before. Now is the time to do it again[if mrlp is not grebeberg]--well, once you've crossed over to Grebeberg[end if].";
+			say "You managed tp make a PACE CAP before. Now is the time to do it again[if mrlp is not Grebeberg]--well, once you've crossed over to Grebeberg[end if].";
 		else:
 			say "[one of]You need to do something with/to the pact cap.[or]The pact cap can help you go faster, longer, so the Kayo Yak doesn't catch you.[or]It can also become a PAC* CAP (2 letters.)[or]PACY CAP or PACE CAP.[stopping]";
 		the rule succeeds;
@@ -3454,7 +3462,7 @@ this is the pre-cup-on-sod rule:
 this is the pre-demos-on-hay rule:
 	if in-aid is true:
 		if player does not have SOME DEMOS, the rule fails;
-		if moo room is not visited, the rule fails;
+		if Moo Room is not visited, the rule fails;
 		say "[one of]SOME DEMOS talks about making art with contradictory items[or]There is one item that is contradictory enough for SOME DEMOS to apply[or]The item SOME DEMOS can be used with is both exciting and boring[or]USE SOME DEMOS ON YAHOO HAY[in-not-here of Moo Room][stopping].";
 	the rule succeeds;
 
@@ -7085,7 +7093,7 @@ book Toll Lot
 Toll Lot is east of Emo Dome. It is in Yelpley. "[if cross orc is in Toll Lot]While it's easy enough to go back west to the Emo Dome, that cross orc doesn't seem to want to let you go north or south[else][dir-post-orc][end if]. A crag arc rises to the east[if UFO tofu is off-stage]--maybe it is hiding something[end if]."
 
 to say dir-post-orc:
-	if diktat kid is not moot:
+	if Diktat Kid is not moot:
 		say "You can go north or south with the cross orc gone or, well, back west, too";
 	else:
 		say "There's a private party to the south, apparently. Too exclusive for you. So north and west it is. [one of]A visitor's sheet called [yall] has the names of attendees[or][yall] lists who can attend. Not you[stopping]";
@@ -7120,7 +7128,7 @@ some UFO tofu is a liquid ingredient. description is "It's a disturbingly squish
 
 chapter Y'All Ay
 
-Yall Ay is scenery. printed name of Yall Ay is "Y'All, Ay". description is "[one of]Wow! Some of many[or]More[stopping] posh names:[line break]--[next-rand-txt of table of yall people]--[next-rand-txt of table of yall people]--[next-rand-txt of table of yall people]--[next-rand-txt of table of yall people]."
+Yall Ay is scenery. printed name of Yall Ay is "Y'All, Ay". description is "[one of]Wow! Some of many[or]More[stopping] posh names:[line break]--[next-rand-txt of table of yall people]--[next-rand-txt of table of yall people]--[next-rand-txt of table of yall people]--[next-rand-txt of table of yall people][line break]"
 
 book Gross Org
 
@@ -9235,7 +9243,7 @@ this is the pre-rid-on-reviver rule:
 
 this is the pre-mats-on-metals rule:
 	if in-aid is true:
-		if scrap arcs is unvisited, the rule fails;
+		if Scrap Arcs is unvisited, the rule fails;
 		unless Ye Key is off-stage, the rule fails;
 		if player is in Scrap Arcs:
 			say "[one of]You have everything you need to work with the scrap metals heree[or]Maybe you can cut something out of the slate metals[or]USE STAMP MATS ON SLATE METALS[stopping].";
@@ -10739,7 +10747,7 @@ item-hint-rule of kayo yak is kayo-yak-hint rule.
 
 this is the kayo-yak-hint rule:
 	process the yak-ogre-lair rule;
-	say "[one of]The kayo yak will keep chasing you. Maybe you can find someone else for it to knock over.[or]Someone guarding something?[or][if lair trial is unvisited]You need to check out the west edge of Grebeberg[else]The ergot ogre[end if].[or]You'll need to do one more thing once you get to the [if lair trial is unvisited]southwest corner. You can hint the guardian blocking you, there[else]Trial Lair. You can hint the Ergot Ogre to find what[end if][stopping]" instead;
+	say "[one of]The kayo yak will keep chasing you. Maybe you can find someone else for it to knock over.[or]Someone guarding something?[or][if Lair Trial is unvisited]You need to check out the west edge of Grebeberg[else]The ergot ogre[end if].[or]You'll need to do one more thing once you get to the [if Lair Trial is unvisited]southwest corner. You can hint the guardian blocking you, there[else]Trial Lair. You can hint the Ergot Ogre to find what[end if][stopping]" instead;
 
 this is the yak-ogre-lair rule:
 	if cap-pace is false:
@@ -11168,17 +11176,17 @@ chapter misses table
 
 table of last lousy points [xxllp]
 LLP-clue	LLP-spoil	mclu	finord	dorule	cluey
-"Three ways to swear right, none over four letters"	"BOOB or POOP or PAP to swear 'right'"	false	1	pb-yet rule	"Swear 'right'"
+"Three ways to swear right, none over four letters"	"[b]BOOB[r] or [b]POOP[r] or [b]PAP[r] to swear 'right'"	false	1	pb-yet rule	"swear 'right'"
 "A five-letter way to think"	"[b]REFER[r] instead of [b]THINK[r]"	false	2	refer-yet rule	"[b]THINK[r], or recall, information differently"
-"A different way to ask for AID"	"DIAL AID instead of AID"	false	3	aid-LLP-yet rule	"Ask for AID a bit more formally"
-"A four-letter way to look"	"PEEP instead of looking"	false	4	peep-yet rule	"LOOK differently"
-"A five-letter way to get your score"	"STATS to get the score"	false	5	stats-yet rule	"Get the SCORE differently"
-"Another way to examine the tract cart"	"TRACE CART to find an 'extra' book"	false	6	cart-traced rule	"Find an extra book in [if ever-wordrow is true]the tract cart[else]a cart containing books[end if]"
-"Discuss mammals with the eels[if eels are moot], even though they're gone--they'll still hear you[end if]"	"SLAM MAMMALS around the eels"	false	7	slam-yet rule	"Apologize for mammals to [if Ooze Zoo is unvisited]some non-mammals[else]the eels[end if]"
-"Help the felines, err, cats"	"STACK CATS to help the senile felines"	false	8	cats-stacked rule	"Help the cats in [moo-room-vis]"
-"Find the source of the buzzing in Moo Room (3/4 letters)"	"SEE BEES in Moo Room"	false	9	bees-seen rule	"Notice the source of the buzzing in [moo-room-vis]"
-"Find something healing in the Bald Lab"	"BALM LAB in the Bald Lab"	false	10	balm-yet rule	"Get a semi-hidden item [if Pro Corp is unvisited]from the northeast room[else]from [Pro Corp][end if][if bald-lab] after looting it[end if]"
-"Be nice to the opossum in Le Babel"	"MUSS OPOSSUM to make a friend"	false	11	muss-yet rule	"Be nice to [if Le Babel is unvisited]an opossum somewhere in the future[else]the opossum in Le Babel[end if]"
+"A different way to ask for AID"	"[b]DIAL AID[r] instead of AID"	false	3	aid-LLP-yet rule	"ask for [b]AID[r] a bit more formally"
+"A four-letter way to look"	"[b]PEEP[r] instead of looking"	false	4	peep-yet rule	"[b]LOOK[r] differently"
+"A five-letter way to get your score"	"[b]STATS[r] to get the score"	false	5	stats-yet rule	"get the [b]SCORE[r] differently"
+"Another way to examine the tract cart"	"[b]TRACE CART[r] to find an 'extra' book"	false	6	cart-traced rule	"find an extra book in [if ever-wordrow is true]the tract cart[else]a cart containing books[end if]"
+"Discuss mammals with the eels[if eels are moot], even though they're gone--they'll still hear you[end if]"	"[b]SLAM MAMMALS[r] around the eels"	false	7	slam-yet rule	"apologize for mammals to [if Ooze Zoo is unvisited]some non-mammals[else]the eels[end if]"
+"Help the felines, err, cats"	"[b]STACK CATS[r] to help the senile felines"	false	8	cats-stacked rule	"help the cats in [moo-room-vis]"
+"Find the source of the buzzing in Moo Room (3/4 letters)"	"[b]SEE BEES[r] in Moo Room"	false	9	bees-seen rule	"notice the source of the buzzing in [moo-room-vis]"
+"Find something healing in the Bald Lab"	"[b]BALM LAB[r] in the Bald Lab"	false	10	balm-yet rule	"get a semi-hidden item [if Pro Corp is unvisited]from the northeast room[else]from [Pro Corp][end if][if bald-lab] after looting it[end if]"
+"Be nice to the opossum in Le Babel"	"[b]MUSS OPOSSUM[r] to make a friend"	false	11	muss-yet rule	"be nice to [if Le Babel is unvisited]an opossum somewhere in the future[else]the opossum in Le Babel[end if]"
 [zzllp]
 
 to say moo-room-vis:
@@ -11873,7 +11881,7 @@ carry out ihting:
 
 chapter noxing
 
-noxing is an action applying to one thing.
+noxing is an action applying to one visible thing.
 
 understand the command "nox" as something new.
 
@@ -11881,7 +11889,7 @@ understand "nox [something]" as noxing.
 
 carry out noxing:
 	if the noun provides the property nox:
-		say "[if the noun is nox]Already is[else]Changed[end if].";
+		say "[if the noun is nox]Setting[else]Keeping[end if] [the nox] examined.";
 		now the noun is nox;
 	else:
 		say "You can't nox/xed [noun].";
