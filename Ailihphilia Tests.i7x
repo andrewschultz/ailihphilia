@@ -423,4 +423,34 @@ carry out alcluing:
 
 Ailihphilia Tests ends here.
 
+chapter tnhing
+
+[show table names for testing]
+
+tnhing is an action out of world.
+
+understand the command "tnh" as something new.
+
+understand "tnh" as tnhing.
+
+carry out tnhing:
+	say "Showing table names is [if table-name-show is true]already[else]now[end if] off.";
+	now table-name-show is false;
+	the rule succeeds;
+
+chapter tnsing
+
+[show table names for testing]
+
+tnsing is an action out of world.
+
+understand the command "tns" as something new.
+
+understand "tns" as tnsing.
+
+carry out tnsing:
+	say "Showing table names is [if table-name-show is true]already[else]now[end if] on.";
+	now table-name-show is true;
+	the rule succeeds;
+
 ---- DOCUMENTATION ----
