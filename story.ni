@@ -841,7 +841,13 @@ Rule for printing a parser error when the latest parser error is the i beg your 
 Rule for printing a parser error when the latest parser error is the can't see any such thing error:
 	if player is in Worn Row:
 		if the player's command includes "cart" and Worn Row is worky, say "You need to summon Word Row back before doing anything with the cart." instead;
-		if ever-wordrow is true or ever-workrow is true, say "You can't see any such thing--but in case you're looking for something from another configuration of Worn Row, you don't see why you couldn't call back [if ever-wordrow is true and Worn Row is worky]Word Row[else if ever-workrow is true and Worn Row is wordy]Work Row[else]Worn Row[end if]." instead;
+		if ever-wordrow is true or ever-workrow is true:
+			say "You can't see any such thing";
+			if word number 1 in the player's command is "rei" or  word number 1 in the player's command is "rev" or  word number 1 in the player's command is "rot" or  word number 1 in the player's command is "rr":
+				do nothing;
+			else:
+				say "--but in case you're looking for something from another configuration of Worn Row, you don't see why you couldn't call back [if ever-wordrow is true and Worn Row is worky]Word Row[else if ever-workrow is true and Worn Row is wordy]Work Row[else]Worn Row[end if]";
+			say "." instead;
 	if bees-seen is false and player is in Moo Room:
 		if the player's command matches the regular expression "bee(s)?", case insensitively:
 			say "You can't (quite) [one of]spot[or]look at[or]view[in random order] anything like that here.";
@@ -11175,7 +11181,10 @@ This is the nonstandard respond to final question rule:
 	if w1 is "rand":
 		say "RAND requires a number after it.";
 		the rule succeeds;
-	if w1 is "rn" or w1 is "rank" or w1 is "ranks" or w1 is "llp" or w1 is "llps" or w1 is "missed":
+	if w1 is "rn" or w1 is "rank" or w1 is "ranks":
+		say "You only need the first word.";
+		the rule succeeds;
+	if score < maximum score and w1 is "llp" or w1 is "llps" or w1 is "missed":
 		say "You only need the first word.";
 		the rule succeeds;
 	issue miscellaneous library message number 8.
