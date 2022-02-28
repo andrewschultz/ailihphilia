@@ -36,7 +36,7 @@ to search for an item, look for chapter [item].
 
 the story headline is "A *GASP* SAGA!"
 
-the release number is 2.
+the release number is 3.
 
 Release along with an interpreter.
 
@@ -150,7 +150,7 @@ understand "man" as a person when the person is male.
 understand "man/woman" as a person when the person is neuter.
 understand "woman" as a person when the person is female.
 
-Fun Enuf is a room. [just to be sure where the player starts]
+Fun Enuf is a room. [just to be sure where the player starts] printed name of Fun Enuf is "[if Diktat Kid is moot]NU FUN[else]Fun Enuf[end if]".
 
 section procedural rules
 
@@ -5955,6 +5955,7 @@ understand "nm/mm/nmm/phone/book" and "phone book" as Name ME Man.
 
 to say name-num of (n - a number) and (ph - a phonebook):
 	let numrow be number of rows in booktable of ph;
+	if table-name-show is true, say "<[booktable of ph]>[line break]";
 	say "[fixed letter spacing]EL TITLE         MUNICI-NUM[line break]";
 [	if debug-state is true, say "Curseed [curseed of ph] initseed [initseed of ph].";]
 	repeat with x running from 1 to n:
@@ -6450,6 +6451,7 @@ after examining a book:
 
 to say auth-name of (mybk - a book):
 	define-author mybk;
+	if table-name-show is true, say "<table of random authors>"; [ a hack, but gotta test somehow ]
 	choose row auth-row of mybk in table of random authors;
 	say "[randtxt entry]";
 
