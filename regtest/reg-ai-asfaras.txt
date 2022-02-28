@@ -6,161 +6,175 @@
 
 * walkthrough
 
+>deepspeed
+
 >about xtratxt
-I only understood you as far as wanting to see info about the game.
+If you meant to see info about the game, you either added an extra word or made a typo (e.g. SET O NOTES vs. SET O TOTES.)  Push 1 to retry ABOUT. Or just push any other key to pass and try another command.
+Skipping for debug mode.
 
 >aid xtratxt
-DOESN'T APPEAR TO BE IN LANGUAGEVERB.
+When you tried to ask for AID, I wasn't able to process the object. So you may have misspelled it, or you might not need it at all.
+
+>gonear bald lab
 
 >balm lab xtratxt
-I only understood you as far as wanting to change a lab.
+If you meant to change the lab, you either added an extra word or made a typo.  Push 1 to retry BALM, or a higher number to re-try only the first 2 words of your command, or 9 to cut off the final word. Or just push any other key to pass and try another command.
 
 >balmlab xtratxt
-I only understood you as far as wanting to change a lab.
+If you meant to change the lab, you either added an extra word or made a typo.  Push 1 to retry BALMLAB. Or just push any other key to pass and try another command.
 
 >boob xtratxt
-I only understood you as far as wanting to swear palindromically.
+If you meant to swear palindromically, you either added an extra word or made a typo.  Push 1 to retry BOOB. Or just push any other key to pass and try another command.
 
 >credits xtratxt
-I only understood you as far as wanting to see the credits.
+If you meant to see the credits, you either added an extra word or made a typo.  Push 1 to retry CREDITS. Or just push any other key to pass and try another command.
 
 >deep speed xtratxt
-I only understood you as far as wanting to deep-speed through the game.
+If you meant to deep-speed through the game, you either added an extra word or made a typo.  Push 1 to retry DEEP, or a higher number to re-try only the first 2 words of your command, or 9 to cut off the final word. Or just push any other key to pass and try another command.
 
 >deepspeed xtratxt
-I only understood you as far as wanting to deep-speed through the game.
+If you meant to deep-speed through the game, you either added an extra word or made a typo.  Push 1 to retry DEEPSPEED. Or just push any other key to pass and try another command.
 
 >dev ed xtratxt
-I only understood you as far as wanting to read about development with DEV ED/DEVED.
+If you meant to read about development with DEV ED/DEVED, you either added an extra word or made a typo.  Push 1 to retry DEV, or a higher number to re-try only the first 2 words of your command, or 9 to cut off the final word. Or just push any other key to pass and try another command.
 
 >deved xtratxt
-I only understood you as far as wanting to read about development with DEV ED/DEVED.
+If you meant to read about development with DEV ED/DEVED, you either added an extra word or made a typo.  Push 1 to retry DEVED. Or just push any other key to pass and try another command.
 
 >dial aid xtratxt
-DOESN'T APPEAR TO BE IN LANGUAGEVERB.
+When you tried to dial something up, I wasn't able to process the object. So you may have misspelled it, or you might not need it at all.
 
 >go to xtratxt
-I only understood you as far as wanting to go to.
+I didn't recognize the room, and unfortunately, I don't recognize GO TO (item or person). You may wish to use the Pyx for that.
 
 >goto xtratxt
-I only understood you as far as wanting to go to.
+I didn't recognize the room, and unfortunately, I don't recognize GO TO (item or person). You may wish to use the Pyx for that.
 
+>gonear fun enuf
 >grammar g xtratxt
-I only understood you as far as wanting to toggle Kaos Oak grammar.
+If you meant to toggle KAOS Oak grammar, you either added an extra word or made a typo.  Push 1 to retry GRAMMAR, or a higher number to re-try only the first 2 words of your command, or 9 to cut off the final word. Or just push any other key to pass and try another command.
 
 >gt xtratxt
-I only understood you as far as wanting to go to.
+I didn't recognize the room, and unfortunately, I don't recognize GO TO (item or person). You may wish to use the Pyx for that.
 
 >help xtratxt
-I only understood you as far as wanting to ask for HELP.
+If you meant to ask for HELP, you either added an extra word or made a typo.  Push 1 to retry HELP. Or just push any other key to pass and try another command.
 
 >lo vol xtratxt
-I only understood you as far as wanting to tweak the pact cap.
+If you meant to tweak the pact cap, you either added an extra word or made a typo.  Push 1 to retry LO, or a higher number to re-try only the first 2 words of your command, or 9 to cut off the final word. Or just push any other key to pass and try another command.
 
 >love vol xtratxt
-I only understood you as far as wanting to tweak the pact cap.
+If you meant to tweak the pact cap, you either added an extra word or made a typo.  Push 1 to retry LOVE, or a higher number to re-try only the first 2 words of your command, or 9 to cut off the final word. Or just push any other key to pass and try another command.
 
 >lovevol xtratxt
-I only understood you as far as wanting to tweak the pact cap.
+If you meant to tweak the pact cap, you either added an extra word or made a typo.  Push 1 to retry LOVEVOL. Or just push any other key to pass and try another command.
 
 >lovol xtratxt
-I only understood you as far as wanting to tweak the pact cap.
+If you meant to tweak the pact cap, you either added an extra word or made a typo.  Push 1 to retry LOVOL. Or just push any other key to pass and try another command.
 
 >map xtratxt
-I only understood you as far as wanting to look at the MAP.
+If you meant to look at the MAP, you either added an extra word or made a typo.  Push 1 to retry MAP. Or just push any other key to pass and try another command.
 
 >meta xtratxt
-I only understood you as far as wanting to read META commands.
+If you meant to read META commands, you either added an extra word or made a typo.  Push 1 to retry META. Or just push any other key to pass and try another command.
 
 >niwin xtratxt
-I only understood you as far as wanting to list game warping actions with NIWIN.
+If you meant to list game warping actions with NIWIN, you either added an extra word or made a typo.  Push 1 to retry NIWIN. Or just push any other key to pass and try another command.
 
 >pace cap xtratxt
-I only understood you as far as wanting to toggle the pack cap.
+If you meant to toggle the pact cap, you either added an extra word or made a typo.  Push 1 to retry PACE, or a higher number to re-try only the first 2 words of your command, or 9 to cut off the final word. Or just push any other key to pass and try another command.
 
 >pack cap xtratxt
-I only understood you as far as wanting to pick up the pack cap.
+If you meant to pick up the pact cap, you either added an extra word or made a typo.  Push 1 to retry PACK, or a higher number to re-try only the first 2 words of your command, or 9 to cut off the final word. Or just push any other key to pass and try another command.
 
 >pacy cap xtratxt
-I only understood you as far as wanting to toggle the pack cap.
+If you meant to toggle the pact cap, you either added an extra word or made a typo.  Push 1 to retry PACY, or a higher number to re-try only the first 2 words of your command, or 9 to cut off the final word. Or just push any other key to pass and try another command.
 
 >pap xtratxt
-I only understood you as far as wanting to swear palindromically.
+If you meant to swear palindromically, you either added an extra word or made a typo.  Push 1 to retry PAP. Or just push any other key to pass and try another command.
 
 >peep xtratxt
-DOESN'T APPEAR TO BE IN LANGUAGEVERB.
+If you meant to look in a slightly different way, you either added an extra word or made a typo.  Push 1 to retry PEEP. Or just push any other key to pass and try another command.
 
 >plugh xtratxt
-I only understood you as far as wanting to Say a silly spell.
+If you meant to say a silly spell, you either added an extra word or made a typo.  Push 1 to retry PLUGH. Or just push any other key to pass and try another command.
 
 >poop xtratxt
-I only understood you as far as wanting to swear palindromically.
+If you meant to swear palindromically, you either added an extra word or made a typo.  Push 1 to retry POOP. Or just push any other key to pass and try another command.
 
->puffup xtratxt
-I only understood you as far as wanting to puff up.
+> puffup xtratxt
+If you meant to puff up, you either added an extra word or made a typo.  Push 1 to retry PUFFUP. Or just push any other key to pass and try another command.
+
+> puff up xtratxt
+If you meant to puff up, you either added an extra word or made a typo.  Push 1 to retry PUFF, or a higher number to re-try only the first 2 words of your command, or 9 to cut off the final word. Or just push any other key to pass and try another command.
 
 >pullup xtratxt
-I only understood you as far as wanting to pull up.
-
->rad xtratxt
-I only understood you as far as wanting to scan with the radar.
+If you meant to pull up, you either added an extra word or made a typo.  Push 1 to retry PULLUP. Or just push any other key to pass and try another command.
 
 >refer xtratxt
-DOESN'T APPEAR TO BE IN LANGUAGEVERB.
+If you meant to refer, you either added an extra word or made a typo.  Push 1 to retry REFER. Or just push any other key to pass and try another command.
+
+>gonear worn row
+>work row
 
 >rei xtratxt
-I only understood you as far as wanting to put in the reifier.
+You can't see any such thing.
 
 >rev xtratxt
-I only understood you as far as wanting to put in the reviver.
+You can't see any such thing.
 
 >rot xtratxt
-I only understood you as far as wanting to put in the rotator.
+You can't see any such thing.
+
+>gonear bees
 
 >see bees xtratxt
-DOESN'T APPEAR TO BE IN LANGUAGEVERB.
+If you meant to see, you either added an extra word or made a typo.  Push 1 to retry SEE, or a higher number to re-try only the first 2 words of your command, or 9 to cut off the final word. Or just push any other key to pass and try another command.
 
 >shuttuhs xtratxt
-I only understood you as far as wanting to toggle shuttuhs/shutters.
+If you meant to toggle shuttuhs/shutters, you either added an extra word or made a typo.  Push 1 to retry SHUTTUHS. Or just push any other key to pass and try another command.
 
 >slam mammals xtratxt
-DOESN'T APPEAR TO BE IN LANGUAGEVERB.
+If you meant to apologize for something, you either added an extra word or made a typo.  Push 1 to retry SLAM, or a higher number to re-try only the first 2 words of your command, or 9 to cut off the final word. Or just push any other key to pass and try another command.
 
 >stats xtratxt
-I only understood you as far as wanting to get stats/the score.
+If you meant to get stats/the score, you either added an extra word or made a typo.  Push 1 to retry STATS. Or just push any other key to pass and try another command.
 
 >v xtratxt
-I only understood you as far as wanting to see basic verbs.
+If you meant to see basic verbs, you either added an extra word or made a typo.  Push 1 to retry V. Or just push any other key to pass and try another command.
 
 >verb xtratxt
-I only understood you as far as wanting to see basic verbs.
+If you meant to see basic verbs, you either added an extra word or made a typo.  Push 1 to retry VERB. Or just push any other key to pass and try another command.
 
 >verbs xtratxt
-I only understood you as far as wanting to see basic verbs.
+If you meant to see basic verbs, you either added an extra word or made a typo.  Push 1 to retry VERBS. Or just push any other key to pass and try another command.
+
+>gonear worn row
+>bore rob
 
 >word row xtratxt
-I only understood you as far as wanting to twiddle Worn Row.
+If you meant to twiddle Worn Row, you either added an extra word or made a typo.  Push 1 to retry WORD, or a higher number to re-try only the first 2 words of your command, or 9 to cut off the final word. Or just push any other key to pass and try another command.
 
 >wordrow xtratxt
-I only understood you as far as wanting to twiddle Worn Row.
+If you meant to twiddle Worn Row, you either added an extra word or made a typo.  Push 1 to retry WORDROW. Or just push any other key to pass and try another command.
 
 >work row xtratxt
-I only understood you as far as wanting to twiddle Worn Row.
+If you meant to twiddle Worn Row, you either added an extra word or made a typo.  Push 1 to retry WORK, or a higher number to re-try only the first 2 words of your command, or 9 to cut off the final word. Or just push any other key to pass and try another command.
 
 >workrow xtratxt
-I only understood you as far as wanting to twiddle Worn Row.
+If you meant to twiddle Worn Row, you either added an extra word or made a typo.  Push 1 to retry WORKROW. Or just push any other key to pass and try another command.
 
 >worn row xtratxt
-I only understood you as far as wanting to twiddle Worn Row.
+If you meant to twiddle Worn Row, you either added an extra word or made a typo.  Push 1 to retry WORN, or a higher number to re-try only the first 2 words of your command, or 9 to cut off the final word. Or just push any other key to pass and try another command.
 
 >wornrow xtratxt
-I only understood you as far as wanting to twiddle Worn Row.
+If you meant to twiddle Worn Row, you either added an extra word or made a typo.  Push 1 to retry WORNROW. Or just push any other key to pass and try another command.
 
 >xyzzy xtratxt
-I only understood you as far as wanting to say a silly spell.
+If you meant to say a silly spell, you either added an extra word or made a typo.  Push 1 to retry XYZZY. Or just push any other key to pass and try another command.
 
 >yak okay xtratxt
-I only understood you as far as wanting to tell the kayo yak OKAY.
+If you meant to call the yak, you either added an extra word or made a typo.  Push 1 to retry YAK, or a higher number to re-try only the first 2 words of your command, or 9 to cut off the final word. Or just push any other key to pass and try another command.
 
 >yakokay xtratxt
-I only understood you as far as wanting to tell the kayo yak OKAY.
+If you meant to call the yak, you either added an extra word or made a typo.  Push 1 to retry YAKOKAY. Or just push any other key to pass and try another command.

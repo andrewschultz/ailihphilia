@@ -14,7 +14,7 @@
 >finord
 
 >flex elf
-NOTE: this was a specific reject for a good try. For the most part, you don't need to riff on any item after the pact cap, but enough good guesses will tell you how to get secret points.
+NOTE: this was a specific reject for a good try. For the most part, the pact cap, once you get it, will tell you what else you need to riff on, but enough good guesses such as what you tried will not only give better clues how to get secret points but also let you EYE items for approximately how far along in the game you might use them once you have the pact cap.
 >flea elf
 >fleece elf
 >pa cap
@@ -149,7 +149,7 @@ buzzing in Moo Room
 >moo zoom
 >poo foop
 >poo goop
-get one more item from the northeast room
+get a semi-hidden item from the northeast room
 
 # #11
 >poo hoop

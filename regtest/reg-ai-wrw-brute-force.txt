@@ -31,12 +31,12 @@ You transform Worn Row into WORD ROW.
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You (acquire and) use TO IDIOT (TI) on/with the Door Frood.
+You acquire and use TO IDIOT (TI) with the Door Frood, acquiring the bunk nub.
 (Moving you to Evaded Ave)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the pity tip on/with the eye, acquiring the snack cans.
+You use the pity tip with the eye, acquiring the snack cans.
 (Moving you to Yell Alley)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
@@ -51,27 +51,27 @@ You transform Word Row into WORK ROW.
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You (acquire and) use the trap art on/with the reifier, acquiring the party trap.
+You acquire and use the trap art with the reifier, acquiring the party trap.
 !Moving you to
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You (acquire and) use the bunk nub on/with the reviver, acquiring the stock cots.
+You use the bunk nub with the reviver, acquiring the stock cots.
 !Moving you to
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the party trap on/with the stark rats, acquiring the gift fig.
+You use the party trap with the stark rats, acquiring the gift fig.
 (Moving you to Seer Trees)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You toggle Word Row, then (acquire and) use EPOCH: COPE (EC) on/with King Nik, acquiring the Spur Ups.
+You toggle Word Row, then acquire and use EPOCH: COPE (EC) with King Nik, acquiring the Spur Ups.
 (Moving you to Cold Loc)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the stock cots on/with the sleep eels.
+You use the stock cots with the sleep eels.
 (Moving you to Ooze Zoo)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
@@ -86,72 +86,72 @@ You PULL UP in the Emo Dome.
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the wash saw on/with the past sap.
+You use the wash saw with the past sap.
 (Moving you to Cold Loc)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You (acquire and) use the Puce Cup on/with the past sap.
+You acquire and use the Puce Cup with the past sap.
 !Moving you to
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the Puce Cup on/with the Liar Grail.
+You use the Puce Cup with the Liar Grail.
 (Moving you to Swept Pews)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the Puce Cup on/with the dose sod.
+You use the Puce Cup with the dose sod.
 (Moving you to Apse Spa)
 [I tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the Puce Cup on/with the Bond Nob, acquiring the Elan Ale.
+You use the Puce Cup with the Bond Nob, acquiring the Elan Ale.
 (Moving you to Drawl Ward)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You (acquire and) use stamp mats on/with slate metals, acquiring Ye Key.
+You acquire and use the stamp mats with the slate metals, acquiring Ye Key.
 (Moving you to Scrap Arcs)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You (acquire and) use the Demo Med on/with the Gulf Lug, acquiring the cash sac.
+You acquire and use the Demo Med with the Gulf Lug, acquiring the cash sac.
 (Moving you to Flu Gulf)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the cash sac on/with the cross orc.
+You use the cash sac with the cross orc.
 (Moving you to Toll Lot)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You (acquire and) use YOB ATTABOY (YA) on/with Sniffins, acquiring the Dirt Rid--and scoring SOME DEMOS in the process.
+You acquire and use YOB ATTABOY (YA) with Sniffins, acquiring the Dirt Rid--and scoring SOME DEMOS in the process.
 (Moving you to Bon Snob)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the Elan Ale on/with Sniffins, acquiring Gorge Grog.
+You use the Elan Ale with Sniffins, acquiring the Gorge Grog.
 !Moving you to
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You STAND NAT'S.
+You STAND NAT'S in Bon Snob.
 !Moving you to
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You toggle Work Row, then use the Dirt Rid on/with the reviver, acquiring the cave vac.
+You toggle Work Row, then use the Dirt Rid with the reviver, acquiring the cave vac.
 (Moving you to Work Row)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the cave vac on/with the cassettes sac, acquiring the radar.
+You use the cave vac with the cassettes sac, acquiring the radar.
 (Moving you to Dope Pod)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the radar on/with the crag arc, acquiring the UFO tofu.
+You use the radar with the crag arc, acquiring the UFO tofu.
 (Moving you to Toll Lot)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
@@ -161,98 +161,98 @@ You DENY NED a chance at fighting.
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use Ye Key on/with the etage gate, acquiring the Gate Tag.
+You use Ye Key with the etage gate, acquiring the Gate Tag.
 !Moving you to
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
 You lure the Psi Wisp back to Wor(k/d) row, changing it to Worn Row, then back to Word Row.
 (Moving you to Word Row)
-[I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
+[I just gave you 1 point to go with your quick trip, and I also tacked on 9 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You toggle Work Row, then (acquire and) use the stinky knits on/with the rotator, acquiring the brag garb.
+You toggle Work Row, then acquire and use the stinky knits with the rotator, acquiring the brag garb.
 !Moving you to
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use Gorge Grog on/with the butene tub, acquiring the resale laser.
+You use the Gorge Grog with the butene tub, acquiring the resale laser.
 (Moving you to Pro Corp)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You (acquire and) use the gold log on/with the rotator, acquiring the dork rod.
+You acquire and use the gold log with the rotator, acquiring the dork rod.
 (Moving you to Work Row)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You toggle Word Row, then use SOME DEMOS (SD) on/with the yahoo hay, acquiring the straw arts.
+You toggle Word Row, then use SOME DEMOS (SD) with the yahoo hay, acquiring the straw arts.
 (Moving you to Moo Room)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the straw arts on/with the Revolt Lover, acquiring the soot tattoos.
+You use the straw arts with the Revolt Lover, acquiring the soot tattoos.
 (Moving you to Art Xtra)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the Gate Tag on/with the soot tattoos, acquiring the state tats.
+You use the Gate Tag with the soot tattoos, acquiring the state tats.
 !Moving you to
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You (acquire and) use the poo coop on/with the gnu dung.
+You acquire and use the poo coop with the gnu dung.
 (Moving you to Dumb Mud)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the poo coop on/with the turf rut.
+You use the poo coop with the turf rut.
 !Moving you to
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the radar on/with the made dam, acquiring the Eroded Ore.
+You use the radar with the made dam, acquiring the Eroded Ore.
 (Moving you to Swamp Maws)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You (acquire and) use NULL ILLUN (NI) on/with the Known Wonk.
-(Moving you to Yack Cay)
+You acquire and use NULL ILLUN (NI) with the Known Wonk.
+(Moving you to Roomy Moor)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You (acquire and) use El Doodle on/with the Edits Tide, acquiring Spa Maps.
+You acquire and use El Doodle with the Edits Tide, acquiring the Spa Maps.
 !Moving you to
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the elope pole on/with the kayak, acquiring the you buoy.
+You use the elope pole with the kayak, acquiring the you buoy.
 (Moving you to Lac Oft Focal)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the dork rod on/with the Tao Boat, acquiring the Enact Cane.
+You use the dork rod with the Tao Boat, acquiring the Enact Cane.
 !Moving you to
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the tent net on/with Code Doc.
+You use the tent net with the Code Doc.
 (Moving you to Uneven U)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use Spa Maps on/with Code Doc.
+You use the Spa Maps with the Code Doc.
 !Moving you to
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
 You already got the Code Doc to decipher the spa maps.
-You use Spa Maps on/with Go-By Bog, acquiring the sage gas.
+You use the Spa Maps with Go-By Bog, acquiring the sage gas.
 (Moving you to Apse Spa)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the Enact Cane on/with the yahoo hay, acquiring the moor broom.
+You use the Enact Cane with the yahoo hay, acquiring the moor broom.
 (Moving you to Moo Room)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
@@ -262,22 +262,22 @@ You tweak your pact cap to a PACE CAP.
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You (acquire and) use the troll ort on/with the brag garb.
+You acquire and use the troll ort with the brag garb.
 !Moving you to
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
 You say YAK OKAY to dispose of the Ergot Ogre.
 (Moving you to Stride Dirts)
-[I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
+[I just gave you 1 point to go with your quick trip, and I also tacked on 9 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the sage gas on/with the tame mat, acquiring the guru rug.
+You use the sage gas with the tame mat, acquiring the guru rug.
 (Moving you to Motto Bottom)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the sharp rahs on/with the guru rug, acquiring the stir writs.
+You use the sharp rahs with (acquired) the guru rug, acquiring the stir writs.
 !Moving you to
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
@@ -287,90 +287,90 @@ You NAIL IAN to cast him from Mont Nom.
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You mix the snack cans and the UFO tofu together in Mont Nom.
+/You mix the (gift fig|snack cans) and the (UFO tofu|Mayo Yam) together in Mont Nom.
 !Moving you to
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You mix the gift fig and Mayo Yam together in Mont Nom, causing a martini tray to roll out from the Ark of Okra all the way to Fun 'Nuf.
-(Moving you to Fun 'Nuf)
+/You mix the (gift fig|snack cans) and the (UFO tofu|Mayo Yam) together in Mont Nom, causing a martini tray to roll out from the Ark of Okra all the way to Fun Enuf.
+(Moving you to Fun Enuf)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the moor broom on/with the Tru Yurt, acquiring the Exam Axe.
+You use the moor broom with the Tru Yurt, acquiring the Exam Axe.
 (Moving you to Roomy Moor)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the wash saw on/with the porch crop, acquiring the Balsa Slab.
+You use the wash saw with the porch crop, acquiring the Balsa Slab.
 (Moving you to Unitin' U)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the Exam Axe on/with the lie veil.
+You use the Exam Axe with the lie veil.
 (Moving you to Dumb Mud)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You get the Bro Orb from Le Babel.
+You get the Bros' Orb from Le Babel.
 (Moving you to Le Babel)
 [I tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You toggle Work Row, then (acquire and) use the DNA band on/with the reifier, acquiring the DNA hand.
+You toggle Work Row, then acquire and use the DNA band with the reifier, acquiring the DNA hand.
 (Moving you to Work Row)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the roto motor on/with the DNA hand, acquiring Mr. Arm.
+You use the roto motor with the DNA hand, acquiring Mr. Arm.
 !Moving you to
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the Eroded Ore on/with the reviver, acquiring the Ore Zero.
+You use the Eroded Ore with the reviver, acquiring the Ore Zero.
 (BOOM! You took out the reviver in the process.)
 !Moving you to
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the you buoy on/with the rotator, acquiring the ME gem.
+You use the you buoy with the rotator, acquiring the ME gem.
 (BOOM! You took out the rotator in the process.)
 !Moving you to
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use Mr. Arm on/with the bomb mob, acquiring TNT.
+You use Mr. Arm with the bomb mob, acquiring the TNT.
 (Moving you to Yell Alley)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use Nat's Tan on/with the scorn rocs.
+You use Nat's Tan with the scorn rocs.
 (Moving you to Flu Gulf)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You (acquire and) use the rep popper on/with the ME Totem, acquiring the murdered rum.
+You acquire and use the rep popper with the ME Totem, acquiring the murdered rum.
 (Moving you to Et Tu Butte)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the Bro Orb on/with the Mirror Rim, acquiring the yard ray.
+You use the Bros' Orb with the Mirror Rim, acquiring the yard ray.
 (Moving you to Red Roses Order)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the Balsa Slab on/with the sword rows, acquiring the not-a-baton.
+You use the Balsa Slab with the sword rows, acquiring the not-a-baton.
 !Moving you to
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the not-a-baton on/with the reifier, acquiring the taboo bat.
+You use the not-a-baton with the reifier, acquiring the taboo bat.
 (BOOM! You took out the reifier in the process.)
 (Moving you to Work Row)
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the murdered rum on/with the yard ray.
+You use the murdered rum with the yard ray.
 !Moving you to
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
@@ -380,14 +380,14 @@ You EMIT NOONTIME with the Yard Ray.
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
 Attempting to REV OVER...
-You use the yard ray on/with the test set.
+You use the yard ray with the test set.
 !Moving you to
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
-(Also moving you to Fun 'Nuf for the endgame)
+(Also moving you to Fun Enuf for the endgame)
 >wrw
 Attempting to REV OVER...
-You use the epicer recipe you found in the Trapeze Part to build a north-tron that destroys the KOAS Oak to the north! And with that, your REV OVER journey ends, so close to saving Yelpley and Grebeberg.
+You use the epicer recipe you found in the Trapeze Part to build a north-tron that destroys
+to the north! And with that, your REV OVER journey ends, so close to saving Yelpley and Grebeberg.
 [I just gave you 1 point to go with your quick trip, and I also tacked on 4 turns, as a guesstimate.]
 >wrw
-You're already near the endgame.
->
+You've already gone as far as REV OVER or Dirge Grid will take you. TIP IT can take care of the rest.

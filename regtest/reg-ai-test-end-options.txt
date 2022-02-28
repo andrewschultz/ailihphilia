@@ -53,13 +53,13 @@ MUSS OPOSSUM to make a friend
 >undo
 >tcc
 >s
-As you open it, you see a nice, spiffy tenet. An antimetabole (look it up) that somehow magically changes every day. It's nice, but it still feels a bit like getting socks for your birthday. Yet you feel you did something weird right, beyond finding everything, which you didn't do.
+As you open it, you see a nice, spiffy tenet. An antimetabole (look it up) that somehow magically changes every day. It's nice, but it still feels a bit like getting socks for your birthday. Yet you feel you did something weird right, even if you weren't able to fix every small thing in Yelpley and Grebeberg.
 
 >undo
 
 >stats
 >s
-As you open it, you see a nice, spiffy tenet. An antimetabole (look it up) that somehow magically changes every day. It's nice, but it still feels a bit like getting socks for your birthday. Yet you feel you did something weird right, beyond finding everything, which you didn't do.
+As you open it, you see a nice, spiffy tenet. An antimetabole (look it up) that somehow magically changes every day. It's nice, but it still feels a bit like getting socks for your birthday. Yet you feel you did something weird right, even if you weren't able to fix every small thing in Yelpley and Grebeberg.
 
 >undo
 >undo
@@ -129,24 +129,24 @@ You have 1 roving last lousy point left and 5 non-roving LLPs left.
 
 >balm lab
 >score
-You've got all the roving LLPs. You have 5 non-roving LLPs remaining to figure out before going back to Fun 'Nuf and south through the Tix Exit.
+You've got all the roving LLPs. You have 5 non-roving LLPs remaining to figure out before going back to NU FUN and south through the Tix Exit.
 
 # now clean up the non-roving LLPs
 >stats
 >score
-You've got all the roving LLPs. You have 4 non-roving LLPs remaining to figure out before going back to Fun 'Nuf and south through the Tix Exit.
+You've got all the roving LLPs. You have 4 non-roving LLPs remaining to figure out before going back to NU FUN and south through the Tix Exit.
 >refer
 >score
-You've got all the roving LLPs. You have 3 non-roving LLPs remaining to figure out before going back to Fun 'Nuf and south through the Tix Exit.
+You've got all the roving LLPs. You have 3 non-roving LLPs remaining to figure out before going back to NU FUN and south through the Tix Exit.
 >dial aid
 >score
-You've got all the roving LLPs. You have 2 non-roving LLPs remaining to figure out before going back to Fun 'Nuf and south through the Tix Exit.
+You've got all the roving LLPs. You have 2 non-roving LLPs remaining to figure out before going back to NU FUN and south through the Tix Exit.
 >peep
 >score
-You've got all the roving LLPs. You have 1 non-roving LLP remaining to figure out before going back to Fun 'Nuf and south through the Tix Exit.
+You've got all the roving LLPs. You have 1 non-roving LLP remaining to figure out before going back to NU FUN and south through the Tix Exit.
 >poop
 >score
-Now you're in Fun 'Nuf and have all the points, there's seemingly not much to do but go south through the Tix Exit.
+Now you're in NU FUN and have all the points, there's seemingly not much to do but go south through the Tix Exit.
 >undo
 >undo
 
@@ -157,23 +157,24 @@ Now you're in Fun 'Nuf and have all the points, there's seemingly not much to do
 >w
 >poop
 >score
-Now you're in Fun 'Nuf and have all the points, there's seemingly not much to do but go south through the Tix Exit.
+Now you're in NU FUN and have all the points, there's seemingly not much to do but go south through the Tix Exit.
 
 >tcc
 >s
 Inside is a spiffy CERT REC for being cosmically in tune and covering even the smallest details. On the other side is an interesting tenet--an antimetabole that changes magically every day. It is a rec indeed nicer. Well done!
 
-RN 0 for next table)?
+RN 0 for next table, ORDR O to alphabetize)
+
 >missed
 Please give one of the answers above.
 
 >undo
 >z
 >s
-You have a vision of Grebeberg and Yelpley sliding back in a few years to where they were. Well, you'll still have your memories. But you can't shake the feeling you could've finished a bit differently and helped keep Yelpley and Grebeberg safe even longer.
+You have a vision of Grebeberg and Yelpley being, well, not quite perfect as they could be years down the line. You probably missed out on some sort of style points. Well, it's too late now. And maybe someone else will have fun going there and fixing things back up.
 
 >rand 0
-1. extra books in the Tract Cart
+1. extra books in the Relate Taler
 2. responses to ATTACK
 
 >rand 1

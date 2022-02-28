@@ -112,34 +112,43 @@
 >s
 >s
 >pace cap
+
+# start the fun. Verify that basic hints for good tries are working.
 >use troll ort on kayo yak
-WRONG
+As you hold the troll ort out, the Kayo Yak butts your hand! The troll ort goes flying. You walk over to pick it up. The yak seems weirdly attracted to it. Like it's the animal form of hate click bait. But it might be too much for the yak to hack all in one crack. Jack.
 >gonear ergot ogre
 >use troll ort on ergot ogre
-WRONG
+The ergot ogre mutters something unrepeatable about prejudiced people who can't tell the DIFFERENCE between them and trolls and don't WANT to. Perhaps you need a less coercive way to dispose of the ogre.
 >use troll ort on brag garb
 >n
 >n
->w
->w
+>e
+>e
+>s
 >s
 Frush Surf
 
-#stuff that should fail
+#stuff that should fail quickly
 >deep speed
-WRONG
+Oops, that's too much for me to do at once! Either escape or get caught by the Kayo Yak first, then we can proceed
 >gt seer trees
-WRONG
+Wow! You outran the yak comfortably. The pace/pact cap seems to have helped, and even better, you don't feel particularly exhausted.
+
 >gt yawn way
-WRONG
+You run into some x-it stix that block your way to Fun Enuf.
+Ooze Zoo
+Well, all your items you dropped are still here, so that's something. You take them back, staying where the Kayo Yak won't quite find you.
+
 
 #now for the real stuff
 >s
 >e
 >get all
+You've been caught!
 You know the Moo Room is a dead end, and since you got the poo coop from here, it seems like you need the yak to chase you somewhere else.
 >s
 >n
+You drop all your possessions
 >n
 >n
 >n
@@ -152,9 +161,10 @@ Frush Surf
 >n
 >n
 >n
-No, you've already been there, and you found nothing to do.
+# try to go back to flu gulf, but the game rejects you
+No, you've already been there, and though there are rooms beyond you didn't explore, maybe you should stick with places you know for now.
 >s
-Aigh
+Stung!
 >s
 Frush Surf
 #now Apse Spa
@@ -166,25 +176,21 @@ Frush Surf
 dead end
 >s
 Frush Surf
+# now block Cold Loc
 >n
 >n
 >n
 >z
-Brr.
+Brr. It was cold there. There was nothing north or east, and besides, you'd freeze before the yak did. Maybe you need it to chase you somewhere else.
+Stung!
+# now verify Cold Loc is blocked
 >s
-Frush Surf
 >n
 >n
 >n
-No, you've already been there, and you found nothing to do.
+No, you've already been there, and though there are rooms beyond you didn't explore, maybe you should stick with places you know for now.
 >z
-Aigh
->s
->n
->n
->w
->w
-butt
+Stung!
 >n
 >w
 Dumb Mud
@@ -203,6 +209,7 @@ Dumb Mud
 >s
 >s
 yak
+#okay, let's try to go to Mont Nom
 >n
 >n
 >w
@@ -210,11 +217,13 @@ yak
 The slog uphill is too much for you, but the kayo yak traverses it easily and bumps you before you can make it up all the way.
 !With the turf rut filled in,
 >undo
+# and Le Babel while we're at it
 >n
-It's just too weird ahead to the north. You freeze up and are unable to avoid the kayo yak further.
+It's just too weird and chaotic ahead to the north. Even with the yak chasing you, you freeze up.
+>z
+Stung!
+#go to Lac Oft Focal
 >s
-Frush Surf
-#calcific lac
 >n
 >n
 >w
@@ -222,7 +231,8 @@ Frush Surf
 >n
 >n
 >z
-Hmm, you didn't seem to need to go that way. Calcific Lac was a dead end.
+Hmm, you didn't seem to need to go that way. Lac Oft Focal was a dead end.
+# now try Yack Cay
 >s
 Frush Surf
 >n
@@ -232,18 +242,17 @@ Frush Surf
 >n
 >n
 No, you've already been there
-!There was nothing in Calcific Lac OR Yack Cay you saw that could slow the yak down more than you. Well, that's another place you can ignore next time.
+!There was nothing in Lac Oft Focal OR Roomy Moor you saw that could slow the yak down more than you. Well, that's another place you can ignore next time.
 >z
-There was nothing in Calcific Lac OR Yack Cay you saw that could slow the yak down more than you. Well, that's another place you can ignore next time.
+There was nothing in Lac Oft Focal OR Roomy Moor you saw that could slow the yak down more than you. Well, that's another place you can ignore next time.
 >s
 Frush Surf
->s
 >n
 >n
 >w
 >w
 >n
-No, you've already been there, and you found nothing to do.
+No, you've already been there, and everywhere beyond, with nothing to do.
 >s
 >s
 >yak okay
@@ -268,13 +277,14 @@ by one point
 >s
 >s
 >z
-WRONG
+You don't remember much of the wisp getting you, but you remember Sniffins yelling and generally carrying on uselessly. If there's any place that can get rid of the Psi Wisp, it's not Deft Fed.
+
 #now try to disrupt sniffins again
 >n
 >s
 >s
 >s
-WRONG
+No, you've already been there, but it was a dead end with nothing to do.
 >z
 #! dopy pod
 >n
@@ -285,7 +295,7 @@ WRONG
 >s
 >w
 >z
-WRONG
+Well, unsurprisingly, there was nothing clever in Dopy Pod. So you don't want to go back if you're chased again.
 #! scrap arcs
 >n
 >s
@@ -295,7 +305,7 @@ WRONG
 >s
 >e
 >z
-WRONG
+Scrap Arcs may've had materials, but there was nothing you could use.
 #!drawl ward
 >n
 >s
@@ -304,7 +314,7 @@ WRONG
 >s
 >s
 >z
-WRONG
+Yyyuuuppp. Nothing to do here. You searched both west and east. Time to find somewhere else.
 #!trapeze part
 >n
 >s
@@ -315,7 +325,7 @@ WRONG
 >n
 >w
 >z
-WRONG
+Hmm, you didn't seem to need to go that way. Trapeze Part was a dead end.
 #!yell alley
 >n
 >s
@@ -326,7 +336,7 @@ WRONG
 >n
 >e
 >z
-WRONG
+There are dangerous types in Yell Alley, but you doubt they could mutually take out the Psi Wisp.
 #!evaded ave
 >n
 >s
@@ -336,7 +346,7 @@ WRONG
 >n
 >n
 >z
-WRONG
+Nothing to do west or east, and nothing here. The Psi Wisp might be a shock for the Door Frood ... but no way you'd outrace it through the tube. Somewhere else, then.
 #!art xtra
 >n
 >s
@@ -345,39 +355,59 @@ WRONG
 >w
 >n
 >z
-WRONG
+There's nothing behind Art Xtra. The Revolt Lover would like to help you but can't. This can't be the way.
+>n
+>s
+>s
+>w
+>w
+>s
+>z
+Alas, you can't evade the Psi Wisp here as you evaded Dave.
+>n
+>s
+>s
+>W
+>w
+>z
+You're a wide-open target for the Psi Wisp here.
 #!1st fail word row
 >n
 >s
 >s
 >w
 >w
->n
+>s
+>w
 >z
-WRONG
+The wisp seemed to pause a bit before attacking.
 #!2nd fail word row
 >n
 >s
 >s
 >w
 >w
->n
+>s
+>w
 >z
-WRONG
+You didn't immediately see anything useful around, but maybe there's something hidden that you forgot.
 #!3rd fail word row
 >n
 >s
 >s
 >w
 >w
->n
+>s
+>w
 >z
-WRONG
+There are configurations to Work Row. One must help. Maybe next time, you'll sink the Psi Wisp.
 #stuff that should fail
 >n
 >deep speed
-WRONG
+Oops, that's too much for me to do at once! Either escape or get caught by Psi Wisp first, then we can proceed.
 >gt seer trees
-WRONG
+You run into some x-it stix that block your way to Fun Enuf.
+The Psi Wisp pulses close behind.
 >gt yawn way
-WRONG
+Already there! Er, here.
+Stung!

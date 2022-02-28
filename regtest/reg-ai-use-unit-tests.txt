@@ -435,24 +435,27 @@ The machines are fixed in place. You can't use one on the other.
 # below we test x-on-machine-is-bad
 #ingredient
 >uu gift fig on reviver
-WRONG
+The only machine you should put food in is a microwave. Or, maybe, a BAKE-KAB. Or a heata', eh?
 #tronpart
 >uu resale laser on reviver
-WRONG
+The resale laser is super powerful and limited. You should probably use it to some greater purpose than zapping someone or something.
 #already in machine + tronpart: which way?
 >uu ore zero on reviver
-WRONG
+No, the Ore Zero seems too important.
 #already used
 >uu dork rod on reviver
-WRONG
+The reviver hums ominously as you bring the dork rod close. You already used the the rotator to make or reveal the dork rod. Maybe you should do something else.
 >uu pact cap on reviver
-WRONG
+The pace cap has the VOL option, as well as another option, but that's probably enough. It doesn't need drastic fixing.
 >uu el doodle on reviver
-WRONG
+None of the machines seems equipped for deciphering. A person might be able to do it better.
 >uu nat's tan on reviver
-WRONG
+(NOTE: you don't need to use anything but letters to get through the game. Even commas for addressing NPCs aren't necessary. The parser simply strips out non-alphabetic characters.)
+(PUNCTUATION REMOVAL) Changed to: uu nats tan on reviver
+Ugh. Nat's Tan is hopelessly awful. You'll need to fob it off on someone or something.
 
 # below we test "oops broken" text
+# note UUX and UUY and UUZ are test commands, and using the dud just looks at the general case
 
 >purloin stinky knits
 >purloin gold log
@@ -493,15 +496,16 @@ Nothing happens at all. Maybe the dud doesn't need any sort of machine augmentat
 No point. The reviver is broken.
 
 >uux reifier
-Drat. None of the machines worked for the dud. You may need to use it somewhere else.
+Nothing happens at all. Maybe the dud doesn't need any sort of machine augmentation.
 >use trap art on reifier
 
 >uuy reifier
-You already tried everything, and nothing worked.
+Drat. None of the machines worked for the dud. You may need to use it somewhere else.
+
 >use dna band on reifier
 
 >uuy reifier
-You already tried everything, and nothing worked.
+Drat. None of the machines worked for the dud. You may need to use it somewhere else.
 
 >use baton on reifier
 >uux reifier

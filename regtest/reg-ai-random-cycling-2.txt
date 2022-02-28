@@ -1,6 +1,7 @@
 ## reg-ai-random-cycling.txt
-
 ## cycling testing
+## verify this with RTREG.PY in case we add anything new
+
 ** game: /home/andrew/prt/debug-ailihphilia.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
 
@@ -12,59 +13,47 @@
 >pack cap
 by one point
 
->alllast
-
 >z
 #table of waittxt
 <table of waittxt>
-This is just a note that you've seen all the current command's random responses, and they'll loop after this. Thanks for poking around so much.
 
 >undo
 #table of undoings
 <table of undoings>
-This is just a note that you've seen all the current command's random responses, and they'll loop after this. Thanks for poking around so much.
 
 #table of noesies
 >no
 <table of noesies>
-An epony-NOPE rings through your ears to push back against your negativity in grand fashion.
 
 #table of yessies
 >yes
 <table of yessies>
-This is just a note that you've seen all the current command's random responses, and they'll loop after this. Thanks for poking around so much.
 
 #table of swearstuff
 >shit
 <table of swearstuff>
-Okay, you've had enough attention, I hope. I'm out of shocked responses to your language.
 
 #table of singstuff
 >sing
 <table of singstuff>
-Won't be joining OctetCo with that voice.
 
 #table of burnies
 >burn
 <table of burnies>
-I'm all burned out of clever random responses now. Ha ha.
 
 #table of nothings
 >
 <table of nothings>
-This is just a note that you've seen all the current command's random responses, and they'll loop after this. Thanks for poking around so much.
 
 #table of attackings
 >attack tile lit
 <table of attackings>
-This is just a note that you've seen all the current command's random responses, and they'll loop after this. Thanks for poking around so much.
 
 >e
 
 #table of random palindrome lastfirst names
 >x name me man
 <table of random palindrome lastfirst names>
-Wow! That'd be a lot of people to prank-call, but you're the protagonist, here, so you can't.
 
 >n
 
@@ -82,13 +71,10 @@ Wow! That'd be a lot of people to prank-call, but you're the protagonist, here, 
 #table of My Gym songs
 >listen
 <table of My Gym songs>
-The final tune as the set abates is surprisingly catchy: 'S ADIDAS. As it fades, you also realize you heard nothing by ABBA! Low class, low class.
 
 #table of Rob droning
 >w
 <table of Rob droning>
-Rob takes a moment to shape "pahs" again.
-
 >bore rob
 >word row
 
@@ -166,14 +152,12 @@ by one point
 #table of random palindrome firstlast names
 >x oh who
 <table of random palindrome firstlast names>
-Wow! That'd be a lot of people to prank-call, but you're the protagonist, here, so you can't.
 
 >n
 
 #table of king nik ancestors
 >talk to king nik
 <table of King Nik ancestors>
-So much to live up to for King Nik. Listening's good, but maybe you can take action.
 
 >use epoch cope on King Nik
 by one point
@@ -217,22 +201,15 @@ by one point
 >x dwelt lewd
 >x dwelt lewd
 <table of trashy art>
-That's all. Your intellectual (I hope) curiosity sated, you look for more constructive tasks, not worried (again, I hope) you've forgotten the plot of DWELT LEWD by now.
 
 >get yob attaboy
 
 >e
 >n
 
-#table of npc mistakes
+#table of npc mistakes [xxnpc] [xxtalk]
 >call 8675309
 <table of npc mistakes>
-That's all there is. You can't help wondering if there's something better to dial for help, or a hint, or something.
-
->undo
->dial aid
->call 8675309
-That's all there is. You find this all less fruitful than when you decided to DIAL AID.
 
 >puff up
 by one point
@@ -263,13 +240,13 @@ by one point
 
 >e
 
-#table of wordy drow laments
 >s
-<table of wordy drow laments>
-The Wordy Drow has an eternity to repeat itself, but you don't. What could you do to get past it and the liar grail?
 
 >get troll ort
 
+#table of wordy drow laments
+>z
+<table of wordy drow laments>
 
 >use puce cup on liar grail
 by one point
@@ -297,7 +274,6 @@ by one point
 #table of Bond Nob bars
 >talk to bond nob
 <table of Bond Nob bars>
-Your head reels from everywhere the Bond Nob's been.
 
 >use puce cup on Bond Nob
 by one point
@@ -355,7 +331,6 @@ by one point
 #table of snooty toon ads
 >x snooty toons
 <table of snooty toon ads>
-At the end is La Usual, because of course. Everything else is doofy food.
 
 >stand nat's
 by one point
@@ -437,7 +412,6 @@ by one point
 #table of sci pics subjects
 >x sci pics
 <table of sci pics subjects>
-That's all the education the sci pics offer, but you can read again, if you want.
 
 >use Gorge Grog on butene tub
 by one point
@@ -473,7 +447,7 @@ by one point
 >see bees
 >listen
 <table of Moo Room animals>
-Finally, you hear a single ewe, which you're surprised you didn't hear earlier.
+
 
 >w
 >n
@@ -546,9 +520,6 @@ by one point
 >talk to code doc
 <table of university primary targets>
 <table of university secondary targets>
-Well, that's the formal doctors repeating. Or starting to.
-#And now the untitled colleagues are repeating. Still, it took a while. The Code Doc has big plans!
-This is a further note to say you've looped through random text more than once this turn, which is an impressive bit of timing, even if it doesn't get you any points.
 
 >n
 >e
@@ -646,7 +617,6 @@ by one point
 #table of babel babble
 >listen
 <table of babel babble>
-The most horrid whisper of all is of the NRA Barn. Ghastly!
 
 >get all
 
@@ -686,7 +656,6 @@ by one point
 #table of bad places
 >n
 <table of bad places>
-That has to be the last one. Boy, all that seediness!
 
 >w
 
@@ -701,15 +670,16 @@ That has to be the last one. Boy, all that seediness!
 >use nat's tan on scorn rocs
 by one point
 
-#table of yuge battle cries
 >w
+
+
+#table of yuge battle cries
+>z
 <table of yuge battle cries>
-"Dad?! Dad!!! Dad?!" the Yuge Guy yells, in a mixture of rage and supplication. Geez, he's got some issues. Señor drones, you think you yourself, as he winds up for a repeat round of nonsense.
 
 #table of yuge baits
 >e
 <table of yuge baits>
-The Yuge Guy emits a side-dis you probably weren't meant to hear fully. can't quite hear, and you are enraged enough to want to go back and deal with him later.
 
 >undo
 
@@ -730,7 +700,6 @@ by one point
 #table of Ms Ism pals
 >talk to ms ism
 <table of Ms Ism pals>
-Whoah! She's had a lot to say, and she's going to say it again. Surely there must be a way to deal with her.
 
 >use Bro Orb on mirror rim
 by one point
@@ -759,7 +728,6 @@ by one point
 #table of machines
 >l
 <table of machines>
-You stop and think a moment. None of those machines were as useful as the original three.
 
 >e
 >n
@@ -769,15 +737,16 @@ You stop and think a moment. None of those machines were as useful as the origin
 by one point
 
 >n
+
+#table of diktat taunts
+>z
 <table of diktat taunts>
-"BOSS SOB!" the Diktat Kid yells, finally free from the shackles of political correctness.
 
 #table of rejected kid sidekicks
 >use ME gem on Knife Fink
 <table of rejected kid sidekicks>
 by one point
 was sorta flaky anyway
-# no such last stuff for them because there are only 2
 
 >use taboo bat on Verses Rev
 by one point
@@ -792,19 +761,16 @@ by one point
 #table of businesses
 >x day away ad
 <table of businesses>
-... and wait! There'll even be a new Deft Fed, owned by a salt-of-the-earth type named Treffert, now that Sniffins/Smuggums totally sold out!
 
 >e
 #table of political stuff
 >n
 <table of political stuff>
-"Slo pols," you muse to yourself, as the debates re-rage, only moving fractionally forward.
 
 >e
 #table of yall people
 >x yall ay
 <table of yall people>
-Incidentally, there are a lot more, but I decided to restrict things. I mean, there were 2 megabytes of possibilities.
 >w
 >w
 >s
@@ -813,7 +779,6 @@ Incidentally, there are a lot more, but I decided to restrict things. I mean, th
 #table of random authors
 >x relate taler
 <table of altbooks>
-You've read all the books on the Relate Taler. Well, except for Lives As Evil. You'll skip that one.
 
 #
 >tcc

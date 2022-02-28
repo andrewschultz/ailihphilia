@@ -24,19 +24,19 @@ You're not in the right place to mix food together.
 >gonear mont nom
 
 >use yam on cans
-Not with Ian around.
+Hey! That's an idea. But not with Ian around.
 
 >undo
 
 >nail ian
 
 >use yam on cans
-in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.
+You mix the Mayo Yam with the snack cans in front of the Ark of Okra. You hear a distant rumble as the mixture is swept from your hands and through the Ark of Okra, which shakes visibly.
 
 >undo
 
 >use yam on fig
-in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.
+You mix the Mayo Yam with the gift fig in front of the Ark of Okra. You hear a distant rumble as the mixture is swept from your hands and through the Ark of Okra, which shakes visibly.
 
 >undo
 
@@ -49,22 +49,22 @@ Those are both too solid to go together.
 >undo
 
 >use cans on tofu
-in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.
+You mix the snack cans with the UFO tofu in front of the Ark of Okra. You hear a distant rumble as the mixture is swept from your hands and through the Ark of Okra, which shakes visibly.
 >undo
 
 >use fig on tofu
-in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.
+You mix the gift fig with the UFO tofu in front of the Ark of Okra. You hear a distant rumble as the mixture is swept from your hands and through the Ark of Okra, which shakes visibly.
 
 >undo
 
 # now backwards
 
 >use cans on yam
-in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.
+You mix the snack cans with the Mayo Yam in front of the Ark of Okra. You hear a distant rumble as the mixture is swept from your hands and through the Ark of Okra, which shakes visibly.
 >undo
 
 >use fig on yam
-in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.
+You mix the gift fig with the Mayo Yam in front of the Ark of Okra. You hear a distant rumble as the mixture is swept from your hands and through the Ark of Okra, which shakes visibly.
 >undo
 
 >use tofu on yam
@@ -76,11 +76,11 @@ Those are both too solid to go together.
 >undo
 
 >use tofu on cans
-in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.
+You mix the UFO tofu with the snack cans in front of the Ark of Okra. You hear a distant rumble as the mixture is swept from your hands and through the Ark of Okra, which shakes visibly.
 >undo
 
 >use tofu on fig
-in front of the Ark of Okra. You hear a distant rumble. The Ark of Okra shakes visibly.
+You mix the UFO tofu with the gift fig in front of the Ark of Okra. You hear a distant rumble as the mixture is swept from your hands and through the Ark of Okra, which shakes visibly.
 >undo
 
 * tronpart combos
@@ -276,20 +276,22 @@ You see how everything fits--even the TNT
 
 >e
 >use ore on laser
-You might be better served using these things in Fun 'Nuf, where the martini tram is. Go there?
+You might be better served using these things in Fun Enuf, where the martini tram is. Go there?
 >undo
 
->gonear madam
+>gonear ms ism
 >use ore on laser
-deal with Madam
+deal with Ms. Ism
+>undo
 >nox recipe
 >use ore on laser
 You examine the epicer recipe first. You haven't, yet.
-But you'll need to deal with Madam first.
+But you'll need to deal with Ms. Ism first.
 
 >gonear yuge guy
 >use ore on laser
 deal with the Yuge Guy
+>undo
 >nox recipe
 >use ore on laser
 You examine the epicer recipe first. You haven't, yet.

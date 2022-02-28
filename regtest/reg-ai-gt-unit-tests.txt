@@ -169,10 +169,16 @@ Already there!
 Already there!
 
 >gt gross org
-Gross Org
+Den, Evened
 >gt gross
 Already there!
 >gt org
+Already there!
+>gt den
+Already there!
+>gt evened
+Already there!
+>gt den evened
 Already there!
 
 >gt swamp maws
@@ -200,7 +206,7 @@ Already there!
 Fun Enuf
 >gt fun
 Already there!
->gt nuf
+>gt enuf
 Already there!
 
 >gt yawn way
@@ -253,7 +259,7 @@ Already there!
 Already there!
 
 >gt word row
-Word Row
+Work Row
 >gt word
 Already there!
 >gt row
@@ -364,6 +370,7 @@ Already there!
 >gt arcs
 Already there!
 
+# now let's almost-complete the game
 >smitims
 
 >gt lac oft focal
@@ -375,7 +382,6 @@ Dome, Mod
 Already there!
 >gt mod
 Already there!
-
 
 >gt dirge grid
 Top Spot is no longer worth going to. You don't want to go back. Onward!
@@ -392,24 +398,34 @@ Top Spot is no longer worth going to. You don't want to go back. Onward!
 Top Spot is no longer worth going to. You don't want to go back. Onward!
 
 # check east ungoables
->gt gross org
-Gross Org
+>gt bald lab
+Bald Lab
 >balm lab
 Last Lousy
+>gt fun enuf
 >gt gross org
-WRONG
->gt toll lot
->gt gross org
-That area is now undergoing civic restoration, with the Diktat Kid gone.
->gt pro corp
-That area is now undergoing civic restoration, with the Diktat Kid gone.
+You're pretty sure you've figured out all the secrets there or beyond.
+!That area is now undergoing civic restoration, with the Diktat Kid gone.
+>gt bald lab
+You're pretty sure you've figured out all the secrets there or beyond.
+!That area is now undergoing civic restoration, with the Diktat Kid gone.
 #check west conditional ungoables
+>gt frush surf
+Frush Surf
 >gt moo room
+Moo Room
 >see bees
+>gt fun enuf
+>gt frush surf
+Frush Surf
+>gt moo room
+Moo Room
 >stack cats
+>gt fun enuf
 >gt frush surf
->gt seer trees
+You're pretty sure you've figured out all the secrets there or beyond.
+>gt moo room
 >gt frush surf
-
+You're pretty sure you've figured out all the secrets there or beyond.
 >gt deft fed
 You can't crash the party. You weren't invited. It's REALLY exclusive.
