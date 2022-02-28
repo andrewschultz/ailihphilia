@@ -12,7 +12,10 @@ part the code
 table-freeze is a truth state that varies.
 
 to next-rand (t - a table name):
+	let post-cycle-check be false;
 	choose row with tabnam of t in table of all randoms;
+	if table-name-show is true:
+		say "<[t]>";
 	if table-freeze is true:
 		now table-freeze is false;
 	else:
@@ -23,10 +26,17 @@ to next-rand (t - a table name):
 		if thru-yet entry is 0:
 			now thru-yet entry is 1;
 			now rand-cycle is true;
+			now post-cycle-check is true;
 	let Q be tabidx entry;
 	let lb be lbrk entry;
 	choose row Q in tabnam entry;
 	say "[randtxt entry][if lb is true][line break][else][no line break][end if]";
+	if post-cycle-check is true:
+		if t is table of NPC mistakes:
+			choose row with tabnam of t in table of all randoms;
+			say "[line break][cycle-note entry][line break]";
+
+table-name-show is a truth state that varies.
 
 to say next-rand-txt of (t - a table name):
 	next-rand t;
@@ -35,7 +45,7 @@ to say same-rand-txt of (t - a table name):
 	now table-freeze is true;
 	next-rand t;
 
-to say last-in-loop: say "This is just a note that you've seen all the current command's random responses, and they'll loop after this. Thanks for poking around so much."
+to say last-in-loop: say "This is just a note that you've seen all the current command's random responses, and they'll loop after this. Thanks for poking around so much"
 
 table of all randoms
 tabnam	tabidx	thru-yet	lbrk	desc	cycle-note
