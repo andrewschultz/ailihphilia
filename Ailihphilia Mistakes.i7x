@@ -1032,7 +1032,7 @@ understand "link nil" as a mistake ("The Line Nil security system fails to break
 
 understand "lint nil" as a mistake ("The Line Nil security system, sadly, can't clean up the mess Yell Alley already is. It can only prevent it getting worse. Well, getting worse too fast.[mis of 373]") when Line Nil is quicknear.
 
-understand "may yam" as a mistake ("You don't want the yam to age. It would probably start to smell bad.[mis of 374]") when mayo yam is quicknear.
+understand "may yam" as a mistake ("You don't want the yam to age. It would probably start to smell bad.[mis of 374]") when the mayo yam is quicknear.
 
 understand "mob om" as a mistake ("The bomb mob fails to find inner peace. I guess that's not their sort of chant.[mis of 370]") when Bomb Mob is quicknear.
 
@@ -1052,6 +1052,8 @@ checkoffs is a list of truth states variable. checkoffs is { false, false, false
 
 hint-every-x is a number that varies. hint-every-x is 5.
 
+mist-index is a number that varies.
+
 to say mis of (n - a number):
 	consider the notify cycling rule;
 	let Q be false;
@@ -1060,10 +1062,13 @@ to say mis of (n - a number):
 	if Q is false:
 		if N > 0, now entry N in checkoffs is true;
 		increment mist-found;
+		increment mist-index;
 		if mist-found is 1:
 			say "[paragraph break](NOTE: this was a specific reject for a good try. For the most part, the pact cap[if flee elf is not moot], once you get it,[end if] will tell you what else you need to riff on, but enough good guesses such as what you tried will not only give better clues how to get secret points but also let you EYE items for approximately how far along in the game you might use them[unless player has pact cap] once you have the pact cap[end if].)[run paragraph on][line break]";
 			continue the action;
-		if the remainder after dividing mist-found by hint-every-x is 0:
+		if debug-state is true, say "DEBUG: [mist-index] of [hint-every-x] so far.";
+		if mist-index is hint-every-x:
+			now mist-index is 0;
 			while cur-LLP-hint-row < number of rows in table of last lousy points:
 				increment cur-LLP-hint-row;
 				choose row cur-LLP-hint-row in table of last lousy points;
