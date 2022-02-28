@@ -296,6 +296,7 @@ def check_notes(s):
                 ll = re.sub("-", " ", ll)
                 ll = re.sub("\[\]", " ", ll)
                 for q in pals.keys():
+                    if len(q) == 1: continue
                     if q in ll and (q not in twice.keys() or twice_okay):
                         if q == 'say as' and 'say "as' in line.lower():
                             continue
@@ -341,18 +342,21 @@ def check_notes(s):
             os.remove(notes_file_backup)
             print("Deleted", notes_file_backup)
     elif bowdlerize_notes: print("Nothing to bowdlerize, so I am not recopying.")
-    if len(notes_list) > 3: print('**** Notes in file:', ', '.join([str(x) for x in sorted(notes_list, reverse=True)]))
-    if len(dupe_dict) > 3: print('**** Duplicates to print:', ', '.join([str(x) for x in sorted(dupe_dict.keys(), reverse=True)]))
-    if compare_temp and len(maybe_delete) > 0:
-        f3 = open("notes-bak.txt", "w")
-        with open("notes.txt") as file:
-            for (line_count, line) in enumerate(file, 1):
-                if line_count in maybe_delete.keys(): continue
-                f3.write(line)
-        f3.close()
-        i7.wm("notes.txt", "notes-bak.txt")
-        os.remove("notes-bak.txt")
-        exit()
+    if len(notes_list) > 3: print('**** {} Notes appearing in source:'.format(len(notes_list)), ', '.join([str(x) for x in sorted(notes_list, reverse=True)]))
+    if len(dupe_dict) > 3: print('**** {} Notes internally duplicated:'.format(len(dupe_dict)), ', '.join([str(x) for x in sorted(dupe_dict.keys(), reverse=True)]))
+    if len(maybe_delete) > 0:
+        if delete_internal_duplicates or delete_source_duplicates:
+            f3 = open("notes-bak.txt", "w")
+            with open("notes.txt") as file:
+                for (line_count, line) in enumerate(file, 1):
+                    if delete_internal_duplicates and line_count in dupe_dict.keys(): continue
+                    if delete_source_duplicates and line_count in maybe_delete.keys(): continue
+                    f3.write(line)
+            f3.close()
+            i7.wm("notes.txt", "notes-bak.txt")
+            os.remove("notes-bak.txt")
+            exit()
+        print("You can delete {} line(s) with the -dsd option or {} with the -did option.".format(len(dupe_dict), len(maybe_delete)))
     if launch_after and open_line: i7.npo(notes_file_to_read, open_line, True)
 
 count = 1

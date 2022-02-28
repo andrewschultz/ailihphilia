@@ -3,6 +3,7 @@
 # palindrome verification: make sure any names aren't fake palindromes e.g. resto poster
 #
 
+import os
 import mytools
 import i7
 import re
@@ -18,15 +19,23 @@ post_open = True
 quiet = False
 verbose = False
 
-def un_palindrome(q):
+def un_palindrome(q, extra_search = True):
     if q == q[::-1]: return False
     if q.startswith('an'): q = q[2:]
     elif q.startswith('a'): q = q[1:]
     elif q.startswith('the thing called'): q = q[16:]
     elif q.startswith('the'): q = q[3:]
-    if q == q[::-1]: return False
-    if verbose: print("Oops couldn't palindrome", q)
-    return True
+    q = q.strip().replace(' ', '')
+    q = re.sub("[^a-zA-Z]", "", q)
+    ret_val = False
+    if extra_search:
+        lq = len(q)
+        for x in range(0, lq // 2):
+            if q[x] == q[lq-x-1]: continue
+            if q[x] == '*' or q[lq-x-1] == '*': continue
+            ret_val = True
+    if ret_val and verbose: print("Oops couldn't palindrome", q)
+    return ret_val
 
 def read_ignore_file():
     ignore_file = "c:/games/inform/ailihphilia.inform/source/palver.txt"
@@ -54,7 +63,7 @@ def zap_prefix(x):
 
 def letonly(x):
     t2 = x.strip().lower()
-    temp = re.sub("[^a-z]", "", t2)
+    temp = re.sub("[^a-z\*]", "", t2)
     return temp
 
 def start_ignore(ll):
@@ -108,11 +117,13 @@ def pal_ver(f):
                 if '"Ailihphilia" by' in line: continue # this is the title
                 if un_palindrome(q): # and '[ignore]' not in line and '[okdup]' not in line:
                     err_count += 1
-                    print("Bad line", line_count, "in", f, ("({:s})".format(in_table) if in_table else "") + "--", line.strip())
+                    print("Bad line", line_count, "in", os.path.basename(f), ("({:s})".format(in_table) if in_table else "") + "--", line.strip())
+                    print(letonly(q))
                     mytools.add_postopen_file_line(f, line_count)
                 continue
-            if ' is ' in line or ' are ' in line:
+            if ' is ' in line or ' are ' in line: # this is for names or rooms or things in the source code, not random game text
                 if in_table != "": continue
+                if "-rule of" in line and not line.startswith("\t"): continue
                 ll = line.lower().strip()
                 if start_ignore(ll) or include_ignore(ll) or regex_ignore(ll):
                     continue

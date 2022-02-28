@@ -20,6 +20,7 @@ import os
 import sys
 from collections import defaultdict
 
+continue_through_warnings = False
 verbose = False
 line_count = 0
 do_items = False
@@ -87,6 +88,7 @@ def items_from_depends():
                     depends_add(ary[2], ary[0], line_count)
 
 def plow_through(file_name, get_items_from_depends = False):
+    warnings = 0
     depends.clear()
     need_all.clear()
     totals = 0
@@ -106,14 +108,19 @@ def plow_through(file_name, get_items_from_depends = False):
                 cmd = line[9:].strip().lower().split(",")
                 for x in cmd:
                     commands[x] = True
+                continue
             if line.startswith("starter:"):
                 start_array = line[8:].strip().lower().split(",")
                 for x in start_array:
                     if x in depends.keys():
                         print("WARNING", x, "defined as depending on something but also a starter item.")
+                        warnings += 1
                     starter_items[x] = True
+                continue
             if '/' not in line:
-                print("Warning line", line_count, "needs slash")
+                if line.strip():
+                    print("Warning line", line_count, "needs slash")
+                    warnings += 1
                 continue
             if re.search(".#", line): # we could also use (?<!^)# to get rid of comments not at start. In fact, we don't really need this, due to the CONTINUE on STARTSWITH #, but I want to have this comment in place in case I forget how and need to search for it later.
                 line = re.sub(" #.*", "", line.strip().lower())
@@ -122,8 +129,12 @@ def plow_through(file_name, get_items_from_depends = False):
             neededs = ary[1].split(",")
             for n1 in neededs:
                 for n2 in neededs:
-                    if n2 in depends[n1].keys(): print("WARNING", needers[0], ":", n1, "already needs", n2)
-                    if n1 in depends[n2].keys(): print("WARNING", needers[0], ":", n2, "already needs", n1)
+                    if n2 in depends[n1].keys():
+                        print("WARNING", needers[0], ":", n1, "already needs", n2, "line", line_count)
+                        warnings += 1
+                    if n1 in depends[n2].keys():
+                        print("WARNING", needers[0], ":", n2, "already needs", n1, "line", line_count)
+                        warnings += 1
             for n1 in needers:
                 for n2 in neededs:
                     depends_add(n1, n2, line_count)
@@ -144,11 +155,16 @@ def plow_through(file_name, get_items_from_depends = False):
                 need_count += 1
                 print("Need-all command/item", x, "needs", y, "({:d})".format(need_count))
     print(totals, "total dependencies in", file_name, "for", len([x for x in depends.keys() if not x.startswith("(")]), "items" if "items" in file_name else "commands" if "cmds" in file_name else "items/commands")
+    if warnings:
+        print(warnings, "warnings found.")
+        if not continue_through_warnings: sys.exit()
 
 def depends_add(result, needed, line=-1):
     if print_warning:
         # if needed not in depends.keys() and needed.lower() != "bros' orb": print("Warning: line", line, needed.upper(), "is not previously referred to.")
-        if needed in depends[result].keys(): print("Warning: line", line, result.upper(), "already flagged (recursively) as needing", needed.upper())
+        if needed in depends[result].keys():
+            print("Warning: line", line, result.upper(), "already flagged (perhaps a-b-c vs a-c) as needing", needed.upper())
+            #if not continue_through_warnings: sys.exit()
     depends[result][needed] = True
     if result in depends[needed].keys():
         print("Oops circular loop for what item needs what:", result, "<=>", needed, "at line", line)

@@ -27,6 +27,9 @@ only_stdin = False
 read_file = False
 generate_palindromes = False
 
+print_first = True
+print_last = True
+
 max_mult_checks = 4000
 
 get_firsts = True
@@ -136,6 +139,7 @@ def usage(opt_err = ""):
     print("V=try all vowels+y, C=try all consonants+y, A=C+V, D= defines a custom set of letters.")
     print("-i uses stdin.")
     print("-m adjusts the maximum possible palindromes we check for.")
+    print("-pf/-pl prints only if the word comes first or last.")
     print("-r reads data from 1w.txt which has all the game critical stuff.")
     print("-? shows this usage without telling you you wrote in a bad flag")
     print("-(flw) lets you choose among first names, last names, words or any combination.")
@@ -210,9 +214,9 @@ def palz(pals):
         if found[x] or possible_ends[x] or possible_starts[x]:
             got_something = True
             print(hdr, x, hdr)
-            if x in pal_list["FIRST"].keys():
+            if x in pal_list["FIRST"].keys() and print_first:
                 print("FIRST" + pal_list["FIRST"][x])
-            if x in pal_list["LAST"].keys():
+            if x in pal_list["LAST"].keys() and print_last:
                 print("LAST" + pal_list["LAST"][x])
             if print_possible:
                 if possible_ends[x]:
@@ -233,6 +237,12 @@ while argcount < len(sys.argv):
     xr = sys.argv[argcount]
     xl = xr.lower()
     if xl == "-a": file_array = [i7.f_f, i7.f_l, i7.f_dic]
+    elif xl == '-pf':
+        print_first = True
+        print_last = False
+    elif xl == '-pl':
+        print_first = False
+        print_last = True
     elif xl[:2] == "d=":
         if "D" in macro_letter.keys(): sys.exit("Custom letters (D/user defined) defined twice on command line.")
         macro_letter["D"] = alph_dash_string_to_list(xl[2:])

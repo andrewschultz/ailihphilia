@@ -303,6 +303,8 @@ if len(sys.argv) > 1:
         ll = sys.argv[count].lower()
         l2 = sys.argv[count+1].lower() if count < len(sys.argv) - 1 else ""
         lln = ll # most of the time we want to allow for 1 letter boundaries, but if there is a #/letter mix, forget it
+        if len(ll) < 3 and ll[0] != '-':
+            sys.stderr.write("WARNING: if you want to set a flag with {}, you need to use a dash before.".format(ll))
         if lln[0] == '-':
             lln = lln[1:]
         if sys.argv[count].isalpha():
@@ -333,7 +335,7 @@ if len(sys.argv) > 1:
             search_output(find_string)
         elif ll == '-g':
             group_by_start_end = True
-        elif ll == '-gn' or ll == 'ng':
+        elif ll == '-gn' or ll == '-ng':
             group_by_start_end = False
         elif ll == '-h':
             if l2:
@@ -519,7 +521,7 @@ for a in sk:
         last_delt = time_taken
     this_word_count = 0
     cur_array = []
-    for b in end_array(a): # change this to test specific cases
+    for b in sorted(end_array(a)): # change this to test specific cases
         in_mid = False
         q = pal_conv_hash(a, b)
         if q:
