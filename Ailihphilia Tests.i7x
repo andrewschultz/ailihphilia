@@ -305,6 +305,8 @@ carry out alllasting:
 		now thru-yet entry is 0;
 		now tabidx entry is number of rows in tabnam entry;
 	say "All tables reset to just before cycling for testing purposes.";
+	repeat with pho running through phonebooks:
+		now curseed of pho is number of rows in booktable of pho - 2;
 	the rule succeeds;
 
 chapter warpchecking
