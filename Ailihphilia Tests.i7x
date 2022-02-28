@@ -425,6 +425,23 @@ carry out alcluing:
 
 Ailihphilia Tests ends here.
 
+chapter mixing
+
+mixing is an action applying to nothing.
+
+understand the command "mix" as something new.
+
+understand "mix im" as mixing.
+understand "mix" as mixing.
+
+carry out mixing:
+	let x be number of carried liquid ingredients + number of carried solid ingredients;
+	if number of carried ingredients is 0, say "You need both a liquid and a solid ingredient. You have neither." instead;
+	if number of carried liquid ingredients is 0, say "You have no liquid ingredient to mix." instead;
+	if number of carried solid ingredients is 0, say "You have no solid ingredient to mix." instead;
+	try useoning random carried liquid ingredient with random carried solid ingredient instead;
+	the rule succeeds.
+
 chapter tnhing
 
 [show table names for testing]
