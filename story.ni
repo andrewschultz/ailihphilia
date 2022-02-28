@@ -777,18 +777,33 @@ Rule for printing a parser error when the latest parser error is the nothing to 
 the last-command is indexed text that varies.
 
 Rule for printing a parser error when the latest parser error is the noun did not make sense in that context error:
-	if word number 1 in the player's command is "go" or word number 1 in the player's command is "gt":
+	if word number 1 in the player's command is "go" or word number 1 in the player's command is "gt" or word number 1 in the player's command is "goto":
 		say "I didn't recognize the room, and unfortunately, I don't recognize GO TO (item or person)[if screenread is false]. You may wish to use the Pyx for that[end if].";
 		the rule succeeds;
 	if the player's command includes "yak" and yak is quicknear:
 		say "[if being-chased is true]The yak blinks. Perhaps a different command would work[else]The yak seems lazy. Maybe it needs to be prodded right, first[end if]." instead;
-	say "The object didn't mix well with the verb in your command. I wish I could give more help, but you're likely trying something more obscure than you need to."
+	say "When you tried to [my-word], I wasn't able to process the object. So you may have misspelled it, or you might not need it at all.";
+	the rule succeeds;
+
+Include (-
+[ PrintCmd1 from i k spacing_flag;
+	if (from == 0) {
+		i = verb_word;
+		if (LanguageVerb(i) == 0)
+			if (PrintVerb(i) == 0) print (address) i;
+		from++; spacing_flag = true;
+	}
+];
+-) after "Language.i6t".
+
+to say my-word:
+	(- PrintCmd1(); -)
 
 Rule for printing a parser error when the latest parser error is the only understood as far as error:
 	let nw be number of words in the player's command - 1;
 	if nw > 6:
 		now nw is 6;
-	say "That command seemed like it was longer than it needed to be, or maybe the last word was a typo [one of](e.g. Set O Notes vs. Set o Totes.) [or]. [stopping]You may wish to cut a word or two down. Push 1 to retry [word number 1 in the player's command in upper case][if nw > 1], or a higher number to re-try only the first [nw] words of your command, or 9 to cut off the final word[end if]. Or just push any other key to pass and try another command.";
+	say "If you meant to [my-word], you either added an extra word or made a typo[one of] (e.g. [b]SET O NOTES[r] vs. [b]SET O TOTES[r].) [or]. [stopping] Push 1 to retry [word number 1 in the player's command in upper case][if nw > 1], or a higher number to re-try only the first [nw] words of your command, or 9 to cut off the final word[end if]. Or just push any other key to pass and try another command.";
 	if debug-state is true:
 		say "Skipping for debug mode.";
 		the rule succeeds;
