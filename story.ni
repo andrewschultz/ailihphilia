@@ -682,7 +682,7 @@ this is the check palindrome turns rule: [this could be at the end but those are
 			choose row with final response activity of loafing in table of final question options;
 			blank out the whole row;
 			continue the action;
-		say "[sox]. Yet you feel you did something weird right, beyond fixing every small thing in Yelpley and Grebeberg, which you didn't [if score > 84]quite [end if]do.";
+		say "[sox]. Yet you feel you did something weird right, even if you weren't [if score > 84]quite [end if]able to fix every small thing in Yelpley and Grebeberg.";
 	else if score is maximum score:
 		say "Wow! You did everything you could, you think. [sox].[paragraph break]You have a vision of Grebeberg and Yelpley being, well, not quite perfect as they could be years down the line. You probably missed out on some sort of style points. Well, it's too late now. And maybe someone else will have fun going there and fixing things back up.";
 	else:
@@ -2333,7 +2333,7 @@ understand "use [something] with [something]" as useoning it with.
 to build-the-tron:
 	now all tronparts are in devreserved; [ic]
 	if redact-postrule:
-		say "You use the epicer recipe you found in the Trapeze Part to build a north-tron that destroys the KAOS Oak to the north of Fun Enuf!";
+		say "You use the epicer recipe you found in the Trapeze Part to build a north-tron that destroys [the KAOS Oak] to the north! [if revving-over is true]And with that, your REV OVER journey ends, so close to saving Yelpley and Grebeberg.[else][line break][end if]";
 	else:
 		say "[if epicer recipe is nox]You're clueless how, at first. But then you take a look at the epicer recipe[else]You build the North-Tron with the instructions from[end if] the epicer recipe after a few 'How? OH!' moments. It points north and blasts a hole in the [kaoscaps] with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break]Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
 	moot epicer recipe;
@@ -3139,7 +3139,7 @@ this is the rev-first-food-combo rule:
 		the rule succeeds;
 	let si be random carried solid ingredient;
 	let li be random carried liquid ingredient;
-	if say-unless-speed, say "You mix [the li] and [the si] together in Mont Nom.";
+	if say-unless-speed, say "You mix [the si] and [the li] together in Mont Nom.";
 	moot si;
 	moot li;
 	the rule succeeds;
@@ -3229,12 +3229,12 @@ this is the rev-second-food-combo rule:
 		else if UFO tofu is not carried:
 			say "One food is hidden. You need the radar to find it.";
 		the rule succeeds;
-	if say-unless-speed, say "You mix the [si] and [mi] together in Mont Nom, causing a martini tray to roll out from the Ark of Okra all the way to [Fun Enuf].";
+	if say-unless-speed, say "You mix [the si] and [the mi] together in Mont Nom, causing a martini tray to roll out from the Ark of Okra all the way to [Fun Enuf].";
 	move martini tram to Fun Enuf;
 	if in-warp-command:
 		move player to Fun Enuf, without printing a room description;
 	else:
-		move player to fun enuf;
+		move player to Fun Enuf;
 	moot si;
 	moot mi;
 	the rule succeeds;
@@ -3999,7 +3999,7 @@ this is the wear-garb rule:
 this is the you-win rule: [xxwin]
 	process the notify score changes rule;
 	say "[line break]You wonder how you'll get back, but then you see the Flee Elf running towards you. 'Tardy, drat! ... 'This, I h/t! [if cur-score of Odd Do is max-score of Odd Do]Decay?! ACED[else]Won enow[end if]!' You ask hesitantly about what's next. You don't want or need people chanting 'Deified! Deified! Deified!', but...[wfak]";
-	say "'The X-ITE TIX lead BACK TO THE REAL WORLD WHICH WILL BE FAR MORE EXCITING AND ILLUMINATING FOR YOUR EXPERIENCE HERE!'[wfak]Well, given all the palindromes you dealt with, you probably should've expected a there-and-back-but-wiser summary. Books like that always kind of annoyed you once you figured the whole schtick out, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand says, 'I'll need the pact cap back. It will go to our new museum.'[paragraph break]'What's it called?' you ask, despite yourself.[wfak]";
+	say "[line break]'The X-ITE TIX lead BACK TO THE REAL WORLD WHICH WILL BE FAR MORE EXCITING AND ILLUMINATING FOR YOUR EXPERIENCE HERE!'[wfak]Well, given all the palindromes you dealt with, you probably should've expected a there-and-back-but-wiser summary. Books like that always kind of annoyed you once you figured the whole schtick out, but you did have fun here. Probably more than if you'd stood around and leveled up a whole bunch in some more 'exciting' world. So that's something! The Flee Elf shakes your hand says, 'I'll need the pact cap back. It will go to our new museum.'[paragraph break]'What's it called?' you ask, despite yourself.[wfak]";
 	say "[paragraph break]'Well, there's still argument over We-I-View, Show-Ohs and Trofy Fort.' (Trofee?) The Flee Elf asks which you prefer, and after an awkward silence, you mention they all seem equally appropriate and unforced. Another awkward silence! How palindromic![paragraph break]'Well, anyway. This RIDE-DIR will help you return to your own world. But first, draw an award! Draw an award!'[wfak]";
 	say "It's an x/o box. It doesn't look like much. It's engraved [if score is maximum score]'Rec, Acer,' [end if]'U Remem'er, U,' 'Done? NOD' and 'U Did U.' You can't even open it! But if it were too obvious and gaudy, how would you explain it back home?[paragraph break]Soon after you blurt out 'Oh, t/y! My, tho['],' arguments begin nearby over if Yelpley needs a name change and if so to what: Tropiciport? El Live Ville? Or even Prodded-Dorp (sounds motivational!) You realize you're probably not going to stop that sort of silly argument, but on the other hand, why be bothered with stuff you can't fix?[wfak]";
 	say "Toot! Toot! A ride pulls up. You were sort of expecting a racecar or maybe a TekCo Rocket, but it turns out it's just a Back Cab labeled 'Redi-Rider.' (A Toyota would also have worked.) 'Race fast, safe car,' you mutter unconsciously, but it doesn't. Maybe it needs an XLR8R-LX engine.[paragraph break]Still, you enjoy the extra time reflecting. You don't have the tech savvy to make a DVD, so to remember this, you'd like ... to jot. What to call your writing? RECAP: ACER, NOW I WON and EL BIBLE are way too pompous, but some brainstorming gives DARN RAD, SOME MEMOS, I SAW [']TWAS I, DRAWN INWARD, WENT NEW, WENDED NEW, SAGAS or SOLOS. Or--no, that's it. ELATE TALE.";
@@ -5022,7 +5022,7 @@ check going north in Dumb Mud:
 	if lie veil is in Dumb Mud:
 		if player has exam axe, say "The lie veil doesn't seem as intimidating as before. Maybe it's you, or something you have." instead;
 		say "[one of]As you're about to touch the lie veil, you shake your head. No. You don't really want or need to explore north. Surely there's some better place to be? Perhaps you're not 100% prepared for the lie veil's 'thought-provoking' paradoxes, and it's doing you a favor pushing you back? Plus what if it hides a hidden booby trap? You try to walk further north, but somehow you wind up walking back south.[paragraph break]Once you're away from the Lie Veil, you forget its weird arguments. There's got to be a way, or weapon, to cut brutally through its sophistry[or]The Lie Veil still rejects and confuses you. You need something decisive and brutal to cut through it[stopping][if score < 30 and player does not have exam axe]. But finding the right weapon or implement may have to wait a bit[end if]." instead;
-	if being-chased is true, say "[chase-pass]It's just too weird and chaotic ahead to the north. Maybe without the yak chasing you..." instead;
+	if being-chased is true, say "[chase-pass]It's just too weird and chaotic ahead to the north. Even with the yak chasing you, you freeze up." instead;
 
 chapter gnu dung
 
@@ -5420,7 +5420,7 @@ check entering den ivy vined: try going east instead;
 
 chapter code doc
 
-Code Doc is a neuter person in Uneven U. "[if uneven u is unvisited]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[else]The Code Doc paces back and forth here.[end if]". description is "The Code Doc hand-waves and mumbling about whom to hire to increase [Uneven U]'s prestige. [if wash saw is moot]You've had a good working relationship with the Code Doc, but you both need to move on to even bigger things[else]Busy, but not too busy to help or work with someone else[end if]."
+the Code Doc is a neuter person in Uneven U. "[if uneven u is unvisited]Someone is pacing back and forth here, muttering 'Ada. Perl, rep! Gig: PHP! SAS!' They look up as you walk in. 'Oh. Sorry. Hi. I'm the Code Doc. I can help you with, like, technical stuff, if you need.'[else]The Code Doc paces back and forth here.[end if]". description is "The Code Doc hand-waves and mumbling about whom to hire to increase [Uneven U]'s prestige. [if wash saw is moot]You've had a good working relationship with the Code Doc, but you both need to move on to even bigger things[else]Busy, but not too busy to help or work with someone else[end if]."
 
 understand "dr/d" and "dr d" as code doc.
 
@@ -5699,7 +5699,7 @@ to say yawn-desc:
 	else:
 		say "Not much to do here, and it's quiet enough it could be Yawling-Nil Way, but you can go [yawn-stix] north to [if Art Xtra is visited]Art Xtra[else]an art store[end if], south to [if My Gym is visited]My Gym[else]a gym[end if], or east to [if Emo Dome is visited]Emo Dome[else]a dome[end if]"
 
-printed name of Yawn Way is "[if elite tile is in fun enuf]A Palala[else]Yawn Way[end if]".
+printed name of Yawn Way is "[if elite tile is in fun enuf]A Palapa[else]Yawn Way[end if]".
 
 to say yawn-stix:
 	say "[if stix are in Yawn Way]all but west, where the X-It Stix block you:[else]in all four directions, here: back west to [Fun Enuf],[end if]"
@@ -5967,7 +5967,7 @@ to say name-num of (n - a number) and (ph - a phonebook):
 				say " ";
 		say "[phone-number of curseed of ph + initseed of ph][line break]";
 		if curseed of ph is numrow:
-			say "[variable letter spacing]That's the end!";
+			say "[variable letter spacing]Wow! That'd be a lot of people to prank-call, but you're the protagonist, here, so you can't.";
 			now curseed of ph is 0;
 			continue the action;
 
@@ -6091,7 +6091,7 @@ does the player mean evadeing Dave: it is very likely.
 carry out evadeing:
 	if noun is Dave:
 		if Dave is moot, say "You don't need to evade Dave again.";
-		say "You evade Dave! Deked! Deked![paragraph break]After spinning fruitlessly around, Dave trudges off, exhausted, emitting a huge 'GUH!' Perhaps he was more bugged with your constant 'E.g. dodge,' 'Olé, lo' and 'El Olé' taunts, but you're glad he's gone.[paragraph break]Whew! Consulting the Set O Notes[if Set O Notes is xed] again[end if], you notice there may be at least one more guh thug, but you won't need to do anything aggressive. That's good. You'd hate to have to CRAMP MARC, TRUCK CURT, DECK CED, MASH SAM, MELT LEM, RAM OMAR, SIT ON OTIS or even DISS SID. And it would be awkward to tell SAL ALAS or say NO, DON or LIAM, AIL and downright creepy to have to HARASS SARAH.";
+		say "You evade Dave! Deked! Deked![paragraph break]After spinning fruitlessly around, Dave can't seem to see you any more. He closes his eyes, obviously not evader-aware Dave. Then he trudges off, exhausted, emitting a huge 'GUH!' Perhaps he was more bugged with your constant 'E.g. dodge,' 'Olé, lo' and 'El Olé' taunts, but you're glad he's gone.[paragraph break]Whew! Consulting the Set O Notes[if Set O Notes is xed] again[end if], you notice there may be at least one more guh thug, but you won't need to do anything aggressive. That's good. You'd hate to have to CRAMP MARC, TRUCK CURT, DECK CED, MASH SAM, MELT LEM, RAM OMAR, SIT ON OTIS or even DISS SID. And it would be awkward to tell SAL ALAS or say NO, DON or LIAM, AIL and downright creepy to have to HARASS SARAH.";
 		wfak;
 		say "Suspicious there are no actual weight machines, you find a passage to a hidden spate of Sperses-Reps machines with the motto 'Scepsis?! Pecs!' They help you bulk up a bit, so item weight will not be a factor. But you don't want to waste too much time bulking up. You go back out and have a look at the Stole-Lots. You consider making it a STORE-lots, but then the 'rots' is not so good, so then you also check if the E and an L rub out quickly. They do, making it a Sto(['])-Lots. Bam! Logistical and moral problems: SOLVED![paragraph break]Also, you notice a wash saw in the (now) Sto Lots. They both seem worth taking along, so you do.";
 		moot Dave;
@@ -6191,7 +6191,7 @@ check rubbing: [?? changed from instead rule]
 	if noun is bad dab, say "No. It looks like a clue." instead;
 	say "[no-burt]." instead;
 
-to say no-burt: say "There's no one named Burt or Babbur or Liwilbur anything like that in this game, and there's no burr, either, so you don't have to rub anyone or anything. Plus, it might be a burdened rub anyway."
+to say no-burt: say "There's no one named Burt or Babbur or Liwilbur anything like that in this game, and there's no burr, either, so you don't have to rub anyone or anything. Plus, it might be a burdened rub anyway"
 
 after examining bad dab:
 	consider the cap-beep rules for the bad dab;
@@ -7878,8 +7878,6 @@ talk-text of Yuge Guy is "'I'm ... ' / 'TMI!' At least you didn\t have to hear h
 
 volume gotoing
 
-printed name of Fun Enuf is "[if Diktat Kid is moot]NU FUN[else]Fun Enuf[end if]".
-
 chapter gotoing
 
 to decide which number is gtdist of (r1 - a room) and (r2 - a room):
@@ -8184,7 +8182,6 @@ to decide whether all-visited-beyond of (rm - a room):
 	if rm is unvisited, no;
 	if exit-count of rm is 1, yes;
 	repeat with Q running through maindir:
-		say "trying [Q] of [rm].";
 		if Q is in-dir of rm, next;
 		if the room Q of rm is nowhere, next;
 		unless all-visited-beyond of the room Q of rm, no;
@@ -8275,7 +8272,7 @@ to reset-chase:
 	recover-items;
 	now being-chased is false;
 	now chase-mulligan is false;
-	if debug-state is true, say "RULE TRACKER: [LP] ([chase-block-rule of LP]).";
+	if debug-state is true, say "DEBUG RULE TRACKER: [LP] ([chase-block-rule of LP]).";
 	consider chase-block-rule of LP;
 	if the rule succeeded:
 		if debug-state is true, say "Now [LP] is chase-blocked.";
@@ -8730,12 +8727,13 @@ carry out revovering:
 	let spun-out-yet be false;
 	now revving-over is true;
 	now basic-hint-yet is true;
+	now orig-loc is location of player;
 	repeat through table of goodacts:
 		if in-ms-warp is true and ms-need entry is false, next;
 		if in-guy-warp is true and guy-need entry is false, next;
 		if in-tool-warp is true and tool-need entry is false, next;
 		increment count;
-		if debug-state is true, say "Row [count], score [score].";
+		[if debug-state is true, say "Row [count], score [score].";]
 		if rev-skips > 0 and global-delay is rev-skips:
 			if spun-out-yet is false and debug-state is true, say "DEBUG: spun out at row [count].";
 			now spun-out-yet is true;
@@ -8797,11 +8795,11 @@ carry out revovering:
 		if use1 entry is a book:
 			if Worn Row is worky, now wr-flipped is true;
 			word-row-open;
-		if say-unless-speed, say "You [if wr-flipped is true]toggle [Worn Row], then [end if][if u1a is true]acquire and [end if]use [the use1 entry] with [if u2a is true and u1a is true](also acquired) [else if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if][if demos-too is true]--and scoring SOME DEMOS in the process[else if use1 entry is balsa slab]. Then you leave the Red Roses Order to people who can rebuild Yelpley[end if].";
 		if use2 entry is a workable:
 			if Worn Row is wordy, now wr-flipped is true;
 			work-row-open;
 			wear-down use2 entry;
+		if say-unless-speed, say "You [if wr-flipped is true]toggle [Worn Row], then [end if][if u1a is true]acquire and [end if]use [the use1 entry] with [if u2a is true and u1a is true](also acquired) [else if u2a is true](acquired) [end if][the use2 entry][if there is a getit entry], acquiring [the getit entry][end if][if demos-too is true]--and scoring SOME DEMOS in the process[else if use1 entry is balsa slab]. Then you leave the Red Roses Order to people who can rebuild Yelpley[end if].";
 		increment turns-to-add;
 		if sco entry is true:
 			if debug-state is true and deep-speeding is false, say "*(DEBUG: use point) (+1 above)[line break]";
@@ -8810,25 +8808,27 @@ carry out revovering:
 		if there is a getit entry, now player has getit entry; [?? guru rug shouldn't be take-able but code is tricky]
 		if d1 entry is true, moot use1 entry;
 		if d2 entry is true, moot use2 entry;
+		now orig-loc is location of player;
 		if there is a postproc entry, process the postproc entry;
 		if global-delay < rev-skips, say "rev-skips was too much by [rev-skips - global-delay].";
 		if need-rev-check and the remainder after dividing global-delay by 5 is 0 and rev-skips is 0 and score < min-win - 4: [gklobal-delay can't be 0]
 			say "Okay, do you want to try to do more?";
 			unless the player yes-consents, break;
-	if rev-skips > 0 and move-room is not location of player:
+	if rev-skips > 0 and move-room is not orig-loc:
 		skip upcoming rulebook break;
 		say "(Moving you to [move-room])";
+		say "[line break](from [orig-loc])";
 		move player to move-room, without printing a room description;
 	now turns-to-add is turns-to-add * 4;
 	increase turns-to-add by bonus-turns;
 	if turns-to-add > 0:
 		let delt be score - last notified score;
 		skip upcoming rulebook break;
-		if delt > 2 and score is 73, say "[line break]Thus ends your [if deep-speeding is true][b]DEEP SPEED[r] [else if revving-over is true][b]REV OVER[r] [else]accelerated [end if]journey, leaving you very close to saving Grebeberg and Yelpley[if deep-speeding is false and in-tip-it is false]. The final confrontation should be relatively quick and fun, but if you want, you can use [b]TIP IT[r] three times to run through[end if].";
-		say "[line break][bracket][if delt > 0]I just gave you [delt] point[plur of delt] to go with your quick trip, and I also[else]I[end if] tacked on [turns-to-add] turns, as a guesstimate.[close bracket][paragraph break]";
 		now score-cheat is score-cheat + score - last notified score;
 		now last notified score is score;
 		increase turn count by turns-to-add;
+		if delt > 2 and score is 73, say "[line break]Thus ends your [if deep-speeding is true][b]DEEP SPEED[r] [else if revving-over is true][b]REV OVER[r] [else]accelerated [end if]journey, leaving you very close to saving Grebeberg and Yelpley[if deep-speeding is false and in-tip-it is false]. The final confrontation should be relatively quick and fun, but if you want, you can use [b]TIP IT[r] three times to run through[end if].";
+		say "[line break][bracket][if delt > 0]I just gave you [delt] point[plur of delt] to go with your quick trip, and I also[else]I[end if] tacked on [turns-to-add] turns, as a guesstimate.[close bracket][paragraph break]";
 	else if in-tip-it is true:
 		say "[if x-ite tix are off-stage]I didn't find anything to do. This is a bug in the warp code. Apologies, and I'd be interested how this happened[else]You've got the X-ITE TIX. The last step, you need to do yourself[end if].";
 	else:
@@ -9161,7 +9161,10 @@ carry out aiding:
 	repeat through table of goodacts:
 		if there is a room-to-go entry and room-to-go entry is unvisited:
 			let oiq be in-dir of room-to-go entry;
-			say "GENERAL HINT: [if in-room of room-to-go entry is unvisited]you have a lot of places to visit. A good try would be [vague-dir of room-to-go entry][else]the room [opposite of oiq] of [hn-of of in-room of room-to-go entry] is available, but you haven't visited there yet[end if].";
+			if room-to-go entry is Dirge Grid:
+				say "You only have north of [enuf] to explore. The final combat!";
+			else:
+				say "GENERAL HINT: [if in-room of room-to-go entry is unvisited]you have a lot of places to visit. A good try would be [vague-dir of room-to-go entry][else]the room [opposite of oiq] of [hn-of of in-room of room-to-go entry] is available, but you haven't visited there yet[end if].";
 			now in-aid is false;
 			the rule succeeds;
 	say "Uh oh, I couldn't find a hint.";
@@ -11943,7 +11946,7 @@ understand "nox [something]" as noxing.
 
 carry out noxing:
 	if the noun provides the property nox:
-		say "[if the noun is nox]Setting[else]Keeping[end if] [the nox] examined.";
+		say "[if the noun is nox]Setting[else]Keeping[end if] [the noun] examined.";
 		now the noun is nox;
 	else:
 		say "You can't nox/xed [noun].";
