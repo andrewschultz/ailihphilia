@@ -8360,18 +8360,25 @@ this is the block-yack-cay rule:
 
 section wisp chase
 
-chase-block-rule of Yell Alley is the block-room-generically rule.
+chase-block-rule of Yell Alley is the block-yell-alley rule.
 chase-block-rule of Trapeze Part is the block-room-generically rule.
 chase-block-rule of Evaded Ave is the block-evaded-ave rule.
 chase-block-rule of Art Xtra is the block-art-xtra rule.
-chase-block-rule of Scrap Arcs is the block-room-generically rule.
-chase-block-rule of Dopy Pod is the block-room-generically rule.
+chase-block-rule of Scrap Arcs is the block-scrap-arcs rule.
+chase-block-rule of Dopy Pod is the block-dopy-pod rule.
 chase-block-rule of Drawl Ward is the block-drawl-ward rule.
 chase-block-rule of Swept Pews is the block-swept-pews rule.
 chase-block-rule of Deft Fed is the block-deft-fed rule.
+chase-block-rule of Worn Row is the block-worn-row rule.
+chase-block-rule of My Gym is the block-my-gym rule.
+chase-block-rule of Yawn Way is the block-yawn-way rule.
 
 this is the block-deft-fed rule:
-	say "You don't remember much of the wisp getting you, but you remember [snismu] yelling and generally carrying on. If there's any place that can get rid of the Psi Wisp, it's not [Deft Fed].";
+	say "You don't remember much of the wisp getting you, but you remember [snismu] yelling and generally carrying on uselessly. If there's any place that can get rid of the Psi Wisp, it's not [Deft Fed].";
+	the rule succeeds;
+
+this is the block-dopy-pod rule:
+	say "Well, unsurprisingly, there was nothing clever in [Dopy Pod]. So you don't want to go back if you're chased again.";
 	the rule succeeds;
 
 this is the block-evaded-ave rule:
@@ -8386,6 +8393,10 @@ this is the block-art-xtra rule:
 		the rule succeeds;
 	the rule fails;
 
+this is the block-scrap-arcs rule:
+	say "[Scrap Arcs] may've had materials, but there was nothing you could use.";
+	the rule succeeds;
+
 this is the block-drawl-ward rule:
 		say "Yyyuuuppp. Nothing to do here. You searched both west and east. Time to find somewhere else.";
 		the rule succeeds;
@@ -8395,6 +8406,22 @@ this is the block-swept-pews rule:
 		say "You cringe as you think of all the chaos you brought to the Swept Pews. There's nothing you see that could help you dispose of the Psi Wisp, which (un)fortunately isn't demoniac enough to be affected by such a holy place. Maybe you need something more physical or scientific.";
 		the rule succeeds;
 	the rule fails;
+
+this is the block-worn-row rule:
+	say "[one of]The wisp seemed to pause a bit before attacking.[or]You didn't immediately see anything useful around, but maybe there's something hidden that you forgot.[or]There are configurations to [Worn Row]. One must help. Maybe next time, you'll sink the [wisp].[stopping]";
+	the rule fails;
+
+this is the block-my-gym rule:
+	say "Alas, you can't evade the Psi Wisp here as you evaded Dave.";
+	the rule fails;
+
+this is the block-yawn-way rule:
+	say "You're a wide-open target for the Psi Wisp here.";
+	the rule fails;
+
+this is the block-yell-alley rule:
+	say "There are dangerous types in Yell Alley, but you doubt they could mutually take out the Psi Wisp.";
+	the rule succeeds;
 
 volume accelerator commands
 
