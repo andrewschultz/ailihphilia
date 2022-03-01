@@ -252,6 +252,15 @@ It's still quiet here.
 
 >get trap art
 
+@mis
+#mistake test for trad art
+>trad art
+You need something practical and forward-thinking for adventure. Traditional art would not do that.
+\\
+#mistake test for part trap
+>part trap
+[if player has party trap]That'd ruin it[else]There's got to be a way to make the full trap[end if]
+
 ==t5
 >use trap art on revolt lover
 But the Revolt Lover gave it to you in the first place.
@@ -483,21 +492,21 @@ The Door Frood would enjoy laughing at you for running into a wall, but you migh
 #mistake test for bung nub
 >bung nub
 The bunk nub is in bad enough shape as-is.
-
+\\
 #mistake test for bunt nub
 >bunt nub
 Baseball references are a bit too Zork 2.
-
+\\
 #mistake test for bun nub/buns nub
 >bun nub
 No free food. Boo.
+\\
 >buns nub
 No free food. Boo.
-
+\\
 #mistake test for door brood
 >door brood
 Just one guardian is enough to deal with.
-===a
 
 ==t5
 >use pity tip on door frood
@@ -671,25 +680,25 @@ The stark rats block you from going anywhere. At least they are not banging stop
 #mistake test for seer brees
 >seer brees
 A man in black and gold throws a football at you from 50 yards away, and it drills you right in the chest. Accurate!
+\\
 >seer brees
 The man doesn't appear again. He probably has better things to do than schlep around in some text adventure. Perhaps he is off eating at a QB BBQ.
-
+\\
 #mistake test for seer frees
 >seer frees
 It won't be THAT easy
-
+\\
 #mistake test for stare rats
 >stare rats
 You try to win a blinking contest, and maybe you could with one, but not that many.
-
+\\
 #mistake test for start rats
 >start rats
 You sort of need to stop them, instead.
-
+\\
 #mistake test for star rats
 >star rats
 You would rather they didn't star in your adventure, here. Must be some way to dispose of them.
-===a
 
 ==t5
 >use wash saw on stark rats
@@ -728,29 +737,29 @@ The rift fir blocks the way to much more dangerous places, maybe Red Locs Colder
 #mistake test for kind nik
 >kind nik
 He already seems pretty nice. His deficiencies are more ... administrative.
-
+\\
 #mistake test for kin nik/kine nik
 >kin nik
 Sorry. You're not related, and that's that.
+\\
 >kine nik
 Sorry. You're not related, and that's that.
-
+\\
 #mistake test for rife fir
 >rife fir
 It's already big enough.
-
+\\
 #mistake test for riff fir
 >riff fir
 It's rife enough to block passage west and to provide past sap.
-
+\\
 #mistake test for cola loc
 >cola loc
 You'd be better off with a warmer drink. Which isn't here.
-
+\\
 #mistake test for colt loc
 >colt loc
 No gandered nag appears. Or gun(ug).
-===a
 
 >use epoch cope on King Nik
 by one point
@@ -775,19 +784,18 @@ You found a Last Lousy Point!
 #mistake test for eel flee
 >eel flee
 Well, you could maybe get one eel to leave, but there are a lot.
-
+\\
 #mistake test for eel glee
 >eel glee
 The eels squirm a bit. I bet they're having fun dreams! Too bad I can't describe them.
-
+\\
 #mistake test for sleet eels
 >sleet eels
 They are alive. Turning them to metal would be cruel.
-
+\\
 #mistake test for sleek eels
 >sleek eels
 The eels don't need dexterity. They need comfort. They are slippery enough.
-===a
 
 ==t5
 >purloin radar
@@ -1074,37 +1082,36 @@ You can only go north and south here.
 #mistake retest for trod ort
 >trod ort
 Nah, you should keep it.
-
+\\
 #mistake test for trog ort
 >trog ort
 Maybe it is low-class food, but you don't need to overdo mentioning it.
-
+\\
 #mistake test for troi ort
 >troi ort
 You don't need a counselor to tell you not to eat stuff like the troll ort.
-
+\\
 #mistake test for tron ort
 >tron ort
 No MCP orders light cycles to run you over. Whew!
-
+\\
 #mistake test for trop ort
 >trop ort
 The ort fails to split and reproduce until there is too much of it.
-
+\\
 #mistake test for troy ort
 >troy ort
 There's enough to save here. You don't want to have to deal with a 10-year war.
-
+\\
 #mistake test for liar frail/liar trail
 >liar frail
 The grail remains in your way to the south. But it was worth a try.
 >liar trail
 The grail remains in your way to the south. But it was worth a try.
-
+\\
 #mistake test for fra barf
 >fra barf
 Don't dirty up the pews!
-===a
 
 ==t5
 >use puce cup on wordy drow
@@ -1147,6 +1154,10 @@ The bog is dangerous without guidance.
 !by one point
 
 ===2
+#mistake test for pat tap
+>pat tap
+Nothing happens. Fortunately, you don't need anything from the tap.
+\\
 #mistake test for apse vespa
 >apse vespa
 No wasps come out to sting you.
@@ -1162,6 +1173,10 @@ No boat appears to take you across the watery bits. You'll need another way thro
 #mistake test for spa caps
 >spa caps
 But you already have your pace cap!
+\\
+#mistake test for spa faps
+>spa faps
+Some spas are for that, but not this one. Ailihphilia's jokes may be cheap, but they're not that crude. I hope.
 \\
 #mistake test for spa gaps
 >spa gaps
@@ -1183,10 +1198,13 @@ The spa is a place of peace. Stop that noise, and get off my lawn!
 >spa saps
 One day, with the Diktat Kid gone, plenty of people will waste money on a spa, but your job is to get things there.
 \\
+#mistake test for spa yaps
+>spa yaps
+The spa taps reveal no hints or small talk.
+\\
 #mistake test for spa zaps
 >spa zaps
 You don't need a weapon.
-===a
 
 ==t4
 >gt swept pews
@@ -1213,50 +1231,50 @@ You can only go north, east and west here.
 #mistake test for bony nob
 >bony nob
 The Bond Nob's body weight is not an important issue, here.
-
+\\
 #mistake test for bone nob
 >bone nob
 Out of your league.
 I mean, the Bond Nob has an active social life that revolves around bars, and you ... well, you're just a text adventure. That's barely a step above people who program text adventures!
-
+\\
 #mistake test for bonk nob
 >bonk nob
 That'd let you get west ... until the nob woke up and called a few friends.
-
+\\
 #mistake test for bong nob
 >bong nob
 The Bond Nob probably knows someone but prefers alcohol.
-
+\\
 #mistake test for drawn ward/draws ward
 >drawn ward
 The room remains text-based.
+\\
 >draws ward
 The room remains text-based.
-
+\\
 #mistake test for gi rig
 >gi rig
 You don't need anything military-grade here. Even if you got one, you wouldn't know how to operate it.
-
+\\
 #mistake test for gird rig
 >gird rig
 It is already substantial enough.
-
+\\
 #mistake test for gire rig
 >gire rig
 The rig fails to collapse. Even if it did, the hole it left would lead no way south.
-
+\\
 #mistake test for girl rig
 >girl rig
 I don't want to know why you thought this was a good idea.
-
+\\
 #mistake test for girn rig
 >girn rig
 It's sturdy enough.
-
+\\
 #mistake test for giro rig
 >giro rig
 No greasy sandwich appears.
-===a
 
 >use puce cup on Bond Nob
 by one point
@@ -1314,7 +1332,6 @@ You can only go back west here.
 #mistake test for scram arcs
 >scram arcs
 The arcs stay still, but you can just go back east if you want.
-===a
 
 ==t5
 >purloin soot tattoos
@@ -1528,31 +1545,33 @@ Way to go! Keep that Hunger! Well, I hope it's that and not conspiracy theories 
 #mistake test for stank nats/stank nat's
 >stank nats
 Yes, it's pretty awful.
+\\
 >stank nat's
 Yes, it's pretty awful.
-
+\\
 #mistake test for tank nat
 >tank nat
 No, even a small amount of Nat's is enough.
-
+\\
 #mistake test for tang nat
 >tang nat
 It's probably already too tangy.
-
+\\
 #mistake test for tannin nat
 >tannin nat
 It probably has enough weird, horrible ingredients.
-
+\\
 #mistake test for stan nats/stan nat's
 >stan nats
 Well, Nat's must have its stans, but you don't want to be one.
+\\
 >stan nat's
 Well, Nat's must have its stans, but you don't want to be one.
-
+\\
 #mistake test for bon knob
 >bon knob
 You don't need to help Sniffins with interior decorating, here.
-===a
+
 
 ==t5
 >purloin demo med
@@ -1637,11 +1656,10 @@ You hear the click of invisible shuttuhs/shutters
 #mistake test for pod op
 >pod op
 But what sort of op?
-
+\\
 #mistake test for do pod
 >do pod
 But what to do to it? How to change it?
-===a
 
 ==t4
 >gt toll lot
@@ -1782,7 +1800,6 @@ by one point
 #mistake test for bra garb
 >bra garb
 I've tried to keep this game gender neutral.
-===a
 
 >word row
 
@@ -1941,12 +1958,12 @@ by one point
 >stack cats
 You found a Last Lousy Point!
 !by one point
-
+\\
 >see bees
 You found a Last Lousy Point!
 !by one point
 
-===a
+
 >use SOME DEMOS on yahoo hay
 by one point
 
@@ -1964,7 +1981,6 @@ by one point
 #mistake test for art ecetra
 >art ecetra
 One silly misspelling does not beget another.
-===a
 
 >use straw arts on Revolt Lover
 by one point
@@ -2129,13 +2145,14 @@ You can only go north, south and east here.
 #mistake test for swami maws/swamy maws
 >swami maws
 There might be someone smart nearby.
+\\
 >swamy maws
 There might be someone smart nearby.
-
+\\
 #mistake test for swam maws
 >swam maws
 Perhaps someone has, but you don't need to.
-===a
+
 
 ==t5
 >use elope pole on made dam
@@ -2177,15 +2194,15 @@ You don't want or need to have anything to do with the storm rots.
 #mistake test for story rots
 >story rots
 No, the storm rots help keep you focused on the story. They aren't blocking anything. Or good for anything.
-
+\\
 #mistake test for stork rots
 >stork rots
 You don't want to know what sort of carcasses are buried in the swamp.
-
+\\
 #mistake test for store rots
 >store rots
 You don't need to buy anything in this game, and any store wouldn't sell anything good.
-===a
+
 
 ==t5
 >use el doodle on known wonk
@@ -2231,31 +2248,30 @@ You can only go back south here.
 #mistake retest for calf lac
 >calf lac
 There is already the Moo Room. Let's not overdo it. Plus, cows can't swim.
-
+\\
 #mistake test for calm lac
 >calm lac
 It is calm enough.
-
+\\
 #mistake test for calk lac
 >calk lac
 It is not leaking.
-
+\\
 #mistake test for call lac
 >call lac
 It does not respond.
-
+\\
 #mistake test for tao goat
 >tao goat
 The goat wouldn't remain placid for long once it was plunged into water.
-
+\\
 #mistake test for tao moat
 >tao moat
 The lake is peaceful enough as-is.
-
+\\
 #mistake test for tao coat
 >tao coat
 You don't need protection from the weather here.
-===a
 
 ==t5
 >use dork rod on kayak
@@ -2749,7 +2765,6 @@ King James's orb is a basketball, and that's that.
 >muss opossum
 You found the very last Last Lousy Point!
 
-===a
 >get all
 
 ==t6
@@ -2834,7 +2849,6 @@ by one point
 #mistake test for mega gem
 >mega gem
 That'd be useful in Kingdom of Loathing, but not here.
-===a
 
 ==t4
 >gt yell alley
@@ -2988,7 +3002,6 @@ Invisible shuttuhs, err, shutters block passage north. You must be done in Cold 
 #mistake test for gal slag
 >gal slag
 You managed to annoy Ms. Ism enough that she lashes out and conks you with a mortal blow with the Gal Flag. Okay, not really, but name calling won't help.
-===a
 
 ==t3
 >n
@@ -3020,19 +3033,20 @@ There are no secret passages west.
 #mistake test for sworn rows/swore rows
 >sworn rows
 The sword rows are inanimate and neutral. Unless you get too close to them.
+\\
 >swore rows
 The sword rows are inanimate and neutral. Unless you get too close to them.
-
+\\
 #mistake test for yarn ray
 >yarn ray
 If you want more story, then sorry, this one's nearly at an end.
-
+\\
 #mistake test for yarg ray/yarr ray
 >yarg ray
 Becoming a pirate at the end? A clever heel turn!
+\\
 >yarr ray
 Becoming a pirate at the end? A clever heel turn!
-===a
 
 >use balsa slab on sword rows
 by one point
