@@ -1751,7 +1751,6 @@ verbing is an action out of world.
 
 understand the command "help" as something new.
 understand the command "v" as something new.
-understand the command "verb" as something new.
 understand the command "verbs" as something new.
 
 understand "verbs brev" and "verb brev" as verbing.
@@ -1982,7 +1981,6 @@ chapter ting
 talktoing is an action applying to one thing.
 
 understand the command "t" as something new.
-understand the command "ta" as something new.
 understand the command "greet" as something new.
 understand the command "talk" as something new.
 understand the command "talk to" as something new.
@@ -4455,7 +4453,6 @@ paceing is an action out of world.
 understand the command "pace cap" as something new.
 understand the command "pacy cap" as something new.
 understand the command "pacy" as something new.
-understand the command "pace" as something new.
 
 understand "pace cap" and "pacy cap" and "pace" and "pacy" as paceing.
 

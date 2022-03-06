@@ -6,6 +6,18 @@ volume Mistakes
 
 [programmer's note: the utility aam.py adds or sorts the 'mis' numbers. This was probably a bad idea, but I did it anyway, because it seemed organizational at the time. Now it just throws way too many changes into git. Mist.py makes sure each mistake is in the appropriate rbr-* or reg-* test file.]
 
+chapter stuff that would stomp on mistakes if it appeared later
+
+[put this in here so it doesn't wipe out "pace recap" etc. in the mistakes below]
+
+section something-new that must be declared before mistakes
+
+understand the command "pace" as something new.
+understand the command "ta" as something new.
+understand the command "verb" as something new.
+
+chapter quickdefs
+
 definition: a thing (called mt) is quicknear:
 	if mt is in location of player, yes;
 	if player carries mt, yes;
