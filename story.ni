@@ -34,6 +34,8 @@ TSR for table of silly ranks
 to search for an item, look for chapter [item].
 ]
 
+volume big picture stuff
+
 the story headline is "A *GASP* SAGA!"
 
 the release number is 4.
@@ -275,6 +277,18 @@ Include (-
     }
     rtrue;
 ];
+
+-) after "Language.i6t".
+
+Include (-
+
+	#Undef OOPS1__WD;
+	Constant OOPS1__WD = 'o//';
+	#Undef OOPS2__WD;
+	Constant OOPS2__WD = 'o//';
+	#Undef OOPS3__WD;
+	Constant OOPS3__WD = 'o//';
+
 -) after "Language.i6t".
 
 section something dramatic has happened bug
@@ -904,6 +918,8 @@ Rule for printing a parser error when the latest parser error is the didn't unde
 			if word number 2 in the player's command is "up", say "Hmm, not the right way to be or do UP, but something must work." instead;
 	if flee elf is in fun enuf and the player's command includes "cap":
 		say "The Flee Elf cocks its head. 'Y'r try ... not quite. Do something with the cap, though.'" instead;
+	if word number 1 in the player's command is "oops":
+		say "OOPS is shortened to O, if you're looking to undo a command. This is due to a very obscure joke response to a specific try. Otherwise, try [verb-suggest] for verb help." instead;
 	say "[if gtv]You do need a special verb here to deal with [random guhthug in location of player], but not that one. It may not be a standard one, but given the game's theme, I bet you can figure it out. If you want standard verbs, y[else]I didn't recognize that action. Y[end if]ou can type [verb-suggest] to get a list of them[if cur-score of Odd Do < 11], and there are a few you can guess for bonus points[any-here][end if].";
 
 to say any-here: say "[if LLP-now], including one right here[else if fixed-LLP > 0], including [fixed-LLP in words] available anywhere[end if]"
