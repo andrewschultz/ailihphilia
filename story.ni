@@ -4106,7 +4106,7 @@ Ebola Lobe	"The Ebola Lobe is impassable. You'd need some Nix-O-Toxin to get thr
 mush sum	"The mush sum is too murky and unstable to deal with. And to break the fourth wall, it's just there to provide a north border."
 e pipe	"You don't need or want to tinker with the e-pipe. In fact, it's kind of nice to have a boundary as impassable as the e-pipe, so you don't have to wonder if there's anything beyond the Trapeze Part." [start Trapeze Part 3 0]
 tube but	"The tube doesn't lead anywhere you want to go. You don't need to muck with it." [start Evaded Ave 4 0]
-Line Nil	"There's nothing you need behind the Line Nil security system. In fact, it's probably protecting you." [start Yell Alley 5 0]
+Line Nil	"There's nothing you need behind the [Line Nil] security system. In fact, it's probably protecting you." [start Yell Alley 5 0]
 gash sag	"You don't want to mess with the gash sag. Destroying the butene tub is damage enough." [start Pro Corp 6 0]
 Sci Pics	"The Sci Pics are just there to [if Gorge Grog is moot]rehash what happened[else]spell out what happens[end if] if you go pouring random explosive liquids down the butene tub."
 mist sim	"You don't have anything that would dispel the mist sim." [start Yack Cay 0 1]
@@ -7457,12 +7457,12 @@ The elope pole is a thing. description is "You wonder what wild places the elope
 
 book Yell Alley
 
-Yell Alley is east of Evaded Ave. It is in Yelpley. "[if Line Nil is in Yell Alley]Line Nil security blocks every way except back[else]The only way back is[end if] west[if bomb mob is not moot]. The way east is blocked by a [alley-e-block] where the yelling is from[end if][if navy van is not moot]. Maybe if you got rid of the navy van, you could find out[end if]."
+Yell Alley is east of Evaded Ave. It is in Yelpley. "[if Line Nil is in Yell Alley][Line Nil] security blocks every way except back[else]The only way back is[end if] west[if bomb mob is not moot]. The way east is blocked by a [alley-e-block] where the yelling is from[end if][if navy van is not moot]. Maybe if you got rid of the navy van, you could find out[end if]."
 
 to say alley-e-block:
 	say "[if navy van is in Yell Alley]navy van... you're not sure[else]bomb mob... so that's[end if]"
 
-check going nowhere in Yell Alley: say "[if navy van is in Yell Alley]It probably gets even seedier behind the navy van. Maybe you can get rid of the van and find HOW seedy[else if bomb mob is in Yell Alley]It probably gets even seedier behind the bomb mob. Best just to go back west[else]Trust me. The Line Nil is protecting you from the perils of [next-rand-txt of table of bad places]. You don't want to visit [same-rand-txt of table of bad places][end if]." instead;
+check going nowhere in Yell Alley: say "[if navy van is in Yell Alley]It probably gets even seedier behind the navy van. Maybe you can get rid of the van and find HOW seedy[else if bomb mob is in Yell Alley]It probably gets even seedier behind the bomb mob. Best just to go back west[else]Trust me. The [Line Nil] is protecting you from the perils of [next-rand-txt of table of bad places]. You don't want to visit [same-rand-txt of table of bad places][end if]." instead;
 
 chapter navy van
 
@@ -7545,7 +7545,7 @@ check taking TNT when bomb mob is quicknear: say "The bomb mob would say a bit m
 
 chapter Line Nil
 
-Line Nil is peripheral scenery in Yell Alley. "It's a thin looking red line you're pretty sure you don't want to step over. Maybe somewhere there's a number keypad to disarm it, with a palindrome code of course, but not in this game."
+Line Nil is peripheral scenery. "It's a thin looking red line you're pretty sure you don't want to step over. Maybe somewhere there's a number keypad to disarm it, with a palindrome code of course, but not in this game.". printed name is "Line-Nil".
 
 book Red Roses Order
 
