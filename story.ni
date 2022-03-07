@@ -424,7 +424,10 @@ volume unsorted
 to say etg:
 	say "[paragraph break]    * * * Deliverer? Re-reviled! * * *[paragraph break]";
 	wfak;
-	say "Eh, nah, that's too mean. Let's pretend that didn't happen.[paragraph break]";
+	if word number 1 in the player's command is "gal":
+		say "Okay, not really, but name calling won't help.[paragraph break]";
+	else:
+		say "Eh, nah, that's too mean of me. Let's pretend that didn't happen.[paragraph break]";
 	wfak;
 	say "[b][location of player][r][paragraph break]";
 
@@ -696,13 +699,15 @@ this is the check palindrome turns rule: [this could be at the end but those are
 			choose row with final response activity of loafing in table of final question options;
 			blank out the whole row;
 			continue the action;
-		say "[sox]. Yet you feel you did something weird right, even if you weren't [if score > 84]quite [end if]able to fix every small thing in Yelpley and Grebeberg.";
+		say "[sox]. Well, you had a feeling you [pts-missed], and yet, you did something weird right.";
 	else if score is maximum score:
 		say "Wow! You did everything you could, you think. [sox].[paragraph break]You have a vision of Grebeberg and Yelpley being, well, not quite perfect as they could be years down the line. You probably missed out on some sort of style points. Well, it's too late now. And maybe someone else will have fun going there and fixing things back up.";
 	else:
-		say "[sox]. Well, you had a feeling you left a few things undone."
+		say "[sox]. Well, you had a feeling you [pts-missed]."
 
-to say sox: say "As you open it, you see a nice, spiffy tenet. An antimetabole (look it up) that somehow magically changes every day. It's nice, but it still feels a bit like getting socks for your birthday"
+to say sox: say "As you open the box, you see a nice, spiffy tenet. An antimetabole (look it up) that somehow magically changes every day. It's nice, but it still feels a bit like getting socks for your birthday"
+
+to say pts-missed: say "[if score is min-nec]took the no-frills way through[else]left a few things undone[end if]"
 
 the check palindrome turns rule is listed instead of the print final score rule in for printing the player's obituary.
 
