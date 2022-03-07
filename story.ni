@@ -858,6 +858,14 @@ Rule for printing a parser error when the latest parser error is the i beg your 
 	consider the notify cycling rule;
 
 Rule for printing a parser error when the latest parser error is the can't see any such thing error:
+	if word number 1 in the player's command is "evade":
+		say "[the noun].";
+		if dave is moot:
+			say "Dave's not here, man!";
+			the rule succeeds;
+		if My Gym is not visited:
+			say "Maybe you'll find someone to evade, somewhere, some day.";
+			the rule succeeds;
 	if player is in Worn Row:
 		if the player's command includes "cart" and Worn Row is worky, say "You need to summon Word Row back before doing anything with the cart." instead;
 		if ever-wordrow is true or ever-workrow is true:
@@ -2101,7 +2109,9 @@ chapter buying
 
 understand "buy [something]" as buying.
 
-check buying: say "You may have to barter with the USE X ON Y command, but you never need to buy anything. I suppose this could be called a Y U BUY warning." instead;
+check buying:
+	if noun is buff u b, say "You don't need to buy anything, not even a U B, and you couldn't carry it." instead;
+	say "You may have to barter with the USE X ON Y command, but you never need to buy anything. I suppose this could be called a Y U BUY warning." instead;
 
 chapter saying yes
 
@@ -6109,7 +6119,6 @@ does the player mean evadeing Dave: it is very likely.
 
 carry out evadeing:
 	if noun is Dave:
-		if Dave is moot, say "You don't need to evade Dave again.";
 		say "You evade Dave! Deked! Deked![paragraph break]After spinning fruitlessly around, Dave can't seem to see you any more. He closes his eyes, obviously not evader-aware Dave. Then he trudges off, exhausted, emitting a huge 'GUH!' Perhaps he was more bugged with your constant 'E.g. dodge,' 'Olé, lo' and 'El Olé' taunts, but you're glad he's gone.[paragraph break]Whew! Consulting the Set O Notes[if Set O Notes is xed] again[end if], you notice there may be at least one more guh thug, but you won't need to do anything aggressive. That's good. You'd hate to have to CRAMP MARC, TRUCK CURT, DECK CED, MASH SAM, MELT LEM, RAM OMAR, SIT ON OTIS or even DISS SID. And it would be awkward to tell SAL ALAS or say NO, DON or LIAM, AIL and downright creepy to have to HARASS SARAH.";
 		wfak;
 		say "Suspicious there are no actual weight machines, you find a passage to a hidden spate of Sperses-Reps machines with the motto 'Scepsis?! Pecs!' They help you bulk up a bit, so item weight will not be a factor. But you don't want to waste too much time bulking up. You go back out and have a look at the Stole-Lots. You consider making it a STORE-lots, but then the 'rots' is not so good, so then you also check if the E and an L rub out quickly. They do, making it a Sto(['])-Lots. Bam! Logistical and moral problems: SOLVED![paragraph break]Also, you notice a wash saw in the (now) Sto Lots. They both seem worth taking along, so you do.";
