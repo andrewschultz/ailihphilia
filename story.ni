@@ -223,8 +223,6 @@ debug-verbose is a truth state that varies.
 
 volume i6 modification(s)
 
-section What Do You Want to X
-
 Include (-
 Replace LanguageVerb;
 -) after "Definitions.i6t".
@@ -4931,7 +4929,7 @@ instead of wearing spur ups, say "They would be too pointy for comfort. There ar
 
 book Flu Gulf
 
-Flu Gulf is north of Cold Loc. It is in Grebeberg. "North and east, it's, oh, too H2O. The passage is clear back south, but [if scorn rocs are in Flu Gulf]scorn rocs['] gaze blocks you going west[else]west past the scorn rocs seems a bit treacherous[end if]. No way you're getting through the mush sum to the north, and the Ebola Lobe to the east is likely to get through you."
+Flu Gulf is north of Cold Loc. It is in Grebeberg. "North and east, it's, oh, too H2O. The passage is clear back south, but [if scorn rocs are in Flu Gulf]scorn rocs['] gaze blocks you going west[else]west past where the scorn rocs were seems a bit treacherous[end if]. No way you're getting through the mush sum to the north, and the Ebola Lobe to the east is likely to get through you."
 
 chapter mush sum
 
@@ -5135,7 +5133,7 @@ carry out mussing:
 
 chapter Bros' Orb
 
-the Bros' Orb is a thing in Le Babel. "[one of]An orb hovers in the air. You know it must be a Bros['] Orb[or]The Bros['] Orb still hovers in the air[stopping]. [if player has stir writs]You look at the stir writs in your hand, and you feel confident you can just take the orb now[else]You would love to take the orb, but you're not sure if you're worthy.". description is "Looking into the Bros['] Orb, you think, 'Do orbs brood?' There is a brief vision of star frats, lacking star brats or prats and even meriting star GRATS for community service. Maybe they don't do it perfectly, but it gets done. You start to understand social, subjective knowledge you assumed only jerks know. About how to be likable to others. Of course some go overboard, but any good thing can be abused that way. You realize you are cheating yourself if you don't learn the basics, here.[paragraph break]Oh yes. There's also a huge area marked off 'Sis' just to show it's not about guys.[paragraph break][if player has stir writs]You are awed but not overpowered[else]It all seems a bit too much to process up close, though[end if].".
+the Bros' Orb is a thing in Le Babel. "[one of]An orb hovers in the air. You know it must be a Bros['] Orb, though whose (the Brosnans[']?) is not clear[or]The Bros['] Orb still hovers in the air[stopping]. [if player has stir writs]You look at the stir writs in your hand, and you feel confident you can just take the orb now[else]You would love to take the orb, but you're not sure if you're worthy.". description is "Looking into the Bros['] Orb, you think, 'Do orbs brood?' There is a brief vision of star frats, lacking star brats or prats and even meriting star GRATS for community service. Maybe they don't do it perfectly, but it gets done. You start to understand social, subjective knowledge you assumed only jerks know. About how to be likable to others. Of course some go overboard, but any good thing can be abused that way. You realize you are cheating yourself if you don't learn the basics, here.[paragraph break]Oh yes. There's also a huge area marked off 'Sis' just to show it's not about guys.[paragraph break][if player has stir writs]You are awed but not overpowered[else]It all seems a bit too much to process up close, though[end if].".
 
 after examining the Bros' Orb when player is in Red Roses Order:
 	say "The Bros['] Orb is pulsing violently. It needs to let its energy out--but on whom? On what?";
@@ -6573,7 +6571,7 @@ carry out reading:
 
 table of readables
 read-cand	read-yet	read-msg
-Spur Ups	false	"Hmm, that's interesting. Each has P, U and an asterisk in a triangle[if puffed-up is true], even the charred one."
+Spur Ups	false	"Hmm, that's interesting. Each has P, U and an asterisk in a triangle[if puffed-up is true], even the charred one[end if]."
 Set O Notes	false	"You scrunch your eyes to read the random miscellany at the edges of the Set O Notes. Apparently, there can only be one questor, to avoid a partner-entrap. The Flee Elf also wrote in 'REP US SUPER' to motivate you.[paragraph break]Um, yeah. The Set O Notes's main page seems a lot more useful, describing your enemies and some of the scenery and all, but hey, it didn't hurt to read closer."
 enact cane	false	"You squint carefully. KLENS'N ELK is written. But how would you restore the Enact Cane into something that could actually clean stuff? And who has something that needs cleaning?"
 moor broom	false	"The moor broom still has the KLENS'N ELK written on it that the enact cane did."
@@ -11267,7 +11265,7 @@ this is the what-missed rule:
 		if the rule failed:
 			say "[if LLP-hint-yet is false][LLP-clue entry][else][LLP-spoil entry][end if]";
 			increment missed;
-	if missed is 0, say "You found all the points, but something in your final results isn't fully in tune with the game...yet. It can't be too hard to change!" instead;
+	if missed is 0, say "[if game-over]You found all the points, but something in your final results isn't fully in tune with the game...yet. It can't be too hard to change![else]You don't have things aligned right for the very best ending." instead;
 	if LLP-hint-yet is false, say "[paragraph break]Type MISSED again to spoil the LLPs. While the X-Ite Tix allow you through the Tix Exit, there's no restriction on wandering around after.";
 	now LLP-hint-yet is true;
 
