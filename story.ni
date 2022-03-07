@@ -1558,6 +1558,9 @@ after printing the name of pact cap while taking inventory: say ", set to LO[if 
 
 after printing the name of brag garb while taking inventory: say " (smelling of [if troll ort is moot]the troll ort[else]Turbo-Brut[end if])";
 
+after printing the name of a book (called bk) when taking inventory or printing the locale description:
+	if abbr-text of bk is not empty, say " ([abbr-text of bk])";
+
 after printing the name of a book (called bk) while taking inventory: say " (by [auth-name of bk])"
 
 after printing the name of the poo coop while taking inventory: if gnu dung is moot, say " (full of gnu dung)"
@@ -1593,7 +1596,7 @@ check taking inventory when Dave is moot (this is the ailihphilia inventory rule
 		say "So far, you only have [the list of helpdocs carried by the player] as reference, and it's not very useful. More later, maybe?";
 	else:
 		say "AIDE MEDIA: [if player has epicer recipe]The epicer recipe seems most important and straightforward. [end if]";
-		if player has Set O Notes, say "The Set O Notes [if player has epicer recipe]also has some clues but is less straightforward[else]has some information, but you'd like something even better[end if]. ";
+		if player has Set O Notes, say "The [Set O Notes] [if player has epicer recipe]also has some clues but is less straightforward[else]has some information, but you'd like something even better[end if]. ";
 		say "The Darer Ad--well, it suckered you into this whole mess. Pure fluff.";
 	if number of tronparts carried by player > 0:
 		say "North-tron parts found: [the list of tronparts carried by player][unless martini tram is off-stage]. The martini tram is in [Fun Enuf], too[end if][hint-tron].";
@@ -4541,7 +4544,7 @@ after examining the Darer Ad:
 
 chapter Set O Notes
 
-the Set O Notes is a helpdoc. description is "[b]OPPO[r] is printed at the top. There's vague advice about making a North-Tron to reach and defeat the Diktat Kid, but first you'll have to defeat [b]Ms. Ism[r], as well as the [b]Yuge Guy[r].[paragraph break]There's mention of a guh-thug in various places, and you'll have to do something special when you see one. [thug-report].[paragraph break]Also scribbled, in the center, is [b][Fun Enuf][r] with [b]TRI-GIRT[r] below that. There are other landmarks scribbled in, which [if number of visited rooms < 20]will help you identify new places and scenic barriers and such[else]have been helpful so far[end if].[paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that. Oh, there are some weird notes you can READ, too, but they seem a bit esoteric.". importancy of the Set O Notes is 2.
+the Set O Notes is a helpdoc. description is "[b]OPPO[r] is printed at the top. There's vague advice about making a North-Tron to reach and defeat the Diktat Kid, but first you'll have to defeat [b]Ms. Ism[r], as well as the [b]Yuge Guy[r].[paragraph break]There's mention of a guh-thug in various places, and you'll have to do something special when you see one. [thug-report].[paragraph break]Also scribbled, in the center, is [b][Fun Enuf][r] with [b]TRI-GIRT[r] below that. There are other landmarks scribbled in, which [if number of visited rooms < 20]will help you identify new places and scenic barriers and such[else]have been helpful so far[end if].[paragraph break]The Set O Notes also points out you'll need to find items and use them together, but since you're on a quest, you already sort of knew that. Oh, there are some weird notes you can READ, too, but they seem a bit esoteric.". importancy of the Set O Notes is 2. printed name of Set O Notes is "Set-O-Notes".
 
 understand "tri-girt" and "tri girt" and "trigirt" as set o notes.
 understand "oppo" as set o notes.
@@ -6521,13 +6524,13 @@ after examining the pity tip for the first time:
 
 chapter books in bookcase
 
-TI is a book. printed name of TI is "[i]TO IDIOT[r] (TI)". understand "to idiot" and "idiot" as ti. description is "It's full of hot takes and 'clever' put-downs based on assuming the recipient isn't as smart as they think they are. You remember laughing at this sort of thing when you were really bored or grouchy, and you sort of regret it now. Still, it keeps some people busy.". [Door Frood]
+TI is a book. printed name of TI is "[i]TO IDIOT[r]". understand "to idiot" and "idiot" as ti. description is "It's full of hot takes and 'clever' put-downs based on assuming the recipient isn't as smart as they think they are. You remember laughing at this sort of thing when you were really bored or grouchy, and you sort of regret it now. Still, it keeps some people busy.". abbr-text of TI is "TI". [Door Frood]
 
-NULL ILLUN is a book. printed name of NULL ILLUN is "[i]NULL ILLUN[r] (NI)". understand "ni" as NULL ILLUN. description is "Surprisingly wise advice about how to achieve happiness and shake annoyances you can't dispel with just logic. It discusses how to flex your SCEPSIS-PECS so you don't just know a lot of stuff you aren't sure what to do with. It even advertises a not-yet-published companion book on emotional intelligence: SLANGISH SIGNALS.". [Known Wonk]
+NULL ILLUN is a book. printed name of NULL ILLUN is "[i]NULL ILLUN[r]". understand "ni" as NULL ILLUN. description is "Surprisingly wise advice about how to achieve happiness and shake annoyances you can't dispel with just logic. It discusses how to flex your SCEPSIS-PECS so you don't just know a lot of stuff you aren't sure what to do with. It even advertises a not-yet-published companion book on emotional intelligence: [i]SLANGISH SIGNALS[r].". abbr-text of NULL ILLUN is "NI". [Known Wonk]
 
-EPOCH COPE is a book. printed name of EPOCH COPE is "[i]EPOCH: COPE[r] (EC)". understand "ec" as EPOCH COPE. description is "All sorts of present-day political and social musings for shahs and other leaders, with the catch phrase '[']S civics!' It's surprisingly accessible, though you don't have time to read it.". [King Nik]
+EPOCH COPE is a book. printed name of EPOCH COPE is "[i]EPOCH: COPE[r]". understand "ec" as EPOCH COPE. description is "All sorts of present-day political and social musings for shahs and other leaders, with the catch phrase '[']S civics!' It's surprisingly accessible, though you don't have time to read it.". abbr-text of EPOCH COPE is "EC". [King Nik]
 
-YOB ATTABOY is a book. printed name of YOB ATTABOY is "[i]YOB ATTABOY[r] (YA)". understand "ya" as YOB ATTABOY. description is "All about picking yourself up by your bootstraps and not feeling sorry for yourself or being too jealous of what others know or can do--SHED EH'S is repeated in big bold letters.". [Sniffins]
+YOB ATTABOY is a book. printed name of YOB ATTABOY is "[i]YOB ATTABOY[r]". understand "ya" as YOB ATTABOY. description is "All about picking yourself up by your bootstraps and not feeling sorry for yourself or being too jealous of what others know or can do--SHED EH'S is repeated in big bold letters.". abbr-text of YOB ATTABOY is "YA". [Sniffins]
 
 ti-to is a truth state that varies
 
@@ -6588,7 +6591,7 @@ instead of showing to:
 
 chapter SOME DEMOS
 
-there is a book called SOME DEMOS. printed name of SOME DEMOS is "SOME DEMOS (SD)". understand "sd" as SOME DEMOS. It is hidden. description is "It's a sort of life hacker book with a particular emphasis on having fun with making weird art out of common or even unsophisticated materials--hey, whatever makes you feel cool or neat--and not worrying too much about the quality of the result. Less concrete info than the books you've been schlepping out to others, but it's a fun read. Who knows? It might help you.".
+there is a book called SOME DEMOS. printed name of SOME DEMOS is "SOME DEMOS". understand "sd" as SOME DEMOS. It is hidden. description is "It's a sort of life hacker book with a particular emphasis on having fun with making weird art out of common or even unsophisticated materials--hey, whatever makes you feel cool or neat--and not worrying too much about the quality of the result. Less concrete info than the books you've been schlepping out to others, but it's a fun read. Who knows? It might help you.". abbr-text of SOME DEMOS is "SD".
 
 does the player mean doing something with SOME DEMOS: it is unlikely.
 
