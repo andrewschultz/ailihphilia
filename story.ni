@@ -857,7 +857,6 @@ Rule for printing a parser error when the latest parser error is the i beg your 
 
 Rule for printing a parser error when the latest parser error is the can't see any such thing error:
 	if word number 1 in the player's command is "evade":
-		say "[the noun].";
 		if dave is moot:
 			say "Dave's not here, man!";
 			the rule succeeds;
@@ -1093,7 +1092,7 @@ check opening: [??]
 		if player has Ye Key, try useoning Ye Key with etage gate instead;
 		try going north;
 	if noun is gold log, say "You can't find an opening." instead;
-	if noun is lie veil, say "It's not that easy. You need to be forceful." instead;
+	if noun is Lie Veil, say "It's not that easy. You need to be forceful." instead;
 	if noun is mayo yam, say "That's not something you want to open." instead;
 	if noun is poo coop, say "And get doo-doo'd?" instead;
 	if noun is snack cans, say "[if player is in Mont Nom]You wonder if they might go better with something else[else]You will open the snack cans when the time comes to use them[end if]." instead;
@@ -2186,9 +2185,9 @@ to say up-down-check:
 	unless the room down from location of player is nowhere, increment xud;
 	if xud is 0, continue the action;
 	say " (";
-	unless the room up from the location of player is nowhere, say "up=[othdir of up] here";
+	unless the room up from the location of player is nowhere, say "up=[othdir of up]";
 	if xud is 2, say ", ";
-	unless the room down from the location of player is nowhere, say "down=[othdir of down] here";
+	unless the room down from the location of player is nowhere, say "down=[othdir of down]";
 	say ")"
 
 maindir is a list of directions variable. maindir is { north, west, south, east }
@@ -2224,7 +2223,7 @@ check going (this is the new generic going reject rule): [check going nowhere ru
 		say "[chase-pass][if location of player is wally][one of][or]Hall, ah? [in random order]Wall! Aw.[paragraph break][end if]You can [if nvi is 1]only[else]still[end if] go [if nvi is 1]back [else if nvi is 3]the other ways: [else if nvi is 2]both [end if][list of viable directions] here[up-down-check]." instead;
 
 check going (this is the reject noncardinal directions rule):
-	if noun is diagonal, say "Diagonal directions aren't used in this game." instead;
+	if noun is diagonal, say "[this-game] has no diagonal passages." instead;
 	if noun is up or noun is down:
 		if the room noun of location of player is nowhere:
 			say "You never need to go up or down in this game. It's pretty ... level. There is no Elavata[']-Vale.[paragraph break]Though sometimes these directions act as a backup to the main cardinal directions--for instance, up to or down from [if player is in Mont Nom]here[else if Mont Nom is visited]Mont Nom[else]a hill[end if].";
@@ -2844,7 +2843,7 @@ pity tip	DIFF ID	"Nothing happens. The DIFF ID seems to be guarding something im
 pity tip	Door Frood	"The Door Frood is too good for a mere pity tip. Well, in the Door Frood's mind."
 poo coop	kayo yak	"You don't need to capture the yak."
 poo coop	Liar Grail	"[if gnu dung is in Dumb Mud]There's nothing inside the coop to empty into the liar grail.[else]Maybe if the contents came from a bull and not a gnu, it would be appropriate (this is not a palindrome 'joke.')[end if]"
-poo coop	Lie Veil	"The lie veil is only figuratively full of ... oh, wait, this is a family game."
+poo coop	Lie Veil	"The Lie Veil is only figuratively full of ... oh, wait, this is a family game."
 poo coop	pool gloop	"You can't think of anything to do with the pool gloop. There's too much of it to remove to make a path. But on the other hand, the coop is suitable to handle much worse than the gloop."
 poo coop	Yuge Guy	"That could be fun, but he might be too normalised to the stuff in the coop to do damage."
 puce cup	cross orc	"The only elixir the cross orc might want would be one it could sell to rubes for a huge markup."
@@ -2943,7 +2942,7 @@ wash saw	etage gate	"Ooh! Breaking and entering! Unfortunately, it's the wash sa
 wash saw	gold log	"The log would break the saw."
 wash saw	gulf lug	"Alas, you are not a surgeon."
 wash saw	KAOS Oak	"The wash saw isn't big enough or sharp enough to take down the [kaoscaps]. You need a much more powerful machine[if player has epicer recipe and epicer recipe is nox], and you notice the epicer recipe could help with that[else if epicer recipe is xed], which you can build if you follow the epicer recipe[end if]."
-wash saw	lie veil	"Not even the wash saw could clean off the lie veil. You need something much more brutal."
+wash saw	lie veil	"Not even the wash saw could clean off the Lie Veil. You need something much more brutal."
 wash saw	made dam	"The made dam is much too big for the saw to get anywhere. [if eroded ore is off-stage]Maybe there's a better way to find what's behind there[else]Besides, you found enough[end if]."
 wash saw	scorn rocs	"The rocs are too big and solid for the wash saw to vandalize them."
 wash saw	slate metals	"The wash saw is nowhere near sharp enough to cut the metals. [if stamp mats are not moot]Maybe there's something else[else]You got Ye Key from the metals, and that's enough[end if]."
@@ -4390,7 +4389,7 @@ check going north in Fun Enuf:
 	if player does not have yard ray, say "You don't have a weapon to take down the Diktat Kid." instead;
 	if murdered rum is not moot, say "You have the yard ray, but it isn't, well, charged." instead;
 	if emitted is false, say "You don't know how to work the yard ray[if yard ray is xed]. EMIT ********--hmm, what could those eight letters be?[else]. Maybe examine it for instructions.[end if]" instead;
-	if grid-side-items < 2, say "As you go north, you hear three voices. 'Prep?! Erp!' you mutter.[paragraph break]Perhaps the yard ray would work okay at first, but ... you get the feeling you may need some other stuff to take out EVERYBODY." instead;
+	if grid-side-items < 2, say "As you go north, you hear three voices. 'Prep?! Erp!' you mutter.[paragraph break]Perhaps the yard ray would work okay at first, but ... you get the feeling you may need [if grid-side-items is 0]some other stuff[else]a bit more[end if] to take out EVERYBODY." instead;
 	say "You think you have enough. You hope you won't need a redi-aider or ret-life filter. Here goes!"
 
 to decide which number is grid-side-items:
@@ -5049,8 +5048,8 @@ check going south in Dumb Mud:
 
 check going north in Dumb Mud:
 	if lie veil is in Dumb Mud:
-		if player has exam axe, say "The lie veil doesn't seem as intimidating as before. Maybe it's you, or something you have." instead;
-		say "[one of]As you're about to touch the lie veil, you shake your head. No. You don't really want or need to explore north. Surely there's some better place to be? Perhaps you're not 100% prepared for the lie veil's 'thought-provoking' paradoxes, and it's doing you a favor pushing you back? Plus what if it hides a hidden booby trap? You try to walk further north, but somehow you wind up walking back south.[paragraph break]Once you're away from the Lie Veil, you forget its weird arguments. There's got to be a way, or weapon, to cut brutally through its sophistry[or]The Lie Veil still rejects and confuses you. You need something decisive and brutal to cut through it[stopping][if score < 30 and player does not have exam axe]. But finding the right weapon or implement may have to wait a bit[end if]." instead;
+		if player has exam axe, say "The Lie Veil doesn't seem as intimidating as before. Maybe it's you, or something you have." instead;
+		say "[one of]As you're about to touch the Lie Veil, you shake your head. No. You don't really want or need to explore north. Surely there's some better place to be? Perhaps you're not 100% prepared for the Lie Veil's 'thought-provoking' paradoxes, and it's doing you a favor pushing you back? Plus what if it hides a hidden booby trap? You try to walk further north, but somehow you wind up walking back south.[paragraph break]Once you're away from the Lie Veil, you forget its weird arguments. There's got to be a way, or weapon, to cut brutally through its sophistry[or]The Lie Veil still rejects and confuses you. You need something decisive and brutal to cut through it[stopping][if score < 30 and player does not have exam axe]. But finding the right weapon or implement may have to wait a bit[end if]." instead;
 	if being-chased is true, say "[chase-pass]It's just too weird and chaotic ahead to the north. Even with the yak chasing you, you freeze up." instead;
 
 chapter gnu dung
@@ -5082,7 +5081,7 @@ understand "turd rut" as turf rut when poo coop is moot.
 
 chapter lie veil
 
-The lie veil is scenery in Dumb Mud. "It covers the way north. It looks flimsy, yet at the same time, you are scared it might have some secret trap that would zap you to unconsciousness and, worse, make you feel silly for not noticing it in the first place."
+The Lie Veil is scenery in Dumb Mud. "It covers the way north. It looks flimsy, yet at the same time, you are scared it might have some secret trap that would zap you to unconsciousness and, worse, make you feel silly for not noticing it in the first place."
 
 check wearing veil: say "I don't want to know what would happen if you could, and probably, neither would you." [??]
 
@@ -7046,7 +7045,7 @@ check going north in Emo Dome:
 	if state tats are off-stage, say "The Red Roses Order is, like, double-intensity. Just the name leaves you pondering you probably aren't ready for it yet until you're, like, totally ready. Still, you try to pass by the DIFF-ID but hear a warn-raw voice: 'Dim ID! Go jog!'[paragraph break]You think, hang? Nah. Maybe you [if player has soot tattoos and player has gate tag]can hustle up an ID--a DIY ID, if you will--from your current possessions, though[else if player has soot tattoos or player has gate tag]could find something to help you get by[end if]." instead;
 	if Bros' Orb is in Le Babel, say "The DIFF ID is silent, but you don't feel prepared enough to enter the Red Roses Order, yet. You don't need someone else, but you need something that makes you feel someone else is, well, there." instead;
 	if Diktat Kid is moot, say "The Red Roses Order is being replaced by something more ... civic. There are big discussions going on, ones you daren't disturb. The current buzz-phrase is [next-rand-txt of table of political stuff] or something." instead;
-	if balsa slab is moot, say "With Ms. Ism defeated, the Teem-Civic Meet is going in full swing. They're throwing interesting ideas around, but you don't have anything to add.[paragraph break]In other words, you've done all you could in the Red Roses Order. You still have a bit of heroing to do elsewhere." instead;
+	if balsa slab is moot, say "With Ms. Ism defeated, the Teem-Civic Meet is going in full swing. They're throwing interesting ideas around, but you didn't come here for politics.[paragraph break]So you've done all you could in the Red Roses Order. You still have a bit of heroing to do elsewhere." instead;
 	say "You make sure your state tats are visible for scanning. They are accepted with a 'YA MAY!'.[paragraph break][if Ms Ism is in Red Roses Order]You step into what may be your final challenge in Yelpley...[else]Maybe there is something you can do with the sword rows.[end if]";
 
 chapter DIFF ID
@@ -7156,7 +7155,7 @@ to say dir-post-orc:
 		say "There's a private party to the south, apparently. Too exclusive for you. So north and west it is. [one of]A visitor's sheet called [yall] has the names of attendees[or][yall] lists who can attend. Not you[stopping]";
 		if yall ay is off-stage, move yall ay to Toll Lot;
 
-check going east in Toll Lot: say "You'd crash into the crag arc. [if cross orc is moot]North, south and e[else]E[end if]ast could work, though." instead;
+check going east in Toll Lot: say "You'd crash into the crag arc. [if cross orc is moot]North, south and w[else]W[end if]est could work, though." instead;
 
 [??snuff funs]
 
@@ -7611,6 +7610,9 @@ book Swept Pews
 
 Swept Pews is south of Emo Dome. It is in Yelpley. "There is a wide passage back north to the Emo Dome in this tidy little area lacking a rat-ladened altar. It's unnamed but probably St. Emmet's. It's narrower south[if liar grail is moot], but with the liar grail and wordy drow gone, it should be no problem to go that way, either[end if]."
 
+check going nowhere in Swept Pews:
+	say "As you try to walk to the sacred side parts, a voice booms: 'A holy? Lo! Ha!' Bummer. You can't go [noun], but you can still go north or[if drow is not moot], once the drow is gone, [end if]south." instead;
+
 for printing a locale paragraph about a thing (called th) in Swept Pews:
 	if th is the player:
 		now the player is mentioned;
@@ -7658,7 +7660,7 @@ Drawl Ward is south of Swept Pews. It is in Yelpley. "This passage is a T (well,
 check going in Drawl Ward:
 	if Bond Nob is in Drawl Ward:
 		if noun is west or noun is east, say "You hear the Bond Nob groaning and think it wouldn't be nice to pass by. They'll let you by once you help them with whatever sickness they have." instead;
-	if noun is south, say "The birch crib is a private home, but you don't need to go there." instead;
+	if noun is south, say "The birch crib is a private home, but you don't need to go there. North, east and west work, though." instead;
 
 rig-yet is a truth state that varies.
 
@@ -11728,13 +11730,17 @@ carry out raytesting:
 	now taboo bat is off-stage;
 	if nu is 1, try going north;
 	now player has yard ray;
+	say "You have the yard ray.";
 	if nu is 2, try going north;
+	say "EMITTED is true.";
 	now emitted is true;
 	if nu is 3, try going north;
 	if nu is 4:
+		say "You have the ME gem.";
 		now player has ME gem;
 		try going north;
 	if nu is 5:
+		say "You have the Taboo Bat.";
 		now player has taboo bat;
 		try going north;
 	say "If you are doing further testing, UNDO immediately now you've run this. Trust me. There was too much to tie up, here.";
