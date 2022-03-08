@@ -147,7 +147,7 @@ understand "up cpu" as a mistake ("You shouldn't need many cycles to run a text 
 
 chapter Deft Fed
 
-understand "defy fed" as a mistake ("[if yob attaboy is moot]Way to go! Keep that Hunger! Well, I hope it's that and not conspiracy theories about the Fed[else]No problem, you're not getting fed anyway[end if].[mis of 45]") when player is in Deft Fed.
+understand "defy fed" as a mistake ("[if yob attaboy is moot]Way to go! Keep that HUNGER! Well, I hope it's that and not conspiracy theories about the Fed[else]No problem, you're not getting fed anyway[end if].[mis of 45]") when player is in Deft Fed.
 
 understand "deli filed" as a mistake ("You are not a government bureaucrat.[mis of 46]") when player is in Deft Fed.
 
@@ -255,7 +255,7 @@ understand "gnu rung" as a mistake ("You want to move west from here, not up.[mi
 
 understand "gnu sung" as a mistake ("You don't need to speculate what the gnu was doing.[mis of 79]") when y-poopy.
 
-understand "lie ceil" as a mistake ("Good try, but there's not enough of the lie veil to make a ceiling.") when lie veil is quicknear.
+understand "lie ceil" as a mistake ("Good try, but there's not enough of the Lie Veil to make a ceiling.") when lie veil is quicknear.
 
 understand "lie deil" as a mistake ("You don't need to deal with supernatural stuff.") when lie veil is quicknear.
 
