@@ -435,6 +435,9 @@ understand "mix im" as mixing.
 understand "mix" as mixing.
 
 carry out mixing:
+	say "Liquid: [list of carried liquid ingredients].";
+	say "Solid: [list of carried solid ingredients].";
+	say "Moot: [list of moot ingredients].";
 	let x be number of carried liquid ingredients + number of carried solid ingredients;
 	if number of carried ingredients is 0, say "You need both a liquid and a solid ingredient. You have neither." instead;
 	if number of carried liquid ingredients is 0, say "You have no liquid ingredient to mix." instead;

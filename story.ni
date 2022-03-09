@@ -2359,12 +2359,14 @@ understand the command "use" as something new.
 understand "use [something] on [something]" as useoning it with.
 understand "use [something] with [something]" as useoning it with.
 
+to say tear-epic: say "You tear up the epicer recipe and throw it in the air! Confetti! Celebration"
+
 to build-the-tron:
 	now all tronparts are in devreserved; [ic]
 	if redact-postrule:
-		say "You use the epicer recipe you found in the Trapeze Part to build a north-tron that destroys [the KAOS Oak] to the north! [if revving-over is true]And with that, your REV OVER journey ends, so close to saving Yelpley and Grebeberg.[else][line break][end if]";
+		say "You use the epicer recipe you found in the Trapeze Part to build a north-tron that destroys [the KAOS Oak] to the north! [if revving-over is true]And with that, your REV OVER journey ends, so close to saving Yelpley and Grebeberg. [tear-epic]![else][line break][end if]";
 	else:
-		say "[if epicer recipe is nox]You're clueless how, at first. But then you take a look at the epicer recipe[else]You build the North-Tron with the instructions from[end if] the epicer recipe after a few 'How? OH!' moments. It points north and blasts a hole in the [kaoscaps] with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break]Anyway, you tear up the epicer recipe and throw it in the air to make confetti as celebration. You must be close now!";
+		say "[if epicer recipe is nox]You're clueless how, at first. But then you take a look at the epicer recipe[else]You build the North-Tron with the instructions from[end if] the epicer recipe after a few 'How? OH!' moments. It points north and blasts a hole in the [kaoscaps] with a huge tron snort, but some of the energy bounces back and vaporizes it! I guess you could call it a martyry tram, now.[paragraph break][tear-epic]. You must be close now!";
 	moot epicer recipe;
 	moot KAOS Oak;
 	now Dirge Grid is mapped north of Fun Enuf;
@@ -3311,7 +3313,9 @@ this is the rev-worn-row rule:
 		if Pro Corp is unvisited, the rule fails;
 		say "You need to lure the Psi Wisp back to [Worn Row], then change it back to Worn Row.";
 		the rule succeeds;
-	if say-unless-speed, say "You lure the Psi Wisp back to Wor(k/d) row, changing it to Worn Row, then back to Word Row.";
+	if say-unless-speed:
+		say "You lure the Psi Wisp back to Wor(k/d) row, changing it to Worn Row, then back to Word Row.";
+		now Pro Corp is visited;
 	win-wisp-chase;
 	word-row-open;
 	the rule succeeds;
@@ -4445,7 +4449,7 @@ understand "pack" as packing.
 
 carry out packing:
 	if the player has the pact cap, say "You already did." instead;
-	say "'Rec [']er!' shouts the Flee Elf. 'Hat! Ah!'[paragraph break]The Flee Elf hands you a Set O Notes and explains you need to find a way to destroy the [kaoscaps] to the north. Also, the Flee Elf points out the [b]LOVE VOL[r] and [b]LO VOL[r] settings on the pact cap: [b]LO VOL[r] means the cap is quiet and won't make a weird noise if you look at things that need a weird action. [b]LOVE VOL[r] means you will.[paragraph break]The Flee Elf also shows you [if eye-charges > 0]the lit[else][end if]a pip on the cap, which tells whether you may be able to [b]EYE[r] items to determine approximately how far along they are in your quest--if you make enough good guesses. You ask what this means. The Flee Elf says 'like [if tried-elf is true]if[else]when[end if] you tried to made me something else[if eye-charges > 0]. You've done so much, you already got a charge[end if],' and points you to the Tix Exit, which reads 79, presumably the last thing you'll need to operate.[paragraph break]'It's best I...' and with that, the Flee Elf becomes a FLED elf, pointing at the tile lit (slightly altered). You notice a TIX EXIT to the south, but you don't have any tickets.";
+	say "'Rec [']er!' shouts the Flee Elf. 'Hat! Ah!'[paragraph break]The Flee Elf hands you a [Set O Notes] and explains you need to find a way to destroy the [kaoscaps] to the north. Also, the Flee Elf points out the [b]LOVE VOL[r] and [b]LO VOL[r] settings on the pact cap: [b]LO VOL[r] means the cap is quiet and won't make a weird noise if you look at things that need a weird action. [b]LOVE VOL[r] means you will.[paragraph break]The Flee Elf also shows you [if eye-charges > 0]the lit[else][end if]a pip on the cap, which tells whether you may be able to [b]EYE[r] items to determine approximately how far along they are in your quest--if you make enough good guesses. You ask what this means. The Flee Elf says 'like [if tried-elf is true]if[else]when[end if] you tried to made me something else[if eye-charges > 0]. You've done so much, you already got a charge[end if],' and points you to the Tix Exit, which reads 79, presumably the last thing you'll need to operate.[paragraph break]'It's best I...' and with that, the Flee Elf becomes a FLED elf, pointing at the tile lit (slightly altered). You notice a TIX EXIT to the south, but you don't have any tickets.";
 	wfak;
 	say "[line break]You put the cap on. It fits okay. It can stay all quest. Not very stylish, but it sure beats wearing a bib.";
 	get-cap;
@@ -8703,7 +8707,7 @@ this is the rev-check rule:
 	if cant-tip-further:
 		if in-tip-it is true, say "You just need to use the X-ITE TIX, now." instead;
 		if player is in Dirge Grid, say "You need to fight through the Dirge Grid or use [b]TIP IT[r]." instead;
-		if player is in Fun Enuf, say "You've already gone as far as [b]REV OVER[r] or Dirge Grid will take you[if x-ite tix are off-stage]. [b]TIP IT[r] can take care of the rest[end if]." instead; [i can cut this down, because some of this is probably redundant, but I'd rather be too sure]
+		if player is in Fun Enuf, say "You've already gone as far as [b]REV OVER[r] or [b]DEEP SPEED[r] will take you[if x-ite tix are off-stage]. [b]TIP IT[r] can take care of the rest[end if]." instead; [i can cut this down, because some of this is probably redundant, but I'd rather be too sure]
 		say "You're pretty near the endgame. Would you like me to drop you off at [Fun Enuf]?";
 		if the player yes-consents, move player to Fun Enuf instead;
 		say "OK, but you don't have much else to do[if cur-score of Odd Do is max-score of Odd Do]--you got all the LLPs[else] except search for LLPs[end if]." instead;
@@ -8861,6 +8865,9 @@ carry out revovering:
 		say "(Moving you to [move-room])";
 		say "[line break](from [orig-loc])";
 		move player to move-room, without printing a room description;
+	else if move-room is not orig-loc:
+		if move-room is not visited, say "fake-visiting [move-room].";
+		now move-room is visited;
 	now turns-to-add is turns-to-add * 4;
 	increase turns-to-add by bonus-turns;
 	if turns-to-add > 0:
