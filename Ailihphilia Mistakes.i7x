@@ -43,6 +43,10 @@ understand "esp apse" as a mistake ("You don't see what to do next.[mis of 2]") 
 
 understand "pat tap" as a mistake ("Nothing happens. Fortunately, you don't need anything from the tap.[mis of 3]") when player is in Apse Spa.
 
+understand "pate tap" as a mistake ("You need nothing fancy from the tap.[mis of 3]") when player is in Apse Spa.
+
+understand "path tap" as a mistake ("There is no path behind the tap[if spa maps are moot]--you already explored the go-by bog[else if player has spa maps]--one glance at the spa maps shows that[end if].[mis of 3]") when player is in Apse Spa.
+
 understand "pool sloop" as a mistake ("No boat appears to take you across the watery bits. [if sage gas is off-stage]You'll need another way through[else]You already got the sage gas, anyway[end if].[mis of 4]") when player is in Apse Spa.
 
 understand "saga gas" as a mistake ("You probably need wisdom more than description of someone else's epic right now.[mis of 5]") when sage gas is quicknear.
@@ -302,6 +306,8 @@ understand "emo come" as a mistake ("You feel increased whininess inside.[mis of
 understand "emo home" as a mistake ("It's too wide open a space.[mis of 99]") when player is in Emo Dome.
 
 understand "emo rome" as a mistake ("This game is not remotely close to historical fiction. Sorry.[mis of 100]") when player is in Emo Dome.
+
+understand "emo some" as a mistake ("Oh no. Once you get a little sad, you'll get a lot sad.[mis of 100]") when player is in Emo Dome.
 
 understand "emo tome" as a mistake ("That would be out of place among all the stupid jokes, here.[mis of 101]") when player is in Emo Dome.
 
@@ -1037,6 +1043,8 @@ chapter Yawn Way
 understand "way aw" as a mistake ("You take a moment to feel bummed about how quiet it is here.[mis of 368]") when player is in Yawn Way.
 
 understand "yaw away" and "yaws way" as a mistake ("Well, you can go pretty much any way, and you probably don't want [Yawn Way] to tilt.") when player is in Yawn Way.
+
+understand "yawnin way" and "yawn in way" as a mistake ("You let out an extra long yawn, just to show you belong.") when player is in Yawn Way.
 
 understand "yawp way" and "yawl way" as a mistake ("It's still quiet here.[mis of 369]") when player is in Yawn Way.
 
